@@ -1610,6 +1610,11 @@ facade supplement. The complete C baseline is rederived at each target role;
 no A-history state/writer or mobility transfer from structural Hodge is inferred.
 Register one proposed common-adapter row, not a sixth accepted declaration.
 G2 acceptance, all-pairs and G3 remain separate; old numerical campaigns are reused.
+The user subsequently accepted exact C_PC G2 on 2026-09-14. The acceptance binds
+review checkpoint `06475b2`; discovery publishes C_OS/A_OS/A_CI/C_CI/A_PC/C_PC.
+Preserve original records and finite source comparisons. Controls and other
+targets are not support additions; four other G2 decisions, all-pairs and G3
+remain separate.
 
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.

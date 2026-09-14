@@ -442,7 +442,7 @@ class PCSharedTests(unittest.TestCase):
             self.assertEqual(altered.to_payload(), original)
 
     def test_public_support_remains_c_os_only(self):
-        self.assertEqual(len(list_supported_profiles()), 5)
+        self.assertEqual(len(list_supported_profiles()), 6)
 
 
 class PCOutlierTests(unittest.TestCase):

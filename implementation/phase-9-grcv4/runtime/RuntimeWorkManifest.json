@@ -1340,7 +1340,7 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
-      "sha256": "331272422da180df79b45a131c8b8db5a24153827570b90ead5df3b70971f2fd",
+      "sha256": "09f2d4effd772b4ceac8e01c0b4684c5753e568cd630f54f14c029dbf8da9ce5",
       "iteration_id": "P9-2.2"
     },
     {
@@ -1385,33 +1385,33 @@
     },
     {
       "path": "tests/models/test_grc_v4.py",
-      "sha256": "384e9200a4d83832aa45c38df46c09f20f7fb4716a54eaf35f414048ae15f974",
+      "sha256": "6d064ed4b2a17073bd02dfb83e532b919c4a51b3a1b144216b00c33ac2bde03e",
       "iteration_id": "P9-4.9.3"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_a.py",
-      "sha256": "30584c3d59e25aa6b07df038f7482b5de449a6d735264f875ffc1cb1a3fb10e9",
+      "sha256": "92019600b78455704c0725bd860baf1009239bdeda92ba45b10de13752fc9322",
       "iteration_id": "P9-5.2"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
-      "sha256": "d96bcdaace4cdf18cb37750146ae97664b069762642e5968ef359764a1d88330",
+      "sha256": "1cf000ce4a5d4484d54be034f4b8865ddbd20b63f85b4d8d6a89eed48ee4acdd",
       "iteration_id": "P9-4.5"
     },
     {
       "path": "tests/models/test_grc_v4_ci.py",
-      "sha256": "7e15822cfc655fb4e536510b9e2fd7f0c45f6aa055c01981b9c0d02a43ef5096",
+      "sha256": "06deecd2fee4afea877522448abaf67ad2571d14ba11edd2e55c5554cf22ba23",
       "iteration_id": "P9-6.1c"
     },
     {
       "path": "tests/models/test_grc_v4_cipc.py",
-      "sha256": "291acaecf91fe3139ed44e80dc7036b2a872f9140d1f73680a43b582608ba731",
+      "sha256": "a3fc3e3dac6b037d629bb6d22e3bb942ceb35d59ff790e56dd85a054189469cc",
       "iteration_id": "P9-6.3c"
     },
     {
       "path": "tests/models/test_grc_v4_codec.py",
       "iteration_id": "P9-2.6",
-      "sha256": "7db6a31b2ef0b3c3a2c5fb7f211c5e330d316e42331ecbd2775ad98657235668"
+      "sha256": "b0dbf7c406f42ec1d803c3a6c7bd523c4bebbcc6625a406358c4ddc0390fabb7"
     },
     {
       "path": "tests/models/test_grc_v4_event_audit.py",
@@ -1430,7 +1430,7 @@
     },
     {
       "path": "tests/models/test_grc_v4_geometry.py",
-      "sha256": "4bd364677598f475d4c89d0ffccb207518f2e8099ba879c26d4f4ef7702d945a",
+      "sha256": "5ab6cff5ebed5838e462f32c98c60301831185e40947fbde536f9123fc04a5c9",
       "iteration_id": "P9-3.4"
     },
     {
@@ -1450,12 +1450,12 @@
     },
     {
       "path": "tests/models/test_grc_v4_pc.py",
-      "sha256": "11fbed6b9b6f0a790ceb15783e0683b1e0fc45ad436c10369d514f185d082767",
+      "sha256": "b94e52d7de9fbee8bb391a161493ad046f3763e20dbf2a11f531bb2bed0d0ec4",
       "iteration_id": "P9-6.2c"
     },
     {
       "path": "tests/models/test_grc_v4_profile.py",
-      "sha256": "1861224b8869389767de5555e3d9fad0bd84d6c6b0fa12abfede4e298bc8f32e",
+      "sha256": "1becab9cc0f9e03be8ed87421d564af966c4adf827922a68af39eac3510272be",
       "iteration_id": "P9-2.2"
     },
     {
@@ -1480,23 +1480,24 @@
     },
     {
       "path": "tests/models/test_grc_v4_step.py",
-      "sha256": "5bcbb1919474ae656e799423b7e9cf993d4a601e926c2b250ca92e60cf40e8e5",
+      "sha256": "df6cd4c48db741c17e3ddcb2d3e94226645b790d6d9ba903012caf167fcbafd3",
       "iteration_id": "P9-3.5"
     },
     {
       "path": "tests/models/test_grc_v4_transport.py",
-      "sha256": "6e0f6c624a2e3842635a4fa3cfe2a3d546ecf7de4fa39909eacc0401a011dcb7",
+      "sha256": "a59a100a1527e9a4d9b818d8013937baa3c1548b461745c2bed682f2d1fc10a6",
       "iteration_id": "P9-3.4"
     }
   ],
   "accepted_generic_runtime_support": [
     "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
     "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
     "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
     "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
     "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates separate user acceptances for C_OS, A_OS, A_CI, C_CI and A_PC. Other local targets, ordered pairs and specialization are not promoted.",
-  "record_digest": "d8b9254abcd13680ec2495305a1d7f35cf8d7800dbf6591903b9f488fe3ac2f1"
+  "record_digest": "4aadd0bc36d9084734c1459ed543cf3d48216a4ae3d04c281adf0f50d16c1b21"
 }

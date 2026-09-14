@@ -2229,3 +2229,6 @@ materializer. The review checks the 33-cell product, complete C target baseline,
 exact carrier transport/loss boundaries and a narrow facade supplement. Shared
 UX must distinguish five accepted declarations from this unaccepted proposal;
 scientific support classes, old records and runtime permissions remain unchanged.
+The subsequent user acceptance uses the same adapter/materializer to project
+six accepted exact declarations, with finite discovery-source comparisons.
+Old review/execution bytes, unreviewed endpoints and G3 boundaries are preserved.

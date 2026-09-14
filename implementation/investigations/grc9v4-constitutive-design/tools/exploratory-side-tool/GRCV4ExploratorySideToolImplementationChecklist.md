@@ -1799,4 +1799,6 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       lifecycle contract/debt ceilings. No new dispatch or rendering branch.
 - [x] Expose five accepted declarations plus a separate C_PC proposal through
       shared API/notebook/browser views; preserve public support and old records.
-- [ ] Record explicit C_PC G2 acceptance before changing public discovery.
+- [x] Record the user's 2026-09-14 exact C_PC G2 acceptance and publish six
+      declarations. Preserve historical evidence and finite source identities;
+      no controls, other targets, all-pairs or G3 are promoted.

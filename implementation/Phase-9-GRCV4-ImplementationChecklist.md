@@ -70,7 +70,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope; no all-pairs or G3 support. |
 | `P9-G2[C_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json) accepts the reviewed 33-cell scope at `8ec744e`; distinct initializer/event targets and dense controls are not added support. |
 | `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery at acceptance was exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
-| `P9-G2[C_PC]` | PASS proposal, pending G2 acceptance | [Integrated 33-cell review](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.md) follows accepted bounded reconciliation at `b90bb9e`; only the exact nomination is proposed, with no new public support. |
+| `P9-G2[C_PC]` | Accepted by user, 2026-09-14 | Exact 33-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Acceptance.json) pins review checkpoint `06475b2`. No all-pairs or G3. |
 | `P9-G2[A_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json). No all-pairs or G3. |
 | `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
@@ -1440,8 +1440,10 @@ may reach G2 without waiting for all Tranche 6 realizations.
     zero-duration facade supplement. Reuse five local and three crossing
     methods; preserve typed claim/debt ceilings and five accepted declarations.
     [G2 proposal](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.md).
-  - [ ] Obtain explicit C_PC G2 acceptance. No new support until that decision;
-    all-pairs, aggregate P9-7.7 and G3 remain open.
+  - [x] User accepted exact C_PC G2 on 2026-09-14. Bind checkpoint `06475b2`,
+    preserve original review/execution bytes and publish six exact declarations
+    through the shared adapter. Four other G2 decisions, all-pairs, aggregate
+    P9-7.7 and G3 remain open.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

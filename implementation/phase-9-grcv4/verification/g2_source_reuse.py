@@ -44,6 +44,10 @@ def matches(expected, current):
     if not changed:
         return True
     desired = {n: expected[n] for n in changed}
+    from c_pc_g2_source_reuse import retained_bindings as latest_successor
+    newest = latest_successor(changed)
+    if desired == newest:
+        return True
     from a_pc_g2_source_reuse import retained_bindings as current_successor
     newest = current_successor(changed)
     if desired == newest:
