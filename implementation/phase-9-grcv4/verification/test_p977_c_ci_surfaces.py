@@ -43,6 +43,13 @@ class CCISurfaceTests(unittest.TestCase):
         expected=registry(p.ROOT)['reconciliation_views']
         views={key:status[key] for key in expected}
         self.assertEqual(checked_reconciliation(p.ROOT,views),views)
+        self.assertEqual(status['a_pc_local_product']['verified_local_cells'],21)
+        apc=status['a_pc_crossings']
+        self.assertEqual((apc['reconciled_crossing_cells'],apc['new_execution_cases'],apc['retained_alias_count']),(7,5,7))
+        self.assertTrue(apc['user_accepted'])
+        self.assertFalse(apc['G2_accepted'])
+        self.assertFalse(apc['all_ordered_pairs_verified'])
+        self.assertNotIn(apc['complete_profile_id'],status['accepted_generic_runtime_support'])
         for key in views:
             bad=deepcopy(views); bad.pop(key)
             with self.assertRaises(ValueError): checked_reconciliation(p.ROOT,bad)
@@ -96,13 +103,16 @@ assert.equal(body.children.length,4);
 assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 accepted']);
 assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.proposed_additional_support[0]);
 renderReconciliation(value,body,element);
-assert.equal(body.children.length,6);
+assert.equal(body.children.length,Object.keys(value).filter(k=>k.endsWith('_local_product')||k.endsWith('_crossings')).length);
 const cci=body.children.find(r=>r.children[0].textContent==='c_ci_local_product');
 assert.equal(cci.children[1].textContent,'26');
 assert.equal(cci.children[2].textContent,'Local evidence pending review');
 const crossings=body.children.find(r=>r.children[0].textContent==='c_ci_crossings');
 assert.equal(crossings.children[1].textContent,'7');
 assert.equal(crossings.children[2].textContent,'Bounded reconciliation accepted');
+const apc=body.children.find(r=>r.children[0].textContent==='a_pc_crossings');
+assert.equal(apc.children[1].textContent,'7');
+assert.equal(apc.children[2].textContent,'Bounded reconciliation accepted');
 renderReconciliation({},body,element);
 assert.equal(body.children.length,0);
 renderG2Profiles({},body,element);
@@ -163,7 +173,7 @@ for(const edit of [v=>v.c_ci_local_product.verified_local_cells=33,
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));count++;
 }
-assert.equal(count,34);
+assert.equal(count,5*Object.keys(value).filter(k=>k.endsWith('_local_product')||k.endsWith('_crossings')).length+4);
 for(const edit of [v=>delete v.c_ci_g2_review,v=>v.c_ci_g2_review.G2_accepted=false,
  v=>v.c_ci_g2_review.user_accepted=false,v=>v.c_ci_g2_review.catalog_cells=28,
  v=>v.c_ci_g2_review.all_ordered_pairs_verified=true,v=>v.c_ci_g2_review.record_digest='0'.repeat(64),
@@ -173,13 +183,13 @@ for(const edit of [v=>delete v.c_ci_g2_review,v=>v.c_ci_g2_review.G2_accepted=fa
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
-console.log('C_CI_BROWSER_PASS controls=80');
+console.log('C_CI_BROWSER_PASS registered reconciliation controls='+count);
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
             cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
             text=True, env=tool_environment(), timeout=30)
         self.assertEqual(browser.returncode, 0, browser.stderr)
-        self.assertIn('C_CI_BROWSER_PASS controls=80', browser.stdout)
+        self.assertIn('C_CI_BROWSER_PASS registered reconciliation controls=', browser.stdout)
 
 
 if __name__ == '__main__':

@@ -1400,6 +1400,21 @@ may reach G2 without waiting for all Tranche 6 realizations.
     binds reviewed checkpoint `8ec744e`. Publish exactly C_OS/A_OS/A_CI/C_CI;
     preserve original evidence and record finite discovery-source comparisons.
     Six other profile decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
+  - [x] P9-7.7-A_PC-local: reconcile 21 exact local cells (old Z geometry,
+    refreshed A writer, one held-source ZOH write, both-role admission, common
+    failures and fixed-profile C/W/Z lifecycle ownership).
+    [Bounded review](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-LocalReview.md).
+    Four native methods passed; no acceptance or new G2 support.
+  - [x] Reconcile the seven A_PC crossing obligations through seven retained
+    aliases and five new cases in three passing methods. Preserve exact PC pair
+    identities, independent current/reset event targets, separate W/Z loss,
+    reset-only rejection and changed-carrier/unselected-initializer boundaries.
+    [Scoped review](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-CrossingReview.md).
+  - [x] User accepted the combined A_PC local/crossing result on 2026-09-14.
+    Preserve original execution records and project bounded acceptance separately.
+  - [ ] Perform integrated A_PC G2 review; its acceptance remains separate.
+  - [ ] Continue persistent profiles in order A_PC, C_PC, A_CI+PC, C_CI+PC;
+    leave A_RG2b/C_RG2b last. This is scheduling, not weaker acceptance criteria.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

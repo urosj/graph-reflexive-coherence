@@ -1548,6 +1548,30 @@ input; source bindings and import origins are checked. Scientific equations and
 historical record schemas stay in their separate checkers. Validate orchestration
 with focused mutations and one actual cross-surface check, not numerical reruns.
 
+The user selected persistence-first reconciliation: A_PC → C_PC → A_CI+PC →
+C_CI+PC → A_RG2b → C_RG2b. This reuses carrier ownership/transport checks before
+coupled implicit history, leaving the distinct frozen-completion/finite-section
+work last. It changes no scientific gate or evidence requirement.
+
+The [A_PC local continuation](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-LocalReview.md)
+now verifies 21 exact local cells in four passing methods. Distinguish supplied W from formation, old Z from
+prospective Z, held-source carrier writing from post-continuity A writing, and
+native release from reset/drop. Use a same-profile signed-history companion and
+independently declared zero controls; retain exact current/reset readmission and
+whole-publication rollback. Reuse accepted numerical owners and capture only the
+missing exact product. The subsequent
+[crossing reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-CrossingReview.md)
+closes the remaining seven evidence cells through seven retained aliases and
+five new cases in three methods. Exact PC↔CI+PC pairs preserve both histories;
+changed carrier contracts reject. Independent event current/reset initialization
+and readmission distinguish explicit W/Z loss from native release. Incoming
+C→A nomination evidence is negative, with the positive initializer target kept
+separate. All 28 cells are reconciled, not all ordered pairs executed. Combined
+review/acceptance and integrated G2 remain separate; public support stays
+C_OS/A_OS/A_CI/C_CI. On 2026-09-14 the user accepted the combined bounded
+local/crossing result and requested its commit before integrated G2 review.
+Project that acceptance separately without rewriting the original run flags.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

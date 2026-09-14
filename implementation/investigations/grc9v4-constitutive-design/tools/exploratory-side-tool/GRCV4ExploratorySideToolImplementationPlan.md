@@ -2185,3 +2185,18 @@ The same registry-driven API/notebook/browser path now shows four accepted
 declarations: C_OS/A_OS/A_CI/C_CI. Finite discovery-source comparisons preserve
 older evidence checks while rejecting unrelated drift. Six other profile G2
 decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
+
+The next bounded local continuation is A_PC, followed by C_PC, A_CI+PC,
+C_CI+PC and finally the RG2b pair. Add `a_pc_local_product` as a pinned
+reconciliation view/materializer only; it is not a G2 proposal or acceptance.
+The shared Python and browser paths should discover it without new profile
+dispatch or rendering branches. Preserve the old-Z/held-source distinction,
+separate W/Z writes, native release versus history removal and both-role
+readmission evidence. Validate one real status and reuse it across transports.
+The subsequent `a_pc_crossings` row uses the same pinned materializer graph,
+dependent on `a_pc_local_product`. Expose seven reconciled crossing cells,
+five new execution cases and seven retained aliases without promoting pending
+review to G2. Exact PC pairs, separate nonhistory/initializer endpoints and
+two-channel losses remain visible; no bespoke dispatch/rendering branch is added.
+The user's 2026-09-14 bounded acceptance is projected through the same crossing
+materializer while original local/crossing execution flags remain unchanged.

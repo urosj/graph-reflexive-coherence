@@ -1754,3 +1754,16 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       acceptance projection and discovery now publish C_OS/A_OS/A_CI/C_CI.
       Preserve original evidence and exact source-reuse identities; no
       all-pairs, G3, aggregate closure or new runtime permission.
+
+### P9-7.7 A_PC local and crossing reconciliation
+
+- [x] Expose the exact A_PC 21-cell local product through one pinned
+      reconciliation view and local materializer; no per-profile Python dispatch
+      or browser branch. Keep seven crossing obligations and G2 separate.
+- [x] Check retained equation/authority mutations and one current status across
+      API/notebook/HTTP/browser. Preserve four accepted declarations and old runs.
+- [x] Add the dependent `a_pc_crossings` pinned view/materializer: seven cells,
+      seven retained aliases, five new cases. Keep exact PC pair support bounded
+      and negative incoming initializer evidence distinct from a positive target.
+      Combined local/crossing review was accepted by the user on 2026-09-14;
+      project it separately, preserving original runs. A_PC G2 remains pending.
