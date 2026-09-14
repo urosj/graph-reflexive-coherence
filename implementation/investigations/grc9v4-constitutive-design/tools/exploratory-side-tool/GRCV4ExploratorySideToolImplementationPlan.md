@@ -2250,3 +2250,12 @@ Generic API/notebook/browser views expose the pending crossing product; no new
 dispatch branch, bounded acceptance, G2 support, all-pairs or G3 promotion.
 The user's subsequent bounded acceptance is projected from the pinned crossing
 review without changing execution flags. Integrated G2 remains a separate step.
+
+A_CI+PC integrated G2 adds one proposed `exact_profile_v1` row and dependent
+G2 materializer: 28 cells, same-selected-root geometry/ZOH, separate W refresh,
+exact ordered history dispositions and one facade supplement. Preserve typed
+contract/debt ceilings and the two separately declared initializer/event targets.
+Reuse the accepted local/crossing numerical runs and one real shared status
+across API/notebook/browser transports. Six accepted declarations and the
+unaccepted proposal must remain visibly distinct; no new dispatch/rendering
+branch, runtime authorization or support widening is needed.

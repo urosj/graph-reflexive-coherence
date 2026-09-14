@@ -1636,6 +1636,16 @@ The user's subsequent 2026-09-14 acceptance covers this bounded local/crossing
 product, not G2. Preserve original execution bytes and project acceptance from
 the pinned crossing review; integrated G2 follows the committed checkpoint.
 
+The [integrated A_CI+PC G2 proposal](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.md)
+binds checkpoint `d41e1c6`, the 28-cell product and exact ordered endpoints.
+Reuse five local and four crossing methods; add only one zero-duration facade
+supplement. Preserve same-selected-source geometry/ZOH, separate W refresh,
+local root/envelope ceilings, exact carrier transport and explicit loss channels.
+The retained initializer and tighter event target are separate declarations,
+neither proposed for support. Typed claim/debt traces retain their status.
+The shared registry projects six accepted declarations and this unaccepted
+proposal; G2 acceptance, all-pairs, aggregate P9-7.7 and G3 remain separate.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

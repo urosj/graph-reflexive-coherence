@@ -1820,3 +1820,12 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       six accepted declarations and pending bounded acceptance/G2/all-pairs/G3.
 - [x] Project the user's 2026-09-14 bounded A_CI+PC acceptance from its pinned
       review. Keep original execution bytes and separate integrated G2 authority.
+
+### P9-7.7 A_CI+PC integrated G2 proposal
+
+- [x] Register one proposed common-adapter G2 row/materializer after accepted
+      `a_ci_pc_crossings`: 28 cells, one facade supplement, coupled-source and
+      history-policy limits, typed contract/debt traces. No bespoke dispatch.
+- [x] Verify proposal/interface mutations and shared API/notebook/browser
+      access: six accepted declarations plus the separate unaccepted proposal.
+      Preserve original evidence, runtime permissions and all-pairs/G3 ceilings.

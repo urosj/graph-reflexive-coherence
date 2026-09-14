@@ -73,7 +73,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[C_PC]` | Accepted by user, 2026-09-14 | Exact 33-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Acceptance.json) pins review checkpoint `06475b2`. No all-pairs or G3. |
 | `P9-G2[A_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json). No all-pairs or G3. |
 | `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
-| `P9-G2[A_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
+| `P9-G2[A_CI_PC]` | HOLD, pending G2 acceptance | Integrated 28-cell exact-product proposal and ordered endpoints; six existing accepted declarations unchanged. |
 | `P9-G2[C_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 
@@ -1458,7 +1458,14 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] User accepted combined A_CI+PC local/crossing reconciliation on
     2026-09-14: all 28 cells at their exact declared scope. Preserve execution
     records and six existing G2 declarations; no all-pairs or G3 promotion.
-  - [ ] Perform separate integrated A_CI+PC G2 review.
+  - [x] Complete integrated A_CI+PC G2 review: 28 exact cells, same-source
+    coupled geometry/ZOH, separate W refresh, exact carrier transport/loss,
+    typed authority ceilings and one zero-duration facade supplement. Reuse
+    five local and four crossing methods; distinguish both separate targets.
+    Facade supplement, 13 focused methods and one shared status/UX check pass.
+    [G2 proposal](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.md).
+  - [ ] User decision on exact A_CI+PC G2. Preserve six accepted declarations
+    until explicit acceptance; no all-pairs, aggregate P9-7.7 or G3 promotion.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.
