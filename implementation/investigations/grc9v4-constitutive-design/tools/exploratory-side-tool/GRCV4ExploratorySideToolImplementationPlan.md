@@ -2116,3 +2116,17 @@ The subsequent 2026-09-14 user decision accepts bounded A_CI local/crossing
 reconciliation only. Expose that decision over the unchanged capture through
 `a_ci_crossings`; retain false G2/G3/all-pairs/aggregate flags and unchanged
 public discovery. A separate integrated G2 review remains the next step.
+
+The integrated A_CI G2 continuation now exposes `a_ci_g2_review` as a PASS
+proposal and a common `profile_g2` projection. The pinned exact-profile registry
+holds C_OS/A_OS acceptance and the pending A_CI proposal; historical records
+remain byte-identical. Shared acceptance checks validate declarations, review
+subjects, predecessor scope and empty runtime/specialization permissions;
+scientific review checks remain profile-specific. A_CI is not public support.
+
+The browser consumes the generated, checked `g2-registry.js` roster through
+the HTTP static route and renders a decision table of exact IDs. It rejects
+self-rehashed status that invents acceptance, changes review identities or
+widens scope. Clear rows on refresh/failure. Notebook and HTTP expose the same
+status. Reuse one real current-status check across transport tests, with a
+focused browser rendering/negative-pressure test; no numerical campaign rerun.

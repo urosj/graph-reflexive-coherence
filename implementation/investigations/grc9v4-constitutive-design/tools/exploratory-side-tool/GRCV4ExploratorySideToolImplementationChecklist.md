@@ -1704,3 +1704,19 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Record the user's 2026-09-14 acceptance of combined local/crossing scope.
       This is not an independent audit or G2 decision. Integrated G2
       applicability/public-facade review and explicit acceptance remain separate.
+
+### P9-7.7 A_CI integrated G2 and shared acceptance plumbing
+
+- [x] Reconcile the exact 28-cell product and ordered applicability as a PASS
+      proposal; add one native zero-duration facade supplement and retain
+      CI-specific claim ceilings. Preserve all accepted execution records.
+- [x] Register C_OS/A_OS as accepted and A_CI as proposed under one pinned
+      roster; use historical adapters and one common new-profile schema.
+      Check every advertised declaration; do not grant runtime permissions.
+- [x] Expose `profile_g2` and `a_ci_g2_review` through actual status surfaces;
+      serve the browser roster and render exact IDs with decision states.
+- [x] Pressure unaccepted profiles, changed bindings/declarations, widened
+      scope, predecessor drift and discovery mismatch; test current status
+      agreement plus browser rejection/rendering with one checked API result.
+- [ ] Independent review and explicit A_CI G2 acceptance; published support
+      remains exactly C_OS/A_OS until that separate decision.

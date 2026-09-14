@@ -1,19 +1,57 @@
-const acceptedAOS = 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4';
-const acceptedProfile = "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d";
+import {G2_REGISTRY} from './g2-registry.js';
+const acceptedRows = G2_REGISTRY.records.filter(r => r.state === 'accepted');
+const acceptedSupport = acceptedRows.map(r => r.complete_profile_id).sort();
+const acceptedProfile = G2_REGISTRY.records.find(r => r.adapter === 'historical_c_os').complete_profile_id;
+const equal = (a,b) => canonical(a) === canonical(b);
+
+export function checkedG2(value, implementation) {
+  const expected = G2_REGISTRY.records.map(r => ({
+    ...Object.fromEntries(['profile_family_id','complete_profile_id','gate','state','review','acceptance'].map(k=>[k,r[k]])),
+    G2_accepted:r.state==='accepted', G3_accepted:false, aggregate_closed:false,
+    all_ordered_pairs_verified:false, new_runtime_iterations_authorized:[], admitted_specialization_support_sets:[]
+  }));
+  if (implementation ? !equal(value.profile_g2,expected) : value.profile_g2 !== undefined)
+    throw new Error('Untrusted G2 registry projection');
+  const preceding = [];
+  for (const row of G2_REGISTRY.records) {
+    const a = value[row.view_key];
+    if (!implementation) {
+      if (a !== undefined) throw new Error('Unverified boundary cannot publish a G2 view');
+      continue;
+    }
+    if (!a) throw new Error('Missing registered G2 view');
+    if (row.adapter !== 'historical_c_os') {
+      const accepted = row.state === 'accepted';
+      const obligations = {'G2-EXACT-PRODUCT':'satisfied_for_exact_declared_scope','G2-ORDERED-ENDPOINTS':'satisfied_for_exact_declared_scope','G2-INTEGRATED-REVIEW':'satisfied_for_exact_declared_scope'};
+      if (value[row.bounded_view_key]?.user_accepted !== true ||
+          a.status !== (accepted ? 'accepted' : 'pass_proposal_pending_G2_acceptance') ||
+          a.gate !== row.gate || Object.entries(row.review_metrics).some(([k,v])=>a[k]!==v) ||
+          a.user_accepted !== accepted || a.G2_accepted !== accepted ||
+          a.G3_accepted !== false || a.aggregate_closed !== false || a.all_ordered_pairs_verified !== false ||
+          !equal(a.new_G2_support, accepted ? [row.complete_profile_id] : []) ||
+          !equal(a.proposed_additional_support,[row.complete_profile_id]) ||
+          !equal(a.accepted_support_unchanged,[...preceding].sort()) || !equal(a.obligations,obligations) ||
+          a.record_path !== row.review.path || a.record_digest !== row.review.record_digest)
+        throw new Error('Unverified or widened registered G2 review');
+      if (accepted) {
+        if (a.acceptance_path !== row.acceptance.path || a.acceptance_digest !== row.acceptance.record_digest ||
+            !equal(a.accepted_generic_runtime_support,acceptedSupport)) throw new Error('Untrusted G2 acceptance');
+      } else if (a.acceptance_path !== undefined || a.acceptance_digest !== undefined ||
+                 a.accepted_generic_runtime_support !== undefined) throw new Error('Proposal invented acceptance');
+    }
+    if (row.state === 'accepted') preceding.push(row.complete_profile_id);
+  }
+}
+
 export function checkedStatus(value) {
   if (!['phase9_governance_status_v1','phase9_governance_status_v2'].includes(value?.schema) || value.output_class !== "implementation_verification_status_not_forensic_trace") throw new Error("Unrecognized verification status");
   const implementation = value.schema === 'phase9_governance_status_v2' && value.current_boundary === 'passed';
-  if (implementation && !value.a_os_g2_review) throw new Error('Missing accepted A_OS G2 view');
-  if (typeof value.P9_G1_accepted !== 'boolean' || value.runtime_authorized !== implementation || (implementation && !value.P9_G1_accepted) || (value.schema === 'phase9_governance_status_v1' && value.P9_G1_accepted) || !Array.isArray(value.accepted_generic_runtime_support) || JSON.stringify(value.accepted_generic_runtime_support) !== JSON.stringify(implementation ? [acceptedProfile, acceptedAOS] : []) || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
+  checkedG2(value, implementation);
+  if (typeof value.P9_G1_accepted !== 'boolean' || value.runtime_authorized !== implementation || (implementation && !value.P9_G1_accepted) || (value.schema === 'phase9_governance_status_v1' && value.P9_G1_accepted) || !Array.isArray(value.accepted_generic_runtime_support) || JSON.stringify(value.accepted_generic_runtime_support) !== JSON.stringify(implementation ? acceptedSupport : []) || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
   if (implementation && (value.g2_acceptance?.record_digest !== 'e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd' || value.g2_acceptance?.gate !== 'P9-G2[C_OS]' || value.g2_acceptance?.alias !== 'P9-7.7-C_OS' || value.g2_acceptance?.G2_accepted !== true || value.g2_acceptance?.G3_accepted !== false || value.g2_acceptance?.tranche_4_status !== 'closed' || JSON.stringify(value.g2_acceptance?.accepted_generic_runtime_support) !== JSON.stringify([acceptedProfile]) || JSON.stringify(value.g2_acceptance?.new_runtime_iterations_authorized) !== '[]')) throw new Error('Missing or widened exact-profile G2 acceptance');
   if (!implementation && value.g2_acceptance !== undefined) throw new Error('Unverified boundary cannot advertise current G2 support');
   if (!implementation && value.initializer_runtime !== undefined) throw new Error('Unverified boundary cannot advertise migration acceptance');
   if (!implementation && value.event_runtime !== undefined) throw new Error('Unverified boundary cannot advertise event execution');
-  if (value.a_os_g2_review !== undefined) {
-    const a = value.a_os_g2_review;
-    const obligations = {'G2-EXACT-PRODUCT':'satisfied_for_exact_declared_scope','G2-ORDERED-ENDPOINTS':'satisfied_for_exact_declared_scope','G2-INTEGRATED-REVIEW':'satisfied_for_exact_declared_scope'};
-    if (!implementation || value.a_os_crossings?.user_accepted !== true || a.status !== 'accepted' || a.gate !== 'P9-G2[A_OS]' || a.catalog_cells !== 28 || a.supplemental_interface_methods !== 1 || a.numerical_tests_rerun !== 0 || a.user_accepted !== true || a.G2_accepted !== true || a.G3_accepted !== false || a.aggregate_closed !== false || a.all_ordered_pairs_verified !== false || JSON.stringify(a.new_G2_support) !== JSON.stringify([acceptedAOS]) || JSON.stringify(a.accepted_generic_runtime_support) !== JSON.stringify([acceptedProfile, acceptedAOS]) || a.acceptance_digest !== 'bb84b02362a6b5ac1e1a4b5ba921f63ff3f454c27c82fb99d3da1836d088a2bb' || a.acceptance_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json' || JSON.stringify(a.proposed_additional_support) !== '["grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"]' || JSON.stringify(a.accepted_support_unchanged) !== JSON.stringify([acceptedProfile]) || Object.keys(a.obligations || {}).length !== 3 || Object.entries(obligations).some(([key, v]) => a.obligations?.[key] !== v) || a.record_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json' || a.record_digest !== 'f5d40d78fc8f3d96bbf6e78b5087527b5712aa4179d3f43b94456da05c7d4dc4') throw new Error('Unverified or prematurely accepted A_OS G2 proposal');
-  }
   if (value.a_os_crossings !== undefined) {
     const a = value.a_os_crossings;
     if (!implementation || !value.a_os_local_product || a.status !== 'accepted_bounded_reconciliation' || a.user_accepted !== true || a.acceptance_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-CrossingReview.md' || a.acceptance_sha256 !== '980f8676b89c45e2d027b7c76f73324c5d759a3b6d161f66db6681709004e657' || a.aggregate_closed !== false || a.G2_accepted !== false || a.G3_accepted !== false || a.all_ordered_pairs_verified !== false || JSON.stringify(a.new_G2_support) !== '[]' || a.test_count !== 3 || a.new_execution_cases !== 6 || a.retained_alias_count !== 5 || a.reconciled_crossing_cells !== 7 || a.local_cells !== 21 || a.ordered_migration_classes !== 7 || a.numerical_tests_rerun !== 0 || a.matrix_scope !== 'exact_positive_and_negative_endpoints; separate_PC_pairs; not_all_pairs' || a.complete_profile_id !== 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4' || a.record_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-Crossings.json' || a.record_digest !== '2322b1a2f8b6b4904b38200f2f9018356db2698fbaafd53fe6c9ef8497afc351') throw new Error('Unverified or widened A_OS crossing reconciliation');
@@ -252,6 +290,18 @@ if (typeof document !== 'undefined') {
   document.querySelector('#initializer-view')?.addEventListener('change', renderInitializer);
 }
 
+export function renderG2Profiles(value, body, createElement) {
+  body.replaceChildren();
+  for (const row of value.profile_g2 || []) {
+    const tr = createElement('tr');
+    for (const text of [row.profile_family_id, row.complete_profile_id,
+      row.G2_accepted ? 'G2 accepted' : 'G2 proposal — not accepted', row.review.path]) {
+      const td = createElement('td'); td.textContent = text; tr.append(td);
+    }
+    body.append(tr);
+  }
+}
+
 let refreshGeneration = 0;
 async function refresh() {
   const generation = ++refreshGeneration;
@@ -264,6 +314,7 @@ async function refresh() {
   document.querySelector('#recorded').textContent = 'Not current';
   document.querySelector('#handoff').textContent = 'Not checked';
   document.querySelector('#sources').replaceChildren();
+  document.querySelector('#g2-profiles').replaceChildren();
   document.querySelector('#iterations').textContent = 'No verified leaf results.';
   document.querySelector('#policy').textContent = '';
   document.querySelector('#source-meaning').textContent = 'Not verified.';
@@ -275,8 +326,9 @@ async function refresh() {
     if (generation !== refreshGeneration) return;
     const held = value.current_boundary !== 'passed';
     status.classList.toggle('error', held);
-    status.textContent = held ? `Held: ${value.error || 'Current inputs failed verification'}. ${value.P9_G1_accepted ? 'Recorded P9-G1 acceptance remains intact.' : 'P9-G1 acceptance is not verified.'}` : value.P9_G1_accepted ? 'Tranche 4 closed. G2 accepted for the single listed C_OS profile; G3 and other profiles remain closed.' : 'Current planning checks passed. Runtime remains unauthorized.';
-    document.querySelector('#authority').textContent = value.P9_G1_accepted ? (held ? 'Accepted / current work held' : `G2 accepted / ${value.accepted_generic_runtime_support[0]}`) : 'Not accepted or not verified / not authorized';
+    status.textContent = held ? `Held: ${value.error || 'Current inputs failed verification'}. ${value.P9_G1_accepted ? 'Recorded P9-G1 acceptance remains intact.' : 'P9-G1 acceptance is not verified.'}` : value.P9_G1_accepted ? `G2 accepted for ${value.accepted_generic_runtime_support.length} exact declarations. Proposed profiles are not accepted; G3 remains separate.` : 'Current planning checks passed. Runtime remains unauthorized.';
+    document.querySelector('#authority').textContent = value.P9_G1_accepted ? (held ? 'Accepted / current work held' : `G2 accepted / ${value.accepted_generic_runtime_support.length} exact declarations`) : 'Not accepted or not verified / not authorized';
+    renderG2Profiles(value, document.querySelector('#g2-profiles'), name => document.createElement(name));
     document.querySelector('#next-work').textContent = value.runtime_authorized ? `Accepted foundation: ${value.foundation_acceptance.accepted_iterations.join(', ')}. Accepted requests: ${value.request_acceptance.accepted_iterations.join(', ')}. Accepted results: ${value.result_acceptance.accepted_iterations.join(', ')}. Accepted harness: ${value.harness_acceptance.accepted_iterations.join(', ')}. Accepted integration: ${value.integration_acceptance.accepted_iterations.join(', ')}. Accepted geometry: ${value.geometry_acceptance.accepted_iterations.join(', ')}. Accepted stages: ${value.stage_acceptance.accepted_iterations.join(', ')}. Accepted resources: ${value.resource_acceptance.accepted_iterations.join(', ')}. Accepted numerical pressure: ${value.numerical_pressure_acceptance.accepted_iterations.join(', ')}. Accepted prestate preservation: ${value.preservation_acceptance.accepted_iterations.join(', ')}. Accepted C reference transport: ${value.reference_transport_acceptance.accepted_iterations.join(', ')}. Accepted C stage current: ${value.c_current_acceptance.accepted_iterations.join(', ')}. Accepted C control derivative: ${value.c_controls_acceptance.accepted_iterations.join(', ')}. Accepted C OS pass: ${value.os_pass_acceptance.accepted_iterations.join(', ')}. Accepted C OS operations: ${value.os_operations_acceptance.accepted_iterations.join(', ')}. Authorized lifecycle batch: P9-4.7a then P9-4.7b. Accepted after audit corrections: P9-4.6, P9-4.7a and P9-4.7b. Exact mapped vector verified under the successor release. ${value.next_gate} Execution-permitted leaves: ${value.dependency_ready_leaves.join(', ')}. ${value.permitted_runtime_paths.length} runtime paths are currently eligible under their owners. Later leaves remain gated.` : held ? 'Current work held; resolve the reported current-boundary failure.' : 'P9-G1 review remains pending.';
     document.querySelector('#boundary').textContent = held ? 'Failed · current work held' : 'Passed · current bytes';
     document.querySelector('#recorded').textContent = value.recorded_full_verification === 'not_current' ? 'Not current · rerun CLI' : 'Recorded pass · matching inputs';

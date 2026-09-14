@@ -227,6 +227,15 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "profile_g2_registry.py",
+    HERE + "test_profile_g2_registry.py",
+    HERE + "verify_p977_a_ci_g2.py",
+    HERE + "test_p977_a_ci_g2.py",
+    PHASE + "tranche-7/ProfileG2Registry.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Review.md",
+    SIDE + "tool/phase9-web/g2-registry.js",
     HERE + "verify_p977_a_ci_acceptance.py",
     HERE + "test_p977_a_ci_acceptance.py",
     HERE + "verify_p977_a_ci_crossings.py",
@@ -1475,6 +1484,7 @@ def accepted_g2(root):
 
 
 def accepted_a_os_g2(root):
+    """Historical adapter; new profiles use profile_g2_registry's shared schema."""
     name = PHASE + 'tranche-7/P9-7.7-A_OS-G2Acceptance.json'
     value = read(safe_path(root, name))
     require(value['record_digest'] == digest_record(value) == 'bb84b02362a6b5ac1e1a4b5ba921f63ff3f454c27c82fb99d3da1836d088a2bb' and value['status'] == 'accepted_by_user'
@@ -1499,14 +1509,8 @@ def accepted_a_os_g2(root):
 
 
 def accepted_generic_support(root):
-    old = accepted_g2(root)['accepted_generic_runtime_support']
-    new = accepted_a_os_g2(root)['accepted_additional_support']
-    from pygrc.models.grc_v4_profile import list_supported_profiles, get_supported_profile
-    support = sorted(set(old + new))
-    require(set(list_supported_profiles()) == set(support)
-            and get_supported_profile(new[0]).to_payload() == accepted_a_os_g2(root)['accepted_profile'],
-            'published G2 discovery differs from accepted declarations')
-    return support
+    from profile_g2_registry import checked
+    return checked(root)['accepted_generic_runtime_support']
 
 
 def work_entries(root, approval):

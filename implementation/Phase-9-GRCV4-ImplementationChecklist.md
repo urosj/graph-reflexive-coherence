@@ -1357,8 +1357,17 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] User accepted the bounded A_CI local/crossing reconciliation on
     2026-09-14, explicitly reserving A_CI G2 review for later. Preserve the
     original execution flags and exact C_OS/A_OS public support.
-  - [ ] Perform integrated A_CI G2 applicability/public-facade review. Its
-    initializer/event target differs from the nomination; no all-pairs shortcut.
+  - [x] Perform the [integrated A_CI G2 review](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.md):
+    PASS proposal for 28 exact catalog obligations, bounded crossing
+    applicability and one zero-duration facade supplement. Its initializer/event
+    target differs from the nomination; no all-pairs or global CI-root shortcut.
+  - [x] Add shared exact-profile G2 acceptance/discovery plumbing alongside
+    the A_CI proposal, using pinned C_OS/A_OS historical adapters and a common
+    new-profile schema. Preserve original acceptance/run evidence and runtime
+    permissions; expose accepted versus proposed scope in API/notebook/browser.
+  - [ ] Independently review and explicitly accept or return exact A_CI G2.
+    Until accepted, discovery remains exactly C_OS/A_OS; no A_CI acceptance
+    record or additional supported declaration is created.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

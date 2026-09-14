@@ -1477,6 +1477,23 @@ explicitly reserving A_CI G2 review for later. Project that decision separately
 over the unchanged execution records. Next is integrated applicability and
 public-facade review, not a discovery/support update or another numerical rerun.
 
+The [integrated A_CI G2 review](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.md)
+is now a PASS proposal for the exact 28-cell product and declared finite
+crossings, supplemented by one zero-duration interface method. Preserve CI
+local-root/contraction scope, separate initializer targets and non-applicable
+PC-pair dispositions. Independent review and explicit G2 acceptance remain.
+
+Alongside that review, [ProfileG2Registry.json](./phase-9-grcv4/tranche-7/ProfileG2Registry.json)
+introduces shared acceptance plumbing: immutable historical C_OS/A_OS adapters,
+one common new-profile acceptance schema, pinned review/declaration identities,
+stable predecessor support and discovery equality for every accepted entry.
+Only accepted records contribute public support. API/notebook/browser expose
+both accepted and proposed records using the same roster; the browser renders
+exact IDs and decision states. Scientific checks remain profile-specific;
+runtime leaf permissions, old evidence and production numerical code do not
+change. Validate scoped record/authority mutations and the current surfaces,
+without repeating the accepted local/crossing numerical campaigns.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 
