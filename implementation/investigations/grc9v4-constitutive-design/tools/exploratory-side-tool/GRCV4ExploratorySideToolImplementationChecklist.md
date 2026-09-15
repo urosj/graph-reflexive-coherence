@@ -1868,3 +1868,27 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       eight declarations through the existing adapter/materializer. Bind
       checkpoint `2b7e974` and finite discovery-source comparisons; preserve
       original evidence. Both RG2b decisions, all-pairs, aggregate and G3 stay separate.
+
+### P9-7.7 A_RG2b local reconciliation
+
+- [x] Register `a_rg2b_local_product` through the shared materializer and generic
+      API/notebook/browser views: 21 local cells, completion-relative finite
+      section, independent inverse/current/writer equations and role ownership.
+- [x] Verify retained-evidence mutations and focused projection/cleanup without
+      rerunning unrelated campaigns. Keep eight accepted declarations unchanged;
+      crossing reconciliation, acceptance and integrated G2 remain separate
+      from the local record.
+
+### P9-7.7 A_RG2b crossing reconciliation
+
+- [x] Register `a_rg2b_crossings` through the shared materializer: nine native
+      cases, four separately scoped retained aliases and seven catalog cells.
+      Preserve exact graph endpoints, target-specific frozen completion,
+      per-role independent equations, history loss and K/K-minus boundaries.
+- [x] Verify retained-evidence mutation pressure, actual checker and generic
+      browser projection/cleanup without rerunning unrelated native campaigns:
+      14 focused methods, 52 evidence mutations and 11 browser controls passed.
+- [x] Record user acceptance of bounded reconciliation on 2026-09-15 through
+      the existing acceptance adapter pattern; original execution bytes remain.
+- [ ] Conduct the separate integrated G2 review; keep eight accepted
+      declarations, aggregate P9-7.7 and G3 unchanged here.

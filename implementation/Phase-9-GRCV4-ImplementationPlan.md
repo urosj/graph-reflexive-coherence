@@ -1689,6 +1689,24 @@ pin the finite discovery-source changes without rewriting earlier evidence.
 Both RG2b decisions, separate controls/targets, all-pairs, aggregate P9-7.7 and
 G3 remain separate. No next-profile work is begun as part of this acceptance.
 
+The next [A_RG2b local product](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-LocalReview.md)
+reconciles the original nomination against 21 local catalog cells. Check the
+frozen completion, bounded Lipschitz section and finite error with independent
+inverse transforms, dense current/continuity/log-writer equations, and separate
+current/reset/restart reconstruction. Cover fixed-beat rejection, construction
+budget/chart controls, readmission rollback, reset/replay and receipt ownership.
+Expose the evidence through the existing registry/materializer, without new
+public support. The subsequent
+[crossing reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-CrossingReview.md)
+addresses the remaining seven cells with nine native cases and four explicitly
+separate retained witnesses. Use the actual graph nomination for migration
+endpoints, not the earlier scalar A_RG2b fixture. Check independent per-role
+current/section reconstruction, the separate initializer-selected event target,
+explicit W/Z loss, reset/replay and target K versus ordinary-entry K-minus.
+The user accepted this bounded reconciliation on 2026-09-15. Preserve the
+original execution records and project acceptance through the shared materializer.
+Integrated G2 and aggregate P9-7.7/G3 remain separate.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

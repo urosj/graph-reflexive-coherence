@@ -2298,3 +2298,24 @@ The subsequent user acceptance projects eight exact declarations through the
 same adapter/materializer. Bind checkpoint `2b7e974`, preserve original review
 and execution bytes, and verify the finite discovery-source changes. Separate
 controls/targets, both RG2b decisions, all-pairs, aggregate and G3 are not promoted.
+
+A_RG2b local reconciliation adds one pinned `a_rg2b_local_product` view and
+local materializer. Retain 21 local cells, completion-relative Lipschitz/finite
+error boundaries, independent inverse and A equations, role-specific section
+reconstruction and fixed-beat/readmission rollback. Use the existing generic
+Python/API/notebook/browser projection; no new family-specific dispatch or
+renderer. Check retained-evidence mutations and the new view's actual checker
+plus shared projection/cleanup, without rerunning unrelated numerical campaigns.
+Eight G2 declarations stay unchanged; crossing reconciliation and later
+acceptance/integrated G2 remain separate from this local record.
+
+A_RG2b crossing reconciliation adds `a_rg2b_crossings` to the same pinned
+registry/materializer. Nine native cases address the remaining seven cells;
+four retained scalar/persistent witnesses keep their separate endpoint scope.
+Check actual graph nomination migrations, target-specific frozen completion,
+independent per-role readmission, explicit history loss, reset/replay and
+K-versus-K-minus controls. Use the generic API/notebook/browser view and test
+rehashed evidence, projection and cleanup. Check the bound local predecessor
+without rerunning its native campaign or unchanged predecessor chain. Bounded
+acceptance is now explicitly recorded from the user's 2026-09-15 decision;
+integrated G2, all-pairs, aggregate P9-7.7 and G3 are not inferred.

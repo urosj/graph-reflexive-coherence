@@ -75,7 +75,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[C_CI_PC]` | Accepted by user, 2026-09-14 | [Explicit acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Acceptance.json) binds the exact 33-cell review at checkpoint `2b7e974`. Separate targets, all-pairs and G3 are not promoted. |
 | `P9-G2[A_CI_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json) pins checkpoint `07859cc`. Separate targets, all-pairs and G3 are not promoted. |
 | `P9-G2[C_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
-| `P9-G2[A_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
+| `P9-G2[A_RG2b]` | HOLD, bounded reconciliation accepted | User accepted 21 local and seven crossing cells on 2026-09-15; separate integrated G2 review and decision remain pending. |
 
 `P9-G3[C_OS]` denotes singleton set `{C_OS}`. It may be reviewed through
 P9-7.8 after P9-G2[C_OS], independently of other profiles. Adding profiles
@@ -1492,6 +1492,19 @@ may reach G2 without waiting for all Tranche 6 realizations.
     `2b7e974`, preserve original review/execution bytes and publish eight exact
     declarations through the shared adapter. Both RG2b decisions, separate
     controls/targets, all-pairs, aggregate P9-7.7 and G3 remain outside scope.
+  - [x] Reconcile exact A_RG2b local product: 21 cells with completion-relative
+    section/error, independent inverse/current/writer equations, separate
+    current/reset/restart, fixed-beat and admission failures, replay/ownership.
+    [Local review](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-LocalReview.md).
+  - [x] Reconcile A_RG2b's remaining seven crossing cells: nine native cases,
+    exact graph endpoints, independent per-role section/current/initializer,
+    explicit history dispositions, reset/replay and target K versus K-minus.
+    Four retained scalar/persistent witnesses remain separately scoped.
+    [Crossing review](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-CrossingReview.md).
+  - [x] User accepted bounded A_RG2b reconciliation on 2026-09-15. Preserve
+    execution records and project acceptance through the shared materializer.
+  - [ ] Conduct the separate A_RG2b integrated G2 review. Eight accepted
+    declarations, all-pairs, aggregate P9-7.7 and G3 remain unchanged.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.
