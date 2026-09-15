@@ -14,6 +14,10 @@ import sys
 import tomllib
 
 _HERE = Path(__file__).resolve().parent
+# The API loads this policy by file location in a fresh process, before any
+# CLI/checker has populated the local verification-module search path.
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
 _presentation_spec = importlib.util.spec_from_file_location(
     "phase9_evidence_presentation", _HERE / "handoff_evidence.py"
 )
@@ -405,6 +409,9 @@ PATHS = {
     HERE + "test_p977_aggregate.py",
     HERE + "verify_p978_specialization_review.py",
     HERE + "test_p978_specialization_review.py",
+    HERE + "phase9_specialization_acceptance.py",
+    PHASE + "tranche-7/P9-7.8-G3Acceptance.json",
+    PHASE + "tranche-7/P9-7.8-G3Acceptance.md",
     PHASE + "tranche-7/P9-7.8-SpecializationReview.json",
     PHASE + "tranche-7/P9-7.8-SpecializationReview.md",
     SIDE + "tool/phase9-web/specialization-review.js",
@@ -1524,6 +1531,12 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {"P9-7.2b"})
     for name in EVENT_RUNTIME_PATHS:
         owners[name] = owners.get(name, set()) | {"P9-7.2b"}
+    from phase9_specialization_acceptance import accepted as accepted_g3, ENTRY, PATHS as g3_paths
+    accepted_g3(root)
+    ready = sorted(set(ready) | {ENTRY})
+    for name in g3_paths:
+        require(name in owners, 'G3 entry outside reviewed ownership')
+        owners[name] = owners[name] | {ENTRY}
     return ready, owners
 
 
@@ -1732,9 +1745,12 @@ def work_entries(root, approval):
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
     ready, owners = leaf_permissions(root)
+    from phase9_specialization_acceptance import accepted as accepted_g3, permitted as g3_permitted
+    g3 = accepted_g3(root)
+    leaves.update(g3['new_runtime_iterations_authorized'])
     require(
         value["accepted_generic_runtime_support"] == accepted_generic_support(root)
-        and value["admitted_specialization_support_sets"] == [],
+        and value["admitted_specialization_support_sets"] == g3['admitted_specialization_support_sets'],
         "work manifest cannot grant conformance beyond accepted G2",
     )
     for row in rows:
@@ -1745,12 +1761,12 @@ def work_entries(root, approval):
         name, leaf = row["path"], row["iteration_id"]
         require(leaf in leaves, "unregistered work iteration")
         require(
-            not leaf.startswith(("P9-8.", "P9-9.")),
-            "specialization requires accepted P9-G3",
+            not leaf.startswith(("P9-8.", "P9-9.")) or g3_permitted(name, leaf),
+            "specialization requires accepted P9-G3 and exact leaf/path entry",
         )
         if name in targets:
             require(
-                targets[name]["requires_gate"] == "P9-G1",
+                targets[name]["requires_gate"] == "P9-G1" or g3_permitted(name, leaf),
                 "specialization requires accepted P9-G3",
             )
             require(
@@ -1767,7 +1783,7 @@ def work_entries(root, approval):
         if name in targets:
             target = targets[name]
             require(
-                target["requires_gate"] == "P9-G1",
+                target["requires_gate"] == "P9-G1" or g3_permitted(name, leaf),
                 "specialization requires accepted P9-G3",
             )
             if target["operation"] == "additive_integration":

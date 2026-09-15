@@ -186,7 +186,7 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | P9-G0: phase opening | Exact accepted release, completed no-ff merge, branch, plan, checklist, and predecessor bindings. | Recorded. |
 | P9-G1: implementation review | Support order, module ownership, source-to-test mapping, inherited debt routing, and an accepted successor verification policy. | Accepted; [P9-1.9 successor](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json). |
 | `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | Ten exact declarations accepted; aggregate P9-7.7 accepted at `25b80f4`. No broader domains or target identities inferred. |
-| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | P9-7.8 review recommends the ten exact declarations; acceptance pending, no consumed set admitted. |
+| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Accepted at P9-7.8 for the ten exact declarations; Tranche 7 closed. Only P9-8.1a source entry is currently opened. |
 | P9-G4: release and handoff | Exact advertised support, all applicable evidence, legacy regression results, residual-debt routing, and review acceptance. | Pending. |
 
 The checklist records all ten `P9-G2[p]` rows. The aggregate generic support
@@ -1788,10 +1788,12 @@ oracle production, and P9-8.3A.2 depends on its acceptance. Any genuinely absent
 generic authority returns to a bounded Tranche 7 correction. No optional completion capability or
 stronger handoff target is selected. RG2b debt and exact generic scopes remain.
 
-Review is ready for acceptance; G3 and tranche-7 closure remain pending that
-decision. Acceptance must bind a scoped execution-policy successor before
-specialization source edits; the current Tranche 8/9 guard remains active.
-The next implementation leaf is P9-8.1a after admission, not A expansion.
+The user accepted the review at checkpoint `c6925b5` and closed Tranche 7 on
+2026-09-15. The [separate acceptance](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md)
+preserves original evidence and admits that exact G3 set. Its execution-policy
+successor opens only P9-8.1a chart/port graph in the V4 topology module and paired
+test; all other specialization leaves remain gated. No implementation begins
+with this acceptance. The next requested implementation is P9-8.1a, not A expansion.
 
 ### Tranche 8. GRC9V4 mechanical specialization
 

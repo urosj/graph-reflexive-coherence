@@ -1,11 +1,26 @@
 // Generated from the checked P9-7.8 review; not runtime authority.
 export const SPECIALIZATION_REVIEW = {
-  "status": "reviewed_recommended_pending_acceptance",
-  "user_accepted": false,
-  "tranche_7_closed": false,
-  "G3_accepted": false,
-  "admitted_specialization_support_sets": [],
-  "new_runtime_iterations_authorized": [],
+  "status": "accepted",
+  "user_accepted": true,
+  "tranche_7_closed": true,
+  "G3_accepted": true,
+  "admitted_specialization_support_sets": [
+    [
+      "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+      "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+      "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+      "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+      "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+      "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+      "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+      "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+      "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+      "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+    ]
+  ],
+  "new_runtime_iterations_authorized": [
+    "P9-8.1a"
+  ],
   "specialization_runtime_conformance": false,
   "proposed_consumed_support": [
     "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
@@ -19,7 +34,7 @@ export const SPECIALIZATION_REVIEW = {
     "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
     "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
   ],
-  "decision": "Recommend G3 implementation admission for the ten exact consumed generic declarations, with all recorded leaf prerequisites. No combined GRC9V4 runtime identity or conformance is admitted. User acceptance and a scoped execution-authorization successor are required before specialization source edits.",
+  "decision": "User accepted P9-7.8 and closed Tranche 7. Exact consumed-set G3 admission with only P9-8.1a entry; no specialization runtime conformance or other leaf authorization.",
   "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.8-SpecializationReview.json",
   "record_digest": "64b84f298089551389937f0445ced594d3315af011e29723470ac55f4e0cade4",
   "review_path": "implementation/phase-9-grcv4/tranche-7/P9-7.8-SpecializationReview.md",
@@ -51,5 +66,12 @@ export const SPECIALIZATION_REVIEW = {
     "independent_C_work_blocked": false
   },
   "optional_capabilities_selected": [],
-  "numerical_tests_rerun": 0
+  "numerical_tests_rerun": 0,
+  "runtime_paths": [
+    "src/pygrc/models/grc_9_v4_topology.py",
+    "tests/models/test_grc_9_v4_topology.py"
+  ],
+  "execution_scope": "P9-8.1a fixed chart and port graph only. No row differential/weight bridge, trigger, coarse/Split, expansion, disabled compatibility, optional completion, facade or legacy mutation. New work requires a hash-bound work-manifest entry; paths do not authorize unrelated contents.",
+  "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.json",
+  "acceptance_digest": "5175491685e067a8653f561d497c88f587f90ba2c27926f64d598ce502a57c16"
 };

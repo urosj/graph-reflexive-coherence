@@ -43,7 +43,10 @@ def _profile_next_gate(views):
                   'Other profile decisions, all-pairs, aggregate P9-7.7 and P9-G3 remain separate.') +
                  ' Initializer/event targets and arbitrary parameterizations are not added support.')
     if 'specialization_admission_review' in views:
-        parts.append('P9-7.8 review ready for acceptance: ten exact consumed declarations, 73 contracts and 40 pending disabled cells. Tranche-7 closure and G3 admission await acceptance; specialization execution stays gated. P9-8.3A.1 owns independent oracle construction/review; P9-8.3A.2 implements/tests against that accepted oracle. Any genuinely missing generic authority returns to a bounded Tranche 7 correction.')
+        decision = views['specialization_admission_review']
+        parts.append('P9-7.8 accepted; Tranche 7 closed. Exact consumed-set G3 admitted; only P9-8.1a chart/port-graph entry is authorized, not specialization conformance.'
+                     if decision['G3_accepted'] and decision['tranche_7_closed'] else 'P9-7.8 acceptance pending; no specialization admission.')
+        parts.append('P9-8.3A.1 owns independent oracle construction/review; P9-8.3A.2 depends on its acceptance. All 40 disabled cells and other specialization leaves remain pending. Any genuinely missing generic authority returns to a bounded Tranche 7 correction.')
     elif aggregate:
         parts.append('P9-7.8 specialization-admission review follows; no G3 support set is admitted.')
     return ' '.join(parts)
@@ -141,6 +144,7 @@ def verification_status(repo_root: Path) -> dict:
                     "new_runtime_iterations_authorized": [],
                 },
                 accepted_generic_runtime_support=accepted_support,
+                admitted_specialization_support_sets=profile_views['specialization_admission_review']['admitted_specialization_support_sets'],
                 schema="phase9_governance_status_v2",
                 runtime_authorized=True,
                 P9_G1_accepted=True,
@@ -254,7 +258,7 @@ def verification_status(repo_root: Path) -> dict:
                 permitted_runtime_paths=sorted(
                     r["path"]
                     for r in module.runtime_targets(approval)
-                    if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
+                    if (r["requires_gate"] == "P9-G1" or r['path'] in profile_views['specialization_admission_review']['runtime_paths']) and set(ready) & owners[r["path"]]
                 ),
                 next_gate=_profile_next_gate(profile_views),
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete profiles and reviewed domains; no family-wide, unlisted-profile or specialization conformance is inferred.",
@@ -427,6 +431,7 @@ def verification_status(repo_root: Path) -> dict:
         for key in profile_view_keys:
             payload.pop(key, None)
         payload["accepted_generic_runtime_support"] = []
+        payload["admitted_specialization_support_sets"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

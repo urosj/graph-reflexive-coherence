@@ -3,13 +3,13 @@ import assert from 'node:assert/strict';
 import {SPECIALIZATION_REVIEW} from './specialization-review.js';
 import {checkedSpecialization} from './verification.js';
 
-test('exact proposed consumed set is review-only, not G3 or conformance', () => {
+test('exact accepted consumed set closes tranche 7, not runtime conformance', () => {
   const value = {specialization_admission_review: structuredClone(SPECIALIZATION_REVIEW)};
   checkedSpecialization(value, true);
   assert.equal(value.specialization_admission_review.profile_count, 10);
   assert.equal(value.specialization_admission_review.disabled_cells, 40);
-  assert.equal(value.specialization_admission_review.G3_accepted, false);
-  assert.equal(value.specialization_admission_review.tranche_7_closed, false);
+  assert.equal(value.specialization_admission_review.G3_accepted, true);
+  assert.equal(value.specialization_admission_review.tranche_7_closed, true);
   const work=value.specialization_admission_review.a_expansion_work;
   assert.equal(work.oracle_owner,'P9-8.3A.1');
   assert.equal(work.runtime_owner,'P9-8.3A.2');
@@ -20,7 +20,7 @@ test('exact proposed consumed set is review-only, not G3 or conformance', () => 
 test('missing, mutated, widened and held-boundary review rejected', () => {
   assert.throws(()=>checkedSpecialization({},true), /specialization admission/);
   assert.throws(()=>checkedSpecialization({specialization_admission_review:SPECIALIZATION_REVIEW},false), /specialization admission/);
-  for (const edit of [v=>v.G3_accepted=true, v=>v.tranche_7_closed=true,
+  for (const edit of [v=>v.G3_accepted=false, v=>v.tranche_7_closed=false,
       v=>v.proposed_consumed_support.pop(), v=>v.pending_A_expansion_oracle=false,
       v=>v.specialization_runtime_conformance=true, v=>v.disabled_cells=39,
       v=>v.new_runtime_iterations_authorized.push('P9-8.1a'), v=>v.record_digest='0'.repeat(64),

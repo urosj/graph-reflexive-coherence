@@ -2410,3 +2410,10 @@ production-runtime prerequisite. A expansion remains unimplemented,
 and no numerical campaign or Tranche 8/9 execution is authorized. After user
 acceptance, bind the exact decision and scoped execution-policy successor;
 do not remove specialization guards merely because a review exists.
+
+P9-7.8 was accepted against checkpoint `c6925b5`; Tranche 7 is closed.
+Preserve the original review and project the separately pinned G3 decision.
+The scoped successor opens only P9-8.1a chart/port graph in its two V4-owned
+source/test paths. All other specialization leaves retain their prerequisites.
+API/notebook/browser support must agree with the work manifest and clear the
+G3 projection on failure. Update the main Phase 9 handoff for continuation.

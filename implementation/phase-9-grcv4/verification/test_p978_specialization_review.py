@@ -12,6 +12,7 @@ from unittest.mock import patch
 import phase9_implementation_policy as p
 import profile_g2_registry as g
 import verify_p978_specialization_review as r
+import phase9_specialization_acceptance as admission
 
 
 class SpecializationReviewTests(unittest.TestCase):
@@ -94,13 +95,36 @@ class SpecializationReviewTests(unittest.TestCase):
         with patch.object(r.aggregate, 'check', return_value=prior | {'user_accepted': False}):
             with self.assertRaisesRegex(ValueError, 'not accepted'): r.build()
 
-    def test_projection_remains_review_only(self):
+    def test_accepted_projection_preserves_review_and_scoped_entry(self):
         with patch.object(r, 'build', return_value=self.expected):
             v = g._checker(p.ROOT, 'verify_p978_specialization_review')()
-        for key in ('G3_accepted', 'user_accepted', 'tranche_7_closed', 'specialization_runtime_conformance'):
-            self.assertFalse(v[key])
-        self.assertEqual(v['new_runtime_iterations_authorized'], [])
-        self.assertEqual(v['admitted_specialization_support_sets'], [])
+        for key in ('G3_accepted', 'user_accepted', 'tranche_7_closed'):
+            self.assertTrue(v[key])
+            self.assertFalse(self.expected[key])
+        self.assertFalse(v['specialization_runtime_conformance'])
+        self.assertEqual(v['new_runtime_iterations_authorized'], ['P9-8.1a'])
+        self.assertEqual(v['admitted_specialization_support_sets'], [v['proposed_consumed_support']])
+        for path in (r.RECORD, r.TEXT):
+            self.assertEqual((p.ROOT/path).read_bytes(), p.git(p.ROOT, 'show', admission.CHECKPOINT+':'+path))
+
+    def test_acceptance_tampering_and_entry_widening_rejected(self):
+        good = admission.accepted(p.ROOT)
+        for edit in (lambda v:v.update(G3_accepted=False), lambda v:v.update(tranche_7_closed=False),
+                     lambda v:v['admitted_specialization_support_sets'][0].pop(),
+                     lambda v:v['runtime_paths'].append('src/pygrc/models/grc_9_v3.py'),
+                     lambda v:v['new_runtime_iterations_authorized'].append('P9-8.3A.2')):
+            bad=deepcopy(good);edit(bad);bad['record_digest']=p.digest_record(bad)
+            with patch.object(p,'read',return_value=bad), self.assertRaisesRegex(ValueError,'G3 acceptance'):
+                admission.accepted(p.ROOT)
+        with patch.object(p,'read',side_effect=FileNotFoundError), self.assertRaises(FileNotFoundError):
+            admission.accepted(p.ROOT)
+        for path in admission.PATHS:
+            self.assertTrue(admission.permitted(path,'P9-8.1a'))
+            for leaf in ('P9-8.1b','P9-8.2','P9-8.3A.1','P9-8.3A.2','P9-9.2'):
+                self.assertFalse(admission.permitted(path,leaf))
+        for path in ('src/pygrc/models/grc_9_v3.py','src/pygrc/models/grc_9_v4.py',
+                     'src/pygrc/models/grc_9_v4_expansion.py'):
+            self.assertFalse(admission.permitted(path,'P9-8.1a'))
 
     def test_api_browser_notebook_transport_and_failure_cleanup(self):
         tool = p.ROOT / p.SIDE / 'tool'
@@ -111,7 +135,7 @@ class SpecializationReviewTests(unittest.TestCase):
                        complete_profile_id=x['nomination']['complete_profile_id']) for x in self.expected['profiles']],
                  'profile_aggregate_reconciliation': self.expected['predecessor'],
                  'specialization_admission_review': r.view(self.expected)}
-        self.assertIn('review ready for acceptance', _profile_next_gate(views))
+        self.assertIn('Tranche 7 closed', _profile_next_gate(views))
         source = (tool/'src/grcv4_explorer/phase9_verification.py').read_text()
         self.assertLess(source.index("profile_views['specialization_admission_review'] ="), source.index('profile_view_keys = set(profile_views)'))
         self.assertIn('for key in profile_view_keys:', source)
@@ -143,6 +167,22 @@ class SpecializationReviewTests(unittest.TestCase):
         handler.end_headers = lambda: None
         handler.do_GET()
         self.assertEqual(handler.wfile.getvalue(), (p.ROOT/r.BROWSER).read_bytes())
+
+    def test_fresh_api_policy_import_resolves_acceptance_helper(self):
+        code = '''from pathlib import Path
+import sys
+root=Path.cwd()
+sys.path.insert(0,str(root/'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src'))
+from grcv4_explorer.phase9_verification import _policy
+policy=_policy(root)
+import phase9_specialization_acceptance as a
+assert Path(a.__file__).resolve()==root/'implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py'
+assert a.accepted(root)['tranche_7_closed'] is True
+print('fresh API policy pass')
+'''
+        result=subprocess.run([sys.executable,'-I','-c',code],cwd=p.ROOT,capture_output=True,text=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertIn('fresh API policy pass',result.stdout)
 
 
 if __name__ == '__main__': unittest.main()

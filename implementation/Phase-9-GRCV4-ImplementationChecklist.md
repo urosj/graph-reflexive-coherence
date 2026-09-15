@@ -56,7 +56,7 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | P9-G0 | Recorded | Branch and planning documents; accepted release audit and no-ff merge identity. |
 | P9-G1 | Accepted | [P9-1.9 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json), exact implementation scope and successor dispatch. |
 | `P9-G2[p]` | Ten exact declarations accepted | Full applicable generic runtime/lifecycle fixture product for exact profile scope p; aggregate P9-7.7 accepted, no broader domains inferred. |
-| `P9-G3[S]` | P9-7.8 review ready; acceptance pending | Ten exact generic declarations proposed; mechanics/legacy/test matrix reviewed, no specialization work admitted yet. |
+| `P9-G3[S]` | Accepted; Tranche 7 closed | Ten exact generic declarations consumed; scoped P9-8.1a chart/port-graph entry only, no specialization conformance. |
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
 The initially empty generic support set now contains exact C_OS, A_OS,
@@ -1549,7 +1549,7 @@ may reach G2 without waiting for all Tranche 6 realizations.
     preserve original evidence and publish the tenth exact declaration through
     the shared adapter. Aggregate P9-7.7, G3 and specialization remain separate.
     [Acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Acceptance.md).
-- [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
+- [x] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.
   - [x] Review the ten exact accepted declarations and accepted aggregate 7.7;
@@ -1561,8 +1561,9 @@ may reach G2 without waiting for all Tranche 6 realizations.
     [Review](./phase-9-grcv4/tranche-7/P9-7.8-SpecializationReview.md).
   - [x] Expose the checked pending review through API/notebook/browser with
     scope/gate/drift rejection pressure; no new runtime authorization.
-  - [ ] Accept the exact G3 consumed set and tranche-7 closure; bind a scoped
-    execution-policy successor before specialization source edits.
+  - [x] User accepted the exact G3 consumed set and Tranche 7 closure against
+    `c6925b5`; the scoped successor opens only P9-8.1a's V4 topology source/test
+    entry. No runtime file is created. [Acceptance](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md).
 
 ## Tranche 8. D11-G9 mechanical specialization
 

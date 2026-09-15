@@ -165,7 +165,7 @@ console.log('SHARED_G2_BROWSER_PASS');
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertIn('SHARED_G2_BROWSER_PASS',result.stdout)
 
-    def test_accepted_evidence_and_runtime_permissions_are_unchanged(self):
+    def test_accepted_evidence_and_pre_g3_permissions_are_unchanged(self):
         paths = [p.G2_ACCEPTANCE] + [p.PHASE+'tranche-7/P9-7.7-'+name for name in (
             'A_OS-G2Acceptance.json', 'A_OS-G2Review.json', 'A_OS-G2Interface.json',
             'A_OS-G2SourceReuse.json', 'A_CI-LocalProduct.json', 'A_CI-Crossings.json')]
@@ -174,8 +174,20 @@ console.log('SHARED_G2_BROWSER_PASS');
                 self.assertEqual((p.ROOT/name).read_bytes(), p.git(p.ROOT,'show','e883ede:'+name))
         name=p.HERE+'phase9_implementation_policy.py'
         def leaf(source):
-            return ast.dump(next(n for n in ast.parse(source).body if isinstance(n,ast.FunctionDef) and n.name=='leaf_permissions'))
-        self.assertEqual(leaf((p.ROOT/name).read_text()),leaf(p.git(p.ROOT,'show','e883ede:'+name)))
+            return next(n for n in ast.parse(source).body if isinstance(n,ast.FunctionDef) and n.name=='leaf_permissions')
+        current = leaf((p.ROOT/name).read_text())
+        # G3 adds only its explicitly accepted first-leaf entry. Preserve this
+        # historical guard on every preceding generic permission statement.
+        extension = ast.parse('''from phase9_specialization_acceptance import accepted as accepted_g3, ENTRY, PATHS as g3_paths
+accepted_g3(root)
+ready = sorted(set(ready) | {ENTRY})
+for name in g3_paths:
+    require(name in owners, 'G3 entry outside reviewed ownership')
+    owners[name] = owners[name] | {ENTRY}
+''').body
+        self.assertEqual([ast.dump(n) for n in current.body[-5:-1]], [ast.dump(n) for n in extension])
+        del current.body[-5:-1]
+        self.assertEqual(ast.dump(current), ast.dump(leaf(p.git(p.ROOT,'show','e883ede:'+name))))
 
 
 if __name__ == '__main__':

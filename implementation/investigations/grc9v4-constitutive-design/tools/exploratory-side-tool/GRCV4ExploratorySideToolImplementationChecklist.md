@@ -1960,8 +1960,10 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       its shared API/notebook/browser transport; serve the generated asset.
 - [x] Reject altered scope, missing predecessor, source drift, omitted disabled
       cells, invented runtime credit and premature G3/closure projections.
-- [ ] Record user acceptance and scoped execution-policy successor before
-      specialization work. No G3 or tranche-7 closure inferred from review.
+- [x] Record user acceptance at `c6925b5`, close Tranche 7 and project the
+      exact G3 set. Open only the P9-8.1a topology source/test entry through
+      the scoped successor; all other specialization leaves stay gated.
+- [x] Update the main Phase 9 handoff, next-step summary and notebook text.
 - [x] Assign and expose P9-8.3A.1 oracle production and P9-8.3A.2 runtime
       comparison, exact dependencies and same-scope parent closure. Reject
       missing ownership, bypassed oracle acceptance or generic-gap workaround.

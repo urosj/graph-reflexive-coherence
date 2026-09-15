@@ -1,4 +1,72 @@
-# Phase 9 GRCV4 handoff — P9-7.2a profile migration
+# Phase 9 GRCV4 handoff — Tranche 7 closed; P9-8.1a next
+
+## Current state — 2026-09-15
+
+The user accepted P9-7.8 and **closed Tranche 7**. The
+[G3 acceptance and closure](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md)
+binds review checkpoint `c6925b5` on `impl/phase-9-grcv4-tranche-7`.
+No merge or Tranche 8 implementation was requested in that closure turn.
+
+- Ten exact generic G2 declarations are accepted through the shared
+  [registry](./phase-9-grcv4/tranche-7/ProfileG2Registry.json), not arbitrary
+  parameters/graphs or all ordered profile pairs.
+- P9-7.1, both 7.2 children, 7.3–7.6 and the
+  [305-cell aggregate 7.7](./phase-9-grcv4/tranche-7/P9-7.7-AggregateAcceptance.md)
+  are accepted. P9-7.8 admits one consumed G3 set containing those ten exact
+  generic declarations. It does not certify ten combined GRC9V4 models.
+- Only **P9-8.1a: fixed chart/port graph** is now dependency-ready for new
+  specialization source work, in `src/pygrc/models/grc_9_v4_topology.py` and
+  `tests/models/test_grc_9_v4_topology.py`. These files are not created by
+  acceptance. Later responsibilities in that module are not opened. A future
+  implementation request must bind its concrete changes in the work manifest.
+- **P9-8.3A.1** owns independent A specialization oracle selection,
+  construction and review; **P9-8.3A.2** implements/tests against that accepted
+  oracle and depends on applicable chart/differential/trigger/allocator work.
+  Neither has started. Genuine missing generic authority returns to a bounded
+  Tranche 7 correction, not a specialization workaround.
+- All 40 disabled-compatibility cells (10 profiles × four surfaces), deep
+  expansion/covariance and mandatory specialization lifecycle remain pending
+  Tranche 8/9 obligations. V4 owns its adapter; GRC9/GRC9V3 remain unchanged.
+  No optional completed-spark/hierarchy capability or stronger handoff is selected.
+
+Primary next-work sources are the [plan](./Phase-9-GRCV4-ImplementationPlan.md),
+[checklist](./Phase-9-GRCV4-ImplementationChecklist.md),
+[GRC9V4 spec](../specs/grc-9-v4-spec.md), accepted paper and typed claims.
+Read the full next leaf, not a narrower example from a historical handoff.
+
+For another machine, use a normal clone with accepted Git history, including
+`c6925b5` and the commit containing `P9-7.8-G3Acceptance.json`. Check branch,
+status and the actual acceptance record; do not infer closure from this prose
+alone. Use repository `.venv` and the side-tool-managed Node environment.
+All retained paths are repository-relative; no new archive is needed.
+
+Lean acceptance recheck, from repository root:
+
+```sh
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p978_specialization_review.py
+PYTHONPATH=implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p978_specialization_review
+```
+
+The API/notebook/browser `specialization_admission_review` projects the
+accepted G3 decision and closed tranche separately from the original pending
+review JSON. Failed current integrity clears G3/support projections. A rerun
+is not a replacement for an accepted historical execution.
+
+Validation at closure: the focused P9-7.8 acceptance tests, historical generic
+permission-preservation regression, fresh-process API-policy import, scoped
+current boundary and 42 affected browser tests passed. The fresh-process check
+caught and corrected a missing local helper import path. The complete live
+status projection was subsequently interrupted after a prolonged run without
+a result; **do not report that full projection as passed**. This is an outstanding
+end-to-end status verification, not missing generic scientific evidence or a
+new numerical failure. The dedicated acceptance checker above is the bounded
+recheck; no numerical campaign or broad status rerun is required merely to
+read the accepted records.
+
+The following sections preserve historical checkpoints. Their old “current”
+and “next” statements describe those checkpoints, not today's work order.
+
+## Historical P9-7.2a handoff
 
 **Current disposition: P9-7.2a accepted and closed on 2026-09-11.** The user
 accepted all seven reviewed migration classes and the final codec-reference
@@ -976,7 +1044,7 @@ identity, request, result, packaging and ownership boundaries.
 provide the bounded prefix harness and independent oracles. An imported
 callback/control remains a control even when its bytes match real execution.
 
-## Next bounded implementation step: Tranche 7
+## Historical next-step scope: full P9-7.1
 
 The active task is the **full P9-7.1 parent**, not just A_OS: snapshot/save/load/
 replay, reset, rebase and independent duplication for ten exact family fixtures.
@@ -1146,6 +1214,7 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> P9-2.6 is accepted at `5307343`; do not repeat that acceptance or infer runtime
-> support. Check local setup and identify the next bounded P9-3.1 entry action.
+> Tranche 7 and exact consumed-set G3 are accepted; verify their acceptance
+> record and current boundary. P9-8.1a fixed chart/port graph is next, not the
+> A-expansion oracle or disabled compatibility. Preserve all later leaf gates.
 > Do not implement or change branches until I authorize continuation.

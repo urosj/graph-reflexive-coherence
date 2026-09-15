@@ -163,7 +163,10 @@ def validate(value, expected):
 
 
 def view(value):
-    return {k: value[k] for k in ('status', 'user_accepted', 'tranche_7_closed', 'G3_accepted',
+    from phase9_specialization_acceptance import accepted, RECORD as acceptance_path
+    decision = accepted(p.ROOT)
+    p.require(value['record_digest'] == decision['review']['record_digest'], 'G3 view subject mismatch')
+    result = {k: value[k] for k in ('status', 'user_accepted', 'tranche_7_closed', 'G3_accepted',
             'admitted_specialization_support_sets', 'new_runtime_iterations_authorized',
             'specialization_runtime_conformance', 'proposed_consumed_support', 'decision')} | dict(
         record_path=RECORD, record_digest=value['record_digest'], review_path=TEXT,
@@ -171,6 +174,13 @@ def view(value):
         contract_count=len(value['authority']), pending_A_expansion_oracle=True,
         a_expansion_work=value['a_expansion_work'],
         optional_capabilities_selected=[], numerical_tests_rerun=0)
+    result.update(status='accepted', user_accepted=True, tranche_7_closed=True, G3_accepted=True,
+                  admitted_specialization_support_sets=decision['admitted_specialization_support_sets'],
+                  new_runtime_iterations_authorized=decision['new_runtime_iterations_authorized'],
+                  runtime_paths=decision['runtime_paths'], execution_scope=decision['execution_scope'],
+                  acceptance_path=acceptance_path, acceptance_digest=decision['record_digest'],
+                  decision='User accepted P9-7.8 and closed Tranche 7. Exact consumed-set G3 admission with only P9-8.1a entry; no specialization runtime conformance or other leaf authorization.')
+    return result
 
 
 def browser_source(value):
