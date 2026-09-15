@@ -16,6 +16,7 @@ import verify_p977_profile_review as review
 import verify_p977_c_rg2b_local as local
 import verify_p977_c_rg2b_crossings as crossing
 import verify_p977_c_rg2b_acceptance as acceptance
+from c_rg2b_g2_source_reuse import retained_bindings
 
 SCRIPT = p.HERE + 'verify_p977_c_rg2b_g2.py'
 TEST = p.HERE + 'test_p977_c_rg2b_g2.py'
@@ -145,7 +146,7 @@ def build(bounded_acceptance=None):
         p.PHASE+'tranche-6/P9-6.4d-AuditFollowup.json', p.PHASE+'tranche-6/P9-6.5-RealizationRouting.json')})
     value = dict(schema='phase9_c_rg2b_integrated_g2_review_v1', gate='P9-G2[C_RG2b]', verdict='PASS_PROPOSAL',
         user_accepted=False, G2_accepted=False, G3_accepted=False, aggregate_closed=False, new_G2_support=[],
-        source_bindings=sources, nomination=a['nomination'], proposed_additional_support=[NOMINATED],
+        source_bindings=retained_bindings(sources), nomination=a['nomination'], proposed_additional_support=[NOMINATED],
         accepted_support_unchanged=prior, releases=dict(base=RELEASE_ID, initializer=INITIALIZER_RELEASE_ID, event=EVENT_RELEASE_ID),
         bounded_acceptance=dict(commit=BOUNDED_COMMIT,path=acceptance.REVIEW, sha256=acceptance.ACCEPTANCE_SHA256, execution_digest=b['record_digest']),
         evidence_digests={local.RECORD:a['record_digest'], crossing.RECORD:b['record_digest'], INTERFACE:interface['record_digest']},

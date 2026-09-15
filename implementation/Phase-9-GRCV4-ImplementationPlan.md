@@ -1755,6 +1755,13 @@ K/K-minus and Lipschitz-only/C1-debt boundaries. Register a proposed exact-profi
 row through the shared adapter/materializer, without publishing a tenth accepted
 declaration or closing aggregate P9-7.7/G3.
 
+The user subsequently accepted exact C_RG2b G2 on 2026-09-15. Bind reviewed
+checkpoint `796229e`, preserve original evidence and publish the tenth exact
+declaration through the shared registry. Finite source projections cover only
+discovery changes and retained-evidence comparison. The C1 debt, separate
+controls/targets, all-pairs, aggregate P9-7.7 and G3 remain separate; no new
+runtime iterations or specialization support are authorized.
+
 ### Tranche 8. GRC9V4 mechanical specialization
 
 Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.

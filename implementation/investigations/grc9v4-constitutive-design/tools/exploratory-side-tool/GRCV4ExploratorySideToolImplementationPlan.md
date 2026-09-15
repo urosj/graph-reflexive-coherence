@@ -2361,3 +2361,9 @@ The integrated C_RG2b proposal uses one `exact_profile_v1` registry row and the
 complete reference/baseline chains, separate A initializer/event endpoints,
 fixed completion and Lipschitz/K/K-minus limits. The shared API/notebook/browser
 exposes a proposal; no new dispatch branches or public-support updates follow.
+
+The subsequent C_RG2b G2 acceptance binds checkpoint `796229e` and publishes
+the tenth exact declaration through the same shared API/notebook/browser
+projection. Preserve original executions and pin only finite discovery-source
+changes. C1 debt, unreviewed pairs, separate targets, aggregate and G3 remain
+outside this decision; runtime owners and permissions are unchanged.

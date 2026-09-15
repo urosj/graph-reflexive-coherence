@@ -1930,5 +1930,7 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Verify one native facade method, 15 focused review/surface methods,
       42 rehashed interface/proposal mutations and the phase boundary. The actual
       checker and shared browser expose only a proposed tenth declaration.
-- [ ] Separate C_RG2b G2 acceptance. Aggregate, G3 and specialization remain
-      separate from both bounded reconciliation and the proposed exact G2.
+- [x] Record the user's exact C_RG2b G2 acceptance on 2026-09-15. Bind
+      checkpoint `796229e` and project ten exact declarations via the common
+      adapter, preserving original evidence with finite source comparisons.
+      Aggregate, G3, C1 debt and specialization remain separate.

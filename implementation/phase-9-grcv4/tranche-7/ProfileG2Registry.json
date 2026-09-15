@@ -199,9 +199,12 @@
       "profile_family_id": "C_RG2b",
       "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
       "gate": "P9-G2[C_RG2b]",
-      "state": "proposed",
+      "state": "accepted",
       "adapter": "exact_profile_v1",
-      "acceptance": null,
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Acceptance.json",
+        "record_digest": "67619e80dd9a5cfa6d6293cc7f16e19a8ba0b9e9d407a28cab73074507374a6a"
+      },
       "review": {
         "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
         "record_digest": "321ce3bf367100425800218d8cf6aca15a549f9be7bb3ec46b35f046474f5c8f"
@@ -215,7 +218,7 @@
       }
     }
   ],
-  "record_digest": "fe7809e9ae01124716588c278d1271421f2964abde43ce3ca899ae0a72d56196",
+  "record_digest": "effea1737fcb453929ef290abc6b4af2d22b058f69385804a770fc80757352cb",
   "reconciliation_views": {
     "a_os_local_product": {
       "status": "local_product_verified_pending_review",

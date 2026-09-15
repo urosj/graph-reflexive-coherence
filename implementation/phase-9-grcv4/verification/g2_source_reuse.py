@@ -44,6 +44,9 @@ def matches(expected, current):
     if not changed:
         return True
     desired = {n: expected[n] for n in changed}
+    from c_rg2b_g2_source_reuse import retained_bindings as c_rg_successor
+    if desired == c_rg_successor(changed):
+        return True
     from a_rg2b_g2_source_reuse import retained_bindings as rg_successor
     if desired == rg_successor(changed):
         return True

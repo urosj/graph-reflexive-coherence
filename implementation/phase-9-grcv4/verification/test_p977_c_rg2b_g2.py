@@ -36,7 +36,7 @@ class InterfaceTests(unittest.TestCase):
         self.assertEqual(owner.snapshot(), initial)
         self.assertEqual(owner.list_supported_profiles(), frozenset({NOMINATED}))
         self.assertEqual(owner.get_supported_profile(NOMINATED), inputs.geometry.reference.profile)
-        self.assertNotIn(NOMINATED, list_supported_profiles())  # This G2 decision is still proposed.
+        self.assertIn(NOMINATED, list_supported_profiles())  # Exact G2 declaration accepted by the user.
         self.assertEqual(owner.run(0), [])
         for call, error in ((owner.step, MissingV4StepRequest), (lambda: owner.run(1), MissingV4StepRequest),
                             (lambda: owner.run(True), TypeError), (lambda: owner.run(-1), ValueError),

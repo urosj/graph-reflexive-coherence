@@ -74,7 +74,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[A_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json). No all-pairs or G3. |
 | `P9-G2[C_CI_PC]` | Accepted by user, 2026-09-14 | [Explicit acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Acceptance.json) binds the exact 33-cell review at checkpoint `2b7e974`. Separate targets, all-pairs and G3 are not promoted. |
 | `P9-G2[A_CI_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json) pins checkpoint `07859cc`. Separate targets, all-pairs and G3 are not promoted. |
-| `P9-G2[C_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
+| `P9-G2[C_RG2b]` | Accepted, exact declaration | User accepted the 33-cell graph nomination on 2026-09-15; frozen Lipschitz/K/K-minus limits and separate initializer/event endpoints remain explicit. |
 | `P9-G2[A_RG2b]` | Accepted, 2026-09-15 | Exact reviewed 28-cell graph nomination at `504859f`; frozen-completion/Lipschitz and ordered-target limits retained. Nine exact declarations published. |
 
 `P9-G3[C_OS]` denotes singleton set `{C_OS}`. It may be reviewed through
@@ -1535,8 +1535,10 @@ may reach G2 without waiting for all Tranche 6 realizations.
     The facade method, 15 focused methods, 42 rehashed mutations and the phase
     boundary pass. Nine accepted G2 declarations are unchanged.
     [G2 review](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.md).
-  - [ ] Separate user acceptance of exact C_RG2b G2; nine public declarations,
-    aggregate P9-7.7, G3 and specialization remain unchanged meanwhile.
+  - [x] User accepted exact C_RG2b G2 on 2026-09-15. Bind checkpoint `796229e`,
+    preserve original evidence and publish the tenth exact declaration through
+    the shared adapter. Aggregate P9-7.7, G3 and specialization remain separate.
+    [Acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Acceptance.md).
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.
