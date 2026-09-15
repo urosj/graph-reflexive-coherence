@@ -1529,6 +1529,14 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] User accepted bounded C_RG2b local/crossing reconciliation on 2026-09-15
     and requested its commit before G2. Preserve execution records and nine
     accepted G2 declarations; the integrated G2 decision remains separate.
+  - [x] Prepare the integrated C_RG2b G2 proposal from checkpoint `a168b7d`:
+    33 exact cells, one zero-duration facade supplement, complete C authority,
+    separate initializer/event endpoints and frozen Lipschitz/K/K-minus limits.
+    The facade method, 15 focused methods, 42 rehashed mutations and the phase
+    boundary pass. Nine accepted G2 declarations are unchanged.
+    [G2 review](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.md).
+  - [ ] Separate user acceptance of exact C_RG2b G2; nine public declarations,
+    aggregate P9-7.7, G3 and specialization remain unchanged meanwhile.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

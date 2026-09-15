@@ -1747,6 +1747,14 @@ commit before the integrated G2 review. Preserve both original execution records
 and project the decision through the existing acceptance-adapter pattern. Nine
 public G2 declarations, runtime permissions, all-pairs and G3 remain unchanged.
 
+The subsequent [C_RG2b G2 proposal](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.md)
+binds accepted checkpoint `a168b7d`, reuses all 33 cells and adds one zero-duration
+public-interface supplement. Preserve complete C reference/mobility/baseline
+authority, separately initialized A_OS and mapped-event targets, fixed beat,
+K/K-minus and Lipschitz-only/C1-debt boundaries. Register a proposed exact-profile
+row through the shared adapter/materializer, without publishing a tenth accepted
+declaration or closing aggregate P9-7.7/G3.
+
 ### Tranche 8. GRC9V4 mechanical specialization
 
 Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.

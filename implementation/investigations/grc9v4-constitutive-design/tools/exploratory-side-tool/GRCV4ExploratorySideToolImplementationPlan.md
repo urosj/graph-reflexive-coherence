@@ -2354,3 +2354,10 @@ The user accepted bounded C_RG2b reconciliation on 2026-09-15. Project the
 decision through the existing acceptance adapter, leaving original execution
 records and nine public G2 declarations unchanged. Integrated G2 follows the
 accepted reconciliation commit as a separate review.
+
+The integrated C_RG2b proposal uses one `exact_profile_v1` registry row and the
+`c_rg2b_g2_review` materializer dependent on accepted `c_rg2b_crossings`. Reuse
+33 cells, add one zero-duration facade supplement and preserve C-only authority,
+complete reference/baseline chains, separate A initializer/event endpoints,
+fixed completion and Lipschitz/K/K-minus limits. The shared API/notebook/browser
+exposes a proposal; no new dispatch branches or public-support updates follow.

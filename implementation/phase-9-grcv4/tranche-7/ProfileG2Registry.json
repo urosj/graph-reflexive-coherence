@@ -194,9 +194,28 @@
         "supplemental_interface_methods": 1,
         "numerical_tests_rerun": 0
       }
+    },
+    {
+      "profile_family_id": "C_RG2b",
+      "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+      "gate": "P9-G2[C_RG2b]",
+      "state": "proposed",
+      "adapter": "exact_profile_v1",
+      "acceptance": null,
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+        "record_digest": "321ce3bf367100425800218d8cf6aca15a549f9be7bb3ec46b35f046474f5c8f"
+      },
+      "view_key": "c_rg2b_g2_review",
+      "bounded_view_key": "c_rg2b_crossings",
+      "review_metrics": {
+        "catalog_cells": 33,
+        "supplemental_interface_methods": 1,
+        "numerical_tests_rerun": 0
+      }
     }
   ],
-  "record_digest": "fbe958a22aed0143c7e57d95ef5d8c4120272d1442ab1ca4aab07f3936524d17",
+  "record_digest": "fe7809e9ae01124716588c278d1271421f2964abde43ce3ca899ae0a72d56196",
   "reconciliation_views": {
     "a_os_local_product": {
       "status": "local_product_verified_pending_review",
@@ -760,6 +779,12 @@
       "module": "verify_p977_c_rg2b_acceptance",
       "kind": "crossing",
       "dependency": "c_rg2b_local_product"
+    },
+    {
+      "view_key": "c_rg2b_g2_review",
+      "module": "verify_p977_c_rg2b_g2",
+      "kind": "g2",
+      "dependency": "c_rg2b_crossings"
     }
   ]
 }

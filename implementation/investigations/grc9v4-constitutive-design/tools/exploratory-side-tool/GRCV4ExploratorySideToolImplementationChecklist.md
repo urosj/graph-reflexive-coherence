@@ -1924,3 +1924,11 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Record the user's bounded acceptance on 2026-09-15 through the shared
       adapter pattern; preserve nine accepted G2 declarations, original
       execution records and separate aggregate/G3 gates.
+- [x] Prepare the integrated C_RG2b G2 proposal through the common adapter and
+      dependency-ordered materializer: 33 cells, one facade supplement, exact
+      C authority and frozen completion/endpoint ceilings; no new public support.
+- [x] Verify one native facade method, 15 focused review/surface methods,
+      42 rehashed interface/proposal mutations and the phase boundary. The actual
+      checker and shared browser expose only a proposed tenth declaration.
+- [ ] Separate C_RG2b G2 acceptance. Aggregate, G3 and specialization remain
+      separate from both bounded reconciliation and the proposed exact G2.
