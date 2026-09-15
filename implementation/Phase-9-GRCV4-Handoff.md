@@ -1,4 +1,237 @@
-# Phase 9 GRCV4 handoff — Tranche 6 closed; Tranche 7 next
+# Phase 9 GRCV4 handoff — Tranche 7 closed; P9-8.1a next
+
+## Current state — 2026-09-15
+
+The user accepted P9-7.8 and **closed Tranche 7**. The
+[G3 acceptance and closure](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md)
+binds review checkpoint `c6925b5` on `impl/phase-9-grcv4-tranche-7`.
+No merge or Tranche 8 implementation was requested in that closure turn.
+
+- Ten exact generic G2 declarations are accepted through the shared
+  [registry](./phase-9-grcv4/tranche-7/ProfileG2Registry.json), not arbitrary
+  parameters/graphs or all ordered profile pairs.
+- P9-7.1, both 7.2 children, 7.3–7.6 and the
+  [305-cell aggregate 7.7](./phase-9-grcv4/tranche-7/P9-7.7-AggregateAcceptance.md)
+  are accepted. P9-7.8 admits one consumed G3 set containing those ten exact
+  generic declarations. It does not certify ten combined GRC9V4 models.
+- Only **P9-8.1a: fixed chart/port graph** is now dependency-ready for new
+  specialization source work, in `src/pygrc/models/grc_9_v4_topology.py` and
+  `tests/models/test_grc_9_v4_topology.py`. These files are not created by
+  acceptance. Later responsibilities in that module are not opened. A future
+  implementation request must bind its concrete changes in the work manifest.
+- **P9-8.3A.1** owns independent A specialization oracle selection,
+  construction and review; **P9-8.3A.2** implements/tests against that accepted
+  oracle and depends on applicable chart/differential/trigger/allocator work.
+  Neither has started. Genuine missing generic authority returns to a bounded
+  Tranche 7 correction, not a specialization workaround.
+- All 40 disabled-compatibility cells (10 profiles × four surfaces), deep
+  expansion/covariance and mandatory specialization lifecycle remain pending
+  Tranche 8/9 obligations. V4 owns its adapter; GRC9/GRC9V3 remain unchanged.
+  No optional completed-spark/hierarchy capability or stronger handoff is selected.
+
+Primary next-work sources are the [plan](./Phase-9-GRCV4-ImplementationPlan.md),
+[checklist](./Phase-9-GRCV4-ImplementationChecklist.md),
+[GRC9V4 spec](../specs/grc-9-v4-spec.md), accepted paper and typed claims.
+Read the full next leaf, not a narrower example from a historical handoff.
+
+For another machine, use a normal clone with accepted Git history, including
+`c6925b5` and the commit containing `P9-7.8-G3Acceptance.json`. Check branch,
+status and the actual acceptance record; do not infer closure from this prose
+alone. Use repository `.venv` and the side-tool-managed Node environment.
+All retained paths are repository-relative; no new archive is needed.
+
+Lean acceptance recheck, from repository root:
+
+```sh
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p978_specialization_review.py
+PYTHONPATH=implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p978_specialization_review
+```
+
+The API/notebook/browser `specialization_admission_review` projects the
+accepted G3 decision and closed tranche separately from the original pending
+review JSON. Failed current integrity clears G3/support projections. A rerun
+is not a replacement for an accepted historical execution.
+
+Validation at closure: the focused P9-7.8 acceptance tests, historical generic
+permission-preservation regression, fresh-process API-policy import, scoped
+current boundary and 42 affected browser tests passed. The fresh-process check
+caught and corrected a missing local helper import path. The complete live
+status projection was subsequently interrupted after a prolonged run without
+a result; **do not report that full projection as passed**. This is an outstanding
+end-to-end status verification, not missing generic scientific evidence or a
+new numerical failure. The dedicated acceptance checker above is the bounded
+recheck; no numerical campaign or broad status rerun is required merely to
+read the accepted records.
+
+The following sections preserve historical checkpoints. Their old “current”
+and “next” statements describe those checkpoints, not today's work order.
+
+## Historical P9-7.2a handoff
+
+**Current disposition: P9-7.2a accepted and closed on 2026-09-11.** The user
+accepted all seven reviewed migration classes and the final codec-reference
+correction. See the [acceptance](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md).
+The unchanged 25/17-test migration subjects and separate 25/25 initializer
+capture remain inspectable at their original identities. Current tool status
+reports later acceptance separately from historical capture/design flags.
+
+**Next planned step: P9-7.2b caller-mapped generic topology events**, on a
+separate continuation request. It has not been started here. No new G2/G3,
+formation or specialization support follows from P9-7.2a closure.
+
+## Historical P9-7.2a implementation sequence
+
+Current work, 2026-09-11: `impl/phase-9-grcv4-tranche-7`, accepted migration
+baseline `924fca9`, following `5d8dbe2` (complete P9-7.1 and audit corrections).
+See the [migration review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) for the
+13 exact source/target fixtures, six implemented classes and focused evidence.
+The focused capture passed 25/25 tests: all 13 positive pairs plus nine
+negative/rollback and three legacy checks. The read-only successor, 35 browser
+controls and actual API/notebook/browser checks passed. This finite scope was
+accepted by the user's commit request, including the audit
+corrections below, and committed at `924fca9`. Aggregate closure remains pending.
+
+The subsequent audit held the scoped work for two lifecycle corrections:
+programmer exceptions must not become scientific failure receipts, and known
+or repeated scientific identities must have consistent component commitments.
+Both reproduced natively and are corrected; the focused correction capture
+passed 17/17 methods. See the review's audit section. The original 25-test record
+and exact source subject remain recoverable and are not relabeled as a rerun.
+That commit stopped at the bounded corrections as requested; it did not close
+C→A or grant wider support. The user subsequently accepted the initializer
+design at `49b83ba`; the source/tool continuation below is not aggregate closure.
+
+**C→A implementation is now user-accepted:** the accepted initializer specification
+was committed at `f7962e4`. An additive package, shared graph-generic producer,
+five-target migration path and separate current/reset provenance are implemented.
+See the [runtime review](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md)
+and its new execution record. The old refusals and 25/17-test records remain
+historical evidence, not proof of this implementation. The accept-and-commit
+request on 2026-09-11 accepts the new runtime scope; the runtime review records
+that later decision without changing execution-time flags. Aggregate review
+and acceptance remain separate; generic topology events remain P9-7.2b.
+
+## Historical initializer authority and propagation sequence
+
+The [initializer proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
+defines one target-only pass: fresh differentials → auxiliary `G_W(C, 0)` →
+reference baseline flux → full `G_W(C, J_ref)`. It includes fixed reference-data
+separation, rounding/floor/range semantics, new policy identities, independent
+current/reset construction and required admission evidence for all five A
+realizations. The supplied design review is **PASS**, with the unit-vertex/
+boundary/normalization scope clarified and the auxiliary-singularity regression
+retained. Identity ordering, genuine reset-only pressure, fixed target charts
+and restoration of archived versus evolved W are explicit. A single native
+value/current probe confirmed the rounded adversarial fixture; it is not a
+producer or migration execution. The user has now **accepted the clarified
+design by requesting its commit and continuation**. It is new bounded authority,
+not an inherited D10 interpretation or an implemented migration. The subsequent
+[source/tool admission](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md)
+adds queryable optional claim, resolved-design debt, contract and forward
+verification obligation. Actual API, notebook and browser controls expose the
+same source-exact traces. Historical graph rows and support remain unchanged.
+
+Source/tool admission was accepted and committed at `f36b3ba`. The subsequent
+[proposal revision](./phase-9-grcv4/tranche-7/P9-7.2a-ProposalReview.md) integrates
+the definition in §12.6 and its lifecycle, optional-claim and appendix crosswalks.
+**The user accepted that exact prose revision by requesting commit and continuation
+on 2026-09-11**, committed at `448e420`. The subsequent
+[paper revision](./phase-9-grcv4/tranche-7/P9-7.2a-PaperReview.md) now contains
+the initializer and is user-accepted through the next commit-and-continue request
+on 2026-09-11, at `7d45218`. The
+[specification supplement](../specs/grc-v4-a-initializer-spec.md) and its
+[review record](./phase-9-grcv4/tranche-7/P9-7.2a-SpecificationReview.md) now
+define closed policy/construction/pair payloads, receipt linkage, restoration
+and release applicability. The user accepted the exact specification through
+the commit-and-implement request, authorizing a separately identified successor
+release and runtime implementation. That implementation now has its own
+additive release, explicit codec dispatch and focused execution record. The
+accepted proposal/paper, base schema and predecessor assets remain unchanged.
+No wider G2/G3 is granted. The current scoped checker
+preserves the accepted 25/17-test records and reconstructs their exact historical
+sources from Git plus the existing correction spans, without a zip or numerical
+rerun. New producer evidence is bound separately, including loaded sources,
+environment, exact inputs, construction pairs, outputs and receipts.
+
+The released documents, accepted proposal and current paper draft have separate
+verification subjects. The same `verify_p972a_proposal.py` checker now validates
+the proposal at `448e420`, paper at `7d45218`, six transferred sections and the
+exact six-file specification candidate against the admitted forensic projection.
+It retains the released proposal, paper, generic/interface specs and registry
+at `f36b3ba`. Every other release member, source, generator and packaged asset matches its
+accepted bytes. No predecessor release, old codec pin or original run is regenerated.
+New snapshot/receipt schemas select the additive initializer release. A normal
+clone contains the required Git subject; a shallow/export-only checkout must
+obtain it explicitly and fails closed if absent. No archive is introduced.
+
+## Existing scoped verification
+
+Current scoped check, repository root:
+
+```sh
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p972a_migrations.py --check
+```
+
+`--check` dispatches to `verify_p972a_initializer_authority.py --check`:
+current source admission, accepted proposal/paper/spec, additive package, new
+bound execution and preserved original evidence, without numerical execution.
+API/notebook/browser status exposes this as `initializer_runtime`, separate
+from the immutable design-stage forensic trace. `verify_p972a_proposal.py --check` is the
+same scoped route. Normal verification/API status uses its `--check-release`
+route to retain the executable release's original document subjects. The unchanged
+`build_abundance_release.py --check` is a historical reconstruction command at
+`f36b3ba`, not a builder for this newer draft. To reproduce historical migration/audit rosters,
+use their original checker and sources at `49b83ba` (the original 25-test source
+is additionally recoverable with `P9-7.2a-OriginalSources.json`). Its explicit
+`--run` / `--audit-run` routes require a fresh repository-relative JSON output;
+a rerun is a new execution, never a replacement for retained evidence.
+Old 7.1 records remain unchanged; their sources are retrievable at `5d8dbe2`.
+Use the new current checker, not old current-tree assertions. No new G2/G3,
+specialization permission, paper/spec claim or numerical authority is granted.
+Public support remains the exact accepted C_OS singleton.
+
+## Historical P9-7.1 acceptance
+
+Current work, 2026-09-11: branch `impl/phase-9-grcv4-tranche-7`, created from
+merged Tranche 6 closure `b45d0af`. The user requested the **complete P9-7.1**
+parent, superseding the earlier A_OS-only scheduling hint. Ten concrete A/C ×
+OS/CI/RG2b/PC/CI+PC lifecycle children use one publication owner. See the
+[review](./phase-9-grcv4/tranche-7/P9-7.1-Review.md) and
+[source/input/output record](./phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json).
+P9-7.1 is implemented: the original 26 focused lifecycle/legacy tests passed,
+along with the scoped record/source check, 34 browser controls and actual
+API/notebook/browser agreement. The user accepted P9-7.1, including its audit
+corrections, on 2026-09-11 by authorizing this commit. No new numerical solver,
+wider G2 support or 7.2 work is included.
+
+The independent audit held acceptance for RG2b state-versus-step readmission
+and historical zero/frozen-duration clock contradictions. Corrections also
+cover non-OS reconstruction labels and native A post-writer rollback. The
+[audit follow-up](./phase-9-grcv4/tranche-7/P9-7.1-AuditFollowup.json) captures
+nine native audit methods plus six compatibility methods: **15/15 passed**
+without failures/errors/skips. The original run is preserved with exact source recovery, not silently
+replaced. See the review's correction table for all findings and controls.
+
+Current read-only evidence check, from the repository root:
+
+```sh
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p971_lifecycle.py --check
+```
+
+The checker inspects retained exact evidence and source bindings without
+rerunning numerical campaigns. Its explicit `--run --output <new-relative-path>`
+route produces a new focused execution record and refuses to overwrite an old
+one. Use `--audit-run --output <new-relative-path>` for the correction-only
+roster. No new zip, machine-local input dependency or wider conformance claim.
+P9-7.1 is accepted; next work is separately scoped 7.2 migration/events and
+requires its own implementation request. Execution records and checker flags
+remain capture-time metadata; the later acceptance is recorded in the review
+and this handoff, without rewriting the accepted execution evidence.
+C_OS keeps its accepted exact G2; all other G2 profiles, G3 and specialization
+remain pending. The following Tranche 6 section is historical context; use the
+current checker above on this branch, not its historical source assertions.
+
+## Historical Tranche 6 closure
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
 accepted numerical predecessor `739c123` (P9-6.4a/b/c/d). The commit containing
@@ -811,19 +1044,21 @@ identity, request, result, packaging and ownership boundaries.
 provide the bounded prefix harness and independent oracles. An imported
 callback/control remains a control even when its bytes match real execution.
 
-## Next bounded implementation step: Tranche 7
+## Historical next-step scope: full P9-7.1
 
-Start with **P9-7.1-A_OS**: snapshot/save/load/replay, reset, rebase and independent
-duplication for an exact Candidate A OS profile. Its registered scope is in the
+The active task is the **full P9-7.1 parent**, not just A_OS: snapshot/save/load/
+replay, reset, rebase and independent duplication for ten exact family fixtures.
+The current [record](./phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json) supersedes
+the A_OS-only scheduling hint. The historical registered scope is in the
 [P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json);
 [Tranche 5](./phase-9-grcv4/tranche-5/P9-5.4-Review.md) supplies accepted initializer,
 retained-W and provisional-dynamics evidence. [P9-6.5](./phase-9-grcv4/tranche-6/P9-6.5-Review.md)
 provides the current routes for the other eight realizations.
 
-Before execution, bind the exact A_OS profile/reference/graph/context, initializer,
-policies, deliberately distinct live/reset fixtures and runtime ownership. Update
-the current work manifest and permission surfaces for that bounded request.
-The existing boundary stops at Tranche 6; closure is not a blanket lifecycle grant.
+The 7.1 record binds exact profile/reference/graph/context, initializer/backend,
+policies, deliberately distinct live/reset fixtures and runtime ownership.
+Current permissions open only this user-requested parent and its ten children;
+Tranche 6 acceptance alone is not the authorization.
 Use the [lifecycle specification](../specs/grc-v4-spec.md#lifecycle-migration-and-topology-events),
 [common interface §7.5](../specs/grc-common-interface-v4-ext.md) and the accepted
 receipt-parent authority already used by C_OS.
@@ -847,24 +1082,25 @@ explicit request; follow the existing proportionate-verification policy.
 
 ## Moving to another machine
 
-Transfer the closure-bearing `impl/phase-9-grcv4-tranche-6` branch through the
-usual Git remote before switching machines, or use a later `main` that contains
-this closure commit. No push or merge is implied by this handoff. Keep full Git
+Transfer `impl/phase-9-grcv4-tranche-7` after committing it through the usual
+Git remote before switching machines, or use a later `main` that contains
+that commit. No commit, push or merge is implied by this handoff. Keep full Git
 history: acceptance checks inspect historical committed subjects.
 
 After obtaining the updated branch, run from the repository root:
 
 ```bash
-git switch impl/phase-9-grcv4-tranche-6
+git switch impl/phase-9-grcv4-tranche-7
 git status --short
-git merge-base --is-ancestor 739c123 HEAD
+git merge-base --is-ancestor b45d0af HEAD
 git log -1 --format='%H %s'
 ```
 
 Confirm that the checkout includes P9-6.5's `/acceptance` object with
 `tranche_6_status: accepted_closed`, not only the numerical predecessor above.
-If working from merged `main`, use that branch instead. Create the Tranche 7
-branch from the accepted closure when beginning its implementation.
+If working from a later merged `main`, use that branch instead. The current
+Tranche 7 implementation and record must also be present; Tranche 6 closure
+alone is not P9-7.1 execution or acceptance evidence.
 
 Rebuild the checkout-local environment from the committed lock; do not copy a
 virtual environment between machines:
@@ -978,6 +1214,7 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> P9-2.6 is accepted at `5307343`; do not repeat that acceptance or infer runtime
-> support. Check local setup and identify the next bounded P9-3.1 entry action.
+> Tranche 7 and exact consumed-set G3 are accepted; verify their acceptance
+> record and current boundary. P9-8.1a fixed chart/port graph is next, not the
+> A-expansion oracle or disabled compatibility. Preserve all later leaf gates.
 > Do not implement or change branches until I authorize continuation.

@@ -1,0 +1,1349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/urosj/graph-reflexive-coherence/specs/grc-v4-topology-event-schema.json",
+  "title": "GRCV4 topology-event fallback binding",
+  "$defs": {
+    "candidate_policy": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "candidate"
+                },
+                "policy_id": {
+                  "const": "candidate_a_event_loss_reference_pass_v1"
+                },
+                "disposition": {
+                  "const": "explicit_loss"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "target_initializer_id": {
+                  "const": "grcv4-a-target-reference-pass-v1"
+                },
+                "information_loss": {
+                  "const": "candidate_history_loss"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "candidate"
+                },
+                "policy_id": {
+                  "const": "archive_drop_candidate_history_v1"
+                },
+                "disposition": {
+                  "const": "explicit_loss"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "target_initializer_id": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "candidate_history_loss"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "candidate"
+                },
+                "policy_id": {
+                  "const": "candidate_a_target_reference_pass_initialization_log_history_v1"
+                },
+                "disposition": {
+                  "const": "target_initializer"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "target_initializer_id": {
+                  "const": "grcv4-a-target-reference-pass-v1"
+                },
+                "information_loss": {
+                  "const": "none"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "candidate"
+                },
+                "policy_id": {
+                  "const": "candidate_c_rederive_no_history_v1"
+                },
+                "disposition": {
+                  "const": "rederived"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "target_initializer_id": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "none"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "carrier_policy": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "carrier"
+                },
+                "policy_id": {
+                  "const": "no_persistent_carrier_v1"
+                },
+                "disposition": {
+                  "const": "not_applicable"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "target_initializer_id": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "none"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "carrier"
+                },
+                "policy_id": {
+                  "const": "canonical_zero_carrier_initialization_v1"
+                },
+                "disposition": {
+                  "const": "target_initializer"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "target_initializer_id": {
+                  "const": "canonical_zero_carrier_v1"
+                },
+                "information_loss": {
+                  "const": "none"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "carrier"
+                },
+                "policy_id": {
+                  "const": "archive_drop_carrier_history_v1"
+                },
+                "disposition": {
+                  "const": "explicit_loss"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "target_initializer_id": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "carrier_history_loss"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+            },
+            {
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-history-channel-policy-v1"
+                },
+                "subject": {
+                  "const": "carrier"
+                },
+                "policy_id": {
+                  "const": "event_loss_and_zero_target_carrier_v1"
+                },
+                "disposition": {
+                  "const": "whole_carrier_reset"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "target_initializer_id": {
+                  "const": "canonical_zero_carrier_v1"
+                },
+                "information_loss": {
+                  "const": "carrier_history_loss"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "history_policy": {
+      "allOf": [
+        {
+          "$ref": "grc-v4-contract-schema.json#/$defs/history_bundle_policy"
+        },
+        {
+          "properties": {
+            "candidate": {
+              "$ref": "#/$defs/candidate_policy"
+            },
+            "carrier": {
+              "$ref": "#/$defs/carrier_policy"
+            }
+          }
+        }
+      ]
+    },
+    "event_request": {
+      "allOf": [
+        {
+          "$ref": "grc-v4-contract-schema.json#/$defs/mapped_topology_event_request"
+        },
+        {
+          "properties": {
+            "history_policy": {
+              "$ref": "#/$defs/history_policy"
+            }
+          }
+        }
+      ]
+    },
+    "candidate_receipt": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "candidate"
+                },
+                "disposition": {
+                  "const": "explicit_loss"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "information_loss": {
+                  "const": "candidate_history_loss"
+                },
+                "target_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "candidate"
+                },
+                "disposition": {
+                  "const": "explicit_loss"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "information_loss": {
+                  "const": "candidate_history_loss"
+                },
+                "target_history_digest": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "candidate"
+                },
+                "disposition": {
+                  "const": "target_initializer"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "target_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "candidate"
+                },
+                "disposition": {
+                  "const": "rederived"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "target_history_digest": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "carrier_receipt": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "carrier"
+                },
+                "disposition": {
+                  "const": "not_applicable"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "target_history_digest": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "carrier"
+                },
+                "disposition": {
+                  "const": "target_initializer"
+                },
+                "source_history_digest": {
+                  "const": null
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "target_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "carrier"
+                },
+                "disposition": {
+                  "const": "explicit_loss"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "information_loss": {
+                  "const": "carrier_history_loss"
+                },
+                "target_history_digest": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "carrier"
+                },
+                "disposition": {
+                  "const": "whole_carrier_reset"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "information_loss": {
+                  "const": "carrier_history_loss"
+                },
+                "target_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "event_receipt_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "core",
+        "event_id",
+        "history",
+        "initializer_pair_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-topology-event-receipt-v2"
+        },
+        "core": {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/receipt_core"
+            },
+            {
+              "properties": {
+                "source_model_identity": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+                },
+                "target_model_identity": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+                },
+                "information_losses": {
+                  "enum": [
+                    [],
+                    [
+                      "candidate_history_loss"
+                    ],
+                    [
+                      "carrier_history_loss"
+                    ],
+                    [
+                      "candidate_history_loss",
+                      "carrier_history_loss"
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "event_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/event_id"
+        },
+        "history": {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_bundle_receipt"
+            },
+            {
+              "properties": {
+                "candidate": {
+                  "$ref": "#/$defs/candidate_receipt"
+                },
+                "carrier": {
+                  "$ref": "#/$defs/carrier_receipt"
+                }
+              }
+            }
+          ]
+        },
+        "initializer_pair_id": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^grcv4-a-reference-pass-pair-sha256:[0-9a-f]{64}$"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "history": {
+                "properties": {
+                  "candidate": {
+                    "properties": {
+                      "target_history_digest": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "initializer_pair_id": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "initializer_pair_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "description": "Pair presence, channel losses and endpoint linkage require semantic validation; this is not execution evidence."
+    },
+    "legacy_event_request": {
+      "allOf": [
+        {
+          "$ref": "grc-v4-contract-schema.json#/$defs/mapped_topology_event_request"
+        },
+        {
+          "properties": {
+            "history_policy": {
+              "properties": {
+                "candidate": {
+                  "properties": {
+                    "policy_id": {
+                      "enum": [
+                        "candidate_c_no_independent_history_v1",
+                        "candidate_c_rederive_no_history_v1"
+                      ]
+                    },
+                    "disposition": {
+                      "const": "rederived"
+                    },
+                    "source_history_digest": {
+                      "type": "null"
+                    },
+                    "target_initializer_id": {
+                      "type": "null"
+                    },
+                    "information_loss": {
+                      "const": "none"
+                    }
+                  }
+                },
+                "carrier": {
+                  "properties": {
+                    "policy_id": {
+                      "enum": [
+                        "no_persistent_carrier_v1",
+                        "carrier_not_applicable_v1"
+                      ]
+                    },
+                    "disposition": {
+                      "const": "not_applicable"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "transition_record": {
+      "type": "object",
+      "required": [
+        "commit_id",
+        "request",
+        "source",
+        "source_reset",
+        "target",
+        "target_reset",
+        "initializer_pair"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "commit_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+        },
+        "request": {
+          "oneOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/migration_request"
+            },
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/mapped_topology_event_request"
+            }
+          ]
+        },
+        "source": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "source_reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "target": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "target_reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "initializer_pair": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "grc-v4-a-initializer-schema.json#/$defs/pair_record"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "request": {
+                "properties": {
+                  "schema_version": {
+                    "const": "grcv4-mapped-topology-event-request-v1"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "request": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/event_request"
+                  },
+                  {
+                    "$ref": "#/$defs/legacy_event_request"
+                  }
+                ]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "request": {
+                      "properties": {
+                        "history_policy": {
+                          "properties": {
+                            "candidate": {
+                              "properties": {
+                                "target_initializer_id": {
+                                  "const": "grcv4-a-target-reference-pass-v1"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "initializer_pair": {
+                      "$ref": "grc-v4-a-initializer-schema.json#/$defs/pair_record"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "initializer_pair": {
+                      "type": "null"
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "request": {
+                      "properties": {
+                        "history_policy": {
+                          "properties": {
+                            "candidate": {
+                              "properties": {
+                                "source_history_digest": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "source": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "source_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "else": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "source": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "source_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "request": {
+                      "properties": {
+                        "history_policy": {
+                          "properties": {
+                            "candidate": {
+                              "properties": {
+                                "target_initializer_id": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "target": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "target_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "else": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "target": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "target_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "W_A": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "request": {
+                      "properties": {
+                        "history_policy": {
+                          "properties": {
+                            "carrier": {
+                              "properties": {
+                                "source_history_digest": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "source": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "source_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "else": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "source": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "source_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "request": {
+                      "properties": {
+                        "history_policy": {
+                          "properties": {
+                            "carrier": {
+                              "properties": {
+                                "target_initializer_id": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "target": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "target_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "else": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "target": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "target_reset": {
+                          "properties": {
+                            "authoritative": {
+                              "properties": {
+                                "Z_4": {
+                                  "type": "array"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "else": {
+            "if": {
+              "allOf": [
+                {
+                  "properties": {
+                    "source": {
+                      "properties": {
+                        "authoritative": {
+                          "properties": {
+                            "W_A": {
+                              "type": "null"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "target": {
+                      "properties": {
+                        "authoritative": {
+                          "properties": {
+                            "W_A": {
+                              "type": "array"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "then": {
+              "properties": {
+                "initializer_pair": {
+                  "$ref": "grc-v4-a-initializer-schema.json#/$defs/pair_record"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "initializer_pair": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "receipt_envelope": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "receipt_id",
+        "commit_id",
+        "identity_payload"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-successful-receipt-envelope-v1"
+        },
+        "receipt_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/receipt_id"
+        },
+        "commit_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+        },
+        "identity_payload": {
+          "oneOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/successful_receipt_identity_payload"
+            },
+            {
+              "$ref": "grc-v4-a-initializer-schema.json#/$defs/migration_receipt_payload"
+            },
+            {
+              "$ref": "#/$defs/event_receipt_payload"
+            }
+          ]
+        }
+      }
+    },
+    "snapshot_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "model_family",
+        "implementation_layout_id",
+        "receipt_parent_policy_id",
+        "specification_release_id",
+        "reference",
+        "scientific_state",
+        "scientific_state_digest",
+        "reset",
+        "reset_digest",
+        "receipt_ledger",
+        "commit_records",
+        "lifecycle",
+        "lifecycle_digest",
+        "reference_registry",
+        "differential_reference_registry",
+        "transition_records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-snapshot-v1"
+        },
+        "model_family": {
+          "const": "GRCV4"
+        },
+        "implementation_layout_id": {
+          "const": "pygrc-generic-topology-event-snapshot-v1"
+        },
+        "receipt_parent_policy_id": {
+          "const": "grcv4-previous-successful-primary-v1"
+        },
+        "specification_release_id": {
+          "type": "string",
+          "pattern": "^grcv4-spec-release-sha256:[0-9a-f]{64}$",
+          "not": {
+            "enum": [
+              "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+              "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7"
+            ]
+          }
+        },
+        "reference": {
+          "$ref": "grc-v4-a-initializer-schema.json#/$defs/archived_reference"
+        },
+        "scientific_state": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "scientific_state_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+        },
+        "reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "reset_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/reset_id"
+        },
+        "receipt_ledger": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/receipt_envelope"
+          }
+        },
+        "commit_records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "commit_id",
+              "payload"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "commit_id": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+              },
+              "payload": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/commit_payload"
+              }
+            }
+          }
+        },
+        "lifecycle": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/lifecycle_envelope_payload"
+        },
+        "lifecycle_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/lifecycle_id"
+        },
+        "reference_registry": {
+          "type": "array",
+          "items": {
+            "$ref": "grc-v4-a-initializer-schema.json#/$defs/archived_reference"
+          }
+        },
+        "differential_reference_registry": {
+          "type": "array",
+          "items": {
+            "$ref": "grc-v4-a-initializer-schema.json#/$defs/differential_reference"
+          }
+        },
+        "transition_records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/transition_record"
+          }
+        }
+      },
+      "description": "New event layout only. Unknown releases are not admission; legacy rows retain version-specific semantics."
+    }
+  }
+}

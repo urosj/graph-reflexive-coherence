@@ -9,9 +9,9 @@
 **Paper relation:**
 
 $$
-\text{accepted D0--D11 investigation}
+\text{accepted investigation and bounded P9 successors}
 \longrightarrow
-\text{D11-integrated proposal review candidate}
+\text{initializer-integrated proposal review candidate}
 \longrightarrow
 \text{accepted proposal}
 \longrightarrow
@@ -20,7 +20,7 @@ $$
 
 The main paper defines graph-generic GRC-v4. **Appendix A** defines GRC9V4 as its substantive nine-port specialization. Exact disabled-profile compatibility with GRC9V3 belongs to that specialization.
 
-**Status:** D11-integrated proposal review candidate. It is not the derived paper, a specification, or a new mathematical source. The paper remains unchanged until this proposal revision is reviewed and accepted.
+**Status:** P9-7.2a initializer-integrated proposal review candidate. The initializer design and source admission are accepted; this prose revision awaits review. It is not the derived paper, an executable specification release, or a new mathematical source. The paper remains unchanged until this proposal revision is reviewed and accepted.
 
 ---
 
@@ -29,6 +29,15 @@ The main paper defines graph-generic GRC-v4. **Appendix A** defines GRC9V4 as it
 ### Immediate mathematical authority
 
 The immediate source for the proposal is the accepted D0–D11 investigation. In addition to the immutable D10/D10.2 population, the controlling successor records are `GRC9V4-CD-D11-C-RESOLUTION-v1`, `GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1`, `GRC9V4-CD-D11-G9-RESOLUTION-v1`, and `GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1`. Earlier core papers, GRC-v3, GRC-9, specifications, and runtime records enter only through lineage accepted by those records.
+
+The accepted P9 receipt-parent and abundance-interface successors retain their
+separate source references below. For §12.6, the
+[accepted initializer authority](../decisions/P9CandidateAInitializerReferencePassAuthority.json)
+adds `P9-EC-A-INITIALIZER-REFERENCE-PASS` and optional claim
+`P9-7.2a-CL-O-INIT-001`. It selects a previously absent reference-current
+producer; it does not retrospectively attribute that choice to D10/D11.
+Appendix G.9 records its claim/debt boundary. Proposal propagation is not
+implementation, positive migration evidence or aggregate P9-7.2a acceptance.
 
 The paper may:
 
@@ -56,9 +65,9 @@ Every displayed paper equation must have a one-to-one source entry:
 
 ```text
 proposal equation
-    -> D10.2 or D11 equation/contract row
+    -> D10.2, D11 or explicitly accepted P9 equation/contract row
     -> accepted parent normative object
-    -> accepted D10 or append-only D11 claim
+    -> accepted D10 or separately attributed D11/P9 claim
     -> accepted predecessor lineage
 ```
 
@@ -77,7 +86,7 @@ claim_ceiling
 
 The paper may simplify notation only where the crosswalk records exact equivalence.
 
-D10.2 supplies the immutable historical control population of 39 current claims, 67 parent normative objects, and 152 normative equation/contract rows: 67 parent-atomic contracts plus 85 explicit equation/contract rows. D11 adds two append-only successor claims, thirteen normative objects, and thirty-one equation/contract rows. The current successor population is therefore 41 current claims, 80 normative objects, and 183 equation/contract rows. The 40 profile-scoped disabled-reduction rows remain unchanged inside the D10.2 population. The proposal need not print every historical row inline, but it must not contain load-bearing mathematics outside the accepted D10.2 and D11 populations.
+D10.2 supplies the immutable historical control population of 39 claims, 67 parent normative objects, and 152 normative equation/contract rows: 67 parent-atomic contracts plus 85 explicit equation/contract rows. D11 adds two append-only successor claims, thirteen normative objects, and thirty-one equation/contract rows. That D10/D11 census remains 41 claims, 80 normative objects, and 183 equation/contract rows; it excludes later P9 additions. The 40 profile-scoped disabled-reduction rows remain unchanged inside the D10.2 population. Load-bearing mathematics must resolve to those accepted populations, their registered analysis sources, or a separately cited accepted P9 successor. The tranche audit notes below retain their historical subjects; they are not validation of this newer prose revision.
 
 ### Boundary-control rule
 
@@ -3368,6 +3377,12 @@ target graph and context
 
 This initializer role is GRC-derived. The exact GRC9V3 base-conductance reconstruction used by the GRC9V4 specialization is a separate specialization binding and belongs in Appendix A.
 
+The role above did not select the reference-current producer. The separately
+accepted P9 policy in [§12.6](#126-graph-generic-candidate-a-history-free-initializer)
+now supplies one target-only reference pass. This optional construction leaves
+the full conductance law and final target-admission owners unchanged; it is not
+a claim that an implemented C→A migration already exists.
+
 An A profile migration must transform or reconstruct:
 
 - current $C$;
@@ -6126,6 +6141,11 @@ The accepted migration classes are:
 
 A migration need not be an isomorphism. A-to-C is admitted as explicitly lossy. C-to-A is admitted as history-free. In both directions, current and reset baselines follow the same target initialization and loss policy.
 
+These are design-level migration classes. The reference-pass policy in §12.6
+resolves the C→A producer choice; specification binding, implementation and
+positive current/reset migration through the five A realization paths remain
+pending. The old negative C→A tests do not count as that positive evidence.
+
 Changing any of the following requires migration rather than in-place edit:
 
 ```text
@@ -6205,31 +6225,203 @@ other-profile, GRC9V4, or G2 conformance.
 
 Candidate A requires positive edge mobility on the target graph. When a migration or topology event enters an A profile without an admitted map that preserves source A history, the target may not copy unmatched edge values, reinterpret source arrays under target indexing, or infer missing history from stable identifiers alone.
 
-The accepted graph-generic target initializer is denoted
+The inherited graph-generic target-initializer role is denoted
 
 $$
 I_A^{\mathrm{GRC}}.
 $$
 
-It is a **history-free target construction**, not a history transport. For the target graph, target context, and authoritative target resource state, it performs the following admitted sequence:
+It is a **history-free target construction**, not history transport or native
+formation. D10.2 supplies the role, differential/functional ingredients and
+lifecycle obligations, but does not select a reference-current producer. The
+[accepted P9 design](../decisions/P9CandidateAInitializerReferencePassProposal.md)
+and [structured successor](../decisions/P9CandidateAInitializerReferencePassAuthority.json)
+now select `grcv4-a-target-reference-pass-v1`. This is new optional Candidate A
+construction authority, not an extraction of an already fixed D10 law.
+
+#### 12.6.1 Target-only inputs and one reference pass
+
+One invocation consumes the declared target graph, orientation, boundary,
+complete profile, context, authoritative target $C$, and reconstructible
+differential and site-potential recipes. Frames, reference weights, units and
+regularization are identity-bound before construction. Rebuild $D(C)$ from
+those inputs, never from cached descriptors, source $W/Z$, source current or
+source-realization solver outputs. The differential recipe cannot depend on
+the auxiliary or final $W$ being constructed. Fixed reference weights and
+$H_{0,\mathrm{ref}},H_{1,\mathrm{ref}}$ remain distinct from Candidate A mobility.
+
+Let $B$ have $+1$ at the oriented tail and $-1$ at the head, with $d_0=B^\top$.
+All coordinates use the declared target order. For $e=(u,v)$, define
+
+$$
+E_e(C)=-\frac{\alpha}{2}(C_u+C_v)
+-\frac{\beta}{2}\lVert D_u(C)-D_v(C)\rVert^2,
+\qquad
+W_e^{\mathrm{base}}=G_{W,e}(C,0)
+=\max\!\left(W_{\mathrm{floor}},\exp E_e(C)\right).
+$$
+
+At reference geometry, use this auxiliary conductance as the selected
+initializer-stage operand of the existing potential and baseline arithmetic:
+
+$$
+s_i=V'_{\mathrm{site}}(C_i;U),\qquad
+\Phi^{\mathrm{base}}
+=\kappa_c B\operatorname{Diag}(W^{\mathrm{base}})B^\top C-s,
+$$
+
+$$
+J_{\mathrm{ref}}
+=-\eta\operatorname{Diag}(W^{\mathrm{base}})B^\top\Phi^{\mathrm{base}}.
+$$
+
+Then recompute the **full original conductance law**:
+
+$$
+W_{A,e}^{\mathrm{init}}=G_{W,e}(C,J_{\mathrm{ref}})
+=\max\!\left(W_{\mathrm{floor}},
+\exp\!\left[E_e(C)-\frac{\gamma}{2}J_{\mathrm{ref},e}^{2}\right]\right).
+$$
 
 ```text
-target graph, profile, context, and authoritative C
-  -> reconstruct the target's declared deterministic differential surfaces
-  -> evaluate the promoted curvature-disabled Candidate A G_W law
-     at the target reference-current stage
-  -> construct positive target W_A
-  -> validate the target floor, units, domain, current, geometry,
-     lifecycle, and serializer contract
-  -> emit the direction-specific receipt that no source A history
-     was preserved or fabricated.
+target C and fixed target recipes
+  -> fresh D(C)
+  -> auxiliary W_base = G_W(C, 0)
+  -> reference potential and baseline J_ref
+  -> full G_W(C, J_ref)
+  -> provisional W_A_init
+  -> final whole-target readmission and atomic lifecycle publication
 ```
 
-The initializer is applied under the same declared policy to current and reset state. Thus a C-to-A migration or a topology event that reconstructs A history-free state must initialize both the target current $W_A$ and the target reset $W_A$ against their corresponding target $C$ values and lifecycle contexts. Reset cannot later recover source A history that the migration or event explicitly discarded.
+Exactly one pass is selected: no bootstrap iteration, root search, implicit
+fixed point or additional ordinary beat. The auxiliary zero is a declared
+current operand of $G_W(C,0)$; it does not set the computed $J_{\mathrm{ref}}$
+or final $\gamma$ channel to zero. The reference-relative geometry increment
+vanishes at $h_{\mathrm{ref}}$, not because a geometry gain is disabled. Final
+target readmission uses the actual geometry, gains and realization. Initialized
+$W$ need not be reference-neutral or reproduce itself under a new baseline
+evaluation using that final $W$.
+
+The auxiliary stage must admit its prescribed arithmetic, **not** a full
+total-current/Read-Back solve or a retained-state realization chart. Constructing
+`CandidateACurrent` at $W^{\mathrm{base}}$ merely to obtain its baseline would
+add an unauthorized admission prerequisite. Only the final initialized target
+receives whole-target readmission.
+
+The finite-real construction requires finite admitted differential/site outputs
+and parameters, with $\eta,W_{\mathrm{floor}}>0$; it does not guarantee binary64
+representability or complete target admission. Parallel edges contribute
+separately; self-loops have zero incidence and reference flux but retain both
+endpoint occurrences in $E_e$; isolates acquire no artificial transport.
+Previously unsupported graphs remain unsupported. Permutation and signed
+reorientation preserve the declared coordinate laws. Descriptor-frame covariance
+requires the admitted comparable/isometric frame contract; it is not a universal
+bitwise floating-point rotation guarantee. Conditional on identical target
+inputs, changing discarded source history cannot change numerical $W$.
+
+#### 12.6.2 Numerical scope and identity
+
+The accepted numerical recipe is `grcv4-a-reference-pass-binary64-v1` and the
+history policy is `candidate_a_target_reference_pass_initialization_log_history_v1`.
+These are design identities, not yet executable profile IDs. Initial executable
+scope retains unit-vertex pairing, admitted boundary/normalization, identity-bound
+host-frame WLS and the declared zero-derivative site potential. General equations
+do not supply arbitrary differential, quadrature or site implementations.
+
+The staging preserves the following rounding boundaries:
+
+1. Validate typed finite inputs and the existing nonnegative-resource domain;
+   rebuild target gradients using the existing exact-input WLS/output-rounding
+   recipe. Unknown recipes reject.
+2. For auxiliary $G_W$, accumulate the combined exponent exactly from binary64
+   coefficients/resources and rounded descriptors, round once, then use the
+   existing `math.exp` and positive floor, including its far-negative floor branch.
+3. Round each $\eta W_e^{\mathrm{base}}$ once to binary64, nearest/ties-to-even.
+   Nonfinite or nonpositive mobility, including underflow to zero, rejects;
+   there is no extra mobility floor.
+4. Accumulate each full potential component exactly from rounded auxiliary $W$
+   and declared $C,\kappa_c,s$, then round once. No edgewise partial rounding or
+   initializer-specific gauge projection is added.
+5. From the rounded potential and mobility, accumulate each incidence difference
+   and mobility product exactly, then round the flux once. Retain subnormals;
+   signed potential/flux underflow may yield canonical positive zero, unlike
+   strictly positive mobility.
+6. For final $G_W$, combine the **original unfloored** $\alpha/\beta$ channels
+   and computed rounded $J_{\mathrm{ref}}$ channel before one exponent rounding.
+   Do not add to an already-rounded $E$, use $\log W^{\mathrm{base}}$, or multiply
+   floored $W^{\mathrm{base}}$ by a current factor. Validate final positive finite
+   $W$ and mobility before returning provisional construction.
+
+Intermediate potential/flux/exponential range failures reject at their actual
+stage even if a later symbolic combination could be finite. No clipping,
+log-domain substitution or fallback flux is permitted. Existing platform
+`math.exp` is not a new cross-platform correctly rounded guarantee; reproducible
+execution must retain source/environment and exact input/output identities.
+
+Static policy/recipe identity precedes complete target profile identity, then
+current/reset invocation records, then migration evidence. Each invocation
+binds role, complete target inputs, recipe preimages, policy/numerical identities
+and resulting $W$; retained derived intermediates must be recomputed on import.
+Matching values or a caller-claimed policy ID cannot authenticate production.
+The output-bearing record cannot be an input to its own profile identity.
+The closed payload/codec and release applicability remain V4 specification work
+before implementation. Old explicit-flux records and snapshots keep their
+identities and meanings; no new persistent coordinate or global registry is added.
+
+#### 12.6.3 Current/reset construction and final admission
+
+Apply the same producer separately to current and reset target inputs. Preserve
+both $C$ vectors, charge target and clock for same-graph C→A; never copy current
+$W$ to reset. Identical operands nevertheless produce identical numerical
+outputs despite different record roles. A reset-only failure must arise from
+actual reset construction/admission, not fabricated unequal supplied fluxes.
+
+Source C has no A history to preserve or lose. Receipt the history-free A-$W$
+construction separately from any archived/dropped C persistent carrier. Initialize
+the complete target A carrier to canonical zero where required for both states;
+never reinterpret C-$Z$ as A-$Z$. Existing owners readmit the complete target
+for OS, CI, PC, CI+PC or RG2b. RG2b state/section admission does not certify another
+beat's entry domain. Keep target PC/CI/RG2b charts fixed: reject an out-of-domain
+output rather than recentering, enlarging or substituting the requested chart.
+
+Construction performs no continuity, resource repair, clock advance, ordinary
+$W$ write, carrier write or formation beat. Publish both states, references,
+archives, ordered receipts and commit identity atomically after all checks.
+Restoration recomputes archived crossing inputs and initialized endpoints, not
+a fictitious initializer constraint on subsequently ordinarily evolved $W$.
+Typed domain/range/readmission failures keep their stage and disposition;
+unexpected programmer exceptions propagate. Existing F1/F2 consistency checks
+for known/archived and repeated identities, lawful unreceipted assignment and
+the external-history trust ceiling remain intact.
+
+#### 12.6.4 Design closure and remaining evidence
+
+The producer choice is resolved, not merely scheduled for investigation.
+Specification binding, implementation and positive C→A through all five A
+realizations remain pending, as does aggregate P9-7.2a. Required evidence includes
+nontrivial graphs with active descriptor/current channels and both gamma signs;
+graph/order controls; source-history independence; floor, cancellation, rounding,
+subnormal and overflow pressure; separate/equal current-reset inputs; fixed-chart
+rejection; rollback, restoration and admitted continuation. The original
+25/17-test migration records are not relabeled as this new producer's execution.
+
+One architectural regression is especially important: with one edge,
+$C=(1,0)$, $\eta=1/2$, $\kappa_c=1$, zero site derivative, $\alpha=\beta=0$,
+$\gamma=2\log2$, $W_{\mathrm{floor}}=1/4$, $\chi_A=1$, $\zeta_A=3$, the pass
+gives $W^{\mathrm{base}}=1$, $J_{\mathrm{ref}}=-1$ and $W_A^{\mathrm{init}}=1/2$.
+A full auxiliary current would have $q_A=1/3$ and denominator $1-3q_A=0$;
+the final reference block instead has $J_{0,A}=-1/4$,
+$\widehat W_A=2^{-1/16}>1/2$, $q_A<0$ and $1-3q_A>1$.
+Auxiliary total-current singularity therefore must not become initializer
+failure. This is design pressure, not migration evidence: the actual producer
+regression must bind rounded operands and still perform final target admission.
+It supplements, not replaces, the multigraph/active-channel/five-realization tests.
 
 The generic initializer preserves three boundaries.
 
-First, it constructs a lawful target A state but does not establish native A formation. The resulting $W_A$ was initialized by a lifecycle operation rather than produced by the ordinary A writer under an attributable forming current.
+First, a successful construction followed by complete target readmission supplies
+a lawful target A state, not native A formation. Provisional positive $W$ alone
+does not prove successful migration or conformance.
 
 Second, it does not claim to preserve source-profile A history. A target value may be mathematically similar to one that ordinary dynamics could produce, but the receipt continues to identify the crossing as history-free.
 
@@ -6249,6 +6441,11 @@ belongs to Appendix A. It is used only when the target profile deliberately requ
 > **Specialization boundary:** `L-A-INITIALIZER-GRC9V3` and `D10.2-EC-PARENT-L-A-INITIALIZER-GRC9V3` remain GRC9 specialization-specific.
 >
 > **Associated accepted claim:** lifecycle claim `D10-CL-N-005`.
+>
+> **Separately accepted producer:** `P9-EC-A-INITIALIZER-REFERENCE-PASS`, optional
+> claim `P9-7.2a-CL-O-INIT-001`. Debt `P9-7.2a-DEBT-A-INITIALIZER-SOURCE` is
+> design-resolved; `P9-7.2a-VO-A-INITIALIZER-INTEGRATION` is forward work, not
+> backward evidence. No generic-event, G2/G3 or GRC9V3 support is granted.
 
 ### 12.7 Typed topology events and whole-lifecycle continuation
 
@@ -7459,7 +7656,7 @@ SPEC-VERIFICATION-REGISTRY
 
 These objects govern profile identity and claims. They are not physical evidence for a candidate or realization.
 
-Across the immutable D10.2 population, the graph-generic/core/meta side contains 54 `promotion_proved` objects and the GRC9 side contains 13 `specialization_only` objects. D11-C adds three graph-generic Candidate C objects; D11-G9 adds ten GRC9V4-only specialization objects. The current successor population is therefore 57 graph-generic/core/meta objects plus 23 specialization objects, or 80 normative objects in total, without rewriting the D10.2 partition.
+Across the immutable D10.2 population, the graph-generic/core/meta side contains 54 `promotion_proved` objects and the GRC9 side contains 13 `specialization_only` objects. D11-C adds three graph-generic Candidate C objects; D11-G9 adds ten GRC9V4-only specialization objects. That D10/D11 census is 57 graph-generic/core/meta objects plus 23 specialization objects, or 80 normative objects, without rewriting the D10.2 partition. Later P9 objects have separate authority; this census does not retroactively promote or count them.
 
 #### 14.2.1 Abundance availability is interface authority, not a new functional
 
@@ -7566,6 +7763,10 @@ L-A-INITIALIZER-GRC9V3
 ```
 
 The graph-generic Candidate A initializer reconstructs a lawful target $W_A$ from target graph, context, authoritative $C$, and the promoted differential/functional contract. The exact GRC9V3 initializer binding selects the historical GRC9V3 base-conductance reconstruction. Only the latter remains specialization-specific.
+
+Section 12.6 now separately binds the optional P9 target-reference-pass producer
+and requires final target readmission. It does not automatically select that
+producer for exact GRC9V3 initialization or change Appendix A's binding.
 
 Likewise, exact compatibility with GRC9V3 is not a generic GRC-v4 property. It is an obligation of the GRC9V4 specialization, and D11-G9 limits that exactness to inputs for which unchanged legacy authority defines a unique target. The saturated port-$5$ collision lies outside that domain and fails closed without modifying GRC9 or GRC9V3.
 
@@ -7742,8 +7943,12 @@ The claim is design-level and bounded. It does not establish runtime conformance
 | `D10-CL-O-006` | PC is the admitted scalar-ZOH, one-$\tau_{\mathrm{PC}}$, independently authoritative persistent-$K_4$ history realization | not Candidate B, not a universal memory law, no endpoint hysteresis claim |
 | `D10-CL-O-007` | CI+PC is the admitted unit-immediate plus unit-retained composition, with the accepted A/C local root contracts and steady source gain two | not unique, amplitude-neutral, preferred, or a general closure over all realization pairs |
 | `D11-C-CL-O-001` | `C-HM-STIFFNESS-BASELINE-v1` supplies positive profile/reference mobility, retained-Hodge stiffness potential, and the exact $J_{0,C}$ baseline to all five admitted C realizations | revision-specific design closure only; not implementation, runtime formation, numeric envelope, nonabsorbability, stability, preference, or uniqueness |
+| `P9-7.2a-CL-O-INIT-001` | `grcv4-a-target-reference-pass-v1` selects one target-only reference-current producer followed by the unchanged full $G_W$ and final realization readmission | optional bounded design, not inherited D10 producer authority, implicit neutrality, unconditional admission, implemented C→A, aggregate 7.2a, formation, G2/G3 or exact GRC9V3 binding |
 
-An implementation may support any nonempty subset of these optional profiles. It may claim conformance only to the complete identities it actually implements.
+An implementation may support any nonempty subset of the optional profiles.
+The initializer claim adds a construction policy, not an eleventh candidate/
+realization family. Conformance is limited to complete identities actually
+implemented and verified; accepting the producer design alone does not add support.
 
 ### 15.3 Conditional claims
 
@@ -7847,7 +8052,7 @@ The accepted verification registry keeps implementation, runtime, numerical, ana
 | `D11-G9-VERIFY-DISABLED-LEGACY-DEFINED-DOMAIN-FAIL-CLOSED` | compatibility conformance | legacy-defined-domain detection and mutation-free `legacy_expansion_target_undefined` disposition |
 | `D11-G9-VERIFY-PAPER-THEN-SPECIFICATION-PROPAGATION` | editorial/specification conformance | accepted D11-G9 authority appears in the derived paper before affected V4 specification extraction |
 
-The preclosure substrate-provenance obligation has been completed for the current 80-object/183-contract successor population by D10.2 plus the two D11 provenance supplements. The ten inherited forward obligations and all seven D11 forward obligations remain pending. The proposal integration itself does not satisfy paper propagation, specification propagation, implementation, runtime, or numeric conformance.
+The preclosure substrate-provenance obligation was completed for the D10/D11 80-object/183-contract population by D10.2 plus the two D11 provenance supplements. Those source records leave the ten inherited and seven D11 forward obligations pending; this revision does not re-audit later implementation follow-through or rewrite those historical dispositions. Proposal integration itself does not satisfy paper propagation, specification propagation, implementation, runtime, or numeric conformance. The new initializer debt and still-forward obligations are separately identified in §12.6.4 and Appendix G.9.
 
 The two additive D11 debts now have bounded successor dispositions:
 
@@ -10437,24 +10642,34 @@ Any change to $H_{\mathrm{profile}}$, $K_{4,\mathrm{base}}$, $\tau_{\mathrm{PC}}
 
 ### E.8 Graph-generic Candidate A history-free initializer
 
-The accepted target initializer is denoted
-
-$$
-I_A^{\mathrm{GRC}}.
-$$
-
-It performs
+The inherited role $I_A^{\mathrm{GRC}}$ did not select its reference-current
+producer. The separate optional P9 contract in
+[§12.6](#126-graph-generic-candidate-a-history-free-initializer) now selects
+`grcv4-a-target-reference-pass-v1`:
 
 ```text
-target graph/profile/context and authoritative C
-  -> rebuild target deterministic differential surfaces
-  -> evaluate the accepted curvature-disabled G_W at the target reference-current stage
-  -> construct positive target W_A for current and reset state
-  -> validate target domain, current, geometry, lifecycle, and serializer identity
-  -> record that source A history was not preserved or fabricated.
+target C and fixed target recipes, independently for current/reset
+  -> fresh D(C)
+  -> auxiliary W_base = G_W(C, 0)
+  -> reference potential and baseline J_ref, with no full auxiliary current solve
+  -> unchanged full G_W(C, J_ref), using original unfloored exponent channels
+  -> provisional W_A_init
+  -> complete final target readmission and atomic lifecycle publication
 ```
 
-This is lawful target construction, not native A formation and not history transport. The exact GRC9V3 base-conductance initializer remains Appendix A specialization content.
+The auxiliary W is not retained authority and need not pass a full-current or
+realization-state chart. Exactly one pass is used, without implicit neutrality,
+copied source history, fallback flux or output-dependent target-chart repair.
+Keep the numerical and acyclic policy/profile/invocation identities of §12.6.2.
+Identical target operands give identical numerical outputs despite different
+current/reset record roles; archived initialized endpoints are checked without
+constraining subsequently evolved W to the initializer.
+
+Receipt history-free A construction separately from source C carrier loss and
+target carrier-zero initialization. Positive whole-target migration through the
+five A realization paths remains unimplemented/unverified by this design record.
+The exact GRC9V3 base-conductance initializer remains Appendix A specialization
+content, not an automatic instance of the new generic producer.
 
 ### E.9 Typed topology-event equations
 
@@ -11147,9 +11362,9 @@ The current crosswalk has five layers:
 
 ```text
 proposal section or appendix surface
-  -> accepted D10 or append-only D11 claim boundary
-  -> D10.2 or D11 parent normative object
-  -> D10.2 or D11 subordinate equation/contract row
+  -> accepted D10 or separately attributed D11/P9 claim boundary
+  -> the corresponding source-owned object
+  -> the corresponding equation/contract row
   -> accepted predecessor source lineage.
 ```
 
@@ -11582,9 +11797,9 @@ The following source-backed equation families appear in Section 13 and Appendix 
 
 Before the proposal is converted into a publication draft or normative specification:
 
-1. every displayed equation must resolve to a D10.2/D11 row or appear in the direct D3/D8-A/D8-B analysis register above;
-2. every authority statement must resolve to one of the 80 current normative objects;
-3. every positive statement must preserve the class and ceiling of the relevant D10 or D11 claim;
+1. every displayed equation must resolve to a D10.2/D11 row, the direct D3/D8-A/D8-B analysis register above, or an explicitly cited accepted P9 successor contract;
+2. every authority statement must resolve to its source object; the historical 80-object D10.2/D11 inventory is not silently relabeled to include P9 additions;
+3. every positive statement must preserve the class and ceiling of the relevant D10, D11 or separately accepted P9 claim;
 4. every GRC9-intrinsic, D11-G9, or GRC9V3-target-specific object must remain in Appendix A or an explicit specialization discussion;
 5. every persistent state reference must use the complete profile’s actual $Z_{4,a}$ authority;
 6. every Candidate C physical-current equation must retain $Q_C=I_{4M}G_J$ or its explicitly equivalent expanded flat/sharp chain;
@@ -11594,6 +11809,30 @@ Before the proposal is converted into a publication draft or normative specifica
 10. every association imported from the exploratory side tool remains `indeterminate_requires_review` unless a separately accepted record upgrades it;
 11. unsupported scientific content is recorded as a boundary rather than completed inside the paper;
 12. materially distinct successor profiles reopen provenance and the earliest affected authority, staging, state, geometry, accounting, or lifecycle contract.
+
+### G.9 P9 initializer successor and forward integration
+
+The [accepted initializer record](../decisions/P9CandidateAInitializerReferencePassAuthority.json)
+and [forensic admission](../tools/exploratory-side-tool/records/P972aInitializerAdmission.json)
+are append-only successors. The historical D10/D11 register rows and population
+counts above remain unchanged. In particular, the D10.2 initializer contract
+retains its `indeterminate_requires_review` support association; it does not
+retroactively acquire the new producer choice.
+
+| Source object or row | Proposal location | Meaning and boundary |
+| --- | --- | --- |
+| `P9-7.2a-CL-O-INIT-001` at `/claim` | §§8.11, 12.6, 15.2; App. E.8 | Optional bounded initializer design; not mandatory core or executed migration |
+| `P9-EC-A-INITIALIZER-REFERENCE-PASS` at `/contracts/0` | §12.6.1–12.6.3; App. E.8 | Required support for this selected design, with one pass, numerical staging, identity and lifecycle limits |
+| `P9-O-A-INITIALIZER-REFERENCE-PASS` at `/object` | §§12.6, 14.4 | Generic construction object, not exact GRC9V3 initializer authority |
+| `P9-7.2a-DEBT-A-INITIALIZER-SOURCE` at `/debt` | §12.6.4 | Producer choice resolved at bounded design scope |
+| `P9-7.2a-VO-A-INITIALIZER-INTEGRATION` at `/verification_obligations/0` | §12.6.2–12.6.4 | Forward proposal/paper/spec binding, implementation, five-realization evidence and aggregate review; not backward evidence |
+
+The typed `contract_provenance`, `debt_lifecycle`, `object_dependents` and
+`reconstruction_path` queries retain source/edge references and trace digests.
+They support design attribution, not a claim that prose has mechanically proved
+its own fidelity. This propagation candidate awaits review before the paper
+and V4 specification successor change. Historical release/run hashes are not
+replaced by the draft's hash or by newly generated execution evidence.
 
 ---
 
@@ -11663,13 +11902,13 @@ Writing the abstract last prevents it from making claims that the extracted body
 The proposal review candidate is complete when:
 
 ```text
-every load-bearing proposal equation has a D10.2, D11, or registered direct-analysis source row
+every load-bearing proposal equation has a D10.2, D11, accepted P9, or registered direct-analysis source row
 every authority statement has a source object
 every profile statement preserves complete-profile identity
 every limitation maps to an accepted conditional, open, or negative claim
 no GRC9-intrinsic object appears in the graph-generic main contract
 no proposal-side equation or assumption has been introduced
-all 41 current claims, 80 normative objects, and 183 equation/contract rows are traceable
+all historical D10/D11 claims, objects and equation/contract rows remain traceable; P9 successors are separately attributed
 every exposed unsupported proposition is recorded as a propagation boundary
 ```
 

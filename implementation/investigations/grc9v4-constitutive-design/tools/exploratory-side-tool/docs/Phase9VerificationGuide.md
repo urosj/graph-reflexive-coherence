@@ -147,7 +147,75 @@ browser campaign.
 pressure. It clears the isolated-pressure value to `None` and writes separate
 `notebook-current-status.json`; it cannot refresh a stale full-pressure run.
 Default/full mode still rejects stale evidence. Normal verification dispatches
-to the abundance successor without applying older current-tree assertions to it.
+to the current successor without applying older current-tree assertions to it.
+
+### P9-7.2a initializer design admission
+
+The accepted `grcv4-a-target-reference-pass-v1` design is queryable, not yet an
+implemented migration. **Load initializer authority** opens claim/debt/object/
+contract selectors; `/api/a-initializer` and the notebook's
+`a-initializer-authority` cell return the same `initializer_authority` projection.
+Producer choice is resolved; payload/spec binding, runtime evidence and aggregate
+7.2a remain pending. No G2/G3 or wider support is added.
+
+Focused access and failure scenarios, owned by `test_p972a_initializer.py`:
+
+- Inspect the optional claim and required contract support without promoting
+  either to executed conformance; retain exact source, edge and trace identities.
+- Follow the design-resolved debt to its separate **forward** verification row.
+- Rehash changed source/admission/claim/status candidates: current loading holds.
+  Missing, changed or unknown sources never trigger a historical fallback.
+- Execute/reexecute the actual notebook cell and HTTP handler; failure clears
+  the notebook value or returns error-only HTTP 503.
+- Use all four actual browser selectors on desktop/mobile, fail then recover a
+  refresh, and ensure a delayed older response cannot repopulate held output.
+  The browser test intercepts transport; handler identity is checked separately.
+
+These are additional source-access scenarios, not changes to the historical
+scientific scenario inventory. The normal verification entry includes them.
+For a lean source/evidence check, use:
+
+```bash
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p972a_initializer_authority.py --check
+```
+
+The existing migration `--check` delegates to that same successor. It verifies
+the current source admission and unchanged accepted 25/17-test records, their
+original source identities and 7.1 predecessor through Git reads and existing
+correction spans. It does not run numerical tests or relabel old C→A refusal
+evidence. Historical reproduction uses the checker/source subject at `49b83ba`
+and a fresh output; positive C→A needs a later, separately bound execution.
+
+The initializer-integrated **GRCV4-proposal revision is user-accepted** at
+`448e420` through the 2026-09-11 commit-and-continue request. Its content is now
+in the paper, also user-accepted through the subsequent commit-and-continue
+request on 2026-09-11, at `7d45218`. The V4 initializer supplement, closed schema
+and wire vectors are now user-accepted through the commit-and-implement request.
+Their successor release and runtime implementation are authorized next. The current scoped check binds the accepted
+proposal/paper, typed source projection, six transferred sections and exact
+six-file specification candidate. `verify_p972a_proposal.py --check` is the same route; its
+`--check-release` mode is used by normal verification and API status. It keeps
+the released proposal, paper, generic/interface spec and registry bytes at
+`f36b3ba`, checking their original hashes, while
+all other released sources/members, generators, packaged assets and codec pins
+must match current bytes. Draft identity is not executable-release identity.
+Neither the source manifest nor the release is regenerated from newer prose.
+
+The unchanged `build_abundance_release.py --check` reconstructs its original
+release at `f36b3ba`; it is not a current-draft validator. A regular clone has
+that subject. A shallow clone or source export without the required Git object
+fails closed until it is obtained; it cannot substitute the live draft or a rerun.
+No new archive is needed. Focused methods in `test_p972a_proposal.py` cover allowed
+document evolution, coherently rehashed overclaims, drift in transferred equations,
+staging and claim ceilings, unintended document/spec/source edits, release and
+package/codec tampering, and unavailable/substituted historical document bytes.
+These checks do not automate scientific prose review or grant C→A conformance.
+`test_p972a_specification.py` adds closed-shape, canonical-byte, static/profile/
+invocation identity, graph/dimension, recipe, role and old-receipt/layout pressure.
+Its explicitly synthetic wire vectors are not producer/target admission or
+migration evidence; valid shapes and hashes cannot authenticate computed W.
+The original forensic source still reports its design-stage forward obligations;
+the current verification status separately reports specification acceptance separately from pending execution.
 
 The [scenario register](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json)
 links all six independent-review pressures and the live access scenarios to
@@ -289,3 +357,24 @@ was observed to discard generic-font overrides while rasterizing. The tests
 check glyph dimensions before and after capture. Probe tests wait for their
 exact network subject before checking the rendered decision; they do not rely
 on a ten-second DOM wait to absorb full authority-report verification latency.
+
+## P9-7.8 specialization-admission review
+
+Load the normal Phase 9 verification status in the browser or execute the
+notebook's `query-status` cell (set `PHASE9_STATUS_ONLY=True` to skip the
+separate probe). The API field `specialization_admission_review` exposes the
+same source-checked review; the browser validates its generated projection
+and shows acceptance and Tranche 7 closure in the next-gate summary. The record/review
+paths are repository-relative.
+
+The accepted consumed set is ten exact accepted generic declarations. This
+does not advertise ten GRC9V4 models: G3 and Tranche 7 closure are accepted,
+with only P9-8.1a chart/port-graph source entry authorized. The nested `a_expansion_work` assigns oracle production/review to
+P9-8.3A.1 and implementation/comparison to P9-8.3A.2, with explicit dependencies
+and generic-authority-gap routing back to Tranche 7. Both tasks remain pending;
+forty disabled surfaces are
+future work, and later specialization leaves remain gated. The normal failed
+boundary clears this view; no stale review is displayed as current authority.
+Use the dedicated `verify_p978_specialization_review.py` checker under
+`implementation/phase-9-grcv4/verification/` for a read-only recheck without
+rerunning numerical campaigns.

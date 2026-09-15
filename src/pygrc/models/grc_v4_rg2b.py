@@ -18,7 +18,7 @@ from .grc_v4_candidate_a import (
     CandidateACurrent,
     CandidateADifferentialReference,
     CandidateAWriter,
-    HISTORY_POLICY,
+    ADMITTED_HISTORY_POLICIES,
 )
 from .grc_v4_candidate_c import CandidateCCurrent
 from .grc_v4_ci import _Interval, _iv, _iexp, _itanh, _source
@@ -279,7 +279,7 @@ def _declarations(
             and backend.identity == candidate.descriptor_backend_id
             and backend.reference_weights == ref.edge_weights
             and domain.outer < domain.center_W
-            and profile.params_resolved.lifecycle.history_policy_id == HISTORY_POLICY,
+            and profile.params_resolved.lifecycle.history_policy_id in ADMITTED_HISTORY_POLICIES,
             "A_RG2b backend, positive mobility chart or writer mismatch",
         )
     else:

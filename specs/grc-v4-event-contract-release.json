@@ -1,0 +1,106 @@
+{
+  "schema_version": "grcv4-event-contract-release-v1",
+  "release_id": "grcv4-spec-release-sha256:a6861c38271f3f4ea41fae35807c399255353c384c44a9455f334556df6cdec8",
+  "release_identity_payload": {
+    "schema_version": "grcv4-event-contract-release-identity-v1",
+    "predecessor_release_id": "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7",
+    "accepted_scope_commit": "8594d9d7b1a2575a9bf61ccad753f045a4bd3f4c",
+    "artifact_bindings": [
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+        "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+        "sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassAuthority.json",
+        "sha256": "c74ba38858ae539b53625f5a9e24fb2921d749fe5c99340c53844d155bf3e126"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+        "sha256": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
+        "sha256": "09c080fd835d096372cff6204e42ddf0baba2b2da674fee905c7b5df2c83ed84"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.2b-ContractExtension.md",
+        "sha256": "59ccb9d237806879c5137c4ef51a97eeae243561d21e78d02de5eafbc79e2b1b"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.2b-PackageBinding.md",
+        "sha256": "97a7352e972f833de898ba2d35040177580f96068b782662ac6f17d068fe38e9"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/verification/build_p972b_event_release.py",
+        "sha256": "747723629729808d89302802072739138ce82eb8f4e4ad4abb1e86cfd9b18882"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/verification/test_p972b_event_release.py",
+        "sha256": "b87d9fcad6ab17311f7000cb673dd016618b01a124798f35a7a3dd9e9f591b19"
+      },
+      {
+        "path": "specs/grc-v4-a-initializer-release.json",
+        "sha256": "245cf8a25709880c5ea57ca0a617d2c39f6bede26d59e650d753039230c6cd0b"
+      },
+      {
+        "path": "specs/grc-v4-a-initializer-schema.json",
+        "sha256": "c1db8b898efb902a40521d99196458ba0bfb9811d555d8e3e89e31ce0574b08d"
+      },
+      {
+        "path": "specs/grc-v4-a-initializer-spec.md",
+        "sha256": "ff5990571197d7c843a16bd404694e35f8c6fc5da01856e5639d51ad5f2b36e6"
+      },
+      {
+        "path": "specs/grc-v4-a-initializer-vectors.json",
+        "sha256": "3408ca55bad43b61763163e6f193608f47cb7597d02da1b91915785c0dbf60a6"
+      },
+      {
+        "path": "specs/grc-v4-contract-schema.json",
+        "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+      },
+      {
+        "path": "specs/grc-v4-representation-transport-schema.json",
+        "sha256": "edd12e5b3609ab8536c7f1583b213d0d1f703afd86504e6a1af1ed6121266602"
+      },
+      {
+        "path": "specs/grc-v4-representation-transport-spec.md",
+        "sha256": "f8392f10b2e547a5287767312655843d20c60d6b4a75cd8f50f1a990ca523388"
+      },
+      {
+        "path": "specs/grc-v4-representation-transport-vectors.json",
+        "sha256": "5feb9634db4e123270a177ef3c2e13d545cdfeb3d600de4a62e4e0ae7b1cfe1d"
+      },
+      {
+        "path": "specs/grc-v4-specification-release.json",
+        "sha256": "946c8944b4b06645209d159ec056b891bf6fd153c51dedef38de0a862e127fff"
+      },
+      {
+        "path": "specs/grc-v4-topology-event-schema.json",
+        "sha256": "17bb626ac4e6271c24ae24c7b01180cdfb51713fe2ae01677a2cf1d285ac29e0"
+      },
+      {
+        "path": "specs/grc-v4-topology-event-spec.md",
+        "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+      },
+      {
+        "path": "specs/grc-v4-topology-event-vectors.json",
+        "sha256": "960dbd0c5a02de33a6a2c99749b11a7be083c0b525e8fc4db3f40117466275a9"
+      }
+    ],
+    "initializer_static_policy_digest": "grcv4-a-initializer-policy-sha256:bd122683b6640ac46e1a115eebc11bbd159aba18f071e1f04b3cbde62709625c",
+    "snapshot_layout_ids": [
+      "pygrc-generic-topology-event-snapshot-v1",
+      "pygrc-generic-coordinate-transport-snapshot-v1"
+    ],
+    "receipt_schemas": [
+      "grcv4-topology-event-receipt-v2",
+      "grcv4-representation-transport-receipt-v1"
+    ],
+    "representation_policy_id": "grcv4-pure-representation-transport-v1"
+  },
+  "claim_ceiling": "Contract wire/declaration admission only; no model lifecycle execution, covariance acceptance or new G2/G3 support."
+}

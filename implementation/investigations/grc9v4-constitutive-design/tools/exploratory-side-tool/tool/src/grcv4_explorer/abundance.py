@@ -25,7 +25,7 @@ CONTRACT_IDS = (
 )
 
 
-def build_abundance_context(repo_root: Path, side_tool_root: Path):
+def build_abundance_context(repo_root: Path, side_tool_root: Path, *, historical_only=False):
     """Build the bounded overlay; loading additionally requires the admission pin."""
     old = load_parent_forensic_context(repo_root, side_tool_root)
     data = load_json_object(repo_root / SOURCE)
@@ -45,7 +45,19 @@ def build_abundance_context(repo_root: Path, side_tool_root: Path):
         "source_id": RECORD_ID, "path": SOURCE,
         "file_sha256": file_sha256(repo_root / SOURCE),
     }
-    observation = discover_sources(repo_root, [d.admission for d in old.documents] + [admission_row])
+    rows = [d.admission for d in old.documents] + [admission_row]
+    observation = discover_sources(repo_root, rows)
+    if historical_only and observation["state"] == "new_unprocessed_source_available":
+        # Reconstruct this pinned historical observation only. Current loading
+        # independently requires the entire successor inventory to be exact.
+        observation = dict(observation)
+        observation.update(
+            state="current_bundle_exact", observed_record_count=len(rows),
+            added_unprocessed=[], current_repository_state_complete=True,
+            historical_snapshot_only=False, live_rebuild_allowed=True,
+            refresh_requirement={"required": False, "steps": []},
+        )
+        observation["observation_digest"] = record_digest(observation, "observation_digest")
     if observation["state"] != "current_bundle_exact":
         raise SourceAdmissionError("current abundance source set is not exact: " + observation["state"])
     document = SourceDocument(
@@ -117,12 +129,19 @@ def build_abundance_context(repo_root: Path, side_tool_root: Path):
     ), binding
 
 
-def load_current_forensic_context(repo_root: Path, side_tool_root: Path):
-    context, binding = build_abundance_context(repo_root, side_tool_root)
+def load_abundance_forensic_context(repo_root: Path, side_tool_root: Path):
+    """Pinned P9-4.9.1a context, excluding subsequent authority."""
+    context, binding = build_abundance_context(repo_root, side_tool_root, historical_only=True)
     if (load_json_object(side_tool_root / "records" / ADMISSION) != binding
             or binding["record_digest"] != ACCEPTED_ADMISSION_DIGEST):
         raise SourceAdmissionError("abundance admission no longer rebuilds exactly")
     return context
+
+
+def load_current_forensic_context(repo_root: Path, side_tool_root: Path):
+    """Compatibility import for current authority; never historical fallback."""
+    from .a_initializer import load_current_forensic_context as load
+    return load(repo_root, side_tool_root)
 
 
 def abundance_authority(repo_root: Path, side_tool_root: Path):

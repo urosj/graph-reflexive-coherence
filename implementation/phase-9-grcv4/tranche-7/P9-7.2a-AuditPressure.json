@@ -1,0 +1,2284 @@
+{
+  "schema": "p972a_independent_audit_v1",
+  "subject_record_digest": "b5cc1060dd1e9fbbfc96eca85379da4b1933b0aef2c6533a599a5e24c0c89af9",
+  "subject_record_digest_recomputed": "b5cc1060dd1e9fbbfc96eca85379da4b1933b0aef2c6533a599a5e24c0c89af9",
+  "record_digest_matches": true,
+  "subject_record_sha256": "d17f412fc43bfc426ba48778828601ea549f411a9de93c716ac35d33d2a0e2d4",
+  "review_sha256": "86e430ced4945cfc916be910c5a3a23d24b2452a6b275681b139a057939c743a",
+  "source_checks": [
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "00c04f9124126fcedeb790823516ee2568e8405b0abfb78c5fd7921089232097",
+      "matches_record": true,
+      "compiles": true
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "ec90166c77762e1509e5b67ecc218dc6213b8dee927a133ea02b6f8bdcb6b88a",
+      "matches_record": true,
+      "compiles": true
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "574159e2090b5edc3923f3b9ebe44dd187a08692e67023ea5b80bc9443a98f6c",
+      "matches_record": true,
+      "compiles": true
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_migration.py",
+      "sha256": "cbc484219702ee67cfd0de464878aed4dadf8d0c0bab6100283288e052758f11",
+      "matches_record": true,
+      "compiles": true
+    },
+    {
+      "path": "tests/models/test_grc_v4_migration.py",
+      "sha256": "d2ad2487213af802b3b1dc46d107b30b566bfc1b189207c5288e10e26fed4e34",
+      "matches_record": true,
+      "compiles": true
+    }
+  ],
+  "source_binding_count": 440,
+  "roster": {
+    "reported_methods": 25,
+    "unique_record_ids": 25,
+    "static_migration_methods": 9,
+    "generated_positive_methods": 13,
+    "migration_methods_match_record": true,
+    "legacy_methods": [
+      "tests.models.test_grc_v4.PublicFacadeTests.test_save_load_defaults_and_actual_crossings",
+      "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_dyadic_snapshot_embeds_exact_preimages_and_acyclic_identities",
+      "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_exact_dyadic_receipts_commit_and_whole_state_identity"
+    ]
+  },
+  "loaded_source_inventory_check": {
+    "before": 181,
+    "after": 182,
+    "added": [
+      "pygrc.models.grc_v4_assets"
+    ],
+    "changed_or_missing_previous_entries": [],
+    "after_inventory_binding_mismatches": [],
+    "interpretation": "Internal record consistency, not independent live-code or native-run attestation."
+  },
+  "execution_limits": {
+    "native_repository_suite_executed": false,
+    "production_numerical_solvers_executed": false,
+    "full_native_schema_validation_executed": false,
+    "native_regression_proposals": "Compiled only; not executed.",
+    "independent_serialization": "Node ECMAScript primitive serialization plus sorted object keys; captured data are binary64-compatible.",
+    "scaffolding": "Dataclasses/profile/reference/graph/backend records, schema checks, geometry and numerical state readmission are explicit scaffolds. Original migration and lifecycle/codec function bodies execute unchanged through AST loading.",
+    "network": "Pinned repository source retrieval attempts failed; no native package checkout was reconstructed."
+  },
+  "findings": {
+    "F1": {
+      "title": "Programmer ValueError/V4IdentityError converted to migration failure receipts",
+      "scope": "shared construction/source/target readmission wrappers",
+      "programmer_controls": 9,
+      "returned_failure_instead_of_raise": 6,
+      "RuntimeError_controls_raised": 3,
+      "all_publications_unchanged": true
+    },
+    "F2": {
+      "title": "Contradictory authoritative subdigests accepted for an archived known scientific state",
+      "cases": 13,
+      "accepted_contradictions": 13,
+      "numeric_state_or_map_changed": false
+    }
+  },
+  "executed_pressure": {
+    "scope": "Isolated P9-7.2a lifecycle/control pressure.\nUnchanged uploaded migration/lifecycle/codec function bodies are executed.\nMissing native package records, schema validation, numerical readmission,\ngeometry and differential reference infrastructure are explicitly scaffolded.\nNo production numerical solve, native snapshot load or repository test run is\nclaimed. All 13 captured migrations' content IDs are compared before mutation.\n",
+    "reconstructed_migrations": [
+      {
+        "case": "A_CIPC_PC",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "A_C_DROP",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "A_C_NH",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "A_C_PC",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "A_NH_NH",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "A_NH_PC",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "A_PC_CIPC",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "A_PC_NH",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "C_CIPC_PC",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "C_NH_NH",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "C_NH_PC",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "C_PC_CIPC",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      },
+      {
+        "case": "C_PC_NH",
+        "receipt_ids": 4,
+        "commit_ids": 1,
+        "complete_before_after_snapshot_hashes": true,
+        "restoration_control_flow": true
+      }
+    ],
+    "mutation_controls": [
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "fixed-profile snapshot contains a foreign graph/profile receipt"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "receipt resource/history reference identity is unreconstructible"
+      },
+      {
+        "case": "A_C_DROP",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "_CrossingFailure",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "receipt resource/history reference identity is unreconstructible"
+      },
+      {
+        "case": "A_C_NH",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "_CrossingFailure",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "receipt resource/history reference identity is unreconstructible"
+      },
+      {
+        "case": "A_C_PC",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "_CrossingFailure",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "fixed-profile snapshot contains a foreign graph/profile receipt"
+      },
+      {
+        "case": "A_NH_NH",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "receipt resource/history reference identity is unreconstructible"
+      },
+      {
+        "case": "A_NH_PC",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "fixed-profile snapshot contains a foreign graph/profile receipt"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "receipt resource/history reference identity is unreconstructible"
+      },
+      {
+        "case": "A_PC_NH",
+        "mutation": "missing_backend",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "Candidate A reference has no registered differential recipe"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "fixed-profile snapshot contains a foreign graph/profile receipt"
+      },
+      {
+        "case": "C_NH_NH",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_NH",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_NH",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_NH",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_NH",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "C_NH_NH",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "C_NH_NH",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "fixed-profile snapshot contains a foreign graph/profile receipt"
+      },
+      {
+        "case": "C_NH_PC",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_PC",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_PC",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_PC",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_NH_PC",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "C_NH_PC",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "C_NH_PC",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "receipt resource/history reference identity is unreconstructible"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "fixed-profile snapshot contains a foreign graph/profile receipt"
+      },
+      {
+        "case": "C_PC_NH",
+        "mutation": "candidate_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_NH",
+        "mutation": "carrier_aux",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_NH",
+        "mutation": "primary_history",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_NH",
+        "mutation": "parent",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+      },
+      {
+        "case": "C_PC_NH",
+        "mutation": "current_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing archive does not apply its declared whole-lifecycle map"
+      },
+      {
+        "case": "C_PC_NH",
+        "mutation": "reset_map",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "crossing preimages contradict their embedded reference/reset identity"
+      },
+      {
+        "case": "C_PC_NH",
+        "mutation": "missing_archive",
+        "rejected": true,
+        "error_type": "V4IdentityError",
+        "message": "receipt resource/history reference identity is unreconstructible"
+      }
+    ],
+    "exception_controls": [
+      {
+        "site": "map",
+        "injected_type": "ValueError",
+        "outcome": "returned_failure",
+        "stage": "target_construction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "map",
+        "injected_type": "V4IdentityError",
+        "outcome": "returned_failure",
+        "stage": "target_construction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "map",
+        "injected_type": "RuntimeError",
+        "outcome": "raised",
+        "same_exception": true,
+        "raised_type": "RuntimeError",
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "map",
+        "injected_type": "GeometryDomainError",
+        "outcome": "returned_failure",
+        "stage": "target_construction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "map",
+        "injected_type": "NonfiniteGeometryError",
+        "outcome": "returned_failure",
+        "stage": "target_construction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "source_readmission",
+        "injected_type": "ValueError",
+        "outcome": "returned_failure",
+        "stage": "pre_read_reconstruction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "source_readmission",
+        "injected_type": "V4IdentityError",
+        "outcome": "returned_failure",
+        "stage": "pre_read_reconstruction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "source_readmission",
+        "injected_type": "RuntimeError",
+        "outcome": "raised",
+        "same_exception": true,
+        "raised_type": "RuntimeError",
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "source_readmission",
+        "injected_type": "GeometryDomainError",
+        "outcome": "returned_failure",
+        "stage": "pre_read_reconstruction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "source_readmission",
+        "injected_type": "NonfiniteGeometryError",
+        "outcome": "returned_failure",
+        "stage": "pre_read_reconstruction",
+        "code": "domain_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "target_readmission",
+        "injected_type": "ValueError",
+        "outcome": "returned_failure",
+        "stage": "target_readmission",
+        "code": "target_readmission_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "target_readmission",
+        "injected_type": "V4IdentityError",
+        "outcome": "returned_failure",
+        "stage": "target_readmission",
+        "code": "target_readmission_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "target_readmission",
+        "injected_type": "RuntimeError",
+        "outcome": "raised",
+        "same_exception": true,
+        "raised_type": "RuntimeError",
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "target_readmission",
+        "injected_type": "GeometryDomainError",
+        "outcome": "returned_failure",
+        "stage": "target_readmission",
+        "code": "target_readmission_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      },
+      {
+        "site": "target_readmission",
+        "injected_type": "NonfiniteGeometryError",
+        "outcome": "returned_failure",
+        "stage": "target_readmission",
+        "code": "target_readmission_failure",
+        "solver_disposition": null,
+        "whole_publication_unchanged": true
+      }
+    ],
+    "map_pressure": [
+      {
+        "case": "A_NH_NH",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_PC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_PC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_NH",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_PC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_NH",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_PC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_NH",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_NH",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_PC",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_PC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_PC",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_NH",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_PC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_CIPC",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_PC",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_NH",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_PC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_PC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_NH",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_DROP",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_PC",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_NH_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_NH",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_CIPC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "edges": 1,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_PC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_PC_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_PC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_PC_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_C_NH",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "edges": 4,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_CIPC_PC",
+        "edges": 2,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "A_CIPC_PC",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 3,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      },
+      {
+        "case": "C_NH_NH",
+        "edges": 5,
+        "passed": true,
+        "scope": "map-only arbitrary history coordinates; no numerical or profile reidentification claim"
+      }
+    ],
+    "mixed_histories": [
+      {
+        "seed": "A_NH_NH",
+        "steps": [
+          {
+            "operation": "A_CI",
+            "profile": "A_CI",
+            "commits": 2,
+            "archives": 1,
+            "restored": true
+          },
+          {
+            "operation": "reset",
+            "profile": "A_CI",
+            "commits": 3,
+            "archives": 1,
+            "restored": true
+          },
+          {
+            "operation": "rebase",
+            "profile": "A_CI",
+            "commits": 4,
+            "archives": 1,
+            "restored": true
+          },
+          {
+            "operation": "A_PC",
+            "profile": "A_PC",
+            "commits": 5,
+            "archives": 2,
+            "restored": true
+          },
+          {
+            "operation": "A_CI_PC",
+            "profile": "A_CI_PC",
+            "commits": 6,
+            "archives": 3,
+            "restored": true
+          },
+          {
+            "operation": "A_PC",
+            "profile": "A_PC",
+            "commits": 7,
+            "archives": 4,
+            "restored": true
+          },
+          {
+            "operation": "C_PC",
+            "profile": "C_PC",
+            "commits": 8,
+            "archives": 5,
+            "restored": true
+          },
+          {
+            "operation": "reset",
+            "profile": "C_PC",
+            "commits": 9,
+            "archives": 5,
+            "restored": true
+          },
+          {
+            "operation": "C_RG2b",
+            "profile": "C_RG2b",
+            "commits": 10,
+            "archives": 6,
+            "restored": true
+          },
+          {
+            "operation": "C_CI",
+            "profile": "C_CI",
+            "commits": 11,
+            "archives": 7,
+            "restored": true
+          },
+          {
+            "operation": "C_OS",
+            "profile": "C_OS",
+            "commits": 12,
+            "archives": 8,
+            "restored": true
+          }
+        ],
+        "scope": "lifecycle control flow plus exact maps/receipts, numerical state-readmission scaffolded"
+      },
+      {
+        "seed": "C_NH_NH",
+        "steps": [
+          {
+            "operation": "C_CI",
+            "profile": "C_CI",
+            "commits": 2,
+            "archives": 1,
+            "restored": true
+          },
+          {
+            "operation": "C_PC",
+            "profile": "C_PC",
+            "commits": 3,
+            "archives": 2,
+            "restored": true
+          },
+          {
+            "operation": "C_CI_PC",
+            "profile": "C_CI_PC",
+            "commits": 4,
+            "archives": 3,
+            "restored": true
+          },
+          {
+            "operation": "rebase",
+            "profile": "C_CI_PC",
+            "commits": 5,
+            "archives": 3,
+            "restored": true
+          },
+          {
+            "operation": "C_PC",
+            "profile": "C_PC",
+            "commits": 6,
+            "archives": 4,
+            "restored": true
+          },
+          {
+            "operation": "C_RG2b",
+            "profile": "C_RG2b",
+            "commits": 7,
+            "archives": 5,
+            "restored": true
+          },
+          {
+            "operation": "reset",
+            "profile": "C_RG2b",
+            "commits": 8,
+            "archives": 5,
+            "restored": true
+          },
+          {
+            "operation": "C_OS",
+            "profile": "C_OS",
+            "commits": 9,
+            "archives": 6,
+            "restored": true
+          }
+        ],
+        "scope": "lifecycle control flow plus exact maps/receipts, numerical state-readmission scaffolded"
+      }
+    ],
+    "family_pair_map_controls": [
+      {
+        "source": "A_CI_PC",
+        "target": "A_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "A_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "A_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "A_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "A_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI_PC",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "A_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "A_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "A_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "A_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "A_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_PC",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI",
+        "target": "A_CI_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI",
+        "target": "A_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI",
+        "target": "A_OS",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI",
+        "target": "A_CI",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI",
+        "target": "A_RG2b",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "A_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "A_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "A_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "A_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "A_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_OS",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "C_OS",
+        "target": "A_CI_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_OS",
+        "target": "A_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_OS",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "C_OS",
+        "target": "A_OS",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_OS",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "C_OS",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_OS",
+        "target": "A_CI",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_OS",
+        "target": "A_RG2b",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_OS",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_OS",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "C_PC",
+        "target": "A_CI_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_PC",
+        "target": "A_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_PC",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "C_PC",
+        "target": "A_OS",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_PC",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "C_PC",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_PC",
+        "target": "A_CI",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_PC",
+        "target": "A_RG2b",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_PC",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_PC",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "A_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "A_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "A_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "A_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "A_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_CI",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "A_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "A_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "A_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "A_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "A_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "A_RG2b",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "A_CI_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "A_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "A_OS",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "A_CI",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "A_RG2b",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_CI_PC",
+        "target": "C_RG2b",
+        "map_constructed": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "A_CI_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "A_PC",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "C_CI",
+        "map_constructed": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "A_OS",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "C_OS",
+        "map_constructed": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "C_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "A_CI",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "A_RG2b",
+        "initializer_refused": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "C_CI_PC",
+        "map_constructed": true
+      },
+      {
+        "source": "C_RG2b",
+        "target": "C_RG2b",
+        "map_constructed": true
+      }
+    ]
+  },
+  "archived_state_contradiction_pressure": {
+    "scope": "Additional isolated historical authority-consistency pressure.\nUses the harness's explicitly scaffolded infrastructure, unchanged submitted\nowner/importer/map/receipt bodies, and captured endpoints. No numerical values\nor history-policy declarations are modified by the counterexample.\n",
+    "results": [
+      {
+        "case": "A_CIPC_PC",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:3a255c5a351dae54714ee276922e9bb582a34bd454b98238fc73edea7024294b",
+        "known_authority_id": "grcv4-authoritative-sha256:d26af6115e872f215d5f50b85d3f42a4cdcfe838574b00c68ff12b0efe2e6a14",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "A_C_DROP",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:3a255c5a351dae54714ee276922e9bb582a34bd454b98238fc73edea7024294b",
+        "known_authority_id": "grcv4-authoritative-sha256:d26af6115e872f215d5f50b85d3f42a4cdcfe838574b00c68ff12b0efe2e6a14",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "A_C_NH",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:758b600984dc9e82a9859c5150bd10c63123112f11d047f5ac8fbd0d58b35f8a",
+        "known_authority_id": "grcv4-authoritative-sha256:8bc428f8f1db9a2e73e05d0ec948e67780fdb77b6cd7497d53c0c42bbec7c02c",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "A_C_PC",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:fbb36264fdf2b8d3dd76e900d1ea6de96020cb9d27995f6937b98ca6fd8ac93f",
+        "known_authority_id": "grcv4-authoritative-sha256:d26af6115e872f215d5f50b85d3f42a4cdcfe838574b00c68ff12b0efe2e6a14",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "A_NH_NH",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:758b600984dc9e82a9859c5150bd10c63123112f11d047f5ac8fbd0d58b35f8a",
+        "known_authority_id": "grcv4-authoritative-sha256:8bc428f8f1db9a2e73e05d0ec948e67780fdb77b6cd7497d53c0c42bbec7c02c",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "A_NH_PC",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:2fbc22dfa6afd868f4538bed7c21e55809bb0e4b44b89ce3734bb291bf640f78",
+        "known_authority_id": "grcv4-authoritative-sha256:8bc428f8f1db9a2e73e05d0ec948e67780fdb77b6cd7497d53c0c42bbec7c02c",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "A_PC_CIPC",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:fbb36264fdf2b8d3dd76e900d1ea6de96020cb9d27995f6937b98ca6fd8ac93f",
+        "known_authority_id": "grcv4-authoritative-sha256:d26af6115e872f215d5f50b85d3f42a4cdcfe838574b00c68ff12b0efe2e6a14",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "A_PC_NH",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:fbb36264fdf2b8d3dd76e900d1ea6de96020cb9d27995f6937b98ca6fd8ac93f",
+        "known_authority_id": "grcv4-authoritative-sha256:d26af6115e872f215d5f50b85d3f42a4cdcfe838574b00c68ff12b0efe2e6a14",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "C_CIPC_PC",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:4ad2753de5332d5ab8dc9d4879fbc632711f63ea2c97c242ef5da7c8c6f3c757",
+        "known_authority_id": "grcv4-authoritative-sha256:384b51418a5e7d99579a9da53be58c541457a80564ab0de433bef8dee3f75252",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "C_NH_NH",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:352ba3a60ce16b8f022b62990bb08e098dcd4f31b10dab45e3ce1edd11610864",
+        "known_authority_id": "grcv4-authoritative-sha256:a183d7380474ab0b967b5c22c69557bb429a9d570f91ad0793d28147097a58e7",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "C_NH_PC",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:e493e7efdadad4124f2f0d6a820755d63bb9c9433aabd510d4e61c3e89db20f1",
+        "known_authority_id": "grcv4-authoritative-sha256:a183d7380474ab0b967b5c22c69557bb429a9d570f91ad0793d28147097a58e7",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "C_PC_CIPC",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:1d3c81994044b9f5052f32f4abf37f0267bc5ea18abf49ae3d316c565f3369b1",
+        "known_authority_id": "grcv4-authoritative-sha256:384b51418a5e7d99579a9da53be58c541457a80564ab0de433bef8dee3f75252",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      },
+      {
+        "case": "C_PC_NH",
+        "importer": "accepted",
+        "known_scientific_state_id": "grcv4-state-sha256:1d3c81994044b9f5052f32f4abf37f0267bc5ea18abf49ae3d316c565f3369b1",
+        "known_authority_id": "grcv4-authoritative-sha256:384b51418a5e7d99579a9da53be58c541457a80564ab0de433bef8dee3f75252",
+        "forged_authority_id": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "unchanged_current_reset_resources": true,
+        "all_changed_receipt_commit_parent_envelope_ids_recomputed": true,
+        "message": null
+      }
+    ]
+  },
+  "aggregate_boundary": {
+    "C_to_A_positive_initializer_source": "pending in submitted record; not discharged by this audit",
+    "new_G2_support": [],
+    "no_constitutive_change_proposed": true
+  }
+}

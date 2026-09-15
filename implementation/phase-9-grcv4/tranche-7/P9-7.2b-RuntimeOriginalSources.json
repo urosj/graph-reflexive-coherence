@@ -1,0 +1,139 @@
+{
+  "schema": "phase9_original_source_bridge_v1",
+  "original_record_digest": "c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391",
+  "prior_source_delta": {
+    "src/pygrc/models/grc_v4_lifecycle.py": {
+      "current_sha256": "21e308326722b7ee6ef5b2e936153b11502bcd233c4839813d4025bb8358b724",
+      "original_sha256": "9a8ded05a79debc88bb5db904792a4fd3685c33adb0a61e42b711eb57855d095",
+      "splices_to_original": [
+        {
+          "start": 838,
+          "stop": 839,
+          "old_lines": [
+            "        except (EventAdmissionError, V4IdentityError, V4SchemaError) as exc:\n"
+          ]
+        },
+        {
+          "start": 1614,
+          "stop": 1626,
+          "old_lines": []
+        },
+        {
+          "start": 2074,
+          "stop": 2077,
+          "old_lines": [
+            "            if event_version == 2 or type(request) is GRCV4RepresentationRequest:\n"
+          ]
+        },
+        {
+          "start": 2082,
+          "stop": 2088,
+          "old_lines": [
+            "                for row in owned.transitions:\n",
+            "                    if row[\"request\"][\"schema_version\"] == \"grcv4-mapped-topology-event-request-v1\":\n",
+            "                        definition = \"event_request\" if versions.get(row[\"commit_id\"]) == 2 else \"legacy_event_request\"\n"
+          ]
+        },
+        {
+          "start": 2089,
+          "stop": 2090,
+          "old_lines": [
+            "                            validate_event_payload(\"event/\" + definition, row[\"request\"])\n"
+          ]
+        },
+        {
+          "start": 2092,
+          "stop": 2093,
+          "old_lines": [
+            "                                \"prior event declaration is outside the joint archive contract\") from exc\n"
+          ]
+        }
+      ]
+    },
+    "src/pygrc/models/grc_v4_events.py": {
+      "current_sha256": "66d4778ed273871066a020ee8d8c5e33122c31f56b26569711876c1c4c2b8a11",
+      "original_sha256": "c29e71c7d4b35a2c5646785622a07737bf6c0775573958b1332150da30dae7e0",
+      "splices_to_original": [
+        {
+          "start": 10,
+          "stop": 11,
+          "old_lines": [
+            "from .grc_v4_codec import canonical_json_bytes, payload_identity\n"
+          ]
+        },
+        {
+          "start": 82,
+          "stop": 88,
+          "old_lines": [
+            "    value = validate_correspondence(record, source.to_payload(), target.to_payload())[\"payload\"]\n"
+          ]
+        }
+      ]
+    },
+    "implementation/phase-9-grcv4/verification/verify_p972b_runtime.py": {
+      "current_sha256": "b4ce7e807b5934e6ea51abf0e8bf1f96be3733401d447ae357a4987d36f66895",
+      "original_sha256": "d22a0af88b019807474fefc14fab3a5658e14e8c5e64572a164229f9ad1a4fae",
+      "splices_to_original": [
+        {
+          "start": 13,
+          "stop": 16,
+          "old_lines": []
+        },
+        {
+          "start": 18,
+          "stop": 19,
+          "old_lines": []
+        },
+        {
+          "start": 26,
+          "stop": 27,
+          "old_lines": [
+            "    names |= p.EVENT_RUNTIME_PATHS | {SCRIPT, \"pyproject.toml\", \"uv.lock\", \"specs/grc-v4-event-contract-release.json\"}\n"
+          ]
+        },
+        {
+          "start": 32,
+          "stop": 36,
+          "old_lines": [
+            "    return [TEST + '.EventRuntimeTests.' + n for n in unittest.TestLoader().getTestCaseNames(EventRuntimeTests)]\n"
+          ]
+        },
+        {
+          "start": 38,
+          "stop": 64,
+          "old_lines": []
+        },
+        {
+          "start": 67,
+          "stop": 69,
+          "old_lines": [
+            "    value = p.read(p.ROOT / RECORD)\n"
+          ]
+        },
+        {
+          "start": 71,
+          "stop": 72,
+          "old_lines": []
+        },
+        {
+          "start": 81,
+          "stop": 83,
+          "old_lines": [
+            "    return dict(status='implemented_verified_pending_review', record_path=RECORD, record_digest=value['record_digest'],\n"
+          ]
+        },
+        {
+          "start": 91,
+          "stop": 92,
+          "old_lines": []
+        },
+        {
+          "start": 100,
+          "stop": 101,
+          "old_lines": []
+        }
+      ]
+    }
+  },
+  "record_digest": "cdc3b9e3fc66ec7909f5579481a745b3d6c6aac46aea076a82ebbe314a229723"
+}

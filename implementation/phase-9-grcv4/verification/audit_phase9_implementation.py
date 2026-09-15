@@ -77,11 +77,11 @@ def verify(root, boundary_only=False):
     policy.prior.run_logged(
         [
             sys.executable,
-            str(root / policy.ABUNDANCE_RELEASE_BUILDER),
-            "--check",
+            str(root / policy.PROPOSAL_RELEASE_CHECKER),
+            "--check-release",
         ],
         root,
-        "current_accepted_abundance_release",
+        "unchanged_accepted_release_with_historical_proposal_subject",
         commands,
     )
     if not boundary_only:
@@ -89,17 +89,19 @@ def verify(root, boundary_only=False):
         for label, script in [
             ("P9492_parent_authority_surfaces", policy.SCRIPTS + "test_p9492_parents.py"),
             ("P9491a_abundance_authority_surfaces", policy.SCRIPTS + "test_p9491a_abundance.py"),
+            ("P972a_initializer_authority_surfaces", policy.SCRIPTS + "test_p972a_initializer.py"),
+            ("P972a_proposal_release_separation", policy.HERE + "test_p972a_proposal.py"),
             ("P9_G1_authority_pressure", policy.HERE + "test_phase9_g1.py"),
             ("P9_G1_API_notebook", policy.SCRIPTS + "test_phase9_g1_surfaces.py"),
         ]:
             policy.prior.run_logged(
                 [sys.executable, str(root / script)], root, label, commands
             )
-        # The successor review verifies the current fixture run and original
-        # parent/facade/abundance Git subjects without numerical reexecution.
+        # Admit current design authority while retaining the accepted migration
+        # executions and predecessor subjects without numerical reexecution.
         policy.prior.run_logged(
-            [sys.executable, str(root / policy.HERE / "verify_p948b_review.py"), "--check"],
-            root, "P948B_accepted_exact_profile_review", commands,
+            [sys.executable, str(root / policy.HERE / "verify_p972a_initializer_authority.py"), "--check"],
+            root, "P972a_current_initializer_authority_and_preserved_migrations", commands,
         )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(

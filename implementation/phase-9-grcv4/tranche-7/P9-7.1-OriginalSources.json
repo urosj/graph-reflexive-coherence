@@ -1,0 +1,246 @@
+{
+  "schema": "phase9_original_source_recovery_v1",
+  "original_record": "implementation/phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json",
+  "original_record_sha256": "9a8e992433a3f36b436ec6ebc48e7a3f526f7e2f9f2d0c0307c5bfc7fc945c2e",
+  "original_record_digest": "6cd53fc0c7c5ef597921a5b254ab6d1264087f8f3eec20a9d80f0b6ca83df07c",
+  "prior_source_delta": {
+    "src/pygrc/models/grc_v4_lifecycle.py": {
+      "current_sha256": "96c2cd42a1d6f269558709e6a9d8bf56f6fdd1f9ea086918d0aa25c9a5f18be4",
+      "splices_to_original": [
+        {
+          "start": 136,
+          "stop": 176,
+          "old_lines": []
+        },
+        {
+          "start": 379,
+          "stop": 380,
+          "old_lines": [
+            "    step: Any,\n"
+          ]
+        },
+        {
+          "start": 401,
+          "stop": 402,
+          "old_lines": [
+            "                Fraction(step.resource.charge.actual)\n"
+          ]
+        },
+        {
+          "start": 436,
+          "stop": 437,
+          "old_lines": [
+            "            **step.resource.charge.receipt_values(),\n"
+          ]
+        },
+        {
+          "start": 1116,
+          "stop": 1117,
+          "old_lines": []
+        },
+        {
+          "start": 1121,
+          "stop": 1131,
+          "old_lines": []
+        },
+        {
+          "start": 1391,
+          "stop": 1392,
+          "old_lines": [
+            "        # dt=0 performs all reference/current/reset/charge admission, no writer.\n",
+            "        _profile_step(replace(before, dt=0), backend)\n"
+          ]
+        },
+        {
+          "start": 1579,
+          "stop": 1580,
+          "old_lines": [
+            "        # dt=0 performs no next-beat writer or clock advance.\n"
+          ]
+        },
+        {
+          "start": 1581,
+          "stop": 1582,
+          "old_lines": [
+            "        _profile_step(inputs, backend)\n"
+          ]
+        },
+        {
+          "start": 1644,
+          "stop": 1645,
+          "old_lines": [
+            "            _profile_step(inputs, self._backend)\n"
+          ]
+        },
+        {
+          "start": 1677,
+          "stop": 1679,
+          "old_lines": [
+            "            admitted = _profile_step(following, self._backend)\n",
+            "            payloads = _ordinary_receipts(before, following, admitted, ledger)\n"
+          ]
+        },
+        {
+          "start": 1741,
+          "stop": 1742,
+          "old_lines": [
+            "            _, current, _ = _step_currents(_profile_step(inputs, self._backend))\n"
+          ]
+        },
+        {
+          "start": 2036,
+          "stop": 2037,
+          "old_lines": [
+            "            _ordinary_receipts(before, following, step, ledger),\n"
+          ]
+        },
+        {
+          "start": 2045,
+          "stop": 2048,
+          "old_lines": []
+        },
+        {
+          "start": 2052,
+          "stop": 2053,
+          "old_lines": [
+            "            current_stage=selected_stage if request.dt > 0 else \"commit_reference_readmission\",\n"
+          ]
+        },
+        {
+          "start": 2058,
+          "stop": 2059,
+          "old_lines": [
+            "                \"stage\": \"commit_reference_readmission\",\n"
+          ]
+        }
+      ]
+    },
+    "tests/models/test_grc_v4_generic_lifecycle.py": {
+      "current_sha256": "6b22807881dfe1fe1afa0ffd0b3057a67b3d1d612134ea7846e2d427cc134b38",
+      "splices_to_original": [
+        {
+          "start": 10,
+          "stop": 12,
+          "old_lines": []
+        },
+        {
+          "start": 23,
+          "stop": 24,
+          "old_lines": [
+            "    canonical_json_bytes,\n"
+          ]
+        },
+        {
+          "start": 27,
+          "stop": 29,
+          "old_lines": []
+        },
+        {
+          "start": 39,
+          "stop": 40,
+          "old_lines": []
+        },
+        {
+          "start": 281,
+          "stop": 548,
+          "old_lines": []
+        }
+      ]
+    },
+    "implementation/phase-9-grcv4/verification/verify_p971_lifecycle.py": {
+      "current_sha256": "306002d7dd2918642cf49c55061af501090285058602e44c9314cdfb9b4b7988",
+      "splices_to_original": [
+        {
+          "start": 19,
+          "stop": 24,
+          "old_lines": []
+        },
+        {
+          "start": 87,
+          "stop": 155,
+          "old_lines": []
+        },
+        {
+          "start": 208,
+          "stop": 209,
+          "old_lines": [
+            "    sources = bindings()\n"
+          ]
+        },
+        {
+          "start": 210,
+          "stop": 212,
+          "old_lines": []
+        },
+        {
+          "start": 232,
+          "stop": 248,
+          "old_lines": [
+            "    return dict(status=\"passed\", numerical_tests_rerun=0, scoped_tests=26,\n"
+          ]
+        },
+        {
+          "start": 252,
+          "stop": 253,
+          "old_lines": [
+            "def run(output):\n"
+          ]
+        },
+        {
+          "start": 254,
+          "stop": 255,
+          "old_lines": [
+            "    from tests.models.test_grc_v4_generic_lifecycle import EVIDENCE\n"
+          ]
+        },
+        {
+          "start": 261,
+          "stop": 267,
+          "old_lines": [
+            "    before = bindings()\n"
+          ]
+        },
+        {
+          "start": 269,
+          "stop": 270,
+          "old_lines": [
+            "    tests = roster()\n"
+          ]
+        },
+        {
+          "start": 274,
+          "stop": 275,
+          "old_lines": [
+            "    p.require(bindings() == before, \"source changed during execution\")\n"
+          ]
+        },
+        {
+          "start": 287,
+          "stop": 293,
+          "old_lines": []
+        },
+        {
+          "start": 294,
+          "stop": 298,
+          "old_lines": [
+            "    validate(record, before)\n"
+          ]
+        },
+        {
+          "start": 308,
+          "stop": 309,
+          "old_lines": []
+        },
+        {
+          "start": 311,
+          "stop": 314,
+          "old_lines": [
+            "    if args.run and not args.output:\n",
+            "        parser.error(\"--run requires a new repository-relative --output\")\n",
+            "    print(json.dumps(run(args.output) if args.run else check()))\n"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -14,6 +14,10 @@ import sys
 import tomllib
 
 _HERE = Path(__file__).resolve().parent
+# The API loads this policy by file location in a fresh process, before any
+# CLI/checker has populated the local verification-module search path.
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
 _presentation_spec = importlib.util.spec_from_file_location(
     "phase9_evidence_presentation", _HERE / "handoff_evidence.py"
 )
@@ -57,6 +61,31 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+EVENT_RUNTIME_PATHS = {"src/pygrc/models/" + n + ".py" for n in
+                       ("grc_v4", "grc_v4_codec", "grc_v4_step", "grc_v4_lifecycle", "grc_v4_events")}
+EVENT_NEW_PATHS = {"src/pygrc/models/grc_v4_events.py", "tests/models/test_grc_v4_events.py",
+                   "tests/models/test_grc_v4_event_audit.py"}
+EVENT_RUNTIME_PATHS |= EVENT_NEW_PATHS
+LIFECYCLE_FAMILIES = tuple(c + "_" + r for r in ("OS", "CI", "RG2b", "PC", "CI_PC") for c in ("A", "C"))
+LIFECYCLE_LEAVES = {"P9-7.1", *("P9-7.1-" + family for family in LIFECYCLE_FAMILIES)}
+LIFECYCLE_PATHS = {"src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
+                   "src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4_generic_lifecycle.py"}
+MIGRATION_CASES = ("A_NH_NH", "C_NH_NH", "A_NH_PC", "C_NH_PC", "A_PC_NH", "C_PC_NH",
+                   "A_PC_CIPC", "C_PC_CIPC", "A_CIPC_PC", "C_CIPC_PC", "A_C_NH", "A_C_PC", "A_C_DROP")
+MIGRATION_LEAVES = {"P9-7.2a", "P9-7.2a-C_TO_A_UNRESOLVED", *("P9-7.2a-" + case for case in MIGRATION_CASES)}
+MIGRATION_PATHS = {"src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
+                   "src/pygrc/models/grc_v4_lifecycle.py", "src/pygrc/models/grc_v4_migration.py",
+                   "tests/models/test_grc_v4_migration.py"}
+INITIALIZER_RUNTIME_PATHS = {
+    "src/pygrc/models/grc_v4_" + name + ".py" for name in (
+        "candidate_a", "ci", "codec", "initializer", "lifecycle", "migration",
+        "pc", "realizations", "rg2b", "step")
+} | {"tests/models/test_grc_v4_initializer.py",
+     "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
+     "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json"}
+INITIALIZER_NEW_PATHS = {"src/pygrc/models/grc_v4_initializer.py", "tests/models/test_grc_v4_initializer.py",
+                       "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
+                       "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json"}
 PC_BATCH_PATHS = {
     "src/pygrc/models/grc_v4_pc.py",
     "tests/models/test_grc_v4_pc.py",
@@ -115,6 +144,7 @@ PARENT_RUN_SHA256 = "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a
 ABUNDANCE_AUTHORITY = INV + "decisions/P9AbundanceInterfaceAuthority.json"
 ABUNDANCE_AUTHORITY_DIGEST = "d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053"
 ABUNDANCE_RELEASE_BUILDER = HERE + "build_abundance_release.py"
+PROPOSAL_RELEASE_CHECKER = HERE + "verify_p972a_proposal.py"
 ABUNDANCE_RELEASE_ID = "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24"
 FACADE_IMPLEMENTATION_COMMIT = "7905e7e22bb2fb37f09d0de01f3f161b83332618"
 ABUNDANCE_RUNTIME_PATHS = {
@@ -201,6 +231,318 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "c_ci_pc_g2_source_reuse.py",
+    HERE + "test_p977_c_ci_pc_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Acceptance.md",
+    HERE + "verify_p977_c_ci_pc_g2.py",
+    HERE + "test_p977_c_ci_pc_g2.py",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Review.md",
+    HERE + "verify_p977_c_ci_pc_acceptance.py",
+    HERE + "test_p977_c_ci_pc_acceptance.py",
+    HERE + "test_p977_c_ci_pc_crossings.py",
+    HERE + "test_p977_c_ci_pc_crossing_evidence.py",
+    HERE + "verify_p977_c_ci_pc_crossings.py",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-CrossingReview.md",
+    HERE + "verify_p977_c_ci_pc_local.py",
+    HERE + "test_p977_c_ci_pc_local.py",
+    HERE + "test_p977_c_ci_pc_local_evidence.py",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-LocalReview.md",
+    HERE + "verify_p977_a_rg2b_local.py",
+    HERE + "test_p977_a_rg2b_local.py",
+    HERE + "test_p977_a_rg2b_local_evidence.py",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-LocalReview.md",
+    HERE + "verify_p977_c_rg2b_local.py",
+    HERE + "test_p977_c_rg2b_local.py",
+    HERE + "test_p977_c_rg2b_local_evidence.py",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-LocalReview.md",
+    HERE + "verify_p977_c_rg2b_crossings.py",
+    HERE + "verify_p977_c_rg2b_acceptance.py",
+    HERE + "test_p977_c_rg2b_acceptance.py",
+    HERE + "verify_p977_c_rg2b_g2.py",
+    HERE + "test_p977_c_rg2b_g2.py",
+    HERE + "test_p977_c_rg2b_g2_surfaces.py",
+    HERE + "c_rg2b_g2_source_reuse.py",
+    HERE + "test_p977_c_rg2b_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-G2Acceptance.md",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-G2Review.md",
+    HERE + "test_p977_c_rg2b_crossings.py",
+    HERE + "test_p977_c_rg2b_crossing_evidence.py",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-C_RG2b-CrossingReview.md",
+    HERE + "verify_p977_a_rg2b_crossings.py",
+    HERE + "verify_p977_a_rg2b_acceptance.py",
+    HERE + "verify_p977_a_rg2b_g2.py",
+    HERE + "test_p977_a_rg2b_g2.py",
+    HERE + "test_p977_a_rg2b_g2_surfaces.py",
+    HERE + "a_rg2b_g2_source_reuse.py",
+    HERE + "test_p977_a_rg2b_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-G2Acceptance.md",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-G2Review.md",
+    HERE + "test_p977_a_rg2b_acceptance.py",
+    HERE + "test_p977_a_rg2b_crossings.py",
+    HERE + "test_p977_a_rg2b_crossing_evidence.py",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-A_RG2b-CrossingReview.md",
+    HERE + "verify_p977_c_ci_g2.py",
+    HERE + "test_p977_c_ci_g2.py",
+    HERE + "test_p977_a_pc_local.py",
+    HERE + "test_p977_a_pc_local_evidence.py",
+    HERE + "verify_p977_a_pc_local.py",
+    PHASE + "tranche-7/P9-7.7-A_PC-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-A_PC-LocalReview.md",
+    HERE + "test_p977_a_pc_crossings.py",
+    HERE + "test_p977_a_pc_crossing_evidence.py",
+    HERE + "verify_p977_a_pc_crossings.py",
+    HERE + "verify_p977_a_pc_acceptance.py",
+    HERE + "test_p977_a_pc_acceptance.py",
+    HERE + "verify_p977_a_pc_g2.py",
+    HERE + "test_p977_a_pc_g2.py",
+    PHASE + "tranche-7/P9-7.7-A_PC-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-A_PC-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-A_PC-G2Review.md",
+    HERE + "a_pc_g2_source_reuse.py",
+    HERE + "test_p977_a_pc_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-A_PC-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-A_PC-G2Acceptance.md",
+    PHASE + "tranche-7/P9-7.7-A_PC-G2SourceReuse.json",
+    HERE + "test_p977_c_pc_local.py",
+    HERE + "test_p977_c_pc_local_evidence.py",
+    HERE + "verify_p977_a_ci_pc_g2.py",
+    HERE + "a_ci_pc_g2_source_reuse.py",
+    HERE + "test_p977_a_ci_pc_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-G2Acceptance.md",
+    HERE + "test_p977_a_ci_pc_g2.py",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-G2Review.md",
+    HERE + "verify_p977_a_ci_pc_acceptance.py",
+    HERE + "test_p977_a_ci_pc_acceptance.py",
+    HERE + "test_p977_a_ci_pc_crossings.py",
+    HERE + "test_p977_a_ci_pc_crossing_evidence.py",
+    HERE + "verify_p977_a_ci_pc_crossings.py",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-CrossingReview.md",
+    HERE + "test_p977_a_ci_pc_local.py",
+    HERE + "test_p977_a_ci_pc_local_evidence.py",
+    HERE + "verify_p977_a_ci_pc_local.py",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-A_CI_PC-LocalReview.md",
+    HERE + "verify_p977_c_pc_local.py",
+    PHASE + "tranche-7/P9-7.7-C_PC-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-C_PC-LocalReview.md",
+    HERE + "test_p977_c_pc_crossings.py",
+    HERE + "test_p977_c_pc_crossing_evidence.py",
+    HERE + "verify_p977_c_pc_crossings.py",
+    HERE + "verify_p977_c_pc_acceptance.py",
+    HERE + "test_p977_c_pc_acceptance.py",
+    HERE + "verify_p977_c_pc_g2.py",
+    HERE + "c_pc_g2_source_reuse.py",
+    HERE + "test_p977_c_pc_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-C_PC-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-C_PC-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-C_PC-G2Acceptance.md",
+    HERE + "test_p977_c_pc_g2.py",
+    PHASE + "tranche-7/P9-7.7-C_PC-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-C_PC-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-C_PC-G2Review.md",
+    PHASE + "tranche-7/P9-7.7-C_PC-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-C_PC-CrossingReview.md",
+    PHASE + "tranche-7/P9-7.7-A_PC-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-A_PC-CrossingReview.md",
+    HERE + "test_p977_c_ci_g2_acceptance.py",
+    HERE + "c_ci_g2_source_reuse.py",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Acceptance.md",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2SourceReuse.json",
+    HERE + "test_profile_materializers.py",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Review.md",
+    HERE + "verify_p977_c_ci_acceptance.py",
+    HERE + "test_p977_c_ci_acceptance.py",
+    HERE + "verify_p977_c_ci_crossings.py",
+    HERE + "test_p977_c_ci_crossings.py",
+    HERE + "test_p977_c_ci_crossing_evidence.py",
+    PHASE + "tranche-7/P9-7.7-C_CI-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-CrossingReview.md",
+    HERE + "verify_p977_c_ci_local.py",
+    HERE + "test_p977_c_ci_local.py",
+    HERE + "test_p977_c_ci_local_evidence.py",
+    HERE + "test_p977_c_ci_surfaces.py",
+    PHASE + "tranche-7/P9-7.7-C_CI-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-LocalReview.md",
+    HERE + "g2_source_reuse.py",
+    HERE + "test_p977_a_ci_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Acceptance.md",
+    HERE + "profile_g2_registry.py",
+    HERE + "test_profile_g2_registry.py",
+    HERE + "verify_p977_a_ci_g2.py",
+    HERE + "test_p977_a_ci_g2.py",
+    PHASE + "tranche-7/ProfileG2Registry.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Review.md",
+    SIDE + "tool/phase9-web/g2-registry.js",
+    SIDE + "tool/phase9-web/aggregate-review.js",
+    SIDE + "tool/phase9-web/aggregate-review.test.mjs",
+    HERE + "verify_p977_aggregate.py",
+    HERE + "test_p977_aggregate.py",
+    HERE + "verify_p978_specialization_review.py",
+    HERE + "test_p978_specialization_review.py",
+    HERE + "phase9_specialization_acceptance.py",
+    PHASE + "tranche-7/P9-7.8-G3Acceptance.json",
+    PHASE + "tranche-7/P9-7.8-G3Acceptance.md",
+    PHASE + "tranche-7/P9-7.8-SpecializationReview.json",
+    PHASE + "tranche-7/P9-7.8-SpecializationReview.md",
+    SIDE + "tool/phase9-web/specialization-review.js",
+    SIDE + "tool/phase9-web/specialization-review.test.mjs",
+    PHASE + "tranche-7/P9-7.7-AggregateReconciliation.json",
+    PHASE + "tranche-7/P9-7.7-AggregateReconciliation.md",
+    PHASE + "tranche-7/P9-7.7-AggregateAcceptance.json",
+    PHASE + "tranche-7/P9-7.7-AggregateAcceptance.md",
+    HERE + "verify_p977_a_ci_acceptance.py",
+    HERE + "test_p977_a_ci_acceptance.py",
+    HERE + "verify_p977_a_ci_crossings.py",
+    HERE + "test_p977_a_ci_crossings.py",
+    HERE + "test_p977_a_ci_crossing_evidence.py",
+    PHASE + "tranche-7/P9-7.7-A_CI-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-CrossingReview.md",
+    HERE + "verify_p977_a_ci_local.py",
+    HERE + "test_p977_a_ci_local.py",
+    HERE + "test_p977_a_ci_local_evidence.py",
+    HERE + "test_p977_a_ci_surfaces.py",
+    PHASE + "tranche-7/P9-7.7-A_CI-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-LocalReview.md",
+    HERE + "a_os_g2_source_reuse.py",
+    HERE + "verify_p977_a_os_g2_acceptance.py",
+    HERE + "test_p977_a_os_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-A_OS-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-A_OS-G2SourceReuse.json",
+    # Additive wire/package decoder only; no event numerical/lifecycle grant.
+    "src/pygrc/models/grc_v4_event_codec.py",
+    "src/pygrc/models/grc_v4_assets/grc-v4-topology-event-schema.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-representation-transport-schema.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-event-contract-release.json",
+    "specs/grc-v4-representation-transport-spec.md",
+    "specs/grc-v4-representation-transport-schema.json",
+    "specs/grc-v4-representation-transport-vectors.json",
+    "specs/grc-v4-event-contract-release.json",
+    HERE + "verify_p972b_runtime.py",
+    HERE + "verify_p972b_acceptance.py",
+    HERE + "verify_p973_history_policy.py",
+    HERE + "verify_p973_acceptance.py",
+    HERE + "verify_p974_target_reference.py",
+    HERE + "verify_p974_acceptance.py",
+    HERE + "verify_p975_failure_sequences.py",
+    HERE + "verify_p975_acceptance.py",
+    HERE + "test_p975_failure_sequences.py",
+    PHASE + "tranche-7/P9-7.5-FailureSequences.json",
+    PHASE + "tranche-7/P9-7.5-Review.md",
+    HERE + "verify_p976_lineage_ownership.py",
+    HERE + "verify_p976_acceptance.py",
+    HERE + "verify_p977_profile_review.py",
+    HERE + "test_p977_profile_review.py",
+    HERE + "verify_p977_a_os_local.py",
+    HERE + "test_p977_a_os_local.py",
+    HERE + "test_p977_a_os_local_evidence.py",
+    PHASE + "tranche-7/P9-7.7-A_OS-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-A_OS-LocalReview.md",
+    HERE + "verify_p977_a_os_crossings.py",
+    HERE + "verify_p977_a_os_acceptance.py",
+    HERE + "test_p977_a_os_acceptance.py",
+    HERE + "verify_p977_a_os_g2.py",
+    HERE + "test_p977_a_os_g2.py",
+    PHASE + "tranche-7/P9-7.7-A_OS-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-A_OS-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-A_OS-G2Review.md",
+    HERE + "test_p977_a_os_crossings.py",
+    HERE + "test_p977_a_os_crossing_evidence.py",
+    PHASE + "tranche-7/P9-7.7-A_OS-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-A_OS-CrossingReview.md",
+    PHASE + "tranche-7/P9-7.7-ProfileReview.json",
+    PHASE + "tranche-7/P9-7.7-Review.md",
+    HERE + "test_p976_lineage_ownership.py",
+    PHASE + "tranche-7/P9-7.6-LineageOwnership.json",
+    PHASE + "tranche-7/P9-7.6-Review.md",
+    HERE + "test_p974_target_reference.py",
+    PHASE + "tranche-7/P9-7.4-TargetReference.json",
+    PHASE + "tranche-7/P9-7.4-Review.md",
+    HERE + "test_p973_sharp_regressions.py",
+    PHASE + "tranche-7/P9-7.3-SharpRegressions.json",
+    HERE + "test_p973_history_policy.py",
+    PHASE + "tranche-7/P9-7.3-HistoryPolicy.json",
+    PHASE + "tranche-7/P9-7.3-Review.md",
+    PHASE + "tranche-7/P9-7.2b-Runtime.json",
+    PHASE + "tranche-7/P9-7.2b-RuntimeReview.md",
+    PHASE + "tranche-7/P9-7.2b-RuntimeAuditCorrection.json",
+    PHASE + "tranche-7/P9-7.2b-RuntimeOriginalSources.json",
+    PHASE + "tranche-7/P9-7.2b-RuntimeAuditPressure.json",
+    HERE + "build_p972b_event_release.py",
+    HERE + "test_p972b_event_release.py",
+    HERE + "verify_p972b_event_package.py",
+    PHASE + "tranche-7/P9-7.2b-PackageBinding.md",
+    # Contract-only P9-7.2b supplement; no new runtime permission or acceptance.
+    "specs/grc-v4-topology-event-spec.md",
+    "specs/grc-v4-topology-event-schema.json",
+    "specs/grc-v4-topology-event-vectors.json",
+    PHASE + "tranche-7/P9-7.2b-ContractExtension.md",
+    HERE + "build_p972b_contract.py",
+    HERE + "test_p972b_contract.py",
+    HERE + "build_p972a_initializer_release.py",
+    HERE + "verify_p972a_initializer_runtime.py",
+    HERE + "test_p972a_initializer_runtime.py",
+    "specs/grc-v4-a-initializer-release.json",
+    PHASE + "tranche-7/P9-7.2a-InitializerRuntime.json",
+    PHASE + "tranche-7/P9-7.2a-InitializerRuntimeReview.md",
+    # Accepted P9-7.2a initializer design/source admission; no new runtime grant.
+    INV + "decisions/P9CandidateAInitializerReferencePassProposal.md",
+    INV + "decisions/P9CandidateAInitializerReferencePassAuthority.json",
+    SIDE + "records/P972aInitializerAdmission.json",
+    SIDE + "tool/src/grcv4_explorer/a_initializer.py",
+    SCRIPTS + "test_p972a_initializer.py",
+    HERE + "verify_p972a_initializer_authority.py",
+    PROPOSAL_RELEASE_CHECKER,
+    HERE + "test_p972a_proposal.py",
+    HERE + "test_p972a_specification.py",
+    "specs/grc-v4-a-initializer-spec.md",
+    "specs/grc-v4-a-initializer-schema.json",
+    "specs/grc-v4-a-initializer-vectors.json",
+    PHASE + "tranche-7/P9-7.2a-ProposalReview.md",
+    PHASE + "tranche-7/P9-7.2a-PaperReview.md",
+    PHASE + "tranche-7/P9-7.2a-SpecificationReview.md",
+    PHASE + "tranche-7/P9-7.2a-InitializerAuthority.md",
+    HERE + "verify_p972a_migrations.py",
+    PHASE + "tranche-7/P9-7.2a-Review.md",
+    PHASE + "tranche-7/P9-7.2a-Migrations.json",
+    PHASE + "tranche-7/P9-7.2a-AuditPressure.json",
+    PHASE + "tranche-7/P9-7.2a-AuditFollowup.json",
+    PHASE + "tranche-7/P9-7.2a-OriginalSources.json",
+    HERE + "verify_p971_lifecycle.py",
+    PHASE + "tranche-7/P9-7.1-Review.md",
+    PHASE + "tranche-7/P9-7.1-Lifecycle.json",
+    PHASE + "tranche-7/P9-7.1-AuditFollowup.json",
+    PHASE + "tranche-7/P9-7.1-AuditPressure.json",
+    PHASE + "tranche-7/P9-7.1-OriginalSources.json",
     HERE + "verify_p965_routing.py",
     PHASE + "tranche-6/P9-6.5-Review.md",
     PHASE + "tranche-6/P9-6.5-RealizationRouting.json",
@@ -871,16 +1213,18 @@ def accepted_abundance_authority(root):
 
 def current_abundance_release(root):
     accepted_abundance_authority(root)
-    # Use the builder's own CLI/import context. API and notebook callers must
+    # Keep evolved release documents at their Git subject while the exact
+    # initializer spec candidate is reviewed. No release is regenerated.
+    # Use the checker's own CLI/import context. API and notebook callers must
     # not depend on the verifier directory being in their sys.path, or mutate
     # process-global import paths while concurrent read-only queries execute.
     result = subprocess.run(
-        [sys.executable, str(safe_path(root, ABUNDANCE_RELEASE_BUILDER)), "--check"],
+        [sys.executable, str(safe_path(root, PROPOSAL_RELEASE_CHECKER)), "--check-release"],
         cwd=root, capture_output=True, text=True,
     )
     require(result.returncode == 0,
             "abundance release check failed: " + result.stdout + result.stderr)
-    require(result.stdout.strip() == "P9491A_ABUNDANCE_RELEASE_PASS release_id=" + ABUNDANCE_RELEASE_ID,
+    require(result.stdout.strip() == "P972A_RELEASE_SUBJECT_PASS release_id=" + ABUNDANCE_RELEASE_ID,
             "untrusted abundance successor release")
     return ABUNDANCE_RELEASE_ID
 
@@ -1063,6 +1407,21 @@ def leaf_permissions(root):
     require(safe_path(root, rg_record).read_bytes() == git(root, "show", "739c123:" + rg_record),
             "realization routing requires preserved RG2b acceptance")
     ready = sorted(set(ready) | {"P9-6.5"})
+    # Explicit user request for the complete 7.1 parent, not just A_OS.
+    # Execution permission is not child acceptance or a wider G2/G3 grant.
+    git(root, "merge-base", "--is-ancestor", "b45d0af", "HEAD")
+    lifecycle_predecessor = PHASE + "tranche-6/P9-6.5-RealizationRouting.json"
+    require(safe_path(root, lifecycle_predecessor).read_bytes()
+            == git(root, "show", "b45d0af:" + lifecycle_predecessor),
+            "generic lifecycle requires preserved Tranche 6 acceptance")
+    ready = sorted(set(ready) | LIFECYCLE_LEAVES)
+    # The user requests 7.2a after accepting the full 7.1 batch. A missing
+    # C-to-A initializer source stays an explicit negative/pending child.
+    git(root, "merge-base", "--is-ancestor", "5d8dbe2", "HEAD")
+    lifecycle_review = PHASE + "tranche-7/P9-7.1-Review.md"
+    require(safe_path(root, lifecycle_review).read_bytes() == git(root, "show", "5d8dbe2:" + lifecycle_review),
+            "migration requires preserved 7.1 acceptance")
+    ready = sorted(set(ready) | MIGRATION_LEAVES)
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1156,6 +1515,28 @@ def leaf_permissions(root):
     for name in RG_BATCH_PATHS:
         owners[name] = {"P9-6.4a", "P9-6.4b", "P9-6.4c"}
     owners["tests/models/test_grc_v4_rg2b_graph.py"].add("P9-6.4d")
+    for name in LIFECYCLE_PATHS:
+        owners[name] = owners.get(name, set()) | LIFECYCLE_LEAVES
+    for name in MIGRATION_PATHS:
+        owners[name] = owners.get(name, set()) | MIGRATION_LEAVES
+    for name in INITIALIZER_RUNTIME_PATHS:
+        owners[name] = owners.get(name, set()) | {"P9-7.2a"}
+    git(root, "merge-base", "--is-ancestor", "f7962e4", "HEAD")
+    # User-authorized P9-7.2b follows the accepted joint contract package.
+    git(root, "merge-base", "--is-ancestor", "ee8885e", "HEAD")
+    for name in ("specs/grc-v4-event-contract-release.json", "specs/grc-v4-representation-transport-spec.md",
+                 "specs/grc-v4-topology-event-spec.md"):
+        require(safe_path(root, name).read_bytes() == git(root, "show", "ee8885e:" + name),
+                "event execution requires unchanged accepted contract: " + name)
+    ready = sorted(set(ready) | {"P9-7.2b"})
+    for name in EVENT_RUNTIME_PATHS:
+        owners[name] = owners.get(name, set()) | {"P9-7.2b"}
+    from phase9_specialization_acceptance import accepted as accepted_g3, ENTRY, PATHS as g3_paths
+    accepted_g3(root)
+    ready = sorted(set(ready) | {ENTRY})
+    for name in g3_paths:
+        require(name in owners, 'G3 entry outside reviewed ownership')
+        owners[name] = owners[name] | {ENTRY}
     return ready, owners
 
 
@@ -1163,8 +1544,13 @@ def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
-         "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_realizations"}
-        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS)
+         "operation": "v4_owned_add_or_update", "module_owner":
+         "grc_v4_events" if name in EVENT_NEW_PATHS else
+         "grc_v4_initializer" if name in INITIALIZER_NEW_PATHS else
+         "grc_v4_migration" if name in {"src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"}
+         else "grc_v4_lifecycle" if name == "tests/models/test_grc_v4_generic_lifecycle.py" else "grc_v4_realizations"}
+        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS | INITIALIZER_NEW_PATHS | EVENT_NEW_PATHS
+                           | {"tests/models/test_grc_v4_generic_lifecycle.py", "src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"})
     )]
 
 
@@ -1245,6 +1631,17 @@ def accepted_a_os(root):
     return value["acceptance"]
 
 
+def g2_retained_bindings(current):
+    from a_os_g2_source_reuse import retained_bindings
+    from g2_source_reuse import retained_bindings as successor_bindings
+    return retained_bindings(successor_bindings(current))
+
+
+def g2_bindings_match(expected, current):
+    from g2_source_reuse import matches
+    return matches(expected, current)
+
+
 def accepted_g2(root):
     """Explicit singleton acceptance, never inferred from permission or tests."""
     value = read(safe_path(root, G2_ACCEPTANCE))
@@ -1275,6 +1672,36 @@ def accepted_g2(root):
     require(value["accepted_profile"] == captured["objects"][run["nominated_prestate_object"]]["reference"]["profile"],
             "accepted declaration does not match executed profile")
     return value
+
+
+def accepted_a_os_g2(root):
+    """Historical adapter; new profiles use profile_g2_registry's shared schema."""
+    name = PHASE + 'tranche-7/P9-7.7-A_OS-G2Acceptance.json'
+    value = read(safe_path(root, name))
+    require(value['record_digest'] == digest_record(value) == 'bb84b02362a6b5ac1e1a4b5ba921f63ff3f454c27c82fb99d3da1836d088a2bb' and value['status'] == 'accepted_by_user'
+            and value['gate'] == 'P9-G2[A_OS]' and value['G2_accepted'] is True
+            and value['G3_accepted'] is False and value['aggregate_closed'] is False,
+            'invalid A_OS G2 acceptance')
+    proposal = read(safe_path(root, value['review']['path']))
+    require(sha(safe_path(root, value['review']['path']).read_bytes()) == value['review']['sha256']
+            and proposal['record_digest'] == value['review']['record_digest'] == digest_record(proposal)
+            and proposal['verdict'] == 'PASS_PROPOSAL'
+            and value['accepted_profile'] == proposal['nomination']
+            and value['accepted_additional_support'] == proposal['proposed_additional_support'],
+            'A_OS acceptance does not match reviewed proposal')
+    git(root, 'merge-base', '--is-ancestor', value['reviewed_commit'], 'HEAD')
+    require(sha(git(root, 'show', value['reviewed_commit'] + ':' + value['review']['path'])) == value['review']['sha256'],
+            'A_OS reviewed Git subject differs')
+    require(sha(safe_path(root, value['review_text']['path']).read_bytes()) == value['review_text']['sha256'],
+            'A_OS reviewed scope text changed')
+    require(sha(safe_path(root, value['source_reuse']['path']).read_bytes()) == value['source_reuse']['sha256'],
+            'A_OS discovery source-reuse identity changed')
+    return value
+
+
+def accepted_generic_support(root):
+    from profile_g2_registry import checked
+    return checked(root)['accepted_generic_runtime_support']
 
 
 def work_entries(root, approval):
@@ -1312,13 +1739,18 @@ def work_entries(root, approval):
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
     leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c", "P9-6.3a", "P9-6.3b", "P9-6.3c", "P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d", "P9-6.5"})
+    leaves.update(LIFECYCLE_LEAVES)
+    leaves.update(MIGRATION_LEAVES)
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
     ready, owners = leaf_permissions(root)
+    from phase9_specialization_acceptance import accepted as accepted_g3, permitted as g3_permitted
+    g3 = accepted_g3(root)
+    leaves.update(g3['new_runtime_iterations_authorized'])
     require(
-        value["accepted_generic_runtime_support"] == accepted_g2(root)["accepted_generic_runtime_support"]
-        and value["admitted_specialization_support_sets"] == [],
+        value["accepted_generic_runtime_support"] == accepted_generic_support(root)
+        and value["admitted_specialization_support_sets"] == g3['admitted_specialization_support_sets'],
         "work manifest cannot grant conformance beyond accepted G2",
     )
     for row in rows:
@@ -1329,12 +1761,12 @@ def work_entries(root, approval):
         name, leaf = row["path"], row["iteration_id"]
         require(leaf in leaves, "unregistered work iteration")
         require(
-            not leaf.startswith(("P9-8.", "P9-9.")),
-            "specialization requires accepted P9-G3",
+            not leaf.startswith(("P9-8.", "P9-9.")) or g3_permitted(name, leaf),
+            "specialization requires accepted P9-G3 and exact leaf/path entry",
         )
         if name in targets:
             require(
-                targets[name]["requires_gate"] == "P9-G1",
+                targets[name]["requires_gate"] == "P9-G1" or g3_permitted(name, leaf),
                 "specialization requires accepted P9-G3",
             )
             require(
@@ -1351,7 +1783,7 @@ def work_entries(root, approval):
         if name in targets:
             target = targets[name]
             require(
-                target["requires_gate"] == "P9-G1",
+                target["requires_gate"] == "P9-G1" or g3_permitted(name, leaf),
                 "specialization requires accepted P9-G3",
             )
             if target["operation"] == "additive_integration":
@@ -1516,6 +1948,8 @@ def current_boundary(root):
         require(actual_mode == mode, "frozen mode changed: " + name)
         frozen += 1
     accepted_specification_correction(root)
+    from verify_p972b_event_package import check as event_package_check
+    event_package_check(root)
     entries = set(
         filter(
             None,

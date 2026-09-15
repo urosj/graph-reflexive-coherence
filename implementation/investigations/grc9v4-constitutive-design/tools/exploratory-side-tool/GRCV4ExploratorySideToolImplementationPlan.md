@@ -1823,3 +1823,597 @@ assertion and status changes, tested for lossless discovery, no ambient support
 expansion, forged/overbroad acceptance rejection and actual surface equality.
 All remaining captured source is byte-exact; the successor rejects other differences;
 it does not rewrite the original run or repeat numerical tests for status work.
+
+## Phase 9 Tranche 7 — P9-7.1 generic lifecycle
+
+After accepted Tranches 5 and 6, the user authorized the complete 7.1 parent,
+not only A_OS. Register A/C × OS, CI, RG2b, PC, CI+PC concrete children,
+preserving the accepted C_OS route. The shared lifecycle owner reconstructs
+each realization from C/W/Z and an identity-bound explicit A differential
+reference; it does not serialize solver caches or infer formed A history.
+
+Use [the scoped record](../../../../phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json)
+and [review](../../../../phase-9-grcv4/tranche-7/P9-7.1-Review.md). A read-only
+successor checker binds the current source, exact fixture/output identities,
+and unchanged numerical predecessors without relabeling old runs. The API,
+status notebook and browser expose the same bounded 7.1 permission. Historical
+forensic claims and their support dispositions remain untouched. No new G2/G3,
+migration/event execution or scientific closure follows from this status.
+
+The 7.1 audit follow-up separates RG2b state/core readmission from step-entry
+eligibility, enforces decidable historical clock/identity rules and corrects
+non-OS current stages. Keep the original 26-method subject byte-recoverable;
+bind the separate 15-method native correction capture. The normal scoped
+successor checks both records, missing coverage and premature promotion without
+rerunning numerical campaigns. No claim graph, numerical authority or UI scope
+changes are required for these lifecycle corrections.
+
+The user accepted the 7.1 batch and its corrections on 2026-09-11 through commit
+authorization. The review/handoff records this later disposition; historical
+execution flags and identities remain unchanged. No wider support gate opens.
+
+## Phase 9 Tranche 7 — P9-7.2a profile migration
+
+Current disposition: **accepted and closed on 2026-09-11** for the seven
+reviewed migration classes. The existing
+[runtime review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md)
+records acceptance; normal scoped verification and API/notebook/browser status
+expose it separately from immutable execution and forensic design flags.
+Retain the exact codec-reference correction and negative schema/source controls.
+Generic events and wider G2/G3 remain separate. The following preserves the
+historical implementation sequence and its earlier scope boundaries.
+
+Register the user-authorized migration parent, 13 finite positive-pair children
+and the unresolved C→A negative-pressure child after accepted 7.1 (`5d8dbe2`).
+Six classes use specified preservation/drop/zero maps for both current/reset;
+C→A needs an admitted initializer source and cannot close from rejection tests.
+Keep source-exact forensic dispositions and scientific authority unchanged.
+
+Route normal scoped verification to `verify_p972a_migrations.py --check`, binding
+the focused migration run, exact declarations/endpoints and accepted 7.1 Git
+subjects. No repeat of the old numerical campaigns. At that six-class stage,
+API/status notebook/browser agreed on 74 ready leaves, 43 eligible paths and 55
+registered runtime paths. The initializer implementation below adds four paths
+(47 eligible, 59 registered), without adding ready leaves or granting acceptance.
+Show positive C→A evidence separately from pending aggregate closure and retain
+exact C_OS-only G2 support with fail-closed cleanup.
+
+Scenarios: 13 actual migrations with distinct current/reset, separate W/Z
+policies/losses, restoration after candidate switch, seeded lineage and next
+ordinary step; invalid source/target/history/backend, carrier-contract mismatch,
+reset-only target failure, core-versus-inner RG2b and atomic rollback. Record
+mutations must not erase C→A, omit a pair/pressure test or promote the parent/G2.
+The [review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-Review.md) owns scope;
+generic events and new support gates stay separate.
+
+The 7.2a audit follow-up keeps the same permission/UX scope. The existing
+successor verifies the original run through exact source recovery and a separate
+native correction capture. Pressure typed semantic versus programmer errors,
+known and repeated scientific-state commitments, archived target clocks and
+prospective publication. Preserve lawful assignment and the historical trust
+ceiling; include a distinct A-backend migration/continuation control. No new
+claim graph, registry, signature service, numerical law or global history archive.
+
+### P9-7.2a C→A initializer-source definition and follow-through
+
+The user accepted the six-class migration/audit scope at `924fca9` and then
+authorized the [target-only reference-pass proposal](../../decisions/P9CandidateAInitializerReferencePassProposal.md).
+The clarified bounded design was accepted at `49b83ba` and is now admitted by
+the tool, but is not executable. No runtime support leaf or gate is granted by
+making the source queryable. See the
+[admission review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md).
+
+The append-only source now binds its explicit policy, optional Candidate A claim,
+design-resolved debt and still-forward integration obligation. Six new graph
+nodes retain D10/D11/P9 predecessor rows and support semantics unchanged.
+`initializer_authority`, `/api/a-initializer`, the executable notebook cell and
+**Load initializer authority** browser controls expose source/edge/classification/
+digest traces and clear stale output on failure. Current discovery fails closed;
+the pinned historical abundance context is an explicit query, not a fallback.
+The user accepted the GRCV4-proposal revision; paper and V4 specification
+propagation follow in that order. The source defines
+one reference pass, not a new solver or unconditional target admission.
+
+When implemented, extend the existing migration verifier and affected UX for
+one shared initializer and positive C→A targets in all five A realization
+families. Construction evidence must exercise nontrivial graphs, all conductance
+channels, both gamma signs, fixed differential references, numerical boundaries
+and source-history independence. Migration evidence binds distinct current/reset,
+directional carrier/W policy, actual target readmission, rollback and replay;
+RG2b state admission is distinct from next-beat eligibility. Reuse unchanged
+historical 25/17-test evidence, preserve the F1/F2 corrections and don't rewrite
+negative-only C→A captures as positive support. Aggregate 7.2a closure, wider G2/G3
+and generic events remain separate from this proposal and source admission.
+
+The design review is PASS with refinements incorporated; the user accepted the
+clarified design through the commit/continuation request on 2026-09-11.
+Structured source admission binds the unit-vertex/boundary/normalization scope,
+static-policy → profile → invocation-record identity order, auxiliary baseline
+versus full-current admission, fixed target charts and independent reset inputs.
+The auxiliary-singular/final-reference-regular fixture must become a producer
+regression; the local rounded-value check alone is not runtime migration
+evidence. The visible surfaces display producer choice as resolved while keeping
+payload/spec binding, runtime evidence and aggregate closure pending. Never
+require ordinarily evolved W to equal an initializer rerun during restoration.
+
+The normal verification route includes focused initializer source/surface tests
+and the current read-only successor check. It preserves the exact 25/17-test
+migration records, source subjects and 7.1 predecessor without numerical reruns.
+Desktop/mobile controls, notebook reexecution and the real HTTP handler are
+tested directly; historical scenario counts are not reclassified as new evidence.
+
+During document propagation, normal release checking uses the same
+`verify_p972a_proposal.py` to distinguish the accepted proposal at `448e420`,
+paper at `7d45218`, exact six-file specification candidate and released
+proposal/paper/generic/interface/registry documents at `f36b3ba`. All other
+release members and packaged assets remain current-byte exact; the original
+release builder stays unchanged and is reproducible at its historical subject.
+Focused methods cover source/release separation, missing Git history,
+paper/spec drift and exact transferred equations, staging and claim ceilings.
+The additional spec tests cover the closed supplement schema, static/invocation
+IDs, recipes, dimensions, current/reset roles, receipt and snapshot versions,
+wire negatives and explicit nonauthentication of coherent output forgeries.
+The user accepted the paper through the commit-and-continue request on 2026-09-11.
+The user accepted the specification at `f7962e4`; the additive package,
+explicit codec selection and shared C→A implementation now have a separately
+bound runtime record. The existing API/notebook/browser status exposes
+`initializer_runtime` (actual five-target execution, release and evidence digest)
+and now reports the later user-accepted aggregate closure. This read-only query never runs a
+numerical campaign and fails closed on missing/stale evidence. The immutable
+initializer-authority trace still reports its historical design-stage scope.
+The base schema, predecessor assets/release and source authority remain unchanged;
+no old evidence is relabeled and no wider support is granted. See the
+[runtime review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md).
+The user subsequently accepted that implementation on 2026-09-11 and requested
+commit followed by final aggregate review. The runtime review owns the later
+decision; the bound execution record and its capture-time flags stay unchanged.
+The subsequent final review and codec-reference correction passed, and the user
+accepted aggregate P9-7.2a closure. Next planned work is P9-7.2b, not started here.
+
+## Phase 9 Tranche 7 — P9-7.2b event contract preparation
+
+The user authorized the additive
+[event binding](../../../../phase-9-grcv4/tranche-7/P9-7.2b-ContractExtension.md).
+Use the forensic contract surface to preserve the D10.2 support boundary,
+D11-C target reference-map requirement and optional A initializer authority.
+The accepted paper already permits the selected loss/initialization fallback;
+this work supplies new wire applicability, not a new scientific claim.
+Keep accepted source traces, 7.2a runs, releases and runtime status unchanged.
+The new schema/vectors have focused contract checks and exact maintenance
+bindings; they do not grant runtime event or G2/G3 support. The user accepted
+the corrected contract and representation-operation scope on 2026-09-12.
+Packaging and actual P9-7.2b execution remain separate. API/notebook/browser runtime
+support must change only with separately verified implementation evidence.
+
+The user subsequently included pure representation transport in current 7.2b
+contract scope, separately from reconstruction. Its coordinate-law contract
+is documented, but its own wire/release binding and runtime covariance/replay
+verification remain open. Do not infer that fallback schema or execution
+covers it. General topology-preserving maps remain deferred; the next bounded
+candidate is isolated-vertex addition with explicit existing-edge lineage.
+
+The joint package and representation wire binding are now supplied in the
+[package record](../../../../phase-9-grcv4/tranche-7/P9-7.2b-PackageBinding.md).
+Normal boundary verification checks their artifact and installed-package
+integrity separately from retained 7.2a execution. The explicit decoder checks
+wire/declaration admission only; actual model operations, covariance and mixed
+runtime replay remain unimplemented and unadvertised.
+
+Pre-acceptance audit R1/R2 now specify exact-action zero charge delta with
+embedded numerical endpoint evidence and the complete singleton-primary group.
+The package record carries the bounded runtime follow-through: scientific
+inverse is not ledger rollback; identity transport is not reconstruction;
+mixed operation history, charge-order/signed-zero and incompatible-target
+controls remain required. Package corrections do not discharge those runs.
+
+The user subsequently authorized P9-7.2b runtime implementation. The
+[runtime review](../../../../phase-9-grcv4/tranche-7/P9-7.2b-RuntimeReview.md)
+and retained run separate executed reconstruction/representation cases from
+the accepted package and historical migrations. Verification status exposes
+`event_runtime` through its existing API/notebook/page path, with pending review
+and no G2/G3 promotion. Source drift holds that projection; reading it does not
+execute tests. Existing C_OS v1 entry and old snapshot meanings remain intact.
+The runtime-audit continuation fixes prospective joint-archive closure and the
+internal-error boundary. Status now reads a separate 18-test correction capture;
+the original 10-test capture and reconstructable source subject remain unchanged.
+The user accepted and closed P9-7.2b on 2026-09-12. The status surface projects
+that recorded decision separately from unchanged execution-time flags. No wider
+G2/G3 support or later tranche leaf is closed by this decision.
+
+P9-7.3 adds a separate source/claim-bound channel and charge verification view.
+The existing API/notebook/browser path exposes `history_policy_verification`:
+six tests, 32 declaration cells and five native migration/event witnesses,
+with representation and negative charge/history pressure. The prior accepted
+views remain unchanged. No solver runs on surface read and no new G2/G3 scope
+follows from the execution record. The user's subsequent acceptance on
+2026-09-12, after two passing audits, is projected separately; historical
+execution flags remain unchanged and no later leaf is closed.
+Before commit the user requested the three suggested sharp regressions; all
+passed. Acceptance projects six original plus three supplemental tests with
+separate evidence identities, not a fabricated combined execution.
+
+P9-7.4 adds `target_reference_verification` to that same API/notebook/browser
+path. Its separate four-method capture covers 40 reference-map rejection cases,
+five C target realizations, changed-graph dense-equation reconstruction, and
+both-role admission/atomic rollback. The user accepted P9-7.4 on 2026-09-12
+after a passing independent audit/rerun. The view projects that bounded decision
+without changing original execution flags or forensic design authority. Reads check
+retained identities without numerical reruns; accepted 7.2/7.3 evidence and
+runtime permissions remain unchanged. P9-7.5/7.6 stay separately open.
+
+P9-7.5 adds `failure_sequence_verification` on the same status surfaces: four
+focused methods, 21 declared rejection cases across runtime, wire and restore
+boundaries, and reset following ordinary evolution, migration and events.
+The user accepted and closed P9-7.5 on 2026-09-12 following the passing independent
+audit/rerun. The view projects that decision separately from unchanged execution
+flags, with no runtime permission or G2/G3 promotion. It checks identities without numerical replay;
+7.6's parent-DAG and deep-copy ownership work is not discharged by these cases.
+
+P9-7.6 adds `lineage_ownership_verification` to the existing API/notebook/browser
+path. Its separate capture binds the accepted parent-chain, admission and ceiling
+contracts through typed forensic queries. Report native mixed-arity lineage,
+coherently rehashed parent/partition rejection and mutable fork independence
+separately from symbolic cycle projections. Retained-evidence reads must not run
+numerical tests, infer user acceptance or add G2/G3 support. The user accepted
+and closed P9-7.6 on 2026-09-12 following the passing independent audit/rerun;
+project that decision separately from unchanged original execution flags.
+The accepted 7.2–7.5 views and runtime permissions remain unchanged.
+
+P9-7.7 adds `profile_conformance_review` on the same status path. Distinguish a
+truthful coverage HOLD from a failed source/implementation boundary: ten exact
+nominations, 305 required cells, one existing accepted C_OS alias and nine held
+new scopes. Expose the retained review and its count/identity boundaries without
+numeric reruns or public-support expansion. The bounded review checker preserves
+accepted execution bytes, typed contract traces and endpoint distinctions; it
+does not create a new general-purpose G2 acceptance engine. The next substantive
+work is exact-product/ordered-endpoint reconciliation for held children, not an
+automatic G3 transition.
+
+The A_OS local continuation exposes `a_os_local_product` separately from the
+unchanged initial profile review: 21 verified local cells, seven remaining
+crossing cells, pending review and no G2/G3 promotion. Check exact nomination
+and control relationships, observed result fields and receipt deltas using the
+retained record; surface reads do not run numerical tests. The older records
+retain their original identities and coverage-time statuses.
+
+The A_OS crossing continuation adds `a_os_crossings` alongside that historical
+local view: seven reconciled crossing obligations, five retained aliases and
+six new execution cases. Keep exact positive and negative endpoints distinct
+from separate PC↔CI+PC evidence. Never convert this to all-pairs execution or
+G2 acceptance. API/notebook/browser consume the same retained check; source
+drift fails closed without numerical reruns or replacing earlier records.
+The 2026-09-13 user decision accepts bounded A_OS local/crossing reconciliation.
+Project it over the unchanged capture via the existing crossing status, while
+keeping the historical local view and G2/G3/all-pairs/aggregate flags unchanged.
+
+The integrated A_OS review adds `a_os_g2_review`: a 28-cell PASS proposal with
+three satisfied scoped obligations, not a new acceptance. Reuse the bounded
+execution records, validate the one facade supplement and query typed current
+authority. API/notebook/browser display the proposed additional identity
+separately from the unchanged accepted C_OS singleton; false acceptance,
+all-pairs scope, borrowed identity or missing product must reject.
+
+The user separately accepted exact A_OS G2 on 2026-09-13. The current
+`a_os_g2_review` projects that explicit acceptance over the preserved proposal,
+while top-level discovery contains the exact C_OS/A_OS pair. Check the pinned
+acceptance and finite before/after source-reuse identities; original runs are
+not regenerated. Reject wider profiles, all-pairs, aggregate or G3 promotion.
+
+The A_CI continuation adds `a_ci_local_product` to current API/notebook/browser
+status: 21 exact local cells from three focused methods, seven crossing rows
+pending, no new acceptance or G2/G3 support. Preserve CI root/contraction trace
+dispositions and the original A_OS/C_OS records. Reuse one actually checked
+status across transport tests; do not rerun the numerical campaign for a UI
+refresh or multiply coverage credit for shared executions.
+
+The subsequent `a_ci_crossings` view adds seven explicit catalog dispositions,
+five retained aliases and six new execution cases. Keep exact nominated
+source/target evidence separate from PC-pair and initializer endpoints. The
+view remains pending review: no all-pairs, G2/G3 or user acceptance promotion.
+Use the same one-check transport test and retain original local capture flags.
+
+The subsequent 2026-09-14 user decision accepts bounded A_CI local/crossing
+reconciliation only. Expose that decision over the unchanged capture through
+`a_ci_crossings`; retain false G2/G3/all-pairs/aggregate flags and unchanged
+public discovery. A separate integrated G2 review remains the next step.
+
+The integrated A_CI G2 continuation now exposes `a_ci_g2_review` as a PASS
+proposal and a common `profile_g2` projection. The pinned exact-profile registry
+holds C_OS/A_OS acceptance and the pending A_CI proposal; historical records
+remain byte-identical. Shared acceptance checks validate declarations, review
+subjects, predecessor scope and empty runtime/specialization permissions;
+scientific review checks remain profile-specific. A_CI is not public support.
+
+The browser consumes the generated, checked `g2-registry.js` roster through
+the HTTP static route and renders a decision table of exact IDs. It rejects
+self-rehashed status that invents acceptance, changes review identities or
+widens scope. Clear rows on refresh/failure. Notebook and HTTP expose the same
+status. Reuse one real current-status check across transport tests, with a
+focused browser rendering/negative-pressure test; no numerical campaign rerun.
+
+The user subsequently accepted exact A_CI G2. Its common-schema acceptance
+binds `fa94cd2`; the same registry-driven projection now shows three accepted
+declarations. The reviewed JSON/text, captures and older acceptances remain
+unchanged. Compose a finite current-to-pre-discovery source map before the
+historical A_OS bridge; fresh executions retain actual source identities.
+Local/crossing browser branches remain a bounded follow-up for the next
+matching profile, not a new gate or a reason to rewrite scientific evidence.
+
+The C_CI local continuation addresses that presentation follow-up. The existing
+registry now pins the checked local/crossing summaries, preserving historical
+shapes and using one Python/browser comparison. Profile-specific scientific
+checkers still validate each record before projection. The browser table clears
+on refresh/failure and exposes the checked scope, not inferred acceptance.
+
+`c_ci_local_product` reports 26 local cells from four methods, with seven
+crossing obligations remaining and no new G2/G3 support. Distinguish nominal
+zero mobility deformation from nonzero-deformation derivative controls and
+local CI certification from global root claims. Validate retained preimages,
+rehashed mutations, and one actual status across notebook/HTTP/browser; do not
+repeat the numerical campaign for presentation changes.
+
+The C_CI crossing continuation now adds `c_ci_crossings`: seven reconciled
+obligations, five retained migration aliases and five new cases in three methods.
+Register its checked summary alongside the unchanged local view. The shared
+browser table distinguishes pending crossing evidence from local evidence and
+accepted G2 declarations; no bespoke per-profile verification branch is added.
+Preserve separate PC-pair applicability, initializer/event target identities,
+and pending user/G2 decisions. Check retained mutations and one current status
+across API/notebook/HTTP/browser without repeating the local numerical suite.
+
+The user subsequently accepted the bounded C_CI local/crossing reconciliation
+on 2026-09-14. Project that decision over the original capture without changing
+its flags or public support. Integrated G2 review is the next task. The remaining
+Python per-profile dispatch duplication is a bounded follow-up alongside the
+fourth G2 profile, not a reason to rewrite accepted evidence or scientific checks.
+
+C_CI is now that fourth G2 proposal: `c_ci_g2_review` reports the integrated
+33-cell product and one facade-only supplement, pending explicit acceptance.
+The Python entry point uses the registry's ordered materializers for local,
+bounded crossing and G2 checks, generic input dictionaries and produced-key
+cleanup. It has no per-profile import or view seed to edit for the next entry.
+Check exact dependency topology, maintenance-bound module bytes and import
+origins before materialization; keep results private until every check succeeds.
+Scientific modules and historical schemas are not merged. The browser remains
+registry-driven, showing three accepted declarations and one proposal. One
+current status supports transport/rendering checks; no scientific campaign is
+rerun for dispatch or display changes.
+
+The user accepted exact C_CI G2 on 2026-09-14. The common acceptance adapter
+binds checkpoint `8ec744e` without rewriting its proposal or retained executions.
+The same registry-driven API/notebook/browser path now shows four accepted
+declarations: C_OS/A_OS/A_CI/C_CI. Finite discovery-source comparisons preserve
+older evidence checks while rejecting unrelated drift. Six other profile G2
+decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
+
+The next bounded local continuation is A_PC, followed by C_PC, A_CI+PC,
+C_CI+PC and finally the RG2b pair. Add `a_pc_local_product` as a pinned
+reconciliation view/materializer only; it is not a G2 proposal or acceptance.
+The shared Python and browser paths should discover it without new profile
+dispatch or rendering branches. Preserve the old-Z/held-source distinction,
+separate W/Z writes, native release versus history removal and both-role
+readmission evidence. Validate one real status and reuse it across transports.
+The subsequent `a_pc_crossings` row uses the same pinned materializer graph,
+dependent on `a_pc_local_product`. Expose seven reconciled crossing cells,
+five new execution cases and seven retained aliases without promoting pending
+review to G2. Exact PC pairs, separate nonhistory/initializer endpoints and
+two-channel losses remain visible; no bespoke dispatch/rendering branch is added.
+The user's 2026-09-14 bounded acceptance is projected through the same crossing
+materializer while original local/crossing execution flags remain unchanged.
+The integrated A_PC G2 proposal adds one `exact_profile_v1` row and dependent
+G2 materializer to that registry. No new profile dispatch/rendering branches;
+status distinguishes four accepted declarations from the pending A_PC proposal.
+Validate proposal/interface mutations and reuse one real status across transports.
+The subsequent explicit A_PC G2 acceptance uses the same adapter and materializer:
+five accepted exact declarations, no widened controls/targets, G3 or all-pairs.
+Finite source comparisons preserve the reviewed checkpoint and old execution
+identities while allowing the exact discovery addition.
+
+C_PC local reconciliation adds a pinned `c_pc_local_product` view and local
+materializer to the same registry. Display 26 verified local cells and seven
+remaining crossings, with no acceptance or G2 credit. Preserve complete C
+baseline readmission, no W writer, one held-source ZOH update and native-release
+ceilings. Check rehashed evidence and one frozen-input status reused across
+notebook/HTTP/browser, keeping the five accepted declarations unchanged.
+
+The subsequent `c_pc_crossings` materializer consumes that exact local result.
+Project seven retained aliases and four new native cases across seven crossing
+cells, preserving the whole-carrier loss versus native release distinction and
+the separate initializer target. Reuse the same generic API/notebook/browser
+views; keep all 33 reconciled cells distinct from bounded acceptance and G2.
+The user's subsequent bounded acceptance is projected from the pinned crossing
+review. Execution flags remain historical; integrated G2 is a separate decision.
+
+C_PC integrated G2 uses one proposed `exact_profile_v1` row and a dependent G2
+materializer. The review checks the 33-cell product, complete C target baseline,
+exact carrier transport/loss boundaries and a narrow facade supplement. Shared
+UX must distinguish five accepted declarations from this unaccepted proposal;
+scientific support classes, old records and runtime permissions remain unchanged.
+The subsequent user acceptance uses the same adapter/materializer to project
+six accepted exact declarations, with finite discovery-source comparisons.
+Old review/execution bytes, unreviewed endpoints and G3 boundaries are preserved.
+
+A_CI+PC local reconciliation adds one pinned `a_ci_pc_local_product` view and
+local materializer. The 21-cell product binds coupled same-source geometry/ZOH,
+separate W refresh, old C/W/Z during trials, independent reset/restart and
+signed-carrier release controls. Rehashed evidence and shared transport checks
+must reject lost source/role identities or promoted support. No bespoke Python
+dispatch or browser branches are needed. Six exact G2 declarations remain
+accepted; seven crossing cells, bounded acceptance and A_CI+PC G2 are separate.
+
+The dependent `a_ci_pc_crossings` materializer reconciles those seven cells with
+five exact retained aliases and seven new cases. Distinguish same-candidate
+carrier initialization/drop, exact PC-pair preservation, candidate/carrier loss
+and the separately declared event initializer. Its tighter coupled root must
+not be presented as fixed-reference geometry merely because target Z is zero.
+Generic API/notebook/browser views expose the pending crossing product; no new
+dispatch branch, bounded acceptance, G2 support, all-pairs or G3 promotion.
+The user's subsequent bounded acceptance is projected from the pinned crossing
+review without changing execution flags. Integrated G2 remains a separate step.
+
+A_CI+PC integrated G2 adds one proposed `exact_profile_v1` row and dependent
+G2 materializer: 28 cells, same-selected-root geometry/ZOH, separate W refresh,
+exact ordered history dispositions and one facade supplement. Preserve typed
+contract/debt ceilings and the two separately declared initializer/event targets.
+Reuse the accepted local/crossing numerical runs and one real shared status
+across API/notebook/browser transports. Six accepted declarations and the
+unaccepted proposal must remain visibly distinct; no new dispatch/rendering
+branch, runtime authorization or support widening is needed.
+The subsequent user acceptance uses the same adapter/materializer to project
+seven accepted exact declarations. Bind the finite discovery-source successor
+without changing the original review/execution bytes or numerical laws; other
+targets, runtime permissions, all-pairs and G3 remain outside the decision.
+
+C_CI+PC local reconciliation adds one pinned `c_ci_pc_local_product` view and
+local materializer. The 26-cell product retains complete C trial/role baseline
+reconstruction, same-root geometry/ZOH, no W writer, signed histories and native
+release controls. Rehashed evidence must reject stale trials, borrowed roles,
+source replacement and claim widening. Use the generic API/notebook/browser
+views without new dispatch or rendering branches; seven accepted G2 profiles
+remain unchanged while seven crossings and later acceptance/G2 stay separate.
+The next-gate narrative also derives accepted families and local/crossing counts
+from checked views; it must not contradict the registry with historical literals.
+
+The subsequent `c_ci_pc_crossings` view adds a dependent materializer for seven
+crossing cells: eight new cases and three retained aliases, with exact ordered
+nomination endpoints, two independent history channels, coupled target roots,
+mapped reset authority and fail-closed readmission. Reuse generic Python and
+browser projections; expose the pending result through API and notebook as well.
+Pressure rehashed evidence and display substitutions without rerunning accepted
+campaigns. Seven G2 declarations remain unchanged; bounded acceptance and the
+later C_CI+PC G2 review are distinct from these execution results.
+
+The user's bounded C_CI+PC acceptance is projected through the acceptance
+adapter without rewriting the original local/crossing records. Commit this
+checkpoint first, then materialize the separate integrated G2 proposal.
+
+The C_CI+PC G2 proposal adds one `exact_profile_v1` row and one dependent
+materializer. Bind the 33-cell product, accepted checkpoint, facade supplement
+and typed C-CI+PC/D11-C/initializer/parent/abundance/lifecycle traces. Expose seven
+accepted declarations plus one proposal through the same API/notebook/browser
+UX; test false acceptance, borrowed target, count and discovery mutations.
+No new dispatch/rendering branch, runtime permission or public support is added.
+
+The subsequent user acceptance projects eight exact declarations through the
+same adapter/materializer. Bind checkpoint `2b7e974`, preserve original review
+and execution bytes, and verify the finite discovery-source changes. Separate
+controls/targets, both RG2b decisions, all-pairs, aggregate and G3 are not promoted.
+
+A_RG2b local reconciliation adds one pinned `a_rg2b_local_product` view and
+local materializer. Retain 21 local cells, completion-relative Lipschitz/finite
+error boundaries, independent inverse and A equations, role-specific section
+reconstruction and fixed-beat/readmission rollback. Use the existing generic
+Python/API/notebook/browser projection; no new family-specific dispatch or
+renderer. Check retained-evidence mutations and the new view's actual checker
+plus shared projection/cleanup, without rerunning unrelated numerical campaigns.
+Eight G2 declarations stay unchanged; crossing reconciliation and later
+acceptance/integrated G2 remain separate from this local record.
+
+A_RG2b crossing reconciliation adds `a_rg2b_crossings` to the same pinned
+registry/materializer. Nine native cases address the remaining seven cells;
+four retained scalar/persistent witnesses keep their separate endpoint scope.
+Check actual graph nomination migrations, target-specific frozen completion,
+independent per-role readmission, explicit history loss, reset/replay and
+K-versus-K-minus controls. Use the generic API/notebook/browser view and test
+rehashed evidence, projection and cleanup. Check the bound local predecessor
+without rerunning its native campaign or unchanged predecessor chain. Bounded
+acceptance is now explicitly recorded from the user's 2026-09-15 decision;
+integrated G2, all-pairs, aggregate P9-7.7 and G3 are not inferred.
+
+The A_RG2b integrated G2 proposal uses one `exact_profile_v1` registry row and
+`a_rg2b_g2_review` materializer dependent on accepted `a_rg2b_crossings`. Reuse
+the 28-cell evidence, add one zero-duration facade supplement, and preserve
+current RG2b/debt authority classifications and frozen-completion limits. Test
+the real checker, rehashed proposal/interface mutations and generic browser
+projection. No family-specific API/notebook/browser branches or public-support
+updates are needed for the proposal.
+
+The user's subsequent A_RG2b G2 acceptance binds checkpoint `504859f` and
+projects nine exact declarations through the same adapter/materializer. Keep
+review/execution bytes unchanged and check the finite discovery-source bridge;
+no new renderer, numerical campaign or broader runtime authorization follows.
+C_RG2b, C1 claims, separate controls/targets, all-pairs, aggregate and G3 remain
+outside this decision.
+
+C_RG2b local reconciliation adds one pinned `c_rg2b_local_product` materializer
+and view: 26 exact cells, complete C chains at all three section roles, independent
+inverse/continuity and fixed-stratum derivative controls, no W/Z writer, and
+whole-publication failure pressure. Reuse shared API/notebook/browser projection;
+seven crossing cells, separate G2, aggregate and G3 remain open. No historical
+numerical campaign needs rerunning for this bounded addition.
+
+C_RG2b crossing reconciliation adds `c_rg2b_crossings` through the same registry
+and dependency-ordered materializer. Nine native cases and two separately scoped
+retained witnesses reconcile seven cells without promoting family-wide support.
+Retain exact graph endpoints, C target reference/section reconstruction,
+initializer-selected A_OS scope, history losses, reset and K/K-minus boundaries.
+The API/notebook/browser projection is shared; no new per-profile dispatch is
+required. Bounded acceptance, G2, aggregate P9-7.7 and G3 remain separate.
+
+The user accepted bounded C_RG2b reconciliation on 2026-09-15. Project the
+decision through the existing acceptance adapter, leaving original execution
+records and nine public G2 declarations unchanged. Integrated G2 follows the
+accepted reconciliation commit as a separate review.
+
+The integrated C_RG2b proposal uses one `exact_profile_v1` registry row and the
+`c_rg2b_g2_review` materializer dependent on accepted `c_rg2b_crossings`. Reuse
+33 cells, add one zero-duration facade supplement and preserve C-only authority,
+complete reference/baseline chains, separate A initializer/event endpoints,
+fixed completion and Lipschitz/K/K-minus limits. The shared API/notebook/browser
+exposes a proposal; no new dispatch branches or public-support updates follow.
+
+The subsequent C_RG2b G2 acceptance binds checkpoint `796229e` and publishes
+the tenth exact declaration through the same shared API/notebook/browser
+projection. Preserve original executions and pin only finite discovery-source
+changes. C1 debt, unreviewed pairs, separate targets, aggregate and G3 remain
+outside this decision; runtime owners and permissions are unchanged.
+
+Aggregate P9-7.7 reconciliation follows the ten accepted exact G2 decisions at
+`ffbcabf`. Add a separate 305-cell successor record and
+`profile_aggregate_reconciliation` status view after the existing scientific
+child materializers. Keep the original HOLD view historical; show zero
+unresolved child cells without claiming aggregate acceptance, all-pairs or G3.
+Reuse accepted evidence and its authority/debt references, checking exact
+checkpoint bytes and catalog/endpoint correspondence without a numerical rerun.
+Aggregate review/acceptance and P9-7.8 remain separate decisions.
+
+Include shared browser-fixture maintenance in this reconciliation: construct
+synthetic current profile views from the pinned registry, retain the historical
+C_OS singleton only in its own acceptance, and include initializer/event and
+aggregate projections. Keep fixtures detached from the trusted roster; test
+that mutations reach their intended checks from a passing baseline. Preserve
+failed-boundary cleanup and all existing rejection assertions without relaxing
+the production validator. This closes the stale-fixture gap, not a G2/G3 grant.
+
+The user accepted aggregate P9-7.7 on 2026-09-15 against checkpoint `1863ab8`.
+Keep original review bytes and checker identities recoverable, project the
+separate accepted decision through API/notebook/browser, and point next work to
+P9-7.8. G3, tranche-7 closure and specialization admission remain pending.
+
+### P9-7.8 specialization-admission review
+
+Expose `specialization_admission_review` through the existing checked Phase 9
+status/materializer boundary and API/notebook/browser. Bind the ten exact
+accepted generic declarations and accepted aggregate predecessor to the V4
+specification/paper, 73 typed provenance queries, unchanged legacy bytes and
+forward mechanics/disabled test matrix. Generate `specialization-review.js`
+from the same checked record and serve it explicitly. Missing, stale, widened
+or failed-boundary projections must reject; include the key in common cleanup.
+
+This is review-only: G3 and tranche-7 acceptance remain pending, all forty
+disabled cells are future work. The checked `a_expansion_work` projection
+assigns oracle selection/construction/review to P9-8.3A.1 and implementation/
+comparison to P9-8.3A.2, with explicit dependencies and same-scope parent
+closure. Genuine generic authority gaps route back to a bounded Tranche 7
+correction; independent C work stays unblocked. Oracle construction has no
+production-runtime prerequisite. A expansion remains unimplemented,
+and no numerical campaign or Tranche 8/9 execution is authorized. After user
+acceptance, bind the exact decision and scoped execution-policy successor;
+do not remove specialization guards merely because a review exists.
+
+P9-7.8 was accepted against checkpoint `c6925b5`; Tranche 7 is closed.
+Preserve the original review and project the separately pinned G3 decision.
+The scoped successor opens only P9-8.1a chart/port graph in its two V4-owned
+source/test paths. All other specialization leaves retain their prerequisites.
+API/notebook/browser support must agree with the work manifest and clear the
+G3 projection on failure. Update the main Phase 9 handoff for continuation.

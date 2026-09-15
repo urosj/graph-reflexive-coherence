@@ -7,13 +7,43 @@ The API reconstructs accepted evidence and evaluates a closed set of
 structural counterfactuals; it does not create scientific evidence or predict a
 gate that has not been rerun.
 
-## Current P9 abundance and receipt-parent authority
+## Current P9 initializer, abundance and receipt-parent authority
 
-P9-4.9.1a is now an accepted append-only availability contract. Use
-`grcv4_explorer.abundance.load_current_forensic_context` for current queries;
-the older import from `receipt_parents` delegates to this same loader.
+P9-7.2a now admits the accepted **optional initializer design**, not implemented
+C→A migration. Use `grcv4_explorer.a_initializer.load_current_forensic_context`
+for the complete current graph. Existing current-loader imports from `abundance`
+and `receipt_parents` delegate to it. The explicit
+`abundance.load_abundance_forensic_context` preserves the pinned P9-4.9.1a
+historical graph and cannot resolve the new initializer IDs.
+
+After the root/side setup below:
+
+```python
+from grcv4_explorer.a_initializer import load_current_forensic_context, initializer_authority
+from grcv4_explorer.forensic import contract_provenance, debt_lifecycle
+
+context = load_current_forensic_context(root, side)
+contract = contract_provenance(context, "P9-EC-A-INITIALIZER-REFERENCE-PASS")
+debt = debt_lifecycle(context, "P9-7.2a-DEBT-A-INITIALIZER-SOURCE")
+views = initializer_authority(root, side)
+```
+
+`P9-7.2a-CL-O-INIT-001` remains optional. The debt trace separates its
+design-resolved producer choice from a `forward_verification_routing` row for
+`P9-7.2a-VO-A-INITIALIZER-INTEGRATION`; the latter is not backward evidence.
+`P9-O-A-INITIALIZER-REFERENCE-PASS` has a typed object-dependents trace.
+The HTTP `/api/a-initializer`, notebook `a-initializer-authority` cell and
+**Load initializer authority** browser button/selectors expose exactly these
+traces. Source/admission/design drift holds current queries, and failed refresh
+clears old output. Payload/spec binding, positive C→A and aggregate 7.2a remain
+pending; no G2/G3 or specialization support is inferred. Historical graph rows,
+contracts and source identities are unchanged.
+
+P9-4.9.1a is an accepted append-only availability contract.
+`grcv4_explorer.abundance.load_current_forensic_context` remains a compatible
+current import, now delegating to the initializer successor.
 `load_parent_forensic_context` reconstructs only the pinned historical P9-4.9.2
-layer. Current discovery must include both sources and fails closed on changed,
+layer. Current discovery must include all admitted sources and fails closed on changed,
 missing or unprocessed source; there is no historical fallback.
 
 ```python
@@ -120,17 +150,18 @@ The first command may use host Python only to create and re-enter the
 repository `.venv`. Every subsequent command uses `.venv`; Node and npm remain
 tool-local.
 
-`discover-sources` is the historical ET-C0 observation command. After accepted
-D11 it deliberately continues to report those records as unprocessed relative
-to ET-C0; ET-C0 is not rewritten. D11 admission is instead verified through:
+`discover-sources` defaults to the current admitted inventory, including the
+initializer. Explicit `--scope et-c0` retains the historical observation and
+reports later sources as unprocessed; ET-C0 is not rewritten. The historical
+D11 admission remains independently verifiable through:
 
 ```bash
 .venv/bin/python "$TOOL/scripts/run.py" audit-iteration10-d11
 .venv/bin/python "$TOOL/scripts/run.py" test-iteration10-d11
 ```
 
-Any record outside both the ET-C0 inventory and the ET-C10 D11 contract still
-requires a new successor adapter/readmission cycle.
+Any record outside the current admitted inventory still requires an explicit
+successor adapter/readmission cycle.
 
 The interactive command remains `serve-iteration8` because ET-C8 owns the
 latest accepted browser distribution. `verify-iteration9` verifies that ET-C8
@@ -163,7 +194,7 @@ context = load_successor_forensic_context(repo_root, SIDE_TOOL_ROOT)
 
 `load_successor_forensic_context` revalidates ET-C1/ET-C2, rebuilds the ET-C10
 D11 manifest and graph in memory, and requires byte identity with the accepted
-ET-C10 artifacts. Use it for the current claim surface, including
+ET-C10 artifacts. Use it for the explicitly D11-scoped claim surface, including
 `D11-C-CL-O-001` and `D11-G9-CL-N-001`.
 
 `grcv4_explorer.forensic.load_forensic_context` remains available when the

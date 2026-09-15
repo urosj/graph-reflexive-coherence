@@ -20,6 +20,38 @@ def _policy(root):
     return module
 
 
+def _profile_next_gate(views):
+    """Display only: consume checked materializer views, never grant authority."""
+    accepted=[r for r in views['profile_g2'] if r['state']=='accepted']
+    ids={r['complete_profile_id'] for r in accepted}
+    labels=', '.join(r['profile_family_id'] for r in accepted)
+    aggregate=views.get('profile_aggregate_reconciliation')
+    closed=bool(aggregate and aggregate['aggregate_closed'])
+    stage=('P9-7.7 accepted and closed: 305/305 catalog cells reconciled.' if closed else
+           'P9-7.7: 305/305 catalog cells reconciled; aggregate review and acceptance remain pending.'
+           if aggregate else 'P9-7.7 remains open.')
+    parts=[f"{stage} Exact accepted G2 declarations ({len(accepted)}): {labels}."]
+    for key,value in views.items():
+        if not key.endswith('_local_product') or value['complete_profile_id'] in ids:
+            continue
+        family=key.removesuffix('_local_product')
+        crossing=views.get(family+'_crossings')
+        extent=(f"{len(value['remaining_catalog_cases'])} crossing cells remaining" if crossing is None
+                else f"{crossing['reconciled_crossing_cells']} crossing cells reconciled; see their separate acceptance state")
+        parts.append(f"{family.upper()}: {value['verified_local_cells']} local cells; {extent}. Local evidence is not G2 acceptance.")
+    parts.append(('All-pairs and P9-G3 remain separate.' if closed else
+                  'Other profile decisions, all-pairs, aggregate P9-7.7 and P9-G3 remain separate.') +
+                 ' Initializer/event targets and arbitrary parameterizations are not added support.')
+    if 'specialization_admission_review' in views:
+        decision = views['specialization_admission_review']
+        parts.append('P9-7.8 accepted; Tranche 7 closed. Exact consumed-set G3 admitted; only P9-8.1a chart/port-graph entry is authorized, not specialization conformance.'
+                     if decision['G3_accepted'] and decision['tranche_7_closed'] else 'P9-7.8 acceptance pending; no specialization admission.')
+        parts.append('P9-8.3A.1 owns independent oracle construction/review; P9-8.3A.2 depends on its acceptance. All 40 disabled cells and other specialization leaves remain pending. Any genuinely missing generic authority returns to a bounded Tranche 7 correction.')
+    elif aggregate:
+        parts.append('P9-7.8 specialization-admission review follows; no G3 support set is admitted.')
+    return ' '.join(parts)
+
+
 def verification_status(repo_root: Path) -> dict:
     """Recheck current authority bytes; label historical execution as recorded.
 
@@ -44,6 +76,7 @@ def verification_status(repo_root: Path) -> dict:
         "next_gate": "P9-1.9 explicit user review; no runtime work yet",
         "claim_ceiling": "Current planning integrity and recorded tool execution are not scientific authority or runtime conformance.",
     }
+    profile_view_keys = set()
     recorded = None
     if hasattr(module, "recorded_acceptance"):
         payload["schema"] = "phase9_governance_status_v2"
@@ -69,7 +102,38 @@ def verification_status(repo_root: Path) -> dict:
             approval = module.acceptance(root)
             ready, owners = module.leaf_permissions(root)
             g2 = module.accepted_g2(root)
+            # Separate runtime evidence from the immutable forensic source trace.
+            # This is a read-only check; opening the UX never runs numerical tests.
+            import sys
+            sys.path.insert(0, str(root / module.HERE))
+            from verify_p972a_initializer_authority import check as migration_check
+            initializer_runtime = migration_check()['initializer_runtime']
+            from verify_p972b_acceptance import check as event_check
+            event_runtime = event_check()
+            from verify_p973_acceptance import check as history_check
+            history_policy_verification = history_check()
+            from verify_p974_acceptance import check as target_check
+            target_reference_verification = target_check()
+            from verify_p975_acceptance import check as failure_check
+            failure_sequence_verification = failure_check()
+            from verify_p976_acceptance import check as lineage_check
+            lineage_ownership_verification = lineage_check()
+            from verify_p977_profile_review import check as profile_review_check
+            profile_conformance_review = profile_review_check(prior=lineage_ownership_verification)
+            from profile_g2_registry import materialize, _checker
+            profile_views, accepted_support = materialize(root, profile_conformance_review)
+            profile_views['profile_aggregate_reconciliation'] = _checker(root, 'verify_p977_aggregate')(profile_views=profile_views)
+            profile_views['specialization_admission_review'] = _checker(root, 'verify_p978_specialization_review')()
+            profile_view_keys = set(profile_views)
             payload.update(
+                **profile_views,
+                initializer_runtime=initializer_runtime,
+                event_runtime=event_runtime,
+                history_policy_verification=history_policy_verification,
+                target_reference_verification=target_reference_verification,
+                failure_sequence_verification=failure_sequence_verification,
+                lineage_ownership_verification=lineage_ownership_verification,
+                profile_conformance_review=profile_conformance_review,
                 g2_acceptance={
                     "record_digest": g2["record_digest"],
                     "path": module.G2_ACCEPTANCE,
@@ -79,7 +143,8 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_generic_runtime_support": g2["accepted_generic_runtime_support"],
                     "new_runtime_iterations_authorized": [],
                 },
-                accepted_generic_runtime_support=g2["accepted_generic_runtime_support"],
+                accepted_generic_runtime_support=accepted_support,
+                admitted_specialization_support_sets=profile_views['specialization_admission_review']['admitted_specialization_support_sets'],
                 schema="phase9_governance_status_v2",
                 runtime_authorized=True,
                 P9_G1_accepted=True,
@@ -193,10 +258,10 @@ def verification_status(repo_root: Path) -> dict:
                 permitted_runtime_paths=sorted(
                     r["path"]
                     for r in module.runtime_targets(approval)
-                    if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
+                    if (r["requires_gate"] == "P9-G1" or r['path'] in profile_views['specialization_admission_review']['runtime_paths']) and set(ready) & owners[r["path"]]
                 ),
-                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. Tranche 5 is accepted. P9-6.1a C_CI and P9-6.1b A_CI are accepted after audit corrections; P9-6.1c shared-contract reconciliation is accepted for A_CI and C_CI; all P9-6.1 children are accepted. P9-6.2a C_PC, P9-6.2b A_PC and P9-6.2c shared reconciliation are accepted after audit corrections; all P9-6.2 children are accepted. P9-6.3a C_CI_PC, P9-6.3b A_CI_PC and P9-6.3c shared reconciliation are accepted by the user, each with bounded numerical PASS. All P9-6.3 children are accepted. The eight new native pressure methods pass; the unchanged 175-method campaign is reused. Composite lifecycle/G2 remain pending. P9-6.4a C_RG2b and P9-6.4b A_RG2b retain scalar reference foundations with corrected native reset/final admission and failure ordering. P9-6.4c provides provisional variable-size graph evaluation and matrix error certification for A/C; its execution record supplies the verification result. P9-6.4d shared reconciliation (formerly c) has bounded scientific PASS for A_RG2b and C_RG2b. The three new native regressions pass; the existing 55 passes and one optional 32-vertex skip are reused. The user accepted P9-6.4a/b/c/d on 2026-09-10 for the bounded numerical scope of both A_RG2b and C_RG2b. Correctness on larger complex graphs precedes performance optimization. RG2b lifecycle/G2 remain pending. P9-6.5 is accepted by the user; Tranche 6 is accepted and closed in its declared scope. All eight numerical realizations are reconciled and independently routed to exact-scope lifecycle/G2 work. Next handoff task: P9-7.1-A_OS snapshot/load/replay, reset, rebase and duplication; implementation entry remains separate. Tranche 6 support remains the exact C_OS singleton; scientific debts and the optional 32-vertex campaign remain separate. A initialization and provisional dynamics do not certify native formation, source-history preservation or live lifecycle. P9-7.1-A_OS, A_OS conformance and G3 remain pending their own acceptance or entry. No numeric abundance definition.",
-                claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
+                next_gate=_profile_next_gate(profile_views),
+                claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete profiles and reviewed domains; no family-wide, unlisted-profile or specialization conformance is inferred.",
             )
         cross = module.read(
             root / module.PHASE / "tranche-1/P9-1.1-SourceCrosswalk.json"
@@ -242,6 +307,9 @@ def verification_status(repo_root: Path) -> dict:
         if implementation:
             payload["source_refs"].append({"path": module.G2_ACCEPTANCE,
                                            "sha256": module.sha((root / module.G2_ACCEPTANCE).read_bytes())})
+            from profile_g2_registry import REGISTRY
+            payload["source_refs"].append({"path": REGISTRY,
+                                           "sha256": module.sha((root / REGISTRY).read_bytes())})
         record = module.read(root / module.RECORD)
         payload["iterations"] = [
             {
@@ -353,7 +421,17 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("receipt_parent_authority", None)
         payload.pop("abundance_interface_authority", None)
         payload.pop("g2_acceptance", None)
+        payload.pop("initializer_runtime", None)
+        payload.pop("event_runtime", None)
+        payload.pop("history_policy_verification", None)
+        payload.pop("target_reference_verification", None)
+        payload.pop("failure_sequence_verification", None)
+        payload.pop("lineage_ownership_verification", None)
+        payload.pop("profile_conformance_review", None)
+        for key in profile_view_keys:
+            payload.pop(key, None)
         payload["accepted_generic_runtime_support"] = []
+        payload["admitted_specialization_support_sets"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

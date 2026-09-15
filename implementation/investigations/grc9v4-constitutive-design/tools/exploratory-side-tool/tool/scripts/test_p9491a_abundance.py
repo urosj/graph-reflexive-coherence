@@ -13,6 +13,7 @@ from unittest.mock import patch
 TOOL = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOL / "src"))
 from grcv4_explorer import abundance as api  # noqa: E402
+from grcv4_explorer import a_initializer  # noqa: E402
 from grcv4_explorer.canonical import record_digest  # noqa: E402
 from grcv4_explorer.errors import SourceAdmissionError  # noqa: E402
 from grcv4_explorer.forensic import contract_provenance  # noqa: E402
@@ -29,7 +30,7 @@ class AbundanceAuthorityTests(unittest.TestCase):
         cls.current = api.load_current_forensic_context(cls.root, TOOL.parent)
 
     def test_append_only_graph_and_typed_source_boundary(self):
-        self.assertEqual(len(self.current.nodes) - len(self.old.nodes), 7)
+        self.assertEqual(len(self.current.nodes) - len(self.old.nodes), 13)
         for name, node in self.old.nodes.items():
             self.assertEqual(self.current.nodes[name], node)
         edges = {e["edge_id"]: e for e in self.current.propagation_edges}
@@ -87,7 +88,7 @@ class AbundanceAuthorityTests(unittest.TestCase):
             with self.subTest(defect=defect), patch.object(api, "load_json_object", side_effect=changed):
                 with self.assertRaises((SourceAdmissionError, FileNotFoundError)):
                     api.load_current_forensic_context(self.root, TOOL.parent)
-        with patch.object(api, "discover_sources", return_value={"state": "new_unprocessed_source_available"}):
+        with patch.object(a_initializer, "discover_sources", return_value={"state": "new_unprocessed_source_available"}):
             with self.assertRaisesRegex(SourceAdmissionError, "not exact"):
                 api.load_current_forensic_context(self.root, TOOL.parent)
 

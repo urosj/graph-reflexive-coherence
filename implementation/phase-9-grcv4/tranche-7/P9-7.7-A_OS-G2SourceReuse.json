@@ -1,0 +1,143 @@
+{
+  "schema": "phase9_exact_discovery_source_reuse_v1",
+  "base_commit": "db36116",
+  "scope": "Exact A_OS G2 discovery addition and retained-checker adaptation only; no numerical implementation or original execution records changed. Fresh runs bind current bytes.",
+  "changes": {
+    "implementation/phase-9-grcv4/verification/test_p973_sharp_regressions.py": {
+      "before_sha256": "1347ef5a07159322fd20d6ecf1f000ac70cbcb90d6b8491a6376221e0a5afa78",
+      "after_sha256": "621b39aa2a04dc649ed49cdd87b46a482cf25e6c4d14186b8e646974685a2cba",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/test_p977_a_os_g2.py": {
+      "before_sha256": "cd8135ed65cb2de68debea25b452679621495a6e29904149bbeca58272546acb",
+      "after_sha256": "6921a0dcda99c6b06b9d092ece20875c69e36228777e5b15d3f5e702c0ca8668",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p971_lifecycle.py": {
+      "before_sha256": "306002d7dd2918642cf49c55061af501090285058602e44c9314cdfb9b4b7988",
+      "after_sha256": "f13a85963308b990ab4bd9db8f08be1a41b4e79f93b0510db4660215b4ffb39a",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p972a_initializer_authority.py": {
+      "before_sha256": "d9be3270507c75340186d14184a06efb1a00c13f2ace0a348f03112808607f06",
+      "after_sha256": "91d4b9f6e437a826c669d525c7e325106cf5c57e15e45a73ff45095b26e5016c",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p972a_initializer_runtime.py": {
+      "before_sha256": "9aa7fe7f3b6ce56f2e7f9a3d45a6e2e7bd5946e20c92b4b07660c071cefdeef7",
+      "after_sha256": "fd48f8ffbc6f948ad1ad49cabb95173ca372bc5b287672434a2c06d7c3ee6fa7",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p972a_migrations.py": {
+      "before_sha256": "5c81f58551e4385f20fc800c3cfb4e4f961e243ddb5381d8bf7d570a5bdf6a82",
+      "after_sha256": "b06c814aefe16dc2ca46f060d2fc652ba172575280a180b0e0a7279bb93f895a",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p972b_runtime.py": {
+      "before_sha256": "b4ce7e807b5934e6ea51abf0e8bf1f96be3733401d447ae357a4987d36f66895",
+      "after_sha256": "d0a4f3137e548adf26184c4a1d72589862b51e2440c7e693da88989e54fc5444",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p973_history_policy.py": {
+      "before_sha256": "9bf4da122ea82b12ef3eae0b0daf25116f07d39a431e47a55657826eb11a1a52",
+      "after_sha256": "b9133c4b33f5014f73e1ebda9b0c7d1eb92edad03c91d14cbad960de9a5c2598",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p974_target_reference.py": {
+      "before_sha256": "dbe221d0ae7f497d5f8c0e940c49e51e2125c21f13f68ff8ea82c21ad1ad0f9a",
+      "after_sha256": "012f8428fb16fcc3be7bea1d0d2bdbafe51ca2b6657b9768448c030ec683e5de",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p975_failure_sequences.py": {
+      "before_sha256": "cdcae054878fb12de1d130300f22aa3435194dd703084cd57d1cfd1f41fa133a",
+      "after_sha256": "9355cb99591078881ce8b67d73723ba06b6d67c363d625ef1b43f4b9305f4722",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p976_lineage_ownership.py": {
+      "before_sha256": "79abad3f4eb77cedd9c7bd1b665081a266aacf89957e4cd7ffff18f83c722ee8",
+      "after_sha256": "b537633a1858011d8d9d2d185edae786c03bd4c8ade2ce4b8d037a7adf3e0b0c",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p977_a_os_crossings.py": {
+      "before_sha256": "ffa572bcd607a2f094a2a94ac456d60e9ca67b8676e08431ba05d72dc0548f8d",
+      "after_sha256": "03673dabf7ba02177c7c4a39c5e837a755024db03018ba785946ce0ed6a1ccf3",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p977_a_os_g2.py": {
+      "before_sha256": "24466cc1e1ed519730476c13e9e725b85975879eb47bb0a45cf9742321dcf326",
+      "after_sha256": "df4fb3310bf320dfd4c7becf78c0550a48c4438eb59676f12aa633aa977fb973",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p977_a_os_local.py": {
+      "before_sha256": "f7dd78d1f24e980694a5822af26468f6690597f53b42ae8269033636b2728d6f",
+      "after_sha256": "5cf35d80fb508aec8dcf5ad7c42c80524a212766231a2f309993fa316719826e",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p977_profile_review.py": {
+      "before_sha256": "ccfd0b86351a1a32dd2b9ef2d6788b4f8bec89f7be2c40d5b9dd064812d5af43",
+      "after_sha256": "e3531334d7e311f507381a7f0d9daa57a9dd930a7f777c521176c7781681c1d7",
+      "reason": "Finite retained-source comparison or accepted-discovery assertion"
+    },
+    "src/pygrc/models/grc_v4_profile.py": {
+      "before_sha256": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
+      "after_sha256": "3fde7936c722b923755ae1626108393210934c541f595a660e6c4861d7419844",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4.py": {
+      "before_sha256": "718a1cb287b5f92ffb900bab4cda14b6b8b4148b28bad38010bd26353ab80edc",
+      "after_sha256": "5526bd3a7a07e1b989052e9ec895ec4d3fd155b31dcd00335b80888c4810fb0e",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_candidate_a.py": {
+      "before_sha256": "6f54255ee3c766621c30a3f236f4104d3981c757c15d76ccd55b63e98a3464d2",
+      "after_sha256": "3899e5e5c0691e8a1ad66b0e1ede66b852fe3e420c563e34f9900a575710f967",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_candidate_c.py": {
+      "before_sha256": "10d4d9f2f763803a6c6509389bc834f6e1756ee1a2e1c426a7ad94ba83e13392",
+      "after_sha256": "724cd5d70be5b262352fca7a7f764dd060736fc17d753af02a349b2ddf53ce8f",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_ci.py": {
+      "before_sha256": "9dbede3935b494e1ef53424fdc588db08fd1c88925cf9d9c543d3a3b17620cd8",
+      "after_sha256": "413deb46a333a3eaa5997f7a9df60328a4b84e8bea4f279fba774a2c7562173b",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_cipc.py": {
+      "before_sha256": "a8b7922377543cb0eca3cf08cb83e0d0d26c09173b1d34f5b65ddfe70bc86ba9",
+      "after_sha256": "922f4ce2a175e61a0ca06276409758d6d436d1bab094b4ae8dfb49a944199770",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_codec.py": {
+      "before_sha256": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079",
+      "after_sha256": "c35976511b5a0a642ae0c887cc5ce643c518c634ad804fb8916254aab7b78a03",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_geometry.py": {
+      "before_sha256": "8e954cdf956e0b8aef585c948fc307c2466b9e2a83ac2f6933387297acf73004",
+      "after_sha256": "3f13ff494a4e7c06dd560b9be27a4698ac9f323eacca0533ca83f47328164c1c",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_pc.py": {
+      "before_sha256": "c52e3819a7481c10a36f258facc459b8a24117ac1c92a3fb33d8e4c154990d2e",
+      "after_sha256": "e394e67aeab053c089691b3bc198df07b3993d2a7c3587296bb3a83f35fd0111",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_profile.py": {
+      "before_sha256": "f88de45246927ca3e37a9c60db06eb11d91867b89f58c4b000e95545d8affe6f",
+      "after_sha256": "deb16a59940952cdc3bc7ba638614ab9498443255893db4313a6954725cfecd8",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_step.py": {
+      "before_sha256": "d060883a2b355e51eae035799461f6f030253b1e16269b207d9a66e6476c9c4f",
+      "after_sha256": "f92edbefda5a413dad786e60afeada3b888a771daa9348d241b02bbb75174a45",
+      "reason": "Exact accepted registry and assertions"
+    },
+    "tests/models/test_grc_v4_transport.py": {
+      "before_sha256": "51551796a0e6e344b66f21d1a5767afe39173e1a77639ba9e9271061bff02684",
+      "after_sha256": "7ba142592b56d02714fe4a5babe3b56aee437c52c6109d858ef78a37176f4d82",
+      "reason": "Exact accepted registry and assertions"
+    }
+  },
+  "record_digest": "5552fa5a4cf58807708221a1d4016594e88c8aff85cd43b060868a8e4a0cf741"
+}

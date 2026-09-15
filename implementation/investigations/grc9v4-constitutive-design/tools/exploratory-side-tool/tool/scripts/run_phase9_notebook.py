@@ -12,6 +12,7 @@ from grcv4_explorer.paths import repository_root  # noqa: E402
 from grcv4_explorer.phase9_verification import verification_status, pressure_projection  # noqa: E402
 from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 from grcv4_explorer.abundance import abundance_authority  # noqa: E402
+from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
 
 
 def main():
@@ -52,7 +53,8 @@ def main():
     if args.status_only:
         if namespace["phase9_pressure"] is not None:
             raise RuntimeError("status-only notebook must not claim pressure evidence")
-        print("PHASE9_NOTEBOOK_STATUS_PASS API_identity=byte_exact pressure=not_requested runtime_support=empty")
+        print("PHASE9_NOTEBOOK_STATUS_PASS API_identity=byte_exact pressure=not_requested "
+              f"accepted_exact_profiles={len(observed['accepted_generic_runtime_support'])}")
         return
     probe = namespace["phase9_pressure"]
     parents = namespace["phase9_parent_authority"]
@@ -61,6 +63,12 @@ def main():
     abundance = namespace["phase9_abundance_authority"]
     if abundance != abundance_authority(root, TOOL.parent):
         raise RuntimeError("notebook/API abundance-authority identity mismatch")
+    initializer = namespace["phase9_initializer_authority"]
+    if initializer != initializer_authority(root, TOOL.parent):
+        raise RuntimeError("notebook/API initializer-authority identity mismatch")
+    destination.with_name("notebook-initializer-authority.json").write_text(
+        json.dumps(initializer, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n"
+    )
     destination.with_name("notebook-abundance-authority.json").write_text(
         json.dumps(abundance, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n"
     )
@@ -80,7 +88,7 @@ def main():
         + "\n"
     )
     print(
-        f"PHASE9_NOTEBOOK_PASS cells={len(cells)} API_identity=byte_exact runtime_authorized={str(observed['runtime_authorized']).lower()} P9_G1={'accepted' if observed['P9_G1_accepted'] else 'pending'} runtime_support=empty"
+        f"PHASE9_NOTEBOOK_PASS cells={len(cells)} API_identity=byte_exact runtime_authorized={str(observed['runtime_authorized']).lower()} P9_G1={'accepted' if observed['P9_G1_accepted'] else 'pending'} accepted_exact_profiles={len(observed['accepted_generic_runtime_support'])}"
     )
 
 

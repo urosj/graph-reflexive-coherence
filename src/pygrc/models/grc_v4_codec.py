@@ -56,9 +56,32 @@ class V4IdentityError(ValueError):
 
 RECEIPT_PARENT_POLICY_ID = "grcv4-previous-successful-primary-v1"
 COS_SNAPSHOT_LAYOUT_ID = "pygrc-c-os-snapshot-v3"
+GENERIC_SNAPSHOT_LAYOUT_ID = "pygrc-generic-snapshot-v1"
+MIGRATION_SNAPSHOT_LAYOUT_ID = "pygrc-generic-migration-snapshot-v1"
+INITIALIZER_SNAPSHOT_LAYOUT_ID = "pygrc-generic-initializer-migration-snapshot-v1"
+INITIALIZER_RELEASE_ID = "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7"
+_INITIALIZER_MANIFEST_SHA256 = "245cf8a25709880c5ea57ca0a617d2c39f6bede26d59e650d753039230c6cd0b"
 
 
 def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
+    return _snapshot_payload(value, COS_SNAPSHOT_LAYOUT_ID)
+
+
+def snapshot_payload(value: object) -> dict[str, JSONValue]:
+    """Dispatch closed envelopes; never upgrade a historical layout implicitly."""
+    data = _copy_json(value, set())
+    layout = data.get("implementation_layout_id") if isinstance(data, dict) else None
+    if layout == INITIALIZER_SNAPSHOT_LAYOUT_ID:
+        data = validate_initializer_payload("snapshot_payload", data)
+        if data["specification_release_id"] != INITIALIZER_RELEASE_ID:
+            raise V4IdentityError("unsupported initializer snapshot release")
+        return data
+    if layout not in (COS_SNAPSHOT_LAYOUT_ID, GENERIC_SNAPSHOT_LAYOUT_ID, MIGRATION_SNAPSHOT_LAYOUT_ID):
+        raise V4SchemaError("unsupported V4 snapshot layout")
+    return _snapshot_payload(data, layout)
+
+
+def _snapshot_payload(value: object, layout: str) -> dict[str, JSONValue]:
     """Closed implementation envelope around the frozen V4 identity payloads.
 
     The P9-4.9.2 successor explicitly binds the parent policy and release.
@@ -84,10 +107,14 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
         "reference_registry",
         "transition_records",
     }
-    if isinstance(data, dict) and data.get("implementation_layout_id") != COS_SNAPSHOT_LAYOUT_ID:
+    if layout == GENERIC_SNAPSHOT_LAYOUT_ID:
+        keys.add("differential_reference")
+    if layout == MIGRATION_SNAPSHOT_LAYOUT_ID:
+        keys.add("differential_reference_registry")
+    if isinstance(data, dict) and data.get("implementation_layout_id") != layout:
         raise V4SchemaError("unsupported C_OS snapshot layout; historical parent policy is not converted")
     if not isinstance(data, dict) or set(data) != keys:
-        raise V4SchemaError("expected the complete closed C_OS snapshot envelope")
+        raise V4SchemaError("expected the complete closed V4 snapshot envelope")
     if (
         data["schema_version"],
         data["model_family"],
@@ -95,7 +122,7 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
     ) != (
         "grcv4-snapshot-v1",
         "GRCV4",
-        COS_SNAPSHOT_LAYOUT_ID,
+        layout,
     ):
         raise V4SchemaError("unsupported snapshot family, version or layout")
     if (data["receipt_parent_policy_id"] != RECEIPT_PARENT_POLICY_ID
@@ -140,6 +167,10 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
             row[field] = validate_payload(schema, row[field])
         if not isinstance(row["request"], dict):
             raise V4SchemaError("crossing archive requires its request declaration")
+    if any(isinstance(r, dict) and isinstance(r.get("identity_payload"), dict)
+           and r["identity_payload"].get("schema_version") == "grcv4-profile-migration-receipt-v2"
+           for r in data["receipt_ledger"]):
+        raise V4SchemaError("initializer receipt requires its successor snapshot layout/release")
     for record in data["commit_records"]:
         if not isinstance(record, dict) or set(record) != {"commit_id", "payload"}:
             raise V4SchemaError("expected a commit ID and its complete preimage")
@@ -347,6 +378,62 @@ def load_contract_schema() -> dict[str, JSONValue]:
         raise V4AssetError("accepted packaged assets unavailable or invalid") from exc
 
 
+def load_initializer_schema() -> dict[str, JSONValue]:
+    """Verify the separately pinned additive release; never replace the old package."""
+    load_contract_schema()
+    try:
+        package = resources.files(_ASSET_PACKAGE)
+        raw = package.joinpath("grc-v4-a-initializer-release.json").read_bytes()
+        if sha256(raw).hexdigest() != _INITIALIZER_MANIFEST_SHA256:
+            raise V4AssetError("initializer manifest identity mismatch")
+        manifest = json.loads(raw)
+        payload = manifest["release_identity_payload"]
+        if (manifest["release_id"] != INITIALIZER_RELEASE_ID or
+                INITIALIZER_RELEASE_ID != "grcv4-spec-release-sha256:" + sha256(canonical_json_bytes(payload)).hexdigest()
+                or payload["predecessor_release_id"] != RELEASE_ID):
+            raise V4AssetError("initializer release binding mismatch")
+        raw = package.joinpath("grc-v4-a-initializer-schema.json").read_bytes()
+        expected = next(r["sha256"] for r in payload["artifact_bindings"]
+                        if r["path"] == "specs/grc-v4-a-initializer-schema.json")
+        schema = json.loads(raw)
+        if sha256(raw).hexdigest() != expected or schema["$defs"]["static_policy"]["const"] != payload["static_policy"]:
+            raise V4AssetError("initializer schema/policy binding mismatch")
+        return schema
+    except (OSError, ImportError, ValueError, KeyError, TypeError, StopIteration) as exc:
+        raise V4AssetError("initializer assets unavailable or invalid") from exc
+
+
+def validate_initializer_payload(name: str, value: object) -> dict[str, JSONValue]:
+    data = json_value(value)
+    schema, base = load_initializer_schema(), load_contract_schema()
+    if name not in schema["$defs"]:
+        raise V4SchemaError("unknown initializer schema")
+    referencing = _dependency("referencing")
+    registry = referencing.Registry().with_resources(
+        (s["$id"], referencing.Resource.from_contents(s)) for s in (base, schema))
+    js = _dependency("jsonschema")
+    validator_class = js.validators.extend(js.Draft202012Validator, {"pattern": _identity_pattern})
+    schema["$ref"] = "#/$defs/" + name
+    error = next(validator_class(schema, registry=registry).iter_errors(data), None)
+    if error is not None or not isinstance(data, dict):
+        raise V4SchemaError("initializer " + name + ": " + (error.message if error else "expected object"))
+    return data
+
+
+def initializer_identity(name: str, value: object, *, expected: str | None = None) -> str:
+    prefixes = {"static_policy": "grcv4-a-initializer-policy-sha256",
+                "construction_payload": "grcv4-a-reference-pass-construction-sha256",
+                "pair_payload": "grcv4-a-reference-pass-pair-sha256",
+                "migration_receipt_payload": "grc-receipt-sha256"}
+    if name not in prefixes:
+        raise V4SchemaError("unknown initializer identity domain")
+    data = validate_initializer_payload(name, value)
+    result = prefixes[name] + ":" + sha256(canonical_json_bytes(data)).hexdigest()
+    if expected is not None and result != expected:
+        raise V4IdentityError("initializer identity differs from its preimage")
+    return result
+
+
 def _identity_pattern(
     validator: object, pattern: str, instance: JSONValue, schema: object
 ) -> Iterator[object]:
@@ -361,8 +448,26 @@ def _identity_pattern(
 def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
     """Closed-schema data validation only; returns detached primitive fields."""
     data = json_value(value)
-    schema = load_contract_schema()
     name = schema_ref.removeprefix("#/$defs/")
+    if name == "representation_request":
+        from .grc_v4_event_codec import validate_event_payload
+        return validate_event_payload("representation/request", data)
+    if name in ("successful_receipt_identity_payload", "successful_receipt_envelope") and isinstance(data, dict):
+        p = data if name == "successful_receipt_identity_payload" else data.get("identity_payload", {})
+        family = {"grcv4-topology-event-receipt-v2": "event",
+                  "grcv4-representation-transport-receipt-v1": "representation"}.get(p.get("schema_version")) if isinstance(p, dict) else None
+        if family is not None:
+            from .grc_v4_event_codec import validate_event_payload
+            definition = ("event_receipt_payload" if family == "event" else "receipt_payload") if name == "successful_receipt_identity_payload" else "receipt_envelope"
+            return validate_event_payload(family + "/" + definition, data)
+    if (name == "successful_receipt_identity_payload" and isinstance(data, dict)
+            and data.get("schema_version") == "grcv4-profile-migration-receipt-v2"):
+        return validate_initializer_payload("migration_receipt_payload", data)
+    if (name == "successful_receipt_envelope" and isinstance(data, dict)
+            and isinstance(data.get("identity_payload"), dict)
+            and data["identity_payload"].get("schema_version") == "grcv4-profile-migration-receipt-v2"):
+        return validate_initializer_payload("receipt_envelope", data)
+    schema = load_contract_schema()
     definitions = schema["$defs"]
     if not isinstance(definitions, dict) or name not in definitions:
         raise V4SchemaError("unknown local contract definition")
@@ -470,6 +575,15 @@ def payload_identity(
 ) -> str:
     """Recompute a named preimage identity; mismatches never repair inputs."""
     name = schema_ref.removeprefix("#/$defs/")
+    if name == "initializer_migration_receipt":
+        return initializer_identity("migration_receipt_payload", value, expected=expected)
+    if name in ("event_receipt", "representation_receipt"):
+        from .grc_v4_event_codec import validate_event_payload
+        data = validate_event_payload("event/event_receipt_payload" if name == "event_receipt" else "representation/receipt_payload", value)
+        result = "grc-receipt-sha256:" + sha256(canonical_json_bytes(data)).hexdigest()
+        if expected is not None and expected != result:
+            raise V4IdentityError("event receipt differs from preimage")
+        return result
     if name not in _IDENTITY_PREFIXES:
         raise V4SchemaError("definition is not an identity preimage")
     data = validate_payload(name, value)

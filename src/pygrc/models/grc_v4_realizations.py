@@ -10,7 +10,7 @@ from dataclasses import dataclass, field, replace
 from fractions import Fraction
 
 from .grc_v4_candidate_a import (
-    HISTORY_POLICY,
+    ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
     CandidateADifferentialReference,
     CandidateAStageError,
@@ -301,7 +301,7 @@ def _a_os_inputs(inputs: GeometryStageInputs) -> GeometryStageInputs:
     params = ref.profile.params_resolved.realization
     if (
         ref.profile.identity_payload.profile_family_id != "A_OS"
-        or ref.profile.params_resolved.lifecycle.history_policy_id != HISTORY_POLICY
+        or ref.profile.params_resolved.lifecycle.history_policy_id not in ADMITTED_HISTORY_POLICIES
         or type(params) is not OSParams
         or params.predictor_policy_id != "reference_geometry_predictor_v1"
         or params.corrector_policy_id != "one_fresh_geometry_corrector_v1"

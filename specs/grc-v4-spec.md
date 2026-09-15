@@ -2,6 +2,12 @@
 
 ## Status and authority
 
+The [Candidate A reference-pass supplement](grc-v4-a-initializer-spec.md) now
+binds the accepted P9 producer in a **specification candidate awaiting review**.
+It follows the accepted proposal and paper; it does not yet change the packaged
+release or claim implemented C→A. The released D10/D11 census below remains
+historical and does not include or reclassify later P9 authority.
+
 This file is the normative implementation contract for the D10-plus-D11,
 graph-generic `GRCV4` substrate and the current admitted profile population.
 The accepted D11-C closure supplies Candidate C's exact baseline transport;
@@ -1505,6 +1511,15 @@ $I_A^{\mathrm{GRC}}$: rebuild target differentials, evaluate the admitted
 curvature-disabled $G_W$ at the target reference-current stage, construct
 positive current/reset $W_A$, and record that history was not preserved or
 fabricated. A specialization may bind a stricter initializer.
+
+The role alone did not determine its reference-current producer. The separate
+[P9 target-reference-pass policy](grc-v4-a-initializer-spec.md) now specifies
+exactly one target-only baseline pass and the unchanged full final conductance
+law, with fixed numerical staging and independent current/reset construction.
+Its closed schema distinguishes static policy from output-bearing records and
+requires final realization readmission, not full-current admission of auxiliary
+W. This opt-in supplement retains separate review, release and runtime gates;
+it does not automatically select the exact GRC9V3 initializer.
 
 A topology event is typed across graph/profile spaces:
 

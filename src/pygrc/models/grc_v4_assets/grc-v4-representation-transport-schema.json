@@ -1,0 +1,823 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/urosj/graph-reflexive-coherence/specs/grc-v4-representation-transport-schema.json",
+  "title": "GRCV4 pure representation-transport binding",
+  "$defs": {
+    "correspondence_id": {
+      "type": "string",
+      "pattern": "^grcv4-coordinate-map-sha256:[0-9a-f]{64}$"
+    },
+    "representation_id": {
+      "type": "string",
+      "pattern": "^grcv4-representation-change-sha256:[0-9a-f]{64}$"
+    },
+    "correspondence_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "policy_id",
+        "source_graph_digest",
+        "target_graph_digest",
+        "vertex_map",
+        "edge_map"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-coordinate-map-v1"
+        },
+        "policy_id": {
+          "const": "grcv4-pure-representation-transport-v1"
+        },
+        "source_graph_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/graph_id"
+        },
+        "target_graph_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/graph_id"
+        },
+        "vertex_map": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source_vertex_id",
+              "target_vertex_id"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "source_vertex_id": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              },
+              "target_vertex_id": {
+                "type": [
+                  "string",
+                  "integer"
+                ]
+              }
+            }
+          }
+        },
+        "edge_map": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source_edge_id",
+              "target_edge_id",
+              "orientation"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "source_edge_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target_edge_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "orientation": {
+                "type": "integer",
+                "enum": [
+                  -1,
+                  1
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "correspondence_record": {
+      "type": "object",
+      "required": [
+        "correspondence_id",
+        "payload"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "correspondence_id": {
+          "$ref": "#/$defs/correspondence_id"
+        },
+        "payload": {
+          "$ref": "#/$defs/correspondence_payload"
+        }
+      }
+    },
+    "request": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "operation_id",
+        "source_state_digest",
+        "source_graph_digest",
+        "target_graph",
+        "target_profile_id",
+        "correspondence",
+        "metadata"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-representation-transport-request-v1"
+        },
+        "operation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_state_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+        },
+        "source_graph_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/graph_id"
+        },
+        "target_graph": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/serialized_graph_payload"
+        },
+        "target_profile_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+        },
+        "correspondence": {
+          "$ref": "#/$defs/correspondence_record"
+        },
+        "metadata": {
+          "type": "object"
+        }
+      }
+    },
+    "operation_identity_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "policy_id",
+        "source_state_digest",
+        "source_graph_digest",
+        "target_graph_digest",
+        "target_profile_id",
+        "correspondence_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-representation-change-identity-v1"
+        },
+        "policy_id": {
+          "const": "grcv4-pure-representation-transport-v1"
+        },
+        "source_state_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+        },
+        "source_graph_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/graph_id"
+        },
+        "target_graph_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/graph_id"
+        },
+        "target_profile_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+        },
+        "correspondence_id": {
+          "$ref": "#/$defs/correspondence_id"
+        }
+      }
+    },
+    "charge_evidence": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "delta_semantics",
+        "current",
+        "reset"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-representation-charge-evidence-v1"
+        },
+        "delta_semantics": {
+          "const": "exact_coordinate_action"
+        },
+        "current": {
+          "type": "object",
+          "required": [
+            "source",
+            "target"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "source": {
+              "type": "object",
+              "required": [
+                "target_charge",
+                "admitted_charge",
+                "residual"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "target_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "admitted_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "residual": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                }
+              }
+            },
+            "target": {
+              "type": "object",
+              "required": [
+                "target_charge",
+                "admitted_charge",
+                "residual"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "target_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "admitted_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "residual": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                }
+              }
+            }
+          }
+        },
+        "reset": {
+          "type": "object",
+          "required": [
+            "source",
+            "target"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "source": {
+              "type": "object",
+              "required": [
+                "target_charge",
+                "admitted_charge",
+                "residual"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "target_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "admitted_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "residual": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                }
+              }
+            },
+            "target": {
+              "type": "object",
+              "required": [
+                "target_charge",
+                "admitted_charge",
+                "residual"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "target_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "admitted_charge": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                },
+                "residual": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "candidate_receipt": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "candidate"
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "disposition": {
+                  "const": "rederived"
+                },
+                "source_history_digest": {
+                  "type": "null"
+                },
+                "target_history_digest": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "candidate"
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "disposition": {
+                  "const": "exact_transport"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "target_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "carrier_receipt": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "carrier"
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "disposition": {
+                  "const": "not_applicable"
+                },
+                "source_history_digest": {
+                  "type": "null"
+                },
+                "target_history_digest": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_receipt"
+            },
+            {
+              "properties": {
+                "subject": {
+                  "const": "carrier"
+                },
+                "information_loss": {
+                  "const": "none"
+                },
+                "disposition": {
+                  "const": "exact_transport"
+                },
+                "source_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                },
+                "target_history_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "receipt_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "core",
+        "representation_id",
+        "correspondence_id",
+        "charge",
+        "history"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-representation-transport-receipt-v1"
+        },
+        "core": {
+          "type": "object",
+          "required": [
+            "operation_id",
+            "source_state_digest",
+            "target_state_digest",
+            "source_graph_digest",
+            "target_graph_digest",
+            "source_model_identity",
+            "target_model_identity",
+            "source_authoritative_digest",
+            "target_authoritative_digest",
+            "source_reset_digest",
+            "target_reset_digest",
+            "actual_charge_delta",
+            "information_losses",
+            "disposition",
+            "parent_receipt_ids"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "operation_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_state_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+            },
+            "target_state_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+            },
+            "source_graph_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/graph_id"
+            },
+            "target_graph_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/graph_id"
+            },
+            "source_model_identity": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+            },
+            "target_model_identity": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+            },
+            "source_authoritative_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/authoritative_content_id"
+            },
+            "target_authoritative_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/authoritative_content_id"
+            },
+            "source_reset_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/reset_id"
+            },
+            "target_reset_digest": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/reset_id"
+            },
+            "actual_charge_delta": {
+              "const": 0
+            },
+            "information_losses": {
+              "const": []
+            },
+            "disposition": {
+              "const": "committed"
+            },
+            "parent_receipt_ids": {
+              "type": "array",
+              "items": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/receipt_id"
+              },
+              "maxItems": 1
+            }
+          }
+        },
+        "representation_id": {
+          "$ref": "#/$defs/representation_id"
+        },
+        "correspondence_id": {
+          "$ref": "#/$defs/correspondence_id"
+        },
+        "charge": {
+          "$ref": "#/$defs/charge_evidence"
+        },
+        "history": {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_bundle_receipt"
+            },
+            {
+              "properties": {
+                "candidate": {
+                  "$ref": "#/$defs/candidate_receipt"
+                },
+                "carrier": {
+                  "$ref": "#/$defs/carrier_receipt"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "representation_transition": {
+      "type": "object",
+      "required": [
+        "commit_id",
+        "request",
+        "source",
+        "source_reset",
+        "target",
+        "target_reset",
+        "initializer_pair"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "commit_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+        },
+        "request": {
+          "$ref": "#/$defs/request"
+        },
+        "source": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "source_reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "target": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "target_reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "initializer_pair": {
+          "type": "null"
+        }
+      }
+    },
+    "transition_record": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/representation_transition"
+        },
+        {
+          "$ref": "grc-v4-topology-event-schema.json#/$defs/transition_record"
+        }
+      ]
+    },
+    "receipt_envelope": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "receipt_id",
+        "commit_id",
+        "identity_payload"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-successful-receipt-envelope-v1"
+        },
+        "receipt_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/receipt_id"
+        },
+        "commit_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+        },
+        "identity_payload": {
+          "oneOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/successful_receipt_identity_payload"
+            },
+            {
+              "$ref": "grc-v4-a-initializer-schema.json#/$defs/migration_receipt_payload"
+            },
+            {
+              "$ref": "grc-v4-topology-event-schema.json#/$defs/event_receipt_payload"
+            },
+            {
+              "$ref": "#/$defs/receipt_payload"
+            }
+          ]
+        }
+      }
+    },
+    "operation_group": {
+      "type": "object",
+      "required": [
+        "commit_record",
+        "receipts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "commit_record": {
+          "type": "object",
+          "required": [
+            "commit_id",
+            "payload"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "commit_id": {
+              "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+            },
+            "payload": {
+              "type": "object",
+              "required": [
+                "schema_version",
+                "operation_id",
+                "source_state_digest",
+                "target_state_digest",
+                "emitted_receipt_ids",
+                "target_step_index",
+                "target_time"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "schema_version": {
+                  "const": "grcv4-commit-payload-v1"
+                },
+                "operation_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_state_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+                },
+                "target_state_digest": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+                },
+                "emitted_receipt_ids": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "grc-v4-contract-schema.json#/$defs/receipt_id"
+                  },
+                  "minItems": 1,
+                  "maxItems": 1
+                },
+                "target_step_index": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/nonnegative_integer"
+                },
+                "target_time": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/nonnegative_number"
+                }
+              }
+            }
+          }
+        },
+        "receipts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "schema_version",
+              "receipt_id",
+              "commit_id",
+              "identity_payload"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "schema_version": {
+                "const": "grcv4-successful-receipt-envelope-v1"
+              },
+              "receipt_id": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/receipt_id"
+              },
+              "commit_id": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+              },
+              "identity_payload": {
+                "$ref": "#/$defs/receipt_payload"
+              }
+            }
+          }
+        }
+      }
+    },
+    "snapshot_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "model_family",
+        "implementation_layout_id",
+        "receipt_parent_policy_id",
+        "specification_release_id",
+        "reference",
+        "scientific_state",
+        "scientific_state_digest",
+        "reset",
+        "reset_digest",
+        "receipt_ledger",
+        "commit_records",
+        "lifecycle",
+        "lifecycle_digest",
+        "reference_registry",
+        "differential_reference_registry",
+        "transition_records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-snapshot-v1"
+        },
+        "model_family": {
+          "const": "GRCV4"
+        },
+        "implementation_layout_id": {
+          "const": "pygrc-generic-coordinate-transport-snapshot-v1"
+        },
+        "receipt_parent_policy_id": {
+          "const": "grcv4-previous-successful-primary-v1"
+        },
+        "specification_release_id": {
+          "type": "string",
+          "pattern": "^grcv4-spec-release-sha256:[0-9a-f]{64}$",
+          "not": {
+            "enum": [
+              "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+              "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7"
+            ]
+          }
+        },
+        "reference": {
+          "$ref": "grc-v4-a-initializer-schema.json#/$defs/archived_reference"
+        },
+        "scientific_state": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "scientific_state_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+        },
+        "reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "reset_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/reset_id"
+        },
+        "receipt_ledger": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/receipt_envelope"
+          }
+        },
+        "commit_records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "commit_id",
+              "payload"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "commit_id": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+              },
+              "payload": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/commit_payload"
+              }
+            }
+          }
+        },
+        "lifecycle": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/lifecycle_envelope_payload"
+        },
+        "lifecycle_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/lifecycle_id"
+        },
+        "reference_registry": {
+          "type": "array",
+          "items": {
+            "$ref": "grc-v4-a-initializer-schema.json#/$defs/archived_reference"
+          }
+        },
+        "differential_reference_registry": {
+          "type": "array",
+          "items": {
+            "$ref": "grc-v4-a-initializer-schema.json#/$defs/differential_reference"
+          }
+        },
+        "transition_records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/transition_record"
+          }
+        }
+      },
+      "description": "Mixed-version wire shape only; explicit joint release lookup and whole-operation replay remain required."
+    }
+  }
+}
