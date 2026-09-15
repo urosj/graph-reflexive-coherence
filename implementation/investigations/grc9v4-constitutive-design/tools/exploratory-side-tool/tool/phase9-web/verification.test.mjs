@@ -181,7 +181,7 @@ test('valid current status reaches each targeted registry and aggregate rejectio
   }
   reject(v=>delete v.a_os_local_product,/bounded reconciliation view/);
   reject(v=>delete v.profile_aggregate_reconciliation,/aggregate reconciliation/);
-  reject(v=>{v.profile_aggregate_reconciliation.aggregate_closed=true;},/aggregate reconciliation/);
+  reject(v=>{v.profile_aggregate_reconciliation.aggregate_closed=false;},/aggregate reconciliation/);
 });
 
 test('held projection removes every current profile view without erasing historical G1 acceptance', () => {

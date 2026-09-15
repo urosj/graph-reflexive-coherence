@@ -1770,6 +1770,11 @@ No new numerical execution, all-pairs credit, support or runtime authority is
 created. Aggregate review/acceptance remains pending; P9-7.8/G3 is not performed
 by this reconciliation.
 
+The user subsequently accepted aggregate P9-7.7 on 2026-09-15 against checkpoint
+`1863ab8`. Preserve its original review and project the separate acceptance
+through the existing status surfaces. P9-7.7 is closed; P9-7.8/G3 is next and
+remains pending. This does not close tranche 7 or admit specialization work.
+
 ### Tranche 8. GRC9V4 mechanical specialization
 
 Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.

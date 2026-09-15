@@ -2384,3 +2384,8 @@ aggregate projections. Keep fixtures detached from the trusted roster; test
 that mutations reach their intended checks from a passing baseline. Preserve
 failed-boundary cleanup and all existing rejection assertions without relaxing
 the production validator. This closes the stale-fixture gap, not a G2/G3 grant.
+
+The user accepted aggregate P9-7.7 on 2026-09-15 against checkpoint `1863ab8`.
+Keep original review bytes and checker identities recoverable, project the
+separate accepted decision through API/notebook/browser, and point next work to
+P9-7.8. G3, tranche-7 closure and specialization admission remain pending.

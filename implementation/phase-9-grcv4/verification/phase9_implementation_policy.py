@@ -405,6 +405,8 @@ PATHS = {
     HERE + "test_p977_aggregate.py",
     PHASE + "tranche-7/P9-7.7-AggregateReconciliation.json",
     PHASE + "tranche-7/P9-7.7-AggregateReconciliation.md",
+    PHASE + "tranche-7/P9-7.7-AggregateAcceptance.json",
+    PHASE + "tranche-7/P9-7.7-AggregateAcceptance.md",
     HERE + "verify_p977_a_ci_acceptance.py",
     HERE + "test_p977_a_ci_acceptance.py",
     HERE + "verify_p977_a_ci_crossings.py",

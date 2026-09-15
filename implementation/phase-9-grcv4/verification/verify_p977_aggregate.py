@@ -14,6 +14,9 @@ import profile_g2_registry as g
 import verify_p977_profile_review as original
 
 BASE = 'ffbcabf'
+REVIEW_CHECKPOINT = '1863ab8b8a24edbb811024e4afeecfca161a9928'
+ACCEPTANCE = p.PHASE + 'tranche-7/P9-7.7-AggregateAcceptance.json'
+ACCEPTANCE_DIGEST = 'd3a220a82a8c6c15a77f064d6ae45b9bf4978f5bd247e32d871c2220acae91e1'
 RECORD = p.PHASE + 'tranche-7/P9-7.7-AggregateReconciliation.json'
 SCRIPT = p.HERE + 'verify_p977_aggregate.py'
 TEST = p.HERE + 'test_p977_aggregate.py'
@@ -133,7 +136,10 @@ def build():
         accepted_checkpoint=BASE, initial_review=original.ref(original.RECORD, ''),
         accepted_generic_runtime_support=normalized['accepted_generic_runtime_support'],
         profiles=result, input_bindings=inputs,
-        checker_bindings={n: p.sha((p.ROOT/n).read_bytes()) for n in (SCRIPT, TEST)},
+        # Preserve the accepted review's original checker identities. Current
+        # acceptance/projection code is separately bound by the maintenance
+        # manifest and checked import path; this is not a live-source waiver.
+        checker_bindings={n: p.sha(p.git(p.ROOT, 'show', REVIEW_CHECKPOINT + ':' + n)) for n in (SCRIPT, TEST)},
         summary=dict(profile_count=10, required_cells=count, reconciled_cells=count,
             accepted_alias_cells=33, accepted_child_cells=272, unresolved_cells=0,
             unresolved_child_obligations=[], numerical_tests_rerun=0, new_execution_credit=0,
@@ -148,11 +154,31 @@ def validate(value, expected):
     p.require(value == expected, 'aggregate differs from accepted child evidence or widens scope')
 
 
+def acceptance(value):
+    decision = p.read(p.ROOT / ACCEPTANCE)
+    p.require(decision['record_digest'] == p.digest_record(decision) == ACCEPTANCE_DIGEST
+              and decision['reviewed_commit'] == REVIEW_CHECKPOINT, 'aggregate acceptance identity drift')
+    p.git(p.ROOT, 'merge-base', '--is-ancestor', REVIEW_CHECKPOINT, 'HEAD')
+    for ref in (decision['review'], decision['review_text']):
+        current = p.safe_path(p.ROOT, ref['path']).read_bytes()
+        p.require(current == p.git(p.ROOT, 'show', REVIEW_CHECKPOINT + ':' + ref['path'])
+                  and p.sha(current) == ref['sha256'], 'accepted aggregate subject changed')
+    p.require(value['record_digest'] == decision['review']['record_digest']
+              and value['accepted_generic_runtime_support'] == decision['accepted_generic_runtime_support'],
+              'aggregate acceptance differs from reviewed scope')
+    return decision
+
+
 def view(value):
-    return {k: value[k] for k in ('status', 'user_accepted', 'aggregate_closed', 'G3_accepted',
+    result = {k: value[k] for k in ('status', 'user_accepted', 'aggregate_closed', 'G3_accepted',
         'all_ordered_pairs_verified', 'new_G2_support', 'new_runtime_iterations_authorized',
         'admitted_specialization_support_sets', 'accepted_generic_runtime_support')} | dict(
         record_path=RECORD, record_digest=value['record_digest'], **value['summary'])
+    decision = acceptance(value)
+    result.update(status='accepted', user_accepted=True, aggregate_closed=True,
+                  pending_aggregate_review=False, acceptance_path=ACCEPTANCE,
+                  acceptance_digest=decision['record_digest'])
+    return result
 
 
 def browser_source(value):

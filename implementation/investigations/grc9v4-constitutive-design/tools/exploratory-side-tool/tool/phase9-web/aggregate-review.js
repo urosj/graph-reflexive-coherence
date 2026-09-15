@@ -1,8 +1,8 @@
 // Generated from the checked P9-7.7 aggregate record. No acceptance authority.
 export const AGGREGATE_REVIEW = {
-  "status": "reconciled_pending_independent_review",
-  "user_accepted": false,
-  "aggregate_closed": false,
+  "status": "accepted",
+  "user_accepted": true,
+  "aggregate_closed": true,
   "G3_accepted": false,
   "all_ordered_pairs_verified": false,
   "new_G2_support": [],
@@ -31,5 +31,7 @@ export const AGGREGATE_REVIEW = {
   "unresolved_child_obligations": [],
   "numerical_tests_rerun": 0,
   "new_execution_credit": 0,
-  "pending_aggregate_review": true
+  "pending_aggregate_review": false,
+  "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-AggregateAcceptance.json",
+  "acceptance_digest": "d3a220a82a8c6c15a77f064d6ae45b9bf4978f5bd247e32d871c2220acae91e1"
 };

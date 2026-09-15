@@ -3,18 +3,21 @@ import assert from 'node:assert/strict';
 import {AGGREGATE_REVIEW} from './aggregate-review.js';
 import {checkedAggregate} from './verification.js';
 
-test('aggregate successor projects reconciled cells, not acceptance or G3', () => {
+test('aggregate successor projects accepted reconciliation, not G3', () => {
   checkedAggregate({profile_aggregate_reconciliation: structuredClone(AGGREGATE_REVIEW)}, true);
   assert.equal(AGGREGATE_REVIEW.reconciled_cells, 305);
   assert.equal(AGGREGATE_REVIEW.accepted_generic_runtime_support.length, 10);
-  assert.equal(AGGREGATE_REVIEW.aggregate_closed, false);
+  assert.equal(AGGREGATE_REVIEW.aggregate_closed, true);
+  assert.equal(AGGREGATE_REVIEW.user_accepted, true);
+  assert.equal(AGGREGATE_REVIEW.G3_accepted, false);
   checkedAggregate({}, false);
 });
 
 test('aggregate rejects omitted, widened, stale and failed-boundary projections', () => {
   assert.throws(() => checkedAggregate({}, true));
   assert.throws(() => checkedAggregate({profile_aggregate_reconciliation: AGGREGATE_REVIEW}, false));
-  for (const [key, value] of Object.entries({aggregate_closed:true, user_accepted:true,
+  for (const [key, value] of Object.entries({aggregate_closed:false, user_accepted:false,
+    pending_aggregate_review:true, acceptance_digest:'0'.repeat(64),
     G3_accepted:true, all_ordered_pairs_verified:true, reconciled_cells:304,
     unresolved_cells:1, numerical_tests_rerun:305, new_execution_credit:305,
     new_G2_support:['A_CI'], new_runtime_iterations_authorized:['P9-8.1a'],

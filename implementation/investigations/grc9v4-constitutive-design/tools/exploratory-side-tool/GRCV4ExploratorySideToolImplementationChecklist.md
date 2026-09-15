@@ -1648,8 +1648,9 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       existing API/notebook/browser status; HOLD must not imply a broken runtime.
 - [x] Reject missing/duplicate product rows, family-label/borrowed identities,
       fabricated acceptance and widened G2/G3 support.
-- [ ] Independently review and accept the successor aggregate reconciliation;
-      the initial HOLD remains historical and all ten child G2s are accepted.
+- [x] Record user acceptance of the successor aggregate reconciliation on
+      2026-09-15; the initial HOLD stays historical and all ten child G2s and
+      aggregate P9-7.7 are accepted. P9-7.8/G3 remains pending.
 
 ### P9-7.7 A_OS local-product continuation
 
@@ -1947,5 +1948,6 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       within P9-7.7; preserve the original 35 tests and add three fixture-isolation,
       targeted registry/aggregate rejection and held-state regressions. Shared
       browser suite: 38/38 passed; aggregate browser suite: 2/2 passed.
-- [ ] Independently review and accept the aggregate. No G3 or specialization
-      admission, new support, runtime permission or execution credit is inferred.
+- [x] Record the user's aggregate acceptance against checkpoint `1863ab8` and
+      project P9-7.7 as closed. No G3 or specialization admission, new support,
+      runtime permission or execution credit is inferred.

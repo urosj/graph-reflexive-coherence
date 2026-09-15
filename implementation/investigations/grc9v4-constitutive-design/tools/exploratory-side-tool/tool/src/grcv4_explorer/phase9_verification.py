@@ -26,7 +26,9 @@ def _profile_next_gate(views):
     ids={r['complete_profile_id'] for r in accepted}
     labels=', '.join(r['profile_family_id'] for r in accepted)
     aggregate=views.get('profile_aggregate_reconciliation')
-    stage=('P9-7.7: 305/305 catalog cells reconciled; aggregate review and acceptance remain pending.'
+    closed=bool(aggregate and aggregate['aggregate_closed'])
+    stage=('P9-7.7 accepted and closed: 305/305 catalog cells reconciled.' if closed else
+           'P9-7.7: 305/305 catalog cells reconciled; aggregate review and acceptance remain pending.'
            if aggregate else 'P9-7.7 remains open.')
     parts=[f"{stage} Exact accepted G2 declarations ({len(accepted)}): {labels}."]
     for key,value in views.items():
@@ -37,7 +39,9 @@ def _profile_next_gate(views):
         extent=(f"{len(value['remaining_catalog_cases'])} crossing cells remaining" if crossing is None
                 else f"{crossing['reconciled_crossing_cells']} crossing cells reconciled; see their separate acceptance state")
         parts.append(f"{family.upper()}: {value['verified_local_cells']} local cells; {extent}. Local evidence is not G2 acceptance.")
-    parts.append('Other profile decisions, all-pairs, aggregate P9-7.7 and P9-G3 remain separate. Initializer/event targets and arbitrary parameterizations are not added support.')
+    parts.append(('All-pairs and P9-G3 remain separate.' if closed else
+                  'Other profile decisions, all-pairs, aggregate P9-7.7 and P9-G3 remain separate.') +
+                 ' Initializer/event targets and arbitrary parameterizations are not added support.')
     if aggregate:
         parts.append('P9-7.8 specialization-admission review follows; no G3 support set is admitted.')
     return ' '.join(parts)

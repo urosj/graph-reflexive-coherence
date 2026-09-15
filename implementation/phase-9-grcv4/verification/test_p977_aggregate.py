@@ -135,10 +135,36 @@ console.log('Python/browser aggregate projection agrees');
         views['profile_aggregate_reconciliation'] = actual
         message = namespace['_profile_next_gate'](views)
         self.assertIn('305/305', message)
-        self.assertIn('aggregate review and acceptance remain pending', message)
+        self.assertIn('P9-7.7 accepted and closed', message)
         self.assertIn('P9-7.8', message)
         self.assertIn("profile_views['profile_aggregate_reconciliation'] = _checker(root, 'verify_p977_aggregate')", source)
         self.assertLess(source.index("profile_views['profile_aggregate_reconciliation'] ="), source.index('profile_view_keys = set(profile_views)'))
+
+    def test_accepted_projection_preserves_review_and_scope(self):
+        value = a.view(self.expected)
+        self.assertTrue(value['user_accepted'])
+        self.assertTrue(value['aggregate_closed'])
+        self.assertFalse(value['pending_aggregate_review'])
+        self.assertEqual(value['acceptance_digest'], a.ACCEPTANCE_DIGEST)
+        for key in ('G3_accepted', 'all_ordered_pairs_verified'):
+            self.assertFalse(value[key])
+        for key in ('new_G2_support', 'new_runtime_iterations_authorized', 'admitted_specialization_support_sets'):
+            self.assertEqual(value[key], [])
+        for name in (a.RECORD, p.PHASE+'tranche-7/P9-7.7-AggregateReconciliation.md'):
+            self.assertEqual((p.ROOT/name).read_bytes(), p.git(p.ROOT, 'show', a.REVIEW_CHECKPOINT+':'+name))
+        for name, digest in self.expected['checker_bindings'].items():
+            self.assertEqual(digest, p.sha(p.git(p.ROOT, 'show', a.REVIEW_CHECKPOINT+':'+name)))
+
+    def test_rehashed_or_missing_acceptance_is_not_authority(self):
+        original = p.read(p.ROOT/a.ACCEPTANCE)
+        for edit in (lambda v:v.update(aggregate_closed=False), lambda v:v.update(G3_accepted=True),
+                     lambda v:v['accepted_generic_runtime_support'].pop(),
+                     lambda v:v['review'].update(record_digest='0'*64)):
+            bad=deepcopy(original);edit(bad);bad['record_digest']=p.digest_record(bad)
+            with patch.object(p, 'read', return_value=bad), self.assertRaises(ValueError):
+                a.acceptance(self.expected)
+        with patch.object(p, 'read', side_effect=FileNotFoundError), self.assertRaises(FileNotFoundError):
+            a.view(self.expected)
 
 
 if __name__ == '__main__':

@@ -1302,7 +1302,7 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Independently review and accept P9-7.6. User accepted on 2026-09-12
     following the passing audit and reported independent native rerun.
     P9-7.7/G2 and P9-7.8/G3 remain separate; original execution flags are unchanged.
-- [ ] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
+- [x] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
   separately for each generic profile; link the original P9-4.8 C_OS review and
   its P9-4.8B successor without duplicate execution credit.
   - [x] Add the [305-cell exact-profile review](./phase-9-grcv4/tranche-7/P9-7.7-Review.md),
@@ -1325,8 +1325,10 @@ may reach G2 without waiting for all Tranche 6 realizations.
     assumptions. Preserve all original rejection tests; add detached-fixture,
     current registry/aggregate and held-state regressions (38/38 shared tests
     and 2/2 aggregate browser tests pass, no production validator relaxation).
-  - [ ] Independently review and accept the aggregate reconciliation. All child
-    G2 decisions are accepted; aggregate closure and P9-7.8/G3 remain separate.
+  - [x] Review and accept the aggregate reconciliation. The user accepted
+    P9-7.7 on 2026-09-15 against checkpoint `1863ab8`; all ten child G2 decisions
+    and the aggregate are closed. P9-7.8/G3 remains separate and pending.
+    [Aggregate acceptance](./phase-9-grcv4/tranche-7/P9-7.7-AggregateAcceptance.md).
   - [x] P9-7.7-A_OS-local: add the [exact local product](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-LocalReview.md)
     with 21 catalog rows from three focused methods. Retain scalar/log oracles,
     actual stage values, source/control identities, result fields and complete
