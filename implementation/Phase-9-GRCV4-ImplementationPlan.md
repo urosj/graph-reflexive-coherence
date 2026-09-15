@@ -1707,6 +1707,14 @@ The user accepted this bounded reconciliation on 2026-09-15. Preserve the
 original execution records and project acceptance through the shared materializer.
 Integrated G2 and aggregate P9-7.7/G3 remain separate.
 
+The subsequent [A_RG2b G2 review](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.md)
+binds the accepted `5ea4213` checkpoint, reuses all 28 cells, and adds one
+zero-duration public-facade supplement. Preserve the exact frozen completion,
+finite section error, Lipschitz-only/C1-debt ceiling, state K versus entry
+K-minus, and separate scalar/initializer/event endpoints. Register only a
+proposal through the common adapter/materializer; eight accepted declarations,
+all-pairs, C_RG2b, aggregate P9-7.7 and G3 stay unchanged until their own decisions.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

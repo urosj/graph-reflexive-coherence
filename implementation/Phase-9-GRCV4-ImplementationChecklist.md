@@ -75,7 +75,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[C_CI_PC]` | Accepted by user, 2026-09-14 | [Explicit acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Acceptance.json) binds the exact 33-cell review at checkpoint `2b7e974`. Separate targets, all-pairs and G3 are not promoted. |
 | `P9-G2[A_CI_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json) pins checkpoint `07859cc`. Separate targets, all-pairs and G3 are not promoted. |
 | `P9-G2[C_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
-| `P9-G2[A_RG2b]` | HOLD, bounded reconciliation accepted | User accepted 21 local and seven crossing cells on 2026-09-15; separate integrated G2 review and decision remain pending. |
+| `P9-G2[A_RG2b]` | PASS proposal, pending G2 acceptance | Accepted 21+7 bounded cells, one facade supplement and current authority/debt review; public support unchanged pending separate decision. |
 
 `P9-G3[C_OS]` denotes singleton set `{C_OS}`. It may be reviewed through
 P9-7.8 after P9-G2[C_OS], independently of other profiles. Adding profiles
@@ -1503,8 +1503,13 @@ may reach G2 without waiting for all Tranche 6 realizations.
     [Crossing review](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-CrossingReview.md).
   - [x] User accepted bounded A_RG2b reconciliation on 2026-09-15. Preserve
     execution records and project acceptance through the shared materializer.
-  - [ ] Conduct the separate A_RG2b integrated G2 review. Eight accepted
-    declarations, all-pairs, aggregate P9-7.7 and G3 remain unchanged.
+  - [x] Prepare and verify the separate A_RG2b integrated G2 proposal: 28 cells,
+    one native facade method, 15 focused review/surface methods and 39 rehashed
+    mutation controls. Preserve frozen completion, K/K-minus and Lipschitz-only
+    boundaries, plus distinct scalar/initializer/event targets.
+    [G2 review](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.md).
+  - [ ] Accept exact A_RG2b G2. Eight accepted declarations, all-pairs,
+    aggregate P9-7.7 and G3 remain unchanged until their separate decisions.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

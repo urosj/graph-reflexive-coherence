@@ -138,6 +138,12 @@ export const G2_REGISTRY = {
       "kind": "crossing",
       "module": "verify_p977_a_rg2b_acceptance",
       "view_key": "a_rg2b_crossings"
+    },
+    {
+      "dependency": "a_rg2b_crossings",
+      "kind": "g2",
+      "module": "verify_p977_a_rg2b_g2",
+      "view_key": "a_rg2b_g2_review"
     }
   ],
   "reconciliation_views": {
@@ -502,7 +508,7 @@ export const G2_REGISTRY = {
       "verified_local_cells": 26
     }
   },
-  "record_digest": "70921b43a8196041308d9ffbb5d492153a38e3a5d79e07324bdb48f3156a4e55",
+  "record_digest": "6b01a462ceebdc72fc8d5efc02c5a38785df0dafbbef92f31dbffde9ea99795f",
   "records": [
     {
       "acceptance": {
@@ -675,6 +681,25 @@ export const G2_REGISTRY = {
       },
       "state": "accepted",
       "view_key": "c_ci_pc_g2_review"
+    },
+    {
+      "acceptance": null,
+      "adapter": "exact_profile_v1",
+      "bounded_view_key": "a_rg2b_crossings",
+      "complete_profile_id": "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+      "gate": "P9-G2[A_RG2b]",
+      "profile_family_id": "A_RG2b",
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+        "record_digest": "71c459901d2590022d44775b8101ac08a2b52e15334032fd8bd4b1735cb84b1f"
+      },
+      "review_metrics": {
+        "catalog_cells": 28,
+        "numerical_tests_rerun": 0,
+        "supplemental_interface_methods": 1
+      },
+      "state": "proposed",
+      "view_key": "a_rg2b_g2_review"
     }
   ],
   "schema": "phase9_exact_profile_g2_registry_v1"

@@ -1890,5 +1890,9 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       14 focused methods, 52 evidence mutations and 11 browser controls passed.
 - [x] Record user acceptance of bounded reconciliation on 2026-09-15 through
       the existing acceptance adapter pattern; original execution bytes remain.
-- [ ] Conduct the separate integrated G2 review; keep eight accepted
-      declarations, aggregate P9-7.7 and G3 unchanged here.
+- [x] Register and verify the integrated G2 proposal through `exact_profile_v1`
+      and `a_rg2b_g2_review`: one native facade method, 15 focused methods and
+      39 interface/proposal mutations. Actual checker and shared browser
+      projections pass; no new per-profile dispatch or renderer.
+- [ ] Obtain the separate exact G2 decision; keep eight accepted declarations,
+      aggregate P9-7.7 and G3 unchanged in the proposal.

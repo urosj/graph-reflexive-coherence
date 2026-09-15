@@ -2319,3 +2319,11 @@ rehashed evidence, projection and cleanup. Check the bound local predecessor
 without rerunning its native campaign or unchanged predecessor chain. Bounded
 acceptance is now explicitly recorded from the user's 2026-09-15 decision;
 integrated G2, all-pairs, aggregate P9-7.7 and G3 are not inferred.
+
+The A_RG2b integrated G2 proposal uses one `exact_profile_v1` registry row and
+`a_rg2b_g2_review` materializer dependent on accepted `a_rg2b_crossings`. Reuse
+the 28-cell evidence, add one zero-duration facade supplement, and preserve
+current RG2b/debt authority classifications and frozen-completion limits. Test
+the real checker, rehashed proposal/interface mutations and generic browser
+projection. No family-specific API/notebook/browser branches or public-support
+updates are needed for the proposal.
