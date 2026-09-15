@@ -1513,6 +1513,22 @@ may reach G2 without waiting for all Tranche 6 realizations.
     shared adapter. C_RG2b, separate controls/targets, all-pairs, aggregate
     P9-7.7 and G3 remain separate.
     [Acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Acceptance.json).
+  - [x] P9-7.7-C_RG2b-local: implement 26 exact local cells, complete C
+    reconstruction at current/reset/restart RG sections, independent inverse,
+    baseline/continuity equations, fixed-stratum controls and whole-publication
+    rollback. Five native methods, 51 semantic mutations, 13 focused shared
+    checks and the phase boundary pass. Register through the shared materializer.
+    [Local review](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-LocalReview.md).
+  - [x] P9-7.7-C_RG2b-crossings: implement all seven crossing obligations with
+    nine native cases and two separately scoped retained PC↔CI+PC witnesses.
+    Verify complete two-role C reconstruction, independent C→A initialization,
+    explicit history losses, mapped event/reset/replay, and K/K-minus admission.
+    Three native methods, 56 rehashed mutations, 14 focused shared methods and
+    the phase boundary passed; all 33 cells are reconciled at bounded scope.
+    [Crossing review](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-CrossingReview.md).
+  - [x] User accepted bounded C_RG2b local/crossing reconciliation on 2026-09-15
+    and requested its commit before G2. Preserve execution records and nine
+    accepted G2 declarations; the integrated G2 decision remains separate.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

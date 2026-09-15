@@ -1898,3 +1898,29 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       `504859f`, publish nine exact declarations and preserve reviewed records
       with finite discovery-source projections. C_RG2b, C1, all-pairs,
       aggregate P9-7.7 and G3 stay separate.
+
+### P9-7.7 C_RG2b local reconciliation
+
+- [x] Add the exact 26-cell local product through the shared registry and
+      materializer, preserving complete C chains, frozen completion and
+      Lipschitz-only scope; derivative controls concern the fixed C stratum.
+- [x] Cover native common paths, independent current/reset/restart equations,
+      zero-history ownership, lifecycle replay/reset and complete rollback.
+- [x] Verify five native methods, 51 semantic mutations, 13 focused checker/
+      registry/materializer/browser methods and the phase boundary; unchanged
+      earlier numerical campaigns are not rerun.
+- [x] User accepted bounded reconciliation on 2026-09-15; G2 remains separate.
+      Nine existing public G2 declarations are unchanged.
+
+### P9-7.7 C_RG2b crossing reconciliation
+
+- [x] Add the seven-cell crossing product through the existing materializer:
+      nine native cases, two separate PC↔CI+PC aliases, exact graph endpoints,
+      complete C role reconstruction, independent C→A initialization, history
+      losses, mapped-event/reset/replay and target K versus entry K-minus.
+- [x] Verify three native methods, 56 rehashed evidence mutations, 14 focused
+      checker/registry/materializer methods, 11 browser rejection controls and
+      the phase boundary. Inner mutation preimages retain valid codec hashes.
+- [x] Record the user's bounded acceptance on 2026-09-15 through the shared
+      adapter pattern; preserve nine accepted G2 declarations, original
+      execution records and separate aggregate/G3 gates.

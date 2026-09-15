@@ -1724,6 +1724,29 @@ controls/targets, C1 claims, all-pairs, aggregate P9-7.7 and G3 remain separate.
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 
+The final generic family starts with the
+[C_RG2b local product](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-LocalReview.md):
+26 exact catalog cells, complete C reconstruction at finite current/reset/restart
+sections, nonzero-deformation and partial-selector controls, independent
+inverse/continuity equations, fixed-beat rejection and full lifecycle rollback.
+Keep fixed-stratum C derivatives distinct from the Lipschitz-only RG section.
+Expose the retained evidence through the existing shared materializer; seven
+crossing cells, its G2 decision, aggregate P9-7.7 and G3 remain separate.
+
+The [C_RG2b crossing product](./phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-CrossingReview.md)
+addresses those seven cells with nine native cases and two explicitly separate
+retained PC↔CI+PC witnesses. Check exact graph endpoints, complete two-role C
+reference/baseline reconstruction, frozen-beat sections, independent C→A
+reference-pass initialization, nonzero carrier/W loss, mapped-event/reset/replay
+and state K versus ordinary-entry K-minus. Reuse the shared registry and preserve
+the local capture. Bounded acceptance and integrated G2 remain distinct decisions;
+no all-pairs, aggregate or G3 closure follows.
+
+The user accepted bounded C_RG2b reconciliation on 2026-09-15 and requested its
+commit before the integrated G2 review. Preserve both original execution records
+and project the decision through the existing acceptance-adapter pattern. Nine
+public G2 declarations, runtime permissions, all-pairs and G3 remain unchanged.
+
 ### Tranche 8. GRC9V4 mechanical specialization
 
 Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.

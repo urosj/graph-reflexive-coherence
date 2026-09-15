@@ -196,7 +196,7 @@
       }
     }
   ],
-  "record_digest": "1ec87c3cdfbc583bc1ece12afc20ba6e0365a6e5580873515ffbb19cbace496d",
+  "record_digest": "fbe958a22aed0143c7e57d95ef5d8c4120272d1442ab1ca4aab07f3936524d17",
   "reconciliation_views": {
     "a_os_local_product": {
       "status": "local_product_verified_pending_review",
@@ -557,6 +557,51 @@
       "numerical_tests_rerun": 0,
       "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-CrossingReview.md",
       "acceptance_sha256": "a9bc7038055e03f836b4b5d9c538e1eb23d2fbc4f25bde21471d1379902de41a"
+    },
+    "c_rg2b_local_product": {
+      "status": "local_product_verified_pending_review",
+      "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-LocalProduct.json",
+      "record_digest": "c1ae20f54de30316421125e1a24fce4c1cee36874c487b69350a75748b9c3ffd",
+      "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+      "test_count": 5,
+      "verified_local_cells": 26,
+      "remaining_catalog_cases": [
+        "ALL-MIGRATION-CLASSES",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "HISTORY-DISPOSITION",
+        "RESET-AFTER-EVENT",
+        "RESET-AFTER-MIGRATION",
+        "TARGET-READMISSION-FAILURE",
+        "WHOLE-LIFECYCLE-TUPLE-MAP"
+      ],
+      "user_accepted": false,
+      "aggregate_closed": false,
+      "G2_accepted": false,
+      "new_G2_support": [],
+      "G3_accepted": false,
+      "numerical_tests_rerun": 0
+    },
+    "c_rg2b_crossings": {
+      "status": "accepted_bounded_reconciliation",
+      "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-Crossings.json",
+      "record_digest": "f6b717563826c8af1d333390b22cfaf7c6967ff01e5636a7b9b90dc7aff6feaf",
+      "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+      "test_count": 3,
+      "new_execution_cases": 9,
+      "retained_alias_count": 2,
+      "reconciled_crossing_cells": 7,
+      "local_cells": 26,
+      "ordered_migration_classes": 7,
+      "matrix_scope": "exact_graph_endpoints_and_initializer_selected_A_OS; separate_PC_pairs; not_all_pairs",
+      "user_accepted": true,
+      "aggregate_closed": false,
+      "G2_accepted": false,
+      "G3_accepted": false,
+      "new_G2_support": [],
+      "all_ordered_pairs_verified": false,
+      "numerical_tests_rerun": 0,
+      "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-CrossingReview.md",
+      "acceptance_sha256": "3a8bda111dd99b55c7c99dadd11f9c9ce789a4ab1303e1945fc4216bc9e6b5a5"
     }
   },
   "materializers": [
@@ -703,6 +748,18 @@
       "module": "verify_p977_a_rg2b_g2",
       "kind": "g2",
       "dependency": "a_rg2b_crossings"
+    },
+    {
+      "view_key": "c_rg2b_local_product",
+      "module": "verify_p977_c_rg2b_local",
+      "kind": "local",
+      "dependency": "profile_conformance_review"
+    },
+    {
+      "view_key": "c_rg2b_crossings",
+      "module": "verify_p977_c_rg2b_acceptance",
+      "kind": "crossing",
+      "dependency": "c_rg2b_local_product"
     }
   ]
 }

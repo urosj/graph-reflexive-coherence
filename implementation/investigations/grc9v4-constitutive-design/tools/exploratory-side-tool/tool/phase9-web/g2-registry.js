@@ -144,6 +144,18 @@ export const G2_REGISTRY = {
       "kind": "g2",
       "module": "verify_p977_a_rg2b_g2",
       "view_key": "a_rg2b_g2_review"
+    },
+    {
+      "dependency": "profile_conformance_review",
+      "kind": "local",
+      "module": "verify_p977_c_rg2b_local",
+      "view_key": "c_rg2b_local_product"
+    },
+    {
+      "dependency": "c_rg2b_local_product",
+      "kind": "crossing",
+      "module": "verify_p977_c_rg2b_acceptance",
+      "view_key": "c_rg2b_crossings"
     }
   ],
   "reconciliation_views": {
@@ -506,9 +518,54 @@ export const G2_REGISTRY = {
       "test_count": 5,
       "user_accepted": false,
       "verified_local_cells": 26
+    },
+    "c_rg2b_crossings": {
+      "G2_accepted": false,
+      "G3_accepted": false,
+      "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-CrossingReview.md",
+      "acceptance_sha256": "3a8bda111dd99b55c7c99dadd11f9c9ce789a4ab1303e1945fc4216bc9e6b5a5",
+      "aggregate_closed": false,
+      "all_ordered_pairs_verified": false,
+      "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+      "local_cells": 26,
+      "matrix_scope": "exact_graph_endpoints_and_initializer_selected_A_OS; separate_PC_pairs; not_all_pairs",
+      "new_G2_support": [],
+      "new_execution_cases": 9,
+      "numerical_tests_rerun": 0,
+      "ordered_migration_classes": 7,
+      "reconciled_crossing_cells": 7,
+      "record_digest": "f6b717563826c8af1d333390b22cfaf7c6967ff01e5636a7b9b90dc7aff6feaf",
+      "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-Crossings.json",
+      "retained_alias_count": 2,
+      "status": "accepted_bounded_reconciliation",
+      "test_count": 3,
+      "user_accepted": true
+    },
+    "c_rg2b_local_product": {
+      "G2_accepted": false,
+      "G3_accepted": false,
+      "aggregate_closed": false,
+      "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+      "new_G2_support": [],
+      "numerical_tests_rerun": 0,
+      "record_digest": "c1ae20f54de30316421125e1a24fce4c1cee36874c487b69350a75748b9c3ffd",
+      "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-LocalProduct.json",
+      "remaining_catalog_cases": [
+        "ALL-MIGRATION-CLASSES",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "HISTORY-DISPOSITION",
+        "RESET-AFTER-EVENT",
+        "RESET-AFTER-MIGRATION",
+        "TARGET-READMISSION-FAILURE",
+        "WHOLE-LIFECYCLE-TUPLE-MAP"
+      ],
+      "status": "local_product_verified_pending_review",
+      "test_count": 5,
+      "user_accepted": false,
+      "verified_local_cells": 26
     }
   },
-  "record_digest": "1ec87c3cdfbc583bc1ece12afc20ba6e0365a6e5580873515ffbb19cbace496d",
+  "record_digest": "fbe958a22aed0143c7e57d95ef5d8c4120272d1442ab1ca4aab07f3936524d17",
   "records": [
     {
       "acceptance": {

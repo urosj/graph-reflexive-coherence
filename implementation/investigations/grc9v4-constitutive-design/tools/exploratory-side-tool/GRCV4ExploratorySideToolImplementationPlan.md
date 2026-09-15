@@ -2334,3 +2334,23 @@ review/execution bytes unchanged and check the finite discovery-source bridge;
 no new renderer, numerical campaign or broader runtime authorization follows.
 C_RG2b, C1 claims, separate controls/targets, all-pairs, aggregate and G3 remain
 outside this decision.
+
+C_RG2b local reconciliation adds one pinned `c_rg2b_local_product` materializer
+and view: 26 exact cells, complete C chains at all three section roles, independent
+inverse/continuity and fixed-stratum derivative controls, no W/Z writer, and
+whole-publication failure pressure. Reuse shared API/notebook/browser projection;
+seven crossing cells, separate G2, aggregate and G3 remain open. No historical
+numerical campaign needs rerunning for this bounded addition.
+
+C_RG2b crossing reconciliation adds `c_rg2b_crossings` through the same registry
+and dependency-ordered materializer. Nine native cases and two separately scoped
+retained witnesses reconcile seven cells without promoting family-wide support.
+Retain exact graph endpoints, C target reference/section reconstruction,
+initializer-selected A_OS scope, history losses, reset and K/K-minus boundaries.
+The API/notebook/browser projection is shared; no new per-profile dispatch is
+required. Bounded acceptance, G2, aggregate P9-7.7 and G3 remain separate.
+
+The user accepted bounded C_RG2b reconciliation on 2026-09-15. Project the
+decision through the existing acceptance adapter, leaving original execution
+records and nine public G2 declarations unchanged. Integrated G2 follows the
+accepted reconciliation commit as a separate review.
