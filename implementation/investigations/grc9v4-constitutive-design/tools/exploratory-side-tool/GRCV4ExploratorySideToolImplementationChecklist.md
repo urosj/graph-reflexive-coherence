@@ -1894,5 +1894,7 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       and `a_rg2b_g2_review`: one native facade method, 15 focused methods and
       39 interface/proposal mutations. Actual checker and shared browser
       projections pass; no new per-profile dispatch or renderer.
-- [ ] Obtain the separate exact G2 decision; keep eight accepted declarations,
-      aggregate P9-7.7 and G3 unchanged in the proposal.
+- [x] Record the user's exact A_RG2b G2 acceptance on 2026-09-15. Bind
+      `504859f`, publish nine exact declarations and preserve reviewed records
+      with finite discovery-source projections. C_RG2b, C1, all-pairs,
+      aggregate P9-7.7 and G3 stay separate.

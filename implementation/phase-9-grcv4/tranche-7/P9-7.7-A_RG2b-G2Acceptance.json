@@ -1,0 +1,164 @@
+{
+  "schema": "phase9_exact_profile_g2_acceptance_v1",
+  "status": "accepted_by_user",
+  "date": "2026-09-15",
+  "user_instruction": "accept and commit",
+  "gate": "P9-G2[A_RG2b]",
+  "reviewed_commit": "504859f451ed2b006a9ee47eceb7b47eeee50ef2",
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+    "sha256": "208cdd0834ad539cdc7c2e2fbc52739e9b4e32293005e4159a58b5dd970d9ab5",
+    "record_digest": "71c459901d2590022d44775b8101ac08a2b52e15334032fd8bd4b1735cb84b1f"
+  },
+  "review_text": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.md",
+    "sha256": "e76c8164642bc4b03eae6e7a40f03a2a037d17ff5491630ea418355429d517c1"
+  },
+  "accepted_profile": {
+    "identity_payload": {
+      "schema_version": "grcv4-profile-identity-v1",
+      "profile_family_id": "A_RG2b",
+      "candidate": "A",
+      "realization": "RG2b",
+      "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+      "charge_profile_id": "unit_vertex_measure_v1",
+      "geometry_profile_id": "affine_reference_relative_v1",
+      "context_contract_id": "constant_zero_context_v1",
+      "units_id": "grcv4_nondimensional_reference_v1",
+      "gauge_id": "component_zero_mean_potential_v1",
+      "normalization_id": "unnormalized_vertex_stiffness_v1",
+      "domain_id": "fixed_graph_strict_gap_spd_v1",
+      "solver_id": "direct_unique_root_v1",
+      "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+      "candidate_c_transport_id": null,
+      "composition_gain": null,
+      "params_hash": "grcv4-params-sha256:910a0023088aef04af62f105792d0da6732d076e6be2ccdfa533c18e9e9990f7"
+    },
+    "params_resolved": {
+      "schema_version": "grcv4-resolved-params-v1",
+      "common": {
+        "schema_version": "grcv4-common-params-v1",
+        "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+        "boundary_policy_id": "closed_no_flux_v1",
+        "measure_profile_id": "unit_vertex_measure_v1",
+        "context_contract_id": "constant_zero_context_v1",
+        "units_id": "grcv4_nondimensional_reference_v1",
+        "gauge_id": "component_zero_mean_potential_v1",
+        "normalization_id": "unnormalized_vertex_stiffness_v1",
+        "domain_id": "fixed_graph_strict_gap_spd_v1",
+        "default_step_request": null
+      },
+      "candidate": {
+        "schema_version": "grcv4-candidate-a-params-v1",
+        "eta": 0.05,
+        "kappa_c": 0.1,
+        "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+        "W_floor": 1e-12,
+        "alpha": 0.02,
+        "beta": 0.03,
+        "gamma": 0.02,
+        "kappa_Ah": 0.1,
+        "chi_A": 0.1,
+        "zeta_A": 0.1,
+        "tau_A": 1,
+        "descriptor_backend_id": "grcv4-a-descriptor-sha256:e5fdbe87141814e1a44a177c5a5272965dc2fd42cd9f96169ce001ab5e39a4b7",
+        "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+      },
+      "realization": {
+        "schema_version": "grcv4-rg2b-params-v1",
+        "extension_evaluator_id": "rg2b_graph_cubic_completion_v1:0x1.0000000000000p+1:0x1.0000000000000p+1:0x1.0000000000000p-3:0x1.0000000000000p-2:0x1.8000000000000p-2:0x1.0000000000000p-6:0x1.0000000000000p-3:0x1.0000000000000p-20",
+        "approximation_policy_id": "rg2b_matrix_ball_graph_transform_160bit_inverse64_depth16_v1",
+        "error_norm_id": "rg2b_hodge_frobenius_v1",
+        "error_tolerance": 1e-11,
+        "containment_certificate_id": "rg2b_derived_graph_compact_linfty_C_W_certificate_v1",
+        "iteration_limit": 4000,
+        "failure_policy_id": "fail_closed_on_uncertified_section_v1"
+      },
+      "geometry": {
+        "schema_version": "grcv4-geometry-profile-params-v1",
+        "K4_base_digest": "grcv4-k4-sha256:3301b25a6acf9ced2fdae1753f4083b767a804a1b59379cd351ddbd768c798d7",
+        "reference_hodge_digest": "grcv4-hodge-sha256:23960857be86531b57935c80fc07d0cd750fde007568d409d1590dba26f9fabe",
+        "star_cover_id": "vertex_star_exact_overlap_v1",
+        "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+        "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+        "flat_sharp_solver_id": "spd_direct_v1",
+        "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+        "kappa_H": 0.001
+      },
+      "solver": {
+        "schema_version": "grcv4-solver-policy-v1",
+        "solver_kind": "direct",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 1,
+        "conditioning_limit": 100000000.0,
+        "residual_norm_id": "edge_l2_v1",
+        "absolute_tolerance": 1e-12,
+        "relative_tolerance": 1e-12,
+        "failure_policy_id": "fail_closed_no_fallback_v1"
+      },
+      "charge": {
+        "schema_version": "grcv4-charge-policy-v1",
+        "policy_id": "stable_pairwise_binary64_charge_v1",
+        "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+        "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+        "absolute_tolerance": 1e-11,
+        "relative_tolerance": 0,
+        "repair_policy": "never_mutate_resource",
+        "remainder_policy": "compatibility_projection_is_none"
+      },
+      "lifecycle": {
+        "schema_version": "grcv4-lifecycle-policy-v1",
+        "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+        "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+        "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+        "rebase_policy_id": "replace_baseline_append_receipt_v1",
+        "history_policy_id": "candidate_a_explicit_reference_initialization_log_history_v1",
+        "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+        "target_readmission_policy_id": "full_target_fail_closed_v1"
+      }
+    },
+    "complete_profile_id": "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b"
+  },
+  "accepted_additional_support": [
+    "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b"
+  ],
+  "predecessor_support": [
+    "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+    "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+    "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "releases": {
+    "base": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+    "initializer": "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7",
+    "event": "grcv4-spec-release-sha256:a6861c38271f3f4ea41fae35807c399255353c384c44a9455f334556df6cdec8"
+  },
+  "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+    "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+    "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+    "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "source_reuse": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2SourceReuse.json",
+    "sha256": "f76721d97d7a1caeefb59249b300a105245c6599ac63d2ebd2f60265edd6a32d",
+    "record_digest": "2cad3d3bf022b122350ec43aea3fc98003f25d430635065f07cde4310c12ea0f"
+  },
+  "G2_accepted": true,
+  "G3_accepted": false,
+  "aggregate_closed": false,
+  "all_ordered_pairs_verified": false,
+  "new_runtime_iterations_authorized": [],
+  "admitted_specialization_support_sets": [],
+  "scope": "Exact A_RG2b graph nomination and reviewed 28-cell bounded product only. Frozen-completion-relative Lipschitz section and finite error; no classical derivative/spectrum or C1 debt resolution. K state readmission is not K-minus ordinary entry; no arbitrary positive dt or indefinite base-chart invariance. Scalar witnesses, controls and initializer/event targets are not added support. No all-pairs, formation authentication, disabled specialization reductions, G3 or aggregate closure.",
+  "record_digest": "7887a2e24d38c58898527ac4eacb9836a2db165e0d033a5a85e61db08522790d"
+}

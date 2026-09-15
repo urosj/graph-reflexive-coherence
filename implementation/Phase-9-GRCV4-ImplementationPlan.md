@@ -1715,6 +1715,12 @@ K-minus, and separate scalar/initializer/event endpoints. Register only a
 proposal through the common adapter/materializer; eight accepted declarations,
 all-pairs, C_RG2b, aggregate P9-7.7 and G3 stay unchanged until their own decisions.
 
+The user accepted exact A_RG2b G2 on 2026-09-15. Bind the reviewed `504859f`
+checkpoint, preserve original execution/review records and publish nine exact
+declarations through the shared registry. Finite before/after source bindings
+cover only discovery changes and retained-evidence projection. C_RG2b, separate
+controls/targets, C1 claims, all-pairs, aggregate P9-7.7 and G3 remain separate.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

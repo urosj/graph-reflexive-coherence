@@ -75,11 +75,11 @@ class MaterializerTests(unittest.TestCase):
         roster=g.registry(p.ROOT)
         views=dict(roster['reconciliation_views'],profile_g2=[g.view(r) for r in roster['records']])
         accepted_summary=namespace['_profile_next_gate'](views)
-        self.assertIn('Exact accepted G2 declarations (8)',accepted_summary)
+        self.assertIn('Exact accepted G2 declarations (9)',accepted_summary)
         self.assertIn('A_CI_PC, C_CI_PC',accepted_summary)
         self.assertNotIn('C_CI_PC: 26 local cells',accepted_summary)
         # Synthetic pre-acceptance view exercises the pending display paths.
-        views['profile_g2']=[r for r in views['profile_g2'] if r['profile_family_id']!='C_CI_PC']
+        views['profile_g2']=[r for r in views['profile_g2'] if r['profile_family_id'] not in ('C_CI_PC','A_RG2b')]
         views.pop('c_ci_pc_crossings',None)
         summary=namespace['_profile_next_gate'](views)
         self.assertIn('Exact accepted G2 declarations (7)',summary)

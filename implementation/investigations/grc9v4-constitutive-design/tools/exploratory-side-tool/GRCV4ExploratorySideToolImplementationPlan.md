@@ -2327,3 +2327,10 @@ current RG2b/debt authority classifications and frozen-completion limits. Test
 the real checker, rehashed proposal/interface mutations and generic browser
 projection. No family-specific API/notebook/browser branches or public-support
 updates are needed for the proposal.
+
+The user's subsequent A_RG2b G2 acceptance binds checkpoint `504859f` and
+projects nine exact declarations through the same adapter/materializer. Keep
+review/execution bytes unchanged and check the finite discovery-source bridge;
+no new renderer, numerical campaign or broader runtime authorization follows.
+C_RG2b, C1 claims, separate controls/targets, all-pairs, aggregate and G3 remain
+outside this decision.
