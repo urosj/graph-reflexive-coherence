@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {G2_REGISTRY} from './g2-registry.js';
 import {AGGREGATE_REVIEW} from './aggregate-review.js';
+import {SPECIALIZATION_REVIEW} from './specialization-review.js';
 import { canonical, checkedStatus, verifiedStatus, verifiedProbe } from './verification.js';
 
 function fixture(extra = {}) {
@@ -74,6 +75,7 @@ function profileFixture() {
     if(row.state==='accepted') preceding.push(row.complete_profile_id);
   }
   value.profile_aggregate_reconciliation = structuredClone(AGGREGATE_REVIEW);
+  value.specialization_admission_review = structuredClone(SPECIALIZATION_REVIEW);
   return structuredClone(value);
 }
 function accepted(extra={}) {

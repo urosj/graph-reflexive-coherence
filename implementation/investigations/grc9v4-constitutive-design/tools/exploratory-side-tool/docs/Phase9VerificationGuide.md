@@ -357,3 +357,24 @@ was observed to discard generic-font overrides while rasterizing. The tests
 check glyph dimensions before and after capture. Probe tests wait for their
 exact network subject before checking the rendered decision; they do not rely
 on a ten-second DOM wait to absorb full authority-report verification latency.
+
+## P9-7.8 specialization-admission review
+
+Load the normal Phase 9 verification status in the browser or execute the
+notebook's `query-status` cell (set `PHASE9_STATUS_ONLY=True` to skip the
+separate probe). The API field `specialization_admission_review` exposes the
+same source-checked review; the browser validates its generated projection
+and shows the pending decision in the next-gate summary. The record/review
+paths are repository-relative.
+
+The proposed consumed set is ten exact accepted generic declarations. This
+does not advertise ten GRC9V4 models: G3 acceptance and tranche-7 closure are
+pending. The nested `a_expansion_work` assigns oracle production/review to
+P9-8.3A.1 and implementation/comparison to P9-8.3A.2, with explicit dependencies
+and generic-authority-gap routing back to Tranche 7. Both tasks remain pending;
+forty disabled surfaces are
+future work, and specialization runtime is not authorized. The normal failed
+boundary clears this view; no stale review is displayed as current authority.
+Use the dedicated `verify_p978_specialization_review.py` checker under
+`implementation/phase-9-grcv4/verification/` for a read-only recheck without
+rerunning numerical campaigns.

@@ -1951,3 +1951,18 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Record the user's aggregate acceptance against checkpoint `1863ab8` and
       project P9-7.7 as closed. No G3 or specialization admission, new support,
       runtime permission or execution credit is inferred.
+
+### P9-7.8 specialization-admission review
+
+- [x] Rebuild exact accepted G2/7.7 bindings, 73 typed contract projections,
+      V4 spec/paper authority, legacy boundary and future test obligations.
+- [x] Publish `specialization_admission_review` through current status and
+      its shared API/notebook/browser transport; serve the generated asset.
+- [x] Reject altered scope, missing predecessor, source drift, omitted disabled
+      cells, invented runtime credit and premature G3/closure projections.
+- [ ] Record user acceptance and scoped execution-policy successor before
+      specialization work. No G3 or tranche-7 closure inferred from review.
+- [x] Assign and expose P9-8.3A.1 oracle production and P9-8.3A.2 runtime
+      comparison, exact dependencies and same-scope parent closure. Reject
+      missing ownership, bypassed oracle acceptance or generic-gap workaround.
+      Oracle/runtime tasks remain pending, not completed by this registration.

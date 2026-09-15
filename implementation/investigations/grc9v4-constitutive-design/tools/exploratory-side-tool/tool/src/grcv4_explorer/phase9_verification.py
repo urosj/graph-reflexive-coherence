@@ -42,7 +42,9 @@ def _profile_next_gate(views):
     parts.append(('All-pairs and P9-G3 remain separate.' if closed else
                   'Other profile decisions, all-pairs, aggregate P9-7.7 and P9-G3 remain separate.') +
                  ' Initializer/event targets and arbitrary parameterizations are not added support.')
-    if aggregate:
+    if 'specialization_admission_review' in views:
+        parts.append('P9-7.8 review ready for acceptance: ten exact consumed declarations, 73 contracts and 40 pending disabled cells. Tranche-7 closure and G3 admission await acceptance; specialization execution stays gated. P9-8.3A.1 owns independent oracle construction/review; P9-8.3A.2 implements/tests against that accepted oracle. Any genuinely missing generic authority returns to a bounded Tranche 7 correction.')
+    elif aggregate:
         parts.append('P9-7.8 specialization-admission review follows; no G3 support set is admitted.')
     return ' '.join(parts)
 
@@ -118,6 +120,7 @@ def verification_status(repo_root: Path) -> dict:
             from profile_g2_registry import materialize, _checker
             profile_views, accepted_support = materialize(root, profile_conformance_review)
             profile_views['profile_aggregate_reconciliation'] = _checker(root, 'verify_p977_aggregate')(profile_views=profile_views)
+            profile_views['specialization_admission_review'] = _checker(root, 'verify_p978_specialization_review')()
             profile_view_keys = set(profile_views)
             payload.update(
                 **profile_views,

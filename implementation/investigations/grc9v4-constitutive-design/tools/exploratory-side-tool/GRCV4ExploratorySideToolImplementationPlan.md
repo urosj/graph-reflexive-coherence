@@ -2389,3 +2389,24 @@ The user accepted aggregate P9-7.7 on 2026-09-15 against checkpoint `1863ab8`.
 Keep original review bytes and checker identities recoverable, project the
 separate accepted decision through API/notebook/browser, and point next work to
 P9-7.8. G3, tranche-7 closure and specialization admission remain pending.
+
+### P9-7.8 specialization-admission review
+
+Expose `specialization_admission_review` through the existing checked Phase 9
+status/materializer boundary and API/notebook/browser. Bind the ten exact
+accepted generic declarations and accepted aggregate predecessor to the V4
+specification/paper, 73 typed provenance queries, unchanged legacy bytes and
+forward mechanics/disabled test matrix. Generate `specialization-review.js`
+from the same checked record and serve it explicitly. Missing, stale, widened
+or failed-boundary projections must reject; include the key in common cleanup.
+
+This is review-only: G3 and tranche-7 acceptance remain pending, all forty
+disabled cells are future work. The checked `a_expansion_work` projection
+assigns oracle selection/construction/review to P9-8.3A.1 and implementation/
+comparison to P9-8.3A.2, with explicit dependencies and same-scope parent
+closure. Genuine generic authority gaps route back to a bounded Tranche 7
+correction; independent C work stays unblocked. Oracle construction has no
+production-runtime prerequisite. A expansion remains unimplemented,
+and no numerical campaign or Tranche 8/9 execution is authorized. After user
+acceptance, bind the exact decision and scoped execution-policy successor;
+do not remove specialization guards merely because a review exists.

@@ -167,7 +167,7 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | Coverage hold in the accepted vectors | Planned evidence owner |
 | --- | --- |
 | `candidate_a_numeric_vectors` | Tranche 5: independent numerical Candidate A oracles and exact initializer. |
-| `candidate_a_GRC9V4_expansion_vectors` | `P9-8.3A`: held until a concrete A target vector is supplied; then A reference/history and reconstruction evidence. |
+| `candidate_a_GRC9V4_expansion_vectors` | `P9-8.3A.1` produces and reviews the concrete A specialization oracle; `P9-8.3A.2` implements and tests against it. Parent closes only after both are accepted. |
 | `per_realization_step_vectors` | Tranches 4–6: concrete complete-step vectors for each supported profile. |
 | `RG2b_vectors` | Tranche 6: admitted deterministic evaluator and Lipschitz section certification. |
 | `child_stabilization_vectors` | P9-9.1a: child/completed-spark/hierarchy evidence when the optional capability is advertised or explicitly required for project handoff; unselected scope stays pending/deferred. |
@@ -185,8 +185,8 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | --- | --- | --- |
 | P9-G0: phase opening | Exact accepted release, completed no-ff merge, branch, plan, checklist, and predecessor bindings. | Recorded. |
 | P9-G1: implementation review | Support order, module ownership, source-to-test mapping, inherited debt routing, and an accepted successor verification policy. | Accepted; [P9-1.9 successor](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json). |
-| `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | P9-4.8B accepted for one exact C_OS profile; all other scopes pending. See the acceptance record below. |
-| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Pending; no consumed set admitted. |
+| `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | Ten exact declarations accepted; aggregate P9-7.7 accepted at `25b80f4`. No broader domains or target identities inferred. |
+| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | P9-7.8 review recommends the ten exact declarations; acceptance pending, no consumed set admitted. |
 | P9-G4: release and handoff | Exact advertised support, all applicable evidence, legacy regression results, residual-debt routing, and review acceptance. | Pending. |
 
 The checklist records all ten `P9-G2[p]` rows. The aggregate generic support
@@ -1775,6 +1775,24 @@ The user subsequently accepted aggregate P9-7.7 on 2026-09-15 against checkpoint
 through the existing status surfaces. P9-7.7 is closed; P9-7.8/G3 is next and
 remains pending. This does not close tranche 7 or admit specialization work.
 
+#### P9-7.8 specialization-admission review
+
+[P9-7.8](./phase-9-grcv4/tranche-7/P9-7.8-SpecializationReview.md)
+reviews all ten exact accepted generic declarations, not only the optional
+historical C_OS singleton. The checked record binds their nominations and
+acceptances, accepted P9-7.7, the V4 specification/paper, 73 typed provenance
+queries, legacy bytes, module ownership and the forward Tranche 8/9 test matrix.
+Seventeen expansion and three metamorphic vectors remain preimplementation
+oracles; all forty disabled cells remain unexecuted. P9-8.3A.1 explicitly owns
+oracle production, and P9-8.3A.2 depends on its acceptance. Any genuinely absent
+generic authority returns to a bounded Tranche 7 correction. No optional completion capability or
+stronger handoff target is selected. RG2b debt and exact generic scopes remain.
+
+Review is ready for acceptance; G3 and tranche-7 closure remain pending that
+decision. Acceptance must bind a scoped execution-policy successor before
+specialization source edits; the current Tranche 8/9 guard remains active.
+The next implementation leaf is P9-8.1a after admission, not A expansion.
+
 ### Tranche 8. GRC9V4 mechanical specialization
 
 Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.
@@ -1788,11 +1806,35 @@ Use the normative port map, without deriving a repair from legacy code.
 The accepted concrete expansion vectors cover C profiles. `P9-8.3C-OS`
 executes C_OS identity/resource/reference-map and absent-carrier semantics;
 `P9-8.3C-PC` separately executes the nonnull carrier reset/loss vector only
-after C_PC's generic and specialization entry gates. `P9-8.3A` remains held
-until a concrete Candidate A target/history vector exists and its A profile
-entry gates pass. An A template identity is not expansion evidence. Create
-that new oracle as V4 runtime evidence outside the frozen release. The A
-and C_PC dependencies do not hold the C_OS path.
+after C_PC's generic and specialization entry gates. `P9-8.3A` is an aggregate
+of two independently reviewed children; both must be accepted for the same
+declared exact A scope before its closure:
+
+- `P9-8.3A.1`: Select and validate the GRC9V4 A-history/initialization binding
+  and construct the independent numerical oracle. Entry requires the exact A
+  G2 and consumed-set G3 acceptance plus the accepted port/chart, fixed-row
+  initializer and D11-G9 expansion contracts, not their runtime implementation.
+  Bind concrete source/target identities, distinct current/reset inputs,
+  old-edge history disposition, new-edge initialization, fixed-row/incoming
+  reference-current recipes, independent expected W/resource/receipt/readmission
+  results and negative rollback cases. Persistent scope additionally needs its
+  separate whole-carrier map or reset/loss evidence. Retain the oracle outside
+  the frozen release as new V4 specialization evidence, clearly labeled
+  construction evidence rather than runtime conformance. Do not obtain its
+  expected values by calling the production implementation under test.
+- `P9-8.3A.2`: After acceptance of `.1`, the same exact A G2/G3 scope and the
+  applicable `P9-8.1a`, `P9-8.1b`, `P9-8.1c` and `P9-8.2` implementations,
+  implement and test A expansion against the pinned oracle. Verify current
+  and reset targets independently, W/Z channels, full reconstruction/readmission,
+  receipts, rollback and replay. Runtime output does not replace the oracle.
+
+If `.1` exposes genuinely absent graph-generic history/initializer authority,
+hold the affected child and route the exact missing contract back to a bounded
+Tranche 7 correction through the established authority-to-paper/spec/runtime
+process. Do not invent a GRC9-specific workaround or reopen unrelated accepted
+claims. A missing specialization fixture alone does not reopen generic G2.
+An A template identity is not expansion evidence. The A and C_PC dependencies
+do not hold the C_OS path.
 
 Execute runtime counterparts of every applicable accepted D30, D31, D45,
 and D52 vector, including the exact chirality/phase cases. D37 and D44 are

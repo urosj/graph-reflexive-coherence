@@ -55,18 +55,18 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | --- | --- | --- |
 | P9-G0 | Recorded | Branch and planning documents; accepted release audit and no-ff merge identity. |
 | P9-G1 | Accepted | [P9-1.9 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json), exact implementation scope and successor dispatch. |
-| `P9-G2[p]` | Five exact profiles accepted; five pending | Full applicable generic runtime/lifecycle fixture product for exact profile scope p; see profile register below. |
-| `P9-G3[S]` | Pending per consumed set | Accepted G2 for every profile in S and reviewed GRC9V4 specialization scope. |
+| `P9-G2[p]` | Ten exact declarations accepted | Full applicable generic runtime/lifecycle fixture product for exact profile scope p; aggregate P9-7.7 accepted, no broader domains inferred. |
+| `P9-G3[S]` | P9-7.8 review ready; acceptance pending | Ten exact generic declarations proposed; mechanics/legacy/test matrix reviewed, no specialization work admitted yet. |
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
 The initially empty generic support set now contains exact C_OS, A_OS,
-A_CI, C_CI, A_PC, C_PC, A_CI+PC and C_CI+PC declarations. Each family-level gate
+A_CI, C_CI, A_PC, C_PC, A_CI+PC, C_CI+PC, A_RG2b and C_RG2b declarations. Each family-level gate
 record must bind the actual complete-profile IDs, parameters/domains, fixture
 coverage, and evidence; a family label alone does not certify all instances.
 
 | Generic profile gate | State | Acceptance route |
 | --- | --- | --- |
-| `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
+| `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. This historical decision implies no other profile or G3 acceptance. |
 | `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope; no all-pairs or G3 support. |
 | `P9-G2[C_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json) accepts the reviewed 33-cell scope at `8ec744e`; distinct initializer/event targets and dense controls are not added support. |
 | `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery at acceptance was exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
@@ -1552,6 +1552,17 @@ may reach G2 without waiting for all Tranche 6 realizations.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.
+  - [x] Review the ten exact accepted declarations and accepted aggregate 7.7;
+    bind V4 spec/paper, 73 typed provenance queries and unchanged legacy bytes.
+  - [x] Register forward mechanics, 17 expansion/3 metamorphic oracles, G9
+    failures and 40 independent disabled surfaces without runtime credit.
+    Assign A oracle production to P9-8.3A.1 and runtime to P9-8.3A.2;
+    preserve mandatory lifecycle and optional scope.
+    [Review](./phase-9-grcv4/tranche-7/P9-7.8-SpecializationReview.md).
+  - [x] Expose the checked pending review through API/notebook/browser with
+    scope/gate/drift rejection pressure; no new runtime authorization.
+  - [ ] Accept the exact G3 consumed set and tranche-7 closure; bind a scoped
+    execution-policy successor before specialization source edits.
 
 ## Tranche 8. D11-G9 mechanical specialization
 
@@ -1569,10 +1580,25 @@ P9-8.3 are parent registers; their child scopes are independently reviewed.
 - [ ] P9-8.3C-PC: After C_PC's G2 and G3 entry, execute the separate C_PC
   nonnull carrier reset/loss vector and target readmission. Pending C_PC
   support does not hold the C_OS child.
-- [ ] P9-8.3A: Held until a concrete Candidate A expansion target/history
-  vector exists outside the frozen release and its A profile gates pass;
-  then execute exact initialization/history and reconstruction cases.
-  Template identity alone does not lift this hold or block C-family work.
+- [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
+  template identity alone is not expansion evidence. C-family work is independent.
+  - [ ] P9-8.3A.1: After exact A G2 and consumed-set G3 acceptance, select and
+    validate the specialization A-history/initialization binding and construct
+    an independent numerical oracle from the accepted port/chart, fixed-row
+    initializer and D11-G9 contracts; no production-runtime prerequisite.
+    Bind source/target IDs, distinct current/reset inputs, old/new-edge W,
+    reference-current recipe, W/Z loss channels, expected resource/receipt/
+    readmission outcomes and rollback cases. Retain outside the frozen release
+    as construction evidence; review and accept before runtime comparison.
+  - [ ] P9-8.3A.2: After accepted `.1`, exact A G2/G3 and applicable P9-8.1a–c
+    and P9-8.2 implementation, implement/test against the pinned oracle:
+    independent current/reset targets, reconstruction/readmission, receipts,
+    whole-lifecycle rollback and replay. Do not replace expected values with
+    production output. Accept separately from oracle construction.
+  - Escalation: genuinely absent generic authority found in `.1` holds the
+    affected child and returns to a bounded Tranche 7 contract correction;
+    follow the established authority propagation process, not a specialization
+    workaround. Do not reopen unrelated G2 or block independent C work.
 - [ ] P9-8.4: Execute all applicable accepted D30, D31, D45, and D52 runtime
   counterparts, with exact chirality/phase cases. Add separately labeled
   D37/D44 capacity-shell boundary probes and deeper declared probes. Execute
@@ -1693,7 +1719,7 @@ runtime/profile acceptance gates remain pending.
 | 3. Earlier lifecycle | P9-4.6–P9-4.8 pressure C_OS lifecycle and reconcile its full applicable fixture product before G2. |
 | 4. Profile-indexed G2 | Ten pending profile gates and an initially empty accepted support set; G3 binds exact consumed sets. |
 | 5. Earlier GRC9V4 option | P9-G2[C_OS] followed by reviewed P9-G3[C_OS] permits the C-only path. |
-| 6. Separate A expansion hold | P9-8.3A retains the concrete-target-vector hold; C_OS and C_PC have independent children. |
+| 6. Separate A expansion work | P9-8.3A.1 produces/reviews the oracle; P9-8.3A.2 implements/tests against it. Generic authority gaps route back to Tranche 7; C_OS/C_PC remain independent. |
 | 7. Normative degrees | D30/D31/D45/D52 runtime counterparts required; D37/D44 are additional boundary probes. |
 | 8. Independent realizations | Lifecycle/G2 review may proceed per profile while sibling realizations and RG2b remain pending. |
 | 9. Keep groupings | Tranches 0–10 remain the conceptual organization with stable P9-N.M IDs. |

@@ -1,5 +1,6 @@
 import {G2_REGISTRY} from './g2-registry.js';
 import {AGGREGATE_REVIEW} from './aggregate-review.js';
+import {SPECIALIZATION_REVIEW} from './specialization-review.js';
 const acceptedRows = G2_REGISTRY.records.filter(r => r.state === 'accepted');
 const acceptedSupport = acceptedRows.map(r => r.complete_profile_id).sort();
 const acceptedProfile = G2_REGISTRY.records.find(r => r.adapter === 'historical_c_os').complete_profile_id;
@@ -77,11 +78,20 @@ export function checkedAggregate(value, implementation) {
     throw new Error('Aggregate support differs from accepted registry');
 }
 
+export function checkedSpecialization(value, implementation) {
+  const review = value.specialization_admission_review;
+  if (implementation ? !equal(review, SPECIALIZATION_REVIEW) : review !== undefined)
+    throw new Error('Missing, stale or widened specialization admission review');
+  if (implementation && !equal(review.proposed_consumed_support, acceptedSupport))
+    throw new Error('Specialization review differs from accepted generic support');
+}
+
 export function checkedStatus(value) {
   if (!['phase9_governance_status_v1','phase9_governance_status_v2'].includes(value?.schema) || value.output_class !== "implementation_verification_status_not_forensic_trace") throw new Error("Unrecognized verification status");
   const implementation = value.schema === 'phase9_governance_status_v2' && value.current_boundary === 'passed';
   checkedG2(value, implementation);
   checkedAggregate(value, implementation);
+  checkedSpecialization(value, implementation);
   if (typeof value.P9_G1_accepted !== 'boolean' || value.runtime_authorized !== implementation || (implementation && !value.P9_G1_accepted) || (value.schema === 'phase9_governance_status_v1' && value.P9_G1_accepted) || !Array.isArray(value.accepted_generic_runtime_support) || JSON.stringify(value.accepted_generic_runtime_support) !== JSON.stringify(implementation ? acceptedSupport : []) || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
   if (implementation && (value.g2_acceptance?.record_digest !== 'e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd' || value.g2_acceptance?.gate !== 'P9-G2[C_OS]' || value.g2_acceptance?.alias !== 'P9-7.7-C_OS' || value.g2_acceptance?.G2_accepted !== true || value.g2_acceptance?.G3_accepted !== false || value.g2_acceptance?.tranche_4_status !== 'closed' || JSON.stringify(value.g2_acceptance?.accepted_generic_runtime_support) !== JSON.stringify([acceptedProfile]) || JSON.stringify(value.g2_acceptance?.new_runtime_iterations_authorized) !== '[]')) throw new Error('Missing or widened exact-profile G2 acceptance');
   if (!implementation && value.g2_acceptance !== undefined) throw new Error('Unverified boundary cannot advertise current G2 support');
