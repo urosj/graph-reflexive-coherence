@@ -1,0 +1,3490 @@
+{
+  "schema": "phase9_profile_aggregate_reconciliation_v1",
+  "iteration_id": "P9-7.7",
+  "status": "reconciled_pending_independent_review",
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "G3_accepted": false,
+  "all_ordered_pairs_verified": false,
+  "new_G2_support": [],
+  "new_runtime_iterations_authorized": [],
+  "admitted_specialization_support_sets": [],
+  "accepted_checkpoint": "ffbcabf",
+  "initial_review": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+    "json_pointer": ""
+  },
+  "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+    "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+    "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+    "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+    "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "profiles": [
+    {
+      "profile_family": "A_CI",
+      "complete_profile_id": "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/0"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+        "record_digest": "2a1211974eaa047456c9a8f791c501e4c3087d2d2037ff1e8bf577b38ae093ae"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json",
+        "record_digest": "aa3dc998282ac66bd7ff5d6865fb9175242f44d52ea2c9b5b7b5a6e91657e5cb"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "A-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "A-EXACT-PRE-READ-W-HAT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "A-INITIALIZATION-VS-FORMATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "A-LOG-WRITER",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "A-MIGRATION-HISTORY-RECEIPT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "A-NO-SAME-BEAT-NEW-W-READ",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "A-POSITIVE-W-ADMISSION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "A-POST-CONTINUITY-REFRESH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "A-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "CI-BRANCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "migration/A_NH_NH"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "migration/A_NH_PC"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "persistent_A_PC"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "separate_endpoints_not_A_CI; no positive nomination credit",
+            "evidence": "migration/A_PC_CIPC"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "separate_endpoints_not_A_CI; no positive nomination credit",
+            "evidence": "migration/A_CIPC_PC"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "A_to_C"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "negative_exact_nomination_target; positive initializer target remains a different profile",
+            "evidence": "incoming_C_rejection",
+            "separate_positive": "initializer/A_CI"
+          }
+        ],
+        "C_to_nominated_A": "rejected_unselected_initializer",
+        "initializer_target": "grcv4-profile-sha256:7e90f24e123cbaa2571aa5071489a8b4fdec815098925cba51ed01be09b1fe2b",
+        "initializer_target_is_proposed_support": false,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "separate_PC_pairs_not_A_CI_credit": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "C_CI",
+      "complete_profile_id": "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/1"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+        "record_digest": "56edc8d0a725a693a0363bf66f23bdcbe000357403928f9fd84da991c542bedc"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json",
+        "record_digest": "9ccd568fea897089fd94ea4174247a4421dc2bdba675421f7c8abe2995904de6"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-DERIVATIVE-COVARIANCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-EXACT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "C-C-ONLY-AUTHORITY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "C-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "C-KAPPA-M-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "C-LIFECYCLE-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "C-ONE-CHI-GATE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "C-POST-CONTINUITY-REDERIVATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "C-QC-TYPING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-BOUNDARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-STRICT-GAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "C-TR-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "C-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "CI-BRANCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/28"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/29"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/30"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/31"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+            "json_pointer": "/catalog_product/32"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "migration/C_NH_NH"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "migration/C_NH_PC"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "persistent_C_PC"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "separate_endpoints_not_C_CI; no positive nomination credit",
+            "evidence": "migration/C_PC_CIPC"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "separate_endpoints_not_C_CI; no positive nomination credit",
+            "evidence": "migration/C_CIPC_PC"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_target; candidate_and_carrier_loss",
+            "evidence": "migration/A_C_DROP"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "positive_exact_nomination_source; separately_declared_initializer_target",
+            "evidence": "C_to_A"
+          }
+        ],
+        "C_to_A": "positive_nomination_source_to_selected_initializer_target",
+        "initializer_target": "grcv4-profile-sha256:0fc7119edbd19dbed39e88fb3fc9a149edae9ce575c2da1cfc490a599459cfd3",
+        "initializer_target_is_proposed_support": false,
+        "event_target": "grcv4-profile-sha256:d8da67b4111e7be580a8e9cec280f2266b14ce7b4f342e25734fcd4f5343eddb",
+        "event_target_is_proposed_support": false,
+        "nominal_kappa_M_C": 0,
+        "dense_controls_are_separate_profiles": true,
+        "CI_scope": "bounded_local_reference_ball_not_global_uniqueness",
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "separate_PC_pairs_not_C_CI_credit": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "A_OS",
+      "complete_profile_id": "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/2"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+        "record_digest": "f5d40d78fc8f3d96bbf6e78b5087527b5712aa4179d3f43b94456da05c7d4dc4"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json",
+        "record_digest": "bb84b02362a6b5ac1e1a4b5ba921f63ff3f454c27c82fb99d3da1836d088a2bb"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "A-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "A-EXACT-PRE-READ-W-HAT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "A-INITIALIZATION-VS-FORMATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "A-LOG-WRITER",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "A-MIGRATION-HISTORY-RECEIPT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "A-NO-SAME-BEAT-NEW-W-READ",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "A-POSITIVE-W-ADMISSION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "A-POST-CONTINUITY-REFRESH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "A-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "OS-ONE-PASS",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "migration/A_NH_NH"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "persistent_A_OS"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "persistent_A_PC"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "separate_endpoints_not_A_OS; no positive nomination credit",
+            "evidence": "migration/A_PC_CIPC"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "separate_endpoints_not_A_OS; no positive nomination credit",
+            "evidence": "migration/A_CIPC_PC"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "migration/A_C_NH"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "negative_exact_nomination_target; positive initializer target remains a different profile",
+            "evidence": "incoming_C_rejection",
+            "separate_positive": "initializer/A_OS"
+          }
+        ],
+        "C_to_nominated_A": "rejected_unselected_initializer",
+        "initializer_target": "grcv4-profile-sha256:0fc7119edbd19dbed39e88fb3fc9a149edae9ce575c2da1cfc490a599459cfd3",
+        "initializer_target_is_proposed_support": false,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "separate_PC_pairs_not_A_OS_credit": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "C_OS",
+      "complete_profile_id": "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/3"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json",
+        "record_digest": "cd41ab0453b3e82b8e50530b4c8ddca2b8c307ace704e5a3eaa0e8d2726afa68"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json",
+        "record_digest": "e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "accepted_P9_4_8B_alias_no_new_credit",
+        "G2-ORDERED-ENDPOINTS": "accepted_P9_4_8B_alias_no_new_credit",
+        "G2-INTEGRATED-REVIEW": "accepted_P9_4_8B_alias_no_new_credit"
+      },
+      "cells": [
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/21"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-DERIVATIVE-COVARIANCE",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/8"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-EXACT",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/1"
+          }
+        },
+        {
+          "fixture_id": "C-C-ONLY-AUTHORITY",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/6"
+          }
+        },
+        {
+          "fixture_id": "C-CHI-ZERO",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/9"
+          }
+        },
+        {
+          "fixture_id": "C-KAPPA-M-ZERO",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/7"
+          }
+        },
+        {
+          "fixture_id": "C-LIFECYCLE-REFERENCE-MAP",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/25"
+          }
+        },
+        {
+          "fixture_id": "C-ONE-CHI-GATE",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/11"
+          }
+        },
+        {
+          "fixture_id": "C-POST-CONTINUITY-REDERIVATION",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/29"
+          }
+        },
+        {
+          "fixture_id": "C-QC-TYPING",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/4"
+          }
+        },
+        {
+          "fixture_id": "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/5"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-BOUNDARY",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/3"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-STRICT-GAP",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/2"
+          }
+        },
+        {
+          "fixture_id": "C-TR-REFERENCE-MAP",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/0"
+          }
+        },
+        {
+          "fixture_id": "C-ZETA-ZERO",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/10"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/18"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/17"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/13"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/19"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/12"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/15"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/32"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/24"
+          }
+        },
+        {
+          "fixture_id": "OS-ONE-PASS",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/28"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/33"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/22"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/20"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/31"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/30"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/26"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_historical_alias",
+          "evidence": {
+            "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+            "json_pointer": "/fixture_results/23"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "acceptance_scope": "Only the nominated exact dyadic C_OS graph/reference/context/domain and reconciled fixture scope in the accepted review. Local control and migration-target registrations do not gain G2 acceptance.",
+        "source_debt_policy": "Preserve original D10/D11 and bounded-design debt rows; discharge only the reviewed phase C_OS obligations through this acceptance link.",
+        "original_review_obligations": [
+          {
+            "id": "G2-COS-INTERFACE",
+            "assessment": "satisfied_for_nominated_scope",
+            "reason": "The concrete GRCModel facade delegates to the sole C_OS publication owner. Accepted facade/abundance evidence covers strict requests and defaults, immutable projections, unavailable abundance semantics, lifecycle operations and truthful discovery; the current exact-profile fixture run exercises that public receiver. Global discovery remains empty pending G2 acceptance.",
+            "evidence": [
+              "implementation/phase-9-grcv4/tranche-4/P9-4.9.1-Review.md",
+              "implementation/phase-9-grcv4/tranche-4/P9-4.9.1a-Review.md",
+              "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+              "specs/grc-common-interface-v4-ext.md"
+            ]
+          },
+          {
+            "id": "G2-COS-PARENTS",
+            "assessment": "satisfied_for_nominated_scope",
+            "reason": "The accepted successor explicitly selects the previous successful primary shared across each operation group. Publication/restoration implement this authority; retained parent pressure and current receipt/crossing regressions support the nominated scope. The D10.2 provenance dispositions and bounded source debts are preserved, not promoted to all-history authentication or global conformance.",
+            "evidence": [
+              "implementation/phase-9-grcv4/tranche-4/P9-4.9.2-Review.md",
+              "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/run.json",
+              "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json"
+            ]
+          },
+          {
+            "id": "G2-COS-FIXTURES",
+            "assessment": "satisfied_for_nominated_scope",
+            "reason": "All 33 applicable catalog rows bind exact inputs/results and complete-profile identities. Public second-beat reconstruction closes stale-cache credit; the unchanged published dimension negative reaches the required semantic diagnostic and atomic public rejection; the unchanged mandatory mapped event has its own exact source/target identity. Fixed-stage/fault/control evidence, seven migration-class dispositions and unavailable other-profile positives retain their recorded limits.",
+            "evidence": [
+              "implementation/phase-9-grcv4/tranche-4/P9-4.9.3-Review.md",
+              "implementation/phase-9-grcv4/tranche-4/P9-4.9.3-ExecutionRecord.json",
+              "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+              "implementation/phase-9-grcv4/tranche-4/P9-4.8-GateReview.json"
+            ]
+          }
+        ]
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json",
+        "json_pointer": "/source_debt_policy"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json",
+        "json_pointer": "/obligations"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "A_RG2b",
+      "complete_profile_id": "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/4"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+        "record_digest": "71c459901d2590022d44775b8101ac08a2b52e15334032fd8bd4b1735cb84b1f"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Acceptance.json",
+        "record_digest": "7887a2e24d38c58898527ac4eacb9836a2db165e0d033a5a85e61db08522790d"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "A-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "A-EXACT-PRE-READ-W-HAT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "A-INITIALIZATION-VS-FORMATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "A-LOG-WRITER",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "A-MIGRATION-HISTORY-RECEIPT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "A-NO-SAME-BEAT-NEW-W-READ",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "A-POSITIVE-W-ADMISSION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "A-POST-CONTINUITY-REFRESH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "A-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "RG2B-SECTION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "nonpersistent_incoming"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "persistent_outgoing"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "persistent_incoming"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "separate_PC_pair_not_nomination_execution",
+            "evidence": "migration/A_PC_CIPC"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "separate_PC_pair_not_nomination_execution",
+            "evidence": "migration/A_CIPC_PC"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "candidate_outgoing"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "negative_exact_nomination_target; positive_initializer_is_separate_scalar_target",
+            "evidence": "incoming_C_rejection",
+            "separate_positive": "initializer/A_RG2b"
+          }
+        ],
+        "C_to_nominated_A": "rejected_unselected_initializer",
+        "initializer_target": "grcv4-profile-sha256:aa6d5a0ef08718b0cba1e52ad66c9f46b2869f853c567fcf6e3737555d0f7805",
+        "initializer_target_is_proposed_support": false,
+        "event_target": "grcv4-profile-sha256:f5109dde24eef932707a6c79d04af89ea338c6ec343e954132221adc6243370e",
+        "event_target_is_proposed_support": false,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "separate_PC_pairs_not_nomination_execution": true,
+        "retained_scalar_RG2b_is_not_graph_nomination": true,
+        "graph_companion_declarations_are_not_proposed_support": true,
+        "C_to_selected_initializer": "separate_retained_scalar_target_not_nomination_execution",
+        "A_to_C": "exact_graph_nomination_source_with_candidate_history_loss",
+        "event_policy": "separate_selected_initializer_target_with_explicit_W_loss_no_carrier",
+        "event_completion_is_separate_and_frozen": true,
+        "fixed_h_current_recomputed_for_each_role": true,
+        "state_readmission_on_K_is_not_ordinary_entry_on_K_minus": true,
+        "zero_duration_does_not_select_zero_beat_completion": true,
+        "regularity": "bounded_completion_relative_Lipschitz_only",
+        "section_is_not_persistent_state": true,
+        "classical_derivative_or_spectrum_claimed": false,
+        "C1_debt_resolved": false,
+        "arbitrary_positive_dt_supported": false,
+        "CI_equivalence_claimed": false,
+        "formation_authentication_claimed": false,
+        "indefinite_base_chart_invariance_claimed": false,
+        "disabled_specialization_reductions_verified": false,
+        "zero_controls_are_separate_profiles": true,
+        "generalized_evaluator_evidence_is_not_arbitrary_graph_G2_support": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "C_RG2b",
+      "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/5"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+        "record_digest": "321ce3bf367100425800218d8cf6aca15a549f9be7bb3ec46b35f046474f5c8f"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Acceptance.json",
+        "record_digest": "67619e80dd9a5cfa6d6293cc7f16e19a8ba0b9e9d407a28cab73074507374a6a"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-DERIVATIVE-COVARIANCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-EXACT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "C-C-ONLY-AUTHORITY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "C-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "C-KAPPA-M-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "C-LIFECYCLE-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "C-ONE-CHI-GATE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "C-POST-CONTINUITY-REDERIVATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "C-QC-TYPING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-BOUNDARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-STRICT-GAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "C-TR-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "C-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/28"
+          }
+        },
+        {
+          "fixture_id": "RG2B-SECTION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/29"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/30"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/31"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+            "json_pointer": "/catalog_product/32"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "nonpersistent_incoming"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "persistent_outgoing"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "persistent_incoming"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "separate_PC_pair_not_nomination_execution",
+            "evidence": "migration/C_PC_CIPC"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "separate_PC_pair_not_nomination_execution",
+            "evidence": "migration/C_CIPC_PC"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "candidate_incoming"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "positive_exact_nomination_source; separate_initializer_selected_A_OS_target",
+            "evidence": "initializer_outgoing"
+          }
+        ],
+        "candidate_authority": "C_only_no_W_or_Z_state",
+        "initializer_target": "grcv4-profile-sha256:5c9e30b07afd8ce8c47c0b173c425c3d29a4ebb6f9c9d1a11a94afcac2575d16",
+        "initializer_target_is_proposed_support": false,
+        "event_target": "grcv4-profile-sha256:5b85a60a8fb7ff8b4596228eb4e7db1debe2e20b2998135af9036f8e0dbd3eb8",
+        "event_target_is_proposed_support": false,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "separate_PC_pairs_not_nomination_execution": true,
+        "retained_PC_pairs_are_separate_scalar_endpoints": true,
+        "graph_companion_declarations_are_not_proposed_support": true,
+        "C_to_selected_initializer": "exact_C_RG2b_source_to_separate_initializer_selected_graph_A_OS_target; no_history_loss",
+        "A_to_C": "exact_graph_nomination_target_with_candidate_history_loss",
+        "event_policy": "C_to_C_affine_renamed_graph; complete_target_reference; no_W_initializer_or_carrier_or_loss",
+        "event_target_is_separate_and_completion_is_frozen": true,
+        "complete_C_chain_reconstructed_for_each_role": true,
+        "fixed_stratum_C_derivative_is_not_RG_section_derivative": true,
+        "mobility_authority_is_not_geometry_authority": true,
+        "fixed_h_current_recomputed_for_each_role": true,
+        "state_readmission_on_K_is_not_ordinary_entry_on_K_minus": true,
+        "zero_duration_does_not_select_zero_beat_completion": true,
+        "regularity": "bounded_completion_relative_Lipschitz_only",
+        "section_is_not_persistent_state": true,
+        "classical_derivative_or_spectrum_claimed": false,
+        "C1_debt_resolved": false,
+        "arbitrary_positive_dt_supported": false,
+        "CI_equivalence_claimed": false,
+        "formation_authentication_claimed": false,
+        "indefinite_base_chart_invariance_claimed": false,
+        "disabled_specialization_reductions_verified": false,
+        "zero_controls_are_separate_profiles": true,
+        "generalized_evaluator_evidence_is_not_arbitrary_graph_G2_support": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "A_PC",
+      "complete_profile_id": "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/6"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+        "record_digest": "7077df309bb98e3e214667b0ca903cd318c4e9036ef8c61f7aeadb2bbfc95cac"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json",
+        "record_digest": "6ee6f66234395ff9559f87860de930c88556910f0a88132b3e938c4b0cd6a891"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "A-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "A-EXACT-PRE-READ-W-HAT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "A-INITIALIZATION-VS-FORMATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "A-LOG-WRITER",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "A-MIGRATION-HISTORY-RECEIPT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "A-NO-SAME-BEAT-NEW-W-READ",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "A-POSITIVE-W-ADMISSION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "A-POST-CONTINUITY-REFRESH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "A-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "PC-ZOH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "separate_endpoints_not_A_PC; no positive nomination credit",
+            "evidence": "migration/A_NH_NH"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "migration/A_NH_PC"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "migration/A_PC_NH"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "positive_exact_nomination_source; exact_carrier_contract_only",
+            "evidence": "migration/A_PC_CIPC",
+            "negative": "carrier_contract_rejection"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "positive_exact_nomination_target; exact_carrier_contract_only",
+            "evidence": "migration/A_CIPC_PC"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_source; separate_candidate_loss_and_whole_carrier_reset",
+            "evidence": "migration/A_C_PC"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "negative_exact_nomination_target; positive initializer target remains a different profile",
+            "evidence": "incoming_C_rejection",
+            "separate_positive": "initializer/A_PC"
+          }
+        ],
+        "C_to_nominated_A": "rejected_unselected_initializer",
+        "initializer_target": "grcv4-profile-sha256:c41800f438ba7cd748e9363e166096aefa1ba03965d4275ba95caea2212fbf33",
+        "initializer_target_is_proposed_support": false,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "exact_PC_pairs_preserve_both_histories_only_under_exact_carrier_contract": true,
+        "changed_carrier_contract_rejected_without_silent_reset": true,
+        "nonhistory_pair_is_separate_not_nomination_execution": true,
+        "initializer_event_target_is_not_proposed_support": true,
+        "event_policy": "explicit_candidate_loss_and_whole_carrier_reset_not_native_release",
+        "PC_scope": "old_committed_Z_read_one_held_source_ZOH_write_then_both_role_readmission",
+        "native_release": "zero_source_exponential_decay_not_reset_or_drop",
+        "matched_forcing_contraction_claimed": false,
+        "indefinite_base_chart_invariance_claimed": false,
+        "supplied_W_is_not_authenticated_formation": true,
+        "zero_controls_are_separate_profiles": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "C_PC",
+      "complete_profile_id": "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/7"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+        "record_digest": "788b7de8d37828904967097270725057d83f1c5222e310ca466298902334b1f5"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Acceptance.json",
+        "record_digest": "c9ba763f85877febcaeb044b5e23fca20801f7bdac0fc8b189042e0432da6eb6"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-DERIVATIVE-COVARIANCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-EXACT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "C-C-ONLY-AUTHORITY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "C-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "C-KAPPA-M-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "C-LIFECYCLE-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "C-ONE-CHI-GATE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "C-POST-CONTINUITY-REDERIVATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "C-QC-TYPING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-BOUNDARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-STRICT-GAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "C-TR-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "C-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "PC-ZOH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/28"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/29"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/30"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/31"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+            "json_pointer": "/catalog_product/32"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "separate_endpoints_not_C_PC; no positive nomination credit",
+            "evidence": "migration/C_NH_NH"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "migration/C_NH_PC"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "migration/C_PC_NH"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "positive_exact_nomination_source; exact_carrier_contract_only",
+            "evidence": "migration/C_PC_CIPC",
+            "negative": "carrier_contract_rejection"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "positive_exact_nomination_target; exact_carrier_contract_only",
+            "evidence": "migration/C_CIPC_PC"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_target; separate_candidate_loss_and_whole_carrier_reset",
+            "evidence": "migration/A_C_PC"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "positive_exact_nomination_source; separate_initializer_target; carrier_loss_not_candidate_loss",
+            "evidence": "initializer/A_PC"
+          }
+        ],
+        "C_to_A": "exact_nomination_source_to_selected_initializer_target",
+        "C_to_A_candidate_history_loss": false,
+        "C_to_A_carrier_history_loss": true,
+        "event_target": "grcv4-profile-sha256:1803ccb4066507bb455201835466bd0946230a040605a0d47b0afd2e6e6f12cc",
+        "event_target_is_proposed_support": false,
+        "initializer_target": "grcv4-profile-sha256:c41800f438ba7cd748e9363e166096aefa1ba03965d4275ba95caea2212fbf33",
+        "initializer_target_is_proposed_support": false,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "exact_PC_pairs_preserve_carrier_only_under_exact_carrier_contract": true,
+        "changed_carrier_contract_rejected_without_silent_reset": true,
+        "nonhistory_pair_is_separate_not_nomination_execution": true,
+        "initializer_event_target_is_not_proposed_support": true,
+        "event_policy": "C_rederived_without_candidate_loss_and_whole_carrier_reset_not_native_release",
+        "PC_scope": "old_committed_Z_read_one_held_source_ZOH_write_then_both_role_readmission",
+        "native_release": "zero_source_exponential_decay_not_reset_or_drop",
+        "matched_forcing_contraction_claimed": false,
+        "indefinite_base_chart_invariance_claimed": false,
+        "C_has_no_W_state_or_A_writer": true,
+        "full_C_baseline_rederived_at_each_role": true,
+        "reference_field_is_complete_target_edge_map": true,
+        "baseline_mobility_authority_is_not_structural_Hodge": true,
+        "zero_nominal_kappa_M_does_not_remove_baseline_geometry_dependence": true,
+        "dense_derivative_control_is_not_nomination_trajectory": true,
+        "zero_controls_are_separate_profiles": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "A_CI_PC",
+      "complete_profile_id": "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/8"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+        "record_digest": "abb89b7309b9978c107fb43b76ee4d0d3c9d3640543d5746d1c869ed27f669f6"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json",
+        "record_digest": "ddec04e9d1829272d9fb0c106c69b945e1451b333e5164fdf5b13768f49642b6"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "A-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "A-EXACT-PRE-READ-W-HAT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "A-INITIALIZATION-VS-FORMATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "A-LOG-WRITER",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "A-MIGRATION-HISTORY-RECEIPT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "A-NO-SAME-BEAT-NEW-W-READ",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "A-POSITIVE-W-ADMISSION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "A-POST-CONTINUITY-REFRESH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "A-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "CI-PC-SAME-SOURCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "separate_endpoints_not_A_CI_PC; no positive nomination credit",
+            "evidence": "migration/A_NH_NH"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "nonpersistent_incoming"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "nonpersistent_outgoing"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "positive_exact_nomination_target; exact_carrier_contract_only",
+            "evidence": "migration/A_PC_CIPC"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "positive_exact_nomination_source; exact_carrier_contract_only",
+            "evidence": "migration/A_CIPC_PC",
+            "negative": "carrier_contract_rejection"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_source; candidate_and_carrier_explicit_loss",
+            "evidence": "migration/A_C_DROP"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "negative_exact_nomination_target; positive initializer target remains a different profile",
+            "evidence": "incoming_C_rejection",
+            "separate_positive": "initializer/A_CI_PC"
+          }
+        ],
+        "C_to_nominated_A": "rejected_unselected_initializer",
+        "initializer_target": "grcv4-profile-sha256:3e40eb6154a1fa8351c38af0ea1e70019368157491294ca4578b9d744b421c79",
+        "initializer_target_is_proposed_support": false,
+        "event_target": "grcv4-profile-sha256:e89c4bf8f0e6de4bd8fe4920c94a0ba2d680563bd67bb03d82f8e900224fa849",
+        "event_target_is_proposed_support": false,
+        "event_target_differs_from_retained_initializer": true,
+        "zero_event_carrier_does_not_erase_immediate_geometry": true,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "exact_PC_pairs_preserve_both_histories_only_under_exact_carrier_contract": true,
+        "changed_carrier_contract_rejected_without_silent_reset": true,
+        "nonhistory_pair_is_separate_not_nomination_execution": true,
+        "initializer_event_target_is_not_proposed_support": true,
+        "event_policy": "explicit_candidate_loss_and_whole_carrier_reset_not_native_release",
+        "CI_PC_scope": "old_C_W_Z_joint_root_same_selected_source_for_immediate_geometry_and_one_ZOH_then_both_role_readmission",
+        "same_selected_root_source_drives_geometry_and_ZOH": true,
+        "separate_post_continuity_W_writer": true,
+        "trial_history_frozen": true,
+        "gain_two_is_constant_source_law_identity_not_settled_trajectory": true,
+        "global_root_uniqueness_claimed": false,
+        "unit_plus_unit_gain_is_not_amplitude_equivalence": true,
+        "native_release": "zero_source_exponential_decay_not_reset_or_drop",
+        "matched_forcing_contraction_claimed": false,
+        "indefinite_base_chart_invariance_claimed": false,
+        "supplied_W_is_not_authenticated_formation": true,
+        "zero_controls_are_separate_profiles": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    },
+    {
+      "profile_family": "C_CI_PC",
+      "complete_profile_id": "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+      "initial_nomination": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json",
+        "json_pointer": "/profiles/9"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+        "record_digest": "863730d90209e4813075c7b517a68df3e9587fe87c1ef4b04638a03f4a340858"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Acceptance.json",
+        "record_digest": "7fa14783afb04f5a105f2dc35fe843c87c2a5a80efc414823494be37334b87b5"
+      },
+      "obligations": {
+        "G2-EXACT-PRODUCT": "satisfied_for_exact_declared_scope",
+        "G2-ORDERED-ENDPOINTS": "satisfied_for_exact_declared_scope",
+        "G2-INTEGRATED-REVIEW": "satisfied_for_exact_declared_scope"
+      },
+      "cells": [
+        {
+          "fixture_id": "ALL-MIGRATION-CLASSES",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/0"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-DERIVATIVE-COVARIANCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/1"
+          }
+        },
+        {
+          "fixture_id": "C-BASELINE-EXACT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/2"
+          }
+        },
+        {
+          "fixture_id": "C-C-ONLY-AUTHORITY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/3"
+          }
+        },
+        {
+          "fixture_id": "C-CHI-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/4"
+          }
+        },
+        {
+          "fixture_id": "C-KAPPA-M-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/5"
+          }
+        },
+        {
+          "fixture_id": "C-LIFECYCLE-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/6"
+          }
+        },
+        {
+          "fixture_id": "C-ONE-CHI-GATE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/7"
+          }
+        },
+        {
+          "fixture_id": "C-POST-CONTINUITY-REDERIVATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/8"
+          }
+        },
+        {
+          "fixture_id": "C-QC-TYPING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/9"
+          }
+        },
+        {
+          "fixture_id": "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/10"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-BOUNDARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/11"
+          }
+        },
+        {
+          "fixture_id": "C-SELECTOR-STRICT-GAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/12"
+          }
+        },
+        {
+          "fixture_id": "C-TR-REFERENCE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/13"
+          }
+        },
+        {
+          "fixture_id": "C-ZETA-ZERO",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/14"
+          }
+        },
+        {
+          "fixture_id": "CI-PC-SAME-SOURCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/15"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ATOMIC-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/16"
+          }
+        },
+        {
+          "fixture_id": "COMMON-CHARGE-MISMATCH",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/17"
+          }
+        },
+        {
+          "fixture_id": "COMMON-INVALID-DOMAIN",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/18"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NEGATIVE-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/19"
+          }
+        },
+        {
+          "fixture_id": "COMMON-NONFINITE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/20"
+          }
+        },
+        {
+          "fixture_id": "COMMON-STALE-CACHE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/21"
+          }
+        },
+        {
+          "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/22"
+          }
+        },
+        {
+          "fixture_id": "COMMON-ZERO-DURATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/23"
+          }
+        },
+        {
+          "fixture_id": "DUPLICATION-INDEPENDENCE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/24"
+          }
+        },
+        {
+          "fixture_id": "HISTORY-DISPOSITION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/25"
+          }
+        },
+        {
+          "fixture_id": "RECEIPT-OWNERSHIP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/26"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-EVENT",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/27"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-MIGRATION",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/28"
+          }
+        },
+        {
+          "fixture_id": "RESET-AFTER-ORDINARY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/29"
+          }
+        },
+        {
+          "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/30"
+          }
+        },
+        {
+          "fixture_id": "TARGET-READMISSION-FAILURE",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/31"
+          }
+        },
+        {
+          "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+          "disposition": "accepted_child_scope",
+          "reviewed_cell": {
+            "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+            "json_pointer": "/catalog_product/32"
+          }
+        }
+      ],
+      "ordered_scope": {
+        "matrix": [
+          {
+            "migration_class": "same_candidate_nonhistory_to_nonhistory",
+            "disposition": "separate_endpoints_not_C_CI_PC; no positive nomination credit",
+            "evidence": "migration/C_NH_NH"
+          },
+          {
+            "migration_class": "same_candidate_nonhistory_to_history",
+            "disposition": "positive_exact_nomination_target",
+            "evidence": "nonpersistent_incoming"
+          },
+          {
+            "migration_class": "same_candidate_history_to_nonhistory",
+            "disposition": "positive_exact_nomination_source",
+            "evidence": "nonpersistent_outgoing"
+          },
+          {
+            "migration_class": "PC_to_CI_PC",
+            "disposition": "positive_exact_nomination_target; exact_carrier_contract_only",
+            "evidence": "migration/C_PC_CIPC"
+          },
+          {
+            "migration_class": "CI_PC_to_PC",
+            "disposition": "positive_exact_nomination_source; exact_carrier_contract_only",
+            "evidence": "migration/C_CIPC_PC",
+            "negative": "carrier_contract_rejection"
+          },
+          {
+            "migration_class": "A_to_C",
+            "disposition": "positive_exact_nomination_target; separate_candidate_loss_and_whole_carrier_reset",
+            "evidence": "candidate_incoming"
+          },
+          {
+            "migration_class": "C_to_A",
+            "disposition": "positive_exact_nomination_source; separate_initializer_target; carrier_loss_not_candidate_loss",
+            "evidence": "initializer_outgoing"
+          }
+        ],
+        "C_to_A": "exact_nomination_source_to_selected_initializer_target",
+        "C_to_A_candidate_history_loss": false,
+        "C_to_A_carrier_history_loss": true,
+        "event_target": "grcv4-profile-sha256:fa75f710153edf4d116cc4e34dcb745282851b9ff87ff7eead0ec885f9bfb0ef",
+        "event_target_is_proposed_support": false,
+        "initializer_target": "grcv4-profile-sha256:3e40eb6154a1fa8351c38af0ea1e70019368157491294ca4578b9d744b421c79",
+        "initializer_target_is_proposed_support": false,
+        "all_ordered_pairs_verified": false,
+        "endpoint_support_does_not_prove_crossing_support": true,
+        "exact_PC_pairs_preserve_carrier_only_under_exact_carrier_contract": true,
+        "changed_carrier_contract_rejected_without_silent_reset": true,
+        "nonhistory_pair_is_separate_not_nomination_execution": true,
+        "initializer_event_target_is_not_proposed_support": true,
+        "event_policy": "C_rederived_without_candidate_loss_and_whole_carrier_reset_not_native_release",
+        "CI_PC_scope": "old_C_Z_joint_root_same_selected_source_for_immediate_geometry_and_one_ZOH_then_both_role_readmission",
+        "same_selected_root_source_drives_geometry_and_ZOH": true,
+        "trial_history_frozen": true,
+        "separate_post_continuity_W_writer": false,
+        "gain_two_is_constant_source_law_identity_not_settled_trajectory": true,
+        "global_root_uniqueness_claimed": false,
+        "unit_plus_unit_gain_is_not_amplitude_equivalence": true,
+        "zero_event_carrier_does_not_erase_immediate_geometry": true,
+        "A_to_C": "exact_A_CI_PC_source_to_C_nomination_with_candidate_and_carrier_loss",
+        "A_to_C_candidate_history_loss": true,
+        "A_to_C_carrier_history_loss": true,
+        "native_release": "zero_source_exponential_decay_not_reset_or_drop",
+        "matched_forcing_contraction_claimed": false,
+        "indefinite_base_chart_invariance_claimed": false,
+        "C_has_no_W_state_or_A_writer": true,
+        "full_C_baseline_rederived_at_each_role": true,
+        "reference_field_is_complete_target_edge_map": true,
+        "baseline_mobility_authority_is_not_structural_Hodge": true,
+        "zero_nominal_kappa_M_does_not_remove_baseline_geometry_dependence": true,
+        "dense_derivative_control_is_not_nomination_trajectory": true,
+        "zero_controls_are_separate_profiles": true,
+        "unreviewed_pairs": "no new pair capability follows from accepting a profile; all other pairs remain unreviewed",
+        "event_evidence": {
+          "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-Crossings.json",
+          "json_pointer": "/catalog_cells/WHOLE-LIFECYCLE-TUPLE-MAP"
+        }
+      },
+      "authority_and_debt": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+        "json_pointer": "/authority"
+      },
+      "interface_evidence": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Interface.json",
+        "json_pointer": "/evidence"
+      },
+      "new_execution_credit": 0
+    }
+  ],
+  "input_bindings": {
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-ProfileReview.json": "f7f3bb44968fbecf83c34832edae6fb3eee57bdb6726e87f2e83777478ab7b3c",
+    "specs/grc-v4-conformance-fixtures.json": "90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json": "e984ebcd61d294e1a87b149c48db11511e7eab62f2b0f7bedcd0123e27f5f66a",
+    "implementation/phase-9-grcv4/tranche-7/ProfileG2Registry.json": "f4cd48ce898c4f5b865fcfa7df51f8487c4747e00a0fb87631df094125536536",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json": "66a60cebbe25c97abbf5e00ffc9d623c6d215558d81d7be907347203e28ee910",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json": "14fd078fc7053195b6a35a6e062cb3a3998058201202db56badddb8fa97c041a",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-LocalProduct.json": "2afec7c1e9c85c3f59e0d2fe161854fbcb010c9c55df9d175f0513e5090d0611",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-Crossings.json": "2340c3f519b292942cce8f1381d645e344fb1b101c481f74cf0dffc270cd5c5c",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Interface.json": "9a3bc1a2980808339c45ff45710ca77d79cb584f16a84a5941089e9e8e714859",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json": "24c6b43c0fd8adcca30b220903491346446ad326800d1cc600cbbc486e91cf34",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json": "5669358f6cc3e63adbec7da717598636c5bf2584a64d812ba675ea8c463a7e27",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-LocalProduct.json": "b178b1cfeaa5db1880dead7f5244ddfdb1125f878eca7469abb4701a33dbbb78",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-Crossings.json": "9bb117065f66656c7c12da791764db526e2b5ba538355bdf38627b877f138f43",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Interface.json": "b3847dd675ca1ba8582a59f9fa862099f250c06eb14eaf1020f76f0a25cb8c32",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json": "cec72b3d11d6368c78cabcc351463adda0409d1eff74d7c222e93085593d9468",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.json": "e291f2d5d38bbd3fa3528ce3bb35168e794463bf94576f717702ef46b63a9814",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-LocalProduct.json": "dfb7576bb756d983fa8d315eb82cfb54eb3a3bcfc84f6726f64f7eb589c09662",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-Crossings.json": "c3335c9d41c138c1a21131628e51fc9c81c98d3d70d34c1fb7eb93c0774cf12f",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Interface.json": "7f4175e45c7dfac33d208fe9b922e2a705b10ab49035d2f6993d4862ffedaba4",
+    "implementation/phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json": "b8be072df369b6dfc64b96ccecf4766c9186ad7444baa85133f71fd71898b6be",
+    "implementation/phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json": "36e200d45044b3b880a125de62b73a07e012f8ec2b5a092104e2af62f535df0f",
+    "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json": "a8f35e74366708bdc1d576e2b2e1f8646e8cf9579061172357b85f8f6f54ee1a",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Acceptance.json": "9893b36a3932741d514b37a42fd5bfe44ef95e4e4d4354796ed4fb90bfb4f0a8",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Review.json": "208cdd0834ad539cdc7c2e2fbc52739e9b4e32293005e4159a58b5dd970d9ab5",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-LocalProduct.json": "ee63e6353551fa1a182cb770e8d4d01496f98e85f5c793cc911d2d2ccc048a93",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-Crossings.json": "28121b8201f783c3a187aaa3c6e4e318c2d7c12ecdf40a1e71d2d596eb577ec0",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_RG2b-G2Interface.json": "4f23e86edfece09242e9782339d4c6d1ddb5679403f5396f2d87ae9c6232ad0d",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Acceptance.json": "1dee805d0cd273797fd7851b4ea7b501005a8609b72cb1564d6c5ba42a130cec",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Review.json": "ed932d8be20f5916399c4e89a1e46c5af425f188b52000e6fbc7e0f874edb963",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-LocalProduct.json": "d42c0e0202741475707b36947ff7f026a49cffbcea2f8a0fc0a9648b88d89374",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-Crossings.json": "fddbfc9fd4ea91c7c673e064122f451b5d709e913df2f7b2701b478161e40c0c",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_RG2b-G2Interface.json": "7d2e0a39a540e3970d6eabaaa4af2f077f4b7d68ddde86a9906969885010ec21",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json": "04396d46eb3f0160f61320b3a8a1f9132076fe2d4d26abbe1607e92aa280bbbb",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json": "cdaeb8f2273507fa52061a12d3e23ce7c6079b04b1830558711a905811ac01e9",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-LocalProduct.json": "1cb0c0a6fba85d6708b1b782d30876eb13f65c40c165ddaf476f797a800994e6",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-Crossings.json": "60cf57d0eeca8919d293b5ce2b4eaa2c58c36c943d07a40a32dbcc2ad0ef564c",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Interface.json": "11db886c1e79889d68a7d984bfefcfdc87f62705e9d152b6233d824537311661",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Acceptance.json": "75cf64beac00ab1f1c516659d9050a1b25d4599747949bb52a2eaf6f9d36a035",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.json": "a85638c423c80e683fd4eec851b6e57e70e5bb70eb609a01a004e73b35a53dc3",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-LocalProduct.json": "d68c930427d7997f3a5186880f19ae31925ef4659d27c27a9914dbf4f0ae294a",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-Crossings.json": "f092aa0730b9ad8c4822ab3032e5949896daa5b5bc665ecf7062ee5a240e8974",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Interface.json": "86aed7885c8ec860d1b4ccc2e6272e9f86118ea92143c58e39785fb367d5bbdf",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json": "e9b2ddefb225f35f146e1c1ee0fac031b24b61eeac360f69055397d8f90ef923",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.json": "5126c206c75197c36f1313fc7d198ccccbb34fd5f20f2c0679402a96c779d7f2",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-LocalProduct.json": "25970d876d3eb479e4f0fd2554d4cc54b7d89101ac3f9be44fed12e6aa2ec27d",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-Crossings.json": "4290f84c90cda4332a101a288453d48f30134bf51173b340cce64ecec6f1010a",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Interface.json": "3e9020ee982cbf3d75bbe0f140135b66725cc54f6e060b35fb915d61884b9ebc",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Acceptance.json": "6a4437043daa68253e65c2be14c002fb9ce183588af58f87a64ca7f1533cdcf9",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json": "7d4f52d9807a9fbde4811abe0d99e468e4b86f377f513fd285605fb38257e2d5",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-LocalProduct.json": "8eb8de50345dec95d4e7ce2bc78a9beda4617100213497d7e410334befe78575",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-Crossings.json": "4dcdd4b75b6308755047b92b53289beca31d48356c8b4107296ceb1019e4661e",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Interface.json": "c0b1cb9cd67cd7bc12220adf54eef49a367bd55885dfe7f4381bfa02210b3433"
+  },
+  "checker_bindings": {
+    "implementation/phase-9-grcv4/verification/verify_p977_aggregate.py": "fb585bf735666ef0abff464e09cea045a1ea15479ea5a4829da856813b77f3c6",
+    "implementation/phase-9-grcv4/verification/test_p977_aggregate.py": "a6ad118a286e7d8cb021896a5db925aec8db71b48ef838eb4b8c56d4b5d0b27b"
+  },
+  "summary": {
+    "profile_count": 10,
+    "required_cells": 305,
+    "reconciled_cells": 305,
+    "accepted_alias_cells": 33,
+    "accepted_child_cells": 272,
+    "unresolved_cells": 0,
+    "unresolved_child_obligations": [],
+    "numerical_tests_rerun": 0,
+    "new_execution_credit": 0,
+    "pending_aggregate_review": true
+  },
+  "scope": "Accepted exact catalog obligations and retained endpoint dispositions only; no all-pairs, arbitrary parameters, formation authentication, stronger RG2b regularity or specialization admission. Current scientific replay remains with the existing child checkers; this record reconciles their accepted evidence, not a new numerical run.",
+  "record_digest": "33be71f45ae03b91890ee6a6c3f951eb818a11d1006039ce8f8015127a5be25a"
+}

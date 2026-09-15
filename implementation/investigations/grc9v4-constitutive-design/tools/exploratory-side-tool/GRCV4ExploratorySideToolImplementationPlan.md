@@ -2367,3 +2367,20 @@ the tenth exact declaration through the same shared API/notebook/browser
 projection. Preserve original executions and pin only finite discovery-source
 changes. C1 debt, unreviewed pairs, separate targets, aggregate and G3 remain
 outside this decision; runtime owners and permissions are unchanged.
+
+Aggregate P9-7.7 reconciliation follows the ten accepted exact G2 decisions at
+`ffbcabf`. Add a separate 305-cell successor record and
+`profile_aggregate_reconciliation` status view after the existing scientific
+child materializers. Keep the original HOLD view historical; show zero
+unresolved child cells without claiming aggregate acceptance, all-pairs or G3.
+Reuse accepted evidence and its authority/debt references, checking exact
+checkpoint bytes and catalog/endpoint correspondence without a numerical rerun.
+Aggregate review/acceptance and P9-7.8 remain separate decisions.
+
+Include shared browser-fixture maintenance in this reconciliation: construct
+synthetic current profile views from the pinned registry, retain the historical
+C_OS singleton only in its own acceptance, and include initializer/event and
+aggregate projections. Keep fixtures detached from the trusted roster; test
+that mutations reach their intended checks from a passing baseline. Preserve
+failed-boundary cleanup and all existing rejection assertions without relaxing
+the production validator. This closes the stale-fixture gap, not a G2/G3 grant.

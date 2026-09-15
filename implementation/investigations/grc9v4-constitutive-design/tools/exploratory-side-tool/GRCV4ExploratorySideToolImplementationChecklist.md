@@ -1648,8 +1648,8 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       existing API/notebook/browser status; HOLD must not imply a broken runtime.
 - [x] Reject missing/duplicate product rows, family-label/borrowed identities,
       fabricated acceptance and widened G2/G3 support.
-- [ ] Independently review this reconciliation; held profile products and their
-      eventual scoped acceptance remain separate work.
+- [ ] Independently review and accept the successor aggregate reconciliation;
+      the initial HOLD remains historical and all ten child G2s are accepted.
 
 ### P9-7.7 A_OS local-product continuation
 
@@ -1657,9 +1657,9 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       identities, result fields and ledger deltas without altering older runs.
 - [x] Check `a_os_local_product` across API/notebook/browser status and reject
       fabricated completion, nomination substitution and support promotion.
-- [ ] Independently review the local product together with the subsequent
-      crossing continuation below. Integrated G2 acceptance remains open;
-      no other profile or G3 is promoted.
+- [x] Independently review the local product together with the subsequent
+      crossing continuation below; bounded acceptance and the later exact A_OS
+      G2 decision are recorded below. No other profile or G3 is promoted.
 
 ### P9-7.7 A_OS crossing continuation
 
@@ -1668,7 +1668,7 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Expose `a_os_crossings` separately from the unchanged historical local view.
 - [x] Check API/notebook/browser agreement and reject invented all-pairs scope,
       acceptance, source substitution and record drift.
-- [ ] Independently review combined local/crossing applicability before G2;
+- [x] Independently review combined local/crossing applicability before G2;
       no mandatory positive class is waived and no other profile is promoted.
 - [x] Record the user's 2026-09-13 acceptance of bounded local/crossing
       reconciliation separately from original execution flags. Preserve G2,
@@ -1934,3 +1934,18 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       checkpoint `796229e` and project ten exact declarations via the common
       adapter, preserving original evidence with finite source comparisons.
       Aggregate, G3, C1 debt and specialization remain separate.
+
+### P9-7.7 aggregate reconciliation
+
+- [x] Reconcile the 305-cell product to ten accepted exact declarations; retain
+      33 C_OS aliases, original HOLD bytes, control/endpoint scope and debt refs.
+- [x] Expose `profile_aggregate_reconciliation` after checked child materialization
+      through API/notebook/browser; reject missing or widened aggregate views.
+- [x] Verify ten focused Python methods and two browser tests, including actual
+      HTTP asset delivery and bounded notebook/Python/browser projection.
+- [x] Fix the shared browser fixture's stale singleton/permission assumptions
+      within P9-7.7; preserve the original 35 tests and add three fixture-isolation,
+      targeted registry/aggregate rejection and held-state regressions. Shared
+      browser suite: 38/38 passed; aggregate browser suite: 2/2 passed.
+- [ ] Independently review and accept the aggregate. No G3 or specialization
+      admission, new support, runtime permission or execution credit is inferred.

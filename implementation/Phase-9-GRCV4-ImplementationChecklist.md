@@ -1311,14 +1311,22 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Record HOLD for A_CI, C_CI, A_OS, A_RG2b, C_RG2b, A_PC, C_PC,
     A_CI+PC and C_CI+PC. The 272 uncredited product cells are not failed tests
     or a mandate to rerun all cases. Matching execution evidence remains valid.
-  - [ ] Close G2-EXACT-PRODUCT, G2-ORDERED-ENDPOINTS and G2-INTEGRATED-REVIEW
+  - [x] Close G2-EXACT-PRODUCT, G2-ORDERED-ENDPOINTS and G2-INTEGRATED-REVIEW
     for each nominated child: reuse exact retained assertions, capture only
     missing evidence, then independently review and obtain scoped acceptance.
   - [x] Verify review/status integrity: three focused tests, fourteen review
     mutations and API/notebook/HTTP/browser agreement with forty browser controls.
     No numerical campaign was rerun.
-  - [ ] Independently review this reconciliation. No new G2/G3 support or
-    aggregate closure is implied.
+  - [x] Reconcile all ten accepted child declarations against the original
+    305-cell product at checkpoint `ffbcabf`: 33 historical C_OS aliases and
+    272 accepted child cells, with unchanged nominations and endpoint ceilings.
+    [Aggregate reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-AggregateReconciliation.md).
+  - [x] Correct the shared browser fixture's stale singleton and permission
+    assumptions. Preserve all original rejection tests; add detached-fixture,
+    current registry/aggregate and held-state regressions (38/38 shared tests
+    and 2/2 aggregate browser tests pass, no production validator relaxation).
+  - [ ] Independently review and accept the aggregate reconciliation. All child
+    G2 decisions are accepted; aggregate closure and P9-7.8/G3 remain separate.
   - [x] P9-7.7-A_OS-local: add the [exact local product](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-LocalReview.md)
     with 21 catalog rows from three focused methods. Retain scalar/log oracles,
     actual stage values, source/control identities, result fields and complete
@@ -1420,7 +1428,7 @@ may reach G2 without waiting for all Tranche 6 realizations.
     binds reviewed checkpoint `b4909a3`. Publish exactly C_OS/A_OS/A_CI/C_CI/A_PC;
     preserve original evidence via finite source comparisons. Five other profile
     G2 decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
-  - [ ] Continue persistent profiles in order A_PC, C_PC, A_CI+PC, C_CI+PC;
+  - [x] Continue persistent profiles in order A_PC, C_PC, A_CI+PC, C_CI+PC;
     leave A_RG2b/C_RG2b last. This is scheduling, not weaker acceptance criteria.
   - [x] P9-7.7-C_PC-local: capture 26 local cells in five passing methods.
     Independently reconstruct the complete C chain at old-carrier, reset and

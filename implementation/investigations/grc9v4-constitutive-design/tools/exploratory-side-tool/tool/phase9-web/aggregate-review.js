@@ -1,0 +1,35 @@
+// Generated from the checked P9-7.7 aggregate record. No acceptance authority.
+export const AGGREGATE_REVIEW = {
+  "status": "reconciled_pending_independent_review",
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "G3_accepted": false,
+  "all_ordered_pairs_verified": false,
+  "new_G2_support": [],
+  "new_runtime_iterations_authorized": [],
+  "admitted_specialization_support_sets": [],
+  "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+    "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+    "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+    "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+    "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-AggregateReconciliation.json",
+  "record_digest": "33be71f45ae03b91890ee6a6c3f951eb818a11d1006039ce8f8015127a5be25a",
+  "profile_count": 10,
+  "required_cells": 305,
+  "reconciled_cells": 305,
+  "accepted_alias_cells": 33,
+  "accepted_child_cells": 272,
+  "unresolved_cells": 0,
+  "unresolved_child_obligations": [],
+  "numerical_tests_rerun": 0,
+  "new_execution_credit": 0,
+  "pending_aggregate_review": true
+};

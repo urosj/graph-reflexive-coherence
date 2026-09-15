@@ -1762,6 +1762,14 @@ discovery changes and retained-evidence comparison. The C1 debt, separate
 controls/targets, all-pairs, aggregate P9-7.7 and G3 remain separate; no new
 runtime iterations or specialization support are authorized.
 
+The [aggregate P9-7.7 reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-AggregateReconciliation.md)
+accounts for all 305 original cells using ten accepted exact declarations at
+`ffbcabf`. Preserve the initial HOLD as history and the C_OS successor alias;
+publish a separate current aggregate view after the existing child checkers.
+No new numerical execution, all-pairs credit, support or runtime authority is
+created. Aggregate review/acceptance remains pending; P9-7.8/G3 is not performed
+by this reconciliation.
+
 ### Tranche 8. GRC9V4 mechanical specialization
 
 Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.

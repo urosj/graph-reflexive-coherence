@@ -25,7 +25,10 @@ def _profile_next_gate(views):
     accepted=[r for r in views['profile_g2'] if r['state']=='accepted']
     ids={r['complete_profile_id'] for r in accepted}
     labels=', '.join(r['profile_family_id'] for r in accepted)
-    parts=[f"P9-7.7 remains open. Exact accepted G2 declarations ({len(accepted)}): {labels}."]
+    aggregate=views.get('profile_aggregate_reconciliation')
+    stage=('P9-7.7: 305/305 catalog cells reconciled; aggregate review and acceptance remain pending.'
+           if aggregate else 'P9-7.7 remains open.')
+    parts=[f"{stage} Exact accepted G2 declarations ({len(accepted)}): {labels}."]
     for key,value in views.items():
         if not key.endswith('_local_product') or value['complete_profile_id'] in ids:
             continue
@@ -35,6 +38,8 @@ def _profile_next_gate(views):
                 else f"{crossing['reconciled_crossing_cells']} crossing cells reconciled; see their separate acceptance state")
         parts.append(f"{family.upper()}: {value['verified_local_cells']} local cells; {extent}. Local evidence is not G2 acceptance.")
     parts.append('Other profile decisions, all-pairs, aggregate P9-7.7 and P9-G3 remain separate. Initializer/event targets and arbitrary parameterizations are not added support.')
+    if aggregate:
+        parts.append('P9-7.8 specialization-admission review follows; no G3 support set is admitted.')
     return ' '.join(parts)
 
 
@@ -106,8 +111,9 @@ def verification_status(repo_root: Path) -> dict:
             lineage_ownership_verification = lineage_check()
             from verify_p977_profile_review import check as profile_review_check
             profile_conformance_review = profile_review_check(prior=lineage_ownership_verification)
-            from profile_g2_registry import materialize
+            from profile_g2_registry import materialize, _checker
             profile_views, accepted_support = materialize(root, profile_conformance_review)
+            profile_views['profile_aggregate_reconciliation'] = _checker(root, 'verify_p977_aggregate')(profile_views=profile_views)
             profile_view_keys = set(profile_views)
             payload.update(
                 **profile_views,
