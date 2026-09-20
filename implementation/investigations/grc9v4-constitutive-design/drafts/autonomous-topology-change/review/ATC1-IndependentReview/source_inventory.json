@@ -1,0 +1,207 @@
+{
+  "scope": "Matches identify reviewed bytes only, not git membership or execution.",
+  "proposal_sha256": "3c8b80f432353aae4192db0f0ced287ee17b1164f5f4b81fbf377b5641c35520",
+  "pressure_sha256": "4af247a837b6416cd3909097995b4e18824eb1aa593fcf779f0045647b911b78",
+  "principal_bindings": 29,
+  "matched": 7,
+  "bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md",
+      "sha256": "2d04d131a3d85a3a72910a37da6a85c6d69a45d3645f2e65c41c38551f673061",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/verify_atc1_causal_boundary.py",
+      "sha256": "34e8f2ebe6376aa972727b66250d21071e58533ac8720b853ff26e9697ab0a67",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSuccessorInvestigationOpening.md",
+      "sha256": "2867d52671fc1a600617e6e2bb5c77c271417c33d980243293d5544f7c28f993",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/ATCSourceIntake.json",
+      "sha256": "5b069473b1f53d0d06c4890933788aa0b36fa783555f98362338c751c74fad59",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+      "available_matches": [
+        "atc1_audit/inputs/proposal_index.json"
+      ],
+      "match_found": true
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/draft8_locations.json",
+      "sha256": "9d8cf0a0e9d17889393063ff6ff58351fa0d19122f13579e14d79c8aec133e89",
+      "available_matches": [
+        "atc1_audit/inputs/draft8_locations.json"
+      ],
+      "match_found": true
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/2026-09-GRCV4-Autonomous-Topology-Extension-Proposal-Draft8.md",
+      "sha256": "1dbd95870c1ef5470d72d807a169a8dac5a52c9d72835d30f86dfd002aa95a3d",
+      "available_matches": [
+        "2026-09-GRCV4-Autonomous-Topology-Extension-Proposal-Draft8.md"
+      ],
+      "match_found": true
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/2026-09-GRCV4-Autonomous-Topology-Extension-Proposal-Draft7.md",
+      "sha256": "801a9152adf3ac6b7213c285924fcfe10f9225e1316162426cbd16c6c3ac30c9",
+      "available_matches": [
+        "2026-09-GRCV4-Autonomous-Topology-Extension-Proposal-Draft7.md"
+      ],
+      "match_found": true
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
+      "sha256": "09c080fd835d096372cff6204e42ddf0baba2b2da674fee905c7b5df2c83ed84",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "af100fda919eea460e7c4a8d2412832863a24e5254e99a4506e5cd1aac3f9cdc",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd",
+      "available_matches": [
+        "grc-v4-topology-event-spec(1).md"
+      ],
+      "match_found": true
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "21e308326722b7ee6ef5b2e936153b11502bcd233c4839813d4025bb8358b724",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+      "available_matches": [
+        "grc_v4_candidate_c(4).py"
+      ],
+      "match_found": true
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "327a2fb22bd38cbbcac5470a45c6bb61f5cc8dc1771bcb3aaa74b1d933a05d82",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "185e00a0ad73a79f10e5a66acd24970365976bb54b3cba9397dc2aff71673b1b",
+      "available_matches": [
+        "grc_v4_step(6).py"
+      ],
+      "match_found": true
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "948027b168191d428423421d19a4c354fb9a1c18df25dd47b93e6275bcfd7b02",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "5bd9b12cd72edcf2e1f82fcea9e4472ba0bfc6cda22712e95cac958a7ae1f347",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "tests/models/test_grc_v4_realizations.py",
+      "sha256": "68ca00832aa25ee96ed7993a61cf4d56d32af2792bffbbea381d550883da9aa3",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_a.py",
+      "sha256": "362df9f71b87d8376ca7712a88b7fade692db42040daf9658d93be86645906d3",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "d2335fe0944b4c4d3de65508ba02a922e2b9cf51fdd9d61e2c3725b60697b1ae",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "4bd35a14caa59fc45c8e3a3b1fa3df33efe58064972c661899575ff42e4bd896",
+      "available_matches": [],
+      "match_found": false
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "4167e6839e8a555ba278337d9ccefce543661df020adb5ab915d82266b2a492a",
+      "available_matches": [],
+      "match_found": false
+    }
+  ],
+  "not_reproduced": [
+    "submitted verifier run",
+    "current source-tree Git membership",
+    "entire inherited forensic graph",
+    "ten inherited query executions",
+    "other three pinned core source bytes",
+    "all-ten-product native applicability",
+    "native ATC/locking/crash semantics"
+  ],
+  "reported_subject": "0386568eb0ae1e39d146ec22c6b307de863d6f33"
+}

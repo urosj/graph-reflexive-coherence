@@ -1,6 +1,48 @@
-# Phase 9 GRCV4 handoff — Tranche 7 closed; P9-8.1a next
+# Phase 9 GRCV4 handoff — Tranche 7 closed; ATC research next
 
-## Current state — 2026-09-15
+## Current research priority — 2026-09-20
+
+The user requested the scientific-first autonomous-topology extension.
+References were committed at `0386568`; the
+[ATC successor opening](./investigations/grc9v4-constitutive-design/decisions/ATCSuccessorInvestigationOpening.md)
+now pins the accepted substrate, primary-source subjects and inherited
+forensic boundaries. The [source intake](./investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/ATCSourceIntake.json)
+routes 35 proposed claims and 28 proposal debts without admitting them.
+
+**The opening and ATC-1 bounded research envelope are user-accepted**:
+[acceptance and clarifications](./investigations/grc9v4-constitutive-design/decisions/ATC1Acceptance.md),
+[causal-boundary proposal](./investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md),
+[source/claim mapping](./investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/ATC1CausalBoundaryProposal.json),
+and [focused pressure](./investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/ATC1PressureResults.json).
+K0 selects a current-only, time-homogeneous witness with no new memory and one
+attempt after a successful positive beat; event failure keeps the committed
+ordinary poststate. Five realization recipes are proposed, not ten native ATC
+adapters. Checks distinguish protocol models from existing numerical owners.
+The user confirmed the full opening/reconstruction review. The addendum records
+the diagonal-reference CAN-R+ null result, historical-crossing and sampling
+limits, and retention of s2 after post-event-commit interruption. Reviewed
+proposal/evidence bytes remain unchanged; their preparation statuses are historical.
+Next eligible: ATC-2's concrete candidate/target-construction work, not yet started.
+Claim-graph admission and side-tool source readmission remain separate;
+the receiving mapping is accepted as design, not installed into the graph.
+Research probes precede acceptance; production code does not change until
+the reviewed topology proposal, extension paper and normative specification
+have supplied the required authority. No native ATC execution has been performed.
+
+The plan/checklist reserve **7T** before topology-dependent Tranche 8 runtime.
+P9-8.1a remains independently eligible under the unchanged scoped permission,
+but is not the current requested task. Later execution-policy openings must
+bind their exact ATC dependencies. Tranche 7, all accepted G2/G3 records and
+existing evidence remain unchanged; no universal topology or spark result is
+required to preserve that acceptance. Review Tranches 9–10's dependency and
+support subjects when ATC scope is accepted, without dropping the 40 disabled
+compatibility obligations or implicitly selecting optional completion.
+
+The September 15 status below is the accepted baseline, not the new work
+order. Its outstanding full live-status projection check remains outstanding;
+this opening does not claim to have rerun it or the numerical campaigns.
+
+## Accepted baseline — 2026-09-15
 
 The user accepted P9-7.8 and **closed Tranche 7**. The
 [G3 acceptance and closure](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md)

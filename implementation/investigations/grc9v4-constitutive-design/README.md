@@ -3,6 +3,19 @@
 **Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
 **Exploration surface:** ET-C9 accepted as a bounded read-only exploratory tool
 
+**Current continuation — 2026-09-20:** the
+[ATC successor research opening](./decisions/ATCSuccessorInvestigationOpening.md)
+starts a graph-generic autonomous-topology investigation from the accepted
+Phase 9 Tranche 7 baseline. [Drafts and source intake](./drafts/autonomous-topology-change/README.md)
+remain proposal inputs, not new scientific authority. The historical design
+and specification dispositions below remain unchanged; current runtime scope
+is recorded separately in the [Phase 9 handoff](../../Phase-9-GRCV4-Handoff.md).
+ATC runtime, paper and specification changes are not opened by this intake.
+The opening and [ATC-1 bounded research envelope](./decisions/ATC1Acceptance.md)
+are now user-accepted, with the review clarifications recorded in that addendum.
+The reviewed proposal/intake/pressure bytes remain preparation-time snapshots.
+ATC-2 is next eligible; no new claim-graph or executable ATC authority is admitted.
+
 This directory records the accepted bounded decision work authorizing a
 normative GRCv4 specification followed by a substantive GRC9v4 nine-port
 specialization. It consumes the Continuation/Read-Back 3.4.1 theory-to-graph

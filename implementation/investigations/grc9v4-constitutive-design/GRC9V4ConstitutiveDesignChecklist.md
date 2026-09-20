@@ -3006,7 +3006,51 @@ and its
 - [ ] Open implementation only under a later hash-bound implementation
   authority.
 
+## ATC successor research opening — 2026-09-20
+
+Companions: [opening](./decisions/ATCSuccessorInvestigationOpening.md),
+[source intake](./drafts/autonomous-topology-change/ATCSourceIntake.json),
+and [research plan](./GRC9V4ConstitutiveDesignPlan.md#atc-successor-investigation-after-phase-9-tranche-7).
+
+- [x] Retain unchanged Draft 8, Draft 7, the 35-claim/28-debt local index and
+  Draft 8 locations at reference-intake commit `0386568`.
+- [x] Pin the accepted Tranche 7 baseline, current paper/specification/release
+  inputs and exact current core-source subjects without machine-local paths.
+- [x] Reconstruct the current forensic context; preserve its entire inherited
+  node/edge population and retain eight typed boundary/debt query identities.
+- [x] Route all 35 proposed claims without admitting nodes, resolving debts,
+  choosing a candidate or modifying accepted scientific/runtime records.
+- [x] Prepare the bounded opening and reserve 7T before topology-dependent
+  specialization, with independent preparation and historical gates preserved.
+- [x] Review the opening/source reconciliation and reconstruction: user
+  confirmed the full review on 2026-09-20; final source readmission is separate.
+- [x] ATC-1: reconcile source clauses and earliest changed contracts, specify
+  explicit proposed-source adapter/readmission, and review causal inputs,
+  stage, identity, memory and transaction composition.
+  - [x] Reconcile K0-relevant primary clauses and preserve inherited negative
+    and conditional authority; this is not full Draft 8 adjudication.
+  - [x] Prepare the [K0 proposal](./decisions/ATC1CausalBoundaryProposal.md):
+    present-state projection, five realization reads, no new memory,
+    complete-policy requirements and two-transaction after-beat composition.
+  - [x] Specify origin-to-successor claim/debt mapping without admitting
+    local proposal IDs or altering the accepted graph.
+  - [x] Retain focused protocol/exact-arithmetic and existing numerical-owner
+    [pressure](./drafts/autonomous-topology-change/ATC1PressureResults.json),
+    source bindings and reproducible inherited typed-query identities.
+  - [x] [Accept the bounded K0 research envelope](./decisions/ATC1Acceptance.md)
+    with the four review clarifications. Native all-product applicability,
+    concrete laws and actual source readmission remain separate.
+- [ ] ATC-2: close concrete candidate constructions and run discriminating
+  research probes; retain conditional/unsupported profile dispositions.
+- [ ] ATC-3: accept bounded claim/debt transformations and reviewed synthesis.
+- [ ] Review topology-only proposal, then extension paper, then specification
+  and release before 7T implementation. No production support is inferred.
+
 ## Current State
+
+The block below retains the historical specification-closeout snapshot.
+Current ATC research is recorded above; the later accepted runtime baseline
+is recorded in the [Phase 9 handoff](../../Phase-9-GRCV4-Handoff.md).
 
 ```text
 branch = spec/grcv4-grc9v4

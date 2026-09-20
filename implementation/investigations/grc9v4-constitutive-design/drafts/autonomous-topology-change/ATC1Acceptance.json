@@ -1,0 +1,127 @@
+{
+  "schema": "grcv4_atc1_research_acceptance_v1",
+  "record_id": "GRCV4-ATC1-RESEARCH-ACCEPTANCE-v1",
+  "date": "2026-09-20",
+  "status": "accepted_bounded_research_envelope",
+  "research_envelope_accepted": true,
+  "gate": "ATC-1",
+  "gate_closed_in_declared_scope": true,
+  "branch": "investigation/grcv4-atc",
+  "decision_basis": {
+    "user_instruction": "i checked the full opening and reconstruction, so it's fine. create a new branch, then accept and commit",
+    "opening_and_reconstruction_review": "user_confirmed",
+    "independent_review": "scoped_PASS_for_K0_causal_design; not_full_opening_or_native_reconstruction",
+    "reviewed_proposal_record_digest": "8b95dec304c7ee9f12567964113951e0113033aafaab25f6aa0b7f1d0f422e8b",
+    "reviewed_pressure_record_digest": "bb9762282d9af83aa642cce7ed927ebbabc152eb015cd7df2aec113adbb15228",
+    "independent_pressure_record_digest": "6fe749210084593161313979bbbce163d6237c5eec8e6934998093f3eee30374"
+  },
+  "clarifications": [
+    {
+      "id": "ATC1-K0-LIMIT-REFERENCE",
+      "origin_claims": [
+        "ATC7-CL-03",
+        "ATC7-CL-29A"
+      ],
+      "consequence": "Diagonal-reference CAN-R+ has q=0 on defined nonedge diagnostics and cannot activate a strict nonnegative-threshold guard; isolate normalization may be undefined; not a rejection of every OS law."
+    },
+    {
+      "id": "ATC1-K0-LIMIT-HISTORY",
+      "origin_claims": [
+        "ATC7-CL-02",
+        "ATC7-CL-25"
+      ],
+      "consequence": "A historical predicate varying within a present-projection fibre cannot factor through that projection; W/Z sufficiency requires demonstration, and historical alternatives retain debt."
+    },
+    {
+      "id": "ATC1-K0-LIMIT-SAMPLING",
+      "origin_claims": [
+        "ATC7-CL-02",
+        "ATC7-CL-24",
+        "ATC7-CL-26"
+      ],
+      "consequence": "Pointwise request-duration exclusion does not imply beat-subdivision or physical-time event-rate invariance."
+    },
+    {
+      "id": "ATC1-K0-POSTCOMMIT",
+      "origin_claims": [
+        "ATC7-CL-24",
+        "ATC7-CL-31"
+      ],
+      "consequence": "Interruption after event publication preserves s2; pre-event-publication failure after ordinary commit preserves s1. No crash-durable exactly-once or automatic retry guarantee."
+    }
+  ],
+  "scope_ceilings": {
+    "origin_claims_admitted": false,
+    "proposal_debts_closed": [],
+    "accepted_descendants_added": [],
+    "forensic_graph_changed": false,
+    "source_readmission_implemented": false,
+    "executable_ATC_profile_accepted": false,
+    "native_ATC_conformance_accepted": false,
+    "all_ten_products_applicable": false,
+    "G2_G3_support_changed": false,
+    "production_or_spec_changes": false
+  },
+  "evidence": {
+    "original_focused_checks": 10,
+    "independent_groups_reproduced": 11,
+    "retained_subjects_unchanged": true,
+    "verification_scope": "retained identities and original focused checks; independent exact arithmetic and synthetic protocol groups; not native ATC",
+    "review_files": "readable_bundle_with_manifest_and_exact_inputs"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSuccessorInvestigationOpening.md",
+      "sha256": "2867d52671fc1a600617e6e2bb5c77c271417c33d980243293d5544f7c28f993"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/ATCSourceIntake.json",
+      "sha256": "5b069473b1f53d0d06c4890933788aa0b36fa783555f98362338c751c74fad59"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md",
+      "sha256": "2d04d131a3d85a3a72910a37da6a85c6d69a45d3645f2e65c41c38551f673061"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/ATC1CausalBoundaryProposal.json",
+      "sha256": "3c8b80f432353aae4192db0f0ced287ee17b1164f5f4b81fbf377b5641c35520"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/ATC1PressureResults.json",
+      "sha256": "4af247a837b6416cd3909097995b4e18824eb1aa593fcf779f0045647b911b78"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/verify_atc1_causal_boundary.py",
+      "sha256": "34e8f2ebe6376aa972727b66250d21071e58533ac8720b853ff26e9697ab0a67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1Acceptance.md",
+      "sha256": "7ed15f05a0912d23e6845078469b6a5fd9c51b13b18f787ee24592e3833c7140"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/review/ATC1-IndependentReview/bundle_manifest.json",
+      "sha256": "d3241e7116907082eadbf524004346038b1130b829ab1359ae9a3271b5598167"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/review/ATC1-IndependentReview/ATC1-Review.md",
+      "sha256": "d40fab077843ee8532120a9d35c74de6960a6368b27b8b23994a1c6fe820d7d8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/review/ATC1-IndependentReview/pressure_checks.py",
+      "sha256": "b72344e1f08adeb4a6b424b2f52bc8304a519149554c26c4f3db0a327b969055"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/review/ATC1-IndependentReview/pressure_results.json",
+      "sha256": "946b19bcab67481a40421d7f4f8b31465d3aeffec427b16e52f8835c4a13abf1"
+    }
+  ],
+  "next_eligible": "ATC-2",
+  "next_work_started": false,
+  "remaining_requirements": [
+    "concrete guard/score/resolution and complete increasing/forward-simplifying constructors",
+    "exact applicability dispositions for all ten products; no presumed positive result",
+    "explicit successor claim/debt adjudication and typed source readmission",
+    "reviewed topology-only proposal, extension paper and specification before 7T implementation"
+  ],
+  "record_digest": "cd605335a95a21dfe0909c06ddf5a47de7603ee7dcbe098120381f926270acec"
+}

@@ -2474,3 +2474,76 @@ Authoritative acceptance records:
 
 - [`GRCV4SpecificationReleaseAcceptanceGate.json`](./specification/GRCV4SpecificationReleaseAcceptanceGate.json)
 - [`PostGRCV4SpecificationAcceptanceBoundary.json`](./specification/PostGRCV4SpecificationAcceptanceBoundary.json)
+
+## ATC-OPEN — autonomous-topology successor research
+
+On 2026-09-20 the user instructed committing the retained proposal inputs and
+continuing with the first bounded research step. Reference-intake commit
+`0386568` retains Draft 8, Draft 7 and the stable local claim/debt index.
+The [opening](./decisions/ATCSuccessorInvestigationOpening.md) and
+[source intake](./drafts/autonomous-topology-change/ATCSourceIntake.json)
+pin the accepted Tranche 7 baseline, current primary-source subjects, full
+inherited forensic node/edge identities and eight typed boundary queries.
+
+Status: research authorized; opening artifacts prepared for review. Scientific
+results accepted: none. The 35 proposed claims and 28 debts remain unadmitted
+and unresolved; all accumulated accepted history and runtime support remain.
+Primary-source clause reconciliation and explicit proposed-source
+adapter/readmission are pending, not inferred from source hashes.
+
+ATC-1 is next: source/contract reconciliation and causal-input, stage, identity,
+memory and transaction-composition proposal. Reserve Phase 9 7T after the
+reviewed proposal/paper/specification route and before dependent specialization.
+No production implementation, paper/spec correction, new G2/G3, legacy change
+or scientific candidate selection is authorized by this opening.
+
+## ATC-1 — causal-boundary proposal prepared
+
+On 2026-09-20 the user authorized ATC-1. The
+[proposal](./decisions/ATC1CausalBoundaryProposal.md) and
+[machine companion](./drafts/autonomous-topology-change/ATC1CausalBoundaryProposal.json)
+reconcile the relevant source clauses and propose `ATC-K0`: present-state,
+time-homogeneous, no-new-memory reads with one autonomous attempt after each
+successful positive ordinary beat. Physical selection excludes reset and
+administration; binding and target admission still consume the full publication.
+
+After-commit composition is explicitly distinct from joint rollback: event
+failure preserves s1, including the ordinary receipt. Positive duration need
+not advance the rounded clock. The same lifecycle owner must eventually
+serialize both transactions without recursively acquiring its existing lock.
+Crash-durable completion, implicit retries and non-Zeno behavior are not claimed.
+
+Status: proposed, not admitted; review pending. The
+[pressure result](./drafts/autonomous-topology-change/ATC1PressureResults.json)
+separates protocol countermodels, exact arithmetic and bounded existing A_OS
+and reference-geometry calculations. It is not native ATC conformance or an
+all-product result. The receiving claim/debt mapping is specified, not installed;
+no proposed or inherited debt is closed, and no accepted node/edge changes.
+After review, continue to ATC-2's concrete law/construction pressure. Existing
+paper/specifications, runtime, releases and G2/G3 acceptance remain unchanged.
+
+Validation: ten focused checks passed, including ten reproduced typed queries
+and exact inherited node/edge identities. A development-only substring check
+initially confused `MATCHED` in inherited IDs with the ATC namespace; it was
+corrected to test the identifier prefix. No authority or numerical assertion
+was relaxed, and no production source was changed.
+
+## ATC-1 — user acceptance of the bounded research envelope
+
+On 2026-09-20 the user confirmed having checked the full opening and
+reconstruction and instructed a new branch, acceptance and commit. The
+[acceptance addendum](./decisions/ATC1Acceptance.md) and
+[record](./drafts/autonomous-topology-change/ATC1Acceptance.json) close ATC-1
+in its research-design scope on `investigation/grcv4-atc`.
+
+The independent review's scoped PASS and eleven reproduced groups are retained
+as readable files with their exact inputs. The addendum records the explicit
+diagonal-reference CAN-R+ limitation, unrecorded-history and beat-sampling
+limits, and s2 retention after an event has committed. The user's separate
+opening/reconstruction review is not represented as independent native evidence.
+
+The preceding preparation entries and all reviewed source/evidence bytes remain
+historical snapshots. No accepted graph node/edge, proposal-debt status,
+Tranche 7/G2/G3 support, paper/specification or runtime changes. The receiving
+mapping is accepted as design only; adapter/readmission remains pending.
+ATC-2 is next eligible, not started by this acceptance/commit request.

@@ -1,7 +1,8 @@
 # Autonomous topology change — proposal references
 
-**Status:** reference intake only; no ATC claim is admitted or accepted, no
-debt is resolved, and no implementation is authorized by these files.
+**Status:** the opening and K0 research envelope are
+[user-accepted](../../decisions/ATC1Acceptance.md). The origin claim index remains
+unadmitted, no debt is resolved, and no implementation is authorized here.
 
 This material belongs to the
 [GRCV4 constitutive-design investigation](../../README.md).
@@ -35,17 +36,32 @@ Draft 8 §15 records limitations of its historical implementation attachments
 and unpinned web sources. Their presence in a retained draft does not establish
 their correspondence to the current accepted runtime.
 
-The next proposed step is a bounded ATC successor opening and source/contract
-reconciliation within this investigation. It should pin the relevant accepted
-baseline, map the local claims and debts into the existing authority model,
-and identify the concrete candidate investigations and research probes.
-Source intake must not silently promote a proposal to accepted authority.
+The [ATC successor opening](../../decisions/ATCSuccessorInvestigationOpening.md)
+is now prepared under the user's bounded research authorization. Its
+[source intake](./ATCSourceIntake.json) pins the accepted baseline, current
+primary sources and inherited forensic context, and routes all local claims
+without admitting them. The
+[ATC-1 proposal](../../decisions/ATC1CausalBoundaryProposal.md) now reconciles
+the K0-relevant clauses and specifies the causal input, witness stages,
+identity/memory boundary, two-transaction composition and receiving mapping.
+Its [machine companion](./ATC1CausalBoundaryProposal.json) preserves proposed
+claim/debt dispositions and exact source/query bindings. The
+[pressure result](./ATC1PressureResults.json) is reproducible with the linked
+script and does not claim native ATC execution. The
+[acceptance addendum](../../decisions/ATC1Acceptance.md) supplies the current
+bounded disposition and four review clarifications; its
+[record](./ATC1Acceptance.json) binds the unchanged reviewed subjects. Their
+preparation-time status flags are historical, not the current research gate.
+The [independent review bundle](./review/README.md) is
+retained as readable files with exact reproduction inputs and no archive dependency.
+ATC-2's concrete-law work is next eligible; claim admission and actual source
+readmission remain pending. User review covered the full opening/reconstruction.
 
 The intended downstream order is investigation and claim/debt adjudication,
 reviewed topology-extension proposal, separate extension paper, normative
 specification, then implementation of the accepted scope in a proposed
-Tranche 7T. Its dependency amendment and detailed work items are not created
-or approved by this reference intake.
+Tranche 7T. The opening reserves that dependency in the plans; detailed 7T
+implementation work items await accepted scientific results.
 
 Accepted investigation records, the existing proposal/paper/specifications,
 Phase 9 gates and runtime support remain unchanged. Any future investigation

@@ -1565,10 +1565,35 @@ may reach G2 without waiting for all Tranche 6 realizations.
     `c6925b5`; the scoped successor opens only P9-8.1a's V4 topology source/test
     entry. No runtime file is created. [Acceptance](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md).
 
+## Tranche 7T. Reserved autonomous-topology extension
+
+Research is owned by the
+[ATC investigation](./investigations/grc9v4-constitutive-design/decisions/ATCSuccessorInvestigationOpening.md),
+not by an implementation leaf. Accepted Tranche 7 and existing machine
+permissions are unchanged. Detailed implementation leaves await scientific
+closure; this is a dependency reservation, not runtime authorization.
+
+- [x] Reserve investigation → reviewed topology proposal → extension paper →
+  normative specification/release → 7T → dependent specialization.
+- [ ] Accept the relevant ATC claim/debt results and ordered propagation.
+- [ ] Derive scoped 7T implementation leaves from the accepted contracts.
+- [ ] Demonstrate a policy-generated event reached through ordinary evolution,
+  complete target admission and continued evolution, with negative controls.
+- [ ] Reconcile generic/GRC9V4 ownership and Tranches 8–10 dependencies;
+  bind exact prerequisites before any later execution-policy opening.
+
+P9-8.1a chart/port preparation remains independently eligible. Other
+independent mathematical/source/oracle preparation keeps its existing scope.
+Topology-dependent trigger/Split/expansion runtime and integration await
+their applicable generic contracts. No optional spark/hierarchy capability,
+new G2/G3 support or specialization conformance is inferred.
+
 ## Tranche 8. D11-G9 mechanical specialization
 
 Entry is the reviewed `P9-G3[S]` scope, potentially C_OS alone. P9-8.1 and
 P9-8.3 are parent registers; their child scopes are independently reviewed.
+The reserved 7T dependency additionally applies to topology-dependent
+execution; this does not reopen the accepted Tranche 7 baseline.
 
 - [ ] P9-8.1a: Implement and verify the fixed chart and port graph.
 - [ ] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.

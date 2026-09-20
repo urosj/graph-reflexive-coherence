@@ -7,6 +7,13 @@
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
 **Initialization:** [`GRC9V4ConstitutiveDesignInitialization.json`](./GRC9V4ConstitutiveDesignInitialization.json)
 
+**Current research continuation — 2026-09-20:** the opening and ATC-1's
+bounded causal research envelope are [user-accepted](./decisions/ATC1Acceptance.md).
+ATC-2 is the next eligible scientific investigation, not yet started. See
+[ATC successor investigation](#atc-successor-investigation-after-phase-9-tranche-7).
+The older design/implementation restrictions describe their historical gates,
+not a revocation of the separately accepted Phase 9 runtime scope.
+
 ## Purpose
 
 Resolve the constitutive decisions required before a revision-distinct GRC9V4
@@ -3632,6 +3639,55 @@ The separate `audit_grcv4_specification_release_acceptance.py` verifier checks
 the accepted commit and release bytes, every release-bound path, the external
 audit digest, the acceptance decision digest, and the successor boundary
 without modifying the frozen release.
+
+## ATC successor investigation after Phase 9 Tranche 7
+
+The [ATC opening](./decisions/ATCSuccessorInvestigationOpening.md) and
+[pinned source intake](./drafts/autonomous-topology-change/ATCSourceIntake.json)
+start graph-generic autonomous-topology research. Draft 8 is the scientific
+proposal; Draft 7 and the stable local index retain rationale and reciprocal
+claim/debt lineage. No candidate law is accepted by source intake.
+
+Preserve the entire current forensic context and accepted Tranche 7/G2/G3
+records. The new proposal's 35 claims and 28 debts are additive, unadmitted
+inputs; they neither replace the inherited population nor close its debts.
+The intake pins current primary sources. The
+[ATC-1 proposal](./decisions/ATC1CausalBoundaryProposal.md) reconciles the
+clauses needed for its bounded K0 design and specifies the receiving mapping;
+it does not adjudicate every Draft 8 inheritance or implement source readmission.
+
+The next bounded route is:
+
+1. **ATC-1:** reconcile source clauses and earliest changed contracts; specify
+   the proposed-source admission mapping and the causal input, profile
+   identity, reconstruction stage, memory and transaction-boundary proposal.
+   **Accepted bounded research envelope:** present-state/time-homogeneous K0, no new
+   memory, realization-specific reads and one attempt after a successful
+   positive beat. Ordinary and event are separate commits under one proposed
+   serialized operation; event failure retains the ordinary poststate.
+   The [acceptance addendum](./decisions/ATC1Acceptance.md) records the
+   diagonal-reference CAN-R+ null result, unrecorded-history and sampling
+   limits, and post-event-commit interruption retaining s2. The user confirmed
+   the full opening/reconstruction review. Reviewed artifacts and scoped
+   pressure remain unchanged; no executable law, native adapter or accepted
+   claim-graph node is inferred from this research-design acceptance.
+2. **ATC-2:** close and pressure concrete laws using research probes against
+   pinned runtime owners. Challenge shared construction with increasing and
+   forward simplifying candidates without requiring both to be accepted.
+   Separate trigger meaning, target construction, history loss and stronger
+   core interpretations. Do not change production runtime or frozen specs.
+3. **ATC-3:** adjudicate claims/debts through the existing successor machinery;
+   review the resulting topology-only proposal before producing a separate
+   extension paper, normative specification and release.
+
+The reserved Phase 9 **7T** implements only accepted results after those
+propagation steps. It must supply working endogenous dynamics, not only
+interfaces/builders. Topology-dependent Tranche 8 work follows the relevant
+generic contracts; independent chart/port preparation remains eligible under
+its existing authority. Reconcile Tranches 9–10 without rewriting accepted
+history, forcing nine-port mechanics into binary refinement, or selecting
+optional spark/hierarchy claims implicitly. Detailed 7T leaves await the
+scientific result; this is not production implementation authorization.
 
 ## Expected Records
 
