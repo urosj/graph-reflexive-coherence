@@ -1,0 +1,2600 @@
+{
+  "schema": "grcv4_atc_capability_information_probe_v1",
+  "status": "passed",
+  "scientific_status": "exploratory_information_availability_not_a_topology_law",
+  "predecessor_pressure_record_digest": "4e388abf52eed1adedeb20d016def9031aa225ab8068369615279c6424761d17",
+  "source_commit": "4727fbdfe54bc161312ae4b8ed8ac539c119986d",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6"
+  },
+  "recipe": {
+    "current_resource_probe_amplitude": "1/64",
+    "fixed": [
+      "graph",
+      "reference",
+      "complete_profile",
+      "context",
+      "W_A",
+      "Z_4",
+      "reset",
+      "charge_target"
+    ],
+    "samples": "both signs of center-to-neighbor charge redistribution on each retained three-node path",
+    "stage": "unchanged_ATC_K0_native_present_read",
+    "values": "represented finite differences, no limit or division claiming a derivative"
+  },
+  "fixtures": [
+    {
+      "family": "A_OS",
+      "source": {
+        "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+        "reference": {
+          "descriptor_version": "grcv4-reference-geometry-v1",
+          "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+          "graph": {
+            "schema_version": "grcv4-serialized-graph-v1",
+            "live_node_ids": [
+              "a",
+              "b",
+              "c"
+            ],
+            "oriented_edges": [
+              {
+                "edge_id": "ab",
+                "tail_node_id": "a",
+                "head_node_id": "b"
+              },
+              {
+                "edge_id": "bc",
+                "tail_node_id": "b",
+                "head_node_id": "c"
+              }
+            ]
+          },
+          "profile": {
+            "identity_payload": {
+              "schema_version": "grcv4-profile-identity-v1",
+              "profile_family_id": "A_OS",
+              "candidate": "A",
+              "realization": "OS",
+              "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+              "charge_profile_id": "unit_vertex_measure_v1",
+              "geometry_profile_id": "affine_reference_relative_v1",
+              "context_contract_id": "constant_zero_context_v1",
+              "units_id": "grcv4_nondimensional_reference_v1",
+              "gauge_id": "component_zero_mean_potential_v1",
+              "normalization_id": "unnormalized_vertex_stiffness_v1",
+              "domain_id": "fixed_graph_strict_gap_spd_v1",
+              "solver_id": "direct_unique_root_v1",
+              "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+              "candidate_c_transport_id": null,
+              "composition_gain": null,
+              "params_hash": "grcv4-params-sha256:40954b8933714bd37d7ca319042678d52784320d1f0690ac2ae0814d9f8feefa"
+            },
+            "params_resolved": {
+              "schema_version": "grcv4-resolved-params-v1",
+              "common": {
+                "schema_version": "grcv4-common-params-v1",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "boundary_policy_id": "closed_no_flux_v1",
+                "measure_profile_id": "unit_vertex_measure_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "default_step_request": null
+              },
+              "candidate": {
+                "schema_version": "grcv4-candidate-a-params-v1",
+                "eta": 0.25,
+                "kappa_c": 0.5,
+                "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+                "W_floor": 1e-12,
+                "alpha": 0,
+                "beta": 0,
+                "gamma": 0.1,
+                "kappa_Ah": 0.25,
+                "chi_A": 0.5,
+                "zeta_A": 0.75,
+                "tau_A": 1,
+                "descriptor_backend_id": "grcv4-a-descriptor-sha256:00602dbba6fb07430e82e10091d5f93fadd20324ba6b10b68daa262ace663952",
+                "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+              },
+              "realization": {
+                "schema_version": "grcv4-os-params-v1",
+                "predictor_policy_id": "reference_geometry_predictor_v1",
+                "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+                "split_residual_norm_id": "edge_l2_v1",
+                "tolerance": 10
+              },
+              "geometry": {
+                "schema_version": "grcv4-geometry-profile-params-v1",
+                "K4_base_digest": "grcv4-k4-sha256:e3c3d6b1942e3cf0c573fda53556140ba4af7902e7b71dc904018486263bf0a3",
+                "reference_hodge_digest": "grcv4-hodge-sha256:887307df6daa2f1237c923560ba35972f17be863efb0e5db19bc322d68aee03e",
+                "star_cover_id": "vertex_star_exact_overlap_v1",
+                "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+                "flat_sharp_solver_id": "spd_direct_v1",
+                "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                "kappa_H": 0.125
+              },
+              "solver": {
+                "schema_version": "grcv4-solver-policy-v1",
+                "solver_kind": "direct",
+                "root_selector_id": "unique_admitted_root_v1",
+                "iteration_limit": 1,
+                "conditioning_limit": 100,
+                "residual_norm_id": "edge_l2_v1",
+                "absolute_tolerance": 1e-12,
+                "relative_tolerance": 1e-12,
+                "failure_policy_id": "fail_closed_no_fallback_v1"
+              },
+              "charge": {
+                "schema_version": "grcv4-charge-policy-v1",
+                "policy_id": "stable_pairwise_binary64_charge_v1",
+                "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                "absolute_tolerance": 1e-12,
+                "relative_tolerance": 0,
+                "repair_policy": "never_mutate_resource",
+                "remainder_policy": "compatibility_projection_is_none"
+              },
+              "lifecycle": {
+                "schema_version": "grcv4-lifecycle-policy-v1",
+                "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+                "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                "target_readmission_policy_id": "full_target_fail_closed_v1"
+              }
+            },
+            "complete_profile_id": "grcv4-profile-sha256:37241595cbfafbdf1363a87678ef8f2cc5154c65997263e3bede763607c1be7e"
+          },
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "K4_base": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "reference_hodge": {
+            "schema_version": "grcv4-reference-hodge-identity-v1",
+            "edge_weights": {
+              "ab": 1,
+              "bc": 1
+            }
+          }
+        },
+        "H1_form": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "context": {
+          "contract_id": "constant_zero_context_v1",
+          "value": {}
+        },
+        "current": {
+          "C": [
+            1.5,
+            1.5,
+            0.5
+          ],
+          "W_A": [
+            1.5,
+            1.75
+          ],
+          "Z_4": null
+        },
+        "reset": {
+          "C": [
+            1.75,
+            1.0,
+            0.75
+          ],
+          "W_A": [
+            1.5,
+            1.75
+          ],
+          "Z_4": null
+        },
+        "operation_id": "operation:p952",
+        "Q_target": 3.5,
+        "receipt_ids": [],
+        "source_lifecycle_id": "grcv4-lifecycle-sha256:16cfef14091496a10a84d17328af302fcc2340da662952d169396384d29541ac",
+        "scientific_state_id": "grcv4-state-sha256:1a590e9202ed55da4238a6fa681a9f23cda77f3abc6ad12a0702c9866f0f677d",
+        "reset_id": "grcv4-reset-sha256:1370a77dbe80bbca89b92a980edafbffad6d019cafa59c6e08fac13cc6afd4f4",
+        "step_index": 0,
+        "time": 0.0,
+        "dt": 1.52587890625e-05,
+        "stage": "pre_read",
+        "evaluation_index": 0,
+        "trial_current": null
+      },
+      "backend": {
+        "backend": "grcv3_host_frame_reference_weighted_gradient_v1",
+        "graph": {
+          "schema_version": "grcv4-serialized-graph-v1",
+          "live_node_ids": [
+            "a",
+            "b",
+            "c"
+          ],
+          "oriented_edges": [
+            {
+              "edge_id": "ab",
+              "tail_node_id": "a",
+              "head_node_id": "b"
+            },
+            {
+              "edge_id": "bc",
+              "tail_node_id": "b",
+              "head_node_id": "c"
+            }
+          ]
+        },
+        "dimension": 1,
+        "positions": [
+          [
+            0.0
+          ],
+          [
+            1.0
+          ],
+          [
+            2.0
+          ]
+        ],
+        "reference_weights": {
+          "ab": 1.0,
+          "bc": 1.0
+        },
+        "regularization": 1.0,
+        "rounding": "exact_binary64_input_normal_equations_then_binary64_gradient_v1"
+      },
+      "base_witness": {
+        "H": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "J": [
+          0.35510151927177436,
+          -0.8576882413550914
+        ]
+      },
+      "homogeneous_zero_current_control": false,
+      "base_birth_decision": {
+        "outcome": "no_event",
+        "locus": null,
+        "scores": []
+      },
+      "probes": [
+        {
+          "neighbor": "a",
+          "sign": -1,
+          "amplitude": "1/64",
+          "resources": [
+            1.515625,
+            1.484375,
+            0.5
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              0.3304835064788579,
+              -0.8325307855319692
+            ]
+          },
+          "exact_represented_current_difference": [
+            "-443478692963123/18014398509481984",
+            "226598217341205/9007199254740992"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "a",
+          "sign": 1,
+          "amplitude": "1/64",
+          "resources": [
+            1.484375,
+            1.515625,
+            0.5
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              0.3797302257483824,
+              -0.8828702356207708
+            ]
+          },
+          "exact_represented_current_difference": [
+            "443671333242677/18014398509481984",
+            "-1772025312365/70368744177664"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "c",
+          "sign": -1,
+          "amplitude": "1/64",
+          "resources": [
+            1.5,
+            1.484375,
+            0.515625
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              0.3344534611787605,
+              -0.8247948554447636
+            ]
+          },
+          "exact_represented_current_difference": [
+            "-185981173467243/9007199254740992",
+            "74069320264353/2251799813685248"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "c",
+          "sign": 1,
+          "amplitude": "1/64",
+          "resources": [
+            1.5,
+            1.515625,
+            0.484375
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              0.37575709965587784,
+              -0.890623589503353
+            ]
+          },
+          "exact_represented_current_difference": [
+            "372097856483879/18014398509481984",
+            "-296655243295657/9007199254740992"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        }
+      ],
+      "source_snapshot_digest": "d1c24d2e204000205168b03e0a65771ae93dac060d2578d761d87871df484324",
+      "publication_unchanged": true
+    },
+    {
+      "family": "C_PC",
+      "source": {
+        "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+        "reference": {
+          "descriptor_version": "grcv4-reference-geometry-v1",
+          "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+          "graph": {
+            "schema_version": "grcv4-serialized-graph-v1",
+            "live_node_ids": [
+              "a",
+              "b",
+              "c"
+            ],
+            "oriented_edges": [
+              {
+                "edge_id": "ab",
+                "tail_node_id": "a",
+                "head_node_id": "b"
+              },
+              {
+                "edge_id": "bc",
+                "tail_node_id": "b",
+                "head_node_id": "c"
+              }
+            ]
+          },
+          "profile": {
+            "identity_payload": {
+              "schema_version": "grcv4-profile-identity-v1",
+              "profile_family_id": "C_PC",
+              "candidate": "C",
+              "realization": "PC",
+              "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+              "charge_profile_id": "unit_vertex_measure_v1",
+              "geometry_profile_id": "affine_reference_relative_v1",
+              "context_contract_id": "constant_zero_context_v1",
+              "units_id": "grcv4_nondimensional_reference_v1",
+              "gauge_id": "component_zero_mean_potential_v1",
+              "normalization_id": "unnormalized_vertex_stiffness_v1",
+              "domain_id": "fixed_graph_strict_gap_spd_v1",
+              "solver_id": "direct_unique_root_v1",
+              "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+              "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+              "composition_gain": null,
+              "params_hash": "grcv4-params-sha256:20d675efe4c0995ec9760f9c86120dba57697e57ae1a90a146c581a07b0f1cd8"
+            },
+            "params_resolved": {
+              "schema_version": "grcv4-resolved-params-v1",
+              "common": {
+                "schema_version": "grcv4-common-params-v1",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "boundary_policy_id": "closed_no_flux_v1",
+                "measure_profile_id": "unit_vertex_measure_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "default_step_request": null
+              },
+              "candidate": {
+                "schema_version": "grcv4-candidate-c-params-v1",
+                "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                "Lambda_C": 1,
+                "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+                "C_ref": 1,
+                "kappa_M_C": 0,
+                "kappa_Phi_C": 1,
+                "eta_C": 0.5,
+                "W_C_tr": {
+                  "ab": 2,
+                  "bc": 2
+                },
+                "W_C_tr_content_digest": "grcv4-wctr-sha256:3e4a9564866c24ba8fd3d439acefb8fd8f87ebb055fe92a9fe0f6341c26036c0",
+                "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+                "tau_C": 0.25,
+                "chi_C": 0.25,
+                "zeta_C": 0.25,
+                "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+                "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+                "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+              },
+              "realization": {
+                "schema_version": "grcv4-pc-params-v1",
+                "tau_PC": 0.5,
+                "radius": 64,
+                "carrier_norm_id": "symmetric_star_frobenius_v1",
+                "source_envelope_id": "pc_compact_base_chart_v1:0x1.0000000000000p+2:0x1.0000000000000p+0:0x1.0000000000000p+0",
+                "writer_id": "zero_order_hold_exponential_v1"
+              },
+              "geometry": {
+                "schema_version": "grcv4-geometry-profile-params-v1",
+                "K4_base_digest": "grcv4-k4-sha256:e3c3d6b1942e3cf0c573fda53556140ba4af7902e7b71dc904018486263bf0a3",
+                "reference_hodge_digest": "grcv4-hodge-sha256:7edcee49757ddb823bbf0ba919459f44e310e469156835d60df5a96b310ee64d",
+                "star_cover_id": "vertex_star_exact_overlap_v1",
+                "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+                "flat_sharp_solver_id": "spd_direct_v1",
+                "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                "kappa_H": 1e-05
+              },
+              "solver": {
+                "schema_version": "grcv4-solver-policy-v1",
+                "solver_kind": "direct",
+                "root_selector_id": "unique_admitted_root_v1",
+                "iteration_limit": 60,
+                "conditioning_limit": 100000000,
+                "residual_norm_id": "edge_l2_v1",
+                "absolute_tolerance": 1e-11,
+                "relative_tolerance": 1e-11,
+                "failure_policy_id": "fail_closed_no_fallback_v1"
+              },
+              "charge": {
+                "schema_version": "grcv4-charge-policy-v1",
+                "policy_id": "stable_pairwise_binary64_charge_v1",
+                "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                "absolute_tolerance": 1e-11,
+                "relative_tolerance": 0,
+                "repair_policy": "never_mutate_resource",
+                "remainder_policy": "compatibility_projection_is_none"
+              },
+              "lifecycle": {
+                "schema_version": "grcv4-lifecycle-policy-v1",
+                "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                "history_policy_id": "candidate_c_no_independent_history_v1",
+                "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                "target_readmission_policy_id": "full_target_fail_closed_v1"
+              }
+            },
+            "complete_profile_id": "grcv4-profile-sha256:a091011f02fc2a5badffa9b8531fb26bf65fbf8602d489d8d7a730c84b2bf629"
+          },
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "K4_base": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "reference_hodge": {
+            "schema_version": "grcv4-reference-hodge-identity-v1",
+            "edge_weights": {
+              "ab": 2,
+              "bc": 2
+            }
+          }
+        },
+        "H1_form": [
+          [
+            2.0000025,
+            1.25e-06
+          ],
+          [
+            1.25e-06,
+            2.0000025
+          ]
+        ],
+        "context": {
+          "contract_id": "constant_zero_context_v1",
+          "value": {}
+        },
+        "current": {
+          "C": [
+            1.5,
+            1.5,
+            0.5
+          ],
+          "W_A": null,
+          "Z_4": [
+            0.25,
+            0.125,
+            0.125,
+            0.25
+          ]
+        },
+        "reset": {
+          "C": [
+            1.75,
+            1.0,
+            0.75
+          ],
+          "W_A": null,
+          "Z_4": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "operation_id": "ordinary-step-1",
+        "Q_target": 3.5,
+        "receipt_ids": [],
+        "source_lifecycle_id": "grcv4-lifecycle-sha256:88463af7eaf7369538c3e0b9f8856a63270ebe5c95ac061d7588f90a24b1b0c9",
+        "scientific_state_id": "grcv4-state-sha256:ace375e3341b2ae5980696782308c696b1da2c9002182ce06294123a82f72295",
+        "reset_id": "grcv4-reset-sha256:463476f72335e71aa19db6d9c53322c7bc3c4a088a574c14dc467cefede11c57",
+        "step_index": 0,
+        "time": 0.0,
+        "dt": 1.52587890625e-05,
+        "stage": "pre_read",
+        "evaluation_index": 0,
+        "trial_current": null
+      },
+      "backend": null,
+      "base_witness": {
+        "H": [
+          [
+            2.0000025,
+            1.25e-06
+          ],
+          [
+            1.25e-06,
+            2.0000025
+          ]
+        ],
+        "J": [
+          2.0334447813783116,
+          -4.120405159450075
+        ]
+      },
+      "homogeneous_zero_current_control": false,
+      "base_birth_decision": {
+        "outcome": "resolved",
+        "locus": [
+          "a",
+          "c"
+        ],
+        "scores": [
+          {
+            "locus": [
+              "a",
+              "c"
+            ],
+            "score": "34844914372704104359490377921249/89203203801713849087301554131156256528793600"
+          }
+        ]
+      },
+      "probes": [
+        {
+          "neighbor": "a",
+          "sign": -1,
+          "amplitude": "1/64",
+          "resources": [
+            1.515625,
+            1.484375,
+            0.5
+          ],
+          "witness": {
+            "H": [
+              [
+                2.0000025,
+                1.25e-06
+              ],
+              [
+                1.25e-06,
+                2.0000025
+              ]
+            ],
+            "J": [
+              1.8729095454364606,
+              -3.9924786794155964
+            ]
+          },
+          "exact_represented_current_difference": [
+            "-722986428767555/4503599627370496",
+            "288064823907049/2251799813685248"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "resolved",
+            "locus": [
+              "a",
+              "c"
+            ],
+            "scores": [
+              {
+                "locus": [
+                  "a",
+                  "c"
+                ],
+                "score": "34844914372704104359490377921249/89203203801713849087301554131156256528793600"
+              }
+            ]
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "a",
+          "sign": 1,
+          "amplitude": "1/64",
+          "resources": [
+            1.484375,
+            1.515625,
+            0.5
+          ],
+          "witness": {
+            "H": [
+              [
+                2.0000025,
+                1.25e-06
+              ],
+              [
+                1.25e-06,
+                2.0000025
+              ]
+            ],
+            "J": [
+              2.1939800173201625,
+              -4.248331639484555
+            ]
+          },
+          "exact_represented_current_difference": [
+            "361493214383777/2251799813685248",
+            "-72016205976763/562949953421312"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "resolved",
+            "locus": [
+              "a",
+              "c"
+            ],
+            "scores": [
+              {
+                "locus": [
+                  "a",
+                  "c"
+                ],
+                "score": "34844914372704104359490377921249/89203203801713849087301554131156256528793600"
+              }
+            ]
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "c",
+          "sign": -1,
+          "amplitude": "1/64",
+          "resources": [
+            1.5,
+            1.484375,
+            0.515625
+          ],
+          "witness": {
+            "H": [
+              [
+                2.0000025,
+                1.25e-06
+              ],
+              [
+                1.25e-06,
+                2.0000025
+              ]
+            ],
+            "J": [
+              1.9055183013438322,
+              -3.959869923508225
+            ]
+          },
+          "exact_represented_current_difference": [
+            "-576129647814101/4503599627370496",
+            "11296662949493/70368744177664"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "resolved",
+            "locus": [
+              "a",
+              "c"
+            ],
+            "scores": [
+              {
+                "locus": [
+                  "a",
+                  "c"
+                ],
+                "score": "34844914372704104359490377921249/89203203801713849087301554131156256528793600"
+              }
+            ]
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "c",
+          "sign": 1,
+          "amplitude": "1/64",
+          "resources": [
+            1.5,
+            1.515625,
+            0.484375
+          ],
+          "witness": {
+            "H": [
+              [
+                2.0000025,
+                1.25e-06
+              ],
+              [
+                1.25e-06,
+                2.0000025
+              ]
+            ],
+            "J": [
+              2.1613712614127913,
+              -4.280940395391927
+            ]
+          },
+          "exact_represented_current_difference": [
+            "288064823907051/2251799813685248",
+            "-90373303595945/562949953421312"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "resolved",
+            "locus": [
+              "a",
+              "c"
+            ],
+            "scores": [
+              {
+                "locus": [
+                  "a",
+                  "c"
+                ],
+                "score": "34844914372704104359490377921249/89203203801713849087301554131156256528793600"
+              }
+            ]
+          },
+          "publication_unchanged": true
+        }
+      ],
+      "source_snapshot_digest": "90472ba22d3bd2de6c42cf44c194381ebce29dbc0df1b03b7658dbcc2ce27c7b",
+      "publication_unchanged": true
+    },
+    {
+      "family": "A_OS",
+      "source": {
+        "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+        "reference": {
+          "descriptor_version": "grcv4-reference-geometry-v1",
+          "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+          "graph": {
+            "schema_version": "grcv4-serialized-graph-v1",
+            "live_node_ids": [
+              "a",
+              "b",
+              "c"
+            ],
+            "oriented_edges": [
+              {
+                "edge_id": "ab",
+                "tail_node_id": "a",
+                "head_node_id": "b"
+              },
+              {
+                "edge_id": "bc",
+                "tail_node_id": "b",
+                "head_node_id": "c"
+              }
+            ]
+          },
+          "profile": {
+            "identity_payload": {
+              "schema_version": "grcv4-profile-identity-v1",
+              "profile_family_id": "A_OS",
+              "candidate": "A",
+              "realization": "OS",
+              "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+              "charge_profile_id": "unit_vertex_measure_v1",
+              "geometry_profile_id": "affine_reference_relative_v1",
+              "context_contract_id": "constant_zero_context_v1",
+              "units_id": "grcv4_nondimensional_reference_v1",
+              "gauge_id": "component_zero_mean_potential_v1",
+              "normalization_id": "unnormalized_vertex_stiffness_v1",
+              "domain_id": "fixed_graph_strict_gap_spd_v1",
+              "solver_id": "direct_unique_root_v1",
+              "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+              "candidate_c_transport_id": null,
+              "composition_gain": null,
+              "params_hash": "grcv4-params-sha256:40954b8933714bd37d7ca319042678d52784320d1f0690ac2ae0814d9f8feefa"
+            },
+            "params_resolved": {
+              "schema_version": "grcv4-resolved-params-v1",
+              "common": {
+                "schema_version": "grcv4-common-params-v1",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "boundary_policy_id": "closed_no_flux_v1",
+                "measure_profile_id": "unit_vertex_measure_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "default_step_request": null
+              },
+              "candidate": {
+                "schema_version": "grcv4-candidate-a-params-v1",
+                "eta": 0.25,
+                "kappa_c": 0.5,
+                "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+                "W_floor": 1e-12,
+                "alpha": 0,
+                "beta": 0,
+                "gamma": 0.1,
+                "kappa_Ah": 0.25,
+                "chi_A": 0.5,
+                "zeta_A": 0.75,
+                "tau_A": 1,
+                "descriptor_backend_id": "grcv4-a-descriptor-sha256:00602dbba6fb07430e82e10091d5f93fadd20324ba6b10b68daa262ace663952",
+                "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+              },
+              "realization": {
+                "schema_version": "grcv4-os-params-v1",
+                "predictor_policy_id": "reference_geometry_predictor_v1",
+                "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+                "split_residual_norm_id": "edge_l2_v1",
+                "tolerance": 10
+              },
+              "geometry": {
+                "schema_version": "grcv4-geometry-profile-params-v1",
+                "K4_base_digest": "grcv4-k4-sha256:e3c3d6b1942e3cf0c573fda53556140ba4af7902e7b71dc904018486263bf0a3",
+                "reference_hodge_digest": "grcv4-hodge-sha256:887307df6daa2f1237c923560ba35972f17be863efb0e5db19bc322d68aee03e",
+                "star_cover_id": "vertex_star_exact_overlap_v1",
+                "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+                "flat_sharp_solver_id": "spd_direct_v1",
+                "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                "kappa_H": 0.125
+              },
+              "solver": {
+                "schema_version": "grcv4-solver-policy-v1",
+                "solver_kind": "direct",
+                "root_selector_id": "unique_admitted_root_v1",
+                "iteration_limit": 1,
+                "conditioning_limit": 100,
+                "residual_norm_id": "edge_l2_v1",
+                "absolute_tolerance": 1e-12,
+                "relative_tolerance": 1e-12,
+                "failure_policy_id": "fail_closed_no_fallback_v1"
+              },
+              "charge": {
+                "schema_version": "grcv4-charge-policy-v1",
+                "policy_id": "stable_pairwise_binary64_charge_v1",
+                "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                "absolute_tolerance": 1e-12,
+                "relative_tolerance": 0,
+                "repair_policy": "never_mutate_resource",
+                "remainder_policy": "compatibility_projection_is_none"
+              },
+              "lifecycle": {
+                "schema_version": "grcv4-lifecycle-policy-v1",
+                "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+                "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                "target_readmission_policy_id": "full_target_fail_closed_v1"
+              }
+            },
+            "complete_profile_id": "grcv4-profile-sha256:37241595cbfafbdf1363a87678ef8f2cc5154c65997263e3bede763607c1be7e"
+          },
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "K4_base": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "reference_hodge": {
+            "schema_version": "grcv4-reference-hodge-identity-v1",
+            "edge_weights": {
+              "ab": 1,
+              "bc": 1
+            }
+          }
+        },
+        "H1_form": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "context": {
+          "contract_id": "constant_zero_context_v1",
+          "value": {}
+        },
+        "current": {
+          "C": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "W_A": [
+            1.5,
+            1.75
+          ],
+          "Z_4": null
+        },
+        "reset": {
+          "C": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "W_A": [
+            1.5,
+            1.75
+          ],
+          "Z_4": null
+        },
+        "operation_id": "operation:p952",
+        "Q_target": 3.0,
+        "receipt_ids": [],
+        "source_lifecycle_id": "grcv4-lifecycle-sha256:0a310d48d2af254c4c2b55d4594dd358edecdeca714dfaae0e2e6d10fb6b841b",
+        "scientific_state_id": "grcv4-state-sha256:efd8ee5691cc2ddd9579a32339f972636e9111d1da5870adc657fbdb841a1f37",
+        "reset_id": "grcv4-reset-sha256:63a0076d134fe128d91ff11f0e03c822200a57a70d84da71de3d09e1e9f23bf0",
+        "step_index": 0,
+        "time": 0.0,
+        "dt": 1.52587890625e-05,
+        "stage": "pre_read",
+        "evaluation_index": 0,
+        "trial_current": null
+      },
+      "backend": {
+        "backend": "grcv3_host_frame_reference_weighted_gradient_v1",
+        "graph": {
+          "schema_version": "grcv4-serialized-graph-v1",
+          "live_node_ids": [
+            "a",
+            "b",
+            "c"
+          ],
+          "oriented_edges": [
+            {
+              "edge_id": "ab",
+              "tail_node_id": "a",
+              "head_node_id": "b"
+            },
+            {
+              "edge_id": "bc",
+              "tail_node_id": "b",
+              "head_node_id": "c"
+            }
+          ]
+        },
+        "dimension": 1,
+        "positions": [
+          [
+            0.0
+          ],
+          [
+            1.0
+          ],
+          [
+            2.0
+          ]
+        ],
+        "reference_weights": {
+          "ab": 1.0,
+          "bc": 1.0
+        },
+        "regularization": 1.0,
+        "rounding": "exact_binary64_input_normal_equations_then_binary64_gradient_v1"
+      },
+      "base_witness": {
+        "H": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "J": [
+          0.0,
+          0.0
+        ]
+      },
+      "homogeneous_zero_current_control": true,
+      "base_birth_decision": {
+        "outcome": "no_event",
+        "locus": null,
+        "scores": []
+      },
+      "probes": [
+        {
+          "neighbor": "a",
+          "sign": -1,
+          "amplitude": "1/64",
+          "resources": [
+            1.015625,
+            0.984375,
+            1.0
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              -0.02454615352554653,
+              0.024747942442654058
+            ]
+          },
+          "exact_represented_current_difference": [
+            "-3537473531872971/144115188075855872",
+            "7133108759227091/288230376151711744"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "a",
+          "sign": 1,
+          "amplitude": "1/64",
+          "resources": [
+            0.984375,
+            1.015625,
+            1.0
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              0.02454615352554653,
+              -0.024747942442654058
+            ]
+          },
+          "exact_represented_current_difference": [
+            "3537473531872971/144115188075855872",
+            "-7133108759227091/288230376151711744"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "c",
+          "sign": -1,
+          "amplitude": "1/64",
+          "resources": [
+            1.0,
+            0.984375,
+            1.015625
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              -0.020587065881222354,
+              0.03236280360149186
+            ]
+          },
+          "exact_represented_current_difference": [
+            "-2966908871402395/144115188075855872",
+            "4663971527690985/144115188075855872"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        },
+        {
+          "neighbor": "c",
+          "sign": 1,
+          "amplitude": "1/64",
+          "resources": [
+            1.0,
+            1.015625,
+            0.984375
+          ],
+          "witness": {
+            "H": [
+              [
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "J": [
+              0.020587065881222354,
+              -0.03236280360149186
+            ]
+          },
+          "exact_represented_current_difference": [
+            "2966908871402395/144115188075855872",
+            "-4663971527690985/144115188075855872"
+          ],
+          "source_admitted": true,
+          "birth_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          },
+          "publication_unchanged": true
+        }
+      ],
+      "source_snapshot_digest": "7866bfff5eca5e81107d77c38a1495ce5ab4c756132498cecfa6a6848f2b8942",
+      "publication_unchanged": true
+    }
+  ],
+  "source_admissions": 15,
+  "present_reads": 15,
+  "finite_perturbations": 12,
+  "evidence_ceiling": "finite current response beyond Hodge-only score; also present at homogeneous zero-current control, hence not a refinement-necessity certificate",
+  "not_established": [
+    "refinement_necessity",
+    "missing_edge_necessity",
+    "generator_or_partition",
+    "all_ten_applicability",
+    "RG_probe_admissibility",
+    "classical_derivative",
+    "trigger_onset",
+    "native_ATC",
+    "scientific_acceptance"
+  ],
+  "ordinary_steps": 0,
+  "topology_events": 0,
+  "production_changes": false,
+  "forensic_queries": [
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-J0-DERIVATIVE"
+      },
+      "result": {
+        "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+        "output_class": "forensic_evidence_trace",
+        "operation": "contract_provenance",
+        "query": {
+          "contract_id": "D11-C-EC-C-J0-DERIVATIVE"
+        },
+        "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+        "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+        "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+        "row_count": 1,
+        "rows": [
+          {
+            "row_id": "D11-C-EC-C-J0-DERIVATIVE",
+            "classification": "source_exact_contract_provenance",
+            "payload": {
+              "contract": {
+                "node_id": "equation_contract:D11-C-EC-C-J0-DERIVATIVE",
+                "kind": "equation_contract",
+                "identifier": "D11-C-EC-C-J0-DERIVATIVE",
+                "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+                "source_json_pointer": "/equation_contracts/8",
+                "attributes": {
+                  "equation_contract_id": "D11-C-EC-C-J0-DERIVATIVE",
+                  "parent_object_ids": [
+                    "C-BASELINE-POTENTIAL",
+                    "C-BASELINE-CURRENT"
+                  ],
+                  "normative_equation_or_contract": "delta_J0_C_equals_minus_delta_M4_C_d0_Phi_0_C_minus_M4_C_delta_d0_Phi_0_C_minus_M4_C_d0_delta_Phi_0_C_with_same_profile_fixed_graph_delta_M4_C_equals_delta_d0_equals_zero",
+                  "support_semantics": "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum",
+                  "accepted_claim_ids": [
+                    "D11-C-CL-O-001"
+                  ]
+                }
+              },
+              "accepted_claim_support_semantics": [
+                "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum"
+              ],
+              "support_disposition": [
+                "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum"
+              ]
+            },
+            "source_ref": {
+              "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/8",
+              "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+            },
+            "edge_refs": [
+              {
+                "edge_id": "propagation:2e0701e626b5398ad0ddb47f8298df8ed7b439ab13666f96173a85de58454700",
+                "source": "equation_contract:D11-C-EC-C-J0-DERIVATIVE",
+                "target": "normative_object:C-BASELINE-CURRENT",
+                "relation": "parent_object",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+                "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+                "source_json_pointer": "/equation_contracts/8/parent_object_ids/1"
+              },
+              {
+                "edge_id": "propagation:4b08bb8336e59b971071310ef19f2f7a134df386226a6396ab8c18f43b29ab8b",
+                "source": "equation_contract:D11-C-EC-C-J0-DERIVATIVE",
+                "target": "normative_object:C-BASELINE-POTENTIAL",
+                "relation": "parent_object",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+                "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+                "source_json_pointer": "/equation_contracts/8/parent_object_ids/0"
+              },
+              {
+                "edge_id": "propagation:4bb48a1b1b4cbd586bbcf7b896f23896774e11826a2df2184e563cef7a3795a9",
+                "source": "equation_contract:D11-C-EC-C-J0-DERIVATIVE",
+                "target": "current_claim:D11-C-CL-O-001",
+                "relation": "accepted_claim",
+                "support_semantic": "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum",
+                "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+                "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+                "source_json_pointer": "/equation_contracts/8/accepted_claim_ids/0"
+              },
+              {
+                "edge_id": "propagation:7b17e0af5db5f077e800fcddb72a3a8879e2c439e793631e392c5f0ed7dc051a",
+                "source": "equation_contract:D11-C-EC-C-J0-DERIVATIVE",
+                "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+                "relation": "source_identity",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+                "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+                "source_json_pointer": "/equation_contracts/8"
+              }
+            ]
+          }
+        ],
+        "trace_digest": "321c4c2dfeced772d1624f974445b2480a75036234883be36300a6b62156cd66",
+        "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188"
+      }
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR"
+      },
+      "result": {
+        "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+        "output_class": "forensic_evidence_trace",
+        "operation": "contract_provenance",
+        "query": {
+          "contract_id": "D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR"
+        },
+        "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+        "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+        "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+        "row_count": 1,
+        "rows": [
+          {
+            "row_id": "D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+            "classification": "source_exact_contract_provenance",
+            "payload": {
+              "contract": {
+                "attributes": {
+                  "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                  "accepted_claim_ids": [
+                    "D10-CL-C-011",
+                    "D10-CL-N-004"
+                  ],
+                  "blocked_overread": "the_identity_extension_is_not_a_full_state_orthogonal_projector_without_a_product_metric",
+                  "contract_scope": "parent_atomic_contract",
+                  "equation_contract_id": "D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                  "independent_derivation_ids": [
+                    "D10.2-DER-RESOURCE"
+                  ],
+                  "normative_equation_or_contract": "Pi_Q_C_H0_is_the_H0_orthogonal_projector_on_the_structural_C_sector_with_identity_extension_as_canonical_full_tangent_retraction",
+                  "parent_object_ids": [
+                    "CORE-STRUCTURAL-CHARGE-PROJECTOR"
+                  ],
+                  "premises_used": [
+                    "positive_H0",
+                    "declared_charge_covector",
+                    "complete_state_tangent"
+                  ],
+                  "profile_ids": [],
+                  "promotion_status": "promotion_proved",
+                  "source_lineage": [
+                    "GRC9V4-CD-D9-v1",
+                    "GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1"
+                  ],
+                  "specification_destination": "GRCV4_current_promoted_common_core",
+                  "substrate_disposition": "GRC_derived"
+                },
+                "identifier": "D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "kind": "equation_contract",
+                "node_id": "equation_contract:D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "source_json_pointer": "/normative_equation_contract_registry/4",
+                "source_record_id": "GRC9V4-CD-D10.2-v1"
+              },
+              "accepted_claim_support_semantics": [
+                "indeterminate_requires_review"
+              ],
+              "support_disposition": "indeterminate_requires_review"
+            },
+            "source_ref": {
+              "record_id": "GRC9V4-CD-D10.2-v1",
+              "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/4",
+              "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+            },
+            "edge_refs": [
+              {
+                "edge_id": "propagation:1b69ed6b10f254393d54fde50a4121e0cca1ae8f25135d8f2096d87f7962e31e",
+                "source": "equation_contract:D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+                "relation": "source_identity",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-CD-D10.2-v1",
+                "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+                "source_json_pointer": "/normative_equation_contract_registry/4/source_lineage/0"
+              },
+              {
+                "edge_id": "propagation:38fcdb402840cfe4d49ff57db4b2c780d53b8dded191f7b3a713eb68ac110e95",
+                "source": "equation_contract:D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "target": "current_claim:D10-CL-C-011",
+                "relation": "accepted_claim",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-CD-D10.2-v1",
+                "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+                "source_json_pointer": "/normative_equation_contract_registry/4/accepted_claim_ids/0"
+              },
+              {
+                "edge_id": "propagation:4f6ea668c66ce68678bf17297729de0a41455b0859ec0a1225260f92f0ff8abe",
+                "source": "equation_contract:D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "target": "normative_object:CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "relation": "parent_object",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-CD-D10.2-v1",
+                "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+                "source_json_pointer": "/normative_equation_contract_registry/4/parent_object_ids/0"
+              },
+              {
+                "edge_id": "propagation:62fe6bb5e7ce1962e5ca042b0801e9b760fea19aacf245b46a7c8d9dbdb83c10",
+                "source": "equation_contract:D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "target": "current_claim:D10-CL-N-004",
+                "relation": "accepted_claim",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-CD-D10.2-v1",
+                "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+                "source_json_pointer": "/normative_equation_contract_registry/4/accepted_claim_ids/1"
+              },
+              {
+                "edge_id": "propagation:994a77b19a4c4029ea337ebe8270250257a704ab02a8f6b3fcd249362a46fec5",
+                "source": "equation_contract:D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+                "relation": "source_identity",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-CD-D10.2-v1",
+                "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+                "source_json_pointer": "/normative_equation_contract_registry/4"
+              },
+              {
+                "edge_id": "propagation:fa735bf61c5b9db93c083ebc5329ff054d1594c890404ede21f7be9c984df14c",
+                "source": "equation_contract:D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR",
+                "target": "source_record:af13ffa0f91c70aec295640101ce3987d8f4d2735f56a12a6e64ce4eda333501",
+                "relation": "source_identity",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-CD-D10.2-v1",
+                "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+                "source_json_pointer": "/normative_equation_contract_registry/4/source_lineage/1"
+              }
+            ]
+          }
+        ],
+        "trace_digest": "b6486a6bda8c5890b8d74ad1ca3b0a0cccca4b1c38d9e2fd118eb9c064b25705",
+        "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188"
+      }
+    },
+    {
+      "operation": "debt_lifecycle",
+      "query": {
+        "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY"
+      },
+      "result": {
+        "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+        "output_class": "forensic_evidence_trace",
+        "operation": "debt_lifecycle",
+        "query": {
+          "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY"
+        },
+        "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+        "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+        "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+        "row_count": 1,
+        "rows": [
+          {
+            "row_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+            "classification": "narrowed",
+            "payload": {
+              "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+              "D9_predecessor_status": "carried",
+              "D9_predecessor_reason": "RG2b_runtime_lifecycle_does_not_upgrade_the_Lipschitz_section_to_C1",
+              "predecessor_claim_ids": [
+                "D10-HCL-GTRS-RG-DEBT-C1-SECTION-REGULARITY"
+              ],
+              "blocked_claim_id": "D10-CL-C-009",
+              "supported_claim_id": "D10-CL-O-005",
+              "blocked_claim_ids": [
+                "D10-CL-C-009"
+              ],
+              "supported_claim_ids": [
+                "D10-CL-O-005"
+              ],
+              "conditioned_claim_ids": [
+                "D10-CL-C-005",
+                "D10-CL-C-009"
+              ],
+              "negative_successor_claim_ids": [],
+              "routed_claim_ids": [],
+              "evidence_refs": [
+                "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+                "GRC9V4-GTRS-CI-PC-v1",
+                "GRC9V4-GTRS-COMP-v1",
+                "GRC9V4-GTRS-PC-v1",
+                "GRC9V4-GTRS-RG-v1"
+              ],
+              "activation_condition": "RG_derivative_or_spectrum_claimed",
+              "transformation": "narrowed",
+              "successor_claim_ids": [
+                "D10-CL-C-005",
+                "D10-CL-C-009",
+                "D10-CL-O-005"
+              ],
+              "normative_effect": "RG2b_is_optional_Lipschitz_only;_classical_derivative_and_spectrum_claims_are_excluded",
+              "verification_obligation": null,
+              "predecessor_lineage": [
+                {
+                  "record_id": "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+                  "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9ResidualDebtLedger.json",
+                  "source_digest": "8c37c23c0c28915f9ac15ce867ea0e1532a1e5c233c93d37af932975b4225da8",
+                  "file_sha256": "fc5cf30d1eca35dda5a12f8799665d33a7041f47d1b53fa94137f021fc69609a",
+                  "occurrences": [
+                    {
+                      "json_pointer": "/predecessor_dispositions/1",
+                      "status_or_disposition": "carried",
+                      "debt_contract": null
+                    }
+                  ]
+                },
+                {
+                  "record_id": "GRC9V4-GTRS-COMP-v1",
+                  "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationComparativeSynthesis.json",
+                  "source_digest": "67a9c97a79525dc70c2233fb2b6706c47d2e31388c9160520f6842d7dc63a84b",
+                  "file_sha256": "a2ce74ae0f644f923dd8d5f0a4e4327ef3ae94f499d253141abcf6e0a69f3d38",
+                  "occurrences": [
+                    {
+                      "json_pointer": "/immediate_predecessor_debt_disposition/1",
+                      "status_or_disposition": "carried",
+                      "debt_contract": null
+                    }
+                  ]
+                },
+                {
+                  "record_id": "GRC9V4-GTRS-CI-PC-v1",
+                  "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json",
+                  "source_digest": "5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a",
+                  "file_sha256": "d30a8078aaa9fa5b39e3646b0c481e48494cf90a909eb2722d8c8c04293d9480",
+                  "occurrences": [
+                    {
+                      "json_pointer": "/immediate_predecessor_debt_disposition/1",
+                      "status_or_disposition": "carried",
+                      "debt_contract": null
+                    }
+                  ]
+                },
+                {
+                  "record_id": "GRC9V4-GTRS-PC-v1",
+                  "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.json",
+                  "source_digest": "d1e38d6aa36b03154715c1e26c0b4a1b181dab19ed4bbfbd1575c94c9962e49a",
+                  "file_sha256": "e6328fe5366acf0a2dcbfe78966e8aa4efcafd214d08951998fcf6ce8f88f9d7",
+                  "occurrences": [
+                    {
+                      "json_pointer": "/immediate_predecessor_debt_disposition/1",
+                      "status_or_disposition": "carried",
+                      "debt_contract": null
+                    }
+                  ]
+                },
+                {
+                  "record_id": "GRC9V4-GTRS-RG-v1",
+                  "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json",
+                  "source_digest": "dce24993ac0dd39a5fa5bcd35e46d9166fa28628d3811e9b33724c210ada4c0b",
+                  "file_sha256": "b3586ce7bc6fd7e127724b99a490940012a4ee2688ecdac980cea054e86415aa",
+                  "occurrences": [
+                    {
+                      "json_pointer": "/open_debt/1",
+                      "status_or_disposition": null,
+                      "debt_contract": {
+                        "blocking_scope": "classical_derivative_continuation_spectrum_or_any_claim_that_the_RG_invariant_section_is_C1_or_smoother",
+                        "candidate_scope": "A_and_C",
+                        "issue": "family_admission_proves_one_unique_bounded_Lipschitz_section_but_does_not_execute_a_derivative_graph_C1_1_or_equivalent_bunching_theorem",
+                        "assumption_forbidden_downstream": "Lipschitz_invariant_section_existence_is_called_C1_differentiability_or_used_in_a_classical_Jacobian_without_a_separate_regularization_proof",
+                        "resolution_gate": "GTRS_COMP_and_D9_pre_D10_if_RG_derivative_analysis_is_selected",
+                        "must_close_before_D10": true
+                      }
+                    }
+                  ]
+                }
+              ],
+              "predecessor_lineage_complete": true
+            },
+            "source_ref": {
+              "record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+              "record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+              "source_json_pointer": "/debt_transformations/0",
+              "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DebtClaimTransformationLedger.json"
+            },
+            "edge_refs": [
+              {
+                "edge_id": "propagation:0a87e8378373401b502aa18582a798a0ab621218216d64134bd2286ba8466176",
+                "source": "historical_claim:D10-HCL-GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "transformed_from",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/predecessor_claim_ids/0"
+              },
+              {
+                "edge_id": "propagation:158ef8068e0b70a937e3b612cffd3321028b9724220bca4e3456aa692ff8fe9e",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "current_claim:D10-CL-C-005",
+                "relation": "narrowed",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/successor_claim_ids/0"
+              },
+              {
+                "edge_id": "propagation:1f3345162390cb6aafb5019a89eeeed865b18bb16401c784fe0014130983cf98",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "gate_record:GRC9V4-GTRS-RG-v1",
+                "relation": "supported_by",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/evidence_refs/4"
+              },
+              {
+                "edge_id": "propagation:27661edb8fceec80515d8cbe685142f4785441d0fea7212744f3cda6d587d7fb",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "gate_record:GRC9V4-GTRS-CI-PC-v1",
+                "relation": "supported_by",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/evidence_refs/1"
+              },
+              {
+                "edge_id": "propagation:3f376f78b294c5031260576d6ba5fc559e4a5522208800a017b708d6ea5ff9b0",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "current_claim:D10-CL-C-009",
+                "relation": "narrowed",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/successor_claim_ids/1"
+              },
+              {
+                "edge_id": "propagation:47ed43d9620272346ab3bc0ec4c9810810d560498192bff4b9481454d584f110",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "gate_record:GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+                "relation": "supported_by",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/evidence_refs/0"
+              },
+              {
+                "edge_id": "propagation:56bedebed027bbbf90943f02f6b555ad4a10d2c80036274c8b9f5a95c2db1a55",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "gate_record:GRC9V4-GTRS-COMP-v1",
+                "relation": "supported_by",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/evidence_refs/2"
+              },
+              {
+                "edge_id": "propagation:63715d6bd88653b4edd60c3263bc98e91d38eedbbf6aa76a96666ea23f1c8edc",
+                "source": "historical_claim:D10-HCL-GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "predecessor_claim",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/100/edge_types/0"
+              },
+              {
+                "edge_id": "propagation:6ba582b2e1866debc1fd594ef03c983a244bb038796e46a732a53c0fcbca910a",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "gate_record:GRC9V4-GTRS-PC-v1",
+                "relation": "supported_by",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/evidence_refs/3"
+              },
+              {
+                "edge_id": "propagation:7af06f0fc9350027dfb2b60b61dcbf6b22948640fd6e5b0ecb59daee58d1b4d5",
+                "source": "current_claim:D10-CL-O-005",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "supported_by",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/34/edge_types/0"
+              },
+              {
+                "edge_id": "propagation:7b6366b87a1a9b4bc47f969ef6d7eab0e5a6f7ffcc090cb19baa57feaa765865",
+                "source": "current_claim:D10-CL-C-009",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "successor_of",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/66/edge_types/2"
+              },
+              {
+                "edge_id": "propagation:8636103c9a85750224057a00029eddd51e8027ebbfbe9d25a2cdfecfe22227ff",
+                "source": "current_claim:D10-CL-O-005",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "successor_of",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/34/edge_types/1"
+              },
+              {
+                "edge_id": "propagation:8b71cd54955dff2d751138d38f2124f1576f0b16b03a1b9af851ad1ebf9e37f6",
+                "source": "current_claim:D10-CL-C-005",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "successor_of",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/56/edge_types/1"
+              },
+              {
+                "edge_id": "propagation:a3c263ea723dcacd1c8a5ff835fa8f022527dd976b4f8964c727f70c599f7336",
+                "source": "current_claim:D10-CL-C-009",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "blocked_by",
+                "support_semantic": "indeterminate_requires_review",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/66/edge_types/0"
+              },
+              {
+                "edge_id": "propagation:c3d3710bf5b0b8bd162c34b8222ea5268b737382dd745a3864d67b607b124bf9",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "gate_record:GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "relation": "accepted_at",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0"
+              },
+              {
+                "edge_id": "propagation:dd780d703cd4da84d9c6ab223edae62a38fec8b568cc38fc3e3ba41e37a2202a",
+                "source": "current_claim:D10-CL-C-009",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "conditioned_by",
+                "support_semantic": "conditional",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/66/edge_types/1"
+              },
+              {
+                "edge_id": "propagation:ea8cd11fb0fcd589f9884945170f6038fa2d84c4191351ae08f7717c9bd4089a",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "source_record:b6dfe812b5050ae788bccf247fdec1b004fafbdf71693bc21afba401784ffdbe",
+                "relation": "source_identity",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0"
+              },
+              {
+                "edge_id": "propagation:fe63f008f006ed76e8549204b0b580c73f624f5bc1aa81eea2ef89f5e3adc75d",
+                "source": "current_claim:D10-CL-C-005",
+                "target": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "relation": "conditioned_by",
+                "support_semantic": "conditional",
+                "source_record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+                "source_record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+                "source_json_pointer": "/claim_debt_edges/56/edge_types/0"
+              },
+              {
+                "edge_id": "propagation:feba46541683b4e0b0641d15aaad8ff85a05b872e69590b2433a722376495a32",
+                "source": "debt_transformation:GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+                "target": "current_claim:D10-CL-O-005",
+                "relation": "narrowed",
+                "support_semantic": "not_applicable",
+                "source_record_id": "GRC9V4-D10-DEBT-CLAIM-TRANSFORMATION-LEDGER-v2",
+                "source_record_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+                "source_json_pointer": "/debt_transformations/0/successor_claim_ids/2"
+              }
+            ]
+          }
+        ],
+        "trace_digest": "53b6a9cfd1a070227287b70315388c9f7a02a7c7e7c3706ae955e1a0bbef3c82",
+        "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188"
+      }
+    }
+  ],
+  "forensic_graph_unchanged": true,
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DebtClaimTransformationLedger.json",
+      "sha256": "68190c133d8bda7067dfb4cb9b55980e578ce02051bc5d24066b0349f6f8a23a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+      "sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC2PressureResults.json",
+      "sha256": "d2c0dde892264a4b4fa4f76c837605aa4887def8e72fbbde7a80a62ba55dd722"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSourceIntake.json",
+      "sha256": "b53df01106a9d4ac4a15bb40c0266131a476b7c6bb98484d950f807497b0d732"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_capability_information.py",
+      "sha256": "927e1fc5592d52bec7708bcc4f1817cf1f7e5b6d86b2271dba1a63537c953dbe"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/verify_atc2_candidates.py",
+      "sha256": "1f0a974836174bd4ce4af6101eac6dde65b60864c7de0c46c41fef478376ed8d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/__init__.py",
+      "sha256": "9274b443cd2a0d745ec67d178cd34f8430388ca2ff9c64bc84a9c7c5202f97fa"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/a_initializer.py",
+      "sha256": "6efb1e33baff33e4f5d76de7937a9cb4977c89c28d6bf8999e168bf68e46de3b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/abundance.py",
+      "sha256": "0a2380744e7a91b87f828b5390b51532cc1bf2f27d3aad826b4e112699b875d2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/adapters.py",
+      "sha256": "6ac7e0c32f809e66e9ae23672a7aedb58c4731f5b341ac817663ec736a039d13"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/bundle.py",
+      "sha256": "f9b181c4074d8c7d30e607904aaefcc777273310af02df82aa6dba3af68a319e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/canonical.py",
+      "sha256": "34bb5431e35d7ed12c2520009a70b51e15d2ed88ed89f0c492f99deedfbe69aa"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/counterfactual.py",
+      "sha256": "cfc79773f8d42a7fa7bc1808a6d8f11de65e1a212484bb6b3f5df42b63d88ef3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/discovery.py",
+      "sha256": "e499fe49f352f7c3da549454bf1b5d5c4145540d6e1cbd9c900f7ee997d8146d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/errors.py",
+      "sha256": "f3beb34e0a45fcf6f2eae9bab05aafaca17f80ff76a53fa697de67abfdeff4a0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/forensic.py",
+      "sha256": "6d44973aececa003f180082175025e23b9a0db44e5fd9e5d80217b368e552795"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/kernel.py",
+      "sha256": "aa7eb049e8d3a590ce293b95c926dc0acb0ac07229827a2160a8d78d416632f0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/paths.py",
+      "sha256": "8694f04f241340702ab7279ffcc6cd602e7b940aae2ce6c67fd5c790b0deff40"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/receipt_parents.py",
+      "sha256": "4bac3eec6325aeb8eb545aba12f580d60e76fef429dc744040b4939497b86f38"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/ripple.py",
+      "sha256": "959b278e3b8f705b5da507f9063401697c12fe91db24835fa38409e5d478434f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/source_contract.py",
+      "sha256": "66d1e659cc8c7c8f527b8c4bc82a034e2090788c75c72ee5ad5b73f1fdbdcbd3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/successor.py",
+      "sha256": "7657008a745230048a6fa008ffee1990582c5cce2ccb951475aeef2588f775bf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/successor_ux.py",
+      "sha256": "f61d219a6d592325c595e2afe0c6bf4584995b646fecbf0122820c742279e255"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/validation.py",
+      "sha256": "0a8e6b0c82ef0505d7c68e1d26ef85b1a2088a1af5991a0e56db40b1b5ce9ee1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/web.py",
+      "sha256": "593499e2f0d8d6c676e050e1e385a2c5cfb453c58f87fc64bf443e9cca2dcacd"
+    },
+    {
+      "path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/__init__.py",
+      "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/__init__.py",
+      "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/artifacts.py",
+      "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/authority.py",
+      "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/candidates.py",
+      "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/effects.py",
+      "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/identity.py",
+      "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/scopes.py",
+      "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/session.py",
+      "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972"
+    },
+    {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae"
+    },
+    {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07"
+    },
+    {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b"
+    },
+    {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07"
+    },
+    {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31"
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2"
+    },
+    {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6"
+    },
+    {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428"
+    },
+    {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f"
+    },
+    {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207"
+    },
+    {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e"
+    },
+    {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4"
+    },
+    {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4"
+    },
+    {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397"
+    },
+    {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8"
+    },
+    {
+      "path": "src/pygrc/integrations/__init__.py",
+      "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237"
+    },
+    {
+      "path": "src/pygrc/integrations/graph_adapter_boundary.py",
+      "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d"
+    },
+    {
+      "path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53"
+    },
+    {
+      "path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/__init__.py",
+      "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+      "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+      "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+      "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+      "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+      "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcv3.py",
+      "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b"
+    },
+    {
+      "path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de"
+    },
+    {
+      "path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f"
+    },
+    {
+      "path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2"
+    },
+    {
+      "path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234"
+    },
+    {
+      "path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "eaf8fb26d0f3cb4f9f6ac9c761fb17d90d3d1142f0e145c0bd0ab746a3c477d1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "948027b168191d428423421d19a4c354fb9a1c18df25dd47b93e6275bcfd7b02"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "c7e835d7d371737e4c983573da4c2139d21c2dd52f02cd9539f1f1029c2063cf"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_event_codec.py",
+      "sha256": "6955698da860261a145a2b825ce217de010c814b579e076fabf324262a277f04"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_initializer.py",
+      "sha256": "a1922092b5dcb11d33eef471ebf2410c9d59f812e55b635299ecd80db29974c4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "21e308326722b7ee6ef5b2e936153b11502bcd233c4839813d4025bb8358b724"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "327a2fb22bd38cbbcac5470a45c6bb61f5cc8dc1771bcb3aaa74b1d933a05d82"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "5bd9b12cd72edcf2e1f82fcea9e4472ba0bfc6cda22712e95cac958a7ae1f347"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "185e00a0ad73a79f10e5a66acd24970365976bb54b3cba9397dc2aff71673b1b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4"
+    },
+    {
+      "path": "src/pygrc/telemetry/__init__.py",
+      "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_defaults.py",
+      "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_results.py",
+      "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grc9_extensions.py",
+      "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+      "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_extensions.py",
+      "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+      "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+      "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+      "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+      "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_telemetry_utils.py",
+      "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb"
+    },
+    {
+      "path": "src/pygrc/telemetry/compare.py",
+      "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11"
+    },
+    {
+      "path": "src/pygrc/telemetry/experiments.py",
+      "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9_contract.py",
+      "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9v3_contract.py",
+      "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_contract.py",
+      "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+      "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb"
+    },
+    {
+      "path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929"
+    },
+    {
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+    },
+    {
+      "path": "src/pygrc/telemetry/recorder.py",
+      "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613"
+    },
+    {
+      "path": "src/pygrc/telemetry/reports.py",
+      "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556"
+    },
+    {
+      "path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc"
+    },
+    {
+      "path": "src/pygrc/utils/__init__.py",
+      "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16"
+    },
+    {
+      "path": "src/pygrc/visualization/__init__.py",
+      "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb"
+    },
+    {
+      "path": "src/pygrc/visualization/graph_render.py",
+      "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f"
+    },
+    {
+      "path": "src/pygrc/visualization/layout.py",
+      "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b"
+    },
+    {
+      "path": "src/pygrc/visualization/render.py",
+      "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340"
+    },
+    {
+      "path": "src/pygrc/visualization/representative.py",
+      "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e"
+    },
+    {
+      "path": "src/pygrc/visualization/representative_graphs.py",
+      "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef"
+    }
+  ],
+  "record_digest": "1e4f6f19588a8b06886d8cf4b1c150c5d0b2f7dc4b7793bf215dc62390290ae9"
+}

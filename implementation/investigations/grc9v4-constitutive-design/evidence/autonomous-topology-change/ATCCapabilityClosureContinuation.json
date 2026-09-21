@@ -1,0 +1,444 @@
+{
+  "schema": "grcv4_atc_capability_continuation_v1",
+  "record_id": "ATC-CAP-REQ-01",
+  "date": "2026-09-20",
+  "status": "open_program_requirement_and_exploratory_research",
+  "scientific_acceptance": false,
+  "ATC2_user_acceptance": false,
+  "authorization": "User endorsed capability-gap-driven V4-native scientific design, with older substrates as directional hints rather than direct mechanisms.",
+  "predecessor_ATC2_record_digest": "20faeb2011c913dc3113406782e726071eb56c89bd2b887c3f44ab40d0cd14cf",
+  "origin_status_preserved": {
+    "claims": 35,
+    "debts": 28,
+    "reciprocal_links": 165,
+    "accepted_descendants_added": [],
+    "debt_discharges": []
+  },
+  "required_cells": [
+    {
+      "family": "A_OS",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "K0_diagonal_reference_nonedge_score_null"
+    },
+    {
+      "family": "A_OS",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "A_OS",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "bounded_generated_supplied_event_from_already_active_guard"
+    },
+    {
+      "family": "A_CI",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "A_CI",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "A_CI",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "A_PC",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_pass_additional_three_node_source_rejected_no_chart_enlargement"
+    },
+    {
+      "family": "A_PC",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "A_PC",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_pass_additional_three_node_source_rejected_no_chart_enlargement"
+    },
+    {
+      "family": "A_CI_PC",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "A_CI_PC",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "A_CI_PC",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "A_RG2b",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "A_RG2b",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "A_RG2b",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "C_OS",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "K0_diagonal_reference_nonedge_score_null"
+    },
+    {
+      "family": "C_OS",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "C_OS",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "C_CI",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "C_CI",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "C_CI",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "C_PC",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "bounded_generated_supplied_event_from_already_active_guard"
+    },
+    {
+      "family": "C_PC",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "C_PC",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "bounded_generated_supplied_event_from_already_active_guard"
+    },
+    {
+      "family": "C_CI_PC",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "C_CI_PC",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "C_CI_PC",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "C_RG2b",
+      "capability": "relation_growth",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    },
+    {
+      "family": "C_RG2b",
+      "capability": "endogenous_vertex_refinement",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "conditional_supplied_partition_builder_not_a_generator"
+    },
+    {
+      "family": "C_RG2b",
+      "capability": "simplification",
+      "required": true,
+      "scientific_closure": "open",
+      "native_autonomy": "not_implemented",
+      "prior_ATC2_evidence": "present_read_only_not_operational_capability"
+    }
+  ],
+  "additional_requirements": [
+    "constitutive_operation_composition",
+    "trigger_onset_and_discriminating_controls",
+    "complete_target_policy_transport",
+    "continued_native_automatic_operation",
+    "save_load_duplicate_and_repeated_events_without_external_catalogue"
+  ],
+  "debt_dependencies": {
+    "common": [
+      "02",
+      "03",
+      "04",
+      "07",
+      "09",
+      "10",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "21",
+      "22",
+      "23",
+      "26",
+      "27",
+      "28"
+    ],
+    "classical_structural_route": [
+      "05",
+      "06",
+      "08"
+    ],
+    "source_admission": [
+      "01",
+      "24"
+    ],
+    "batch_if_selected": [
+      "11"
+    ],
+    "stronger_interpretations_only_if_claimed": [
+      "17",
+      "18",
+      "19",
+      "20",
+      "25"
+    ]
+  },
+  "debt_id_prefix": "ATC7-DB-",
+  "partial_adjudication_permitted": true,
+  "final_scientific_synthesis_requires": "scientific_capabilities_and_combined_law_closure_plus_source_readmission",
+  "native_closure_boundary": "7T_exit_before_topology_dependent_Tranche_8; independent_chart_port_work_preserved",
+  "review": {
+    "bounded_verdict": "PASS_not_native_rerun",
+    "correction_controls_completion": true,
+    "independent_groups_reproduced": 13,
+    "compact_source_matches": 1,
+    "historical_source_matches": 8,
+    "only_reproduction_group_difference": "input_availability_count",
+    "accepted_as_science": false
+  },
+  "first_experiment": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCapabilityInformationProbe.json",
+    "record_digest": "1e4f6f19588a8b06886d8cf4b1c150c5d0b2f7dc4b7793bf215dc62390290ae9",
+    "source_admissions": 15,
+    "present_reads": 15,
+    "finite_perturbations": 12,
+    "ordinary_commits": 0,
+    "topology_events": 0,
+    "conclusion": "Finite current response exists beyond the unchanged Hodge-only birth score, including a homogeneous zero-current control; response alone is not refinement need.",
+    "not_established": [
+      "refinement_necessity",
+      "missing_edge_necessity",
+      "generator_or_partition",
+      "all_ten_applicability",
+      "RG_probe_admissibility",
+      "classical_derivative",
+      "trigger_onset",
+      "native_ATC",
+      "scientific_acceptance"
+    ]
+  },
+  "next_scientific_question": "Which V4-native response or formed-structure distinction justifies additional coordinates/relations and determines a covariant prescription, beyond ordinary homogeneous response?",
+  "unchanged": [
+    "ATC1_accepted_subjects",
+    "ATC2_reviewed_subjects",
+    "origin_index",
+    "forensic_graph",
+    "older_substrates",
+    "paper",
+    "specifications",
+    "runtime",
+    "G2_G3",
+    "accepted_Tranche_7"
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCapabilityClosureContinuation.md",
+      "sha256": "af8744d34824da6a1cbf8b6e0f0f85fd5d6fe5fa51b30233b638a2e72c107bfe"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_capability_information.py",
+      "sha256": "927e1fc5592d52bec7708bcc4f1817cf1f7e5b6d86b2271dba1a63537c953dbe"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCapabilityInformationProbe.json",
+      "sha256": "313f366e4b4e6fc834de47bc71f30c446c0a8c29649d473e0ed772870c332b7e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC2CandidateClosureProposal.json",
+      "sha256": "6cd8160565eeb043dd09ab2334a108710236c806401fe0316b04c3bb8b1aa609"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC2PressureResults.json",
+      "sha256": "d2c0dde892264a4b4fa4f76c837605aa4887def8e72fbbde7a80a62ba55dd722"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC1Acceptance.json",
+      "sha256": "2077d914ba626467b8d35ef3173ed82deef378ab0a24edc7136d4c35bfbebac1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSourceIntake.json",
+      "sha256": "b53df01106a9d4ac4a15bb40c0266131a476b7c6bb98484d950f807497b0d732"
+    },
+    {
+      "path": "papers/2025-12-GRC-V2.md",
+      "sha256": "ddcd55f7a322593572da029e1defaf142acd4dd5d509bd864cfcacca378604cf"
+    },
+    {
+      "path": "papers/2026-02-GRC-V3.md",
+      "sha256": "d26c29c70f8df2e4166451ccd9be6ee603cba6c1a023d251bf16de17e8bd3400"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/ATC2-IndependentReview.md",
+      "sha256": "34e893f2cd63c9369543315c66e45039a00ad0b14e9942f25faa0cadb5558cea"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/README.md",
+      "sha256": "036d7783a0b8ef7d24629967e5fa4bd3b86f9cba86a047411b19140c3d3662ad"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/ReviewCorrection.md",
+      "sha256": "a755e9439ebaf131d14847f503b64444385313d08d34801b0134930a40904e9e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/independent_checks.py",
+      "sha256": "e1b7b53428ac6b5a9fc16a956c3a16f51ab65537696c2024611ed40bd6fdec32"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/ATC2CandidateClosureProposal.json",
+      "sha256": "6cd8160565eeb043dd09ab2334a108710236c806401fe0316b04c3bb8b1aa609"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/ATC2CandidateClosureProposal.md",
+      "sha256": "aa3a9de4cfc15a0be0487203ba6a470d0109e2f96667d54219d884fb5a85723b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/ATC2PressureResults.json",
+      "sha256": "d2c0dde892264a4b4fa4f76c837605aa4887def8e72fbbde7a80a62ba55dd722"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/verify_atc2_candidates.py",
+      "sha256": "1f0a974836174bd4ce4af6101eac6dde65b60864c7de0c46c41fef478376ed8d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/pressure_results.json",
+      "sha256": "23c99ffd53a8630a7f6dc63eca8aa8aa3e226a9be83615012a622c2e535f2fe5"
+    }
+  ],
+  "record_digest": "82c2ff2b13d08f29891f278aee60f40285023bdf7c4581253c61aabcc9dfa465"
+}

@@ -1,0 +1,1050 @@
+{
+  "schema": "grcv4_atc_sector_scoped_adjudication_v1",
+  "record_id": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+  "date": "2026-09-21",
+  "status": "accepted_bounded_constitutive_research_law",
+  "scientific_acceptance": true,
+  "human_acceptance": true,
+  "graph_admission": false,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "decision_basis": {
+    "user_instruction": "Review attached, which would also lead to scoped claim/debt adjudication. But after that, I would continue with the proposal towards readback, especially the first and second lift. Which, after review would lead to second calim/debt related to it.",
+    "independent_review": "ACCEPT bounded new constitutive research law; PASS analytic positive scaling and structural packaging",
+    "reviewed_proposal_record_digest": "fa746546ae3deab28f1df729835a41fd7a37e2b6e6095b3ae41df11ef353735a",
+    "reviewed_proposal_markdown_sha256": "72a4f0063e60ee2a0bd983d52fc66a3fc05a2c8ae2cbd656a6a4019cfe23a13d",
+    "status_checker_independently_executed_by_this_review": false
+  },
+  "accepted_scope": {
+    "candidate": "A",
+    "realization": "OS",
+    "slice": "zero-channel affine research",
+    "fixed_step": "1/8",
+    "alpha": 0,
+    "beta": 0,
+    "gamma": 0,
+    "chi_A": 0,
+    "exact_symmetry": "isolated four-leaf star with two paired response sectors",
+    "persistent_meaning": "exact response sectors lying in an invariant sector manifold; no temporal operand",
+    "history": "old-edge lineage separately for actual current/reset; new bridge seed one",
+    "activation_domain": "unchanged reviewed proposal; unique source locus and separate funding/construction/target admission",
+    "restoration_domain": "reviewed actual anchor and positive common resource-scaling ray only",
+    "scaling_corollary": "independently reviewed analytic PASS; not generic perturbation robustness"
+  },
+  "claims": [
+    {
+      "id": "ATC-LSF-CL-01",
+      "status": "accepted_bounded_research_not_graph_admitted",
+      "evidence_class": "accepted_conditional_mathematics",
+      "statement": "The reduced ordinary map has bounded unsplit obstruction and invariant exact response sectors.",
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-08"
+      ],
+      "debt_refs": [
+        "ATC7-DB-03",
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-10"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-CL-02",
+      "status": "accepted_bounded_research_not_graph_admitted",
+      "evidence_class": "selected_new_constitutive_research_postulate_not_derived",
+      "statement": "When the bounded activation conditions resolve one admissible prescription, produce the prospective binary fission; publication requires target admission.",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-29"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-04",
+        "ATC7-DB-07",
+        "ATC7-DB-08"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-CL-03",
+      "status": "accepted_bounded_research_not_graph_admitted",
+      "evidence_class": "selected_mathematical_transfer_not_native_authority",
+      "statement": "Apply the conservative resource map independently to both roles, transport old W along edge lineage and seed only the new bridge.",
+      "origin_claim_refs": [
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18"
+      ],
+      "debt_refs": [
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-23"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-CL-04",
+      "status": "accepted_bounded_research_not_graph_admitted",
+      "evidence_class": "accepted_conditional_mathematics_including_reviewed_scaling",
+      "statement": "The actual anchor and common positive resource-scaling ray have both-role indefinite positive target continuation with the stated uniform contraction.",
+      "origin_claim_refs": [
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-19",
+        "ATC7-DB-20",
+        "ATC7-DB-23"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-CL-05",
+      "status": "accepted_bounded_research_not_graph_admitted",
+      "evidence_class": "selected_research_consumer_not_native_authority",
+      "statement": "Keep physical decomposition, locus resolution, funding, construction and target admission distinct under source-only K0 and the fixed ordinary domain.",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-09",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-31"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-09",
+        "ATC7-DB-10",
+        "ATC7-DB-11",
+        "ATC7-DB-16",
+        "ATC7-DB-21",
+        "ATC7-DB-22",
+        "ATC7-DB-23",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-CL-06",
+      "status": "accepted_bounded_research_not_graph_admitted",
+      "evidence_class": "accepted_explicit_scope_limit",
+      "statement": "No native, nonzero-feedback, other-family, generic fission, formation, core or aggregate closure follows.",
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_refs": [
+        "ATC7-DB-01",
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-11",
+        "ATC7-DB-14",
+        "ATC7-DB-17",
+        "ATC7-DB-18",
+        "ATC7-DB-20",
+        "ATC7-DB-22",
+        "ATC7-DB-23",
+        "ATC7-DB-24",
+        "ATC7-DB-25",
+        "ATC7-DB-26",
+        "ATC7-DB-27",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    }
+  ],
+  "debts": [
+    {
+      "origin_debt_id": "ATC7-DB-01",
+      "title": "Source and execution-subject admission",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Any assertion about current source authority or native Tranche-7/ATC execution.",
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-27",
+        "ATC7-CL-31",
+        "ATC7-CL-32"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "No core-to-substrate law derived; original semantic authority obligation unchanged.",
+      "retained_proposal_assessment": "Exact current authority/source observations retained; successor source and native execution admission remain open.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-02",
+      "title": "Endogenous constitutive closure",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A proposal claims that the event is generated by the permitted scientific state.",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-07",
+        "ATC7-CL-09",
+        "ATC7-CL-13",
+        "ATC7-CL-25",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-02",
+        "ATC-LSF-CL-05"
+      ],
+      "local_adjudication": "Bounded new constitutive consumer scientifically selected; not an installed generator.",
+      "retained_proposal_assessment": "Guard, partition and transfer are named; acceptance of the sector-to-site consumer and enabled full policy remain open.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-03",
+      "title": "Temporal stage and historical operand",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A witness uses consumed current, threshold crossing, or a previous state rather than the declared present reconstruction.",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-05",
+        "ATC7-CL-07",
+        "ATC7-CL-21",
+        "ATC7-CL-25",
+        "ATC7-CL-29A",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-05"
+      ],
+      "local_adjudication": "Exact invariant sectors, not temporal persistence operands; K0 projection unchanged.",
+      "retained_proposal_assessment": "Reference OS read and h0=1/8 ordinary scheme are explicit; no historical operands or arbitrary-step guarantee. Native request enforcement is forward work.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-04",
+      "title": "Analysis-to-constitutive consumption",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A source analysis object becomes a physical event guard.",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-04",
+        "ATC7-CL-05",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-02",
+        "ATC-LSF-CL-05"
+      ],
+      "local_adjudication": "Reference-stage research consumption selected at zero feedback; no wider stage authority.",
+      "retained_proposal_assessment": "Analysis remains read-only; a revision-distinct constitutive event consumer and its full identity require acceptance.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-05",
+      "title": "Branch and regularity applicability",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A claim uses a structural chart, current slaving derivative, or classical section derivative.",
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-22",
+        "ATC7-CL-29B"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-04",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Reduced ordinary-map applicability accepted; classical structural and nonzero-feedback regularity open.",
+      "retained_proposal_assessment": "Explicit reduced dynamics are available; no general structural branch, RG classical derivative or nonzero-feedback regularity is supplied.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-06",
+      "title": "Functional, tangent, metric and normalization",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A claim invokes structural alpha, joint-state energy or magnitude comparisons.",
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-06",
+        "ATC7-CL-07",
+        "ATC7-CL-21",
+        "ATC7-CL-22",
+        "ATC7-CL-29B"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-04",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Declared reduced metric and theorem accepted; no structural or joint-history functional supplied.",
+      "retained_proposal_assessment": "The charge-zero Euclidean norm and ordinary resource map are explicit, not a complete structural or joint-history functional.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-07",
+      "title": "Physical discrimination of a trigger",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A numerical or structural witness is claimed to warrant an RC topology response.",
+      "origin_claim_refs": [
+        "ATC7-CL-04",
+        "ATC7-CL-05",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-02",
+        "ATC-LSF-CL-04"
+      ],
+      "local_adjudication": "Bounded causal discrimination accepted and physical postulate selected; generic discrimination open.",
+      "retained_proposal_assessment": "Unsplit and reset-only fail while lineage-preserving split restores the anchor. Physical law selection and generic discrimination remain open.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-08",
+      "title": "Mode-to-locus and half-edge lift",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A mode or response is claimed to determine graph surgery.",
+      "origin_claim_refs": [
+        "ATC7-CL-04",
+        "ATC7-CL-11",
+        "ATC7-CL-29B"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-02",
+        "ATC-LSF-CL-03"
+      ],
+      "local_adjudication": "Exact bounded sector-to-site lift scientifically selected; DB-08 remains active for this assertion and broader/native scope.",
+      "retained_proposal_assessment": "The two-sector endpoint lift is defined and covariant in the bounded research family; this still needs physical authority and does not close classical CAN-B.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-09",
+      "title": "Within/across-family resolution order",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A law compares candidates or operation families.",
+      "origin_claim_refs": [
+        "ATC7-CL-09",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-05"
+      ],
+      "local_adjudication": "Unique-source-locus research resolution selected; no cross-law ranking or multi-locus arbitration.",
+      "retained_proposal_assessment": "Unique source pressure locus only; multiple resolved loci remain arbitration-unresolved, with no funded runner-up or cross-law ranking.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-10",
+      "title": "Finite-precision equivariance and threshold certainty",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Exact covariance or stable physical decisions are claimed in a numerical implementation.",
+      "origin_claim_refs": [
+        "ATC7-CL-05",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-05"
+      ],
+      "local_adjudication": "Exact bounded mathematics accepted; finite-precision equality and threshold certainty open.",
+      "retained_proposal_assessment": "Rational decisions and representative covariance checks exist; finite-precision exact-sector and threshold certainty remain open.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-11",
+      "title": "Batch and sequential critical pairs",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Disjoint events or an atomic rewrite are claimed equivalent to sequential edits.",
+      "origin_claim_refs": [
+        "ATC7-CL-10",
+        "ATC7-CL-13",
+        "ATC7-CL-30"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-05",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "No batch/sequential equivalence selected; unchanged conditional obligation.",
+      "retained_proposal_assessment": "No simultaneous or sequential multi-event execution/equivalence is selected; preserve the original debt for such claims.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-12",
+      "title": "Complete finite graph/template mechanics",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A template is claimed graph-generic or collision-free.",
+      "origin_claim_refs": [
+        "ATC7-CL-11",
+        "ATC7-CL-12",
+        "ATC7-CL-13",
+        "ATC7-CL-14",
+        "ATC7-CL-17",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-03"
+      ],
+      "local_adjudication": "Bounded simple-graph mathematical surgery accepted; general/native fresh-ID mechanics open.",
+      "retained_proposal_assessment": "The star-to-double-star endpoint recipe is complete mathematically; general multigraph mechanics and native fresh identities are not supplied.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-13",
+      "title": "Represented resource law and actual charge",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Real coefficient conservation is promoted to an executable or exactly closed event.",
+      "origin_claim_refs": [
+        "ATC7-CL-14",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-20",
+        "ATC7-CL-29B",
+        "ATC7-CL-30"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-03"
+      ],
+      "local_adjudication": "Mathematical both-role conservative transfer accepted; represented native charge admission open.",
+      "retained_proposal_assessment": "Dyadic column conservation and actual anchor roles are exact; native represented charge and independent role rejection remain required.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-14",
+      "title": "Target reference, backend and context",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A new graph is claimed to have a complete target package.",
+      "origin_claim_refs": [
+        "ATC7-CL-10",
+        "ATC7-CL-12",
+        "ATC7-CL-13",
+        "ATC7-CL-14",
+        "ATC7-CL-17",
+        "ATC7-CL-19",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Reduced affine/unit-reference target selected; native potential/backend/context binding open.",
+      "retained_proposal_assessment": "Unit references and affine reduced potential are declared; complete affine-potential/backend/context admission is not supplied.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-15",
+      "title": "History transport or explicitly declared loss",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A topology map is claimed to preserve or transform W/Z history.",
+      "origin_claim_refs": [
+        "ATC7-CL-06",
+        "ATC7-CL-10",
+        "ATC7-CL-12",
+        "ATC7-CL-18",
+        "ATC7-CL-29C",
+        "ATC7-CL-30"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-03"
+      ],
+      "local_adjudication": "Role-independent edge-lineage recipe selected; native mixed transport/new-coordinate authority open.",
+      "retained_proposal_assessment": "Old W is transported independently in each role and only new bridge W is seeded; native typed cross-topology history authority remains open.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-16",
+      "title": "Initializer and whole-role target integration",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A constructed target is claimed fully admitted.",
+      "origin_claim_refs": [
+        "ATC7-CL-12",
+        "ATC7-CL-13",
+        "ATC7-CL-14",
+        "ATC7-CL-16",
+        "ATC7-CL-17",
+        "ATC7-CL-18",
+        "ATC7-CL-19",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C",
+        "ATC7-CL-31"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-05"
+      ],
+      "local_adjudication": "Both-role mathematical target evidence accepted; whole-role native package admission open.",
+      "retained_proposal_assessment": "Independent current/reset restoration is proved at the anchor, not full native target integration or mixed initializer authority.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-17",
+      "title": "Core object and topology correspondence",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "An event is called an R_coh, basin, spark, or identity-topology event.",
+      "origin_claim_refs": [
+        "ATC7-CL-07",
+        "ATC7-CL-14",
+        "ATC7-CL-20",
+        "ATC7-CL-21",
+        "ATC7-CL-28"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "No core identity, R_coh or spark correspondence selected.",
+      "retained_proposal_assessment": "No R_coh, core identity-topology or spark correspondence is claimed.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-18",
+      "title": "Viability functional and threshold",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A guard is identified with core viability or compared across graphs.",
+      "origin_claim_refs": [
+        "ATC7-CL-07",
+        "ATC7-CL-14",
+        "ATC7-CL-20",
+        "ATC7-CL-21"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "No core viability functional or cross-graph energy threshold selected.",
+      "retained_proposal_assessment": "Continuation obstruction is not an absolute/relative core viability functional or cross-graph energy threshold.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-19",
+      "title": "Restoration and actual dynamics",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A target is claimed inside a stable basin or an attracting set.",
+      "origin_claim_refs": [
+        "ATC7-CL-20",
+        "ATC7-CL-22"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-04"
+      ],
+      "local_adjudication": "Actual-anchor restoration and common positive scaling accepted; active broader/native restoration obligation remains.",
+      "retained_proposal_assessment": "Reviewed actual-anchor proof retained. Positive-scaling corollary is newly derived for review; broader and native hybrid domains remain open.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-20",
+      "title": "Finite persistence to identity/formation",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Finite observation or graph structure is promoted to spark, identity, reflexive closure, or native formation.",
+      "origin_claim_refs": [
+        "ATC7-CL-20",
+        "ATC7-CL-22",
+        "ATC7-CL-23",
+        "ATC7-CL-28"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-04",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Prepared histories and invariant sectors do not establish formation, spark or identity.",
+      "retained_proposal_assessment": "Prepared W0 is not formed from the canonical zero-channel initializer; no spark/identity/formation closure is claimed.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-21",
+      "title": "Atomic composition and publication closure",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "An ATC wrapper is claimed to preserve lifecycle guarantees.",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-10",
+        "ATC7-CL-18",
+        "ATC7-CL-24",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-30",
+        "ATC7-CL-31"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-05"
+      ],
+      "local_adjudication": "K0 research composition selected; native serialized wrapper, receipts and publication closure open.",
+      "retained_proposal_assessment": "K0 preserves the committed ordinary poststate on failed event admission; native serialized wrapper/receipt authority remains forward work.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-22",
+      "title": "Causal memory, timing and event rate",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Refractory counters, probes, crossings, repeated attempts, or non-Zeno claims are activated.",
+      "origin_claim_refs": [
+        "ATC7-CL-23",
+        "ATC7-CL-24",
+        "ATC7-CL-25",
+        "ATC7-CL-26"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-05",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Fixed-step present-state scope selected; no subdivision, temporal-memory or event-rate result.",
+      "retained_proposal_assessment": "Present-state policy and fixed eligible-boundary scope only; no first-crossing memory, event-rate, subdivision or non-Zeno claim.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-23",
+      "title": "Native execution and reproducible evidence",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "The proposal claims actual GRCV4 execution, covariance, replay or rollback.",
+      "origin_claim_refs": [
+        "ATC7-CL-08",
+        "ATC7-CL-10",
+        "ATC7-CL-11",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-19",
+        "ATC7-CL-22",
+        "ATC7-CL-23",
+        "ATC7-CL-24",
+        "ATC7-CL-27",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C",
+        "ATC7-CL-30",
+        "ATC7-CL-31"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-04",
+        "ATC-LSF-CL-05",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Investigation-local proofs accepted as such; no native execution, replay or rollback evidence.",
+      "retained_proposal_assessment": "Investigation-local proofs/status checks are not native ATC execution, replay or rollback evidence.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-24",
+      "title": "Investigation and side-tool source admission",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Local ATC records are to become queryable scientific authority.",
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-25",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Bounded scientific adjudication recorded; schema/adapter/readmission not performed, handles remain outside graph.",
+      "retained_proposal_assessment": "New proposal handles remain outside the admitted graph. Schema/adapter/readmission and acceptance are not performed here.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-25",
+      "title": "Complete quotient or behavioral approximation",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A merge is claimed to preserve or approximate complete behavior.",
+      "origin_claim_refs": [
+        "ATC7-CL-06",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "No complete quotient or behavioral approximation selected.",
+      "retained_proposal_assessment": "No complete quotient or behavioral coarsening claim is selected.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-26",
+      "title": "Complete-profile target applicability",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A family-level formula is promoted to multi-profile support.",
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-06",
+        "ATC7-CL-12",
+        "ATC7-CL-17",
+        "ATC7-CL-22",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Only zero-channel affine research A_OS accepted; no other-family, native or aggregate support.",
+      "retained_proposal_assessment": "Positive mathematical evidence is confined to the affine zero-channel A_OS slice; native support and the remaining families/capability cells stay open.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-27",
+      "title": "Relation/coarsening semantic driver",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "Present coupling or inactivity is called missing relation, redundancy, death or extinction.",
+      "origin_claim_refs": [
+        "ATC7-CL-05",
+        "ATC7-CL-13",
+        "ATC7-CL-28",
+        "ATC7-CL-29A",
+        "ATC7-CL-29C"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "No relation/coarsening, redundancy, death or extinction semantics selected.",
+      "retained_proposal_assessment": "No missing-relation, redundancy, extinction or pruning interpretation is selected by this fission proposal.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-28",
+      "title": "Finite search/work and objective interpretation",
+      "origin_status": "open_proposal",
+      "status": "scoped_partial_adjudication_origin_obligation_retained",
+      "origin_activation": "A finite partition optimizer or template grammar is treated as scalable or core-derived.",
+      "origin_claim_refs": [
+        "ATC7-CL-13",
+        "ATC7-CL-17",
+        "ATC7-CL-26"
+      ],
+      "local_claim_refs": [
+        "ATC-LSF-CL-05",
+        "ATC-LSF-CL-06"
+      ],
+      "local_adjudication": "Fixed bounded prescription, not optimizer; native arithmetic and work limits open.",
+      "retained_proposal_assessment": "One exact source prescription, not a template optimizer; native finite arithmetic/work limits still require explicit bounds.",
+      "assessment_precedence": "local_adjudication supersedes the proposal's pending scientific-selection wording; all wider obligations retained",
+      "discharged": false
+    }
+  ],
+  "family_dispositions": [
+    {
+      "profile_family_id": "A_OS",
+      "mathematical_scope": "accepted_zero_channel_affine_anchor_and_common_scaling_ray",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_CI",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_CI_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_RG2b",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_OS",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_CI",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_CI_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_RG2b",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    }
+  ],
+  "preservation": {
+    "origin_claims": 35,
+    "origin_debts": 28,
+    "origin_reciprocal_links": 165,
+    "accepted_descendants_added": [],
+    "debt_discharges": [],
+    "aggregate_capability_requirement": "ATC-CAP-REQ-01 remains open; all 30 capability/family cells and complete-law composition obligations unchanged",
+    "origin_index_unchanged": true,
+    "reviewed_proposal_unchanged": true,
+    "reviewed_certificates_unchanged": true,
+    "forensic_graph_changed": false,
+    "source_readmission_implemented": false,
+    "production_or_paper_spec_changes": false
+  },
+  "next": {
+    "scientific_work": "separate first and second Read-Back lift proposal/evidence",
+    "second_adjudication": "only after review of new results; not performed by this record",
+    "source_readmission": "open separate successor schema/adapter task; scientific acceptance is not graph admission"
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorConstitutiveAcceptance.md",
+      "sha256": "202ffe2803fd25808e528bdd2b060a8091012527d7c3aa3411033af696a13abe"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1Acceptance.md",
+      "sha256": "9baea5a4545e40c3829f130b59e4372434bf3eb3ecc3a986e6a04679a7d831e6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md",
+      "sha256": "443880480cee234b3da850290296395c43237a6976f3d891972049370e4952a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC2CandidateClosureProposal.md",
+      "sha256": "aa3a9de4cfc15a0be0487203ba6a470d0109e2f96667d54219d884fb5a85723b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorConstitutiveProposal.md",
+      "sha256": "72a4f0063e60ee2a0bd983d52fc66a3fc05a2c8ae2cbd656a6a4019cfe23a13d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSourceFissionProposal.md",
+      "sha256": "b07f9d7672c4774adfabb6424f4ee905c1be25320de2bea95966f39e67bebd67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC1Acceptance.json",
+      "sha256": "2077d914ba626467b8d35ef3173ed82deef378ab0a24edc7136d4c35bfbebac1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCapabilityClosureContinuation.json",
+      "sha256": "627cba8b721f388c4d18f3ed8bca239ea2cd87edef048f5b74cdd2c722dfaf8c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCriticalModeCertificate.json",
+      "sha256": "5fa2eda45063ebeb39e61b756cb0cbe02022ffd5d1e9a3be7096992c5c528509"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCLocalizedSectorFissionCertificate.json",
+      "sha256": "24762124714354729220f91319af3359bda33ad174d613179788169ad1f0df69"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCOSGeometryFeedbackCertificate.json",
+      "sha256": "0a6ff9ab8efc9d32c9df4bb75366474e74b357a67d0aef27f9b3ecc327a3b48f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionOSFeedbackCertificate.json",
+      "sha256": "61099508c2c67c48076b793f066ff7af7356caa883fdd0e7564395f30e876181"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionStabilityReviewCertificate.json",
+      "sha256": "9595034982158304515e8ca1f7d55f461d134ac94b191c5f543ff6e54752ca50"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorLineageCertificate.json",
+      "sha256": "781ec38730dc4f5f2c42569b915e0fbf860a4acda60c23d8d62b5de28c14ef86"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStatusChecks.json",
+      "sha256": "657c5b82712988c7769046f608cc2410c5b8bb34585c048f0b194626ec31d5d6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSourceIntake.json",
+      "sha256": "b53df01106a9d4ac4a15bb40c0266131a476b7c6bb98484d950f807497b0d732"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCUnsplitViabilityCertificate.json",
+      "sha256": "91d188d8a2335638d9108219201c6a6d522c6b38db40958110a4a3e3f52180ee"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_critical_mode.py",
+      "sha256": "9a10e97c87a521ac9614565a84d1a5729fc8db5527df147d02f3074179e995fc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_localized_sector_fission.py",
+      "sha256": "9ac3737d302fb327adaac6633c746cd63cfbcb0835a1b09c9edc5187b15c12c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_os_geometry_feedback.py",
+      "sha256": "1f69df96b16034117b28f0d1074d69c6828cdeabcb9303b44631547e206c069b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_os_feedback.py",
+      "sha256": "252ad3e32e9aaca399dbdcd77bddf9cb9818db5f6874170b90f1ba0ee74ea570"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_review.py",
+      "sha256": "c04fd27e5bd25d1df9fb2055acf37b7a843cf0bc86f46e9e2284f845c3110ddc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_stability.py",
+      "sha256": "1827200beb884b22e55fd7770955124e828b8cbe7f851d4af5bdb53aff280342"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_lineage.py",
+      "sha256": "207fece35ac40284ea0481d2b69a2d639d12ea8a4f06c24fa7308f242fe5aa07"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_unsplit_viability.py",
+      "sha256": "d3c6017f53fb9e46ab16e50e9f6b3e9c8f889f1567c2608450494c334a744d46"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_sector_status.py",
+      "sha256": "e3e616ac67fc19ea567feb3ed764120aa3b3f9519f19f900fd19408b8dc6eb94"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/a_initializer.py",
+      "sha256": "6efb1e33baff33e4f5d76de7937a9cb4977c89c28d6bf8999e168bf68e46de3b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/forensic.py",
+      "sha256": "6d44973aececa003f180082175025e23b9a0db44e5fd9e5d80217b368e552795"
+    },
+    {
+      "path": "specs/grc-v4-a-initializer-spec.md",
+      "sha256": "ff5990571197d7c843a16bd404694e35f8c6fc5da01856e5639d51ad5f2b36e6"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveProposal.json",
+      "sha256": "28133be08672abc5e55a41bf31de34e634b48e317abd280ff17f9284329f6675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-Constitutive-Review.md",
+      "sha256": "692932dc37f34ea62e56623e878b4966aedd531d87d52b53b0e2d926646ea6e6"
+    }
+  ],
+  "record_digest": "8e25258e9b728f034c008fb71d7efa1cf9455dbdea8059c66835a5a54de2105a"
+}

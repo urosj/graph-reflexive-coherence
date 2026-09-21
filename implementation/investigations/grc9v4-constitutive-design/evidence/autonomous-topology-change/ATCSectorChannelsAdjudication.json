@@ -1,0 +1,688 @@
+{
+  "schema": "grcv4_atc_sector_channels_adjudication_v1",
+  "record_id": "ATC-LSF-G5-G6-ADJUDICATION-v1",
+  "status": "accepted_bounded_G5_G6_mathematical_research",
+  "scientific_acceptance": true,
+  "graph_admission": false,
+  "native_authority": false,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "G5_accepted": true,
+  "G6_accepted": true,
+  "G7_accepted": false,
+  "predecessor_adjudication": "d577ff86b44b76ca6748c930f8bfbab2758aedc077d0c5625fcb640bf139a23e",
+  "reviewed_certificate_digest": "d404e45a76bafad90a1a563b298ae01b1cc4866c125627cb6163bc417bd1afb1",
+  "accepted_scope": {
+    "candidate": "A",
+    "realization": "OS",
+    "parameters": {
+      "chi": {
+        "lo": "3618502788666131106986593281521497120414687020801267626233049500247285301248",
+        "hi": "7237005577332262213973186563042994240829374041602535252466099000494570602496"
+      },
+      "gamma": {
+        "lo": "56539106072908298546665520023773392506479484700019806659891398441363832832",
+        "hi": "113078212145816597093331040047546785012958969400039613319782796882727665664"
+      },
+      "kh": {
+        "lo": "57896044618658097711785492504343953926634992332820282019728792003956564819968",
+        "hi": "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+      },
+      "kah": {
+        "lo": "57896044618658097711785492504343953926634992332820282019728792003956564819968",
+        "hi": "115792089237316195423570985008687907853269984665640564039457584007913129639936"
+      },
+      "alpha": {
+        "lo": "28269553036454149273332760011886696253239742350009903329945699220681916416",
+        "hi": "56539106072908298546665520023773392506479484700019806659891398441363832832"
+      },
+      "beta": {
+        "lo": "28269553036454149273332760011886696253239742350009903329945699220681916416",
+        "hi": "56539106072908298546665520023773392506479484700019806659891398441363832832"
+      }
+    },
+    "potential_class": {
+      "domain": [
+        "0",
+        "9"
+      ],
+      "center_slope": "19/4",
+      "slope_deviation": "1/2048",
+      "regularity": "C1",
+      "same_fixed_law_at_every_vertex": true,
+      "concrete_nonlinear_subclass": {
+        "form": "a*c + nu*c**2/2",
+        "a": [
+          "19455/4096",
+          "19457/4096"
+        ],
+        "nu": [
+          "1/131072",
+          "1/65536"
+        ]
+      }
+    },
+    "tau_A": "1/(8*log(2))",
+    "G6_request_policy": "each requested h in [3/25,1/8]; fixed tau and constitutive parameters; no subdivision invariance",
+    "domains": "exact reviewed paired E_p x independent B and bounded embedded class; no arbitrary environments",
+    "source_horizons": {
+      "G5_paired": 56,
+      "G6_paired": 67,
+      "G5_embedded": 7,
+      "G6_embedded": 10
+    },
+    "return_factors": [
+      "9/10",
+      "49/50"
+    ],
+    "history_limit": "exp(-alpha*c)",
+    "subdivision_invariance": false
+  },
+  "independent_review": {
+    "review_path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-G5-G6-Pass.md",
+    "complete_evidence_payload_matches": true,
+    "native_outputs_independently_reconstructed": true,
+    "native_execution": false,
+    "repository_main_execution_reported": false
+  },
+  "claims": [
+    {
+      "id": "ATC-LSF-G56-CL-01",
+      "title": "Active A channels and explicit differential/host binding",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "G5 fixed WLS, nonzero alpha/beta, rebuilt post-resource writer; research transfer binding only",
+      "predecessor_claim_refs": [
+        "ATC-LSF-G14-CL-03"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-05",
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G56-CL-02",
+      "title": "Potential-class obstruction and independent-role entry",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "Common fixed C1 class; actual-p balance; paired obstruction, funding and both-role entry",
+      "predecessor_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-02"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-04",
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-09",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G56-CL-03",
+      "title": "Shifted-equilibrium return",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "Full paired/embedded mean-zero resource return; W tends to exp(-alpha*c), not joint contraction",
+      "predecessor_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G56-CL-04",
+      "title": "Fixed-tau variable request law",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "Every h sequence in [3/25,1/8]; fixed potential/parameters; no subdivision equivalence",
+      "predecessor_claim_refs": [
+        "ATC-LSF-G14-CL-02",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-10",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G56-CL-05",
+      "title": "Active embedding and retained exclusion",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "Bounded seven/eight-vertex class; rejection by 7/10; exact survivor proof; second-parent exclusion",
+      "predecessor_claim_refs": [
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-13",
+        "ATC7-DB-19",
+        "ATC7-DB-26",
+        "ATC7-DB-27"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G56-CL-06",
+      "title": "Research scope and native ceiling",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "Primitive evidence consistent; no native potential/profile, G7, other-family or aggregate closure",
+      "predecessor_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_refs": [
+        "ATC7-DB-01",
+        "ATC7-DB-11",
+        "ATC7-DB-14",
+        "ATC7-DB-17",
+        "ATC7-DB-18",
+        "ATC7-DB-20",
+        "ATC7-DB-21",
+        "ATC7-DB-22",
+        "ATC7-DB-23",
+        "ATC7-DB-24",
+        "ATC7-DB-25",
+        "ATC7-DB-26",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    }
+  ],
+  "debts": [
+    {
+      "origin_debt_id": "ATC7-DB-01",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Pin repository commits, source bytes, release, dependencies and exact results. Retrieved main pages and older local attachments cannot stand in for the final execution subject.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-02",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "No unrestricted trigger/generator, arbitrary orbit surgery or installed native actuator.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-03",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Native replay/reset/history handling is not executed here.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-04",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Source consumer, complete profile and graph readmission remain separate.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-02"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-05",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Other realizations and physics/reference/potential domains beyond the reviewed G5-G6 bounds; native realization.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-03",
+        "ATC-LSF-G56-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-06",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "No general structural energy, arbitrary tangent domain or joint-state contraction is inferred.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-03",
+        "ATC-LSF-G56-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-07",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "No arbitrary-state old-guard sufficiency or physical uniqueness of the remedy.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-04",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-08",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "No arbitrary orbit cardinalities, arbitrary equitable pooling, approximate sectors or classical CAN-B closure.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-09",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Multiple loci, cross-law ordering and cross-family comparability remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-02"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-10",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Native finite-precision equivariance and arbitrary threshold cases remain open; share hulls are not exact reachable sets.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-04",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-11",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Prove combined reference/history/resource maps, intermediate admission, and required equality notions; account for global reset effects.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-12",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "General loops/parallel edges, native event IDs and arbitrary template mechanics remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-02"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-13",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Native represented arithmetic, rounding and actual-charge admission remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-14",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Native backend/context/profile admission and nonzero-beta differential-reference binding remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-15",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Native mixed-history production, replay and transport remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-03"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-16",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Native initializer/whole-publication atomic integration and arbitrary reset domains remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-03"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-17",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Map substrate state to the exact spatial/support/finite-continuation objects and demonstrate the requested change.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-18",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Bind functional/sign/normalization/anchor/units/locus and threshold or crossing; distinguish relative proposals from V=-P.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-19",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Arbitrary surroundings, arbitrary sources/resets, repeated hybrid events and native error bounds remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-03",
+        "ATC-LSF-G56-CL-04",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-20",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Formation, reachability into E or the embedded source domain, and stronger identity attribution are not proved.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-21",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Define transaction boundaries and report composition; verify target and prospective archive before publication; preserve programmer-error semantics.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-22",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Declare causal history and lifecycle maps, eligible boundaries, work bounds and clock assumptions; distinguish finite beats from physical time.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-23",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "These are mathematical proofs/checks, not native ATC execution or lifecycle replay/rollback.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-24",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Local acceptance is not forensic graph admission or side-tool source readmission.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-25",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Complete behavioral quotient/merge authority is not supplied by exact sector invariance.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-26",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Other families, formation/repeated use and native complete-profile admission remain open; no support discovery widening.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-03",
+        "ATC-LSF-G56-CL-04",
+        "ATC-LSF-G56-CL-05",
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-27",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G5-G6 extend the bounded research portions identified by local_claim_refs; no native or generic discharge.",
+      "remaining_obligation": "Demonstrate the operation-specific causal meaning; test zero-current bridges, hidden W/Z, existing nonedge mediation and delayed effects.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-28",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional discharge; preserve predecessor obligations and scope ceiling.",
+      "remaining_obligation": "Bind objective and search semantics, complexity/work budgets and exact outcome independence; distinguish computational failure from physical absence.",
+      "local_claim_refs": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "discharged": false
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+      "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAndRequestsCertificate.json",
+      "sha256": "4ad08e321c29b350b5700db56324c7f8069cfa48cef8b1b4ef57207647974436"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsNativeReadiness.json",
+      "sha256": "9a8c94a7a0851bad39eda921a8a46bc4732ec9ea339910790a75c0c8e0be34ab"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_channels.py",
+      "sha256": "8d0aa7016710d5e64935a3496fb9160689eda87e6c999b3336924b4f99c0828f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAndRequests.md",
+      "sha256": "34974e4489f9e62a805bf5d105be78b37b06e6597084a73b9a3db1ef59104840"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-G5-G6-Pass.md",
+      "sha256": "e8ce9da8c09154c80f25c460d5d4fdc5baa1383d6939387467a3f80446d73663"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAdjudication.md",
+      "sha256": "afb5dbda9d21f92785a401318ea745f02334294c8d70b82f5f525d80ac74bd39"
+    }
+  ],
+  "record_digest": "aaa2625ac8c9fb78cb41d525e3b9656482f3a00a8d3c264c18b826b2d353cfe4"
+}

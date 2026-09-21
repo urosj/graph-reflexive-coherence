@@ -1,0 +1,923 @@
+{
+  "schema": "grcv4_atc_sector_readback_scoped_adjudication_v1",
+  "record_id": "ATC-LSF-READBACK-SCOPED-ADJUDICATION-v1",
+  "status": "accepted_enabled_point_and_uniform_conditional_target_theorem",
+  "scientific_acceptance": true,
+  "human_authorization": "prior user instruction to make the second scoped adjudication after review, now supported by supplied point PASS",
+  "graph_admission": false,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "predecessor_adjudication": "8e25258e9b728f034c008fb71d7efa1cf9455dbdea8059c66835a5a54de2105a",
+  "decision_basis": {
+    "review_path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Point-Pass.md",
+    "independent_execution": "kernel_checks, symmetry_checks and complete mathematical evidence; additional nonzero exponential pressure",
+    "repository_wrapper_independently_executed": false,
+    "reviewed_point_certificate_digest": "28a93f62eab7c99164708b87b15ee6569e60ad1be6119d564366139afe79fcc0"
+  },
+  "accepted_scope": {
+    "candidate": "A",
+    "realization": "OS",
+    "point": {
+      "chi_A": "1/16",
+      "gamma": "1/1024",
+      "kappa_H": 1,
+      "kappa_Ah": 1,
+      "alpha": 0,
+      "beta": 0,
+      "a": "19/4",
+      "h0": "1/8",
+      "tau_A": "h0/log(2)",
+      "C0": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "5"
+      ],
+      "W0": [
+        "361/400",
+        "361/400",
+        "5929/6400",
+        "5929/6400"
+      ]
+    },
+    "point_source": "the reviewed prepared four-star with exact paired symmetry, not arbitrary guard-positive states",
+    "point_prescription": {
+      "stage": "recomputed selected reference current",
+      "k": 30779,
+      "history": "role-independent old-edge lineage plus new bridge seed one"
+    },
+    "counterfactual_resource_rejection_attempts": {
+      "no_split": 10,
+      "history_reset_without_split": 7
+    },
+    "actual_roles": [
+      "current",
+      "independently_retained_reset"
+    ],
+    "conditional_target_theorem": {
+      "chi_A": [
+        "1/32",
+        "1/16"
+      ],
+      "gamma": [
+        "1/2048",
+        "1/1024"
+      ],
+      "kappa_H": [
+        "1/2",
+        "1"
+      ],
+      "kappa_Ah": [
+        "1/2",
+        "1"
+      ],
+      "domain": "fixed double-star; sum C=9; ||C-(3/2)1||<=2/3; log W in [-1/8,0]",
+      "q": "9209/10240",
+      "resource_floor": "5/6",
+      "requires_separate_entry": true
+    },
+    "whole_box_source_and_entry_accepted": false,
+    "generic_guard_implies_obstruction": false,
+    "nonzero_resource_scaling_accepted": false
+  },
+  "claims": [
+    {
+      "id": "ATC-LSF-RB-CL-01",
+      "title": "Consumed feedback, symmetry and reference-stage source",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_enabled_point",
+      "predecessor_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-05"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-31"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-05",
+        "ATC7-DB-10"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RB-CL-02",
+      "title": "Certified source prescription and funding",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_enabled_point",
+      "predecessor_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-02",
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-05"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-29",
+        "ATC7-CL-31"
+      ],
+      "debt_refs": [
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-09",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RB-CL-03",
+      "title": "Enabled counterfactual resource obstruction",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_enabled_point",
+      "predecessor_claim_refs": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-04"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-19"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RB-CL-04",
+      "title": "Actual-role entry and indefinite restoration",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_enabled_point",
+      "predecessor_claim_refs": [
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-04"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-13",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-20",
+        "ATC7-DB-23"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RB-CL-05",
+      "title": "Uniform conditional target return",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "conditional_target_domain_over_original_box_only",
+      "predecessor_claim_refs": [
+        "ATC-LSF-CL-04"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RB-CL-06",
+      "title": "Scope and authority boundaries",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "accepted_explicit_scope_limit",
+      "scope": "explicit_limit_not_generic_or_native_authority",
+      "predecessor_claim_refs": [
+        "ATC-LSF-CL-06"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_refs": [
+        "ATC7-DB-01",
+        "ATC7-DB-11",
+        "ATC7-DB-17",
+        "ATC7-DB-18",
+        "ATC7-DB-20",
+        "ATC7-DB-21",
+        "ATC7-DB-22",
+        "ATC7-DB-23",
+        "ATC7-DB-24",
+        "ATC7-DB-25",
+        "ATC7-DB-26",
+        "ATC7-DB-27",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    }
+  ],
+  "debts": [
+    {
+      "origin_debt_id": "ATC7-DB-01",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-27",
+        "ATC7-CL-31",
+        "ATC7-CL-32"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-02",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-07",
+        "ATC7-CL-09",
+        "ATC7-CL-13",
+        "ATC7-CL-25",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-01"
+      ],
+      "local_adjudication": "Selected reference-stage source consumption certified at the enabled point; no installed event generator.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-03",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-05",
+        "ATC7-CL-07",
+        "ATC7-CL-21",
+        "ATC7-CL-25",
+        "ATC7-CL-29A",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-01"
+      ],
+      "local_adjudication": "Exact symmetric present-state sectors, no temporal operand or stale-current dependency.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-04",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-04",
+        "ATC7-CL-05",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-01"
+      ],
+      "local_adjudication": "Reference-selected current remains coherent at this point; no general full-feedback source-stage theorem.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-05",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-22",
+        "ATC7-CL-29B"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-01",
+        "ATC-LSF-RB-CL-03",
+        "ATC-LSF-RB-CL-05"
+      ],
+      "local_adjudication": "Complete enabled point trajectory and conditional target domain proved; unrelated structural/branch authority not supplied.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-06",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-06",
+        "ATC7-CL-07",
+        "ATC7-CL-21",
+        "ATC7-CL-22",
+        "ATC7-CL-29B"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-03",
+        "ATC-LSF-RB-CL-05"
+      ],
+      "local_adjudication": "Explicit resource norm and history domain proved; no undeclared joint-state contraction or general structural energy.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-07",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-04",
+        "ATC7-CL-05",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-02",
+        "ATC-LSF-RB-CL-03"
+      ],
+      "local_adjudication": "Enabled no-split/reset-only obstruction versus restorative fission is certified at the point; not uniqueness of remedy.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-08",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-04",
+        "ATC7-CL-11",
+        "ATC7-CL-29B"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-02"
+      ],
+      "local_adjudication": "Same source-sector-to-site recipe justified at the enabled point; generic/native lift and classical CAN-B remain open.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-09",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-09",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-02"
+      ],
+      "local_adjudication": "One eligible source locus, unchanged source-only resolution; not multi-locus or cross-law arbitration.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-10",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-05",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-01",
+        "ATC-LSF-RB-CL-02"
+      ],
+      "local_adjudication": "Pointwise interval signs and unique k=30779 bin certified; generic/native rounding and covariance remain open.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-11",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-10",
+        "ATC7-CL-13",
+        "ATC7-CL-30"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-12",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-11",
+        "ATC7-CL-12",
+        "ATC7-CL-13",
+        "ATC7-CL-14",
+        "ATC7-CL-17",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-02"
+      ],
+      "local_adjudication": "Same bounded mathematical graph prescription; no new generic/native graph mechanics.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-13",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-14",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-20",
+        "ATC7-CL-29B",
+        "ATC7-CL-30"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-02",
+        "ATC-LSF-RB-CL-04"
+      ],
+      "local_adjudication": "Exact conservation and actual roles at this point; no native represented-charge admission.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-14",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-10",
+        "ATC7-CL-12",
+        "ATC7-CL-13",
+        "ATC7-CL-14",
+        "ATC7-CL-17",
+        "ATC7-CL-19",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-04"
+      ],
+      "local_adjudication": "Research affine/unit-reference target only; native backend/context/potential admission still open.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-15",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-06",
+        "ATC7-CL-10",
+        "ATC7-CL-12",
+        "ATC7-CL-18",
+        "ATC7-CL-29C",
+        "ATC7-CL-30"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-04"
+      ],
+      "local_adjudication": "Independent point-role history transport and gamma writing certified; native mixed producer/transport remains open.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-16",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-12",
+        "ATC7-CL-13",
+        "ATC7-CL-14",
+        "ATC7-CL-16",
+        "ATC7-CL-17",
+        "ATC7-CL-18",
+        "ATC7-CL-19",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C",
+        "ATC7-CL-31"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-04"
+      ],
+      "local_adjudication": "Actual-role mathematical entry certified; full native package/initializer integration remains open.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-17",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-07",
+        "ATC7-CL-14",
+        "ATC7-CL-20",
+        "ATC7-CL-21",
+        "ATC7-CL-28"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-18",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-07",
+        "ATC7-CL-14",
+        "ATC7-CL-20",
+        "ATC7-CL-21"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-19",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-20",
+        "ATC7-CL-22"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-03",
+        "ATC-LSF-RB-CL-04",
+        "ATC-LSF-RB-CL-05"
+      ],
+      "local_adjudication": "Pointwise actual entry and infinite restoration accepted; uniform conditional target theorem accepted, full-box source/entry not accepted.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-20",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-20",
+        "ATC7-CL-22",
+        "ATC7-CL-23",
+        "ATC7-CL-28"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-04",
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "Prepared history remains prepared; no formation or identity inference.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-21",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-10",
+        "ATC7-CL-18",
+        "ATC7-CL-24",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-30",
+        "ATC7-CL-31"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-22",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-23",
+        "ATC7-CL-24",
+        "ATC7-CL-25",
+        "ATC7-CL-26"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-23",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-08",
+        "ATC7-CL-10",
+        "ATC7-CL-11",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-19",
+        "ATC7-CL-22",
+        "ATC7-CL-23",
+        "ATC7-CL-24",
+        "ATC7-CL-27",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C",
+        "ATC7-CL-30",
+        "ATC7-CL-31"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-04",
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "Reviewed mathematical certificate is not native lifecycle execution, rollback or replay.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-24",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-25",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "Second local research adjudication only; source/schema/adapter readmission remains open.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-25",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-06",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-26",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-06",
+        "ATC7-CL-12",
+        "ATC7-CL-17",
+        "ATC7-CL-22",
+        "ATC7-CL-29",
+        "ATC7-CL-29A",
+        "ATC7-CL-29B",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-05",
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "Research A_OS point and conditional target domain only; other families and full-box causal chain remain unsupported.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-27",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-05",
+        "ATC7-CL-13",
+        "ATC7-CL-28",
+        "ATC7-CL-29A",
+        "ATC7-CL-29C"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-28",
+      "origin_status": "open_proposal",
+      "origin_claim_refs": [
+        "ATC7-CL-13",
+        "ATC7-CL-17",
+        "ATC7-CL-26"
+      ],
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "local_claim_refs": [
+        "ATC-LSF-RB-CL-02",
+        "ATC-LSF-RB-CL-06"
+      ],
+      "local_adjudication": "No new scope earned; retain first adjudication and original conditional obligations.",
+      "prior_adjudication_ref": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "discharged": false
+    }
+  ],
+  "family_dispositions": [
+    {
+      "profile_family_id": "A_OS",
+      "mathematical_scope": "first adjudication unchanged; add prepared enabled point and conditional target theorem only",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_CI",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_CI_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "A_RG2b",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_OS",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_CI",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_CI_PC",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    },
+    {
+      "profile_family_id": "C_RG2b",
+      "mathematical_scope": "not_established_for_this_candidate",
+      "native_ATC_support": false,
+      "preexisting_G2_G3_unchanged": true
+    }
+  ],
+  "preservation": {
+    "origin_claims": 35,
+    "origin_debts": 28,
+    "origin_reciprocal_links": 165,
+    "first_adjudication_unchanged": true,
+    "reviewed_point_checker_note_certificate_unchanged": true,
+    "accepted_graph_descendants_added": [],
+    "blanket_debt_discharges": [],
+    "production_paper_spec_changes": false,
+    "capability_cells_changed": false
+  },
+  "next": "Pressure original box source/entry over all reachable dyadic bins; new results require review before scope enlargement.",
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackPointAdjudication.md",
+      "sha256": "9f2c7cce87ff7ecd8260ac09833b5697f9efa14c7aad8de1bc99960a3406dd1b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+      "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointCertificate.json",
+      "sha256": "59c5c1730cbf43e52f5f3ba70b3099e8d6d5fa50d9fe7acbd19e625a3a37af3a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackLiftChecks.json",
+      "sha256": "4a3ad65a07d5c6ff850e1a753b00b138fda3a6fbf459ef3fdc65902d6e7a8b1a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Point-Pass.md",
+      "sha256": "eb95ae3f9c610456dbfb5b13c82c27b487a3fda306e003a526363d04a90a7a50"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Qualified-Pass.md",
+      "sha256": "0f466a13a90ed1b64e2048cf0bb50121e0d035ad0f4b584e23ad7a368e0fdd10"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackPointCertification.md",
+      "sha256": "ee0fa83328e3b2352664af2836203abff9bb30cd0928e922537da63a7e74cb90"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackLiftProposal.md",
+      "sha256": "bc633922044f222e595d71f37c6807870bf5b31d0adfe4015fbea8edc74375f4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_sector_readback_lift.py",
+      "sha256": "49b39bee5d6aa98577d98dbf3f046db02fc0b58ea528bc0d06920da07d924680"
+    }
+  ],
+  "record_digest": "47c49a4e6a055ec087ddb9401277b315276e63157a0f469e3552be22a897376b"
+}

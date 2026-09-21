@@ -1,0 +1,917 @@
+{
+  "ATC2_closed": false,
+  "checks": {
+    "case_count": 13,
+    "cases": {
+      "ambiguous_partition": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "decomposition_status": "unresolved",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "not_reached",
+            "decomposition_status": "unresolved",
+            "funding_admission": "not_reached",
+            "inward": {
+              "0": "1",
+              "1": "1",
+              "2": "1",
+              "3": "1"
+            },
+            "obstruction_status": "undetermined",
+            "parent": 4,
+            "rayleigh": "5",
+            "reason": "response_partition_unresolved"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "unresolved_candidates",
+        "obstruction_status": "undetermined",
+        "outcome": "unresolved",
+        "prescription": null,
+        "pressure_loci": [],
+        "reason": "unresolved_physical_partition"
+      },
+      "funded_single": {
+        "construction_domain_admission": "admitted",
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000"
+        ],
+        "decomposition_status": "resolved",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          }
+        ],
+        "funding_admission": "admitted",
+        "locus_resolution": "single_resolved",
+        "obstruction_status": "certified_present",
+        "outcome": "resolved",
+        "prescription": {
+          "activities": [
+            "1328517563/6553600000",
+            "11930373147/52428800000"
+          ],
+          "blocks": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "funding_margins": [
+            "149927187137/134217728000",
+            "936702018107/671088640000"
+          ],
+          "k": 30876,
+          "parent": 4,
+          "sector_W": [
+            "19/20",
+            "77/80"
+          ],
+          "shares": [
+            "7719/16384",
+            "8665/16384"
+          ]
+        },
+        "pressure_loci": [
+          4
+        ]
+      },
+      "funded_size_blocked": {
+        "construction_domain_admission": "blocked",
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000"
+        ],
+        "decomposition_status": "resolved",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "blocked",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          }
+        ],
+        "funding_admission": "admitted",
+        "locus_resolution": "single_resolved",
+        "obstruction_status": "certified_present",
+        "outcome": "uncertified",
+        "prescription": {
+          "activities": [
+            "1328517563/6553600000",
+            "11930373147/52428800000"
+          ],
+          "blocks": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "funding_margins": [
+            "149927187137/134217728000",
+            "936702018107/671088640000"
+          ],
+          "k": 30876,
+          "parent": 4,
+          "sector_W": [
+            "19/20",
+            "77/80"
+          ],
+          "shares": [
+            "7719/16384",
+            "8665/16384"
+          ]
+        },
+        "pressure_loci": [
+          4
+        ],
+        "reason": "selected_target_size_bound"
+      },
+      "funding_and_size_blocked": {
+        "construction_domain_admission": "blocked",
+        "current": [
+          "19/8000",
+          "19/8000",
+          "231/64000",
+          "231/64000"
+        ],
+        "decomposition_status": "resolved",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "blocked",
+            "decomposition_status": "resolved",
+            "funding_admission": "blocked",
+            "funding_margins": [
+              "-369261/655360",
+              "-220563/655360"
+            ],
+            "inward": {
+              "0": "19/8000",
+              "1": "19/8000",
+              "2": "231/64000",
+              "3": "231/64000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "child_funding_not_strict",
+            "x": "1/10",
+            "y": "0"
+          }
+        ],
+        "funding_admission": "blocked",
+        "locus_resolution": "single_resolved",
+        "obstruction_status": "certified_present",
+        "outcome": "blocked_transfer",
+        "prescription": {
+          "activities": [
+            "19/4000",
+            "231/32000"
+          ],
+          "blocks": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "funding_margins": [
+            "-369261/655360",
+            "-220563/655360"
+          ],
+          "k": 26009,
+          "parent": 4,
+          "sector_W": [
+            "19/20",
+            "77/80"
+          ],
+          "shares": [
+            "26009/65536",
+            "39527/65536"
+          ]
+        },
+        "pressure_loci": [
+          4
+        ],
+        "reason": "child_funding_not_strict"
+      },
+      "homogeneous": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "decomposition_status": "not_reached",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "not_reached",
+            "decomposition_status": "not_reached",
+            "funding_admission": "not_reached",
+            "inward": {
+              "0": "0",
+              "1": "0",
+              "2": "0",
+              "3": "0"
+            },
+            "obstruction_status": "not_certified",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "not_four_strict_inflows"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "none_certified",
+        "obstruction_status": "not_certified",
+        "outcome": "no_event",
+        "prescription": null,
+        "pressure_loci": []
+      },
+      "invalid_domain": {
+        "construction_domain_admission": "not_reached",
+        "decomposition_status": "undetermined",
+        "funding_admission": "not_reached",
+        "locus_resolution": "undetermined",
+        "obstruction_status": "undetermined",
+        "outcome": "uncertified",
+        "reason": "positive_resource_or_mobility_domain"
+      },
+      "mixed_funding": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000",
+          "19/8000",
+          "19/8000",
+          "231/64000",
+          "231/64000"
+        ],
+        "decomposition_status": "resolved_per_locus",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          },
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "blocked",
+            "funding_margins": [
+              "-369261/655360",
+              "-220563/655360"
+            ],
+            "inward": {
+              "4": "19/8000",
+              "5": "19/8000",
+              "6": "231/64000",
+              "7": "231/64000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 9,
+            "rayleigh": "153/32",
+            "reason": "child_funding_not_strict",
+            "x": "1/10",
+            "y": "0"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "multiple_unresolved",
+        "obstruction_status": "certified_present",
+        "outcome": "unresolved",
+        "prescription": null,
+        "pressure_loci": [
+          4,
+          9
+        ],
+        "reason": "multiple_pressure_loci"
+      },
+      "mixed_funding_reversed": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "19/8000",
+          "19/8000",
+          "231/64000",
+          "231/64000",
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000"
+        ],
+        "decomposition_status": "resolved_per_locus",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "blocked",
+            "funding_margins": [
+              "-369261/655360",
+              "-220563/655360"
+            ],
+            "inward": {
+              "0": "19/8000",
+              "1": "19/8000",
+              "2": "231/64000",
+              "3": "231/64000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "child_funding_not_strict",
+            "x": "1/10",
+            "y": "0"
+          },
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "4": "1328517563/13107200000",
+              "5": "1328517563/13107200000",
+              "6": "11930373147/104857600000",
+              "7": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 9,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "multiple_unresolved",
+        "obstruction_status": "certified_present",
+        "outcome": "unresolved",
+        "prescription": null,
+        "pressure_loci": [
+          4,
+          9
+        ],
+        "reason": "multiple_pressure_loci"
+      },
+      "multiple_and_ambiguous": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000",
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "decomposition_status": "unresolved",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          },
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "4": "1328517563/13107200000",
+              "5": "1328517563/13107200000",
+              "6": "11930373147/104857600000",
+              "7": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 9,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          },
+          {
+            "construction_domain_admission": "not_reached",
+            "decomposition_status": "unresolved",
+            "funding_admission": "not_reached",
+            "inward": {
+              "8": "1",
+              "9": "1",
+              "10": "1",
+              "11": "1"
+            },
+            "obstruction_status": "undetermined",
+            "parent": 14,
+            "rayleigh": "5",
+            "reason": "response_partition_unresolved"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "multiple_unresolved",
+        "obstruction_status": "certified_present",
+        "outcome": "unresolved",
+        "prescription": null,
+        "pressure_loci": [
+          4,
+          9
+        ],
+        "reason": "multiple_pressure_loci_and_unresolved_partition"
+      },
+      "resolved_and_ambiguous": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "decomposition_status": "unresolved",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          },
+          {
+            "construction_domain_admission": "not_reached",
+            "decomposition_status": "unresolved",
+            "funding_admission": "not_reached",
+            "inward": {
+              "4": "1",
+              "5": "1",
+              "6": "1",
+              "7": "1"
+            },
+            "obstruction_status": "undetermined",
+            "parent": 9,
+            "rayleigh": "5",
+            "reason": "response_partition_unresolved"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "unresolved_candidates",
+        "obstruction_status": "certified_present",
+        "outcome": "unresolved",
+        "prescription": null,
+        "pressure_loci": [
+          4
+        ],
+        "reason": "unresolved_physical_partition"
+      },
+      "two_funded": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000",
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000"
+        ],
+        "decomposition_status": "resolved_per_locus",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          },
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "admitted",
+            "funding_margins": [
+              "149927187137/134217728000",
+              "936702018107/671088640000"
+            ],
+            "inward": {
+              "4": "1328517563/13107200000",
+              "5": "1328517563/13107200000",
+              "6": "11930373147/104857600000",
+              "7": "11930373147/104857600000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 9,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "multiple_unresolved",
+        "obstruction_status": "certified_present",
+        "outcome": "unresolved",
+        "prescription": null,
+        "pressure_loci": [
+          4,
+          9
+        ],
+        "reason": "multiple_pressure_loci"
+      },
+      "two_unfunded": {
+        "construction_domain_admission": "not_reached",
+        "current": [
+          "19/8000",
+          "19/8000",
+          "231/64000",
+          "231/64000",
+          "19/8000",
+          "19/8000",
+          "231/64000",
+          "231/64000"
+        ],
+        "decomposition_status": "resolved_per_locus",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "blocked",
+            "funding_margins": [
+              "-369261/655360",
+              "-220563/655360"
+            ],
+            "inward": {
+              "0": "19/8000",
+              "1": "19/8000",
+              "2": "231/64000",
+              "3": "231/64000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "child_funding_not_strict",
+            "x": "1/10",
+            "y": "0"
+          },
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "blocked",
+            "funding_margins": [
+              "-369261/655360",
+              "-220563/655360"
+            ],
+            "inward": {
+              "4": "19/8000",
+              "5": "19/8000",
+              "6": "231/64000",
+              "7": "231/64000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 9,
+            "rayleigh": "153/32",
+            "reason": "child_funding_not_strict",
+            "x": "1/10",
+            "y": "0"
+          }
+        ],
+        "funding_admission": "not_reached",
+        "locus_resolution": "multiple_unresolved",
+        "obstruction_status": "certified_present",
+        "outcome": "unresolved",
+        "prescription": null,
+        "pressure_loci": [
+          4,
+          9
+        ],
+        "reason": "multiple_pressure_loci"
+      },
+      "unfunded_single": {
+        "construction_domain_admission": "admitted",
+        "current": [
+          "19/8000",
+          "19/8000",
+          "231/64000",
+          "231/64000"
+        ],
+        "decomposition_status": "resolved",
+        "diagnostics": [
+          {
+            "construction_domain_admission": "admitted",
+            "decomposition_status": "resolved",
+            "funding_admission": "blocked",
+            "funding_margins": [
+              "-369261/655360",
+              "-220563/655360"
+            ],
+            "inward": {
+              "0": "19/8000",
+              "1": "19/8000",
+              "2": "231/64000",
+              "3": "231/64000"
+            },
+            "obstruction_status": "certified_present",
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "child_funding_not_strict",
+            "x": "1/10",
+            "y": "0"
+          }
+        ],
+        "funding_admission": "blocked",
+        "locus_resolution": "single_resolved",
+        "obstruction_status": "certified_present",
+        "outcome": "blocked_transfer",
+        "prescription": {
+          "activities": [
+            "19/4000",
+            "231/32000"
+          ],
+          "blocks": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "funding_margins": [
+            "-369261/655360",
+            "-220563/655360"
+          ],
+          "k": 26009,
+          "parent": 4,
+          "sector_W": [
+            "19/20",
+            "77/80"
+          ],
+          "shares": [
+            "26009/65536",
+            "39527/65536"
+          ]
+        },
+        "pressure_loci": [
+          4
+        ],
+        "reason": "child_funding_not_strict"
+      }
+    },
+    "lineage_semantics": "old edge to successor edge; parent replaced by child; scalar W transported",
+    "native_events": 0,
+    "physical_outcomes_and_prescriptions_unchanged": true,
+    "target_constructions": 0,
+    "trajectory_steps": 0
+  },
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorLineageCertificate.json",
+    "record_digest": "787c4a1cf33b3152a228751db98363389a268158614ad7279af79c398adc2521"
+  },
+  "production_changes": false,
+  "record_digest": "e5e97877d2bfcc16607bfbc2c9469b6948be4fed9eb1f6f0e550544332c3793e",
+  "review_disposition": "independent PASS for predecessor exact and finite mathematics; no full repository run reported",
+  "schema": "grcv4_atc_sector_status_correction_v1",
+  "scientific_adoption": false,
+  "scope": "source-only research status typing; neither concurrency policy nor new native authority",
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md",
+      "sha256": "443880480cee234b3da850290296395c43237a6976f3d891972049370e4952a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC2CandidateClosureProposal.md",
+      "sha256": "aa3a9de4cfc15a0be0487203ba6a470d0109e2f96667d54219d884fb5a85723b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSourceFissionProposal.md",
+      "sha256": "b07f9d7672c4774adfabb6424f4ee905c1be25320de2bea95966f39e67bebd67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCriticalModeCertificate.json",
+      "sha256": "5fa2eda45063ebeb39e61b756cb0cbe02022ffd5d1e9a3be7096992c5c528509"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCLocalizedSectorFissionCertificate.json",
+      "sha256": "24762124714354729220f91319af3359bda33ad174d613179788169ad1f0df69"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCOSGeometryFeedbackCertificate.json",
+      "sha256": "0a6ff9ab8efc9d32c9df4bb75366474e74b357a67d0aef27f9b3ecc327a3b48f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionOSFeedbackCertificate.json",
+      "sha256": "61099508c2c67c48076b793f066ff7af7356caa883fdd0e7564395f30e876181"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionStabilityReviewCertificate.json",
+      "sha256": "9595034982158304515e8ca1f7d55f461d134ac94b191c5f543ff6e54752ca50"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorLineageCertificate.json",
+      "sha256": "781ec38730dc4f5f2c42569b915e0fbf860a4acda60c23d8d62b5de28c14ef86"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCUnsplitViabilityCertificate.json",
+      "sha256": "91d188d8a2335638d9108219201c6a6d522c6b38db40958110a4a3e3f52180ee"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_critical_mode.py",
+      "sha256": "9a10e97c87a521ac9614565a84d1a5729fc8db5527df147d02f3074179e995fc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_localized_sector_fission.py",
+      "sha256": "9ac3737d302fb327adaac6633c746cd63cfbcb0835a1b09c9edc5187b15c12c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_os_geometry_feedback.py",
+      "sha256": "1f69df96b16034117b28f0d1074d69c6828cdeabcb9303b44631547e206c069b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_os_feedback.py",
+      "sha256": "252ad3e32e9aaca399dbdcd77bddf9cb9818db5f6874170b90f1ba0ee74ea570"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_review.py",
+      "sha256": "c04fd27e5bd25d1df9fb2055acf37b7a843cf0bc86f46e9e2284f845c3110ddc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_stability.py",
+      "sha256": "1827200beb884b22e55fd7770955124e828b8cbe7f851d4af5bdb53aff280342"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_lineage.py",
+      "sha256": "207fece35ac40284ea0481d2b69a2d639d12ea8a4f06c24fa7308f242fe5aa07"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_unsplit_viability.py",
+      "sha256": "d3c6017f53fb9e46ab16e50e9f6b3e9c8f889f1567c2608450494c334a744d46"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_sector_status.py",
+      "sha256": "e3e616ac67fc19ea567feb3ed764120aa3b3f9519f19f900fd19408b8dc6eb94"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/a_initializer.py",
+      "sha256": "6efb1e33baff33e4f5d76de7937a9cb4977c89c28d6bf8999e168bf68e46de3b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/forensic.py",
+      "sha256": "6d44973aececa003f180082175025e23b9a0db44e5fd9e5d80217b368e552795"
+    },
+    {
+      "path": "specs/grc-v4-a-initializer-spec.md",
+      "sha256": "ff5990571197d7c843a16bd404694e35f8c6fc5da01856e5639d51ad5f2b36e6"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f"
+    }
+  ],
+  "status": "passed_status_typing_corrections_no_new_mechanism"
+}

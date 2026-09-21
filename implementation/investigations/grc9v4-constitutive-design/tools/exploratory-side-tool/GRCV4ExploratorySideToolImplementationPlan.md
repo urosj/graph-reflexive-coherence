@@ -2417,3 +2417,14 @@ The scoped successor opens only P9-8.1a chart/port graph in its two V4-owned
 source/test paths. All other specialization leaves retain their prerequisites.
 API/notebook/browser support must agree with the work manifest and clear the
 G3 projection on failure. Update the main Phase 9 handoff for continuation.
+
+## ATC A_OS bounded research source admission
+
+Admit the reconciled research ledger through an explicit append-only ATC
+context and read-only API/CLI. Pin relocated evidence and load-bearing sources;
+observe added, missing and changed sources without automatic admission.
+Preserve the pre-ATC graph exactly. Expose full claim ancestry, separate
+proposal origins from accepted conditional claims, and retain all 28 global
+debts while projecting their bounded A_OS dispositions. Test scope widening,
+broken bindings, invalid ancestry and reciprocal debt links. This checkpoint
+does not add browser/notebook projections, native ATC or aggregate closure.

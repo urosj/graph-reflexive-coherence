@@ -1,3 +1,5 @@
+> Relocation maintenance: paths and dependent identities were mechanically rebuilt; scientific content and review verdicts are unchanged. New identities do not claim a new independent rerun. Original committed subjects remain in Git.
+
 # ATC-1 — present-state causal boundary and post-beat composition
 
 **Status:** proposed bounded design, prepared for review; not admitted
@@ -9,7 +11,7 @@ complete edge-birth, split, merge or spark law.
 
 ## 1. Source reconciliation and earliest affected contracts
 
-The [opening intake](../drafts/autonomous-topology-change/ATCSourceIntake.json)
+The [opening intake](../evidence/autonomous-topology-change/ATCSourceIntake.json)
 identifies exact source subjects. References below address those subjects,
 not whichever bytes a historical attachment or a later `main` page contains.
 
@@ -244,7 +246,7 @@ limitation must be visible in any future advertised runtime scope.
 
 ## 7. Proposal-to-authority mapping and debt disposition
 
-The [machine companion](../drafts/autonomous-topology-change/ATC1CausalBoundaryProposal.json)
+The [machine companion](../evidence/autonomous-topology-change/ATC1CausalBoundaryProposal.json)
 records the exact selected options, source-clause mappings, inherited query
 identities, proposed claim refinements and verification obligations. It is
 kept outside the accepted decision-JSON inventory. No local handle is made
@@ -284,7 +286,7 @@ checks a small explicit protocol model against independently specified
 outcomes and arithmetic counterexamples. It also calls existing reference
 geometry and A_OS numerical owners for bounded stage controls. It is not an
 ATC runtime, a new lifecycle owner, or evidence that all ten adapters work.
-The retained [pressure result](../drafts/autonomous-topology-change/ATC1PressureResults.json)
+The retained [pressure result](../evidence/autonomous-topology-change/ATC1PressureResults.json)
 binds the script and exact inputs/outputs; reruns print a new result without
 overwriting it.
 

@@ -1,0 +1,561 @@
+{
+  "schema": "grcv4_atc_support_causal_preregistration_v1",
+  "status": "passed_exact_prediction_checks",
+  "scientific_status": "proposed_equations_only_not_native_causal_execution",
+  "python": "3.12.3",
+  "potential_binding_digest": "grcv4-research-potential-sha256:9f4a7d3c69c1e52a4551029e7085d8123f68215647e63706397b3cd8bfcbfd8d",
+  "support_certificate_digest": "f0414b6fa38dbe9c57e265530d96580f12d1f58b9bdb927ee06c8e1f167d4d37",
+  "binding_pressure": {
+    "rejected_mutations": [
+      {
+        "field": "polynomial",
+        "digest_recomputed": false,
+        "rejected": true
+      },
+      {
+        "field": "polynomial",
+        "digest_recomputed": true,
+        "rejected": true
+      },
+      {
+        "field": "units",
+        "digest_recomputed": false,
+        "rejected": true
+      },
+      {
+        "field": "units",
+        "digest_recomputed": true,
+        "rejected": true
+      },
+      {
+        "field": "domain",
+        "digest_recomputed": false,
+        "rejected": true
+      },
+      {
+        "field": "domain",
+        "digest_recomputed": true,
+        "rejected": true
+      },
+      {
+        "field": "rounding",
+        "digest_recomputed": false,
+        "rejected": true
+      },
+      {
+        "field": "rounding",
+        "digest_recomputed": true,
+        "rejected": true
+      },
+      {
+        "field": "work",
+        "digest_recomputed": false,
+        "rejected": true
+      },
+      {
+        "field": "work",
+        "digest_recomputed": true,
+        "rejected": true
+      },
+      {
+        "field": "initializer_evidence",
+        "digest_recomputed": false,
+        "rejected": true
+      },
+      {
+        "field": "initializer_evidence",
+        "digest_recomputed": true,
+        "rejected": true
+      },
+      {
+        "field": "symbolic_id",
+        "digest_recomputed": false,
+        "rejected": true
+      },
+      {
+        "field": "symbolic_id",
+        "digest_recomputed": true,
+        "rejected": true
+      }
+    ],
+    "invalid_inputs_rejected": 7,
+    "finite_extreme_inputs_checked": 4,
+    "polynomial_forms_agree": true
+  },
+  "dt": "1/64",
+  "epsilon": "1/4096",
+  "source_incidence": [
+    [
+      1,
+      0
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      -1
+    ]
+  ],
+  "target_incidence": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      -1,
+      0
+    ],
+    [
+      -1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      -1
+    ]
+  ],
+  "projection": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ]
+  ],
+  "source": {
+    "C": [
+      "1",
+      "3",
+      "1"
+    ],
+    "p": [
+      "0",
+      "0",
+      "0"
+    ],
+    "Phi": [
+      "-1/512",
+      "1/256",
+      "-1/512"
+    ],
+    "J": [
+      "3/2048",
+      "-3/2048"
+    ],
+    "f": [
+      "-3/2048",
+      "3/1024",
+      "-3/2048"
+    ],
+    "rounded_prediction": {
+      "Phi": [
+        -0.001953125,
+        0.00390625,
+        -0.001953125
+      ],
+      "J": [
+        0.00146484375,
+        -0.00146484375
+      ],
+      "f": [
+        "-3/2048",
+        "3/1024",
+        "-3/2048"
+      ],
+      "max_tendency_error": "0"
+    }
+  },
+  "target": {
+    "C": [
+      "1",
+      "1",
+      "3/2",
+      "3/2"
+    ],
+    "p": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "Phi": [
+      "-1/2048",
+      "-1/2048",
+      "1/2048",
+      "1/2048"
+    ],
+    "J": [
+      "1/4096",
+      "-1/4096",
+      "0"
+    ],
+    "f": [
+      "-1/4096",
+      "-1/4096",
+      "1/4096",
+      "1/4096"
+    ],
+    "rounded_prediction": {
+      "Phi": [
+        -0.00048828125,
+        -0.00048828125,
+        0.00048828125,
+        0.00048828125
+      ],
+      "J": [
+        0.000244140625,
+        -0.000244140625,
+        0.0
+      ],
+      "f": [
+        "-1/4096",
+        "-1/4096",
+        "1/4096",
+        "1/4096"
+      ],
+      "max_tendency_error": "0"
+    }
+  },
+  "baseline": {
+    "projected_C": [
+      "1",
+      "3",
+      "1"
+    ],
+    "projected_f": [
+      "-1/4096",
+      "1/2048",
+      "-1/4096"
+    ],
+    "projected_to_source_tendency_ratio": "1/6",
+    "delta_baseline": [
+      "5/4096",
+      "-5/2048",
+      "5/4096"
+    ],
+    "projected_first_update_difference": [
+      "5/262144",
+      "-5/131072",
+      "5/262144"
+    ]
+  },
+  "encounters": [
+    {
+      "child_index": 2,
+      "target_direction": [
+        1,
+        0,
+        -2,
+        1
+      ],
+      "projected_direction": [
+        "1",
+        "-1",
+        "0"
+      ],
+      "source_loaded": {
+        "C": [
+          "4097/4096",
+          "12287/4096",
+          "1"
+        ],
+        "p": [
+          "87804248834049/1152921504606846976",
+          "-1107476863754241/1152921504606846976",
+          "0"
+        ],
+        "Phi": [
+          "-2678945178345473/1152921504606846976",
+          "5270360985763841/1152921504606846976",
+          "-316334937429/140737488355328"
+        ],
+        "J": [
+          "3974653082054657/2305843009213693952",
+          "-7861776793182209/4611686018427387904"
+        ],
+        "f": [
+          "-3974653082054657/2305843009213693952",
+          "15811082957291523/4611686018427387904",
+          "-7861776793182209/4611686018427387904"
+        ],
+        "rounded_prediction": {
+          "Phi": [
+            -0.002323614545865383,
+            0.004571309464438401,
+            -0.0022476949185730177
+          ],
+          "J": [
+            0.001723731002575946,
+            -0.0017047510957528547
+          ],
+          "f": [
+            "-3974653082054657/2305843009213693952",
+            "15811082957291523/4611686018427387904",
+            "-7861776793182209/4611686018427387904"
+          ],
+          "max_tendency_error": "0"
+        }
+      },
+      "target_loaded": {
+        "C": [
+          "4097/4096",
+          "1",
+          "3071/2048",
+          "6145/4096"
+        ],
+        "p": [
+          "87804248834049/1152921504606846976",
+          "0",
+          "-2469067492353/36028797018963968",
+          "39621065959425/1152921504606846976"
+        ],
+        "Phi": [
+          "-1275651559549969/2305843009213693952",
+          "-1102242085137423/2305843009213693952",
+          "1304829268988977/2305843009213693952",
+          "1073064375698415/2305843009213693952"
+        ],
+        "J": [
+          "1290240414269473/4611686018427387904",
+          "-1087653230417919/4611686018427387904",
+          "-115882446645281/4611686018427387904"
+        ],
+        "f": [
+          "-1290240414269473/4611686018427387904",
+          "-1087653230417919/4611686018427387904",
+          "703061430457377/2305843009213693952",
+          "485885391886319/2305843009213693952"
+        ],
+        "rounded_prediction": {
+          "Phi": [
+            -0.0005532256768794393,
+            -0.00047802130532437854,
+            0.0005658794912642086,
+            0.00046536749093960923
+          ],
+          "J": [
+            0.00027977629203591197,
+            -0.00023584719906599694,
+            -2.5128000081149843e-05
+          ],
+          "f": [
+            "-1290240414269473/4611686018427387904",
+            "-1087653230417919/4611686018427387904",
+            "703061430457377/2305843009213693952",
+            "485885391886319/2305843009213693952"
+          ],
+          "max_tendency_error": "0"
+        }
+      },
+      "source_increment": [
+        "-596953361526785/2305843009213693952",
+        "2300284075180035/4611686018427387904",
+        "-1106377352126465/4611686018427387904"
+      ],
+      "projected_target_increment": [
+        "-164340507426849/4611686018427387904",
+        "3940432218817/144115188075855872",
+        "38246676424705/4611686018427387904"
+      ],
+      "delta_pair": [
+        "1029566215626721/4611686018427387904",
+        "-2174190244177891/4611686018427387904",
+        "572312014275585/2305843009213693952"
+      ],
+      "source_parent_response": "2300284075180035/72057594037927936",
+      "target_pair_response": "3940432218817/2251799813685248",
+      "addressed_child_Q": "140111477036065/72057594037927936",
+      "aggregate_response_difference": "-2174190244177891/72057594037927936"
+    },
+    {
+      "child_index": 3,
+      "target_direction": [
+        0,
+        1,
+        1,
+        -2
+      ],
+      "projected_direction": [
+        "0",
+        "-1",
+        "1"
+      ],
+      "source_loaded": {
+        "C": [
+          "1",
+          "12287/4096",
+          "4097/4096"
+        ],
+        "p": [
+          "0",
+          "-1107476863754241/1152921504606846976",
+          "87804248834049/1152921504606846976"
+        ],
+        "Phi": [
+          "-316334937429/140737488355328",
+          "5270360985763841/1152921504606846976",
+          "-2678945178345473/1152921504606846976"
+        ],
+        "J": [
+          "7861776793182209/4611686018427387904",
+          "-3974653082054657/2305843009213693952"
+        ],
+        "f": [
+          "-7861776793182209/4611686018427387904",
+          "15811082957291523/4611686018427387904",
+          "-3974653082054657/2305843009213693952"
+        ],
+        "rounded_prediction": {
+          "Phi": [
+            -0.0022476949185730177,
+            0.004571309464438401,
+            -0.002323614545865383
+          ],
+          "J": [
+            0.0017047510957528547,
+            -0.001723731002575946
+          ],
+          "f": [
+            "-7861776793182209/4611686018427387904",
+            "15811082957291523/4611686018427387904",
+            "-3974653082054657/2305843009213693952"
+          ],
+          "max_tendency_error": "0"
+        }
+      },
+      "target_loaded": {
+        "C": [
+          "1",
+          "4097/4096",
+          "6145/4096",
+          "3071/2048"
+        ],
+        "p": [
+          "0",
+          "87804248834049/1152921504606846976",
+          "39621065959425/1152921504606846976",
+          "-2469067492353/36028797018963968"
+        ],
+        "Phi": [
+          "-1102242085137423/2305843009213693952",
+          "-1275651559549969/2305843009213693952",
+          "1073064375698415/2305843009213693952",
+          "1304829268988977/2305843009213693952"
+        ],
+        "J": [
+          "1087653230417919/4611686018427387904",
+          "-1290240414269473/4611686018427387904",
+          "115882446645281/4611686018427387904"
+        ],
+        "f": [
+          "-1087653230417919/4611686018427387904",
+          "-1290240414269473/4611686018427387904",
+          "485885391886319/2305843009213693952",
+          "703061430457377/2305843009213693952"
+        ],
+        "rounded_prediction": {
+          "Phi": [
+            -0.00047802130532437854,
+            -0.0005532256768794393,
+            0.00046536749093960923,
+            0.0005658794912642086
+          ],
+          "J": [
+            0.00023584719906599694,
+            -0.00027977629203591197,
+            2.5128000081149843e-05
+          ],
+          "f": [
+            "-1087653230417919/4611686018427387904",
+            "-1290240414269473/4611686018427387904",
+            "485885391886319/2305843009213693952",
+            "703061430457377/2305843009213693952"
+          ],
+          "max_tendency_error": "0"
+        }
+      },
+      "source_increment": [
+        "-1106377352126465/4611686018427387904",
+        "2300284075180035/4611686018427387904",
+        "-596953361526785/2305843009213693952"
+      ],
+      "projected_target_increment": [
+        "38246676424705/4611686018427387904",
+        "3940432218817/144115188075855872",
+        "-164340507426849/4611686018427387904"
+      ],
+      "delta_pair": [
+        "572312014275585/2305843009213693952",
+        "-2174190244177891/4611686018427387904",
+        "1029566215626721/4611686018427387904"
+      ],
+      "source_parent_response": "2300284075180035/72057594037927936",
+      "target_pair_response": "3940432218817/2251799813685248",
+      "addressed_child_Q": "140111477036065/72057594037927936",
+      "aggregate_response_difference": "-2174190244177891/72057594037927936"
+    }
+  ],
+  "future_native_comparison": {
+    "stage_oracle": "exact polynomial, exact gauge, RN64 potential, exact flux from rounded potential, RN64 flux",
+    "stage_Phi_and_J": "require equality to independently recomputed stage-rounded predictions",
+    "mathematical_per_coordinate_tendency_error_bound": "1/281474976710656",
+    "delta_baseline_and_delta_pair_absolute_tolerance": "1/35184372088832",
+    "normalized_response_absolute_tolerance": "1/549755813888",
+    "tolerance_basis": "per-field bound 2^-48 gives at most 6 such errors in delta_pair; at most 64 times this in shared normalized response",
+    "max_prechecked_tendency_rounding_error": "0"
+  },
+  "direct_preparation": {
+    "prediction": "equal scientific evolution on matched complete scientific inputs and requests",
+    "publication": "fresh independently admitted research publication; never strip receipts from an event snapshot",
+    "excluded_equalities": [
+      "receipt_ids",
+      "snapshots",
+      "complete_authoritative_publication"
+    ]
+  },
+  "interpretation": {
+    "causal_subject": "whole fission intervention, not incidence alone",
+    "expected": "state-mediated reorganization/addressability, not response capability from absence",
+    "source_return_certificate": false,
+    "native_F_equals_D_test": false,
+    "native_causal_gate_closed": false,
+    "native_bridge_gate_closed": false
+  },
+  "native_admissions": 0,
+  "native_steps": 0,
+  "native_events": 0,
+  "production_changes": false,
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_support_causal_predictions.py",
+      "sha256": "11de800e030975974893e2ec157a6c460dd85713a34cd1e538c6fb456ae43672"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportPotentialBinding.json",
+      "sha256": "8babcc9884a1432d981d022c815026777e88115ffa2f5c3a7ed49875d6af9c1d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportFixtureCertificate.json",
+      "sha256": "8ab49242e06d694011d5c933a7c60b03ab621978cf3f24b2bfab8c935a6e3b56"
+    }
+  ],
+  "record_digest": "8df7fec0ffeacd9e69182e29f26b1f2bb38c6f89a194651d69c6c6e310d0c360"
+}

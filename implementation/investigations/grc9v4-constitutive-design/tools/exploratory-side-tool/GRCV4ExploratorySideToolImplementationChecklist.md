@@ -1968,3 +1968,14 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       comparison, exact dependencies and same-scope parent closure. Reject
       missing ownership, bypassed oracle acceptance or generic-gap workaround.
       Oracle/runtime tasks remain pending, not completed by this registration.
+
+## ATC A_OS bounded research source admission
+
+- [x] Relocate evidence/reviews, preserve scientific payloads and rebuild
+      dependent identities; retain only manuscripts/navigation in drafts.
+- [x] Admit the 36 bounded claims, 35 proposal origins and 28 scoped debt
+      transformations through a pinned append-only context.
+- [x] Provide explicit ATC source observation, claim reconstruction and debt
+      lifecycle API/CLI, with historical authority unchanged.
+- [x] Test binding drift, unprocessed sources, ancestry, debt reciprocity and
+      research/native scope separation. No native or aggregate ATC acceptance.

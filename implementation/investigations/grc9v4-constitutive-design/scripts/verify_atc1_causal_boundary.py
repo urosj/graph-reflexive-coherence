@@ -22,7 +22,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[4]
 INV = ROOT / "implementation/investigations/grc9v4-constitutive-design"
-REFS = INV / "drafts/autonomous-topology-change"
+REFS = INV / "evidence/autonomous-topology-change"
 sys.path[:0] = [str(ROOT / "src"), str(ROOT)]
 PHYSICAL = ("graph", "profile", "reference", "context", "current")
 BINDING = PHYSICAL + ("reset", "charge_target", "ledger", "time", "step_index")

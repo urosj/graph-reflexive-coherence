@@ -1,0 +1,638 @@
+{
+  "affine_example": {
+    "child_funding_margin": "1/2",
+    "conserved_charge": "7",
+    "contraction_upper": "509/512",
+    "curvature_lower": "1/8",
+    "decay_rate_lower": "3/64",
+    "decay_rate_upper": "361/64",
+    "directions": [
+      [
+        "1",
+        "1",
+        "0",
+        "0",
+        "-3",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "1",
+        "1",
+        "-3"
+      ]
+    ],
+    "epsilon": "1/64",
+    "equilibrium_C": [
+      "7/6",
+      "7/6",
+      "7/6",
+      "7/6",
+      "7/6",
+      "7/6"
+    ],
+    "eta": "1",
+    "h": "1/8",
+    "individual_response": [
+      "7/24",
+      "7/24"
+    ],
+    "initial_radius_squared": "1/3",
+    "initial_radius_upper": "3/5",
+    "invariant_radius": "3/4",
+    "joint_load_norm_upper": "3/32",
+    "kappa": "1",
+    "m": 2,
+    "n": 2,
+    "p": "(19/4)*c",
+    "resource_lower": "5/12",
+    "response_normalization": "h*delta_f_i/(degree_i*epsilon)",
+    "return_scope": "exact-arithmetic one signed joint encounter at any unencountered age; not arbitrary repeated encounters or rounded execution",
+    "source_C": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "3"
+    ],
+    "source_inward_current": "1/2",
+    "spectral_lower": "3/8",
+    "spectral_upper": "37/8",
+    "step_multiplier_lower": "151/512",
+    "target_C": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "3/2",
+      "3/2"
+    ],
+    "target_field": [
+      "7/8",
+      "7/8",
+      "7/8",
+      "7/8",
+      "-7/4",
+      "-7/4"
+    ]
+  },
+  "classification": {
+    "affine_window": "kappa*lambda_max(L_target)<a<kappa*(m+n+1)",
+    "all_integer_proof_in": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCPartitionDependentStability.md",
+    "exact_proof": "Schur complement: det S=(d+1)/d^2*((d+1)*(m-1)*(n-1)-1)",
+    "exists_iff": "kappa>0 and m>=2 and n>=2",
+    "finite_roster_role": "identity/negative-control pressure, not proof by enumeration",
+    "source_threshold": "(m+n+1)*kappa",
+    "target_characteristic": "(t-1)^(m+n-2)*t*(t^3-(m+n+4)*t^2+(m*n+2*(m+n)+5)*t-(m+n+2))"
+  },
+  "finite_checks": {
+    "characteristic_determinant_evaluations": 142,
+    "degrees": [
+      2,
+      8
+    ],
+    "rejected_invalid_partitions": 5,
+    "rows": [
+      {
+        "affine_window_exists_for_positive_kappa": false,
+        "degree": 2,
+        "joint_load_squared_coefficient": 20,
+        "load_gram": [
+          [
+            "6",
+            "-4"
+          ],
+          [
+            "-4",
+            "6"
+          ]
+        ],
+        "load_gram_determinant": "20",
+        "m": 1,
+        "n": 1,
+        "threshold_determinant": "-3",
+        "threshold_ldlt_pivots": [
+          "2",
+          "2",
+          "1/2",
+          "-3/2"
+        ],
+        "vertices": 4
+      },
+      {
+        "affine_window_exists_for_positive_kappa": false,
+        "degree": 3,
+        "joint_load_squared_coefficient": 28,
+        "load_gram": [
+          [
+            "6",
+            "-5"
+          ],
+          [
+            "-5",
+            "12"
+          ]
+        ],
+        "load_gram_determinant": "47",
+        "m": 1,
+        "n": 2,
+        "threshold_determinant": "-12",
+        "threshold_ldlt_pivots": [
+          "3",
+          "3",
+          "3",
+          "5/3",
+          "-4/15"
+        ],
+        "vertices": 5
+      },
+      {
+        "affine_window_exists_for_positive_kappa": false,
+        "degree": 4,
+        "joint_load_squared_coefficient": 38,
+        "load_gram": [
+          [
+            "6",
+            "-6"
+          ],
+          [
+            "-6",
+            "20"
+          ]
+        ],
+        "load_gram_determinant": "84",
+        "m": 1,
+        "n": 3,
+        "threshold_determinant": "-80",
+        "threshold_ldlt_pivots": [
+          "4",
+          "4",
+          "4",
+          "4",
+          "11/4",
+          "-5/44"
+        ],
+        "vertices": 6
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 4,
+        "joint_load_squared_coefficient": 36,
+        "load_gram": [
+          [
+            "12",
+            "-6"
+          ],
+          [
+            "-6",
+            "12"
+          ]
+        ],
+        "load_gram_determinant": "108",
+        "m": 2,
+        "n": 2,
+        "threshold_determinant": "320",
+        "threshold_ldlt_pivots": [
+          "4",
+          "4",
+          "4",
+          "4",
+          "3/2",
+          "5/6"
+        ],
+        "vertices": 6
+      },
+      {
+        "affine_window_exists_for_positive_kappa": false,
+        "degree": 5,
+        "joint_load_squared_coefficient": 50,
+        "load_gram": [
+          [
+            "6",
+            "-7"
+          ],
+          [
+            "-7",
+            "30"
+          ]
+        ],
+        "load_gram_determinant": "131",
+        "m": 1,
+        "n": 4,
+        "threshold_determinant": "-750",
+        "threshold_ldlt_pivots": [
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "19/5",
+          "-6/95"
+        ],
+        "vertices": 7
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 5,
+        "joint_load_squared_coefficient": 46,
+        "load_gram": [
+          [
+            "12",
+            "-7"
+          ],
+          [
+            "-7",
+            "20"
+          ]
+        ],
+        "load_gram_determinant": "191",
+        "m": 2,
+        "n": 3,
+        "threshold_determinant": "8250",
+        "threshold_ldlt_pivots": [
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "13/5",
+          "66/65"
+        ],
+        "vertices": 7
+      },
+      {
+        "affine_window_exists_for_positive_kappa": false,
+        "degree": 6,
+        "joint_load_squared_coefficient": 64,
+        "load_gram": [
+          [
+            "6",
+            "-8"
+          ],
+          [
+            "-8",
+            "42"
+          ]
+        ],
+        "load_gram_determinant": "188",
+        "m": 1,
+        "n": 5,
+        "threshold_determinant": "-9072",
+        "threshold_ldlt_pivots": [
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "29/6",
+          "-7/174"
+        ],
+        "vertices": 8
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 6,
+        "joint_load_squared_coefficient": 58,
+        "load_gram": [
+          [
+            "12",
+            "-8"
+          ],
+          [
+            "-8",
+            "30"
+          ]
+        ],
+        "load_gram_determinant": "296",
+        "m": 2,
+        "n": 4,
+        "threshold_determinant": "181440",
+        "threshold_ldlt_pivots": [
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "11/3",
+          "35/33"
+        ],
+        "vertices": 8
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 6,
+        "joint_load_squared_coefficient": 56,
+        "load_gram": [
+          [
+            "20",
+            "-8"
+          ],
+          [
+            "-8",
+            "20"
+          ]
+        ],
+        "load_gram_determinant": "336",
+        "m": 3,
+        "n": 3,
+        "threshold_determinant": "244944",
+        "threshold_ldlt_pivots": [
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "5/2",
+          "21/10"
+        ],
+        "vertices": 8
+      },
+      {
+        "affine_window_exists_for_positive_kappa": false,
+        "degree": 7,
+        "joint_load_squared_coefficient": 80,
+        "load_gram": [
+          [
+            "6",
+            "-9"
+          ],
+          [
+            "-9",
+            "56"
+          ]
+        ],
+        "load_gram_determinant": "255",
+        "m": 1,
+        "n": 6,
+        "threshold_determinant": "-134456",
+        "threshold_ldlt_pivots": [
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "41/7",
+          "-8/287"
+        ],
+        "vertices": 9
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 7,
+        "joint_load_squared_coefficient": 72,
+        "load_gram": [
+          [
+            "12",
+            "-9"
+          ],
+          [
+            "-9",
+            "42"
+          ]
+        ],
+        "load_gram_determinant": "423",
+        "m": 2,
+        "n": 5,
+        "threshold_determinant": "4168136",
+        "threshold_ldlt_pivots": [
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "33/7",
+          "248/231"
+        ],
+        "vertices": 9
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 7,
+        "joint_load_squared_coefficient": 68,
+        "load_gram": [
+          [
+            "20",
+            "-9"
+          ],
+          [
+            "-9",
+            "30"
+          ]
+        ],
+        "load_gram_determinant": "519",
+        "m": 3,
+        "n": 4,
+        "threshold_determinant": "6319432",
+        "threshold_ldlt_pivots": [
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "25/7",
+          "376/175"
+        ],
+        "vertices": 9
+      },
+      {
+        "affine_window_exists_for_positive_kappa": false,
+        "degree": 8,
+        "joint_load_squared_coefficient": 98,
+        "load_gram": [
+          [
+            "6",
+            "-10"
+          ],
+          [
+            "-10",
+            "72"
+          ]
+        ],
+        "load_gram_determinant": "332",
+        "m": 1,
+        "n": 7,
+        "threshold_determinant": "-2359296",
+        "threshold_ldlt_pivots": [
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "55/8",
+          "-9/440"
+        ],
+        "vertices": 10
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 8,
+        "joint_load_squared_coefficient": 88,
+        "load_gram": [
+          [
+            "12",
+            "-10"
+          ],
+          [
+            "-10",
+            "56"
+          ]
+        ],
+        "load_gram_determinant": "572",
+        "m": 2,
+        "n": 6,
+        "threshold_determinant": "103809024",
+        "threshold_ldlt_pivots": [
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "23/4",
+          "99/92"
+        ],
+        "vertices": 10
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 8,
+        "joint_load_squared_coefficient": 82,
+        "load_gram": [
+          [
+            "20",
+            "-10"
+          ],
+          [
+            "-10",
+            "42"
+          ]
+        ],
+        "load_gram_determinant": "740",
+        "m": 3,
+        "n": 5,
+        "threshold_determinant": "167510016",
+        "threshold_ldlt_pivots": [
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "37/8",
+          "639/296"
+        ],
+        "vertices": 10
+      },
+      {
+        "affine_window_exists_for_positive_kappa": true,
+        "degree": 8,
+        "joint_load_squared_coefficient": 80,
+        "load_gram": [
+          [
+            "30",
+            "-10"
+          ],
+          [
+            "-10",
+            "30"
+          ]
+        ],
+        "load_gram_determinant": "800",
+        "m": 4,
+        "n": 4,
+        "threshold_determinant": "188743680",
+        "threshold_ldlt_pivots": [
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "7/2",
+          "45/14"
+        ],
+        "vertices": 10
+      }
+    ],
+    "unordered_partitions": 16
+  },
+  "native_steps": 0,
+  "negative_control": {
+    "a": "19/4",
+    "child_funding_margin": "1/4",
+    "curvature_ldlt_pivots": [
+      "15/4",
+      "15/4",
+      "15/4",
+      "15/4",
+      "149/60",
+      "-1349/2980"
+    ],
+    "m": 1,
+    "n": 3,
+    "outcome": "inward and funded but target affine curvature indefinite",
+    "source_C": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "5"
+    ],
+    "source_inward_current": "1"
+  },
+  "predecessor_digest": "6f6e7b8b681e8d560338f26d1da4a062e5726ca0590ea57c220e12be50da64c7",
+  "production_changes": false,
+  "record_digest": "53ca458e9411e45e5e2931d563edca2638590a3ef864735758603619994290ec",
+  "schema": "grcv4_atc_partition_stability_certificate_v1",
+  "scientific_status": "proposed_mathematical_result_pending_independent_review",
+  "scope": "symmetric unit-weight star source; supplied binary nonempty half-edge blocks; one unit child bridge; fixed zero-feedback law",
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_stability.py",
+      "sha256": "1827200beb884b22e55fd7770955124e828b8cbe7f851d4af5bdb53aff280342"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCAddressabilityConditions.json",
+      "sha256": "3741510935c9d164796357779aec52507484a588ba3618f765a2aea76e2b1f6b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_source_fission.py",
+      "sha256": "47247f914873e026e7341214d89f66e688840c3e524a593af8a56ee4acb1d8a6"
+    }
+  ],
+  "status": "passed_exact_algebra_and_affine_return_bounds",
+  "topology_events": 0,
+  "trajectory_updates": 0,
+  "unestablished": [
+    "autonomous_partition_selection",
+    "higher_degree_F2",
+    "nonzero_geometry_or_history_feedback",
+    "generic_graphs",
+    "nonuniform_sources",
+    "all_ten_families",
+    "independent_identity",
+    "general_functional_differentiation",
+    "runtime_potential_or_initializer_admission",
+    "rounded_infinite_return"
+  ]
+}

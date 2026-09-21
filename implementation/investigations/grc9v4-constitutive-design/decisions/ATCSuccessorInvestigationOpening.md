@@ -1,3 +1,5 @@
+> Relocation maintenance: paths and dependent identities were mechanically rebuilt; scientific content and review verdicts are unchanged. New identities do not claim a new independent rerun. Original committed subjects remain in Git.
+
 # ATC successor investigation opening
 
 **Gate:** ATC-OPEN  
@@ -15,7 +17,7 @@ already applies caller-supplied typed events; that does not determine an
 autonomous generator. This is an extension, not a finding that accepted
 Tranche 7 failed or an instruction to redo its numerical campaigns.
 
-The [source intake](../drafts/autonomous-topology-change/ATCSourceIntake.json)
+The [source intake](../evidence/autonomous-topology-change/ATCSourceIntake.json)
 pins the reference-intake commit `0386568`, the accepted Tranche 7 closure
 commit `e020ea7`, its merge `7d4e376`, current substrate paper/proposal,
 specifications and releases, relevant runtime owners, and the current
@@ -34,10 +36,10 @@ Use [Draft 8](../drafts/autonomous-topology-change/2026-09-GRCV4-Autonomous-Topo
 as the scientific exposition and
 [Draft 7](../drafts/autonomous-topology-change/2026-09-GRCV4-Autonomous-Topology-Extension-Proposal-Draft7.md)
 for rationale and claim/debt lineage, especially its §14. The retained
-[index](../drafts/autonomous-topology-change/proposal_index.json) contains
+[index](../evidence/autonomous-topology-change/proposal_index.json) contains
 35 proposed claims, 28 proposal debts and 165 reciprocal links. Its stable
 `ATC7-…` identifiers remain local proposal handles, not accepted graph nodes.
-The [location map](../drafts/autonomous-topology-change/draft8_locations.json)
+The [location map](../evidence/autonomous-topology-change/draft8_locations.json)
 connects those handles to Draft 8 without changing their meaning.
 
 The intake records two distinct things:

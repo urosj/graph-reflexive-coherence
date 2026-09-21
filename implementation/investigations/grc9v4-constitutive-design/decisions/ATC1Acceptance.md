@@ -1,3 +1,5 @@
+> Relocation maintenance: paths and dependent identities were mechanically rebuilt; scientific content and review verdicts are unchanged. New identities do not claim a new independent rerun. Original committed subjects remain in Git.
+
 # ATC-1 — bounded research-envelope acceptance
 
 **Date:** 2026-09-20  
@@ -13,17 +15,17 @@ with the four clarifications below. It does not accept an executable ATC law,
 an implementation, all-product applicability or side-tool source readmission.
 
 The exact subjects are the [opening](./ATCSuccessorInvestigationOpening.md),
-[intake](../drafts/autonomous-topology-change/ATCSourceIntake.json),
+[intake](../evidence/autonomous-topology-change/ATCSourceIntake.json),
 [K0 proposal](./ATC1CausalBoundaryProposal.md),
-[machine companion](../drafts/autonomous-topology-change/ATC1CausalBoundaryProposal.json)
-and [ten-check pressure record](../drafts/autonomous-topology-change/ATC1PressureResults.json).
+[machine companion](../evidence/autonomous-topology-change/ATC1CausalBoundaryProposal.json)
+and [ten-check pressure record](../evidence/autonomous-topology-change/ATC1PressureResults.json).
 Their reviewed bytes remain unchanged. Their preparation-time status and
 next-step language are historical; this acceptance supplies the current
 disposition without silently rebinding the review or its execution evidence.
-The [acceptance record](../drafts/autonomous-topology-change/ATC1Acceptance.json)
+The [acceptance record](../evidence/autonomous-topology-change/ATC1Acceptance.json)
 pins these subjects and this addendum.
 
-The [independent review](../drafts/autonomous-topology-change/review/ATC1-IndependentReview/ATC1-Review.md)
+The [independent review](../evidence/autonomous-topology-change/review/ATC1-IndependentReview/ATC1-Review.md)
 gave a scoped PASS. Its eleven exact-arithmetic, record and synthetic protocol
 groups were reproduced without production ATC calls. The reviewer did not
 have all source subjects; the user's separate confirmation covers the full

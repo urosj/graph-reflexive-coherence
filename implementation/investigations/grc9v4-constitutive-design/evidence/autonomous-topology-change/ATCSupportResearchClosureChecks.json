@@ -1,0 +1,38 @@
+{
+  "schema": "grcv4_atc_research_closure_checks_v1",
+  "status": "passed",
+  "predecessor_experiment_digest": "976d0d808ed1d95f329ca9128ace80b1d091d1ccf41f6a54e7639cbe3d4b0bc6",
+  "original_execution_preserved": true,
+  "allocation_interface": "checked_fixed_fission; original full campaign driver remains a historical reproducer",
+  "valid_construction_matches_reviewed": true,
+  "rejected_allocations": [
+    "wrong_sum",
+    "wrong_split",
+    "missing_entry",
+    "numeric_instead_of_canonical_strings",
+    "null",
+    "equivalent_noncanonical_strings",
+    "absent_field"
+  ],
+  "ordinary_updates": 0,
+  "production_changes": false,
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_support_research_closure.py",
+      "sha256": "b77a0296faebbbf35c40ec110b2a0123d6e7329dc8acdaa32def80ff9dc66013"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_support_fission.py",
+      "sha256": "ac74a3a7ac3884cf3eee2693e9d48478bd6b2b5ec638539c4444e2cb881fdd1e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_support.py",
+      "sha256": "0ce1e5cd61f6f57f2a9bb2b52e443f33073c104eb330cf658ec499b2bc266fb1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportLocalExperiment.json",
+      "sha256": "ade2b8e7c0ff479017f2ac7119851dbf8e756cf6530d9214f953450636ccdc19"
+    }
+  ],
+  "record_digest": "6b22f3ecb7e2e559eb09185c72ed04a788b4a0fab0b2ae047bb5ad63967d3c3e"
+}

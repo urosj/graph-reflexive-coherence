@@ -1,0 +1,17 @@
+{
+  "schema": "independent_atc1_review_bundle_v1",
+  "scientific_acceptance": false,
+  "files": {
+    "ATC1-Review.md": "60653be81bf1cd1ee00f3fc83f3cde196054a3ba227c7c2bf9bc4a1640e39b89",
+    "README.md": "40a0606873df319726948547954e515c5c5a7913f5554164858732fb0d550f33",
+    "inputs/2025-11-ReflexiveCoherence.md": "161d632bf4e2584037048962f1374212c666f6b4dfc5590b2732125fcc653c6f",
+    "inputs/ATC1CausalBoundaryProposal.json": "8a52fc61c6ffcb95a81d6e3ddea2170372f9e7af04e19d16a074a704bbf0889b",
+    "inputs/ATC1PressureResults.json": "2d9a2f7a5b8f2357358e01a1f6ce01192bee2956f14cda629781646b488a3aea",
+    "inputs/draft8_locations.json": "9d8cf0a0e9d17889393063ff6ff58351fa0d19122f13579e14d79c8aec133e89",
+    "inputs/proposal_index.json": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+    "inputs/source_manifest.json": "3c4ddd1cf6db21db0d0d6abdd35923f036b6b34ddb0fa1d0afb2a37187447ff3",
+    "pressure_checks.py": "b72344e1f08adeb4a6b424b2f52bc8304a519149554c26c4f3db0a327b969055",
+    "pressure_results.json": "3d2ccc64cf95b6f0aba61f9dee9637059effaa4fae71e11e1e79ec8c7dbf92d8",
+    "source_inventory.json": "8b10c33d14ed566e574ba8e62c75785202c54b541eb51584c5fffd5a26255829"
+  }
+}
