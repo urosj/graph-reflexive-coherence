@@ -1,6 +1,102 @@
 # Phase 9 GRCV4 handoff — Tranche 7 closed; ATC research next
 
-## Current research priority — 2026-09-21
+## Current research priority — 2026-09-23
+
+**A_CI CI-0–CI-3 are scientifically complete, independently reviewed PASS,
+and source-admitted at paired research scope.** The user authorizes the
+[CI claim/debt adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCCIClaimDebtAdjudication.md).
+Four conditional claims and all 28 separate CI debt dispositions are queryable:
+14 locally closed, six partial, eight not activated. DB-05 closes through
+the joint-root/regularity proof; DB-24 closes for this exact source inventory.
+All global debts remain open. No native or aggregate closure is inferred.
+
+Use `atc-ci-query audit`, `claim ATC-CI-REFERENCE-03` and `debt ATC7-DB-24`
+via the side-tool runner; see the portable commands in the
+[admission README](./investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/README.md).
+The typed API is `grcv4_explorer.atc_ci`. Ten focused CI admission tests and
+all ten historical PC tests pass, preserving the PC/A_OS graph and source
+identities. No numerical campaign was rerun for adjudication.
+
+The final review passes both the closed-boundary and derived-witness fixes.
+CI-3's reviewed scientific certificate retains its exact bytes and historical
+pending flags; the new ledger is the current acceptance authority. Measured
+represented charge drift remains a downstream numerical-policy finding.
+No additional CI scientific stage is required. Other realizations (including
+CI+PC) require explicit next-work authorization; this task starts none.
+The later proposal → paper → specification → native implementation order remains.
+
+### Reviewed CI-1 / accepted paired PC context
+
+The user replaces the OS-lift framing with the
+[realization-native A_CI/A_PC sequence](./investigations/grc9v4-constitutive-design/decisions/ATCCIPCRealizationNativeProgram.md).
+CI-0/PC-0 pin actual ordinary-step and poststate-event operands; CI-0's
+reviewed staging now has full joint-root equality/digest evidence. CI-1's
+full-feedback causal anchor and PC-1's evolving-W/Z obstruction have independent
+scientific PASS in the
+[anchor certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json).
+CI's actual root activity gives both-role target entry/return; its failed
+auxiliary OS-style balance comparison is retained, not hidden. PC's carrier
+ball preserves source obstruction and exposes a nontransportable naive
+cross-sector entry. Exact charge/pairing/carrier-support premises are now
+executable admissions, including sub-grid negative pressure. The quoted
+provenance HOLD is resolved against the unchanged committed G7 chain.
+PC-2 pressure supersedes selection of partial-loss restriction: the new bridge
+can carry the exact decorated cross-sector relation losslessly. The revised
+candidate preserves within-sector blocks, maps that scalar to bridge
+incidences, and leaves bridge diagonal zero. It has an exact inverse and
+Frobenius isometry on the decorated 2+2 domain, not on arbitrary carriers.
+Relational sign-fidelity continuity `c_target=c_source` now resolves polarity
+beyond covariance. Z may become indefinite while H stays SPD; the event
+domain explicitly allows this without requiring ordinary target-graph PSD
+reachability. The five-dimensional image is a proper subset of the
+seven-dimensional decorated signed target ball, not the whole ball.
+Projection/reset remain explicit-loss controls; the generic double-odd no-go
+remains a scope boundary. See the [revised PC-2 certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCRelationalLiftCertificate.json).
+The follow-up freezes that lift as PC-3's sole policy; no PSD fallback or
+new contract is needed inside this experiment. Any failed signed-law result
+must remain visible; a PSD successor would need a separately preregistered
+contract and new bounded PC-2b investigation.
+[PC-3's certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC3CausalChainCertificate.json)
+now supplies source-only allocation `33615/65536`, complete both-role target
+readmission and uniform signed-domain return with evolving W/Z. Two actual
+target beats per role leave the five-dimensional event image while remaining
+in the seven-dimensional admitted carrier ball. Indefinite continuation is
+an exact-real bound, not a long trajectory or native result.
+The [independent PC-3 review](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-IndependentReview.md)
+is **PASS**, with no corrective numerical rerun. The reviewed mathematical
+payload and original review identity remain pinned separately from status updates.
+The user then authorizes PC-4. Its
+[combined paired-domain/reference certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC4ReferenceCertificate.json)
+adds a positive parameter box, variable requests [3/25,1/8] at fixed physical
+tau, full-graph independent stage comparison, research owner/replay/rollback
+and a four-step-per-role represented C/W/Z error bridge. Measured binary64
+charge drift is retained, not normalized into an exact-charge assertion.
+The [independent PC-4 review](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC4-IndependentReview.md)
+is **PASS — bounded paired-domain/reference/representation closure**, with no
+corrective rerun. Preserve the conditional whole-box event premise and the
+analytic C1/executable quadratic distinction. Reviewer-reported mixed-corner
+pressure is diagnostic, not a universal formation theorem or new local run.
+The user now accepts the [paired A_PC claim/debt adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCPCClaimDebtAdjudication.md).
+Five conditional claims and all 28 PC-local debt dispositions are queryable
+through `atc-pc-query` and `grcv4_explorer.atc_pc`: 13 locally closed, six
+partial, nine not activated. **DB-24 closes for this exact PC inventory**;
+all global debts remain open and the A_OS graph is unchanged. The superseded
+projection is a control, not the selected law. No PC-5 discovery is needed.
+Active coupled-environment carrier transport is a future extension outside
+the four-edge map, not a PC-4 defect or inferred family-wide closure.
+Reproduce with `scripts/check_atc_pc_reference.py` under the
+investigation directory; no CI/OS numerical campaign is needed.
+CI-2 and CI-3 use separate successor notes/evidence; final independent PASS
+and scoped CI admission are complete. The shared CI/PC note and retained
+certificates are frozen PC provenance. Their earlier pending flags are historical; the new
+adjudication, not a rewrite of reviewed mathematics, supplies PC acceptance.
+Do not repeat A_OS's discovery/generalization ladder. Reuse scoped lemmas,
+screen operation support early, and generalize only after a complete causal
+chain. Only the four explicitly admitted conditional CI claims are accepted
+at their paired research scope. No production
+code, paper or specifications are opened; aggregate ATC-2 remains open.
+
+### Prior opening and accepted A_OS path
 
 The user requested the scientific-first autonomous-topology extension.
 References were committed at `0386568`; the
@@ -428,11 +524,12 @@ Reviewed evidence remains fixed. PROFILE_ID binds evaluator operands;
 implementation/checker hashes and the outer record additionally bind
 event/lifecycle semantics.
 
-**Next scientific decision: use A_OS as the reference template for a
-Candidate-A lift, starting with A_CI's implicit closure.** That work has not
-started. Do not widen A_OS merely to satisfy the completed G1–G7 sequence.
+**Current scientific decision: realization-native A_CI and A_PC**, as linked
+above. Their boundary audits start the work; A_OS supplies reusable scoped
+lemmas, not event currents or inherited restoration. Do not widen A_OS merely
+to satisfy the completed G1–G7 sequence.
 
-Before that lift, ATC-1 through G7 evidence and all reviews were relocated to
+Before that continuation, ATC-1 through G7 evidence and all reviews were relocated to
 [research evidence](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/README.md).
 Only paths and dependent identities were rebuilt; scientific results and
 dispositions are unchanged. The two manuscripts remain under drafts.

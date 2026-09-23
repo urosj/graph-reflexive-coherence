@@ -41,6 +41,16 @@ class ATCResearchTests(unittest.TestCase):
                                  capture_output=True, text=True)
         self.assertEqual(invalid.returncode, 2)
 
+    def test_navigation_compatibility_is_exact_and_path_scoped(self):
+        legacy = dict(path=atc._REVIEW_README,
+                      sha256="036d7783a0b8ef7d24629967e5fa4bd3b86f9cba86a047411b19140c3d3662ad")
+        self.assertTrue(atc._source_binding_matches(self.root, legacy))
+        self.assertFalse(atc._source_binding_matches(self.root, {**legacy, "sha256": "0" * 64}))
+        self.assertFalse(atc._source_binding_matches(self.root, {**legacy, "path": atc.LEDGER}))
+        original = (self.root / atc._REVIEW_README).read_bytes()
+        with patch.object(Path, "read_bytes", return_value=original + b"changed verdict"):
+            self.assertFalse(atc._source_binding_matches(self.root, legacy))
+
     def test_exact_historical_graph_is_preserved(self):
         for key, node in self.old.nodes.items():
             self.assertEqual(node, self.context.nodes[key])

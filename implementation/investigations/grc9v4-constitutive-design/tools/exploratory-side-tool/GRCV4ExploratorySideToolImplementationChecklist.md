@@ -1979,3 +1979,44 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       lifecycle API/CLI, with historical authority unchanged.
 - [x] Test binding drift, unprocessed sources, ancestry, debt reciprocity and
       research/native scope separation. No native or aggregate ATC acceptance.
+- [x] Correct the one late navigation-path binding with an exact, path-scoped
+      compatibility check and independent current-byte pin. Eleven focused
+      tests pass; scientific records are unchanged. Document that pending
+      CI/PC boundary evidence is outside the accepted A_OS inventory.
+
+## ATC paired A_PC successor admission
+
+- [x] Pin the reviewed checkpoint and explicit successor ledger; append five
+      conditional PC claims, one superseded control and 28 scoped debts.
+- [x] Preserve all A_OS nodes/edges and debt meanings; the historical PC-only
+      admission leaves CI unadmitted (the later CI successor is separate).
+- [x] Expose `atc-pc-query` and typed API for observation, audit, full claim
+      ancestry and scoped debt lifecycle, with transitive execution bindings.
+- [x] Check drift, forged admission, ancestry, reciprocity, control promotion,
+      CI/native/aggregate widening and portable command dispatch: ten PC tests
+      pass; all eleven historical A_OS admission tests also pass.
+- [x] Record local DB-24 closure without global discharge; route CI-2/CI-3
+      to separate successor files so accepted PC source identities stay fixed.
+- [x] Keep the initially pending CI-2/CI-3 inventory separate and document its
+      checkers; later CI admission below preserves the PC/A_OS context.
+- [x] After final independent CI PASS and user authorization, admit the exact
+      CI successor with its own scoped claims/debts; do not widen PC acceptance.
+- [x] Distinguish CI-2 independent scientific PASS/closure, CI-3 core PASS,
+      and CI-3 locally checked boundary/pairing correction from source admission.
+      Retain the review and exact witness regression evidence outside PC inventory.
+- [x] Retain follow-up independent boundary PASS and address the new derived-witness
+      HOLD via executing-only certification, forgery/consistency checks and
+      explicit CI funding evidence. No source admission follows automatically.
+
+### ATC paired A_CI scoped admission
+
+- [x] Retain final independent CI-3 PASS and user-authorized CI-0–CI-3 acceptance.
+- [x] Admit four conditional claims and all 28 reciprocal CI-local debt rows:
+      14 closed, six partial, eight not activated; all globally open.
+- [x] Close DB-05 locally through the CI joint-root theorem and DB-24 only
+      through the pinned exact CI source inventory and append-only graph audit.
+- [x] Expose working `atc-ci-query` and typed API discovery/claim/debt/audit paths.
+- [x] Preserve reviewed scientific certificates and accepted PC/A_OS graph/data;
+      historical pending flags are superseded by the new CI ledger, not rewritten.
+- [x] Ten CI admission/mutation/CLI tests and ten historical PC tests pass;
+      no numerical rerun, native/aggregate widening or other-family admission.

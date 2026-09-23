@@ -1,0 +1,67 @@
+{
+  "schema": "grcv4_atc_ci_research_admission_v1",
+  "status": "accepted_bounded_research_source_admission",
+  "historical_graph_digest": "34bf112649b30d38493a4cbc5f51cf323649ab24e679a2e481cf29c1e7afacba",
+  "historical_authority_extension_digest": "ee75994b958fbeb76aa7d39688bcce82510b9fccebf3990c062606dd2562584b",
+  "evidence_files": {
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json": "9a7a3db04b0878ab13628221323b93e2525ee8a11e68563bd908c75ee80ff695",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/CI3-FinalIndependentReview.md": "e4b016fcadc150272debf8f210ea580b1fa2bf3aeea3e6a1d90c9c061e4a4b8b",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/ATCCI2DomainCertificate.json": "0339bd150e613b1718180cb46dd2a11d8d5de088c794e775f18fbc77fd1c9d53",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/ATCCI3ReferenceCertificate.json": "b9cd735abb13dd1610016d63168b2f35e9695c903752833430ff2ea5636e6915",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI2CI3-IndependentReview.md": "20343d8bd954ce0ac885be3e162621a931aeecad1b77c4c5ea4cda7644317db6",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI3-DerivedWitness-IndependentReview.md": "cf825116a5881fba96e8d661dbb260b38c9702a694de5a0c85518a4740a1ea5a"
+  },
+  "support_files": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIClaimDebtAdjudication.md",
+      "sha256": "6544aae2a1021bd818bad76d18421f19aede6bb1cc8a4ec6743fb4949be278da"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIDomainsAndReference.md",
+      "sha256": "2bb3a0408611e19bc40c33f90a771e822ccafd2efe30fd41f534f2ae97fa6ebf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/CI3-FinalIndependentReview.md",
+      "sha256": "e4b016fcadc150272debf8f210ea580b1fa2bf3aeea3e6a1d90c9c061e4a4b8b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json",
+      "sha256": "3697e3030855f93552f7b6797fb0dc05be82a63f5076826d5d613789b21b358b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCStepBoundaryAudit.json",
+      "sha256": "6aab00835467a21c00e751b1b3553cb6bc68b52d9cd0fec09fa5d45aaa32b3a4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1-IndependentReview.md",
+      "sha256": "50a3b1e8491dea2a63896e2eb5f773ce50754de3bf345bcbe0dee96d6b2d6171"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1ReviewResolution.json",
+      "sha256": "4fdb18e38e29b3b52697e068d62fe352442434676dea8247dfacc85f452fca8c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/ATCCI2DomainCertificate.json",
+      "sha256": "0339bd150e613b1718180cb46dd2a11d8d5de088c794e775f18fbc77fd1c9d53"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/ATCCI3ReferenceCertificate.json",
+      "sha256": "b9cd735abb13dd1610016d63168b2f35e9695c903752833430ff2ea5636e6915"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI2CI3-IndependentReview.md",
+      "sha256": "20343d8bd954ce0ac885be3e162621a931aeecad1b77c4c5ea4cda7644317db6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI3-DerivedWitness-IndependentReview.md",
+      "sha256": "cf825116a5881fba96e8d661dbb260b38c9702a694de5a0c85518a4740a1ea5a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    }
+  ],
+  "scope": "Four conditional paired A_CI research claims and 28 CI-local debt transformations. PC/A_OS preserved; no native or aggregate closure.",
+  "graph_digest": "8a72fed0586996146ef31b86affcaf5b2d34f08ba12ca28adc4338e13b35c1ed",
+  "record_digest": "453d057a9acbeb1c657212ff0a0919392d7e0afa1ab52c71d17e07a4465a43fd"
+}

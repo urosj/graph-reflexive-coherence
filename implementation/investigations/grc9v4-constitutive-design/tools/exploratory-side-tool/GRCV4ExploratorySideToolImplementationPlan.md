@@ -2428,3 +2428,44 @@ proposal origins from accepted conditional claims, and retain all 28 global
 debts while projecting their bounded A_OS dispositions. Test scope widening,
 broken bindings, invalid ancestry and reciprocal debt links. This checkpoint
 does not add browser/notebook projections, native ATC or aggregate closure.
+
+2026-09-23: retain exact compatibility for the single relocated ATC2 review
+README command while independently pinning its current bytes; do not rebuild
+scientific records. The realization-native CI/PC working directory remains
+explicitly unadmitted until review and a scientific successor admission.
+
+## ATC paired A_PC successor admission
+
+2026-09-23: the user accepts the reviewed paired PC scope. Append five
+conditional research claims, one separately classified superseded control and
+28 namespaced PC debt transformations to the unchanged A_OS graph. Pin the
+shared reviewed checkpoint; preserve historical pending flags and CI's
+unadmitted status. New CI work uses separate successor files. Expose actual
+`atc-pc-query` and typed `grcv4_explorer.atc_pc` paths, including exact source
+discovery, transitive binding validation and full ancestry. DB-24 closes only
+for this inventory; no native or aggregate admission follows. Focus tests on
+metadata/graph/authority mutations, not another numerical campaign.
+
+CI-2/CI-3 continuation lives separately under `evidence/atc-ci-successor`.
+CI-2 has independent scientific PASS/closure; CI-3 core/boundary correction
+have independent PASS. The later derived-witness correction seals raw-output
+promotion and retains execution/consistency pressure plus explicit funding.
+That preparation is superseded by the final PASS/admission below; its reviewed
+source bytes and historical flags are retained, not rewritten.
+
+## ATC paired A_CI successor admission
+
+2026-09-23: final independent CI-3 PASS closes the provenance HOLD, and the
+user authorizes scoped CI-0–CI-3 adjudication. Append four conditional CI
+claims and 28 CI-local debt transformations to the accepted PC/A_OS context.
+The exact CI inventory has 14 locally closed, six partial and eight inactive
+debts. DB-05 closes only for the proved joint-root/regularity domain; DB-24
+closes through exact source observation/readmission/rebuild/audit.
+
+Expose `atc-ci-query` and `grcv4_explorer.atc_ci` with full ancestry, scoped
+debt traces, portable paths and fail-closed source discovery. Preserve old
+PC/A_OS loaders, records and graph identities. Test authority widening,
+reciprocity/ancestry, changed/missing/new sources, transitive execution drift
+and CLI use; ten CI and ten historical PC tests pass. Do not rerun numerical
+campaigns or alter reviewed science. No global/native/aggregate admission,
+new realization work or browser/notebook extension follows automatically.

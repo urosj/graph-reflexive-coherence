@@ -230,9 +230,45 @@ both-role event/rollback/replay satisfy investigation G7. Small charge drift
 is an accepted numerical finding, not an outstanding G7 defect. The user's
 scope correction places native ownership, production numerical policy and K0
 integration later in Phase 9 after proposal/paper/spec propagation; there is
-no unmet native half of G7. Reviewed bytes remain unchanged. Next consider
-the A_OS result as a template for A_CI and other Candidate-A lifts, rederiving
-their realization-specific obligations. Wider formation/environment claims,
+no unmet native half of G7. Reviewed bytes remain unchanged. The next work is
+the [realization-native A_CI/A_PC program](./decisions/ATCCIPCRealizationNativeProgram.md),
+not lifting an OS rule: exact poststate reads first, then one full causal
+witness before combined domain/reference work. PC's carrier transport/loss
+is a separate scientific question. Pending records live in
+`evidence/atc-ci-pc`, outside the frozen A_OS admission, and confer no support.
+CI-0 now retains complete joint-root equality evidence. CI-1's full-feedback
+causal anchor and PC-1's evolving-carrier source result have independent
+scientific PASS, with domain hardening and provenance reconciliation applied.
+PC-2 pressure supersedes partial-loss selection with an invertible,
+Frobenius-isometric relational lift on the exact decorated 2+2 domain.
+Projection and whole reset remain controls, not preferred laws; generic
+lossless authority and PSD preservation are not claimed. Relational
+sign-fidelity continuity now resolves polarity; signed carrier admission
+is distinguished from PSD reachability and the proper event-image subset.
+The follow-up freezes this as PC-3's sole policy, without a PSD fallback.
+[PC-3](./decisions/ATCCIPCRealizationNativeProgram.md#8-pc-3--fixed-causal-experiment)
+now supplies the complete bounded event/readmission/restoration chain:
+source-only PC allocation, both-role readmission, signed-domain invariance
+and indefinite exact-real return with evolving W/Z. Independent PC-3 review
+is PASS, with no corrective rerun. PC-4's combined paired-domain/positive-
+parameter/request-envelope and research reference/representation package also
+has independent PASS. The user has now authorized the
+[paired A_PC adjudication](./decisions/ATCPCClaimDebtAdjudication.md): five
+conditional claims and 28 separate PC debt dispositions are source-admitted
+through the typed API and `atc-pc-query`. DB-24 closes locally for this exact
+inventory; no global debt closes. No PC-5 discovery is needed. Active
+external-edge carrier transport is a future extension, not a PC-4 defect.
+The separate [CI-2/CI-3 successor](./decisions/ATCCIDomainsAndReference.md)
+now supplies a paired combined-domain theorem and full-graph joint-root
+reference, independent oracle, lifecycle/replay and finite representation
+checks. Final independent review passes CI-0–CI-3 including both corrections;
+the user authorizes [scoped CI adjudication](./decisions/ATCCIClaimDebtAdjudication.md).
+Four conditional claims and 28 CI-local debt dispositions are source-admitted
+through `atc-ci-query` and `grcv4_explorer.atc_ci`: 14 closed, six partial,
+eight not activated. DB-05 and DB-24 close only at paired research/source
+scope; no global debt closes. The accepted PC/A_OS checkpoint and reviewed CI
+scientific files remain unchanged. No further CI scientific stage is needed.
+Wider formation/environment claims,
 other-family support and aggregate ATC-2 remain outside this acceptance.
 
 This directory records the accepted bounded decision work authorizing a

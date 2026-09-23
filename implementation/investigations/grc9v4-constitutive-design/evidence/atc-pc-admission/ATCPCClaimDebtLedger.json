@@ -1,0 +1,913 @@
+{
+  "schema": "grcv4_atc_pc_claim_debt_ledger_v1",
+  "record_id": "GRCV4-ATC-PC-LEDGER-v1",
+  "status": "accepted_bounded_research_reconciliation",
+  "authorization": "User accepts scoped A_PC claim/debt adjudication after independent PC4 PASS; CI2 then CI3 are next.",
+  "profile_scope": [
+    "A_PC"
+  ],
+  "native_authority": false,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "origin_ref": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+    "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+    "json_pointer": "/"
+  },
+  "accepted_scope_ref": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCPCClaimDebtAdjudication.md",
+    "sha256": "87353f53093db3537561e1d6536e43f1260c70fe6bdb35421348ea6a5ae4fc0a",
+    "json_pointer": "/"
+  },
+  "contract_ref": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC4ReferenceCertificate.json",
+    "sha256": "552c6cc71670eaf958b2a69689733b40d12ccf0ca1b622074ea449d055cfb92a",
+    "json_pointer": "/contract"
+  },
+  "claims": [
+    {
+      "claim_id": "ATC-PC-STEP-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_PC_research",
+      "profile_scope": [
+        "A_PC"
+      ],
+      "native_authority": false,
+      "statement": "Observed PC step reads the old carrier, writes W/Z, and performs final poststate readmission; the event operand is a fresh committed C/W/Z reconstruction. This is stage wiring, not native autonomous execution.",
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCStepBoundaryAudit.json",
+        "sha256": "6aab00835467a21c00e751b1b3553cb6bc68b52d9cd0fec09fa5d45aaa32b3a4",
+        "json_pointer": "/cases/1"
+      },
+      "predecessor_claim_ids": [],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-24",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": [
+        "ATC7-DB-01",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-23"
+      ]
+    },
+    {
+      "claim_id": "ATC-PC-CHAIN-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_PC_research",
+      "profile_scope": [
+        "A_PC"
+      ],
+      "native_authority": false,
+      "statement": "The reviewed full-feedback anchor with evolving W/Z has source obstruction and support discrimination; no-split and W/Z reset controls retain that obstruction. Target carrier policy and restoration are separate successor claims.",
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json",
+        "sha256": "3697e3030855f93552f7b6797fb0dc05be82a63f5076826d5d613789b21b358b",
+        "json_pointer": "/claim_updates/1"
+      },
+      "predecessor_claim_ids": [
+        "ATC-PC-STEP-01"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-02",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-13",
+        "ATC7-DB-15",
+        "ATC7-DB-14",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ]
+    },
+    {
+      "claim_id": "ATC-PC-CARRIER-03",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_PC_research",
+      "profile_scope": [
+        "A_PC"
+      ],
+      "native_authority": false,
+      "statement": "On the exact decorated 2+2 carrier domain the selected sign-faithful relational bridge lift preserves c_target=c_source and has an inverse, Frobenius isometry and signed-coordinate covariance. Its five-dimensional event image is not the seven-dimensional target ball; Z need not be PSD.",
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCRelationalLiftCertificate.json",
+        "sha256": "c17097a8a11e396a03bf13c7e3621c12d58d65786e7af2668810cddefce707bb",
+        "json_pointer": "/claim_updates/1"
+      },
+      "predecessor_claim_ids": [
+        "ATC-PC-CHAIN-01"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-11",
+        "ATC7-CL-18",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": [
+        "ATC7-DB-06",
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-26"
+      ]
+    },
+    {
+      "claim_id": "ATC-PC-CHAIN-02",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_PC_research",
+      "profile_scope": [
+        "A_PC"
+      ],
+      "native_authority": false,
+      "statement": "The fixed PC-3 full causal chain uses the fresh source-only allocation 33615/65536 and selected lossless lift, independently admits both target roles, and proves exact-real signed-domain return/asymptotics with W/Z evolving. Two executed target beats per role are not a long trajectory.",
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC3CausalChainCertificate.json",
+        "sha256": "8e136b85a95a96a7bb68e1a19f94d779ea2ca69a08b1cbd72b0ad1ccb0105fb1",
+        "json_pointer": "/claim_updates/0"
+      },
+      "predecessor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CARRIER-03"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-17",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": [
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-13",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ]
+    },
+    {
+      "claim_id": "ATC-PC-DOMAIN-04",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_PC_research",
+      "profile_scope": [
+        "A_PC"
+      ],
+      "native_authority": false,
+      "statement": "The reviewed PC-4 combined paired-domain positive-parameter/fixed-tau variable-request theorem gives uniform obstruction, signed-domain invariance and transfer-entry/return/asymptotics conditional on a resolved admitted source event; its research reference covers the quadratic subclass, independent stage oracle, both-role lifecycle/replay and finite represented C/W/Z errors with measured charge drift.",
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC4ReferenceCertificate.json",
+        "sha256": "552c6cc71670eaf958b2a69689733b40d12ccf0ca1b622074ea449d055cfb92a",
+        "json_pointer": "/claim_updates/0"
+      },
+      "predecessor_claim_ids": [
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-CARRIER-03"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-17",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-27",
+        "ATC7-CL-28",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": [
+        "ATC7-DB-01",
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-21",
+        "ATC7-DB-23",
+        "ATC7-DB-26",
+        "ATC7-DB-28"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "origin_debt_id": "ATC7-DB-01",
+      "title": "Source and execution-subject admission",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/0"
+      },
+      "activation": "Any assertion about current source authority or native Tranche-7/ATC execution.",
+      "closure_requirement": "Pin repository commits, source bytes, release, dependencies and exact results. Retrieved main pages and older local attachments cannot stand in for the final execution subject.",
+      "A_PC_research_status": "partial",
+      "transformation": "scoped_partial",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Exact reviewed research inputs, kernels and captures are pinned; actual ordinary PC stage evidence is retained.",
+      "remaining_or_reactivation": "Native autonomous execution subject, release and integration are downstream.",
+      "successor_claim_ids": [
+        "ATC-PC-STEP-01",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-02",
+      "title": "Endogenous constitutive closure",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/1"
+      },
+      "activation": "A proposal claims that the event is generated by the permitted scientific state.",
+      "closure_requirement": "Name every causal input and choice; close guard, resolution, construction, identity and outcome rules; challenge administrative and hidden-state dependence.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Source-only fresh PC state supplies guard, sector resolution and dyadic share; selected construction and both-role laws have no event-time caller choice.",
+      "remaining_or_reactivation": "Only resolved admitted events in the stated paired domain; not universal formation.",
+      "successor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-03",
+      "title": "Temporal stage and historical operand",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/2"
+      },
+      "activation": "A witness uses consumed current, threshold crossing, or a previous state rather than the declared present reconstruction.",
+      "closure_requirement": "Bind the exact stage and all required past preimages; show replay and reset semantics.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "PC-0 fixes old-carrier ordinary reads and fresh postbeat event operands; research transactions, replay and reset preserve the declared stage.",
+      "remaining_or_reactivation": "Different schedulers or history-dependent guards need their own contract.",
+      "successor_claim_ids": [
+        "ATC-PC-STEP-01",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-04",
+      "title": "Analysis-to-constitutive consumption",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/3"
+      },
+      "activation": "A source analysis object becomes a physical event guard.",
+      "closure_requirement": "Admit the successor consumer, stage and complete-profile identity without relabeling a diagnostic as an existing actuator.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "The new PC consumer explicitly uses committed C/W/Z read and source activity under its complete declared research profile.",
+      "remaining_or_reactivation": "Not inherited native actuator authority or CI/OS substitution.",
+      "successor_claim_ids": [
+        "ATC-PC-STEP-01",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-05",
+      "title": "Branch and regularity applicability",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/4"
+      },
+      "activation": "A claim uses a structural chart, current slaving derivative, or classical section derivative.",
+      "closure_requirement": "Supply the exact branch, association, domain and derivatives; retain RG2b Lipschitz alternatives and kink/rank boundaries.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "No CI root derivative, structural mode chart or classical slaving derivative is invoked by this direct PC law.",
+      "remaining_or_reactivation": "Reopen for such analyses, RG2b or branch/rank changes.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-06",
+      "title": "Functional, tangent, metric and normalization",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/5"
+      },
+      "activation": "A claim invokes structural alpha, joint-state energy or magnitude comparisons.",
+      "closure_requirement": "Instantiate the complete functional and constrained domain; distinguish fixed W from temporal W/Z variation; remove/classify nulls.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Paired coordinates, constrained resource domain, signed symmetric star carrier and Frobenius norm are explicit; W and Z evolve in continuation.",
+      "remaining_or_reactivation": "No arbitrary energy normalization or structural-eigenmode equivalence claimed.",
+      "successor_claim_ids": [
+        "ATC-PC-CARRIER-03",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-07",
+      "title": "Physical discrimination of a trigger",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/6"
+      },
+      "activation": "A numerical or structural witness is claimed to warrant an RC topology response.",
+      "closure_requirement": "Retain no-event and consumer-off controls; distinguish softening, numerical certification, history loss and actual graph-response effects.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "No-split and W-only/Z-only/both-reset controls retain obstruction; support-changing fission and continued target dynamics discriminate the selected response.",
+      "remaining_or_reactivation": "Paired fixture/domain only; active external-edge carrier extension is not inferred.",
+      "successor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-08",
+      "title": "Mode-to-locus and half-edge lift",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/7"
+      },
+      "activation": "A mode or response is claimed to determine graph surgery.",
+      "closure_requirement": "Specify coordinate meaning, sign/degeneracy handling, loops, partition and covariance; compare competing lifts.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Decorated 2+2 sectors determine the half-edge fission and source-only share; sign, frame and child exchange pressure is retained.",
+      "remaining_or_reactivation": "No arbitrary-degree, loop or generic carrier lift.",
+      "successor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CARRIER-03",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-09",
+      "title": "Within/across-family resolution order",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/8"
+      },
+      "activation": "A law compares candidates or operation families.",
+      "closure_requirement": "State units, score/order/exclusivity, margins and unresolved outcomes; do not infer cross-family comparability.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "The law resolves its declared split within one operation class; it does not rank different operation families.",
+      "remaining_or_reactivation": "Cross-family scoring and conflicts remain open.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-10",
+      "title": "Finite-precision equivariance and threshold certainty",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/9"
+      },
+      "activation": "Exact covariance or stable physical decisions are claimed in a numerical implementation.",
+      "closure_requirement": "Use exact comparisons/enclosures or declared robust domains; challenge relabelings, orientations and threshold ties.",
+      "A_PC_research_status": "partial",
+      "transformation": "scoped_partial",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Exact signed-coordinate covariance and certified dyadic decisions are paired with finite represented-error and numerical-boundary checks.",
+      "remaining_or_reactivation": "Universal numerical equivariance and every threshold/input boundary are not certified.",
+      "successor_claim_ids": [
+        "ATC-PC-CARRIER-03",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-11",
+      "title": "Batch and sequential critical pairs",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/10"
+      },
+      "activation": "Disjoint events or an atomic rewrite are claimed equivalent to sequential edits.",
+      "closure_requirement": "Prove combined reference/history/resource maps, intermediate admission, and required equality notions; account for global reset effects.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "One topology event is followed by ordinary continuation.",
+      "remaining_or_reactivation": "No simultaneous/sequential critical-pair equivalence is claimed.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-12",
+      "title": "Complete finite graph/template mechanics",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/11"
+      },
+      "activation": "A template is claimed graph-generic or collision-free.",
+      "closure_requirement": "Close endpoint roles, loops, parallel edges, fresh IDs, boundary mappings and any finite template grammar.",
+      "A_PC_research_status": "partial",
+      "transformation": "scoped_partial",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "The decorated paired source/double-star graph has complete target construction and carrier maps.",
+      "remaining_or_reactivation": "Generic finite graph/template grammar, active external-edge history, loops and other partitions remain open.",
+      "successor_claim_ids": [
+        "ATC-PC-CARRIER-03",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-13",
+      "title": "Represented resource law and actual charge",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/12"
+      },
+      "activation": "Real coefficient conservation is promoted to an executable or exactly closed event.",
+      "closure_requirement": "Bind representable coefficients and rounding, validate both roles and actual charge; no silent residual correction.",
+      "A_PC_research_status": "partial",
+      "transformation": "scoped_partial",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Both roles use the same source-selected represented dyadic map; exact-real conservation is separated from measured C/W/Z publication charge drift.",
+      "remaining_or_reactivation": "Exact stored binary64 charge and a production rounding/admission policy remain downstream; no residual correction.",
+      "successor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-14",
+      "title": "Target reference, backend and context",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/13"
+      },
+      "activation": "A new graph is claimed to have a complete target package.",
+      "closure_requirement": "Construct every target coordinate, reference seed, structural base, backend, context and complete-profile identity under fixed domains.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "The bounded target graph, reference/structural base, complete PC profile and current/reset inputs are supplied explicitly.",
+      "remaining_or_reactivation": "Only the declared decorated paired template and potential/domain contracts.",
+      "successor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-15",
+      "title": "History transport or explicitly declared loss",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/14"
+      },
+      "activation": "A topology map is claimed to preserve or transform W/Z history.",
+      "closure_requirement": "Supply separately typed channel maps and source/target lineage, or retain honest reconstruction/loss; never infer from shape or resource T.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Old W is preserved with specified bridge seeding; signed Z has a separate lossless isometric relational lift with an explicit inverse.",
+      "remaining_or_reactivation": "Generic carrier transport remains open; projection is a superseded explicit-loss control, not the selected law.",
+      "successor_claim_ids": [
+        "ATC-PC-STEP-01",
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CARRIER-03",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-16",
+      "title": "Initializer and whole-role target integration",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/15"
+      },
+      "activation": "A constructed target is claimed fully admitted.",
+      "closure_requirement": "Use the accepted initializer order and independently reconstruct current/reset; preserve target numerical and atomic failures.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Current and reset are independently transferred, reconstructed and readmitted by the complete PC research evaluator before publication.",
+      "remaining_or_reactivation": "No target-only initializer is substituted for prescribed history transport; native target admission is downstream.",
+      "successor_claim_ids": [
+        "ATC-PC-STEP-01",
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CARRIER-03",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-17",
+      "title": "Core object and topology correspondence",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/16"
+      },
+      "activation": "An event is called an R_coh, basin, spark, or identity-topology event.",
+      "closure_requirement": "Map substrate state to the exact spatial/support/finite-continuation objects and demonstrate the requested change.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "No identification with core R_coh, general spark or identity-topology objects is made.",
+      "remaining_or_reactivation": "Those semantic correspondences need separate evidence.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-18",
+      "title": "Viability functional and threshold",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/17"
+      },
+      "activation": "A guard is identified with core viability or compared across graphs.",
+      "closure_requirement": "Bind functional/sign/normalization/anchor/units/locus and threshold or crossing; distinguish relative proposals from V=-P.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "The operational obstruction/support guard is not identified with a universal core viability threshold.",
+      "remaining_or_reactivation": "Absolute/relative viability normalization and cross-graph comparisons remain open.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-19",
+      "title": "Restoration and actual dynamics",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/18"
+      },
+      "activation": "A target is claimed inside a stable basin or an attracting set.",
+      "closure_requirement": "Prove the specified basin/equilibrium/Lyapunov certificate for the actual relevant state and dynamics, with numerical-error and hybrid-loop scope.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Uniform exact-real signed-carrier invariance, resource entry/return and evolving W/Z asymptotics hold on the reviewed paired domain at fixed chosen profile and variable admitted requests.",
+      "remaining_or_reactivation": "Conditional resolved-event premise; finite numerical bridge is not an infinite floating-point trajectory theorem.",
+      "successor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-20",
+      "title": "Finite persistence to identity/formation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/19"
+      },
+      "activation": "Finite observation or graph structure is promoted to spark, identity, reflexive closure, or native formation.",
+      "closure_requirement": "Supply the additional core-specific basin, attraction, invariance, closure and provenance evidence.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "A bounded source beat demonstrates onset; the whole-box theorem does not assert universal event formation or identity.",
+      "remaining_or_reactivation": "General formation, identity and reflexive closure remain separate.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-21",
+      "title": "Atomic composition and publication closure",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/20"
+      },
+      "activation": "An ATC wrapper is claimed to preserve lifecycle guarantees.",
+      "closure_requirement": "Define transaction boundaries and report composition; verify target and prospective archive before publication; preserve programmer-error semantics.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "The research owner independently admits both roles and validates lineage before atomic publication; replay, reset and injected failures retain whole-state rollback.",
+      "remaining_or_reactivation": "Production K0 scheduling and public runtime transaction conformance are downstream.",
+      "successor_claim_ids": [
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-22",
+      "title": "Causal memory, timing and event rate",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/21"
+      },
+      "activation": "Refractory counters, probes, crossings, repeated attempts, or non-Zeno claims are activated.",
+      "closure_requirement": "Declare causal history and lifecycle maps, eligible boundaries, work bounds and clock assumptions; distinguish finite beats from physical time.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Variable ordinary requests and one topology event do not activate repeated-event or non-Zeno claims.",
+      "remaining_or_reactivation": "Repeated attempts, causal clocks and physical-time rate bounds remain open.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-23",
+      "title": "Native execution and reproducible evidence",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/22"
+      },
+      "activation": "The proposal claims actual GRCV4 execution, covariance, replay or rollback.",
+      "closure_requirement": "Run the admitted exact subject with independent expectations, retained failures and source-bound captures.",
+      "A_PC_research_status": "partial",
+      "transformation": "scoped_partial",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Retained source-bound boundary observations and full-graph PC research reference/oracle/lifecycle/representation evidence are reproducible.",
+      "remaining_or_reactivation": "This is not native autonomous GRCV4 execution or public production conformance.",
+      "successor_claim_ids": [
+        "ATC-PC-STEP-01",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-24",
+      "title": "Investigation and side-tool source admission",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/23"
+      },
+      "activation": "Local ATC records are to become queryable scientific authority.",
+      "closure_requirement": "Use the actual source-observation/classification/adapter/readmission/rebuild/audit/acceptance route; preserve reciprocal claim/debt lineage.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "This explicit scoped ledger and pinned PC successor adapter observe/readmit exact sources, rebuild the append-only graph and expose reciprocal typed claim/debt traces.",
+      "remaining_or_reactivation": "Only this frozen reviewed inventory; CI successors and future source additions need their own admission.",
+      "successor_claim_ids": [],
+      "admission_evidence": true
+    },
+    {
+      "origin_debt_id": "ATC7-DB-25",
+      "title": "Complete quotient or behavioral approximation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/24"
+      },
+      "activation": "A merge is claimed to preserve or approximate complete behavior.",
+      "closure_requirement": "Supply H on every causal coordinate, domain invariance, exact or bounded intertwining, and target Lipschitz constants.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "Fission is not a behavioral quotient or approximate merge.",
+      "remaining_or_reactivation": "Complete coarsening/intertwining remains open.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-26",
+      "title": "Complete-profile target applicability",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/25"
+      },
+      "activation": "A family-level formula is promoted to multi-profile support.",
+      "closure_requirement": "Record exact domains and targets for all ten products; preserve unsupported cells without weakening the realization.",
+      "A_PC_research_status": "partial",
+      "transformation": "scoped_partial",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "A_PC paired profiles in the declared box are covered under the theorem premises; executable reference uses the quadratic subclass.",
+      "remaining_or_reactivation": "Other realizations, all ten families and arbitrary graphs/parameters are not admitted.",
+      "successor_claim_ids": [
+        "ATC-PC-CHAIN-01",
+        "ATC-PC-CARRIER-03",
+        "ATC-PC-CHAIN-02",
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-27",
+      "title": "Relation/coarsening semantic driver",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/26"
+      },
+      "activation": "Present coupling or inactivity is called missing relation, redundancy, death or extinction.",
+      "closure_requirement": "Demonstrate the operation-specific causal meaning; test zero-current bridges, hidden W/Z, existing nonedge mediation and delayed effects.",
+      "A_PC_research_status": "not_activated",
+      "transformation": "scoped_not_activated",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "No relation-birth, pruning, redundancy, death or extinction semantics are asserted.",
+      "remaining_or_reactivation": "Those operation-specific causal meanings remain open.",
+      "successor_claim_ids": [],
+      "admission_evidence": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-28",
+      "title": "Finite search/work and objective interpretation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/27"
+      },
+      "activation": "A finite partition optimizer or template grammar is treated as scalable or core-derived.",
+      "closure_requirement": "Bind objective and search semantics, complexity/work budgets and exact outcome independence; distinguish computational failure from physical absence.",
+      "A_PC_research_status": "closed",
+      "transformation": "scoped_closed",
+      "global_discharged": false,
+      "blocks_paired_research_acceptance": false,
+      "earned_scope": "The bounded decorated candidate set and dyadic certification have explicit finite resolution and fail-closed numerical boundaries.",
+      "remaining_or_reactivation": "No scalable arbitrary-partition optimizer, global size bound or core-derived objective is inferred.",
+      "successor_claim_ids": [
+        "ATC-PC-DOMAIN-04"
+      ],
+      "admission_evidence": false
+    }
+  ],
+  "classifications": {
+    "closed": 13,
+    "partial": 6,
+    "not_activated": 9
+  },
+  "historical_controls": [
+    {
+      "claim_id": "ATC-PC-CARRIER-02",
+      "status": "superseded_selection_explicit_loss_control",
+      "selected_policy": false,
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCCarrierEventCertificate.json",
+        "sha256": "06e5a4ba4fd171b32c966010196a2f3ea6c23e60f91889a107163d823f9c94e4",
+        "json_pointer": "/claim_updates/0"
+      },
+      "successor_claim_id": "ATC-PC-CARRIER-03"
+    }
+  ],
+  "unaccepted_handles": [
+    "ATC-CI-STEP-01",
+    "ATC-CI-CHAIN-01"
+  ],
+  "review_refs": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1-IndependentReview.md",
+      "sha256": "50a3b1e8491dea2a63896e2eb5f773ce50754de3bf345bcbe0dee96d6b2d6171",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC2-SignFidelity-And-SignedDomain-Review.md",
+      "sha256": "3dcff064297c10d821c184725ccdf1cccdef4b9bb237dde43d9143ff66d9bc36",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-SolePolicy-ScopeReview.md",
+      "sha256": "381b5f4e1faac718a0cec9650dd6c66bed7764038a08fe0f34eba6449ca3ba74",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-IndependentReview.md",
+      "sha256": "a6f17a6eab85b894aabc50749c164391485b809dc511db1e8abff2f693c05a8e",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC4-IndependentReview.md",
+      "sha256": "99bca5f2c8ec0a824d21fd59f6a31649fd45e39f707bcdb60c8a2f9d93bb03e8",
+      "json_pointer": "/"
+    }
+  ],
+  "preservation": "Reviewed certificates and shared note retain historical preadjudication status; this explicit successor admits only the named PC claims. Future CI work uses separate successor files.",
+  "record_digest": "b6347aa4901b52b4dacd72ba126ed2b280f280e4c43d80a72e1733b3c54e3224"
+}

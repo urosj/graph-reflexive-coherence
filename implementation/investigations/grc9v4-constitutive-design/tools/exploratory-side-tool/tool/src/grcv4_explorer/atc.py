@@ -19,7 +19,7 @@ EVIDENCE = INV + "/evidence/autonomous-topology-change"
 LEDGER = EVIDENCE + "/ATCAOSClaimDebtLedger.json"
 ADMISSION = "ATCAOSResearchAdmission.json"
 RECORD_ID = "GRCV4-ATC-AOS-LEDGER-v1"
-ADMISSION_DIGEST = "40f6a361c3a00ae629bc413a62688d6f1d13de0f6311772f188c5a164a953a4b"
+ADMISSION_DIGEST = "b06c420df07c856d37b056ca82681453ea04e1a748b23ea02312dc6f0a217a5f"
 STAGES = (
     "ATCSectorConstitutiveAdjudication.json",
     "ATCSectorReadBackPointAdjudication.json",
@@ -28,6 +28,26 @@ STAGES = (
     "ATCSectorChannelsAdjudication.json",
     "ATCSectorReferenceAdjudication.json",
 )
+
+# A navigation command was corrected after the relocation record was built.
+# Reconstruct only that historical README for its old evidence hash; never
+# normalize scientific records or silently accept arbitrary source changes.
+_REVIEW_README = EVIDENCE + "/review/ATC2-IndependentReview/README.md"
+
+
+def _source_binding_matches(root, binding):
+    path = _path(root, binding["path"])
+    if file_sha256(path) == binding["sha256"]:
+        return True
+    if binding["path"] != _REVIEW_README:
+        return False
+    import hashlib
+    current = (EVIDENCE + "/review/ATC2-IndependentReview").encode()
+    previous = (INV + "/drafts/autonomous-topology-change/review/ATC2-IndependentReview").encode()
+    content = path.read_bytes()
+    if content.count(current) != 1:
+        return False
+    return hashlib.sha256(content.replace(current, previous)).hexdigest() == binding["sha256"]
 
 
 def _require(condition, message):
@@ -175,7 +195,7 @@ def _build_context(root, side, admission):
         if "record_digest" in data:
             _require(data["record_digest"] == record_digest(data, "record_digest"), "ATC evidence digest drift: " + name)
         for row in data.get("source_bindings", []):
-            _require(file_sha256(_path(root, row["path"])) == row["sha256"], "ATC evidence binding drift: " + row["path"])
+            _require(_source_binding_matches(root, row), "ATC evidence binding drift: " + row["path"])
     row = dict(source_id=RECORD_ID, path=LEDGER, file_sha256=file_sha256(root / LEDGER))
     doc = SourceDocument(Path(LEDGER).name, root / LEDGER, ledger, row,
                          "atc_aos_research_v1", RECORD_ID, ledger["schema"], "record_digest", {})

@@ -4063,3 +4063,454 @@ execution source, not a new native rerun). The thirteen-case status checker
 reproduces its retained record. G1–G4, G5–G6 and G7 wrappers reconstruct
 their exact records using retained numerical evidence, not new numerical
 campaigns. No `src/`, production tests, paper or specification was changed.
+
+## 2026-09-23 — realization-native A_CI/A_PC continuation
+
+The user replaces “lift CAN-LSF from OS” with the
+[compressed realization-native program](./decisions/ATCCIPCRealizationNativeProgram.md).
+Two step-to-event contracts come first, followed by one complete causal
+anchor before domain/reference expansion. Reuse shell/lemmas with their exact
+scope; do not repeat partition discovery or a seven-stage ladder. PC's
+carrier-event semantics is new science; transport versus loss remains undecided.
+
+CI-0 and PC-0 source inspection and five-node numerical stage pressure find
+the existing final readmission operands: CI's post-C/W joint `restart` root,
+and PC's post-C/W/Z `restart` read. Both are read-only postconditions, not a
+second beat; they differ from the consumed pre-continuity current. Independent
+roles, writer counts, held carrier source, zero-duration identity and injected
+final-read rejection are checked. Public publication/order was inspected;
+native ATC was not executed. The [record](./evidence/atc-ci-pc/ATCCIPCStepBoundaryAudit.json)
+is pending review, not a full-feedback scientific witness. The shipped
+zero-site-derivative fixture cannot answer the nonlinear research question.
+
+Pending handles `ATC-CI-STEP-01`, `ATC-PC-STEP-01`, `ATC-CI-CHAIN-01` and
+`ATC-PC-CHAIN-01` are routed to their original debts in the working note.
+CI branch/regularity and PC Z transfer reactivate the relevant obligations
+for these new claims; no A_OS disposition is overwritten. New evidence lives
+in `evidence/atc-ci-pc`, outside the frozen A_OS inventory, and must undergo
+explicit successor admission after review. A passing A_OS tool query does
+not certify these pending families. Aggregate ATC-2 remains open.
+
+An initial forensic query also exposed one navigation binding left stale by
+the previous checkpoint: the ATC2 review README's corrected command location.
+The adapter now checks the exact historical bytes by reversing only that
+single path substitution, while pinning the current README independently.
+Scientific records remain unchanged. Eleven focused side-tool tests pass,
+including rejection of all other changes to that navigation subject. This
+is an explicit relocation compatibility correction, not fresh scientific
+authority or a relaxed source verifier.
+
+## 2026-09-23 — CI-0 review hardening and CI-1/PC-1 results
+
+The user gives CI-0 staging a PASS, requests complete joint-root evidence
+and realization-specific failure injection, and authorizes CI-1/PC-1.
+The boundary checker now compares entire fresh/restart root objects and
+retains selected J/H, recipe/domain/certificate identities and a canonical
+joint-root digest. Both updated realization cases pass.
+
+The [working note §4](./decisions/ATCCIPCRealizationNativeProgram.md#4-ci-1--pc-1-a-shared-bound-two-different-dynamical-arguments)
+and [anchor certificate](./evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json)
+give fixed-profile rational/interval results, not accepted CI/PC authority.
+All physical channels and the nonlinear potential are active. An a priori
+CI self-map/contraction argument establishes the joint root; ordinary onset,
+source-only flux allocation, both-role target entry and indefinite resource
+return complete the bounded CI-1 chain. No-split/W-reset controls retain the
+67-proposal positivity obstruction. The attempted OS-style auxiliary balance
+test fails and remains recorded; CI uses actual joint-root flux inside an
+independently justified transfer range, without changing the input or
+searching targets. CI-2/CI-3 remain separate.
+
+For PC-1, a declared invariant carrier ball proves the same source obstruction
+while W and Z evolve. W-only, Z-only and both-reset controls stay obstructed.
+Fission changes the responsible stiffness support, but a strictly positive
+old cross-sector Z entry would violate target star support if naively copied.
+PC-2 must resolve transport versus explicit loss; PC target return remains open.
+
+`ATC-CI-CHAIN-01` and `ATC-PC-CHAIN-01` now have machine-readable pending
+claim updates and original debt references in the certificate. No debt is
+discharged or accepted scope widened ahead of independent review/admission.
+No production, paper/spec, other-family or aggregate ATC-2 authority follows.
+
+## 2026-09-23 — CI-1/PC-1 review PASS; PC-2 partial carrier transport proposed
+
+The [independent review](./evidence/atc-ci-pc/CI1PC1-IndependentReview.md)
+passes CI-1's bounded complete causal anchor and PC-1's evolving-carrier
+source obstruction/support screen. Its domain-interface corrections are
+implemented: exact rational charge/pairing and carrier symmetry/star-support
+are checked before interval conversion, with constructive invariant witnesses
+for subsequent states. Matching interval boxes alone grant no invariant.
+
+The [resolution](./evidence/atc-ci-pc/CI1PC1ReviewResolution.json) finds the
+provenance HOLD stale against accepted commit `5e1a63a`: the current inherited
+kernels match its relocated G7 source bindings. No accepted A_OS script,
+certificate or claim/debt disposition is rewritten. Exact external bytes for
+two quoted older hashes are unavailable; no speculative full diff is claimed.
+The hardened CI-1/PC-1 successor preserves the reviewed numerical results.
+
+The user authorizes PC-2 continuation. The
+[new bounded result](./decisions/ATCCIPCRealizationNativeProgram.md#6-pc-2-surviving-star-restriction-with-explicit-partial-loss)
+proposes `L(Z)=Pi_target(E Z E^T)` under an explicit new minimal-change/no-new-
+bridge-memory axiom. This norm-one covariant map preserves lawful surviving
+blocks and reports the unsupported cross-child component as partial carrier
+loss. Whole reset remains admissible but discards strictly more on the two
+retained roles. The live role loses nonzero cross-sector history; the reset
+role loses exactly none under restriction. Neither is called generic lossless
+transport. W lineage is a separate channel.
+
+`ATC-PC-CARRIER-02` routes to DB-15, DB-06 and carrier/geometry admission in
+DB-16, bounded to A_PC/this split. It remains pending independent review and
+formal scoped source admission. DB-14/full DB-16/DB-19 remain PC-3 work:
+actual PC event allocation, complete both-role target readmission, and
+evolving-history restoration. CI-2/CI-3 and PC-4 remain open. No global debt,
+accepted graph, production model, paper/spec or aggregate ATC-2 gate changes.
+
+## 2026-09-23 — PC-2 selection superseded; lossless relational lift pressured
+
+The [new review](./evidence/atc-ci-pc/PC2-RelationalLift-PressureReview.md)
+correctly distinguishes the projection theorem from its constitutive
+selection. Forcing bridge couplings to zero excludes a lawful way to carry
+the one cross-sector scalar already present on the exact PC-1 domain.
+`ATC-PC-CARRIER-02` remains a valid explicit-loss control; its preferred-law
+selection is superseded, and no unavoidable-loss claim is admitted.
+
+The [revised PC-2 result](./decisions/ATCCIPCRealizationNativeProgram.md#7-revised-pc-2-lossless-relational-bridge-lift)
+and [certificate](./evidence/atc-ci-pc/ATCPCRelationalLiftCertificate.json)
+introduce pending conditional `ATC-PC-CARRIER-03`: preserve old sector
+blocks, transfer the parent-mediated cross relation onto bridge incidences,
+and keep bridge self-history zero. The map is covariant, invertible on its
+image and Frobenius-isometric on the exact decorated 2+2 domain. Both actual
+roles recover all source carrier enclosures and retain the same norm bounds.
+
+Two qualifications are explicit. First, opposite global relational polarity
+also satisfies covariance/isometry; the proposed positive normalized sign is
+an additional constitutive choice, not uniqueness forced by incidence.
+Second, the actual live target Z has a negative principal minor, while its H
+is certified SPD; the signed-carrier contract permits this. A nonlinear PSD
+alternative is retained only as bounded algebraic pressure, not selected.
+The double-odd mode proves a genuine carrier-only equivariant-injectivity
+obstruction on the wider symmetry-breaking source space, not on PC-1's exact
+decorated manifold. It does not select projection as a universal fallback.
+
+Original claim/debt routing remains DB-15/06 and carrier-only DB-16, bounded
+by DB-26. Review and formal scoped admission of this revised candidate remain
+open; complete target DB-14/16 and restoration DB-19 remain PC-3. No native,
+paper/spec, accepted A_OS, global-debt or aggregate ATC-2 status changes.
+
+## 2026-09-23 — PC-2 sign fidelity and signed event-domain semantics
+
+The [follow-up review](./evidence/atc-ci-pc/PC2-SignFidelity-And-SignedDomain-Review.md)
+tightens the existing map rather than replacing it. `ATC-PC-CARRIER-03` now
+requires preservation of the incidence-normalized signed relational observable,
+`c_target=c_source`. This new cross-topology continuity obligation resolves
+polarity; covariance alone still does not. The opposite branch is rejected
+for nonzero c, while both branches coincide at zero. Both role receipts
+retain the source and target observables and the enforced equality.
+
+The signed decorated target-star carrier ball, its SPD geometry, and its
+ordinary PSD-reachable subset are explicitly distinguished. The five-dimensional
+lift image is a proper subset of the seven-dimensional decorated ball,
+correcting the review's final “image is the ball” wording. Admitted positive
+and negative bridge-diagonal carriers outside the image exercise that boundary.
+
+The predeclared nonlinear PSD alternative stays a control. Its fixed target
+readout generally attenuates c: an exact example gives `c_target=7c_source/10`
+although its nonlinear decoder recovers c. It therefore cannot be substituted
+under the main law's unchanged sign-fidelity contract. If PC-3 genuinely
+falsifies signed-domain continuation, retain the failure and investigate that
+predeclared alternative only with explicitly reviewed decoder/domain changes,
+not fitted coefficients or a silently weakened observable. Failure to obtain
+a proof is not by itself a dynamical counterexample.
+
+The linear transport matrices are unchanged. PC-3 must prove complete
+both-role readmission and restoration from the signed event image in a
+justified invariant domain, which may be larger than that image. Formal
+PC-2 review/admission, wider debts and aggregate ATC-2 remain open. No
+production, paper/spec or accepted A_OS scientific artifacts are changed.
+
+## 2026-09-23 — PC-3 sole-policy chain and signed-domain return prepared
+
+The [scope follow-up](./evidence/atc-ci-pc/PC3-SolePolicy-ScopeReview.md)
+clarifies the preceding entry: no new contract is needed before PC-3 under
+the selected sign-fidelity lift. That lift is the **sole PC-3 policy**.
+The nonlinear PSD construction is only a mathematical pressure control,
+not a fallback authorized by its earlier description. Any genuine PC-3
+failure must remain a failure; a PSD successor would require a separately
+preregistered relational-continuity contract and new bounded PC-2b work.
+
+The user authorizes PC-3. Its
+[bounded result](./decisions/ATCCIPCRealizationNativeProgram.md#8-pc-3--fixed-causal-experiment)
+and [certificate](./evidence/atc-ci-pc/ATCPC3CausalChainCertificate.json)
+retain the unchanged PC-1 active nonlinear profile and both source roles.
+After one ordinary source beat, the fresh PC read selects `33615/65536`,
+distinct from CI's `33616/65536`. Both target roles use their own C/W/Z,
+the same current-selected share and the selected lossless carrier law, and
+receive full independent target readmission.
+
+Uniform fixed-H estimates, resource contraction `q<0.895541`, and the PC
+held-source half-writer prove indefinite exact-real return in the decorated
+signed carrier ball, with C/W/Z asymptotics. Two actual target beats per role
+retain complete scientific reads and updates; both leave the five-dimensional
+event image while remaining admitted in the seven-dimensional carrier domain.
+No-split/W-reset/Z-reset/both-reset source controls remain obstructed by the
+uniform 67-proposal proof, not a new long trajectory. The checker forbids CI
+root/OS pass calls and rejects all alternate PC-3 carrier policies.
+
+Pending conditional `ATC-PC-CHAIN-02` follows `ATC-PC-CHAIN-01` and
+`ATC-PC-CARRIER-03`, routing evidence to DB-02/03/04/06/07/08/13/14/15/16/19/26.
+This is a prepared bounded research result, **not independent acceptance,
+graph admission or debt discharge**. PC-4 combined domains/reference/
+representation, formal CI/PC adjudication and wider origin obligations remain
+open. Earlier anchor numerics are retained; only working-note/predecessor
+metadata bindings are refreshed. Accepted A_OS artifacts, production code,
+papers/specifications and aggregate ATC-2 status are unchanged.
+
+## 2026-09-23 — PC-3 independent scientific PASS; PC-4 authorized and prepared
+
+The [supplied PC-3 review](./evidence/atc-ci-pc/PC3-IndependentReview.md)
+passes the bounded complete A_PC chain. It independently reproduced the
+mathematical payload and original record digest `f5269098cdc8ac88c21dd2eb5f1d45b76140316b816d4f68db44a635aff681f6`.
+No corrective rerun is required. The raw-matrix/typed-Carrier reconstruction
+mismatch is resolved by the pinned hardened dependencies, not a new defect.
+The certificate's review metadata preserves the original identity and
+checks unchanged mathematics separately from documentary binding updates.
+`ATC-PC-CHAIN-02` now has scientific review PASS; formal graph admission and
+debt discharge remain pending. Reviewer-reported extra pressure is not
+relabeled as local execution.
+
+The user then explicitly authorizes PC-4. The
+[combined paired-domain/reference result](./decisions/ATCCIPCRealizationNativeProgram.md#9-pc-4--combined-paired-domain-and-research-reference)
+and [certificate](./evidence/atc-ci-pc/ATCPC4ReferenceCertificate.json)
+retain the selected PC-2 law and reuse exact common algebra, not OS/CI
+dynamics. A positive parameter/C1 envelope and requests [3/25,1/8] at fixed
+physical tau yield signed-carrier invariance, both-role entry below 0.630355,
+uniform target contraction below 0.900914 and C/W/Z/H limits. The broader
+unsplit obstruction bound is 89 proposals, not a replacement claim about
+the sharper fixed PC-3 result.
+
+The full-graph executor passes 1,645 independent Decimal scalar comparisons,
+bounded ordinary-onset/event/step/reset replay, and 15 rejection/rollback
+cases. Four represented steps per actual target role carry previous C/W/Z
+rounding errors forward. All finite errors are below the preregistered
+1e-10 budget; exact charge drift up to 1/2251799813685248 is measured and
+retained, not silently corrected or admitted as exact-charge continuation.
+
+Conditional pending `ATC-PC-DOMAIN-04` routes the paired-domain theorem and
+DB-10/21/23/28 numerical/reference evidence alongside PC-3's scientific
+debts. Active external-edge transport is outside the selected four-edge
+carrier map: no coupled-environment or family-wide closure is claimed.
+The unaffected-support negative control is algebraic locality, not a new
+environmental campaign. PC-4 review/scoped adjudication, wider source debts,
+other families and aggregate ATC-2 remain open. No production, paper/spec,
+accepted A_OS artifact or native gate changes.
+
+## 2026-09-23 — PC-4 scientific PASS; paired A_PC ready for scoped adjudication
+
+The [independent PC-4 review](./evidence/atc-ci-pc/PC4-IndependentReview.md)
+passes the bounded paired-domain/reference/representation closure. It
+reproduced the complete contract/profile/evidence and original record digest
+`0a1369d4bdfa1edbf44f757c0ef0fcc25b5af5398c14d119075170407975cc91`.
+No corrective run is required. The mathematical payload remains pinned to
+`d78a0c362250b9b371e080105bf18ba26c13724a1aeb0c9fc85aae224b22362f`;
+review status and documentary bindings are updated without changing the
+scientific results. The pre-relocation proof copies mentioned by the reviewer
+do not change the accepted dependency resolution against `5e1a63a`.
+
+The review reports additional mixed-corner pressure: 18 parameter corners
+at both request endpoints, 36 target cases and 36 resolved source-onset
+cases with shares 33597–33623. These remain reviewer-reported diagnostics;
+they are not new local runs or a whole-box event-formation theorem.
+
+`ATC-PC-DOMAIN-04` now has scientific review PASS. Adjudication must retain
+two limits: the whole-box transfer/return bounds are conditional on an
+admitted event state with a resolved source-only share, and the analytic C1
+potential envelope is not identical to the executed quadratic subclass.
+Bounded DB-10/21/23/28 evidence is reviewed, while **DB-24/source admission
+remains explicitly open** and no local debt is automatically discharged.
+
+The declared paired A_PC research scope has reached its consolidation/
+reference endpoint and is ready for formal scoped claim/debt adjudication.
+No PC-5 discovery or new anchor refinement is required first. Active coupled-
+environment transport remains a future extension outside this map, not a
+PC-4 defect. CI-2/CI-3 are the unfinished parallel realization-native work.
+No formal admission, native implementation, repeated-event/non-Zeno, other-
+family or aggregate ATC-2 status is changed by recording this review.
+
+## 2026-09-23 — paired A_PC adjudication and explicit source admission
+
+The user authorizes the [scoped adjudication](./decisions/ATCPCClaimDebtAdjudication.md)
+after PC-4 PASS. The new machine ledger accepts five conditional PC claims,
+keeps the projection as a superseded explicit-loss control, and gives all
+28 origin debts separate PC dispositions: 13 locally closed, six partial,
+nine not activated. Every origin debt remains globally open. DB-24 closes
+only for the exact source inventory admitted by the pinned append-only
+adapter, graph rebuild and typed claim/debt queries.
+
+The whole-box resolved-event premise, analytic C1/executed quadratic
+distinction, signed-carrier domain, finite publication-error bridge and
+measured charge drift remain explicit. Active external-edge transport is a
+future extension, not a PC-4 criterion. No native, CI, all-family or aggregate
+ATC-2/ATC-3 acceptance is inferred.
+
+No numerical campaign is repeated for this bookkeeping/admission step.
+Validation targets source identities, reciprocal debts, complete ancestry,
+authority ceilings and preservation of the accepted A_OS graph. The reviewed
+shared note and certificates retain their historical pending flags; this
+successor is the new status authority. Next: CI-2, then CI-3, in separate
+successor files rather than editing PC's newly admitted provenance.
+
+Validation: ten focused PC admission tests and eleven existing A_OS admission
+tests pass; local document links, portable paths and diff whitespace pass.
+The first PC regression run exposed an overstrict test expecting identical
+historical edge neighborhoods after adding successor edges. The corrected
+assertion preserves every old node/edge and debt payload/source while allowing
+the explicit new parallel-scope edge. No scientific evidence was changed.
+
+## 2026-09-23 — CI-2 and CI-3 prepared in separate successor files
+
+The user authorizes CI-2 followed by CI-3. The
+[combined successor](./decisions/ATCCIDomainsAndReference.md) closes the
+declared paired research tasks at the **prepared, locally validated** level,
+pending independent review and explicit scoped claim/debt adjudication.
+The shared reviewed CI-1/PC checkpoint and all accepted PC/A_OS sources remain
+unchanged; no accepted SHA chain is rebuilt to accommodate this work.
+
+CI-2 supplies one positive-parameter/request-domain proof for the actual CI
+joint root: source and target self-map/contractivity, Schur-complement
+regularity, evolving-W source obstruction, independently transported target
+entry, return and asymptotic history/geometry limits. Whole-box event entry
+assumes a resolved admitted source-only share. The broader obstruction bound
+is 71 further proposals; the target resource factor is at most
+577621057/641433600 (<0.900516). This uses explicit realization-independent
+incidence/transfer lemmas plus new CI bounds, not an OS/PC analogy.
+
+CI-3 executes full graph equations with a priori certified joint roots and
+compares them to independent 110-digit Decimal assembly from a different
+initial geometry. It passes 2,153 scalar stage/root comparisons, 30 joint
+J/H covariance comparisons, 21 lifecycle/admission negatives and eight
+represented continuation steps (four per actual role). H-only mutation with
+unchanged J is rejected. Fresh event and restart roots match completely,
+including canonical interval values, certificate and profile/domain bindings.
+The actual CI-1 source share remains 33616/65536.
+
+Maximum represented discrepancies are below 2.070e-16 for C, 8.035e-17 for W,
+3.425e-16 for reconstructed J and 7.446e-23 for reconstructed H. The measured
+charge discrepancy reaches 1/2251799813685248 and is retained, not repaired.
+The [reproduction note](./evidence/atc-ci-successor/README.md) records the two
+local development corrections (root stopping budget below grid norm resolution
+and interval-object versus canonical-value equality). Neither alters the law
+or domain. Exact-real return is not an indefinite binary64 guarantee.
+
+Pending handles `ATC-CI-DOMAIN-02` and `ATC-CI-REFERENCE-03` carry explicit
+predecessor/debt routing. DB-24 and all global debts stay open for CI. No native
+execution gate is added to research acceptance, but no native authority,
+active-environment result, repeated-event/non-Zeno theorem, other-realization
+support or aggregate ATC-2 closure is inferred. Next is independent review
+of this package, not another discovery stage or automatic CI+PC work.
+
+Lean validation runs only the new CI domain/reference checkers, retained
+source/digest checks and the existing PC source-admission audit. That audit
+still reconstructs the exact accepted PC/A_OS graph; old numerical campaigns
+are not rerun.
+
+## 2026-09-23 — CI-2 scientific PASS; CI-3 exact-boundary correction
+
+The [independent review](./evidence/atc-ci-successor/CI2CI3-IndependentReview.md)
+passes CI-2 mathematics and the CI-3 reference core, while holding CI-3's
+closed-domain admission: outward rational enclosures had been used as exact
+predicate values. CI-2 is now scientifically closed. This is not DB-24 source
+admission, a graph extension, or a local/global debt discharge.
+
+The CI-only correction retains exact rational preimages/predicates and
+propagates operation-proved charge, pairing, history and growth/return facts.
+Roots bind that witness separately from numerical arrays. No tolerance,
+domain shrinkage, changed physics or frozen PC/A_OS source edit is used.
+Represented advance requires exact pointwise C/W pairing before symmetric
+intersection; a rounded state still has no exact-charge witness.
+
+The bounded regression includes eight exact endpoint fixtures (the reported
+source/event/history cases, reset y=-1/50 and target radius 3/2), 19 rejected
+outside/malformed cases, and a passing paired nonzero-charge diagnostic.
+Outside offsets reach 2^-300, below the interval grid. CI-2 mathematical
+evidence and claim routing are unchanged. The same CI-3 stage, covariance,
+lifecycle and finite-representation campaign is rerun, not a parameter search.
+Predicate provenance intentionally changes root/publication/replay identities;
+the review's older hashes remain identified as pre-correction observations.
+
+CI-3 corrected closure/scoped adjudication remains separate from its reviewed
+core PASS and local correction checks. No independent post-correction review
+is invented. All CI source-admission/global debt/native/aggregate limitations
+remain explicit; the next work is scoped adjudication, not another scientific
+discovery ladder.
+
+## 2026-09-23 — CI-3 derived-state proof provenance sealed
+
+The [follow-up review](./evidence/atc-ci-successor/CI3-DerivedWitness-IndependentReview.md)
+independently passes the previous exact-boundary correction, all eight
+boundary fixtures/19 negative controls, the 2,153 stage comparisons and the
+30 covariance comparisons. CI-2 remains scientifically closed. Its sole new
+HOLD is the exposed raw-data `after_step` helper, which could manufacture
+theorem facts for unrelated numerical data. The Q=8.4 and W=0.8 examples were
+confirmed; they do not invalidate the correctly executed retained trajectory.
+
+Remove that helper. The exact step now performs its own selected-root,
+continuity and writer computations before granting successor predicates and
+readmitting the full restart root. It accepts no caller-supplied numerical
+output, selected root or proof receipt. Retain before/root/request/profile/
+result/theorem bindings as execution provenance, not transferable authority.
+The private state constructor additionally rejects enclosure contradictions
+for charge, history floor, source x/y, target radius and result identity.
+Compatibility is defense in depth, not a replacement for execution provenance.
+
+Three public-interface forgery tests reject before certified-state construction,
+including a physically lawful unrelated target. A serialized receipt also
+cannot grant authority. Six separate white-box consistency tests reject
+contradictory proof/data pairs; positive controls check every execution binding
+and restart-root identity. The existing boundary/representation rules persist.
+
+CI-2 adds the requested uniform child-funding certificate 1303/1600>0, while
+all previous bounds and claim routing remain unchanged. Refresh the same
+CI-3 reference campaign once to bind the executing-only path and retain the
+new controls; do not launch another discovery or accepted PC/A_OS campaign.
+Accepted PC/A_OS source and graph identities are unchanged. The follow-up
+review is not misrepresented as an independent run of this latest correction.
+The paired CI program is ready for scoped adjudication; source admission,
+local/global debt discharge, native work and aggregate ATC-2 closure are not
+inferred from these conformance checks.
+
+## 2026-09-23 — Paired A_CI claims/debts adjudicated and source-admitted
+
+The user authorizes scoped adjudication following the
+[final independent CI-3 PASS](./evidence/atc-ci-admission/CI3-FinalIndependentReview.md).
+The remaining derived-witness HOLD is closed; CI-0–CI-3 are scientifically
+complete at the declared paired scope. The review independently reproduces
+the boundary/provenance pressure and confirms unchanged scientific results.
+Its optional prettier signature diagnostic is non-blocking; no reviewed
+scientific script/certificate is rewritten for it.
+
+The [CI adjudication](./decisions/ATCCIClaimDebtAdjudication.md) admits four
+conditional claims: STEP-01, CHAIN-01, DOMAIN-02 and REFERENCE-03 in the
+`ATC-CI-*` namespace. The ledger preserves exact scientific/review pointers,
+proposal-origin provenance, complete predecessor ancestry and reciprocal
+claim/debt edges. The 28 CI-local dispositions are 14 closed, six partial
+and eight not activated. All 28 original debts remain globally open.
+
+DB-05 closes locally through CI's uniform joint-root/regularity proof;
+PC's non-activation is preserved, not copied into CI. DB-24 closes through
+the pinned exact CI inventory, source observation/classification, successor
+adapter/readmission, append-only graph rebuild and typed audit. The exposed
+surfaces are `atc-ci-query` and `grcv4_explorer.atc_ci`; CI debt traces do not
+overwrite A_OS/PC debt meanings. Native/aggregate/other-realization authority
+is false. The old loaders retain their old claims and graph identities.
+
+Ten focused CI admission tests and all ten historical PC tests pass,
+including forged/rehashed scope changes, missing ancestry/reciprocity,
+wrong source pointers, inventory/execution-source drift, local-vs-global
+closure, exact old graph preservation and portable CLI access. No numerical
+campaign is rerun. Reviewed CI certificate bytes and accepted PC/A_OS pins
+stay fixed; their older pending flags are historical and superseded only by
+this acceptance. The new CI graph digest is
+`8a72fed0586996146ef31b86affcaf5b2d34f08ba12ca28adc4338e13b35c1ed`.
+
+No extra CI scientific stage is needed. Other realization work remains a
+separate next task, followed by the reviewed topology proposal/paper/spec
+route before any Phase 9 native implementation. Aggregate ATC-2 stays open.

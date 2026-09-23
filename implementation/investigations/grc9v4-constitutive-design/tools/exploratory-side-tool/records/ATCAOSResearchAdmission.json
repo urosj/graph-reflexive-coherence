@@ -394,7 +394,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/README.md",
-      "sha256": "036d7783a0b8ef7d24629967e5fa4bd3b86f9cba86a047411b19140c3d3662ad"
+      "sha256": "1601dd2e7007d21c1a24c75e3c9c721f8c2f51ecb59c95d346e711cf26c78e8b"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/ReviewCorrection.md",
@@ -1388,6 +1388,12 @@
   "ledger_record_digest": "0fa6aab453d7f013a7b999dc00d3ac4133de193e2053cc7c8ff92823bad4380e",
   "native_authority": false,
   "ATC2_closed": false,
-  "graph_digest": "4ca7dce705882f8cc6e24398d06235db11bbafba4669167bcaa5b60f970cdb0d",
-  "record_digest": "40f6a361c3a00ae629bc413a62688d6f1d13de0f6311772f188c5a164a953a4b"
+  "graph_digest": "27de1b82233a2277ae4f66eae2e9a077dbd583fe53d674f5bcabf97e4b677809",
+  "record_digest": "b06c420df07c856d37b056ca82681453ea04e1a748b23ea02312dc6f0a217a5f",
+  "navigation_binding_correction": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/README.md",
+    "kind": "exact_single_command_path_relocation",
+    "historical_sha256": "036d7783a0b8ef7d24629967e5fa4bd3b86f9cba86a047411b19140c3d3662ad",
+    "scientific_records_unchanged": true
+  }
 }

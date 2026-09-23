@@ -27,6 +27,8 @@ def repository_root() -> Path:
 
 COMMANDS = {
     "atc-query": TOOL_ROOT / "scripts/atc_query.py",
+    "atc-pc-query": TOOL_ROOT / "scripts/atc_pc_query.py",
+    "atc-ci-query": TOOL_ROOT / "scripts/atc_ci_query.py",
     "doctor": TOOL_ROOT / "scripts/doctor.py",
     "build-iteration0": TOOL_ROOT / "scripts/build_iteration0_contract.py",
     "audit-iteration0": TOOL_ROOT / "scripts/audit_iteration0_contract.py",
@@ -112,7 +114,7 @@ def main() -> int:
     parser.add_argument("command", choices=sorted(COMMANDS))
     parser.add_argument("--boundary-only", action="store_true", help="Check current boundary only; never grants authority")
     args, query_arguments = parser.parse_known_args()
-    if query_arguments and args.command != "atc-query":
+    if query_arguments and args.command not in {"atc-query", "atc-pc-query", "atc-ci-query"}:
         parser.error("unrecognized arguments: " + " ".join(query_arguments))
     script = (
         verification_script(repository_root())
@@ -122,7 +124,7 @@ def main() -> int:
     if args.boundary_only and args.command not in {"verify-post-d10-specifications", "verify-phase9"}:
         parser.error("--boundary-only applies only to the phase-aware verification commands")
     arguments = ["--boundary-only"] if args.boundary_only else []
-    if args.command == "atc-query":
+    if args.command in {"atc-query", "atc-pc-query", "atc-ci-query"}:
         arguments = query_arguments
     return subprocess.run([sys.executable, str(script), *arguments], check=False).returncode
 

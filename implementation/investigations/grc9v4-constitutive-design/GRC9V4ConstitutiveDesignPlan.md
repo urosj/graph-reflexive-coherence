@@ -205,9 +205,70 @@ removes native implementation as an unmet G7 criterion. Charge drift is an
 accepted numerical finding for later Phase 9 policy, not a G7 research defect.
 Native potential/profile, conservation/rounding and K0 integration belong to
 Phase 9 after proposal/paper/spec propagation. No further A_OS widening is
-needed merely to finish this program. Next consider A_OS as the reference
-template for other Candidate-A lifts, beginning with an A_CI-specific closure
-study. Wider source/environment/formation claims, other families and aggregate
+needed merely to finish this program. The user now selects the
+[realization-native A_CI/A_PC program](./decisions/ATCCIPCRealizationNativeProgram.md):
+start from the actual complete step, not an OS-derived rule. CI proceeds through
+CI-0 boundary, CI-1 full causal anchor, CI-2 combined domains, CI-3 reference
+conformance. PC proceeds through PC-0 boundary, PC-1 evolving-carrier
+obstruction, PC-2 carrier-event law, PC-3 complete anchor, PC-4 combined
+domains/reference. Screen obstruction support before target work; retain
+active-channel nonlinear research physics and stop at the first failed arrow.
+CI+PC follows as composition, not another discovery campaign.
+CI-0's review hardening is complete. The fixed-profile CI-1 causal anchor
+and PC-1 evolving-carrier obstruction have independent scientific PASS.
+The review's exact-input domain hardening is implemented; its provenance
+HOLD is resolved against the unchanged accepted, relocated G7 bindings.
+Formal scoped CI admission is now complete (see the successor below). Source-only CI root activity replaces an
+unnecessary inherited balance test, whose rejection remains visible. PC-2's
+partial-loss projection remains a valid control, but its selection was
+superseded by pressure showing that bridge incidence can carry the exact
+decorated cross-sector relation. The revised candidate is an invertible
+Frobenius isometry on that 2+2 domain; it preserves the carrier ball and
+geometry SPD, not necessarily Z PSD. The relational sign-fidelity condition
+`c_target=c_source` now resolves polarity through explicit cross-topology
+continuity, not covariance alone. The five-dimensional image lies within,
+but is not equal to, the seven-dimensional decorated signed carrier ball.
+The generic double-odd obstruction and projection/reset controls stay visible.
+The follow-up review freezes the lossless sign-fidelity lift as PC-3's sole
+policy: no further contract is needed before PC-3 and no PSD fallback is
+allowed within it. A genuine failure must be retained; any PSD successor
+would need a separately preregistered contract and new PC-2b investigation.
+PC-3 now supplies source-selected allocation `33615/65536`, complete
+both-role target readmission and evolving-W/Z restoration from signed event
+carriers. Uniform resource contraction and held-source carrier bounds close
+indefinite exact-real continuation in the seven-dimensional signed domain;
+actual ordinary beats leave the five-dimensional event image while remaining
+admitted. Independent PC-3 review is PASS, with no corrective rerun.
+PC-4 now supplies a combined paired-domain proof over the inherited positive
+parameter box and request interval [3/25,1/8], full-graph reference, independent
+stage oracle, research lifecycle/replay pressure and finite C/W/Z represented
+error checks. Independent PC-4 review is PASS; the user now accepts the
+[scoped A_PC adjudication and source admission](./decisions/ATCPCClaimDebtAdjudication.md).
+Five conditional claims and 28 PC-local debt dispositions are queryable;
+DB-24 closes only for this exact inventory. All global debts remain open.
+No corrective rerun or PC-5 discovery is required. The whole-box
+transfer/return theorem assumes a resolved admitted source event; the analytic
+C1 potential class is distinct from the executable quadratic subclass.
+Active coupled-environment transport is a future extension outside the exact
+four-edge PC-2 map, not a PC-4 defect. Do not infer it from A_OS or discharge
+that wider obligation. The separate [CI-2/CI-3 successor](./decisions/ATCCIDomainsAndReference.md)
+now supplies the combined paired joint-root/domain proof and full-graph
+reference/oracle/lifecycle/finite-representation checks. CI-2's root bounds
+are proved across the positive box; CI-3 compares both J and H and retains
+measured charge drift. Independent review gives CI-2 scientific PASS/closure
+and CI-3 core/boundary PASS. Its later derived-witness provenance HOLD is
+corrected by an executing-only certified step, with no raw-output promotion
+entry point. The final independent review passes that correction; the user
+authorizes [scoped CI admission](./decisions/ATCCIClaimDebtAdjudication.md).
+Four conditional claims and 28 CI-local debt dispositions are queryable:
+14 closed, six partial, eight not activated. DB-05/DB-24 close locally through
+the CI proof and exact source admission respectively. No global debt closes.
+CI-0–CI-3 are complete at paired research scope; no additional CI scientific
+stage is required. Other realization work needs explicit authorization.
+Do not infer CI+PC acceptance. The shared CI/PC checkpoint and all reviewed
+CI successor certificates retain their exact bytes and historical flags;
+the new adjudication supplies current acceptance without rewriting history.
+Wider source/environment/formation claims, other families and aggregate
 ATC-2 remain outside this acceptance.
 Do not optimize another target or silently add sector tolerances.
 Do not rerun
@@ -4137,9 +4198,11 @@ The next bounded route is:
      specification → Phase 9 potential/profile/history/request, numerical
      policy, lifecycle and K0 integration. Do not normalize silently or
      equate local-reference agreement with native admission. The next
-     scientific decision is the A_CI lift using A_OS as a template, with
-     realization-specific closure/obstruction/return rederived; do not widen
-     A_OS again merely to satisfy the already completed G1–G7 sequence.
+     scientific work is the [A_CI/A_PC realization-native program](./decisions/ATCCIPCRealizationNativeProgram.md),
+     superseding the OS-lift framing. Pin each poststate read first, then
+     derive obstruction, source prescription and restoration from that
+     realization. Reuse A_OS lemmas only within their scope or through explicit
+     error bounds; do not widen A_OS to satisfy the completed G1–G7 sequence.
      The [A_OS ledger reconciliation](./decisions/ATCAOSClaimDebtReconciliation.md)
      now admits the 36 research claims and their scoped debt transformations
      through an append-only side-tool successor. All evidence/reviews reside

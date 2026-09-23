@@ -3471,9 +3471,135 @@ and [research plan](./GRC9V4ConstitutiveDesignPlan.md#atc-successor-investigatio
     Local dispositions: 13 closed, 6 partial, 9 not activated; global debts
     and aggregate ATC-2 remain open. Admit the append-only API/CLI successor
     without changing the historical graph or authorizing native ATC.
-  - [ ] Next scientific decision: use the accepted A_OS result as a reference
-    template for Candidate-A lifts, starting with A_CI-specific closure,
-    obstruction and return obligations. No other-family acceptance is inferred.
+  - [x] Replace the OS-lift framing with the user-directed
+    [realization-native A_CI/A_PC program](./decisions/ATCCIPCRealizationNativeProgram.md).
+    Reuse the topology shell conditionally, screen obstruction support first,
+    and generalize only after a complete full-feedback causal witness.
+  - [x] **CI-0 / PC-0 execution:** inspect actual solves, ordered writers,
+    poststate readmission and publication; run bounded five-node stage pressure
+    with distinct roles/carriers, temporal identity and final-read rejection.
+    This verifies stage wiring, not nonlinear CAN-LSF physics or native ATC.
+  - [x] Integrate CI-0 staging PASS: compare the complete fresh/restart CI root,
+    selected geometry and certificate; retain canonical joint-root evidence.
+    Use realization-specific CI/PC injected errors. No native ATC acceptance.
+  - [x] **CI-1 bounded result prepared:** one full-CI causal chain with unique admitted root, genuine
+    unsplit obstruction, support-changing fission, source-only allocation,
+    independent target roles and no-split/W-reset controls.
+    Fixed full-feedback anchor enters the event region after an ordinary beat;
+    actual joint-root activity selects the target. The failed OS-style balance
+    comparison remains recorded. Independent review and scoped CI admission are complete.
+  - [x] Integrate CI-1/PC-1 independent scientific PASS; enforce exact
+    charge/pairing and carrier symmetry/star support at the research interface.
+    Resolve the quoted provenance HOLD against unchanged committed G7 kernels;
+    retain the review and resolution without rewriting accepted A_OS evidence.
+  - [x] Formally adjudicate/source-admit bounded CI-0/CI-1 through the
+    [paired CI ledger](./decisions/ATCCIClaimDebtAdjudication.md); no native authority.
+  - [x] **CI-2 bounded result prepared:** [one combined assumption inventory](./decisions/ATCCIDomainsAndReference.md),
+    positive-parameter/request box and source/target Banach self-map/regularity
+    bounds; explicit both-role entry and evolving-W return, not OS analogy.
+    Whole-box entry remains conditional on a resolved admitted source event.
+  - [x] CI-2 independently reviewed PASS and scientifically closed; mathematical
+    evidence and claim routing reproduced unchanged.
+  - [x] Retain the explicit both-role funding inequality 1303/1600>0; this
+    evidences an existing transfer fact without reopening CI-2.
+  - [x] Formally adjudicate/source-admit CI-2; DB-05 closes within its proved
+    paired joint-root domain. Global debt meanings/statuses remain unchanged.
+  - [x] **CI-3 bounded result prepared:** full-graph reference and independent
+    Decimal joint-root oracle; 2,153 scalar comparisons plus 30 transformed
+    J/H comparisons, 21 lifecycle/admission negatives and four represented
+    steps per actual role. Retain complete-root identities, H-only mutation,
+    current/reset readmission, reset/replay/rollback and measured charge drift.
+  - [x] Retain CI-3 independent core PASS and narrow exact-boundary admission
+    HOLD. Correct the latter using exact/operation-proved predicate witnesses,
+    bind them to complete roots, and require represented pointwise pairing.
+    Cover eight boundary fixtures, 19 negative pressures and a nonzero-charge
+    represented control; rerun the same reference campaign, not discovery.
+  - [x] Retain independent PASS for the closed-boundary/pairing correction.
+    Address the follow-up derived-witness HOLD by removing raw-output promotion:
+    the certified step executes its own root/continuity/writer and final root.
+    Retain complete operation bindings; reject three forged outputs before
+    construction, serialized receipts as authority and six proof/data contradictions.
+  - [x] Retain final independent CI-3 PASS and complete scoped CI adjudication:
+    four conditional claims, 28 separate debt dispositions (14 closed, six
+    partial, eight not activated); DB-24 closes for the pinned source inventory.
+    Query/audit the append-only graph and preserve PC/A_OS bytes. Native implementation remains
+    downstream, not a research acceptance gate. Keep wider graphs/formation,
+    repeated-event/non-Zeno, other realizations and aggregate ATC-2 open.
+  - [x] **PC-1 bounded result prepared:** obstruction and exact sectors with both W and Z evolving;
+    stop the mechanism/domain if fission cannot affect obstruction support.
+    The invariant carrier ball preserves the 67-proposal source obstruction;
+    W-only, Z-only and both-reset controls do not restore it. A nonzero
+    cross-sector carrier entry rules out naive copying after fission.
+  - [x] Independently review the bounded PC-1 source result: PASS.
+  - [x] Formally adjudicate/source-admit PC-1; its source result does not
+    establish carrier transport or target restoration.
+  - [x] **PC-2 bounded result prepared:** derive target-star orthogonal
+    restriction with explicit partial carrier loss; prove norm-one covariance,
+    target carrier/geometry admission, zero bridge memory and both-role loss
+    accounting. Discriminate whole-carrier reset by an explicit additional
+    minimal-change axiom, not target performance or inherited runtime policy.
+    **Selection subsequently superseded; valid explicit-loss control only.**
+  - [x] Integrate PC-2 pressure: zero bridge coupling is an extra restriction,
+    not evidence that the decorated source relation must be discarded.
+    Retain projection/reset controls and replace the preferred candidate with
+    an incidence-based relational lift on the exact decorated 2+2 domain.
+  - [x] Prepare revised PC-2 evidence: five-to-seven-dimensional carrier
+    relation, explicit inverse, isometry, signed-coordinate covariance,
+    child exchange and both roles. Retain the generic double-odd no-go,
+    actual indefinite-Z/SPD-H distinction, and a nonlinear PSD pressure
+    control. Record positive relational polarity as an additional choice,
+    not something uniquely forced by covariance.
+  - [x] Tighten PC-2 with relational sign-fidelity continuity `c_target=c_source`:
+    this resolves polarity beyond covariance; test both nonzero signs and the
+    coincident zero case, changed coordinate frames and both actual roles.
+  - [x] State the signed event-carrier domain without imposing Z PSD;
+    distinguish ordinary PSD reachability from admission and the five-dimensional
+    event image from the seven-dimensional decorated target ball. Retain
+    off-image admissions and explicit PC-3 signed-domain proof obligations.
+    The nonlinear PSD pressure control has a different relational decoder,
+    so it is not a drop-in fallback under the same sign-fidelity condition.
+  - [x] Integrate the PC-3 scope review: the selected PC-2 law needs no
+    additional contract before PC-3; freeze the sign-fidelity lift as its sole
+    carrier policy. PSD is a mathematical control only, not a PC-3 fallback.
+    Retain any genuine failure; a PSD successor requires a new preregistered
+    relational-continuity contract and separate bounded PC-2b investigation.
+  - [x] Formally adjudicate/source-admit the revised PC-2 lossless candidate;
+    the review's permission to proceed does not itself grant graph authority.
+  - [x] **PC-3 bounded result prepared:** source-only fresh PC read selects
+    `33615/65536`; independently transport and fully readmit both roles.
+    Prove signed-domain invariance, resource return and evolving-W/Z
+    asymptotics; retain two actual target beats per role, departure from the
+    event image, and W/Z/both-reset source obstruction controls. No CI/OS
+    substitution, parameter search, policy fallback or long trajectory.
+  - [x] Independently review PC-3: **PASS — bounded complete A_PC causal
+    chain**, no corrective rerun. Retain the reviewed record identity and
+    unchanged mathematical payload; the earlier raw-matrix dependency is not
+    the pinned typed-Carrier successor.
+  - [x] Formally adjudicate/source-admit PC-3's bounded claim/debt result;
+    no native, all-family or aggregate ATC-2 closure is implied.
+  - [x] **PC-4 bounded paired-domain result prepared:** one assumption
+    inventory; positive parameter/C1 envelope, variable requests at fixed tau,
+    source obstruction and both-role signed-domain return/asymptotics. Add
+    full-graph reference, independent Decimal stage oracle, research owner/
+    replay/rollback and finite C/W/Z representation checks. No new anchor search.
+  - [x] Independently review PC-4: **PASS — bounded paired-domain/reference/
+    representation closure**, no corrective rerun. Preserve the reviewed
+    contract/profile/evidence and original record identity. Keep whole-box
+    transfer/return conditional on a resolved admitted source event, and
+    distinguish the analytic C1 class from the executable quadratic subclass.
+  - [x] [Adjudicate and source-admit](./decisions/ATCPCClaimDebtAdjudication.md)
+    the reviewed A_PC paired research: five conditional claims and all 28
+    PC-scoped debt dispositions (13 closed, six partial, nine not activated).
+    **DB-24 closes locally for this exact inventory**, not globally or for CI.
+    Preserve A_OS graph/evidence and the superseded projection control; no
+    numerical rediscovery or PC-5 is needed. Active coupled-environment carrier transport is a future
+    extension, not a PC-4 defect or an unmet paired-research criterion.
+  - [ ] Reconcile remaining CI results into scoped claim/debt successors;
+    PC admission does not admit CI handles. Continue CI-2 then CI-3 in separate
+    successor files, leaving the PC-bound shared checkpoint unchanged.
+    Preserve all wider origin obligations and aggregate ATC-2 opening.
+  - [ ] Consider CI+PC as composition after CI and PC, not a parallel
+    independent discovery ladder or inferred family acceptance.
 
     **Downstream Phase 9 handoff, not a G7 gate:** after reviewed topology
     proposal → extension paper → specification, implement native potential/

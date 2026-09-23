@@ -1,0 +1,35 @@
+{
+  "schema": "grcv4_atc_pc_research_admission_v1",
+  "status": "accepted_bounded_research_source_admission",
+  "historical_graph_digest": "27de1b82233a2277ae4f66eae2e9a077dbd583fe53d674f5bcabf97e4b677809",
+  "historical_authority_extension_digest": "b06c420df07c856d37b056ca82681453ea04e1a748b23ea02312dc6f0a217a5f",
+  "evidence_files": {
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json": "3697e3030855f93552f7b6797fb0dc05be82a63f5076826d5d613789b21b358b",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCStepBoundaryAudit.json": "6aab00835467a21c00e751b1b3553cb6bc68b52d9cd0fec09fa5d45aaa32b3a4",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC3CausalChainCertificate.json": "8e136b85a95a96a7bb68e1a19f94d779ea2ca69a08b1cbd72b0ad1ccb0105fb1",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC4ReferenceCertificate.json": "552c6cc71670eaf958b2a69689733b40d12ccf0ca1b622074ea449d055cfb92a",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCCarrierEventCertificate.json": "06e5a4ba4fd171b32c966010196a2f3ea6c23e60f91889a107163d823f9c94e4",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCRelationalLiftCertificate.json": "c17097a8a11e396a03bf13c7e3621c12d58d65786e7af2668810cddefce707bb",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1-IndependentReview.md": "50a3b1e8491dea2a63896e2eb5f773ce50754de3bf345bcbe0dee96d6b2d6171",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1ReviewResolution.json": "4fdb18e38e29b3b52697e068d62fe352442434676dea8247dfacc85f452fca8c",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC2-RelationalLift-PressureReview.md": "748ab0818d110a684995dc798e4138dbec36f2f15885bc95110319d82611ebe0",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC2-SignFidelity-And-SignedDomain-Review.md": "3dcff064297c10d821c184725ccdf1cccdef4b9bb237dde43d9143ff66d9bc36",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-IndependentReview.md": "a6f17a6eab85b894aabc50749c164391485b809dc511db1e8abff2f693c05a8e",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-SolePolicy-ScopeReview.md": "381b5f4e1faac718a0cec9650dd6c66bed7764038a08fe0f34eba6449ca3ba74",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC4-IndependentReview.md": "99bca5f2c8ec0a824d21fd59f6a31649fd45e39f707bcdb60c8a2f9d93bb03e8",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-pc-admission/ATCPCClaimDebtLedger.json": "bf8af5bd5f6fe1fd75a08df4123da0672cdced6a1ab0e48a0183e7118925bec1"
+  },
+  "support_files": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIPCRealizationNativeProgram.md",
+      "sha256": "1fa5247e588aff0667927ae0f9200d57f227566bc50238464c411b6848775f18"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCPCClaimDebtAdjudication.md",
+      "sha256": "87353f53093db3537561e1d6536e43f1260c70fe6bdb35421348ea6a5ae4fc0a"
+    }
+  ],
+  "scope": "Five conditional A_PC paired-research claims; one superseded control; 28 independent PC debt transformations. No CI, native or aggregate closure.",
+  "graph_digest": "34bf112649b30d38493a4cbc5f51cf323649ab24e679a2e481cf29c1e7afacba",
+  "record_digest": "ee75994b958fbeb76aa7d39688bcce82510b9fccebf3990c062606dd2562584b"
+}
