@@ -7,11 +7,26 @@ The API reconstructs accepted evidence and evaluates a closed set of
 structural counterfactuals; it does not create scientific evidence or predict a
 gate that has not been rerun.
 
-## Current P9 initializer, abundance and receipt-parent authority
+## ATC bounded research successor
+
+For the current admitted five-realization Candidate-A research context use
+`grcv4_explorer.atc_rgatc.load_current_forensic_context` and the
+[ATC query guide](./ATCQueryGuide.md). `atc_rgatc.reconstruction_path` follows
+accepted ancestry; choose `atc`, `atc_pc`, `atc_ci`, `atc_cip` or
+`atc_rgatc.debt_lifecycle` explicitly for the intended profile-local debt view.
+These are bounded research results, including a retained A_OS negative
+exclusion, not native ATC support. `atc-rgatc-query discover` observes the
+RGATC inventory; `audit` validates its complete predecessor chain;
+`summary` returns five source-bound program-closure rows.
+Older ATC commands retain their frozen scopes.
+Ordinary historical discovery does not cover ATC evidence. The loaders below
+retain pre-ATC authority and cannot resolve these research claims.
+
+## Pre-ATC P9 initializer, abundance and receipt-parent authority
 
 P9-7.2a now admits the accepted **optional initializer design**, not implemented
 C→A migration. Use `grcv4_explorer.a_initializer.load_current_forensic_context`
-for the complete current graph. Existing current-loader imports from `abundance`
+for the complete pre-ATC graph. Existing current-loader imports from `abundance`
 and `receipt_parents` delegate to it. The explicit
 `abundance.load_abundance_forensic_context` preserves the pinned P9-4.9.1a
 historical graph and cannot resolve the new initializer IDs.

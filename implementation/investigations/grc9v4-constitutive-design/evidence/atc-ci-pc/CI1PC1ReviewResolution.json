@@ -1,0 +1,81 @@
+{
+  "schema": "grcv4_atc_ci_pc_review_resolution_v1",
+  "scientific_review": {
+    "CI0": "PASS",
+    "CI1": "PASS_bounded_complete_anchor",
+    "PC1": "PASS_bounded_source_and_support"
+  },
+  "reviewed_record_digest": "70386c47cc86d29f14fe69b2e6c80ebafb0cb1bd00dc4b2a7c28bff3ecbf2ac1",
+  "reviewed_profile_digest": "88620d22a0a3663f76d51ecfb79249cedde397dd94a6a058cd3a06ad7f27c97b",
+  "provenance_disposition": "resolved_against_accepted_relocated_G7_bindings",
+  "accepted_repository_commit": "5e1a63a",
+  "inherited_kernel_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_sector_reference.py",
+      "sha256": "202fd964df2ea52415957c5cf1adccfc3c25f034e15b0166088fd47faa4954c5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_channels.py",
+      "sha256": "8d0aa7016710d5e64935a3496fb9160689eda87e6c999b3336924b4f99c0828f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_box.py",
+      "sha256": "8636581d8b0a3a5db1bbf81b8f4d5c414a3729d8f7b77950af52b8378bcf4a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_state_domain.py",
+      "sha256": "19b88f776b0084c9dd9f5220304080f685d25c98aeca0a30d7b572ae42f5ee2d"
+    }
+  ],
+  "external_old_versions": "two quoted old prefixes cannot be reconstructed from path changes alone; exact external files not available",
+  "review_scope": "reviewer dense-solver and finite-pressure results retained as report, not new local runs",
+  "hardening": "exact-rational charge/pairing/star/symmetry admission before interval conversion; constructive derived witnesses",
+  "boundary_refresh": "working-note source binding only; retained numerical cases unchanged, no owner rerun",
+  "formal_adjudication_pending": true,
+  "graph_admitted": false,
+  "local_debt_discharge": false,
+  "native_authority": false,
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIPCRealizationNativeProgram.md",
+      "sha256": "1fa5247e588aff0667927ae0f9200d57f227566bc50238464c411b6848775f18"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1-IndependentReview.md",
+      "sha256": "50a3b1e8491dea2a63896e2eb5f773ce50754de3bf345bcbe0dee96d6b2d6171"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceConformance.json",
+      "sha256": "33fdf2b3234e2f6ed8a0a6af92b7ddc9c37809cd7e3fae2ba3bffc8dead88515"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_ci_pc_anchor.py",
+      "sha256": "ac5e7892cfb0e0879e3604ae628c67134b84b99a4c953a9e66e5663605a37489"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_sector_reference.py",
+      "sha256": "202fd964df2ea52415957c5cf1adccfc3c25f034e15b0166088fd47faa4954c5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_channels.py",
+      "sha256": "8d0aa7016710d5e64935a3496fb9160689eda87e6c999b3336924b4f99c0828f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_box.py",
+      "sha256": "8636581d8b0a3a5db1bbf81b8f4d5c414a3729d8f7b77950af52b8378bcf4a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_state_domain.py",
+      "sha256": "19b88f776b0084c9dd9f5220304080f685d25c98aeca0a30d7b572ae42f5ee2d"
+    }
+  ],
+  "record_digest": "a47251b3be3fca3b502624fc1f36caf0925023bc7a4d8f68396e7c3d83a5b5b1"
+}

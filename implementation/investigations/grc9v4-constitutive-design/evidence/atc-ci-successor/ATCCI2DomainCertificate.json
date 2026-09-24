@@ -1,0 +1,283 @@
+{
+  "schema": "grcv4_atc_ci2_domains_v1",
+  "status": "independent_review_pass_scientifically_closed_pending_scoped_adjudication",
+  "scientific_acceptance": true,
+  "graph_admitted": false,
+  "native_ATC_executed": false,
+  "ATC2_closed": false,
+  "evidence": {
+    "bounds": {
+      "contract": {
+        "schema": "atc_ci2_paired_domain_v1",
+        "candidate": "A",
+        "realization": "CI",
+        "source": "paired positive Q=9, x>=29/10, W in [24/25,1]",
+        "obstruction": "same domain with x>=3, including W-reset control",
+        "current_event": "3<=x<=7/2; 0<=y<=1/50; ordered distinct sectors; positive root inflows and resolved share",
+        "reset_event": "independent state; 3<=x<=7/2; abs(y)<=1/50; no allocator vote",
+        "share": "round-even 2**16 current-root share in [31/64,33/64]",
+        "target": "paired target; Q=9; X=norm(C-3/2)<=3/2; W in [24/25,1]",
+        "root": "unique joint J,H on symmetric star ball ||H-I||_F<=1/4096",
+        "event_operand": "fresh committed C,W and complete selected joint CI root",
+        "history": "old W follows exact edge lineage; bridge W=1; no Z coordinate",
+        "potential_theorem": "common C1 p on [0,9]; |p_prime-19/4|<=1/2048",
+        "executable_potential": "quadratic p(c)=a*c+nu*c*c/2",
+        "requests": [
+          "3/25",
+          "1/8"
+        ],
+        "tau_A": "1/(8 log 2)",
+        "profile_variation": "choose fixed profile; only ordinary requests vary between beats",
+        "whole_box_event_formation": false,
+        "active_environment": false,
+        "native_authority": false
+      },
+      "parameters": {
+        "alpha": [
+          "1/4096",
+          "1/2048"
+        ],
+        "beta": [
+          "1/4096",
+          "1/2048"
+        ],
+        "gamma": [
+          "1/2048",
+          "1/1024"
+        ],
+        "chi": [
+          "1/32",
+          "1/16"
+        ],
+        "kh": [
+          "1/2",
+          "1"
+        ],
+        "kah": [
+          "1/2",
+          "1"
+        ],
+        "a": [
+          "19455/4096",
+          "19457/4096"
+        ],
+        "nu": [
+          "1/131072",
+          "1/65536"
+        ]
+      },
+      "source_root": {
+        "kind": "source",
+        "radius": "1/4096",
+        "H_min": "4095/4096",
+        "b0_bound": "11/2",
+        "b_bound": "11309/2048",
+        "baseline_geometry_lipschitz": "90",
+        "component_to_vector": "2",
+        "read_writer_exponent_budget": "9722188814113/514296329011200",
+        "current_margin": "783/784",
+        "readback_relative_bound": "1/783",
+        "flat_bound": "45236/3206385",
+        "flat_lipschitz": "5316938266083889/24954421292236800",
+        "displacement_bound": "2046295696/10280904768225",
+        "contraction_bound": "60129254851142700701/10001685264388586496000",
+        "current_block_inverse_bound": "784/783",
+        "reduced_block_inverse_bound": "10001685264388586496000/9941556009537443795299",
+        "reference_connected_unique_branch": true,
+        "other_roots_outside_ball_claimed": false
+      },
+      "target_root": {
+        "kind": "target",
+        "radius": "1/4096",
+        "H_min": "4095/4096",
+        "b0_bound": "49167/8192",
+        "b_bound": "393711/65536",
+        "baseline_geometry_lipschitz": "375/16",
+        "component_to_vector": "1",
+        "read_writer_exponent_budget": "49924389039289/2340619737366528",
+        "current_margin": "783/784",
+        "readback_relative_bound": "1/783",
+        "flat_bound": "131237/17100720",
+        "flat_lipschitz": "17308900962656129849/272568825634671820800",
+        "displacement_bound": "17223150169/292434624518400",
+        "contraction_bound": "2271568235636102512993213/2330561583953672549695488000",
+        "current_block_inverse_bound": "784/783",
+        "reduced_block_inverse_bound": "2330561583953672549695488000/2328290015718036447182494787",
+        "reference_connected_unique_branch": true,
+        "other_roots_outside_ball_claimed": false
+      },
+      "source_error": "2909/100224",
+      "source_growth_excess_lower": "16152197/1002240000",
+      "source_multiplier": "65/64",
+      "source_failure_by": 71,
+      "initial_target_X_squared_upper": "2472873/1280000",
+      "bare_first_X_squared_upper": "3963729733617/10240000000000",
+      "funding_lower": "1303/1600",
+      "resource_error_per_X": "81385/25657344",
+      "target_first_X_upper": "10771945/17104896",
+      "target_return_factor": "577621057/641433600",
+      "target_resource_floor": "5/6",
+      "target_geometry_per_X_squared": "17223150169/657977905166400",
+      "writer_decay_upper": "25/37",
+      "limits": {
+        "C": "(3/2)*1",
+        "J": "zero",
+        "H": "identity",
+        "W": "exp(-3 alpha/2)"
+      },
+      "proof": "uniform rational sufficient inequalities, not a parameter sweep",
+      "event_premise": "admitted source event with certified unique source-only share",
+      "native_authority": false
+    },
+    "algebra": {
+      "target_spectra": {
+        "paired_target": {
+          "unweighted_nonzero_spectrum": [
+            "7/16",
+            "73/16"
+          ],
+          "lower_pivots": [
+            "25/8",
+            "819/800",
+            "241/364",
+            "9981/15424",
+            "123/8872"
+          ],
+          "upper_pivots": [
+            "41/8",
+            "6099/1312",
+            "1297/428",
+            "243789/83008",
+            "75/34216"
+          ],
+          "full_mean_zero_space": true
+        },
+        "embedded_target": {
+          "unweighted_nonzero_spectrum": [
+            "3/10",
+            "47/10"
+          ],
+          "lower_pivots": [
+            "12/5",
+            "767/240",
+            "2846/3835",
+            "8421/11384",
+            "78193/30075",
+            "461429/1563860",
+            "89756/2307145"
+          ],
+          "upper_pivots": [
+            "32/5",
+            "2087/640",
+            "50746/10435",
+            "930661/202984",
+            "625993/628825",
+            "962719/12519860",
+            "4246876/4813595"
+          ],
+          "full_mean_zero_space": true
+        }
+      },
+      "exact_descriptor_reductions": true,
+      "writer_stage_pressure": {
+        "old_contrast_squared": "196/625",
+        "rebuilt_contrast_squared": "1849/5625",
+        "interchangeable": false
+      }
+    }
+  },
+  "claim_updates": [
+    {
+      "claim_id": "ATC-CI-DOMAIN-02",
+      "claim_class": "conditional",
+      "profile_scope": [
+        "A_CI"
+      ],
+      "predecessor_handles": [
+        "ATC-CI-CHAIN-01"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-12",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-26",
+        "ATC7-DB-28"
+      ],
+      "local_debt_discharge": false,
+      "native_authority": false,
+      "still_open": "CI3 independent reference/representation; review and DB24/source admission; wider graphs, formation and aggregate ATC2"
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIDomainsAndReference.md",
+      "sha256": "2bb3a0408611e19bc40c33f90a771e822ccafd2efe30fd41f534f2ae97fa6ebf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAndRequests.md",
+      "sha256": "34974e4489f9e62a805bf5d105be78b37b06e6597084a73b9a3db1ef59104840"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorStateDomain.md",
+      "sha256": "41fc0fd8bb831b16b7617945be8aa1013111a5dbf5b28fa597dea7f62d78d3b7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json",
+      "sha256": "3697e3030855f93552f7b6797fb0dc05be82a63f5076826d5d613789b21b358b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1-IndependentReview.md",
+      "sha256": "50a3b1e8491dea2a63896e2eb5f773ce50754de3bf345bcbe0dee96d6b2d6171"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI2CI3-IndependentReview.md",
+      "sha256": "20343d8bd954ce0ac885be3e162621a931aeecad1b77c4c5ea4cda7644317db6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI3-DerivedWitness-IndependentReview.md",
+      "sha256": "cf825116a5881fba96e8d661dbb260b38c9702a694de5a0c85518a4740a1ea5a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_domains.py",
+      "sha256": "f80f140f53f7486a790ec3b24b3f7c27e07f954a184b72612cc21c14c0443024"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_pc_anchor.py",
+      "sha256": "d92d862d1d2c2472673462b5f095527ba74c13a10fd2f6f52e4095ab51afeff1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_sector_reference.py",
+      "sha256": "202fd964df2ea52415957c5cf1adccfc3c25f034e15b0166088fd47faa4954c5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_channels.py",
+      "sha256": "8d0aa7016710d5e64935a3496fb9160689eda87e6c999b3336924b4f99c0828f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_box.py",
+      "sha256": "8636581d8b0a3a5db1bbf81b8f4d5c414a3729d8f7b77950af52b8378bcf4a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_state_domain.py",
+      "sha256": "19b88f776b0084c9dd9f5220304080f685d25c98aeca0a30d7b572ae42f5ee2d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_ci_domains.py",
+      "sha256": "bbffe14d257b112420a7f42edafaa5f1fefd99e5def80a1992711c73b8d5a185"
+    }
+  ],
+  "record_digest": "07ab6bdbe6e33d039624bba372c9e589970a0cc2aab322d495bec26a21ad7528"
+}

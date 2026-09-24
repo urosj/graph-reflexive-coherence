@@ -1,0 +1,101 @@
+{
+  "schema": "rgatc_ta_source_map_v1",
+  "status": "new_proposed_mathematics_no_source_admission_or_debt_discharge",
+  "sources": [
+    {
+      "key": "RG",
+      "basis": "indexed retained text: RG-2b, fixed-domain graph transform, corrected contraction, Lipschitz ceiling",
+      "repository_path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.md",
+      "repository_sha256": "44d386110a7981b2823b779051975ca73ef79c616889248fa0a90b78ba030242",
+      "repository_correspondence_only": true
+    },
+    {
+      "key": "P9-RG",
+      "basis": "indexed retained text: frozen beat, completion norms, finite general-graph construction, containment limits",
+      "repository_path": "implementation/phase-9-grcv4/tranche-6/P9-6.4c-Review.md",
+      "repository_sha256": "b7675a13095cd44b254dd7f27ed7d1364582f51c539e71f5a6113077f8dbd0f7",
+      "repository_correspondence_only": true
+    },
+    {
+      "key": "CI",
+      "basis": "retained fixed-H source/writer/spectral/transfer lemmas, not CI root or CI request admission",
+      "repository_path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIDomainsAndReference.md",
+      "repository_sha256": "2bb3a0408611e19bc40c33f90a771e822ccafd2efe30fd41f534f2ae97fa6ebf",
+      "repository_correspondence_only": true
+    },
+    {
+      "key": "G5",
+      "basis": "fixed physical tau, WLS/current and post-C writer order",
+      "repository_path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAndRequests.md",
+      "repository_sha256": "34974e4489f9e62a805bf5d105be78b37b06e6597084a73b9a3db1ef59104840",
+      "repository_correspondence_only": true
+    },
+    {
+      "key": "ARITH",
+      "basis": "unchanged mounted outward arithmetic/matrix primitives only",
+      "repository_path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "repository_sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f",
+      "repository_correspondence_only": true
+    }
+  ],
+  "new_claims": [
+    {
+      "handle": "RGATC-T-SECTION",
+      "kind": "new sufficient theorem extending the retained Lipschitz graph-transform argument",
+      "depends_on": [
+        "RG",
+        "P9-RG"
+      ],
+      "new_content": "explicit global Lipschitz version, boundary coverage, equivariance and conditional cross-topology continuation"
+    },
+    {
+      "handle": "RGATC-A-COMPLETION",
+      "kind": "new proposed research completion and exact sufficient-budget certificate",
+      "depends_on": [
+        "RGATC-T-SECTION"
+      ],
+      "new_content": "floor-preserving auxiliary continuation through resource zero; source and target share one cutoff recipe"
+    },
+    {
+      "handle": "RGATC-A-RATES",
+      "kind": "new duration-dependent theorem from inherited fixed-H inequalities",
+      "depends_on": [
+        "CI",
+        "G5"
+      ],
+      "new_content": "source rate 16152197/120268800; target rate 2662247/3207168; positive target floor 1/8 without large-step entry"
+    },
+    {
+      "handle": "RGATC-A-ANCHOR",
+      "kind": "whole-section-envelope constructive implication, not a numerical section trajectory",
+      "depends_on": [
+        "RGATC-A-COMPLETION",
+        "RGATC-A-RATES",
+        "ARITH"
+      ],
+      "new_content": "inactive-to-active source, unique k=32768, both-role target entry and nonneutral geometry"
+    },
+    {
+      "handle": "RGATC-A-NONCI",
+      "kind": "new consequence of lagged invariance and target convergence",
+      "depends_on": [
+        "RGATC-A-ANCHOR",
+        "RGATC-A-RATES"
+      ],
+      "new_content": "some target state has nonzero same-state CI geometry residual"
+    }
+  ],
+  "unexecuted": [
+    "native RG2b step",
+    "finite invariant-section evaluator",
+    "independent scientific review",
+    "source admission",
+    "debt adjudication",
+    "production transaction/replay",
+    "represented-number conformance",
+    "general environment",
+    "repeated fission/non-Zeno",
+    "aggregate ATC-2 closure"
+  ],
+  "repository_integration_note": "Current repository correspondences replace upload-only identities; no historical byte equality or source admission is claimed. The bundled arithmetic differs from the current script only in its unused standalone evidence path and predecessor digest; numerical primitives are identical."
+}

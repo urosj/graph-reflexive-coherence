@@ -1793,11 +1793,45 @@ The user accepted the review at checkpoint `c6925b5` and closed Tranche 7 on
 preserves original evidence and admits that exact G3 set. Its execution-policy
 successor opens only P9-8.1a chart/port graph in the V4 topology module and paired
 test; all other specialization leaves remain gated. No implementation begins
-with this acceptance. The next requested implementation is P9-8.1a, not A expansion.
+with this acceptance. P9-8.1a remains the only opened specialization source
+entry; the current research priority is the ATC investigation below.
+
+### Tranche 7T. Reserved autonomous-topology extension
+
+The user opened bounded ATC research on 2026-09-20 in the
+[constitutive investigation](./investigations/grc9v4-constitutive-design/decisions/ATCSuccessorInvestigationOpening.md).
+Drafts 8/7 and their local claims/debts are proposal inputs, not implementation
+authority. Tranche 7 remains accepted and closed; this adds a successor
+capability rather than reclassifying its caller-supplied event coverage.
+
+The dependency is investigation and research evidence, reviewed topology-only
+proposal, separate extension paper, normative specification/release, then
+7T implementation. Detailed 7T leaves await accepted laws. Completion must
+include an ordinary-evolution-reached, policy-generated event with full target
+construction, lifecycle admission and continuation on the changed graph;
+interfaces, builders and manually injected events are insufficient.
+
+Hold topology-dependent P9-8.1c/d, expansion runtime and event integration
+behind the applicable accepted and implemented generic contracts. P9-8.1a
+chart/port work remains independently eligible under its existing permission;
+independent source, mathematical and oracle preparation is not blanket-blocked.
+No later leaf is opened by this amendment. Before their execution permissions
+are extended, bind the exact ATC dependencies in the scoped policy successor.
+Existing machine permission records and accepted G2/G3 decisions stay unchanged.
+
+Do not replace nine-port mechanics with generic binary refinement. The
+specialization crosswalk must distinguish generic causal/lifecycle contracts
+from chirality, capacity and other genuinely GRC9V4 choices. Reconcile
+Tranches 9–10's acceptance/support subjects for the substrate, ATC successor
+and specialization, retaining all 40 disabled-compatibility obligations and
+the optional status of completed-spark/hierarchy claims. Unrelated topology
+families and stronger interpretations are not universal entry barriers.
 
 ### Tranche 8. GRC9V4 mechanical specialization
 
 Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.
+Topology-dependent execution additionally follows the 7T dependency above;
+historical G3 acceptance alone does not admit an ATC-enabled profile.
 Separate chart/port graph, row differential/weights, mechanical candidate
 trigger, and coarse-graining/Split into `P9-8.1a`–`P9-8.1d` iterations.
 Implement D11-G9-P4a's exact

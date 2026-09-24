@@ -1,0 +1,68 @@
+{
+  "schema": "grcv4_atc_research_potential_binding_record_v1",
+  "status": "proposed_not_admitted",
+  "runtime_installed": false,
+  "binding_digest": "grcv4-research-potential-sha256:9f4a7d3c69c1e52a4551029e7085d8123f68215647e63706397b3cd8bfcbfd8d",
+  "identity_payload": {
+    "schema": "grcv4_atc_research_potential_identity_v1",
+    "symbolic_id": "research_atc_sup_mw_site_derivative_v1",
+    "units_id": "grcv4_nondimensional_reference_v1",
+    "polynomial": {
+      "meaning": "site potential derivative p=V_prime, identical at every vertex",
+      "degree": 5,
+      "roots_in_evaluation_order": ["1", "5/4", "3/2", "9/4", "3"],
+      "coefficients_ascending": ["-405/32", "657/16", "-1647/32", "497/16", "-9", "1"],
+      "potential_additive_constant": "V(0)=0"
+    },
+    "domain": {
+      "coordinate_type": "one finite nonnegative IEEE754 binary64; no boolean, string, arbitrary integer or arbitrary precision input",
+      "signed_zero": "both signs denote the same exact rational zero",
+      "max_vertices": 16,
+      "max_edges": 32,
+      "graph": "simple loop-free oriented graph of maximum undirected degree two",
+      "candidate": "A",
+      "realization": "OS",
+      "vertex_measure": "unit",
+      "context": "constant_zero",
+      "W": "all_one",
+      "carrier": null,
+      "eta": "1/4",
+      "kappa_c": "1/1024",
+      "alpha_beta_gamma_chi_A_zeta_A_kappa_Ah": "all_zero",
+      "scope": "bounded evaluation domain only; support theorem remains restricted to ATC-SUP-MW-AOS-v1 target box and charge 5"
+    },
+    "evaluation": {
+      "input_conversion": "exact rational represented by each binary64 coordinate",
+      "polynomial": "five exact subtractions and five exact multiplications in roots_in_evaluation_order, accumulator initially one",
+      "laplacian": "B*B_transpose with outward oriented incidence and unit edge weights; edge order is graph.live_edge_ids",
+      "component_mean": "exact sum of p values in live-node order within each connected component, divided by its exact integer size",
+      "potential": "exact kappa_c*L*C - p(C) + component_mean(p(C))",
+      "potential_rounding": "one roundTiesToEven to binary64 per consumed potential coordinate, after full exact assembly",
+      "mobility": "eta times all-one W, exactly 1/4 per edge",
+      "flux": "exact -eta*B_transpose*rounded_potential, then one roundTiesToEven to binary64 per consumed flux coordinate",
+      "nonfinite_policy": "reject nonfinite inputs and nonfinite rounded final outputs; never clamp or fall back",
+      "intermediate_policy": "retain exact rational polynomial and gauge intermediates even if individually outside binary64; only consumed rounded outputs must fit"
+    },
+    "work_bound": {
+      "site_evaluations_per_current_or_reference_pass_max": 16,
+      "exact_polynomial_subtractions_per_pass_max": 80,
+      "exact_polynomial_multiplications_per_pass_max": 80,
+      "component_means_per_pass_max": 16,
+      "mean_divisor_max": 16,
+      "potential_roundings_per_pass_max": 16,
+      "flux_roundings_per_pass_max": 32,
+      "assembly": "fixed incidence traversal over at most 16 vertices and 32 edges; no adaptive solver or polynomial-degree growth",
+      "arithmetic_bound_basis": "finite binary64 input domain, fixed degree/coefficient rationals, fixed graph bounds and exact component means; no unbounded precision input or arbitrary polynomial",
+      "exceeding_domain": "reject before exact arithmetic; never widen or approximate silently"
+    },
+    "initializer_successor": {
+      "policy_id_proposal": "research_atc_a_target_reference_pass_mw_v1",
+      "potential_binding": "this entire identity payload, not only symbolic_id",
+      "roles": ["current", "reset"],
+      "conformance_evidence": "public role-qualified construction record containing W_base, Phi_base and J_ref; missing or null derived evidence fails conformance",
+      "conformance_states": "both unperturbed and off-root current/reset resources with distinct reset; independent exact polynomial and stage-rounded flux oracle",
+      "insufficient_test": "W_A_init=1 alone cannot detect an omitted site term",
+      "historical_policy": "grcv4-a-target-reference-pass-v1 remains unchanged; successor schema/replay/release admission is still required"
+    }
+  }
+}

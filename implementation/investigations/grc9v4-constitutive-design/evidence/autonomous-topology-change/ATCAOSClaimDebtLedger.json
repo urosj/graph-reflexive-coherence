@@ -1,0 +1,4708 @@
+{
+  "schema": "grcv4_atc_aos_claim_debt_ledger_v1",
+  "record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+  "status": "accepted_bounded_research_reconciliation",
+  "authorization_effect": "Research source admission only; no new mathematics, native authority, paper/spec adoption or aggregate ATC-2 closure.",
+  "claim_ceiling": "Bounded A_OS CAN-LSF domains and six scoped acceptances; original proposals remain proposals.",
+  "A_OS_G1_G7_research_program_accepted": true,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "native_authority": false,
+  "origin_ref": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+    "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+    "json_pointer": "/"
+  },
+  "origin_claims": [
+    {
+      "id": "ATC7-CL-01",
+      "title": "Scoped source inheritance",
+      "section": "1",
+      "status": "proposed_not_admitted",
+      "kind": "source_scoped_architecture",
+      "statement": "ATC retains clause-specific core and GRCV4 meanings; new causal or mathematical content is an explicit successor, not a retrospective source interpretation.",
+      "assumptions": [
+        "Source versions and scopes are retained; final Tranche-7 execution is not independently certified here."
+      ],
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S07",
+        "S08"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-01",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-24",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Compare each claimed inheritance to its exact source clause; preserve conditional and negative boundaries.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-02",
+      "title": "Physical generator and wire binding",
+      "section": "2;4",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_constitutive_architecture",
+      "statement": "A declared causal projection determines a physical event prescription; deterministic binding to the actual publication supplies source identities and lifecycle role data.",
+      "assumptions": [
+        "The policy theta is identity-bound; no event-time semantic choices are left to a caller; no-event, unresolved and uncertified outcomes are distinct."
+      ],
+      "source_refs": [
+        "S05",
+        "S07",
+        "S10",
+        "S11"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-04",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Vary only administrative lineage/reset preimages; distinguish physical selection, request identity and target admission.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-03",
+      "title": "Profile-correct analysis reuse",
+      "section": "2;3",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_applicability_claim",
+      "statement": "Candidate and realization computations can be reused only on their actual state, stage, derivative and domain contracts, with explicit dispositions across the ten products.",
+      "assumptions": [
+        "No universal Hessian or joint W/Z structural functional is presumed."
+      ],
+      "source_refs": [
+        "S05",
+        "S07",
+        "S09",
+        "S14"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-05",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-06",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Contrast OS defect, CI root, RG section, PC history and composite source ownership.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-04",
+      "title": "Conditional structural witness",
+      "section": "3;5.1",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_proposal",
+      "statement": "A fully instantiated constrained structural form and separated mode can provide derived event inputs; topology interpretation and partition generation remain separate claims.",
+      "assumptions": [
+        "Admitted branch, complete functional, tangent, metric, null treatment and regularity; fixed W in the inherited A structural chart."
+      ],
+      "source_refs": [
+        "S03",
+        "S05",
+        "S07"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-04",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-05",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-06",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-07",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-08",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Protected constant null, active kink, same-graph recovery, alternate mode lifts.",
+      "predecessor_refs": [
+        "D10-CL-C-001",
+        "D10-VERIFY-FORMED-BRANCH-STRUCTURAL-TEMPORAL"
+      ],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-05",
+      "title": "Geometry-conditioned relation witness",
+      "section": "5.4",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_derivation_and_new_guard",
+      "statement": "For H positive definite, K_V=B H B^T yields q_ab in [0,1] on positive diagonals and transforms covariantly; using q to cause edge birth is a separate new guard.",
+      "assumptions": [
+        "Present H is admitted; vertex pair and coordinate correspondence are defined; no identification with mobility or automatic missing-relation necessity."
+      ],
+      "source_refs": [
+        "S05",
+        "S07"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-04",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-07",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-10",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-27",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Three-node path with off-diagonal H, diagonal-H null control and consumer-off comparisons.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-06",
+      "title": "Complete-state quotient coarsening",
+      "section": "5.3",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_strong_claim",
+      "statement": "H Phi_minus = Phi_plus H on an invariant domain implies exact mapped evolution; a uniform defect epsilon and target Lipschitz L give the stated finite-horizon bound.",
+      "assumptions": [
+        "H maps the complete causal state and references; all iterates stay in the quantified domain."
+      ],
+      "source_refs": [
+        "S05",
+        "S07",
+        "S10"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-06",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-15",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-25",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Same aggregate C with different W/Z; single-point agreement without invariant quotient.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-07",
+      "title": "Functional-guarded pruning",
+      "section": "5.6;10.3",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_constitutive_guard",
+      "statement": "An explicitly normalized locus functional can define a state or crossing guard; identifying it with core viability requires separate correspondence.",
+      "assumptions": [
+        "Functional, anchor, scale, locus, threshold and historical inputs are fixed in advance."
+      ],
+      "source_refs": [
+        "S01",
+        "S03",
+        "S05"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-06",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-17",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-18",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Additive functional shift, cross-graph offset, under-threshold versus actual crossing.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-08",
+      "title": "Equivariance constrains event classes",
+      "section": "4.4",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_derivation",
+      "statement": "An equivariant deterministic generator at a symmetry-invariant source must output an invariant physical event class; no-event is not the only possible invariant result.",
+      "assumptions": [
+        "Admitted representation action; all profile/reference data transform; comparisons are physical rather than byte equality."
+      ],
+      "source_refs": [
+        "S05",
+        "S10",
+        "S11"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-10",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Exchange two candidate loci; compare arbitrary singleton, invariant batch and unordered symmetric event.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-09",
+      "title": "Certified unique resolution",
+      "section": "6.1",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_resolution_law",
+      "statement": "A finite homogeneous candidate family with invariant scores and certified unique dominance resolves one event class independently of enumeration.",
+      "assumptions": [
+        "Thresholds, units, interval comparisons and failed-target behavior are part of theta."
+      ],
+      "source_refs": [
+        "S02",
+        "S04",
+        "S07"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-09",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-10",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Threshold-adjacent enclosures, exact ties, changed iteration order, mixed incommensurate families.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-10",
+      "title": "Invariant simultaneous event",
+      "section": "6.3",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_construction_claim",
+      "statement": "A symmetry-invariant batch can be a lawful candidate; equivalence to sequential edits requires complete map commutation and intermediate admission.",
+      "assumptions": [
+        "Combined event is declared before execution; locality alone does not establish independence."
+      ],
+      "source_refs": [
+        "S05",
+        "S10",
+        "S11"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-11",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-15",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Disjoint C maps with global W/Z reset; mixed simultaneous reference changes.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-11",
+      "title": "Half-edge binary refinement",
+      "section": "7.2",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_graph_derivation",
+      "statement": "An unordered complete endpoint-role partition defines a finite multigraph refinement preserving every old edge identity and adding one child vertex net and one new edge.",
+      "assumptions": [
+        "Fresh IDs; both partition blocks nonempty; loop ends are individually mapped."
+      ],
+      "source_refs": [
+        "S05",
+        "S10"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-08",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-10",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-12",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Loop ends together/separate, old child-child edge plus new edge, parallel edges and inverse correspondence.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-12",
+      "title": "Forward quotient graph construction",
+      "section": "7.3",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_graph_law",
+      "statement": "Vertex aggregation with an explicit internal-edge keep/drop policy defines a forward coarsening graph without requiring an archived split parent.",
+      "assumptions": [
+        "Every endpoint and removed edge lineage is determined."
+      ],
+      "source_refs": [
+        "S05",
+        "S10"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-12",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-15",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Parallel internal edges become retained loops or explicit losses; do not silently deduplicate.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-13",
+      "title": "Relation and replacement templates",
+      "section": "7.4;7.6",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_graph_law",
+      "statement": "Specified birth/death/rewire and boundary-template replacement maps construct definite target graphs; the trigger and interpretation remain independent.",
+      "assumptions": [
+        "Resolved endpoints/boundary order; fresh or preserved relation IDs as declared; no arbitrary graph search."
+      ],
+      "source_refs": [
+        "S05",
+        "S10",
+        "S11"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-11",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-12",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-27",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-28",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Same final graph from rewiring versus death/birth; inadmissible deletion intermediate.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-14",
+      "title": "Vertex birth/death accounting",
+      "section": "7.5",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_construction_and_negative_boundary",
+      "statement": "Node birth/death requires complete incident-edge and resource-column maps; complete deletion of positive closed charge into an empty target is impossible under the stated covector law.",
+      "assumptions": [
+        "Closed measure stated; no hidden source/sink; current schema coverage remains applicable even for zero-valued coordinates."
+      ],
+      "source_refs": [
+        "S01",
+        "S07",
+        "S10"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-12",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-13",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-17",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-18",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Empty target with positive charge, zero-resource node with missing column, recipient-free death.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-15",
+      "title": "Exactly conservative dyadic split",
+      "section": "8.2",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_arithmetic_derivation",
+      "statement": "For N=2^b with 1<=b<=52, nearest-even k=round(N r) gives exactly represented complementary shares, exact sum one, error <=1/(2N), and exchange covariance.",
+      "assumptions": [
+        "Exact input activities and exact tie comparison; grid size is new identified policy."
+      ],
+      "source_refs": [
+        "S10"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-13",
+          "relation": "verification_required",
+          "activation": "When promoted to the actual event arithmetic or a stronger stored-charge claim."
+        },
+        {
+          "debt_id": "ATC7-DB-10",
+          "relation": "verification_required",
+          "activation": "When executable covariance beyond the proved scalar rule is claimed."
+        }
+      ],
+      "discriminating_pressure": "Rounded thirds, dyadic midpoint ties, swapped activities, subnormal source outputs.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-16",
+      "title": "Separate map and stored charge",
+      "section": "8.1;8.4;8.5",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_numerical_contract_application",
+      "statement": "Apply the same represented map independently to current/reset with exact affine accumulation and one rounding; actual charge and Q-target checks remain separate from exact coefficient conservation.",
+      "assumptions": [
+        "Existing numeric event contract retained; no clipping or silent target repair."
+      ],
+      "source_refs": [
+        "S07",
+        "S10",
+        "S13"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-13",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Subnormal product accumulation; reset-only rounding mismatch; preserved Q-target offset.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-17",
+      "title": "Target reference constructors",
+      "section": "8.6-8.9",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_construction_with_conditional_lemmas",
+      "statement": "The geometric-mean nth-root recipe, star mask, duplicated/midpoint host positions and exact C reference completion are explicit competing target constructors, not uniquely inherited laws.",
+      "assumptions": [
+        "Positive weights; complete graph/backend/context preimages; target domains unchanged; work bounds declared."
+      ],
+      "source_refs": [
+        "S05",
+        "S07",
+        "S10",
+        "S12"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-12",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-28",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Extreme means, new star adjacency, coincident children, unsupported context lift, target chart failure.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-18",
+      "title": "Independent history policies",
+      "section": "9",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_contract_application",
+      "statement": "Reconstruction/loss and typed preserving maps remain separate candidate policies; neither lineage nor resource transport supplies a W/Z history map.",
+      "assumptions": [
+        "Policies fixed before target construction; whole-role history commitments; no loss fallback after preservation fails."
+      ],
+      "source_refs": [
+        "S05",
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-15",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Equal zeros with explicit loss, signed permutation with changed hashes, dense mixing outside diagonal W type.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-19",
+      "title": "Reuse of accepted A initializer",
+      "section": "9.2",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_integration_claim",
+      "statement": "ATC builds target inputs and reuses the admitted target-only reference pass separately for current/reset, without a new caller flux or auxiliary total-current requirement.",
+      "assumptions": [
+        "Exact target graph/profile/backend/context and mapped C; unchanged initializer staging and full conductance."
+      ],
+      "source_refs": [
+        "S05",
+        "S12"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "All active conductance channels; auxiliary-total-current singularity; reset-only target failure.",
+      "predecessor_refs": [
+        "D10.2-EC-PARENT-L-A-INITIALIZER-GRC"
+      ],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-20",
+      "title": "Specific R_coh correspondence",
+      "section": "10.1-10.2",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_interpretation_claim",
+      "statement": "An event claimed to realize Appendix-D R_coh must establish its exact discrete conservation, topology, viability and restoration correspondence; ordinary graph admission alone does not.",
+      "assumptions": [
+        "Core object interpretation and source ambiguities retained explicitly."
+      ],
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-13",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-17",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-18",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-19",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-20",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Graph edit without basin change; lawful target without restoration; no silent claim downgrade.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-21",
+      "title": "Absolute/relative viability alternatives",
+      "section": "10.3-10.4",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_functional_laws",
+      "statement": "V_abs=-P and anchored V_rel are distinct normalized proposals; derivative data do not determine an absolute threshold and a state inequality does not prove a crossing.",
+      "assumptions": [
+        "Functional, sign, units, origin/anchor, scale and time convention are bound."
+      ],
+      "source_refs": [
+        "S01",
+        "S03",
+        "S05"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-06",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-17",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-18",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Additive constant, charge-linear gauge on fixed-charge anchors, cross-graph calibration.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-22",
+      "title": "Qualified restoration certificate",
+      "section": "10.5-10.7",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_derivation_and_interpretation",
+      "statement": "A complete-map invariant contraction domain proves basin membership; a stated Lyapunov descent proves approach to its zero set; numerical defects give only the corresponding error-neighborhood conclusion.",
+      "assumptions": [
+        "Fixed point/invariant set, complete causal metric/domain, uniform bound, real/numerical distinction and hybrid quietness or full hybrid certificate."
+      ],
+      "source_refs": [
+        "S01",
+        "S03",
+        "S05",
+        "S07"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-05",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-06",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-19",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-20",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Basin member not equilibrium; positive Hessian but unstable step; rounding error floor; RG state outside step entry.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-23",
+      "title": "Finite persistence monitor",
+      "section": "10.8",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_evidence_law",
+      "statement": "N successive verified predicates establish finite observation evidence; asymptotic identity, spark and closure need their own stronger arguments.",
+      "assumptions": [
+        "Exact predicate and sampling boundary; monitor is passive unless a causal successor explicitly consumes it."
+      ],
+      "source_refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-20",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-22",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Transient separation, horizon dependence, reset interruption and false spark naming.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-24",
+      "title": "Ordinary/event transaction composition",
+      "section": "11.1-11.5",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_integration_law",
+      "statement": "CAN-TIME-AFTER commits an ordinary beat first and then attempts one event; event failure preserves that postbeat state. Joint macro atomicity is a different successor.",
+      "assumptions": [
+        "Explicit timing policy, no actuation through observation/load, full prospective target validation."
+      ],
+      "source_refs": [
+        "S05",
+        "S07",
+        "S10",
+        "S11"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-22",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Late event failure after successful ordinary commit; read-only polling; reset-only target rejection.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-25",
+      "title": "Explicit causal history",
+      "section": "2.1;6.5;11.7",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_state_contract",
+      "statement": "Reconstructible counters and episode history are causal inputs only when the successor explicitly declares their evolution and lifecycle semantics.",
+      "assumptions": [
+        "Zero-duration receipts and arbitrary labels are not physical clocks."
+      ],
+      "source_refs": [
+        "S04",
+        "S05",
+        "S07",
+        "S11"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-22",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-24",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Same scientific state with added administrative receipts; transported episode; reset/rebase handling.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-26",
+      "title": "Local work and event-rate bounds",
+      "section": "11.6;12.2",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_derivations",
+      "statement": "Finite work/boundary, finite attempts/beats, physical-time non-Zeno and global graph-size bounds are distinct. Fixed-vertex absent-edge birth and an event-decreasing lower-bounded E admit the stated separate bounds.",
+      "assumptions": [
+        "Only the listed assumptions; no generic E or positive dt lower bound is inherited."
+      ],
+      "source_refs": [
+        "S05",
+        "S07"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-22",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-28",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Shrinking durations, repeated rejection, competing birth/death, fixed-n graph completion.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-27",
+      "title": "Evidence class separation",
+      "section": "13",
+      "status": "proposed_not_admitted",
+      "kind": "investigation_input_contract",
+      "statement": "Conditional derivations, independent mathematical checks, and native runtime captures remain separately identified and source-bound.",
+      "assumptions": [
+        "No local check is counted as pygrc execution or accepted conformance."
+      ],
+      "source_refs": [
+        "S08",
+        "S09",
+        "S13",
+        "S15"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-01",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-24",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Exact IDs, disclosed scaffolds, mutated hashes, source/run mismatch.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-28",
+      "title": "Mechanics, lineage and interpretation axes",
+      "section": "7.8;10.1",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_scope_refinement",
+      "statement": "Graph edit shapes, archived reversion lineage, and meanings such as pruning/extinction/spark are separately stated assertions rather than one primitive operation list.",
+      "assumptions": [
+        "No claim that all operations share one trigger or that all core reorganizations mutate the graph."
+      ],
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S05",
+        "S10"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-17",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-20",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-27",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Same graph edit with different witnesses; fixed-graph reorganization; reversion versus forward coarsening.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-29",
+      "title": "Assembled candidate completeness",
+      "section": "12",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_composition_claim",
+      "statement": "The three named candidates determine their physical prescription and all required construction policies without event-time caller choices, conditional on their declared reconstruction domains.",
+      "assumptions": [
+        "No aggregate core-meaning or native-execution conclusion; see distinct A/B/C variants."
+      ],
+      "source_refs": [
+        "S05",
+        "S07",
+        "S10",
+        "S12"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Missing target field, arbitrary parameter repair, alternate target selection after rejection.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-29A",
+      "title": "CAN-A derivative-free relation birth",
+      "section": "12.2",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_constitutive_law",
+      "statement": "Present H produces a uniquely resolved q pair, then a fixed new-edge/reference/resource/history package; no future rollout selects the pair.",
+      "assumptions": [
+        "Positive node diagonals, certified margin, complete current-state read and target reconstruction policy."
+      ],
+      "source_refs": [
+        "S05",
+        "S10",
+        "S12"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-04",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-07",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-09",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-10",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-27",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Diagonal-H null control, nonedge mediation without necessity, source reset-only failure, fixed-n bound.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-29B",
+      "title": "CAN-B structural refinement",
+      "section": "12.3",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_constitutive_law",
+      "statement": "A qualified simple negative structural mode and source partition feed the specified dyadic/refined target construction.",
+      "assumptions": [
+        "All structural-chart and lift hypotheses; no inference from protected null or missing certificate."
+      ],
+      "source_refs": [
+        "S03",
+        "S05",
+        "S10",
+        "S12"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-04",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-05",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-06",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-07",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-08",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-09",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-10",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-12",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-13",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Same-graph recovery, unavailable derivative, loop lift outside domain, final target failure.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-29C",
+      "title": "CAN-C lossy coarsening and CQ strengthening",
+      "section": "12.4",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_constitutive_law",
+      "statement": "Present resource/tendency similarity with a declared unique pair produces a specified lossy quotient event; exact behavioral quotient is a separately activated CQ claim.",
+      "assumptions": [
+        "Fixed residual scales, graph policy, resource/reference/history choices; DB-25 attaches to CQ only."
+      ],
+      "source_refs": [
+        "S05",
+        "S10",
+        "S12"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-02",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-03",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-07",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-09",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-12",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-14",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-15",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-26",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-25",
+          "relation": "conditions_strengthening",
+          "activation": "Only when CAN-CQ/exact or bounded behavioral quotient is claimed, not for the basic lossy CAN-C law."
+        },
+        {
+          "debt_id": "ATC7-DB-27",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Hidden W/Z, local agreement versus temporal divergence, parallel edges, alternative parent lineages.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-30",
+      "title": "Complete event equivalence",
+      "section": "7.6;9.5",
+      "status": "proposed_not_admitted",
+      "kind": "conditional_equivalence_claim",
+      "statement": "Equal final graphs do not establish equal transitions; an equivalence claim must specify numerical resource composition, history/reference maps, intermediate admission and evidence relation.",
+      "assumptions": [
+        "Exact equality notion declared; ledger equality is not presumed for scientific-state equivalence."
+      ],
+      "source_refs": [
+        "S05",
+        "S10",
+        "S11"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-11",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-13",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-15",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Atomic replacement versus delete/add; round-once versus two-rounding; repeated initialization.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-31",
+      "title": "Preservation of lifecycle guarantees",
+      "section": "11.5",
+      "status": "proposed_not_admitted",
+      "kind": "proposed_runtime_claim",
+      "statement": "An ATC integration preserves complete current/reset admission, typed failures, known-state consistency and restorability under the resulting release/layout.",
+      "assumptions": [
+        "Prospective publication validation; actual code subject and supported policies."
+      ],
+      "source_refs": [
+        "S07",
+        "S10",
+        "S11",
+        "S13"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-01",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-16",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-21",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-23",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Mixed-version/operation archive sequences; late programmer exception; event after representation.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    },
+    {
+      "id": "ATC7-CL-32",
+      "title": "Claim-local investigation admission",
+      "section": "14",
+      "status": "proposed_not_admitted",
+      "kind": "investigation_input_contract",
+      "statement": "Local ATC claim/debt records are proposal input only; acceptance or rejection transforms claims reciprocally through the existing admitted machinery.",
+      "assumptions": [
+        "No proposed ID is queried as accepted; no historical accepted debt is edited by this package."
+      ],
+      "source_refs": [
+        "S08",
+        "S09"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "ATC7-DB-01",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        },
+        {
+          "debt_id": "ATC7-DB-24",
+          "relation": "conditions_strengthening",
+          "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+        }
+      ],
+      "discriminating_pressure": "Reciprocal edge validation, stale/missing source, invalid inferred ranking, debt resolution without claim transformation.",
+      "predecessor_refs": [],
+      "no_authority_granted": true
+    }
+  ],
+  "accepted_sequence": [
+    {
+      "source": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+      "record_id": "ATC-LSF-SCOPED-ADJUDICATION-v1",
+      "record_digest": "8e25258e9b728f034c008fb71d7efa1cf9455dbdea8059c66835a5a54de2105a"
+    },
+    {
+      "source": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+      "record_id": "ATC-LSF-READBACK-SCOPED-ADJUDICATION-v1",
+      "record_digest": "47c49a4e6a055ec087ddb9401277b315276e63157a0f469e3552be22a897376b"
+    },
+    {
+      "source": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+      "record_id": "ATC-LSF-READBACK-BOX-ADJUDICATION-v1",
+      "record_digest": "b50a4c79577154c9e5a35e7702844a303a5aa78443b59be2d9f8b24ee47b0e05"
+    },
+    {
+      "source": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+      "record_id": "ATC-LSF-G1-G4-ADJUDICATION-v1",
+      "record_digest": "d577ff86b44b76ca6748c930f8bfbab2758aedc077d0c5625fcb640bf139a23e"
+    },
+    {
+      "source": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+      "record_id": "ATC-LSF-G5-G6-ADJUDICATION-v1",
+      "record_digest": "aaa2625ac8c9fb78cb41d525e3b9656482f3a00a8d3c264c18b826b2d353cfe4"
+    },
+    {
+      "source": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+      "record_id": "ATC-LSF-G7-ADJUDICATION-v1",
+      "record_digest": "8c4c1a53c1225dc5979f080cd1cb86c5cd52d3782aa11e16e4bfe8c9a7d48f27"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "ATC-LSF-CL-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-CL-01",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "accepted_conditional_mathematics",
+        "statement": "The reduced ordinary map has bounded unsplit obstruction and invariant exact response sectors.",
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-08"
+        ],
+        "debt_refs": [
+          "ATC7-DB-03",
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-10"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/claims/0"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-08"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-CL-02",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-CL-02",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "selected_new_constitutive_research_postulate_not_derived",
+        "statement": "When the bounded activation conditions resolve one admissible prescription, produce the prospective binary fission; publication requires target admission.",
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-29"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-04",
+          "ATC7-DB-07",
+          "ATC7-DB-08"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/claims/1"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-29"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-CL-03",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-CL-03",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "selected_mathematical_transfer_not_native_authority",
+        "statement": "Apply the conservative resource map independently to both roles, transport old W along edge lineage and seed only the new bridge.",
+        "origin_claim_refs": [
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18"
+        ],
+        "debt_refs": [
+          "ATC7-DB-08",
+          "ATC7-DB-10",
+          "ATC7-DB-12",
+          "ATC7-DB-13",
+          "ATC7-DB-14",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-23"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/claims/2"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [],
+      "origin_claim_ids": [
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-CL-04",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-CL-04",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "accepted_conditional_mathematics_including_reviewed_scaling",
+        "statement": "The actual anchor and common positive resource-scaling ray have both-role indefinite positive target continuation with the stated uniform contraction.",
+        "origin_claim_refs": [
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-19",
+          "ATC7-DB-20",
+          "ATC7-DB-23"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/claims/3"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [],
+      "origin_claim_ids": [
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-CL-05",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-CL-05",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "selected_research_consumer_not_native_authority",
+        "statement": "Keep physical decomposition, locus resolution, funding, construction and target admission distinct under source-only K0 and the fixed ordinary domain.",
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-09",
+          "ATC7-CL-24",
+          "ATC7-CL-26",
+          "ATC7-CL-31"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-03",
+          "ATC7-DB-04",
+          "ATC7-DB-09",
+          "ATC7-DB-10",
+          "ATC7-DB-11",
+          "ATC7-DB-16",
+          "ATC7-DB-21",
+          "ATC7-DB-22",
+          "ATC7-DB-23",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/claims/4"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-09",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": [
+        "ATC7-DB-28"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-CL-06",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-CL-06",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "accepted_explicit_scope_limit",
+        "statement": "No native, nonzero-feedback, other-family, generic fission, formation, core or aggregate closure follows.",
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-03",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-01",
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-11",
+          "ATC7-DB-14",
+          "ATC7-DB-17",
+          "ATC7-DB-18",
+          "ATC7-DB-20",
+          "ATC7-DB-22",
+          "ATC7-DB-23",
+          "ATC7-DB-24",
+          "ATC7-DB-25",
+          "ATC7-DB-26",
+          "ATC7-DB-27",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/claims/5"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+        "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": [
+        "ATC7-DB-17",
+        "ATC7-DB-18",
+        "ATC7-DB-20",
+        "ATC7-DB-27"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-RB-CL-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RB-CL-01",
+        "title": "Consumed feedback, symmetry and reference-stage source",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_enabled_point",
+        "predecessor_claim_refs": [
+          "ATC-LSF-CL-01",
+          "ATC-LSF-CL-05"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-24",
+          "ATC7-CL-26",
+          "ATC7-CL-31"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-03",
+          "ATC7-DB-04",
+          "ATC7-DB-05",
+          "ATC7-DB-10"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/claims/0"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-05"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RB-CL-02",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RB-CL-02",
+        "title": "Certified source prescription and funding",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_enabled_point",
+        "predecessor_claim_refs": [
+          "ATC-LSF-CL-01",
+          "ATC-LSF-CL-02",
+          "ATC-LSF-CL-03",
+          "ATC-LSF-CL-05"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-24",
+          "ATC7-CL-26",
+          "ATC7-CL-29",
+          "ATC7-CL-31"
+        ],
+        "debt_refs": [
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-09",
+          "ATC7-DB-10",
+          "ATC7-DB-12",
+          "ATC7-DB-13",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/claims/1"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-02",
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-05"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-29",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RB-CL-03",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RB-CL-03",
+        "title": "Enabled counterfactual resource obstruction",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_enabled_point",
+        "predecessor_claim_refs": [
+          "ATC-LSF-CL-01",
+          "ATC-LSF-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-19"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/claims/2"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-CL-01",
+        "ATC-LSF-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RB-CL-04",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RB-CL-04",
+        "title": "Actual-role entry and indefinite restoration",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_enabled_point",
+        "predecessor_claim_refs": [
+          "ATC-LSF-CL-03",
+          "ATC-LSF-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-13",
+          "ATC7-DB-14",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-19",
+          "ATC7-DB-20",
+          "ATC7-DB-23"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/claims/3"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-CL-03",
+        "ATC-LSF-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RB-CL-05",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RB-CL-05",
+        "title": "Uniform conditional target return",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "conditional_target_domain_over_original_box_only",
+        "predecessor_claim_refs": [
+          "ATC-LSF-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/claims/4"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RB-CL-06",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RB-CL-06",
+        "title": "Scope and authority boundaries",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "accepted_explicit_scope_limit",
+        "scope": "explicit_limit_not_generic_or_native_authority",
+        "predecessor_claim_refs": [
+          "ATC-LSF-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-03",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-01",
+          "ATC7-DB-11",
+          "ATC7-DB-17",
+          "ATC7-DB-18",
+          "ATC7-DB-20",
+          "ATC7-DB-21",
+          "ATC7-DB-22",
+          "ATC7-DB-23",
+          "ATC7-DB-24",
+          "ATC7-DB-25",
+          "ATC7-DB-26",
+          "ATC7-DB-27",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/claims/5"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+        "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RBB-CL-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RBB-CL-01",
+        "title": "Consumed feedback, symmetry and reference-stage source",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_family_original_parameter_box",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RB-CL-01"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-24",
+          "ATC7-CL-26",
+          "ATC7-CL-31"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-03",
+          "ATC7-DB-04",
+          "ATC7-DB-05",
+          "ATC7-DB-10"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/claims/0"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RB-CL-01"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RBB-CL-02",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RBB-CL-02",
+        "title": "Certified source prescription and funding",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_family_original_parameter_box",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RB-CL-02"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-24",
+          "ATC7-CL-26",
+          "ATC7-CL-29",
+          "ATC7-CL-31"
+        ],
+        "debt_refs": [
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-09",
+          "ATC7-DB-10",
+          "ATC7-DB-12",
+          "ATC7-DB-13",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/claims/1"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RB-CL-02"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-29",
+        "ATC7-CL-31"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RBB-CL-03",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RBB-CL-03",
+        "title": "Enabled counterfactual resource obstruction",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_family_original_parameter_box",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RB-CL-03"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-19"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/claims/2"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RB-CL-03"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RBB-CL-04",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RBB-CL-04",
+        "title": "Actual-role entry and indefinite restoration",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "fixed_prepared_family_original_parameter_box",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RB-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-13",
+          "ATC7-DB-14",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-19",
+          "ATC7-DB-20",
+          "ATC7-DB-23"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/claims/3"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RB-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RBB-CL-05",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RBB-CL-05",
+        "title": "Uniform conditional target return",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_certified_mathematics",
+        "scope": "conditional_target_domain_over_original_box_only",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RB-CL-05"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/claims/4"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RB-CL-05"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-RBB-CL-06",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-RBB-CL-06",
+        "title": "Scope and authority boundaries",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "accepted_explicit_scope_limit",
+        "scope": "explicit_limit_not_generic_or_native_authority",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RB-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-03",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-01",
+          "ATC7-DB-11",
+          "ATC7-DB-17",
+          "ATC7-DB-18",
+          "ATC7-DB-20",
+          "ATC7-DB-21",
+          "ATC7-DB-22",
+          "ATC7-DB-23",
+          "ATC7-DB-24",
+          "ATC7-DB-25",
+          "ATC7-DB-26",
+          "ATC7-DB-27",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/claims/5"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+        "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": []
+    },
+    {
+      "claim_id": "ATC-LSF-G14-CL-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G14-CL-01",
+        "title": "Paired event/reset domain and source-selected restoration",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "G1; sufficient full-dimensional region only inside the exact paired quotient manifold",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RBB-CL-02",
+          "ATC-LSF-RBB-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-03",
+          "ATC7-DB-04",
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-09",
+          "ATC7-DB-10",
+          "ATC7-DB-12",
+          "ATC7-DB-13",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/claims/0"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RBB-CL-02",
+        "ATC-LSF-RBB-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-02",
+        "ATC7-DB-16"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G14-CL-02",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G14-CL-02",
+        "title": "Predictive full-feedback source obstruction",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "G2; paired charge-nine cone, x>=3 and histories in [24/25,1]; no u<v or y>=0 requirement",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RBB-CL-03"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-19"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/claims/1"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RBB-CL-03"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-07"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G14-CL-03",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G14-CL-03",
+        "title": "Exact structural sectors and full staged equivariance",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "G3; decorated automorphism orbits imply exact response equality; not arbitrary equitable pooling or arbitrary-orbit surgery",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RBB-CL-01",
+          "ATC-LSF-RBB-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-11",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-03",
+          "ATC7-DB-04",
+          "ATC7-DB-05",
+          "ATC7-DB-08",
+          "ATC7-DB-10",
+          "ATC7-DB-25",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/claims/2"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RBB-CL-01",
+        "ATC-LSF-RBB-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-25",
+        "ATC7-DB-28"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G14-CL-04",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G14-CL-04",
+        "title": "Active embedded class and whole-target restoration",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "G4; declared two-pendant source/reset domains and eight-vertex target only",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RBB-CL-02",
+          "ATC-LSF-RBB-CL-03",
+          "ATC-LSF-RBB-CL-04",
+          "ATC-LSF-RBB-CL-05"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-10",
+          "ATC7-DB-12",
+          "ATC7-DB-13",
+          "ATC7-DB-14",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/claims/3"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RBB-CL-02",
+        "ATC-LSF-RBB-CL-03",
+        "ATC-LSF-RBB-CL-04",
+        "ATC-LSF-RBB-CL-05"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-12",
+        "ATC7-DB-19"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G14-CL-05",
+      "claim_class": "negative",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G14-CL-05",
+        "title": "Unaffected-support environmental exclusion",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "Second-parent graph has unstable uniform resource linearization; not failure of every trajectory",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RBB-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-04",
+          "ATC7-CL-11",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/claims/4"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RBB-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-04",
+        "ATC7-CL-11",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-08",
+        "ATC7-DB-12"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G14-CL-06",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G14-CL-06",
+        "title": "Research-scope and authority ceilings",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "accepted_explicit_scope_limit",
+        "scope": "No unrestricted source, arbitrary orbit surgery/environment, other-family, formation, native or aggregate authority",
+        "predecessor_claim_refs": [
+          "ATC-LSF-RBB-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-03",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-01",
+          "ATC7-DB-09",
+          "ATC7-DB-11",
+          "ATC7-DB-17",
+          "ATC7-DB-18",
+          "ATC7-DB-20",
+          "ATC7-DB-21",
+          "ATC7-DB-22",
+          "ATC7-DB-23",
+          "ATC7-DB-24",
+          "ATC7-DB-25",
+          "ATC7-DB-26",
+          "ATC7-DB-27",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/claims/5"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+        "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-RBB-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": [
+        "ATC7-DB-05",
+        "ATC7-DB-09",
+        "ATC7-DB-17",
+        "ATC7-DB-18",
+        "ATC7-DB-20",
+        "ATC7-DB-25",
+        "ATC7-DB-27"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G56-CL-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G56-CL-01",
+        "title": "Active A channels and explicit differential/host binding",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "G5 fixed WLS, nonzero alpha/beta, rebuilt post-resource writer; research transfer binding only",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G14-CL-03"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-11",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-03",
+          "ATC7-DB-04",
+          "ATC7-DB-05",
+          "ATC7-DB-08",
+          "ATC7-DB-10",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/claims/0"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G14-CL-03"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-14"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G56-CL-02",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G56-CL-02",
+        "title": "Potential-class obstruction and independent-role entry",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "Common fixed C1 class; actual-p balance; paired obstruction, funding and both-role entry",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G14-CL-01",
+          "ATC-LSF-G14-CL-02"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-04",
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-09",
+          "ATC7-DB-10",
+          "ATC7-DB-12",
+          "ATC7-DB-13",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/claims/1"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-02"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-02",
+        "ATC7-DB-07"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G56-CL-03",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G56-CL-03",
+        "title": "Shifted-equilibrium return",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "Full paired/embedded mean-zero resource return; W tends to exp(-alpha*c), not joint contraction",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G14-CL-01",
+          "ATC-LSF-G14-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/claims/2"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-06",
+        "ATC7-DB-19"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G56-CL-04",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G56-CL-04",
+        "title": "Fixed-tau variable request law",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "Every h sequence in [3/25,1/8]; fixed potential/parameters; no subdivision equivalence",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G14-CL-02",
+          "ATC-LSF-G14-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-07",
+          "ATC7-DB-10",
+          "ATC7-DB-19",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/claims/3"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G14-CL-02",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-19",
+        "ATC7-DB-22"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G56-CL-05",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G56-CL-05",
+        "title": "Active embedding and retained exclusion",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "Bounded seven/eight-vertex class; rejection by 7/10; exact survivor proof; second-parent exclusion",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G14-CL-04",
+          "ATC-LSF-G14-CL-05"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-10",
+          "ATC7-DB-13",
+          "ATC7-DB-19",
+          "ATC7-DB-26",
+          "ATC7-DB-27"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/claims/4"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-07",
+        "ATC7-DB-19"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G56-CL-06",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G56-CL-06",
+        "title": "Research scope and native ceiling",
+        "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+        "evidence_class": "independently_reviewed_mathematics",
+        "scope": "Primitive evidence consistent; no native potential/profile, G7, other-family or aggregate closure",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G14-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-03",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-01",
+          "ATC7-DB-11",
+          "ATC7-DB-14",
+          "ATC7-DB-17",
+          "ATC7-DB-18",
+          "ATC7-DB-20",
+          "ATC7-DB-21",
+          "ATC7-DB-22",
+          "ATC7-DB-23",
+          "ATC7-DB-24",
+          "ATC7-DB-25",
+          "ATC7-DB-26",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/claims/5"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+        "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": [
+        "ATC7-DB-05",
+        "ATC7-DB-26"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G7-CL-01",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G7-CL-01",
+        "title": "Full-graph nonlinear evaluator and independent staged conformance",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "reviewed_executable_reference_and_conformance",
+        "scope": "Concrete G5-G6 profile on both declared source/target graph pairs; eight cases, 1116 scalars; not the whole C1 class implemented",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G56-CL-01",
+          "ATC-LSF-G56-CL-02",
+          "ATC-LSF-G56-CL-03",
+          "ATC-LSF-G56-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-14",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/claims/0"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-03",
+        "ATC-LSF-G56-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-01",
+        "ATC7-DB-04",
+        "ATC7-DB-14",
+        "ATC7-DB-23"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G7-CL-02",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G7-CL-02",
+        "title": "Source-only prescription and both-role topology transfer",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "reviewed_executable_reference_and_conformance",
+        "scope": "Reference-selected current, uniquely resolved dyadic allocation, independent roles, old-edge lineage, bridge-only seed and detached readmission",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G56-CL-01",
+          "ATC-LSF-G56-CL-02",
+          "ATC-LSF-G56-CL-05"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-02",
+          "ATC7-DB-03",
+          "ATC7-DB-04",
+          "ATC7-DB-08",
+          "ATC7-DB-10",
+          "ATC7-DB-11",
+          "ATC7-DB-12",
+          "ATC7-DB-13",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-19",
+          "ATC7-DB-26",
+          "ATC7-DB-27"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/claims/1"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-08",
+        "ATC7-DB-09",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-28"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G7-CL-03",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G7-CL-03",
+        "title": "Bounded research transaction, reset and replay conformance",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "reviewed_executable_reference_and_conformance",
+        "scope": "Both local lifecycle suites, twelve negative cases per graph; whole-publication rollback; event and split-step-reset replay",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G56-CL-02",
+          "ATC-LSF-G56-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-03",
+          "ATC7-DB-11",
+          "ATC7-DB-15",
+          "ATC7-DB-16",
+          "ATC7-DB-21",
+          "ATC7-DB-22",
+          "ATC7-DB-23"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/claims/2"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": [
+        "ATC7-DB-03",
+        "ATC7-DB-11",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-21",
+        "ATC7-DB-22",
+        "ATC7-DB-23"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G7-CL-04",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G7-CL-04",
+        "title": "Finite represented-error bridge",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "reviewed_executable_reference_and_conformance",
+        "scope": "Four retained sixteen-step publication-only binary64 comparisons; reviewer reran the two current-role runs; not all native intermediate rounding or an infinite binary64 theorem",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G56-CL-03",
+          "ATC-LSF-G56-CL-04"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-02",
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-09",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27"
+        ],
+        "debt_refs": [
+          "ATC7-DB-05",
+          "ATC7-DB-06",
+          "ATC7-DB-10",
+          "ATC7-DB-13",
+          "ATC7-DB-19",
+          "ATC7-DB-23",
+          "ATC7-DB-26"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/claims/3"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G56-CL-03",
+        "ATC-LSF-G56-CL-04"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_ids": [
+        "ATC7-DB-10",
+        "ATC7-DB-13",
+        "ATC7-DB-19",
+        "ATC7-DB-23"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G7-CL-05",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G7-CL-05",
+        "title": "Numerical and identity boundaries correctly exposed",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "reviewed_executable_reference_and_conformance",
+        "scope": "Nonzero represented charge discrepancy is a G7 finding for Phase 9; PROFILE_ID evaluator binding plus source/outer-record event binding; not an open G7 defect",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G56-CL-01",
+          "ATC-LSF-G56-CL-04",
+          "ATC-LSF-G56-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-03",
+          "ATC7-CL-04",
+          "ATC7-CL-08",
+          "ATC7-CL-11",
+          "ATC7-CL-15",
+          "ATC7-CL-16",
+          "ATC7-CL-18",
+          "ATC7-CL-22",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-01",
+          "ATC7-DB-10",
+          "ATC7-DB-13",
+          "ATC7-DB-14",
+          "ATC7-DB-21",
+          "ATC7-DB-23",
+          "ATC7-DB-24"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/claims/4"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G56-CL-04",
+        "ATC-LSF-G56-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": [
+        "ATC7-DB-01",
+        "ATC7-DB-04",
+        "ATC7-DB-10",
+        "ATC7-DB-13",
+        "ATC7-DB-24"
+      ]
+    },
+    {
+      "claim_id": "ATC-LSF-G7-CL-06",
+      "claim_class": "conditional",
+      "status": "accepted_bounded_A_OS_research",
+      "profile_scope": [
+        "A_OS"
+      ],
+      "native_authority": false,
+      "source_claim": {
+        "id": "ATC-LSF-G7-CL-06",
+        "title": "Bounded A_OS G1-G7 research program completion",
+        "status": "accepted_bounded_research_not_graph_admitted",
+        "evidence_class": "user_scoped_program_acceptance",
+        "scope": "User-corrected G7 equals executable-reference conformance; native work deferred to Phase 9, not an unmet half of G7; other families and aggregate ATC2 remain open",
+        "predecessor_claim_refs": [
+          "ATC-LSF-G56-CL-06"
+        ],
+        "origin_claim_refs": [
+          "ATC7-CL-01",
+          "ATC7-CL-03",
+          "ATC7-CL-27",
+          "ATC7-CL-32"
+        ],
+        "debt_refs": [
+          "ATC7-DB-04",
+          "ATC7-DB-07",
+          "ATC7-DB-08",
+          "ATC7-DB-09",
+          "ATC7-DB-12",
+          "ATC7-DB-17",
+          "ATC7-DB-18",
+          "ATC7-DB-20",
+          "ATC7-DB-24",
+          "ATC7-DB-25",
+          "ATC7-DB-26",
+          "ATC7-DB-27",
+          "ATC7-DB-28"
+        ],
+        "accepted_graph_descendants": [],
+        "native_authority": false
+      },
+      "source_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/claims/5"
+      },
+      "accepted_scope_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+        "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+        "json_pointer": "/accepted_scope"
+      },
+      "predecessor_claim_ids": [
+        "ATC-LSF-G56-CL-06"
+      ],
+      "origin_claim_ids": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_ids": [
+        "ATC7-DB-20",
+        "ATC7-DB-24",
+        "ATC7-DB-26"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "ATC7-DB-01",
+      "title": "Source and execution-subject admission",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/0"
+      },
+      "activation": "Any assertion about current source authority or native Tranche-7/ATC execution.",
+      "closure_requirement": "Pin repository commits, source bytes, release, dependencies and exact results. Retrieved main pages and older local attachments cannot stand in for the final execution subject.",
+      "A_OS_research_status": "partial",
+      "transformation": "partially_resolved_broader_or_downstream_residue",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Bounded execution subjects and reviews are identity-bound; production release/dependency execution remains downstream.",
+      "remaining_or_reactivation": "The later native release must bind its own exact execution subject.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-01",
+        "ATC-LSF-G7-CL-05"
+      ],
+      "verification_obligation": "ATC-AOS-FORWARD-1"
+    },
+    {
+      "debt_id": "ATC7-DB-02",
+      "title": "Endogenous constitutive closure",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/1"
+      },
+      "activation": "A proposal claims that the event is generated by the permitted scientific state.",
+      "closure_requirement": "Name every causal input and choice; close guard, resolution, construction, identity and outcome rules; challenge administrative and hidden-state dependence.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The supported one-locus two-sector law consumes present reference-stage state, resolves or fails closed, and constructs the declared target.",
+      "remaining_or_reactivation": "No arbitrary-locus, arbitrary-graph or production scheduler authority.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G7-CL-02"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-03",
+      "title": "Temporal stage and historical operand",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/2"
+      },
+      "activation": "A witness uses consumed current, threshold crossing, or a previous state rather than the declared present reconstruction.",
+      "closure_requirement": "Bind the exact stage and all required past preimages; show replay and reset semantics.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Reference-stage consumption, independent roles, lineage, reset and replay are explicit; no hidden historical trigger operand is introduced.",
+      "remaining_or_reactivation": "Historical predicates outside the present-state law need a separate contract.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-02",
+        "ATC-LSF-G7-CL-03"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-04",
+      "title": "Analysis-to-constitutive consumption",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/3"
+      },
+      "activation": "A source analysis object becomes a physical event guard.",
+      "closure_requirement": "Admit the successor consumer, stage and complete-profile identity without relabeling a diagnostic as an existing actuator.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The research consumer executes the reviewed source prescription with profile operands plus source/outer-record event identity; it is not merely a diagnostic.",
+      "remaining_or_reactivation": "Production consumer/profile admission is later Phase 9 work.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-01",
+        "ATC-LSF-G7-CL-02",
+        "ATC-LSF-G7-CL-05"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-05",
+      "title": "Branch and regularity applicability",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/4"
+      },
+      "activation": "A claim uses a structural chart, current slaving derivative, or classical section derivative.",
+      "closure_requirement": "Supply the exact branch, association, domain and derivatives; retain RG2b Lipschitz alternatives and kink/rank boundaries.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "No structural chart, slaved-current section derivative or RG2b regularity claim is made. The actual C1 potential assumptions remain attached to G5-G6.",
+      "remaining_or_reactivation": "Activate for CI/RG2b or a classical structural/section derivative claim; do not inherit OS regularity.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-06",
+        "ATC-LSF-G56-CL-06"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-06",
+      "title": "Functional, tangent, metric and normalization",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/5"
+      },
+      "activation": "A claim invokes structural alpha, joint-state energy or magnitude comparisons.",
+      "closure_requirement": "Instantiate the complete functional and constrained domain; distinguish fixed W from temporal W/Z variation; remove/classify nulls.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The used resource norms, mean-zero tangent and spectral/return bounds are specified. The result is resource contraction, not an unspecified joint (C,W) energy contraction.",
+      "remaining_or_reactivation": "No joint-state contraction, arbitrary tangent or structural energy is supplied.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G56-CL-03"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-07",
+      "title": "Physical discrimination of a trigger",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/6"
+      },
+      "activation": "A numerical or structural witness is claimed to warrant an RC topology response.",
+      "closure_requirement": "Retain no-event and consumer-off controls; distinguish softening, numerical certification, history loss and actual graph-response effects.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Unsplit and history-reset controls retain obstruction; the prescribed fission admits both roles into return domains, including the coupled environment.",
+      "remaining_or_reactivation": "No arbitrary-state trigger sufficiency or unique-physical-remedy claim.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-02",
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G56-CL-02",
+        "ATC-LSF-G56-CL-05"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-08",
+      "title": "Mode-to-locus and half-edge lift",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/7"
+      },
+      "activation": "A mode or response is claimed to determine graph surgery.",
+      "closure_requirement": "Specify coordinate meaning, sign/degeneracy handling, loops, partition and covariance; compare competing lifts.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Exact decorated edge sectors, the supported 2+2 surgery and its covariance/lineage are specified; the unaffected-support counterexample excludes arbitrary embeddings.",
+      "remaining_or_reactivation": "No arbitrary orbit cardinality, approximate clustering or generic mode-to-edit rule.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05",
+        "ATC-LSF-G7-CL-02"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-09",
+      "title": "Within/across-family resolution order",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/8"
+      },
+      "activation": "A law compares candidates or operation families.",
+      "closure_requirement": "State units, score/order/exclusivity, margins and unresolved outcomes; do not infer cross-family comparability.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "No multi-locus ranking or cross-family comparison is claimed; unresolved alternatives do not become an ordering.",
+      "remaining_or_reactivation": "Activate if competing loci/families are ranked or a new exclusivity rule is claimed.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-06",
+        "ATC-LSF-G7-CL-02"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-10",
+      "title": "Finite-precision equivariance and threshold certainty",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/9"
+      },
+      "activation": "Exact covariance or stable physical decisions are claimed in a numerical implementation.",
+      "closure_requirement": "Use exact comparisons/enclosures or declared robust domains; challenge relabelings, orientations and threshold ties.",
+      "A_OS_research_status": "partial",
+      "transformation": "partially_resolved_broader_or_downstream_residue",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Exact covariance, certified allocation and finite represented comparisons are earned.",
+      "remaining_or_reactivation": "Universal binary64 threshold/quantization covariance across the whole research domain is not proved.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G7-CL-04",
+        "ATC-LSF-G7-CL-05"
+      ],
+      "verification_obligation": "ATC-AOS-FORWARD-10"
+    },
+    {
+      "debt_id": "ATC7-DB-11",
+      "title": "Batch and sequential critical pairs",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/10"
+      },
+      "activation": "Disjoint events or an atomic rewrite are claimed equivalent to sequential edits.",
+      "closure_requirement": "Prove combined reference/history/resource maps, intermediate admission, and required equality notions; account for global reset effects.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "One transaction and replay do not claim batch/sequential equivalence. Earlier G7 references to transfer/replay are context, not evidence discharging this debt.",
+      "remaining_or_reactivation": "Activate for disjoint/batch critical-pair equivalence; intermediate readmission and equality still require proof.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-03"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-12",
+      "title": "Complete finite graph/template mechanics",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/11"
+      },
+      "activation": "A template is claimed graph-generic or collision-free.",
+      "closure_requirement": "Close endpoint roles, loops, parallel edges, fresh IDs, boundary mappings and any finite template grammar.",
+      "A_OS_research_status": "partial",
+      "transformation": "partially_resolved_broader_or_downstream_residue",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The paired and bounded embedded templates have explicit incidence and lineage.",
+      "remaining_or_reactivation": "Generic finite graphs, loops, parallel-edge/template coverage and arbitrary surroundings are not established.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05",
+        "ATC-LSF-G7-CL-02"
+      ],
+      "verification_obligation": "ATC-AOS-FORWARD-12"
+    },
+    {
+      "debt_id": "ATC7-DB-13",
+      "title": "Represented resource law and actual charge",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/12"
+      },
+      "activation": "Real coefficient conservation is promoted to an executable or exactly closed event.",
+      "closure_requirement": "Bind representable coefficients and rounding, validate both roles and actual charge; no silent residual correction.",
+      "A_OS_research_status": "partial",
+      "transformation": "partially_resolved_broader_or_downstream_residue",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Exact transfer conserves charge; the finite representation bridge honestly exposes nonzero publication-rounding drift.",
+      "remaining_or_reactivation": "A later production rounding/conservation policy is required; no silent balancing or exact binary64 conservation claim.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-02",
+        "ATC-LSF-G7-CL-04",
+        "ATC-LSF-G7-CL-05"
+      ],
+      "verification_obligation": "ATC-AOS-FORWARD-13"
+    },
+    {
+      "debt_id": "ATC7-DB-14",
+      "title": "Target reference, backend and context",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/13"
+      },
+      "activation": "A new graph is claimed to have a complete target package.",
+      "closure_requirement": "Construct every target coordinate, reference seed, structural base, backend, context and complete-profile identity under fixed domains.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The bounded target has explicit graph, host references, differential/descriptor, nonlinear potential, context and full-stage evaluator.",
+      "remaining_or_reactivation": "Native package admission and other target classes remain separate.",
+      "successor_claim_ids": [
+        "ATC-LSF-G56-CL-01",
+        "ATC-LSF-G7-CL-01",
+        "ATC-LSF-G7-CL-02"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-15",
+      "title": "History transport or explicitly declared loss",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/14"
+      },
+      "activation": "A topology map is claimed to preserve or transform W/Z history.",
+      "closure_requirement": "Supply separately typed channel maps and source/target lineage, or retain honest reconstruction/loss; never infer from shape or resource T.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Old W is transferred by edge lineage independently for both roles and only the new bridge is seeded.",
+      "remaining_or_reactivation": "No persistent Z carrier or arbitrary-history transport authority is inferred.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-02",
+        "ATC-LSF-G7-CL-03"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-16",
+      "title": "Initializer and whole-role target integration",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/15"
+      },
+      "activation": "A constructed target is claimed fully admitted.",
+      "closure_requirement": "Use the accepted initializer order and independently reconstruct current/reset; preserve target numerical and atomic failures.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Both actual roles are independently constructed/readmitted before publication, with bridge seeding and reset/failure semantics.",
+      "remaining_or_reactivation": "Production integration is downstream, not an unmet bounded research criterion.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G7-CL-02",
+        "ATC-LSF-G7-CL-03"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-17",
+      "title": "Core object and topology correspondence",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/16"
+      },
+      "activation": "An event is called an R_coh, basin, spark, or identity-topology event.",
+      "closure_requirement": "Map substrate state to the exact spatial/support/finite-continuation objects and demonstrate the requested change.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "CAN-LSF is not identified with core R_coh, a spark or identity topology.",
+      "remaining_or_reactivation": "Reactivate only with an explicit core-object correspondence claim.",
+      "successor_claim_ids": [
+        "ATC-LSF-CL-06",
+        "ATC-LSF-G14-CL-06"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-18",
+      "title": "Viability functional and threshold",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/17"
+      },
+      "activation": "A guard is identified with core viability or compared across graphs.",
+      "closure_requirement": "Bind functional/sign/normalization/anchor/units/locus and threshold or crossing; distinguish relative proposals from V=-P.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The source condition is not claimed to be core viability or a cross-graph viability threshold.",
+      "remaining_or_reactivation": "Any such interpretation needs its own functional, units, anchor and threshold evidence.",
+      "successor_claim_ids": [
+        "ATC-LSF-CL-06",
+        "ATC-LSF-G14-CL-06"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-19",
+      "title": "Restoration and actual dynamics",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/18"
+      },
+      "activation": "A target is claimed inside a stable basin or an attracting set.",
+      "closure_requirement": "Prove the specified basin/equilibrium/Lyapunov certificate for the actual relevant state and dynamics, with numerical-error and hybrid-loop scope.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Actual-role target entry and indefinite exact-real resource return hold in the declared paired/embedded domains; finite represented error has its separate ceiling.",
+      "remaining_or_reactivation": "Not infinite rounded return, arbitrary states/environments, joint-state contraction or repeated hybrid-event closure.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G56-CL-03",
+        "ATC-LSF-G56-CL-04",
+        "ATC-LSF-G56-CL-05",
+        "ATC-LSF-G7-CL-04"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-20",
+      "title": "Finite persistence to identity/formation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/19"
+      },
+      "activation": "Finite observation or graph structure is promoted to spark, identity, reflexive closure, or native formation.",
+      "closure_requirement": "Supply the additional core-specific basin, attraction, invariance, closure and provenance evidence.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Admitted event-state preimages and continuation are not source formation, identity or reflexive-closure claims.",
+      "remaining_or_reactivation": "Formation/identity remains required for wider intended capabilities, not discharged by inactivity here.",
+      "successor_claim_ids": [
+        "ATC-LSF-CL-06",
+        "ATC-LSF-G14-CL-06",
+        "ATC-LSF-G7-CL-06"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-21",
+      "title": "Atomic composition and publication closure",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/20"
+      },
+      "activation": "An ATC wrapper is claimed to preserve lifecycle guarantees.",
+      "closure_requirement": "Define transaction boundaries and report composition; verify target and prospective archive before publication; preserve programmer-error semantics.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Detached both-role readmission precedes atomic research publication; injected late failures preserve the whole publication and replay/reset semantics.",
+      "remaining_or_reactivation": "No crash durability or production owner/archive composition guarantee.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-03"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-22",
+      "title": "Causal memory, timing and event rate",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/21"
+      },
+      "activation": "Refractory counters, probes, crossings, repeated attempts, or non-Zeno claims are activated.",
+      "closure_requirement": "Declare causal history and lifecycle maps, eligible boundaries, work bounds and clock assumptions; distinguish finite beats from physical time.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Variable ordinary requests and one split-step-reset sequence do not prove repeated-event timing, refractory memory, event rate or non-Zeno behavior.",
+      "remaining_or_reactivation": "Those remain distinct future scientific obligations; they are not all merely production scheduling.",
+      "successor_claim_ids": [
+        "ATC-LSF-G56-CL-04",
+        "ATC-LSF-G7-CL-03"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-23",
+      "title": "Native execution and reproducible evidence",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/22"
+      },
+      "activation": "The proposal claims actual GRCV4 execution, covariance, replay or rollback.",
+      "closure_requirement": "Run the admitted exact subject with independent expectations, retained failures and source-bound captures.",
+      "A_OS_research_status": "partial",
+      "transformation": "partially_resolved_broader_or_downstream_residue",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The bounded research executable, independent expectations and retained source-bound results exist.",
+      "remaining_or_reactivation": "Native GRCV4 ATC execution is deferred to Phase 9, not a G7 research gate.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-01",
+        "ATC-LSF-G7-CL-03",
+        "ATC-LSF-G7-CL-04"
+      ],
+      "verification_obligation": "ATC-AOS-FORWARD-23"
+    },
+    {
+      "debt_id": "ATC7-DB-24",
+      "title": "Investigation and side-tool source admission",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/23"
+      },
+      "activation": "Local ATC records are to become queryable scientific authority.",
+      "closure_requirement": "Use the actual source-observation/classification/adapter/readmission/rebuild/audit/acceptance route; preserve reciprocal claim/debt lineage.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "This successor ledger and pinned ATC adapter admit the bounded research sources, reciprocal lineage and debt transformations through typed queries.",
+      "remaining_or_reactivation": "Only this exact research inventory is admitted; future sources require successor readmission. No native authority follows.",
+      "successor_claim_ids": [
+        "ATC-LSF-G7-CL-05",
+        "ATC-LSF-G7-CL-06"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-25",
+      "title": "Complete quotient or behavioral approximation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/24"
+      },
+      "activation": "A merge is claimed to preserve or approximate complete behavior.",
+      "closure_requirement": "Supply H on every causal coordinate, domain invariance, exact or bounded intertwining, and target Lipschitz constants.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "Decorated edge sectors are not a behavioral merge quotient or an approximation/intertwining theorem.",
+      "remaining_or_reactivation": "Activate if a complete-state merge/quotient claim is made.",
+      "successor_claim_ids": [
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-06"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-26",
+      "title": "Complete-profile target applicability",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/25"
+      },
+      "activation": "A family-level formula is promoted to multi-profile support.",
+      "closure_requirement": "Record exact domains and targets for all ten products; preserve unsupported cells without weakening the realization.",
+      "A_OS_research_status": "partial",
+      "transformation": "partially_resolved_broader_or_downstream_residue",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The accepted bounded A_OS domains and concrete G7 reference are explicit.",
+      "remaining_or_reactivation": "The other nine families, broader A_OS environments and all-product ATC remain open.",
+      "successor_claim_ids": [
+        "ATC-LSF-G56-CL-06",
+        "ATC-LSF-G7-CL-06"
+      ],
+      "verification_obligation": "ATC-AOS-FORWARD-26"
+    },
+    {
+      "debt_id": "ATC7-DB-27",
+      "title": "Relation/coarsening semantic driver",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/26"
+      },
+      "activation": "Present coupling or inactivity is called missing relation, redundancy, death or extinction.",
+      "closure_requirement": "Demonstrate the operation-specific causal meaning; test zero-current bridges, hidden W/Z, existing nonedge mediation and delayed effects.",
+      "A_OS_research_status": "not_activated",
+      "transformation": "not_activated_by_accepted_A_OS_claims",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "No relation-absence, death, extinction or coarsening driver is asserted by CAN-LSF.",
+      "remaining_or_reactivation": "Those wider capabilities require operation-specific causal evidence.",
+      "successor_claim_ids": [
+        "ATC-LSF-CL-06",
+        "ATC-LSF-G14-CL-06"
+      ],
+      "verification_obligation": null
+    },
+    {
+      "debt_id": "ATC7-DB-28",
+      "title": "Finite search/work and objective interpretation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/27"
+      },
+      "activation": "A finite partition optimizer or template grammar is treated as scalable or core-derived.",
+      "closure_requirement": "Bind objective and search semantics, complexity/work budgets and exact outcome independence; distinguish computational failure from physical absence.",
+      "A_OS_research_status": "closed",
+      "transformation": "resolved_at_bounded_research_scope",
+      "global_discharged": false,
+      "blocks_G1_G7_research_acceptance": false,
+      "earned_scope": "The declared finite templates use exact sectors, bounded quantization/refinement and explicit unresolved/rejected outcomes; no scalable optimizer or core-derived objective is claimed.",
+      "remaining_or_reactivation": "No arbitrary-template search complexity or universal scalability result.",
+      "successor_claim_ids": [
+        "ATC-LSF-CL-05",
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G7-CL-02"
+      ],
+      "verification_obligation": null
+    }
+  ],
+  "forward_obligations": [
+    {
+      "obligation_id": "ATC-AOS-FORWARD-1",
+      "status": "pending_forward",
+      "debt_id": "ATC7-DB-01",
+      "scope": "The later native release must bind its own exact execution subject.",
+      "is_backward_support": false
+    },
+    {
+      "obligation_id": "ATC-AOS-FORWARD-10",
+      "status": "pending_forward",
+      "debt_id": "ATC7-DB-10",
+      "scope": "Universal binary64 threshold/quantization covariance across the whole research domain is not proved.",
+      "is_backward_support": false
+    },
+    {
+      "obligation_id": "ATC-AOS-FORWARD-12",
+      "status": "pending_forward",
+      "debt_id": "ATC7-DB-12",
+      "scope": "Generic finite graphs, loops, parallel-edge/template coverage and arbitrary surroundings are not established.",
+      "is_backward_support": false
+    },
+    {
+      "obligation_id": "ATC-AOS-FORWARD-13",
+      "status": "pending_forward",
+      "debt_id": "ATC7-DB-13",
+      "scope": "A later production rounding/conservation policy is required; no silent balancing or exact binary64 conservation claim.",
+      "is_backward_support": false
+    },
+    {
+      "obligation_id": "ATC-AOS-FORWARD-23",
+      "status": "pending_forward",
+      "debt_id": "ATC7-DB-23",
+      "scope": "Native GRCV4 ATC execution is deferred to Phase 9, not a G7 research gate.",
+      "is_backward_support": false
+    },
+    {
+      "obligation_id": "ATC-AOS-FORWARD-26",
+      "status": "pending_forward",
+      "debt_id": "ATC7-DB-26",
+      "scope": "The other nine families, broader A_OS environments and all-product ATC remain open.",
+      "is_backward_support": false
+    }
+  ],
+  "classifications": {
+    "closed": 13,
+    "partial": 6,
+    "not_activated": 9
+  },
+  "adjudication_basis": "User-authorized retrospective reconstruction from accepted scopes and original debt activation criteria; not an independent rerun or retrospective promotion of all proposals.",
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+      "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+      "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+      "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+      "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+      "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247",
+      "json_pointer": "/"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+      "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347",
+      "json_pointer": "/"
+    }
+  ],
+  "record_digest": "0fa6aab453d7f013a7b999dc00d3ac4133de193e2053cc7c8ff92823bad4380e"
+}

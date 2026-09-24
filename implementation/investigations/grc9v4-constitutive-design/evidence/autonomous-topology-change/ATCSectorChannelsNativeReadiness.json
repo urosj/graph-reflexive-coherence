@@ -1,0 +1,229 @@
+{
+  "schema": "grcv4_atc_sector_channels_native_readiness_v1",
+  "status": "primitive_comparisons_pass_native_ATC_not_admitted",
+  "accepted": false,
+  "native_primitives_executed": true,
+  "native_ATC_executed": false,
+  "G7_closed": false,
+  "graph_admission": false,
+  "ATC2_closed": false,
+  "evidence": {
+    "native_descriptor_probes": [
+      {
+        "graph": "paired_source",
+        "reference_identity": "grcv4-a-descriptor-sha256:0a8d0724efbff6a74f11b30a16126a2c189f67ad606cca113bf02d308b287754",
+        "C_binary64": [
+          "0x1.28f5c28f5c28fp+0",
+          "0x1.28f5c28f5c28fp+0",
+          "0x1.23d70a3d70a3dp+0",
+          "0x1.23d70a3d70a3dp+0",
+          "0x1.199999999999ap+2"
+        ],
+        "gradient_binary64": [
+          [
+            "-0x1.9eb851eb851ecp+0"
+          ],
+          [
+            "-0x1.9eb851eb851ecp+0"
+          ],
+          [
+            "-0x1.a147ae147ae16p+0"
+          ],
+          [
+            "-0x1.a147ae147ae16p+0"
+          ],
+          [
+            "-0x1.4cccccccccccep+1"
+          ]
+        ],
+        "exact_binary64_input_rational_oracle_matches": true
+      },
+      {
+        "graph": "paired_target",
+        "reference_identity": "grcv4-a-descriptor-sha256:2fa8a3e0452880e580c93ea3ccc57e450d5d9e1f8cdb821a9c57041ae5c62ae0",
+        "C_binary64": [
+          "0x1.23d70a3d70a3dp+0",
+          "0x1.23d70a3d70a3dp+0",
+          "0x1.1eb851eb851ecp+0",
+          "0x1.1eb851eb851ecp+0",
+          "0x1.1eb851eb851ecp+1",
+          "0x1.1eb851eb851ecp+1"
+        ],
+        "gradient_binary64": [
+          [
+            "-0x1.199999999999bp-1"
+          ],
+          [
+            "-0x1.199999999999bp-1"
+          ],
+          [
+            "-0x1.1eb851eb851ecp-1"
+          ],
+          [
+            "-0x1.1eb851eb851ecp-1"
+          ],
+          [
+            "-0x1.7777777777779p-1"
+          ],
+          [
+            "-0x1.7e4b17e4b17e5p-1"
+          ]
+        ],
+        "exact_binary64_input_rational_oracle_matches": true
+      },
+      {
+        "graph": "embedded_source",
+        "reference_identity": "grcv4-a-descriptor-sha256:6d67a41a2a7f438e8be215efd9884f73e300023677060f1ac607c057ef1559ad",
+        "C_binary64": [
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0",
+          "0x1.199999999999ap+1",
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0"
+        ],
+        "gradient_binary64": [
+          [
+            "-0x1.999999999999bp-2"
+          ],
+          [
+            "-0x1.999999999999bp-2"
+          ],
+          [
+            "-0x1.3333333333334p-1"
+          ],
+          [
+            "-0x1.3333333333334p-1"
+          ],
+          [
+            "-0x1.eb851eb851ebap-1"
+          ],
+          [
+            "0x0.0p+0"
+          ],
+          [
+            "0x0.0p+0"
+          ]
+        ],
+        "exact_binary64_input_rational_oracle_matches": true
+      },
+      {
+        "graph": "embedded_target",
+        "reference_identity": "grcv4-a-descriptor-sha256:a04be11c2779e39baf7c036b070789c5cd403749e506a03f63f613626d0ba40c",
+        "C_binary64": [
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0",
+          "0x1.199999999999ap+0",
+          "0x1.199999999999ap+0",
+          "0x1.0000000000000p+0",
+          "0x1.0000000000000p+0"
+        ],
+        "gradient_binary64": [
+          [
+            "-0x1.1111111111115p-5"
+          ],
+          [
+            "-0x1.1111111111115p-5"
+          ],
+          [
+            "-0x1.99999999999a0p-5"
+          ],
+          [
+            "-0x1.99999999999a0p-5"
+          ],
+          [
+            "-0x1.1111111111115p-4"
+          ],
+          [
+            "-0x1.1111111111115p-4"
+          ],
+          [
+            "0x0.0p+0"
+          ],
+          [
+            "0x0.0p+0"
+          ]
+        ],
+        "exact_binary64_input_rational_oracle_matches": true
+      }
+    ],
+    "native_writer_probes": [
+      {
+        "dt_binary64": "0x1.0000000000000p-3",
+        "tau_binary64": "0x1.71547652b82fep-3",
+        "old_binary64": "0x1.f0a3d70a3d70ap-1",
+        "drive_binary64": "0x1.fae147ae147aep-1",
+        "result_binary64": "0x1.f5bbdf5ac8383p-1",
+        "exact_input_oracle": {
+          "lo": "113470339539123066502168539758584325790455965522829087393463590449476310321742",
+          "hi": "113470339539123066502168539758584325790455965522829087393463590449476310321935"
+        },
+        "oracle_matches": true,
+        "differs_from_half_writer": false
+      },
+      {
+        "dt_binary64": "0x1.eb851eb851eb9p-4",
+        "tau_binary64": "0x1.71547652b82fep-3",
+        "old_binary64": "0x1.f0a3d70a3d70ap-1",
+        "drive_binary64": "0x1.fae147ae147aep-1",
+        "result_binary64": "0x1.f597076fbdee6p-1",
+        "exact_input_oracle": {
+          "lo": "113437791185889294161428949478701254883370530778777659752914625177699665754045",
+          "hi": "113437791185889294161428949478701254883370530778777659752914625177699665754239"
+        },
+        "oracle_matches": true,
+        "differs_from_half_writer": true
+      }
+    ],
+    "potential_boundary": {
+      "method": "static AST guard plus exported constant; not executed lifecycle",
+      "only_declared_id": "quadratic_site_potential_zero_derivative_v1",
+      "unsupported_research_slope_class": true
+    },
+    "remaining_G7_obligations": [
+      "Independent review and scoped claim/debt adjudication of G5-G6.",
+      "Propagate reviewed authority through topology proposal, extension paper and specification.",
+      "Admit revision-distinct potential/descriptor/host-transfer/history/request profile and native owners.",
+      "Bridge exact-real theorem to represented parameters and all staged numerical error, including share rounding.",
+      "Execute native source/target/current/reset, ordinary continuation, rollback, lineage and replay conformance."
+    ]
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_sector_channels_native.py",
+      "sha256": "1772d897caf99bcbe50cb88ccd7bbed16f7bf3f4e79dba7f7c07818d25827d5c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_channels.py",
+      "sha256": "8d0aa7016710d5e64935a3496fb9160689eda87e6c999b3336924b4f99c0828f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_state_domain.py",
+      "sha256": "19b88f776b0084c9dd9f5220304080f685d25c98aeca0a30d7b572ae42f5ee2d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_box.py",
+      "sha256": "8636581d8b0a3a5db1bbf81b8f4d5c414a3729d8f7b77950af52b8378bcf4a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAndRequests.md",
+      "sha256": "34974e4489f9e62a805bf5d105be78b37b06e6597084a73b9a3db1ef59104840"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4"
+    }
+  ],
+  "record_digest": "87a2085de7c0ec11fa1aa89ec10b40f1ecdcd908d1bef9ccfa640df165918ec6"
+}

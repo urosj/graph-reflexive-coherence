@@ -1,6 +1,678 @@
-# Phase 9 GRCV4 handoff — Tranche 7 closed; P9-8.1a next
+# Phase 9 GRCV4 handoff — Tranche 7 closed; ATC research next
 
-## Current state — 2026-09-15
+## Current research priority — 2026-09-24
+
+**All five bounded Candidate-A ATC research programs are accepted and closed.**
+See the [five-realization closeout](./investigations/grc9v4-constitutive-design/decisions/ATCCandidateAResearchClosure.md).
+A_RG2b completes this set through reuse of the supplied RGATC-T/A and E/R work.
+The [fit assessment](./investigations/grc9v4-constitutive-design/decisions/ATCRGATCProgram.md)
+and [portable package index](./investigations/grc9v4-constitutive-design/evidence/atc-rgatc/README.md)
+are the starting point. Do not recreate its theorem or section evaluator.
+The package preserves C/W-only authority, lagged reconstruction and a
+Lipschitz-only ceiling; its floor-preserving auxiliary completion and frozen
+beat/gain are reviewed research, not existing native profile authority.
+Both manifests, exact T/A regeneration and E/R retained identity/consistency
+checks pass locally. The full E/R run is supplied evidence, not locally rerun.
+Seven RGATC conditional claims are admitted and all 28 RG-local debt routes
+are adjudicated: 14 closed, six partial, eight inactive, all globally open.
+**T/A and E/R audit: PASS, reported by the user.** See the
+[review record](./investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Review.md).
+The `atc-rgatc-query` CLI exposes discovery, audit, claim/debt traces and
+`summary` for all five realization ledgers. Earlier admissions are unchanged.
+No further A-realization discovery is needed simply to finish this bounded program.
+**Scope caution:** all five have bounded source-conditioned fission
+constructions, with the decorated 2+2 source as their common proved class.
+A_OS G7 validates selection, transfer and continuation from admitted event
+states, not automatic ordinary-evolution-to-event admission. More general binary
+mechanics, continuation machinery and bounded A_OS embeddings do not yet
+provide a topology-independent partition law. This is the first proven
+nonempty certificate class and a conformance case, not the final ATC law.
+**Next scientific direction:** a general conditional fission theorem on
+arbitrary topology, followed by broader endogenous partition certificates.
+The eventual law should select a lawful refinement or return no event from
+admissible source information, without an external chooser or target-success
+fitting; numerical nonresolution is not certified absence of an event.
+See the [current scope note](./investigations/grc9v4-constitutive-design/README.md#current-atc-scope-and-next-scientific-direction--2026-09-24).
+This records direction only; new work has not started. Scientific propagation
+still follows topology proposal → paper → specifications.
+Candidate C, native implementation and aggregate ATC-2/ATC-3 remain open.
+
+## Completed preceding research — A_CI+PC
+
+**A_CI+PC CIP-0–CIP-2 have independent scientific PASS and are source-admitted
+at paired research scope**, following the user's
+[coupled-program directions](./investigations/grc9v4-constitutive-design/decisions/ATCCIPCoupledProgram.md).
+Native staging and exact rational proof support a sufficient joint box:
+Z radius 1/5000, total H radius 1/4096, kappa_H in [1/2,3/5]. No native
+ATC or nonlinear causal witness is claimed by the staging fixture.
+[CIP-1's combined causal chain](./investigations/grc9v4-constitutive-design/decisions/ATCCIP1CausalChain.md) is
+now executed successfully on its frozen input: one ordinary onset, source-only
+split, both-role signed-carrier readmission and two target beats per role,
+plus one beat for each one-time control. The same total-H estimates prove
+indefinite exact-real return and unsplit resource obstruction. The user now
+authorizes [CIP-2 reference/conformance](./investigations/grc9v4-constitutive-design/decisions/ATCCIP2Reference.md).
+Reviews and additive DB-04 ancestry live under `evidence/atc-cip-successor`;
+old certificate bytes remain unchanged. CIP-2 is independently reviewed and locally
+passes exact/signed carrier boundaries and represented neighbors, 2369
+independent scalar and 146 covariance comparisons, research-owner rollback/
+replay (19 rejection cases), and eight finite rounding steps. Its largest
+C/W/Z/J/H error is below 4.4e-16 against a 1e-10 bound; measured charge drift
+is not repaired or granted exact-charge authority. The
+[CIP-2 review disposition](./investigations/grc9v4-constitutive-design/evidence/atc-cip-review/README.md)
+records local certificate/source-binding PASS separately from the reviewer's
+uncompleted exact-record comparison (the certificate was absent from their
+upload). The separately authorized
+[all-28 adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCCIPClaimDebtAdjudication.md)
+now admits three conditional CIP claims: 14 debts close locally, six remain
+partial, eight are not activated, and all 28 remain globally open. Keep the
+existing relational carrier law, use the coupled root's own allocator, and
+do not confuse a one-time Z reset with disabling the writer. See the
+[CIP evidence/reproduction index](./investigations/grc9v4-constitutive-design/evidence/atc-cip/README.md).
+For the current result use the
+[CIP-2 successor index](./investigations/grc9v4-constitutive-design/evidence/atc-cip-successor/README.md).
+Use `atc-cip-query` for the accepted inventory, claim reconstruction and
+realization-local debts; older queries retain their older scopes. See the
+[admission/reproduction index](./investigations/grc9v4-constitutive-design/evidence/atc-cip-admission/README.md).
+This closes the scoped CIP research/admission work, not aggregate ATC-2.
+The user has selected A_RG2b above; do not
+start another CIP discovery campaign. Native implementation remains downstream
+of topology proposal → paper → specification in Phase 9.
+
+**A_CI CI-0–CI-3 are scientifically complete, independently reviewed PASS,
+and source-admitted at paired research scope.** The user authorizes the
+[CI claim/debt adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCCIClaimDebtAdjudication.md).
+Four conditional claims and all 28 separate CI debt dispositions are queryable:
+14 locally closed, six partial, eight not activated. DB-05 closes through
+the joint-root/regularity proof; DB-24 closes for this exact source inventory.
+All global debts remain open. No native or aggregate closure is inferred.
+
+Use `atc-ci-query audit`, `claim ATC-CI-REFERENCE-03` and `debt ATC7-DB-24`
+via the side-tool runner; see the portable commands in the
+[admission README](./investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/README.md).
+The typed API is `grcv4_explorer.atc_ci`. Ten focused CI admission tests and
+all ten historical PC tests pass, preserving the PC/A_OS graph and source
+identities. No numerical campaign was rerun for adjudication.
+
+The final review passes both the closed-boundary and derived-witness fixes.
+CI-3's reviewed scientific certificate retains its exact bytes and historical
+pending flags; the new ledger is the current acceptance authority. Measured
+represented charge drift remains a downstream numerical-policy finding.
+No additional CI scientific stage is required. CI+PC now proceeds separately
+as above; it does not inherit CI/PC acceptance or local debt closure.
+The later proposal → paper → specification → native implementation order remains.
+
+### Reviewed CI-1 / accepted paired PC context
+
+The user replaces the OS-lift framing with the
+[realization-native A_CI/A_PC sequence](./investigations/grc9v4-constitutive-design/decisions/ATCCIPCRealizationNativeProgram.md).
+CI-0/PC-0 pin actual ordinary-step and poststate-event operands; CI-0's
+reviewed staging now has full joint-root equality/digest evidence. CI-1's
+full-feedback causal anchor and PC-1's evolving-W/Z obstruction have independent
+scientific PASS in the
+[anchor certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json).
+CI's actual root activity gives both-role target entry/return; its failed
+auxiliary OS-style balance comparison is retained, not hidden. PC's carrier
+ball preserves source obstruction and exposes a nontransportable naive
+cross-sector entry. Exact charge/pairing/carrier-support premises are now
+executable admissions, including sub-grid negative pressure. The quoted
+provenance HOLD is resolved against the unchanged committed G7 chain.
+PC-2 pressure supersedes selection of partial-loss restriction: the new bridge
+can carry the exact decorated cross-sector relation losslessly. The revised
+candidate preserves within-sector blocks, maps that scalar to bridge
+incidences, and leaves bridge diagonal zero. It has an exact inverse and
+Frobenius isometry on the decorated 2+2 domain, not on arbitrary carriers.
+Relational sign-fidelity continuity `c_target=c_source` now resolves polarity
+beyond covariance. Z may become indefinite while H stays SPD; the event
+domain explicitly allows this without requiring ordinary target-graph PSD
+reachability. The five-dimensional image is a proper subset of the
+seven-dimensional decorated signed target ball, not the whole ball.
+Projection/reset remain explicit-loss controls; the generic double-odd no-go
+remains a scope boundary. See the [revised PC-2 certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCRelationalLiftCertificate.json).
+The follow-up freezes that lift as PC-3's sole policy; no PSD fallback or
+new contract is needed inside this experiment. Any failed signed-law result
+must remain visible; a PSD successor would need a separately preregistered
+contract and new bounded PC-2b investigation.
+[PC-3's certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC3CausalChainCertificate.json)
+now supplies source-only allocation `33615/65536`, complete both-role target
+readmission and uniform signed-domain return with evolving W/Z. Two actual
+target beats per role leave the five-dimensional event image while remaining
+in the seven-dimensional admitted carrier ball. Indefinite continuation is
+an exact-real bound, not a long trajectory or native result.
+The [independent PC-3 review](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-IndependentReview.md)
+is **PASS**, with no corrective numerical rerun. The reviewed mathematical
+payload and original review identity remain pinned separately from status updates.
+The user then authorizes PC-4. Its
+[combined paired-domain/reference certificate](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC4ReferenceCertificate.json)
+adds a positive parameter box, variable requests [3/25,1/8] at fixed physical
+tau, full-graph independent stage comparison, research owner/replay/rollback
+and a four-step-per-role represented C/W/Z error bridge. Measured binary64
+charge drift is retained, not normalized into an exact-charge assertion.
+The [independent PC-4 review](./investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC4-IndependentReview.md)
+is **PASS — bounded paired-domain/reference/representation closure**, with no
+corrective rerun. Preserve the conditional whole-box event premise and the
+analytic C1/executable quadratic distinction. Reviewer-reported mixed-corner
+pressure is diagnostic, not a universal formation theorem or new local run.
+The user now accepts the [paired A_PC claim/debt adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCPCClaimDebtAdjudication.md).
+Five conditional claims and all 28 PC-local debt dispositions are queryable
+through `atc-pc-query` and `grcv4_explorer.atc_pc`: 13 locally closed, six
+partial, nine not activated. **DB-24 closes for this exact PC inventory**;
+all global debts remain open and the A_OS graph is unchanged. The superseded
+projection is a control, not the selected law. No PC-5 discovery is needed.
+Active coupled-environment carrier transport is a future extension outside
+the four-edge map, not a PC-4 defect or inferred family-wide closure.
+Reproduce with `scripts/check_atc_pc_reference.py` under the
+investigation directory; no CI/OS numerical campaign is needed.
+CI-2 and CI-3 use separate successor notes/evidence; final independent PASS
+and scoped CI admission are complete. The shared CI/PC note and retained
+certificates are frozen PC provenance. Their earlier pending flags are historical; the new
+adjudication, not a rewrite of reviewed mathematics, supplies PC acceptance.
+Do not repeat A_OS's discovery/generalization ladder. Reuse scoped lemmas,
+screen operation support early, and generalize only after a complete causal
+chain. Only the four explicitly admitted conditional CI claims are accepted
+at their paired research scope. No production
+code, paper or specifications are opened; aggregate ATC-2 remains open.
+
+### Prior opening and accepted A_OS path
+
+The user requested the scientific-first autonomous-topology extension.
+References were committed at `0386568`; the
+[ATC successor opening](./investigations/grc9v4-constitutive-design/decisions/ATCSuccessorInvestigationOpening.md)
+now pins the accepted substrate, primary-source subjects and inherited
+forensic boundaries. The [source intake](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSourceIntake.json)
+routes 35 proposed claims and 28 proposal debts without admitting them.
+
+**The opening and ATC-1 bounded research envelope are user-accepted**:
+[acceptance and clarifications](./investigations/grc9v4-constitutive-design/decisions/ATC1Acceptance.md),
+[causal-boundary proposal](./investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md),
+[source/claim mapping](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC1CausalBoundaryProposal.json),
+and [focused pressure](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC1PressureResults.json).
+K0 selects a current-only, time-homogeneous witness with no new memory and one
+attempt after a successful positive beat; event failure keeps the committed
+ordinary poststate. Five realization recipes are proposed, not ten native ATC
+adapters. Checks distinguish protocol models from existing numerical owners.
+The user confirmed the full opening/reconstruction review. The addendum records
+the diagonal-reference CAN-R+ null result, historical-crossing and sampling
+limits, and retention of s2 after post-event-commit interruption. Reviewed
+proposal/evidence bytes remain unchanged; their preparation statuses are historical.
+**ATC-2 has an independent bounded review, not user acceptance**:
+[candidate laws and target construction](./investigations/grc9v4-constitutive-design/decisions/ATC2CandidateClosureProposal.md),
+[dispositions and typed provenance](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC2CandidateClosureProposal.json),
+[retained execution](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC2PressureResults.json).
+CAN-A/C have concrete represented-value research laws. Three generated requests
+execute through the existing supplied-event owner, with independent role maps,
+history-only controls, replay/continuation and reset-only failure pressure.
+Ten current-read fixtures are not ten ATC-enabled products. The three-node A_PC
+source fails its fixed envelope; CAN-B's functional/branch/mode-to-partition
+front remains held despite a conditional split builder. The
+[review correction and capability continuation](./investigations/grc9v4-constitutive-design/decisions/ATCCapabilityClosureContinuation.md)
+now control the work order: use earlier substrates as directional hints, derive
+V4-native mechanisms, and keep ATC-CAP-REQ-01 open for relation growth,
+endogenous refinement and simplification across all ten families, their
+constitutive composition and continued autonomy. Do not synthesize only the
+currently passing subset as the final extension. Partial ATC-3 adjudication
+remains possible without closing those requirements.
+
+The first information probe performed fifteen native reads/admissions and
+twelve fixed-amplitude resource redistributions, with no steps or events.
+Currents change while the Hodge-only birth decision stays unchanged; a uniform
+zero-current A_OS control also responds. Thus information exists beyond that
+score, but response alone is not a refinement/growth criterion. The subsequent
+[refinement discrimination](./investigations/grc9v4-constitutive-design/decisions/ATCRefinementDiscrimination.md)
+uses the pinned original core paper as direction. Positive finite amplification
+also occurs in that homogeneous control. A separately declared simple A_OS
+control distinguishes temporal growth from partition selection; a conservative
+supplied equal split creates resource contrast and flow from a uniform source,
+unlike its matched identity/history-reset control. It is not automatically
+neutral field refinement or evidence of a new attractor. Next investigate a
+source-side physical-fission criterion and equivariant partition under the
+current unit-measure contract, with constructor/history controls. A measure-aware
+neutral-refinement alternative would require a separate scientific extension;
+none is selected or implemented. Keep the structural-functional route open.
+
+The [review follow-up](./investigations/grc9v4-constitutive-design/decisions/ATCModalSplitDiscrimination.md)
+corrects the earlier note: current W stays all-one throughout the simple modal
+control; only the event's distinct reset W is reinitialized. Three new native
+supplied splits now confirm the fixed-construction discriminator: the higher-
+growth mode leaves the children equal, while opposite lower-growth modes yield
+child differences of -1/4096 and +1/4096 after one target step. The original
+uniform split is reused, not rerun. Degree two has a unique unordered partition;
+the failed sign-lift interpretation is not a partition impossibility. Source-
+only guard/partition justification, sustained organization and all-product/native
+ATC closure remain open. These results are research, not scientific acceptance.
+
+The subsequent review found no correction needed and redirected the work to a
+source-only law. [CAN-F2](./investigations/grc9v4-constitutive-design/decisions/ATCSourceFissionProposal.md)
+is now an explicitly new, unaccepted accumulation/funding hypothesis on simple
+degree-at-most-two sources. Two strict inflows plus individually funded child
+allocations select a unique parent/partition; through-flow remains `no_event`,
+multiple active loci remain unresolved, and higher degree is uncertified.
+One native A_OS ordinary step crosses the proposed funding guard, with no
+target construction or event. This is source-rule/onset evidence, not a proof
+of fission necessity or accepted capacity. The subsequent
+[benchmark review and fixed-target study](./investigations/grc9v4-constitutive-design/decisions/ATCFissionTargetDiscrimination.md)
+now preserve its initial-endowment meaning while refuting general dynamic
+support: native asymmetric children can lose resource and exterior inflow.
+The symmetric onset prediction, both counterexamples and a nonuniform-history
+split/control are tested without changing F2, with three-step continuations.
+The nonuniform-history target immediately reactivates F2 at its larger child.
+The [new follow-up](./investigations/grc9v4-constitutive-design/decisions/ATCFissionContinuationAndSupport.md)
+replays that split, commits the next positive ordinary invocation and executes
+exactly one source-selected descendant attempt. It commits a five-node target
+whose immediate reread is `no_event`. This is bounded caller/catalogue execution,
+not recursive draining, installed policy transport or indefinite stopping.
+The same follow-up defines operational support separately from F2 selection.
+A proposed homogeneous multiwell A_OS mathematical binding has exact positive
+child-load response and return bounds, with a negative formation-neutral control.
+It is NOT a native profile: production currently has only the zero-derivative
+site-potential evaluator. The [subsequent review and bridge scope](./investigations/grc9v4-constitutive-design/decisions/ATCSupportFixtureReviewAndBridge.md)
+record PASS for the proposed mathematical fixture and positive bounded F2
+repeated use, but not fission-caused acquisition. A focused probe confirms that
+current evaluation, crossing declarations and the reference-pass initializer
+reject the new potential ID, while zero-potential controls pass. Next resolve
+the explicit potential-plus-initializer contract through the existing authority
+route before native testing. Compare off-root initializer potential/flux, not
+only all-one W. Then separately test fission/direct-preparation/no-fission
+causal controls; equal direct-preparation futures would indicate state-mediated
+effects, not disprove a causal effect of fission. No native support campaign
+has run, no production potential is aliased, and CAN-B/generic closures stay open.
+The next review supports the design with both gates still OPEN. The proposed
+[potential binding](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportPotentialBinding.json)
+now pins polynomial, units, domain, exact evaluation/rounding, finite work and
+public initializer intermediates to a SHA-256 identity; fourteen mutations fail
+even with recomputed hashes. The [causal preregistration](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportCausalPredictions.json)
+checks exact and stage-rounded predictions without native execution:
+projected target baseline f is source f/6; source normalized parent response
+is about 0.03192285 versus target pair 0.00174990, with both child Q positive.
+Expect altered organization/addressability, not capability from absence. The
+event counterfactual concerns the whole fission intervention. A direct-prepared
+target needs a fresh independent publication, never stripped event receipts.
+Final independent review now closes the design/preregistration review with no
+mathematical redesign requested. It recommends the bounded native successor
+next. The user clarified the intended placement: research code is allowed
+inside this investigation; only the substrate `src/*` is frozen. No exception
+to the production ordering is needed. The [local support experiment](./investigations/grc9v4-constitutive-design/decisions/ATCSupportLocalResearch.md)
+now implements the reviewed reduced equations and public initializer records.
+Eight focused checks and the fixed F/D/N plus eighteen loaded continuations
+pass, including exact preregistered differences, F/D equality, positive child
+responses, energy descent and box membership. Rounded charge drift is reported
+without repair. This is evidence for the mathematical foundations, not native
+substrate lifecycle validation. Independent review now closes **N-R** and the
+bounded **C-R** result; **N-P/C-P** remain deferred production obligations.
+Do not rerun the same F/D/N campaign. A small append-only checked constructor
+interface rejects inconsistent redundant allocation records while preserving
+the original execution and source identities. The
+[reviewed sufficient-condition theorem](./investigations/grc9v4-constitutive-design/decisions/ATCAddressabilitySufficientConditions.md)
+derives root-independent participation/trapping/response conditions and checks
+them uniformly for p_lambda = p_0 + lambda C, |lambda| <= 1/8192, without a
+trajectory rerun or changing the pinned law. Independent review passes the
+theorem, family certificate and affine exclusion; precision amendments are
+applied without changing the certificate. The new corollary requires a softer
+source-route slope alongside stiff target neighborhoods. Positive child
+response is implied by target convexity and the specified loads, not an
+independent discriminator or general controllability. The user chose
+graph/partition dependence before feedback. The new
+[double-star analysis](./investigations/grc9v4-constitutive-design/decisions/ATCPartitionDependentStability.md)
+derives an exact unit-bridge affine restorative-curvature window iff kappa>0
+and both supplied binary blocks have size >=2; stable Euler steps need a
+separate bound. A 2+2 example has positive-resource encounter
+return and positive child responses without slope softening; a funded/inward
+1+3 control remains unstable. Sixteen partition-size/isomorphism class checks
+support the all-integer proof, not a literal enumeration of 247 labeled maps.
+Independent mathematical review passes. The linked corrected successor
+certificate preserves the original and adds four exact Euler images for the
+mode switch and same-source s=5 contrast, plus bridge-weight scope checks.
+There is no trajectory campaign/native event and CAN-F2 is unchanged. Formal
+claim/debt admission remains open. The subsequent
+[coupled history analysis](./investigations/grc9v4-constitutive-design/decisions/ATCHistoryFeedbackContinuation.md)
+restores Candidate A's selected-current-squared writer on the degree-two map.
+Exact bounds give full C/log-W return for gamma in [0,256] and the depressed
+history domain exp(-1/128)<=W<=1, positive child
+response and one signed joint encounter, with W affecting both mobility and
+stiffness. Four finite research evaluations verify the active writer's next-read
+effect and staging; no old campaign is rerun. Independent review now passes,
+with fixed-reference load and debt-scope clarifications. The result is
+history/support evidence, not CAN-B functional/mode/partition closure. The
+note distinguishes its tree-based return proof from the pure-gradient
+stationary identity, which also excludes cycle currents on closed cyclic
+graphs but does not prove return there. It proves transient history feedback,
+not durable resting memory. The multiwell potential/nonzero-gamma initializer
+binding is still outside native admission; the reviewed checker/certificate
+and old zero-feedback binding are unchanged. The new
+[OS geometry successor](./investigations/grc9v4-constitutive-design/decisions/ATCOSGeometryFeedbackContinuation.md)
+now restores explicit Read-Back, star-assembled geometry and its actual
+potential consumer alongside the history writer. A uniform exact return box
+covers chi_A<=1/2, kappa_H/kappa_Ah<=1 and gamma<=256, all nonnegative, on the
+same depressed-history tree domain. SPD, current denominators, floors and the
+OS split tolerance are bounded, as are one encounter and finite child response.
+Ten finite mathematical steps and one unselected extra-corrector read check
+same-input controls, dense assembly/lowering, covariance and continuation.
+Independent mathematical review now passes for this bounded three-path result.
+It proves compatibility with return, not stabilization caused by geometry.
+Return is uniform over the gain box; strict activation is witnessed at the
+fully enabled corner, not at every state/gain. The prepared effect is tiny,
+and even inherited-history resource differences are only about 0.974 child
+endpoint ulp (1.948 ulps at the outer endpoints below 1). Robust native endpoint
+nonannihilation remains open, as does admission of the research 2^-30 residual
+tolerance and exact native arithmetic. Higher-degree/all-family/ATC closure
+remains separate. Reviewed checkers and records are unchanged; no production
+source changes or numerical campaign reruns accompany this review.
+The user's agreed [partition/OS continuation](./investigations/grc9v4-constitutive-design/decisions/ATCPartitionOSFeedback.md)
+now has independent mathematical review PASS. Under one affine-law gain box,
+the same funded s=5 source's supplied
+2+2 map enters positive C/W return and tolerates one fixed-reference encounter;
+1+3 retains an expanding tangent, positive-resource first-step expansion and
+a negative large-child response. The gain/history/tolerance declaration is
+new, not a substitution into the reviewed degree-two law. Twenty-one finite
+staged steps and exact bounds check both maps, consumed geometry and writer
+continuation, with no native event or broad campaign. The independent review
+reconstructs the mathematics and checks hashes; it does not rerun the retained
+Decimal diagnostics. Scope is one-pass history/read/geometry with alpha=beta=0,
+no carrier and a load-bearing identity star adapter. The 2^-9 tolerance is
+research-only; uniform return/sign bounds and selected activation witnesses
+have different quantifiers. Reviewed records and checker stay unchanged,
+including historical pre-review status. Next investigate source-side
+physical distinction and equivariant partition selection. The symmetric source
+still has three equivalent labeled 2+2 outcomes; favorable size-class evidence
+does not choose one. Do not silently add a target-stability filter to F2.
+The [source-symmetry continuation](./investigations/grc9v4-constitutive-design/decisions/ATCSourcePartitionSymmetry.md)
+now proves that obstruction and tests an explicit source-only grouping proposal.
+It scores within-block variance of the four strict inward activities over all
+seven binary partitions. Full symmetry returns all seven alternatives; genuine
+two-level resource asymmetry survives the coupled A_OS read and uniquely
+determines 2+2 or 1+3, without using target consequences. Symmetric generated
+geometry cannot provide a preferred contrast direction. Exact bounds and
+seven finite present reads pass, with covariance/tie/error controls and zero
+ordinary steps, writers, targets or events. Independent mathematical review
+passes and reproduces the exact routines and all seven finite source reads.
+The reviewed checker/certificate remain unchanged, including historical
+pre-review status. Equivariance permits complete orbit unions; all seven is
+this rule's equality outcome. The variance score includes explicit cardinality
+weighting, not just covariance. Score gaps vanish quadratically, the D/10
+error radius linearly. Neither new asymmetric size class inherits previous
+target-support bounds or its old equal resource allocation.
+The new [competing-source result](./investigations/grc9v4-constitutive-design/decisions/ATCCompetingSourceInformation.md)
+now makes that distinction. With crossed nonuniform retained W, resource and
+selected-current partitions differ uniformly on a bounded source/gain box.
+Reassigning history at fixed resources and history multiset changes the current
+partition; equalizing history restores the resource partition. Exact stage and
+score-gap bounds plus twelve finite complete source reads pass. Current
+variance has a precise conditional meaning as two-block approximation error
+of instantaneous leaf continuity rates. History-only grouping also agrees
+here; the read-off control retains disagreement, so this is not geometry-caused
+partitioning or a proof of spontaneous history formation. There are no ordinary
+steps, retained writes, targets or native events. Independent mathematical review
+now passes through exact bounds, identity checks, upper-anchor continuity and
+retained diagnostics, not a reported rerun of all twelve source reads or the
+forensic stage. Reviewed checker/certificate and predecessors remain unchanged,
+including historical pre-review machine status. The reviewed interpretation is
+instantaneous degree-one-star rate projection, **not dynamical lumpability or
+persistent grouping**. The construction deliberately lets history dominate;
+resource-only insufficiency is proved, current-specific superiority over W is not.
+The user redirected this proposed next step toward the physical obstruction
+itself; three-way grouping is no longer a milestone. The new
+[unsplit-viability result](./investigations/grc9v4-constitutive-design/decisions/ATCUnsplitViabilityAndMechanicalBoundary.md)
+proves loss of indefinite positive fixed-topology continuation in a declared
+symmetric affine A_OS family, with full fresh reads and retained-history writes.
+At h=1/8 resource exit occurs by attempt seven; the two finite source controls
+both reject attempt six after five positive updates. All incident activities
+stay equal. The unstable concentration mode and source symmetry supply no
+binary half-edge lift. The reviewed 2+2 remedy applies at the original prestate,
+not arbitrary late splits. A per-vertex energy offset leaves fixed-graph dynamics
+unchanged but changes split-energy sign, and zero-offset energy decrease favors
+the known 1+3 counterexample. Fourteen source reads, ten positive mathematical
+updates and exact arithmetic pass; independent mathematical review now passes
+through bounds, energies, modes and a scalar enabled-trajectory reconstruction,
+not a reported end-to-end repository rerun. There are no
+native events or new target dynamic runs.
+The successor
+[critical-mode investigation](./investigations/grc9v4-constitutive-design/decisions/ATCCriticalModeAndRefinementTest.md)
+now addresses the next question. It strengthens the old result to all positive
+non-Zeno schedules and distinguishes conserved-measure subdivision from the
+unit-site maps. A new parallel-edge source, with p(c)=15c/2, develops one simple
+contact-resolving instability through ordinary history recovery. Rectifying
+edge differences by the parent incidence gives one source-determined unordered
+2+2 partition. The excited zero-read source loses positivity, and its directly
+mapped target also does: retained cross-contact edges amplify the instability.
+Do not transfer the old tree's positive target theorem to this graph.
+Enabled feedback is covered only by homogeneous step linearization, not by
+the finite-amplitude obstruction. Exact checks and 52 full Decimal96 reads pass,
+with 21 positive mathematical updates and two rejected proposals. No native
+event, target search, accepted claim/debt or production modification occurs.
+Independent mathematical review now passes onset/decomposition, the adaptive
+bound, target equations and both reconstructed continuations. It did not run
+the complete repository forensic checker. Checker/certificate bytes remain
+unchanged, including their historical pre-review status.
+**Stop this mechanism branch; do not tune it further.** Its unchanged cross
+edges contribute 8 of the source eigenvalue 9, versus 1 from the parent star.
+For positive-mobility parent-only refinements at unchanged unit measure, their
+Rayleigh contribution 8w exceeds a=15/2 once w>15/16. Parent resource allocation
+or bridge tuning cannot remove this instability under the same affine law and
+unaffected-history recovery. This does not prove every specially prepared
+target trajectory must fail. The particular tested map has a stronger actual
+positive-domain-exit theorem. No additional target or measure campaign is due.
+The governing direction remains ATC-2/autonomous splitting, not refinement sophistication.
+Before target construction, screen a candidate for whether its allowed primitive
+can modify a constitutive component responsible for the obstruction. For binary
+vertex splitting, seek a removable component at the locus and a decomposition
+of that same obstruction. If sufficient obstructing support is untouched, stop
+that candidate. Only a compatible mechanism merits transfer/measure/history
+derivations toward the complete causal chain. This is a scientific screen,
+not an additional governance/tooling gate. New constitutive physics, if needed,
+must be named as such, not smuggled in as a split implementation detail.
+
+The screen now yields a
+[positive localized-sector witness](./investigations/grc9v4-constitutive-design/decisions/ATCLocalizedSectorFission.md).
+In a different four-star source with p(c)=19c/4, two exact retained-W response
+sectors persist under ordinary recovery. Their classes equal the simple top
+mode's distinct contact amplitudes; no sign split or approximate clustering is
+used. A source-only obstruction/inflow/sector rule fixes its partition at the
+first successful ordinary poststate. The original all-W-reset witness passed
+independent mathematical review; its checker/certificate remain unchanged,
+including the no-split and reset-without-split failures (attempts 10 and 7).
+
+The [review successor](./investigations/grc9v4-constitutive-design/decisions/ATCLocalizedSectorFission.md#8-review-integration-retain-history-and-keep-pressure-distinct-from-funding)
+removes unnecessary history erasure. It uses the same partition, resource map
+and target; old-edge W1 survives in current, actual W0 in reset, and only the
+new bridge is seeded to one. Both first target steps are positive and enter
+the radius-2/3 ball about (3/2)1 (norm squared 0.2512835384 / 0.3246804772).
+The latter corrects the review's reset comparator, which used current W1.
+Uniform contraction at most 1829/2048 proves indefinite continuation even as
+retained histories evolve. The original 457/512 bound belongs only to HRESET.
+
+Source pressure/decomposition is now separate from funding admission: blocked
+funding preserves the certified obstruction and resolved prescription. Multiple
+pressure loci remain unresolved even if only one is funded. Exact entry/status
+checks, twelve coordinate actions and six Decimal steps pass; no old campaign,
+native execution or target search is run. The
+[new certificate](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorLineageCertificate.json)
+binds the unchanged original evidence and the focused successor checker.
+
+Independent review now passes the lineage successor's exact/finite mathematics;
+it did not run the repository wrapper. Both reviewed scripts/certificates stay
+unchanged. The [typed status corrections](./investigations/grc9v4-constitutive-design/decisions/ATCLocalizedSectorFission.md#9-lineage-review-pass-and-status-typing-corrections)
+separate resolved-per-locus decomposition from multiple-locus arbitration and
+funding from construction-size admission. Thirteen source-status cases pass
+with unchanged physical outcomes/prescriptions, no target construction and no
+trajectory rerun. The current research status entry point is `prescribe()` in
+[check_atc_sector_status.py](./investigations/grc9v4-constitutive-design/scripts/check_atc_sector_status.py).
+History follows a source-to-successor edge map with a changed parent endpoint;
+it is not literal unchanged edge identity.
+
+The [CAN-LSF proposal](./investigations/grc9v4-constitutive-design/decisions/ATCSectorConstitutiveProposal.md)
+now recommends a bounded sector-to-site law explicitly, with its activation,
+authority and debt surface. It is an alternative to classical CAN-B, not a
+retroactive closure of that route. The larger pressure domain is distinct from
+proved restoration; h0=1/8 and its writer are fixed mathematical assumptions.
+An exact-policy successor must enforce that ordinary request domain before
+execution without adding duration to the physical event input. The proposed
+positive-resource scaling corollary is algebraic, newly derived for review,
+and not attributed to the independently reviewed anchor.
+
+Six proposal claims and local assessments of all 28 origin debts preserve the
+35 original claims and 165 reciprocal links. Fresh typed authority queries pass
+without admitting these handles. No target or trajectory was rerun.
+**Current successor:** the [CAN-LSF acceptance](./investigations/grc9v4-constitutive-design/decisions/ATCSectorConstitutiveAcceptance.md)
+records the supplied ACCEPT review and scoped scientific adjudication of all
+six local claims/28 debt assessments. Positive scaling passes analytically.
+The original proposal and certificates remain unchanged; their pending fields
+are historical. This is not typed source readmission or native authority.
+
+The [separate Read-Back proposal](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackLiftProposal.md)
+and [first results](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackLiftResults.md)
+are the new review subject. At the fixed enabled point, the existing
+reference-stage rule selects k=30779; feedback is consumed, both target roles
+enter the declared region and enabled unsplit/reset-only controls fail through
+nonpositive resources. The conditional target theorem has q<=9209/10240<0.9
+uniformly over the proposed positive compact box. Decimal source/entry values
+are diagnostics, not certified enclosures or whole-box closure.
+
+The [qualified review](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Qualified-Pass.md)
+passes the isolated mathematical rerun and the uniform conditional theorem,
+but holds nonzero scope acceptance and a second adjudication. Its requested
+point-first [certificate](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackPointCertification.md)
+now passes exact outward checks: admitted source beat, strict reference-stage
+guard, unique dyadic bin/funding, enabled no-split/reset-only resource failures,
+and actual independent target entry. This is new evidence awaiting review;
+the original Decimal evidence remains unchanged. Composing the point entry
+certificate with the passed target theorem supplies infinite continuation.
+
+The [point PASS](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Point-Pass.md)
+now independently confirms kernel/symmetry/evidence (not the repository wrapper).
+The [second adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackPointAdjudication.md)
+accepts the point and conditional target theorem, not the full source box.
+Reviewed point artifacts and the first adjudication stay unchanged.
+
+The [original-box certificate](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackBoxCertification.md)
+now proves source/entry over all parameter tuples. The conservative k hull is
+30378–31236, covered by eight proof cells, each passing both actual roles.
+There is no parameter shrinking or physical target choice. Source counterfactual
+resource rejection is uniform at attempts 10/7; the infinite tail follows from
+the reviewed conditional theorem. Five nonzero exp probes use independent
+rational brackets, without changing the accepted point certifier.
+
+The [box PASS and third adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackBoxAdjudication.md)
+now accept the complete original box for the fixed prepared family. Six
+successor local claims carry all 28 wider debts forward; reviewed bytes stay
+unchanged.
+
+The independently reviewed
+[G1–G4 proofs and certificate](./investigations/grc9v4-constitutive-design/decisions/ATCSectorStateDomain.md)
+are now accepted in the
+[fourth scoped adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCSectorStateDomainAdjudication.md).
+Six local claims/all 28 wider debts retain the exact review ceilings:
+G1/G2 cover the paired quotient, not unrestricted symmetry-breaking source
+states; G3 defines exact sectors but grants no arbitrary-orbit surgery;
+G4 proves one active environmental class and whole-graph restoration, not
+arbitrary surroundings. The second-parent exclusion remains evidence. The
+reviewed note/checker/certificate and earlier adjudications remain unchanged.
+
+The
+[new proof and reproducible certificate](./investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAndRequests.md)
+bind explicit host-frame WLS references, active alpha/beta, a C¹ potential
+class including nonlinear laws, and shifted equilibrium W→exp(-alpha c).
+G6 extends h to [3/25,1/8] at fixed tau=1/(8 log 2). The paired/embedded
+source obstruction and independent actual-role target return survive, with
+resource factors below 9/10 and 49/50. Embedded source horizons are at most
+seven (G5) and ten (G6), not exact common failure times. The independent
+G5–G6 PASS is now accepted in the
+[fifth scoped adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAdjudication.md),
+with six local claims/all 28 wider debts retained and reviewed bytes unchanged.
+
+Preliminary readiness checks pass native WLS and log-writer primitives against
+independent oracles, but the production A current still admits only the
+zero-derivative potential. The user authorized **G7 inside the investigation,
+not src**. The [reference conformance package](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReferenceConformance.md)
+now executes the full nonlinear graph law, compares all stages with an
+independent oracle, and checks source-only dyadic selection, actual current/
+reset transfer, old-edge lineage, bridge-only seeding, rollback and replay.
+Four sixteen-step continuations compare exact enclosures with publication-only
+binary64 rounding, represented h and fixed represented tau. Errors are below
+4.1e-16 for C and 8.3e-17 for W at these inputs. Charge drift of about 2e-15
+is retained, not normalized away; infinite binary64 conservation/return and
+full production staged arithmetic are not proved.
+
+The [sixth scoped adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCSectorReferenceAdjudication.md)
+now records **G7: PASS** and **bounded A_OS G1–G7 research program: PASS**.
+The user superseded the review's G7-R/G7-N split: there is no unmet native
+half of this investigation's G7. The reviewer independently reran both
+current-role continuations, not the two retained author-run reset-role runs.
+Reviewed evidence remains fixed. PROFILE_ID binds evaluator operands;
+implementation/checker hashes and the outer record additionally bind
+event/lifecycle semantics.
+
+**Current scientific decision: realization-native A_CI and A_PC**, as linked
+above. Their boundary audits start the work; A_OS supplies reusable scoped
+lemmas, not event currents or inherited restoration. Do not widen A_OS merely
+to satisfy the completed G1–G7 sequence.
+
+Before that continuation, ATC-1 through G7 evidence and all reviews were relocated to
+[research evidence](./investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/README.md).
+Only paths and dependent identities were rebuilt; scientific results and
+dispositions are unchanged. The two manuscripts remain under drafts.
+The [A_OS ledger reconciliation](./investigations/grc9v4-constitutive-design/decisions/ATCAOSClaimDebtReconciliation.md)
+now admits 36 bounded research claims and all 28 scoped debt dispositions:
+13 locally closed, 6 partial, 9 not activated. Global origin debts remain
+open; aggregate ATC-2 remains open. Use the explicit
+[ATC API/CLI](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/ATCQueryGuide.md)
+for this append-only graph, not the historical pre-ATC loader. DB-11 batch
+equivalence and DB-22 repeated-event/non-Zeno science were not proved by
+single-event replay or ordinary continuation.
+
+**Downstream Phase 9 / reserved Tranche 7T, not a G7 research gate:** after
+reviewed claims → topology proposal → extension paper → specification,
+native work needs revision-distinct potential/reference/history/request and
+owner admission, staged numerical error bounds, a justified conservation/
+rounding policy, and public source/current/reset/event/rollback/replay
+conformance. The charge drift is a successful G7 finding identifying that
+later numerical requirement, not an open G7 defect. The research owner begins
+at admitted exact event-state preimages; it is not K0. Production scheduling,
+post-ordinary source admission and generic/descendant dispatch belong to the
+later integration design and are not missing components of this bounded G7.
+Keep the first acceptance's zero-channel scope fixed; no target
+search, silent parameter shrinkage, approximate sectors or fresh-current
+consumer substitution. Do not start final paper/specification propagation
+from this subset. Prepared history/formation, native potential/history/owner
+authority, typed source readmission, other families and capability/composition
+closure remain open. The failed cross-edge branch stays stopped; ATC-2 is open.
+
+Keep the four scientific requirements distinct:
+endogenous condition, genuine unsplit obstruction, a mechanically connected
+partition and invariant-preserving remedy. This is not yet native autonomous
+execution or aggregate ATC-2 closure.
+K0 cannot rescue a failed ordinary beat; an earlier successful event boundary
+and any change from its OS reference witness require separate justification.
+Creation-energy reference, funding/history transport and late-target admission
+are not supplied by the source-failure theorem. Do not add a score threshold,
+target lookahead, clock/counter trigger or native fallback. Preserve reviewed
+evidence, CAN-F2 and accepted authority; all-family closure remains open.
+Family and autonomous-operation questions remain open. A scientific F/D mismatch remains
+a failure to investigate, not evidence of physical receipt memory.
+Agreement to this research direction is not acceptance of F2 or the new potential.
+Claim-graph admission and side-tool source readmission remain separate;
+the receiving mapping is accepted as design, not installed into the graph.
+Research probes precede acceptance; production code does not change until
+the reviewed topology proposal, extension paper and normative specification
+have supplied the required authority. This restriction does not prohibit
+investigation-local research implementations. No native automatic ATC execution has
+been performed; the ATC-2 research script uses separate ordinary/event calls
+and a finite predeclared target catalogue, not K0's integrated serialized owner.
+
+The plan/checklist reserve **7T** before topology-dependent Tranche 8 runtime.
+7T must close native automatic construction, target-policy transport, repeated
+operation and save/load/duplicate without an external target catalogue.
+P9-8.1a remains independently eligible under the unchanged scoped permission,
+but is not the current requested task. Later execution-policy openings must
+bind their exact ATC dependencies. Tranche 7, all accepted G2/G3 records and
+existing evidence remain unchanged; no universal topology or spark result is
+required to preserve that acceptance. Review Tranches 9–10's dependency and
+support subjects when ATC scope is accepted, without dropping the 40 disabled
+compatibility obligations or implicitly selecting optional completion.
+
+The September 15 status below is the accepted baseline, not the new work
+order. Its outstanding full live-status projection check remains outstanding;
+this opening does not claim to have rerun it or the numerical campaigns.
+
+## Accepted baseline — 2026-09-15
 
 The user accepted P9-7.8 and **closed Tranche 7**. The
 [G3 acceptance and closure](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md)

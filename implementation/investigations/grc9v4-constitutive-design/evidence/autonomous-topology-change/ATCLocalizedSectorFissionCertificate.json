@@ -1,0 +1,3819 @@
+{
+  "authority_traces": [
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:1ba6a8daf815527529efb3d5bd0a961f3549c21f04c47d34fd01717da736ad49",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "source_json_pointer": "/normative_equation_contract_registry/1/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-C-011"
+            },
+            {
+              "edge_id": "propagation:2248c2922690e6970179fcc8a2c1e5193f2f14b04739f94c9b6c407169bbeacc",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "source_json_pointer": "/normative_equation_contract_registry/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:47090c7d15f3a7697432749ba918d343e93996b65988b5284f74e077c4d49cb4",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "source_json_pointer": "/normative_equation_contract_registry/1/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:CORE-INCIDENCE-CONTINUITY"
+            },
+            {
+              "edge_id": "propagation:56c19abcee5177ea725d4f66b699849c33ae5591b07b71c267cdf56cc7f8cbe4",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "source_json_pointer": "/normative_equation_contract_registry/1/accepted_claim_ids/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-N-004"
+            },
+            {
+              "edge_id": "propagation:5b24aaa94c5956eae7a24df1acadb8e28292d7a58d68b2bf7f2d770cffcf0cb1",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "source_json_pointer": "/normative_equation_contract_registry/1/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c0eacfef81153ed27af17920eb21a11b01cbe878ca07799d89823877f42f335"
+            },
+            {
+              "edge_id": "propagation:c550ecac05428ec3bbbf3507498e98541bcf54a517176f1bc1059561acbaeb9f",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "source_json_pointer": "/normative_equation_contract_registry/1/source_lineage/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-N-004"
+                ],
+                "blocked_overread": "continuity_does_not_authorize_multiple_resource_writes",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+                "independent_derivation_ids": [
+                  "D10.2-DER-RESOURCE"
+                ],
+                "normative_equation_or_contract": "C_next_equals_C_minus_Delta_t_BJ_plus_external_terms",
+                "parent_object_ids": [
+                  "CORE-INCIDENCE-CONTINUITY"
+                ],
+                "premises_used": [
+                  "oriented_incidence",
+                  "antisymmetric_edge_current",
+                  "typed_external_terms"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRCV3-NORMATIVE-SPEC",
+                  "GRC9V4-CD-D9-v1"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_core",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+              "source_json_pointer": "/normative_equation_contract_registry/1",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/1"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "ec10322b59aad7d88e2f3d7364805f424f3acba02dd0abcbcb52c80743d00d37"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-A-WRITER-TARGET"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:09ba45e20177e0849f5f3e89cb3c29958f9ee382e58c8eaf54811face6d19acf",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:1ffcd4c5ac5a124c6daf00b29f2237d1932a66d3095af94455b380d252b3328e"
+            },
+            {
+              "edge_id": "propagation:2cc6a632609458fd8fcf69c5c084bb65bf56ec5678119aa21515e4190ab3d38c",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20/accepted_claim_ids/3",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-X-006"
+            },
+            {
+              "edge_id": "propagation:314953947994fd8dc6c517d7ac2c89a7885dd41b585a4dcf2aa06a8b1d091c2d",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20/accepted_claim_ids/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-O-001"
+            },
+            {
+              "edge_id": "propagation:580581f1d9eefe1e28a924e8196b4d39e7e58246c8e9f72d1a54b4e1b951c9dc",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:a9de91f8f80f5a818fa83abe47285b98ae8fcb9835ad2a50c4052cb9efcfb41a",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:A-WRITER-TARGET"
+            },
+            {
+              "edge_id": "propagation:ae71f0d502b43308ee29c38bb66b781c23c5d03d288f62b3c789d67946528422",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20/accepted_claim_ids/2",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-X-004"
+            },
+            {
+              "edge_id": "propagation:bc4e2b9d00d706b06de306f3a8c471413dcc64ab64aae62cfb08dbfd76c277fc",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-C-011"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-O-001",
+                  "D10-CL-X-004",
+                  "D10-CL-X-006"
+                ],
+                "blocked_overread": "precontinuity_cache_reuse_is_forbidden",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-A-WRITER-TARGET",
+                "independent_derivation_ids": [
+                  "D10.2-DER-A-GW",
+                  "D10.2-DER-A-READWRITE"
+                ],
+                "normative_equation_or_contract": "W_drv_A_equals_G_W_C_next_J_C_after_refreshed_differentials",
+                "parent_object_ids": [
+                  "A-WRITER-TARGET"
+                ],
+                "premises_used": [
+                  "postcontinuity_C",
+                  "solved_J_C",
+                  "refreshed_GRC_differentials"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D7-v1"
+                ],
+                "specification_destination": "GRCV4_candidate_A",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-A-WRITER-TARGET",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-A-WRITER-TARGET",
+              "source_json_pointer": "/normative_equation_contract_registry/20",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-PARENT-A-WRITER-TARGET",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/20"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "6950b80bc350a121e07d9c72a3cbec4ba11114a48bb12d080bc16cf0598b9a04"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "P9-EC-A-INITIALIZER-REFERENCE-PASS"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:3075dbcd66e47b3eaa78c54268e62523bb129150d2bc4d2e8b755d234006f6cc",
+              "relation": "source_identity",
+              "source": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/contracts/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3"
+            },
+            {
+              "edge_id": "propagation:caf4b6387ab57d8a7d73917f06d011e4df3b97101ccf2e596b15b66ca64cb5ce",
+              "relation": "parent_object",
+              "source": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/contracts/0/parent_object_ids/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "required",
+              "target": "normative_object:P9-O-A-INITIALIZER-REFERENCE-PASS"
+            },
+            {
+              "edge_id": "propagation:fe116bd43752f76467babd6dcc52752cd78863a9972d9ae1e6257c51fca6dcaf",
+              "relation": "accepted_claim",
+              "source": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/contracts/0/accepted_claim_ids/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "required",
+              "target": "current_claim:P9-7.2a-CL-O-INIT-001"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "required"
+            ],
+            "contract": {
+              "attributes": {
+                "accepted_claim_ids": [
+                  "P9-7.2a-CL-O-INIT-001"
+                ],
+                "construction": [
+                  "D = rebuild_target_differentials(C; fixed_target_recipe)",
+                  "E_e = -(alpha*(C_u+C_v) + beta*norm(D_u-D_v)^2)/2",
+                  "W_base_e = max(W_floor, exp(E_e)) = G_W_e(C,0)",
+                  "Phi_base = kappa_c*B*Diag(W_base)*B^T*C - V_site_prime(C;U)",
+                  "J_ref = -eta*Diag(W_base)*B^T*Phi_base",
+                  "W_init_e = max(W_floor, exp(E_e-gamma*J_ref_e^2/2)) = G_W_e(C,J_ref)"
+                ],
+                "equation_contract_id": "P9-EC-A-INITIALIZER-REFERENCE-PASS",
+                "identity_and_restoration": [
+                  "Static policy/numerical/recipe identities precede complete target profile, then output-bearing current/reset invocation records, then migration evidence; no identity cycle or new persistent coordinate.",
+                  "Each invocation binds role, complete target inputs, recipes, policy/numerical identities and resulting W. Derived intermediates must be recomputed if retained; matching claimed flux or hash is not production provenance.",
+                  "The closed payload and release applicability must be specified before runtime. Old explicit-flux records retain their meaning and are not silently upgraded or rehashed.",
+                  "Restoration checks archived crossing inputs and initialized endpoints, not a fresh-initializer constraint on subsequently ordinarily evolved W; external-history trust ceiling remains."
+                ],
+                "initial_executable_domain": [
+                  "unit_vertex_pairing",
+                  "existing_admitted_boundary_and_normalization",
+                  "identity_bound_host_frame_WLS",
+                  "declared_zero_derivative_site_potential",
+                  "existing_nonnegative_resource_and_finite_parameter_domain"
+                ],
+                "inputs": [
+                  "complete_target_graph_orientation_boundary_profile_context",
+                  "target_C",
+                  "identity_bound_fixed_differential_and_site_recipes"
+                ],
+                "lifecycle": [
+                  "Apply one policy independently to current/reset target C and context. Identical operands give identical numeric outputs despite different record roles; do not manufacture a reset-only failure using caller-supplied unequal fluxes.",
+                  "Preserve current/reset C, charge target and clock on same-graph C-to-A. Receipt history-free A W construction separately from source C carrier loss; initialize target A persistent carriers to zero, never reinterpret source C carrier history.",
+                  "Readmit both complete final targets using existing OS/CI/PC/CI+PC/RG2b owners; RG2b state/section admission is not next-beat eligibility.",
+                  "No continuity, resource repair, clock advance, ordinary W write or carrier/formation beat. Publish authority, references, archives, receipts and commit identity atomically after all checks.",
+                  "Typed semantic failures preserve stage/disposition; unexpected programmer exceptions propagate. Preserve accepted F1/F2 known/repeated-state checks and lawful unreceipted assignment without forced adjacency."
+                ],
+                "normative_equation_or_contract": "Exactly one target-only reference transport pass supplies J_ref for the unchanged full G_W; fixed reference data, auxiliary conductance and final retained W have distinct authority. No full-current solve or final-target chart check is imposed on auxiliary W.",
+                "numerics": [
+                  "Existing exact binary64-input WLS with rounded gradient outputs.",
+                  "Auxiliary G_W accumulates its combined exponent exactly before one binary64 rounding, existing math.exp and positive floor; retain the documented far-negative floor branch.",
+                  "Round eta*W_base once as existing mobility; nonfinite or nonpositive results reject, including mobility underflow to zero.",
+                  "Accumulate each full reference potential exactly from rounded W_base and declared site outputs, then round once; no edgewise partial rounding or initializer gauge projection.",
+                  "Use rounded potential and rounded mobility, accumulate each incidence difference/product exactly and round flux once; signed underflow may become canonical zero, unlike positive mobility.",
+                  "Final G_W combines original unfloored alpha/beta channels and rounded J_ref gamma channel before one exponent rounding. No rounded-E addition, log(W_base), floored-product shortcut or extra bootstrap pass.",
+                  "Retain representable subnormals; intermediate potential/flux/exp range failures reject with typed stage/disposition. No clipping, log-domain replacement or fallback current.",
+                  "Existing math.exp is not a new cross-platform correctly-rounded guarantee; retain source/environment and input/output identities without machine-local paths."
+                ],
+                "parent_object_ids": [
+                  "P9-O-A-INITIALIZER-REFERENCE-PASS"
+                ],
+                "staging": {
+                  "auxiliary_admission": "declared differential/conductance/mobility/potential/baseline arithmetic only; no CandidateACurrent, Read-Back, total-current solve or target realization W chart",
+                  "final_admission": "existing whole-target owner with fixed declared domains; no recentering, enlargement or fallback",
+                  "fixed_reference_data": "differential weights/frames/regularization and Hodge/reference geometry preexist independently of W_base and W_init",
+                  "forbidden_inputs": [
+                    "discarded_source_W_or_Z",
+                    "source_current_or_descriptor_cache",
+                    "caller_supplied_flux",
+                    "final_W_being_initialized"
+                  ],
+                  "geometry": "reference_stage_only; reference_relative_increment_zero; final_target_geometry_not_disabled",
+                  "history_free": "identical declared target inputs yield identical numeric W regardless of discarded source history; target C may carry historical influence",
+                  "incidence": "tail_plus_head_minus; loops have zero columns; parallel edges contribute separately",
+                  "not_required": [
+                    "fixed_point",
+                    "zero_A_contrast",
+                    "native_formation",
+                    "arbitrary_parameter_target_admission"
+                  ],
+                  "passes": 1
+                },
+                "support_semantics": "required"
+              },
+              "identifier": "P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/contracts/0",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+            },
+            "support_disposition": [
+              "required"
+            ]
+          },
+          "row_id": "P9-EC-A-INITIALIZER-REFERENCE-PASS",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassAuthority.json",
+            "record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+            "record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+            "source_json_pointer": "/contracts/0"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "7edb0289f4d9a3ab7ec3e9c8d068185239039e01212425862434ffafb2dded59"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "reconstruction_path",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "claim_id": "P9-7.2a-CL-O-INIT-001"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "accepted_backward_reconstruction",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:3075dbcd66e47b3eaa78c54268e62523bb129150d2bc4d2e8b755d234006f6cc",
+              "relation": "source_identity",
+              "source": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/contracts/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3"
+            },
+            {
+              "edge_id": "propagation:3656a1835c927713924ee3e1e7da4a861de19994beabc996fc7a24b0cda41ce3",
+              "relation": "source_identity",
+              "source": "current_claim:P9-7.2a-CL-O-INIT-001",
+              "source_json_pointer": "/claim",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3"
+            },
+            {
+              "edge_id": "propagation:3847408b5ff4b2a7a13d5489603f3ed45a6108bf328d444592e16d5b92f2633a",
+              "relation": "accepted_claim",
+              "source": "normative_object:P9-O-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/object/accepted_claim_ids/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "required",
+              "target": "current_claim:P9-7.2a-CL-O-INIT-001"
+            },
+            {
+              "edge_id": "propagation:5ba543e3a9eca7b935961049ee10c1479b4d20badf1f5dd4eed97cca3359c5e2",
+              "relation": "source_identity",
+              "source": "debt_transformation:P9-7.2a-DEBT-A-INITIALIZER-SOURCE",
+              "source_json_pointer": "/debt",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3"
+            },
+            {
+              "edge_id": "propagation:91aabb420a6581bf0c88fdce60e02354d42e999408300335854ded896cdc48b2",
+              "relation": "source_identity",
+              "source": "verification_obligation:P9-7.2a-VO-A-INITIALIZER-INTEGRATION",
+              "source_json_pointer": "/verification_obligations/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3"
+            },
+            {
+              "edge_id": "propagation:93d686a9f04af21ea89cecd489f58a79f03d3f16f54d10b53bd87256a8a3b311",
+              "relation": "verification_obligation",
+              "source": "debt_transformation:P9-7.2a-DEBT-A-INITIALIZER-SOURCE",
+              "source_json_pointer": "/debt/verification_obligation",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "not_applicable",
+              "target": "verification_obligation:P9-7.2a-VO-A-INITIALIZER-INTEGRATION"
+            },
+            {
+              "edge_id": "propagation:ca4ee2fe3256df3990ad65061ad3200b3396d57e033502ff969a7793d5917315",
+              "relation": "resolved_bounded_by",
+              "source": "debt_transformation:P9-7.2a-DEBT-A-INITIALIZER-SOURCE",
+              "source_json_pointer": "/debt/successor_claim_ids/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "required",
+              "target": "current_claim:P9-7.2a-CL-O-INIT-001"
+            },
+            {
+              "edge_id": "propagation:caf4b6387ab57d8a7d73917f06d011e4df3b97101ccf2e596b15b66ca64cb5ce",
+              "relation": "parent_object",
+              "source": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/contracts/0/parent_object_ids/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "required",
+              "target": "normative_object:P9-O-A-INITIALIZER-REFERENCE-PASS"
+            },
+            {
+              "edge_id": "propagation:e531e1159a98c5199e60ae39a3c3ce18114314fae300a39ae976d629d981c366",
+              "relation": "source_identity",
+              "source": "normative_object:P9-O-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/object",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3"
+            },
+            {
+              "edge_id": "propagation:fe116bd43752f76467babd6dcc52752cd78863a9972d9ae1e6257c51fca6dcaf",
+              "relation": "accepted_claim",
+              "source": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+              "source_json_pointer": "/contracts/0/accepted_claim_ids/0",
+              "source_record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+              "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+              "support_semantic": "required",
+              "target": "current_claim:P9-7.2a-CL-O-INIT-001"
+            }
+          ],
+          "payload": {
+            "nodes": [
+              {
+                "attributes": {
+                  "claim_class": "optional",
+                  "claim_id": "P9-7.2a-CL-O-INIT-001",
+                  "not_claimed": [
+                    "inherited_D10_producer_choice",
+                    "unique_GRC_completion",
+                    "reference_neutrality",
+                    "native_formation",
+                    "source_A_history_preservation",
+                    "arbitrary_backend_implementation",
+                    "exact_GRC9V3_initialization",
+                    "positive_C_to_A_execution",
+                    "aggregate_P9_7_2a_closure",
+                    "G2_or_G3_support"
+                  ],
+                  "scope": "Optional graph-generic Candidate A initialization policy; one shared producer for OS, CI, PC, CI+PC and RG2b with independent current/reset construction and realization-owned target admission.",
+                  "statement": "The target-only one-pass Candidate A initializer reconstructs D(C), evaluates auxiliary G_W(C,0), computes its reference-geometry baseline flux and evaluates full G_W(C,J_ref). On declared inputs it returns provisional initialized W or a declared arithmetic failure; only the final target undergoes whole-realization admission.",
+                  "status": "accepted_bounded_design"
+                },
+                "identifier": "P9-7.2a-CL-O-INIT-001",
+                "kind": "current_claim",
+                "node_id": "current_claim:P9-7.2a-CL-O-INIT-001",
+                "source_json_pointer": "/claim",
+                "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+              },
+              {
+                "attributes": {
+                  "debt_id": "P9-7.2a-DEBT-A-INITIALIZER-SOURCE",
+                  "origin": "D10.2 defines the history-free initializer role but not this current producer; P9-5.1 supplies a conditional explicit-flux constructor; P9-5.4 and P9-7.2a retain the source-rule obligation.",
+                  "remaining_work": [
+                    "reviewed_proposal_then_paper_propagation",
+                    "V4_specification_release_and_closed_payload_binding",
+                    "common_producer_and_five_A_target_migration_paths",
+                    "focused_numerical_lifecycle_and_surface_evidence",
+                    "aggregate_P9_7_2a_reconciliation"
+                  ],
+                  "status": "resolved_bounded_design",
+                  "successor_claim_ids": [
+                    "P9-7.2a-CL-O-INIT-001"
+                  ],
+                  "transformation": "resolved_producer_choice_with_forward_binding_and_runtime_obligations",
+                  "verification_obligation": "P9-7.2a-VO-A-INITIALIZER-INTEGRATION"
+                },
+                "identifier": "P9-7.2a-DEBT-A-INITIALIZER-SOURCE",
+                "kind": "debt_transformation",
+                "node_id": "debt_transformation:P9-7.2a-DEBT-A-INITIALIZER-SOURCE",
+                "source_json_pointer": "/debt",
+                "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+              },
+              {
+                "attributes": {
+                  "accepted_claim_ids": [
+                    "P9-7.2a-CL-O-INIT-001"
+                  ],
+                  "construction": [
+                    "D = rebuild_target_differentials(C; fixed_target_recipe)",
+                    "E_e = -(alpha*(C_u+C_v) + beta*norm(D_u-D_v)^2)/2",
+                    "W_base_e = max(W_floor, exp(E_e)) = G_W_e(C,0)",
+                    "Phi_base = kappa_c*B*Diag(W_base)*B^T*C - V_site_prime(C;U)",
+                    "J_ref = -eta*Diag(W_base)*B^T*Phi_base",
+                    "W_init_e = max(W_floor, exp(E_e-gamma*J_ref_e^2/2)) = G_W_e(C,J_ref)"
+                  ],
+                  "equation_contract_id": "P9-EC-A-INITIALIZER-REFERENCE-PASS",
+                  "identity_and_restoration": [
+                    "Static policy/numerical/recipe identities precede complete target profile, then output-bearing current/reset invocation records, then migration evidence; no identity cycle or new persistent coordinate.",
+                    "Each invocation binds role, complete target inputs, recipes, policy/numerical identities and resulting W. Derived intermediates must be recomputed if retained; matching claimed flux or hash is not production provenance.",
+                    "The closed payload and release applicability must be specified before runtime. Old explicit-flux records retain their meaning and are not silently upgraded or rehashed.",
+                    "Restoration checks archived crossing inputs and initialized endpoints, not a fresh-initializer constraint on subsequently ordinarily evolved W; external-history trust ceiling remains."
+                  ],
+                  "initial_executable_domain": [
+                    "unit_vertex_pairing",
+                    "existing_admitted_boundary_and_normalization",
+                    "identity_bound_host_frame_WLS",
+                    "declared_zero_derivative_site_potential",
+                    "existing_nonnegative_resource_and_finite_parameter_domain"
+                  ],
+                  "inputs": [
+                    "complete_target_graph_orientation_boundary_profile_context",
+                    "target_C",
+                    "identity_bound_fixed_differential_and_site_recipes"
+                  ],
+                  "lifecycle": [
+                    "Apply one policy independently to current/reset target C and context. Identical operands give identical numeric outputs despite different record roles; do not manufacture a reset-only failure using caller-supplied unequal fluxes.",
+                    "Preserve current/reset C, charge target and clock on same-graph C-to-A. Receipt history-free A W construction separately from source C carrier loss; initialize target A persistent carriers to zero, never reinterpret source C carrier history.",
+                    "Readmit both complete final targets using existing OS/CI/PC/CI+PC/RG2b owners; RG2b state/section admission is not next-beat eligibility.",
+                    "No continuity, resource repair, clock advance, ordinary W write or carrier/formation beat. Publish authority, references, archives, receipts and commit identity atomically after all checks.",
+                    "Typed semantic failures preserve stage/disposition; unexpected programmer exceptions propagate. Preserve accepted F1/F2 known/repeated-state checks and lawful unreceipted assignment without forced adjacency."
+                  ],
+                  "normative_equation_or_contract": "Exactly one target-only reference transport pass supplies J_ref for the unchanged full G_W; fixed reference data, auxiliary conductance and final retained W have distinct authority. No full-current solve or final-target chart check is imposed on auxiliary W.",
+                  "numerics": [
+                    "Existing exact binary64-input WLS with rounded gradient outputs.",
+                    "Auxiliary G_W accumulates its combined exponent exactly before one binary64 rounding, existing math.exp and positive floor; retain the documented far-negative floor branch.",
+                    "Round eta*W_base once as existing mobility; nonfinite or nonpositive results reject, including mobility underflow to zero.",
+                    "Accumulate each full reference potential exactly from rounded W_base and declared site outputs, then round once; no edgewise partial rounding or initializer gauge projection.",
+                    "Use rounded potential and rounded mobility, accumulate each incidence difference/product exactly and round flux once; signed underflow may become canonical zero, unlike positive mobility.",
+                    "Final G_W combines original unfloored alpha/beta channels and rounded J_ref gamma channel before one exponent rounding. No rounded-E addition, log(W_base), floored-product shortcut or extra bootstrap pass.",
+                    "Retain representable subnormals; intermediate potential/flux/exp range failures reject with typed stage/disposition. No clipping, log-domain replacement or fallback current.",
+                    "Existing math.exp is not a new cross-platform correctly-rounded guarantee; retain source/environment and input/output identities without machine-local paths."
+                  ],
+                  "parent_object_ids": [
+                    "P9-O-A-INITIALIZER-REFERENCE-PASS"
+                  ],
+                  "staging": {
+                    "auxiliary_admission": "declared differential/conductance/mobility/potential/baseline arithmetic only; no CandidateACurrent, Read-Back, total-current solve or target realization W chart",
+                    "final_admission": "existing whole-target owner with fixed declared domains; no recentering, enlargement or fallback",
+                    "fixed_reference_data": "differential weights/frames/regularization and Hodge/reference geometry preexist independently of W_base and W_init",
+                    "forbidden_inputs": [
+                      "discarded_source_W_or_Z",
+                      "source_current_or_descriptor_cache",
+                      "caller_supplied_flux",
+                      "final_W_being_initialized"
+                    ],
+                    "geometry": "reference_stage_only; reference_relative_increment_zero; final_target_geometry_not_disabled",
+                    "history_free": "identical declared target inputs yield identical numeric W regardless of discarded source history; target C may carry historical influence",
+                    "incidence": "tail_plus_head_minus; loops have zero columns; parallel edges contribute separately",
+                    "not_required": [
+                      "fixed_point",
+                      "zero_A_contrast",
+                      "native_formation",
+                      "arbitrary_parameter_target_admission"
+                    ],
+                    "passes": 1
+                  },
+                  "support_semantics": "required"
+                },
+                "identifier": "P9-EC-A-INITIALIZER-REFERENCE-PASS",
+                "kind": "equation_contract",
+                "node_id": "equation_contract:P9-EC-A-INITIALIZER-REFERENCE-PASS",
+                "source_json_pointer": "/contracts/0",
+                "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+              },
+              {
+                "attributes": {
+                  "accepted_claim_ids": [
+                    "P9-7.2a-CL-O-INIT-001"
+                  ],
+                  "object_id": "P9-O-A-INITIALIZER-REFERENCE-PASS",
+                  "object_role": "history-free target-only Candidate A initializer, not an ordinary writer or target-admission solver"
+                },
+                "identifier": "P9-O-A-INITIALIZER-REFERENCE-PASS",
+                "kind": "normative_object",
+                "node_id": "normative_object:P9-O-A-INITIALIZER-REFERENCE-PASS",
+                "source_json_pointer": "/object",
+                "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+              },
+              {
+                "attributes": {
+                  "admission_layer": "P9-7.2a-initializer",
+                  "file_sha256": "c74ba38858ae539b53625f5a9e24fb2921d749fe5c99340c53844d155bf3e126",
+                  "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassAuthority.json",
+                  "source_digests": [
+                    "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3"
+                  ],
+                  "source_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+                },
+                "identifier": "670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3",
+                "kind": "source_record",
+                "node_id": "source_record:670c0909ac70527ea09e234aceff61cf1c69a645a791ec2379b08fee4ea432a3",
+                "source_json_pointer": "/",
+                "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+              },
+              {
+                "attributes": {
+                  "obligation_id": "P9-7.2a-VO-A-INITIALIZER-INTEGRATION",
+                  "obligations": [
+                    "Reviewed GRCV4-proposal, then paper, then V4 successor specification with closed identity/payload and release applicability.",
+                    "One common producer and positive real C-to-A migration through all five A realizations; no scalar-only or disabled-channel completion.",
+                    "Active alpha/beta/gamma, both gamma signs, nonzero descriptor/current, nontrivial graph, loops/parallel/isolate where admitted, relabeling/reorientation and backend-scoped covariance.",
+                    "Auxiliary-total-current-singular/final-reference-regular regression at the actual producer, with rounded operands; final target still owns admission.",
+                    "Floor/rounding/cancellation/subnormal/overflow, source-history independence, equal-input current/reset and genuine reset-only failure controls; fixed target charts must not be repaired.",
+                    "Static/invocation identity, real migration receipts, restoration/reset/duplication/continuation and F1/F2 whole-publication rollback.",
+                    "Focused source/input/output-bound evidence and actual API/notebook/browser agreement; retain original 25/17-test subjects without relabeling old C-to-A refusals as success.",
+                    "Aggregate seven-class reconciliation and acceptance; generic events, wider G2/G3 and GRC9V4 specialization remain separate."
+                  ],
+                  "owner": "P9-7.2a",
+                  "status": "pending_forward"
+                },
+                "identifier": "P9-7.2a-VO-A-INITIALIZER-INTEGRATION",
+                "kind": "verification_obligation",
+                "node_id": "verification_obligation:P9-7.2a-VO-A-INITIALIZER-INTEGRATION",
+                "source_json_pointer": "/verification_obligations/0",
+                "source_record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1"
+              }
+            ],
+            "start_node": "current_claim:P9-7.2a-CL-O-INIT-001",
+            "verification_obligations_excluded": true
+          },
+          "row_id": "P9-7.2a-CL-O-INIT-001",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassAuthority.json",
+            "record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3",
+            "record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+            "source_json_pointer": "/claim"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "82b46b69f4e02b01c50c0fd060b219b206224167245d18d8be56d031a36e1f39"
+    }
+  ],
+  "ceilings": [
+    "new sector-to-site constitutive postulate, not forced by ordinary V4",
+    "exact response-sector symmetry is essential; no approximate grouping tolerance",
+    "positive both-role continuation at this actual selected boundary, not all guard-positive states",
+    "canonical initialization gives W=1; prepared source history has no new formation proof",
+    "zero read-back/formation channels, no generic feedback or all-family closure",
+    "explicit history loss is part of the mechanism, not claimed lossless transport",
+    "no native owner/events, no accepted claims/debt or ATC-2 closure"
+  ],
+  "decimal_diagnostics": {
+    "counts": {
+      "history_writes": 39,
+      "native_events": 0,
+      "native_steps": 0,
+      "positive_resource_updates": 39,
+      "reduced_reads": 41,
+      "rejected_proposals": 2,
+      "selected_research_maps": 1
+    },
+    "exact_anchor_ordinary_commit_recorded_separately": true,
+    "interval_certified": false,
+    "precision": 96,
+    "rejected_states_never_write_history": true,
+    "runs": {
+      "history_reset_without_split": [
+        {
+          "C": [
+            "1.085596484375",
+            "1.085596484375",
+            "1.07679039306640625",
+            "1.07679039306640625",
+            "4.6752262451171875"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 1,
+          "current": [
+            "0.9150196228027343750",
+            "0.9150196228027343750",
+            "0.8819967803955078125",
+            "0.8819967803955078125"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "4.155600432395935058593750",
+            "0.00233911800384521484375"
+          ],
+          "proposed_C": [
+            "0.9712190315246582031250",
+            "0.9712190315246582031250",
+            "0.9665407955169677734375",
+            "0.9665407955169677734375",
+            "5.1244803459167480468750"
+          ],
+          "retained_C_after": [
+            "0.9712190315246582031250",
+            "0.9712190315246582031250",
+            "0.9665407955169677734375",
+            "0.9665407955169677734375",
+            "5.1244803459167480468750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.9712190315246582031250",
+            "0.9712190315246582031250",
+            "0.9665407955169677734375",
+            "0.9665407955169677734375",
+            "5.1244803459167480468750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 2,
+          "current": [
+            "1.047671800613403320312500",
+            "1.047671800613403320312500",
+            "1.030128415584564208984375",
+            "1.030128415584564208984375"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "4.80491299995779991149902343750",
+            "0.0012426564395427703857421875"
+          ],
+          "proposed_C": [
+            "0.840260056447982788085937500",
+            "0.840260056447982788085937500",
+            "0.837774743568897247314453125",
+            "0.837774743568897247314453125",
+            "5.643930399966239929199218750"
+          ],
+          "retained_C_after": [
+            "0.840260056447982788085937500",
+            "0.840260056447982788085937500",
+            "0.837774743568897247314453125",
+            "0.837774743568897247314453125",
+            "5.643930399966239929199218750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.840260056447982788085937500",
+            "0.840260056447982788085937500",
+            "0.837774743568897247314453125",
+            "0.837774743568897247314453125",
+            "5.643930399966239929199218750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 3,
+          "current": [
+            "1.20588821163773536682128906250",
+            "1.20588821163773536682128906250",
+            "1.19656828834116458892822265625",
+            "1.19656828834116458892822265625"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "5.5556806562012061476707458496093750",
+            "0.000660161233507096767425537109375"
+          ],
+          "proposed_C": [
+            "0.68952402999326586723327636718750",
+            "0.68952402999326586723327636718750",
+            "0.68820370752625167369842529296875",
+            "0.68820370752625167369842529296875",
+            "6.24454452496096491813659667968750"
+          ],
+          "retained_C_after": [
+            "0.68952402999326586723327636718750",
+            "0.68952402999326586723327636718750",
+            "0.68820370752625167369842529296875",
+            "0.68820370752625167369842529296875",
+            "6.24454452496096491813659667968750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.68952402999326586723327636718750",
+            "0.68952402999326586723327636718750",
+            "0.68820370752625167369842529296875",
+            "0.68820370752625167369842529296875",
+            "6.24454452496096491813659667968750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 4,
+          "current": [
+            "1.3913957686759531497955322265625000",
+            "1.3913957686759531497955322265625000",
+            "1.3864445594246499240398406982421875",
+            "1.3864445594246499240398406982421875"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "6.423755758732644608244299888610839843750",
+            "0.00035071065530064515769481658935546875"
+          ],
+          "proposed_C": [
+            "0.5155995589087717235088348388671875000",
+            "0.5155995589087717235088348388671875000",
+            "0.5148981375981704331934452056884765625",
+            "0.5148981375981704331934452056884765625",
+            "6.9390046069861156865954399108886718750"
+          ],
+          "retained_C_after": [
+            "0.5155995589087717235088348388671875000",
+            "0.5155995589087717235088348388671875000",
+            "0.5148981375981704331934452056884765625",
+            "0.5148981375981704331934452056884765625",
+            "6.9390046069861156865954399108886718750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.5155995589087717235088348388671875000",
+            "0.5155995589087717235088348388671875000",
+            "0.5148981375981704331934452056884765625",
+            "0.5148981375981704331934452056884765625",
+            "6.9390046069861156865954399108886718750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 5,
+          "current": [
+            "1.607254104640538571402430534362792968750",
+            "1.607254104640538571402430534362792968750",
+            "1.604623774725783732719719409942626953125",
+            "1.604623774725783732719719409942626953125"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "7.42746759603462032828247174620628356933593750",
+            "0.0001863150356284677400253713130950927734375"
+          ],
+          "proposed_C": [
+            "0.314692795828704402083531022071838378906250",
+            "0.314692795828704402083531022071838378906250",
+            "0.314320165757447466603480279445648193359375",
+            "0.314320165757447466603480279445648193359375",
+            "7.741974076827696262625977396965026855468750"
+          ],
+          "retained_C_after": [
+            "0.314692795828704402083531022071838378906250",
+            "0.314692795828704402083531022071838378906250",
+            "0.314320165757447466603480279445648193359375",
+            "0.314320165757447466603480279445648193359375",
+            "7.741974076827696262625977396965026855468750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.314692795828704402083531022071838378906250",
+            "0.314692795828704402083531022071838378906250",
+            "0.314320165757447466603480279445648193359375",
+            "0.314320165757447466603480279445648193359375",
+            "7.741974076827696262625977396965026855468750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 6,
+          "current": [
+            "1.85756558039226183609571307897567749023437500",
+            "1.85756558039226183609571307897567749023437500",
+            "1.85616821762504832804552279412746429443359375",
+            "1.85616821762504832804552279412746429443359375"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "8.5880094079150297545766079565510153770446777343750",
+            "0.000098979862677623486888478510081768035888671875"
+          ],
+          "proposed_C": [
+            "0.08249709827967167257156688719987869262695312500",
+            "0.08249709827967167257156688719987869262695312500",
+            "0.08229913855431642559778993017971515655517578125",
+            "0.08229913855431642559778993017971515655517578125",
+            "8.67040752633202380366128636524081230163574218750"
+          ],
+          "retained_C_after": [
+            "0.08249709827967167257156688719987869262695312500",
+            "0.08249709827967167257156688719987869262695312500",
+            "0.08229913855431642559778993017971515655517578125",
+            "0.08229913855431642559778993017971515655517578125",
+            "8.67040752633202380366128636524081230163574218750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.08249709827967167257156688719987869262695312500",
+            "0.08249709827967167257156688719987869262695312500",
+            "0.08229913855431642559778993017971515655517578125",
+            "0.08229913855431642559778993017971515655517578125",
+            "8.67040752633202380366128636524081230163574218750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 7,
+          "current": [
+            "2.1473735264637985267199837835505604743957519531250",
+            "2.1473735264637985267199837835505604743957519531250",
+            "2.1466311774937163505683201947249472141265869140625",
+            "2.1466311774937163505683201947249472141265869140625"
+          ],
+          "disposition": "resource_rejection_no_commit",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "9.929885877901753153729202949762111529707908630371093750",
+            "0.00005258305204748747740950420848093926906585693359375"
+          ],
+          "proposed_C": [
+            "-0.1859245925283031432684310857439413666725158691406250",
+            "-0.1859245925283031432684310857439413666725158691406250",
+            "-0.1860297586323981182232500941609032452106475830078125",
+            "-0.1860297586323981182232500941609032452106475830078125",
+            "9.7439087023214025229833623598096892237663269042968750"
+          ],
+          "retained_writer_executed": false,
+          "structural_current": "zero"
+        }
+      ],
+      "no_split": [
+        {
+          "C": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "5"
+          ],
+          "W": [
+            "0.9025",
+            "0.9025",
+            "0.92640625",
+            "0.92640625"
+          ],
+          "attempt": 1,
+          "current": [
+            "-0.684771875000",
+            "-0.684771875000",
+            "-0.6143231445312500",
+            "-0.6143231445312500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "3.594032806396484375000",
+            "0.00440304565429687500"
+          ],
+          "proposed_C": [
+            "1.0855964843750000000",
+            "1.0855964843750000000",
+            "1.0767903930664062500",
+            "1.0767903930664062500",
+            "4.6752262451171875000"
+          ],
+          "retained_C_after": [
+            "1.0855964843750000000",
+            "1.0855964843750000000",
+            "1.0767903930664062500",
+            "1.0767903930664062500",
+            "4.6752262451171875000"
+          ],
+          "retained_W_after": [
+            "0.95",
+            "0.95",
+            "0.9625",
+            "0.9625"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.0855964843750000000",
+            "1.0855964843750000000",
+            "1.0767903930664062500",
+            "1.0767903930664062500",
+            "4.6752262451171875000"
+          ],
+          "W": [
+            "0.95",
+            "0.95",
+            "0.9625",
+            "0.9625"
+          ],
+          "attempt": 2,
+          "current": [
+            "0.1013578462982177734375000",
+            "0.1013578462982177734375000",
+            "0.113776904554367065429687500",
+            "0.113776904554367065429687500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "3.66126241603791713714599609375000",
+            "0.0051792367953062057495117187500"
+          ],
+          "proposed_C": [
+            "1.072926753587722778320312500000",
+            "1.072926753587722778320312500000",
+            "1.062568279997110366821289062500",
+            "1.062568279997110366821289062500",
+            "4.729009932830333709716796875000"
+          ],
+          "retained_C_after": [
+            "1.072926753587722778320312500000",
+            "1.072926753587722778320312500000",
+            "1.062568279997110366821289062500",
+            "1.062568279997110366821289062500",
+            "4.729009932830333709716796875000"
+          ],
+          "retained_W_after": [
+            "0.974679434480896390683841319989960029925258390033749103199175000572008177246024935684871209603807",
+            "0.974679434480896390683841319989960029925258390033749103199175000572008177246024935684871209603807",
+            "0.981070843517429173426300189459088716315641726207878371842978511297806917890553711621934298607665",
+            "0.981070843517429173426300189459088716315641726207878371842978511297806917890553711621934298607665"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.072926753587722778320312500000",
+            "1.072926753587722778320312500000",
+            "1.062568279997110366821289062500",
+            "1.062568279997110366821289062500",
+            "4.729009932830333709716796875000"
+          ],
+          "W": [
+            "0.974679434480896390683841319989960029925258390033749103199175000572008177246024935684871209603807",
+            "0.974679434480896390683841319989960029925258390033749103199175000572008177246024935684871209603807",
+            "0.981070843517429173426300189459088716315641726207878371842978511297806917890553711621934298607665",
+            "0.981070843517429173426300189459088716315641726207878371842978511297806917890553711621934298607665"
+          ],
+          "attempt": 3,
+          "current": [
+            "0.505088790935386422242546795411112987156895255382788434184171238474146473844380694757207847905961",
+            "0.505088790935386422242546795411112987156895255382788434184171238474146473844380694757207847905961",
+            "0.493024727459807735655696278096296904148721010261645814426115150013973682685330322714174798024499",
+            "0.493024727459807735655696278096296904148721010261645814426115150013973682685330322714174798024499"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "3.97317289053641531148919705422106559103300508301388570269071449640253754891553469295980707685330",
+            "0.00442523282808253783783356141782399481198910967992858626512149447123920055255935174731043438240835"
+          ],
+          "proposed_C": [
+            "1.00979065472079947553999415057361087660538809307715144572697859519073169076945241315534901901175",
+            "1.00979065472079947553999415057361087660538809307715144572697859519073169076945241315534901901175",
+            "1.00094018906463439986432702773796288698140987371729427319673560624825328966433370966072815024694",
+            "1.00094018906463439986432702773796288698140987371729427319673560624825328966433370966072815024694",
+            "4.97853831242913224919135764337685247282640406641110856215257159712203003913242775436784566148262"
+          ],
+          "retained_C_after": [
+            "1.00979065472079947553999415057361087660538809307715144572697859519073169076945241315534901901175",
+            "1.00979065472079947553999415057361087660538809307715144572697859519073169076945241315534901901175",
+            "1.00094018906463439986432702773796288698140987371729427319673560624825328966433370966072815024694",
+            "1.00094018906463439986432702773796288698140987371729427319673560624825328966433370966072815024694",
+            "4.97853831242913224919135764337685247282640406641110856215257159712203003913242775436784566148262"
+          ],
+          "retained_W_after": [
+            "0.987258544901433806113132211690614648953355919369477734098165250725800507168872196292723735256889",
+            "0.987258544901433806113132211690614648953355919369477734098165250725800507168872196292723735256889",
+            "0.990490203645361236354302973388588988669200059320926611901885859561554476204224604105820230234454",
+            "0.990490203645361236354302973388588988669200059320926611901885859561554476204224604105820230234454"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.00979065472079947553999415057361087660538809307715144572697859519073169076945241315534901901175",
+            "1.00979065472079947553999415057361087660538809307715144572697859519073169076945241315534901901175",
+            "1.00094018906463439986432702773796288698140987371729427319673560624825328966433370966072815024694",
+            "1.00094018906463439986432702773796288698140987371729427319673560624825328966433370966072815024694",
+            "4.97853831242913224919135764337685247282640406641110856215257159712203003913242775436784566148262"
+          ],
+          "W": [
+            "0.987258544901433806113132211690614648953355919369477734098165250725800507168872196292723735256889",
+            "0.987258544901433806113132211690614648953355919369477734098165250725800507168872196292723735256889",
+            "0.990490203645361236354302973388588988669200059320926611901885859561554476204224604105820230234454",
+            "0.990490203645361236354302973388588988669200059320926611901885859561554476204224604105820230234454"
+          ],
+          "attempt": 4,
+          "current": [
+            "0.772562084114067233304199660119160580548066085382004456316451487253168400690389178071397459155906",
+            "0.772562084114067233304199660119160580548066085382004456316451487253168400690389178071397459155906",
+            "0.754837642624648223232238082306620160222527654290732973350092970918032162910466954634771711935936",
+            "0.754837642624648223232238082306620160222527654290732973350092970918032162910466954634771711935936"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "4.45048530514226389165683384872912207252381562666161614946150963958103772504080223443048494281944",
+            "0.00331745523499384970833596280454021854164295773672411857972408720029318569131421278252132518115709"
+          ],
+          "proposed_C": [
+            "0.913220394206541071376969193058715804036879832404400888687422159284085640683153765896424336617262",
+            "0.913220394206541071376969193058715804036879832404400888687422159284085640683153765896424336617262",
+            "0.906585483736553371960297267449635366953593916930952651527973984883499269300525340331381686254948",
+            "0.906585483736553371960297267449635366953593916930952651527973984883499269300525340331381686254948",
+            "5.36038824411381111332546707898329765801905250132929291956920771166483018003264178754438795425558"
+          ],
+          "retained_C_after": [
+            "0.913220394206541071376969193058715804036879832404400888687422159284085640683153765896424336617262",
+            "0.913220394206541071376969193058715804036879832404400888687422159284085640683153765896424336617262",
+            "0.906585483736553371960297267449635366953593916930952651527973984883499269300525340331381686254948",
+            "0.906585483736553371960297267449635366953593916930952651527973984883499269300525340331381686254948",
+            "5.36038824411381111332546707898329765801905250132929291956920771166483018003264178754438795425558"
+          ],
+          "retained_W_after": [
+            "0.993608849045455012403510736818131605640591963336078095855375135459773461524499507307753251726716",
+            "0.993608849045455012403510736818131605640591963336078095855375135459773461524499507307753251726716",
+            "0.995233743220838165103056337099346228107791037423959476999263247295197899550551209456076017918169",
+            "0.995233743220838165103056337099346228107791037423959476999263247295197899550551209456076017918169"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.913220394206541071376969193058715804036879832404400888687422159284085640683153765896424336617262",
+            "0.913220394206541071376969193058715804036879832404400888687422159284085640683153765896424336617262",
+            "0.906585483736553371960297267449635366953593916930952651527973984883499269300525340331381686254948",
+            "0.906585483736553371960297267449635366953593916930952651527973984883499269300525340331381686254948",
+            "5.36038824411381111332546707898329765801905250132929291956920771166483018003264178754438795425558"
+          ],
+          "W": [
+            "0.993608849045455012403510736818131605640591963336078095855375135459773461524499507307753251726716",
+            "0.993608849045455012403510736818131605640591963336078095855375135459773461524499507307753251726716",
+            "0.995233743220838165103056337099346228107791037423959476999263247295197899550551209456076017918169",
+            "0.995233743220838165103056337099346228107791037423959476999263247295197899550551209456076017918169"
+          ],
+          "attempt": 5,
+          "current": [
+            "0.990964145537894663799517961247067202827973042139192680912027130737432936658831446040273439116073",
+            "0.990964145537894663799517961247067202827973042139192680912027130737432936658831446040273439116073",
+            "0.974982651632121937452921291500760276997122616437776636821203238163795004544784102371151017000426",
+            "0.974982651632121937452921291500760276997122616437776636821203238163795004544784102371151017000426"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "5.06484367925789407954822111521281815996915801996691906125314412986267145666693209330905508535588",
+            "0.00231861186588305431167367094539603567721480613038561582404759391444081493418625380320117379892906"
+          ],
+          "proposed_C": [
+            "0.789349876014304238402029447902832403683383202137001803573418767941906523600799835141390156727753",
+            "0.789349876014304238402029447902832403683383202137001803573418767941906523600799835141390156727753",
+            "0.784712652282538129778682106012040332328953589876230571925323580113024893732427327534987809129895",
+            "0.784712652282538129778682106012040332328953589876230571925323580113024893732427327534987809129895",
+            "5.85187494340631526363857689217025452797532641597353524900251530389013716533354567464724406828471"
+          ],
+          "retained_C_after": [
+            "0.789349876014304238402029447902832403683383202137001803573418767941906523600799835141390156727753",
+            "0.789349876014304238402029447902832403683383202137001803573418767941906523600799835141390156727753",
+            "0.784712652282538129778682106012040332328953589876230571925323580113024893732427327534987809129895",
+            "0.784712652282538129778682106012040332328953589876230571925323580113024893732427327534987809129895",
+            "5.85187494340631526363857689217025452797532641597353524900251530389013716533354567464724406828471"
+          ],
+          "retained_W_after": [
+            "0.996799302289811503258616863175287573053375991132972468646467658455520361985623315092796361932948",
+            "0.996799302289811503258616863175287573053375991132972468646467658455520361985623315092796361932948",
+            "0.997614025172480303729344062662300406581272328280913955848472066248735112645084426332942463541068",
+            "0.997614025172480303729344062662300406581272328280913955848472066248735112645084426332942463541068"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.789349876014304238402029447902832403683383202137001803573418767941906523600799835141390156727753",
+            "0.789349876014304238402029447902832403683383202137001803573418767941906523600799835141390156727753",
+            "0.784712652282538129778682106012040332328953589876230571925323580113024893732427327534987809129895",
+            "0.784712652282538129778682106012040332328953589876230571925323580113024893732427327534987809129895",
+            "5.85187494340631526363857689217025452797532641597353524900251530389013716533354567464724406828471"
+          ],
+          "W": [
+            "0.996799302289811503258616863175287573053375991132972468646467658455520361985623315092796361932948",
+            "0.996799302289811503258616863175287573053375991132972468646467658455520361985623315092796361932948",
+            "0.997614025172480303729344062662300406581272328280913955848472066248735112645084426332942463541068",
+            "0.997614025172480303729344062662300406581272328280913955848472066248735112645084426332942463541068"
+          ],
+          "attempt": 6,
+          "current": [
+            "1.19826702823569742042011568681039756064504609620276202595344932773080634903105657026384457164287",
+            "1.19826702823569742042011568681039756064504609620276202595344932773080634903105657026384457164287",
+            "1.18600199669500650087001865984339339241160214929650761858062666520570652604779287545760982493493",
+            "1.18600199669500650087001865984339339241160214929650761858062666520570652604779287545760982493493"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "5.80992774954873905495138809854212783279936059668544082517004287765533173012907254509700958428657",
+            "0.00155204739458987183979260675995827516262455944874471536324617750662207599773227287781150212968264"
+          ],
+          "proposed_C": [
+            "0.639566497484842060849514987051532708602752440111656550329237601975555729971917763858409585272394",
+            "0.639566497484842060849514987051532708602752440111656550329237601975555729971917763858409585272394",
+            "0.636462402695662317169929773531616158277503321214167119602745246962311577976453218102786581013029",
+            "0.636462402695662317169929773531616158277503321214167119602745246962311577976453218102786581013029",
+            "6.44794219963899124396111047883370226623948847734835266013603430212426538410325803607760766742916"
+          ],
+          "retained_C_after": [
+            "0.639566497484842060849514987051532708602752440111656550329237601975555729971917763858409585272394",
+            "0.639566497484842060849514987051532708602752440111656550329237601975555729971917763858409585272394",
+            "0.636462402695662317169929773531616158277503321214167119602745246962311577976453218102786581013029",
+            "0.636462402695662317169929773531616158277503321214167119602745246962311577976453218102786581013029",
+            "6.44794219963899124396111047883370226623948847734835266013603430212426538410325803607760766742916"
+          ],
+          "retained_W_after": [
+            "0.998398368533228074634775787011591727677175623202501619518050090041228109921904968965634101416588",
+            "0.998398368533228074634775787011591727677175623202501619518050090041228109921904968965634101416588",
+            "0.998806300126546210067622781003594737681054708461135306322016147018038809162875497220580541586136",
+            "0.998806300126546210067622781003594737681054708461135306322016147018038809162875497220580541586136"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.639566497484842060849514987051532708602752440111656550329237601975555729971917763858409585272394",
+            "0.639566497484842060849514987051532708602752440111656550329237601975555729971917763858409585272394",
+            "0.636462402695662317169929773531616158277503321214167119602745246962311577976453218102786581013029",
+            "0.636462402695662317169929773531616158277503321214167119602745246962311577976453218102786581013029",
+            "6.44794219963899124396111047883370226623948847734835266013603430212426538410325803607760766742916"
+          ],
+          "W": [
+            "0.998398368533228074634775787011591727677175623202501619518050090041228109921904968965634101416588",
+            "0.998398368533228074634775787011591727677175623202501619518050090041228109921904968965634101416588",
+            "0.998806300126546210067622781003594737681054708461135306322016147018038809162875497220580541586136",
+            "0.998806300126546210067622781003594737681054708461135306322016147018038809162875497220580541586136"
+          ],
+          "attempt": 7,
+          "current": [
+            "1.41425041617783238998519093370175198043467111728921682490987950749545346296733439374451351507464",
+            "1.41425041617783238998519093370175198043467111728921682490987950749545346296733439374451351507464",
+            "1.40556468937026596652343202689449160635682239742995404040329939781606079116848436845934027988222",
+            "1.40556468937026596652343202689449160635682239742995404040329939781606079116848436845934027988222"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "6.69111997003251979136033277372845395367170232003518172058041128556517993454651590828571389521040",
+            "0.00100918946911697037343267508450450178275901445754079133158492065166003401030414629748817493015588"
+          ],
+          "proposed_C": [
+            "0.462785195462613012101366120338813711048418550450504447215502663538624047101000964640345395888064",
+            "0.462785195462613012101366120338813711048418550450504447215502663538624047101000964640345395888064",
+            "0.460766816524379071354500770169804707482900521535422864552332822235303979080392672045369046027751",
+            "0.460766816524379071354500770169804707482900521535422864552332822235303979080392672045369046027751",
+            "7.15289597602601583308826621898276316293736185602814537646432902845214394763721272662857111616838"
+          ],
+          "retained_C_after": [
+            "0.462785195462613012101366120338813711048418550450504447215502663538624047101000964640345395888064",
+            "0.462785195462613012101366120338813711048418550450504447215502663538624047101000964640345395888064",
+            "0.460766816524379071354500770169804707482900521535422864552332822235303979080392672045369046027751",
+            "0.460766816524379071354500770169804707482900521535422864552332822235303979080392672045369046027751",
+            "7.15289597602601583308826621898276316293736185602814537646432902845214394763721272662857111616838"
+          ],
+          "retained_W_after": [
+            "0.999198863356653380973460011258935810112544236313297336472643394735127619023438292317955422603990",
+            "0.999198863356653380973460011258935810112544236313297336472643394735127619023438292317955422603990",
+            "0.999402971841962360125264308993078564311272323607971645035432870229410704796204999769222161058133",
+            "0.999402971841962360125264308993078564311272323607971645035432870229410704796204999769222161058133"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.462785195462613012101366120338813711048418550450504447215502663538624047101000964640345395888064",
+            "0.462785195462613012101366120338813711048418550450504447215502663538624047101000964640345395888064",
+            "0.460766816524379071354500770169804707482900521535422864552332822235303979080392672045369046027751",
+            "0.460766816524379071354500770169804707482900521535422864552332822235303979080392672045369046027751",
+            "7.15289597602601583308826621898276316293736185602814537646432902845214394763721272662857111616838"
+          ],
+          "W": [
+            "0.999198863356653380973460011258935810112544236313297336472643394735127619023438292317955422603990",
+            "0.999198863356653380973460011258935810112544236313297336472643394735127619023438292317955422603990",
+            "0.999402971841962360125264308993078564311272323607971645035432870229410704796204999769222161058133",
+            "0.999402971841962360125264308993078564311272323607971645035432870229410704796204999769222161058133"
+          ],
+          "attempt": 8,
+          "current": [
+            "1.65117072127016963421904504994533417702746031924912183686833441114784568485569529459707885358015",
+            "1.65117072127016963421904504994533417702746031924912183686833441114784568485569529459707885358015",
+            "1.64530709610097763364745065246117453455671201977160128999255647795111793936266954445897847528544",
+            "1.64530709610097763364745065246117453455671201977160128999255647795111793936266954445897847528544"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "7.72126928796100331256861268073048792604175617597915769772443968840860606711475492049073181048092",
+            "0.000642712896042470337708025241744524128337245740195757151848799826864549916990036913856901286737310"
+          ],
+          "proposed_C": [
+            "0.256388855303841807823985489095646938919986010544364217606960862145143336494039052815710539190545",
+            "0.256388855303841807823985489095646938919986010544364217606960862145143336494039052815710539190545",
+            "0.255103429511756867148569438612157890663311519063972703303263262491414236660058978987996736617071",
+            "0.255103429511756867148569438612157890663311519063972703303263262491414236660058978987996736617071",
+            "7.97701543036880265005489014458439034083340494078332615817955175072688485369180393639258544838478"
+          ],
+          "retained_C_after": [
+            "0.256388855303841807823985489095646938919986010544364217606960862145143336494039052815710539190545",
+            "0.256388855303841807823985489095646938919986010544364217606960862145143336494039052815710539190545",
+            "0.255103429511756867148569438612157890663311519063972703303263262491414236660058978987996736617071",
+            "0.255103429511756867148569438612157890663311519063972703303263262491414236660058978987996736617071",
+            "7.97701543036880265005489014458439034083340494078332615817955175072688485369180393639258544838478"
+          ],
+          "retained_W_after": [
+            "0.999599351418683835158954528690728012368214626722733235143961145956219115628704145024835858766185",
+            "0.999599351418683835158954528690728012368214626722733235143961145956219115628704145024835858766185",
+            "0.999701441352348136207755601256555291178927541677332704261979296920488023351488778872351593683968",
+            "0.999701441352348136207755601256555291178927541677332704261979296920488023351488778872351593683968"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.256388855303841807823985489095646938919986010544364217606960862145143336494039052815710539190545",
+            "0.256388855303841807823985489095646938919986010544364217606960862145143336494039052815710539190545",
+            "0.255103429511756867148569438612157890663311519063972703303263262491414236660058978987996736617071",
+            "0.255103429511756867148569438612157890663311519063972703303263262491414236660058978987996736617071",
+            "7.97701543036880265005489014458439034083340494078332615817955175072688485369180393639258544838478"
+          ],
+          "W": [
+            "0.999599351418683835158954528690728012368214626722733235143961145956219115628704145024835858766185",
+            "0.999599351418683835158954528690728012368214626722733235143961145956219115628704145024835858766185",
+            "0.999701441352348136207755601256555291178927541677332704261979296920488023351488778872351593683968",
+            "0.999701441352348136207755601256555291178927541677332704261979296920488023351488778872351593683968"
+          ],
+          "attempt": 9,
+          "current": [
+            "1.91806805463409498818458449671607195607907956827002222643277229174914386882280826115269744340450",
+            "1.91806805463409498818458449671607195607907956827002222643277229174914386882280826115269744340450",
+            "1.91423262026614223301589201545068468660796291603734252129966681473925312260315611841171543454371",
+            "1.91423262026614223301589201545068468660796291603734252129966681473925312260315611841171543454371"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "8.91886324886732744419376159078259937688145695232520918139082690918623012693536878910461083483980",
+            "0.000402998248045423139664745162657819786392454975653275581029707513746378278261777992545525732938096"
+          ],
+          "proposed_C": [
+            "0.016630348474579934300912427006137944410101064510611439302864325676500352891188020171623358764983",
+            "0.016630348474579934300912427006137944410101064510611439302864325676500352891188020171623358764983",
+            "0.015824351978489088021582936680822304837316154559304888140804910649007596334664464186532307299107",
+            "0.015824351978489088021582936680822304837316154559304888140804910649007596334664464186532307299107",
+            "8.93509059909386195535500927262607950150516556186016734511266152734898410154829503128368866787183"
+          ],
+          "retained_C_after": [
+            "0.016630348474579934300912427006137944410101064510611439302864325676500352891188020171623358764983",
+            "0.016630348474579934300912427006137944410101064510611439302864325676500352891188020171623358764983",
+            "0.015824351978489088021582936680822304837316154559304888140804910649007596334664464186532307299107",
+            "0.015824351978489088021582936680822304837316154559304888140804910649007596334664464186532307299107",
+            "8.93509059909386195535500927262607950150516556186016734511266152734898410154829503128368866787183"
+          ],
+          "retained_W_after": [
+            "0.999799655640410707957700112340929618731743209696562557031619917906291618719198381149259565266459",
+            "0.999799655640410707957700112340929618731743209696562557031619917906291618719198381149259565266459",
+            "0.999850709532352202854894776782168713075098937008319115551392533132088271250511707346844208232410",
+            "0.999850709532352202854894776782168713075098937008319115551392533132088271250511707346844208232410"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "0.016630348474579934300912427006137944410101064510611439302864325676500352891188020171623358764983",
+            "0.016630348474579934300912427006137944410101064510611439302864325676500352891188020171623358764983",
+            "0.015824351978489088021582936680822304837316154559304888140804910649007596334664464186532307299107",
+            "0.015824351978489088021582936680822304837316154559304888140804910649007596334664464186532307299107",
+            "8.93509059909386195535500927262607950150516556186016734511266152734898410154829503128368866787183"
+          ],
+          "W": [
+            "0.999799655640410707957700112340929618731743209696562557031619917906291618719198381149259565266459",
+            "0.999799655640410707957700112340929618731743209696562557031619917906291618719198381149259565266459",
+            "0.999850709532352202854894776782168713075098937008319115551392533132088271250511707346844208232410",
+            "0.999850709532352202854894776782168713075098937008319115551392533132088271250511707346844208232410"
+          ],
+          "attempt": 10,
+          "current": [
+            "2.22275823685636266209751010278547216283314844820500480027369318489872198368914499414152626306438",
+            "2.22275823685636266209751010278547216283314844820500480027369318489872198368914499414152626306438",
+            "2.22030483824410043792928403269487603662046510486322349162127426449715126587861927182631172606830",
+            "2.22030483824410043792928403269487603662046510486322349162127426449715126587861927182631172606830"
+          ],
+          "disposition": "resource_rejection_no_commit",
+          "geometry": "identity reference",
+          "independent_sector_next": [
+            "10.3073204598362221629521347581202081892107111876590305226080042371224405174252951222195602064438",
+            "0.000249660834779034129150615781995561898099746016791943790253524988648208415103920347844617170683119"
+          ],
+          "proposed_C": [
+            "-0.261214431132465398461276335842046075944042491515014160731347322435839895069955104096067424118065",
+            "-0.261214431132465398461276335842046075944042491515014160731347322435839895069955104096067424118065",
+            "-0.261713752802023466719577567406037199740241983548598048311854372413136311900162944791756658459431",
+            "-0.261713752802023466719577567406037199740241983548598048311854372413136311900162944791756658459431",
+            "10.0458563678689777303617078064961665513685689501272244180864033896979524139402360977756481651550"
+          ],
+          "retained_writer_executed": false,
+          "structural_current": "zero"
+        }
+      ],
+      "split_current": [
+        {
+          "C": [
+            "1.085596484375",
+            "1.085596484375",
+            "1.07679039306640625",
+            "1.07679039306640625",
+            "2.202641075809299945831298828125",
+            "2.472585169307887554168701171875"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 1,
+          "current": [
+            "-2.22477212850861251354217529296875",
+            "-2.22477212850861251354217529296875",
+            "-2.17269676492400467395782470703125",
+            "-2.17269676492400467395782470703125",
+            "-0.18484588750675320625305175781250"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.2769704021085398126958218665422117865659856761340051889419555664062500",
+          "proposed_C": [
+            "1.36369300043857656419277191162109375",
+            "1.36369300043857656419277191162109375",
+            "1.34837748868190683424472808837890625",
+            "1.34837748868190683424472808837890625",
+            "1.66955377962049096822738647460937500",
+            "1.90630524213854223489761352539062500"
+          ],
+          "retained_C_after": [
+            "1.36369300043857656419277191162109375",
+            "1.36369300043857656419277191162109375",
+            "1.34837748868190683424472808837890625",
+            "1.34837748868190683424472808837890625",
+            "1.66955377962049096822738647460937500",
+            "1.90630524213854223489761352539062500"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.36369300043857656419277191162109375",
+            "1.36369300043857656419277191162109375",
+            "1.34837748868190683424472808837890625",
+            "1.34837748868190683424472808837890625",
+            "1.66955377962049096822738647460937500",
+            "1.90630524213854223489761352539062500"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 2,
+          "current": [
+            "-0.7720078260864014737308025360107421875",
+            "-0.7720078260864014737308025360107421875",
+            "-0.7396221060310606844723224639892578125",
+            "-0.7396221060310606844723224639892578125",
+            "-0.1469325733751989901065826416015625000"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.05141943709306732625244467995550147042943534003711647528689354658126831054687500",
+          "proposed_C": [
+            "1.4601939786993767484091222286224365234375",
+            "1.4601939786993767484091222286224365234375",
+            "1.4408302519357894198037683963775634765625",
+            "1.4408302519357894198037683963775634765625",
+            "1.4949183947707904735580086708068847656250",
+            "1.7030331439588771900162100791931152343750"
+          ],
+          "retained_C_after": [
+            "1.4601939786993767484091222286224365234375",
+            "1.4601939786993767484091222286224365234375",
+            "1.4408302519357894198037683963775634765625",
+            "1.4408302519357894198037683963775634765625",
+            "1.4949183947707904735580086708068847656250",
+            "1.7030331439588771900162100791931152343750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.4601939786993767484091222286224365234375",
+            "1.4601939786993767484091222286224365234375",
+            "1.4408302519357894198037683963775634765625",
+            "1.4408302519357894198037683963775634765625",
+            "1.4949183947707904735580086708068847656250",
+            "1.7030331439588771900162100791931152343750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 3,
+          "current": [
+            "-0.268882477313060735468752682209014892578125",
+            "-0.268882477313060735468752682209014892578125",
+            "-0.250740311852316881413571536540985107421875",
+            "-0.250740311852316881413571536540985107421875",
+            "-0.117358608363890380132943391799926757812500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.020741994171279224026600768645327557714728896730987939278634257789235562086105346679687500",
+          "proposed_C": [
+            "1.493804288363509340342716313898563385009765625",
+            "1.493804288363509340342716313898563385009765625",
+            "1.472172790917329029980464838445186614990234375",
+            "1.472172790917329029980464838445186614990234375",
+            "1.442367601488011587207438424229621887207031250",
+            "1.625678239950311672146199271082878112792968750"
+          ],
+          "retained_C_after": [
+            "1.493804288363509340342716313898563385009765625",
+            "1.493804288363509340342716313898563385009765625",
+            "1.472172790917329029980464838445186614990234375",
+            "1.472172790917329029980464838445186614990234375",
+            "1.442367601488011587207438424229621887207031250",
+            "1.625678239950311672146199271082878112792968750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.493804288363509340342716313898563385009765625",
+            "1.493804288363509340342716313898563385009765625",
+            "1.472172790917329029980464838445186614990234375",
+            "1.472172790917329029980464838445186614990234375",
+            "1.442367601488011587207438424229621887207031250",
+            "1.625678239950311672146199271082878112792968750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 4,
+          "current": [
+            "-0.09329643643017901695202453993260860443115234375",
+            "-0.09329643643017901695202453993260860443115234375",
+            "-0.08532389734541953885127441026270389556884765625",
+            "-0.08532389734541953885127441026270389556884765625",
+            "-0.09421998395436444297956768423318862915039062500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.0140037084578062460242230788051567652983700842821031251877322842958051296591293066740036010742188",
+          "proposed_C": [
+            "1.50546634291728171746171938139013946056365966796875",
+            "1.50546634291728171746171938139013946056365966796875",
+            "1.48283827808550647233687413972802460193634033203125",
+            "1.48283827808550647233687413972802460193634033203125",
+            "1.43082099037476238834187824977561831474304199218750",
+            "1.59256976761966123206093470798805356025695800781250"
+          ],
+          "retained_C_after": [
+            "1.50546634291728171746171938139013946056365966796875",
+            "1.50546634291728171746171938139013946056365966796875",
+            "1.48283827808550647233687413972802460193634033203125",
+            "1.48283827808550647233687413972802460193634033203125",
+            "1.43082099037476238834187824977561831474304199218750",
+            "1.59256976761966123206093470798805356025695800781250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.50546634291728171746171938139013946056365966796875",
+            "1.50546634291728171746171938139013946056365966796875",
+            "1.48283827808550647233687413972802460193634033203125",
+            "1.48283827808550647233687413972802460193634033203125",
+            "1.43082099037476238834187824977561831474304199218750",
+            "1.59256976761966123206093470798805356025695800781250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 5,
+          "current": [
+            "-0.0311194102954900177593344778870232403278350830078125",
+            "-0.0311194102954900177593344778870232403278350830078125",
+            "-0.0302813294398719857980495362426154315471649169921875",
+            "-0.0302813294398719857980495362426154315471649169921875",
+            "-0.0760554532701236425396018603350967168807983398437500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.0107818250670360493085646334174877397668052603138763869157332506805088701007377949281362816691399",
+          "proposed_C": [
+            "1.5093562692042179696816361911260173656046390533447265625",
+            "1.5093562692042179696816361911260173656046390533447265625",
+            "1.4866234442654904705616303317583515308797359466552734375",
+            "1.4866234442654904705616303317583515308797359466552734375",
+            "1.4325480694596553392194948628457495942711830139160156250",
+            "1.5754925036009277802939720913855126127600669860839843750"
+          ],
+          "retained_C_after": [
+            "1.5093562692042179696816361911260173656046390533447265625",
+            "1.5093562692042179696816361911260173656046390533447265625",
+            "1.4866234442654904705616303317583515308797359466552734375",
+            "1.4866234442654904705616303317583515308797359466552734375",
+            "1.4325480694596553392194948628457495942711830139160156250",
+            "1.5754925036009277802939720913855126127600669860839843750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.5093562692042179696816361911260173656046390533447265625",
+            "1.5093562692042179696816361911260173656046390533447265625",
+            "1.4866234442654904705616303317583515308797359466552734375",
+            "1.4866234442654904705616303317583515308797359466552734375",
+            "1.4325480694596553392194948628457495942711830139160156250",
+            "1.5754925036009277802939720913855126127600669860839843750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 6,
+          "current": [
+            "-0.008530084588287837765729904049294418655335903167724609375",
+            "-0.008530084588287837765729904049294418655335903167724609375",
+            "-0.012576419695742850957120850807768874801695346832275390625",
+            "-0.012576419695742850957120850807768874801695346832275390625",
+            "-0.061742675728499332565846202669490594416856765747070312500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00850053900559589090344244477501250947398792241155909584277246689613861968136052094102694809407694",
+          "proposed_C": [
+            "1.510422529777753949402352429132179167936556041240692138671875",
+            "1.510422529777753949402352429132179167936556041240692138671875",
+            "1.488195496727458326931270438109322640229947865009307861328125",
+            "1.488195496727458326931270438109322640229947865009307861328125",
+            "1.438133382778645796348793162167112313909456133842468261718750",
+            "1.564630564210929650983961103349884069757536053657531738281250"
+          ],
+          "retained_C_after": [
+            "1.510422529777753949402352429132179167936556041240692138671875",
+            "1.510422529777753949402352429132179167936556041240692138671875",
+            "1.488195496727458326931270438109322640229947865009307861328125",
+            "1.488195496727458326931270438109322640229947865009307861328125",
+            "1.438133382778645796348793162167112313909456133842468261718750",
+            "1.564630564210929650983961103349884069757536053657531738281250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.510422529777753949402352429132179167936556041240692138671875",
+            "1.510422529777753949402352429132179167936556041240692138671875",
+            "1.488195496727458326931270438109322640229947865009307861328125",
+            "1.488195496727458326931270438109322640229947865009307861328125",
+            "1.438133382778645796348793162167112313909456133842468261718750",
+            "1.564630564210929650983961103349884069757536053657531738281250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 7,
+          "current": [
+            "0.00000882581615541320856077600609523869934491813182830810546875",
+            "0.00000882581615541320856077600609523869934491813182830810546875",
+            "-0.00726418666379096245704072298821074582519941031932830810546875",
+            "-0.00726418666379096245704072298821074582519941031932830810546875",
+            "-0.05041881997362164603421197384136576147284358739852905273437500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00673544593056242073682677629644250731112099333964177382311534118487199045378453285816237883221191",
+          "proposed_C": [
+            "1.51042142655073452275128233213141726309913792647421360015869140625",
+            "1.51042142655073452275128233213141726309913792647421360015869140625",
+            "1.48910352006043219723840052848284898345809779129922389984130859375",
+            "1.48910352006043219723840052848284898345809779129922389984130859375",
+            "1.44443794172938735540520985289880684376839781180024147033691406250",
+            "1.55651216504827920461542442587266066311713075265288352966308593750"
+          ],
+          "retained_C_after": [
+            "1.51042142655073452275128233213141726309913792647421360015869140625",
+            "1.51042142655073452275128233213141726309913792647421360015869140625",
+            "1.48910352006043219723840052848284898345809779129922389984130859375",
+            "1.48910352006043219723840052848284898345809779129922389984130859375",
+            "1.44443794172938735540520985289880684376839781180024147033691406250",
+            "1.55651216504827920461542442587266066311713075265288352966308593750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.51042142655073452275128233213141726309913792647421360015869140625",
+            "1.51042142655073452275128233213141726309913792647421360015869140625",
+            "1.48910352006043219723840052848284898345809779129922389984130859375",
+            "1.48910352006043219723840052848284898345809779129922389984130859375",
+            "1.44443794172938735540520985289880684376839781180024147033691406250",
+            "1.55651216504827920461542442587266066311713075265288352966308593750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 8,
+          "current": [
+            "0.0033968751184656936454122656832144144800622598268091678619384765625",
+            "0.0033968751184656936454122656832144144800622598268091678619384765625",
+            "-0.0058909054098404136995772474583166200545747415162622928619384765625",
+            "-0.0058909054098404136995772474583166200545747415162622928619384765625",
+            "-0.0414198545085642358818973224332538052294694352895021438598632812500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00534629505634500725916660787354907377414831902035037351707524630128475035960238443350288279124188",
+          "proposed_C": [
+            "1.5099968171609263110456057989210154612891301439958624541759490966796875",
+            "1.5099968171609263110456057989210154612891301439958624541759490966796875",
+            "1.4898398832366622489508476844151385609649196339887566864490509033203125",
+            "1.4898398832366622489508476844151385609649196339887566864490509033203125",
+            "1.4504646423225743083018000846237671730420970561681315302848815917968750",
+            "1.5498619568822485717052929487039247824498033878626301884651184082031250"
+          ],
+          "retained_C_after": [
+            "1.5099968171609263110456057989210154612891301439958624541759490966796875",
+            "1.5099968171609263110456057989210154612891301439958624541759490966796875",
+            "1.4898398832366622489508476844151385609649196339887566864490509033203125",
+            "1.4898398832366622489508476844151385609649196339887566864490509033203125",
+            "1.4504646423225743083018000846237671730420970561681315302848815917968750",
+            "1.5498619568822485717052929487039247824498033878626301884651184082031250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.5099968171609263110456057989210154612891301439958624541759490966796875",
+            "1.5099968171609263110456057989210154612891301439958624541759490966796875",
+            "1.4898398832366622489508476844151385609649196339887566864490509033203125",
+            "1.4898398832366622489508476844151385609649196339887566864490509033203125",
+            "1.4504646423225743083018000846237671730420970561681315302848815917968750",
+            "1.5498619568822485717052929487039247824498033878626301884651184082031250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 9,
+          "current": [
+            "0.004783991407441741398167135940026895024601572004030458629131317138671875",
+            "0.004783991407441741398167135940026895024601572004030458629131317138671875",
+            "-0.005641314320101801416786348425218278190840237584779970347881317138671875",
+            "-0.005641314320101801416786348425218278190840237584779970347881317138671875",
+            "-0.034234118071227573363103419048364406407358728756662458181381225585937500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00424795749926113363211893802480959111014459961220175516590367625618368483358959669513700547182196",
+          "proposed_C": [
+            "1.509398818234996093370834906928512099411054947495358646847307682037353515625",
+            "1.509398818234996093370834906928512099411054947495358646847307682037353515625",
+            "1.490545047526674974127945977968290845738774663686854182742536067962646484375",
+            "1.490545047526674974127945977968290845738774663686854182742536067962646484375",
+            "1.455939904933338190321729795989819447599167290263721952214837074279785156250",
+            "1.544172363543319674680708434216574662101173487371852388605475425720214843750"
+          ],
+          "retained_C_after": [
+            "1.509398818234996093370834906928512099411054947495358646847307682037353515625",
+            "1.509398818234996093370834906928512099411054947495358646847307682037353515625",
+            "1.490545047526674974127945977968290845738774663686854182742536067962646484375",
+            "1.490545047526674974127945977968290845738774663686854182742536067962646484375",
+            "1.455939904933338190321729795989819447599167290263721952214837074279785156250",
+            "1.544172363543319674680708434216574662101173487371852388605475425720214843750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.509398818234996093370834906928512099411054947495358646847307682037353515625",
+            "1.509398818234996093370834906928512099411054947495358646847307682037353515625",
+            "1.490545047526674974127945977968290845738774663686854182742536067962646484375",
+            "1.490545047526674974127945977968290845738774663686854182742536067962646484375",
+            "1.455939904933338190321729795989819447599167290263721952214837074279785156250",
+            "1.544172363543319674680708434216574662101173487371852388605475425720214843750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 10,
+          "current": [
+            "0.00532063966791984597695530591595692616879720304723377921618521213531494140625",
+            "0.00532063966791984597695530591595692616879720304723377921618521213531494140625",
+            "-0.00561534441914674160835566020774146413219174434061642386950552463531494140625",
+            "-0.00561534441914674160835566020774146413219174434061642386950552463531494140625",
+            "-0.02846680254084387478345612074962390353194408021408889908343553543090820312500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00337763863982410743020307044659250640268808459016105804854254143309604638286442337963003456773902",
+          "proposed_C": [
+            "1.50873373827650611262371549368901748363995529711445442444528453052043914794921875",
+            "1.50873373827650611262371549368901748363995529711445442444528453052043914794921875",
+            "1.49124696557906831682899043549425852875529863172943123572622425854206085205078125",
+            "1.49124696557906831682899043549425852875529863172943123572622425854206085205078125",
+            "1.46082841516792363616390063756251166708285960105229150940431281924247741699218750",
+            "1.53921017712092750493068750407093630812663254125993717025266960263252258300781250"
+          ],
+          "retained_C_after": [
+            "1.50873373827650611262371549368901748363995529711445442444528453052043914794921875",
+            "1.50873373827650611262371549368901748363995529711445442444528453052043914794921875",
+            "1.49124696557906831682899043549425852875529863172943123572622425854206085205078125",
+            "1.49124696557906831682899043549425852875529863172943123572622425854206085205078125",
+            "1.46082841516792363616390063756251166708285960105229150940431281924247741699218750",
+            "1.53921017712092750493068750407093630812663254125993717025266960263252258300781250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.50873373827650611262371549368901748363995529711445442444528453052043914794921875",
+            "1.50873373827650611262371549368901748363995529711445442444528453052043914794921875",
+            "1.49124696557906831682899043549425852875529863172943123572622425854206085205078125",
+            "1.49124696557906831682899043549425852875529863172943123572622425854206085205078125",
+            "1.46082841516792363616390063756251166708285960105229150940431281924247741699218750",
+            "1.53921017712092750493068750407093630812663254125993717025266960263252258300781250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 11,
+          "current": [
+            "0.0054525534870154650378891317129605379311445279011394404733437113463878631591796875",
+            "0.0054525534870154650378891317129605379311445279011394404733437113463878631591796875",
+            "-0.0055538582452497104111830035007614728560614014707397245729225687682628631591796875",
+            "-0.0055538582452497104111830035007614728560614014707397245729225687682628631591796875",
+            "-0.0238127760698773099856400334918005710135163743856878681981470435857772827148437500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00268700325197267257523787141387875983483508329476047527920921832765973473055260415603191250304470",
+          "proposed_C": [
+            "1.5080521690906291794939793522248974163985622311268119943861165666021406650543212890625",
+            "1.5080521690906291794939793522248974163985622311268119943861165666021406650543212890625",
+            "1.4919411978597245306303883109318537128623063069132737012978395796380937099456787109375",
+            "1.4919411978597245306303883109318537128623063069132737012978395796380937099456787109375",
+            "1.4651681505484121661715779246772268729423352798257873530474171275272965431213378906250",
+            "1.5348451155508804135796867490092708685359276440940412555846705799922347068786621093750"
+          ],
+          "retained_C_after": [
+            "1.5080521690906291794939793522248974163985622311268119943861165666021406650543212890625",
+            "1.5080521690906291794939793522248974163985622311268119943861165666021406650543212890625",
+            "1.4919411978597245306303883109318537128623063069132737012978395796380937099456787109375",
+            "1.4919411978597245306303883109318537128623063069132737012978395796380937099456787109375",
+            "1.4651681505484121661715779246772268729423352798257873530474171275272965431213378906250",
+            "1.5348451155508804135796867490092708685359276440940412555846705799922347068786621093750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.5080521690906291794939793522248974163985622311268119943861165666021406650543212890625",
+            "1.5080521690906291794939793522248974163985622311268119943861165666021406650543212890625",
+            "1.4919411978597245306303883109318537128623063069132737012978395796380937099456787109375",
+            "1.4919411978597245306303883109318537128623063069132737012978395796380937099456787109375",
+            "1.4651681505484121661715779246772268729423352798257873530474171275272965431213378906250",
+            "1.5348451155508804135796867490092708685359276440940412555846705799922347068786621093750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 12,
+          "current": [
+            "0.005370067446411525906093673876379455454804800508539219805470565916039049625396728515625",
+            "0.005370067446411525906093673876379455454804800508539219805470565916039049625396728515625",
+            "-0.005404890957054547753163442303436026835244975798089317464700798154808580875396728515625",
+            "-0.005404890957054547753163442303436026835244975798089317464700798154808580875396728515625",
+            "-0.020035781290041887828899535662945589622682424774113840726386115420609712600708007812500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00213838440230678704504583019074378179715896665870745974830141445412638422199290640466219606788981",
+          "proposed_C": [
+            "1.507380910659827738755717642990349984466711631063244591910432745862635783851146697998046875",
+            "1.507380910659827738755717642990349984466711631063244591910432745862635783851146697998046875",
+            "1.492616809229356349099533741219783216216711928888034865980927179407444782555103302001953125",
+            "1.492616809229356349099533741219783216216711928888034865980927179407444782555103302001953125",
+            "1.469015140071270283626713785104189935508871783049686388089583033433882519602775573730468750",
+            "1.530989420150361540662783446475543663124281097047754696127697116025956347584724426269531250"
+          ],
+          "retained_C_after": [
+            "1.507380910659827738755717642990349984466711631063244591910432745862635783851146697998046875",
+            "1.507380910659827738755717642990349984466711631063244591910432745862635783851146697998046875",
+            "1.492616809229356349099533741219783216216711928888034865980927179407444782555103302001953125",
+            "1.492616809229356349099533741219783216216711928888034865980927179407444782555103302001953125",
+            "1.469015140071270283626713785104189935508871783049686388089583033433882519602775573730468750",
+            "1.530989420150361540662783446475543663124281097047754696127697116025956347584724426269531250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        }
+      ],
+      "split_reset": [
+        {
+          "C": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "2.35565185546875",
+            "2.64434814453125"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 1,
+          "current": [
+            "-2.6610870361328125",
+            "-2.6610870361328125",
+            "-2.5889129638671875",
+            "-2.5889129638671875",
+            "-0.2165222167968750"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.38647929696890059858560562133789062500",
+          "proposed_C": [
+            "1.3326358795166015625",
+            "1.3326358795166015625",
+            "1.3236141204833984375",
+            "1.3236141204833984375",
+            "1.7174453735351562500",
+            "1.9700546264648437500"
+          ],
+          "retained_C_after": [
+            "1.3326358795166015625",
+            "1.3326358795166015625",
+            "1.3236141204833984375",
+            "1.3236141204833984375",
+            "1.7174453735351562500",
+            "1.9700546264648437500"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.3326358795166015625",
+            "1.3326358795166015625",
+            "1.3236141204833984375",
+            "1.3236141204833984375",
+            "1.7174453735351562500",
+            "1.9700546264648437500"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 2,
+          "current": [
+            "-0.926025867462158203125",
+            "-0.926025867462158203125",
+            "-0.878661632537841796875",
+            "-0.878661632537841796875",
+            "-0.171413421630859375000"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.066664114492411385981540661305189132690429687500",
+          "proposed_C": [
+            "1.448389112949371337890625",
+            "1.448389112949371337890625",
+            "1.433446824550628662109375",
+            "1.433446824550628662109375",
+            "1.507365584373474121093750",
+            "1.728962540626525878906250"
+          ],
+          "retained_C_after": [
+            "1.448389112949371337890625",
+            "1.448389112949371337890625",
+            "1.433446824550628662109375",
+            "1.433446824550628662109375",
+            "1.507365584373474121093750",
+            "1.728962540626525878906250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.448389112949371337890625",
+            "1.448389112949371337890625",
+            "1.433446824550628662109375",
+            "1.433446824550628662109375",
+            "1.507365584373474121093750",
+            "1.728962540626525878906250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 3,
+          "current": [
+            "-0.32480578124523162841796875",
+            "-0.32480578124523162841796875",
+            "-0.29555554687976837158203125",
+            "-0.29555554687976837158203125",
+            "-0.13631314039230346679687500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.0242751950173451386261191942139703314751386642456054687500",
+          "proposed_C": [
+            "1.48898983560502529144287109375",
+            "1.48898983560502529144287109375",
+            "1.47039126791059970855712890625",
+            "1.47039126791059970855712890625",
+            "1.44320328161120414733886718750",
+            "1.63803451135754585266113281250"
+          ],
+          "retained_C_after": [
+            "1.48898983560502529144287109375",
+            "1.48898983560502529144287109375",
+            "1.47039126791059970855712890625",
+            "1.47039126791059970855712890625",
+            "1.44320328161120414733886718750",
+            "1.63803451135754585266113281250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.48898983560502529144287109375",
+            "1.48898983560502529144287109375",
+            "1.47039126791059970855712890625",
+            "1.47039126791059970855712890625",
+            "1.44320328161120414733886718750",
+            "1.63803451135754585266113281250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 4,
+          "current": [
+            "-0.1147047602571547031402587890625",
+            "-0.1147047602571547031402587890625",
+            "-0.0985444462858140468597412109375",
+            "-0.0985444462858140468597412109375",
+            "-0.1089262869209051132202148437500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.01574010132625439999608501356886947064595005940645933151245117187500",
+          "proposed_C": [
+            "1.5033279306371696293354034423828125",
+            "1.5033279306371696293354034423828125",
+            "1.4827093236963264644145965576171875",
+            "1.4827093236963264644145965576171875",
+            "1.4281428774120286107063293457031250",
+            "1.5997826139209792017936706542968750"
+          ],
+          "retained_C_after": [
+            "1.5033279306371696293354034423828125",
+            "1.5033279306371696293354034423828125",
+            "1.4827093236963264644145965576171875",
+            "1.4827093236963264644145965576171875",
+            "1.4281428774120286107063293457031250",
+            "1.5997826139209792017936706542968750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.5033279306371696293354034423828125",
+            "1.5033279306371696293354034423828125",
+            "1.4827093236963264644145965576171875",
+            "1.4827093236963264644145965576171875",
+            "1.4281428774120286107063293457031250",
+            "1.5997826139209792017936706542968750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 5,
+          "current": [
+            "-0.040065893364953808486461639404296875",
+            "-0.040065893364953808486461639404296875",
+            "-0.033238521384191699326038360595703125",
+            "-0.033238521384191699326038360595703125",
+            "-0.087492588500026613473892211914062500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.012002259545998841291109367509614812979945597248843114357441663742065429687500",
+          "proposed_C": [
+            "1.508336167307788855396211147308349609375",
+            "1.508336167307788855396211147308349609375",
+            "1.486864138869350426830351352691650390625",
+            "1.486864138869350426830351352691650390625",
+            "1.429062977633293485268950462341308593750",
+            "1.580536410012427950277924537658691406250"
+          ],
+          "retained_C_after": [
+            "1.508336167307788855396211147308349609375",
+            "1.508336167307788855396211147308349609375",
+            "1.486864138869350426830351352691650390625",
+            "1.486864138869350426830351352691650390625",
+            "1.429062977633293485268950462341308593750",
+            "1.580536410012427950277924537658691406250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.508336167307788855396211147308349609375",
+            "1.508336167307788855396211147308349609375",
+            "1.486864138869350426830351352691650390625",
+            "1.486864138869350426830351352691650390625",
+            "1.429062977633293485268950462341308593750",
+            "1.580536410012427950277924537658691406250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 6,
+          "current": [
+            "-0.01274535044876756728626787662506103515625",
+            "-0.01274535044876756728626787662506103515625",
+            "-0.01245304212125120102427899837493896484375",
+            "-0.01245304212125120102427899837493896484375",
+            "-0.07066101740747399162501096725463867187500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.0094328801463805330491277084612290142687912857660803567227958410512655973434448242187500",
+          "proposed_C": [
+            "1.50992933611388480130699463188648223876953125",
+            "1.50992933611388480130699463188648223876953125",
+            "1.48842076913450682695838622748851776123046875",
+            "1.48842076913450682695838622748851776123046875",
+            "1.43470926719703584240050986409187316894531250",
+            "1.56859052230618090106872841715812683105468750"
+          ],
+          "retained_C_after": [
+            "1.50992933611388480130699463188648223876953125",
+            "1.50992933611388480130699463188648223876953125",
+            "1.48842076913450682695838622748851776123046875",
+            "1.48842076913450682695838622748851776123046875",
+            "1.43470926719703584240050986409187316894531250",
+            "1.56859052230618090106872841715812683105468750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.50992933611388480130699463188648223876953125",
+            "1.50992933611388480130699463188648223876953125",
+            "1.48842076913450682695838622748851776123046875",
+            "1.48842076913450682695838622748851776123046875",
+            "1.43470926719703584240050986409187316894531250",
+            "1.56859052230618090106872841715812683105468750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 7,
+          "current": [
+            "-0.0022461345046593805818702094256877899169921875",
+            "-0.0022461345046593805818702094256877899169921875",
+            "-0.0064158129412845710248802788555622100830078125",
+            "-0.0064158129412845710248802788555622100830078125",
+            "-0.0573938073731028453039471060037612915039062500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00746141965260242524251553013870722407667895661568808595570656549966770398896187543869018554687500",
+          "proposed_C": [
+            "1.5102101029269672238797284080646932125091552734375",
+            "1.5102101029269672238797284080646932125091552734375",
+            "1.4892227457521673983364962623454630374908447265625",
+            "1.4892227457521673983364962623454630374908447265625",
+            "1.4413219594925088529180356999859213829040527343750",
+            "1.5598123431492219026495149591937661170959472656250"
+          ],
+          "retained_C_after": [
+            "1.5102101029269672238797284080646932125091552734375",
+            "1.5102101029269672238797284080646932125091552734375",
+            "1.4892227457521673983364962623454630374908447265625",
+            "1.4892227457521673983364962623454630374908447265625",
+            "1.4413219594925088529180356999859213829040527343750",
+            "1.5598123431492219026495149591937661170959472656250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.5102101029269672238797284080646932125091552734375",
+            "1.5102101029269672238797284080646932125091552734375",
+            "1.4892227457521673983364962623454630374908447265625",
+            "1.4892227457521673983364962623454630374908447265625",
+            "1.4413219594925088529180356999859213829040527343750",
+            "1.5598123431492219026495149591937661170959472656250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 8,
+          "current": [
+            "0.002063867353589099451482979930005967617034912109375",
+            "0.002063867353589099451482979930005967617034912109375",
+            "-0.005041411788132332816303460276685655117034912109375",
+            "-0.005041411788132332816303460276685655117034912109375",
+            "-0.046893073392935136212145152967423200607299804687500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00591562532984257769943112115802926024296819787988244326468553367301406176181899354560300707817078",
+          "proposed_C": [
+            "1.509952119507768586448293035573442466557025909423828125",
+            "1.509952119507768586448293035573442466557025909423828125",
+            "1.489852922225683939938534194880048744380474090576171875",
+            "1.489852922225683939938534194880048744380474090576171875",
+            "1.447699560505023019807424589089350774884223937988281250",
+            "1.552690356028071927418920950003666803240776062011718750"
+          ],
+          "retained_C_after": [
+            "1.509952119507768586448293035573442466557025909423828125",
+            "1.509952119507768586448293035573442466557025909423828125",
+            "1.489852922225683939938534194880048744380474090576171875",
+            "1.489852922225683939938534194880048744380474090576171875",
+            "1.447699560505023019807424589089350774884223937988281250",
+            "1.552690356028071927418920950003666803240776062011718750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.509952119507768586448293035573442466557025909423828125",
+            "1.509952119507768586448293035573442466557025909423828125",
+            "1.489852922225683939938534194880048744380474090576171875",
+            "1.489852922225683939938534194880048744380474090576171875",
+            "1.447699560505023019807424589089350774884223937988281250",
+            "1.552690356028071927418920950003666803240776062011718750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 9,
+          "current": [
+            "0.00395118273175583401002342043284443207085132598876953125",
+            "0.00395118273175583401002342043284443207085132598876953125",
+            "-0.00497471363113007047918046055201557464897632598876953125",
+            "-0.00497471363113007047918046055201557464897632598876953125",
+            "-0.03854470207811738768910458929894957691431045532226562500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00469634538870373482904786236966614853366103973527993088672060119531353051917921259672539235907607",
+          "proposed_C": [
+            "1.50945822166629910719704010801933691254816949367523193359375",
+            "1.50945822166629910719704010801933691254816949367523193359375",
+            "1.49047476142957519874843175244905069121159613132476806640625",
+            "1.49047476142957519874843175244905069121159613132476806640625",
+            "1.45350544394772665177106851785993058001622557640075683593750",
+            "1.54662858986052473633798776120329421246424317359924316406250"
+          ],
+          "retained_C_after": [
+            "1.50945822166629910719704010801933691254816949367523193359375",
+            "1.50945822166629910719704010801933691254816949367523193359375",
+            "1.49047476142957519874843175244905069121159613132476806640625",
+            "1.49047476142957519874843175244905069121159613132476806640625",
+            "1.45350544394772665177106851785993058001622557640075683593750",
+            "1.54662858986052473633798776120329421246424317359924316406250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.50945822166629910719704010801933691254816949367523193359375",
+            "1.50945822166629910719704010801933691254816949367523193359375",
+            "1.49047476142957519874843175244905069121159613132476806640625",
+            "1.49047476142957519874843175244905069121159613132476806640625",
+            "1.45350544394772665177106851785993058001622557640075683593750",
+            "1.54662858986052473633798776120329421246424317359924316406250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 10,
+          "current": [
+            "0.0047942150947037124285310394355974494828842580318450927734375",
+            "0.0047942150947037124285310394355974494828842580318450927734375",
+            "-0.0051460538413636062148037719765625297441147267818450927734375",
+            "-0.0051460538413636062148037719765625297441147267818450927734375",
+            "-0.0318754389611507465279727213669502816628664731979370117187500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00373184194939493160814000379495901188901397876617281956065711033936394103005197351013294548849330",
+          "proposed_C": [
+            "1.5088589447794611431434737280898872313628089614212512969970703125",
+            "1.5088589447794611431434737280898872313628089614212512969970703125",
+            "1.4911180181597456495252822239461210074296104721724987030029296875",
+            "1.4911180181597456495252822239461210074296104721724987030029296875",
+            "1.4586884275915464231941978678896987275948049500584602355957031250",
+            "1.5413576465300399914682902280382847948203561827540397644042968750"
+          ],
+          "retained_C_after": [
+            "1.5088589447794611431434737280898872313628089614212512969970703125",
+            "1.5088589447794611431434737280898872313628089614212512969970703125",
+            "1.4911180181597456495252822239461210074296104721724987030029296875",
+            "1.4911180181597456495252822239461210074296104721724987030029296875",
+            "1.4586884275915464231941978678896987275948049500584602355957031250",
+            "1.5413576465300399914682902280382847948203561827540397644042968750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.5088589447794611431434737280898872313628089614212512969970703125",
+            "1.5088589447794611431434737280898872313628089614212512969970703125",
+            "1.4911180181597456495252822239461210074296104721724987030029296875",
+            "1.4911180181597456495252822239461210074296104721724987030029296875",
+            "1.4586884275915464231941978678896987275948049500584602355957031250",
+            "1.5413576465300399914682902280382847948203561827540397644042968750"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 11,
+          "current": [
+            "0.005129186140357191637140395201743814368455787189304828643798828125",
+            "0.005129186140357191637140395201743814368455787189304828643798828125",
+            "-0.005250130709521530126171647012700560708253760822117328643798828125",
+            "-0.005250130709521530126171647012700560708253760822117328643798828125",
+            "-0.026520060964439188969186261823907102552766446024179458618164062500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00296742734720882363629115302445711146521896066260961521797446677984592462766590349916827486871293",
+          "proposed_C": [
+            "1.508217796511916494188831178689669254566751988022588193416595458984375",
+            "1.508217796511916494188831178689669254566751988022588193416595458984375",
+            "1.491774284498435840791053679822708577518142192275263369083404541015625",
+            "1.491774284498435840791053679822708577518142192275263369083404541015625",
+            "1.463285731747190619724631249418123069006014702608808875083923339843750",
+            "1.536730106232104710315599033557121266824196936795487999916076660156250"
+          ],
+          "retained_C_after": [
+            "1.508217796511916494188831178689669254566751988022588193416595458984375",
+            "1.508217796511916494188831178689669254566751988022588193416595458984375",
+            "1.491774284498435840791053679822708577518142192275263369083404541015625",
+            "1.491774284498435840791053679822708577518142192275263369083404541015625",
+            "1.463285731747190619724631249418123069006014702608808875083923339843750",
+            "1.536730106232104710315599033557121266824196936795487999916076660156250"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        },
+        {
+          "C": [
+            "1.508217796511916494188831178689669254566751988022588193416595458984375",
+            "1.508217796511916494188831178689669254566751988022588193416595458984375",
+            "1.491774284498435840791053679822708577518142192275263369083404541015625",
+            "1.491774284498435840791053679822708577518142192275263369083404541015625",
+            "1.463285731747190619724631249418123069006014702608808875083923339843750",
+            "1.536730106232104710315599033557121266824196936795487999916076660156250"
+          ],
+          "W": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "attempt": 12,
+          "current": [
+            "0.00518673885335618972138209208620762691310801528743468225002288818359375",
+            "0.00518673885335618972138209208620762691310801528743468225002288818359375",
+            "-0.00522831354900643107698658489622400846741356872371397912502288818359375",
+            "-0.00522831354900643107698658489622400846741356872371397912502288818359375",
+            "-0.02219625683672426114767084037032729426641708414535969495773315429687500"
+          ],
+          "disposition": "positive_mathematical_update",
+          "geometry": "identity reference",
+          "norm_squared_after": "0.00236076206157592849421101585779264162813672273348613697562112821053072328164839931650926707979458",
+          "proposed_C": [
+            "1.50756945415524697047365841717889330120261348611165885813534259796142578125",
+            "1.50756945415524697047365841717889330120261348611165885813534259796142578125",
+            "1.49242782369206164467567700293473657857656888836572761647403240203857421875",
+            "1.49242782369206164467567700293473657857656888836572761647403240203857421875",
+            "1.46735694856512019979843562748596588751759384194883750751614570617675781250",
+            "1.53264849574026256990289353228677435292404140909638954326510429382324218750"
+          ],
+          "retained_C_after": [
+            "1.50756945415524697047365841717889330120261348611165885813534259796142578125",
+            "1.50756945415524697047365841717889330120261348611165885813534259796142578125",
+            "1.49242782369206164467567700293473657857656888836572761647403240203857421875",
+            "1.49242782369206164467567700293473657857656888836572761647403240203857421875",
+            "1.46735694856512019979843562748596588751759384194883750751614570617675781250",
+            "1.53264849574026256990289353228677435292404140909638954326510429382324218750"
+          ],
+          "retained_W_after": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ],
+          "retained_writer_executed": true,
+          "structural_current": "zero"
+        }
+      ]
+    },
+    "source_top_mode": {
+      "eigenvalue": "4.78130106140986468565505424156957542630890524109934547856065228176766814632141733227352543383836",
+      "parent_contact_signature": [
+        "1.24795754360541257379783033721698294764379035602618085757390872929327414714330670905898264646534",
+        "1.24795754360541257379783033721698294764379035602618085757390872929327414714330670905898264646534",
+        "1.25204245639458742620216966278301705235620964397381914242609127070672585285669329094101735353466",
+        "1.25204245639458742620216966278301705235620964397381914242609127070672585285669329094101735353466"
+      ],
+      "vector": [
+        "-0.247957543605412573797830337216982947643790356026180857573908729293274147143306709058982646465340",
+        "-0.247957543605412573797830337216982947643790356026180857573908729293274147143306709058982646465340",
+        "-0.252042456394587426202169662783017052356209643973819142426091270706725852856693290941017353534661",
+        "-0.252042456394587426202169662783017052356209643973819142426091270706725852856693290941017353534661",
+        "1"
+      ]
+    },
+    "targets_searched": 0
+  },
+  "exact": {
+    "allocation_bin_margin": "4261349915/45117027302",
+    "covariance_checks": [
+      {
+        "edge_order": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "orientation_signs": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "vertex_order": [
+          4,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "edge_order": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "orientation_signs": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "vertex_order": [
+          4,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "edge_order": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "orientation_signs": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "vertex_order": [
+          4,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "edge_order": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "orientation_signs": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "vertex_order": [
+          4,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "edge_order": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "orientation_signs": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "vertex_order": [
+          2,
+          3,
+          0,
+          1,
+          4
+        ]
+      },
+      {
+        "edge_order": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "orientation_signs": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "vertex_order": [
+          2,
+          3,
+          0,
+          1,
+          4
+        ]
+      },
+      {
+        "edge_order": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "orientation_signs": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "vertex_order": [
+          2,
+          3,
+          0,
+          1,
+          4
+        ]
+      },
+      {
+        "edge_order": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "orientation_signs": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "vertex_order": [
+          2,
+          3,
+          0,
+          1,
+          4
+        ]
+      },
+      {
+        "edge_order": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "orientation_signs": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "vertex_order": [
+          1,
+          3,
+          4,
+          0,
+          2
+        ]
+      },
+      {
+        "edge_order": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "orientation_signs": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "vertex_order": [
+          1,
+          3,
+          4,
+          0,
+          2
+        ]
+      },
+      {
+        "edge_order": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "orientation_signs": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "vertex_order": [
+          1,
+          3,
+          4,
+          0,
+          2
+        ]
+      },
+      {
+        "edge_order": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "orientation_signs": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "vertex_order": [
+          1,
+          3,
+          4,
+          0,
+          2
+        ]
+      }
+    ],
+    "initial_decision": {
+      "active_loci": [],
+      "current": [
+        "-219127/320000",
+        "-219127/320000",
+        "-6290669/10240000",
+        "-6290669/10240000"
+      ],
+      "diagnostics": [
+        {
+          "parent": 4,
+          "rayleigh": "2341/512",
+          "reason": "spectral_certificate_inactive"
+        }
+      ],
+      "outcome": "no_event",
+      "prescription": null
+    },
+    "ordinary_post_C": [
+      "2779127/2560000",
+      "2779127/2560000",
+      "88210669/81920000",
+      "88210669/81920000",
+      "191497267/40960000"
+    ],
+    "ordinary_post_W": [
+      "19/20",
+      "19/20",
+      "77/80",
+      "77/80"
+    ],
+    "positive_resource_lower": "5/6",
+    "positive_return_radius": "2/3",
+    "poststate_decision": {
+      "active_loci": [
+        4
+      ],
+      "current": [
+        "1328517563/13107200000",
+        "1328517563/13107200000",
+        "11930373147/104857600000",
+        "11930373147/104857600000"
+      ],
+      "diagnostics": [
+        {
+          "inward": {
+            "0": "1328517563/13107200000",
+            "1": "1328517563/13107200000",
+            "2": "11930373147/104857600000",
+            "3": "11930373147/104857600000"
+          },
+          "parent": 4,
+          "rayleigh": "153/32",
+          "reason": "active_localized_sector_fission",
+          "x": "117769267/32768000",
+          "y": "144279/32768000"
+        }
+      ],
+      "outcome": "resolved",
+      "prescription": {
+        "activities": [
+          "1328517563/6553600000",
+          "11930373147/52428800000"
+        ],
+        "blocks": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "funding_margins": [
+          "149927187137/134217728000",
+          "936702018107/671088640000"
+        ],
+        "k": 30876,
+        "parent": 4,
+        "sector_W": [
+          "19/20",
+          "77/80"
+        ],
+        "shares": [
+          "7719/16384",
+          "8665/16384"
+        ]
+      }
+    },
+    "represented_companion": {
+      "native_charge_admission": false,
+      "roles": {
+        "current": {
+          "exact_input_sum": "20266198323167231/2251799813685248",
+          "exact_stored_sum": "20266198323167231/2251799813685248",
+          "stored_C": [
+            "2444545961252985/2251799813685248",
+            "2444545961252985/2251799813685248",
+            "4849432812969997/4503599627370496",
+            "4849432812969997/4503599627370496",
+            "619988345515357/281474976710656",
+            "695970852946051/281474976710656"
+          ],
+          "stored_minus_input": "0"
+        },
+        "reset": {
+          "exact_input_sum": "9",
+          "exact_stored_sum": "9",
+          "stored_C": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "38595/16384",
+            "43325/16384"
+          ],
+          "stored_minus_input": "0"
+        }
+      },
+      "selected_k": 30876
+    },
+    "source_controls": {
+      "homogeneous": {
+        "active_loci": [],
+        "current": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "diagnostics": [
+          {
+            "inward": {
+              "0": "0",
+              "1": "0",
+              "2": "0",
+              "3": "0"
+            },
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "not_four_strict_inflows"
+          }
+        ],
+        "outcome": "no_event",
+        "prescription": null
+      },
+      "resource_sector_mismatch": {
+        "active_loci": [],
+        "current": [
+          "33224768323/327680000000",
+          "33201109827/327680000000",
+          "11930373147/104857600000",
+          "11930373147/104857600000"
+        ],
+        "diagnostics": [
+          {
+            "inward": {
+              "0": "33224768323/327680000000",
+              "1": "33201109827/327680000000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "within_sector_resource_mismatch"
+          }
+        ],
+        "outcome": "unresolved",
+        "prescription": null
+      },
+      "target_reapplication": {
+        "active_loci": [],
+        "current": [
+          "-5972077208123/2684354560000",
+          "-5972077208123/2684354560000",
+          "-5832288468421/2684354560000",
+          "-5832288468421/2684354560000",
+          "-248095950513/1342177280000"
+        ],
+        "diagnostics": [],
+        "outcome": "no_event",
+        "prescription": null
+      },
+      "target_size_bound": {
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000"
+        ],
+        "diagnostics": [
+          {
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          }
+        ],
+        "outcome": "uncertified",
+        "prescription": null,
+        "reason": "selected_target_size_bound"
+      },
+      "two_active_loci": {
+        "active_loci": [
+          4,
+          9
+        ],
+        "current": [
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000",
+          "1328517563/13107200000",
+          "1328517563/13107200000",
+          "11930373147/104857600000",
+          "11930373147/104857600000"
+        ],
+        "diagnostics": [
+          {
+            "inward": {
+              "0": "1328517563/13107200000",
+              "1": "1328517563/13107200000",
+              "2": "11930373147/104857600000",
+              "3": "11930373147/104857600000"
+            },
+            "parent": 4,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          },
+          {
+            "inward": {
+              "4": "1328517563/13107200000",
+              "5": "1328517563/13107200000",
+              "6": "11930373147/104857600000",
+              "7": "11930373147/104857600000"
+            },
+            "parent": 9,
+            "rayleigh": "153/32",
+            "reason": "active_localized_sector_fission",
+            "x": "117769267/32768000",
+            "y": "144279/32768000"
+          }
+        ],
+        "outcome": "unresolved",
+        "prescription": null
+      },
+      "uniform_history_ambiguous": {
+        "active_loci": [],
+        "current": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "diagnostics": [
+          {
+            "inward": {
+              "0": "1",
+              "1": "1",
+              "2": "1",
+              "3": "1"
+            },
+            "parent": 4,
+            "rayleigh": "5",
+            "reason": "response_partition_unresolved"
+          }
+        ],
+        "outcome": "unresolved",
+        "prescription": null
+      }
+    },
+    "source_growth_multiplier_lower": "8345/8192",
+    "source_initial_lambda_upper": "5929/1280",
+    "source_post_rayleigh": "153/32",
+    "source_sector_characteristic": [
+      "1",
+      "-459/80",
+      "1463/320"
+    ],
+    "target": {
+      "current_C": [
+        "2779127/2560000",
+        "2779127/2560000",
+        "88210669/81920000",
+        "88210669/81920000",
+        "1478167403973/671088640000",
+        "331864763711/134217728000"
+      ],
+      "current_W": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "history_disposition": "explicit_loss_all_A_W_and_independent_target_reference_pass",
+      "native_initializer_or_owner_called": false,
+      "reference_weights": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "reset_C": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "38595/16384",
+        "43325/16384"
+      ],
+      "reset_W": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "transfer": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "7719/16384"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "8665/16384"
+        ]
+      ]
+    },
+    "target_entry": {
+      "current": {
+        "first_C": [
+          "29285084193339/21474836480000",
+          "29285084193339/21474836480000",
+          "28956186082757/21474836480000",
+          "28956186082757/21474836480000",
+          "8963348602979/5368709120000",
+          "10234398338973/5368709120000"
+        ],
+        "first_current": [
+          "-5972077208123/2684354560000",
+          "-5972077208123/2684354560000",
+          "-5832288468421/2684354560000",
+          "-5832288468421/2684354560000",
+          "-248095950513/1342177280000"
+        ],
+        "first_min": "28956186082757/21474836480000",
+        "first_norm_squared": "6386502654610822861164333/23058430092136939520000000",
+        "initial_norm_squared": "19287112911584234075521/9007199254740992000000"
+      },
+      "reset": {
+        "first_C": [
+          "698685/524288",
+          "698685/524288",
+          "693955/524288",
+          "693955/524288",
+          "225109/131072",
+          "258219/131072"
+        ],
+        "first_current": [
+          "-174397/65536",
+          "-174397/65536",
+          "-169667/65536",
+          "-169667/65536",
+          "-7095/32768"
+        ],
+        "first_min": "693955/524288",
+        "first_norm_squared": "26558655057/68719476736",
+        "initial_norm_squared": "408246409/134217728"
+      }
+    },
+    "target_q_upper": "457/512",
+    "target_step_matrix": [
+      [
+        "21/32",
+        "1/8",
+        "0",
+        "0",
+        "3/32",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "21/32",
+        "0",
+        "0",
+        "3/32",
+        "1/8"
+      ],
+      [
+        "0",
+        "0",
+        "21/32",
+        "1/8",
+        "1/8",
+        "3/32"
+      ],
+      [
+        "0",
+        "0",
+        "1/8",
+        "21/32",
+        "1/8",
+        "3/32"
+      ],
+      [
+        "3/32",
+        "3/32",
+        "1/8",
+        "1/8",
+        "23/32",
+        "-5/32"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "3/32",
+        "3/32",
+        "-5/32",
+        "23/32"
+      ]
+    ]
+  },
+  "predecessors": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCriticalModeCertificate.json",
+      "record_digest": "6e3a7831bd7ae9ec3f5fa45925d3776837d1e996a6d6dec88e602ca3cf09e647"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionOSFeedbackCertificate.json",
+      "record_digest": "76e5ece4e49a64b73d53f61b198ac2117474bbb3c9b1416929aeadcd525c85c8"
+    }
+  ],
+  "production_changes": false,
+  "record_digest": "66e7faa8899da3ab0aa636a5f943fcc97cd1451adeb2ff0a93cc09cd96cab0af",
+  "schema": "grcv4_atc_localized_sector_fission_certificate_v1",
+  "scientific_status": "new_constitutive_hypothesis_and_mathematics_pending_independent_review",
+  "scope": {
+    "H0": "unit measure",
+    "W_floor": "1/2",
+    "alpha": 0,
+    "beta": 0,
+    "candidate": "A",
+    "carrier": null,
+    "chi_A": 0,
+    "eta": 1,
+    "gamma": 0,
+    "h": "1/8",
+    "history_policy": "explicit all-W loss, separate target-reference-pass formula for both roles",
+    "initial_C": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "5"
+    ],
+    "initial_W": [
+      "361/400",
+      "361/400",
+      "5929/6400",
+      "5929/6400"
+    ],
+    "kappa_Ah": 1,
+    "kappa_H": 1,
+    "kappa_c": 1,
+    "native_potential_initializer_backend_and_atomic_owner_admission": false,
+    "physical_inputs": "graph,C,W,fixed research law only",
+    "potential": "19*C/4",
+    "prepared_source_history_not_generated_by_canonical_zero_channel_initializer": true,
+    "realization": "one-pass OS zero-read control",
+    "reference_weights": "all one",
+    "reset_C": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "5"
+    ],
+    "reset_W": [
+      "361/400",
+      "361/400",
+      "5929/6400",
+      "5929/6400"
+    ],
+    "source_edges": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "source_rule": "isolated four-star, two exact response sectors, certified cone obstruction, inflow and dyadic funding",
+    "tau_A": "h/log(2)",
+    "zeta_A": 1
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md",
+      "sha256": "443880480cee234b3da850290296395c43237a6976f3d891972049370e4952a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC2CandidateClosureProposal.md",
+      "sha256": "aa3a9de4cfc15a0be0487203ba6a470d0109e2f96667d54219d884fb5a85723b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSourceFissionProposal.md",
+      "sha256": "b07f9d7672c4774adfabb6424f4ee905c1be25320de2bea95966f39e67bebd67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCriticalModeCertificate.json",
+      "sha256": "5fa2eda45063ebeb39e61b756cb0cbe02022ffd5d1e9a3be7096992c5c528509"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCOSGeometryFeedbackCertificate.json",
+      "sha256": "0a6ff9ab8efc9d32c9df4bb75366474e74b357a67d0aef27f9b3ecc327a3b48f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionOSFeedbackCertificate.json",
+      "sha256": "61099508c2c67c48076b793f066ff7af7356caa883fdd0e7564395f30e876181"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionStabilityReviewCertificate.json",
+      "sha256": "9595034982158304515e8ca1f7d55f461d134ac94b191c5f543ff6e54752ca50"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCUnsplitViabilityCertificate.json",
+      "sha256": "91d188d8a2335638d9108219201c6a6d522c6b38db40958110a4a3e3f52180ee"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_critical_mode.py",
+      "sha256": "9a10e97c87a521ac9614565a84d1a5729fc8db5527df147d02f3074179e995fc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_localized_sector_fission.py",
+      "sha256": "9ac3737d302fb327adaac6633c746cd63cfbcb0835a1b09c9edc5187b15c12c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_os_geometry_feedback.py",
+      "sha256": "1f69df96b16034117b28f0d1074d69c6828cdeabcb9303b44631547e206c069b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_os_feedback.py",
+      "sha256": "252ad3e32e9aaca399dbdcd77bddf9cb9818db5f6874170b90f1ba0ee74ea570"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_review.py",
+      "sha256": "c04fd27e5bd25d1df9fb2055acf37b7a843cf0bc86f46e9e2284f845c3110ddc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_stability.py",
+      "sha256": "1827200beb884b22e55fd7770955124e828b8cbe7f851d4af5bdb53aff280342"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_unsplit_viability.py",
+      "sha256": "d3c6017f53fb9e46ab16e50e9f6b3e9c8f889f1567c2608450494c334a744d46"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/a_initializer.py",
+      "sha256": "6efb1e33baff33e4f5d76de7937a9cb4977c89c28d6bf8999e168bf68e46de3b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/forensic.py",
+      "sha256": "6d44973aececa003f180082175025e23b9a0db44e5fd9e5d80217b368e552795"
+    },
+    {
+      "path": "specs/grc-v4-a-initializer-spec.md",
+      "sha256": "ff5990571197d7c843a16bd404694e35f8c6fc5da01856e5639d51ad5f2b36e6"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f"
+    }
+  ],
+  "status": "passed_bounded_source_selected_restorative_witness"
+}

@@ -1968,3 +1968,94 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       comparison, exact dependencies and same-scope parent closure. Reject
       missing ownership, bypassed oracle acceptance or generic-gap workaround.
       Oracle/runtime tasks remain pending, not completed by this registration.
+
+## ATC A_OS bounded research source admission
+
+- [x] Relocate evidence/reviews, preserve scientific payloads and rebuild
+      dependent identities; retain only manuscripts/navigation in drafts.
+- [x] Admit the 36 bounded claims, 35 proposal origins and 28 scoped debt
+      transformations through a pinned append-only context.
+- [x] Provide explicit ATC source observation, claim reconstruction and debt
+      lifecycle API/CLI, with historical authority unchanged.
+- [x] Test binding drift, unprocessed sources, ancestry, debt reciprocity and
+      research/native scope separation. No native or aggregate ATC acceptance.
+- [x] Correct the one late navigation-path binding with an exact, path-scoped
+      compatibility check and independent current-byte pin. Eleven focused
+      tests pass; scientific records are unchanged. Document that pending
+      CI/PC boundary evidence is outside the accepted A_OS inventory.
+
+## ATC paired A_PC successor admission
+
+- [x] Pin the reviewed checkpoint and explicit successor ledger; append five
+      conditional PC claims, one superseded control and 28 scoped debts.
+- [x] Preserve all A_OS nodes/edges and debt meanings; the historical PC-only
+      admission leaves CI unadmitted (the later CI successor is separate).
+- [x] Expose `atc-pc-query` and typed API for observation, audit, full claim
+      ancestry and scoped debt lifecycle, with transitive execution bindings.
+- [x] Check drift, forged admission, ancestry, reciprocity, control promotion,
+      CI/native/aggregate widening and portable command dispatch: ten PC tests
+      pass; all eleven historical A_OS admission tests also pass.
+- [x] Record local DB-24 closure without global discharge; route CI-2/CI-3
+      to separate successor files so accepted PC source identities stay fixed.
+- [x] Keep the initially pending CI-2/CI-3 inventory separate and document its
+      checkers; later CI admission below preserves the PC/A_OS context.
+- [x] After final independent CI PASS and user authorization, admit the exact
+      CI successor with its own scoped claims/debts; do not widen PC acceptance.
+- [x] Distinguish CI-2 independent scientific PASS/closure, CI-3 core PASS,
+      and CI-3 locally checked boundary/pairing correction from source admission.
+      Retain the review and exact witness regression evidence outside PC inventory.
+- [x] Retain follow-up independent boundary PASS and address the new derived-witness
+      HOLD via executing-only certification, forgery/consistency checks and
+      explicit CI funding evidence. No source admission follows automatically.
+
+### ATC paired A_CI scoped admission
+
+- [x] Retain final independent CI-3 PASS and user-authorized CI-0–CI-3 acceptance.
+- [x] Admit four conditional claims and all 28 reciprocal CI-local debt rows:
+      14 closed, six partial, eight not activated; all globally open.
+- [x] Close DB-05 locally through the CI joint-root theorem and DB-24 only
+      through the pinned exact CI source inventory and append-only graph audit.
+- [x] Expose working `atc-ci-query` and typed API discovery/claim/debt/audit paths.
+- [x] Preserve reviewed scientific certificates and accepted PC/A_OS graph/data;
+      historical pending flags are superseded by the new CI ledger, not rewritten.
+- [x] Ten CI admission/mutation/CLI tests and ten historical PC tests pass;
+      no numerical rerun, native/aggregate widening or other-family admission.
+
+### ATC A_CI+PC successor preparation
+
+- [x] Keep CIP-0 evidence separate from the accepted CI/PC inventories and
+      preserve their graphs; trace accepted claims/debts through the typed API.
+- [x] Retain proposed CIP root/staging claim and pending debt routes without
+      copying CI/PC local closure into this realization.
+- [x] Retain the executed CIP-1 causal certificate and proposed CHAIN-01
+      routes separately; preserve CIP-0 and accepted predecessor source bytes.
+      Local execution does not imply independent review or source admission.
+- [x] Retain independent CIP-0/CIP-1 PASS and add the DB-04 ancestry correction
+      without rewriting either reviewed record or discharging the debt.
+- [x] Retain CIP-2 local reference/conformance evidence separately, including
+      exact/signed carrier endpoints and finite represented C/W/Z/J/H errors.
+      Reviewed code and retained certificate identities remain unchanged.
+- [x] Record CIP-2 independent scientific PASS and local retained-identity
+      PASS separately; do not claim the reviewer checked the unavailable
+      certificate or compared their raw rerun record to it.
+- [x] After the scientific reviews, reconcile all 28 CIP-local
+      debts and admit an exact append-only successor inventory/graph.
+      Three conditional claims; 14 closed, six partial, eight not activated.
+- [x] Expose the admitted successor through typed queries and a portable CLI;
+      preserve native, aggregate and other-realization authority boundaries.
+- [x] Pressure reciprocal lineage, additive DB-04 routing, source drift,
+      unprocessed additions, rehashed manifests, review-class widening and
+      unchanged historical graphs without rerunning numerical campaigns.
+- [x] Retain the proposed RGATC packages with portable source correspondences,
+      typed predecessor traces and all 28 pending A_RG2b debt routes.
+      Scientific source/certificate bytes are unchanged; no graph admission.
+- [x] Record user-reported RGATC-T/A and E/R audit PASS separately from
+      unchanged package inputs; no fresh full E/R execution is claimed.
+- [x] Following the passing RGATC review, adjudicate A_RG2b claims/debts and add
+      an exact successor context without widening existing accepted profiles.
+- [x] Expose RGATC discovery/audit/claim/debt and all-five Candidate-A summary
+      through the actual typed API/CLI; preserve historic negative and
+      conditional classes, graph rows, scientific identities and global debts.
+- [x] Pressure changed/missing/new package sources, repinned mutations,
+      reciprocal debt routing, provenance and closure boundaries with the
+      focused admission suite; no scientific campaign reruns.

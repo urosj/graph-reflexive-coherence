@@ -1,0 +1,19 @@
+{
+  "schema": "rgatc_er_reproduction_v1",
+  "fresh_complete_execution": true,
+  "separate_process_complete_rerun": true,
+  "full_regenerated_record_exactly_equals_retained": true,
+  "record_digest": "0c2b8ae02c89f8718e4b90387cab4af810f2d77a0d1b611c7e03b7d7e5960bf8",
+  "section_queries_per_full_run": 201,
+  "predecessor_manifest_entries_verified": 9,
+  "predecessor_bytes_unchanged": true,
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 python check_rgatc_er.py --write",
+    "PYTHONDONTWRITEBYTECODE=1 python check_rgatc_er.py --compare",
+    "PYTHONDONTWRITEBYTECODE=1 python check_rgatc_er.py --check",
+    "PYTHONDONTWRITEBYTECODE=1 python pressure_rgatc_er.py"
+  ],
+  "independent_scientific_review": false,
+  "native_implementation": false,
+  "reported_by_supplied_package_not_local_rerun": true
+}

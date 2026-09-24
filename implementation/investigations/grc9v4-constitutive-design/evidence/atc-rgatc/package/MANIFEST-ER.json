@@ -1,0 +1,123 @@
+{
+  "schema": "rgatc_er_package_manifest_v1",
+  "record_digest": "0c2b8ae02c89f8718e4b90387cab4af810f2d77a0d1b611c7e03b7d7e5960bf8",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4338,
+      "sha256": "367db4ceae63f1ec295ea429714e0e882c77c9b425457e501c145278181c788e"
+    },
+    {
+      "path": "REPRODUCTION.json",
+      "bytes": 805,
+      "sha256": "8b0057d78366645954058e05c0d0bea268689bbffbb2efc1cfd856d36b25d887"
+    },
+    {
+      "path": "RGATC-E.md",
+      "bytes": 9043,
+      "sha256": "b3b089955bc9636b62b5e82acb12b7387bab85e768c29c221cb8ec4b55e7247d"
+    },
+    {
+      "path": "RGATC-ER-Certificate.json",
+      "bytes": 1431417,
+      "sha256": "756e135d386a7685eb70332596e48af3d40e51019d6042c9d3f1d6860c69b73c"
+    },
+    {
+      "path": "RGATC-ER-Disposition.json",
+      "bytes": 1221,
+      "sha256": "03c29d98b2a0e11237481bf9ed219a89974a91f7100dbbed432b0e93f6df604a"
+    },
+    {
+      "path": "RGATC-ER-Pressure.json",
+      "bytes": 1930,
+      "sha256": "d6319720e8cad42c10e3f8070df48d7c084a0d4b9293e6f2be29f1ebd36c8c3a"
+    },
+    {
+      "path": "RGATC-R-Scope.md",
+      "bytes": 9916,
+      "sha256": "17808b606b7bda3339c307a34931a7d950bb2ec61484c8c631a19b4bb2cf6ee5"
+    },
+    {
+      "path": "RGATC-R-SectionEvaluator.md",
+      "bytes": 9170,
+      "sha256": "c4298e5d87a58bb7c052b2ed409a7bb1f6b2797ac0731e34bdabbf54658fa57e"
+    },
+    {
+      "path": "build_reports.py",
+      "bytes": 11843,
+      "sha256": "dca1e1e02f6ff13d00c3797c38f4d449f266db03233b5fa0d5eab33440fe6632"
+    },
+    {
+      "path": "check_rgatc_er.py",
+      "bytes": 23700,
+      "sha256": "d8a990ad5cba73b61a201a97008717cfe7d24e7fca07259f06f5cae482da7f11"
+    },
+    {
+      "path": "predecessor/MANIFEST.json",
+      "bytes": 1481,
+      "sha256": "6d071bbe13ea74b78181476505096e5c4edac56c0a3270d17d266bb9ccd9d136"
+    },
+    {
+      "path": "predecessor/README.md",
+      "bytes": 3043,
+      "sha256": "b4761b4fb61cb5918c50042e8702c0f28d8854eec88dfb57e6446ee045d90861"
+    },
+    {
+      "path": "predecessor/RGATC-A.md",
+      "bytes": 19502,
+      "sha256": "1cc5dea890c763b6e64175ac9d1fba1acbf79b01889def3f363daef0cf811e9d"
+    },
+    {
+      "path": "predecessor/RGATC-T.md",
+      "bytes": 14450,
+      "sha256": "0bed7bd0d7b6551d3b1662ba9506a1f47b7672856c31d1e99667054ea7518a4d"
+    },
+    {
+      "path": "predecessor/RGATC-TA-Certificate.json",
+      "bytes": 12691,
+      "sha256": "857e15f3e2a25f76f016e336af11fc84ba7c21401bf16e3a9d5b11e3bb14c162"
+    },
+    {
+      "path": "predecessor/RGATC-TA-Pressure.json",
+      "bytes": 1588,
+      "sha256": "c0520ec4ae01266d2114d39a068427577d20eee3469e0f155e878640cbe9201f"
+    },
+    {
+      "path": "predecessor/RGATC-TA-SourceMap.json",
+      "bytes": 4459,
+      "sha256": "94fc8959690db8d6f71d82afaf56bbb048330c5640961d2af10a0ea28d6154c9"
+    },
+    {
+      "path": "predecessor/check_rgatc_ta.py",
+      "bytes": 14716,
+      "sha256": "c891ff32e0407fae90111bcb340deedbe5193a3132d399ac53c17e0607eb7a5b"
+    },
+    {
+      "path": "predecessor/deps/retained/arithmetic/certify_atc_sector_readback_point.py",
+      "bytes": 16204,
+      "sha256": "86373eb2f339d606a72ca38ceab6372438334d1c2ecbf0410c02520fb09e1731"
+    },
+    {
+      "path": "predecessor/pressure_rgatc_ta.py",
+      "bytes": 3009,
+      "sha256": "0c2bf397140671041f606d3c9262343c2f73ac325297a1525644a23ee3ca56fb"
+    },
+    {
+      "path": "pressure_rgatc_er.py",
+      "bytes": 2935,
+      "sha256": "1fcb222b66f8923e6b537d86eef90752118a290a540ad5bf06dd21337819a84b"
+    },
+    {
+      "path": "rgatc_oracle.py",
+      "bytes": 5719,
+      "sha256": "73b32a86230fee2a79989ceda35d2c7023624a32e807dde48d2b91cd68c45d6f"
+    },
+    {
+      "path": "rgatc_reference.py",
+      "bytes": 25697,
+      "sha256": "688c8975b57e1c9019675d0c9f9e91e8b585b8e75247559607eed9126a6830be"
+    }
+  ],
+  "status": "executed_internal_evidence_pending_independent_review",
+  "origin_ledger_modified": false
+}

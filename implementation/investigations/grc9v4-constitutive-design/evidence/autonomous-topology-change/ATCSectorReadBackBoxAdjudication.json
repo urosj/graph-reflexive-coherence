@@ -1,0 +1,524 @@
+{
+  "schema": "grcv4_atc_sector_readback_box_adjudication_v1",
+  "record_id": "ATC-LSF-READBACK-BOX-ADJUDICATION-v1",
+  "status": "accepted_prepared_family_original_parameter_box",
+  "scientific_acceptance": true,
+  "graph_admission": false,
+  "native_authority": false,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "predecessor_adjudication": "47c49a4e6a055ec087ddb9401277b315276e63157a0f469e3552be22a897376b",
+  "reviewed_certificate_digest": "63645b59e7d2f78516fa435d99e1f648df50ab4528c3b98b1ab8d20085f36fac",
+  "accepted_scope": {
+    "whole_box_source_and_entry_accepted": true,
+    "state_domain": "fixed prepared exactly paired isolated four-star family only",
+    "parameter_box": {
+      "chi_A": [
+        "1/32",
+        "1/16"
+      ],
+      "gamma": [
+        "1/2048",
+        "1/1024"
+      ],
+      "kappa_H": [
+        "1/2",
+        "1"
+      ],
+      "kappa_Ah": [
+        "1/2",
+        "1"
+      ]
+    },
+    "alpha": 0,
+    "beta": 0,
+    "a": "19/4",
+    "h": "1/8",
+    "k_conservative_hull": [
+      30378,
+      31236
+    ],
+    "target_proof_cells": 8,
+    "actual_roles": [
+      "current",
+      "independently_retained_reset"
+    ],
+    "generic_guard_implies_obstruction": false,
+    "arbitrary_reset_admission": false,
+    "return_q": "9209/10240"
+  },
+  "independent_review": {
+    "executed": [
+      "kernel_hardening",
+      "reduced_algebra",
+      "box"
+    ],
+    "repository_main_executed": false
+  },
+  "debts": [
+    {
+      "origin_debt_id": "ATC7-DB-01",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-02",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-01"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-03",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-01"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-04",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-01"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-05",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-01",
+        "ATC-LSF-RBB-CL-03",
+        "ATC-LSF-RBB-CL-05"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-06",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-03",
+        "ATC-LSF-RBB-CL-05"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-07",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Uniform prepared-family obstruction, not arbitrary-state guard sufficiency.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-02",
+        "ATC-LSF-RBB-CL-03"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-08",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Uniform prepared-family sector-to-surgery result, not generic/native lift.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-02"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-09",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-02"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-10",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "All possible prescribed bins covered; conservative hull is not exact reachability or native rounding authority.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-01",
+        "ATC-LSF-RBB-CL-02"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-11",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-12",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-02"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-13",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-02",
+        "ATC-LSF-RBB-CL-04"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-14",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-04"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-15",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-04"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-16",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-04"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-17",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-18",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-19",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Uniform prepared-family actual-role entry and return; not arbitrary reset or arbitrary-source restoration.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-03",
+        "ATC-LSF-RBB-CL-04",
+        "ATC-LSF-RBB-CL-05"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-20",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-04",
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-21",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-22",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-23",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-04",
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-24",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-25",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-26",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Original positive parameter box accepted only on fixed prepared A_OS family; other states and families open.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-05",
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-27",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ]
+    },
+    {
+      "origin_debt_id": "ATC7-DB-28",
+      "discharged": false,
+      "predecessor_disposition_retained": true,
+      "successor_scope": "Prior obligation retained; any box enlargement is restricted to the accepted prepared family.",
+      "local_claim_refs": [
+        "ATC-LSF-RBB-CL-02",
+        "ATC-LSF-RBB-CL-06"
+      ]
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+      "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxCertificate.json",
+      "sha256": "0d2a487b0394ea59c6b89a11023dfe19c779998b9d6cb69009bed38f17ac5bbc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_box.py",
+      "sha256": "8636581d8b0a3a5db1bbf81b8f4d5c414a3729d8f7b77950af52b8378bcf4a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackBoxCertification.md",
+      "sha256": "fec8776c6549375423f9ee7349ceb0cfc4f165fabcdeaf3bcc96a03edb42f81c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Box-Pass.md",
+      "sha256": "22ac1cfbddb60f267873dd3969e8044dc77d850adc8d37e2805e56a1c1e6c8e9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackBoxAdjudication.md",
+      "sha256": "d75cacf5390be102b3728d6d07a89cf62f682800580a23aa8a1a1cfcbfdead39"
+    }
+  ],
+  "claims": [
+    {
+      "id": "ATC-LSF-RBB-CL-01",
+      "title": "Consumed feedback, symmetry and reference-stage source",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_family_original_parameter_box",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RB-CL-01"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-31"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-05",
+        "ATC7-DB-10"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RBB-CL-02",
+      "title": "Certified source prescription and funding",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_family_original_parameter_box",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RB-CL-02"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-24",
+        "ATC7-CL-26",
+        "ATC7-CL-29",
+        "ATC7-CL-31"
+      ],
+      "debt_refs": [
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-09",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RBB-CL-03",
+      "title": "Enabled counterfactual resource obstruction",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_family_original_parameter_box",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RB-CL-03"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-19"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RBB-CL-04",
+      "title": "Actual-role entry and indefinite restoration",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "fixed_prepared_family_original_parameter_box",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RB-CL-04"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-13",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-20",
+        "ATC7-DB-23"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RBB-CL-05",
+      "title": "Uniform conditional target return",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_certified_mathematics",
+      "scope": "conditional_target_domain_over_original_box_only",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RB-CL-05"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-RBB-CL-06",
+      "title": "Scope and authority boundaries",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "accepted_explicit_scope_limit",
+      "scope": "explicit_limit_not_generic_or_native_authority",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RB-CL-06"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_refs": [
+        "ATC7-DB-01",
+        "ATC7-DB-11",
+        "ATC7-DB-17",
+        "ATC7-DB-18",
+        "ATC7-DB-20",
+        "ATC7-DB-21",
+        "ATC7-DB-22",
+        "ATC7-DB-23",
+        "ATC7-DB-24",
+        "ATC7-DB-25",
+        "ATC7-DB-26",
+        "ATC7-DB-27",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    }
+  ],
+  "record_digest": "b50a4c79577154c9e5a35e7702844a303a5aa78443b59be2d9f8b24ee47b0e05"
+}

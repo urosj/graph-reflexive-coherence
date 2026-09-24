@@ -2417,3 +2417,106 @@ The scoped successor opens only P9-8.1a chart/port graph in its two V4-owned
 source/test paths. All other specialization leaves retain their prerequisites.
 API/notebook/browser support must agree with the work manifest and clear the
 G3 projection on failure. Update the main Phase 9 handoff for continuation.
+
+## ATC A_OS bounded research source admission
+
+Admit the reconciled research ledger through an explicit append-only ATC
+context and read-only API/CLI. Pin relocated evidence and load-bearing sources;
+observe added, missing and changed sources without automatic admission.
+Preserve the pre-ATC graph exactly. Expose full claim ancestry, separate
+proposal origins from accepted conditional claims, and retain all 28 global
+debts while projecting their bounded A_OS dispositions. Test scope widening,
+broken bindings, invalid ancestry and reciprocal debt links. This checkpoint
+does not add browser/notebook projections, native ATC or aggregate closure.
+
+2026-09-23: retain exact compatibility for the single relocated ATC2 review
+README command while independently pinning its current bytes; do not rebuild
+scientific records. The realization-native CI/PC working directory remains
+explicitly unadmitted until review and a scientific successor admission.
+
+## ATC paired A_PC successor admission
+
+2026-09-23: the user accepts the reviewed paired PC scope. Append five
+conditional research claims, one separately classified superseded control and
+28 namespaced PC debt transformations to the unchanged A_OS graph. Pin the
+shared reviewed checkpoint; preserve historical pending flags and CI's
+unadmitted status. New CI work uses separate successor files. Expose actual
+`atc-pc-query` and typed `grcv4_explorer.atc_pc` paths, including exact source
+discovery, transitive binding validation and full ancestry. DB-24 closes only
+for this inventory; no native or aggregate admission follows. Focus tests on
+metadata/graph/authority mutations, not another numerical campaign.
+
+CI-2/CI-3 continuation lives separately under `evidence/atc-ci-successor`.
+CI-2 has independent scientific PASS/closure; CI-3 core/boundary correction
+have independent PASS. The later derived-witness correction seals raw-output
+promotion and retains execution/consistency pressure plus explicit funding.
+That preparation is superseded by the final PASS/admission below; its reviewed
+source bytes and historical flags are retained, not rewritten.
+
+## ATC paired A_CI successor admission
+
+2026-09-23: final independent CI-3 PASS closes the provenance HOLD, and the
+user authorizes scoped CI-0–CI-3 adjudication. Append four conditional CI
+claims and 28 CI-local debt transformations to the accepted PC/A_OS context.
+The exact CI inventory has 14 locally closed, six partial and eight inactive
+debts. DB-05 closes only for the proved joint-root/regularity domain; DB-24
+closes through exact source observation/readmission/rebuild/audit.
+
+Expose `atc-ci-query` and `grcv4_explorer.atc_ci` with full ancestry, scoped
+debt traces, portable paths and fail-closed source discovery. Preserve old
+PC/A_OS loaders, records and graph identities. Test authority widening,
+reciprocity/ancestry, changed/missing/new sources, transitive execution drift
+and CLI use; ten CI and ten historical PC tests pass. Do not rerun numerical
+campaigns or alter reviewed science. No global/native/aggregate admission,
+new realization work or browser/notebook extension follows automatically.
+
+## ATC A_CI+PC coupled successor preparation
+
+The user now authorizes a separate CIP-0–CIP-2 research program. CIP-0's
+checker uses the accepted CI context to trace applicable CI/PC claims and
+CI-local debt meanings, then records **pending CIP** claim/debt routes under
+`evidence/atc-cip`. This inventory is deliberately outside the immutable
+CI/PC admissions. A passing `atc-ci-query` audits accepted predecessors,
+not CIP acceptance. After the causal/reference stages and review, admit the
+exact CIP successor with all 28 local debt dispositions; do not modify old
+loaders or declare native/aggregate authority. No new UI/API is needed to
+turn unreviewed CIP-0 work into accepted scientific authority.
+
+CIP-1 now adds a separately pinned causal certificate and pending CHAIN-01
+claim/debt routes. The current typed context still covers accepted CI/PC
+predecessors only. Preserve CIP-0 bytes and do not admit either CIP stage
+merely because the local coupled chain passes. CIP-2/review/adjudication remain.
+
+CIP-0/CIP-1 independent reviews now pass. Preserve their exact records and
+record DB-04 ROOT-00 → CHAIN-01 ancestry in the additive review disposition.
+CIP-2's separate reference certificate passes local stage/oracle, covariance,
+closed-carrier boundary, research lifecycle and finite-representation checks.
+CIP-2 now has independent scientific PASS and local retained-certificate
+integrity PASS; the reviewer lacked the certificate, so an independent exact
+record comparison remains unclaimed (see `evidence/atc-cip-review/README.md`).
+The separately authorized CIP admission is now complete: three conditional
+claims and 28 local debt transformations (14 closed, six partial, eight
+not activated). `atc_cip` / `atc-cip-query` load the exact pinned successor
+over CI, preserve historical graphs and expose typed reconstruction/debt
+traces. Source discovery covers all four CIP evidence directories and bound
+execution sources. The focused suite rejects changed/missing/unprocessed
+inputs, rehashed manifests, altered lineage and wider authority.
+Existing CI/PC APIs still expose predecessor authority only; no passing
+old-context audit is CIP source admission. Browser/notebook/native and
+aggregate acceptance are not added.
+
+### Admitted A_RG2b RGATC research and Candidate-A closeout
+
+The supplied T/A and E/R packages are retained under `evidence/atc-rgatc`.
+Intake records typed predecessor provenance and historical proposed handles.
+After user-reported audit PASS and closure authorization, `atc_rgatc` /
+`atc-rgatc-query` admit seven conditional claims and all 28 local debt rows
+(14 closed, six partial, eight inactive) over the unchanged CIP predecessor.
+The exact inventory includes package code, oracle, bundled arithmetic,
+proofs and manifests. Changed/missing/unprocessed inputs fail closed.
+The source-bound `summary` derives the five accepted realization programs
+from their separate ledgers, preserving the one A_OS negative exclusion.
+Historical loaders/pins, scientific certificates and global debts are unchanged.
+No browser/notebook/native or aggregate admission is added.
+Reuse the supplied section evaluator and pressure commands; do not mistake
+local retained-evidence checks for a full E/R rerun or native admission.

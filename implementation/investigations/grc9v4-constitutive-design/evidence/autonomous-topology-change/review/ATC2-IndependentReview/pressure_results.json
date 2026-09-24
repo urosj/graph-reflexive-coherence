@@ -1,0 +1,266 @@
+{
+  "schema": "independent_atc2_review_checks_v1",
+  "native_pygrc_executed": false,
+  "groups": {
+    "record_bindings": {
+      "status": "pass",
+      "record_digests": 2,
+      "policy_digest": true,
+      "execution_source_count": 169,
+      "byte_matched_execution_sources": 8,
+      "source_commit": "4727fbdfe54bc161312ae4b8ed8ac539c119986d"
+    },
+    "claim_debt_origins": {
+      "status": "pass",
+      "claims": 35,
+      "debts": 28,
+      "edges": 165
+    },
+    "forensic_trace_self_consistency": {
+      "status": "pass",
+      "traces": [
+        {
+          "operation": "contract_provenance",
+          "query": {
+            "contract_id": "P9-EC-A-INITIALIZER-REFERENCE-PASS"
+          },
+          "recomputed": true
+        },
+        {
+          "operation": "contract_provenance",
+          "query": {
+            "contract_id": "D11-C-EC-C-J0-DERIVATIVE"
+          },
+          "recomputed": true
+        },
+        {
+          "operation": "contract_provenance",
+          "query": {
+            "contract_id": "D10.2-EC-PARENT-CORE-K-STRUCTURAL-ROLE"
+          },
+          "recomputed": true
+        },
+        {
+          "operation": "contract_provenance",
+          "query": {
+            "contract_id": "D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR"
+          },
+          "recomputed": true
+        },
+        {
+          "operation": "debt_lifecycle",
+          "query": {
+            "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY"
+          },
+          "recomputed": true
+        }
+      ],
+      "reconstructed_graph": false
+    },
+    "retained_event_reconstruction": {
+      "status": "pass",
+      "cases": 3,
+      "profile_occurrences": 31,
+      "receipt_ids": 36,
+      "commit_ids": 9,
+      "authority_ids": 6,
+      "full_target_data_reconstructed": 3,
+      "native_owners_rerun": false,
+      "summaries": [
+        {
+          "candidate": "A",
+          "law": "merge",
+          "profile": "A_OS",
+          "selected_score": 0.9952212501055644,
+          "all_retained_inputs_outputs_consistent": true,
+          "grouped_source_f": [
+            -0.857707261325953,
+            0.857707261325953
+          ],
+          "target_f": [
+            -0.600897049095226,
+            0.600897049095226
+          ],
+          "resource_vector_field_mismatch": [
+            0.256810212230727,
+            -0.256810212230727
+          ]
+        },
+        {
+          "candidate": "C",
+          "law": "birth",
+          "profile": "C_PC",
+          "selected_score": 3.906003626679608e-13,
+          "all_retained_inputs_outputs_consistent": true,
+          "identity_history_control_decision": {
+            "outcome": "no_event",
+            "locus": null,
+            "scores": []
+          }
+        },
+        {
+          "candidate": "C",
+          "law": "merge",
+          "profile": "C_PC",
+          "selected_score": 0.8841704694950934,
+          "all_retained_inputs_outputs_consistent": true,
+          "grouped_source_f": [
+            -4.121305160952056,
+            4.121305160952056
+          ],
+          "target_f": [
+            -10.323099849440455,
+            10.323099849440455
+          ],
+          "resource_vector_field_mismatch": [
+            -6.201794688488399,
+            6.201794688488399
+          ]
+        }
+      ]
+    },
+    "independent_A_initializer_formula": {
+      "status": "pass",
+      "role_cases": 4,
+      "scope": "source-stated reference pass, alpha=beta=0 only; system math.exp, no new correctly-rounded transcendental claim",
+      "cases": [
+        {
+          "control": false,
+          "role": "current",
+          "J_ref": [
+            -0.6250065465085353
+          ],
+          "W": [
+            0.9806578478945444
+          ]
+        },
+        {
+          "control": false,
+          "role": "reset",
+          "J_ref": [
+            -0.5
+          ],
+          "W": [
+            0.9875778004938814
+          ]
+        },
+        {
+          "control": true,
+          "role": "current",
+          "J_ref": [
+            0.12500993479153277,
+            -0.2500108937620671
+          ],
+          "W": [
+            0.9992189310034879,
+            0.996879606230025
+          ]
+        },
+        {
+          "control": true,
+          "role": "reset",
+          "J_ref": [
+            -0.15625,
+            0.03125
+          ],
+          "W": [
+            0.9987800416299872,
+            0.9999511730670735
+          ]
+        }
+      ]
+    },
+    "ten_read_record_scope": {
+      "status": "pass",
+      "products": 10,
+      "reset_C_changed": 10,
+      "charge_target_changed": 9,
+      "reset_W_or_Z_varied": 0,
+      "native_equality_is_submission_reported": true
+    },
+    "exact_score_oracle_and_covariance": {
+      "status": "pass",
+      "oracle_cases": 100,
+      "permutation_orientation_edge_order_controls": 150,
+      "scope": "synthetic admitted-shape dyadic operators; not native profile admission"
+    },
+    "strict_guards": {
+      "status": "pass",
+      "birth_near_threshold_outcomes": [
+        "no_event",
+        "no_event",
+        "resolved"
+      ],
+      "dominance_near_gap_outcomes": [
+        "unresolved",
+        "unresolved",
+        "resolved"
+      ],
+      "two_eligible_unequal_merge": {
+        "outcome": "resolved",
+        "locus": [
+          "a",
+          "b"
+        ],
+        "scores": [
+          {
+            "locus": [
+              "a",
+              "b"
+            ],
+            "score": "32/33"
+          },
+          {
+            "locus": [
+              "b",
+              "c"
+            ],
+            "score": "32/41"
+          }
+        ]
+      }
+    },
+    "geometric_mean_rounding": {
+      "status": "pass",
+      "exact_adjacent_interval_cases": 105,
+      "midpoint_tie_parities": 2,
+      "includes_min_subnormal_and_max_finite": true
+    },
+    "dyadic_allocation": {
+      "status": "pass",
+      "cases": 600,
+      "complementarity_exact": true,
+      "rounding_error_bound": true,
+      "thirds_exact_sum": "18014398509481983/18014398509481984",
+      "subnormal_counterexample": true
+    },
+    "conditional_constructor_pressure": {
+      "status": "pass",
+      "all_nontrivial_halfedge_partitions": 30,
+      "loop_and_parallel_merge_drop_control": true,
+      "name_collisions": true,
+      "nonzero_K4_mask": true,
+      "admission_scope": "data-shape constructors only"
+    },
+    "birth_structural_limits": {
+      "status": "pass",
+      "disconnected_block_hodge_no_birth": true,
+      "identity_history_control_can_remove_guard": true,
+      "scope": "conditional algebra; does not ban profiles with admitted cross-component H"
+    },
+    "scope_and_bounds": {
+      "status": "pass",
+      "source_graph_bound_reject": true,
+      "all_ATC_support_flags_false": true,
+      "native_trigger_onset_not_claimed": true
+    }
+  },
+  "limitations": [
+    "Exact source research functions executed by AST extraction; data-only shims replace graph/reference/backend constructors.",
+    "No native solver, initializer, whole-profile admission, lifecycle, automatic dispatcher or forensic graph reconstruction executed.",
+    "Eight of 169 imported Python source bindings match available attachments; other source subjects unavailable.",
+    "Content identities checked without executing native schema validators; complete snapshots and initializer-pair preimages are not retained in the ATC2 record."
+  ],
+  "status": "passed",
+  "group_count": 13
+}

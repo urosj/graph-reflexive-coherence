@@ -1,0 +1,119 @@
+{
+  "schema": "grcv4_atc_addressability_sufficient_conditions_v1",
+  "status": "passed_uniform_exact_inequalities",
+  "scientific_status": "proposed_conditional_theorem_not_universal_or_admitted",
+  "scope": "same degree-two binary fission and zero-channel exact equations; arbitrary smooth-p criterion with one uniformly certified perturbation family",
+  "family": {
+    "p": "p_0(c)+lambda*c",
+    "coefficients_p0": [
+      "-405/32",
+      "657/16",
+      "-1647/32",
+      "497/16",
+      "-9",
+      "1"
+    ],
+    "lambda_interval": [
+      "-1/8192",
+      "1/8192"
+    ],
+    "uniformity": "p, p_prime and bracket values depend affinely on lambda; endpoint bounds cover the full interval, not sampled trajectories",
+    "r": "1",
+    "x": "3/2",
+    "kappa": "1/1024",
+    "eta": "1/4",
+    "h": "1/64",
+    "epsilon": "1/4096",
+    "no_pinned_binding_change": true,
+    "no_new_runtime_profile": true
+  },
+  "source": {
+    "current_lower": "23/16384",
+    "funding_margin": "1/2"
+  },
+  "target": {
+    "initial_exterior_current_lower": "15/65536",
+    "outer_slope_lower": "193093/1048576",
+    "child_slope_lower": "109317/1048576",
+    "mu": "105221/1048576",
+    "M": "493381/1048576",
+    "equilibrium_t_bracket": [
+      "0",
+      "1/256"
+    ],
+    "g_at_zero_upper": "-15/16384",
+    "g_at_upper_endpoint_lower": "417747265/549755813888",
+    "g_prime_lower": "149157/524288"
+  },
+  "trapping": {
+    "initial_excess_upper": "289/53873152",
+    "initial_radius_upper": "1088/105221",
+    "R": "1/64",
+    "boundary_clearance_lower": "7/256",
+    "joint_load_norm_upper": "5/4096",
+    "loaded_excess_upper": "43145047538609/3702134815558991872",
+    "sublevel_cap": "105221/8589934592",
+    "one_step_distance_factor": "67602245/67108864",
+    "contraction_factor_upper": "36014726409448281/36028797018963968"
+  },
+  "operations": {
+    "directions": [
+      [
+        1,
+        0,
+        -2,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        -2
+      ]
+    ],
+    "gram": [
+      [
+        6,
+        -4
+      ],
+      [
+        -4,
+        6
+      ]
+    ],
+    "gram_determinant": 20,
+    "L3_child_diagonals": [
+      19,
+      19
+    ],
+    "individual_Q_lower": "360111/268435456",
+    "joint_claim": "one signed joint load followed by exact return; no positive-intake claim for every joint combination"
+  },
+  "exclusions": [
+    "higher_degree_partition",
+    "nonzero_geometry_or_history_feedback",
+    "all_ten_families",
+    "child_identity",
+    "universal_F2_justification",
+    "rounded_infinite_return",
+    "global_stability"
+  ],
+  "ordinary_updates": 0,
+  "native_steps": 0,
+  "production_changes": false,
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_addressability_conditions.py",
+      "sha256": "82516a08a378d6cff0f93d4c6ed0722bac182905999e1aacd49b103930a0c0f8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_support_fixture.py",
+      "sha256": "ba682d770cabae62b78cf56e8264eb22f14797835592226519184ae709ff8643"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportFixtureCertificate.json",
+      "sha256": "8ab49242e06d694011d5c933a7c60b03ab621978cf3f24b2bfab8c935a6e3b56"
+    }
+  ],
+  "record_digest": "6f6e7b8b681e8d560338f26d1da4a062e5726ca0590ea57c220e12be50da64c7"
+}

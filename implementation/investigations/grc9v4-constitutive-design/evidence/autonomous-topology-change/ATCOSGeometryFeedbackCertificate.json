@@ -1,0 +1,2163 @@
+{
+  "activation_bounds": {
+    "inherited_depression": {
+      "absolute_predictor_contrast_lower": "511/524288",
+      "absolute_predictor_flat_lower": "830694375/7054466603810816",
+      "corrector_baseline_gap_lower": "175963551887443359375/50959871041824878997517843031916544",
+      "corrector_current_gap_lower": "4399088797186083984375/1277181767985736029875290940987408384",
+      "log_depression": "1/256"
+    },
+    "reference_pass_prepared": {
+      "absolute_predictor_contrast_lower": "1/34359738368",
+      "absolute_predictor_flat_lower": "429490176025/121194813416366574764294144",
+      "corrector_baseline_gap_lower": "24177594069162539478302719375/7700837983336743572277517509774902094846152174570169171968",
+      "corrector_current_gap_lower": "604439851729063486957567984375/193002251957377135780205282588733483752081688875164864872448",
+      "log_depression": "1/131072"
+    }
+  },
+  "authority_traces": [
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-A-READ-CLOSURE"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:04941274db356ccba2f0d3962363f3a10d8a49319b590ae3c08891f5b9bed275",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:04b40a85dcfed8c82efd80fe7e8c2175c65761da4caed5f99ba4f2367a33f16e",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:9945003ef239f768444aadd9760243e02ef4dae48ec3616f82d366122936657e"
+            },
+            {
+              "edge_id": "propagation:1b2f012d458f3f2f2d95ed2ff5e8b3aabba04bb883bfed8b2a66f9f9d373c185",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/accepted_claim_ids/4",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-X-006"
+            },
+            {
+              "edge_id": "propagation:3c92d1051629fd8fdc09c4f767e1c8c2ebdb8ae7d9a4532be33e3b5d1f01f25d",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:A-READ-CLOSURE"
+            },
+            {
+              "edge_id": "propagation:4039f9ad0916e00d8984d7c50b67de9c0daa4edfcf852085cc6b18391fad3ab4",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/accepted_claim_ids/3",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-X-004"
+            },
+            {
+              "edge_id": "propagation:65ca7e8617f5586b8a36d271d2ac6df6a94cd5d90e39ccae470ba06d139fcd17",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/accepted_claim_ids/2",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-O-001"
+            },
+            {
+              "edge_id": "propagation:b078eb946ff5ef380095a0a05170c16eb8feea7279b79563931e8d151ff3a9a6",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/accepted_claim_ids/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-C-011"
+            },
+            {
+              "edge_id": "propagation:b77f34e5f29c3a2c4184f5f9326aabe7f20e10ba50857e0a3921110fb3da653f",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/source_lineage/2",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:1ffcd4c5ac5a124c6daf00b29f2237d1932a66d3095af94455b380d252b3328e"
+            },
+            {
+              "edge_id": "propagation:e968b2302400248930c7aec3f350dde160230cbf6330dd2592d8af641f747dca",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/source_lineage/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:84c76f2bfba7ae80e31e8959813646f509413cbc02cb102ea7295f3b56f9fded"
+            },
+            {
+              "edge_id": "propagation:f7950f7c73d053299df8e68eb06340eb777e4f6ee271cbc75a9ef093f975cf3d",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-C-007"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-007",
+                  "D10-CL-C-011",
+                  "D10-CL-O-001",
+                  "D10-CL-X-004",
+                  "D10-CL-X-006"
+                ],
+                "blocked_overread": "closure_does_not_prove_physical_nonabsorbability",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-A-READ-CLOSURE",
+                "independent_derivation_ids": [
+                  "D10.2-DER-A-READWRITE"
+                ],
+                "normative_equation_or_contract": "j_A_equals_chi_q_A_J_C_and_J_C_equals_J0_plus_zeta_j_A",
+                "parent_object_ids": [
+                  "A-READ-CLOSURE"
+                ],
+                "premises_used": [
+                  "oriented_edge_current",
+                  "regular_gain_domain",
+                  "positive_W_fields"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D5-v1",
+                  "GRC9V4-CD-D6-v1",
+                  "GRC9V4-CD-D7-v1"
+                ],
+                "specification_destination": "GRCV4_candidate_A",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-A-READ-CLOSURE",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-A-READ-CLOSURE",
+              "source_json_pointer": "/normative_equation_contract_registry/19",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-PARENT-A-READ-CLOSURE",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/19"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "25629b523d0851602b7124f7ee7a63c5391669dc8acb0406f0b47bed69f532f7"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-GEOM-K4-ASSEMBLY"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:00a8ccfa8128e10b9151329a510d3ae20d784c4e1d5c06f8c818f2ee35c8f613",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-GEOM-K4-ASSEMBLY",
+              "source_json_pointer": "/normative_equation_contract_registry/141/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:GEOM-K4"
+            },
+            {
+              "edge_id": "propagation:267a1d0cf9468e8a866d71fd34d58bdbac64e708866e904793f50e277f5e82ab",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-K4-ASSEMBLY",
+              "source_json_pointer": "/normative_equation_contract_registry/141/source_lineage/2",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:9e131771524042bd68261c086a84cfd0adb866dd8c3f4c065cba4e356f7b6aeb"
+            },
+            {
+              "edge_id": "propagation:47ccc15f3332848eecbd8590f6b1061c0693c47767e2e0b638dfb95b8df81d28",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-K4-ASSEMBLY",
+              "source_json_pointer": "/normative_equation_contract_registry/141/source_lineage/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8e2e926d2a1dd605f7eb1761ceb59317be3241ba82488584e928308104b23840"
+            },
+            {
+              "edge_id": "propagation:8ced4fb3862717b44d0870cc8d217340340a8020262f91471358e5385d8ee1d3",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-GEOM-K4-ASSEMBLY",
+              "source_json_pointer": "/normative_equation_contract_registry/141/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-N-006"
+            },
+            {
+              "edge_id": "propagation:aaa3ad50966b696013d95eea2fbdcdddee1afb21400067d72ae72c6f74573fe5",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-K4-ASSEMBLY",
+              "source_json_pointer": "/normative_equation_contract_registry/141",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:c8636239f207b67cce96fd04022d9bce99d3eb52ac41095a2ca21bcddf7ccf24",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-K4-ASSEMBLY",
+              "source_json_pointer": "/normative_equation_contract_registry/141/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:940942217e69f5b3713c80d435c988fe762198ece40e76b6499b45f58dea09df"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-N-006"
+                ],
+                "blocked_overread": "graph_K4_is_not_core_K_or_transport_mobility_M4",
+                "contract_scope": "structural_geometry",
+                "equation_contract_id": "D10.2-EC-GEOM-K4-ASSEMBLY",
+                "independent_derivation_ids": [
+                  "D10.2-DER-GEOMETRY"
+                ],
+                "normative_equation_or_contract": "Delta_K4_is_a_graph_local_symmetric_bilinear_form_assembled_from_stable_restrictions_with_overlap_normalization",
+                "parent_object_ids": [
+                  "GEOM-K4"
+                ],
+                "premises_used": [
+                  "finite_oriented_graph",
+                  "graph_local_structural_payload",
+                  "typed_one_form_space"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D4V2-v1",
+                  "GRC9V4-CD-D7G-v1",
+                  "GRC9V4-CD-D8A-v1"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_geometry",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-GEOM-K4-ASSEMBLY",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-GEOM-K4-ASSEMBLY",
+              "source_json_pointer": "/normative_equation_contract_registry/141",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-GEOM-K4-ASSEMBLY",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/141"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "07c8a1cf69de092de166bf29fe7c6d5a6689ed884103dbcd8b74c333b4385609"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-GEOM-HODGE-UPDATE"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0f8d6620e8f3370057527206ec15b6fff182f5b916fd78c64456d1fe8f43bdc3",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:156630f45f9ecdf5ab6aa1eeb11d255847814005f9392b9c52d8954e15a83b31",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-N-006"
+            },
+            {
+              "edge_id": "propagation:7c08c38a904fa87a4aceefb211762c51955fb2a1398f71a3bbc6d93f8e508942",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:2250c360dd5c1141510bfe4e487e44a607139fed1cfd2c09ba6720e4ef5b977b"
+            },
+            {
+              "edge_id": "propagation:c27ec744234c525f7e70a560e97080048ed5844c0be507046d57aad2c84b861b",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:GEOM-H1-FORM"
+            },
+            {
+              "edge_id": "propagation:d3ded70b0f9e9b830db72fa75a0db0851d55578debb0016518c08a1eaf621f1b",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142/source_lineage/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:007f992251f1aac7aa68b93b0eff736fdcd77632cdbf83e83fa97e483c6c634c"
+            },
+            {
+              "edge_id": "propagation:f2b1ea0919b6f9cc6623c89e08f6da45b840c59076fcd088b7fd93aea1f86281",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142/source_lineage/2",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c0eacfef81153ed27af17920eb21a11b01cbe878ca07799d89823877f42f335"
+            },
+            {
+              "edge_id": "propagation:fadeb622c97015aa378fdbf2dc20cb5dc6a75577fe5165b70bdfa63514d2dc72",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142/source_lineage/3",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:dc1073c31ac353ad1d0e34fdf84622021d59d1d0809f20ec042f46c1eda8044a"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-N-006"
+                ],
+                "blocked_overread": "K4_and_H1_units_require_the_declared_typed_pushforward",
+                "contract_scope": "structural_geometry",
+                "equation_contract_id": "D10.2-EC-GEOM-HODGE-UPDATE",
+                "independent_derivation_ids": [
+                  "D10.2-DER-GEOMETRY"
+                ],
+                "normative_equation_or_contract": "H1_form_plus = diag(W_ref) + kappa_H*Delta_K4_on_the_positive_admitted_domain",
+                "parent_object_ids": [
+                  "GEOM-H1-FORM"
+                ],
+                "premises_used": [
+                  "GRC_graph_measure_mu",
+                  "positive_GRC_base_conductance_W_ref",
+                  "positive_admission_domain",
+                  "typed_K4_to_H1_pushforward"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+                  "GRC9V4-CD-D7G-v2",
+                  "GRCV3-NORMATIVE-SPEC",
+                  "GRCV3-RUNTIME-SOURCE"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_geometry",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-GEOM-HODGE-UPDATE",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-GEOM-HODGE-UPDATE",
+              "source_json_pointer": "/normative_equation_contract_registry/142",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-GEOM-HODGE-UPDATE",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/142"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "db0f093b2f4cffc36b03fb8cb1244923a8b115fdce814f7e670de1c292fb1ce1"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-OS-A-CORRECTOR"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:3d572f1bc77a4afce82fbbaed9d794f17fd8b2376bff7fc891eb967ba0218742",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-OS-A-CORRECTOR",
+              "source_json_pointer": "/normative_equation_contract_registry/128/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-O-004"
+            },
+            {
+              "edge_id": "propagation:4f81470fdf07823e87ed9ba347c626e16d11e968a01f13becfa43f048951145f",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-OS-A-CORRECTOR",
+              "source_json_pointer": "/normative_equation_contract_registry/128",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:8e125f7f8c8dd144ee3b7bacc23c2fee76f2563dd8515587c7b9351a681c5867",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-OS-A-CORRECTOR",
+              "source_json_pointer": "/normative_equation_contract_registry/128/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:REAL-OS"
+            },
+            {
+              "edge_id": "propagation:9740049f3bdea4600807931a37923a5b6f728b13538f80616817690c8ecc20f3",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-OS-A-CORRECTOR",
+              "source_json_pointer": "/normative_equation_contract_registry/128/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:97c0b7a6290bb16fe882b89f15e2555a78b189e2fe3f624d80363d9aed4c0973"
+            },
+            {
+              "edge_id": "propagation:a657f401548091a88cf7e026baa5b2041d816ca8a550e95ee467da30eb85b388",
+              "relation": "active_in_profile",
+              "source": "equation_contract:D10.2-EC-OS-A-CORRECTOR",
+              "source_json_pointer": "/normative_equation_contract_registry/128/profile_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "profile:A_OS"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-O-004"
+                ],
+                "blocked_overread": "produced_geometry_must_be_an_equation_level_consumer_not_telemetry",
+                "contract_scope": "operator_split",
+                "equation_contract_id": "D10.2-EC-OS-A-CORRECTOR",
+                "independent_derivation_ids": [
+                  "D10.2-DER-REALIZATION"
+                ],
+                "normative_equation_or_contract": "at_fixed_h_A^(1)_recompute_Phi_A_J0_A_W_hat_A_q_A_and_solve_the_full_A_corrector_without_predictor_cache_reuse",
+                "parent_object_ids": [
+                  "REAL-OS"
+                ],
+                "premises_used": [
+                  "candidate_transition",
+                  "fixed_stage_order",
+                  "structural_source"
+                ],
+                "profile_ids": [
+                  "A_OS"
+                ],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-GTRS-OS-v1"
+                ],
+                "specification_destination": "GRCV4_optional_realization",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-OS-A-CORRECTOR",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-OS-A-CORRECTOR",
+              "source_json_pointer": "/normative_equation_contract_registry/128",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-OS-A-CORRECTOR",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/128"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "f87d60a204650f6f87de13f381b9bc288b718faaf8ac7f9a3bcb7141e1fcae71"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-OS-STAGE-ORDER"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:22a80e66acd4e7b5ca568ef4b0f1e039b500897403525f1c5148a585785f7f1d",
+              "relation": "active_in_profile",
+              "source": "equation_contract:D10.2-EC-OS-STAGE-ORDER",
+              "source_json_pointer": "/normative_equation_contract_registry/127/profile_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "profile:A_OS"
+            },
+            {
+              "edge_id": "propagation:24e4db44f7b1717dec1d199493efee848e8cb44da7d2ee807988f7dd7e609400",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-OS-STAGE-ORDER",
+              "source_json_pointer": "/normative_equation_contract_registry/127",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:7434df3989c53f43cd7470b802811a0773d34daa537fd354b4add25edf25879a",
+              "relation": "active_in_profile",
+              "source": "equation_contract:D10.2-EC-OS-STAGE-ORDER",
+              "source_json_pointer": "/normative_equation_contract_registry/127/profile_ids/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "profile:C_OS"
+            },
+            {
+              "edge_id": "propagation:79d7f9fae53f0d545621f56efa031e081c37dc0de96e5ca93822892a6fd957f2",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-OS-STAGE-ORDER",
+              "source_json_pointer": "/normative_equation_contract_registry/127/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:REAL-OS"
+            },
+            {
+              "edge_id": "propagation:bcffbc47a5448c1dbb04bb34a16f4100bb8457f22cc6189c296b9e2bd8cf4814",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-OS-STAGE-ORDER",
+              "source_json_pointer": "/normative_equation_contract_registry/127/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:97c0b7a6290bb16fe882b89f15e2555a78b189e2fe3f624d80363d9aed4c0973"
+            },
+            {
+              "edge_id": "propagation:c34e95f8cc0f1f0c87b1850726942274bd6043ca3a93edfb609a852e54c3da28",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-OS-STAGE-ORDER",
+              "source_json_pointer": "/normative_equation_contract_registry/127/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-O-004"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-O-004"
+                ],
+                "blocked_overread": "no_second_geometry_or_corrector_iteration_is_part_of_this_profile",
+                "contract_scope": "operator_split",
+                "equation_contract_id": "D10.2-EC-OS-STAGE-ORDER",
+                "independent_derivation_ids": [
+                  "D10.2-DER-REALIZATION"
+                ],
+                "normative_equation_or_contract": "X_k -> J^(0) -> j_flat^(0) -> K4^(0) -> h^(1) -> J^(1) -> X_k+1 with_one_atomic_commit",
+                "parent_object_ids": [
+                  "REAL-OS"
+                ],
+                "premises_used": [
+                  "candidate_transition",
+                  "fixed_stage_order",
+                  "structural_source"
+                ],
+                "profile_ids": [
+                  "A_OS",
+                  "C_OS"
+                ],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-GTRS-OS-v1"
+                ],
+                "specification_destination": "GRCV4_optional_realization",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-OS-STAGE-ORDER",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-OS-STAGE-ORDER",
+              "source_json_pointer": "/normative_equation_contract_registry/127",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-OS-STAGE-ORDER",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/127"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "ef9e1f28b7b08f580258fc247ad809960ade4de89cfd1b99d8312d0003d560a0"
+    },
+    {
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+      "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+      "operation": "contract_provenance",
+      "output_class": "forensic_evidence_trace",
+      "query": {
+        "contract_id": "D10.2-EC-OS-NO-SECOND-ITERATION"
+      },
+      "row_count": 1,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:2185fb9247feed9fd3c3be667b3109e9edcc8c3a30ab6aa8e8e2256053c5d716",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-OS-NO-SECOND-ITERATION",
+              "source_json_pointer": "/normative_equation_contract_registry/131",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815"
+            },
+            {
+              "edge_id": "propagation:538ace4f07df1781c44f6c5b7d5c92ba6354d498d88ba1a09d6dfa254063bfdd",
+              "relation": "accepted_claim",
+              "source": "equation_contract:D10.2-EC-OS-NO-SECOND-ITERATION",
+              "source_json_pointer": "/normative_equation_contract_registry/131/accepted_claim_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "current_claim:D10-CL-O-004"
+            },
+            {
+              "edge_id": "propagation:55b561ef35e8e7ce6d4c2c4905709e12628822fc426a00ad6e2d7cd97477d761",
+              "relation": "active_in_profile",
+              "source": "equation_contract:D10.2-EC-OS-NO-SECOND-ITERATION",
+              "source_json_pointer": "/normative_equation_contract_registry/131/profile_ids/1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "profile:C_OS"
+            },
+            {
+              "edge_id": "propagation:6e11faa6f161177f5165b85de603c590571d95eb61c8aa6afef4f8ca5cc304a2",
+              "relation": "parent_object",
+              "source": "equation_contract:D10.2-EC-OS-NO-SECOND-ITERATION",
+              "source_json_pointer": "/normative_equation_contract_registry/131/parent_object_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "indeterminate_requires_review",
+              "target": "normative_object:REAL-OS"
+            },
+            {
+              "edge_id": "propagation:8e76d668f5efae976d98461e26ed9a6430d3f0e87876467e1b4941b7abe4672f",
+              "relation": "active_in_profile",
+              "source": "equation_contract:D10.2-EC-OS-NO-SECOND-ITERATION",
+              "source_json_pointer": "/normative_equation_contract_registry/131/profile_ids/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "profile:A_OS"
+            },
+            {
+              "edge_id": "propagation:acb9f85cdc851aabeea6cdb4b29659434b5442af8d2afb39b5f885b0139bdc87",
+              "relation": "source_identity",
+              "source": "equation_contract:D10.2-EC-OS-NO-SECOND-ITERATION",
+              "source_json_pointer": "/normative_equation_contract_registry/131/source_lineage/0",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "support_semantic": "not_applicable",
+              "target": "source_record:97c0b7a6290bb16fe882b89f15e2555a78b189e2fe3f624d80363d9aed4c0973"
+            }
+          ],
+          "payload": {
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-O-004"
+                ],
+                "blocked_overread": "posthoc_iteration_cannot_improve_the_preregistered_one_pass_result",
+                "contract_scope": "operator_split",
+                "equation_contract_id": "D10.2-EC-OS-NO-SECOND-ITERATION",
+                "independent_derivation_ids": [
+                  "D10.2-DER-REALIZATION"
+                ],
+                "normative_equation_or_contract": "J^(1)_does_not_retroactively_update_h^(1); a_second_predictor_corrector_cycle_requires_a_new_profile_identity",
+                "parent_object_ids": [
+                  "REAL-OS"
+                ],
+                "premises_used": [
+                  "candidate_transition",
+                  "fixed_stage_order",
+                  "structural_source"
+                ],
+                "profile_ids": [
+                  "A_OS",
+                  "C_OS"
+                ],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-GTRS-OS-v1"
+                ],
+                "specification_destination": "GRCV4_optional_realization",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-OS-NO-SECOND-ITERATION",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-OS-NO-SECOND-ITERATION",
+              "source_json_pointer": "/normative_equation_contract_registry/131",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "row_id": "D10.2-EC-OS-NO-SECOND-ITERATION",
+          "source_ref": {
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "source_json_pointer": "/normative_equation_contract_registry/131"
+          }
+        }
+      ],
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+      "trace_digest": "dfe6465f4811261c4e30c001d0513c62f5199c662abe4ac3775fc38568bf2108"
+    }
+  ],
+  "bounds": {
+    "contrast_absolute_upper": "1/200",
+    "declared_split_tolerance": "1/1073741824",
+    "denominator_lower": "399/400",
+    "edge_contrast_max": "203/256",
+    "finite_response_extra_loss": "889317/838860800",
+    "fixed_load_epsilon": "1/4096",
+    "geometry_relative_baseline_error": "14327885/781443529703424",
+    "history_invariance_margin": "34157784212145279/5629499534213120000",
+    "history_to_resource": "39117/3355443200",
+    "individual_Q_lower": "180242767/858993459200",
+    "initial_S_all_depressed_histories": "769/131072",
+    "loaded_S_upper": "849/131072",
+    "predictor_read_relative_upper": "1/399",
+    "q": "90071326401578207669/90071992547409920000",
+    "q_history": "11261502884994163/21990232555520000",
+    "q_resource": "90071326401578207669/90071992547409920000",
+    "qx": "214723394461/214748364800",
+    "reference_baseline_norm_upper": "494065/134217728",
+    "resource_invariance_margin": "22466851/27487790694400",
+    "selected_current_gain_upper": "1003/1000",
+    "split_residual_norm_upper": "3126022056824938477921/18354625645491464542617600000000",
+    "writer_majorant_c": "99406767317/1677721600000"
+  },
+  "claim_ceiling": [
+    "fixed-tree conductance-depressed exact-real return with active retained, explicit-read and OS geometry channels",
+    "one bounded signed joint encounter; finite individual response at the declared epsilon",
+    "not native potential/initializer admission, CAN-B mode/partition closure, or topology execution",
+    "no all-family, cyclic, repeated-load, adaptive-load, or independent persistent identity claim"
+  ],
+  "counts": {
+    "complete_mathematical_steps": 10,
+    "diagnostic_second_corrector_reads": 1,
+    "native_steps": 0,
+    "topology_events": 0,
+    "trajectory_campaigns": 0
+  },
+  "decimal_diagnostics": {
+    "examples": [
+      {
+        "C": [
+          "1",
+          "1",
+          "1.5",
+          "1.5"
+        ],
+        "C_next": [
+          "0.999996185360941813864345063614625338512351870772453405494301550932191367435213111059295997289030",
+          "0.999996185360941813864345063614625338512351870772453405494301550932191367435213111059295997289030",
+          "1.50000381463905818613565493638537466148764812922754659450569844906780863256478688894070400271097",
+          "1.50000381463905818613565493638537466148764812922754659450569844906780863256478688894070400271097"
+        ],
+        "H1": [
+          [
+            "1.00000000000000000000000000020193606615324969129338598352926478138625250292917833269942309178406",
+            "0E-218",
+            "0E-219"
+          ],
+          [
+            "0E-218",
+            "1.00000000000000000000000000020193606615324969129338598352926478138625250292917833269942309178406",
+            "0E-219"
+          ],
+          [
+            "0E-219",
+            "0E-219",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        ],
+        "baseline_current_writer_discriminated": true,
+        "corrector": {
+          "W_hat": [
+            "0.999992370867397821122482733951219262463203117204564852777405021460056691546715589426524369156398",
+            "0.999992370867397821122482733951219262463203117204564852777405021460056691546715589426524369156398",
+            "1"
+          ],
+          "baseline": [
+            "0.000244136899738123102956603345243354847491503272534843223195550681487142617825815016555500002334395",
+            "-0.000244136899738123102956603345243354847491503272534843223195550681487142617825815016555500002334395",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-1.16413545488165312546054611999031254616558754018848427253932526436851318664690366453834342253791E-10",
+            "-1.16413545488165312546054611999031254616558754018848427253932526436851318664690366453834342253791E-10",
+            "0"
+          ],
+          "current": [
+            "0.000244136899723912681915928663978335209480270562982048364700740339752484146360892205056173502107111",
+            "-0.000244136899723912681915928663978335209480270562982048364700740339752484146360892205056173502107111",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "-1.00968033076624845646692991764632390693126251464589166349711545892030000000000000000000000000000E-28",
+            "-1.00968033076624845646692991764632390693126251464589166349711545892030000000000000000000000000000E-28",
+            "1.00968033076624845646692991764632390693126251464589166349711545892030000000000000000000000000000E-28",
+            "1.00968033076624845646692991764632390693126251464589166349711545892030000000000000000000000000000E-28"
+          ],
+          "read_flux": [
+            "-1.42104210406746812650196380112327095527948584948103417346584714649228114993265002272833320985430E-14",
+            "1.42104210406746812650196380112327095527948584948103417346584714649228114993265002272833320985430E-14",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-1.42104210406746812650196380083631130294596447367159409337345009548781282698724623582841595962961E-14",
+            "1.42104210406746812650196380083631130294596447367159409337345009548781282698724623582841595962961E-14",
+            "0E-356"
+          ]
+        },
+        "factored_scalar_oracle_matches": true,
+        "geometry_current_gap": "5.0483823948257088029283233248842020552542283807038802923440676637299694E-29",
+        "label": "reference_pass_prepared",
+        "log_W": [
+          "-0.00000762939453125",
+          "-0.00000762939453125",
+          "0"
+        ],
+        "log_W_next": [
+          "-0.0000076292781172604429531843824957747221618938986352063751223594020861905795818095851620619020395952",
+          "-0.0000076292781172604429531843824957747221618938986352063751223594020861905795818095851620619020395952",
+          "0E-200"
+        ],
+        "predictor": {
+          "W_hat": [
+            "0.999992370867397821122482733954374417208431589209960176052505772798935474533910352480542977205033",
+            "0.999992370867397821122482733954374417208431589209960176052505772798935474533910352480542977205033",
+            "1"
+          ],
+          "baseline": [
+            "0.000244136899738123102956603294759723470189498862997863463528245147125669795908929867853390936296960",
+            "-0.000244136899738123102956603294759723470189498862997863463528245147125669795908929867853390936296960",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-1.16413545488165312547632201407284277974458677584009242529355809971623418360073788819784300513411E-10",
+            "-1.16413545488165312547632201407284277974458677584009242529355809971623418360073788819784300513411E-10",
+            "0"
+          ],
+          "current": [
+            "0.000244136899723912681915928613494511261223182533698815115858719787210200339322089281615496864808404",
+            "-0.000244136899723912681915928613494511261223182533698815115858719787210200339322089281615496864808404",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ],
+          "read_flux": [
+            "-1.42104210406746812652122089663163292990483476695253599154694565868405862378940714885561336672641E-14",
+            "1.42104210406746812652122089663163292990483476695253599154694565868405862378940714885561336672641E-14",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-1.42104210406746812652122089663163292990483476695253599154694565868405862378940714885561336672641E-14",
+            "1.42104210406746812652122089663163292990483476695253599154694565868405862378940714885561336672641E-14",
+            "0E-109"
+          ]
+        },
+        "predictor_current_writer_discriminated": true,
+        "predictor_source": [
+          [
+            "2.01936066153249691293385983529264781386252502929178332699423091784063951326253156297597826705164E-28",
+            "-0E-218",
+            "-0E-219"
+          ],
+          [
+            "-0E-218",
+            "2.01936066153249691293385983529264781386252502929178332699423091784063951326253156297597826705164E-28",
+            "0E-219"
+          ],
+          [
+            "-0E-219",
+            "0E-219",
+            "0E-218"
+          ]
+        ],
+        "selected_current_preread_discriminated": true,
+        "split_defect": [
+          [
+            "5.473028785442527661140155126591297151024172997991981655457164734846397317707E-48",
+            "0E-218",
+            "0E-466"
+          ],
+          [
+            "0E-218",
+            "5.473028785442527661140155126591297151024172997991981655457164734846397317707E-48",
+            "0E-466"
+          ],
+          [
+            "0E-466",
+            "0E-466",
+            "0E-712"
+          ]
+        ],
+        "stale_predictor_contrast_discriminated": true
+      },
+      {
+        "C": [
+          "1",
+          "1",
+          "1.5",
+          "1.5"
+        ],
+        "C_next": [
+          "0.999996218674539285333317105920038487369313456846005507380526626978180286348708020436426975096308",
+          "0.999996218674539285333317105920038487369313456846005507380526626978180286348708020436426975096308",
+          "1.50000378132546071466668289407996151263068654315399449261947337302181971365129197956357302490369",
+          "1.50000378132546071466668289407996151263068654315399449261947337302181971365129197956357302490369"
+        ],
+        "H1": [
+          [
+            "1.00000000000005563848332938578491172706706792347194806196388876376378369859074217104895651940101",
+            "0E-204",
+            "0E-204"
+          ],
+          [
+            "0E-204",
+            "1.00000000000005563848332938578491172706706792347194806196388876376378369859074217104895651940101",
+            "0E-204"
+          ],
+          [
+            "0E-205",
+            "0E-205",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        ],
+        "baseline_current_writer_discriminated": true,
+        "corrector": {
+          "W_hat": [
+            "0.999992488916474945714264830711049920789791656937624293218949397998046830774971142711443631742205",
+            "0.999992488916474945714264830711049920789791656937624293218949397998046830774971142711443631742205",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707596922656057648951197501542682335481959037340482674562113987347336318517383591663105344",
+            "-0.000242240707596922656057648951197501542682335481959037340482674562113987347336318517383591663105344",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490897500890291985740038781451346893196311727793216058101116113100505322636491492792008",
+            "-0.00194936697490897500890291985740038781451346893196311727793216058101116113100505322636491492792008",
+            "0"
+          ],
+          "current": [
+            "0.000242004829485738667705221117536808363938761855647527646295873396461673682686692068673593836311665",
+            "-0.000242004829485738667705221117536808363938761855647527646295873396461673682686692068673593836311665",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "-2.78192416646928924558635335339617359740309819443818818918492953710855244782597005050000000000000E-14",
+            "-2.78192416646928924558635335339617359740309819443818818918492953710855244782597005050000000000000E-14",
+            "2.78192416646928924558635335339617359740309819443818818918492953710855244782597005050000000000000E-14",
+            "2.78192416646928924558635335339617359740309819443818818918492953710855244782597005050000000000000E-14"
+          ],
+          "read_flux": [
+            "-2.35878111183988352427833660693178743573626311509694186801165652313664649626448709997826793678990E-7",
+            "2.35878111183988352427833660693178743573626311509694186801165652313664649626448709997826793678990E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-2.35878111183975228527476784080758067134161950182508412937836267392367522371893387166976463852615E-7",
+            "2.35878111183975228527476784080758067134161950182508412937836267392367522371893387166976463852615E-7",
+            "0E-321"
+          ]
+        },
+        "factored_scalar_oracle_matches": true,
+        "geometry_current_gap": "1.3841952820896258424668757489272749329452394310339009210826346008644591823447358626821E-14",
+        "label": "inherited_depression",
+        "log_W": [
+          "-0.00390625",
+          "-0.00390625",
+          "0"
+        ],
+        "log_W_next": [
+          "-0.00195687324559964297265083659335791434491417828605333761336104954761059953673692599636867008744484",
+          "-0.00195687324559964297265083659335791434491417828605333761336104954761059953673692599636867008744484",
+          "0E-200"
+        ],
+        "predictor": {
+          "W_hat": [
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "0"
+          ],
+          "current": [
+            "0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ],
+          "read_flux": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "0E-102"
+          ]
+        },
+        "predictor_current_writer_discriminated": true,
+        "predictor_source": [
+          [
+            "5.56384833293857849117270670679234719480619638887637637836985907421710489565194010119137955703566E-14",
+            "-0E-204",
+            "-0E-204"
+          ],
+          [
+            "-0E-204",
+            "5.56384833293857849117270670679234719480619638887637637836985907421710489565194010119137955703566E-14",
+            "0E-204"
+          ],
+          [
+            "-0E-205",
+            "0E-205",
+            "0E-204"
+          ]
+        ],
+        "selected_current_preread_discriminated": true,
+        "split_defect": [
+          [
+            "-6.3339948738288884944620042093328742373607854090637708238685092336715777234396166745004E-24",
+            "0E-204",
+            "0E-423"
+          ],
+          [
+            "0E-204",
+            "-6.3339948738288884944620042093328742373607854090637708238685092336715777234396166745004E-24",
+            "0E-423"
+          ],
+          [
+            "0E-424",
+            "0E-424",
+            "0E-642"
+          ]
+        ],
+        "stale_predictor_contrast_discriminated": true
+      },
+      {
+        "C": [
+          "0.999996218674539285333317105920038487369313456846005507380526626978180286348708020436426975096308",
+          "0.999996218674539285333317105920038487369313456846005507380526626978180286348708020436426975096308",
+          "1.50000378132546071466668289407996151263068654315399449261947337302181971365129197956357302490369",
+          "1.50000378132546071466668289407996151263068654315399449261947337302181971365129197956357302490369"
+        ],
+        "C_next": [
+          "0.999992427348110581076839692546283708033954776368401717921363486476941700640547655325168254923345",
+          "0.999992427348110581076839692546283708033954776368401717921363486476941700640547655325168254923345",
+          "1.50000757265188941892316030745371629196604522363159828207863651352305829935945234467483174507665",
+          "1.50000757265188941892316030745371629196604522363159828207863651352305829935945234467483174507665"
+        ],
+        "H1": [
+          [
+            "1.00000000000001398275173420719777906073471884225698508843534789452835845908116244751743358867429",
+            "0E-204",
+            "0E-205"
+          ],
+          [
+            "0E-204",
+            "1.00000000000001398275173420719777906073471884225698508843534789452835845908116244751743358867429",
+            "0E-205"
+          ],
+          [
+            "0E-205",
+            "0E-205",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        ],
+        "corrector": {
+          "W_hat": [
+            "0.999992456483850553589759890643516003710611754359808683532767276668803780143559845450708240059774",
+            "0.999992456483850553589759890643516003710611754359808683532767276668803780143559845450708240059774",
+            "1"
+          ],
+          "baseline": [
+            "0.000242763140123046534364435601243166317301889370314323311785029899565092238009091320124540528971142",
+            "-0.000242763140123046534364435601243166317301889370314323311785029899565092238009091320124540528971142",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.000974664541864352030664008278833626188601375980189095564938646605438729314081394355125397497249858",
+            "-0.000974664541864352030664008278833626188601375980189095564938646605438729314081394355125397497249858",
+            "0"
+          ],
+          "current": [
+            "0.000242644891437072414554455920305877462955550566642525386440992079269485322263367120558091069633326",
+            "-0.000242644891437072414554455920305877462955550566642525386440992079269485322263367120558091069633326",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "-6.99148161377388570920372102964742510037181180586896335256294258966853362535487926219333705471254E-15",
+            "-6.99148161377388570920372102964742510037181180586896335256294258966853362535487926219333705471254E-15",
+            "6.99148161377388570920372102964742510037181180586896335256294258966853362535487926219333705471254E-15",
+            "6.99148161377388570920372102964742510037181180586896335256294258966853362535487926219333705471254E-15"
+          ],
+          "read_flux": [
+            "-1.18248685974119809979680937288854346338803671797925344037820295606915745724199566449459337816757E-7",
+            "1.18248685974119809979680937288854346338803671797925344037820295606915745724199566449459337816757E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-1.18248685974118156537662064965856787773594250160962318438910049857938437261228755678041761016180E-7",
+            "1.18248685974118156537662064965856787773594250160962318438910049857938437261228755678041761016180E-7",
+            "0E-321"
+          ]
+        },
+        "label": "next_ordinary_reconstruction",
+        "log_W": [
+          "-0.00195687324559964297265083659335791434491417828605333761336104954761059953673692599636867008744484",
+          "-0.00195687324559964297265083659335791434491417828605333761336104954761059953673692599636867008744484",
+          "0E-200"
+        ],
+        "log_W_next": [
+          "-0.000982204721573614040435394478199489064854733721585550168523249902307139093954920553743331605008865",
+          "-0.000982204721573614040435394478199489064854733721585550168523249902307139093954920553743331605008865",
+          "0E-200"
+        ],
+        "predictor": {
+          "W_hat": [
+            "0.999992456483850770414483058263170356117547218058190884757444893541159560599211404788489171234281",
+            "0.999992456483850770414483058263170356117547218058190884757444893541159560599211404788489171234281",
+            "1"
+          ],
+          "baseline": [
+            "0.000242763140119557627590358397084285134103170258892858677402394384802045579944605941628423808100451",
+            "-0.000242763140119557627590358397084285134103170258892858677402394384802045579944605941628423808100451",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.000974664541864460443740419285163106305542214343495269884541697159768872511613731710791387688902281",
+            "-0.000974664541864460443740419285163106305542214343495269884541697159768872511613731710791387688902281",
+            "0"
+          ],
+          "current": [
+            "0.000242644891433585194062520714286138157451950886658940219386737640126190965569415514786223155770088",
+            "-0.000242644891433585194062520714286138157451950886658940219386737640126190965569415514786223155770088",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "0E-96",
+            "0E-96",
+            "0E-96",
+            "0E-96"
+          ],
+          "read_flux": [
+            "-1.18248685972433527837682798146976651219372233918458015656744675854614375190426842200652330362823E-7",
+            "1.18248685972433527837682798146976651219372233918458015656744675854614375190426842200652330362823E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-1.18248685972433527837682798146976651219372233918458015656744675854614375190426842200652330362823E-7",
+            "1.18248685972433527837682798146976651219372233918458015656744675854614375190426842200652330362823E-7",
+            "0E-102"
+          ]
+        },
+        "predictor_source": [
+          [
+            "1.39827517342071977790607347188422569850884353478945283584590811624475174335886742885507095542482E-14",
+            "-0E-204",
+            "-0E-205"
+          ],
+          [
+            "-0E-204",
+            "1.39827517342071977790607347188422569850884353478945283584590811624475174335886742885507095542482E-14",
+            "0E-205"
+          ],
+          [
+            "-0E-205",
+            "0E-205",
+            "0E-204"
+          ]
+        ],
+        "split_defect": [
+          [
+            "-3.984102602508324906851079604804904978382945578449179103920575544779642775171802759225E-25",
+            "0E-204",
+            "0E-424"
+          ],
+          [
+            "0E-204",
+            "-3.984102602508324906851079604804904978382945578449179103920575544779642775171802759225E-25",
+            "0E-424"
+          ],
+          [
+            "0E-424",
+            "0E-424",
+            "0E-642"
+          ]
+        ]
+      },
+      {
+        "C": [
+          "1.000244140625",
+          "1.000000000000",
+          "1.499755859375",
+          "1.500000000000"
+        ],
+        "C_next": [
+          "1.00023993454507630841771989708130448408295368319090516275168823804559513986755742550595949667929",
+          "0.999996201093972495741685699559323616389200264251707779715944957204074293469315311888276543512817",
+          "1.49976019184939880163291731524932908149654240756307458261171703948773875394055000217670342838787",
+          "1.50000367251155239420767708811004281803130364499431247492064976526259181272257726042906053142002"
+        ],
+        "H1": [
+          [
+            "1.00000000000006877729078738010220219792785253689043270307150484405621533406969475157954558586555",
+            "0E-204",
+            "-2.58962507551379082283166366881747571304629330591527229233533275710175102240462912955682839496425E-16"
+          ],
+          [
+            "0E-204",
+            "1.00000000000001398434584869355392017880431739440138283425277265079383882693783731327734888877457",
+            "1.16771117783364021066226425934047703001417077457061967016020695741586815608158254306558791653631E-16"
+          ],
+          [
+            "-2.58962507551379082283166366881747571304629330591527229233533275710175102240462912955682839496424E-16",
+            "1.16771117783364021066226425934047703001417077457061967016020695741586815608158254306558791653631E-16",
+            "1.00000000000000000390021645514441528296674852999667465646372677237846484653857808448582889291538"
+          ]
+        ],
+        "corrector": {
+          "W_hat": [
+            "0.999990706726004820470928671434040206471859248748360009603026483435247914667799419495476294332777",
+            "0.999992426306204997540326698960232109963276102904144469559296685148924665519585623907056454036463",
+            "0.999999991620113675553715863476177942593875070199966277092865688470251660266061336684095294638004"
+          ],
+          "baseline": [
+            "0.000269451369364646486826327248198613962788114010503474914441737509087139816345879956248326231649074",
+            "-0.000243248241186571227947654542020238173806951947938589217121237477387722898193322278579672118229838",
+            "-0.00000809122130361314593447383221998037698298909074489762152212755412932369926610008863199413191212825"
+          ],
+          "contrast": [
+            "-0.00194847587557137861075682899169763674288172483074702115649422171015983951894978733685943222700062",
+            "-0.000972775331918921066340080479416025501273783414045853906361747760442884948234805323353067903466714",
+            "-0.000488277021252715597900855115865314057844477550708227639231499445763851762287082353788949007631159"
+          ],
+          "current": [
+            "0.000269189115116261265926586796513018690964275782069583891952765081911048476324767618592212525207295",
+            "-0.000243129985760272532115228203288551091183087890702098179522738939245217963820039150301215179742829",
+            "-0.00000808924640704324078158916054819708774980825470370325793776213336920371887537169042720429877520165"
+          ],
+          "geometry_potential": [
+            "-3.43549995089043304996617864306454091986667919115186395237656916655727591736246192510710557414943E-14",
+            "-6.99214441577309938098269653701118163680213580598422087889417789797896738860073294948869468779501E-15",
+            "3.45427389228335287352769493066718875262941154762880621900244252906713196159392194242515146025579E-14",
+            "6.80440500184390114536753366098470330917481224121479821263544427288040694628613277630823582673146E-15"
+          ],
+          "read_flux": [
+            "-2.62254248385220899740451685595271823838228433891022488972427176091340021112337656113706441779331E-7",
+            "1.18255426298695832426338731687082623864057236491037598498538142504934373283128278456938487009628E-7",
+            "1.97489656990515288467167178328923318083604119436358436542076011998039072839820478983313692656887E-9"
+          ],
+          "structural_flat": [
+            "-2.62254248385202862092326102792185731882532065862673219841913384087176022831030416582912566130162E-7",
+            "1.18255426298694178470948006082278949192969916788775543704502782516248733534059773818835965552519E-7",
+            "1.97489656990507115413305700305442143601166319332476199183571160305422678390703918029702106119152E-9"
+          ]
+        },
+        "label": "nonuniform_history_and_resource",
+        "log_W": [
+          "-0.00390625",
+          "-0.001953125",
+          "-0.0009765625"
+        ],
+        "log_W_next": [
+          "-0.00195776261790061284861316043464978570923818426650976308247111566483356018857132414090107317023092",
+          "-0.00098034568015845058075111611044884130910076339523094601015691027121460320927538804105166301392910",
+          "-0.000488285437898075767166740685686220447444883316751947888078960585236412118899338207298691001916598"
+        ],
+        "predictor": {
+          "W_hat": [
+            "0.999990706726006003961593346324149725287808001587262074198740546117524548586552172344850160402950",
+            "0.999992426306205211902742609892461072989695749018493655926973429800817614244458729180674250197339",
+            "0.999999991620113689903663166017539883165883862036158247265612916977250128328169837531334955971886"
+          ],
+          "baseline": [
+            "0.000269451369347489203925015241574716928024146114465373893377258322888651396158033753993917944108020",
+            "-0.000243248241183128820615219117527581659679546145968338834475167916872244161730669410286523899263166",
+            "-0.00000809122129668533120281540067177203985923437571728376388272831810783084221102726532319109883138402"
+          ],
+          "contrast": [
+            "-0.00194847587557197035934185255718875663553186573352673172761914427025851499509622509806190656143460",
+            "-0.000972775331919028248258374271862679369789939186591587069196403799108688050698517638446782681699922",
+            "-0.000488277021252722772872855894602854670886064684745464709996141897372342365082082334345593169195189"
+          ],
+          "current": [
+            "0.000269189115099120602463760110846361444434549577928089607019937635267513439392232751310671787901549",
+            "-0.000243129985756831785290041104892821937556050412931471409181717760624467026318744515222077349736748",
+            "-0.00000808924640011711695446623830536732041081130545433080045684168969067268718290333169193645058659167"
+          ],
+          "geometry_potential": [
+            "0E-12",
+            "0E-12",
+            "0E-12",
+            "0E-12"
+          ],
+          "read_flux": [
+            "-2.62254248368601461255130728355483589596536537284286357320687621137956765801002683246156206470055E-7",
+            "1.18255426297035325178012634759722123495733036867425293450156247777135411924895064446549526417621E-7",
+            "1.97489656821424834916236640471944842307026295296342588662841715815502812393363125464824479233160E-9"
+          ],
+          "structural_flat": [
+            "-2.62254248368601461255130728355483589596536537284286357320687621137956765801002683246156206470055E-7",
+            "1.18255426297035325178012634759722123495733036867425293450156247777135411924895064446549526417621E-7",
+            "1.97489656821424834916236640471944842307026295296342588662841715815502812393363125464824479233160E-9"
+          ]
+        },
+        "predictor_source": [
+          [
+            "6.87772907873801022021979278525368904327030715048440562153340696947515795455858655459205207639116E-14",
+            "-0E-204",
+            "-2.58962507551379082283166366881747571304629330591527229233533275710175102240462912955682839496425E-16"
+          ],
+          [
+            "-0E-204",
+            "1.39843458486935539201788043173944013828342527726507938388269378373132773488887745693189820624519E-14",
+            "1.16771117783364021066226425934047703001417077457061967016020695741586815608158254306558791653631E-16"
+          ],
+          [
+            "-2.58962507551379082283166366881747571304629330591527229233533275710175102240462912955682839496424E-16",
+            "1.16771117783364021066226425934047703001417077457061967016020695741586815608158254306558791653631E-16",
+            "3.90021645514441528296674852999667465646372677237846484653857808448582889291537967291398714239461E-18"
+          ]
+        ],
+        "split_defect": [
+          [
+            "-8.7075757971246944286534504238994506027848620145945725232826478969230291446300063241419E-24",
+            "0E-204",
+            "2.38105756705537601558181577434531676350304042827410654786119026206946056207421090765552E-25"
+          ],
+          [
+            "0E-204",
+            "-3.923368066433781012611143292224212821016895105704813382333374076161273147403198729812E-25",
+            "-1.01612517636375916470599275057206241221109966509980092490818576570920969068901612181564E-25"
+          ],
+          [
+            "2.38105756705537601558181577434531676350304042827410654786119026206946056207421090765553E-25",
+            "-1.01612517636375916470599275057206241221109966509980092490818576570920969068901612181564E-25",
+            "-6.67840031284889415367426799867744423043149811733316054185288448213364529363304890663372E-27"
+          ]
+        ]
+      }
+    ],
+    "individual_load_responses": [
+      {
+        "C_loaded": [
+          "1.000244140625",
+          "1.000000000000",
+          "1.499511718750",
+          "1.500244140625"
+        ],
+        "C_next": [
+          "1.00023980517885883625558528276648775690618536641506401401754395560160092818544772013903448110555",
+          "0.999996347636112900196871022362057452828751562859040216538639258046005024925889658518226357381443",
+          "1.49951644683567393720722387259803845502791594491646766326152298369361609037764258384585039271196",
+          "1.50024740034935432634031982227341633523714712580942810618229380265877795651102003749688876880105"
+        ],
+        "Q": "0.00193896491667976302792400502157802952581480954505347491760265583897953556603757010404927133696",
+        "child": 2
+      },
+      {
+        "C_loaded": [
+          "1.000000000000",
+          "1.000244140625",
+          "1.500244140625",
+          "1.499511718750"
+        ],
+        "C_next": [
+          "0.999996347636112900196871022362057452828751562859040216538639258046005024925889658518226357381443",
+          "1.00023980517885883625558528276648775690618536641506401401754395560160092818544772013903448110555",
+          "1.50024740034935432634031982227341633523714712580942810618229380265877795651102003749688876880105",
+          "1.49951644683567393720722387259803845502791594491646766326152298369361609037764258384585039271196"
+        ],
+        "Q": "0.00193896491667976302792400502157802952581480954505347491760265583897953556603757010404927133696",
+        "child": 3
+      }
+    ],
+    "matched_controls": {
+      "coordinate_action": {
+        "edge_order": [
+          2,
+          0,
+          1
+        ],
+        "edge_signs": [
+          -1,
+          1,
+          -1
+        ],
+        "passed": true,
+        "vertex_order": [
+          2,
+          0,
+          3,
+          1
+        ]
+      },
+      "forbidden_second_corrector": {
+        "current": [
+          "0.000242004829485738667706796912795142306899721190362166967968641553675303267325793364751252769046804",
+          "-0.000242004829485738667706796912795142306899721190362166967968641553675303267325793364751252769046804",
+          "-0E-100"
+        ],
+        "reason": "OS split residual is diagnostic, not an iteration trigger",
+        "selected": false
+      },
+      "geometry_potential_consumer_off": {
+        "C": [
+          "1",
+          "1",
+          "1.5",
+          "1.5"
+        ],
+        "C_next": [
+          "0.999996218674539501613829932424076372818649226732713780074187726025199205510364405508174216461286",
+          "0.999996218674539501613829932424076372818649226732713780074187726025199205510364405508174216461286",
+          "1.50000378132546049838617006757592362718135077326728621992581227397480079448963559449182578353871",
+          "1.50000378132546049838617006757592362718135077326728621992581227397480079448963559449182578353871"
+        ],
+        "H1": [
+          [
+            "1.00000000000005563848332938578491172706706792347194806196388876376378369859074217104895651940101",
+            "0E-204",
+            "0E-204"
+          ],
+          [
+            "0E-204",
+            "1.00000000000005563848332938578491172706706792347194806196388876376378369859074217104895651940101",
+            "0E-204"
+          ],
+          [
+            "0E-205",
+            "0E-205",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        ],
+        "corrector": {
+          "W_hat": [
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "0"
+          ],
+          "current": [
+            "0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "-0E-109",
+            "-0E-109",
+            "0E-109",
+            "0E-109"
+          ],
+          "read_flux": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-2.35878111170535689513365353148518309991091436001353448990448479463044757308294788795458223353809E-7",
+            "2.35878111170535689513365353148518309991091436001353448990448479463044757308294788795458223353809E-7",
+            "0E-321"
+          ]
+        },
+        "label": "geometry_potential_consumer_off",
+        "log_W": [
+          "-0.00390625",
+          "-0.00390625",
+          "0"
+        ],
+        "log_W_next": [
+          "-0.00195687324559921419576353101402485649034207779511379053048118209283981411820081575992494079084149",
+          "-0.00195687324559921419576353101402485649034207779511379053048118209283981411820081575992494079084149",
+          "0E-200"
+        ],
+        "predictor": {
+          "W_hat": [
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "0"
+          ],
+          "current": [
+            "0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ],
+          "read_flux": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "0E-102"
+          ]
+        },
+        "predictor_source": [
+          [
+            "5.56384833293857849117270670679234719480619638887637637836985907421710489565194010119137955703566E-14",
+            "-0E-204",
+            "-0E-204"
+          ],
+          [
+            "-0E-204",
+            "5.56384833293857849117270670679234719480619638887637637836985907421710489565194010119137955703566E-14",
+            "0E-204"
+          ],
+          [
+            "-0E-205",
+            "0E-205",
+            "0E-204"
+          ]
+        ],
+        "split_defect": [
+          [
+            "6.1912816543881630837194494740499240148317071766190739821200050201257349631642867617E-27",
+            "0E-204",
+            "0E-423"
+          ],
+          [
+            "0E-204",
+            "6.1912816543881630837194494740499240148317071766190739821200050201257349631642867617E-27",
+            "0E-423"
+          ],
+          [
+            "0E-424",
+            "0E-424",
+            "0E-642"
+          ]
+        ]
+      },
+      "geometry_pushforward_off": {
+        "C": [
+          "1",
+          "1",
+          "1.5",
+          "1.5"
+        ],
+        "C_next": [
+          "0.999996218674539501613829932424076372818649226732713780074187726025199205510364405508174216461286",
+          "0.999996218674539501613829932424076372818649226732713780074187726025199205510364405508174216461286",
+          "1.50000378132546049838617006757592362718135077326728621992581227397480079448963559449182578353871",
+          "1.50000378132546049838617006757592362718135077326728621992581227397480079448963559449182578353871"
+        ],
+        "H1": [
+          [
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "0E-204",
+            "0E-204"
+          ],
+          [
+            "0E-204",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "0E-204"
+          ],
+          [
+            "0E-205",
+            "0E-205",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        ],
+        "corrector": {
+          "W_hat": [
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "0"
+          ],
+          "current": [
+            "0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "0E-206",
+            "0E-206",
+            "0E-206",
+            "0E-206"
+          ],
+          "read_flux": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "0E-321"
+          ]
+        },
+        "label": "geometry_pushforward_off",
+        "log_W": [
+          "-0.00390625",
+          "-0.00390625",
+          "0"
+        ],
+        "log_W_next": [
+          "-0.00195687324559921419576353101402485649034207779511379053048118209283981411820081575992494079084149",
+          "-0.00195687324559921419576353101402485649034207779511379053048118209283981411820081575992494079084149",
+          "0E-200"
+        ],
+        "predictor": {
+          "W_hat": [
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "0"
+          ],
+          "current": [
+            "0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0.000242004829471896714884324859112139606449489106318075251985534387250847336678047476850146477685321",
+            "-0E-100"
+          ],
+          "geometry_potential": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ],
+          "read_flux": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "2.35878111170548813413721482005371595161838753360430435606438011141837072756125717942904803798559E-7",
+            "0E-102"
+          ]
+        },
+        "predictor_source": [
+          [
+            "5.56384833293857849117270670679234719480619638887637637836985907421710489565194010119137955703566E-14",
+            "-0E-204",
+            "-0E-204"
+          ],
+          [
+            "-0E-204",
+            "5.56384833293857849117270670679234719480619638887637637836985907421710489565194010119137955703566E-14",
+            "0E-204"
+          ],
+          [
+            "-0E-205",
+            "0E-205",
+            "0E-204"
+          ]
+        ],
+        "split_defect": [
+          [
+            "0E-109",
+            "0E-204",
+            "0E-423"
+          ],
+          [
+            "0E-204",
+            "0E-109",
+            "0E-423"
+          ],
+          [
+            "0E-424",
+            "0E-424",
+            "0E-642"
+          ]
+        ]
+      },
+      "readback_off": {
+        "C": [
+          "1",
+          "1",
+          "1.5",
+          "1.5"
+        ],
+        "C_next": [
+          "0.999996214988944014574004722834678216484718052328983258817462169674605281419160143693709873603399",
+          "0.999996214988944014574004722834678216484718052328983258817462169674605281419160143693709873603399",
+          "1.50000378501105598542599527716532178351528194767101674118253783032539471858083985630629012639660",
+          "1.50000378501105598542599527716532178351528194767101674118253783032539471858083985630629012639660"
+        ],
+        "H1": [
+          [
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "0E-394",
+            "0E-395"
+          ],
+          [
+            "0E-394",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "0E-395"
+          ],
+          [
+            "0E-395",
+            "0E-395",
+            "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        ],
+        "corrector": {
+          "W_hat": [
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "0"
+          ],
+          "current": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "geometry_potential": [
+            "0E-396",
+            "0E-396",
+            "0E-396",
+            "0E-396"
+          ],
+          "read_flux": [
+            "-0E-197",
+            "0E-197",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-0E-1898",
+            "0E-1599",
+            "0E-1000"
+          ]
+        },
+        "label": "readback_off",
+        "log_W": [
+          "-0.00390625",
+          "-0.00390625",
+          "0"
+        ],
+        "log_W_next": [
+          "-0.00195688055586626208650965495616797264240153450394889965273848320288838405381002390640454295397262",
+          "-0.00195688055586626208650965495616797264240153450394889965273848320288838405381002390640454295397262",
+          "0E-202"
+        ],
+        "predictor": {
+          "W_hat": [
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "0.999992488916475804930863730231483638256023518164498596594480019236048751959323621926037760680021",
+            "1"
+          ],
+          "baseline": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "contrast": [
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "-0.00194936697490940461879668029789418004115768298320352411729122657846051289647564612051595743705125",
+            "0"
+          ],
+          "current": [
+            "0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0.000242240707583067263697738580594144978044650945071435682421140825261989173750803602568089382489121",
+            "-0E-101"
+          ],
+          "geometry_potential": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ],
+          "read_flux": [
+            "-0E-197",
+            "0E-197",
+            "-0E-101"
+          ],
+          "structural_flat": [
+            "-0E-197",
+            "0E-197",
+            "0E-197"
+          ]
+        },
+        "predictor_source": [
+          [
+            "0E-394",
+            "-0E-394",
+            "-0E-395"
+          ],
+          [
+            "-0E-394",
+            "0E-394",
+            "0E-395"
+          ],
+          [
+            "-0E-395",
+            "0E-395",
+            "0E-394"
+          ]
+        ],
+        "split_defect": [
+          [
+            "0E-3796",
+            "0E-3497",
+            "0E-2899"
+          ],
+          [
+            "0E-3497",
+            "0E-3198",
+            "0E-2600"
+          ],
+          [
+            "0E-2899",
+            "0E-2600",
+            "0E-2000"
+          ]
+        ]
+      }
+    },
+    "not_a_certified_rounding_enclosure": true,
+    "precision": 96
+  },
+  "domain": {
+    "H0": "identity",
+    "K4_adapter": "identity in the declared common star-tensor coordinates",
+    "W_floor": "1/2",
+    "W_ref": "all ones",
+    "alpha": 0,
+    "beta": 0,
+    "candidate": "A",
+    "carrier": null,
+    "chi_A": [
+      "0",
+      "1/2"
+    ],
+    "edge_displacement_radius": "1/128",
+    "eta": "1/4",
+    "gamma": [
+      "0",
+      "256"
+    ],
+    "geometry_is_derived_not_retained": true,
+    "h": "1/64",
+    "incidence": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "-1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "-1"
+      ]
+    ],
+    "kappa_Ah": [
+      "0",
+      "1"
+    ],
+    "kappa_H": [
+      "0",
+      "1"
+    ],
+    "kappa_c": "1/1024",
+    "log_history_interval": [
+      "-1/128",
+      "0"
+    ],
+    "p_coefficients": [
+      "-405/32",
+      "657/16",
+      "-1647/32",
+      "497/16",
+      "-9",
+      "1"
+    ],
+    "realization": "one-pass OS",
+    "rho": "1/2",
+    "tau_A": "h/log(2) in exact arithmetic",
+    "zeta_A": 1
+  },
+  "predecessor_digest": "b2e3ca3131d46d04a92febaf65556a8a9d9b9ff848d5b39b51a5ed41956a9c83",
+  "production_changes": false,
+    "record_digest": "c78185f49678aeba71dbc2045cac9831ffaeefe44d9f741383bd4333ee1207e6",
+  "research_contract": "ATC-A-OS-READBACK-GEOMETRY-HISTORY-v1_not_runtime_registered",
+  "schema": "grcv4_atc_os_geometry_feedback_certificate_v1",
+  "scientific_status": "proposed_conditional_mathematics_pending_independent_review",
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCHistoryFeedbackCertificate.json",
+      "sha256": "f258dbffed8c593259202a4e5441bbf9ccca9c00eaf78e5fea75b1b20023d724"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_a_history_feedback.py",
+      "sha256": "9dec98628ed2a3482bd9f0fa9ab38ecfd2a63c64ced5ecc418f440b209258068"
+    },
+    {
+            "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_os_geometry_feedback.py",
+            "sha256": "1f69df96b16034117b28f0d1074d69c6828cdeabcb9303b44631547e206c069b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/a_initializer.py",
+      "sha256": "6efb1e33baff33e4f5d76de7937a9cb4977c89c28d6bf8999e168bf68e46de3b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/forensic.py",
+      "sha256": "6d44973aececa003f180082175025e23b9a0db44e5fd9e5d80217b368e552795"
+    },
+    {
+      "path": "specs/grc-v4-a-initializer-spec.md",
+      "sha256": "ff5990571197d7c843a16bd404694e35f8c6fc5da01856e5639d51ad5f2b36e6"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f"
+    }
+  ],
+  "status": "passed_exact_bounds_and_finite_staged_diagnostics"
+}

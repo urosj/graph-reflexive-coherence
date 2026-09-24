@@ -1,0 +1,743 @@
+{
+  "schema": "grcv4_atc_sector_state_domain_adjudication_v1",
+  "record_id": "ATC-LSF-G1-G4-ADJUDICATION-v1",
+  "status": "accepted_bounded_G1_G4_mathematical_research",
+  "scientific_acceptance": true,
+  "graph_admission": false,
+  "native_authority": false,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "decision_basis": "User-supplied G1-G4 PASS with scoped-adjudication recommendation; preserves the three explicit review ceilings.",
+  "predecessor_adjudication": "b50a4c79577154c9e5a35e7702844a303a5aa78443b59be2d9f8b24ee47b0e05",
+  "reviewed_certificate_digest": "98f9b2814bf6ffe982e352cce3dc829ccfc18db9e05904377acaef8329814228",
+  "accepted_scope": {
+    "candidate": "A",
+    "realization": "OS",
+    "parameter_box": {
+      "chi_A": [
+        "1/32",
+        "1/16"
+      ],
+      "gamma": [
+        "1/2048",
+        "1/1024"
+      ],
+      "kappa_H": [
+        "1/2",
+        "1"
+      ],
+      "kappa_Ah": [
+        "1/2",
+        "1"
+      ]
+    },
+    "alpha": 0,
+    "beta": 0,
+    "a": "19/4",
+    "h": "1/8",
+    "tau_A": "h/log(2)",
+    "unit_references": true,
+    "persistent_carrier": false,
+    "G1": {
+      "source_manifold": "exact paired four-star quotient",
+      "charge": 9,
+      "current": {
+        "x": [
+          "3",
+          "7/2"
+        ],
+        "y": [
+          "0",
+          "1/50"
+        ],
+        "history": "24/25 <= u < v <= 1",
+        "baseline_conditions": "bu>0, bv>0, abs(bu-bv)<=(bu+bv)/64"
+      },
+      "reset": {
+        "x": [
+          "3",
+          "7/2"
+        ],
+        "y": [
+          "-1/50",
+          "1/50"
+        ],
+        "history": "u and v independently in [24/25,1]",
+        "independent_of_current": true
+      },
+      "physical_allocator_role": "current_only",
+      "share_hull": [
+        "31/64",
+        "33/64"
+      ],
+      "funding_lower": "1303/1600",
+      "first_target_X_upper": "428719219/711183240",
+      "return_q": "9209/10240",
+      "full_dimensional_only_within_paired_quotient": true,
+      "maximal_domain_claimed": false,
+      "contains_prepared_family_claimed": false
+    },
+    "G2": {
+      "source_manifold": "exact paired charge-nine nonnegative-resource cone",
+      "x_lower": 3,
+      "histories": [
+        "24/25",
+        "1"
+      ],
+      "requires_u_lt_v": false,
+      "requires_y_nonnegative": false,
+      "growth_multiplier": "51/50",
+      "nonnegative_proposals_cannot_all_pass": 56,
+      "history_reset_only_also_obstructed": true
+    },
+    "G3": {
+      "accepted": "decorated automorphism orbit definition and complete staged equivariance",
+      "arbitrary_equitable_pooling": false,
+      "arbitrary_orbit_surgery": false,
+      "supported_fission_sector_sizes": [
+        2,
+        2
+      ]
+    },
+    "G4": {
+      "environment_class": "two dynamical pendants on one sector; declared relabelings/orientations and state/history box",
+      "charge": "41/5",
+      "source_vertices": 7,
+      "target_vertices": 8,
+      "epsilon": "1/10000",
+      "resources": "ru,rv,z in [1-epsilon,1+epsilon]; s=41/5-2ru-2rv-2z",
+      "histories": "u in [99/100-epsilon,99/100+epsilon]; v,w in [1-epsilon,1]",
+      "current_requires_ru_ge_rv": true,
+      "reset_requires_ru_ge_rv": false,
+      "actual_reset_independent": true,
+      "share_hull": [
+        "12/25",
+        "13/25"
+      ],
+      "external_reference_current_lower": "1.18",
+      "funding_lower": "13903/250000",
+      "both_role_entry_X_squared_upper": "1007836459/31250000000",
+      "no_split_rejection_attempt": 6,
+      "history_reset_only_rejection_attempt": 6,
+      "target_ball_radius": "1/4",
+      "target_history_interval": [
+        "24/25",
+        "1"
+      ],
+      "target_q_upper": "746747913911/768077899200",
+      "target_resource_floor": "31/40",
+      "full_target_mean_zero_space": true,
+      "arbitrary_environment_claimed": false
+    },
+    "environment_exclusion": {
+      "target_rayleigh": "26/5",
+      "slope": "19/4",
+      "scope": "unstable uniform resource linearization; not every trajectory"
+    }
+  },
+  "independent_review": {
+    "review_path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-G1-G4-Pass.md",
+    "executed": [
+      "domain_entry",
+      "source_cone",
+      "polynomial_checks",
+      "embedded_return",
+      "embedded_domain",
+      "embedding_counterexample"
+    ],
+    "complete_evidence_payload_matches": true,
+    "G3": "analytical review of exact-sector/equivariance theorem",
+    "repository_main_execution_reported": false,
+    "native_execution": false
+  },
+  "claims": [
+    {
+      "id": "ATC-LSF-G14-CL-01",
+      "title": "Paired event/reset domain and source-selected restoration",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "G1; sufficient full-dimensional region only inside the exact paired quotient manifold",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RBB-CL-02",
+        "ATC-LSF-RBB-CL-04"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-02",
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-09",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-02",
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-09",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G14-CL-02",
+      "title": "Predictive full-feedback source obstruction",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "G2; paired charge-nine cone, x>=3 and histories in [24/25,1]; no u<v or y>=0 requirement",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RBB-CL-03"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-04",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-19"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G14-CL-03",
+      "title": "Exact structural sectors and full staged equivariance",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "G3; decorated automorphism orbits imply exact response equality; not arbitrary equitable pooling or arbitrary-orbit surgery",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RBB-CL-01",
+        "ATC-LSF-RBB-CL-06"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-03",
+        "ATC7-DB-04",
+        "ATC7-DB-05",
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-25",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G14-CL-04",
+      "title": "Active embedded class and whole-target restoration",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "G4; declared two-pendant source/reset domains and eight-vertex target only",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RBB-CL-02",
+        "ATC-LSF-RBB-CL-03",
+        "ATC-LSF-RBB-CL-04",
+        "ATC-LSF-RBB-CL-05"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-03",
+        "ATC7-CL-08",
+        "ATC7-CL-11",
+        "ATC7-CL-15",
+        "ATC7-CL-16",
+        "ATC7-CL-18",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-10",
+        "ATC7-DB-12",
+        "ATC7-DB-13",
+        "ATC7-DB-14",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G14-CL-05",
+      "title": "Unaffected-support environmental exclusion",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "independently_reviewed_mathematics",
+      "scope": "Second-parent graph has unstable uniform resource linearization; not failure of every trajectory",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-04",
+        "ATC7-CL-11",
+        "ATC7-CL-22",
+        "ATC7-CL-27"
+      ],
+      "debt_refs": [
+        "ATC7-DB-07",
+        "ATC7-DB-08",
+        "ATC7-DB-19",
+        "ATC7-DB-26"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    },
+    {
+      "id": "ATC-LSF-G14-CL-06",
+      "title": "Research-scope and authority ceilings",
+      "status": "accepted_bounded_mathematical_research_not_graph_admitted",
+      "evidence_class": "accepted_explicit_scope_limit",
+      "scope": "No unrestricted source, arbitrary orbit surgery/environment, other-family, formation, native or aggregate authority",
+      "predecessor_claim_refs": [
+        "ATC-LSF-RBB-CL-06"
+      ],
+      "origin_claim_refs": [
+        "ATC7-CL-01",
+        "ATC7-CL-03",
+        "ATC7-CL-27",
+        "ATC7-CL-32"
+      ],
+      "debt_refs": [
+        "ATC7-DB-01",
+        "ATC7-DB-09",
+        "ATC7-DB-11",
+        "ATC7-DB-17",
+        "ATC7-DB-18",
+        "ATC7-DB-20",
+        "ATC7-DB-21",
+        "ATC7-DB-22",
+        "ATC7-DB-23",
+        "ATC7-DB-24",
+        "ATC7-DB-25",
+        "ATC7-DB-26",
+        "ATC7-DB-27",
+        "ATC7-DB-28"
+      ],
+      "accepted_graph_descendants": [],
+      "native_authority": false
+    }
+  ],
+  "debts": [
+    {
+      "origin_debt_id": "ATC7-DB-01",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Pin repository commits, source bytes, release, dependencies and exact results. Retrieved main pages and older local attachments cannot stand in for the final execution subject.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-02",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Source-only event/allocator and independent reset domains are justified mathematically in G1/G4.",
+      "remaining_obligation": "No unrestricted trigger/generator, arbitrary orbit surgery or installed native actuator.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-03",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Reference-selected current remains the event operand; exact sector invariance is a present-state structural theorem, not a new past-state input.",
+      "remaining_obligation": "Native replay/reset/history handling is not executed here.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-03"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-04",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G1/G2 justify the reference-stage source to full-feedback obstruction/restoration relation on declared domains.",
+      "remaining_obligation": "Source consumer, complete profile and graph readmission remain separate.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-03"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-05",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Full staged A_OS evolution, floor inactivity and residual admission are controlled on the paired and embedded domains.",
+      "remaining_obligation": "Other realizations, alpha/beta activation and broader potential domains remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-02",
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-06",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Explicit source contrast, resource norms, history intervals and whole-target mean-zero spectral bounds are reviewed.",
+      "remaining_obligation": "No general structural energy, arbitrary tangent domain or joint-state contraction is inferred.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-02",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-07",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Predictive G2 obstruction and G4 active-environment controls distinguish unsplit/history-reset failure from restorative fission.",
+      "remaining_obligation": "No arbitrary-state old-guard sufficiency or physical uniqueness of the remedy.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-02",
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-08",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Decorated-orbit response equality and the supported 2+2 sector-to-site relation are reviewed.",
+      "remaining_obligation": "No arbitrary orbit cardinalities, arbitrary equitable pooling, approximate sectors or classical CAN-B closure.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-09",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "The declared domains retain one distinguished source parent and one source-determined allocation.",
+      "remaining_obligation": "Multiple loci, cross-law ordering and cross-family comparability remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-10",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Exact share enclosures and analytical relabeling/orientation covariance hold on the declared domains.",
+      "remaining_obligation": "Native finite-precision equivariance and arbitrary threshold cases remain open; share hulls are not exact reachable sets.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-11",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Prove combined reference/history/resource maps, intermediate admission, and required equality notions; account for global reset effects.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-12",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "The supported 2+2 source/target graphs include the explicit two-pendant environmental extension.",
+      "remaining_obligation": "General loops/parallel edges, native event IDs and arbitrary template mechanics remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-13",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Both actual roles retain their declared exact charges under the source-selected dyadic split.",
+      "remaining_obligation": "Native represented arithmetic, rounding and actual-charge admission remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-14",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "The declared mathematical eight-vertex target and its full mean-zero-space return bounds are reviewed.",
+      "remaining_obligation": "Native backend/context/profile admission and nonzero-beta differential-reference binding remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-15",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Old-edge histories, including environmental edges, are separately transported in current/reset; only the bridge is seeded.",
+      "remaining_obligation": "Native mixed-history production, replay and transport remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-16",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Independent actual-role target entry is proved without using reset to choose the event.",
+      "remaining_obligation": "Native initializer/whole-publication atomic integration and arbitrary reset domains remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-04"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-17",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Map substrate state to the exact spatial/support/finite-continuation objects and demonstrate the requested change.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-18",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Bind functional/sign/normalization/anchor/units/locus and threshold or crossing; distinguish relative proposals from V=-P.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-19",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Indefinite actual-role restoration holds in G1 and G4 domains; G4 includes nonsymmetric target modes. The second-parent return counterexample is retained.",
+      "remaining_obligation": "Arbitrary surroundings, arbitrary sources/resets, repeated hybrid events and native error bounds remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-02",
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-20",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Formation, reachability into E or the embedded source domain, and stronger identity attribution are not proved.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-21",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Define transaction boundaries and report composition; verify target and prospective archive before publication; preserve programmer-error semantics.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-22",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Declare causal history and lifecycle maps, eligible boundaries, work bounds and clock assumptions; distinguish finite beats from physical time.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-23",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "These are mathematical proofs/checks, not native ATC execution or lifecycle replay/rollback.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-24",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Local acceptance is not forensic graph admission or side-tool source readmission.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-25",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "G3 proves invariance of complete decorated-automorphism fixed subspaces, not a general coarse graph or merge.",
+      "remaining_obligation": "Complete behavioral quotient/merge authority is not supplied by exact sector invariance.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-26",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "partial_scope_earned_wider_obligation_retained",
+      "earned_scope": "Accepted A_OS mathematical scope now includes the paired state domains and one coupled environmental class.",
+      "remaining_obligation": "Other nine families, symmetry-broken source coverage and native complete-profile support remain open.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-01",
+        "ATC-LSF-G14-CL-03",
+        "ATC-LSF-G14-CL-04",
+        "ATC-LSF-G14-CL-05",
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-27",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Demonstrate the operation-specific causal meaning; test zero-current bridges, hidden W/Z, existing nonedge mediation and delayed effects.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-28",
+      "origin_status": "open_proposal",
+      "predecessor_disposition_retained": true,
+      "status": "prior_obligation_retained",
+      "earned_scope": "No additional scope earned; retain predecessor and origin obligations.",
+      "remaining_obligation": "Bind objective and search semantics, complexity/work budgets and exact outcome independence; distinguish computational failure from physical absence.",
+      "local_claim_refs": [
+        "ATC-LSF-G14-CL-06"
+      ],
+      "discharged": false
+    }
+  ],
+  "next_stage": "G5_descriptor_binding_shifted_equilibrium_and_potential_class",
+  "G5_accepted": false,
+  "G6_accepted": false,
+  "G7_accepted": false,
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+      "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainCertificate.json",
+      "sha256": "bdadda3a9b313fcbac5ad7d5c4ed60af02faf7c1a32f37f78cb34aabda9c2935"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_state_domain.py",
+      "sha256": "19b88f776b0084c9dd9f5220304080f685d25c98aeca0a30d7b572ae42f5ee2d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorStateDomain.md",
+      "sha256": "41fc0fd8bb831b16b7617945be8aa1013111a5dbf5b28fa597dea7f62d78d3b7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-G1-G4-Pass.md",
+      "sha256": "0467682ec3908316ba801356b37bcb10ca4deb99ef1a000d77eea3206f1ed2f6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorStateDomainAdjudication.md",
+      "sha256": "81290061288514874e6b5518fca0e700cce847fee554bf4888627878b2e1576b"
+    }
+  ],
+  "record_digest": "d577ff86b44b76ca6748c930f8bfbab2758aedc077d0c5625fcb640bf139a23e"
+}

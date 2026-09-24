@@ -1,0 +1,1810 @@
+{
+  "schema": "grcv4_atc_cip0_v1",
+  "status": "prepared_pending_independent_review",
+  "scientific_acceptance": false,
+  "graph_admitted": false,
+  "native_ATC_executed": false,
+  "ATC2_closed": false,
+  "authority_graph_digest": "8a72fed0586996146ef31b86affcaf5b2d34f08ba12ca28adc4338e13b35c1ed",
+  "authority_traces": [
+    {
+      "query": {
+        "claim_id": "ATC-CI-DOMAIN-02"
+      },
+      "graph_digest": "8a72fed0586996146ef31b86affcaf5b2d34f08ba12ca28adc4338e13b35c1ed",
+      "source_bundle_digest": "ec28195fb639a9c927834a366baa994fae5a9a46af6f9dc85913edb791558a56",
+      "trace_digest": "ff1091138e33df349b46d1773294c987bab07c2d89c7a5fdafb65f069d3b7e20",
+      "classification": "accepted_bounded_research_reconstruction",
+      "source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/claims/2",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "claim_class": "conditional",
+      "support_disposition": "accepted_bounded_A_CI_research",
+      "profile_scope": [
+        "A_CI"
+      ],
+      "edge_ref_count": 28,
+      "edge_refs_digest": "64def562d6281d9d729c151063a7d1b743414bc46e4ef1c7cc4f5752b01c81d8"
+    },
+    {
+      "query": {
+        "claim_id": "ATC-CI-REFERENCE-03"
+      },
+      "graph_digest": "8a72fed0586996146ef31b86affcaf5b2d34f08ba12ca28adc4338e13b35c1ed",
+      "source_bundle_digest": "ec28195fb639a9c927834a366baa994fae5a9a46af6f9dc85913edb791558a56",
+      "trace_digest": "b48c6fd1cc6d728fc95304b03aefe40cf9ab0d9603bfe620c7aae125d155a468",
+      "classification": "accepted_bounded_research_reconstruction",
+      "source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/claims/3",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "claim_class": "conditional",
+      "support_disposition": "accepted_bounded_A_CI_research",
+      "profile_scope": [
+        "A_CI"
+      ],
+      "edge_ref_count": 42,
+      "edge_refs_digest": "fbd62c944d2eb21bac20c14628cb7122dbe13ee2721a020d2e31f760ea379233"
+    },
+    {
+      "query": {
+        "claim_id": "ATC-PC-CARRIER-03"
+      },
+      "graph_digest": "8a72fed0586996146ef31b86affcaf5b2d34f08ba12ca28adc4338e13b35c1ed",
+      "source_bundle_digest": "ec28195fb639a9c927834a366baa994fae5a9a46af6f9dc85913edb791558a56",
+      "trace_digest": "34cf92d657799a9e63de4909b5a17c8be84e0588e1817c0ba40c3569a7a5e828",
+      "classification": "accepted_bounded_research_reconstruction",
+      "source_ref": {
+        "record_id": "GRCV4-ATC-PC-LEDGER-v1",
+        "record_digest": "b6347aa4901b52b4dacd72ba126ed2b280f280e4c43d80a72e1733b3c54e3224",
+        "source_json_pointer": "/claims/2",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-pc-admission/ATCPCClaimDebtLedger.json"
+      },
+      "claim_class": "conditional",
+      "support_disposition": "accepted_bounded_A_PC_research",
+      "profile_scope": [
+        "A_PC"
+      ],
+      "edge_ref_count": 15,
+      "edge_refs_digest": "6977c2f6b1a462ac751ebf57346578675d438258ab81cac8846fe742d062e891"
+    },
+    {
+      "query": {
+        "claim_id": "ATC-PC-DOMAIN-04"
+      },
+      "graph_digest": "8a72fed0586996146ef31b86affcaf5b2d34f08ba12ca28adc4338e13b35c1ed",
+      "source_bundle_digest": "ec28195fb639a9c927834a366baa994fae5a9a46af6f9dc85913edb791558a56",
+      "trace_digest": "b10c8b631ed2f188f0a3f25004369ea4df82979249a09f28b5ed0ed769c91d93",
+      "classification": "accepted_bounded_research_reconstruction",
+      "source_ref": {
+        "record_id": "GRCV4-ATC-PC-LEDGER-v1",
+        "record_digest": "b6347aa4901b52b4dacd72ba126ed2b280f280e4c43d80a72e1733b3c54e3224",
+        "source_json_pointer": "/claims/4",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-pc-admission/ATCPCClaimDebtLedger.json"
+      },
+      "claim_class": "conditional",
+      "support_disposition": "accepted_bounded_A_PC_research",
+      "profile_scope": [
+        "A_PC"
+      ],
+      "edge_ref_count": 45,
+      "edge_refs_digest": "99ff3af3a471276629b5c7f804d91d93becffffa76ccc90a7521a0ce56e8f7bf"
+    }
+  ],
+  "proof": {
+    "parameters": {
+      "alpha": [
+        "1/4096",
+        "1/2048"
+      ],
+      "beta": [
+        "1/4096",
+        "1/2048"
+      ],
+      "gamma": [
+        "1/2048",
+        "1/1024"
+      ],
+      "chi": [
+        "1/32",
+        "1/16"
+      ],
+      "kh": [
+        "1/2",
+        "3/5"
+      ],
+      "kah": [
+        "1/2",
+        "1"
+      ],
+      "a": [
+        "19455/4096",
+        "19457/4096"
+      ],
+      "nu": [
+        "1/131072",
+        "1/65536"
+      ]
+    },
+    "geometry_radius": "1/4096",
+    "carrier_radius": "1/5000",
+    "requests": [
+      "3/25",
+      "1/8"
+    ],
+    "rho_inst": 1,
+    "zeta_A": 1,
+    "tau_A": "1/(8 log 2)",
+    "tau_PC": "1/(8 log 2)",
+    "source": {
+      "kind": "source",
+      "fixed_H_lemma": {
+        "kind": "source",
+        "radius": "1/4096",
+        "H_min": "4095/4096",
+        "b0_bound": "11/2",
+        "b_bound": "11309/2048",
+        "baseline_geometry_lipschitz": "90",
+        "component_to_vector": "2",
+        "read_writer_exponent_budget": "9722188814113/514296329011200",
+        "current_margin": "783/784",
+        "readback_relative_bound": "1/783",
+        "flat_bound": "45236/3206385",
+        "flat_lipschitz": "5316938266083889/24954421292236800",
+        "displacement_bound": "2046295696/10280904768225",
+        "contraction_bound": "60129254851142700701/10001685264388586496000",
+        "current_block_inverse_bound": "784/783",
+        "reduced_block_inverse_bound": "10001685264388586496000/9941556009537443795299",
+        "reference_connected_unique_branch": true,
+        "other_roots_outside_ball_claimed": false
+      },
+      "carrier_radius": "1/5000",
+      "kh_max": "3/5",
+      "instantaneous_source_bound": "2046295696/10280904768225",
+      "total_displacement_bound": "820495329929/3426968256075000",
+      "geometry_slack": "8277423085727/1754607747110400000",
+      "carrier_slack": "1977051529/2056180953645000",
+      "contraction_bound": "60129254851142700701/16669475440647644160000",
+      "reduced_inverse_bound": "16669475440647644160000/16609346185796501459299",
+      "carrier_to_root_lipschitz": "10001685264388586496000/16609346185796501459299",
+      "current_block_inverse_bound": "784/783",
+      "uniform_in_fixed_Z": true,
+      "other_roots_outside_ball_claimed": false
+    },
+    "target": {
+      "kind": "target",
+      "fixed_H_lemma": {
+        "kind": "target",
+        "radius": "1/4096",
+        "H_min": "4095/4096",
+        "b0_bound": "49167/8192",
+        "b_bound": "393711/65536",
+        "baseline_geometry_lipschitz": "375/16",
+        "component_to_vector": "1",
+        "read_writer_exponent_budget": "49924389039289/2340619737366528",
+        "current_margin": "783/784",
+        "readback_relative_bound": "1/783",
+        "flat_bound": "131237/17100720",
+        "flat_lipschitz": "17308900962656129849/272568825634671820800",
+        "displacement_bound": "17223150169/292434624518400",
+        "contraction_bound": "2271568235636102512993213/2330561583953672549695488000",
+        "current_block_inverse_bound": "784/783",
+        "reduced_block_inverse_bound": "2330561583953672549695488000/2328290015718036447182494787",
+        "reference_connected_unique_branch": true,
+        "other_roots_outside_ball_claimed": false
+      },
+      "carrier_radius": "1/5000",
+      "kh_max": "3/5",
+      "instantaneous_source_bound": "17223150169/292434624518400",
+      "total_displacement_bound": "1892751876817/12184776021600000",
+      "geometry_slack": "17312751305303/194956416345600000",
+      "carrier_slack": "1031594368367/7310865612960000",
+      "contraction_bound": "2271568235636102512993213/3884269306589454249492480000",
+      "reduced_inverse_bound": "3884269306589454249492480000/3881997738353818146979486787",
+      "carrier_to_root_lipschitz": "2330561583953672549695488000/3881997738353818146979486787",
+      "current_block_inverse_bound": "784/783",
+      "uniform_in_fixed_Z": true,
+      "other_roots_outside_ball_claimed": false
+    },
+    "negative_budget_controls": [
+      {
+        "case": "standalone_PC_radius_at_half_gain",
+        "reason": "combined geometry budget"
+      },
+      {
+        "case": "standalone_CI_gain_upper",
+        "reason": "combined geometry budget"
+      },
+      {
+        "case": "carrier_smaller_than_source_bound",
+        "reason": "held-source carrier-ball invariant"
+      }
+    ],
+    "Z_domain": "exact decorated signed symmetric star-supported Frobenius ball",
+    "writer": "convex old-Z / same-selected-root-S update; fixed positive tau_PC",
+    "regularity": "invertible current block and reduced H Schur complement",
+    "acceptance": false,
+    "complete_causal_chain": false,
+    "native_authority": false
+  },
+  "native_staging": {
+    "before": {
+      "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+      "reference": {
+        "descriptor_version": "grcv4-reference-geometry-v1",
+        "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+        "graph": {
+          "schema_version": "grcv4-serialized-graph-v1",
+          "live_node_ids": [
+            "p",
+            "u0",
+            "u1",
+            "v0",
+            "v1"
+          ],
+          "oriented_edges": [
+            {
+              "edge_id": "e0",
+              "tail_node_id": "p",
+              "head_node_id": "u0"
+            },
+            {
+              "edge_id": "e1",
+              "tail_node_id": "p",
+              "head_node_id": "u1"
+            },
+            {
+              "edge_id": "e2",
+              "tail_node_id": "p",
+              "head_node_id": "v0"
+            },
+            {
+              "edge_id": "e3",
+              "tail_node_id": "p",
+              "head_node_id": "v1"
+            }
+          ]
+        },
+        "profile": {
+          "identity_payload": {
+            "schema_version": "grcv4-profile-identity-v1",
+            "profile_family_id": "A_CI_PC",
+            "candidate": "A",
+            "realization": "CI+PC",
+            "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+            "charge_profile_id": "unit_vertex_measure_v1",
+            "geometry_profile_id": "affine_reference_relative_v1",
+            "context_contract_id": "constant_zero_context_v1",
+            "units_id": "grcv4_nondimensional_reference_v1",
+            "gauge_id": "component_zero_mean_potential_v1",
+            "normalization_id": "unnormalized_vertex_stiffness_v1",
+            "domain_id": "fixed_graph_strict_gap_spd_v1",
+            "solver_id": "ci_reduced_fixed_point_v1",
+            "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+            "candidate_c_transport_id": null,
+            "composition_gain": 2,
+            "params_hash": "grcv4-params-sha256:a62e1544b506d18ca818c6678e5ef3966cb5e9fe611c321b422c450be1039dbd"
+          },
+          "params_resolved": {
+            "schema_version": "grcv4-resolved-params-v1",
+            "common": {
+              "schema_version": "grcv4-common-params-v1",
+              "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+              "boundary_policy_id": "closed_no_flux_v1",
+              "measure_profile_id": "unit_vertex_measure_v1",
+              "context_contract_id": "constant_zero_context_v1",
+              "units_id": "grcv4_nondimensional_reference_v1",
+              "gauge_id": "component_zero_mean_potential_v1",
+              "normalization_id": "unnormalized_vertex_stiffness_v1",
+              "domain_id": "fixed_graph_strict_gap_spd_v1",
+              "default_step_request": null
+            },
+            "candidate": {
+              "schema_version": "grcv4-candidate-a-params-v1",
+              "eta": 0.25,
+              "kappa_c": 0.5,
+              "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+              "W_floor": 1e-12,
+              "alpha": 0.0,
+              "beta": 0.0,
+              "gamma": 0.1,
+              "kappa_Ah": 0.25,
+              "chi_A": 0.5,
+              "zeta_A": 0.75,
+              "tau_A": 1,
+              "descriptor_backend_id": "grcv4-a-descriptor-sha256:6f640defe9342bb7fa3ee3881692dae57cac54968cbf9101e98419d07910eee3",
+              "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+            },
+            "realization": {
+              "schema_version": "grcv4-cipc-params-v1",
+              "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-3",
+              "root_selector_id": "unique_admitted_root_v1",
+              "iteration_limit": 60,
+              "residual_norm_id": "joint_current_geometry_l2_v1",
+              "tolerance": 1e-11,
+              "tau_PC": 0.5,
+              "radius": 64.0,
+              "carrier_norm_id": "symmetric_star_frobenius_v1",
+              "source_envelope_id": "pc_compact_base_chart_v1:0x1.0000000000000p+2:0x1.0000000000000p-1:0x1.0000000000000p+0",
+              "writer_id": "zero_order_hold_exponential_v1",
+              "rho_inst": 1
+            },
+            "geometry": {
+              "schema_version": "grcv4-geometry-profile-params-v1",
+              "K4_base_digest": "grcv4-k4-sha256:db8acbea35a6ab16f76aa77efd20f6b4171c1c2c3999a830773ccb26059005c5",
+              "reference_hodge_digest": "grcv4-hodge-sha256:dbca65b42753b0ed6e4d3d4c876399ebbed5287bfaac7dc179dbdb8e46087c4e",
+              "star_cover_id": "vertex_star_exact_overlap_v1",
+              "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+              "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+              "flat_sharp_solver_id": "spd_direct_v1",
+              "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+              "kappa_H": 1e-05
+            },
+            "solver": {
+              "schema_version": "grcv4-solver-policy-v1",
+              "solver_kind": "fixed_point",
+              "root_selector_id": "unique_admitted_root_v1",
+              "iteration_limit": 60,
+              "conditioning_limit": 100000000.0,
+              "residual_norm_id": "edge_l2_v1",
+              "absolute_tolerance": 1e-11,
+              "relative_tolerance": 1e-11,
+              "failure_policy_id": "fail_closed_no_fallback_v1"
+            },
+            "charge": {
+              "schema_version": "grcv4-charge-policy-v1",
+              "policy_id": "stable_pairwise_binary64_charge_v1",
+              "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+              "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+              "absolute_tolerance": 1e-11,
+              "relative_tolerance": 0,
+              "repair_policy": "never_mutate_resource",
+              "remainder_policy": "compatibility_projection_is_none"
+            },
+            "lifecycle": {
+              "schema_version": "grcv4-lifecycle-policy-v1",
+              "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+              "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+              "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+              "rebase_policy_id": "replace_baseline_append_receipt_v1",
+              "history_policy_id": "candidate_a_explicit_reference_initialization_log_history_v1",
+              "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+              "target_readmission_policy_id": "full_target_fail_closed_v1"
+            }
+          },
+          "complete_profile_id": "grcv4-profile-sha256:68308326bf267cbf6da10387bb058ec6d9cc218268cedfc8ef3c6ab0bfdf0c8d"
+        },
+        "context": {
+          "contract_id": "constant_zero_context_v1",
+          "value": {}
+        },
+        "K4_base": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_hodge": {
+          "schema_version": "grcv4-reference-hodge-identity-v1",
+          "edge_weights": {
+            "e0": 1.0,
+            "e1": 1.0,
+            "e2": 1.0,
+            "e3": 1.0
+          }
+        }
+      },
+      "H1_form": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "context": {
+        "contract_id": "constant_zero_context_v1",
+        "value": {}
+      },
+      "current": {
+        "C": [
+          1.5,
+          1.0,
+          1.0,
+          2.0,
+          2.0
+        ],
+        "W_A": [
+          0.75,
+          0.75,
+          0.625,
+          0.625
+        ],
+        "Z_4": [
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.25
+        ]
+      },
+      "reset": {
+        "C": [
+          1.25,
+          1.125,
+          1.125,
+          2.0,
+          2.0
+        ],
+        "W_A": [
+          0.7,
+          0.7,
+          0.6,
+          0.6
+        ],
+        "Z_4": [
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5
+        ]
+      },
+      "operation_id": "operation:p952",
+      "Q_target": 7.5,
+      "receipt_ids": [],
+      "source_lifecycle_id": "grcv4-lifecycle-sha256:e1f6ac33a1e4f82982739466195ab7df33ea8f59819aa4bdd49a62cb2c88055d",
+      "scientific_state_id": "grcv4-state-sha256:114350060dce891e28d885b8fc6ed43adf1ce6862ec049604bd3ffc57007943c",
+      "reset_id": "grcv4-reset-sha256:9e017d67887ef3c6bd2a6c45ed09750779552aa0d798baf915f118f513f9d7c7",
+      "step_index": 0,
+      "time": 0.0,
+      "dt": 6.103515625e-05,
+      "stage": "pre_read",
+      "evaluation_index": 0,
+      "trial_current": null
+    },
+    "after": {
+      "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+      "reference": {
+        "descriptor_version": "grcv4-reference-geometry-v1",
+        "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+        "graph": {
+          "schema_version": "grcv4-serialized-graph-v1",
+          "live_node_ids": [
+            "p",
+            "u0",
+            "u1",
+            "v0",
+            "v1"
+          ],
+          "oriented_edges": [
+            {
+              "edge_id": "e0",
+              "tail_node_id": "p",
+              "head_node_id": "u0"
+            },
+            {
+              "edge_id": "e1",
+              "tail_node_id": "p",
+              "head_node_id": "u1"
+            },
+            {
+              "edge_id": "e2",
+              "tail_node_id": "p",
+              "head_node_id": "v0"
+            },
+            {
+              "edge_id": "e3",
+              "tail_node_id": "p",
+              "head_node_id": "v1"
+            }
+          ]
+        },
+        "profile": {
+          "identity_payload": {
+            "schema_version": "grcv4-profile-identity-v1",
+            "profile_family_id": "A_CI_PC",
+            "candidate": "A",
+            "realization": "CI+PC",
+            "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+            "charge_profile_id": "unit_vertex_measure_v1",
+            "geometry_profile_id": "affine_reference_relative_v1",
+            "context_contract_id": "constant_zero_context_v1",
+            "units_id": "grcv4_nondimensional_reference_v1",
+            "gauge_id": "component_zero_mean_potential_v1",
+            "normalization_id": "unnormalized_vertex_stiffness_v1",
+            "domain_id": "fixed_graph_strict_gap_spd_v1",
+            "solver_id": "ci_reduced_fixed_point_v1",
+            "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+            "candidate_c_transport_id": null,
+            "composition_gain": 2,
+            "params_hash": "grcv4-params-sha256:a62e1544b506d18ca818c6678e5ef3966cb5e9fe611c321b422c450be1039dbd"
+          },
+          "params_resolved": {
+            "schema_version": "grcv4-resolved-params-v1",
+            "common": {
+              "schema_version": "grcv4-common-params-v1",
+              "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+              "boundary_policy_id": "closed_no_flux_v1",
+              "measure_profile_id": "unit_vertex_measure_v1",
+              "context_contract_id": "constant_zero_context_v1",
+              "units_id": "grcv4_nondimensional_reference_v1",
+              "gauge_id": "component_zero_mean_potential_v1",
+              "normalization_id": "unnormalized_vertex_stiffness_v1",
+              "domain_id": "fixed_graph_strict_gap_spd_v1",
+              "default_step_request": null
+            },
+            "candidate": {
+              "schema_version": "grcv4-candidate-a-params-v1",
+              "eta": 0.25,
+              "kappa_c": 0.5,
+              "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+              "W_floor": 1e-12,
+              "alpha": 0.0,
+              "beta": 0.0,
+              "gamma": 0.1,
+              "kappa_Ah": 0.25,
+              "chi_A": 0.5,
+              "zeta_A": 0.75,
+              "tau_A": 1,
+              "descriptor_backend_id": "grcv4-a-descriptor-sha256:6f640defe9342bb7fa3ee3881692dae57cac54968cbf9101e98419d07910eee3",
+              "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+            },
+            "realization": {
+              "schema_version": "grcv4-cipc-params-v1",
+              "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-3",
+              "root_selector_id": "unique_admitted_root_v1",
+              "iteration_limit": 60,
+              "residual_norm_id": "joint_current_geometry_l2_v1",
+              "tolerance": 1e-11,
+              "tau_PC": 0.5,
+              "radius": 64.0,
+              "carrier_norm_id": "symmetric_star_frobenius_v1",
+              "source_envelope_id": "pc_compact_base_chart_v1:0x1.0000000000000p+2:0x1.0000000000000p-1:0x1.0000000000000p+0",
+              "writer_id": "zero_order_hold_exponential_v1",
+              "rho_inst": 1
+            },
+            "geometry": {
+              "schema_version": "grcv4-geometry-profile-params-v1",
+              "K4_base_digest": "grcv4-k4-sha256:db8acbea35a6ab16f76aa77efd20f6b4171c1c2c3999a830773ccb26059005c5",
+              "reference_hodge_digest": "grcv4-hodge-sha256:dbca65b42753b0ed6e4d3d4c876399ebbed5287bfaac7dc179dbdb8e46087c4e",
+              "star_cover_id": "vertex_star_exact_overlap_v1",
+              "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+              "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+              "flat_sharp_solver_id": "spd_direct_v1",
+              "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+              "kappa_H": 1e-05
+            },
+            "solver": {
+              "schema_version": "grcv4-solver-policy-v1",
+              "solver_kind": "fixed_point",
+              "root_selector_id": "unique_admitted_root_v1",
+              "iteration_limit": 60,
+              "conditioning_limit": 100000000.0,
+              "residual_norm_id": "edge_l2_v1",
+              "absolute_tolerance": 1e-11,
+              "relative_tolerance": 1e-11,
+              "failure_policy_id": "fail_closed_no_fallback_v1"
+            },
+            "charge": {
+              "schema_version": "grcv4-charge-policy-v1",
+              "policy_id": "stable_pairwise_binary64_charge_v1",
+              "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+              "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+              "absolute_tolerance": 1e-11,
+              "relative_tolerance": 0,
+              "repair_policy": "never_mutate_resource",
+              "remainder_policy": "compatibility_projection_is_none"
+            },
+            "lifecycle": {
+              "schema_version": "grcv4-lifecycle-policy-v1",
+              "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+              "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+              "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+              "rebase_policy_id": "replace_baseline_append_receipt_v1",
+              "history_policy_id": "candidate_a_explicit_reference_initialization_log_history_v1",
+              "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+              "target_readmission_policy_id": "full_target_fail_closed_v1"
+            }
+          },
+          "complete_profile_id": "grcv4-profile-sha256:68308326bf267cbf6da10387bb058ec6d9cc218268cedfc8ef3c6ab0bfdf0c8d"
+        },
+        "context": {
+          "contract_id": "constant_zero_context_v1",
+          "value": {}
+        },
+        "K4_base": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_hodge": {
+          "schema_version": "grcv4-reference-hodge-identity-v1",
+          "edge_weights": {
+            "e0": 1.0,
+            "e1": 1.0,
+            "e2": 1.0,
+            "e3": 1.0
+          }
+        }
+      },
+      "H1_form": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "context": {
+        "contract_id": "constant_zero_context_v1",
+        "value": {}
+      },
+      "current": {
+        "C": [
+          1.5000037854756907,
+          0.9999972843973868,
+          0.9999972843973868,
+          2.000000822864768,
+          2.000000822864768
+        ],
+        "W_A": [
+          0.7500131642230796,
+          0.7500131642230796,
+          0.6250179285789224,
+          0.6250179285789224
+        ],
+        "Z_4": [
+          0.24996948520835857,
+          4.6195710242903875e-10,
+          -2.2620067827151146e-10,
+          -2.2620067827151146e-10,
+          4.6195710242903875e-10,
+          0.24996948520835857,
+          -2.2620067827151146e-10,
+          -2.2620067827151146e-10,
+          -2.2620067827151146e-10,
+          -2.2620067827151146e-10,
+          0.249969484505966,
+          1.107608186592424e-10,
+          -2.2620067827151146e-10,
+          -2.2620067827151146e-10,
+          1.107608186592424e-10,
+          0.249969484505966
+        ]
+      },
+      "reset": {
+        "C": [
+          1.25,
+          1.125,
+          1.125,
+          2.0,
+          2.0
+        ],
+        "W_A": [
+          0.7,
+          0.7,
+          0.6,
+          0.6
+        ],
+        "Z_4": [
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5
+        ]
+      },
+      "operation_id": "operation:p952",
+      "Q_target": 7.5,
+      "receipt_ids": [],
+      "source_lifecycle_id": "grcv4-lifecycle-sha256:5ca95cd3b0fcafee4a9741e02092e0390e9586ba172de7dbd75c212990ebdb4a",
+      "scientific_state_id": "grcv4-state-sha256:aeb62bfddc65ebf964c10151fecbaf7cbcca24a8d8bef0a36996ce403c37022e",
+      "reset_id": "grcv4-reset-sha256:9e017d67887ef3c6bd2a6c45ed09750779552aa0d798baf915f118f513f9d7c7",
+      "step_index": 1,
+      "time": 6.103515625e-05,
+      "dt": 6.103515625e-05,
+      "stage": "pre_read",
+      "evaluation_index": 0,
+      "trial_current": null
+    },
+    "joint_root": {
+      "selected_root_digest": "a87b167bd1d19c5327d70054b7ea62f7cc7a616825d9e12bd5ffcac48d6b10a4",
+      "recipe_identity": "grcv4-ci-root-sha256:1d6d199d0c5f4879aaca6def34e99c7c5dea11a5104109128f5a655c257832a3",
+      "domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-3",
+      "certificate_digest": "0ada8d0cc6902a25a1f7e9446d813ec14cedc51569912535c835c3b07638621d",
+      "selected_hodge": [
+        [
+          1.0000024997705441,
+          3.7850600123082357e-11,
+          -1.853314459185489e-11,
+          -1.853314459185489e-11
+        ],
+        [
+          3.7850600123082357e-11,
+          1.0000024997705441,
+          -1.853314459185489e-11,
+          -1.853314459185489e-11
+        ],
+        [
+          -1.853314459185489e-11,
+          -1.853314459185489e-11,
+          1.000002499712992,
+          9.074557532661003e-12
+        ],
+        [
+          -1.853314459185489e-11,
+          -1.853314459185489e-11,
+          9.074557532661003e-12,
+          1.000002499712992
+        ]
+      ]
+    },
+    "source": [
+      [
+        7.5691671326983415e-06,
+        3.7845835663491707e-06,
+        -1.85314905904039e-06,
+        -1.85314905904039e-06
+      ],
+      [
+        3.7845835663491707e-06,
+        7.5691671326983415e-06,
+        -1.85314905904039e-06,
+        -1.85314905904039e-06
+      ],
+      [
+        -1.85314905904039e-06,
+        -1.85314905904039e-06,
+        1.8148160159851215e-06,
+        9.074080079925607e-07
+      ],
+      [
+        -1.85314905904039e-06,
+        -1.85314905904039e-06,
+        9.074080079925607e-07,
+        1.8148160159851215e-06
+      ]
+    ],
+    "consumed_current": [
+      -0.044492433214188463,
+      -0.044492433214188463,
+      0.013481816356464107,
+      0.013481816356464107
+    ],
+    "poststate_current": [
+      -0.044495143378809235,
+      -0.044495143378809235,
+      0.01348215279022238,
+      0.01348215279022238
+    ],
+    "same_source_writer": true,
+    "independent_fixed_point_oracle": true,
+    "full_joint_restart_equality": true,
+    "zero_duration_identity": true,
+    "final_rejection_preserves_captured_state": true,
+    "scope": "shipped zero-site-derivative fixture; not nonlinear research witness or live ATC owner"
+  },
+  "pending_debt_routes": [
+    {
+      "debt_id": "ATC7-DB-03",
+      "title": "Temporal stage and historical operand",
+      "predecessor_scope": "A_CI",
+      "predecessor_disposition": "scoped_closed",
+      "predecessor_trace_digest": "acd442702ab2e60b219de4e2f52cd806c7c2564590257c61c57398139b6c5f41",
+      "predecessor_source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/debts/2",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "edge_ref_count": 5,
+      "edge_refs_digest": "2769ba2c2a4f289d13faa748c90e689892326ed861adfc73f2d619f9b232992f",
+      "CIP_status": "pending_not_discharged",
+      "successor_stage": "CIP-0/CIP-2",
+      "global_discharged": false
+    },
+    {
+      "debt_id": "ATC7-DB-05",
+      "title": "Branch and regularity applicability",
+      "predecessor_scope": "A_CI",
+      "predecessor_disposition": "scoped_closed",
+      "predecessor_trace_digest": "787d7385f91549bcb33df755fa041ce5bfc0d851f4060c8cd543e2de6159c7da",
+      "predecessor_source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/debts/4",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "edge_ref_count": 5,
+      "edge_refs_digest": "cb70923c2d3e467ead5299c71e213d920937ed0486bc4aa2dded3021df1332a6",
+      "CIP_status": "pending_not_discharged",
+      "successor_stage": "CIP-0/CIP-2",
+      "global_discharged": false
+    },
+    {
+      "debt_id": "ATC7-DB-06",
+      "title": "Functional, tangent, metric and normalization",
+      "predecessor_scope": "A_CI",
+      "predecessor_disposition": "scoped_closed",
+      "predecessor_trace_digest": "ab6df6d45788187c95c9ab79e9e779c7bcc221c6a5cefa9ab652abb0fae59e92",
+      "predecessor_source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/debts/5",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "edge_ref_count": 4,
+      "edge_refs_digest": "1d819b2fd1fd980eccb78183335754498e5e619c13fe1a0627643fb579720b6f",
+      "CIP_status": "pending_not_discharged",
+      "successor_stage": "CIP-0/CIP-2",
+      "global_discharged": false
+    },
+    {
+      "debt_id": "ATC7-DB-07",
+      "title": "Physical discrimination of a trigger",
+      "predecessor_scope": "A_CI",
+      "predecessor_disposition": "scoped_closed",
+      "predecessor_trace_digest": "4b54df0b86b68fa4eecd7c62cf6d7b3aaad59575dc908b8be5df3a2e47bc55be",
+      "predecessor_source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/debts/6",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "edge_ref_count": 4,
+      "edge_refs_digest": "09a71c066ae06b2f56230a2e42ae31abc6454c2fef68a92a7b4a207470b1ba3b",
+      "CIP_status": "pending_not_discharged",
+      "successor_stage": "CIP-1",
+      "global_discharged": false
+    },
+    {
+      "debt_id": "ATC7-DB-15",
+      "title": "History transport or explicitly declared loss",
+      "predecessor_scope": "A_CI",
+      "predecessor_disposition": "scoped_closed",
+      "predecessor_trace_digest": "4dc7327c1f6fc7f1be74f204f58c1bd4fef8ab9bed78508913eddb1facfe6a60",
+      "predecessor_source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/debts/14",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "edge_ref_count": 5,
+      "edge_refs_digest": "7db859916934fa8de1d712b79d451fb034c3dfebe47cdc71b9ea79d6755203b7",
+      "CIP_status": "pending_not_discharged",
+      "successor_stage": "CIP-1/CIP-2",
+      "global_discharged": false
+    },
+    {
+      "debt_id": "ATC7-DB-16",
+      "title": "Initializer and whole-role target integration",
+      "predecessor_scope": "A_CI",
+      "predecessor_disposition": "scoped_closed",
+      "predecessor_trace_digest": "db29b231001fc9923a033709963221aab8c84e5e86b2ed3ed26b5ab1e9c53e12",
+      "predecessor_source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/debts/15",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "edge_ref_count": 6,
+      "edge_refs_digest": "84dc06e30b1390153de732e2795239fffbdc5dee6b6f880d57a9d6326af1780c",
+      "CIP_status": "pending_not_discharged",
+      "successor_stage": "CIP-1/CIP-2",
+      "global_discharged": false
+    },
+    {
+      "debt_id": "ATC7-DB-24",
+      "title": "Investigation and side-tool source admission",
+      "predecessor_scope": "A_CI",
+      "predecessor_disposition": "scoped_closed",
+      "predecessor_trace_digest": "da9e40361252077c6045d5af6e40a053cf0abd52eb5e89be8f3ab1d22f8965d4",
+      "predecessor_source_ref": {
+        "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+        "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+        "source_json_pointer": "/debts/23",
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+      },
+      "edge_ref_count": 3,
+      "edge_refs_digest": "8af4ed0e9dbbcede4708fc91d085947b3882009a828fbe876ee3230b5e9cfee0",
+      "CIP_status": "pending_not_discharged",
+      "successor_stage": "adjudication",
+      "global_discharged": false
+    }
+  ],
+  "proposed_claims": [
+    {
+      "claim_id": "ATC-CIP-ROOT-00",
+      "claim_class": "proposed_conditional",
+      "profile_scope": [
+        "A_CI_PC"
+      ],
+      "debt_refs": [
+        "ATC7-DB-03",
+        "ATC7-DB-05",
+        "ATC7-DB-06",
+        "ATC7-DB-07",
+        "ATC7-DB-15",
+        "ATC7-DB-16",
+        "ATC7-DB-24"
+      ],
+      "local_debt_discharge": false,
+      "graph_admitted": false
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIDomainsAndReference.md",
+      "sha256": "2bb3a0408611e19bc40c33f90a771e822ccafd2efe30fd41f534f2ae97fa6ebf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIPCoupledProgram.md",
+      "sha256": "2bb8544637fb8ce392be837af4690f111132de11ff07e180f3d6eb615d4771d0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/CIP-CompositeDomain-Direction.md",
+      "sha256": "8729c7a6ec187d89e9901a470f578615c35af041cc14054935ac10cc16b74afb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/CIP-CoupledProgram-Direction.md",
+      "sha256": "14b4c7bed66f534aa3509ac12c64c13631320bf5d5852ff73ef1a32b8d1782a0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_domains.py",
+      "sha256": "f80f140f53f7486a790ec3b24b3f7c27e07f954a184b72612cc21c14c0443024"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_pc_anchor.py",
+      "sha256": "d92d862d1d2c2472673462b5f095527ba74c13a10fd2f6f52e4095ab51afeff1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_cip_domains.py",
+      "sha256": "f8e6c3efc6cd42e07ba1f58b444c6af1c5bf4e456108f6e4af1814bbe290e13a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_sector_reference.py",
+      "sha256": "202fd964df2ea52415957c5cf1adccfc3c25f034e15b0166088fd47faa4954c5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/audit_atc_ci_pc_boundary.py",
+      "sha256": "7dc7d3f63662f8cdf618ab95765d0d947d2bfcfffc682d3750a7846d4a5107ee"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_channels.py",
+      "sha256": "8d0aa7016710d5e64935a3496fb9160689eda87e6c999b3336924b4f99c0828f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_box.py",
+      "sha256": "8636581d8b0a3a5db1bbf81b8f4d5c414a3729d8f7b77950af52b8378bcf4a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_state_domain.py",
+      "sha256": "19b88f776b0084c9dd9f5220304080f685d25c98aeca0a30d7b572ae42f5ee2d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_cip_opening.py",
+      "sha256": "b8c59cf21eeaaa7c9042f4cbeb8870e0b2b92a4e92a1e39ee855893e696b868e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/__init__.py",
+      "sha256": "9274b443cd2a0d745ec67d178cd34f8430388ca2ff9c64bc84a9c7c5202f97fa"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/a_initializer.py",
+      "sha256": "6efb1e33baff33e4f5d76de7937a9cb4977c89c28d6bf8999e168bf68e46de3b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/abundance.py",
+      "sha256": "0a2380744e7a91b87f828b5390b51532cc1bf2f27d3aad826b4e112699b875d2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/adapters.py",
+      "sha256": "6ac7e0c32f809e66e9ae23672a7aedb58c4731f5b341ac817663ec736a039d13"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py",
+      "sha256": "299d82c896e7f452d737615d6578fac7cc07e7eea044147277e6ce8f596efd05"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_ci.py",
+      "sha256": "772d98f4301eeb3ffc7cd64d0d61a3cb389eaa553de5ea1701d28c44c4cf7982"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py",
+      "sha256": "33ba82d8aa1fd704efdcb9fbe35e4cc294bb88ddb5986d9746879cfa57cc53a8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/bundle.py",
+      "sha256": "f9b181c4074d8c7d30e607904aaefcc777273310af02df82aa6dba3af68a319e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/canonical.py",
+      "sha256": "34bb5431e35d7ed12c2520009a70b51e15d2ed88ed89f0c492f99deedfbe69aa"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/counterfactual.py",
+      "sha256": "cfc79773f8d42a7fa7bc1808a6d8f11de65e1a212484bb6b3f5df42b63d88ef3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/discovery.py",
+      "sha256": "e499fe49f352f7c3da549454bf1b5d5c4145540d6e1cbd9c900f7ee997d8146d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/errors.py",
+      "sha256": "f3beb34e0a45fcf6f2eae9bab05aafaca17f80ff76a53fa697de67abfdeff4a0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/forensic.py",
+      "sha256": "6d44973aececa003f180082175025e23b9a0db44e5fd9e5d80217b368e552795"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/kernel.py",
+      "sha256": "aa7eb049e8d3a590ce293b95c926dc0acb0ac07229827a2160a8d78d416632f0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/paths.py",
+      "sha256": "8694f04f241340702ab7279ffcc6cd602e7b940aae2ce6c67fd5c790b0deff40"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/receipt_parents.py",
+      "sha256": "4bac3eec6325aeb8eb545aba12f580d60e76fef429dc744040b4939497b86f38"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/ripple.py",
+      "sha256": "959b278e3b8f705b5da507f9063401697c12fe91db24835fa38409e5d478434f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/source_contract.py",
+      "sha256": "66d1e659cc8c7c8f527b8c4bc82a034e2090788c75c72ee5ad5b73f1fdbdcbd3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/successor.py",
+      "sha256": "7657008a745230048a6fa008ffee1990582c5cce2ccb951475aeef2588f775bf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/successor_ux.py",
+      "sha256": "f61d219a6d592325c595e2afe0c6bf4584995b646fecbf0122820c742279e255"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/validation.py",
+      "sha256": "0a8e6b0c82ef0505d7c68e1d26ef85b1a2088a1af5991a0e56db40b1b5ce9ee1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/web.py",
+      "sha256": "593499e2f0d8d6c676e050e1e385a2c5cfb453c58f87fc64bf443e9cca2dcacd"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/__init__.py",
+      "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/__init__.py",
+      "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/artifacts.py",
+      "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/authority.py",
+      "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/candidates.py",
+      "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/effects.py",
+      "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/identity.py",
+      "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/scopes.py",
+      "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/session.py",
+      "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972"
+    },
+    {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae"
+    },
+    {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07"
+    },
+    {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b"
+    },
+    {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07"
+    },
+    {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31"
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2"
+    },
+    {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6"
+    },
+    {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428"
+    },
+    {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f"
+    },
+    {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207"
+    },
+    {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e"
+    },
+    {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4"
+    },
+    {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4"
+    },
+    {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397"
+    },
+    {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8"
+    },
+    {
+      "path": "src/pygrc/integrations/__init__.py",
+      "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237"
+    },
+    {
+      "path": "src/pygrc/integrations/graph_adapter_boundary.py",
+      "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d"
+    },
+    {
+      "path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53"
+    },
+    {
+      "path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/__init__.py",
+      "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+      "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+      "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+      "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+      "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+      "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcv3.py",
+      "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b"
+    },
+    {
+      "path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de"
+    },
+    {
+      "path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f"
+    },
+    {
+      "path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2"
+    },
+    {
+      "path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234"
+    },
+    {
+      "path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "eaf8fb26d0f3cb4f9f6ac9c761fb17d90d3d1142f0e145c0bd0ab746a3c477d1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "948027b168191d428423421d19a4c354fb9a1c18df25dd47b93e6275bcfd7b02"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "c7e835d7d371737e4c983573da4c2139d21c2dd52f02cd9539f1f1029c2063cf"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "327a2fb22bd38cbbcac5470a45c6bb61f5cc8dc1771bcb3aaa74b1d933a05d82"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "185e00a0ad73a79f10e5a66acd24970365976bb54b3cba9397dc2aff71673b1b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4"
+    },
+    {
+      "path": "src/pygrc/telemetry/__init__.py",
+      "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_defaults.py",
+      "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_results.py",
+      "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grc9_extensions.py",
+      "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+      "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_extensions.py",
+      "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+      "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+      "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+      "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+      "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_telemetry_utils.py",
+      "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb"
+    },
+    {
+      "path": "src/pygrc/telemetry/compare.py",
+      "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11"
+    },
+    {
+      "path": "src/pygrc/telemetry/experiments.py",
+      "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9_contract.py",
+      "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9v3_contract.py",
+      "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_contract.py",
+      "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+      "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb"
+    },
+    {
+      "path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929"
+    },
+    {
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+    },
+    {
+      "path": "src/pygrc/telemetry/recorder.py",
+      "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613"
+    },
+    {
+      "path": "src/pygrc/telemetry/reports.py",
+      "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556"
+    },
+    {
+      "path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc"
+    },
+    {
+      "path": "src/pygrc/utils/__init__.py",
+      "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16"
+    },
+    {
+      "path": "src/pygrc/visualization/__init__.py",
+      "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb"
+    },
+    {
+      "path": "src/pygrc/visualization/graph_render.py",
+      "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f"
+    },
+    {
+      "path": "src/pygrc/visualization/layout.py",
+      "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b"
+    },
+    {
+      "path": "src/pygrc/visualization/render.py",
+      "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340"
+    },
+    {
+      "path": "src/pygrc/visualization/representative.py",
+      "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e"
+    },
+    {
+      "path": "src/pygrc/visualization/representative_graphs.py",
+      "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "b8c1c2c06b79a3cda0ddac97e383a7023ef0b2901a0866925d7b96699a562434"
+    },
+    {
+      "path": "tests/models/__init__.py",
+      "sha256": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440"
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_a.py",
+      "sha256": "362df9f71b87d8376ca7712a88b7fade692db42040daf9658d93be86645906d3"
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "d2335fe0944b4c4d3de65508ba02a922e2b9cf51fdd9d61e2c3725b60697b1ae"
+    },
+    {
+      "path": "tests/models/test_grc_v4_ci.py",
+      "sha256": "04c802416bbdb08efde3a42b243d938927155c428f6dca207fb281875a15e83a"
+    },
+    {
+      "path": "tests/models/test_grc_v4_cipc.py",
+      "sha256": "8498fa0cc4aebec8e2f91311e1c452b677ebd1d5039ad9ce6767902fc3a38ab0"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "4167e6839e8a555ba278337d9ccefce543661df020adb5ab915d82266b2a492a"
+    },
+    {
+      "path": "tests/models/test_grc_v4_pc.py",
+      "sha256": "8e781efa64a17035984d0e5f12cdbf0b7d685e6c7196df63da3a0f2021a6154b"
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "4bd35a14caa59fc45c8e3a3b1fa3df33efe58064972c661899575ff42e4bd896"
+    }
+  ],
+  "record_digest": "952a83c506882b97d26b8c146941a977b30ef0e159367d56782b5c032b6ff79e"
+}
