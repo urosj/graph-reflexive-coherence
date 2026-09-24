@@ -2020,3 +2020,42 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       historical pending flags are superseded by the new CI ledger, not rewritten.
 - [x] Ten CI admission/mutation/CLI tests and ten historical PC tests pass;
       no numerical rerun, native/aggregate widening or other-family admission.
+
+### ATC A_CI+PC successor preparation
+
+- [x] Keep CIP-0 evidence separate from the accepted CI/PC inventories and
+      preserve their graphs; trace accepted claims/debts through the typed API.
+- [x] Retain proposed CIP root/staging claim and pending debt routes without
+      copying CI/PC local closure into this realization.
+- [x] Retain the executed CIP-1 causal certificate and proposed CHAIN-01
+      routes separately; preserve CIP-0 and accepted predecessor source bytes.
+      Local execution does not imply independent review or source admission.
+- [x] Retain independent CIP-0/CIP-1 PASS and add the DB-04 ancestry correction
+      without rewriting either reviewed record or discharging the debt.
+- [x] Retain CIP-2 local reference/conformance evidence separately, including
+      exact/signed carrier endpoints and finite represented C/W/Z/J/H errors.
+      Reviewed code and retained certificate identities remain unchanged.
+- [x] Record CIP-2 independent scientific PASS and local retained-identity
+      PASS separately; do not claim the reviewer checked the unavailable
+      certificate or compared their raw rerun record to it.
+- [x] After the scientific reviews, reconcile all 28 CIP-local
+      debts and admit an exact append-only successor inventory/graph.
+      Three conditional claims; 14 closed, six partial, eight not activated.
+- [x] Expose the admitted successor through typed queries and a portable CLI;
+      preserve native, aggregate and other-realization authority boundaries.
+- [x] Pressure reciprocal lineage, additive DB-04 routing, source drift,
+      unprocessed additions, rehashed manifests, review-class widening and
+      unchanged historical graphs without rerunning numerical campaigns.
+- [x] Retain the proposed RGATC packages with portable source correspondences,
+      typed predecessor traces and all 28 pending A_RG2b debt routes.
+      Scientific source/certificate bytes are unchanged; no graph admission.
+- [x] Record user-reported RGATC-T/A and E/R audit PASS separately from
+      unchanged package inputs; no fresh full E/R execution is claimed.
+- [x] Following the passing RGATC review, adjudicate A_RG2b claims/debts and add
+      an exact successor context without widening existing accepted profiles.
+- [x] Expose RGATC discovery/audit/claim/debt and all-five Candidate-A summary
+      through the actual typed API/CLI; preserve historic negative and
+      conditional classes, graph rows, scientific identities and global debts.
+- [x] Pressure changed/missing/new package sources, repinned mutations,
+      reciprocal debt routing, provenance and closure boundaries with the
+      focused admission suite; no scientific campaign reruns.

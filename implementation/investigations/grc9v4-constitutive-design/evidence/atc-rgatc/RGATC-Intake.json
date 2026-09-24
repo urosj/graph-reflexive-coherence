@@ -1,0 +1,1682 @@
+{
+  "schema": "grcv4_rgatc_research_intake_v1",
+  "status": "supplied_research_reused_pending_independent_review",
+  "profile_scope": [
+    "A_RG2b"
+  ],
+  "scientific_acceptance": false,
+  "graph_admitted": false,
+  "native_authority": false,
+  "ATC2_closed": false,
+  "ATC3_closed": false,
+  "local_checks": {
+    "package_manifests": "passed",
+    "embedded_TA_matches_separate_package": true,
+    "TA_pressure": "passed_with_two_exact_regenerations",
+    "ER_identity": "passed",
+    "ER_retained_consistency": "passed",
+    "ER_full_local_rerun": false,
+    "independent_review": false
+  },
+  "retained_certificates": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-TA-Certificate.json",
+      "sha256": "857e15f3e2a25f76f016e336af11fc84ba7c21401bf16e3a9d5b11e3bb14c162",
+      "record_digest": "840dab71fa5c8875657d1cc14e355197bc4ec748e1a179363d2f1f3cf648d7ec"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-ER-Certificate.json",
+      "sha256": "756e135d386a7685eb70332596e48af3d40e51019d6042c9d3f1d6860c69b73c",
+      "record_digest": "0c2b8ae02c89f8718e4b90387cab4af810f2d77a0d1b611c7e03b7d7e5960bf8"
+    }
+  ],
+  "reuse": {
+    "scientific_code_and_proof_bytes_unchanged": true,
+    "scientific_certificate_bytes_unchanged": true,
+    "predecessor_copied_once": true,
+    "changes": [
+      "portable predecessor README command",
+      "repository correspondences replacing upload-only source identities",
+      "reported reproduction clearly distinguished from local execution",
+      "packaging manifests refreshed for metadata only"
+    ]
+  },
+  "proposed_claims": [
+    {
+      "handle": "RGATC-T-SECTION",
+      "kind": "new sufficient theorem extending the retained Lipschitz graph-transform argument",
+      "depends_on": [
+        "RG",
+        "P9-RG"
+      ],
+      "new_content": "explicit global Lipschitz version, boundary coverage, equivariance and conditional cross-topology continuation"
+    },
+    {
+      "handle": "RGATC-A-COMPLETION",
+      "kind": "new proposed research completion and exact sufficient-budget certificate",
+      "depends_on": [
+        "RGATC-T-SECTION"
+      ],
+      "new_content": "floor-preserving auxiliary continuation through resource zero; source and target share one cutoff recipe"
+    },
+    {
+      "handle": "RGATC-A-RATES",
+      "kind": "new duration-dependent theorem from inherited fixed-H inequalities",
+      "depends_on": [
+        "CI",
+        "G5"
+      ],
+      "new_content": "source rate 16152197/120268800; target rate 2662247/3207168; positive target floor 1/8 without large-step entry"
+    },
+    {
+      "handle": "RGATC-A-ANCHOR",
+      "kind": "whole-section-envelope constructive implication, not a numerical section trajectory",
+      "depends_on": [
+        "RGATC-A-COMPLETION",
+        "RGATC-A-RATES",
+        "ARITH"
+      ],
+      "new_content": "inactive-to-active source, unique k=32768, both-role target entry and nonneutral geometry"
+    },
+    {
+      "handle": "RGATC-A-NONCI",
+      "kind": "new consequence of lagged invariance and target convergence",
+      "depends_on": [
+        "RGATC-A-ANCHOR",
+        "RGATC-A-RATES"
+      ],
+      "new_content": "some target state has nonzero same-state CI geometry residual"
+    },
+    {
+      "handle": "RGATC-E-WITNESS",
+      "kind": "proposed executed frozen section-based causal witness",
+      "depends_on": [
+        "RGATC-A-ANCHOR"
+      ]
+    },
+    {
+      "handle": "RGATC-R-REFERENCE",
+      "kind": "proposed finite reference/oracle/lifecycle/representation evidence",
+      "depends_on": [
+        "RGATC-T-SECTION",
+        "RGATC-E-WITNESS"
+      ]
+    }
+  ],
+  "debt_routes": [
+    {
+      "origin_debt_id": "ATC7-DB-01",
+      "title": "Source and execution-subject admission",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/0"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-02",
+      "title": "Endogenous constitutive closure",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/1"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-03",
+      "title": "Temporal stage and historical operand",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/2"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-04",
+      "title": "Analysis-to-constitutive consumption",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/3"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-05",
+      "title": "Branch and regularity applicability",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/4"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-06",
+      "title": "Functional, tangent, metric and normalization",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/5"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-07",
+      "title": "Physical discrimination of a trigger",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/6"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-08",
+      "title": "Mode-to-locus and half-edge lift",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/7"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-09",
+      "title": "Within/across-family resolution order",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/8"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-10",
+      "title": "Finite-precision equivariance and threshold certainty",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/9"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-11",
+      "title": "Batch and sequential critical pairs",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/10"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-12",
+      "title": "Complete finite graph/template mechanics",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/11"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-13",
+      "title": "Represented resource law and actual charge",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/12"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-14",
+      "title": "Target reference, backend and context",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/13"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-15",
+      "title": "History transport or explicitly declared loss",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/14"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-16",
+      "title": "Initializer and whole-role target integration",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/15"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-17",
+      "title": "Core object and topology correspondence",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/16"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-18",
+      "title": "Viability functional and threshold",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/17"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-19",
+      "title": "Restoration and actual dynamics",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/18"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-20",
+      "title": "Finite persistence to identity/formation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/19"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-21",
+      "title": "Atomic composition and publication closure",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/20"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-22",
+      "title": "Causal memory, timing and event rate",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/21"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-23",
+      "title": "Native execution and reproducible evidence",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/22"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-24",
+      "title": "Investigation and side-tool source admission",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/23"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-25",
+      "title": "Complete quotient or behavioral approximation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/24"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-26",
+      "title": "Complete-profile target applicability",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/25"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-27",
+      "title": "Relation/coarsening semantic driver",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/26"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    },
+    {
+      "origin_debt_id": "ATC7-DB-28",
+      "title": "Finite search/work and objective interpretation",
+      "origin_status": "open_proposal",
+      "origin_ref": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+        "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820",
+        "json_pointer": "/debts/27"
+      },
+      "A_RG2b_research_status": "pending_adjudication",
+      "global_discharged": false
+    }
+  ],
+  "authority_traces": [
+    {
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-REAL-RG2B"
+      },
+      "trace_digest": "d1f1928b428cc578e75f2068e60d909500a81e4247fd40303c4f67da32e8f19f",
+      "graph_digest": "541bf8c23afcca2f5f3b3a61e9c986e9720b270610759b2e0f4c8105673cb89c",
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/38",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:00ebdb50bd04bcdf1d5286beefbebb399bf64cb53459fd0a26c353d93c95d65e",
+              "source": "equation_contract:D10.2-EC-PARENT-REAL-RG2B",
+              "target": "normative_object:REAL-RG2B",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/38/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:1afca09df4773d3241e03a989d799ca2f088992e18ce83b477f293ac16325f29",
+              "source": "equation_contract:D10.2-EC-PARENT-REAL-RG2B",
+              "target": "current_claim:D10-CL-O-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/38/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:89903539b642ad4bc9f007ffbb81021e331ec8dab59db6e8c94c1e3d43596b4a",
+              "source": "equation_contract:D10.2-EC-PARENT-REAL-RG2B",
+              "target": "current_claim:D10-CL-C-009",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/38/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:9296de3e9fda3f2a343971c29de1f389708bb811571da025930cd239ffbf8e3f",
+              "source": "equation_contract:D10.2-EC-PARENT-REAL-RG2B",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/38/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:a665903c611e9f70bcb112ecefcc7648f79d4a3053a549fff1af231548d87800",
+              "source": "equation_contract:D10.2-EC-PARENT-REAL-RG2B",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/38"
+            },
+            {
+              "edge_id": "propagation:f1f69a0120915ede6382442590056cdf911e0e4c71d34d4fbbf64d8b8a2d9418",
+              "source": "equation_contract:D10.2-EC-PARENT-REAL-RG2B",
+              "target": "source_record:f282b9d5c8f41aa06a2d59e3b9ad2528def373434484810fab5b32508c5004db",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/38/source_lineage/0"
+            }
+          ],
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-009",
+                  "D10-CL-C-011",
+                  "D10-CL-O-005"
+                ],
+                "blocked_overread": "uniqueness_is_relative_to_the_frozen_completion",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-REAL-RG2B",
+                "independent_derivation_ids": [
+                  "D10.2-DER-REALIZATION"
+                ],
+                "normative_equation_or_contract": "bounded_reconstructed_geometry_invariant_section",
+                "parent_object_ids": [
+                  "REAL-RG2B"
+                ],
+                "premises_used": [
+                  "bounded_domain",
+                  "frozen_family_local_completion",
+                  "Lipschitz_contraction"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-GTRS-RG-v1"
+                ],
+                "specification_destination": "GRCV4_optional_realization",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-REAL-RG2B",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-REAL-RG2B",
+              "source_json_pointer": "/normative_equation_contract_registry/38",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          }
+        }
+      ]
+    },
+    {
+      "query": {
+        "claim_id": "ATC-CI-DOMAIN-02"
+      },
+      "trace_digest": "971d5bff8949be26b6fc65639a0457627138f81052698fbacd21906b799e7a40",
+      "graph_digest": "541bf8c23afcca2f5f3b3a61e9c986e9720b270610759b2e0f4c8105673cb89c",
+      "rows": [
+        {
+          "classification": "accepted_bounded_research_reconstruction",
+          "source_ref": {
+            "record_id": "GRCV4-ATC-CI-LEDGER-v1",
+            "record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+            "source_json_pointer": "/claims/2",
+            "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:016e444bbbaa34863bd3f97dc13509c2f6ba38e481d4eb33b21c08de20ce9222",
+              "source": "proposal_claim:ATC7-CL-27",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/11"
+            },
+            {
+              "edge_id": "propagation:0370e62e57d636a681a80f0486e38934b430fa3c2975541e5661842419b3ecdb",
+              "source": "proposal_claim:ATC7-CL-04",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:198b0d4cb5a96528b4ed1de1f20bfc9019cd43e8a7789d540a5fa3c2dff7775b",
+              "source": "proposal_claim:ATC7-CL-18",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/7"
+            },
+            {
+              "edge_id": "propagation:250fd4bfa954c8a28cd3b132a0d9085a9a05a4c66bbc0e7683aaf992642621e2",
+              "source": "proposal_claim:ATC7-CL-09",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/3"
+            },
+            {
+              "edge_id": "propagation:2a33ad477fc72442c2b2d90bfb883473881f0cb5d177e40ccc87be63dde55c04",
+              "source": "proposal_claim:ATC7-CL-15",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/5"
+            },
+            {
+              "edge_id": "propagation:38fab4242459b133244049aa90cace6d80c4e2e242821cad4279a10a30bc0ac1",
+              "source": "proposal_claim:ATC7-CL-27",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/9"
+            },
+            {
+              "edge_id": "propagation:40e566ab6bbd8348184a6623abde8077e8aa06e60d159dce5b3fdc63ee4c4d97",
+              "source": "proposal_claim:ATC7-CL-17",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/7"
+            },
+            {
+              "edge_id": "propagation:5a065124230ff1207acaed3e9e218427961e3ce98be48f536c5c29d96b7f7c2e",
+              "source": "proposal_claim:ATC7-CL-24",
+              "target": "current_claim:ATC-CI-STEP-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/0/origin_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:5d7c0b97d14182be1c5da79f339fedc66d70e7bc34e8e6dbc47f785aa215f469",
+              "source": "proposal_claim:ATC7-CL-22",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/9"
+            },
+            {
+              "edge_id": "propagation:60e771df7cf61be5d66a762e38593db68ced1dfb7539deaea8199122d929bb47",
+              "source": "proposal_claim:ATC7-CL-03",
+              "target": "current_claim:ATC-CI-STEP-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/0/origin_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:62e46b9d4b0a49793ec90f4316a8ac8c760ef853ee23bc0dd2b1fcc9e83098ec",
+              "source": "proposal_claim:ATC7-CL-08",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:66a117603fb48afffdc00264cb0e546d73e1095b8c3cf2d185f31913bc929139",
+              "source": "proposal_claim:ATC7-CL-03",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:66f4fff735748230b979309c6888b37ba5c1b5ab0ca85e23bdf1826399ece003",
+              "source": "proposal_claim:ATC7-CL-09",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/4"
+            },
+            {
+              "edge_id": "propagation:6f04a08a9872b62fb9bb77a23d14e76c90da2933563627586d9442116636388e",
+              "source": "proposal_claim:ATC7-CL-18",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/8"
+            },
+            {
+              "edge_id": "propagation:755f619487286a5f90aa7de515ac927036c017612a977e1397132005a3b829ca",
+              "source": "proposal_claim:ATC7-CL-11",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/4"
+            },
+            {
+              "edge_id": "propagation:7e0a3d8cf705b30402d31639ba5826fa82041008efe5cae342b7ff345bb46036",
+              "source": "proposal_claim:ATC7-CL-02",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:94e7ee1931b4399e4e265eb5c176d8a760132c5c8b551e302945ee546bd612fd",
+              "source": "current_claim:ATC-CI-CHAIN-01",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "predecessor_claim",
+              "support_semantic": "conditioned",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/predecessor_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:a67e12681d3c60baf88c0f68cce4c64ceb3ecd846fdece0f4389099f46b63fb2",
+              "source": "proposal_claim:ATC7-CL-02",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:adbbe94a4767bd7597ae28eeea3686e0839873bc5d62bfc7c5d7745f6763a28e",
+              "source": "proposal_claim:ATC7-CL-31",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/10"
+            },
+            {
+              "edge_id": "propagation:b47f75491510879badd61055b9835ce364a907d994fb56204a800f3fbbc45a91",
+              "source": "proposal_claim:ATC7-CL-22",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/8"
+            },
+            {
+              "edge_id": "propagation:c305d6c457e5c7171ac2f9f87d913970fac92b2f58e5fa4ebdcec2c4ae142f0a",
+              "source": "current_claim:ATC-CI-STEP-01",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "predecessor_claim",
+              "support_semantic": "conditioned",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/predecessor_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:d48924f7a82b7033f973ef804c1834266b36ef6288ed67d9bd8b72f11508a571",
+              "source": "proposal_claim:ATC7-CL-11",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/5"
+            },
+            {
+              "edge_id": "propagation:d9ca8353fb416c531b5ea044e0305cc89e7259d8c8a0d1e4f8f2fa17cab75444",
+              "source": "proposal_claim:ATC7-CL-17",
+              "target": "current_claim:ATC-CI-CHAIN-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/1/origin_claim_ids/6"
+            },
+            {
+              "edge_id": "propagation:f274c3906fc40c238d0a502ffa8ec2bad3a27fa1d64184d51d736436a983207d",
+              "source": "proposal_claim:ATC7-CL-08",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/3"
+            },
+            {
+              "edge_id": "propagation:f36c26e28b6b8329c3837d2de5e61f59a62f21a3d187a615c895289ec9f355a4",
+              "source": "proposal_claim:ATC7-CL-31",
+              "target": "current_claim:ATC-CI-STEP-01",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/0/origin_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:f4d699981cdb780f0ea9cf21aeb2093c1578b467435c1847240d118695a119d1",
+              "source": "proposal_claim:ATC7-CL-03",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:f749ba7933fd06dabbc9d22692b16c2460a7915483cbeb91411460c957e1f7b8",
+              "source": "proposal_claim:ATC7-CL-26",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/10"
+            },
+            {
+              "edge_id": "propagation:f98afd99a52be01f391cf3a1f827ea4c4ad8aaca8f95cd56a36e80fceb2eede3",
+              "source": "proposal_claim:ATC7-CL-15",
+              "target": "current_claim:ATC-CI-DOMAIN-02",
+              "relation": "proposal_provenance_not_support",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+              "source_record_digest": "a2c3d78ed3c2e91739e85397a7f821fb3e2c11465b872fa8c2a4d81733d7f4a9",
+              "source_json_pointer": "/claims/2/origin_claim_ids/6"
+            }
+          ],
+          "payload": {
+            "start_node": "current_claim:ATC-CI-DOMAIN-02",
+            "nodes": [
+              {
+                "node_id": "current_claim:ATC-CI-CHAIN-01",
+                "kind": "current_claim",
+                "identifier": "ATC-CI-CHAIN-01",
+                "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+                "source_json_pointer": "/claims/1",
+                "attributes": {
+                  "claim_id": "ATC-CI-CHAIN-01",
+                  "claim_class": "conditional",
+                  "status": "accepted_bounded_A_CI_research",
+                  "profile_scope": [
+                    "A_CI"
+                  ],
+                  "native_authority": false,
+                  "statement": "The reviewed full-feedback paired CI anchor uses evolving W and a fresh joint root to select fission, with unsplit/history-reset obstruction, independent target-role admission and actual restoration.",
+                  "source_ref": {
+                    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json",
+                    "sha256": "3697e3030855f93552f7b6797fb0dc05be82a63f5076826d5d613789b21b358b",
+                    "json_pointer": "/claim_updates/0"
+                  },
+                  "predecessor_claim_ids": [
+                    "ATC-CI-STEP-01"
+                  ],
+                  "origin_claim_ids": [
+                    "ATC7-CL-02",
+                    "ATC7-CL-03",
+                    "ATC7-CL-08",
+                    "ATC7-CL-09",
+                    "ATC7-CL-11",
+                    "ATC7-CL-15",
+                    "ATC7-CL-17",
+                    "ATC7-CL-18",
+                    "ATC7-CL-22",
+                    "ATC7-CL-27",
+                    "ATC7-CL-31"
+                  ],
+                  "debt_ids": [
+                    "ATC7-DB-02",
+                    "ATC7-DB-05",
+                    "ATC7-DB-06",
+                    "ATC7-DB-07",
+                    "ATC7-DB-08",
+                    "ATC7-DB-14",
+                    "ATC7-DB-16",
+                    "ATC7-DB-19",
+                    "ATC7-DB-26"
+                  ]
+                }
+              },
+              {
+                "node_id": "current_claim:ATC-CI-DOMAIN-02",
+                "kind": "current_claim",
+                "identifier": "ATC-CI-DOMAIN-02",
+                "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+                "source_json_pointer": "/claims/2",
+                "attributes": {
+                  "claim_id": "ATC-CI-DOMAIN-02",
+                  "claim_class": "conditional",
+                  "status": "accepted_bounded_A_CI_research",
+                  "profile_scope": [
+                    "A_CI"
+                  ],
+                  "native_authority": false,
+                  "statement": "The fixed-profile positive-parameter/request box has a uniform joint-root self-map, contraction and regularity theorem, evolving-W obstruction and both-role positive funding, transfer/entry/return/asymptotics, conditional on a resolved admitted source event.",
+                  "source_ref": {
+                    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/ATCCI2DomainCertificate.json",
+                    "sha256": "0339bd150e613b1718180cb46dd2a11d8d5de088c794e775f18fbc77fd1c9d53",
+                    "json_pointer": "/claim_updates/0"
+                  },
+                  "predecessor_claim_ids": [
+                    "ATC-CI-CHAIN-01"
+                  ],
+                  "origin_claim_ids": [
+                    "ATC7-CL-02",
+                    "ATC7-CL-03",
+                    "ATC7-CL-04",
+                    "ATC7-CL-08",
+                    "ATC7-CL-09",
+                    "ATC7-CL-11",
+                    "ATC7-CL-15",
+                    "ATC7-CL-17",
+                    "ATC7-CL-18",
+                    "ATC7-CL-22",
+                    "ATC7-CL-26",
+                    "ATC7-CL-27"
+                  ],
+                  "debt_ids": [
+                    "ATC7-DB-02",
+                    "ATC7-DB-03",
+                    "ATC7-DB-04",
+                    "ATC7-DB-05",
+                    "ATC7-DB-06",
+                    "ATC7-DB-07",
+                    "ATC7-DB-08",
+                    "ATC7-DB-12",
+                    "ATC7-DB-14",
+                    "ATC7-DB-15",
+                    "ATC7-DB-16",
+                    "ATC7-DB-19",
+                    "ATC7-DB-26",
+                    "ATC7-DB-28"
+                  ]
+                }
+              },
+              {
+                "node_id": "current_claim:ATC-CI-STEP-01",
+                "kind": "current_claim",
+                "identifier": "ATC-CI-STEP-01",
+                "source_record_id": "GRCV4-ATC-CI-LEDGER-v1",
+                "source_json_pointer": "/claims/0",
+                "attributes": {
+                  "claim_id": "ATC-CI-STEP-01",
+                  "claim_class": "conditional",
+                  "status": "accepted_bounded_A_CI_research",
+                  "profile_scope": [
+                    "A_CI"
+                  ],
+                  "native_authority": false,
+                  "statement": "CI ordinary-step sequencing and full fresh poststate J/H root identity; stage observations, not native autonomous topology execution.",
+                  "source_ref": {
+                    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCStepBoundaryAudit.json",
+                    "sha256": "6aab00835467a21c00e751b1b3553cb6bc68b52d9cd0fec09fa5d45aaa32b3a4",
+                    "json_pointer": "/cases/0"
+                  },
+                  "predecessor_claim_ids": [],
+                  "origin_claim_ids": [
+                    "ATC7-CL-03",
+                    "ATC7-CL-24",
+                    "ATC7-CL-31"
+                  ],
+                  "debt_ids": [
+                    "ATC7-DB-01",
+                    "ATC7-DB-03",
+                    "ATC7-DB-04",
+                    "ATC7-DB-15",
+                    "ATC7-DB-16",
+                    "ATC7-DB-23"
+                  ]
+                }
+              }
+            ],
+            "proposed_origins_not_support": [
+              {
+                "node_id": "proposal_claim:ATC7-CL-02",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-02",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/1",
+                "attributes": {
+                  "id": "ATC7-CL-02",
+                  "title": "Physical generator and wire binding",
+                  "section": "2;4",
+                  "status": "proposed_not_admitted",
+                  "kind": "proposed_constitutive_architecture",
+                  "statement": "A declared causal projection determines a physical event prescription; deterministic binding to the actual publication supplies source identities and lifecycle role data.",
+                  "assumptions": [
+                    "The policy theta is identity-bound; no event-time semantic choices are left to a caller; no-event, unresolved and uncertified outcomes are distinct."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S07",
+                    "S10",
+                    "S11"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-02",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-03",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-04",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-21",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Vary only administrative lineage/reset preimages; distinguish physical selection, request identity and target admission.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-03",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-03",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/2",
+                "attributes": {
+                  "id": "ATC7-CL-03",
+                  "title": "Profile-correct analysis reuse",
+                  "section": "2;3",
+                  "status": "proposed_not_admitted",
+                  "kind": "proposed_applicability_claim",
+                  "statement": "Candidate and realization computations can be reused only on their actual state, stage, derivative and domain contracts, with explicit dispositions across the ten products.",
+                  "assumptions": [
+                    "No universal Hessian or joint W/Z structural functional is presumed."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S07",
+                    "S09",
+                    "S14"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-03",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-05",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-06",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-26",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Contrast OS defect, CI root, RG section, PC history and composite source ownership.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-04",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-04",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/3",
+                "attributes": {
+                  "id": "ATC7-CL-04",
+                  "title": "Conditional structural witness",
+                  "section": "3;5.1",
+                  "status": "proposed_not_admitted",
+                  "kind": "conditional_proposal",
+                  "statement": "A fully instantiated constrained structural form and separated mode can provide derived event inputs; topology interpretation and partition generation remain separate claims.",
+                  "assumptions": [
+                    "Admitted branch, complete functional, tangent, metric, null treatment and regularity; fixed W in the inherited A structural chart."
+                  ],
+                  "source_refs": [
+                    "S03",
+                    "S05",
+                    "S07"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-04",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-05",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-06",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-07",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-08",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Protected constant null, active kink, same-graph recovery, alternate mode lifts.",
+                  "predecessor_refs": [
+                    "D10-CL-C-001",
+                    "D10-VERIFY-FORMED-BRANCH-STRUCTURAL-TEMPORAL"
+                  ],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-08",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-08",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/7",
+                "attributes": {
+                  "id": "ATC7-CL-08",
+                  "title": "Equivariance constrains event classes",
+                  "section": "4.4",
+                  "status": "proposed_not_admitted",
+                  "kind": "conditional_derivation",
+                  "statement": "An equivariant deterministic generator at a symmetry-invariant source must output an invariant physical event class; no-event is not the only possible invariant result.",
+                  "assumptions": [
+                    "Admitted representation action; all profile/reference data transform; comparisons are physical rather than byte equality."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S10",
+                    "S11"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-10",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-23",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Exchange two candidate loci; compare arbitrary singleton, invariant batch and unordered symmetric event.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-09",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-09",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/8",
+                "attributes": {
+                  "id": "ATC7-CL-09",
+                  "title": "Certified unique resolution",
+                  "section": "6.1",
+                  "status": "proposed_not_admitted",
+                  "kind": "proposed_resolution_law",
+                  "statement": "A finite homogeneous candidate family with invariant scores and certified unique dominance resolves one event class independently of enumeration.",
+                  "assumptions": [
+                    "Thresholds, units, interval comparisons and failed-target behavior are part of theta."
+                  ],
+                  "source_refs": [
+                    "S02",
+                    "S04",
+                    "S07"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-02",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-09",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-10",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Threshold-adjacent enclosures, exact ties, changed iteration order, mixed incommensurate families.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-11",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-11",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/10",
+                "attributes": {
+                  "id": "ATC7-CL-11",
+                  "title": "Half-edge binary refinement",
+                  "section": "7.2",
+                  "status": "proposed_not_admitted",
+                  "kind": "conditional_graph_derivation",
+                  "statement": "An unordered complete endpoint-role partition defines a finite multigraph refinement preserving every old edge identity and adding one child vertex net and one new edge.",
+                  "assumptions": [
+                    "Fresh IDs; both partition blocks nonempty; loop ends are individually mapped."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S10"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-08",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-10",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-12",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-23",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Loop ends together/separate, old child-child edge plus new edge, parallel edges and inverse correspondence.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-15",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-15",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/14",
+                "attributes": {
+                  "id": "ATC7-CL-15",
+                  "title": "Exactly conservative dyadic split",
+                  "section": "8.2",
+                  "status": "proposed_not_admitted",
+                  "kind": "conditional_arithmetic_derivation",
+                  "statement": "For N=2^b with 1<=b<=52, nearest-even k=round(N r) gives exactly represented complementary shares, exact sum one, error <=1/(2N), and exchange covariance.",
+                  "assumptions": [
+                    "Exact input activities and exact tie comparison; grid size is new identified policy."
+                  ],
+                  "source_refs": [
+                    "S10"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-13",
+                      "relation": "verification_required",
+                      "activation": "When promoted to the actual event arithmetic or a stronger stored-charge claim."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-10",
+                      "relation": "verification_required",
+                      "activation": "When executable covariance beyond the proved scalar rule is claimed."
+                    }
+                  ],
+                  "discriminating_pressure": "Rounded thirds, dyadic midpoint ties, swapped activities, subnormal source outputs.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-17",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-17",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/16",
+                "attributes": {
+                  "id": "ATC7-CL-17",
+                  "title": "Target reference constructors",
+                  "section": "8.6-8.9",
+                  "status": "proposed_not_admitted",
+                  "kind": "proposed_construction_with_conditional_lemmas",
+                  "statement": "The geometric-mean nth-root recipe, star mask, duplicated/midpoint host positions and exact C reference completion are explicit competing target constructors, not uniquely inherited laws.",
+                  "assumptions": [
+                    "Positive weights; complete graph/backend/context preimages; target domains unchanged; work bounds declared."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S07",
+                    "S10",
+                    "S12"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-12",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-14",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-16",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-26",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-28",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Extreme means, new star adjacency, coincident children, unsupported context lift, target chart failure.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-18",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-18",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/17",
+                "attributes": {
+                  "id": "ATC7-CL-18",
+                  "title": "Independent history policies",
+                  "section": "9",
+                  "status": "proposed_not_admitted",
+                  "kind": "proposed_contract_application",
+                  "statement": "Reconstruction/loss and typed preserving maps remain separate candidate policies; neither lineage nor resource transport supplies a W/Z history map.",
+                  "assumptions": [
+                    "Policies fixed before target construction; whole-role history commitments; no loss fallback after preservation fails."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S10",
+                    "S11",
+                    "S12"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-15",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-16",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-21",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-23",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Equal zeros with explicit loss, signed permutation with changed hashes, dense mixing outside diagonal W type.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-22",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-22",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/21",
+                "attributes": {
+                  "id": "ATC7-CL-22",
+                  "title": "Qualified restoration certificate",
+                  "section": "10.5-10.7",
+                  "status": "proposed_not_admitted",
+                  "kind": "conditional_derivation_and_interpretation",
+                  "statement": "A complete-map invariant contraction domain proves basin membership; a stated Lyapunov descent proves approach to its zero set; numerical defects give only the corresponding error-neighborhood conclusion.",
+                  "assumptions": [
+                    "Fixed point/invariant set, complete causal metric/domain, uniform bound, real/numerical distinction and hybrid quietness or full hybrid certificate."
+                  ],
+                  "source_refs": [
+                    "S01",
+                    "S03",
+                    "S05",
+                    "S07"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-05",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-06",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-19",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-20",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-23",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-26",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Basin member not equilibrium; positive Hessian but unstable step; rounding error floor; RG state outside step entry.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-24",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-24",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/23",
+                "attributes": {
+                  "id": "ATC7-CL-24",
+                  "title": "Ordinary/event transaction composition",
+                  "section": "11.1-11.5",
+                  "status": "proposed_not_admitted",
+                  "kind": "proposed_integration_law",
+                  "statement": "CAN-TIME-AFTER commits an ordinary beat first and then attempts one event; event failure preserves that postbeat state. Joint macro atomicity is a different successor.",
+                  "assumptions": [
+                    "Explicit timing policy, no actuation through observation/load, full prospective target validation."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S07",
+                    "S10",
+                    "S11"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-21",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-22",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-23",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Late event failure after successful ordinary commit; read-only polling; reset-only target rejection.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-26",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-26",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/25",
+                "attributes": {
+                  "id": "ATC7-CL-26",
+                  "title": "Local work and event-rate bounds",
+                  "section": "11.6;12.2",
+                  "status": "proposed_not_admitted",
+                  "kind": "conditional_derivations",
+                  "statement": "Finite work/boundary, finite attempts/beats, physical-time non-Zeno and global graph-size bounds are distinct. Fixed-vertex absent-edge birth and an event-decreasing lower-bounded E admit the stated separate bounds.",
+                  "assumptions": [
+                    "Only the listed assumptions; no generic E or positive dt lower bound is inherited."
+                  ],
+                  "source_refs": [
+                    "S05",
+                    "S07"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-22",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-28",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Shrinking durations, repeated rejection, competing birth/death, fixed-n graph completion.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-27",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-27",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/26",
+                "attributes": {
+                  "id": "ATC7-CL-27",
+                  "title": "Evidence class separation",
+                  "section": "13",
+                  "status": "proposed_not_admitted",
+                  "kind": "investigation_input_contract",
+                  "statement": "Conditional derivations, independent mathematical checks, and native runtime captures remain separately identified and source-bound.",
+                  "assumptions": [
+                    "No local check is counted as pygrc execution or accepted conformance."
+                  ],
+                  "source_refs": [
+                    "S08",
+                    "S09",
+                    "S13",
+                    "S15"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-01",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-23",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-24",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Exact IDs, disclosed scaffolds, mutated hashes, source/run mismatch.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              },
+              {
+                "node_id": "proposal_claim:ATC7-CL-31",
+                "kind": "proposal_claim",
+                "identifier": "ATC7-CL-31",
+                "source_record_id": "GRCV4-ATC-AOS-LEDGER-v1",
+                "source_json_pointer": "/origin_claims/33",
+                "attributes": {
+                  "id": "ATC7-CL-31",
+                  "title": "Preservation of lifecycle guarantees",
+                  "section": "11.5",
+                  "status": "proposed_not_admitted",
+                  "kind": "proposed_runtime_claim",
+                  "statement": "An ATC integration preserves complete current/reset admission, typed failures, known-state consistency and restorability under the resulting release/layout.",
+                  "assumptions": [
+                    "Prospective publication validation; actual code subject and supported policies."
+                  ],
+                  "source_refs": [
+                    "S07",
+                    "S10",
+                    "S11",
+                    "S13"
+                  ],
+                  "debt_edges": [
+                    {
+                      "debt_id": "ATC7-DB-01",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-16",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-21",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    },
+                    {
+                      "debt_id": "ATC7-DB-23",
+                      "relation": "conditions_strengthening",
+                      "activation": "When the stronger or executable scope described by this debt is attempted; see debt activation and claim assumptions."
+                    }
+                  ],
+                  "discriminating_pressure": "Mixed-version/operation archive sequences; late programmer exception; event after representation.",
+                  "predecessor_refs": [],
+                  "no_authority_granted": true
+                }
+              }
+            ],
+            "claim_class": "conditional",
+            "support_disposition": "accepted_bounded_A_CI_research",
+            "profile_scope": [
+              "A_CI"
+            ],
+            "native_authority": false,
+            "domain_widening_inferred": false,
+            "verification_obligations_excluded": true,
+            "historical_controls_excluded": true,
+            "full_transitive_research_ancestry": true
+          }
+        }
+      ]
+    }
+  ],
+  "boundary": "Traces identify accepted predecessor authority, not admission of this new auxiliary completion. No old fixed-duration interval, first-step entry, native identifier or C1 section authority is inherited. Independent review and scoped adjudication are next; native engineering remains downstream Phase 9.",
+  "record_digest": "03182f583732b6477bea94d9cd1b0a82671ffafc5c18813e0fed99bb7109e87d"
+}

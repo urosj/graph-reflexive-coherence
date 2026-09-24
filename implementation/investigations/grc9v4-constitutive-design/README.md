@@ -268,6 +268,35 @@ through `atc-ci-query` and `grcv4_explorer.atc_ci`: 14 closed, six partial,
 eight not activated. DB-05 and DB-24 close only at paired research/source
 scope; no global debt closes. The accepted PC/A_OS checkpoint and reviewed CI
 scientific files remain unchanged. No further CI scientific stage is needed.
+The authorized [CI+PC successor](./decisions/ATCCIPCoupledProgram.md) now
+prepares CIP-0's native staging and rational coupled-root/domain proof in a
+separate [evidence directory](./evidence/atc-cip/README.md), pending review.
+[CIP-1's combined causal witness](./decisions/ATCCIP1CausalChain.md) is now
+prepared with actual both-role readmission, evolving W/Z and uniform
+return/obstruction proofs. Independent reviews now pass CIP-0 and CIP-1.
+The [CIP-2 reference successor](./decisions/ATCCIP2Reference.md) records the
+reviews/DB-04 ancestry additively and addresses boundary, oracle, research
+lifecycle and represented-number conformance. Its bounded local suite and
+[independent scientific review](./evidence/atc-cip-review/README.md) pass.
+Local retained-certificate/source-binding checks pass as well; independent
+exact-record comparison is not claimed because the reviewer lacked that file.
+The separate [scoped CIP admission](./decisions/ATCCIPClaimDebtAdjudication.md)
+now admits three conditional claims and all 28 CIP-local debt rows
+(14 closed, six partial, eight not activated), preserving all global debts
+and older admissions. Typed API/CLI access is documented in the
+[admission index](./evidence/atc-cip-admission/README.md).
+This imports applicable lemmas, not other-family acceptance.
+
+The next [A_RG2b research program](./decisions/ATCRGATCProgram.md) reuses the
+supplied T/A and E/R proofs, code and certificates. The
+[portable package](./evidence/atc-rgatc/README.md) passes intake/manifest,
+T/A regeneration and retained E/R checks. The user reports
+[independent audit PASS](./evidence/atc-rgatc/RGATC-Review.md).
+The [RGATC adjudication](./decisions/ATCRGATCClaimDebtAdjudication.md) now
+admits seven conditional claims and all 28 local debt dispositions.
+[All five Candidate-A bounded research programs are closed](./decisions/ATCCandidateAResearchClosure.md).
+Use `atc-rgatc-query summary` for the source-bound five-ledger view.
+No native completion or aggregate acceptance follows.
 Wider formation/environment claims,
 other-family support and aggregate ATC-2 remain outside this acceptance.
 

@@ -213,7 +213,52 @@ conformance. PC proceeds through PC-0 boundary, PC-1 evolving-carrier
 obstruction, PC-2 carrier-event law, PC-3 complete anchor, PC-4 combined
 domains/reference. Screen obstruction support before target work; retain
 active-channel nonlinear research physics and stop at the first failed arrow.
-CI+PC follows as composition, not another discovery campaign.
+CI+PC follows as coupled compatibility, not another discovery campaign;
+the authorized [CIP-0–CIP-2 successor](./decisions/ATCCIPCoupledProgram.md)
+now prepares CIP-0's native staging and exact composite-domain theorem.
+Use R_Z=1/5000, total H radius 1/4096 and kappa_H in [1/2,3/5] as a
+sufficient proof box, not an intersection or maximal domain. CIP-1 owns one
+complete source-selected causal chain with both-role combined readmission;
+CIP-2 owns consolidated reference/conformance and subsequent scoped
+claim/debt admission. The [CIP-1 causal chain](./decisions/ATCCIP1CausalChain.md)
+is now prepared: frozen input, positive ordinary onset, own source-only
+allocator, signed lossless both-role combined readmission and variable-request
+return with W/Z evolving. All four one-time controls remain obstructed;
+zero-Z controls regenerate Z under the unchanged writer. Geometry-uniform
+estimates close return without additive carrier forcing. Independent reviews
+now give **CIP-0 scientific PASS and CIP-1 bounded complete-chain PASS**.
+The [CIP-2 reference successor](./decisions/ATCCIP2Reference.md) reconciles
+DB-04 ancestry additively and handles exact carrier boundaries, independent
+stages, research lifecycle/covariance and finite represented-number pressure.
+The bounded CIP-2 suite now passes independent stages, covariance,
+research-owner replay/rollback, exact/signed carrier endpoints and finite
+C/W/Z/J/H rounding checks. Nonzero represented charge drift remains visible.
+[CIP-2 independent scientific review](./evidence/atc-cip-review/README.md)
+now passes; local retained-record/source-binding checks also pass. The reviewer
+did not receive the certificate, so independent exact-record comparison remains
+unclaimed. The separately authorized [CIP adjudication](./decisions/ATCCIPClaimDebtAdjudication.md)
+now admits ROOT-00, CHAIN-01 and REFERENCE-02 and all 28 realization-local
+debt rows: 14 closed, six partial, eight not activated; all globally open.
+The exact append-only inventory is queryable through `atc-cip-query` and
+`grcv4_explorer.atc_cip`; predecessor graphs remain unchanged.
+No further CIP discovery stage is introduced. Preserve all reviewed
+CI/PC files. A one-time Z-reset control must not be called a CI trajectory.
+The user now opens [A_RG2b through the supplied RGATC program](./decisions/ATCRGATCProgram.md).
+Reuse the T/A proofs and E/R certified section/reference, already retained
+together with one embedded predecessor. Intake/manifests, T/A regeneration
+and E/R retained consistency pass; a full E/R local rerun is not claimed.
+The user reports independent audit PASS, retained in the
+[additive review](./evidence/atc-rgatc/RGATC-Review.md). Its boundary-covering
+auxiliary completion, frozen small beat/gain and duration-dependent return
+bounds remain bounded research, not an existing native completion.
+The authorized [RGATC adjudication](./decisions/ATCRGATCClaimDebtAdjudication.md)
+now admits seven conditional claims and all 28 scoped debt decisions
+(14 closed, six partial, eight inactive), preserving global debts and earlier
+admissions. The [five-realization Candidate-A research closeout](./decisions/ATCCandidateAResearchClosure.md)
+is complete. This is not universal A-family, Candidate-C, native or aggregate
+ATC-2 support. Subsequent work addresses remaining ATC capability scope or
+separately authorized topology proposal/paper/spec propagation.
+
 CI-0's review hardening is complete. The fixed-profile CI-1 causal anchor
 and PC-1 evolving-carrier obstruction have independent scientific PASS.
 The review's exact-input domain hardening is implemented; its provenance
@@ -264,7 +309,7 @@ Four conditional claims and 28 CI-local debt dispositions are queryable:
 14 closed, six partial, eight not activated. DB-05/DB-24 close locally through
 the CI proof and exact source admission respectively. No global debt closes.
 CI-0–CI-3 are complete at paired research scope; no additional CI scientific
-stage is required. Other realization work needs explicit authorization.
+stage is required. The user now authorizes the separate CI+PC work above.
 Do not infer CI+PC acceptance. The shared CI/PC checkpoint and all reviewed
 CI successor certificates retain their exact bytes and historical flags;
 the new adjudication supplies current acceptance without rewriting history.

@@ -1,6 +1,69 @@
 # Phase 9 GRCV4 handoff — Tranche 7 closed; ATC research next
 
-## Current research priority — 2026-09-23
+## Current research priority — 2026-09-24
+
+**All five bounded Candidate-A ATC research programs are accepted and closed.**
+See the [five-realization closeout](./investigations/grc9v4-constitutive-design/decisions/ATCCandidateAResearchClosure.md).
+A_RG2b completes this set through reuse of the supplied RGATC-T/A and E/R work.
+The [fit assessment](./investigations/grc9v4-constitutive-design/decisions/ATCRGATCProgram.md)
+and [portable package index](./investigations/grc9v4-constitutive-design/evidence/atc-rgatc/README.md)
+are the starting point. Do not recreate its theorem or section evaluator.
+The package preserves C/W-only authority, lagged reconstruction and a
+Lipschitz-only ceiling; its floor-preserving auxiliary completion and frozen
+beat/gain are reviewed research, not existing native profile authority.
+Both manifests, exact T/A regeneration and E/R retained identity/consistency
+checks pass locally. The full E/R run is supplied evidence, not locally rerun.
+Seven RGATC conditional claims are admitted and all 28 RG-local debt routes
+are adjudicated: 14 closed, six partial, eight inactive, all globally open.
+**T/A and E/R audit: PASS, reported by the user.** See the
+[review record](./investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Review.md).
+The `atc-rgatc-query` CLI exposes discovery, audit, claim/debt traces and
+`summary` for all five realization ledgers. Earlier admissions are unchanged.
+No further A-realization discovery is needed simply to finish this program.
+**Next decision: remaining ATC capability scope or authorized propagation
+through topology proposal → paper → specifications.**
+Candidate C, native implementation and aggregate ATC-2/ATC-3 remain open.
+
+## Completed preceding research — A_CI+PC
+
+**A_CI+PC CIP-0–CIP-2 have independent scientific PASS and are source-admitted
+at paired research scope**, following the user's
+[coupled-program directions](./investigations/grc9v4-constitutive-design/decisions/ATCCIPCoupledProgram.md).
+Native staging and exact rational proof support a sufficient joint box:
+Z radius 1/5000, total H radius 1/4096, kappa_H in [1/2,3/5]. No native
+ATC or nonlinear causal witness is claimed by the staging fixture.
+[CIP-1's combined causal chain](./investigations/grc9v4-constitutive-design/decisions/ATCCIP1CausalChain.md) is
+now executed successfully on its frozen input: one ordinary onset, source-only
+split, both-role signed-carrier readmission and two target beats per role,
+plus one beat for each one-time control. The same total-H estimates prove
+indefinite exact-real return and unsplit resource obstruction. The user now
+authorizes [CIP-2 reference/conformance](./investigations/grc9v4-constitutive-design/decisions/ATCCIP2Reference.md).
+Reviews and additive DB-04 ancestry live under `evidence/atc-cip-successor`;
+old certificate bytes remain unchanged. CIP-2 is independently reviewed and locally
+passes exact/signed carrier boundaries and represented neighbors, 2369
+independent scalar and 146 covariance comparisons, research-owner rollback/
+replay (19 rejection cases), and eight finite rounding steps. Its largest
+C/W/Z/J/H error is below 4.4e-16 against a 1e-10 bound; measured charge drift
+is not repaired or granted exact-charge authority. The
+[CIP-2 review disposition](./investigations/grc9v4-constitutive-design/evidence/atc-cip-review/README.md)
+records local certificate/source-binding PASS separately from the reviewer's
+uncompleted exact-record comparison (the certificate was absent from their
+upload). The separately authorized
+[all-28 adjudication](./investigations/grc9v4-constitutive-design/decisions/ATCCIPClaimDebtAdjudication.md)
+now admits three conditional CIP claims: 14 debts close locally, six remain
+partial, eight are not activated, and all 28 remain globally open. Keep the
+existing relational carrier law, use the coupled root's own allocator, and
+do not confuse a one-time Z reset with disabling the writer. See the
+[CIP evidence/reproduction index](./investigations/grc9v4-constitutive-design/evidence/atc-cip/README.md).
+For the current result use the
+[CIP-2 successor index](./investigations/grc9v4-constitutive-design/evidence/atc-cip-successor/README.md).
+Use `atc-cip-query` for the accepted inventory, claim reconstruction and
+realization-local debts; older queries retain their older scopes. See the
+[admission/reproduction index](./investigations/grc9v4-constitutive-design/evidence/atc-cip-admission/README.md).
+This closes the scoped CIP research/admission work, not aggregate ATC-2.
+The user has selected A_RG2b above; do not
+start another CIP discovery campaign. Native implementation remains downstream
+of topology proposal → paper → specification in Phase 9.
 
 **A_CI CI-0–CI-3 are scientifically complete, independently reviewed PASS,
 and source-admitted at paired research scope.** The user authorizes the
@@ -21,8 +84,8 @@ The final review passes both the closed-boundary and derived-witness fixes.
 CI-3's reviewed scientific certificate retains its exact bytes and historical
 pending flags; the new ledger is the current acceptance authority. Measured
 represented charge drift remains a downstream numerical-policy finding.
-No additional CI scientific stage is required. Other realizations (including
-CI+PC) require explicit next-work authorization; this task starts none.
+No additional CI scientific stage is required. CI+PC now proceeds separately
+as above; it does not inherit CI/PC acceptance or local debt closure.
 The later proposal → paper → specification → native implementation order remains.
 
 ### Reviewed CI-1 / accepted paired PC context

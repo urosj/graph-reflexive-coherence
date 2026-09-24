@@ -1,4 +1,16 @@
-# Bounded A_OS / A_PC / A_CI ATC research queries
+# Bounded Candidate-A ATC research queries — all five realizations
+
+The new [CI+PC program](../../../decisions/ATCCIPCoupledProgram.md) is
+now admitted by its separate successor described below. Its reviewed CIP-0
+checker retains historical pending flags and uses the predecessor API for
+lemma traces. Passing an older context's audit alone does not admit CIP.
+CIP-0/CIP-1 now have independent scientific PASS; their reviews and additive
+DB-04 route are in `evidence/atc-cip-successor`. CIP-2 reference/conformance
+now has independent scientific PASS and local retained-record integrity PASS.
+The reviewer's exact-record comparison remains unclaimed because they lacked
+the certificate; see the [review disposition](../../../evidence/atc-cip-review/README.md).
+All-28 scoped adjudication and exact source admission are now separately
+completed through `atc-cip-query`, not by widening these predecessor APIs.
 
 This append-only research context admits the reconciled ATC source inventory,
 not native ATC implementation or aggregate ATC-2 closure. The old D10/D11/P9
@@ -151,3 +163,81 @@ the ATC2 review README's command now uses its evidence location. Its historical
 source hash is checked by reversing exactly that single path substitution;
 the current bytes are independently pinned. Scientific evidence records and
 their claims are unchanged; other source differences still fail closed.
+
+## Paired A_CI+PC successor
+
+The [CIP adjudication](../../../decisions/ATCCIPClaimDebtAdjudication.md) admits
+ROOT-00, CHAIN-01 and REFERENCE-02. All 28 CIP-local debts are explicit:
+14 closed, six partial, eight not activated; all globally open. DB-04 retains
+its additive consumer route; DB-05 covers the combined root, DB-15 the signed
+lossless history lift and DB-24 this exact pinned admission.
+
+```sh
+.venv/bin/python "$TOOL/scripts/run.py" atc-cip-query discover
+.venv/bin/python "$TOOL/scripts/run.py" atc-cip-query audit
+.venv/bin/python "$TOOL/scripts/run.py" atc-cip-query claim ATC-CIP-REFERENCE-02
+.venv/bin/python "$TOOL/scripts/run.py" atc-cip-query debt ATC7-DB-04
+.venv/bin/python "$TOOL/scripts/test_atc_cip_research.py"
+```
+
+```python
+from grcv4_explorer import atc_ci, atc_cip
+
+cip_context = atc_cip.load_current_forensic_context(root, side)
+claim = atc_cip.reconstruction_path(cip_context, "ATC-CIP-REFERENCE-02")
+debt = atc_cip.debt_lifecycle(cip_context, "ATC7-DB-15")
+ci_debt = atc_ci.debt_lifecycle(cip_context, "ATC7-DB-15")  # still CI-scoped
+```
+
+Full ancestry includes accepted CI/PC lemmas with their original classifications
+and scopes; it does not splice standalone dynamics or enlarge their domains.
+Discovery covers `atc-cip`, `atc-cip-successor`, `atc-cip-review` and
+`atc-cip-admission` evidence plus bound execution sources. Changes, missing
+inputs or new unprocessed evidence fail closed. Navigation READMEs are not
+automatically admitted; the specific CIP-2 review disposition README is pinned
+explicitly as supporting evidence. Historical certificates/graphs are unchanged.
+Native, aggregate and browser/notebook support are not added.
+
+## A_RG2b successor and five-realization research closeout
+
+The [RGATC adjudication](../../../decisions/ATCRGATCClaimDebtAdjudication.md)
+admits seven conditional research claims after reported audit PASS and explicit
+user authorization. All 28 RG-local debts are reconciled: 14 closed, six partial,
+eight inactive. This successor extends CIP without changing earlier records.
+The package's historical pending flags remain unchanged; the new ledger is
+the current authority. Old-context audits do not admit these new claims.
+
+```sh
+.venv/bin/python "$TOOL/scripts/run.py" atc-rgatc-query discover
+.venv/bin/python "$TOOL/scripts/run.py" atc-rgatc-query audit
+.venv/bin/python "$TOOL/scripts/run.py" atc-rgatc-query claim RGATC-R-REFERENCE
+.venv/bin/python "$TOOL/scripts/run.py" atc-rgatc-query debt ATC7-DB-05
+.venv/bin/python "$TOOL/scripts/run.py" atc-rgatc-query summary
+.venv/bin/python "$TOOL/scripts/test_atc_rgatc_research.py"
+```
+
+```python
+from grcv4_explorer import atc_rgatc
+
+context = atc_rgatc.load_current_forensic_context(root, side)
+claim = atc_rgatc.reconstruction_path(context, "RGATC-R-REFERENCE")
+debt = atc_rgatc.debt_lifecycle(context, "ATC7-DB-24")
+five_programs = atc_rgatc.candidate_a_closure(context)
+```
+
+Discovery observes all package code/proofs/certificates/manifests, the reported
+review and new admission ledger. Package-relative paths are not mistaken for
+repository-relative inputs. The outer navigation README is excluded; package
+READMEs remain bound by the exact inventory. The audit validates the entire
+predecessor chain. Changed, missing or new unprocessed evidence holds queries.
+
+RG2b contract provenance and fixed-H CI/A_OS lemmas retain their classifications;
+they do not transfer realization dynamics, duration domains or native completion
+authority. The new completion is admitted only at its own research scope.
+The full E/R execution is supplied evidence, not a newly claimed local rerun.
+
+The source-bound summary derives [five bounded program closures](../../../decisions/ATCCandidateAResearchClosure.md)
+from the admitted ledgers: 54 conditional claims and one A_OS negative exclusion,
+with 140 separate scoped dispositions over 28 globally open origin debts.
+It does not claim universal Candidate-A support, Candidate C, native ATC,
+or aggregate ATC-2/ATC-3 closure. No browser/notebook projection is added.

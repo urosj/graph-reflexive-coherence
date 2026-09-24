@@ -3594,12 +3594,68 @@ and [research plan](./GRC9V4ConstitutiveDesignPlan.md#atc-successor-investigatio
     Preserve A_OS graph/evidence and the superseded projection control; no
     numerical rediscovery or PC-5 is needed. Active coupled-environment carrier transport is a future
     extension, not a PC-4 defect or an unmet paired-research criterion.
-  - [ ] Reconcile remaining CI results into scoped claim/debt successors;
-    PC admission does not admit CI handles. Continue CI-2 then CI-3 in separate
-    successor files, leaving the PC-bound shared checkpoint unchanged.
+  - [x] Reconcile CI results into their separate scoped claim/debt successor;
+    the accepted CI-2/CI-3 admission above supplies four conditional claims
+    and all 28 CI-local dispositions, leaving the PC checkpoint unchanged.
     Preserve all wider origin obligations and aggregate ATC-2 opening.
-  - [ ] Consider CI+PC as composition after CI and PC, not a parallel
-    independent discovery ladder or inferred family acceptance.
+  - [x] Open [CI+PC coupled compatibility](./decisions/ATCCIPCoupledProgram.md)
+    after CI/PC acceptance: three substantive stages, not another discovery
+    ladder or inferred family acceptance. Accepted predecessor files stay fixed.
+  - [x] **CIP-0 prepared:** native old/new Z and same-source staging, full
+    fresh joint-root evidence; rational coupled budget, Z-uniform uniqueness/
+    regularity/response, convex carrier invariant and exact-sector argument.
+    Check naive-domain negative controls; record pending claim/debt links.
+  - [x] Retain independent CIP-0 scientific PASS at its declared research
+    scope; add DB-04 consumer routing via the additive review disposition,
+    preserving the reviewed certificate and its pending historical fields.
+  - [x] **CIP-1 prepared:** freeze full interior input/reset; execute combined onset,
+    obstruction, fresh source-only k_CIP, unchanged binary split/relational
+    lift, both-role target roots and actual combined return. Distinguish
+    one-time Z reset from disabled-writer or repeated-clamp controls.
+    [Evidence and proof](./decisions/ATCCIP1CausalChain.md) include evolving
+    W/Z over two target requests per role, all four one-time controls,
+    the uniform return/71-proposal obstruction and bounded rejection pressure.
+  - [x] Retain independent CIP-1 PASS for the bounded complete causal chain;
+    no scoped debt discharge or native authority follows automatically.
+  - [x] **CIP-2 prepared:** consolidated domains, executable research reference,
+    independent oracle, covariance, lifecycle/replay/rollback and finite
+    representation. The bounded suite passes 2369 independent scalar and
+    146 covariance comparisons, 19 lifecycle rejections, four signed exact
+    R_Z boundary root/step cases, 11 boundary negatives and eight represented
+    target steps. Measured charge drift is retained, not silently repaired.
+    The successor explicitly pressures exact/signed R_Z endpoints and
+    represented neighbors; no reviewed CIP-0/CIP-1 source is rewritten.
+  - [x] Record [CIP-2 independent scientific PASS and local certificate integrity
+    PASS](./evidence/atc-cip-review/README.md), preserving the reviewer's absent-file
+    caveat: no independent exact retained-record comparison is claimed.
+  - [x] [Reconcile all 28 CIP-local debts and admit the exact successor](./decisions/ATCCIPClaimDebtAdjudication.md):
+    three conditional claims; 14 locally closed, six partial, eight not activated.
+    ROOT → CHAIN DB-04 routing is additive; prior admissions and reviewed
+    certificates are preserved. All global debts remain open.
+  - [x] Expose CIP reconstruction/debt/discovery/audit through the typed API
+    and portable CLI; reject source drift, scope widening and rehashed
+    manifest mutations. No native, browser/notebook or aggregate admission.
+
+  - [x] **A_RG2b / RGATC intake:** assess project fit and reuse the supplied
+    T/A theorem/completion and E/R section/reference package; retain only one
+    matching T/A predecessor and preserve scientific code/certificate identities.
+    [Program and review scope](./decisions/ATCRGATCProgram.md).
+  - [x] Validate package manifests, exact T/A regeneration and E/R retained
+    identity/consistency; distinguish supplied full execution from local checks.
+    Retain seven proposed handles and all 28 pending origin-debt routes.
+  - [x] RGATC-T/A and RGATC-E/R audit PASS reported by the user;
+    [review retained](./evidence/atc-rgatc/RGATC-Review.md) without changing
+    scientific inputs or claiming a fresh local full E/R run.
+  - [x] After review, reconcile all 28 A_RG2b-local debts and admit the exact
+    successor: seven conditional claims; 14 locally closed, six partial,
+    eight inactive. Preserve earlier admissions and all global debts.
+  - [x] Expose RGATC discovery/audit/claim/debt and five-realization summary
+    through the typed API and CLI; pressure source drift, scope widening,
+    reciprocal lineage and unchanged historical graph identities.
+  - [x] [Close all five Candidate-A bounded research programs](./decisions/ATCCandidateAResearchClosure.md):
+    A_OS, A_CI, A_PC, A_CI+PC, A_RG2b. Preserve the A_OS negative exclusion,
+    realization-specific domains and numerical limits; no Candidate-C,
+    native or aggregate ATC-2/ATC-3 closure.
 
     **Downstream Phase 9 handoff, not a G7 gate:** after reviewed topology
     proposal → extension paper → specification, implement native potential/

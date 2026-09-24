@@ -1,0 +1,43 @@
+{
+  "schema": "grcv4_atc_cip1_preregistration_v1",
+  "status": "fixed_before_causal_execution",
+  "candidate": "A",
+  "realization": "CI+PC",
+  "graph_convention": "accepted paired_source and paired_target; four leaves followed by parent or two children; unit reference weights and ridge one",
+  "parameters": {
+    "alpha": "3/8192",
+    "beta": "3/8192",
+    "gamma": "3/4096",
+    "chi": "3/64",
+    "kh": "1/2",
+    "kah": "3/4",
+    "a": "19/4",
+    "nu": "1/65536"
+  },
+  "rho_inst": 1,
+  "zeta_A": 1,
+  "tau_A": "1/(8 log 2)",
+  "tau_PC": "1/(8 log 2)",
+  "current": {
+    "C": ["61/50", "61/50", "6/5", "6/5", "104/25"],
+    "W": ["97/100", "97/100", "99/100", "99/100"],
+    "Z_diagonal": "1/16384"
+  },
+  "reset": {
+    "C": ["9/8", "9/8", "231/200", "231/200", "111/25"],
+    "W": ["49/50", "49/50", "97/100", "97/100"],
+    "Z_diagonal": "1/24576"
+  },
+  "onset_request": "1/8",
+  "target_requests_each_role": ["1/8", "3/25"],
+  "selector": "fresh committed combined-root positive sector inflows; source current only; uniquely resolved round-even 2**16 share",
+  "share_interval": ["31/64", "33/64"],
+  "required_k": null,
+  "carrier_policy": "pc_star_fission_relational_lift_lossless_v1",
+  "controls": ["no_split", "W_reset_only", "Z_reset_only", "both_reset"],
+  "control_timing": "one-time intervention on the live post-onset source, before any event; continue the unchanged CI+PC writer; one numerical beat plus uniform positivity-obstruction proof",
+  "failure_policy": "stop and retain any genuine failed arrow; no target search, witness retuning, projection or PSD fallback",
+  "event_duration": 0,
+  "extra_event_writers": 0,
+  "native_authority": false
+}

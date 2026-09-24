@@ -1,0 +1,31 @@
+{
+  "schema": "rgatc_er_scope_disposition_v1",
+  "record_digest": "0c2b8ae02c89f8718e4b90387cab4af810f2d77a0d1b611c7e03b7d7e5960bf8",
+  "independent_acceptance": false,
+  "origin_debts_modified": false,
+  "realization_local_debts_modified": false,
+  "implemented": [
+    "certified finite invariant-section evaluator",
+    "exact frozen witness onset and source-only selection",
+    "both-role target reconstruction",
+    "finite target and unsplit controls",
+    "independent Decimal checks",
+    "one full coordinate-covariance transformation",
+    "atomic research owner and physical replay",
+    "bounded conditional research dispatcher",
+    "finite binary64 publication bridge",
+    "local represented RG-invariance defect bound"
+  ],
+  "open": [
+    "independent review of T/A and E/R",
+    "formal source/profile admission",
+    "native completion/current/solver/transaction implementation",
+    "uniform finite-work success on the full theoretical domain",
+    "all-binary64 internal conformance",
+    "indefinite numerical conservation and continuation",
+    "practical larger positive beat/gain domains",
+    "active exterior graphs",
+    "repeated-event/non-Zeno results",
+    "aggregate ATC-2 closure"
+  ]
+}

@@ -9,14 +9,16 @@ gate that has not been rerun.
 
 ## ATC bounded research successor
 
-For the current admitted A_OS/A_PC/A_CI research context use
-`grcv4_explorer.atc_ci.load_current_forensic_context` and the
-[ATC query guide](./ATCQueryGuide.md). `atc_ci.reconstruction_path` follows
-the accepted ancestry; choose `atc`, `atc_pc` or `atc_ci.debt_lifecycle`
-explicitly for the intended profile-local debt view. These are conditional
-bounded research results, not native ATC support. `atc-ci-query discover`
-observes the CI successor inventory and `audit` validates it with its entire
-predecessor context. Older `atc-query`/`atc-pc-query` retain their frozen scopes.
+For the current admitted five-realization Candidate-A research context use
+`grcv4_explorer.atc_rgatc.load_current_forensic_context` and the
+[ATC query guide](./ATCQueryGuide.md). `atc_rgatc.reconstruction_path` follows
+accepted ancestry; choose `atc`, `atc_pc`, `atc_ci`, `atc_cip` or
+`atc_rgatc.debt_lifecycle` explicitly for the intended profile-local debt view.
+These are bounded research results, including a retained A_OS negative
+exclusion, not native ATC support. `atc-rgatc-query discover` observes the
+RGATC inventory; `audit` validates its complete predecessor chain;
+`summary` returns five source-bound program-closure rows.
+Older ATC commands retain their frozen scopes.
 Ordinary historical discovery does not cover ATC evidence. The loaders below
 retain pre-ATC authority and cannot resolve these research claims.
 

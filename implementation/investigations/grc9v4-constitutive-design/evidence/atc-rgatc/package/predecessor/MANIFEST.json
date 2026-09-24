@@ -1,0 +1,50 @@
+{
+  "schema": "rgatc_ta_package_manifest_v1",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b4761b4fb61cb5918c50042e8702c0f28d8854eec88dfb57e6446ee045d90861",
+      "bytes": 3043
+    },
+    {
+      "path": "RGATC-A.md",
+      "sha256": "1cc5dea890c763b6e64175ac9d1fba1acbf79b01889def3f363daef0cf811e9d",
+      "bytes": 19502
+    },
+    {
+      "path": "RGATC-T.md",
+      "sha256": "0bed7bd0d7b6551d3b1662ba9506a1f47b7672856c31d1e99667054ea7518a4d",
+      "bytes": 14450
+    },
+    {
+      "path": "RGATC-TA-Certificate.json",
+      "sha256": "857e15f3e2a25f76f016e336af11fc84ba7c21401bf16e3a9d5b11e3bb14c162",
+      "bytes": 12691
+    },
+    {
+      "path": "RGATC-TA-Pressure.json",
+      "sha256": "c0520ec4ae01266d2114d39a068427577d20eee3469e0f155e878640cbe9201f",
+      "bytes": 1588
+    },
+    {
+      "path": "RGATC-TA-SourceMap.json",
+      "sha256": "94fc8959690db8d6f71d82afaf56bbb048330c5640961d2af10a0ea28d6154c9",
+      "bytes": 4459
+    },
+    {
+      "path": "check_rgatc_ta.py",
+      "sha256": "c891ff32e0407fae90111bcb340deedbe5193a3132d399ac53c17e0607eb7a5b",
+      "bytes": 14716
+    },
+    {
+      "path": "deps/retained/arithmetic/certify_atc_sector_readback_point.py",
+      "sha256": "86373eb2f339d606a72ca38ceab6372438334d1c2ecbf0410c02520fb09e1731",
+      "bytes": 16204
+    },
+    {
+      "path": "pressure_rgatc_ta.py",
+      "sha256": "0c2bf397140671041f606d3c9262343c2f73ac325297a1525644a23ee3ca56fb",
+      "bytes": 3009
+    }
+  ]
+}

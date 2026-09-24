@@ -4514,3 +4514,176 @@ this acceptance. The new CI graph digest is
 No extra CI scientific stage is needed. Other realization work remains a
 separate next task, followed by the reviewed topology proposal/paper/spec
 route before any Phase 9 native implementation. Aggregate ATC-2 stays open.
+
+## 2026-09-23 — A_CI+PC coupled successor; CIP-0 prepared
+
+The user's two directions authorize the compact
+[CIP-0 → CIP-1 → CIP-2 program](./decisions/ATCCIPCoupledProgram.md).
+Reuse applicable fixed-H, graph, transfer and relational-carrier lemmas;
+do not combine realization certificates by intersection. Accepted CI/PC
+scientific files and graph identities remain unchanged.
+
+CIP-0 prepares native step/source-identity checks and an exact sufficient
+coupled domain: R_Z=1/5000, H radius 1/4096, kappa_H in [1/2,3/5]. The
+fixed-Z root has uniform contraction, regularity and a carrier-response
+bound. Source/target displacement budgets and convex Z-writing close;
+equivariance supplies exact decoration preservation. The old PC radius
+fails this sufficient joint budget, not an existence theorem. Native staging
+uses a separate shipped fixture, not the nonlinear research witness.
+
+The checker retains bounded typed predecessor claim/debt traces and proposed
+CIP routes. CIP-0 is pending independent review; no claim is source-admitted
+and no debt is discharged. CIP-1 still owns the actual combined selector,
+both-role readmission and causal return/controls; CIP-2 owns reference,
+finite representation/lifecycle and subsequent scoped adjudication. Correct
+the direction's control shorthand: one-time Z=0 does not disable its writer.
+Also correct the stale unchecked CI-adjudication item to match the accepted
+CI record above; this is not new CI work.
+
+## 2026-09-23 — CIP-1 combined causal chain prepared
+
+The user authorizes [CIP-1](./decisions/ATCCIP1CausalChain.md), without
+claiming a separate independent CIP-0 review. Freeze full current/reset
+C/W/Z, scalar profile, requests and the accepted relational carrier law
+before evaluating the chain. Preserve CIP-0 and accepted CI/PC sources.
+
+The nonlinear research witness passes positive ordinary onset, fresh
+source-only allocation, lossless signed-carrier transport, independent
+both-role full combined readmission, and two target beats per role with
+both histories evolving. The second request differs from the first. All
+four one-time controls retain source growth, including nonzero regenerated
+Z after its reset. Total-H-uniform estimates give the same resource return
+factor as CI-2; the actual carrier recurrence closes by a variable-request
+convolution. These prove indefinite exact-real return and the 71-proposal
+unsplit obstruction, not simulated long trajectories or whole-box formation.
+
+Seven rejection cases cover guard, policy, CIP carrier/gain exclusions,
+actual reset transfer domain and injected ordinary/reset-target readmission.
+CHAIN-01 remains a proposed conditional claim with pending scoped debt links.
+CIP-2 independent reference, covariance/lifecycle/representation, then
+review and all-28 adjudication/source admission remain. No native or aggregate
+closure is inferred. No target search or PSD fallback was performed.
+
+## 2026-09-23 — CIP-0/CIP-1 independent PASS; CIP-2 reference prepared
+
+The user supplies independent scientific PASS for CIP-0 and bounded
+complete-chain PASS for CIP-1 and authorizes CIP-2. Retain the two reviews
+under `evidence/atc-cip-successor`. An additive review disposition routes
+DB-04 from ROOT-00's prospective operand to CHAIN-01's executed consumer;
+the original records, science and hashes are unchanged. This is routing,
+not local/global debt discharge. Reviewer extra runs are diagnostic reports,
+not a newly executed local campaign. Keep the valid conservative carrier
+convolution; its optional sharper coefficient is not a new obligation.
+
+The [CIP-2 successor](./decisions/ATCCIP2Reference.md) passes its bounded
+local suite: 2369 independent Decimal scalar comparisons; 146 full-graph
+representation comparisons; 19 lifecycle/proof-interface negatives; four
+signed exact carrier-radius root/step cases and 11 boundary negatives;
+four represented target steps for each actual role. Both exact and dyadic
+admission distinguish inside/outside R_Z without a tolerance extension.
+Outward interval widths never replace exact physical predicates.
+
+The largest finite C/W/Z/J/H error is approximately 4.3921e-16, below 1e-10.
+Maximum measured absolute charge drift is 2^-50; it remains a numerical-policy
+finding, not exact-charge authority. Ordinary/event/reset replay preserves
+the independent role histories, and failures preserve the whole publication.
+This is research-owner conformance, not production K0 or native ATC.
+
+CIP-2 still needs independent review, then all-28 scoped claim/debt
+adjudication and exact successor source admission. Existing CI/PC APIs and
+accepted graphs remain unchanged. No extra discovery stage, global debt
+closure, whole-box formation or aggregate ATC-2 acceptance is inferred.
+
+## 2026-09-24 — CIP-2 scientific PASS; retained integrity verified locally
+
+The [independent review and additive disposition](./evidence/atc-cip-review/README.md)
+find no scientific/reference correction. CIP-0–CIP-2 complete the bounded
+A_CI+PC paired research derivation, ready for separate all-28 scoped
+adjudication/source admission. Preserve the reviewed science and certificates.
+
+The reviewer did not receive ATCCIP2Certificate.json and does not certify its
+digest, source bindings or exact equality with their rerun. The certificate
+exists locally; CIP-0/1/2 `--check` all pass on the current sources. This is
+local integrity verification, not independent exact-record comparison. The
+reviewer's reported counts/errors agree, but no raw reviewer record is supplied.
+The later review is outside the checker's discovered review-input directory,
+so recording it does not change the reviewed execution inventory.
+
+No new numerical campaign, claim admission or local/global debt discharge is
+performed here. Native/K0 engineering remains downstream Phase 9; aggregate
+ATC-2, wider formation and other-family authority remain open.
+
+## 2026-09-24 — A_CI+PC scoped claim/debt adjudication and source admission
+
+The user authorizes the proposed next step. The
+[CIP decision](./decisions/ATCCIPClaimDebtAdjudication.md) admits three
+conditional paired research claims and all 28 separate CIP debt rows:
+14 locally closed, six partial, eight not activated, all globally open.
+ROOT retains the combined-domain/staging distinction; CHAIN retains its
+actual fresh selection and signed both-role lift; REFERENCE retains its
+bounded oracle/lifecycle/representation class and numerical charge drift.
+
+The additive DB-04 route is consumed explicitly. DB-05 closes on the combined
+root proof, DB-15 on the actual signed history map, and DB-24 only on the pinned
+inventory and exact append-only graph rebuild. Typed queries retain source
+references, conditioned lineage and trace identities. Accepted CI/PC/A_OS
+nodes, edges and graph identities are unchanged. Scientific certificate bytes
+and historical pending flags remain unchanged.
+
+The reviewer's unprovided retained-record comparison is not promoted to PASS.
+Local source-integrity checks are separate. No numerical campaign, native
+runtime, browser/notebook, whole-box formation or aggregate acceptance is added.
+## 2026-09-24 — A_RG2b theory-first package intake, not adjudication
+
+The user supplies T/A and E/R packages and asks for fit assessment and reuse.
+The [program](./decisions/ATCRGATCProgram.md) fits the C/W-only, lagged,
+completion-relative Lipschitz RG2b architecture. Its boundary-covering
+auxiliary completion and conservative frozen duration/gain remain proposed
+extensions, not native identifiers or inherited CI request domains.
+
+The embedded T/A predecessor matches the separate package exactly. Retain
+one copy; preserve scientific code, proof text and certificate bytes.
+Normalize only navigation/source correspondence/reproduction metadata and
+refresh packaging manifests. Local T/A regeneration and E/R identity/
+consistency pass; the full E/R campaign remains supplied execution evidence.
+
+Seven handles and all 28 pending debt routes are recorded without discharge
+or admission. Next is independent review of the supplied work, followed by
+separate scoped adjudication. No recreation of its proofs/evaluator and no
+native, paper/spec or aggregate scope is authorized by this intake.
+
+## 2026-09-24 — RGATC-T/A and E/R audit PASS reported
+
+The user reports “audit passes”. The
+[additive review record](./evidence/atc-rgatc/RGATC-Review.md) records PASS for
+the bounded A_RG2b research package and completes its independent-review gate.
+No detailed report or new execution record was supplied, so no particular
+reviewer commands, full rerun or raw-record comparison are inferred.
+
+Scientific inputs, manifests and intake identities remain unchanged. Seven
+proposed handles and all 28 A_RG2b debt routes still require separate scoped
+adjudication/source admission. No debt discharge, native implementation,
+paper/spec propagation or aggregate ATC-2 closure is performed here.
+
+## 2026-09-24 — A_RG2b admission and all-five Candidate-A research closeout
+
+The user authorizes closing all five Candidate-A realization research programs
+after the RGATC audit PASS. The
+[RGATC decision](./decisions/ATCRGATCClaimDebtAdjudication.md) admits seven
+conditional T/A/E/R claims, preserving the lagged completion-relative
+Lipschitz section, frozen beat/gain and exact-real versus finite numerical
+distinction. All 28 RG-local debts are explicit: 14 closed, six partial,
+eight inactive; origin/global debts stay open.
+
+The append-only `atc_rgatc` context pins the complete supplied package and
+scoped ledger over unchanged CIP/CI/PC/A_OS authorities. Typed reconstruction,
+debt, discovery/audit and five-realization summary are available through
+`atc-rgatc-query`. Source mutations and authority widening fail closed.
+
+The [Candidate-A closeout](./decisions/ATCCandidateAResearchClosure.md)
+consolidates 55 accepted research claims (54 conditional, one negative)
+and 140 distinct local debt dispositions, without widening their domains.
+The initial summary check caught the historical A_OS negative exclusion
+being counted as conditional; the summary was corrected, not the old ledger.
+No numerical campaign or scientific input was changed. Native engineering,
+Candidate C, broader capabilities and aggregate ATC-2/ATC-3 remain separate.

@@ -1,0 +1,24 @@
+{
+  "schema": "grcv4_atc_cip01_review_disposition_v1",
+  "CIP0": "independent_scientific_PASS",
+  "CIP1": "independent_PASS_bounded_complete_causal_chain",
+  "reviewed_CIP0_record_digest": "952a83c506882b97d26b8c146941a977b30ef0e159367d56782b5c032b6ff79e",
+  "reviewed_CIP1_record_digest": "c3dc84d287ebd4f3c8317f644df1f7b92a87a3fc344037aefba35e1f0acea710",
+  "reviews": ["CIP0-IndependentReview.md", "CIP1-IndependentReview.md"],
+  "correction": {
+    "claim_id": "ATC-CIP-ROOT-00",
+    "additional_debt_ref": "ATC7-DB-04",
+    "status": "pending_not_discharged",
+    "successor_claim_id": "ATC-CIP-CHAIN-01",
+    "reason": "CIP0 supplies the prospective fresh event operand; CIP1 executes its source-only consumer. Research lifecycle and final scoped adjudication remain CIP2/downstream obligations.",
+    "historical_certificate_rewritten": false
+  },
+  "CIP2_required_pressure": ["exact and represented R_Z boundaries", "independent coupled reference", "research lifecycle/replay/rollback", "covariance", "finite represented-number bridge", "all-28 scoped debt reconciliation after review"],
+  "sharper_decay_bound": "optional valid improvement, not needed to reopen the reviewed conservative 25/37 convolution",
+  "reviewer_extra_runs": "reported diagnostic evidence, not locally rerun or substituted for proofs",
+  "native_work": "later Phase 9, not a CIP2 acceptance criterion",
+  "graph_admitted": false,
+  "local_debt_discharge": false,
+  "global_debt_discharge": false,
+  "ATC2_closed": false
+}

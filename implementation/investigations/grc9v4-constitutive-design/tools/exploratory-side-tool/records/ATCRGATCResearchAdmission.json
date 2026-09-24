@@ -1,0 +1,53 @@
+{
+  "schema": "grcv4_atc_rgatc_research_admission_v1",
+  "status": "accepted_bounded_research_source_admission",
+  "historical_graph_digest": "541bf8c23afcca2f5f3b3a61e9c986e9720b270610759b2e0f4c8105673cb89c",
+  "historical_authority_extension_digest": "f98cb10a902dd11b6df76a36fae60aa23c55b648b8ddeee8df64b2b411c610cc",
+  "evidence_files": {
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc-admission/ATCRGATCClaimDebtLedger.json": "4e5e8c8b764672ec3b2c1ad8148ce930e6f2ca6201a96fbf63b8e690da506338",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Direction.md": "ed2229926332abc08a5fe1c513bff7065bca6eb19babde2ce8b4472cde961c16",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Intake.json": "ab139fba6f5579ea312549d4465e68be182606a9240ba72fd9ff5dbb3a7d1e0b",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Review.md": "883947b4d4cd2771d8fdc9203e19847369c0fb2f5e3155de705eb84bb2bbb53d",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/MANIFEST-ER.json": "92b99a6ee1936f3dd166ce2c6a7880218ecba10df235e8a1e09e3a5682e995ea",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/README.md": "367db4ceae63f1ec295ea429714e0e882c77c9b425457e501c145278181c788e",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/REPRODUCTION.json": "8b0057d78366645954058e05c0d0bea268689bbffbb2efc1cfd856d36b25d887",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-E.md": "b3b089955bc9636b62b5e82acb12b7387bab85e768c29c221cb8ec4b55e7247d",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-ER-Certificate.json": "756e135d386a7685eb70332596e48af3d40e51019d6042c9d3f1d6860c69b73c",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-ER-Disposition.json": "03c29d98b2a0e11237481bf9ed219a89974a91f7100dbbed432b0e93f6df604a",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-ER-Pressure.json": "d6319720e8cad42c10e3f8070df48d7c084a0d4b9293e6f2be29f1ebd36c8c3a",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-R-Scope.md": "17808b606b7bda3339c307a34931a7d950bb2ec61484c8c631a19b4bb2cf6ee5",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-R-SectionEvaluator.md": "c4298e5d87a58bb7c052b2ed409a7bb1f6b2797ac0731e34bdabbf54658fa57e",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/build_reports.py": "dca1e1e02f6ff13d00c3797c38f4d449f266db03233b5fa0d5eab33440fe6632",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/check_rgatc_er.py": "d8a990ad5cba73b61a201a97008717cfe7d24e7fca07259f06f5cae482da7f11",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/MANIFEST.json": "6d071bbe13ea74b78181476505096e5c4edac56c0a3270d17d266bb9ccd9d136",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/README.md": "b4761b4fb61cb5918c50042e8702c0f28d8854eec88dfb57e6446ee045d90861",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-A.md": "1cc5dea890c763b6e64175ac9d1fba1acbf79b01889def3f363daef0cf811e9d",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-T.md": "0bed7bd0d7b6551d3b1662ba9506a1f47b7672856c31d1e99667054ea7518a4d",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-TA-Certificate.json": "857e15f3e2a25f76f016e336af11fc84ba7c21401bf16e3a9d5b11e3bb14c162",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-TA-Pressure.json": "c0520ec4ae01266d2114d39a068427577d20eee3469e0f155e878640cbe9201f",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-TA-SourceMap.json": "94fc8959690db8d6f71d82afaf56bbb048330c5640961d2af10a0ea28d6154c9",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/check_rgatc_ta.py": "c891ff32e0407fae90111bcb340deedbe5193a3132d399ac53c17e0607eb7a5b",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/deps/retained/arithmetic/certify_atc_sector_readback_point.py": "86373eb2f339d606a72ca38ceab6372438334d1c2ecbf0410c02520fb09e1731",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/pressure_rgatc_ta.py": "0c2bf397140671041f606d3c9262343c2f73ac325297a1525644a23ee3ca56fb",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/pressure_rgatc_er.py": "1fcb222b66f8923e6b537d86eef90752118a290a540ad5bf06dd21337819a84b",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/rgatc_oracle.py": "73b32a86230fee2a79989ceda35d2c7023624a32e807dde48d2b91cd68c45d6f",
+    "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/rgatc_reference.py": "688c8975b57e1c9019675d0c9f9e91e8b585b8e75247559607eed9126a6830be"
+  },
+  "support_files": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCRGATCClaimDebtAdjudication.md",
+      "sha256": "4f6b7169f1ec54c13708082559e3a3388a2d9ae561b2e92a89e86cb3cd0328e7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCandidateAResearchClosure.md",
+      "sha256": "ead82318c40f584df85166f7c4e512bf3f6cb333afbc477c84b556e8cf661ff0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    }
+  ],
+  "scope": "Seven conditional paired A_RG2b research claims, 28 RG-local debt transformations and a derived five-realization Candidate-A bounded research closeout. Historical authorities unchanged; no native or aggregate closure.",
+  "graph_digest": "6c18c26df84edda1202e0bf799741e152cfac0b871e3fc9c3c14fd86c8a93851",
+  "record_digest": "41525026bc6e41ef21164619fc2a5d97e95f1307a9f721139d26da47739e8803"
+}
