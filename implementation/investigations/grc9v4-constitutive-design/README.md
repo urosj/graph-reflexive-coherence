@@ -3,6 +3,46 @@
 **Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
 **Exploration surface:** ET-C9 accepted as a bounded read-only exploratory tool
 
+## Current ATC scope and next scientific direction — 2026-09-24
+
+The ATC investigation has established bounded source-conditioned binary-fission
+constructions for all five Candidate-A GRCV4 realizations: A_OS, A_CI, A_PC,
+A_CI+PC and A_RG2b. Their shared construction uses source information to
+determine a binary refinement; authoritative state/history is
+transferred according to realization-specific rules; and the target
+realization is reconstructed and re-admitted with continued positive evolution.
+The [five-realization closeout](./decisions/ATCCandidateAResearchClosure.md)
+retains each result's exact domain and evidence ceiling.
+
+Evidence for source formation and automatic event dispatch differs between
+realizations. In particular, A_OS G7 validates source-only selection, transfer
+and continuation from admitted event-state preimages; it does not demonstrate
+an automatic ordinary-evolution-to-event admission path. Its later accepted
+fission construction is not merely the earlier feedback-stability control.
+See the [accepted G7 scope](./decisions/ATCSectorReferenceAdjudication.md#2-accepted-g7-scope).
+
+The common proved source-conditioned partition construction across all five
+is the specific decorated 2+2 source construction. The binary
+refinement operation and much of the continuation machinery are more general,
+and A_OS has separately bounded embedding results, but these do not supply
+a topology-independent law deriving an admissible partition on an arbitrary
+finite graph. The 2+2 construction is the first proven nonempty certificate
+class and a conformance case, **not the final general ATC law**.
+
+The next scientific stage is to abstract these results into a general
+conditional fission theorem on arbitrary topology, then develop progressively
+more general endogenous partition certificates. The eventual goal is a law
+defined for every admissible graph/state that either identifies a lawful
+binary refinement or returns no topology event, without an external chooser
+or fitting the partition to target success. Finite numerical nonresolution
+must remain distinct from a certified no-event outcome.
+
+This states the continuation direction, not a newly proved theorem or expanded
+admission. The five bounded research programs remain closed; topology-independent
+ATC, aggregate ATC-2 and native implementation are not thereby complete.
+
+## Investigation history
+
 **Current continuation — 2026-09-21:** the
 [ATC successor research opening](./decisions/ATCSuccessorInvestigationOpening.md)
 starts a graph-generic autonomous-topology investigation from the accepted

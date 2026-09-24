@@ -19,9 +19,22 @@ are adjudicated: 14 closed, six partial, eight inactive, all globally open.
 [review record](./investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Review.md).
 The `atc-rgatc-query` CLI exposes discovery, audit, claim/debt traces and
 `summary` for all five realization ledgers. Earlier admissions are unchanged.
-No further A-realization discovery is needed simply to finish this program.
-**Next decision: remaining ATC capability scope or authorized propagation
-through topology proposal → paper → specifications.**
+No further A-realization discovery is needed simply to finish this bounded program.
+**Scope caution:** all five have bounded source-conditioned fission
+constructions, with the decorated 2+2 source as their common proved class.
+A_OS G7 validates selection, transfer and continuation from admitted event
+states, not automatic ordinary-evolution-to-event admission. More general binary
+mechanics, continuation machinery and bounded A_OS embeddings do not yet
+provide a topology-independent partition law. This is the first proven
+nonempty certificate class and a conformance case, not the final ATC law.
+**Next scientific direction:** a general conditional fission theorem on
+arbitrary topology, followed by broader endogenous partition certificates.
+The eventual law should select a lawful refinement or return no event from
+admissible source information, without an external chooser or target-success
+fitting; numerical nonresolution is not certified absence of an event.
+See the [current scope note](./investigations/grc9v4-constitutive-design/README.md#current-atc-scope-and-next-scientific-direction--2026-09-24).
+This records direction only; new work has not started. Scientific propagation
+still follows topology proposal → paper → specifications.
 Candidate C, native implementation and aggregate ATC-2/ATC-3 remain open.
 
 ## Completed preceding research — A_CI+PC
