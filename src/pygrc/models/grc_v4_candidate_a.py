@@ -716,6 +716,12 @@ class CandidateACurrent:
         return _identity("grcv4-a-fixed-stage-sha256", self.to_payload())
 
     def read_back(self, current: PhysicalFlux) -> CandidateAReadBack:
+        return self._read_back(current, self.identity)
+
+    def _read_back(
+        self, current: PhysicalFlux, source_identity: str
+    ) -> CandidateAReadBack:
+        """Run certified read-back using an identity from this fresh construction."""
         ref = self.inputs.geometry.reference
         _require_coordinates(current, PhysicalFlux, ref.graph)
         params = ref.profile.params_resolved.candidate
@@ -740,7 +746,7 @@ class CandidateACurrent:
         except CandidateCStageError as exc:
             raise CandidateAStageError(exc.disposition, str(exc)) from exc
         return CandidateAReadBack(
-            self.identity,
+            source_identity,
             current,
             flux,
             OneForm(ref.graph, tuple(row[0] for row in flat)),

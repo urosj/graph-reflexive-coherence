@@ -9,7 +9,7 @@ There are no injectable production solvers, commit callbacks or faults.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, fields, replace
+from dataclasses import dataclass, field, fields, replace
 from pathlib import Path
 from fractions import Fraction
 from math import isfinite
@@ -75,7 +75,7 @@ from .grc_v4_step import (
     _RESOURCE_SOLVER_FAILURES,
     _ledger,
     _resource_charge,
-    bind_step_result,
+    _bind_owned_step_result,
     make_commit_receipts,
     negative_duration_result,
 )
@@ -473,6 +473,12 @@ class _OwnedCOS:
     commits: tuple[CommitPayload, ...]
     reference: GRCV4ReferenceGeometry
     transitions: tuple[FrozenJSONMap, ...] = ()
+    archive: _CheckedArchive = field(kw_only=True, repr=False, compare=False)
+
+    @property
+    def ledger(self) -> tuple[SuccessfulReceiptEnvelope, ...]:
+        """Capture exposed wire records through their private archive owner."""
+        return self.archive.read_ledger(self.state.receipt_ledger)
 
 
 def _state_inputs(
@@ -1223,307 +1229,529 @@ def _check_step_target(before: GeometryStageInputs, after: GeometryStageInputs) 
         raise V4IdentityError("zero-duration target changes scientific state")
 
 
-def _restore_commits(
-    records: list[Any],
-    ledger: tuple[SuccessfulReceiptEnvelope, ...],
-    reference: GRCV4ReferenceGeometry,
-    Q_target: float,
-    reset_digest: str,
-    crossings: dict[str, _Crossing] | None = None,
-) -> tuple[CommitPayload, ...]:
-    """Check content and ordered commit coverage of this receiver's ledger.
+@dataclass(frozen=True, slots=True)
+class _ArchiveLineage:
+    receipt_ids: frozenset[str]
+    primary: str | None
+    reset: str | None
+    clock: tuple[int, float] | None
 
-    This bounded import does not certify the truth of an externally supplied
-    history. Registered crossing preimages reconstruct lifecycle maps;
-    alternative parent conventions are not imported here.
+
+@dataclass(frozen=True, slots=True)
+class _ArchiveScience:
+    components: dict[str, tuple[str, ...]]
+    clocks: dict[str, tuple[int, float]]
+
+
+@dataclass(frozen=True, slots=True)
+class _ArchivePrefix:
+    receipts: tuple[object, ...]
+    commits: tuple[object, ...]
+    binding: bytes
+
+
+@dataclass(frozen=True, slots=True)
+class _CheckedArchive:
+    """Private validation facts for one exact published archive prefix.
+
+    Full import and append use the same commit and scientific-claim checkers.
+    Only this owner decides whether prefix facts can be reused. Its comparison
+    projections are detached from exposed frozen DTOs; forced mutation invalidates
+    reuse. Prospective appends copy the indexes, leaving rollback facts intact.
+    No scientific admission, serialization format or validation mode lives here.
     """
-    commits: list[CommitPayload] = []
-    position = 0
-    seen: set[str] = set()
-    last_primary: str | None = None
-    last_reset: str | None = None
-    crossings = {} if crossings is None else crossings
-    crossed: list[str] = []
-    final_reference, final_charge = reference, Q_target
-    if crossings:
-        first = next(iter(crossings.values()))
-        reference, Q_target = first.before.geometry.reference, first.before.Q_target
-    for record in records:
-        commit = CommitPayload.from_payload(record["payload"])
-        commit_id = payload_identity(
-            "commit_payload", commit.to_payload(), expected=record["commit_id"]
-        )
-        group = ledger[position : position + len(commit.emitted_receipt_ids)]
-        representation = bool(group) and group[0].identity_payload["schema_version"] == "grcv4-representation-transport-receipt-v1"
-        if len(group) != (1 if representation else 4) or tuple(r.receipt_id for r in group) != commit.emitted_receipt_ids:
-            raise V4IdentityError(
-                "commit does not cover its ordered four-receipt delta"
-            )
-        primary = group[0].identity_payload.to_dict()
-        kind = primary["schema_version"]
-        if kind not in {
-            "grcv4-step-commit-receipt-v1",
-            "grcv4-reset-receipt-v1",
-            "grcv4-rebase-receipt-v1",
-            "grcv4-profile-migration-receipt-v1",
-            "grcv4-profile-migration-receipt-v2",
-            "grcv4-topology-event-receipt-v1",
-            "grcv4-topology-event-receipt-v2",
-            "grcv4-representation-transport-receipt-v1",
-        }:
-            raise V4SchemaError("unsupported lifecycle operation in V4 snapshot")
-        source_reference = reference
-        target_reference = reference
-        crossing = crossings.get(commit_id)
-        if kind in {
-            "grcv4-profile-migration-receipt-v1",
-            "grcv4-profile-migration-receipt-v2",
-            "grcv4-topology-event-receipt-v1",
-            "grcv4-topology-event-receipt-v2",
-            "grcv4-representation-transport-receipt-v1",
-        }:
-            if crossing is None:
-                raise V4IdentityError(
-                    "crossing receipt has no reconstruction preimages"
-                )
-            if (
-                crossing.before.geometry.reference != reference
-                or crossing.before.Q_target != Q_target
-            ):
-                raise V4IdentityError(
-                    "crossing source breaks ordered profile/charge lineage"
-                )
-            expected = _crossing_receipts(
-                crossing.before, crossing.after, crossing.request, ledger[:position], crossing.initializer_pair, crossing.event_version
-            )
-            if canonical_json_bytes(expected) != canonical_json_bytes(
-                [r.identity_payload.to_dict() for r in group]
-            ):
-                raise V4IdentityError(
-                    "crossing receipts contradict their reconstructed whole-lifecycle operation"
-                )
-            if (commit.target_step_index, commit.target_time) != (
-                crossing.after.step_index,
-                crossing.after.time,
-            ):
-                raise V4IdentityError(
-                    "crossing commit changes its readmitted target clock"
-                )
-            reference_ids = {} if representation else _crossing_references(crossing.request, reference)
-            target_reference = crossing.after.geometry.reference
-            Q_target = crossing.after.Q_target
-            crossed.append(commit_id)
-        else:
-            if crossing is not None:
-                raise V4IdentityError(
-                    "ordinary/administrative commit has foreign crossing preimages"
-                )
-            _, reference_ids = _receipt_context(reference)
-        if commits:
-            previous = commits[-1]
-            index_delta = commit.target_step_index - previous.target_step_index
-            if kind == "grcv4-step-commit-receipt-v1":
-                # Assignment, reset and rebase do not write the clock. Ordinary
-                # dt=0 keeps both fields; positive binary64 dt increments the
-                # index once and adds at least the smallest positive duration.
-                valid_clock = (
-                    index_delta == 0 and commit.target_time == previous.target_time
-                    and commit.source_state_digest == commit.target_state_digest
-                ) or (
-                    index_delta == 1
-                    and commit.target_time >= previous.target_time + 5e-324
-                )
-                if index_delta == 1 and reference.profile.identity_payload.realization == "RG2b":
-                    # Retained clocks decide this contradiction without an
-                    # invented origin, trajectory replay or adjacency rule.
-                    # Exact input sum, rounded once to binary64; large clocks
-                    # may lawfully retain the same represented time.
-                    try:
-                        expected = float(Fraction(previous.target_time) + Fraction(_rg2b_beat(reference)))
-                    except OverflowError as exc:
-                        raise V4IdentityError("historical RG2b clock overflow") from exc
-                    valid_clock = isfinite(expected) and commit.target_time == expected
-            else:
-                valid_clock = (
-                    index_delta == 0 and commit.target_time == previous.target_time
-                )
-            if not valid_clock:
-                raise V4IdentityError(
-                    "impossible clock transition in local commit history"
-                )
-        core = primary["core"]
-        assert isinstance(core, dict)
-        expected_parent = last_primary
-        if core["parent_receipt_ids"] != (
-            [] if expected_parent is None else [expected_parent]
-        ):
-            raise V4IdentityError(
-                "snapshot violates the accepted previous-successful-primary parent convention"
-            )
-        if (
-            core["operation_id"],
-            core["source_state_digest"],
-            core["target_state_digest"],
-        ) != (
-            commit.operation_id,
-            commit.source_state_digest,
-            commit.target_state_digest,
-        ):
-            raise V4IdentityError(
-                "receipt and commit operation/state bindings disagree"
-            )
-        if any(core[key] != expected for key, expected in reference_ids.items()):
-            raise V4IdentityError(
-                "receipt resource/history reference identity is unreconstructible"
-            )
-        if last_reset is not None and core["source_reset_digest"] != last_reset:
-            raise V4IdentityError("local operation silently replaces reset baseline")
-        last_reset = cast(str, core["target_reset_digest"])
-        for prefix, endpoint in (
-            ("source", source_reference),
-            ("target", target_reference),
-        ):
-            if (core[prefix + "_graph_digest"], core[prefix + "_model_identity"]) != (
-                endpoint.graph.graph_digest,
-                endpoint.profile.complete_profile_id,
-            ):
-                raise V4IdentityError(
-                    "fixed-profile snapshot contains a foreign graph/profile receipt"
-                )
-        for receipt in group:
-            if (
-                receipt.receipt_id in seen
-                or receipt.commit_id != commit_id
-                or receipt.identity_payload["core"] != group[0].identity_payload["core"]
-            ):
-                raise V4IdentityError(
-                    "duplicate receipt or inconsistent commit/core ownership"
-                )
-            seen.add(receipt.receipt_id)
-        if representation:
-            # The full charge evidence and exact action were recomputed above.
-            # Shared identity/parent/reset/clock checks still apply to this group.
-            last_primary = group[0].receipt_id
-            position += 1
-            commits.append(commit)
-            reference = target_reference
-            continue
-        charge = group[1].identity_payload
-        if charge["schema_version"] != "grcv4-charge-receipt-v1":
-            raise V4IdentityError("missing ordered charge receipt")
-        if charge["target_charge"] != Q_target:
-            raise V4IdentityError("receipt changes the fixed lifecycle charge target")
-        actual = cast(float, charge["admitted_charge"])
-        delta = Fraction(actual) - Fraction(Q_target)
-        policy = target_reference.profile.params_resolved.charge
-        bound = Fraction(policy.absolute_tolerance) + Fraction(
-            policy.relative_tolerance
-        ) * max(abs(Fraction(Q_target)), Fraction(1))
-        try:
-            residual = float(delta)
-        except OverflowError:
-            raise V4IdentityError("unrepresentable receipted charge residual") from None
-        if actual < 0 or abs(delta) > bound or residual != charge["residual"]:
-            raise V4IdentityError("charge receipt is outside its declared admission")
-        channels = (primary["history"] if crossing is not None else
-                    _receipt_context(reference)[0])
-        for receipt, subject, disposition in zip(
-            group[2:],
-            ("candidate", "carrier"),
-            tuple(channels[s]["disposition"] for s in ("candidate", "carrier")),
-            strict=True,
-        ):
-            p = receipt.identity_payload
-            if (
-                p["schema_version"],
-                p.get("subject"),
-                p.get("history_disposition"),
-                p.get("information_loss"),
-            ) != (
-                "grcv4-history-disposition-receipt-v1",
-                subject,
-                disposition,
-                channels[subject]["information_loss"],
-            ):
-                raise V4IdentityError("snapshot invents candidate/carrier history")
-        if crossing is None and core["information_losses"]:
-            raise V4IdentityError("ordinary local operations cannot claim topology history loss")
-        if kind == "grcv4-reset-receipt-v1" and not (
-            primary["reset_baseline_digest"]
-            == core["source_reset_digest"]
-            == core["target_reset_digest"]
-        ):
-            raise V4IdentityError("reset receipt changes its reset baseline")
-        if kind == "grcv4-rebase-receipt-v1" and (
-            primary["old_reset_digest"],
-            primary["new_reset_digest"],
-        ) != (core["source_reset_digest"], core["target_reset_digest"]):
-            raise V4IdentityError("rebase receipt disagrees with baseline transition")
-        if kind == "grcv4-rebase-receipt-v1" and (
-            core["source_authoritative_digest"] != core["target_authoritative_digest"]
-            or core["actual_charge_delta"] != 0
-        ):
-            raise V4IdentityError("rebase cannot change current authority or charge")
-        if kind == "grcv4-step-commit-receipt-v1":
-            if core["source_reset_digest"] != core["target_reset_digest"]:
-                raise V4IdentityError("ordinary step cannot rebase reset")
-        last_primary = group[0].receipt_id
-        position += len(group)
-        commits.append(commit)
-        reference = target_reference
-    if tuple(crossed) != tuple(crossings):
-        raise V4IdentityError(
-            "crossing archive is missing, extra or out of ledger order"
-        )
-    if reference != final_reference or Q_target != final_charge:
-        raise V4IdentityError(
-            "final reference/charge differs from the receipted lineage"
-        )
-    if last_reset is not None and last_reset != reset_digest:
-        raise V4IdentityError(
-            "ledger reset identity does not match the restored baseline"
-        )
-    if position != len(ledger):
-        raise V4IdentityError("snapshot has receipts without their commit preimages")
-    return tuple(commits)
 
+    prefix: _ArchivePrefix
+    receipts: tuple[SuccessfulReceiptEnvelope, ...]
+    transition_bytes: bytes
+    layout: str
+    lineage: _ArchiveLineage
+    science: _ArchiveScience
 
-def _validate_scientific_commitments(
-    ledger: tuple[SuccessfulReceiptEnvelope, ...],
-    commits: tuple[CommitPayload, ...],
-    known_states: tuple[dict[str, Any], ...],
-) -> None:
-    """One scientific identity cannot carry conflicting component commitments.
+    @staticmethod
+    def _token(value):
+        """Detached JSON comparison, preserving bool/number and invalid numbers.
 
-    Use available preimages, then compare repeated claims even without one.
-    This temporary lookup neither requires adjacent states nor attests that an
-    external historical computation occurred. No solver or persistent registry.
-    """
-    components: dict[str, tuple[str, ...]] = {}
-    clocks: dict[str, tuple[int, float]] = {}
-    names = ("graph_digest", "model_identity", "authoritative_digest", "reset_digest")
-    for scientific in known_states:
-        state_id = payload_identity("scientific_state_payload", scientific)
-        authority = payload_identity("authoritative_state_identity_payload", {
-            "schema_version": "grcv4-authoritative-state-identity-v1",
-            "authoritative": scientific["authoritative"],
+        Valid safe integers and equal binary64 values have the same JCS image.
+        Mark oversized integers, negative zero and nonfinite floats separately
+        so a forged scalar cannot compare equal to an admitted numeric value.
+        """
+        if type(value) is dict:
+            if any(type(key) is not str for key in value):
+                raise V4SchemaError("archive JSON keys must be strings")
+            return ("object", tuple((key, _CheckedArchive._token(item))
+                                    for key, item in sorted(value.items())))
+        if type(value) in (tuple, list):
+            return ("array", tuple(_CheckedArchive._token(item) for item in value))
+        if type(value) is int:
+            return ("number" if abs(value) <= 2**53 - 1 else "unsafe_integer", value)
+        if type(value) is float:
+            if not isfinite(value) or (value == 0 and value.hex().startswith("-")):
+                return ("invalid_number", value.hex())
+            return ("number", value)
+        if value is None or type(value) in (str, bool):
+            return (type(value), value)
+        raise V4SchemaError("archive contains a non-JSON value")
+
+    @staticmethod
+    def _binding(reference, charge, reset, registry, transitions):
+        return canonical_json_bytes({
+            "reference": reference.to_payload(),
+            "charge": charge,
+            "reset": reset,
+            "registry": [row.to_payload() for row in registry],
+            "transitions": [row.to_dict() for row in transitions],
         })
-        value = (scientific["graph_digest"], scientific["active_model_identity"],
-                 authority, scientific["reset_digest"])
-        if components.setdefault(state_id, value) != value:
-            raise V4IdentityError("known scientific preimages contradict component commitments")
-        clocks[state_id] = (scientific["step_index"], scientific["time"])
-    for receipt in ledger:
-        core = cast(FrozenJSONMap, receipt.identity_payload["core"])
-        for prefix in ("source", "target"):
-            state_id = core[prefix + "_state_digest"]
-            value = tuple(core[prefix + "_" + name] for name in names)
+
+    @classmethod
+    def _prefix(cls, ledger, commits, reference, charge, reset, registry, transitions):
+        return _ArchivePrefix(
+            tuple(cls._token(row.to_payload()) for row in ledger),
+            tuple(cls._token(row.to_payload()) for row in commits),
+            cls._binding(reference, charge, reset, registry, transitions),
+        )
+
+    @staticmethod
+    def _assets(layout):
+        from .grc_v4_codec import (
+            _dependency,
+            _load_contract_schema,
+            _load_initializer_schema,
+        )
+
+        _load_contract_schema()
+        _dependency("referencing")
+        _dependency("jsonschema")
+        if layout in (EVENT_LAYOUT, REPRESENTATION_LAYOUT):
+            from .grc_v4_event_codec import _load_event_schemas
+
+            _load_event_schemas()
+        elif layout == INITIALIZER_SNAPSHOT_LAYOUT_ID:
+            _load_initializer_schema()
+
+    @classmethod
+    def from_history(cls, records, ledger, reference, charge, reset, registry,
+                     transitions, crossings, known_states):
+        commits, lineage = cls._check_commits(
+            records, ledger, reference, charge, reset, crossings
+        )
+        science = cls._check_scientific_commitments(ledger, commits, known_states)
+        layout = _snapshot_layout(reference, registry, transitions,
+                                  [row.to_payload() for row in ledger])
+        cls._assets(layout)
+        return commits, cls(
+            cls._prefix(ledger, commits, reference, charge, reset, registry, transitions),
+            ledger, canonical_json_bytes([row.to_dict() for row in transitions]),
+            layout, lineage, science,
+        )
+
+    def read_ledger(self, exposed: tuple[FrozenJSONMap, ...]) -> tuple[SuccessfulReceiptEnvelope, ...]:
+        """Reuse privately captured records only for the exact current wire data.
+
+        Public frozen DTOs can be forcibly mutated. Inspect their complete
+        content with type-aware detached tokens before returning private values;
+        changed content follows ordinary full schema/identity reconstruction.
+        The private receipt objects never escape through public projections.
+        """
+        self._assets(self.layout)
+        payloads = [row.to_dict() for row in exposed]
+        try:
+            tokens = tuple(self._token(row) for row in payloads)
+        except V4SchemaError:
+            # Preserve the ordinary wire/schema error path for malformed DTOs.
+            return _ledger(payloads)
+        if tokens == self.prefix.receipts:
+            return self.receipts
+        return _ledger(payloads)
+
+    def append(self, *, before, after, ledger, commits, registry, old_transitions,
+               transitions, commit, emitted, backends):
+        """Return prospective facts; never alter a published archive or index."""
+        self._assets(self.layout)
+        transition_bytes = canonical_json_bytes([row.to_dict() for row in transitions])
+        prefix = _ArchivePrefix(
+            self.prefix.receipts if ledger is self.receipts else
+            tuple(self._token(row.to_payload()) for row in ledger),
+            tuple(self._token(row.to_payload()) for row in commits),
+            self._binding(before.geometry.reference, before.Q_target,
+                          before.reset_id, registry, old_transitions),
+        )
+        if prefix != self.prefix or transition_bytes != self.transition_bytes:
+            # Structural transitions or changed exposed content reestablish the
+            # complete fact using the original whole-history checks.
+            full_ledger, full_commits = ledger + emitted, commits + (commit,)
+            layout = _snapshot_layout(after.geometry.reference, registry, transitions,
+                                      [row.to_payload() for row in full_ledger])
+            if layout in (EVENT_LAYOUT, REPRESENTATION_LAYOUT):
+                from .grc_v4_event_codec import validate_event_payload
+
+                family = "event" if layout == EVENT_LAYOUT else "representation"
+                for row in transitions:
+                    data = row.to_dict()
+                    validate_event_payload(family + "/transition_record",
+                                           dict(data, initializer_pair=data.get("initializer_pair")))
+            crossings = _restore_crossings(
+                [row.to_dict() for row in transitions], registry, readmit=False,
+                backends=backends, event_versions=_event_versions(full_ledger),
+            )
+            known_states = (
+                before.scientific_state_preimage, after.scientific_state_preimage,
+                *(endpoint.scientific_state_preimage for crossing in crossings.values()
+                  for endpoint in (crossing.before, crossing.after)),
+            )
+            _, archive = type(self).from_history(
+                [{"commit_id": payload_identity("commit_payload", row.to_payload()),
+                  "payload": row.to_payload()} for row in full_commits],
+                full_ledger, after.geometry.reference, after.Q_target, after.reset_id,
+                registry, transitions, crossings, known_states,
+            )
+            return archive
+        records = [{"commit_id": payload_identity("commit_payload", commit.to_payload()),
+                    "payload": commit.to_payload()}]
+        checked, lineage = self._check_commits(
+            records, emitted, after.geometry.reference, after.Q_target, after.reset_id,
+            prior=self.lineage,
+        )
+        science = self._check_scientific_commitments(
+            emitted, checked,
+            (before.scientific_state_preimage, after.scientific_state_preimage),
+            prior=self.science,
+        )
+        return type(self)(
+            _ArchivePrefix(
+                self.prefix.receipts + tuple(self._token(row.to_payload()) for row in emitted),
+                self.prefix.commits + tuple(self._token(row.to_payload()) for row in checked),
+                self._binding(after.geometry.reference, after.Q_target, after.reset_id,
+                              registry, transitions),
+            ),
+            ledger + emitted, transition_bytes, self.layout, lineage, science,
+        )
+
+    @staticmethod
+    def _check_commits(
+        records: list[Any],
+        ledger: tuple[SuccessfulReceiptEnvelope, ...],
+        reference: GRCV4ReferenceGeometry,
+        Q_target: float,
+        reset_digest: str,
+        crossings: dict[str, _Crossing] | None = None,
+        prior: _ArchiveLineage | None = None,
+    ) -> tuple[tuple[CommitPayload, ...], _ArchiveLineage]:
+        """Check content and ordered commit coverage of this receiver's ledger.
+
+        This bounded import does not certify the truth of an externally supplied
+        history. Registered crossing preimages reconstruct lifecycle maps;
+        alternative parent conventions are not imported here.
+        """
+        commits: list[CommitPayload] = []
+        position = 0
+        seen = set() if prior is None else set(prior.receipt_ids)
+        last_primary = None if prior is None else prior.primary
+        last_reset = None if prior is None else prior.reset
+        previous_clock = None if prior is None else prior.clock
+        crossings = {} if crossings is None else crossings
+        crossed: list[str] = []
+        final_reference, final_charge = reference, Q_target
+        if crossings:
+            first = next(iter(crossings.values()))
+            reference, Q_target = first.before.geometry.reference, first.before.Q_target
+        for record in records:
+            commit = CommitPayload.from_payload(record["payload"])
+            commit_id = payload_identity(
+                "commit_payload", commit.to_payload(), expected=record["commit_id"]
+            )
+            group = ledger[position : position + len(commit.emitted_receipt_ids)]
+            representation = bool(group) and group[0].identity_payload["schema_version"] == "grcv4-representation-transport-receipt-v1"
+            if len(group) != (1 if representation else 4) or tuple(r.receipt_id for r in group) != commit.emitted_receipt_ids:
+                raise V4IdentityError(
+                    "commit does not cover its ordered four-receipt delta"
+                )
+            primary = group[0].identity_payload.to_dict()
+            kind = primary["schema_version"]
+            if kind not in {
+                "grcv4-step-commit-receipt-v1",
+                "grcv4-reset-receipt-v1",
+                "grcv4-rebase-receipt-v1",
+                "grcv4-profile-migration-receipt-v1",
+                "grcv4-profile-migration-receipt-v2",
+                "grcv4-topology-event-receipt-v1",
+                "grcv4-topology-event-receipt-v2",
+                "grcv4-representation-transport-receipt-v1",
+            }:
+                raise V4SchemaError("unsupported lifecycle operation in V4 snapshot")
+            source_reference = reference
+            target_reference = reference
+            crossing = crossings.get(commit_id)
+            if kind in {
+                "grcv4-profile-migration-receipt-v1",
+                "grcv4-profile-migration-receipt-v2",
+                "grcv4-topology-event-receipt-v1",
+                "grcv4-topology-event-receipt-v2",
+                "grcv4-representation-transport-receipt-v1",
+            }:
+                if crossing is None:
+                    raise V4IdentityError(
+                        "crossing receipt has no reconstruction preimages"
+                    )
+                if (
+                    crossing.before.geometry.reference != reference
+                    or crossing.before.Q_target != Q_target
+                ):
+                    raise V4IdentityError(
+                        "crossing source breaks ordered profile/charge lineage"
+                    )
+                expected = _crossing_receipts(
+                    crossing.before, crossing.after, crossing.request, ledger[:position], crossing.initializer_pair, crossing.event_version
+                )
+                if canonical_json_bytes(expected) != canonical_json_bytes(
+                    [r.identity_payload.to_dict() for r in group]
+                ):
+                    raise V4IdentityError(
+                        "crossing receipts contradict their reconstructed whole-lifecycle operation"
+                    )
+                if (commit.target_step_index, commit.target_time) != (
+                    crossing.after.step_index,
+                    crossing.after.time,
+                ):
+                    raise V4IdentityError(
+                        "crossing commit changes its readmitted target clock"
+                    )
+                reference_ids = {} if representation else _crossing_references(crossing.request, reference)
+                target_reference = crossing.after.geometry.reference
+                Q_target = crossing.after.Q_target
+                crossed.append(commit_id)
+            else:
+                if crossing is not None:
+                    raise V4IdentityError(
+                        "ordinary/administrative commit has foreign crossing preimages"
+                    )
+                _, reference_ids = _receipt_context(reference)
+            if previous_clock is not None:
+                previous_index, previous_time = previous_clock
+                index_delta = commit.target_step_index - previous_index
+                if kind == "grcv4-step-commit-receipt-v1":
+                    # Assignment, reset and rebase do not write the clock. Ordinary
+                    # dt=0 keeps both fields; positive binary64 dt increments the
+                    # index once and adds at least the smallest positive duration.
+                    valid_clock = (
+                        index_delta == 0 and commit.target_time == previous_time
+                        and commit.source_state_digest == commit.target_state_digest
+                    ) or (
+                        index_delta == 1
+                        and commit.target_time >= previous_time + 5e-324
+                    )
+                    if index_delta == 1 and reference.profile.identity_payload.realization == "RG2b":
+                        # Retained clocks decide this contradiction without an
+                        # invented origin, trajectory replay or adjacency rule.
+                        # Exact input sum, rounded once to binary64; large clocks
+                        # may lawfully retain the same represented time.
+                        try:
+                            expected = float(Fraction(previous_time) + Fraction(_rg2b_beat(reference)))
+                        except OverflowError as exc:
+                            raise V4IdentityError("historical RG2b clock overflow") from exc
+                        valid_clock = isfinite(expected) and commit.target_time == expected
+                else:
+                    valid_clock = (
+                        index_delta == 0 and commit.target_time == previous_time
+                    )
+                if not valid_clock:
+                    raise V4IdentityError(
+                        "impossible clock transition in local commit history"
+                    )
+            core = primary["core"]
+            assert isinstance(core, dict)
+            expected_parent = last_primary
+            if core["parent_receipt_ids"] != (
+                [] if expected_parent is None else [expected_parent]
+            ):
+                raise V4IdentityError(
+                    "snapshot violates the accepted previous-successful-primary parent convention"
+                )
+            if (
+                core["operation_id"],
+                core["source_state_digest"],
+                core["target_state_digest"],
+            ) != (
+                commit.operation_id,
+                commit.source_state_digest,
+                commit.target_state_digest,
+            ):
+                raise V4IdentityError(
+                    "receipt and commit operation/state bindings disagree"
+                )
+            if any(core[key] != expected for key, expected in reference_ids.items()):
+                raise V4IdentityError(
+                    "receipt resource/history reference identity is unreconstructible"
+                )
+            if last_reset is not None and core["source_reset_digest"] != last_reset:
+                raise V4IdentityError("local operation silently replaces reset baseline")
+            last_reset = cast(str, core["target_reset_digest"])
+            for prefix, endpoint in (
+                ("source", source_reference),
+                ("target", target_reference),
+            ):
+                if (core[prefix + "_graph_digest"], core[prefix + "_model_identity"]) != (
+                    endpoint.graph.graph_digest,
+                    endpoint.profile.complete_profile_id,
+                ):
+                    raise V4IdentityError(
+                        "fixed-profile snapshot contains a foreign graph/profile receipt"
+                    )
+            for receipt in group:
+                if (
+                    receipt.receipt_id in seen
+                    or receipt.commit_id != commit_id
+                    or receipt.identity_payload["core"] != group[0].identity_payload["core"]
+                ):
+                    raise V4IdentityError(
+                        "duplicate receipt or inconsistent commit/core ownership"
+                    )
+                seen.add(receipt.receipt_id)
+            if representation:
+                # The full charge evidence and exact action were recomputed above.
+                # Shared identity/parent/reset/clock checks still apply to this group.
+                last_primary = group[0].receipt_id
+                position += 1
+                commits.append(commit)
+                previous_clock = (commit.target_step_index, commit.target_time)
+                reference = target_reference
+                continue
+            charge = group[1].identity_payload
+            if charge["schema_version"] != "grcv4-charge-receipt-v1":
+                raise V4IdentityError("missing ordered charge receipt")
+            if charge["target_charge"] != Q_target:
+                raise V4IdentityError("receipt changes the fixed lifecycle charge target")
+            actual = cast(float, charge["admitted_charge"])
+            delta = Fraction(actual) - Fraction(Q_target)
+            policy = target_reference.profile.params_resolved.charge
+            bound = Fraction(policy.absolute_tolerance) + Fraction(
+                policy.relative_tolerance
+            ) * max(abs(Fraction(Q_target)), Fraction(1))
+            try:
+                residual = float(delta)
+            except OverflowError:
+                raise V4IdentityError("unrepresentable receipted charge residual") from None
+            if actual < 0 or abs(delta) > bound or residual != charge["residual"]:
+                raise V4IdentityError("charge receipt is outside its declared admission")
+            channels = (primary["history"] if crossing is not None else
+                        _receipt_context(reference)[0])
+            for receipt, subject, disposition in zip(
+                group[2:],
+                ("candidate", "carrier"),
+                tuple(channels[s]["disposition"] for s in ("candidate", "carrier")),
+                strict=True,
+            ):
+                p = receipt.identity_payload
+                if (
+                    p["schema_version"],
+                    p.get("subject"),
+                    p.get("history_disposition"),
+                    p.get("information_loss"),
+                ) != (
+                    "grcv4-history-disposition-receipt-v1",
+                    subject,
+                    disposition,
+                    channels[subject]["information_loss"],
+                ):
+                    raise V4IdentityError("snapshot invents candidate/carrier history")
+            if crossing is None and core["information_losses"]:
+                raise V4IdentityError("ordinary local operations cannot claim topology history loss")
+            if kind == "grcv4-reset-receipt-v1" and not (
+                primary["reset_baseline_digest"]
+                == core["source_reset_digest"]
+                == core["target_reset_digest"]
+            ):
+                raise V4IdentityError("reset receipt changes its reset baseline")
+            if kind == "grcv4-rebase-receipt-v1" and (
+                primary["old_reset_digest"],
+                primary["new_reset_digest"],
+            ) != (core["source_reset_digest"], core["target_reset_digest"]):
+                raise V4IdentityError("rebase receipt disagrees with baseline transition")
+            if kind == "grcv4-rebase-receipt-v1" and (
+                core["source_authoritative_digest"] != core["target_authoritative_digest"]
+                or core["actual_charge_delta"] != 0
+            ):
+                raise V4IdentityError("rebase cannot change current authority or charge")
+            if kind == "grcv4-step-commit-receipt-v1":
+                if core["source_reset_digest"] != core["target_reset_digest"]:
+                    raise V4IdentityError("ordinary step cannot rebase reset")
+            last_primary = group[0].receipt_id
+            position += len(group)
+            commits.append(commit)
+            previous_clock = (commit.target_step_index, commit.target_time)
+            reference = target_reference
+        if tuple(crossed) != tuple(crossings):
+            raise V4IdentityError(
+                "crossing archive is missing, extra or out of ledger order"
+            )
+        if reference != final_reference or Q_target != final_charge:
+            raise V4IdentityError(
+                "final reference/charge differs from the receipted lineage"
+            )
+        if last_reset is not None and last_reset != reset_digest:
+            raise V4IdentityError(
+                "ledger reset identity does not match the restored baseline"
+            )
+        if position != len(ledger):
+            raise V4IdentityError("snapshot has receipts without their commit preimages")
+        return tuple(commits), _ArchiveLineage(
+            frozenset(seen), last_primary, last_reset, previous_clock
+        )
+
+    @staticmethod
+    def _check_scientific_commitments(
+        ledger: tuple[SuccessfulReceiptEnvelope, ...],
+        commits: tuple[CommitPayload, ...],
+        known_states: tuple[dict[str, Any], ...],
+        prior: _ArchiveScience | None = None,
+    ) -> _ArchiveScience:
+        """One scientific identity cannot carry conflicting component commitments.
+
+        Use available preimages, then compare repeated claims even without one.
+        This temporary lookup neither requires adjacent states nor attests that an
+        external historical computation occurred. No solver or persistent registry.
+        """
+        components = {} if prior is None else dict(prior.components)
+        clocks = {} if prior is None else dict(prior.clocks)
+        names = ("graph_digest", "model_identity", "authoritative_digest", "reset_digest")
+        for scientific in known_states:
+            state_id = payload_identity("scientific_state_payload", scientific)
+            authority = payload_identity("authoritative_state_identity_payload", {
+                "schema_version": "grcv4-authoritative-state-identity-v1",
+                "authoritative": scientific["authoritative"],
+            })
+            value = (scientific["graph_digest"], scientific["active_model_identity"],
+                     authority, scientific["reset_digest"])
             if components.setdefault(state_id, value) != value:
-                raise V4IdentityError("receipt commitments contradict one scientific-state identity")
-    for commit in commits:
-        clock = (commit.target_step_index, commit.target_time)
-        if clocks.setdefault(commit.target_state_digest, clock) != clock:
-            raise V4IdentityError("commit clock contradicts its scientific-state identity")
+                raise V4IdentityError("known scientific preimages contradict component commitments")
+            clock = (scientific["step_index"], scientific["time"])
+            if clocks.setdefault(state_id, clock) != clock:
+                raise V4IdentityError("known scientific preimages contradict commit clocks")
+        for receipt in ledger:
+            core = cast(FrozenJSONMap, receipt.identity_payload["core"])
+            for prefix in ("source", "target"):
+                state_id = core[prefix + "_state_digest"]
+                value = tuple(core[prefix + "_" + name] for name in names)
+                if components.setdefault(state_id, value) != value:
+                    raise V4IdentityError("receipt commitments contradict one scientific-state identity")
+        for commit in commits:
+            clock = (commit.target_step_index, commit.target_time)
+            if clocks.setdefault(commit.target_state_digest, clock) != clock:
+                raise V4IdentityError("commit clock contradicts its scientific-state identity")
+        return _ArchiveScience(components, clocks)
+
+
+def _restore_commits(records, ledger, reference, Q_target, reset_digest, crossings=None):
+    """Full history check retained for callers of the original private helper."""
+    commits, _ = _CheckedArchive._check_commits(
+        records, ledger, reference, Q_target, reset_digest, crossings
+    )
+    return commits
+
+
+def _validate_scientific_commitments(ledger, commits, known_states):
+    """Full scientific-claim check; this wrapper never reuses prefix facts."""
+    _CheckedArchive._check_scientific_commitments(ledger, commits, known_states)
 
 
 def _validate_publication(
@@ -1537,7 +1765,7 @@ def _validate_publication(
     transitions: tuple[FrozenJSONMap, ...],
     kind: str,
     backends: tuple = (),
-) -> None:
+) -> _CheckedArchive:
     """Bind actual endpoints, then apply the same ledger semantics as import.
 
     Hash/schema validity alone does not establish the operation being published.
@@ -1555,7 +1783,7 @@ def _validate_publication(
         raise V4IdentityError(
             "administrative target changes undeclared lifecycle authority"
         )
-    ledger = _ledger([r.to_dict() for r in owned.state.receipt_ledger])
+    ledger = owned.ledger
     representation = kind == "grcv4-representation-transport-receipt-v1"
     if len(emitted) != (1 if representation else 4) or emitted[0].identity_payload["schema_version"] != kind:
         raise V4IdentityError("publication has the wrong operation/receipt delta")
@@ -1611,42 +1839,10 @@ def _validate_publication(
         raise V4IdentityError("publication charge receipt contradicts actual resource")
     if target != _lifecycle_state(after, ledger + emitted):
         raise V4IdentityError("publication state contradicts the committed delta")
-    commits = owned.commits + (commit,)
-    # Check the prospective archive's actual wire domain, including legacy
-    # appends after joint-layout entry. This is structural admission, not a
-    # rerun of previously admitted numerical states.
-    layout = _snapshot_layout(after.geometry.reference, registry, transitions,
-                              [r.to_payload() for r in ledger + emitted])
-    if layout in (EVENT_LAYOUT, REPRESENTATION_LAYOUT):
-        from .grc_v4_event_codec import validate_event_payload
-        family = "event" if layout == EVENT_LAYOUT else "representation"
-        for row in transitions:
-            data = row.to_dict()
-            validate_event_payload(family + "/transition_record",
-                                   dict(data, initializer_pair=data.get("initializer_pair")))
-    crossings = _restore_crossings(
-        [row.to_dict() for row in transitions], registry, readmit=False, backends=backends,
-        event_versions=_event_versions(ledger + emitted),
-    )
-    _restore_commits(
-        [
-            {
-                "commit_id": payload_identity("commit_payload", item.to_payload()),
-                "payload": item.to_payload(),
-            }
-            for item in commits
-        ],
-        ledger + emitted,
-        after.geometry.reference,
-        after.Q_target,
-        after.reset_id,
-        crossings,
-    )
-    _validate_scientific_commitments(
-        ledger + emitted, commits,
-        (before.scientific_state_preimage, after.scientific_state_preimage,
-         *(endpoint.scientific_state_preimage for crossing in crossings.values()
-           for endpoint in (crossing.before, crossing.after))),
+    return owned.archive.append(
+        before=before, after=after, ledger=ledger, commits=owned.commits,
+        registry=registry, old_transitions=owned.transitions, transitions=transitions,
+        commit=commit, emitted=emitted, backends=backends,
     )
 
 
@@ -1681,8 +1877,12 @@ class GRCV4Operation:
             raise TypeError("target differential references must be an ordered tuple")
         self._registry = _reference_registry((before.geometry.reference, *targets), generic=True)
         self._backends = _backend_registry((() if backend is None else (backend,)) + target_differential_references, self._registry)
+        _, archive = _CheckedArchive.from_history(
+            [], (), before.geometry.reference, before.Q_target, before.reset_id,
+            self._registry, (), {}, (before.scientific_state_preimage,),
+        )
         self._owned = _OwnedCOS(
-            _lifecycle_state(before, ()), (), before.geometry.reference
+            _lifecycle_state(before, ()), (), before.geometry.reference, archive=archive
         )
         self._lock = Lock()
 
@@ -1801,13 +2001,16 @@ class GRCV4Operation:
         if payload_identity("grcv4_reset_payload", reset) != data["reset_digest"]:
             raise V4IdentityError("reset digest does not match content")
         ledger = _ledger(data["receipt_ledger"])
-        commits = _restore_commits(
+        commits, archive = _CheckedArchive.from_history(
             data["commit_records"],
             ledger,
             reference,
             scientific["Q_target"],
             data["reset_digest"],
-            crossings,
+            registry, tuple(FrozenJSONMap(row) for row in transitions), crossings,
+            (scientific, *(endpoint.scientific_state_preimage
+                          for crossing in crossings.values()
+                          for endpoint in (crossing.before, crossing.after))),
         )
         inputs = GeometryStageInputs(
             reference.geometry(),
@@ -1846,12 +2049,6 @@ class GRCV4Operation:
             != data["lifecycle_digest"]
         ):
             raise V4IdentityError("lifecycle digest does not match content")
-        _validate_scientific_commitments(
-            ledger, commits,
-            (inputs.scientific_state_preimage,
-             *(endpoint.scientific_state_preimage for crossing in crossings.values()
-               for endpoint in (crossing.before, crossing.after))),
-        )
         if commits and (commits[-1].target_step_index, commits[-1].target_time) != (
             inputs.step_index,
             inputs.time,
@@ -1867,7 +2064,7 @@ class GRCV4Operation:
             target,
             commits,
             inputs.geometry.reference,
-            tuple(FrozenJSONMap(row) for row in transitions),
+            tuple(FrozenJSONMap(row) for row in transitions), archive=archive,
         )
         result = cls.__new__(cls)
         result._lock = Lock()
@@ -1932,7 +2129,7 @@ class GRCV4Operation:
                     "assigned current state has incorrect content digests"
                 )
             publication = _OwnedCOS(
-                target, live.commits, live.reference, live.transitions
+                target, live.commits, live.reference, live.transitions, archive=live.archive
             )
             self._owned = publication
 
@@ -1948,7 +2145,7 @@ class GRCV4Operation:
             before = _state_inputs(
                 self._reference, owned.state, kind + ":" + owned.state.lifecycle_digest
             )
-            ledger = _ledger([r.to_dict() for r in owned.state.receipt_ledger])
+            ledger = owned.ledger
             # The frozen reduced baseline has no clock or receipt list. Reset
             # changes current C/W/Z and retains clock; rebase changes reset only.
             following = (
@@ -1984,7 +2181,7 @@ class GRCV4Operation:
                 target_time=following.time,
             )
             target = _lifecycle_state(following, ledger + emitted)
-            _validate_publication(
+            archive = _validate_publication(
                 before,
                 following,
                 owned,
@@ -1997,7 +2194,7 @@ class GRCV4Operation:
                 self._backends,
             )
             publication = _OwnedCOS(
-                target, owned.commits + (commit,), owned.reference, owned.transitions
+                target, owned.commits + (commit,), owned.reference, owned.transitions, archive=archive
             )
             self._owned = publication
 
@@ -2070,7 +2267,7 @@ class GRCV4Operation:
     def _crossing(self, request: _CrossingRequest, event_version: int = 1) -> GRCV4LifecycleResult:
         owned = self._owned
         before = _state_inputs(owned.reference, owned.state, request.operation_id)
-        ledger = _ledger([r.to_dict() for r in owned.state.receipt_ledger])
+        ledger = owned.ledger
         try:
             if (event_version == 2 or type(request) is GRCV4RepresentationRequest
                     or _snapshot_layout(owned.reference, self._registry, owned.transitions,
@@ -2208,7 +2405,7 @@ class GRCV4Operation:
         if pair is not None or event_version == 2 or type(request) is GRCV4RepresentationRequest:
             archive_payload["initializer_pair"] = pair
         archive = FrozenJSONMap(archive_payload)
-        _validate_publication(
+        checked_archive = _validate_publication(
             before,
             following,
             owned,
@@ -2223,7 +2420,7 @@ class GRCV4Operation:
             target,
             owned.commits + (commit,),
             target_ref,
-            owned.transitions + (archive,),
+            owned.transitions + (archive,), archive=checked_archive,
         )
         self._owned = publication
         return result
@@ -2253,7 +2450,7 @@ class GRCV4Operation:
     def _execute(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
         before = self._inputs(request)
         owned = self._state
-        ledger = _ledger([r.to_dict() for r in owned.receipt_ledger])
+        ledger = self._owned.ledger
         source = before.scientific_state_preimage
         profile_id = self._reference.profile.complete_profile_id
         if request.dt < 0:
@@ -2363,7 +2560,7 @@ class GRCV4Operation:
                 failure,
                 (receipt,),
             )
-            bind_step_result(
+            _bind_owned_step_result(
                 result,
                 request=request,
                 prestate=source,
@@ -2437,7 +2634,7 @@ class GRCV4Operation:
             None,
             emitted,
         )
-        bind_step_result(
+        _bind_owned_step_result(
             result,
             request=request,
             prestate=source,
@@ -2449,7 +2646,7 @@ class GRCV4Operation:
             observed_solver="valid_root",
             commit_payload=commit,
         )
-        _validate_publication(
+        checked_archive = _validate_publication(
             before,
             following,
             self._owned,
@@ -2466,7 +2663,7 @@ class GRCV4Operation:
             target,
             self._owned.commits + (commit,),
             self._owned.reference,
-            self._owned.transitions,
+            self._owned.transitions, archive=checked_archive,
         )
         self._owned = publication
         return result

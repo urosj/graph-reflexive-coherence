@@ -351,7 +351,9 @@ def decode_canonical_json(data: bytes | str) -> JSONValue:
 # Content keys never retain caller dictionaries or use their Python equality.
 # Bound both entry count and payload size; large records validate normally.
 _VALIDATION_LIMIT = 128
-_VALIDATION_MAX_BYTES = 8192
+# Keep small reusable preimages, not growing historical result records.
+# At most 1 MiB of payload bytes; oversized records still validate normally.
+_VALIDATION_MAX_BYTES = 8 * 1024
 _VALIDATED_PAYLOADS: OrderedDict[tuple[tuple[bytes, ...], str, bytes], None] = OrderedDict()
 _VALIDATION_LOCK = Lock()
 

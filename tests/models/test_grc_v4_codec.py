@@ -602,6 +602,43 @@ class CodecTests(unittest.TestCase):
             self.assertEqual(calls.call_count, 2)
             self.assertEqual(len(codec._VALIDATED_PAYLOADS), 0)
 
+    def test_large_results_validate_without_retaining_history(self) -> None:
+        from tests.models.test_grc_v4_generic_lifecycle import model
+        from tests.models.test_grc_v4_lifecycle import request
+
+        owner = model("A_OS")
+        for index in range(3):
+            result = owner.step_v4_input(request(0.001, f"large-memo-{index}"))
+            self.assertTrue(result.committed)
+        payload = result.to_payload()
+        size = len(codec.canonical_json_bytes(payload))
+        self.assertGreater(size, 32 * 1024)
+        self.assertGreater(size, codec._VALIDATION_MAX_BYTES)
+        _, raw = codec._load_contract_schema()
+        validator = codec._contract_validator(raw, "step_result")
+        original_errors = type(validator).iter_errors
+        calls = []
+
+        def iter_errors(instance, *args, **kwargs):
+            if instance is validator:
+                calls.append(args[0])
+            return original_errors(instance, *args, **kwargs)
+
+        with (
+            patch.object(codec, "_VALIDATED_PAYLOADS", OrderedDict()),
+            patch.object(type(validator), "iter_errors", iter_errors),
+        ):
+            detached = codec.validate_payload("step_result", payload)
+            detached["emitted_receipts"].clear()
+            self.assertEqual(codec.validate_payload("step_result", payload), payload)
+            self.assertEqual(len(calls), 2)
+            changed = dict(payload, unknown_field=True)
+            for _ in range(2):
+                with self.assertRaises(codec.V4SchemaError):
+                    codec.validate_payload("step_result", changed)
+            self.assertEqual(len(calls), 4)
+            self.assertEqual(len(codec._VALIDATED_PAYLOADS), 0)
+
     def test_identity_reuses_this_calls_validation_bytes(self) -> None:
         row = next(r for r in vectors()["identity_vectors"]
                    if r["schema_ref"].endswith("scientific_state_payload"))

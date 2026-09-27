@@ -1,0 +1,4525 @@
+{
+  "method": {
+    "repetitions": 5,
+    "boundary": "numerical dispatch and public step separately",
+    "input": "same accepted generic lifecycle seed for each repetition",
+    "excluded": "fixture/model creation, restore, snapshot/hash calculation",
+    "shares": "exclusive nested-timer attribution; inclusive observations overlap",
+    "timing_limitations": "approximate local measurements; instrumented mean versus ordinary median differs by up to 23%; not scaling measurements"
+  },
+  "fixtures": {
+    "A_OS": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 0.001
+    },
+    "C_OS": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 0.0009765625
+    },
+    "A_CI": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 6.103515625e-05
+    },
+    "C_CI": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 6.103515625e-05
+    },
+    "A_RG2b": {
+      "nodes": 4,
+      "edges": 3,
+      "dt": 9.5367431640625e-07
+    },
+    "C_RG2b": {
+      "nodes": 4,
+      "edges": 3,
+      "dt": 9.5367431640625e-07
+    },
+    "A_PC": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 6.103515625e-05
+    },
+    "C_PC": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 6.103515625e-05
+    },
+    "A_CI_PC": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 6.103515625e-05
+    },
+    "C_CI_PC": {
+      "nodes": 2,
+      "edges": 1,
+      "dt": 6.103515625e-05
+    }
+  },
+  "measurements": [
+    {
+      "family": "A_OS",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.12690503500925843,
+        0.1982608170073945,
+        0.13120271399384364,
+        0.11874518399417866,
+        0.1195421189913759
+      ],
+      "median_seconds": 0.12690503500925843,
+      "instrumented_seconds": [
+        0.13339107400679495,
+        0.13215697300620377,
+        0.1384519910061499,
+        0.13788041600491852,
+        0.12965221199556254
+      ],
+      "mean_instrumented_seconds": 0.13430653320392594,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.01500332385476213,
+        "selected_arithmetic": 0.0008417754055699333,
+        "assets": 0.05427804618666414,
+        "schema": 0.0030648486135760322,
+        "deep_copy": 0.0026799841958563774,
+        "encoding": 0.035946480618440545
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.0141177392040845,
+        "stage.to_payload": 0.032327311590779576,
+        "stage.from_payload": 0.06436421499820426
+      },
+      "counts": {
+        "json_copy": 2392,
+        "encoding": 476,
+        "assets": 198,
+        "schema": 186,
+        "stage.to_payload": 16,
+        "deep_copy": 12,
+        "stage.from_payload": 7,
+        "selected_arithmetic": 5,
+        "CandidateACurrent.identity:first": 5
+      },
+      "total_calls": 405791,
+      "profiled_seconds": 0.3355731079936959,
+      "output_sha256": "ba191b58c99dd737b4f253ec8afd154e01783f81a5867fd630d6fb76859c47db"
+    },
+    {
+      "family": "A_OS",
+      "boundary": "public",
+      "plain_seconds": [
+        0.263441981995129,
+        0.2624359790061135,
+        0.28622479700425174,
+        0.2669505369995022,
+        0.25214774899359327
+      ],
+      "median_seconds": 0.263441981995129,
+      "instrumented_seconds": [
+        0.28692856400448363,
+        0.28623217198764905,
+        0.27122152398806065,
+        0.2913217960012844,
+        0.2890089170105057
+      ],
+      "mean_instrumented_seconds": 0.28494259459839666,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.024728701962158085,
+        "selected_arithmetic": 0.0007795973971951753,
+        "assets": 0.0980929779674625,
+        "schema": 0.06455493202665821,
+        "deep_copy": 0.003376434414531104,
+        "encoding": 0.058137366161099636
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.01469845479587093,
+        "stage.to_payload": 0.033409025374567136,
+        "stage.from_payload": 0.06700686060357838
+      },
+      "counts": {
+        "json_copy": 3657,
+        "assets": 355,
+        "encoding": 788,
+        "schema": 340,
+        "stage.to_payload": 16,
+        "deep_copy": 15,
+        "stage.from_payload": 7,
+        "selected_arithmetic": 5,
+        "CandidateACurrent.identity:first": 5
+      },
+      "total_calls": 836976,
+      "profiled_seconds": 0.6943557669874281,
+      "output_sha256": "09700c85a7ac81b69e517b37c872aeeeabb98d49880b3b73dd06b3fe0202e651"
+    },
+    {
+      "family": "C_OS",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.10805702600919176,
+        0.1090575109992642,
+        0.10782083199592307,
+        0.10528674798842985,
+        0.10609859800024424
+      ],
+      "median_seconds": 0.10782083199592307,
+      "instrumented_seconds": [
+        0.10887479901430197,
+        0.11050698399776593,
+        0.11114515901135746,
+        0.11044510699866805,
+        0.1001947370095877
+      ],
+      "mean_instrumented_seconds": 0.10823335720633623,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.011270551139023154,
+        "selected_arithmetic": 0.0038729391933884473,
+        "assets": 0.04225523939530831,
+        "schema": 0.0024015421775402503,
+        "deep_copy": 0.002718987801927142,
+        "encoding": 0.026569684431888164
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.010362500400515274,
+        "stage.to_payload": 0.020035012194421144,
+        "stage.from_payload": 0.05479568680457305
+      },
+      "counts": {
+        "json_copy": 1841,
+        "encoding": 376,
+        "assets": 158,
+        "schema": 147,
+        "stage.to_payload": 10,
+        "deep_copy": 11,
+        "stage.from_payload": 6,
+        "selected_arithmetic": 28,
+        "CandidateCCurrent.identity:first": 4
+      },
+      "total_calls": 338570,
+      "profiled_seconds": 0.2604130309919128,
+      "output_sha256": "4f1732199d68bb3c28744351e80b101c1d7e46edb03d465e7ce24918e1bc14be"
+    },
+    {
+      "family": "C_OS",
+      "boundary": "public",
+      "plain_seconds": [
+        0.25218898699677084,
+        0.2618645160109736,
+        0.24712341401027516,
+        0.25590140899294056,
+        0.26191668400133494
+      ],
+      "median_seconds": 0.25590140899294056,
+      "instrumented_seconds": [
+        0.27379767199454363,
+        0.26293132999853697,
+        0.27291692000289913,
+        0.27484356400964316,
+        0.2395473270007642
+      ],
+      "mean_instrumented_seconds": 0.2648073626012774,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.020800596862682142,
+        "selected_arithmetic": 0.004633306185132824,
+        "assets": 0.08739818039175588,
+        "schema": 0.06555971081834286,
+        "deep_copy": 0.003537002997472882,
+        "encoding": 0.04914205306849908
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.013328654610086232,
+        "stage.to_payload": 0.0218567650008481,
+        "stage.from_payload": 0.05675324679759797
+      },
+      "counts": {
+        "json_copy": 3226,
+        "assets": 323,
+        "encoding": 704,
+        "schema": 309,
+        "stage.to_payload": 11,
+        "deep_copy": 14,
+        "stage.from_payload": 6,
+        "selected_arithmetic": 35,
+        "CandidateCCurrent.identity:first": 5
+      },
+      "total_calls": 786280,
+      "profiled_seconds": 0.6705916659993818,
+      "output_sha256": "a0264f3267469d3ea4c87de7cc35854fdfa8bdc4c63d048a057809a01ac0e426"
+    },
+    {
+      "family": "A_CI",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.19427738399826922,
+        0.17885234199638944,
+        0.17623203399125487,
+        0.17986686699441634,
+        0.22583860899612773
+      ],
+      "median_seconds": 0.17986686699441634,
+      "instrumented_seconds": [
+        0.24556637500063516,
+        0.1936123299965402,
+        0.2025867920019664,
+        0.201535699001397,
+        0.19336780199955683
+      ],
+      "mean_instrumented_seconds": 0.20733379960001913,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.020640632274444216,
+        "selected_arithmetic": 0.011564185601309873,
+        "assets": 0.07559397786681074,
+        "schema": 0.004431461694184691,
+        "deep_copy": 0.002334652209538035,
+        "encoding": 0.051670775885577315
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.04527474020433146,
+        "CandidateACurrent.identity:repeat": 0.017532914201728998,
+        "stage.to_payload": 0.06456541658844799,
+        "stage.from_payload": 0.05091449700121302
+      },
+      "counts": {
+        "json_copy": 3730,
+        "encoding": 629,
+        "assets": 253,
+        "deep_copy": 10,
+        "schema": 243,
+        "selected_arithmetic": 27,
+        "stage.to_payload": 30,
+        "CandidateACurrent.identity:first": 15,
+        "CandidateACurrent.identity:repeat": 6,
+        "stage.from_payload": 5
+      },
+      "total_calls": 578894,
+      "profiled_seconds": 0.48059898099745624,
+      "output_sha256": "2b17366a0d4d34f3ad2bf182e1c6a4e6856c83133f260803b8c46a71c1c39f57"
+    },
+    {
+      "family": "A_CI",
+      "boundary": "public",
+      "plain_seconds": [
+        0.35280097999202553,
+        0.3542167200066615,
+        0.34533918200759217,
+        0.39693489200726617,
+        0.35092468799848575
+      ],
+      "median_seconds": 0.35280097999202553,
+      "instrumented_seconds": [
+        0.3592171509953914,
+        0.36282197800755966,
+        0.34897898700728547,
+        0.3559402980026789,
+        0.3478270990017336
+      ],
+      "mean_instrumented_seconds": 0.3549571026029298,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.02909590031777043,
+        "selected_arithmetic": 0.011211926795658656,
+        "assets": 0.11882509019342251,
+        "schema": 0.06929294869769365,
+        "deep_copy": 0.002953773390618153,
+        "encoding": 0.07134992127830628
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.04292453300440684,
+        "CandidateACurrent.identity:repeat": 0.01717857140756678,
+        "stage.to_payload": 0.06133005720912479,
+        "stage.from_payload": 0.04909012599673588
+      },
+      "counts": {
+        "json_copy": 4812,
+        "assets": 410,
+        "encoding": 935,
+        "schema": 397,
+        "deep_copy": 13,
+        "selected_arithmetic": 27,
+        "stage.to_payload": 30,
+        "CandidateACurrent.identity:first": 15,
+        "CandidateACurrent.identity:repeat": 6,
+        "stage.from_payload": 5
+      },
+      "total_calls": 1000679,
+      "profiled_seconds": 0.8559480349940713,
+      "output_sha256": "139736ff327fc28d71a6133a31d73c123a43ab2907a742d55687d983881e167f"
+    },
+    {
+      "family": "C_CI",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.2062230390001787,
+        0.2095455039961962,
+        0.20149135201063473,
+        0.20689649500127416,
+        0.20258782000746578
+      ],
+      "median_seconds": 0.2062230390001787,
+      "instrumented_seconds": [
+        0.20875013100157958,
+        0.21546633099205792,
+        0.22278863401152194,
+        0.22166710899909958,
+        0.2125131299981149
+      ],
+      "mean_instrumented_seconds": 0.2162370670004748,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.01844800451071933,
+        "selected_arithmetic": 0.02194239035015926,
+        "assets": 0.075640866154572,
+        "schema": 0.004755972136626952,
+        "deep_copy": 0.002288097585551441,
+        "encoding": 0.04644897679972928
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.04472250758844894,
+        "CandidateCCurrent.identity:repeat": 0.016524329988169485,
+        "stage.to_payload": 0.06210164078802336,
+        "stage.from_payload": 0.04148443800513633
+      },
+      "counts": {
+        "json_copy": 3643,
+        "encoding": 558,
+        "assets": 247,
+        "deep_copy": 9,
+        "schema": 238,
+        "selected_arithmetic": 111,
+        "stage.to_payload": 29,
+        "CandidateCCurrent.identity:first": 15,
+        "CandidateCCurrent.identity:repeat": 6,
+        "stage.from_payload": 4
+      },
+      "total_calls": 595045,
+      "profiled_seconds": 0.5339863420085749,
+      "output_sha256": "c82a6bb1f1897f973923ed878ed5303e8069cf9c78b62e7444b59e41c3420586"
+    },
+    {
+      "family": "C_CI",
+      "boundary": "public",
+      "plain_seconds": [
+        0.3643133890000172,
+        0.35160391801036894,
+        0.36864315599086694,
+        0.37014313699910417,
+        0.38079393000225537
+      ],
+      "median_seconds": 0.36864315599086694,
+      "instrumented_seconds": [
+        0.3883440670033451,
+        0.3834288180078147,
+        0.46761113801039755,
+        0.3844209989911178,
+        0.3832209399988642
+      ],
+      "mean_instrumented_seconds": 0.4014051924023079,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.02952824047242757,
+        "selected_arithmetic": 0.025385807556449435,
+        "assets": 0.12830562404415105,
+        "schema": 0.07767828064970672,
+        "deep_copy": 0.003368668397888541,
+        "encoding": 0.07225822024338413
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.048271973585360686,
+        "CandidateCCurrent.identity:repeat": 0.01829795140074566,
+        "stage.to_payload": 0.06738046263344585,
+        "stage.from_payload": 0.041411094996146855
+      },
+      "counts": {
+        "json_copy": 4738,
+        "assets": 404,
+        "encoding": 863,
+        "schema": 392,
+        "deep_copy": 12,
+        "selected_arithmetic": 111,
+        "stage.to_payload": 29,
+        "CandidateCCurrent.identity:first": 15,
+        "CandidateCCurrent.identity:repeat": 6,
+        "stage.from_payload": 4
+      },
+      "total_calls": 1014704,
+      "profiled_seconds": 0.9007872649963247,
+      "output_sha256": "138e590150fc6f699027856b95f79c159a559255b43618bd8bcd0f4ef651d3da"
+    },
+    {
+      "family": "A_RG2b",
+      "boundary": "numerical",
+      "plain_seconds": [
+        2.1062890210014302,
+        2.0786732859996846,
+        2.0818560769985197,
+        2.0935175769991474,
+        2.114961625004071
+      ],
+      "median_seconds": 2.0935175769991474,
+      "instrumented_seconds": [
+        2.1189948259998346,
+        2.222876906002057,
+        2.1473199280007975,
+        2.197682095997152,
+        2.1374843590019736
+      ],
+      "mean_instrumented_seconds": 2.164871623000363,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.028438016213476656,
+        "selected_arithmetic": 0.8294201837881701,
+        "assets": 0.0891149021597812,
+        "schema": 0.005523905795416795,
+        "deep_copy": 0.0028382313990732654,
+        "encoding": 0.0728563085111091
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.07957173859758768,
+        "CandidateACurrent.identity:repeat": 0.004101603801245801,
+        "stage.to_payload": 0.07893521178921219,
+        "stage.from_payload": 0.05677639380446635
+      },
+      "counts": {
+        "json_copy": 4280,
+        "encoding": 752,
+        "assets": 293,
+        "deep_copy": 10,
+        "schema": 283,
+        "selected_arithmetic": 44,
+        "stage.to_payload": 34,
+        "CandidateACurrent.identity:first": 24,
+        "stage.from_payload": 5,
+        "CandidateACurrent.identity:repeat": 1
+      },
+      "total_calls": 2438969,
+      "profiled_seconds": 3.238137035004911,
+      "output_sha256": "0007b3d9d99840ec1138c0a2cac72155ff87c65b4aac5f61508c3b5a7f2bd2cf"
+    },
+    {
+      "family": "A_RG2b",
+      "boundary": "public",
+      "plain_seconds": [
+        2.2918060710071586,
+        2.318626118998509,
+        2.291488406001008,
+        2.292007640004158,
+        2.2978708580048988
+      ],
+      "median_seconds": 2.292007640004158,
+      "instrumented_seconds": [
+        2.3586584919976303,
+        2.345393961004447,
+        2.282169238998904,
+        2.269327986999997,
+        2.268395432998659
+      ],
+      "mean_instrumented_seconds": 2.3047890223999277,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.038627921193256046,
+        "selected_arithmetic": 0.8223370345804142,
+        "assets": 0.13395351563813165,
+        "schema": 0.07439310452027711,
+        "deep_copy": 0.0032528360025025904,
+        "encoding": 0.09724309525627177
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.07609459578816313,
+        "CandidateACurrent.identity:repeat": 0.003340656799264252,
+        "stage.to_payload": 0.0747281971940538,
+        "stage.from_payload": 0.05700313440465834
+      },
+      "counts": {
+        "json_copy": 5372,
+        "assets": 450,
+        "encoding": 1058,
+        "schema": 437,
+        "deep_copy": 13,
+        "selected_arithmetic": 44,
+        "stage.to_payload": 34,
+        "CandidateACurrent.identity:first": 24,
+        "stage.from_payload": 5,
+        "CandidateACurrent.identity:repeat": 1
+      },
+      "total_calls": 2897203,
+      "profiled_seconds": 3.748333174997242,
+      "output_sha256": "4f8fada826c220e74b43caccf4d4e611c0ff8c9202cfb29ae4c57e96459c45e4"
+    },
+    {
+      "family": "C_RG2b",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.5518264420097694,
+        0.530482411995763,
+        0.5363423019880429,
+        0.5129265909927199,
+        0.5056559090007795
+      ],
+      "median_seconds": 0.530482411995763,
+      "instrumented_seconds": [
+        0.50934895798855,
+        0.5291057700087549,
+        0.5440724009968108,
+        0.5348568530025659,
+        0.5279501080076443
+      ],
+      "mean_instrumented_seconds": 0.5290668180008652,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.016572354306117632,
+        "selected_arithmetic": 0.28159781177528204,
+        "assets": 0.05960396452574059,
+        "schema": 0.003949183851364069,
+        "deep_copy": 0.002297879187972285,
+        "encoding": 0.04332096383732278
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.03683528400142677,
+        "CandidateCCurrent.identity:repeat": 0.0032223146001342682,
+        "stage.to_payload": 0.04755274860362988,
+        "stage.from_payload": 0.044407834199955684
+      },
+      "counts": {
+        "json_copy": 2916,
+        "encoding": 455,
+        "assets": 200,
+        "deep_copy": 9,
+        "schema": 191,
+        "selected_arithmetic": 91,
+        "stage.to_payload": 21,
+        "CandidateCCurrent.identity:first": 12,
+        "stage.from_payload": 4,
+        "CandidateCCurrent.identity:repeat": 1
+      },
+      "total_calls": 1875327,
+      "profiled_seconds": 1.4509694100124761,
+      "output_sha256": "3c33626fa4822d0eae47ac52fcf9de91267821012a8adc16c8d2b0238c965507"
+    },
+    {
+      "family": "C_RG2b",
+      "boundary": "public",
+      "plain_seconds": [
+        0.6809791270061396,
+        0.6637087900016923,
+        0.6702078969974536,
+        0.6826731210021535,
+        0.7004698520031525
+      ],
+      "median_seconds": 0.6809791270061396,
+      "instrumented_seconds": [
+        0.9119468130083987,
+        0.8227826210058993,
+        0.7394832629943267,
+        0.7166705780109623,
+        0.7142887189984322
+      ],
+      "mean_instrumented_seconds": 0.7810343988036038,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.03210773468308616,
+        "selected_arithmetic": 0.3148733282170724,
+        "assets": 0.11870843304204755,
+        "schema": 0.0751192347961478,
+        "deep_copy": 0.004049376599141397,
+        "encoding": 0.07947058813006151
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.04225495540013071,
+        "CandidateCCurrent.identity:repeat": 0.0037607467966154218,
+        "stage.to_payload": 0.054869789819349535,
+        "stage.from_payload": 0.05630065140139777
+      },
+      "counts": {
+        "json_copy": 4021,
+        "assets": 357,
+        "encoding": 760,
+        "schema": 345,
+        "deep_copy": 12,
+        "selected_arithmetic": 91,
+        "stage.to_payload": 21,
+        "CandidateCCurrent.identity:first": 12,
+        "stage.from_payload": 4,
+        "CandidateCCurrent.identity:repeat": 1
+      },
+      "total_calls": 2329214,
+      "profiled_seconds": 1.7732715969905257,
+      "output_sha256": "869784e303959d5e4b884a0ae4bd36f49c7ec6f54e2d8f9d7e3150c9fdb1040d"
+    },
+    {
+      "family": "A_PC",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.12443557700316887,
+        0.12613652199797798,
+        0.13295453099999577,
+        0.1343197020032676,
+        0.1431962650094647
+      ],
+      "median_seconds": 0.13295453099999577,
+      "instrumented_seconds": [
+        0.13458524900488555,
+        0.13296006798918825,
+        0.12870716900215484,
+        0.13562363700475544,
+        0.13835531499353237
+      ],
+      "mean_instrumented_seconds": 0.1340462875989033,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.012583518557948991,
+        "selected_arithmetic": 0.00048353900492656974,
+        "assets": 0.04552019259426743,
+        "schema": 0.002723352750763297,
+        "deep_copy": 0.002477760182227939,
+        "encoding": 0.03131629927956965
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.008980634799809196,
+        "stage.to_payload": 0.02554001618118491,
+        "stage.from_payload": 0.053292273593251595
+      },
+      "counts": {
+        "json_copy": 1969,
+        "encoding": 371,
+        "assets": 154,
+        "deep_copy": 10,
+        "schema": 144,
+        "selected_arithmetic": 3,
+        "stage.to_payload": 12,
+        "CandidateACurrent.identity:first": 3,
+        "stage.from_payload": 5
+      },
+      "total_calls": 338400,
+      "profiled_seconds": 0.31873610100592487,
+      "output_sha256": "f89ae08898589235aa707747fd5a99b9a25505458c2bfc3eae6ed403001a20af"
+    },
+    {
+      "family": "A_PC",
+      "boundary": "public",
+      "plain_seconds": [
+        0.29247530399879906,
+        0.27189482501125894,
+        0.2801784760085866,
+        0.29640012700110674,
+        0.30275109900685493
+      ],
+      "median_seconds": 0.29247530399879906,
+      "instrumented_seconds": [
+        0.29969791699841153,
+        0.2998420540097868,
+        0.2832406060042558,
+        0.3000909790134756,
+        0.31308638499467634
+      ],
+      "mean_instrumented_seconds": 0.29919158820412123,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.02270478340506088,
+        "selected_arithmetic": 0.0004990644054487347,
+        "assets": 0.0928935102012474,
+        "schema": 0.06957977635611315,
+        "deep_copy": 0.0032191949925618247,
+        "encoding": 0.055583579419180754
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.009054915604065173,
+        "stage.to_payload": 0.02458162359544076,
+        "stage.from_payload": 0.05842402780253906
+      },
+      "counts": {
+        "json_copy": 3051,
+        "assets": 311,
+        "encoding": 677,
+        "schema": 298,
+        "deep_copy": 13,
+        "selected_arithmetic": 3,
+        "stage.to_payload": 12,
+        "CandidateACurrent.identity:first": 3,
+        "stage.from_payload": 5
+      },
+      "total_calls": 767032,
+      "profiled_seconds": 0.6901050820015371,
+      "output_sha256": "8a4fe167447cc954f99b85bc924e946494e19b7e643a414154c69f89b9284914"
+    },
+    {
+      "family": "C_PC",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.1299309629976051,
+        0.12538122899422888,
+        0.12362708100408781,
+        0.1258587859920226,
+        0.12144089399953373
+      ],
+      "median_seconds": 0.12538122899422888,
+      "instrumented_seconds": [
+        0.13381917000515386,
+        0.13564683399454225,
+        0.1244764680013759,
+        0.12454152099962812,
+        0.13325256400275975
+      ],
+      "mean_instrumented_seconds": 0.13034731140069197,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.011277690093265846,
+        "selected_arithmetic": 0.00291285440325737,
+        "assets": 0.04357042860938236,
+        "schema": 0.0027618069754680617,
+        "deep_copy": 0.002528643611003645,
+        "encoding": 0.028743744865641928
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.009229755602427758,
+        "stage.to_payload": 0.024898006598232315,
+        "stage.from_payload": 0.04729029459413141
+      },
+      "counts": {
+        "json_copy": 1876,
+        "encoding": 321,
+        "assets": 136,
+        "deep_copy": 9,
+        "schema": 127,
+        "selected_arithmetic": 21,
+        "stage.to_payload": 11,
+        "CandidateCCurrent.identity:first": 3,
+        "stage.from_payload": 4
+      },
+      "total_calls": 309370,
+      "profiled_seconds": 0.2911119069904089,
+      "output_sha256": "7bd1ba0b382d750901121953e04d1d0ef3b2d19409eb9e18b35f52197180d69a"
+    },
+    {
+      "family": "C_PC",
+      "boundary": "public",
+      "plain_seconds": [
+        0.3046406890061917,
+        0.28156327600299846,
+        0.29864111299684737,
+        0.3516427700087661,
+        0.2885321469948394
+      ],
+      "median_seconds": 0.29864111299684737,
+      "instrumented_seconds": [
+        0.2839064989966573,
+        0.2964440450014081,
+        0.301358465992962,
+        0.29117369100276846,
+        0.2919278080080403
+      ],
+      "mean_instrumented_seconds": 0.29296210180036725,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.021147470935829915,
+        "selected_arithmetic": 0.002971234795404598,
+        "assets": 0.09124991236894857,
+        "schema": 0.06871839920640924,
+        "deep_copy": 0.003337341800215654,
+        "encoding": 0.050830329113523476
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.009073048998834566,
+        "stage.to_payload": 0.024061650602379813,
+        "stage.from_payload": 0.04933910800318699
+      },
+      "counts": {
+        "json_copy": 2971,
+        "assets": 293,
+        "encoding": 626,
+        "schema": 281,
+        "deep_copy": 12,
+        "selected_arithmetic": 21,
+        "stage.to_payload": 11,
+        "CandidateCCurrent.identity:first": 3,
+        "stage.from_payload": 4
+      },
+      "total_calls": 735669,
+      "profiled_seconds": 0.6844107750075636,
+      "output_sha256": "2ef5de13aba15f734ae1f509bbd5a984f3ea4a4381d079ae7f9f712b72068e05"
+    },
+    {
+      "family": "A_CI_PC",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.2331603519996861,
+        0.22696114900463726,
+        0.24193048299639486,
+        0.23334995198820252,
+        0.23168378398986533
+      ],
+      "median_seconds": 0.2331603519996861,
+      "instrumented_seconds": [
+        0.24952743100584485,
+        0.24568983100471087,
+        0.25583990100130904,
+        0.24448527999629732,
+        0.2448936120053986
+      ],
+      "mean_instrumented_seconds": 0.24808721100271214,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.023340584093239157,
+        "selected_arithmetic": 0.012280346601619386,
+        "assets": 0.0805464406061219,
+        "schema": 0.004878614336485043,
+        "deep_copy": 0.0028010691894451156,
+        "encoding": 0.05850123243581038
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.04863526120025199,
+        "CandidateACurrent.identity:repeat": 0.019724825798766686,
+        "stage.to_payload": 0.070525506787817,
+        "stage.from_payload": 0.0565383907960495
+      },
+      "counts": {
+        "json_copy": 3958,
+        "encoding": 632,
+        "assets": 253,
+        "deep_copy": 10,
+        "schema": 243,
+        "selected_arithmetic": 27,
+        "stage.to_payload": 30,
+        "CandidateACurrent.identity:first": 15,
+        "CandidateACurrent.identity:repeat": 6,
+        "stage.from_payload": 5
+      },
+      "total_calls": 621038,
+      "profiled_seconds": 0.5531338150030933,
+      "output_sha256": "bb3e5f9fe54e5287dd71a22fa66906fdaa6199fc24b07f341208d1c0dd1469b3"
+    },
+    {
+      "family": "A_CI_PC",
+      "boundary": "public",
+      "plain_seconds": [
+        0.4040633260010509,
+        0.39936171199951787,
+        0.41681431100005284,
+        0.3852693420049036,
+        0.386344933998771
+      ],
+      "median_seconds": 0.39936171199951787,
+      "instrumented_seconds": [
+        0.40034319800906815,
+        0.40558099900954403,
+        0.41600627900334075,
+        0.41683240100974217,
+        0.4068056499963859
+      ],
+      "mean_instrumented_seconds": 0.4091137054056162,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.032623271635384296,
+        "selected_arithmetic": 0.01242347679217346,
+        "assets": 0.1291009033622686,
+        "schema": 0.07174363324302249,
+        "deep_copy": 0.003422055408009328,
+        "encoding": 0.08026859829260502
+      },
+      "mean_inclusive_seconds": {
+        "CandidateACurrent.identity:first": 0.04713156600191724,
+        "CandidateACurrent.identity:repeat": 0.019183278005220926,
+        "stage.to_payload": 0.06848401458992157,
+        "stage.from_payload": 0.055746411794098095
+      },
+      "counts": {
+        "json_copy": 5070,
+        "assets": 410,
+        "encoding": 938,
+        "schema": 397,
+        "deep_copy": 13,
+        "selected_arithmetic": 27,
+        "stage.to_payload": 30,
+        "CandidateACurrent.identity:first": 15,
+        "CandidateACurrent.identity:repeat": 6,
+        "stage.from_payload": 5
+      },
+      "total_calls": 1048958,
+      "profiled_seconds": 0.9655374139983905,
+      "output_sha256": "e940948e8d7becf0f474edcdb886ec21a4c8a3051cf253038b89bf5cf85104cd"
+    },
+    {
+      "family": "C_CI_PC",
+      "boundary": "numerical",
+      "plain_seconds": [
+        0.2363150349992793,
+        0.23895596399961505,
+        0.24153880900121294,
+        0.24347213900182396,
+        0.25955132899980526
+      ],
+      "median_seconds": 0.24153880900121294,
+      "instrumented_seconds": [
+        0.25189579000289086,
+        0.2617968450067565,
+        0.26845841099566314,
+        0.44569193400093354,
+        0.262823748998926
+      ],
+      "mean_instrumented_seconds": 0.298133345801034,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.025462782417889684,
+        "selected_arithmetic": 0.025720907031791286,
+        "assets": 0.09597129215835594,
+        "schema": 0.005604839028092101,
+        "deep_copy": 0.0033011127961799502,
+        "encoding": 0.06195654204930179
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.05262024939293042,
+        "CandidateCCurrent.identity:repeat": 0.021494386400445365,
+        "stage.to_payload": 0.0842468790244311,
+        "stage.from_payload": 0.05355301540403161
+      },
+      "counts": {
+        "json_copy": 3859,
+        "encoding": 558,
+        "assets": 247,
+        "deep_copy": 9,
+        "schema": 238,
+        "selected_arithmetic": 111,
+        "stage.to_payload": 29,
+        "CandidateCCurrent.identity:first": 15,
+        "CandidateCCurrent.identity:repeat": 6,
+        "stage.from_payload": 4
+      },
+      "total_calls": 633304,
+      "profiled_seconds": 0.58833352100919,
+      "output_sha256": "d98b33958165eb2a2a1518a6a3927e117e881dcd3b6e14d2d01a6e0417e79f04"
+    },
+    {
+      "family": "C_CI_PC",
+      "boundary": "public",
+      "plain_seconds": [
+        0.39328276200103574,
+        0.3830250440078089,
+        0.41975463699782267,
+        0.3802229519933462,
+        0.4255970459926175
+      ],
+      "median_seconds": 0.39328276200103574,
+      "instrumented_seconds": [
+        0.4229075610055588,
+        0.425703134998912,
+        0.43611140399298165,
+        0.4099855920067057,
+        0.4237645849934779
+      ],
+      "mean_instrumented_seconds": 0.4236944553995272,
+      "mean_exclusive_seconds": {
+        "json_copy": 0.03063619601307437,
+        "selected_arithmetic": 0.023662443849025293,
+        "assets": 0.1280229109688662,
+        "schema": 0.07484204946376849,
+        "deep_copy": 0.003455794995534234,
+        "encoding": 0.07520632624218707
+      },
+      "mean_inclusive_seconds": {
+        "CandidateCCurrent.identity:first": 0.04801911239337642,
+        "CandidateCCurrent.identity:repeat": 0.019312943398836067,
+        "stage.to_payload": 0.06869283120031469,
+        "stage.from_payload": 0.046172900599776766
+      },
+      "counts": {
+        "json_copy": 4984,
+        "assets": 404,
+        "encoding": 863,
+        "schema": 392,
+        "deep_copy": 12,
+        "selected_arithmetic": 111,
+        "stage.to_payload": 29,
+        "CandidateCCurrent.identity:first": 15,
+        "CandidateCCurrent.identity:repeat": 6,
+        "stage.from_payload": 4
+      },
+      "total_calls": 1059141,
+      "profiled_seconds": 1.063880595000228,
+      "output_sha256": "48da1d3b8c91a4814a2a0357c2d8e7d1f7a07f0fb4a85853b0a0f812ca0e0842"
+    }
+  ],
+  "schema_probes": [
+    {
+      "family": "A_OS",
+      "numerical": {
+        "calls": 186,
+        "hits": 186,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 340,
+        "hits": 337,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.06387235700094607,
+          "max_bytes": 16572
+        }
+      }
+    },
+    {
+      "family": "C_OS",
+      "numerical": {
+        "calls": 147,
+        "hits": 147,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 309,
+        "hits": 306,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.0581866849825019,
+          "max_bytes": 16594
+        }
+      }
+    },
+    {
+      "family": "A_CI",
+      "numerical": {
+        "calls": 243,
+        "hits": 243,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 397,
+        "hits": 394,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.060505931978696026,
+          "max_bytes": 16420
+        }
+      }
+    },
+    {
+      "family": "C_CI",
+      "numerical": {
+        "calls": 238,
+        "hits": 238,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 392,
+        "hits": 389,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.06673207897983957,
+          "max_bytes": 16405
+        }
+      }
+    },
+    {
+      "family": "A_RG2b",
+      "numerical": {
+        "calls": 283,
+        "hits": 283,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 437,
+        "hits": 434,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.06083895300980657,
+          "max_bytes": 16568
+        }
+      }
+    },
+    {
+      "family": "C_RG2b",
+      "numerical": {
+        "calls": 191,
+        "hits": 191,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 345,
+        "hits": 342,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.06056034300127067,
+          "max_bytes": 16560
+        }
+      }
+    },
+    {
+      "family": "A_PC",
+      "numerical": {
+        "calls": 144,
+        "hits": 144,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 298,
+        "hits": 295,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.06049292099487502,
+          "max_bytes": 16420
+        }
+      }
+    },
+    {
+      "family": "C_PC",
+      "numerical": {
+        "calls": 127,
+        "hits": 127,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 281,
+        "hits": 278,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.05713327098055743,
+          "max_bytes": 16408
+        }
+      }
+    },
+    {
+      "family": "A_CI_PC",
+      "numerical": {
+        "calls": 243,
+        "hits": 243,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 397,
+        "hits": 394,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.06672195899591316,
+          "max_bytes": 16429
+        }
+      }
+    },
+    {
+      "family": "C_CI_PC",
+      "numerical": {
+        "calls": 238,
+        "hits": 238,
+        "misses": 0,
+        "oversized": 0
+      },
+      "public": {
+        "calls": 392,
+        "hits": 389,
+        "misses": 0,
+        "oversized": 3,
+        "step_result": {
+          "calls": 3,
+          "hits": 0,
+          "misses": 0,
+          "oversized": 3,
+          "exclusive_seconds": 0.061325661023147404,
+          "max_bytes": 16414
+        }
+      }
+    }
+  ],
+  "larger_result_cache_probe": [
+    {
+      "family": "A_OS",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.02236675201856997,
+        "max_bytes": 16588
+      }
+    },
+    {
+      "family": "C_OS",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.019519461013260297,
+        "max_bytes": 16610
+      }
+    },
+    {
+      "family": "A_CI",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.024302356992848217,
+        "max_bytes": 16436
+      }
+    },
+    {
+      "family": "C_CI",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.020084386982489377,
+        "max_bytes": 16421
+      }
+    },
+    {
+      "family": "A_RG2b",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.02002971501497086,
+        "max_bytes": 16584
+      }
+    },
+    {
+      "family": "C_RG2b",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.021744183017290197,
+        "max_bytes": 16576
+      }
+    },
+    {
+      "family": "A_PC",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.023825115989893675,
+        "max_bytes": 16436
+      }
+    },
+    {
+      "family": "C_PC",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.020167240989394486,
+        "max_bytes": 16424
+      }
+    },
+    {
+      "family": "A_CI_PC",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.02191760900313966,
+        "max_bytes": 16445
+      }
+    },
+    {
+      "family": "C_CI_PC",
+      "step_result": {
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.02146316599100828,
+        "max_bytes": 16430
+      }
+    }
+  ],
+  "evolving_cache_experiment": [
+    {
+      "family": "A_OS",
+      "baseline_seconds": [
+        0.4521352530136937,
+        0.3148926180001581,
+        0.4122639030101709
+      ],
+      "larger_cap_seconds": [
+        0.2509342480043415,
+        0.3316539079969516,
+        0.34807103300408926
+      ],
+      "median_baseline": 0.4122639030101709,
+      "median_larger_cap": 0.3316539079969516,
+      "snapshot_sha256": [
+        "6a1bee83d071b951a3dbbf4180a0dd2dfa9f78188a0e7c4b3019fc279d2cffe5",
+        "7487484b5589f91a613e0c877321b3a2fd289f296a61a688111bbcd20b5dd2bd",
+        "c8693aecac45a225cbef10906ea829f3c993d4dac2bef59db4166d66ed9367e3"
+      ]
+    },
+    {
+      "family": "C_OS",
+      "baseline_seconds": [
+        0.3209926489944337,
+        0.31613121200643945,
+        0.39428770799713675
+      ],
+      "larger_cap_seconds": [
+        0.2311905550013762,
+        0.3132051249995129,
+        0.3120777019939851
+      ],
+      "median_baseline": 0.3209926489944337,
+      "median_larger_cap": 0.3120777019939851,
+      "snapshot_sha256": [
+        "eb500759ce880ff9b41ebde7595b646010e8fc63b55f707aaa9c7c4714c2997c",
+        "e69f914dc404f7f234e35574e82db09a0a269edda5ff0a77b4071a40a82c4a49",
+        "8254e202f71acd23f914e46e0be5accde7678d3435e12edd2960d98a3fe0d529"
+      ]
+    },
+    {
+      "family": "A_CI",
+      "baseline_seconds": [
+        0.44447369199770037,
+        0.37895405999734066,
+        0.541887928993674
+      ],
+      "larger_cap_seconds": [
+        0.3182174769899575,
+        0.4344635309971636,
+        0.37390597800549585
+      ],
+      "median_baseline": 0.44447369199770037,
+      "median_larger_cap": 0.37390597800549585,
+      "snapshot_sha256": [
+        "5739d7be9441e8fdc92652ca8dc6cdb20c60eee50ead0066fdc05eaf9c3e27a3",
+        "a416dbd3671e0cd6c8299c8672890d85dbf1dd8c5c25ac822aec281805ca417e",
+        "629b5e3fea21b1aacb0a8f380cbc240cccbb466d1c525c387754a512a03b8053"
+      ]
+    },
+    {
+      "family": "C_CI",
+      "baseline_seconds": [
+        0.40471366299607325,
+        0.37272224998741876,
+        0.4950891490007052
+      ],
+      "larger_cap_seconds": [
+        0.3095155939954566,
+        0.40712836499733385,
+        0.3692110960109858
+      ],
+      "median_baseline": 0.40471366299607325,
+      "median_larger_cap": 0.3692110960109858,
+      "snapshot_sha256": [
+        "dbe0e904769124545f57ab680fbdd6a83961d9b429050f867274a39c4d18d26a",
+        "1fd495c0210e25d52eba645430dbc0ed0846f4d28a5151588bff83d8d5794ec8",
+        "9b7c431a66a366a7ed4827cc8badd20a673f72afe6c147e2bbf6d6f8dd6bf191"
+      ]
+    },
+    {
+      "family": "A_RG2b",
+      "baseline_seconds": [
+        2.299884823994944,
+        2.597674303993699,
+        2.560338758994476
+      ],
+      "larger_cap_seconds": [
+        2.2871633220056538,
+        2.51014753599884,
+        2.497475979005685
+      ],
+      "median_baseline": 2.560338758994476,
+      "median_larger_cap": 2.497475979005685,
+      "snapshot_sha256": [
+        "01887da9e60f87b444bf733fe028d43d57f0ee108c45bc321bfed58d8b1592f3",
+        "76f0f472a89469b9314709fe5d4ccc2f6fd933a09af712683dd82bbdcbc3f2eb",
+        "f1a574cfffab57e0ac05da5708252978d08b727d7101d400f3efdde9c65cd78d"
+      ]
+    },
+    {
+      "family": "C_RG2b",
+      "baseline_seconds": [
+        0.7454631049913587,
+        0.6921687750000274,
+        0.8006474360008724
+      ],
+      "larger_cap_seconds": [
+        0.6347440570098115,
+        0.7412252790090861,
+        0.7402967579982942
+      ],
+      "median_baseline": 0.7454631049913587,
+      "median_larger_cap": 0.7402967579982942,
+      "snapshot_sha256": [
+        "298e4dd6cc14a238835d8973b15451217a8c1c3864ce7f209cb630dea539a5fe",
+        "108d355135c3ac0b799e9522707b7d68925a9fe017a5a6c26dfb4cd72408f646",
+        "bf6617ebc9a9db3309794e032026b9c077bf3df82cd56fd97bb091615562967b"
+      ]
+    },
+    {
+      "family": "A_PC",
+      "baseline_seconds": [
+        0.32622729800641537,
+        0.3245134150056401,
+        0.41033261599659454
+      ],
+      "larger_cap_seconds": [
+        0.24417822298710234,
+        0.3384298220044002,
+        0.3263564689987106
+      ],
+      "median_baseline": 0.32622729800641537,
+      "median_larger_cap": 0.3263564689987106,
+      "snapshot_sha256": [
+        "73a5cfd6fd1751fec2a04f454a742e8cf51d683cbeacd026ffa2cdf6b17d16f8",
+        "554f847feb8841964de976966f8e7d2eda2310d43367ec129968746d30f7b276",
+        "ca8d1a84c865a73d93f3684ee3fb940ca025242c7de2c1cd5a54e75dab2f9d24"
+      ]
+    },
+    {
+      "family": "C_PC",
+      "baseline_seconds": [
+        0.32117938200826757,
+        0.3004772510030307,
+        0.3865599349956028
+      ],
+      "larger_cap_seconds": [
+        0.2341722330020275,
+        0.3224408200039761,
+        0.2980330519931158
+      ],
+      "median_baseline": 0.32117938200826757,
+      "median_larger_cap": 0.2980330519931158,
+      "snapshot_sha256": [
+        "5e7cbf3cf975eac8c78ed57fdcb37607f26ff1546c6e4237709aa54b37f571a4",
+        "4093638e52fb88d45a0285bd190a9fb8be24fd74c4bb63195f86d19b028f4a3d",
+        "d6a3a164b79cb06efb82311ffb6d60582dbfdda601571e31273e5c811efd7f27"
+      ]
+    },
+    {
+      "family": "A_CI_PC",
+      "baseline_seconds": [
+        0.4690874259977136,
+        0.4166570689994842,
+        0.5483379489887739
+      ],
+      "larger_cap_seconds": [
+        0.3595433409936959,
+        0.47340837500814814,
+        0.41410229000030085
+      ],
+      "median_baseline": 0.4690874259977136,
+      "median_larger_cap": 0.41410229000030085,
+      "snapshot_sha256": [
+        "282a1278d50d305c6a10a51d4ef03d2d4f257efdb2b7d2fdccef874b300d8f69",
+        "14acfc3a7646d190a2564219b8edef4420df5ea89cedb25c66ba4375fed26407",
+        "2f46c718a22b06d6211dc0ebced4d65e60ebcaa19b00a238a44f3b133330131a"
+      ]
+    },
+    {
+      "family": "C_CI_PC",
+      "baseline_seconds": [
+        0.4119730800011894,
+        0.41338964499300346,
+        0.5249348219949752
+      ],
+      "larger_cap_seconds": [
+        0.34058896599162836,
+        0.42084727399924304,
+        0.44636475200240966
+      ],
+      "median_baseline": 0.41338964499300346,
+      "median_larger_cap": 0.42084727399924304,
+      "snapshot_sha256": [
+        "4baec2e7be9382bd6da90a8d694e2a1cf03110bd90bb4b7f9cd7786f82865402",
+        "42d26b54d7ed1b2cfba6db9fcad7a6c4ab1602e9fd44611679b3597601fe1aa2",
+        "deedc4758c4fb32ea0a13c059a635e4af29c6bdfa5a8d057a24f3282db3aca3d"
+      ]
+    }
+  ],
+  "evolving_cache_experiment_note": "Three evolving steps per branch; order alternates and caches are process-shared. Times show noise and warm-cache/order effects, so no whole-step speedup is claimed. All paired snapshot hashes matched.",
+  "rg2b_scalar_experiment": {
+    "family": "A_RG2b",
+    "log_calls": 126,
+    "unique_log_operands": 29,
+    "repeated_log_seconds": 0.4602728800091427,
+    "output_sha256": "0007b3d9d99840ec1138c0a2cac72155ff87c65b4aac5f61508c3b5a7f2bd2cf",
+    "conditions": [
+      {
+        "condition": "baseline",
+        "seconds": [
+          2.0738350880128564,
+          2.102645388004021,
+          2.115996106993407
+        ],
+        "median_seconds": 2.102645388004021,
+        "cache_info": {
+          "exp": {
+            "hits": 142,
+            "misses": 295,
+            "maxsize": 128,
+            "currsize": 128
+          },
+          "log": {
+            "hits": 0,
+            "misses": 0,
+            "maxsize": 128,
+            "currsize": 0
+          }
+        }
+      },
+      {
+        "condition": "log_endpoints",
+        "seconds": [
+          1.6446947250078665,
+          1.6613950860046316,
+          1.6200886229926255
+        ],
+        "median_seconds": 1.6446947250078665,
+        "cache_info": {
+          "exp": {
+            "hits": 142,
+            "misses": 295,
+            "maxsize": 128,
+            "currsize": 128
+          },
+          "log": {
+            "hits": 97,
+            "misses": 29,
+            "maxsize": 128,
+            "currsize": 29
+          }
+        }
+      },
+      {
+        "condition": "exp_1024",
+        "seconds": [
+          2.098449564000475,
+          2.1257741059962427,
+          2.103958278996288
+        ],
+        "median_seconds": 2.103958278996288,
+        "cache_info": {
+          "exp": {
+            "hits": 142,
+            "misses": 295,
+            "maxsize": 1024,
+            "currsize": 295
+          },
+          "log": {
+            "hits": 0,
+            "misses": 0,
+            "maxsize": 128,
+            "currsize": 0
+          }
+        }
+      },
+      {
+        "condition": "both",
+        "seconds": [
+          1.6647611830121605,
+          1.6523079960024916,
+          1.6289060109993443
+        ],
+        "median_seconds": 1.6523079960024916,
+        "cache_info": {
+          "exp": {
+            "hits": 142,
+            "misses": 295,
+            "maxsize": 1024,
+            "currsize": 295
+          },
+          "log": {
+            "hits": 97,
+            "misses": 29,
+            "maxsize": 128,
+            "currsize": 29
+          }
+        }
+      }
+    ]
+  },
+  "implementation": {
+    "result_max_bytes": 65536,
+    "validation_entry_limit": 128,
+    "log_endpoint_entry_limit": 128,
+    "log_cache_rounding": "Immutable bounds before the original final rounding; a fresh interval performs that rounding once.",
+    "evolving_method": "Five successive ordinary public steps; a sixth fresh step under cProfile. Creation and snapshot hashing excluded. Trace speedup uses sums of the five ordinary timings; call reduction uses matching sixth steps.",
+    "evolving_before": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.43317452700284775,
+          0.34558207500958815,
+          0.3906840609997744,
+          0.4349915159982629,
+          0.4808923629898345
+        ],
+        "median_seconds": 0.43317452700284775,
+        "profiled_seconds": 1.287205714994343,
+        "total_calls": 1499999,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04"
+        ]
+      },
+      {
+        "family": "C_OS",
+        "seconds": [
+          0.31688889500219375,
+          0.37411648100533057,
+          0.3967988369986415,
+          0.4442599850008264,
+          0.4367015169991646
+        ],
+        "median_seconds": 0.3967988369986415,
+        "profiled_seconds": 1.2167937249905663,
+        "total_calls": 1444267,
+        "snapshot_sha256": [
+          "a36f2b612ef851df5f8a8d9e0d29a50c046e87d344585b2ace9016915d7be382",
+          "ff72887b9ec5eb0b26af4abc389a55f939e5fef53e91b208b73d0e9a85ae6fae",
+          "52f0f8109c2fc3355bbe89ddc8c76edcaf1ac5d32607cfecc16680906efb2d8a",
+          "33be8d489fc40bab20671d193a31300d9cd0cd477dba9d406d707a61fb207b05",
+          "cd41535f28f4538c86914f5b4ea0a9369ef4225d1f9ac6976ecf28a6547f6e4b",
+          "f99ea74eb74bebccbb30b62350f97086f094a25b17bed09f98e669097ace44f3"
+        ]
+      },
+      {
+        "family": "A_CI",
+        "seconds": [
+          0.42222509399289265,
+          0.46976144099608064,
+          0.4961860690091271,
+          0.549356286006514,
+          0.5674390829954064
+        ],
+        "median_seconds": 0.4961860690091271,
+        "profiled_seconds": 1.4780417489964748,
+        "total_calls": 1670995,
+        "snapshot_sha256": [
+          "b44946cc43e5e719d4bf417254ab24ee9d92c650b4b59492482321ad8848ca94",
+          "f380236465c183bca436d439a0ecbb9da6c4e99cb277e25348740958fc5d48ae",
+          "7539fb33dd5672fac455d27fc606ac2877b4abe4f1ca4ef12d8322b9b1b13873",
+          "25e9ef711adaae901a974cd4e2b0ad52302f5b135ee6ee3f76bffaba1be76074",
+          "562609152d9474d4552c3f680d0844e6845e64a41e60688254e265eb3583f314",
+          "5b0c3f9f16d4cbe9372da4eb3292c223caaec9b3a252ffab6ee2c9a6cd2a1628"
+        ]
+      },
+      {
+        "family": "C_CI",
+        "seconds": [
+          0.3973171310062753,
+          0.4670344379992457,
+          0.4773055310070049,
+          0.523544232986751,
+          0.5442495290044462
+        ],
+        "median_seconds": 0.4773055310070049,
+        "profiled_seconds": 1.5550325359945418,
+        "total_calls": 1679201,
+        "snapshot_sha256": [
+          "b5c2d5e39edafeacacfbabc38a11e9dcb8307fbc0e78054629f785459275994e",
+          "e5a3989fec8aba3bc5656042c436e176568456b0a2f570f26dc4809337635905",
+          "ee77e8e7b458844c495ff8a75c1e4b9a19dac43715a5fda11e6ccadf16711def",
+          "672508c27095c4b9d8e6701ca4f5724e3cfce3f1408ca11c503c8fb923fdff77",
+          "96d0ae546bf1749ca098206ae1af65918092f7a4e206478060726018a34659c6",
+          "c639c1da245be47a37213ef9889e520d554e91cd409f17194f823b0eb8f1871b"
+        ]
+      },
+      {
+        "family": "A_RG2b",
+        "seconds": [
+          2.355899367990787,
+          2.6074828630080447,
+          2.654778053998598,
+          2.7128751300042495,
+          2.844891758999438
+        ],
+        "median_seconds": 2.654778053998598,
+        "profiled_seconds": 4.405764205002924,
+        "total_calls": 3592980,
+        "snapshot_sha256": [
+          "09f928d769d25df447f68ee993ea9d2a653860c91de3e143be3cceb205116ba1",
+          "df1eba50dfad097005b7ef8e7abc4e434f1cf92e10533777326c69d6ca43f8a0",
+          "e7cb25ac3b44bab8d7469829025c26eb29f4d5115df2efec3e5e0d20d839c3b1",
+          "a5988ebce4b23cc20a430653f652b4449483982ee8f0396214b142493e7e2a47",
+          "2415cd4e29c29376a33c1a01cd100681f704efd3ab5f629a5103609445fc420f",
+          "56b95c0969999bba3446e4cc7b96dc1d3fd39da3ad195138a949086d1f938b23"
+        ]
+      },
+      {
+        "family": "C_RG2b",
+        "seconds": [
+          0.7438478139956715,
+          0.8405543569970177,
+          0.8476118200051133,
+          0.872116257000016,
+          0.9221054639929207
+        ],
+        "median_seconds": 0.8476118200051133,
+        "profiled_seconds": 2.3746164019976277,
+        "total_calls": 3007080,
+        "snapshot_sha256": [
+          "cb2de5bdcbc55328e4165b4c2eb53102465bbebf171ea6a8ffaff91294c013c5",
+          "5482761b46d4966659ab8b6cca4c8e24b23d961388b119d8b304da90603f42c4",
+          "38ef5fe457c698ee9a6c5ba3097224288cb1bbe6911dfba12f9cf3c954a361fc",
+          "b1f8748e4fc163f778d0dc8bc3d4bb5412cb077788a4380c98c0c2a5b5a9f9c5",
+          "ec0dd7fdc092b6f74dfe621c9b2632aba1c4ed99eca569f1c1b364437051784f",
+          "6d0820978543e10d5008cfb21ee9c7358d30db3f11aadc0d153982f783ced793"
+        ]
+      },
+      {
+        "family": "A_PC",
+        "seconds": [
+          0.35788777899870183,
+          0.37478026100143325,
+          0.3930545390030602,
+          0.45054040900140535,
+          0.4754674419964431
+        ],
+        "median_seconds": 0.3930545390030602,
+        "profiled_seconds": 1.2936863349896157,
+        "total_calls": 1424084,
+        "snapshot_sha256": [
+          "a0d41f108d912bb2180d37bf62d9a105ecbf23750249b090920e83567561adcb",
+          "da2ea29dc0ffe20fbd1fac247a9b87d82bab00ad80ce52393d1007db4dfeecb7",
+          "1704e91cda2c577a085098b1510ff3ba5c3862eff64df1e6459a21db9e03d10d",
+          "083a368b018f58f34b01564d8b06f0a066f3e5e4a792dcab73c2b9bf58d1c1f8",
+          "82dd542b27fbf4b257d612c032f7d61bc131768dc78e1d29310f4c5dddfdea49",
+          "3dc6d26d14557d72687d37aafea45a24f9d831acbd27d00bcb31d889fed6534b"
+        ]
+      },
+      {
+        "family": "C_PC",
+        "seconds": [
+          0.31878409199998714,
+          0.37605396599974483,
+          0.4031958389969077,
+          0.427000826006406,
+          0.4826900500047486
+        ],
+        "median_seconds": 0.4031958389969077,
+        "profiled_seconds": 1.2672046340012457,
+        "total_calls": 1390374,
+        "snapshot_sha256": [
+          "7c4fee9c3ee1168ba4d77b65e4b6ebf49f4296a32515166e00b3b2034442f205",
+          "dc0302b96d1921b289c195d8d402a1833f78195c6060cde4ad29c8f1fdfc1ea9",
+          "10ccfb6f3ab909661d705355f12a80c2b014a95e4da792bf0a964038d45d4d43",
+          "abe966d611ee876e2f05e8fbc604f7383d374980cb7471f950053e041fb4eade",
+          "3823f4ddf72e3570a84a3b11265681a4acd941d0911f4ce6e7faeb0ccb18094a",
+          "ac29f1d16c036b13bdf46c7743a5e9e6796837f8e6055df809c4181f38420101"
+        ]
+      },
+      {
+        "family": "A_CI_PC",
+        "seconds": [
+          0.4760874670027988,
+          0.5099149199959356,
+          0.5452759019972291,
+          0.6866101159976097,
+          0.5962360160046956
+        ],
+        "median_seconds": 0.5452759019972291,
+        "profiled_seconds": 1.5306467619957402,
+        "total_calls": 1721343,
+        "snapshot_sha256": [
+          "d252acf6442777bac019d5582f33915b3de625a6fc4d93fcef6cb6986e51bbbc",
+          "6148a6fc4cfcbf058aa40899f90487645040b5dd7dbc5ed160e82fb4e1c3007d",
+          "21e57bee06925d480e10a234a51da870ef66fc3a75d90937f625ed1afc25f136",
+          "157057381eb69ee56ad95ed0c95a1942c2995f5fdaa201dbb5e55b916b90739a",
+          "f07c660e48f9adb387cfca14959dd73b613fdf3028940f670c2d7ba46514675c",
+          "1ccbcb1f92a43b2841de79913df1181c70ac94f930c1c6de1f8cb858e9f1cfc1"
+        ]
+      },
+      {
+        "family": "C_CI_PC",
+        "seconds": [
+          0.45397701699403115,
+          0.4601699600025313,
+          0.5124449010036187,
+          0.5455301109905122,
+          0.610154213005444
+        ],
+        "median_seconds": 0.5124449010036187,
+        "profiled_seconds": 1.536118196992902,
+        "total_calls": 1726766,
+        "snapshot_sha256": [
+          "c7188f24f860478f4bf174e976eba572a056e219ef93f53ab70ea1b813a8c54e",
+          "8460009b09d80a999e59c2cd5ac14ba1fdfd85b1e900c321d1e58782695705cc",
+          "30987f07c85781bebac08a1785eefd8d48e00e22c93cf448cae514bdf6d6c755",
+          "46e0bed7aee76c3ffa6a90c1ef14e024ff34a4319bb3b02b233c7a9be48f8f7a",
+          "83cd268636a6984ef29029f241f2c83a1cf4d257c27e0e25bf97b80f057be341",
+          "05b23517b644e90d5cfa75dcd16932fae2a90aafe92c6454ccdf1eed29afc065"
+        ]
+      }
+    ],
+    "evolving_after": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.41169904101116117,
+          0.3393144379951991,
+          0.3783805019920692,
+          0.4061251910025021,
+          0.4481786299875239
+        ],
+        "median_seconds": 0.4061251910025021,
+        "profiled_seconds": 1.1460729819955304,
+        "total_calls": 1372575,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04"
+        ]
+      },
+      {
+        "family": "C_OS",
+        "seconds": [
+          0.287137409002753,
+          0.33567312300147023,
+          0.3548390100040706,
+          0.3902189630025532,
+          0.4517998679948505
+        ],
+        "median_seconds": 0.3548390100040706,
+        "profiled_seconds": 1.1914838010125095,
+        "total_calls": 1316766,
+        "snapshot_sha256": [
+          "a36f2b612ef851df5f8a8d9e0d29a50c046e87d344585b2ace9016915d7be382",
+          "ff72887b9ec5eb0b26af4abc389a55f939e5fef53e91b208b73d0e9a85ae6fae",
+          "52f0f8109c2fc3355bbe89ddc8c76edcaf1ac5d32607cfecc16680906efb2d8a",
+          "33be8d489fc40bab20671d193a31300d9cd0cd477dba9d406d707a61fb207b05",
+          "cd41535f28f4538c86914f5b4ea0a9369ef4225d1f9ac6976ecf28a6547f6e4b",
+          "f99ea74eb74bebccbb30b62350f97086f094a25b17bed09f98e669097ace44f3"
+        ]
+      },
+      {
+        "family": "A_CI",
+        "seconds": [
+          0.39276157699350733,
+          0.39857126100105233,
+          0.437707256001886,
+          0.4944764359970577,
+          0.5149721750058234
+        ],
+        "median_seconds": 0.437707256001886,
+        "profiled_seconds": 1.3151102219999302,
+        "total_calls": 1489228,
+        "snapshot_sha256": [
+          "b44946cc43e5e719d4bf417254ab24ee9d92c650b4b59492482321ad8848ca94",
+          "f380236465c183bca436d439a0ecbb9da6c4e99cb277e25348740958fc5d48ae",
+          "7539fb33dd5672fac455d27fc606ac2877b4abe4f1ca4ef12d8322b9b1b13873",
+          "25e9ef711adaae901a974cd4e2b0ad52302f5b135ee6ee3f76bffaba1be76074",
+          "562609152d9474d4552c3f680d0844e6845e64a41e60688254e265eb3583f314",
+          "5b0c3f9f16d4cbe9372da4eb3292c223caaec9b3a252ffab6ee2c9a6cd2a1628"
+        ]
+      },
+      {
+        "family": "C_CI",
+        "seconds": [
+          0.3506051739968825,
+          0.3855753199895844,
+          0.44936697199591435,
+          0.49532008900132496,
+          0.4714184350013966
+        ],
+        "median_seconds": 0.44936697199591435,
+        "profiled_seconds": 1.3697198660083814,
+        "total_calls": 1500498,
+        "snapshot_sha256": [
+          "b5c2d5e39edafeacacfbabc38a11e9dcb8307fbc0e78054629f785459275994e",
+          "e5a3989fec8aba3bc5656042c436e176568456b0a2f570f26dc4809337635905",
+          "ee77e8e7b458844c495ff8a75c1e4b9a19dac43715a5fda11e6ccadf16711def",
+          "672508c27095c4b9d8e6701ca4f5724e3cfce3f1408ca11c503c8fb923fdff77",
+          "96d0ae546bf1749ca098206ae1af65918092f7a4e206478060726018a34659c6",
+          "c639c1da245be47a37213ef9889e520d554e91cd409f17194f823b0eb8f1871b"
+        ]
+      },
+      {
+        "family": "A_RG2b",
+        "seconds": [
+          1.7446303260076093,
+          1.88830466500076,
+          1.917090281000128,
+          1.9045577380020404,
+          1.9547090599953663
+        ],
+        "median_seconds": 1.9045577380020404,
+        "profiled_seconds": 3.541116319000139,
+        "total_calls": 3175755,
+        "snapshot_sha256": [
+          "09f928d769d25df447f68ee993ea9d2a653860c91de3e143be3cceb205116ba1",
+          "df1eba50dfad097005b7ef8e7abc4e434f1cf92e10533777326c69d6ca43f8a0",
+          "e7cb25ac3b44bab8d7469829025c26eb29f4d5115df2efec3e5e0d20d839c3b1",
+          "a5988ebce4b23cc20a430653f652b4449483982ee8f0396214b142493e7e2a47",
+          "2415cd4e29c29376a33c1a01cd100681f704efd3ab5f629a5103609445fc420f",
+          "56b95c0969999bba3446e4cc7b96dc1d3fd39da3ad195138a949086d1f938b23"
+        ]
+      },
+      {
+        "family": "C_RG2b",
+        "seconds": [
+          0.6212255999998888,
+          0.6420228690112708,
+          0.7348696449917043,
+          0.7383018919936148,
+          1.4571882559976075
+        ],
+        "median_seconds": 0.7348696449917043,
+        "profiled_seconds": 2.1624924520001514,
+        "total_calls": 2877787,
+        "snapshot_sha256": [
+          "cb2de5bdcbc55328e4165b4c2eb53102465bbebf171ea6a8ffaff91294c013c5",
+          "5482761b46d4966659ab8b6cca4c8e24b23d961388b119d8b304da90603f42c4",
+          "38ef5fe457c698ee9a6c5ba3097224288cb1bbe6911dfba12f9cf3c954a361fc",
+          "b1f8748e4fc163f778d0dc8bc3d4bb5412cb077788a4380c98c0c2a5b5a9f9c5",
+          "ec0dd7fdc092b6f74dfe621c9b2632aba1c4ed99eca569f1c1b364437051784f",
+          "6d0820978543e10d5008cfb21ee9c7358d30db3f11aadc0d153982f783ced793"
+        ]
+      },
+      {
+        "family": "A_PC",
+        "seconds": [
+          0.2675447380024707,
+          0.2983075700030895,
+          0.3252416880131932,
+          0.36080730200046673,
+          0.37591636000433937
+        ],
+        "median_seconds": 0.3252416880131932,
+        "profiled_seconds": 1.0412071809987538,
+        "total_calls": 1296724,
+        "snapshot_sha256": [
+          "a0d41f108d912bb2180d37bf62d9a105ecbf23750249b090920e83567561adcb",
+          "da2ea29dc0ffe20fbd1fac247a9b87d82bab00ad80ce52393d1007db4dfeecb7",
+          "1704e91cda2c577a085098b1510ff3ba5c3862eff64df1e6459a21db9e03d10d",
+          "083a368b018f58f34b01564d8b06f0a066f3e5e4a792dcab73c2b9bf58d1c1f8",
+          "82dd542b27fbf4b257d612c032f7d61bc131768dc78e1d29310f4c5dddfdea49",
+          "3dc6d26d14557d72687d37aafea45a24f9d831acbd27d00bcb31d889fed6534b"
+        ]
+      },
+      {
+        "family": "C_PC",
+        "seconds": [
+          0.273853473001509,
+          0.27397804800421,
+          0.3054279670031974,
+          0.35974745800194796,
+          0.3883792090055067
+        ],
+        "median_seconds": 0.3054279670031974,
+        "profiled_seconds": 1.0087741470051697,
+        "total_calls": 1262941,
+        "snapshot_sha256": [
+          "7c4fee9c3ee1168ba4d77b65e4b6ebf49f4296a32515166e00b3b2034442f205",
+          "dc0302b96d1921b289c195d8d402a1833f78195c6060cde4ad29c8f1fdfc1ea9",
+          "10ccfb6f3ab909661d705355f12a80c2b014a95e4da792bf0a964038d45d4d43",
+          "abe966d611ee876e2f05e8fbc604f7383d374980cb7471f950053e041fb4eade",
+          "3823f4ddf72e3570a84a3b11265681a4acd941d0911f4ce6e7faeb0ccb18094a",
+          "ac29f1d16c036b13bdf46c7743a5e9e6796837f8e6055df809c4181f38420101"
+        ]
+      },
+      {
+        "family": "A_CI_PC",
+        "seconds": [
+          0.3593660460028332,
+          0.3879736090020742,
+          0.42176697800459806,
+          0.46830488499836065,
+          0.48532926800544374
+        ],
+        "median_seconds": 0.42176697800459806,
+        "profiled_seconds": 1.2827949359925697,
+        "total_calls": 1537704,
+        "snapshot_sha256": [
+          "d252acf6442777bac019d5582f33915b3de625a6fc4d93fcef6cb6986e51bbbc",
+          "6148a6fc4cfcbf058aa40899f90487645040b5dd7dbc5ed160e82fb4e1c3007d",
+          "21e57bee06925d480e10a234a51da870ef66fc3a75d90937f625ed1afc25f136",
+          "157057381eb69ee56ad95ed0c95a1942c2995f5fdaa201dbb5e55b916b90739a",
+          "f07c660e48f9adb387cfca14959dd73b613fdf3028940f670c2d7ba46514675c",
+          "1ccbcb1f92a43b2841de79913df1181c70ac94f930c1c6de1f8cb858e9f1cfc1"
+        ]
+      },
+      {
+        "family": "C_CI_PC",
+        "seconds": [
+          0.32472989900270477,
+          0.3825067330035381,
+          0.39747503999387845,
+          0.43471024300379213,
+          0.4503653419960756
+        ],
+        "median_seconds": 0.39747503999387845,
+        "profiled_seconds": 1.2374086089985212,
+        "total_calls": 1546191,
+        "snapshot_sha256": [
+          "c7188f24f860478f4bf174e976eba572a056e219ef93f53ab70ea1b813a8c54e",
+          "8460009b09d80a999e59c2cd5ac14ba1fdfd85b1e900c321d1e58782695705cc",
+          "30987f07c85781bebac08a1785eefd8d48e00e22c93cf448cae514bdf6d6c755",
+          "46e0bed7aee76c3ffa6a90c1ef14e024ff34a4319bb3b02b233c7a9be48f8f7a",
+          "83cd268636a6984ef29029f241f2c83a1cf4d257c27e0e25bf97b80f057be341",
+          "05b23517b644e90d5cfa75dcd16932fae2a90aafe92c6454ccdf1eed29afc065"
+        ]
+      }
+    ],
+    "evolving_comparison": [
+      {
+        "family": "A_OS",
+        "trace_before_seconds": 2.0853245420003077,
+        "trace_after_seconds": 1.9836978019884555,
+        "trace_speedup": 1.0512309586218131,
+        "median_speedup": 1.0666034429767224,
+        "calls_before": 1499999,
+        "calls_after": 1372575,
+        "call_reduction_percent": 8.494938996626
+      },
+      {
+        "family": "C_OS",
+        "trace_before_seconds": 1.9687657150061568,
+        "trace_after_seconds": 1.8196683730056975,
+        "trace_speedup": 1.0819365463577206,
+        "median_speedup": 1.1182503214460258,
+        "calls_before": 1444267,
+        "calls_after": 1316766,
+        "call_reduction_percent": 8.828076802973417
+      },
+      {
+        "family": "A_CI",
+        "trace_before_seconds": 2.5049679730000207,
+        "trace_after_seconds": 2.2384887049993267,
+        "trace_speedup": 1.119044276348392,
+        "median_speedup": 1.133602567024818,
+        "calls_before": 1670995,
+        "calls_after": 1489228,
+        "call_reduction_percent": 10.87777043019279
+      },
+      {
+        "family": "C_CI",
+        "trace_before_seconds": 2.409450862003723,
+        "trace_after_seconds": 2.152285989985103,
+        "trace_speedup": 1.1194845263200364,
+        "median_speedup": 1.0621731474545142,
+        "calls_before": 1679201,
+        "calls_after": 1500498,
+        "call_reduction_percent": 10.64214468666943
+      },
+      {
+        "family": "A_RG2b",
+        "trace_before_seconds": 13.175927174001117,
+        "trace_after_seconds": 9.409292070005904,
+        "trace_speedup": 1.4003101483056473,
+        "median_speedup": 1.3939078879192024,
+        "calls_before": 3592980,
+        "calls_after": 3175755,
+        "call_reduction_percent": 11.612227176327172
+      },
+      {
+        "family": "C_RG2b",
+        "trace_before_seconds": 4.226235711990739,
+        "trace_after_seconds": 4.193608261994086,
+        "trace_speedup": 1.0077802808365173,
+        "median_speedup": 1.1534179235484434,
+        "calls_before": 3007080,
+        "calls_after": 2877787,
+        "call_reduction_percent": 4.299619564494462
+      },
+      {
+        "family": "A_PC",
+        "trace_before_seconds": 2.0517304300010437,
+        "trace_after_seconds": 1.6278176580235595,
+        "trace_speedup": 1.2604178483308657,
+        "median_speedup": 1.2084998740601673,
+        "calls_before": 1424084,
+        "calls_after": 1296724,
+        "call_reduction_percent": 8.943292670937952
+      },
+      {
+        "family": "C_PC",
+        "trace_before_seconds": 2.0077247730077943,
+        "trace_after_seconds": 1.601386155016371,
+        "trace_speedup": 1.2537418078197817,
+        "median_speedup": 1.3201012433569543,
+        "calls_before": 1390374,
+        "calls_after": 1262941,
+        "call_reduction_percent": 9.165375647128037
+      },
+      {
+        "family": "A_CI_PC",
+        "trace_before_seconds": 2.8141244209982688,
+        "trace_after_seconds": 2.12274078601331,
+        "trace_speedup": 1.3257032792418508,
+        "median_speedup": 1.2928368754162745,
+        "calls_before": 1721343,
+        "calls_after": 1537704,
+        "call_reduction_percent": 10.668356045250714
+      },
+      {
+        "family": "C_CI_PC",
+        "trace_before_seconds": 2.5822762019961374,
+        "trace_after_seconds": 1.989787256999989,
+        "trace_speedup": 1.297764971059995,
+        "median_speedup": 1.2892505174954154,
+        "calls_before": 1726766,
+        "calls_after": 1546191,
+        "call_reduction_percent": 10.457409979117028
+      }
+    ],
+    "same_input_after": [
+      {
+        "family": "A_OS",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.11590059500304051,
+          0.19966558599844575,
+          0.11589441300020553,
+          0.12676361700869165,
+          0.11915257600776386
+        ],
+        "median_seconds": 0.11915257600776386,
+        "instrumented_seconds": [
+          0.12524090500664897,
+          0.12073653700645082,
+          0.13019446800171863,
+          0.12419422800303437,
+          0.11876062599185389
+        ],
+        "mean_instrumented_seconds": 0.12382535280194133,
+        "mean_exclusive_seconds": {
+          "schema": 0.0027350579941412432,
+          "json_copy": 0.013934373401571064,
+          "selected_arithmetic": 0.0008479880023514851,
+          "encoding": 0.033460538793588054,
+          "assets": 0.05002120154385921,
+          "deep_copy": 0.0024807136185700076
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.02869011780130677,
+          "CandidateACurrent.identity:first": 0.01311382739804685,
+          "stage.from_payload": 0.06093707779364195
+        },
+        "counts": {
+          "json_copy": 2392,
+          "encoding": 476,
+          "assets": 198,
+          "schema": 186,
+          "stage.to_payload": 16,
+          "deep_copy": 12,
+          "stage.from_payload": 7,
+          "CandidateACurrent.identity:first": 5,
+          "selected_arithmetic": 5
+        },
+        "total_calls": 405796,
+        "profiled_seconds": 0.3208659730007639,
+        "output_sha256": "ba191b58c99dd737b4f253ec8afd154e01783f81a5867fd630d6fb76859c47db"
+      },
+      {
+        "family": "A_OS",
+        "boundary": "public",
+        "plain_seconds": [
+          0.20523918599064928,
+          0.19255976400745567,
+          0.20025011801044457,
+          0.21402215599664487,
+          0.19948199500504415
+        ],
+        "median_seconds": 0.20025011801044457,
+        "instrumented_seconds": [
+          0.1980629460013006,
+          0.22062044200720266,
+          0.3771911270014243,
+          0.2965570679953089,
+          0.2658148420014186
+        ],
+        "mean_instrumented_seconds": 0.271649285001331,
+        "mean_exclusive_seconds": {
+          "schema": 0.007158808651729487,
+          "json_copy": 0.028859594254754484,
+          "selected_arithmetic": 0.0010218419978627936,
+          "encoding": 0.06861780737235676,
+          "assets": 0.11855047096905764,
+          "deep_copy": 0.004307074006646872
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.03958757978689391,
+          "CandidateACurrent.identity:first": 0.017263427801663057,
+          "stage.from_payload": 0.08175409399555064
+        },
+        "counts": {
+          "json_copy": 3657,
+          "assets": 355,
+          "encoding": 788,
+          "schema": 340,
+          "stage.to_payload": 16,
+          "deep_copy": 15,
+          "stage.from_payload": 7,
+          "CandidateACurrent.identity:first": 5,
+          "selected_arithmetic": 5
+        },
+        "total_calls": 651545,
+        "profiled_seconds": 0.7882215270074084,
+        "output_sha256": "09700c85a7ac81b69e517b37c872aeeeabb98d49880b3b73dd06b3fe0202e651"
+      },
+      {
+        "family": "C_OS",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.15512256500369404,
+          0.10270789200149011,
+          0.09408824901038315,
+          0.11452021400327794,
+          0.16389000600611325
+        ],
+        "median_seconds": 0.11452021400327794,
+        "instrumented_seconds": [
+          0.11452305701095611,
+          0.1349459589982871,
+          0.10211067600175738,
+          0.10585140899638645,
+          0.09949906800466124
+        ],
+        "mean_instrumented_seconds": 0.11138603380240966,
+        "mean_exclusive_seconds": {
+          "schema": 0.002522471977863461,
+          "json_copy": 0.011844648388796486,
+          "selected_arithmetic": 0.0038648583926260472,
+          "encoding": 0.02798701038991567,
+          "assets": 0.043282440994516946,
+          "deep_copy": 0.002602185189607553
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.010771314398152754,
+          "stage.to_payload": 0.019478477598750033,
+          "stage.from_payload": 0.05666517900244798
+        },
+        "counts": {
+          "json_copy": 1841,
+          "encoding": 376,
+          "assets": 158,
+          "schema": 147,
+          "stage.to_payload": 10,
+          "deep_copy": 11,
+          "stage.from_payload": 6,
+          "selected_arithmetic": 28,
+          "CandidateCCurrent.identity:first": 4
+        },
+        "total_calls": 338570,
+        "profiled_seconds": 0.25435789799666964,
+        "output_sha256": "4f1732199d68bb3c28744351e80b101c1d7e46edb03d465e7ce24918e1bc14be"
+      },
+      {
+        "family": "C_OS",
+        "boundary": "public",
+        "plain_seconds": [
+          0.16561433298920747,
+          0.17230944598850328,
+          0.19954147501266561,
+          0.18352582400257234,
+          0.22287045800476335
+        ],
+        "median_seconds": 0.18352582400257234,
+        "instrumented_seconds": [
+          0.2826953350013355,
+          0.1756576199986739,
+          0.22436424100305885,
+          0.19262171900481917,
+          0.234674752005958
+        ],
+        "mean_instrumented_seconds": 0.22200273340276908,
+        "mean_exclusive_seconds": {
+          "schema": 0.005952074765809811,
+          "json_copy": 0.022759682079777122,
+          "selected_arithmetic": 0.00505699721397832,
+          "encoding": 0.053037953077000564,
+          "assets": 0.09493599337874911,
+          "deep_copy": 0.0038779151858761907
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.014368091398500838,
+          "stage.to_payload": 0.02335563199885655,
+          "stage.from_payload": 0.06111475039215293
+        },
+        "counts": {
+          "json_copy": 3226,
+          "assets": 323,
+          "encoding": 704,
+          "schema": 309,
+          "stage.to_payload": 11,
+          "deep_copy": 14,
+          "stage.from_payload": 6,
+          "selected_arithmetic": 35,
+          "CandidateCCurrent.identity:first": 5
+        },
+        "total_calls": 600799,
+        "profiled_seconds": 0.7892707220016746,
+        "output_sha256": "a0264f3267469d3ea4c87de7cc35854fdfa8bdc4c63d048a057809a01ac0e426"
+      },
+      {
+        "family": "A_CI",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.1570703070028685,
+          0.16732822300400585,
+          0.16709864400036167,
+          0.18248243400012143,
+          0.16509039798984304
+        ],
+        "median_seconds": 0.16709864400036167,
+        "instrumented_seconds": [
+          0.18898209500184748,
+          0.16780861299776006,
+          0.18912492399977054,
+          0.1803201069997158,
+          0.16563353600213304
+        ],
+        "mean_instrumented_seconds": 0.17837385500024538,
+        "mean_exclusive_seconds": {
+          "schema": 0.003514061399619095,
+          "json_copy": 0.01843190387589857,
+          "selected_arithmetic": 0.010559358820319175,
+          "encoding": 0.04442571517720353,
+          "assets": 0.06410621499817352,
+          "deep_copy": 0.002380692007136531
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.0484439144085627,
+          "CandidateACurrent.identity:first": 0.04156870679871645,
+          "stage.from_payload": 0.04868925999035127
+        },
+        "counts": {
+          "json_copy": 3178,
+          "encoding": 575,
+          "assets": 229,
+          "deep_copy": 10,
+          "schema": 219,
+          "stage.to_payload": 24,
+          "CandidateACurrent.identity:first": 15,
+          "selected_arithmetic": 27,
+          "stage.from_payload": 5
+        },
+        "total_calls": 527485,
+        "profiled_seconds": 0.4593751689972123,
+        "output_sha256": "2b17366a0d4d34f3ad2bf182e1c6a4e6856c83133f260803b8c46a71c1c39f57"
+      },
+      {
+        "family": "A_CI",
+        "boundary": "public",
+        "plain_seconds": [
+          0.3756152579881018,
+          0.2434704039915232,
+          0.230313281994313,
+          0.23854270699666813,
+          0.24462398600007873
+        ],
+        "median_seconds": 0.2434704039915232,
+        "instrumented_seconds": [
+          0.24451738700736314,
+          0.25037319799594115,
+          0.24556441900494974,
+          0.23686408399953507,
+          0.23825119700632058
+        ],
+        "mean_instrumented_seconds": 0.24311405700282193,
+        "mean_exclusive_seconds": {
+          "schema": 0.0060207719943718985,
+          "json_copy": 0.024508988205343484,
+          "selected_arithmetic": 0.009904333812301047,
+          "encoding": 0.05903275434684474,
+          "assets": 0.0977461664006114,
+          "deep_copy": 0.002656643997761421
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.04320152679283638,
+          "CandidateACurrent.identity:first": 0.03747233578760643,
+          "stage.from_payload": 0.04368477839743719
+        },
+        "counts": {
+          "json_copy": 4260,
+          "assets": 386,
+          "encoding": 881,
+          "schema": 373,
+          "deep_copy": 13,
+          "stage.to_payload": 24,
+          "CandidateACurrent.identity:first": 15,
+          "selected_arithmetic": 27,
+          "stage.from_payload": 5
+        },
+        "total_calls": 764074,
+        "profiled_seconds": 0.6248180640104692,
+        "output_sha256": "139736ff327fc28d71a6133a31d73c123a43ab2907a742d55687d983881e167f"
+      },
+      {
+        "family": "C_CI",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.16929634999542031,
+          0.17379443898971658,
+          0.16211162199033424,
+          0.16181144199799746,
+          0.15566589598893188
+        ],
+        "median_seconds": 0.16211162199033424,
+        "instrumented_seconds": [
+          0.1671032070007641,
+          0.18056653899839148,
+          0.1750798040011432,
+          0.16642402599973138,
+          0.16583083699515555
+        ],
+        "mean_instrumented_seconds": 0.17100088259903715,
+        "mean_exclusive_seconds": {
+          "schema": 0.003616088884882629,
+          "json_copy": 0.014374321413924918,
+          "selected_arithmetic": 0.019219464823254383,
+          "encoding": 0.03570257157261949,
+          "assets": 0.05816973759501707,
+          "deep_copy": 0.0022089859936386346
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.037527725790278056,
+          "stage.to_payload": 0.04322149020445067,
+          "stage.from_payload": 0.03589493920153473
+        },
+        "counts": {
+          "json_copy": 3079,
+          "encoding": 504,
+          "assets": 223,
+          "deep_copy": 9,
+          "schema": 214,
+          "selected_arithmetic": 111,
+          "stage.to_payload": 23,
+          "CandidateCCurrent.identity:first": 15,
+          "stage.from_payload": 4
+        },
+        "total_calls": 546903,
+        "profiled_seconds": 0.42910980399756227,
+        "output_sha256": "c82a6bb1f1897f973923ed878ed5303e8069cf9c78b62e7444b59e41c3420586"
+      },
+      {
+        "family": "C_CI",
+        "boundary": "public",
+        "plain_seconds": [
+          0.2605929219862446,
+          0.23782824400404934,
+          0.23469744699832518,
+          0.23537210100039374,
+          0.24584636399231385
+        ],
+        "median_seconds": 0.23782824400404934,
+        "instrumented_seconds": [
+          0.25350519799394533,
+          0.25602387099934276,
+          0.2551165850018151,
+          0.252442836004775,
+          0.2500355600059265
+        ],
+        "mean_instrumented_seconds": 0.25342481000116096,
+        "mean_exclusive_seconds": {
+          "schema": 0.006164864887250587,
+          "json_copy": 0.022703308024210854,
+          "selected_arithmetic": 0.01958951176784467,
+          "encoding": 0.0545058403222356,
+          "assets": 0.09812627587234601,
+          "deep_copy": 0.002793206792557612
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.03880268481443636,
+          "stage.to_payload": 0.04359548240317963,
+          "stage.from_payload": 0.03542051220138091
+        },
+        "counts": {
+          "json_copy": 4174,
+          "assets": 380,
+          "encoding": 809,
+          "schema": 368,
+          "deep_copy": 12,
+          "selected_arithmetic": 111,
+          "stage.to_payload": 23,
+          "CandidateCCurrent.identity:first": 15,
+          "stage.from_payload": 4
+        },
+        "total_calls": 781285,
+        "profiled_seconds": 0.6279292839899426,
+        "output_sha256": "138e590150fc6f699027856b95f79c159a559255b43618bd8bcd0f4ef651d3da"
+      },
+      {
+        "family": "A_RG2b",
+        "boundary": "numerical",
+        "plain_seconds": [
+          1.485097186989151,
+          1.509099322007387,
+          1.4925583570002345,
+          1.5199157270108117,
+          1.5394848980067763
+        ],
+        "median_seconds": 1.509099322007387,
+        "instrumented_seconds": [
+          1.5670870089961682,
+          1.5177495569951134,
+          1.4907968620100291,
+          1.5376608390070032,
+          1.5063276440050686
+        ],
+        "mean_instrumented_seconds": 1.5239243822026765,
+        "mean_exclusive_seconds": {
+          "schema": 0.005604345031315461,
+          "encoding": 0.07387713085336145,
+          "assets": 0.09085033254523296,
+          "deep_copy": 0.002680219803005457,
+          "selected_arithmetic": 0.8203881299879867,
+          "json_copy": 0.028373520440072752
+        },
+        "mean_inclusive_seconds": {
+          "stage.from_payload": 0.05887272320687771,
+          "stage.to_payload": 0.07891803841048387,
+          "CandidateACurrent.identity:repeat": 0.0036238884000340476,
+          "CandidateACurrent.identity:first": 0.07879438959353138
+        },
+        "counts": {
+          "json_copy": 4280,
+          "encoding": 752,
+          "assets": 293,
+          "deep_copy": 10,
+          "schema": 283,
+          "stage.to_payload": 34,
+          "CandidateACurrent.identity:first": 24,
+          "selected_arithmetic": 44,
+          "stage.from_payload": 5,
+          "CandidateACurrent.identity:repeat": 1
+        },
+        "total_calls": 2125222,
+        "profiled_seconds": 2.4589077010023175,
+        "output_sha256": "0007b3d9d99840ec1138c0a2cac72155ff87c65b4aac5f61508c3b5a7f2bd2cf"
+      },
+      {
+        "family": "A_RG2b",
+        "boundary": "public",
+        "plain_seconds": [
+          1.6097336030070437,
+          1.5789125009905547,
+          1.584864849006408,
+          1.6123338750039693,
+          1.5989553539984627
+        ],
+        "median_seconds": 1.5989553539984627,
+        "instrumented_seconds": [
+          1.6122989160066936,
+          1.6592039200040745,
+          1.600630685003125,
+          1.6082344479946187,
+          1.6166061660042033
+        ],
+        "mean_instrumented_seconds": 1.6193948270025431,
+        "mean_exclusive_seconds": {
+          "schema": 0.008411011585849337,
+          "encoding": 0.09780385022459086,
+          "assets": 0.1352991076069884,
+          "deep_copy": 0.0030514301877701657,
+          "selected_arithmetic": 0.8214064850268187,
+          "json_copy": 0.03853600709990133
+        },
+        "mean_inclusive_seconds": {
+          "stage.from_payload": 0.0566006016015308,
+          "stage.to_payload": 0.07876541978330351,
+          "CandidateACurrent.identity:repeat": 0.003450696199433878,
+          "CandidateACurrent.identity:first": 0.07752524860261474
+        },
+        "counts": {
+          "json_copy": 5372,
+          "assets": 450,
+          "encoding": 1058,
+          "schema": 437,
+          "deep_copy": 13,
+          "stage.to_payload": 34,
+          "CandidateACurrent.identity:first": 24,
+          "selected_arithmetic": 44,
+          "stage.from_payload": 5,
+          "CandidateACurrent.identity:repeat": 1
+        },
+        "total_calls": 2398020,
+        "profiled_seconds": 2.7123396460083313,
+        "output_sha256": "4f8fada826c220e74b43caccf4d4e611c0ff8c9202cfb29ae4c57e96459c45e4"
+      },
+      {
+        "family": "C_RG2b",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.4916786260000663,
+          0.48966495100467,
+          0.47226171199872624,
+          0.49166959000285715,
+          0.4698097719956422
+        ],
+        "median_seconds": 0.48966495100467,
+        "instrumented_seconds": [
+          0.48017707699909806,
+          0.48991941899294034,
+          0.5225906669948017,
+          0.5047918939962983,
+          0.4925379299966153
+        ],
+        "mean_instrumented_seconds": 0.49800339739595073,
+        "mean_exclusive_seconds": {
+          "schema": 0.0033388522337190808,
+          "json_copy": 0.01569235344941262,
+          "selected_arithmetic": 0.27022427519550546,
+          "encoding": 0.03973806285357569,
+          "assets": 0.05283049980935175,
+          "deep_copy": 0.002222101006191224
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:repeat": 0.002607505797641352,
+          "CandidateCCurrent.identity:first": 0.034374385009869,
+          "stage.to_payload": 0.043193516993778755,
+          "stage.from_payload": 0.03889076400955673
+        },
+        "counts": {
+          "json_copy": 2916,
+          "encoding": 455,
+          "assets": 200,
+          "deep_copy": 9,
+          "schema": 191,
+          "selected_arithmetic": 91,
+          "stage.to_payload": 21,
+          "CandidateCCurrent.identity:first": 12,
+          "stage.from_payload": 4,
+          "CandidateCCurrent.identity:repeat": 1
+        },
+        "total_calls": 1875328,
+        "profiled_seconds": 1.3417428969987668,
+        "output_sha256": "3c33626fa4822d0eae47ac52fcf9de91267821012a8adc16c8d2b0238c965507"
+      },
+      {
+        "family": "C_RG2b",
+        "boundary": "public",
+        "plain_seconds": [
+          0.6134777440020116,
+          0.5815752579947002,
+          0.6587638149940176,
+          0.6615897220035549,
+          0.5812080159957986
+        ],
+        "median_seconds": 0.6134777440020116,
+        "instrumented_seconds": [
+          0.5667145879997406,
+          0.6104203340073582,
+          0.5559127669985173,
+          0.5802058339904761,
+          0.5838045010023052
+        ],
+        "mean_instrumented_seconds": 0.5794116047996795,
+        "mean_exclusive_seconds": {
+          "schema": 0.005810973641928285,
+          "json_copy": 0.02453425154380966,
+          "selected_arithmetic": 0.2678013600030681,
+          "encoding": 0.06073880566400476,
+          "assets": 0.09213240154786036,
+          "deep_copy": 0.00297868819325231
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:repeat": 0.002506781998090446,
+          "CandidateCCurrent.identity:first": 0.03440745538391639,
+          "stage.to_payload": 0.04311483599594794,
+          "stage.from_payload": 0.0389956274011638
+        },
+        "counts": {
+          "json_copy": 4021,
+          "assets": 357,
+          "encoding": 760,
+          "schema": 345,
+          "deep_copy": 12,
+          "selected_arithmetic": 91,
+          "stage.to_payload": 21,
+          "CandidateCCurrent.identity:first": 12,
+          "stage.from_payload": 4,
+          "CandidateCCurrent.identity:repeat": 1
+        },
+        "total_calls": 2143734,
+        "profiled_seconds": 1.5357986760063795,
+        "output_sha256": "869784e303959d5e4b884a0ae4bd36f49c7ec6f54e2d8f9d7e3150c9fdb1040d"
+      },
+      {
+        "family": "A_PC",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.11896345199784264,
+          0.12455877100001089,
+          0.12869281599705573,
+          0.12447543299640529,
+          0.11288482800591737
+        ],
+        "median_seconds": 0.12447543299640529,
+        "instrumented_seconds": [
+          0.12774082100077067,
+          0.11509254599513952,
+          0.11937763800960965,
+          0.1214710510103032,
+          0.13182724799844436
+        ],
+        "mean_instrumented_seconds": 0.12310186080285349,
+        "mean_exclusive_seconds": {
+          "schema": 0.0023715066257864238,
+          "json_copy": 0.011823821530560963,
+          "selected_arithmetic": 0.0005703745991922915,
+          "encoding": 0.028910980559885502,
+          "assets": 0.04169647597300354,
+          "deep_copy": 0.00224941179913003
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.022548524604644626,
+          "CandidateACurrent.identity:first": 0.008018931798869745,
+          "stage.from_payload": 0.04802988279843703
+        },
+        "counts": {
+          "json_copy": 1969,
+          "encoding": 371,
+          "assets": 154,
+          "deep_copy": 10,
+          "schema": 144,
+          "stage.to_payload": 12,
+          "CandidateACurrent.identity:first": 3,
+          "selected_arithmetic": 3,
+          "stage.from_payload": 5
+        },
+        "total_calls": 338403,
+        "profiled_seconds": 0.38166400299814995,
+        "output_sha256": "f89ae08898589235aa707747fd5a99b9a25505458c2bfc3eae6ed403001a20af"
+      },
+      {
+        "family": "A_PC",
+        "boundary": "public",
+        "plain_seconds": [
+          0.23654023598646745,
+          0.2197094600123819,
+          0.2109252209920669,
+          0.22275335900485516,
+          0.23051112500252202
+        ],
+        "median_seconds": 0.22275335900485516,
+        "instrumented_seconds": [
+          0.2281585449964041,
+          0.23020398399967235,
+          0.2933111259917496,
+          0.2241412880102871,
+          0.22909814000013284
+        ],
+        "mean_instrumented_seconds": 0.2409826165996492,
+        "mean_exclusive_seconds": {
+          "schema": 0.006005178121267818,
+          "json_copy": 0.023420606789295563,
+          "selected_arithmetic": 0.0005577825970249251,
+          "encoding": 0.056887335874489506,
+          "assets": 0.09558063869189937,
+          "deep_copy": 0.003454068792052567
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.027257350392756053,
+          "CandidateACurrent.identity:first": 0.009566905803512781,
+          "stage.from_payload": 0.061874412200995724
+        },
+        "counts": {
+          "json_copy": 3051,
+          "assets": 311,
+          "encoding": 677,
+          "schema": 298,
+          "deep_copy": 13,
+          "stage.to_payload": 12,
+          "CandidateACurrent.identity:first": 3,
+          "selected_arithmetic": 3,
+          "stage.from_payload": 5
+        },
+        "total_calls": 581590,
+        "profiled_seconds": 0.5576791959902039,
+        "output_sha256": "8a4fe167447cc954f99b85bc924e946494e19b7e643a414154c69f89b9284914"
+      },
+      {
+        "family": "C_PC",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.12169955400167964,
+          0.12046077800914645,
+          0.13333046399930026,
+          0.12259403899952304,
+          0.11229020799510181
+        ],
+        "median_seconds": 0.12169955400167964,
+        "instrumented_seconds": [
+          0.12140347299282439,
+          0.11887919499713462,
+          0.1270221510058036,
+          0.11951760700321756,
+          0.12358293699799106
+        ],
+        "mean_instrumented_seconds": 0.12208107259939424,
+        "mean_exclusive_seconds": {
+          "schema": 0.0024968902027467264,
+          "json_copy": 0.010639615805121138,
+          "selected_arithmetic": 0.0028431590006221088,
+          "encoding": 0.026588997567887417,
+          "assets": 0.04031899838009849,
+          "deep_copy": 0.002405165208620019
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.008535851599299349,
+          "stage.to_payload": 0.022948456005542538,
+          "stage.from_payload": 0.04199635560507886
+        },
+        "counts": {
+          "json_copy": 1876,
+          "encoding": 321,
+          "assets": 136,
+          "deep_copy": 9,
+          "schema": 127,
+          "selected_arithmetic": 21,
+          "stage.to_payload": 11,
+          "CandidateCCurrent.identity:first": 3,
+          "stage.from_payload": 4
+        },
+        "total_calls": 309370,
+        "profiled_seconds": 0.2780613859940786,
+        "output_sha256": "7bd1ba0b382d750901121953e04d1d0ef3b2d19409eb9e18b35f52197180d69a"
+      },
+      {
+        "family": "C_PC",
+        "boundary": "public",
+        "plain_seconds": [
+          0.201034872996388,
+          0.21026012500806246,
+          0.2095243229996413,
+          0.20914075699693058,
+          0.20508557400899008
+        ],
+        "median_seconds": 0.20914075699693058,
+        "instrumented_seconds": [
+          0.22401759399508592,
+          0.24943917999917176,
+          0.22121011500712484,
+          0.22293308000371326,
+          0.20883416199649218
+        ],
+        "mean_instrumented_seconds": 0.2252868262003176,
+        "mean_exclusive_seconds": {
+          "schema": 0.005735594834550284,
+          "json_copy": 0.020614616994862445,
+          "selected_arithmetic": 0.003021677606739104,
+          "encoding": 0.05027005986194126,
+          "assets": 0.08972106679866557,
+          "deep_copy": 0.0031342380156274886
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.008639435400255024,
+          "stage.to_payload": 0.024128907191334294,
+          "stage.from_payload": 0.04317207000276539
+        },
+        "counts": {
+          "json_copy": 2971,
+          "assets": 293,
+          "encoding": 626,
+          "schema": 281,
+          "deep_copy": 12,
+          "selected_arithmetic": 21,
+          "stage.to_payload": 11,
+          "CandidateCCurrent.identity:first": 3,
+          "stage.from_payload": 4
+        },
+        "total_calls": 550179,
+        "profiled_seconds": 0.513450031998218,
+        "output_sha256": "2ef5de13aba15f734ae1f509bbd5a984f3ea4a4381d079ae7f9f712b72068e05"
+      },
+      {
+        "family": "A_CI_PC",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.20977485900220927,
+          0.20778136399167124,
+          0.21057113001006655,
+          0.21155793601064943,
+          0.2032029170077294
+        ],
+        "median_seconds": 0.20977485900220927,
+        "instrumented_seconds": [
+          0.2232979010004783,
+          0.2204464959941106,
+          0.2088677729916526,
+          0.21712236799066886,
+          0.20823958900291473
+        ],
+        "mean_instrumented_seconds": 0.21559482539596503,
+        "mean_exclusive_seconds": {
+          "schema": 0.0042796733585419135,
+          "json_copy": 0.019781076410436072,
+          "selected_arithmetic": 0.011931994408951142,
+          "encoding": 0.049726084576104765,
+          "assets": 0.0676705248071812,
+          "deep_copy": 0.0024933449923992155
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.05149640881281812,
+          "CandidateACurrent.identity:first": 0.045987531205173585,
+          "stage.from_payload": 0.05404421840503346
+        },
+        "counts": {
+          "json_copy": 3370,
+          "encoding": 578,
+          "assets": 229,
+          "deep_copy": 10,
+          "schema": 219,
+          "stage.to_payload": 24,
+          "CandidateACurrent.identity:first": 15,
+          "selected_arithmetic": 27,
+          "stage.from_payload": 5
+        },
+        "total_calls": 567729,
+        "profiled_seconds": 0.4935497020051116,
+        "output_sha256": "bb3e5f9fe54e5287dd71a22fa66906fdaa6199fc24b07f341208d1c0dd1469b3"
+      },
+      {
+        "family": "A_CI_PC",
+        "boundary": "public",
+        "plain_seconds": [
+          0.3053804439987289,
+          0.3112004459981108,
+          0.3155172679980751,
+          0.3183358489914099,
+          0.3451549099991098
+        ],
+        "median_seconds": 0.3155172679980751,
+        "instrumented_seconds": [
+          0.3326468019949971,
+          0.46192737700766884,
+          0.35084776100120507,
+          0.34132569799839985,
+          0.31672678799077403
+        ],
+        "mean_instrumented_seconds": 0.360694885198609,
+        "mean_exclusive_seconds": {
+          "schema": 0.008558315041591413,
+          "json_copy": 0.03362486246915068,
+          "selected_arithmetic": 0.013774235377786681,
+          "encoding": 0.08307958929508459,
+          "assets": 0.13223549127578735,
+          "deep_copy": 0.003615095402346924
+        },
+        "mean_inclusive_seconds": {
+          "stage.to_payload": 0.06273667940986342,
+          "CandidateACurrent.identity:first": 0.05427339939051308,
+          "stage.from_payload": 0.06385642639943398
+        },
+        "counts": {
+          "json_copy": 4482,
+          "assets": 386,
+          "encoding": 884,
+          "schema": 373,
+          "deep_copy": 13,
+          "stage.to_payload": 24,
+          "CandidateACurrent.identity:first": 15,
+          "selected_arithmetic": 27,
+          "stage.from_payload": 5
+        },
+        "total_calls": 810486,
+        "profiled_seconds": 0.8056632520019775,
+        "output_sha256": "e940948e8d7becf0f474edcdb886ec21a4c8a3051cf253038b89bf5cf85104cd"
+      },
+      {
+        "family": "C_CI_PC",
+        "boundary": "numerical",
+        "plain_seconds": [
+          0.2344653400068637,
+          0.2218018979910994,
+          0.22471714700805023,
+          0.22350365099555347,
+          0.2361458959931042
+        ],
+        "median_seconds": 0.22471714700805023,
+        "instrumented_seconds": [
+          0.22255282900005113,
+          0.21885462700447533,
+          0.22948864300269634,
+          0.23489822700503282,
+          0.23710652699810453
+        ],
+        "mean_instrumented_seconds": 0.22858017060207203,
+        "mean_exclusive_seconds": {
+          "schema": 0.004437976237386465,
+          "json_copy": 0.01782893353374675,
+          "selected_arithmetic": 0.022052375169005246,
+          "encoding": 0.04441603315644897,
+          "assets": 0.07031991765834392,
+          "deep_copy": 0.0024513133976142853
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.04671740320045501,
+          "stage.to_payload": 0.05258565840194933,
+          "stage.from_payload": 0.044592281003133394
+        },
+        "counts": {
+          "json_copy": 3259,
+          "encoding": 504,
+          "assets": 223,
+          "deep_copy": 9,
+          "schema": 214,
+          "selected_arithmetic": 111,
+          "stage.to_payload": 23,
+          "CandidateCCurrent.identity:first": 15,
+          "stage.from_payload": 4
+        },
+        "total_calls": 583262,
+        "profiled_seconds": 0.5312017259857384,
+        "output_sha256": "d98b33958165eb2a2a1518a6a3927e117e881dcd3b6e14d2d01a6e0417e79f04"
+      },
+      {
+        "family": "C_CI_PC",
+        "boundary": "public",
+        "plain_seconds": [
+          0.30824203199881595,
+          0.31142477299727034,
+          0.3292033300094772,
+          0.34328155500406865,
+          0.3433285579958465
+        ],
+        "median_seconds": 0.3292033300094772,
+        "instrumented_seconds": [
+          0.3337623339903075,
+          0.32577932698768564,
+          0.3248676479997812,
+          0.3254706809966592,
+          0.33487498700560536
+        ],
+        "mean_instrumented_seconds": 0.3289509953960078,
+        "mean_exclusive_seconds": {
+          "schema": 0.007841456730966456,
+          "json_copy": 0.027354314044350757,
+          "selected_arithmetic": 0.021916746415081435,
+          "encoding": 0.06725572956493124,
+          "assets": 0.1184455153736053,
+          "deep_copy": 0.0034605404012836515
+        },
+        "mean_inclusive_seconds": {
+          "CandidateCCurrent.identity:first": 0.04626587259990629,
+          "stage.to_payload": 0.0529207344079623,
+          "stage.from_payload": 0.044800802803365514
+        },
+        "counts": {
+          "json_copy": 4384,
+          "assets": 380,
+          "encoding": 809,
+          "schema": 368,
+          "deep_copy": 12,
+          "selected_arithmetic": 111,
+          "stage.to_payload": 23,
+          "CandidateCCurrent.identity:first": 15,
+          "stage.from_payload": 4
+        },
+        "total_calls": 823855,
+        "profiled_seconds": 0.7784445739962393,
+        "output_sha256": "48da1d3b8c91a4814a2a0357c2d8e7d1f7a07f0fb4a85853b0a0f812ca0e0842"
+      }
+    ],
+    "original_ci_before": {
+      "plain_seconds": [
+        0.27344894300040323,
+        0.21536596800433472,
+        0.21821496800112072,
+        0.21596053100074641,
+        0.20777156100666616,
+        0.21158347300661262,
+        0.2110569570068037
+      ],
+      "plain_median": 0.21536596800433472,
+      "profiled_seconds": 0.5550959679967491,
+      "total_calls": 668014,
+      "output_sha256": "4198a000a4b6461db99ab9e3e477c4b4b75bb9b204f9774afb49c2d710f03d35"
+    },
+    "original_ci_after": {
+      "plain_seconds": [
+        0.24517969899170566,
+        0.19143574600457214,
+        0.20396956100012176,
+        0.1861785460059764,
+        0.19753727200441062,
+        0.1891705670132069,
+        0.19630970800062642
+      ],
+      "plain_median": 0.19630970800062642,
+      "profiled_seconds": 0.49745063899899833,
+      "total_calls": 599538,
+      "output_sha256": "4198a000a4b6461db99ab9e3e477c4b4b75bb9b204f9774afb49c2d710f03d35"
+    },
+    "result_cache_trace": [
+      {
+        "step": 1,
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.018605574980028905,
+        "max_bytes": 16620
+      },
+      {
+        "step": 2,
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.019746349993511103,
+        "max_bytes": 24839
+      },
+      {
+        "step": 3,
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.0212340129801305,
+        "max_bytes": 33075
+      },
+      {
+        "step": 4,
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.020265687999199145,
+        "max_bytes": 40912
+      },
+      {
+        "step": 5,
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.022563403981621377,
+        "max_bytes": 48828
+      },
+      {
+        "step": 6,
+        "calls": 3,
+        "hits": 2,
+        "misses": 1,
+        "oversized": 0,
+        "exclusive_seconds": 0.02130374000989832,
+        "max_bytes": 56745
+      }
+    ],
+    "verification": {
+      "initial_selection": {
+        "tests": 402,
+        "passed": 399,
+        "skipped": 2,
+        "failed": 1,
+        "failure": "Capture control detected a test-file edit after module loading; fresh rerun passed."
+      },
+      "final_codec_tests": {
+        "tests": 25,
+        "passed": 25
+      },
+      "final_rg2b_selection": {
+        "tests": 61,
+        "skipped": 1,
+        "failed": 1,
+        "failure": "New memo test compared unrounded cache bounds with rounded output; assertion corrected and fresh rerun passed."
+      },
+      "final_integrity_and_new_controls": {
+        "tests": 11,
+        "passed": 11
+      },
+      "additive_event_and_initializer_tests": {
+        "tests": 22,
+        "passed": 22
+      },
+      "full_selection_repeated": false
+    }
+  },
+  "long_history_correction": {
+    "method": "Isolated process: temporarily restore public result capture and 64 KiB cache for before; native owned-result binding and 8 KiB cache for after. Five ordinary evolving steps plus fresh sixth profiled step. Creation and snapshot hashes excluded. Ten-step case uses nine ordinary steps plus tenth profiled step. The long growth probe and main regression process were paused during paired timings; timings are local samples, not confidence intervals.",
+    "growth": {
+      "family": "A_OS",
+      "method": "successive committed public steps at fixture dt; result-size and validation instrumentation",
+      "samples": [
+        {
+          "step": 1,
+          "bytes": 16580,
+          "result_validation_calls": 3,
+          "cache_hits": 2,
+          "oversized_checks": 0
+        },
+        {
+          "step": 6,
+          "bytes": 56605,
+          "result_validation_calls": 3,
+          "cache_hits": 2,
+          "oversized_checks": 0
+        },
+        {
+          "step": 7,
+          "bytes": 64502,
+          "result_validation_calls": 3,
+          "cache_hits": 2,
+          "oversized_checks": 0
+        },
+        {
+          "step": 8,
+          "bytes": 72397,
+          "result_validation_calls": 3,
+          "cache_hits": 0,
+          "oversized_checks": 3
+        },
+        {
+          "step": 10,
+          "bytes": 88215,
+          "result_validation_calls": 3,
+          "cache_hits": 0,
+          "oversized_checks": 3
+        },
+        {
+          "step": 20,
+          "bytes": 167354,
+          "result_validation_calls": 3,
+          "cache_hits": 0,
+          "oversized_checks": 3
+        },
+        {
+          "step": 50,
+          "bytes": 403171,
+          "result_validation_calls": 3,
+          "cache_hits": 0,
+          "oversized_checks": 3
+        }
+      ],
+      "100_steps": "not measured; observed growth suggests approximately 0.8 MB; not a timing prediction"
+    },
+    "five_step_before": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.6065261309995549,
+          0.5595625309942989,
+          0.5844711200043093,
+          0.6294451490102801,
+          0.7104128840001067
+        ],
+        "median_seconds": 0.6065261309995549,
+        "profiled_seconds": 1.8831898040079977,
+        "total_calls": 1372576,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04"
+        ]
+      },
+      {
+        "family": "C_OS",
+        "seconds": [
+          0.44057319199782796,
+          0.505740455002524,
+          0.5791793399985181,
+          0.6006237089895876,
+          0.6510920639993856
+        ],
+        "median_seconds": 0.5791793399985181,
+        "profiled_seconds": 1.8228581599978497,
+        "total_calls": 1316797,
+        "snapshot_sha256": [
+          "a36f2b612ef851df5f8a8d9e0d29a50c046e87d344585b2ace9016915d7be382",
+          "ff72887b9ec5eb0b26af4abc389a55f939e5fef53e91b208b73d0e9a85ae6fae",
+          "52f0f8109c2fc3355bbe89ddc8c76edcaf1ac5d32607cfecc16680906efb2d8a",
+          "33be8d489fc40bab20671d193a31300d9cd0cd477dba9d406d707a61fb207b05",
+          "cd41535f28f4538c86914f5b4ea0a9369ef4225d1f9ac6976ecf28a6547f6e4b",
+          "f99ea74eb74bebccbb30b62350f97086f094a25b17bed09f98e669097ace44f3"
+        ]
+      },
+      {
+        "family": "A_CI",
+        "seconds": [
+          0.5998363600083394,
+          0.6302857269911328,
+          0.6850116159912432,
+          0.74890244899143,
+          0.8141348019998986
+        ],
+        "median_seconds": 0.6850116159912432,
+        "profiled_seconds": 2.093528677985887,
+        "total_calls": 1489317,
+        "snapshot_sha256": [
+          "b44946cc43e5e719d4bf417254ab24ee9d92c650b4b59492482321ad8848ca94",
+          "f380236465c183bca436d439a0ecbb9da6c4e99cb277e25348740958fc5d48ae",
+          "7539fb33dd5672fac455d27fc606ac2877b4abe4f1ca4ef12d8322b9b1b13873",
+          "25e9ef711adaae901a974cd4e2b0ad52302f5b135ee6ee3f76bffaba1be76074",
+          "562609152d9474d4552c3f680d0844e6845e64a41e60688254e265eb3583f314",
+          "5b0c3f9f16d4cbe9372da4eb3292c223caaec9b3a252ffab6ee2c9a6cd2a1628"
+        ]
+      },
+      {
+        "family": "C_CI",
+        "seconds": [
+          0.564215164995403,
+          0.6090067189943511,
+          0.642800053989049,
+          0.7419326259987429,
+          0.7549086399958469
+        ],
+        "median_seconds": 0.642800053989049,
+        "profiled_seconds": 2.0802498150005704,
+        "total_calls": 1500710,
+        "snapshot_sha256": [
+          "b5c2d5e39edafeacacfbabc38a11e9dcb8307fbc0e78054629f785459275994e",
+          "e5a3989fec8aba3bc5656042c436e176568456b0a2f570f26dc4809337635905",
+          "ee77e8e7b458844c495ff8a75c1e4b9a19dac43715a5fda11e6ccadf16711def",
+          "672508c27095c4b9d8e6701ca4f5724e3cfce3f1408ca11c503c8fb923fdff77",
+          "96d0ae546bf1749ca098206ae1af65918092f7a4e206478060726018a34659c6",
+          "c639c1da245be47a37213ef9889e520d554e91cd409f17194f823b0eb8f1871b"
+        ]
+      },
+      {
+        "family": "A_RG2b",
+        "seconds": [
+          2.855017035995843,
+          2.9043829959991854,
+          3.0008583110029576,
+          3.1547492959944066,
+          3.1171839719900163
+        ],
+        "median_seconds": 3.0008583110029576,
+        "profiled_seconds": 5.746032498995191,
+        "total_calls": 3174800,
+        "snapshot_sha256": [
+          "09f928d769d25df447f68ee993ea9d2a653860c91de3e143be3cceb205116ba1",
+          "df1eba50dfad097005b7ef8e7abc4e434f1cf92e10533777326c69d6ca43f8a0",
+          "e7cb25ac3b44bab8d7469829025c26eb29f4d5115df2efec3e5e0d20d839c3b1",
+          "a5988ebce4b23cc20a430653f652b4449483982ee8f0396214b142493e7e2a47",
+          "2415cd4e29c29376a33c1a01cd100681f704efd3ab5f629a5103609445fc420f",
+          "56b95c0969999bba3446e4cc7b96dc1d3fd39da3ad195138a949086d1f938b23"
+        ]
+      },
+      {
+        "family": "C_RG2b",
+        "seconds": [
+          1.1871911850030301,
+          1.4522685349948006,
+          1.3875177370064193,
+          1.4871833310025977,
+          1.4127018099970883
+        ],
+        "median_seconds": 1.4127018099970883,
+        "profiled_seconds": 3.689539631988737,
+        "total_calls": 2878888,
+        "snapshot_sha256": [
+          "cb2de5bdcbc55328e4165b4c2eb53102465bbebf171ea6a8ffaff91294c013c5",
+          "5482761b46d4966659ab8b6cca4c8e24b23d961388b119d8b304da90603f42c4",
+          "38ef5fe457c698ee9a6c5ba3097224288cb1bbe6911dfba12f9cf3c954a361fc",
+          "b1f8748e4fc163f778d0dc8bc3d4bb5412cb077788a4380c98c0c2a5b5a9f9c5",
+          "ec0dd7fdc092b6f74dfe621c9b2632aba1c4ed99eca569f1c1b364437051784f",
+          "6d0820978543e10d5008cfb21ee9c7358d30db3f11aadc0d153982f783ced793"
+        ]
+      },
+      {
+        "family": "A_PC",
+        "seconds": [
+          0.4594433089951053,
+          0.5336603570031002,
+          0.5744576090073679,
+          0.6966407540021464,
+          0.7604633929877309
+        ],
+        "median_seconds": 0.5744576090073679,
+        "profiled_seconds": 1.821953847000259,
+        "total_calls": 1296728,
+        "snapshot_sha256": [
+          "a0d41f108d912bb2180d37bf62d9a105ecbf23750249b090920e83567561adcb",
+          "da2ea29dc0ffe20fbd1fac247a9b87d82bab00ad80ce52393d1007db4dfeecb7",
+          "1704e91cda2c577a085098b1510ff3ba5c3862eff64df1e6459a21db9e03d10d",
+          "083a368b018f58f34b01564d8b06f0a066f3e5e4a792dcab73c2b9bf58d1c1f8",
+          "82dd542b27fbf4b257d612c032f7d61bc131768dc78e1d29310f4c5dddfdea49",
+          "3dc6d26d14557d72687d37aafea45a24f9d831acbd27d00bcb31d889fed6534b"
+        ]
+      },
+      {
+        "family": "C_PC",
+        "seconds": [
+          0.4795118520123651,
+          0.5039568709908053,
+          0.5814241420011967,
+          0.6211418710008729,
+          0.6716860099986661
+        ],
+        "median_seconds": 0.5814241420011967,
+        "profiled_seconds": 1.8211530699918512,
+        "total_calls": 1262972,
+        "snapshot_sha256": [
+          "7c4fee9c3ee1168ba4d77b65e4b6ebf49f4296a32515166e00b3b2034442f205",
+          "dc0302b96d1921b289c195d8d402a1833f78195c6060cde4ad29c8f1fdfc1ea9",
+          "10ccfb6f3ab909661d705355f12a80c2b014a95e4da792bf0a964038d45d4d43",
+          "abe966d611ee876e2f05e8fbc604f7383d374980cb7471f950053e041fb4eade",
+          "3823f4ddf72e3570a84a3b11265681a4acd941d0911f4ce6e7faeb0ccb18094a",
+          "ac29f1d16c036b13bdf46c7743a5e9e6796837f8e6055df809c4181f38420101"
+        ]
+      },
+      {
+        "family": "A_CI_PC",
+        "seconds": [
+          0.6606077409960562,
+          0.7109045760007575,
+          0.7607615230081137,
+          0.8585408350045327,
+          0.8906536750000669
+        ],
+        "median_seconds": 0.7607615230081137,
+        "profiled_seconds": 2.3052227010048227,
+        "total_calls": 1537903,
+        "snapshot_sha256": [
+          "d252acf6442777bac019d5582f33915b3de625a6fc4d93fcef6cb6986e51bbbc",
+          "6148a6fc4cfcbf058aa40899f90487645040b5dd7dbc5ed160e82fb4e1c3007d",
+          "21e57bee06925d480e10a234a51da870ef66fc3a75d90937f625ed1afc25f136",
+          "157057381eb69ee56ad95ed0c95a1942c2995f5fdaa201dbb5e55b916b90739a",
+          "f07c660e48f9adb387cfca14959dd73b613fdf3028940f670c2d7ba46514675c",
+          "1ccbcb1f92a43b2841de79913df1181c70ac94f930c1c6de1f8cb858e9f1cfc1"
+        ]
+      },
+      {
+        "family": "C_CI_PC",
+        "seconds": [
+          0.6267207689961651,
+          0.653993863001233,
+          0.7141435800003819,
+          0.8486329440056579,
+          0.9360142450022977
+        ],
+        "median_seconds": 0.7141435800003819,
+        "profiled_seconds": 2.2517004190012813,
+        "total_calls": 1546511,
+        "snapshot_sha256": [
+          "c7188f24f860478f4bf174e976eba572a056e219ef93f53ab70ea1b813a8c54e",
+          "8460009b09d80a999e59c2cd5ac14ba1fdfd85b1e900c321d1e58782695705cc",
+          "30987f07c85781bebac08a1785eefd8d48e00e22c93cf448cae514bdf6d6c755",
+          "46e0bed7aee76c3ffa6a90c1ef14e024ff34a4319bb3b02b233c7a9be48f8f7a",
+          "83cd268636a6984ef29029f241f2c83a1cf4d257c27e0e25bf97b80f057be341",
+          "05b23517b644e90d5cfa75dcd16932fae2a90aafe92c6454ccdf1eed29afc065"
+        ]
+      }
+    ],
+    "five_step_after": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.444682807996287,
+          0.5266205950028962,
+          0.606330780996359,
+          0.6454520409897668,
+          0.6720336260041222
+        ],
+        "median_seconds": 0.606330780996359,
+        "profiled_seconds": 1.9618552289903164,
+        "total_calls": 1303720,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04"
+        ]
+      },
+      {
+        "family": "C_OS",
+        "seconds": [
+          0.43684458000643644,
+          0.49474913599260617,
+          0.5302721119951457,
+          0.6034736719884677,
+          0.671894280007109
+        ],
+        "median_seconds": 0.5302721119951457,
+        "profiled_seconds": 1.7718772619991796,
+        "total_calls": 1248024,
+        "snapshot_sha256": [
+          "a36f2b612ef851df5f8a8d9e0d29a50c046e87d344585b2ace9016915d7be382",
+          "ff72887b9ec5eb0b26af4abc389a55f939e5fef53e91b208b73d0e9a85ae6fae",
+          "52f0f8109c2fc3355bbe89ddc8c76edcaf1ac5d32607cfecc16680906efb2d8a",
+          "33be8d489fc40bab20671d193a31300d9cd0cd477dba9d406d707a61fb207b05",
+          "cd41535f28f4538c86914f5b4ea0a9369ef4225d1f9ac6976ecf28a6547f6e4b",
+          "f99ea74eb74bebccbb30b62350f97086f094a25b17bed09f98e669097ace44f3"
+        ]
+      },
+      {
+        "family": "A_CI",
+        "seconds": [
+          0.5484575739974389,
+          0.6221458560030442,
+          0.7662443869921844,
+          0.7375520589994267,
+          0.8114378820027923
+        ],
+        "median_seconds": 0.7375520589994267,
+        "profiled_seconds": 2.0587448419973953,
+        "total_calls": 1421284,
+        "snapshot_sha256": [
+          "b44946cc43e5e719d4bf417254ab24ee9d92c650b4b59492482321ad8848ca94",
+          "f380236465c183bca436d439a0ecbb9da6c4e99cb277e25348740958fc5d48ae",
+          "7539fb33dd5672fac455d27fc606ac2877b4abe4f1ca4ef12d8322b9b1b13873",
+          "25e9ef711adaae901a974cd4e2b0ad52302f5b135ee6ee3f76bffaba1be76074",
+          "562609152d9474d4552c3f680d0844e6845e64a41e60688254e265eb3583f314",
+          "5b0c3f9f16d4cbe9372da4eb3292c223caaec9b3a252ffab6ee2c9a6cd2a1628"
+        ]
+      },
+      {
+        "family": "C_CI",
+        "seconds": [
+          0.5904619499924593,
+          0.5990952520078281,
+          0.6546424779953668,
+          0.7108379690034781,
+          0.799803118003183
+        ],
+        "median_seconds": 0.6546424779953668,
+        "profiled_seconds": 2.0517470829945523,
+        "total_calls": 1432717,
+        "snapshot_sha256": [
+          "b5c2d5e39edafeacacfbabc38a11e9dcb8307fbc0e78054629f785459275994e",
+          "e5a3989fec8aba3bc5656042c436e176568456b0a2f570f26dc4809337635905",
+          "ee77e8e7b458844c495ff8a75c1e4b9a19dac43715a5fda11e6ccadf16711def",
+          "672508c27095c4b9d8e6701ca4f5724e3cfce3f1408ca11c503c8fb923fdff77",
+          "96d0ae546bf1749ca098206ae1af65918092f7a4e206478060726018a34659c6",
+          "c639c1da245be47a37213ef9889e520d554e91cd409f17194f823b0eb8f1871b"
+        ]
+      },
+      {
+        "family": "A_RG2b",
+        "seconds": [
+          2.6692373319965554,
+          2.844977736007422,
+          2.9552308269921923,
+          3.0210357360047055,
+          3.099176019997685
+        ],
+        "median_seconds": 2.9552308269921923,
+        "profiled_seconds": 5.547478090011282,
+        "total_calls": 3083641,
+        "snapshot_sha256": [
+          "09f928d769d25df447f68ee993ea9d2a653860c91de3e143be3cceb205116ba1",
+          "df1eba50dfad097005b7ef8e7abc4e434f1cf92e10533777326c69d6ca43f8a0",
+          "e7cb25ac3b44bab8d7469829025c26eb29f4d5115df2efec3e5e0d20d839c3b1",
+          "a5988ebce4b23cc20a430653f652b4449483982ee8f0396214b142493e7e2a47",
+          "2415cd4e29c29376a33c1a01cd100681f704efd3ab5f629a5103609445fc420f",
+          "56b95c0969999bba3446e4cc7b96dc1d3fd39da3ad195138a949086d1f938b23"
+        ]
+      },
+      {
+        "family": "C_RG2b",
+        "seconds": [
+          1.3363805289991433,
+          1.2351336229912704,
+          1.3708785720082233,
+          1.34977725900535,
+          1.4119800079934066
+        ],
+        "median_seconds": 1.34977725900535,
+        "profiled_seconds": 3.6759712820057757,
+        "total_calls": 2810597,
+        "snapshot_sha256": [
+          "cb2de5bdcbc55328e4165b4c2eb53102465bbebf171ea6a8ffaff91294c013c5",
+          "5482761b46d4966659ab8b6cca4c8e24b23d961388b119d8b304da90603f42c4",
+          "38ef5fe457c698ee9a6c5ba3097224288cb1bbe6911dfba12f9cf3c954a361fc",
+          "b1f8748e4fc163f778d0dc8bc3d4bb5412cb077788a4380c98c0c2a5b5a9f9c5",
+          "ec0dd7fdc092b6f74dfe621c9b2632aba1c4ed99eca569f1c1b364437051784f",
+          "6d0820978543e10d5008cfb21ee9c7358d30db3f11aadc0d153982f783ced793"
+        ]
+      },
+      {
+        "family": "A_PC",
+        "seconds": [
+          0.45433209399925545,
+          0.5125364179984899,
+          0.5761886950058397,
+          0.608995856004185,
+          0.7059351939969929
+        ],
+        "median_seconds": 0.5761886950058397,
+        "profiled_seconds": 1.9509479800035479,
+        "total_calls": 1228735,
+        "snapshot_sha256": [
+          "a0d41f108d912bb2180d37bf62d9a105ecbf23750249b090920e83567561adcb",
+          "da2ea29dc0ffe20fbd1fac247a9b87d82bab00ad80ce52393d1007db4dfeecb7",
+          "1704e91cda2c577a085098b1510ff3ba5c3862eff64df1e6459a21db9e03d10d",
+          "083a368b018f58f34b01564d8b06f0a066f3e5e4a792dcab73c2b9bf58d1c1f8",
+          "82dd542b27fbf4b257d612c032f7d61bc131768dc78e1d29310f4c5dddfdea49",
+          "3dc6d26d14557d72687d37aafea45a24f9d831acbd27d00bcb31d889fed6534b"
+        ]
+      },
+      {
+        "family": "C_PC",
+        "seconds": [
+          0.4514322470058687,
+          0.4824508949968731,
+          0.5429252769972663,
+          0.5828990099980729,
+          0.6535294799978146
+        ],
+        "median_seconds": 0.5429252769972663,
+        "profiled_seconds": 1.7392442309937906,
+        "total_calls": 1194979,
+        "snapshot_sha256": [
+          "7c4fee9c3ee1168ba4d77b65e4b6ebf49f4296a32515166e00b3b2034442f205",
+          "dc0302b96d1921b289c195d8d402a1833f78195c6060cde4ad29c8f1fdfc1ea9",
+          "10ccfb6f3ab909661d705355f12a80c2b014a95e4da792bf0a964038d45d4d43",
+          "abe966d611ee876e2f05e8fbc604f7383d374980cb7471f950053e041fb4eade",
+          "3823f4ddf72e3570a84a3b11265681a4acd941d0911f4ce6e7faeb0ccb18094a",
+          "ac29f1d16c036b13bdf46c7743a5e9e6796837f8e6055df809c4181f38420101"
+        ]
+      },
+      {
+        "family": "A_CI_PC",
+        "seconds": [
+          0.6520875749993138,
+          0.7062826930050505,
+          0.7521713269961765,
+          0.8193944170052418,
+          0.8393686670024181
+        ],
+        "median_seconds": 0.7521713269961765,
+        "profiled_seconds": 2.141235189003055,
+        "total_calls": 1469870,
+        "snapshot_sha256": [
+          "d252acf6442777bac019d5582f33915b3de625a6fc4d93fcef6cb6986e51bbbc",
+          "6148a6fc4cfcbf058aa40899f90487645040b5dd7dbc5ed160e82fb4e1c3007d",
+          "21e57bee06925d480e10a234a51da870ef66fc3a75d90937f625ed1afc25f136",
+          "157057381eb69ee56ad95ed0c95a1942c2995f5fdaa201dbb5e55b916b90739a",
+          "f07c660e48f9adb387cfca14959dd73b613fdf3028940f670c2d7ba46514675c",
+          "1ccbcb1f92a43b2841de79913df1181c70ac94f930c1c6de1f8cb858e9f1cfc1"
+        ]
+      },
+      {
+        "family": "C_CI_PC",
+        "seconds": [
+          0.6002587800030597,
+          0.6768326840101508,
+          0.7407737329922384,
+          0.7814453710016096,
+          0.948710807992029
+        ],
+        "median_seconds": 0.7407737329922384,
+        "profiled_seconds": 2.2655085879960097,
+        "total_calls": 1478291,
+        "snapshot_sha256": [
+          "c7188f24f860478f4bf174e976eba572a056e219ef93f53ab70ea1b813a8c54e",
+          "8460009b09d80a999e59c2cd5ac14ba1fdfd85b1e900c321d1e58782695705cc",
+          "30987f07c85781bebac08a1785eefd8d48e00e22c93cf448cae514bdf6d6c755",
+          "46e0bed7aee76c3ffa6a90c1ef14e024ff34a4319bb3b02b233c7a9be48f8f7a",
+          "83cd268636a6984ef29029f241f2c83a1cf4d257c27e0e25bf97b80f057be341",
+          "05b23517b644e90d5cfa75dcd16932fae2a90aafe92c6454ccdf1eed29afc065"
+        ]
+      }
+    ],
+    "five_step_comparisons": [
+      {
+        "family": "A_OS",
+        "before_seconds": 3.09041781500855,
+        "after_seconds": 2.895119850989431,
+        "speedup": 1.067457643921848,
+        "before_calls": 1372576,
+        "after_calls": 1303720,
+        "fewer_calls_percent": 5.01655281747605
+      },
+      {
+        "family": "C_OS",
+        "before_seconds": 2.7772087599878432,
+        "after_seconds": 2.737233779989765,
+        "speedup": 1.0146041526632876,
+        "before_calls": 1316797,
+        "after_calls": 1248024,
+        "fewer_calls_percent": 5.222748836760715
+      },
+      {
+        "family": "A_CI",
+        "before_seconds": 3.478170953982044,
+        "after_seconds": 3.4858377579948865,
+        "speedup": 0.9978005849540018,
+        "before_calls": 1489317,
+        "after_calls": 1421284,
+        "fewer_calls_percent": 4.5680671072713235
+      },
+      {
+        "family": "C_CI",
+        "before_seconds": 3.312863203973393,
+        "after_seconds": 3.3548407670023153,
+        "speedup": 0.9874874648472718,
+        "before_calls": 1500710,
+        "after_calls": 1432717,
+        "fewer_calls_percent": 4.5307221248608975
+      },
+      {
+        "family": "A_RG2b",
+        "before_seconds": 15.032191610982409,
+        "after_seconds": 14.58965765099856,
+        "speedup": 1.030332031811148,
+        "before_calls": 3174800,
+        "after_calls": 3083641,
+        "fewer_calls_percent": 2.871330477510392
+      },
+      {
+        "family": "C_RG2b",
+        "before_seconds": 6.926862598003936,
+        "after_seconds": 6.704149990997394,
+        "speedup": 1.0332201110216224,
+        "before_calls": 2878888,
+        "after_calls": 2810597,
+        "fewer_calls_percent": 2.372131183984927
+      },
+      {
+        "family": "A_PC",
+        "before_seconds": 3.0246654219954507,
+        "after_seconds": 2.857988257004763,
+        "speedup": 1.0583197515182827,
+        "before_calls": 1296728,
+        "after_calls": 1228735,
+        "fewer_calls_percent": 5.243428074353296
+      },
+      {
+        "family": "C_PC",
+        "before_seconds": 2.8577207460039062,
+        "after_seconds": 2.7132369089958956,
+        "speedup": 1.0532514637881292,
+        "before_calls": 1262972,
+        "after_calls": 1194979,
+        "fewer_calls_percent": 5.383571448931567
+      },
+      {
+        "family": "A_CI_PC",
+        "before_seconds": 3.881468350009527,
+        "after_seconds": 3.7693046790082008,
+        "speedup": 1.0297571251339754,
+        "before_calls": 1537903,
+        "after_calls": 1469870,
+        "fewer_calls_percent": 4.423751042816093
+      },
+      {
+        "family": "C_CI_PC",
+        "before_seconds": 3.7795054010057356,
+        "after_seconds": 3.7480213759990875,
+        "speedup": 1.0084001722103988,
+        "before_calls": 1546511,
+        "after_calls": 1478291,
+        "fewer_calls_percent": 4.411219836134372
+      }
+    ],
+    "ten_step_before": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.6250441629963461,
+          0.582439195990446,
+          0.5733272359939292,
+          0.6529207870044047,
+          0.7031349979952211,
+          0.7639032409933861,
+          0.8092635270004394,
+          0.9483451989945024,
+          1.010096917001647
+        ],
+        "median_seconds": 0.7031349979952211,
+        "profiled_seconds": 2.6458875279931817,
+        "total_calls": 1914560,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04",
+          "337265db7763bdc9ae2b663689ad6032f4c93cb6d70767f2e80f88160c3bf7eb",
+          "4f8bb5892c852f9fdf10a5b7aad8c331b14b1729406ea3f9ac0c1fb40e921c15",
+          "6d515758a821796ba4f9ad644d331372f171ae8f7ecef872dbbd9b2f5b0ceabc",
+          "58ef40b6321adbcd8438a3cc30bae274377ee02a727a53c04faeed7d269c2f7d"
+        ]
+      }
+    ],
+    "ten_step_after": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.41455562599003315,
+          0.4708813829929568,
+          0.5823213580006268,
+          0.6313537300011376,
+          0.6844794490025379,
+          0.7383241089992225,
+          0.7792163230042206,
+          0.8349083380016964,
+          0.8888546469970606
+        ],
+        "median_seconds": 0.6844794490025379,
+        "profiled_seconds": 2.453389911999693,
+        "total_calls": 1688809,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04",
+          "337265db7763bdc9ae2b663689ad6032f4c93cb6d70767f2e80f88160c3bf7eb",
+          "4f8bb5892c852f9fdf10a5b7aad8c331b14b1729406ea3f9ac0c1fb40e921c15",
+          "6d515758a821796ba4f9ad644d331372f171ae8f7ecef872dbbd9b2f5b0ceabc",
+          "58ef40b6321adbcd8438a3cc30bae274377ee02a727a53c04faeed7d269c2f7d"
+        ]
+      }
+    ],
+    "ten_step_comparison": {
+      "before_seconds": 6.668475263970322,
+      "after_seconds": 6.024894962989492,
+      "speedup": 1.106820169469227,
+      "before_calls": 1914560,
+      "after_calls": 1688809,
+      "fewer_calls_percent": 11.791273190707008,
+      "matched_snapshots": 10
+    },
+    "output_matches": 70,
+    "current_validation_policy": "Native constructor performs full schema and local semantic validation once; private immediate binder retains request/state/ledger/receipt/commit/outcome comparisons. Public binder reconstructs and fully validates caller records. No retained large result payloads; global successful-payload memo remains capped at 128 entries of 8 KiB.",
+    "verification": {
+      "initial_selection": {
+        "tests": 135,
+        "passed": 132,
+        "skipped": 1,
+        "errors": 2,
+        "seconds": 714.649,
+        "notes": "One subprocess timeout occurred while its parent regression process was paused for timing isolation. One new negative-zero assertion expected V4WireError rather than the existing ValueError."
+      },
+      "final_targeted_rerun": {
+        "tests": 3,
+        "passed": 3,
+        "seconds": 34.141,
+        "covers": "outside-checkout resource reconstruction across three hash seeds; one native validation with cache disabled for all ten families plus hostile public mutation; oversized owned result and negative-zero publication rollback"
+      },
+      "source_integrity": {
+        "tests": 7,
+        "passed": 7,
+        "seconds": 7.284
+      },
+      "lint": "No new diagnostics relative to HEAD in the five files changed by the longer-history correction. Existing findings remain.",
+      "whitespace": "git diff --check passed",
+      "limitation": "The complete 135-test selection was not repeated as one process after correcting the test-only exception expectation."
+    }
+  },
+  "isolated_archive": {
+    "method": "Fresh ten-step A_OS baseline recorded before archive edits; final run uses identical fixture and operation IDs. Nine ordinary steps timed, tenth fresh step profiled. All ten snapshot hashes match. All-family sixth-step comparison uses the previous owned-result benchmark as baseline and the final five-step evolving benchmark; all 60 snapshot hashes match. Family runtime ratios are not claimed because baselines were recorded in separate sessions.",
+    "ten_step_before": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.6787620600080118,
+          0.46430646600492764,
+          0.4932041309948545,
+          0.5425729889975628,
+          0.6054282870027237,
+          0.6555624379980145,
+          0.6780342800047947,
+          0.7064094439992914,
+          0.7625220370100578
+        ],
+        "median_seconds": 0.6555624379980145,
+        "profiled_seconds": 2.040252473001601,
+        "total_calls": 1688809,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04",
+          "337265db7763bdc9ae2b663689ad6032f4c93cb6d70767f2e80f88160c3bf7eb",
+          "4f8bb5892c852f9fdf10a5b7aad8c331b14b1729406ea3f9ac0c1fb40e921c15",
+          "6d515758a821796ba4f9ad644d331372f171ae8f7ecef872dbbd9b2f5b0ceabc",
+          "58ef40b6321adbcd8438a3cc30bae274377ee02a727a53c04faeed7d269c2f7d"
+        ]
+      }
+    ],
+    "ten_step_after": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.6212415170011809,
+          0.5197497969929827,
+          0.538185962010175,
+          0.5535322089999681,
+          0.5358447609905852,
+          0.5344081269868184,
+          0.5319659870001487,
+          0.5364933200035011,
+          0.5537246970052365
+        ],
+        "median_seconds": 0.5364933200035011,
+        "profiled_seconds": 1.4296758620039327,
+        "total_calls": 1072287,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04",
+          "337265db7763bdc9ae2b663689ad6032f4c93cb6d70767f2e80f88160c3bf7eb",
+          "4f8bb5892c852f9fdf10a5b7aad8c331b14b1729406ea3f9ac0c1fb40e921c15",
+          "6d515758a821796ba4f9ad644d331372f171ae8f7ecef872dbbd9b2f5b0ceabc",
+          "58ef40b6321adbcd8438a3cc30bae274377ee02a727a53c04faeed7d269c2f7d"
+        ]
+      }
+    ],
+    "ten_step_comparison": {
+      "before_seconds": 5.586802132020239,
+      "after_seconds": 4.925146376990597,
+      "speedup": 1.1343423533807604,
+      "before_calls": 1688809,
+      "after_calls": 1072287,
+      "fewer_calls_percent": 36.50631895021876,
+      "matched_snapshots": 10
+    },
+    "family_before": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.444682807996287,
+          0.5266205950028962,
+          0.606330780996359,
+          0.6454520409897668,
+          0.6720336260041222
+        ],
+        "median_seconds": 0.606330780996359,
+        "profiled_seconds": 1.9618552289903164,
+        "total_calls": 1303720,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04"
+        ]
+      },
+      {
+        "family": "C_OS",
+        "seconds": [
+          0.43684458000643644,
+          0.49474913599260617,
+          0.5302721119951457,
+          0.6034736719884677,
+          0.671894280007109
+        ],
+        "median_seconds": 0.5302721119951457,
+        "profiled_seconds": 1.7718772619991796,
+        "total_calls": 1248024,
+        "snapshot_sha256": [
+          "a36f2b612ef851df5f8a8d9e0d29a50c046e87d344585b2ace9016915d7be382",
+          "ff72887b9ec5eb0b26af4abc389a55f939e5fef53e91b208b73d0e9a85ae6fae",
+          "52f0f8109c2fc3355bbe89ddc8c76edcaf1ac5d32607cfecc16680906efb2d8a",
+          "33be8d489fc40bab20671d193a31300d9cd0cd477dba9d406d707a61fb207b05",
+          "cd41535f28f4538c86914f5b4ea0a9369ef4225d1f9ac6976ecf28a6547f6e4b",
+          "f99ea74eb74bebccbb30b62350f97086f094a25b17bed09f98e669097ace44f3"
+        ]
+      },
+      {
+        "family": "A_CI",
+        "seconds": [
+          0.5484575739974389,
+          0.6221458560030442,
+          0.7662443869921844,
+          0.7375520589994267,
+          0.8114378820027923
+        ],
+        "median_seconds": 0.7375520589994267,
+        "profiled_seconds": 2.0587448419973953,
+        "total_calls": 1421284,
+        "snapshot_sha256": [
+          "b44946cc43e5e719d4bf417254ab24ee9d92c650b4b59492482321ad8848ca94",
+          "f380236465c183bca436d439a0ecbb9da6c4e99cb277e25348740958fc5d48ae",
+          "7539fb33dd5672fac455d27fc606ac2877b4abe4f1ca4ef12d8322b9b1b13873",
+          "25e9ef711adaae901a974cd4e2b0ad52302f5b135ee6ee3f76bffaba1be76074",
+          "562609152d9474d4552c3f680d0844e6845e64a41e60688254e265eb3583f314",
+          "5b0c3f9f16d4cbe9372da4eb3292c223caaec9b3a252ffab6ee2c9a6cd2a1628"
+        ]
+      },
+      {
+        "family": "C_CI",
+        "seconds": [
+          0.5904619499924593,
+          0.5990952520078281,
+          0.6546424779953668,
+          0.7108379690034781,
+          0.799803118003183
+        ],
+        "median_seconds": 0.6546424779953668,
+        "profiled_seconds": 2.0517470829945523,
+        "total_calls": 1432717,
+        "snapshot_sha256": [
+          "b5c2d5e39edafeacacfbabc38a11e9dcb8307fbc0e78054629f785459275994e",
+          "e5a3989fec8aba3bc5656042c436e176568456b0a2f570f26dc4809337635905",
+          "ee77e8e7b458844c495ff8a75c1e4b9a19dac43715a5fda11e6ccadf16711def",
+          "672508c27095c4b9d8e6701ca4f5724e3cfce3f1408ca11c503c8fb923fdff77",
+          "96d0ae546bf1749ca098206ae1af65918092f7a4e206478060726018a34659c6",
+          "c639c1da245be47a37213ef9889e520d554e91cd409f17194f823b0eb8f1871b"
+        ]
+      },
+      {
+        "family": "A_RG2b",
+        "seconds": [
+          2.6692373319965554,
+          2.844977736007422,
+          2.9552308269921923,
+          3.0210357360047055,
+          3.099176019997685
+        ],
+        "median_seconds": 2.9552308269921923,
+        "profiled_seconds": 5.547478090011282,
+        "total_calls": 3083641,
+        "snapshot_sha256": [
+          "09f928d769d25df447f68ee993ea9d2a653860c91de3e143be3cceb205116ba1",
+          "df1eba50dfad097005b7ef8e7abc4e434f1cf92e10533777326c69d6ca43f8a0",
+          "e7cb25ac3b44bab8d7469829025c26eb29f4d5115df2efec3e5e0d20d839c3b1",
+          "a5988ebce4b23cc20a430653f652b4449483982ee8f0396214b142493e7e2a47",
+          "2415cd4e29c29376a33c1a01cd100681f704efd3ab5f629a5103609445fc420f",
+          "56b95c0969999bba3446e4cc7b96dc1d3fd39da3ad195138a949086d1f938b23"
+        ]
+      },
+      {
+        "family": "C_RG2b",
+        "seconds": [
+          1.3363805289991433,
+          1.2351336229912704,
+          1.3708785720082233,
+          1.34977725900535,
+          1.4119800079934066
+        ],
+        "median_seconds": 1.34977725900535,
+        "profiled_seconds": 3.6759712820057757,
+        "total_calls": 2810597,
+        "snapshot_sha256": [
+          "cb2de5bdcbc55328e4165b4c2eb53102465bbebf171ea6a8ffaff91294c013c5",
+          "5482761b46d4966659ab8b6cca4c8e24b23d961388b119d8b304da90603f42c4",
+          "38ef5fe457c698ee9a6c5ba3097224288cb1bbe6911dfba12f9cf3c954a361fc",
+          "b1f8748e4fc163f778d0dc8bc3d4bb5412cb077788a4380c98c0c2a5b5a9f9c5",
+          "ec0dd7fdc092b6f74dfe621c9b2632aba1c4ed99eca569f1c1b364437051784f",
+          "6d0820978543e10d5008cfb21ee9c7358d30db3f11aadc0d153982f783ced793"
+        ]
+      },
+      {
+        "family": "A_PC",
+        "seconds": [
+          0.45433209399925545,
+          0.5125364179984899,
+          0.5761886950058397,
+          0.608995856004185,
+          0.7059351939969929
+        ],
+        "median_seconds": 0.5761886950058397,
+        "profiled_seconds": 1.9509479800035479,
+        "total_calls": 1228735,
+        "snapshot_sha256": [
+          "a0d41f108d912bb2180d37bf62d9a105ecbf23750249b090920e83567561adcb",
+          "da2ea29dc0ffe20fbd1fac247a9b87d82bab00ad80ce52393d1007db4dfeecb7",
+          "1704e91cda2c577a085098b1510ff3ba5c3862eff64df1e6459a21db9e03d10d",
+          "083a368b018f58f34b01564d8b06f0a066f3e5e4a792dcab73c2b9bf58d1c1f8",
+          "82dd542b27fbf4b257d612c032f7d61bc131768dc78e1d29310f4c5dddfdea49",
+          "3dc6d26d14557d72687d37aafea45a24f9d831acbd27d00bcb31d889fed6534b"
+        ]
+      },
+      {
+        "family": "C_PC",
+        "seconds": [
+          0.4514322470058687,
+          0.4824508949968731,
+          0.5429252769972663,
+          0.5828990099980729,
+          0.6535294799978146
+        ],
+        "median_seconds": 0.5429252769972663,
+        "profiled_seconds": 1.7392442309937906,
+        "total_calls": 1194979,
+        "snapshot_sha256": [
+          "7c4fee9c3ee1168ba4d77b65e4b6ebf49f4296a32515166e00b3b2034442f205",
+          "dc0302b96d1921b289c195d8d402a1833f78195c6060cde4ad29c8f1fdfc1ea9",
+          "10ccfb6f3ab909661d705355f12a80c2b014a95e4da792bf0a964038d45d4d43",
+          "abe966d611ee876e2f05e8fbc604f7383d374980cb7471f950053e041fb4eade",
+          "3823f4ddf72e3570a84a3b11265681a4acd941d0911f4ce6e7faeb0ccb18094a",
+          "ac29f1d16c036b13bdf46c7743a5e9e6796837f8e6055df809c4181f38420101"
+        ]
+      },
+      {
+        "family": "A_CI_PC",
+        "seconds": [
+          0.6520875749993138,
+          0.7062826930050505,
+          0.7521713269961765,
+          0.8193944170052418,
+          0.8393686670024181
+        ],
+        "median_seconds": 0.7521713269961765,
+        "profiled_seconds": 2.141235189003055,
+        "total_calls": 1469870,
+        "snapshot_sha256": [
+          "d252acf6442777bac019d5582f33915b3de625a6fc4d93fcef6cb6986e51bbbc",
+          "6148a6fc4cfcbf058aa40899f90487645040b5dd7dbc5ed160e82fb4e1c3007d",
+          "21e57bee06925d480e10a234a51da870ef66fc3a75d90937f625ed1afc25f136",
+          "157057381eb69ee56ad95ed0c95a1942c2995f5fdaa201dbb5e55b916b90739a",
+          "f07c660e48f9adb387cfca14959dd73b613fdf3028940f670c2d7ba46514675c",
+          "1ccbcb1f92a43b2841de79913df1181c70ac94f930c1c6de1f8cb858e9f1cfc1"
+        ]
+      },
+      {
+        "family": "C_CI_PC",
+        "seconds": [
+          0.6002587800030597,
+          0.6768326840101508,
+          0.7407737329922384,
+          0.7814453710016096,
+          0.948710807992029
+        ],
+        "median_seconds": 0.7407737329922384,
+        "profiled_seconds": 2.2655085879960097,
+        "total_calls": 1478291,
+        "snapshot_sha256": [
+          "c7188f24f860478f4bf174e976eba572a056e219ef93f53ab70ea1b813a8c54e",
+          "8460009b09d80a999e59c2cd5ac14ba1fdfd85b1e900c321d1e58782695705cc",
+          "30987f07c85781bebac08a1785eefd8d48e00e22c93cf448cae514bdf6d6c755",
+          "46e0bed7aee76c3ffa6a90c1ef14e024ff34a4319bb3b02b233c7a9be48f8f7a",
+          "83cd268636a6984ef29029f241f2c83a1cf4d257c27e0e25bf97b80f057be341",
+          "05b23517b644e90d5cfa75dcd16932fae2a90aafe92c6454ccdf1eed29afc065"
+        ]
+      }
+    ],
+    "family_after": [
+      {
+        "family": "A_OS",
+        "seconds": [
+          0.6051949140091892,
+          0.5212913579889573,
+          0.5089375800016569,
+          0.49582421498780604,
+          0.49105236899049487
+        ],
+        "median_seconds": 0.5089375800016569,
+        "profiled_seconds": 1.3175750509981299,
+        "total_calls": 963486,
+        "snapshot_sha256": [
+          "6e9572c362934c4d13f2872d670e8a5122f1abeaa0f932673eba6501a850e030",
+          "9873434d2d3409d01ee24a47fa9c048b52a025db801e39cda5885477d9684fa6",
+          "fe1b7805dc618553e9a41780acb24c7603d294ec7c763f626b1776eacc0a2ed8",
+          "7e3da4b94b09320c44c7ee10d829ed6e941b0af4aeb0b836faacfced62b7c81f",
+          "de42235e94c9cb4b8437dada770846b4a3a63c42fcce7f4c8f7abe9ff2a85c9d",
+          "83e66aab03e3b6489f81169ba85f5e401dc125a3cce07ffd97748e931d032a04"
+        ]
+      },
+      {
+        "family": "C_OS",
+        "seconds": [
+          0.43172865599626675,
+          0.4439058559946716,
+          0.4748674629954621,
+          0.4591799180052476,
+          0.46387341200897936
+        ],
+        "median_seconds": 0.4591799180052476,
+        "profiled_seconds": 1.3057508500060067,
+        "total_calls": 908830,
+        "snapshot_sha256": [
+          "a36f2b612ef851df5f8a8d9e0d29a50c046e87d344585b2ace9016915d7be382",
+          "ff72887b9ec5eb0b26af4abc389a55f939e5fef53e91b208b73d0e9a85ae6fae",
+          "52f0f8109c2fc3355bbe89ddc8c76edcaf1ac5d32607cfecc16680906efb2d8a",
+          "33be8d489fc40bab20671d193a31300d9cd0cd477dba9d406d707a61fb207b05",
+          "cd41535f28f4538c86914f5b4ea0a9369ef4225d1f9ac6976ecf28a6547f6e4b",
+          "f99ea74eb74bebccbb30b62350f97086f094a25b17bed09f98e669097ace44f3"
+        ]
+      },
+      {
+        "family": "A_CI",
+        "seconds": [
+          0.5899029680003878,
+          0.6949533150036586,
+          0.6310132889921078,
+          0.6173452039947733,
+          0.6033994589961367
+        ],
+        "median_seconds": 0.6173452039947733,
+        "profiled_seconds": 1.534985901991604,
+        "total_calls": 1081704,
+        "snapshot_sha256": [
+          "b44946cc43e5e719d4bf417254ab24ee9d92c650b4b59492482321ad8848ca94",
+          "f380236465c183bca436d439a0ecbb9da6c4e99cb277e25348740958fc5d48ae",
+          "7539fb33dd5672fac455d27fc606ac2877b4abe4f1ca4ef12d8322b9b1b13873",
+          "25e9ef711adaae901a974cd4e2b0ad52302f5b135ee6ee3f76bffaba1be76074",
+          "562609152d9474d4552c3f680d0844e6845e64a41e60688254e265eb3583f314",
+          "5b0c3f9f16d4cbe9372da4eb3292c223caaec9b3a252ffab6ee2c9a6cd2a1628"
+        ]
+      },
+      {
+        "family": "C_CI",
+        "seconds": [
+          0.521407004998764,
+          0.5746003170061158,
+          0.5595121439982904,
+          0.5794132690061815,
+          0.6530992220068583
+        ],
+        "median_seconds": 0.5746003170061158,
+        "profiled_seconds": 1.5434225839999272,
+        "total_calls": 1093474,
+        "snapshot_sha256": [
+          "b5c2d5e39edafeacacfbabc38a11e9dcb8307fbc0e78054629f785459275994e",
+          "e5a3989fec8aba3bc5656042c436e176568456b0a2f570f26dc4809337635905",
+          "ee77e8e7b458844c495ff8a75c1e4b9a19dac43715a5fda11e6ccadf16711def",
+          "672508c27095c4b9d8e6701ca4f5724e3cfce3f1408ca11c503c8fb923fdff77",
+          "96d0ae546bf1749ca098206ae1af65918092f7a4e206478060726018a34659c6",
+          "c639c1da245be47a37213ef9889e520d554e91cd409f17194f823b0eb8f1871b"
+        ]
+      },
+      {
+        "family": "A_RG2b",
+        "seconds": [
+          2.787398406988359,
+          2.992031878005946,
+          2.8994635209965054,
+          2.9664400149922585,
+          2.979745633987477
+        ],
+        "median_seconds": 2.9664400149922585,
+        "profiled_seconds": 5.195524688999285,
+        "total_calls": 2766638,
+        "snapshot_sha256": [
+          "09f928d769d25df447f68ee993ea9d2a653860c91de3e143be3cceb205116ba1",
+          "df1eba50dfad097005b7ef8e7abc4e434f1cf92e10533777326c69d6ca43f8a0",
+          "e7cb25ac3b44bab8d7469829025c26eb29f4d5115df2efec3e5e0d20d839c3b1",
+          "a5988ebce4b23cc20a430653f652b4449483982ee8f0396214b142493e7e2a47",
+          "2415cd4e29c29376a33c1a01cd100681f704efd3ab5f629a5103609445fc420f",
+          "56b95c0969999bba3446e4cc7b96dc1d3fd39da3ad195138a949086d1f938b23"
+        ]
+      },
+      {
+        "family": "C_RG2b",
+        "seconds": [
+          1.14945753099164,
+          1.1941002969979309,
+          1.1906995559984352,
+          1.2420280590013135,
+          1.2114426589978393
+        ],
+        "median_seconds": 1.1941002969979309,
+        "profiled_seconds": 3.158578856004169,
+        "total_calls": 2469350,
+        "snapshot_sha256": [
+          "cb2de5bdcbc55328e4165b4c2eb53102465bbebf171ea6a8ffaff91294c013c5",
+          "5482761b46d4966659ab8b6cca4c8e24b23d961388b119d8b304da90603f42c4",
+          "38ef5fe457c698ee9a6c5ba3097224288cb1bbe6911dfba12f9cf3c954a361fc",
+          "b1f8748e4fc163f778d0dc8bc3d4bb5412cb077788a4380c98c0c2a5b5a9f9c5",
+          "ec0dd7fdc092b6f74dfe621c9b2632aba1c4ed99eca569f1c1b364437051784f",
+          "6d0820978543e10d5008cfb21ee9c7358d30db3f11aadc0d153982f783ced793"
+        ]
+      },
+      {
+        "family": "A_PC",
+        "seconds": [
+          0.4757748099946184,
+          0.473958443995798,
+          0.5124429300049087,
+          0.5225103859993396,
+          0.5175126600079238
+        ],
+        "median_seconds": 0.5124429300049087,
+        "profiled_seconds": 1.3006939080078155,
+        "total_calls": 889264,
+        "snapshot_sha256": [
+          "a0d41f108d912bb2180d37bf62d9a105ecbf23750249b090920e83567561adcb",
+          "da2ea29dc0ffe20fbd1fac247a9b87d82bab00ad80ce52393d1007db4dfeecb7",
+          "1704e91cda2c577a085098b1510ff3ba5c3862eff64df1e6459a21db9e03d10d",
+          "083a368b018f58f34b01564d8b06f0a066f3e5e4a792dcab73c2b9bf58d1c1f8",
+          "82dd542b27fbf4b257d612c032f7d61bc131768dc78e1d29310f4c5dddfdea49",
+          "3dc6d26d14557d72687d37aafea45a24f9d831acbd27d00bcb31d889fed6534b"
+        ]
+      },
+      {
+        "family": "C_PC",
+        "seconds": [
+          0.44581601800746284,
+          0.4640356710006017,
+          0.44553497100423556,
+          0.46543737000320107,
+          0.46644548399490304
+        ],
+        "median_seconds": 0.4640356710006017,
+        "profiled_seconds": 1.2951114349998534,
+        "total_calls": 855981,
+        "snapshot_sha256": [
+          "7c4fee9c3ee1168ba4d77b65e4b6ebf49f4296a32515166e00b3b2034442f205",
+          "dc0302b96d1921b289c195d8d402a1833f78195c6060cde4ad29c8f1fdfc1ea9",
+          "10ccfb6f3ab909661d705355f12a80c2b014a95e4da792bf0a964038d45d4d43",
+          "abe966d611ee876e2f05e8fbc604f7383d374980cb7471f950053e041fb4eade",
+          "3823f4ddf72e3570a84a3b11265681a4acd941d0911f4ce6e7faeb0ccb18094a",
+          "ac29f1d16c036b13bdf46c7743a5e9e6796837f8e6055df809c4181f38420101"
+        ]
+      },
+      {
+        "family": "A_CI_PC",
+        "seconds": [
+          0.6616122849954991,
+          0.6369844930013642,
+          0.6769471630104817,
+          0.6601082690031035,
+          0.6889000119990669
+        ],
+        "median_seconds": 0.6616122849954991,
+        "profiled_seconds": 1.6736632649990497,
+        "total_calls": 1130976,
+        "snapshot_sha256": [
+          "d252acf6442777bac019d5582f33915b3de625a6fc4d93fcef6cb6986e51bbbc",
+          "6148a6fc4cfcbf058aa40899f90487645040b5dd7dbc5ed160e82fb4e1c3007d",
+          "21e57bee06925d480e10a234a51da870ef66fc3a75d90937f625ed1afc25f136",
+          "157057381eb69ee56ad95ed0c95a1942c2995f5fdaa201dbb5e55b916b90739a",
+          "f07c660e48f9adb387cfca14959dd73b613fdf3028940f670c2d7ba46514675c",
+          "1ccbcb1f92a43b2841de79913df1181c70ac94f930c1c6de1f8cb858e9f1cfc1"
+        ]
+      },
+      {
+        "family": "C_CI_PC",
+        "seconds": [
+          0.5885082689928822,
+          0.6341054109943798,
+          0.6026555550051853,
+          0.6440603540104348,
+          0.6358332139934646
+        ],
+        "median_seconds": 0.6341054109943798,
+        "profiled_seconds": 1.6413527990080183,
+        "total_calls": 1138874,
+        "snapshot_sha256": [
+          "c7188f24f860478f4bf174e976eba572a056e219ef93f53ab70ea1b813a8c54e",
+          "8460009b09d80a999e59c2cd5ac14ba1fdfd85b1e900c321d1e58782695705cc",
+          "30987f07c85781bebac08a1785eefd8d48e00e22c93cf448cae514bdf6d6c755",
+          "46e0bed7aee76c3ffa6a90c1ef14e024ff34a4319bb3b02b233c7a9be48f8f7a",
+          "83cd268636a6984ef29029f241f2c83a1cf4d257c27e0e25bf97b80f057be341",
+          "05b23517b644e90d5cfa75dcd16932fae2a90aafe92c6454ccdf1eed29afc065"
+        ]
+      }
+    ],
+    "family_call_comparisons": [
+      {
+        "family": "A_OS",
+        "before_calls": 1303720,
+        "after_calls": 963486,
+        "fewer_calls_percent": 26.097168103580525
+      },
+      {
+        "family": "C_OS",
+        "before_calls": 1248024,
+        "after_calls": 908830,
+        "fewer_calls_percent": 27.17848374710743
+      },
+      {
+        "family": "A_CI",
+        "before_calls": 1421284,
+        "after_calls": 1081704,
+        "fewer_calls_percent": 23.892480320611508
+      },
+      {
+        "family": "C_CI",
+        "before_calls": 1432717,
+        "after_calls": 1093474,
+        "fewer_calls_percent": 23.678297947187055
+      },
+      {
+        "family": "A_RG2b",
+        "before_calls": 3083641,
+        "after_calls": 2766638,
+        "fewer_calls_percent": 10.280152585855484
+      },
+      {
+        "family": "C_RG2b",
+        "before_calls": 2810597,
+        "after_calls": 2469350,
+        "fewer_calls_percent": 12.141441836022738
+      },
+      {
+        "family": "A_PC",
+        "before_calls": 1228735,
+        "after_calls": 889264,
+        "fewer_calls_percent": 27.62768212836779
+      },
+      {
+        "family": "C_PC",
+        "before_calls": 1194979,
+        "after_calls": 855981,
+        "fewer_calls_percent": 28.368531999307102
+      },
+      {
+        "family": "A_CI_PC",
+        "before_calls": 1469870,
+        "after_calls": 1130976,
+        "fewer_calls_percent": 23.056052576078155
+      },
+      {
+        "family": "C_CI_PC",
+        "before_calls": 1478291,
+        "after_calls": 1138874,
+        "fewer_calls_percent": 22.960093783970812
+      }
+    ],
+    "output_matches": 70,
+    "scope": "Archive reuse, captured receipts, lineage, component and clock facts, invalidation, asset guards and checkpoints are private to _CheckedArchive in grc_v4_lifecycle.py. The existing private binder receives owned captured tuples; public bind_step_result still reconstructs caller-supplied ledgers. No candidate or realization code changed for this archive implementation.",
+    "scaling_limit": "Exact inspection of exposed history, tuple/index copies and full-ledger result/evidence materialization remain O(history). Fact storage is linear in the current archive. This is removal of repeated admission and semantic checks, not constant-time stepping or proof of 100-step speedup.",
+    "verification": {
+      "broad_selection": {
+        "tests": 254,
+        "seconds": 745.376,
+        "errors": 7,
+        "notes": "All seven errors came from two source-capture methods, including six subtest controls, rejecting the new untracked test source. No behavior assertion failed."
+      },
+      "final_controls": {
+        "tests": 50,
+        "passed": 50,
+        "seconds": 34.177,
+        "covers": "All archive tests (including a new hostile caller-mapping request capture regression), public result composition/audit controls and all seven source-integrity methods."
+      },
+      "source_requirement": "New test file marked git intent-to-add so capture can reconstruct Git HEAD plus the complete scoped patch; no commit or staged file contents.",
+      "lint": "New archive test file passes; both affected production files introduce no new findings relative to HEAD.",
+      "limitation": "The full 254-case selection was not repeated after the public-only capture-order correction and tracking the new test source."
+    }
+  }
+}

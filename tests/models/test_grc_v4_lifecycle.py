@@ -1165,7 +1165,7 @@ class CandidateCOSOperationTests(unittest.TestCase):
                     "make_commit_receipts",
                     "_lifecycle_state",
                     "GRCV4StepResult",
-                    "bind_step_result",
+                    "_bind_owned_step_result",
                 )
             ),
             (os_module, "CandidateCCurrent"),
@@ -2365,7 +2365,7 @@ class CandidateCOSReplayTests(unittest.TestCase):
             "_ordinary_receipts",
             "make_commit_receipts",
             "_lifecycle_state",
-            "bind_step_result",
+            "_bind_owned_step_result",
             "_OwnedCOS",
         ):
             owner = self.seeded()

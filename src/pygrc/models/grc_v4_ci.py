@@ -697,7 +697,9 @@ class CITrial:
         trial = self.inputs.trial_current
         assert trial is not None
         point = _point(self.inputs, self.differential_reference)
-        read = point.read_back(trial)
+        # Consume only this fresh point's construction identity. Trial-current
+        # flux, certified solve and residual evaluation still run independently.
+        read = point._read_back(trial, point.read.source_identity)
         ref = self.inputs.geometry.reference
         source = _source_from_flat(point, read.causal_flat)
         generated = H_profile(

@@ -267,6 +267,64 @@ class RG2bCertificateTests(unittest.TestCase):
                 rg._cutoff(4 - Fraction(value), 2.0, d),
             )
 
+    def test_log_memo_is_exact_bounded_and_returns_independent_intervals(self):
+        cache = rg._log_point_endpoints
+        cache.cache_clear()
+        try:
+            for q in (Fraction(1, 8), Fraction(1), Fraction(17)):
+                uncached = rg._Interval(*cache.__wrapped__(q))
+                expected = (uncached.lo, uncached.hi)
+                with localcontext() as ctx:
+                    ctx.prec = 12
+                    first = rg._log_point(q)
+                hits = cache.cache_info().hits
+                with localcontext() as ctx:
+                    ctx.prec = 240
+                    second = rg._log_point(q)
+                self.assertEqual((first.lo, first.hi), expected)
+                self.assertEqual((second.lo, second.hi), expected)
+                self.assertIsNot(first, second)
+                self.assertEqual(cache.cache_info().hits, hits + 1)
+                object.__setattr__(first, "lo", first.hi + 1)
+                later = rg._log_point(q)
+                self.assertEqual((later.lo, later.hi), expected)
+            size = cache.cache_info().currsize
+            for q in (Fraction(0), Fraction(-1)):
+                for _ in range(2):
+                    with self.assertRaises(RG2bStageError):
+                        rg._log_point(q)
+            self.assertEqual(cache.cache_info().currsize, size)
+            for i in range(130):
+                rg._log_point(Fraction(i + 1, 256))
+            self.assertEqual(cache.cache_info().currsize, 128)
+            q = Fraction(17)
+            bound = rg._log_point(q)
+            uncached = rg._Interval(*cache.__wrapped__(q))
+            self.assertEqual((bound.lo, bound.hi), (uncached.lo, uncached.hi))
+            adjacent = q + Fraction(1, 2**40)
+            next_bound = rg._log_point(adjacent)
+            uncached = rg._Interval(*cache.__wrapped__(adjacent))
+            self.assertEqual(
+                (next_bound.lo, next_bound.hi), (uncached.lo, uncached.hi)
+            )
+            self.assertNotEqual((bound.lo, bound.hi), (next_bound.lo, next_bound.hi))
+        finally:
+            cache.cache_clear()
+
+    def test_log_memo_preserves_the_original_final_rounding(self):
+        with localcontext() as context:
+            context.prec = 100
+            near_power = tuple(Fraction(Decimal(value).exp()) for value in (1, 2, 4))
+        for q in (Fraction(17, 16), Fraction(7, 8), *near_power):
+            exponent = q.numerator.bit_length() - q.denominator.bit_length()
+            unit = q / Fraction(2) ** exponent
+            if unit < 1:
+                unit, exponent = unit * 2, exponent - 1
+            original = rg._log_unit(unit) + exponent * rg._ln2()
+            for _ in range(2):
+                actual = rg._log_point(q)
+                self.assertEqual((actual.lo, actual.hi), (original.lo, original.hi))
+
     def test_log_enclosure_against_independent_high_precision_decimal(self):
         with localcontext() as ctx:
             ctx.prec = 150

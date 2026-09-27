@@ -992,7 +992,13 @@ class CandidateCCurrent:
         return _identity("grcv4-c-fixed-stage-sha256", self.to_payload())
 
     def read_back(self, current: PhysicalFlux) -> CandidateCReadBack:
-        return self.algebra.read_back(current, self.identity)
+        return self._read_back(current, self.identity)
+
+    def _read_back(
+        self, current: PhysicalFlux, source_identity: str
+    ) -> CandidateCReadBack:
+        """Run certified read-back using an identity from this fresh construction."""
+        return self.algebra.read_back(current, source_identity)
 
     def to_payload(self) -> dict[str, JSONValue]:
         return {

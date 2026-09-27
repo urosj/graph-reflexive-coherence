@@ -491,15 +491,53 @@ def bind_step_result(
         or type(request) is not GRCV4StepRequestInput
     ):
         raise TypeError("expected V4 result and external step input records")
+    return _bind_owned_step_result(
+        GRCV4StepResult.from_payload(result.to_payload()),
+        request=GRCV4StepRequestInput.from_payload(request.to_payload()),
+        prestate=prestate,
+        poststate=poststate,
+        pre_ledger=_ledger(pre_ledger),
+        post_ledger=_ledger(post_ledger),
+        observed_stage=observed_stage,
+        observed_code=observed_code,
+        observed_solver=observed_solver,
+        commit_payload=commit_payload,
+    )
+
+
+def _bind_owned_step_result(
+    result: GRCV4StepResult,
+    *,
+    request: GRCV4StepRequestInput,
+    prestate: object,
+    poststate: object,
+    pre_ledger: tuple[SuccessfulReceiptEnvelope, ...],
+    post_ledger: tuple[SuccessfulReceiptEnvelope, ...],
+    observed_stage: OperationStage,
+    observed_code: FailureCode | None,
+    observed_solver: SolverDisposition | None,
+    commit_payload: object = None,
+) -> StepResultEvidence:
+    """Bind a freshly constructed, locally owned and validated result.
+
+    Only the operation's constructor-to-binder path and the public binder's
+    detached reconstruction may supply this result. No caller can have observed
+    or mutated it in between. This ownership fact replaces redundant result
+    reconstruction, regardless of payload size; all outcome, state, ledger,
+    receipt and commit comparisons below remain shared with the public binder.
+    Ledgers must likewise be owned captures from the private archive reader or
+    the public binder's full _ledger reconstruction. No receipt object in those
+    tuples has been exposed to caller code. Frozen records received from a
+    caller still require the public binder; their class is not validation proof.
+    """
     if (
         type(observed_stage) is not str
         or (observed_code is not None and type(observed_code) is not str)
         or (observed_solver is not None and type(observed_solver) is not str)
     ):
         raise TypeError("observed outcome requires literal stage/code/solver labels")
-    result = GRCV4StepResult.from_payload(result.to_payload())
     request = GRCV4StepRequestInput.from_payload(request.to_payload())
-    before, after = _ledger(pre_ledger), _ledger(post_ledger)
+    before, after = pre_ledger, post_ledger
     source, source_id, source_lifecycle = _state_evidence(prestate, before)
     target, target_id, target_lifecycle = _state_evidence(poststate, after)
     if result.active_model_identity != target["active_model_identity"] or (

@@ -595,6 +595,68 @@ class CandidateACITests(unittest.TestCase):
 
 
 class CISharedTests(unittest.TestCase):
+    def test_fresh_trial_reuses_identity_and_public_read_back_stays_fresh(self):
+        from tests.models.test_grc_v4_cipc import fixture as coupled_fixture
+
+        for candidate, point_type in (
+            ("A", CandidateACurrent),
+            ("C", CandidateCCurrent),
+        ):
+            for factory, stage in (
+                (fixture, "ci_trial"),
+                (coupled_fixture, "cipc_trial"),
+            ):
+                with self.subTest(candidate=candidate, stage=stage):
+                    before, backend = factory(candidate)
+                    graph = before.geometry.reference.graph
+                    trial_current = PhysicalFlux(graph, (1.5,))
+                    selected = replace(before, stage=stage, trial_current=trial_current)
+                    original = point_type.identity
+                    calls = []
+
+                    def identity(point, original=original, calls=calls):
+                        calls.append(point)
+                        return original.fget(point)
+
+                    with patch.object(point_type, "identity", property(identity)):
+                        trial = CITrial(selected, backend)
+                        point = trial.point
+                        self.assertEqual(len(calls), 1)
+                        public = point.read_back(trial_current)
+                        self.assertEqual(len(calls), 2)
+                        self.assertEqual(
+                            public.source_identity, point.read.source_identity
+                        )
+                        self.assertNotEqual(public.current, point.read.current)
+                        self.assertNotEqual(public.flux, point.read.flux)
+                        expected = (
+                            Fraction(1.5)
+                            - Fraction(
+                                point.baseline.values[0]
+                                if candidate == "A"
+                                else point.algebra.baseline.values[0]
+                            )
+                            - Fraction(
+                                before.geometry.reference.profile.params_resolved.candidate.zeta_A
+                                if candidate == "A"
+                                else before.geometry.reference.profile.params_resolved.candidate.zeta_C
+                            )
+                            * Fraction(public.flux.values[0])
+                        )
+                        self.assertEqual(trial.current_residual[0], expected)
+                        # Even unsupported frozen-object edits cannot make the
+                        # public path reuse an earlier construction identity.
+                        object.__setattr__(
+                            point,
+                            "inputs",
+                            replace(point.inputs, operation_id="changed-public-read"),
+                        )
+                        changed = point.read_back(trial_current)
+                        self.assertEqual(len(calls), 3)
+                        self.assertNotEqual(
+                            changed.source_identity, public.source_identity
+                        )
+
     def test_irrational_loop_edge_overlap_is_enclosed_before_source_rounding(self):
         graph = GRCV4Graph(
             ("u", "v"), (OrientedEdge("loop", "u", "u"), OrientedEdge("uv", "u", "v"))

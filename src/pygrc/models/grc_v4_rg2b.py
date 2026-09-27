@@ -121,13 +121,23 @@ def _log_unit(q: Fraction) -> _Interval:
     return _Interval(2 * total, 2 * total + 2 * power / (129 * (1 - z * z)))
 
 
-def _log_point(q: Fraction) -> _Interval:
+@lru_cache(maxsize=128, typed=True)
+def _log_point_endpoints(q: Fraction) -> tuple[Fraction, Fraction]:
+    """Memoize exact operands and immutable bounds, never caller intervals."""
     _require(q > 0, "logarithm outside positive chart")
     exponent = q.numerator.bit_length() - q.denominator.bit_length()
     unit = q / Fraction(2) ** exponent
     if unit < 1:
         unit, exponent = unit * 2, exponent - 1
-    return _log_unit(unit) + exponent * _ln2()
+    unit_bounds = _log_unit(unit)
+    scaled_ln2 = exponent * _ln2()
+    # Cache the exact sum before the original final interval rounding. Each
+    # caller performs that rounding once, preserving the uncached enclosure.
+    return unit_bounds.lo + scaled_ln2.lo, unit_bounds.hi + scaled_ln2.hi
+
+
+def _log_point(q: Fraction) -> _Interval:
+    return _Interval(*_log_point_endpoints(q))
 
 
 def _ilog(value: _Interval) -> _Interval:

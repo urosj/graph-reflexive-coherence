@@ -461,6 +461,78 @@ class P971AuditRegressions(unittest.TestCase):
                 self.assertNotEqual(own_commit["source_state_digest"], previous_target)
                 self.assertEqual(restore(owner.snapshot()).snapshot(), owner.snapshot())
 
+    def test_owned_result_binding_validates_once_without_a_payload_cache(self) -> None:
+        from pygrc.models import grc_v4_codec as codec
+        from pygrc.models import grc_v4_lifecycle as lifecycle
+        from pygrc.models.grc_v4_step import bind_step_result
+
+        original_validation = codec._validation_result
+        original_binding = lifecycle._bind_owned_step_result
+        for family in FAMILIES:
+            owner = model(family)
+            validations = []
+            bindings = []
+
+            def validate(validator, data, schemas, name, validations=validations):
+                if name == "step_result":
+                    validations.append(data)
+                return original_validation(validator, data, schemas, name)
+
+            def bind(result, bindings=bindings, **arguments):
+                evidence = original_binding(result, **arguments)
+                bindings.append((arguments, evidence))
+                return evidence
+
+            with (
+                self.subTest(family=family),
+                patch.object(codec, "_VALIDATION_MAX_BYTES", 1),
+                patch.object(codec, "_validation_result", validate),
+                patch.object(lifecycle, "_bind_owned_step_result", bind),
+            ):
+                result = owner.step_v4_input(request(fixture(family)[0].dt, "owned-result"))
+                self.assertTrue(result.committed, result.failure)
+                self.assertEqual(len(validations), 1)
+                arguments, evidence = bindings[0]
+                self.assertEqual(bind_step_result(result, **arguments), evidence)
+                self.assertEqual(len(validations), 3)
+                object.__setattr__(result, "schema_version", "forged-result")
+                with self.assertRaises(codec.V4SchemaError):
+                    bind_step_result(result, **arguments)
+
+    def test_large_owned_result_keeps_schema_and_publication_guards(self) -> None:
+        from pygrc.models import grc_v4_codec as codec
+        from pygrc.models import grc_v4_lifecycle as lifecycle
+
+        owner = model("A_OS")
+        original_observables = lifecycle._public_observables
+        original_validation = codec._validation_result
+        sizes = []
+
+        def observables(*args, **kwargs):
+            return original_observables(*args, **kwargs) | {"large_observation": "x" * 1024**2}
+
+        def validate(validator, data, schemas, name):
+            if name == "step_result":
+                sizes.append(len(codec.canonical_json_bytes(data)))
+            return original_validation(validator, data, schemas, name)
+
+        with (
+            patch.object(lifecycle, "_public_observables", observables),
+            patch.object(codec, "_validation_result", validate),
+        ):
+            result = owner.step_v4_input(request(fixture("A_OS")[0].dt, "large-owned"))
+        self.assertTrue(result.committed, result.failure)
+        self.assertEqual(len(sizes), 1)
+        self.assertGreater(sizes[0], 1024**2)
+
+        before = owner.snapshot()
+        with (
+            patch.object(lifecycle, "_public_observables", return_value={"invalid": -0.0}),
+            self.assertRaisesRegex(ValueError, "negative zero"),
+        ):
+            owner.step_v4_input(request(fixture("A_OS")[0].dt, "invalid-owned"))
+        self.assertEqual(owner.snapshot(), before)
+
     def test_native_A_postwriter_singularity_preserves_the_seeded_publication(self) -> None:
         # Additional live-owner pressure; not a newly demonstrated defect.
         inputs, backend = a_os_fixture(C=(0.0, 0.0), W=(4.0,), dt=math.log(2.0),
