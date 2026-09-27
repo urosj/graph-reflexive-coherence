@@ -28,6 +28,23 @@ from pygrc.models.grc_v4_codec import (
 from pygrc.models.grc_v4_profile import list_supported_profiles
 from pygrc.models.grc_v4_state import FrozenJSONMap
 
+def _consumed_legacy_imports(source: str) -> list[str]:
+    """Classify qualified dependencies, independently of import spelling/alias."""
+    legacy: list[str] = []
+    for node in ast.walk(ast.parse(source)):
+        symbols: list[str] = []
+        if isinstance(node, ast.Import):
+            symbols = [alias.name for alias in node.names]
+        elif isinstance(node, ast.ImportFrom):
+            module = resolve_name("." * node.level + (node.module or ""),
+                                  "pygrc.models")
+            symbols = [f"{module}.{alias.name}" for alias in node.names]
+        legacy.extend(symbol for symbol in symbols
+                      if symbol.startswith("pygrc.")
+                      and not symbol.startswith("pygrc.models.grc_v4"))
+    return legacy
+
+
 STEP_RECORDS: tuple[type[api._StepRequestRecord], ...] = (
     api.GRCV4StepRequestInput, api.GRCV4StepRequest,
 )
@@ -292,23 +309,28 @@ class FoundationIntegrationTests(unittest.TestCase):
         self.assertEqual(lifecycle.graph["live_node_ids"], ("v0", "v1"))
         self.assertEqual(lifecycle.profile["complete_profile_id"], profile.complete_profile_id)
 
+    def test_import_boundary_uses_module_names_instead_of_local_aliases(self) -> None:
+        cases = (
+            ("from . import grc_v4_codec as codec", []),
+            ("from . import grc_v4_codec as grc_v2", []),
+            ("from .grc_v4_codec import JSONValue", []),
+            ("import pygrc.models.grc_v4_codec as codec", []),
+            ("from . import grc_v2 as grc_v4_codec", ["pygrc.models.grc_v2"]),
+            ("import pygrc.core.events as grc_v4", ["pygrc.core.events"]),
+            ("from pygrc.core.events import GRCEvent", ["pygrc.core.events.GRCEvent"]),
+            ("from . import grc_v4_codec, grc_v2", ["pygrc.models.grc_v2"]),
+        )
+        for source, expected in cases:
+            with self.subTest(source=source):
+                self.assertEqual(_consumed_legacy_imports(source), expected)
+
     def test_consumed_legacy_imports_and_replacement_boundary(self) -> None:
         # Exact direct source consumption, not the already-imported legacy
         # package initializer's transitive modules. New uses need review.
         root = Path(__file__).resolve().parents[2]
         for name in ("grc_v4", "grc_v4_codec", "grc_v4_profile", "grc_v4_state", "grc_v4_step"):
             source = (root / f"src/pygrc/models/{name}.py").read_text()
-            tree = ast.parse(source)
-            legacy: list[str] = []
-            for node in ast.walk(tree):
-                if isinstance(node, ast.Import):
-                    legacy.extend(alias.name for alias in node.names
-                                  if alias.name.startswith("pygrc."))
-                if isinstance(node, ast.ImportFrom):
-                    module = resolve_name("." * node.level + (node.module or ""),
-                                          "pygrc.models")
-                    if module.startswith("pygrc.") and not module.startswith("pygrc.models.grc_v4"):
-                        legacy.extend(f"{module}.{alias.name}" for alias in node.names)
+            legacy = _consumed_legacy_imports(source)
             expected = {
                 "grc_v4_state": ["pygrc.core.events.GRCEvent"],
                 "grc_v4": ["pygrc.core.interfaces.GRCModel"],
@@ -408,6 +430,7 @@ class PublicFacadeTests(unittest.TestCase):
             "profile_explicit_v4", "single_resource_ledger", "authoritative_current",
             "structural_hodge_geometry", "typed_topology_events", "profile_migration",
             "quadrature_budget", "v4_candidate_c_derived_sector", "v4_realization_os",
+            "v4_explicit_history_reconstruction", "v4_pure_representation_transport",
         })
         for method, args in (("step", ["self"]), ("run", ["self", "num_steps"]),
                              ("step_v4", ["self", "request"]),

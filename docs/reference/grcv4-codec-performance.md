@@ -350,3 +350,40 @@ copies and descriptor serialization inside candidate iterations. These still
 require checked ownership boundaries and preservation of canonical numeric
 semantics; simply trusting a caller's frozen dataclass or skipping evolving
 state admission would not preserve strictness.
+
+## Full V4 verification after the optimization commit
+
+The optimization changes were committed as `a7a7d0a`. A complete V4 unit-test
+selection then ran 903 tests in 1137.998 seconds:
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python -m unittest discover -v \
+  -s tests/models -t . -p 'test_grc_v4*.py'
+```
+
+It passed 893 tests and skipped four opt-in packaging tests. Six test cases
+produced three assertion failures and seven error reports. The failures were
+outdated test assumptions and fault hooks:
+
+- The capability assertion omitted explicit history reconstruction and pure
+  representation transport already provided by the public API.
+- The import inspector classified `from . import grc_v4_codec` by its parent
+  package rather than the qualified imported module. It now recognizes owned
+  imports and still detects legacy imports hidden behind misleading aliases.
+- Three administrative/readmission controls patched the removed lifecycle
+  `_os_inputs` symbol. They now inject errors through `_readmit_state` and corrupt
+  the target returned by `_fresh_geometry`, preserving the source observation
+  and the existing atomicity/identity rejection assertions.
+- The registry control assumed the generalized lifecycle owner still accepted
+  only C_OS targets. It now checks the bounded helper's original C_OS rejection
+  separately, and verifies explicit A/C declarations in the generalized owner.
+  Duplicate references, invalid weights, and unauthorized graph migration still
+  reject in the existing controls.
+
+All six failing cases passed on rerun, together with one new import-spelling
+and alias regression (seven tests). All seven evidence-capture integrity tests
+also passed with the corrected sources and normal Git index. No runtime or
+scientific validation checks were weakened or changed in this correction.
+Patch whitespace checks passed; lint comparison found no new diagnostics
+(98 existing findings before, 97 after in the affected test files).
+The 903-test selection was not repeated after these test-only corrections.

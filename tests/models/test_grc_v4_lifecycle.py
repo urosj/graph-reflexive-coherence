@@ -1873,7 +1873,7 @@ class CandidateCOSLifecycleTests(unittest.TestCase):
         original = canonical_json_bytes(owner.snapshot())
         for method in (owner.reset, owner.rebase_reset_baseline):
             for name in (
-                "_os_inputs",
+                "_readmit_state",
                 "ProvisionalCandidateCOSStep",
                 "_ordinary_receipts",
                 "make_commit_receipts",
@@ -1918,7 +1918,7 @@ class CandidateCOSLifecycleTests(unittest.TestCase):
         original = canonical_json_bytes(owner.snapshot())
         assigned = _p946_assignment(owner, (4, 0))
         for name in (
-            "_os_inputs",
+            "_readmit_state",
             "ProvisionalCandidateCOSStep",
             "_lifecycle_state",
             "_OwnedCOS",
@@ -2667,7 +2667,7 @@ class CandidateCOSAuditCorrectionTests(unittest.TestCase):
     def test_administrative_returned_target_cannot_exploit_empty_ledger(self) -> None:
         import pygrc.models.grc_v4_lifecycle as module
 
-        from pygrc.models.grc_v4_realizations import _os_inputs as real
+        real = module._fresh_geometry
 
         owner = CandidateCOSOperation(dyadic_fixture())
         owner.set_state(_p946_assignment(owner, (1, 3)))
@@ -2676,8 +2676,16 @@ class CandidateCOSAuditCorrectionTests(unittest.TestCase):
             for defect in ("clock", "current"):
                 before = owner.snapshot()
 
+                evaluations = 0
+
                 def corrupt(inputs: Any) -> Any:
+                    nonlocal evaluations
+                    evaluations += 1
                     valid = real(inputs)
+                    # The shared helper also reconstructs the observed source.
+                    # Corrupt only the subsequently returned administrative target.
+                    if evaluations != 2:
+                        return valid
                     return (
                         replace(valid, time=0.125)
                         if defect == "clock"
@@ -2688,7 +2696,7 @@ class CandidateCOSAuditCorrectionTests(unittest.TestCase):
 
                 with (
                     self.subTest(method=method.__name__, defect=defect),
-                    patch.object(module, "_os_inputs", side_effect=corrupt),
+                    patch.object(module, "_fresh_geometry", side_effect=corrupt),
                     self.assertRaisesRegex(V4IdentityError, "administrative target"),
                 ):
                     method()
@@ -3494,8 +3502,21 @@ class CandidateCOSCrossingTests(unittest.TestCase):
         for weights in ({"e": 2.0}, {"e": 2.0, "f": 2.0, "foreign": 1.0}):
             with self.subTest(weights=weights), self.assertRaises(ValueError):
                 stage_reference_fixture(graph=target.graph, weights=weights)
+        from pygrc.models.grc_v4_lifecycle import _reference_registry
+
+        a_target = stage_reference_fixture("A", "OS")
+        # The bounded registry helper retains its original C_OS restriction.
         with self.assertRaisesRegex(ValueError, "C_OS"):
-            CandidateCOSOperation(inputs, targets=(stage_reference_fixture("A", "OS"),))
+            _reference_registry((inputs.geometry.reference, a_target))
+        # The generalized lifecycle owner accepts explicit declarations for
+        # both candidates; this does not admit an execution or a graph mapping.
+        generic = CandidateCOSOperation(inputs, targets=(a_target,))
+        self.assertEqual(generic.list_supported_profiles(), frozenset({
+            inputs.geometry.reference.profile.complete_profile_id,
+            a_target.profile.complete_profile_id,
+        }))
+        self.assertEqual(generic.get_supported_profile(a_target.profile.complete_profile_id),
+                         a_target.profile)
         # A valid profile registered for another graph does not authorize
         # ordinary migration to that graph. Only the event route supplies a map.
         owner = CandidateCOSOperation(inputs, targets=(target,))
