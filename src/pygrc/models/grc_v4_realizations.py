@@ -28,6 +28,7 @@ from .grc_v4_candidate_c import (
 from .grc_v4_geometry import (
     GRCV4Geometry,
     GeometryStageInputs,
+    _capture_stage_inputs,
     GeometryDomainError,
     NonfiniteGeometryError,
     H_profile,
@@ -50,7 +51,7 @@ class OSStageError(ValueError):
 def _os_inputs(inputs: GeometryStageInputs) -> GeometryStageInputs:
     if type(inputs) is not GeometryStageInputs:
         raise TypeError("OS requires captured stage inputs")
-    before = GeometryStageInputs.from_payload(inputs.to_payload())
+    before = _capture_stage_inputs(inputs)
     ref = before.geometry.reference
     params = ref.profile.params_resolved.realization
     if (
@@ -296,7 +297,7 @@ def _a_os_inputs(inputs: GeometryStageInputs) -> GeometryStageInputs:
     """Admit the A declaration independently of the C selector contract."""
     if type(inputs) is not GeometryStageInputs:
         raise TypeError("A OS requires captured stage inputs")
-    before = GeometryStageInputs.from_payload(inputs.to_payload())
+    before = _capture_stage_inputs(inputs)
     ref = before.geometry.reference
     params = ref.profile.params_resolved.realization
     if (

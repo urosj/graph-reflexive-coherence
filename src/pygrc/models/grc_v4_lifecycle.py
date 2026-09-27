@@ -24,6 +24,7 @@ from .grc_v4 import (
     GRCV4MappedTopologyEventRequest,
     GRCV4RepresentationRequest,
 )
+from ._grc_v4_evidence import _ReceiptEvidence, _lifecycle_identity, _operation_evidence, _own_stage_reference, _seed_receipts
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_candidate_a import CandidateADifferentialReference, CandidateAStageError
 from .grc_v4_codec import (
@@ -36,6 +37,7 @@ from .grc_v4_codec import (
     RELEASE_ID,
     V4IdentityError,
     V4SchemaError,
+    _verify_contract_assets,
     canonical_json_bytes,
     snapshot_payload,
     decode_canonical_json,
@@ -286,36 +288,42 @@ def _public_observables(
     }
 
 
+def _lifecycle_fields(inputs: GeometryStageInputs, receipt_ids: tuple[str, ...]) -> dict[str, Any]:
+    """Single bounded projection used by construction and publication comparison."""
+    before = replace(inputs, receipt_ids=receipt_ids)
+    ref = before.geometry.reference
+    scientific_id = before.scientific_state_id
+    result = {
+        "step_index": before.step_index,
+        "time": before.time,
+        "graph": FrozenJSONMap(ref.graph.to_payload()),
+        "graph_digest": ref.graph.graph_digest,
+        "orientation_identity": ref.graph.orientation_identity,
+        "profile": FrozenJSONMap(ref.profile.to_payload()),
+        "context_contract_id": before.context.contract_id,
+        "context_value_digest": None,
+        "current": before.current,
+        "reset": GRCV4ResetBaseline(
+            before.reset, ref.graph.graph_digest, ref.graph.orientation_identity,
+            ref.profile.complete_profile_id, before.context.contract_id,
+            before.Q_target, before.reset_id,
+        ),
+        "Q_target": before.Q_target,
+        "scientific_state_digest": scientific_id,
+        "lifecycle_digest": _lifecycle_identity(scientific_id, before.receipt_ids),
+    }
+    if result.keys() != {item.name for item in fields(GRCV4LifecycleState)} - {"receipt_ledger"}:
+        raise V4IdentityError("lifecycle projection does not cover every state field")
+    return result
+
+
 def _lifecycle_state(
     inputs: GeometryStageInputs, ledger: tuple[SuccessfulReceiptEnvelope, ...]
 ) -> GRCV4LifecycleState:
     """Derive every identity from owned values; no caller digest is accepted."""
-    before = replace(inputs, receipt_ids=tuple(r.receipt_id for r in ledger))
-    ref = before.geometry.reference
-    reset = GRCV4ResetBaseline(
-        before.reset,
-        ref.graph.graph_digest,
-        ref.graph.orientation_identity,
-        ref.profile.complete_profile_id,
-        before.context.contract_id,
-        before.Q_target,
-        before.reset_id,
-    )
     return GRCV4LifecycleState(
-        before.step_index,
-        before.time,
-        FrozenJSONMap(ref.graph.to_payload()),
-        ref.graph.graph_digest,
-        ref.graph.orientation_identity,
-        FrozenJSONMap(ref.profile.to_payload()),
-        before.context.contract_id,
-        None,
-        before.current,
-        reset,
-        before.Q_target,
-        tuple(FrozenJSONMap(r.to_payload()) for r in ledger),
-        before.scientific_state_id,
-        before.source_lifecycle_id,
+        **_lifecycle_fields(inputs, tuple(row.receipt_id for row in ledger)),
+        receipt_ledger=tuple(FrozenJSONMap(row.to_payload()) for row in ledger),
     )
 
 
@@ -1267,6 +1275,7 @@ class _CheckedArchive:
     layout: str
     lineage: _ArchiveLineage
     science: _ArchiveScience
+    receipt_evidence: _ReceiptEvidence = field(repr=False, compare=False)
 
     @staticmethod
     def _token(value):
@@ -1276,6 +1285,14 @@ class _CheckedArchive:
         Mark oversized integers, negative zero and nonfinite floats separately
         so a forged scalar cannot compare equal to an admitted numeric value.
         """
+        if type(value) is FrozenJSONMap:
+            # Inspect immutable storage directly; do not thaw the complete DTO
+            # merely to build another detached comparison representation.
+            items = value.items()
+            if any(type(key) is not str for key, _ in items):
+                raise V4SchemaError("archive JSON keys must be strings")
+            return ("object", tuple((key, _CheckedArchive._token(item))
+                                    for key, item in sorted(items)))
         if type(value) is dict:
             if any(type(key) is not str for key in value):
                 raise V4SchemaError("archive JSON keys must be strings")
@@ -1343,6 +1360,7 @@ class _CheckedArchive:
             cls._prefix(ledger, commits, reference, charge, reset, registry, transitions),
             ledger, canonical_json_bytes([row.to_dict() for row in transitions]),
             layout, lineage, science,
+            _ReceiptEvidence.from_ids(tuple(row.receipt_id for row in ledger)),
         )
 
     def read_ledger(self, exposed: tuple[FrozenJSONMap, ...]) -> tuple[SuccessfulReceiptEnvelope, ...]:
@@ -1425,7 +1443,29 @@ class _CheckedArchive:
                               registry, transitions),
             ),
             ledger + emitted, transition_bytes, self.layout, lineage, science,
+            self.receipt_evidence.extend(tuple(row.receipt_id for row in emitted)),
         )
+
+    def check_target_state(self, after, target, ledger, emitted):
+        """Compare the publication directly, without constructing another DTO.
+
+        Re-admit endpoint inputs exactly as the original projection did. Only
+        the already admitted historical receipt tokens are reused; inspect every
+        target receipt so a substituted or forcibly mutated DTO cannot pass.
+        """
+        rows = ledger + emitted
+        expected = _lifecycle_fields(after, tuple(row.receipt_id for row in rows))
+        if (type(target) is not GRCV4LifecycleState
+                or any(getattr(target, name) != value for name, value in expected.items())
+                or type(target.receipt_ledger) is not tuple
+                or any(type(row) is not FrozenJSONMap for row in target.receipt_ledger)):
+            raise V4IdentityError("publication state contradicts the committed delta")
+        prefix = (self.prefix.receipts if ledger is self.receipts else
+                  tuple(self._token(row.to_payload()) for row in ledger))
+        expected_receipts = prefix + tuple(self._token(row.to_payload()) for row in emitted)
+        actual_receipts = tuple(self._token(row) for row in target.receipt_ledger)
+        if actual_receipts != expected_receipts:
+            raise V4IdentityError("publication state contradicts the committed delta")
 
     @staticmethod
     def _check_commits(
@@ -1837,8 +1877,7 @@ def _validate_publication(
         for name, value in charges[1].receipt_values().items()
     )):
         raise V4IdentityError("publication charge receipt contradicts actual resource")
-    if target != _lifecycle_state(after, ledger + emitted):
-        raise V4IdentityError("publication state contradicts the committed delta")
+    owned.archive.check_target_state(after, target, ledger, emitted)
     return owned.archive.append(
         before=before, after=after, ledger=ledger, commits=owned.commits,
         registry=registry, old_transitions=owned.transitions, transitions=transitions,
@@ -1855,7 +1894,21 @@ class GRCV4Operation:
     Calls that publish state are serialized, with one immutable pointer swap.
     """
 
-    __slots__ = ("_registry", "_owned", "_lock", "_backends")
+    __slots__ = ("_registry", "__owned", "_lock", "_backends")
+
+    def _get_owned(self) -> _OwnedCOS:
+        return self.__owned
+
+    def _set_owned(self, publication: _OwnedCOS) -> None:
+        """Every state-pointer write passes the same fail-before-swap guard."""
+        if type(publication) is not _OwnedCOS:
+            raise TypeError("publication requires an owned lifecycle tuple")
+        context = _verify_contract_assets()
+        self.__owned = publication
+        if context is not None:
+            context.published = True
+
+    _owned = property(_get_owned, _set_owned)
 
     def __init__(
         self,
@@ -2447,7 +2500,11 @@ class GRCV4Operation:
             request["schema_version"] = "grcv4-step-request-input-v1"
             return self._execute(GRCV4StepRequestInput.from_payload(request))
 
+    @_operation_evidence
     def _execute(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
+        archive = self._owned.archive
+        _seed_receipts(archive.receipt_evidence,
+                       tuple(row.receipt_id for row in archive.receipts))
         before = self._inputs(request)
         owned = self._state
         ledger = self._owned.ledger
@@ -2477,6 +2534,8 @@ class GRCV4Operation:
             stage = "pre_read_reconstruction"
             # Rebuild from owned immutable values; caller caches are never inputs.
             stage = "candidate_solve"
+            before = GeometryStageInputs.from_payload(before.to_payload())
+            _own_stage_reference(before.geometry.reference)
             step = _profile_step(before, self._backend)
             solver = "valid_root"
             stage = "final_reconstruction"
@@ -2584,6 +2643,11 @@ class GRCV4Operation:
             target_time=following.time,
         )
         target_ledger = ledger + emitted
+        if ledger is self._owned.archive.receipts:
+            _seed_receipts(
+                self._owned.archive.receipt_evidence.extend(tuple(row.receipt_id for row in emitted)),
+                tuple(row.receipt_id for row in target_ledger),
+            )
         target = _lifecycle_state(following, target_ledger)
         reconstruction_stage = ("commit_reference_readmission"
                                 if self._reference.profile.identity_payload.realization == "OS"

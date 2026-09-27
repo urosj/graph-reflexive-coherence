@@ -492,8 +492,15 @@ class P971AuditRegressions(unittest.TestCase):
                 result = owner.step_v4_input(request(fixture(family)[0].dt, "owned-result"))
                 self.assertTrue(result.committed, result.failure)
                 self.assertEqual(len(validations), 1)
-                arguments, evidence = bindings[0]
-                self.assertEqual(bind_step_result(result, **arguments), evidence)
+                arguments, binding = bindings[0]
+                evidence = bind_step_result(result, **arguments)
+                checked_request, source, target = binding
+                self.assertEqual(evidence.request_bytes, checked_request.to_canonical_bytes())
+                self.assertEqual(evidence.result_bytes, result.to_canonical_bytes())
+                self.assertEqual(evidence.prestate_bytes, canonical_json_bytes(source))
+                self.assertEqual(evidence.poststate_bytes, canonical_json_bytes(target))
+                self.assertEqual(evidence.pre_ledger_bytes, canonical_json_bytes([row.to_payload() for row in arguments["pre_ledger"]]))
+                self.assertEqual(evidence.post_ledger_bytes, canonical_json_bytes([row.to_payload() for row in arguments["post_ledger"]]))
                 self.assertEqual(len(validations), 3)
                 object.__setattr__(result, "schema_version", "forged-result")
                 with self.assertRaises(codec.V4SchemaError):

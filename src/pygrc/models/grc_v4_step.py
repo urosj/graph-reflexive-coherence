@@ -8,7 +8,7 @@ module neither discovers those inputs nor claims runtime-profile support.
 from __future__ import annotations
 
 from collections.abc import Mapping
-from dataclasses import dataclass, field as dataclass_field, fields
+from dataclasses import dataclass, field as dataclass_field, fields, replace
 from typing import Any, ClassVar, Literal, TypeAlias, cast, get_args
 
 from .grc_v4 import GRCV4StepRequest, GRCV4StepRequestInput, _nested_record
@@ -19,9 +19,11 @@ from .grc_v4_codec import (
     payload_identity,
     validate_payload,
 )
+from ._grc_v4_evidence import _lifecycle_identity
 from .grc_v4_profile import _Record
 from .grc_v4_geometry import (
     GeometryStageInputs,
+    _capture_stage_inputs,
     GeometryDomainError,
     NonfiniteGeometryError,
     PhysicalFlux,
@@ -424,14 +426,7 @@ def _state_evidence(
 ) -> tuple[dict[str, Any], str, str]:
     data = cast(dict[str, Any], validate_payload("scientific_state_payload", state))
     state_id = payload_identity("scientific_state_payload", data)
-    lifecycle_id = payload_identity(
-        "lifecycle_envelope_payload",
-        {
-            "schema_version": "grcv4-lifecycle-envelope-v1",
-            "scientific_state_digest": state_id,
-            "receipt_ids": [r.receipt_id for r in ledger],
-        },
-    )
+    lifecycle_id = _lifecycle_identity(state_id, tuple(r.receipt_id for r in ledger))
     return data, state_id, lifecycle_id
 
 
@@ -491,17 +486,28 @@ def bind_step_result(
         or type(request) is not GRCV4StepRequestInput
     ):
         raise TypeError("expected V4 result and external step input records")
-    return _bind_owned_step_result(
-        GRCV4StepResult.from_payload(result.to_payload()),
-        request=GRCV4StepRequestInput.from_payload(request.to_payload()),
+    result = GRCV4StepResult.from_payload(result.to_payload())
+    request = GRCV4StepRequestInput.from_payload(request.to_payload())
+    before, after = _ledger(pre_ledger), _ledger(post_ledger)
+    request, source, target = _bind_owned_step_result(
+        result,
+        request=request,
         prestate=prestate,
         poststate=poststate,
-        pre_ledger=_ledger(pre_ledger),
-        post_ledger=_ledger(post_ledger),
+        pre_ledger=before,
+        post_ledger=after,
         observed_stage=observed_stage,
         observed_code=observed_code,
         observed_solver=observed_solver,
         commit_payload=commit_payload,
+    )
+    return StepResultEvidence(
+        request.to_canonical_bytes(),
+        result.to_canonical_bytes(),
+        canonical_json_bytes(source),
+        canonical_json_bytes(target),
+        canonical_json_bytes([r.to_payload() for r in before]),
+        canonical_json_bytes([r.to_payload() for r in after]),
     )
 
 
@@ -517,7 +523,7 @@ def _bind_owned_step_result(
     observed_code: FailureCode | None,
     observed_solver: SolverDisposition | None,
     commit_payload: object = None,
-) -> StepResultEvidence:
+) -> tuple[GRCV4StepRequestInput, dict[str, Any], dict[str, Any]]:
     """Bind a freshly constructed, locally owned and validated result.
 
     Only the operation's constructor-to-binder path and the public binder's
@@ -529,6 +535,8 @@ def _bind_owned_step_result(
     the public binder's full _ledger reconstruction. No receipt object in those
     tuples has been exposed to caller code. Frozen records received from a
     caller still require the public binder; their class is not validation proof.
+    Returns bounded captured request/state values. Only the public evidence API
+    materializes their bytes and both full ledgers; native callers need checks.
     """
     if (
         type(observed_stage) is not str
@@ -686,14 +694,7 @@ def _bind_owned_step_result(
                 raise V4IdentityError(
                     "event lacks this operation's graph/profile/commit bindings"
                 )
-    return StepResultEvidence(
-        request.to_canonical_bytes(),
-        result.to_canonical_bytes(),
-        canonical_json_bytes(source),
-        canonical_json_bytes(target),
-        canonical_json_bytes([r.to_payload() for r in before]),
-        canonical_json_bytes([r.to_payload() for r in after]),
-    )
+    return request, source, target
 
 
 def negative_duration_result(
@@ -810,7 +811,7 @@ class CurrentSelection:
     def __post_init__(self) -> None:
         if type(self.inputs) is not GeometryStageInputs:
             raise TypeError("current selection requires captured stage inputs")
-        inputs = GeometryStageInputs.from_payload(self.inputs.to_payload())
+        inputs = _capture_stage_inputs(self.inputs)
         if type(
             self.solver_disposition
         ) is not str or self.solver_disposition not in get_args(SolverDisposition):
@@ -938,7 +939,7 @@ class ProvisionalResourceStep:
             raise TypeError(
                 "resource boundary requires independently captured prestate"
             )
-        before = GeometryStageInputs.from_payload(self.prestate.to_payload())
+        before = _capture_stage_inputs(self.prestate)
         if before.stage != "pre_read" or before.trial_current is not None:
             raise ResourceBoundaryError(
                 "admission", "stale_cache", "resource boundary requires pre-read inputs"
@@ -959,7 +960,7 @@ class ProvisionalResourceStep:
         else:
             if type(selection) is not CurrentSelection:
                 raise TypeError("positive duration requires the current owner's result")
-            selection = CurrentSelection.from_payload(selection.to_payload())
+            selection = replace(selection)
             chosen = selection.inputs
             # Scientific/lifecycle IDs omit duration and actual stage geometry.
             # Bind those separately without forbidding a lawful corrected Hodge.
