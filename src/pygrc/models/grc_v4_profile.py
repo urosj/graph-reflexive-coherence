@@ -8,9 +8,12 @@ Python equality of these records uses JCS, never loose mapping equality.
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
+from copy import deepcopy
 from dataclasses import dataclass, fields
+from functools import lru_cache
 from typing import ClassVar, Literal, Self
 
+from . import grc_v4_codec as _codec
 from .grc_v4_codec import (
     JSONValue, V4IdentityError, V4SchemaError, canonical_json_bytes, decode_canonical_json,
     json_value, payload_identity, validate_payload,
@@ -361,15 +364,23 @@ class GRCV4Profile:
     @classmethod
     def from_canonical_bytes(cls, data: bytes | str) -> GRCV4Profile:
         """Restore a canonical declaration and verify all its supplied IDs."""
-        payload = decode_canonical_json(data)
-        if not isinstance(payload, dict) or set(payload) != {
-            "identity_payload", "params_resolved", "complete_profile_id"
-        } or type(payload["complete_profile_id"]) is not str:
-            raise V4SchemaError("expected the exact complete-profile declaration")
-        return resolve_profile(
-            payload["params_resolved"], payload["identity_payload"],
-            expected_complete_profile_id=payload["complete_profile_id"],
+        if type(data) not in (bytes, str):
+            raise _codec.V4WireError("canonical input must be UTF-8 bytes or text")
+        try:
+            raw = data.encode("utf-8") if isinstance(data, str) else data
+        except UnicodeError as exc:
+            raise _codec.V4WireError("malformed canonical UTF-8 JSON") from exc
+        # Cache private declarations, never caller-owned records or admission.
+        # Exact wire bytes preserve canonical numeric reconstruction semantics.
+        template = (
+            _canonical_profile(raw) if len(raw) <= _PROFILE_MAX_BYTES
+            else _restore_canonical_profile(raw)
         )
+        # Warm reuse must still reject changed assets and unavailable extras.
+        _codec._dependency("rfc8785")
+        _codec._load_contract_schema()
+        _codec._dependency("jsonschema")
+        return deepcopy(template)
 
     def __post_init__(self) -> None:
         if type(self.identity_payload) is not GRCV4ProfileIdentityPayload or (
@@ -404,6 +415,28 @@ class GRCV4Profile:
             "params_resolved": self.params_resolved.to_payload(),
             "complete_profile_id": self.complete_profile_id,
         }
+
+
+# Bound both retained declaration count and accepted cache-key size. The private
+# template never crosses this module's boundary; each caller receives a copy.
+_PROFILE_MAX_BYTES = 65536
+
+
+@lru_cache(maxsize=16)
+def _canonical_profile(raw: bytes) -> GRCV4Profile:
+    return _restore_canonical_profile(raw)
+
+
+def _restore_canonical_profile(data: bytes) -> GRCV4Profile:
+    payload = decode_canonical_json(data)
+    if not isinstance(payload, dict) or set(payload) != {
+        "identity_payload", "params_resolved", "complete_profile_id"
+    } or type(payload["complete_profile_id"]) is not str:
+        raise V4SchemaError("expected the exact complete-profile declaration")
+    return resolve_profile(
+        payload["params_resolved"], payload["identity_payload"],
+        expected_complete_profile_id=payload["complete_profile_id"],
+    )
 
 
 def resolve_profile(

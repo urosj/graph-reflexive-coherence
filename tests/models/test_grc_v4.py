@@ -1015,7 +1015,9 @@ class RequestTests(unittest.TestCase):
             decode_record_payload("step_request_input", "{}")
         self.assertIsInstance(seen.exception.__cause__, V4SchemaError)
         from pygrc.models import grc_v4_codec as codec
-        with patch.object(codec, "load_contract_schema", side_effect=codec.V4AssetError("asset")):
+        with patch.object(
+            codec.resources, "files", side_effect=FileNotFoundError("asset")
+        ):
             with self.assertRaises(codec.V4AssetError):
                 api.decode_step_request_input(json.dumps(step_input()))
         for schema in ["conformance_harness_fault", "step_request", "scientific_state_payload",

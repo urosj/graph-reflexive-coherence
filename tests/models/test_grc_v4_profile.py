@@ -11,12 +11,16 @@ import math
 from pathlib import Path
 import operator
 from typing import Any
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 import unittest
 
+from pygrc.models import grc_v4_codec as codec, grc_v4_profile as profile_module
 from pygrc.models.grc_v4_codec import (
     V4IdentityError, V4SchemaError, V4WireError, canonical_json_bytes,
     payload_identity,
 )
+from pygrc.models.grc_v4_state import FrozenJSONMap
 from pygrc.models.grc_v4_profile import (
     CandidateAParams, CandidateCParams, GRCV4CommonParams,
     GRCV4Profile, GRCV4ProfileIdentityPayload, GRCV4ProfileTemplate,
@@ -95,6 +99,119 @@ def family_fixture(candidate: str, realization: str) -> tuple[dict[str, Any], di
     )
     reidentify(params, identity)
     return params, identity
+
+
+class ProfileReuseTests(unittest.TestCase):
+    def setUp(self) -> None:
+        profile_module._canonical_profile.cache_clear()
+
+    def tearDown(self) -> None:
+        profile_module._canonical_profile.cache_clear()
+
+    def test_warm_reconstruction_is_independent_and_does_not_resolve_again(self) -> None:
+        raw = resolve_profile(*fixture()).to_canonical_bytes()
+        first = GRCV4Profile.from_canonical_bytes(raw)
+        with patch.object(profile_module, "resolve_profile", side_effect=AssertionError("profile rebuilt")):
+            second = GRCV4Profile.from_canonical_bytes(raw.decode("utf-8"))
+        self.assertIsNot(first, second)
+        self.assertIsNot(first.params_resolved, second.params_resolved)
+        self.assertIsNot(first.params_resolved.candidate, second.params_resolved.candidate)
+        candidate = first.params_resolved.candidate
+        self.assertIsInstance(candidate, CandidateCParams)
+        assert isinstance(candidate, CandidateCParams)
+        assert isinstance(second.params_resolved.candidate, CandidateCParams)
+        assert isinstance(candidate.W_C_tr, FrozenJSONMap)
+        self.assertIsNot(candidate.W_C_tr, second.params_resolved.candidate.W_C_tr)
+        # Even unsupported Python-level mutation of a returned copy cannot
+        # poison the private proof or another stage owner's declaration.
+        candidate.W_C_tr.__init__({"foreign": 3})
+        object.__setattr__(first.identity_payload, "params_hash", "wrong")
+        object.__setattr__(first, "complete_profile_id", "wrong")
+        self.assertEqual(second.to_canonical_bytes(), raw)
+        self.assertEqual(GRCV4Profile.from_canonical_bytes(raw).to_canonical_bytes(), raw)
+
+    def test_changed_and_noncanonical_inputs_never_reuse_a_previous_proof(self) -> None:
+        profile = resolve_profile(*fixture())
+        raw = profile.to_canonical_bytes()
+        GRCV4Profile.from_canonical_bytes(raw)
+        cases = []
+        for name in ("stale_params", "wrong_id", "boolean", "extra"):
+            data: dict[str, Any] = profile.to_payload()
+            if name == "stale_params":
+                data["params_resolved"]["solver"]["iteration_limit"] = 11
+            elif name == "wrong_id":
+                data["complete_profile_id"] = "grcv4-profile-sha256:" + "0" * 64
+            elif name == "boolean":
+                data["params_resolved"]["solver"]["iteration_limit"] = True
+            else:
+                data["extra"] = 1
+            cases.append((name, canonical_json_bytes(data)))
+        for name, changed in cases:
+            for _ in range(2):
+                with self.subTest(name=name), self.assertRaises((V4IdentityError, V4SchemaError)):
+                    GRCV4Profile.from_canonical_bytes(changed)
+        for changed in (raw + b" ", raw[:-1], b"{}", b"\xff", "\ud800", bytearray(raw)):
+            with self.subTest(value=repr(changed)[:30]), self.assertRaises((V4WireError, V4SchemaError)):
+                GRCV4Profile.from_canonical_bytes(changed)
+        self.assertEqual(profile_module._canonical_profile.cache_info().currsize, 1)
+
+    def test_reuse_is_bounded_and_oversized_declarations_bypass_it(self) -> None:
+        raw = resolve_profile(*fixture()).to_canonical_bytes()
+        with (
+            patch.object(profile_module, "_PROFILE_MAX_BYTES", 1),
+            patch.object(profile_module, "_restore_canonical_profile",
+                         wraps=profile_module._restore_canonical_profile) as restore,
+        ):
+            for _ in range(2):
+                self.assertEqual(GRCV4Profile.from_canonical_bytes(raw).to_canonical_bytes(), raw)
+            self.assertEqual(restore.call_count, 2)
+            self.assertEqual(profile_module._canonical_profile.cache_info().currsize, 0)
+        for i in range(18):
+            params, identity = fixture()
+            params["solver"]["iteration_limit"] = i + 1
+            reidentify(params, identity)
+            changed = resolve_profile(params, identity).to_canonical_bytes()
+            GRCV4Profile.from_canonical_bytes(changed)
+        self.assertEqual(profile_module._canonical_profile.cache_info().currsize, 16)
+        self.assertEqual(GRCV4Profile.from_canonical_bytes(raw).to_canonical_bytes(), raw)
+
+    def test_warm_reuse_rechecks_assets_and_optional_dependencies(self) -> None:
+        raw = resolve_profile(*fixture()).to_canonical_bytes()
+        GRCV4Profile.from_canonical_bytes(raw)
+        assets = ROOT / "src/pygrc/models/grc_v4_assets"
+        index = json.loads((assets / "asset-index.json").read_bytes())
+        names = ["asset-index.json", *(row["name"] for row in index["files"])]
+        with TemporaryDirectory() as directory:
+            package = Path(directory)
+            for name in names:
+                (package / name).write_bytes((assets / name).read_bytes())
+            with patch.object(codec.resources, "files", return_value=package):
+                for name in names:
+                    path = package / name
+                    original = path.read_bytes()
+                    for action in ("missing", "altered"):
+                        try:
+                            if action == "missing":
+                                path.unlink()
+                            else:
+                                path.write_bytes(original[:-1] + bytes([original[-1] ^ 1]))
+                            with self.subTest(name=name, action=action), self.assertRaises(codec.V4AssetError):
+                                GRCV4Profile.from_canonical_bytes(raw)
+                        finally:
+                            path.write_bytes(original)
+                self.assertEqual(GRCV4Profile.from_canonical_bytes(raw).to_canonical_bytes(), raw)
+        original_import = codec.importlib.import_module
+        for missing in ("jsonschema", "rfc8785"):
+            def import_module(name: str, *, target: str = missing) -> Any:
+                if name == target:
+                    raise ImportError(target)
+                return original_import(name)
+            with (
+                self.subTest(missing=missing),
+                patch.object(codec.importlib, "import_module", side_effect=import_module),
+                self.assertRaises(codec.V4DependencyError),
+            ):
+                GRCV4Profile.from_canonical_bytes(raw)
 
 
 class ProfileTests(unittest.TestCase):

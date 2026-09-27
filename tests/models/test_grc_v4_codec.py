@@ -2,26 +2,28 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterator, Mapping
-from copy import deepcopy
-from hashlib import sha256
 import importlib
-from importlib import resources
 import json
 import math
 import os
-from pathlib import Path
 import shutil
 import struct
 import subprocess
 import sys
-import tempfile
 import tarfile
-from typing import Any
+import tempfile
 import unittest
-from unittest.mock import patch
 import venv
 import zipfile
+from collections import OrderedDict
+from collections.abc import Iterator, Mapping
+from concurrent.futures import ThreadPoolExecutor
+from copy import deepcopy
+from hashlib import sha256
+from importlib import resources
+from pathlib import Path
+from typing import Any, cast
+from unittest.mock import patch
 
 from pygrc.models import grc_v4_codec as codec
 from pygrc.models.grc_v4_state import FrozenJSONMap
@@ -530,7 +532,10 @@ class CodecTests(unittest.TestCase):
                     raise FileNotFoundError(self.name)
                 return self.files[self.name]
 
-        for name in [n for n in originals if n.endswith((".json", ".sha256"))]:
+        # The base loader owns the pinned index and its members. Additive
+        # release assets are checked by their respective loaders.
+        index = json.loads(originals["asset-index.json"])
+        for name in ["asset-index.json", *(row["name"] for row in index["files"])]:
             for action in ["missing", "altered"]:
                 modified = dict(originals)
                 if action == "missing":
@@ -549,6 +554,177 @@ class CodecTests(unittest.TestCase):
         with patch.object(resources, "files", return_value=Resource(modified)):
             with self.assertRaises(codec.V4AssetError):
                 codec.load_contract_schema()
+
+    def test_content_validation_reuses_success_but_preserves_numeric_types(self) -> None:
+        row = next(r for r in vectors()["identity_vectors"]
+                   if r["schema_ref"].endswith("scientific_state_payload"))
+        value = deepcopy(row["payload"])
+        value["step_index"] = 0
+        codec.validate_payload(row["schema_ref"], value)
+        _, raw = codec._load_contract_schema()
+        validator = codec._contract_validator(raw, "scientific_state_payload")
+        value["step_index"] = 0.0
+        with patch.object(type(validator), "iter_errors", side_effect=AssertionError("repeat validation")):
+            result = codec.validate_payload(row["schema_ref"], value)
+        self.assertIs(type(result["step_index"]), float)
+        result.clear()
+        self.assertIn("step_index", codec.validate_payload(row["schema_ref"], value))
+        for bad in (False, True, -1, 2**53):
+            changed = deepcopy(value)
+            changed["step_index"] = bad
+            with self.assertRaises((codec.V4SchemaError, codec.V4WireError)):
+                codec.validate_payload(row["schema_ref"], changed)
+        with self.assertRaises(codec.V4SchemaError):
+            codec.validate_payload("profile_identity_payload", value)
+
+    def test_validation_memo_is_bounded_and_large_records_are_not_retained(self) -> None:
+        row = next(r for r in vectors()["identity_vectors"]
+                   if r["schema_ref"].endswith("scientific_state_payload"))
+        _, raw = codec._load_contract_schema()
+        validator = codec._contract_validator(raw, "scientific_state_payload")
+        values = [dict(row["payload"], step_index=i) for i in range(3)]
+        with (
+            patch.object(codec, "_VALIDATED_PAYLOADS", OrderedDict()),
+            patch.object(codec, "_VALIDATION_LIMIT", 2),
+            patch.object(type(validator), "iter_errors", wraps=validator.iter_errors) as calls,
+        ):
+            for value in [*values, values[0]]:
+                codec.validate_payload(row["schema_ref"], value)
+            self.assertEqual(calls.call_count, 4)
+            self.assertEqual(len(codec._VALIDATED_PAYLOADS), 2)
+        with (
+            patch.object(codec, "_VALIDATED_PAYLOADS", OrderedDict()),
+            patch.object(codec, "_VALIDATION_MAX_BYTES", 1),
+            patch.object(type(validator), "iter_errors", wraps=validator.iter_errors) as calls,
+        ):
+            codec.validate_payload(row["schema_ref"], values[0])
+            codec.validate_payload(row["schema_ref"], values[0])
+            self.assertEqual(calls.call_count, 2)
+            self.assertEqual(len(codec._VALIDATED_PAYLOADS), 0)
+
+    def test_identity_reuses_this_calls_validation_bytes(self) -> None:
+        row = next(r for r in vectors()["identity_vectors"]
+                   if r["schema_ref"].endswith("scientific_state_payload"))
+        for limit in (codec._VALIDATION_MAX_BYTES, 1):
+            with (
+                self.subTest(limit=limit),
+                patch.object(codec, "_VALIDATED_PAYLOADS", OrderedDict()),
+                patch.object(codec, "_VALIDATION_MAX_BYTES", limit),
+                patch.object(codec, "_canonical_validated_bytes",
+                             wraps=codec._canonical_validated_bytes) as encode,
+            ):
+                for _ in range(2):
+                    self.assertEqual(
+                        codec.payload_identity(row["schema_ref"], row["payload"]),
+                        row["expected_identifier"],
+                    )
+                self.assertEqual(encode.call_count, 2)
+                with self.assertRaises(codec.V4IdentityError):
+                    codec.payload_identity(row["schema_ref"], row["payload"], expected="wrong")
+                changed = dict(row["payload"], step_index=True)
+                with self.assertRaises(codec.V4SchemaError):
+                    codec.payload_identity(row["schema_ref"], changed)
+        definitions = cast(dict[str, Any], codec.load_initializer_schema()["$defs"])
+        policy = definitions["static_policy"]["const"]
+        expected = "grcv4-a-initializer-policy-sha256:" + sha256(codec.canonical_json_bytes(policy)).hexdigest()
+        with patch.object(codec, "_canonical_validated_bytes",
+                          wraps=codec._canonical_validated_bytes) as encode:
+            for _ in range(2):
+                self.assertEqual(codec.initializer_identity("static_policy", policy), expected)
+            self.assertEqual(encode.call_count, 2)
+
+    def test_content_validation_is_safe_for_concurrent_callers(self) -> None:
+        row = vectors()["identity_vectors"][0]
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            results = list(pool.map(
+                lambda _: codec.validate_payload(row["schema_ref"], row["payload"]),
+                range(32),
+            ))
+        self.assertTrue(all(result == row["payload"] for result in results))
+        results[0].clear()
+        self.assertEqual(results[1], row["payload"])
+
+    def test_unchanged_asset_bytes_reuse_digests(self) -> None:
+        codec.load_contract_schema()
+        with patch.object(codec, "sha256", side_effect=AssertionError("asset rehashed")):
+            codec.load_contract_schema()
+
+    def test_warm_validation_reuses_parsing_and_validators(self) -> None:
+        row = vectors()["identity_vectors"][0]
+        definitions = cast(dict[str, Any], codec.load_initializer_schema()["$defs"])
+        policy = definitions["static_policy"]["const"]
+        codec.validate_payload(row["schema_ref"], row["payload"])
+        codec.validate_initializer_payload("static_policy", policy)
+        js = importlib.import_module("jsonschema")
+        with (
+            patch.object(
+                codec, "decode_json", side_effect=AssertionError("schema reparsed")
+            ),
+            patch.object(codec, "deepcopy", side_effect=AssertionError("schema copied")),
+            patch.object(
+                js.validators, "extend", side_effect=AssertionError("validator rebuilt")
+            ),
+        ):
+            for _ in range(3):
+                self.assertEqual(
+                    codec.validate_payload(row["schema_ref"], row["payload"]),
+                    row["payload"],
+                )
+                self.assertEqual(
+                    codec.validate_initializer_payload("static_policy", policy), policy
+                )
+
+    def test_cached_schemas_and_validated_payloads_remain_detached(self) -> None:
+        for loader in (codec.load_contract_schema, codec.load_initializer_schema):
+            expected = loader()
+            changed = loader()
+            cast(dict[str, Any], changed)["$defs"].clear()
+            self.assertEqual(loader(), expected)
+        row = vectors()["identity_vectors"][0]
+        value = deepcopy(row["payload"])
+        validated = codec.validate_payload(row["schema_ref"], value)
+        validated.clear()
+        self.assertEqual(
+            codec.validate_payload(row["schema_ref"], value), row["payload"]
+        )
+        value["unknown_cached_field"] = True
+        with self.assertRaises(codec.V4SchemaError):
+            codec.validate_payload(row["schema_ref"], value)
+
+    def test_warm_validation_still_rechecks_all_packaged_bytes(self) -> None:
+        originals = {p.name: p.read_bytes() for p in ASSETS.iterdir() if p.is_file()}
+        row = vectors()["identity_vectors"][0]
+        definitions = cast(dict[str, Any], codec.load_initializer_schema()["$defs"])
+        policy = definitions["static_policy"]["const"]
+        with tempfile.TemporaryDirectory() as directory:
+            package = Path(directory)
+            for name, raw in originals.items():
+                (package / name).write_bytes(raw)
+            with patch.object(resources, "files", return_value=package):
+                for name in (
+                    "asset-index.json", "grc-v4-contract-schema.json",
+                    "grc-v4-specification-release.json", "grc-v4-specification-release.sha256",
+                    "grc-v4-a-initializer-release.json", "grc-v4-a-initializer-schema.json",
+                ):
+                    for action in ("missing", "altered"):
+                        with self.subTest(name=name, action=action):
+                            codec.validate_payload(row["schema_ref"], row["payload"])
+                            codec.validate_initializer_payload("static_policy", policy)
+                            path = package / name
+                            try:
+                                if action == "missing":
+                                    path.unlink()
+                                else:
+                                    raw = originals[name]
+                                    path.write_bytes(raw[:-1] + bytes([raw[-1] ^ 1]))
+                                with self.assertRaises(codec.V4AssetError):
+                                    codec.validate_initializer_payload("static_policy", policy)
+                                if "initializer" not in name:
+                                    with self.assertRaises(codec.V4AssetError):
+                                        codec.validate_payload(row["schema_ref"], row["payload"])
+                            finally:
+                                path.write_bytes(originals[name])
+                            codec.validate_initializer_payload("static_policy", policy)
 
     def test_wide_frozen_maps_do_not_use_per_key_linear_lookup(self) -> None:
         # Structural scale check, not a machine-specific timing threshold.
@@ -569,7 +745,10 @@ class DistributionTests(unittest.TestCase):
     def test_wheel_and_sdist_offline_clean_install(self) -> None:
         from pygrc.models.grc_v4_profile import resolve_profile
         from pygrc.models.grc_v4_state import GRCV4StepResult
-        from tests.models.grcv4_reference_oracles import prefix_fixture, expected_negative
+        from tests.models.grcv4_reference_oracles import (
+            expected_negative,
+            prefix_fixture,
+        )
         from tests.models.test_grc_v4_profile import fixture, reidentify
         from tests.models.test_grc_v4_state import result_fixture, successful_fixture
 

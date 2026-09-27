@@ -5,9 +5,12 @@ registry. Older codec/layout semantics remain unchanged. Package lookup uses
 installed resources only and schema resolution is offline.
 """
 
+import json
+from copy import deepcopy
+from functools import lru_cache
 from hashlib import sha256
 from importlib import resources
-import json
+from typing import Any, cast
 
 from . import grc_v4_codec as base
 
@@ -20,49 +23,87 @@ _PACKAGE = "pygrc.models.grc_v4_assets"
 _SCHEMAS = ("grc-v4-topology-event-schema.json", "grc-v4-representation-transport-schema.json")
 
 
-def load_event_schemas():
-    """Verify exact package pins on every lookup; a rehashed impostor rejects."""
-    inherited = (base.load_contract_schema(), base.load_initializer_schema())
+@lru_cache(maxsize=1)
+def _event_bindings(manifest_bytes: bytes, initializer_bytes: bytes) -> dict[str, str]:
+    manifest = json.loads(manifest_bytes)
+    payload = manifest["release_identity_payload"]
+    initializer = cast(dict[str, Any], base._parsed_schema(initializer_bytes))
+    if (manifest["release_id"] != EVENT_RELEASE_ID or
+            EVENT_RELEASE_ID != _hash("grcv4-spec-release-sha256", payload) or
+            payload["predecessor_release_id"] != base.INITIALIZER_RELEASE_ID or
+            payload["snapshot_layout_ids"] != [EVENT_LAYOUT, REPRESENTATION_LAYOUT] or
+            payload["representation_policy_id"] != POLICY_ID or
+            payload["initializer_static_policy_digest"] != _hash(
+                "grcv4-a-initializer-policy-sha256", initializer["$defs"]["static_policy"]["const"])):
+        raise base.V4AssetError("event contract release mismatch")
+    rows = payload["artifact_bindings"]
+    bindings = {row["path"]: row["sha256"] for row in rows}
+    if len(bindings) != len(rows):
+        raise base.V4AssetError("duplicate event contract member")
+    return bindings
+
+
+@lru_cache(maxsize=1)
+def _event_schemas(raws: tuple[bytes, ...]) -> tuple[dict[str, Any], ...]:
+    return tuple(cast(dict[str, Any], base._parsed_schema(raw)) for raw in raws)
+
+
+def _load_event_schemas() -> tuple[tuple[dict[str, Any], ...], tuple[bytes, ...]]:
+    """Read and check each asset; retain only private, verified schema content."""
+    inherited = (base._load_contract_schema(), base._load_initializer_schema())
     try:
         package = resources.files(_PACKAGE)
         raw = package.joinpath("grc-v4-event-contract-release.json").read_bytes()
-        if sha256(raw).hexdigest() != _MANIFEST_SHA256:
+        if base._asset_digest(raw) != _MANIFEST_SHA256:
             raise base.V4AssetError("event contract manifest identity mismatch")
-        manifest = json.loads(raw)
-        payload = manifest["release_identity_payload"]
-        if (manifest["release_id"] != EVENT_RELEASE_ID or
-                EVENT_RELEASE_ID != _hash("grcv4-spec-release-sha256", payload) or
-                payload["predecessor_release_id"] != base.INITIALIZER_RELEASE_ID or
-                payload["snapshot_layout_ids"] != [EVENT_LAYOUT, REPRESENTATION_LAYOUT] or
-                payload["representation_policy_id"] != POLICY_ID or
-                payload["initializer_static_policy_digest"] != _hash(
-                    "grcv4-a-initializer-policy-sha256", inherited[1]["$defs"]["static_policy"]["const"])):
-            raise base.V4AssetError("event contract release mismatch")
-        rows = payload["artifact_bindings"]
-        bindings = {row["path"]: row["sha256"] for row in rows}
-        if len(bindings) != len(rows):
-            raise base.V4AssetError("duplicate event contract member")
-        # Recheck the inherited schema bytes too; matching IDs alone do not
-        # admit altered dependencies under the joint package.
-        for filename in ("grc-v4-contract-schema.json", "grc-v4-a-initializer-schema.json"):
-            if sha256(package.joinpath(filename).read_bytes()).hexdigest() != bindings["specs/" + filename]:
-                raise base.V4AssetError("joint inherited schema mismatch")
+        bindings = _event_bindings(raw, inherited[1][1])
         loaded = []
-        for filename in _SCHEMAS:
+        for filename in ("grc-v4-contract-schema.json", "grc-v4-a-initializer-schema.json", *_SCHEMAS):
             raw = package.joinpath(filename).read_bytes()
-            if sha256(raw).hexdigest() != bindings["specs/" + filename]:
-                raise base.V4AssetError("event contract schema mismatch")
-            loaded.append(json.loads(raw))
-        return (*inherited, *loaded)
+            if base._asset_digest(raw) != bindings["specs/" + filename]:
+                raise base.V4AssetError("event contract schema mismatch: " + filename)
+            loaded.append(raw)
+        raws = tuple(loaded)
+        return _event_schemas(raws), raws
     except (OSError, ImportError, ValueError, KeyError, TypeError) as exc:
         raise base.V4AssetError("event contract assets unavailable or invalid") from exc
 
 
-def _hash(prefix, payload):
+def load_event_schemas() -> tuple[dict[str, Any], ...]:
+    """Verify exact package pins on every lookup; return detached schemas."""
+    schemas, _ = _load_event_schemas()
+    return tuple(deepcopy(schema) for schema in schemas)
+
+
+@lru_cache(maxsize=1)
+def _event_registry(raws: tuple[bytes, ...]) -> Any:
+    referencing = base._dependency("referencing")
+    return referencing.Registry().with_resources(
+        (s["$id"], referencing.Resource.from_contents(s)) for s in _event_schemas(raws)
+    )
+
+
+@lru_cache(maxsize=64)
+def _event_validator(raws: tuple[bytes, ...], name: str) -> Any:
+    family, _, definition = name.partition("/")
+    schema = _event_schemas(raws)[2 if family == "event" else 3]
+    js = base._dependency("jsonschema")
+    validator_class = js.validators.extend(
+        js.Draft202012Validator, {"pattern": base._identity_pattern}
+    )
+    return validator_class(
+        {"$ref": schema["$id"] + "#/$defs/" + definition},
+        registry=_event_registry(raws),
+    )
+
+
+def _hash(prefix: str, payload: object) -> str:
     return prefix + ":" + sha256(base.canonical_json_bytes(payload)).hexdigest()
 
 
-def validate_event_payload(name, value, *, release_id=EVENT_RELEASE_ID):
+def validate_event_payload(
+    name: str, value: object, *, release_id: object = EVENT_RELEASE_ID
+) -> dict[str, Any]:
     """Validate detached wire data; not numerical or profile/operation admission.
 
     Names are explicitly qualified as event/<definition> or
@@ -71,19 +112,17 @@ def validate_event_payload(name, value, *, release_id=EVENT_RELEASE_ID):
     if release_id != EVENT_RELEASE_ID:
         raise base.V4IdentityError("unknown event contract release")
     data = base.json_value(value)
-    schemas = load_event_schemas()
+    schemas, raws = _load_event_schemas()
     family, separator, definition = name.partition("/")
     if not separator or family not in ("event", "representation"):
         raise base.V4SchemaError("unknown event contract schema family")
     schema = schemas[2 if family == "event" else 3]
     if definition not in schema["$defs"]:
         raise base.V4SchemaError("unknown event contract definition")
-    referencing = base._dependency("referencing")
-    registry = referencing.Registry().with_resources(
-        (s["$id"], referencing.Resource.from_contents(s)) for s in schemas)
-    js = base._dependency("jsonschema")
-    validator = js.validators.extend(js.Draft202012Validator, {"pattern": base._identity_pattern})
-    error = next(validator({"$ref": schema["$id"] + "#/$defs/" + definition}, registry=registry).iter_errors(data), None)
+    base._dependency("referencing")
+    base._dependency("jsonschema")
+    validator = _event_validator(raws, name)
+    error = base._validation_error(validator, data, raws, name)
     if error is not None or not isinstance(data, dict):
         raise base.V4SchemaError("event contract " + name + ": " + (error.message if error else "expected object"))
     return data

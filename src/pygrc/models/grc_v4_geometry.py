@@ -1216,7 +1216,23 @@ class GeometryStageInputs:
             },
         )
 
+    def _identity_chain(self) -> tuple[str, str, str]:
+        """Build each linked preimage once within this projection."""
+        scientific = self.scientific_state_preimage
+        reset_id = cast(str, scientific["reset_digest"])
+        scientific_id = payload_identity("scientific_state_payload", scientific)
+        lifecycle_id = payload_identity(
+            "lifecycle_envelope_payload",
+            {
+                "schema_version": "grcv4-lifecycle-envelope-v1",
+                "scientific_state_digest": scientific_id,
+                "receipt_ids": list(self.receipt_ids),
+            },
+        )
+        return reset_id, scientific_id, lifecycle_id
+
     def to_payload(self) -> dict[str, JSONValue]:
+        reset_id, scientific_id, lifecycle_id = self._identity_chain()
         return {
             "descriptor_version": "grcv4-geometry-stage-inputs-v1",
             "reference": self.geometry.reference.to_payload(),
@@ -1227,9 +1243,9 @@ class GeometryStageInputs:
             "operation_id": self.operation_id,
             "Q_target": self.Q_target,
             "receipt_ids": list(self.receipt_ids),
-            "source_lifecycle_id": self.source_lifecycle_id,
-            "scientific_state_id": self.scientific_state_id,
-            "reset_id": self.reset_id,
+            "source_lifecycle_id": lifecycle_id,
+            "scientific_state_id": scientific_id,
+            "reset_id": reset_id,
             "step_index": self.step_index,
             "time": self.time,
             "dt": self.dt,
@@ -1296,9 +1312,10 @@ class GeometryStageInputs:
             if trial is None
             else PhysicalFlux(ref.graph, cast(tuple[float, ...], trial)),
         )
+        names = ("reset_id", "scientific_state_id", "source_lifecycle_id")
         if any(
-            data[name] != getattr(result, name)
-            for name in ("reset_id", "scientific_state_id", "source_lifecycle_id")
+            data[name] != identifier
+            for name, identifier in zip(names, result._identity_chain(), strict=True)
         ):
             raise ValueError(
                 "stage authority identity differs from reconstructed preimage"

@@ -15,8 +15,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
 from fractions import Fraction
+from functools import lru_cache
 import math
-from typing import Any, TYPE_CHECKING, cast
+from typing import Any, TYPE_CHECKING, TypeAlias, cast
 
 from .grc_v4_candidate_a import (
     CandidateACurrent,
@@ -42,6 +43,7 @@ from .grc_v4_geometry import (
     H_profile,
     K4Tensor,
     NonfiniteGeometryError,
+    OneForm,
     PhysicalFlux,
     StarAssembly,
     VertexScalar,
@@ -60,7 +62,7 @@ SOLVER_ID = "ci_reduced_fixed_point_v1"
 JOINT_NORM = "joint_current_geometry_l2_v1"
 NUMERICS = "ci_analytic_residual_enclosure_binary64_v2"
 CIPC_NUMERICS = "cipc_same_root_source_enclosed_zoh_binary64_v1"
-Point = CandidateACurrent | CandidateCCurrent
+Point: TypeAlias = CandidateACurrent | CandidateCCurrent
 
 
 class CIStageError(ValueError):
@@ -106,9 +108,11 @@ def _opnorm(matrix: Any) -> Fraction:
     return _sqrt_upper(rows * columns)
 
 
+@lru_cache(maxsize=128, typed=True)
 def _exp_bounds(q: Fraction) -> tuple[Fraction, Fraction]:
     """Exact outward enclosure: positive Taylor tail, dyadic range reduction.
 
+    Only immutable scalar inputs and exact endpoints are memoized.
     Each squaring is rounded outward to a 160-bit absolute grid to bound work.
     Negative arguments use reciprocal interval endpoints. No platform exp,
     floating estimate, or mutable Decimal context decides an admission.
@@ -640,17 +644,25 @@ def _baseline(point: Point) -> PhysicalFlux:
 
 
 def _source(point: Point, current: PhysicalFlux) -> K4Tensor:
+    return _source_from_flat(
+        point, None if _gain(point) == 0 else point.read_back(current).causal_flat
+    )
+
+
+def _source_from_flat(point: Point, causal_flat: OneForm | None) -> K4Tensor:
     ref = point.inputs.geometry.reference
     gain = _gain(point)
     n = len(ref.graph.live_edge_ids)
     # chi is already in the read. zeta is outside the quadratic star adapter.
+    if gain != 0 and causal_flat is None:
+        raise TypeError("nonzero CI structural source requires its lowered read")
     try:
         increment = (
             tuple((0.0,) * n for _ in range(n))
             if gain == 0
             else tuple(
                 tuple(_computed(float(gain * Fraction(x))) for x in row)
-                for row in StarAssembly(point.read_back(current).causal_flat).matrix
+                for row in StarAssembly(cast(OneForm, causal_flat)).matrix
             )
         )
     except OverflowError as exc:
@@ -687,7 +699,7 @@ class CITrial:
         point = _point(self.inputs, self.differential_reference)
         read = point.read_back(trial)
         ref = self.inputs.geometry.reference
-        source = _source(point, trial)
+        source = _source_from_flat(point, read.causal_flat)
         generated = H_profile(
             _effective_source(self.inputs, source),
             reference=ref,

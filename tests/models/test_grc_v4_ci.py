@@ -901,6 +901,34 @@ class CISharedTests(unittest.TestCase):
             for x in (Fraction(5e-324) ** 2, Fraction(2), Fraction(1e308) ** 2):
                 self.assertGreaterEqual(_sqrt_upper(x) ** 2, x)
 
+    def test_exact_exponential_memo_preserves_enclosures_and_budget(self):
+        _exp_bounds.cache_clear()
+        try:
+            for q in (Fraction(-20), Fraction(0), Fraction(1, 100), Fraction(700)):
+                expected = _exp_bounds.__wrapped__(q)
+                with localcontext() as ctx:
+                    ctx.prec = 12
+                    self.assertEqual(_exp_bounds(q), expected)
+                hits = _exp_bounds.cache_info().hits
+                with localcontext() as ctx:
+                    ctx.prec = 240
+                    self.assertEqual(_exp_bounds(q), expected)
+                self.assertEqual(_exp_bounds.cache_info().hits, hits + 1)
+            for q in (Fraction(1025), Fraction(-1025)):
+                for _ in range(2):
+                    with self.assertRaises(CIStageError):
+                        _exp_bounds(q)
+            for i in range(130):
+                _exp_bounds(Fraction(i, 256))
+            self.assertEqual(_exp_bounds.cache_info().currsize, 128)
+            q = Fraction(1, 100)
+            self.assertEqual(_exp_bounds(q), _exp_bounds.__wrapped__(q))
+            adjacent = q + Fraction(1, 2**40)
+            self.assertEqual(_exp_bounds(adjacent), _exp_bounds.__wrapped__(adjacent))
+            self.assertNotEqual(_exp_bounds(q), _exp_bounds(adjacent))
+        finally:
+            _exp_bounds.cache_clear()
+
     def test_roundtrip_preserves_selected_root_and_has_no_workspace_authority(self):
         for candidate in ("C", "A"):
             before, backend = fixture(candidate)

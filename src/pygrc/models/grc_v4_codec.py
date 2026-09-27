@@ -8,15 +8,19 @@ validity, graph ordering, runtime support or receipt/lifecycle acceptance.
 
 from __future__ import annotations
 
-from collections.abc import Iterator, Mapping
-from hashlib import sha256
 import importlib
-from importlib import resources
 import json
 import math
 import re
+from collections import OrderedDict
+from collections.abc import Iterator, Mapping
+from copy import deepcopy
+from functools import lru_cache
+from hashlib import sha256
+from importlib import resources
+from threading import Lock
 from types import ModuleType
-from typing import Literal, TypeAlias, cast
+from typing import Any, Literal, TypeAlias, cast
 
 JSONValue: TypeAlias = (
     "None | bool | int | float | str | list[JSONValue] | dict[str, JSONValue]"
@@ -344,80 +348,220 @@ def decode_canonical_json(data: bytes | str) -> JSONValue:
         raise V4WireError("malformed canonical UTF-8 JSON") from exc
 
 
-def load_contract_schema() -> dict[str, JSONValue]:
-    """Verify installed bytes before parsing; return an unshared schema copy."""
+# Content keys never retain caller dictionaries or use their Python equality.
+# Bound both entry count and payload size; large records validate normally.
+_VALIDATION_LIMIT = 128
+_VALIDATION_MAX_BYTES = 8192
+_VALIDATED_PAYLOADS: OrderedDict[tuple[tuple[bytes, ...], str, bytes], None] = OrderedDict()
+_VALIDATION_LOCK = Lock()
+
+
+@lru_cache(maxsize=16)
+def _asset_digest(raw: bytes) -> str:
+    """Reuse a digest only for exactly equal bytes, never file metadata."""
+    return sha256(raw).hexdigest()
+
+
+@lru_cache(maxsize=1)
+def _contract_index(raw: bytes) -> dict[str, Any]:
+    return cast(dict[str, Any], json.loads(raw))
+
+
+def _canonical_validated_bytes(data: JSONValue) -> bytes:
+    """Serialize an already detached and I-JSON-checked value."""
+    return cast(bytes, _dependency("rfc8785").dumps(data))
+
+
+def _validation_result(
+    validator: Any, data: JSONValue, schemas: tuple[bytes, ...], name: str
+) -> tuple[Any, bytes | None]:
+    if not isinstance(data, dict):
+        return next(validator.iter_errors(data), None), None
+    try:
+        encoded = _canonical_validated_bytes(data)
+    except RecursionError:
+        # Memoization must not impose a stricter nesting limit than validation.
+        return next(validator.iter_errors(data), None), None
+    cacheable = len(encoded) <= _VALIDATION_MAX_BYTES
+    key = (schemas, name, encoded)
+    if cacheable:
+        with _VALIDATION_LOCK:
+            if key in _VALIDATED_PAYLOADS:
+                _VALIDATED_PAYLOADS.move_to_end(key)
+                return None, encoded
+    error = next(validator.iter_errors(data), None)
+    if error is None and cacheable:
+        with _VALIDATION_LOCK:
+            _VALIDATED_PAYLOADS[key] = None
+            _VALIDATED_PAYLOADS.move_to_end(key)
+            if len(_VALIDATED_PAYLOADS) > _VALIDATION_LIMIT:
+                _VALIDATED_PAYLOADS.popitem(last=False)
+    return error, encoded
+
+
+def _validation_error(
+    validator: Any, data: JSONValue, schemas: tuple[bytes, ...], name: str
+) -> Any:
+    return _validation_result(validator, data, schemas, name)[0]
+
+
+def _load_contract_schema() -> tuple[dict[str, JSONValue], bytes]:
+    """Recheck every asset; only parsing of identical verified bytes is cached."""
     try:
         package = resources.files(_ASSET_PACKAGE)
         index_bytes = package.joinpath("asset-index.json").read_bytes()
-        if sha256(index_bytes).hexdigest() != _INDEX_SHA256:
+        if _asset_digest(index_bytes) != _INDEX_SHA256:
             raise V4AssetError("packaged asset index identity mismatch")
-        index = json.loads(index_bytes)
+        index = _contract_index(index_bytes)
         if index["release_id"] != RELEASE_ID:
             raise V4AssetError("wrong accepted release")
         loaded: dict[str, bytes] = {}
         for entry in index["files"]:
-            name = entry["name"]  # Names are pinned by the code-bound index hash.
+            name = entry["name"]  # Pinned by the code-bound index hash.
             raw = package.joinpath(name).read_bytes()
-            if sha256(raw).hexdigest() != entry["sha256"]:
+            if _asset_digest(raw) != entry["sha256"]:
                 raise V4AssetError(f"packaged asset identity mismatch: {name}")
             loaded[name] = raw
-        manifest = json.loads(loaded["grc-v4-specification-release.json"])
-        if manifest["release_id"] != RELEASE_ID:
-            raise V4AssetError("packaged manifest release mismatch")
-        release_preimage = canonical_json_bytes(manifest["release_identity_payload"])
-        if (
-            RELEASE_ID
-            != "grcv4-spec-release-sha256:" + sha256(release_preimage).hexdigest()
-        ):
-            raise V4AssetError("release preimage identity mismatch")
-        schema = decode_json(loaded["grc-v4-contract-schema.json"])
-        if not isinstance(schema, dict):
-            raise V4AssetError("schema is not an object")
-        return schema
+        schema_bytes = loaded["grc-v4-contract-schema.json"]
+        # Retain the lazy dependency check even when parsing is already cached.
+        _dependency("rfc8785")
+        schema = _parse_contract_schema(
+            loaded["grc-v4-specification-release.json"], schema_bytes
+        )
+        return schema, schema_bytes
     except (OSError, ImportError, ValueError, KeyError, TypeError) as exc:
         raise V4AssetError("accepted packaged assets unavailable or invalid") from exc
 
 
-def load_initializer_schema() -> dict[str, JSONValue]:
-    """Verify the separately pinned additive release; never replace the old package."""
-    load_contract_schema()
+@lru_cache(maxsize=1)
+def _parse_contract_schema(
+    manifest_bytes: bytes, schema_bytes: bytes
+) -> dict[str, JSONValue]:
+    manifest = json.loads(manifest_bytes)
+    if manifest["release_id"] != RELEASE_ID:
+        raise V4AssetError("packaged manifest release mismatch")
+    release_preimage = canonical_json_bytes(manifest["release_identity_payload"])
+    if (
+        RELEASE_ID
+        != "grcv4-spec-release-sha256:" + sha256(release_preimage).hexdigest()
+    ):
+        raise V4AssetError("release preimage identity mismatch")
+    return _parsed_schema(schema_bytes)
+
+
+@lru_cache(maxsize=4)
+def _parsed_schema(raw: bytes) -> dict[str, JSONValue]:
+    schema = decode_json(raw)
+    if not isinstance(schema, dict):
+        raise V4AssetError("schema is not an object")
+    return schema
+
+
+def load_contract_schema() -> dict[str, JSONValue]:
+    """Verify installed bytes on every lookup; return an unshared schema copy."""
+    schema, _ = _load_contract_schema()
+    return deepcopy(schema)
+
+
+def _load_initializer_schema() -> tuple[dict[str, JSONValue], bytes]:
+    """Recheck additive release bytes without copying the inherited schema."""
+    _load_contract_schema()
     try:
         package = resources.files(_ASSET_PACKAGE)
         raw = package.joinpath("grc-v4-a-initializer-release.json").read_bytes()
-        if sha256(raw).hexdigest() != _INITIALIZER_MANIFEST_SHA256:
+        if _asset_digest(raw) != _INITIALIZER_MANIFEST_SHA256:
             raise V4AssetError("initializer manifest identity mismatch")
-        manifest = json.loads(raw)
-        payload = manifest["release_identity_payload"]
-        if (manifest["release_id"] != INITIALIZER_RELEASE_ID or
-                INITIALIZER_RELEASE_ID != "grcv4-spec-release-sha256:" + sha256(canonical_json_bytes(payload)).hexdigest()
-                or payload["predecessor_release_id"] != RELEASE_ID):
-            raise V4AssetError("initializer release binding mismatch")
-        raw = package.joinpath("grc-v4-a-initializer-schema.json").read_bytes()
-        expected = next(r["sha256"] for r in payload["artifact_bindings"]
-                        if r["path"] == "specs/grc-v4-a-initializer-schema.json")
-        schema = json.loads(raw)
-        if sha256(raw).hexdigest() != expected or schema["$defs"]["static_policy"]["const"] != payload["static_policy"]:
-            raise V4AssetError("initializer schema/policy binding mismatch")
-        return schema
+        schema_bytes = package.joinpath("grc-v4-a-initializer-schema.json").read_bytes()
+        return _parse_initializer_schema(raw, schema_bytes), schema_bytes
     except (OSError, ImportError, ValueError, KeyError, TypeError, StopIteration) as exc:
         raise V4AssetError("initializer assets unavailable or invalid") from exc
 
 
-def validate_initializer_payload(name: str, value: object) -> dict[str, JSONValue]:
-    data = json_value(value)
-    schema, base = load_initializer_schema(), load_contract_schema()
-    if name not in schema["$defs"]:
-        raise V4SchemaError("unknown initializer schema")
+@lru_cache(maxsize=1)
+def _parse_initializer_schema(
+    manifest_bytes: bytes, schema_bytes: bytes
+) -> dict[str, JSONValue]:
+    manifest = json.loads(manifest_bytes)
+    payload = manifest["release_identity_payload"]
+    release_id = "grcv4-spec-release-sha256:" + sha256(
+        canonical_json_bytes(payload)
+    ).hexdigest()
+    if (
+        manifest["release_id"] != INITIALIZER_RELEASE_ID
+        or release_id != INITIALIZER_RELEASE_ID
+        or payload["predecessor_release_id"] != RELEASE_ID
+    ):
+        raise V4AssetError("initializer release binding mismatch")
+    expected = next(
+        row["sha256"] for row in payload["artifact_bindings"]
+        if row["path"] == "specs/grc-v4-a-initializer-schema.json"
+    )
+    if _asset_digest(schema_bytes) != expected:
+        raise V4AssetError("initializer schema/policy binding mismatch")
+    schema = _parsed_schema(schema_bytes)
+    definitions = cast(dict[str, Any], schema["$defs"])
+    if definitions["static_policy"]["const"] != payload["static_policy"]:
+        raise V4AssetError("initializer schema/policy binding mismatch")
+    return schema
+
+
+def load_initializer_schema() -> dict[str, JSONValue]:
+    """Verify the separately pinned additive release; return a detached schema."""
+    schema, _ = _load_initializer_schema()
+    return deepcopy(schema)
+
+
+@lru_cache(maxsize=128)
+def _contract_validator(schema_bytes: bytes, name: str) -> Any:
+    # Select on a private root copy: cached definitions are never mutated.
+    schema = dict(_parsed_schema(schema_bytes))
+    schema["$ref"] = "#/$defs/" + name
+    js = _dependency("jsonschema")
+    validator_class = js.validators.extend(
+        js.Draft202012Validator, {"pattern": _identity_pattern}
+    )
+    return validator_class(schema)
+
+
+@lru_cache(maxsize=32)
+def _initializer_validator(base_bytes: bytes, schema_bytes: bytes, name: str) -> Any:
+    base, schema = (
+        cast(dict[str, Any], _parsed_schema(raw))
+        for raw in (base_bytes, schema_bytes)
+    )
     referencing = _dependency("referencing")
     registry = referencing.Registry().with_resources(
-        (s["$id"], referencing.Resource.from_contents(s)) for s in (base, schema))
+        (s["$id"], referencing.Resource.from_contents(s)) for s in (base, schema)
+    )
     js = _dependency("jsonschema")
-    validator_class = js.validators.extend(js.Draft202012Validator, {"pattern": _identity_pattern})
-    schema["$ref"] = "#/$defs/" + name
-    error = next(validator_class(schema, registry=registry).iter_errors(data), None)
+    validator_class = js.validators.extend(
+        js.Draft202012Validator, {"pattern": _identity_pattern}
+    )
+    selected = dict(schema)
+    selected["$ref"] = "#/$defs/" + name
+    return validator_class(selected, registry=registry)
+
+
+def validate_initializer_payload(name: str, value: object) -> dict[str, JSONValue]:
+    return _validate_initializer_payload(name, value)[0]
+
+
+def _validate_initializer_payload(
+    name: str, value: object
+) -> tuple[dict[str, JSONValue], bytes | None]:
+    data = json_value(value)
+    schema, schema_bytes = _load_initializer_schema()
+    _, base_bytes = _load_contract_schema()
+    definitions = schema["$defs"]
+    if not isinstance(definitions, dict) or name not in definitions:
+        raise V4SchemaError("unknown initializer schema")
+    _dependency("referencing")
+    _dependency("jsonschema")
+    validator = _initializer_validator(base_bytes, schema_bytes, name)
+    error, encoded = _validation_result(validator, data, (base_bytes, schema_bytes), name)
     if error is not None or not isinstance(data, dict):
         raise V4SchemaError("initializer " + name + ": " + (error.message if error else "expected object"))
-    return data
+    return data, encoded
 
 
 def initializer_identity(name: str, value: object, *, expected: str | None = None) -> str:
@@ -427,8 +571,10 @@ def initializer_identity(name: str, value: object, *, expected: str | None = Non
                 "migration_receipt_payload": "grc-receipt-sha256"}
     if name not in prefixes:
         raise V4SchemaError("unknown initializer identity domain")
-    data = validate_initializer_payload(name, value)
-    result = prefixes[name] + ":" + sha256(canonical_json_bytes(data)).hexdigest()
+    data, encoded = _validate_initializer_payload(name, value)
+    if encoded is None:
+        encoded = _canonical_validated_bytes(data)
+    result = prefixes[name] + ":" + sha256(encoded).hexdigest()
     if expected is not None and result != expected:
         raise V4IdentityError("initializer identity differs from its preimage")
     return result
@@ -447,11 +593,18 @@ def _identity_pattern(
 
 def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
     """Closed-schema data validation only; returns detached primitive fields."""
+    return _validate_payload(schema_ref, value)[0]
+
+
+def _validate_payload(
+    schema_ref: str, value: object
+) -> tuple[dict[str, JSONValue], bytes | None]:
+    """Keep the bytes checked for memoization for this invocation's identity."""
     data = json_value(value)
     name = schema_ref.removeprefix("#/$defs/")
     if name == "representation_request":
         from .grc_v4_event_codec import validate_event_payload
-        return validate_event_payload("representation/request", data)
+        return validate_event_payload("representation/request", data), None
     if name in ("successful_receipt_identity_payload", "successful_receipt_envelope") and isinstance(data, dict):
         p = data if name == "successful_receipt_identity_payload" else data.get("identity_payload", {})
         family = {"grcv4-topology-event-receipt-v2": "event",
@@ -459,33 +612,29 @@ def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
         if family is not None:
             from .grc_v4_event_codec import validate_event_payload
             definition = ("event_receipt_payload" if family == "event" else "receipt_payload") if name == "successful_receipt_identity_payload" else "receipt_envelope"
-            return validate_event_payload(family + "/" + definition, data)
+            return validate_event_payload(family + "/" + definition, data), None
     if (name == "successful_receipt_identity_payload" and isinstance(data, dict)
             and data.get("schema_version") == "grcv4-profile-migration-receipt-v2"):
-        return validate_initializer_payload("migration_receipt_payload", data)
+        return _validate_initializer_payload("migration_receipt_payload", data)
     if (name == "successful_receipt_envelope" and isinstance(data, dict)
             and isinstance(data.get("identity_payload"), dict)
             and data["identity_payload"].get("schema_version") == "grcv4-profile-migration-receipt-v2"):
-        return validate_initializer_payload("receipt_envelope", data)
-    schema = load_contract_schema()
+        return _validate_initializer_payload("receipt_envelope", data)
+    schema, schema_bytes = _load_contract_schema()
     definitions = schema["$defs"]
     if not isinstance(definitions, dict) or name not in definitions:
         raise V4SchemaError("unknown local contract definition")
     # Only the pinned local definitions can be selected. All their references
     # are fragments, so no caller schema or remote resolution enters this path.
-    schema["$ref"] = "#/$defs/" + name
-    js = _dependency("jsonschema")
-    validator_class = js.validators.extend(
-        js.Draft202012Validator, {"pattern": _identity_pattern}
-    )
-    validator = validator_class(schema)
-    error = next(validator.iter_errors(data), None)
+    _dependency("jsonschema")
+    validator = _contract_validator(schema_bytes, name)
+    error, encoded = _validation_result(validator, data, (schema_bytes,), name)
     if error is not None:
         path = "/".join(str(part) for part in error.absolute_path)
         raise V4SchemaError(f"{name}/{path}: {error.message}")
     if not isinstance(data, dict):
         raise V4SchemaError("identity/record payload must be an object")
-    return data
+    return data, encoded
 
 
 def decode_record_payload(
@@ -580,16 +729,16 @@ def payload_identity(
     if name in ("event_receipt", "representation_receipt"):
         from .grc_v4_event_codec import validate_event_payload
         data = validate_event_payload("event/event_receipt_payload" if name == "event_receipt" else "representation/receipt_payload", value)
-        result = "grc-receipt-sha256:" + sha256(canonical_json_bytes(data)).hexdigest()
+        result = "grc-receipt-sha256:" + sha256(_canonical_validated_bytes(data)).hexdigest()
         if expected is not None and expected != result:
             raise V4IdentityError("event receipt differs from preimage")
         return result
     if name not in _IDENTITY_PREFIXES:
         raise V4SchemaError("definition is not an identity preimage")
-    data = validate_payload(name, value)
-    identifier = (
-        _IDENTITY_PREFIXES[name] + ":" + sha256(canonical_json_bytes(data)).hexdigest()
-    )
+    data, encoded = _validate_payload(name, value)
+    if encoded is None:
+        encoded = _canonical_validated_bytes(data)
+    identifier = _IDENTITY_PREFIXES[name] + ":" + sha256(encoded).hexdigest()
     if expected is not None and identifier != expected:
         raise V4IdentityError(f"{name}: supplied identity does not match payload")
     return identifier
