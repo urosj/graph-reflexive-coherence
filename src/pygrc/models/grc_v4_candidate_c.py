@@ -36,7 +36,7 @@ from .grc_v4_geometry import (
     _identity,
     _require_coordinates,
 )
-from .grc_v4_linear import _MatrixPreparation
+from .grc_v4_linear import _ConditionFact, _InverseFact
 from .grc_v4_profile import CandidateCParams, GRCV4Profile, SolverPolicy
 from .grc_v4_state import FrozenJSONMap, SolverDisposition, _number, _vector
 from .grc_v4_transport import CandidateCMobility, candidate_c_structural_hodge
@@ -244,6 +244,20 @@ def _c_apply(matrix: Matrix, values: tuple[float, ...]) -> tuple[float, ...]:
 
 
 def _c_inverse(matrix: _CExact) -> _CExact:
+    """Exact inverse reuse by immutable coefficients within the current operation."""
+    context = _OPERATION_CONTEXT.get()
+    facts = None if context is None else context.matrix_facts
+    if facts is not None:
+        fact = facts.find(matrix)
+        if fact is not None:
+            return fact.inverse
+    inverse = _c_inverse_uncached(matrix)
+    if facts is not None:
+        facts.remember(_InverseFact(matrix, inverse))
+    return inverse
+
+
+def _c_inverse_uncached(matrix: _CExact) -> _CExact:
     """Exact elimination of the supplied coefficients; never a pseudoinverse."""
     n = len(matrix)
     rows = [
@@ -323,7 +337,22 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
 
 
 def _c_condition_bound(exact: _CExact, limit: float, label: str) -> Fraction:
-    """The same exact conditioning proof, independent of its emitted stage label."""
+    """Reuse a successful proof for exactly these coefficients and this limit."""
+    context = _OPERATION_CONTEXT.get()
+    facts = None if context is None else context.matrix_facts
+    exact_limit = Fraction(limit)
+    if facts is not None:
+        fact = facts.find(exact, exact_limit)
+        if fact is not None:
+            return fact.condition_upper_squared
+    bound = _c_condition_bound_uncached(exact, limit, label)
+    if facts is not None:
+        facts.remember(_ConditionFact(exact, exact_limit, bound))
+    return bound
+
+
+def _c_condition_bound_uncached(exact: _CExact, limit: float, label: str) -> Fraction:
+    """The exact conditioning algorithm; failure always uses the current label."""
     scale = max(abs(x) for row in exact for x in row)
     if not scale:
         raise CandidateCStageError("singular", "singular " + label)
@@ -422,25 +451,6 @@ def _c_condition_certificate(
     )
 
 
-def _c_prepare_matrix(matrix: Matrix, limit: float, label: str) -> _MatrixPreparation:
-    """Reuse only an exact matrix/limit match within the existing operation."""
-    exact = _c_exact(matrix)
-    exact_limit = Fraction(limit)
-    context = _OPERATION_CONTEXT.get()
-    preparations = None if context is None else context.matrix_preparations
-    if preparations is not None:
-        prepared = preparations.find(exact, exact_limit)
-        if prepared is not None:
-            return prepared
-    # Failure leaves no cached preparation; errors retain the current stage label.
-    inverse = _c_inverse(exact)
-    bound = _c_condition_bound(exact, limit, label)
-    prepared = _MatrixPreparation(exact, inverse, exact_limit, bound)
-    if preparations is not None:
-        preparations.remember(prepared)
-    return prepared
-
-
 def _c_residual_pass(
     residual: tuple[Fraction, ...], rhs: tuple[Fraction, ...], policy: SolverPolicy
 ) -> bool:
@@ -459,15 +469,18 @@ def _c_solve(
     label: str,
     certificates: list[FrozenJSONMap],
 ) -> Matrix:
-    prepared = _c_prepare_matrix(matrix, policy.conditioning_limit, label)
+    exact = _c_exact(matrix)
+    inverse = _c_inverse(exact)
     certificates.append(
         _c_condition_certificate(
-            prepared.condition_upper_squared, policy.conditioning_limit, label
+            _c_condition_bound(exact, policy.conditioning_limit, label),
+            policy.conditioning_limit,
+            label,
         )
     )
     exact_rhs = _c_exact(rhs)
-    result = _c_float(_c_mm(prepared.inverse, exact_rhs))
-    observed = _c_mm(prepared.matrix, _c_exact(result))
+    result = _c_float(_c_mm(inverse, exact_rhs))
+    observed = _c_mm(exact, _c_exact(result))
     for residual, target in zip(
         _c_transpose(
             tuple(

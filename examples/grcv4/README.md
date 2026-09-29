@@ -101,18 +101,44 @@ or step timing was recomputed.
 
 ## Certified matrix preparation reuse
 
-Matrix reuse stays behind the existing private `_c_solve` call. The same exact
-inverse and Euclidean conditioning proof are prepared once per exact matrix
-and conditioning-limit pair within an existing operation scope. An immutable
-preparation owns those coefficients, the inverse and the certified bound.
-Storage retains at most eight preparations, independently of trial or step
-count. Each solve still computes its RHS result, checks the declared residual
-tolerances and emits a fresh certificate with its own stage label. A changed
-coefficient or limit requires fresh preparation; failed preparation is not
-stored. Calls outside an operation remain uncached. Public APIs, numerical
-stage callers and publication checks are unchanged.
+Reuse now belongs to the existing exact inverse and conditioning primitives.
+Direct calls from analytic residuals, selectors and domain certificates use the
+same operation-owned store as certified solves. The combined solve-preparation
+layer has been removed; each primitive retains its single original numerical
+algorithm behind its cached entry point.
 
-Fresh sequential unprofiled samples with this working-tree change:
+Inverse facts name exact immutable coefficients. Conditioning facts additionally
+name the exact conditioning limit. The store retains at most **64 facts total**
+per operation, including small descriptor and interval blocks; it has no growth
+with trace length. This replaces the older budget of eight combined solve
+preparations, which did not account for direct callers. Successful facts alone
+are stored. Every RHS, residual check, stage-labelled certificate and failed
+conditioning attempt is evaluated under its current declaration. Unscoped calls
+remain uncached, and publication guards are unchanged.
+
+The current primitive reuse measurements use the same strict public 4×5
+examples, with 20 nodes and 31 edges. Each before/after pair has an identical
+complete declaration. These gains are additional to the previous solve cache:
+
+| Realization | Previous five-step total | Primitive reuse total | Additional speedup |
+| --- | ---: | ---: | ---: |
+| A_CI | 153.384 s | 117.100 s | 1.31× |
+| A_PC | 72.237 s | 71.611 s | 1.01× |
+| A_CI+PC | 161.750 s | 129.453 s | 1.25× |
+| A_RG2b | 224.296 s | 202.090 s | 1.11× |
+
+These are single sequential local samples. New runs include a light primitive
+lookup counter; totals exclude setup and snapshotting. PC benefits mainly in
+small descriptor inversions, without a material change in runtime. All saved
+states, receipt counts and final snapshot digests match the previous runs
+exactly. The [primitive comparison](results/grid_transport_a_primitive_reuse_comparison.md)
+records per-step times, numerical work counts, source hashes and validation.
+
+The older OS measurements below describe the **previous shared-solve cache**
+at revision `a857940`; its primitive bypasses were still uncached. They are
+retained as historical measurements.
+
+Earlier sequential unprofiled samples with the shared-solve cache:
 
 | Grid and schedule | Saved baseline step sum | With reuse | Mean with reuse | Speedup |
 | --- | ---: | ---: | ---: | ---: |
@@ -155,6 +181,56 @@ Reports record the runtime base commit and hashes of the modified source files:
 - [Lookup-disabled control](results/grid_transport_matrix_reuse_disabled_5.json).
 - [Ten-step profile](results/grid_transport_matrix_reuse_profile_10.json).
 - [Complete comparison and validation details](results/grid_transport_matrix_reuse_comparison.json).
+
+## Configurable public grids for the other A realizations
+
+[grid_realizations_a.py](grid_realizations_a.py) accepts the same grid dimensions
+as the OS transport example. It builds CI, PC, CI+PC or RG2b declarations, then
+runs strict public `GRCV4.step_v4_input` operations with receipts and snapshots.
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization CI --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization PC --rows 6 --cols 6 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization "CI+PC" --rows 3 --cols 4 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization RG2b --rows 4 --cols 5 --steps 5
+```
+
+These are examples of the same graph size, not identical physical experiments.
+At 4×5 they preserve the OS reference geometry, initial resources and retained
+edge history. CI keeps the original physical coefficients, geometry gain and
+time step. PC and CI+PC reduce geometry gain to fit their uniform carrier
+certificates. RG2b also reduces transport eta and the physical time step to
+certify its compact graph domain.
+
+For other dimensions, initialization scales the resource gradient and pulse to
+keep each resource within 0.34375 of its center 2. The declarations scale with
+node/edge count; the whole-chart PC resource bound also scales with node count.
+Setup checks the production certificate and can select a more conservative
+declaration before creating the public owner. It records every attempted
+declaration admission and the final exact certificate bounds in the JSON.
+Declarations remain fixed throughout evolution. A rejected certificate or
+public step is never treated as a successful run; setup stops after twelve
+unsuccessful attempts. Arbitrary grid sizes or run lengths are not guaranteed
+admissible.
+
+Step timing excludes declaration construction, owner setup, progress output and
+the final snapshot. Those costs are recorded separately. Reports retain full
+identity-bound inputs, the A differential reference, C/W/Z after every step,
+receipt counts and the final snapshot digest. Candidate C grids are deferred to
+the next comparison.
+
+The benchmark-only [disabled control](benchmark_grid_a.py) accepts the same
+arguments. It disables inverse and conditioning fact reuse while retaining the
+exact same declaration and strict public path. It records inverse and conditioning
+requests, hits and misses separately. Add `--reuse` to observe enabled reuse.
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_a.py --realization CI --rows 4 --cols 5 --steps 5
+```
+
+[The 4×5 A comparison](results/grid_transport_a_realizations_comparison.md)
+contains five-step timings, per-step costs, preparation volume, exact state and
+snapshot equivalence, and links to every enabled/disabled report.
 
 ## Five realizations, two candidates
 

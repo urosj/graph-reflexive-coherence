@@ -11,7 +11,7 @@ from pygrc.models import grc_v4_codec as codec
 from pygrc.models import grc_v4_geometry as geometry
 from pygrc.models import grc_v4_lifecycle as lifecycle
 from pygrc.models import grc_v4_step as step
-from pygrc.models.grc_v4_linear import _MatrixPreparations
+from pygrc.models.grc_v4_linear import _MatrixFacts
 from pygrc.models.grc_v4_state import FrozenJSONMap
 from tests.models.test_grc_v4_generic_lifecycle import FAMILIES, fixture, model
 from tests.models.test_grc_v4_lifecycle import request
@@ -358,7 +358,7 @@ class OperationEvidenceTests(unittest.TestCase):
                 for index, duration in enumerate((dt, dt, 0)):
                     command = request(duration, f"operation-evidence-{index}")
                     result = owner.step_v4_input(command)
-                    with (patch.object(_MatrixPreparations, "find", return_value=None),
+                    with (patch.object(_MatrixFacts, "find", return_value=None),
                           patch.object(evidence._OperationEvidence, "lifecycle", full),
                           patch.object(geometry, "_owns_stage_reference", return_value=False),
                           patch.object(codec, "_load_contract_schema", side_effect=codec._read_contract_schema)):

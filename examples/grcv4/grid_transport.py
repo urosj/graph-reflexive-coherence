@@ -10,6 +10,7 @@ import hashlib
 import json
 import math
 import time
+from fractions import Fraction
 from pathlib import Path
 
 from pygrc.models.grc_v4 import GRCV4, GRCV4StepRequestInput
@@ -23,7 +24,7 @@ DEFAULT_COLS = 5
 DT = 2**-6
 
 
-def make_inputs(rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
+def make_inputs(rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, resource_span=None):
     """Local couplings on a physical 2-D grid, with a nonuniform closed budget."""
     nodes = tuple(f"r{row}c{col}" for row in range(rows) for col in range(cols))
     positions = tuple(
@@ -52,6 +53,10 @@ def make_inputs(rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
     middle_col = cols // 2
     resource[upper_middle_row * cols + middle_col] += 0.25
     resource[(upper_middle_row + 1) * cols + middle_col] -= 0.25
+    if resource_span is not None:
+        spread = max(abs(c - 2.0) for c in resource)
+        factor = min(1.0, resource_span / spread)
+        resource = [2.0 + factor * (c - 2.0) for c in resource]
     history = tuple(1.5 + (index % 5) / 16 for index in range(len(edges)))
     return current_fixture(
         graph=graph,
@@ -82,6 +87,18 @@ def make_inputs(rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
 def run(steps, rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
     started = time.perf_counter()
     inputs, backend = make_inputs(rows, cols)
+    return run_inputs(inputs, backend, steps, rows, cols, started=started)
+
+
+def run_inputs(inputs, backend, steps, rows, cols, *, started=None):
+    """Measure an evolving grid through the strict public lifecycle."""
+    if started is None:
+        started = time.perf_counter()
+    dt = inputs.dt
+    family = inputs.geometry.reference.profile.identity_payload.profile_family_id
+    request_prefix = (
+        "grid-transport" if family == "A_OS" else f"grid-transport-{family}"
+    )
     owner = GRCV4(inputs, differential_reference=backend)
     setup_seconds = time.perf_counter() - started
     initial = inputs.current
@@ -90,10 +107,11 @@ def run(steps, rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
     step_records = []
     simulation_started = time.perf_counter()
     for index in range(steps):
+        previous_time = owner.state.lifecycle.time
         command = GRCV4StepRequestInput(
             "grcv4-step-request-input-v1",
-            f"grid-transport-{index}",
-            DT,
+            f"{request_prefix}-{index}",
+            dt,
             FrozenJSONMap({}),
         )
         step_started = time.perf_counter()
@@ -110,7 +128,7 @@ def run(steps, rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
             or current.W_A is None
             or any(not math.isfinite(value) or value <= 0 for value in current.W_A)
             or state.step_index != index + 1
-            or state.time != (index + 1) * DT
+            or state.time != float(Fraction(previous_time) + Fraction(dt))
         ):
             raise RuntimeError("committed grid step violates example invariants")
         step_records.append(
@@ -120,6 +138,7 @@ def run(steps, rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
                 "physical_time": state.time,
                 "resource": list(current.C),
                 "W_A": list(current.W_A),
+                "Z_4": None if current.Z_4 is None else list(current.Z_4),
                 "total_resource": charge,
                 "receipt_count": len(state.receipt_ledger),
             }
@@ -144,11 +163,11 @@ def run(steps, rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
         "example": f"closed_{rows}x{cols}_grid_transport",
         "grid_rows": rows,
         "grid_cols": cols,
-        "family": "A_OS",
+        "family": family,
         "nodes": len(inputs.geometry.reference.graph.live_node_ids),
         "edges": len(inputs.geometry.reference.graph.oriented_edges),
         "steps": steps,
-        "dt": DT,
+        "dt": dt,
         "setup_seconds": setup_seconds,
         "total_step_seconds": total,
         "mean_step_seconds": total / steps,
@@ -161,6 +180,7 @@ def run(steps, rows=DEFAULT_ROWS, cols=DEFAULT_COLS):
         "max_resource_change": max(
             abs(a - b) for a, b in zip(initial.C, final.C, strict=True)
         ),
+        "max_carrier_magnitude": None if final.Z_4 is None else max(map(abs, final.Z_4)),
         "max_history_change": max(
             abs(a - b) for a, b in zip(initial.W_A, final.W_A, strict=True)
         ),

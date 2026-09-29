@@ -24,7 +24,7 @@ from threading import Lock
 from types import ModuleType
 from typing import Any, Literal, TypeAlias, cast
 
-from .grc_v4_linear import _MatrixPreparations
+from .grc_v4_linear import _MatrixFacts
 
 JSONValue: TypeAlias = (
     "None | bool | int | float | str | list[JSONValue] | dict[str, JSONValue]"
@@ -414,12 +414,12 @@ def _validation_error(
 class _OperationContext:
     """One lifetime for pinned contract bytes and private computation facts."""
 
-    __slots__ = ("assets", "evidence", "matrix_preparations", "published")
+    __slots__ = ("assets", "evidence", "matrix_facts", "published")
 
     def __init__(self, assets: tuple[dict[str, JSONValue], bytes], evidence: Any):
         self.assets = assets
         self.evidence = evidence
-        self.matrix_preparations = _MatrixPreparations()
+        self.matrix_facts = _MatrixFacts()
         self.published = False
 
 

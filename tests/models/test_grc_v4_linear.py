@@ -4,12 +4,23 @@ import math
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import FrozenInstanceError, replace
+from fractions import Fraction
 from threading import Barrier
 from unittest.mock import patch
 
 from pygrc.models import grc_v4_candidate_c as numerical
 from pygrc.models import grc_v4_codec as codec
+from pygrc.models.grc_v4_candidate_a import CandidateACurrent
+from pygrc.models.grc_v4_ci import (
+    CIStageError,
+    _analytic_residual,
+    _iinverse,
+    _Interval,
+)
+from pygrc.models.grc_v4_geometry import GRCV4Graph, OrientedEdge
+from pygrc.models.grc_v4_linear import _MAX_MATRIX_FACTS
 from tests.models.test_grc_v4_candidate_c import current_fixture
+from tests.models.test_grc_v4_ci import fixture as ci_fixture
 
 MATRIX = ((3.0, 1.0), (1.0, 3.0))
 RHS = ((1.0,), (2.0,))
@@ -35,10 +46,10 @@ class MatrixPreparationTests(unittest.TestCase):
         with (
             codec._operation_contract_assets(),
             patch.object(
-                numerical, "_c_inverse", wraps=numerical._c_inverse
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
             ) as inverse,
             patch.object(
-                numerical, "_c_condition_bound", wraps=numerical._c_condition_bound
+                numerical, "_c_condition_bound_uncached", wraps=numerical._c_condition_bound_uncached
             ) as condition,
             patch.object(
                 numerical, "_c_residual_pass", wraps=numerical._c_residual_pass
@@ -64,7 +75,7 @@ class MatrixPreparationTests(unittest.TestCase):
         with (
             codec._operation_contract_assets(),
             patch.object(
-                numerical, "_c_condition_bound", wraps=numerical._c_condition_bound
+                numerical, "_c_condition_bound_uncached", wraps=numerical._c_condition_bound_uncached
             ) as condition,
         ):
             numerical._c_solve(MATRIX, RHS, admitted, "admitted", [])
@@ -84,7 +95,7 @@ class MatrixPreparationTests(unittest.TestCase):
         with (
             codec._operation_contract_assets(),
             patch.object(
-                numerical, "_c_inverse", wraps=numerical._c_inverse
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
             ) as inverse,
             patch.object(
                 numerical, "_c_residual_pass", wraps=numerical._c_residual_pass
@@ -106,7 +117,7 @@ class MatrixPreparationTests(unittest.TestCase):
         with (
             codec._operation_contract_assets(),
             patch.object(
-                numerical, "_c_inverse", wraps=numerical._c_inverse
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
             ) as inverse,
         ):
             numerical._c_solve(MATRIX, RHS, self.policy, "valid", [])
@@ -122,36 +133,192 @@ class MatrixPreparationTests(unittest.TestCase):
             numerical._c_solve(MATRIX, RHS, self.policy, "valid again", [])
             self.assertEqual(inverse.call_count, 3)
 
-    def test_preparations_are_immutable_and_storage_is_bounded(self):
+    def test_direct_inverse_and_condition_checks_share_solve_facts(self):
+        exact = numerical._c_exact(MATRIX)
+        expected = numerical._c_inverse(exact)
+        direct_certificate = numerical._c_condition(
+            MATRIX, self.policy.conditioning_limit, "direct condition"
+        )
         with (
             codec._operation_contract_assets(),
             patch.object(
-                numerical, "_c_inverse", wraps=numerical._c_inverse
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
+            ) as inverse,
+            patch.object(
+                numerical, "_c_condition_bound_uncached",
+                wraps=numerical._c_condition_bound_uncached,
+            ) as condition,
+        ):
+            # First callers are direct primitives, not the solve helper.
+            self.assertEqual(numerical._c_inverse(exact), expected)
+            self.assertEqual(
+                numerical._c_condition(
+                    MATRIX, self.policy.conditioning_limit, "direct condition"
+                ),
+                direct_certificate,
+            )
+            numerical._c_solve(MATRIX, RHS, self.policy, "solve", [])
+            self.assertEqual(numerical._c_inverse(exact), expected)
+            other = numerical._c_condition(
+                MATRIX, self.policy.conditioning_limit, "another stage"
+            )
+            self.assertEqual(other["block"], "another stage")
+            self.assertEqual(
+                other["condition_upper_squared"],
+                direct_certificate["condition_upper_squared"],
+            )
+            self.assertEqual(inverse.call_count, 1)
+            self.assertEqual(condition.call_count, 1)
+
+    def test_analytic_residual_reuses_the_current_points_exact_hodge_inverse(self):
+        graph = GRCV4Graph(
+            ("a", "b", "c"),
+            (OrientedEdge("ab", "a", "b"), OrientedEdge("bc", "b", "c")),
+        )
+        before, backend = ci_fixture(
+            "A", graph=graph, C=(3.0, 1.0, 2.0), W=(1.1, 0.7)
+        )
+        cold_point = CandidateACurrent(before, backend)
+        expected = _analytic_residual(cold_point, cold_point.current)
+        exact_hodge = numerical._c_exact(before.geometry.one_form_hodge.matrix)
+        ordinary_inverse = numerical._c_inverse_uncached
+        hodge_calls = []
+
+        def inverse(matrix):
+            if matrix == exact_hodge:
+                hodge_calls.append(matrix)
+            return ordinary_inverse(matrix)
+
+        with (
+            codec._operation_contract_assets() as operation,
+            patch.object(numerical, "_c_inverse_uncached", side_effect=inverse),
+        ):
+            point = CandidateACurrent(before, backend)
+            self.assertIsNotNone(operation.matrix_facts.find(exact_hodge))
+            self.assertEqual(len(hodge_calls), 1)
+            for _ in range(2):
+                self.assertEqual(_analytic_residual(point, point.current), expected)
+            self.assertEqual(len(hodge_calls), 1)
+
+    def test_inverse_reuse_never_adds_a_conditioning_policy(self):
+        # Exact elimination also serves non-SPD proof blocks and blocks whose
+        # condition number exceeds a physical solver's declared limit.
+        matrices = (
+            ((0.0, 1.0), (1.0, 0.0)),
+            ((1.0, 2.0), (0.0, 1.0)),
+            ((1.0, 0.0), (0.0, 1e-100)),
+        )
+        expected = [numerical._c_inverse(numerical._c_exact(m)) for m in matrices]
+        with (
+            codec._operation_contract_assets(),
+            patch.object(
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
+            ) as inverse,
+            patch.object(
+                numerical, "_c_condition_bound_uncached",
+                wraps=numerical._c_condition_bound_uncached,
+            ) as condition,
+        ):
+            for matrix, reference in zip(matrices, expected, strict=True):
+                exact = numerical._c_exact(matrix)
+                self.assertEqual(numerical._c_inverse(exact), reference)
+                self.assertEqual(numerical._c_inverse(exact), reference)
+            self.assertEqual(inverse.call_count, len(matrices))
+            self.assertEqual(condition.call_count, 0)
+            for label in ("strict direct", "strict direct retry"):
+                with self.assertRaisesRegex(
+                    ValueError, "conditioning limit exceeded: " + label
+                ):
+                    numerical._c_condition(matrices[-1], 2.0, label)
+            self.assertEqual(condition.call_count, 2)
+            self.assertEqual(inverse.call_count, len(matrices))
+
+    def test_interval_midpoint_reuse_keeps_enclosure_admission_fresh(self):
+        narrow = ((_Interval(Fraction(7, 4), Fraction(9, 4)),),)
+        wide = ((_Interval(Fraction(1), Fraction(3)),),)
+        unresolved = ((_Interval(Fraction(0), Fraction(4)),),)
+        expected_narrow, expected_wide = _iinverse(narrow), _iinverse(wide)
+        with (
+            codec._operation_contract_assets(),
+            patch.object(
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
             ) as inverse,
         ):
-            first = numerical._c_prepare_matrix(
-                ((1.0,),), self.policy.conditioning_limit, "first"
-            )
+            self.assertEqual(_iinverse(narrow), expected_narrow)
+            self.assertEqual(_iinverse(wide), expected_wide)
+            self.assertLess(expected_wide[0][0].lo, expected_narrow[0][0].lo)
+            self.assertGreater(expected_wide[0][0].hi, expected_narrow[0][0].hi)
+            for _ in range(2):
+                with self.assertRaisesRegex(CIStageError, "enclosure is unresolved"):
+                    _iinverse(unresolved)
+            self.assertEqual(inverse.call_count, 1)
+
+    def test_condition_facts_do_not_supply_an_inverse(self):
+        with (
+            codec._operation_contract_assets() as operation,
+            patch.object(
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
+            ) as inverse,
+        ):
+            exact = numerical._c_exact(MATRIX)
+            numerical._c_condition(MATRIX, self.policy.conditioning_limit, "only proof")
+            self.assertIsNone(operation.matrix_facts.find(exact))
+            numerical._c_inverse(exact)
+            numerical._c_inverse(exact)
+            self.assertEqual(inverse.call_count, 1)
+
+    def test_facts_are_immutable_and_inverse_storage_is_bounded(self):
+        with (
+            codec._operation_contract_assets() as operation,
+            patch.object(
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
+            ) as inverse,
+        ):
+            exact = ((Fraction(1),),)
+            result = numerical._c_inverse(exact)
+            fact = operation.matrix_facts.find(exact)
             with self.assertRaises(FrozenInstanceError):
-                first.condition_upper_squared = 0
+                fact.inverse = ()
             with self.assertRaises(TypeError):
-                first.inverse[0][0] = 0
-            for coefficient in range(2, 10):
-                numerical._c_prepare_matrix(
-                    ((float(coefficient),),), self.policy.conditioning_limit, "trial"
-                )
-            numerical._c_prepare_matrix(
-                ((9.0,),), self.policy.conditioning_limit, "recent"
-            )
-            self.assertEqual(inverse.call_count, 9)
-            numerical._c_prepare_matrix(
-                ((1.0,),), self.policy.conditioning_limit, "evicted"
-            )
-            self.assertEqual(inverse.call_count, 10)
+                result[0][0] = 0
+            for coefficient in range(2, _MAX_MATRIX_FACTS + 2):
+                numerical._c_inverse(((Fraction(coefficient),),))
+            numerical._c_inverse(((Fraction(_MAX_MATRIX_FACTS + 1),),))
+            self.assertEqual(inverse.call_count, _MAX_MATRIX_FACTS + 1)
+            numerical._c_inverse(exact)
+            self.assertEqual(inverse.call_count, _MAX_MATRIX_FACTS + 2)
+
+    def test_inverse_and_condition_facts_share_one_eviction_budget(self):
+        with (
+            codec._operation_contract_assets() as operation,
+            patch.object(
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
+            ) as inverse,
+            patch.object(
+                numerical, "_c_condition_bound_uncached",
+                wraps=numerical._c_condition_bound_uncached,
+            ) as condition,
+        ):
+            count = _MAX_MATRIX_FACTS // 2
+            for coefficient in range(1, count + 1):
+                exact = ((Fraction(coefficient),),)
+                numerical._c_inverse(exact)
+                numerical._c_condition_bound(exact, 2.0, "proof")
+            first = ((Fraction(1),),)
+            numerical._c_inverse(((Fraction(count + 1),),))
+            self.assertIsNone(operation.matrix_facts.find(first))
+            fact = operation.matrix_facts.find(first, Fraction(2))
+            with self.assertRaises(FrozenInstanceError):
+                fact.condition_upper_squared = Fraction(0)
+            # A surviving conditioning proof does not imply an inverse is cached.
+            numerical._c_condition_bound(first, 2.0, "same condition")
+            self.assertEqual(condition.call_count, count)
+            numerical._c_inverse(first)
+            self.assertEqual(inverse.call_count, count + 2)
 
     def test_nested_failed_and_unscoped_calls_have_independent_lifetimes(self):
         with patch.object(
-            numerical, "_c_inverse", wraps=numerical._c_inverse
+            numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
         ) as inverse:
             with codec._operation_contract_assets() as outer:
                 numerical._c_solve(MATRIX, RHS, self.policy, "outer", [])
@@ -175,19 +342,15 @@ class MatrixPreparationTests(unittest.TestCase):
 
         def prepare(_):
             with codec._operation_contract_assets():
-                first = numerical._c_prepare_matrix(
-                    MATRIX, self.policy.conditioning_limit, "thread"
-                )
+                first = numerical._c_inverse(numerical._c_exact(MATRIX))
                 barrier.wait(timeout=10)
-                second = numerical._c_prepare_matrix(
-                    MATRIX, self.policy.conditioning_limit, "thread again"
-                )
+                second = numerical._c_inverse(numerical._c_exact(MATRIX))
                 self.assertIs(first, second)
                 return first
 
         with (
             patch.object(
-                numerical, "_c_inverse", wraps=numerical._c_inverse
+                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
             ) as inverse,
             ThreadPoolExecutor(max_workers=2) as pool,
         ):
