@@ -498,7 +498,7 @@ class CandidateCOSOperationTests(unittest.TestCase):
             )
             owner = CandidateCOSOperation(inputs)
             observed: list[Any] = []
-            original = module._c_condition
+            original = module._c_condition_bound
 
             def observe(matrix: Any, declared: float, label: str) -> Any:
                 if label == "retained resolvent":
@@ -507,7 +507,7 @@ class CandidateCOSOperationTests(unittest.TestCase):
 
             with (
                 self.subTest(limit=limit),
-                patch.object(module, "_c_condition", side_effect=observe),
+                patch.object(module, "_c_condition_bound", side_effect=observe),
                 patch.object(np.linalg, "svd", wraps=np.linalg.svd) as svd,
                 patch.object(module, "_c_inertia", wraps=module._c_inertia) as inertia,
             ):

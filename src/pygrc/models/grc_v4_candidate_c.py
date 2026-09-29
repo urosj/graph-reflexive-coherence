@@ -8,23 +8,25 @@ It does not write resource, execute a complete realization, or admit a lifecycle
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field
 from fractions import Fraction
-import math
 from typing import TypeAlias
 
 from .grc_v4_codec import (
+    _OPERATION_CONTEXT,
     JSONValue,
     V4SchemaError,
+    _dependency,
     canonical_json_bytes,
     decode_canonical_json,
     json_value,
     payload_identity,
 )
 from .grc_v4_geometry import (
+    GeometryStageInputs,
     GRCV4Graph,
     GRCV4Pairings,
-    GeometryStageInputs,
     Matrix,
     OneForm,
     OneFormHodge,
@@ -34,7 +36,7 @@ from .grc_v4_geometry import (
     _identity,
     _require_coordinates,
 )
-from .grc_v4_codec import _dependency
+from .grc_v4_linear import _MatrixPreparation
 from .grc_v4_profile import CandidateCParams, GRCV4Profile, SolverPolicy
 from .grc_v4_state import FrozenJSONMap, SolverDisposition, _number, _vector
 from .grc_v4_transport import CandidateCMobility, candidate_c_structural_hodge
@@ -168,7 +170,10 @@ def _fixed_current_policy(profile: GRCV4Profile) -> bool:
     """
     identity, policy = profile.identity_payload, profile.params_resolved.solver
     return policy.residual_norm_id == "edge_l2_v1" and (
-        (identity.solver_id == "direct_unique_root_v1" and policy.solver_kind == "direct")
+        (
+            identity.solver_id == "direct_unique_root_v1"
+            and policy.solver_kind == "direct"
+        )
         or (
             identity.realization in {"CI", "CI+PC"}
             and identity.solver_id == "ci_reduced_fixed_point_v1"
@@ -312,6 +317,13 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
     certify the endpoints, including equality. Unresolved bounds fail closed.
     """
     exact = _c_exact(matrix)
+    return _c_condition_certificate(
+        _c_condition_bound(exact, limit, label), limit, label
+    )
+
+
+def _c_condition_bound(exact: _CExact, limit: float, label: str) -> Fraction:
+    """The same exact conditioning proof, independent of its emitted stage label."""
     scale = max(abs(x) for row in exact for x in row)
     if not scale:
         raise CandidateCStageError("singular", "singular " + label)
@@ -394,6 +406,12 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
         raise CandidateCStageError(
             "conditioning_failure", "conditioning limit exceeded: " + label
         )
+    return bound
+
+
+def _c_condition_certificate(
+    bound: Fraction, limit: float, label: str
+) -> FrozenJSONMap:
     return FrozenJSONMap(
         {
             "block": label,
@@ -402,6 +420,25 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
             "limit": limit,
         }
     )
+
+
+def _c_prepare_matrix(matrix: Matrix, limit: float, label: str) -> _MatrixPreparation:
+    """Reuse only an exact matrix/limit match within the existing operation."""
+    exact = _c_exact(matrix)
+    exact_limit = Fraction(limit)
+    context = _OPERATION_CONTEXT.get()
+    preparations = None if context is None else context.matrix_preparations
+    if preparations is not None:
+        prepared = preparations.find(exact, exact_limit)
+        if prepared is not None:
+            return prepared
+    # Failure leaves no cached preparation; errors retain the current stage label.
+    inverse = _c_inverse(exact)
+    bound = _c_condition_bound(exact, limit, label)
+    prepared = _MatrixPreparation(exact, inverse, exact_limit, bound)
+    if preparations is not None:
+        preparations.remember(prepared)
+    return prepared
 
 
 def _c_residual_pass(
@@ -422,18 +459,23 @@ def _c_solve(
     label: str,
     certificates: list[FrozenJSONMap],
 ) -> Matrix:
-    inverse = _c_inverse(_c_exact(matrix))
-    certificates.append(_c_condition(matrix, policy.conditioning_limit, label))
-    result = _c_float(_c_mm(inverse, _c_exact(rhs)))
-    observed = _c_mm(_c_exact(matrix), _c_exact(result))
+    prepared = _c_prepare_matrix(matrix, policy.conditioning_limit, label)
+    certificates.append(
+        _c_condition_certificate(
+            prepared.condition_upper_squared, policy.conditioning_limit, label
+        )
+    )
+    exact_rhs = _c_exact(rhs)
+    result = _c_float(_c_mm(prepared.inverse, exact_rhs))
+    observed = _c_mm(prepared.matrix, _c_exact(result))
     for residual, target in zip(
         _c_transpose(
             tuple(
                 tuple(a - b for a, b in zip(left, right, strict=True))
-                for left, right in zip(observed, _c_exact(rhs), strict=True)
+                for left, right in zip(observed, exact_rhs, strict=True)
             )
         ),
-        _c_transpose(_c_exact(rhs)),
+        _c_transpose(exact_rhs),
         strict=True,
     ):
         if not _c_residual_pass(residual, target, policy):

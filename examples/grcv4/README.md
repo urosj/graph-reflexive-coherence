@@ -1,8 +1,160 @@
-# GRC-v4 realization comparisons
+# GRC-v4 numerical examples
 
 These checkout-only examples construct matched declarations using test fixtures
 and execute production numerical steps. They do not register new supported
 profiles, modify the runtime, or create lifecycle acceptance receipts.
+
+## Larger public simulation: 20-node transport grid
+
+[grid_transport.py](grid_transport.py) runs **A_OS through the strict public
+GRCV4 lifecycle** on a **4×5 grid: 20 nodes, 31 edges**. Horizontal edges point
+right and vertical edges point down; every nearest neighbour is connected.
+The graph has loops and node degrees from two to four. Candidate A uses actual
+2-D grid positions for its regularized differential descriptors.
+
+The closed system starts with total resource **40**, a smooth gradient across
+both axes, and a localized `+0.25` / `−0.25` perturbation at `r1c2` / `r2c2`.
+These are initial conditions; there is no external injection or boundary input.
+Resource values initially span `1.65625–2.34375`. Reference weights vary spatially
+from `1–1.375`, and retained `W_A` starts at `1.5–1.75`. The initial state is also
+the reset baseline.
+
+- Timestep: `1/64`; A history relaxation time: `1/8`.
+- Candidate coefficients: `eta=0.125`, `kappa_c=0.25`, `kappa_Ah=0.125`;
+  `alpha=0.02`, `beta=0.1`, `gamma=0.05`.
+- Feedback: `chi_A=zeta_A=0.25`; geometry gain: `0.09375`.
+- OS split tolerance: `1e-8`; absolute charge tolerance: `1e-11`.
+- Differential descriptor regularization: `1`, in two dimensions.
+
+Run separate fresh processes from the repository root:
+
+```bash
+PYTHONPATH=src:.:tests /usr/bin/time -f 'process_wall_seconds=%e' .venv/bin/python examples/grcv4/grid_transport.py --steps 5
+PYTHONPATH=src:.:tests /usr/bin/time -f 'process_wall_seconds=%e' .venv/bin/python examples/grcv4/grid_transport.py --steps 10
+```
+
+`--output PATH` selects a different report destination. Ordinary successful
+commit receipts and the complete public step results are produced; there is no
+provisional-only shortcut. Declaration construction uses checkout test helpers,
+as the other examples do. This example does not extend global conformance claims
+or the supported profile registry.
+
+Measured locally using runtime commit `b2aff80`, without a profiler:
+
+| Fresh run | Sum of public step times | Mean per step | Setup | Complete command |
+| --- | ---: | ---: | ---: | ---: |
+| 5 steps | 64.804 s | 12.961 s | 0.867 s | 68.28 s |
+| 10 steps | 140.230 s | 14.023 s | 0.894 s | 143.79 s |
+
+Step timers include public admission, numerical stages, strict validation and
+result/history capture. They exclude setup, request construction, diagnostics,
+progress output and the final snapshot. The complete-command column is measured
+by `/usr/bin/time` and includes imports, setup, evolution, snapshot and report
+writing. Reports also record simulation wall time and final snapshot time.
+These are single sequential local samples, not statistical estimates.
+
+Both runs committed every requested step. The first five numerical states match
+exactly across the separate processes. Total resource stays within `1e-11` of
+40; all resources remain nonnegative and all retained weights stay positive.
+Maximum resource changes after 5 / 10 steps are approximately `0.0411 / 0.0735`;
+maximum retained-history changes are `0.4285 / 0.6129`. Each committed step
+produces four ordinary receipts. Physical endpoint times are `5/64` and `10/64`.
+
+The reports retain complete initial declarations, the 2-D differential backend,
+all per-step node resources and edge histories, individual timings, receipt
+counts and final snapshot identities:
+
+- [5-step report](results/grid_transport_5.json)
+- [10-step report](results/grid_transport_10.json)
+
+## Larger-grid scaling sample: 36 nodes
+
+The same runner accepts grid dimensions. This fresh **6×6** A_OS run used
+**36 nodes and 60 edges**, with the same timestep, coefficients, public commit
+path and five-step schedule. The centered gradient preserves a closed initial
+resource total of **72**, with the +0.25 / -0.25 perturbation at `r2c3` /
+`r3c3`. The original 4×5 declaration remains byte-for-byte equivalent to the
+earlier report.
+
+```bash
+PYTHONPATH=src:.:tests /usr/bin/time -f 'process_wall_seconds=%e' .venv/bin/python examples/grcv4/grid_transport.py --rows 6 --cols 6 --steps 5
+```
+
+| Grid | Nodes | Edges | Step 1 | Step 2 | Step 3 | Step 4 | Step 5 | Step sum | Complete command |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 4×5 | 20 | 31 | 13.098 s | 15.281 s | 12.694 s | 13.004 s | 10.726 s | 64.804 s | 68.28 s |
+| 6×6 | 36 | 60 | 127.720 s | 203.832 s | 242.801 s | 209.201 s | 244.130 s | 1,027.683 s | 1,033.57 s |
+
+The larger run averaged **205.537 s per step** and took **15.86×** as much
+public step time as the 4×5 run. All five commits succeeded, each produced
+four receipts, and the resource total remained 72. The final maximum resource
+and retained-history changes were 0.04297 and 0.42869, respectively. The step
+times vary substantially on an unchanged graph, so this two-size sample does
+not establish an asymptotic complexity law or isolate a single cause. It does
+show that the exact numerical work becomes very costly before the history is
+long. This run was not profiled.
+
+The complete initial declaration, numerical states, timings and final snapshot
+identity are in the [6×6 five-step report](results/grid_transport_6x6_5.json).
+The report's grid-size label was corrected after timing; no numerical result
+or step timing was recomputed.
+
+## Certified matrix preparation reuse
+
+Matrix reuse stays behind the existing private `_c_solve` call. The same exact
+inverse and Euclidean conditioning proof are prepared once per exact matrix
+and conditioning-limit pair within an existing operation scope. An immutable
+preparation owns those coefficients, the inverse and the certified bound.
+Storage retains at most eight preparations, independently of trial or step
+count. Each solve still computes its RHS result, checks the declared residual
+tolerances and emits a fresh certificate with its own stage label. A changed
+coefficient or limit requires fresh preparation; failed preparation is not
+stored. Calls outside an operation remain uncached. Public APIs, numerical
+stage callers and publication checks are unchanged.
+
+Fresh sequential unprofiled samples with this working-tree change:
+
+| Grid and schedule | Saved baseline step sum | With reuse | Mean with reuse | Speedup |
+| --- | ---: | ---: | ---: | ---: |
+| 4×5, 5 steps | 64.804 s | 32.786 s | 6.557 s | 1.98× |
+| 4×5, 10 steps | 140.230 s | 66.206 s | 6.621 s | 2.12× |
+| 6×6, 5 steps | 1,027.683 s | 465.398 s | 93.080 s | 2.21× |
+
+Complete command times with reuse were 36.01 s, 69.36 s and 470.88 s,
+respectively. The larger run's individual step times were 63.148, 90.343,
+111.602, 94.624 and 105.680 seconds. These are single local samples.
+
+A separate five-step 4×5 control on the same modified runtime forced every
+preparation lookup to miss using a test-only mock. It took **61.423 s**, versus
+**32.786 s** with reuse: **1.87× speedup**, or **46.6% less step time**. This
+checks the reuse benefit separately from the older baseline's timing variation;
+there is no production mode switch.
+
+Across a separate ten-step 4×5 profile, inverse and conditioning preparations
+each dropped from **50 to 20** (**60% fewer**): two preparations in every
+step. All **50 certified solve calls** still ran, together with **150 total
+residual checks** across the flat solves and A current equations. Total
+profiled function calls dropped from **114,078,930 to 70,797,732** (**37.9%
+fewer**). The earlier profile additionally recorded solve inputs in a temporary
+wrapper; those few wrapper calls are negligible relative to this volume.
+Profiled timings are not used for the ordinary-runtime speedups above.
+
+Every new run and the lookup-disabled control matches its baseline's full
+initial declaration, all saved resources and histories, receipt counts and
+final snapshot SHA256 exactly. Regression tests also compare exact public
+result bytes and snapshots for OS, CI, PC, CI+PC and RG2b in both candidates,
+with operation reuse disabled. Strict warm-cache failures, nested operations,
+thread isolation, immutable preparation and bounded eviction have regression
+coverage.
+
+Reports record the runtime base commit and hashes of the modified source files:
+
+- [4×5 five-step reuse](results/grid_transport_matrix_reuse_5.json).
+- [4×5 ten-step reuse](results/grid_transport_matrix_reuse_10.json).
+- [6×6 five-step reuse](results/grid_transport_6x6_matrix_reuse_5.json).
+- [Lookup-disabled control](results/grid_transport_matrix_reuse_disabled_5.json).
+- [Ten-step profile](results/grid_transport_matrix_reuse_profile_10.json).
+- [Complete comparison and validation details](results/grid_transport_matrix_reuse_comparison.json).
 
 ## Five realizations, two candidates
 

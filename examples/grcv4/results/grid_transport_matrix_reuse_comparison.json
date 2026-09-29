@@ -1,0 +1,91 @@
+{
+  "runtime_base_commit": "b2aff80",
+  "runtime_source_sha256": {
+    "src/pygrc/models/grc_v4_candidate_c.py": "1eaa703993846abf309bccdcdc4c333e6f40757eea34e5c1d34cab59ab3461f5",
+    "src/pygrc/models/grc_v4_codec.py": "2d6b47e573d8fbf05c2f891a5ca1072244ae979ca226f8031c8a021fa57b421b",
+    "src/pygrc/models/grc_v4_linear.py": "a6907b62e1815bb5af883982ad3517f0af263d09cb3d4d8cf93139720742d4ef"
+  },
+  "method": "Single fresh sequential unprofiled processes on unchanged declarations, public admission and publication with ordinary strict validation. No concurrent numerical workloads. First three cases compare saved pre-change samples; fourth is the same modified runtime with a test-only lookup-miss mock. Timing variation prevents treating these as statistical speedup estimates. Source hashes identify the uncommitted implementation.",
+  "cases": [
+    {
+      "baseline_report": "grid_transport_5.json",
+      "reuse_report": "grid_transport_matrix_reuse_5.json",
+      "nodes": 20,
+      "edges": 31,
+      "steps": 5,
+      "baseline_step_seconds": 64.80364967799687,
+      "reuse_step_seconds": 32.78569467001944,
+      "speedup": 1.9765830899796655,
+      "step_time_reduction": 0.49407641648381817,
+      "exact_numerical_state_and_receipt_count_match": true,
+      "exact_final_snapshot_sha256_match": true,
+      "final_snapshot_sha256": "1588ed9b4737cb94f7537a9034de1ae32977d4cb87cdc1c96629d78c5aa001da"
+    },
+    {
+      "baseline_report": "grid_transport_10.json",
+      "reuse_report": "grid_transport_matrix_reuse_10.json",
+      "nodes": 20,
+      "edges": 31,
+      "steps": 10,
+      "baseline_step_seconds": 140.229600621984,
+      "reuse_step_seconds": 66.20611163499416,
+      "speedup": 2.118076370276724,
+      "step_time_reduction": 0.5278734921775501,
+      "exact_numerical_state_and_receipt_count_match": true,
+      "exact_final_snapshot_sha256_match": true,
+      "final_snapshot_sha256": "6b869028b180b7612305d400c70dab5a438cd84bbe5b0905d4e8585177ddf4e1"
+    },
+    {
+      "baseline_report": "grid_transport_6x6_5.json",
+      "reuse_report": "grid_transport_6x6_matrix_reuse_5.json",
+      "nodes": 36,
+      "edges": 60,
+      "steps": 5,
+      "baseline_step_seconds": 1027.6832597110188,
+      "reuse_step_seconds": 465.3975894950563,
+      "speedup": 2.208183460567613,
+      "step_time_reduction": 0.5471390770479957,
+      "exact_numerical_state_and_receipt_count_match": true,
+      "exact_final_snapshot_sha256_match": true,
+      "final_snapshot_sha256": "76a972facd790a7ee81943a9e9a93de097f30277afb6201aa64fc9790f42992d"
+    },
+    {
+      "baseline_report": "grid_transport_matrix_reuse_disabled_5.json",
+      "reuse_report": "grid_transport_matrix_reuse_5.json",
+      "nodes": 20,
+      "edges": 31,
+      "steps": 5,
+      "baseline_step_seconds": 61.42336058698129,
+      "reuse_step_seconds": 32.78569467001944,
+      "speedup": 1.8734805287852963,
+      "step_time_reduction": 0.46623411098466694,
+      "exact_numerical_state_and_receipt_count_match": true,
+      "exact_final_snapshot_sha256_match": true,
+      "final_snapshot_sha256": "1588ed9b4737cb94f7537a9034de1ae32977d4cb87cdc1c96629d78c5aa001da"
+    }
+  ],
+  "ten_step_profile": {
+    "baseline_calls": 114078930,
+    "reuse_calls": 70797732,
+    "call_reduction": 0.37939694911233823,
+    "baseline_matrix_preparations": 50,
+    "reuse_matrix_preparations": 20,
+    "matrix_preparation_reduction": 0.6,
+    "certified_solves_still_executed": 50,
+    "total_residual_checks_executed": 150,
+    "profile_report": "grid_transport_matrix_reuse_profile_10.json"
+  },
+  "validation": {
+    "realizations": "OS, CI, PC, CI+PC, RG2b for both candidates: exact public result bytes and snapshots with reuse enabled versus all operation reuse disabled; two evolving steps and a zero-duration call",
+    "focused_numerical_tests": 35,
+    "full_v4_tests_run": 950,
+    "opt_in_package_tests_skipped": 4,
+    "full_run_note": "The first full process saw an import-classification failure, untracked-source reconstruction errors, and stale filename errors after the new helper was renamed while it ran. All reported failures passed in a fresh 18-test rerun after correcting classification and registering the new files with Git intent-to-add. Other full-suite cases passed.",
+    "geometry_and_matrix_tests_in_fresh_process": 104,
+    "private_cache_type_check": "mypy --follow-imports=skip src/pygrc/models/grc_v4_linear.py",
+    "new_lint_diagnostics": 0,
+    "existing_lint_diagnostics_in_touched_tests": 97,
+    "baseline_lint_diagnostics_in_touched_files": 98,
+    "final_focused_numerical_rerun": "35 tests passed"
+  }
+}

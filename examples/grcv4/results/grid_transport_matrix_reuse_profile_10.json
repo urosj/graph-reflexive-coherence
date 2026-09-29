@@ -1,0 +1,811 @@
+{
+  "method": "Separate cProfile per evolving strict public step on the unchanged 4x5 declaration, excluding setup and final snapshot. All numerical states, receipt counts and final snapshot SHA256 match the pre-change ordinary ten-step report. Baseline used the same per-step profiling boundary, plus a temporary solve-input recording wrapper; profiled times are not used to claim ordinary runtime speedups.",
+  "baseline_base_commit": "b2aff80",
+  "baseline_profile": [
+    {
+      "step": 1,
+      "profiled_seconds": 16.470505139004672,
+      "profile_calls": 11360302,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 8.062e-06,
+          "cumulative_seconds": 15.706880815000002
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.002365126,
+          "cumulative_seconds": 14.147489808000001
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.230618859,
+          "cumulative_seconds": 4.887974971
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.0009299190000000001,
+          "cumulative_seconds": 9.047758394
+        },
+        "exact_inertia": {
+          "calls": 8,
+          "self_seconds": 0.132671323,
+          "cumulative_seconds": 8.357862461
+        },
+        "schema_validation": {
+          "calls": 202,
+          "self_seconds": 0.003006075,
+          "cumulative_seconds": 0.330569171
+        },
+        "canonical_encoding": {
+          "calls": 319,
+          "self_seconds": 0.00129673,
+          "cumulative_seconds": 0.7418307350000001
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.000249893,
+          "cumulative_seconds": 0.001725753
+        }
+      }
+    },
+    {
+      "step": 2,
+      "profiled_seconds": 19.03761277999729,
+      "profile_calls": 11721760,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 7.655e-06,
+          "cumulative_seconds": 18.299904783000002
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.0034829690000000003,
+          "cumulative_seconds": 16.709420678
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.239600695,
+          "cumulative_seconds": 4.95121389
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.00084603,
+          "cumulative_seconds": 11.450937856000001
+        },
+        "exact_inertia": {
+          "calls": 10,
+          "self_seconds": 0.168776309,
+          "cumulative_seconds": 10.756909718000001
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.003417446,
+          "cumulative_seconds": 0.313355996
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.001321663,
+          "cumulative_seconds": 0.7486940980000001
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.00036457300000000003,
+          "cumulative_seconds": 0.00262751
+        }
+      }
+    },
+    {
+      "step": 3,
+      "profiled_seconds": 16.9056241849903,
+      "profile_calls": 11343891,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 8.79e-06,
+          "cumulative_seconds": 16.137498258
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.003098799,
+          "cumulative_seconds": 14.27542577
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.24988388,
+          "cumulative_seconds": 5.058945985
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.000977982,
+          "cumulative_seconds": 8.997239720000001
+        },
+        "exact_inertia": {
+          "calls": 8,
+          "self_seconds": 0.141921023,
+          "cumulative_seconds": 8.436392667
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.004063588,
+          "cumulative_seconds": 0.334560597
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.001697383,
+          "cumulative_seconds": 0.821093144
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.00034651500000000004,
+          "cumulative_seconds": 0.0023749770000000003
+        }
+      }
+    },
+    {
+      "step": 4,
+      "profiled_seconds": 16.92896944799577,
+      "profile_calls": 11354242,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 4.24e-06,
+          "cumulative_seconds": 16.153712933
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.002502442,
+          "cumulative_seconds": 14.524578647
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.256322733,
+          "cumulative_seconds": 5.123561846
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.001139721,
+          "cumulative_seconds": 9.179952968
+        },
+        "exact_inertia": {
+          "calls": 8,
+          "self_seconds": 0.144266677,
+          "cumulative_seconds": 8.503860192000001
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.003895991,
+          "cumulative_seconds": 0.316831366
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.0015882650000000002,
+          "cumulative_seconds": 0.786695127
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.000306061,
+          "cumulative_seconds": 0.002079581
+        }
+      }
+    },
+    {
+      "step": 5,
+      "profiled_seconds": 14.021200222996413,
+      "profile_calls": 10932309,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 4.381e-06,
+          "cumulative_seconds": 13.232195142
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.0024532900000000003,
+          "cumulative_seconds": 11.616859235000002
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.25118613,
+          "cumulative_seconds": 5.085181631
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.00046592300000000003,
+          "cumulative_seconds": 6.3155944040000005
+        },
+        "exact_inertia": {
+          "calls": 6,
+          "self_seconds": 0.10196918,
+          "cumulative_seconds": 5.652053884000001
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.0036136080000000004,
+          "cumulative_seconds": 0.33208257500000005
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.001564849,
+          "cumulative_seconds": 0.7708930340000001
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.00027543500000000004,
+          "cumulative_seconds": 0.001971909
+        }
+      }
+    },
+    {
+      "step": 6,
+      "profiled_seconds": 16.945687304993044,
+      "profile_calls": 11374937,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 4.479000000000001e-06,
+          "cumulative_seconds": 16.132915558
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.0030987280000000002,
+          "cumulative_seconds": 14.503025215000001
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.251889468,
+          "cumulative_seconds": 5.16942208
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.001367189,
+          "cumulative_seconds": 9.075030106
+        },
+        "exact_inertia": {
+          "calls": 8,
+          "self_seconds": 0.142388225,
+          "cumulative_seconds": 8.37840358
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.004061311000000001,
+          "cumulative_seconds": 0.34618701300000004
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.0015596400000000002,
+          "cumulative_seconds": 0.780058645
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.00027001900000000003,
+          "cumulative_seconds": 0.0019407810000000001
+        }
+      }
+    },
+    {
+      "step": 7,
+      "profiled_seconds": 16.954875280993292,
+      "profile_calls": 11385314,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 4.197000000000001e-06,
+          "cumulative_seconds": 16.196181153
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.002201821,
+          "cumulative_seconds": 14.488656373000001
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.24853665900000002,
+          "cumulative_seconds": 5.184926976000001
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.001445841,
+          "cumulative_seconds": 9.090074027
+        },
+        "exact_inertia": {
+          "calls": 8,
+          "self_seconds": 0.140723123,
+          "cumulative_seconds": 8.397325565000001
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.004433132,
+          "cumulative_seconds": 0.31586446500000004
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.001395043,
+          "cumulative_seconds": 0.7548260640000001
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.000326675,
+          "cumulative_seconds": 0.002142036
+        }
+      }
+    },
+    {
+      "step": 8,
+      "profiled_seconds": 19.607965767994756,
+      "profile_calls": 11783975,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 4.131e-06,
+          "cumulative_seconds": 18.79367315
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.002248782,
+          "cumulative_seconds": 17.144523331000002
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.251330848,
+          "cumulative_seconds": 5.223656024
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.0010999080000000001,
+          "cumulative_seconds": 11.698189753000001
+        },
+        "exact_inertia": {
+          "calls": 10,
+          "self_seconds": 0.18155147800000002,
+          "cumulative_seconds": 11.037529690000001
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.0040487660000000005,
+          "cumulative_seconds": 0.332944269
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.001494262,
+          "cumulative_seconds": 0.790613656
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.000294198,
+          "cumulative_seconds": 0.001956998
+        }
+      }
+    },
+    {
+      "step": 9,
+      "profiled_seconds": 17.38853449099406,
+      "profile_calls": 11405923,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 7.456e-06,
+          "cumulative_seconds": 16.549362261000002
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.003378336,
+          "cumulative_seconds": 14.900419681
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.249445835,
+          "cumulative_seconds": 5.285001005000001
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.0012938040000000002,
+          "cumulative_seconds": 9.389757242
+        },
+        "exact_inertia": {
+          "calls": 8,
+          "self_seconds": 0.14570502700000001,
+          "cumulative_seconds": 8.488377088
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.003722144,
+          "cumulative_seconds": 0.35418237700000005
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.001588716,
+          "cumulative_seconds": 0.789098709
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.00038973500000000005,
+          "cumulative_seconds": 0.00225826
+        }
+      }
+    },
+    {
+      "step": 10,
+      "profiled_seconds": 17.23721284500789,
+      "profile_calls": 11416277,
+      "functions": {
+        "numerical_step": {
+          "calls": 1,
+          "self_seconds": 4.483e-06,
+          "cumulative_seconds": 16.458992802
+        },
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.004732081,
+          "cumulative_seconds": 14.826438899000001
+        },
+        "exact_inverse": {
+          "calls": 5,
+          "self_seconds": 0.271711205,
+          "cumulative_seconds": 5.411684517
+        },
+        "exact_condition": {
+          "calls": 5,
+          "self_seconds": 0.001006467,
+          "cumulative_seconds": 9.181631206
+        },
+        "exact_inertia": {
+          "calls": 8,
+          "self_seconds": 0.14536832300000002,
+          "cumulative_seconds": 8.404762124000001
+        },
+        "schema_validation": {
+          "calls": 203,
+          "self_seconds": 0.003303453,
+          "cumulative_seconds": 0.32164553700000004
+        },
+        "canonical_encoding": {
+          "calls": 320,
+          "self_seconds": 0.001631875,
+          "cumulative_seconds": 0.7668729160000001
+        },
+        "asset_verification": {
+          "calls": 4,
+          "self_seconds": 0.000357755,
+          "cumulative_seconds": 0.002515953
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "profiled_seconds": 9.172245447989553,
+      "profile_calls": 7048724,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.00040517300000000005,
+          "cumulative_seconds": 6.907262635
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.094562607,
+          "cumulative_seconds": 2.3039408960000003
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.000541558,
+          "cumulative_seconds": 4.399283237000001
+        },
+        "exact_inertia": {
+          "calls": 5,
+          "self_seconds": 0.07616265500000001,
+          "cumulative_seconds": 4.324376664
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.000199012,
+          "cumulative_seconds": 0.011458462
+        }
+      }
+    },
+    {
+      "step": 2,
+      "profiled_seconds": 10.441014874988468,
+      "profile_calls": 7216820,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.00042869800000000003,
+          "cumulative_seconds": 7.992909771000001
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.086101127,
+          "cumulative_seconds": 2.18878006
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.000497365,
+          "cumulative_seconds": 5.528274724
+        },
+        "exact_inertia": {
+          "calls": 6,
+          "self_seconds": 0.09445046600000001,
+          "cumulative_seconds": 5.490657864
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.00017535100000000002,
+          "cumulative_seconds": 0.011175495
+        }
+      }
+    },
+    {
+      "step": 3,
+      "profiled_seconds": 9.31841839599656,
+      "profile_calls": 7033051,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.000391992,
+          "cumulative_seconds": 7.012073829
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.100660755,
+          "cumulative_seconds": 2.3477015960000003
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.000453871,
+          "cumulative_seconds": 4.4550395830000005
+        },
+        "exact_inertia": {
+          "calls": 5,
+          "self_seconds": 0.083798203,
+          "cumulative_seconds": 4.379233137
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.000251987,
+          "cumulative_seconds": 0.012460553000000001
+        }
+      }
+    },
+    {
+      "step": 4,
+      "profiled_seconds": 9.328551372978836,
+      "profile_calls": 7043402,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.000342884,
+          "cumulative_seconds": 6.955065814
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.101451229,
+          "cumulative_seconds": 2.370574167
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.00043193200000000005,
+          "cumulative_seconds": 4.369898294
+        },
+        "exact_inertia": {
+          "calls": 5,
+          "self_seconds": 0.079775124,
+          "cumulative_seconds": 4.2967362300000005
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.000185168,
+          "cumulative_seconds": 0.011317399
+        }
+      }
+    },
+    {
+      "step": 5,
+      "profiled_seconds": 8.082301234011538,
+      "profile_calls": 6837609,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.00041694400000000004,
+          "cumulative_seconds": 5.606662818
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.10187301,
+          "cumulative_seconds": 2.384726881
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.000154239,
+          "cumulative_seconds": 3.0057708300000003
+        },
+        "exact_inertia": {
+          "calls": 4,
+          "self_seconds": 0.059312968,
+          "cumulative_seconds": 2.9436117700000004
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.00020579700000000002,
+          "cumulative_seconds": 0.012036116000000001
+        }
+      }
+    },
+    {
+      "step": 6,
+      "profiled_seconds": 9.372789361019386,
+      "profile_calls": 7064097,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.000471454,
+          "cumulative_seconds": 7.043421114
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.10249006000000001,
+          "cumulative_seconds": 2.400277108
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.00047044500000000005,
+          "cumulative_seconds": 4.434852394
+        },
+        "exact_inertia": {
+          "calls": 5,
+          "self_seconds": 0.07887175,
+          "cumulative_seconds": 4.269570289000001
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.00019009700000000002,
+          "cumulative_seconds": 0.011347556
+        }
+      }
+    },
+    {
+      "step": 7,
+      "profiled_seconds": 9.270156668004347,
+      "profile_calls": 7074474,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.000340337,
+          "cumulative_seconds": 6.971178135000001
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.098386096,
+          "cumulative_seconds": 2.3656517050000003
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.00038083400000000003,
+          "cumulative_seconds": 4.389956899
+        },
+        "exact_inertia": {
+          "calls": 5,
+          "self_seconds": 0.079904004,
+          "cumulative_seconds": 4.321127134
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.00019142400000000002,
+          "cumulative_seconds": 0.011094268000000001
+        }
+      }
+    },
+    {
+      "step": 8,
+      "profiled_seconds": 10.806878568982938,
+      "profile_calls": 7279035,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.00038492400000000003,
+          "cumulative_seconds": 8.419543485
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.10596724,
+          "cumulative_seconds": 2.450735661
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.0006009370000000001,
+          "cumulative_seconds": 5.745444238
+        },
+        "exact_inertia": {
+          "calls": 6,
+          "self_seconds": 0.100968769,
+          "cumulative_seconds": 5.666842386000001
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.000226251,
+          "cumulative_seconds": 0.012256418000000002
+        }
+      }
+    },
+    {
+      "step": 9,
+      "profiled_seconds": 9.348907801002497,
+      "profile_calls": 7095083,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.000453365,
+          "cumulative_seconds": 6.974527053
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.09945490300000001,
+          "cumulative_seconds": 2.4108798360000003
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.00048094100000000003,
+          "cumulative_seconds": 4.3500392230000005
+        },
+        "exact_inertia": {
+          "calls": 5,
+          "self_seconds": 0.07968839300000001,
+          "cumulative_seconds": 4.273722619
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.00020001800000000002,
+          "cumulative_seconds": 0.011650044
+        }
+      }
+    },
+    {
+      "step": 10,
+      "profiled_seconds": 9.301145854988135,
+      "profile_calls": 7105437,
+      "functions": {
+        "certified_solve": {
+          "calls": 5,
+          "self_seconds": 0.00034085100000000003,
+          "cumulative_seconds": 6.990459908
+        },
+        "exact_inverse": {
+          "calls": 2,
+          "self_seconds": 0.11256995500000001,
+          "cumulative_seconds": 2.6452520440000002
+        },
+        "exact_condition": {
+          "calls": 2,
+          "self_seconds": 0.00034469400000000004,
+          "cumulative_seconds": 4.14073352
+        },
+        "exact_inertia": {
+          "calls": 5,
+          "self_seconds": 0.07051346500000001,
+          "cumulative_seconds": 4.1352581960000006
+        },
+        "residual_check": {
+          "calls": 15,
+          "self_seconds": 0.000176684,
+          "cumulative_seconds": 0.011152780000000001
+        }
+      }
+    }
+  ],
+  "baseline_profile_calls": 114078930,
+  "profile_calls": 70797732,
+  "baseline_matrix_preparations": 50,
+  "matrix_preparations": 20,
+  "certified_solve_calls": 50,
+  "residual_checks": 150,
+  "baseline_numerical_results_match": true,
+  "final_snapshot_sha256": "6b869028b180b7612305d400c70dab5a438cd84bbe5b0905d4e8585177ddf4e1",
+  "runtime_source_sha256": {
+    "src/pygrc/models/grc_v4_candidate_c.py": "1eaa703993846abf309bccdcdc4c333e6f40757eea34e5c1d34cab59ab3461f5",
+    "src/pygrc/models/grc_v4_codec.py": "2d6b47e573d8fbf05c2f891a5ca1072244ae979ca226f8031c8a021fa57b421b",
+    "src/pygrc/models/grc_v4_linear.py": "a6907b62e1815bb5af883982ad3517f0af263d09cb3d4d8cf93139720742d4ef"
+  }
+}

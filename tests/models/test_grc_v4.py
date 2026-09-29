@@ -41,7 +41,7 @@ def _consumed_legacy_imports(source: str) -> list[str]:
             symbols = [f"{module}.{alias.name}" for alias in node.names]
         legacy.extend(symbol for symbol in symbols
                       if symbol.startswith("pygrc.")
-                      and not symbol.startswith("pygrc.models.grc_v4"))
+                      and not symbol.startswith(("pygrc.models.grc_v4", "pygrc.models._grc_v4_")))
     return legacy
 
 
@@ -315,6 +315,9 @@ class FoundationIntegrationTests(unittest.TestCase):
             ("from . import grc_v4_codec as grc_v2", []),
             ("from .grc_v4_codec import JSONValue", []),
             ("import pygrc.models.grc_v4_codec as codec", []),
+            ("from ._grc_v4_evidence import _lifecycle_identity", []),
+            ("from . import _grc_v4_evidence as grc_v2", []),
+            ("from . import grc_v2 as _grc_v4_evidence", ["pygrc.models.grc_v2"]),
             ("from . import grc_v2 as grc_v4_codec", ["pygrc.models.grc_v2"]),
             ("import pygrc.core.events as grc_v4", ["pygrc.core.events"]),
             ("from pygrc.core.events import GRCEvent", ["pygrc.core.events.GRCEvent"]),
