@@ -1,0 +1,457 @@
+{
+  "method": "Five evolving strict public steps; light inclusive stage timers (nested times must not be added). Numerical outputs checked against saved primitive-reuse run.",
+  "total_step_seconds": 67.84157740400406,
+  "per_step_seconds": [
+    7.345903502020519,
+    16.68467808800051,
+    15.894784290983807,
+    13.759694059001049,
+    14.15651746399817
+  ],
+  "snapshot_sha256": "2f80ec318796d7730fbdd49dc57d109442401ad926f36fd1cdf4211e8708734a",
+  "scopes": [
+    {
+      "timings": {
+        "carrier_geometry": {
+          "calls": 6,
+          "seconds": 0.12535585698788054
+        },
+        "chart_membership": {
+          "calls": 3,
+          "seconds": 0.008433518989477307
+        },
+        "envelope_opnorm:31x31": {
+          "calls": 3,
+          "seconds": 0.011884472012752667
+        },
+        "envelope_opnorm:31x20": {
+          "calls": 3,
+          "seconds": 0.0077293639769777656
+        },
+        "exact_inverse:2x2": {
+          "calls": 20,
+          "seconds": 0.0006812630163040012
+        },
+        "envelope_opnorm:2x2": {
+          "calls": 60,
+          "seconds": 0.002259636006783694
+        },
+        "descriptor_bound": {
+          "calls": 3,
+          "seconds": 0.0135562380310148
+        },
+        "envelope": {
+          "calls": 3,
+          "seconds": 0.14006892900215462
+        },
+        "descriptor_solve:2x2": {
+          "calls": 80,
+          "seconds": 0.002442218945361674
+        },
+        "descriptor_rebuild": {
+          "calls": 4,
+          "seconds": 0.012931164994370192
+        },
+        "exact_inverse:31x31": {
+          "calls": 2,
+          "seconds": 2.0775566780066583
+        },
+        "conditioning_proof:31x31": {
+          "calls": 2,
+          "seconds": 3.7386665980156977
+        },
+        "a_current": {
+          "calls": 3,
+          "seconds": 5.99663410501671
+        },
+        "scalar_zoh": {
+          "calls": 1,
+          "seconds": 0.055394373019225895
+        }
+      },
+      "fact_lookups": {
+        "inverse:2x2": {
+          "requests": 60,
+          "hits": 40
+        },
+        "inverse:31x31": {
+          "requests": 3,
+          "hits": 1
+        },
+        "conditioning:31x31": {
+          "requests": 3,
+          "hits": 1
+        }
+      },
+      "envelope_bounds_sha256": [
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947"
+      ]
+    },
+    {
+      "timings": {
+        "carrier_geometry": {
+          "calls": 6,
+          "seconds": 0.25034292801865377
+        },
+        "chart_membership": {
+          "calls": 3,
+          "seconds": 0.012608648976311088
+        },
+        "envelope_opnorm:31x31": {
+          "calls": 3,
+          "seconds": 0.012252368003828451
+        },
+        "envelope_opnorm:31x20": {
+          "calls": 3,
+          "seconds": 0.00804703397443518
+        },
+        "exact_inverse:2x2": {
+          "calls": 20,
+          "seconds": 0.0006935159326530993
+        },
+        "envelope_opnorm:2x2": {
+          "calls": 60,
+          "seconds": 0.002384761057328433
+        },
+        "descriptor_bound": {
+          "calls": 3,
+          "seconds": 0.0143040340335574
+        },
+        "envelope": {
+          "calls": 3,
+          "seconds": 0.15270802800660022
+        },
+        "descriptor_solve:2x2": {
+          "calls": 80,
+          "seconds": 0.0023104051360860467
+        },
+        "descriptor_rebuild": {
+          "calls": 4,
+          "seconds": 0.011836667021270841
+        },
+        "exact_inverse:31x31": {
+          "calls": 3,
+          "seconds": 4.0125096880074125
+        },
+        "conditioning_proof:31x31": {
+          "calls": 3,
+          "seconds": 9.99398023300455
+        },
+        "a_current": {
+          "calls": 3,
+          "seconds": 14.237833969003987
+        },
+        "scalar_zoh": {
+          "calls": 1,
+          "seconds": 0.055858200998045504
+        }
+      },
+      "fact_lookups": {
+        "inverse:2x2": {
+          "requests": 60,
+          "hits": 40
+        },
+        "inverse:31x31": {
+          "requests": 3,
+          "hits": 0
+        },
+        "conditioning:31x31": {
+          "requests": 3,
+          "hits": 0
+        }
+      },
+      "envelope_bounds_sha256": [
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947"
+      ]
+    },
+    {
+      "timings": {
+        "carrier_geometry": {
+          "calls": 6,
+          "seconds": 0.24288273896672763
+        },
+        "chart_membership": {
+          "calls": 3,
+          "seconds": 0.009356020978884771
+        },
+        "envelope_opnorm:31x31": {
+          "calls": 3,
+          "seconds": 0.0114570630248636
+        },
+        "envelope_opnorm:31x20": {
+          "calls": 3,
+          "seconds": 0.008168973989086226
+        },
+        "exact_inverse:2x2": {
+          "calls": 20,
+          "seconds": 0.0007024119258858263
+        },
+        "envelope_opnorm:2x2": {
+          "calls": 60,
+          "seconds": 0.002025619935011491
+        },
+        "descriptor_bound": {
+          "calls": 3,
+          "seconds": 0.01179921202128753
+        },
+        "envelope": {
+          "calls": 3,
+          "seconds": 0.13960061702528037
+        },
+        "descriptor_solve:2x2": {
+          "calls": 80,
+          "seconds": 0.002061596023850143
+        },
+        "descriptor_rebuild": {
+          "calls": 4,
+          "seconds": 0.010721047001425177
+        },
+        "exact_inverse:31x31": {
+          "calls": 3,
+          "seconds": 3.908099077962106
+        },
+        "conditioning_proof:31x31": {
+          "calls": 3,
+          "seconds": 9.255773499025963
+        },
+        "a_current": {
+          "calls": 3,
+          "seconds": 13.398369769041892
+        },
+        "scalar_zoh": {
+          "calls": 1,
+          "seconds": 0.05613740798435174
+        }
+      },
+      "fact_lookups": {
+        "inverse:2x2": {
+          "requests": 60,
+          "hits": 40
+        },
+        "inverse:31x31": {
+          "requests": 3,
+          "hits": 0
+        },
+        "conditioning:31x31": {
+          "requests": 3,
+          "hits": 0
+        }
+      },
+      "envelope_bounds_sha256": [
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947"
+      ]
+    },
+    {
+      "timings": {
+        "carrier_geometry": {
+          "calls": 6,
+          "seconds": 0.23980606204713695
+        },
+        "chart_membership": {
+          "calls": 3,
+          "seconds": 0.008902057015802711
+        },
+        "envelope_opnorm:31x31": {
+          "calls": 3,
+          "seconds": 0.01168435302679427
+        },
+        "envelope_opnorm:31x20": {
+          "calls": 3,
+          "seconds": 0.007207539980299771
+        },
+        "exact_inverse:2x2": {
+          "calls": 20,
+          "seconds": 0.0006844210147392005
+        },
+        "envelope_opnorm:2x2": {
+          "calls": 60,
+          "seconds": 0.0022827579523436725
+        },
+        "descriptor_bound": {
+          "calls": 3,
+          "seconds": 0.01328434603055939
+        },
+        "envelope": {
+          "calls": 3,
+          "seconds": 0.13769973799935542
+        },
+        "descriptor_solve:2x2": {
+          "calls": 80,
+          "seconds": 0.0022308319457806647
+        },
+        "descriptor_rebuild": {
+          "calls": 4,
+          "seconds": 0.01157876499928534
+        },
+        "exact_inverse:31x31": {
+          "calls": 3,
+          "seconds": 4.177643192029791
+        },
+        "conditioning_proof:31x31": {
+          "calls": 3,
+          "seconds": 6.9008499450283125
+        },
+        "a_current": {
+          "calls": 3,
+          "seconds": 11.311095618002582
+        },
+        "scalar_zoh": {
+          "calls": 1,
+          "seconds": 0.05510020401561633
+        }
+      },
+      "fact_lookups": {
+        "inverse:2x2": {
+          "requests": 60,
+          "hits": 40
+        },
+        "inverse:31x31": {
+          "requests": 3,
+          "hits": 0
+        },
+        "conditioning:31x31": {
+          "requests": 3,
+          "hits": 0
+        }
+      },
+      "envelope_bounds_sha256": [
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947"
+      ]
+    },
+    {
+      "timings": {
+        "carrier_geometry": {
+          "calls": 6,
+          "seconds": 0.24472371500451118
+        },
+        "chart_membership": {
+          "calls": 3,
+          "seconds": 0.010772474983241409
+        },
+        "envelope_opnorm:31x31": {
+          "calls": 3,
+          "seconds": 0.01201289298478514
+        },
+        "envelope_opnorm:31x20": {
+          "calls": 3,
+          "seconds": 0.00783593999221921
+        },
+        "exact_inverse:2x2": {
+          "calls": 20,
+          "seconds": 0.0007581699755974114
+        },
+        "envelope_opnorm:2x2": {
+          "calls": 60,
+          "seconds": 0.0024039220006670803
+        },
+        "descriptor_bound": {
+          "calls": 3,
+          "seconds": 0.013918787008151412
+        },
+        "envelope": {
+          "calls": 3,
+          "seconds": 0.1477413560205605
+        },
+        "descriptor_solve:2x2": {
+          "calls": 80,
+          "seconds": 0.0021721470111515373
+        },
+        "descriptor_rebuild": {
+          "calls": 4,
+          "seconds": 0.011153949017170817
+        },
+        "exact_inverse:31x31": {
+          "calls": 3,
+          "seconds": 4.006756977993064
+        },
+        "conditioning_proof:31x31": {
+          "calls": 3,
+          "seconds": 7.368223689991282
+        },
+        "a_current": {
+          "calls": 3,
+          "seconds": 11.624753017007606
+        },
+        "scalar_zoh": {
+          "calls": 1,
+          "seconds": 0.05586966100963764
+        }
+      },
+      "fact_lookups": {
+        "inverse:2x2": {
+          "requests": 60,
+          "hits": 40
+        },
+        "inverse:31x31": {
+          "requests": 3,
+          "hits": 0
+        },
+        "conditioning:31x31": {
+          "requests": 3,
+          "hits": 0
+        }
+      },
+      "envelope_bounds_sha256": [
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947",
+        "5de4cf86fba26baded575f0d2624e5a5f89bd00365446c28f51c5360b6f34947"
+      ]
+    }
+  ],
+  "cross_step_matrix_overlap": {
+    "inverse:2x2": {
+      "unique_matrices": 20,
+      "matrices_seen_in_multiple_steps": 20,
+      "step_occurrences": 100
+    },
+    "inverse:31x31": {
+      "unique_matrices": 6,
+      "matrices_seen_in_multiple_steps": 5,
+      "step_occurrences": 14
+    },
+    "conditioning:31x31": {
+      "unique_matrices": 6,
+      "matrices_seen_in_multiple_steps": 5,
+      "step_occurrences": 14
+    }
+  },
+  "workload": {
+    "realization": "A_PC",
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "positive_steps": 5
+  },
+  "validation": {
+    "all_step_states_clocks_receipts_and_snapshot_sha256_match_saved_run": true,
+    "reference_report": "grid_transport_a_pc_4x5_5_primitive_reuse.json"
+  },
+  "runtime": {
+    "base_commit": "a857940d6829c0c28352d2dfb1c2dbc7ac43881c",
+    "uncommitted_changes": true,
+    "source_sha256": {
+      "src/pygrc/models/grc_v4_pc.py": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+      "src/pygrc/models/grc_v4_candidate_a.py": "e337f44fd7bc13de5b1355da91875975214b76f180604112380b22684bb90fe0",
+      "src/pygrc/models/grc_v4_candidate_c.py": "ae4285ff6259a4bea6b04f9defd691f0708c9991d357fb269c7f4173a97eaa85",
+      "src/pygrc/models/grc_v4_linear.py": "a2126d013647963d094790f77f88c9b99108837c3f6d82bdb7ff803cddba4c9a",
+      "src/pygrc/models/grc_v4_codec.py": "9355988f1ab4c528e03da27242f9514f5fb10aa4276fbbee39924487f9962c7e",
+      "examples/grcv4/grid_realizations_a.py": "95ebe2a890442320483d480cc078f8e0cec468e8e5838581468bba61886affdd",
+      "examples/grcv4/grid_transport.py": "00c20fb9f1fdd30a86002e72ab16ec2a6bc9a4f4c6b20a91873b5f0bdd47dd50"
+    }
+  },
+  "limits": [
+    "Stage timers are inclusive; nested timings cannot be summed. Exact inverse and conditioning algorithm timers do not overlap each other.",
+    "Cross-step overlap compares exact coefficient tuples and, for conditioning, the exact limit. It is observational and grants no cache reuse.",
+    "Six unique matrices versus fourteen computations suggests eight avoidable computations per primitive. This is a work count, not a measured speedup; repeated matrices have unequal costs.",
+    "No production code or cache lifetime changed during this analysis."
+  ]
+}

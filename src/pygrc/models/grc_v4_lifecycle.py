@@ -25,7 +25,7 @@ from .grc_v4 import (
     GRCV4RepresentationRequest,
 )
 from ._grc_v4_evidence import _ReceiptEvidence, _lifecycle_identity, _operation_evidence, _own_stage_reference, _seed_receipts
-from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError, _c_exact
 from .grc_v4_candidate_a import CandidateADifferentialReference, CandidateAStageError
 from .grc_v4_codec import (
     COS_SNAPSHOT_LAYOUT_ID,
@@ -38,6 +38,7 @@ from .grc_v4_codec import (
     V4IdentityError,
     V4SchemaError,
     _verify_contract_assets,
+    _OPERATION_CONTEXT,
     canonical_json_bytes,
     snapshot_payload,
     decode_canonical_json,
@@ -53,6 +54,7 @@ from .grc_v4_geometry import (
     _state_from_payload,
     _computed,
 )
+from .grc_v4_linear import _MatrixContinuation
 from .grc_v4_realizations import OSStageError
 from .grc_v4_state import (
     FrozenJSONMap,
@@ -150,6 +152,29 @@ def _step_currents(step: Any) -> tuple[Any, Any, str]:
     if realization == "PC":
         return step.read.point, step.restart.point, "pc_old_history"
     return step.point, step.restart_point, "rg2b_section"
+
+
+def _step_matrix_continuation(step: Any) -> _MatrixContinuation:
+    """Select reset/final Hodge facts without changing numerical owners."""
+    context = _OPERATION_CONTEXT.get()
+    if context is None:
+        return _MatrixContinuation()
+    profile = step.inputs.geometry.reference.profile
+    realization = profile.identity_payload.realization
+    if realization == "PC":
+        reset, current = step.reset_read, step.restart
+    elif realization == "CI+PC":
+        reset = step.reset_root.selected.point
+        current = step.restart.selected.point
+    elif realization == "RG2b":
+        reset, current = step.reset_point, step.restart_point
+    else:
+        return _MatrixContinuation()
+    return context.matrix_facts.retain(
+        _c_exact(reset.inputs.geometry.one_form_hodge.matrix),
+        _c_exact(current.inputs.geometry.one_form_hodge.matrix),
+        Fraction(profile.params_resolved.solver.conditioning_limit),
+    )
 
 
 def _readmit_state(
@@ -482,6 +507,9 @@ class _OwnedCOS:
     reference: GRCV4ReferenceGeometry
     transitions: tuple[FrozenJSONMap, ...] = ()
     archive: _CheckedArchive = field(kw_only=True, repr=False, compare=False)
+    matrix_continuation: _MatrixContinuation = field(
+        default=_MatrixContinuation(), kw_only=True, repr=False, compare=False
+    )
 
     @property
     def ledger(self) -> tuple[SuccessfulReceiptEnvelope, ...]:
@@ -1890,7 +1918,8 @@ class GRCV4Operation:
 
     Fresh construction has an empty ledger. from_state/load restore a complete
     snapshot, including commit preimages. References, current/reset coordinates,
-    receipts and commits have no mutable aliases; numerical caches never persist.
+    receipts and commits have no mutable aliases. Only bounded immutable numerical
+    facts may continue between steps; snapshots never include them.
     Calls that publish state are serialized, with one immutable pointer swap.
     """
 
@@ -2502,6 +2531,9 @@ class GRCV4Operation:
 
     @_operation_evidence
     def _execute(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
+        context = _OPERATION_CONTEXT.get()
+        assert context is not None  # This entry is always operation-scoped.
+        context.matrix_facts.seed(self._owned.matrix_continuation)
         archive = self._owned.archive
         _seed_receipts(archive.receipt_evidence,
                        tuple(row.receipt_id for row in archive.receipts))
@@ -2728,6 +2760,7 @@ class GRCV4Operation:
             self._owned.commits + (commit,),
             self._owned.reference,
             self._owned.transitions, archive=checked_archive,
+            matrix_continuation=_step_matrix_continuation(step),
         )
         self._owned = publication
         return result

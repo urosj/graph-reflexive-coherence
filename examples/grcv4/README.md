@@ -114,9 +114,12 @@ with trace length. This replaces the older budget of eight combined solve
 preparations, which did not account for direct callers. Successful facts alone
 are stored. Every RHS, residual check, stage-labelled certificate and failed
 conditioning attempt is evaluated under its current declaration. Unscoped calls
-remain uncached, and publication guards are unchanged.
+remain uncached, and publication guards are unchanged. PC, CI+PC and RG2b can seed a new scope
+with the bounded numerical continuation described below; its operation store
+and asset context still end at scope exit.
 
-The current primitive reuse measurements use the same strict public 4×5
+The primitive-only measurements below predate bounded continuation and use the same
+strict public 4×5
 examples, with 20 nodes and 31 edges. Each before/after pair has an identical
 complete declaration. These gains are additional to the previous solve cache:
 
@@ -181,6 +184,101 @@ Reports record the runtime base commit and hashes of the modified source files:
 - [Lookup-disabled control](results/grid_transport_matrix_reuse_disabled_5.json).
 - [Ten-step profile](results/grid_transport_matrix_reuse_profile_10.json).
 - [Complete comparison and validation details](results/grid_transport_matrix_reuse_comparison.json).
+
+## Bounded numerical continuation for PC, CI+PC and RG2b
+
+The admitted reset and final Hodge matrices repeat across PC, CI+PC and RG2b
+steps. CI+PC selects the actual trial Hodge from its admitted CI roots. The
+lifecycle adapter now retains
+only their available inverse and conditioning facts in the immutable committed
+publication: **at most four facts for two matrices**. Each fresh operation seeds
+its private store from those facts. The bound is independent of trace length;
+matrix storage still scales with graph size.
+
+Only the numerical fact store and lifecycle adapter change in production. PC,
+CI+PC and RG2b recipes, candidate current/writer algorithms, state admission, asset contexts,
+public formats and snapshot contents are unchanged. Exact coefficient and
+conditioning-limit matches remain required, with fresh RHS, residual and
+certificate work. Failed publications preserve the previous continuation.
+Reset, rebase, assignment, restoration, migration and topology/representation
+publications start cold by default. The other realization lifetimes are unchanged.
+
+A sequential, separate-process five-step control on the 4×5 A_PC grid kept reuse
+within each operation but disabled continuation at publication:
+
+| Measurement | Operation reuse only | With continuation |
+| --- | ---: | ---: |
+| Total step time | 72.232 s | 45.785 s |
+| Large inverses / conditioning proofs | 14 / 14 | 6 / 6 |
+| Certified solves / residual checks | 15 / 45 | 15 / 45 |
+| Fresh certificates / chart-membership checks | 15 / 15 | 15 / 15 |
+
+This is **1.58× faster**, or **36.6% less step time**, in one local timing pair.
+Every saved state and final snapshot digest matches both the control and the
+previous primitive-only run exactly. All five publications retained four facts.
+The [continuation comparison](results/grid_transport_a_pc_continuation_comparison.md)
+records per-step times, source hashes, counters and the 247-test regression run.
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --disable-continuation --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --rows 4 --cols 5 --steps 5
+```
+
+The disabled control is a benchmark-only mock; production has no mode switch.
+
+RG2b uses the same four-fact bound, selecting its already admitted reset and
+restart native-point Hodge matrices. Graph sections, certified error enclosures,
+whole-chart certificates and native arithmetic bridges still run freshly.
+A fresh sequential five-step A_RG2b comparison on the same **4×5, 20-node,
+31-edge** grid measured **202.882 s → 108.400 s**:
+**1.87× faster**, or **46.6% less step time**.
+Large inverse and conditioning computations each fell **19 → 11**. Both runs
+still performed 65 certified solves, 185 residual checks, 65 fresh conditioning
+certificates, 15 whole-chart certificates, 15 graph sections, and five native
+arithmetic bridges. Every saved state and final snapshot digest matches the
+control and prior primitive-only run exactly. All five publications retained
+four facts. The [RG2b continuation comparison](results/grid_transport_a_rg2b_continuation_comparison.md)
+records timings, counts, source hashes, and the successful 145-test regression
+run (one optional slow campaign skipped). This is one local timing pair.
+
+The shared benchmark also accepts RG2b:
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization RG2b --disable-continuation --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization RG2b --rows 4 --cols 5 --steps 5
+```
+
+A repeat of the strict 4×5, five-step **A_CI+PC** workload after these updates
+measured **131.471 s**, versus **129.453 s** in the earlier
+primitive-reuse run. Every operation's inverse/conditioning lookup counts are
+identical, as are all saved states and the final snapshot digest. At the time
+of that repeat, CI+PC did not select continuation. The shared scalar PC carrier
+write was unchanged, so its timing difference did not indicate a change in
+numerical work. The [CI+PC repeat measurement](results/grid_transport_a_ci_pc_after_pc_comparison.md)
+retains those timings, counters, and source hashes as a historical measurement.
+
+CI+PC now selects its already admitted reset/final roots' trial Hodge matrices
+through the same bounded continuation adapter. Every root still starts from the
+reference and performs fresh contraction/domain, PC envelope, and joint-residual
+checks. The held same-root source still feeds exactly one PC carrier write.
+Neither a whole root nor a certificate is cached.
+
+The corrected paired **4×5, five-step A_CI+PC** measurement took
+**131.121 s → 78.064 s**:
+**1.68× faster**, or **40.5% less step time**.
+Large inverses and conditioning proofs each fell **18 → 10**. Both runs retained
+102 certified solves, 248 residual checks, 102 fresh conditioning certificates,
+15 CI contraction certificates, 15 PC envelopes, 29 joint trial residuals, and
+five carrier writes. Every saved state and final snapshot digest matches the
+control and both preceding primitive-only runs. All publications retained four
+facts. The [CI+PC continuation comparison](results/grid_transport_a_ci_pc_continuation_comparison.md)
+records the single local timing pair, source hashes, counters, and the 25 focused
+plus 130 broader regression tests, all passing with no skips.
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization CI+PC --disable-continuation --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization CI+PC --rows 4 --cols 5 --steps 5
+```
 
 ## Configurable public grids for the other A realizations
 

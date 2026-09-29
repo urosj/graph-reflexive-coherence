@@ -1,0 +1,65 @@
+{
+  "workload": {
+    "candidate": "A",
+    "realization": "CI+PC",
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "steps": 5
+  },
+  "previous_report": "grid_transport_a_ci_pc_4x5_5_primitive_reuse.json",
+  "current_report": "grid_transport_a_ci_pc_4x5_5_after_pc_update.json",
+  "previous_step_seconds": 129.45278749099816,
+  "current_step_seconds": 131.47096428804798,
+  "previous_per_step_seconds": [
+    21.54660509401583,
+    28.47234799398575,
+    27.376427223993232,
+    29.054148410010384,
+    23.003258768992964
+  ],
+  "current_per_step_seconds": [
+    21.808359425980598,
+    29.190119074017275,
+    28.165094907017192,
+    29.04320279302192,
+    23.264188088010997
+  ],
+  "previous_over_current_timing_ratio": 0.9846492584276778,
+  "current_setup_seconds": 53.651171394012636,
+  "current_declaration_seconds": 1.249461119004991,
+  "current_final_snapshot_seconds": 0.17270513501716778,
+  "current_example_total_wall_seconds": 186.55758459598292,
+  "matrix_fact_counts_each_run": {
+    "inverse_requests": 1311,
+    "inverse_hits": 1193,
+    "inverse_misses": 118,
+    "conditioning_requests": 102,
+    "conditioning_hits": 84,
+    "conditioning_misses": 18
+  },
+  "per_operation_fact_counts_unchanged": true,
+  "matrix_continuation_eligible": false,
+  "runtime_base_commit": "2f872f6841c0b725287486c262981272d8d5477b",
+  "runtime_source_sha256": {
+    "src/pygrc/models/grc_v4_linear.py": "1b3e59ff24c8c58452133ddc3a7014c7e0373ad2d1066ec7c77b0994be2f1929",
+    "src/pygrc/models/grc_v4_lifecycle.py": "ea9c52b38b4fa9a1edfd03d5c9b01ecc50ecd2054abf76a048db26d5d146a4d5",
+    "src/pygrc/models/grc_v4_pc.py": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+    "src/pygrc/models/grc_v4_ci.py": "f124ae5fcd61c281a2b722b9108134011a0302b7d3a2b74df77b04a198c12872",
+    "src/pygrc/models/grc_v4_candidate_a.py": "e337f44fd7bc13de5b1355da91875975214b76f180604112380b22684bb90fe0",
+    "src/pygrc/models/grc_v4_candidate_c.py": "ae4285ff6259a4bea6b04f9defd691f0708c9991d357fb269c7f4173a97eaa85"
+  },
+  "runtime_uncommitted_changes": true,
+  "validation": {
+    "complete_declaration_backend_all_saved_states_clocks_receipt_counts_match": true,
+    "final_snapshot_sha256": "da0885c4415b58073f39607e7344073ddf794f760975f89285e0af706d27012e",
+    "final_snapshot_bytes": 76695
+  },
+  "interpretation": "CI+PC does not select the new cross-step PC/RG2b continuation. Primitive inverse/conditioning request, hit, and miss counts are identical to the earlier run. Timing differences cannot be attributed to reduced numerical work from the PC continuation update.",
+  "method": "One new fresh-process strict public run using the same configurable grid, declaration, and light lookup instrumentation as the saved primitive-reuse run. Step totals exclude declaration, owner setup, and final snapshot. No production changes or solver-policy changes.",
+  "limits": [
+    "Single current sample versus an earlier local sample; timing ratio is not a measured optimization speedup.",
+    "Existing within-operation numerical reuse remains enabled. No cross-step CI root caching was added."
+  ]
+}
