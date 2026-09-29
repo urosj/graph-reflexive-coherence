@@ -7,10 +7,11 @@ from dataclasses import FrozenInstanceError, replace
 from fractions import Fraction
 from unittest.mock import patch
 
-from pygrc.models import grc_v4_candidate_c as numerical
+from pygrc.models import _grc_v4_matrix as arithmetic
 from pygrc.models import grc_v4_ci as ci
 from pygrc.models import grc_v4_codec as codec
 from pygrc.models import grc_v4_lifecycle as lifecycle
+from pygrc.models import grc_v4_numerics as numerics
 from pygrc.models import grc_v4_pc as pc
 from pygrc.models import grc_v4_rg2b as rg
 from pygrc.models import grc_v4_rg2b_graph as rg_graph
@@ -68,45 +69,43 @@ class MatrixContinuationTests(unittest.TestCase):
     def test_seeded_facts_still_check_current_limits_coefficients_and_rhs(self):
         policy = fixture("A")[0].geometry.reference.profile.params_resolved.solver
         matrix = ((3.0, 1.0), (1.0, 3.0))
-        exact = numerical._c_exact(matrix)
+        exact = numerics.exact_matrix(matrix)
         admitted = replace(policy, conditioning_limit=2.0)
         with codec._operation_contract_assets() as operation:
-            numerical._c_solve(matrix, ((1.0,), (2.0,)), admitted, "old", [])
+            numerics.solve(matrix, ((1.0,), (2.0,)), admitted, "old", [])
             retained = operation.matrix_facts.retain(exact, exact, Fraction(2))
         with (
             codec._operation_contract_assets() as operation,
-            patch.object(
-                numerical, "_c_inverse_uncached", wraps=numerical._c_inverse_uncached
+            patch.object(arithmetic, "inverse", wraps=arithmetic.inverse
             ) as inverse,
-            patch.object(
-                numerical, "_c_condition_bound_uncached",
-                wraps=numerical._c_condition_bound_uncached,
+            patch.object(arithmetic, "condition_bound",
+                wraps=arithmetic.condition_bound,
             ) as condition,
         ):
             operation.matrix_facts.seed(retained)
             certificates = []
-            numerical._c_solve(matrix, ((2.0,), (1.0,)), admitted, "new", certificates)
+            numerics.solve(matrix, ((2.0,), (1.0,)), admitted, "new", certificates)
             self.assertEqual(certificates[0]["block"], "new")
             self.assertEqual((inverse.call_count, condition.call_count), (0, 0))
             for label in ("strict", "strict retry"):
                 with self.assertRaisesRegex(ValueError, "conditioning limit exceeded: " + label):
-                    numerical._c_solve(
+                    numerics.solve(
                         matrix, ((1.0,), (2.0,)),
                         replace(policy, conditioning_limit=1.5), label, [],
                     )
             self.assertEqual(condition.call_count, 2)
             changed = ((4.0, 1.0), (1.0, 3.0))
-            numerical._c_solve(changed, ((1.0,), (2.0,)), policy, "changed", [])
+            numerics.solve(changed, ((1.0,), (2.0,)), policy, "changed", [])
             self.assertEqual(inverse.call_count, 1)
         with codec._operation_contract_assets() as operation:
-            numerical._c_solve(((3.0,),), ((1.0,),), policy, "warm third", [])
+            numerics.solve(((3.0,),), ((1.0,),), policy, "warm third", [])
             retained = operation.matrix_facts.retain(
                 ((Fraction(3),),), ((Fraction(3),),), Fraction(policy.conditioning_limit)
             )
         with codec._operation_contract_assets() as operation:
             operation.matrix_facts.seed(retained)
             with self.assertRaisesRegex(ValueError, "residual tolerance failed: fresh RHS"):
-                numerical._c_solve(
+                numerics.solve(
                     ((3.0,),), ((5e-324,),),
                     replace(policy, absolute_tolerance=0.0, relative_tolerance=0.0),
                     "fresh RHS", [],
@@ -131,14 +130,14 @@ class PCContinuationTests(unittest.TestCase):
     def test_public_steps_reuse_only_reset_and_previous_final_and_match_cold(self):
         before, warm = self.owner()
         _, cold = self.owner()
-        ordinary_condition = numerical._c_condition_bound_uncached
+        ordinary_condition = arithmetic.condition_bound
         large_computations = []
 
         def condition(matrix, limit, label):
             large_computations.append(matrix)
             return ordinary_condition(matrix, limit, label)
 
-        with patch.object(numerical, "_c_condition_bound_uncached", side_effect=condition):
+        with patch.object(arithmetic, "condition_bound", side_effect=condition):
             for index in range(3):
                 start = len(large_computations)
                 actual = self.step(before, warm, index)
@@ -176,8 +175,8 @@ class PCContinuationTests(unittest.TestCase):
         publication = owner._operation._owned
         snapshot = codec.canonical_json_bytes(owner.snapshot())
         with (
-            patch.object(numerical, "_c_condition_bound_uncached",
-                         wraps=numerical._c_condition_bound_uncached) as condition,
+            patch.object(arithmetic, "condition_bound",
+                         wraps=arithmetic.condition_bound) as condition,
             patch.object(lifecycle, "_verify_contract_assets",
                          side_effect=codec.V4AssetError("changed asset")),
             self.assertRaisesRegex(codec.V4AssetError, "changed asset"),
@@ -187,8 +186,8 @@ class PCContinuationTests(unittest.TestCase):
         self.assertIs(owner._operation._owned, publication)
         self.assertEqual(codec.canonical_json_bytes(owner.snapshot()), snapshot)
         self.assertIsNone(codec._OPERATION_CONTEXT.get())
-        with patch.object(numerical, "_c_condition_bound_uncached",
-                          wraps=numerical._c_condition_bound_uncached) as retry:
+        with patch.object(arithmetic, "condition_bound",
+                          wraps=arithmetic.condition_bound) as retry:
             self.step(before, owner, "retry")
         self.assertEqual(retry.call_count, self.later_condition_computations)
 

@@ -11,14 +11,9 @@ from dataclasses import dataclass, replace
 from fractions import Fraction as F
 from typing import Any, cast
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import CandidateACurrent, CandidateADifferentialReference
-from .grc_v4_candidate_c import (
-    CandidateCCurrent,
-    _c_exact,
-    _c_mm,
-    _c_inverse,
-    _c_transpose,
-)
+from .grc_v4_candidate_c import (CandidateCCurrent)
 from .grc_v4_ci import (
     _Interval,
     _iv,
@@ -118,7 +113,7 @@ def descriptor_operators(backend: CandidateADifferentialReference) -> tuple[Any,
                 for column in range(dim):
                     normal[k][column] += weight * delta[k] * delta[column]
         result.append(
-            _c_mm(_c_inverse(tuple(map(tuple, normal))), tuple(map(tuple, rhs)))
+            numerics.matmul(numerics.inverse(tuple(map(tuple, normal))), tuple(map(tuple, rhs)))
         )
     return tuple(result)
 
@@ -138,9 +133,9 @@ def certificate(
     p = ref.profile.params_resolved.candidate
     n, m = len(graph.live_node_ids), len(graph.live_edge_ids)
     _require(n > 0 and m > 0, "RG2b requires nonempty resource and structural spaces")
-    b = _c_exact(graph.incidence)
-    bt = _c_transpose(b)
-    bn, b2, sn = _opnorm(b), _opnorm(_c_mm(bt, b)), _sqrt_upper(F(n))
+    b = numerics.exact_matrix(graph.incidence)
+    bt = numerics.transpose(b)
+    bn, b2, sn = _opnorm(b), _opnorm(numerics.matmul(bt, b)), _sqrt_upper(F(n))
     r, dt = F(d.h_radius), F(d.beat_dt)
     weights = tuple(F(cast(float, ref.edge_weights[e])) for e in graph.live_edge_ids)
     lower, upper = min(weights) - r, max(weights) + r
@@ -229,7 +224,7 @@ def certificate(
     else:
         point = CandidateCCurrent(inputs)
         rank = point.algebra.selector.rank
-        stiffness = _c_mm(_c_mm(b, _c_exact(ref.pairings.one_form.matrix)), bt)
+        stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
         shifted = tuple(
             tuple(x - (F(p.Lambda_C) if i == j else 0) for j, x in enumerate(row))
             for i, row in enumerate(stiffness)
@@ -237,7 +232,7 @@ def certificate(
         from .grc_v4_candidate_c import CandidateCStageError
 
         try:
-            gap = 1 / _opnorm(_c_inverse(shifted)) - b2 * r
+            gap = 1 / _opnorm(numerics.inverse(shifted)) - b2 * r
         except CandidateCStageError as exc:
             if exc.disposition != "singular":
                 raise

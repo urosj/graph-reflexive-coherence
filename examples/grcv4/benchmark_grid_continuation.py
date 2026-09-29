@@ -15,9 +15,9 @@ from unittest.mock import patch
 
 from examples.grcv4.benchmark_grid_a import run_benchmark
 from examples.grcv4.grid_transport import DEFAULT_COLS, DEFAULT_ROWS
-from pygrc.models import grc_v4_candidate_a as candidate_a
-from pygrc.models import grc_v4_candidate_c as numerical
+from pygrc.models import _grc_v4_matrix as arithmetic
 from pygrc.models import grc_v4_ci as ci
+from pygrc.models import grc_v4_numerics as numerical
 from pygrc.models import grc_v4_pc as pc
 from pygrc.models import grc_v4_rg2b as rg
 from pygrc.models import grc_v4_rg2b_graph as rg_graph
@@ -58,13 +58,11 @@ def run(steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, continuation=True, rea
     with ExitStack() as stack:
         stack.enter_context(patch.object(_MatrixFacts, "retain", retain))
         for owner, name, kind, matrix in (
-            (numerical, "_c_inverse_uncached", "inverse", True),
-            (numerical, "_c_condition_bound_uncached", "conditioning", True),
-            (numerical, "_c_solve", "certified_solves", False),
-            (candidate_a, "_c_solve", "certified_solves", False),
-            (numerical, "_c_residual_pass", "residual_checks", False),
-            (candidate_a, "_c_residual_pass", "residual_checks", False),
-            (numerical, "_c_condition_certificate", "fresh_condition_certificates", False),
+            (arithmetic, "inverse", "inverse", True),
+            (arithmetic, "condition_bound", "conditioning", True),
+            (numerical, "solve", "certified_solves", False),
+            (numerical, "residual_pass", "residual_checks", False),
+            (numerical, "_condition_certificate", "fresh_condition_certificates", False),
             (pc, "_base_state", "chart_membership_checks", False),
             (ci.CIContractionCertificate, "__post_init__", "ci_contraction_certificates", False),
             (ci.CITrial, "__post_init__", "ci_trial_residuals", False),
@@ -81,6 +79,9 @@ def run(steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, continuation=True, rea
         report = run_benchmark(realization, steps, rows, cols, reuse=True)
     sources = (
         "src/pygrc/models/grc_v4_linear.py",
+        "src/pygrc/models/grc_v4_numerics.py",
+        "src/pygrc/models/_grc_v4_matrix.py",
+        "src/pygrc/models/grc_v4_codec.py",
         "src/pygrc/models/grc_v4_lifecycle.py",
         "src/pygrc/models/grc_v4_pc.py",
         "src/pygrc/models/grc_v4_ci.py",

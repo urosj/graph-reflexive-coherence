@@ -185,6 +185,56 @@ Reports record the runtime base commit and hashes of the modified source files:
 - [Ten-step profile](results/grid_transport_matrix_reuse_profile_10.json).
 - [Complete comparison and validation details](results/grid_transport_matrix_reuse_comparison.json).
 
+## Shared matrix API and explicit fresh calculation
+
+All five A realizations and all five C realizations use
+[`grc_v4_numerics.py`](../../src/pygrc/models/grc_v4_numerics.py) for common exact
+matrix conversion, multiplication, transpose, inverse, inertia, certified
+conditioning, and physical solves. A's SPD normal-equation solve uses the same
+inverse store, with fresh positivity and exact RHS checks. Candidate-specific
+rounding and scientific admission remain with their owners. Interval/section
+algorithms keep their separate certified contracts and call this shared API
+for exact matrix work.
+
+Ordinary strict public steps automatically reuse successful inverse and
+conditioning facts. Callers do not prepare matrices or choose separate cached
+and uncached functions. The private arithmetic implementation is
+`_grc_v4_matrix.py`; the old candidate C `_c_*` matrix entry points are removed.
+Boundary tests reject implementation imports from realization modules. Public
+failure messages and the historical `CandidateCStageError` exception spelling
+are retained; that spelling aliases the neutral `MatrixError` type.
+
+For diagnostics or independent verification, choose fresh matrix calculation
+once at the operation boundary:
+
+```python
+from pygrc.models import grc_v4_numerics as matrices
+
+# Normal use: automatic operation-owned reuse.
+result = model.step_v4_input(request)
+
+# Explicit verification mode: recompute matrix facts throughout this operation.
+with matrices.matrix_operation(reuse=matrices.MatrixReuse.FRESH):
+    result = model.step_v4_input(request)
+```
+
+Fresh mode bypasses lookup, seeding, and retention of numerical facts. It does
+not weaken solver limits, residual checks, certificates, asset verification, or
+publication admission. Nested scientific operations inherit the selected
+policy while each receives its own private store. A nested matrix scope with
+no explicit policy also inherits it; an explicit `AUTOMATIC` policy can override
+it. The policy is not a new profile field or wire/snapshot mode.
+
+Standalone matrix calls have no shared lifetime unless grouped in
+`matrices.matrix_operation()`. There is no global cache. The existing bound of
+64 inverse/conditioning facts per operation and four retained facts for two
+matrices between eligible steps is unchanged. Every RHS and stage certificate
+remains fresh in both modes.
+
+[The shared API validation report](results/shared_matrix_api_validation.md)
+records exact public result and snapshot compatibility with the committed code
+for all ten realizations, automatic/fresh equivalence, and regression checks.
+
 ## Bounded numerical continuation for PC, CI+PC and RG2b
 
 The admitted reset and final Hodge matrices repeat across PC, CI+PC and RG2b

@@ -19,6 +19,7 @@ from functools import lru_cache
 import math
 from typing import Any, TYPE_CHECKING, TypeAlias, cast
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import (
     CandidateACurrent,
     CandidateADifferentialReference,
@@ -26,16 +27,7 @@ from .grc_v4_candidate_a import (
     CandidateAWriter,
     ADMITTED_HISTORY_POLICIES,
 )
-from .grc_v4_candidate_c import (
-    CandidateCCurrent,
-    CandidateCStageError,
-    _c_exact,
-    _c_inverse,
-    _c_inertia,
-    _c_components,
-    _c_mm,
-    _c_transpose,
-)
+from .grc_v4_candidate_c import (CandidateCCurrent, CandidateCStageError, _c_components)
 from .grc_v4_geometry import (
     GRCV4Geometry,
     GeometryDomainError,
@@ -243,7 +235,7 @@ def _iinverse(a: Any) -> Any:
     """Verified midpoint inverse: ||I-M A||_inf=q<1 bounds the Neumann tail."""
     mid = tuple(tuple((x.lo + x.hi) / 2 for x in row) for row in a)
     try:
-        inverse = _c_inverse(mid)
+        inverse = numerics.inverse(mid)
     except CandidateCStageError as exc:
         raise CIStageError(
             "no_admitted_root", "unresolved analytic matrix inverse"
@@ -292,7 +284,7 @@ def _a_descriptors_exact(point: CandidateACurrent) -> Any:
         result.append(
             tuple(
                 row[0]
-                for row in _c_mm(_c_inverse(tuple(map(tuple, a))), tuple(map(tuple, b)))
+                for row in numerics.matmul(numerics.inverse(tuple(map(tuple, a))), tuple(map(tuple, b)))
             )
         )
     return tuple(result)
@@ -349,11 +341,11 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
         tuple(x - y for x, y in zip(row, other, strict=True))
         for row, other in zip(eye, e, strict=True)
     )
-    b = _c_exact(graph.incidence)
-    a = _c_mm(
-        _c_mm(b, _c_exact(point.inputs.geometry.one_form_hodge.matrix)), _c_transpose(b)
+    b = numerics.exact_matrix(graph.incidence)
+    a = numerics.matmul(
+        numerics.matmul(b, numerics.exact_matrix(point.inputs.geometry.one_form_hodge.matrix)), numerics.transpose(b)
     )
-    left, right = _c_mm(_c_mm(e, a), e), _c_mm(_c_mm(complement, a), complement)
+    left, right = numerics.matmul(numerics.matmul(e, a), e), numerics.matmul(numerics.matmul(complement, a), complement)
     cutoff = Fraction(point.algebra.transport.params.Lambda_C)
     signs = (
         tuple(
@@ -365,7 +357,7 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
             for i in range(n)
         ),
     )
-    if any(_c_inertia(s) != (0, 0, n) for s in signs):
+    if any(numerics.inertia(s) != (0, 0, n) for s in signs):
         raise CIStageError(
             "no_admitted_root", "projector spectral signs are unresolved"
         )
@@ -373,7 +365,7 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
         tuple(left[i][j] + right[i][j] - cutoff * eye[i][j] for j in range(n))
         for i in range(n)
     )
-    gap = 1 / _opnorm(_c_inverse(shifted))
+    gap = 1 / _opnorm(numerics.inverse(shifted))
     error = _norm(
         a[i][j] - left[i][j] - right[i][j] for i in range(n) for j in range(n)
     )
@@ -392,9 +384,9 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
     """
     inputs, ref = point.inputs, point.inputs.geometry.reference
     graph, p = ref.graph, ref.profile.params_resolved.candidate
-    h = _c_exact(inputs.geometry.one_form_hodge.matrix)
+    h = numerics.exact_matrix(inputs.geometry.one_form_hodge.matrix)
     b = _im(graph.incidence)
-    bt, ih = tuple(zip(*b, strict=True)), _im(_c_inverse(h))
+    bt, ih = tuple(zip(*b, strict=True)), _im(numerics.inverse(h))
     c, j = (
         _im(tuple((x,) for x in inputs.current.C)),
         _im(tuple((x,) for x in current.values)),
@@ -404,7 +396,7 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
         assert isinstance(p, CandidateAParams)
         w = inputs.current.W_A
         assert w is not None
-        href = _c_exact(ref.pairings.one_form.matrix)
+        href = numerics.exact_matrix(ref.pairings.one_form.matrix)
         potential_h = _im(
             tuple(
                 tuple(
@@ -498,7 +490,7 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
                 )
             )
             q = _imm(retained, _imm(ih, ih))
-            qi = _imm(_im(_c_mm(h, h)), _iinverse(retained))
+            qi = _imm(_im(numerics.matmul(h, h)), _iinverse(retained))
             flux = tuple(
                 (Fraction(p.chi_C) * row[0],)
                 for row in _imm(qi, _imm(resolvent, _imm(q, j)))
@@ -510,7 +502,7 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
     )
     stars = tuple(set(graph.star(v)) for v in graph.live_node_ids)
     counts = [sum(i in star for star in stars) for i in range(len(h))]
-    href = _c_exact(ref.pairings.one_form.matrix)
+    href = numerics.exact_matrix(ref.pairings.one_form.matrix)
     gain = Fraction(ref.profile.params_resolved.geometry.kappa_H) * _gain(point)
     old = _old_carrier(inputs)
     geometry_gain = Fraction(ref.profile.params_resolved.geometry.kappa_H)
@@ -779,12 +771,12 @@ def _a_read_bounds(
     ref = point.inputs.geometry.reference
     p = ref.profile.params_resolved.candidate
     assert isinstance(p, CandidateAParams)
-    b = _c_exact(ref.graph.incidence)
-    gram = _c_mm(_c_transpose(b), b)
+    b = numerics.exact_matrix(ref.graph.incidence)
+    gram = numerics.matmul(numerics.transpose(b), b)
     c = tuple(Fraction(x) for x in point.inputs.current.C)
     dc = tuple(
         sum((row[i] * c[i] for i in range(len(c))), Fraction())
-        for row in _c_transpose(b)
+        for row in numerics.transpose(b)
     )
     dc_norm = _norm(dc)
     weights = point.inputs.current.W_A
@@ -903,15 +895,15 @@ def _c_read_bounds(
 ) -> dict[str, Any]:
     """Physical-coordinate bounds; retained positivity is not a flux margin."""
     ref, p = point.inputs.geometry.reference, point.algebra.transport.params
-    b = _c_exact(ref.graph.incidence)
-    bt = _c_transpose(b)
-    b2 = _opnorm(_c_mm(bt, b))
-    stiffness = _c_mm(_c_mm(b, _c_exact(ref.pairings.one_form.matrix)), bt)
+    b = numerics.exact_matrix(ref.graph.incidence)
+    bt = numerics.transpose(b)
+    b2 = _opnorm(numerics.matmul(bt, b))
+    stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
     shifted = tuple(
         tuple(x - (Fraction(p.Lambda_C) if i == j else 0) for j, x in enumerate(row))
         for i, row in enumerate(stiffness)
     )
-    inverse = _c_inverse(shifted)
+    inverse = numerics.inverse(shifted)
     invnorm = _opnorm(inverse)
     gap = 1 / invnorm - b2 * radius
     _require(gap > 0, "C CI ball reaches an uncertified selector stratum boundary")

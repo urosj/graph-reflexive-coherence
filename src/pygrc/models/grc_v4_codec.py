@@ -24,7 +24,7 @@ from threading import Lock
 from types import ModuleType
 from typing import Any, Literal, TypeAlias, cast
 
-from .grc_v4_linear import _MatrixFacts
+from .grc_v4_linear import MatrixReuse, _MatrixFacts
 
 JSONValue: TypeAlias = (
     "None | bool | int | float | str | list[JSONValue] | dict[str, JSONValue]"
@@ -416,10 +416,11 @@ class _OperationContext:
 
     __slots__ = ("assets", "evidence", "matrix_facts", "published")
 
-    def __init__(self, assets: tuple[dict[str, JSONValue], bytes], evidence: Any):
+    def __init__(self, assets: tuple[dict[str, JSONValue], bytes], evidence: Any,
+                 matrix_reuse: MatrixReuse):
         self.assets = assets
         self.evidence = evidence
-        self.matrix_facts = _MatrixFacts()
+        self.matrix_facts = _MatrixFacts(reuse=matrix_reuse)
         self.published = False
 
 
@@ -437,9 +438,15 @@ def _load_contract_schema() -> tuple[dict[str, JSONValue], bytes]:
 
 
 @contextmanager
-def _operation_contract_assets(evidence=None):
+def _operation_contract_assets(
+    evidence: Any = None, *, matrix_reuse: MatrixReuse | None = None,
+) -> Iterator[_OperationContext]:
     """Enter one verified scope; unpublished returns receive a fresh exit check."""
-    context = _OperationContext(_read_contract_schema(), evidence)
+    parent = _OPERATION_CONTEXT.get()
+    if matrix_reuse is None:
+        matrix_reuse = (MatrixReuse.AUTOMATIC if parent is None
+                        else parent.matrix_facts.reuse)
+    context = _OperationContext(_read_contract_schema(), evidence, matrix_reuse)
     token = _OPERATION_CONTEXT.set(context)
     try:
         yield context

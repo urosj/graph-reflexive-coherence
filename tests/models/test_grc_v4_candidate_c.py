@@ -20,6 +20,8 @@ from types import ModuleType
 from typing import Any, Callable, Iterator
 import unittest
 
+from pygrc.models import grc_v4_numerics as numerics
+
 from pygrc.models.grc_v4_candidate_c import CandidateCTransport
 from pygrc.models.grc_v4_codec import canonical_json_bytes, payload_identity
 from pygrc.models.grc_v4_geometry import (
@@ -708,7 +710,7 @@ class CandidateCCurrentTests(unittest.TestCase):
                 )
 
     def test_frozen_weighted_three_node_algebra_vector(self) -> None:
-        from pygrc.models.grc_v4_candidate_c import _CandidateCAlgebra, _c_solve
+        from pygrc.models.grc_v4_candidate_c import (_CandidateCAlgebra)
         from pygrc.models.grc_v4_geometry import VertexScalar, reference_pairings
 
         vector = json.loads(
@@ -752,7 +754,7 @@ class CandidateCCurrentTests(unittest.TestCase):
             graph,
             tuple(
                 r[0]
-                for r in _c_solve(
+                for r in numerics.solve(
                     algebra.current_block,
                     tuple((x,) for x in algebra.baseline.values),
                     policy,
@@ -863,7 +865,6 @@ class CandidateCCurrentTests(unittest.TestCase):
             self.assertEqual(actual.algebra.selector.rank, rank)
 
     def test_exact_inertia_handles_zero_diagonal_pivots(self) -> None:
-        from pygrc.models.grc_v4_candidate_c import _c_inertia
 
         for matrix, expected in [
             (((0, 2), (2, 0)), (1, 0, 1)),
@@ -873,7 +874,7 @@ class CandidateCCurrentTests(unittest.TestCase):
             (((-1, 0), (0, 2)), (1, 0, 1)),
         ]:
             self.assertEqual(
-                _c_inertia(tuple(tuple(Fraction(x) for x in row) for row in matrix)),
+                numerics.inertia(tuple(tuple(Fraction(x) for x in row) for row in matrix)),
                 expected,
             )
 
@@ -1124,21 +1125,20 @@ class CandidateCCurrentTests(unittest.TestCase):
     def test_conditioning_bounds_are_checked_in_actual_euclidean_coordinates(
         self,
     ) -> None:
-        from pygrc.models.grc_v4_candidate_c import _c_condition
 
         # Orthogonally rotated singular values 4 and 2: exact equality admits.
-        cert = _c_condition(((3, 1), (1, 3)), 2, "physical test")
+        cert = numerics.condition(((3, 1), (1, 3)), 2, "physical test")
         self.assertEqual(cert["condition_upper_squared"], "4")
         with self.assertRaisesRegex(ValueError, "conditioning"):
-            _c_condition(((3, 1), (1, 3)), math.nextafter(2, 0), "physical test")
+            numerics.condition(((3, 1), (1, 3)), math.nextafter(2, 0), "physical test")
         self.assertEqual(
-            _c_condition(((1, 0), (0, 1)), 1, "identity")["condition_upper_squared"],
+            numerics.condition(((1, 0), (0, 1)), 1, "identity")["condition_upper_squared"],
             "1",
         )
         # A similarity retains eigenvalues but can lose a Euclidean margin.
-        _c_condition(((0.5, 0), (0, 1)), 2, "retained")
+        numerics.condition(((0.5, 0), (0, 1)), 2, "retained")
         with self.assertRaisesRegex(ValueError, "conditioning"):
-            _c_condition(((0.5, 5), (0, 1)), 2, "physical similarity")
+            numerics.condition(((0.5, 5), (0, 1)), 2, "physical similarity")
 
     def test_exact_current_singularity_is_not_hidden_by_rounded_resolvent(self) -> None:
         from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
@@ -1315,20 +1315,19 @@ class CandidateCCurrentTests(unittest.TestCase):
         )
 
     def test_tiny_residuals_cannot_underflow_into_zero_tolerance_success(self) -> None:
-        from pygrc.models.grc_v4_candidate_c import _c_residual_pass, _c_solve
 
         policy = current_fixture().geometry.reference.profile.params_resolved.solver
         zero = replace(policy, absolute_tolerance=0, relative_tolerance=0)
-        self.assertFalse(_c_residual_pass((Fraction(1, 10**500),), (Fraction(),), zero))
+        self.assertFalse(numerics.residual_pass((Fraction(1, 10**500),), (Fraction(),), zero))
         self.assertTrue(
-            _c_residual_pass(
+            numerics.residual_pass(
                 (Fraction(1),),
                 (Fraction(1),),
                 replace(policy, absolute_tolerance=1, relative_tolerance=0),
             )
         )
         self.assertFalse(
-            _c_residual_pass(
+            numerics.residual_pass(
                 (Fraction(1),),
                 (Fraction(1),),
                 replace(
@@ -1339,9 +1338,9 @@ class CandidateCCurrentTests(unittest.TestCase):
             )
         )
         with self.assertRaisesRegex(ValueError, "residual"):
-            _c_solve(((3,),), ((1,),), zero, "one third", [])
+            numerics.solve(((3,),), ((1,),), zero, "one third", [])
         with self.assertRaisesRegex(ValueError, "residual"):
-            _c_solve(((3,),), ((5e-324,),), zero, "subnormal rhs", [])
+            numerics.solve(((3,),), ((5e-324,),), zero, "subnormal rhs", [])
 
     def test_stage_declarations_reject_unsupported_policies(self) -> None:
         from pygrc.models.grc_v4_candidate_c import CandidateCCurrent

@@ -14,6 +14,7 @@ from fractions import Fraction
 import math
 from typing import Any, TYPE_CHECKING, cast
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import (
     CandidateACurrent,
     CandidateADifferentialReference,
@@ -21,14 +22,7 @@ from .grc_v4_candidate_a import (
     CandidateAWriter,
     ADMITTED_HISTORY_POLICIES,
 )
-from .grc_v4_candidate_c import (
-    CandidateCCurrent,
-    CandidateCStageError,
-    _c_exact,
-    _c_inverse,
-    _c_mm,
-    _c_transpose,
-)
+from .grc_v4_candidate_c import (CandidateCCurrent, CandidateCStageError)
 
 # Shared exact norm/exponential utilities; standalone PC invokes no CI root.
 # Composite declarations also resolve the explicit CI+PC domain.
@@ -235,7 +229,7 @@ def _descriptor_bound(
                     a[k][column] += w * delta[k] * delta[column]
         bound = max(
             bound,
-            _opnorm(_c_inverse(tuple(map(tuple, a))))
+            _opnorm(numerics.inverse(tuple(map(tuple, a))))
             * rhs
             * _sqrt_upper(Fraction(2))
             * radius,
@@ -289,9 +283,9 @@ class PCEnvelopeCertificate:
             lower > 0 and upper / lower <= limit,
             "PC whole-ball geometry image is not SPD/conditioning certified",
         )
-        b = _c_exact(ref.graph.incidence)
-        bt = _c_transpose(b)
-        b2 = _opnorm(_c_mm(bt, b))
+        b = numerics.exact_matrix(ref.graph.incidence)
+        bt = numerics.transpose(b)
+        b2 = _opnorm(numerics.matmul(bt, b))
         dc = _opnorm(bt) * Fraction(chart.resource_radius)
         extra: dict[str, Any] = {}
         if isinstance(p, CandidateAParams):
@@ -354,7 +348,7 @@ class PCEnvelopeCertificate:
             assert isinstance(p, CandidateCParams)
             if self.differential_reference is not None:
                 raise TypeError("C_PC has no A differential reference")
-            stiffness = _c_mm(_c_mm(b, _c_exact(ref.pairings.one_form.matrix)), bt)
+            stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
             shifted = tuple(
                 tuple(
                     x - (Fraction(p.Lambda_C) if i == j else 0)
@@ -363,7 +357,7 @@ class PCEnvelopeCertificate:
                 for i, row in enumerate(stiffness)
             )
             try:
-                shifted_inverse = _c_inverse(shifted)
+                shifted_inverse = numerics.inverse(shifted)
             except CandidateCStageError as exc:
                 if exc.disposition != "singular":
                     raise

@@ -11,10 +11,9 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass, field
 from fractions import Fraction
-from typing import TypeAlias
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_codec import (
-    _OPERATION_CONTEXT,
     JSONValue,
     V4SchemaError,
     _dependency,
@@ -36,9 +35,9 @@ from .grc_v4_geometry import (
     _identity,
     _require_coordinates,
 )
-from .grc_v4_linear import _ConditionFact, _InverseFact
-from .grc_v4_profile import CandidateCParams, GRCV4Profile, SolverPolicy
-from .grc_v4_state import FrozenJSONMap, SolverDisposition, _number, _vector
+from .grc_v4_numerics import MatrixError as CandidateCStageError
+from .grc_v4_profile import CandidateCParams, GRCV4Profile
+from .grc_v4_state import FrozenJSONMap, _number, _vector
 from .grc_v4_transport import CandidateCMobility, candidate_c_structural_hodge
 
 
@@ -158,7 +157,6 @@ class CandidateCTransport:
         return cls.from_payload(decode_canonical_json(data))
 
 
-_CExact: TypeAlias = tuple[tuple[Fraction, ...], ...]
 C_STAGE_NUMERICS = "grcv4-c-stage-exact-linear-binary64-v1"
 
 
@@ -180,322 +178,6 @@ def _fixed_current_policy(profile: GRCV4Profile) -> bool:
             and policy.solver_kind == "fixed_point"
         )
     )
-
-
-class CandidateCStageError(ValueError):
-    """Observed numeric failure; the operation owner supplies stage and receipt.
-
-    Residual rejection means no numerically admitted root was produced, not
-    proof that the underlying exact constitutive equation lacks a solution.
-    """
-
-    def __init__(self, disposition: SolverDisposition, message: str) -> None:
-        if disposition not in (
-            "domain_failure",
-            "singular",
-            "conditioning_failure",
-            "nonfinite",
-            "no_admitted_root",
-            "multiple_admitted_roots",
-        ):
-            raise ValueError("expected a failed C stage disposition")
-        super().__init__(message)
-        self.disposition = disposition
-
-
-def _c_exact(matrix: Matrix) -> _CExact:
-    return tuple(tuple(Fraction(x) for x in row) for row in matrix)
-
-
-def _c_float(matrix: _CExact) -> Matrix:
-    try:
-        return tuple(tuple(_computed(float(x)) for x in row) for row in matrix)
-    except OverflowError as exc:
-        raise CandidateCStageError(
-            "nonfinite", "C stage result is not finite binary64"
-        ) from exc
-
-
-def _c_transpose(matrix: _CExact) -> _CExact:
-    return tuple(zip(*matrix, strict=True))
-
-
-def _c_mm(left: _CExact, right: _CExact) -> _CExact:
-    return tuple(
-        tuple(
-            sum((a * b for a, b in zip(row, col, strict=True)), Fraction())
-            for col in _c_transpose(right)
-        )
-        for row in left
-    )
-
-
-def _c_product(left: Matrix, right: Matrix) -> Matrix:
-    return _c_float(_c_mm(_c_exact(left), _c_exact(right)))
-
-
-def _c_eye(size: int) -> Matrix:
-    return tuple(tuple(float(i == j) for j in range(size)) for i in range(size))
-
-
-def _c_apply(matrix: Matrix, values: tuple[float, ...]) -> tuple[float, ...]:
-    result = _c_float(_c_mm(_c_exact(matrix), tuple((Fraction(x),) for x in values)))
-    return tuple(row[0] for row in result)
-
-
-def _c_inverse(matrix: _CExact) -> _CExact:
-    """Exact inverse reuse by immutable coefficients within the current operation."""
-    context = _OPERATION_CONTEXT.get()
-    facts = None if context is None else context.matrix_facts
-    if facts is not None:
-        fact = facts.find(matrix)
-        if fact is not None:
-            return fact.inverse
-    inverse = _c_inverse_uncached(matrix)
-    if facts is not None:
-        facts.remember(_InverseFact(matrix, inverse))
-    return inverse
-
-
-def _c_inverse_uncached(matrix: _CExact) -> _CExact:
-    """Exact elimination of the supplied coefficients; never a pseudoinverse."""
-    n = len(matrix)
-    rows = [
-        list(row) + [Fraction(i == j) for j in range(n)] for i, row in enumerate(matrix)
-    ]
-    for j in range(n):
-        pivot = next((i for i in range(j, n) if rows[i][j]), None)
-        if pivot is None:
-            raise CandidateCStageError(
-                "singular", "singular C stage block; no fallback"
-            )
-        rows[j], rows[pivot] = rows[pivot], rows[j]
-        divisor = rows[j][j]
-        rows[j] = [x / divisor for x in rows[j]]
-        for i in range(n):
-            if i != j:
-                factor = rows[i][j]
-                rows[i] = [
-                    a - factor * b for a, b in zip(rows[i], rows[j], strict=True)
-                ]
-    return tuple(tuple(row[n:]) for row in rows)
-
-
-def _c_inertia(matrix: _CExact) -> tuple[int, int, int]:
-    """Exact symmetric congruences, including a 2x2 pivot when diagonals vanish.
-
-    Returns negative, zero, positive counts. No eigensolver tolerance decides
-    whether the declared cutoff is exactly on the supplied mathematical spectrum.
-    """
-    rows = [list(row) for row in matrix]
-    negative = positive = 0
-    while rows:
-        n = len(rows)
-        pivot = next((i for i in range(n) if rows[i][i]), None)
-        if pivot is not None:
-            order = [pivot] + [i for i in range(n) if i != pivot]
-            rows = [[rows[i][j] for j in order] for i in order]
-            d = rows[0][0]
-            negative += int(d < 0)
-            positive += int(d > 0)
-            rows = [
-                [rows[i][j] - rows[i][0] * rows[0][j] / d for j in range(1, n)]
-                for i in range(1, n)
-            ]
-        else:
-            pair = next(
-                ((i, j) for i in range(n) for j in range(i + 1, n) if rows[i][j]), None
-            )
-            if pair is None:
-                return negative, n, positive
-            i, j = pair
-            order = [i, j] + [k for k in range(n) if k not in pair]
-            rows = [[rows[i][j] for j in order] for i in order]
-            b = rows[0][1]
-            rows = [
-                [
-                    rows[i][j] - (rows[i][0] * rows[1][j] + rows[i][1] * rows[0][j]) / b
-                    for j in range(2, n)
-                ]
-                for i in range(2, n)
-            ]
-            negative += 1
-            positive += 1
-    return negative, 0, positive
-
-
-def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
-    """Certify a Euclidean 2-norm condition bound on these coordinates.
-
-    SVD proposes endpoints only. Exact PSD tests on the normalized Gram matrix
-    certify the endpoints, including equality. Unresolved bounds fail closed.
-    """
-    exact = _c_exact(matrix)
-    return _c_condition_certificate(
-        _c_condition_bound(exact, limit, label), limit, label
-    )
-
-
-def _c_condition_bound(exact: _CExact, limit: float, label: str) -> Fraction:
-    """Reuse a successful proof for exactly these coefficients and this limit."""
-    context = _OPERATION_CONTEXT.get()
-    facts = None if context is None else context.matrix_facts
-    exact_limit = Fraction(limit)
-    if facts is not None:
-        fact = facts.find(exact, exact_limit)
-        if fact is not None:
-            return fact.condition_upper_squared
-    bound = _c_condition_bound_uncached(exact, limit, label)
-    if facts is not None:
-        facts.remember(_ConditionFact(exact, exact_limit, bound))
-    return bound
-
-
-def _c_condition_bound_uncached(exact: _CExact, limit: float, label: str) -> Fraction:
-    """The exact conditioning algorithm; failure always uses the current label."""
-    scale = max(abs(x) for row in exact for x in row)
-    if not scale:
-        raise CandidateCStageError("singular", "singular " + label)
-    normalized = tuple(tuple(x / scale for x in row) for row in exact)
-    gram = _c_mm(_c_transpose(normalized), normalized)
-    n = len(gram)
-    if not any(gram[i][j] for i in range(n) for j in range(n) if i != j):
-        lower, upper = (
-            min(gram[i][i] for i in range(n)),
-            max(gram[i][i] for i in range(n)),
-        )
-        if lower <= 0:
-            raise CandidateCStageError("singular", "singular " + label)
-    elif n == 2:
-        # Squaring the exact 2x2 Gram eigenvalue ratio inequality avoids
-        # deciding an equality from rounded singular-value endpoints.
-        a, b, d = gram[0][0], gram[0][1], gram[1][1]
-        if a * d <= b * b:
-            raise CandidateCStageError("singular", "singular " + label)
-        trace, discriminant = a + d, (a - d) ** 2 + 4 * b * b
-        k2 = Fraction(limit) ** 2
-        if k2 < 1 or (k2 - 1) ** 2 * trace**2 < (k2 + 1) ** 2 * discriminant:
-            raise CandidateCStageError(
-                "conditioning_failure", "conditioning limit exceeded: " + label
-            )
-        numerator = math.isqrt(discriminant.numerator)
-        denominator = math.isqrt(discriminant.denominator)
-        if (
-            numerator**2 == discriminant.numerator
-            and denominator**2 == discriminant.denominator
-        ):
-            root = Fraction(numerator, denominator)
-            lower, upper = trace - root, trace + root
-        else:
-            lower, upper = Fraction(1), k2
-    else:
-        np = _dependency("numpy")
-        try:
-            singular = np.linalg.svd(np.array(_c_float(normalized)), compute_uv=False)
-        except np.linalg.LinAlgError as exc:
-            raise CandidateCStageError(
-                "conditioning_failure", "conditioning decomposition failed: " + label
-            ) from exc
-        if not np.all(np.isfinite(singular)):
-            raise CandidateCStageError(
-                "nonfinite", "nonfinite conditioning decomposition: " + label
-            )
-        if min(singular) <= 0:
-            raise CandidateCStageError(
-                "conditioning_failure", "conditioning cannot resolve " + label
-            )
-        small, large = float(min(singular)), float(max(singular))
-        for attempt in range(32):
-            if attempt:
-                error = math.ldexp(large, attempt - 52)
-                small_bound, large_bound = small - error, large + error
-            else:
-                small_bound, large_bound = small, large
-            if small_bound <= 0 or not math.isfinite(large_bound):
-                raise CandidateCStageError(
-                    "conditioning_failure", "conditioning cannot resolve " + label
-                )
-            lower, upper = Fraction(small_bound) ** 2, Fraction(large_bound) ** 2
-            low_test = tuple(
-                tuple(x - (lower if i == j else 0) for j, x in enumerate(row))
-                for i, row in enumerate(gram)
-            )
-            high_test = tuple(
-                tuple((upper if i == j else 0) - x for j, x in enumerate(row))
-                for i, row in enumerate(gram)
-            )
-            if _c_inertia(low_test)[0] == 0 and _c_inertia(high_test)[0] == 0:
-                break
-        else:
-            raise CandidateCStageError(
-                "conditioning_failure", "conditioning certificate unresolved: " + label
-            )
-    bound = upper / lower
-    if bound > Fraction(limit) ** 2:
-        raise CandidateCStageError(
-            "conditioning_failure", "conditioning limit exceeded: " + label
-        )
-    return bound
-
-
-def _c_condition_certificate(
-    bound: Fraction, limit: float, label: str
-) -> FrozenJSONMap:
-    return FrozenJSONMap(
-        {
-            "block": label,
-            "norm": "euclidean_2",
-            "condition_upper_squared": str(bound),
-            "limit": limit,
-        }
-    )
-
-
-def _c_residual_pass(
-    residual: tuple[Fraction, ...], rhs: tuple[Fraction, ...], policy: SolverPolicy
-) -> bool:
-    """||r||2 <= atol + rtol max(1,||rhs||2), compared without underflow."""
-    r2 = sum((x * x for x in residual), Fraction())
-    b2 = max(Fraction(1), sum((x * x for x in rhs), Fraction()))
-    a, b = Fraction(policy.absolute_tolerance), Fraction(policy.relative_tolerance)
-    excess = r2 - a * a - b * b * b2
-    return excess <= 0 or excess * excess <= 4 * a * a * b * b * b2
-
-
-def _c_solve(
-    matrix: Matrix,
-    rhs: Matrix,
-    policy: SolverPolicy,
-    label: str,
-    certificates: list[FrozenJSONMap],
-) -> Matrix:
-    exact = _c_exact(matrix)
-    inverse = _c_inverse(exact)
-    certificates.append(
-        _c_condition_certificate(
-            _c_condition_bound(exact, policy.conditioning_limit, label),
-            policy.conditioning_limit,
-            label,
-        )
-    )
-    exact_rhs = _c_exact(rhs)
-    result = _c_float(_c_mm(inverse, exact_rhs))
-    observed = _c_mm(exact, _c_exact(result))
-    for residual, target in zip(
-        _c_transpose(
-            tuple(
-                tuple(a - b for a, b in zip(left, right, strict=True))
-                for left, right in zip(observed, exact_rhs, strict=True)
-            )
-        ),
-        _c_transpose(exact_rhs),
-        strict=True,
-    ):
-        if not _c_residual_pass(residual, target, policy):
-            raise CandidateCStageError(
-                "no_admitted_root", "declared residual tolerance failed: " + label
-            )
-    return result
 
 
 def _c_components(graph: GRCV4Graph) -> tuple[tuple[int, ...], ...]:
@@ -546,8 +228,8 @@ class CandidateCSelector:
         if not n or any(h0[i][j] for i in range(n) for j in range(n) if i != j):
             raise ValueError("local C selector requires nonempty diagonal vertex Hodge")
         mu = tuple(Fraction(h0[i][i]) for i in range(n))
-        incidence = _c_exact(graph.incidence)
-        stiffness = _c_mm(_c_mm(incidence, _c_exact(h1)), _c_transpose(incidence))
+        incidence = numerics.exact_matrix(graph.incidence)
+        stiffness = numerics.matmul(numerics.matmul(incidence, numerics.exact_matrix(h1)), numerics.transpose(incidence))
         shifted = tuple(
             tuple(
                 x - (Fraction(cutoff) * mu[i] if i == j else 0)
@@ -555,7 +237,7 @@ class CandidateCSelector:
             )
             for i, row in enumerate(stiffness)
         )
-        rank, zeros, _ = _c_inertia(shifted)
+        rank, zeros, _ = numerics.inertia(shifted)
         if zeros:
             raise CandidateCStageError(
                 "domain_failure", "selector cutoff lies on the exact spectrum"
@@ -611,12 +293,12 @@ class CandidateCSelector:
             weighted = tuple(
                 tuple(mu[i] * x for x in row) for i, row in enumerate(physical)
             )
-            gram = _c_mm(_c_transpose(physical), weighted)
+            gram = numerics.matmul(numerics.transpose(physical), weighted)
             defect = max(
                 sum((abs(x - int(i == j)) for j, x in enumerate(row)), Fraction())
                 for i, row in enumerate(gram)
             )
-            residual = _c_mm(stiffness, physical)
+            residual = numerics.matmul(stiffness, physical)
             residual_l1 = sum(
                 (
                     abs(
@@ -651,19 +333,19 @@ class CandidateCSelector:
             weighted_chosen = tuple(
                 tuple(mu[i] * x for x in row) for i, row in enumerate(chosen)
             )
-            chosen_gram = _c_mm(_c_transpose(chosen), weighted_chosen)
-            projection = _c_mm(
-                _c_mm(chosen, _c_inverse(chosen_gram)), _c_transpose(weighted_chosen)
+            chosen_gram = numerics.matmul(numerics.transpose(chosen), weighted_chosen)
+            projection = numerics.matmul(
+                numerics.matmul(chosen, numerics.inverse(chosen_gram)), numerics.transpose(weighted_chosen)
             )
             certificate.update(
                 method="exact_inertia_and_generalized_eigen_residual",
                 eigen_error_upper=str(error),
                 gap_lower=str(gap - error),
             )
-        selected = _c_float(
-            _c_mm(projection, tuple((Fraction(x),) for x in self.resource.values))
+        selected = numerics.binary64_matrix(
+            numerics.matmul(projection, tuple((Fraction(x),) for x in self.resource.values))
         )
-        object.__setattr__(self, "projector", _c_float(projection))
+        object.__setattr__(self, "projector", numerics.binary64_matrix(projection))
         object.__setattr__(
             self, "selected", VertexScalar(graph, tuple(row[0] for row in selected))
         )
@@ -783,7 +465,7 @@ class _CandidateCAlgebra:
         pre = self.pairings.one_form.matrix
         retained = OneFormHodge(
             graph,
-            _c_float(
+            numerics.binary64_matrix(
                 tuple(
                     tuple(
                         Fraction(deformation[i])
@@ -795,15 +477,15 @@ class _CandidateCAlgebra:
                 )
             ),
         )
-        b = _c_exact(graph.incidence)
-        bt = _c_transpose(b)
+        b = numerics.exact_matrix(graph.incidence)
+        bt = numerics.transpose(b)
         # Mathematical regularity precedes binary64 resolvent construction.
         # L is singular iff ((1-zeta*chi) I + tau Delta) is singular; a
         # rounded inverse may otherwise turn an exact zero mode into a tiny
         # nonzero one, even in a one-dimensional (condition-number-one) block.
-        exact_laplacian = _c_mm(
-            _c_mm(_c_mm(bt, _c_inverse(_c_exact(self.pairings.vertex.matrix))), b),
-            _c_exact(retained.matrix),
+        exact_laplacian = numerics.matmul(
+            numerics.matmul(numerics.matmul(bt, numerics.inverse(numerics.exact_matrix(self.pairings.vertex.matrix))), b),
+            numerics.exact_matrix(retained.matrix),
         )
         beta = Fraction(params.zeta_C) * Fraction(params.chi_C)
         regularity_block = tuple(
@@ -813,33 +495,33 @@ class _CandidateCAlgebra:
             )
             for i, row in enumerate(exact_laplacian)
         )
-        _c_inverse(regularity_block)
-        gradient = _c_mm(bt, tuple((Fraction(c),) for c in self.resource.values))
+        numerics.inverse(regularity_block)
+        gradient = numerics.matmul(bt, tuple((Fraction(c),) for c in self.resource.values))
 
-        def potential(hodge: Matrix) -> _CExact:
+        def potential(hodge: Matrix) -> numerics.ExactMatrix:
             return tuple(
                 tuple(Fraction(params.kappa_Phi_C) * x for x in row)
-                for row in _c_mm(_c_mm(b, _c_exact(hodge)), gradient)
+                for row in numerics.matmul(numerics.matmul(b, numerics.exact_matrix(hodge)), gradient)
             )
 
         phi, generated = potential(retained.matrix), potential(pre)
-        phi_values = tuple(row[0] for row in _c_float(phi))
-        baseline = _c_float(
+        phi_values = tuple(row[0] for row in numerics.binary64_matrix(phi))
+        baseline = numerics.binary64_matrix(
             tuple(
                 tuple(-Fraction(m) * x for x in row)
                 for m, row in zip(
                     self.transport.mobility.diagonal,
-                    _c_mm(bt, tuple((Fraction(x),) for x in phi_values)),
+                    numerics.matmul(bt, tuple((Fraction(x),) for x in phi_values)),
                     strict=True,
                 )
             )
         )
         certificates: list[FrozenJSONMap] = []
-        eye = _c_eye(len(pre))
-        flat = _c_solve(pre, eye, policy, "structural flat map", certificates)
+        eye = numerics.identity(len(pre))
+        flat = numerics.solve(pre, eye, policy, "structural flat map", certificates)
         ident = tuple(
             zip(
-                *_c_solve(
+                *numerics.solve(
                     pre,
                     tuple(zip(*retained.matrix, strict=True)),
                     policy,
@@ -849,22 +531,22 @@ class _CandidateCAlgebra:
                 strict=True,
             )
         )
-        inverse_ident = _c_solve(
+        inverse_ident = numerics.solve(
             ident, eye, policy, "inverse retained identification", certificates
         )
-        q = _c_product(ident, flat)
-        h0_inverse_b = _c_solve(
+        q = numerics.product(ident, flat)
+        h0_inverse_b = numerics.solve(
             self.pairings.vertex.matrix,
             graph.incidence,
             policy,
             "vertex Hodge inverse",
             certificates,
         )
-        laplacian = _c_product(
+        laplacian = numerics.product(
             tuple(zip(*graph.incidence, strict=True)),
-            _c_product(h0_inverse_b, retained.matrix),
+            numerics.product(h0_inverse_b, retained.matrix),
         )
-        resolvent_block = _c_float(
+        resolvent_block = numerics.binary64_matrix(
             tuple(
                 tuple(
                     Fraction(i == j) + Fraction(params.tau_C) * Fraction(x)
@@ -873,15 +555,15 @@ class _CandidateCAlgebra:
                 for i, row in enumerate(laplacian)
             )
         )
-        response = _c_solve(
+        response = numerics.solve(
             resolvent_block, eye, policy, "retained resolvent", certificates
         )
         flux_response = (
             eye
             if params.tau_C == 0
-            else _c_solve(
+            else numerics.solve(
                 q,
-                _c_product(response, q),
+                numerics.product(response, q),
                 policy,
                 "physical Q_C similarity",
                 certificates,
@@ -889,11 +571,11 @@ class _CandidateCAlgebra:
         )
         if params.tau_C == 0:
             certificates.append(
-                _c_condition(
+                numerics.condition(
                     q, policy.conditioning_limit, "physical Q_C identification"
                 )
             )
-        current_block = _c_float(
+        current_block = numerics.binary64_matrix(
             tuple(
                 tuple(
                     Fraction(i == j)
@@ -904,9 +586,9 @@ class _CandidateCAlgebra:
             )
         )
         # Condition the actual physical block, never a retained-space margin.
-        _c_inverse(_c_exact(current_block))
+        numerics.inverse(numerics.exact_matrix(current_block))
         certificates.append(
-            _c_condition(
+            numerics.condition(
                 current_block, policy.conditioning_limit, "physical total-current block"
             )
         )
@@ -916,13 +598,13 @@ class _CandidateCAlgebra:
             "deformation": deformation,
             "potential": VertexScalar(graph, phi_values),
             "generated_potential": VertexScalar(
-                graph, tuple(row[0] for row in _c_float(generated))
+                graph, tuple(row[0] for row in numerics.binary64_matrix(generated))
             ),
             "retained_potential_increment": VertexScalar(
                 graph,
                 tuple(
                     row[0]
-                    for row in _c_float(
+                    for row in numerics.binary64_matrix(
                         tuple(
                             tuple(a - b for a, b in zip(left, right, strict=True))
                             for left, right in zip(phi, generated, strict=True)
@@ -948,17 +630,17 @@ class _CandidateCAlgebra:
     ) -> CandidateCReadBack:
         graph, params = self.transport.graph, self.transport.params
         _require_coordinates(current, PhysicalFlux, graph)
-        flat = OneForm(graph, _c_apply(self.flat_matrix, current.values))
+        flat = OneForm(graph, numerics.apply(self.flat_matrix, current.values))
         selected = CandidateCSelectedForm(
-            self.retained_hodge, _c_apply(self.identification, flat.values)
+            self.retained_hodge, numerics.apply(self.identification, flat.values)
         )
         response = CandidateCSelectedForm(
-            self.retained_hodge, _c_apply(self.response, selected.values)
+            self.retained_hodge, numerics.apply(self.response, selected.values)
         )
         ungated = (
             flat
             if params.tau_C == 0
-            else OneForm(graph, _c_apply(self.inverse_identification, response.values))
+            else OneForm(graph, numerics.apply(self.inverse_identification, response.values))
         )
         causal = OneForm(
             graph, tuple(_computed(params.chi_C * x) for x in ungated.values)
@@ -969,7 +651,7 @@ class _CandidateCAlgebra:
             )
             if params.tau_C == 0
             else PhysicalFlux(
-                graph, _c_apply(self.pairings.one_form.matrix, causal.values)
+                graph, numerics.apply(self.pairings.one_form.matrix, causal.values)
             )
         )
         return CandidateCReadBack(
@@ -1012,7 +694,7 @@ class CandidateCCurrent:
             self.inputs.geometry.pairings,
         )
         policy = profile.params_resolved.solver
-        result = _c_solve(
+        result = numerics.solve(
             algebra.current_block,
             tuple((x,) for x in algebra.baseline.values),
             policy,
@@ -1027,7 +709,7 @@ class CandidateCCurrent:
                 current.values, algebra.baseline.values, read.flux.values, strict=True
             )
         )
-        if not _c_residual_pass(
+        if not numerics.residual_pass(
             residual, tuple(Fraction(x) for x in algebra.baseline.values), policy
         ):
             raise CandidateCStageError(

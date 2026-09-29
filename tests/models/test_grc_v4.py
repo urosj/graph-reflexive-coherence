@@ -19,6 +19,8 @@ from typing import Any
 import unittest
 from unittest.mock import patch
 
+from pygrc.models import grc_v4_numerics as numerics
+
 from pygrc.models import grc_v4 as api
 from pygrc.models import grc_v4_step as admission
 from pygrc.models.grc_v4_codec import (
@@ -1435,7 +1437,7 @@ class MappedVectorCorrectionAuditTests(unittest.TestCase):
             resolve_profile(negative["input"]["resolved_params"], negative["input"]["profile_identity"])
         negative["input"]["profile_identity"]["params_hash"] = frozen["semantic_admission"]["negative_vectors"][4]["input"]["profile_identity"]["params_hash"]
         self.assertEqual(rebuilt, frozen)
-        original_solve = numerical._c_solve
+        original_solve = numerics.solve
         observed: set[str] = set()
 
         def measured(matrix: Any, rhs: Any, policy: Any, label: str, certificates: Any) -> Any:
@@ -1450,7 +1452,7 @@ class MappedVectorCorrectionAuditTests(unittest.TestCase):
                 self.assertLess(sum((x*x for x in residual), Fraction()), Fraction(2)**-90, label)
             return result
 
-        with patch.object(numerical, "_c_solve", measured):
+        with patch.object(numerics, "solve", measured):
             owner = mapped_candidate_owner(candidate)
             result = owner.apply_topology_event(api.GRCV4MappedTopologyEventRequest.from_payload(candidate["request"]))
             self.assertTrue(result.committed, result)

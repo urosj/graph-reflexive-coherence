@@ -14,8 +14,9 @@ from pathlib import Path
 from fractions import Fraction
 from math import isfinite
 from threading import Lock
-from typing import Any, Self, cast
+from typing import Any, Self, assert_never, cast
 
+from . import grc_v4_numerics as numerics
 from .grc_v4 import (
     GRCV4StepRequestInput,
     GRCV4StepRequest,
@@ -25,7 +26,7 @@ from .grc_v4 import (
     GRCV4RepresentationRequest,
 )
 from ._grc_v4_evidence import _ReceiptEvidence, _lifecycle_identity, _operation_evidence, _own_stage_reference, _seed_receipts
-from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError, _c_exact
+from .grc_v4_candidate_c import (CandidateCCurrent, CandidateCStageError)
 from .grc_v4_candidate_a import CandidateADifferentialReference, CandidateAStageError
 from .grc_v4_codec import (
     COS_SNAPSHOT_LAYOUT_ID,
@@ -159,7 +160,7 @@ def _step_matrix_continuation(step: Any) -> _MatrixContinuation:
     context = _OPERATION_CONTEXT.get()
     if context is None:
         return _MatrixContinuation()
-    profile = step.inputs.geometry.reference.profile
+    profile: GRCV4Profile = step.inputs.geometry.reference.profile
     realization = profile.identity_payload.realization
     if realization == "PC":
         reset, current = step.reset_read, step.restart
@@ -168,11 +169,13 @@ def _step_matrix_continuation(step: Any) -> _MatrixContinuation:
         current = step.restart.selected.point
     elif realization == "RG2b":
         reset, current = step.reset_point, step.restart_point
-    else:
+    elif realization == "OS" or realization == "CI":
         return _MatrixContinuation()
+    else:
+        assert_never(realization)
     return context.matrix_facts.retain(
-        _c_exact(reset.inputs.geometry.one_form_hodge.matrix),
-        _c_exact(current.inputs.geometry.one_form_hodge.matrix),
+        numerics.exact_matrix(reset.inputs.geometry.one_form_hodge.matrix),
+        numerics.exact_matrix(current.inputs.geometry.one_form_hodge.matrix),
         Fraction(profile.params_resolved.solver.conditioning_limit),
     )
 

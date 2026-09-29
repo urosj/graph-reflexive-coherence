@@ -2,6 +2,7 @@
 
 from collections import OrderedDict
 from dataclasses import dataclass
+from enum import Enum
 from fractions import Fraction
 from typing import TypeAlias, overload
 
@@ -10,6 +11,13 @@ _MatrixKey: TypeAlias = tuple[_ExactMatrix, Fraction | None]
 # Primitive callers also use small descriptor and interval blocks. Keep one
 # fixed budget for all facts, independent of graph size and trace length.
 _MAX_MATRIX_FACTS = 64
+
+
+class MatrixReuse(Enum):
+    """Fact calculation policy, independent of scientific solver admission."""
+
+    AUTOMATIC = "automatic"
+    FRESH = "fresh"
 
 
 @dataclass(frozen=True, slots=True)
@@ -54,10 +62,17 @@ class _MatrixContinuation:
 class _MatrixFacts:
     """Keep at most 64 immutable inverse/conditioning facts in one operation."""
 
-    __slots__ = ("_entries",)
+    __slots__ = ("_entries", "_reuse")
 
-    def __init__(self) -> None:
+    def __init__(self, *, reuse: MatrixReuse = MatrixReuse.AUTOMATIC) -> None:
+        if type(reuse) is not MatrixReuse:
+            raise TypeError("expected a MatrixReuse policy")
+        self._reuse = reuse
         self._entries: OrderedDict[_MatrixKey, _MatrixFact] = OrderedDict()
+
+    @property
+    def reuse(self) -> MatrixReuse:
+        return self._reuse
 
     @overload
     def find(
@@ -72,6 +87,8 @@ class _MatrixFacts:
     def find(
         self, matrix: _ExactMatrix, conditioning_limit: Fraction | None = None
     ) -> _MatrixFact | None:
+        if self._reuse is MatrixReuse.FRESH:
+            return None
         key = (matrix, conditioning_limit)
         fact = self._entries.get(key)
         if fact is not None:
@@ -79,6 +96,8 @@ class _MatrixFacts:
         return fact
 
     def remember(self, fact: _MatrixFact) -> None:
+        if self._reuse is MatrixReuse.FRESH:
+            return
         key = (
             fact.matrix,
             None if isinstance(fact, _InverseFact) else fact.conditioning_limit,

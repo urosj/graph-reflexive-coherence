@@ -24,8 +24,8 @@ from fractions import Fraction
 import math
 from typing import TYPE_CHECKING, cast
 
-from .grc_v4_candidate_c import CandidateCStageError, _c_residual_pass, _c_solve
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_codec import JSONValue, canonical_json_bytes, json_value
 from .grc_v4_geometry import (
     GRCV4Graph,
@@ -70,24 +70,13 @@ def _finite_fraction(value: Fraction) -> float:
 
 
 def _solve_spd(a: list[list[Fraction]], b: list[Fraction]) -> tuple[float, ...]:
-    # The declared positive ridge makes these exact normal equations SPD,
-    # including disconnected/isolated nodes and rank-deficient host positions.
-    # Rational elimination avoids intermediate overflow and pivot tolerances.
-    n = len(b)
-    rows = [row[:] + [rhs] for row, rhs in zip(a, b, strict=True)]
-    for k in range(n):
-        pivot = rows[k][k]
-        if pivot <= 0:
-            raise ValueError("A differential normal equations are not positive")
-        for i in range(k + 1, n):
-            gain = rows[i][k] / pivot
-            for j in range(k + 1, n + 1):
-                rows[i][j] -= gain * rows[k][j]
-    answer = [Fraction(0) for _ in range(n)]
-    for i in reversed(range(n)):
-        answer[i] = (
-            rows[i][n] - sum(rows[i][j] * answer[j] for j in range(i + 1, n))
-        ) / rows[i][i]
+    # The ridge admits SPD normal equations; numerical preparation is shared.
+    try:
+        answer = numerics.solve_positive(tuple(map(tuple, a)), tuple(b))
+    except numerics.MatrixError as exc:
+        if exc.disposition == "domain_failure":
+            raise ValueError("A differential normal equations are not positive") from exc
+        raise
     return tuple(_finite_fraction(x) for x in answer)
 
 
@@ -699,7 +688,7 @@ class CandidateACurrent:
         )
         rhs = tuple(map(Fraction, baseline.values))
         if not all(
-            _c_residual_pass(r, rhs, policy) for r in (residual, block_residual)
+            numerics.residual_pass(r, rhs, policy) for r in (residual, block_residual)
         ):
             raise CandidateAStageError(
                 "no_admitted_root", "A physical read-back closure residual failed"
@@ -736,14 +725,14 @@ class CandidateACurrent:
         # Reuse only the existing certified matrix solve/residual arithmetic;
         # no C selector, potential, current or mobility participates in A.
         try:
-            flat = _c_solve(
+            flat = numerics.solve(
                 self.inputs.geometry.one_form_hodge.matrix,
                 tuple((x,) for x in flux.values),
                 ref.profile.params_resolved.solver,
                 "A structural flat map",
                 [],
             )
-        except CandidateCStageError as exc:
+        except numerics.MatrixError as exc:
             raise CandidateAStageError(exc.disposition, str(exc)) from exc
         return CandidateAReadBack(
             source_identity,

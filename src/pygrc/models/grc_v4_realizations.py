@@ -9,22 +9,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field, replace
 from fractions import Fraction
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import (
     ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
     CandidateADifferentialReference,
     CandidateAStageError,
 )
-from .grc_v4_candidate_c import (
-    CandidateCCurrent,
-    CandidateCStageError,
-    _c_exact,
-    _c_float,
-    _c_inertia,
-    _c_inverse,
-    _c_mm,
-    _c_transpose,
-)
+from .grc_v4_candidate_c import (CandidateCCurrent, CandidateCStageError)
 from .grc_v4_geometry import (
     GRCV4Geometry,
     GeometryStageInputs,
@@ -84,7 +76,7 @@ def _c_source(point: CandidateCCurrent) -> K4Tensor:
     increment = (
         tuple((0.0,) * size for _ in range(size))
         if zeta == 0
-        else _c_float(
+        else numerics.binary64_matrix(
             tuple(
                 tuple(Fraction(zeta) * Fraction(x) for x in row)
                 for row in StarAssembly(point.read.causal_flat).matrix
@@ -121,12 +113,12 @@ def _selector_path_segments(
             "domain_failure", "OS geometry update changes selector stratum"
         )
     graph = predictor.current.graph
-    b = _c_exact(graph.incidence)
+    b = numerics.exact_matrix(graph.incidence)
     matrices = []
     cutoff = Fraction(predictor.algebra.transport.params.Lambda_C)
     for point in (predictor, corrector):
-        h = _c_exact(point.inputs.geometry.one_form_hodge.matrix)
-        stiffness = _c_mm(_c_mm(b, h), _c_transpose(b))
+        h = numerics.exact_matrix(point.inputs.geometry.one_form_hodge.matrix)
+        stiffness = numerics.matmul(numerics.matmul(b, h), numerics.transpose(b))
         matrices.append(
             tuple(
                 tuple(x - (cutoff if i == j else 0) for j, x in enumerate(row))
@@ -138,7 +130,7 @@ def _selector_path_segments(
         tuple(y - x for x, y in zip(row, other, strict=True))
         for row, other in zip(a, end, strict=True)
     )
-    neg, _, pos = _c_inertia(delta)
+    neg, _, pos = numerics.inertia(delta)
     if not neg or not pos:
         return 1
     norm = max(sum(abs(x) for x in row) for row in delta)
@@ -151,12 +143,12 @@ def _selector_path_segments(
             tuple(x + mid * d for x, d in zip(row, change, strict=True))
             for row, change in zip(a, delta, strict=True)
         )
-        negative, zero, _ = _c_inertia(center)
+        negative, zero, _ = numerics.inertia(center)
         if zero or negative != rank:
             raise CandidateCStageError(
                 "domain_failure", "OS geometry path crosses selector cutoff"
             )
-        inverse_norm = max(sum(abs(x) for x in row) for row in _c_inverse(center))
+        inverse_norm = max(sum(abs(x) for x in row) for row in numerics.inverse(center))
         if inverse_norm * norm * (hi - lo) / 2 < 1:
             certified += 1
         else:
@@ -214,7 +206,7 @@ class OSSplitResidual:
         t = Fraction(policy.tolerance)
         reference = ref.pairings.one_form.matrix
         admitted = all(
-            _c_inertia(
+            numerics.inertia(
                 tuple(
                     tuple(
                         t * Fraction(h) + sign * r
