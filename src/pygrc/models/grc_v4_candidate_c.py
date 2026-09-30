@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
-from fractions import Fraction
 
 from . import grc_v4_numerics as numerics
 from .grc_v4_codec import (
@@ -22,6 +21,7 @@ from .grc_v4_codec import (
     json_value,
     payload_identity,
 )
+from .grc_v4_exact import exact_number
 from .grc_v4_geometry import (
     GeometryStageInputs,
     GRCV4Graph,
@@ -227,12 +227,12 @@ class CandidateCSelector:
         n = len(h0)
         if not n or any(h0[i][j] for i in range(n) for j in range(n) if i != j):
             raise ValueError("local C selector requires nonempty diagonal vertex Hodge")
-        mu = tuple(Fraction(h0[i][i]) for i in range(n))
+        mu = tuple(exact_number(h0[i][i]) for i in range(n))
         incidence = numerics.exact_matrix(graph.incidence)
         stiffness = numerics.matmul(numerics.matmul(incidence, numerics.exact_matrix(h1)), numerics.transpose(incidence))
         shifted = tuple(
             tuple(
-                x - (Fraction(cutoff) * mu[i] if i == j else 0)
+                x - (exact_number(cutoff) * mu[i] if i == j else 0)
                 for j, x in enumerate(row)
             )
             for i, row in enumerate(stiffness)
@@ -250,15 +250,15 @@ class CandidateCSelector:
         }
         if rank in (0, n):
             projection = tuple(
-                tuple(Fraction(rank == n and i == j) for j in range(n))
+                tuple(exact_number(rank == n and i == j) for j in range(n))
                 for i in range(n)
             )
         elif rank == len(components):
             # The exact weighted kernel projector avoids eigenbasis noise on
             # disconnected graphs and retains every component's zero mode.
-            projection_rows = [[Fraction() for _ in range(n)] for _ in range(n)]
+            projection_rows = [[exact_number() for _ in range(n)] for _ in range(n)]
             for group in components:
-                total = sum((mu[i] for i in group), Fraction())
+                total = sum((mu[i] for i in group), exact_number())
                 for i in group:
                     for j in group:
                         projection_rows[i][j] = mu[j] / total
@@ -270,7 +270,7 @@ class CandidateCSelector:
             for i in range(n):
                 for j in range(i, n):
                     value = _computed(
-                        float(stiffness[i][j] / Fraction(roots[i]) / Fraction(roots[j]))
+                        float(stiffness[i][j] / exact_number(roots[i]) / exact_number(roots[j]))
                     )
                     whitened[i][j] = whitened[j][i] = value
             try:
@@ -285,7 +285,7 @@ class CandidateCSelector:
                 )
             physical = tuple(
                 tuple(
-                    Fraction(_computed(float(vectors[i, j]) / roots[i]))
+                    exact_number(_computed(float(vectors[i, j]) / roots[i]))
                     for j in range(n)
                 )
                 for i in range(n)
@@ -295,7 +295,7 @@ class CandidateCSelector:
             )
             gram = numerics.matmul(numerics.transpose(physical), weighted)
             defect = max(
-                sum((abs(x - int(i == j)) for j, x in enumerate(row)), Fraction())
+                sum((abs(x - int(i == j)) for j, x in enumerate(row)), exact_number())
                 for i, row in enumerate(gram)
             )
             residual = numerics.matmul(stiffness, physical)
@@ -303,25 +303,25 @@ class CandidateCSelector:
                 (
                     abs(
                         residual[i][j]
-                        - mu[i] * physical[i][j] * Fraction(float(values[j]))
+                        - mu[i] * physical[i][j] * exact_number(float(values[j]))
                     )
                     for i in range(n)
                     for j in range(n)
                 ),
-                Fraction(),
+                exact_number(),
             )
             lower_root = math.nextafter(min(roots), 0.0)
-            if defect >= 1 or lower_root <= 0 or Fraction(lower_root) ** 2 > min(mu):
+            if defect >= 1 or lower_root <= 0 or exact_number(lower_root) ** 2 > min(mu):
                 raise CandidateCStageError(
                     "domain_failure", "selector metric certificate failed"
                 )
             # Polar orthonormalization bounds the difference to an orthogonal
             # diagonalization: ||R||/(1-delta) + 4||D||delta/(1-delta).
             error = (
-                residual_l1 / Fraction(lower_root)
-                + 4 * max(abs(Fraction(float(v))) for v in values) * defect
+                residual_l1 / exact_number(lower_root)
+                + 4 * max(abs(exact_number(float(v))) for v in values) * defect
             ) / (1 - defect)
-            gap = min(abs(Fraction(float(v)) - Fraction(cutoff)) for v in values)
+            gap = min(abs(exact_number(float(v)) - exact_number(cutoff)) for v in values)
             if gap <= error or sum(float(v) < cutoff for v in values) != rank:
                 raise CandidateCStageError(
                     "domain_failure", "selector gap is numerically unresolved"
@@ -343,7 +343,7 @@ class CandidateCSelector:
                 gap_lower=str(gap - error),
             )
         selected = numerics.binary64_matrix(
-            numerics.matmul(projection, tuple((Fraction(x),) for x in self.resource.values))
+            numerics.matmul(projection, tuple((exact_number(x),) for x in self.resource.values))
         )
         object.__setattr__(self, "projector", numerics.binary64_matrix(projection))
         object.__setattr__(
@@ -468,9 +468,9 @@ class _CandidateCAlgebra:
             numerics.binary64_matrix(
                 tuple(
                     tuple(
-                        Fraction(deformation[i])
-                        * Fraction(x)
-                        * Fraction(deformation[j])
+                        exact_number(deformation[i])
+                        * exact_number(x)
+                        * exact_number(deformation[j])
                         for j, x in enumerate(row)
                     )
                     for i, row in enumerate(pre)
@@ -487,20 +487,20 @@ class _CandidateCAlgebra:
             numerics.matmul(numerics.matmul(bt, numerics.inverse(numerics.exact_matrix(self.pairings.vertex.matrix))), b),
             numerics.exact_matrix(retained.matrix),
         )
-        beta = Fraction(params.zeta_C) * Fraction(params.chi_C)
+        beta = exact_number(params.zeta_C) * exact_number(params.chi_C)
         regularity_block = tuple(
             tuple(
-                (1 - beta) * int(i == j) + Fraction(params.tau_C) * x
+                (1 - beta) * int(i == j) + exact_number(params.tau_C) * x
                 for j, x in enumerate(row)
             )
             for i, row in enumerate(exact_laplacian)
         )
         numerics.inverse(regularity_block)
-        gradient = numerics.matmul(bt, tuple((Fraction(c),) for c in self.resource.values))
+        gradient = numerics.matmul(bt, tuple((exact_number(c),) for c in self.resource.values))
 
         def potential(hodge: Matrix) -> numerics.ExactMatrix:
             return tuple(
-                tuple(Fraction(params.kappa_Phi_C) * x for x in row)
+                tuple(exact_number(params.kappa_Phi_C) * x for x in row)
                 for row in numerics.matmul(numerics.matmul(b, numerics.exact_matrix(hodge)), gradient)
             )
 
@@ -508,10 +508,10 @@ class _CandidateCAlgebra:
         phi_values = tuple(row[0] for row in numerics.binary64_matrix(phi))
         baseline = numerics.binary64_matrix(
             tuple(
-                tuple(-Fraction(m) * x for x in row)
+                tuple(-exact_number(m) * x for x in row)
                 for m, row in zip(
                     self.transport.mobility.diagonal,
-                    numerics.matmul(bt, tuple((Fraction(x),) for x in phi_values)),
+                    numerics.matmul(bt, tuple((exact_number(x),) for x in phi_values)),
                     strict=True,
                 )
             )
@@ -549,7 +549,7 @@ class _CandidateCAlgebra:
         resolvent_block = numerics.binary64_matrix(
             tuple(
                 tuple(
-                    Fraction(i == j) + Fraction(params.tau_C) * Fraction(x)
+                    exact_number(i == j) + exact_number(params.tau_C) * exact_number(x)
                     for j, x in enumerate(row)
                 )
                 for i, row in enumerate(laplacian)
@@ -578,8 +578,8 @@ class _CandidateCAlgebra:
         current_block = numerics.binary64_matrix(
             tuple(
                 tuple(
-                    Fraction(i == j)
-                    - Fraction(params.zeta_C) * Fraction(params.chi_C) * Fraction(x)
+                    exact_number(i == j)
+                    - exact_number(params.zeta_C) * exact_number(params.chi_C) * exact_number(x)
                     for j, x in enumerate(row)
                 )
                 for i, row in enumerate(flux_response)
@@ -704,13 +704,13 @@ class CandidateCCurrent:
         current = PhysicalFlux(ref.graph, tuple(row[0] for row in result))
         read = algebra.read_back(current, self.identity)
         residual = tuple(
-            Fraction(j) - Fraction(j0) - Fraction(transport.params.zeta_C) * Fraction(r)
+            exact_number(j) - exact_number(j0) - exact_number(transport.params.zeta_C) * exact_number(r)
             for j, j0, r in zip(
                 current.values, algebra.baseline.values, read.flux.values, strict=True
             )
         )
         if not numerics.residual_pass(
-            residual, tuple(Fraction(x) for x in algebra.baseline.values), policy
+            residual, tuple(exact_number(x) for x in algebra.baseline.values), policy
         ):
             raise CandidateCStageError(
                 "no_admitted_root", "physical read-back closure residual failed"
@@ -721,7 +721,7 @@ class CandidateCCurrent:
         object.__setattr__(
             self,
             "closure_residual_squared",
-            str(sum((x * x for x in residual), Fraction())),
+            str(sum((x * x for x in residual), exact_number())),
         )
 
     @property

@@ -8,10 +8,19 @@ module neither discovers those inputs nor claims runtime-profile support.
 from __future__ import annotations
 
 from collections.abc import Mapping
-from dataclasses import dataclass, field as dataclass_field, fields, replace
+from dataclasses import dataclass, fields, replace
+from dataclasses import field as dataclass_field
 from typing import Any, ClassVar, Literal, TypeAlias, cast, get_args
 
+from ._grc_v4_evidence import _lifecycle_identity
 from .grc_v4 import GRCV4StepRequest, GRCV4StepRequestInput, _nested_record
+from .grc_v4_candidate_a import (
+    CandidateACurrent,
+    CandidateADifferentialReference,
+    CandidateAStageError,
+    CandidateAWriter,
+)
+from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_codec import (
     V4IdentityError,
     V4SchemaError,
@@ -19,18 +28,23 @@ from .grc_v4_codec import (
     payload_identity,
     validate_payload,
 )
-from ._grc_v4_evidence import _lifecycle_identity
-from .grc_v4_profile import _Record
 from .grc_v4_geometry import (
-    GeometryStageInputs,
-    _capture_stage_inputs,
     GeometryDomainError,
+    GeometryStageInputs,
     NonfiniteGeometryError,
     PhysicalFlux,
     VertexScalar,
+    _capture_stage_inputs,
     _local_payload,
     _require_coordinates,
     _state_payload,
+)
+from .grc_v4_profile import _Record
+from .grc_v4_realizations import (
+    CandidateAOSPass,
+    CandidateCOSPass,
+    _a_os_inputs,
+    _os_inputs,
 )
 from .grc_v4_state import (
     FrozenJSONMap,
@@ -43,19 +57,6 @@ from .grc_v4_transport import (
     ChargeDomainError,
     ChargeEvaluation,
     provisional_continuity,
-)
-from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
-from .grc_v4_candidate_a import (
-    CandidateACurrent,
-    CandidateADifferentialReference,
-    CandidateAStageError,
-    CandidateAWriter,
-)
-from .grc_v4_realizations import (
-    CandidateCOSPass,
-    CandidateAOSPass,
-    _a_os_inputs,
-    _os_inputs,
 )
 
 OperationStage: TypeAlias = Literal[
@@ -1089,9 +1090,10 @@ class ProvisionalCandidateCOSStep:
     next_inputs: GeometryStageInputs = dataclass_field(init=False)
 
     def __post_init__(self) -> None:
-        from dataclasses import replace
-        from fractions import Fraction
         import math
+        from dataclasses import replace
+
+        from .grc_v4_exact import exact_number
 
         before = _os_inputs(self.inputs)
         if before.dt > 0 and before.step_index == 2**53 - 1:
@@ -1108,7 +1110,7 @@ class ProvisionalCandidateCOSStep:
             replace(before, current=before.reset, stage="reset_readmission")
         )
         try:
-            next_time = float(Fraction(before.time) + Fraction(before.dt))
+            next_time = float(exact_number(before.time) + exact_number(before.dt))
         except OverflowError as exc:
             raise ResourceBoundaryError(
                 "admission", "nonfinite_value", "step clock overflow"
@@ -1192,9 +1194,10 @@ class ProvisionalCandidateAOSStep:
     next_inputs: GeometryStageInputs = dataclass_field(init=False)
 
     def __post_init__(self) -> None:
-        from dataclasses import replace
-        from fractions import Fraction
         import math
+        from dataclasses import replace
+
+        from .grc_v4_exact import exact_number
 
         before = _a_os_inputs(self.inputs)
         if before.dt > 0 and before.step_index == 2**53 - 1:
@@ -1226,7 +1229,7 @@ class ProvisionalCandidateAOSStep:
                 str(exc),
             ) from exc
         try:
-            next_time = float(Fraction(before.time) + Fraction(before.dt))
+            next_time = float(exact_number(before.time) + exact_number(before.dt))
         except OverflowError as exc:
             raise ResourceBoundaryError(
                 "admission", "nonfinite_value", "step clock overflow"

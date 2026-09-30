@@ -7,14 +7,14 @@ Legacy failure messages are preserved because they enter public receipts.
 from __future__ import annotations
 
 import math
-from fractions import Fraction
 from typing import TypeAlias
 
 from .grc_v4_codec import _dependency
+from .grc_v4_exact import ExactBackend, ExactScalar, current_exact_backend, exact_number
 from .grc_v4_geometry import Matrix, _computed
 from .grc_v4_state import SolverDisposition
 
-ExactMatrix: TypeAlias = tuple[tuple[Fraction, ...], ...]
+ExactMatrix: TypeAlias = tuple[tuple[ExactScalar, ...], ...]
 
 
 class MatrixError(ValueError):
@@ -39,7 +39,7 @@ class MatrixError(ValueError):
 
 
 def exact_matrix(matrix: Matrix) -> ExactMatrix:
-    return tuple(tuple(Fraction(x) for x in row) for row in matrix)
+    return tuple(tuple(exact_number(x) for x in row) for row in matrix)
 
 
 def binary64_matrix(matrix: ExactMatrix) -> Matrix:
@@ -54,9 +54,13 @@ def transpose(matrix: ExactMatrix) -> ExactMatrix:
 
 
 def matmul(left: ExactMatrix, right: ExactMatrix) -> ExactMatrix:
+    if current_exact_backend() is ExactBackend.FLINT and left and right:
+        from . import _grc_v4_matrix_flint as flint_backend
+
+        return flint_backend.matmul(left, right)
     return tuple(
         tuple(
-            sum((a * b for a, b in zip(row, col, strict=True)), Fraction())
+            sum((a * b for a, b in zip(row, col, strict=True)), exact_number())
             for col in transpose(right)
         )
         for row in left
@@ -73,16 +77,23 @@ def identity(size: int) -> Matrix:
 
 def apply(matrix: Matrix, values: tuple[float, ...]) -> tuple[float, ...]:
     result = binary64_matrix(
-        matmul(exact_matrix(matrix), tuple((Fraction(x),) for x in values))
+        matmul(exact_matrix(matrix), tuple((exact_number(x),) for x in values))
     )
     return tuple(row[0] for row in result)
 
 
 def inverse(matrix: ExactMatrix) -> ExactMatrix:
     """Exact elimination of the supplied coefficients; never a pseudoinverse."""
+    if current_exact_backend() is ExactBackend.FLINT and matrix:
+        from . import _grc_v4_matrix_flint as flint_backend
+
+        try:
+            return flint_backend.inverse(matrix)
+        except ZeroDivisionError as exc:
+            raise MatrixError("singular", "singular C stage block; no fallback") from exc
     n = len(matrix)
     rows = [
-        list(row) + [Fraction(i == j) for j in range(n)] for i, row in enumerate(matrix)
+        list(row) + [exact_number(i == j) for j in range(n)] for i, row in enumerate(matrix)
     ]
     for j in range(n):
         pivot = next((i for i in range(j, n) if rows[i][j]), None)
@@ -153,6 +164,10 @@ def _positive_semidefinite(matrix: ExactMatrix) -> bool:
     conditioning certificate uses this boolean decision; general inertia keeps
     its signed-rank contract.
     """
+    if current_exact_backend() is ExactBackend.FLINT and matrix:
+        from . import _grc_v4_matrix_flint as flint_backend
+
+        return flint_backend.positive_semidefinite(matrix)
     rows = [list(row) for row in matrix]
     while rows:
         n = len(rows)
@@ -164,7 +179,7 @@ def _positive_semidefinite(matrix: ExactMatrix) -> bool:
             rows = [[rows[i][j] for j in order] for i in order]
         diagonal = rows[0][0]
         size = n - 1
-        reduced = [[Fraction()] * size for _ in range(size)]
+        reduced = [[exact_number()] * size for _ in range(size)]
         for i in range(size):
             gain = rows[i + 1][0] / diagonal
             for j in range(i, size):
@@ -174,7 +189,7 @@ def _positive_semidefinite(matrix: ExactMatrix) -> bool:
     return True
 
 
-def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
+def condition_bound(exact: ExactMatrix, limit: float, label: str) -> ExactScalar:
     """The exact conditioning algorithm; failure always uses the current label."""
     scale = max(abs(x) for row in exact for x in row)
     if not scale:
@@ -196,7 +211,7 @@ def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
         if a * d <= b * b:
             raise MatrixError("singular", "singular " + label)
         trace, discriminant = a + d, (a - d) ** 2 + 4 * b * b
-        k2 = Fraction(limit) ** 2
+        k2 = exact_number(limit) ** 2
         if k2 < 1 or (k2 - 1) ** 2 * trace**2 < (k2 + 1) ** 2 * discriminant:
             raise MatrixError(
                 "conditioning_failure", "conditioning limit exceeded: " + label
@@ -207,10 +222,10 @@ def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
             numerator**2 == discriminant.numerator
             and denominator**2 == discriminant.denominator
         ):
-            root = Fraction(numerator, denominator)
+            root = exact_number(numerator, denominator)
             lower, upper = trace - root, trace + root
         else:
-            lower, upper = Fraction(1), k2
+            lower, upper = exact_number(1), k2
     else:
         np = _dependency("numpy")
         try:
@@ -240,7 +255,7 @@ def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
                 raise MatrixError(
                     "conditioning_failure", "conditioning cannot resolve " + label
                 )
-            lower, upper = Fraction(small_bound) ** 2, Fraction(large_bound) ** 2
+            lower, upper = exact_number(small_bound) ** 2, exact_number(large_bound) ** 2
             low_test = tuple(
                 tuple(x - (lower if i == j else 0) for j, x in enumerate(row))
                 for i, row in enumerate(gram)
@@ -256,7 +271,7 @@ def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
                 "conditioning_failure", "conditioning certificate unresolved: " + label
             )
     bound = upper / lower
-    if bound > Fraction(limit) ** 2:
+    if bound > exact_number(limit) ** 2:
         raise MatrixError(
             "conditioning_failure", "conditioning limit exceeded: " + label
         )

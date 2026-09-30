@@ -7,7 +7,6 @@ commit authority; reconstructed geometry and residual work are never history.
 from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
-from fractions import Fraction
 
 from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import (
@@ -16,17 +15,18 @@ from .grc_v4_candidate_a import (
     CandidateADifferentialReference,
     CandidateAStageError,
 )
-from .grc_v4_candidate_c import (CandidateCCurrent, CandidateCStageError)
+from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+from .grc_v4_exact import exact_number
 from .grc_v4_geometry import (
-    GRCV4Geometry,
-    GeometryStageInputs,
-    _capture_stage_inputs,
     GeometryDomainError,
-    NonfiniteGeometryError,
+    GeometryStageInputs,
+    GRCV4Geometry,
     H_profile,
     K4Tensor,
     Matrix,
+    NonfiniteGeometryError,
     StarAssembly,
+    _capture_stage_inputs,
     _local_payload,
 )
 from .grc_v4_profile import OSParams
@@ -78,7 +78,7 @@ def _c_source(point: CandidateCCurrent) -> K4Tensor:
         if zeta == 0
         else numerics.binary64_matrix(
             tuple(
-                tuple(Fraction(zeta) * Fraction(x) for x in row)
+                tuple(exact_number(zeta) * exact_number(x) for x in row)
                 for row in StarAssembly(point.read.causal_flat).matrix
             )
         )
@@ -115,7 +115,7 @@ def _selector_path_segments(
     graph = predictor.current.graph
     b = numerics.exact_matrix(graph.incidence)
     matrices = []
-    cutoff = Fraction(predictor.algebra.transport.params.Lambda_C)
+    cutoff = exact_number(predictor.algebra.transport.params.Lambda_C)
     for point in (predictor, corrector):
         h = numerics.exact_matrix(point.inputs.geometry.one_form_hodge.matrix)
         stiffness = numerics.matmul(numerics.matmul(b, h), numerics.transpose(b))
@@ -134,7 +134,7 @@ def _selector_path_segments(
     if not neg or not pos:
         return 1
     norm = max(sum(abs(x) for x in row) for row in delta)
-    pending = [(Fraction(), Fraction(1))]
+    pending = [(exact_number(), exact_number(1))]
     certified = splits = 0
     while pending:
         lo, hi = pending.pop()
@@ -196,20 +196,20 @@ class OSSplitResidual:
         ):
             raise ValueError("unimplemented OS split norm")
         residual = tuple(
-            tuple(Fraction(x) - Fraction(y) for x, y in zip(row, other, strict=True))
+            tuple(exact_number(x) - exact_number(y) for x, y in zip(row, other, strict=True))
             for row, other in zip(
                 self.geometry.one_form_hodge.matrix,
                 self.regenerated.one_form_hodge.matrix,
                 strict=True,
             )
         )
-        t = Fraction(policy.tolerance)
+        t = exact_number(policy.tolerance)
         reference = ref.pairings.one_form.matrix
         admitted = all(
             numerics.inertia(
                 tuple(
                     tuple(
-                        t * Fraction(h) + sign * r
+                        t * exact_number(h) + sign * r
                         for h, r in zip(row, other, strict=True)
                     )
                     for row, other in zip(reference, residual, strict=True)

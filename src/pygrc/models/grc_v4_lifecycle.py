@@ -10,84 +10,108 @@ There are no injectable production solvers, commit callbacks or faults.
 from __future__ import annotations
 
 from dataclasses import dataclass, field, fields, replace
-from pathlib import Path
-from fractions import Fraction
+from functools import wraps
 from math import isfinite
+from pathlib import Path
 from threading import Lock
-from typing import Any, Self, assert_never, cast
+from typing import (
+    Any,
+    Callable,
+    Concatenate,
+    ParamSpec,
+    Self,
+    TypeVar,
+    assert_never,
+    cast,
+)
 
 from . import grc_v4_numerics as numerics
-from .grc_v4 import (
-    GRCV4StepRequestInput,
-    GRCV4StepRequest,
-    MissingV4StepRequest,
-    GRCV4MigrationRequest,
-    GRCV4MappedTopologyEventRequest,
-    GRCV4RepresentationRequest,
+from ._grc_v4_evidence import (
+    _lifecycle_identity,
+    _operation_evidence,
+    _own_stage_reference,
+    _ReceiptEvidence,
+    _seed_receipts,
 )
-from ._grc_v4_evidence import _ReceiptEvidence, _lifecycle_identity, _operation_evidence, _own_stage_reference, _seed_receipts
-from .grc_v4_candidate_c import (CandidateCCurrent, CandidateCStageError)
+from .grc_v4 import (
+    GRCV4MappedTopologyEventRequest,
+    GRCV4MigrationRequest,
+    GRCV4RepresentationRequest,
+    GRCV4StepRequest,
+    GRCV4StepRequestInput,
+    MissingV4StepRequest,
+)
 from .grc_v4_candidate_a import CandidateADifferentialReference, CandidateAStageError
+from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_codec import (
+    _OPERATION_CONTEXT,
     COS_SNAPSHOT_LAYOUT_ID,
     GENERIC_SNAPSHOT_LAYOUT_ID,
-    MIGRATION_SNAPSHOT_LAYOUT_ID,
-    INITIALIZER_SNAPSHOT_LAYOUT_ID,
     INITIALIZER_RELEASE_ID,
+    INITIALIZER_SNAPSHOT_LAYOUT_ID,
+    MIGRATION_SNAPSHOT_LAYOUT_ID,
     RECEIPT_PARENT_POLICY_ID,
     RELEASE_ID,
     V4IdentityError,
     V4SchemaError,
     _verify_contract_assets,
-    _OPERATION_CONTEXT,
     canonical_json_bytes,
-    snapshot_payload,
     decode_canonical_json,
     payload_identity,
+    snapshot_payload,
+)
+from .grc_v4_event_codec import (
+    EVENT_LAYOUT,
+    EVENT_RELEASE_ID,
+    REPRESENTATION_LAYOUT,
+    event_snapshot_payload,
+)
+from .grc_v4_exact import (
+    current_exact_backend,
+    exact_backend,
+    exact_number,
 )
 from .grc_v4_geometry import (
-    GRCV4ReferenceGeometry,
-    GRCV4Graph,
-    GeometryStageInputs,
     GeometryDomainError,
+    GeometryStageInputs,
+    GRCV4Graph,
+    GRCV4ReferenceGeometry,
     NonfiniteGeometryError,
     VertexScalar,
-    _state_from_payload,
     _computed,
+    _state_from_payload,
 )
 from .grc_v4_linear import _MatrixContinuation
+from .grc_v4_profile import GRCV4Profile
 from .grc_v4_realizations import OSStageError
 from .grc_v4_state import (
     FrozenJSONMap,
-    GRCV4LifecycleState,
     GRCV4AuthoritativeState,
     GRCV4LifecycleResult,
+    GRCV4LifecycleState,
     GRCV4ResetBaseline,
     GRCV4StepResult,
     SolverDisposition,
 )
 from .grc_v4_step import (
+    _RESOURCE_SOLVER_FAILURES,
     CommitPayload,
-    FailureReceipt,
     FailureCode,
+    FailureReceipt,
     FailureReceiptIdentityPayload,
     GRCV4Failure,
     OperationStage,
-    ProvisionalCandidateCOSStep,
     ProvisionalCandidateAOSStep,
+    ProvisionalCandidateCOSStep,
     ResourceBoundaryError,
     SuccessfulReceiptEnvelope,
-    _RESOURCE_SOLVER_FAILURES,
+    _bind_owned_step_result,
     _ledger,
     _resource_charge,
-    _bind_owned_step_result,
     make_commit_receipts,
     negative_duration_result,
 )
-
-from .grc_v4_transport import ChargeEvaluation, ChargeDomainError
-from .grc_v4_profile import GRCV4Profile
-from .grc_v4_event_codec import EVENT_LAYOUT, REPRESENTATION_LAYOUT, EVENT_RELEASE_ID, event_snapshot_payload
+from .grc_v4_transport import ChargeDomainError, ChargeEvaluation
 
 
 def _previous_primary(ledger):
@@ -176,7 +200,7 @@ def _step_matrix_continuation(step: Any) -> _MatrixContinuation:
     return context.matrix_facts.retain(
         numerics.exact_matrix(reset.inputs.geometry.one_form_hodge.matrix),
         numerics.exact_matrix(current.inputs.geometry.one_form_hodge.matrix),
-        Fraction(profile.params_resolved.solver.conditioning_limit),
+        exact_number(profile.params_resolved.solver.conditioning_limit),
     )
 
 
@@ -195,8 +219,8 @@ def _readmit_state(
     if ref.profile.identity_payload.realization != "RG2b":
         step = _profile_step(inputs, backend)
         return _step_currents(step)[1], step.resource.charge
-    from .grc_v4_rg2b import CandidateRG2bSection
     from .grc_v4_candidate_a import CandidateACurrent
+    from .grc_v4_rg2b import CandidateRG2bSection
 
     charge = _resource_charge(inputs, VertexScalar(ref.graph, inputs.current.C), "admission")
     _resource_charge(inputs, VertexScalar(ref.graph, inputs.reset.C), "admission")
@@ -451,8 +475,8 @@ def _ordinary_receipts(
         **references,
         "actual_charge_delta": _computed(
             float(
-                Fraction(charge.actual)
-                - Fraction(
+                exact_number(charge.actual)
+                - exact_number(
                     _resource_charge(
                         before, VertexScalar(ref.graph, before.current.C), "admission"
                     ).actual
@@ -805,9 +829,9 @@ def _affine_resource(
             "invalid_topology_event",
             "affine map orders or dimensions differ from the live graphs",
         )
-    coefficients = tuple(Fraction(x) for x in transform.row_major_coefficients)
+    coefficients = tuple(exact_number(x) for x in transform.row_major_coefficients)
     if any(
-        sum((coefficients[i * n + j] for i in range(m)), Fraction()) != 1
+        sum((coefficients[i * n + j] for i in range(m)), exact_number()) != 1
         for j in range(n)
     ):
         raise _CrossingFailure(
@@ -821,10 +845,10 @@ def _affine_resource(
                 float(
                     sum(
                         (
-                            coefficients[i * n + j] * Fraction(resource[j])
+                            coefficients[i * n + j] * exact_number(resource[j])
                             for j in range(n)
                         ),
-                        Fraction(transform.target_increment[i]),
+                        exact_number(transform.target_increment[i]),
                     )
                 )
             )
@@ -875,7 +899,7 @@ def _map_crossing(
     legacy = (source.profile.identity_payload.profile_family_id == "C_OS"
               and target.profile.identity_payload.profile_family_id == "C_OS")
     if type(request) is GRCV4RepresentationRequest:
-        from .grc_v4_events import map_representation, EventAdmissionError
+        from .grc_v4_events import EventAdmissionError, map_representation
         if request.source_graph_digest != source.graph.graph_digest or canonical_json_bytes(request.target_graph) != canonical_json_bytes(target.graph.to_payload()):
             raise _CrossingFailure("admission", "invalid_identity", "representation graph mismatch")
         try:
@@ -886,7 +910,7 @@ def _map_crossing(
     if type(request) is GRCV4MappedTopologyEventRequest and event_version == 1 and not legacy:
         raise _CrossingFailure("admission", "unsupported_profile", "non-C_OS events require P9-7.2b")
     if type(request) is GRCV4MappedTopologyEventRequest and event_version == 2:
-        from .grc_v4_events import reconstruction_history_policy, EventAdmissionError
+        from .grc_v4_events import EventAdmissionError, reconstruction_history_policy
         try:
             if request.history_policy != reconstruction_history_policy(before, target):
                 raise EventAdmissionError("event history policy mismatch")
@@ -910,7 +934,11 @@ def _map_crossing(
         if legacy:
             following = replace(before, geometry=target.geometry(), context=target.context)
         else:
-            from .grc_v4_migration import map_migration, _map_migration, MigrationAdmissionError
+            from .grc_v4_migration import (
+                MigrationAdmissionError,
+                _map_migration,
+                map_migration,
+            )
             try:
                 following = (map_migration(before, target, request.history_policy) if initializer_pair is None
                              else _map_migration(before, target, request.history_policy, initializer_pair))
@@ -945,10 +973,10 @@ def _map_crossing(
                 "charge_failure",
                 "event charge evaluation is not finite",
             ) from exc
-        delta = Fraction(target_charge.actual) - Fraction(source_charge.actual)
+        delta = exact_number(target_charge.actual) - exact_number(source_charge.actual)
         try:
             receipt_delta = _computed(float(delta))
-            new_charge = _computed(float(Fraction(before.Q_target) + delta))
+            new_charge = _computed(float(exact_number(before.Q_target) + delta))
         except (OverflowError, NonfiniteGeometryError) as exc:
             raise _CrossingFailure(
                 "target_construction",
@@ -956,8 +984,8 @@ def _map_crossing(
                 "event charge accounting is unrepresentable",
             ) from exc
         if (
-            Fraction(receipt_delta) != delta
-            or Fraction(new_charge) != Fraction(before.Q_target) + delta
+            exact_number(receipt_delta) != delta
+            or exact_number(new_charge) != exact_number(before.Q_target) + delta
         ):
             raise _CrossingFailure(
                 "target_construction",
@@ -971,7 +999,7 @@ def _map_crossing(
                 "event charge target is negative",
             )
         if event_version == 2:
-            from .grc_v4_events import reconstructed_histories, EventAdmissionError
+            from .grc_v4_events import EventAdmissionError, reconstructed_histories
             try:
                 current, reset = reconstructed_histories(before, current, reset, target, request.history_policy, initializer_pair)
             except EventAdmissionError as exc:
@@ -1033,7 +1061,7 @@ def _crossing_receipts(
         "operation_id": request.operation_id,
         **references,
         "actual_charge_delta": _computed(
-            float(Fraction(charge.actual) - Fraction(old_charge.actual))
+            float(exact_number(charge.actual) - exact_number(old_charge.actual))
         ),
         "information_losses": [],
         "disposition": "committed",
@@ -1096,7 +1124,7 @@ def _crossing_receipts(
         "history": history,
     }
     if representation:
-        from .grc_v4_event_codec import representation_identity, POLICY_ID
+        from .grc_v4_event_codec import POLICY_ID, representation_identity
         operation = dict(schema_version="grcv4-representation-change-identity-v1", policy_id=POLICY_ID,
             source_state_digest=before.scientific_state_id, source_graph_digest=source.graph.graph_digest,
             target_graph_digest=target.graph.graph_digest, target_profile_id=target.profile.complete_profile_id,
@@ -1260,7 +1288,7 @@ def _check_step_target(before: GeometryStageInputs, after: GeometryStageInputs) 
         raise V4IdentityError("ordinary target replaces lifecycle authority")
     expected_clock = (
         before.step_index + int(before.dt > 0),
-        float(Fraction(before.time) + Fraction(before.dt)),
+        float(exact_number(before.time) + exact_number(before.dt)),
     )
     if (after.step_index, after.time) != expected_clock:
         raise V4IdentityError("ordinary target violates the requested clock transition")
@@ -1617,7 +1645,7 @@ class _CheckedArchive:
                         # Exact input sum, rounded once to binary64; large clocks
                         # may lawfully retain the same represented time.
                         try:
-                            expected = float(Fraction(previous_time) + Fraction(_rg2b_beat(reference)))
+                            expected = float(exact_number(previous_time) + exact_number(_rg2b_beat(reference)))
                         except OverflowError as exc:
                             raise V4IdentityError("historical RG2b clock overflow") from exc
                         valid_clock = isfinite(expected) and commit.target_time == expected
@@ -1693,11 +1721,11 @@ class _CheckedArchive:
             if charge["target_charge"] != Q_target:
                 raise V4IdentityError("receipt changes the fixed lifecycle charge target")
             actual = cast(float, charge["admitted_charge"])
-            delta = Fraction(actual) - Fraction(Q_target)
+            delta = exact_number(actual) - exact_number(Q_target)
             policy = target_reference.profile.params_resolved.charge
-            bound = Fraction(policy.absolute_tolerance) + Fraction(
+            bound = exact_number(policy.absolute_tolerance) + exact_number(
                 policy.relative_tolerance
-            ) * max(abs(Fraction(Q_target)), Fraction(1))
+            ) * max(abs(exact_number(Q_target)), exact_number(1))
             try:
                 residual = float(delta)
             except OverflowError:
@@ -1902,7 +1930,7 @@ def _validate_publication(
         for endpoint in (before, after)
     ]
     if not representation and (core["actual_charge_delta"] != float(
-        Fraction(charges[1].actual) - Fraction(charges[0].actual)
+        exact_number(charges[1].actual) - exact_number(charges[0].actual)
     ) or any(
         emitted[1].identity_payload.get(name) != value
         for name, value in charges[1].receipt_values().items()
@@ -1916,6 +1944,22 @@ def _validate_publication(
     )
 
 
+_P = ParamSpec("_P")
+_R = TypeVar("_R")
+
+
+def _with_owner_exact_backend(
+    function: Callable[Concatenate[Any, _P], _R],
+) -> Callable[Concatenate[Any, _P], _R]:
+    """Run an owner's numerical entry point on its declaration-bound backend."""
+    @wraps(function)
+    def bound(owner: Any, *args: _P.args, **kwargs: _P.kwargs) -> _R:
+        with exact_backend(owner._exact_backend_choice):
+            return function(owner, *args, **kwargs)
+
+    return bound
+
+
 class GRCV4Operation:
     """Sole generic lifecycle owner, also used by the public GRCV4 facade.
 
@@ -1926,7 +1970,7 @@ class GRCV4Operation:
     Calls that publish state are serialized, with one immutable pointer swap.
     """
 
-    __slots__ = ("_registry", "__owned", "_lock", "_backends")
+    __slots__ = ("_registry", "__owned", "_lock", "_backends", "_exact_backend_choice")
 
     def _get_owned(self) -> _OwnedCOS:
         return self.__owned
@@ -1950,6 +1994,7 @@ class GRCV4Operation:
         differential_reference: CandidateADifferentialReference | None = None,
         target_differential_references: tuple[CandidateADifferentialReference, ...] = (),
     ) -> None:
+        self._exact_backend_choice = current_exact_backend()
         before = GeometryStageInputs.from_payload(initial.to_payload())
         backend = (None if differential_reference is None else
                    CandidateADifferentialReference.from_payload(differential_reference.to_payload()))
@@ -2155,6 +2200,7 @@ class GRCV4Operation:
         result._lock = Lock()
         result._registry = registry
         result._backends = backends
+        result._exact_backend_choice = current_exact_backend()
         result._owned = publication
         return result
 
@@ -2170,7 +2216,8 @@ class GRCV4Operation:
         return cls.from_state(decode_canonical_json(Path(path).read_bytes()))
 
     def duplicate(self) -> Self:
-        return type(self).from_state(self.snapshot())
+        with exact_backend(self._exact_backend_choice):
+            return type(self).from_state(self.snapshot())
 
     def __copy__(self) -> Self:
         return self.duplicate()
@@ -2180,6 +2227,7 @@ class GRCV4Operation:
         memo[id(self)] = duplicate
         return duplicate
 
+    @_with_owner_exact_backend
     def set_state(self, state: GRCV4LifecycleState) -> None:
         """Assign compatible current authority; clock and lifecycle remain fixed."""
         if type(state) is not GRCV4LifecycleState:
@@ -2224,6 +2272,7 @@ class GRCV4Operation:
     def rebase_reset_baseline(self) -> None:
         self._administrative("rebase")
 
+    @_with_owner_exact_backend
     def _administrative(self, kind: str) -> None:
         with self._lock:
             owned = self._owned
@@ -2295,6 +2344,7 @@ class GRCV4Operation:
                 return reference.profile
         raise V4IdentityError("unregistered complete-profile identifier")
 
+    @_with_owner_exact_backend
     def compute_observables(self) -> dict[str, Any]:
         # One immutable capture remains coherent even if another thread commits.
         owned = self._owned
@@ -2349,6 +2399,7 @@ class GRCV4Operation:
         with self._lock:
             return self._crossing(request)
 
+    @_with_owner_exact_backend
     def _crossing(self, request: _CrossingRequest, event_version: int = 1) -> GRCV4LifecycleResult:
         owned = self._owned
         before = _state_inputs(owned.reference, owned.state, request.operation_id)
@@ -2406,9 +2457,18 @@ class GRCV4Operation:
             if ((type(request) is GRCV4MigrationRequest and owned.reference.profile.identity_payload.candidate == "C"
                     or type(request) is GRCV4MappedTopologyEventRequest and event_version == 2)
                     and target_ref.profile.identity_payload.candidate == "A"):
-                from .grc_v4_initializer import CandidateAReferencePassPair, InitializerStageError
-                from .grc_v4_migration import migration_history_policy, MigrationAdmissionError
-                from .grc_v4_events import reconstruction_history_policy, EventAdmissionError
+                from .grc_v4_events import (
+                    EventAdmissionError,
+                    reconstruction_history_policy,
+                )
+                from .grc_v4_initializer import (
+                    CandidateAReferencePassPair,
+                    InitializerStageError,
+                )
+                from .grc_v4_migration import (
+                    MigrationAdmissionError,
+                    migration_history_policy,
+                )
                 _readmit_crossing(before, "pre_read_reconstruction", self._backends)
                 try:
                     expected_policy = (reconstruction_history_policy(before, target_ref) if event_version == 2
@@ -2532,6 +2592,7 @@ class GRCV4Operation:
             request["schema_version"] = "grcv4-step-request-input-v1"
             return self._execute(GRCV4StepRequestInput.from_payload(request))
 
+    @_with_owner_exact_backend
     @_operation_evidence
     def _execute(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
         context = _OPERATION_CONTEXT.get()

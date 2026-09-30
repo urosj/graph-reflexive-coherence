@@ -8,29 +8,29 @@ reads old Z; one scalar-ZOH writer consumes that current's held source.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field, replace
-from decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext
-from fractions import Fraction
 import math
-from typing import Any, TYPE_CHECKING, cast
+from dataclasses import dataclass, field, replace
+from decimal import ROUND_HALF_EVEN, Context, Decimal, localcontext
+from typing import TYPE_CHECKING, Any, cast
 
 from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import (
+    ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
     CandidateADifferentialReference,
     CandidateAStageError,
     CandidateAWriter,
-    ADMITTED_HISTORY_POLICIES,
 )
-from .grc_v4_candidate_c import (CandidateCCurrent, CandidateCStageError)
+from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 
 # Shared exact norm/exponential utilities; standalone PC invokes no CI root.
 # Composite declarations also resolve the explicit CI+PC domain.
 from .grc_v4_ci import CIStageError, _exp_bounds, _norm, _opnorm, _sqrt_upper
+from .grc_v4_exact import ExactScalar, exact_number
 from .grc_v4_geometry import (
-    GRCV4Geometry,
     GeometryDomainError,
     GeometryStageInputs,
+    GRCV4Geometry,
     H_profile,
     K4Tensor,
     NonfiniteGeometryError,
@@ -40,7 +40,7 @@ from .grc_v4_geometry import (
     _identity,
     _local_payload,
 )
-from .grc_v4_profile import CandidateAParams, CandidateCParams, PCParams, CIPCParams
+from .grc_v4_profile import CandidateAParams, CandidateCParams, CIPCParams, PCParams
 from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number, _vector
 
 if TYPE_CHECKING:
@@ -154,7 +154,7 @@ def _declarations(
 
 def _ball(values: Any, radius: float, label: str) -> None:
     _require(
-        sum((Fraction(x) ** 2 for x in values), Fraction()) <= Fraction(radius) ** 2,
+        sum((exact_number(x) ** 2 for x in values), exact_number()) <= exact_number(radius) ** 2,
         label + " exceeds the declared PC Frobenius ball",
     )
 
@@ -196,21 +196,21 @@ def carrier_geometry(
 
 
 def _descriptor_bound(
-    backend: CandidateADifferentialReference, radius: Fraction
-) -> Fraction:
+    backend: CandidateADifferentialReference, radius: ExactScalar
+) -> ExactScalar:
     """Uniform WLS gradient bound over ||C||<=M, using exact normal matrices.
 
     At each node ||b_i|| <= sqrt(2) M sum_j w_ij ||delta_ij||;
     ||gradient_i|| <= ||normal_i^-1|| ||b_i||. No sampled base state.
     """
     graph, d = backend.graph, backend.dimension
-    bound = Fraction()
+    bound = exact_number()
     for i, node in enumerate(graph.live_node_ids):
         a = [
-            [Fraction(backend.regularization) * int(k == j) for j in range(d)]
+            [exact_number(backend.regularization) * int(k == j) for j in range(d)]
             for k in range(d)
         ]
-        rhs = Fraction()
+        rhs = exact_number()
         for edge in graph.oriented_edges:
             if node not in (edge.tail_node_id, edge.head_node_id):
                 continue
@@ -219,10 +219,10 @@ def _descriptor_bound(
             )
             j = graph.node_index(other)
             delta = tuple(
-                Fraction(y) - Fraction(x)
+                exact_number(y) - exact_number(x)
                 for x, y in zip(backend.positions[i], backend.positions[j], strict=True)
             )
-            w = Fraction(cast(float, backend.reference_weights[edge.edge_id]))
+            w = exact_number(cast(float, backend.reference_weights[edge.edge_id]))
             rhs += w * _norm(delta)
             for k in range(d):
                 for column in range(d):
@@ -231,7 +231,7 @@ def _descriptor_bound(
             bound,
             _opnorm(numerics.inverse(tuple(map(tuple, a))))
             * rhs
-            * _sqrt_upper(Fraction(2))
+            * _sqrt_upper(exact_number(2))
             * radius,
         )
     return bound
@@ -261,15 +261,15 @@ class PCEnvelopeCertificate:
         _base_state(self.inputs.current, chart, pc)
         p = ref.profile.params_resolved.candidate
         weights = tuple(
-            Fraction(cast(float, ref.edge_weights[e])) for e in ref.graph.live_edge_ids
+            exact_number(cast(float, ref.edge_weights[e])) for e in ref.graph.live_edge_ids
         )
-        radius = abs(Fraction(ref.profile.params_resolved.geometry.kappa_H)) * Fraction(
+        radius = abs(exact_number(ref.profile.params_resolved.geometry.kappa_H)) * exact_number(
             pc.radius
         )
         if isinstance(pc, CIPCParams):
             from .grc_v4_ci import CIBoundedDomain
 
-            composite_radius = Fraction(
+            composite_radius = exact_number(
                 CIBoundedDomain.from_identity(pc.contraction_domain_id).radius
             )
             _require(
@@ -278,7 +278,7 @@ class PCEnvelopeCertificate:
             )
             radius = composite_radius
         lower, upper = min(weights) - radius, max(weights) + radius
-        limit = Fraction(ref.profile.params_resolved.solver.conditioning_limit)
+        limit = exact_number(ref.profile.params_resolved.solver.conditioning_limit)
         _require(
             lower > 0 and upper / lower <= limit,
             "PC whole-ball geometry image is not SPD/conditioning certified",
@@ -286,7 +286,7 @@ class PCEnvelopeCertificate:
         b = numerics.exact_matrix(ref.graph.incidence)
         bt = numerics.transpose(b)
         b2 = _opnorm(numerics.matmul(bt, b))
-        dc = _opnorm(bt) * Fraction(chart.resource_radius)
+        dc = _opnorm(bt) * exact_number(chart.resource_radius)
         extra: dict[str, Any] = {}
         if isinstance(p, CandidateAParams):
             backend = self.differential_reference
@@ -298,45 +298,45 @@ class PCEnvelopeCertificate:
                 and backend.reference_weights == ref.edge_weights,
                 "A PC differential reference/profile mismatch",
             )
-            w = Fraction(chart.weight_upper)
+            w = exact_number(chart.weight_upper)
             baseline = (
-                Fraction(p.eta)
+                exact_number(p.eta)
                 * w
                 * b2
-                * (abs(Fraction(p.kappa_c)) * w + abs(Fraction(p.kappa_Ah)) * radius)
+                * (abs(exact_number(p.kappa_c)) * w + abs(exact_number(p.kappa_Ah)) * radius)
                 * dc
             )
-            beta = abs(Fraction(p.zeta_A) * Fraction(p.chi_A))
-            margin, response = 1 - beta, Fraction(1)
+            beta = abs(exact_number(p.zeta_A) * exact_number(p.chi_A))
+            margin, response = 1 - beta, exact_number(1)
             _require(margin > 0, "A PC whole-chart current inverse is uncertified")
             current = baseline / margin
-            baseline_lip = Fraction(p.eta) * w * b2 * abs(Fraction(p.kappa_Ah)) * dc
+            baseline_lip = exact_number(p.eta) * w * b2 * abs(exact_number(p.kappa_Ah)) * dc
             # log(max(floor, exp(x))) = max(log(floor), x) is 1-Lipschitz.
             # The contrast derivative w.r.t. log target has magnitude <= 1/2.
-            contrast_lip = abs(Fraction(p.gamma)) * baseline * baseline_lip / 2
+            contrast_lip = abs(exact_number(p.gamma)) * baseline * baseline_lip / 2
             current_lip = (
                 baseline_lip / margin + baseline * beta * contrast_lip / margin**2
             )
-            descriptor = _descriptor_bound(backend, Fraction(chart.resource_radius))
+            descriptor = _descriptor_bound(backend, exact_number(chart.resource_radius))
             # ||e_u + e_v|| is sqrt(2) for distinct endpoints, but 2 for
             # a loop: its resource term counts the same endpoint twice.
             endpoint_norm = (
-                Fraction(2)
+                exact_number(2)
                 if any(
                     e.tail_node_id == e.head_node_id for e in ref.graph.oriented_edges
                 )
-                else _sqrt_upper(Fraction(2))
+                else _sqrt_upper(exact_number(2))
             )
             exponent = (
-                abs(Fraction(p.alpha)) * endpoint_norm * Fraction(chart.resource_radius)
-                + abs(Fraction(p.beta)) * (2 * descriptor) ** 2
-                + abs(Fraction(p.gamma)) * current**2
+                abs(exact_number(p.alpha)) * endpoint_norm * exact_number(chart.resource_radius)
+                + abs(exact_number(p.beta)) * (2 * descriptor) ** 2
+                + abs(exact_number(p.gamma)) * current**2
             ) / 2
             _require(
                 exponent <= 700,
                 "A PC conductance is not finite-certified over the base chart",
             )
-            gain, chi = abs(Fraction(p.zeta_A)), abs(Fraction(p.chi_A))
+            gain, chi = abs(exact_number(p.zeta_A)), abs(exact_number(p.chi_A))
             flat_lip = chi * (
                 current / lower**2 + (contrast_lip * current + current_lip) / lower
             )
@@ -351,7 +351,7 @@ class PCEnvelopeCertificate:
             stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
             shifted = tuple(
                 tuple(
-                    x - (Fraction(p.Lambda_C) if i == j else 0)
+                    x - (exact_number(p.Lambda_C) if i == j else 0)
                     for j, x in enumerate(row)
                 )
                 for i, row in enumerate(stiffness)
@@ -369,14 +369,14 @@ class PCEnvelopeCertificate:
                 ) from exc
             gap = 1 / _opnorm(shifted_inverse) - b2 * radius
             _require(gap > 0, "C PC ball reaches an uncertified selector boundary")
-            d = _exp_bounds(abs(Fraction(p.kappa_M_C)) / 2)[1]
+            d = _exp_bounds(abs(exact_number(p.kappa_M_C)) / 2)[1]
             retained_lower, retained_upper = lower / (d * d), upper * d * d
             _require(
                 retained_upper / retained_lower <= limit,
                 "C PC retained Hodge conditioning is uncertified",
             )
             response = (
-                Fraction(1)
+                exact_number(1)
                 if p.tau_C == 0
                 else upper**2
                 / retained_lower
@@ -384,31 +384,31 @@ class PCEnvelopeCertificate:
                 * retained_upper
                 / lower**2
             )
-            beta = abs(Fraction(p.zeta_C) * Fraction(p.chi_C)) * response
+            beta = abs(exact_number(p.zeta_C) * exact_number(p.chi_C)) * response
             margin = 1 - beta
             _require(
                 margin > 0,
                 "C PC physical current inverse is uncertified over the chart",
             )
             mobility = max(
-                Fraction(p.eta_C) * Fraction(cast(float, p.W_C_tr[e]))
+                exact_number(p.eta_C) * exact_number(cast(float, p.W_C_tr[e]))
                 for e in ref.graph.live_edge_ids
             )
             baseline = (
-                mobility * abs(Fraction(p.kappa_Phi_C)) * b2 * dc * retained_upper
+                mobility * abs(exact_number(p.kappa_Phi_C)) * b2 * dc * retained_upper
             )
             current = baseline / margin
-            gain, chi = abs(Fraction(p.zeta_C)), abs(Fraction(p.chi_C))
-            sector_lip = 2 * b2 * Fraction(chart.resource_radius) / gap
+            gain, chi = abs(exact_number(p.zeta_C)), abs(exact_number(p.chi_C))
+            sector_lip = 2 * b2 * exact_number(chart.resource_radius) / gap
             d_lip = (
-                d * abs(Fraction(p.kappa_M_C)) * sector_lip / (2 * Fraction(p.C_ref))
+                d * abs(exact_number(p.kappa_M_C)) * sector_lip / (2 * exact_number(p.C_ref))
             )
             retained_lip = d * d + 2 * d * upper * d_lip
             baseline_lip = (
-                mobility * abs(Fraction(p.kappa_Phi_C)) * b2 * dc * retained_lip
+                mobility * abs(exact_number(p.kappa_Phi_C)) * b2 * dc * retained_lip
             )
             if p.tau_C == 0:
-                response_lip = Fraction()
+                response_lip = exact_number()
             else:
                 q, qi = retained_upper / lower**2, upper**2 / retained_lower
                 lq = retained_lip / lower**2 + 2 * retained_upper / lower**3
@@ -417,14 +417,14 @@ class PCEnvelopeCertificate:
                     + upper**2 * retained_lip / retained_lower**2
                 )
                 resolvent = _sqrt_upper(retained_upper / retained_lower)
-                resolvent_lip = resolvent**2 * Fraction(p.tau_C) * b2 * retained_lip
+                resolvent_lip = resolvent**2 * exact_number(p.tau_C) * b2 * retained_lip
                 response_lip = (
                     lqi * resolvent * q + qi * resolvent_lip * q + qi * resolvent * lq
                 )
             current_lip = (
                 baseline_lip / margin
                 + baseline
-                * abs(Fraction(p.zeta_C) * Fraction(p.chi_C))
+                * abs(exact_number(p.zeta_C) * exact_number(p.chi_C))
                 * response_lip
                 / margin**2
             )
@@ -444,12 +444,12 @@ class PCEnvelopeCertificate:
         flat = chi * response * current / lower
         source = gain * flat**2
         _require(
-            source <= Fraction(pc.radius),
+            source <= exact_number(pc.radius),
             "PC uniform source envelope exceeds the carrier radius",
         )
         if isinstance(pc, CIPCParams):
             _require(
-                source < Fraction(pc.radius),
+                source < exact_number(pc.radius),
                 "CI+PC requires strict uniform source slack",
             )
         extra.update(
@@ -462,7 +462,7 @@ class PCEnvelopeCertificate:
             flat_norm_upper=flat,
             flat_geometry_lipschitz_upper=flat_lip,
             source_norm_upper=source,
-            carrier_radius=Fraction(pc.radius),
+            carrier_radius=exact_number(pc.radius),
         )
         object.__setattr__(
             self, "bounds", FrozenJSONMap({k: str(v) for k, v in extra.items()})
@@ -489,7 +489,7 @@ def scalar_zoh(
     )
     if dt == 0 or old == source:
         return old
-    ratio = Fraction(dt) / Fraction(tau)
+    ratio = exact_number(dt) / exact_number(tau)
     if ratio >= 1600:
         return source
     for precision in (800, 1600):
@@ -503,12 +503,12 @@ def scalar_zoh(
                 traps=[],
             )
         ) as ctx:
-            r = Decimal(ratio.numerator) / Decimal(ratio.denominator)
-            lo = Fraction((-r.next_plus(ctx)).exp().next_minus(ctx))
-            hi = Fraction((-r.next_minus(ctx)).exp().next_plus(ctx))
+            r = Decimal(int(ratio.numerator)) / Decimal(int(ratio.denominator))
+            lo = exact_number((-r.next_plus(ctx)).exp().next_minus(ctx))
+            hi = exact_number((-r.next_minus(ctx)).exp().next_plus(ctx))
         result = []
         for z, s in zip(old, source, strict=True):
-            ends = [Fraction(s) + a * (Fraction(z) - Fraction(s)) for a in (lo, hi)]
+            ends = [exact_number(s) + a * (exact_number(z) - exact_number(s)) for a in (lo, hi)]
             rounded = [float(x) for x in ends]
             if rounded[0] != rounded[1]:
                 break
@@ -561,7 +561,7 @@ class CandidatePCRead:
                 if p.zeta_C == 0
                 else tuple(
                     tuple(
-                        _computed(float(Fraction(p.zeta_C) * Fraction(x))) for x in row
+                        _computed(float(exact_number(p.zeta_C) * exact_number(x))) for x in row
                     )
                     for row in StarAssembly(point.read.causal_flat).matrix
                 )
@@ -626,7 +626,7 @@ class ProvisionalCandidatePCStep:
                 "PC step index exceeds the safe integer domain",
             )
         try:
-            next_time = float(Fraction(before.time) + Fraction(before.dt))
+            next_time = float(exact_number(before.time) + exact_number(before.dt))
         except OverflowError as exc:
             raise ResourceBoundaryError(
                 "admission", "nonfinite_value", "PC clock overflow"

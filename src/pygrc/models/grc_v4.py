@@ -11,10 +11,9 @@ from __future__ import annotations
 
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
-from typing import Any, ClassVar, Literal, Self, TYPE_CHECKING, TypeVar
+from typing import TYPE_CHECKING, Any, ClassVar, Literal, Self, TypeVar
 
 from ..core.interfaces import GRCModel
-
 from .grc_v4_codec import (
     V4SchemaError,
     canonical_json_bytes,
@@ -23,12 +22,15 @@ from .grc_v4_codec import (
 )
 from .grc_v4_profile import GRCV4Profile, GRCV4ResolvedParams, _Record
 from .grc_v4_state import (
-    FrozenJSONMap, GRCV4State, GRCV4StepResult, GRCV4LifecycleResult,
+    FrozenJSONMap,
+    GRCV4LifecycleResult,
+    GRCV4State,
+    GRCV4StepResult,
 )
 
 if TYPE_CHECKING:
-    from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
     from .grc_v4_candidate_a import CandidateADifferentialReference
+    from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
 
 _T = TypeVar("_T", bound=_Record)
 
@@ -311,8 +313,8 @@ class GRCV4(GRCModel):
 
     @classmethod
     def from_config(cls, config: Mapping[str, Any]) -> Self:
-        from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
         from .grc_v4_candidate_a import CandidateADifferentialReference
+        from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
 
         if not isinstance(config, Mapping):
             raise TypeError("V4 configuration must be a mapping")
@@ -375,11 +377,14 @@ class GRCV4(GRCModel):
         return result
 
     def duplicate(self) -> Self:
+        from .grc_v4_exact import exact_backend
+
         # Capture parameters with the same atomic snapshot, never a second read.
         snapshot = self.snapshot()
-        return type(self).from_state(
-            snapshot, snapshot["reference"]["profile"]["params_resolved"]
-        )
+        with exact_backend(self._operation._exact_backend_choice):
+            return type(self).from_state(
+                snapshot, snapshot["reference"]["profile"]["params_resolved"]
+            )
 
     def __copy__(self) -> Self:
         return self.duplicate()

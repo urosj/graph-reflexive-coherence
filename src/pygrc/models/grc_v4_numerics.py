@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from collections.abc import Iterator
 from contextlib import contextmanager
-from fractions import Fraction
 
 from . import _grc_v4_matrix as _backend
 from ._grc_v4_matrix import (
@@ -27,12 +26,14 @@ from ._grc_v4_matrix import (
     transpose,
 )
 from .grc_v4_codec import _OPERATION_CONTEXT, _operation_contract_assets
+from .grc_v4_exact import ExactBackend, ExactScalar, exact_backend, exact_number
 from .grc_v4_geometry import Matrix
 from .grc_v4_linear import MatrixReuse, _ConditionFact, _InverseFact
 from .grc_v4_profile import SolverPolicy
 from .grc_v4_state import FrozenJSONMap
 
 __all__ = [
+    "ExactBackend",
     "ExactMatrix",
     "MatrixError",
     "MatrixReuse",
@@ -40,6 +41,7 @@ __all__ = [
     "binary64_matrix",
     "condition",
     "condition_bound",
+    "exact_backend",
     "exact_matrix",
     "identity",
     "inertia",
@@ -89,11 +91,11 @@ def condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
     return _condition_certificate(condition_bound(exact, limit, label), limit, label)
 
 
-def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
+def condition_bound(exact: ExactMatrix, limit: float, label: str) -> ExactScalar:
     """Reuse a successful proof for exactly these coefficients and this limit."""
     context = _OPERATION_CONTEXT.get()
     facts = None if context is None else context.matrix_facts
-    exact_limit = Fraction(limit)
+    exact_limit = exact_number(limit)
     if facts is not None:
         fact = facts.find(exact, exact_limit)
         if fact is not None:
@@ -104,7 +106,7 @@ def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
     return bound
 
 
-def _condition_certificate(bound: Fraction, limit: float, label: str) -> FrozenJSONMap:
+def _condition_certificate(bound: ExactScalar, limit: float, label: str) -> FrozenJSONMap:
     return FrozenJSONMap(
         {
             "block": label,
@@ -116,12 +118,12 @@ def _condition_certificate(bound: Fraction, limit: float, label: str) -> FrozenJ
 
 
 def residual_pass(
-    residual: tuple[Fraction, ...], rhs: tuple[Fraction, ...], policy: SolverPolicy
+    residual: tuple[ExactScalar, ...], rhs: tuple[ExactScalar, ...], policy: SolverPolicy
 ) -> bool:
     """||r||2 <= atol + rtol max(1,||rhs||2), compared without underflow."""
-    r2 = sum((x * x for x in residual), Fraction())
-    b2 = max(Fraction(1), sum((x * x for x in rhs), Fraction()))
-    a, b = Fraction(policy.absolute_tolerance), Fraction(policy.relative_tolerance)
+    r2 = sum((x * x for x in residual), exact_number())
+    b2 = max(exact_number(1), sum((x * x for x in rhs), exact_number()))
+    a, b = exact_number(policy.absolute_tolerance), exact_number(policy.relative_tolerance)
     excess = r2 - a * a - b * b * b2
     return excess <= 0 or excess * excess <= 4 * a * a * b * b * b2
 
@@ -163,8 +165,8 @@ def solve(
 
 
 def solve_positive(
-    matrix: ExactMatrix, rhs: tuple[Fraction, ...]
-) -> tuple[Fraction, ...]:
+    matrix: ExactMatrix, rhs: tuple[ExactScalar, ...]
+) -> tuple[ExactScalar, ...]:
     """Exact SPD normal-equation solve, with fresh domain and RHS checks.
 
     This is not a physical binary64 solver policy: callers own their declared

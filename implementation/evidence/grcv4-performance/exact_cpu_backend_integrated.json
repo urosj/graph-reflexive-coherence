@@ -1,0 +1,31 @@
+{
+  "kind": "single-local-sample",
+  "workload": "strict public C_PC 3x4, five steps",
+  "python": {
+    "seconds_total": 48.078288165,
+    "seconds_per_step": [
+      6.501555,
+      10.193027,
+      10.665321,
+      10.304081,
+      10.414304
+    ]
+  },
+  "flint": {
+    "seconds_total": 11.490359082,
+    "seconds_per_step": [
+      1.595618,
+      2.407061,
+      2.474262,
+      2.496756,
+      2.516662
+    ]
+  },
+  "speedup": 4.1842,
+  "public_result_and_snapshot_digests_match": true,
+  "additional_checks": {
+    "all_ten_realizations_first_step_public_digests_match": true,
+    "C_OS_3x4_five_steps_flint_seconds_total": 12.096608819,
+    "C_OS_public_result_and_snapshot_digests_match": true
+  }
+}

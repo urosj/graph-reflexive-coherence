@@ -15,14 +15,14 @@ selector or solver domain. Stage/cache identity does not authenticate a caller.
 
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
-from dataclasses import dataclass, field, replace
-from fractions import Fraction
 import hashlib
 import math
+from collections.abc import Mapping, Sequence
+from dataclasses import dataclass, field, replace
 from types import MappingProxyType
 from typing import ClassVar, Literal, Self, TypeAlias, cast
 
+from ._grc_v4_evidence import _lifecycle_identity, _owns_stage_reference
 from .grc_v4_codec import (
     JSONValue,
     _dependency,
@@ -32,7 +32,7 @@ from .grc_v4_codec import (
     payload_identity,
     validate_payload,
 )
-from ._grc_v4_evidence import _lifecycle_identity, _owns_stage_reference
+from .grc_v4_exact import ExactScalar, exact_number, integer_ratio
 from .grc_v4_profile import GRCV4CommonParams, GRCV4Profile, validate_profile_references
 from .grc_v4_state import (
     FrozenJSONMap,
@@ -111,7 +111,7 @@ def _matrix(value: object, size: int) -> Matrix:
 
 
 def _require_positive_definite(
-    matrix: tuple[tuple[float | Fraction, ...], ...],
+    matrix: tuple[tuple[float | ExactScalar, ...], ...],
 ) -> None:
     """Exact Sylvester criterion by fraction-free elimination, at every size.
 
@@ -132,7 +132,7 @@ def _require_positive_definite(
     if all(matrix[i][j] == 0 for i in range(size) for j in range(i)):
         return  # Symmetry was checked by _spd; includes the empty space.
 
-    ratios = [[x.as_integer_ratio() for x in row] for row in matrix]
+    ratios = [[integer_ratio(x) for x in row] for row in matrix]
     denominator = max(d for row in ratios for _, d in row)
     if denominator & (denominator - 1) or any(
         denominator % d for row in ratios for _, d in row
@@ -747,9 +747,9 @@ class StarAssembly:
                     try:
                         value = _computed(
                             float(
-                                Fraction(weight)
-                                * Fraction(self.form.values[i])
-                                * Fraction(self.form.values[j])
+                                exact_number(weight)
+                                * exact_number(self.form.values[i])
+                                * exact_number(self.form.values[j])
                             )
                         )
                     except OverflowError as exc:
@@ -999,7 +999,7 @@ def H_profile(
     ref = reference.pairings.one_form.matrix
     exact = tuple(
         tuple(
-            Fraction(a) + Fraction(gain) * Fraction(b)
+            exact_number(a) + exact_number(gain) * exact_number(b)
             for a, b in zip(left, right, strict=True)
         )
         for left, right in zip(ref, K_4.increment, strict=True)

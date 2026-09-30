@@ -8,16 +8,16 @@ constructors with distinct types and authorities, including at eta_C=1.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from fractions import Fraction
 from typing import ClassVar
 
 from .grc_v4_codec import canonical_json_bytes
+from .grc_v4_exact import exact_number
 from .grc_v4_geometry import (
+    GeometryDomainError,
     GRCV4Differential,
     GRCV4Graph,
-    GeometryDomainError,
-    NonfiniteGeometryError,
     Matrix,
+    NonfiniteGeometryError,
     OneForm,
     OneFormHodge,
     PhysicalFlux,
@@ -199,11 +199,11 @@ class ChargeEvaluation:
         resource = VertexScalar(self.resource.graph, self.resource.values)
         target = _number(self.target)
         actual = unit_charge(resource)
-        delta = Fraction(actual) - Fraction(target)
+        delta = exact_number(actual) - exact_number(target)
         policy = profile.params_resolved.charge
-        bound = Fraction(policy.absolute_tolerance) + Fraction(
+        bound = exact_number(policy.absolute_tolerance) + exact_number(
             policy.relative_tolerance
-        ) * max(abs(Fraction(target)), Fraction(1))
+        ) * max(abs(exact_number(target)), exact_number(1))
         try:
             residual = _computed(float(delta))
         except OverflowError:
