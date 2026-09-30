@@ -6,6 +6,9 @@ closeout](../../corrections/GRCV4-MatrixPerformanceCloseout.md) explains the
 changes and their contract boundaries. The runnable public grid declarations
 remain in [examples/grcv4](../../../examples/grcv4/README.md).
 
+For the larger original grid, see the [6×6 A_OS FLINT comparison](grid_transport_6x6_flint_comparison.md),
+which pairs the pre-optimization five-step run with the current exact CPU backend.
+
 Start with the [A realization comparison](grid_transport_a_realizations_comparison.md),
 [primitive reuse comparison](grid_transport_a_primitive_reuse_comparison.md), and
 [shared matrix API validation](shared_matrix_api_validation.md). The

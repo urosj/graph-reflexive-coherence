@@ -39,3 +39,9 @@ The [integrated timing record](exact_cpu_backend_integrated.json) contains a pai
 With the integrated implementation, all ten realizations matched strict first-step public result and snapshot digests; C_PC and C_OS also matched both digests at every step through five steps. Focused tests passed with the optional FLINT installation and covered native values, exact singular and conditioning failures, cross-backend continuation rejection, owner binding after scope exit, strict public result parity, duplication, state assignment, and reset. The default environment runs without FLINT. A broad legacy V4 run exercised 998 tests; eight initial errors were traced to an evidence-scope decorator regression and capture tests seeing untracked files. The decorator was corrected, the new source files were staged for capture reconstruction, and the affected tests passed on targeted reruns. The full broad suite was not rerun after those corrections.
 
 Further validation should cover longer strict traces and failure-receipt parity across all realizations. The performance figures here are single-run measurements, not a scaling claim or a statistical benchmark.
+
+The later [A_OS 6×6 five-step comparison](grid_transport_6x6_flint_comparison.md)
+reproduces the original larger-grid declaration with all current optimizations
+and FLINT. Its 53.37 s step sum is 19.26× faster than the 1,027.68 s
+pre-matrix-optimization record; the final strict snapshot digest matches. That
+cross-revision comparison does not isolate FLINT's contribution.
