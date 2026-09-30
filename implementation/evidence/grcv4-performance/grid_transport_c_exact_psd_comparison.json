@@ -30,8 +30,8 @@
       ],
       "exact_result_snapshot_and_fact_counts_equal": true,
       "final_snapshot_sha256": "13f7d3772f9040510a96e0d792bd30bef50a2d98378f3867a0398cf7123dd4d9",
-      "previous_report": "examples/grcv4/results/grid_transport_c_os_3x4_5_reuse_enabled.json",
-      "optimized_report": "examples/grcv4/results/grid_transport_c_os_3x4_5_exact_psd.json"
+      "previous_report": "implementation/evidence/grcv4-performance/grid_transport_c_os_3x4_5_reuse_enabled.json",
+      "optimized_report": "implementation/evidence/grcv4-performance/grid_transport_c_os_3x4_5_exact_psd.json"
     },
     "CI": {
       "family": "C_CI",
@@ -59,8 +59,8 @@
       ],
       "exact_result_snapshot_and_fact_counts_equal": true,
       "final_snapshot_sha256": "c1bb0be9854ef9489519df242be0e5e2ddb4a74cd4bd451db742e69b4afc72c0",
-      "previous_report": "examples/grcv4/results/grid_transport_c_ci_3x4_5_reuse_enabled.json",
-      "optimized_report": "examples/grcv4/results/grid_transport_c_ci_3x4_5_exact_psd.json"
+      "previous_report": "implementation/evidence/grcv4-performance/grid_transport_c_ci_3x4_5_reuse_enabled.json",
+      "optimized_report": "implementation/evidence/grcv4-performance/grid_transport_c_ci_3x4_5_exact_psd.json"
     },
     "PC": {
       "family": "C_PC",
@@ -88,8 +88,8 @@
       ],
       "exact_result_snapshot_and_fact_counts_equal": true,
       "final_snapshot_sha256": "b5c1f376f7970da305293a1689f7f70a884d4838a8579a7949bbd402e9cd6000",
-      "previous_report": "examples/grcv4/results/grid_transport_c_pc_3x4_5_reuse_enabled.json",
-      "optimized_report": "examples/grcv4/results/grid_transport_c_pc_3x4_5_exact_psd.json"
+      "previous_report": "implementation/evidence/grcv4-performance/grid_transport_c_pc_3x4_5_reuse_enabled.json",
+      "optimized_report": "implementation/evidence/grcv4-performance/grid_transport_c_pc_3x4_5_exact_psd.json"
     },
     "CI+PC": {
       "family": "C_CI_PC",
@@ -117,8 +117,8 @@
       ],
       "exact_result_snapshot_and_fact_counts_equal": true,
       "final_snapshot_sha256": "bd4bddc3f1a556608a29e05af76a979b71ed903afdf37873aba1b014c492889c",
-      "previous_report": "examples/grcv4/results/grid_transport_c_ci_pc_3x4_5_reuse_enabled.json",
-      "optimized_report": "examples/grcv4/results/grid_transport_c_ci_pc_3x4_5_exact_psd.json"
+      "previous_report": "implementation/evidence/grcv4-performance/grid_transport_c_ci_pc_3x4_5_reuse_enabled.json",
+      "optimized_report": "implementation/evidence/grcv4-performance/grid_transport_c_ci_pc_3x4_5_exact_psd.json"
     },
     "RG2b": {
       "family": "C_RG2b",
@@ -146,8 +146,8 @@
       ],
       "exact_result_snapshot_and_fact_counts_equal": true,
       "final_snapshot_sha256": "cd13fa1ad2ecfb90167fb87c0bd429b76eaaa5f246b05b21dcdd88b04823a152",
-      "previous_report": "examples/grcv4/results/grid_transport_c_rg2b_3x4_5_reuse_enabled.json",
-      "optimized_report": "examples/grcv4/results/grid_transport_c_rg2b_3x4_5_exact_psd.json"
+      "previous_report": "implementation/evidence/grcv4-performance/grid_transport_c_rg2b_3x4_5_reuse_enabled.json",
+      "optimized_report": "implementation/evidence/grcv4-performance/grid_transport_c_rg2b_3x4_5_exact_psd.json"
     }
   },
   "large_grid_os_one_step": {
@@ -165,7 +165,7 @@
     "optimized_step_seconds": 136.28130157099804,
     "step_speedup": 1.6607316002857222,
     "declaration_and_public_bytes_equal": true,
-    "previous_report": "examples/grcv4/results/grid_transport_c_os_4x5_1.json",
-    "optimized_report": "examples/grcv4/results/grid_transport_c_os_4x5_1_exact_psd.json"
+    "previous_report": "implementation/evidence/grcv4-performance/grid_transport_c_os_4x5_1.json",
+    "optimized_report": "implementation/evidence/grcv4-performance/grid_transport_c_os_4x5_1_exact_psd.json"
   }
 }

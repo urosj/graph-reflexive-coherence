@@ -1,6 +1,6 @@
 # Candidate C on configurable strict-public grids
 
-The configurable [Candidate C runner](../grid_realizations_c.py) uses the same grid topology, reference edge weights, and initial resource pulse as the [Candidate A grid](../grid_realizations_a.py). C has no A edge history. Its selector cutoff is proposed between the first two positive reference stiffness eigenvalues, giving a nonconstant sector; production exact inertia and the realization's domain certificate decide admission. The admitted declaration is fixed for every public step. These are distinct physical experiments, even at the same grid size.
+The configurable [Candidate C runner](../../../examples/grcv4/grid_realizations_c.py) uses the same grid topology, reference edge weights, and initial resource pulse as the [Candidate A grid](../../../examples/grcv4/grid_realizations_a.py). C has no A edge history. Its selector cutoff is proposed between the first two positive reference stiffness eigenvalues, giving a nonconstant sector; production exact inertia and the realization's domain certificate decide admission. The admitted declaration is fixed for every public step. These are distinct physical experiments, even at the same grid size.
 
 These measurements precede the [exact conditioning-certificate optimization](grid_transport_c_exact_psd_comparison.md). The paired measurements below use **3×4, 12 nodes, 17 edges, and five evolving strict public steps** in fresh processes. Step totals exclude declaration admission, owner setup, result/snapshot digest capture, and final snapshotting. Each control discards operation-local inverse and conditioning lookup results in the benchmark observer; production admission, RHS, residuals, certificates, and publication are unchanged. Results are single local samples, not statistical speedup estimates.
 
@@ -48,10 +48,10 @@ From the repository root, with the existing environment:
 
 ```bash
 PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization OS --rows 3 --cols 4 --steps 5
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_c.py --realization CI --rows 3 --cols 4 --steps 5
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_c.py --realization CI --rows 3 --cols 4 --steps 5 --reuse
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --candidate C --realization PC --rows 3 --cols 4 --steps 5 --disable-continuation
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --candidate C --realization PC --rows 3 --cols 4 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_c.py --realization CI --rows 3 --cols 4 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_c.py --realization CI --rows 3 --cols 4 --steps 5 --reuse
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --candidate C --realization PC --rows 3 --cols 4 --steps 5 --disable-continuation
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --candidate C --realization PC --rows 3 --cols 4 --steps 5
 ```
 
 Replace `--realization` with `OS`, `CI`, `PC`, `CI+PC`, or `RG2b` for the ordinary/reuse example; continuation applies to `PC`, `CI+PC`, and `RG2b`. A rejected declaration or public step aborts the example rather than entering its timing table. The 4×5 C_OS command is the same ordinary runner with `--rows 4 --cols 5 --steps 1`.

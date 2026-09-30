@@ -55,7 +55,7 @@ not performed after the harness corrections; the affected suites were rerun.
 
 ## Benchmark observer smoke check
 
-Command: `PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization CI+PC --rows 2 --cols 2 --steps 2`.
+Command: `PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --realization CI+PC --rows 2 --cols 2 --steps 2`.
 
 The strict public run admitted both steps on four nodes and four edges.
 Both steps retained two facts. Across the steps, the shared observer recorded

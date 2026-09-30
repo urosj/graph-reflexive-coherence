@@ -35,8 +35,8 @@ The retained **entry count** stays constant with trace length. Matrix data still
 **247 tests passed**, including nine new continuation tests, thirteen primitive tests, all ten realizations' canonical public results/snapshot equivalence, lifecycle, PC, migration and topology/representation suites. Tests cover strict changed limits/coefficients and RHS residuals, asset/numerical failure rollback, restoration and administrative invalidation, separate owners and concurrent steps. New files pass lint and the fact store passes type checks. The lifecycle file retains the same thirteen pre-existing lint diagnostics as HEAD, with none added.
 
 ```bash
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --disable-continuation --rows 4 --cols 5 --steps 5
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --disable-continuation --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --rows 4 --cols 5 --steps 5
 ```
 
 The control is benchmark-only and discards selected continuation facts, preserving reuse within each operation.

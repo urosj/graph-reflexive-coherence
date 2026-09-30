@@ -37,8 +37,8 @@ The retained entry count is at most **four facts for two matrices**, independent
 **145 regression tests completed successfully; one optional 32-vertex slow campaign was skipped.** Coverage includes all 17 continuation tests (eight for RG2b), strict primitive algebra, operation evidence, generic lifecycle, and scalar/graph RG2b. Tests cover canonical public result/snapshot equivalence, strict changed limits/coefficients and RHS residuals, frozen beat rejection, fresh section/certificate/bridge counts, asset/numerical rollback, restoration and administrative invalidation, separate owners, and concurrent steps.
 
 ```bash
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization RG2b --disable-continuation --rows 4 --cols 5 --steps 5
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization RG2b --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --realization RG2b --disable-continuation --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --realization RG2b --rows 4 --cols 5 --steps 5
 ```
 
 The control is benchmark-only and discards selected continuation facts, preserving reuse within each operation.

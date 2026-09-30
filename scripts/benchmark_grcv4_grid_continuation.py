@@ -13,7 +13,6 @@ from pathlib import Path
 from time import perf_counter
 from unittest.mock import patch
 
-from examples.grcv4.benchmark_grid_a import run_benchmark
 from examples.grcv4.grid_transport import DEFAULT_COLS, DEFAULT_ROWS
 from pygrc.models import _grc_v4_matrix as arithmetic
 from pygrc.models import grc_v4_ci as ci
@@ -23,6 +22,7 @@ from pygrc.models import grc_v4_rg2b as rg
 from pygrc.models import grc_v4_rg2b_graph as rg_graph
 from pygrc.models.grc_v4_codec import _OPERATION_CONTEXT
 from pygrc.models.grc_v4_linear import _MatrixContinuation, _MatrixFacts
+from scripts.benchmark_grcv4_grid_a import run_benchmark
 
 
 def run(steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, continuation=True, realization="PC", candidate="A"):
@@ -131,7 +131,7 @@ def main():
     suffix = "disabled" if args.disable_continuation else "enabled"
     name = args.realization.lower().replace("+", "_")
     output = args.output or (
-        Path(__file__).parent / "results" /
+        Path(__file__).resolve().parents[1] / "implementation/evidence/grcv4-performance/runs" /
         f"grid_transport_{args.candidate.lower()}_{name}_{args.rows}x{args.cols}_{args.steps}_continuation_{suffix}.json"
     )
     output.parent.mkdir(parents=True, exist_ok=True)

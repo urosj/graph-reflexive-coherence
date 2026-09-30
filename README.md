@@ -201,7 +201,8 @@ record rather than the paper list alone:
 | Entry point | What it explains |
 | --- | --- |
 | [implementation/ImplementationPhases.md](implementation/ImplementationPhases.md) | Top-level phase map from core substrate through runtimes, telemetry, visualization, landscapes, and LGRC. |
-| [implementation/corrections/README.md](implementation/corrections/README.md) | Bounded corrections to existing runtime or persistence contracts that do not constitute new dynamics phases. |
+| [implementation/corrections/README.md](implementation/corrections/README.md) | Bounded runtime corrections and contract-preserving performance improvements. |
+| [implementation/evidence/README.md](implementation/evidence/README.md) | Retained implementation evidence, including GRCV4 numerical performance measurements. |
 | [GRCv4/GRC9v4 constitutive design investigation](implementation/investigations/grc9v4-constitutive-design/README.md) | Accepted D0-D10.2 design lineage, current profile grammar, substrate-provenance audit, authorized GRCv4-first specification route, and bounded read-only exploration surface. |
 | [specs/README.md](specs/README.md) | Implementation contracts and family capability matrix for `GRCV2`, `GRCV3`, `GRC9`, `GRC9V3`, and `LGRC9V3`. |
 | [Phase T implementation plan: telemetry and evidence discipline](implementation/Phase-T-ImplementationPlan.md) | Artifact layout, reports, replay, and evidence discipline. |

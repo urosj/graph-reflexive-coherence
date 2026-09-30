@@ -52,4 +52,4 @@ V4 regression run: **954 tests, OK, four optional skips**. The final **13 primit
 
 [Machine-readable comparison, source hashes and validation](grid_transport_a_primitive_reuse_comparison.json).
 
-Reproduce with benchmark_grid_a.py --reuse --realization CI --rows 4 --cols 5 --steps 5. Omitting --reuse disables primitive fact lookup as a benchmark-only control. Candidate C grid timings remain a separate next experiment.
+Reproduce with scripts/benchmark_grcv4_grid_a.py --reuse --realization CI --rows 4 --cols 5 --steps 5. Omitting --reuse disables primitive fact lookup as a benchmark-only control. Candidate C grid timings were measured subsequently in [their separate comparison](grid_transport_c_realizations_comparison.md).

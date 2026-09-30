@@ -33,7 +33,7 @@ Every complete initial declaration, differential backend, saved C/W/Z state, clo
 No production code or solver policy changed for this measurement. The machine-readable reports include source hashes for the current uncommitted checkout.
 
 ```bash
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_a.py --realization CI+PC --rows 4 --cols 5 --steps 5 --reuse --output examples/grcv4/results/grid_transport_a_ci_pc_4x5_5_after_pc_update.json
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_a.py --realization CI+PC --rows 4 --cols 5 --steps 5 --reuse --output implementation/evidence/grcv4-performance/grid_transport_a_ci_pc_4x5_5_after_pc_update.json
 ```
 
 [Earlier run](grid_transport_a_ci_pc_4x5_5_primitive_reuse.json), [current run](grid_transport_a_ci_pc_4x5_5_after_pc_update.json), [comparison and source hashes](grid_transport_a_ci_pc_after_pc_comparison.json).

@@ -87,7 +87,7 @@ def main(candidate="A"):
     name = args.realization.lower().replace("+", "_")
     suffix = "primitive_reuse" if args.reuse else "primitive_reuse_disabled"
     output = args.output or (
-        Path(__file__).parent / "results" /
+        Path(__file__).resolve().parents[1] / "implementation/evidence/grcv4-performance/runs" /
         f"grid_transport_{candidate.lower()}_{name}_{args.rows}x{args.cols}_{args.steps}_{suffix}.json"
     )
     output.parent.mkdir(parents=True, exist_ok=True)

@@ -44,8 +44,8 @@ The earlier 131.471-second repeat did not enable CI+PC continuation. That report
 The **25 focused continuation tests** and **130 broader regression tests** all passed, with no skips. Regression modules cover linear algebra, generic lifecycle across all ten realizations, CI, and CI+PC. The eight new CI+PC continuation tests cover canonical warm/cold result and snapshot equality, A/C zero/negative durations, fresh admission/residual/write counts, domain rejection, asset/numerical rollback, administrative invalidation, and separate/concurrent owners. New files pass lint; the lifecycle file has the same 13 pre-existing diagnostics as HEAD.
 
 ```bash
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization CI+PC --disable-continuation --rows 4 --cols 5 --steps 5
-PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --realization CI+PC --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --realization CI+PC --disable-continuation --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grcv4_grid_continuation.py --realization CI+PC --rows 4 --cols 5 --steps 5
 ```
 
 The control uses a benchmark-only mock to discard selected continuation facts at publication. Production has no mode switch.

@@ -49,8 +49,8 @@
         "pc_carrier_writes": 5
       },
       "strict_result_and_step_snapshot_digests_equal": true,
-      "disabled_report": "examples/grcv4/results/grid_transport_c_pc_3x4_5_continuation_disabled.json",
-      "enabled_report": "examples/grcv4/results/grid_transport_c_pc_3x4_5_continuation_enabled.json"
+      "disabled_report": "implementation/evidence/grcv4-performance/grid_transport_c_pc_3x4_5_continuation_disabled.json",
+      "enabled_report": "implementation/evidence/grcv4-performance/grid_transport_c_pc_3x4_5_continuation_enabled.json"
     },
     "CI+PC": {
       "family": "C_CI_PC",
@@ -101,8 +101,8 @@
         "pc_carrier_writes": 5
       },
       "strict_result_and_step_snapshot_digests_equal": true,
-      "disabled_report": "examples/grcv4/results/grid_transport_c_ci_pc_3x4_5_continuation_disabled.json",
-      "enabled_report": "examples/grcv4/results/grid_transport_c_ci_pc_3x4_5_continuation_enabled.json"
+      "disabled_report": "implementation/evidence/grcv4-performance/grid_transport_c_ci_pc_3x4_5_continuation_disabled.json",
+      "enabled_report": "implementation/evidence/grcv4-performance/grid_transport_c_ci_pc_3x4_5_continuation_enabled.json"
     },
     "RG2b": {
       "family": "C_RG2b",
@@ -151,8 +151,8 @@
         "native_arithmetic_bridges": 5
       },
       "strict_result_and_step_snapshot_digests_equal": true,
-      "disabled_report": "examples/grcv4/results/grid_transport_c_rg2b_3x4_5_continuation_disabled.json",
-      "enabled_report": "examples/grcv4/results/grid_transport_c_rg2b_3x4_5_continuation_enabled.json"
+      "disabled_report": "implementation/evidence/grcv4-performance/grid_transport_c_rg2b_3x4_5_continuation_disabled.json",
+      "enabled_report": "implementation/evidence/grcv4-performance/grid_transport_c_rg2b_3x4_5_continuation_enabled.json"
     }
   },
   "runtime_source_sha256": {
