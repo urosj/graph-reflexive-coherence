@@ -5,6 +5,7 @@ import unittest
 from dataclasses import replace
 from fractions import Fraction
 from pathlib import Path
+from random import Random
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -25,6 +26,38 @@ class MatrixAPITests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.policy = current_fixture().geometry.reference.profile.params_resolved.solver
+
+    def test_exact_psd_certificate_matches_full_inertia_at_boundaries(self):
+        # Exact zero pivots, near-boundary negatives, and arbitrary symmetric
+        # rationals must have the same PSD decision as full signed inertia.
+        epsilon = Fraction(1, 2**80)
+        matrices = (
+            ((Fraction(), Fraction()), (Fraction(), Fraction())),
+            ((Fraction(1), Fraction(1)), (Fraction(1), Fraction(1))),
+            ((Fraction(1), Fraction(1)), (Fraction(1), 1 - epsilon)),
+            ((Fraction(), Fraction(1)), (Fraction(1), Fraction())),
+            ((Fraction(), Fraction(), Fraction()),
+             (Fraction(), Fraction(1), Fraction()),
+             (Fraction(), Fraction(), Fraction())),
+        )
+        for matrix in matrices:
+            self.assertEqual(
+                arithmetic._positive_semidefinite(matrix),
+                arithmetic.inertia(matrix)[0] == 0,
+            )
+        rng = Random(711)
+        for n in range(1, 7):
+            for _ in range(100):
+                rows = [[Fraction() for _ in range(n)] for _ in range(n)]
+                for i in range(n):
+                    for j in range(i, n):
+                        value = Fraction(rng.randrange(-3, 4), rng.randrange(1, 5))
+                        rows[i][j] = rows[j][i] = value
+                matrix = tuple(map(tuple, rows))
+                self.assertEqual(
+                    arithmetic._positive_semidefinite(matrix),
+                    arithmetic.inertia(matrix)[0] == 0,
+                )
 
     def test_automatic_and_fresh_modes_keep_rhs_and_certificates_fresh(self):
         for reuse, count in (

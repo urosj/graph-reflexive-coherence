@@ -1,4 +1,4 @@
-"""Count numerical primitive reuse on an A grid through strict public steps.
+"""Count numerical primitive reuse on A or C grids through strict public steps.
 
 This checkout benchmark observes ordinary fact lookup. With reuse disabled it
 discards the result, forcing the requested primitive to run again. It changes
@@ -10,13 +10,16 @@ import json
 from pathlib import Path
 from unittest.mock import patch
 
-from examples.grcv4.grid_realizations_a import REALIZATIONS, run
+from examples.grcv4.grid_realizations_a import REALIZATIONS as A_REALIZATIONS
+from examples.grcv4.grid_realizations_a import run as run_a
+from examples.grcv4.grid_realizations_c import REALIZATIONS as C_REALIZATIONS
+from examples.grcv4.grid_realizations_c import run as run_c
 from examples.grcv4.grid_transport import DEFAULT_COLS, DEFAULT_ROWS
 from pygrc.models.grc_v4_linear import _MatrixFacts
 
 
 def run_benchmark(
-    realization, steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, reuse=False
+    realization, steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, reuse=False, candidate="A"
 ):
     ordinary_find = _MatrixFacts.find
     last_cache = None
@@ -44,8 +47,10 @@ def run_benchmark(
         scopes[-1][f"{kind}_{outcome}"] += 1
         return fact if reuse else None
 
+    if candidate not in ("A", "C"):
+        raise ValueError("candidate must be A or C")
     with patch.object(_MatrixFacts, "find", observe_fact):
-        report = run(realization, steps, rows, cols)
+        report = (run_a if candidate == "A" else run_c)(realization, steps, rows, cols)
     report.update(
         matrix_fact_reuse="enabled" if reuse else "lookup_disabled_control",
         matrix_fact_scopes=scopes,
@@ -60,9 +65,13 @@ def run_benchmark(
     return report
 
 
-def main():
+def main(candidate="A"):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--realization", choices=REALIZATIONS, required=True)
+    parser.add_argument(
+        "--realization",
+        choices=A_REALIZATIONS if candidate == "A" else C_REALIZATIONS,
+        required=True,
+    )
     parser.add_argument("--rows", type=int, default=DEFAULT_ROWS)
     parser.add_argument("--cols", type=int, default=DEFAULT_COLS)
     parser.add_argument("--steps", type=int, default=5)
@@ -72,13 +81,14 @@ def main():
     if args.steps < 1 or args.rows < 2 or args.cols < 2:
         parser.error("steps must be positive and each grid dimension at least two")
     report = run_benchmark(
-        args.realization, args.steps, args.rows, args.cols, reuse=args.reuse
+        args.realization, args.steps, args.rows, args.cols, reuse=args.reuse,
+        candidate=candidate,
     )
     name = args.realization.lower().replace("+", "_")
     suffix = "primitive_reuse" if args.reuse else "primitive_reuse_disabled"
     output = args.output or (
         Path(__file__).parent / "results" /
-        f"grid_transport_a_{name}_{args.rows}x{args.cols}_{args.steps}_{suffix}.json"
+        f"grid_transport_{candidate.lower()}_{name}_{args.rows}x{args.cols}_{args.steps}_{suffix}.json"
     )
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n")

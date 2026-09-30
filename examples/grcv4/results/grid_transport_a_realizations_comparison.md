@@ -61,4 +61,4 @@ Production runtime revision and source hashes are retained in [the machine-reada
 - A_RG2b: [reuse enabled](grid_transport_a_rg2b_4x5_5.json), [disabled control](grid_transport_a_rg2b_4x5_5_reuse_disabled.json).
 - [Additional dimensions and public-step checks](grid_transport_a_general_validation.json).
 
-Use ../grid_realizations_a.py for the ordinary run and ../benchmark_grid_a.py for the disabled control, with --realization, --rows, --cols and --steps. Candidate C remains the next measurement, not part of these results.
+Use ../grid_realizations_a.py for the ordinary run and ../benchmark_grid_a.py for the disabled control, with --realization, --rows, --cols and --steps. Candidate C is measured separately in [its configurable-grid comparison](grid_transport_c_realizations_comparison.md).

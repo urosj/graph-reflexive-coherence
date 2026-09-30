@@ -1,0 +1,27 @@
+{
+  "family": "C_PC",
+  "step_seconds": 8.732717896986287,
+  "observed": {
+    "inverse": {
+      "calls": 16,
+      "seconds": 2.272406426985981
+    },
+    "matmul": {
+      "calls": 38,
+      "seconds": 0.3761230619857088
+    },
+    "condition_bound": {
+      "calls": 11,
+      "seconds": 4.519548046024283
+    },
+    "binary64_matrix": {
+      "calls": 34,
+      "seconds": 0.004133917158469558
+    },
+    "inertia": {
+      "calls": 25,
+      "seconds": 4.28253258598852
+    }
+  },
+  "note": "Nested calls overlap: condition_bound invokes inertia/matmul/binary64_matrix; observers active only during strict public step."
+}

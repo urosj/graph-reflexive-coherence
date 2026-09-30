@@ -1,0 +1,43 @@
+{
+  "family": "C_OS",
+  "grid_rows": 3,
+  "grid_cols": 4,
+  "nodes": 12,
+  "edges": 17,
+  "step_seconds": 16.096045950020198,
+  "declaration_seconds": 10.218499996990431,
+  "setup_seconds": 6.801730011997279,
+  "final_snapshot_sha256": "03b33a5f219edcf3dab824af63379ff0cb8ff0629187ae5c0be7a0b6efefc09f",
+  "observed_scoped_step_calls": {
+    "exact_inertia": {
+      "calls": 8,
+      "seconds": 0.07320841701584868
+    },
+    "exact_inverse": {
+      "calls": 25,
+      "seconds": 4.382766051945509
+    },
+    "spectral_selector": {
+      "calls": 5,
+      "seconds": 0.20934731798479334
+    },
+    "exact_conditioning": {
+      "calls": 19,
+      "seconds": 8.875628651061561
+    },
+    "candidate_c_algebra": {
+      "calls": 5,
+      "seconds": 15.660934949031798
+    },
+    "candidate_c_current": {
+      "calls": 5,
+      "seconds": 15.788985148945358
+    }
+  },
+  "observation_note": "Nested timings overlap: current includes algebra, algebra includes selector, and matrix arithmetic may occur within either. Hooks run only during one public step, excluding declaration and owner setup. This is a diagnostic single run, not a paired speedup.",
+  "source_sha256": {
+    "examples/grcv4/grid_realizations_c.py": "7294edb05613e568925726b73fa29ec82441957948f1d14fdec93504a63d601b",
+    "src/pygrc/models/grc_v4_candidate_c.py": "96a7b72e03d55475690a93009ee00c1ec86ccf723064afe877688f55c671b338",
+    "src/pygrc/models/_grc_v4_matrix.py": "7a20684e0c439e40deb5adc7b2dc6505ee1183f2ae0fb638236228c0b8475c79"
+  }
+}

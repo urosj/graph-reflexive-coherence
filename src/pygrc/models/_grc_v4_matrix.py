@@ -143,6 +143,37 @@ def inertia(matrix: ExactMatrix) -> tuple[int, int, int]:
     return negative, 0, positive
 
 
+
+def _positive_semidefinite(matrix: ExactMatrix) -> bool:
+    """Exact Schur-complement PSD decision for a symmetric Gram bound.
+
+    A negative diagonal is incompatible with PSD. A positive diagonal permits
+    an exact congruence reduction; if no positive diagonal remains, all entries
+    must be zero. This also admits equality at a certified endpoint. Only the
+    conditioning certificate uses this boolean decision; general inertia keeps
+    its signed-rank contract.
+    """
+    rows = [list(row) for row in matrix]
+    while rows:
+        n = len(rows)
+        pivot = next((i for i in range(n) if rows[i][i] > 0), None)
+        if pivot is None:
+            return not any(value for row in rows for value in row)
+        if pivot:
+            order = [pivot] + [i for i in range(n) if i != pivot]
+            rows = [[rows[i][j] for j in order] for i in order]
+        diagonal = rows[0][0]
+        size = n - 1
+        reduced = [[Fraction()] * size for _ in range(size)]
+        for i in range(size):
+            gain = rows[i + 1][0] / diagonal
+            for j in range(i, size):
+                value = rows[i + 1][j + 1] - gain * rows[j + 1][0]
+                reduced[i][j] = reduced[j][i] = value
+        rows = reduced
+    return True
+
+
 def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
     """The exact conditioning algorithm; failure always uses the current label."""
     scale = max(abs(x) for row in exact for x in row)
@@ -218,7 +249,7 @@ def condition_bound(exact: ExactMatrix, limit: float, label: str) -> Fraction:
                 tuple((upper if i == j else 0) - x for j, x in enumerate(row))
                 for i, row in enumerate(gram)
             )
-            if inertia(low_test)[0] == 0 and inertia(high_test)[0] == 0:
+            if _positive_semidefinite(low_test) and _positive_semidefinite(high_test):
                 break
         else:
             raise MatrixError(

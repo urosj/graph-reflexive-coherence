@@ -1,0 +1,175 @@
+{
+  "baseline_commit": "20748601b66e4469539dcd71d979de5f0727085f",
+  "comparison_scope": "3x4 grid, 12 nodes, 17 edges, five evolving strict public steps per C realization; each enabled/disabled pair has the same full declaration and exact public result and snapshot digests. Different realizations use distinct certified declarations.",
+  "counter_scope": "Disabled control bypasses result of normal fact lookup but retains public validation. Enabled computes on misses. Counts are operation-scoped inverse and conditioning requests/misses.",
+  "realizations": {
+    "OS": {
+      "family": "C_OS",
+      "nodes": 12,
+      "edges": 17,
+      "declaration_sha256": "a54219a4a6e724d0f16bb38068ab69e6388b19610017fe4a9da0c690a4eac7bd",
+      "disabled_total_step_seconds": 102.92771821600036,
+      "enabled_total_step_seconds": 81.48665496896137,
+      "speedup": 1.2631236152128957,
+      "disabled_steps_seconds": [
+        22.09652016698965,
+        21.257109047000995,
+        19.927645794989076,
+        20.687373419001233,
+        18.959069788019406
+      ],
+      "enabled_steps_seconds": [
+        15.96931551900343,
+        16.622874802997103,
+        16.21730972098885,
+        17.13512453698786,
+        15.54203038898413
+      ],
+      "disabled_inverse_computations": 275,
+      "enabled_inverse_computations": 145,
+      "disabled_conditioning_computations": 200,
+      "enabled_conditioning_computations": 111,
+      "final_snapshot_sha256": "13f7d3772f9040510a96e0d792bd30bef50a2d98378f3867a0398cf7123dd4d9",
+      "strict_result_and_step_snapshot_digests_equal": true,
+      "disabled_report": "examples/grcv4/results/grid_transport_c_os_3x4_5_reuse_disabled.json",
+      "enabled_report": "examples/grcv4/results/grid_transport_c_os_3x4_5_reuse_enabled.json"
+    },
+    "CI": {
+      "family": "C_CI",
+      "nodes": 12,
+      "edges": 17,
+      "declaration_sha256": "7b2c5a2ea33b6ffcd164f98787cafb75d93411c381645cd9aefd7c3157b2ffa1",
+      "disabled_total_step_seconds": 126.91009811399272,
+      "enabled_total_step_seconds": 60.41661116000614,
+      "speedup": 2.1005828641710234,
+      "disabled_steps_seconds": [
+        26.624918795976555,
+        26.10129703200073,
+        25.171056035993388,
+        25.132662276999326,
+        23.880163973022718
+      ],
+      "enabled_steps_seconds": [
+        10.901955993002048,
+        12.57443637601682,
+        12.241627209004946,
+        12.400313428981462,
+        12.298278153000865
+      ],
+      "disabled_inverse_computations": 570,
+      "enabled_inverse_computations": 123,
+      "disabled_conditioning_computations": 360,
+      "enabled_conditioning_computations": 66,
+      "final_snapshot_sha256": "c1bb0be9854ef9489519df242be0e5e2ddb4a74cd4bd451db742e69b4afc72c0",
+      "strict_result_and_step_snapshot_digests_equal": true,
+      "disabled_report": "examples/grcv4/results/grid_transport_c_ci_3x4_5_reuse_disabled.json",
+      "enabled_report": "examples/grcv4/results/grid_transport_c_ci_3x4_5_reuse_enabled.json"
+    },
+    "PC": {
+      "family": "C_PC",
+      "nodes": 12,
+      "edges": 17,
+      "declaration_sha256": "feee671daabf9b0f06ed159a1eb822c827907cae75753e8f896c317f77e65542",
+      "disabled_total_step_seconds": 81.35401656696922,
+      "enabled_total_step_seconds": 64.23593017499661,
+      "speedup": 1.2664877171598226,
+      "disabled_steps_seconds": [
+        12.029983947984874,
+        17.383774053974776,
+        17.301614330004668,
+        17.30059761600569,
+        17.338046618999215
+      ],
+      "enabled_steps_seconds": [
+        8.340160700987326,
+        13.820054092997452,
+        13.880045430007158,
+        14.087761250004405,
+        14.10790870100027
+      ],
+      "disabled_inverse_computations": 180,
+      "enabled_inverse_computations": 100,
+      "disabled_conditioning_computations": 120,
+      "enabled_conditioning_computations": 67,
+      "final_snapshot_sha256": "b5c1f376f7970da305293a1689f7f70a884d4838a8579a7949bbd402e9cd6000",
+      "strict_result_and_step_snapshot_digests_equal": true,
+      "disabled_report": "examples/grcv4/results/grid_transport_c_pc_3x4_5_reuse_disabled.json",
+      "enabled_report": "examples/grcv4/results/grid_transport_c_pc_3x4_5_reuse_enabled.json"
+    },
+    "CI+PC": {
+      "family": "C_CI_PC",
+      "nodes": 12,
+      "edges": 17,
+      "declaration_sha256": "981bd80997a397c6a1e40e00a2bbb95158505f38b54fa30aafdd085a453a3b9b",
+      "disabled_total_step_seconds": 129.2397750520031,
+      "enabled_total_step_seconds": 61.98107688801247,
+      "speedup": 2.0851489122319347,
+      "disabled_steps_seconds": [
+        26.953703525010496,
+        26.405666701000882,
+        25.67524892700021,
+        25.677608661004342,
+        24.527547237987164
+      ],
+      "enabled_steps_seconds": [
+        11.100007006025407,
+        12.927173019998008,
+        12.609965399984503,
+        12.865890701999888,
+        12.47804076000466
+      ],
+      "disabled_inverse_computations": 585,
+      "enabled_inverse_computations": 119,
+      "disabled_conditioning_computations": 360,
+      "enabled_conditioning_computations": 62,
+      "final_snapshot_sha256": "bd4bddc3f1a556608a29e05af76a979b71ed903afdf37873aba1b014c492889c",
+      "strict_result_and_step_snapshot_digests_equal": true,
+      "disabled_report": "examples/grcv4/results/grid_transport_c_ci_pc_3x4_5_reuse_disabled.json",
+      "enabled_report": "examples/grcv4/results/grid_transport_c_ci_pc_3x4_5_reuse_enabled.json"
+    },
+    "RG2b": {
+      "family": "C_RG2b",
+      "nodes": 12,
+      "edges": 17,
+      "declaration_sha256": "e789bc093908d0edc3167766cb2d931e5e9f59ff40a24fe276d645db46238734",
+      "disabled_total_step_seconds": 274.8050649209763,
+      "enabled_total_step_seconds": 217.38898101597442,
+      "speedup": 1.2641168086655816,
+      "disabled_steps_seconds": [
+        53.72707440299564,
+        55.28229549797834,
+        56.155974619992776,
+        56.09167873801198,
+        53.54804166199756
+      ],
+      "enabled_steps_seconds": [
+        38.98810092898202,
+        43.2930999850214,
+        46.206384067976614,
+        43.1602725769917,
+        45.741123457002686
+      ],
+      "disabled_inverse_computations": 590,
+      "enabled_inverse_computations": 222,
+      "disabled_conditioning_computations": 360,
+      "enabled_conditioning_computations": 128,
+      "final_snapshot_sha256": "cd13fa1ad2ecfb90167fb87c0bd429b76eaaa5f246b05b21dcdd88b04823a152",
+      "strict_result_and_step_snapshot_digests_equal": true,
+      "disabled_report": "examples/grcv4/results/grid_transport_c_rg2b_3x4_5_reuse_disabled.json",
+      "enabled_report": "examples/grcv4/results/grid_transport_c_rg2b_3x4_5_reuse_enabled.json"
+    }
+  },
+  "runtime_source_sha256": {
+    "examples/grcv4/grid_transport.py": "249cd60f30e4929b81ea612a559015a16296d7a64a0032d46965720bafb5d9b4",
+    "examples/grcv4/grid_realizations_c.py": "7294edb05613e568925726b73fa29ec82441957948f1d14fdec93504a63d601b",
+    "examples/grcv4/benchmark_grid_a.py": "64c5d051915a41940b086abb2d2d9257366c233581b306a7d83bfc45ec8f32d3",
+    "examples/grcv4/benchmark_grid_c.py": "76bb3b5405fb317144289041eb51517e06226c74844f419f5f704fc538c3eaa6",
+    "src/pygrc/models/grc_v4_numerics.py": "65367617a53583776544277416a6cd536caac39cc8abb9be7897cb51f97a1291",
+    "src/pygrc/models/_grc_v4_matrix.py": "7a20684e0c439e40deb5adc7b2dc6505ee1183f2ae0fb638236228c0b8475c79",
+    "src/pygrc/models/grc_v4_candidate_c.py": "96a7b72e03d55475690a93009ee00c1ec86ccf723064afe877688f55c671b338",
+    "src/pygrc/models/grc_v4_ci.py": "f4089568e989d2386297c25624e02a20da6522707beeaef527e2650274bd2bf8",
+    "src/pygrc/models/grc_v4_pc.py": "60a82e21c972348304d41d75e46d521f4e7b5605d59113f132ea2760fe42e2ab",
+    "src/pygrc/models/grc_v4_rg2b_graph.py": "7e950e2055a91656907d98f464cd0191cb123d13f2f248be96bab08de49e1d7e",
+    "src/pygrc/models/grc_v4_lifecycle.py": "f99c23babc29ce44f41818b1dc7b4cf205c7af6479a470923513ebb1e4fcd2f5"
+  }
+}

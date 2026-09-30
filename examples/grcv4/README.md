@@ -364,8 +364,8 @@ admissible.
 Step timing excludes declaration construction, owner setup, progress output and
 the final snapshot. Those costs are recorded separately. Reports retain full
 identity-bound inputs, the A differential reference, C/W/Z after every step,
-receipt counts and the final snapshot digest. Candidate C grids are deferred to
-the next comparison.
+receipt counts and the final snapshot digest. Candidate C has a separate
+[configurable-grid comparison](results/grid_transport_c_realizations_comparison.md).
 
 The benchmark-only [disabled control](benchmark_grid_a.py) accepts the same
 arguments. It disables inverse and conditioning fact reuse while retaining the
@@ -379,6 +379,43 @@ PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_a.py --rea
 [The 4×5 A comparison](results/grid_transport_a_realizations_comparison.md)
 contains five-step timings, per-step costs, preparation volume, exact state and
 snapshot equivalence, and links to every enabled/disabled report.
+
+## Candidate C configurable grids
+
+[`grid_realizations_c.py`](grid_realizations_c.py) accepts `--rows`, `--cols`,
+`--steps`, and all five realizations. It uses the shared grid topology,
+reference weights, and initial resource pulse, with C-specific declarations
+and no A edge history. Setup proposes a nonconstant selector cutoff; the
+production exact rank and realization certificates must admit it before the
+strict public run starts. Declarations remain fixed during evolution.
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization CI --rows 3 --cols 4 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_c.py --realization CI --rows 3 --cols 4 --steps 5 --reuse
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/benchmark_grid_continuation.py --candidate C --realization PC --rows 3 --cols 4 --steps 5
+```
+
+The [Candidate C comparison](results/grid_transport_c_realizations_comparison.md)
+measures five public steps for OS, CI, PC, CI+PC, and RG2b on a **3×4 grid
+(12 nodes, 17 edges)**. Automatic matrix reuse gives 1.26–2.10× speedups
+against paired controls, with exact per-step result and snapshot equality.
+Bounded continuation reduces a few more matrix calculations but shows no
+material five-step timing gain in C on this grid. One admitted C_OS step
+on **4×5 (20 nodes, 31 edges)** takes 226.33 seconds, excluding 140.41
+seconds of declaration admission and 74.64 seconds of owner setup. The
+report separates this one-step scaling observation from the complete
+3×4 comparisons. Candidate A and C do not have identical physical laws,
+so their times should not be interpreted as a controlled A/C speed ratio.
+
+A subsequent [exact PSD certificate improvement](results/grid_transport_c_exact_psd_comparison.md)
+applies through the shared matrix API to all five C realizations. On 3×4
+five-step runs it reduced OS from 81.49 to 57.82 seconds (1.41×), PC from
+64.24 to 46.73 seconds (1.37×), and RG2b from 217.39 to 155.53 seconds
+(1.40×). CI and CI+PC showed only small differences (1.04× and 1.03×) in
+single runs. Every before/after pair has exact public output and fact-count
+equality. The earlier C report and 4×5 one-step timing are
+retained as pre-change baselines; the optimized C_OS 4×5 public step took
+136.28 seconds with exact public output equality (1.66× faster).
 
 ## Five realizations, two candidates
 

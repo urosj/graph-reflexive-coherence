@@ -25,7 +25,7 @@ from pygrc.models.grc_v4_codec import _OPERATION_CONTEXT
 from pygrc.models.grc_v4_linear import _MatrixContinuation, _MatrixFacts
 
 
-def run(steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, continuation=True, realization="PC"):
+def run(steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, continuation=True, realization="PC", candidate="A"):
     ordinary_retain = _MatrixFacts.retain
     selected = []
     computations = {}
@@ -76,7 +76,9 @@ def run(steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, continuation=True, rea
             stack.enter_context(patch.object(
                 owner, name, observe(original, kind, matrix=matrix)
             ))
-        report = run_benchmark(realization, steps, rows, cols, reuse=True)
+        report = run_benchmark(
+            realization, steps, rows, cols, reuse=True, candidate=candidate
+        )
     sources = (
         "src/pygrc/models/grc_v4_linear.py",
         "src/pygrc/models/grc_v4_numerics.py",
@@ -112,6 +114,7 @@ def run(steps=5, rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, continuation=True, rea
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--candidate", choices=("A", "C"), default="A")
     parser.add_argument("--realization", choices=("PC", "CI+PC", "RG2b"), default="PC")
     parser.add_argument("--rows", type=int, default=DEFAULT_ROWS)
     parser.add_argument("--cols", type=int, default=DEFAULT_COLS)
@@ -123,13 +126,13 @@ def main():
         parser.error("steps must be positive and each grid dimension at least two")
     report = run(
         args.steps, args.rows, args.cols, continuation=not args.disable_continuation,
-        realization=args.realization
+        realization=args.realization, candidate=args.candidate
     )
     suffix = "disabled" if args.disable_continuation else "enabled"
     name = args.realization.lower().replace("+", "_")
     output = args.output or (
         Path(__file__).parent / "results" /
-        f"grid_transport_a_{name}_{args.rows}x{args.cols}_{args.steps}_continuation_{suffix}.json"
+        f"grid_transport_{args.candidate.lower()}_{name}_{args.rows}x{args.cols}_{args.steps}_continuation_{suffix}.json"
     )
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n")

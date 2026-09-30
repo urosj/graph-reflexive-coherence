@@ -24,8 +24,8 @@ DEFAULT_COLS = 5
 DT = 2**-6
 
 
-def make_inputs(rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, resource_span=None):
-    """Local couplings on a physical 2-D grid, with a nonuniform closed budget."""
+def grid_spec(rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, resource_span=None):
+    """Shared grid topology, reference weights and conserved resource pulse."""
     nodes = tuple(f"r{row}c{col}" for row in range(rows) for col in range(cols))
     positions = tuple(
         (float(col), float(row)) for row in range(rows) for col in range(cols)
@@ -58,13 +58,21 @@ def make_inputs(rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, resource_span=None):
         factor = min(1.0, resource_span / spread)
         resource = [2.0 + factor * (c - 2.0) for c in resource]
     history = tuple(1.5 + (index % 5) / 16 for index in range(len(edges)))
+    return graph, positions, weights, tuple(resource), history
+
+
+def make_inputs(rows=DEFAULT_ROWS, cols=DEFAULT_COLS, *, resource_span=None):
+    """A_OS declaration on the shared closed grid."""
+    graph, positions, weights, resource, history = grid_spec(
+        rows, cols, resource_span=resource_span
+    )
     return current_fixture(
         graph=graph,
         dimension=2,
         positions=positions,
         weights=weights,
         ridge=1.0,
-        C=tuple(resource),
+        C=resource,
         W=history,
         dt=DT,
         eta=0.125,
@@ -103,7 +111,7 @@ def run_inputs(inputs, backend, steps, rows, cols, *, started=None):
     setup_seconds = time.perf_counter() - started
     initial = inputs.current
     initial_inputs = inputs.to_payload()
-    backend_payload = backend.to_payload()
+    backend_payload = None if backend is None else backend.to_payload()
     step_records = []
     simulation_started = time.perf_counter()
     for index in range(steps):
@@ -125,8 +133,11 @@ def run_inputs(inputs, backend, steps, rows, cols, *, started=None):
         if (
             not math.isclose(charge, inputs.Q_target, rel_tol=0, abs_tol=1e-11)
             or any(not math.isfinite(value) or value < 0 for value in current.C)
-            or current.W_A is None
-            or any(not math.isfinite(value) or value <= 0 for value in current.W_A)
+            or (family.startswith("A_") and current.W_A is None)
+            or (current.W_A is not None and any(
+                not math.isfinite(value) or value <= 0 for value in current.W_A
+            ))
+            or (family.startswith("C_") and current.W_A is not None)
             or state.step_index != index + 1
             or state.time != float(Fraction(previous_time) + Fraction(dt))
         ):
@@ -134,10 +145,14 @@ def run_inputs(inputs, backend, steps, rows, cols, *, started=None):
         step_records.append(
             {
                 "step": index + 1,
+                "result_sha256": hashlib.sha256(result.to_canonical_bytes()).hexdigest(),
+                "snapshot_sha256": hashlib.sha256(
+                    canonical_json_bytes(owner.snapshot())
+                ).hexdigest(),
                 "seconds": elapsed,
                 "physical_time": state.time,
                 "resource": list(current.C),
-                "W_A": list(current.W_A),
+                "W_A": None if current.W_A is None else list(current.W_A),
                 "Z_4": None if current.Z_4 is None else list(current.Z_4),
                 "total_resource": charge,
                 "receipt_count": len(state.receipt_ledger),
@@ -183,13 +198,13 @@ def run_inputs(inputs, backend, steps, rows, cols, *, started=None):
         "max_carrier_magnitude": None if final.Z_4 is None else max(map(abs, final.Z_4)),
         "max_history_change": max(
             abs(a - b) for a, b in zip(initial.W_A, final.W_A, strict=True)
-        ),
+        ) if initial.W_A is not None and final.W_A is not None else None,
         "final_snapshot_sha256": hashlib.sha256(snapshot_bytes).hexdigest(),
         "final_snapshot_bytes": len(snapshot_bytes),
         "timing_method": (
             "Ordinary strict public evolving steps, no profiler. Step timers include "
-            "public admission, numerical stages, validation and result/history capture. "
-            "Setup, request construction, diagnostics, progress output and final snapshot "
+            "public admission, numerical stages and validation. Result/snapshot hashing, "
+            "setup, request construction, diagnostics, progress output and final snapshot "
             "are outside step timers. Simulation wall includes loop overhead; work wall "
             "includes setup and snapshot but excludes imports and final report writing."
         ),
