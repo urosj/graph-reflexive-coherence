@@ -15,14 +15,14 @@ selector or solver domain. Stage/cache identity does not authenticate a caller.
 
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
-from dataclasses import dataclass, field
-from fractions import Fraction
 import hashlib
 import math
+from collections.abc import Mapping, Sequence
+from dataclasses import dataclass, field, replace
 from types import MappingProxyType
 from typing import ClassVar, Literal, Self, TypeAlias, cast
 
+from ._grc_v4_evidence import _lifecycle_identity, _owns_stage_reference
 from .grc_v4_codec import (
     JSONValue,
     _dependency,
@@ -32,6 +32,7 @@ from .grc_v4_codec import (
     payload_identity,
     validate_payload,
 )
+from .grc_v4_exact import ExactScalar, exact_number, integer_ratio
 from .grc_v4_profile import GRCV4CommonParams, GRCV4Profile, validate_profile_references
 from .grc_v4_state import (
     FrozenJSONMap,
@@ -110,7 +111,7 @@ def _matrix(value: object, size: int) -> Matrix:
 
 
 def _require_positive_definite(
-    matrix: tuple[tuple[float | Fraction, ...], ...],
+    matrix: tuple[tuple[float | ExactScalar, ...], ...],
 ) -> None:
     """Exact Sylvester criterion by fraction-free elimination, at every size.
 
@@ -131,7 +132,7 @@ def _require_positive_definite(
     if all(matrix[i][j] == 0 for i in range(size) for j in range(i)):
         return  # Symmetry was checked by _spd; includes the empty space.
 
-    ratios = [[x.as_integer_ratio() for x in row] for row in matrix]
+    ratios = [[integer_ratio(x) for x in row] for row in matrix]
     denominator = max(d for row in ratios for _, d in row)
     if denominator & (denominator - 1) or any(
         denominator % d for row in ratios for _, d in row
@@ -746,9 +747,9 @@ class StarAssembly:
                     try:
                         value = _computed(
                             float(
-                                Fraction(weight)
-                                * Fraction(self.form.values[i])
-                                * Fraction(self.form.values[j])
+                                exact_number(weight)
+                                * exact_number(self.form.values[i])
+                                * exact_number(self.form.values[j])
                             )
                         )
                     except OverflowError as exc:
@@ -998,7 +999,7 @@ def H_profile(
     ref = reference.pairings.one_form.matrix
     exact = tuple(
         tuple(
-            Fraction(a) + Fraction(gain) * Fraction(b)
+            exact_number(a) + exact_number(gain) * exact_number(b)
             for a, b in zip(left, right, strict=True)
         )
         for left, right in zip(ref, K_4.increment, strict=True)
@@ -1207,28 +1208,14 @@ class GeometryStageInputs:
 
     @property
     def source_lifecycle_id(self) -> str:
-        return payload_identity(
-            "lifecycle_envelope_payload",
-            {
-                "schema_version": "grcv4-lifecycle-envelope-v1",
-                "scientific_state_digest": self.scientific_state_id,
-                "receipt_ids": list(self.receipt_ids),
-            },
-        )
+        return _lifecycle_identity(self.scientific_state_id, self.receipt_ids)
 
     def _identity_chain(self) -> tuple[str, str, str]:
         """Build each linked preimage once within this projection."""
         scientific = self.scientific_state_preimage
         reset_id = cast(str, scientific["reset_digest"])
         scientific_id = payload_identity("scientific_state_payload", scientific)
-        lifecycle_id = payload_identity(
-            "lifecycle_envelope_payload",
-            {
-                "schema_version": "grcv4-lifecycle-envelope-v1",
-                "scientific_state_digest": scientific_id,
-                "receipt_ids": list(self.receipt_ids),
-            },
-        )
+        lifecycle_id = _lifecycle_identity(scientific_id, self.receipt_ids)
         return reset_id, scientific_id, lifecycle_id
 
     def to_payload(self) -> dict[str, JSONValue]:
@@ -1321,6 +1308,22 @@ class GeometryStageInputs:
                 "stage authority identity differs from reconstructed preimage"
             )
         return result
+
+
+def _capture_stage_inputs(inputs: GeometryStageInputs) -> GeometryStageInputs:
+    """Detach external inputs fully; capture private stages without wire I/O.
+
+    The operation owns a fresh fully reconstructed reference. Internal stages
+    sharing that reference still re-admit geometry, coordinates and every stage
+    field. No public type, caller digest or optional validation mode grants reuse.
+    """
+    if type(inputs) is not GeometryStageInputs:
+        raise TypeError("expected exact geometry stage inputs")
+    if not _owns_stage_reference(inputs.geometry.reference):
+        return GeometryStageInputs.from_payload(inputs.to_payload())
+    ref = inputs.geometry.reference
+    geometry = GRCV4Geometry(ref, OneFormHodge(ref.graph, inputs.geometry.one_form_hodge.matrix))
+    return replace(inputs, geometry=geometry)
 
 
 DerivedGeometryKind: TypeAlias = Literal[

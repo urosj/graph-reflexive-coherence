@@ -31,6 +31,9 @@ dist/
 !/outputs/grc9v3/phenomenology_discovery/sessions/S0014/
 !/outputs/grc9v3/phenomenology_discovery/sessions/S0014/**
 
+# Generated V4 benchmark runs; curated evidence lives beside this directory
+/implementation/evidence/grcv4-performance/runs/
+
 # Tool caches
 .mypy_cache/
 .pytest_cache/

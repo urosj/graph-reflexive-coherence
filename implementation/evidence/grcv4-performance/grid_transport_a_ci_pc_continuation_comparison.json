@@ -1,0 +1,119 @@
+{
+  "workload": {
+    "candidate": "A",
+    "realization": "CI+PC",
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "steps": 5
+  },
+  "control_report": "grid_transport_a_ci_pc_4x5_5_continuation_disabled.json",
+  "enabled_report": "grid_transport_a_ci_pc_4x5_5_continuation_enabled.json",
+  "control_step_seconds": 131.12142479396425,
+  "enabled_step_seconds": 78.06389775301795,
+  "speedup": 1.679667920359448,
+  "fraction_of_step_time_saved": 0.4046442228973448,
+  "control_per_step_seconds": [
+    21.79332455797703,
+    29.119406457990408,
+    27.725158590008505,
+    29.25771678300225,
+    23.225818404986057
+  ],
+  "enabled_per_step_seconds": [
+    21.683782851003343,
+    15.924028217006708,
+    14.92880699801026,
+    17.23740657098824,
+    8.289873116009403
+  ],
+  "control_numerical_computations": {
+    "inverse:2x2": {
+      "calls": 100,
+      "seconds": 0.004861882160184905
+    },
+    "inverse:31x31": {
+      "calls": 18,
+      "seconds": 26.716571362048853
+    },
+    "conditioning:31x31": {
+      "calls": 18,
+      "seconds": 57.06399634396075
+    }
+  },
+  "enabled_numerical_computations": {
+    "inverse:2x2": {
+      "calls": 100,
+      "seconds": 0.004226353921694681
+    },
+    "inverse:31x31": {
+      "calls": 10,
+      "seconds": 10.54334470804315
+    },
+    "conditioning:31x31": {
+      "calls": 10,
+      "seconds": 20.791449649026617
+    }
+  },
+  "fresh_checks_each_run": {
+    "ci_contraction_certificates": 15,
+    "pc_envelope_certificates": 15,
+    "chart_membership_checks": 15,
+    "certified_solves": 102,
+    "fresh_condition_certificates": 102,
+    "residual_checks": 248,
+    "ci_trial_residuals": 29,
+    "pc_carrier_writes": 5
+  },
+  "retained_facts_each_publication": [
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "runtime_base_commit": "2f872f6841c0b725287486c262981272d8d5477b",
+  "runtime_source_sha256": {
+    "src/pygrc/models/grc_v4_linear.py": "1b3e59ff24c8c58452133ddc3a7014c7e0373ad2d1066ec7c77b0994be2f1929",
+    "src/pygrc/models/grc_v4_lifecycle.py": "ee3c2db8e7ee767c71686e90c6e83a8a85511c6132b11bb4ac35c21e76653f27",
+    "src/pygrc/models/grc_v4_pc.py": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+    "src/pygrc/models/grc_v4_ci.py": "f124ae5fcd61c281a2b722b9108134011a0302b7d3a2b74df77b04a198c12872",
+    "src/pygrc/models/grc_v4_rg2b.py": "adcd6535180afd4f0694c5f3200a12130aea514c5756c1eeb79fcfd9f1437fba",
+    "src/pygrc/models/grc_v4_rg2b_graph.py": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+    "src/pygrc/models/grc_v4_candidate_a.py": "e337f44fd7bc13de5b1355da91875975214b76f180604112380b22684bb90fe0",
+    "src/pygrc/models/grc_v4_candidate_c.py": "ae4285ff6259a4bea6b04f9defd691f0708c9991d357fb269c7f4173a97eaa85"
+  },
+  "runtime_uncommitted_changes": true,
+  "validation": {
+    "focused_tests": 25,
+    "focused_seconds": 35.837,
+    "regression_tests": 130,
+    "regression_seconds": 169.443,
+    "result": "OK; no skips",
+    "complete_initial_declaration_backend_and_all_saved_states_clocks_receipt_counts_match": true,
+    "also_matches_both_previous_primitive_only_runs": true,
+    "final_snapshot_sha256": "da0885c4415b58073f39607e7344073ddf794f760975f89285e0af706d27012e",
+    "final_snapshot_bytes": 76695,
+    "coverage": [
+      "25 continuation tests including eight CI+PC tests",
+      "strict exact coefficient/limit keys and fresh RHS residuals",
+      "A/C zero and negative durations",
+      "fresh CI root/contraction admission, PC envelopes, trial residuals, and carrier writes",
+      "asset/numerical/domain failure rollback",
+      "restore/duplicate/reset/rebase/set_state",
+      "owner and thread isolation",
+      "linear algebra, generic lifecycle across all ten realizations, CI, and CI+PC"
+    ],
+    "new_file_lint": "passed",
+    "lifecycle_lint": "same 13 pre-existing diagnostics as HEAD; no additions"
+  },
+  "containment": "One additional lifecycle adapter case selects step.reset_root.selected.point and step.restart.selected.point Hodge matrices. The same immutable four-fact/two-matrix continuation, operation-local store, and guarded single publication swap are reused. CI/CI+PC root equations, PC carrier and envelope code, candidate algorithms, solver policy, and public formats are unchanged.",
+  "method": "Fresh sequential processes with identical light lookup and numerical observers. The control disables only retained continuation at publication, leaving operation-local reuse enabled. Timings exclude declaration, owner setup, and snapshotting.",
+  "limits": [
+    "Single local timing pair, not a statistical speedup estimate.",
+    "At most four facts for two matrices regardless of trace length; matrix data scales with graph dimension.",
+    "Only PC, CI+PC, and RG2b select continuation; CI and OS remain operation-local.",
+    "CI roots are still solved from the reference on every call; no root seed, cached root, certificate bypass, or solver mode was added."
+  ]
+}

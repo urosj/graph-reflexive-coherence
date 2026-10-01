@@ -1,0 +1,124 @@
+{
+  "workload": {
+    "candidate": "A",
+    "realization": "RG2b",
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "steps": 5
+  },
+  "control_report": "grid_transport_a_rg2b_4x5_5_continuation_disabled.json",
+  "enabled_report": "grid_transport_a_rg2b_4x5_5_continuation_enabled.json",
+  "runtime_base_commit": "2f872f6841c0b725287486c262981272d8d5477b",
+  "runtime_uncommitted_changes": true,
+  "runtime_source_sha256": {
+    "src/pygrc/models/grc_v4_linear.py": "1b3e59ff24c8c58452133ddc3a7014c7e0373ad2d1066ec7c77b0994be2f1929",
+    "src/pygrc/models/grc_v4_lifecycle.py": "ea9c52b38b4fa9a1edfd03d5c9b01ecc50ecd2054abf76a048db26d5d146a4d5",
+    "src/pygrc/models/grc_v4_pc.py": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+    "src/pygrc/models/grc_v4_rg2b.py": "adcd6535180afd4f0694c5f3200a12130aea514c5756c1eeb79fcfd9f1437fba",
+    "src/pygrc/models/grc_v4_rg2b_graph.py": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+    "src/pygrc/models/grc_v4_candidate_a.py": "e337f44fd7bc13de5b1355da91875975214b76f180604112380b22684bb90fe0",
+    "src/pygrc/models/grc_v4_candidate_c.py": "ae4285ff6259a4bea6b04f9defd691f0708c9991d357fb269c7f4173a97eaa85"
+  },
+  "production_files_changed_including_prior_pc_work": [
+    "src/pygrc/models/grc_v4_linear.py",
+    "src/pygrc/models/grc_v4_lifecycle.py"
+  ],
+  "rg2b_production_extension": "The existing lifecycle adapter selects reset_point/restart_point Hodge matrices for RG2b; the fact store and numerical algorithms are unchanged from the prior PC continuation implementation.",
+  "control_step_seconds": 202.88182860598317,
+  "enabled_step_seconds": 108.40018373497878,
+  "speedup": 1.8716004126155081,
+  "fraction_of_step_time_saved": 0.46569791646790215,
+  "control_per_step_seconds": [
+    31.794930884992937,
+    43.620610706013395,
+    44.166113118990324,
+    42.84480757199344,
+    40.455366323993076
+  ],
+  "enabled_per_step_seconds": [
+    29.102524640999036,
+    19.381833347986685,
+    20.08292255800916,
+    19.71816328598652,
+    20.114739901997382
+  ],
+  "control_numerical_computations": {
+    "inverse:31x31": {
+      "calls": 19,
+      "seconds": 33.18264589711907
+    },
+    "conditioning:31x31": {
+      "calls": 19,
+      "seconds": 122.68175461207284
+    },
+    "inverse:2x2": {
+      "calls": 100,
+      "seconds": 0.0039114998653531075
+    }
+  },
+  "enabled_numerical_computations": {
+    "inverse:31x31": {
+      "calls": 11,
+      "seconds": 13.95305222296156
+    },
+    "conditioning:31x31": {
+      "calls": 11,
+      "seconds": 50.53178893704899
+    },
+    "inverse:2x2": {
+      "calls": 100,
+      "seconds": 0.0036758477508556098
+    }
+  },
+  "fresh_checks_each_run": {
+    "whole_chart_certificates": 15,
+    "certified_solves": 65,
+    "fresh_condition_certificates": 65,
+    "residual_checks": 185,
+    "graph_section_evaluations": 15,
+    "native_arithmetic_bridges": 5
+  },
+  "retained_facts_each_publication": [
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "validation": {
+    "full_initial_declaration_backend_and_all_step_states_clocks_receipts_match": true,
+    "also_matches_saved_primitive_only_run": true,
+    "final_snapshot_sha256": "33a0b518e752c1b30090767046a40a24b1d7ec7c7938d8de632ece57bccc04ff",
+    "final_snapshot_bytes": 69430,
+    "regression_tests": 145,
+    "regression_seconds": 544.992,
+    "regression_skips": 1,
+    "regression_result": "OK; optional 32-vertex RG2b slow campaign skipped",
+    "coverage": [
+      "17 continuation tests, including eight RG2b tests",
+      "primitive linear algebra",
+      "operation evidence and generic lifecycle",
+      "all ten realizations canonical public result and snapshot equivalence",
+      "scalar and graph RG2b",
+      "strict coefficients, limits, and fresh RHS residuals",
+      "frozen beat duration",
+      "fresh sections, whole-chart certificates, and native arithmetic bridges",
+      "asset/publication and numerical rollback",
+      "restore/duplicate/reset/rebase/set_state",
+      "owner and thread isolation"
+    ],
+    "new_file_lint": "passed",
+    "lifecycle_lint": "same 13 pre-existing diagnostics as HEAD; no new diagnostics"
+  },
+  "method": "Separate fresh sequential processes, same source and instrumentation; ordinary strict public steps. Control discards continuation at publication only; operation-local reuse remains enabled. Timings exclude setup and snapshot; numerical stage timers are scoped.",
+  "containment": "One lifecycle adapter selects reset/final RG2b Hodge facts into the existing immutable successful publication. The existing store accepts at most four immutable facts for two matrices, then seeds a fresh operation scope. Existing publication guards and rollback govern state and facts together. RG2b numerical recipes, graph sections, bridges, candidate algorithms, codecs, and public formats are unchanged. Other publication constructors default to an empty continuation.",
+  "limits": [
+    "Single local timing pair; not a statistical speedup estimate.",
+    "Fact cardinality is independent of trace length; coefficient and inverse sizes still scale with matrix dimension.",
+    "The lifecycle adapter supports A/C PC and RG2b; OS, CI, and CI+PC retain operation-local reuse.",
+    "No section-result caching or certificate reuse.",
+    "No production mode flag; disabled control uses a benchmark-only mock."
+  ]
+}

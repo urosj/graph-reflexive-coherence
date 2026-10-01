@@ -1,0 +1,22 @@
+{
+  "family": "C_PC",
+  "grid": "3x4",
+  "step_seconds": 6.233994659996824,
+  "observed_scoped_step_calls": {
+    "exact_inverse": {
+      "calls": 16,
+      "seconds": 2.3327710490557365
+    },
+    "spectral_selector": {
+      "calls": 3,
+      "seconds": 0.12275772998691536
+    },
+    "exact_conditioning": {
+      "calls": 11,
+      "seconds": 1.95538392700837
+    }
+  },
+  "complete_public_digests_match": true,
+  "note": "One optimized strict public step; hooks exclude declaration and owner setup. Selector time may include inverse time, so categories are not additive.",
+  "backend_sha256": "39d53ab43d6188a995d214790c02de285455efbf91b0de0deca41f7ad74e418e"
+}

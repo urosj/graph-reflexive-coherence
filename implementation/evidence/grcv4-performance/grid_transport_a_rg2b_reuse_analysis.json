@@ -1,0 +1,2510 @@
+{
+  "method": "Five evolving strict public RG2b steps; light inclusive stage timers and exact-argument equality. All computation still runs. Nested stage times must not be added.",
+  "total_step_seconds": 198.72576954899705,
+  "per_step_seconds": [
+    29.52809307698044,
+    41.03315265101264,
+    41.91612940898631,
+    42.73313026901451,
+    43.51526414300315
+  ],
+  "snapshot_sha256": "33a0b518e752c1b30090767046a40a24b1d7ec7c7938d8de632ece57bccc04ff",
+  "scopes": [
+    {
+      "timings": {
+        "descriptor_rebuild": {
+          "calls": 13,
+          "seconds": 0.03468047911883332
+        },
+        "exact_inverse": {
+          "calls": 23,
+          "seconds": 4.583893289993284
+        },
+        "conditioning_proof": {
+          "calls": 3,
+          "seconds": 16.894448640028713
+        },
+        "a_current": {
+          "calls": 12,
+          "seconds": 22.111643234064104
+        },
+        "descriptor_operators": {
+          "calls": 3,
+          "seconds": 0.0843573719903361
+        },
+        "graph_certificate": {
+          "calls": 3,
+          "seconds": 0.7260988569760229
+        },
+        "certificate": {
+          "calls": 3,
+          "seconds": 0.7284940899990033
+        },
+        "analytic_residual": {
+          "calls": 7,
+          "seconds": 3.722352785989642
+        },
+        "point_maps": {
+          "calls": 7,
+          "seconds": 6.2271376849967055
+        },
+        "graph_section": {
+          "calls": 3,
+          "seconds": 5.413417971984018
+        },
+        "native_bridge": {
+          "calls": 1,
+          "seconds": 1.2025611540011596
+        }
+      },
+      "numeric_calls": [
+        {
+          "seconds": 0.09749378898413852,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 0.051322757004527375,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 4.069798160344362e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.375898813828826e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.2679003197699785e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.2531010219827294e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.169701085425913e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.507800283841789e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.477200516499579e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.466801717877388e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.524200292304158e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.639697726815939e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4886994399130344e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.38829995598644e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.268200089223683e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.217702032998204e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.1898991437628865e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.2225012546405196e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.285999991931021e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.316599759273231e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.376801032572985e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.263299004174769e-05,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 2.2496664240024984,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.460472670005402,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.2360453759902157,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.382653213018784,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "seconds": 1.5805438929819502,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 1,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "57d263a8a2233e8223d57500184bb822c601f75a9dc24a5fbe2a7bb2cbba45d3"
+        },
+        {
+          "seconds": 1.6155708309961483,
+          "repeat": true,
+          "repeat_from_prior_step": false,
+          "query_id": 1,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "57d263a8a2233e8223d57500184bb822c601f75a9dc24a5fbe2a7bb2cbba45d3"
+        },
+        {
+          "seconds": 2.217303248005919,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 2,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "ba0103c2c8d27d2476b528e7c523037fe35a3ec0d36c9cd8ee36889f4ff901c0"
+        }
+      ],
+      "point_maps": [
+        {
+          "seconds": 0.6172260300081689,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 1
+        },
+        {
+          "seconds": 0.8513310740236193,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 2
+        },
+        {
+          "seconds": 0.6102519349951763,
+          "repeat": true,
+          "repeat_from_prior_step": false,
+          "query_id": 1
+        },
+        {
+          "seconds": 0.8693545289861504,
+          "repeat": true,
+          "repeat_from_prior_step": false,
+          "query_id": 2
+        },
+        {
+          "seconds": 1.059036942984676,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 3
+        },
+        {
+          "seconds": 1.045578065997688,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 4
+        },
+        {
+          "seconds": 1.1743591080012266,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 5
+        }
+      ]
+    },
+    {
+      "timings": {
+        "descriptor_rebuild": {
+          "calls": 13,
+          "seconds": 0.03711646096780896
+        },
+        "exact_inverse": {
+          "calls": 24,
+          "seconds": 7.025249518977944
+        },
+        "conditioning_proof": {
+          "calls": 4,
+          "seconds": 25.667827438010136
+        },
+        "a_current": {
+          "calls": 12,
+          "seconds": 33.33189162900089
+        },
+        "descriptor_operators": {
+          "calls": 3,
+          "seconds": 0.023023343994282186
+        },
+        "graph_certificate": {
+          "calls": 3,
+          "seconds": 0.6626352419843897
+        },
+        "certificate": {
+          "calls": 3,
+          "seconds": 0.6656677009887062
+        },
+        "analytic_residual": {
+          "calls": 7,
+          "seconds": 4.063291513972217
+        },
+        "point_maps": {
+          "calls": 7,
+          "seconds": 6.583296351018362
+        },
+        "graph_section": {
+          "calls": 3,
+          "seconds": 5.658358720014803
+        },
+        "native_bridge": {
+          "calls": 1,
+          "seconds": 1.3249716830032412
+        }
+      },
+      "numeric_calls": [
+        {
+          "seconds": 0.09463237499585375,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 0.05325694600469433,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 4.6451983507722616e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4442986361682415e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.500000457279384e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.959197783842683e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.2598996767774224e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.3756979973986745e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.253700560890138e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.57509998138994e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4734985092654824e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.488201764412224e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 7.108197314664721e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 7.28570157662034e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.306298797018826e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.1440012864768505e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.5581004340201616e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.419400309212506e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.416699473746121e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.775301204062998e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.159900709055364e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.091899609193206e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 2.2567512190144043,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.426934838993475,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.290455597016262,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.490717437001877,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.382587925007101,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.69691821601009,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "seconds": 1.5911041719955392,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "57d263a8a2233e8223d57500184bb822c601f75a9dc24a5fbe2a7bb2cbba45d3"
+        },
+        {
+          "seconds": 1.7957462950143963,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 2,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "ba0103c2c8d27d2476b528e7c523037fe35a3ec0d36c9cd8ee36889f4ff901c0"
+        },
+        {
+          "seconds": 2.2715082530048676,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 3,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "e14817d076e646b9b530aebec7ad4ae1ccf7c26133bbe52482a89fb8267779d5"
+        }
+      ],
+      "point_maps": [
+        {
+          "seconds": 0.623034504998941,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1
+        },
+        {
+          "seconds": 0.8400464490114246,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 2
+        },
+        {
+          "seconds": 0.8294771789805964,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 3
+        },
+        {
+          "seconds": 0.85252210899489,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 4
+        },
+        {
+          "seconds": 1.070190800994169,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 6
+        },
+        {
+          "seconds": 1.0766966630180832,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 7
+        },
+        {
+          "seconds": 1.2913286450202577,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 8
+        }
+      ]
+    },
+    {
+      "timings": {
+        "descriptor_rebuild": {
+          "calls": 13,
+          "seconds": 0.039607997954590246
+        },
+        "exact_inverse": {
+          "calls": 24,
+          "seconds": 6.9079087429563515
+        },
+        "conditioning_proof": {
+          "calls": 4,
+          "seconds": 25.5017724839563
+        },
+        "a_current": {
+          "calls": 12,
+          "seconds": 33.07413853498292
+        },
+        "descriptor_operators": {
+          "calls": 3,
+          "seconds": 0.023466359998565167
+        },
+        "graph_certificate": {
+          "calls": 3,
+          "seconds": 0.6770439779793378
+        },
+        "certificate": {
+          "calls": 3,
+          "seconds": 0.6807354009652045
+        },
+        "analytic_residual": {
+          "calls": 7,
+          "seconds": 4.184433981048642
+        },
+        "point_maps": {
+          "calls": 7,
+          "seconds": 7.590495793003356
+        },
+        "graph_section": {
+          "calls": 3,
+          "seconds": 6.848542906984221
+        },
+        "native_bridge": {
+          "calls": 1,
+          "seconds": 1.2617734439845663
+        }
+      },
+      "numeric_calls": [
+        {
+          "seconds": 0.09729351801797748,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 0.052788223983952776,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 4.497499321587384e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.9425998693332076e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.754300996661186e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.7210003938525915e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.7371995858848095e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.335000994615257e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 7.267598994076252e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 5.141200381331146e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.396800068207085e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.2665982618927956e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.896199632436037e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.764498978853226e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.674899926409125e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.568100510165095e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.646998084150255e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.561002085916698e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.442200249992311e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4877011785283685e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.509499947540462e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4582975786179304e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 2.3154811569838785,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.502278972009663,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.2601868129859213,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.469984325987753,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.2341365629981738,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.476720961974934,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "seconds": 2.0942849879793357,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "57d263a8a2233e8223d57500184bb822c601f75a9dc24a5fbe2a7bb2cbba45d3"
+        },
+        {
+          "seconds": 2.3455377939972095,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 3,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "e14817d076e646b9b530aebec7ad4ae1ccf7c26133bbe52482a89fb8267779d5"
+        },
+        {
+          "seconds": 2.408720125007676,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 4,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "aa34448de032d26dad1bfc0d3b7e98313d65f83632af0ff02fa2b1bdff4e0313"
+        }
+      ],
+      "point_maps": [
+        {
+          "seconds": 0.7132156800071243,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1
+        },
+        {
+          "seconds": 1.2444781330123078,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 2
+        },
+        {
+          "seconds": 1.060300348995952,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 6
+        },
+        {
+          "seconds": 1.0625644069805276,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 7
+        },
+        {
+          "seconds": 1.1042475900030695,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 9
+        },
+        {
+          "seconds": 1.1727093549852725,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 10
+        },
+        {
+          "seconds": 1.2329802790191025,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 11
+        }
+      ]
+    },
+    {
+      "timings": {
+        "descriptor_rebuild": {
+          "calls": 13,
+          "seconds": 0.045747370983008295
+        },
+        "exact_inverse": {
+          "calls": 24,
+          "seconds": 6.910697833955055
+        },
+        "conditioning_proof": {
+          "calls": 4,
+          "seconds": 26.103526345978025
+        },
+        "a_current": {
+          "calls": 12,
+          "seconds": 33.719563666934846
+        },
+        "descriptor_operators": {
+          "calls": 3,
+          "seconds": 0.03810819299542345
+        },
+        "graph_certificate": {
+          "calls": 3,
+          "seconds": 0.7960649539600126
+        },
+        "certificate": {
+          "calls": 3,
+          "seconds": 0.800496269017458
+        },
+        "analytic_residual": {
+          "calls": 7,
+          "seconds": 4.510146108979825
+        },
+        "point_maps": {
+          "calls": 7,
+          "seconds": 7.750320588966133
+        },
+        "graph_section": {
+          "calls": 3,
+          "seconds": 6.7956224429945
+        },
+        "native_bridge": {
+          "calls": 1,
+          "seconds": 1.3469393690174911
+        }
+      },
+      "numeric_calls": [
+        {
+          "seconds": 0.09194232799927704,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 0.0513994489738252,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 4.031800199300051e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.568502143025398e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.322897828184068e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.3752003218978643e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 5.12140104547143e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4347991459071636e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.413998638279736e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4249009331688285e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.4129974665120244e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.435500548221171e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 6.845401367172599e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.076599725522101e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 6.459298310801387e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 6.311899051070213e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 6.437301635742188e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.734699566848576e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.596500027924776e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.619299968704581e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.9211987061426044e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.544799983501434e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 2.246311302005779,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.302996565995272,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.242912151996279,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.936496590991737,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.328671161987586,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.81263374001719,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "seconds": 1.9559869160002563,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "57d263a8a2233e8223d57500184bb822c601f75a9dc24a5fbe2a7bb2cbba45d3"
+        },
+        {
+          "seconds": 2.3326500999974087,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 4,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "aa34448de032d26dad1bfc0d3b7e98313d65f83632af0ff02fa2b1bdff4e0313"
+        },
+        {
+          "seconds": 2.5069854269968346,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 5,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "21791b0b46b91237dfb567250e277c5522e3b3572b94a35b55067aa865c4c142"
+        }
+      ],
+      "point_maps": [
+        {
+          "seconds": 0.6301579620048869,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1
+        },
+        {
+          "seconds": 1.2065231330052484,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 2
+        },
+        {
+          "seconds": 1.0754490190010983,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 9
+        },
+        {
+          "seconds": 1.1426656169933267,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 10
+        },
+        {
+          "seconds": 1.1160035639768466,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 12
+        },
+        {
+          "seconds": 1.2631851899786852,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 13
+        },
+        {
+          "seconds": 1.3163361040060408,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 14
+        }
+      ]
+    },
+    {
+      "timings": {
+        "descriptor_rebuild": {
+          "calls": 13,
+          "seconds": 0.04191208104020916
+        },
+        "exact_inverse": {
+          "calls": 24,
+          "seconds": 7.13757236598758
+        },
+        "conditioning_proof": {
+          "calls": 4,
+          "seconds": 26.58129630496842
+        },
+        "a_current": {
+          "calls": 12,
+          "seconds": 34.40506155000185
+        },
+        "descriptor_operators": {
+          "calls": 3,
+          "seconds": 0.025006192008731887
+        },
+        "graph_certificate": {
+          "calls": 3,
+          "seconds": 0.6914904350123834
+        },
+        "certificate": {
+          "calls": 3,
+          "seconds": 0.6942192510177847
+        },
+        "analytic_residual": {
+          "calls": 7,
+          "seconds": 4.6195206479751505
+        },
+        "point_maps": {
+          "calls": 7,
+          "seconds": 7.921942579996539
+        },
+        "graph_section": {
+          "calls": 3,
+          "seconds": 7.00137602398172
+        },
+        "native_bridge": {
+          "calls": 1,
+          "seconds": 1.3383768599887844
+        }
+      },
+      "numeric_calls": [
+        {
+          "seconds": 0.09680503798881546,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 0.05524758397950791,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 0.00011024798732250929,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.148998414166272e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.117400385439396e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.9292004657909274e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.888001083396375e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.760200343094766e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 6.28340058028698e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 5.098001565784216e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 5.4122006986290216e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 5.051700281910598e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 5.22199843544513e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 4.018898471258581e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.907000063918531e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.632900188677013e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.5470002330839634e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.642801311798394e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.512599505484104e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.5523989936336875e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.5998993553221226e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 3.54530056938529e-05,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 2,
+          "columns": 2,
+          "phase": [
+            "certificate",
+            "graph_certificate",
+            "descriptor_operators"
+          ]
+        },
+        {
+          "seconds": 2.3588914680003654,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.697975755989319,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.3394174790009856,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 9.005054369015852,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 2.341549434000626,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "inverse",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        },
+        {
+          "seconds": 8.82301859598374,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "kind": "conditioning",
+          "rows": 31,
+          "columns": 31,
+          "phase": [
+            "a_current"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "seconds": 2.0288787689933088,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "57d263a8a2233e8223d57500184bb822c601f75a9dc24a5fbe2a7bb2cbba45d3"
+        },
+        {
+          "seconds": 2.487484740995569,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 5,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "21791b0b46b91237dfb567250e277c5522e3b3572b94a35b55067aa865c4c142"
+        },
+        {
+          "seconds": 2.4850125139928423,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 6,
+          "levels": 1,
+          "evaluations": 2,
+          "result_sha256": "1a2705ba2a19158b41b8bc21e80f25b9871931cf318f459c16de656e31493e19"
+        }
+      ],
+      "point_maps": [
+        {
+          "seconds": 0.7608469909755513,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 1
+        },
+        {
+          "seconds": 1.1382834019896109,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 2
+        },
+        {
+          "seconds": 1.236948826990556,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 12
+        },
+        {
+          "seconds": 1.1222744270053227,
+          "repeat": true,
+          "repeat_from_prior_step": true,
+          "query_id": 13
+        },
+        {
+          "seconds": 1.1154875350184739,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 15
+        },
+        {
+          "seconds": 1.2430845740018412,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 16
+        },
+        {
+          "seconds": 1.3050168240151834,
+          "repeat": false,
+          "repeat_from_prior_step": false,
+          "query_id": 17
+        }
+      ]
+    }
+  ],
+  "static_certificates": {
+    "count": 15,
+    "distinct_bound_payloads": 1,
+    "graph_data_identical": true
+  },
+  "numerical_overlap": {
+    "inverse:31x31": {
+      "unique_arguments": 7,
+      "computations": 19,
+      "computations_repeated_from_prior_steps": 12,
+      "seconds_repeated_from_prior_steps": 18.6910804460058,
+      "total_seconds": 32.56123111897614
+    },
+    "conditioning:31x31": {
+      "unique_arguments": 7,
+      "computations": 19,
+      "computations_repeated_from_prior_steps": 12,
+      "seconds_repeated_from_prior_steps": 69.04513105892693,
+      "total_seconds": 120.7488712129416
+    },
+    "inverse:2x2": {
+      "unique_arguments": 20,
+      "computations": 100,
+      "computations_repeated_from_prior_steps": 80,
+      "seconds_repeated_from_prior_steps": 0.0034029318776447326,
+      "total_seconds": 0.004090632894076407
+    }
+  },
+  "sections_overlap": {
+    "calls": 15,
+    "unique_exact_queries": 6,
+    "repeats": 9,
+    "repeats_from_prior_steps": 8,
+    "total_seconds": 31.71731806595926,
+    "seconds_repeated_from_prior_steps": 16.631673774973024,
+    "repeat_outputs_equal": true
+  },
+  "point_maps_overlap": {
+    "calls": 35,
+    "unique_exact_queries": 17,
+    "repeats": 18,
+    "repeats_from_prior_steps": 16,
+    "total_seconds": 36.073192997981096,
+    "seconds_repeated_from_prior_steps": 15.538788188947365,
+    "repeat_outputs_equal": true
+  },
+  "all_saved_states_clocks_receipts_and_snapshot_match": true,
+  "workload": {
+    "candidate": "A",
+    "realization": "RG2b",
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "positive_steps": 5
+  },
+  "inclusive_stage_totals": {
+    "descriptor_rebuild": {
+      "calls": 65,
+      "seconds": 0.19906439006444998
+    },
+    "exact_inverse": {
+      "calls": 119,
+      "seconds": 32.565321751870215
+    },
+    "conditioning_proof": {
+      "calls": 19,
+      "seconds": 120.7488712129416
+    },
+    "a_current": {
+      "calls": 60,
+      "seconds": 156.6422986149846
+    },
+    "descriptor_operators": {
+      "calls": 15,
+      "seconds": 0.1939614609873388
+    },
+    "graph_certificate": {
+      "calls": 15,
+      "seconds": 3.5533334659121465
+    },
+    "certificate": {
+      "calls": 15,
+      "seconds": 3.5696127119881567
+    },
+    "analytic_residual": {
+      "calls": 35,
+      "seconds": 21.099745037965477
+    },
+    "point_maps": {
+      "calls": 35,
+      "seconds": 36.073192997981096
+    },
+    "graph_section": {
+      "calls": 15,
+      "seconds": 31.71731806595926
+    },
+    "native_bridge": {
+      "calls": 5,
+      "seconds": 6.474622509995243
+    }
+  },
+  "existing_four_fact_policy_opportunity": {
+    "reset_and_previous_final_repeated_computations": {
+      "inverse": {
+        "calls": 8,
+        "seconds": 18.310407187003875
+      },
+      "conditioning": {
+        "calls": 8,
+        "seconds": 68.83243885598495
+      }
+    },
+    "primitive_computations_each_before": 19,
+    "primitive_computations_each_projected_after": 11,
+    "measured_seconds_in_eligible_repeats": 87.14284604298882,
+    "first_order_projected_total_seconds": 111.58292350600823,
+    "first_order_projected_speedup": 1.7809693751060087,
+    "fixed_reference_repeated_work_left_uncached": {
+      "calls": 8,
+      "seconds": 0.5933654619439039
+    },
+    "status": "Analysis only; no optimized implementation or speedup benchmark. Projection subtracts measured repeated algorithm time; overhead and subsequent timing variation are unmeasured."
+  },
+  "runtime_base_commit": "2f872f6841c0b725287486c262981272d8d5477b",
+  "runtime_uncommitted_pc_continuation": true,
+  "runtime_source_sha256": {
+    "src/pygrc/models/grc_v4_rg2b.py": "adcd6535180afd4f0694c5f3200a12130aea514c5756c1eeb79fcfd9f1437fba",
+    "src/pygrc/models/grc_v4_rg2b_graph.py": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+    "src/pygrc/models/grc_v4_candidate_a.py": "e337f44fd7bc13de5b1355da91875975214b76f180604112380b22684bb90fe0",
+    "src/pygrc/models/grc_v4_candidate_c.py": "ae4285ff6259a4bea6b04f9defd691f0708c9991d357fb269c7f4173a97eaa85",
+    "src/pygrc/models/grc_v4_lifecycle.py": "3c278a47cd23a166bc32a7af4c3890f20f05c20322960b4a8b350203c7d26763",
+    "src/pygrc/models/grc_v4_linear.py": "1b3e59ff24c8c58452133ddc3a7014c7e0373ad2d1066ec7c77b0994be2f1929",
+    "examples/grcv4/grid_realizations_a.py": "95ebe2a890442320483d480cc078f8e0cec468e8e5838581468bba61886affdd"
+  },
+  "validation_reference": "grid_transport_a_rg2b_4x5_5_primitive_reuse.json",
+  "limits": [
+    "Single local measurement; all numerical computation ran normally.",
+    "Inclusive stage costs overlap; section and point_maps costs must not be added to each other.",
+    "Section and point-map repetition is under one identical complete declaration and differential backend. Broader reuse must bind all mathematical inputs and retain certified error data.",
+    "Whole certificates include fresh native-current admission and cannot simply be bypassed.",
+    "Existing production continuation currently applies only to PC. No RG2b production files changed in this analysis."
+  ]
+}

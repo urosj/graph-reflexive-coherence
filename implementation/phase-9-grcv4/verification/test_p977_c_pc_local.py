@@ -10,7 +10,8 @@ from unittest.mock import patch
 import numpy as np
 
 from pygrc.models.grc_v4 import GRCV4, GRCV4StepRequestInput
-from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError, _c_condition
+from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+from pygrc.models import grc_v4_numerics as numerics
 from pygrc.models import grc_v4_pc as pc, grc_v4_step as step
 from pygrc.models.grc_v4_step import ResourceBoundaryError
 from pygrc.models.grc_v4_codec import canonical_json_bytes
@@ -322,9 +323,9 @@ class CPCLocalProductTests(unittest.TestCase):
         np.testing.assert_allclose(a.physical_identification,np.asarray(a.identification)@np.asarray(a.flat_matrix),rtol=0,atol=1e-14)
         row('C-QC-TYPING',I_4M=a.identification,G_J=a.flat_matrix,Q_C=a.physical_identification)
         self.assertTrue(all(c['condition_upper_squared']=='1' for c in a.certificates))
-        _c_condition(((0.5,0),(0,1)),2,'retained')
+        numerics.condition(((0.5,0),(0,1)),2,'retained')
         with self.assertRaisesRegex(ValueError,'conditioning'):
-            _c_condition(((0.5,5),(0,1)),2,'physical similarity')
+            numerics.condition(((0.5,5),(0,1)),2,'physical similarity')
         row('C-RETAINED-VS-PHYSICAL-CONDITIONING',certificates=[c.to_dict() for c in a.certificates],
             scope='one_dimensional_nomination_plus_explicit_algebra_only_similarity_counterexample',
             counterexample=dict(retained=[[0.5,0],[0,1]],physical=[[0.5,5],[0,1]],limit=2,physical_rejected=True))

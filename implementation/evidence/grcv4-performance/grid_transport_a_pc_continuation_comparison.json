@@ -1,0 +1,117 @@
+{
+  "workload": {
+    "candidate": "A",
+    "realization": "PC",
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "steps": 5
+  },
+  "control_report": "grid_transport_a_pc_4x5_5_continuation_disabled.json",
+  "enabled_report": "grid_transport_a_pc_4x5_5_continuation_enabled.json",
+  "runtime_base_commit": "2f872f6841c0b725287486c262981272d8d5477b",
+  "runtime_uncommitted_changes": true,
+  "runtime_source_sha256": {
+    "src/pygrc/models/grc_v4_linear.py": "1b3e59ff24c8c58452133ddc3a7014c7e0373ad2d1066ec7c77b0994be2f1929",
+    "src/pygrc/models/grc_v4_lifecycle.py": "3c278a47cd23a166bc32a7af4c3890f20f05c20322960b4a8b350203c7d26763",
+    "src/pygrc/models/grc_v4_pc.py": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+    "src/pygrc/models/grc_v4_candidate_a.py": "e337f44fd7bc13de5b1355da91875975214b76f180604112380b22684bb90fe0",
+    "src/pygrc/models/grc_v4_candidate_c.py": "ae4285ff6259a4bea6b04f9defd691f0708c9991d357fb269c7f4173a97eaa85"
+  },
+  "production_files_changed": [
+    "src/pygrc/models/grc_v4_linear.py",
+    "src/pygrc/models/grc_v4_lifecycle.py"
+  ],
+  "control_step_seconds": 72.23245752899675,
+  "enabled_step_seconds": 45.7847407819645,
+  "speedup": 1.5776535215735132,
+  "fraction_of_step_time_saved": 0.36614726470320025,
+  "control_per_step_seconds": [
+    7.749176056007855,
+    17.67451614898164,
+    17.3379292540194,
+    14.576923132000957,
+    14.893912937986897
+  ],
+  "enabled_per_step_seconds": [
+    7.882400533999316,
+    11.475186063005822,
+    8.571961187000852,
+    9.000806576979812,
+    8.854386420978699
+  ],
+  "control_numerical_computations": {
+    "inverse:2x2": {
+      "calls": 100,
+      "seconds": 0.004445016966201365
+    },
+    "inverse:31x31": {
+      "calls": 14,
+      "seconds": 19.44370735101984
+    },
+    "conditioning:31x31": {
+      "calls": 14,
+      "seconds": 39.53968319500564
+    }
+  },
+  "enabled_numerical_computations": {
+    "inverse:2x2": {
+      "calls": 100,
+      "seconds": 0.00443026190623641
+    },
+    "inverse:31x31": {
+      "calls": 6,
+      "seconds": 10.570399891992565
+    },
+    "conditioning:31x31": {
+      "calls": 6,
+      "seconds": 21.680420240969397
+    }
+  },
+  "fresh_checks_each_run": {
+    "chart_membership_checks": 15,
+    "certified_solves": 15,
+    "fresh_condition_certificates": 15,
+    "residual_checks": 45
+  },
+  "retained_facts_each_publication": [
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "validation": {
+    "full_initial_declaration_backend_and_all_step_states_clocks_receipts_match": true,
+    "also_matches_saved_primitive_only_run": true,
+    "final_snapshot_sha256": "2f80ec318796d7730fbdd49dc57d109442401ad926f36fd1cdf4211e8708734a",
+    "final_snapshot_bytes": 76208,
+    "regression_tests": 247,
+    "regression_seconds": 395.931,
+    "regression_result": "OK; no skips",
+    "coverage": [
+      "nine new continuation tests",
+      "thirteen primitive tests",
+      "all ten realizations cache-disabled canonical public results and snapshots",
+      "PC",
+      "lifecycle",
+      "migration",
+      "topology and representation events",
+      "asset/publication and numerical rollback",
+      "restore/duplicate/reset/rebase/set_state",
+      "owner and thread isolation"
+    ],
+    "new_file_lint": "passed",
+    "linear_types": "passed",
+    "lifecycle_lint": "same 13 pre-existing diagnostics as HEAD; no new diagnostics"
+  },
+  "method": "Separate fresh sequential processes, same source and instrumentation; ordinary strict public steps. Control discards continuation at publication only; operation-local reuse remains enabled. Timings exclude setup and snapshot; numerical stage timers are scoped.",
+  "containment": "The numerical fact store owns immutable continuation capped at four facts for two matrices. The lifecycle adapter seeds each fresh scope and selects reset/final Hodge facts into the immutable successful publication. PC, A current/writer, codecs, operation scopes and public formats are unchanged. Other publication constructors default to an empty continuation.",
+  "limits": [
+    "Single local timing pair; not a statistical speedup estimate.",
+    "Fact cardinality is independent of trace length; coefficient and inverse sizes still scale with matrix dimension.",
+    "Only PC Hodge facts continue (shared A/C PC mechanism); OS, CI, CI+PC and RG2b keep their operation-local lifetime.",
+    "No production mode flag; disabled control uses a benchmark-only mock."
+  ]
+}

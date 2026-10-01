@@ -1,0 +1,333 @@
+{
+  "grid": {
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "steps": 5
+  },
+  "production_revision": "a857940d6829c0c28352d2dfb1c2dbc7ac43881c",
+  "production_worktree_unchanged": true,
+  "production_sources_sha256": {
+    "src/pygrc/models/grc_v4_candidate_c.py": "1eaa703993846abf309bccdcdc4c333e6f40757eea34e5c1d34cab59ab3461f5",
+    "src/pygrc/models/grc_v4_codec.py": "2d6b47e573d8fbf05c2f891a5ca1072244ae979ca226f8031c8a021fa57b421b",
+    "src/pygrc/models/grc_v4_linear.py": "a6907b62e1815bb5af883982ad3517f0af263d09cb3d4d8cf93139720742d4ef"
+  },
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "method": "Five evolving strict public steps, one ordinary sequential run per setting. Each pair has identical declarations and initial state. In the control only matrix preparation reuse is disabled; lookup counters follow the same bounded LRU ordering. Timings exclude declaration/setup/snapshot work. All per-step states, receipt counts and final snapshot bytes/digests match exactly. Counts are for shared solver inversions and conditioning proofs, not total Python function calls or all other model conditioning checks.",
+  "comparisons": [
+    {
+      "family": "A_CI",
+      "reuse_seconds": 153.38398734902148,
+      "disabled_seconds": 333.2445813800441,
+      "speedup": 2.172616497586246,
+      "time_reduction_percent": 53.972548716674595,
+      "reuse_mean_seconds": 30.676797469804296,
+      "disabled_mean_seconds": 66.64891627600882,
+      "reuse_setup_seconds": 42.98219908500323,
+      "disabled_setup_seconds": 42.81037807499524,
+      "reuse_step_seconds": [
+        26.783437264995882,
+        32.23822998200194,
+        30.665607828006614,
+        33.79463938000845,
+        29.902072894008597
+      ],
+      "disabled_step_seconds": [
+        70.08434311600286,
+        70.69076289402437,
+        66.32867901399732,
+        62.015868542017415,
+        64.12492781400215
+      ],
+      "physical_dt": 0.015625,
+      "geometry_gain": 0.09375,
+      "candidate_eta": 0.125,
+      "realization_declaration": {
+        "schema_version": "grcv4-ci-params-v1",
+        "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-3",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "residual_norm_id": "joint_current_geometry_l2_v1",
+        "tolerance": 1e-08
+      },
+      "full_declarations_backend_and_evolved_states_exactly_equal": true,
+      "final_snapshot_sha256": "31888194381ab684f66c627dd3a3a4642ea2d4153b56454ff4a18ef0a3d37ce0",
+      "final_snapshot_bytes": 68642,
+      "step_preparation_lookups": 105,
+      "step_preparations_with_reuse": 19,
+      "step_repeat_preparations_avoided": 86,
+      "preparation_reduction_percent": 81.9047619047619,
+      "step_preparation_scopes": [
+        {
+          "lookups": 21,
+          "repeat_preparations": 18,
+          "distinct_preparations": 3
+        },
+        {
+          "lookups": 21,
+          "repeat_preparations": 17,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 21,
+          "repeat_preparations": 17,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 21,
+          "repeat_preparations": 17,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 21,
+          "repeat_preparations": 17,
+          "distinct_preparations": 4
+        }
+      ],
+      "reuse_report": "grid_transport_a_ci_4x5_5.json",
+      "disabled_report": "grid_transport_a_ci_4x5_5_reuse_disabled.json"
+    },
+    {
+      "family": "A_PC",
+      "reuse_seconds": 72.23688853200292,
+      "disabled_seconds": 72.68466030599666,
+      "speedup": 1.0061986580968996,
+      "time_reduction_percent": 0.6160471440722848,
+      "reuse_mean_seconds": 14.447377706400584,
+      "disabled_mean_seconds": 14.536932061199332,
+      "reuse_setup_seconds": 1.0490308919979725,
+      "disabled_setup_seconds": 0.989968580979621,
+      "reuse_step_seconds": [
+        7.715395420993445,
+        18.327890816988656,
+        16.93483590800315,
+        14.239024731010431,
+        15.019741655007238
+      ],
+      "disabled_step_seconds": [
+        8.042701619007858,
+        17.822831456986023,
+        17.384422664996237,
+        14.637549323000712,
+        14.797155242005829
+      ],
+      "physical_dt": 0.015625,
+      "geometry_gain": 0.000244140625,
+      "candidate_eta": 0.125,
+      "realization_declaration": {
+        "schema_version": "grcv4-pc-params-v1",
+        "tau_PC": 0.03125,
+        "radius": 32.0,
+        "carrier_norm_id": "symmetric_star_frobenius_v1",
+        "source_envelope_id": "pc_compact_base_chart_v1:0x1.4000000000000p+3:0x1.0000000000000p+0:0x1.0000000000000p+1",
+        "writer_id": "zero_order_hold_exponential_v1"
+      },
+      "full_declarations_backend_and_evolved_states_exactly_equal": true,
+      "final_snapshot_sha256": "2f80ec318796d7730fbdd49dc57d109442401ad926f36fd1cdf4211e8708734a",
+      "final_snapshot_bytes": 76208,
+      "step_preparation_lookups": 15,
+      "step_preparations_with_reuse": 14,
+      "step_repeat_preparations_avoided": 1,
+      "preparation_reduction_percent": 6.666666666666667,
+      "step_preparation_scopes": [
+        {
+          "lookups": 3,
+          "repeat_preparations": 1,
+          "distinct_preparations": 2
+        },
+        {
+          "lookups": 3,
+          "repeat_preparations": 0,
+          "distinct_preparations": 3
+        },
+        {
+          "lookups": 3,
+          "repeat_preparations": 0,
+          "distinct_preparations": 3
+        },
+        {
+          "lookups": 3,
+          "repeat_preparations": 0,
+          "distinct_preparations": 3
+        },
+        {
+          "lookups": 3,
+          "repeat_preparations": 0,
+          "distinct_preparations": 3
+        }
+      ],
+      "reuse_report": "grid_transport_a_pc_4x5_5.json",
+      "disabled_report": "grid_transport_a_pc_4x5_5_reuse_disabled.json"
+    },
+    {
+      "family": "A_CI_PC",
+      "reuse_seconds": 161.75006183699588,
+      "disabled_seconds": 370.3525489549502,
+      "speedup": 2.2896593964098395,
+      "time_reduction_percent": 56.325381776521475,
+      "reuse_mean_seconds": 32.350012367399174,
+      "disabled_mean_seconds": 74.07050979099003,
+      "reuse_setup_seconds": 53.688701584003866,
+      "disabled_setup_seconds": 56.427652740996564,
+      "reuse_step_seconds": [
+        28.41286801599199,
+        36.28230048401747,
+        34.691324548999546,
+        35.72548837901559,
+        26.63808040897129
+      ],
+      "disabled_step_seconds": [
+        84.75258137797937,
+        72.03139573900262,
+        76.99847587198019,
+        76.91659772198182,
+        59.65349824400619
+      ],
+      "physical_dt": 0.015625,
+      "geometry_gain": 0.000244140625,
+      "candidate_eta": 0.125,
+      "realization_declaration": {
+        "schema_version": "grcv4-cipc-params-v1",
+        "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-5",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "residual_norm_id": "joint_current_geometry_l2_v1",
+        "tolerance": 1e-08,
+        "tau_PC": 0.03125,
+        "radius": 32.0,
+        "carrier_norm_id": "symmetric_star_frobenius_v1",
+        "source_envelope_id": "pc_compact_base_chart_v1:0x1.4000000000000p+3:0x1.0000000000000p+0:0x1.0000000000000p+1",
+        "writer_id": "zero_order_hold_exponential_v1",
+        "rho_inst": 1
+      },
+      "full_declarations_backend_and_evolved_states_exactly_equal": true,
+      "final_snapshot_sha256": "da0885c4415b58073f39607e7344073ddf794f760975f89285e0af706d27012e",
+      "final_snapshot_bytes": 76695,
+      "step_preparation_lookups": 102,
+      "step_preparations_with_reuse": 18,
+      "step_repeat_preparations_avoided": 84,
+      "preparation_reduction_percent": 82.3529411764706,
+      "step_preparation_scopes": [
+        {
+          "lookups": 21,
+          "repeat_preparations": 18,
+          "distinct_preparations": 3
+        },
+        {
+          "lookups": 21,
+          "repeat_preparations": 17,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 21,
+          "repeat_preparations": 17,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 21,
+          "repeat_preparations": 17,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 18,
+          "repeat_preparations": 15,
+          "distinct_preparations": 3
+        }
+      ],
+      "reuse_report": "grid_transport_a_ci_pc_4x5_5.json",
+      "disabled_report": "grid_transport_a_ci_pc_4x5_5_reuse_disabled.json"
+    },
+    {
+      "family": "A_RG2b",
+      "reuse_seconds": 224.29556886199862,
+      "disabled_seconds": 287.4072658069781,
+      "speedup": 1.2813773685551941,
+      "time_reduction_percent": 21.958977539337898,
+      "reuse_mean_seconds": 44.85911377239972,
+      "disabled_mean_seconds": 57.48145316139562,
+      "reuse_setup_seconds": 26.543460239015985,
+      "disabled_setup_seconds": 28.170958718983456,
+      "reuse_step_seconds": [
+        33.844969080993906,
+        48.31498273299076,
+        46.55278168799123,
+        47.30199230101425,
+        48.280843059008475
+      ],
+      "disabled_step_seconds": [
+        60.24031901700073,
+        57.37458603398409,
+        55.58807667999645,
+        56.262478194985306,
+        57.94180588101153
+      ],
+      "physical_dt": 1.52587890625e-05,
+      "geometry_gain": 1.52587890625e-05,
+      "candidate_eta": 0.02,
+      "realization_declaration": {
+        "schema_version": "grcv4-rg2b-params-v1",
+        "extension_evaluator_id": "rg2b_graph_cubic_completion_v1:0x1.0000000000000p+1:0x1.a000000000000p+0:0x1.8000000000000p-2:0x1.0000000000000p-1:0x1.8000000000000p-1:0x1.0000000000000p-17:0x1.0000000000000p-3:0x1.0000000000000p-16",
+        "approximation_policy_id": "rg2b_matrix_ball_graph_transform_160bit_inverse64_depth16_v1",
+        "error_norm_id": "rg2b_hodge_frobenius_v1",
+        "error_tolerance": 1e-08,
+        "containment_certificate_id": "rg2b_derived_graph_compact_linfty_C_W_certificate_v1",
+        "iteration_limit": 4000,
+        "failure_policy_id": "fail_closed_on_uncertified_section_v1"
+      },
+      "full_declarations_backend_and_evolved_states_exactly_equal": true,
+      "final_snapshot_sha256": "33a0b518e752c1b30090767046a40a24b1d7ec7c7938d8de632ece57bccc04ff",
+      "final_snapshot_bytes": 69430,
+      "step_preparation_lookups": 65,
+      "step_preparations_with_reuse": 19,
+      "step_repeat_preparations_avoided": 46,
+      "preparation_reduction_percent": 70.76923076923077,
+      "step_preparation_scopes": [
+        {
+          "lookups": 13,
+          "repeat_preparations": 10,
+          "distinct_preparations": 3
+        },
+        {
+          "lookups": 13,
+          "repeat_preparations": 9,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 13,
+          "repeat_preparations": 9,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 13,
+          "repeat_preparations": 9,
+          "distinct_preparations": 4
+        },
+        {
+          "lookups": 13,
+          "repeat_preparations": 9,
+          "distinct_preparations": 4
+        }
+      ],
+      "reuse_report": "grid_transport_a_rg2b_4x5_5.json",
+      "disabled_report": "grid_transport_a_rg2b_4x5_5_reuse_disabled.json"
+    }
+  ],
+  "remaining_direct_inverse_path": {
+    "source": "src/pygrc/models/grc_v4_ci.py",
+    "function": "_analytic_residual",
+    "observation": "Direct _c_inverse(h) bypasses shared solve preparation; also consumed by graph RG2b point_maps.",
+    "timing_attribution": "Not separately profiled in this campaign."
+  },
+  "previous_os_reference": {
+    "reuse_seconds": 32.78569467001944,
+    "disabled_seconds": 61.42336058698129,
+    "speedup": 1.8734805287852963,
+    "new_measurement": false,
+    "reuse_report": "grid_transport_matrix_reuse_5.json",
+    "disabled_report": "grid_transport_matrix_reuse_disabled_5.json"
+  },
+  "general_dimensions_validation": "grid_transport_a_general_validation.json",
+  "comparison_scope": "Compare reuse on/off within each realization. Across realizations the graph, reference geometry and initial C/W match, but gain declarations differ and RG2b uses smaller eta and dt. OS reference is the earlier run."
+}

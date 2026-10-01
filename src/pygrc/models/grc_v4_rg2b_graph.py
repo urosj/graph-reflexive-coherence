@@ -8,32 +8,27 @@ State coordinates use the sup norm, geometry and K4 use Frobenius norms.
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
-from fractions import Fraction as F
 from typing import Any, cast
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import CandidateACurrent, CandidateADifferentialReference
-from .grc_v4_candidate_c import (
-    CandidateCCurrent,
-    _c_exact,
-    _c_mm,
-    _c_inverse,
-    _c_transpose,
-)
+from .grc_v4_candidate_c import CandidateCCurrent
 from .grc_v4_ci import (
-    _Interval,
-    _iv,
+    _analytic_residual,
     _iexp,
     _im,
     _imm,
+    _Interval,
+    _iv,
     _norm,
     _opnorm,
     _sqrt_upper,
-    _analytic_residual,
 )
+from .grc_v4_exact import ExactScalar, exact_number
 from .grc_v4_geometry import GeometryStageInputs, GRCV4Geometry, OneFormHodge, _computed
 from .grc_v4_profile import CandidateAParams, RG2bParams
-from .grc_v4_state import GRCV4AuthoritativeState, FrozenJSONMap
-from .grc_v4_rg2b import RG2bDomain, RG2bStageError, _require, _ilog, _cutoff
+from .grc_v4_rg2b import RG2bDomain, RG2bStageError, _cutoff, _ilog, _require
+from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState
 
 EXTENSION = "rg2b_graph_cubic_completion_v1:"
 APPROXIMATION = "rg2b_matrix_ball_graph_transform_160bit_inverse64_depth16_v1"
@@ -66,10 +61,10 @@ class RG2bGraphDomain(RG2bDomain):
         return result
 
 
-def rounded_upper(value: F) -> F:
+def rounded_upper(value: ExactScalar) -> ExactScalar:
     """Outward 160-bit bound; prevents unbounded rational diagnostic strings."""
     _require(value >= 0, "negative RG2b error or norm bound")
-    return _Interval(F(), value).hi
+    return _Interval(exact_number(), value).hi
 
 
 def centers(inputs: GeometryStageInputs, d: RG2bDomain) -> tuple[float, ...]:
@@ -81,8 +76,8 @@ def centers(inputs: GeometryStageInputs, d: RG2bDomain) -> tuple[float, ...]:
     )
 
 
-def coordinates(state: GRCV4AuthoritativeState) -> tuple[F, ...]:
-    return tuple(map(F, state.C + (() if state.W_A is None else state.W_A)))
+def coordinates(state: GRCV4AuthoritativeState) -> tuple[ExactScalar, ...]:
+    return tuple(map(exact_number, state.C + (() if state.W_A is None else state.W_A)))
 
 
 def descriptor_operators(backend: CandidateADifferentialReference) -> tuple[Any, ...]:
@@ -96,10 +91,10 @@ def descriptor_operators(backend: CandidateADifferentialReference) -> tuple[Any,
     result = []
     for i, node in enumerate(graph.live_node_ids):
         normal = [
-            [F(backend.regularization) * int(k == column) for column in range(dim)]
+            [exact_number(backend.regularization) * int(k == column) for column in range(dim)]
             for k in range(dim)
         ]
-        rhs = [[F() for _ in range(n)] for _ in range(dim)]
+        rhs = [[exact_number() for _ in range(n)] for _ in range(dim)]
         for edge in graph.oriented_edges:
             if node not in (edge.tail_node_id, edge.head_node_id):
                 continue
@@ -108,17 +103,17 @@ def descriptor_operators(backend: CandidateADifferentialReference) -> tuple[Any,
             )
             j = graph.node_index(other)
             delta = tuple(
-                F(y) - F(x)
+                exact_number(y) - exact_number(x)
                 for x, y in zip(backend.positions[i], backend.positions[j], strict=True)
             )
-            weight = F(cast(float, backend.reference_weights[edge.edge_id]))
+            weight = exact_number(cast(float, backend.reference_weights[edge.edge_id]))
             for k in range(dim):
                 rhs[k][j] += weight * delta[k]
                 rhs[k][i] -= weight * delta[k]
                 for column in range(dim):
                     normal[k][column] += weight * delta[k] * delta[column]
         result.append(
-            _c_mm(_c_inverse(tuple(map(tuple, normal))), tuple(map(tuple, rhs)))
+            numerics.matmul(numerics.inverse(tuple(map(tuple, normal))), tuple(map(tuple, rhs)))
         )
     return tuple(result)
 
@@ -138,18 +133,18 @@ def certificate(
     p = ref.profile.params_resolved.candidate
     n, m = len(graph.live_node_ids), len(graph.live_edge_ids)
     _require(n > 0 and m > 0, "RG2b requires nonempty resource and structural spaces")
-    b = _c_exact(graph.incidence)
-    bt = _c_transpose(b)
-    bn, b2, sn = _opnorm(b), _opnorm(_c_mm(bt, b)), _sqrt_upper(F(n))
-    r, dt = F(d.h_radius), F(d.beat_dt)
-    weights = tuple(F(cast(float, ref.edge_weights[e])) for e in graph.live_edge_ids)
+    b = numerics.exact_matrix(graph.incidence)
+    bt = numerics.transpose(b)
+    bn, b2, sn = _opnorm(b), _opnorm(numerics.matmul(bt, b)), _sqrt_upper(exact_number(n))
+    r, dt = exact_number(d.h_radius), exact_number(d.beat_dt)
+    weights = tuple(exact_number(cast(float, ref.edge_weights[e])) for e in graph.live_edge_ids)
     lower, upper = min(weights) - r, max(weights) + r
-    limit = F(ref.profile.params_resolved.solver.conditioning_limit)
+    limit = exact_number(ref.profile.params_resolved.solver.conditioning_limit)
     _require(
         lower > 0 and upper / lower <= limit,
         "RG2b graph Hodge ball is not SPD/conditioning certified",
     )
-    cmax, crad = F(d.center_C) + F(d.outer), sn * F(d.outer)
+    cmax, crad = exact_number(d.center_C) + exact_number(d.outer), sn * exact_number(d.outer)
     dc, dcx = _opnorm(bt) * crad, _opnorm(bt) * sn
     descriptors: tuple[Any, ...] = ()
     extra: dict[str, Any] = {}
@@ -158,24 +153,24 @@ def certificate(
         assert backend is not None
         CandidateACurrent(inputs, backend)
         descriptors = descriptor_operators(backend)
-        gd = max((_opnorm(a) for a in descriptors), default=F())
-        wlo, wup = F(d.center_W) - F(d.outer), F(d.center_W) + F(d.outer)
-        eta, kc, kah = abs(F(p.eta)), abs(F(p.kappa_c)), abs(F(p.kappa_Ah))
+        gd = max((_opnorm(a) for a in descriptors), default=exact_number())
+        wlo, wup = exact_number(d.center_W) - exact_number(d.outer), exact_number(d.center_W) + exact_number(d.outer)
+        eta, kc, kah = abs(exact_number(p.eta)), abs(exact_number(p.kappa_c)), abs(exact_number(p.kappa_Ah))
         ah = kc * wup + kah * r
         j0 = eta * wup * b2 * ah * dc
         j0x = eta * b2 * (ah * dc + wup * (kc * dc + ah * dcx))
         j0h = eta * wup * b2 * kah * dc
         contrast, contrast_x = 2 * gd * crad, 2 * gd * sn
-        alpha, beta, gamma = abs(F(p.alpha)), abs(F(p.beta)), abs(F(p.gamma))
+        alpha, beta, gamma = abs(exact_number(p.alpha)), abs(exact_number(p.beta)), abs(exact_number(p.gamma))
         exponent = (2 * alpha * cmax + beta * contrast**2 + gamma * j0**2) / 2
         _require(
-            _iexp(_iv(-exponent)).lo > F(p.W_floor),
+            _iexp(_iv(-exponent)).lo > exact_number(p.W_floor),
             "RG2b A pre-read floor chart is not strictly inactive",
         )
         ex = alpha + beta * contrast * contrast_x + gamma * j0 * j0x
         eh = gamma * j0 * j0h
         qx, qh = 1 / (2 * wlo) + ex / 2, eh / 2
-        zchi = abs(F(p.zeta_A) * F(p.chi_A))
+        zchi = abs(exact_number(p.zeta_A) * exact_number(p.chi_A))
         margin = 1 - zchi
         _require(margin > 0, "RG2b A whole-chart current inverse is uncertified")
         jmax = j0 / margin
@@ -183,11 +178,11 @@ def certificate(
             j0x / margin + j0 * zchi * qx / margin**2,
             j0h / margin + j0 * zchi * qh / margin**2,
         )
-        chi, zeta = abs(F(p.chi_A)), abs(F(p.zeta_A))
+        chi, zeta = abs(exact_number(p.chi_A)), abs(exact_number(p.zeta_A))
         flat = chi * jmax / lower
         flatx = chi * (qx * jmax + jx) / lower
         flath = chi * (jmax / lower**2 + (qh * jmax + jh) / lower)
-        response = F(1)
+        response = exact_number(1)
         next_radius = crad + dt * bn * jmax
         next_contrast = 2 * gd * next_radius
         next_x, next_h = sn + dt * bn * jx, dt * bn * jh
@@ -197,7 +192,7 @@ def certificate(
             + gamma * jmax**2
         ) / 2
         _require(
-            _iexp(_iv(-writer_exponent)).lo > F(p.W_floor),
+            _iexp(_iv(-writer_exponent)).lo > exact_number(p.W_floor),
             "RG2b A writer floor chart is not strictly inactive",
         )
         vx = (
@@ -210,7 +205,7 @@ def certificate(
             + beta * next_contrast * 2 * gd * next_h
             + gamma * jmax * jh
         )
-        fraction = (_iv(1) - _iexp(_iv(-dt / F(p.tau_A)))).hi
+        fraction = (_iv(1) - _iexp(_iv(-dt / exact_number(p.tau_A)))).hi
         logw = max(_ilog(_iv(wlo)).magnitude, _ilog(_iv(wup)).magnitude)
         delta_exp = _iexp(_iv(fraction * (writer_exponent + logw))).hi
         wm = wup * (delta_exp - 1)
@@ -229,41 +224,41 @@ def certificate(
     else:
         point = CandidateCCurrent(inputs)
         rank = point.algebra.selector.rank
-        stiffness = _c_mm(_c_mm(b, _c_exact(ref.pairings.one_form.matrix)), bt)
+        stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
         shifted = tuple(
-            tuple(x - (F(p.Lambda_C) if i == j else 0) for j, x in enumerate(row))
+            tuple(x - (exact_number(p.Lambda_C) if i == j else 0) for j, x in enumerate(row))
             for i, row in enumerate(stiffness)
         )
         from .grc_v4_candidate_c import CandidateCStageError
 
         try:
-            gap = 1 / _opnorm(_c_inverse(shifted)) - b2 * r
+            gap = 1 / _opnorm(numerics.inverse(shifted)) - b2 * r
         except CandidateCStageError as exc:
             if exc.disposition != "singular":
                 raise
             raise RG2bStageError("RG2b reference selector lies on cutoff") from exc
         _require(gap > 0, "RG2b whole-ball selector stratum is uncertified")
-        de = _iexp(_iv(abs(F(p.kappa_M_C)) / 2)).hi
+        de = _iexp(_iv(abs(exact_number(p.kappa_M_C)) / 2)).hi
         ml, mu = lower / de**2, upper * de**2
         _require(mu / ml <= limit, "RG2b retained Hodge conditioning is uncertified")
-        dx = de * abs(F(p.kappa_M_C)) * sn / (2 * F(p.C_ref))
-        dh = de * abs(F(p.kappa_M_C)) * (2 * b2 * sn * cmax / gap) / (2 * F(p.C_ref))
+        dx = de * abs(exact_number(p.kappa_M_C)) * sn / (2 * exact_number(p.C_ref))
+        dh = de * abs(exact_number(p.kappa_M_C)) * (2 * b2 * sn * cmax / gap) / (2 * exact_number(p.C_ref))
         mx, mh = 2 * de * upper * dx, de**2 + 2 * de * upper * dh
         q, qi = mu / lower**2, upper**2 / ml
         resolvent = _sqrt_upper(mu / ml)
-        response = F(1) if p.tau_C == 0 else qi * resolvent * q
+        response = exact_number(1) if p.tau_C == 0 else qi * resolvent * q
 
-        def response_lip(dm: F, h_change: bool) -> F:
+        def response_lip(dm: ExactScalar, h_change: bool) -> ExactScalar:
             if p.tau_C == 0:
-                return F()
+                return exact_number()
             lq = dm / lower**2 + (2 * mu / lower**3 if h_change else 0)
             lqi = upper**2 * dm / ml**2 + (2 * upper / ml if h_change else 0)
-            lr = resolvent**2 * F(p.tau_C) * b2 * dm
+            lr = resolvent**2 * exact_number(p.tau_C) * b2 * dm
             return lqi * resolvent * q + qi * lr * q + qi * resolvent * lq
 
         rx, rh = response_lip(mx, False), response_lip(mh, True)
         mobility = max(
-            abs(F(p.eta_C) * F(cast(float, p.W_C_tr[e])) * F(p.kappa_Phi_C))
+            abs(exact_number(p.eta_C) * exact_number(cast(float, p.W_C_tr[e])) * exact_number(p.kappa_Phi_C))
             for e in graph.live_edge_ids
         )
         j0, j0x, j0h = (
@@ -271,18 +266,18 @@ def certificate(
             mobility * b2 * (mx * dc + mu * dcx),
             mobility * b2 * mh * dc,
         )
-        zchi = abs(F(p.zeta_C) * F(p.chi_C)) * response
+        zchi = abs(exact_number(p.zeta_C) * exact_number(p.chi_C)) * response
         margin = 1 - zchi
         _require(
             margin > 0, "RG2b C whole-chart physical current inverse is uncertified"
         )
-        coupling = abs(F(p.zeta_C) * F(p.chi_C))
+        coupling = abs(exact_number(p.zeta_C) * exact_number(p.chi_C))
         jmax = j0 / margin
         jx, jh = (
             j0x / margin + j0 * coupling * rx / margin**2,
             j0h / margin + j0 * coupling * rh / margin**2,
         )
-        chi, zeta = abs(F(p.chi_C)), abs(F(p.zeta_C))
+        chi, zeta = abs(exact_number(p.chi_C)), abs(exact_number(p.zeta_C))
         flat = chi * response * jmax / lower
         flatx = chi * (rx * jmax + response * jx) / lower
         flath = chi * (response * jmax / lower**2 + (rh * jmax + response * jh) / lower)
@@ -293,24 +288,24 @@ def certificate(
         "RG2b whole-chart current conditioning is uncertified",
     )
     _require(
-        F(d.center_C) - F(d.outer) > dt * bn * jmax,
+        exact_number(d.center_C) - exact_number(d.outer) > dt * bn * jmax,
         "RG2b outer-chart continuity leaves positive resources",
     )
     gm, gx, gh = zeta * flat**2, 2 * zeta * flat * flatx, 2 * zeta * flat * flath
-    cut = F(3 * (n + (m if isinstance(p, CandidateAParams) else 0)), 2) / (
-        F(d.outer) - F(d.core)
+    cut = exact_number(3 * (n + (m if isinstance(p, CandidateAParams) else 0)), 2) / (
+        exact_number(d.outer) - exact_number(d.core)
     )
     fx, gx = fx + cut * fm, gx + cut * gm
     fm, fx, fh, gm, gx, gh = map(rounded_upper, (fm, fx, fh, gm, gx, gh))
     lip, kh = (
-        F(d.section_lipschitz),
-        abs(F(ref.profile.params_resolved.geometry.kappa_H)),
+        exact_number(d.section_lipschitz),
+        abs(exact_number(ref.profile.params_resolved.geometry.kappa_H)),
     )
     ell = rounded_upper(fx + fh * lip)
     _require(ell < 1, "RG2b extended graph base map is not uniformly invertible")
     inv = rounded_upper(1 / (1 - ell))
     _require(
-        fm <= F(d.core) - F(d.inner), "RG2b graph K_minus containment is uncertified"
+        fm <= exact_number(d.core) - exact_number(d.inner), "RG2b graph K_minus containment is uncertified"
     )
     _require(kh * gm <= r, "RG2b graph transform exceeds section value radius")
     _require(
@@ -358,8 +353,8 @@ def certificate(
 
 
 def point_maps(
-    cert: Any, x: tuple[F, ...], h: Any, point: Any = None
-) -> tuple[Any, Any, F, F]:
+    cert: Any, x: tuple[ExactScalar, ...], h: Any, point: Any = None
+) -> tuple[Any, Any, ExactScalar, ExactScalar]:
     """Enclose the real candidate maps using native-current residual bounds.
 
     The existing CI analytic residual encloses the complete A/C equations,
@@ -393,10 +388,10 @@ def point_maps(
         "RG2b point enclosure requires the same represented state and geometry",
     )
     residual, geometry_residual = _analytic_residual(point, point.current)
-    bounds = {k: F(v) for k, v in cert.bounds.items()}
+    bounds = {k: exact_number(v) for k, v in cert.bounds.items()}
     je = _norm(v.magnitude for v in residual) * bounds["current_inverse_upper"]
-    j = tuple(_Interval(F(v) - je, F(v) + je) for v in point.current.values)
-    dt = F(d.beat_dt)
+    j = tuple(_Interval(exact_number(v) - je, exact_number(v) + je) for v in point.current.values)
+    dt = exact_number(d.beat_dt)
     f = tuple(
         -dt * row[0]
         for row in _imm(_im(cert.graph_data.incidence), tuple((v,) for v in j))
@@ -407,7 +402,7 @@ def point_maps(
             _imm(_im(op), tuple((v,) for v in final_c))
             for op in cert.graph_data.descriptors
         )
-        fraction = _iv(1) - _iexp(_iv(-dt / F(p.tau_A)))
+        fraction = _iv(1) - _iexp(_iv(-dt / exact_number(p.tau_A)))
         writer = []
         for k, edge in enumerate(ref.graph.oriented_edges):
             u, v = (
@@ -420,16 +415,16 @@ def point_maps(
             square = sum((a * a for a in contrast), _iv(0))
             exponent = (
                 -(
-                    F(p.alpha) * (final_c[u] + final_c[v])
-                    + F(p.beta) * square
-                    + F(p.gamma) * j[k] * j[k]
+                    exact_number(p.alpha) * (final_c[u] + final_c[v])
+                    + exact_number(p.beta) * square
+                    + exact_number(p.gamma) * j[k] * j[k]
                 )
                 / 2
             )
             w = _iv(x[n + k])
             writer.append(w * (_iexp(fraction * (exponent - _ilog(w))) - 1))
         f += tuple(writer)
-    kh = abs(F(ref.profile.params_resolved.geometry.kappa_H))
+    kh = abs(exact_number(ref.profile.params_resolved.geometry.kappa_H))
     dv = bounds["flat_current_operator_upper"] * je
     ge = kh * bounds["source_gain"] * (2 * bounds["flat_upper"] * dv + dv * dv)
     generated = tuple(
@@ -442,10 +437,10 @@ def point_maps(
 @dataclass(frozen=True, slots=True)
 class MatrixBall:
     center: Any
-    error: F
+    error: ExactScalar
 
 
-def matrix_ball(intervals: Any, extra: F = F()) -> MatrixBall:
+def matrix_ball(intervals: Any, extra: ExactScalar = exact_number()) -> MatrixBall:
     m = len(intervals)
     midpoint = [[0.0] * m for _ in range(m)]
     for i in range(m):
@@ -457,7 +452,7 @@ def matrix_ball(intervals: Any, extra: F = F()) -> MatrixBall:
             _require(lo <= hi, "symmetric graph-section enclosures do not intersect")
             midpoint[i][j] = midpoint[j][i] = _computed(float((lo + hi) / 2))
     error = _norm(
-        max(abs(F(midpoint[i][j]) - v.lo), abs(F(midpoint[i][j]) - v.hi))
+        max(abs(exact_number(midpoint[i][j]) - v.lo), abs(exact_number(midpoint[i][j]) - v.hi))
         for i, row in enumerate(intervals)
         for j, v in enumerate(row)
     )
@@ -470,25 +465,25 @@ def section(cert: Any) -> dict[str, Any]:
     x = coordinates(cert.inputs.current)
     center = centers(cert.inputs, d)
     _require(
-        all(abs(v - F(c)) <= F(d.core) for v, c in zip(x, center, strict=True)),
+        all(abs(v - exact_number(c)) <= exact_number(d.core) for v, c in zip(x, center, strict=True)),
         "RG2b section query is outside K",
     )
     href = ref.pairings.one_form.matrix
-    bounds = {k: F(v) for k, v in cert.bounds.items()}
+    bounds = {k: exact_number(v) for k, v in cert.bounds.items()}
     kh = bounds["typed_geometry_gain"]
-    tolerance = F(params.error_tolerance)
+    tolerance = exact_number(params.error_tolerance)
     sensitivity = kh * (
         bounds["source_X_lipschitz"]
         + bounds["source_h_lipschitz"] * bounds["section_lipschitz"]
     )
-    guard = tolerance / (32 * sensitivity) if sensitivity else F()
+    guard = tolerance / (32 * sensitivity) if sensitivity else exact_number()
     neutral = kh == 0 or bounds["source_upper"] == 0
     calls = 0
 
-    def evaluate(level: int, target: tuple[F, ...]) -> MatrixBall:
+    def evaluate(level: int, target: tuple[ExactScalar, ...]) -> MatrixBall:
         nonlocal calls
         if level == 0 or neutral:
-            return MatrixBall(href, F())
+            return MatrixBall(href, exact_number())
         mid = target
         for _ in range(64):
             calls += 1
@@ -496,7 +491,7 @@ def section(cert: Any) -> dict[str, Any]:
                 calls <= params.iteration_limit,
                 "RG2b deterministic evaluation budget exhausted",
             )
-            cutoff = F(1)
+            cutoff = exact_number(1)
             for value, c in zip(mid, center, strict=True):
                 cutoff *= _cutoff(value, c, d)
             if cutoff == 0:
@@ -511,11 +506,11 @@ def section(cert: Any) -> dict[str, Any]:
             gamma = evaluate(level - 1, mid)
             _require(
                 _norm(
-                    F(a) - F(b)
+                    exact_number(a) - exact_number(b)
                     for row, old in zip(gamma.center, href, strict=True)
                     for a, b in zip(row, old, strict=True)
                 )
-                <= F(d.h_radius),
+                <= exact_number(d.h_radius),
                 "rounded graph-section iterate leaves the Hodge ball",
             )
             f, g, _, ge = point_maps(cert, mid, gamma.center)
@@ -542,14 +537,14 @@ def section(cert: Any) -> dict[str, Any]:
                     + sensitivity * inverse_error,
                 )
             mid = tuple(
-                F(_computed(float(t - (v.lo + v.hi) / 2)))
+                exact_number(_computed(float(t - (v.lo + v.hi) / 2)))
                 for t, v in zip(target, f, strict=True)
             )
         raise RG2bStageError("RG2b graph inverse enclosure unresolved")
 
     chosen = None
     for level in range(17):
-        tail = F() if neutral else F(d.h_radius) * bounds["contraction_upper"] ** level
+        tail = exact_number() if neutral else exact_number(d.h_radius) * bounds["contraction_upper"] ** level
         if tail > tolerance / 4:
             continue
         value = evaluate(level, x)
@@ -567,11 +562,11 @@ def section(cert: Any) -> dict[str, Any]:
     level, value, error = chosen
     _require(
         _norm(
-            F(a) - F(b)
+            exact_number(a) - exact_number(b)
             for row, old in zip(value.center, href, strict=True)
             for a, b in zip(row, old, strict=True)
         )
-        <= F(d.h_radius),
+        <= exact_number(d.h_radius),
         "stored graph section exceeds its Hodge ball",
     )
     return dict(
@@ -585,7 +580,7 @@ def section(cert: Any) -> dict[str, Any]:
 
 def native_bridge(
     section: Any, point: Any, following: GeometryStageInputs, generated: GRCV4Geometry
-) -> tuple[F, F, F, F]:
+) -> tuple[ExactScalar, ExactScalar, ExactScalar, ExactScalar]:
     cert = section.certificate
     x, y = coordinates(cert.inputs.current), coordinates(following.current)
     f, g, je, ge = point_maps(cert, x, section.geometry.one_form_hodge.matrix, point)

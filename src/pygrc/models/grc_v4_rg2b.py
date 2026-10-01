@@ -8,31 +8,31 @@ CI root nor a previous geometry supplies that section. See P9-6.4ab-Review.md.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field, replace
-from fractions import Fraction
-from functools import lru_cache
 import math
-from typing import Any, cast, TYPE_CHECKING
+from dataclasses import dataclass, field, replace
+from functools import lru_cache
+from typing import TYPE_CHECKING, Any, cast
 
 from .grc_v4_candidate_a import (
+    ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
     CandidateADifferentialReference,
     CandidateAWriter,
-    ADMITTED_HISTORY_POLICIES,
 )
 from .grc_v4_candidate_c import CandidateCCurrent
-from .grc_v4_ci import _Interval, _iv, _iexp, _itanh, _source
+from .grc_v4_ci import _iexp, _Interval, _itanh, _iv, _source
+from .grc_v4_exact import ExactScalar, exact_number
 from .grc_v4_geometry import (
     GeometryStageInputs,
     GRCV4Geometry,
-    OneFormHodge,
     H_profile,
+    OneFormHodge,
     VertexScalar,
     _identity,
     _local_payload,
 )
-from .grc_v4_profile import RG2bParams, CandidateAParams
-from .grc_v4_state import _number, FrozenJSONMap, GRCV4AuthoritativeState
+from .grc_v4_profile import CandidateAParams, RG2bParams
+from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number
 
 if TYPE_CHECKING:
     from .grc_v4_step import OperationStage
@@ -108,13 +108,13 @@ class RG2bDomain:
 
 @lru_cache(maxsize=1)
 def _ln2() -> _Interval:
-    return _log_unit(Fraction(2))
+    return _log_unit(exact_number(2))
 
 
-def _log_unit(q: Fraction) -> _Interval:
+def _log_unit(q: ExactScalar) -> _Interval:
     # q in [1,2]; log(q)=2*atanh((q-1)/(q+1)). Positive geometric tail.
     z = (q - 1) / (q + 1)
-    power, total = z, Fraction()
+    power, total = z, exact_number()
     for n in range(64):
         total += power / (2 * n + 1)
         power *= z * z
@@ -122,11 +122,11 @@ def _log_unit(q: Fraction) -> _Interval:
 
 
 @lru_cache(maxsize=128, typed=True)
-def _log_point_endpoints(q: Fraction) -> tuple[Fraction, Fraction]:
+def _log_point_endpoints(q: ExactScalar) -> tuple[ExactScalar, ExactScalar]:
     """Memoize exact operands and immutable bounds, never caller intervals."""
     _require(q > 0, "logarithm outside positive chart")
     exponent = q.numerator.bit_length() - q.denominator.bit_length()
-    unit = q / Fraction(2) ** exponent
+    unit = q / exact_number(2) ** exponent
     if unit < 1:
         unit, exponent = unit * 2, exponent - 1
     unit_bounds = _log_unit(unit)
@@ -136,7 +136,7 @@ def _log_point_endpoints(q: Fraction) -> tuple[Fraction, Fraction]:
     return unit_bounds.lo + scaled_ln2.lo, unit_bounds.hi + scaled_ln2.hi
 
 
-def _log_point(q: Fraction) -> _Interval:
+def _log_point(q: ExactScalar) -> _Interval:
     return _Interval(*_log_point_endpoints(q))
 
 
@@ -215,7 +215,7 @@ class _Jet:
         value = _itanh(self.value)
         derivative = _iv(1) - value * value
         derivative = _Interval(
-            max(Fraction(), derivative.lo), min(Fraction(1), derivative.hi)
+            max(exact_number(), derivative.lo), min(exact_number(1), derivative.hi)
         )
         return _Jet(value, tuple(derivative * d for d in self.derivative))
 
@@ -301,16 +301,16 @@ def _declarations(
 
 def _coordinates(
     inputs: GeometryStageInputs, state: GRCV4AuthoritativeState
-) -> tuple[Fraction, ...]:
+) -> tuple[ExactScalar, ...]:
     if _graph_mode(inputs):
-        return tuple(map(Fraction, state.C + (() if state.W_A is None else state.W_A)))
+        return tuple(map(exact_number, state.C + (() if state.W_A is None else state.W_A)))
     edge = inputs.geometry.reference.graph.oriented_edges[0]
     graph = inputs.geometry.reference.graph
     values = (
         state.C[graph.node_index(edge.tail_node_id)],
         state.C[graph.node_index(edge.head_node_id)],
     )
-    return tuple(map(Fraction, values + (() if state.W_A is None else state.W_A)))
+    return tuple(map(exact_number, values + (() if state.W_A is None else state.W_A)))
 
 
 def _centers(inputs: GeometryStageInputs, domain: RG2bDomain) -> tuple[float, ...]:
@@ -335,57 +335,57 @@ def _raw(
     ref = inputs.geometry.reference
     p = ref.profile.params_resolved.candidate
     ct, ch, h = values[0], values[1], values[-1]
-    dt = Fraction(domain.beat_dt)
+    dt = exact_number(domain.beat_dt)
     if isinstance(p, CandidateAParams):
         w = values[2]
         baseline = (
             -2
-            * Fraction(p.eta)
+            * exact_number(p.eta)
             * w
             * (
-                Fraction(p.kappa_c) * w
-                + Fraction(p.kappa_Ah) * (h - ref.pairings.one_form.matrix[0][0])
+                exact_number(p.kappa_c) * w
+                + exact_number(p.kappa_Ah) * (h - ref.pairings.one_form.matrix[0][0])
             )
             * (ct - ch)
         )
         target = (
-            -(Fraction(p.alpha) * (ct + ch) + Fraction(p.gamma) * baseline * baseline)
+            -(exact_number(p.alpha) * (ct + ch) + exact_number(p.gamma) * baseline * baseline)
             / 2
         ).exp()
         _require(
-            target.value.lo > Fraction(p.W_floor),
+            target.value.lo > exact_number(p.W_floor),
             "RG2b A pre-read floor chart is not strictly inactive",
         )
         contrast = (w - target) / (w + target)
-        den = 1 - Fraction(p.zeta_A) * Fraction(p.chi_A) * contrast
+        den = 1 - exact_number(p.zeta_A) * exact_number(p.chi_A) * contrast
         current = baseline / den
-        flat = Fraction(p.chi_A) * contrast * current / h
-        gain = Fraction(p.zeta_A)
+        flat = exact_number(p.chi_A) * contrast * current / h
+        gain = exact_number(p.zeta_A)
     else:
         selected = ((ct + ch) / 2, (ct + ch) / 2) if rank == 1 else (ct, ch)
         deformation = (
-            Fraction(p.kappa_M_C)
+            exact_number(p.kappa_M_C)
             / 2
             * ((selected[0] / p.C_ref).tanh() + (selected[1] / p.C_ref).tanh())
         ).exp()
         retained = h * deformation
-        response = 1 / (1 + 2 * Fraction(p.tau_C) * retained)
+        response = 1 / (1 + 2 * exact_number(p.tau_C) * retained)
         baseline = (
             -2
-            * Fraction(p.eta_C)
-            * Fraction(cast(float, p.W_C_tr[ref.graph.live_edge_ids[0]]))
-            * Fraction(p.kappa_Phi_C)
+            * exact_number(p.eta_C)
+            * exact_number(cast(float, p.W_C_tr[ref.graph.live_edge_ids[0]]))
+            * exact_number(p.kappa_Phi_C)
             * retained
             * (ct - ch)
         )
-        den = 1 - Fraction(p.zeta_C) * Fraction(p.chi_C) * response
+        den = 1 - exact_number(p.zeta_C) * exact_number(p.chi_C) * response
         current = baseline / den
-        flat = Fraction(p.chi_C) * response * current / h
-        gain = Fraction(p.zeta_C)
+        flat = exact_number(p.chi_C) * response * current / h
+        gain = exact_number(p.zeta_C)
     _require(
         den.value.lo > 0
         and den.value.hi / den.value.lo
-        <= Fraction(ref.profile.params_resolved.solver.conditioning_limit),
+        <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
         "RG2b whole-chart physical current block is uncertified",
     )
     f = [-dt * current, dt * current]
@@ -395,13 +395,13 @@ def _raw(
     )
     if isinstance(p, CandidateAParams):
         writer_exponent = (
-            -(Fraction(p.alpha) * (ct + ch) + Fraction(p.gamma) * current * current) / 2
+            -(exact_number(p.alpha) * (ct + ch) + exact_number(p.gamma) * current * current) / 2
         )
         _require(
-            writer_exponent.exp().value.lo > Fraction(p.W_floor),
+            writer_exponent.exp().value.lo > exact_number(p.W_floor),
             "RG2b A writer floor chart is not strictly inactive",
         )
-        a = _Jet(_iexp(_iv(-dt / Fraction(p.tau_A))), (_iv(0),) * len(h.derivative))
+        a = _Jet(_iexp(_iv(-dt / exact_number(p.tau_A))), (_iv(0),) * len(h.derivative))
         f.append(w * (((1 - a) * (writer_exponent - w.log())).exp() - 1))
     return f, gain * flat * flat, current
 
@@ -418,7 +418,7 @@ class RG2bCertificate:
     def __post_init__(self) -> None:
         domain = _declarations(self.inputs, self.differential_reference)
         if _graph_mode(self.inputs):
-            from .grc_v4_rg2b_graph import certificate, RG2bGraphDomain
+            from .grc_v4_rg2b_graph import RG2bGraphDomain, certificate
 
             for name, value in certificate(
                 self.inputs, self.differential_reference, cast(RG2bGraphDomain, domain)
@@ -426,15 +426,15 @@ class RG2bCertificate:
                 object.__setattr__(self, name, value)
             return
         ref = self.inputs.geometry.reference
-        href = Fraction(ref.pairings.one_form.matrix[0][0])
+        href = exact_number(ref.pairings.one_form.matrix[0][0])
         lower, upper = (
-            href - Fraction(domain.h_radius),
-            href + Fraction(domain.h_radius),
+            href - exact_number(domain.h_radius),
+            href + exact_number(domain.h_radius),
         )
         _require(
             lower > 0
             and upper / lower
-            <= Fraction(ref.profile.params_resolved.solver.conditioning_limit),
+            <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
             "RG2b Hodge ball is not SPD/conditioning certified",
         )
         p = ref.profile.params_resolved.candidate
@@ -450,7 +450,7 @@ class RG2bCertificate:
             CandidateCCurrent(self.inputs)
         rank = 0
         if not isinstance(p, CandidateAParams):
-            cutoff = Fraction(p.Lambda_C)
+            cutoff = exact_number(p.Lambda_C)
             _require(
                 0 < cutoff < 2 * lower or cutoff > 2 * upper,
                 "RG2b whole-ball selector stratum is uncertified",
@@ -461,8 +461,8 @@ class RG2bCertificate:
         )
         boxes = [
             _Interval(
-                Fraction(c) - Fraction(domain.outer),
-                Fraction(c) + Fraction(domain.outer),
+                exact_number(c) - exact_number(domain.outer),
+                exact_number(c) + exact_number(domain.outer),
             )
             for c in centers
         ]
@@ -481,22 +481,22 @@ class RG2bCertificate:
             sum(d.magnitude for d in g.derivative[:-1]),
             g.derivative[-1].magnitude,
         )
-        cutoff_lip = Fraction(3 * (size - 1), 2) / (
-            Fraction(domain.outer) - Fraction(domain.core)
+        cutoff_lip = exact_number(3 * (size - 1), 2) / (
+            exact_number(domain.outer) - exact_number(domain.core)
         )
         fx += cutoff_lip * fm
         gx += cutoff_lip * gm
-        lip = Fraction(domain.section_lipschitz)
-        kh = abs(Fraction(ref.profile.params_resolved.geometry.kappa_H))
+        lip = exact_number(domain.section_lipschitz)
+        kh = abs(exact_number(ref.profile.params_resolved.geometry.kappa_H))
         ell = fx + fh * lip
         _require(ell < 1, "RG2b extended base map is not uniformly invertible")
         inverse = 1 / (1 - ell)
         _require(
-            fm <= Fraction(domain.core) - Fraction(domain.inner),
+            fm <= exact_number(domain.core) - exact_number(domain.inner),
             "RG2b K_minus containment is uncertified",
         )
         _require(
-            kh * gm <= Fraction(domain.h_radius),
+            kh * gm <= exact_number(domain.h_radius),
             "RG2b graph transform exceeds section value radius",
         )
         _require(
@@ -517,7 +517,7 @@ class RG2bCertificate:
             contraction_upper=q,
             typed_geometry_gain=kh,
             section_lipschitz=lip,
-            section_radius=Fraction(domain.h_radius),
+            section_radius=exact_number(domain.h_radius),
             cutoff_lipschitz=cutoff_lip,
         )
         object.__setattr__(self, "domain", domain)
@@ -527,24 +527,24 @@ class RG2bCertificate:
         )
 
 
-def _cutoff(x: Fraction, center: float, domain: RG2bDomain) -> Fraction:
-    distance = abs(x - Fraction(center))
-    if distance <= Fraction(domain.core):
-        return Fraction(1)
-    if distance >= Fraction(domain.outer):
-        return Fraction()
-    u = (distance - Fraction(domain.core)) / (
-        Fraction(domain.outer) - Fraction(domain.core)
+def _cutoff(x: ExactScalar, center: float, domain: RG2bDomain) -> ExactScalar:
+    distance = abs(x - exact_number(center))
+    if distance <= exact_number(domain.core):
+        return exact_number(1)
+    if distance >= exact_number(domain.outer):
+        return exact_number()
+    u = (distance - exact_number(domain.core)) / (
+        exact_number(domain.outer) - exact_number(domain.core)
     )
     return 1 - 3 * u * u + 2 * u * u * u
 
 
 def _extended(
-    cert: RG2bCertificate, x: tuple[Fraction, ...], h: _Interval
+    cert: RG2bCertificate, x: tuple[ExactScalar, ...], h: _Interval
 ) -> tuple[list[_Interval], _Interval]:
     d = cert.domain
     centers = (d.center_C, d.center_C) + ((d.center_W,) if len(x) == 3 else ())
-    cutoff = Fraction(1)
+    cutoff = exact_number(1)
     for value, center in zip(x, centers, strict=True):
         cutoff *= _cutoff(value, center, d)
     if cutoff == 0:
@@ -579,16 +579,16 @@ class CandidateRG2bSection:
         centers = (d.center_C, d.center_C) + ((d.center_W,) if len(x) == 3 else ())
         _require(
             all(
-                abs(v - Fraction(c)) <= Fraction(d.core)
+                abs(v - exact_number(c)) <= exact_number(d.core)
                 for v, c in zip(x, centers, strict=True)
             ),
             "RG2b section query is outside K",
         )
-        b = {k: Fraction(cast(str, v)) for k, v in cert.bounds.items()}
-        href = Fraction(ref.pairings.one_form.matrix[0][0])
-        kh = Fraction(ref.profile.params_resolved.geometry.kappa_H)
+        b = {k: exact_number(cast(str, v)) for k, v in cert.bounds.items()}
+        href = exact_number(ref.pairings.one_form.matrix[0][0])
+        kh = exact_number(ref.profile.params_resolved.geometry.kappa_H)
         assert isinstance(params, RG2bParams)
-        tolerance = Fraction(params.error_tolerance)
+        tolerance = exact_number(params.error_tolerance)
         budget = params.iteration_limit
         calls = 0
         inverse_to_geometry = abs(kh) * (
@@ -601,10 +601,10 @@ class CandidateRG2bSection:
         guard = (
             tolerance / (32 * inverse_to_geometry)
             if inverse_to_geometry
-            else Fraction()
+            else exact_number()
         )
 
-        def evaluate(level: int, target: tuple[Fraction, ...]) -> _Interval:
+        def evaluate(level: int, target: tuple[ExactScalar, ...]) -> _Interval:
             nonlocal calls
             if level == 0 or neutral:
                 return _iv(href)
@@ -621,7 +621,7 @@ class CandidateRG2bSection:
                         (_iv(v) - t + dv).magnitude
                         for v, t, dv in zip(mid, target, f, strict=True)
                     ),
-                    default=Fraction(),
+                    default=exact_number(),
                 )
                 inverse_error = residual * b["inverse_lipschitz"]
                 if inverse_error <= guard:
@@ -638,7 +638,7 @@ class CandidateRG2bSection:
                 # Binary64 iterates are numerical work, enclosed by the exact
                 # residual test above; no rounded stagnation earns admission.
                 mid = tuple(
-                    Fraction(float(t - (dv.lo + dv.hi) / 2))
+                    exact_number(float(t - (dv.lo + dv.hi) / 2))
                     for t, dv in zip(target, f, strict=True)
                 )
             raise RG2bStageError("RG2b inverse enclosure unresolved")
@@ -648,14 +648,14 @@ class CandidateRG2bSection:
         for level in range(17):
             tail = radius * b["contraction_upper"] ** level
             if neutral:
-                tail = Fraction()
+                tail = exact_number()
             if tail > tolerance / 4:
                 continue
             value = evaluate(level, x)
             value = _Interval(value.lo - tail, value.hi + tail)
             rounded = float((value.lo + value.hi) / 2)
             error = max(
-                abs(Fraction(rounded) - value.lo), abs(Fraction(rounded) - value.hi)
+                abs(exact_number(rounded) - value.lo), abs(exact_number(rounded) - value.hi)
             )
             if error <= tolerance:
                 chosen = (level, value, rounded, error)
@@ -669,7 +669,7 @@ class CandidateRG2bSection:
         assert chosen is not None
         level, value, rounded, error = chosen
         _require(
-            abs(Fraction(rounded) - href) <= radius,
+            abs(exact_number(rounded) - href) <= radius,
             "stored RG2b section exceeds its Hodge ball",
         )
         geometry = GRCV4Geometry(ref, OneFormHodge(ref.graph, ((rounded,),)))
@@ -771,7 +771,7 @@ class ProvisionalCandidateRG2bStep:
                 "RG2b step index exceeds safe integer range",
             )
         try:
-            next_time = float(Fraction(before.time) + Fraction(before.dt))
+            next_time = float(exact_number(before.time) + exact_number(before.dt))
         except OverflowError as exc:
             raise ResourceBoundaryError(
                 "admission", "nonfinite_value", "RG2b clock overflow"
@@ -801,7 +801,7 @@ class ProvisionalCandidateRG2bStep:
                 centers = _centers(before, d)
                 _require(
                     all(
-                        abs(v - Fraction(c)) <= Fraction(d.inner)
+                        abs(v - exact_number(c)) <= exact_number(d.inner)
                         for v, c in zip(coords, centers, strict=True)
                     ),
                     "RG2b current/reset ordinary prestate is outside K_minus",
@@ -856,7 +856,7 @@ class ProvisionalCandidateRG2bStep:
                 )
                 restart = CandidateRG2bSection(following, self.differential_reference)
                 restart_point = native(restart)
-                kh = Fraction(ref.profile.params_resolved.geometry.kappa_H)
+                kh = exact_number(ref.profile.params_resolved.geometry.kappa_H)
                 if _graph_mode(before):
                     from .grc_v4_rg2b_graph import native_bridge
 
@@ -886,19 +886,19 @@ class ProvisionalCandidateRG2bStep:
                         _iv(generated.one_form_hodge.matrix[0][0]) - analytic_generated
                     ).magnitude
                     current_norm = j.value.magnitude
-                tolerance = Fraction(
+                tolerance = exact_number(
                     cast(
                         RG2bParams, ref.profile.params_resolved.realization
                     ).error_tolerance
                 )
                 b = {
-                    k: Fraction(cast(str, v))
+                    k: exact_number(cast(str, v))
                     for k, v in section.certificate.bounds.items()
                 }
                 solver = ref.profile.params_resolved.solver
                 current_tolerance = (
-                    Fraction(solver.absolute_tolerance)
-                    + Fraction(solver.relative_tolerance) * current_norm
+                    exact_number(solver.absolute_tolerance)
+                    + exact_number(solver.relative_tolerance) * current_norm
                 )
                 _require(
                     native_current_error <= current_tolerance
@@ -906,9 +906,9 @@ class ProvisionalCandidateRG2bStep:
                     and b["section_lipschitz"] * native_state_error <= tolerance,
                     "RG2b native candidate/continuity/writer arithmetic bridge is uncertified",
                 )
-                e = Fraction(section.error_upper)
+                e = exact_number(section.error_upper)
                 bound = (
-                    Fraction(restart.error_upper)
+                    exact_number(restart.error_upper)
                     + native_geometry_error
                     + abs(kh) * b["source_h_lipschitz"] * e
                     + b["section_lipschitz"]
@@ -917,7 +917,7 @@ class ProvisionalCandidateRG2bStep:
                 from .grc_v4_ci import _norm
 
                 residual = _norm(
-                    Fraction(a) - Fraction(b)
+                    exact_number(a) - exact_number(b)
                     for row, old in zip(
                         restart.geometry.one_form_hodge.matrix,
                         generated.one_form_hodge.matrix,

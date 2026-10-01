@@ -1,16 +1,23 @@
 """Accepted one-pass target-only A construction; no total-current or lifecycle solve."""
 
 from dataclasses import dataclass, field
-from fractions import Fraction
 from typing import Self
 
 from .grc_v4_candidate_a import CandidateADifferentialReference, _conductance
 from .grc_v4_codec import (
-    V4IdentityError, canonical_json_bytes, initializer_identity,
-    load_initializer_schema, validate_initializer_payload,
+    V4IdentityError,
+    canonical_json_bytes,
+    initializer_identity,
+    load_initializer_schema,
+    validate_initializer_payload,
 )
+from .grc_v4_exact import exact_number
 from .grc_v4_geometry import (
-    GRCV4ReferenceGeometry, NonfiniteGeometryError, PhysicalFlux, VertexScalar, _computed,
+    GRCV4ReferenceGeometry,
+    NonfiniteGeometryError,
+    PhysicalFlux,
+    VertexScalar,
+    _computed,
 )
 from .grc_v4_state import FrozenJSONMap, _vector
 
@@ -72,14 +79,14 @@ class CandidateAReferencePass:
 
         M = stage("auxiliary_mobility", lambda: mobility(W_base))
         B = graph.incidence
-        dC = tuple(sum((Fraction(B[i][e]) * Fraction(c) for i, c in enumerate(C)), Fraction())
+        dC = tuple(sum((exact_number(B[i][e]) * exact_number(c) for i, c in enumerate(C)), exact_number())
                    for e in range(len(W_base)))
         # Zero-derivative site recipe was fixed by schema. No gauge projection.
         phi = stage("reference_potential", lambda: tuple(_computed(float(
-            Fraction(params.kappa_c) * sum((Fraction(B[i][e]) * Fraction(w) * dC[e]
-                                          for e, w in enumerate(W_base)), Fraction()))) for i in range(len(C))))
+            exact_number(params.kappa_c) * sum((exact_number(B[i][e]) * exact_number(w) * dC[e]
+                                          for e, w in enumerate(W_base)), exact_number()))) for i in range(len(C))))
         flux = stage("reference_flux", lambda: tuple(_computed(float(
-            -Fraction(m) * sum((Fraction(B[i][e]) * Fraction(x) for i, x in enumerate(phi)), Fraction())))
+            -exact_number(m) * sum((exact_number(B[i][e]) * exact_number(x) for i, x in enumerate(phi)), exact_number())))
             for e, m in enumerate(M)))
         W = stage("final_conductance", lambda: _conductance(graph, params, resource, D, PhysicalFlux(graph, flux)))
         stage("final_mobility", lambda: mobility(W))

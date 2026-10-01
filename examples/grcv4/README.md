@@ -1,8 +1,92 @@
-# GRC-v4 realization comparisons
+# GRC-v4 numerical examples
 
 These checkout-only examples construct matched declarations using test fixtures
 and execute production numerical steps. They do not register new supported
 profiles, modify the runtime, or create lifecycle acceptance receipts.
+
+## Larger public simulation: 20-node transport grid
+
+[grid_transport.py](grid_transport.py) runs **A_OS through the strict public
+GRCV4 lifecycle** on a **4×5 grid: 20 nodes, 31 edges**. Horizontal edges point
+right and vertical edges point down; every nearest neighbour is connected.
+The graph has loops and node degrees from two to four. Candidate A uses actual
+2-D grid positions for its regularized differential descriptors.
+
+The closed system starts with total resource **40**, a smooth gradient across
+both axes, and a localized `+0.25` / `−0.25` perturbation at `r1c2` / `r2c2`.
+These are initial conditions; there is no external injection or boundary input.
+Resource values initially span `1.65625–2.34375`. Reference weights vary spatially
+from `1–1.375`, and retained `W_A` starts at `1.5–1.75`. The initial state is also
+the reset baseline.
+
+- Timestep: `1/64`; A history relaxation time: `1/8`.
+- Candidate coefficients: `eta=0.125`, `kappa_c=0.25`, `kappa_Ah=0.125`;
+  `alpha=0.02`, `beta=0.1`, `gamma=0.05`.
+- Feedback: `chi_A=zeta_A=0.25`; geometry gain: `0.09375`.
+- OS split tolerance: `1e-8`; absolute charge tolerance: `1e-11`.
+- Differential descriptor regularization: `1`, in two dimensions.
+
+Run separate fresh processes from the repository root:
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_transport.py --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_transport.py --steps 10
+```
+
+`--output PATH` selects a different report destination. Ordinary successful
+commit receipts and the complete public step results are produced; there is no
+provisional-only shortcut. Declaration construction uses checkout test helpers,
+as the other examples do. This example does not extend global conformance claims
+or the supported profile registry.
+
+The grid size is configurable; for example, `--rows 6 --cols 6` builds a
+36-node closed grid. Measured scaling and optimization studies belong to the
+[implementation correction](../../implementation/corrections/GRCV4-MatrixPerformanceCloseout.md)
+and its [retained evidence](../../implementation/evidence/grcv4-performance/README.md).
+
+## Configurable public grids for the other A realizations
+
+[grid_realizations_a.py](grid_realizations_a.py) accepts the same grid dimensions
+as the OS transport example. It builds CI, PC, CI+PC or RG2b declarations, then
+runs strict public `GRCV4.step_v4_input` operations with receipts and snapshots.
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization CI --rows 4 --cols 5 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization PC --rows 6 --cols 6 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization "CI+PC" --rows 3 --cols 4 --steps 5
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization RG2b --rows 4 --cols 5 --steps 5
+```
+
+These are examples of the same graph size, not identical physical experiments.
+At 4×5 they preserve the OS reference geometry, initial resources and retained
+edge history. CI keeps the original physical coefficients, geometry gain and
+time step. PC and CI+PC reduce geometry gain to fit their uniform carrier
+certificates. RG2b also reduces transport eta and the physical time step to
+certify its compact graph domain.
+
+For other dimensions, initialization scales the resource gradient and pulse to
+keep each resource within 0.34375 of its center 2. The declarations scale with
+node/edge count; the whole-chart PC resource bound also scales with node count.
+Setup checks the production certificate and can select a more conservative
+declaration before creating the public owner. It records every attempted
+declaration admission and the final exact certificate bounds in the JSON.
+Declarations remain fixed throughout evolution. A rejected certificate or
+public step is never treated as a successful run; setup stops after twelve
+unsuccessful attempts. Arbitrary grid sizes or run lengths are not guaranteed
+admissible.
+
+## Candidate C configurable grids
+
+[grid_realizations_c.py](grid_realizations_c.py) accepts `--rows`, `--cols`,
+`--steps`, and all five realizations. It shares the grid topology, reference
+weights, and initial resource pulse with the A examples, while using C-specific
+declarations and no A edge history. Setup proposes a nonconstant selector
+cutoff; production exact rank and realization certificates decide admission.
+The admitted declaration stays fixed throughout the public run.
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization CI --rows 3 --cols 4 --steps 5
+```
 
 ## Five realizations, two candidates
 

@@ -11,6 +11,8 @@ from unittest.mock import patch
 
 import numpy as np
 
+from pygrc.models import grc_v4_numerics as numerics
+
 from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from pygrc.models.grc_v4_candidate_a import (
     CandidateACurrent,
@@ -1618,8 +1620,7 @@ class CandidateAOSAuditTests(unittest.TestCase):
         self.assertEqual(raised.exception.__cause__.disposition, "domain_failure")
 
     def test_shared_numerical_failure_is_classified_at_the_A_OS_boundary(self):
-        # Applicable while A reuses C-typed numerical utilities. If the shared
-        # utility adopts a candidate-neutral error type, update this type only.
+        # The historical C exception spelling aliases the neutral matrix error.
         before, backend = a_os_fixture()
         fault = CandidateCStageError("nonfinite", "explicit shared-helper fault")
         with patch(
@@ -1726,6 +1727,14 @@ class OSSplitResidualAuditTests(unittest.TestCase):
         import pygrc.models.grc_v4_realizations as module
 
         before, backend = a_os_fixture()
+        original = module.OSSplitResidual.__post_init__
+
+        def fault_in_split(fault):
+            def evaluate(residual):
+                with patch.object(numerics, "inertia", side_effect=fault):
+                    return original(residual)
+            return patch.object(module.OSSplitResidual, "__post_init__",
+                                autospec=True, side_effect=evaluate)
         for disposition in (
             "nonfinite",
             "domain_failure",
@@ -1734,12 +1743,12 @@ class OSSplitResidualAuditTests(unittest.TestCase):
             "no_admitted_root",
             "multiple_admitted_roots",
         ):
-            # Inject into the remaining shared exact inertia helper, not only
-            # the residual constructor. All typed dispositions retain identity.
+            # Inject the shared inertia failure during the actual split check;
+            # earlier current/differential checks remain untouched.
             fault = CandidateCStageError(disposition, "shared inertia fault")
             with (
                 self.subTest(disposition=disposition),
-                patch.object(module, "_c_inertia", side_effect=fault),
+                fault_in_split(fault),
             ):
                 with self.assertRaises(OSStageError) as raised:
                     CandidateAOSPass(before, backend)
@@ -1750,7 +1759,7 @@ class OSSplitResidualAuditTests(unittest.TestCase):
             ValueError("programmer value fault"),
             TypeError("programmer type fault"),
         ):
-            with patch.object(module, "_c_inertia", side_effect=fault):
+            with fault_in_split(fault):
                 with self.assertRaises(type(fault)) as raised:
                     CandidateAOSPass(before, backend)
                 self.assertIs(raised.exception, fault)

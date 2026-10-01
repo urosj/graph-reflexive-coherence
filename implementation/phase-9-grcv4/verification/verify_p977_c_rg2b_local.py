@@ -241,7 +241,8 @@ def validate_candidate(value, initial):
     import numpy as np
     from pygrc.models.grc_v4_geometry import GeometryStageInputs
     from pygrc.models.grc_v4_codec import canonical_json_bytes
-    from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError, _c_condition
+    from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+    from pygrc.models import grc_v4_numerics as numerics
     from tests.models.test_grc_v4_candidate_c import dense_current_oracle, p943_direction, p943_centered
     objects=value['objects'];rows={r['fixture_id']:r for r in value['fixture_results']}
     obs=lambda case:rows[case]['observation']
@@ -284,8 +285,8 @@ def validate_candidate(value, initial):
     p.require(o['certificates']==[dict(c) for c in a.certificates]
               and o['scope']=='nominated_matrix_certificates_plus_algebra_only_similarity_counterexample'
               and o['counterexample']==dict(retained=[[.5,0],[0,1]],physical=[[.5,5],[0,1]],limit=2,physical_rejected=True),'conditioning scope changed')
-    _c_condition(((.5,0),(0,1)),2,'retained')
-    try:_c_condition(((.5,5),(0,1)),2,'physical similarity')
+    numerics.condition(((.5,0),(0,1)),2,'retained')
+    try:numerics.condition(((.5,5),(0,1)),2,'physical similarity')
     except ValueError:pass
     else:raise ValueError('conditioning counterexample no longer discriminates')
     p.require(obs('C-C-ONLY-AUTHORITY')==dict(stage_inputs_object=base['stage_inputs_object'],point_object=base['point_object'],

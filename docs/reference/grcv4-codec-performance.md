@@ -919,3 +919,300 @@ A fresh 50-case selection passed all archive, public composition/audit and
 source-integrity controls after these corrections. The full 254-case selection
 was not repeated as one process. New archive test lint passes, both production
 files add no lint findings relative to HEAD, and patch whitespace checks pass.
+
+## Operation-local evidence and incremental legacy lifecycle hashing
+
+Implemented on `perf/v4-operation-evidence`, based on `8e4e048`. A fresh profile
+of the 100th A_OS public step on the two-node, one-edge fixture exposed 5,101,971
+calls. Geometry requested lifecycle identity through `source_lifecycle_id` 23
+times and `_identity_chain` 23 times; the binder added two requests. These paths
+repeated full receipt-array schema traversal and canonical hashing during one
+numerical operation.
+
+The compatibility-preserving implementation lives in
+`src/pygrc/models/_grc_v4_evidence.py`. Geometry and the binder share its identity
+resolver; ordinary lifecycle execution creates one private operation scope.
+There are no candidate/realization branches or public validation switches.
+
+### Exact legacy hashes can be incremental
+
+The earlier architectural suggestion that incremental lifecycle hashing requires
+a different identity format was too strong. Canonical key sorting places the
+receipt array **before** the scientific-state digest. SHA-256's internal state
+can therefore be retained immediately before closing that array. This is not
+reuse of a finalized digest as though it were the original preimage.
+
+The checked archive owns that state and its receipt count. An append copies the
+state and adds only canonical bytes of the newly checked receipt IDs, including
+any required comma. A lifecycle identity copies it again, closes the array, and
+adds the fixed version and newly checked scientific-state digest. Existing
+canonical bytes and lifecycle IDs remain exact. The private hash state is never
+serialized, supplied by an imported snapshot, or used as proof of numerical
+execution. Full import reconstructs it from the fully admitted history.
+
+Operation memoization reuses IDs for the same checked prefix/state digest.
+Immutable tuple aliases retain strong references, avoiding object-ID reuse;
+new captures must match an admitted ordered prefix or follow full validation.
+Asset pins and numerical dependency guards remain fresh on cache hits. Prefix
+builders use the detached admission result, never a second read of a caller
+iterable. New hash states never mutate prior published states, preserving
+rollback.
+
+The memo has bounded retained prefixes, aliases and identities and is discarded
+at operation exit, including failures. Nested operations and separate threads
+have independent scopes. Numerical solves, flux/read-back, selector, residual,
+charge, history, receipt and publication checks remain with their existing owners.
+
+### Binding checks do not require discarded evidence bytes
+
+The native binder now returns only its checked request and source/target payloads.
+Native callers still execute every comparison. The public `bind_step_result`
+retains full detached capture and materializes the same `StepResultEvidence`
+bytes. Ordinary native steps no longer serialize the result and both full ledgers
+into evidence that their callers discard. Request capture still precedes caller
+ledger reads, preserving the adversarial capture-order guard.
+
+### Measured benefit and limits
+
+The saved baseline and final branch each ran 100 evolving A_OS public steps using
+the same operation IDs and fixed graph. Setup, request construction and the
+50/100-step snapshot projections were excluded. No profiler was used for these
+timings; separate 100th-step profiles supplied call counts.
+
+| Measurement | Before (`8e4e048`) | Final branch |
+| --- | ---: | ---: |
+| 100 ordinary steps | 78.704 s | 57.956 s |
+| 100th ordinary step | 1.341 s | 0.844 s |
+| 100th-step profiled calls | 5,101,971 | 2,123,656 |
+
+The final ordinary trace is 1.36x faster; call volume falls 58.4%. Both checkpoint
+snapshot hashes match exactly, and the final profiled snapshot matches too.
+The private binder's cumulative **profiled** time fell from 0.645 to 0.022 s;
+profiled times are not ordinary runtime measurements or additive cost categories.
+
+An intermediate cache-only implementation ran the same 100 steps in 51.946 s.
+That separate-session sample is retained in the raw report. Its lower time does
+not establish that removing unused serialization increases runtime, nor do these
+single ordinary runs establish an isolated timing benefit for that second change.
+The final profile confirms removal of its work. No all-family runtime speedup or
+confidence interval is claimed.
+
+**The narrow constant-time claim:** extending the retained hash evidence and
+hashing a new state-digest suffix are independent of prior history length for a
+bounded receipt delta. Newly captured tuple matching, public DTO inspection,
+stage descriptor serialization, ledger/index copies and full result projections
+still grow with history. The complete public step is not constant time, and total
+run overhead can still be quadratic. This change does not alter those public
+contracts or eliminate every historical scan.
+
+All 86 focused checks passed: exact legacy hashes across growing/reordered
+prefixes, failure and rollback, changing caller iterables, bounds, nested/thread
+isolation, fresh asset/dependency rejection, archive import, public binder/audit,
+codec, and source-integrity controls. All ten candidate/realization combinations
+also produced identical result bytes and snapshots with operation identity reuse
+enabled and replaced by the original full identity computation, over two positive
+steps and a zero-duration step. New module, tests and benchmark lint pass; patch
+whitespace checks pass.
+
+Raw traces and profile summaries are retained in
+`grcv4-operation-evidence-costs.json`. Reproduce a normal trace with:
+
+```bash
+PYTHONPATH=src:.:tests .venv/bin/python scripts/benchmark_grc_v4_history.py \
+  --family A_OS --steps 100 --output /tmp/grcv4-history.json
+```
+
+Add `--profile-last` to profile the 100th step. Its time is then reported separately
+and excluded from ordinary totals; that profiled run must not be compared as a
+100-step ordinary runtime sample.
+
+### Publication wiring follow-up: compare the target instead of rebuilding it
+
+The user's concern about remaining call volume led to another concrete duplicate.
+The public step constructed its complete target lifecycle state, then publication
+constructed the same state again solely for equality comparison. Each projection
+created frozen receipt records and the public lifecycle constructor captured them
+again. The preceding 100th-step profile showed two `_lifecycle_state` calls, seven
+stage serialize/parse round trips, and 345 `_load_contract_schema` calls.
+
+`_CheckedArchive.check_target_state` now checks all 14 target fields directly.
+Endpoint stage inputs are still freshly reconstructed with `replace`, retaining
+the original geometry, coordinate, context, stage and identity admission checks.
+The target DTO's public constructor still runs once. Its graph/profile/current,
+reset baseline, context, clocks, charge target and identities are compared with
+actual endpoint values. Every target receipt is inspected against the admitted
+prefix plus the new delta, using the same detached type-aware token semantics.
+The token walker reads frozen storage directly instead of thawing another ledger;
+reordered keys remain equivalent, while boolean/number changes and changed arrays
+fail. No validation or public result construction is disabled.
+
+The all-family generic binder regression was updated for its private helper's
+bounded return value. It now explicitly compares all six public evidence byte
+fields rather than comparing a public evidence object with the obsolete private
+return type. The same one-native-validation and full-public-revalidation assertions
+remain. New controls force changes to each already constructed target field,
+verify receipt token behavior, and require exactly one native target projection.
+All 90 focused tests passed after correcting test setup; no production behavior
+failure was observed. New test/module/benchmark lint and whitespace checks pass.
+
+A fresh ordinary 100-step trace and separate final-step profile on the same A_OS
+fixture produced the following local samples:
+
+| Measurement | Preceding branch | Publication comparison change |
+| --- | ---: | ---: |
+| 100 ordinary steps | 57.956 s | 43.013 s |
+| 100th ordinary step | 0.844 s | 0.513 s |
+| 100th-step calls | 2,123,656 | 1,899,530 |
+
+Call volume falls another 10.6%; the ordinary trace is 1.35x faster in these local
+samples. Both checkpoint snapshots and the profiled final snapshot match exactly.
+The whole branch now measures 78.704 → 43.013 seconds relative to `8e4e048`, while
+preserving the public result. These are sequential single-run samples with timing
+variation, not isolated attribution or confidence intervals. Raw follow-up traces
+are in `grcv4-operation-evidence-costs.json` under `publication_wiring_followup`.
+
+Remaining architectural opportunities include internal stage serialize/parse
+handoffs and repeated asset verification. A numerical stage still receives the
+receipt-ID history in its public descriptor; its wire projection is larger than
+its numerical operands. The full public history and two exposed-state integrity
+inspections also remain linear in history. This follow-up removes a demonstrably
+redundant reconstruction; it does not make complete public steps constant time.
+
+
+### Internal stage capture and operation asset verification
+
+The next two targets are now implemented on `perf/v4-operation-evidence`.
+The lifecycle owner performs one full stage serialize/parse admission in the
+candidate-solve failure boundary and registers its detached reference privately
+for that operation. `_capture_stage_inputs` rebuilds the Hodge and geometry and
+runs the complete stage constructor on internal handoffs. It retains current and
+reset reconstruction, carrier positivity, coordinates, context, clocks, trial
+selection, receipt grammar and identity checks. The reference alone is reused.
+External or unrecognized references still use full wire admission. Resource
+selection capture also runs its constructor directly, retaining disposition and
+current checks. Public payload parsers and scientific result binding remain.
+
+Contract verification is scoped in the codec. It checks all pinned base assets
+at entry, uses those verified bytes internally, then freshly verifies installed
+assets before the publication pointer changes. Rejected results receive a fresh
+exit check too. Nested operations and threads have separate scopes, and failure
+clears them. Public request admission remains outside this scope; public schema
+lookup always reads freshly, even inside a scope. Dependencies remain checked on
+uses. Additive initializer/event asset verification is unchanged. No persistent
+asset-trust cache or per-realization validation mode is introduced.
+
+All ten candidate/realization combinations produced identical result bytes and
+snapshots over two positive steps and a zero-duration step when operation
+identity reuse and private stage capture were disabled and fresh asset reads
+restored. The broader realization/resource/cache run passed 82 tests with one
+existing skip. A separate evidence/codec/public-audit/capture run passed 62 tests
+(overlapping the evidence tests). Controls require one full stage admission,
+reject malformed private stage fields and a non-positive Hodge, reject changed
+assets before publication without changing owned state, and require external
+stage and public schema lookup admission. New-file lint passes, production lint
+findings are unchanged from HEAD, and whitespace checks pass.
+
+The same evolving public A_OS fixture (two nodes, one edge) gives:
+
+| Measurement | Before this follow-up | After |
+| --- | ---: | ---: |
+| 100 ordinary public steps | 43.013 s | 27.997 s |
+| 100th ordinary step | 0.513 s | 0.458 s |
+| Calls in the 100th-step profile | 1,899,530 | 1,552,491 |
+| Full stage wire captures in that step | 7 | 1 |
+| Fresh base-contract asset verifications | 345 | 4 |
+
+The operation itself performs two asset verifications; the other two are public
+request admission checks. Internal `_load_contract_schema` calls still occur
+(253 in the final profile), but use the operation's admitted snapshot instead of
+rereading every installed file. The 100-step ordinary trace is 1.54x faster and
+final-step call volume falls 18.3%. Step-50 and step-100 checkpoint snapshots and
+the profiled final snapshot match the preceding version exactly. These are local
+sequential samples with timing variation, not confidence intervals. Profiling
+time is separate from ordinary runtime. Raw traces and counters are retained
+under `stage_asset_followup` in `grcv4-operation-evidence-costs.json`.
+
+Full public result construction and its history validation now dominate the
+profile. Exposed-state integrity checks and public ledger projection still grow
+with history. This change bounds repeated reference admission and asset disk
+verification; it does not make the complete public step constant time or remove
+all quadratic aggregate history work.
+
+
+### Consolidate the audit boundary and reduce ownership assumptions
+
+The preceding performance changes introduced an audit burden: four publication
+paths had to remember an explicit fresh asset check, while assets and evidence
+used two independent ContextVar lifetimes. This follow-up consolidates those
+invariants rather than adding another optimization mode.
+
+`GRCV4Operation._owned` is now a property over a private backing slot. Its one
+setter requires an exact `_OwnedCOS`, freshly verifies pinned contract assets,
+and only then changes the pointer. Ordinary assignment and even
+`object.__setattr__(operation, "_owned", ...)` pass through that guard. A future
+path using the ordinary owned-state assignment automatically receives the same
+check. Initial construction and restoration also use it. Only that setter writes
+the backing slot and records verified publication.
+
+The codec owns one `_OperationContext`, holding pinned asset bytes, operation
+facts and publication status. The evidence module reads that same context;
+there is no second ContextVar to synchronize. Normal returns without publication
+receive a fresh exit check, independent of a result's claimed committed flag.
+Failures and nested scopes restore the entire context together. The private
+publication status is set only after the setter's verified pointer write.
+
+Reference ownership is now one retained reference compared with `is`. Tuple
+aliases use a bounded scan of retained objects, and identity-cache keys retain
+the actual frozen prefix object. All three `id()`-keyed caches are removed;
+cache limits remain independent of history size and trial count. Receipt evidence
+is a frozen dataclass. Incremental hashing encodes receipt elements through the
+codec, derives its fixed-size framing from the codec's empty envelope, and
+rejects an unexpected canonical layout. It no longer slices serialized array
+bytes or duplicates the hard-coded scientific-state suffix. Exact legacy hash
+comparisons, delta-extension and failure-preservation controls remain.
+
+Archive comparison uses the existing efficient `FrozenJSONMap.items()` interface
+rather than `_items`. `_lifecycle_fields` is the single bounded metadata projection
+used for state construction and target comparison. An executable coverage check
+requires its keys to cover every lifecycle dataclass field except the separately
+checked ledger. A future field omitted from this projection fails closed. Every
+target field and receipt is still compared; public constructors and scientific
+result binding remain in place.
+
+The review also found that assignment and administrative reset/rebase wrote
+the state pointer after releasing their existing lock. Those writes now stay
+inside the lock, keeping admission, asset verification and publication in the
+same critical section. New controls check that ordering, exercise asset failure
+through step/reset/rebase/assignment/direct pointer writes, and require unchanged
+owned state on failure. Distinct getter/setter names preserve the existing
+loaded-source integrity checker. The final main run passed 75 tests; subsequent
+ownership controls passed three tests, and lock-order/publication/source checks
+passed nine tests after the administrative correction. These runs overlap.
+All ten realizations retain exact result bytes on full-admission comparison paths.
+New-file lint passes, production lint findings are unchanged, and whitespace
+checks pass.
+
+| Measurement | Before consolidation | After |
+| --- | ---: | ---: |
+| 100 ordinary public steps | 27.997 s | 28.272 s |
+| Calls in the 100th-step profile | 1,552,491 | 1,565,350 |
+| Operation ContextVars | 2 | 1 |
+| `id()`-keyed ownership/identity caches | 3 | 0 |
+| Publication asset-verification sites | 4 | 1 |
+| Lifecycle metadata projection implementations | 2 | 1 |
+
+Call volume increases 0.83% and runtime increases 0.98% in these sequential local
+samples. This is a small measured cost for fewer distributed safety assumptions;
+no precise timing attribution or statistical confidence is claimed. Against the
+preceding 43.013-second / 1,899,530-call publication version, the overall change
+still measures about 1.52x faster with 17.6% fewer final-step calls. Checkpoints
+at 50 and 100 and the profiled final snapshot match exactly. Raw data is under
+`audit_boundary_followup` in `grcv4-operation-evidence-costs.json`.
+
+Incremental hashing remains an algorithm tied to the pinned canonical wire
+contract, with executable layout checks and byte-equivalence regressions. Python
+privacy is not protection against deliberate backing-slot or module tampering.
+The supported publication path enforces its guard automatically; fresh external
+admission, exposed-state checks, numerical claim checks and source integrity
+continue to define the surrounding audit boundaries. Full public-history cost
+is unchanged by this consolidation and remains the dominant scaling limit.

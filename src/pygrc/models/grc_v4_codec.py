@@ -14,6 +14,8 @@ import math
 import re
 from collections import OrderedDict
 from collections.abc import Iterator, Mapping
+from contextlib import contextmanager
+from contextvars import ContextVar
 from copy import deepcopy
 from functools import lru_cache
 from hashlib import sha256
@@ -21,6 +23,8 @@ from importlib import resources
 from threading import Lock
 from types import ModuleType
 from typing import Any, Literal, TypeAlias, cast
+
+from .grc_v4_linear import MatrixReuse, _MatrixFacts
 
 JSONValue: TypeAlias = (
     "None | bool | int | float | str | list[JSONValue] | dict[str, JSONValue]"
@@ -407,7 +411,61 @@ def _validation_error(
     return _validation_result(validator, data, schemas, name)[0]
 
 
+class _OperationContext:
+    """One lifetime for pinned contract bytes and private computation facts."""
+
+    __slots__ = ("assets", "evidence", "matrix_facts", "published")
+
+    def __init__(self, assets: tuple[dict[str, JSONValue], bytes], evidence: Any,
+                 matrix_reuse: MatrixReuse):
+        self.assets = assets
+        self.evidence = evidence
+        self.matrix_facts = _MatrixFacts(reuse=matrix_reuse)
+        self.published = False
+
+
+_OPERATION_CONTEXT: ContextVar[_OperationContext | None] = ContextVar(
+    "grcv4_operation_context", default=None
+)
+
+
 def _load_contract_schema() -> tuple[dict[str, JSONValue], bytes]:
+    context = _OPERATION_CONTEXT.get()
+    if context is not None:
+        _dependency("rfc8785")
+        return context.assets
+    return _read_contract_schema()
+
+
+@contextmanager
+def _operation_contract_assets(
+    evidence: Any = None, *, matrix_reuse: MatrixReuse | None = None,
+) -> Iterator[_OperationContext]:
+    """Enter one verified scope; unpublished returns receive a fresh exit check."""
+    parent = _OPERATION_CONTEXT.get()
+    if matrix_reuse is None:
+        matrix_reuse = (MatrixReuse.AUTOMATIC if parent is None
+                        else parent.matrix_facts.reuse)
+    context = _OperationContext(_read_contract_schema(), evidence, matrix_reuse)
+    token = _OPERATION_CONTEXT.set(context)
+    try:
+        yield context
+        if not context.published:
+            _verify_contract_assets()
+    finally:
+        _OPERATION_CONTEXT.reset(token)
+
+
+def _verify_contract_assets() -> _OperationContext | None:
+    """Fresh verification; only the owned-state setter records publication."""
+    context = _OPERATION_CONTEXT.get()
+    fresh = _read_contract_schema()
+    if context is not None and fresh[1] != context.assets[1]:
+        raise V4AssetError("contract changed during the operation")
+    return context
+
+
+def _read_contract_schema() -> tuple[dict[str, JSONValue], bytes]:
     """Recheck every asset; only parsing of identical verified bytes is cached."""
     try:
         package = resources.files(_ASSET_PACKAGE)
@@ -461,7 +519,7 @@ def _parsed_schema(raw: bytes) -> dict[str, JSONValue]:
 
 def load_contract_schema() -> dict[str, JSONValue]:
     """Verify installed bytes on every lookup; return an unshared schema copy."""
-    schema, _ = _load_contract_schema()
+    schema, _ = _read_contract_schema()
     return deepcopy(schema)
 
 

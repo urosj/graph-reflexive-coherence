@@ -15,6 +15,8 @@ from unittest.mock import patch
 
 import numpy as np
 
+from pygrc.models import grc_v4_numerics as numerics
+
 from pygrc.models.grc_v4 import GRCV4StepRequestInput
 from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from pygrc.models.grc_v4_codec import V4IdentityError, canonical_json_bytes
@@ -498,7 +500,7 @@ class CandidateCOSOperationTests(unittest.TestCase):
             )
             owner = CandidateCOSOperation(inputs)
             observed: list[Any] = []
-            original = module._c_condition
+            original = numerics.condition_bound
 
             def observe(matrix: Any, declared: float, label: str) -> Any:
                 if label == "retained resolvent":
@@ -507,9 +509,9 @@ class CandidateCOSOperationTests(unittest.TestCase):
 
             with (
                 self.subTest(limit=limit),
-                patch.object(module, "_c_condition", side_effect=observe),
+                patch.object(numerics, "condition_bound", side_effect=observe),
                 patch.object(np.linalg, "svd", wraps=np.linalg.svd) as svd,
-                patch.object(module, "_c_inertia", wraps=module._c_inertia) as inertia,
+                patch.object(numerics, "inertia", wraps=numerics.inertia) as inertia,
             ):
                 if admitted:
                     result = owner.step_v4(request(2**-12))
@@ -1124,13 +1126,12 @@ class CandidateCOSOperationTests(unittest.TestCase):
 
         # A nonfinite backend intermediate is not a finite loss of a declared
         # conditioning margin. Test the originating numerical classifier.
-        from pygrc.models.grc_v4_candidate_c import _c_condition
 
         with (
             patch.object(np.linalg, "svd", return_value=np.array([float("nan"), 1, 1])),
             self.assertRaises(CandidateCStageError) as failure,
         ):
-            _c_condition(((1, 0.5, 0), (0, 1, 0.5), (0, 0, 1)), 100, "control")
+            numerics.condition(((1, 0.5, 0), (0, 1, 0.5), (0, 0, 1)), 100, "control")
         self.assertEqual(failure.exception.disposition, "nonfinite")
         # Reset readmission precedes the candidate solve. Its nonfinite cause
         # remains visible while the solver disposition stays null.

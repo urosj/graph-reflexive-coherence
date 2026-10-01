@@ -13,33 +13,25 @@ one subsequent carrier write. Its uniform domain must cover the B_2R image.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field, replace
-from fractions import Fraction
-from functools import lru_cache
 import math
-from typing import Any, TYPE_CHECKING, TypeAlias, cast
+from dataclasses import dataclass, field, replace
+from functools import lru_cache
+from typing import TYPE_CHECKING, Any, TypeAlias, cast
 
+from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import (
+    ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
     CandidateADifferentialReference,
     CandidateAStageError,
     CandidateAWriter,
-    ADMITTED_HISTORY_POLICIES,
 )
-from .grc_v4_candidate_c import (
-    CandidateCCurrent,
-    CandidateCStageError,
-    _c_exact,
-    _c_inverse,
-    _c_inertia,
-    _c_components,
-    _c_mm,
-    _c_transpose,
-)
+from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError, _c_components
+from .grc_v4_exact import ExactScalar, exact_number, is_exact
 from .grc_v4_geometry import (
-    GRCV4Geometry,
     GeometryDomainError,
     GeometryStageInputs,
+    GRCV4Geometry,
     H_profile,
     K4Tensor,
     NonfiniteGeometryError,
@@ -51,7 +43,7 @@ from .grc_v4_geometry import (
     _identity,
     _local_payload,
 )
-from .grc_v4_profile import CandidateAParams, CISolverParams, CIPCParams
+from .grc_v4_profile import CandidateAParams, CIPCParams, CISolverParams
 from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number
 
 if TYPE_CHECKING:
@@ -78,10 +70,10 @@ def _require(condition: bool, message: str) -> None:
         raise CIStageError("domain_failure", message)
 
 
-def _sqrt_upper(q: Fraction) -> Fraction:
+def _sqrt_upper(q: ExactScalar) -> ExactScalar:
     """Rational upper bound with at least 80 significant binary digits."""
     if q == 0:
-        return Fraction()
+        return exact_number()
     if q < 0:
         raise ValueError("negative norm square")
     shift = max(0, 80 - (q.numerator.bit_length() - q.denominator.bit_length()) // 2)
@@ -89,27 +81,27 @@ def _sqrt_upper(q: Fraction) -> Fraction:
     root = math.isqrt(numerator // q.denominator)
     if root * root * q.denominator < numerator:
         root += 1
-    return Fraction(root, 1 << shift)
+    return exact_number(root, 1 << shift)
 
 
-def _norm(values: Any) -> Fraction:
-    return _sqrt_upper(sum((Fraction(x) ** 2 for x in values), Fraction()))
+def _norm(values: Any) -> ExactScalar:
+    return _sqrt_upper(sum((exact_number(x) ** 2 for x in values), exact_number()))
 
 
-def _opnorm(matrix: Any) -> Fraction:
+def _opnorm(matrix: Any) -> ExactScalar:
     """sqrt(||A||_1 ||A||_inf), bounding the physical Euclidean operator."""
     if not matrix or not matrix[0]:
-        return Fraction()
-    rows = max(sum((abs(Fraction(x)) for x in row), Fraction()) for row in matrix)
+        return exact_number()
+    rows = max(sum((abs(exact_number(x)) for x in row), exact_number()) for row in matrix)
     columns = max(
-        sum((abs(Fraction(x)) for x in col), Fraction())
+        sum((abs(exact_number(x)) for x in col), exact_number())
         for col in zip(*matrix, strict=True)
     )
     return _sqrt_upper(rows * columns)
 
 
 @lru_cache(maxsize=128, typed=True)
-def _exp_bounds(q: Fraction) -> tuple[Fraction, Fraction]:
+def _exp_bounds(q: ExactScalar) -> tuple[ExactScalar, ExactScalar]:
     """Exact outward enclosure: positive Taylor tail, dyadic range reduction.
 
     Only immutable scalar inputs and exact endpoints are memoized.
@@ -122,20 +114,20 @@ def _exp_bounds(q: Fraction) -> tuple[Fraction, Fraction]:
         lo, hi = _exp_bounds(-q)
         return 1 / hi, 1 / lo
     scale, x = 0, q
-    while x > Fraction(1, 2):
+    while x > exact_number(1, 2):
         scale, x = scale + 1, x / 2
-    term = total = Fraction(1)
+    term = total = exact_number(1)
     for k in range(1, 33):
         term = term * x / k
         total += term
     tail = (term * x / 33) / (1 - x / 34)
     grid = 1 << 160
 
-    def down(value: Fraction) -> Fraction:
-        return Fraction(value.numerator * grid // value.denominator, grid)
+    def down(value: ExactScalar) -> ExactScalar:
+        return exact_number(value.numerator * grid // value.denominator, grid)
 
-    def up(value: Fraction) -> Fraction:
-        return Fraction(-(-value.numerator * grid // value.denominator), grid)
+    def up(value: ExactScalar) -> ExactScalar:
+        return exact_number(-(-value.numerator * grid // value.denominator), grid)
 
     lo, hi = down(total), up(total + tail)
     for _ in range(scale):
@@ -152,8 +144,8 @@ class _Interval:
     residual bound. These are evaluation enclosures, not sampled derivatives.
     """
 
-    lo: Fraction
-    hi: Fraction
+    lo: ExactScalar
+    hi: ExactScalar
 
     def __post_init__(self) -> None:
         assert self.lo <= self.hi
@@ -163,10 +155,10 @@ class _Interval:
         shift = 160 - (
             magnitude.numerator.bit_length() - magnitude.denominator.bit_length()
         )
-        grid = Fraction(2) ** shift
+        grid = exact_number(2) ** shift
         for key, value in (("lo", self.lo), ("hi", -self.hi)):
             scaled = value * grid
-            bound = Fraction(scaled.numerator // scaled.denominator) / grid
+            bound = exact_number(scaled.numerator // scaled.denominator) / grid
             object.__setattr__(self, key, bound if key == "lo" else -bound)
 
     def __add__(self, other: Any) -> _Interval:
@@ -200,12 +192,12 @@ class _Interval:
         return self * _Interval(1 / b.hi, 1 / b.lo)
 
     @property
-    def magnitude(self) -> Fraction:
+    def magnitude(self) -> ExactScalar:
         return max(abs(self.lo), abs(self.hi))
 
 
 def _iv(x: Any) -> _Interval:
-    return x if isinstance(x, _Interval) else _Interval(Fraction(x), Fraction(x))
+    return x if isinstance(x, _Interval) else _Interval(exact_number(x), exact_number(x))
 
 
 def _iexp(x: _Interval) -> _Interval:
@@ -213,14 +205,14 @@ def _iexp(x: _Interval) -> _Interval:
 
 
 def _itanh(x: _Interval) -> _Interval:
-    def endpoint(q: Fraction) -> _Interval:
+    def endpoint(q: ExactScalar) -> _Interval:
         if q < 0:
             return -endpoint(-q)
         # Monotonic real saturation enclosure; no overflowing quotient or
         # assumption that a rounded tanh equals its real value.
-        e = _Interval(*_exp_bounds(-2 * min(q, Fraction(512))))
+        e = _Interval(*_exp_bounds(-2 * min(q, exact_number(512))))
         value = (_iv(1) - e) / (_iv(1) + e)
-        return _Interval(value.lo, Fraction(1)) if q > 512 else value
+        return _Interval(value.lo, exact_number(1)) if q > 512 else value
 
     return _Interval(endpoint(x.lo).lo, endpoint(x.hi).hi)
 
@@ -243,21 +235,21 @@ def _iinverse(a: Any) -> Any:
     """Verified midpoint inverse: ||I-M A||_inf=q<1 bounds the Neumann tail."""
     mid = tuple(tuple((x.lo + x.hi) / 2 for x in row) for row in a)
     try:
-        inverse = _c_inverse(mid)
+        inverse = numerics.inverse(mid)
     except CandidateCStageError as exc:
         raise CIStageError(
             "no_admitted_root", "unresolved analytic matrix inverse"
         ) from exc
     residual = _imm(_im(inverse), a)
     q = max(
-        sum(((int(i == j) - x).magnitude for j, x in enumerate(row)), Fraction())
+        sum(((int(i == j) - x).magnitude for j, x in enumerate(row)), exact_number())
         for i, row in enumerate(residual)
     )
     if q >= 1:
         raise CIStageError(
             "no_admitted_root", "analytic inverse enclosure is unresolved"
         )
-    norm = max(sum(map(abs, row), Fraction()) for row in inverse)
+    norm = max(sum(map(abs, row), exact_number()) for row in inverse)
     error = q * norm / (1 - q)
     return tuple(tuple(_Interval(x - error, x + error) for x in row) for row in inverse)
 
@@ -269,10 +261,10 @@ def _a_descriptors_exact(point: CandidateACurrent) -> Any:
     result = []
     for i, node in enumerate(graph.live_node_ids):
         a = [
-            [Fraction(backend.regularization) * int(k == j) for j in range(d)]
+            [exact_number(backend.regularization) * int(k == j) for j in range(d)]
             for k in range(d)
         ]
-        b = [[Fraction()] for _ in range(d)]
+        b = [[exact_number()] for _ in range(d)]
         for edge in graph.oriented_edges:
             if node not in (edge.tail_node_id, edge.head_node_id):
                 continue
@@ -281,18 +273,18 @@ def _a_descriptors_exact(point: CandidateACurrent) -> Any:
             )
             j = graph.node_index(other)
             delta = [
-                Fraction(y) - Fraction(x)
+                exact_number(y) - exact_number(x)
                 for x, y in zip(backend.positions[i], backend.positions[j], strict=True)
             ]
-            w = Fraction(cast(float, backend.reference_weights[edge.edge_id]))
+            w = exact_number(cast(float, backend.reference_weights[edge.edge_id]))
             for k in range(d):
-                b[k][0] += w * delta[k] * (Fraction(c[j]) - Fraction(c[i]))
+                b[k][0] += w * delta[k] * (exact_number(c[j]) - exact_number(c[i]))
                 for column in range(d):
                     a[k][column] += w * delta[k] * delta[column]
         result.append(
             tuple(
                 row[0]
-                for row in _c_mm(_c_inverse(tuple(map(tuple, a))), tuple(map(tuple, b)))
+                for row in numerics.matmul(numerics.inverse(tuple(map(tuple, a))), tuple(map(tuple, b)))
             )
         )
     return tuple(result)
@@ -311,24 +303,24 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
     selector = point.algebra.selector
     graph = point.inputs.geometry.reference.graph
     n, rank = len(graph.live_node_ids), selector.rank
-    eye = tuple(tuple(Fraction(i == j) for j in range(n)) for i in range(n))
+    eye = tuple(tuple(exact_number(i == j) for j in range(n)) for i in range(n))
     if rank in (0, n):
-        return _im(eye if rank == n else tuple((Fraction(),) * n for _ in range(n)))
+        return _im(eye if rank == n else tuple((exact_number(),) * n for _ in range(n)))
     components = _c_components(graph)
     if rank == len(components):
-        projection = [[Fraction() for _ in range(n)] for _ in range(n)]
+        projection = [[exact_number() for _ in range(n)] for _ in range(n)]
         for group in components:
             for i in group:
                 for j in group:
-                    projection[i][j] = Fraction(1, len(group))
+                    projection[i][j] = exact_number(1, len(group))
         return _im(projection)
     columns = [
-        list(map(Fraction, col)) for col in zip(*selector.projector, strict=True)
+        list(map(exact_number, col)) for col in zip(*selector.projector, strict=True)
     ]
-    projection = [[Fraction() for _ in range(n)] for _ in range(n)]
+    projection = [[exact_number() for _ in range(n)] for _ in range(n)]
     for _ in range(rank):
         v = max(columns, key=lambda col: sum(x * x for x in col))
-        square = sum((x * x for x in v), Fraction())
+        square = sum((x * x for x in v), exact_number())
         if square == 0:
             raise CIStageError("no_admitted_root", "unresolved projector basis")
         for i in range(n):
@@ -337,7 +329,7 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
         columns = [
             [
                 x
-                - sum((a * b for a, b in zip(col, v, strict=True)), Fraction())
+                - sum((a * b for a, b in zip(col, v, strict=True)), exact_number())
                 * y
                 / square
                 for x, y in zip(col, v, strict=True)
@@ -349,12 +341,12 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
         tuple(x - y for x, y in zip(row, other, strict=True))
         for row, other in zip(eye, e, strict=True)
     )
-    b = _c_exact(graph.incidence)
-    a = _c_mm(
-        _c_mm(b, _c_exact(point.inputs.geometry.one_form_hodge.matrix)), _c_transpose(b)
+    b = numerics.exact_matrix(graph.incidence)
+    a = numerics.matmul(
+        numerics.matmul(b, numerics.exact_matrix(point.inputs.geometry.one_form_hodge.matrix)), numerics.transpose(b)
     )
-    left, right = _c_mm(_c_mm(e, a), e), _c_mm(_c_mm(complement, a), complement)
-    cutoff = Fraction(point.algebra.transport.params.Lambda_C)
+    left, right = numerics.matmul(numerics.matmul(e, a), e), numerics.matmul(numerics.matmul(complement, a), complement)
+    cutoff = exact_number(point.algebra.transport.params.Lambda_C)
     signs = (
         tuple(
             tuple(cutoff * e[i][j] - left[i][j] + complement[i][j] for j in range(n))
@@ -365,7 +357,7 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
             for i in range(n)
         ),
     )
-    if any(_c_inertia(s) != (0, 0, n) for s in signs):
+    if any(numerics.inertia(s) != (0, 0, n) for s in signs):
         raise CIStageError(
             "no_admitted_root", "projector spectral signs are unresolved"
         )
@@ -373,7 +365,7 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
         tuple(left[i][j] + right[i][j] - cutoff * eye[i][j] for j in range(n))
         for i in range(n)
     )
-    gap = 1 / _opnorm(_c_inverse(shifted))
+    gap = 1 / _opnorm(numerics.inverse(shifted))
     error = _norm(
         a[i][j] - left[i][j] - right[i][j] for i in range(n) for j in range(n)
     )
@@ -392,9 +384,9 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
     """
     inputs, ref = point.inputs, point.inputs.geometry.reference
     graph, p = ref.graph, ref.profile.params_resolved.candidate
-    h = _c_exact(inputs.geometry.one_form_hodge.matrix)
+    h = numerics.exact_matrix(inputs.geometry.one_form_hodge.matrix)
     b = _im(graph.incidence)
-    bt, ih = tuple(zip(*b, strict=True)), _im(_c_inverse(h))
+    bt, ih = tuple(zip(*b, strict=True)), _im(numerics.inverse(h))
     c, j = (
         _im(tuple((x,) for x in inputs.current.C)),
         _im(tuple((x,) for x in current.values)),
@@ -404,12 +396,12 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
         assert isinstance(p, CandidateAParams)
         w = inputs.current.W_A
         assert w is not None
-        href = _c_exact(ref.pairings.one_form.matrix)
+        href = numerics.exact_matrix(ref.pairings.one_form.matrix)
         potential_h = _im(
             tuple(
                 tuple(
-                    Fraction(p.kappa_c) * Fraction(w[i]) * int(i == k)
-                    + Fraction(p.kappa_Ah) * (h[i][k] - href[i][k])
+                    exact_number(p.kappa_c) * exact_number(w[i]) * int(i == k)
+                    + exact_number(p.kappa_Ah) * (h[i][k] - href[i][k])
                     for k in range(len(h))
                 )
                 for i in range(len(h))
@@ -417,7 +409,7 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
         )
         raw = _imm(bt, _imm(b, _imm(potential_h, gradient)))
         baseline = tuple(
-            (-Fraction(p.eta) * Fraction(wi) * row[0],)
+            (-exact_number(p.eta) * exact_number(wi) * row[0],)
             for wi, row in zip(w, raw, strict=True)
         )
         descriptors = _a_descriptors_exact(point)
@@ -432,14 +424,14 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
                     (x - y) ** 2
                     for x, y in zip(descriptors[u], descriptors[v], strict=True)
                 ),
-                Fraction(),
+                exact_number(),
             )
             exponent = (
                 -(
-                    Fraction(p.alpha)
-                    * (Fraction(inputs.current.C[u]) + Fraction(inputs.current.C[v]))
-                    + Fraction(p.beta) * square
-                    + Fraction(p.gamma) * baseline[i][0].lo ** 2
+                    exact_number(p.alpha)
+                    * (exact_number(inputs.current.C[u]) + exact_number(inputs.current.C[v]))
+                    + exact_number(p.beta) * square
+                    + exact_number(p.gamma) * baseline[i][0].lo ** 2
                 )
                 / 2
             )
@@ -448,10 +440,10 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
             else:
                 exp = _iexp(_iv(exponent))
                 target = _Interval(
-                    max(Fraction(p.W_floor), exp.lo), max(Fraction(p.W_floor), exp.hi)
+                    max(exact_number(p.W_floor), exp.lo), max(exact_number(p.W_floor), exp.hi)
                 )
             contrast = (_iv(w[i]) - target) / (_iv(w[i]) + target)
-            flux.append((Fraction(p.chi_A) * contrast * j[i][0],))
+            flux.append((exact_number(p.chi_A) * contrast * j[i][0],))
         flux = tuple(flux)
     else:
         p = point.algebra.transport.params
@@ -462,7 +454,7 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
             rho = tuple(_itanh(row[0] / p.C_ref) for row in selected)
             deformation = tuple(
                 _iexp(
-                    Fraction(p.kappa_M_C)
+                    exact_number(p.kappa_M_C)
                     / 4
                     * (
                         rho[graph.node_index(edge.tail_node_id)]
@@ -478,29 +470,29 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
         raw = _imm(bt, _imm(b, _imm(retained, gradient)))
         baseline = tuple(
             (
-                -Fraction(p.eta_C)
-                * Fraction(cast(float, p.W_C_tr[e]))
-                * Fraction(p.kappa_Phi_C)
+                -exact_number(p.eta_C)
+                * exact_number(cast(float, p.W_C_tr[e]))
+                * exact_number(p.kappa_Phi_C)
                 * row[0],
             )
             for e, row in zip(graph.live_edge_ids, raw, strict=True)
         )
         if p.tau_C == 0:
-            flux = tuple((Fraction(p.chi_C) * row[0],) for row in j)
+            flux = tuple((exact_number(p.chi_C) * row[0],) for row in j)
         else:
             lap = _imm(_imm(bt, b), retained)
             resolvent = _iinverse(
                 tuple(
                     tuple(
-                        int(i == k) + Fraction(p.tau_C) * x for k, x in enumerate(row)
+                        int(i == k) + exact_number(p.tau_C) * x for k, x in enumerate(row)
                     )
                     for i, row in enumerate(lap)
                 )
             )
             q = _imm(retained, _imm(ih, ih))
-            qi = _imm(_im(_c_mm(h, h)), _iinverse(retained))
+            qi = _imm(_im(numerics.matmul(h, h)), _iinverse(retained))
             flux = tuple(
-                (Fraction(p.chi_C) * row[0],)
+                (exact_number(p.chi_C) * row[0],)
                 for row in _imm(qi, _imm(resolvent, _imm(q, j)))
             )
     flat = _imm(ih, flux)
@@ -510,21 +502,21 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
     )
     stars = tuple(set(graph.star(v)) for v in graph.live_node_ids)
     counts = [sum(i in star for star in stars) for i in range(len(h))]
-    href = _c_exact(ref.pairings.one_form.matrix)
-    gain = Fraction(ref.profile.params_resolved.geometry.kappa_H) * _gain(point)
+    href = numerics.exact_matrix(ref.pairings.one_form.matrix)
+    gain = exact_number(ref.profile.params_resolved.geometry.kappa_H) * _gain(point)
     old = _old_carrier(inputs)
-    geometry_gain = Fraction(ref.profile.params_resolved.geometry.kappa_H)
+    geometry_gain = exact_number(ref.profile.params_resolved.geometry.kappa_H)
     fh = []
     for i, row in enumerate(h):
         out = []
         for k, x in enumerate(row):
             count = sum(i in star and k in star for star in stars)
-            radicand = Fraction(counts[i] * counts[k])
+            radicand = exact_number(counts[i] * counts[k])
             upper = _sqrt_upper(radicand)
             coefficient = _iv(count) / _Interval(radicand / upper, upper)
             out.append(
                 x
-                - Fraction(href[i][k])
+                - exact_number(href[i][k])
                 - geometry_gain * old[i][k]
                 - gain * coefficient * flat[i][0] * flat[k][0]
             )
@@ -590,12 +582,12 @@ def _declarations(inputs: GeometryStageInputs) -> CIBoundedDomain:
     return CIBoundedDomain.from_identity(realization.contraction_domain_id)
 
 
-def _old_carrier(inputs: GeometryStageInputs) -> tuple[tuple[Fraction, ...], ...]:
+def _old_carrier(inputs: GeometryStageInputs) -> tuple[tuple[ExactScalar, ...], ...]:
     """Old Z is a fixed root input; CI has the exact zero offset."""
     n = len(inputs.geometry.reference.graph.live_edge_ids)
     z = inputs.current.Z_4
     return tuple(
-        tuple(Fraction(0 if z is None else z[i * n + j]) for j in range(n))
+        tuple(exact_number(0 if z is None else z[i * n + j]) for j in range(n))
         for i in range(n)
     )
 
@@ -606,7 +598,7 @@ def _effective_source(inputs: GeometryStageInputs, source: K4Tensor) -> K4Tensor
     old = _old_carrier(inputs)
     try:
         increment = tuple(
-            tuple(_computed(float(z + Fraction(s))) for z, s in zip(a, b, strict=True))
+            tuple(_computed(float(z + exact_number(s))) for z, s in zip(a, b, strict=True))
             for a, b in zip(old, source.increment, strict=True)
         )
     except OverflowError as exc:
@@ -628,9 +620,9 @@ def _point(
     return CandidateCCurrent(inputs)
 
 
-def _gain(point: Point) -> Fraction:
+def _gain(point: Point) -> ExactScalar:
     params = point.inputs.geometry.reference.profile.params_resolved.candidate
-    return Fraction(
+    return exact_number(
         params.zeta_A if isinstance(params, CandidateAParams) else params.zeta_C
     )
 
@@ -661,7 +653,7 @@ def _source_from_flat(point: Point, causal_flat: OneForm | None) -> K4Tensor:
             tuple((0.0,) * n for _ in range(n))
             if gain == 0
             else tuple(
-                tuple(_computed(float(gain * Fraction(x))) for x in row)
+                tuple(_computed(float(gain * exact_number(x))) for x in row)
                 for row in StarAssembly(cast(OneForm, causal_flat)).matrix
             )
         )
@@ -681,8 +673,8 @@ class CITrial:
     point: Point = field(init=False)
     generated: GRCV4Geometry = field(init=False)
     structural_source: K4Tensor = field(init=False)
-    current_residual: tuple[Fraction, ...] = field(init=False)
-    geometry_residual: tuple[tuple[Fraction, ...], ...] = field(init=False)
+    current_residual: tuple[ExactScalar, ...] = field(init=False)
+    geometry_residual: tuple[tuple[ExactScalar, ...], ...] = field(init=False)
     analytic_current_residual: tuple[_Interval, ...] = field(init=False)
     analytic_geometry_residual: tuple[tuple[_Interval, ...], ...] = field(init=False)
 
@@ -709,17 +701,17 @@ class CITrial:
             profile=ref.profile,
         )
         fj = tuple(
-            Fraction(j) - Fraction(j0) - _gain(point) * Fraction(r)
+            exact_number(j) - exact_number(j0) - _gain(point) * exact_number(r)
             for j, j0, r in zip(
                 trial.values, _baseline(point).values, read.flux.values, strict=True
             )
         )
         fh = tuple(
             tuple(
-                Fraction(x)
-                - Fraction(y)
-                - Fraction(ref.profile.params_resolved.geometry.kappa_H)
-                * (z + Fraction(s))
+                exact_number(x)
+                - exact_number(y)
+                - exact_number(ref.profile.params_resolved.geometry.kappa_H)
+                * (z + exact_number(s))
                 for x, y, z, s in zip(a, b, old, c, strict=True)
             )
             for a, b, old, c in zip(
@@ -743,20 +735,20 @@ class CITrial:
             object.__setattr__(self, name, value)
 
     @property
-    def residual_squared(self) -> Fraction:
+    def residual_squared(self) -> ExactScalar:
         """Certified upper bound for ||F(J,h)||^2 of the analytic equations."""
         return sum(
-            (x.magnitude**2 for x in self.analytic_current_residual), Fraction()
+            (x.magnitude**2 for x in self.analytic_current_residual), exact_number()
         ) + sum(
             (x.magnitude**2 for row in self.analytic_geometry_residual for x in row),
-            Fraction(),
+            exact_number(),
         )
 
 
 def _in_ball(geometry: GRCV4Geometry, domain: CIBoundedDomain) -> None:
     square = sum(
         (
-            (Fraction(x) - Fraction(y)) ** 2
+            (exact_number(x) - exact_number(y)) ** 2
             for row, other in zip(
                 geometry.one_form_hodge.matrix,
                 geometry.reference.pairings.one_form.matrix,
@@ -764,53 +756,53 @@ def _in_ball(geometry: GRCV4Geometry, domain: CIBoundedDomain) -> None:
             )
             for x, y in zip(row, other, strict=True)
         ),
-        Fraction(),
+        exact_number(),
     )
     _require(
-        square <= Fraction(domain.radius) ** 2,
+        square <= exact_number(domain.radius) ** 2,
         "CI geometry is outside its declared reference ball",
     )
 
 
 def _a_read_bounds(
-    point: CandidateACurrent, radius: Fraction, lower: Fraction
+    point: CandidateACurrent, radius: ExactScalar, lower: ExactScalar
 ) -> dict[str, Any]:
     """Whole-ball A current/flat-read bounds, including the in-root G_W law."""
     ref = point.inputs.geometry.reference
     p = ref.profile.params_resolved.candidate
     assert isinstance(p, CandidateAParams)
-    b = _c_exact(ref.graph.incidence)
-    gram = _c_mm(_c_transpose(b), b)
-    c = tuple(Fraction(x) for x in point.inputs.current.C)
+    b = numerics.exact_matrix(ref.graph.incidence)
+    gram = numerics.matmul(numerics.transpose(b), b)
+    c = tuple(exact_number(x) for x in point.inputs.current.C)
     dc = tuple(
-        sum((row[i] * c[i] for i in range(len(c))), Fraction())
-        for row in _c_transpose(b)
+        sum((row[i] * c[i] for i in range(len(c))), exact_number())
+        for row in numerics.transpose(b)
     )
     dc_norm = _norm(dc)
     weights = point.inputs.current.W_A
     assert weights is not None
-    mobility = tuple(Fraction(p.eta) * Fraction(w) for w in weights)
+    mobility = tuple(exact_number(p.eta) * exact_number(w) for w in weights)
     descriptors = _a_descriptors_exact(point)
     # Compute the unrounded analytic reference baseline independently of the
     # floating stage; only that smooth map is used for derivative bounds.
     jref = tuple(
-        -Fraction(m)
-        * Fraction(p.kappa_c)
+        -exact_number(m)
+        * exact_number(p.kappa_c)
         * sum(
             (
-                g * Fraction(other) * d
+                g * exact_number(other) * d
                 for g, other, d in zip(row, weights, dc, strict=True)
             ),
-            Fraction(),
+            exact_number(),
         )
         for m, row in zip(mobility, gram, strict=True)
     )
     lj = tuple(
-        abs(Fraction(m) * Fraction(p.kappa_Ah)) * _norm(row) * dc_norm
+        abs(exact_number(m) * exact_number(p.kappa_Ah)) * _norm(row) * dc_norm
         for m, row in zip(mobility, gram, strict=True)
     )
     qbounds, qlips, dlow, dhigh, jbounds, charts = [], [], [], [], [], []
-    beta = Fraction(p.zeta_A) * Fraction(p.chi_A)
+    beta = exact_number(p.zeta_A) * exact_number(p.chi_A)
     for edge, w, j, lip in zip(
         ref.graph.oriented_edges, weights, jref, lj, strict=True
     ):
@@ -820,46 +812,46 @@ def _a_read_bounds(
         )
         square = sum(
             (
-                (Fraction(x) - Fraction(y)) ** 2
+                (exact_number(x) - exact_number(y)) ** 2
                 for x, y in zip(descriptors[u], descriptors[v], strict=True)
             ),
-            Fraction(),
+            exact_number(),
         )
-        constant = -(Fraction(p.alpha) * (c[u] + c[v]) + Fraction(p.beta) * square) / 2
+        constant = -(exact_number(p.alpha) * (c[u] + c[v]) + exact_number(p.beta) * square) / 2
         lo, hi = j - lip * radius, j + lip * radius
-        smin = Fraction() if lo <= 0 <= hi else min(lo * lo, hi * hi)
+        smin = exact_number() if lo <= 0 <= hi else min(lo * lo, hi * hi)
         smax = max(lo * lo, hi * hi)
         exponents = (
-            constant - Fraction(p.gamma) * smin / 2,
-            constant - Fraction(p.gamma) * smax / 2,
+            constant - exact_number(p.gamma) * smin / 2,
+            constant - exact_number(p.gamma) * smax / 2,
         )
         emin, emax = min(exponents), max(exponents)
-        floor = Fraction(p.W_floor)
+        floor = exact_number(p.W_floor)
         if emax < -1000:
             wl = wh = floor
-            qlip, chart = Fraction(), "floor_active"
+            qlip, chart = exact_number(), "floor_active"
         else:
             _require(emax <= 1000, "A CI exponential range is not finite-certified")
-            el = Fraction() if emin < -1000 else _exp_bounds(emin)[0]
+            el = exact_number() if emin < -1000 else _exp_bounds(emin)[0]
             eh = _exp_bounds(emax)[1]
             _require(
-                eh <= Fraction(float.fromhex("0x1.fffffffffffffp+1023")),
+                eh <= exact_number(float.fromhex("0x1.fffffffffffffp+1023")),
                 "A CI exponential exceeds binary64 range",
             )
             if eh < floor:
                 wl = wh = floor
-                qlip, chart = Fraction(), "floor_active"
+                qlip, chart = exact_number(), "floor_active"
             else:
                 _require(
                     el > floor or emin == emax,
                     "A CI domain crosses the conductance floor chart",
                 )
                 wl, wh = max(floor, el), max(floor, eh)
-                qlip = abs(Fraction(p.gamma)) * max(abs(lo), abs(hi)) * lip / 2
+                qlip = abs(exact_number(p.gamma)) * max(abs(lo), abs(hi)) * lip / 2
                 chart = "constant_exponent" if emin == emax else "floor_inactive"
         qlo, qhi = (
-            (Fraction(w) - wh) / (Fraction(w) + wh),
-            (Fraction(w) - wl) / (Fraction(w) + wl),
+            (exact_number(w) - wh) / (exact_number(w) + wh),
+            (exact_number(w) - wl) / (exact_number(w) + wl),
         )
         ends = (1 - beta * qlo, 1 - beta * qhi)
         _require(
@@ -872,17 +864,17 @@ def _a_read_bounds(
         qlips.append(qlip)
         jbounds.append(max(abs(lo), abs(hi)))
         charts.append(chart)
-    margin = min(dlow, default=Fraction(1))
-    condition = max(dhigh, default=Fraction(1)) / margin
+    margin = min(dlow, default=exact_number(1))
+    condition = max(dhigh, default=exact_number(1)) / margin
     _require(
-        condition <= Fraction(ref.profile.params_resolved.solver.conditioning_limit),
+        condition <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
         "A CI whole-domain current conditioning is uncertified",
     )
     j0, lj0 = _norm(jbounds), _norm(lj)
-    qmax, lq = max(qbounds, default=Fraction()), max(qlips, default=Fraction())
+    qmax, lq = max(qbounds, default=exact_number()), max(qlips, default=exact_number())
     current = j0 / margin
     current_lip = lj0 / margin + j0 * abs(beta) * lq / margin**2
-    chi = abs(Fraction(p.chi_A))
+    chi = abs(exact_number(p.chi_A))
     flat = chi * qmax * current / lower
     flat_lip = chi * (
         qmax * current / lower**2 + (lq * current + qmax * current_lip) / lower
@@ -899,71 +891,71 @@ def _a_read_bounds(
 
 
 def _c_read_bounds(
-    point: CandidateCCurrent, radius: Fraction, lower: Fraction, upper: Fraction
+    point: CandidateCCurrent, radius: ExactScalar, lower: ExactScalar, upper: ExactScalar
 ) -> dict[str, Any]:
     """Physical-coordinate bounds; retained positivity is not a flux margin."""
     ref, p = point.inputs.geometry.reference, point.algebra.transport.params
-    b = _c_exact(ref.graph.incidence)
-    bt = _c_transpose(b)
-    b2 = _opnorm(_c_mm(bt, b))
-    stiffness = _c_mm(_c_mm(b, _c_exact(ref.pairings.one_form.matrix)), bt)
+    b = numerics.exact_matrix(ref.graph.incidence)
+    bt = numerics.transpose(b)
+    b2 = _opnorm(numerics.matmul(bt, b))
+    stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
     shifted = tuple(
-        tuple(x - (Fraction(p.Lambda_C) if i == j else 0) for j, x in enumerate(row))
+        tuple(x - (exact_number(p.Lambda_C) if i == j else 0) for j, x in enumerate(row))
         for i, row in enumerate(stiffness)
     )
-    inverse = _c_inverse(shifted)
+    inverse = numerics.inverse(shifted)
     invnorm = _opnorm(inverse)
     gap = 1 / invnorm - b2 * radius
     _require(gap > 0, "C CI ball reaches an uncertified selector stratum boundary")
     # DP's Frobenius bound follows the symmetric separated-spectrum Sylvester
     # equation. 2/gap is conservative for the two off-diagonal projector blocks.
     sector_lip = 2 * b2 * _norm(point.inputs.current.C) / gap
-    d = _exp_bounds(abs(Fraction(p.kappa_M_C)) / 2)[1]
-    d_lip = d * abs(Fraction(p.kappa_M_C)) * sector_lip / (2 * Fraction(p.C_ref))
+    d = _exp_bounds(abs(exact_number(p.kappa_M_C)) / 2)[1]
+    d_lip = d * abs(exact_number(p.kappa_M_C)) * sector_lip / (2 * exact_number(p.C_ref))
     retained_upper, retained_lower = d * d * upper, lower / (d * d)
     retained_lip = d * d + 2 * d * upper * d_lip
     dc = tuple(
         sum(
-            (row[i] * Fraction(x) for i, x in enumerate(point.inputs.current.C)),
-            Fraction(),
+            (row[i] * exact_number(x) for i, x in enumerate(point.inputs.current.C)),
+            exact_number(),
         )
         for row in bt
     )
     base_factor = (
         max(
             (
-                Fraction(p.eta_C) * Fraction(cast(float, p.W_C_tr[e]))
+                exact_number(p.eta_C) * exact_number(cast(float, p.W_C_tr[e]))
                 for e in ref.graph.live_edge_ids
             ),
-            default=Fraction(),
+            default=exact_number(),
         )
-        * abs(Fraction(p.kappa_Phi_C))
+        * abs(exact_number(p.kappa_Phi_C))
         * b2
         * _norm(dc)
     )
     baseline, baseline_lip = base_factor * retained_upper, base_factor * retained_lip
     if p.tau_C == 0:
-        response, response_lip = Fraction(1), Fraction()
+        response, response_lip = exact_number(1), exact_number()
     else:
         q = retained_upper / lower**2
         qi = upper**2 / retained_lower
         lq = retained_lip / lower**2 + 2 * retained_upper / lower**3
         lqi = 2 * upper / retained_lower + upper**2 * retained_lip / retained_lower**2
         r = _sqrt_upper(retained_upper / retained_lower)
-        lr = r * r * Fraction(p.tau_C) * b2 * retained_lip
+        lr = r * r * exact_number(p.tau_C) * b2 * retained_lip
         response = qi * r * q
         response_lip = lqi * r * q + qi * lr * q + qi * r * lq
-    beta = abs(Fraction(p.zeta_C) * Fraction(p.chi_C))
+    beta = abs(exact_number(p.zeta_C) * exact_number(p.chi_C))
     margin = 1 - beta * response
     _require(margin > 0, "C CI physical current inverse is not certified on the ball")
     conditioning = (1 + beta * response) / margin
     _require(
-        conditioning <= Fraction(ref.profile.params_resolved.solver.conditioning_limit),
+        conditioning <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
         "C CI whole-domain physical conditioning is uncertified",
     )
     current = baseline / margin
     current_lip = baseline_lip / margin + baseline * beta * response_lip / margin**2
-    chi = abs(Fraction(p.chi_C))
+    chi = abs(exact_number(p.chi_C))
     flat = chi * response * current / lower
     flat_lip = chi * (
         response * current / lower**2
@@ -1007,17 +999,17 @@ class CIContractionCertificate:
             envelope = PCEnvelopeCertificate(self.inputs, self.differential_reference)
         point = _point(self.inputs, self.differential_reference)
         weights = tuple(
-            Fraction(cast(float, ref.edge_weights[e])) for e in ref.graph.live_edge_ids
+            exact_number(cast(float, ref.edge_weights[e])) for e in ref.graph.live_edge_ids
         )
-        radius = Fraction(domain.radius)
+        radius = exact_number(domain.radius)
         lower, upper = (
-            min(weights, default=Fraction(1)) - radius,
-            max(weights, default=Fraction(1)) + radius,
+            min(weights, default=exact_number(1)) - radius,
+            max(weights, default=exact_number(1)) + radius,
         )
         _require(lower > 0, "CI ball is not wholly inside the SPD domain")
         _require(
             upper / lower
-            <= Fraction(ref.profile.params_resolved.solver.conditioning_limit),
+            <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
             "CI whole-domain Hodge conditioning is uncertified",
         )
         bounds = (
@@ -1026,27 +1018,27 @@ class CIContractionCertificate:
             else _c_read_bounds(point, radius, lower, upper)
         )
         gain = abs(
-            Fraction(ref.profile.params_resolved.geometry.kappa_H) * _gain(point)
+            exact_number(ref.profile.params_resolved.geometry.kappa_H) * _gain(point)
         )
         displacement = gain * bounds["flat"] ** 2
         contraction = 2 * gain * bounds["flat"] * bounds["flat_lip"]
         if envelope is not None:
             assert isinstance(composite, CIPCParams)
             uniform = envelope.bounds
-            kh = abs(Fraction(ref.profile.params_resolved.geometry.kappa_H))
-            source_upper = Fraction(cast(str, uniform["source_norm_upper"]))
-            displacement = kh * (Fraction(composite.radius) + source_upper)
+            kh = abs(exact_number(ref.profile.params_resolved.geometry.kappa_H))
+            source_upper = exact_number(cast(str, uniform["source_norm_upper"]))
+            displacement = kh * (exact_number(composite.radius) + source_upper)
             contraction = (
                 2
                 * gain
-                * Fraction(cast(str, uniform["flat_norm_upper"]))
-                * Fraction(cast(str, uniform["flat_geometry_lipschitz_upper"]))
+                * exact_number(cast(str, uniform["flat_norm_upper"]))
+                * exact_number(cast(str, uniform["flat_geometry_lipschitz_upper"]))
             )
             bounds.update(
-                carrier_radius=Fraction(composite.radius),
-                composite_geometry_radius=2 * kh * Fraction(composite.radius),
+                carrier_radius=exact_number(composite.radius),
+                composite_geometry_radius=2 * kh * exact_number(composite.radius),
                 uniform_source_upper=source_upper,
-                uniform_source_slack=Fraction(composite.radius) - source_upper,
+                uniform_source_slack=exact_number(composite.radius) - source_upper,
                 rho_inst=composite.rho_inst,
                 composite_envelope=envelope.bounds,
             )
@@ -1069,7 +1061,7 @@ class CIContractionCertificate:
             self,
             "bounds",
             FrozenJSONMap(
-                {k: str(v) if isinstance(v, Fraction) else v for k, v in bounds.items()}
+                {k: str(v) if is_exact(v) else v for k, v in bounds.items()}
             ),
         )
 
@@ -1123,7 +1115,7 @@ class CandidateCIRoot:
                     params.radius,
                     "stored same-root source",
                 )
-            if trial.residual_squared <= Fraction(params.tolerance) ** 2:
+            if trial.residual_squared <= exact_number(params.tolerance) ** 2:
                 for name, value in (
                     ("certificate", certificate),
                     ("selected", trial),
@@ -1230,7 +1222,7 @@ class ProvisionalCandidateCIStep:
                 "CI step index would exceed the safe integer domain",
             )
         try:
-            next_time = float(Fraction(before.time) + Fraction(before.dt))
+            next_time = float(exact_number(before.time) + exact_number(before.dt))
         except OverflowError as exc:
             raise ResourceBoundaryError(
                 "admission", "nonfinite_value", "CI clock overflow"

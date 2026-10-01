@@ -1,0 +1,173 @@
+{
+  "date": "2026-09-30",
+  "python_flint_version": "0.9.0",
+  "note": "Isolated exact scalar prototypes; strict public result and snapshot digests. Timings are provisional wall-clock observations.",
+  "runs": [
+    {
+      "realization": "C_OS",
+      "grid": "3x4",
+      "steps": 5,
+      "python_step_seconds": 61.38728326500859,
+      "raw_fmpq_step_seconds": 12.614137222990394,
+      "wrapped_fmpq_step_seconds": 14.814476256957278,
+      "public_result_sha256": [
+        "7317b310baf0acd68f752751e31634a32743f683645e8f79ea072aec932f8d1f",
+        "b83cb1d372d99392a16754e201213044faffe9f9a6d533d4241559a9372af2af",
+        "8041788b9f9f1a5ddff34fcc9a4ad7889a488c28f97537f46773ec8a855b51c1",
+        "1cf5c5c27a80ad11eb64b63afa703983f47859962c2f32a6ad27f7268b2a5d23",
+        "c950aea7b294955e12688a1007a6fdad169af398c23bda2423f8c6918f4d13a8"
+      ],
+      "snapshot_sha256": [
+        "03b33a5f219edcf3dab824af63379ff0cb8ff0629187ae5c0be7a0b6efefc09f",
+        "6147d4081e33eaf3f5a8b5b1887b0f2691e86d688498f7b8df317d43ed0cc895",
+        "ec18a661e2331239b96bda04ac510886eae710bd7d1f08fec60fd36762897bb4",
+        "44d8af35084422eb006acea3f32c2318d9ae9679e68e6a53a345a1d2aed799f2",
+        "13f7d3772f9040510a96e0d792bd30bef50a2d98378f3867a0398cf7123dd4d9"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "C_CI",
+      "grid": "3x4",
+      "steps": 1,
+      "python_step_seconds": null,
+      "raw_fmpq_step_seconds": null,
+      "wrapped_fmpq_step_seconds": 6.675763242994435,
+      "public_result_sha256": [
+        "9a6e0d2977d3ae30da268fa8f19d92458162e950a4cf35abb8938ec4b98fead9"
+      ],
+      "snapshot_sha256": [
+        "f518d29d60467fd1eb115b82da172183fa023ee53badae00fe63ca95b104ee33"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "C_PC",
+      "grid": "3x4",
+      "steps": 5,
+      "python_step_seconds": 47.14415945098153,
+      "raw_fmpq_step_seconds": 12.81487722901511,
+      "wrapped_fmpq_step_seconds": 13.417992049013264,
+      "public_result_sha256": [
+        "b0030edbc0bc8e56dff68e4a3a8a11a2283f846d7173b1cae9f0ede5a0d35505",
+        "b5970ac3bbe2fd9fee29db7084eec8d65677bd9bcd2f571e67bb0cb5829369b0",
+        "2f5f8527d2f8ecb09eb98d6d43ab750315ac1ebe96d521f0f817e0c89f11f061",
+        "1429bcb7051002eebc05b02190543948c53fb6db93fff176ce8bdece05bf3d4a",
+        "86775e6d2e77191b9d35defb8809a17a3b6aae878b9fd6c61ff62250c3862ed2"
+      ],
+      "snapshot_sha256": [
+        "38f2d024d8e9515edbceda3adeadb06b1cb5f901fa6b2aad61f9fc9c96fdfb68",
+        "05bbc4b18d79dad326912a63fddc82fcd069567935adb51ebab673df6b8c0b7a",
+        "d2dcf38cf7ba4ddabae9c5e372790e3b2660ee3203f9ba684d758027fea6fa4d",
+        "bb214af402d8d52491c819c8cebab0482018a5394f458ccdbcdaa13c5d2e0fa5",
+        "b5c1f376f7970da305293a1689f7f70a884d4838a8579a7949bbd402e9cd6000"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "C_CI+PC",
+      "grid": "3x4",
+      "steps": 1,
+      "python_step_seconds": null,
+      "raw_fmpq_step_seconds": null,
+      "wrapped_fmpq_step_seconds": 7.01323062001029,
+      "public_result_sha256": [
+        "b4699abc2d75aad8baec54431c8797f53ae266f7155b9e4fc3f4e88075928160"
+      ],
+      "snapshot_sha256": [
+        "8b024b164afc959e2297fec2145b481b9e779d65cc98111fe95fe50683350615"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "C_RG2b",
+      "grid": "3x4",
+      "steps": 1,
+      "python_step_seconds": null,
+      "raw_fmpq_step_seconds": null,
+      "wrapped_fmpq_step_seconds": 15.476540973992087,
+      "public_result_sha256": [
+        "338c4c6f424d19a2ab9b0e84001bbcac96ae40ad2d314c741af33796cbcfcb25"
+      ],
+      "snapshot_sha256": [
+        "16fdbad283fddb18ab9b87fc2ddb11968841ed54c3079e3cbf38c0fd7859b4f6"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "A_OS",
+      "grid": "4x5",
+      "steps": 1,
+      "python_step_seconds": 4.763443778996589,
+      "raw_fmpq_step_seconds": 1.4310460890119432,
+      "wrapped_fmpq_step_seconds": 1.6738219549879432,
+      "public_result_sha256": [
+        "27adcc9ed3568ae58b49670b2d16bdd71c17b2fe1ff0ebcc7e47a91e218deeab"
+      ],
+      "snapshot_sha256": [
+        "4ad5856cca19d174a54791863dd8788096820d31048449fc5ea470a6c4a10683"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "A_CI",
+      "grid": "4x5",
+      "steps": 1,
+      "python_step_seconds": 14.624847569997655,
+      "raw_fmpq_step_seconds": 5.87614891899284,
+      "wrapped_fmpq_step_seconds": 6.857445647008717,
+      "public_result_sha256": [
+        "b6d73ed7018cb294b438a86b3d9cc7c5dccbc05d9cd090db9ce84b83af069bf2"
+      ],
+      "snapshot_sha256": [
+        "e1e5d49e88c9c8fc05e072e20560fbfdffc2b863017865ccb8101b2411842b47"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "A_PC",
+      "grid": "4x5",
+      "steps": 1,
+      "python_step_seconds": 6.479472810024163,
+      "raw_fmpq_step_seconds": 2.343902263994096,
+      "wrapped_fmpq_step_seconds": 2.497314177977387,
+      "public_result_sha256": [
+        "caffb0962b4386e9dee83e7e796c96817f36c27b803220549de006f1e4a476c4"
+      ],
+      "snapshot_sha256": [
+        "724c94f9cc8d8c1deaf211a378483311c44c50934fff568ca644d671c79c6875"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "A_CI+PC",
+      "grid": "4x5",
+      "steps": 1,
+      "python_step_seconds": 17.591295941005228,
+      "raw_fmpq_step_seconds": 6.792866559000686,
+      "wrapped_fmpq_step_seconds": 8.654662968008779,
+      "public_result_sha256": [
+        "d3269736a1177420ccfabf52c1eb776d18e3ab32d9e480a944caf556acae74fe"
+      ],
+      "snapshot_sha256": [
+        "44c9818cd467acdc15252c415e2e810d3b3c5fd47f4e33c9a8bd4e20b2a89ec4"
+      ],
+      "public_digest_match": true
+    },
+    {
+      "realization": "A_RG2b",
+      "grid": "4x5",
+      "steps": 1,
+      "python_step_seconds": 21.758355138998013,
+      "raw_fmpq_step_seconds": 7.638332650996745,
+      "wrapped_fmpq_step_seconds": 10.05291761198896,
+      "public_result_sha256": [
+        "bc61c622886fd994466a2ac55da34711fed784b5224c4ea4c509d5cd5e724b8c"
+      ],
+      "snapshot_sha256": [
+        "6b0c5458dc2780e657e8b28b46f89bdef8eeed636a20661472dc2f3e91866e17"
+      ],
+      "public_digest_match": true
+    }
+  ]
+}

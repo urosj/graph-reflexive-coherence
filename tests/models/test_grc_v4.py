@@ -19,6 +19,8 @@ from typing import Any
 import unittest
 from unittest.mock import patch
 
+from pygrc.models import grc_v4_numerics as numerics
+
 from pygrc.models import grc_v4 as api
 from pygrc.models import grc_v4_step as admission
 from pygrc.models.grc_v4_codec import (
@@ -41,7 +43,7 @@ def _consumed_legacy_imports(source: str) -> list[str]:
             symbols = [f"{module}.{alias.name}" for alias in node.names]
         legacy.extend(symbol for symbol in symbols
                       if symbol.startswith("pygrc.")
-                      and not symbol.startswith("pygrc.models.grc_v4"))
+                      and not symbol.startswith(("pygrc.models.grc_v4", "pygrc.models._grc_v4_")))
     return legacy
 
 
@@ -315,6 +317,9 @@ class FoundationIntegrationTests(unittest.TestCase):
             ("from . import grc_v4_codec as grc_v2", []),
             ("from .grc_v4_codec import JSONValue", []),
             ("import pygrc.models.grc_v4_codec as codec", []),
+            ("from ._grc_v4_evidence import _lifecycle_identity", []),
+            ("from . import _grc_v4_evidence as grc_v2", []),
+            ("from . import grc_v2 as _grc_v4_evidence", ["pygrc.models.grc_v2"]),
             ("from . import grc_v2 as grc_v4_codec", ["pygrc.models.grc_v2"]),
             ("import pygrc.core.events as grc_v4", ["pygrc.core.events"]),
             ("from pygrc.core.events import GRCEvent", ["pygrc.core.events.GRCEvent"]),
@@ -1432,7 +1437,7 @@ class MappedVectorCorrectionAuditTests(unittest.TestCase):
             resolve_profile(negative["input"]["resolved_params"], negative["input"]["profile_identity"])
         negative["input"]["profile_identity"]["params_hash"] = frozen["semantic_admission"]["negative_vectors"][4]["input"]["profile_identity"]["params_hash"]
         self.assertEqual(rebuilt, frozen)
-        original_solve = numerical._c_solve
+        original_solve = numerics.solve
         observed: set[str] = set()
 
         def measured(matrix: Any, rhs: Any, policy: Any, label: str, certificates: Any) -> Any:
@@ -1447,7 +1452,7 @@ class MappedVectorCorrectionAuditTests(unittest.TestCase):
                 self.assertLess(sum((x*x for x in residual), Fraction()), Fraction(2)**-90, label)
             return result
 
-        with patch.object(numerical, "_c_solve", measured):
+        with patch.object(numerics, "solve", measured):
             owner = mapped_candidate_owner(candidate)
             result = owner.apply_topology_event(api.GRCV4MappedTopologyEventRequest.from_payload(candidate["request"]))
             self.assertTrue(result.committed, result)

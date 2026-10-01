@@ -10,27 +10,26 @@ specification's Appendix A.2 for the host-frame WLS differential used here.
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field, replace
 from decimal import (
+    ROUND_HALF_EVEN,
     Context,
     Decimal,
     DivisionByZero,
     InvalidOperation,
     Overflow,
-    ROUND_HALF_EVEN,
     localcontext,
 )
-from fractions import Fraction
-import math
 from typing import TYPE_CHECKING, cast
 
-from .grc_v4_candidate_c import CandidateCStageError, _c_residual_pass, _c_solve
-
+from . import grc_v4_numerics as numerics
 from .grc_v4_codec import JSONValue, canonical_json_bytes, json_value
+from .grc_v4_exact import ExactScalar, exact_number
 from .grc_v4_geometry import (
+    GeometryStageInputs,
     GRCV4Graph,
     GRCV4ReferenceGeometry,
-    GeometryStageInputs,
     K4Tensor,
     Matrix,
     NonfiniteGeometryError,
@@ -62,32 +61,21 @@ ADMITTED_HISTORY_POLICIES = (HISTORY_POLICY, "candidate_a_target_reference_pass_
 BACKEND = "grcv3_host_frame_reference_weighted_gradient_v1"
 
 
-def _finite_fraction(value: Fraction) -> float:
+def _finite_fraction(value: ExactScalar) -> float:
     try:
         return _computed(float(value))
     except OverflowError as exc:
         raise NonfiniteGeometryError("A differential is not representable") from exc
 
 
-def _solve_spd(a: list[list[Fraction]], b: list[Fraction]) -> tuple[float, ...]:
-    # The declared positive ridge makes these exact normal equations SPD,
-    # including disconnected/isolated nodes and rank-deficient host positions.
-    # Rational elimination avoids intermediate overflow and pivot tolerances.
-    n = len(b)
-    rows = [row[:] + [rhs] for row, rhs in zip(a, b, strict=True)]
-    for k in range(n):
-        pivot = rows[k][k]
-        if pivot <= 0:
-            raise ValueError("A differential normal equations are not positive")
-        for i in range(k + 1, n):
-            gain = rows[i][k] / pivot
-            for j in range(k + 1, n + 1):
-                rows[i][j] -= gain * rows[k][j]
-    answer = [Fraction(0) for _ in range(n)]
-    for i in reversed(range(n)):
-        answer[i] = (
-            rows[i][n] - sum(rows[i][j] * answer[j] for j in range(i + 1, n))
-        ) / rows[i][i]
+def _solve_spd(a: list[list[ExactScalar]], b: list[ExactScalar]) -> tuple[float, ...]:
+    # The ridge admits SPD normal equations; numerical preparation is shared.
+    try:
+        answer = numerics.solve_positive(tuple(map(tuple, a)), tuple(b))
+    except numerics.MatrixError as exc:
+        if exc.disposition == "domain_failure":
+            raise ValueError("A differential normal equations are not positive") from exc
+        raise
     return tuple(_finite_fraction(x) for x in answer)
 
 
@@ -184,12 +172,12 @@ class CandidateADifferentialReference:
             i = self.graph.node_index(node)
             a = [
                 [
-                    Fraction(self.regularization if k == j else 0)
+                    exact_number(self.regularization if k == j else 0)
                     for j in range(dimension)
                 ]
                 for k in range(dimension)
             ]
-            b = [Fraction(0) for _ in range(dimension)]
+            b = [exact_number(0) for _ in range(dimension)]
             for edge in self.graph.oriented_edges:
                 if node not in (edge.tail_node_id, edge.head_node_id):
                     continue
@@ -200,11 +188,11 @@ class CandidateADifferentialReference:
                 )
                 j = self.graph.node_index(neighbor)
                 delta = [
-                    Fraction(y) - Fraction(x)
+                    exact_number(y) - exact_number(x)
                     for x, y in zip(self.positions[i], self.positions[j], strict=True)
                 ]
-                weight = Fraction(_number(self.reference_weights[edge.edge_id]))
-                dc = Fraction(C.values[j]) - Fraction(C.values[i])
+                weight = exact_number(_number(self.reference_weights[edge.edge_id]))
+                dc = exact_number(C.values[j]) - exact_number(C.values[i])
                 for k in range(dimension):
                     b[k] += weight * delta[k] * dc
                     for column in range(dimension):
@@ -228,14 +216,14 @@ def _conductance(
         # Coefficients may be signed. Sum the entire exponent before rounding;
         # 0 * an overflowing square and cancelling large channels stay defined.
         contrast = sum(
-            (Fraction(x) - Fraction(y)) ** 2
+            (exact_number(x) - exact_number(y)) ** 2
             for x, y in zip(descriptors[u], descriptors[v], strict=True)
         )
         exponent = (
             -(
-                Fraction(params.alpha) * (Fraction(C.values[u]) + Fraction(C.values[v]))
-                + Fraction(params.beta) * contrast
-                + Fraction(params.gamma) * Fraction(current) ** 2
+                exact_number(params.alpha) * (exact_number(C.values[u]) + exact_number(C.values[v]))
+                + exact_number(params.beta) * contrast
+                + exact_number(params.gamma) * exact_number(current) ** 2
             )
             / 2
         )
@@ -502,7 +490,7 @@ class CandidateAStageError(ValueError):
         self.disposition = disposition
 
 
-def _a_float(value: Fraction) -> float:
+def _a_float(value: ExactScalar) -> float:
     try:
         return _computed(float(value))
     except (OverflowError, NonfiniteGeometryError) as exc:
@@ -536,14 +524,14 @@ class CandidateACurrent:
     differential_reference: CandidateADifferentialReference
     authority: CandidateARetainedAuthority = field(init=False)
     descriptors: Matrix = field(init=False)
-    reference_potential_exact: tuple[Fraction, ...] = field(init=False)
-    geometry_potential_increment_exact: tuple[Fraction, ...] = field(init=False)
+    reference_potential_exact: tuple[ExactScalar, ...] = field(init=False)
+    geometry_potential_increment_exact: tuple[ExactScalar, ...] = field(init=False)
     potential: VertexScalar = field(init=False)
     baseline: PhysicalFlux = field(init=False)
     W_hat_A: tuple[float, ...] = field(init=False)
     contrast: tuple[float, ...] = field(init=False)
-    contrast_exact: tuple[Fraction, ...] = field(init=False)
-    denominator_exact: tuple[Fraction, ...] = field(init=False)
+    contrast_exact: tuple[ExactScalar, ...] = field(init=False)
+    denominator_exact: tuple[ExactScalar, ...] = field(init=False)
     current: PhysicalFlux = field(init=False)
     read: CandidateAReadBack = field(init=False)
     closure_residual_squared: str = field(init=False)
@@ -587,20 +575,20 @@ class CandidateACurrent:
             descriptors = backend.rebuild(C)
         except NonfiniteGeometryError as exc:
             raise CandidateAStageError("nonfinite", str(exc)) from exc
-        B = tuple(tuple(Fraction(x) for x in row) for row in graph.incidence)
+        B = tuple(tuple(exact_number(x) for x in row) for row in graph.incidence)
         dC = tuple(
-            sum((B[i][e] * Fraction(c) for i, c in enumerate(C.values)), Fraction())
+            sum((B[i][e] * exact_number(c) for i, c in enumerate(C.values)), exact_number())
             for e in range(len(graph.live_edge_ids))
         )
         assert authority.state.W_A is not None
         phi0 = tuple(
-            Fraction(params.kappa_c)
+            exact_number(params.kappa_c)
             * sum(
                 (
-                    B[i][e] * Fraction(w) * dC[e]
+                    B[i][e] * exact_number(w) * dC[e]
                     for e, w in enumerate(authority.state.W_A)
                 ),
-                Fraction(),
+                exact_number(),
             )
             for i in range(len(C.values))
         )
@@ -613,16 +601,16 @@ class CandidateACurrent:
         delta_edge = tuple(
             sum(
                 (
-                    (Fraction(x) - Fraction(y)) * dc
+                    (exact_number(x) - exact_number(y)) * dc
                     for x, y, dc in zip(row, reference_row, dC, strict=True)
                 ),
-                Fraction(),
+                exact_number(),
             )
             for row, reference_row in zip(h, h_ref, strict=True)
         )
         delta_phi = tuple(
-            Fraction(params.kappa_Ah)
-            * sum((x * y for x, y in zip(row, delta_edge, strict=True)), Fraction())
+            exact_number(params.kappa_Ah)
+            * sum((x * y for x, y in zip(row, delta_edge, strict=True)), exact_number())
             for row in B
         )
         phi = VertexScalar(
@@ -632,10 +620,10 @@ class CandidateACurrent:
             graph,
             tuple(
                 _a_float(
-                    -Fraction(m)
+                    -exact_number(m)
                     * sum(
-                        (B[i][e] * Fraction(c) for i, c in enumerate(phi.values)),
-                        Fraction(),
+                        (B[i][e] * exact_number(c) for i, c in enumerate(phi.values)),
+                        exact_number(),
                     )
                 )
                 for e, m in enumerate(authority.mobility.diagonal)
@@ -646,17 +634,17 @@ class CandidateACurrent:
         except NonfiniteGeometryError as exc:
             raise CandidateAStageError("nonfinite", str(exc)) from exc
         q = tuple(
-            (Fraction(w) - Fraction(target)) / (Fraction(w) + Fraction(target))
+            (exact_number(w) - exact_number(target)) / (exact_number(w) + exact_number(target))
             for w, target in zip(authority.state.W_A, w_hat, strict=True)
         )
         denominator = tuple(
-            1 - Fraction(params.zeta_A) * Fraction(params.chi_A) * x for x in q
+            1 - exact_number(params.zeta_A) * exact_number(params.chi_A) * x for x in q
         )
         if any(x == 0 for x in denominator):
             raise CandidateAStageError(
                 "singular", "singular A physical current block; no fallback"
             )
-        if denominator and max(map(abs, denominator)) > Fraction(
+        if denominator and max(map(abs, denominator)) > exact_number(
             policy.conditioning_limit
         ) * min(map(abs, denominator)):
             raise CandidateAStageError(
@@ -666,7 +654,7 @@ class CandidateACurrent:
         current = PhysicalFlux(
             graph,
             tuple(
-                _a_float(Fraction(j) / d)
+                _a_float(exact_number(j) / d)
                 for j, d in zip(baseline.values, denominator, strict=True)
             ),
         )
@@ -686,20 +674,20 @@ class CandidateACurrent:
             object.__setattr__(self, name, value)
         read = self.read_back(current)
         residual = tuple(
-            Fraction(j) - Fraction(j0) - Fraction(params.zeta_A) * Fraction(r)
+            exact_number(j) - exact_number(j0) - exact_number(params.zeta_A) * exact_number(r)
             for j, j0, r in zip(
                 current.values, baseline.values, read.flux.values, strict=True
             )
         )
         block_residual = tuple(
-            d * Fraction(j) - Fraction(j0)
+            d * exact_number(j) - exact_number(j0)
             for d, j, j0 in zip(
                 denominator, current.values, baseline.values, strict=True
             )
         )
-        rhs = tuple(map(Fraction, baseline.values))
+        rhs = tuple(map(exact_number, baseline.values))
         if not all(
-            _c_residual_pass(r, rhs, policy) for r in (residual, block_residual)
+            numerics.residual_pass(r, rhs, policy) for r in (residual, block_residual)
         ):
             raise CandidateAStageError(
                 "no_admitted_root", "A physical read-back closure residual failed"
@@ -708,7 +696,7 @@ class CandidateACurrent:
         object.__setattr__(
             self,
             "closure_residual_squared",
-            str(sum((x * x for x in residual), Fraction())),
+            str(sum((x * x for x in residual), exact_number())),
         )
 
     @property
@@ -729,21 +717,21 @@ class CandidateACurrent:
         flux = PhysicalFlux(
             ref.graph,
             tuple(
-                _a_float(Fraction(params.chi_A) * q * Fraction(j))
+                _a_float(exact_number(params.chi_A) * q * exact_number(j))
                 for q, j in zip(self.contrast_exact, current.values, strict=True)
             ),
         )
         # Reuse only the existing certified matrix solve/residual arithmetic;
         # no C selector, potential, current or mobility participates in A.
         try:
-            flat = _c_solve(
+            flat = numerics.solve(
                 self.inputs.geometry.one_form_hodge.matrix,
                 tuple((x,) for x in flux.values),
                 ref.profile.params_resolved.solver,
                 "A structural flat map",
                 [],
             )
-        except CandidateCStageError as exc:
+        except numerics.MatrixError as exc:
             raise CandidateAStageError(exc.disposition, str(exc)) from exc
         return CandidateAReadBack(
             source_identity,
@@ -761,7 +749,7 @@ class CandidateACurrent:
             tuple((0.0,) * n for _ in range(n))
             if params.zeta_A == 0
             else tuple(
-                tuple(_a_float(Fraction(params.zeta_A) * Fraction(x)) for x in row)
+                tuple(_a_float(exact_number(params.zeta_A) * exact_number(x)) for x in row)
                 for row in StarAssembly(self.read.causal_flat).matrix
             )
         )
@@ -815,7 +803,7 @@ def candidate_a_log_interpolation(
         )
     if dt == 0:
         return old
-    if Fraction(dt) >= 1000 * Fraction(tau):
+    if exact_number(dt) >= 1000 * exact_number(tau):
         return target
     with localcontext(
         # Context otherwise inherits unspecified fields from mutable

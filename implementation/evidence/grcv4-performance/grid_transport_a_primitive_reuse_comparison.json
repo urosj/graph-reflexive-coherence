@@ -1,0 +1,346 @@
+{
+  "grid": {
+    "rows": 4,
+    "cols": 5,
+    "nodes": 20,
+    "edges": 31,
+    "steps": 5
+  },
+  "implementation": "Single bounded operation fact store. Exact inverse facts use immutable matrix coefficients; successful conditioning facts also key the exact limit. Both existing primitive entry points own lookup/storage. Original elimination and conditioning algorithms have one uncached implementation each. Combined solve preparation was removed. Fresh RHS/residual, interval enclosure admission, stage certificates and commit guards remain.",
+  "matrix_fact_budget_per_operation": 64,
+  "source_base_revision": "a857940d6829c0c28352d2dfb1c2dbc7ac43881c",
+  "source_diff_sha256": "47ae629ec5e736078e18a72cfd7522944b5488b1790220728eb987f0f82e4795",
+  "source_sha256": {
+    "src/pygrc/models/grc_v4_candidate_c.py": "ae4285ff6259a4bea6b04f9defd691f0708c9991d357fb269c7f4173a97eaa85",
+    "src/pygrc/models/grc_v4_codec.py": "9355988f1ab4c528e03da27242f9514f5fb10aa4276fbbee39924487f9962c7e",
+    "src/pygrc/models/grc_v4_linear.py": "a2126d013647963d094790f77f88c9b99108837c3f6d82bdb7ff803cddba4c9a"
+  },
+  "method": "Compare earlier a857940 shared-solve cache with current primitive-owned reuse, five evolving strict public steps per case with identical declarations. One sequential local run per setting. Step timing excludes declaration, unscoped constructor work and snapshots. New timings include a light fact lookup counter (not cProfile). Source hashes identify the modified runtime. Numerical counts cover scoped inverse and conditioning requests only. Their misses are actual computations; hits reuse existing facts. Old reports measured only combined solve preparations, so their volume counts are not directly comparable to these complete primitive counts.",
+  "comparisons": [
+    {
+      "family": "A_CI",
+      "previous_step_seconds": 153.38398734902148,
+      "primitive_step_seconds": 117.10001074199681,
+      "additional_speedup": 1.3098545967426778,
+      "additional_time_reduction_percent": 23.655648307317357,
+      "previous_steps": [
+        26.783437264995882,
+        32.23822998200194,
+        30.665607828006614,
+        33.79463938000845,
+        29.902072894008597
+      ],
+      "primitive_steps": [
+        19.373719514987897,
+        25.73273717900156,
+        25.38210453398642,
+        23.30638663400896,
+        23.305062880011974
+      ],
+      "previous_setup_seconds": 42.98219908500323,
+      "primitive_setup_seconds": 42.365951630985364,
+      "numerical_fact_counts": {
+        "inverse_requests": 1035,
+        "inverse_hits": 916,
+        "inverse_misses": 119,
+        "conditioning_requests": 105,
+        "conditioning_hits": 86,
+        "conditioning_misses": 19
+      },
+      "scope_counts": [
+        {
+          "inverse_requests": 207,
+          "inverse_hits": 184,
+          "inverse_misses": 23,
+          "conditioning_requests": 21,
+          "conditioning_hits": 18,
+          "conditioning_misses": 3
+        },
+        {
+          "inverse_requests": 207,
+          "inverse_hits": 183,
+          "inverse_misses": 24,
+          "conditioning_requests": 21,
+          "conditioning_hits": 17,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 207,
+          "inverse_hits": 183,
+          "inverse_misses": 24,
+          "conditioning_requests": 21,
+          "conditioning_hits": 17,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 207,
+          "inverse_hits": 183,
+          "inverse_misses": 24,
+          "conditioning_requests": 21,
+          "conditioning_hits": 17,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 207,
+          "inverse_hits": 183,
+          "inverse_misses": 24,
+          "conditioning_requests": 21,
+          "conditioning_hits": 17,
+          "conditioning_misses": 4
+        }
+      ],
+      "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+      "final_snapshot_sha256": "31888194381ab684f66c627dd3a3a4642ea2d4153b56454ff4a18ef0a3d37ce0",
+      "previous_report": "grid_transport_a_ci_4x5_5.json",
+      "primitive_report": "grid_transport_a_ci_4x5_5_primitive_reuse.json"
+    },
+    {
+      "family": "A_PC",
+      "previous_step_seconds": 72.23688853200292,
+      "primitive_step_seconds": 71.61081417402602,
+      "additional_speedup": 1.0087427348117484,
+      "additional_time_reduction_percent": 0.8666961862560552,
+      "previous_steps": [
+        7.715395420993445,
+        18.327890816988656,
+        16.93483590800315,
+        14.239024731010431,
+        15.019741655007238
+      ],
+      "primitive_steps": [
+        7.706537468009628,
+        17.5455814889865,
+        17.149906008999096,
+        14.4911588030227,
+        14.717630405008094
+      ],
+      "previous_setup_seconds": 1.0490308919979725,
+      "primitive_setup_seconds": 0.9335149010003079,
+      "numerical_fact_counts": {
+        "inverse_requests": 315,
+        "inverse_hits": 201,
+        "inverse_misses": 114,
+        "conditioning_requests": 15,
+        "conditioning_hits": 1,
+        "conditioning_misses": 14
+      },
+      "scope_counts": [
+        {
+          "inverse_requests": 63,
+          "inverse_hits": 41,
+          "inverse_misses": 22,
+          "conditioning_requests": 3,
+          "conditioning_hits": 1,
+          "conditioning_misses": 2
+        },
+        {
+          "inverse_requests": 63,
+          "inverse_hits": 40,
+          "inverse_misses": 23,
+          "conditioning_requests": 3,
+          "conditioning_hits": 0,
+          "conditioning_misses": 3
+        },
+        {
+          "inverse_requests": 63,
+          "inverse_hits": 40,
+          "inverse_misses": 23,
+          "conditioning_requests": 3,
+          "conditioning_hits": 0,
+          "conditioning_misses": 3
+        },
+        {
+          "inverse_requests": 63,
+          "inverse_hits": 40,
+          "inverse_misses": 23,
+          "conditioning_requests": 3,
+          "conditioning_hits": 0,
+          "conditioning_misses": 3
+        },
+        {
+          "inverse_requests": 63,
+          "inverse_hits": 40,
+          "inverse_misses": 23,
+          "conditioning_requests": 3,
+          "conditioning_hits": 0,
+          "conditioning_misses": 3
+        }
+      ],
+      "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+      "final_snapshot_sha256": "2f80ec318796d7730fbdd49dc57d109442401ad926f36fd1cdf4211e8708734a",
+      "previous_report": "grid_transport_a_pc_4x5_5.json",
+      "primitive_report": "grid_transport_a_pc_4x5_5_primitive_reuse.json"
+    },
+    {
+      "family": "A_CI_PC",
+      "previous_step_seconds": 161.75006183699588,
+      "primitive_step_seconds": 129.45278749099816,
+      "additional_speedup": 1.2494907600830425,
+      "additional_time_reduction_percent": 19.967395362448393,
+      "previous_steps": [
+        28.41286801599199,
+        36.28230048401747,
+        34.691324548999546,
+        35.72548837901559,
+        26.63808040897129
+      ],
+      "primitive_steps": [
+        21.54660509401583,
+        28.47234799398575,
+        27.376427223993232,
+        29.054148410010384,
+        23.003258768992964
+      ],
+      "previous_setup_seconds": 53.688701584003866,
+      "primitive_setup_seconds": 52.36307238100562,
+      "numerical_fact_counts": {
+        "inverse_requests": 1311,
+        "inverse_hits": 1193,
+        "inverse_misses": 118,
+        "conditioning_requests": 102,
+        "conditioning_hits": 84,
+        "conditioning_misses": 18
+      },
+      "scope_counts": [
+        {
+          "inverse_requests": 267,
+          "inverse_hits": 244,
+          "inverse_misses": 23,
+          "conditioning_requests": 21,
+          "conditioning_hits": 18,
+          "conditioning_misses": 3
+        },
+        {
+          "inverse_requests": 267,
+          "inverse_hits": 243,
+          "inverse_misses": 24,
+          "conditioning_requests": 21,
+          "conditioning_hits": 17,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 267,
+          "inverse_hits": 243,
+          "inverse_misses": 24,
+          "conditioning_requests": 21,
+          "conditioning_hits": 17,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 267,
+          "inverse_hits": 243,
+          "inverse_misses": 24,
+          "conditioning_requests": 21,
+          "conditioning_hits": 17,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 243,
+          "inverse_hits": 220,
+          "inverse_misses": 23,
+          "conditioning_requests": 18,
+          "conditioning_hits": 15,
+          "conditioning_misses": 3
+        }
+      ],
+      "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+      "final_snapshot_sha256": "da0885c4415b58073f39607e7344073ddf794f760975f89285e0af706d27012e",
+      "previous_report": "grid_transport_a_ci_pc_4x5_5.json",
+      "primitive_report": "grid_transport_a_ci_pc_4x5_5_primitive_reuse.json"
+    },
+    {
+      "family": "A_RG2b",
+      "previous_step_seconds": 224.29556886199862,
+      "primitive_step_seconds": 202.08968773603556,
+      "additional_speedup": 1.1098813174226279,
+      "additional_time_reduction_percent": 9.900276335653146,
+      "previous_steps": [
+        33.844969080993906,
+        48.31498273299076,
+        46.55278168799123,
+        47.30199230101425,
+        48.280843059008475
+      ],
+      "primitive_steps": [
+        30.0530214169994,
+        41.57651760498993,
+        43.35421208900516,
+        44.35784192601568,
+        42.74809469902539
+      ],
+      "previous_setup_seconds": 26.543460239015985,
+      "primitive_setup_seconds": 29.67758771701483,
+      "numerical_fact_counts": {
+        "inverse_requests": 1100,
+        "inverse_hits": 981,
+        "inverse_misses": 119,
+        "conditioning_requests": 65,
+        "conditioning_hits": 46,
+        "conditioning_misses": 19
+      },
+      "scope_counts": [
+        {
+          "inverse_requests": 220,
+          "inverse_hits": 197,
+          "inverse_misses": 23,
+          "conditioning_requests": 13,
+          "conditioning_hits": 10,
+          "conditioning_misses": 3
+        },
+        {
+          "inverse_requests": 220,
+          "inverse_hits": 196,
+          "inverse_misses": 24,
+          "conditioning_requests": 13,
+          "conditioning_hits": 9,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 220,
+          "inverse_hits": 196,
+          "inverse_misses": 24,
+          "conditioning_requests": 13,
+          "conditioning_hits": 9,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 220,
+          "inverse_hits": 196,
+          "inverse_misses": 24,
+          "conditioning_requests": 13,
+          "conditioning_hits": 9,
+          "conditioning_misses": 4
+        },
+        {
+          "inverse_requests": 220,
+          "inverse_hits": 196,
+          "inverse_misses": 24,
+          "conditioning_requests": 13,
+          "conditioning_hits": 9,
+          "conditioning_misses": 4
+        }
+      ],
+      "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+      "final_snapshot_sha256": "33a0b518e752c1b30090767046a40a24b1d7ec7c7938d8de632ece57bccc04ff",
+      "previous_report": "grid_transport_a_rg2b_4x5_5.json",
+      "primitive_report": "grid_transport_a_rg2b_4x5_5_primitive_reuse.json"
+    }
+  ],
+  "validation": {
+    "full_v4_suite": {
+      "run": 954,
+      "skipped": 4,
+      "result": "OK",
+      "seconds": 913.324
+    },
+    "final_primitive_tests": {
+      "run": 13,
+      "result": "OK",
+      "seconds": 0.222
+    },
+    "note": "Two integration regressions (real analytic residual reuse and fresh interval admission on a cached midpoint) were added after full-suite collection and are included in the separate final 13-test run.",
+    "all_ten_public_realizations": "Exact canonical result bytes and snapshots equal with numerical facts and existing operation evidence reuse disabled, two evolved steps plus zero-duration admission in each realization.",
+    "ruff": "Changed production files, primitive tests and example runners passed.",
+    "mypy": "grc_v4_linear.py passed with --follow-imports=skip."
+  }
+}

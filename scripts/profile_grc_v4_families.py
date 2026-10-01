@@ -28,6 +28,7 @@ from pygrc.models import grc_v4_candidate_a as ca
 from pygrc.models import grc_v4_candidate_c as cc
 from pygrc.models import grc_v4_ci as ci
 from pygrc.models import grc_v4_codec as codec
+from pygrc.models import grc_v4_numerics as numerics
 from pygrc.models.grc_v4_geometry import GeometryStageInputs
 from pygrc.models.grc_v4_lifecycle import _profile_step
 from tests.models.test_grc_v4_generic_lifecycle import FAMILIES, fixture, model, restore
@@ -104,7 +105,7 @@ def install():
     ]:
         aliases(getattr(codec, name), label)
     aliases(copy.deepcopy, "deep_copy")
-    aliases(cc._c_solve, "selected_arithmetic")
+    aliases(numerics.solve, "selected_arithmetic")
     aliases(ci._analytic_residual, "selected_arithmetic")
     for cls in (ca.CandidateACurrent, cc.CandidateCCurrent):
         descriptor = cls.__dict__["identity"]

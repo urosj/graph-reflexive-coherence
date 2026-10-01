@@ -7,7 +7,8 @@ from unittest.mock import patch
 import numpy as np
 
 from pygrc.models.grc_v4 import GRCV4, GRCV4StepRequestInput
-from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError, _c_condition
+from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+from pygrc.models import grc_v4_numerics as numerics
 from pygrc.models.grc_v4_rg2b import CandidateRG2bSection, ProvisionalCandidateRG2bStep, RG2bStageError
 from pygrc.models import grc_v4_rg2b as rg, grc_v4_step as step
 from pygrc.models.grc_v4_rg2b_graph import RG2bGraphDomain
@@ -206,8 +207,8 @@ class CRG2bLocalProductTests(unittest.TestCase):
             scope='fixed_stage_selector_rejection_outside_completion_not_public_operation')
         np.testing.assert_allclose(a.physical_identification,np.array(a.identification)@a.flat_matrix,rtol=0,atol=1e-14)
         row('C-QC-TYPING',I_4M=a.identification,G_J=a.flat_matrix,Q_C=a.physical_identification)
-        _c_condition(((.5,0),(0,1)),2,'retained')
-        with self.assertRaisesRegex(ValueError,'conditioning'):_c_condition(((.5,5),(0,1)),2,'physical similarity')
+        numerics.condition(((.5,0),(0,1)),2,'retained')
+        with self.assertRaisesRegex(ValueError,'conditioning'):numerics.condition(((.5,5),(0,1)),2,'physical similarity')
         row('C-RETAINED-VS-PHYSICAL-CONDITIONING',certificates=[dict(c) for c in a.certificates],
             scope='nominated_matrix_certificates_plus_algebra_only_similarity_counterexample',
             counterexample=dict(retained=[[.5,0],[0,1]],physical=[[.5,5],[0,1]],limit=2,physical_rejected=True))
