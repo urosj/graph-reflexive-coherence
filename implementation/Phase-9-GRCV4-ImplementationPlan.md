@@ -1884,14 +1884,15 @@ closure. These are scoped research findings, not new accepted authority.
 The [boundary-continuation successor](./phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md)
 adds a single exact reference recipe over sixteen layouts, separate current/
 reset roles and ten target steps, with explicit selector and rate-error
-margins. This is not an enabled-profile closure. Reuse the already reviewed
-RGATC auxiliary-completion theorem rather than develop another one; its paired
-A constants and research authority do not automatically cover nine-port graphs
-or Candidate C. Next instantiate fixed-row/current/history and completion
-bounds, retaining physical nonnegative resources even when auxiliary inverse
-coordinates are signed. Record and reconcile the observed pre-existing ATC
-support-hash drift before claiming fresh typed ATC ancestry; do not repin it
-as a shortcut. All ten dispositions and the production hold remain unchanged.
+margins. This is not an enabled-profile closure. The reusable general idea is
+the auxiliary inverse/graph-transform proof, not the ATC fission construction.
+Establish fixed-row/current/history and completion hypotheses directly on
+nine-port graphs, retaining physical nonnegative resources even when auxiliary
+inverse coordinates are signed. No small-ATC numerical constant, trigger,
+partition or admission transfers. The self-contained successor below does not
+depend on ATC tooling; reconcile its observed pre-existing support-hash drift
+only before relying on fresh typed ATC ancestry, without blind repinning.
+All ten dispositions and the production hold remain unchanged.
 
 The [fixed-row candidate successor](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
 has independent bounded mathematical PASS for the proposed A stage/history
@@ -1937,16 +1938,36 @@ passes the mathematics within its isolated execution scope. RR-F1/RR-F2 are
 closed locally by geometry-coverage and complete source-norm controls, with
 negative substitutions exercised through the actual tube consumer. The
 original bounds and parameters are unchanged. The user's 2026-10-01 acceptance
-and commit instruction accepts this bounded checkpoint, not represented solver/
+and commit instruction accepts this bounded checkpoint (`238978f`), not represented solver/
 writer validation. No old all-realization constant or native
 complete profile is silently replaced; numerical/carrier-event bindings remain open.
 
-Next derive the actual nine-port
-completion/inverse/section bounds. Small ATC domains and constants do not
-transfer; signed auxiliary C does not inherit the physical nonnegative-exponent
-argument. Carrier domains require symmetry and star support, not just a norm
-ceiling. Complete profile/event/carrier/lifecycle preimages also remain open.
-Keep user acceptance and all-ten aggregate review before production.
+The new [nine-port RG2b completion](./phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md)
+now supplies a self-contained proposed binding for the source/D52 graphs:
+signed C and scaled log-W arguments, global increment/source slopes, auxiliary
+inverse, bounded Lipschitz section, compact containment and both-role ten-step
+physical continuation. Eight research methods pass, including 50 state boxes.
+Small ATC proofs/packages/constants supply none of these hypotheses and are
+not imported. This is a new research completion, not a silent substitution for
+the old native chart. The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md)
+passes the bounded mathematics within an isolated dependency harness. RG-F1 and
+RG-F2 are corrected locally: independent literal signed updates bind all frozen
+retraction faces, and the evidence consumer recomputes the complete returned
+inverse point's residual/error. Three added methods reject narrowed clamps and
+stale/zeroed/corrupted certificates on actual repository dependencies. Formulas,
+parameters, tolerances and all 50 state boxes remain unchanged. The user
+explicitly accepted the bounded checkpoint and its checker corrections on
+2026-10-01 and requested a commit. Complete profile admission and all-ten
+feasibility closure are not included in that acceptance.
+
+Next construct the bounded represented section evaluator and certify inverse,
+truncation/evaluation errors and defining effects; the existence theorem is
+not this numerical certificate. At every nested inverse query use the frozen
+global completion; the single inverse-containment estimate does not prove
+arbitrary-depth containment in physical tubes. Carrier domains still require symmetry and
+star support, not just a norm ceiling. Complete profile/event/history/carrier/
+lifecycle preimages also remain open.
+Keep all-ten aggregate review and user acceptance of that scope before production.
 
 Execute the following before any new specialization production source or
 runtime-test work (including P9-8.1a). Use local research scripts/oracles and

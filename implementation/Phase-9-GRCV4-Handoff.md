@@ -35,9 +35,10 @@ enabled-profile closure. Five focused tests establish an exact reference recipe
 over sixteen layouts, both roles and ten steps; positive source preimages,
 fresh fixed-row candidate conditions, strict selector and perturbation margins,
 and a signed auxiliary inverse. This is reference-control evidence, not ten
-enabled realizations or native expansion. Reuse the already reviewed RGATC
-auxiliary-completion theorem; do not repeat its discovery or borrow its
-paired A numerical bounds for nine-port graphs or Candidate C.
+enabled realizations or native expansion. The reusable mathematical idea is
+an auxiliary inverse/graph-transform contraction, not an ATC fission result.
+The new self-contained nine-port proof below imports no ATC package, constants,
+fixture or authority; the small ATC example is not specialization evidence.
 
 The [fixed-row candidate successor](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
 now has independent bounded mathematical PASS for its physical-domain estimates:
@@ -107,14 +108,36 @@ added methods reject narrowed geometry and max-entry norm substitutions,
 including through the actual tube path. The full eight-method owner passes
 on current repository dependencies; no parameters or stage bounds changed.
 The user's 2026-10-01 acceptance and commit instruction accepts this bounded
-checkpoint, not complete profile admission or all-ten closure.
+checkpoint, committed at `238978f`, not complete profile admission or all-ten closure.
 
-Next mathematics: the actual nine-port RG2b completion, including
-state/history Lipschitz estimates, auxiliary inverse and section budgets,
-and both-role physical agreement. A's physical $E\ge0$ argument does not extend
-to signed auxiliary C; its cutoff/W domain needs its own bounds. The small ATC
-example supplies none of those graph-specific hypotheses. Complete profile/target/numerical and
-event/carrier/lifecycle obligations remain after this mathematics.
+The new [nine-port RG2b completion](./phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md)
+derives those hypotheses directly for both A and C on the source/D52 graphs.
+A separate signed-resource/scaled-log-history argument retraction gives a
+globally bounded increment, auxiliary inverse and unique completion-relative
+Lipschitz section. No ATC trigger/partition proof is used. Global section
+contractions are about 6.28e-5 (A) and 0.002224 (C); signed inverse enclosures
+and 50 physical state boxes certify both-role ten-step positive continuation.
+Eight focused research methods pass. Negative auxiliary A exponents are
+explicitly allowed; physical resources and the prescribed zero-core map are
+unchanged. The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md)
+passes the bounded mathematics with an isolated dependency execution boundary.
+Its RG-F1/RG-F2 checker gaps are closed locally: twelve independent frozen-
+retraction cases reject fourteen narrowed-clamp substitutions; all four inverse
+queries now bind the complete returned point to its residual/error. Stale,
+zeroed and final-coordinate-corrupted certificates fail, including through the
+actual evidence consumer. Three added methods preserve the original formulas,
+budgets and 50-box calculation. The user explicitly accepted this bounded
+checkpoint and its corrections on 2026-10-01 and requested a commit. This does
+not accept complete profile admission or all-ten closure. The new binding
+does not replace the old native completion or give C1 authority.
+
+Next mathematics: a represented section evaluator with certified inversion,
+truncation/evaluation errors and defining effects for this new recipe. The
+existence theorem is not a numerical evaluator. Apply the frozen global
+completion to every nested inverse query; one inverse-containment statement
+does not confine an arbitrary-depth backward chain to the physical tubes.
+Complete profile/target and
+event/history/carrier/lifecycle obligations remain after these calculations.
 Reuse P9-8.3A.1 ownership before production.
 Review all ten rows and any restrictions together before resuming implementation.
 Do not silently drop a row, change the resource map or bypass an admission check.
@@ -123,7 +146,8 @@ Verification caveat: the attempted current ATC context fails closed on 23
 pre-existing changed A_OS supporting source/test hashes; the RGATC layer's
 own inventory is exact. The successor note retains observation identities.
 No fresh full ATC ancestry trace, hash repin or scientific widening is claimed.
-Reconcile the drift before relying on that loader for new source admission.
+Reconcile the drift before relying on that loader for new ATC source admission;
+the new self-contained nine-port proof does not use it as a dependency.
 
 Historical tooling still recognizes P9-8.1a's scoped permission; that is not
 enough to proceed under the current user hold. No production files, legacy

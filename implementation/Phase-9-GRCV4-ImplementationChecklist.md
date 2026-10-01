@@ -1647,9 +1647,10 @@ Tranche 7 and current execution permissions remain unchanged.
     distinct current/reset resources, ten exact target steps, selector gap,
     resource perturbation budget and covariance. Five focused tests pass;
     enabled realizations are not certified by this control.
-  - [x] Identify reviewed RGATC boundary-completion mathematics for reuse and
-    demonstrate the signed auxiliary inverse needed by an inward zero-core
-    target. Its paired A constants/native status are not transferred to GRC9V4.
+  - [x] Identify the general auxiliary inverse/graph-transform argument and
+    demonstrate the signed inverse needed by an inward zero-core target.
+    The small ATC fission certificate is not nine-port evidence. The successor
+    below is self-contained and imports no ATC package, fixture or constants.
   - [x] Derive [nine-port fixed-row candidate bounds](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
     and retain their independent oracle: proposed A stage binding and history
     interval, strict-gap C current, nonzero-read rate/source bounds, PC envelope,
@@ -1709,15 +1710,41 @@ Tranche 7 and current execution permissions remain unchanged.
     narrowed enclosures and max-entry scalar, including actual tube-path
     mutations. All eight methods and unchanged 50 boxes pass against current
     repository dependencies. The user's 2026-10-01 acceptance and commit
-    instruction accepts the bounded checkpoint. No parameter search, source
+    instruction accepts the bounded checkpoint (`238978f`). No parameter search, source
     admission or production authorization is inferred.
+  - [x] Derive the [new nine-port RG2b completion](./phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md)
+    directly for A/C source and D52: signed-resource/scaled-log-history
+    retraction of increment arguments, global state/history/geometry slopes,
+    selector/floor margins, auxiliary inverse, compact containment and a
+    completion-relative bounded Lipschitz section. The original five methods pass;
+    50 state boxes establish both-role ten-step physical continuation. This is
+    bounded research, not C1 or native admission; review corrections follow.
+  - [x] Retain the [bounded RG2b review](./phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md)
+    and its isolated dependency boundary. Close RG-F1/RG-F2 locally: twelve
+    signed/near-face/exterior controls reject fourteen narrowed-clamp cases;
+    all four inverse queries independently bind every returned coordinate to
+    residual/error and reject stale/zeroed/corrupted certificates. Mutations
+    reach the actual evidence consumer. Three new methods bring the current
+    repository run to eight passing methods, including unchanged 50-box
+    continuation. No parameters, completion domains or tolerances changed.
+  - [x] User accepts the bounded reviewed RG2b completion and checker corrections
+    through the explicit 2026-10-01 acceptance and commit instruction. Retain
+    the old native zero-core incompatibility without altering the resource map.
+    Complete profile admission and all-ten production authorization remain open.
+  - [ ] Construct and validate a represented RG section evaluator for the new
+    recipe: inversion/truncation/full-evaluation errors and defining effects,
+    not only current residuals or substitution of CI/OS geometry.
+    Apply the frozen global completion at every nested inverse query; a single
+    inverse-containment estimate does not confine arbitrary backward depth to
+    the physical continuation boxes.
   - [ ] Bind revised CI/PC/CI+PC finite-union domains to complete profiles and
     certify represented joint-root errors, old-carrier read/root-source writer
     staging and defining numerical effects. Select and validate the explicit
     carrier event-transfer policy separately; OS margins do not transfer.
   - [ ] Reconcile the pre-existing 23 A_OS support-file hash changes before
-    relying on fresh full ATC typed ancestry for successor acceptance. The
-    RGATC layer's own retained inventory is exact; no blind admission repin.
+    relying on fresh full ATC typed ancestry for ATC successor acceptance. The
+    RGATC inventory is exact; no blind repin. This is not a dependency of the
+    new self-contained nine-port completion proof.
   - [ ] Declare exact intended source/target domains, capabilities and
     positive-duration continuation interval/horizon for every family.
   - [ ] Close shared mathematical lifecycle, transfer/charge and disabled
@@ -1730,13 +1757,10 @@ Tranche 7 and current execution permissions remain unchanged.
     certify CI joint roots, PC envelopes, combined CI+PC bounds and RG2b sections.
   - [ ] Resolve the RG2b zero-resource completion incompatibility under a
     reviewed binding; do not change the prescribed resource map to fit old charts.
-    Re-estimate the reviewed auxiliary completion for fixed-row nine-port A;
-    separately prove a selector-safe C completion and both-role physical
-    agreement/continuation. No inherited paired-graph constants or C1 claim.
-    Current physical-domain H-Lipschitz bounds do not prove the state-space
-    inverse or graph-transform estimates at signed auxiliary coordinates.
-    Re-estimate exponent, cutoff, positive-W/log/row-denominator and C selector
-    bounds there; do not import the physical $E\ge0$ argument.
+    The new research binding above supplies A/C signed-domain and section
+    mathematics; represented evaluation and complete profile binding
+    remain. Do not replace these with physical-only H-Lipschitz estimates or
+    an inherited ATC/native identifier. No C1 or completion-independent claim.
   - [ ] Review all ten disposition rows with concrete proof/oracle evidence;
     accept any stated restrictions explicitly. No unresolved row or silently
     dropped profile at production entry without a user-approved scope change.
