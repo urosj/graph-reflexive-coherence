@@ -1589,6 +1589,11 @@ closure; this is a dependency reservation, not runtime authorization.
   complete target admission and continued evolution, with negative controls.
 - [ ] Reconcile generic/GRC9V4 ownership and Tranches 8–10 dependencies;
   bind exact prerequisites before any later execution-policy opening.
+- [ ] ATC investigation maintenance: reconcile the pre-existing 23 A_OS
+  support-file hash changes before relying on fresh full ATC typed ancestry
+  for ATC successor acceptance. The RGATC inventory is exact; no blind repin.
+  This is not a P9-8.0 or P9-8.1a prerequisite: the new nine-port completion
+  proof is self-contained and does not consume that ancestry.
 
 P9-8.1a retains its existing scoped permission. Specified nine-port candidate
 detection, request-driven expansion and column field coarse/Split do not await
@@ -1614,6 +1619,11 @@ Tranche 7 and current execution permissions remain unchanged.
   are performed, not accepted all-ten closure. Checked G3/73-contract
   reconstruction, three readiness tests and four feasibility tests pass;
   no specialization runtime executed.
+  Closure means independently justified, numerically feasible constructions
+  for all ten declared scopes, not ten native implementations. P9-8.1a's chart
+  authority is available; the all-ten feasibility hold still precedes using it.
+  Completed evidence below is retained; the ordered remaining work follows it.
+
   - [x] Map chart/ports, row backend/weights, candidate detection, D11-G9
     expansion, field coarse/Split and lifecycle to spec/paper/typed authority
     and actual runtime prerequisites. Do not equate field Split with fission.
@@ -1731,40 +1741,65 @@ Tranche 7 and current execution permissions remain unchanged.
     through the explicit 2026-10-01 acceptance and commit instruction. Retain
     the old native zero-core incompatibility without altering the resource map.
     Complete profile admission and all-ten production authorization remain open.
-  - [ ] Construct and validate a represented RG section evaluator for the new
-    recipe: inversion/truncation/full-evaluation errors and defining effects,
-    not only current residuals or substitution of CI/OS geometry.
-    Apply the frozen global completion at every nested inverse query; a single
-    inverse-containment estimate does not confine arbitrary backward depth to
-    the physical continuation boxes.
-  - [ ] Bind revised CI/PC/CI+PC finite-union domains to complete profiles and
-    certify represented joint-root errors, old-carrier read/root-source writer
-    staging and defining numerical effects. Select and validate the explicit
-    carrier event-transfer policy separately; OS margins do not transfer.
-  - [ ] Reconcile the pre-existing 23 A_OS support-file hash changes before
-    relying on fresh full ATC typed ancestry for ATC successor acceptance. The
-    RGATC inventory is exact; no blind repin. This is not a dependency of the
-    new self-contained nine-port completion proof.
-  - [ ] Declare exact intended source/target domains, capabilities and
-    positive-duration continuation interval/horizon for every family.
-  - [ ] Close shared mathematical lifecycle, transfer/charge and disabled
-    projection compatibility; retain forty independent later runtime cells.
-  - [ ] Close A fixed-row stage/history binding and all five A oracles through
-    P9-8.3A.1 before production backend integration.
-  - [ ] Close C reference-map/selector/current oracles for all five C families
-    before production execution; frozen combinatorial vectors alone do not count.
-  - [ ] Prove both-role boundary viability and nontrivial enabled continuation;
-    certify CI joint roots, PC envelopes, combined CI+PC bounds and RG2b sections.
-  - [ ] Resolve the RG2b zero-resource completion incompatibility under a
-    reviewed binding; do not change the prescribed resource map to fit old charts.
-    The new research binding above supplies A/C signed-domain and section
-    mathematics; represented evaluation and complete profile binding
-    remain. Do not replace these with physical-only H-Lipschitz estimates or
-    an inherited ATC/native identifier. No C1 or completion-independent claim.
+  - [x] Establish bounded both-role boundary viability and enabled continuation
+    in the accepted source/D52 work: OS witnesses, CI joint-root and PC/CI+PC
+    envelope bounds, and RG sections. These are the declared finite-horizon
+    results, not an arbitrary-graph or all-parameter theorem. Persistent
+    continuation remains conditional on a lawful carrier event policy.
+    Reconcile their exact scopes below; do not repeat the accepted derivations.
+  - [x] Resolve the zero-resource obstruction mathematically with the accepted
+    new A/C RG2b completion (`d6d3647`) on its source/D52 domain. Preserve the
+    old native completion's incompatibility and the prescribed resource map.
+    Represented evaluation and complete research-profile binding remain below;
+    no native replacement, C1 or completion-independent claim follows.
+
+  Remaining P9-8.0 work, in order (independent oracle work may overlap):
+
+  - [ ] Pin the all-ten scope and map accepted evidence to it: exact parameters,
+    source/target graphs and capacities, candidate/backend stages, geometry/
+    history/carrier domains, both roles, duration and continuation horizon.
+    Record every restriction explicitly. A finite union is not its surrounding
+    rectangle; revised D52 evidence does not cover all allocator layouts.
+  - [ ] Complete bounded numerical feasibility for A_RG2b and C_RG2b with a
+    research section evaluator: inversion, truncation and full-evaluation
+    errors plus surviving defining effects. Apply the frozen global completion
+    at every nested query; physical-tube containment is not an arbitrary-depth
+    backward bound. This is not production backend integration or full runtime
+    conformance, nor substitution of CI/OS geometry.
+  - [ ] Complete bounded numerical feasibility for A/C CI, PC and CI+PC on
+    their selected research domains: represented root/error bounds, old-carrier
+    read and same-source writer stages, and defining-effect margins. Reuse
+    accepted OS evidence only for its actual scope; do not import OS margins
+    or require a full native solver/writer acceptance campaign here.
+  - [ ] Finish exact A research-profile/event bindings and the five independent
+    A oracles under P9-8.3A.1: source/target preimages, fixed-row stage/history
+    and reference-current recipes, old/new-edge W policy, separate whole-Z
+    policy, distinct current/reset expected targets and negative cases.
+    Construction evidence precedes implementation; runtime registration,
+    backend serialization/integration and comparisons remain later work.
+  - [ ] Finish exact C research-profile/event bindings and the five C oracles:
+    complete target reference maps, selector/current expectations, realization
+    domains, separate carrier policy where applicable and both-role expected
+    targets. Keep frozen combinatorial vectors distinct from new numerical
+    fixtures; no native admission is asserted by construction alone.
+  - [ ] Close the shared mathematical lifecycle/transfer compatibility argument
+    for those choices: charge, W/Z disposition, target/reset domain inclusion,
+    failure expectations and exact disabled projection. Select and validate
+    explicit carrier event transfer; a carrier norm envelope does not choose
+    it. Reuse accepted generic contracts. Route genuinely missing authority
+    through claims → paper/spec before implementation of its consumers.
+    Actual receipts, rollback, replay and forty disabled-runtime cells are later.
   - [ ] Review all ten disposition rows with concrete proof/oracle evidence;
     accept any stated restrictions explicitly. No unresolved row or silently
     dropped profile at production entry without a user-approved scope change.
   - [ ] User accepts the aggregate feasibility scope before production resumes.
+
+P9-8.0 does not execute later runtime acceptance: chart/row/backend and allocator
+implementation belong to P9-8.1–8.2; native profile integration and oracle
+comparisons to P9-8.3; deep/covariance/atomicity execution to P9-8.4–8.6; mandatory
+specialization lifecycle and all forty disabled executions to Tranche 9.
+ATC ancestry maintenance remains with the investigation/7T reservation above.
+These obligations are retained, not waived or relabeled as feasibility passes.
 
 After aggregate feasibility review, implementation order: C_OS first;
 then independent A_OS and C_PC branches; remaining

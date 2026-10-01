@@ -1859,6 +1859,20 @@ alone admits neither a new combined specialization identity nor autonomous ATC.
 
 #### P9-8.0 — all-ten feasibility before production entry
 
+**Purpose:** establish an independently justified, numerically feasible
+construction for every declared family scope before starting P9-8.1a. This is
+not native implementation or full runtime acceptance. The chart/port graph's
+own authority is already available; the separate user-selected all-ten hold
+still precedes implementation. No profile is dropped or scope widened here.
+
+The remaining sequence is **scope reconciliation → bounded numerical
+feasibility → exact profile/event oracles → aggregate review and acceptance**.
+Independent oracle construction may overlap the numerical work. The detailed
+[work order](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#work-order-and-handoff)
+and checklist distinguish already-established mathematics from these remaining
+tasks. New authority, if actually required, follows claims → paper/spec before
+its consumers are implemented; evidence packaging alone is not a new contract.
+
 2026-10-01: the [readiness review](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
 is performed on `implementation/grc9v4-tranche-8`; it is an inventory, not
 all-ten mathematical closure. Its immediate chart-start recommendation is
@@ -1957,68 +1971,60 @@ inverse point's residual/error. Three added methods reject narrowed clamps and
 stale/zeroed/corrupted certificates on actual repository dependencies. Formulas,
 parameters, tolerances and all 50 state boxes remain unchanged. The user
 explicitly accepted the bounded checkpoint and its checker corrections on
-2026-10-01 and requested a commit. Complete profile admission and all-ten
+2026-10-01, committed at `d6d3647`. Complete profile admission and all-ten
 feasibility closure are not included in that acceptance.
 
-Next construct the bounded represented section evaluator and certify inverse,
-truncation/evaluation errors and defining effects; the existence theorem is
-not this numerical certificate. At every nested inverse query use the frozen
-global completion; the single inverse-containment estimate does not prove
-arbitrary-depth containment in physical tubes. Carrier domains still require symmetry and
-star support, not just a norm ceiling. Complete profile/event/history/carrier/
-lifecycle preimages also remain open.
-Keep all-ten aggregate review and user acceptance of that scope before production.
+The accepted source/D52 work already establishes bounded both-role continuation,
+CI roots, PC/CI+PC envelopes and RG section mathematics. The new completion
+resolves the zero-core obstruction mathematically within its stated scope;
+the old native chart remains incompatible. Do not repeat those proofs or leave
+their scientific completion indistinguishable from pending runtime admission.
+Persistent continuation still requires a lawful event carrier policy.
 
-Execute the following before any new specialization production source or
-runtime-test work (including P9-8.1a). Use local research scripts/oracles and
-existing primitives read-only where useful; no general numerical reruns.
+Remaining work before any new specialization production, including P9-8.1a:
 
-1. Declare the intended domain/capabilities and continuation horizon for each
-   of the ten families, reusing accepted shared mechanics and generic proofs.
-2. Establish exact backend/stage/history choices, independent numerical
-   expectations, source and target admission, both-role boundary viability,
-   continuation and realization-specific root/carrier/section bounds. Pull
-   P9-8.3A.1 and corresponding C construction evidence forward; do not duplicate
-   their oracle ownership or demand production code to create the oracle.
-3. Record each row as provisionally closed, conditionally closed with an
-   explicit proposed restriction, unresolved, or incompatible with a named
-   binding. A conditional hypothesis without evidence is unresolved. Keep
-   every profile visible and route new authority through claims → paper/spec.
-4. Obtain user review of the all-ten feasibility scope. Production remains
-   held until all ten are provisionally closed with any restrictions accepted,
-   or the user explicitly changes the scope. No implicit partial-population
-   fallback. Mathematical closure is not runtime conformance.
+1. **Pin scopes and reconcile evidence.** For all ten, bind exact parameters,
+   graphs/capacities, backend/stage choices, source/target domains, current/reset
+   roles and duration/horizon. Reuse accepted proofs only where their hypotheses
+   match. Preserve finite-union charts and distinguish revised D52 witnesses
+   from the earlier sixteen-layout reference control. Do not claim arbitrary
+   numerical graphs, capacities or parameters without the corresponding proof.
+2. **Finish bounded numerical feasibility.** Next construct the research RG
+   section evaluator with combined inverse, truncation and full-evaluation
+   errors and defining-effect evidence. Apply the frozen global completion at
+   every nested query; a single inverse-containment estimate does not establish
+   arbitrary-depth containment in physical tubes. Then close the outstanding
+   A/C CI/PC/CI+PC root/read/writer error and mechanism checks on their selected
+   domains. Accepted OS effects remain OS-only. This requires an implementable
+   algorithm/arithmetic budget, not a production backend, full native campaign
+   or performance project.
+3. **Complete profile/event bindings and independent oracles.** Pin the full
+   mathematical profile inputs and intended identities, A fixed-row/history/
+   initialization recipes, complete C reference maps, separate W/Z policies,
+   and independent both-role expected targets and rejection cases. P9-8.3A.1
+   retains ownership of the five A oracles; corresponding C construction work
+   is also before production. Select a lawful carrier event-transfer policy;
+   the carrier envelope alone does not do so. Reuse the accepted shared
+   lifecycle/charge/disabled-projection contracts to check these choices.
+   Native registration, serialization/backend integration and observed runtime
+   receipts, rollback and replay are not the output of this step.
+4. **Review and accept the aggregate scope.** Every row must have concrete
+   feasibility evidence and explicit restrictions. Retain unresolved or
+   incompatible bindings honestly; no plausible-but-unproved conditional
+   closure. Resume production only after all ten are provisionally closed
+   with restrictions accepted and the user accepts the aggregate, or explicitly
+   changes scope. No new machine gate or acceptance schema is needed.
 
-Before resuming implementation, review the accepted specification, paper,
-typed claim provenance and available independent vectors against the intended
-mechanical scope. Keep this one bounded review with explicit per-profile
-outcomes; do not rerun generic numerical campaigns merely to establish entry.
-
-- Map chart/ports, fixed-row differential/weights, candidate detection,
-  D11-G9 allocator, column coarse/Split and generic target/lifecycle handling
-  to their exact authority and applicable implementation prerequisites.
-- Account for every expansion input: source selection, requested capacity,
-  chirality, conditional phase, resource simplex, target template/reference,
-  bond seed and candidate/carrier policy. Record what is resolved policy,
-  source-derived data or explicitly supplied request data. Do not infer a
-  fully autonomous request generator from an accepted candidate detector.
-- Nominate exact combined nine-port profile/backend identities and admitted
-  source/target domains. Check target numerical admissibility, including zero
-  resources introduced by the prescribed map, distinct current/reset roles,
-  complete C references, W initialization and whole-carrier dispositions.
-  Generic G2 labels do not certify these changed contexts.
-- Inventory independent oracle/vector coverage and the missing concrete
-  specialization cases for each family. Preserve P9-8.3A.1 as the owner of
-  the A oracle; production output is never its expected result.
-- Retain mandatory specialization lifecycle, deep/covariance and all four
-  disabled surfaces per advertised profile. General ATC, automatic complete
-  request generation, completed sparks and hierarchy are excluded here.
-- Record ready/held outcomes for exact leaves/profiles. Missing scientific
-  authority requires the established claims → paper/spec route; missing
-  construction evidence requires an oracle, not a new scientific claim.
-  Independent research may continue, but the user-selected all-ten production
-  hold remains until aggregate feasibility review. A green review is not
-  blanket source permission: bind later leaves in the existing execution policy.
+Later owners remain unchanged: P9-8.1–8.2 implement the shared mechanics;
+P9-8.3 integrates exact native profiles and compares them with the oracles;
+P9-8.4–8.6 execute deep/covariance/atomicity conformance; Tranche 9 executes
+mandatory specialization lifecycle and all forty disabled cells. These remain
+required for full conformance but are not P9-8.0 execution prerequisites.
+The 23 ATC support-hash changes belong to investigation maintenance before
+fresh ATC ancestry is consumed, not to entry for this self-contained mechanical
+work. General ATC, automatic complete request generation, completed sparks
+and hierarchy remain outside scope. Later leaves still need their scoped
+execution-policy openings; aggregate feasibility is not blanket permission.
 
 #### Shared mechanics and staged profile coverage
 
