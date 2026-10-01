@@ -7,8 +7,8 @@ specialization production work, including P9-8.1a, until all-ten mathematical
 and construction feasibility is closed and reviewed.** The
 [current feasibility record](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md)
 has the scope, ten-row dispositions, proof obligations and first research
-results. The user accepted this bounded checkpoint for commit; the all-ten
-program is open, not an accepted closure. The earlier
+results. The user accepted this bounded checkpoint, committed at `45c0808`;
+the all-ten program is open, not an accepted closure. The earlier
 [readiness inventory](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
 is retained with its immediate-start recommendation superseded. Prior planning
 edits are included in this checkpoint.
@@ -29,12 +29,27 @@ that construction and charge conservation can coexist with negative core
 resource for every positive duration. Its positive control demonstrates only
 bounded reference continuation, not enabled realization closure.
 
-Next mathematical work: boundary-compatible target/continuation construction
-and an RG2b completion satisfying the existing section theorem where possible;
-in parallel with those research questions, establish the A fixed-row/history
-oracle and CI/PC domain bounds. Reuse P9-8.3A.1 ownership before production.
+The new [boundary-continuation research](./phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md)
+is accepted as a bounded checkpoint by the user's commit instruction, not as
+enabled-profile closure. Five focused tests establish an exact reference recipe
+over sixteen layouts, both roles and ten steps; positive source preimages,
+fresh fixed-row candidate conditions, strict selector and perturbation margins,
+and a signed auxiliary inverse. This is reference-control evidence, not ten
+enabled realizations or native expansion. Reuse the already reviewed RGATC
+auxiliary-completion theorem; do not repeat its discovery or borrow its
+paired A numerical bounds for nine-port graphs or Candidate C.
+
+Next mathematical work: establish A fixed-row/history and strict-gap C
+current/geometry bounds; instantiate boundary completion and CI/PC bounds
+with both-role enabled continuation. Reuse P9-8.3A.1 ownership before production.
 Review all ten rows and any restrictions together before resuming implementation.
 Do not silently drop a row, change the resource map or bypass an admission check.
+
+Verification caveat: the attempted current ATC context fails closed on 23
+pre-existing changed A_OS supporting source/test hashes; the RGATC layer's
+own inventory is exact. The successor note retains observation identities.
+No fresh full ATC ancestry trace, hash repin or scientific widening is claimed.
+Reconcile the drift before relying on that loader for new source admission.
 
 Historical tooling still recognizes P9-8.1a's scoped permission; that is not
 enough to proceed under the current user hold. No production files, legacy

@@ -1881,6 +1881,18 @@ shows that target construction and charge conservation do not imply positive
 continuation. A distinct positive reference control is not an enabled-profile
 closure. These are scoped research findings, not new accepted authority.
 
+The [boundary-continuation successor](./phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md)
+adds a single exact reference recipe over sixteen layouts, separate current/
+reset roles and ten target steps, with explicit selector and rate-error
+margins. This is not an enabled-profile closure. Reuse the already reviewed
+RGATC auxiliary-completion theorem rather than develop another one; its paired
+A constants and research authority do not automatically cover nine-port graphs
+or Candidate C. Next instantiate fixed-row/current/history and completion
+bounds, retaining physical nonnegative resources even when auxiliary inverse
+coordinates are signed. Record and reconcile the observed pre-existing ATC
+support-hash drift before claiming fresh typed ATC ancestry; do not repin it
+as a shortcut. All ten dispositions and the production hold remain unchanged.
+
 Execute the following before any new specialization production source or
 runtime-test work (including P9-8.1a). Use local research scripts/oracles and
 existing primitives read-only where useful; no general numerical reruns.

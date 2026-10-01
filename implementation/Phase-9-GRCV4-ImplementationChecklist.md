@@ -1642,6 +1642,17 @@ Tranche 7 and current execution permissions remain unchanged.
   - [x] Retain initial obstruction/control calculations: existing RG2b chart
     excludes zero core for both candidates; reference-baseline continuation
     can fail despite charge conservation; a distinct positive control is bounded.
+  - [x] Construct the [bounded reference continuation](./phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md):
+    positive source preimage and fresh row candidate, sixteen role layouts,
+    distinct current/reset resources, ten exact target steps, selector gap,
+    resource perturbation budget and covariance. Five focused tests pass;
+    enabled realizations are not certified by this control.
+  - [x] Identify reviewed RGATC boundary-completion mathematics for reuse and
+    demonstrate the signed auxiliary inverse needed by an inward zero-core
+    target. Its paired A constants/native status are not transferred to GRC9V4.
+  - [ ] Reconcile the pre-existing 23 A_OS support-file hash changes before
+    relying on fresh full ATC typed ancestry for successor acceptance. The
+    RGATC layer's own retained inventory is exact; no blind admission repin.
   - [ ] Declare exact intended source/target domains, capabilities and
     positive-duration continuation interval/horizon for every family.
   - [ ] Close shared mathematical lifecycle, transfer/charge and disabled
@@ -1654,6 +1665,9 @@ Tranche 7 and current execution permissions remain unchanged.
     certify CI joint roots, PC envelopes, combined CI+PC bounds and RG2b sections.
   - [ ] Resolve the RG2b zero-resource completion incompatibility under a
     reviewed binding; do not change the prescribed resource map to fit old charts.
+    Re-estimate the reviewed auxiliary completion for fixed-row nine-port A;
+    separately prove a selector-safe C completion and both-role physical
+    agreement/continuation. No inherited paired-graph constants or C1 claim.
   - [ ] Review all ten disposition rows with concrete proof/oracle evidence;
     accept any stated restrictions explicitly. No unresolved row or silently
     dropped profile at production entry without a user-approved scope change.
