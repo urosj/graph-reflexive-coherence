@@ -1924,11 +1924,24 @@ effect operands. Four new regression methods bring the focused run to seven
 successor plus seven predecessor tests against actual repository dependencies.
 Parameters and numerical criteria are unchanged; no renewed witness search
 is indicated. The user's 2026-10-01 commit instruction accepts this bounded
-checkpoint, not all-ten closure. Next recheck affected CI/PC/CI+PC bounds before
-RG2b reuse. No old all-realization constant or native
-complete profile is silently replaced.
+checkpoint, not all-ten closure; this chain is committed at `62ad076`.
+The [revised realization bounds](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md)
+now perform the CI/PC/CI+PC re-estimation for both candidates: regular currents,
+joint-root self-map/contraction, persistent source envelopes and both-role
+ten-step continuation on 50 source/D52 state boxes. Eight focused methods pass.
+The geometry infinity radius is 2^-20, carrier Frobenius radius 2^-22, source
+norm <8e-8 and geometry contraction <2e-6. The base chart is a finite union of
+constructed boxes, not the whole surrounding resource/history rectangle.
+The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md)
+passes the mathematics within its isolated execution scope. RR-F1/RR-F2 are
+closed locally by geometry-coverage and complete source-norm controls, with
+negative substitutions exercised through the actual tube consumer. The
+original bounds and parameters are unchanged. The user's 2026-10-01 acceptance
+and commit instruction accepts this bounded checkpoint, not represented solver/
+writer validation. No old all-realization constant or native
+complete profile is silently replaced; numerical/carrier-event bindings remain open.
 
-After review and the affected realization rebinding, derive the actual nine-port
+Next derive the actual nine-port
 completion/inverse/section bounds. Small ATC domains and constants do not
 transfer; signed auxiliary C does not inherit the physical nonnegative-exponent
 argument. Carrier domains require symmetry and star support, not just a norm

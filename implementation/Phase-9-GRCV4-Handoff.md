@@ -85,12 +85,31 @@ actual repository run to seven successor plus seven predecessor methods, all
 passing; legitimate zero residual remains admissible. No parameters, tolerance
 or precision changed. The user's 2026-10-01 commit instruction accepts the
 reviewed bounded checkpoint and its corrections, not complete native admission
-or all-ten closure. Next recheck the affected
-CI/PC/CI+PC bounds before reusing these inputs for RG2b; do not restart the
-witness search. The original all-realization upper bounds do not transfer automatically.
+or all-ten closure; commit `62ad076` retains that chain. The original
+all-realization upper bounds do not transfer automatically.
 Carrier balls remain symmetric and star-supported; event transfer is separate.
 
-After that realization rebinding: the actual nine-port RG2b completion, including
+The new [revised realization bounds](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md)
+complete the requested CI/PC/CI+PC re-estimation for both candidates. Eight
+focused research methods pass. Fifty state boxes over the same source/D52
+layout certify regular currents, unique local joint roots, an invariant
+carrier ball, and ten positive target steps for both roles. The new domain
+uses geometry infinity radius 2^-20 and symmetric/star-supported carrier
+Frobenius radius 2^-22; source norms are <8e-8 and root contractions <2e-6.
+These are shared exact-real inclusion bounds, not six native trajectories or
+inherited OS numerical-effect margins. Complete profile/domain identities,
+represented root/writer checks and explicit carrier event transfer remain
+open. The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md)
+passes the bounded mathematics with an isolated execution boundary. Its two
+checker gaps are closed locally: independently cover every supported geometry
+coordinate, and bind the source norm to the complete matrix entry sum. Three
+added methods reject narrowed geometry and max-entry norm substitutions,
+including through the actual tube path. The full eight-method owner passes
+on current repository dependencies; no parameters or stage bounds changed.
+The user's 2026-10-01 acceptance and commit instruction accepts this bounded
+checkpoint, not complete profile admission or all-ten closure.
+
+Next mathematics: the actual nine-port RG2b completion, including
 state/history Lipschitz estimates, auxiliary inverse and section budgets,
 and both-role physical agreement. A's physical $E\ge0$ argument does not extend
 to signed auxiliary C; its cutoff/W domain needs its own bounds. The small ATC

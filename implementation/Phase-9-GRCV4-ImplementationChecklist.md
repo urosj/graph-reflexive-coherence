@@ -1695,9 +1695,26 @@ Tranche 7 and current execution permissions remain unchanged.
     checker corrections through the 2026-10-01 commit instruction. This is not
     native profile binding or all-ten closure. Named-stage effect margins are
     not uniform all-state/all-realization claims.
-  - [ ] Recheck affected CI/PC/CI+PC estimates
-    before carrying revised inputs into RG2b; no renewed witness search or
-    automatic replacement of the old all-realization package.
+  - [x] Recheck affected CI/PC/CI+PC estimates before RG2b reuse in the
+    [revised realization bounds](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md).
+    The original five methods establish 50 source/target state-box bounds for both
+    candidates: regular currents, local joint roots, symmetric/star-supported
+    carrier-ball invariance and both-role ten-step continuation. These are
+    exact-real research results, not six native runs
+    or automatic replacement of old all-realization/profile identities.
+  - [x] Retain the [independent revised-bounds audit](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md)
+    and its isolated execution limit. Close RR-F1/RR-F2 locally: verify the full
+    geometry coordinate hull from endpoint support and bind the source norm
+    scalar to the complete matrix sum. Three new methods reject the three
+    narrowed enclosures and max-entry scalar, including actual tube-path
+    mutations. All eight methods and unchanged 50 boxes pass against current
+    repository dependencies. The user's 2026-10-01 acceptance and commit
+    instruction accepts the bounded checkpoint. No parameter search, source
+    admission or production authorization is inferred.
+  - [ ] Bind revised CI/PC/CI+PC finite-union domains to complete profiles and
+    certify represented joint-root errors, old-carrier read/root-source writer
+    staging and defining numerical effects. Select and validate the explicit
+    carrier event-transfer policy separately; OS margins do not transfer.
   - [ ] Reconcile the pre-existing 23 A_OS support-file hash changes before
     relying on fresh full ATC typed ancestry for successor acceptance. The
     RGATC layer's own retained inventory is exact; no blind admission repin.
