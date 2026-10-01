@@ -2,6 +2,13 @@
 
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
+2026-10-01 current direction: hold all new GRC9V4 production work, including
+P9-8.1a, at P9-8.0 until the all-ten mathematical/construction feasibility
+scope is closed and reviewed. Reuse accepted results and investigate only
+gaps. C_OS remains the first implementation checkpoint after that review;
+general autonomous topology work remains separate under 7T. Historical
+machine permissions remain unchanged and are not sufficient to lift this hold.
+
 Phase 9 implements the accepted graph-generic `GRCV4` substrate, followed by
 a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
 implementation source, read together with the paper and accepted investigation
@@ -186,7 +193,7 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | P9-G0: phase opening | Exact accepted release, completed no-ff merge, branch, plan, checklist, and predecessor bindings. | Recorded. |
 | P9-G1: implementation review | Support order, module ownership, source-to-test mapping, inherited debt routing, and an accepted successor verification policy. | Accepted; [P9-1.9 successor](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json). |
 | `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | Ten exact declarations accepted; aggregate P9-7.7 accepted at `25b80f4`. No broader domains or target identities inferred. |
-| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Accepted at P9-7.8 for the ten exact declarations; Tranche 7 closed. Only P9-8.1a source entry is currently opened. |
+| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Accepted at P9-7.8 for ten exact declarations; Tranche 7 closed. Historical P9-8.1a permission retained; current user-directed production hold awaits all-ten feasibility review. |
 | P9-G4: release and handoff | Exact advertised support, all applicable evidence, legacy regression results, residual-debt routing, and review acceptance. | Pending. |
 
 The checklist records all ten `P9-G2[p]` rows. The aggregate generic support
@@ -1794,7 +1801,9 @@ preserves original evidence and admits that exact G3 set. Its execution-policy
 successor opens only P9-8.1a chart/port graph in the V4 topology module and paired
 test; all other specialization leaves remain gated. No implementation begins
 with this acceptance. P9-8.1a remains the only opened specialization source
-entry; the current research priority is the ATC investigation below.
+entry in the historical policy. The 2026-10-01 user-directed all-ten feasibility
+hold below postpones exercising even that permission; later source permissions
+remain unchanged until explicitly opened.
 
 ### Tranche 7T. Reserved autonomous-topology extension
 
@@ -1811,13 +1820,24 @@ include an ordinary-evolution-reached, policy-generated event with full target
 construction, lifecycle admission and continuation on the changed graph;
 interfaces, builders and manually injected events are insufficient.
 
-Hold topology-dependent P9-8.1c/d, expansion runtime and event integration
-behind the applicable accepted and implemented generic contracts. P9-8.1a
-chart/port work remains independently eligible under its existing permission;
-independent source, mathematical and oracle preparation is not blanket-blocked.
-No later leaf is opened by this amendment. Before their execution permissions
-are extended, bind the exact ATC dependencies in the scoped policy successor.
-Existing machine permission records and accepted G2/G3 decisions stay unchanged.
+The 2026-10-01 planning decision replaces the blanket 7T prerequisite for
+Tranche 8 with named contract dependencies. The specified nine-port candidate
+detector, request-driven D11-G9 expansion and column field encoding/decoding
+do not require an arbitrary-graph autonomous partition law. In particular,
+column `Split` reconstructs a port-attached field; it is not graph fission.
+Use the accepted generic event/lifecycle contracts where applicable. A leaf
+that actually needs new autonomous policy authority must identify that missing
+contract and await its scientific propagation and implementation; unrelated
+mechanical work is not held by the entire 7T program.
+
+General source-derived request generation and ordinary-evolution-to-event
+dispatch are not supplied by request-driven mechanics. If later desired for
+GRC9V4, close those exact specialization/generic obligations separately; do not
+introduce an implicit chooser for capacity, chirality, phase or resource shares.
+Existing machine permissions and accepted G2/G3 decisions stay unchanged.
+P9-8.1a retains its prior scoped permission; later leaves still need their own
+readiness, prerequisite and execution-policy opening. The separate all-ten
+feasibility hold below precedes exercising any of them. This plan opens none.
 
 Do not replace nine-port mechanics with generic binary refinement. The
 specialization crosswalk must distinguish generic causal/lifecycle contracts
@@ -1829,9 +1849,91 @@ families and stronger interpretations are not universal entry barriers.
 
 ### Tranche 8. GRC9V4 mechanical specialization
 
-Enter for an explicitly admitted `P9-G3[S]` support set, potentially `{C_OS}`.
-Topology-dependent execution additionally follows the 7T dependency above;
-historical G3 acceptance alone does not admit an ATC-enabled profile.
+Enter for an explicitly admitted `P9-G3[S]` support set. The accepted G3 set
+contains ten exact generic declarations, not ten conformant nine-port models.
+After reviewed all-ten feasibility closure, start with C_OS as the first
+engineering checkpoint, not the final supported population or a scientifically
+preferred realization. General 7T completion
+is not an entry requirement for this declared mechanical scope. G3 acceptance
+alone admits neither a new combined specialization identity nor autonomous ATC.
+
+#### P9-8.0 — all-ten feasibility before production entry
+
+2026-10-01: the [readiness review](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
+is performed on `implementation/grc9v4-tranche-8`; it is an inventory, not
+all-ten mathematical closure. Its immediate chart-start recommendation is
+superseded by the user's all-profile feasibility requirement.
+The source-exact G3/73-contract reconstruction and three focused numerical
+entry probes pass. Chart authority is present, but production entry is held.
+The frozen C_OS source and D30 target
+reference configurations hit the exact selector cutoff; retain them as
+construction vectors and add separately identified native numerical fixtures
+owned by P9-8.3C-OS, now constructed before production. Candidate A's
+fixed-row contract/oracle and each realization's source/target-domain proof
+also move before production; backend integration itself remains implementation.
+No runtime support or new execution permission is inferred from this review.
+
+The [all-profile feasibility record](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md)
+owns the current scope, ten-row disposition register and initial proof/probe
+results. Existing RG2b completion domains provably exclude the prescribed
+zero core for both candidates; a separate reference-baseline counterexample
+shows that target construction and charge conservation do not imply positive
+continuation. A distinct positive reference control is not an enabled-profile
+closure. These are scoped research findings, not new accepted authority.
+
+Execute the following before any new specialization production source or
+runtime-test work (including P9-8.1a). Use local research scripts/oracles and
+existing primitives read-only where useful; no general numerical reruns.
+
+1. Declare the intended domain/capabilities and continuation horizon for each
+   of the ten families, reusing accepted shared mechanics and generic proofs.
+2. Establish exact backend/stage/history choices, independent numerical
+   expectations, source and target admission, both-role boundary viability,
+   continuation and realization-specific root/carrier/section bounds. Pull
+   P9-8.3A.1 and corresponding C construction evidence forward; do not duplicate
+   their oracle ownership or demand production code to create the oracle.
+3. Record each row as provisionally closed, conditionally closed with an
+   explicit proposed restriction, unresolved, or incompatible with a named
+   binding. A conditional hypothesis without evidence is unresolved. Keep
+   every profile visible and route new authority through claims → paper/spec.
+4. Obtain user review of the all-ten feasibility scope. Production remains
+   held until all ten are provisionally closed with any restrictions accepted,
+   or the user explicitly changes the scope. No implicit partial-population
+   fallback. Mathematical closure is not runtime conformance.
+
+Before resuming implementation, review the accepted specification, paper,
+typed claim provenance and available independent vectors against the intended
+mechanical scope. Keep this one bounded review with explicit per-profile
+outcomes; do not rerun generic numerical campaigns merely to establish entry.
+
+- Map chart/ports, fixed-row differential/weights, candidate detection,
+  D11-G9 allocator, column coarse/Split and generic target/lifecycle handling
+  to their exact authority and applicable implementation prerequisites.
+- Account for every expansion input: source selection, requested capacity,
+  chirality, conditional phase, resource simplex, target template/reference,
+  bond seed and candidate/carrier policy. Record what is resolved policy,
+  source-derived data or explicitly supplied request data. Do not infer a
+  fully autonomous request generator from an accepted candidate detector.
+- Nominate exact combined nine-port profile/backend identities and admitted
+  source/target domains. Check target numerical admissibility, including zero
+  resources introduced by the prescribed map, distinct current/reset roles,
+  complete C references, W initialization and whole-carrier dispositions.
+  Generic G2 labels do not certify these changed contexts.
+- Inventory independent oracle/vector coverage and the missing concrete
+  specialization cases for each family. Preserve P9-8.3A.1 as the owner of
+  the A oracle; production output is never its expected result.
+- Retain mandatory specialization lifecycle, deep/covariance and all four
+  disabled surfaces per advertised profile. General ATC, automatic complete
+  request generation, completed sparks and hierarchy are excluded here.
+- Record ready/held outcomes for exact leaves/profiles. Missing scientific
+  authority requires the established claims → paper/spec route; missing
+  construction evidence requires an oracle, not a new scientific claim.
+  Independent research may continue, but the user-selected all-ten production
+  hold remains until aggregate feasibility review. A green review is not
+  blanket source permission: bind later leaves in the existing execution policy.
+
+#### Shared mechanics and staged profile coverage
+
 Separate chart/port graph, row differential/weights, mechanical candidate
 trigger, and coarse-graining/Split into `P9-8.1a`–`P9-8.1d` iterations.
 Implement D11-G9-P4a's exact
@@ -1839,15 +1941,40 @@ boundary reservations, primary spine, both chiralities, conditional phase,
 arbitrary-size tree, capacity accounting, stable IDs, and initialization.
 Use the normative port map, without deriving a repair from legacy code.
 
+After the all-ten feasibility review, use one shared mechanical implementation,
+with explicit candidate/realization adapters and separately reviewed conformance.
+The intended implementation progression is:
+
+| Stage | Profiles | Additional specialization evidence |
+| --- | --- | --- |
+| First checkpoint | C_OS | C rederivation, complete target reference and no-carrier lifecycle. |
+| Independent next branches | A_OS; C_PC | A W-history/initializer oracle; nonnull whole-carrier reset/loss. Neither branch blocks the other. |
+| Remaining non-RG products | C_CI, A_CI, A_PC, C_CI_PC, A_CI_PC | Joint-root/domain and persistent-history combinations, each with its own target, lifecycle and numerical evidence. |
+| Section-based products | C_RG2b, A_RG2b | Exact target completion/section domains and reconstruction; no inherited CI solve or unproved C1 authority. |
+
+Instantiate P9-8.3A.1/.2 for each exact A profile, beginning with A_OS;
+retain P9-8.3C-OS and C-PC and add corresponding C_CI/C_CI_PC/C_RG2b children.
+These are coverage obligations, not ten copies of the shared mechanics or an
+automatic import of the new ATC research potentials/completions into production.
+P9-8.4–8.6 and Tranche 9 apply to each declared supported scope. After the
+all-ten feasibility prerequisite is satisfied, an accepted runtime subset can
+advance independently, but cannot close the whole planned ten-profile
+population or silently erase remaining children.
+
 The accepted concrete expansion vectors cover C profiles. `P9-8.3C-OS`
 executes C_OS identity/resource/reference-map and absent-carrier semantics;
+its native numerical companion must resolve the P9-8.0 reference-cutoff
+counterexample with its own complete identity and independent expectations,
+without editing frozen vectors or claiming their constructed success as a
+native solve. P9-8.1c also requires an admitted candidate-detection fixture.
 `P9-8.3C-PC` separately executes the nonnull carrier reset/loss vector only
 after C_PC's generic and specialization entry gates. `P9-8.3A` is an aggregate
 of two independently reviewed children; both must be accepted for the same
 declared exact A scope before its closure:
 
 - `P9-8.3A.1`: Select and validate the GRC9V4 A-history/initialization binding
-  and construct the independent numerical oracle. Entry requires the exact A
+  and construct the independent numerical oracle during P9-8.0 feasibility,
+  before production entry. Entry requires the exact A
   G2 and consumed-set G3 acceptance plus the accepted port/chart, fixed-row
   initializer and D11-G9 expansion contracts, not their runtime implementation.
   Bind concrete source/target identities, distinct current/reset inputs,
@@ -1869,8 +1996,8 @@ hold the affected child and route the exact missing contract back to a bounded
 Tranche 7 correction through the established authority-to-paper/spec/runtime
 process. Do not invent a GRC9-specific workaround or reopen unrelated accepted
 claims. A missing specialization fixture alone does not reopen generic G2.
-An A template identity is not expansion evidence. The A and C_PC dependencies
-do not hold the C_OS path.
+An A template identity is not expansion evidence. After the all-ten feasibility
+review, A and C_PC runtime dependencies do not hold the C_OS implementation path.
 
 Execute runtime counterparts of every applicable accepted D30, D31, D45,
 and D52 vector, including the exact chirality/phase cases. D37 and D44 are

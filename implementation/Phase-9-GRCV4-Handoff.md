@@ -1,6 +1,73 @@
-# Phase 9 GRCV4 handoff — Tranche 7 closed; ATC research next
+# Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current research priority — 2026-09-24
+## Current work checkpoint — 2026-10-01
+
+Branch: `implementation/grc9v4-tranche-8`. **The user now holds all new
+specialization production work, including P9-8.1a, until all-ten mathematical
+and construction feasibility is closed and reviewed.** The
+[current feasibility record](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md)
+has the scope, ten-row dispositions, proof obligations and first research
+results. The user accepted this bounded checkpoint for commit; the all-ten
+program is open, not an accepted closure. The earlier
+[readiness inventory](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
+is retained with its immediate-start recommendation superseded. Prior planning
+edits are included in this checkpoint.
+
+The existing G3 checker passed, including all 73 typed contract traces and
+the ten exact generic declarations. Three retained readiness tests pass.
+They expose a real numerical-entry boundary: the frozen C_OS source and D30
+target at reference geometry have an eigenvalue at `Lambda_C = 1`, so the
+native selector rejects them. These remain valid allocation/identity
+construction expectations, not native lifecycle evidence. P9-8.3C-OS owns a
+separate admissible numerical fixture, now before production; P9-8.1c needs a compatible admitted
+candidate-detection source. Preserve the frozen vectors and failure tests.
+
+Four additional feasibility tests pass. The existing RG2b completion requires
+`core < outer < center_C`; its section cannot contain the target's zero core,
+for either candidate. A distinct exact reference-baseline calculation shows
+that construction and charge conservation can coexist with negative core
+resource for every positive duration. Its positive control demonstrates only
+bounded reference continuation, not enabled realization closure.
+
+Next mathematical work: boundary-compatible target/continuation construction
+and an RG2b completion satisfying the existing section theorem where possible;
+in parallel with those research questions, establish the A fixed-row/history
+oracle and CI/PC domain bounds. Reuse P9-8.3A.1 ownership before production.
+Review all ten rows and any restrictions together before resuming implementation.
+Do not silently drop a row, change the resource map or bypass an admission check.
+
+Historical tooling still recognizes P9-8.1a's scoped permission; that is not
+enough to proceed under the current user hold. No production files, legacy
+files, accepted evidence, discovery or execution-policy bindings changed.
+Full specialization still includes applicable Tranche 9 obligations. No new
+claim/debt is admitted by these initial research calculations.
+
+## Current implementation direction — 2026-10-01
+
+Continue **P9-8.0 all-ten feasibility** before the production path. Following
+aggregate review, C_OS is the first implementation checkpoint. Keep all ten
+profiles as the intended population: independent
+A_OS/C_PC branches next, remaining CI/PC/CI+PC products, then both RG2b products.
+The [plan](./Phase-9-GRCV4-ImplementationPlan.md#tranche-8-grc9v4-mechanical-specialization)
+and [checklist](./Phase-9-GRCV4-ImplementationChecklist.md#tranche-8-d11-g9-mechanical-specialization)
+retain per-profile oracle, target/history, lifecycle and conformance obligations.
+
+General 7T completion is no longer a blanket prerequisite for this mechanical
+scope. Nine-port candidate detection, request-driven D11-G9 expansion and
+column field coarse/Split have their own contracts. Audit each consumed
+generic dependency; research questions can proceed independently, while the
+all-ten production hold remains in force.
+The expansion request still supplies choices: this is not a general autonomous
+request generator. Completed sparks/hierarchy remain separately unselected.
+
+No runtime work or new machine permission is opened by this planning change.
+P9-8.1a retains its prior scoped permission; later leaves need exact prerequisite
+review and explicit execution-policy openings. All accepted G2/G3, scientific
+admissions and the frozen release remain unchanged. The next work is the
+feasibility construction above, not P9-8.1a or a new general ATC campaign.
+Historical next-step instructions below do not override this checkpoint.
+
+## Research status and separate continuation — 2026-09-24
 
 **All five bounded Candidate-A ATC research programs are accepted and closed.**
 See the [five-realization closeout](./investigations/grc9v4-constitutive-design/decisions/ATCCandidateAResearchClosure.md).
@@ -657,7 +724,9 @@ investigation-local research implementations. No native automatic ATC execution 
 been performed; the ATC-2 research script uses separate ordinary/event calls
 and a finite predeclared target catalogue, not K0's integrated serialized owner.
 
-The plan/checklist reserve **7T** before topology-dependent Tranche 8 runtime.
+Historical 2026-09 reservation, superseded for defined mechanical work by
+the 2026-10-01 direction above: the plan/checklist reserved **7T** before
+topology-dependent Tranche 8 runtime.
 7T must close native automatic construction, target-policy transport, repeated
 operation and save/load/duplicate without an external target catalogue.
 P9-8.1a remains independently eligible under the unchanged scoped permission,
