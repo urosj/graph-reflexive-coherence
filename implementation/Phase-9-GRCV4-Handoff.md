@@ -39,9 +39,64 @@ enabled realizations or native expansion. Reuse the already reviewed RGATC
 auxiliary-completion theorem; do not repeat its discovery or borrow its
 paired A numerical bounds for nine-port graphs or Candidate C.
 
-Next mathematical work: establish A fixed-row/history and strict-gap C
-current/geometry bounds; instantiate boundary completion and CI/PC bounds
-with both-role enabled continuation. Reuse P9-8.3A.1 ownership before production.
+The [fixed-row candidate successor](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
+now has independent bounded mathematical PASS for its physical-domain estimates:
+proposed A row-weight stage binding, A/C regular currents, A history invariance,
+PC source envelopes, local CI/CI+PC contraction, and finite both-role
+continuation for the declared sixteen layouts. The
+[review](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowIndependentReview.md) found
+F1 in the original tests: defining consumers and writer stages could be removed
+without failing them. Three supplied independent assertions and four in-memory
+mutations now close F1 locally on the actual D52 vector; nine focused methods
+pass, including the original four enabled A/C OS ten-step witnesses. Reset is
+not advanced by the live source beat. The user's 2026-10-01 commit instruction
+accepts this bounded research checkpoint; source admission remains separate.
+
+The user prioritized numerical feasibility before RG2b. The
+[OS numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md)
+binds the reviewed raw bound to `edge_l2_v1` and a proposed research tolerance
+2^-40; Href=I makes both exact-real ceilings smaller than tolerance/128.
+Five focused tests independently check normalized PSD admission and actual
+staged binary64 arithmetic, with separate current-block error enclosures and
+high-precision/supplied-H controls. All 42 source/target evaluations pass split
+admission, yet lose geometry-to-current discrimination. Off-diagonals remain
+nonzero; Read-Back, C modulation and A history evolution survive. A's writer
+also loses selected-versus-baseline current discrimination in this witness.
+This is stronger than the earlier publication-only observation, but it is
+not native execution, all-realization pressure or complete numerical closure.
+
+The follow-up review passes the split/loss result within its stated execution
+scope and proves an old-chart A final-history effect ceiling <1.695e-21:
+resource-only search cannot give a robust one-ULP writer discriminator. Its
+matrix controls and exact ceiling are retained; predecessor tests now total
+seven. The stale final work-order paragraph was corrected.
+
+The new [OS effect witness](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md)
+is a separate proposed parameter package, not a precision change or replacement
+of the old loss case. Three focused tests certify both-role D52 interval
+neighborhoods/ten steps and named source/target effects beyond combined full
+evaluation errors. A's returned selected-current/fresh-resource history effects
+also survive into the next current. The [independent D52 review](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md)
+now passes the bounded scientific result with explicitly isolated dependency/
+fixture reconstruction. Two checker gaps were then corrected locally: bind H
+and regenerated H to predictor/corrector sources, and fail closed on truncated
+or nonfinite effect operands/enclosures. Four added regressions bring the
+actual repository run to seven successor plus seven predecessor methods, all
+passing; legitimate zero residual remains admissible. No parameters, tolerance
+or precision changed. The user's 2026-10-01 commit instruction accepts the
+reviewed bounded checkpoint and its corrections, not complete native admission
+or all-ten closure. Next recheck the affected
+CI/PC/CI+PC bounds before reusing these inputs for RG2b; do not restart the
+witness search. The original all-realization upper bounds do not transfer automatically.
+Carrier balls remain symmetric and star-supported; event transfer is separate.
+
+After that realization rebinding: the actual nine-port RG2b completion, including
+state/history Lipschitz estimates, auxiliary inverse and section budgets,
+and both-role physical agreement. A's physical $E\ge0$ argument does not extend
+to signed auxiliary C; its cutoff/W domain needs its own bounds. The small ATC
+example supplies none of those graph-specific hypotheses. Complete profile/target/numerical and
+event/carrier/lifecycle obligations remain after this mathematics.
+Reuse P9-8.3A.1 ownership before production.
 Review all ten rows and any restrictions together before resuming implementation.
 Do not silently drop a row, change the resource map or bypass an admission check.
 

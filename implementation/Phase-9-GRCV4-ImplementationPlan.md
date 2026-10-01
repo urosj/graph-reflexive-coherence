@@ -1893,6 +1893,48 @@ coordinates are signed. Record and reconcile the observed pre-existing ATC
 support-hash drift before claiming fresh typed ATC ancestry; do not repin it
 as a shortcut. All ten dispositions and the production hold remain unchanged.
 
+The [fixed-row candidate successor](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
+has independent bounded mathematical PASS for the proposed A stage/history
+binding and A/C physical-domain bounds. It derives strict-gap/regular currents,
+finite continuation, PC source envelopes and local CI/CI+PC contraction with
+nonzero gains. The review's F1 mechanism/stage coverage gap is now locally
+closed by independent expectations and four in-memory mutation rejections
+on the actual vector setup; nine focused tests include bounded OS witnesses.
+The user then prioritized normalized OS admission and represented-mechanism
+feasibility before RG2b. The [numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md)
+binds Href=I to the exact spectral/Frobenius inequality and proposed research
+tolerance 2^-40. Five focused tests check the exact normalized PSD decision,
+separate current-block enclosures and staged binary64 source/D52 continuations.
+Split admission passes in all 42 evaluations, but geometry-to-current and A
+writer selected-current discrimination do not survive; Read-Back, C modulation,
+off-diagonal H and A history do. This is not a numerical-profile closure.
+The review retains that negative result and proves a stronger old-chart A
+writer ceiling: resource-only changes cannot supply a robust one-ULP final-W
+discriminator. Its matrix controls and exact ceiling are now tests, and the
+stale work-order paragraph is corrected. The separate
+[OS effect witness](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md) changes
+sensitivities/history amplitude, not topology or arithmetic. New interval
+neighborhoods certify both-role D52 continuation; named geometry, final-history
+and subsequent-current effects clear combined full errors plus a ULP margin.
+The [independent D52 review](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md)
+passes the bounded result within its explicitly isolated reconstruction scope.
+Its F1/F2 checker findings are closed locally: authenticate both geometry
+assemblies against their distinct source stages and reject truncated/nonfinite
+effect operands. Four new regression methods bring the focused run to seven
+successor plus seven predecessor tests against actual repository dependencies.
+Parameters and numerical criteria are unchanged; no renewed witness search
+is indicated. The user's 2026-10-01 commit instruction accepts this bounded
+checkpoint, not all-ten closure. Next recheck affected CI/PC/CI+PC bounds before
+RG2b reuse. No old all-realization constant or native
+complete profile is silently replaced.
+
+After review and the affected realization rebinding, derive the actual nine-port
+completion/inverse/section bounds. Small ATC domains and constants do not
+transfer; signed auxiliary C does not inherit the physical nonnegative-exponent
+argument. Carrier domains require symmetry and star support, not just a norm
+ceiling. Complete profile/event/carrier/lifecycle preimages also remain open.
+Keep user acceptance and all-ten aggregate review before production.
+
 Execute the following before any new specialization production source or
 runtime-test work (including P9-8.1a). Use local research scripts/oracles and
 existing primitives read-only where useful; no general numerical reruns.

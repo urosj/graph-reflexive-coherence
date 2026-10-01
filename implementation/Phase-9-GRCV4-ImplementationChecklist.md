@@ -1650,6 +1650,54 @@ Tranche 7 and current execution permissions remain unchanged.
   - [x] Identify reviewed RGATC boundary-completion mathematics for reuse and
     demonstrate the signed auxiliary inverse needed by an inward zero-core
     target. Its paired A constants/native status are not transferred to GRC9V4.
+  - [x] Derive [nine-port fixed-row candidate bounds](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
+    and retain their independent oracle: proposed A stage binding and history
+    interval, strict-gap C current, nonzero-read rate/source bounds, PC envelope,
+    local CI/CI+PC contraction and finite continuation. Independent bounded
+    mathematical PASS includes the proposed A stage binding. The user's
+    2026-10-01 commit instruction accepts this bounded checkpoint; complete
+    preimages, numerical admission and aggregate closure remain separate.
+  - [x] Close review F1 locally: integrate the supplied A geometry, C modulation
+    and actual writer-output assertions; reject all four in-memory mutations
+    on the real D52 vector. Nine focused tests pass, including the original
+    enabled OS witnesses and the source publication-rounding limitation.
+    Retain the inverse-metric derivation and symmetric/star-supported carrier
+    domain without changing parameters or the prescribed resource map.
+  - [x] Bind OS raw H-space mismatch to the actual normalized split contract
+    and proposed research tolerance: Href=I, spectral <= Frobenius, both exact
+    ceilings < 2^-40/128. The [numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md)
+    independently checks the exact normalized PSD admission inequality,
+    equality and nonidentity-reference rejection. This is not complete native
+    profile admission or a uniform chart-wide arithmetic-error certificate.
+  - [x] Test the unchanged source and both-role D52 ten-step witness with
+    staged binary64 arithmetic, independent high-precision/supplied-H controls
+    and separate exact current-block error enclosures. Five focused tests:
+    split admission passes, but geometry-to-current effects disappear in all
+    42 evaluations; off-diagonal H, Read-Back, C modulation and A history remain.
+  - [x] Apply the OS numerical review: retain its bounded PASS/independent
+    execution limits, five extra matrix controls and exact A writer ceiling
+    <1.695e-21 (resource-only search in the old chart cannot give robust
+    one-ULP history discrimination). Correct the stale final work-order paragraph.
+  - [x] Construct a separate [OS effect witness](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md):
+    same topology/arithmetic, explicit revised sensitivities/history, both-role
+    interval neighborhoods and ten-step continuation. Source/target geometry,
+    actual A writer outputs and their next current consumers clear combined
+    full-evaluation errors plus a declared ULP margin. Seven predecessor and
+    three successor methods pass locally. Preserve the old loss regression.
+  - [x] Retain the [bounded D52 review](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md)
+    and its isolated execution boundary. Close F1/F2 in the existing owner:
+    bind predictor/regenerated geometry to distinct source stages; reject
+    incomplete/nonfinite effect vectors and enclosures. Seven successor plus
+    seven predecessor tests pass against actual updated repository dependencies;
+    substituted regeneration fails both verification paths. Keep parameters,
+    precision, tolerances and legitimate zero residuals unchanged.
+  - [x] Record user acceptance of the reviewed bounded OS checkpoint and its
+    checker corrections through the 2026-10-01 commit instruction. This is not
+    native profile binding or all-ten closure. Named-stage effect margins are
+    not uniform all-state/all-realization claims.
+  - [ ] Recheck affected CI/PC/CI+PC estimates
+    before carrying revised inputs into RG2b; no renewed witness search or
+    automatic replacement of the old all-realization package.
   - [ ] Reconcile the pre-existing 23 A_OS support-file hash changes before
     relying on fresh full ATC typed ancestry for successor acceptance. The
     RGATC layer's own retained inventory is exact; no blind admission repin.
@@ -1668,6 +1716,10 @@ Tranche 7 and current execution permissions remain unchanged.
     Re-estimate the reviewed auxiliary completion for fixed-row nine-port A;
     separately prove a selector-safe C completion and both-role physical
     agreement/continuation. No inherited paired-graph constants or C1 claim.
+    Current physical-domain H-Lipschitz bounds do not prove the state-space
+    inverse or graph-transform estimates at signed auxiliary coordinates.
+    Re-estimate exponent, cutoff, positive-W/log/row-denominator and C selector
+    bounds there; do not import the physical $E\ge0$ argument.
   - [ ] Review all ten disposition rows with concrete proof/oracle evidence;
     accept any stated restrictions explicitly. No unresolved row or silently
     dropped profile at production entry without a user-approved scope change.
