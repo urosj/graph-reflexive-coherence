@@ -1,6 +1,295 @@
-# Phase 9 GRCV4 handoff — Tranche 7 closed; ATC research next
+# Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current research priority — 2026-09-24
+## Resume on another machine
+
+This section and the current checkpoint below take precedence over historical
+next-step instructions and setup recipes later in this handoff.
+
+**Checkout:** `implementation/grc9v4-tranche-8`. At handoff preparation the
+latest accepted commit was `d6d3647` (bounded A/C RG2b completion and RG-F1/RG-F2
+corrections), following `238978f` (revised realization bounds) and `62ad076`
+(fixed-row/OS numerical evidence). These accept bounded research results,
+**not all-ten feasibility closure or permission to start P9-8.1a**.
+
+**Transfer requirement:** at preparation, four documentation files had pending
+changes: this handoff, the Phase 9 plan and checklist, and
+`phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md` (paths relative to
+`implementation/`). Commit those changes and publish or otherwise transfer the
+branch before resuming elsewhere. A checkout ending at `d6d3647` alone lacks
+the revised scope/work order. Remote availability has not been verified; this
+handoff does not itself authorize a commit or push.
+
+From the repository root, inspect the received checkout:
+
+```bash
+git branch --show-current
+git log -4 --oneline
+git status --short
+git merge-base --is-ancestor d6d3647 HEAD
+```
+
+Read in this order:
+
+1. The [feasibility register and work order](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#work-order-and-handoff),
+   including the ten-row dispositions and prerequisite/later-work distinction.
+2. P9-8.0 in the [plan](./Phase-9-GRCV4-ImplementationPlan.md) and
+   [checklist](./Phase-9-GRCV4-ImplementationChecklist.md).
+3. The [RG2b completion](./phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md)
+   and [accepted review/corrections](./phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md),
+   using their predecessor links for the revised bounds and OS evidence.
+
+**First deliverable:** reconcile the exact all-ten scopes in the existing
+feasibility register/checklist: parameters, source/target graphs and capacities,
+candidate/backend and stages, resource/history/geometry/carrier domains, both
+current/reset roles, and continuation horizon. Map the already accepted bounds
+to those scopes and name the remaining obligations. The revised enabled
+source/D52 evidence is not an enabled sixteen-layout result. Do not widen its
+scope, drop a profile, or rerun accepted proofs merely to mark this reconciliation.
+
+Only then proceed to the A/C RG research section evaluator: combined inverse,
+truncation and full-evaluation errors plus survival of defining effects, with
+the frozen global completion applied at every nested inverse query. Remaining
+CI/PC/CI+PC numerical checks and exact event/oracle bindings follow the work
+order. No `src/` implementation, native admission or new support declaration
+is authorized by this handoff. ATC ancestry maintenance and general autonomous
+topology research are separate; the small ATC examples are not nine-port evidence.
+
+### Local environment and lean verification
+
+All inputs for this continuation are tracked in the repository. No external
+review bundle, historical handoff ZIP, machine-local output folder, browser
+setup or ATC loader is required for the focused P9-8.0 research checks.
+The virtual environment is ignored and must be available locally. Reuse an
+existing compatible `.venv`; on a new checkout, the following setup uses the
+Python 3.12 series used for the accepted local run (3.12.3):
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -e ".[v4]" "mpmath==1.3.0"
+```
+
+The `v4` extra pins NumPy, RFC8785 and JSON Schema dependencies in
+`pyproject.toml`; `mpmath` is explicitly added for these research checkers.
+Installing dependencies requires an available package source; the repository
+does not supply an offline environment or establish cross-platform bitwise
+identity merely by documenting this setup.
+
+No numerical rerun is needed just to reconcile scope. If a new-machine
+dependency/numerical smoke check is needed, run the focused owner from the
+repository root:
+
+```bash
+.venv/bin/python implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py
+```
+
+The accepted local run passed eight methods, including the 50-state-box
+calculation and RG-F1/RG-F2 regressions. A fresh run is a new validation, not
+the original accepted execution; do not overwrite retained evidence. Do not
+run the full Phase 9, browser or historical ATC suites merely to resume.
+
+## Current work checkpoint — 2026-10-01
+
+Branch: `implementation/grc9v4-tranche-8`. **The user now holds all new
+specialization production work, including P9-8.1a, until all-ten mathematical
+and construction feasibility is closed and reviewed.** The
+[current feasibility record](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md)
+has the scope, ten-row dispositions, proof obligations and first research
+results. The user accepted the initial bounded checkpoint at `45c0808`;
+the all-ten program is open, not an accepted closure. The earlier
+[readiness inventory](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
+is retained with its immediate-start recommendation superseded. Prior planning
+edits are included in this checkpoint.
+
+**Current P9-8.0 work order:**
+
+1. Pin the all-ten scopes and reconcile the accepted bounded evidence: exact
+   graphs/capacities, parameters, domains, backend/stages, both roles and horizon.
+2. Complete bounded numerical feasibility: first the A/C RG research section
+   evaluator/error/effect certificate, then outstanding CI/PC/CI+PC checks.
+3. Finish exact research-profile/event inputs and independent A/C oracles,
+   including explicit W/Z transfer and the shared compatibility argument.
+4. Review all ten together and obtain user acceptance of the aggregate scope.
+
+Independent oracle work may overlap numerical feasibility. Do not repeat the
+accepted source/D52 continuation, CI/PC envelope or RG section proofs merely
+because native admission is pending. Complete research-profile preimages are
+required here; production registration and integration are not. P9-8.1–8.3
+own native mechanics/backend/profile work, P9-8.3–8.6 runtime/deep/covariance
+conformance, and Tranche 9 mandatory lifecycle and forty disabled executions.
+Those later obligations remain required, but are not P9-8.0 execution gates.
+The [current scope and work order](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#work-order-and-handoff)
+controls continuation; historical next-step statements do not restart earlier research.
+
+The existing G3 checker passed, including all 73 typed contract traces and
+the ten exact generic declarations. Three retained readiness tests pass.
+They expose a real numerical-entry boundary: the frozen C_OS source and D30
+target at reference geometry have an eigenvalue at `Lambda_C = 1`, so the
+native selector rejects them. These remain valid allocation/identity
+construction expectations, not native lifecycle evidence. P9-8.3C-OS owns a
+separate admissible numerical fixture, now before production; P9-8.1c needs a compatible admitted
+candidate-detection source. Preserve the frozen vectors and failure tests.
+
+Four additional feasibility tests pass. The existing RG2b completion requires
+`core < outer < center_C`; its section cannot contain the target's zero core,
+for either candidate. A distinct exact reference-baseline calculation shows
+that construction and charge conservation can coexist with negative core
+resource for every positive duration. Its positive control demonstrates only
+bounded reference continuation, not enabled realization closure.
+
+The new [boundary-continuation research](./phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md)
+is accepted as a bounded checkpoint by the user's commit instruction, not as
+enabled-profile closure. Five focused tests establish an exact reference recipe
+over sixteen layouts, both roles and ten steps; positive source preimages,
+fresh fixed-row candidate conditions, strict selector and perturbation margins,
+and a signed auxiliary inverse. This is reference-control evidence, not ten
+enabled realizations or native expansion. The reusable mathematical idea is
+an auxiliary inverse/graph-transform contraction, not an ATC fission result.
+The new self-contained nine-port proof below imports no ATC package, constants,
+fixture or authority; the small ATC example is not specialization evidence.
+
+The [fixed-row candidate successor](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
+now has independent bounded mathematical PASS for its physical-domain estimates:
+proposed A row-weight stage binding, A/C regular currents, A history invariance,
+PC source envelopes, local CI/CI+PC contraction, and finite both-role
+continuation for the declared sixteen layouts. The
+[review](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowIndependentReview.md) found
+F1 in the original tests: defining consumers and writer stages could be removed
+without failing them. Three supplied independent assertions and four in-memory
+mutations now close F1 locally on the actual D52 vector; nine focused methods
+pass, including the original four enabled A/C OS ten-step witnesses. Reset is
+not advanced by the live source beat. The user's 2026-10-01 commit instruction
+accepts this bounded research checkpoint; source admission remains separate.
+
+The user prioritized numerical feasibility before RG2b. The
+[OS numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md)
+binds the reviewed raw bound to `edge_l2_v1` and a proposed research tolerance
+2^-40; Href=I makes both exact-real ceilings smaller than tolerance/128.
+Five focused tests independently check normalized PSD admission and actual
+staged binary64 arithmetic, with separate current-block error enclosures and
+high-precision/supplied-H controls. All 42 source/target evaluations pass split
+admission, yet lose geometry-to-current discrimination. Off-diagonals remain
+nonzero; Read-Back, C modulation and A history evolution survive. A's writer
+also loses selected-versus-baseline current discrimination in this witness.
+This is stronger than the earlier publication-only observation, but it is
+not native execution, all-realization pressure or complete numerical closure.
+
+The follow-up review passes the split/loss result within its stated execution
+scope and proves an old-chart A final-history effect ceiling <1.695e-21:
+resource-only search cannot give a robust one-ULP writer discriminator. Its
+matrix controls and exact ceiling are retained; predecessor tests now total
+seven. The stale final work-order paragraph was corrected.
+
+The new [OS effect witness](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md)
+is a separate proposed parameter package, not a precision change or replacement
+of the old loss case. Three focused tests certify both-role D52 interval
+neighborhoods/ten steps and named source/target effects beyond combined full
+evaluation errors. A's returned selected-current/fresh-resource history effects
+also survive into the next current. The [independent D52 review](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md)
+now passes the bounded scientific result with explicitly isolated dependency/
+fixture reconstruction. Two checker gaps were then corrected locally: bind H
+and regenerated H to predictor/corrector sources, and fail closed on truncated
+or nonfinite effect operands/enclosures. Four added regressions bring the
+actual repository run to seven successor plus seven predecessor methods, all
+passing; legitimate zero residual remains admissible. No parameters, tolerance
+or precision changed. The user's 2026-10-01 commit instruction accepts the
+reviewed bounded checkpoint and its corrections, not complete native admission
+or all-ten closure; commit `62ad076` retains that chain. The original
+all-realization upper bounds do not transfer automatically.
+Carrier balls remain symmetric and star-supported; event transfer is separate.
+
+The new [revised realization bounds](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md)
+complete the requested CI/PC/CI+PC re-estimation for both candidates. Eight
+focused research methods pass. Fifty state boxes over the same source/D52
+layout certify regular currents, unique local joint roots, an invariant
+carrier ball, and ten positive target steps for both roles. The new domain
+uses geometry infinity radius 2^-20 and symmetric/star-supported carrier
+Frobenius radius 2^-22; source norms are <8e-8 and root contractions <2e-6.
+These are shared exact-real inclusion bounds, not six native trajectories or
+inherited OS numerical-effect margins. Complete profile/domain identities,
+represented root/writer checks and explicit carrier event transfer remain
+open. The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md)
+passes the bounded mathematics with an isolated execution boundary. Its two
+checker gaps are closed locally: independently cover every supported geometry
+coordinate, and bind the source norm to the complete matrix entry sum. Three
+added methods reject narrowed geometry and max-entry norm substitutions,
+including through the actual tube path. The full eight-method owner passes
+on current repository dependencies; no parameters or stage bounds changed.
+The user's 2026-10-01 acceptance and commit instruction accepts this bounded
+checkpoint, committed at `238978f`, not complete profile admission or all-ten closure.
+
+The new [nine-port RG2b completion](./phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md)
+derives those hypotheses directly for both A and C on the source/D52 graphs.
+A separate signed-resource/scaled-log-history argument retraction gives a
+globally bounded increment, auxiliary inverse and unique completion-relative
+Lipschitz section. No ATC trigger/partition proof is used. Global section
+contractions are about 6.28e-5 (A) and 0.002224 (C); signed inverse enclosures
+and 50 physical state boxes certify both-role ten-step positive continuation.
+Eight focused research methods pass. Negative auxiliary A exponents are
+explicitly allowed; physical resources and the prescribed zero-core map are
+unchanged. The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md)
+passes the bounded mathematics with an isolated dependency execution boundary.
+Its RG-F1/RG-F2 checker gaps are closed locally: twelve independent frozen-
+retraction cases reject fourteen narrowed-clamp substitutions; all four inverse
+queries now bind the complete returned point to its residual/error. Stale,
+zeroed and final-coordinate-corrupted certificates fail, including through the
+actual evidence consumer. Three added methods preserve the original formulas,
+budgets and 50-box calculation. The user explicitly accepted this bounded
+checkpoint and its corrections on 2026-10-01 and requested a commit. This does
+not accept complete profile admission or all-ten closure; commit `d6d3647`
+retains the accepted checkpoint. The new binding
+does not replace the old native completion or give C1 authority.
+
+After scope reconciliation, the next substantive calculation is the research
+section evaluator with certified inversion, truncation/evaluation errors and
+defining effects for this recipe. The existence theorem is not that numerical
+certificate. Apply the frozen global completion at every nested inverse query;
+one inverse-containment estimate does not confine arbitrary backward depth to
+physical tubes. The remaining profile/event/oracle bindings and compatibility
+proof precede the aggregate review; native lifecycle execution follows later.
+Reuse P9-8.3A.1 ownership for A oracles. Do not silently drop a row, change the
+resource map or bypass an admission check.
+
+Separate ATC maintenance, not P9-8.0 entry work: the attempted ATC context fails
+closed on 23 pre-existing changed A_OS supporting source/test hashes; the RGATC layer's
+own inventory is exact. The successor note retains observation identities.
+No fresh full ATC ancestry trace, hash repin or scientific widening is claimed.
+Reconcile the drift before relying on that loader for new ATC source admission;
+the new self-contained nine-port proof does not use it as a dependency.
+This item is retained under the investigation/7T reservation in the checklist,
+outside P9-8.0's required closure list.
+
+Historical tooling still recognizes P9-8.1a's scoped permission; that is not
+enough to proceed under the current user hold. No production files, legacy
+files, accepted evidence, discovery or execution-policy bindings changed.
+Full specialization still includes applicable Tranche 9 obligations. No new
+claim/debt is admitted by these initial research calculations.
+
+## Current implementation direction — 2026-10-01
+
+Continue **P9-8.0 all-ten feasibility** before the production path. Following
+aggregate review, C_OS is the first implementation checkpoint. Keep all ten
+profiles as the intended population: independent
+A_OS/C_PC branches next, remaining CI/PC/CI+PC products, then both RG2b products.
+The [plan](./Phase-9-GRCV4-ImplementationPlan.md#tranche-8-grc9v4-mechanical-specialization)
+and [checklist](./Phase-9-GRCV4-ImplementationChecklist.md#tranche-8-d11-g9-mechanical-specialization)
+retain per-profile oracle, target/history, lifecycle and conformance obligations.
+
+General 7T completion is no longer a blanket prerequisite for this mechanical
+scope. Nine-port candidate detection, request-driven D11-G9 expansion and
+column field coarse/Split have their own contracts. Audit each consumed
+generic dependency; research questions can proceed independently, while the
+all-ten production hold remains in force.
+The expansion request still supplies choices: this is not a general autonomous
+request generator. Completed sparks/hierarchy remain separately unselected.
+
+No runtime work or new machine permission is opened by this planning change.
+P9-8.1a retains its prior scoped permission; later leaves need exact prerequisite
+review and explicit execution-policy openings. All accepted G2/G3, scientific
+admissions and the frozen release remain unchanged. The next work is the
+feasibility construction above, not P9-8.1a or a new general ATC campaign.
+Historical next-step instructions below do not override this checkpoint.
+
+## Research status and separate continuation — 2026-09-24
 
 **All five bounded Candidate-A ATC research programs are accepted and closed.**
 See the [five-realization closeout](./investigations/grc9v4-constitutive-design/decisions/ATCCandidateAResearchClosure.md).
@@ -657,7 +946,9 @@ investigation-local research implementations. No native automatic ATC execution 
 been performed; the ATC-2 research script uses separate ordinary/event calls
 and a finite predeclared target catalogue, not K0's integrated serialized owner.
 
-The plan/checklist reserve **7T** before topology-dependent Tranche 8 runtime.
+Historical 2026-09 reservation, superseded for defined mechanical work by
+the 2026-10-01 direction above: the plan/checklist reserved **7T** before
+topology-dependent Tranche 8 runtime.
 7T must close native automatic construction, target-policy transport, repeated
 operation and save/load/duplicate without an external target catalogue.
 P9-8.1a remains independently eligible under the unchanged scoped permission,
@@ -1886,7 +2177,10 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Tranche 7 and exact consumed-set G3 are accepted; verify their acceptance
-> record and current boundary. P9-8.1a fixed chart/port graph is next, not the
-> A-expansion oracle or disabled compatibility. Preserve all later leaf gates.
-> Do not implement or change branches until I authorize continuation.
+> Resume branch `implementation/grc9v4-tranche-8` with the scope clarification
+> after accepted checkpoint `d6d3647`. First reconcile the exact all-ten P9-8.0
+> scopes and accepted evidence in the existing feasibility register/checklist.
+> The next calculation after that is RG section numerical feasibility, not
+> P9-8.1a production. Preserve the all-ten hold and use lean, relevant checks;
+> do not repeat accepted proof discovery. Do not change branches, commit,
+> publish, or start production without explicit authorization.

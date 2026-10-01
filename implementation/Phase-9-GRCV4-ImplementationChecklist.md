@@ -2,6 +2,12 @@
 
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
+2026-10-01: all new specialization production work, including P9-8.1a, is held
+pending all-ten mathematical/construction feasibility closure and user review.
+The readiness inventory and initial feasibility probes are complete, not the
+all-ten program. General 7T remains separate; accepted G2/G3 and historical
+machine permissions are unchanged and do not override this current work hold.
+
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
 [phase registry](./ImplementationPhases.md#phase-9-grcv4-substrate-and-grc9v4-specialization).
@@ -56,7 +62,7 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | P9-G0 | Recorded | Branch and planning documents; accepted release audit and no-ff merge identity. |
 | P9-G1 | Accepted | [P9-1.9 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json), exact implementation scope and successor dispatch. |
 | `P9-G2[p]` | Ten exact declarations accepted | Full applicable generic runtime/lifecycle fixture product for exact profile scope p; aggregate P9-7.7 accepted, no broader domains inferred. |
-| `P9-G3[S]` | Accepted; Tranche 7 closed | Ten exact generic declarations consumed; scoped P9-8.1a chart/port-graph entry only, no specialization conformance. |
+| `P9-G3[S]` | Accepted; Tranche 7 closed | Ten exact generic declarations consumed; historical P9-8.1a permission retained but production held by the user pending all-ten feasibility review. No specialization conformance. |
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
 The initially empty generic support set now contains exact C_OS, A_OS,
@@ -1574,26 +1580,231 @@ permissions are unchanged. Detailed implementation leaves await scientific
 closure; this is a dependency reservation, not runtime authorization.
 
 - [x] Reserve investigation → reviewed topology proposal → extension paper →
-  normative specification/release → 7T → dependent specialization.
+  normative specification/release → 7T → specialization that actually consumes
+  those new autonomous contracts. The blanket Tranche 8 dependency is superseded
+  by the 2026-10-01 scoped mechanical continuation.
 - [ ] Accept the relevant ATC claim/debt results and ordered propagation.
 - [ ] Derive scoped 7T implementation leaves from the accepted contracts.
 - [ ] Demonstrate a policy-generated event reached through ordinary evolution,
   complete target admission and continued evolution, with negative controls.
 - [ ] Reconcile generic/GRC9V4 ownership and Tranches 8–10 dependencies;
   bind exact prerequisites before any later execution-policy opening.
+- [ ] ATC investigation maintenance: reconcile the pre-existing 23 A_OS
+  support-file hash changes before relying on fresh full ATC typed ancestry
+  for ATC successor acceptance. The RGATC inventory is exact; no blind repin.
+  This is not a P9-8.0 or P9-8.1a prerequisite: the new nine-port completion
+  proof is self-contained and does not consume that ancestry.
 
-P9-8.1a chart/port preparation remains independently eligible. Other
-independent mathematical/source/oracle preparation keeps its existing scope.
-Topology-dependent trigger/Split/expansion runtime and integration await
-their applicable generic contracts. No optional spark/hierarchy capability,
-new G2/G3 support or specialization conformance is inferred.
+P9-8.1a retains its existing scoped permission. Specified nine-port candidate
+detection, request-driven expansion and column field coarse/Split do not await
+general ATC, but all new production now awaits the separate all-ten feasibility
+review below. Later runtime leaves require their exact existing generic and
+specialization contracts and scoped execution permission. A missing new
+autonomous contract holds only its consumers. No optional spark/hierarchy,
+automatic complete request generation or specialization conformance is inferred.
 
 ## Tranche 8. D11-G9 mechanical specialization
 
-Entry is the reviewed `P9-G3[S]` scope, potentially C_OS alone. P9-8.1 and
-P9-8.3 are parent registers; their child scopes are independently reviewed.
-The reserved 7T dependency additionally applies to topology-dependent
-execution; this does not reopen the accepted Tranche 7 baseline.
+Entry is the accepted G3 set of ten exact generic declarations, not ten
+conformant nine-port models. Review mathematical feasibility for all ten before
+production; then start with C_OS and retain the full population.
+P9-8.1 and P9-8.3 are parent registers with independently reviewed children.
+General 7T is not a prerequisite for the defined mechanical scope. Accepted
+Tranche 7 and current execution permissions remain unchanged.
+
+- [ ] P9-8.0: Close and review all-ten mathematical/construction feasibility
+  before any new specialization production work, including P9-8.1a.
+  The [readiness inventory](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
+  and [initial feasibility record](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md)
+  are performed, not accepted all-ten closure. Checked G3/73-contract
+  reconstruction, three readiness tests and four feasibility tests pass;
+  no specialization runtime executed.
+  Closure means independently justified, numerically feasible constructions
+  for all ten declared scopes, not ten native implementations. P9-8.1a's chart
+  authority is available; the all-ten feasibility hold still precedes using it.
+  Completed evidence below is retained; the ordered remaining work follows it.
+
+  - [x] Map chart/ports, row backend/weights, candidate detection, D11-G9
+    expansion, field coarse/Split and lifecycle to spec/paper/typed authority
+    and actual runtime prerequisites. Do not equate field Split with fission.
+  - [x] Account for source selection, capacity, chirality, conditional phase,
+    resource shares, target template/reference, bond seed and W/Z policies;
+    distinguish resolved/source-derived operands from supplied request data.
+  - [x] Nominate exact combined identities and source/target domains; check
+    numerical admission, zero-resource targets, distinct current/reset roles,
+    complete C maps, A initialization and whole-carrier dispositions.
+    Construction identities nominated, not admitted as native runtime;
+    unconstructed identities remain held by their per-profile oracle owners.
+    Confirmed exact reference-cutoff failures on frozen C_OS source/D30 target
+    route to P9-8.3C-OS's preproduction oracle work, not to an alteration of the
+    resource map or selector. This inventory check does not close admission.
+  - [x] Inventory independent vectors/oracles and missing profile-specific
+    evidence; retain P9-8.3A.1 and prohibit production-as-oracle expectations.
+  - [x] Bind mandatory lifecycle, deep/covariance and four disabled surfaces
+    per advertised profile; retain all 40 planned compatibility cells.
+  - [x] Explicitly exclude general ATC, automatic complete request generation,
+    completed sparks and hierarchy. Route genuinely missing authority through
+    claims/paper/spec; allow independent research under the aggregate production hold.
+  - [x] Identify later scoped policy openings without granting them in this
+    review. No blanket Tranche 8/9 authorization or numerical rerun credit.
+  - [x] Apply the user-directed all-ten production hold; preserve historical
+    permissions without treating them as current authorization to proceed.
+  - [x] Retain initial obstruction/control calculations: existing RG2b chart
+    excludes zero core for both candidates; reference-baseline continuation
+    can fail despite charge conservation; a distinct positive control is bounded.
+  - [x] Construct the [bounded reference continuation](./phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md):
+    positive source preimage and fresh row candidate, sixteen role layouts,
+    distinct current/reset resources, ten exact target steps, selector gap,
+    resource perturbation budget and covariance. Five focused tests pass;
+    enabled realizations are not certified by this control.
+  - [x] Identify the general auxiliary inverse/graph-transform argument and
+    demonstrate the signed inverse needed by an inward zero-core target.
+    The small ATC fission certificate is not nine-port evidence. The successor
+    below is self-contained and imports no ATC package, fixture or constants.
+  - [x] Derive [nine-port fixed-row candidate bounds](./phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md)
+    and retain their independent oracle: proposed A stage binding and history
+    interval, strict-gap C current, nonzero-read rate/source bounds, PC envelope,
+    local CI/CI+PC contraction and finite continuation. Independent bounded
+    mathematical PASS includes the proposed A stage binding. The user's
+    2026-10-01 commit instruction accepts this bounded checkpoint; complete
+    preimages, numerical admission and aggregate closure remain separate.
+  - [x] Close review F1 locally: integrate the supplied A geometry, C modulation
+    and actual writer-output assertions; reject all four in-memory mutations
+    on the real D52 vector. Nine focused tests pass, including the original
+    enabled OS witnesses and the source publication-rounding limitation.
+    Retain the inverse-metric derivation and symmetric/star-supported carrier
+    domain without changing parameters or the prescribed resource map.
+  - [x] Bind OS raw H-space mismatch to the actual normalized split contract
+    and proposed research tolerance: Href=I, spectral <= Frobenius, both exact
+    ceilings < 2^-40/128. The [numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md)
+    independently checks the exact normalized PSD admission inequality,
+    equality and nonidentity-reference rejection. This is not complete native
+    profile admission or a uniform chart-wide arithmetic-error certificate.
+  - [x] Test the unchanged source and both-role D52 ten-step witness with
+    staged binary64 arithmetic, independent high-precision/supplied-H controls
+    and separate exact current-block error enclosures. Five focused tests:
+    split admission passes, but geometry-to-current effects disappear in all
+    42 evaluations; off-diagonal H, Read-Back, C modulation and A history remain.
+  - [x] Apply the OS numerical review: retain its bounded PASS/independent
+    execution limits, five extra matrix controls and exact A writer ceiling
+    <1.695e-21 (resource-only search in the old chart cannot give robust
+    one-ULP history discrimination). Correct the stale final work-order paragraph.
+  - [x] Construct a separate [OS effect witness](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md):
+    same topology/arithmetic, explicit revised sensitivities/history, both-role
+    interval neighborhoods and ten-step continuation. Source/target geometry,
+    actual A writer outputs and their next current consumers clear combined
+    full-evaluation errors plus a declared ULP margin. Seven predecessor and
+    three successor methods pass locally. Preserve the old loss regression.
+  - [x] Retain the [bounded D52 review](./phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md)
+    and its isolated execution boundary. Close F1/F2 in the existing owner:
+    bind predictor/regenerated geometry to distinct source stages; reject
+    incomplete/nonfinite effect vectors and enclosures. Seven successor plus
+    seven predecessor tests pass against actual updated repository dependencies;
+    substituted regeneration fails both verification paths. Keep parameters,
+    precision, tolerances and legitimate zero residuals unchanged.
+  - [x] Record user acceptance of the reviewed bounded OS checkpoint and its
+    checker corrections through the 2026-10-01 commit instruction. This is not
+    native profile binding or all-ten closure. Named-stage effect margins are
+    not uniform all-state/all-realization claims.
+  - [x] Recheck affected CI/PC/CI+PC estimates before RG2b reuse in the
+    [revised realization bounds](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md).
+    The original five methods establish 50 source/target state-box bounds for both
+    candidates: regular currents, local joint roots, symmetric/star-supported
+    carrier-ball invariance and both-role ten-step continuation. These are
+    exact-real research results, not six native runs
+    or automatic replacement of old all-realization/profile identities.
+  - [x] Retain the [independent revised-bounds audit](./phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md)
+    and its isolated execution limit. Close RR-F1/RR-F2 locally: verify the full
+    geometry coordinate hull from endpoint support and bind the source norm
+    scalar to the complete matrix sum. Three new methods reject the three
+    narrowed enclosures and max-entry scalar, including actual tube-path
+    mutations. All eight methods and unchanged 50 boxes pass against current
+    repository dependencies. The user's 2026-10-01 acceptance and commit
+    instruction accepts the bounded checkpoint (`238978f`). No parameter search, source
+    admission or production authorization is inferred.
+  - [x] Derive the [new nine-port RG2b completion](./phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md)
+    directly for A/C source and D52: signed-resource/scaled-log-history
+    retraction of increment arguments, global state/history/geometry slopes,
+    selector/floor margins, auxiliary inverse, compact containment and a
+    completion-relative bounded Lipschitz section. The original five methods pass;
+    50 state boxes establish both-role ten-step physical continuation. This is
+    bounded research, not C1 or native admission; review corrections follow.
+  - [x] Retain the [bounded RG2b review](./phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md)
+    and its isolated dependency boundary. Close RG-F1/RG-F2 locally: twelve
+    signed/near-face/exterior controls reject fourteen narrowed-clamp cases;
+    all four inverse queries independently bind every returned coordinate to
+    residual/error and reject stale/zeroed/corrupted certificates. Mutations
+    reach the actual evidence consumer. Three new methods bring the current
+    repository run to eight passing methods, including unchanged 50-box
+    continuation. No parameters, completion domains or tolerances changed.
+  - [x] User accepts the bounded reviewed RG2b completion and checker corrections
+    through the explicit 2026-10-01 acceptance and commit instruction. Retain
+    the old native zero-core incompatibility without altering the resource map.
+    Complete profile admission and all-ten production authorization remain open.
+  - [x] Establish bounded both-role boundary viability and enabled continuation
+    in the accepted source/D52 work: OS witnesses, CI joint-root and PC/CI+PC
+    envelope bounds, and RG sections. These are the declared finite-horizon
+    results, not an arbitrary-graph or all-parameter theorem. Persistent
+    continuation remains conditional on a lawful carrier event policy.
+    Reconcile their exact scopes below; do not repeat the accepted derivations.
+  - [x] Resolve the zero-resource obstruction mathematically with the accepted
+    new A/C RG2b completion (`d6d3647`) on its source/D52 domain. Preserve the
+    old native completion's incompatibility and the prescribed resource map.
+    Represented evaluation and complete research-profile binding remain below;
+    no native replacement, C1 or completion-independent claim follows.
+
+  Remaining P9-8.0 work, in order (independent oracle work may overlap):
+
+  - [ ] Pin the all-ten scope and map accepted evidence to it: exact parameters,
+    source/target graphs and capacities, candidate/backend stages, geometry/
+    history/carrier domains, both roles, duration and continuation horizon.
+    Record every restriction explicitly. A finite union is not its surrounding
+    rectangle; revised D52 evidence does not cover all allocator layouts.
+  - [ ] Complete bounded numerical feasibility for A_RG2b and C_RG2b with a
+    research section evaluator: inversion, truncation and full-evaluation
+    errors plus surviving defining effects. Apply the frozen global completion
+    at every nested query; physical-tube containment is not an arbitrary-depth
+    backward bound. This is not production backend integration or full runtime
+    conformance, nor substitution of CI/OS geometry.
+  - [ ] Complete bounded numerical feasibility for A/C CI, PC and CI+PC on
+    their selected research domains: represented root/error bounds, old-carrier
+    read and same-source writer stages, and defining-effect margins. Reuse
+    accepted OS evidence only for its actual scope; do not import OS margins
+    or require a full native solver/writer acceptance campaign here.
+  - [ ] Finish exact A research-profile/event bindings and the five independent
+    A oracles under P9-8.3A.1: source/target preimages, fixed-row stage/history
+    and reference-current recipes, old/new-edge W policy, separate whole-Z
+    policy, distinct current/reset expected targets and negative cases.
+    Construction evidence precedes implementation; runtime registration,
+    backend serialization/integration and comparisons remain later work.
+  - [ ] Finish exact C research-profile/event bindings and the five C oracles:
+    complete target reference maps, selector/current expectations, realization
+    domains, separate carrier policy where applicable and both-role expected
+    targets. Keep frozen combinatorial vectors distinct from new numerical
+    fixtures; no native admission is asserted by construction alone.
+  - [ ] Close the shared mathematical lifecycle/transfer compatibility argument
+    for those choices: charge, W/Z disposition, target/reset domain inclusion,
+    failure expectations and exact disabled projection. Select and validate
+    explicit carrier event transfer; a carrier norm envelope does not choose
+    it. Reuse accepted generic contracts. Route genuinely missing authority
+    through claims → paper/spec before implementation of its consumers.
+    Actual receipts, rollback, replay and forty disabled-runtime cells are later.
+  - [ ] Review all ten disposition rows with concrete proof/oracle evidence;
+    accept any stated restrictions explicitly. No unresolved row or silently
+    dropped profile at production entry without a user-approved scope change.
+  - [ ] User accepts the aggregate feasibility scope before production resumes.
+
+P9-8.0 does not execute later runtime acceptance: chart/row/backend and allocator
+implementation belong to P9-8.1–8.2; native profile integration and oracle
+comparisons to P9-8.3; deep/covariance/atomicity execution to P9-8.4–8.6; mandatory
+specialization lifecycle and all forty disabled executions to Tranche 9.
+ATC ancestry maintenance remains with the investigation/7T reservation above.
+These obligations are retained, not waived or relabeled as feasibility passes.
+
+After aggregate feasibility review, implementation order: C_OS first;
+then independent A_OS and C_PC branches; remaining
+CI/PC/CI+PC products; both RG2b products last. Shared mechanics are reused;
+target/history/readmission/lifecycle acceptance remains profile-specific.
 
 - [ ] P9-8.1a: Implement and verify the fixed chart and port graph.
 - [ ] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
@@ -1603,12 +1814,20 @@ execution; this does not reopen the accepted Tranche 7 baseline.
   both chiralities, conditional phase, tree construction, and capacity rules.
 - [ ] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource
   distribution, C reference transport, and carrier `not_applicable` semantics.
+  During P9-8.0 feasibility, construct an independently checked, separately identified numerical
+  source/target companion to the frozen allocation vectors; preserve the
+  P9-8.0 exact-cutoff regression. Include distinct current/reset roles, zero
+  resources, source/target admission and continuation. Execute natively only
+  after aggregate feasibility review. Do not reinterpret
+  construction-vector `committed: true` as native numerical success.
 - [ ] P9-8.3C-PC: After C_PC's G2 and G3 entry, execute the separate C_PC
   nonnull carrier reset/loss vector and target readmission. Pending C_PC
-  support does not hold the C_OS child.
+  runtime support does not hold the C_OS child after all-ten feasibility review.
 - [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
-  - [ ] P9-8.3A.1: After exact A G2 and consumed-set G3 acceptance, select and
+  - [ ] P9-8.3A.1: Instantiate for each selected exact A profile, starting with
+    A_OS, during P9-8.0 preproduction feasibility. After exact A G2 and
+    consumed-set G3 acceptance, select and
     validate the specialization A-history/initialization binding and construct
     an independent numerical oracle from the accepted port/chart, fixed-row
     initializer and D11-G9 contracts; no production-runtime prerequisite.
@@ -1616,7 +1835,8 @@ execution; this does not reopen the accepted Tranche 7 baseline.
     reference-current recipe, W/Z loss channels, expected resource/receipt/
     readmission outcomes and rollback cases. Retain outside the frozen release
     as construction evidence; review and accept before runtime comparison.
-  - [ ] P9-8.3A.2: After accepted `.1`, exact A G2/G3 and applicable P9-8.1a–c
+  - [ ] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
+    exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
     independent current/reset targets, reconstruction/readmission, receipts,
     whole-lifecycle rollback and replay. Do not replace expected values with
@@ -1624,7 +1844,30 @@ execution; this does not reopen the accepted Tranche 7 baseline.
   - Escalation: genuinely absent generic authority found in `.1` holds the
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
-    workaround. Do not reopen unrelated G2 or block independent C work.
+    workaround. Do not reopen unrelated G2 or block independent C research;
+    the all-ten production hold remains until aggregate feasibility review.
+
+P9-8.3 per-profile completion register (all include independent targets,
+history channels, readmission, failure/rollback and replay; A rows require
+their own `.1` oracle and `.2` execution acceptance):
+
+- [ ] C_OS — first mechanical checkpoint; complete C references, absent Z.
+- [ ] A_OS — first A oracle/implementation; explicit W history policy.
+- [ ] C_PC — nonnull whole-carrier policy and target continuation.
+- [ ] C_CI — joint target-root/domain evidence, no carrier.
+- [ ] A_CI — A history plus joint target-root/domain evidence.
+- [ ] A_PC — A history plus persistent carrier evidence.
+- [ ] C_CI_PC — coupled root/carrier target evidence.
+- [ ] A_CI_PC — combined W, coupled root and carrier evidence.
+- [ ] C_RG2b — target completion/section reconstruction and domain evidence.
+- [ ] A_RG2b — A history and target completion/section evidence.
+
+These rows nominate no new production profile or ATC completion. Unselected
+or held profiles remain pending and unadvertised. Only after the all-ten
+feasibility prerequisite is reviewed may a partial runtime-accepted subset
+proceed to its applicable P9-8.4–8.6 and Tranche 9 obligations without closing
+the full ten-profile plan.
+
 - [ ] P9-8.4: Execute all applicable accepted D30, D31, D45, and D52 runtime
   counterparts, with exact chirality/phase cases. Add separately labeled
   D37/D44 capacity-shell boundary probes and deeper declared probes. Execute
