@@ -12,13 +12,15 @@ implemented with passing focused tests and committed at `58d5035`. The current
 phase-boundary drift is reconciled; the boundary audit
 passes. See the [reconciliation review](./phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md)
 for the exact roster, verification and separate historical evidence failures.
-P9-8.1a.2 immutable graph admission is now implemented on baseline `abafce0`,
-with focused checks and the current phase-boundary audit passing; see its
+P9-8.1a.2 immutable graph admission is accepted and committed at `37f77df`,
+with focused checks and the phase-boundary audit passing; see its
 [execution note](#p9-81a2-immutable-port-graph-admission).
-The next implementation subitem is P9-8.1a.3 graph payload, digest and generic
-projection.
+P9-8.1a.3 graph envelope/identity/projection is now implemented on that baseline,
+with 80 focused methods, Ruff, mypy and the current phase-boundary audit passing;
+see its [execution note](#p9-81a3-graph-envelope-identity-and-projection).
+The next subitem is P9-8.1a.4 integrated review.
 The existing P9-8.1a permission is unchanged. The [four-subitem breakdown](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown)
-continues with identity/projection and integrated review. These
+continues with integrated review. These
 are implementation checkpoints, not new machine gates. The broader phase
 boundary now passes after the reconciliation below; no parent closure is claimed.
 The chronology below
@@ -210,8 +212,8 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next implementation task:** P9-8.1a.3 graph identity/projection, then
-P9-8.1a.4 integrated review. P9-8.1a.1–.2 are implemented and focused
+**Next implementation task:** P9-8.1a.4 integrated review.
+P9-8.1a.1–.3 are implemented and focused
 verification passes, including the current phase-boundary audit.
 Keep the formal work-manifest iteration `P9-8.1a` and its
 existing scoped source/test permission. The P9-8.0 hold is released; later
@@ -428,6 +430,102 @@ node IDs remain admitted under the schema and generic graph contract, as
 already examined in the `.1` follow-up and `.2` plan; tightening that contract
 would require a separately approved scope change, not an implicit `.3`/`.4`
 cleanup. No resource coordinate or authoritative port cache is introduced.
+
+## P9-8.1a.3 graph envelope, identity and projection
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`, baseline `37f77df`.
+The [topology module](../src/pygrc/models/grc_9_v4_topology.py) extends the admitted
+owner with the exact `port_graph_payload` and `serialized_port_graph` schemas.
+`to_payload()` returns the three-field digest preimage; `to_envelope()` and
+`to_canonical_bytes()` include the computed `graph_digest`. `from_payload()`
+validates the closed schema and collective graph constraints. `from_envelope()`
+also reconstructs and checks the digest. `from_json()` decodes the envelope
+through an explicit `configuration` or `canonical` route using the existing V4
+codec, with no fallback between routes.
+
+`GRC9V4SerializedPortGraph` is an alias for `GRC9V4PortGraph`, preserving a single
+owner. Its `schema_version` and `graph_digest` are read-only computed properties;
+callers supply envelope fields through `from_envelope()`, rather than inject
+identity into the structural constructor. The existing `payload_identity()`
+contract computes `grc-graph-sha256:` plus SHA-256 of the JCS content preimage.
+It excludes the digest itself, preserves declared node/edge array order and
+normalizes only the previously admitted integral JSON numbers. No fixture,
+schema, dependency or generic identity implementation changes are needed.
+
+`generic_projection()` returns a frozen, slotted `GRC9V4GraphProjection` whose
+only stored field is the admitted port owner. It derives nodes, oriented edges,
+edge IDs, node/edge lookup, incident-edge stars and the outward-incidence matrix.
+Loops cancel in incidence but retain their edge coordinates; parallel edges
+retain their IDs and order. Graph identity delegates to the owner. Orientation
+uses the existing `grcv4-ordered-outward-incidence-v1` descriptor over the port
+payload, so ports and kinds remain bound even when generic adjacency is equal.
+The view exposes no standalone graph payload/codec. Its constructor rechecks
+admission and rejects tampered owners with mutable containers or unnormalized
+fields; exported oriented-edge records are disposable copies.
+
+This is a generic topology read surface, not yet numerical backend integration.
+Existing `GRCV4Graph` exact-type gates remain enforced. The P9-8.1b differential/
+row-weight bridge and later native integration must consume the owner-backed
+view without introducing a separately serialized or hashed generic graph.
+No lifecycle codec, event eligibility, allocator or profile conformance follows.
+The parent remains open for `.4` integrated review.
+
+Sixteen new [test methods](../tests/models/test_grc_9_v4_topology.py) verify:
+the frozen `GRC9V4-PORT-GRAPH-PAYLOAD-DIGEST-ENVELOPE` vector and its separate
+frozen canonical preimage; payload-only hashing; both JSON routes; malformed,
+missing, extra and forged envelope fields; numeric/Unicode boundaries; declared
+order, port, kind and orientation identity; input/output detachment; and the
+single-owner projection. Seven independently rehashed structural defects each
+reject through content admission, envelope admission, configuration JSON and
+canonical JSON (28 route/defect cases). These include integer/string membership,
+absent empty-string nodes, duplicate IDs, occupancy reuse and same-port loops.
+Independent ASCII/integer preimages and a literal UTF-8 preimage supplement the
+frozen vector; expected identities are not computed through the new graph codec.
+
+Validation from the repository root:
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -v test_grc_9_v4_topology test_grc_v4_geometry.GraphTests test_grc_v4_codec.CodecTests
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+All **80 methods pass** (39 topology, 16 generic graph, 25 codec), as do Ruff,
+mypy and the **current phase-boundary audit**. The two current source/test work
+entries remain under `P9-8.1a`; only those hashes and the three edited planning
+documents' maintenance hashes are refreshed, along with their record digests.
+The `.1`/`.2` hashes above retain their historical checkpoint meaning.
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_topology.py` | `195dd8bb2ee19a2e1a74979311a7ee15bc11b8b99f0df3b3b90da4410c04d747` |
+| `tests/models/test_grc_9_v4_topology.py` | `106f2d87eff3ca3d0969e4569e6f85541cb12fc70a9b8a3054cb9c013892c1df` |
+
+Historical scientific-source failures retain the separate scopes recorded in
+the binding reconciliation. This discrete graph checkpoint does not rerun or
+reclassify them.
+
+## End-of-Tranche-8 performance and cache review
+
+On 2026-10-02 the user requests a correctness-backed caching review at the end
+of Tranche 8, after P9-8.6 and before Tranche 9. The
+[plan](./Phase-9-GRCV4-ImplementationPlan.md#end-of-tranche-8-performance-and-cache-review)
+and checklist now retain it. Review graph envelope/identity repetition and
+other measured opportunities, with explicit cache validity, complete dependency
+keys/lifetimes, invalidation, bounded memory and cached/uncached equivalence.
+Numerical caches require their own domain/hypothesis evidence; speed alone is
+not acceptance. Optimization is deferred while `.4` reviews structural and wire
+correctness. The user requests committing `.3` and this note before continuing
+to `.4`; that instruction does not close the parent review.
+
+The preceding local probe found that topology's public codec calls do reach
+internal caches. Small warm inputs skip schema walks, but canonicalization and
+hashing repeat. A 100-edge chain's payload exceeded the existing 8 KiB content
+cache bound; envelope admission repeated three schema walks. The new topology
+module has no production callers yet. Remeasure the integrated workload and
+retain reproducible evidence when executing the scheduled review; exploratory
+chat timings are not a performance acceptance baseline.
 
 ## Resume on another machine
 

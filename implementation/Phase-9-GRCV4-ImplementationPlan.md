@@ -5,10 +5,10 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 2026-10-02 current direction: P9-8.0 is complete following explicit acceptance
 of R1–R10 and the aggregate bounded feasibility scope. The all-ten production
 hold is released. Implement P9-8.1a under its existing scoped permission using
-the four subitems below. Chart/endpoint primitives (`.1`) and immutable graph
-admission (`.2`) are implemented and focused checks pass. The current
-phase-boundary audit also passes on the `.2` subject; `.3` graph payload,
-digest and generic projection is next. The reconciliation review records
+the four subitems below. Chart/endpoint primitives (`.1`), immutable graph
+admission (`.2`) and graph envelope/identity/projection (`.3`) are implemented
+and focused checks pass. The current phase-boundary audit also passes on the
+`.3` subject; `.4` integrated review is next. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
 General autonomous topology remains separate under 7T, and later native gates
@@ -2243,6 +2243,26 @@ phase-boundary audit pass with the updated exact work/maintenance bindings.
 See the [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a2-immutable-port-graph-admission).
 The parent remains open for `.3` and `.4`.
 
+P9-8.1a.3 implementation status, 2026-10-02: the admitted port owner now encodes
+and reconstructs the exact content/envelope schemas through the existing V4
+codec. `GRC9V4SerializedPortGraph` aliases that same class; schema version and
+graph digest are computed read-only properties, with supplied envelopes checked
+by `from_envelope()`. Declared array order is preserved; only the content payload
+enters SHA-256/JCS, and a correct digest cannot waive graph admission.
+`GRC9V4GraphProjection` keeps only the admitted port owner and derives generic
+nodes, oriented edges, lookup, stars and incidence. Graph identity delegates to
+the port owner; the existing outward-incidence orientation descriptor binds its
+port payload. The view has no separate graph codec or graph digest preimage.
+Generic numerical consumers still enforce their current exact-type checks;
+adapting the row/differential bridge belongs to P9-8.1b and later native
+integration, not a silent conversion to a separately identified `GRCV4Graph`.
+All 80 focused methods pass (39 topology, 16 generic graph, 25 codec), including
+the frozen payload/envelope and seven rehashed structural defects through four
+admission routes. Ruff, mypy and the current phase-boundary audit pass. See the
+[execution note](./Phase-9-GRCV4-Handoff.md#p9-81a3-graph-envelope-identity-and-projection).
+The parent remains open for `.4` review; no lifecycle or profile conformance is
+claimed by this graph checkpoint.
+
 ##### Profile integration after shared mechanics
 
 After the all-ten feasibility review, use one shared mechanical implementation,
@@ -2315,6 +2335,45 @@ chirality conjugacy vectors, signed-edge reorientation, phase-boundary,
 and target occupancy/resource/history/readmission cases. Existing D52
 construction vectors remain preimplementation evidence; runtime D52 and
 covariance execution are required before arbitrary-size conformance claims.
+
+#### End-of-Tranche-8 performance and cache review
+
+The user requests this review on 2026-10-02, after P9-8.6 and before Tranche 9.
+Keep correctness/admission first; defer optimization of the new graph envelope
+until integrated callers establish actual frequency and cost. The `.3` inquiry
+confirmed that public codec calls reach internal schema/validator/content caches,
+but still copy/canonicalize payloads and hash identities. The successful-content
+cache currently retains at most 128 entries of at most 8 KiB each; larger graph
+payloads repeat validation. Operation contexts reuse verified asset bytes within
+their existing entry/publication checks. These are review inputs, not a mandate
+to raise the global cache limit or weaken the asset boundary.
+
+Profile cold/warm integrated paths, representative graph sizes on both sides
+of the content-cache threshold, and topology-changing workloads. Review canonical
+payload/envelope bytes and derived identities, redundant admission work, graph
+projection/index/incidence reuse, and other measured mechanical or numerical
+recomputation. Do not assume that a reusable matrix, row summary or certificate
+remains valid after a change to topology, orientation, profile, parameters,
+resources, history, current/reset role, stage, context, duration or proof domain.
+
+For every proposed cache, record the derived quantity and authoritative owner,
+the complete typed/content key or immutable-owner lifetime, invalidation and
+replacement rules, memory/eviction bounds, and the argument that a hit implies
+the same computation and admission facts. Preserve deep detachment of exported
+containers, exact identities/receipts, asset/dependency rechecks, atomic failure
+behavior and scientific claim limits. Cached numerical evidence must retain its
+exact domain and hypotheses; equality of convenient labels or Python hashes is
+not sufficient proof of reuse.
+
+Verify cache-on/cache-off equivalence for successful outputs and rejected inputs,
+with warm/cold, changed-key, eviction, replacement, mutation-at-boundary and
+replay controls; include concurrent access where the owning API supports it.
+For numerical work, use the applicable independent oracle/error-bound contract,
+not just agreement between two executions of the same implementation. Retain
+portable benchmarks and validity evidence in the repository and review the
+measured time/memory tradeoff. Keep unproved optimizations disabled and report
+their disposition explicitly. This is a scheduled review under existing work
+owners, not a new execution gate or permission to broaden an accepted scope.
 
 ### Tranche 9. Hybrid completion and disabled compatibility
 

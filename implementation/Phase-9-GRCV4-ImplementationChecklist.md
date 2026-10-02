@@ -2001,14 +2001,25 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     Exact source/test bindings remain under `P9-8.1a`; see the
     [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a2-immutable-port-graph-admission).
     The user explicitly accepts this structural checkpoint and its recorded
-    interpretations on 2026-10-02 (“Great, accept and commit”); `.3`/`.4` remain open.
-  - [ ] P9-8.1a.3: Graph payload, digest and generic projection. Reuse the
+    interpretations on 2026-10-02 (“Great, accept and commit”); `.3`/`.4` were
+    still open at that checkpoint.
+  - [x] P9-8.1a.3: Graph payload, digest and generic projection. Reuse the
     accepted canonicalization and identity contracts; round-trip the port-graph
     envelope and independently recompute its payload-only digest. Provide the
     deterministic read-only generic graph projection with stable edge identity
     and orientation; establish that no second authoritative graph is created.
     Decode through graph admission and project only admitted graphs. Use
     typed/JCS payload identity; Python hashes confer no graph identity.
+    Implemented on the same graph owner, with an alias for the normative
+    `GRC9V4SerializedPortGraph` name and computed schema/digest properties.
+    The immutable generic topology view retains only the admitted port owner;
+    its identities delegate to that owner and it exposes no separate codec.
+    All 80 focused methods pass (39 topology, 16 generic graph, 25 codec),
+    including the frozen vector and seven rehashed structural defects through
+    four admission routes. Ruff, mypy and the current phase-boundary audit pass;
+    see the [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a3-graph-envelope-identity-and-projection).
+    Generic numerical/row-weight integration remains with later leaves; `.4`
+    still owns the integrated parent review.
   - [ ] P9-8.1a.4: Integrated boundary checks and parent review. Exercise the
     frozen graph-envelope vector, malformed/rehashed payloads, port-capacity
     edges, orientation reversal and input ownership across the actual consumers.
@@ -2094,6 +2105,15 @@ the full ten-profile plan.
   reconstruction/readmission, and atomic failures.
 - [ ] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
   covariance evidence passes.
+- [ ] End-of-Tranche-8 performance/cache review (after P9-8.6, before Tranche 9).
+  User-requested on 2026-10-02. Profile the integrated paths and review graph
+  envelope/identity repetition plus other reusable derived work. Require an
+  explicit validity argument for each cache's owner, complete key, lifetime,
+  invalidation and memory bound; prove cached/uncached results and rejections
+  agree. Preserve asset checks, typed identity and numerical evidence domains.
+  [Scope and proof obligations](./Phase-9-GRCV4-ImplementationPlan.md#end-of-tranche-8-performance-and-cache-review).
+  This schedules review; implementation stays with the applicable existing
+  work owners and introduces no new machine gate or conformance claim.
 
 ## Tranche 9. Hybrid completion and disabled compatibility
 
