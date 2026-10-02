@@ -1,0 +1,51 @@
+{
+  "equilibria_boundary_outlier_controls": [
+    "A_source_equilibrium_0.0",
+    "A_source_equilibrium_3.0",
+    "A_target_equilibrium_0.0",
+    "A_target_equilibrium_3.0",
+    "A_clamp_face_-1.0",
+    "A_clamp_face_5.0",
+    "A_outlier_rejected_1e+16",
+    "A_outlier_rejected_1e+100",
+    "A_outlier_rejected_1.7976931348623157e+308",
+    "C_source_equilibrium_0.0",
+    "C_source_equilibrium_3.0",
+    "C_target_equilibrium_0.0",
+    "C_target_equilibrium_3.0",
+    "C_clamp_face_-1.0",
+    "C_clamp_face_5.0",
+    "C_outlier_rejected_1e+16",
+    "C_outlier_rejected_1e+100",
+    "C_outlier_rejected_1.7976931348623157e+308"
+  ],
+  "chain_rejections": 34,
+  "independent_90_digit": {
+    "A_physical": {
+      "enclosed_entries": 1700,
+      "original_state_residual": 1.985666577590706e-16,
+      "original_geometry_residual": 1.0417209377513409e-16,
+      "refined_max_residual": 9.088626163114466e-46
+    },
+    "A_exterior": {
+      "enclosed_entries": 1412,
+      "original_state_residual": 4.275363311415231e-16,
+      "original_geometry_residual": 1.0577815026779729e-16,
+      "refined_max_residual": 1.9894345562613197e-47
+    },
+    "C_physical": {
+      "enclosed_entries": 2182,
+      "original_state_residual": 2.0489339291470614e-16,
+      "original_geometry_residual": 1.0595958767480242e-16,
+      "refined_max_residual": 1.0730984297966166e-44
+    },
+    "C_exterior": {
+      "enclosed_entries": 1894,
+      "original_state_residual": 4.344622080759145e-16,
+      "original_geometry_residual": 1.1042498207972113e-16,
+      "refined_max_residual": 1.359046107224606e-46
+    }
+  },
+  "input_and_model_rejections": 33,
+  "intended_exact_excludes_point_controls": 2
+}

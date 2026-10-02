@@ -1,0 +1,6 @@
+test_all_ten_nonfinite_extreme_and_incomplete_event_outputs (__main__.AggregateReviewTests.test_all_ten_nonfinite_extreme_and_incomplete_event_outputs) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 16.181s
+
+OK

@@ -1,0 +1,1882 @@
+{
+  "source_commit": "42976ed60da397a95de95b0361454e39ffbf9643",
+  "purpose": "Baseline plus explicit local corrections and own review; not external audit or acceptance",
+  "files": {
+    "LICENSE": {
+      "source_path": "LICENSE",
+      "sha256": "d14ae7dd1a0e28616d5f993fc8fcc5fa1b7829ca3c68dfa01851b8f6d9d282d1",
+      "bytes": 18042,
+      "origin": "source_commit"
+    },
+    "README.md": {
+      "source_path": "README.md",
+      "sha256": "cff8a1800fcfeb4c87526f9e37efe0d7dd6015a97699daca995a6d1f5d58683b",
+      "bytes": 37406,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-7/ProfileG2Registry.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-7/ProfileG2Registry.json",
+      "sha256": "f4cd48ce898c4f5b865fcfa7df51f8487c4747e00a0fb87631df094125536536",
+      "bytes": 31606,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md",
+      "sha256": "90fa64266699d6ef84ea027c4c3c14c938a82209efa8670e14cca45940ca9952",
+      "bytes": 12581,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md",
+      "sha256": "c5b780a2d800fb5bc65a24bb8fc24fc79449ec04e146c7e3e4725ef30e7411e4",
+      "bytes": 11872,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-AOS-ConstructionInputs.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AOS-ConstructionInputs.json",
+      "sha256": "8418d3ad949464e5c2eb6a6c2f9d373151bb30222d926353d6b0a40ea3f6930c",
+      "bytes": 2239,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md",
+      "sha256": "c4ae4c43481af1f4e3402d69c100388e52ff2debed92e4c2fc4cca615a3ec6cc",
+      "bytes": 51143,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md",
+      "sha256": "ca5fb1888e4d41f7b4a99b92c0659bf683bf5f509b32bbd153a1ea9209e38af2",
+      "bytes": 14128,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json",
+      "sha256": "fe0175aec8119ff85efe8685638eeece5b70d2efe705b0a3a475e3ca8bc55f24",
+      "bytes": 851,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md",
+      "sha256": "e90d2f90ebb649831e1c990a3968756df54039b9bf6c12b3accc3c1068734e57",
+      "bytes": 11308,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md",
+      "sha256": "3cae2daa9669b228d2272765a88ca0ad9ad58bbf5332e65ab602aa8f6b738fca",
+      "bytes": 17576,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-COS-ConstructionInputs.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-COS-ConstructionInputs.json",
+      "sha256": "568217418ca4059b93f2a64ab6f1f9364b65925f417ee43a822de5fbbbdbc7c1",
+      "bytes": 9717,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md",
+      "sha256": "2d3a0496a3b5c8fbac74f943ec3fa149fd0f71f3c78f569988b44473a70f91e9",
+      "bytes": 13130,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md",
+      "sha256": "2daead6f294297cc492f95d2db57810518c9c2dbae584d37eab9bb160ec61308",
+      "bytes": 13676,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventInputs.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventInputs.json",
+      "sha256": "ea066d7eb291367a7fe564b43a8b22a715b8ada8c265283fdff26322d62797b7",
+      "bytes": 1289,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md",
+      "sha256": "5db31a512c437d3b144b661d3e564709548c5ccaf7c3c98779aa68262a81755e",
+      "bytes": 12803,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md",
+      "sha256": "21ead9c075501344a857b6c4d6c06f86956505d1af133ead917618df35bb1b55",
+      "bytes": 12706,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md",
+      "sha256": "c5a1a02ec85232eb15646cf9103fbc3dbb7a99aef027a5b79c8661277adb1fd5",
+      "bytes": 21304,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-FixedRowIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-FixedRowIndependentReview.md",
+      "sha256": "730d067b3891adc3f678e73ccaf649ab78650b7acce35f66ad88e5d713fe5d1f",
+      "bytes": 10033,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md",
+      "sha256": "d2175a42edf299718f45fa99ce3bac257303b775238f220082b14481413ab719",
+      "bytes": 11734,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md",
+      "sha256": "9c293c928cbc3d795fcd8b5316328292bb530afd0b9c4845fd70dffb30b9bdb1",
+      "bytes": 13556,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md",
+      "sha256": "8c894bed5ea050deb73070c46fab1ba4581e461d7e221804433d1036e23cdc89",
+      "bytes": 10813,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG-ConstructionInputs.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG-ConstructionInputs.json",
+      "sha256": "c4890e5a98e00e06c0a226012700f02e0cb8e740bbd977b551761e821e4a4294",
+      "bytes": 1227,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md",
+      "sha256": "bc029c5e927e3ae4793af91eb95c07e565cfb733324ec8c0ff3c8104b491776b",
+      "bytes": 17976,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md",
+      "sha256": "cb587798136c172c5590d0c76988e892341e90784ea489c086a7352009628af7",
+      "bytes": 6326,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md",
+      "sha256": "ce87191f4e337506aedc36c978b7e611b77578ed08e11504074b089769385d3b",
+      "bytes": 15642,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md",
+      "sha256": "a91caf0a98af6353f2cb0c96bcc3ba58679755d30bc583c98a8a2c89e69f64fd",
+      "bytes": 12246,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md",
+      "sha256": "53a716756074835bb604a74c08d2da527f26c9ffdf251f308bc00c9c382667a3",
+      "bytes": 18127,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md",
+      "sha256": "85f8a6045835bdd265423bb56a33929fd0b23559fffcd637fc6f3e4f05359540",
+      "bytes": 15098,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md",
+      "sha256": "995399e7940d4dd4e919d5944ba9702bde92bd06f94b3e0aa3e6a8f04d8e6f48",
+      "bytes": 16516,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md",
+      "sha256": "2513ace2dba91abaff8193794bd53ee7d5ae8f1246331d9d25402cf81594b545",
+      "bytes": 14832,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md",
+      "sha256": "e1b138eabecdf07607d55f68031609bad9f1047b1bd4eaa22af75a82a5a143f3",
+      "bytes": 13823,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md",
+      "sha256": "873ec1925658296f3504b2a8d9933f5716dd1dfdcd64443b1422b83fa181dfdf",
+      "bytes": 5683,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md",
+      "sha256": "d5ccd1116e2a7c40c7c24c2d0ad61473f5cf921124eefd0a76653d6e401089ee",
+      "bytes": 17923,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/README.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/README.md",
+      "sha256": "59fd551da8a23a157feeded15526718a2da3fb3e51fc2dcdb7109c170a60df8f",
+      "bytes": 1991,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/additional_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/additional_results.json",
+      "sha256": "87802f0d25200f3846ed3f698ff16b8c896930e09f760c0c4cb193e859c0739b",
+      "bytes": 2542,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/original_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/original_results.json",
+      "sha256": "5aa352b4739f0761eaa311c8286119a4a2167b9ae079bdefc402e8d9124ff279",
+      "bytes": 11218,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/review_controls_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/review_controls_results.json",
+      "sha256": "10f2fa42391fa730404faa4859804b2c11e695fcd28c6f6892f61a9d6e168d66",
+      "bytes": 3471,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/writer_alias_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/writer_alias_results.json",
+      "sha256": "ad9e378142d129d1def2a3b590d3e27c604d2f84022a2c5e51308a7da4861ae3",
+      "bytes": 3248,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/README.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/README.md",
+      "sha256": "2398c004597b3ad4d99725a0012a80f61d82efa64901b0c640d748f6bbdd6c5b",
+      "bytes": 2117,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/epoch_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/epoch_results.json",
+      "sha256": "881c0065b8cdd57620f235c7719bac1d7ca2145a6efc3030c76cf6b46357a3f1",
+      "bytes": 2857,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/event_pressure_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/event_pressure_results.json",
+      "sha256": "fe1d27748d6bbc0db943eb29957f60b9fe4d74b50a2a5d2f550f4614a1e83119",
+      "bytes": 15728,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/independent_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/independent_results.json",
+      "sha256": "a4cc7134fe8690a85c9810c38eb88a792182898a8b0b76ede1ac6c081ccd50e1",
+      "bytes": 5084,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/original_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/original_results.json",
+      "sha256": "d85b3945faa4670946a9531ced2b048d7c5d4bad46b7366b2f4139137d0406d3",
+      "bytes": 61831,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/review_control_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/review_control_results.json",
+      "sha256": "52ea3d526c8842344473c1262d790e980ed66808fc0767180dd76c717fb83726",
+      "bytes": 3369,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/event-companion-audit/README.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/README.md",
+      "sha256": "2db6ebf0d33bf4632a551e1667b56483f58e2b061577d10de979fc5ead7631f2",
+      "bytes": 2037,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/event-companion-audit/additional_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/additional_results.json",
+      "sha256": "32059b621dec3e8cc20d689064c7c127f388ca47446b4cae492dfd58f8b2f623",
+      "bytes": 3663,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/event-companion-audit/final_read_pressure.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/final_read_pressure.json",
+      "sha256": "99547a5fc2dbb03eda891087334b7471d257948ead9d3f013cb51be0078952dd",
+      "bytes": 1942,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/event-companion-audit/model_binding_pressure.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/model_binding_pressure.json",
+      "sha256": "9eac61bda7a5421d5a3638ab3442a9f4be06c9b3aa9251d4d6b72a55f4363433",
+      "bytes": 24040,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/event-companion-audit/original_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/original_results.json",
+      "sha256": "99a3d816ebbe0d43239a79386bc46ae20996611d555d39393da4d158ba201ac3",
+      "bytes": 11824,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/event-companion-audit/review_controls_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/review_controls_results.json",
+      "sha256": "ffcab41b70d6e7309dece2905348ede25cf2aba5ccc646ab9d254de66f197002",
+      "bytes": 2904,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/README.md": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/README.md",
+      "sha256": "86cf8fa04b135c8cde0027f01366e51b01c61b6c33e69f3aecc408638bac0de0",
+      "bytes": 2001,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/additional_pressure_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/additional_pressure_results.json",
+      "sha256": "c8ff561386e58f70dc9bea1596ed48552a14e22c1d340473cb30b1f78c498fe3",
+      "bytes": 1051,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/carrier_transfer_pressure_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/carrier_transfer_pressure_results.json",
+      "sha256": "80ec8b18945ae93d4c24d4c89fd79c6cf686d4e915e8d3edd0c728b885214a97",
+      "bytes": 1715,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/input_mutation_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/input_mutation_results.json",
+      "sha256": "454dba75fc70cfabd97f46493802d1b034c234a6fe09fbdd00407fc1494a4df9",
+      "bytes": 7246,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/original_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/original_results.json",
+      "sha256": "a6ff07cdf2ce49512cdf534544145320379a3fdea04d9332249ce88934d9db2b",
+      "bytes": 103141,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/review_control_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/review_control_results.json",
+      "sha256": "ee25368930de35cefa744bfc2d1d399396a9654e819e20256366064f2642e441",
+      "bytes": 2563,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/rg_independent_chain_results.json": {
+      "source_path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/rg_independent_chain_results.json",
+      "sha256": "4286da37eb1104b000c0006077f79889c373066e990005f262ed7cd8dcd5306a",
+      "bytes": 6236,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/README.md": {
+      "sha256": "13a5fa68edd008853efbffe516e49177c44ee044d559ebae4f17f2e815447025",
+      "bytes": 13101,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md": {
+      "sha256": "a4655872189e7ba32d29aab4ebd74b97efa94646a1c06db67edebc1185f63905",
+      "bytes": 12030,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/baseline/test_p980_rg2b_numerical.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py",
+      "sha256": "29327682f364599eafcf0e1e016a6046e318472eb244432f8661e14b0506c85b",
+      "bytes": 31376,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/environment.json": {
+      "sha256": "878100ce77fb7c0a5b08fe3133efe8d069762423e9f37a9a2a9a506dbdf6f7a7",
+      "bytes": 13280,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-corrected-report.json": {
+      "sha256": "adeff7ebdb53d273ba5403881fbe596ca38cb23c4d3468581fdfe5dca5fddf48",
+      "bytes": 39177,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-corrected-run.txt": {
+      "sha256": "b6835463691669bc638bb6df2267f0f590e1460c04eb08dc40b8ca10e1d8ed6f",
+      "bytes": 107,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-report.json": {
+      "sha256": "adeff7ebdb53d273ba5403881fbe596ca38cb23c4d3468581fdfe5dca5fddf48",
+      "bytes": 39177,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-run.txt": {
+      "sha256": "56f177bb7f105bd2b3e7d5da4d378934a19fab90fea62baf9e9c5c2746703554",
+      "bytes": 107,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/export.py": {
+      "sha256": "c09a7b7aad7d104d6cefbf3db1791f9c71be29de257d7a324ce9036dfea84b5b",
+      "bytes": 4092,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-corrected-report.json": {
+      "sha256": "b122bc2c25f3e54a132bde5bcd2d86ae51afd4e6daeb1b57d4f22802dcaec46c",
+      "bytes": 40781,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-corrected-run.txt": {
+      "sha256": "33b4b11f07df9d71e94f8a7a39047257a58989fb6e5c7d4ed4c94ffe294b6808",
+      "bytes": 104,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-correction.patch": {
+      "sha256": "252644bee43ecb4252d088d90c95165b33c05479a6e79513586c0fa89946e282",
+      "bytes": 8734,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-report.json": {
+      "sha256": "b122bc2c25f3e54a132bde5bcd2d86ae51afd4e6daeb1b57d4f22802dcaec46c",
+      "bytes": 40781,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-run.txt": {
+      "sha256": "3dcd96845a4085b5087a7067b7d5b5c91c85fbdbc832126660c1fc5e4ea101fc",
+      "bytes": 104,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-before.txt": {
+      "sha256": "1929f61fdb3cd1803465d74a8c210738c2a1d0e88e2f2e99b31c5444042bbb45",
+      "bytes": 11861,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-corrections.txt": {
+      "sha256": "266bed90a882403b6db6315619ab295bb6f5cab9ebcff2ce5926dbae8586df3a",
+      "bytes": 104,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-report.json": {
+      "sha256": "4e72471d2ee94116148d8ac5abb51aa94f1df2d1df8139288f7cf9af03fd4b76",
+      "bytes": 1687,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-run.txt": {
+      "sha256": "addfac99277457f3e2337c7d6a2022ac6300239f12d9c63f91c1b5df4f82802f",
+      "bytes": 111,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/requirements.txt": {
+      "sha256": "c90bff7a7f790d9adf2795d6085dbeb6bb5bb4f99f0143f2690430d7cca9455b",
+      "bytes": 203,
+      "origin": "local_review_evidence"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_a_event_companion.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_a_event_companion.py",
+      "sha256": "7d98b7ac5801858d7bc6b953a4f3725f8180942c85ffa55a103ed050d38bd30e",
+      "bytes": 31245,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_boundary_continuation.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_boundary_continuation.py",
+      "sha256": "9318a8b8d910effd5b0c77a75772b0c5e4f67976791743c4aaf464886720b9bd",
+      "bytes": 9948,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_carrier_event_companion.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_carrier_event_companion.py",
+      "sha256": "a671accc50e08757d40a2fa7a28d41fe8917f6058d4ef31b6d188c519fda9ec7",
+      "bytes": 30885,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py",
+      "sha256": "0ddd5b79cc2492a1d6635158f81fce308872fa240a6630074676d18d1b983136",
+      "bytes": 24211,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_event_companion.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_event_companion.py",
+      "sha256": "c639a458965e95dba633ac3367bdb6192bc7edc17b0db7c5545481b19d8d76d9",
+      "bytes": 30370,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_feasibility.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_feasibility.py",
+      "sha256": "7c80cbedea59523392518910711623a7f8ea354c4ac0107b0f937fddb9ba6794",
+      "bytes": 5582,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_fixed_row_bounds.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_fixed_row_bounds.py",
+      "sha256": "c16a4d48ca6b22160cfe45ccb5e6557ecb86dd2964525b262542183a09a6b573",
+      "bytes": 24751,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py",
+      "sha256": "944385027e388619e1d70510ac1cc9eb7cfdb7ed1c15be3ea3a78524ee9b2d28",
+      "bytes": 28654,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_os_numerical_feasibility.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_os_numerical_feasibility.py",
+      "sha256": "dbb2dcb7384988cb5a0f1106c34006101ff3d9896db91300c566788e827913e4",
+      "bytes": 20403,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_readiness.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_readiness.py",
+      "sha256": "c1262d2e4ba636995814b3316ff3493b24b9f6d7859c73a268b2c7464026be00",
+      "bytes": 4232,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py",
+      "sha256": "8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9",
+      "bytes": 40908,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_revised_realization_bounds.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_revised_realization_bounds.py",
+      "sha256": "f1210bf1aa43b9189108d934f87b933186e33c8d79bf03f5b3fdd54e782b5286",
+      "bytes": 25793,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py",
+      "sha256": "5725f799116395e74601c04578a1caaa8811f76657589b334514122553fa0c79",
+      "bytes": 34612,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py": {
+      "sha256": "b4c41363d07beee6c4b0e18f88c52f19574abc55cfd5b73a264514df62cb297e",
+      "bytes": 35033,
+      "origin": "local_review_correction"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_rg_event_companion.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_rg_event_companion.py",
+      "sha256": "3ea4c72d64b1204ce19ed433b0f164851e8f622e8aade6aaf44a40f905d4bfb7",
+      "bytes": 33989,
+      "origin": "source_commit"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py": {
+      "sha256": "e2d5f1639de5b1f9c5f739c63c6ceaeff864f588681def25bcefae78832bbb1d",
+      "bytes": 23156,
+      "origin": "local_review_correction"
+    },
+    "implementation/phase-9-grcv4/verification/test_p980_scope_binding.py": {
+      "source_path": "implementation/phase-9-grcv4/verification/test_p980_scope_binding.py",
+      "sha256": "2870727085e00d8a79acf254fbca0960fe4fb3a82f8046d6f8ab552423e6e939",
+      "bytes": 4654,
+      "origin": "source_commit"
+    },
+    "pyproject.toml": {
+      "source_path": "pyproject.toml",
+      "sha256": "430dea4e6baf96ddad427c8953f3c085b1b7de4431d758c5c9221a25a1faa018",
+      "bytes": 1179,
+      "origin": "source_commit"
+    },
+    "specs/grc-9-v4-spec.md": {
+      "source_path": "specs/grc-9-v4-spec.md",
+      "sha256": "588878aabbe35a8b0c6ae5019f1d1116ab2a3bf15168793e37468abcf369e082",
+      "bytes": 52474,
+      "origin": "source_commit"
+    },
+    "specs/grc-v4-conformance-vectors.json": {
+      "source_path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22",
+      "bytes": 1049245,
+      "origin": "source_commit"
+    },
+    "specs/grc-v4-spec.md": {
+      "source_path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877",
+      "bytes": 75046,
+      "origin": "source_commit"
+    },
+    "src/pygrc/__init__.py": {
+      "source_path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40",
+      "bytes": 1583,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/__init__.py": {
+      "source_path": "src/pygrc/causal_pathways/__init__.py",
+      "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e",
+      "bytes": 3110,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/__init__.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/__init__.py",
+      "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34",
+      "bytes": 3272,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/artifacts.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/artifacts.py",
+      "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59",
+      "bytes": 36932,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/authority.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/authority.py",
+      "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2",
+      "bytes": 26982,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/candidates.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/candidates.py",
+      "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9",
+      "bytes": 67046,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/effects.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/effects.py",
+      "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90",
+      "bytes": 11213,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/identity.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/identity.py",
+      "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23",
+      "bytes": 16092,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/scopes.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/scopes.py",
+      "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c",
+      "bytes": 54202,
+      "origin": "source_commit"
+    },
+    "src/pygrc/causal_pathways/binding/session.py": {
+      "source_path": "src/pygrc/causal_pathways/binding/session.py",
+      "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972",
+      "bytes": 56257,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/__init__.py": {
+      "source_path": "src/pygrc/cli/__init__.py",
+      "sha256": "6351fe1e42fd9b3cfc17f32937e9999896f061004813deabfbcca1c8e0af9a19",
+      "bytes": 59,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grc9_landscape_visuals.py": {
+      "source_path": "src/pygrc/cli/grc9_landscape_visuals.py",
+      "sha256": "609d59738d44681878acd12523118255ee00715508a6610229e91b7af210f914",
+      "bytes": 3591,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grc9_representative_visuals.py": {
+      "source_path": "src/pygrc/cli/grc9_representative_visuals.py",
+      "sha256": "f95b9b870eb0ca212f745abb0c5af65b763d332eab7c39b2a75e457b602b088a",
+      "bytes": 3629,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grc9v3_representative_visuals.py": {
+      "source_path": "src/pygrc/cli/grc9v3_representative_visuals.py",
+      "sha256": "87c699f5d872842dbb653124cdc907eef05ef3d385b736a9b8d9453bfb33e3e2",
+      "bytes": 3484,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grcv2_representative_experiment.py": {
+      "source_path": "src/pygrc/cli/grcv2_representative_experiment.py",
+      "sha256": "b1d2e9625ecc1b357467dc9d5bf86cdcdbd3ea2840de37dcafb826dda9172c62",
+      "bytes": 3420,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grcv2_representative_graphs.py": {
+      "source_path": "src/pygrc/cli/grcv2_representative_graphs.py",
+      "sha256": "23194a64e4eaf11b7a77ab1b1cc38aa584d34f3a22578f198ecb500acdc29d41",
+      "bytes": 2476,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grcv2_representative_visuals.py": {
+      "source_path": "src/pygrc/cli/grcv2_representative_visuals.py",
+      "sha256": "62fe30cdb298322e540bc462c4823625658345b13771e0f3610180c753b62b4b",
+      "bytes": 3585,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grcv3_landscape_visuals.py": {
+      "source_path": "src/pygrc/cli/grcv3_landscape_visuals.py",
+      "sha256": "8e7bce03d43c1ecb72ea4942cfe44abe4ba4014dbcd0849409a4efea9a7c64e6",
+      "bytes": 3094,
+      "origin": "source_commit"
+    },
+    "src/pygrc/cli/grcv3_representative_visuals.py": {
+      "source_path": "src/pygrc/cli/grcv3_representative_visuals.py",
+      "sha256": "a4748ee0d0e173f330c86bf3f0c92391c202b4661caebb37686632bb2f86e887",
+      "bytes": 3665,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/__init__.py": {
+      "source_path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae",
+      "bytes": 7109,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/backends.py": {
+      "source_path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07",
+      "bytes": 8618,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/capabilities.py": {
+      "source_path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+      "bytes": 5641,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/digests.py": {
+      "source_path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+      "bytes": 761,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/errors.py": {
+      "source_path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31",
+      "bytes": 890,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/events.py": {
+      "source_path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+      "bytes": 362,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/graph.py": {
+      "source_path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6",
+      "bytes": 5261,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/ids.py": {
+      "source_path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+      "bytes": 4647,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/interfaces.py": {
+      "source_path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+      "bytes": 3118,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/mutations.py": {
+      "source_path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207",
+      "bytes": 1674,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/observables.py": {
+      "source_path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e",
+      "bytes": 356,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/params.py": {
+      "source_path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4",
+      "bytes": 4249,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/serialization.py": {
+      "source_path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+      "bytes": 33524,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/storage.py": {
+      "source_path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+      "bytes": 18006,
+      "origin": "source_commit"
+    },
+    "src/pygrc/core/types.py": {
+      "source_path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+      "bytes": 1016,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/__init__.py": {
+      "source_path": "src/pygrc/discovery/__init__.py",
+      "sha256": "18f56eea2a0a8529027e3fd21fed21a9aeea76cd939b5795b8267bcfbcb5fa50",
+      "bytes": 15965,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_checkpoint_visual_index.py": {
+      "source_path": "src/pygrc/discovery/grc9_checkpoint_visual_index.py",
+      "sha256": "cde80b4f0cc1707e30d2c527d77a159e578ebd4ed61acbee3b1c92a7cbd52066",
+      "bytes": 21569,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_corrected_growth_catalog.py": {
+      "source_path": "src/pygrc/discovery/grc9_corrected_growth_catalog.py",
+      "sha256": "85ce35a6b48dd165a3cfe25e0bd6dd918a096f2e8ddd4e02281078437f6e59be",
+      "bytes": 21011,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_discovery_runner.py": {
+      "source_path": "src/pygrc/discovery/grc9_discovery_runner.py",
+      "sha256": "59c7e3a1a8c1e102eed9cc061b416f9ce3fadeb06989e15ac8f6c1452f304b2c",
+      "bytes": 57582,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_grcl9_handoff.py": {
+      "source_path": "src/pygrc/discovery/grc9_grcl9_handoff.py",
+      "sha256": "b38491571733916827912162cc0ba9cfdb3883afa5253f68b3ca06b4b8111cd3",
+      "bytes": 19863,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_hypothesis_catalog.py": {
+      "source_path": "src/pygrc/discovery/grc9_hypothesis_catalog.py",
+      "sha256": "33f3753f9d4354937766f33fd4d1003db12aa4adfe8c38145535e5fe2febe423",
+      "bytes": 32508,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_manifest.py": {
+      "source_path": "src/pygrc/discovery/grc9_manifest.py",
+      "sha256": "92e2c25bf9ef54eb6f91c6a30f4637ad8b1ae9802cae4bd289d37f1593274318",
+      "bytes": 29929,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_mechanism_ledger.py": {
+      "source_path": "src/pygrc/discovery/grc9_mechanism_ledger.py",
+      "sha256": "cc6732c6f080fa0ebaae62b24f8287f056f471ceeb2c54d81b146cfe0ff38d80",
+      "bytes": 25884,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_reviewed_motif_catalog.py": {
+      "source_path": "src/pygrc/discovery/grc9_reviewed_motif_catalog.py",
+      "sha256": "2f1601e96b4caf0600c114bb64d6f7e2ee805b0e4f1ac8f6ba2b1f3d87f718a1",
+      "bytes": 24998,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_seed_generator.py": {
+      "source_path": "src/pygrc/discovery/grc9_seed_generator.py",
+      "sha256": "13619efd6b079730904d16c3872bf69aef09c2c6544f5b6b152289d2593d0aa2",
+      "bytes": 100886,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_selector_feedback.py": {
+      "source_path": "src/pygrc/discovery/grc9_selector_feedback.py",
+      "sha256": "0820a9295455e92f2dc8cf7457b7dac688b6afd1ea698f490085d9c693d11e29",
+      "bytes": 15716,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9_selector_validation.py": {
+      "source_path": "src/pygrc/discovery/grc9_selector_validation.py",
+      "sha256": "213077e5b3ddb2c6c5d4f61a5091e359f4c42b6952273d01469c3003ac9df6dc",
+      "bytes": 52093,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_catalog_breadth_expansion.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_catalog_breadth_expansion.py",
+      "sha256": "fd526c8a68faae9fa56278f49f350205f5455d01081dcfbff03ab0fb69e2351c",
+      "bytes": 25230,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_discovery_runner.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_discovery_runner.py",
+      "sha256": "bb8279fe05856ae44c702c5a41eafaac6ca25d4ae8e38b5372cf0a4795047834",
+      "bytes": 60703,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_hessian_comparator_review.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_hessian_comparator_review.py",
+      "sha256": "6f5b9c96ce40f89f9b2a5faf23e25b0af28044ae75ebebf73f060d3581adf15d",
+      "bytes": 28622,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_hypothesis_catalog.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_hypothesis_catalog.py",
+      "sha256": "60fcfc76fecef70d86ee96db718a31bcdc6a420c67da5364d5cdaacaccf7ce29",
+      "bytes": 38648,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_mechanism_ledger.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_mechanism_ledger.py",
+      "sha256": "c56d2f500615cbde39eba2febadcda1e1515317b71000e2fda7c5f59573eeba4",
+      "bytes": 44033,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_reviewed_motif_catalog.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_reviewed_motif_catalog.py",
+      "sha256": "7ea66982c110b7f26cd3b00b0a34a4b20904b45877b902dbe6875065c580f793",
+      "bytes": 31219,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_seed_generator.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_seed_generator.py",
+      "sha256": "b1742fadad209bc88e74c27886f6d536a5197f4dbdfbf72ce43ecaaf8aee1549",
+      "bytes": 53505,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_selector_validation.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_selector_validation.py",
+      "sha256": "b30295a706af8f18554bbe080eb5de27967f1e352bf92eb23b26b125ccfcf4a4",
+      "bytes": 68986,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_source_handoff.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_source_handoff.py",
+      "sha256": "f6670dc9f3dd93e39dfa40aaa524ad9f79b4c27a21e7d2a8a24b894db38e6219",
+      "bytes": 20873,
+      "origin": "source_commit"
+    },
+    "src/pygrc/discovery/grc9v3_visual_review.py": {
+      "source_path": "src/pygrc/discovery/grc9v3_visual_review.py",
+      "sha256": "cd72703f7184671f261b1c17edf480b18c8e9bec3345497c57cad9e1f9d7bfab",
+      "bytes": 28636,
+      "origin": "source_commit"
+    },
+    "src/pygrc/integrations/__init__.py": {
+      "source_path": "src/pygrc/integrations/__init__.py",
+      "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237",
+      "bytes": 596,
+      "origin": "source_commit"
+    },
+    "src/pygrc/integrations/graph_adapter_boundary.py": {
+      "source_path": "src/pygrc/integrations/graph_adapter_boundary.py",
+      "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d",
+      "bytes": 2725,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/__init__.py": {
+      "source_path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53",
+      "bytes": 13888,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/equivalence.py": {
+      "source_path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff",
+      "bytes": 32622,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/__init__.py": {
+      "source_path": "src/pygrc/landscapes/extensions/__init__.py",
+      "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34",
+      "bytes": 10393,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9/__init__.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+      "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8",
+      "bytes": 4627,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9/examples.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+      "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9",
+      "bytes": 106807,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9/fixtures.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+      "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218",
+      "bytes": 10960,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9/manifest.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+      "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942",
+      "bytes": 33550,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9/schema.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+      "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed",
+      "bytes": 38374,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9v3/__init__.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d",
+      "bytes": 6383,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9v3/examples.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf",
+      "bytes": 69206,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df",
+      "bytes": 20291,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9v3/manifest.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6",
+      "bytes": 58541,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9v3/schema.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10",
+      "bytes": 47857,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a",
+      "bytes": 3454,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/extensions/grcv3.py": {
+      "source_path": "src/pygrc/landscapes/extensions/grcv3.py",
+      "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8",
+      "bytes": 85385,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference.py": {
+      "source_path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32",
+      "bytes": 19466,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_basin.py": {
+      "source_path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7",
+      "bytes": 13468,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_compare.py": {
+      "source_path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f",
+      "bytes": 19630,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_junction.py": {
+      "source_path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789",
+      "bytes": 19788,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_kg.py": {
+      "source_path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d",
+      "bytes": 12723,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_loader.py": {
+      "source_path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df",
+      "bytes": 13530,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_pheromone.py": {
+      "source_path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c",
+      "bytes": 25178,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_revival.py": {
+      "source_path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8",
+      "bytes": 14606,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_ridge.py": {
+      "source_path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5",
+      "bytes": 16415,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_substrate.py": {
+      "source_path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d",
+      "bytes": 38200,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/inference_valley.py": {
+      "source_path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b",
+      "bytes": 28372,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/io.py": {
+      "source_path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd",
+      "bytes": 9243,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion.py": {
+      "source_path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452",
+      "bytes": 34432,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_boundary.py": {
+      "source_path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef",
+      "bytes": 22938,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_catalog.py": {
+      "source_path": "src/pygrc/landscapes/motion_catalog.py",
+      "sha256": "6d5c57baaa5da0b02684bc226331c83b8907f318481147ee1cbb77e8682f249c",
+      "bytes": 29863,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_coherence.py": {
+      "source_path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c",
+      "bytes": 20751,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_examples.py": {
+      "source_path": "src/pygrc/landscapes/motion_examples.py",
+      "sha256": "99ecc0d81f6db5409a45fc0d72df71fae5739ce221f7b88c7967c64ea767a586",
+      "bytes": 34625,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_identity.py": {
+      "source_path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c",
+      "bytes": 41008,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_interpretation.py": {
+      "source_path": "src/pygrc/landscapes/motion_interpretation.py",
+      "sha256": "7d9a331e954f511a8daae285017877349540128ed708793456e0e21a6cb1098b",
+      "bytes": 49450,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_landscape_bridge.py": {
+      "source_path": "src/pygrc/landscapes/motion_landscape_bridge.py",
+      "sha256": "eb40c0aaeac07a48e13aae34002b498d62249a9695ea50b6f7ae3e9d6cc0af5c",
+      "bytes": 18985,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_loader.py": {
+      "source_path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977",
+      "bytes": 18684,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_representative.py": {
+      "source_path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9",
+      "bytes": 19230,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_seed_examples.py": {
+      "source_path": "src/pygrc/landscapes/motion_seed_examples.py",
+      "sha256": "6d02cd7859cb94c743294396d307ef750ecb61e9b633bee1de0d9d1f47f4943a",
+      "bytes": 60732,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/motion_topological.py": {
+      "source_path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de",
+      "bytes": 18783,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/pde_translation.py": {
+      "source_path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f",
+      "bytes": 30027,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/seed.py": {
+      "source_path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2",
+      "bytes": 7003,
+      "origin": "source_commit"
+    },
+    "src/pygrc/landscapes/validation.py": {
+      "source_path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b",
+      "bytes": 16870,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/__init__.py": {
+      "source_path": "src/pygrc/models/__init__.py",
+      "sha256": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234",
+      "bytes": 49524,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/_base.py": {
+      "source_path": "src/pygrc/models/_base.py",
+      "sha256": "e5e2a310def994b0583ba0185e3243253095a5a919804da2fce860df1911eeff",
+      "bytes": 7208,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/_grc_v4_evidence.py": {
+      "source_path": "src/pygrc/models/_grc_v4_evidence.py",
+      "sha256": "dd164fc95543e9f803263929d73d58b1e8df0e8b1ba765a14fa532c7ffbe8ed9",
+      "bytes": 7331,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/_grc_v4_matrix.py": {
+      "source_path": "src/pygrc/models/_grc_v4_matrix.py",
+      "sha256": "8dfde86b5ee48e2b9d2c0d968f72ffc98f9aca13f01c04f435ac537441cdc951",
+      "bytes": 10808,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/_grc_v4_matrix_flint.py": {
+      "source_path": "src/pygrc/models/_grc_v4_matrix_flint.py",
+      "sha256": "7ff0e9ca6d7f42ad150b06c8d604f5b3b79de1943b1e8e6f5621386262af7121",
+      "bytes": 1532,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9.py": {
+      "source_path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1",
+      "bytes": 120105,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_checkpoints.py": {
+      "source_path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7",
+      "bytes": 11234,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_coarse.py": {
+      "source_path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+      "bytes": 4795,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_expansion.py": {
+      "source_path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+      "bytes": 2555,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_grcl9_lowering.py": {
+      "source_path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c",
+      "bytes": 29093,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_grcl9_provenance.py": {
+      "source_path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122",
+      "bytes": 2046,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_landscape.py": {
+      "source_path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244",
+      "bytes": 22883,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_ports.py": {
+      "source_path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+      "bytes": 2730,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_state.py": {
+      "source_path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+      "bytes": 2205,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_v3.py": {
+      "source_path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+      "bytes": 82103,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_v3_choice.py": {
+      "source_path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+      "bytes": 17103,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py": {
+      "source_path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+      "bytes": 42821,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py": {
+      "source_path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+      "bytes": 2210,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_v3_runtime.py": {
+      "source_path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+      "bytes": 39116,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_v3_sparks.py": {
+      "source_path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+      "bytes": 48651,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_9_v3_state.py": {
+      "source_path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+      "bytes": 2092,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v2.py": {
+      "source_path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e",
+      "bytes": 87302,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v2_checkpoints.py": {
+      "source_path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e",
+      "bytes": 6799,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v2_landscape.py": {
+      "source_path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e",
+      "bytes": 52742,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v2_state.py": {
+      "source_path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659",
+      "bytes": 1123,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v3.py": {
+      "source_path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+      "bytes": 150481,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v3_checkpoints.py": {
+      "source_path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96",
+      "bytes": 14499,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v3_differential.py": {
+      "source_path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+      "bytes": 15898,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v3_landscape.py": {
+      "source_path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad",
+      "bytes": 199214,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v3_landscape_native.py": {
+      "source_path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019",
+      "bytes": 21404,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v3_state.py": {
+      "source_path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+      "bytes": 1845,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4.py": {
+      "source_path": "src/pygrc/models/grc_v4.py",
+      "sha256": "19fedb493dd01bb650043516a6cb88fbe401be0aaf34d865305a707f8d7ff9a4",
+      "bytes": 19261,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/__init__.py": {
+      "source_path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051",
+      "bytes": 80,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/asset-index.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "6d4adce3ac2d98a1c16c82f31768be7e1a1480df5aaf886d2507b0e1a7dc55b2",
+      "bytes": 607,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
+      "sha256": "245cf8a25709880c5ea57ca0a617d2c39f6bede26d59e650d753039230c6cd0b",
+      "bytes": 3873,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json",
+      "sha256": "c1db8b898efb902a40521d99196458ba0bfb9811d555d8e3e89e31ce0574b08d",
+      "bytes": 20123,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
+      "bytes": 71197,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-event-contract-release.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-event-contract-release.json",
+      "sha256": "e1ae563880b03cab512e5481f2db556032853bf8d558eeed689ec09e577ea699",
+      "bytes": 4948,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-representation-transport-schema.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-representation-transport-schema.json",
+      "sha256": "edd12e5b3609ab8536c7f1583b213d0d1f703afd86504e6a1af1ed6121266602",
+      "bytes": 24274,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "946c8944b4b06645209d159ec056b891bf6fd153c51dedef38de0a862e127fff",
+      "bytes": 27484,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "d3fc6e50bce85685694901e3d6f5f90ead87413877414cf8dc6ea1b9225540ce",
+      "bytes": 106,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_assets/grc-v4-topology-event-schema.json": {
+      "source_path": "src/pygrc/models/grc_v4_assets/grc-v4-topology-event-schema.json",
+      "sha256": "17bb626ac4e6271c24ae24c7b01180cdfb51713fe2ae01677a2cf1d285ac29e0",
+      "bytes": 40605,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_candidate_a.py": {
+      "source_path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "2dc9da1c9aa9407c1956fa936157218058f5ab6c64b125b1cb0c6af3dc466691",
+      "bytes": 38040,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_candidate_c.py": {
+      "source_path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "6e951a7393f1c95f77acbf5de0ca0e11f42cf5acacaf098b123ba3b423af5a0e",
+      "bytes": 30926,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_ci.py": {
+      "source_path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "fdf221792c63eeaab78cebc2111de10426d6ce2716bed17699142fd5554a1f10",
+      "bytes": 53198,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_codec.py": {
+      "source_path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4",
+      "bytes": 33638,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_event_codec.py": {
+      "source_path": "src/pygrc/models/grc_v4_event_codec.py",
+      "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593",
+      "bytes": 11433,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_events.py": {
+      "source_path": "src/pygrc/models/grc_v4_events.py",
+      "sha256": "66d4778ed273871066a020ee8d8c5e33122c31f56b26569711876c1c4c2b8a11",
+      "bytes": 9302,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_exact.py": {
+      "source_path": "src/pygrc/models/grc_v4_exact.py",
+      "sha256": "42491644b46d947483ab1706b4fb4b14abf247495916db64ea60b021d5c9e065",
+      "bytes": 4033,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_geometry.py": {
+      "source_path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "38964b047669fad08c509ec4f657c6048072e0eae26a8470211564453a387eb0",
+      "bytes": 58960,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_initializer.py": {
+      "source_path": "src/pygrc/models/grc_v4_initializer.py",
+      "sha256": "28ed997c515cf249c188e53e728c860a79cdc816909f2b1769a2be97694000fc",
+      "bytes": 7616,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_lifecycle.py": {
+      "source_path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "b4ad3efc85d8704270ea69324cf594e38b662da49f091e9741a9859e3ff96c40",
+      "bytes": 129960,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_linear.py": {
+      "source_path": "src/pygrc/models/grc_v4_linear.py",
+      "sha256": "ff5acc2040027ef9ba1773af04b575c2f15dd2ece265e451c93b658edb9b69e3",
+      "bytes": 4932,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_migration.py": {
+      "source_path": "src/pygrc/models/grc_v4_migration.py",
+      "sha256": "714f37b346842370eb4d49ec279edc82a82e91d668b066942846e655f0d92dc0",
+      "bytes": 8510,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_numerics.py": {
+      "source_path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "1f18ba4b5ae1ac315c81ef9fb47767b91d512e3c35402aa89589f7d3baed52d0",
+      "bytes": 6402,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_pc.py": {
+      "source_path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "41705e0cb8e400ec0d8043b2f065fdfc226d61fc55f1efab7a6328c2584b042f",
+      "bytes": 30188,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_profile.py": {
+      "source_path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546",
+      "bytes": 64715,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_realizations.py": {
+      "source_path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "70e4a335a27168260cc957fc33b347e70e3249d25eea5496ec307af2fcf41311",
+      "bytes": 15098,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_rg2b.py": {
+      "source_path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "c2573c224dee76a9acdf210e732e4df9927a024fa617551bbf54c03d5654d732",
+      "bytes": 39900,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_rg2b_graph.py": {
+      "source_path": "src/pygrc/models/grc_v4_rg2b_graph.py",
+      "sha256": "a86a80068dc71eea43fd9fcc56cfdcb4e676fa316fe76bfe009a1c296441a058",
+      "bytes": 24589,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_state.py": {
+      "source_path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+      "bytes": 24545,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_step.py": {
+      "source_path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "f5eef600c7c3fa54436f9ca92c9ee6303e796d40d4566dbc54cc18a891e4c3ed",
+      "bytes": 52780,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/grc_v4_transport.py": {
+      "source_path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7",
+      "bytes": 10022,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+      "bytes": 642,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_construction.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+      "bytes": 18683,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_contract.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "bytes": 350411,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_identity.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+      "bytes": 32472,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_packets.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "bytes": 91991,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_restoration.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+      "bytes": 17738,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_runtime.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "bytes": 429891,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "bytes": 32596,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_timing.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+      "bytes": 47570,
+      "origin": "source_commit"
+    },
+    "src/pygrc/models/lgrc_9_v3_topology.py": {
+      "source_path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+      "bytes": 151443,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/__init__.py": {
+      "source_path": "src/pygrc/telemetry/__init__.py",
+      "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3",
+      "bytes": 25537,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_experiment_defaults.py": {
+      "source_path": "src/pygrc/telemetry/_experiment_defaults.py",
+      "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75",
+      "bytes": 8194,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_experiment_results.py": {
+      "source_path": "src/pygrc/telemetry/_experiment_results.py",
+      "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628",
+      "bytes": 3636,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grc9_extensions.py": {
+      "source_path": "src/pygrc/telemetry/_grc9_extensions.py",
+      "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f",
+      "bytes": 45632,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grc9v3_extensions.py": {
+      "source_path": "src/pygrc/telemetry/_grc9v3_extensions.py",
+      "sha256": "4ddeeda6b376cce190c5dae8ba6d224688e2491d60c65dd637f271e22c51ae69",
+      "bytes": 34501,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grcv3_collapse_traces.py": {
+      "source_path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+      "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425",
+      "bytes": 48979,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grcv3_extensions.py": {
+      "source_path": "src/pygrc/telemetry/_grcv3_extensions.py",
+      "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73",
+      "bytes": 26936,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grcv3_failure_traces.py": {
+      "source_path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+      "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e",
+      "bytes": 22015,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grcv3_lane_runner.py": {
+      "source_path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+      "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c",
+      "bytes": 9126,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grcv3_settlement_traces.py": {
+      "source_path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+      "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3",
+      "bytes": 23263,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_grcv3_trace_utils.py": {
+      "source_path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+      "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f",
+      "bytes": 36622,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/_telemetry_utils.py": {
+      "source_path": "src/pygrc/telemetry/_telemetry_utils.py",
+      "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb",
+      "bytes": 602,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/compare.py": {
+      "source_path": "src/pygrc/telemetry/compare.py",
+      "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11",
+      "bytes": 3350,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/experiments.py": {
+      "source_path": "src/pygrc/telemetry/experiments.py",
+      "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92",
+      "bytes": 88986,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grc9_contract.py": {
+      "source_path": "src/pygrc/telemetry/grc9_contract.py",
+      "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf",
+      "bytes": 61504,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grc9_grcl9_growth_record_classification.py": {
+      "source_path": "src/pygrc/telemetry/grc9_grcl9_growth_record_classification.py",
+      "sha256": "5e3116ce1883397bdddeec96bb1d2611d311e861ebe65c779c7c013046837642",
+      "bytes": 19326,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grc9_grcl9_growth_supersession_summary.py": {
+      "source_path": "src/pygrc/telemetry/grc9_grcl9_growth_supersession_summary.py",
+      "sha256": "ae70535cca16decdb5d01517feaf989f09695ebc3c6734df4cb181a0a9bc0b03",
+      "bytes": 16976,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grc9v3_contract.py": {
+      "source_path": "src/pygrc/telemetry/grc9v3_contract.py",
+      "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a",
+      "bytes": 55189,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcl9_corrected_growth_catalog.py": {
+      "source_path": "src/pygrc/telemetry/grcl9_corrected_growth_catalog.py",
+      "sha256": "5805f6c2bad8049949dc17caaeb8f2133ff586d06d742e3344adaff717a87851",
+      "bytes": 24115,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcl9_lowered_motif_catalog.py": {
+      "source_path": "src/pygrc/telemetry/grcl9_lowered_motif_catalog.py",
+      "sha256": "9f00dbef7eb8f97a15f84764112f2de8e3c650da98979196c94396d34c1e4191",
+      "bytes": 30835,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcl9_replay.py": {
+      "source_path": "src/pygrc/telemetry/grcl9_replay.py",
+      "sha256": "33db3c2f6765f2d4bfc9578e22c9c456fca9d31494a78124e9767014c390a7c3",
+      "bytes": 63837,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcl9_selector_validation.py": {
+      "source_path": "src/pygrc/telemetry/grcl9_selector_validation.py",
+      "sha256": "ed9baeafca9b8fc3d5ab541d9b2578b59affc6d61e440a70715b63b5ea109f53",
+      "bytes": 30524,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcl9v3_lowered_motif_catalog.py": {
+      "source_path": "src/pygrc/telemetry/grcl9v3_lowered_motif_catalog.py",
+      "sha256": "833fb0c7f982f908919a1670c34cfe43c218b30955105839cb9ffdf34eb8e849",
+      "bytes": 37392,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcl9v3_replay.py": {
+      "source_path": "src/pygrc/telemetry/grcl9v3_replay.py",
+      "sha256": "c1c28f6d1b30cfcb9fd85e4a4e325f04e13ce826accc6f516655dfe9b76d5352",
+      "bytes": 89083,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcl9v3_selector_validation.py": {
+      "source_path": "src/pygrc/telemetry/grcl9v3_selector_validation.py",
+      "sha256": "7553c7f9bcb4325bdb3c20d0c687f5a944cd583a9d8837571c2f58605685346c",
+      "bytes": 50206,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcv3_contract.py": {
+      "source_path": "src/pygrc/telemetry/grcv3_contract.py",
+      "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4",
+      "bytes": 27131,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcv3_pressure_boundary_evidence.py": {
+      "source_path": "src/pygrc/telemetry/grcv3_pressure_boundary_evidence.py",
+      "sha256": "8988226e7a38a31c691ff5ef94bdccec693c35a48446cad2a4debeec9a361a5c",
+      "bytes": 19654,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py": {
+      "source_path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+      "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb",
+      "bytes": 3826,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/io.py": {
+      "source_path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929",
+      "bytes": 43277,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/lgrc9v3_contract.py": {
+      "source_path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f",
+      "bytes": 54436,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/pressure_boundary_complex_source_comparison.py": {
+      "source_path": "src/pygrc/telemetry/pressure_boundary_complex_source_comparison.py",
+      "sha256": "b27b1f21b08ed90154a38d60de603e24829f3f7725e48fdc43307b8f3833eec8",
+      "bytes": 16626,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/pressure_boundary_cross_family.py": {
+      "source_path": "src/pygrc/telemetry/pressure_boundary_cross_family.py",
+      "sha256": "f0dd089af6b53c92ec78a96a617c8e3b27f4a8933e228e41f3cb6ef9187e05c8",
+      "bytes": 12006,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/recorder.py": {
+      "source_path": "src/pygrc/telemetry/recorder.py",
+      "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613",
+      "bytes": 12648,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/reports.py": {
+      "source_path": "src/pygrc/telemetry/reports.py",
+      "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556",
+      "bytes": 6321,
+      "origin": "source_commit"
+    },
+    "src/pygrc/telemetry/schema.py": {
+      "source_path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc",
+      "bytes": 20348,
+      "origin": "source_commit"
+    },
+    "src/pygrc/utils/__init__.py": {
+      "source_path": "src/pygrc/utils/__init__.py",
+      "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16",
+      "bytes": 46,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/__init__.py": {
+      "source_path": "src/pygrc/visualization/__init__.py",
+      "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb",
+      "bytes": 7766,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/graph_render.py": {
+      "source_path": "src/pygrc/visualization/graph_render.py",
+      "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f",
+      "bytes": 50536,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/grcl9_lowering.py": {
+      "source_path": "src/pygrc/visualization/grcl9_lowering.py",
+      "sha256": "53a0d2bdb7e8e5b980ab6e8eb6481c9df97a77d5a46b5e561cfd552fcbcfe2de",
+      "bytes": 48521,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/grcl9v3_lowering.py": {
+      "source_path": "src/pygrc/visualization/grcl9v3_lowering.py",
+      "sha256": "2699f9d1a7d3d8173f1f07eab0a88dd6a964a3e81e8871d3c2368efb038fffd4",
+      "bytes": 43420,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/layout.py": {
+      "source_path": "src/pygrc/visualization/layout.py",
+      "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b",
+      "bytes": 7203,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/motion.py": {
+      "source_path": "src/pygrc/visualization/motion.py",
+      "sha256": "2790d3fdb0792cecadcb777aa6e1f58cd2732cb8f018c20c530c17d441bddf0b",
+      "bytes": 55219,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/render.py": {
+      "source_path": "src/pygrc/visualization/render.py",
+      "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340",
+      "bytes": 26986,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/representative.py": {
+      "source_path": "src/pygrc/visualization/representative.py",
+      "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e",
+      "bytes": 31012,
+      "origin": "source_commit"
+    },
+    "src/pygrc/visualization/representative_graphs.py": {
+      "source_path": "src/pygrc/visualization/representative_graphs.py",
+      "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef",
+      "bytes": 22341,
+      "origin": "source_commit"
+    }
+  }
+}

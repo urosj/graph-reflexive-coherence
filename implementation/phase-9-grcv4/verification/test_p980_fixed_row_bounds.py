@@ -207,6 +207,7 @@ class FixedRowBoundTests(unittest.TestCase):
     def setUpClass(cls):
         boundary.BoundaryContinuationTests.setUpClass()
         cls.layouts = boundary.BoundaryContinuationTests.layouts
+        cls.d52 = boundary.enabled_d52_layout(cls.layouts)
         cls.source = boundary.BoundaryContinuationTests.source
 
     def test_exact_uniform_budgets_close_the_finite_horizon(self):
@@ -256,7 +257,7 @@ class FixedRowBoundTests(unittest.TestCase):
 
     def test_fixed_geometry_current_and_writer_stage_discriminators(self):
         with mp.workdps(70):
-            edges, nodes = normalized_target(self.layouts[-1])
+            edges, nodes = normalized_target(self.d52)
             model = FixedRows(nodes, edges)
             C = model.vector(resources(nodes,Q(3)))
             W = mp.matrix([number(1-WIDTH)]*len(edges))
@@ -293,7 +294,7 @@ class FixedRowBoundTests(unittest.TestCase):
 
     def audit_inputs(self):
         """Review's nondegenerate fixture, using the actual D52 vector ports."""
-        vector = self.layouts[-1]
+        vector = self.d52
         self.assertEqual(vector['request']['target_effective_degree'], 52)
         edges, nodes = normalized_target(vector)
         model = FixedRows(nodes, edges)
@@ -413,7 +414,7 @@ class FixedRowBoundTests(unittest.TestCase):
 
     def test_enabled_os_source_event_and_ten_step_research_chains(self):
         with mp.workdps(70):
-            edges, nodes = normalized_target(self.layouts[-1])
+            edges, nodes = normalized_target(self.d52)
             target = FixedRows(nodes,edges)
             source = FixedRows(self.source['live_node_ids'],self.source['edges'])
             for candidate in ('A','C'):

@@ -1,0 +1,108 @@
+{
+  "algebra": {
+    "E_shape": [
+      16,
+      9
+    ],
+    "E_transpose_E_identity": true,
+    "E_transpose_seed_zero": true,
+    "seed_ones": 7,
+    "P_column_sums_one": true
+  },
+  "reference_controls": [
+    {
+      "control": "previous_beat_selected",
+      "rejected": "source reference-current recipe mismatch",
+      "difference": 0.0037092215381930027
+    },
+    {
+      "control": "event_entry_baseline",
+      "rejected": "source reference-current recipe mismatch",
+      "difference": 2.37952738885161e-06
+    },
+    {
+      "control": "event_entry_predictor",
+      "rejected": "source reference-current recipe mismatch",
+      "difference": 2.2095103524577553e-12
+    }
+  ],
+  "map_order": [
+    {
+      "role": "current",
+      "shift": 1,
+      "identical": true
+    },
+    {
+      "role": "current",
+      "shift": 4,
+      "identical": true
+    },
+    {
+      "role": "current",
+      "shift": 8,
+      "identical": true
+    },
+    {
+      "role": "reset",
+      "shift": 1,
+      "identical": true
+    },
+    {
+      "role": "reset",
+      "shift": 4,
+      "identical": true
+    },
+    {
+      "role": "reset",
+      "shift": 8,
+      "identical": true
+    }
+  ],
+  "point_checks": [
+    {
+      "label": "current_source_initial",
+      "enclosed_entries": 298
+    },
+    {
+      "label": "current_source_postbeat",
+      "enclosed_entries": 298
+    },
+    {
+      "label": "current_target_entry",
+      "enclosed_entries": 865
+    },
+    {
+      "label": "current_target_final",
+      "enclosed_entries": 865
+    },
+    {
+      "label": "reset_source_initial",
+      "enclosed_entries": 298
+    },
+    {
+      "label": "reset_target_entry",
+      "enclosed_entries": 865
+    },
+    {
+      "label": "reset_target_final",
+      "enclosed_entries": 865
+    },
+    {
+      "label": "nonuniform_source",
+      "enclosed_entries": 298
+    }
+  ],
+  "writer_counterexample": {
+    "baseline_current": {
+      "intended_control_error_lower_exact": "12256974453574493350847280132470620828489167169290636479/12855504354071922204335696738729300820177623950262342682411008",
+      "intended_control_error_lower": 9.534417410618474e-07,
+      "error_budget": 3.552713678800501e-15
+    },
+    "stale_resource": {
+      "intended_control_error_lower_exact": "1532121806526341180827390832921877992551620285553173013/803469022129495137770981046170581301261101496891396417650688",
+      "intended_control_error_lower": 1.9068834819115267e-06,
+      "error_budget": 3.552713678800501e-15
+    }
+  },
+  "point_check_total_entries": 4652
+}

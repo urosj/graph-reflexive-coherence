@@ -1,9 +1,220 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
+## Current continuation — 2026-10-02
+
+**Latest disposition:** the [aggregate technical review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+and focused restriction pressure check are complete. The user explicitly
+accepts both R1–R10 and the aggregate scope on 2026-10-02 (“i accept both”).
+All ten rows are provisionally closed; P9-8.0 is complete and its production
+hold is released. Next: P9-8.1a under its existing scoped permission. The chronology
+below records the earlier checkpoints and does not reopen their resolved items.
+
+The user requested a new branch and continuation of P9-8.0. Branch
+`work/p9-8-0-feasibility-scope` starts from `main` at `36be1ea`; the earlier
+scope/work-order clarification is already committed in its ancestry (`39a5af8`).
+This section supersedes the older checkout and pending-transfer instructions
+below. The user accepted the bounded scope/RG numerical checkpoint and requested its
+commit on 2026-10-02; it is committed as `235b871`. At that checkpoint RG numerical
+implementation review remained open; the supplied audit supported the mathematics.
+Aggregate feasibility and production are not accepted by that instruction.
+
+The first deliverable is performed in the existing
+[all-ten feasibility register](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#pinned-all-ten-research-scope--2026-10-02):
+exact graphs/ports/capacities, parameters and stages, realization-specific
+resource/history/geometry/carrier domains, both roles, duration/horizon and
+accepted evidence are mapped. At that checkpoint all ten disposition rows remained unresolved;
+aggregate review was still ahead. The latest disposition above supersedes it.
+
+Scope reconciliation exposed a concrete evidence-label mismatch: every local
+enabled owner selected the final **positive-chirality, phase-three D52** vector,
+while the RG completion note and two isolated review summaries described
+negative chirality. The note now matches the local fixture, and local consumers
+select that unchanged fixture by name. The isolated review descriptions remain
+historical evidence; no second-chirality numerical coverage is inferred. The
+completion note also now correctly calls the differential means port rows,
+rather than columns. Three focused scope tests pass, including exact endpoint
+ports/capacity, malformed selection and all consumer setups after reordering.
+Accepted numerical calculations were not rerun for this input-equivalent change.
+
+The next requested step is also performed: the
+[represented RG research successor](./phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md)
+locally passes four methods. It uses A4/C6 finite graph-transform chains,
+independently recomputed full residuals and global truncation bounds. Fifty
+nominal read stages, both-role ten-step continuation and 44 named effects pass,
+including RG/OS and instantaneous-CI discrimination and the A writer's next
+RG current. Altered clamps and corrupt/wrong-realization chains reject through
+the actual consumer. The separate binary64 NumPy recipe inherits no OS margins.
+The user accepted this bounded numerical checkpoint with the 2026-10-02 commit
+instruction. Independent implementation review and complete profile/event/oracle
+bindings remain open; the retained audit passes the written RG mathematics only.
+
+The requested continuation has locally verified the
+[six-profile CI/PC/CI+PC numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md):
+nine methods pass after review corrections, with 150 nominal read stages and
+124 effect comparisons. It binds joint-root errors, old-carrier reads and same-source W/Z writers
+through next consumers. Nonzero target carriers remain separately supplied.
+The C_PC reset next-current margin failure is retained; equivalent compensated
+C arithmetic resolves it under the unchanged error/ULP criterion.
+The [retained numerical audit](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md)
+passes the bounded construction and identifies RN-F1: mutable producer operands
+could shift the verifier's reference state. Entry snapshots and separate work
+arrays now close that gap. Four added methods cover thirteen named-target
+mutations, the exact equilibrium counterexample, lawful scratch writes,
+intended-exact enclosures, six C response-order rejections and eight naive
+carrier-copy rejections. The review and historical result files are portable
+repository evidence. The user accepts this bounded numerical successor and
+local RN-F1 correction through the 2026-10-02 commit instruction, committed
+as `5a234db`. The audit did not have the actual RG evaluator for implementation
+review.
+
+The bounded-deliverable clarification is committed as `165473f`. The requested
+continuation has now locally verified the
+[shared-input/C_OS construction companion](./phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md):
+an explicit rational input record, complete C references, independent exact
+resource-transfer matrix and actual current/reset target states. Seven methods
+pass after audit correction, with both-role ten-step continuation, final reconstruction, six retained
+OS effects, ten input-mutation cases and thirteen consumer rejections. Exact
+zeros, charge, fresh current-source trigger and absent W/Z are checked. This
+increment is accepted and committed as `a360b0f` on 2026-10-02. The [retained bounded audit](./phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md)
+passes the construction and identifies EC-F1/EC-F2. The setup now binds consumed
+models to the validated record and independently assembled matrices; final and
+effect reads now own entry references and use separate work arrays. Thirteen
+model substitutions and in-place read shifts reject, including the final-only
+fault through actual continuation. The report and five historical result files
+are retained portably. The commit instruction accepts this bounded companion
+and its local corrections; no all-ten binding/oracle
+item or C_OS feasibility row is closed.
+
+The requested continuation now locally verifies the
+[A_OS lineage/initialization companion](./phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md).
+It preserves all nine old-edge W values by exact identity and seeds seven new
+edges with bond 1. A fresh role-entry OS read supplies the reference-current
+recipe, independently certified before event transfer; new reference currents
+are zero and separately solved target currents are nonzero. Both roles admit
+ten target steps and final reconstruction. Six methods pass with eight
+mechanism/writer effects and input/model/producer mutations. The
+[independent review](./phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md)
+passes the bounded construction; AEC-F1 is corrected locally by preserving
+counterfactual C/W/J, checking pointwise writer error and separately retaining
+the composed intended-exact reference. Twelve input mutations reject, four
+scratch controls pass, and the actual effect consumer rejects the demonstrated
+history mutation. All nominal report fields are unchanged. Audit results are
+retained portably. This uses the allowed lineage plus new-edge initialization
+branch. The user accepts this bounded companion and local correction through
+the 2026-10-02 commit instruction, committed as `aa35393`; no native oracle leaf
+or feasibility row closes.
+
+The subsequent [persistent event companion](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md)
+selects whole-source archive/whole-target zero reset for A_PC, C_PC, A_CI_PC
+and C_CI_PC. It checks complete archive content against actual per-role source
+carriers, exact zero target Z and separate `carrier_history_loss`, preserving
+A W lineage or complete C references. Both roles pass ten target steps and final
+reads. Five methods and 68 named target-effect comparisons pass; the minimum
+margin exceeds 1.421. The effect checks explicitly move PC geometry/carrier consumption to
+the next read after the first nonzero carrier write; CI+PC also demonstrates
+its instantaneous source at zero-carrier entry. Parameters and error thresholds
+remain unchanged. The [bounded independent review](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md)
+passes; CEC-F1 is corrected locally by anchoring the event to independently
+reconstructed initial records and the one-beat/zero-beat role schedule. The
+full archive and resource/W transfers are checked against that preserved
+physical stage. Eight probe-carrier and four dropped-source-writer mutations
+reject through the actual event path. Audit evidence is retained portably.
+The user accepts this bounded companion and CEC-F1 correction through the
+2026-10-02 commit instruction, committed as `c9d9ae8`; native receipts and
+all-ten closure remain open.
+
+The subsequent [nonpersistent CI companion](./phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md)
+locally verifies A_CI/C_CI on the same source/positive-D52 event. Six methods
+pass with both-role ten-step continuation, final reads and 22 named target
+comparisons; the minimum effect margin exceeds 1.995. Actual event outputs
+preserve A W lineage or complete C references and explicitly exclude Z,
+archives and carrier loss. The physical source stage is independently checked;
+eight probe-write/omitted-beat substitutions reject. EC model binding, RN
+input ownership and the AEC writer guard are reused. This continuation is
+accepted through the 2026-10-02 commit instruction. Its [bounded independent review](./phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md)
+passes without a new blocking finding. The supplied report is retained; its
+separate audit bundle was unavailable. No native
+oracle leaf or aggregate row closes.
+
+The [RG event companion](./phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md)
+now locally checks A_RG2b/C_RG2b actual source/event/target paths. Seven methods
+and 26 target-effect comparisons pass; the minimum full-gate ratio exceeds
+1.371. Each target reconstructs its own completion-relative section. First
+inverse core bounds are strictly negative with the complete allowance, so no
+backward physical-domain assumption is used. The new consuming guard preserves
+point inputs and independently recertifies returned chains and full read/write
+outputs, keeping intended-exact history branches separate. Source-chain
+substitution at target queries, corrupted outputs and shifted input operands
+reject; lawful scratch writes pass. The [bounded event review](./phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md)
+passes without corrections under reconstructed dependencies; only its report was
+available. The user accepts the CI and RG bounded companions through the
+2026-10-02 commit instruction. The actual RG evaluator's independent implementation
+review remains open; the event audit explicitly did not inspect that source.
+
+The CI/RG checkpoint is committed as `056e835`. The subsequent
+[selected-case compatibility reconciliation](./phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md)
+now assembles all ten input/oracle/domain bindings and derives shared charge,
+W-lineage, carrier-disposition and target-admission compatibility. It maps reset,
+rejection, coarse/Split and all four disabled surfaces to existing contracts.
+The saturated source's disabled expansion must reject as legacy-undefined;
+research charge certificates do not execute the native binary64 charge gate.
+The user accepts this bounded reconciliation through the 2026-10-02 commit
+instruction; aggregate review and production permission remain separate.
+
+The compatibility reconciliation is committed as `42976ed`. The next increment
+prepares the [actual RG numerical implementation review package](./phase-9-grcv4/tranche-8/rg-numerical-review/README.md):
+pinned evaluator/consumer sources and dependencies, portable local reports,
+relative import provenance, payload hashes and a reproducible export. It retains
+the original source rather than the independent reconstruction used by earlier
+audits. Local snapshot runs pass all four numerical methods (50 read stages,
+44 effects) and seven event methods (26 effects). All 156 loaded repository
+module origins are inside the extraction. The package and documentation are
+accepted with the own-review checkpoint below. Export validation is local
+evidence, not an independent verdict.
+
+At the user's subsequent request, the agent performed its [own actual-source
+RG review](./phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md). It reproduced
+four defects: incomplete read-output certification, mutable producer operands,
+unbound returned depth and intended-input bypass of represented-domain admission.
+All are corrected locally. Ten pressure methods pass, including 34 chain and
+33 input/model rejection cases, clamp faces, equilibria, extreme finite inputs
+and 7,188 enclosed entries from separate 90-digit equations. The original four
+numerical and seven event methods also pass; every nominal report field is
+unchanged. The export now includes baseline and corrected source with separate
+provenance and results. This is the user's requested own review, not an external
+independent verdict. The user explicitly accepts this own review, RG-NR1–4
+corrections and the bounded actual-implementation review disposition through
+the 2026-10-02 acceptance/commit instruction. No external audit is inferred.
+
+The subsequent [all-ten aggregate own review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+now completes the technical item: twenty profile/role paths, 200 target beats,
+103 rejected event defects, 2,048 transfer corners and exact signed coarse
+controls. No new numerical blocker was found. The domain description now
+separates actual-query event certificates from historical proof boxes; current
+RG status is reconciled. Following the focused restriction pressure check,
+the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
+provisionally closed and P9-8.0 is complete.
+
+**Next task:** P9-8.1a fixed chart and port graph under its existing scoped
+permission. The P9-8.0 hold is released; later native owners are unchanged.
+Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
+its actual policy outputs rather than the older separately seeded targets.
+
+The remaining checklist now distinguishes bounded research oracles and
+selected-case compatibility from later native fixture/identity completion,
+registration, serialization, receipts, rollback/replay and disabled executions.
+P9-8.3A.1 and the C owners reuse the research expectations; new native G2/G3
+admission and later leaf closure are not P9-8.0 research prerequisites. Exact
+native scope acceptance still needs its own gates. The user-requested own
+actual RG evaluator review and corrections are now explicitly accepted; the
+older external audits retain their original limits. Aggregate technical review
+and explicit restriction/aggregate acceptance are complete. P9-8.1a can
+proceed under its existing scoped permission.
+
 ## Resume on another machine
 
-This section and the current checkpoint below take precedence over historical
-next-step instructions and setup recipes later in this handoff.
+The 2026-10-02 continuation above takes precedence over this historical transfer
+record. The setup guidance remains applicable; inspect the actual checkout.
 
 **Checkout:** `implementation/grc9v4-tranche-8`. At handoff preparation the
 latest accepted commit was `d6d3647` (bounded A/C RG2b completion and RG-F1/RG-F2
@@ -278,7 +489,7 @@ General 7T completion is no longer a blanket prerequisite for this mechanical
 scope. Nine-port candidate detection, request-driven D11-G9 expansion and
 column field coarse/Split have their own contracts. Audit each consumed
 generic dependency; research questions can proceed independently, while the
-all-ten production hold remains in force.
+P9-8.0 all-ten production hold is now released by explicit aggregate acceptance.
 The expansion request still supplies choices: this is not a general autonomous
 request generator. Completed sparks/hierarchy remain separately unselected.
 

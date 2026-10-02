@@ -1,0 +1,9 @@
+# Local replay versions. External runs must report any environment differences.
+numpy==2.4.6
+mpmath==1.3.0
+rfc8785==0.1.4
+jsonschema==4.26.0
+networkx==3.6.1
+matplotlib==3.11.1
+pyvis==0.3.2
+PyYAML==6.0.3

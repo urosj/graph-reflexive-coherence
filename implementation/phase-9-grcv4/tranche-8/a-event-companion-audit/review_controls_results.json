@@ -1,0 +1,134 @@
+{
+  "point_controls": [
+    {
+      "role": "current",
+      "mode": "baseline_current",
+      "control": "original",
+      "passed": true
+    },
+    {
+      "role": "current",
+      "mode": "baseline_current",
+      "control": "mutate_C",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "current",
+      "mode": "baseline_current",
+      "control": "mutate_W",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "current",
+      "mode": "baseline_current",
+      "control": "mutate_J",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "current",
+      "mode": "baseline_current",
+      "control": "lawful_scratch",
+      "passed": true
+    },
+    {
+      "role": "current",
+      "mode": "stale_resource",
+      "control": "original",
+      "passed": true
+    },
+    {
+      "role": "current",
+      "mode": "stale_resource",
+      "control": "mutate_C",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "current",
+      "mode": "stale_resource",
+      "control": "mutate_W",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "current",
+      "mode": "stale_resource",
+      "control": "mutate_J",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "current",
+      "mode": "stale_resource",
+      "control": "lawful_scratch",
+      "passed": true
+    },
+    {
+      "role": "reset",
+      "mode": "baseline_current",
+      "control": "original",
+      "passed": true
+    },
+    {
+      "role": "reset",
+      "mode": "baseline_current",
+      "control": "mutate_C",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "reset",
+      "mode": "baseline_current",
+      "control": "mutate_W",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "reset",
+      "mode": "baseline_current",
+      "control": "mutate_J",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "reset",
+      "mode": "baseline_current",
+      "control": "lawful_scratch",
+      "passed": true
+    },
+    {
+      "role": "reset",
+      "mode": "stale_resource",
+      "control": "original",
+      "passed": true
+    },
+    {
+      "role": "reset",
+      "mode": "stale_resource",
+      "control": "mutate_C",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "reset",
+      "mode": "stale_resource",
+      "control": "mutate_W",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "reset",
+      "mode": "stale_resource",
+      "control": "mutate_J",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    },
+    {
+      "role": "reset",
+      "mode": "stale_resource",
+      "control": "lawful_scratch",
+      "passed": true
+    }
+  ],
+  "integration": [
+    {
+      "control": "original_full_continuation_effect_method",
+      "passed": true
+    },
+    {
+      "control": "mutated_full_continuation_effect_method",
+      "rejected": "counterfactual writer error relative to entry input unresolved"
+    }
+  ]
+}

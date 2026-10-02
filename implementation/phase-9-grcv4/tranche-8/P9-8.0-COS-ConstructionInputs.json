@@ -1,0 +1,459 @@
+{
+  "research_case_id": "P9-8.0-C_OS-SOURCE-D52-POSITIVE-PHASE-3",
+  "identity_scope": "research_role_names_without_native_event_namespace",
+  "topology_fixture": "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+  "candidate": "C",
+  "realization": "OS",
+  "request": {
+    "source_node_id": "source-s",
+    "target_effective_degree": 52,
+    "module_chirality": 1,
+    "growth_phase": 3,
+    "resource_distribution": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "bond_seed": "1"
+  },
+  "source_graph": {
+    "nodes": [
+      "outside-1",
+      "outside-2",
+      "outside-3",
+      "outside-4",
+      "outside-5",
+      "outside-6",
+      "outside-7",
+      "outside-8",
+      "outside-9",
+      "source-s"
+    ],
+    "edges": [
+      {
+        "edge_id": "old-1",
+        "tail": {
+          "node_id": "source-s",
+          "port": 1
+        },
+        "head": {
+          "node_id": "outside-1",
+          "port": 1
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-2",
+        "tail": {
+          "node_id": "source-s",
+          "port": 2
+        },
+        "head": {
+          "node_id": "outside-2",
+          "port": 2
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-3",
+        "tail": {
+          "node_id": "source-s",
+          "port": 3
+        },
+        "head": {
+          "node_id": "outside-3",
+          "port": 3
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-4",
+        "tail": {
+          "node_id": "source-s",
+          "port": 4
+        },
+        "head": {
+          "node_id": "outside-4",
+          "port": 4
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-5",
+        "tail": {
+          "node_id": "source-s",
+          "port": 5
+        },
+        "head": {
+          "node_id": "outside-5",
+          "port": 5
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-6",
+        "tail": {
+          "node_id": "source-s",
+          "port": 6
+        },
+        "head": {
+          "node_id": "outside-6",
+          "port": 6
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-7",
+        "tail": {
+          "node_id": "source-s",
+          "port": 7
+        },
+        "head": {
+          "node_id": "outside-7",
+          "port": 7
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-8",
+        "tail": {
+          "node_id": "source-s",
+          "port": 8
+        },
+        "head": {
+          "node_id": "outside-8",
+          "port": 8
+        },
+        "kind": "boundary"
+      },
+      {
+        "edge_id": "old-9",
+        "tail": {
+          "node_id": "source-s",
+          "port": 9
+        },
+        "head": {
+          "node_id": "outside-9",
+          "port": 9
+        },
+        "kind": "boundary"
+      }
+    ]
+  },
+  "expected_target_roles": {
+    "nodes": [
+      "core",
+      "extra/1/1",
+      "extra/2/1",
+      "extra/3/1",
+      "extra/3/2",
+      "outside-1",
+      "outside-2",
+      "outside-3",
+      "outside-4",
+      "outside-5",
+      "outside-6",
+      "outside-7",
+      "outside-8",
+      "outside-9",
+      "satellite/1",
+      "satellite/2",
+      "satellite/3"
+    ],
+    "edges": [
+      {
+        "edge_id": "internal/1",
+        "tail": {
+          "node_id": "core",
+          "port": 2
+        },
+        "head": {
+          "node_id": "satellite/1",
+          "port": 2
+        }
+      },
+      {
+        "edge_id": "internal/2",
+        "tail": {
+          "node_id": "core",
+          "port": 6
+        },
+        "head": {
+          "node_id": "satellite/2",
+          "port": 6
+        }
+      },
+      {
+        "edge_id": "internal/3",
+        "tail": {
+          "node_id": "core",
+          "port": 7
+        },
+        "head": {
+          "node_id": "satellite/3",
+          "port": 7
+        }
+      },
+      {
+        "edge_id": "internal/extra/1/1",
+        "tail": {
+          "node_id": "satellite/1",
+          "port": 3
+        },
+        "head": {
+          "node_id": "extra/1/1",
+          "port": 3
+        }
+      },
+      {
+        "edge_id": "internal/extra/2/1",
+        "tail": {
+          "node_id": "satellite/2",
+          "port": 4
+        },
+        "head": {
+          "node_id": "extra/2/1",
+          "port": 4
+        }
+      },
+      {
+        "edge_id": "internal/extra/3/1",
+        "tail": {
+          "node_id": "satellite/3",
+          "port": 8
+        },
+        "head": {
+          "node_id": "extra/3/1",
+          "port": 8
+        }
+      },
+      {
+        "edge_id": "internal/extra/3/2",
+        "tail": {
+          "node_id": "extra/3/1",
+          "port": 9
+        },
+        "head": {
+          "node_id": "extra/3/2",
+          "port": 9
+        }
+      },
+      {
+        "edge_id": "old-1",
+        "tail": {
+          "node_id": "satellite/1",
+          "port": 1
+        },
+        "head": {
+          "node_id": "outside-1",
+          "port": 1
+        }
+      },
+      {
+        "edge_id": "old-2",
+        "tail": {
+          "node_id": "satellite/2",
+          "port": 2
+        },
+        "head": {
+          "node_id": "outside-2",
+          "port": 2
+        }
+      },
+      {
+        "edge_id": "old-3",
+        "tail": {
+          "node_id": "satellite/3",
+          "port": 3
+        },
+        "head": {
+          "node_id": "outside-3",
+          "port": 3
+        }
+      },
+      {
+        "edge_id": "old-4",
+        "tail": {
+          "node_id": "satellite/1",
+          "port": 4
+        },
+        "head": {
+          "node_id": "outside-4",
+          "port": 4
+        }
+      },
+      {
+        "edge_id": "old-5",
+        "tail": {
+          "node_id": "satellite/2",
+          "port": 5
+        },
+        "head": {
+          "node_id": "outside-5",
+          "port": 5
+        }
+      },
+      {
+        "edge_id": "old-6",
+        "tail": {
+          "node_id": "satellite/3",
+          "port": 6
+        },
+        "head": {
+          "node_id": "outside-6",
+          "port": 6
+        }
+      },
+      {
+        "edge_id": "old-7",
+        "tail": {
+          "node_id": "satellite/1",
+          "port": 7
+        },
+        "head": {
+          "node_id": "outside-7",
+          "port": 7
+        }
+      },
+      {
+        "edge_id": "old-8",
+        "tail": {
+          "node_id": "satellite/2",
+          "port": 8
+        },
+        "head": {
+          "node_id": "outside-8",
+          "port": 8
+        }
+      },
+      {
+        "edge_id": "old-9",
+        "tail": {
+          "node_id": "satellite/3",
+          "port": 9
+        },
+        "head": {
+          "node_id": "outside-9",
+          "port": 9
+        }
+      }
+    ]
+  },
+  "unit_vertex_measure": "1",
+  "source_reference_weights": {
+    "old-1": "1",
+    "old-2": "1",
+    "old-3": "1",
+    "old-4": "1",
+    "old-5": "1",
+    "old-6": "1",
+    "old-7": "1",
+    "old-8": "1",
+    "old-9": "1"
+  },
+  "target_reference_weights": {
+    "internal/1": "1",
+    "internal/2": "1",
+    "internal/3": "1",
+    "internal/extra/1/1": "1",
+    "internal/extra/2/1": "1",
+    "internal/extra/3/1": "1",
+    "internal/extra/3/2": "1",
+    "old-1": "1",
+    "old-2": "1",
+    "old-3": "1",
+    "old-4": "1",
+    "old-5": "1",
+    "old-6": "1",
+    "old-7": "1",
+    "old-8": "1",
+    "old-9": "1"
+  },
+  "new_edge_incoming_reference_current": {
+    "internal/1": "0",
+    "internal/2": "0",
+    "internal/3": "0",
+    "internal/extra/1/1": "0",
+    "internal/extra/2/1": "0",
+    "internal/extra/3/1": "0",
+    "internal/extra/3/2": "0"
+  },
+  "parameters": {
+    "eta_C": "1",
+    "kappa_Phi_C": "1",
+    "chi_C": "16",
+    "zeta_C": "1/137438953472",
+    "kappa_H": "1/2",
+    "kappa_M_C": "1/16777216",
+    "Lambda_C": "1/512",
+    "C_ref": "1",
+    "tau_C": "1",
+    "site_potential": "zero",
+    "external_forcing": "zero",
+    "K4_base": "zero"
+  },
+  "geometry": {
+    "reference": "identity",
+    "star_cover": "vertex_stars",
+    "overlap_weight": "1/sqrt(2)",
+    "tensor_adapter": "identity",
+    "source_mask_diagonal": "1",
+    "source_mask_shared_vertex": "1/2",
+    "source_mask_disjoint": "0"
+  },
+  "row_detection": {
+    "frame": "fixed_port_chart",
+    "backend": "row_basis_diagonal",
+    "weights": "stable_edge_W_C_tr",
+    "stage": "fresh_postbeat_candidate_detection",
+    "hessian_sign": -1,
+    "epsilon_gradient": "1/2",
+    "epsilon_spark": "0"
+  },
+  "ordinary": {
+    "duration": "1/4096",
+    "target_steps": 10,
+    "source_current_steps": 1,
+    "source_reset_steps": 0,
+    "split_metric": "edge_l2_v1",
+    "split_tolerance": "1/1099511627776"
+  },
+  "roles": {
+    "current": {
+      "initial_resources": {
+        "outside-1": "404909/134272",
+        "outside-2": "404909/134272",
+        "outside-3": "404909/134272",
+        "outside-4": "404909/134272",
+        "outside-5": "404909/134272",
+        "outside-6": "404909/134272",
+        "outside-7": "404909/134272",
+        "outside-8": "404909/134272",
+        "outside-9": "404909/134272",
+        "source-s": "402861/134272"
+      },
+      "input_recipe": "reference_preimage_center_3"
+    },
+    "reset": {
+      "initial_resources": {
+        "outside-1": "129/64",
+        "outside-2": "129/64",
+        "outside-3": "129/64",
+        "outside-4": "129/64",
+        "outside-5": "129/64",
+        "outside-6": "129/64",
+        "outside-7": "129/64",
+        "outside-8": "129/64",
+        "outside-9": "129/64",
+        "source-s": "2"
+      },
+      "input_recipe": "independently_supplied_center_2"
+    }
+  },
+  "resource_initial_radius": "1/4294967296",
+  "candidate_history": "rederived",
+  "carrier_history": "not_applicable",
+  "W": null,
+  "Z": null,
+  "information_loss": []
+}

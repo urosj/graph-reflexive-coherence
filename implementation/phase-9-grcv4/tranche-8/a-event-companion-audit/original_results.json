@@ -1,0 +1,317 @@
+{
+  "scope": "Isolated A-event audit. New A owner/JSON loaded unchanged.\nPrevious uploaded OS kernels are explicitly parameterized by retained loader.\nCurrent corrected C dependency bytes and frozen vector bytes are unavailable;\nmodel guard is the earlier proposed independent guard, not asserted to be the\nexact repository implementation. Positive-D52 port recipe is transcribed.\n",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "numpy": "2.3.5",
+    "mpmath": "1.3.0"
+  },
+  "tests_run": 4,
+  "success": true,
+  "seconds": 9.033116579055786,
+  "errors": [],
+  "failures": [],
+  "report": {
+    "roles": {
+      "current": {
+        "event": {
+          "resource_error": 7.401486830834377e-17,
+          "charge_error": 2.220446049250313e-16
+        },
+        "initial_W": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9990236757291666,
+          0.9990236757291666,
+          0.9990236757291666,
+          0.9990236757291666,
+          0.9990236757291666,
+          0.9990236757291666,
+          0.9990236757291666,
+          0.9990236757291666,
+          0.9990236757291666
+        ],
+        "reference_current": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.15593535618630844,
+          0.15593535618630844,
+          0.15593535618630844,
+          0.15593535618630844,
+          0.15593535618630844,
+          0.15593535618630844,
+          0.15593535618630844,
+          0.15593535618630844,
+          0.15593535618630844
+        ],
+        "steps": [
+          {
+            "resource_lower": 0.00024414067787206263,
+            "W_lower": 0.9990239134858694,
+            "W_upper": 0.9999999999909286,
+            "resource_error": 1.2802134519428418e-16,
+            "history_error": 5.1152415167651825e-17,
+            "current_error": 2.3310330766565556e-15
+          },
+          {
+            "resource_lower": 0.0004867107305293993,
+            "W_lower": 0.9990241511946197,
+            "W_upper": 0.9999999999819716,
+            "resource_error": 1.995622593368212e-16,
+            "history_error": 5.055602663363832e-17,
+            "current_error": 1.171046539204497e-15
+          },
+          {
+            "resource_lower": 0.0007276887912987091,
+            "W_lower": 0.9990243888408097,
+            "W_upper": 0.9999999999731299,
+            "resource_error": 1.8718999741561266e-16,
+            "history_error": 5.123732138567476e-17,
+            "current_error": 1.2811758155675503e-15
+          },
+          {
+            "resource_lower": 0.0009670532639401489,
+            "W_lower": 0.9990246264243822,
+            "W_upper": 0.9999999999644041,
+            "resource_error": 2.027135001162215e-16,
+            "history_error": 5.343521621171917e-17,
+            "current_error": 1.4167640079260052e-15
+          },
+          {
+            "resource_lower": 0.0012047823202124492,
+            "W_lower": 0.9990248639452785,
+            "W_upper": 0.9999999999557951,
+            "resource_error": 1.5854939216877007e-16,
+            "history_error": 5.4687764291825886e-17,
+            "current_error": 7.282928972095075e-16
+          },
+          {
+            "resource_lower": 0.0014408538974122215,
+            "W_lower": 0.9990251014034386,
+            "W_upper": 0.9999999999473034,
+            "resource_error": 9.991832485058372e-17,
+            "history_error": 4.839793874942521e-17,
+            "current_error": 8.013816098957755e-16
+          },
+          {
+            "resource_lower": 0.0016752456958871855,
+            "W_lower": 0.9990253387988016,
+            "W_upper": 0.9999999999389299,
+            "resource_error": 1.973454858095889e-16,
+            "history_error": 5.41901345806289e-17,
+            "current_error": 1.44782090233254e-15
+          },
+          {
+            "resource_lower": 0.0019079351765230355,
+            "W_lower": 0.9990255761313047,
+            "W_upper": 0.999999999930675,
+            "resource_error": 1.7811023748062418e-16,
+            "history_error": 4.872244390871768e-17,
+            "current_error": 1.8845397680616852e-15
+          },
+          {
+            "resource_lower": 0.002138899558203675,
+            "W_lower": 0.9990258134008841,
+            "W_upper": 0.9999999999225395,
+            "resource_error": 1.9788692624041917e-16,
+            "history_error": 5.371515669474512e-17,
+            "current_error": 1.0892627031741398e-15
+          },
+          {
+            "resource_lower": 0.002368115815244527,
+            "W_lower": 0.9990260506074745,
+            "W_upper": 0.999999999914524,
+            "resource_error": 2.2003198103862693e-16,
+            "history_error": 5.0420620141305955e-17,
+            "current_error": 2.273715788518362e-15
+          }
+        ],
+        "final_current_error": 1.0564208016610269e-15
+      },
+      "reset": {
+        "event": {
+          "resource_error": 3.700743415417188e-17,
+          "charge_error": 1.1102230246251565e-16
+        },
+        "initial_W": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9990234375,
+          0.9990234375,
+          0.9990234375,
+          0.9990234375,
+          0.9990234375,
+          0.9990234375,
+          0.9990234375,
+          0.9990234375,
+          0.9990234375
+        ],
+        "reference_current": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.15594259286848478,
+          0.15594259286848478,
+          0.15594259286848478,
+          0.15594259286848478,
+          0.15594259286848478,
+          0.15594259286848478,
+          0.15594259286848478,
+          0.15594259286848478,
+          0.15594259286848478
+        ],
+        "steps": [
+          {
+            "resource_lower": 0.00016276041578023313,
+            "W_lower": 0.9990236755530554,
+            "W_upper": 0.9999999999959691,
+            "resource_error": 1.8060374825031145e-16,
+            "history_error": 4.578957256418862e-17,
+            "current_error": 7.885076427714957e-16
+          },
+          {
+            "resource_lower": 0.0003244653782242947,
+            "W_lower": 0.9990239135605801,
+            "W_upper": 0.9999999999919882,
+            "resource_error": 2.149975634129315e-16,
+            "history_error": 4.811881061732931e-17,
+            "current_error": 1.333384236243488e-15
+          },
+          {
+            "resource_lower": 0.0004851005453428522,
+            "W_lower": 0.9990241515080046,
+            "W_upper": 0.9999999999880578,
+            "resource_error": 1.9385895930503e-16,
+            "history_error": 5.321524897896905e-17,
+            "current_error": 4.0437803936039013e-16
+          },
+          {
+            "resource_lower": 0.0006446514210629333,
+            "W_lower": 0.9990243893953114,
+            "W_upper": 0.999999999984178,
+            "resource_error": 1.572543317784166e-16,
+            "history_error": 5.0569417589176394e-17,
+            "current_error": 8.13143010346339e-16
+          },
+          {
+            "resource_lower": 0.0008031033535936549,
+            "W_lower": 0.9990246272224816,
+            "W_upper": 0.9999999999803492,
+            "resource_error": 1.636170364787691e-16,
+            "history_error": 5.2509375187220263e-17,
+            "current_error": 1.942808671100517e-15
+          },
+          {
+            "resource_lower": 0.0009604415337746297,
+            "W_lower": 0.9990248649894964,
+            "W_upper": 0.9999999999765716,
+            "resource_error": 1.63622187781581e-16,
+            "history_error": 5.061038058045808e-17,
+            "current_error": 1.0261107455893338e-15
+          },
+          {
+            "resource_lower": 0.0011166509934068677,
+            "W_lower": 0.9990251026963359,
+            "W_upper": 0.9999999999728457,
+            "resource_error": 2.095399156173304e-16,
+            "history_error": 5.2491044659458436e-17,
+            "current_error": 9.2439139426423e-16
+          },
+          {
+            "resource_lower": 0.0012717166035659862,
+            "W_lower": 0.99902534034298,
+            "W_upper": 0.9999999999691717,
+            "resource_error": 2.1140515561997271e-16,
+            "history_error": 4.930236305288246e-17,
+            "current_error": 6.423082266139171e-16
+          },
+          {
+            "resource_lower": 0.0014256230728975426,
+            "W_lower": 0.9990255779294077,
+            "W_upper": 0.9999999999655497,
+            "resource_error": 1.3778661707497198e-16,
+            "history_error": 5.294486152619788e-17,
+            "current_error": 1.3956698098945647e-15
+          },
+          {
+            "resource_lower": 0.001578354945894298,
+            "W_lower": 0.9990258154555974,
+            "W_upper": 0.9999999999619801,
+            "resource_error": 2.0249046441886323e-16,
+            "history_error": 5.238387330716398e-17,
+            "current_error": 6.056690150676613e-16
+          }
+        ],
+        "final_current_error": 1.3883131552267453e-15
+      }
+    },
+    "effects": {
+      "source_geometry": {
+        "represented_difference": 2.0565493752400243e-12,
+        "combined_full_error": 3.6435120201777736e-17,
+        "exact_effect_lower": 2.0565129401198225e-12,
+        "minimum_margin_ratio": 5591.714985250404
+      },
+      "source_readback": {
+        "represented_difference": 2.3234930204285575e-06,
+        "combined_full_error": 1.3897638146594052e-17,
+        "exact_effect_lower": 2.32349302041466e-06,
+        "minimum_margin_ratio": 8368871728.117105
+      },
+      "target_geometry": {
+        "represented_difference": 6.840281230324763e-08,
+        "combined_full_error": 3.277198567128073e-15,
+        "exact_effect_lower": 6.840280902604906e-08,
+        "minimum_margin_ratio": 3383895.436017332
+      },
+      "target_readback": {
+        "represented_difference": 9.21684764616515e-05,
+        "combined_full_error": 4.112160855009548e-15,
+        "exact_effect_lower": 9.216847645753933e-05,
+        "minimum_margin_ratio": 3913059331.9414935
+      },
+      "baseline_current_W": {
+        "represented_difference": 8.104628079763643e-15,
+        "combined_full_error": 1.0319681825937655e-16,
+        "exact_effect_lower": 8.001431261504266e-15,
+        "minimum_margin_ratio": 6.229701617041888
+      },
+      "baseline_current_next_J": {
+        "represented_difference": 1.1723955140041653e-13,
+        "combined_full_error": 2.6343406939264222e-15,
+        "exact_effect_lower": 1.1460521070649011e-13,
+        "minimum_margin_ratio": 6.64518199868441
+      },
+      "stale_resource_W": {
+        "represented_difference": 9.849898674474389e-13,
+        "combined_full_error": 1.061450417075151e-16,
+        "exact_effect_lower": 9.848837224057314e-13,
+        "minimum_margin_ratio": 750.3206435319629
+      },
+      "stale_resource_next_J": {
+        "represented_difference": 1.325783927086377e-11,
+        "combined_full_error": 2.8568794100663855e-15,
+        "exact_effect_lower": 1.3254982391453702e-11,
+        "minimum_margin_ratio": 715.3660291113998
+      }
+    }
+  }
+}

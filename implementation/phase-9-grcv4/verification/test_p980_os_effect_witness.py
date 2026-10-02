@@ -252,7 +252,7 @@ class OSEffectWitnessTests(unittest.TestCase):
     def setUpClass(cls):
         bounds.FixedRowBoundTests.setUpClass()
         cls.source_data = bounds.FixedRowBoundTests.source
-        cls.layout = bounds.FixedRowBoundTests.layouts[-1]
+        cls.layout = bounds.FixedRowBoundTests.d52
 
     def models(self):
         source = StagedRows(self.source_data['live_node_ids'], self.source_data['edges'], PARAMS)

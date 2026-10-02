@@ -1,0 +1,1355 @@
+{
+  "A_CI_PC_current": {
+    "charge_error": "5069/2305843009213693952",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "0",
+    "final_current_max": 6.465949394953807,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "32047/18446744073709551616",
+        "resource_error": 1.595977271948084e-16,
+        "resource_lower": 0.00024414067880157664
+      },
+      {
+        "charge_discrepancy": "14895/9223372036854775808",
+        "resource_error": 1.7817895731001972e-16,
+        "resource_lower": 0.0004867107323904706
+      },
+      {
+        "charge_discrepancy": "5179/4611686018427387904",
+        "resource_error": 1.8848086704288937e-16,
+        "resource_lower": 0.0007276887940933902
+      },
+      {
+        "charge_discrepancy": "9209/4611686018427387904",
+        "resource_error": 1.3305558247157975e-16,
+        "resource_lower": 0.0009670532676705013
+      },
+      {
+        "charge_discrepancy": "3023/1152921504606846976",
+        "resource_error": 2.1416075057010167e-16,
+        "resource_lower": 0.0012047823248805432
+      },
+      {
+        "charge_discrepancy": "2173/576460752303423488",
+        "resource_error": 1.8739111774528345e-16,
+        "resource_lower": 0.0014408539030201367
+      },
+      {
+        "charge_discrepancy": "17907/4611686018427387904",
+        "resource_error": 2.0839181676645011e-16,
+        "resource_lower": 0.0016752457024370095
+      },
+      {
+        "charge_discrepancy": "6891/2305843009213693952",
+        "resource_error": 2.0116687190798676e-16,
+        "resource_lower": 0.0019079351840168657
+      },
+      {
+        "charge_discrepancy": "731/288230376151711744",
+        "resource_error": 1.8501691716151027e-16,
+        "resource_lower": 0.002138899566643617
+      },
+      {
+        "charge_discrepancy": "5069/2305843009213693952",
+        "resource_error": 7.825146576698299e-17,
+        "resource_lower": 0.0023681158246326955
+      }
+    ]
+  },
+  "A_CI_PC_reset": {
+    "charge_error": "2127/4611686018427387904",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.33322911417899,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "archive_stage",
+      "archive_order"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "7605/9223372036854775808",
+        "resource_error": 1.8062956976148028e-16,
+        "resource_lower": 0.00016276041670889766
+      },
+      {
+        "charge_discrepancy": "377/1152921504606846976",
+        "resource_error": 1.9589880426889264e-16,
+        "resource_lower": 0.0003244653800836309
+      },
+      {
+        "charge_discrepancy": "439/9223372036854775808",
+        "resource_error": 1.852138018416614e-16,
+        "resource_lower": 0.0004851005481348805
+      },
+      {
+        "charge_discrepancy": "689/9223372036854775808",
+        "resource_error": 1.8139511244638587e-16,
+        "resource_lower": 0.0006446514247896875
+      },
+      {
+        "charge_discrepancy": "1187/2305843009213693952",
+        "resource_error": 1.7518039725735565e-16,
+        "resource_lower": 0.0008031033582571821
+      },
+      {
+        "charge_discrepancy": "101/4611686018427387904",
+        "resource_error": 2.195321689867063e-16,
+        "resource_lower": 0.0009604415393769906
+      },
+      {
+        "charge_discrepancy": "4811/4611686018427387904",
+        "resource_error": 1.8046835804873448e-16,
+        "resource_lower": 0.0011166509999501366
+      },
+      {
+        "charge_discrepancy": "3547/4611686018427387904",
+        "resource_error": 1.8563720531549208e-16,
+        "resource_lower": 0.0012717166110522515
+      },
+      {
+        "charge_discrepancy": "625/2305843009213693952",
+        "resource_error": 1.296578991678033e-16,
+        "resource_lower": 0.0014256230813289063
+      },
+      {
+        "charge_discrepancy": "2127/4611686018427387904",
+        "resource_error": 2.0345179752261122e-16,
+        "resource_lower": 0.0015783549552728757
+      }
+    ]
+  },
+  "A_CI_current": {
+    "charge_error": "12251/2305843009213693952",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "1/4503599627370496",
+    "final_current_max": 6.465949394762114,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "47/36028797018963968",
+        "resource_error": 1.28211788561456e-16,
+        "resource_lower": 0.00024414067880163307
+      },
+      {
+        "charge_discrepancy": "33757/18446744073709551616",
+        "resource_error": 1.9936504169583273e-16,
+        "resource_lower": 0.0004867107323905841
+      },
+      {
+        "charge_discrepancy": "15559/9223372036854775808",
+        "resource_error": 1.8739414406312443e-16,
+        "resource_lower": 0.0007276887940935681
+      },
+      {
+        "charge_discrepancy": "15795/4611686018427387904",
+        "resource_error": 2.025019936713547e-16,
+        "resource_lower": 0.000967053267670758
+      },
+      {
+        "charge_discrepancy": "17793/4611686018427387904",
+        "resource_error": 1.5833042679966134e-16,
+        "resource_lower": 0.0012047823248809003
+      },
+      {
+        "charge_discrepancy": "18851/4611686018427387904",
+        "resource_error": 9.969136678539079e-17,
+        "resource_lower": 0.001440853903020623
+      },
+      {
+        "charge_discrepancy": "18463/4611686018427387904",
+        "resource_error": 1.9711045677415804e-16,
+        "resource_lower": 0.0016752457024376618
+      },
+      {
+        "charge_discrepancy": "22245/4611686018427387904",
+        "resource_error": 1.7786655676735995e-16,
+        "resource_lower": 0.0019079351840177283
+      },
+      {
+        "charge_discrepancy": "5151/1152921504606846976",
+        "resource_error": 1.9813959892110595e-16,
+        "resource_lower": 0.002138899566644742
+      },
+      {
+        "charge_discrepancy": "12251/2305843009213693952",
+        "resource_error": 2.1976983394768265e-16,
+        "resource_lower": 0.002368115824634144
+      }
+    ]
+  },
+  "A_CI_reset": {
+    "charge_error": "7031/4611686018427387904",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.333229114121794,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "reference_sign"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "7605/9223372036854775808",
+        "resource_error": 1.8062956976148028e-16,
+        "resource_lower": 0.00016276041670889766
+      },
+      {
+        "charge_discrepancy": "2145/18446744073709551616",
+        "resource_error": 2.1497082207683336e-16,
+        "resource_lower": 0.0003244653800836309
+      },
+      {
+        "charge_discrepancy": "3611/4611686018427387904",
+        "resource_error": 1.9383121103191994e-16,
+        "resource_lower": 0.0004851005481348824
+      },
+      {
+        "charge_discrepancy": "5753/4611686018427387904",
+        "resource_error": 1.5728310390314324e-16,
+        "resource_lower": 0.0006446514247896954
+      },
+      {
+        "charge_discrepancy": "9141/9223372036854775808",
+        "resource_error": 1.6364693349707403e-16,
+        "resource_lower": 0.0008031033582572023
+      },
+      {
+        "charge_discrepancy": "4707/4611686018427387904",
+        "resource_error": 1.6359123374220192e-16,
+        "resource_lower": 0.0009604415393770317
+      },
+      {
+        "charge_discrepancy": "635/4611686018427387904",
+        "resource_error": 2.0957211542824245e-16,
+        "resource_lower": 0.0011166509999502095
+      },
+      {
+        "charge_discrepancy": "1391/4611686018427387904",
+        "resource_error": 2.1137170401962668e-16,
+        "resource_lower": 0.001271716611052369
+      },
+      {
+        "charge_discrepancy": "3253/2305843009213693952",
+        "resource_error": 1.377518275142115e-16,
+        "resource_lower": 0.001425623081329084
+      },
+      {
+        "charge_discrepancy": "7031/4611686018427387904",
+        "resource_error": 2.0245438014752995e-16,
+        "resource_lower": 0.0015783549552731318
+      }
+    ]
+  },
+  "A_OS_current": {
+    "charge_error": "12235/2305843009213693952",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "1/4503599627370496",
+    "final_current_max": 6.465949394762114,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "47/36028797018963968",
+        "resource_error": 1.2802134519428418e-16,
+        "resource_lower": 0.00024414067880163307
+      },
+      {
+        "charge_discrepancy": "33749/18446744073709551616",
+        "resource_error": 1.995622593368212e-16,
+        "resource_lower": 0.0004867107323905841
+      },
+      {
+        "charge_discrepancy": "15557/9223372036854775808",
+        "resource_error": 1.8718999741561266e-16,
+        "resource_lower": 0.0007276887940935681
+      },
+      {
+        "charge_discrepancy": "15793/4611686018427387904",
+        "resource_error": 2.027135001162215e-16,
+        "resource_lower": 0.000967053267670758
+      },
+      {
+        "charge_discrepancy": "17783/4611686018427387904",
+        "resource_error": 1.5854939216877007e-16,
+        "resource_lower": 0.0012047823248809003
+      },
+      {
+        "charge_discrepancy": "18837/4611686018427387904",
+        "resource_error": 9.991832485058372e-17,
+        "resource_lower": 0.001440853903020623
+      },
+      {
+        "charge_discrepancy": "18455/4611686018427387904",
+        "resource_error": 1.973454858095889e-16,
+        "resource_lower": 0.0016752457024376618
+      },
+      {
+        "charge_discrepancy": "22229/4611686018427387904",
+        "resource_error": 1.7811023748062418e-16,
+        "resource_lower": 0.0019079351840177283
+      },
+      {
+        "charge_discrepancy": "5143/1152921504606846976",
+        "resource_error": 1.9788692624041917e-16,
+        "resource_lower": 0.002138899566644742
+      },
+      {
+        "charge_discrepancy": "12235/2305843009213693952",
+        "resource_error": 2.2003198103862693e-16,
+        "resource_lower": 0.002368115824634144
+      }
+    ]
+  },
+  "A_OS_reset": {
+    "charge_error": "7011/4611686018427387904",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.333229114121795,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "reference_sign"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "7605/9223372036854775808",
+        "resource_error": 1.8060374825031145e-16,
+        "resource_lower": 0.00016276041670889766
+      },
+      {
+        "charge_discrepancy": "2137/18446744073709551616",
+        "resource_error": 2.149975634129315e-16,
+        "resource_lower": 0.0003244653800836309
+      },
+      {
+        "charge_discrepancy": "3607/4611686018427387904",
+        "resource_error": 1.9385895930503e-16,
+        "resource_lower": 0.0004851005481348824
+      },
+      {
+        "charge_discrepancy": "5749/4611686018427387904",
+        "resource_error": 1.572543317784166e-16,
+        "resource_lower": 0.0006446514247896954
+      },
+      {
+        "charge_discrepancy": "9129/9223372036854775808",
+        "resource_error": 1.636170364787691e-16,
+        "resource_lower": 0.0008031033582572023
+      },
+      {
+        "charge_discrepancy": "4701/4611686018427387904",
+        "resource_error": 1.63622187781581e-16,
+        "resource_lower": 0.0009604415393770317
+      },
+      {
+        "charge_discrepancy": "625/4611686018427387904",
+        "resource_error": 2.095399156173304e-16,
+        "resource_lower": 0.0011166509999502095
+      },
+      {
+        "charge_discrepancy": "1375/4611686018427387904",
+        "resource_error": 2.1140515561997271e-16,
+        "resource_lower": 0.001271716611052369
+      },
+      {
+        "charge_discrepancy": "3245/2305843009213693952",
+        "resource_error": 1.3778661707497198e-16,
+        "resource_lower": 0.001425623081329084
+      },
+      {
+        "charge_discrepancy": "7011/4611686018427387904",
+        "resource_error": 2.0249046441886323e-16,
+        "resource_lower": 0.0015783549552731318
+      }
+    ]
+  },
+  "A_PC_current": {
+    "charge_error": "2485/2305843009213693952",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "1/4503599627370496",
+    "final_current_max": 6.465949308047579,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "4303/18446744073709551616",
+        "resource_error": 8.115764906167016e-17,
+        "resource_lower": 0.0002441406788006802
+      },
+      {
+        "charge_discrepancy": "1537/4611686018427387904",
+        "resource_error": 2.107860551964563e-16,
+        "resource_lower": 0.0004867107324161759
+      },
+      {
+        "charge_discrepancy": "365/1152921504606846976",
+        "resource_error": 1.4545740694952068e-16,
+        "resource_lower": 0.0007276887941739577
+      },
+      {
+        "charge_discrepancy": "455/9223372036854775808",
+        "resource_error": 2.0501710505625422e-16,
+        "resource_lower": 0.0009670532678349715
+      },
+      {
+        "charge_discrepancy": "2103/4611686018427387904",
+        "resource_error": 1.99333866066733e-16,
+        "resource_lower": 0.0012047823251587545
+      },
+      {
+        "charge_discrepancy": "3041/4611686018427387904",
+        "resource_error": 1.981294147047749e-16,
+        "resource_lower": 0.001440853903442743
+      },
+      {
+        "charge_discrepancy": "549/1152921504606846976",
+        "resource_error": 7.5952405557285e-17,
+        "resource_lower": 0.0016752457030354993
+      },
+      {
+        "charge_discrepancy": "2965/4611686018427387904",
+        "resource_error": 1.4586511511177477e-16,
+        "resource_lower": 0.001907935184823581
+      },
+      {
+        "charge_discrepancy": "403/576460752303423488",
+        "resource_error": 1.6176016642226564e-16,
+        "resource_lower": 0.0021388995676917726
+      },
+      {
+        "charge_discrepancy": "2485/2305843009213693952",
+        "resource_error": 1.8539244104568808e-16,
+        "resource_lower": 0.002368115825956399
+      }
+    ]
+  },
+  "A_PC_reset": {
+    "charge_error": "1607/4611686018427387904",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.333229087986709,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "archive_stage",
+      "archive_order"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "21005/36893488147419103232",
+        "resource_error": 9.071944124977795e-17,
+        "resource_lower": 0.0001627604167087729
+      },
+      {
+        "charge_discrepancy": "2741/4611686018427387904",
+        "resource_error": 2.1394287998305591e-16,
+        "resource_lower": 0.00032446538009167094
+      },
+      {
+        "charge_discrepancy": "3079/2305843009213693952",
+        "resource_error": 2.1526999747250504e-16,
+        "resource_lower": 0.0004851005481596052
+      },
+      {
+        "charge_discrepancy": "11979/9223372036854775808",
+        "resource_error": 2.005533955965358e-16,
+        "resource_lower": 0.0006446514248398523
+      },
+      {
+        "charge_discrepancy": "16129/9223372036854775808",
+        "resource_error": 1.9519622176029683e-16,
+        "resource_lower": 0.0008031033583417838
+      },
+      {
+        "charge_discrepancy": "4939/4611686018427387904",
+        "resource_error": 2.0047378609308377e-16,
+        "resource_lower": 0.0009604415395052721
+      },
+      {
+        "charge_discrepancy": "1705/4611686018427387904",
+        "resource_error": 2.1973917183038153e-16,
+        "resource_lower": 0.001116651000131593
+      },
+      {
+        "charge_discrepancy": "4921/4611686018427387904",
+        "resource_error": 1.637304551412053e-16,
+        "resource_lower": 0.001271716611296636
+      },
+      {
+        "charge_discrepancy": "2375/2305843009213693952",
+        "resource_error": 2.0914572287362522e-16,
+        "resource_lower": 0.0014256230816462353
+      },
+      {
+        "charge_discrepancy": "1607/4611686018427387904",
+        "resource_error": 2.077506905289516e-16,
+        "resource_lower": 0.0015783549556734361
+      }
+    ]
+  },
+  "A_RG2b_current": {
+    "charge_error": "89/2305843009213693952",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "1/4503599627370496",
+    "final_current_max": 6.465949393640948,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "32187/18446744073709551616",
+        "resource_error": 2.055994609417076e-16,
+        "resource_lower": 0.0002441406788016034
+      },
+      {
+        "charge_discrepancy": "12743/9223372036854775808",
+        "resource_error": 1.4198684654509158e-16,
+        "resource_lower": 0.0004867107323908657
+      },
+      {
+        "charge_discrepancy": "6403/9223372036854775808",
+        "resource_error": 2.1984099741527255e-16,
+        "resource_lower": 0.0007276887940945125
+      },
+      {
+        "charge_discrepancy": "3235/4611686018427387904",
+        "resource_error": 9.673151085522571e-17,
+        "resource_lower": 0.0009670532676727274
+      },
+      {
+        "charge_discrepancy": "1699/4611686018427387904",
+        "resource_error": 1.651562259932971e-16,
+        "resource_lower": 0.0012047823248842683
+      },
+      {
+        "charge_discrepancy": "357/1152921504606846976",
+        "resource_error": 2.0429913269745841e-16,
+        "resource_lower": 0.0014408539030257746
+      },
+      {
+        "charge_discrepancy": "777/4611686018427387904",
+        "resource_error": 2.1875585230659242e-16,
+        "resource_lower": 0.0016752457024449936
+      },
+      {
+        "charge_discrepancy": "689/2305843009213693952",
+        "resource_error": 2.101615987003892e-16,
+        "resource_lower": 0.001907935184027649
+      },
+      {
+        "charge_discrepancy": "939/1152921504606846976",
+        "resource_error": 1.7870962498770555e-16,
+        "resource_lower": 0.0021388995666576727
+      },
+      {
+        "charge_discrepancy": "89/2305843009213693952",
+        "resource_error": 1.6002750313816398e-16,
+        "resource_lower": 0.002368115824650518
+      }
+    ]
+  },
+  "A_RG2b_reset": {
+    "charge_error": "2981/2305843009213693952",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.333229113782826,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "reference_sign"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "3155/9223372036854775808",
+        "resource_error": 2.1591986953878997e-16,
+        "resource_lower": 0.0001627604167088936
+      },
+      {
+        "charge_discrepancy": "6583/18446744073709551616",
+        "resource_error": 2.0489213608160314e-16,
+        "resource_lower": 0.0003244653800837259
+      },
+      {
+        "charge_discrepancy": "7857/9223372036854775808",
+        "resource_error": 1.9837492722805887e-16,
+        "resource_lower": 0.00048510054813518305
+      },
+      {
+        "charge_discrepancy": "4233/9223372036854775808",
+        "resource_error": 1.8700786482577913e-16,
+        "resource_lower": 0.0006446514247903113
+      },
+      {
+        "charge_discrepancy": "5967/9223372036854775808",
+        "resource_error": 2.2028897862206889e-16,
+        "resource_lower": 0.0008031033582582466
+      },
+      {
+        "charge_discrepancy": "237/1152921504606846976",
+        "resource_error": 2.1669919755494108e-16,
+        "resource_lower": 0.000960441539378621
+      },
+      {
+        "charge_discrepancy": "167/2305843009213693952",
+        "resource_error": 9.13665035397963e-17,
+        "resource_lower": 0.001116650999952464
+      },
+      {
+        "charge_discrepancy": "2183/4611686018427387904",
+        "resource_error": 2.087883472139668e-16,
+        "resource_lower": 0.0012717166110554126
+      },
+      {
+        "charge_discrepancy": "3851/2305843009213693952",
+        "resource_error": 1.5417730479577906e-16,
+        "resource_lower": 0.0014256230813330442
+      },
+      {
+        "charge_discrepancy": "2981/2305843009213693952",
+        "resource_error": 1.99505514014034e-16,
+        "resource_lower": 0.0015783549552781397
+      }
+    ]
+  },
+  "C_CI_PC_current": {
+    "charge_error": "7883/2305843009213693952",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "0",
+    "final_current_max": 6.481526694055251,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "33035/18446744073709551616",
+        "resource_error": 1.1631715200648542e-16,
+        "resource_lower": 0.00024414063875120785
+      },
+      {
+        "charge_discrepancy": "1413/4611686018427387904",
+        "resource_error": 1.909005779769266e-16,
+        "resource_lower": 0.0004867064108365062
+      },
+      {
+        "charge_discrepancy": "619/576460752303423488",
+        "resource_error": 1.6764679247407683e-16,
+        "resource_lower": 0.0007276758790070387
+      },
+      {
+        "charge_discrepancy": "3659/2305843009213693952",
+        "resource_error": 1.516702618523573e-16,
+        "resource_lower": 0.0009670273754908989
+      },
+      {
+        "charge_discrepancy": "4891/4611686018427387904",
+        "resource_error": 1.3009828393094896e-16,
+        "resource_lower": 0.001204738999546026
+      },
+      {
+        "charge_discrepancy": "53/144115188075855872",
+        "resource_error": 1.9815730319659787e-16,
+        "resource_lower": 0.0014407886149871412
+      },
+      {
+        "charge_discrepancy": "7/9007199254740992",
+        "resource_error": 1.9627072994833696e-16,
+        "resource_lower": 0.00167515384768645
+      },
+      {
+        "charge_discrepancy": "5035/2305843009213693952",
+        "resource_error": 1.8778940664041434e-16,
+        "resource_lower": 0.0019078120830478312
+      },
+      {
+        "charge_discrepancy": "2575/1152921504606846976",
+        "resource_error": 4.253409781700082e-17,
+        "resource_lower": 0.0021387404634542334
+      },
+      {
+        "charge_discrepancy": "7883/2305843009213693952",
+        "resource_error": 1.528379000947687e-16,
+        "resource_lower": 0.002367915885687994
+      }
+    ]
+  },
+  "C_CI_PC_reset": {
+    "charge_error": "1343/4611686018427387904",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.343662195499603,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "archive_stage",
+      "archive_order"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "2815/2305843009213693952",
+        "resource_error": 2.208639066037438e-16,
+        "resource_lower": 0.00016276042471629975
+      },
+      {
+        "charge_discrepancy": "23607/18446744073709551616",
+        "resource_error": 9.529228095753826e-17,
+        "resource_lower": 0.00032446255643788386
+      },
+      {
+        "charge_discrepancy": "1671/2305843009213693952",
+        "resource_error": 6.20430157709445e-17,
+        "resource_lower": 0.00048509200589524865
+      },
+      {
+        "charge_discrepancy": "2407/1152921504606846976",
+        "resource_error": 2.1797129748411602e-16,
+        "resource_lower": 0.0006446342290941983
+      },
+      {
+        "charge_discrepancy": "10185/4611686018427387904",
+        "resource_error": 1.4261077936381784e-16,
+        "resource_lower": 0.0008030745256733818
+      },
+      {
+        "charge_discrepancy": "5793/4611686018427387904",
+        "resource_error": 1.8267944944526068e-16,
+        "resource_lower": 0.0009603980372444056
+      },
+      {
+        "charge_discrepancy": "2027/4611686018427387904",
+        "resource_error": 1.2801885811969133e-16,
+        "resource_lower": 0.0011165897457143398
+      },
+      {
+        "charge_discrepancy": "2159/2305843009213693952",
+        "resource_error": 1.5796952253630022e-16,
+        "resource_lower": 0.0012716344715904277
+      },
+      {
+        "charge_discrepancy": "8761/4611686018427387904",
+        "resource_error": 1.5601383044070338e-16,
+        "resource_lower": 0.001425516872266815
+      },
+      {
+        "charge_discrepancy": "1343/4611686018427387904",
+        "resource_error": 2.0224315005630737e-16,
+        "resource_lower": 0.0015782214402931007
+      }
+    ]
+  },
+  "C_CI_current": {
+    "charge_error": "1103/1152921504606846976",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "0",
+    "final_current_max": 6.481526693980766,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "13663/18446744073709551616",
+        "resource_error": 5.451768186888924e-17,
+        "resource_lower": 0.0002441406387513207
+      },
+      {
+        "charge_discrepancy": "7839/9223372036854775808",
+        "resource_error": 2.265631300160894e-17,
+        "resource_lower": 0.0004867064108367319
+      },
+      {
+        "charge_discrepancy": "4161/9223372036854775808",
+        "resource_error": 7.749190055227561e-17,
+        "resource_lower": 0.0007276758790073808
+      },
+      {
+        "charge_discrepancy": "15767/9223372036854775808",
+        "resource_error": 1.2939342039082506e-16,
+        "resource_lower": 0.0009670273754913647
+      },
+      {
+        "charge_discrepancy": "4485/4611686018427387904",
+        "resource_error": 1.6239367166349596e-16,
+        "resource_lower": 0.001204738999546627
+      },
+      {
+        "charge_discrepancy": "4325/2305843009213693952",
+        "resource_error": 1.654923423156974e-16,
+        "resource_lower": 0.0014407886149878928
+      },
+      {
+        "charge_discrepancy": "9525/4611686018427387904",
+        "resource_error": 7.077947117884503e-17,
+        "resource_lower": 0.0016751538476873714
+      },
+      {
+        "charge_discrepancy": "4399/2305843009213693952",
+        "resource_error": 1.789399087000255e-16,
+        "resource_lower": 0.0019078120830489458
+      },
+      {
+        "charge_discrepancy": "1491/1152921504606846976",
+        "resource_error": 1.5259742458721865e-16,
+        "resource_lower": 0.002138740463455569
+      },
+      {
+        "charge_discrepancy": "1103/1152921504606846976",
+        "resource_error": 1.857277085755421e-16,
+        "resource_lower": 0.0023679158856895833
+      }
+    ]
+  },
+  "C_CI_reset": {
+    "charge_error": "1987/2305843009213693952",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.3436621954783705,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "reference_sign"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "2815/2305843009213693952",
+        "resource_error": 2.208639066037438e-16,
+        "resource_lower": 0.00016276042471629975
+      },
+      {
+        "charge_discrepancy": "8353/9223372036854775808",
+        "resource_error": 1.0564434939358505e-16,
+        "resource_lower": 0.0003244625564378835
+      },
+      {
+        "charge_discrepancy": "1/4503599627370496",
+        "resource_error": 1.1691033391853155e-16,
+        "resource_lower": 0.0004850920058952486
+      },
+      {
+        "charge_discrepancy": "2969/9223372036854775808",
+        "resource_error": 1.1904273933079126e-16,
+        "resource_lower": 0.0006446342290942006
+      },
+      {
+        "charge_discrepancy": "3085/4611686018427387904",
+        "resource_error": 1.9799869791092297e-16,
+        "resource_lower": 0.0008030745256733892
+      },
+      {
+        "charge_discrepancy": "359/576460752303423488",
+        "resource_error": 8.35445048178485e-17,
+        "resource_lower": 0.0009603980372444226
+      },
+      {
+        "charge_discrepancy": "83/72057594037927936",
+        "resource_error": 2.0067853735473085e-16,
+        "resource_lower": 0.0011165897457143716
+      },
+      {
+        "charge_discrepancy": "3087/2305843009213693952",
+        "resource_error": 1.4928967382671625e-16,
+        "resource_lower": 0.0012716344715904813
+      },
+      {
+        "charge_discrepancy": "3383/4611686018427387904",
+        "resource_error": 1.0411979818835837e-16,
+        "resource_lower": 0.001425516872266898
+      },
+      {
+        "charge_discrepancy": "1987/2305843009213693952",
+        "resource_error": 2.064997353038152e-16,
+        "resource_lower": 0.0015782214402932223
+      }
+    ]
+  },
+  "C_OS_current": {
+    "charge_error": "277/288230376151711744",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "0",
+    "final_current_max": 6.481526693980763,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": false,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "13659/18446744073709551616",
+        "resource_error": 5.448444140103168e-17,
+        "resource_lower": 0.000244140637841826
+      },
+      {
+        "charge_discrepancy": "7845/9223372036854775808",
+        "resource_error": 2.2534459303769165e-17,
+        "resource_lower": 0.0004867064099272374
+      },
+      {
+        "charge_discrepancy": "2091/4611686018427387904",
+        "resource_error": 7.745698005726054e-17,
+        "resource_lower": 0.0007276758780978863
+      },
+      {
+        "charge_discrepancy": "7891/4611686018427387904",
+        "resource_error": 1.2942892474403047e-16,
+        "resource_lower": 0.0009670273745818702
+      },
+      {
+        "charge_discrepancy": "4487/4611686018427387904",
+        "resource_error": 1.623571389761866e-16,
+        "resource_lower": 0.0012047389986371323
+      },
+      {
+        "charge_discrepancy": "4327/2305843009213693952",
+        "resource_error": 1.6553008128625465e-16,
+        "resource_lower": 0.001440788614078398
+      },
+      {
+        "charge_discrepancy": "9535/4611686018427387904",
+        "resource_error": 7.081792327510042e-17,
+        "resource_lower": 0.0016751538467778767
+      },
+      {
+        "charge_discrepancy": "4405/2305843009213693952",
+        "resource_error": 1.78900848605955e-16,
+        "resource_lower": 0.001907812082139451
+      },
+      {
+        "charge_discrepancy": "747/576460752303423488",
+        "resource_error": 1.5255713593487142e-16,
+        "resource_lower": 0.0021387404625460744
+      },
+      {
+        "charge_discrepancy": "277/288230376151711744",
+        "resource_error": 1.857691574585962e-16,
+        "resource_lower": 0.0023679158847800886
+      }
+    ]
+  },
+  "C_OS_reset": {
+    "charge_error": "497/576460752303423488",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.343662195478372,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": false,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "11261/9223372036854775808",
+        "resource_error": 2.208684095606449e-16,
+        "resource_lower": 0.00016276042380680505
+      },
+      {
+        "charge_discrepancy": "8347/9223372036854775808",
+        "resource_error": 1.0563985362662401e-16,
+        "resource_lower": 0.00032446255552838883
+      },
+      {
+        "charge_discrepancy": "2043/9223372036854775808",
+        "resource_error": 1.1690544115836953e-16,
+        "resource_lower": 0.00048509200498575395
+      },
+      {
+        "charge_discrepancy": "1493/4611686018427387904",
+        "resource_error": 1.190475924583136e-16,
+        "resource_lower": 0.000644634228184706
+      },
+      {
+        "charge_discrepancy": "3069/4611686018427387904",
+        "resource_error": 1.9799393130957918e-16,
+        "resource_lower": 0.0008030745247638946
+      },
+      {
+        "charge_discrepancy": "715/1152921504606846976",
+        "resource_error": 8.353985815035585e-17,
+        "resource_lower": 0.0009603980363349279
+      },
+      {
+        "charge_discrepancy": "331/288230376151711744",
+        "resource_error": 2.0067376097264598e-16,
+        "resource_lower": 0.001116589744804877
+      },
+      {
+        "charge_discrepancy": "3079/2305843009213693952",
+        "resource_error": 1.4928497532083611e-16,
+        "resource_lower": 0.0012716344706809866
+      },
+      {
+        "charge_discrepancy": "3379/4611686018427387904",
+        "resource_error": 1.041246756442898e-16,
+        "resource_lower": 0.0014255168713574033
+      },
+      {
+        "charge_discrepancy": "497/576460752303423488",
+        "resource_error": 2.064943332872473e-16,
+        "resource_lower": 0.0015782214393837276
+      }
+    ]
+  },
+  "C_PC_current": {
+    "charge_error": "3729/2305843009213693952",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "0",
+    "final_current_max": 6.4815266621995296,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "2871/4611686018427387904",
+        "resource_error": 1.7382863270297392e-16,
+        "resource_lower": 0.00024414063874373727
+      },
+      {
+        "charge_discrepancy": "23057/18446744073709551616",
+        "resource_error": 2.1638342866289423e-16,
+        "resource_lower": 0.0004867064108365376
+      },
+      {
+        "charge_discrepancy": "18939/9223372036854775808",
+        "resource_error": 1.727848632792023e-16,
+        "resource_lower": 0.0007276758790299096
+      },
+      {
+        "charge_discrepancy": "2179/2305843009213693952",
+        "resource_error": 1.7172245855930708e-16,
+        "resource_lower": 0.0009670273755523202
+      },
+      {
+        "charge_discrepancy": "613/2305843009213693952",
+        "resource_error": 1.534146932328273e-16,
+        "resource_lower": 0.0012047389996620904
+      },
+      {
+        "charge_discrepancy": "3267/4611686018427387904",
+        "resource_error": 1.725518169281884e-16,
+        "resource_lower": 0.001440788615174332
+      },
+      {
+        "charge_discrepancy": "3697/4611686018427387904",
+        "resource_error": 4.7101519869487556e-17,
+        "resource_lower": 0.0016751538479616494
+      },
+      {
+        "charge_discrepancy": "10131/4611686018427387904",
+        "resource_error": 1.8273141506440606e-16,
+        "resource_lower": 0.0019078120834283296
+      },
+      {
+        "charge_discrepancy": "3155/2305843009213693952",
+        "resource_error": 2.2153434479642893e-16,
+        "resource_lower": 0.002138740463957739
+      },
+      {
+        "charge_discrepancy": "3729/2305843009213693952",
+        "resource_error": 1.0578133942266081e-16,
+        "resource_lower": 0.002367915886332642
+      }
+    ]
+  },
+  "C_PC_reset": {
+    "charge_error": "8161/4611686018427387904",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.343662185936934,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "archive_stage",
+      "archive_order"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "3463/4611686018427387904",
+        "resource_error": 1.0783151307646471e-16,
+        "resource_lower": 0.00016276042471474001
+      },
+      {
+        "charge_discrepancy": "12115/9223372036854775808",
+        "resource_error": 8.416720859893282e-17,
+        "resource_lower": 0.0003244625564392651
+      },
+      {
+        "charge_discrepancy": "583/4611686018427387904",
+        "resource_error": 1.7675659101600616e-16,
+        "resource_lower": 0.0004850920059041814
+      },
+      {
+        "charge_discrepancy": "8965/9223372036854775808",
+        "resource_error": 1.855069440482008e-16,
+        "resource_lower": 0.0006446342291154054
+      },
+      {
+        "charge_discrepancy": "1523/4611686018427387904",
+        "resource_error": 1.6754777750578687e-16,
+        "resource_lower": 0.0008030745257117009
+      },
+      {
+        "charge_discrepancy": "205/2305843009213693952",
+        "resource_error": 9.574334259395021e-17,
+        "resource_lower": 0.0009603980373047921
+      },
+      {
+        "charge_discrepancy": "4005/4611686018427387904",
+        "resource_error": 1.140725256160307e-16,
+        "resource_lower": 0.0011165897458018687
+      },
+      {
+        "charge_discrepancy": "10261/4611686018427387904",
+        "resource_error": 1.9174524344037858e-16,
+        "resource_lower": 0.0012716344717102976
+      },
+      {
+        "charge_discrepancy": "8873/4611686018427387904",
+        "resource_error": 1.1490222160384085e-16,
+        "resource_lower": 0.001425516872424349
+      },
+      {
+        "charge_discrepancy": "8161/4611686018427387904",
+        "resource_error": 1.7040810498469976e-16,
+        "resource_lower": 0.0015782214404937518
+      }
+    ]
+  },
+  "C_RG2b_current": {
+    "charge_error": "3127/1152921504606846976",
+    "charge_limit": "197/1099511627776",
+    "event_charge_error": "0",
+    "final_current_max": 6.481526693645929,
+    "initial_encoding_charge_error": "1/1125899906842624",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 1,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [],
+    "steps": [
+      {
+        "charge_discrepancy": "1569/9223372036854775808",
+        "resource_error": 1.2298374186685264e-16,
+        "resource_lower": 0.0002441406387567645
+      },
+      {
+        "charge_discrepancy": "1507/1152921504606846976",
+        "resource_error": 1.3100300588564959e-16,
+        "resource_lower": 0.0004867064108478316
+      },
+      {
+        "charge_discrepancy": "6409/2305843009213693952",
+        "resource_error": 1.8254293808526712e-16,
+        "resource_lower": 0.0007276758790243536
+      },
+      {
+        "charge_discrepancy": "10771/4611686018427387904",
+        "resource_error": 4.289197115769713e-17,
+        "resource_lower": 0.0009670273755144336
+      },
+      {
+        "charge_discrepancy": "14433/4611686018427387904",
+        "resource_error": 1.296063668631937e-16,
+        "resource_lower": 0.0012047389995760206
+      },
+      {
+        "charge_discrepancy": "3017/1152921504606846976",
+        "resource_error": 1.03255465717258e-16,
+        "resource_lower": 0.0014407886150238454
+      },
+      {
+        "charge_discrepancy": "2417/2305843009213693952",
+        "resource_error": 1.931227300642784e-16,
+        "resource_lower": 0.0016751538477301233
+      },
+      {
+        "charge_discrepancy": "5259/2305843009213693952",
+        "resource_error": 1.722390261586154e-16,
+        "resource_lower": 0.0019078120830987439
+      },
+      {
+        "charge_discrepancy": "4213/2305843009213693952",
+        "resource_error": 2.1778175346875264e-16,
+        "resource_lower": 0.0021387404635126654
+      },
+      {
+        "charge_discrepancy": "3127/1152921504606846976",
+        "resource_error": 1.1769642281084822e-16,
+        "resource_lower": 0.0023679158857542373
+      }
+    ]
+  },
+  "C_RG2b_reset": {
+    "charge_error": "9045/4611686018427387904",
+    "charge_limit": "187/1099511627776",
+    "event_charge_error": "1/9007199254740992",
+    "final_current_max": 4.343662195377733,
+    "initial_encoding_charge_error": "0",
+    "old_reference_channel_checked": true,
+    "physical_source_steps": 0,
+    "physical_target_steps": 10,
+    "read_only_source_and_final_probes": 2,
+    "rejected_event_controls": [
+      "negative_core",
+      "role_resource",
+      "history",
+      "carrier",
+      "loss",
+      "reference_sign"
+    ],
+    "steps": [
+      {
+        "charge_discrepancy": "14859/9223372036854775808",
+        "resource_error": 2.1700147405051373e-16,
+        "resource_lower": 0.00016276042471793556
+      },
+      {
+        "charge_discrepancy": "46015/18446744073709551616",
+        "resource_error": 2.0079416523866814e-16,
+        "resource_lower": 0.000324462556441219
+      },
+      {
+        "charge_discrepancy": "29385/9223372036854775808",
+        "resource_error": 2.2005428618320068e-16,
+        "resource_lower": 0.0004850920059003491
+      },
+      {
+        "charge_discrepancy": "6951/2305843009213693952",
+        "resource_error": 1.66665614738951e-16,
+        "resource_lower": 0.0006446342291011332
+      },
+      {
+        "charge_discrepancy": "23577/9223372036854775808",
+        "resource_error": 1.8779055554957234e-16,
+        "resource_lower": 0.0008030745256822228
+      },
+      {
+        "charge_discrepancy": "1051/576460752303423488",
+        "resource_error": 1.280753789887881e-16,
+        "resource_lower": 0.0009603980372552272
+      },
+      {
+        "charge_discrepancy": "5701/4611686018427387904",
+        "resource_error": 2.044120814889877e-16,
+        "resource_lower": 0.00111658974572722
+      },
+      {
+        "charge_discrepancy": "6223/4611686018427387904",
+        "resource_error": 1.4074449800646559e-16,
+        "resource_lower": 0.0012716344716054474
+      },
+      {
+        "charge_discrepancy": "8545/4611686018427387904",
+        "resource_error": 1.764359983161814e-16,
+        "resource_lower": 0.0014255168722840579
+      },
+      {
+        "charge_discrepancy": "9045/4611686018427387904",
+        "resource_error": 1.8585357068764404e-16,
+        "resource_lower": 0.001578221440312654
+      }
+    ]
+  }
+}

@@ -1597,8 +1597,8 @@ closure; this is a dependency reservation, not runtime authorization.
 
 P9-8.1a retains its existing scoped permission. Specified nine-port candidate
 detection, request-driven expansion and column field coarse/Split do not await
-general ATC, but all new production now awaits the separate all-ten feasibility
-review below. Later runtime leaves require their exact existing generic and
+general ATC. The all-ten feasibility review and explicit user acceptance below
+now close P9-8.0 and release its production hold. Later runtime leaves require their exact existing generic and
 specialization contracts and scoped execution permission. A missing new
 autonomous contract holds only its consumers. No optional spark/hierarchy,
 automatic complete request generation or specialization conformance is inferred.
@@ -1606,23 +1606,26 @@ automatic complete request generation or specialization conformance is inferred.
 ## Tranche 8. D11-G9 mechanical specialization
 
 Entry is the accepted G3 set of ten exact generic declarations, not ten
-conformant nine-port models. Review mathematical feasibility for all ten before
-production; then start with C_OS and retain the full population.
+conformant nine-port models. All-ten bounded feasibility is now reviewed and
+user-accepted; proceed to P9-8.1a, then C_OS first while retaining the population.
 P9-8.1 and P9-8.3 are parent registers with independently reviewed children.
 General 7T is not a prerequisite for the defined mechanical scope. Accepted
 Tranche 7 and current execution permissions remain unchanged.
 
-- [ ] P9-8.0: Close and review all-ten mathematical/construction feasibility
+- [x] P9-8.0: Close and review all-ten mathematical/construction feasibility
   before any new specialization production work, including P9-8.1a.
   The [readiness inventory](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
   and [initial feasibility record](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md)
-  are performed, not accepted all-ten closure. Checked G3/73-contract
-  reconstruction, three readiness tests and four feasibility tests pass;
-  no specialization runtime executed.
+  retain the initial research checkpoints. The subsequent
+  [aggregate review and restriction pressure check](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+  pass; the user explicitly accepts R1–R10 and the aggregate scope on
+  2026-10-02 (“i accept both”). All ten rows are provisionally closed;
+  P9-8.0 is complete and its production hold is released. No specialization
+  runtime is accepted by this closure.
   Closure means independently justified, numerically feasible constructions
   for all ten declared scopes, not ten native implementations. P9-8.1a's chart
-  authority is available; the all-ten feasibility hold still precedes using it.
-  Completed evidence below is retained; the ordered remaining work follows it.
+  authority and scoped permission are available; P9-8.1a is the next leaf.
+  Completed evidence below is retained; later native work remains separate.
 
   - [x] Map chart/ports, row backend/weights, candidate detection, D11-G9
     expansion, field coarse/Split and lifecycle to spec/paper/typed authority
@@ -1649,6 +1652,7 @@ Tranche 7 and current execution permissions remain unchanged.
     review. No blanket Tranche 8/9 authorization or numerical rerun credit.
   - [x] Apply the user-directed all-ten production hold; preserve historical
     permissions without treating them as current authorization to proceed.
+    This hold is now released by the explicit aggregate acceptance below.
   - [x] Retain initial obstruction/control calculations: existing RG2b chart
     excludes zero core for both candidates; reference-baseline continuation
     can fail despite charge conservation; a distinct positive control is bounded.
@@ -1753,46 +1757,197 @@ Tranche 7 and current execution permissions remain unchanged.
     Represented evaluation and complete research-profile binding remain below;
     no native replacement, C1 or completion-independent claim follows.
 
-  Remaining P9-8.0 work, in order (independent oracle work may overlap):
-
-  - [ ] Pin the all-ten scope and map accepted evidence to it: exact parameters,
+  - [x] Pin the [all-ten research scope](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#pinned-all-ten-research-scope--2026-10-02)
+    and map accepted evidence to it (2026-10-02): exact parameters,
     source/target graphs and capacities, candidate/backend stages, geometry/
     history/carrier domains, both roles, duration and continuation horizon.
-    Record every restriction explicitly. A finite union is not its surrounding
+    Record restrictions explicitly. A finite union is not its surrounding
     rectangle; revised D52 evidence does not cover all allocator layouts.
-  - [ ] Complete bounded numerical feasibility for A_RG2b and C_RG2b with a
-    research section evaluator: inversion, truncation and full-evaluation
-    errors plus surviving defining effects. Apply the frozen global completion
-    at every nested query; physical-tube containment is not an arbitrary-depth
-    backward bound. This is not production backend integration or full runtime
-    conformance, nor substitution of CI/OS geometry.
-  - [ ] Complete bounded numerical feasibility for A/C CI, PC and CI+PC on
-    their selected research domains: represented root/error bounds, old-carrier
-    read and same-source writer stages, and defining-effect margins. Reuse
-    accepted OS evidence only for its actual scope; do not import OS margins
-    or require a full native solver/writer acceptance campaign here.
-  - [ ] Finish exact A research-profile/event bindings and the five independent
-    A oracles under P9-8.3A.1: source/target preimages, fixed-row stage/history
-    and reference-current recipes, old/new-edge W policy, separate whole-Z
-    policy, distinct current/reset expected targets and negative cases.
-    Construction evidence precedes implementation; runtime registration,
-    backend serialization/integration and comparisons remain later work.
-  - [ ] Finish exact C research-profile/event bindings and the five C oracles:
-    complete target reference maps, selector/current expectations, realization
-    domains, separate carrier policy where applicable and both-role expected
-    targets. Keep frozen combinatorial vectors distinct from new numerical
-    fixtures; no native admission is asserted by construction alone.
-  - [ ] Close the shared mathematical lifecycle/transfer compatibility argument
-    for those choices: charge, W/Z disposition, target/reset domain inclusion,
-    failure expectations and exact disabled projection. Select and validate
-    explicit carrier event transfer; a carrier norm envelope does not choose
-    it. Reuse accepted generic contracts. Route genuinely missing authority
-    through claims → paper/spec before implementation of its consumers.
-    Actual receipts, rollback, replay and forty disabled-runtime cells are later.
-  - [ ] Review all ten disposition rows with concrete proof/oracle evidence;
-    accept any stated restrictions explicitly. No unresolved row or silently
-    dropped profile at production entry without a user-approved scope change.
-  - [ ] User accepts the aggregate feasibility scope before production resumes.
+    Pin the previously selected D52 positive-chirality phase-3 fixture by name;
+    distinguish its local runs from isolated reviews describing negative chirality.
+    Three focused scope tests cover exact ports/capacity, bad or reordered
+    fixtures and the actual research consumers. This is performed reconciliation,
+    not user acceptance of restrictions, a new review or complete row closure.
+
+  - [x] Construct and locally verify the [A/C RG numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md)
+    (2026-10-02): finite inverse-chain residuals, section truncation and complete
+    evaluation errors with frozen argument completion at every depth. Fifty
+    nominal read stages and both-role ten-step continuation pass; 44 named
+    effect checks include RG/OS discrimination, CI defects and A history's next
+    RG current. Four methods reject altered clamps, corrupt chains and wrong
+    realization outputs through the actual consumer. This separate binary64
+    NumPy research arithmetic inherits no OS margins. No uniform all-box
+    floating-point or accumulated trajectory-error claim. The 2026-10-02 commit
+    instruction accepts this bounded checkpoint. The supplied numerical audit
+    supports the RG mathematics; actual evaluator review and complete RG
+    profile/event/oracle bindings remain open.
+
+  - [x] Construct and locally verify the [six-profile CI/PC/CI+PC numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md)
+    (2026-10-02): nine methods pass after review corrections, covering 150 nominal
+    read stages, both-role ten-step targets and 124 defining-effect comparisons through next W/Z
+    consumers. Represented root/error certificates bind old-carrier reads and
+    same-source writers. Nonzero target carriers are separately supplied, not
+    an accepted event transfer. Retain the C_PC reset margin failure and its
+    algebraically equivalent compensated C correction with unchanged precision
+    and effect threshold. Bounded independent review passes with RN-F1 corrected
+    locally. The user accepts this bounded checkpoint through the 2026-10-02
+    commit instruction. No OS margins, uniform all-box
+    arithmetic claim or native solver acceptance is imported.
+
+  - [x] Retain the [numerical independent review and portable evidence](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md)
+    and correct RN-F1: verifier entry snapshots, separate producer work arrays,
+    thirteen altered-target rejections and the exact equilibrium counterexample.
+    Preserve intended-exact enclosures, lawful scratch writes and caller inputs.
+    Six wrong C response orders and eight naive carrier-copy cases also reject.
+    This is local correction/validation, not a second independent audit. The
+    user accepts the bounded successor and correction through the 2026-10-02
+    commit instruction. The actual RG evaluator still needs review; aggregate
+    P9-8.0 acceptance and production remain held.
+
+  Remaining P9-8.0 work follows the
+  [bounded deliverables and stopping criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
+  These are research inputs for later owners; completing P9-8.1–8.3 or newly
+  admitting the research profiles natively is not a prerequisite. All items
+  retain their stated status below, including the OS, persistent, CI and RG
+  construction increments. The scope clarification itself supplied no
+  construction result; local increments do not close aggregate acceptance.
+
+  - [x] Review the actual RG numerical evaluator with independent numerical
+    equations and adversarial controls, and resolve its
+    findings on the pinned scope. The supplied mathematical review did not
+    include that implementation. The [actual-source review package](./phase-9-grcv4/tranche-8/rg-numerical-review/README.md)
+    now supplies pinned source/dependencies, local snapshot replays and a portable
+    export. The user's subsequently requested [own implementation review](./phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md)
+    executes that source and uses independent equations, but is not an external
+    independent verdict. Four findings are corrected locally. The user explicitly
+    accepts the own review, RG-NR1–4 corrections and this bounded review
+    disposition through the 2026-10-02 acceptance/commit instruction; external
+    audit authorship and aggregate acceptance are not inferred.
+  - [x] Perform the requested own RG implementation review and pressure the
+    actual consumer: ten methods pass after RG-NR1–4 corrections, including
+    malformed chains at every depth, complete read fields, private input
+    ownership, point/intended admission, clamp faces, equilibria and outliers.
+    Separate 90-digit equations enclose 7,188 entries. Four original numerical
+    and seven event methods pass with every nominal report field unchanged.
+    Retain before/after evidence and corrected-source provenance. The user
+    explicitly accepts this bounded review/correction checkpoint through the
+    2026-10-02 acceptance/commit instruction; aggregate acceptance stays open.
+  - [x] Bind complete mathematical source/request/target operands for all ten
+    rows on the pinned source/positive-D52 case, both roles and ten-step horizon.
+    Start with a shared operand record and independently checked C_OS companion;
+    include complete C reference maps, then A fixed-row/initializer/reference-
+    current and W recipes. Supply or derive every operand; retain intended
+    identity preimages. Native descriptor registration/serialization is later.
+    The [selected-case reconciliation](./phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md)
+    now maps complete research records, inherited fields, numerical owners and
+    target oracles for all ten rows. Remaining review and aggregate acceptance
+    stay open; native identity completion is later.
+  - [x] Construct and locally verify the first
+    [shared-input/C_OS companion](./phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md)
+    (2026-10-02): explicit rational inputs and complete C references, independent
+    charge-preserving transfer, actual current/reset targets, fresh current
+    trigger, absent W/Z, both-role ten-step continuation and final reads.
+    Seven methods pass after the [bounded audit](./phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md):
+    retain six effects, ten input mutations and thirteen transfer-consumer
+    rejections; add thirteen consumed-model rejections, entry ownership at
+    final/effect reads and a final-only fault through actual continuation.
+    EC-F1/EC-F2 are corrected locally. The user accepts this bounded checkpoint
+    through the 2026-10-02 commit instruction; the
+    all-ten bindings/oracles and C_OS row are not closed.
+  - [x] Construct and locally verify the [A_OS lineage/initialization companion](./phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md)
+    (2026-10-02): preserve old W by exact edge lineage, seed new W with bond 1,
+    derive and certify fresh role-entry reference currents and independently
+    check the actual event outputs. Six methods pass, including both-role
+    ten-step continuation, eight effects through the next W consumer and
+    binding/producer mutations. The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md)
+    passes the bounded construction. AEC-F1 now isolates writer-control C/W/J,
+    certifies entry-point W error and retains a separate intended-exact branch;
+    twelve mutation controls and the actual effect-consumer regression reject,
+    four scratch controls pass, and nominal report fields are unchanged.
+    Historical audit results are retained portably. This selects the allowed
+    lineage/new-edge initialization branch. The user accepts this bounded
+    checkpoint through the 2026-10-02 commit instruction; P9-8.3A.1 and the
+    A_OS feasibility row stay open.
+  - [x] Select and locally validate the [whole-source archive/whole-target zero-reset policy](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md)
+    for A_PC, C_PC, A_CI_PC and C_CI_PC (2026-10-02), separately from A W
+    history. Check each role's complete actual source archive, exact target
+    zero, support/symmetry/norm and explicit carrier-only loss; recheck actual
+    target reads, ten-step continuation and affected defining effects under
+    unchanged thresholds. Five methods and 68 effect comparisons pass; the
+    minimum margin exceeds 1.421. PC geometry/carrier effects begin after the first
+    nonzero write; CI+PC additionally has its instantaneous source at entry.
+    Reuse the accepted whole-carrier-ball envelope. Direct old-edge copying
+    remains forbidden. The [bounded review](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md)
+    passes; CEC-F1 now anchors the complete archive and resource/W transfer to
+    an independent initial-record and physical-stage oracle. Eight probe-write
+    and four dropped-source-writer substitutions reject through the event path.
+    Audit evidence is retained portably. The user accepts this bounded checkpoint
+    through the 2026-10-02 commit instruction; no native policy/receipt or
+    all-ten oracle item closes.
+  - [x] Construct and locally verify the [A_CI/C_CI event companion](./phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md)
+    (2026-10-02): exact role source-stage binding, resource/W or C-reference
+    transfer, fresh CI-root reference currents, absent Z/archive/loss channels,
+    both-role ten-step continuation and final reads. Six methods and 22 named
+    target effects pass with minimum margin above 1.995. Eight wrong source
+    stages, three constructed-model substitutions, sixteen forged outputs,
+    three producer-input shifts, two wrong references and four changed recipes
+    reject; lawful scratch writes pass. Reuse accepted root certificates and
+    the AEC-F1 writer guard. The [bounded review](./phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md)
+    passes without a new blocking finding; no corrective iteration is needed.
+    Only the supplied report was available for retention. The user accepts this
+    bounded checkpoint through the 2026-10-02 commit instruction; actual RG
+    numerical review and selected-case compatibility are separate
+    obligations below.
+  - [x] Construct and locally verify the [A_RG2b/C_RG2b event companion](./phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md)
+    (2026-10-02): bind actual role source stages, C/W or C references, absent
+    carrier channels and each target's own completion-relative section. Seven
+    methods and 26 target comparisons pass, with minimum margin above 1.371;
+    both roles admit ten target steps and final reads. First inverse core
+    coordinates remain negative after full error/tail allowances. Entry-owned
+    chain/read/write certification rejects source-chain substitutions, shifted
+    producer inputs and corrupted outputs. The [bounded construction review](./phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md)
+    passes without corrections under reconstructed dependencies; only its report
+    was available. The user accepts this checkpoint through the 2026-10-02 commit
+    instruction. The subsequent actual RG own-review/correction checkpoint
+    above is now explicitly accepted.
+  - [x] Derive independent bounded event/target expectations for all ten rows:
+    event preconditions/trigger, topology/role IDs, resources, W or C references,
+    Z disposition, target-zero admission, positive continuation and defining
+    effects at declared stages.
+    Retain distinct current/reset inputs and focused construction failures.
+    Research oracles feed P9-8.3A.1 and corresponding C owners; full native
+    fixture encodings, runtime receipts and comprehensive failure suites stay
+    with their later acceptance/execution work. The five accepted companions
+    supply these local expectations for all ten rows; the actual RG numerical
+    owner's user-requested own-review/correction checkpoint is now accepted;
+    aggregate technical review and explicit restriction/user acceptance are
+    complete below.
+  - [x] Check selected-case transfer compatibility: charge, W/Z disposition,
+    target/reset domain inclusion and failure/no-publication expectations.
+    Map lifecycle and disabled projection to accepted contracts and identify
+    conflicts. Reuse generic arguments; actual rollback/replay, crossings and
+    forty disabled-runtime cells remain later. Route genuinely absent authority
+    through claims → paper/spec before implementing its consumers. The
+    [local argument](./phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md)
+    establishes shared exact transfer/history identities, maps actual target
+    domains and existing lifecycle rules, and retains the selected legacy
+    undefined-domain rejection. Native charge-policy arithmetic and runtime
+    transaction checks remain later. The user accepts this bounded reconciliation
+    through the 2026-10-02 commit instruction. The subsequent explicit
+    aggregate acceptance below closes the rows under R1–R10.
+  - [x] Review all ten disposition rows against the concrete deliverables. The
+    [aggregate own review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+    passes all twenty profile/role paths and 103 event-output rejection controls;
+    all ten rows are now provisionally closed after explicit acceptance.
+    Historical-box versus actual-query coverage and stale RG review status
+    are reconciled; no new numerical blocker.
+  - [x] Accept the aggregate review's R1–R10 restrictions explicitly. No
+    unresolved row or silently dropped profile at production entry without a
+    user-approved scope change. The user explicitly accepts R1–R10 on
+    2026-10-02 (“i accept both”); no acceptance is inferred from test passes.
+  - [x] User accepts the aggregate bounded feasibility scope before production
+    resumes. Explicitly accepted on 2026-10-02 in the same “i accept both”
+    instruction. Later native gates and specialization leaves remain independent.
 
 P9-8.0 does not execute later runtime acceptance: chart/row/backend and allocator
 implementation belong to P9-8.1–8.2; native profile integration and oracle
@@ -1825,16 +1980,19 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   runtime support does not hold the C_OS child after all-ten feasibility review.
 - [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
-  - [ ] P9-8.3A.1: Instantiate for each selected exact A profile, starting with
-    A_OS, during P9-8.0 preproduction feasibility. After exact A G2 and
-    consumed-set G3 acceptance, select and
-    validate the specialization A-history/initialization binding and construct
-    an independent numerical oracle from the accepted port/chart, fixed-row
-    initializer and D11-G9 contracts; no production-runtime prerequisite.
+  - [ ] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
+    starting with A_OS. Prepare and review its bounded mathematical inputs and
+    expectations during P9-8.0 using accepted port/chart, fixed-row initializer
+    and D11-G9 contracts; this research preparation has no production-runtime
+    or new native G2/G3 prerequisite. Formal oracle acceptance for an exact
+    native scope still requires that scope's A G2 and consumed-set G3 and an
+    explicit match to the research binding; do not infer it from family labels.
     Bind source/target IDs, distinct current/reset inputs, old/new-edge W,
     reference-current recipe, W/Z loss channels, expected resource/receipt/
-    readmission outcomes and rollback cases. Retain outside the frozen release
-    as construction evidence; review and accept before runtime comparison.
+    readmission outcomes and rollback cases. Reuse the P9-8.0 expectations,
+    completing native identity/fixture details for that scope outside the frozen
+    release. Review and accept before runtime comparison; P9-8.0 closure alone
+    does not mark this leaf or the runtime coverage hold complete.
   - [ ] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
@@ -1845,7 +2003,8 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
     workaround. Do not reopen unrelated G2 or block independent C research;
-    the all-ten production hold remains until aggregate feasibility review.
+    the P9-8.0 all-ten hold is now released by explicit aggregate acceptance;
+    affected native leaves retain their own prerequisites.
 
 P9-8.3 per-profile completion register (all include independent targets,
 history channels, readmission, failure/rollback and replay; A rows require

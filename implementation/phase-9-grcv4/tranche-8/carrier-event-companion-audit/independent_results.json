@@ -1,0 +1,197 @@
+{
+  "points": [
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "stage": "entry",
+      "entries": 833,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "stage": "next",
+      "entries": 833,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "stage": "final",
+      "entries": 833,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "stage": "entry",
+      "entries": 833,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "stage": "next",
+      "entries": 833,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "stage": "final",
+      "entries": 833,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "stage": "entry",
+      "entries": 817,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "stage": "next",
+      "entries": 817,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "stage": "final",
+      "entries": 817,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "stage": "entry",
+      "entries": 817,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "stage": "next",
+      "entries": 817,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "stage": "final",
+      "entries": 817,
+      "root_residual": "0.0"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "stage": "entry",
+      "entries": 833,
+      "root_residual": "1.16633638358222310443406083949641572902265778993992854359885374613066615482707676830993472e-91"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "stage": "next",
+      "entries": 833,
+      "root_residual": "1.19444870695342031552307552320813744424661225351290283319431828593270881844213794096320547e-91"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "stage": "final",
+      "entries": 833,
+      "root_residual": "1.14147439583548455487081830520889460138390006939039229087212787662249141817639091850217818e-91"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "stage": "entry",
+      "entries": 833,
+      "root_residual": "1.17316443275821160314545304020692123728482551536417599757593630175990071951726038598918659e-91"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "stage": "next",
+      "entries": 833,
+      "root_residual": "6.81171730104947201398380530392911834276602507858075326947537036918224610486086535826033061e-92"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "stage": "final",
+      "entries": 833,
+      "root_residual": "1.17452773451318647283353451559178970327806472519106301786637436342260118338405655673115804e-91"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "stage": "entry",
+      "entries": 817,
+      "root_residual": "9.00550130207595948909715778654465927927871705319626708978683608368193344887798330569695952e-92"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "stage": "next",
+      "entries": 817,
+      "root_residual": "1.12095827296764735488199376712789150103424276805396032258830426018561868192250430473002393e-91"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "stage": "final",
+      "entries": 817,
+      "root_residual": "1.12741926751202084401311446440176935781460152543135502197332019363290344484194285730391162e-91"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "stage": "entry",
+      "entries": 817,
+      "root_residual": "1.03434383372967750277622321682312566823866189741418828860612803444559837287174526859453563e-91"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "stage": "next",
+      "entries": 817,
+      "root_residual": "1.19786044630750845132972210087260171517105572225459174054203680864240450157439215384241483e-91"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "stage": "final",
+      "entries": 817,
+      "root_residual": "1.1881426660666955731290188374941197942347854321215962658010046258808645824515166289797673e-91"
+    }
+  ],
+  "entries": 19800
+}

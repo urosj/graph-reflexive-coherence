@@ -1,0 +1,46 @@
+{
+  "equilibrium_reference_mutation": {
+    "original_input": 3,
+    "returned_resource": 3.125,
+    "claimed_resource_error": 0,
+    "true_error": 0.125
+  },
+  "noncommuting_order_mutation": [
+    {
+      "realization": "CI",
+      "role": "current",
+      "rejected": true,
+      "reason": "incoming source binding unresolved"
+    },
+    {
+      "realization": "CI",
+      "role": "reset",
+      "rejected": true,
+      "reason": "incoming source binding unresolved"
+    },
+    {
+      "realization": "PC",
+      "role": "current",
+      "rejected": true,
+      "reason": "incoming source binding unresolved"
+    },
+    {
+      "realization": "PC",
+      "role": "reset",
+      "rejected": true,
+      "reason": "incoming source binding unresolved"
+    },
+    {
+      "realization": "CI_PC",
+      "role": "current",
+      "rejected": true,
+      "reason": "incoming source binding unresolved"
+    },
+    {
+      "realization": "CI_PC",
+      "role": "reset",
+      "rejected": true,
+      "reason": "incoming source binding unresolved"
+    }
+  ]
+}

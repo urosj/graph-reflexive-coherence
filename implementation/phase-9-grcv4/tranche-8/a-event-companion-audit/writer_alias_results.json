@@ -1,0 +1,101 @@
+{
+  "mutation": "Add 2^-20 to incoming W inside the represented counterfactual writer before computing its output. No mutation to kernel/parameters/inputs/tests.",
+  "tests_run": 4,
+  "passed": true,
+  "calls": [
+    {
+      "graph": 17,
+      "delta_W": [
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07
+      ]
+    },
+    {
+      "graph": 17,
+      "delta_W": [
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07,
+        9.5367431640625e-07
+      ]
+    }
+  ],
+  "effects": {
+    "source_geometry": {
+      "represented_difference": 2.0565493752400243e-12,
+      "combined_full_error": 3.6435120201777736e-17,
+      "exact_effect_lower": 2.0565129401198225e-12,
+      "minimum_margin_ratio": 5591.714985250404
+    },
+    "source_readback": {
+      "represented_difference": 2.3234930204285575e-06,
+      "combined_full_error": 1.3897638146594052e-17,
+      "exact_effect_lower": 2.32349302041466e-06,
+      "minimum_margin_ratio": 8368871728.117105
+    },
+    "target_geometry": {
+      "represented_difference": 6.840281230324763e-08,
+      "combined_full_error": 3.277198567128073e-15,
+      "exact_effect_lower": 6.840280902604906e-08,
+      "minimum_margin_ratio": 3383895.436017332
+    },
+    "target_readback": {
+      "represented_difference": 9.21684764616515e-05,
+      "combined_full_error": 4.112160855009548e-15,
+      "exact_effect_lower": 9.216847645753933e-05,
+      "minimum_margin_ratio": 3913059331.9414935
+    },
+    "baseline_current_W": {
+      "represented_difference": 9.534417330092637e-07,
+      "combined_full_error": 1.2149329819135627e-16,
+      "exact_effect_lower": 9.534417328877704e-07,
+      "minimum_margin_ratio": 421442371.1188399
+    },
+    "baseline_current_next_J": {
+      "represented_difference": 1.171397370836047e-05,
+      "combined_full_error": 3.464472044425414e-15,
+      "exact_effect_lower": 1.1713973704895999e-05,
+      "minimum_margin_ratio": 558784400.7134222
+    },
+    "stale_resource_W": {
+      "represented_difference": 1.9068844667735618e-06,
+      "combined_full_error": 8.367238911587433e-17,
+      "exact_effect_lower": 1.9068844666898894e-06,
+      "minimum_margin_ratio": 903288753.1556824
+    },
+    "stale_resource_next_J": {
+      "represented_difference": 2.3427972394962637e-05,
+      "combined_full_error": 1.6512113268317842e-15,
+      "exact_effect_lower": 2.3427972393311424e-05,
+      "minimum_margin_ratio": 1708789676.728536
+    }
+  },
+  "errors": [],
+  "failures": []
+}

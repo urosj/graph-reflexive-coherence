@@ -1,0 +1,3 @@
+Prior manifest: all 248 retained file hashes verified before this addendum.
+All 20 scalar charge budgets independently recounted from physical source/event/target operation counts.
+Current: 197 * 2^-40; reset: 187 * 2^-40. All recorded exact discrepancies satisfy those bounds.

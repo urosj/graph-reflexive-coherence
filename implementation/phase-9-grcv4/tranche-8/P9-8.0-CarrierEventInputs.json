@@ -1,0 +1,42 @@
+{
+  "research_case_id": "P9-8.0-PERSISTENT-SOURCE-D52-POSITIVE-PHASE-3",
+  "shared_input_record": "P9-8.0-COS-ConstructionInputs.json",
+  "A_input_record": "P9-8.0-AOS-ConstructionInputs.json",
+  "inherited_A_fields": [
+    "parameters",
+    "source_W",
+    "event_history",
+    "row_detection"
+  ],
+  "profiles": [
+    "A_PC",
+    "C_PC",
+    "A_CI_PC",
+    "C_CI_PC"
+  ],
+  "source_carrier": {
+    "edge_order": "source_graph.edges",
+    "formula": "sign(role)*(R/16)*star_mask[i,j]*(-1)^(i+j)",
+    "role_signs": {
+      "current": 1,
+      "reset": -1
+    },
+    "radius": "1/4194304",
+    "current_event_stage": "after_one_enabled_source_beat",
+    "reset_event_stage": "independently_supplied_no_source_beat"
+  },
+  "carrier_policy": "whole_source_archive_whole_target_zero_reset",
+  "archive": "all_source_entries_in_source_edge_order",
+  "target_carrier": "exact_zero_all_target_edge_pairs",
+  "carrier_information_loss": [
+    "carrier_history_loss"
+  ],
+  "candidate_information_loss": [],
+  "tau_PC": "1",
+  "rho_inst": "1",
+  "geometry_radius": "1/1048576",
+  "target_steps": 10,
+  "reference_current": "fresh_role_event_entry_selected_realization_read",
+  "new_reference_current": "exact_zero",
+  "identity_scope": "research_operands_only_no_native_receipt_or_registration"
+}

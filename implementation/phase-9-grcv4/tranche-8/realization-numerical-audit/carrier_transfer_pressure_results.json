@@ -1,0 +1,66 @@
+[
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "role": "current",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": -7.448760511685285e-09,
+    "rejected": "represented carrier outside domain"
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "role": "reset",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": 7.450580596923828e-09,
+    "rejected": "represented carrier outside domain"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "role": "current",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": -7.448760511685285e-09,
+    "rejected": "represented carrier outside domain"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "role": "reset",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": 7.450580596923828e-09,
+    "rejected": "represented carrier outside domain"
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "role": "current",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": -7.448761785835814e-09,
+    "rejected": "represented carrier outside domain"
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "role": "reset",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": 7.450580596923828e-09,
+    "rejected": "represented carrier outside domain"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "role": "current",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": -7.448761785835814e-09,
+    "rejected": "represented carrier outside domain"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "role": "reset",
+    "unsupported_unordered_pairs": 27,
+    "old_1_old_2": 7.450580596923828e-09,
+    "rejected": "represented carrier outside domain"
+  }
+]

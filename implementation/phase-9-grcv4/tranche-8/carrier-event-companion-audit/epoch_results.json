@@ -1,0 +1,95 @@
+{
+  "mutation": "Use read probe hypothetical output carrier as source event input; other code unchanged",
+  "tests": {
+    "test_event_input_ownership_and_scratch": {
+      "passed": true,
+      "errors": [],
+      "failures": [],
+      "seconds": 0.4884326760000022
+    },
+    "test_four_profiles_both_roles_actual_reset_continuation": {
+      "passed": true,
+      "errors": [],
+      "failures": [],
+      "seconds": 32.768529049999984
+    },
+    "test_policy_binding_and_event_output_controls": {
+      "passed": true,
+      "errors": [],
+      "failures": [],
+      "seconds": 2.005806538999991
+    },
+    "test_reset_effects_at_declared_consumers": {
+      "passed": true,
+      "errors": [],
+      "failures": [],
+      "seconds": 20.26366991200001
+    }
+  },
+  "archive_differences": [
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "exact_archive_difference": "274568440389/75557863725914323419136",
+      "archive_difference": 3.6338830513392397e-12,
+      "source_reference_difference": 0.0
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "exact_archive_difference": "550106746293/151115727451828646838272",
+      "archive_difference": 3.640301082945574e-12,
+      "source_reference_difference": 0.0
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "exact_archive_difference": "2198162659881/604462909807314587353088",
+      "archive_difference": 3.6365550709831164e-12,
+      "source_reference_difference": 0.0
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "exact_archive_difference": "549702574261/151115727451828646838272",
+      "archive_difference": 3.6376264967935213e-12,
+      "source_reference_difference": 0.0
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "exact_archive_difference": "274568440389/75557863725914323419136",
+      "archive_difference": 3.6338830513392397e-12,
+      "source_reference_difference": 0.0
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "exact_archive_difference": "550106746293/151115727451828646838272",
+      "archive_difference": 3.640301082945574e-12,
+      "source_reference_difference": 0.0
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "exact_archive_difference": "2198162659881/604462909807314587353088",
+      "archive_difference": 3.6365550709831164e-12,
+      "source_reference_difference": 0.0
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "exact_archive_difference": "549702574261/151115727451828646838272",
+      "archive_difference": 3.6376264967935213e-12,
+      "source_reference_difference": 0.0
+    }
+  ]
+}

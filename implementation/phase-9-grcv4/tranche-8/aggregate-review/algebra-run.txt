@@ -1,0 +1,6 @@
+test_resource_box_corners_and_signed_coarse_boundary (__main__.AggregateReviewTests.test_resource_box_corners_and_signed_coarse_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.341s
+
+OK

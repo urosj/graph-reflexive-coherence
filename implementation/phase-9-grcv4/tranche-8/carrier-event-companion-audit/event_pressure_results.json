@@ -1,0 +1,612 @@
+{
+  "algebra": {
+    "P_column_sums": true,
+    "E_old_edge_identity": true,
+    "new_seed_count": 7,
+    "source_seed_frobenius_squared": "27/4503599627370496",
+    "source_seed_squared_ratio_to_R_squared": "27/256",
+    "whole_zero_target_norm": 0
+  },
+  "output_rejections": [
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "mode": "stale_initial_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "mode": "stale_initial_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "stale_initial_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "mode": "stale_initial_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "one_ulp_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "last_offdiag_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "diagonal_only_archive",
+      "rejection": "whole source archive mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "incomplete_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "nonfinite_archive",
+      "rejection": "nonfinite/malformed array"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "smallest_nonzero_target",
+      "rejection": "whole target zero reset mismatch"
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "mode": "wrong_candidate_loss",
+      "rejection": "history loss channels mismatch"
+    }
+  ],
+  "boundary_carriers": [
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "mode": "positive_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "mode": "negative_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "mode": "signed_offdiagonal",
+      "passed": true
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "mode": "zero",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "mode": "positive_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "mode": "negative_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "mode": "signed_offdiagonal",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "mode": "zero",
+      "passed": true
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "mode": "positive_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "mode": "negative_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "mode": "signed_offdiagonal",
+      "passed": true
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "mode": "zero",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "mode": "positive_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "mode": "negative_last_diagonal",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "mode": "signed_offdiagonal",
+      "passed": true
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "mode": "zero",
+      "passed": true
+    }
+  ],
+  "epoch_comparison": [
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "current",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "274568440389/75557863725914323419136",
+      "archive_difference": 3.6338830513392397e-12,
+      "reference_error": 8.465048066193364e-14,
+      "reference_budget": 9.094947017729282e-13
+    },
+    {
+      "candidate": "A",
+      "realization": "PC",
+      "role": "reset",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "550106746293/151115727451828646838272",
+      "archive_difference": 3.640301082945574e-12,
+      "reference_error": 8.57291944464485e-14,
+      "reference_budget": 9.094947017729282e-13
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "current",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "2198162659881/604462909807314587353088",
+      "archive_difference": 3.6365550709831164e-12,
+      "reference_error": 1.7042717642283034e-13,
+      "reference_budget": 9.094947017729282e-13
+    },
+    {
+      "candidate": "C",
+      "realization": "PC",
+      "role": "reset",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "549702574261/151115727451828646838272",
+      "archive_difference": 3.6376264967935213e-12,
+      "reference_error": 1.7054341091175688e-13,
+      "reference_budget": 9.094947017729282e-13
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "current",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "274568440389/75557863725914323419136",
+      "archive_difference": 3.6338830513392397e-12,
+      "reference_error": 8.461304307402657e-14,
+      "reference_budget": 9.094947017729282e-13
+    },
+    {
+      "candidate": "A",
+      "realization": "CI_PC",
+      "role": "reset",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "550106746293/151115727451828646838272",
+      "archive_difference": 3.640301082945574e-12,
+      "reference_error": 8.574709699784376e-14,
+      "reference_budget": 9.094947017729282e-13
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "current",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "2198162659881/604462909807314587353088",
+      "archive_difference": 3.6365550709831164e-12,
+      "reference_error": 1.7042005582630458e-13,
+      "reference_budget": 9.094947017729282e-13
+    },
+    {
+      "candidate": "C",
+      "realization": "CI_PC",
+      "role": "reset",
+      "active_target_unchanged": true,
+      "archive_difference_exact": "549702574261/151115727451828646838272",
+      "archive_difference": 3.6376264967935213e-12,
+      "reference_error": 1.705227776471165e-13,
+      "reference_budget": 9.094947017729282e-13
+    }
+  ]
+}
