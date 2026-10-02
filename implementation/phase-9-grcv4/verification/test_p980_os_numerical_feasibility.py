@@ -219,7 +219,7 @@ class OSNumericalFeasibilityTests(unittest.TestCase):
     def setUpClass(cls):
         bounds.FixedRowBoundTests.setUpClass()
         cls.source_data = bounds.FixedRowBoundTests.source
-        cls.vector_data = bounds.FixedRowBoundTests.layouts[-1]
+        cls.vector_data = bounds.FixedRowBoundTests.d52
 
     def test_normalized_contract_including_equality_and_nonidentity_reference(self):
         b = bounds.exact_budgets()

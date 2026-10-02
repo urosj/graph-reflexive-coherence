@@ -1753,19 +1753,32 @@ Tranche 7 and current execution permissions remain unchanged.
     Represented evaluation and complete research-profile binding remain below;
     no native replacement, C1 or completion-independent claim follows.
 
-  Remaining P9-8.0 work, in order (independent oracle work may overlap):
-
-  - [ ] Pin the all-ten scope and map accepted evidence to it: exact parameters,
+  - [x] Pin the [all-ten research scope](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#pinned-all-ten-research-scope--2026-10-02)
+    and map accepted evidence to it (2026-10-02): exact parameters,
     source/target graphs and capacities, candidate/backend stages, geometry/
     history/carrier domains, both roles, duration and continuation horizon.
-    Record every restriction explicitly. A finite union is not its surrounding
+    Record restrictions explicitly. A finite union is not its surrounding
     rectangle; revised D52 evidence does not cover all allocator layouts.
-  - [ ] Complete bounded numerical feasibility for A_RG2b and C_RG2b with a
-    research section evaluator: inversion, truncation and full-evaluation
-    errors plus surviving defining effects. Apply the frozen global completion
-    at every nested query; physical-tube containment is not an arbitrary-depth
-    backward bound. This is not production backend integration or full runtime
-    conformance, nor substitution of CI/OS geometry.
+    Pin the previously selected D52 positive-chirality phase-3 fixture by name;
+    distinguish its local runs from isolated reviews describing negative chirality.
+    Three focused scope tests cover exact ports/capacity, bad or reordered
+    fixtures and the actual research consumers. This is performed reconciliation,
+    not user acceptance of restrictions, a new review or complete row closure.
+
+  - [x] Construct and locally verify the [A/C RG numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md)
+    (2026-10-02): finite inverse-chain residuals, section truncation and complete
+    evaluation errors with frozen argument completion at every depth. Fifty
+    nominal read stages and both-role ten-step continuation pass; 44 named
+    effect checks include RG/OS discrimination, CI defects and A history's next
+    RG current. Four methods reject altered clamps, corrupt chains and wrong
+    realization outputs through the actual consumer. This separate binary64
+    NumPy research arithmetic inherits no OS margins. No uniform all-box
+    floating-point or accumulated trajectory-error claim. The 2026-10-02 commit
+    instruction accepts this bounded checkpoint; independent review and complete
+    RG profile/event/oracle bindings remain open.
+
+  Remaining P9-8.0 work, in order (independent oracle work may overlap):
+
   - [ ] Complete bounded numerical feasibility for A/C CI, PC and CI+PC on
     their selected research domains: represented root/error bounds, old-carrier
     read and same-source writer stages, and defining-effect margins. Reuse

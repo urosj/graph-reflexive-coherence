@@ -1983,18 +1983,23 @@ Persistent continuation still requires a lawful event carrier policy.
 
 Remaining work before any new specialization production, including P9-8.1a:
 
-1. **Pin scopes and reconcile evidence.** For all ten, bind exact parameters,
-   graphs/capacities, backend/stage choices, source/target domains, current/reset
-   roles and duration/horizon. Reuse accepted proofs only where their hypotheses
-   match. Preserve finite-union charts and distinguish revised D52 witnesses
-   from the earlier sixteen-layout reference control. Do not claim arbitrary
-   numerical graphs, capacities or parameters without the corresponding proof.
-2. **Finish bounded numerical feasibility.** Next construct the research RG
-   section evaluator with combined inverse, truncation and full-evaluation
-   errors and defining-effect evidence. Apply the frozen global completion at
-   every nested query; a single inverse-containment estimate does not establish
-   arbitrary-depth containment in physical tubes. Then close the outstanding
-   A/C CI/PC/CI+PC root/read/writer error and mechanism checks on their selected
+1. **Scope reconciliation performed, 2026-10-02.** The
+   [all-ten scope map](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#pinned-all-ten-research-scope--2026-10-02)
+   pins parameters, graphs/capacities, stages, domains, both roles and horizon.
+   It retains finite-union and named-stage restrictions. Local enabled evidence
+   uses the positive-chirality phase-3 D52 fixture; the isolated review summaries
+   describe negative-chirality transcripts. That distinction is retained for
+   aggregate review, not silently promoted to both-chirality coverage. No
+   restriction acceptance, complete row closure or production entry follows.
+2. **Finish bounded numerical feasibility.** The
+   [represented RG successor](./phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md)
+   now locally passes four methods: complete inverse-chain residual/error and
+   global section-tail certificates, 50 nominal read stages, both-role ten-step
+   continuation and 44 named effects. Its separate binary64 NumPy arithmetic,
+   new residual argument and local results are user-accepted by the 2026-10-02
+   commit instruction; independent review remains open. No backward
+   physical-tube containment or borrowed OS margin is assumed. Next close the
+   outstanding A/C CI/PC/CI+PC root/read/writer error and mechanism checks on their selected
    domains. Accepted OS effects remain OS-only. This requires an implementable
    algorithm/arithmetic budget, not a production backend, full native campaign
    or performance project.

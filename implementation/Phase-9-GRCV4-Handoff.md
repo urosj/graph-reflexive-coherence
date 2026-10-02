@@ -1,9 +1,56 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
+## Current continuation — 2026-10-02
+
+The user requested a new branch and continuation of P9-8.0. Branch
+`work/p9-8-0-feasibility-scope` starts from `main` at `36be1ea`; the earlier
+scope/work-order clarification is already committed in its ancestry (`39a5af8`).
+This section supersedes the older checkout and pending-transfer instructions
+below. The user accepted the bounded scope/RG numerical checkpoint and requested its
+commit on 2026-10-02. Independent RG numerical review remains open; aggregate
+feasibility and production are not accepted by that instruction.
+
+The first deliverable is performed in the existing
+[all-ten feasibility register](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#pinned-all-ten-research-scope--2026-10-02):
+exact graphs/ports/capacities, parameters and stages, realization-specific
+resource/history/geometry/carrier domains, both roles, duration/horizon and
+accepted evidence are mapped. All ten disposition rows remain unresolved;
+restrictions still need aggregate review and user acceptance.
+
+Scope reconciliation exposed a concrete evidence-label mismatch: every local
+enabled owner selected the final **positive-chirality, phase-three D52** vector,
+while the RG completion note and two isolated review summaries described
+negative chirality. The note now matches the local fixture, and local consumers
+select that unchanged fixture by name. The isolated review descriptions remain
+historical evidence; no second-chirality numerical coverage is inferred. The
+completion note also now correctly calls the differential means port rows,
+rather than columns. Three focused scope tests pass, including exact endpoint
+ports/capacity, malformed selection and all consumer setups after reordering.
+Accepted numerical calculations were not rerun for this input-equivalent change.
+
+The next requested step is also performed: the
+[represented RG research successor](./phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md)
+locally passes four methods. It uses A4/C6 finite graph-transform chains,
+independently recomputed full residuals and global truncation bounds. Fifty
+nominal read stages, both-role ten-step continuation and 44 named effects pass,
+including RG/OS and instantaneous-CI discrimination and the A writer's next
+RG current. Altered clamps and corrupt/wrong-realization chains reject through
+the actual consumer. The separate binary64 NumPy recipe inherits no OS margins.
+The user accepted this bounded numerical checkpoint with the 2026-10-02 commit
+instruction. Independent review and complete profile/event/oracle bindings
+remain open.
+
+**Next substantive calculation:** A/C CI/PC/CI+PC represented root/read/
+same-source-writer errors and defining-effect margins on the pinned research
+domains. Review the RG successor in parallel with that work as appropriate,
+then follow the remaining oracle/lifecycle work order. Production,
+native admission and P9-8.1a remain held; nothing in this continuation accepts
+the aggregate or changes the physical resource map.
+
 ## Resume on another machine
 
-This section and the current checkpoint below take precedence over historical
-next-step instructions and setup recipes later in this handoff.
+The 2026-10-02 continuation above takes precedence over this historical transfer
+record. The setup guidance remains applicable; inspect the actual checkout.
 
 **Checkout:** `implementation/grc9v4-tranche-8`. At handoff preparation the
 latest accepted commit was `d6d3647` (bounded A/C RG2b completion and RG-F1/RG-F2

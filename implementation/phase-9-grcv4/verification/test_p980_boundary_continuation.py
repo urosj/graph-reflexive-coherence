@@ -20,6 +20,24 @@ HORIZON = 10
 CUTOFF = Q(1, 512)
 RESOURCE_MARGIN = Q(1, 8192)
 RATE_ERROR_BUDGET = Q(1, 96)
+D52_FIXTURE_ID = 'G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3'
+
+
+def enabled_d52_layout(layouts):
+    """Select the tracked enabled witness by identity, never list position.
+
+    Only its role topology is reused. Its frozen numerical/event identities,
+    resource shares and reference weights are not this research construction.
+    """
+    matches = [v for v in layouts if v['fixture_id'] == D52_FIXTURE_ID]
+    if len(matches) != 1:
+        raise ValueError('expected exactly one named D52 research layout')
+    layout = matches[0]
+    request = layout['request']
+    if (request['target_effective_degree'], request['module_chirality'],
+            request['growth_phase']) != (52, 1, 3):
+        raise ValueError('D52 research capacity/chirality/phase mismatch')
+    return layout
 
 
 def rate(edges, values):

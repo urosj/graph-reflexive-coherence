@@ -178,7 +178,7 @@ class RevisedRealizationBoundTests(unittest.TestCase):
     def setUpClass(cls):
         bounds.FixedRowBoundTests.setUpClass()
         source = bounds.FixedRowBoundTests.source
-        layout = bounds.FixedRowBoundTests.layouts[-1]
+        layout = bounds.FixedRowBoundTests.d52
         if layout['request']['target_effective_degree'] != 52:
             raise ValueError('D52 layout binding changed')
         edges, nodes = bounds.normalized_target(layout)
