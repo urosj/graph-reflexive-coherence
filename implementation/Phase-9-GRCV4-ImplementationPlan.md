@@ -2031,6 +2031,19 @@ Remaining work before any new specialization production, including P9-8.1a:
    by this preparation; no new universal lifecycle proof or full runtime failure
    matrix is added to P9-8.0. Independent review of the actual RG evaluator
    remains an explicit parallel obligation.
+
+   The first [shared-input/C_OS companion](./phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md)
+   is now locally verified: seven methods bind exact input recipes, complete C
+   references, charge-preserving event expectations, distinct current/reset
+   targets, both-role ten-step continuation and six retained effects. Input and
+   actual-consumer mutations reject. The [bounded audit](./phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md)
+   passes the construction; EC-F1/EC-F2 now bind consumed models and isolate
+   final/effect read inputs, with local regressions through the actual consumers.
+   The user accepts this bounded checkpoint through the 2026-10-02 commit
+   instruction. Remaining A/C bindings and selected-case
+   compatibility stay open. Next
+   extend A_OS history/initialization and its independent expectations.
+
 4. **Review and accept the aggregate scope.** Every row must have concrete
    feasibility evidence and explicit restrictions. Retain unresolved or
    incompatible bindings honestly; no plausible-but-unproved conditional

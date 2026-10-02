@@ -1804,7 +1804,8 @@ Tranche 7 and current execution permissions remain unchanged.
   [bounded deliverables and stopping criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
   These are research inputs for later owners; completing P9-8.1–8.3 or newly
   admitting the research profiles natively is not a prerequisite. All items
-  below remain open; this scope clarification supplies no construction result.
+  below remain open except the explicitly recorded local C_OS increment; the
+  scope clarification itself supplied no construction result.
 
   - [ ] Independently review the actual RG numerical evaluator and resolve its
     findings on the pinned scope. The supplied mathematical review did not
@@ -1815,6 +1816,18 @@ Tranche 7 and current execution permissions remain unchanged.
     include complete C reference maps, then A fixed-row/initializer/reference-
     current and W recipes. Supply or derive every operand; retain intended
     identity preimages. Native descriptor registration/serialization is later.
+  - [x] Construct and locally verify the first
+    [shared-input/C_OS companion](./phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md)
+    (2026-10-02): explicit rational inputs and complete C references, independent
+    charge-preserving transfer, actual current/reset targets, fresh current
+    trigger, absent W/Z, both-role ten-step continuation and final reads.
+    Seven methods pass after the [bounded audit](./phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md):
+    retain six effects, ten input mutations and thirteen transfer-consumer
+    rejections; add thirteen consumed-model rejections, entry ownership at
+    final/effect reads and a final-only fault through actual continuation.
+    EC-F1/EC-F2 are corrected locally. The user accepts this bounded checkpoint
+    through the 2026-10-02 commit instruction; the
+    all-ten bindings/oracles and C_OS row are not closed.
   - [ ] Select and validate an allowed whole-Z event policy for each persistent
     row, separately from A W history. Check support, symmetry, norm and target
     domain using each role's actual policy output. Whole-source archive/whole-

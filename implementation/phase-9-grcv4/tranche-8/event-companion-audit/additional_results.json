@@ -1,0 +1,135 @@
+{
+  "scope": "isolated dependencies; submitted event subject unchanged",
+  "basis_checks": [
+    "outside-1",
+    "outside-2",
+    "outside-3",
+    "outside-4",
+    "outside-5",
+    "outside-6",
+    "outside-7",
+    "outside-8",
+    "outside-9",
+    "source-s"
+  ],
+  "mixed_transfer_checks": [
+    {
+      "role": "current",
+      "corner": 0,
+      "resource_error": "0",
+      "charge_error": "0"
+    },
+    {
+      "role": "current",
+      "corner": 341,
+      "resource_error": "0",
+      "charge_error": "0"
+    },
+    {
+      "role": "current",
+      "corner": 682,
+      "resource_error": "237874615450993313509714328241582522730457771/3213876088517980551083924184682325205044405987565585670602752",
+      "charge_error": "1/4503599627370496"
+    },
+    {
+      "role": "current",
+      "corner": 1023,
+      "resource_error": "237874615450993313509714328241582522730457771/3213876088517980551083924184682325205044405987565585670602752",
+      "charge_error": "1/4503599627370496"
+    },
+    {
+      "role": "reset",
+      "corner": 0,
+      "resource_error": "237874615450993313509714328241582522730457771/6427752177035961102167848369364650410088811975131171341205504",
+      "charge_error": "1/9007199254740992"
+    },
+    {
+      "role": "reset",
+      "corner": 341,
+      "resource_error": "237874615450993313509714328241582522730457771/6427752177035961102167848369364650410088811975131171341205504",
+      "charge_error": "1/9007199254740992"
+    },
+    {
+      "role": "reset",
+      "corner": 682,
+      "resource_error": "0",
+      "charge_error": "0"
+    },
+    {
+      "role": "reset",
+      "corner": 1023,
+      "resource_error": "0",
+      "charge_error": "0"
+    }
+  ],
+  "full_Q_checks": [
+    {
+      "stage": "current_source",
+      "entries_checked": 181,
+      "pass": true
+    },
+    {
+      "stage": "current_target_0",
+      "entries_checked": 545,
+      "pass": true
+    },
+    {
+      "stage": "current_target_10",
+      "entries_checked": 545,
+      "pass": true
+    },
+    {
+      "stage": "reset_source",
+      "entries_checked": 181,
+      "pass": true
+    },
+    {
+      "stage": "reset_target_0",
+      "entries_checked": 545,
+      "pass": true
+    },
+    {
+      "stage": "reset_target_10",
+      "entries_checked": 545,
+      "pass": true
+    }
+  ],
+  "capacity": {
+    "module_nodes": 8,
+    "internal_edges": 7,
+    "total_external_capacity": 58,
+    "module_ports_occupied": 23,
+    "actually_unoccupied_module_ports": 49
+  },
+  "all_corner_transfer_calls": 2048,
+  "nonuniform_exterior_swap_rejected": "event resource error unresolved",
+  "full_Q_entries_checked": 2542,
+  "fresh_trigger": {
+    "point_rows": [
+      "17592186069291/1125899906842624",
+      "17592186069291/1125899906842624",
+      "17592186069291/1125899906842624"
+    ],
+    "point_squared_norm": "928455032089668975159728043/1267650600228229401496703205376",
+    "signed_hessian_min_eigenvalue": "-17592186069291/1125899906842624",
+    "all_nine_source_ports": true
+  },
+  "current_new_solved_currents": {
+    "internal/1": -1.046875068956012,
+    "internal/2": -1.046875068956012,
+    "internal/3": -1.0468750685824937,
+    "internal/extra/1/1": 3.0468751894346715,
+    "internal/extra/2/1": 3.0468751894346715,
+    "internal/extra/3/1": 3.0468751896944872,
+    "internal/extra/3/2": 1.0000000563254103
+  },
+  "reset_new_solved_currents": {
+    "internal/1": -0.7135417049222147,
+    "internal/2": -0.7135417049222147,
+    "internal/3": -0.7135417048085856,
+    "internal/extra/1/1": 2.0468751065237045,
+    "internal/extra/2/1": 2.0468751065237045,
+    "internal/extra/3/1": 2.046875106607399,
+    "internal/extra/3/2": 0.666666699637964
+  }
+}

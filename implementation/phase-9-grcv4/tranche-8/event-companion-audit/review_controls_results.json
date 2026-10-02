@@ -1,0 +1,103 @@
+{
+  "model_bindings": [
+    {
+      "graph": "source_graph",
+      "control": "original",
+      "passed": true
+    },
+    {
+      "graph": "source_graph",
+      "control": "parameters",
+      "rejected": "consumed model index/parameters differ from input record"
+    },
+    {
+      "graph": "source_graph",
+      "control": "index",
+      "rejected": "consumed model index/parameters differ from input record"
+    },
+    {
+      "graph": "source_graph",
+      "control": "B",
+      "rejected": "consumed model B differs from independent assembly"
+    },
+    {
+      "graph": "source_graph",
+      "control": "D",
+      "rejected": "consumed model D differs from independent assembly"
+    },
+    {
+      "graph": "source_graph",
+      "control": "I",
+      "rejected": "consumed model I differs from independent assembly"
+    },
+    {
+      "graph": "source_graph",
+      "control": "mask",
+      "rejected": "consumed model mask differs from independent assembly"
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "original",
+      "passed": true
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "parameters",
+      "rejected": "consumed model index/parameters differ from input record"
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "index",
+      "rejected": "consumed model index/parameters differ from input record"
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "B",
+      "rejected": "consumed model B differs from independent assembly"
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "D",
+      "rejected": "consumed model D differs from independent assembly"
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "I",
+      "rejected": "consumed model I differs from independent assembly"
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "mask",
+      "rejected": "consumed model mask differs from independent assembly"
+    },
+    {
+      "graph": "expected_target_roles",
+      "control": "ports",
+      "rejected": "consumed model roles/ports differ from input record"
+    }
+  ],
+  "read_only": [
+    {
+      "role": "current",
+      "control": "original",
+      "passed": true,
+      "current_error": "2574001047123384428758079132438843436105289373/3213876088517980551083924184682325205044405987565585670602752"
+    },
+    {
+      "role": "current",
+      "control": "in_place_shift",
+      "rejected": "read-only current error relative to entry input unresolved"
+    },
+    {
+      "role": "reset",
+      "control": "original",
+      "passed": true,
+      "current_error": "2334112141564550165597241943207982222669537583/1606938044258990275541962092341162602522202993782792835301376"
+    },
+    {
+      "role": "reset",
+      "control": "in_place_shift",
+      "rejected": "read-only current error relative to entry input unresolved"
+    }
+  ]
+}

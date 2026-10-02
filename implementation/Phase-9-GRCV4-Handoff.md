@@ -60,15 +60,33 @@ local RN-F1 correction through the 2026-10-02 commit instruction, committed
 as `5a234db`. The audit did not have the actual RG evaluator for implementation
 review.
 
-**Next construction task:** prepare the shared mathematical source/request/
-target operand record and an independently checked C_OS companion on the pinned
-source/positive-D52 scope. Use the
-[bounded deliverables and completion criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production),
-then extend A initializer/W policy and the persistent whole-Z policy across all
-ten rows. Each oracle consumes its policy's actual target state. Direct old-edge
-Z copying leaves 27 unsupported pairs; the specified whole-source archive/whole-
-target zero reset is an available alternative that still needs its own numerical
-stage/effect checks. This plan does not select a carrier policy.
+The bounded-deliverable clarification is committed as `165473f`. The requested
+continuation has now locally verified the
+[shared-input/C_OS construction companion](./phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md):
+an explicit rational input record, complete C references, independent exact
+resource-transfer matrix and actual current/reset target states. Seven methods
+pass after audit correction, with both-role ten-step continuation, final reconstruction, six retained
+OS effects, ten input-mutation cases and thirteen consumer rejections. Exact
+zeros, charge, fresh current-source trigger and absent W/Z are checked. This
+increment is accepted for commit by the user on 2026-10-02. The [retained bounded audit](./phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md)
+passes the construction and identifies EC-F1/EC-F2. The setup now binds consumed
+models to the validated record and independently assembled matrices; final and
+effect reads now own entry references and use separate work arrays. Thirteen
+model substitutions and in-place read shifts reject, including the final-only
+fault through actual continuation. The report and five historical result files
+are retained portably. The commit instruction accepts this bounded companion
+and its local corrections; no all-ten binding/oracle
+item or C_OS feasibility row is closed.
+
+**Next construction task:** extend the shared record and independent target
+expectations to A_OS's initializer/reference-current/W policy, then the
+persistent and remaining realizations. Use the
+[bounded deliverables](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
+Each persistent oracle must consume its policy's actual target state. Direct
+old-edge Z copying leaves 27 unsupported pairs; the specified whole-source
+archive/whole-target zero reset remains an available alternative needing its
+own affected numerical-stage/effect checks. No carrier policy is selected by
+the C_OS companion.
 
 The remaining checklist now distinguishes bounded research oracles and
 selected-case compatibility from later native fixture/identity completion,
