@@ -1597,6 +1597,11 @@ def leaf_permissions(root):
     for name in g3_paths:
         require(name in owners, 'G3 entry outside reviewed ownership')
         owners[name] = owners[name] | {ENTRY}
+    from phase9_specialization_acceptance import row_bridge_authorization
+    row_entry = row_bridge_authorization(root)
+    ready = sorted(set(ready) | {row_entry})
+    for name in g3_paths:
+        owners[name] = owners[name] | {row_entry}
     for name, row in RECONCILED_RUNTIME.items():
         require(row["iteration_id"] in ready, "reconciled helper owner is not ready")
         owners[name] = {row["iteration_id"]}
@@ -1812,9 +1817,16 @@ def work_entries(root, approval):
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
     ready, owners = leaf_permissions(root)
-    from phase9_specialization_acceptance import accepted as accepted_g3, permitted as g3_permitted
+    from phase9_specialization_acceptance import (
+        accepted as accepted_g3, permitted, row_bridge_authorization,
+        row_bridge_permitted,
+    )
     g3 = accepted_g3(root)
+    row_entry = row_bridge_authorization(root)
+    def g3_permitted(name, leaf):
+        return permitted(name, leaf) or row_bridge_permitted(name, leaf)
     leaves.update(g3['new_runtime_iterations_authorized'])
+    leaves.add(row_entry)
     require(
         value["accepted_generic_runtime_support"] == accepted_generic_support(root)
         and value["admitted_specialization_support_sets"] == g3['admitted_specialization_support_sets'],

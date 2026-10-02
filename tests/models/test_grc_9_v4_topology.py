@@ -5,13 +5,14 @@ from __future__ import annotations
 import json
 import math
 import os
+import random
 import subprocess
 import sys
 import unittest
 from collections.abc import Callable
 from copy import deepcopy
 from dataclasses import FrozenInstanceError, replace
-from decimal import Decimal
+from decimal import Decimal, localcontext
 from enum import IntEnum
 from fractions import Fraction
 from hashlib import sha256
@@ -26,16 +27,36 @@ from pygrc.models.grc_9_v4_topology import (
     PORT_COLUMNS,
     PORT_COUNT,
     PORT_ROWS,
+    GRC9RowWeightPolicy,
     GRC9V4GraphProjection,
     GRC9V4PortEdge,
     GRC9V4PortEndpoint,
     GRC9V4PortGraph,
+    GRC9V4PostbeatRows,
+    GRC9V4RowDifferential,
     GRC9V4SerializedPortGraph,
+    delegate_native_row_weights,
     port_to_row_column,
     row_column_to_port,
 )
-from pygrc.models.grc_v4_codec import V4IdentityError, canonical_json_bytes
-from pygrc.models.grc_v4_geometry import GRCV4Graph, OrientedEdge, VertexScalar
+from pygrc.models.grc_v4_codec import (
+    V4IdentityError,
+    canonical_json_bytes,
+    payload_identity,
+)
+from pygrc.models.grc_v4_geometry import (
+    GRCV4Graph,
+    NonfiniteGeometryError,
+    OrientedEdge,
+    VertexScalar,
+)
+from pygrc.models.grc_v4_profile import (
+    GRCV4Profile,
+    get_supported_profile,
+    list_supported_profiles,
+    resolve_profile,
+)
+from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
 
 # Literal specification table, independent of either implementation direction.
 CHART = (
@@ -1497,6 +1518,600 @@ print(view.orientation_identity)
             )
             with self.subTest(seed=seed):
                 self.assertEqual(result.stdout.decode(), expected)
+
+
+def row_fixture() -> GRC9V4PortGraph:
+    return GRC9V4PortGraph(
+        (0, 1, 2, 3, "isolate"),
+        (
+            edge("z", (0, 1), (1, 9)),
+            edge("a", (0, 3), (2, 4)),
+            edge("m", (3, 2), (0, 4)),
+        ),
+    )
+
+
+def row_profile(candidate: str, weights: dict[str, float]) -> GRCV4Profile:
+    """Resolved test declaration; no geometry or native profile admission claim."""
+    profile = next(
+        get_supported_profile(key)
+        for key in list_supported_profiles()
+        if get_supported_profile(key).identity_payload.profile_family_id
+        == candidate + "_OS"
+    )
+    if candidate == "A":
+        return profile
+    payload: Any = profile.to_payload()
+    params = payload["params_resolved"]
+    params["candidate"]["W_C_tr"] = weights
+    params["candidate"]["W_C_tr_content_digest"] = payload_identity(
+        "wctr_identity_payload",
+        {"schema_version": "grcv4-wctr-identity-v1", "W_C_tr": weights},
+    )
+    identity = payload["identity_payload"]
+    identity["params_hash"] = payload_identity("resolved_params", params)
+    return resolve_profile(params, identity)
+
+
+def decimal_rows(
+    graph: GRC9V4PortGraph,
+    C: tuple[float, ...],
+    w: tuple[float, ...],
+    J: tuple[float, ...],
+) -> tuple[tuple[tuple[float, ...], tuple[float, ...]], ...]:
+    """Independent 100-digit oracle, scanning literal port sets per node/row."""
+    result = []
+    values = dict(zip(graph.live_node_ids, C, strict=True))
+    with localcontext() as context:
+        context.prec = 100
+        for node in graph.live_node_ids:
+            gradients, currents = [], []
+            for ports in ((1, 2, 3), (4, 5, 6), (7, 8, 9)):
+                numerator = denominator = total = Decimal(0)
+                for link, weight, flux in zip(graph.edges, w, J, strict=True):
+                    if link.tail.node_id == node and link.tail.port in ports:
+                        denominator += Decimal(weight)
+                        numerator += Decimal(weight) * (
+                            Decimal(values[link.head.node_id]) - Decimal(values[node])
+                        )
+                        total += Decimal(flux)
+                    if link.head.node_id == node and link.head.port in ports:
+                        denominator += Decimal(weight)
+                        numerator += Decimal(weight) * (
+                            Decimal(values[link.tail.node_id]) - Decimal(values[node])
+                        )
+                        total -= Decimal(flux)
+                gradients.append(float(numerator / denominator) if denominator else 0.0)
+                currents.append(float(total))
+            result.append((tuple(gradients), tuple(currents)))
+    return tuple(result)
+
+
+class RowDifferentialTests(unittest.TestCase):
+    def test_literal_weighted_rows_hessian_sign_and_flux(self) -> None:
+        graph = row_fixture()
+        for sign in (-1, 1):
+            values = GRC9V4RowDifferential(graph, sign).evaluate(
+                (1, 3, 2, 0, 42), (2, 1, 4), (0.25, -0.125, -0.5)
+            )
+            self.assertEqual(values[0].gradient, (5 / 3, -1, 0))
+            self.assertEqual(values[0].net_flux, (0.125, 0.5, 0))
+            self.assertEqual(values[0].hessian, ((5 / 3, 0, 0), (0, -1, 0), (0, 0, 0)))
+            self.assertEqual(
+                values[0].signed_hessian,
+                ((sign * 5 / 3, 0, 0), (0, -sign, 0), (0, 0, 0)),
+            )
+            self.assertEqual(values[1].gradient, (0, 0, -2))
+            self.assertEqual(values[2].gradient, (0, -1, 0))
+            self.assertEqual(values[3].gradient, (1, 0, 0))
+            self.assertEqual(values[4].gradient, (0, 0, 0))
+            self.assertEqual(values[4].net_flux, (0, 0, 0))
+
+    def test_exact_empty_and_zero_weight_rows_keep_flux(self) -> None:
+        self.assertEqual(
+            GRC9V4RowDifferential(GRC9V4PortGraph((), ())).evaluate((), (), ()), ()
+        )
+        graph = row_fixture()
+        result = GRC9V4RowDifferential(graph, -1).evaluate(
+            (1, 3, 2, 0, 0), (0, 0, 0), (1, 2, 3)
+        )
+        self.assertTrue(all(row.gradient == (0, 0, 0) for row in result))
+        self.assertEqual(result[0].net_flux, (3, -3, 0))
+        for row in result:
+            for matrix_row in row.signed_hessian:
+                self.assertTrue(all(math.copysign(1, x) == 1 for x in matrix_row))
+
+    def test_loop_incidence_and_parallel_edges_are_not_collapsed(self) -> None:
+        graph = GRC9V4PortGraph(
+            (1, "1"),
+            (
+                edge("loop", (1, 1), (1, 2)),
+                edge("parallel-a", (1, 3), ("1", 4)),
+                edge("parallel-b", (1, 8), ("1", 5)),
+            ),
+        )
+        result = GRC9V4RowDifferential(graph).evaluate((0, 5), (2, 1, 3), (7, 2, -1))
+        self.assertEqual(result[0].gradient, (1, 0, 5))  # Z row1 = 2+2+1
+        self.assertEqual(result[0].net_flux, (2, 0, -1))
+        self.assertEqual(result[1].gradient, (0, -5, 0))
+        self.assertEqual(result[1].net_flux, (0, -1, 0))
+        cross_row = GRC9V4PortGraph(("",), (edge("l", ("", 1), ("", 9)),))
+        loop = GRC9V4RowDifferential(cross_row).evaluate((8,), (2,), (7,))[0]
+        self.assertEqual(loop.gradient, (0, 0, 0))
+        self.assertEqual(loop.net_flux, (7, 0, -7))
+
+    def test_legacy_tensor_uses_row_square_and_isotropic_total_flux(self) -> None:
+        tensors = GRC9V4RowDifferential(row_fixture()).legacy_node_tensors(
+            (1, 3, 2, 0, 42),
+            (2, 1, 4),
+            (0.25, -0.125, -0.5),
+            lambda_c=2,
+            xi_c=0.5,
+            zeta_c=0.25,
+        )
+        self.assertEqual(
+            tensors[0], ((6.59765625, 0, 0), (0, 4.09765625, 0), (0, 0, 2.09765625))
+        )
+        self.assertEqual(tensors[4], ((84, 0, 0), (0, 84, 0), (0, 0, 84)))
+
+    def test_tiny_weights_and_overflowing_intermediates_preserve_finite_answers(
+        self,
+    ) -> None:
+        graph = GRC9V4PortGraph(
+            (0, 1, 2, 3),
+            (
+                edge("a", (0, 1), (1, 1)),
+                edge("b", (0, 2), (2, 1)),
+                edge("c", (0, 3), (3, 1)),
+            ),
+        )
+        operator = GRC9V4RowDifferential(graph)
+        tiny, large = math.ulp(0.0), sys.float_info.max
+        self.assertEqual(
+            operator.evaluate((1, 1.5, 2, 2.5), (tiny,) * 3, (0,) * 3)[0].gradient,
+            (1, 0, 0),
+        )
+        self.assertEqual(
+            operator.evaluate((0, large, large, large), (large,) * 3, (0,) * 3)[
+                0
+            ].gradient,
+            (large, 0, 0),
+        )
+        self.assertEqual(
+            operator.evaluate((1, 1, 1, 1), (1,) * 3, (large, 1, -large))[0].net_flux,
+            (1, 0, 0),
+        )
+        # The average is finite even when a naive weighted numerator underflows.
+        self.assertEqual(
+            operator.evaluate((0, tiny, tiny, tiny), (tiny,) * 3, (0,) * 3)[0].gradient,
+            (tiny, 0, 0),
+        )
+
+    def test_unrepresentable_results_fail_without_partial_output(self) -> None:
+        operator = GRC9V4RowDifferential(row_fixture())
+        with self.assertRaises(NonfiniteGeometryError):
+            operator.evaluate((0,) * 5, (1,) * 3, (sys.float_info.max,) * 3)
+        with self.assertRaises(NonfiniteGeometryError):
+            operator.legacy_node_tensors(
+                (0, sys.float_info.max, 0, 0, 0),
+                (1,) * 3,
+                (0,) * 3,
+                lambda_c=0,
+                xi_c=1,
+                zeta_c=0,
+            )
+
+    def test_invalid_coordinates_signs_and_coefficients_reject(self) -> None:
+        graph = row_fixture()
+        for sign in (True, 1.0, 0, 2, "-1", IntegerLabel.ONE):
+            with self.subTest(sign=sign), self.assertRaises(ValueError):
+                GRC9V4RowDifferential(graph, sign)  # type: ignore[arg-type]
+        operator = GRC9V4RowDifferential(graph)
+        for bad in (True, -0.0, float("nan"), float("inf"), 10**100, "1", object()):
+            for position in range(3):
+                args: list[Any] = [(1,) * 5, (1,) * 3, (0,) * 3]
+                data = list(args[position])
+                data[0] = bad
+                args[position] = data
+                with (
+                    self.subTest(bad=bad, position=position),
+                    self.assertRaises((TypeError, ValueError)),
+                ):
+                    operator.evaluate(*args)
+        for bad_args in (
+            ((1,), (1,) * 3, (0,) * 3),
+            ((1,) * 5, (), (0,) * 3),
+            ((1,) * 5, (1,) * 3, ()),
+            ((-1,) * 5, (1,) * 3, (0,) * 3),
+            ((1,) * 5, (-1,) * 3, (0,) * 3),
+        ):
+            with self.assertRaises(ValueError):
+                operator.evaluate(*bad_args)
+        for bad in (-1, True, -0.0, math.inf):
+            with self.assertRaises((TypeError, ValueError)):
+                operator.legacy_node_tensors(
+                    (1,) * 5, (1,) * 3, (0,) * 3, lambda_c=bad, xi_c=1, zeta_c=1
+                )
+
+    def test_all_512_orientations_preserve_row_values_and_outward_flux(self) -> None:
+        graph = GRC9V4PortGraph.from_payload(saturated_payload())
+        resources = tuple(float(i) for i in range(11))
+        weights = tuple(float(i) for i in range(1, 10))
+        flux = tuple(float(i - 4) for i in range(9))
+        expected = decimal_rows(graph, resources, weights, flux)
+        for signs in product((-1, 1), repeat=9):
+            target = replace(
+                graph,
+                edges=tuple(
+                    link if sign == 1 else replace(link, tail=link.head, head=link.tail)
+                    for link, sign in zip(graph.edges, signs, strict=True)
+                ),
+            )
+            result = GRC9V4RowDifferential(target).evaluate(
+                resources,
+                weights,
+                tuple(
+                    0.0 if j == 0 else j * s for j, s in zip(flux, signs, strict=True)
+                ),
+            )
+            self.assertEqual(
+                tuple((row.gradient, row.net_flux) for row in result), expected
+            )
+
+    def test_decimal_oracle_on_120_sparse_saturated_and_loop_inputs(self) -> None:
+        rng = random.Random(9812)
+        for loops in (False, True):
+            graph = GRC9V4PortGraph.from_payload(saturated_payload(loops=loops))
+            for sample in range(60):
+                target = replace(
+                    graph,
+                    edges=tuple(
+                        e for e in graph.edges if rng.choice((True, True, False))
+                    ),
+                )
+                resources = tuple(rng.randrange(100) / 8 for _ in target.live_node_ids)
+                weights = tuple(rng.randrange(50) / 16 for _ in target.edges)
+                currents = tuple(rng.randrange(-80, 81) / 32 for _ in target.edges)
+                expected = decimal_rows(target, resources, weights, currents)
+                result = GRC9V4RowDifferential(target).evaluate(
+                    resources, weights, currents
+                )
+                with self.subTest(loops=loops, sample=sample):
+                    self.assertEqual(
+                        tuple((row.gradient, row.net_flux) for row in result), expected
+                    )
+
+    def test_relabel_permute_and_ownership_without_second_graph(self) -> None:
+        graph = row_fixture()
+        c, w, j = [1, 3, 2, 0, 42], [2, 1, 4], [0.25, -0.125, -0.5]
+        operator = GRC9V4RowDifferential(graph)
+        source = operator.evaluate(c, w, j)
+        mapping: dict[Any, Any] = {0: "", 1: "1", 2: 1, 3: "u", "isolate": "i"}
+        target = GRC9V4PortGraph(
+            tuple(mapping[n] for n in reversed(graph.live_node_ids)),
+            tuple(
+                edge(
+                    "new-" + e.edge_id,
+                    (mapping[e.tail.node_id], e.tail.port),
+                    (mapping[e.head.node_id], e.head.port),
+                )
+                for e in reversed(graph.edges)
+            ),
+        )
+        result = GRC9V4RowDifferential(target).evaluate(c[::-1], w[::-1], j[::-1])
+        self.assertEqual(
+            tuple((r.gradient, r.net_flux) for r in result),
+            tuple((r.gradient, r.net_flux) for r in reversed(source)),
+        )
+        c[0] = w[0] = j[0] = 99
+        self.assertEqual(source[0].gradient, (5 / 3, -1, 0))
+        self.assertIs(operator.port_graph, graph)
+        self.assertFalse(hasattr(operator, "__dict__"))
+        with self.assertRaises(FrozenInstanceError):
+            source[0].gradient = (0, 0, 0)  # type: ignore[misc]
+
+
+class RowWeightBridgeTests(unittest.TestCase):
+    def test_policy_matches_frozen_specialization_and_rejects_alternatives(
+        self,
+    ) -> None:
+        root = Path(__file__).resolve().parents[2]
+        vectors = json.loads(
+            (root / "specs/grc-v4-conformance-vectors.json").read_text()
+        )
+        payload = next(
+            row["payload"]["row_weight"]
+            for row in vectors["identity_vectors"]
+            if isinstance(row.get("payload"), dict) and "row_weight" in row["payload"]
+        )
+        policy = GRC9RowWeightPolicy.from_payload(payload)
+        self.assertEqual(policy.to_payload(), payload)
+        self.assertEqual(policy, GRC9RowWeightPolicy())
+        for key in payload:
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                GRC9RowWeightPolicy.from_payload({**payload, key: "substitute"})
+        for bad in (
+            {**payload, "weights": []},
+            {k: v for k, v in payload.items() if k != "disabled_source"},
+        ):
+            with self.assertRaises(ValueError):
+                GRC9RowWeightPolicy.from_payload(bad)
+
+    def test_a_postbeat_weights_are_live_W_and_new_snapshot_recomputes(self) -> None:
+        profile = row_profile("A", {})
+        record = GRC9V4PostbeatRows(
+            row_fixture(),
+            profile,
+            GRCV4AuthoritativeState((1, 3, 2, 0, 42), (2, 1, 4), None),
+            (0.25, -0.125, -0.5),
+            7,
+            -1,
+        )
+        self.assertEqual(record.weight_source, "committed_postbeat_W_A")
+        self.assertEqual(record.weights, (2, 1, 4))
+        self.assertEqual(record.evaluate()[0].gradient, (5 / 3, -1, 0))
+        changed = replace(
+            record, committed=replace(record.committed, W_A=(1, 3, 4)), step_index=8
+        )
+        self.assertEqual(changed.evaluate()[0].gradient, (1.25, -1, 0))
+        self.assertNotEqual(changed.identity, record.identity)
+        self.assertEqual(record.weights, (2, 1, 4))
+        self.assertIsNot(record.evaluate(), record.evaluate())
+
+    def test_c_stable_ids_ignore_map_order_and_eta_mobility(self) -> None:
+        weights = {"m": 4.0, "a": 1.0, "z": 2.0}
+        profile = row_profile("C", weights)
+        record = GRC9V4PostbeatRows(
+            row_fixture(),
+            profile,
+            GRCV4AuthoritativeState((1, 3, 2, 0, 42), None, None),
+            (0.25, -0.125, -0.5),
+            7,
+            1,
+        )
+        self.assertEqual(record.weight_source, "stable_edge_W_C_tr")
+        self.assertEqual(record.weights, (2, 1, 4))
+        self.assertEqual(record.evaluate()[0].gradient, (5 / 3, -1, 0))
+        candidate: Any = profile.params_resolved.candidate
+        self.assertNotEqual(candidate.eta_C, 1)
+        weights["z"] = 99
+        self.assertEqual(record.weights, (2, 1, 4))
+        permuted = replace(
+            record,
+            port_graph=replace(record.port_graph, edges=record.port_graph.edges[::-1]),
+            physical_current=record.physical_current[::-1],
+        )
+        self.assertEqual(permuted.weights, (4, 1, 2))
+        self.assertEqual(permuted.evaluate(), record.evaluate())
+        self.assertNotEqual(permuted.identity, record.identity)
+
+    def test_c_missing_extra_and_renamed_maps_reject_after_rehash(self) -> None:
+        for weights in (
+            {"z": 2.0, "a": 1.0},
+            {"z": 2.0, "a": 1.0, "m": 4.0, "extra": 3.0},
+            {"z": 2.0, "a": 1.0, "renamed": 4.0},
+        ):
+            profile = row_profile("C", weights)
+            with self.assertRaisesRegex(ValueError, "exactly the live"):
+                GRC9V4PostbeatRows(
+                    row_fixture(),
+                    profile,
+                    GRCV4AuthoritativeState((1,) * 5, None, None),
+                    (0,) * 3,
+                    1,
+                    1,
+                )
+
+    def test_wrong_stages_types_shapes_and_forged_profiles_reject(self) -> None:
+        record = GRC9V4PostbeatRows(
+            row_fixture(),
+            row_profile("A", {}),
+            GRCV4AuthoritativeState((1,) * 5, (1,) * 3, None),
+            (0,) * 3,
+            1,
+            1,
+        )
+        for stage in (
+            "os_predictor",
+            "ci_trial",
+            "pre_continuity",
+            "pc_old_history",
+            "reset",
+            "delegate_native",
+            True,
+        ):
+            with self.subTest(stage=stage), self.assertRaises(ValueError):
+                replace(record, stage=stage)  # type: ignore[arg-type]
+        for edits in (
+            {"step_index": True},
+            {"step_index": -1},
+            {"step_index": 2**53},
+            {"hessian_sign": True},
+            {"physical_current": (0,)},
+            {"profile": object()},
+            {"policy": object()},
+            {"port_graph": object()},
+            {"committed": GRCV4AuthoritativeState((1,), (1,) * 3, None)},
+            {"committed": GRCV4AuthoritativeState((1,) * 5, (1,), None)},
+            {"committed": GRCV4AuthoritativeState((1,) * 5, None, None)},
+            {"committed": GRCV4AuthoritativeState((1,) * 5, (1,) * 3, (0,) * 9)},
+        ):
+            with self.subTest(edits=edits), self.assertRaises((TypeError, ValueError)):
+                replace(record, **edits)
+        bad = deepcopy(record.profile)
+        object.__setattr__(
+            bad, "complete_profile_id", "grcv4-profile-sha256:" + "0" * 64
+        )
+        with self.assertRaises(V4IdentityError):
+            replace(record, profile=bad)
+
+    def test_each_of_ten_declarations_selects_candidate_and_carrier_shape(self) -> None:
+        families = set()
+        for key in sorted(list_supported_profiles()):
+            profile = get_supported_profile(key)
+            families.add(profile.identity_payload.profile_family_id)
+            candidate: Any = profile.params_resolved.candidate
+            is_a = profile.identity_payload.candidate == "A"
+            ids = ("e0", "e1", "e2") if is_a else tuple(candidate.W_C_tr)
+            graph = GRC9V4PortGraph(
+                tuple(range(len(ids) + 1)),
+                tuple(edge(name, (0, i + 1), (i + 1, 1)) for i, name in enumerate(ids)),
+            )
+            carrier = profile.identity_payload.realization in ("PC", "CI+PC")
+            state = GRCV4AuthoritativeState(
+                tuple(float(i) for i in range(len(ids) + 1)),
+                (2,) * len(ids) if is_a else None,
+                (0,) * len(ids) ** 2 if carrier else None,
+            )
+            record = GRC9V4PostbeatRows(graph, profile, state, (0,) * len(ids), 1, 1)
+            expected = (
+                (2,) * len(ids) if is_a else tuple(candidate.W_C_tr[e] for e in ids)
+            )
+            self.assertEqual(record.weights, expected)
+            oracle = decimal_rows(
+                graph, state.C, record.weights, record.physical_current
+            )
+            self.assertEqual(
+                tuple((r.gradient, r.net_flux) for r in record.evaluate()), oracle
+            )
+            if carrier:
+                for wrong in (None, (0,)):
+                    if wrong == state.Z_4:
+                        continue
+                    with self.assertRaises(ValueError):
+                        replace(record, committed=replace(state, Z_4=wrong))
+            if not is_a:
+                with self.assertRaises(ValueError):
+                    replace(record, committed=replace(state, W_A=(1,) * len(ids)))
+        self.assertEqual(len(families), 10)
+
+    def test_identity_binds_inputs_and_records_are_detached(self) -> None:
+        C: Any = [1, 3, 2, 0, 42]
+        W: Any = [2, 1, 4]
+        J: Any = [0.25, -0.125, -0.5]
+        graph = row_fixture()
+        record = GRC9V4PostbeatRows(
+            graph, row_profile("A", {}), GRCV4AuthoritativeState(C, W, None), J, 7, 1
+        )
+        identity, result = record.identity, record.evaluate()
+        C[0] = W[0] = J[0] = 99
+        self.assertEqual(record.identity, identity)
+        self.assertEqual(record.evaluate(), result)
+        self.assertIs(record.port_graph, graph)
+        for change in (
+            {"step_index": 8},
+            {"hessian_sign": -1},
+            {"physical_current": (1, 2, 3)},
+            {"committed": replace(record.committed, C=(2, 3, 2, 0, 42))},
+            {"committed": replace(record.committed, W_A=(3, 1, 4))},
+            {
+                "port_graph": replace(
+                    graph,
+                    edges=(
+                        replace(graph.edges[0], tail=GRC9V4PortEndpoint(0, 2)),
+                        *graph.edges[1:],
+                    ),
+                )
+            },
+        ):
+            self.assertNotEqual(replace(record, **change).identity, identity)
+        with self.assertRaises(FrozenInstanceError):
+            record.step_index = 8  # type: ignore[misc]
+        self.assertFalse(hasattr(record, "__dict__"))
+
+    def test_disabled_bridge_reads_native_delegate_without_rebuild_or_fallback(
+        self,
+    ) -> None:
+        from pygrc.models.grc_9_v3 import GRC9V3
+        from tests.models.test_grc_9_v3_differential import (
+            _differential_params,
+            _differential_state,
+        )
+
+        delegate = GRC9V3.from_state(
+            state=_differential_state(), params=_differential_params()
+        )
+        # No transport yet: port-edge conductance exists but is not the native
+        # base_conductance surface. The bridge must not silently substitute it.
+        if not delegate.get_state().base_conductance:
+            with self.assertRaises(ValueError):
+                delegate_native_row_weights(delegate)
+        delegate.rebuild_transport_state()
+        before = deepcopy(delegate.get_state())
+        snapshot = deepcopy(delegate.snapshot())
+        expected = tuple(
+            (e, before.base_conductance[e])
+            for e in before.topology.iter_live_edge_ids()
+        )
+        result = delegate_native_row_weights(delegate)
+        self.assertEqual(result, expected)
+        self.assertEqual(delegate.snapshot(), snapshot)
+        self.assertTrue(all(type(e) is int for e, _ in result))
+        first = result[0][0]
+        delegate.get_state().base_conductance[first] += 1
+        self.assertNotEqual(delegate_native_row_weights(delegate), result)
+        delegate.get_state().base_conductance.pop(first)
+        with self.assertRaises(ValueError):
+            delegate_native_row_weights(delegate)
+        for wrong in (before, row_profile("A", {}), object()):
+            with self.assertRaises(TypeError):
+                delegate_native_row_weights(wrong)  # type: ignore[arg-type]
+
+    def test_actual_generic_a_and_c_commit_outputs_feed_the_row_boundary(self) -> None:
+        # This exercises the real generic commit and its authoritative same-beat
+        # current. It is an explicit test handoff, not a native nine-port lifecycle.
+        from pygrc.models.grc_v4 import GRCV4StepRequestInput
+        from pygrc.models.grc_v4_lifecycle import GRCV4Operation
+        from tests.models.test_grc_v4_realizations import a_os_fixture, os_fixture
+
+        a_inputs, backend = a_os_fixture(gamma=0.125)  # type: ignore[no-untyped-call]
+        for inputs, differential in ((a_inputs, backend), (os_fixture(), None)):
+            owner = GRCV4Operation(inputs, differential_reference=differential)
+            graph = inputs.geometry.reference.graph
+            port_graph = GRC9V4PortGraph(
+                graph.live_node_ids,
+                tuple(
+                    edge(e.edge_id, (e.tail_node_id, 1), (e.head_node_id, 9))
+                    for e in graph.oriented_edges
+                ),
+            )
+            before = owner.state.current
+            result = owner.step_v4(
+                GRCV4StepRequestInput.from_payload(
+                    {
+                        "schema_version": "grcv4-step-request-input-v1",
+                        "dt": inputs.dt,
+                        "operation_id": "row-bridge-beat",
+                        "context_value": {},
+                        "boundary_input": None,
+                        "external_source": None,
+                    }
+                )
+            )
+            self.assertTrue(result.committed)
+            observations = result.observables.to_dict()
+            current: Any = observations["authoritative_current"]
+            self.assertTrue(current["consumed_by_continuity"])
+            record = GRC9V4PostbeatRows(
+                port_graph,
+                owner.reference.profile,
+                owner.state.current,
+                tuple(current["values"]),
+                owner.state.step_index,
+                1,
+            )
+            self.assertEqual(record.physical_current, tuple(current["values"]))
+            self.assertEqual(
+                record.evaluate()[0].net_flux, (current["values"][0], 0, 0)
+            )
+            self.assertEqual(
+                record.evaluate()[0].gradient,
+                (owner.state.current.C[1] - owner.state.current.C[0], 0, 0),
+            )
+            if before.W_A is not None:
+                self.assertNotEqual(owner.state.current.W_A, before.W_A)
+                self.assertEqual(record.weights, owner.state.current.W_A)
+                self.assertNotEqual(record.weights, before.W_A)
 
 
 if __name__ == "__main__":

@@ -34,3 +34,30 @@ def accepted(root):
 def permitted(path, leaf):
     """Call only after accepted(root); neither a label nor a file grants G3."""
     return leaf == ENTRY and path in PATHS
+
+
+ROW_ENTRY = 'P9-8.1b'
+ROW_PREDECESSOR = '75a662916501c59d3d7ff06cee942258ed6d8c4b'
+ROW_PREDECESSOR_HASHES = (
+    'c085dc3b4a746bf3f0720cb68722fcfa150c4b9a0805392467605b8b597299b9',
+    'f9983f0a5de9709a7f25219b51efe3e2c7d72d395aa4b0493562ede3c0d9e11a',
+)
+
+
+def row_bridge_authorization(root):
+    """2026-10-02 user request: execute all of .b after committed .a review.
+
+    This is a scoped execution successor, not an amendment to the historical
+    G3 decision, acceptance of .b, or permission for another native leaf.
+    """
+    accepted(root)
+    p.git(root, 'merge-base', '--is-ancestor', ROW_PREDECESSOR, 'HEAD')
+    for path, expected in zip(PATHS, ROW_PREDECESSOR_HASHES, strict=True):
+        p.require(p.sha(p.git(root, 'show', ROW_PREDECESSOR + ':' + path)) == expected,
+                  'row bridge requires the committed chart/graph review subject')
+    return ROW_ENTRY
+
+
+def row_bridge_permitted(path, leaf):
+    """Call only after row_bridge_authorization(root)."""
+    return leaf == ROW_ENTRY and path in PATHS

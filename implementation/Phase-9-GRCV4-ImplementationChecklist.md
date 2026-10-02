@@ -4,10 +4,11 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
 2026-10-02: P9-8.0 is complete after explicit acceptance of R1–R10 and the
 aggregate bounded feasibility scope. All ten rows are provisionally closed;
-the all-ten production hold is released. P9-8.1a is next under its existing
-scoped permission and is broken into four implementation subitems below.
-The `.1` primitives pass focused checks; the current phase-boundary failure is
-reconciled and its audit passes. `.2` graph admission is next.
+the all-ten production hold is released. P9-8.1a's four checkpoints are complete
+and committed at `75a6629`. P9-8.1b's four recorded checkpoints are delivered
+together under the user's request: row equations, stage-specific weight bridge
+and integrated own review. P9-8.1c is the next planned leaf, requiring its own
+scoped execution opening. End-of-Tranche-8 cache review remains open.
 General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
@@ -2046,7 +2047,31 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     are in the linked parent review. Performance/cache review stays scheduled
     at the end of Tranche 8; no cache optimization or expansion execution is
     claimed here.
-- [ ] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
+- [x] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
+  Deliver the following checkpoints together, as requested on 2026-10-02;
+  they are recorded subitems, not separate acceptance gates or turn boundaries.
+  Formal runtime ownership remains `P9-8.1b` in the existing topology source/test
+  paths. Preserve the accepted `.a` subject and historical G3 decision.
+  - [x] P9-8.1b.1: Bind the closed row-weight policy and immutable, graph-bound
+    input contract, with explicit post-beat stage and Hessian sign.
+  - [x] P9-8.1b.2: Implement fixed-row gradient, diagonal/signed Hessian,
+    outward row flux and the separately named legacy node tensor. Check zero
+    rows, parallel edges, loops, both signs and numerical extremes.
+  - [x] P9-8.1b.3: Select A weights from committed W_A, C weights by complete
+    stable-edge W_C_tr coverage, and disabled weights from the exact delegate's
+    native base conductance. Preserve sole graph ownership and reject stage,
+    candidate, shape and identity mismatches without fallback.
+  - [x] P9-8.1b.4: Review the integrated bridge against independent equations,
+    covariance, mutation and stale-input cases; record exact subjects and pass
+    the affected regressions and current phase-boundary audit.
+  All four checkpoints are implemented and own-reviewed together; see the
+  [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81b-row-differential-and-weight-bridge).
+  Evidence covers 512 orientations, 120 independent Decimal cases, numerical
+  extremes, all ten declaration shapes, actual generic A/C commit handoffs and
+  exact delegate-native conductance inspection. This is shared mechanical
+  completion, not native specialization lifecycle or disabled conformance.
+  The user explicitly accepts the complete reviewed P9-8.1b result on
+  2026-10-02 (“review passes fully. commit changes”), within the recorded scope.
 - [ ] P9-8.1c: Implement and verify the mechanical candidate trigger.
 - [ ] P9-8.1d: Implement and verify column coarse-graining and Split.
 - [ ] P9-8.2: Implement exact D11-G9-P4a boundary reservation, primary spine,

@@ -6,8 +6,9 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 of R1–R10 and the aggregate bounded feasibility scope. The all-ten production
 hold is released. P9-8.1a's four chart/graph checkpoints are implemented and
 the integrated own review (`.4`) passes, including the current phase-boundary
-audit. P9-8.1a is complete within that scope; P9-8.1b is the next planned leaf,
-subject to its applicable work-entry requirements. Performance/cache review
+audit and is committed at `75a6629`. P9-8.1b's four recorded checkpoints are
+implemented and own-reviewed in one pass under the user's request. P9-8.1c
+is the next planned leaf, subject to its scoped execution opening. Performance/cache review
 is scheduled at the end of Tranche 8. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
@@ -2279,6 +2280,52 @@ This is an implementation/own-review disposition, not an external audit or new
 user acceptance. The generic numerical bridge, allocator/expansion execution,
 lifecycle, profile and arbitrary-size conformance remain with their later
 owners; the scheduled end-of-tranche cache review remains open.
+
+##### P9-8.1b work breakdown
+
+The user requests this entire leaf in one pass on 2026-10-02. Record four
+checkpoints, without stopping between them or adding machine acceptance gates:
+`.1` closed weight policy and immutable stage/graph inputs; `.2` fixed-row
+equations and separately named legacy node tensor; `.3` A/C/disabled weight
+selection; `.4` independent numerical and integrated boundary pressure review.
+The existing topology source/test owner includes `G9_differential`. Open only
+`P9-8.1b` on those two paths after the committed `.a` review (`75a6629`),
+retaining the accepted ten-profile G3 set and historical first-leaf decision.
+
+Authority is the fixed row-basis differential and V4 row-weight bridge in
+`specs/grc-9-v4-spec.md`, together with the closed `row_weight_policy` schema.
+Row computations consume the port owner's read-only projection, with no second
+serialized graph or changes to the generic incidence/Hodge backend. The enabled
+input boundary must select weights from the complete profile and committed
+authoritative state, bind all numerical inputs, and compute summaries fresh.
+As with generic stage input records, stage labels are not authentication of a
+caller or proof of an ordinary beat; native lifecycle wiring remains with its
+later owner. Disabled weight inspection reads the exact delegate at its native
+stage; no enabled policy may recompute or relabel that conductance.
+
+Independent oracles must distinguish rows from columns, weighted from unweighted
+averages, each incidence of a loop, and stable parallel-edge identity. Exercise
+both Hessian signs, exact zero denominators, subnormal weights, cancellation,
+unrepresentable outputs, graph relabeling/reordering/reorientation, complete
+Candidate C map coverage, post-beat A replacement, deep ownership and invalid
+stages/types. The historical node tensor keeps its row-local squared mismatch
+and isotropic total-flux square; it is never graph K4. No trigger, expansion,
+coarse/Split, disabled compatibility certification or cache optimization is
+opened by this leaf.
+
+Implementation/own-review status: all four checkpoints pass together. The
+topology module owns the closed `GRC9RowWeightPolicy`, pure
+`GRC9V4RowDifferential`, detached `GRC9V4PostbeatRows` and native delegate
+conductance reader. Exact rational row accumulation rounds each output once
+to binary64 and rejects unrepresentable results; this is local mechanical
+arithmetic, not a new generic differential backend or constitutive solver.
+The review covers 512 orientations, 120 independent Decimal cases, all ten
+declaration shapes, real generic A/C commit handoffs and the untouched legacy
+delegate. See the [review and final subject](./Phase-9-GRCV4-Handoff.md#p9-81b-row-differential-and-weight-bridge)
+for commands, exact bindings and remaining lifecycle responsibilities.
+The user explicitly accepts this complete reviewed P9-8.1b result on
+2026-10-02 (“review passes fully. commit changes”); the recorded integration
+boundaries and later owners remain in force.
 
 ##### Profile integration after shared mechanics
 

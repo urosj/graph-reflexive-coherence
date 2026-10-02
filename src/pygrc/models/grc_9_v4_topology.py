@@ -1,4 +1,4 @@
-"""P9-8.1a: chart, admitted port graph, envelope and generic read-only view.
+"""P9-8.1a/b: port graph, fixed-row differential and stage-specific weights.
 
 Rows are directional classes; columns are interface families. The chart is
 fixed mechanical data, not a dynamical field. Coordinates use one-based JSON
@@ -13,8 +13,9 @@ wire admission alone admit no model or expansion event.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Final, Literal, Self, cast
+from dataclasses import dataclass, field
+from fractions import Fraction
+from typing import TYPE_CHECKING, ClassVar, Final, Literal, Self, cast
 
 from .grc_v4_codec import (
     JSONValue,
@@ -24,8 +25,28 @@ from .grc_v4_codec import (
     payload_identity,
     validate_payload,
 )
-from .grc_v4_geometry import Matrix, NodeId, OrientedEdge, _identity, _node_id, _ordered
-from .grc_v4_state import _number, _text
+from .grc_v4_geometry import (
+    Matrix,
+    NodeId,
+    NonfiniteGeometryError,
+    OrientedEdge,
+    _diagonal,
+    _identity,
+    _node_id,
+    _ordered,
+)
+from .grc_v4_profile import CandidateCParams, GRCV4Profile, _Record
+from .grc_v4_state import (
+    GRCV4AuthoritativeState,
+    _authority,
+    _index,
+    _number,
+    _text,
+    _vector,
+)
+
+if TYPE_CHECKING:
+    from .grc_9_v3 import GRC9V3
 
 PORT_CHART_ID: Final = "fixed_3x3_row_column"
 PORT_COUNT: Final = 9
@@ -370,3 +391,306 @@ class GRC9V4GraphProjection:
             )
             for node in self.live_node_ids
         )
+
+
+def _hessian_sign(value: object) -> int:
+    if type(value) is not int or value not in (-1, 1):
+        raise ValueError("hessian_sign must be exactly -1 or +1")
+    return value
+
+
+def _rounded(value: Fraction) -> float:
+    """One binary64 rounding of an exact dyadic/rational row expression."""
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise NonfiniteGeometryError("row result is outside binary64") from exc
+    # Finite Fraction -> float either returns finite or raises OverflowError.
+    return 0.0 if result == 0 else result
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4RowSummary:
+    """Derived fixed-frame values, never resource state or graph K4."""
+
+    node_id: NodeId
+    gradient: tuple[float, ...]
+    net_flux: tuple[float, ...]
+    hessian_sign: int
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "node_id", _node_id(self.node_id))
+        _hessian_sign(self.hessian_sign)
+        for name in ("gradient", "net_flux"):
+            values = _vector(getattr(self, name))
+            if len(values) != 3:
+                raise ValueError("row summary requires exactly three coordinates")
+            object.__setattr__(self, name, values)
+
+    @property
+    def hessian(self) -> Matrix:
+        return _diagonal(self.gradient)
+
+    @property
+    def signed_hessian(self) -> Matrix:
+        return _diagonal(
+            tuple(0.0 if x == 0 else self.hessian_sign * x for x in self.gradient)
+        )
+
+
+# Each entry is an endpoint incidence: weight, neighbor-minus-local resource,
+# and outward current. A loop contributes at BOTH of its distinct ports.
+_RowTerms = tuple[tuple[tuple[tuple[Fraction, Fraction, Fraction], ...], ...], ...]
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4RowDifferential:
+    """Pure mechanical operator on the sole port owner, not profile admission.
+
+    Explicit nonnegative weights are allowed here, including exact zero rows.
+    Enabled callers use GRC9V4PostbeatRows to select their authoritative weight
+    source. No generic incidence/Hodge backend is replaced by this row basis.
+    Exact rational accumulation of admitted binary64 inputs avoids spurious
+    zero denominators, product underflow, overflow and cancellation. Each
+    returned coordinate rounds once to binary64; unrepresentable outputs fail.
+    """
+
+    port_graph: GRC9V4PortGraph
+    hessian_sign: int = 1
+
+    def __post_init__(self) -> None:
+        GRC9V4GraphProjection(self.port_graph)
+        _hessian_sign(self.hessian_sign)
+
+    def _terms(self, C: object, weights: object, current: object) -> _RowTerms:
+        resource = _vector(C, nonnegative=True)
+        w = _vector(weights, nonnegative=True)
+        j = _vector(current)
+        nodes, edges = self.port_graph.live_node_ids, self.port_graph.edges
+        if len(resource) != len(nodes) or len(w) != len(edges) or len(j) != len(edges):
+            raise ValueError("row coordinates do not match the port graph")
+        indices = {node: index for index, node in enumerate(nodes)}
+        values = tuple(Fraction(x) for x in resource)
+        terms: list[list[list[tuple[Fraction, Fraction, Fraction]]]] = [
+            [[], [], []] for _ in nodes
+        ]
+        for edge, weight, flux in zip(edges, w, j, strict=True):
+            for here, there, sign in (
+                (edge.tail, edge.head, 1),
+                (edge.head, edge.tail, -1),
+            ):
+                i, k = indices[here.node_id], indices[there.node_id]
+                row, _ = port_to_row_column(here.port)
+                terms[i][row - 1].append(
+                    (Fraction(weight), values[k] - values[i], sign * Fraction(flux))
+                )
+        return tuple(tuple(tuple(row) for row in node) for node in terms)
+
+    def evaluate(
+        self, C: object, weights: object, current: object
+    ) -> tuple[GRC9V4RowSummary, ...]:
+        """Fresh summaries in live-node order; current is tail-to-head positive."""
+        result = []
+        for node, rows in zip(
+            self.port_graph.live_node_ids, self._terms(C, weights, current), strict=True
+        ):
+            gradient, flux = [], []
+            for row in rows:
+                denominator = sum((w for w, _, _ in row), Fraction())
+                numerator = sum((w * delta for w, delta, _ in row), Fraction())
+                gradient.append(
+                    _rounded(numerator / denominator) if denominator else 0.0
+                )
+                flux.append(_rounded(sum((j for _, _, j in row), Fraction())))
+            result.append(
+                GRC9V4RowSummary(node, tuple(gradient), tuple(flux), self.hessian_sign)
+            )
+        return tuple(result)
+
+    def legacy_node_tensors(
+        self,
+        C: object,
+        weights: object,
+        current: object,
+        *,
+        lambda_c: float,
+        xi_c: float,
+        zeta_c: float,
+    ) -> tuple[Matrix, ...]:
+        """Historical diagonal node diagnostic; NEVER the graph tensor K4.
+
+        xi multiplies a row-local squared mismatch. zeta multiplies the square
+        of TOTAL outward flux, identically on all three diagonals.
+        """
+        coefficients = _vector((lambda_c, xi_c, zeta_c), nonnegative=True)
+        lam, xi, zeta = (Fraction(x) for x in coefficients)
+        resource = _vector(C, nonnegative=True)
+        terms = self._terms(resource, weights, current)
+        result = []
+        for c, rows in zip(resource, terms, strict=True):
+            total = sum((j for row in rows for _, _, j in row), Fraction())
+            isotropic = lam * Fraction(c) + zeta * total**2
+            result.append(
+                _diagonal(
+                    tuple(
+                        _rounded(
+                            isotropic
+                            + xi
+                            * sum((w * delta**2 for w, delta, _ in row), Fraction())
+                        )
+                        for row in rows
+                    )
+                )
+            )
+        return tuple(result)
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class GRC9RowWeightPolicy(_Record):
+    """The existing closed identity-bearing row-weight policy."""
+
+    SCHEMA: ClassVar[str] = "row_weight_policy"
+    schema_version: Literal["grc9v4-row-weight-policy-v1"] = (
+        "grc9v4-row-weight-policy-v1"
+    )
+    candidate_a_source: Literal["committed_postbeat_W_A"] = "committed_postbeat_W_A"
+    candidate_c_source: Literal["stable_edge_W_C_tr"] = "stable_edge_W_C_tr"
+    disabled_source: Literal["exact_delegate_native_base_conductance"] = (
+        "exact_delegate_native_base_conductance"
+    )
+    evaluation_stage: Literal["fresh_postbeat_candidate_detection"] = (
+        "fresh_postbeat_candidate_detection"
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4PostbeatRows:
+    """Detached inputs for fresh enabled row evaluation at an explicit stage.
+
+    The native lifecycle owner must supply its committed state/current after
+    the ordinary beat. This record checks content, coverage and stage; like
+    GeometryStageInputs, it cannot authenticate chronology or a caller's claim
+    of commit. No generic graph is constructed and no constitutive/solver
+    admission or native lifecycle execution is implied. Identity binds every
+    computation input; old records are snapshots, never refreshed live caches.
+    """
+
+    port_graph: GRC9V4PortGraph
+    profile: GRCV4Profile
+    committed: GRCV4AuthoritativeState
+    physical_current: tuple[float, ...]
+    step_index: int
+    hessian_sign: int
+    stage: Literal["fresh_postbeat_candidate_detection"] = (
+        "fresh_postbeat_candidate_detection"
+    )
+    policy: GRC9RowWeightPolicy = field(default_factory=GRC9RowWeightPolicy)
+
+    def __post_init__(self) -> None:
+        graph = GRC9V4GraphProjection(self.port_graph)
+        _hessian_sign(self.hessian_sign)
+        _index(self.step_index)
+        if type(self.policy) is not GRC9RowWeightPolicy:
+            raise TypeError("expected GRC9RowWeightPolicy")
+        object.__setattr__(
+            self, "policy", GRC9RowWeightPolicy.from_payload(self.policy.to_payload())
+        )
+        if type(self.stage) is not str or self.stage != self.policy.evaluation_stage:
+            raise ValueError("row bridge requires fresh postbeat candidate detection")
+        if type(self.profile) is not GRCV4Profile:
+            raise TypeError("row bridge requires a complete V4 profile")
+        profile = GRCV4Profile.from_canonical_bytes(self.profile.to_canonical_bytes())
+        object.__setattr__(self, "profile", profile)
+        state = _authority(self.committed)
+        size = len(graph.live_edge_ids)
+        if len(state.C) != len(graph.live_node_ids):
+            raise ValueError("committed resource does not match live nodes")
+        candidate_a = profile.identity_payload.candidate == "A"
+        carrier = profile.identity_payload.realization in ("PC", "CI+PC")
+        if (state.W_A is not None) != candidate_a or (
+            state.W_A is not None and len(state.W_A) != size
+        ):
+            raise ValueError("committed W_A disagrees with candidate or live edges")
+        if (state.Z_4 is not None) != carrier or (
+            state.Z_4 is not None and len(state.Z_4) != size * size
+        ):
+            raise ValueError("committed Z_4 disagrees with realization or edge space")
+        if not candidate_a:
+            candidate = profile.params_resolved.candidate
+            assert isinstance(candidate, CandidateCParams)
+            if set(candidate.W_C_tr) != set(graph.live_edge_ids):
+                raise ValueError("W_C_tr must cover exactly the live stable edge IDs")
+        object.__setattr__(self, "committed", state)
+        current = _vector(self.physical_current)
+        if len(current) != size:
+            raise ValueError("physical current does not match live edges")
+        object.__setattr__(self, "physical_current", current)
+
+    @property
+    def weight_source(self) -> str:
+        return (
+            self.policy.candidate_a_source
+            if self.committed.W_A is not None
+            else self.policy.candidate_c_source
+        )
+
+    @property
+    def weights(self) -> tuple[float, ...]:
+        if self.committed.W_A is not None:
+            return self.committed.W_A
+        candidate = self.profile.params_resolved.candidate
+        assert isinstance(candidate, CandidateCParams)
+        return _vector(
+            tuple(candidate.W_C_tr[edge.edge_id] for edge in self.port_graph.edges),
+            positive=True,
+        )
+
+    @property
+    def identity(self) -> str:
+        """Implementation-local input identity, not a new wire/scientific owner."""
+        return _identity(
+            "grc9v4-row-inputs-sha256",
+            {
+                "descriptor_version": "grc9v4-postbeat-row-inputs-v1",
+                "graph_digest": self.port_graph.graph_digest,
+                "orientation_identity": self.port_graph.orientation_identity,
+                "complete_profile_id": self.profile.complete_profile_id,
+                "policy": self.policy.to_payload(),
+                "stage": self.stage,
+                "step_index": self.step_index,
+                "hessian_sign": self.hessian_sign,
+                "committed": {
+                    "C": self.committed.C,
+                    "W_A": self.committed.W_A,
+                    "Z_4": self.committed.Z_4,
+                },
+                "physical_current": self.physical_current,
+            },
+        )
+
+    def evaluate(self) -> tuple[GRC9V4RowSummary, ...]:
+        return GRC9V4RowDifferential(self.port_graph, self.hessian_sign).evaluate(
+            self.committed.C, self.weights, self.physical_current
+        )
+
+
+def delegate_native_row_weights(delegate: GRC9V3) -> tuple[tuple[int, float], ...]:
+    """Inspect exact GRC9V3 native base conductance, preserving native edge IDs.
+
+    This disabled-side bridge performs no rebuild, step, port conversion or
+    enabled evaluation. Missing native transport state fails the request; it
+    never falls back to port-edge conductance, V4 mobility or stale row caches.
+    The later compatibility owner controls the branch and native sampling stage.
+    """
+    from .grc_9_v3 import GRC9V3
+
+    if type(delegate) is not GRC9V3:
+        raise TypeError("disabled weights require the exact GRC9V3 delegate")
+    state = delegate.get_state()
+    edges = tuple(state.topology.iter_live_edge_ids())
+    if set(state.base_conductance) != set(edges):
+        raise ValueError("delegate native base conductance is incomplete")
+    values = _vector(
+        tuple(state.base_conductance[edge] for edge in edges), nonnegative=True
+    )
+    return tuple(zip(edges, values, strict=True))

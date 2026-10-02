@@ -126,6 +126,35 @@ class SpecializationReviewTests(unittest.TestCase):
                      'src/pygrc/models/grc_9_v4_expansion.py'):
             self.assertFalse(admission.permitted(path,'P9-8.1a'))
 
+    def test_row_bridge_successor_is_exact_and_preserves_historical_entry(self):
+        self.assertEqual(admission.row_bridge_authorization(p.ROOT), 'P9-8.1b')
+        ready, owners = p.leaf_permissions(p.ROOT)
+        self.assertIn('P9-8.1b', ready)
+        for path in admission.PATHS:
+            self.assertIn('P9-8.1b', owners[path])
+            self.assertTrue(admission.row_bridge_permitted(path, 'P9-8.1b'))
+            self.assertFalse(admission.permitted(path, 'P9-8.1b'))
+            for leaf in ('P9-8.1a', 'P9-8.1c', 'P9-8.1d', 'P9-8.2', 'P9-9.2'):
+                self.assertFalse(admission.row_bridge_permitted(path, leaf))
+        for path in ('src/pygrc/models/grc_9_v3.py', 'src/pygrc/models/grc_9_v4.py',
+                     'src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
+            self.assertFalse(admission.row_bridge_permitted(path, 'P9-8.1b'))
+        for leaf in ('P9-8.1c', 'P9-8.1d', 'P9-8.2'):
+            self.assertNotIn(leaf, ready)
+
+    def test_row_bridge_requires_the_committed_review_and_accepted_g3(self):
+        with patch.object(admission, 'accepted', side_effect=ValueError('G3 missing')):
+            with self.assertRaisesRegex(ValueError, 'G3 missing'):
+                admission.row_bridge_authorization(p.ROOT)
+        original_git = p.git
+        def changed(root, *args):
+            if args[0] == 'show' and args[1].startswith(admission.ROW_PREDECESSOR + ':'):
+                return b'changed predecessor'
+            return original_git(root, *args)
+        with patch.object(p, 'git', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, 'committed chart/graph review'):
+                admission.row_bridge_authorization(p.ROOT)
+
     def test_api_browser_notebook_transport_and_failure_cleanup(self):
         tool = p.ROOT / p.SIDE / 'tool'
         sys.path.insert(0, str(tool/'src'))

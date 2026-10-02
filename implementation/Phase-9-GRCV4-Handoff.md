@@ -22,10 +22,15 @@ P9-8.1a.4 integrated own review now passes after adding the required explicit
 port-to-edge lookup. All 88 focused methods, Ruff, mypy and the current
 phase-boundary audit pass; see the
 [parent review](#p9-81a4-integrated-review-and-parent-completion).
-P9-8.1a is complete within its chart/graph scope. The next planned leaf is
-P9-8.1b, subject to its applicable work-entry requirements. The existing
-P9-8.1a permission and later native owners are unchanged; completing this
-implementation review creates no new machine gate or conformance acceptance.
+P9-8.1a is complete and committed at `75a6629`. The user then requested all of
+P9-8.1b in one pass with recorded subitems. Its four checkpoints are now
+implemented, own-reviewed and explicitly user-accepted on 2026-10-02
+(“review passes fully. commit changes”); see the
+[row bridge review](#p9-81b-row-differential-and-weight-bridge).
+The scoped execution successor opens only `.b` on the existing topology
+source/test paths. P9-8.1c is next, requiring its own scoped opening. Historical
+G3 acceptance and later native owners are unchanged; this implementation review
+creates no new machine gate or conformance acceptance.
 The chronology below
 records earlier checkpoints and does not reopen their resolved items.
 
@@ -215,11 +220,12 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next planned implementation task:** P9-8.1b row differential and V4 row-weight
-bridge, subject to its applicable work-entry requirements. P9-8.1a's four
-chart/graph checkpoints are implemented and own-reviewed with passing focused
-checks and current phase-boundary audit. Their work-manifest iteration remains
-`P9-8.1a`. The P9-8.0 hold is released; later native owners are unchanged.
+**Next planned implementation task:** P9-8.1c mechanical candidate trigger,
+subject to its scoped execution opening. P9-8.1a is committed at `75a6629`;
+P9-8.1b's four recorded checkpoints are implemented and own-reviewed together.
+The evolving topology source/test bindings now belong to `P9-8.1b`, with the
+historical `.a` subjects preserved below. The P9-8.0 hold is released; later
+native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
 its actual policy outputs rather than the older separately seeded targets.
 
@@ -580,6 +586,114 @@ targets above are not seventeen successful native expansion executions.
 Performance optimization, including any lookup/index cache, remains scheduled
 at the end of Tranche 8 with the validity obligations below. The separate
 historical scientific-source failures retain their reconciliation scopes.
+
+## P9-8.1b row differential and weight bridge
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`, predecessor `75a6629`.
+The user requested the entire leaf in one pass, retaining recorded subitems as
+for `.a`. **Own-review verdict: pass within the shared mechanical scope.**
+The checklist records `.1` input/policy contract, `.2` equations, `.3` weight
+selection and `.4` integrated review as complete together. The user explicitly
+accepts the complete reviewed P9-8.1b result on 2026-10-02 (“review passes fully.
+commit changes”). This acceptance covers the recorded shared mechanical scope
+and its stated integration boundaries; external audit authorship and later
+native conformance are not inferred.
+
+Authority is the normative [row backend and bridge](../specs/grc-9-v4-spec.md#fixed-row-basis-differential-backend),
+the existing `row_weight_policy` schema and the common backend extension.
+The scoped execution successor requires the unchanged accepted G3 set and
+the exact committed `.a` source/test subject; it opens only `P9-8.1b` on the
+existing topology source/test paths. Historical G3's `.a`-only decision is
+unchanged. `.c`/`.d`, expansion, compatibility and facade paths remain closed.
+No new gate or specification/schema change is introduced.
+
+The [topology module](../src/pygrc/models/grc_9_v4_topology.py) now provides:
+
+- `GRC9V4RowDifferential`: pure fixed-row gradient, diagonal Hessian, signed
+  Hessian and outward row-current sums, in live-node order. Row assignment uses
+  the local endpoint port; parallel edges remain separate and a loop supplies
+  both endpoint incidences, including both weights when its ports share a row.
+  This follows the admitted port-incidence convention; loop delta is zero,
+  and its opposite currents cancel when in the same row. Event-source loop
+  eligibility still belongs to its later owner.
+- `legacy_node_tensors`: the separately named historical diagonal diagnostic,
+  preserving the row-local weighted squared mismatch and isotropic square of
+  total outward flux. It is never substituted for graph K4.
+- `GRC9RowWeightPolicy`: the existing closed, serialized policy, matching the
+  frozen specialization vector. Arbitrary source/stage substitutions reject.
+- `GRC9V4PostbeatRows`: detached complete profile, committed C/W/Z coordinates,
+  physical current, step index, Hessian sign and exact enabled stage. A selects
+  committed W_A directly; C selects W_C_tr in stable graph-edge order and
+  requires exact key coverage. The profile's eta-scaled mobility, Hodge and
+  trial weights are not exposed as alternative sources. Every evaluation is
+  fresh; the implementation-local input identity binds all stored inputs and
+  the sole port graph's content/orientation identities.
+- `delegate_native_row_weights`: read-only sampling of the exact GRC9V3
+  delegate's native base-conductance map with native integer edge IDs. It
+  neither steps nor rebuilds the delegate. Incomplete native transport state
+  rejects rather than falling back to port-edge conductance or enabled V4
+  quantities. The compatibility owner will control branch/stage selection.
+
+Numerical inputs inherit the generic finite binary64 vector admission contract,
+including negative-zero rejection. Mechanical resource and weights are
+nonnegative; the enabled A/C bridge retains strictly positive source weights.
+Row expressions accumulate as exact rationals of those admitted binary64 inputs,
+then each output rounds once to binary64. Empty and exactly zero-weight rows
+produce positive zero; nonzero subnormal denominators stay nonzero. Intermediate
+products/sums cannot spuriously overflow or underflow. An unrepresentable final
+flux or node-tensor coordinate raises `NonfiniteGeometryError` before returning
+any result. This local arithmetic recipe does not change the generic backend,
+legacy delegate arithmetic, solver domain, or scientific state.
+
+The [nineteen new test methods](../tests/models/test_grc_9_v4_topology.py) retain
+the following portable evidence:
+
+| Obligation | Evidence |
+| --- | --- |
+| Independent equations | Literal weighted-row/sign/current expectations, a scalar historical tensor example distinguishing both prohibited outer-product substitutions, and 120 reproducible 100-digit Decimal cases over sparse/full stars and loop layouts. The oracle scans literal port sets, independently of production chart helpers and rational accumulation. |
+| Orientation and covariance | All 512 orientations of a saturated nine-port star preserve expected physical rows after signed current reorientation. A separate mixed-label node/edge permutation verifies typed identities, port ownership and summation invariance. |
+| Boundary cases | Empty graph, isolate, active zero-weight rows with nonzero flux, same-row and cross-row loops, parallel edges, both signs, malformed types/shapes, unsafe integers, nonfinite values and negative zero. |
+| Numerical outliers | Minimum subnormal weights and products, maximum finite resources/weights with overflowing naive numerator/denominator, exact large-current cancellation, and explicit rejection of unrepresentable final flux/tensor outputs. |
+| Source/stage binding | A post-beat W replacement changes the result and input identity; C map order is immaterial while graph order controls coordinates. Missing/extra/renamed C keys reject even after rehashing; predictor/trial/pre-continuity/history/reset/disabled stage labels reject. Forged complete-profile identity and candidate/carrier/shape mismatches reject. |
+| Integrated consumers | All ten accepted generic declarations select the correct candidate source and carrier shape. Real generic A_OS/C_OS lifecycle commits supply their committed resources, updated A W and authoritative same-beat current to the row boundary. This is an explicit test handoff, not native GRC9V4 lifecycle wiring. |
+| Ownership and disabled source | Caller mutation and later input replacement preserve older frozen results/identities; no second generic graph is stored or hashed. The real GRC9V3 delegate's snapshot is unchanged by inspection, native weights remain detached, and missing transport weights reject. |
+| Scoped permission | Four focused verification methods cover historical G3 tampering, the exact `.b` successor, missing G3/changed predecessor, rejection of later/foreign paths and fresh-process policy import. Current-boundary reconciliation pressure remains passing. |
+
+Validation: **187 runtime/regression methods pass**, including all 66 topology
+methods, affected generic graph/codec/profile/state checks and unchanged legacy
+differential/transport regressions. Ruff and mypy pass. The focused permission
+checks and current-boundary reconciliation pressure pass, and the final
+phase-boundary audit passes. Reproduce from the repository root:
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest -q test_grc_9_v4_topology test_grc_v4_geometry.GraphTests test_grc_v4_codec.CodecTests test_grc_v4_profile test_grc_v4_state test_grc_9_v3_differential test_grc_9_v3_transport
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p978_specialization_review.SpecializationReviewTests.test_acceptance_tampering_and_entry_widening_rejected test_p978_specialization_review.SpecializationReviewTests.test_row_bridge_successor_is_exact_and_preserves_historical_entry test_p978_specialization_review.SpecializationReviewTests.test_row_bridge_requires_the_committed_review_and_accepted_g3 test_p978_specialization_review.SpecializationReviewTests.test_fresh_api_policy_import_resolves_acceptance_helper test_p981_binding_reconciliation
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+Exact final subjects are recorded below and in the current work/maintenance
+manifests. Only the two topology work entries move to `.b`; the three planning
+documents and three scoped verification files receive new maintenance hashes.
+Prior scientific/acceptance evidence and the `.a` subjects above are preserved.
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_topology.py` | `1c3136583ba0148ff708ed980597bf47f3ca5c270f0e6e82fd767a66f2865807` |
+| `tests/models/test_grc_9_v4_topology.py` | `00bd5b342011effc413e8a8a0dea3273ad552e84de1863d19a8fc175d411568e` |
+
+Remaining boundaries: the stage input record checks declared content; it cannot
+authenticate that a caller actually completed a beat or align a falsely labeled
+positional vector. Native lifecycle integration must construct it from the
+committed owner and authoritative current at the prescribed stage, with the
+combined specialization identity fixing the Hessian sign and policy. Pure row
+evaluation, declared-profile shape checks and native conductance inspection do
+not admit constitutive/solver domains or establish any of the forty disabled
+compatibility cells. The generic numerical classes retain their exact graph
+type gates. Trigger, coarse/Split, allocator/events, lifecycle and full profile
+conformance retain their later owners. No cache was introduced; measuring and
+proving any optimization remains scheduled at the end of Tranche 8.
 
 ## End-of-Tranche-8 performance and cache review
 
