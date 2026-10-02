@@ -9,7 +9,6 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass, replace
-from fractions import Fraction
 from typing import ClassVar, Literal
 
 from .grc_9_v4_topology import (
@@ -18,6 +17,7 @@ from .grc_9_v4_topology import (
     GRC9V4RowSummary,
     _coordinate,
 )
+from .grc_v4_exact import exact_number
 from .grc_v4_geometry import NodeId, _identity, _ordered
 from .grc_v4_profile import _Record
 from .grc_v4_state import _number
@@ -102,8 +102,8 @@ class GRC9V4CandidateAssessment:
         # Compare the norm without rounding a square root, overflowing a square,
         # or underflowing a subnormal. These are the fresh .b row coordinates,
         # not a newly chosen unrounded differential backend.
-        squared = sum((Fraction(x) ** 2 for x in self.row.gradient), Fraction())
-        return squared < Fraction(self.policy.gradient_tolerance) ** 2
+        squared = sum((exact_number(x) ** 2 for x in self.row.gradient), exact_number())
+        return bool(squared < exact_number(self.policy.gradient_tolerance) ** 2)
 
     @property
     def minimum_signed_hessian(self) -> float:

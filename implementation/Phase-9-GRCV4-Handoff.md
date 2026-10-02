@@ -40,6 +40,14 @@ lifecycle `.c` bytes and permissions are unchanged. The user accepts current
 `.d` on 2026-10-02, assigns its identified exact-backend gap to new P9-8.1e,
 and requests committing `.d` before continuing with `.e`. This acceptance
 grants no later native conformance scope.
+P9-8.1d and the `.e` plan are committed at `a2d3d36`. P9-8.1e passes
+implementation and own review with real Python/FLINT parity and is accepted
+by the user's 2026-10-02 request to commit the completed changes; see the
+[backend correction and P9-8.0 audit](#p9-81e-exact-backend-correction-and-p9-80-audit).
+P9-8.0's independent proof arithmetic is retained. The audit found no reason
+from this backend issue to reopen its accepted bounded mathematics; it did
+not establish general native/FLINT conformance. P9-8.2 is next, requiring its
+own scoped opening.
 The chronology below
 records earlier checkpoints and does not reopen their resolved items.
 
@@ -229,12 +237,13 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next planned implementation task:** P9-8.1e exact-backend correction,
+**Next planned implementation task:** P9-8.2 D11-G9-P4a expansion allocator,
 subject to its scoped execution opening. P9-8.1a is committed at `75a6629`;
 P9-8.1b is accepted and committed at `7f33a42`; P9-8.1c is accepted and committed
-at `e9dfad7`. P9-8.1d's three recorded checkpoints are implemented and
-own-reviewed together. The evolving topology source/test bindings now belong
-to `P9-8.1d`; the lifecycle paths remain under `P9-8.1c`.
+at `e9dfad7`. P9-8.1d is accepted and committed at `a2d3d36`. P9-8.1e is
+implemented, own-reviewed and user-accepted: topology source/test, trigger source and the
+shared exact-backend test now bind to `.e`; the unchanged trigger test stays
+under `.c`.
 Historical subjects are preserved below. The P9-8.0 hold is released; later
 native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
@@ -960,6 +969,124 @@ outlier preservation are part of that obligation. Native facade capability
 dispatch, full model serialization, disabled compatibility and scientific
 conformance remain later work. This operator creates no graph fission,
 generic graph coarsening, event, expansion or completed spark.
+
+## P9-8.1e exact-backend correction and P9-8.0 audit
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`. The user accepts current
+`.d`, requests adding `.e`, committing `.d` first and then executing this
+correction. That checkpoint is `a2d3d36ead9186147fb3434a3300084ce04f7e75`.
+**Own-review verdict: pass for the scoped exact-backend correction.** All
+three recorded obligations are complete. The user's 2026-10-02 request to
+"commit changes" accepts this completed correction and its bounded P9-8.0
+audit finding. It grants no broader native/FLINT conformance acceptance.
+
+Authority is the accepted [exact CPU backend decision](./corrections/GRCV4-ExactCPUBackend.md),
+alongside the unchanged row, trigger and column contracts. Direct runtime
+`Fraction` imports bypassed this established boundary in `.b`–`.d`. The source
+guard scanned only generic V4 filenames, so earlier default-backend reviews
+did not expose the mismatch. This was an integration defect, not evidence that
+the exact row or inverse equations were wrong. Historical acceptance and proof
+artifacts are preserved; `.e` explicitly corrects the current implementation.
+
+The [topology module](../src/pygrc/models/grc_9_v4_topology.py) and
+[trigger module](../src/pygrc/models/grc_9_v4_lifecycle.py) now use `ExactScalar`
+annotations and the shared `exact_number` constructor throughout. `ExactScalar`
+remains the existing role annotation, not a new wrapper or nominal type.
+Transient row/trigger arithmetic follows the active operation scope. Retained
+column values and coarse fields capture `ExactBackend`; validation and Split
+re-enter that backend after the construction scope exits. Native scalar
+substitutions and mixed-backend columns/channels reject. Re-encoding a split
+fine field under a different backend is explicit and preserves content identity.
+The future native model owner must continue to establish its selected backend
+around calls, as the generic lifecycle already does.
+
+Backend-neutral `integer_ratio` extraction replaces representation assumptions.
+At the prescribed binary64 boundary, Python integer division of the exact ratio
+preserves the original rounding behavior independently of native scalar float
+conversion. Coarse reconstruction still additionally requires exact equality
+with the resulting binary64 value; nonrepresentable products reject. The
+retained backend tag does not enter graph, input or coarse content identity.
+Default-backend digests for both field families are pinned from the accepted
+`.d` source at `a2d3d36` and pass unchanged on both backends. No generic exact
+backend, numerical policy, schema, scientific state or legacy implementation is
+rewritten. Three obsolete test type-ignore annotations are removed because
+`ExactScalar` is intentionally `Any`.
+
+The [shared backend tests](../tests/models/test_grc_v4_exact_backend.py) now
+scan public and private generic V4 **and** GRC9V4 filenames for direct Fraction
+imports/references. With the repository-pinned **python-flint 0.9.0 installed**,
+four added methods establish:
+
+- Actual native `Fraction`/`fmpq` row intermediates and retained coarse values,
+  strict row/trigger result parity, legacy tensor parity, and 166 fine/coarse
+  field cases per backend (80 deterministic wide-scale rows plus three outlier
+  rows, each in both field families). Both inverse identities and `.d` golden
+  content digests remain unchanged.
+- FLINT-owned coarse snapshots remain usable outside their construction scope;
+  copying preserves their native values. Mixed-backend fields/channels, false
+  backend tags and malformed values reject, with scope restoration on failure.
+- Halfway rounding cases, signed-zero normalization at computed-output boundaries,
+  minimum subnormals, maximum-finite coordinates, unrepresentable thirds,
+  underflow/overflow reconstruction and canonical-zero requirements have the
+  same disposition on both backends.
+- The two P9-8.0 modules importing production APIs execute their unchanged
+  seven methods under each backend. These are 14 nested probe executions,
+  separately counted from the enclosing test-suite methods.
+
+**P9-8.0 finding.** A source/import audit of all 19 `test_p980*.py` modules
+finds 18 using `Fraction` for independent exact or represented-research
+calculations. This code is outside the production backend boundary; retaining
+an independent rational oracle is appropriate. The additional Tranche-8 Python
+file, `rg-numerical-review/export.py`, packages pinned source/evidence and
+contains no numerical implementation. Production source imports none of these
+P9-8.0 research modules.
+
+Only `test_p980_feasibility.py` and `test_p980_readiness.py` import production
+APIs. The former parses existing profile/RG-domain declarations while computing
+its rational discriminators independently. The latter constructs native generic
+pairings/selectors from binary64 data and uses an independent rational spectral
+witness; that witness is not handed into a native exact-scalar field. All seven
+unchanged methods pass under both Python and FLINT. The generic runtime paths
+already use the shared exact-backend API. No P9-8.0 proof or backend-boundary
+defect was identified in this audit, so its accepted bounded mathematics and
+R1–R10 restrictions remain unchanged. This is not a rerun of every research
+trajectory, nor evidence of all-ten native specialization/FLINT conformance.
+The archived represented kernels retain their recorded arithmetic and scope;
+they are not silently promoted to selectable production backends.
+
+Validation: **173 model/regression/backend methods pass, with no skips**,
+including the existing generic FLINT owner/continuation checks and the four new
+methods above. The final source-guard extension to the private GRC9V4 pattern
+also passes its focused rerun. Ruff passes on the changed Python source/tests;
+mypy passes on both specialization modules and their paired tests. Five scoped
+authorization methods and three current-boundary pressure methods pass; the
+final current phase-boundary audit passes. Reproduce with the pinned optional
+dependency installed:
+
+```bash
+.venv/bin/python -m pip install python-flint==0.9.0
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest -q test_grc_9_v4_topology test_grc_9_v4_lifecycle test_grc_v4_profile test_grc_v4_codec.CodecTests test_grc_9_v3_coarse test_grc_v4_exact_backend
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_topology.py src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_topology.py tests/models/test_grc_v4_exact_backend.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_topology.py src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_topology.py tests/models/test_grc_9_v4_lifecycle.py
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p978_specialization_review.SpecializationReviewTests.test_backend_successor_is_exact_and_preserves_other_owners test_p978_specialization_review.SpecializationReviewTests.test_backend_requires_accepted_g3_and_committed_coarse_subject test_p978_specialization_review.SpecializationReviewTests.test_coarse_successor_is_exact_and_preserves_historical_owners test_p978_specialization_review.SpecializationReviewTests.test_trigger_successor_uses_only_reviewed_lifecycle_owner test_p978_specialization_review.SpecializationReviewTests.test_fresh_api_policy_import_resolves_acceptance_helper
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p981_binding_reconciliation.BindingReconciliationTests.test_rehashed_work_cannot_promote_support test_p981_binding_reconciliation.BindingReconciliationTests.test_unlisted_runtime_and_research_additions_still_reject test_p981_binding_reconciliation.BindingReconciliationTests.test_legacy_source_remains_frozen
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+The `.e` scoped successor permits the four existing specialization source/test
+paths and the shared backend test after checking their exact committed `.d`
+subjects. Only four changed runtime work entries move to `.e`; the unchanged
+trigger test remains under `.c`. Six existing maintenance bindings refresh.
+Generic numerical source, historical P9-8.0 proof/evidence, old reviews and
+accepted support records are unchanged. Expansion and later native gates stay
+closed until their own scoped openings.
+
+| Current `.e` subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_topology.py` | `f566cfd6c1cd42301d86b825da46ead8ba1d9142fc1d7e357b7d241577656f28` |
+| `src/pygrc/models/grc_9_v4_lifecycle.py` | `a79de2f92f85e591980acfb2bcf529d4b8d124a40401e37848333d036fa03527` |
+| `tests/models/test_grc_9_v4_topology.py` | `4aa9ba5677eb5328a62dee478fdb1ee55ec98a0635d7d99d5a832c5355212c4b` |
+| `tests/models/test_grc_v4_exact_backend.py` | `0a936127aa5994491ce2cb0c77c51cba303e1d645237011419d08988db28accc` |
 
 ## End-of-Tranche-8 performance and cache review
 

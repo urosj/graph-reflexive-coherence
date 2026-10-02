@@ -14,7 +14,6 @@ wire admission alone admit no model or expansion event.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from fractions import Fraction
 from typing import TYPE_CHECKING, ClassVar, Final, Literal, Self, cast
 
 from .grc_v4_codec import (
@@ -24,6 +23,14 @@ from .grc_v4_codec import (
     decode_json,
     payload_identity,
     validate_payload,
+)
+from .grc_v4_exact import (
+    ExactBackend,
+    ExactScalar,
+    current_exact_backend,
+    exact_backend,
+    exact_number,
+    integer_ratio,
 )
 from .grc_v4_geometry import (
     Matrix,
@@ -399,13 +406,15 @@ def _hessian_sign(value: object) -> int:
     return value
 
 
-def _rounded(value: Fraction) -> float:
+def _rounded(value: ExactScalar) -> float:
     """One binary64 rounding of an exact dyadic/rational row expression."""
     try:
-        result = float(value)
+        numerator, denominator = integer_ratio(value)
+        result = numerator / denominator
     except OverflowError as exc:
         raise NonfiniteGeometryError("row result is outside binary64") from exc
-    # Finite Fraction -> float either returns finite or raises OverflowError.
+    # Python integer division supplies the same binary64 rounding for either
+    # exact backend; native scalar float conversions need not share that rule.
     return 0.0 if result == 0 else result
 
 
@@ -440,7 +449,9 @@ class GRC9V4RowSummary:
 
 # Each entry is an endpoint incidence: weight, neighbor-minus-local resource,
 # and outward current. A loop contributes at BOTH of its distinct ports.
-_RowTerms = tuple[tuple[tuple[tuple[Fraction, Fraction, Fraction], ...], ...], ...]
+_RowTerms = tuple[
+    tuple[tuple[tuple[ExactScalar, ExactScalar, ExactScalar], ...], ...], ...
+]
 
 
 @dataclass(frozen=True, slots=True)
@@ -470,8 +481,8 @@ class GRC9V4RowDifferential:
         if len(resource) != len(nodes) or len(w) != len(edges) or len(j) != len(edges):
             raise ValueError("row coordinates do not match the port graph")
         indices = {node: index for index, node in enumerate(nodes)}
-        values = tuple(Fraction(x) for x in resource)
-        terms: list[list[list[tuple[Fraction, Fraction, Fraction]]]] = [
+        values = tuple(exact_number(x) for x in resource)
+        terms: list[list[list[tuple[ExactScalar, ExactScalar, ExactScalar]]]] = [
             [[], [], []] for _ in nodes
         ]
         for edge, weight, flux in zip(edges, w, j, strict=True):
@@ -482,7 +493,11 @@ class GRC9V4RowDifferential:
                 i, k = indices[here.node_id], indices[there.node_id]
                 row, _ = port_to_row_column(here.port)
                 terms[i][row - 1].append(
-                    (Fraction(weight), values[k] - values[i], sign * Fraction(flux))
+                    (
+                        exact_number(weight),
+                        values[k] - values[i],
+                        sign * exact_number(flux),
+                    )
                 )
         return tuple(tuple(tuple(row) for row in node) for node in terms)
 
@@ -496,12 +511,12 @@ class GRC9V4RowDifferential:
         ):
             gradient, flux = [], []
             for row in rows:
-                denominator = sum((w for w, _, _ in row), Fraction())
-                numerator = sum((w * delta for w, delta, _ in row), Fraction())
+                denominator = sum((w for w, _, _ in row), exact_number())
+                numerator = sum((w * delta for w, delta, _ in row), exact_number())
                 gradient.append(
                     _rounded(numerator / denominator) if denominator else 0.0
                 )
-                flux.append(_rounded(sum((j for _, _, j in row), Fraction())))
+                flux.append(_rounded(sum((j for _, _, j in row), exact_number())))
             result.append(
                 GRC9V4RowSummary(node, tuple(gradient), tuple(flux), self.hessian_sign)
             )
@@ -523,20 +538,20 @@ class GRC9V4RowDifferential:
         of TOTAL outward flux, identically on all three diagonals.
         """
         coefficients = _vector((lambda_c, xi_c, zeta_c), nonnegative=True)
-        lam, xi, zeta = (Fraction(x) for x in coefficients)
+        lam, xi, zeta = (exact_number(x) for x in coefficients)
         resource = _vector(C, nonnegative=True)
         terms = self._terms(resource, weights, current)
         result = []
         for c, rows in zip(resource, terms, strict=True):
-            total = sum((j for row in rows for _, _, j in row), Fraction())
-            isotropic = lam * Fraction(c) + zeta * total**2
+            total = sum((j for row in rows for _, _, j in row), exact_number())
+            isotropic = lam * exact_number(c) + zeta * total**2
             result.append(
                 _diagonal(
                     tuple(
                         _rounded(
                             isotropic
                             + xi
-                            * sum((w * delta**2 for w, delta, _ in row), Fraction())
+                            * sum((w * delta**2 for w, delta, _ in row), exact_number())
                         )
                         for row in rows
                     )
@@ -728,21 +743,24 @@ def _requested_family(actual: CoarseFieldFamily, requested: object) -> None:
         raise CoarseFieldTypeError("request and stored field family differ")
 
 
-def _coarse_fraction(value: object) -> Fraction:
+def _coarse_number(value: object) -> ExactScalar:
     # Explicit exact derived coordinates, not a relaxation of JSON/state input.
-    if type(value) is Fraction:
+    if type(value) is type(exact_number()):
         return value
     if type(value) not in (int, float):
-        raise TypeError("coarse coordinate requires Fraction or JSON number")
-    return Fraction(_number(value))
+        raise TypeError(
+            "coarse coordinate requires the selected exact backend or JSON number"
+        )
+    return exact_number(_number(value))
 
 
-def _coarse_float(value: Fraction) -> float:
+def _coarse_float(value: ExactScalar) -> float:
     try:
-        result = float(value)
+        numerator, denominator = integer_ratio(value)
+        result = numerator / denominator
     except OverflowError as exc:
         raise CoarseDomainError("Split coordinate is outside binary64") from exc
-    if Fraction(result) != value:
+    if exact_number(result) != value:
         raise CoarseDomainError("Split coordinate is not exactly representable")
     return 0.0 if result == 0 else result
 
@@ -755,19 +773,28 @@ class GRC9V4ColumnProfile:
     must reconstruct an admitted finite binary64 fine coordinate exactly.
     Zero total has the unique uniform profile; no tolerance or repair is used.
     This in-memory value is not a new authoritative state or wire schema.
+    Retained native scalars keep their construction backend after its scope
+    exits. Mixed-backend inputs reject; backend choice is not content identity.
     """
 
-    total: Fraction
-    profile: tuple[Fraction, ...]
+    total: ExactScalar
+    profile: tuple[ExactScalar, ...]
+    backend: ExactBackend = field(
+        default_factory=current_exact_backend, compare=False, repr=False
+    )
 
     def __post_init__(self) -> None:
-        total = _coarse_fraction(self.total)
-        profile = tuple(_coarse_fraction(x) for x in _ordered(self.profile))
+        with exact_backend(self.backend):
+            self._validate()
+
+    def _validate(self) -> None:
+        total = _coarse_number(self.total)
+        profile = tuple(_coarse_number(x) for x in _ordered(self.profile))
         if total < 0 or len(profile) != 3 or any(x < 0 for x in profile):
             raise CoarseDomainError("expected a nonnegative total and simplex3")
         if sum(profile) != 1:
             raise CoarseDomainError("column profile must sum exactly to one")
-        if total == 0 and profile != (Fraction(1, 3),) * 3:
+        if total == 0 and profile != (exact_number(1, 3),) * 3:
             raise CoarseDomainError("zero total requires the canonical uniform profile")
         for x in profile:
             _coarse_float(total * x)
@@ -775,13 +802,14 @@ class GRC9V4ColumnProfile:
         object.__setattr__(self, "profile", profile)
 
     def split(self) -> tuple[float, ...]:
-        return tuple(_coarse_float(self.total * x) for x in self.profile)
+        with exact_backend(self.backend):
+            return tuple(_coarse_float(self.total * x) for x in self.profile)
 
 
 def _copy_column(value: object) -> GRC9V4ColumnProfile:
     if type(value) is not GRC9V4ColumnProfile:
         raise CoarseFieldTypeError("expected a nonnegative column profile")
-    return GRC9V4ColumnProfile(value.total, value.profile)
+    return GRC9V4ColumnProfile(value.total, value.profile, backend=value.backend)
 
 
 @dataclass(frozen=True, slots=True)
@@ -793,6 +821,10 @@ class GRC9V4SignedColumn:
 
     def __post_init__(self) -> None:
         positive, negative = _copy_column(self.positive), _copy_column(self.negative)
+        if positive.backend is not negative.backend:
+            raise CoarseFieldTypeError(
+                "signed channels belong to different exact backends"
+            )
         if any(
             p > 0 and n > 0
             for p, n in zip(positive.split(), negative.split(), strict=True)
@@ -803,6 +835,10 @@ class GRC9V4SignedColumn:
         object.__setattr__(self, "positive", positive)
         object.__setattr__(self, "negative", negative)
 
+    @property
+    def backend(self) -> ExactBackend:
+        return self.positive.backend
+
     def split(self) -> tuple[float, ...]:
         return tuple(
             p if p > 0 else -n if n > 0 else 0.0
@@ -811,9 +847,9 @@ class GRC9V4SignedColumn:
 
 
 def _nonnegative_column(values: tuple[float, ...]) -> GRC9V4ColumnProfile:
-    exact = tuple(Fraction(x) for x in values)
-    total = sum(exact, Fraction())
-    profile = tuple(x / total for x in exact) if total else (Fraction(1, 3),) * 3
+    exact = tuple(exact_number(x) for x in values)
+    total = sum(exact, exact_number())
+    profile = tuple(x / total for x in exact) if total else (exact_number(1, 3),) * 3
     return GRC9V4ColumnProfile(total, profile)
 
 
@@ -885,14 +921,22 @@ class GRC9V4CoarseField:
     and the caller's graph binding. Identity is an implementation-local content
     descriptor; rational numerator/denominator strings are not JSON numbers.
     Full model serialization and cache lifecycle remain with later owners.
+    The retained backend is implementation ownership only and is not hashed.
     """
 
     port_graph: GRC9V4PortGraph
     field_family: CoarseFieldFamily
     columns: tuple[tuple[GRC9V4ColumnProfile | GRC9V4SignedColumn, ...], ...]
     policy: GRC9CoarsePolicy = field(default_factory=GRC9CoarsePolicy)
+    backend: ExactBackend = field(
+        default_factory=current_exact_backend, compare=False, repr=False
+    )
 
     def __post_init__(self) -> None:
+        with exact_backend(self.backend):
+            self._validate()
+
+    def _validate(self) -> None:
         GRC9V4GraphProjection(self.port_graph)
         family = _field_family(self.field_family)
         if type(self.policy) is not GRC9CoarsePolicy:
@@ -912,6 +956,10 @@ class GRC9V4CoarseField:
                             "signed flux requires positive/negative channels"
                         )
                     columns.append(GRC9V4SignedColumn(column.positive, column.negative))
+                if columns[-1].backend is not self.backend:
+                    raise CoarseFieldTypeError(
+                        "column belongs to another exact backend"
+                    )
             if len(columns) != 3:
                 raise CoarseDomainError("expected three columns per node")
             rows.append(tuple(columns))
@@ -923,7 +971,7 @@ class GRC9V4CoarseField:
     def identity(self) -> str:
         def column_payload(column: GRC9V4ColumnProfile) -> list[list[str]]:
             return [
-                [str(x.numerator), str(x.denominator)]
+                [str(n) for n in integer_ratio(x)]
                 for x in (column.total, *column.profile)
             ]
 
@@ -997,7 +1045,11 @@ def split_columns(
     if type(coarse) is not GRC9V4CoarseField:
         raise CoarseFieldTypeError("expected a GRC9V4CoarseField")
     source = GRC9V4CoarseField(
-        coarse.port_graph, coarse.field_family, coarse.columns, coarse.policy
+        coarse.port_graph,
+        coarse.field_family,
+        coarse.columns,
+        coarse.policy,
+        backend=coarse.backend,
     )
     _requested_family(source.field_family, field_family)
     GRC9V4GraphProjection(port_graph)

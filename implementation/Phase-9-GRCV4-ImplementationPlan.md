@@ -14,7 +14,10 @@ and explicitly user-accepted on 2026-10-02, committed at `e9dfad7`.
 P9-8.1d's three content-specific checkpoints are implemented and own-reviewed
 together: nonnegative inverse algebra, signed channels and graph-bound fields.
 The user accepts current `.d` and assigns the exact-backend integration gap to
-new P9-8.1e, to execute after committing `.d` and before P9-8.2. Performance/cache review
+new P9-8.1e; `.d` is committed at `a2d3d36`. P9-8.1e passes implementation
+and own review, including real Python/FLINT parity and P9-8.0 classification,
+and is user-accepted through the 2026-10-02 request to commit the completed changes.
+P9-8.2 is next, with its scoped opening still required. Performance/cache review
 is scheduled at the end of Tranche 8. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
@@ -2463,6 +2466,22 @@ need not adopt a selectable production backend. Any discovered runtime-boundary
 or proof-validity defect must be recorded explicitly, without silently changing
 accepted artifacts. This correction opens no expansion/facade or later native
 conformance scope.
+
+Implementation/own-review status: all three correction obligations pass.
+Rows and trigger comparisons use the selected exact constructor; retained
+coarse profiles/fields bind their construction backend and reject mixed
+representations. Backend-neutral integer ratios preserve binary64 rounding
+and identity serialization. The source guard covers both public/private
+GRC9V4 filename patterns. With pinned python-flint 0.9.0 installed, native
+scalar checks, 166 coarse fields per backend, threshold/outlier decisions,
+post-scope use, mixed-backend rejection and historical `.d` identity vectors
+pass. P9-8.0's 18 `Fraction`-using research/test modules retain their independent
+arithmetic; its two modules importing production APIs pass all seven unchanged
+methods on each backend. This does not promote the other research executions
+to native/FLINT conformance. See the
+[review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81e-exact-backend-correction-and-p9-80-audit).
+The user's 2026-10-02 request to commit the completed changes accepts `.e` and
+its bounded P9-8.0 finding; broader native/FLINT conformance remains separate.
 
 ##### Profile integration after shared mechanics
 

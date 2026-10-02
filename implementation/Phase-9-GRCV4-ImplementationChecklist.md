@@ -13,8 +13,10 @@ candidate detection, admitted post-commit fixture and boundary pressure,
 committed at `e9dfad7`. P9-8.1d's three content-specific checkpoints are
 implemented and own-reviewed together: nonnegative inverse algebra, canonical
 signed channels and graph-bound field dispatch. The user accepts `.d` with the
-identified exact-backend integration correction assigned to new P9-8.1e,
-which is next before P9-8.2. End-of-Tranche-8 cache review remains open.
+identified exact-backend integration correction assigned to new P9-8.1e;
+that checkpoint is committed at `a2d3d36`. P9-8.1e is implemented, own-reviewed
+and user-accepted with real Python/FLINT parity and P9-8.0 arithmetic classification.
+P9-8.2 is next. End-of-Tranche-8 cache review remains open.
 General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
@@ -2126,18 +2128,26 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   explicitly accepts current `.d` on 2026-10-02 and requests committing it
   before `.e`. This accepts the recorded mechanical/default-backend result;
   the identified backend abstraction gap is assigned to `.e` below.
-- [ ] P9-8.1e: Align shared mechanics with the accepted V4 exact-backend contract.
-  - [ ] P9-8.1e.1: Replace direct runtime `Fraction` use throughout `.b`–`.d`
+- [x] P9-8.1e: Align shared mechanics with the accepted V4 exact-backend contract.
+  - [x] P9-8.1e.1: Replace direct runtime `Fraction` use throughout `.b`–`.d`
     with `ExactScalar`/`exact_number` and backend-neutral ratio extraction.
     Bind retained exact values to their backend, preserving binary64 boundaries,
     exact coarse reconstruction domain, identities and failure behavior.
-  - [ ] P9-8.1e.2: Extend the source guard to GRC9V4 and verify real Python/FLINT
+  - [x] P9-8.1e.2: Extend the source guard to GRC9V4 and verify real Python/FLINT
     parity, native scalar use, scope restoration and cross-backend handling,
     including threshold, subnormal, overflow and malformed-input cases.
-  - [ ] P9-8.1e.3: Audit P9-8.0's use of exact arithmetic, distinguishing
+  - [x] P9-8.1e.3: Audit P9-8.0's use of exact arithmetic, distinguishing
     independent proof/test oracles from runtime consumers. Record the supported
     conclusion without rewriting accepted proof artifacts or implying new
     scientific/backend acceptance. Reconcile bindings and phase-boundary checks.
+  All three correction obligations pass; see the
+  [review and P9-8.0 finding](./Phase-9-GRCV4-Handoff.md#p9-81e-exact-backend-correction-and-p9-80-audit).
+  Validation includes 173 regression/backend methods, 14 unchanged P9-8.0
+  probe executions nested across both backends and pinned `.d` identities.
+  Independent proof `Fraction` use is retained; no P9-8.0 proof defect was
+  identified by this audit. The user's 2026-10-02 request to commit the completed
+  changes accepts `.e` and its bounded audit finding, without broader native/FLINT
+  conformance acceptance.
 - [ ] P9-8.2: Implement exact D11-G9-P4a boundary reservation, primary spine,
   both chiralities, conditional phase, tree construction, and capacity rules.
 - [ ] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource

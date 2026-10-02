@@ -110,3 +110,30 @@ def coarse_authorization(root):
 def coarse_permitted(path, leaf):
     """Call only after coarse_authorization(root); reviewed topology owner."""
     return leaf == COARSE_ENTRY and path in PATHS
+
+
+BACKEND_ENTRY = 'P9-8.1e'
+BACKEND_PATHS = (*PATHS, *TRIGGER_PATHS, 'tests/models/test_grc_v4_exact_backend.py')
+BACKEND_PREDECESSOR = 'a2d3d36ead9186147fb3434a3300084ce04f7e75'
+BACKEND_PREDECESSOR_HASHES = (
+    'f73fd466d2ecbf76d62206f779fde6a22634099641e638c592c19810495e5ed5',
+    'eeed7dc3c02781a6838b43cdee7e202bf32f21f2b6d01677075021f2b7ea1897',
+    'a65ea279b644f8592cd763d16e55e931661f7e8100c0e34002a345669589c5c3',
+    'f6a991a8e742361df3a02e0a24d7a9827f484c9d97e56c6697bb6ad042c00b7e',
+    '6d253a068fcd37d9eefa44fac77ce34ffd63534c2230a5f39c7d66a767b47457',
+)
+
+
+def backend_authorization(root):
+    """User-requested shared exact-backend correction after accepted .d."""
+    accepted(root)
+    p.git(root, 'merge-base', '--is-ancestor', BACKEND_PREDECESSOR, 'HEAD')
+    for path, expected in zip(BACKEND_PATHS, BACKEND_PREDECESSOR_HASHES, strict=True):
+        p.require(p.sha(p.git(root, 'show', BACKEND_PREDECESSOR + ':' + path)) == expected,
+                  'backend correction requires the accepted coarse/Split subject')
+    return BACKEND_ENTRY
+
+
+def backend_permitted(path, leaf):
+    """Call only after backend_authorization(root); no generic numerical rewrite."""
+    return leaf == BACKEND_ENTRY and path in BACKEND_PATHS

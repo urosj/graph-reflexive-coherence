@@ -2366,12 +2366,12 @@ class ColumnCoarseTests(unittest.TestCase):
                 self.subTest(total=total, profile=profile),
                 self.assertRaises(CoarseDomainError),
             ):
-                GRC9V4ColumnProfile(total, profile)  # type: ignore[arg-type]
+                GRC9V4ColumnProfile(total, profile)
         for invalid in (True, -0.0, math.nan, math.inf, 2**53, "1", Decimal(1)):
             with self.assertRaises((ValueError, TypeError)):
-                GRC9V4ColumnProfile(invalid, uniform)  # type: ignore[arg-type]
+                GRC9V4ColumnProfile(invalid, uniform)
             with self.assertRaises((ValueError, TypeError)):
-                GRC9V4ColumnProfile(Fraction(0), (invalid, 0, 0))  # type: ignore[arg-type]
+                GRC9V4ColumnProfile(Fraction(0), (invalid, 0, 0))
 
     def test_field_requests_never_cross_encodings(self) -> None:
         for family, other in (
