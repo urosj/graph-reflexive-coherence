@@ -7,8 +7,11 @@ aggregate bounded feasibility scope. All ten rows are provisionally closed;
 the all-ten production hold is released. P9-8.1a's four checkpoints are complete
 and committed at `75a6629`. P9-8.1b's four recorded checkpoints are delivered
 together under the user's request: row equations, stage-specific weight bridge
-and integrated own review. P9-8.1c is the next planned leaf, requiring its own
-scoped execution opening. End-of-Tranche-8 cache review remains open.
+and integrated own review, accepted and committed at `7f33a42`. P9-8.1c's four
+recorded checkpoints are implemented, own-reviewed and user-accepted together: baseline
+candidate detection, admitted post-commit fixture and boundary pressure.
+P9-8.1d is next, requiring its own scoped opening. End-of-Tranche-8 cache review
+remains open.
 General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
@@ -2072,7 +2075,31 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   completion, not native specialization lifecycle or disabled conformance.
   The user explicitly accepts the complete reviewed P9-8.1b result on
   2026-10-02 (“review passes fully. commit changes”), within the recorded scope.
-- [ ] P9-8.1c: Implement and verify the mechanical candidate trigger.
+- [x] P9-8.1c: Implement and verify the mechanical candidate trigger.
+  Deliver these checkpoints together under the 2026-10-02 user request, with
+  formal ownership `P9-8.1c` in the reviewed V4 lifecycle source/test paths.
+  They are recorded subitems, not separate gates or turn boundaries.
+  - [x] P9-8.1c.1: Bind the closed spark policy, explicit baseline-lane support
+    and fresh postbeat input contract. Keep basin seeds, candidates, expansion
+    and completed sparks distinct.
+  - [x] P9-8.1c.2: Implement exact occupied-port saturation and the strict
+    gradient/signed-Hessian conjunction, with stable node order and no cache
+    or caller-supplied verdict. Preserve basin classification as a separate test.
+  - [x] P9-8.1c.3: Exercise an admitted saturated source through a real ordinary
+    commit and fresh detection, retaining independent candidate expectations.
+    Optional column-H assistance must reject explicitly when unsupported;
+    no legacy thresholds or history controls are inferred into V4 policy.
+  - [x] P9-8.1c.4: Pressure threshold equality and adjacent floats, numerical
+    outliers, occupancy, orientation, stale inputs and stage/identity/type
+    failures; record exact subjects and pass current boundary checks.
+  All four checkpoints pass together; see the
+  [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81c-mechanical-candidate-trigger).
+  Evidence includes all 512 occupancy masks, 180 independent Decimal cases,
+  strict boundary/outlier decisions and an admitted saturated C_OS commit.
+  Optional column-H execution rejects explicitly; expansion, completion and
+  native specialization lifecycle retain their later owners. The user explicitly
+  accepts this complete reviewed result on 2026-10-02 ("accpeted and commit
+  changes"), within the recorded baseline scope and integration limits.
 - [ ] P9-8.1d: Implement and verify column coarse-graining and Split.
 - [ ] P9-8.2: Implement exact D11-G9-P4a boundary reservation, primary spine,
   both chiralities, conditional phase, tree construction, and capacity rules.

@@ -1264,6 +1264,11 @@
       "iteration_id": "P9-3.4"
     },
     {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "a65ea279b644f8592cd763d16e55e931661f7e8100c0e34002a345669589c5c3",
+      "iteration_id": "P9-8.1c"
+    },
+    {
       "path": "src/pygrc/models/grc_9_v4_topology.py",
       "sha256": "1c3136583ba0148ff708ed980597bf47f3ca5c270f0e6e82fd767a66f2865807",
       "iteration_id": "P9-8.1b"
@@ -1417,6 +1422,11 @@
       "path": "tests/models/grcv4_reference_oracles.py",
       "iteration_id": "P9-4.9.2",
       "sha256": "f24407aad2f54ebb6910c073fc69fbb58ffc858c7affeb6cc51c2196606813ff"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_lifecycle.py",
+      "sha256": "f6a991a8e742361df3a02e0a24d7a9827f484c9d97e56c6697bb6ad042c00b7e",
+      "iteration_id": "P9-8.1c"
     },
     {
       "path": "tests/models/test_grc_9_v4_topology.py",
@@ -1590,6 +1600,6 @@
       "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
     ]
   ],
-  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successor opens P9-8.1b row differential/weight bridge on the same two topology paths after the committed chart/graph review. No later native leaf, broader profile or specialization runtime conformance follows.",
-  "record_digest": "ba3fd59b3daa86fe900e9fc70a0fd0da5dc0c6be0050d44b108a2cbb6ba0d3df"
+  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths after the committed chart/graph review, and P9-8.1c baseline candidate detection on the two reviewed lifecycle paths after accepted .b at 7f33a42. No later native leaf, broader profile or specialization runtime conformance follows.",
+  "record_digest": "5a24f07148158e3631cf75467a052034d21b090127fd6a809a012aefab88499c"
 }

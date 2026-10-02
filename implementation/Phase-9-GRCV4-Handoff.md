@@ -27,10 +27,15 @@ P9-8.1b in one pass with recorded subitems. Its four checkpoints are now
 implemented, own-reviewed and explicitly user-accepted on 2026-10-02
 (“review passes fully. commit changes”); see the
 [row bridge review](#p9-81b-row-differential-and-weight-bridge).
-The scoped execution successor opens only `.b` on the existing topology
-source/test paths. P9-8.1c is next, requiring its own scoped opening. Historical
-G3 acceptance and later native owners are unchanged; this implementation review
-creates no new machine gate or conformance acceptance.
+P9-8.1b is committed at `7f33a42`. The user requests P9-8.1c in the same way:
+its four checkpoints are implemented, own-reviewed and explicitly user-accepted
+on 2026-10-02 ("accpeted and commit changes"); see the
+[candidate trigger review](#p9-81c-mechanical-candidate-trigger).
+A separate scoped successor opens `.c` on the reviewed lifecycle source/test
+paths, retaining `.b`'s topology bindings. P9-8.1d is next, requiring its own
+scoped opening. Historical G3 acceptance and later native owners are unchanged;
+this implementation acceptance creates no new machine gate or native
+conformance acceptance.
 The chronology below
 records earlier checkpoints and does not reopen their resolved items.
 
@@ -220,11 +225,12 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next planned implementation task:** P9-8.1c mechanical candidate trigger,
+**Next planned implementation task:** P9-8.1d column coarse-graining and Split,
 subject to its scoped execution opening. P9-8.1a is committed at `75a6629`;
-P9-8.1b's four recorded checkpoints are implemented and own-reviewed together.
-The evolving topology source/test bindings now belong to `P9-8.1b`, with the
-historical `.a` subjects preserved below. The P9-8.0 hold is released; later
+P9-8.1b is accepted and committed at `7f33a42`. P9-8.1c's four checkpoints are
+implemented, own-reviewed and explicitly user-accepted together. The topology source/test bindings
+remain under `P9-8.1b`; the two new lifecycle paths belong only to `P9-8.1c`.
+Historical subjects are preserved below. The P9-8.0 hold is released; later
 native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
 its actual policy outputs rather than the older separately seeded targets.
@@ -694,6 +700,123 @@ compatibility cells. The generic numerical classes retain their exact graph
 type gates. Trigger, coarse/Split, allocator/events, lifecycle and full profile
 conformance retain their later owners. No cache was introduced; measuring and
 proving any optimization remains scheduled at the end of Tranche 8.
+
+## P9-8.1c mechanical candidate trigger
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`, accepted predecessor
+`7f33a42f8850dbae57b63c8ad09d85bececbaf6e`. The user requests this leaf in the
+same way as `.b`: one implementation pass with recorded subitems.
+**Own-review verdict: pass within baseline mechanical candidate detection.**
+The checklist records `.1` policy/stage/scope, `.2` exact gates, `.3` admitted
+post-commit fixture and `.4` pressure review as complete together. The user
+explicitly accepts this complete reviewed result on 2026-10-02 ("accpeted and
+commit changes"). Acceptance covers the recorded baseline mechanical scope,
+including explicit rejection of the optional column-H lane and the stated
+integration limits; it grants no later native conformance or completion scope.
+
+Authority is the normative [saturation and hybrid spark semantics](../specs/grc-9-v4-spec.md#saturation-and-hybrid-spark-semantics),
+the closed `spark_policy` schema and the unchanged `.b` row contract. The
+scoped execution successor checks accepted G3 and the exact committed `.b`
+source/test subject. It opens only `.c` on the already reviewed lifecycle
+source/test paths. The historical G3 decision, topology `.b` bindings, generic
+support declarations and later leaf permissions are preserved.
+
+The [lifecycle module](../src/pygrc/models/grc_9_v4_lifecycle.py) provides:
+
+- `GRC9SparkPolicy`: the complete closed policy, including detached optional
+  child-stabilization content. Exact schema and numeric guards reject malformed
+  types, nonfinite values, unsafe integers and negative zero.
+- `GRC9V4CandidateDetection`: copies and revalidates `.b` postbeat inputs and
+  the baseline policy. Its implementation-local identity binds both. Every
+  assessment derives occupancy from the sole port owner and recomputes rows;
+  no externally supplied summary, cached verdict or candidate list is consumed.
+- `GRC9V4CandidateAssessment`: immutable node diagnostics with exactly nine
+  occupied ports, strictly small gradient and strictly low signed Hessian
+  combined by AND. The separate basin-seed predicate is small gradient AND
+  minimum signed Hessian strictly above its positive tolerance; it is never an
+  extra candidate gate. Results preserve live-node order and typed identity.
+
+The gradient comparison uses the exact sum of squares of the fresh `.b`
+binary64 output coordinates against the exact squared tolerance. This avoids
+square overflow, subnormal underflow and a rounded square root landing on the
+threshold. It does not substitute unrounded row arithmetic for `.b`'s output
+contract. Signed-Hessian minima use the fixed diagonal backend and the bound
+sign. Loops count both occupied endpoint ports; a loop-saturated candidate does
+not establish expansion eligibility. No graph mutation, event, hierarchy update,
+completion capability or scientific state is introduced.
+
+The optional `grc9v3_column_h_assisted` lane remains schema-recognized but
+explicitly rejects execution with `UnsupportedGRC9SparkLane`. Legacy column-H
+threshold, history/sign-crossing and sink controls are absent from the closed
+V4 policy; this leaf does not invent them. Future opt-in execution requires
+bound controls and evidence. This restriction is on an optional lane, not a
+dropped A/C realization. Child-stabilization content is retained in identity
+without running its later completion semantics.
+
+The [nineteen new test methods](../tests/models/test_grc_9_v4_lifecycle.py)
+retain the portable pressure evidence:
+
+| Obligation | Evidence |
+| --- | --- |
+| Exact predicate | All eight conjunction combinations and all 512 occupancy masks; loops consume both ports, parallel edges preserve separate ports, and empty graphs/isolates produce no candidate. |
+| Strict boundaries | Equality and adjacent floats for gradient, spark and basin tolerances; zero gradient tolerance; both Hessian signs; basin seed independent of saturation and candidate classification. |
+| Numerical outliers | A norm rounding to the threshold despite lying strictly below it; minimum subnormals; maximum-finite coordinates with a mathematical norm both below and above the finite threshold; atomic rejection of an unrepresentable row flux. |
+| Independent oracle | 180 reproducible weighted source cases, literal row-port sets and 100-digit Decimal accumulation, rounded to the existing row-output contract before independent gate comparison. |
+| Orientation and identity | 31 orientation patterns with reversed edge order; nine parallel edges between typed-distinct nodes `1` and `"1"`; candidate order follows live-node order. Policy thresholds, sign, beat and current are bound in identity. |
+| Input ownership | Replaced committed resources change fresh verdict/identity while older snapshots remain stable. Malformed policy/input types and predictor/trial/pre-continuity/reset/history stage substitutions reject. Caller policy mutation is detached. |
+| Scope separation | A direct column-cancellation example cannot bypass baseline Hessian failure. Optional column-H execution rejects. Child policy adds no event/expansion/completion API. All ten generic declaration shapes use the same baseline predicate without asserting ten numerical admissions. |
+| Admitted handoff | A saturated C_OS source passes the real generic numerical constructor and ordinary commit before its actual committed resources/current enter the port-owned row/detection boundary. Independent fresh-state inequalities select only the central node. |
+
+The admitted fixture has a unit-weight nine-spoke star (spectrum `{0,1,10}`),
+strict `Lambda_C=1/2`, initial central C `3` and leaf C `3+1/64`, with
+`kappa_M_C=0`, `kappa_Phi_C=1/64`, `eta_C=tau_C=1/8`, `chi_C=zeta_C=1/4`,
+`kappa_H=1/1024` and `dt=1/4096`. The executable helper pins the remaining
+numerical controls and the complete declaration
+`grcv4-profile-sha256:63f96db281496bebd732b69339cbe8f3a195be46cfc1b6b1769f517783d80fa0`.
+The commit uses the authoritative `os_corrector` current consumed by continuity;
+reset is unchanged. Each fresh neighbor difference is strictly in `(1/64,1/32)`;
+the squared gradient norm is below `1/4`, and sign `-1` gives a negative minimum
+signed Hessian. Thus only the saturated center passes the frozen-vector baseline
+policy. This is an already eligible source, not an inactive-to-active crossing,
+new G2 acceptance or integrated native GRC9V4 lifecycle. Generic numerical
+admission remains real; the explicit test handoff adds no second production
+graph owner and detection leaves the committed generic owner unchanged.
+
+Validation: **141 model/codec regression methods pass**, including all 19 new
+methods and the existing topology/profile/codec coverage. Ruff and mypy pass.
+Five focused authorization methods cover accepted G3, exact `.b` predecessor,
+the two lifecycle paths, historical `.a`/`.b` scope and fresh-process import.
+Three current-boundary pressure methods reject support promotion, unlisted
+runtime/research additions and frozen legacy mutation. The final current
+phase-boundary audit passes. Reproduce from the repository root:
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest -q test_grc_9_v4_lifecycle test_grc_9_v4_topology test_grc_v4_profile test_grc_v4_codec.CodecTests
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_lifecycle.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_lifecycle.py
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p978_specialization_review.SpecializationReviewTests.test_acceptance_tampering_and_entry_widening_rejected test_p978_specialization_review.SpecializationReviewTests.test_row_bridge_successor_is_exact_and_preserves_historical_entry test_p978_specialization_review.SpecializationReviewTests.test_trigger_successor_uses_only_reviewed_lifecycle_owner test_p978_specialization_review.SpecializationReviewTests.test_trigger_requires_accepted_g3_and_committed_row_subject test_p978_specialization_review.SpecializationReviewTests.test_fresh_api_policy_import_resolves_acceptance_helper
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p981_binding_reconciliation.BindingReconciliationTests.test_rehashed_work_cannot_promote_support test_p981_binding_reconciliation.BindingReconciliationTests.test_unlisted_runtime_and_research_additions_still_reject test_p981_binding_reconciliation.BindingReconciliationTests.test_legacy_source_remains_frozen
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+Exact final subjects are bound as two new `.c` work entries. Only the three
+planning documents and three scoped verification files receive maintenance
+hash updates. Historical scientific/acceptance evidence and `.b` bytes remain
+unchanged.
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_lifecycle.py` | `a65ea279b644f8592cd763d16e55e931661f7e8100c0e34002a345669589c5c3` |
+| `tests/models/test_grc_9_v4_lifecycle.py` | `f6a991a8e742361df3a02e0a24d7a9827f484c9d97e56c6697bb6ad042c00b7e` |
+
+Remaining integration duties: native lifecycle code must supply actual committed
+inputs at the prescribed stage, with sign/policy fixed by the combined
+specialization identity. A detached record validates declared content, not
+chronology. Assessments constructed independently are diagnostics, not graph
+provenance or expansion admission tokens. Column coarse/Split, allocation,
+transactions, expansion, child stabilization, completed sparks, full native
+profile conformance and the forty disabled compatibility cells retain their
+later owners. No cache is added; the end-of-Tranche-8 review remains scheduled.
 
 ## End-of-Tranche-8 performance and cache review
 

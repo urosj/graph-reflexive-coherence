@@ -139,7 +139,7 @@ class SpecializationReviewTests(unittest.TestCase):
         for path in ('src/pygrc/models/grc_9_v3.py', 'src/pygrc/models/grc_9_v4.py',
                      'src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
             self.assertFalse(admission.row_bridge_permitted(path, 'P9-8.1b'))
-        for leaf in ('P9-8.1c', 'P9-8.1d', 'P9-8.2'):
+        for leaf in ('P9-8.1d', 'P9-8.2'):
             self.assertNotIn(leaf, ready)
 
     def test_row_bridge_requires_the_committed_review_and_accepted_g3(self):
@@ -154,6 +154,36 @@ class SpecializationReviewTests(unittest.TestCase):
         with patch.object(p, 'git', side_effect=changed):
             with self.assertRaisesRegex(ValueError, 'committed chart/graph review'):
                 admission.row_bridge_authorization(p.ROOT)
+
+    def test_trigger_successor_uses_only_reviewed_lifecycle_owner(self):
+        self.assertEqual(admission.trigger_authorization(p.ROOT), 'P9-8.1c')
+        ready, owners = p.leaf_permissions(p.ROOT)
+        self.assertIn('P9-8.1c', ready)
+        for path in admission.TRIGGER_PATHS:
+            self.assertIn('P9-8.1c', owners[path])
+            self.assertTrue(admission.trigger_permitted(path, 'P9-8.1c'))
+            self.assertFalse(admission.permitted(path, 'P9-8.1c'))
+            self.assertFalse(admission.row_bridge_permitted(path, 'P9-8.1c'))
+            for leaf in ('P9-8.1a', 'P9-8.1b', 'P9-8.1d', 'P9-8.2', 'P9-9.1'):
+                self.assertFalse(admission.trigger_permitted(path, leaf))
+        for path in (*admission.PATHS, 'src/pygrc/models/grc_9_v3.py',
+                     'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
+            self.assertFalse(admission.trigger_permitted(path, 'P9-8.1c'))
+        for leaf in ('P9-8.1d', 'P9-8.2', 'P9-9.1'):
+            self.assertNotIn(leaf, ready)
+
+    def test_trigger_requires_accepted_g3_and_committed_row_subject(self):
+        with patch.object(admission, 'accepted', side_effect=ValueError('G3 missing')):
+            with self.assertRaisesRegex(ValueError, 'G3 missing'):
+                admission.trigger_authorization(p.ROOT)
+        original_git = p.git
+        def changed(root, *args):
+            if args[0] == 'show' and args[1].startswith(admission.TRIGGER_PREDECESSOR + ':'):
+                return b'changed predecessor'
+            return original_git(root, *args)
+        with patch.object(p, 'git', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, 'accepted row bridge subject'):
+                admission.trigger_authorization(p.ROOT)
 
     def test_api_browser_notebook_transport_and_failure_cleanup(self):
         tool = p.ROOT / p.SIDE / 'tool'

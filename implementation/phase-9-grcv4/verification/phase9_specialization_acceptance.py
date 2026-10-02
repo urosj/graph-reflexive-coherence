@@ -61,3 +61,28 @@ def row_bridge_authorization(root):
 def row_bridge_permitted(path, leaf):
     """Call only after row_bridge_authorization(root)."""
     return leaf == ROW_ENTRY and path in PATHS
+
+
+TRIGGER_ENTRY = 'P9-8.1c'
+TRIGGER_PATHS = ('src/pygrc/models/grc_9_v4_lifecycle.py',
+                 'tests/models/test_grc_9_v4_lifecycle.py')
+TRIGGER_PREDECESSOR = '7f33a42f8850dbae57b63c8ad09d85bececbaf6e'
+TRIGGER_PREDECESSOR_HASHES = (
+    '1c3136583ba0148ff708ed980597bf47f3ca5c270f0e6e82fd767a66f2865807',
+    '00bd5b342011effc413e8a8a0dea3273ad552e84de1863d19a8fc175d411568e',
+)
+
+
+def trigger_authorization(root):
+    """User-requested .c after accepted .b; candidate detection only."""
+    accepted(root)
+    p.git(root, 'merge-base', '--is-ancestor', TRIGGER_PREDECESSOR, 'HEAD')
+    for path, expected in zip(PATHS, TRIGGER_PREDECESSOR_HASHES, strict=True):
+        p.require(p.sha(p.git(root, 'show', TRIGGER_PREDECESSOR + ':' + path)) == expected,
+                  'candidate detection requires the accepted row bridge subject')
+    return TRIGGER_ENTRY
+
+
+def trigger_permitted(path, leaf):
+    """Call only after trigger_authorization(root); no later lifecycle entry."""
+    return leaf == TRIGGER_ENTRY and path in TRIGGER_PATHS

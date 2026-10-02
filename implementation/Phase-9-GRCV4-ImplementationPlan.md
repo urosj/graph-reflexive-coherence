@@ -7,8 +7,11 @@ of R1–R10 and the aggregate bounded feasibility scope. The all-ten production
 hold is released. P9-8.1a's four chart/graph checkpoints are implemented and
 the integrated own review (`.4`) passes, including the current phase-boundary
 audit and is committed at `75a6629`. P9-8.1b's four recorded checkpoints are
-implemented and own-reviewed in one pass under the user's request. P9-8.1c
-is the next planned leaf, subject to its scoped execution opening. Performance/cache review
+implemented and own-reviewed in one pass under the user's request, accepted
+and committed at `7f33a42`. P9-8.1c's four recorded checkpoints are implemented
+and own-reviewed together, including an admitted post-commit source fixture,
+and explicitly user-accepted on 2026-10-02.
+P9-8.1d is next, subject to its scoped execution opening. Performance/cache review
 is scheduled at the end of Tranche 8. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
@@ -2326,6 +2329,59 @@ for commands, exact bindings and remaining lifecycle responsibilities.
 The user explicitly accepts this complete reviewed P9-8.1b result on
 2026-10-02 (“review passes fully. commit changes”); the recorded integration
 boundaries and later owners remain in force.
+
+##### P9-8.1c work breakdown
+
+The 2026-10-02 user request continues this leaf in one pass with recorded
+subitems: `.1` policy/stage/scope, `.2` exact baseline gates, `.3` admitted
+post-commit fixture, `.4` integrated pressure review. The reviewed ownership
+maps `G9_completion` to `grc_9_v4_lifecycle.py` and its paired test. Open only
+candidate detection there after accepted `.b` at `7f33a42`; no lifecycle
+transaction, allocator, completed-spark or facade entry follows from the name.
+
+The normative baseline predicate is exactly nine occupied local ports AND
+gradient norm strictly below its tolerance AND minimum signed diagonal Hessian
+strictly below the spark tolerance. The separate basin-seed predicate uses
+the same gradient test and minimum signed Hessian strictly ABOVE its positive
+basin tolerance; it is not an additional candidate gate. Loops count endpoint
+incidences for saturation; expansion-source loop rejection belongs to the
+event owner. Detection recomputes rows from the copied `.b` postbeat inputs and
+binds those inputs and the complete spark policy, without accepting cached
+rows, an external verdict or a preselected candidate list. Numerical comparisons
+must preserve strictness at equality, subnormal magnitudes and overflow-scale
+norms. Use exact squared-norm comparison on the `.b` binary64 row coordinates.
+
+The optional `grc9v3_column_h_assisted` lane is schema-recognized but not selected
+for this baseline implementation. Its legacy threshold, history and sink controls
+are not fields of the closed V4 policy. Execution must reject that lane explicitly;
+no implicit defaults, column proxies or promotion of legacy behavior. Child
+stabilization configuration may be retained as policy content but grants no
+completion capability or history action. Any future opt-in execution needs an
+explicitly bound executable policy and evidence. This is not a dropped generic
+profile: the baseline mechanical predicate is shared by both candidates and all
+ten realization declarations.
+
+An executable saturated C_OS source fixture must pass native generic numerical
+admission and an ordinary commit before its values are handed to the port-owned
+row/detection boundary. Record the exact complete declaration and independent
+expected strict inequalities. This tests actual admitted data; it does not
+introduce a second enabled graph owner or claim integrated GRC9V4 lifecycle,
+new G2 acceptance, expansion or an inactive-to-active threshold crossing.
+
+Implementation/own-review status: all four checkpoints pass together. The
+lifecycle module provides the closed `GRC9SparkPolicy`, detached
+`GRC9V4CandidateDetection` input binding and immutable derived
+`GRC9V4CandidateAssessment` diagnostics. The review covers all 512 occupancy
+masks, 180 independent Decimal cases, exact/adjacent threshold decisions,
+subnormal and maximum-finite norms, both signs, orientation/ordering,
+stale-input rejection and all ten declaration shapes. A numerically admitted
+saturated generic C_OS source commits an ordinary beat before fresh detection.
+The optional column-H lane rejects explicitly. No event or completion is
+emitted. See the [review and final subjects](./Phase-9-GRCV4-Handoff.md#p9-81c-mechanical-candidate-trigger)
+for commands, exact bindings and integration limits. The user explicitly accepts
+the complete reviewed result on 2026-10-02 ("accpeted and commit changes"),
+within this baseline scope, including explicit rejection of the optional
+column-H lane. Later integration and conformance duties remain separate.
 
 ##### Profile integration after shared mechanics
 
