@@ -7,8 +7,9 @@ The user requested a new branch and continuation of P9-8.0. Branch
 scope/work-order clarification is already committed in its ancestry (`39a5af8`).
 This section supersedes the older checkout and pending-transfer instructions
 below. The user accepted the bounded scope/RG numerical checkpoint and requested its
-commit on 2026-10-02. Independent RG numerical review remains open; aggregate
-feasibility and production are not accepted by that instruction.
+commit on 2026-10-02; it is committed as `235b871`. Independent RG numerical
+implementation review remains open; the supplied audit supports the mathematics.
+Aggregate feasibility and production are not accepted by that instruction.
 
 The first deliverable is performed in the existing
 [all-ten feasibility register](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#pinned-all-ten-research-scope--2026-10-02):
@@ -37,13 +38,32 @@ including RG/OS and instantaneous-CI discrimination and the A writer's next
 RG current. Altered clamps and corrupt/wrong-realization chains reject through
 the actual consumer. The separate binary64 NumPy recipe inherits no OS margins.
 The user accepted this bounded numerical checkpoint with the 2026-10-02 commit
-instruction. Independent review and complete profile/event/oracle bindings
-remain open.
+instruction. Independent implementation review and complete profile/event/oracle
+bindings remain open; the retained audit passes the written RG mathematics only.
 
-**Next substantive calculation:** A/C CI/PC/CI+PC represented root/read/
-same-source-writer errors and defining-effect margins on the pinned research
-domains. Review the RG successor in parallel with that work as appropriate,
-then follow the remaining oracle/lifecycle work order. Production,
+The requested continuation has locally verified the
+[six-profile CI/PC/CI+PC numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md):
+nine methods pass after review corrections, with 150 nominal read stages and
+124 effect comparisons. It binds joint-root errors, old-carrier reads and same-source W/Z writers
+through next consumers. Nonzero target carriers remain separately supplied.
+The C_PC reset next-current margin failure is retained; equivalent compensated
+C arithmetic resolves it under the unchanged error/ULP criterion.
+The [retained numerical audit](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md)
+passes the bounded construction and identifies RN-F1: mutable producer operands
+could shift the verifier's reference state. Entry snapshots and separate work
+arrays now close that gap. Four added methods cover thirteen named-target
+mutations, the exact equilibrium counterexample, lawful scratch writes,
+intended-exact enclosures, six C response-order rejections and eight naive
+carrier-copy rejections. The review and historical result files are portable
+repository evidence. The user accepts this bounded numerical successor and
+local RN-F1 correction through the 2026-10-02 commit instruction. The audit did not have the actual RG evaluator for implementation review.
+
+**Next construction task:** complete exact A/C research-profile and event
+bindings and independent oracles, starting with P9-8.3A.1 and corresponding C
+work. Select and validate whole-carrier event transfer explicitly; the separate
+target inputs above do not supply that policy. Direct old-edge Z copying leaves
+27 unsupported unordered pairs on D52; the event oracle must use the chosen
+policy's actual output. Follow with shared transfer/lifecycle and disabled-projection argument and all-ten review. Production,
 native admission and P9-8.1a remain held; nothing in this continuation accepts
 the aggregate or changes the physical resource map.
 

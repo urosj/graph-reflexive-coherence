@@ -1,0 +1,129 @@
+[
+  {
+    "candidate": "A",
+    "realization": "CI",
+    "control": "unmodified",
+    "passed": true
+  },
+  {
+    "candidate": "A",
+    "realization": "CI",
+    "control": "C",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI",
+    "control": "W",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "control": "unmodified",
+    "passed": true
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "control": "C",
+    "passed": true,
+    "rejection": "full current error unresolved"
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "control": "W",
+    "passed": true,
+    "rejection": "full current error unresolved"
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "control": "Z",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "control": "unmodified",
+    "passed": true
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "control": "C",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "control": "W",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "control": "Z",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI",
+    "control": "unmodified",
+    "passed": true
+  },
+  {
+    "candidate": "C",
+    "realization": "CI",
+    "control": "C",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "control": "unmodified",
+    "passed": true
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "control": "C",
+    "passed": true,
+    "rejection": "full current error unresolved"
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "control": "Z",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "control": "unmodified",
+    "passed": true
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "control": "C",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "control": "Z",
+    "passed": true,
+    "rejection": "geometry error budget unresolved"
+  }
+]

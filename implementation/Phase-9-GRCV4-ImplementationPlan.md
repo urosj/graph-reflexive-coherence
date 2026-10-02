@@ -1997,19 +1997,27 @@ Remaining work before any new specialization production, including P9-8.1a:
    global section-tail certificates, 50 nominal read stages, both-role ten-step
    continuation and 44 named effects. Its separate binary64 NumPy arithmetic,
    new residual argument and local results are user-accepted by the 2026-10-02
-   commit instruction; independent review remains open. No backward
-   physical-tube containment or borrowed OS margin is assumed. Next close the
-   outstanding A/C CI/PC/CI+PC root/read/writer error and mechanism checks on their selected
-   domains. Accepted OS effects remain OS-only. This requires an implementable
-   algorithm/arithmetic budget, not a production backend, full native campaign
-   or performance project.
+   commit instruction. The supplied audit passes the RG mathematics; actual
+   evaluator review remains open. No backward physical-tube containment or borrowed OS margin is assumed. The
+   [six-profile CI/PC/CI+PC numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md)
+   now locally passes nine methods with 150 read stages and 124 effect checks:
+   joint-root errors, old-carrier reads and same-source writers, including a
+   compensated C correction for the retained reset margin failure. The
+   [retained independent review](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md)
+   passes the bounded construction; RN-F1 is corrected with verifier snapshots
+   and separate producer work arrays. The user accepts this bounded checkpoint
+   through the 2026-10-02 commit instruction. Separately
+   supplied target carriers still require an event policy in step 3. OS effects remain OS-only; neither
+   construction grants native acceptance.
 3. **Complete profile/event bindings and independent oracles.** Pin the full
    mathematical profile inputs and intended identities, A fixed-row/history/
    initialization recipes, complete C reference maps, separate W/Z policies,
    and independent both-role expected targets and rejection cases. P9-8.3A.1
    retains ownership of the five A oracles; corresponding C construction work
    is also before production. Select a lawful carrier event-transfer policy;
-   the carrier envelope alone does not do so. Reuse the accepted shared
+   the carrier envelope alone does not do so. Direct old-edge copying leaves
+   27 unsupported Z pairs on D52, so each oracle must consume the chosen
+   policy's actual target carrier. Reuse the accepted shared
    lifecycle/charge/disabled-projection contracts to check these choices.
    Native registration, serialization/backend integration and observed runtime
    receipts, rollback and replay are not the output of this step.

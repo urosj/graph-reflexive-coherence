@@ -1774,20 +1774,40 @@ Tranche 7 and current execution permissions remain unchanged.
     realization outputs through the actual consumer. This separate binary64
     NumPy research arithmetic inherits no OS margins. No uniform all-box
     floating-point or accumulated trajectory-error claim. The 2026-10-02 commit
-    instruction accepts this bounded checkpoint; independent review and complete
-    RG profile/event/oracle bindings remain open.
+    instruction accepts this bounded checkpoint. The supplied numerical audit
+    supports the RG mathematics; actual evaluator review and complete RG
+    profile/event/oracle bindings remain open.
+
+  - [x] Construct and locally verify the [six-profile CI/PC/CI+PC numerical successor](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md)
+    (2026-10-02): nine methods pass after review corrections, covering 150 nominal
+    read stages, both-role ten-step targets and 124 defining-effect comparisons through next W/Z
+    consumers. Represented root/error certificates bind old-carrier reads and
+    same-source writers. Nonzero target carriers are separately supplied, not
+    an accepted event transfer. Retain the C_PC reset margin failure and its
+    algebraically equivalent compensated C correction with unchanged precision
+    and effect threshold. Bounded independent review passes with RN-F1 corrected
+    locally. The user accepts this bounded checkpoint through the 2026-10-02
+    commit instruction. No OS margins, uniform all-box
+    arithmetic claim or native solver acceptance is imported.
+
+  - [x] Retain the [numerical independent review and portable evidence](./phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md)
+    and correct RN-F1: verifier entry snapshots, separate producer work arrays,
+    thirteen altered-target rejections and the exact equilibrium counterexample.
+    Preserve intended-exact enclosures, lawful scratch writes and caller inputs.
+    Six wrong C response orders and eight naive carrier-copy cases also reject.
+    This is local correction/validation, not a second independent audit. The
+    user accepts the bounded successor and correction through the 2026-10-02
+    commit instruction. The actual RG evaluator still needs review; aggregate
+    P9-8.0 acceptance and production remain held.
 
   Remaining P9-8.0 work, in order (independent oracle work may overlap):
 
-  - [ ] Complete bounded numerical feasibility for A/C CI, PC and CI+PC on
-    their selected research domains: represented root/error bounds, old-carrier
-    read and same-source writer stages, and defining-effect margins. Reuse
-    accepted OS evidence only for its actual scope; do not import OS margins
-    or require a full native solver/writer acceptance campaign here.
   - [ ] Finish exact A research-profile/event bindings and the five independent
     A oracles under P9-8.3A.1: source/target preimages, fixed-row stage/history
     and reference-current recipes, old/new-edge W policy, separate whole-Z
-    policy, distinct current/reset expected targets and negative cases.
+    policy, distinct current/reset expected targets and negative cases. Direct
+    old-edge Z copying leaves 27 unsupported pairs; use the chosen policy's
+    actual target carrier in each oracle.
     Construction evidence precedes implementation; runtime registration,
     backend serialization/integration and comparisons remain later work.
   - [ ] Finish exact C research-profile/event bindings and the five C oracles:
