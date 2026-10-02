@@ -2078,8 +2078,14 @@ Remaining work before any new specialization production, including P9-8.1a:
    Its [bounded construction review](./phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md)
    passes under reconstructed dependencies; the supplied report is retained.
    The user accepts this checkpoint through the 2026-10-02 commit instruction.
-   Actual evaluator implementation review remains open. Next complete selected-case compatibility and
-   reconcile the ten rows' concrete evidence and restrictions.
+   Actual evaluator implementation review remains open. The subsequent
+   [selected-case reconciliation](./phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md)
+   now maps all ten records and target oracles, derives charge/history
+   compatibility and maps lifecycle/disabled expectations to existing contracts.
+   It retains the saturated source's legacy-undefined rejection and the later
+   native charge-gate boundary. The user accepts this bounded reconciliation
+   through the 2026-10-02 commit instruction; aggregate review and acceptance
+   remain open.
 
 4. **Review and accept the aggregate scope.** Every row must have concrete
    feasibility evidence and explicit restrictions. Retain unresolved or

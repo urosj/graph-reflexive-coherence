@@ -1811,14 +1811,16 @@ Tranche 7 and current execution permissions remain unchanged.
   - [ ] Independently review the actual RG numerical evaluator and resolve its
     findings on the pinned scope. The supplied mathematical review did not
     include that implementation. This review may overlap construction below.
-  - [ ] Bind complete mathematical source/request/target operands for all ten
+  - [x] Bind complete mathematical source/request/target operands for all ten
     rows on the pinned source/positive-D52 case, both roles and ten-step horizon.
     Start with a shared operand record and independently checked C_OS companion;
     include complete C reference maps, then A fixed-row/initializer/reference-
     current and W recipes. Supply or derive every operand; retain intended
     identity preimages. Native descriptor registration/serialization is later.
-    Concrete local companion records now cover all ten rows; final binding
-    reconciliation, remaining review and aggregate acceptance are still open.
+    The [selected-case reconciliation](./phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md)
+    now maps complete research records, inherited fields, numerical owners and
+    target oracles for all ten rows. Remaining review and aggregate acceptance
+    stay open; native identity completion is later.
   - [x] Construct and locally verify the first
     [shared-input/C_OS companion](./phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md)
     (2026-10-02): explicit rational inputs and complete C references, independent
@@ -1886,20 +1888,29 @@ Tranche 7 and current execution permissions remain unchanged.
     passes without corrections under reconstructed dependencies; only its report
     was available. The user accepts this checkpoint through the 2026-10-02 commit
     instruction. Actual RG numerical implementation review remains open.
-  - [ ] Derive independent bounded event/target expectations for all ten rows:
+  - [x] Derive independent bounded event/target expectations for all ten rows:
     event preconditions/trigger, topology/role IDs, resources, W or C references,
     Z disposition, target-zero admission, positive continuation and defining
     effects at declared stages.
     Retain distinct current/reset inputs and focused construction failures.
     Research oracles feed P9-8.3A.1 and corresponding C owners; full native
     fixture encodings, runtime receipts and comprehensive failure suites stay
-    with their later acceptance/execution work.
-  - [ ] Check selected-case transfer compatibility: charge, W/Z disposition,
+    with their later acceptance/execution work. The five accepted companions
+    supply these local expectations for all ten rows; the actual RG numerical
+    owner's independent implementation review remains separately unchecked.
+  - [x] Check selected-case transfer compatibility: charge, W/Z disposition,
     target/reset domain inclusion and failure/no-publication expectations.
     Map lifecycle and disabled projection to accepted contracts and identify
     conflicts. Reuse generic arguments; actual rollback/replay, crossings and
     forty disabled-runtime cells remain later. Route genuinely absent authority
-    through claims → paper/spec before implementing its consumers.
+    through claims → paper/spec before implementing its consumers. The
+    [local argument](./phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md)
+    establishes shared exact transfer/history identities, maps actual target
+    domains and existing lifecycle rules, and retains the selected legacy
+    undefined-domain rejection. Native charge-policy arithmetic and runtime
+    transaction checks remain later. The user accepts this bounded reconciliation
+    through the 2026-10-02 commit instruction; aggregate review and acceptance
+    remain open and no aggregate row closes through this checkmark.
   - [ ] Review all ten disposition rows against those concrete deliverables and
     accept stated restrictions explicitly. No unresolved row or silently
     dropped profile at production entry without a user-approved scope change.

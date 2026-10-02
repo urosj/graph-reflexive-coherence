@@ -144,9 +144,19 @@ available. The user accepts the CI and RG bounded companions through the
 2026-10-02 commit instruction. The actual RG evaluator's independent implementation
 review remains open; the event audit explicitly did not inspect that source.
 
-**Next construction task:** selected-case compatibility and evidence reconciliation using the
-[bounded deliverables](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
-Independently review the actual RG numerical evaluator as a separate open item.
+The CI/RG checkpoint is committed as `056e835`. The subsequent
+[selected-case compatibility reconciliation](./phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md)
+now assembles all ten input/oracle/domain bindings and derives shared charge,
+W-lineage, carrier-disposition and target-admission compatibility. It maps reset,
+rejection, coarse/Split and all four disabled surfaces to existing contracts.
+The saturated source's disabled expansion must reject as legacy-undefined;
+research charge certificates do not execute the native binary64 charge gate.
+The user accepts this bounded reconciliation through the 2026-10-02 commit
+instruction; aggregate review and production permission remain separate.
+
+**Next task:** obtain independent review of the actual RG numerical evaluator
+with its exact dependencies, then review all-ten disposition/restrictions and
+obtain aggregate user acceptance. No further witness iteration is currently indicated.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
 its actual policy outputs rather than the older separately seeded targets.
 
