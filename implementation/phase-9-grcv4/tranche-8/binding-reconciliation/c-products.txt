@@ -1,0 +1,55 @@
+test_CI_root_and_postcontinuity_rederivation (test_p977_c_ci_local.CCILocalProductTests.test_CI_root_and_postcontinuity_rederivation) ... ok
+test_candidate_fixed_stage_and_exact_controls (test_p977_c_ci_local.CCILocalProductTests.test_candidate_fixed_stage_and_exact_controls) ... ok
+test_common_exact_profile_product (test_p977_c_ci_local.CCILocalProductTests.test_common_exact_profile_product) ... ok
+test_fixed_profile_lifecycle_and_parent_ownership (test_p977_c_ci_local.CCILocalProductTests.test_fixed_profile_lifecycle_and_parent_ownership) ... ok
+test_PC_old_history_and_complete_C_readmissions (test_p977_c_pc_local.CPCLocalProductTests.test_PC_old_history_and_complete_C_readmissions) ... ok
+test_candidate_fixed_stage_and_exact_controls (test_p977_c_pc_local.CPCLocalProductTests.test_candidate_fixed_stage_and_exact_controls) ... ok
+test_common_exact_profile_product (test_p977_c_pc_local.CPCLocalProductTests.test_common_exact_profile_product) ... ok
+test_fixed_profile_lifecycle_and_parent_ownership (test_p977_c_pc_local.CPCLocalProductTests.test_fixed_profile_lifecycle_and_parent_ownership) ... ok
+test_late_readmission_and_reset_failure_keep_both_histories (test_p977_c_pc_local.CPCLocalProductTests.test_late_readmission_and_reset_failure_keep_both_histories) ... ok
+test_candidate_fixed_stage_and_exact_controls (test_p977_c_ci_pc_local.CCIPCLocalProductTests.test_candidate_fixed_stage_and_exact_controls) ... ok
+test_common_exact_profile_product (test_p977_c_ci_pc_local.CCIPCLocalProductTests.test_common_exact_profile_product) ... ok
+test_coupled_root_complete_trial_and_role_reconstruction (test_p977_c_ci_pc_local.CCIPCLocalProductTests.test_coupled_root_complete_trial_and_role_reconstruction) ... ok
+test_fixed_profile_lifecycle_and_parent_ownership (test_p977_c_ci_pc_local.CCIPCLocalProductTests.test_fixed_profile_lifecycle_and_parent_ownership) ... ok
+test_late_readmission_and_reset_failure_keep_both_histories (test_p977_c_ci_pc_local.CCIPCLocalProductTests.test_late_readmission_and_reset_failure_keep_both_histories) ... ok
+test_candidate_and_section_equations_with_distinct_roles (test_p977_c_rg2b_local.CRG2bLocalProductTests.test_candidate_and_section_equations_with_distinct_roles) ... ok
+test_candidate_fixed_stage_and_exact_controls (test_p977_c_rg2b_local.CRG2bLocalProductTests.test_candidate_fixed_stage_and_exact_controls) ... ok
+test_common_exact_profile_product (test_p977_c_rg2b_local.CRG2bLocalProductTests.test_common_exact_profile_product) ... ok
+test_completion_and_readmission_rejections_are_atomic (test_p977_c_rg2b_local.CRG2bLocalProductTests.test_completion_and_readmission_rejections_are_atomic) ... ok
+test_fixed_profile_lifecycle_and_parent_ownership (test_p977_c_rg2b_local.CRG2bLocalProductTests.test_fixed_profile_lifecycle_and_parent_ownership) ... ok
+test_registered_checker_and_shared_browser_projection (test_p977_c_rg2b_local_evidence.CRG2bLocalEvidenceTests.test_registered_checker_and_shared_browser_projection)
+Actual new checker + generic view; not a full status-chain rerun. ... ERROR
+test_retained_product_and_rehashed_mutations (test_p977_c_rg2b_local_evidence.CRG2bLocalEvidenceTests.test_retained_product_and_rehashed_mutations) ... ERROR
+
+======================================================================
+ERROR: test_registered_checker_and_shared_browser_projection (test_p977_c_rg2b_local_evidence.CRG2bLocalEvidenceTests.test_registered_checker_and_shared_browser_projection)
+Actual new checker + generic view; not a full status-chain rerun.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p977_c_rg2b_local_evidence.py", line 19, in test_registered_checker_and_shared_browser_projection
+    view=check(initial_review={'record_digest':record['initial_review_digest']})
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/phase-9-grcv4/verification/verify_p977_c_rg2b_local.py", line 367, in check
+    validate(value)
+  File "implementation/phase-9-grcv4/verification/verify_p977_c_rg2b_local.py", line 65, in validate
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()),'C_RG2b local execution source drift')
+  File "implementation/phase-9-grcv4/verification/audit_phase9.py", line 72, in require
+    raise ValueError(message)
+ValueError: C_RG2b local execution source drift
+
+======================================================================
+ERROR: test_retained_product_and_rehashed_mutations (test_p977_c_rg2b_local_evidence.CRG2bLocalEvidenceTests.test_retained_product_and_rehashed_mutations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p977_c_rg2b_local_evidence.py", line 62, in test_retained_product_and_rehashed_mutations
+    audit.validate(original)
+  File "implementation/phase-9-grcv4/verification/verify_p977_c_rg2b_local.py", line 65, in validate
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()),'C_RG2b local execution source drift')
+  File "implementation/phase-9-grcv4/verification/audit_phase9.py", line 72, in require
+    raise ValueError(message)
+ValueError: C_RG2b local execution source drift
+
+----------------------------------------------------------------------
+Ran 21 tests in 37.892s
+
+FAILED (errors=2)

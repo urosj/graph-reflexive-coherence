@@ -8,13 +8,15 @@ accepts both R1–R10 and the aggregate scope on 2026-10-02 (“i accept both”
 All ten rows are provisionally closed; P9-8.0 is complete and its production
 hold is released. Current branch: `work/p9-8-1-shared-mechanics`, from merged
 `main` at `7ba0f61`. P9-8.1a.1 fixed chart and endpoint primitives are now
-implemented with passing focused tests. The next task is to reconcile the
-current phase-boundary failure before implementing P9-8.1a.2 graph admission.
+implemented with passing focused tests and committed at `58d5035`. The current
+phase-boundary drift is reconciled; the boundary audit
+passes. See the [reconciliation review](./phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md)
+for the exact roster, verification and separate historical evidence failures.
+The next implementation subitem is P9-8.1a.2 graph admission.
 The existing P9-8.1a permission is unchanged. The [four-subitem breakdown](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown)
 then covers graph admission, identity/projection and integrated review. These
 are implementation checkpoints, not new machine gates. The broader phase
-boundary currently fails on pre-existing maintenance/work bindings as recorded
-[below](#p9-81a1-chart-and-endpoint-implementation); no parent closure is claimed.
+boundary now passes after the reconciliation below; no parent closure is claimed.
 The chronology below
 records earlier checkpoints and does not reopen their resolved items.
 
@@ -204,9 +206,8 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next task:** review and reconcile the phase-boundary drift recorded below,
-then pass the current audit before further native implementation. P9-8.1a.2
-graph admission follows, then P9-8.1a.3 graph identity/projection and P9-8.1a.4
+**Next implementation task:** P9-8.1a.2 graph admission, then P9-8.1a.3 graph
+identity/projection and P9-8.1a.4
 integrated review. P9-8.1a.1 is implemented and focused verification passes.
 Keep the formal work-manifest iteration `P9-8.1a` and its
 existing scoped source/test permission. The P9-8.0 hold is released; later
@@ -223,7 +224,9 @@ native scope acceptance still needs its own gates. The user-requested own
 actual RG evaluator review and corrections are now explicitly accepted; the
 older external audits retain their original limits. Aggregate technical review
 and explicit restriction/aggregate acceptance are complete. P9-8.1a retains
-its existing scoped permission; current boundary reconciliation is still due.
+its existing scoped permission; current boundary reconciliation is recorded in
+the linked review. Retained scientific-source reconciliation remains separate
+from this implementation-integrity result.
 
 ## P9-8.1a.1 chart and endpoint implementation
 
@@ -281,8 +284,8 @@ is required to test this checkout: the environment also contains an installed
 module. The subsequent run verified the repository module's import origin.
 No numerical-family campaign was needed for these discrete primitives.
 
-The [work manifest](./phase-9-grcv4/runtime/RuntimeWorkManifest.json) adds exactly
-two entries under the existing formal iteration `P9-8.1a`. Its record digest,
+At the `.1` checkpoint, the [work manifest](./phase-9-grcv4/runtime/RuntimeWorkManifest.json)
+added exactly two entries under the existing formal iteration `P9-8.1a`. Its record digest,
 accepted G3/path permission and both new hashes check correctly; every previous
 entry and authority field is unchanged:
 
@@ -291,7 +294,9 @@ entry and authority field is unchanged:
 | `src/pygrc/models/grc_9_v4_topology.py` | `a924c92265d8143f9ef2c64f0aafc0385e765867e3bfab9a01c0106eb444b84e` |
 | `tests/models/test_grc_9_v4_topology.py` | `c1ca83efd6e2befed73cbb4affff4c36d68b9bde4bfe4b226c4b8ce70d1b7bf4` |
 
-**Full phase-boundary result: failed, not passed.** The last command stops at
+**Initial phase-boundary result at `.1`: failed.** This failure is resolved by
+the later [reconciliation](./phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md).
+The initial command stopped at
 `implementation maintenance binding drift: implementation/Phase-9-GRCV4-Handoff.md`.
 A complete inventory of the two binding lists finds 13 maintenance mismatches
 and 25 existing work-entry mismatches, each already different at committed
@@ -302,23 +307,25 @@ set includes earlier generic source/tests and `pyproject.toml`. These are
 broader than this increment's two files, and overlap must not be summed into
 a unique-file count. No policy hash or old work entry is changed to mask them.
 
-The diagnostic is reproducible without changing either binding list:
+The initial diagnostic is reproducible from the committed `.1` subject even
+after the current binding lists have been reconciled:
 
 ```python
 # Run with PYTHONPATH=src:implementation/phase-9-grcv4/verification.
+import json
 import phase9_implementation_policy as p
 for manifest, field in ((p.POLICY, 'artifact_bindings'), (p.WORK, 'entries')):
-    for row in p.read(p.ROOT / manifest)[field]:
-        actual = p.sha((p.ROOT / row['path']).read_bytes())
+    original = json.loads(p.git(p.ROOT, 'show', '58d5035:' + manifest))
+    for row in original[field]:
+        actual = p.sha(p.git(p.ROOT, 'show', '58d5035:' + row['path']))
         if actual != row['sha256']:
             baseline = p.sha(p.git(p.ROOT, 'show', '7ba0f61:' + row['path']))
             print(row['path'], 'already_drifted_at_baseline=', baseline != row['sha256'])
 ```
 
-This records completed primitive implementation and focused checks, not a green
-whole-phase boundary or accepted P9-8.1a parent. Reconcile the actual changed
-subjects and applicable verification records and pass the current audit before
-starting `.2`; rerun the boundary check again for final parent review in `.4`.
+This initial checkpoint recorded completed primitive implementation and focused
+checks with a failed whole-phase boundary. The subsequent reconciliation passes
+the current boundary before `.2`; rerun that check for final parent review in `.4`.
 Do not replace that work with blind hash updates or general ATC acceptance.
 P9-8.0 remains accepted, and its scientific restrictions remain unchanged.
 
@@ -330,8 +337,11 @@ later source refactors include `a7a7d0a` (2026-09-27) and `2074860`
 (2026-09-29), followed by further source and planning edits. The drift was
 already present at the merged baseline. It should have been detected before
 starting `.1`; the earlier wording deferring reconciliation to parent closure
-was too weak. Further implementation waits for reviewed reconciliation and a
-passing current boundary, without changing the accepted scientific scope.
+was too weak. The user then requested this commit and reconciliation. The exact
+existing file roster and current bindings are now reconciled without changing
+the accepted scientific scope. Historical C_RG2b retained-source checks and the
+separate ATC ancestry remain explicit failures in the reconciliation review;
+the passing boundary does not relabel them as fresh scientific verification.
 
 ## Resume on another machine
 
@@ -2503,6 +2513,11 @@ never overwrite published execution evidence.
 - Retain only useful review/evidence material, using repository-relative paths.
   Imported review files need no machine-local provenance or separate original
   hash merely because they were copied into the repository.
+- Before a Phase 9 source/planning handoff or commit, run the current
+  `audit_phase9_implementation.py --boundary-only` on the final edited subject.
+  Reconcile only reviewed changes before refreshing bindings. Focused tests
+  and historical acceptance cannot substitute for a passing current boundary;
+  report any failure before describing implementation entry as ready.
 - A commit request is user acceptance. Preserve historical evidence and record
   successor acceptance separately when wiring the next authorized entry.
   Do not commit, push, merge, or start later work just because this note lists it.

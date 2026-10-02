@@ -6,8 +6,8 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 aggregate bounded feasibility scope. All ten rows are provisionally closed;
 the all-ten production hold is released. P9-8.1a is next under its existing
 scoped permission and is broken into four implementation subitems below.
-The `.1` primitives pass focused checks; reconcile the existing phase-boundary
-failure before implementing `.2` graph admission.
+The `.1` primitives pass focused checks; the current phase-boundary failure is
+reconciled and its audit passes. `.2` graph admission is next.
 General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
@@ -1968,8 +1968,10 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   not new machine gates or independent permission requests. Each implementation
   increment carries focused tests and its exact work-manifest binding under
   `P9-8.1a`; the parent closes after all four are verified and reviewed.
-  Reconcile the existing phase-boundary drift and pass the current audit before
-  starting `.2`; the `.4` review also requires a passing boundary on its subject.
+  The [current boundary reconciliation](./phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md)
+  passes the entry audit before `.2`; `.4` also requires a passing boundary on
+  its exact subject. Historical scientific-source failures in that review
+  retain their separate scopes.
   [Scope and exit criteria](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown).
 
   - [x] P9-8.1a.1: Fixed chart and endpoint primitives. Implement the exact
@@ -1980,7 +1982,8 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     seven focused methods plus sixteen generic graph regressions passing;
     Ruff/mypy pass and both new source/test hashes are registered under
     `P9-8.1a`. This checks off the primitive implementation only. The global
-    phase-boundary check remains failed on pre-existing bindings; see the
+    phase-boundary check initially failed on pre-existing bindings, now
+    reconciled by the linked boundary review; see the
     [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a1-chart-and-endpoint-implementation).
   - [ ] P9-8.1a.2: Immutable port-graph admission. Bind stable node/edge IDs,
     edge kinds, live endpoints and tail/head orientation. Reject duplicate IDs,
@@ -2003,11 +2006,11 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     Record focused results, exact source/test identities and the existing
     execution-boundary check; review the complete chart/port graph before
     marking the parent complete. Lifecycle, allocator and profile conformance
-    remain with their later owners. The current full-boundary check fails:
-    thirteen maintenance bindings and twenty-five existing work entries differ
-    from their recorded hashes, all already differing at baseline `7ba0f61`.
-    Reconcile their concrete reviewed subjects before `.2` implementation;
-    adding the two new valid entries does not repair those older bindings.
+    remain with their later owners. The initial thirteen maintenance and
+    twenty-five work-entry mismatches, omitted committed files and optional
+    dependency integration are reconciled in the linked review. Repeat the
+    current boundary audit after `.2`–`.4` edits; the passing `.1` maintenance
+    subject cannot be reused as evidence for later implementation bytes.
 - [ ] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
 - [ ] P9-8.1c: Implement and verify the mechanical candidate trigger.
 - [ ] P9-8.1d: Implement and verify column coarse-graining and Split.

@@ -6,9 +6,10 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 of R1–R10 and the aggregate bounded feasibility scope. The all-ten production
 hold is released. Implement P9-8.1a under its existing scoped permission using
 the four subitems below. Chart/endpoint primitives (`.1`) are implemented and
-focused checks pass. Reconcile the pre-existing binding drift recorded in the
-handoff and pass the current phase-boundary audit before implementing `.2`
-graph admission. C_OS remains the first profile integration checkpoint.
+focused checks pass. The current phase-boundary drift is reconciled and the
+audit passes; `.2` graph admission is next. The reconciliation review records
+separate historical scientific-source failures without promoting their scope.
+C_OS remains the first profile integration checkpoint.
 General autonomous topology remains separate under 7T, and later native gates
 and execution-policy openings retain their existing requirements.
 
@@ -2216,13 +2217,15 @@ normalize to integers; Boolean, coercible, fractional, nonfinite and out-of-rang
 coordinates reject. Seven new methods and sixteen generic graph regressions
 pass against repository sources, as do Ruff and mypy. The two new exact source/
 test entries are bound to the existing `P9-8.1a` scope. Parent completion remains
-open: the global checker encounters thirteen maintenance and twenty-five prior
-work-entry hash mismatches already present at `7ba0f61`. No historical binding,
-permission or accepted evidence is repinned by this increment. See the
+open. The initial global check encountered thirteen maintenance and twenty-five
+prior work-entry hash mismatches already present at `7ba0f61`. The subsequent
+[boundary reconciliation](./phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md)
+registers the omitted committed files, refreshes reviewed current bindings and
+passes the phase-boundary audit. Historical acceptance records stay unchanged.
+See the
 [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a1-chart-and-endpoint-implementation)
-for commands, source identities and the boundary failure distinction. Review
-the intervening changes, reconcile justified bindings and pass that audit
-before starting `.2`; repeat the boundary check for final parent review in `.4`.
+for commands, source identities and the original boundary failure. Repeat the
+boundary check for each changed subject and final parent review in `.4`.
 
 ##### Profile integration after shared mechanics
 

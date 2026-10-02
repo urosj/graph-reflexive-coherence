@@ -1,0 +1,16 @@
+test_current_boundary_and_exact_committed_roster (test_p981_binding_reconciliation.BindingReconciliationTests.test_current_boundary_and_exact_committed_roster) ... ok
+test_exact_optional_flint_extra_and_legacy_dependencies (test_p981_binding_reconciliation.BindingReconciliationTests.test_exact_optional_flint_extra_and_legacy_dependencies) ... ok
+test_helper_cannot_borrow_another_owner_or_specialization_leaf (test_p981_binding_reconciliation.BindingReconciliationTests.test_helper_cannot_borrow_another_owner_or_specialization_leaf) ... ok
+test_helper_content_still_needs_a_current_work_binding (test_p981_binding_reconciliation.BindingReconciliationTests.test_helper_content_still_needs_a_current_work_binding) ... ok
+test_legacy_source_remains_frozen (test_p981_binding_reconciliation.BindingReconciliationTests.test_legacy_source_remains_frozen) ... ok
+test_published_run_cannot_be_rehashed_as_new_work (test_p981_binding_reconciliation.BindingReconciliationTests.test_published_run_cannot_be_rehashed_as_new_work) ... ok
+test_rehashed_maintenance_cannot_rewrite_retained_context (test_p981_binding_reconciliation.BindingReconciliationTests.test_rehashed_maintenance_cannot_rewrite_retained_context) ... ok
+test_rehashed_reconciliation_cannot_change_scope_or_subject (test_p981_binding_reconciliation.BindingReconciliationTests.test_rehashed_reconciliation_cannot_change_scope_or_subject) ... ok
+test_rehashed_roster_cannot_drop_a_protected_context_path (test_p981_binding_reconciliation.BindingReconciliationTests.test_rehashed_roster_cannot_drop_a_protected_context_path) ... ok
+test_rehashed_work_cannot_promote_support (test_p981_binding_reconciliation.BindingReconciliationTests.test_rehashed_work_cannot_promote_support) ... ok
+test_unlisted_runtime_and_research_additions_still_reject (test_p981_binding_reconciliation.BindingReconciliationTests.test_unlisted_runtime_and_research_additions_still_reject) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 162.070s
+
+OK

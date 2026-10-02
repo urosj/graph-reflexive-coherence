@@ -11,19 +11,227 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "49eb4fe7197e100a63f577c138aa92d944b4aae1a2bb27fe30d890f9be82beae"
+      "sha256": "2e7963e28cc54cf53d1aa35cdaaad037971db9d71b0fd867be026d5ae121e870"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "d62dee8751022bd45036b5a55553e36fb62fe401892f7db5fdb2c05b79905140"
+      "sha256": "a6e3c0db5d6614cd36e47cacbcad9d8d6e80b8d15d56516f826f328af1e62802"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "09f31e0819b5787e1ce340c05d8829565fdbd51075199069013e8912fb851825"
+      "sha256": "30533c31f60e17b25354d6c5e23b18a4d489b4c0375b4b5e1e6c34f659d6be17"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
       "sha256": "68c1df72fdd4980cda3c0c8071fff3cc055b30255cf1d60778c6f17c463fa888"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignChecklist.md",
+      "sha256": "e6b44a484cd53d4564f438b9193c6731a70153321296b44c20f77679231abb78"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignDecisionLedger.md",
+      "sha256": "6f87ae43ecf4324e2ded87c82f5ecff206751e51303b656c2edb873c528c544c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignPlan.md",
+      "sha256": "305582aabeccd75e2ff52ebc74393f580c3d587c69d74f5ddb03e287142ee038"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/README.md",
+      "sha256": "71fef6a44b22634c88058e62ca7eff31a4f44da9fc034168823b76493977a2b1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1Acceptance.md",
+      "sha256": "9baea5a4545e40c3829f130b59e4372434bf3eb3ecc3a986e6a04679a7d831e6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC1CausalBoundaryProposal.md",
+      "sha256": "443880480cee234b3da850290296395c43237a6976f3d891972049370e4952a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATC2CandidateClosureProposal.md",
+      "sha256": "aa3a9de4cfc15a0be0487203ba6a470d0109e2f96667d54219d884fb5a85723b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCAOSClaimDebtReconciliation.md",
+      "sha256": "4df93937065110af5aa38b897a66af25c4fbf41ea0eda5d703c4b005e9f250a8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCAddressabilitySufficientConditions.md",
+      "sha256": "c530cf24b5243e9399da8b597b031d7bd63031d7a28a6d812246bd671f42c4a8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIClaimDebtAdjudication.md",
+      "sha256": "6544aae2a1021bd818bad76d18421f19aede6bb1cc8a4ec6743fb4949be278da"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIDomainsAndReference.md",
+      "sha256": "2bb3a0408611e19bc40c33f90a771e822ccafd2efe30fd41f534f2ae97fa6ebf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIP1CausalChain.md",
+      "sha256": "ec7ec8e9abbd0d882804c99d76451e2882a113aac5d04e026d191e9f70ce8cbb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIP2Reference.md",
+      "sha256": "bb3ca4fa3ce4da88de926046013642959893953c731fb9c382143815afebfe57"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIPCRealizationNativeProgram.md",
+      "sha256": "1fa5247e588aff0667927ae0f9200d57f227566bc50238464c411b6848775f18"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIPClaimDebtAdjudication.md",
+      "sha256": "91bc595f86a966cb0f849a70de127b8fd879a9936fdb1227db2fc2d6cf9257e8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCIPCoupledProgram.md",
+      "sha256": "2bb8544637fb8ce392be837af4690f111132de11ff07e180f3d6eb615d4771d0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCandidateAResearchClosure.md",
+      "sha256": "ead82318c40f584df85166f7c4e512bf3f6cb333afbc477c84b556e8cf661ff0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCapabilityClosureContinuation.md",
+      "sha256": "af8744d34824da6a1cbf8b6e0f0f85fd5d6fe5fa51b30233b638a2e72c107bfe"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCompetingSourceInformation.md",
+      "sha256": "1362a469d424efb4c13e7f94aac7f07a4febb81320d6d0527605cf3ee5119229"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCCriticalModeAndRefinementTest.md",
+      "sha256": "83531d3fc051bf8b88e2636c41ae88a8d34273958b863e33c39fae17237c9cca"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCFissionContinuationAndSupport.md",
+      "sha256": "ca1b02781d2119130c9f03a7ae9984dec12897c0cb9d09c49a9c0174fc23a0ab"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCFissionTargetDiscrimination.md",
+      "sha256": "4ccbb88c936e3d0b6e19fc8a8090ec7becac423e0e74cdbf37f4256f0a276357"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCHistoryFeedbackContinuation.md",
+      "sha256": "6a48dc7cf99c52bf321e630189ad91b5d0b035d7c01848e5b910287ca871a345"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCLocalizedSectorFission.md",
+      "sha256": "98abd6cf13b8c4cfa41ee6f812ebd9297716d41185ba906873ea68cffcf2a1eb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCModalSplitDiscrimination.md",
+      "sha256": "b1afd7ee03070afa2ea37093c5d885283295e7fe08a3422276250918842271c0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCOSGeometryFeedbackContinuation.md",
+      "sha256": "0287a5ace19bb124af42361b416b8a7cf1408f9b335af5ddc791e01c0f1c6e48"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCPCClaimDebtAdjudication.md",
+      "sha256": "87353f53093db3537561e1d6536e43f1260c70fe6bdb35421348ea6a5ae4fc0a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCPartitionDependentStability.md",
+      "sha256": "f668abcde69c23fa2772e84849f9e0755d5cb67316bc44e51f568869b0a8b2cc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCPartitionOSFeedback.md",
+      "sha256": "a465812ac0c405d5489db16359ebf84b988308c575805ce21cdcd700dc753c6f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCRGATCClaimDebtAdjudication.md",
+      "sha256": "4f6b7169f1ec54c13708082559e3a3388a2d9ae561b2e92a89e86cb3cd0328e7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCRGATCProgram.md",
+      "sha256": "56b8addbd6b813ad187ea0e6b7a994ea3c1b6120e199d7f71ae7aec1747b9041"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCRefinementDiscrimination.md",
+      "sha256": "c8e0dd3f537052f2121c364fc7dcf28dba0e65509a139d11ef7cd41154fb055b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAdjudication.md",
+      "sha256": "afb5dbda9d21f92785a401318ea745f02334294c8d70b82f5f525d80ac74bd39"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorChannelsAndRequests.md",
+      "sha256": "34974e4489f9e62a805bf5d105be78b37b06e6597084a73b9a3db1ef59104840"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorConstitutiveAcceptance.md",
+      "sha256": "202ffe2803fd25808e528bdd2b060a8091012527d7c3aa3411033af696a13abe"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorConstitutiveProposal.md",
+      "sha256": "72a4f0063e60ee2a0bd983d52fc66a3fc05a2c8ae2cbd656a6a4019cfe23a13d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackBoxAdjudication.md",
+      "sha256": "d75cacf5390be102b3728d6d07a89cf62f682800580a23aa8a1a1cfcbfdead39"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackBoxCertification.md",
+      "sha256": "fec8776c6549375423f9ee7349ceb0cfc4f165fabcdeaf3bcc96a03edb42f81c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackLiftProposal.md",
+      "sha256": "bc633922044f222e595d71f37c6807870bf5b31d0adfe4015fbea8edc74375f4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackLiftResults.md",
+      "sha256": "ed4993de73b2368af1d612319619647f89244545f224f54171ecf292432968c4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackPointAdjudication.md",
+      "sha256": "9f2c7cce87ff7ecd8260ac09833b5697f9efa14c7aad8de1bc99960a3406dd1b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReadBackPointCertification.md",
+      "sha256": "ee0fa83328e3b2352664af2836203abff9bb30cd0928e922537da63a7e74cb90"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReferenceAdjudication.md",
+      "sha256": "f5989462a9eaac59056ff1219f32dfc9778de310af10070531513545ca10b7c9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorReferenceConformance.md",
+      "sha256": "d842ad5e289b5309bb6c241218e4589ef1c0b574879e475a5182623ef4422c7d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorStateDomain.md",
+      "sha256": "41fc0fd8bb831b16b7617945be8aa1013111a5dbf5b28fa597dea7f62d78d3b7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSectorStateDomainAdjudication.md",
+      "sha256": "81290061288514874e6b5518fca0e700cce847fee554bf4888627878b2e1576b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSourceFissionProposal.md",
+      "sha256": "b07f9d7672c4774adfabb6424f4ee905c1be25320de2bea95966f39e67bebd67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSourcePartitionSymmetry.md",
+      "sha256": "f2f91e4e5f839f0b1ef3b78cb26eb9dbf8979bd03f37f620bd9c8be3227f6fe1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSuccessorInvestigationOpening.md",
+      "sha256": "d8ac8dc5673774b2b1b94b68364231ee841eae054dcde276e4d853f266c00607"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSupportFixtureReviewAndBridge.md",
+      "sha256": "4f8c8b1942f36ccd2654a761f9105c3f6a7754e343c48f584fd5e8b9f0c92681"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCSupportLocalResearch.md",
+      "sha256": "0041f90a24c6a07c2a96af91efc2ef28446e3524f11b57293eae519a19574743"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/ATCUnsplitViabilityAndMechanicalBoundary.md",
+      "sha256": "5febdf4f4a5074e456f77037441072ca729fe98e59492501c00589defe625247"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthority.json",
@@ -58,6 +266,686 @@
       "sha256": "09c080fd835d096372cff6204e42ddf0baba2b2da674fee905c7b5df2c83ed84"
     },
     {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/2026-09-GRCV4-Autonomous-Topology-Extension-Proposal-Draft7.md",
+      "sha256": "801a9152adf3ac6b7213c285924fcfe10f9225e1316162426cbd16c6c3ac30c9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/2026-09-GRCV4-Autonomous-Topology-Extension-Proposal-Draft8.md",
+      "sha256": "1dbd95870c1ef5470d72d807a169a8dac5a52c9d72835d30f86dfd002aa95a3d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/autonomous-topology-change/README.md",
+      "sha256": "387d67c580f53d1df3946e2c1872e862e7c6978460125bb70e39164fa525a4d6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/ATCCIClaimDebtLedger.json",
+      "sha256": "9a7a3db04b0878ab13628221323b93e2525ee8a11e68563bd908c75ee80ff695"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/CI3-FinalIndependentReview.md",
+      "sha256": "e4b016fcadc150272debf8f210ea580b1fa2bf3aeea3e6a1d90c9c061e4a4b8b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-admission/README.md",
+      "sha256": "5f649f5b33810c388dd1767761d46878be92e1a77213d8722d624bd183791fe9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCAnchorCertificate.json",
+      "sha256": "3697e3030855f93552f7b6797fb0dc05be82a63f5076826d5d613789b21b358b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCCIPCStepBoundaryAudit.json",
+      "sha256": "6aab00835467a21c00e751b1b3553cb6bc68b52d9cd0fec09fa5d45aaa32b3a4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC3CausalChainCertificate.json",
+      "sha256": "8e136b85a95a96a7bb68e1a19f94d779ea2ca69a08b1cbd72b0ad1ccb0105fb1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPC4ReferenceCertificate.json",
+      "sha256": "552c6cc71670eaf958b2a69689733b40d12ccf0ca1b622074ea449d055cfb92a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCCarrierEventCertificate.json",
+      "sha256": "06e5a4ba4fd171b32c966010196a2f3ea6c23e60f91889a107163d823f9c94e4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/ATCPCRelationalLiftCertificate.json",
+      "sha256": "c17097a8a11e396a03bf13c7e3621c12d58d65786e7af2668810cddefce707bb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1-IndependentReview.md",
+      "sha256": "50a3b1e8491dea2a63896e2eb5f773ce50754de3bf345bcbe0dee96d6b2d6171"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/CI1PC1ReviewResolution.json",
+      "sha256": "4fdb18e38e29b3b52697e068d62fe352442434676dea8247dfacc85f452fca8c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC2-RelationalLift-PressureReview.md",
+      "sha256": "748ab0818d110a684995dc798e4138dbec36f2f15885bc95110319d82611ebe0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC2-SignFidelity-And-SignedDomain-Review.md",
+      "sha256": "3dcff064297c10d821c184725ccdf1cccdef4b9bb237dde43d9143ff66d9bc36"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-IndependentReview.md",
+      "sha256": "a6f17a6eab85b894aabc50749c164391485b809dc511db1e8abff2f693c05a8e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC3-SolePolicy-ScopeReview.md",
+      "sha256": "381b5f4e1faac718a0cec9650dd6c66bed7764038a08fe0f34eba6449ca3ba74"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/PC4-IndependentReview.md",
+      "sha256": "99bca5f2c8ec0a824d21fd59f6a31649fd45e39f707bcdb60c8a2f9d93bb03e8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-pc/README.md",
+      "sha256": "523a421d1a434873e68a71431e9d59a03075b07b27d59038aaac78cdc0569d63"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/ATCCI2DomainCertificate.json",
+      "sha256": "0339bd150e613b1718180cb46dd2a11d8d5de088c794e775f18fbc77fd1c9d53"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/ATCCI3ReferenceCertificate.json",
+      "sha256": "b9cd735abb13dd1610016d63168b2f35e9695c903752833430ff2ea5636e6915"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI2CI3-IndependentReview.md",
+      "sha256": "20343d8bd954ce0ac885be3e162621a931aeecad1b77c4c5ea4cda7644317db6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/CI3-DerivedWitness-IndependentReview.md",
+      "sha256": "cf825116a5881fba96e8d661dbb260b38c9702a694de5a0c85518a4740a1ea5a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-ci-successor/README.md",
+      "sha256": "2225e945f026c8fd9949dcfdffabaa9777a8cfaca249f4ac9e196a9851156125"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-admission/ATCCIPClaimDebtLedger.json",
+      "sha256": "e97a6f9c7988287622f16f235b5f7e0b691b444a81191c55f9dbb7c297f97cc4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-admission/README.md",
+      "sha256": "6072d82b5df7dc4452ae34eaae07d963564b7439b630cd7f0872f5f65c01eb4b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-review/CIP2-IndependentReview.md",
+      "sha256": "e46aff53420ed4f2203485829dc92f2edd8512a789c3cd0aeddd8b89ca670605"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-review/README.md",
+      "sha256": "667f53accbbe31600da29585bbb8cb761070f1e488e448305502ea4d70ec4281"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-successor/ATCCIP2Certificate.json",
+      "sha256": "334f988795d249a01672c3d7e1ffab7a6bf6eaaaf08cd2a87b3bef4b36479ed9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-successor/CIP0-IndependentReview.md",
+      "sha256": "f0662f58c09512a38cabb5b3e304e8429d8514bbb7d6ff00bca9ee21621c62bb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-successor/CIP01-ReviewDisposition.json",
+      "sha256": "89bf0a7afdb1cecea9336286b3c05f8a532186cb0a9726e52a4d8717509622a2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-successor/CIP1-IndependentReview.md",
+      "sha256": "bb084b08a20cbb889d835137db97ccb438ea50ca9ea5b148ac1c4011b39e5c77"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip-successor/README.md",
+      "sha256": "7d2605a288fdd7a423087b994d794d3ca4b9d2b43ef3b28e0e9afea32e6b5d23"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/ATCCIP0Certificate.json",
+      "sha256": "548298fbae6c52ac7021be9e639d858d8748241785ebadcced59a004ffb76d2e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/ATCCIP1Certificate.json",
+      "sha256": "5fb0f29e1a8a9557527d0ed35a652190c6f0bb5efdd0a9482ec17222ae8695c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/CIP-CompositeDomain-Direction.md",
+      "sha256": "8729c7a6ec187d89e9901a470f578615c35af041cc14054935ac10cc16b74afb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/CIP-CoupledProgram-Direction.md",
+      "sha256": "14b4c7bed66f534aa3509ac12c64c13631320bf5d5852ff73ef1a32b8d1782a0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/CIP1-Preregistration.json",
+      "sha256": "c983589eead8283051674bcb63255ee23b573491a23c64bc4290e20b3784cec2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-cip/README.md",
+      "sha256": "f7c663009e2493e88c22c2ff067038f188e9dec2188590c18b1e8204a480e088"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-pc-admission/ATCPCClaimDebtLedger.json",
+      "sha256": "bf8af5bd5f6fe1fd75a08df4123da0672cdced6a1ab0e48a0183e7118925bec1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc-admission/ATCRGATCClaimDebtLedger.json",
+      "sha256": "4e5e8c8b764672ec3b2c1ad8148ce930e6f2ca6201a96fbf63b8e690da506338"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/README.md",
+      "sha256": "b9af6aabc0681d293831175fdebbeee5c954b9f18647e2956996b8fbed436322"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Direction.md",
+      "sha256": "ed2229926332abc08a5fe1c513bff7065bca6eb19babde2ce8b4472cde961c16"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Intake.json",
+      "sha256": "ab139fba6f5579ea312549d4465e68be182606a9240ba72fd9ff5dbb3a7d1e0b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/RGATC-Review.md",
+      "sha256": "883947b4d4cd2771d8fdc9203e19847369c0fb2f5e3155de705eb84bb2bbb53d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/MANIFEST-ER.json",
+      "sha256": "92b99a6ee1936f3dd166ce2c6a7880218ecba10df235e8a1e09e3a5682e995ea"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/README.md",
+      "sha256": "367db4ceae63f1ec295ea429714e0e882c77c9b425457e501c145278181c788e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/REPRODUCTION.json",
+      "sha256": "8b0057d78366645954058e05c0d0bea268689bbffbb2efc1cfd856d36b25d887"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-E.md",
+      "sha256": "b3b089955bc9636b62b5e82acb12b7387bab85e768c29c221cb8ec4b55e7247d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-ER-Certificate.json",
+      "sha256": "756e135d386a7685eb70332596e48af3d40e51019d6042c9d3f1d6860c69b73c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-ER-Disposition.json",
+      "sha256": "03c29d98b2a0e11237481bf9ed219a89974a91f7100dbbed432b0e93f6df604a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-ER-Pressure.json",
+      "sha256": "d6319720e8cad42c10e3f8070df48d7c084a0d4b9293e6f2be29f1ebd36c8c3a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-R-Scope.md",
+      "sha256": "17808b606b7bda3339c307a34931a7d950bb2ec61484c8c631a19b4bb2cf6ee5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/RGATC-R-SectionEvaluator.md",
+      "sha256": "c4298e5d87a58bb7c052b2ed409a7bb1f6b2797ac0731e34bdabbf54658fa57e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/build_reports.py",
+      "sha256": "dca1e1e02f6ff13d00c3797c38f4d449f266db03233b5fa0d5eab33440fe6632"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/check_rgatc_er.py",
+      "sha256": "d8a990ad5cba73b61a201a97008717cfe7d24e7fca07259f06f5cae482da7f11"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/MANIFEST.json",
+      "sha256": "6d071bbe13ea74b78181476505096e5c4edac56c0a3270d17d266bb9ccd9d136"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/README.md",
+      "sha256": "b4761b4fb61cb5918c50042e8702c0f28d8854eec88dfb57e6446ee045d90861"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-A.md",
+      "sha256": "1cc5dea890c763b6e64175ac9d1fba1acbf79b01889def3f363daef0cf811e9d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-T.md",
+      "sha256": "0bed7bd0d7b6551d3b1662ba9506a1f47b7672856c31d1e99667054ea7518a4d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-TA-Certificate.json",
+      "sha256": "857e15f3e2a25f76f016e336af11fc84ba7c21401bf16e3a9d5b11e3bb14c162"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-TA-Pressure.json",
+      "sha256": "c0520ec4ae01266d2114d39a068427577d20eee3469e0f155e878640cbe9201f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/RGATC-TA-SourceMap.json",
+      "sha256": "94fc8959690db8d6f71d82afaf56bbb048330c5640961d2af10a0ea28d6154c9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/check_rgatc_ta.py",
+      "sha256": "c891ff32e0407fae90111bcb340deedbe5193a3132d399ac53c17e0607eb7a5b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/deps/retained/arithmetic/certify_atc_sector_readback_point.py",
+      "sha256": "86373eb2f339d606a72ca38ceab6372438334d1c2ecbf0410c02520fb09e1731"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/predecessor/pressure_rgatc_ta.py",
+      "sha256": "0c2bf397140671041f606d3c9262343c2f73ac325297a1525644a23ee3ca56fb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/pressure_rgatc_er.py",
+      "sha256": "1fcb222b66f8923e6b537d86eef90752118a290a540ad5bf06dd21337819a84b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/rgatc_oracle.py",
+      "sha256": "73b32a86230fee2a79989ceda35d2c7023624a32e807dde48d2b91cd68c45d6f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/atc-rgatc/package/rgatc_reference.py",
+      "sha256": "688c8975b57e1c9019675d0c9f9e91e8b585b8e75247559607eed9126a6830be"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC1Acceptance.json",
+      "sha256": "2077d914ba626467b8d35ef3173ed82deef378ab0a24edc7136d4c35bfbebac1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC1CausalBoundaryProposal.json",
+      "sha256": "8a52fc61c6ffcb95a81d6e3ddea2170372f9e7af04e19d16a074a704bbf0889b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC1PressureResults.json",
+      "sha256": "2d9a2f7a5b8f2357358e01a1f6ce01192bee2956f14cda629781646b488a3aea"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC2CandidateClosureProposal.json",
+      "sha256": "6cd8160565eeb043dd09ab2334a108710236c806401fe0316b04c3bb8b1aa609"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATC2PressureResults.json",
+      "sha256": "d2c0dde892264a4b4fa4f76c837605aa4887def8e72fbbde7a80a62ba55dd722"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCAOSClaimDebtLedger.json",
+      "sha256": "4f579e57ca72789e157334b29a8c014e21983bb31ce6fb497c2957ded2e8e332"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCAddressabilityConditions.json",
+      "sha256": "3741510935c9d164796357779aec52507484a588ba3618f765a2aea76e2b1f6b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCapabilityClosureContinuation.json",
+      "sha256": "627cba8b721f388c4d18f3ed8bca239ea2cd87edef048f5b74cdd2c722dfaf8c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCapabilityInformationProbe.json",
+      "sha256": "313f366e4b4e6fc834de47bc71f30c446c0a8c29649d473e0ed772870c332b7e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCompetingSourceInformationCertificate.json",
+      "sha256": "2d3951d8b734f09d954b6014c6a06c4174e497ef5017a92a153bda52d0529901"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCCriticalModeCertificate.json",
+      "sha256": "5fa2eda45063ebeb39e61b756cb0cbe02022ffd5d1e9a3be7096992c5c528509"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCFissionDescendantProbe.json",
+      "sha256": "55ab93e30c5c71c7663e2398a7d12512fd08299fe739cbb9e5b36dfa4d9d271f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCFissionTargetProbe.json",
+      "sha256": "03b510106c9a2b81fdd237c8e435aea5b66b8dbc3a67d93d5777751adf85d055"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCHistoryFeedbackCertificate.json",
+      "sha256": "f258dbffed8c593259202a4e5441bbf9ccca9c00eaf78e5fea75b1b20023d724"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCLocalizedSectorFissionCertificate.json",
+      "sha256": "24762124714354729220f91319af3359bda33ad174d613179788169ad1f0df69"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCModalSplitProbe.json",
+      "sha256": "105ea7b6713e86044610173d3cc2ff92970988715cd5019315f1c1423cbf0702"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCOSGeometryFeedbackCertificate.json",
+      "sha256": "0a6ff9ab8efc9d32c9df4bb75366474e74b357a67d0aef27f9b3ecc327a3b48f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionOSFeedbackCertificate.json",
+      "sha256": "61099508c2c67c48076b793f066ff7af7356caa883fdd0e7564395f30e876181"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionStabilityCertificate.json",
+      "sha256": "e8d438a56412094a9afc6abbdf169b10e46aeb7ff96cdb890b92fb1ab6ccd4ab"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCPartitionStabilityReviewCertificate.json",
+      "sha256": "9595034982158304515e8ca1f7d55f461d134ac94b191c5f543ff6e54752ca50"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCRefinementDiscriminationProbe.json",
+      "sha256": "ab60c5f7b0fafd0d7c14fa29f42b379b5ecde9406cc17c01846a5a77e8e65235"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAdjudication.json",
+      "sha256": "4d194b3eaef026cee3a6d27daec0847992fbaa281553a2bcc7cab759cc532247"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsAndRequestsCertificate.json",
+      "sha256": "4ad08e321c29b350b5700db56324c7f8069cfa48cef8b1b4ef57207647974436"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorChannelsNativeReadiness.json",
+      "sha256": "9a8c94a7a0851bad39eda921a8a46bc4732ec9ea339910790a75c0c8e0be34ab"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveAdjudication.json",
+      "sha256": "32ae9457a0bf9e7f14803c929b3e73546f7e5cf0ed49ec348e6882f97d194022"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorConstitutiveProposal.json",
+      "sha256": "28133be08672abc5e55a41bf31de34e634b48e317abd280ff17f9284329f6675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorLineageCertificate.json",
+      "sha256": "781ec38730dc4f5f2c42569b915e0fbf860a4acda60c23d8d62b5de28c14ef86"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxAdjudication.json",
+      "sha256": "fc0359a8b67c4ac30aa67547bf9ce27a9513ae77eba213214da2ee0ec5a96657"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackBoxCertificate.json",
+      "sha256": "0d2a487b0394ea59c6b89a11023dfe19c779998b9d6cb69009bed38f17ac5bbc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackLiftChecks.json",
+      "sha256": "4a3ad65a07d5c6ff850e1a753b00b138fda3a6fbf459ef3fdc65902d6e7a8b1a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointAdjudication.json",
+      "sha256": "a879a97b6d771b148ada2338a61e4c8a8d6067214ad080238d096978687bbe73"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReadBackPointCertificate.json",
+      "sha256": "59c5c1730cbf43e52f5f3ba70b3099e8d6d5fa50d9fe7acbd19e625a3a37af3a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceAdjudication.json",
+      "sha256": "b2fd7d5da982af7e4531bdbc1b80b4623fca3e31e60d4d1010a4ffa81424a347"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorReferenceConformance.json",
+      "sha256": "33fdf2b3234e2f6ed8a0a6af92b7ddc9c37809cd7e3fae2ba3bffc8dead88515"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainAdjudication.json",
+      "sha256": "9e4e28b99b751e39f9d6212e05fdde5f07c533e7f8a1bfd5885712d536d0e7ad"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStateDomainCertificate.json",
+      "sha256": "bdadda3a9b313fcbac5ad7d5c4ed60af02faf7c1a32f37f78cb34aabda9c2935"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSectorStatusChecks.json",
+      "sha256": "657c5b82712988c7769046f608cc2410c5b8bb34585c048f0b194626ec31d5d6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSourceFissionProbe.json",
+      "sha256": "d5b022bdc0007125e3eefd7489a4955e4c8c198cfe4a779fc2f45c48315cb127"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSourceIntake.json",
+      "sha256": "b53df01106a9d4ac4a15bb40c0266131a476b7c6bb98484d950f807497b0d732"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSourcePartitionCertificate.json",
+      "sha256": "5635f22ce4d3e57fcdf4a2b7ed03fa50f01fec64dff2fb3794c412a3f9763c22"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportCausalPredictions.json",
+      "sha256": "0862f9b4ac700a2d0dfa90008fc590d237934af51de6313af4463122dce61411"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportFixtureCertificate.json",
+      "sha256": "8ab49242e06d694011d5c933a7c60b03ab621978cf3f24b2bfab8c935a6e3b56"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportLocalExperiment.json",
+      "sha256": "ade2b8e7c0ff479017f2ac7119851dbf8e756cf6530d9214f953450636ccdc19"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportNativeBoundaryProbe.json",
+      "sha256": "9ad28625e9347432ef5bb7aa7425a0aa616ece4a00a0e23add91d86b20a26d44"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportPotentialBinding.json",
+      "sha256": "8babcc9884a1432d981d022c815026777e88115ffa2f5c3a7ed49875d6af9c1d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCSupportResearchClosureChecks.json",
+      "sha256": "1b929d710a8543c297670b1e26d453949d691308070d96146b1e30ffc27cd30c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/ATCUnsplitViabilityCertificate.json",
+      "sha256": "91d188d8a2335638d9108219201c6a6d522c6b38db40958110a4a3e3f52180ee"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/README.md",
+      "sha256": "efb25bc8daa6d832b98167697da074317c0315ba6613859b56b5567a6c1038bb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/draft8_locations.json",
+      "sha256": "9d8cf0a0e9d17889393063ff6ff58351fa0d19122f13579e14d79c8aec133e89"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/ATC1-Review.md",
+      "sha256": "60653be81bf1cd1ee00f3fc83f3cde196054a3ba227c7c2bf9bc4a1640e39b89"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/README.md",
+      "sha256": "40a0606873df319726948547954e515c5c5a7913f5554164858732fb0d550f33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/bundle_manifest.json",
+      "sha256": "c2d3dc68bf228bf2fa46318fe2091f8c32b0288f458e6ce37c5ed42b51281ddc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/inputs/2025-11-ReflexiveCoherence.md",
+      "sha256": "161d632bf4e2584037048962f1374212c666f6b4dfc5590b2732125fcc653c6f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/inputs/ATC1CausalBoundaryProposal.json",
+      "sha256": "8a52fc61c6ffcb95a81d6e3ddea2170372f9e7af04e19d16a074a704bbf0889b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/inputs/ATC1PressureResults.json",
+      "sha256": "2d9a2f7a5b8f2357358e01a1f6ce01192bee2956f14cda629781646b488a3aea"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/inputs/draft8_locations.json",
+      "sha256": "9d8cf0a0e9d17889393063ff6ff58351fa0d19122f13579e14d79c8aec133e89"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/inputs/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/inputs/source_manifest.json",
+      "sha256": "3c4ddd1cf6db21db0d0d6abdd35923f036b6b34ddb0fa1d0afb2a37187447ff3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/pressure_checks.py",
+      "sha256": "b72344e1f08adeb4a6b424b2f52bc8304a519149554c26c4f3db0a327b969055"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/pressure_results.json",
+      "sha256": "3d2ccc64cf95b6f0aba61f9dee9637059effaa4fae71e11e1e79ec8c7dbf92d8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC1-IndependentReview/source_inventory.json",
+      "sha256": "8b10c33d14ed566e574ba8e62c75785202c54b541eb51584c5fffd5a26255829"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/ATC2-IndependentReview.md",
+      "sha256": "34e893f2cd63c9369543315c66e45039a00ad0b14e9942f25faa0cadb5558cea"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/README.md",
+      "sha256": "1601dd2e7007d21c1a24c75e3c9c721f8c2f51ecb59c95d346e711cf26c78e8b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/ReviewCorrection.md",
+      "sha256": "a755e9439ebaf131d14847f503b64444385313d08d34801b0134930a40904e9e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/independent_checks.py",
+      "sha256": "e1b7b53428ac6b5a9fc16a956c3a16f51ab65537696c2024611ed40bd6fdec32"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/ATC2CandidateClosureProposal.json",
+      "sha256": "6cd8160565eeb043dd09ab2334a108710236c806401fe0316b04c3bb8b1aa609"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/ATC2CandidateClosureProposal.md",
+      "sha256": "aa3a9de4cfc15a0be0487203ba6a470d0109e2f96667d54219d884fb5a85723b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/ATC2PressureResults.json",
+      "sha256": "d2c0dde892264a4b4fa4f76c837605aa4887def8e72fbbde7a80a62ba55dd722"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/proposal_index.json",
+      "sha256": "d9f9410e03a2e5969f96f15a4def12bd932dd9dd03600803b2e215275056c820"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/inputs/verify_atc2_candidates.py",
+      "sha256": "1f0a974836174bd4ce4af6101eac6dde65b60864c7de0c46c41fef478376ed8d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/ATC2-IndependentReview/pressure_results.json",
+      "sha256": "23c99ffd53a8630a7f6dc63eca8aa8aa3e226a9be83615012a622c2e535f2fe5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-Constitutive-Review.md",
+      "sha256": "692932dc37f34ea62e56623e878b4966aedd531d87d52b53b0e2d926646ea6e6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-G1-G4-Pass.md",
+      "sha256": "0467682ec3908316ba801356b37bcb10ca4deb99ef1a000d77eea3206f1ed2f6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-G5-G6-Pass.md",
+      "sha256": "e8ce9da8c09154c80f25c460d5d4fdc5baa1383d6939387467a3f80446d73663"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-G7-Pass.md",
+      "sha256": "64d18d57b14a20c3e3ed58de2300c2db10c1a47347efaca11dbd88f8b818b470"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Box-Pass.md",
+      "sha256": "22ac1cfbddb60f267873dd3969e8044dc77d850adc8d37e2805e56a1c1e6c8e9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Lift-Review.md",
+      "sha256": "234e0b4923bb67921e5609ff4b3712a1e0886962c7f16027139727c432ed7fce"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Point-Pass.md",
+      "sha256": "eb95ae3f9c610456dbfb5b13c82c27b487a3fda306e003a526363d04a90a7a50"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-ReadBack-Qualified-Pass.md",
+      "sha256": "0f466a13a90ed1b64e2048cf0bb50121e0d035ad0f4b584e23ad7a368e0fdd10"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/CAN-LSF-State-Domain-Program.md",
+      "sha256": "0c4db48e51a6dbfbf9c90aa02ec7894ca28c78009aa7ec6bacfd1608c94a7cdc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/autonomous-topology-change/review/README.md",
+      "sha256": "b40c0a8c918394548ba7d706a2ca1c1abc65fcbd0b5478f7a0ad717058b8bd64"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_domains.py",
+      "sha256": "f80f140f53f7486a790ec3b24b3f7c27e07f954a184b72612cc21c14c0443024"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_oracle.py",
+      "sha256": "b51feb99bb9ff03a72bbb31a407ecf6cd9abd3cdfb9d2df18c8efa1a1d51cf51"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_pc_anchor.py",
+      "sha256": "d92d862d1d2c2472673462b5f095527ba74c13a10fd2f6f52e4095ab51afeff1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_reference.py",
+      "sha256": "0c934282a6185117ea2a8b03a7c70b8a0ecf28577a78ddc3036845293b4b7d7f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_ci_state.py",
+      "sha256": "5b1b9e8dfbf071bdec3b61c67eea2032a934f5b4a3327d986e55dea08d4e184d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_cip_chain.py",
+      "sha256": "6c70b805d5bc205d6a46e00751b0176eec6450b3728becbd4308cc87b0949437"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_cip_domains.py",
+      "sha256": "f8e6c3efc6cd42e07ba1f58b444c6af1c5bf4e456108f6e4af1814bbe290e13a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_cip_oracle.py",
+      "sha256": "ea31036d1f991c446c65a23a95c92aedecf24e5d54e83ada72e6bdb21a9229ef"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_cip_reference.py",
+      "sha256": "cf54e0bf811bdcb0ea8c5ce95f9e7c81e0fd216df8b7ae64d6dd9481b0a1eb63"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_pc_carrier_event.py",
+      "sha256": "7b4581525b159a0730b120bf6ef054bac0e3e60b6bf8dd304f6eb7a16fc50625"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_pc_causal_chain.py",
+      "sha256": "a3547d578986945f4c7282a04daff85e801a59ad3c7b032a855df500e46663c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_pc_reference.py",
+      "sha256": "93d402e2257d68e75840f21f9764b1657eddd9c81b33e53997c0d11ca7f2e1bc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_pc_relational_lift.py",
+      "sha256": "62da12893f25479762d116ca3ab1116cbf4a4a2b21ff620e535592cf1552213f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_sector_reference.py",
+      "sha256": "202fd964df2ea52415957c5cf1adccfc3c25f034e15b0166088fd47faa4954c5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_support.py",
+      "sha256": "0ce1e5cd61f6f57f2a9bb2b52e443f33073c104eb330cf658ec499b2bc266fb1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/atc_support_fission.py",
+      "sha256": "ac74a3a7ac3884cf3eee2693e9d48478bd6b2b5ec638539c4444e2cb881fdd1e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/test_atc_support.py",
+      "sha256": "8105532fe7c69694b03aa9ad2384c364852bf297bbff8e0084c39492e2766715"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/audit_atc_ci_pc_boundary.py",
+      "sha256": "7dc7d3f63662f8cdf618ab95765d0d947d2bfcfffc682d3750a7846d4a5107ee"
+    },
+    {
       "path": "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
       "sha256": "996f885d2b3da426b08e29cc0bc1d2dca1c243a65c959504bde38cbc81f27606"
     },
@@ -66,20 +954,220 @@
       "sha256": "7c404c0f64d5577e7802e6702c4cedd3fc852530ad8ae3f13058ddaea4c9d217"
     },
     {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_a_history_feedback.py",
+      "sha256": "9dec98628ed2a3482bd9f0fa9ab38ecfd2a63c64ced5ecc418f440b209258068"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_addressability_conditions.py",
+      "sha256": "82516a08a378d6cff0f93d4c6ed0722bac182905999e1aacd49b103930a0c0f8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_competing_source_information.py",
+      "sha256": "b1226316f80ef6a0b0524ea42505c997fde5f827d4e73ff59e9d93b1c7629b4f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_critical_mode.py",
+      "sha256": "9a10e97c87a521ac9614565a84d1a5729fc8db5527df147d02f3074179e995fc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_localized_sector_fission.py",
+      "sha256": "9ac3737d302fb327adaac6633c746cd63cfbcb0835a1b09c9edc5187b15c12c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_os_geometry_feedback.py",
+      "sha256": "1f69df96b16034117b28f0d1074d69c6828cdeabcb9303b44631547e206c069b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_os_feedback.py",
+      "sha256": "252ad3e32e9aaca399dbdcd77bddf9cb9818db5f6874170b90f1ba0ee74ea570"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_review.py",
+      "sha256": "c04fd27e5bd25d1df9fb2055acf37b7a843cf0bc86f46e9e2284f845c3110ddc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_partition_stability.py",
+      "sha256": "1827200beb884b22e55fd7770955124e828b8cbe7f851d4af5bdb53aff280342"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_channels.py",
+      "sha256": "8d0aa7016710d5e64935a3496fb9160689eda87e6c999b3336924b4f99c0828f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_lineage.py",
+      "sha256": "207fece35ac40284ea0481d2b69a2d639d12ea8a4f06c24fa7308f242fe5aa07"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_box.py",
+      "sha256": "8636581d8b0a3a5db1bbf81b8f4d5c414a3729d8f7b77950af52b8378bcf4a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_readback_point.py",
+      "sha256": "920eabaf709bd6dca2600a011f1cbba41594b88ce9c6cdacd44c76dca86d584f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_sector_state_domain.py",
+      "sha256": "19b88f776b0084c9dd9f5220304080f685d25c98aeca0a30d7b572ae42f5ee2d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_source_partition.py",
+      "sha256": "10efc8860209aa78b74c13626a364fcb718d059cf5f2f4db133b35f57f64c180"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_support_causal_predictions.py",
+      "sha256": "11de800e030975974893e2ec157a6c460dd85713a34cd1e538c6fb456ae43672"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_support_fixture.py",
+      "sha256": "ba682d770cabae62b78cf56e8264eb22f14797835592226519184ae709ff8643"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/certify_atc_unsplit_viability.py",
+      "sha256": "d3c6017f53fb9e46ab16e50e9f6b3e9c8f889f1567c2608450494c334a744d46"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_ci_boundaries.py",
+      "sha256": "cdc98de84ca4d7b23dae1a58e4bf86abbb7f53f923faa7967b64970f9d999ed3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_ci_domains.py",
+      "sha256": "bbffe14d257b112420a7f42edafaa5f1fefd99e5def80a1992711c73b8d5a185"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_ci_pc_anchor.py",
+      "sha256": "ac5e7892cfb0e0879e3604ae628c67134b84b99a4c953a9e66e5663605a37489"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_ci_reference.py",
+      "sha256": "30a17ed1ae0470e19c5bd069791533e1138788fddc3161a389f99d2570cd00d9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_cip_chain.py",
+      "sha256": "902ab1acd07a02bbb3178b17a0aef2a7e4923ce73439811c079c05131a4c06a4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_cip_opening.py",
+      "sha256": "b8c59cf21eeaaa7c9042f4cbeb8870e0b2b92a4e92a1e39ee855893e696b868e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_cip_reference.py",
+      "sha256": "2ae90c471b387a5ebda390cef5db559900faf55caeddc1bc3ef9e1b29e346139"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_pc_carrier_event.py",
+      "sha256": "834e8aeb3959667d440c535421efff418c3759b8c67859520d0b617c5753fc9a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_pc_causal_chain.py",
+      "sha256": "8342153c1c628395e03f4fe7ce2fb6eece912b1f95f5fcb0c2545e65df81fce5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_pc_reference.py",
+      "sha256": "1394ab6dbd450fa394ba4b81276001d1edb567e12824ef6edb7097fecceb27a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_pc_relational_lift.py",
+      "sha256": "5e4acdf8ac959c19f4699cae9095879a99fa08a70d921175ccf31ccb1d9cb2b3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_sector_readback_lift.py",
+      "sha256": "49b39bee5d6aa98577d98dbf3f046db02fc0b58ea528bc0d06920da07d924680"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_sector_reference.py",
+      "sha256": "7651e34126ce76cfcae0afd600da6d609d6149b06575c979f6f7c1f741ba07d5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_sector_status.py",
+      "sha256": "e3e616ac67fc19ea567feb3ed764120aa3b3f9519f19f900fd19408b8dc6eb94"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_atc_support_research_closure.py",
+      "sha256": "b77a0296faebbbf35c40ec110b2a0123d6e7329dc8acdaa32def80ff9dc66013"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_capability_information.py",
+      "sha256": "927e1fc5592d52bec7708bcc4f1817cf1f7e5b6d86b2271dba1a63537c953dbe"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_fission_descendant.py",
+      "sha256": "92bff890bce116ab109a65f4d848489c2cf273900846c1bf604c19eda567baee"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_fission_targets.py",
+      "sha256": "478506ba515606c94419ecbab96dcb6da2828b251b7a94198a8db44c09b3fb5d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_modal_split.py",
+      "sha256": "665443b17fee0dcdbe1a1795323bebe814d359affb4e443b485471c338f6f53a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_refinement_discrimination.py",
+      "sha256": "2a0a06ad9f197ea7648bedaa9aec688a70b9f7168e19f540e4253c28788950d0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_sector_channels_native.py",
+      "sha256": "1772d897caf99bcbe50cb88ccd7bbed16f7bf3f4e79dba7f7c07818d25827d5c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_source_fission.py",
+      "sha256": "47247f914873e026e7341214d89f66e688840c3e524a593af8a56ee4acb1d8a6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/probe_atc_support_native_boundary.py",
+      "sha256": "389469f80a6a8066c2d62c1e5983f797925a09b984118edf9810072a7ff30e35"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/run_atc_support_research.py",
+      "sha256": "aeb710aafc0edc4e2a962dbd263611b3f85519daf79f01b84c00c5b9a39d4928"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/verify_atc1_causal_boundary.py",
+      "sha256": "b51039af05044da4ccefd6a17ec02dec1fa44b177ff12025e41e09f80df3c3c2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/verify_atc2_candidates.py",
+      "sha256": "1f0a974836174bd4ce4af6101eac6dde65b60864c7de0c46c41fef478376ed8d"
+    },
+    {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
-      "sha256": "73211d5dea907840ce557e341e78c80d25701eeb13ddecdcc7ee3c4cb557fe0b"
+      "sha256": "a631b831e22cf561d4c92ab560d2e8ca097be2ada78655e15c37b250a3f10bb9"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
-      "sha256": "b28c86b67ca820192612054e8121af92659807f8c029c01e78389c2a710e3f1b"
+      "sha256": "40fb665481a139c9fc01b2d29fe7228003fbf815a02c0295d991397b5d9e89b7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/ATCQueryGuide.md",
+      "sha256": "c4cf2642f09edcbbcf141d77007b513c248314c4eae4cbd5df3f4bd6ec9cff83"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/AgenticQueryGuide.md",
-      "sha256": "92dc0bad6035623719c244951679042ac6e46270c5e0a17b03ef0cd477639d4d"
+      "sha256": "227e6c32a033a58c6cf9bb3cbbd098ce8ec51c88a2ba17122fe2be659fd4c900"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Phase9VerificationGuide.md",
       "sha256": "c633624d7aa09d33b62243e12a0d0f8df9b856d614a0dc3975c72453a91b4526"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/ATCAOSResearchAdmission.json",
+      "sha256": "d78bca41746bd46bf64cf6b0ccaf6b9e90565473c2b45ef93ee2b1c4c863ed3d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/ATCCIPResearchAdmission.json",
+      "sha256": "2ec9eb18719593478d566b45dcb0bd18935379bb1f27ced1c75bd26431b63f9d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/ATCCIResearchAdmission.json",
+      "sha256": "a2d74b79b254c6d551026e900a20bfdf53158f0502978b5e43dc2c3ea0b5c3e1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/ATCPCResearchAdmission.json",
+      "sha256": "ea51af5add7e2f6f4bbd343312208b6d60d78ecba37acd0efa16ec413b89c7a2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/ATCRGATCResearchAdmission.json",
+      "sha256": "f2e16d6455130712087acdd3e98da528c442f5744e149fd910cf515fad2a7385"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/P9491aAbundanceAdmission.json",
@@ -142,12 +1230,32 @@
       "sha256": "f85dd7dad8be8d616aeef0ab7aeab67cff667eeaef53a899d40ef603d57be148"
     },
     {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/atc_ci_query.py",
+      "sha256": "c10ee1f002d41370c5973bcae83285cf2b99b3583de57ad23bc524f41a048569"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/atc_cip_query.py",
+      "sha256": "6305f33abfa3bf5d1c76cb43acc7058532a4b57bc6f4b5920e51415458a94ab5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/atc_pc_query.py",
+      "sha256": "a13e6a929524f72a76ac26e434a9fe2a899dfbbd56eceb987026e857783a6514"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/atc_query.py",
+      "sha256": "54c276eea3ce9278a9169c4a5288a6c7f2ec0961f7613d48d962fe57f167c3c8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/atc_rgatc_query.py",
+      "sha256": "6194900030dd288b38baa449a9959f01dfd92f9e3d76487d07e72ac5deac8132"
+    },
+    {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/discover_sources.py",
       "sha256": "941dc3ab6a95bb2221e8c194d3f61601ba350b239fcf1b8e059583d256b2b2d5"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
-      "sha256": "5cbdd41906294663e659392ca9420210d8bad833dceaecbc0c8e5533e0bee57f"
+      "sha256": "79d7f05e664d2fede06c37f117cc7d976c567f39ff78852c4610c312fa126560"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py",
@@ -156,6 +1264,26 @@
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py",
       "sha256": "10be9d6ef88d6e075afb85a3610b3e75421ed320991ed6864e48aaddaee06667"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_ci_research.py",
+      "sha256": "8075617d013aa5f0ab212f0f32dcedfff97c2905174156ad68b07c98fd793197"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_cip_research.py",
+      "sha256": "f11f9e391d1ffd275cb2b5872ab36043f2a02593cc214f4112418d030cbd790b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_pc_research.py",
+      "sha256": "f4495c5600dfaf58d4c5c16eaf53ff878c1e67bc2f6337823c605abc330e842c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_research.py",
+      "sha256": "e3f52c9cdbc8d171cd16b581979e455cb5c259dd385f323e000f59915f94f538"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_rgatc_research.py",
+      "sha256": "7505d7056cc11dbbcb870ab0d7ca61cceb633f496448a08bd4d2608180dc0e47"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_p9491a_abundance.py",
@@ -188,6 +1316,26 @@
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/abundance.py",
       "sha256": "0a2380744e7a91b87f828b5390b51532cc1bf2f27d3aad826b4e112699b875d2"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py",
+      "sha256": "299d82c896e7f452d737615d6578fac7cc07e7eea044147277e6ce8f596efd05"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_ci.py",
+      "sha256": "772d98f4301eeb3ffc7cd64d0d61a3cb389eaa553de5ea1701d28c44c4cf7982"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_cip.py",
+      "sha256": "9419b8204d740b5beb29fd1e6201fee1e01bfb43cce3ed71d6e760cb115755dc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py",
+      "sha256": "33ba82d8aa1fd704efdcb9fbe35e4cc294bb88ddb5986d9746879cfa57cc53a8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_rgatc.py",
+      "sha256": "d32b39de5339226eda7ce231694efed51b82fd408784219725a3475b508bb178"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
@@ -962,6 +2110,378 @@
       "sha256": "f4cd48ce898c4f5b865fcfa7df51f8487c4747e00a0fb87631df094125536536"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md",
+      "sha256": "90fa64266699d6ef84ea027c4c3c14c938a82209efa8670e14cca45940ca9952"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md",
+      "sha256": "c5b780a2d800fb5bc65a24bb8fc24fc79449ec04e146c7e3e4725ef30e7411e4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AOS-ConstructionInputs.json",
+      "sha256": "8418d3ad949464e5c2eb6a6c2f9d373151bb30222d926353d6b0a40ea3f6930c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md",
+      "sha256": "c18961e44cfa76ee79002432e6b9964cf68094c43523dc15c306464396618f2f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md",
+      "sha256": "318c89e1f04d0a9e31d0fda29217e182b555e23988938719625c988f00527272"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-BoundaryContinuation.md",
+      "sha256": "ca5fb1888e4d41f7b4a99b92c0659bf683bf5f509b32bbd153a1ea9209e38af2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json",
+      "sha256": "fe0175aec8119ff85efe8685638eeece5b70d2efe705b0a3a475e3ca8bc55f24"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md",
+      "sha256": "e90d2f90ebb649831e1c990a3968756df54039b9bf6c12b3accc3c1068734e57"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md",
+      "sha256": "3cae2daa9669b228d2272765a88ca0ad9ad58bbf5332e65ab602aa8f6b738fca"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-COS-ConstructionInputs.json",
+      "sha256": "568217418ca4059b93f2a64ab6f1f9364b65925f417ee43a822de5fbbbdbc7c1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md",
+      "sha256": "2d3a0496a3b5c8fbac74f943ec3fa149fd0f71f3c78f569988b44473a70f91e9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md",
+      "sha256": "2daead6f294297cc492f95d2db57810518c9c2dbae584d37eab9bb160ec61308"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventInputs.json",
+      "sha256": "ea066d7eb291367a7fe564b43a8b22a715b8ada8c265283fdff26322d62797b7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md",
+      "sha256": "5db31a512c437d3b144b661d3e564709548c5ccaf7c3c98779aa68262a81755e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md",
+      "sha256": "21ead9c075501344a857b6c4d6c06f86956505d1af133ead917618df35bb1b55"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-FixedRowCandidateBounds.md",
+      "sha256": "c5a1a02ec85232eb15646cf9103fbc3dbb7a99aef027a5b79c8661277adb1fd5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-FixedRowIndependentReview.md",
+      "sha256": "730d067b3891adc3f678e73ccaf649ab78650b7acce35f66ad88e5d713fe5d1f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSEffectIndependentReview.md",
+      "sha256": "d2175a42edf299718f45fa99ce3bac257303b775238f220082b14481413ab719"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSEffectWitness.md",
+      "sha256": "9c293c928cbc3d795fcd8b5316328292bb530afd0b9c4845fd70dffb30b9bdb1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-OSNumericalFeasibility.md",
+      "sha256": "8c894bed5ea050deb73070c46fab1ba4581e461d7e221804433d1036e23cdc89"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG-ConstructionInputs.json",
+      "sha256": "c4890e5a98e00e06c0a226012700f02e0cb8e740bbd977b551761e821e4a4294"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md",
+      "sha256": "bc029c5e927e3ae4793af91eb95c07e565cfb733324ec8c0ff3c8104b491776b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bIndependentReview.md",
+      "sha256": "cb587798136c172c5590d0c76988e892341e90784ea489c086a7352009628af7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md",
+      "sha256": "357c225f8acbed978c5f50852112117c9f6dcef313bae2fef614f030496c453b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md",
+      "sha256": "18795965c948267913a0f7ef448329bd7b612804dcd20dd4928c31e5a51f4a1a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md",
+      "sha256": "53a716756074835bb604a74c08d2da527f26c9ffdf251f308bc00c9c382667a3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md",
+      "sha256": "85f8a6045835bdd265423bb56a33929fd0b23559fffcd637fc6f3e4f05359540"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalFeasibility.md",
+      "sha256": "995399e7940d4dd4e919d5944ba9702bde92bd06f94b3e0aa3e6a8f04d8e6f48"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RealizationNumericalIndependentReview.md",
+      "sha256": "2513ace2dba91abaff8193794bd53ee7d5ae8f1246331d9d25402cf81594b545"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationBounds.md",
+      "sha256": "e1b138eabecdf07607d55f68031609bad9f1047b1bd4eaa22af75a82a5a143f3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RevisedRealizationIndependentReview.md",
+      "sha256": "873ec1925658296f3504b2a8d9933f5716dd1dfdcd64443b1422b83fa181dfdf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-SelectedCaseCompatibility.md",
+      "sha256": "ff1aa7ccaf3a4762b0213e885cbdb0aab8fb01601dc7d03b9c05177122977c7f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.json",
+      "sha256": "403173bb32f46231bb92da0598a2fb98e9e12b1b5956f6cf5a04002ac2e7cddb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md",
+      "sha256": "f958cc9a480411074eedc1e06608eed881ec5dfaff201248dca15783a5df6182"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/README.md",
+      "sha256": "59fd551da8a23a157feeded15526718a2da3fb3e51fc2dcdb7109c170a60df8f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/additional_results.json",
+      "sha256": "87802f0d25200f3846ed3f698ff16b8c896930e09f760c0c4cb193e859c0739b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/original_results.json",
+      "sha256": "5aa352b4739f0761eaa311c8286119a4a2167b9ae079bdefc402e8d9124ff279"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/review_controls_results.json",
+      "sha256": "10f2fa42391fa730404faa4859804b2c11e695fcd28c6f6892f61a9d6e168d66"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/a-event-companion-audit/writer_alias_results.json",
+      "sha256": "ad9e378142d129d1def2a3b590d3e27c604d2f84022a2c5e51308a7da4861ae3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/README.md",
+      "sha256": "e7a0863685071029aae2a853f89fcdbf940fda9d5552bf2932eb02d494b6273b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/RestrictionPressure.md",
+      "sha256": "5706c688fa1d1b082842dc99c18d9dfc4573a2b2b7cd223cbb66aa9d54174ff2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/algebra-run.txt",
+      "sha256": "8fd641c23bc41019a893c360b63f2073fde73a9bb2b7435790546706f5c2939b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/environment.json",
+      "sha256": "40627ad8438b15a07099c242b99e542457fe7675404d11b493ba799fb2572127"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/focused-run.txt",
+      "sha256": "bebd3a1ad09ed5079aeaeb94c9a632082c58779b11b7b08fc095ea883361df33"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/manifest.json",
+      "sha256": "011ed381a560df42435d2a991fc9ecfc1a1be0cb4297f9dcbf8c577050243623"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/outlier-run.txt",
+      "sha256": "1ceebfee066bfaf2103d4895462023637f3405cddd193d1ff5bf60c1892babe4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/report.json",
+      "sha256": "ad220ff0ac829c82caf41730de4c45a68feddc3393ec9b21dd5be4ca81233563"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/restrictions-integrity.txt",
+      "sha256": "826b63c7b44ea12b9e6fb5f10c7fe8e48361ae2a7bae01630ae8c04aa0b39a0a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/restrictions-run.txt",
+      "sha256": "2c8449e1439860b22a3235de2d1f0883ae59b17ab863e9794e972b479f1f1432"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/aggregate-review/run.txt",
+      "sha256": "d19859b51da48dbfeb138fa620baf902c450ecb75107607a873f1f10787ad3d6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/binding-reconciliation/atc-admission.txt",
+      "sha256": "50aea5823ef6ab33cd20b8ad049d5340bbe22a30a9654a177cff9c4125dff69c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/binding-reconciliation/boundary-pressure.txt",
+      "sha256": "5785c1662881eb686956dd4a8b94d538695e4ed4ec0f47efc09842bf1d32a959"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/binding-reconciliation/c-products.txt",
+      "sha256": "bdf51b8d4e8786465eeefd36480431f70f8f7d4f629a4e9fb2385ed4d699b799"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/binding-reconciliation/runtime-tests.txt",
+      "sha256": "377db00ae6f90d0f23094277710a09ef52be3c788cdc55b86cd8de16a97d2b79"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/binding-reconciliation/validation.json",
+      "sha256": "6fc4652fd2efe80b370350f5e7feca8437341f36dffba3a967b52c0f1ec48705"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/README.md",
+      "sha256": "2398c004597b3ad4d99725a0012a80f61d82efa64901b0c640d748f6bbdd6c5b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/epoch_results.json",
+      "sha256": "881c0065b8cdd57620f235c7719bac1d7ca2145a6efc3030c76cf6b46357a3f1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/event_pressure_results.json",
+      "sha256": "fe1d27748d6bbc0db943eb29957f60b9fe4d74b50a2a5d2f550f4614a1e83119"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/independent_results.json",
+      "sha256": "a4cc7134fe8690a85c9810c38eb88a792182898a8b0b76ede1ac6c081ccd50e1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/original_results.json",
+      "sha256": "d85b3945faa4670946a9531ced2b048d7c5d4bad46b7366b2f4139137d0406d3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/carrier-event-companion-audit/review_control_results.json",
+      "sha256": "52ea3d526c8842344473c1262d790e980ed66808fc0767180dd76c717fb83726"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/README.md",
+      "sha256": "2db6ebf0d33bf4632a551e1667b56483f58e2b061577d10de979fc5ead7631f2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/additional_results.json",
+      "sha256": "32059b621dec3e8cc20d689064c7c127f388ca47446b4cae492dfd58f8b2f623"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/final_read_pressure.json",
+      "sha256": "99547a5fc2dbb03eda891087334b7471d257948ead9d3f013cb51be0078952dd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/model_binding_pressure.json",
+      "sha256": "9eac61bda7a5421d5a3638ab3442a9f4be06c9b3aa9251d4d6b72a55f4363433"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/original_results.json",
+      "sha256": "99a3d816ebbe0d43239a79386bc46ae20996611d555d39393da4d158ba201ac3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/event-companion-audit/review_controls_results.json",
+      "sha256": "ffcab41b70d6e7309dece2905348ede25cf2aba5ccc646ab9d254de66f197002"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/README.md",
+      "sha256": "86cf8fa04b135c8cde0027f01366e51b01c61b6c33e69f3aecc408638bac0de0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/additional_pressure_results.json",
+      "sha256": "c8ff561386e58f70dc9bea1596ed48552a14e22c1d340473cb30b1f78c498fe3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/carrier_transfer_pressure_results.json",
+      "sha256": "80ec8b18945ae93d4c24d4c89fd79c6cf686d4e915e8d3edd0c728b885214a97"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/input_mutation_results.json",
+      "sha256": "454dba75fc70cfabd97f46493802d1b034c234a6fe09fbdd00407fc1494a4df9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/original_results.json",
+      "sha256": "a6ff07cdf2ce49512cdf534544145320379a3fdea04d9332249ce88934d9db2b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/review_control_results.json",
+      "sha256": "ee25368930de35cefa744bfc2d1d399396a9654e819e20256366064f2642e441"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/realization-numerical-audit/rg_independent_chain_results.json",
+      "sha256": "4286da37eb1104b000c0006077f79889c373066e990005f262ed7cd8dcd5306a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/README.md",
+      "sha256": "13a5fa68edd008853efbffe516e49177c44ee044d559ebae4f17f2e815447025"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md",
+      "sha256": "a4655872189e7ba32d29aab4ebd74b97efa94646a1c06db67edebc1185f63905"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/environment.json",
+      "sha256": "878100ce77fb7c0a5b08fe3133efe8d069762423e9f37a9a2a9a506dbdf6f7a7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-corrected-report.json",
+      "sha256": "adeff7ebdb53d273ba5403881fbe596ca38cb23c4d3468581fdfe5dca5fddf48"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-corrected-run.txt",
+      "sha256": "b6835463691669bc638bb6df2267f0f590e1460c04eb08dc40b8ca10e1d8ed6f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-report.json",
+      "sha256": "adeff7ebdb53d273ba5403881fbe596ca38cb23c4d3468581fdfe5dca5fddf48"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/event-run.txt",
+      "sha256": "56f177bb7f105bd2b3e7d5da4d378934a19fab90fea62baf9e9c5c2746703554"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/export.py",
+      "sha256": "c09a7b7aad7d104d6cefbf3db1791f9c71be29de257d7a324ce9036dfea84b5b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/manifest.json",
+      "sha256": "301744fe129aed3be10b8359e3eafaecfad265c4b41280577952588aa6c66278"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-corrected-report.json",
+      "sha256": "b122bc2c25f3e54a132bde5bcd2d86ae51afd4e6daeb1b57d4f22802dcaec46c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-corrected-run.txt",
+      "sha256": "33b4b11f07df9d71e94f8a7a39047257a58989fb6e5c7d4ed4c94ffe294b6808"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-correction.patch",
+      "sha256": "252644bee43ecb4252d088d90c95165b33c05479a6e79513586c0fa89946e282"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-report.json",
+      "sha256": "b122bc2c25f3e54a132bde5bcd2d86ae51afd4e6daeb1b57d4f22802dcaec46c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/numerical-run.txt",
+      "sha256": "3dcd96845a4085b5087a7067b7d5b5c91c85fbdbc832126660c1fc5e4ea101fc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-before.txt",
+      "sha256": "1929f61fdb3cd1803465d74a8c210738c2a1d0e88e2f2e99b31c5444042bbb45"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-corrections.txt",
+      "sha256": "266bed90a882403b6db6315619ab295bb6f5cab9ebcff2ce5926dbae8586df3a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-report.json",
+      "sha256": "4e72471d2ee94116148d8ac5abb51aa94f1df2d1df8139288f7cf9af03fd4b76"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/pressure-run.txt",
+      "sha256": "addfac99277457f3e2337c7d6a2022ac6300239f12d9c63f91c1b5df4f82802f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/rg-numerical-review/requirements.txt",
+      "sha256": "c90bff7a7f790d9adf2795d6085dbeb6bb5bb4f99f0143f2690430d7cca9455b"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
       "sha256": "e998284bc41455cbcdda8a9c884aa68c53b0f4770eab0bdb529007a94b86f09a"
     },
@@ -1055,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "f089852d2196e898b2ef71a1cd1e7252e0373f1a377b4ab3880130213b3e5060"
+      "sha256": "3ed3e028679d08596079e77f983d9d8e637e1df2415a9e03f4496243dd94835e"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -1287,7 +2807,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_ci_local.py",
-      "sha256": "ba2450caaf30bbe984627141a8aed5ec62d1dc6e6590712068053756e9f23b17"
+      "sha256": "79750a4ccae947d3c4f546de9048cda9d30bdc4df2a7bdbb8a2dea60aff547d7"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_ci_local_evidence.py",
@@ -1315,7 +2835,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_ci_pc_local.py",
-      "sha256": "d90d9cec9dbc2bb6308c1d895046f71c0eb963f0f27bf380208b6c0368f5a559"
+      "sha256": "a7b1b03110c9efcce96c0d002ebd78ea738a586ae16075da43fcabcf5c039871"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_ci_pc_local_evidence.py",
@@ -1347,7 +2867,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_pc_local.py",
-      "sha256": "a8ddefb02408c4e5cbc6c383488720b3f02e7bf4c05609e31d903c52b6d2ee01"
+      "sha256": "bdf2783dde78984eefef3a9b900cae3cfe32165b3634df3a8d63b0ea9d49f3d7"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_pc_local_evidence.py",
@@ -1379,7 +2899,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_rg2b_local.py",
-      "sha256": "e48b1a3b7baaf29b5b191a2ea79444ad4b475796972d2000ea267cc8fa4fd2c5"
+      "sha256": "b3c76409be8a915b0afb594b5b60b412f842191c944da688b21727798d6f8e44"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p977_c_rg2b_local_evidence.py",
@@ -1392,6 +2912,86 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p978_specialization_review.py",
       "sha256": "9feac3700cb06bdb95e71fe8d5d066ed6d7201d337cbde6236b3f79ec70dadba"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_a_event_companion.py",
+      "sha256": "7d98b7ac5801858d7bc6b953a4f3725f8180942c85ffa55a103ed050d38bd30e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_aggregate_review.py",
+      "sha256": "86f73fcfc6590fdb2b86602016160f60e194a7b68749e47188af3070bf80a1ab"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_boundary_continuation.py",
+      "sha256": "9318a8b8d910effd5b0c77a75772b0c5e4f67976791743c4aaf464886720b9bd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_carrier_event_companion.py",
+      "sha256": "a671accc50e08757d40a2fa7a28d41fe8917f6058d4ef31b6d188c519fda9ec7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py",
+      "sha256": "0ddd5b79cc2492a1d6635158f81fce308872fa240a6630074676d18d1b983136"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_event_companion.py",
+      "sha256": "c639a458965e95dba633ac3367bdb6192bc7edc17b0db7c5545481b19d8d76d9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_feasibility.py",
+      "sha256": "7c80cbedea59523392518910711623a7f8ea354c4ac0107b0f937fddb9ba6794"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_fixed_row_bounds.py",
+      "sha256": "c16a4d48ca6b22160cfe45ccb5e6557ecb86dd2964525b262542183a09a6b573"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py",
+      "sha256": "944385027e388619e1d70510ac1cc9eb7cfdb7ed1c15be3ea3a78524ee9b2d28"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_os_numerical_feasibility.py",
+      "sha256": "dbb2dcb7384988cb5a0f1106c34006101ff3d9896db91300c566788e827913e4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_readiness.py",
+      "sha256": "c1262d2e4ba636995814b3316ff3493b24b9f6d7859c73a268b2c7464026be00"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py",
+      "sha256": "8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_restriction_boundaries.py",
+      "sha256": "21457ab59e37c9e3074eb6cb350c306d8c74c8bfb013f89b6473f733cdd3ec0f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_revised_realization_bounds.py",
+      "sha256": "f1210bf1aa43b9189108d934f87b933186e33c8d79bf03f5b3fdd54e782b5286"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py",
+      "sha256": "5725f799116395e74601c04578a1caaa8811f76657589b334514122553fa0c79"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py",
+      "sha256": "b4c41363d07beee6c4b0e18f88c52f19574abc55cfd5b73a264514df62cb297e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_rg_event_companion.py",
+      "sha256": "3ea4c72d64b1204ce19ed433b0f164851e8f622e8aade6aaf44a40f905d4bfb7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py",
+      "sha256": "e2d5f1639de5b1f9c5f739c63c6ceaeff864f588681def25bcefae78832bbb1d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_scope_binding.py",
+      "sha256": "2870727085e00d8a79acf254fbca0960fe4fb3a82f8046d6f8ab552423e6e939"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p981_binding_reconciliation.py",
+      "sha256": "560345d72976f63d31e385cf1f985e5ee19c876167664f460ca73ff7636f5f39"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
@@ -1687,7 +3287,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p977_c_rg2b_local.py",
-      "sha256": "cfd78a8e7117f26af263ab9fae8b59fb2e973e8925755eaa68b0a4bb3507c823"
+      "sha256": "f9095f021fbc286af4152cf8bed06e6bafe2622b232eb45e09fbaa9c399a2fa1"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p977_profile_review.py",
@@ -1787,8 +3387,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_event_codec.py",
-      "sha256": "6955698da860261a145a2b825ce217de010c814b579e076fabf324262a277f04"
+      "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
     }
   ],
-  "record_digest": "4fc45235c653c772cf9184aa57593b142a76d8b8d297f0a75ffd54193f536cd6"
+  "record_digest": "351abda095af84ffaa16b21fe7f2105f18d8a6425eeddd1728b2cda58c34a1b8"
 }

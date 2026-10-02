@@ -661,6 +661,59 @@ PATHS = {
     SIDE + "tool/phase9-web/browser.spec.mjs",
 }
 
+# The user requested reconciliation of committed post-G3 maintenance before
+# further P9-8.1 work. This exact roster preserves research as context and puts
+# extracted generic helpers under their existing owners; it grants no support.
+RECONCILIATION = PHASE + "tranche-8/P9-8.1-BindingReconciliation.json"
+RECONCILIATION_DIGEST = "3c536b528f4d3ae86acfad1f8b82e49405fe43873c9cc75e70d5417963124e53"
+
+
+def binding_reconciliation(root):
+    value = read(safe_path(root, RECONCILIATION))
+    require(value["record_digest"] == digest_record(value) == RECONCILIATION_DIGEST,
+            "untrusted binding reconciliation")
+    return value
+
+
+_reconciliation = binding_reconciliation(ROOT)
+RECONCILED_CONTEXT_PATHS = {r["path"] for r in _reconciliation["context_bindings"]}
+RECONCILED_RUNTIME = {r["path"]: r for r in _reconciliation["runtime_additions"]}
+PATHS |= RECONCILED_CONTEXT_PATHS | {
+    RECONCILIATION,
+    PHASE + "tranche-8/P9-8.1-BindingReconciliation.md",
+    PHASE + "tranche-8/binding-reconciliation/validation.json",
+    PHASE + "tranche-8/binding-reconciliation/runtime-tests.txt",
+    PHASE + "tranche-8/binding-reconciliation/boundary-pressure.txt",
+    PHASE + "tranche-8/binding-reconciliation/c-products.txt",
+    PHASE + "tranche-8/binding-reconciliation/atc-admission.txt",
+    HERE + "test_p981_binding_reconciliation.py",
+}
+
+
+def check_binding_reconciliation(root):
+    """Retain exact committed context; never waive a directory or future file."""
+    value = binding_reconciliation(root)
+    prior.ancestor(root, value["subject_commit"])
+    committed = {}
+    for item in filter(None, git(root, "ls-tree", "-r", "-z", value["subject_commit"]).split(b"\0")):
+        header, name = item.split(b"\t", 1)
+        mode, kind, oid = header.decode().split()
+        committed[name.decode()] = (mode, kind, oid)
+    for field in ("context_bindings", "runtime_additions", "review_sources"):
+        for row in value[field]:
+            name = row["path"]
+            require(committed.get(name) == (row["mode"], "blob", row["git_blob"]),
+                    "reconciliation subject differs: " + name)
+            if field == "context_bindings":
+                data = safe_path(root, name).read_bytes()
+                require(planning.blob_id(data) == row["git_blob"],
+                        "retained reconciliation context changed: " + name)
+            else:
+                # Initial helper/review hashes describe the committed subject.
+                # Current helper bytes remain governed by their work entries.
+                data = git(root, "cat-file", "blob", row["git_blob"])
+            require(sha(data) == row["sha256"], "reconciliation content mismatch: " + name)
+
 
 def recorded_acceptance(root):
     """Authenticate the user decision against its original historical subjects."""
@@ -794,6 +847,13 @@ def integration(name, before, after):
         )
         for value in [old, new]:
             value.get("project", {}).get("optional-dependencies", {}).pop("v4", None)
+            # The committed exact-backend correction adds only this opt-in
+            # pinned extra. Required dependencies and every other extra stay
+            # subject to the original additive-integration comparison.
+            optional = value.get("project", {}).get("optional-dependencies", {})
+            if "v4-flint" in optional:
+                require(optional.pop("v4-flint") == ["python-flint==0.9.0"],
+                        "unreviewed V4 exact-backend dependency")
             package = (
                 value.get("tool", {}).get("setuptools", {}).get("package-data", {})
             )
@@ -1537,12 +1597,19 @@ def leaf_permissions(root):
     for name in g3_paths:
         require(name in owners, 'G3 entry outside reviewed ownership')
         owners[name] = owners[name] | {ENTRY}
+    for name, row in RECONCILED_RUNTIME.items():
+        require(row["iteration_id"] in ready, "reconciled helper owner is not ready")
+        owners[name] = {row["iteration_id"]}
     return ready, owners
 
 
 def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": row["module_owner"]}
+        for name, row in sorted(RECONCILED_RUNTIME.items())
+    ), *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner":
          "grc_v4_events" if name in EVENT_NEW_PATHS else
@@ -1779,7 +1846,7 @@ def work_entries(root, approval):
             not path.stat().st_mode & stat.S_IXUSR, "unapproved executable runtime mode"
         )
         content = path.read_bytes()
-        require(sha(content) == row["sha256"], "work content binding mismatch")
+        require(sha(content) == row["sha256"], "work content binding mismatch: " + name)
         if name in targets:
             target = targets[name]
             require(
@@ -1871,6 +1938,7 @@ def work_entries(root, approval):
 
 def current_boundary(root):
     approval = acceptance(root)
+    check_binding_reconciliation(root)
     policy = read(safe_path(root, POLICY))
     require(
         set(policy)
