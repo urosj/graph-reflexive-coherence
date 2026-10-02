@@ -9,9 +9,12 @@ and committed at `75a6629`. P9-8.1b's four recorded checkpoints are delivered
 together under the user's request: row equations, stage-specific weight bridge
 and integrated own review, accepted and committed at `7f33a42`. P9-8.1c's four
 recorded checkpoints are implemented, own-reviewed and user-accepted together: baseline
-candidate detection, admitted post-commit fixture and boundary pressure.
-P9-8.1d is next, requiring its own scoped opening. End-of-Tranche-8 cache review
-remains open.
+candidate detection, admitted post-commit fixture and boundary pressure,
+committed at `e9dfad7`. P9-8.1d's three content-specific checkpoints are
+implemented and own-reviewed together: nonnegative inverse algebra, canonical
+signed channels and graph-bound field dispatch. The user accepts `.d` with the
+identified exact-backend integration correction assigned to new P9-8.1e,
+which is next before P9-8.2. End-of-Tranche-8 cache review remains open.
 General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
@@ -2100,7 +2103,41 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   native specialization lifecycle retain their later owners. The user explicitly
   accepts this complete reviewed result on 2026-10-02 ("accpeted and commit
   changes"), within the recorded baseline scope and integration limits.
-- [ ] P9-8.1d: Implement and verify column coarse-graining and Split.
+- [x] P9-8.1d: Implement and verify column coarse-graining and Split.
+  Content-specific checkpoints, delivered together under the user's request;
+  formal source/test ownership remains `P9-8.1d` in the topology module.
+  - [x] P9-8.1d.1: Implement nonnegative column totals, exact simplex profiles
+    and inverse Split, including canonical uniform zero columns and explicit
+    binary64 reconstruction admission. Verify both inverse identities.
+  - [x] P9-8.1d.2: Implement signed flux as independent positive/negative
+    channels; enforce disjoint support and field-family dispatch. Pressure
+    cancellation, mixed signs and invalid alternate encodings.
+  - [x] P9-8.1d.3: Bind fine/coarse snapshots to the sole port graph and closed
+    policy; gather edge fields with correct local signs and port placement.
+    Check topology/value replacement, typed node order, immutable ownership
+    and exact numerical outliers without introducing a cache or graph fission.
+    Record the integrated evidence and current phase-boundary check.
+  All three checkpoints pass together; see the
+  [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81d-column-coarse-graining-and-split).
+  Both inverse identities hold exactly on the recorded binary64 reconstruction
+  domain. Evidence covers 512 support masks, 27 column-sign patterns, 200
+  wide-scale Decimal cases, both loop ports, parallel edges and 16 orientations.
+  No model cache or native facade/capability wiring is introduced. The user
+  explicitly accepts current `.d` on 2026-10-02 and requests committing it
+  before `.e`. This accepts the recorded mechanical/default-backend result;
+  the identified backend abstraction gap is assigned to `.e` below.
+- [ ] P9-8.1e: Align shared mechanics with the accepted V4 exact-backend contract.
+  - [ ] P9-8.1e.1: Replace direct runtime `Fraction` use throughout `.b`–`.d`
+    with `ExactScalar`/`exact_number` and backend-neutral ratio extraction.
+    Bind retained exact values to their backend, preserving binary64 boundaries,
+    exact coarse reconstruction domain, identities and failure behavior.
+  - [ ] P9-8.1e.2: Extend the source guard to GRC9V4 and verify real Python/FLINT
+    parity, native scalar use, scope restoration and cross-backend handling,
+    including threshold, subnormal, overflow and malformed-input cases.
+  - [ ] P9-8.1e.3: Audit P9-8.0's use of exact arithmetic, distinguishing
+    independent proof/test oracles from runtime consumers. Record the supported
+    conclusion without rewriting accepted proof artifacts or implying new
+    scientific/backend acceptance. Reconcile bindings and phase-boundary checks.
 - [ ] P9-8.2: Implement exact D11-G9-P4a boundary reservation, primary spine,
   both chiralities, conditional phase, tree construction, and capacity rules.
 - [ ] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource

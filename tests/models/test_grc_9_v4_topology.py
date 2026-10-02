@@ -27,17 +27,26 @@ from pygrc.models.grc_9_v4_topology import (
     PORT_COLUMNS,
     PORT_COUNT,
     PORT_ROWS,
+    CoarseDomainError,
+    CoarseFieldTypeError,
+    GRC9CoarsePolicy,
     GRC9RowWeightPolicy,
+    GRC9V4CoarseField,
+    GRC9V4ColumnProfile,
     GRC9V4GraphProjection,
     GRC9V4PortEdge,
     GRC9V4PortEndpoint,
+    GRC9V4PortField,
     GRC9V4PortGraph,
     GRC9V4PostbeatRows,
     GRC9V4RowDifferential,
     GRC9V4SerializedPortGraph,
+    GRC9V4SignedColumn,
+    coarse_grain_columns,
     delegate_native_row_weights,
     port_to_row_column,
     row_column_to_port,
+    split_columns,
 )
 from pygrc.models.grc_v4_codec import (
     V4IdentityError,
@@ -2112,6 +2121,431 @@ class RowWeightBridgeTests(unittest.TestCase):
                 self.assertNotEqual(owner.state.current.W_A, before.W_A)
                 self.assertEqual(record.weights, owner.state.current.W_A)
                 self.assertNotEqual(record.weights, before.W_A)
+
+
+class ColumnCoarseTests(unittest.TestCase):
+    """Exact field algebra: independent column expectations and two inverses."""
+
+    def fine(
+        self, values: tuple[float, ...], family: Any = "nonnegative"
+    ) -> GRC9V4PortField:
+        return GRC9V4PortField(GRC9V4PortGraph(("s",), ()), family, (values,))
+
+    def roundtrip(self, fine: GRC9V4PortField) -> GRC9V4CoarseField:
+        coarse = coarse_grain_columns(fine, field_family=fine.field_family)
+        restored = split_columns(
+            coarse, field_family=fine.field_family, port_graph=fine.port_graph
+        )
+        self.assertEqual(restored.values, fine.values)
+        self.assertEqual(restored.identity, fine.identity)
+        again = coarse_grain_columns(restored, field_family=fine.field_family)
+        self.assertEqual(again.columns, coarse.columns)
+        self.assertEqual(again.identity, coarse.identity)
+        self.assertIs(restored.port_graph, fine.port_graph)
+        return coarse
+
+    def test_closed_policy_matches_frozen_vector_and_requires_both_modes(self) -> None:
+        vectors = json.loads(
+            (
+                Path(__file__).resolve().parents[2]
+                / "specs/grc-v4-conformance-vectors.json"
+            ).read_text()
+        )
+        expected = next(
+            v["payload"]["coarse_graining"]
+            for v in vectors["identity_vectors"]
+            if isinstance(v.get("payload"), dict) and "coarse_graining" in v["payload"]
+        )
+        self.assertEqual(GRC9CoarsePolicy().to_payload(), expected)
+        for field in expected:
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                GRC9CoarsePolicy.from_payload(
+                    {k: v for k, v in expected.items() if k != field}
+                )
+        for change in (
+            {"mode": "simplex_profile"},
+            {"signed_flux_mode": "signed_total_absolute_profile"},
+            {"nonnegative_field_mode": "positive_negative_split"},
+            {"schema_version": True},
+        ):
+            with self.assertRaises(ValueError):
+                GRC9CoarsePolicy.from_payload({**expected, **change})
+
+    def test_literal_columns_and_all_nine_basis_fields(self) -> None:
+        coarse = self.roundtrip(self.fine(tuple(range(1, 10))))
+        for i, expected in enumerate(((1, 4, 7), (2, 5, 8), (3, 6, 9))):
+            column = coarse.columns[0][i]
+            assert isinstance(column, GRC9V4ColumnProfile)
+            self.assertEqual(column.total, sum(expected))
+            self.assertEqual(
+                column.profile, tuple(Fraction(x, sum(expected)) for x in expected)
+            )
+        for port in range(1, 10):
+            coarse = self.roundtrip(
+                self.fine(tuple(float(p == port) for p in range(1, 10)))
+            )
+            for b, ports in enumerate(((1, 4, 7), (2, 5, 8), (3, 6, 9))):
+                column = coarse.columns[0][b]
+                assert isinstance(column, GRC9V4ColumnProfile)
+                self.assertEqual(column.total, int(port in ports))
+                expected_profile = (
+                    tuple(Fraction(int(p == port)) for p in ports)
+                    if port in ports
+                    else (Fraction(1, 3),) * 3
+                )
+                self.assertEqual(column.profile, expected_profile)
+
+    def test_all_512_support_masks_preserve_canonical_zero_columns(self) -> None:
+        for mask in range(512):
+            fine = self.fine(tuple(float(bool(mask & (1 << i))) for i in range(9)))
+            coarse = self.roundtrip(fine)
+            for column in coarse.columns[0]:
+                assert isinstance(column, GRC9V4ColumnProfile)
+                self.assertEqual(sum(column.profile), 1)
+                if column.total == 0:
+                    self.assertEqual(column.profile, (Fraction(1, 3),) * 3)
+
+    def test_reverse_inverse_from_independently_constructed_coarse_values(self) -> None:
+        # Start on the coarse side, not with G's output. 10*(1/10,2/10,7/10)
+        # and 3*(1/3,1/3,1/3) reconstruct integer fine coordinates exactly.
+        columns = (
+            GRC9V4ColumnProfile(
+                Fraction(10), (Fraction(1, 10), Fraction(2, 10), Fraction(7, 10))
+            ),
+            GRC9V4ColumnProfile(Fraction(3), (Fraction(1, 3),) * 3),
+            GRC9V4ColumnProfile(Fraction(0), (Fraction(1, 3),) * 3),
+        )
+        graph = GRC9V4PortGraph((1,), ())
+        coarse = GRC9V4CoarseField(graph, "nonnegative", (columns,))
+        fine = split_columns(coarse, field_family="nonnegative", port_graph=graph)
+        self.assertEqual(fine.values, ((1, 1, 0, 2, 1, 0, 7, 1, 0),))
+        self.assertEqual(
+            coarse_grain_columns(fine, field_family="nonnegative").identity,
+            coarse.identity,
+        )
+
+    def test_all_27_column_sign_patterns_and_cancellation(self) -> None:
+        for a, b, c in product((-2.0, 0.0, 2.0), repeat=3):
+            fine = self.fine((a, 0, 0, b, 0, 0, c, 0, 0), "signed_flux")
+            column = self.roundtrip(fine).columns[0][0]
+            assert isinstance(column, GRC9V4SignedColumn)
+            self.assertEqual(column.positive.total, sum(max(x, 0) for x in (a, b, c)))
+            self.assertEqual(column.negative.total, sum(max(-x, 0) for x in (a, b, c)))
+        fine = self.fine((7, 0, 0, -7, 0, 0, 0, 0, 0), "signed_flux")
+        column = self.roundtrip(fine).columns[0][0]
+        assert isinstance(column, GRC9V4SignedColumn)
+        self.assertEqual(column.positive.total - column.negative.total, 0)
+        self.assertNotEqual(column.split(), (0, 0, 0))
+
+    def test_signed_reverse_inverse_and_overlap_rejection(self) -> None:
+        zero = GRC9V4ColumnProfile(Fraction(0), (Fraction(1, 3),) * 3)
+        positive = GRC9V4ColumnProfile(
+            Fraction(6), (Fraction(1, 3), Fraction(0), Fraction(2, 3))
+        )
+        negative = GRC9V4ColumnProfile(
+            Fraction(5), (Fraction(0), Fraction(1), Fraction(0))
+        )
+        graph = GRC9V4PortGraph(("",), ())
+        coarse = GRC9V4CoarseField(
+            graph,
+            "signed_flux",
+            (
+                (
+                    GRC9V4SignedColumn(positive, negative),
+                    GRC9V4SignedColumn(zero, zero),
+                    GRC9V4SignedColumn(zero, zero),
+                ),
+            ),
+        )
+        fine = split_columns(coarse, field_family="signed_flux", port_graph=graph)
+        self.assertEqual(fine.values, ((2, 0, 0, -5, 0, 0, 4, 0, 0),))
+        self.assertEqual(
+            coarse_grain_columns(fine, field_family="signed_flux").identity,
+            coarse.identity,
+        )
+        with self.assertRaisesRegex(CoarseDomainError, "disjoint"):
+            GRC9V4SignedColumn(positive, positive)
+
+    def test_numerical_extremes_are_lossless_with_no_float_total_or_profile(
+        self,
+    ) -> None:
+        tiny, huge = math.ulp(0.0), sys.float_info.max
+        for family in ("nonnegative", "signed_flux"):
+            for values in (
+                (tiny,) * 9,
+                (huge,) * 9,
+                (
+                    tiny,
+                    huge,
+                    1,
+                    huge,
+                    tiny,
+                    math.nextafter(1, 0),
+                    1,
+                    0,
+                    math.nextafter(1, 2),
+                ),
+            ):
+                self.roundtrip(self.fine(values, family))
+        coarse = self.roundtrip(self.fine((huge,) * 9))
+        column = coarse.columns[0][0]
+        assert isinstance(column, GRC9V4ColumnProfile)
+        self.assertEqual(column.total, 3 * Fraction(huge))
+        coarse = self.roundtrip(self.fine((tiny, 0, 0, huge, 0, 0, 0, 0, 0)))
+        column = coarse.columns[0][0]
+        assert isinstance(column, GRC9V4ColumnProfile)
+        self.assertGreater(column.profile[0], 0)
+        self.assertEqual(
+            float(column.profile[0]), 0
+        )  # A float-only profile loses tiny.
+        self.assertEqual(column.split()[0], tiny)
+        self.roundtrip(
+            self.fine(
+                (huge, -huge, tiny, -huge, tiny, -tiny, tiny, huge, -huge),
+                "signed_flux",
+            )
+        )
+
+    def test_200_deterministic_bit_scale_cases_and_independent_column_sums(
+        self,
+    ) -> None:
+        rng = random.Random(9814)
+        for case in range(200):
+            family: Any = "signed_flux" if case % 2 else "nonnegative"
+            values = tuple(
+                math.ldexp(rng.randrange(1, 2**20), rng.randrange(-1074, 1003))
+                * (-1 if family == "signed_flux" and rng.randrange(2) else 1)
+                for _ in range(9)
+            )
+            fine = self.fine(values, family)
+            coarse = self.roundtrip(fine)
+            for b, ports in enumerate(((1, 4, 7), (2, 5, 8), (3, 6, 9))):
+                # Decimal needs > 1074 significant digits to independently add
+                # all binary64 scales without losing the minimum subnormal.
+                with localcontext() as ctx:
+                    ctx.prec = 2200
+                    column = coarse.columns[0][b]
+                    for channel, sign in (
+                        ((column, 1),)
+                        if isinstance(column, GRC9V4ColumnProfile)
+                        else ((column.positive, 1), (column.negative, -1))
+                    ):
+                        expected = sum(
+                            (
+                                max(Decimal(values[p - 1]) * sign, Decimal(0))
+                                for p in ports
+                            ),
+                            Decimal(0),
+                        )
+                        self.assertEqual(Fraction(expected), channel.total)
+                        for a, port in enumerate(ports):
+                            exact_value = max(
+                                Fraction(values[port - 1]) * sign, Fraction()
+                            )
+                            self.assertEqual(
+                                channel.total * channel.profile[a], exact_value
+                            )
+
+    def test_coarse_simplex_and_reconstruction_domain_reject_without_repair(
+        self,
+    ) -> None:
+        uniform = (Fraction(1, 3),) * 3
+        for total, profile in (
+            (-1, uniform),
+            (0, (1, 0, 0)),
+            (1, (1, 1, -1)),
+            (1, (1, 1, 1)),
+            (1, (1, 0)),
+            (1, (math.nextafter(1, 0), 0, 0)),
+            (1, (math.nextafter(1, 2), 0, 0)),
+            (1, uniform),
+            (Fraction(math.ulp(0.0)), (Fraction(1, 2), Fraction(1, 2), 0)),
+            (Fraction(sys.float_info.max) * 2, (1, 0, 0)),
+        ):
+            with (
+                self.subTest(total=total, profile=profile),
+                self.assertRaises(CoarseDomainError),
+            ):
+                GRC9V4ColumnProfile(total, profile)  # type: ignore[arg-type]
+        for invalid in (True, -0.0, math.nan, math.inf, 2**53, "1", Decimal(1)):
+            with self.assertRaises((ValueError, TypeError)):
+                GRC9V4ColumnProfile(invalid, uniform)  # type: ignore[arg-type]
+            with self.assertRaises((ValueError, TypeError)):
+                GRC9V4ColumnProfile(Fraction(0), (invalid, 0, 0))  # type: ignore[arg-type]
+
+    def test_field_requests_never_cross_encodings(self) -> None:
+        for family, other in (
+            ("nonnegative", "signed_flux"),
+            ("signed_flux", "nonnegative"),
+        ):
+            fine = self.fine((1,) * 9, family)
+            coarse = self.roundtrip(fine)
+            with self.assertRaises(CoarseFieldTypeError):
+                coarse_grain_columns(fine, field_family=other)  # type: ignore[arg-type]
+            with self.assertRaises(CoarseFieldTypeError):
+                split_columns(coarse, field_family=other, port_graph=fine.port_graph)  # type: ignore[arg-type]
+            with self.assertRaises(CoarseFieldTypeError):
+                replace(coarse, field_family=other)  # type: ignore[arg-type]
+        fine = self.fine((0,) * 9)
+        for name in (True, "signed_total_absolute_profile", "coherence", "", 1):
+            with self.assertRaises(CoarseFieldTypeError):
+                coarse_grain_columns(fine, field_family=name)  # type: ignore[arg-type]
+
+    def test_field_shape_number_and_graph_admission(self) -> None:
+        for values in ((), (0,) * 8, (0,) * 10):
+            with self.assertRaises(CoarseDomainError):
+                self.fine(values)
+        for invalid in (True, -0.0, math.nan, math.inf, 2**53, "1"):
+            with self.assertRaises((ValueError, TypeError)):
+                self.fine((invalid, *([0] * 8)))  # type: ignore[arg-type]
+        with self.assertRaises(ValueError):
+            self.fine((-1,) * 9)
+        fine = self.fine((1,) * 9)
+        for wrong in ({}, object(), fine.values):
+            with self.assertRaises(CoarseFieldTypeError):
+                coarse_grain_columns(wrong, field_family="nonnegative")  # type: ignore[arg-type]
+        with self.assertRaises(CoarseFieldTypeError):
+            coarse_grain_columns(fine, field_family="nonnegative", policy={})  # type: ignore[arg-type]
+        with self.assertRaises(TypeError):
+            replace(fine, port_graph=GRCV4Graph(("s",), ()))  # type: ignore[arg-type]
+        coarse = self.roundtrip(fine)
+        for columns in ((), ((),), ((coarse.columns[0][0],),)):
+            with self.assertRaises(CoarseDomainError):
+                replace(coarse, columns=columns)
+
+    def test_empty_and_isolate_both_families(self) -> None:
+        for graph in (GRC9V4PortGraph((), ()), GRC9V4PortGraph(("", 1, "1"), ())):
+            for family in ("nonnegative", "signed_flux"):
+                fine = GRC9V4PortField.from_edge_values(graph, family, ())
+                self.assertEqual(fine.values, ((0,) * 9,) * len(graph.live_node_ids))
+                self.roundtrip(fine)
+
+    def test_edge_gathering_local_signs_parallel_edges_and_both_loop_ports(
+        self,
+    ) -> None:
+        graph = GRC9V4PortGraph(
+            (1, "1"),
+            (
+                edge("a", (1, 1), ("1", 9)),
+                edge("b", (1, 2), ("1", 8)),
+                edge("loop", (1, 4), (1, 7)),
+                edge("loop2", ("1", 3), ("1", 6)),
+            ),
+        )
+        signed = GRC9V4PortField.from_edge_values(graph, "signed_flux", (2, -3, 5, 0))
+        self.assertEqual(
+            signed.values, ((2, -3, 0, 5, 0, 0, -5, 0, 0), (0, 0, 0, 0, 0, 0, 0, 3, -2))
+        )
+        nonnegative = GRC9V4PortField.from_edge_values(
+            graph, "nonnegative", (2, 3, 5, 0)
+        )
+        self.assertEqual(
+            nonnegative.values,
+            ((2, 3, 0, 5, 0, 0, 5, 0, 0), (0, 0, 0, 0, 0, 0, 0, 3, 2)),
+        )
+        for fine in (signed, nonnegative):
+            self.roundtrip(fine)
+        for mask in range(16):
+            edges = tuple(
+                replace(e, tail=e.head, head=e.tail) if mask & (1 << i) else e
+                for i, e in enumerate(graph.edges)
+            )
+            currents = tuple(
+                -j if mask & (1 << i) and j else j for i, j in enumerate((2, -3, 5, 0))
+            )
+            changed = GRC9V4PortField.from_edge_values(
+                replace(graph, edges=edges[::-1]), "signed_flux", currents[::-1]
+            )
+            self.assertEqual(changed.values, signed.values)
+            self.roundtrip(changed)
+        with self.assertRaises(CoarseDomainError):
+            GRC9V4PortField.from_edge_values(graph, "signed_flux", (1,))
+
+    def test_split_checks_all_graph_binding_changes(self) -> None:
+        graph = GRC9V4PortGraph(
+            (1, "1", "x"), (edge("a", (1, 1), ("1", 2)), edge("b", ("1", 3), ("x", 4)))
+        )
+        fine = GRC9V4PortField.from_edge_values(graph, "signed_flux", (1, -2))
+        coarse = self.roundtrip(fine)
+        for changed in (
+            replace(graph, live_node_ids=graph.live_node_ids[::-1]),
+            replace(graph, live_node_ids=(*graph.live_node_ids, "extra")),
+            replace(graph, edges=graph.edges[::-1]),
+            replace(
+                graph, edges=(replace(graph.edges[0], edge_id="other"), graph.edges[1])
+            ),
+            replace(
+                graph, edges=(replace(graph.edges[0], kind="tree"), graph.edges[1])
+            ),
+            replace(
+                graph,
+                edges=(
+                    replace(graph.edges[0], tail=GRC9V4PortEndpoint(1, 9)),
+                    graph.edges[1],
+                ),
+            ),
+            replace(
+                graph,
+                edges=(
+                    replace(
+                        graph.edges[0],
+                        tail=graph.edges[0].head,
+                        head=graph.edges[0].tail,
+                    ),
+                    graph.edges[1],
+                ),
+            ),
+        ):
+            with self.assertRaisesRegex(CoarseDomainError, "graph binding"):
+                split_columns(coarse, field_family="signed_flux", port_graph=changed)
+        clone = GRC9V4PortGraph.from_envelope(graph.to_envelope())
+        self.assertEqual(
+            split_columns(
+                coarse, field_family="signed_flux", port_graph=clone
+            ).identity,
+            fine.identity,
+        )
+
+    def test_deep_ownership_fresh_values_and_no_authoritative_cache(self) -> None:
+        values = [[1.0] * 9]
+        fine = GRC9V4PortField(GRC9V4PortGraph(("s",), ()), "nonnegative", values)  # type: ignore[arg-type]
+        coarse = self.roundtrip(fine)
+        identity = coarse.identity
+        values[0][0] = 100
+        self.assertEqual(fine.values[0][0], 1)
+        self.assertEqual(coarse.identity, identity)
+        changed = replace(fine, values=((100.0, *fine.values[0][1:]),))
+        current = self.roundtrip(changed)
+        self.assertNotEqual(current.identity, identity)
+        self.assertNotEqual(changed.identity, fine.identity)
+        self.assertEqual(coarse.identity, identity)
+        self.assertFalse(hasattr(coarse, "values"))
+        for value in (fine, coarse):
+            self.assertFalse(hasattr(value, "__dict__"))
+            self.assertFalse(hasattr(value, "coarse_cache"))
+            with self.assertRaises(FrozenInstanceError):
+                value.field_family = "signed_flux"  # type: ignore[misc]
+        with self.assertRaises(FrozenInstanceError):
+            coarse.columns[0][0].total = Fraction(9)  # type: ignore[misc,union-attr]
+
+    def test_tampered_typed_records_are_revalidated_before_any_result(self) -> None:
+        fine = self.fine((1,) * 9)
+        coarse = self.roundtrip(fine)
+        malformed = deepcopy(coarse)
+        object.__setattr__(malformed.columns[0][0], "profile", (Fraction(1),) * 3)
+        with self.assertRaises(CoarseDomainError):
+            split_columns(
+                malformed, field_family="nonnegative", port_graph=fine.port_graph
+            )
+        bad_policy = deepcopy(coarse.policy)
+        object.__setattr__(bad_policy, "signed_flux_mode", "absolute_profile")
+        with self.assertRaises(ValueError):
+            coarse_grain_columns(fine, field_family="nonnegative", policy=bad_policy)
+        malformed_fine = deepcopy(fine)
+        object.__setattr__(malformed_fine, "values", ((-1,) * 9,))
+        with self.assertRaises(ValueError):
+            coarse_grain_columns(malformed_fine, field_family="nonnegative")
+        self.assertEqual(self.roundtrip(fine).identity, coarse.identity)
 
 
 if __name__ == "__main__":

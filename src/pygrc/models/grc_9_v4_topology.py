@@ -1,4 +1,4 @@
-"""P9-8.1a/b: port graph, fixed-row differential and stage-specific weights.
+"""P9-8.1a/b/d: port graph, fixed-row differential and column coarse/Split.
 
 Rows are directional classes; columns are interface families. The chart is
 fixed mechanical data, not a dynamical field. Coordinates use one-based JSON
@@ -694,3 +694,320 @@ def delegate_native_row_weights(delegate: GRC9V3) -> tuple[tuple[int, float], ..
         tuple(state.base_conductance[edge] for edge in edges), nonnegative=True
     )
     return tuple(zip(edges, values, strict=True))
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class GRC9CoarsePolicy(_Record):
+    """Both normative field encodings are mandatory, not global alternatives."""
+
+    SCHEMA: ClassVar[str] = "coarse_policy"
+    schema_version: Literal["grc9v4-coarse-policy-v1"] = "grc9v4-coarse-policy-v1"
+    nonnegative_field_mode: Literal["simplex_profile"] = "simplex_profile"
+    signed_flux_mode: Literal["positive_negative_split"] = "positive_negative_split"
+
+
+CoarseFieldFamily = Literal["nonnegative", "signed_flux"]
+
+
+class CoarseFieldTypeError(TypeError):
+    """A request or encoding selects the wrong port-field family."""
+
+
+class CoarseDomainError(ValueError):
+    """A coarse value is outside the exact binary64 reconstruction domain."""
+
+
+def _field_family(value: object) -> CoarseFieldFamily:
+    if type(value) is not str or value not in ("nonnegative", "signed_flux"):
+        raise CoarseFieldTypeError("field family must be nonnegative or signed_flux")
+    return cast(CoarseFieldFamily, value)
+
+
+def _requested_family(actual: CoarseFieldFamily, requested: object) -> None:
+    if _field_family(requested) != actual:
+        raise CoarseFieldTypeError("request and stored field family differ")
+
+
+def _coarse_fraction(value: object) -> Fraction:
+    # Explicit exact derived coordinates, not a relaxation of JSON/state input.
+    if type(value) is Fraction:
+        return value
+    if type(value) not in (int, float):
+        raise TypeError("coarse coordinate requires Fraction or JSON number")
+    return Fraction(_number(value))
+
+
+def _coarse_float(value: Fraction) -> float:
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise CoarseDomainError("Split coordinate is outside binary64") from exc
+    if Fraction(result) != value:
+        raise CoarseDomainError("Split coordinate is not exactly representable")
+    return 0.0 if result == 0 else result
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ColumnProfile:
+    """Exact derived total/profile for one column, with rows in order 1..3.
+
+    Totals may exceed binary64 and ratios need not be dyadic. Every product
+    must reconstruct an admitted finite binary64 fine coordinate exactly.
+    Zero total has the unique uniform profile; no tolerance or repair is used.
+    This in-memory value is not a new authoritative state or wire schema.
+    """
+
+    total: Fraction
+    profile: tuple[Fraction, ...]
+
+    def __post_init__(self) -> None:
+        total = _coarse_fraction(self.total)
+        profile = tuple(_coarse_fraction(x) for x in _ordered(self.profile))
+        if total < 0 or len(profile) != 3 or any(x < 0 for x in profile):
+            raise CoarseDomainError("expected a nonnegative total and simplex3")
+        if sum(profile) != 1:
+            raise CoarseDomainError("column profile must sum exactly to one")
+        if total == 0 and profile != (Fraction(1, 3),) * 3:
+            raise CoarseDomainError("zero total requires the canonical uniform profile")
+        for x in profile:
+            _coarse_float(total * x)
+        object.__setattr__(self, "total", total)
+        object.__setattr__(self, "profile", profile)
+
+    def split(self) -> tuple[float, ...]:
+        return tuple(_coarse_float(self.total * x) for x in self.profile)
+
+
+def _copy_column(value: object) -> GRC9V4ColumnProfile:
+    if type(value) is not GRC9V4ColumnProfile:
+        raise CoarseFieldTypeError("expected a nonnegative column profile")
+    return GRC9V4ColumnProfile(value.total, value.profile)
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4SignedColumn:
+    """Canonical J+/J- channels; overlapping support would break G o Split."""
+
+    positive: GRC9V4ColumnProfile
+    negative: GRC9V4ColumnProfile
+
+    def __post_init__(self) -> None:
+        positive, negative = _copy_column(self.positive), _copy_column(self.negative)
+        if any(
+            p > 0 and n > 0
+            for p, n in zip(positive.split(), negative.split(), strict=True)
+        ):
+            raise CoarseDomainError(
+                "positive and negative channels must have disjoint support"
+            )
+        object.__setattr__(self, "positive", positive)
+        object.__setattr__(self, "negative", negative)
+
+    def split(self) -> tuple[float, ...]:
+        return tuple(
+            p if p > 0 else -n if n > 0 else 0.0
+            for p, n in zip(self.positive.split(), self.negative.split(), strict=True)
+        )
+
+
+def _nonnegative_column(values: tuple[float, ...]) -> GRC9V4ColumnProfile:
+    exact = tuple(Fraction(x) for x in values)
+    total = sum(exact, Fraction())
+    profile = tuple(x / total for x in exact) if total else (Fraction(1, 3),) * 3
+    return GRC9V4ColumnProfile(total, profile)
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4PortField:
+    """Detached fine field: live-node order, then literal ports 1..9.
+
+    This is a declared field snapshot, not authenticated live state. All chart
+    positions exist, including inactive ports. Edge gathering supplies zero at
+    inactive ports; callers can also declare other port-attached scalar fields.
+    """
+
+    port_graph: GRC9V4PortGraph
+    field_family: CoarseFieldFamily
+    values: tuple[tuple[float, ...], ...]
+
+    def __post_init__(self) -> None:
+        GRC9V4GraphProjection(self.port_graph)
+        family = _field_family(self.field_family)
+        values = tuple(
+            _vector(row, nonnegative=family == "nonnegative")
+            for row in _ordered(self.values)
+        )
+        if len(values) != len(self.port_graph.live_node_ids) or any(
+            len(row) != 9 for row in values
+        ):
+            raise CoarseDomainError("field needs one nine-port row per live node")
+        object.__setattr__(self, "values", values)
+
+    @classmethod
+    def from_edge_values(
+        cls,
+        port_graph: GRC9V4PortGraph,
+        field_family: CoarseFieldFamily,
+        edge_values: tuple[float, ...],
+    ) -> Self:
+        """Gather in stable edge order; signed values are outward at the tail."""
+        GRC9V4GraphProjection(port_graph)
+        family = _field_family(field_family)
+        values = _vector(edge_values, nonnegative=family == "nonnegative")
+        if len(values) != len(port_graph.edges):
+            raise CoarseDomainError("edge field shape mismatch")
+        rows = {node: [0.0] * 9 for node in port_graph.live_node_ids}
+        for edge, value in zip(port_graph.edges, values, strict=True):
+            rows[edge.tail.node_id][edge.tail.port - 1] = value
+            rows[edge.head.node_id][edge.head.port - 1] = (
+                -value if family == "signed_flux" and value != 0 else value
+            )
+        return cls(port_graph, family, tuple(tuple(row) for row in rows.values()))
+
+    @property
+    def identity(self) -> str:
+        return _identity(
+            "grc9v4-port-field-sha256",
+            {
+                "descriptor_version": "grc9v4-port-field-v1",
+                "graph_digest": self.port_graph.graph_digest,
+                "field_family": self.field_family,
+                "values": self.values,
+            },
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CoarseField:
+    """Exact column encoding in live-node order, then columns 1..3.
+
+    No source fine values or cache are stored. Split revalidates this encoding
+    and the caller's graph binding. Identity is an implementation-local content
+    descriptor; rational numerator/denominator strings are not JSON numbers.
+    Full model serialization and cache lifecycle remain with later owners.
+    """
+
+    port_graph: GRC9V4PortGraph
+    field_family: CoarseFieldFamily
+    columns: tuple[tuple[GRC9V4ColumnProfile | GRC9V4SignedColumn, ...], ...]
+    policy: GRC9CoarsePolicy = field(default_factory=GRC9CoarsePolicy)
+
+    def __post_init__(self) -> None:
+        GRC9V4GraphProjection(self.port_graph)
+        family = _field_family(self.field_family)
+        if type(self.policy) is not GRC9CoarsePolicy:
+            raise CoarseFieldTypeError("expected GRC9CoarsePolicy")
+        object.__setattr__(
+            self, "policy", GRC9CoarsePolicy.from_payload(self.policy.to_payload())
+        )
+        rows: list[tuple[GRC9V4ColumnProfile | GRC9V4SignedColumn, ...]] = []
+        for row in _ordered(self.columns):
+            columns: list[GRC9V4ColumnProfile | GRC9V4SignedColumn] = []
+            for column in _ordered(row):
+                if family == "nonnegative":
+                    columns.append(_copy_column(column))
+                else:
+                    if type(column) is not GRC9V4SignedColumn:
+                        raise CoarseFieldTypeError(
+                            "signed flux requires positive/negative channels"
+                        )
+                    columns.append(GRC9V4SignedColumn(column.positive, column.negative))
+            if len(columns) != 3:
+                raise CoarseDomainError("expected three columns per node")
+            rows.append(tuple(columns))
+        if len(rows) != len(self.port_graph.live_node_ids):
+            raise CoarseDomainError("coarse node shape mismatch")
+        object.__setattr__(self, "columns", tuple(rows))
+
+    @property
+    def identity(self) -> str:
+        def column_payload(column: GRC9V4ColumnProfile) -> list[list[str]]:
+            return [
+                [str(x.numerator), str(x.denominator)]
+                for x in (column.total, *column.profile)
+            ]
+
+        return _identity(
+            "grc9v4-coarse-field-sha256",
+            {
+                "descriptor_version": "grc9v4-exact-column-field-v1",
+                "graph_digest": self.port_graph.graph_digest,
+                "field_family": self.field_family,
+                "policy": self.policy.to_payload(),
+                "columns": [
+                    [
+                        column_payload(column)
+                        if isinstance(column, GRC9V4ColumnProfile)
+                        else [
+                            column_payload(column.positive),
+                            column_payload(column.negative),
+                        ]
+                        for column in row
+                    ]
+                    for row in self.columns
+                ],
+            },
+        )
+
+
+def coarse_grain_columns(
+    port_field: GRC9V4PortField,
+    *,
+    field_family: CoarseFieldFamily,
+    policy: GRC9CoarsePolicy | None = None,
+) -> GRC9V4CoarseField:
+    """The chart-specific G operator; the request must name the field family."""
+    if type(port_field) is not GRC9V4PortField:
+        raise CoarseFieldTypeError("expected a GRC9V4PortField")
+    source = GRC9V4PortField(
+        port_field.port_graph, port_field.field_family, port_field.values
+    )
+    _requested_family(source.field_family, field_family)
+    rows: list[tuple[GRC9V4ColumnProfile | GRC9V4SignedColumn, ...]] = []
+    for values in source.values:
+        columns: list[GRC9V4ColumnProfile | GRC9V4SignedColumn] = []
+        for ports in PORT_COLUMNS:
+            coordinates = tuple(values[p - 1] for p in ports)
+            columns.append(
+                _nonnegative_column(coordinates)
+                if field_family == "nonnegative"
+                else GRC9V4SignedColumn(
+                    _nonnegative_column(tuple(max(x, 0.0) for x in coordinates)),
+                    _nonnegative_column(
+                        tuple(-x if x < 0 else 0.0 for x in coordinates)
+                    ),
+                )
+            )
+        rows.append(tuple(columns))
+    return GRC9V4CoarseField(
+        source.port_graph,
+        source.field_family,
+        tuple(rows),
+        GRC9CoarsePolicy() if policy is None else policy,
+    )
+
+
+def split_columns(
+    coarse: GRC9V4CoarseField,
+    *,
+    field_family: CoarseFieldFamily,
+    port_graph: GRC9V4PortGraph,
+) -> GRC9V4PortField:
+    """Exact inverse on the admitted encoding; no graph fission or mutation."""
+    if type(coarse) is not GRC9V4CoarseField:
+        raise CoarseFieldTypeError("expected a GRC9V4CoarseField")
+    source = GRC9V4CoarseField(
+        coarse.port_graph, coarse.field_family, coarse.columns, coarse.policy
+    )
+    _requested_family(source.field_family, field_family)
+    GRC9V4GraphProjection(port_graph)
+    if port_graph.graph_digest != source.port_graph.graph_digest:
+        raise CoarseDomainError("Split graph binding differs from the coarse snapshot")
+    rows = []
+    for columns in source.columns:
+        values = [0.0] * 9
+        for ports, column in zip(PORT_COLUMNS, columns, strict=True):
+            for port, value in zip(ports, column.split(), strict=True):
+                values[port - 1] = value
+        rows.append(tuple(values))
+    return GRC9V4PortField(port_graph, source.field_family, tuple(rows))

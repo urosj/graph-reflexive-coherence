@@ -86,3 +86,27 @@ def trigger_authorization(root):
 def trigger_permitted(path, leaf):
     """Call only after trigger_authorization(root); no later lifecycle entry."""
     return leaf == TRIGGER_ENTRY and path in TRIGGER_PATHS
+
+
+COARSE_ENTRY = 'P9-8.1d'
+COARSE_PREDECESSOR = 'e9dfad748b16d9c67b6368f8e3689137944f8f47'
+COARSE_PREDECESSOR_HASHES = (
+    *TRIGGER_PREDECESSOR_HASHES,
+    'a65ea279b644f8592cd763d16e55e931661f7e8100c0e34002a345669589c5c3',
+    'f6a991a8e742361df3a02e0a24d7a9827f484c9d97e56c6697bb6ad042c00b7e',
+)
+
+
+def coarse_authorization(root):
+    """User-requested .d after accepted .c; column field algebra only."""
+    accepted(root)
+    p.git(root, 'merge-base', '--is-ancestor', COARSE_PREDECESSOR, 'HEAD')
+    for path, expected in zip((*PATHS, *TRIGGER_PATHS), COARSE_PREDECESSOR_HASHES, strict=True):
+        p.require(p.sha(p.git(root, 'show', COARSE_PREDECESSOR + ':' + path)) == expected,
+                  'column coarse/Split requires the accepted shared mechanics subject')
+    return COARSE_ENTRY
+
+
+def coarse_permitted(path, leaf):
+    """Call only after coarse_authorization(root); reviewed topology owner."""
+    return leaf == COARSE_ENTRY and path in PATHS

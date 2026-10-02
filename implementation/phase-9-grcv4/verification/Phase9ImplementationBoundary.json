@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "1a57592543670f4a722fc9703038b69d70967ce84661ddc69c42bf27e2d59f4c"
+      "sha256": "3d34f943533fa8cf47042e21b3bff7e6181f38df9155055f8f189e4b0464f0c7"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "c28ca797a364b4f82f0e9ac651194c4e2523f477448ff4b321b5a63c2e525d60"
+      "sha256": "b36495a2f71fc341c248d6335065446094bfd9a1174e06511fea1cfd6ea4cee9"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "46eb2511914ebad84ce7f9c052d605516a9a3e2c65abf48a981d5dc3c9ee889f"
+      "sha256": "e337f07119bb932f371a76aad3d2534d6be0e7e67a1cecf1f8134182a3e64638"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,11 +2575,11 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "071a92dba8ff316ae3a61ee6f2ae408a6e102a245488a6d71672ea16f5994156"
+      "sha256": "48bfb346aca69287d9ae1215f1d4b0a7707b8b11eda6aa3867d2c80bcb3a8fd5"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
-      "sha256": "1bff66443dbc0a83d209ad13c673091291adc3fd6d8204c8bd688ea46e1f4c50"
+      "sha256": "9fdab79751cd2c9c877184e432e69ba99a831c65e7c48f635e58673cb3133602"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/profile_g2_registry.py",
@@ -2911,7 +2911,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p978_specialization_review.py",
-      "sha256": "863ea780af03bf3db265f66c85f6bed8fad537e8297638031bd9ab01f573830e"
+      "sha256": "e85aad7e838186d5f3627f4320d1a19ebf6e95a40844b4af5e09a1b49a8904f2"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p980_a_event_companion.py",
@@ -3390,5 +3390,5 @@
       "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
     }
   ],
-  "record_digest": "fd3f4895da7bcdee0f0771569273abd8fdfb73719d9750d7e8470220e57a3c14"
+  "record_digest": "1750d7d6087ebb7e71cef799509c71e93aab70f5f70b153b99be122141f1e0c6"
 }

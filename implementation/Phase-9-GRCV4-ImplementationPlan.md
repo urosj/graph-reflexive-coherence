@@ -10,8 +10,11 @@ audit and is committed at `75a6629`. P9-8.1b's four recorded checkpoints are
 implemented and own-reviewed in one pass under the user's request, accepted
 and committed at `7f33a42`. P9-8.1c's four recorded checkpoints are implemented
 and own-reviewed together, including an admitted post-commit source fixture,
-and explicitly user-accepted on 2026-10-02.
-P9-8.1d is next, subject to its scoped execution opening. Performance/cache review
+and explicitly user-accepted on 2026-10-02, committed at `e9dfad7`.
+P9-8.1d's three content-specific checkpoints are implemented and own-reviewed
+together: nonnegative inverse algebra, signed channels and graph-bound fields.
+The user accepts current `.d` and assigns the exact-backend integration gap to
+new P9-8.1e, to execute after committing `.d` and before P9-8.2. Performance/cache review
 is scheduled at the end of Tranche 8. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
@@ -2382,6 +2385,84 @@ for commands, exact bindings and integration limits. The user explicitly accepts
 the complete reviewed result on 2026-10-02 ("accpeted and commit changes"),
 within this baseline scope, including explicit rejection of the optional
 column-H lane. Later integration and conformance duties remain separate.
+
+##### P9-8.1d work breakdown
+
+The user requests the full leaf with subitems derived from its actual content,
+not a repeated four-checkpoint template. Three parts are delivered together:
+`.1` nonnegative column/simplex algebra and inverse admission, `.2` canonical
+positive/negative signed-flux encoding and typed dispatch, `.3` graph-bound
+field snapshots, edge-field gathering and value/topology replacement evidence.
+Each part includes its mathematical, malformed-input and outlier checks.
+The accepted P9-1.5/G3 ownership consolidates `G9_coarse` into the topology
+module and paired test; the earlier proposed standalone coarse module is not
+the approved owner. Open only `.d` there after accepted `.c` at `e9dfad7`.
+
+The normative column operator in `specs/grc-9-v4-spec.md` requires both inverse
+identities, not approximate reconstruction. Derived totals and profiles retain
+exact rational values of the admitted binary64 fine coordinates; uniform zero
+columns use exact `1/3`. This preserves small coordinates and totals above the
+binary64 maximum without changing authoritative numerical state. The admitted
+coarse domain consists of exact nonnegative simplexes whose reconstructed fine
+coordinates are finite, exactly representable binary64. Noncanonical zero
+profiles, invalid sums and unrepresentable products reject; no renormalization
+or silent rounding is permitted. Signed channels must have disjoint row
+support, as required by `max(J,0)` and `max(-J,0)`, for the reverse identity to
+hold. A signed total/absolute profile cannot substitute for this representation.
+
+Both field families are enabled by the same closed `GRC9CoarsePolicy`.
+Requests name their field family explicitly; wrong-family dispatch is a typed
+error even when all values happen to be nonnegative. Ordered field snapshots
+cover every live node and all nine chart positions. Explicit port fields may
+assign inactive positions; the edge-field adapter derives zero at inactive
+ports, repeats nonnegative edge values at both endpoints and reverses outward
+signed flux at the head, including both ports of loops. Snapshots retain the
+sole immutable port owner and have implementation-local content identities.
+Split checks the caller's graph binding. No cache exists to invalidate; callers
+must supply fresh fields after value changes, while old results remain explicit
+historical snapshots. Full model serialization/capability integration and any
+cache optimization retain their later owners. This operator is neither graph
+fission nor generic graph coarsening, and performs no event or state mutation.
+
+Implementation/own-review status: all three checkpoints pass together. The
+topology module owns the closed policy, immutable fine/coarse snapshots,
+exact column and signed-channel values, edge gathering and both operators.
+The integrated review includes 16 new methods, 512 support masks, 27 column
+sign patterns, 200 independent Decimal cases over binary64 scales and explicit
+zero/subnormal/maximum-finite boundaries. Both inverse directions and the
+canonical signed domain are checked. See the
+[review and final subjects](./Phase-9-GRCV4-Handoff.md#p9-81d-column-coarse-graining-and-split)
+for commands, exact bindings, the algebraic argument and integration limits.
+The user explicitly accepts current `.d` on 2026-10-02 and requests its commit
+before the exact-backend correction in `.e`. This acceptance covers the
+recorded mechanical/default-backend result with that follow-up explicit.
+
+##### P9-8.1e exact-backend correction
+
+The user identifies direct `Fraction` use in shared mechanics as inconsistent
+with the accepted [V4 exact CPU backend](./corrections/GRCV4-ExactCPUBackend.md)
+contract, accepts `.d` with the gap assigned here, and requests this work after
+the `.d` commit. Scope is `.1` shared runtime conversion and retained backend
+ownership, `.2` source-guard coverage and real Python/FLINT parity, `.3` P9-8.0
+arithmetic classification and final boundary reconciliation. These are actual
+correction obligations, not a new generic four-stage template.
+
+`ExactScalar` is a role annotation; `exact_number` constructs the selected
+native representation. Both row/trigger arithmetic and retained column values
+must respect that boundary. Binary64 input/state/output contracts are unchanged.
+The exact-representability requirement in `.d` is its explicit reconstruction
+domain, not a universal V4 rule. Keep backend selection out of scientific/content
+identities, preserve existing default-backend bytes, and test real native FLINT
+scalars rather than treating skipped optional tests as parity evidence.
+
+The original source guard only scans generic V4 filenames, so it missed the
+new GRC9V4 runtime modules. Extend the existing guard to the specialization
+and pressure backend mixing and values used after construction scopes exit.
+P9-8.0 proof code is audited separately: independent exact mathematical oracles
+need not adopt a selectable production backend. Any discovered runtime-boundary
+or proof-validity defect must be recorded explicitly, without silently changing
+accepted artifacts. This correction opens no expansion/facade or later native
+conformance scope.
 
 ##### Profile integration after shared mechanics
 

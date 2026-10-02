@@ -31,11 +31,15 @@ P9-8.1b is committed at `7f33a42`. The user requests P9-8.1c in the same way:
 its four checkpoints are implemented, own-reviewed and explicitly user-accepted
 on 2026-10-02 ("accpeted and commit changes"); see the
 [candidate trigger review](#p9-81c-mechanical-candidate-trigger).
-A separate scoped successor opens `.c` on the reviewed lifecycle source/test
-paths, retaining `.b`'s topology bindings. P9-8.1d is next, requiring its own
-scoped opening. Historical G3 acceptance and later native owners are unchanged;
-this implementation acceptance creates no new machine gate or native
-conformance acceptance.
+P9-8.1c is committed at `e9dfad7`. P9-8.1d now implements and own-reviews three
+content-specific checkpoints together, as the user requested: nonnegative
+inverse algebra, canonical signed channels and graph-bound field dispatch.
+See the [column coarse/Split review](#p9-81d-column-coarse-graining-and-split).
+The separate `.d` opening uses the reviewed topology source/test owner;
+lifecycle `.c` bytes and permissions are unchanged. The user accepts current
+`.d` on 2026-10-02, assigns its identified exact-backend gap to new P9-8.1e,
+and requests committing `.d` before continuing with `.e`. This acceptance
+grants no later native conformance scope.
 The chronology below
 records earlier checkpoints and does not reopen their resolved items.
 
@@ -225,11 +229,12 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next planned implementation task:** P9-8.1d column coarse-graining and Split,
+**Next planned implementation task:** P9-8.1e exact-backend correction,
 subject to its scoped execution opening. P9-8.1a is committed at `75a6629`;
-P9-8.1b is accepted and committed at `7f33a42`. P9-8.1c's four checkpoints are
-implemented, own-reviewed and explicitly user-accepted together. The topology source/test bindings
-remain under `P9-8.1b`; the two new lifecycle paths belong only to `P9-8.1c`.
+P9-8.1b is accepted and committed at `7f33a42`; P9-8.1c is accepted and committed
+at `e9dfad7`. P9-8.1d's three recorded checkpoints are implemented and
+own-reviewed together. The evolving topology source/test bindings now belong
+to `P9-8.1d`; the lifecycle paths remain under `P9-8.1c`.
 Historical subjects are preserved below. The P9-8.0 hold is released; later
 native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
@@ -817,6 +822,144 @@ provenance or expansion admission tokens. Column coarse/Split, allocation,
 transactions, expansion, child stabilization, completed sparks, full native
 profile conformance and the forty disabled compatibility cells retain their
 later owners. No cache is added; the end-of-Tranche-8 review remains scheduled.
+
+## P9-8.1d column coarse-graining and Split
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`, accepted predecessor
+`e9dfad748b16d9c67b6368f8e3689137944f8f47`. The user requests this leaf in one
+pass with subtasks based on its content rather than the previous four-part
+template. **Own-review verdict: pass on the exact field-encoding domain below.**
+Three checkpoints are complete together: `.1` nonnegative column/simplex
+algebra, `.2` canonical signed-flux channels, `.3` graph-bound field snapshots
+and dispatch. Each includes its own inverse/domain/outlier evidence. The user
+explicitly accepts current `.d` on 2026-10-02 and requests committing it before
+new `.e`. This acceptance covers the recorded mechanical/default-backend result;
+the direct-`Fraction` integration gap below remains assigned to `.e`.
+
+Post-review correction: the accepted V4 backend contract requires `ExactScalar`
+and `exact_number`, supporting Python and optional FLINT native rationals.
+Direct `Fraction` use in `.b`, `.c` and `.d` bypasses that boundary, and `.d`'s
+type guard rejects FLINT scalars. The existing generic source guard omits
+`grc_9_v4*.py`, which is why the prior tests did not expose the gap. P9-8.1e
+will correct runtime arithmetic, retained-value ownership and guard coverage,
+run real backend parity, and classify P9-8.0's independent proof arithmetic.
+The prior numerical results stand as default-backend evidence; they did not
+establish specialization FLINT support. Binary64 public coordinates and `.d`'s
+explicit exact reconstruction domain are separate from the backend correction.
+
+Authority is the normative [column coarse-graining and Split](../specs/grc-9-v4-spec.md#column-coarse-graining-and-split)
+and the closed `coarse_policy` schema. The accepted P9-1.5/G3 ownership places
+`G9_coarse` in the topology module, superseding the earlier proposed standalone
+coarse module. The scoped successor checks accepted G3 and all four committed
+topology/lifecycle source/test subjects at `e9dfad7`, then opens only `.d` on
+the two topology paths. Historical acceptance records, native generic support,
+lifecycle `.c` and later expansion/facade permissions remain unchanged.
+
+The [topology module](../src/pygrc/models/grc_9_v4_topology.py) now adds:
+
+- `GRC9CoarsePolicy`: both schema-fixed encodings are present together.
+  Requests explicitly name `nonnegative` or `signed_flux`; dispatch to the
+  other encoding raises `CoarseFieldTypeError`, even for all-positive data.
+- `GRC9V4PortField`: detached, generic-adapter-normalized binary64 values in
+  live-node order and literal ports 1..9. Direct fields cover all chart
+  positions, including inactive ones. `from_edge_values` gathers stable-edge
+  values at their actual local ports, repeats nonnegative values at both ends,
+  reverses outward signed flux at the head, and fills inactive ports with zero.
+  A loop contributes at both distinct ports; parallel edges remain distinct.
+- `GRC9V4ColumnProfile`: exact rational column total and three row shares.
+  Empty columns have the unique exact uniform profile `(1/3,1/3,1/3)`.
+- `GRC9V4SignedColumn`: independent nonnegative J+/J- columns with disjoint
+  fine-row support. A signed total plus an absolute profile is never substituted.
+- `GRC9V4CoarseField`, `coarse_grain_columns` and `split_columns`: the actual
+  chart-specific operators. Encodings retain the sole immutable port graph
+  and closed policy, with complete implementation-local content identities.
+  Split requires the caller's graph binding and revalidates all nested values.
+  No fine source values, graph cache or authoritative coarse state are stored.
+
+**Exact arithmetic/domain decision.** Ordinary float division and multiplication
+cannot implement the two exact inverse identities for every admitted fine
+field. For example, a minimum-subnormal value sharing a column with a
+maximum-finite value has a positive profile entry that rounds to float zero.
+Three maximum-finite values also have a total outside binary64. This encoding
+retains exact `Fraction` totals/profiles derived from the normalized binary64
+fine field, so neither case loses information. Fractions are explicit derived
+coordinates, not an extension to generic JSON/state admission. Identity encodes
+their reduced numerator/denominator as strings, without unsafe JSON integers.
+These descriptors are not a new normative serialized model schema.
+
+The admitted coarse domain requires nonnegative total, exactly three
+nonnegative shares summing exactly to one, the canonical uniform profile at
+zero total, and products that are finite and exactly representable binary64.
+No tolerance, renormalization, clipping or silent reconstruction rounding is
+used. A hand-supplied `(total=1, uniform thirds)` rejects because its fine
+coordinates are not binary64-exact; `(total=3, uniform thirds)` admits and
+reconstructs `(1,1,1)`. Total overflow alone is harmless when the individual
+products are representable. Unrepresentable, overflowing or underflowing fine
+products raise `CoarseDomainError` before returning a field.
+
+The inverse argument is direct. For a fine nonnegative column, let `T=sum(x)`.
+When `T>0`, `(x/T)*T=x` exactly; when `T=0`, all entries are zero and the
+uniform profile is canonical. Conversely, on an admitted coarse simplex,
+`sum(T*pi)=T`; dividing by positive `T` recovers each share, and the canonical
+zero case recovers its unique profile. Exact binary64 representability makes
+conversion back to fine coordinates lossless. Signed columns apply this
+argument to both channels. Disjoint support is necessary: otherwise Split
+cancels overlapping channels and re-encoding cannot recover them. Enforcing
+canonical max-positive/max-negative support therefore gives both inverse
+identities, not just signed-value reconstruction.
+
+The [sixteen new test methods](../tests/models/test_grc_9_v4_topology.py) retain
+the portable evidence:
+
+| Obligation | Evidence |
+| --- | --- |
+| Literal chart algebra | Columns `{1,4,7}`, `{2,5,8}`, `{3,6,9}`, all nine basis fields and all 512 support masks. Zero columns use exact uniform thirds. Both inverse directions are checked, including independently constructed coarse inputs. |
+| Signed encoding | All 27 sign patterns in one column, positive/negative/zero fields, exact signed cancellation retaining both channels, independently constructed signed coarse inputs and overlapping-channel rejection. |
+| Numerical extremes | Minimum subnormals, adjacent floats, maximum-finite values, totals above the float maximum, profile shares below the float minimum and mixed extreme signed values. |
+| Independent oracle | 200 deterministic cases spanning binary64 exponents; literal column membership and 2,200-digit Decimal sums independently check channel totals, with exact reconstruction checks for all row products. |
+| Domain/type admission | Missing/extra policy fields, alternate encodings, wrong request families, malformed node/port/column shapes, nonfinite values, negative zero, unsafe source integers, negative nonnegative fields, noncanonical zero profiles, incorrect/adjacent simplex sums and nonrepresentable products. Typed objects are revalidated at the operator boundary. |
+| Graph binding | Mixed string/integer node IDs, isolates/empty graph, parallel edges and two local loop incidences. All 16 orientations of a four-edge loop/parallel fixture preserve the signed port field after matching current reversal and edge reorder. Split rejects changed node order/set, edge order/ID/kind, ports or orientation; a reconstructed identical graph is accepted. |
+| Ownership/freshness | Caller mutations cannot alter fine values or coarse identities. New values yield new encodings/identities; old snapshots remain unchanged. Frozen slots and detached nested column records retain no mutable source aliases or cache. |
+
+Validation: **163 model/regression methods pass**, including all 82 topology
+methods, candidate-trigger, profile, codec and unchanged GRC9V3 coarse tests.
+Ruff and mypy pass. Six authorization methods check historical entry boundaries,
+the exact `.d` successor, missing G3/changed predecessor and fresh-process import.
+Three current-boundary pressure methods reject support promotion, unlisted
+runtime/research additions and frozen legacy mutation. The final current
+phase-boundary audit passes. Reproduce from the repository root:
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest -q test_grc_9_v4_topology test_grc_9_v4_lifecycle test_grc_v4_profile test_grc_v4_codec.CodecTests test_grc_9_v3_coarse
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p978_specialization_review.SpecializationReviewTests.test_acceptance_tampering_and_entry_widening_rejected test_p978_specialization_review.SpecializationReviewTests.test_row_bridge_successor_is_exact_and_preserves_historical_entry test_p978_specialization_review.SpecializationReviewTests.test_trigger_successor_uses_only_reviewed_lifecycle_owner test_p978_specialization_review.SpecializationReviewTests.test_coarse_successor_is_exact_and_preserves_historical_owners test_p978_specialization_review.SpecializationReviewTests.test_coarse_requires_accepted_g3_and_committed_shared_subject test_p978_specialization_review.SpecializationReviewTests.test_fresh_api_policy_import_resolves_acceptance_helper
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p981_binding_reconciliation.BindingReconciliationTests.test_rehashed_work_cannot_promote_support test_p981_binding_reconciliation.BindingReconciliationTests.test_unlisted_runtime_and_research_additions_still_reject test_p981_binding_reconciliation.BindingReconciliationTests.test_legacy_source_remains_frozen
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+Only the two topology work entries move from `.b` to `.d`; the three planning
+documents and three scoped verification files receive maintenance hash updates.
+The historical `.a`/`.b` subjects above remain reconstructible. Lifecycle `.c`
+bytes, legacy runtime and scientific/acceptance evidence are unchanged.
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_topology.py` | `f73fd466d2ecbf76d62206f779fde6a22634099641e638c592c19810495e5ed5` |
+| `tests/models/test_grc_9_v4_topology.py` | `eeed7dc3c02781a6838b43cdee7e202bf32f21f2b6d01677075021f2b7ea1897` |
+
+Remaining integration duties: callers must gather fresh authoritative values
+and supply the correct graph at the actual model stage. Content identity binds
+a declared snapshot, not its chronology or a physical field's provenance.
+An old encoding on the same graph remains valid as a historical field; it is
+not automatically the current field. No cache exists in this leaf, so value
+and topology changes cannot leave a hidden operator cache stale. Any future
+cache requires complete field/graph/policy dependencies and the scheduled
+end-of-Tranche-8 validity/equivalence review. Exact rational profiles and
+outlier preservation are part of that obligation. Native facade capability
+dispatch, full model serialization, disabled compatibility and scientific
+conformance remain later work. This operator creates no graph fission,
+generic graph coarsening, event, expansion or completed spark.
 
 ## End-of-Tranche-8 performance and cache review
 

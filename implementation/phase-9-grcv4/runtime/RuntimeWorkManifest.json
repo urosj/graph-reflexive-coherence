@@ -1270,8 +1270,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_topology.py",
-      "sha256": "1c3136583ba0148ff708ed980597bf47f3ca5c270f0e6e82fd767a66f2865807",
-      "iteration_id": "P9-8.1b"
+      "sha256": "f73fd466d2ecbf76d62206f779fde6a22634099641e638c592c19810495e5ed5",
+      "iteration_id": "P9-8.1d"
     },
     {
       "path": "src/pygrc/models/grc_v4.py",
@@ -1430,8 +1430,8 @@
     },
     {
       "path": "tests/models/test_grc_9_v4_topology.py",
-      "sha256": "00bd5b342011effc413e8a8a0dea3273ad552e84de1863d19a8fc175d411568e",
-      "iteration_id": "P9-8.1b"
+      "sha256": "eeed7dc3c02781a6838b43cdee7e202bf32f21f2b6d01677075021f2b7ea1897",
+      "iteration_id": "P9-8.1d"
     },
     {
       "path": "tests/models/test_grc_v4.py",
@@ -1600,6 +1600,6 @@
       "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
     ]
   ],
-  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths after the committed chart/graph review, and P9-8.1c baseline candidate detection on the two reviewed lifecycle paths after accepted .b at 7f33a42. No later native leaf, broader profile or specialization runtime conformance follows.",
-  "record_digest": "5a24f07148158e3631cf75467a052034d21b090127fd6a809a012aefab88499c"
+  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows.",
+  "record_digest": "a4a9027e31be58cf839149f50a1ad1dbcf53d5b80c7eb7ec919e638a9d3131ed"
 }
