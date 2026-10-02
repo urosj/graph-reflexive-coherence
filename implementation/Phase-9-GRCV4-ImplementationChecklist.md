@@ -1597,8 +1597,8 @@ closure; this is a dependency reservation, not runtime authorization.
 
 P9-8.1a retains its existing scoped permission. Specified nine-port candidate
 detection, request-driven expansion and column field coarse/Split do not await
-general ATC, but all new production now awaits the separate all-ten feasibility
-review below. Later runtime leaves require their exact existing generic and
+general ATC. The all-ten feasibility review and explicit user acceptance below
+now close P9-8.0 and release its production hold. Later runtime leaves require their exact existing generic and
 specialization contracts and scoped execution permission. A missing new
 autonomous contract holds only its consumers. No optional spark/hierarchy,
 automatic complete request generation or specialization conformance is inferred.
@@ -1606,23 +1606,26 @@ automatic complete request generation or specialization conformance is inferred.
 ## Tranche 8. D11-G9 mechanical specialization
 
 Entry is the accepted G3 set of ten exact generic declarations, not ten
-conformant nine-port models. Review mathematical feasibility for all ten before
-production; then start with C_OS and retain the full population.
+conformant nine-port models. All-ten bounded feasibility is now reviewed and
+user-accepted; proceed to P9-8.1a, then C_OS first while retaining the population.
 P9-8.1 and P9-8.3 are parent registers with independently reviewed children.
 General 7T is not a prerequisite for the defined mechanical scope. Accepted
 Tranche 7 and current execution permissions remain unchanged.
 
-- [ ] P9-8.0: Close and review all-ten mathematical/construction feasibility
+- [x] P9-8.0: Close and review all-ten mathematical/construction feasibility
   before any new specialization production work, including P9-8.1a.
   The [readiness inventory](./phase-9-grcv4/tranche-8/P9-8.0-ReadinessReview.md)
   and [initial feasibility record](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md)
-  are performed, not accepted all-ten closure. Checked G3/73-contract
-  reconstruction, three readiness tests and four feasibility tests pass;
-  no specialization runtime executed.
+  retain the initial research checkpoints. The subsequent
+  [aggregate review and restriction pressure check](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+  pass; the user explicitly accepts R1–R10 and the aggregate scope on
+  2026-10-02 (“i accept both”). All ten rows are provisionally closed;
+  P9-8.0 is complete and its production hold is released. No specialization
+  runtime is accepted by this closure.
   Closure means independently justified, numerically feasible constructions
   for all ten declared scopes, not ten native implementations. P9-8.1a's chart
-  authority is available; the all-ten feasibility hold still precedes using it.
-  Completed evidence below is retained; the ordered remaining work follows it.
+  authority and scoped permission are available; P9-8.1a is the next leaf.
+  Completed evidence below is retained; later native work remains separate.
 
   - [x] Map chart/ports, row backend/weights, candidate detection, D11-G9
     expansion, field coarse/Split and lifecycle to spec/paper/typed authority
@@ -1649,6 +1652,7 @@ Tranche 7 and current execution permissions remain unchanged.
     review. No blanket Tranche 8/9 authorization or numerical rerun credit.
   - [x] Apply the user-directed all-ten production hold; preserve historical
     permissions without treating them as current authorization to proceed.
+    This hold is now released by the explicit aggregate acceptance below.
   - [x] Retain initial obstruction/control calculations: existing RG2b chart
     excludes zero core for both candidates; reference-baseline continuation
     can fail despite charge conservation; a distinct positive control is bounded.
@@ -1916,7 +1920,8 @@ Tranche 7 and current execution permissions remain unchanged.
     with their later acceptance/execution work. The five accepted companions
     supply these local expectations for all ten rows; the actual RG numerical
     owner's user-requested own-review/correction checkpoint is now accepted;
-    aggregate review and acceptance remain separately unchecked.
+    aggregate technical review and explicit restriction/user acceptance are
+    complete below.
   - [x] Check selected-case transfer compatibility: charge, W/Z disposition,
     target/reset domain inclusion and failure/no-publication expectations.
     Map lifecycle and disabled projection to accepted contracts and identify
@@ -1928,13 +1933,21 @@ Tranche 7 and current execution permissions remain unchanged.
     domains and existing lifecycle rules, and retains the selected legacy
     undefined-domain rejection. Native charge-policy arithmetic and runtime
     transaction checks remain later. The user accepts this bounded reconciliation
-    through the 2026-10-02 commit instruction; aggregate review and acceptance
-    remain open and no aggregate row closes through this checkmark.
-  - [ ] Review all ten disposition rows against those concrete deliverables and
-    accept stated restrictions explicitly. No unresolved row or silently
-    dropped profile at production entry without a user-approved scope change.
-  - [ ] User accepts the aggregate bounded feasibility scope before production
-    resumes. Later native gates and specialization leaves remain independent.
+    through the 2026-10-02 commit instruction. The subsequent explicit
+    aggregate acceptance below closes the rows under R1–R10.
+  - [x] Review all ten disposition rows against the concrete deliverables. The
+    [aggregate own review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+    passes all twenty profile/role paths and 103 event-output rejection controls;
+    all ten rows are now provisionally closed after explicit acceptance.
+    Historical-box versus actual-query coverage and stale RG review status
+    are reconciled; no new numerical blocker.
+  - [x] Accept the aggregate review's R1–R10 restrictions explicitly. No
+    unresolved row or silently dropped profile at production entry without a
+    user-approved scope change. The user explicitly accepts R1–R10 on
+    2026-10-02 (“i accept both”); no acceptance is inferred from test passes.
+  - [x] User accepts the aggregate bounded feasibility scope before production
+    resumes. Explicitly accepted on 2026-10-02 in the same “i accept both”
+    instruction. Later native gates and specialization leaves remain independent.
 
 P9-8.0 does not execute later runtime acceptance: chart/row/backend and allocator
 implementation belong to P9-8.1–8.2; native profile integration and oracle
@@ -1990,7 +2003,8 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
     workaround. Do not reopen unrelated G2 or block independent C research;
-    the all-ten production hold remains until aggregate feasibility review.
+    the P9-8.0 all-ten hold is now released by explicit aggregate acceptance;
+    affected native leaves retain their own prerequisites.
 
 P9-8.3 per-profile completion register (all include independent targets,
 history channels, readmission, failure/rollback and replay; A rows require

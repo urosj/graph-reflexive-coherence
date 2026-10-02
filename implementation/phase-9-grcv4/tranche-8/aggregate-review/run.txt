@@ -1,0 +1,25 @@
+C_OS_current passed
+C_OS_reset passed
+A_OS_current passed
+A_OS_reset passed
+C_CI_current passed
+C_CI_reset passed
+A_CI_current passed
+A_CI_reset passed
+C_PC_current passed
+C_PC_reset passed
+A_PC_current passed
+A_PC_reset passed
+C_CI_PC_current passed
+C_CI_PC_reset passed
+A_CI_PC_current passed
+A_CI_PC_reset passed
+C_RG2b_current passed
+C_RG2b_reset passed
+A_RG2b_current passed
+A_RG2b_reset passed
+.
+----------------------------------------------------------------------
+Ran 1 test in 316.852s
+
+OK

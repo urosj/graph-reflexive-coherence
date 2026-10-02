@@ -1,0 +1,15 @@
+test_closed_carrier_ball_one_ulp_and_tiny_support_violations (test_p980_restriction_boundaries.RestrictionBoundaryTests.test_closed_carrier_ball_one_ulp_and_tiny_support_violations) ... ok
+test_rg_physical_resource_face_is_distinct_from_auxiliary_completion (test_p980_restriction_boundaries.RestrictionBoundaryTests.test_rg_physical_resource_face_is_distinct_from_auxiliary_completion) ... ok
+test_scope_and_schedule_neighbours_are_not_silently_admitted (test_p980_restriction_boundaries.RestrictionBoundaryTests.test_scope_and_schedule_neighbours_are_not_silently_admitted) ... ok
+test_actual_research_owners_consume_named_layout_after_reordering (test_p980_scope_binding.ScopeBindingTests.test_actual_research_owners_consume_named_layout_after_reordering) ... ok
+test_exact_source_and_positive_phase_three_target_ports (test_p980_scope_binding.ScopeBindingTests.test_exact_source_and_positive_phase_three_target_ports) ... ok
+test_selection_survives_reordering_and_rejects_ambiguous_scope (test_p980_scope_binding.ScopeBindingTests.test_selection_survives_reordering_and_rejects_ambiguous_scope) ... ok
+test_binding_rejects_incomplete_or_different_recipes (test_p980_event_companion.EventCompanionTests.test_binding_rejects_incomplete_or_different_recipes) ... ok
+test_realization_budget_boundaries (test_p980_revised_realization_bounds.RevisedRealizationBoundTests.test_realization_budget_boundaries) ... ok
+test_carrier_domains_and_legitimate_zero_equilibrium (test_p980_realization_numerical.RealizationNumericalTests.test_carrier_domains_and_legitimate_zero_equilibrium) ... ok
+test_equilibria_clamp_faces_and_outliers (test_p980_rg_implementation_review.RGImplementationReviewTests.test_equilibria_clamp_faces_and_outliers) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 21.094s
+
+OK

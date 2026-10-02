@@ -193,7 +193,7 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | P9-G0: phase opening | Exact accepted release, completed no-ff merge, branch, plan, checklist, and predecessor bindings. | Recorded. |
 | P9-G1: implementation review | Support order, module ownership, source-to-test mapping, inherited debt routing, and an accepted successor verification policy. | Accepted; [P9-1.9 successor](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json). |
 | `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | Ten exact declarations accepted; aggregate P9-7.7 accepted at `25b80f4`. No broader domains or target identities inferred. |
-| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Accepted at P9-7.8 for ten exact declarations; Tranche 7 closed. Historical P9-8.1a permission retained; current user-directed production hold awaits all-ten feasibility review. |
+| `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Accepted at P9-7.8 for ten exact declarations; Tranche 7 closed. Historical P9-8.1a permission retained; P9-8.0 all-ten feasibility and restrictions explicitly user-accepted; its hold is released. |
 | P9-G4: release and handoff | Exact advertised support, all applicable evidence, legacy regression results, residual-debt routing, and review acceptance. | Pending. |
 
 The checklist records all ten `P9-G2[p]` rows. The aggregate generic support
@@ -1836,8 +1836,9 @@ GRC9V4, close those exact specialization/generic obligations separately; do not
 introduce an implicit chooser for capacity, chirality, phase or resource shares.
 Existing machine permissions and accepted G2/G3 decisions stay unchanged.
 P9-8.1a retains its prior scoped permission; later leaves still need their own
-readiness, prerequisite and execution-policy opening. The separate all-ten
-feasibility hold below precedes exercising any of them. This plan opens none.
+readiness, prerequisite and execution-policy opening. The separate P9-8.0
+all-ten feasibility hold is now released by explicit user acceptance. No new
+execution-policy opening is created by this record.
 
 Do not replace nine-port mechanics with generic binary refinement. The
 specialization crosswalk must distinguish generic causal/lifecycle contracts
@@ -1859,13 +1860,20 @@ alone admits neither a new combined specialization identity nor autonomous ATC.
 
 #### P9-8.0 — all-ten feasibility before production entry
 
+**Complete, 2026-10-02:** following aggregate review and focused restriction
+pressure checks, the user explicitly accepts R1–R10 and the aggregate bounded
+scope (“i accept both”). All ten rows are provisionally closed and the P9-8.0
+production hold is released. P9-8.1a is next under its existing scoped permission.
+The chronology below records earlier checkpoints; later native gates remain
+independent.
+
 **Purpose:** establish an independently justified, numerically feasible
 construction for every declared family scope before starting P9-8.1a. This is
 not native implementation or full runtime acceptance. The chart/port graph's
 own authority is already available; the separate user-selected all-ten hold
-still precedes implementation. No profile is dropped or scope widened here.
+has now been satisfied. No profile is dropped or scope widened here.
 
-The remaining sequence is **scope reconciliation → bounded numerical
+The completed sequence is **scope reconciliation → bounded numerical
 feasibility → exact profile/event oracles → aggregate review and acceptance**.
 Independent oracle construction may overlap the numerical work. The detailed
 [work order](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#work-order-and-handoff)
@@ -2085,7 +2093,7 @@ Remaining work before any new specialization production, including P9-8.1a:
    It retains the saturated source's legacy-undefined rejection and the later
    native charge-gate boundary. The user accepts this bounded reconciliation
    through the 2026-10-02 commit instruction, committed as `42976ed`; aggregate
-   review and acceptance remain open. The [actual-source RG review package](./phase-9-grcv4/tranche-8/rg-numerical-review/README.md)
+   review and acceptance were still open at that checkpoint. The [actual-source RG review package](./phase-9-grcv4/tranche-8/rg-numerical-review/README.md)
    now makes the previously missing evaluator and dependencies portable, with
    local snapshot replay evidence. The user's subsequent [own-review request](./phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md)
    is now performed: RG-NR1–4 are reproduced and corrected, ten pressure methods
@@ -2093,11 +2101,16 @@ Remaining work before any new specialization production, including P9-8.1a:
    remain unchanged. The user explicitly accepts this own review, RG-NR1–4
    corrections and the bounded actual-implementation review disposition through
    the 2026-10-02 acceptance/commit instruction. External audit authorship is not
-   inferred; all-ten disposition/restriction review and aggregate acceptance
-   remain open.
+   inferred. The subsequent aggregate technical review, restriction pressure
+   check and explicit user acceptance are complete.
 
-4. **Review and accept the aggregate scope.** Every row must have concrete
-   feasibility evidence and explicit restrictions. Retain unresolved or
+4. **Reviewed aggregate scope accepted.** The
+   [aggregate own review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+   completes technical review of all ten rows: twenty paths, 200 target beats,
+   103 rejected event defects and exact transfer/coarse boundary checks. All ten
+   rows are now provisionally closed: the user explicitly accepts R1–R10 and
+   the aggregate scope following the focused restriction pressure check. Every
+   row has concrete bounded evidence and accepted restrictions. Retain unresolved or
    incompatible bindings honestly; no plausible-but-unproved conditional
    closure. Resume production only after all ten are provisionally closed
    with restrictions accepted and the user accepts the aggregate, or explicitly

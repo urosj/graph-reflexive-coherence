@@ -2,21 +2,28 @@
 
 ## Current continuation — 2026-10-02
 
+**Latest disposition:** the [aggregate technical review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+and focused restriction pressure check are complete. The user explicitly
+accepts both R1–R10 and the aggregate scope on 2026-10-02 (“i accept both”).
+All ten rows are provisionally closed; P9-8.0 is complete and its production
+hold is released. Next: P9-8.1a under its existing scoped permission. The chronology
+below records the earlier checkpoints and does not reopen their resolved items.
+
 The user requested a new branch and continuation of P9-8.0. Branch
 `work/p9-8-0-feasibility-scope` starts from `main` at `36be1ea`; the earlier
 scope/work-order clarification is already committed in its ancestry (`39a5af8`).
 This section supersedes the older checkout and pending-transfer instructions
 below. The user accepted the bounded scope/RG numerical checkpoint and requested its
-commit on 2026-10-02; it is committed as `235b871`. Independent RG numerical
-implementation review remains open; the supplied audit supports the mathematics.
+commit on 2026-10-02; it is committed as `235b871`. At that checkpoint RG numerical
+implementation review remained open; the supplied audit supported the mathematics.
 Aggregate feasibility and production are not accepted by that instruction.
 
 The first deliverable is performed in the existing
 [all-ten feasibility register](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#pinned-all-ten-research-scope--2026-10-02):
 exact graphs/ports/capacities, parameters and stages, realization-specific
 resource/history/geometry/carrier domains, both roles, duration/horizon and
-accepted evidence are mapped. All ten disposition rows remain unresolved;
-restrictions still need aggregate review and user acceptance.
+accepted evidence are mapped. At that checkpoint all ten disposition rows remained unresolved;
+aggregate review was still ahead. The latest disposition above supersedes it.
 
 Scope reconciliation exposed a concrete evidence-label mismatch: every local
 enabled owner selected the final **positive-chirality, phase-three D52** vector,
@@ -179,8 +186,17 @@ independent verdict. The user explicitly accepts this own review, RG-NR1–4
 corrections and the bounded actual-implementation review disposition through
 the 2026-10-02 acceptance/commit instruction. No external audit is inferred.
 
-**Next task:** review all-ten disposition and restrictions, then obtain aggregate
-user acceptance. Production remains held.
+The subsequent [all-ten aggregate own review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+now completes the technical item: twenty profile/role paths, 200 target beats,
+103 rejected event defects, 2,048 transfer corners and exact signed coarse
+controls. No new numerical blocker was found. The domain description now
+separates actual-query event certificates from historical proof boxes; current
+RG status is reconciled. Following the focused restriction pressure check,
+the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
+provisionally closed and P9-8.0 is complete.
+
+**Next task:** P9-8.1a fixed chart and port graph under its existing scoped
+permission. The P9-8.0 hold is released; later native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
 its actual policy outputs rather than the older separately seeded targets.
 
@@ -191,9 +207,9 @@ P9-8.3A.1 and the C owners reuse the research expectations; new native G2/G3
 admission and later leaf closure are not P9-8.0 research prerequisites. Exact
 native scope acceptance still needs its own gates. The user-requested own
 actual RG evaluator review and corrections are now explicitly accepted; the
-older external audits retain their original limits. All-ten aggregate review
-and user acceptance still
-precede production, including P9-8.1a.
+older external audits retain their original limits. Aggregate technical review
+and explicit restriction/aggregate acceptance are complete. P9-8.1a can
+proceed under its existing scoped permission.
 
 ## Resume on another machine
 
@@ -473,7 +489,7 @@ General 7T completion is no longer a blanket prerequisite for this mechanical
 scope. Nine-port candidate detection, request-driven D11-G9 expansion and
 column field coarse/Split have their own contracts. Audit each consumed
 generic dependency; research questions can proceed independently, while the
-all-ten production hold remains in force.
+P9-8.0 all-ten production hold is now released by explicit aggregate acceptance.
 The expansion request still supplies choices: this is not a general autonomous
 request generator. Completed sparks/hierarchy remain separately unselected.
 

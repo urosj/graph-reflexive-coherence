@@ -1,0 +1,14 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux x86_64",
+  "packages": {
+    "numpy": "2.4.6",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1"
+  },
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "baseline_commit": "d508fa0"
+}
