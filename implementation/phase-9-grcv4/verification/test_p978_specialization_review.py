@@ -126,6 +126,126 @@ class SpecializationReviewTests(unittest.TestCase):
                      'src/pygrc/models/grc_9_v4_expansion.py'):
             self.assertFalse(admission.permitted(path,'P9-8.1a'))
 
+    def test_row_bridge_successor_is_exact_and_preserves_historical_entry(self):
+        self.assertEqual(admission.row_bridge_authorization(p.ROOT), 'P9-8.1b')
+        ready, owners = p.leaf_permissions(p.ROOT)
+        self.assertIn('P9-8.1b', ready)
+        for path in admission.PATHS:
+            self.assertIn('P9-8.1b', owners[path])
+            self.assertTrue(admission.row_bridge_permitted(path, 'P9-8.1b'))
+            self.assertFalse(admission.permitted(path, 'P9-8.1b'))
+            for leaf in ('P9-8.1a', 'P9-8.1c', 'P9-8.1d', 'P9-8.2', 'P9-9.2'):
+                self.assertFalse(admission.row_bridge_permitted(path, leaf))
+        for path in ('src/pygrc/models/grc_9_v3.py', 'src/pygrc/models/grc_9_v4.py',
+                     'src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
+            self.assertFalse(admission.row_bridge_permitted(path, 'P9-8.1b'))
+        for leaf in ('P9-8.2',):
+            self.assertNotIn(leaf, ready)
+
+    def test_row_bridge_requires_the_committed_review_and_accepted_g3(self):
+        with patch.object(admission, 'accepted', side_effect=ValueError('G3 missing')):
+            with self.assertRaisesRegex(ValueError, 'G3 missing'):
+                admission.row_bridge_authorization(p.ROOT)
+        original_git = p.git
+        def changed(root, *args):
+            if args[0] == 'show' and args[1].startswith(admission.ROW_PREDECESSOR + ':'):
+                return b'changed predecessor'
+            return original_git(root, *args)
+        with patch.object(p, 'git', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, 'committed chart/graph review'):
+                admission.row_bridge_authorization(p.ROOT)
+
+    def test_trigger_successor_uses_only_reviewed_lifecycle_owner(self):
+        self.assertEqual(admission.trigger_authorization(p.ROOT), 'P9-8.1c')
+        ready, owners = p.leaf_permissions(p.ROOT)
+        self.assertIn('P9-8.1c', ready)
+        for path in admission.TRIGGER_PATHS:
+            self.assertIn('P9-8.1c', owners[path])
+            self.assertTrue(admission.trigger_permitted(path, 'P9-8.1c'))
+            self.assertFalse(admission.permitted(path, 'P9-8.1c'))
+            self.assertFalse(admission.row_bridge_permitted(path, 'P9-8.1c'))
+            for leaf in ('P9-8.1a', 'P9-8.1b', 'P9-8.1d', 'P9-8.2', 'P9-9.1'):
+                self.assertFalse(admission.trigger_permitted(path, leaf))
+        for path in (*admission.PATHS, 'src/pygrc/models/grc_9_v3.py',
+                     'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
+            self.assertFalse(admission.trigger_permitted(path, 'P9-8.1c'))
+        for leaf in ('P9-8.2', 'P9-9.1'):
+            self.assertNotIn(leaf, ready)
+
+    def test_trigger_requires_accepted_g3_and_committed_row_subject(self):
+        with patch.object(admission, 'accepted', side_effect=ValueError('G3 missing')):
+            with self.assertRaisesRegex(ValueError, 'G3 missing'):
+                admission.trigger_authorization(p.ROOT)
+        original_git = p.git
+        def changed(root, *args):
+            if args[0] == 'show' and args[1].startswith(admission.TRIGGER_PREDECESSOR + ':'):
+                return b'changed predecessor'
+            return original_git(root, *args)
+        with patch.object(p, 'git', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, 'accepted row bridge subject'):
+                admission.trigger_authorization(p.ROOT)
+
+    def test_coarse_successor_is_exact_and_preserves_historical_owners(self):
+        self.assertEqual(admission.coarse_authorization(p.ROOT), 'P9-8.1d')
+        ready, owners = p.leaf_permissions(p.ROOT)
+        self.assertIn('P9-8.1d', ready)
+        for path in admission.PATHS:
+            self.assertIn('P9-8.1d', owners[path])
+            self.assertTrue(admission.coarse_permitted(path, 'P9-8.1d'))
+            for earlier in (admission.permitted, admission.row_bridge_permitted, admission.trigger_permitted):
+                self.assertFalse(earlier(path, 'P9-8.1d'))
+            for leaf in ('P9-8.1a', 'P9-8.1b', 'P9-8.1c', 'P9-8.2', 'P9-9.1'):
+                self.assertFalse(admission.coarse_permitted(path, leaf))
+        for path in (*admission.TRIGGER_PATHS, 'src/pygrc/models/grc_9_v4_coarse.py',
+                     'src/pygrc/models/grc_9_coarse.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
+            self.assertFalse(admission.coarse_permitted(path, 'P9-8.1d'))
+        for leaf in ('P9-8.2', 'P9-9.1'):
+            self.assertNotIn(leaf, ready)
+
+    def test_coarse_requires_accepted_g3_and_committed_shared_subject(self):
+        with patch.object(admission, 'accepted', side_effect=ValueError('G3 missing')):
+            with self.assertRaisesRegex(ValueError, 'G3 missing'):
+                admission.coarse_authorization(p.ROOT)
+        original_git = p.git
+        def changed(root, *args):
+            if args[0] == 'show' and args[1].startswith(admission.COARSE_PREDECESSOR + ':'):
+                return b'changed predecessor'
+            return original_git(root, *args)
+        with patch.object(p, 'git', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, 'accepted shared mechanics subject'):
+                admission.coarse_authorization(p.ROOT)
+
+    def test_backend_successor_is_exact_and_preserves_other_owners(self):
+        self.assertEqual(admission.backend_authorization(p.ROOT), 'P9-8.1e')
+        ready, owners = p.leaf_permissions(p.ROOT)
+        self.assertIn('P9-8.1e', ready)
+        for path in admission.BACKEND_PATHS:
+            self.assertIn('P9-8.1e', owners[path])
+            self.assertTrue(admission.backend_permitted(path, 'P9-8.1e'))
+            for earlier in (admission.permitted, admission.row_bridge_permitted,
+                            admission.trigger_permitted, admission.coarse_permitted):
+                self.assertFalse(earlier(path, 'P9-8.1e'))
+            for leaf in ('P9-8.1d', 'P9-8.2', 'P9-9.1'):
+                self.assertFalse(admission.backend_permitted(path, leaf))
+        for path in ('src/pygrc/models/grc_v4_exact.py', 'src/pygrc/models/grc_v4_lifecycle.py',
+                     'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
+            self.assertFalse(admission.backend_permitted(path, 'P9-8.1e'))
+        for leaf in ('P9-8.2', 'P9-9.1'):
+            self.assertNotIn(leaf, ready)
+
+    def test_backend_requires_accepted_g3_and_committed_coarse_subject(self):
+        with patch.object(admission, 'accepted', side_effect=ValueError('G3 missing')):
+            with self.assertRaisesRegex(ValueError, 'G3 missing'):
+                admission.backend_authorization(p.ROOT)
+        original_git = p.git
+        def changed(root, *args):
+            if args[0] == 'show' and args[1].startswith(admission.BACKEND_PREDECESSOR + ':'):
+                return b'changed predecessor'
+            return original_git(root, *args)
+        with patch.object(p, 'git', side_effect=changed):
+            with self.assertRaisesRegex(ValueError, 'accepted coarse/Split subject'):
+                admission.backend_authorization(p.ROOT)
+
     def test_api_browser_notebook_transport_and_failure_cleanup(self):
         tool = p.ROOT / p.SIDE / 'tool'
         sys.path.insert(0, str(tool/'src'))

@@ -1,0 +1,126 @@
+setUpClass (test_atc_ci_research.CIResearchTests) ... ERROR
+setUpClass (test_atc_cip_research.CIPResearchTests) ... ERROR
+setUpClass (test_atc_pc_research.PCResearchTests) ... ERROR
+setUpClass (test_atc_research.ATCResearchTests) ... ERROR
+setUpClass (test_atc_rgatc_research.RGATCResearchTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_atc_ci_research.CIResearchTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_ci_research.py", line 23, in setUpClass
+    cls.old=pc.load_current_forensic_context(cls.root,SIDE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py", line 200, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py", line 127, in _build_context
+    old = atc.load_current_forensic_context(root, side)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 255, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 186, in _build_context
+    _require(observation["state"] == "current_bundle_exact", "ATC source set: " + observation["state"])
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 55, in _require
+    raise SourceAdmissionError(message)
+grcv4_explorer.errors.SourceAdmissionError: ATC source set: admitted_source_identity_changed
+
+======================================================================
+ERROR: setUpClass (test_atc_cip_research.CIPResearchTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_cip_research.py", line 23, in setUpClass
+    cls.old=ci.load_current_forensic_context(cls.root,SIDE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_ci.py", line 204, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_ci.py", line 131, in _build_context
+    old = predecessor.load_current_forensic_context(root, side)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py", line 200, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py", line 127, in _build_context
+    old = atc.load_current_forensic_context(root, side)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 255, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 186, in _build_context
+    _require(observation["state"] == "current_bundle_exact", "ATC source set: " + observation["state"])
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 55, in _require
+    raise SourceAdmissionError(message)
+grcv4_explorer.errors.SourceAdmissionError: ATC source set: admitted_source_identity_changed
+
+======================================================================
+ERROR: setUpClass (test_atc_pc_research.PCResearchTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_pc_research.py", line 23, in setUpClass
+    cls.old = atc.load_current_forensic_context(cls.root, SIDE)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 255, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 186, in _build_context
+    _require(observation["state"] == "current_bundle_exact", "ATC source set: " + observation["state"])
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 55, in _require
+    raise SourceAdmissionError(message)
+grcv4_explorer.errors.SourceAdmissionError: ATC source set: admitted_source_identity_changed
+
+======================================================================
+ERROR: setUpClass (test_atc_research.ATCResearchTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_research.py", line 25, in setUpClass
+    cls.context = atc.load_current_forensic_context(cls.root, SIDE)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 255, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 186, in _build_context
+    _require(observation["state"] == "current_bundle_exact", "ATC source set: " + observation["state"])
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 55, in _require
+    raise SourceAdmissionError(message)
+grcv4_explorer.errors.SourceAdmissionError: ATC source set: admitted_source_identity_changed
+
+======================================================================
+ERROR: setUpClass (test_atc_rgatc_research.RGATCResearchTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_rgatc_research.py", line 24, in setUpClass
+    cls.old = atc_cip.load_current_forensic_context(cls.root, SIDE)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_cip.py", line 233, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_cip.py", line 160, in _build_context
+    old = predecessor.load_current_forensic_context(root, side)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_ci.py", line 204, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_ci.py", line 131, in _build_context
+    old = predecessor.load_current_forensic_context(root, side)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py", line 200, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py", line 127, in _build_context
+    old = atc.load_current_forensic_context(root, side)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 255, in load_current_forensic_context
+    context = _build_context(root, side, admission)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 186, in _build_context
+    _require(observation["state"] == "current_bundle_exact", "ATC source set: " + observation["state"])
+  File "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py", line 55, in _require
+    raise SourceAdmissionError(message)
+grcv4_explorer.errors.SourceAdmissionError: ATC source set: admitted_source_identity_changed
+
+----------------------------------------------------------------------
+Ran 0 tests in 5.489s
+
+FAILED (errors=5)

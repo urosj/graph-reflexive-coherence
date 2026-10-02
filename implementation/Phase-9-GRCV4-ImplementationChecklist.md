@@ -2,11 +2,24 @@
 
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
-2026-10-01: all new specialization production work, including P9-8.1a, is held
-pending all-ten mathematical/construction feasibility closure and user review.
-The readiness inventory and initial feasibility probes are complete, not the
-all-ten program. General 7T remains separate; accepted G2/G3 and historical
-machine permissions are unchanged and do not override this current work hold.
+2026-10-02: P9-8.0 is complete after explicit acceptance of R1–R10 and the
+aggregate bounded feasibility scope. All ten rows are provisionally closed;
+the all-ten production hold is released. P9-8.1a's four checkpoints are complete
+and committed at `75a6629`. P9-8.1b's four recorded checkpoints are delivered
+together under the user's request: row equations, stage-specific weight bridge
+and integrated own review, accepted and committed at `7f33a42`. P9-8.1c's four
+recorded checkpoints are implemented, own-reviewed and user-accepted together: baseline
+candidate detection, admitted post-commit fixture and boundary pressure,
+committed at `e9dfad7`. P9-8.1d's three content-specific checkpoints are
+implemented and own-reviewed together: nonnegative inverse algebra, canonical
+signed channels and graph-bound field dispatch. The user accepts `.d` with the
+identified exact-backend integration correction assigned to new P9-8.1e;
+that checkpoint is committed at `a2d3d36`. P9-8.1e is implemented, own-reviewed
+and user-accepted with real Python/FLINT parity and P9-8.0 arithmetic classification,
+committed at `c27583c`. The user explicitly accepts the complete P9-8.1 parent
+on 2026-10-02 and requests merging its branch into `main`.
+P9-8.2 is next. End-of-Tranche-8 cache review remains open.
+General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
@@ -62,7 +75,7 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | P9-G0 | Recorded | Branch and planning documents; accepted release audit and no-ff merge identity. |
 | P9-G1 | Accepted | [P9-1.9 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json), exact implementation scope and successor dispatch. |
 | `P9-G2[p]` | Ten exact declarations accepted | Full applicable generic runtime/lifecycle fixture product for exact profile scope p; aggregate P9-7.7 accepted, no broader domains inferred. |
-| `P9-G3[S]` | Accepted; Tranche 7 closed | Ten exact generic declarations consumed; historical P9-8.1a permission retained but production held by the user pending all-ten feasibility review. No specialization conformance. |
+| `P9-G3[S]` | Accepted; Tranche 7 closed | Ten exact generic declarations consumed; P9-8.0 explicitly accepted and its hold released. P9-8.1a retains its scoped permission. No specialization conformance. |
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
 The initially empty generic support set now contains exact C_OS, A_OS,
@@ -1607,8 +1620,9 @@ automatic complete request generation or specialization conformance is inferred.
 
 Entry is the accepted G3 set of ten exact generic declarations, not ten
 conformant nine-port models. All-ten bounded feasibility is now reviewed and
-user-accepted; proceed to P9-8.1a, then C_OS first while retaining the population.
-P9-8.1 and P9-8.3 are parent registers with independently reviewed children.
+user-accepted. P9-8.1 shared mechanics is complete and user-accepted; P9-8.2
+is next, then C_OS first while retaining the population. P9-8.1 and P9-8.3
+are parent registers with independently reviewed children.
 General 7T is not a prerequisite for the defined mechanical scope. Accepted
 Tranche 7 and current execution permissions remain unchanged.
 
@@ -1961,10 +1975,189 @@ then independent A_OS and C_PC branches; remaining
 CI/PC/CI+PC products; both RG2b products last. Shared mechanics are reused;
 target/history/readmission/lifecycle acceptance remains profile-specific.
 
-- [ ] P9-8.1a: Implement and verify the fixed chart and port graph.
-- [ ] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
-- [ ] P9-8.1c: Implement and verify the mechanical candidate trigger.
-- [ ] P9-8.1d: Implement and verify column coarse-graining and Split.
+- [x] P9-8.1: Complete and accept shared mechanics across `.a`–`.e` below.
+  The user explicitly accepts the complete parent on 2026-10-02 and requests
+  merging `work/p9-8-1-shared-mechanics` into `main`. The final implementation
+  subject is `c27583cc476b0c4cbdd63d3428d611b423389f04`; see the
+  [parent acceptance and child checkpoints](./Phase-9-GRCV4-Handoff.md#p9-81-shared-mechanics-parent-acceptance).
+  Allocator, native profile integration and later conformance duties retain
+  their existing owners; the end-of-Tranche-8 cache review remains open.
+- [x] P9-8.1a: Implement and verify the fixed chart and port graph.
+  The subitems below are checkpoints within the existing `P9-8.1a` leaf,
+  not new machine gates or independent permission requests. Each implementation
+  increment carries focused tests and its exact work-manifest binding under
+  `P9-8.1a`; the parent closes after all four are verified and reviewed.
+  The [current boundary reconciliation](./phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md)
+  passes the entry audit before `.2`; `.4` also requires a passing boundary on
+  its exact subject. Historical scientific-source failures in that review
+  retain their separate scopes.
+  [Scope and exit criteria](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown).
+  All four checkpoints now pass the implementation/own-review criteria;
+  [parent review](./Phase-9-GRCV4-Handoff.md#p9-81a4-integrated-review-and-parent-completion).
+  This closes chart/graph work only, without opening later native scopes.
+
+  - [x] P9-8.1a.1: Fixed chart and endpoint primitives. Implement the exact
+    port ↔ row/column bijection, immutable row/column partitions and validated
+    endpoints. Verify all nine ports and inverse pairs; reject malformed types
+    and out-of-range coordinates without confusing rows with columns.
+    Implemented in [V4 topology](../src/pygrc/models/grc_9_v4_topology.py), with
+    seven focused methods plus sixteen generic graph regressions passing;
+    Ruff/mypy pass and both new source/test hashes are registered under
+    `P9-8.1a`. This checks off the primitive implementation only. The global
+    phase-boundary check initially failed on pre-existing bindings, now
+    reconciled by the linked boundary review; see the
+    [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a1-chart-and-endpoint-implementation).
+  - [x] P9-8.1a.2: Immutable port-graph admission. Bind stable node/edge IDs,
+    edge kinds, live endpoints and tail/head orientation. Reject duplicate IDs,
+    dangling endpoints and repeated `(node_id, port)` occupancy, including
+    collisions hidden by distinct parallel-edge IDs. Preserve legal parallel
+    edges; prove caller mutation cannot alter admitted graph contents.
+    Preserve the schema's empty-string node IDs and nonempty edge IDs; exercise
+    present/absent `""` membership, normalized `1`/`1.0` duplicates and distinct
+    `1`/`"1"` occupancy. Reassess equality/hash if endpoint field types change.
+    Implemented with frozen, slotted `GRC9V4PortEdge`/`GRC9V4PortGraph`, copying
+    and revalidating nested input records. Loops require two distinct ports;
+    event-specific loop eligibility remains with D11-G9. All 39 focused methods
+    pass (16 new, 7 prior chart/endpoint, 16 generic graph), including 1,296
+    incidence patterns; Ruff, mypy and the current phase-boundary audit pass.
+    Exact source/test bindings remain under `P9-8.1a`; see the
+    [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a2-immutable-port-graph-admission).
+    The user explicitly accepts this structural checkpoint and its recorded
+    interpretations on 2026-10-02 (“Great, accept and commit”); `.3`/`.4` were
+    still open at that checkpoint.
+  - [x] P9-8.1a.3: Graph payload, digest and generic projection. Reuse the
+    accepted canonicalization and identity contracts; round-trip the port-graph
+    envelope and independently recompute its payload-only digest. Provide the
+    deterministic read-only generic graph projection with stable edge identity
+    and orientation; establish that no second authoritative graph is created.
+    Decode through graph admission and project only admitted graphs. Use
+    typed/JCS payload identity; Python hashes confer no graph identity.
+    Implemented on the same graph owner, with an alias for the normative
+    `GRC9V4SerializedPortGraph` name and computed schema/digest properties.
+    The immutable generic topology view retains only the admitted port owner;
+    its identities delegate to that owner and it exposes no separate codec.
+    All 80 focused methods pass (39 topology, 16 generic graph, 25 codec),
+    including the frozen vector and seven rehashed structural defects through
+    four admission routes. Ruff, mypy and the current phase-boundary audit pass;
+    see the [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a3-graph-envelope-identity-and-projection).
+    Generic numerical/row-weight integration remains with later leaves; `.4`
+    still owns the integrated parent review.
+  - [x] P9-8.1a.4: Integrated boundary checks and parent review. Exercise the
+    frozen graph-envelope vector, malformed/rehashed payloads, port-capacity
+    edges, orientation reversal and input ownership across the actual consumers.
+    Record focused results, exact source/test identities and the existing
+    execution-boundary check; review the complete chart/port graph before
+    marking the parent complete. Lifecycle, allocator and profile conformance
+    remain with their later owners. The initial thirteen maintenance and
+    twenty-five work-entry mismatches, omitted committed files and optional
+    dependency integration are reconciled in the linked review. Repeat the
+    current boundary audit after `.2`–`.4` edits; the passing `.1` maintenance
+    subject cannot be reused as evidence for later implementation bytes.
+    Own review found and closed the common interface's missing explicit
+    port-to-edge lookup with validated `edge_at(node_id, port)`. The frozen
+    source and 17 target graphs pass structural/identity checks, all 512
+    saturated-star orientations pass, and the 1,296 incidence patterns pass
+    canonical admission (360 admitted, 936 rejected). All 72 rehashed tenth-
+    incidence attempts reject across two wire routes and star/loop layouts.
+    Input/export ownership, warm malformed inputs and three process hash seeds
+    also pass. All 88 focused methods, Ruff, mypy and the current phase-boundary
+    audit pass; exact source/test identities and bounded review disposition
+    are in the linked parent review. Performance/cache review stays scheduled
+    at the end of Tranche 8; no cache optimization or expansion execution is
+    claimed here.
+- [x] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
+  Deliver the following checkpoints together, as requested on 2026-10-02;
+  they are recorded subitems, not separate acceptance gates or turn boundaries.
+  Formal runtime ownership remains `P9-8.1b` in the existing topology source/test
+  paths. Preserve the accepted `.a` subject and historical G3 decision.
+  - [x] P9-8.1b.1: Bind the closed row-weight policy and immutable, graph-bound
+    input contract, with explicit post-beat stage and Hessian sign.
+  - [x] P9-8.1b.2: Implement fixed-row gradient, diagonal/signed Hessian,
+    outward row flux and the separately named legacy node tensor. Check zero
+    rows, parallel edges, loops, both signs and numerical extremes.
+  - [x] P9-8.1b.3: Select A weights from committed W_A, C weights by complete
+    stable-edge W_C_tr coverage, and disabled weights from the exact delegate's
+    native base conductance. Preserve sole graph ownership and reject stage,
+    candidate, shape and identity mismatches without fallback.
+  - [x] P9-8.1b.4: Review the integrated bridge against independent equations,
+    covariance, mutation and stale-input cases; record exact subjects and pass
+    the affected regressions and current phase-boundary audit.
+  All four checkpoints are implemented and own-reviewed together; see the
+  [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81b-row-differential-and-weight-bridge).
+  Evidence covers 512 orientations, 120 independent Decimal cases, numerical
+  extremes, all ten declaration shapes, actual generic A/C commit handoffs and
+  exact delegate-native conductance inspection. This is shared mechanical
+  completion, not native specialization lifecycle or disabled conformance.
+  The user explicitly accepts the complete reviewed P9-8.1b result on
+  2026-10-02 (“review passes fully. commit changes”), within the recorded scope.
+- [x] P9-8.1c: Implement and verify the mechanical candidate trigger.
+  Deliver these checkpoints together under the 2026-10-02 user request, with
+  formal ownership `P9-8.1c` in the reviewed V4 lifecycle source/test paths.
+  They are recorded subitems, not separate gates or turn boundaries.
+  - [x] P9-8.1c.1: Bind the closed spark policy, explicit baseline-lane support
+    and fresh postbeat input contract. Keep basin seeds, candidates, expansion
+    and completed sparks distinct.
+  - [x] P9-8.1c.2: Implement exact occupied-port saturation and the strict
+    gradient/signed-Hessian conjunction, with stable node order and no cache
+    or caller-supplied verdict. Preserve basin classification as a separate test.
+  - [x] P9-8.1c.3: Exercise an admitted saturated source through a real ordinary
+    commit and fresh detection, retaining independent candidate expectations.
+    Optional column-H assistance must reject explicitly when unsupported;
+    no legacy thresholds or history controls are inferred into V4 policy.
+  - [x] P9-8.1c.4: Pressure threshold equality and adjacent floats, numerical
+    outliers, occupancy, orientation, stale inputs and stage/identity/type
+    failures; record exact subjects and pass current boundary checks.
+  All four checkpoints pass together; see the
+  [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81c-mechanical-candidate-trigger).
+  Evidence includes all 512 occupancy masks, 180 independent Decimal cases,
+  strict boundary/outlier decisions and an admitted saturated C_OS commit.
+  Optional column-H execution rejects explicitly; expansion, completion and
+  native specialization lifecycle retain their later owners. The user explicitly
+  accepts this complete reviewed result on 2026-10-02 ("accpeted and commit
+  changes"), within the recorded baseline scope and integration limits.
+- [x] P9-8.1d: Implement and verify column coarse-graining and Split.
+  Content-specific checkpoints, delivered together under the user's request;
+  formal source/test ownership remains `P9-8.1d` in the topology module.
+  - [x] P9-8.1d.1: Implement nonnegative column totals, exact simplex profiles
+    and inverse Split, including canonical uniform zero columns and explicit
+    binary64 reconstruction admission. Verify both inverse identities.
+  - [x] P9-8.1d.2: Implement signed flux as independent positive/negative
+    channels; enforce disjoint support and field-family dispatch. Pressure
+    cancellation, mixed signs and invalid alternate encodings.
+  - [x] P9-8.1d.3: Bind fine/coarse snapshots to the sole port graph and closed
+    policy; gather edge fields with correct local signs and port placement.
+    Check topology/value replacement, typed node order, immutable ownership
+    and exact numerical outliers without introducing a cache or graph fission.
+    Record the integrated evidence and current phase-boundary check.
+  All three checkpoints pass together; see the
+  [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81d-column-coarse-graining-and-split).
+  Both inverse identities hold exactly on the recorded binary64 reconstruction
+  domain. Evidence covers 512 support masks, 27 column-sign patterns, 200
+  wide-scale Decimal cases, both loop ports, parallel edges and 16 orientations.
+  No model cache or native facade/capability wiring is introduced. The user
+  explicitly accepts current `.d` on 2026-10-02 and requests committing it
+  before `.e`. This accepts the recorded mechanical/default-backend result;
+  the identified backend abstraction gap is assigned to `.e` below.
+- [x] P9-8.1e: Align shared mechanics with the accepted V4 exact-backend contract.
+  - [x] P9-8.1e.1: Replace direct runtime `Fraction` use throughout `.b`–`.d`
+    with `ExactScalar`/`exact_number` and backend-neutral ratio extraction.
+    Bind retained exact values to their backend, preserving binary64 boundaries,
+    exact coarse reconstruction domain, identities and failure behavior.
+  - [x] P9-8.1e.2: Extend the source guard to GRC9V4 and verify real Python/FLINT
+    parity, native scalar use, scope restoration and cross-backend handling,
+    including threshold, subnormal, overflow and malformed-input cases.
+  - [x] P9-8.1e.3: Audit P9-8.0's use of exact arithmetic, distinguishing
+    independent proof/test oracles from runtime consumers. Record the supported
+    conclusion without rewriting accepted proof artifacts or implying new
+    scientific/backend acceptance. Reconcile bindings and phase-boundary checks.
+  All three correction obligations pass; see the
+  [review and P9-8.0 finding](./Phase-9-GRCV4-Handoff.md#p9-81e-exact-backend-correction-and-p9-80-audit).
+  Validation includes 173 regression/backend methods, 14 unchanged P9-8.0
+  probe executions nested across both backends and pinned `.d` identities.
+  Independent proof `Fraction` use is retained; no P9-8.0 proof defect was
+  identified by this audit. The user's 2026-10-02 request to commit the completed
+  changes accepts `.e` and its bounded audit finding, without broader native/FLINT
+  conformance acceptance.
 - [ ] P9-8.2: Implement exact D11-G9-P4a boundary reservation, primary spine,
   both chiralities, conditional phase, tree construction, and capacity rules.
 - [ ] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource
@@ -2036,6 +2229,15 @@ the full ten-profile plan.
   reconstruction/readmission, and atomic failures.
 - [ ] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
   covariance evidence passes.
+- [ ] End-of-Tranche-8 performance/cache review (after P9-8.6, before Tranche 9).
+  User-requested on 2026-10-02. Profile the integrated paths and review graph
+  envelope/identity repetition plus other reusable derived work. Require an
+  explicit validity argument for each cache's owner, complete key, lifetime,
+  invalidation and memory bound; prove cached/uncached results and rejections
+  agree. Preserve asset checks, typed identity and numerical evidence domains.
+  [Scope and proof obligations](./Phase-9-GRCV4-ImplementationPlan.md#end-of-tranche-8-performance-and-cache-review).
+  This schedules review; implementation stays with the applicable existing
+  work owners and introduces no new machine gate or conformance claim.
 
 ## Tranche 9. Hybrid completion and disabled compatibility
 

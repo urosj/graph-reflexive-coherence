@@ -1,0 +1,128 @@
+{
+  "schema": "phase9_binding_reconciliation_validation_v1",
+  "runtime_subject": "58d503546d4139fb2f6b181ef26bf600b3dec7e8",
+  "reconciliation_digest": "3c536b528f4d3ae86acfad1f8b82e49405fe43873c9cc75e70d5417963124e53",
+  "python": "3.12.3",
+  "packages": {
+    "numpy": "2.4.6",
+    "rfc8785": "0.1.4",
+    "jsonschema": "4.26.0",
+    "python-flint": null
+  },
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "output_presentation": "Repository absolute prefixes removed from newly retained output for portability; no historical output rewritten.",
+  "commands": [
+    {
+      "name": "runtime",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/models",
+        "-t",
+        ".",
+        "-p",
+        "test_grc_v4*.py",
+        "-v"
+      ],
+      "pythonpath": "src:.:tests",
+      "exit_code": 0,
+      "tests": 999,
+      "failures": 0,
+      "errors": 0,
+      "skips": 7,
+      "seconds": 900.68,
+      "log": "runtime-tests.txt"
+    },
+    {
+      "name": "boundary_pressure",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_p981_binding_reconciliation"
+      ],
+      "pythonpath": "src:.:tests:implementation/phase-9-grcv4/verification",
+      "exit_code": 0,
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "negative_cases": 24,
+      "seconds": 162.07,
+      "log": "boundary-pressure.txt"
+    },
+    {
+      "name": "c_products_and_retained_evidence",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_p977_c_ci_local",
+        "test_p977_c_pc_local",
+        "test_p977_c_ci_pc_local",
+        "test_p977_c_rg2b_local",
+        "test_p977_c_rg2b_local_evidence"
+      ],
+      "pythonpath": "src:.:tests:implementation/phase-9-grcv4/verification",
+      "exit_code": 1,
+      "tests": 21,
+      "failures": 0,
+      "errors": 2,
+      "skips": 0,
+      "seconds": 37.892,
+      "log": "c-products.txt"
+    },
+    {
+      "name": "atc_admission",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts",
+        "-p",
+        "test_atc*research.py",
+        "-v"
+      ],
+      "pythonpath": "src:.:tests",
+      "exit_code": 5,
+      "tests": 0,
+      "failures": 0,
+      "errors": 5,
+      "skips": 0,
+      "seconds": 5.489,
+      "log": "atc-admission.txt"
+    }
+  ],
+  "policy_source_sha256": "3ed3e028679d08596079e77f983d9d8e637e1df2415a9e03f4496243dd94835e",
+  "pressure_source_sha256": "560345d72976f63d31e385cf1f985e5ee19c876167664f460ca73ff7636f5f39",
+  "current_boundary_command": {
+    "argv": [
+      ".venv/bin/python",
+      "implementation/phase-9-grcv4/verification/audit_phase9_implementation.py",
+      "--boundary-only"
+    ],
+    "pythonpath": "src",
+    "scope": "current_boundary_only"
+  },
+  "remaining_historical_failures": [
+    "C_RG2b retained source capture: 34 differing shared hashes and 13 added paths at the committed subject.",
+    "Separate ATC typed ancestry: previously recorded 23 A_OS support-file hash changes."
+  ],
+  "outputs": {
+    "atc-admission.txt": "50aea5823ef6ab33cd20b8ad049d5340bbe22a30a9654a177cff9c4125dff69c",
+    "boundary-pressure.txt": "5785c1662881eb686956dd4a8b94d538695e4ed4ec0f47efc09842bf1d32a959",
+    "c-products.txt": "bdf51b8d4e8786465eeefd36480431f70f8f7d4f629a4e9fb2385ed4d699b799",
+    "runtime-tests.txt": "377db00ae6f90d0f23094277710a09ef52be3c788cdc55b86cd8de16a97d2b79"
+  },
+  "record_digest": "e4110413648ac1e2f86436d4bd3c1bc8b59a9c1201d1d77b3b6845402c1d4d2f"
+}
