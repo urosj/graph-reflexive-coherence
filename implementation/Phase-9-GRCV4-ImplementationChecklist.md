@@ -1800,32 +1800,47 @@ Tranche 7 and current execution permissions remain unchanged.
     commit instruction. The actual RG evaluator still needs review; aggregate
     P9-8.0 acceptance and production remain held.
 
-  Remaining P9-8.0 work, in order (independent oracle work may overlap):
+  Remaining P9-8.0 work follows the
+  [bounded deliverables and stopping criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
+  These are research inputs for later owners; completing P9-8.1–8.3 or newly
+  admitting the research profiles natively is not a prerequisite. All items
+  below remain open; this scope clarification supplies no construction result.
 
-  - [ ] Finish exact A research-profile/event bindings and the five independent
-    A oracles under P9-8.3A.1: source/target preimages, fixed-row stage/history
-    and reference-current recipes, old/new-edge W policy, separate whole-Z
-    policy, distinct current/reset expected targets and negative cases. Direct
-    old-edge Z copying leaves 27 unsupported pairs; use the chosen policy's
-    actual target carrier in each oracle.
-    Construction evidence precedes implementation; runtime registration,
-    backend serialization/integration and comparisons remain later work.
-  - [ ] Finish exact C research-profile/event bindings and the five C oracles:
-    complete target reference maps, selector/current expectations, realization
-    domains, separate carrier policy where applicable and both-role expected
-    targets. Keep frozen combinatorial vectors distinct from new numerical
-    fixtures; no native admission is asserted by construction alone.
-  - [ ] Close the shared mathematical lifecycle/transfer compatibility argument
-    for those choices: charge, W/Z disposition, target/reset domain inclusion,
-    failure expectations and exact disabled projection. Select and validate
-    explicit carrier event transfer; a carrier norm envelope does not choose
-    it. Reuse accepted generic contracts. Route genuinely missing authority
-    through claims → paper/spec before implementation of its consumers.
-    Actual receipts, rollback, replay and forty disabled-runtime cells are later.
-  - [ ] Review all ten disposition rows with concrete proof/oracle evidence;
-    accept any stated restrictions explicitly. No unresolved row or silently
+  - [ ] Independently review the actual RG numerical evaluator and resolve its
+    findings on the pinned scope. The supplied mathematical review did not
+    include that implementation. This review may overlap construction below.
+  - [ ] Bind complete mathematical source/request/target operands for all ten
+    rows on the pinned source/positive-D52 case, both roles and ten-step horizon.
+    Start with a shared operand record and independently checked C_OS companion;
+    include complete C reference maps, then A fixed-row/initializer/reference-
+    current and W recipes. Supply or derive every operand; retain intended
+    identity preimages. Native descriptor registration/serialization is later.
+  - [ ] Select and validate an allowed whole-Z event policy for each persistent
+    row, separately from A W history. Check support, symmetry, norm and target
+    domain using each role's actual policy output. Whole-source archive/whole-
+    target zero reset is an available explicit-loss policy, not yet selected.
+    Direct old-edge copying is forbidden and leaves 27 unsupported pairs.
+    Recheck affected numerical stages/effects; separately seeded Z is not the
+    event result. Reuse existing envelopes wherever their hypotheses apply.
+  - [ ] Derive independent bounded event/target expectations for all ten rows:
+    event preconditions/trigger, topology/role IDs, resources, W or C references,
+    Z disposition, target-zero admission, positive continuation and defining
+    effects at declared stages.
+    Retain distinct current/reset inputs and focused construction failures.
+    Research oracles feed P9-8.3A.1 and corresponding C owners; full native
+    fixture encodings, runtime receipts and comprehensive failure suites stay
+    with their later acceptance/execution work.
+  - [ ] Check selected-case transfer compatibility: charge, W/Z disposition,
+    target/reset domain inclusion and failure/no-publication expectations.
+    Map lifecycle and disabled projection to accepted contracts and identify
+    conflicts. Reuse generic arguments; actual rollback/replay, crossings and
+    forty disabled-runtime cells remain later. Route genuinely absent authority
+    through claims → paper/spec before implementing its consumers.
+  - [ ] Review all ten disposition rows against those concrete deliverables and
+    accept stated restrictions explicitly. No unresolved row or silently
     dropped profile at production entry without a user-approved scope change.
-  - [ ] User accepts the aggregate feasibility scope before production resumes.
+  - [ ] User accepts the aggregate bounded feasibility scope before production
+    resumes. Later native gates and specialization leaves remain independent.
 
 P9-8.0 does not execute later runtime acceptance: chart/row/backend and allocator
 implementation belong to P9-8.1–8.2; native profile integration and oracle
@@ -1858,16 +1873,19 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   runtime support does not hold the C_OS child after all-ten feasibility review.
 - [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
-  - [ ] P9-8.3A.1: Instantiate for each selected exact A profile, starting with
-    A_OS, during P9-8.0 preproduction feasibility. After exact A G2 and
-    consumed-set G3 acceptance, select and
-    validate the specialization A-history/initialization binding and construct
-    an independent numerical oracle from the accepted port/chart, fixed-row
-    initializer and D11-G9 contracts; no production-runtime prerequisite.
+  - [ ] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
+    starting with A_OS. Prepare and review its bounded mathematical inputs and
+    expectations during P9-8.0 using accepted port/chart, fixed-row initializer
+    and D11-G9 contracts; this research preparation has no production-runtime
+    or new native G2/G3 prerequisite. Formal oracle acceptance for an exact
+    native scope still requires that scope's A G2 and consumed-set G3 and an
+    explicit match to the research binding; do not infer it from family labels.
     Bind source/target IDs, distinct current/reset inputs, old/new-edge W,
     reference-current recipe, W/Z loss channels, expected resource/receipt/
-    readmission outcomes and rollback cases. Retain outside the frozen release
-    as construction evidence; review and accept before runtime comparison.
+    readmission outcomes and rollback cases. Reuse the P9-8.0 expectations,
+    completing native identity/fixture details for that scope outside the frozen
+    release. Review and accept before runtime comparison; P9-8.0 closure alone
+    does not mark this leaf or the runtime coverage hold complete.
   - [ ] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:

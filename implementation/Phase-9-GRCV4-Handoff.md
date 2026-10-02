@@ -56,16 +56,29 @@ mutations, the exact equilibrium counterexample, lawful scratch writes,
 intended-exact enclosures, six C response-order rejections and eight naive
 carrier-copy rejections. The review and historical result files are portable
 repository evidence. The user accepts this bounded numerical successor and
-local RN-F1 correction through the 2026-10-02 commit instruction. The audit did not have the actual RG evaluator for implementation review.
+local RN-F1 correction through the 2026-10-02 commit instruction, committed
+as `5a234db`. The audit did not have the actual RG evaluator for implementation
+review.
 
-**Next construction task:** complete exact A/C research-profile and event
-bindings and independent oracles, starting with P9-8.3A.1 and corresponding C
-work. Select and validate whole-carrier event transfer explicitly; the separate
-target inputs above do not supply that policy. Direct old-edge Z copying leaves
-27 unsupported unordered pairs on D52; the event oracle must use the chosen
-policy's actual output. Follow with shared transfer/lifecycle and disabled-projection argument and all-ten review. Production,
-native admission and P9-8.1a remain held; nothing in this continuation accepts
-the aggregate or changes the physical resource map.
+**Next construction task:** prepare the shared mathematical source/request/
+target operand record and an independently checked C_OS companion on the pinned
+source/positive-D52 scope. Use the
+[bounded deliverables and completion criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production),
+then extend A initializer/W policy and the persistent whole-Z policy across all
+ten rows. Each oracle consumes its policy's actual target state. Direct old-edge
+Z copying leaves 27 unsupported pairs; the specified whole-source archive/whole-
+target zero reset is an available alternative that still needs its own numerical
+stage/effect checks. This plan does not select a carrier policy.
+
+The remaining checklist now distinguishes bounded research oracles and
+selected-case compatibility from later native fixture/identity completion,
+registration, serialization, receipts, rollback/replay and disabled executions.
+P9-8.3A.1 and the C owners reuse the research expectations; new native G2/G3
+admission and later leaf closure are not P9-8.0 research prerequisites. Exact
+native scope acceptance still needs its own gates. Independently review the
+actual RG evaluator as a separate open item. None of these planning changes
+closes an evidence row. All-ten aggregate review and user acceptance still
+precede production, including P9-8.1a.
 
 ## Resume on another machine
 

@@ -2009,18 +2009,28 @@ Remaining work before any new specialization production, including P9-8.1a:
    through the 2026-10-02 commit instruction. Separately
    supplied target carriers still require an event policy in step 3. OS effects remain OS-only; neither
    construction grants native acceptance.
-3. **Complete profile/event bindings and independent oracles.** Pin the full
-   mathematical profile inputs and intended identities, A fixed-row/history/
-   initialization recipes, complete C reference maps, separate W/Z policies,
-   and independent both-role expected targets and rejection cases. P9-8.3A.1
-   retains ownership of the five A oracles; corresponding C construction work
-   is also before production. Select a lawful carrier event-transfer policy;
-   the carrier envelope alone does not do so. Direct old-edge copying leaves
-   27 unsupported Z pairs on D52, so each oracle must consume the chosen
-   policy's actual target carrier. Reuse the accepted shared
-   lifecycle/charge/disabled-projection contracts to check these choices.
-   Native registration, serialization/backend integration and observed runtime
-   receipts, rollback and replay are not the output of this step.
+3. **Prepare bounded construction inputs for later implementation.** Use the
+   [concrete deliverables and completion criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
+   Bind all mathematical source/request/target operands, then independently
+   compute both-role event expectations and target admission/continuation on
+   the pinned source/positive-D52 case. Begin with a shared operand record and
+   C_OS companion; extend A initializer/W policy and complete C references to
+   all ten rows. Each persistent row must select a lawful whole-Z policy and
+   check its actual output. The accepted whole-source archive/whole-target zero
+   reset is an available loss policy; neither it nor a transport map is selected
+   by this plan. The separately seeded numerical targets are not event outputs.
+   Reuse accepted envelopes and recheck numerical stages/effects whose inputs
+   change. Check selected-case charge/history/domain compatibility and map
+   failure, lifecycle and disabled expectations to existing contracts.
+
+   P9-8.0 finishes a bounded, independently checked research construction.
+   Research oracle preparation feeds P9-8.3A.1 and the C owners without requiring
+   later native G2/G3 admission, backend serialization, production planners or
+   generated receipts. Exact native oracle acceptance and runtime comparison
+   keep their existing gates. No later leaf or runtime coverage hold is closed
+   by this preparation; no new universal lifecycle proof or full runtime failure
+   matrix is added to P9-8.0. Independent review of the actual RG evaluator
+   remains an explicit parallel obligation.
 4. **Review and accept the aggregate scope.** Every row must have concrete
    feasibility evidence and explicit restrictions. Retain unresolved or
    incompatible bindings honestly; no plausible-but-unproved conditional
@@ -2079,19 +2089,22 @@ after C_PC's generic and specialization entry gates. `P9-8.3A` is an aggregate
 of two independently reviewed children; both must be accepted for the same
 declared exact A scope before its closure:
 
-- `P9-8.3A.1`: Select and validate the GRC9V4 A-history/initialization binding
-  and construct the independent numerical oracle during P9-8.0 feasibility,
-  before production entry. Entry requires the exact A
-  G2 and consumed-set G3 acceptance plus the accepted port/chart, fixed-row
-  initializer and D11-G9 expansion contracts, not their runtime implementation.
-  Bind concrete source/target identities, distinct current/reset inputs,
-  old-edge history disposition, new-edge initialization, fixed-row/incoming
-  reference-current recipes, independent expected W/resource/receipt/readmission
-  results and negative rollback cases. Persistent scope additionally needs its
-  separate whole-carrier map or reset/loss evidence. Retain the oracle outside
-  the frozen release as new V4 specialization evidence, clearly labeled
-  construction evidence rather than runtime conformance. Do not obtain its
-  expected values by calling the production implementation under test.
+- `P9-8.3A.1`: Own the A-history/initialization binding and independent oracle
+  for each exact A scope. Prepare and review bounded research inputs and
+  expectations during P9-8.0 using the accepted port/chart, fixed-row initializer
+  and D11-G9 contracts. That preparation does not require a new native profile's
+  G2/G3 acceptance or P9-8.1–8.2 implementation. Formal oracle acceptance for an
+  exact native scope still requires its A G2 and consumed-set G3, plus an
+  explicit match between that scope and the research binding. Existing family
+  acceptance does not automatically admit revised gains, backends or completions.
+  Bind source/target identities, distinct current/reset inputs, old-edge history,
+  new-edge initialization, fixed-row/incoming reference-current recipes and
+  independent expected W/resource/receipt/readmission results and rollback cases.
+  Persistent scope needs separate whole-carrier map or reset/loss evidence.
+  Reuse the P9-8.0 numerical expectations and add native identity/fixture details
+  outside the frozen release. Research acceptance alone does not close this
+  native-scoped leaf or the runtime coverage hold. Expected values must remain
+  independent of the production implementation under test.
 - `P9-8.3A.2`: After acceptance of `.1`, the same exact A G2/G3 scope and the
   applicable `P9-8.1a`, `P9-8.1b`, `P9-8.1c` and `P9-8.2` implementations,
   implement and test A expansion against the pinned oracle. Verify current
