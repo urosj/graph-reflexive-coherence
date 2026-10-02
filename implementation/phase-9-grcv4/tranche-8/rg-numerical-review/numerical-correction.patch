@@ -1,0 +1,199 @@
+diff --git a/implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py b/implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py
+index 99cf9a3..e4086d7 100644
+--- a/implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py
++++ b/implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py
+@@ -260,12 +260,56 @@ def certify_chain(model, candidate, chain, exact_query):
+     return enclosure, certificate
+ 
+ 
++def interval_input(value, size, label):
++    require(
++        getattr(value, "rows", None) == size and getattr(value, "cols", None) == 1,
++        f"incomplete {label} enclosure",
++    )
++    value = value.copy()
++    require(
++        all(endpoint(z, 0) <= endpoint(z, 1) for z in value),
++        f"invalid {label} enclosure",
++    )
++    return value
++
++
++def checked_model(model):
++    """Bind consumed arrays to the graph used by the independent certificate."""
++    require(model.params == PARAMS, "candidate/parameter binding")
++    reference = StagedRows(model.nodes, model.edges, PARAMS)
++    require(model.index == reference.index, "graph index binding")
++    for name in ("B", "D", "I", "mask"):
++        expected = getattr(reference, name)
++        actual = finite_array(getattr(model, name), expected.shape)
++        require(np.array_equal(actual, expected), f"graph {name} binding")
++
++
++def physical_input(c, w):
++    require(
++        all(0 <= endpoint(z, 0) <= endpoint(z, 1) < 4 for z in c),
++        "physical query outside resource agreement chart",
++    )
++    if w is not None:
++        require(all(endpoint(z, 0) > 0 for z in w), "positive A history required")
++        require(
++            all(
++                Q(-5, 8)
++                < endpoint(number(rg.SCALE) * IV.ln(z), 0)
++                <= endpoint(number(rg.SCALE) * IV.ln(z), 1)
++                < Q(5, 8)
++                for z in w
++            ),
++            "physical query outside history agreement chart",
++        )
++
++
+ def section(model, candidate, c, w=None, *, exact_c=None, exact_w=None, depth=None):
++    checked_model(model)
+     n, m = len(model.nodes), len(model.edges)
+-    c = finite_array(c, (n,))
++    c = finite_array(c, (n,)).copy()
+     require(candidate in DEPTH, "unknown candidate")
+     if candidate == "A":
+-        w = finite_array(w, (m,))
++        w = finite_array(w, (m,)).copy()
+         require(np.all(w > 0), "history must be positive")
+     else:
+         require(w is None and exact_w is None, "C has no history state")
+@@ -274,47 +318,94 @@ def section(model, candidate, c, w=None, *, exact_c=None, exact_w=None, depth=No
+         if candidate == "A"
+         else c.copy()
+     )
+-    exact_c = vector(c) if exact_c is None else exact_c
+-    exact_w = vector(w) if candidate == "A" and exact_w is None else exact_w
+-    exact_query = rg.state(candidate, exact_c, exact_w)
+-    chain = solve_chain(
+-        model, candidate, query, DEPTH[candidate] if depth is None else depth
++    exact_c = vector(c) if exact_c is None else interval_input(exact_c, n, "resource")
++    exact_w = (
++        (vector(w) if exact_w is None else interval_input(exact_w, m, "history"))
++        if candidate == "A"
++        else None
+     )
++    if exact_w is not None:
++        require(
++            all(endpoint(z, 0) > 0 for z in exact_w), "positive exact history required"
++        )
++    exact_query = rg.state(candidate, exact_c, exact_w)
++    depth = DEPTH[candidate] if depth is None else depth
++    require(type(depth) is int and 1 <= depth <= 8, "invalid candidate/depth")
++    chain = solve_chain(model, candidate, query.copy(), depth)
++    require(len(chain.x) == depth + 1, "returned chain depth mismatch")
+     enclosure, certificate = certify_chain(
+         rg.auxiliary(model), candidate, chain, exact_query
+     )
+-    return chain.h[0], enclosure, certificate, chain
++    return chain.h[0].copy(), enclosure, certificate, chain
+ 
+ 
+ def ordinary(model, candidate, c, w=None, *, exact_c=None, exact_w=None):
+-    h, hi, certificate, chain = section(
+-        model, candidate, c, w, exact_c=exact_c, exact_w=exact_w
++    """Own point inputs and certify full outputs; keep intended truth separate."""
++    require(candidate in DEPTH, "unknown candidate")
++    n, m = len(model.nodes), len(model.edges)
++    c = finite_array(c, (n,)).copy()
++    if candidate == "A":
++        w = finite_array(w, (m,)).copy()
++        require(np.all(w > 0), "positive A history required")
++    else:
++        require(w is None and exact_w is None, "C has no history state")
++    pc, pw = vector(c), None if w is None else vector(w)
++    ci = pc.copy() if exact_c is None else interval_input(exact_c, n, "resource")
++    wi = (
++        (pw.copy() if exact_w is None else interval_input(exact_w, m, "history"))
++        if candidate == "A"
++        else None
+     )
++    physical_input(pc, pw)
++    physical_input(ci, wi)
++    h, point_hi, point_certificate, chain = section(model, candidate, c, w)
++    hi, certificate = point_hi, point_certificate
++    intended = exact_c is not None or exact_w is not None
++    if intended:
++        hi, certificate = certify_chain(
++            rg.auxiliary(model), candidate, chain, rg.state(candidate, ci, wi)
++        )
+     high = IntervalRows(model)
+-    ci = vector(c) if exact_c is None else exact_c
+-    wi = (vector(w) if exact_w is None else exact_w) if candidate == "A" else None
++    # All references precede producers. None shares their writable arrays.
++    point_read = high.read(candidate, pc, pw, point_hi)
++    point_after = pc - number(bounds.DT) * high.B * point_read["J"]
++    point_history = (
++        high.write(point_after, pw, point_read["J"]) if pw is not None else None
++    )
++    exact_read = high.read(candidate, ci, wi, hi) if intended else point_read
++    after_i = (
++        ci - number(bounds.DT) * high.B * exact_read["J"] if intended else point_after
++    )
++    wn_i = (
++        (high.write(after_i, wi, exact_read["J"]) if wi is not None else None)
++        if intended
++        else point_history
++    )
++    read = model.read(candidate, c.copy(), None if w is None else w.copy(), h.copy())
++    read = {
++        key: finite_array(read[key], shape).copy()
++        for key, shape in (("J", (m,)), ("baseline", (m,)), ("source", (m, m)))
++    }
++    current_error = full_error(read["J"], point_read["J"])
++    baseline_error = full_error(read["baseline"], point_read["baseline"])
++    source_error = full_error(
++        read["source"].ravel(), IV.matrix(list(point_read["source"]))
++    )
+     require(
+-        all(0 <= endpoint(z, 0) <= endpoint(z, 1) < 4 for z in ci),
+-        "physical query outside resource agreement chart",
++        max(current_error, baseline_error) < RESOURCE_ERROR_LIMIT
++        and source_error < Q(1, 2**64),
++        "full read error relative to entry unresolved",
+     )
+-    if wi is not None:
+-        require(
+-            all(
+-                Q(-5, 8)
+-                < endpoint(number(rg.SCALE) * IV.ln(z), 0)
+-                <= endpoint(number(rg.SCALE) * IV.ln(z), 1)
+-                < Q(5, 8)
+-                for z in wi
+-            ),
+-            "physical query outside history agreement chart",
+-        )
+-    read, exact_read = model.read(candidate, c, w, h), high.read(candidate, ci, wi, hi)
+     after = c - float(bounds.DT) * product(model.B, read["J"])
+-    after_i = ci - number(bounds.DT) * high.B * exact_read["J"]
+-    wn = staged_write(model, after, w, read["J"]) if candidate == "A" else None
+-    wn_i = high.write(after_i, wi, exact_read["J"]) if candidate == "A" else None
+-    resource_error = full_error(after, after_i)
+-    history_error = full_error(wn, wn_i) if wn is not None else Q(0)
++    wn = (
++        finite_array(
++            staged_write(model, after.copy(), w.copy(), read["J"].copy()), (m,)
++        ).copy()
++        if candidate == "A"
++        else None
++    )
++    resource_error = full_error(after, point_after)
++    history_error = full_error(wn, point_history) if wn is not None else Q(0)
+     require(resource_error < RESOURCE_ERROR_LIMIT, "full resource error unresolved")
+     require(history_error < HISTORY_ERROR_LIMIT, "full history error unresolved")
+     return (
+@@ -328,7 +419,11 @@ def ordinary(model, candidate, c, w=None, *, exact_c=None, exact_w=None):
+             "exact_after": after_i,
+             "exact_history": wn_i,
+             "certificate": certificate,
++            "point_certificate": point_certificate,
+             "chain": chain,
++            "current_error": current_error,
++            "baseline_error": baseline_error,
++            "source_error": source_error,
+             "resource_error": resource_error,
+             "history_error": history_error,
+         },

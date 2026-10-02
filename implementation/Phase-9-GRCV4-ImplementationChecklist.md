@@ -1808,9 +1808,26 @@ Tranche 7 and current execution permissions remain unchanged.
   construction increments. The scope clarification itself supplied no
   construction result; local increments do not close aggregate acceptance.
 
-  - [ ] Independently review the actual RG numerical evaluator and resolve its
+  - [x] Review the actual RG numerical evaluator with independent numerical
+    equations and adversarial controls, and resolve its
     findings on the pinned scope. The supplied mathematical review did not
-    include that implementation. This review may overlap construction below.
+    include that implementation. The [actual-source review package](./phase-9-grcv4/tranche-8/rg-numerical-review/README.md)
+    now supplies pinned source/dependencies, local snapshot replays and a portable
+    export. The user's subsequently requested [own implementation review](./phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md)
+    executes that source and uses independent equations, but is not an external
+    independent verdict. Four findings are corrected locally. The user explicitly
+    accepts the own review, RG-NR1–4 corrections and this bounded review
+    disposition through the 2026-10-02 acceptance/commit instruction; external
+    audit authorship and aggregate acceptance are not inferred.
+  - [x] Perform the requested own RG implementation review and pressure the
+    actual consumer: ten methods pass after RG-NR1–4 corrections, including
+    malformed chains at every depth, complete read fields, private input
+    ownership, point/intended admission, clamp faces, equilibria and outliers.
+    Separate 90-digit equations enclose 7,188 entries. Four original numerical
+    and seven event methods pass with every nominal report field unchanged.
+    Retain before/after evidence and corrected-source provenance. The user
+    explicitly accepts this bounded review/correction checkpoint through the
+    2026-10-02 acceptance/commit instruction; aggregate acceptance stays open.
   - [x] Bind complete mathematical source/request/target operands for all ten
     rows on the pinned source/positive-D52 case, both roles and ten-step horizon.
     Start with a shared operand record and independently checked C_OS companion;
@@ -1887,7 +1904,8 @@ Tranche 7 and current execution permissions remain unchanged.
     producer inputs and corrupted outputs. The [bounded construction review](./phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md)
     passes without corrections under reconstructed dependencies; only its report
     was available. The user accepts this checkpoint through the 2026-10-02 commit
-    instruction. Actual RG numerical implementation review remains open.
+    instruction. The subsequent actual RG own-review/correction checkpoint
+    above is now explicitly accepted.
   - [x] Derive independent bounded event/target expectations for all ten rows:
     event preconditions/trigger, topology/role IDs, resources, W or C references,
     Z disposition, target-zero admission, positive continuation and defining
@@ -1897,7 +1915,8 @@ Tranche 7 and current execution permissions remain unchanged.
     fixture encodings, runtime receipts and comprehensive failure suites stay
     with their later acceptance/execution work. The five accepted companions
     supply these local expectations for all ten rows; the actual RG numerical
-    owner's independent implementation review remains separately unchecked.
+    owner's user-requested own-review/correction checkpoint is now accepted;
+    aggregate review and acceptance remain separately unchecked.
   - [x] Check selected-case transfer compatibility: charge, W/Z disposition,
     target/reset domain inclusion and failure/no-publication expectations.
     Map lifecycle and disabled projection to accepted contracts and identify

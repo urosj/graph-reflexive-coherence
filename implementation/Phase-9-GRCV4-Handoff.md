@@ -154,9 +154,33 @@ research charge certificates do not execute the native binary64 charge gate.
 The user accepts this bounded reconciliation through the 2026-10-02 commit
 instruction; aggregate review and production permission remain separate.
 
-**Next task:** obtain independent review of the actual RG numerical evaluator
-with its exact dependencies, then review all-ten disposition/restrictions and
-obtain aggregate user acceptance. No further witness iteration is currently indicated.
+The compatibility reconciliation is committed as `42976ed`. The next increment
+prepares the [actual RG numerical implementation review package](./phase-9-grcv4/tranche-8/rg-numerical-review/README.md):
+pinned evaluator/consumer sources and dependencies, portable local reports,
+relative import provenance, payload hashes and a reproducible export. It retains
+the original source rather than the independent reconstruction used by earlier
+audits. Local snapshot runs pass all four numerical methods (50 read stages,
+44 effects) and seven event methods (26 effects). All 156 loaded repository
+module origins are inside the extraction. The package and documentation are
+accepted with the own-review checkpoint below. Export validation is local
+evidence, not an independent verdict.
+
+At the user's subsequent request, the agent performed its [own actual-source
+RG review](./phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md). It reproduced
+four defects: incomplete read-output certification, mutable producer operands,
+unbound returned depth and intended-input bypass of represented-domain admission.
+All are corrected locally. Ten pressure methods pass, including 34 chain and
+33 input/model rejection cases, clamp faces, equilibria, extreme finite inputs
+and 7,188 enclosed entries from separate 90-digit equations. The original four
+numerical and seven event methods also pass; every nominal report field is
+unchanged. The export now includes baseline and corrected source with separate
+provenance and results. This is the user's requested own review, not an external
+independent verdict. The user explicitly accepts this own review, RG-NR1–4
+corrections and the bounded actual-implementation review disposition through
+the 2026-10-02 acceptance/commit instruction. No external audit is inferred.
+
+**Next task:** review all-ten disposition and restrictions, then obtain aggregate
+user acceptance. Production remains held.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
 its actual policy outputs rather than the older separately seeded targets.
 
@@ -165,9 +189,10 @@ selected-case compatibility from later native fixture/identity completion,
 registration, serialization, receipts, rollback/replay and disabled executions.
 P9-8.3A.1 and the C owners reuse the research expectations; new native G2/G3
 admission and later leaf closure are not P9-8.0 research prerequisites. Exact
-native scope acceptance still needs its own gates. Independently review the
-actual RG evaluator as a separate open item. None of these planning changes
-closes an evidence row. All-ten aggregate review and user acceptance still
+native scope acceptance still needs its own gates. The user-requested own
+actual RG evaluator review and corrections are now explicitly accepted; the
+older external audits retain their original limits. All-ten aggregate review
+and user acceptance still
 precede production, including P9-8.1a.
 
 ## Resume on another machine

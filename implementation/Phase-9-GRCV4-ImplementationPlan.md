@@ -2084,7 +2084,16 @@ Remaining work before any new specialization production, including P9-8.1a:
    compatibility and maps lifecycle/disabled expectations to existing contracts.
    It retains the saturated source's legacy-undefined rejection and the later
    native charge-gate boundary. The user accepts this bounded reconciliation
-   through the 2026-10-02 commit instruction; aggregate review and acceptance
+   through the 2026-10-02 commit instruction, committed as `42976ed`; aggregate
+   review and acceptance remain open. The [actual-source RG review package](./phase-9-grcv4/tranche-8/rg-numerical-review/README.md)
+   now makes the previously missing evaluator and dependencies portable, with
+   local snapshot replay evidence. The user's subsequent [own-review request](./phase-9-grcv4/tranche-8/rg-numerical-review/SelfReview.md)
+   is now performed: RG-NR1–4 are reproduced and corrected, ten pressure methods
+   pass with separate 90-digit equations, and original numerical/event reports
+   remain unchanged. The user explicitly accepts this own review, RG-NR1–4
+   corrections and the bounded actual-implementation review disposition through
+   the 2026-10-02 acceptance/commit instruction. External audit authorship is not
+   inferred; all-ten disposition/restriction review and aggregate acceptance
    remain open.
 
 4. **Review and accept the aggregate scope.** Every row must have concrete

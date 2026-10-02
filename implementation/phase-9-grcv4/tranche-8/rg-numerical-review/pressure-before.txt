@@ -1,0 +1,172 @@
+FFFFFFFFFFFFFFEEFFF
+======================================================================
+ERROR: test_read_private_scratch_preserves_entry_and_geometry (__main__.RGImplementationReviewTests.test_read_private_scratch_preserves_entry_and_geometry) (candidate='A')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 82, in test_read_private_scratch_preserves_entry_and_geometry
+    _, _, stage = rn.ordinary(self.target, candidate, c, w)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py", line 314, in ordinary
+    wn = staged_write(model, after, w, read["J"]) if candidate == "A" else None
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py", line 183, in staged_write
+    for x, g in zip(w, model.conductance(c, w, j))])
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/phase-9-grcv4/verification/test_p980_os_numerical_feasibility.py", line 130, in conductance
+    rows = [[math.fsum(w*d for w, d in cell)/math.fsum(w for w, _ in cell)
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ZeroDivisionError: float division by zero
+
+======================================================================
+ERROR: test_read_private_scratch_preserves_entry_and_geometry (__main__.RGImplementationReviewTests.test_read_private_scratch_preserves_entry_and_geometry) (candidate='C')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 82, in test_read_private_scratch_preserves_entry_and_geometry
+    _, _, stage = rn.ordinary(self.target, candidate, c, w)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py", line 318, in ordinary
+    require(resource_error < RESOURCE_ERROR_LIMIT, "full resource error unresolved")
+  File "implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py", line 44, in require
+    raise ValueError(message)
+ValueError: full resource error unresolved
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='A', field='J', mode='small_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='A', field='baseline', mode='wrong_value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='A', field='baseline', mode='short')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='A', field='source', mode='wrong_value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='A', field='source', mode='nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='A', field='source', mode='short')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='C', field='J', mode='small_error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='C', field='baseline', mode='wrong_value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='C', field='baseline', mode='short')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='C', field='source', mode='wrong_value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='C', field='source', mode='nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_full_read_output_corruption_rejected (__main__.RGImplementationReviewTests.test_full_read_output_corruption_rejected) (candidate='C', field='source', mode='short')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 55, in test_full_read_output_corruption_rejected
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_intended_input_cannot_admit_invalid_represented_resource (__main__.RGImplementationReviewTests.test_intended_input_cannot_admit_invalid_represented_resource) (candidate='A')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 124, in test_intended_input_cannot_admit_invalid_represented_resource
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_intended_input_cannot_admit_invalid_represented_resource (__main__.RGImplementationReviewTests.test_intended_input_cannot_admit_invalid_represented_resource) (candidate='C')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 124, in test_intended_input_cannot_admit_invalid_represented_resource
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_requested_depth_cannot_be_substituted (__main__.RGImplementationReviewTests.test_requested_depth_cannot_be_substituted) (candidate='A')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 112, in test_requested_depth_cannot_be_substituted
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_requested_depth_cannot_be_substituted (__main__.RGImplementationReviewTests.test_requested_depth_cannot_be_substituted) (candidate='C')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 112, in test_requested_depth_cannot_be_substituted
+    with (
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_writer_private_scratch_preserves_entry_and_outputs (__main__.RGImplementationReviewTests.test_writer_private_scratch_preserves_entry_and_outputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "implementation/phase-9-grcv4/verification/test_p980_rg_implementation_review.py", line 105, in test_writer_private_scratch_preserves_entry_and_outputs
+    self.assertTrue(np.array_equal(w, saved))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 5 tests in 30.266s
+
+FAILED (failures=17, errors=2)
