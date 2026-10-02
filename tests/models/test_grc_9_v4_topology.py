@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import json
 import math
+import os
+import subprocess
+import sys
 import unittest
 from collections.abc import Callable
 from copy import deepcopy
@@ -14,7 +17,7 @@ from fractions import Fraction
 from hashlib import sha256
 from itertools import product
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import numpy as np
 
@@ -1109,6 +1112,391 @@ class PortGraphProjectionTests(unittest.TestCase):
             self.assertEqual(view.incidence, graph.generic_projection().incidence)
             self.assertNotEqual(view.graph_digest, graph.graph_digest)
             self.assertNotEqual(view.orientation_identity, graph.orientation_identity)
+
+
+def independent_envelope_bytes(payload: dict[str, Any]) -> bytes:
+    """These review inputs contain only ASCII strings and safe integer tokens."""
+    return json.dumps(
+        port_envelope(payload), sort_keys=True, separators=(",", ":")
+    ).encode()
+
+
+def saturated_payload(*, loops: bool = False) -> dict[str, Any]:
+    if loops:
+        rows = [
+            {
+                "edge_id": f"loop-{p}",
+                "kind": "tree",
+                "tail": {"node_id": 0, "port": p},
+                "head": {"node_id": 0, "port": p + 1},
+            }
+            for p in (1, 3, 5, 7)
+        ]
+        rows.append(
+            {
+                "edge_id": "spoke",
+                "kind": "boundary",
+                "tail": {"node_id": 0, "port": 9},
+                "head": {"node_id": 9, "port": 1},
+            }
+        )
+    else:
+        rows = [
+            {
+                "edge_id": f"e{p}",
+                "kind": "boundary",
+                "tail": {"node_id": 0, "port": p},
+                "head": {"node_id": p, "port": 1},
+            }
+            for p in range(1, 10)
+        ]
+    return {
+        "schema_version": "grc9v4-port-graph-v1",
+        "live_node_ids": list(range(11)),
+        "edges": rows,
+    }
+
+
+class PortGraphIntegratedReviewTests(unittest.TestCase):
+    def test_frozen_source_and_seventeen_target_graphs_with_every_port_lookup(
+        self,
+    ) -> None:
+        path = (
+            Path(__file__).resolve().parents[2]
+            / "specs/grc-v4-conformance-vectors.json"
+        )
+        vectors = json.loads(path.read_text())
+        source = vectors["port_graph_envelope_vectors"][0]
+        cases = [
+            (source["vector_id"], source["payload"], source["expected"]["graph_digest"])
+        ]
+        for row in vectors["grc9_expansion_vectors"]:
+            expected = row["expected"]
+            cases.append(
+                (
+                    row["fixture_id"],
+                    expected["identity_payloads"]["target_graph"],
+                    expected["target_graph_digest"],
+                )
+            )
+        self.assertEqual(len(cases), 18)
+        for name, payload, digest in cases:
+            with self.subTest(fixture=name):
+                self.assertEqual(independent_ascii_digest(payload), digest)
+                graph = GRC9V4PortGraph.from_json(
+                    independent_envelope_bytes(payload), encoding="canonical"
+                )
+                self.assertEqual(graph.to_payload(), payload)
+                self.assertEqual(graph.graph_digest, digest)
+                view = graph.generic_projection()
+                self.assertIs(view.port_graph, graph)
+                self.assertEqual(view.graph_digest, digest)
+                self.assertEqual(view.live_node_ids, tuple(payload["live_node_ids"]))
+                self.assertEqual(
+                    view.oriented_edges,
+                    tuple(
+                        OrientedEdge(
+                            e["edge_id"], e["tail"]["node_id"], e["head"]["node_id"]
+                        )
+                        for e in payload["edges"]
+                    ),
+                )
+                occupied = {
+                    (e[side]["node_id"], e[side]["port"]): e["edge_id"]
+                    for e in payload["edges"]
+                    for side in ("tail", "head")
+                }
+                self.assertEqual(len(occupied), 2 * len(payload["edges"]))
+                for node in payload["live_node_ids"]:
+                    for port, row_index, column in CHART:
+                        edge_at = graph.edge_at(
+                            node, row_column_to_port(row_index, column)
+                        )
+                        self.assertEqual(
+                            None if edge_at is None else edge_at.edge_id,
+                            occupied.get((node, port)),
+                        )
+                for incidence_column in zip(*view.incidence, strict=True):
+                    self.assertEqual(sum(incidence_column), 0)
+
+    def test_port_lookup_distinguishes_inactive_missing_typed_and_loop_endpoints(
+        self,
+    ) -> None:
+        graph = GRC9V4PortGraph.from_json(
+            independent_envelope_bytes(port_payload()), encoding="canonical"
+        )
+        expected = {
+            (1, 1): "z",
+            ("1", 2): "z",
+            ("1", 3): "a",
+            (1, 4): "a",
+            ("", 8): "loop",
+            ("", 9): "loop",
+        }
+        for node in (1, "1", ""):
+            for port in range(1, 10):
+                found = graph.edge_at(node, port)
+                self.assertEqual(
+                    None if found is None else found.edge_id, expected.get((node, port))
+                )
+        self.assertEqual(graph.edge_at(1.0, 1.0), graph.edges[0])  # type: ignore[arg-type]
+        self.assertIs(graph.edge_at("", 8), graph.edge_at("", 9))
+        self.assertIsNone(GRC9V4PortGraph(("isolated",), ()).edge_at("isolated", 9))
+        for unknown in ("absent", 0, "0"):
+            with self.subTest(node=unknown), self.assertRaises(KeyError):
+                graph.edge_at(unknown, 1)
+        invalid: tuple[Any, ...] = (
+            True,
+            False,
+            -0.0,
+            1.5,
+            math.nan,
+            math.inf,
+            2**53,
+            IntegerLabel.ONE,
+            np.int64(1),
+            Coercible(),
+        )
+        for value in invalid:
+            with (
+                self.subTest(node=repr(value)),
+                self.assertRaises((TypeError, ValueError)),
+            ):
+                graph.edge_at(value, 1)
+        for value in (*invalid, 0, 10, "1", None):
+            with (
+                self.subTest(port=repr(value)),
+                self.assertRaises((TypeError, ValueError)),
+            ):
+                graph.edge_at(1, value)
+
+    def test_all_512_saturated_orientations_through_wire_and_projection(self) -> None:
+        for mask in range(512):
+            payload = saturated_payload()
+            signs = [(-1 if mask & (1 << i) else 1) for i in range(9)]
+            for i, row in enumerate(payload["edges"]):
+                if signs[i] == -1:
+                    row["tail"], row["head"] = row["head"], row["tail"]
+            with self.subTest(mask=mask):
+                encoded = independent_envelope_bytes(payload)
+                graph = GRC9V4PortGraph.from_json(encoded, encoding="canonical")
+                view = graph.generic_projection()
+                self.assertEqual(graph.to_canonical_bytes(), encoded)
+                expected = (
+                    tuple(signs),
+                    *(
+                        tuple(-signs[j] if i == j else 0 for j in range(9))
+                        for i in range(9)
+                    ),
+                    (0,) * 9,
+                )
+                self.assertEqual(view.incidence, expected)
+                self.assertEqual(view.star(0), tuple(range(9)))
+                for port in range(1, 10):
+                    found = graph.edge_at(0, port)
+                    self.assertIsNotNone(found)
+                    assert found is not None
+                    self.assertEqual(found.edge_id, f"e{port}")
+                    self.assertEqual(view.edge_index(found.edge_id), port - 1)
+
+    def test_all_1296_incidence_patterns_through_canonical_admission(self) -> None:
+        tokens: tuple[tuple[str | int, int], ...] = (
+            (1, 1),
+            (1, 5),
+            (1, 9),
+            ("1", 1),
+            ("1", 5),
+            ("1", 9),
+        )
+        admitted = rejected = 0
+        for incidences in product(tokens, repeat=4):
+            payload = port_payload()
+            payload["live_node_ids"] = ["1", 1]
+            payload["edges"] = payload["edges"][:2]
+            for i, row in enumerate(payload["edges"]):
+                for j, side in enumerate(("tail", "head")):
+                    node, port = incidences[2 * i + j]
+                    row[side] = {"node_id": node, "port": port}
+            raw = independent_envelope_bytes(payload)
+            with self.subTest(incidences=incidences):
+                if all(incidences.count(token) <= 1 for token in tokens):
+                    graph = GRC9V4PortGraph.from_json(raw, encoding="canonical")
+                    self.assertEqual(graph.to_canonical_bytes(), raw)
+                    view = graph.generic_projection()
+                    self.assertEqual(view.live_edge_ids, ("z", "a"))
+                    for i, endpoint in enumerate(incidences):
+                        found = graph.edge_at(*endpoint)
+                        self.assertIsNotNone(found)
+                        assert found is not None
+                        self.assertEqual(found.edge_id, ("z", "a")[i // 2])
+                    admitted += 1
+                else:
+                    with self.assertRaisesRegex(ValueError, "already occupied"):
+                        GRC9V4PortGraph.from_json(raw, encoding="canonical")
+                    rejected += 1
+        self.assertEqual((admitted, rejected), (360, 936))
+
+    def test_rehashed_tenth_incidence_rejects_even_when_loops_hide_in_incidence(
+        self,
+    ) -> None:
+        rejected = 0
+        for loops in (False, True):
+            source = saturated_payload(loops=loops)
+            graph = GRC9V4PortGraph.from_json(
+                independent_envelope_bytes(source), encoding="canonical"
+            )
+            self.assertTrue(all(graph.edge_at(0, p) is not None for p in range(1, 10)))
+            self.assertEqual(len(graph.generic_projection().star(0)), 5 if loops else 9)
+            if loops:
+                self.assertEqual(
+                    graph.generic_projection().incidence[0], (0, 0, 0, 0, 1)
+                )
+            for port in range(1, 10):
+                for reverse in (False, True):
+                    payload = deepcopy(source)
+                    overflow = {
+                        "edge_id": "overflow",
+                        "kind": "spine",
+                        "tail": {"node_id": 0, "port": port},
+                        "head": {"node_id": 10, "port": 1},
+                    }
+                    if reverse:
+                        overflow["tail"], overflow["head"] = (
+                            overflow["head"],
+                            overflow["tail"],
+                        )
+                    payload["edges"].append(overflow)
+                    for encoding in ("configuration", "canonical"):
+                        with (
+                            self.subTest(
+                                loops=loops,
+                                port=port,
+                                reverse=reverse,
+                                encoding=encoding,
+                            ),
+                            self.assertRaisesRegex(ValueError, "already occupied"),
+                        ):
+                            GRC9V4PortGraph.from_json(
+                                independent_envelope_bytes(payload), encoding=encoding
+                            )
+                        rejected += 1
+        self.assertEqual(rejected, 72)
+
+    def test_replacement_and_detached_exports_keep_existing_view_stable(self) -> None:
+        data = port_envelope(port_payload())
+        graph = GRC9V4PortGraph.from_envelope(data)
+        view = graph.generic_projection()
+        before = (
+            graph.to_canonical_bytes(),
+            view.graph_digest,
+            view.orientation_identity,
+        )
+        first = graph.edges[0]
+        replacement = replace(
+            graph,
+            edges=(replace(first, tail=replace(first.tail, port=5)), *graph.edges[1:]),
+        )
+        self.assertEqual(graph.edge_at(1, 1), first)
+        self.assertIsNone(replacement.edge_at(1, 1))
+        self.assertEqual(replacement.edge_at(1, 5), replacement.edges[0])
+        self.assertIs(view.port_graph, graph)
+        self.assertNotEqual(replacement.graph_digest, view.graph_digest)
+        data["edges"][0]["tail"]["port"] = 5
+        for exported in (graph.to_payload(), graph.to_envelope()):
+            mutable: Any = exported
+            mutable["edges"].reverse()
+            mutable["live_node_ids"].clear()
+        for name in ("schema_version", "graph_digest"):
+            with (
+                self.subTest(field=name),
+                self.assertRaises((FrozenInstanceError, TypeError)),
+            ):
+                setattr(graph, name, "forged")
+        with self.assertRaises(FrozenInstanceError):
+            first.kind = "spine"  # type: ignore[misc]
+        self.assertEqual(
+            (graph.to_canonical_bytes(), view.graph_digest, view.orientation_identity),
+            before,
+        )
+        self.assertEqual(graph.edge_at(1, 1), first)
+
+    def test_warm_decoders_reject_type_confusions_cycles_and_extra_authority(
+        self,
+    ) -> None:
+        valid = port_payload()
+        encoding: Literal["configuration", "canonical"]
+        # Prime all routes before attacking numerically-equal Boolean fields.
+        raw = independent_envelope_bytes(valid)
+        GRC9V4PortGraph.from_json(raw, encoding="canonical")
+        mutations: dict[str, Callable[[dict[str, Any]], None]] = {
+            "boolean-port": lambda p: p["edges"][0]["tail"].update(port=True),
+            "boolean-node": lambda p: p["edges"][0]["tail"].update(node_id=True),
+            "integer-edge-id": lambda p: p["edges"][0].update(edge_id=1),
+            "empty-edge-id": lambda p: p["edges"][0].update(edge_id=""),
+            "unknown-kind": lambda p: p["edges"][0].update(kind="internal"),
+            "orientation-sign": lambda p: p["edges"][0].update(orientation_sign=1),
+            "second-graph": lambda p: p.update(generic_graph={}),
+            "port-cache": lambda p: p.update(port_cache={}),
+            "resource-coordinate": lambda p: p["edges"][0]["tail"].update(resource=0),
+        }
+        for name, mutate in mutations.items():
+            payload = deepcopy(valid)
+            mutate(payload)
+            for encoding in ("configuration", "canonical"):
+                with (
+                    self.subTest(defect=name, encoding=encoding),
+                    self.assertRaises(ValueError),
+                ):
+                    GRC9V4PortGraph.from_json(
+                        independent_envelope_bytes(payload), encoding=encoding
+                    )
+        cyclic = port_envelope(valid)
+        cyclic["edges"][0]["tail"]["port"] = cyclic
+        with self.assertRaises(ValueError):
+            GRC9V4PortGraph.from_envelope(cyclic)
+        duplicate = raw.decode().replace('"port":1', '"port":1,"\\u0070ort":1', 1)
+        for encoding in ("configuration", "canonical"):
+            with self.subTest(duplicate=encoding), self.assertRaises(ValueError):
+                GRC9V4PortGraph.from_json(duplicate, encoding=encoding)
+
+    def test_wire_identities_do_not_depend_on_python_hash_seed(self) -> None:
+        graph = GRC9V4PortGraph.from_payload(port_payload())
+        raw = graph.to_canonical_bytes()
+        expected = (
+            raw.decode()
+            + "\n"
+            + graph.graph_digest
+            + "\n"
+            + graph.orientation_identity
+            + "\n"
+        )
+        script = """import sys
+from pygrc.models.grc_9_v4_topology import GRC9V4PortGraph
+graph = GRC9V4PortGraph.from_json(sys.stdin.buffer.read(), encoding="canonical")
+view = graph.generic_projection()
+print(graph.to_canonical_bytes().decode())
+print(view.graph_digest)
+print(view.orientation_identity)
+"""
+        root = Path(__file__).resolve().parents[2]
+        for seed in ("0", "1", "73"):
+            env = {
+                **os.environ,
+                "PYTHONHASHSEED": seed,
+                "PYTHONPATH": str(root / "src"),
+                "OPENBLAS_NUM_THREADS": "1",
+            }
+            result = subprocess.run(
+                [sys.executable, "-c", script],
+                input=raw,
+                capture_output=True,
+                env=env,
+                cwd=root,
+                check=True,
+                timeout=30,
+            )
+            with self.subTest(seed=seed):
+                self.assertEqual(result.stdout.decode(), expected)
 
 
 if __name__ == "__main__":

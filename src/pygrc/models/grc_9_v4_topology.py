@@ -1,4 +1,4 @@
-"""P9-8.1a.1–.3: chart, admitted port graph, envelope and generic read-only view.
+"""P9-8.1a: chart, admitted port graph, envelope and generic read-only view.
 
 Rows are directional classes; columns are interface families. The chart is
 fixed mechanical data, not a dynamical field. Coordinates use one-based JSON
@@ -159,6 +159,20 @@ class GRC9V4PortGraph:
 
         object.__setattr__(self, "live_node_ids", nodes)
         object.__setattr__(self, "edges", edges)
+
+    def edge_at(self, node_id: NodeId, port: int) -> GRC9V4PortEdge | None:
+        """Return the occupying edge, or None for an inactive port on a live node.
+
+        Validate coordinates and live membership even when no edge is found.
+        Both ports of a loop resolve to the same stable edge. The lookup is
+        derived from the sole graph owner and introduces no authoritative cache.
+        """
+        endpoint = GRC9V4PortEndpoint(node_id, port)
+        if endpoint.node_id not in self.live_node_ids:
+            raise KeyError(endpoint.node_id)
+        return next(
+            (edge for edge in self.edges if endpoint in (edge.tail, edge.head)), None
+        )
 
     @property
     def schema_version(self) -> Literal["grc9v4-port-graph-v1"]:

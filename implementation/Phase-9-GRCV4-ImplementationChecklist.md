@@ -1963,7 +1963,7 @@ then independent A_OS and C_PC branches; remaining
 CI/PC/CI+PC products; both RG2b products last. Shared mechanics are reused;
 target/history/readmission/lifecycle acceptance remains profile-specific.
 
-- [ ] P9-8.1a: Implement and verify the fixed chart and port graph.
+- [x] P9-8.1a: Implement and verify the fixed chart and port graph.
   The subitems below are checkpoints within the existing `P9-8.1a` leaf,
   not new machine gates or independent permission requests. Each implementation
   increment carries focused tests and its exact work-manifest binding under
@@ -1973,6 +1973,9 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   its exact subject. Historical scientific-source failures in that review
   retain their separate scopes.
   [Scope and exit criteria](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown).
+  All four checkpoints now pass the implementation/own-review criteria;
+  [parent review](./Phase-9-GRCV4-Handoff.md#p9-81a4-integrated-review-and-parent-completion).
+  This closes chart/graph work only, without opening later native scopes.
 
   - [x] P9-8.1a.1: Fixed chart and endpoint primitives. Implement the exact
     port ↔ row/column bijection, immutable row/column partitions and validated
@@ -2020,7 +2023,7 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     see the [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a3-graph-envelope-identity-and-projection).
     Generic numerical/row-weight integration remains with later leaves; `.4`
     still owns the integrated parent review.
-  - [ ] P9-8.1a.4: Integrated boundary checks and parent review. Exercise the
+  - [x] P9-8.1a.4: Integrated boundary checks and parent review. Exercise the
     frozen graph-envelope vector, malformed/rehashed payloads, port-capacity
     edges, orientation reversal and input ownership across the actual consumers.
     Record focused results, exact source/test identities and the existing
@@ -2031,6 +2034,18 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     dependency integration are reconciled in the linked review. Repeat the
     current boundary audit after `.2`–`.4` edits; the passing `.1` maintenance
     subject cannot be reused as evidence for later implementation bytes.
+    Own review found and closed the common interface's missing explicit
+    port-to-edge lookup with validated `edge_at(node_id, port)`. The frozen
+    source and 17 target graphs pass structural/identity checks, all 512
+    saturated-star orientations pass, and the 1,296 incidence patterns pass
+    canonical admission (360 admitted, 936 rejected). All 72 rehashed tenth-
+    incidence attempts reject across two wire routes and star/loop layouts.
+    Input/export ownership, warm malformed inputs and three process hash seeds
+    also pass. All 88 focused methods, Ruff, mypy and the current phase-boundary
+    audit pass; exact source/test identities and bounded review disposition
+    are in the linked parent review. Performance/cache review stays scheduled
+    at the end of Tranche 8; no cache optimization or expansion execution is
+    claimed here.
 - [ ] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
 - [ ] P9-8.1c: Implement and verify the mechanical candidate trigger.
 - [ ] P9-8.1d: Implement and verify column coarse-graining and Split.

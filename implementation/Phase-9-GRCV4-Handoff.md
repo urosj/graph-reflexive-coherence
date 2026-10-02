@@ -15,14 +15,17 @@ for the exact roster, verification and separate historical evidence failures.
 P9-8.1a.2 immutable graph admission is accepted and committed at `37f77df`,
 with focused checks and the phase-boundary audit passing; see its
 [execution note](#p9-81a2-immutable-port-graph-admission).
-P9-8.1a.3 graph envelope/identity/projection is now implemented on that baseline,
-with 80 focused methods, Ruff, mypy and the current phase-boundary audit passing;
-see its [execution note](#p9-81a3-graph-envelope-identity-and-projection).
-The next subitem is P9-8.1a.4 integrated review.
-The existing P9-8.1a permission is unchanged. The [four-subitem breakdown](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown)
-continues with integrated review. These
-are implementation checkpoints, not new machine gates. The broader phase
-boundary now passes after the reconciliation below; no parent closure is claimed.
+P9-8.1a.3 graph envelope/identity/projection and the requested end-of-tranche
+cache-review note are committed at `9b2e96e`; see its
+[execution note](#p9-81a3-graph-envelope-identity-and-projection).
+P9-8.1a.4 integrated own review now passes after adding the required explicit
+port-to-edge lookup. All 88 focused methods, Ruff, mypy and the current
+phase-boundary audit pass; see the
+[parent review](#p9-81a4-integrated-review-and-parent-completion).
+P9-8.1a is complete within its chart/graph scope. The next planned leaf is
+P9-8.1b, subject to its applicable work-entry requirements. The existing
+P9-8.1a permission and later native owners are unchanged; completing this
+implementation review creates no new machine gate or conformance acceptance.
 The chronology below
 records earlier checkpoints and does not reopen their resolved items.
 
@@ -212,12 +215,11 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next implementation task:** P9-8.1a.4 integrated review.
-P9-8.1a.1–.3 are implemented and focused
-verification passes, including the current phase-boundary audit.
-Keep the formal work-manifest iteration `P9-8.1a` and its
-existing scoped source/test permission. The P9-8.0 hold is released; later
-native owners are unchanged.
+**Next planned implementation task:** P9-8.1b row differential and V4 row-weight
+bridge, subject to its applicable work-entry requirements. P9-8.1a's four
+chart/graph checkpoints are implemented and own-reviewed with passing focused
+checks and current phase-boundary audit. Their work-manifest iteration remains
+`P9-8.1a`. The P9-8.0 hold is released; later native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
 its actual policy outputs rather than the older separately seeded targets.
 
@@ -506,6 +508,79 @@ Historical scientific-source failures retain the separate scopes recorded in
 the binding reconciliation. This discrete graph checkpoint does not rerun or
 reclassify them.
 
+## P9-8.1a.4 integrated review and parent completion
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`, baseline `9b2e96e`.
+**Own-review verdict: pass within P9-8.1a's chart/port-graph scope, after one
+correction.** All four implementation checkpoints are verified and reviewed;
+the parent checklist item is complete. This records the requested own review,
+not an external audit, a new user-acceptance statement or later runtime entry.
+
+The review compared the complete module with the
+[port-graph contract](../specs/grc-9-v4-spec.md#port-graph),
+[common backend extension](../specs/grc-common-interface-v4-ext.md#graph-and-differential-backend-extension),
+closed endpoint/edge/payload/envelope schemas and frozen identity vectors.
+It found one missing API: the common extension requires **port-to-edge lookup**,
+which was derivable from the admitted edges but not exposed as a consumer.
+`GRC9V4PortGraph.edge_at(node_id, port)` now validates the endpoint and live
+membership, returns its occupying frozen edge, or `None` for an inactive port
+on a live node. Unknown nodes raise `KeyError`; malformed IDs/ports reject.
+Integer/string identity and the inherited integral-float normalization are
+preserved. A loop's two distinct ports resolve to the same stable edge.
+The lookup scans the sole admitted graph and adds no cache or state coordinate.
+
+The review found no remaining chart/graph correctness defect in the tested
+scope. The evidence is retained in the repository's
+[integrated tests](../tests/models/test_grc_9_v4_topology.py), with these results:
+
+| Obligation | Evidence and disposition |
+| --- | --- |
+| Chart and structural admission | Existing all-nine chart oracle, strict numeric/type guards, typed membership, duplicate IDs and 1,296 direct-construction incidence cases remain passing. Unique occupancy over ports 1..9 establishes the active-port bound; parallel IDs do not relax it. |
+| Frozen envelope and graph reconstruction | The source envelope and all 17 frozen expansion-target graph payloads reconstruct with their published digests. Every live node's nine ports are checked against literal fixture incidences through chart conversion and `edge_at()`. Only graph structure/identity is exercised, not construction or native expansion of those targets. |
+| Orientation through public consumers | All 512 independent edge reversals of a saturated nine-port star decode from independently encoded canonical envelopes, preserve bytes and edge ordering, and match literal signed incidence columns and port lookups. |
+| Collective admission after decoding | All 1,296 two-edge incidence patterns pass through canonical decoding: 360 legal patterns admit and 936 collisions reject. Accepted graphs retain the expected edge IDs through projection and lookup. A valid digest cannot waive occupancy. |
+| Capacity outliers | 72 independently rehashed tenth-incidence attempts reject: each of nine occupied ports, both orientations, both configuration/canonical routes, and both nine-spoke and four-loop-plus-spoke layouts. The loop layout saturates nine ports with only five incident edges and zero loop columns in incidence, so a degree/column shortcut cannot hide occupancy. |
+| Closed inputs and identity | After warming admission, nine Boolean/type/extra-authority defects reject through both wire routes. Cyclic native input and an escaped duplicate JSON key reject. Existing forged/recursive digests, unsafe numerics, Unicode and array-order controls remain passing. |
+| Ownership and single graph authority | Replacement produces a separately admitted graph while the existing view remains attached to its original owner; mutated exported payloads cannot change that owner, its lookup or identities. Computed identity/schema properties and edge records reject ordinary mutation. The projection retains only its owner and has no standalone graph codec. |
+| Process determinism | Canonical envelope bytes, graph digest and orientation identity agree in fresh processes with Python hash seeds 0, 1 and 73. Python hashes do not become wire identity. |
+
+The eight new methods bring the focused total to **88 passing methods**:
+47 topology, 16 generic graph and 25 codec. Ruff and mypy also pass. Run from
+the repository root:
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -v test_grc_9_v4_topology test_grc_v4_geometry.GraphTests test_grc_v4_codec.CodecTests
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+The **current phase-boundary audit passes** on the final `.4` subject, with
+only the two scoped source/test work hashes and the three edited planning
+maintenance hashes refreshed, plus their containing record digests. Formal
+work ownership remains `P9-8.1a`; frozen specifications, scientific evidence
+and prior acceptance records are unchanged.
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_topology.py` | `c085dc3b4a746bf3f0720cb68722fcfa150c4b9a0805392467605b8b597299b9` |
+| `tests/models/test_grc_9_v4_topology.py` | `f9983f0a5de9709a7f25219b51efe3e2c7d72d395aa4b0493562ede3c0d9e11a` |
+
+The accepted `.2` conventions remain explicit: empty-string node IDs are live
+when declared, exact built-in normalized types define endpoint equality, and a
+loop needs distinct ports. The serialized graph name remains an alias of the
+same owner, with caller envelopes entering through checked factories and
+schema/digest exposed as computed properties. Deliberately bypassing frozen
+storage on the admitted owner's own objects is not a supported mutation API.
+
+The generic projection is still a topology surface: the numerical/row-weight
+bridge, allocator, expansion eligibility/execution, lifecycle, profile and
+arbitrary-size conformance remain with their later owners. The seventeen frozen
+targets above are not seventeen successful native expansion executions.
+Performance optimization, including any lookup/index cache, remains scheduled
+at the end of Tranche 8 with the validity obligations below. The separate
+historical scientific-source failures retain their reconciliation scopes.
+
 ## End-of-Tranche-8 performance and cache review
 
 On 2026-10-02 the user requests a correctness-backed caching review at the end
@@ -515,9 +590,10 @@ and checklist now retain it. Review graph envelope/identity repetition and
 other measured opportunities, with explicit cache validity, complete dependency
 keys/lifetimes, invalidation, bounded memory and cached/uncached equivalence.
 Numerical caches require their own domain/hypothesis evidence; speed alone is
-not acceptance. Optimization is deferred while `.4` reviews structural and wire
-correctness. The user requests committing `.3` and this note before continuing
-to `.4`; that instruction does not close the parent review.
+not acceptance. Optimization remains deferred after the `.4` correctness
+review. The user requested committing `.3` and this note before continuing
+to `.4`; that checkpoint is committed at `9b2e96e`. The subsequent `.4` review
+and its correction are recorded above.
 
 The preceding local probe found that topology's public codec calls do reach
 internal caches. Small warm inputs skip schema walks, but canonicalization and

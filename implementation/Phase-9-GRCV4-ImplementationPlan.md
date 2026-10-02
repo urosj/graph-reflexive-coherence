@@ -4,11 +4,11 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
 2026-10-02 current direction: P9-8.0 is complete following explicit acceptance
 of R1–R10 and the aggregate bounded feasibility scope. The all-ten production
-hold is released. Implement P9-8.1a under its existing scoped permission using
-the four subitems below. Chart/endpoint primitives (`.1`), immutable graph
-admission (`.2`) and graph envelope/identity/projection (`.3`) are implemented
-and focused checks pass. The current phase-boundary audit also passes on the
-`.3` subject; `.4` integrated review is next. The reconciliation review records
+hold is released. P9-8.1a's four chart/graph checkpoints are implemented and
+the integrated own review (`.4`) passes, including the current phase-boundary
+audit. P9-8.1a is complete within that scope; P9-8.1b is the next planned leaf,
+subject to its applicable work-entry requirements. Performance/cache review
+is scheduled at the end of Tranche 8. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
 General autonomous topology remains separate under 7T, and later native gates
@@ -2262,6 +2262,23 @@ admission routes. Ruff, mypy and the current phase-boundary audit pass. See the
 [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a3-graph-envelope-identity-and-projection).
 The parent remains open for `.4` review; no lifecycle or profile conformance is
 claimed by this graph checkpoint.
+
+P9-8.1a.4 own-review status, 2026-10-02: all four chart/graph checkpoints are
+verified and the parent implementation item is complete. The review found one
+missing API required by the common interface: explicit port-to-edge lookup.
+`GRC9V4PortGraph.edge_at()` now validates the query and live membership and
+returns the occupying edge or `None` for an inactive port. Both ports of a loop
+resolve to the same stable edge. No lookup cache or additional owner is added.
+Eight integrated methods extend the existing suite to 88 passing methods,
+covering the frozen source and all 17 frozen target graph payloads, 512
+saturated-star orientations, 1,296 canonical incidence patterns, 72 rehashed
+capacity rejections, ownership, malformed warm inputs and three process hash
+seeds. Ruff, mypy and the current phase-boundary audit pass. See the
+[review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81a4-integrated-review-and-parent-completion).
+This is an implementation/own-review disposition, not an external audit or new
+user acceptance. The generic numerical bridge, allocator/expansion execution,
+lifecycle, profile and arbitrary-size conformance remain with their later
+owners; the scheduled end-of-tranche cache review remains open.
 
 ##### Profile integration after shared mechanics
 
