@@ -2,12 +2,15 @@
 
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
-2026-10-01 current direction: hold all new GRC9V4 production work, including
-P9-8.1a, at P9-8.0 until the all-ten mathematical/construction feasibility
-scope is closed and reviewed. Reuse accepted results and investigate only
-gaps. C_OS remains the first implementation checkpoint after that review;
-general autonomous topology work remains separate under 7T. Historical
-machine permissions remain unchanged and are not sufficient to lift this hold.
+2026-10-02 current direction: P9-8.0 is complete following explicit acceptance
+of R1–R10 and the aggregate bounded feasibility scope. The all-ten production
+hold is released. Implement P9-8.1a under its existing scoped permission using
+the four subitems below. Chart/endpoint primitives (`.1`) are implemented and
+focused checks pass. Reconcile the pre-existing binding drift recorded in the
+handoff and pass the current phase-boundary audit before implementing `.2`
+graph admission. C_OS remains the first profile integration checkpoint.
+General autonomous topology remains separate under 7T, and later native gates
+and execution-policy openings retain their existing requirements.
 
 Phase 9 implements the accepted graph-generic `GRCV4` substrate, followed by
 a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
@@ -2131,10 +2134,97 @@ execution-policy openings; aggregate feasibility is not blanket permission.
 
 Separate chart/port graph, row differential/weights, mechanical candidate
 trigger, and coarse-graining/Split into `P9-8.1a`–`P9-8.1d` iterations.
-Implement D11-G9-P4a's exact
-boundary reservations, primary spine, both chiralities, conditional phase,
-arbitrary-size tree, capacity accounting, stable IDs, and initialization.
-Use the normative port map, without deriving a repair from legacy code.
+P9-8.2 separately implements D11-G9-P4a's exact boundary reservations, primary
+spine, both chiralities, conditional phase, arbitrary-size tree, capacity
+accounting, stable IDs and initialization. Use the normative port map, without
+deriving a repair from legacy code.
+
+##### P9-8.1a work breakdown
+
+The existing leaf contains four useful implementation/review checkpoints. They
+can be delivered sequentially on `work/p9-8-1-shared-mechanics`; they do not
+create four new acceptance gates. Each increment includes its own focused
+checks, with a final composition review before the parent closes. Formal
+runtime work-manifest and permission records continue to use `P9-8.1a`, the
+already accepted iteration ID.
+
+The [accepted G3 scope](./phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.md) owns
+`src/pygrc/models/grc_9_v4_topology.py` and
+`tests/models/test_grc_9_v4_topology.py` for this leaf. Bind concrete source/test
+hashes in the work manifest when implementing each increment. Those paths also
+have later responsibilities; their presence does not open P9-8.1b–d, expansion,
+lifecycle or facade integration.
+
+Authority is the [port-graph contract](../specs/grc-9-v4-spec.md#port-graph),
+[fixed chart](../specs/grc-9-v4-spec.md#fixed-3times3-chart) and
+[paper Appendix A.2–A.3](./investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#appendix-a-grc9v4-nine-port-specialization-of-grc-v4),
+with `D10.2-EC-PARENT-GRC9-ORDERED-PORTS` and
+`D10.2-EC-PARENT-GRC9-ROW-COLUMN-CHART`. The
+[contract schema](../specs/grc-v4-contract-schema.json) defines `port_endpoint`,
+`port_edge`, `port_graph_payload` and `serialized_port_graph`; the
+[frozen vectors](../specs/grc-v4-conformance-vectors.json) include
+`GRC9V4-PORT-GRAPH-PAYLOAD-DIGEST-ENVELOPE`. Reuse those sources and existing
+generic canonicalization/graph contracts; do not derive expectations from the
+new implementation or alter accepted fixtures to make it pass.
+
+| Subitem | Concrete implementation | Exit evidence |
+| --- | --- | --- |
+| P9-8.1a.1 — chart and endpoints | Exact `r=b+3(a-1)` and inverse; immutable row/column partitions; validated endpoint values. | Exhaust all nine ports and inverse pairs. Distinguish row `{1,2,3}` from column `{1,4,7}`. Reject ports 0/10, Boolean/string/fractional values and malformed row/column coordinates. |
+| P9-8.1a.2 — graph admission | Deeply immutable graph/edge records, stable string edge IDs, typed live-node identity, legal edge kinds, endpoint membership, selected tail/head orientation and one-edge-per-endpoint occupancy. | Reject duplicate nodes/edge IDs, dangling endpoints and endpoint reuse even with different opposite endpoints or edge IDs. Admit legal parallel edges with distinct ports. Check empty/isolated-node and saturated degree-nine cases under the inherited graph contract, node IDs `1` versus `"1"`, and mutations of caller-owned containers. |
+| P9-8.1a.3 — identity and projection | Decode/encode the existing port-graph envelope, hash only its canonical content payload and reconstruct its declared digest. Derive a deterministic read-only generic graph projection preserving stable edge identity and orientation. | Match the frozen payload/envelope vector; reject forged digests and structurally invalid graphs even after rehashing. Verify encode/decode and projection consistency, ordered arrays under the existing canonicalization policy, reversed orientation and preservation of parallel edges. A projection adds no independently serialized or hashed graph owner. |
+| P9-8.1a.4 — integrated review | Compose the three parts through their actual public module consumers, pressure boundary/type/ownership failures and record parent completion evidence. | Focused chart/port-graph suite plus affected generic graph/identity regressions and the existing source/execution-boundary check. Record exact source/test identities, results and remaining later responsibilities before closing P9-8.1a. |
+
+Graph admission must preserve the inherited distinction between structural
+validity and event eligibility. In particular the expansion-source self-loop
+rejection belongs to the D11-G9 event contract; it is not permission to invent
+a stronger global graph rule. Likewise source-edge permutation metamorphisms
+for expansion do not imply that arbitrary serialized-array permutations have
+the same digest. Determine these results from the existing graph and
+canonicalization contracts before writing their consumers.
+
+The 2026-10-02 user review of `.1` makes three inherited-contract obligations
+explicit for the remaining subitems:
+
+- `.2` preserves empty-string node IDs: both the generic node-ID contract and
+  `port_endpoint`/`port_graph_payload` schema admit them. A live `""` node is
+  valid; an endpoint naming `""` without that live node must reject. Edge IDs
+  remain nonempty strings. Tightening node IDs would change the accepted
+  contract rather than complete this implementation checkpoint.
+- `.2` keeps normalized integer and string node identity distinct in membership,
+  duplicate and occupancy checks (`1`/`1.0` normalize together; `1`/`"1"` stay
+  distinct). Default endpoint equality is sound only for its current exact
+  normalized `str | int` and `int` fields. Review equality/hash whenever those
+  types change; `.3` uses the existing typed/JCS graph payload identity and
+  digest, never a Python hash as serialized identity.
+- `.2` owns collective graph admission. `.3` decoding and projection must
+  consume or construct an admitted graph; a collection of valid endpoints or
+  a matching digest alone cannot establish membership or unique occupancy.
+  `.4` exercises these routes with dangling/reoccupied endpoints, including
+  malformed payloads with recomputed digests.
+
+The chart is mechanical interface data. Candidate weights, row differentials,
+spark detection, coarse/Split, resource transfer, W/Z initialization, current/
+reset lifecycle and runtime receipts retain their existing later owners.
+P9-8.1a.3 covers the graph envelope only, not a complete lifecycle codec or
+combined-profile admission. No new equation or release/schema amendment is
+required by this work breakdown.
+
+P9-8.1a.1 implementation status, 2026-10-02: the V4 topology module now
+contains the fixed mappings/partitions and immutable `GRC9V4PortEndpoint`.
+Node identity reuses the generic graph rule. Integral-valued JSON floats
+normalize to integers; Boolean, coercible, fractional, nonfinite and out-of-range
+coordinates reject. Seven new methods and sixteen generic graph regressions
+pass against repository sources, as do Ruff and mypy. The two new exact source/
+test entries are bound to the existing `P9-8.1a` scope. Parent completion remains
+open: the global checker encounters thirteen maintenance and twenty-five prior
+work-entry hash mismatches already present at `7ba0f61`. No historical binding,
+permission or accepted evidence is repinned by this increment. See the
+[execution note](./Phase-9-GRCV4-Handoff.md#p9-81a1-chart-and-endpoint-implementation)
+for commands, source identities and the boundary failure distinction. Review
+the intervening changes, reconcile justified bindings and pass that audit
+before starting `.2`; repeat the boundary check for final parent review in `.4`.
+
+##### Profile integration after shared mechanics
 
 After the all-ten feasibility review, use one shared mechanical implementation,
 with explicit candidate/realization adapters and separately reviewed conformance.

@@ -2,11 +2,13 @@
 
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
-2026-10-01: all new specialization production work, including P9-8.1a, is held
-pending all-ten mathematical/construction feasibility closure and user review.
-The readiness inventory and initial feasibility probes are complete, not the
-all-ten program. General 7T remains separate; accepted G2/G3 and historical
-machine permissions are unchanged and do not override this current work hold.
+2026-10-02: P9-8.0 is complete after explicit acceptance of R1–R10 and the
+aggregate bounded feasibility scope. All ten rows are provisionally closed;
+the all-ten production hold is released. P9-8.1a is next under its existing
+scoped permission and is broken into four implementation subitems below.
+The `.1` primitives pass focused checks; reconcile the existing phase-boundary
+failure before implementing `.2` graph admission.
+General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
@@ -62,7 +64,7 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | P9-G0 | Recorded | Branch and planning documents; accepted release audit and no-ff merge identity. |
 | P9-G1 | Accepted | [P9-1.9 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json), exact implementation scope and successor dispatch. |
 | `P9-G2[p]` | Ten exact declarations accepted | Full applicable generic runtime/lifecycle fixture product for exact profile scope p; aggregate P9-7.7 accepted, no broader domains inferred. |
-| `P9-G3[S]` | Accepted; Tranche 7 closed | Ten exact generic declarations consumed; historical P9-8.1a permission retained but production held by the user pending all-ten feasibility review. No specialization conformance. |
+| `P9-G3[S]` | Accepted; Tranche 7 closed | Ten exact generic declarations consumed; P9-8.0 explicitly accepted and its hold released. P9-8.1a retains its scoped permission. No specialization conformance. |
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
 The initially empty generic support set now contains exact C_OS, A_OS,
@@ -1962,6 +1964,50 @@ CI/PC/CI+PC products; both RG2b products last. Shared mechanics are reused;
 target/history/readmission/lifecycle acceptance remains profile-specific.
 
 - [ ] P9-8.1a: Implement and verify the fixed chart and port graph.
+  The subitems below are checkpoints within the existing `P9-8.1a` leaf,
+  not new machine gates or independent permission requests. Each implementation
+  increment carries focused tests and its exact work-manifest binding under
+  `P9-8.1a`; the parent closes after all four are verified and reviewed.
+  Reconcile the existing phase-boundary drift and pass the current audit before
+  starting `.2`; the `.4` review also requires a passing boundary on its subject.
+  [Scope and exit criteria](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown).
+
+  - [x] P9-8.1a.1: Fixed chart and endpoint primitives. Implement the exact
+    port ↔ row/column bijection, immutable row/column partitions and validated
+    endpoints. Verify all nine ports and inverse pairs; reject malformed types
+    and out-of-range coordinates without confusing rows with columns.
+    Implemented in [V4 topology](../src/pygrc/models/grc_9_v4_topology.py), with
+    seven focused methods plus sixteen generic graph regressions passing;
+    Ruff/mypy pass and both new source/test hashes are registered under
+    `P9-8.1a`. This checks off the primitive implementation only. The global
+    phase-boundary check remains failed on pre-existing bindings; see the
+    [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a1-chart-and-endpoint-implementation).
+  - [ ] P9-8.1a.2: Immutable port-graph admission. Bind stable node/edge IDs,
+    edge kinds, live endpoints and tail/head orientation. Reject duplicate IDs,
+    dangling endpoints and repeated `(node_id, port)` occupancy, including
+    collisions hidden by distinct parallel-edge IDs. Preserve legal parallel
+    edges; prove caller mutation cannot alter admitted graph contents.
+    Preserve the schema's empty-string node IDs and nonempty edge IDs; exercise
+    present/absent `""` membership, normalized `1`/`1.0` duplicates and distinct
+    `1`/`"1"` occupancy. Reassess equality/hash if endpoint field types change.
+  - [ ] P9-8.1a.3: Graph payload, digest and generic projection. Reuse the
+    accepted canonicalization and identity contracts; round-trip the port-graph
+    envelope and independently recompute its payload-only digest. Provide the
+    deterministic read-only generic graph projection with stable edge identity
+    and orientation; establish that no second authoritative graph is created.
+    Decode through graph admission and project only admitted graphs. Use
+    typed/JCS payload identity; Python hashes confer no graph identity.
+  - [ ] P9-8.1a.4: Integrated boundary checks and parent review. Exercise the
+    frozen graph-envelope vector, malformed/rehashed payloads, port-capacity
+    edges, orientation reversal and input ownership across the actual consumers.
+    Record focused results, exact source/test identities and the existing
+    execution-boundary check; review the complete chart/port graph before
+    marking the parent complete. Lifecycle, allocator and profile conformance
+    remain with their later owners. The current full-boundary check fails:
+    thirteen maintenance bindings and twenty-five existing work entries differ
+    from their recorded hashes, all already differing at baseline `7ba0f61`.
+    Reconcile their concrete reviewed subjects before `.2` implementation;
+    adding the two new valid entries does not repair those older bindings.
 - [ ] P9-8.1b: Implement and verify row differential and V4 row-weight bridge.
 - [ ] P9-8.1c: Implement and verify the mechanical candidate trigger.
 - [ ] P9-8.1d: Implement and verify column coarse-graining and Split.

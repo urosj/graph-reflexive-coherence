@@ -1249,6 +1249,11 @@
       "iteration_id": "P9-4.9.1"
     },
     {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "a924c92265d8143f9ef2c64f0aafc0385e765867e3bfab9a01c0106eb444b84e",
+      "iteration_id": "P9-8.1a"
+    },
+    {
       "path": "src/pygrc/models/grc_v4.py",
       "iteration_id": "P9-7.2b",
       "sha256": "eaf8fb26d0f3cb4f9f6ac9c761fb17d90d3d1142f0e145c0bd0ab746a3c477d1"
@@ -1384,6 +1389,11 @@
       "sha256": "f24407aad2f54ebb6910c073fc69fbb58ffc858c7affeb6cc51c2196606813ff"
     },
     {
+      "path": "tests/models/test_grc_9_v4_topology.py",
+      "sha256": "c1ca83efd6e2befed73cbb4affff4c36d68b9bde4bfe4b226c4b8ce70d1b7bf4",
+      "iteration_id": "P9-8.1a"
+    },
+    {
       "path": "tests/models/test_grc_v4.py",
       "sha256": "9c88154b67232824a38b667173cae9b0d4c695ddcf006b54ebe3204bf83681f0",
       "iteration_id": "P9-4.9.3"
@@ -1516,5 +1526,5 @@
     ]
   ],
   "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The separately pinned P9-7.8 G3 decision admits only that exact consumed set and P9-8.1a chart/port-graph entry; no broader profile, ordered-pair or specialization runtime conformance follows.",
-  "record_digest": "dfabc83e86c11a447122d5db7a6ebb9aa47b696267fd96bdeadc9a4431bb3373"
+  "record_digest": "a1b9c883f5c7455e9f43af99a50ddfaaa205b68a565b3ac7e50c1fe9574ca67e"
 }

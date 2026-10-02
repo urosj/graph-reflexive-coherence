@@ -6,8 +6,17 @@
 and focused restriction pressure check are complete. The user explicitly
 accepts both R1–R10 and the aggregate scope on 2026-10-02 (“i accept both”).
 All ten rows are provisionally closed; P9-8.0 is complete and its production
-hold is released. Next: P9-8.1a under its existing scoped permission. The chronology
-below records the earlier checkpoints and does not reopen their resolved items.
+hold is released. Current branch: `work/p9-8-1-shared-mechanics`, from merged
+`main` at `7ba0f61`. P9-8.1a.1 fixed chart and endpoint primitives are now
+implemented with passing focused tests. The next task is to reconcile the
+current phase-boundary failure before implementing P9-8.1a.2 graph admission.
+The existing P9-8.1a permission is unchanged. The [four-subitem breakdown](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown)
+then covers graph admission, identity/projection and integrated review. These
+are implementation checkpoints, not new machine gates. The broader phase
+boundary currently fails on pre-existing maintenance/work bindings as recorded
+[below](#p9-81a1-chart-and-endpoint-implementation); no parent closure is claimed.
+The chronology below
+records earlier checkpoints and does not reopen their resolved items.
 
 The user requested a new branch and continuation of P9-8.0. Branch
 `work/p9-8-0-feasibility-scope` starts from `main` at `36be1ea`; the earlier
@@ -195,8 +204,13 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next task:** P9-8.1a fixed chart and port graph under its existing scoped
-permission. The P9-8.0 hold is released; later native owners are unchanged.
+**Next task:** review and reconcile the phase-boundary drift recorded below,
+then pass the current audit before further native implementation. P9-8.1a.2
+graph admission follows, then P9-8.1a.3 graph identity/projection and P9-8.1a.4
+integrated review. P9-8.1a.1 is implemented and focused verification passes.
+Keep the formal work-manifest iteration `P9-8.1a` and its
+existing scoped source/test permission. The P9-8.0 hold is released; later
+native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
 its actual policy outputs rather than the older separately seeded targets.
 
@@ -208,8 +222,116 @@ admission and later leaf closure are not P9-8.0 research prerequisites. Exact
 native scope acceptance still needs its own gates. The user-requested own
 actual RG evaluator review and corrections are now explicitly accepted; the
 older external audits retain their original limits. Aggregate technical review
-and explicit restriction/aggregate acceptance are complete. P9-8.1a can
-proceed under its existing scoped permission.
+and explicit restriction/aggregate acceptance are complete. P9-8.1a retains
+its existing scoped permission; current boundary reconciliation is still due.
+
+## P9-8.1a.1 chart and endpoint implementation
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`, baseline `7ba0f61`.
+[Native primitives](../src/pygrc/models/grc_9_v4_topology.py) implement the exact
+nine-port chart, immutable row/column partitions and frozen, slotted endpoints.
+[Tests](../tests/models/test_grc_9_v4_topology.py) use a literal nine-pair oracle,
+distinct row/column partitions and adversarial inputs. This increment implements
+only local chart/endpoint values: graph admission, envelope/projection and
+integrated review remain `.2`–`.4`.
+
+Ports and row/column coordinates are one-based JSON integers. Integral-valued
+Python floats normalize to integers without rounding fractional values; adjacent
+floats, bool/string/coercible values, nonfinite numbers and values outside the
+chart reject. Endpoint node identity follows the existing generic graph helper:
+safe integer normalization, distinct `1` and `"1"`, UTF-8 strings without Unicode
+normalization, and rejection of invalid/coercible/unsafe identities. Endpoint
+construction does not check graph membership, occupancy or event eligibility.
+
+The user's 2026-10-02 review reports no defect in the numeric/type admission
+surface and identifies three obligations for later graph work. Reviewing the
+[port-graph contract](../specs/grc-9-v4-spec.md#port-graph) and
+[schema](../specs/grc-v4-contract-schema.json) gives these dispositions:
+
+- Empty-string node IDs remain admitted, as in the generic graph and frozen
+  schema; only edge IDs carry a nonempty-string requirement. `.2` must cover
+  both a live `""` node and a dangling endpoint naming `""`.
+- Endpoint equality is sound for the exact normalized fields currently
+  admitted. The class docstring now records that invariant and requires
+  reassessment if field types change. `.2` retains typed membership/occupancy;
+  `.3` uses canonical payload bytes/digests for graph identity.
+- Local endpoint construction establishes no graph membership or occupancy.
+  `.2` validates the collective graph; `.3` decoding/projection must preserve
+  that admission boundary; `.4` pressures both dangling and reoccupied
+  endpoints through the actual consumers, including rehashed bad payloads.
+
+These decisions are recorded in the plan/checklist. Runtime behavior is
+unchanged by this follow-up. Existing tests already cover `""`, normalized
+numeric IDs and the integer/string distinction; the supplied review's extra
+probes are user-reported, not a separately retained executable campaign.
+
+Validation commands, from the repository root:
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -v test_grc_9_v4_topology test_grc_v4_geometry.GraphTests
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+The first three commands pass: **23 methods** (7 new, 16 generic graph), Ruff
+and mypy. Explicit `PYTHONPATH=src`
+is required to test this checkout: the environment also contains an installed
+`pygrc` copy, and the initial invocation without it failed to import the new
+module. The subsequent run verified the repository module's import origin.
+No numerical-family campaign was needed for these discrete primitives.
+
+The [work manifest](./phase-9-grcv4/runtime/RuntimeWorkManifest.json) adds exactly
+two entries under the existing formal iteration `P9-8.1a`. Its record digest,
+accepted G3/path permission and both new hashes check correctly; every previous
+entry and authority field is unchanged:
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_topology.py` | `a924c92265d8143f9ef2c64f0aafc0385e765867e3bfab9a01c0106eb444b84e` |
+| `tests/models/test_grc_9_v4_topology.py` | `c1ca83efd6e2befed73cbb4affff4c36d68b9bde4bfe4b226c4b8ce70d1b7bf4` |
+
+**Full phase-boundary result: failed, not passed.** The last command stops at
+`implementation maintenance binding drift: implementation/Phase-9-GRCV4-Handoff.md`.
+A complete inventory of the two binding lists finds 13 maintenance mismatches
+and 25 existing work-entry mismatches, each already different at committed
+baseline `7ba0f61`. Separate full `work_entries` validation also rejects with
+`work content binding mismatch`. The maintenance set includes planning files,
+side-tool files, earlier C verification owners and the event codec; the work
+set includes earlier generic source/tests and `pyproject.toml`. These are
+broader than this increment's two files, and overlap must not be summed into
+a unique-file count. No policy hash or old work entry is changed to mask them.
+
+The diagnostic is reproducible without changing either binding list:
+
+```python
+# Run with PYTHONPATH=src:implementation/phase-9-grcv4/verification.
+import phase9_implementation_policy as p
+for manifest, field in ((p.POLICY, 'artifact_bindings'), (p.WORK, 'entries')):
+    for row in p.read(p.ROOT / manifest)[field]:
+        actual = p.sha((p.ROOT / row['path']).read_bytes())
+        if actual != row['sha256']:
+            baseline = p.sha(p.git(p.ROOT, 'show', '7ba0f61:' + row['path']))
+            print(row['path'], 'already_drifted_at_baseline=', baseline != row['sha256'])
+```
+
+This records completed primitive implementation and focused checks, not a green
+whole-phase boundary or accepted P9-8.1a parent. Reconcile the actual changed
+subjects and applicable verification records and pass the current audit before
+starting `.2`; rerun the boundary check again for final parent review in `.4`.
+Do not replace that work with blind hash updates or general ATC acceptance.
+P9-8.0 remains accepted, and its scientific restrictions remain unchanged.
+
+The current whole-phase audit was omitted from the recent P9-8.0 closure and
+handoff checks. Bounded feasibility/restriction tests and the retained evidence
+manifest were checked, but they do not establish current implementation-entry
+readiness. The binding records were last committed at `e020ea7` (2026-09-15);
+later source refactors include `a7a7d0a` (2026-09-27) and `2074860`
+(2026-09-29), followed by further source and planning edits. The drift was
+already present at the merged baseline. It should have been detected before
+starting `.1`; the earlier wording deferring reconciliation to parent closure
+was too weak. Further implementation waits for reviewed reconciliation and a
+passing current boundary, without changing the accepted scientific scope.
 
 ## Resume on another machine
 
