@@ -113,10 +113,38 @@ full archive and resource/W transfers are checked against that preserved
 physical stage. Eight probe-carrier and four dropped-source-writer mutations
 reject through the actual event path. Audit evidence is retained portably.
 The user accepts this bounded companion and CEC-F1 correction through the
-2026-10-02 commit instruction; native receipts and all-ten closure remain open.
+2026-10-02 commit instruction, committed as `c9d9ae8`; native receipts and
+all-ten closure remain open.
 
-**Next construction task:** finish the nonpersistent CI and RG event companions,
-then selected-case compatibility using the
+The subsequent [nonpersistent CI companion](./phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md)
+locally verifies A_CI/C_CI on the same source/positive-D52 event. Six methods
+pass with both-role ten-step continuation, final reads and 22 named target
+comparisons; the minimum effect margin exceeds 1.995. Actual event outputs
+preserve A W lineage or complete C references and explicitly exclude Z,
+archives and carrier loss. The physical source stage is independently checked;
+eight probe-write/omitted-beat substitutions reject. EC model binding, RN
+input ownership and the AEC writer guard are reused. This continuation is
+accepted through the 2026-10-02 commit instruction. Its [bounded independent review](./phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md)
+passes without a new blocking finding. The supplied report is retained; its
+separate audit bundle was unavailable. No native
+oracle leaf or aggregate row closes.
+
+The [RG event companion](./phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md)
+now locally checks A_RG2b/C_RG2b actual source/event/target paths. Seven methods
+and 26 target-effect comparisons pass; the minimum full-gate ratio exceeds
+1.371. Each target reconstructs its own completion-relative section. First
+inverse core bounds are strictly negative with the complete allowance, so no
+backward physical-domain assumption is used. The new consuming guard preserves
+point inputs and independently recertifies returned chains and full read/write
+outputs, keeping intended-exact history branches separate. Source-chain
+substitution at target queries, corrupted outputs and shifted input operands
+reject; lawful scratch writes pass. The [bounded event review](./phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md)
+passes without corrections under reconstructed dependencies; only its report was
+available. The user accepts the CI and RG bounded companions through the
+2026-10-02 commit instruction. The actual RG evaluator's independent implementation
+review remains open; the event audit explicitly did not inspect that source.
+
+**Next construction task:** selected-case compatibility and evidence reconciliation using the
 [bounded deliverables](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
 Independently review the actual RG numerical evaluator as a separate open item.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes

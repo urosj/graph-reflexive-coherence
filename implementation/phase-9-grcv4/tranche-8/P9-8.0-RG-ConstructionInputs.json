@@ -1,0 +1,48 @@
+{
+  "research_case_id": "P9-8.0-RG-SOURCE-D52-POSITIVE-PHASE-3",
+  "shared_input_record": "P9-8.0-COS-ConstructionInputs.json",
+  "A_input_record": "P9-8.0-AOS-ConstructionInputs.json",
+  "inherited_A_fields": [
+    "parameters",
+    "source_W",
+    "event_history",
+    "row_detection"
+  ],
+  "profiles": [
+    "A_RG2b",
+    "C_RG2b"
+  ],
+  "source_schedule": {
+    "current_physical_steps": 1,
+    "reset_physical_steps": 0
+  },
+  "target_steps": 10,
+  "reference_current": "fresh_role_event_entry_RG_section_read",
+  "new_reference_current": "exact_zero",
+  "carrier_history": "not_applicable",
+  "Z": null,
+  "archive": null,
+  "candidate_information_loss": [],
+  "carrier_information_loss": [],
+  "identity_scope": "research_operands_only_no_native_receipt_or_registration",
+  "completion": {
+    "resources": [
+      "-1",
+      "5"
+    ],
+    "scaled_log_history": [
+      "-1",
+      "1"
+    ],
+    "history_scale": "512",
+    "application": "arguments_only_at_every_inverse_depth",
+    "section_radius": "1/4096",
+    "section_lipschitz": "1/1024",
+    "terminal_section": "identity",
+    "depth": {
+      "A": 4,
+      "C": 6
+    },
+    "graph_binding": "reconstruct_each_graph_own_completion_relative_section"
+  }
+}

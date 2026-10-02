@@ -2063,8 +2063,23 @@ Remaining work before any new specialization production, including P9-8.1a:
    independently reconstructed physical source stage, with twelve wrong-stage
    regressions through the actual event path. Audit evidence is portable and
    the user accepts this bounded checkpoint through the 2026-10-02 commit
-   instruction. Next finish the nonpersistent CI and RG event
-   companions, then selected-case compatibility.
+   instruction. The subsequent [A_CI/C_CI event companion](./phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md)
+   locally passes six methods and 22 named target effects, with minimum margin
+   above 1.995. It binds actual source stages and event C/W or C references,
+   requires absent Z/archive/loss state, and checks both-role root-based target
+   continuation. Its bounded review passes without a new blocking finding;
+   the supplied report is retained, with its separate audit bundle unavailable.
+   The user accepts this checkpoint through the commit instruction. The [A/C RG event companion](./phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md)
+   now locally passes seven methods and 26 target comparisons, with minimum
+   margin above 1.371. It consumes actual transfers, reconstructs each graph's
+   own section and certifies the negative first target predecessor using the
+   frozen global completion. Returned chains and full point outputs are checked
+   against preserved inputs, with separate intended-exact history branches.
+   Its [bounded construction review](./phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md)
+   passes under reconstructed dependencies; the supplied report is retained.
+   The user accepts this checkpoint through the 2026-10-02 commit instruction.
+   Actual evaluator implementation review remains open. Next complete selected-case compatibility and
+   reconcile the ten rows' concrete evidence and restrictions.
 
 4. **Review and accept the aggregate scope.** Every row must have concrete
    feasibility evidence and explicit restrictions. Retain unresolved or

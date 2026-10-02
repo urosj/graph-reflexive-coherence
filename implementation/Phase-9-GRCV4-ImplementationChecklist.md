@@ -1804,8 +1804,9 @@ Tranche 7 and current execution permissions remain unchanged.
   [bounded deliverables and stopping criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
   These are research inputs for later owners; completing P9-8.1–8.3 or newly
   admitting the research profiles natively is not a prerequisite. All items
-  below remain open except the explicitly recorded C_OS and A_OS increments; the
-  scope clarification itself supplied no construction result.
+  retain their stated status below, including the OS, persistent, CI and RG
+  construction increments. The scope clarification itself supplied no
+  construction result; local increments do not close aggregate acceptance.
 
   - [ ] Independently review the actual RG numerical evaluator and resolve its
     findings on the pinned scope. The supplied mathematical review did not
@@ -1816,6 +1817,8 @@ Tranche 7 and current execution permissions remain unchanged.
     include complete C reference maps, then A fixed-row/initializer/reference-
     current and W recipes. Supply or derive every operand; retain intended
     identity preimages. Native descriptor registration/serialization is later.
+    Concrete local companion records now cover all ten rows; final binding
+    reconciliation, remaining review and aggregate acceptance are still open.
   - [x] Construct and locally verify the first
     [shared-input/C_OS companion](./phase-9-grcv4/tranche-8/P9-8.0-EventConstruction.md)
     (2026-10-02): explicit rational inputs and complete C references, independent
@@ -1858,6 +1861,31 @@ Tranche 7 and current execution permissions remain unchanged.
     Audit evidence is retained portably. The user accepts this bounded checkpoint
     through the 2026-10-02 commit instruction; no native policy/receipt or
     all-ten oracle item closes.
+  - [x] Construct and locally verify the [A_CI/C_CI event companion](./phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md)
+    (2026-10-02): exact role source-stage binding, resource/W or C-reference
+    transfer, fresh CI-root reference currents, absent Z/archive/loss channels,
+    both-role ten-step continuation and final reads. Six methods and 22 named
+    target effects pass with minimum margin above 1.995. Eight wrong source
+    stages, three constructed-model substitutions, sixteen forged outputs,
+    three producer-input shifts, two wrong references and four changed recipes
+    reject; lawful scratch writes pass. Reuse accepted root certificates and
+    the AEC-F1 writer guard. The [bounded review](./phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md)
+    passes without a new blocking finding; no corrective iteration is needed.
+    Only the supplied report was available for retention. The user accepts this
+    bounded checkpoint through the 2026-10-02 commit instruction; actual RG
+    numerical review and selected-case compatibility are separate
+    obligations below.
+  - [x] Construct and locally verify the [A_RG2b/C_RG2b event companion](./phase-9-grcv4/tranche-8/P9-8.0-RGEventConstruction.md)
+    (2026-10-02): bind actual role source stages, C/W or C references, absent
+    carrier channels and each target's own completion-relative section. Seven
+    methods and 26 target comparisons pass, with minimum margin above 1.371;
+    both roles admit ten target steps and final reads. First inverse core
+    coordinates remain negative after full error/tail allowances. Entry-owned
+    chain/read/write certification rejects source-chain substitutions, shifted
+    producer inputs and corrupted outputs. The [bounded construction review](./phase-9-grcv4/tranche-8/P9-8.0-RGEventIndependentReview.md)
+    passes without corrections under reconstructed dependencies; only its report
+    was available. The user accepts this checkpoint through the 2026-10-02 commit
+    instruction. Actual RG numerical implementation review remains open.
   - [ ] Derive independent bounded event/target expectations for all ten rows:
     event preconditions/trigger, topology/role IDs, resources, W or C references,
     Z disposition, target-zero admission, positive continuation and defining
