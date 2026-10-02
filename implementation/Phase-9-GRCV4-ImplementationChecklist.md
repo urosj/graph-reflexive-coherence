@@ -1985,7 +1985,7 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     phase-boundary check initially failed on pre-existing bindings, now
     reconciled by the linked boundary review; see the
     [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a1-chart-and-endpoint-implementation).
-  - [ ] P9-8.1a.2: Immutable port-graph admission. Bind stable node/edge IDs,
+  - [x] P9-8.1a.2: Immutable port-graph admission. Bind stable node/edge IDs,
     edge kinds, live endpoints and tail/head orientation. Reject duplicate IDs,
     dangling endpoints and repeated `(node_id, port)` occupancy, including
     collisions hidden by distinct parallel-edge IDs. Preserve legal parallel
@@ -1993,6 +1993,15 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     Preserve the schema's empty-string node IDs and nonempty edge IDs; exercise
     present/absent `""` membership, normalized `1`/`1.0` duplicates and distinct
     `1`/`"1"` occupancy. Reassess equality/hash if endpoint field types change.
+    Implemented with frozen, slotted `GRC9V4PortEdge`/`GRC9V4PortGraph`, copying
+    and revalidating nested input records. Loops require two distinct ports;
+    event-specific loop eligibility remains with D11-G9. All 39 focused methods
+    pass (16 new, 7 prior chart/endpoint, 16 generic graph), including 1,296
+    incidence patterns; Ruff, mypy and the current phase-boundary audit pass.
+    Exact source/test bindings remain under `P9-8.1a`; see the
+    [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a2-immutable-port-graph-admission).
+    The user explicitly accepts this structural checkpoint and its recorded
+    interpretations on 2026-10-02 (“Great, accept and commit”); `.3`/`.4` remain open.
   - [ ] P9-8.1a.3: Graph payload, digest and generic projection. Reuse the
     accepted canonicalization and identity contracts; round-trip the port-graph
     envelope and independently recompute its payload-only digest. Provide the

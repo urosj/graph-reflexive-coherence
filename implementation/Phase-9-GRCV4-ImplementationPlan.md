@@ -5,9 +5,10 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 2026-10-02 current direction: P9-8.0 is complete following explicit acceptance
 of R1–R10 and the aggregate bounded feasibility scope. The all-ten production
 hold is released. Implement P9-8.1a under its existing scoped permission using
-the four subitems below. Chart/endpoint primitives (`.1`) are implemented and
-focused checks pass. The current phase-boundary drift is reconciled and the
-audit passes; `.2` graph admission is next. The reconciliation review records
+the four subitems below. Chart/endpoint primitives (`.1`) and immutable graph
+admission (`.2`) are implemented and focused checks pass. The current
+phase-boundary audit also passes on the `.2` subject; `.3` graph payload,
+digest and generic projection is next. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
 General autonomous topology remains separate under 7T, and later native gates
@@ -2226,6 +2227,21 @@ See the
 [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a1-chart-and-endpoint-implementation)
 for commands, source identities and the original boundary failure. Repeat the
 boundary check for each changed subject and final parent review in `.4`.
+
+P9-8.1a.2 implementation status, 2026-10-02: `GRC9V4PortEdge` validates
+nonempty string identity, the three exact kinds and copied endpoint records.
+`GRC9V4PortGraph` normalizes and detaches ordered nodes/edges, then checks
+unique node/edge IDs, live membership and unique occupancy across all
+incidences. Empty-string nodes, typed integer/string identity, legal parallel
+edges and loops with distinct ports retain their inherited semantics. This
+structural graph is the owner to extend with `.3` codec/identity/projection;
+it introduces no second graph representation or event eligibility rule.
+Sixteen new methods, seven prior chart/endpoint methods and sixteen generic
+graph regressions pass, including 1,296 two-edge incidence patterns and every
+attempted reuse of a saturated node's nine ports. Ruff, mypy and the current
+phase-boundary audit pass with the updated exact work/maintenance bindings.
+See the [execution note](./Phase-9-GRCV4-Handoff.md#p9-81a2-immutable-port-graph-admission).
+The parent remains open for `.3` and `.4`.
 
 ##### Profile integration after shared mechanics
 

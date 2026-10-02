@@ -12,9 +12,13 @@ implemented with passing focused tests and committed at `58d5035`. The current
 phase-boundary drift is reconciled; the boundary audit
 passes. See the [reconciliation review](./phase-9-grcv4/tranche-8/P9-8.1-BindingReconciliation.md)
 for the exact roster, verification and separate historical evidence failures.
-The next implementation subitem is P9-8.1a.2 graph admission.
+P9-8.1a.2 immutable graph admission is now implemented on baseline `abafce0`,
+with focused checks and the current phase-boundary audit passing; see its
+[execution note](#p9-81a2-immutable-port-graph-admission).
+The next implementation subitem is P9-8.1a.3 graph payload, digest and generic
+projection.
 The existing P9-8.1a permission is unchanged. The [four-subitem breakdown](./Phase-9-GRCV4-ImplementationPlan.md#p9-81a-work-breakdown)
-then covers graph admission, identity/projection and integrated review. These
+continues with identity/projection and integrated review. These
 are implementation checkpoints, not new machine gates. The broader phase
 boundary now passes after the reconciliation below; no parent closure is claimed.
 The chronology below
@@ -206,9 +210,9 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next implementation task:** P9-8.1a.2 graph admission, then P9-8.1a.3 graph
-identity/projection and P9-8.1a.4
-integrated review. P9-8.1a.1 is implemented and focused verification passes.
+**Next implementation task:** P9-8.1a.3 graph identity/projection, then
+P9-8.1a.4 integrated review. P9-8.1a.1–.2 are implemented and focused
+verification passes, including the current phase-boundary audit.
 Keep the formal work-manifest iteration `P9-8.1a` and its
 existing scoped source/test permission. The P9-8.0 hold is released; later
 native owners are unchanged.
@@ -342,6 +346,88 @@ existing file roster and current bindings are now reconciled without changing
 the accepted scientific scope. Historical C_RG2b retained-source checks and the
 separate ATC ancestry remain explicit failures in the reconciliation review;
 the passing boundary does not relabel them as fresh scientific verification.
+
+## P9-8.1a.2 immutable port-graph admission
+
+2026-10-02, branch `work/p9-8-1-shared-mechanics`, baseline `abafce0`.
+The [topology module](../src/pygrc/models/grc_9_v4_topology.py) now provides
+frozen, slotted `GRC9V4PortEdge` and `GRC9V4PortGraph` records. Edges validate
+nonempty UTF-8 string IDs, exact `boundary`/`spine`/`tree` kinds and typed
+endpoints. The graph owns collective admission: duplicate normalized node IDs,
+duplicate edge IDs, dangling endpoints and repeated `(node_id, port)`
+incidences reject. Declared node/edge order and tail/head orientation remain
+unchanged. Each edge and endpoint is copied and revalidated at construction;
+caller-owned lists or nested records cannot subsequently change its contents.
+Normal mutation is frozen, and `dataclasses.replace()` reruns admission.
+
+Empty graphs, isolates, disconnected components, legal parallel edges and
+loops with two distinct ports are admitted. A loop consumes both ports, and
+even its own tail/head cannot occupy the same port. D11-G9's expansion-source
+loop restriction remains an event rule. Empty-string node IDs stay valid when
+live; absent `""` endpoints reject. Normalized `1`/`1.0` IDs coincide while
+`1`/`"1"` remain distinct for membership and occupancy. No endpoint field type
+has changed: equality remains sound for exact normalized built-in values.
+
+The graph is the structural owner to extend in `.3` with the existing wire
+envelope, typed/JCS digest and read-only generic projection. Local endpoint or
+edge construction still cannot stand in for graph admission. No codec,
+projection, model admission or event eligibility is claimed by this increment.
+The parent stays open for `.3` and `.4`.
+
+The [tests](../tests/models/test_grc_9_v4_topology.py) add sixteen methods:
+identity/kind/type rejection, ordered input ownership, frozen records and
+replacement validation, empty/isolated/parallel/loop graphs, dangling and typed
+membership, duplicate IDs, all tail/head collision positions and degree-nine
+saturation. Every port reuse on a saturated node rejects in either orientation.
+A separate exhaustive literal-token oracle covers all **1,296** ordered
+two-edge incidence patterns over integer/string nodes and ports 1/5/9:
+**360 admit, 936 reject**, as required by unique incidence occupancy. Input
+detachment is checked even after forcibly mutating the caller's original
+records; this does not claim to support bypassing `frozen` on the graph's own
+records.
+
+Validation from the repository root:
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest -v test_grc_9_v4_topology test_grc_v4_geometry.GraphTests
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_topology.py tests/models/test_grc_9_v4_topology.py
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+All **39 methods pass** (16 new edge/graph, 7 prior chart/endpoint, 16 generic
+graph); Ruff and mypy pass. The **current phase-boundary audit passes** after
+refreshing exactly the two scoped work entries and the three edited planning
+documents' maintenance hashes, plus their containing record digests. The formal
+iteration remains `P9-8.1a`. The historical `.1` hashes above remain checkpoint
+evidence; current `.2` work identities are:
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_topology.py` | `d02e8df332871cd73edcbdbe655e32f8db5b944b4f5c47145cc0dbd7df6fb1aa` |
+| `tests/models/test_grc_9_v4_topology.py` | `f4e0d3d33e7183d20e3ec812fc25a700e4a375be12cb581fa310fb30b75aa2f1` |
+
+The existing reconciliation records and accepted scientific evidence are
+unchanged. Its separate retained-source failures are neither rerun nor
+reclassified by this structural graph checkpoint.
+
+The user explicitly accepts this checkpoint on 2026-10-02 (“Great, accept and
+commit”). Their supplied comparison against the normative port-graph section
+reports no discrepancy in the implemented chart, endpoint or structural graph
+layer and independently confirms the 360/936 exhaustive-oracle counts. This is
+a user-supplied review of the uncommitted source/test hashes above, not a new
+runtime or serialization conformance claim. The envelope and generic projection
+remain assigned to `.3`, and parent review remains `.4`.
+
+The acceptance retains strict built-in JSON value types and the interpretation
+that a loop needs two distinct occupied ports. The review correctly notes that
+the specification's “at most one live edge” wording does not expressly settle
+two incidences of the same edge on one port; the implementation's stronger
+incidence rule is an explicit accepted convention, pinned by tests. Empty-string
+node IDs remain admitted under the schema and generic graph contract, as
+already examined in the `.1` follow-up and `.2` plan; tightening that contract
+would require a separately approved scope change, not an implicit `.3`/`.4`
+cleanup. No resource coordinate or authoritative port cache is introduced.
 
 ## Resume on another machine
 

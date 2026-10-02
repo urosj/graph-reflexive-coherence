@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "2e7963e28cc54cf53d1aa35cdaaad037971db9d71b0fd867be026d5ae121e870"
+      "sha256": "a08d62076669810a92f5d5fd1e439fdf7ac0f59c4dd2fca1363e672701f446a8"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "a6e3c0db5d6614cd36e47cacbcad9d8d6e80b8d15d56516f826f328af1e62802"
+      "sha256": "c6e6d806e4a6ca7d8ff18db76f8268427579fb0be787e293ac39df13a36272c6"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "30533c31f60e17b25354d6c5e23b18a4d489b4c0375b4b5e1e6c34f659d6be17"
+      "sha256": "b854da9e0b79a69070078229319e53a1aed38a49d0cfe5fa121fddf8dab4627c"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -3390,5 +3390,5 @@
       "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
     }
   ],
-  "record_digest": "351abda095af84ffaa16b21fe7f2105f18d8a6425eeddd1728b2cda58c34a1b8"
+  "record_digest": "348d3d611a6ec379e1bc39350a4be6f33e1a4f6b39fd15aff77f33a1d1c29b8f"
 }
