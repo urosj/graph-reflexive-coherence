@@ -2041,8 +2041,18 @@ Remaining work before any new specialization production, including P9-8.1a:
    final/effect read inputs, with local regressions through the actual consumers.
    The user accepts this bounded checkpoint through the 2026-10-02 commit
    instruction. Remaining A/C bindings and selected-case
-   compatibility stay open. Next
-   extend A_OS history/initialization and its independent expectations.
+   compatibility stay open. The [A_OS lineage/initialization companion](./phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md)
+   now locally passes six methods, covering exact old-edge W preservation,
+   positive new-edge seeds, certified fresh reference-current inputs, both-role
+   continuation and eight effects. Its bounded independent review passes;
+   AEC-F1 is corrected locally with entry-owned writer-control operands,
+   separate point/intended-exact references and mutation/scratch regressions
+   through the actual consumer. Nominal results are unchanged; audit evidence
+   is retained portably. The user accepts this bounded checkpoint through the
+   2026-10-02 commit instruction.
+   This uses the allowed lineage branch, without selecting whole-target
+   history-free reconstruction or closing P9-8.3A.1. Next construct explicit
+   whole-Z policies and the persistent/remaining realization companions.
 
 4. **Review and accept the aggregate scope.** Every row must have concrete
    feasibility evidence and explicit restrictions. Retain unresolved or

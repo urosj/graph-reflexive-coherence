@@ -1,0 +1,84 @@
+{
+  "research_case_id": "P9-8.0-A_OS-SOURCE-D52-POSITIVE-PHASE-3",
+  "shared_input_record": "P9-8.0-COS-ConstructionInputs.json",
+  "shared_fields": [
+    "identity_scope",
+    "topology_fixture",
+    "request",
+    "source_graph",
+    "expected_target_roles",
+    "unit_vertex_measure",
+    "geometry",
+    "ordinary",
+    "roles",
+    "resource_initial_radius"
+  ],
+  "candidate": "A",
+  "realization": "OS",
+  "parameters": {
+    "eta": "1",
+    "kappa_c": "1",
+    "kappa_Ah": "1/2",
+    "kappa_H": "1/2",
+    "alpha_A": "1/16777216",
+    "beta_A": "1/16777216",
+    "gamma_A": "1/16777216",
+    "chi_A": "1/16",
+    "zeta_A": "1/2",
+    "W_floor": "1/2",
+    "tau_A": "1",
+    "site_potential": "zero",
+    "external_forcing": "zero",
+    "K4_base": "zero"
+  },
+  "row_detection": {
+    "frame": "fixed_port_chart",
+    "backend": "row_basis_diagonal",
+    "weights": "committed_postbeat_W_A",
+    "stage": "fresh_postbeat_candidate_detection",
+    "hessian_sign": -1,
+    "epsilon_gradient": "1/2",
+    "epsilon_spark": "0"
+  },
+  "source_W": {
+    "current": {
+      "old-1": "1023/1024",
+      "old-2": "1023/1024",
+      "old-3": "1023/1024",
+      "old-4": "1023/1024",
+      "old-5": "1023/1024",
+      "old-6": "1023/1024",
+      "old-7": "1023/1024",
+      "old-8": "1023/1024",
+      "old-9": "1023/1024"
+    },
+    "reset": {
+      "old-1": "1023/1024",
+      "old-2": "1023/1024",
+      "old-3": "1023/1024",
+      "old-4": "1023/1024",
+      "old-5": "1023/1024",
+      "old-6": "1023/1024",
+      "old-7": "1023/1024",
+      "old-8": "1023/1024",
+      "old-9": "1023/1024"
+    }
+  },
+  "history_initial_radius": "1/68719476736",
+  "event_history": {
+    "policy": "exact_old_edge_lineage_and_positive_bond_seed",
+    "old_edges": "copy_role_event_entry_W_by_stable_edge_id",
+    "new_edges": "event_bond_seed",
+    "whole_target_history_free_initializer": false,
+    "candidate_information_loss": []
+  },
+  "reference_current": {
+    "source_stage": "fresh_role_event_entry_OS_corrector_read",
+    "old_edges": "preserve_signed_source_current_by_stable_edge_id",
+    "new_edges": "exact_zero",
+    "used_to_initialize_W": false
+  },
+  "carrier_history": "not_applicable",
+  "Z": null,
+  "carrier_information_loss": []
+}

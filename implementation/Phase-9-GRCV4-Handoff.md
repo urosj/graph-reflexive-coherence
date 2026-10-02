@@ -68,7 +68,7 @@ resource-transfer matrix and actual current/reset target states. Seven methods
 pass after audit correction, with both-role ten-step continuation, final reconstruction, six retained
 OS effects, ten input-mutation cases and thirteen consumer rejections. Exact
 zeros, charge, fresh current-source trigger and absent W/Z are checked. This
-increment is accepted for commit by the user on 2026-10-02. The [retained bounded audit](./phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md)
+increment is accepted and committed as `a360b0f` on 2026-10-02. The [retained bounded audit](./phase-9-grcv4/tranche-8/P9-8.0-EventIndependentReview.md)
 passes the construction and identifies EC-F1/EC-F2. The setup now binds consumed
 models to the validated record and independently assembled matrices; final and
 effect reads now own entry references and use separate work arrays. Thirteen
@@ -78,15 +78,32 @@ are retained portably. The commit instruction accepts this bounded companion
 and its local corrections; no all-ten binding/oracle
 item or C_OS feasibility row is closed.
 
-**Next construction task:** extend the shared record and independent target
-expectations to A_OS's initializer/reference-current/W policy, then the
-persistent and remaining realizations. Use the
+The requested continuation now locally verifies the
+[A_OS lineage/initialization companion](./phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md).
+It preserves all nine old-edge W values by exact identity and seeds seven new
+edges with bond 1. A fresh role-entry OS read supplies the reference-current
+recipe, independently certified before event transfer; new reference currents
+are zero and separately solved target currents are nonzero. Both roles admit
+ten target steps and final reconstruction. Six methods pass with eight
+mechanism/writer effects and input/model/producer mutations. The
+[independent review](./phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md)
+passes the bounded construction; AEC-F1 is corrected locally by preserving
+counterfactual C/W/J, checking pointwise writer error and separately retaining
+the composed intended-exact reference. Twelve input mutations reject, four
+scratch controls pass, and the actual effect consumer rejects the demonstrated
+history mutation. All nominal report fields are unchanged. Audit results are
+retained portably. This uses the allowed lineage plus new-edge initialization
+branch. The user accepts this bounded companion and local correction through
+the 2026-10-02 commit instruction; no native oracle leaf or feasibility row closes.
+
+**Next construction task:** select and validate explicit whole-Z event policies,
+then build the persistent and remaining realization companions using the
 [bounded deliverables](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
 Each persistent oracle must consume its policy's actual target state. Direct
 old-edge Z copying leaves 27 unsupported pairs; the specified whole-source
 archive/whole-target zero reset remains an available alternative needing its
-own affected numerical-stage/effect checks. No carrier policy is selected by
-the C_OS companion.
+own affected numerical-stage/effect checks. Neither the C_OS nor A_OS companion
+selects a carrier policy. Actual RG implementation review remains open.
 
 The remaining checklist now distinguishes bounded research oracles and
 selected-case compatibility from later native fixture/identity completion,

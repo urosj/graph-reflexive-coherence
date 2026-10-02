@@ -1804,7 +1804,7 @@ Tranche 7 and current execution permissions remain unchanged.
   [bounded deliverables and stopping criteria](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
   These are research inputs for later owners; completing P9-8.1–8.3 or newly
   admitting the research profiles natively is not a prerequisite. All items
-  below remain open except the explicitly recorded local C_OS increment; the
+  below remain open except the explicitly recorded C_OS and A_OS increments; the
   scope clarification itself supplied no construction result.
 
   - [ ] Independently review the actual RG numerical evaluator and resolve its
@@ -1828,6 +1828,20 @@ Tranche 7 and current execution permissions remain unchanged.
     EC-F1/EC-F2 are corrected locally. The user accepts this bounded checkpoint
     through the 2026-10-02 commit instruction; the
     all-ten bindings/oracles and C_OS row are not closed.
+  - [x] Construct and locally verify the [A_OS lineage/initialization companion](./phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md)
+    (2026-10-02): preserve old W by exact edge lineage, seed new W with bond 1,
+    derive and certify fresh role-entry reference currents and independently
+    check the actual event outputs. Six methods pass, including both-role
+    ten-step continuation, eight effects through the next W consumer and
+    binding/producer mutations. The [independent review](./phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md)
+    passes the bounded construction. AEC-F1 now isolates writer-control C/W/J,
+    certifies entry-point W error and retains a separate intended-exact branch;
+    twelve mutation controls and the actual effect-consumer regression reject,
+    four scratch controls pass, and nominal report fields are unchanged.
+    Historical audit results are retained portably. This selects the allowed
+    lineage/new-edge initialization branch. The user accepts this bounded
+    checkpoint through the 2026-10-02 commit instruction; P9-8.3A.1 and the
+    A_OS feasibility row stay open.
   - [ ] Select and validate an allowed whole-Z event policy for each persistent
     row, separately from A W history. Check support, symmetry, norm and target
     domain using each role's actual policy output. Whole-source archive/whole-
