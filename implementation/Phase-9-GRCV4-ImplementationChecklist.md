@@ -15,7 +15,9 @@ implemented and own-reviewed together: nonnegative inverse algebra, canonical
 signed channels and graph-bound field dispatch. The user accepts `.d` with the
 identified exact-backend integration correction assigned to new P9-8.1e;
 that checkpoint is committed at `a2d3d36`. P9-8.1e is implemented, own-reviewed
-and user-accepted with real Python/FLINT parity and P9-8.0 arithmetic classification.
+and user-accepted with real Python/FLINT parity and P9-8.0 arithmetic classification,
+committed at `c27583c`. The user explicitly accepts the complete P9-8.1 parent
+on 2026-10-02 and requests merging its branch into `main`.
 P9-8.2 is next. End-of-Tranche-8 cache review remains open.
 General 7T and later native acceptance gates remain separate.
 
@@ -1618,8 +1620,9 @@ automatic complete request generation or specialization conformance is inferred.
 
 Entry is the accepted G3 set of ten exact generic declarations, not ten
 conformant nine-port models. All-ten bounded feasibility is now reviewed and
-user-accepted; proceed to P9-8.1a, then C_OS first while retaining the population.
-P9-8.1 and P9-8.3 are parent registers with independently reviewed children.
+user-accepted. P9-8.1 shared mechanics is complete and user-accepted; P9-8.2
+is next, then C_OS first while retaining the population. P9-8.1 and P9-8.3
+are parent registers with independently reviewed children.
 General 7T is not a prerequisite for the defined mechanical scope. Accepted
 Tranche 7 and current execution permissions remain unchanged.
 
@@ -1972,6 +1975,13 @@ then independent A_OS and C_PC branches; remaining
 CI/PC/CI+PC products; both RG2b products last. Shared mechanics are reused;
 target/history/readmission/lifecycle acceptance remains profile-specific.
 
+- [x] P9-8.1: Complete and accept shared mechanics across `.a`–`.e` below.
+  The user explicitly accepts the complete parent on 2026-10-02 and requests
+  merging `work/p9-8-1-shared-mechanics` into `main`. The final implementation
+  subject is `c27583cc476b0c4cbdd63d3428d611b423389f04`; see the
+  [parent acceptance and child checkpoints](./Phase-9-GRCV4-Handoff.md#p9-81-shared-mechanics-parent-acceptance).
+  Allocator, native profile integration and later conformance duties retain
+  their existing owners; the end-of-Tranche-8 cache review remains open.
 - [x] P9-8.1a: Implement and verify the fixed chart and port graph.
   The subitems below are checkpoints within the existing `P9-8.1a` leaf,
   not new machine gates or independent permission requests. Each implementation

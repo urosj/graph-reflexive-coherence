@@ -16,7 +16,9 @@ together: nonnegative inverse algebra, signed channels and graph-bound fields.
 The user accepts current `.d` and assigns the exact-backend integration gap to
 new P9-8.1e; `.d` is committed at `a2d3d36`. P9-8.1e passes implementation
 and own review, including real Python/FLINT parity and P9-8.0 classification,
-and is user-accepted through the 2026-10-02 request to commit the completed changes.
+and is user-accepted through the 2026-10-02 request to commit the completed changes,
+committed at `c27583c`. The user now explicitly accepts P9-8.1 as a whole
+and requests merging `work/p9-8-1-shared-mechanics` into `main`.
 P9-8.2 is next, with its scoped opening still required. Performance/cache review
 is scheduled at the end of Tranche 8. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
@@ -2146,6 +2148,11 @@ execution-policy openings; aggregate feasibility is not blanket permission.
 
 Separate chart/port graph, row differential/weights, mechanical candidate
 trigger, and coarse-graining/Split into `P9-8.1a`–`P9-8.1d` iterations.
+The completed `P9-8.1e` aligns their exact arithmetic with the accepted V4
+backend contract and records the bounded P9-8.0 arithmetic audit. All five
+children and the P9-8.1 parent are explicitly user-accepted on 2026-10-02,
+with final implementation subject `c27583c`; see the
+[parent acceptance](./Phase-9-GRCV4-Handoff.md#p9-81-shared-mechanics-parent-acceptance).
 P9-8.2 separately implements D11-G9-P4a's exact boundary reservations, primary
 spine, both chiralities, conditional phase, arbitrary-size tree, capacity
 accounting, stable IDs and initialization. Use the normative port map, without

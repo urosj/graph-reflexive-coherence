@@ -2,11 +2,17 @@
 
 ## Current continuation — 2026-10-02
 
-**Latest disposition:** the [aggregate technical review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
+**Latest disposition:** P9-8.1 is complete and explicitly user-accepted as a
+whole on 2026-10-02, covering `.a`–`.e` at `c27583c`. The user requests merging
+`work/p9-8-1-shared-mechanics` into `main`; see the
+[parent acceptance](#p9-81-shared-mechanics-parent-acceptance).
+P9-8.2 remains the next implementation task, with its own scoped opening.
+
+The [aggregate technical review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
 and focused restriction pressure check are complete. The user explicitly
 accepts both R1–R10 and the aggregate scope on 2026-10-02 (“i accept both”).
 All ten rows are provisionally closed; P9-8.0 is complete and its production
-hold is released. Current branch: `work/p9-8-1-shared-mechanics`, from merged
+hold is released. P9-8.1 development branch: `work/p9-8-1-shared-mechanics`, from merged
 `main` at `7ba0f61`. P9-8.1a.1 fixed chart and endpoint primitives are now
 implemented with passing focused tests and committed at `58d5035`. The current
 phase-boundary drift is reconciled; the boundary audit
@@ -243,7 +249,8 @@ P9-8.1b is accepted and committed at `7f33a42`; P9-8.1c is accepted and committe
 at `e9dfad7`. P9-8.1d is accepted and committed at `a2d3d36`. P9-8.1e is
 implemented, own-reviewed and user-accepted: topology source/test, trigger source and the
 shared exact-backend test now bind to `.e`; the unchanged trigger test stays
-under `.c`.
+under `.c`, with `.e` committed at `c27583c`. The user now explicitly accepts
+the complete P9-8.1 parent; see the [acceptance record](#p9-81-shared-mechanics-parent-acceptance).
 Historical subjects are preserved below. The P9-8.0 hold is released; later
 native owners are unchanged.
 Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
@@ -261,6 +268,33 @@ and explicit restriction/aggregate acceptance are complete. P9-8.1a retains
 its existing scoped permission; current boundary reconciliation is recorded in
 the linked review. Retained scientific-source reconciliation remains separate
 from this implementation-integrity result.
+
+## P9-8.1 shared mechanics parent acceptance
+
+2026-10-02: the user explicitly accepts P9-8.1 as a whole and requests merging
+its development branch into `main`: "we now have P9-8.1 done, so accept it,
+and merge branch into main". The accepted implementation subject is
+`c27583cc476b0c4cbdd63d3428d611b423389f04` on
+`work/p9-8-1-shared-mechanics`, descended from `main` at `7ba0f61`.
+
+| Completed child | Accepted checkpoint |
+| --- | --- |
+| P9-8.1a — fixed chart, admitted port graph, envelope and projection | `75a6629` |
+| P9-8.1b — row differential and V4 weight bridge | `7f33a42` |
+| P9-8.1c — baseline mechanical candidate trigger | `e9dfad7` |
+| P9-8.1d — exact column coarse-graining and Split | `a2d3d36` |
+| P9-8.1e — exact-backend correction and bounded P9-8.0 audit | `c27583c` |
+
+The `.e` subject includes the final shared runtime correction across `.b`–`.d`.
+Its recorded validation comprises 173 regression/backend methods, 14 nested
+P9-8.0 probe executions across Python and FLINT, static checks and the current
+phase-boundary audit. The child reviews below retain the detailed pressure
+evidence and exact subjects. This parent acceptance closes P9-8.1; the
+acceptance-only documentation update preserves those runtime bytes and evidence.
+
+P9-8.2 allocator work, profile-specific native integration, later lifecycle
+and conformance gates, and the end-of-Tranche-8 performance/cache review keep
+their existing scope. P9-8.0's R1–R10 restrictions remain in force.
 
 ## P9-8.1a.1 chart and endpoint implementation
 
