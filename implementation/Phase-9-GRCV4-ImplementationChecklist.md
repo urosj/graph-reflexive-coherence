@@ -1842,13 +1842,22 @@ Tranche 7 and current execution permissions remain unchanged.
     lineage/new-edge initialization branch. The user accepts this bounded
     checkpoint through the 2026-10-02 commit instruction; P9-8.3A.1 and the
     A_OS feasibility row stay open.
-  - [ ] Select and validate an allowed whole-Z event policy for each persistent
-    row, separately from A W history. Check support, symmetry, norm and target
-    domain using each role's actual policy output. Whole-source archive/whole-
-    target zero reset is an available explicit-loss policy, not yet selected.
-    Direct old-edge copying is forbidden and leaves 27 unsupported pairs.
-    Recheck affected numerical stages/effects; separately seeded Z is not the
-    event result. Reuse existing envelopes wherever their hypotheses apply.
+  - [x] Select and locally validate the [whole-source archive/whole-target zero-reset policy](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md)
+    for A_PC, C_PC, A_CI_PC and C_CI_PC (2026-10-02), separately from A W
+    history. Check each role's complete actual source archive, exact target
+    zero, support/symmetry/norm and explicit carrier-only loss; recheck actual
+    target reads, ten-step continuation and affected defining effects under
+    unchanged thresholds. Five methods and 68 effect comparisons pass; the
+    minimum margin exceeds 1.421. PC geometry/carrier effects begin after the first
+    nonzero write; CI+PC additionally has its instantaneous source at entry.
+    Reuse the accepted whole-carrier-ball envelope. Direct old-edge copying
+    remains forbidden. The [bounded review](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md)
+    passes; CEC-F1 now anchors the complete archive and resource/W transfer to
+    an independent initial-record and physical-stage oracle. Eight probe-write
+    and four dropped-source-writer substitutions reject through the event path.
+    Audit evidence is retained portably. The user accepts this bounded checkpoint
+    through the 2026-10-02 commit instruction; no native policy/receipt or
+    all-ten oracle item closes.
   - [ ] Derive independent bounded event/target expectations for all ten rows:
     event preconditions/trigger, topology/role IDs, resources, W or C references,
     Z disposition, target-zero admission, positive continuation and defining

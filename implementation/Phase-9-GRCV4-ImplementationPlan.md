@@ -2051,8 +2051,20 @@ Remaining work before any new specialization production, including P9-8.1a:
    is retained portably. The user accepts this bounded checkpoint through the
    2026-10-02 commit instruction.
    This uses the allowed lineage branch, without selecting whole-target
-   history-free reconstruction or closing P9-8.3A.1. Next construct explicit
-   whole-Z policies and the persistent/remaining realization companions.
+   history-free reconstruction or closing P9-8.3A.1. The subsequent
+   [persistent companion](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md)
+   selects whole-source archive/whole-target zero reset for all four persistent
+   rows and checks actual per-role output, explicit carrier-only loss, target
+   admission, ten-step continuation and changed effect stages. Five methods
+   and 68 effect comparisons pass, with minimum margin above 1.421. PC's first
+   geometry/carrier effect follows the first write; CI+PC also retains its
+   instantaneous source at entry. Its bounded independent review passes;
+   CEC-F1 is corrected locally by binding archive and resource/W output to an
+   independently reconstructed physical source stage, with twelve wrong-stage
+   regressions through the actual event path. Audit evidence is portable and
+   the user accepts this bounded checkpoint through the 2026-10-02 commit
+   instruction. Next finish the nonpersistent CI and RG event
+   companions, then selected-case compatibility.
 
 4. **Review and accept the aggregate scope.** Every row must have concrete
    feasibility evidence and explicit restrictions. Retain unresolved or

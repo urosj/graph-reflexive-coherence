@@ -94,16 +94,33 @@ scratch controls pass, and the actual effect consumer rejects the demonstrated
 history mutation. All nominal report fields are unchanged. Audit results are
 retained portably. This uses the allowed lineage plus new-edge initialization
 branch. The user accepts this bounded companion and local correction through
-the 2026-10-02 commit instruction; no native oracle leaf or feasibility row closes.
+the 2026-10-02 commit instruction, committed as `aa35393`; no native oracle leaf
+or feasibility row closes.
 
-**Next construction task:** select and validate explicit whole-Z event policies,
-then build the persistent and remaining realization companions using the
+The subsequent [persistent event companion](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md)
+selects whole-source archive/whole-target zero reset for A_PC, C_PC, A_CI_PC
+and C_CI_PC. It checks complete archive content against actual per-role source
+carriers, exact zero target Z and separate `carrier_history_loss`, preserving
+A W lineage or complete C references. Both roles pass ten target steps and final
+reads. Five methods and 68 named target-effect comparisons pass; the minimum
+margin exceeds 1.421. The effect checks explicitly move PC geometry/carrier consumption to
+the next read after the first nonzero carrier write; CI+PC also demonstrates
+its instantaneous source at zero-carrier entry. Parameters and error thresholds
+remain unchanged. The [bounded independent review](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md)
+passes; CEC-F1 is corrected locally by anchoring the event to independently
+reconstructed initial records and the one-beat/zero-beat role schedule. The
+full archive and resource/W transfers are checked against that preserved
+physical stage. Eight probe-carrier and four dropped-source-writer mutations
+reject through the actual event path. Audit evidence is retained portably.
+The user accepts this bounded companion and CEC-F1 correction through the
+2026-10-02 commit instruction; native receipts and all-ten closure remain open.
+
+**Next construction task:** finish the nonpersistent CI and RG event companions,
+then selected-case compatibility using the
 [bounded deliverables](./phase-9-grcv4/tranche-8/P9-8.0-AllProfileFeasibility.md#bounded-construction-deliverables-before-production).
-Each persistent oracle must consume its policy's actual target state. Direct
-old-edge Z copying leaves 27 unsupported pairs; the specified whole-source
-archive/whole-target zero reset remains an available alternative needing its
-own affected numerical-stage/effect checks. Neither the C_OS nor A_OS companion
-selects a carrier policy. Actual RG implementation review remains open.
+Independently review the actual RG numerical evaluator as a separate open item.
+Direct old-edge Z copying remains forbidden; the zero-reset companion consumes
+its actual policy outputs rather than the older separately seeded targets.
 
 The remaining checklist now distinguishes bounded research oracles and
 selected-case compatibility from later native fixture/identity completion,

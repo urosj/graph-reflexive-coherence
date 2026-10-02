@@ -1,0 +1,142 @@
+[
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "role": "current",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "role": "current",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "role": "current",
+    "control": "drop_current_source_writer",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "role": "reset",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "A",
+    "realization": "PC",
+    "role": "reset",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "role": "current",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "role": "current",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "role": "current",
+    "control": "drop_current_source_writer",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "role": "reset",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "C",
+    "realization": "PC",
+    "role": "reset",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "role": "current",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "role": "current",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "role": "current",
+    "control": "drop_current_source_writer",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "role": "reset",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "A",
+    "realization": "CI_PC",
+    "role": "reset",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "role": "current",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "role": "current",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "role": "current",
+    "control": "drop_current_source_writer",
+    "rejected": "source archive epoch differs from declared physical entry"
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "role": "reset",
+    "control": "original",
+    "passed": true
+  },
+  {
+    "candidate": "C",
+    "realization": "CI_PC",
+    "role": "reset",
+    "control": "commit_probe_carrier",
+    "rejected": "source archive epoch differs from declared physical entry"
+  }
+]
