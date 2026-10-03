@@ -2188,8 +2188,35 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   The user explicitly accepts the reviewed implementation on 2026-10-03
   ("implementation mathches specs and papers, accepted"), with commit and
   merge requested before continuing with P9-8.3C-OS.
-- [ ] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource
+- [x] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource
   distribution, C reference transport, and carrier `not_applicable` semantics.
+  Execute on `work/p9-8-3-profile-integration` after accepted P9-8.2 merge
+  `79e0e8f`, as requested on 2026-10-03. Record projection/identity integration,
+  pure resource/reference reconstruction, and event admission/publication plus
+  independent continuation/failure/replay checks together.
+  - [x] P9-8.3C-OS.1: Connect numerical coordinates to the sole immutable port
+    owner; preserve generic graph bytes; bind specialization, combined model,
+    native reset and scientific identities.
+  - [x] P9-8.3C-OS.2: Rebuild the complete stable-edge C reference/Hodge map
+    and target profile; apply the exact satellite resource transform to current
+    and reset independently; require rederived C and absent carrier channels.
+  - [x] P9-8.3C-OS.3: Complete integrated own review of source/target numerical
+    admission, independent continuation, native receipts, rollback and replay.
+  The implementation is an internal C_OS event owner with unit measures and
+  zero structural K4 base; the separately identified native fixture uses dyadic
+  shares `(1/2,1/4,1/4)` and one shared charge target. Full public model lifecycle,
+  later profiles and broader numerical claims remain separate.
+  The user explicitly accepts this bounded checkpoint and its pressure-review
+  correction on 2026-10-03 ("this is much better, great. accept and commit").
+  All three checkpoints pass own review: 267 passing regression methods plus
+  one opt-in package skip, seven scope checks, three original cutoff probes,
+  twelve side-tool provenance checks, Ruff and targeted strict mypy.
+  The additional paper/side-tool pressure review corrected missing full OS
+  current/reset readmission; actual split, conditioning, nonfinite and charge
+  failures now have atomic rollback regressions. Weighted/oriented equation
+  checks pass; simplex-vertex events do not guarantee nonnegative subsequent
+  continuity. See the [pressure findings](./Phase-9-GRCV4-Handoff.md#p9-83c-os-pressure-review) and
+  [bounded review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-83c-os-native-event-integration).
   During P9-8.0 feasibility, construct an independently checked, separately identified numerical
   source/target companion to the frozen allocation vectors; preserve the
   P9-8.0 exact-cutoff regression. Include distinct current/reset roles, zero
@@ -2232,6 +2259,7 @@ history channels, readmission, failure/rollback and replay; A rows require
 their own `.1` oracle and `.2` execution acceptance):
 
 - [ ] C_OS — first mechanical checkpoint; complete C references, absent Z.
+  Bounded implementation/own review passes; user acceptance is pending.
 - [ ] A_OS — first A oracle/implementation; explicit W history policy.
 - [ ] C_PC — nonnull whole-carrier policy and target continuation.
 - [ ] C_CI — joint target-root/domain evidence, no carrier.

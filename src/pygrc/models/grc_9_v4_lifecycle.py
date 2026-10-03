@@ -1,26 +1,60 @@
-"""P9-8.1c fresh mechanical candidate detection, not a lifecycle owner.
+"""Fresh mechanical detection and bounded native C_OS event transactions.
 
-The reviewed module owner also has later transaction/completion duties. Only
-the baseline candidate predicate is implemented here. No graph mutation,
-event emission, completed spark, hierarchy update or capability is implied.
+The event checkpoint/replay owner is internal integration, not the later full
+GRC9V4 facade, compatibility crossing, completion rule or capability claim.
 """
 
 from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass, replace
-from typing import ClassVar, Literal
+from threading import Lock
+from typing import Any, ClassVar, Literal, cast
 
+from .grc_9_v4_expansion import (
+    GRC9ExpansionPolicy,
+    GRC9V4COSExpansion,
+    GRC9V4ExpansionError,
+    GRC9V4ExpansionPlan,
+    GRC9V4ExpansionRequestInput,
+)
 from .grc_9_v4_topology import (
     PORT_COUNT,
     GRC9V4PostbeatRows,
+    GRC9V4RowDifferential,
     GRC9V4RowSummary,
     _coordinate,
 )
-from .grc_v4_exact import exact_number
-from .grc_v4_geometry import NodeId, _identity, _ordered
+from .grc_v4_candidate_c import CandidateCCurrent
+from .grc_v4_codec import (
+    canonical_json_bytes,
+    decode_canonical_json,
+    payload_identity,
+    validate_payload,
+)
+from .grc_v4_exact import current_exact_backend, exact_backend, exact_number
+from .grc_v4_geometry import (
+    GeometryStageInputs,
+    NodeId,
+    VertexScalar,
+    _identity,
+    _local_payload,
+    _ordered,
+)
 from .grc_v4_profile import _Record
-from .grc_v4_state import _number
+from .grc_v4_realizations import CandidateCOSPass
+from .grc_v4_state import FrozenJSONMap, GRCV4LifecycleResult, _number
+from .grc_v4_step import (
+    FailureCode,
+    FailureReceipt,
+    FailureReceiptIdentityPayload,
+    GRCV4Failure,
+    OperationStage,
+    ProvisionalCandidateCOSStep,
+    SuccessfulReceiptEnvelope,
+    make_commit_receipts,
+)
+from .grc_v4_transport import ChargeEvaluation
 
 
 @dataclass(frozen=True, slots=True, eq=False)
@@ -170,3 +204,492 @@ class GRC9V4CandidateDetection:
 
     def candidate_node_ids(self) -> tuple[NodeId, ...]:
         return tuple(row.node_id for row in self.assess() if row.is_candidate)
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4Specialization:
+    """Resolved immutable declaration, not an advertised runtime capability."""
+
+    resolved: FrozenJSONMap
+    identity_payload: FrozenJSONMap
+
+    def __post_init__(self) -> None:
+        resolved = validate_payload("resolved_specialization", self.resolved)
+        identity = validate_payload(
+            "specialization_identity_payload", self.identity_payload
+        )
+        payload_identity(
+            "resolved_specialization",
+            resolved,
+            expected=cast(str, identity["specialization_params_hash"]),
+        )
+        params: Any = resolved
+        for key, value in (
+            ("spark_lane", params["spark"]["lane"]),
+            ("expansion_policy_id", params["expansion"]["policy_id"]),
+            ("row_weight_policy_id", params["row_weight"]["schema_version"]),
+            ("coarse_policy_id", params["coarse_graining"]["schema_version"]),
+            (
+                "grc9v3_target_spec_version",
+                params["compatibility"]["target_spec_version"],
+            ),
+        ):
+            if identity[key] != value:
+                raise ValueError("specialization identity differs from resolved policy")
+        object.__setattr__(self, "resolved", FrozenJSONMap(resolved))
+        object.__setattr__(self, "identity_payload", FrozenJSONMap(identity))
+
+    @property
+    def specialization_id(self) -> str:
+        return payload_identity(
+            "specialization_identity_payload", self.identity_payload
+        )
+
+    def to_payload(self) -> dict[str, Any]:
+        return {
+            "resolved": self.resolved.to_dict(),
+            "identity_payload": self.identity_payload.to_dict(),
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4COSState:
+    """Native identity over port-owned numerical inputs; admission is separate.
+
+    GeometryStageInputs identities remain internal kernel diagnostics. Enabled
+    scientific/reset identities below always bind the combined model identity.
+    No caller-supplied cache or target graph becomes scientific authority.
+    """
+
+    inputs: GeometryStageInputs
+    specialization: GRC9V4Specialization
+
+    def __post_init__(self) -> None:
+        if (
+            type(self.inputs) is not GeometryStageInputs
+            or type(self.specialization) is not GRC9V4Specialization
+        ):
+            raise TypeError(
+                "native C_OS state requires typed inputs and specialization"
+            )
+        inputs, spec = replace(self.inputs), replace(self.specialization)
+        reference = inputs.geometry.reference
+        if (
+            reference.graph.port_graph is None
+            or reference.profile.identity_payload.profile_family_id != "C_OS"
+        ):
+            raise ValueError("native C_OS requires a port-owned C_OS reference")
+        if (
+            inputs.geometry != reference.geometry()
+            or inputs.stage != "pre_read"
+            or inputs.trial_current is not None
+        ):
+            raise ValueError("native state must restart from reference geometry")
+        if inputs.receipt_ids:
+            raise ValueError("kernel diagnostic receipts are not a native event ledger")
+        if any(x != 0 for row in reference.K4_base for x in row):
+            raise ValueError("bounded C_OS scope requires zero structural K4 base")
+        _baseline_policy(GRC9SparkPolicy.from_payload(spec.resolved["spark"]))
+        object.__setattr__(self, "inputs", inputs)
+        object.__setattr__(self, "specialization", spec)
+
+    @property
+    def model_identity(self) -> str:
+        return payload_identity(
+            "complete_model_identity_payload",
+            {
+                "schema_version": "grc9v4-complete-identity-v1",
+                "grcv4_complete_profile_id": self.inputs.geometry.reference.profile.complete_profile_id,
+                "specialization_id": self.specialization.specialization_id,
+            },
+        )
+
+    @property
+    def reset_payload(self) -> dict[str, Any]:
+        return {
+            **self.inputs.reset_preimage,
+            "schema_version": "grc9v4-reset-baseline-v1",
+            "active_model_identity": self.model_identity,
+        }
+
+    @property
+    def reset_digest(self) -> str:
+        return payload_identity("grc9v4_reset_payload", self.reset_payload)
+
+    @property
+    def scientific_payload(self) -> dict[str, Any]:
+        return {
+            **self.inputs.scientific_state_preimage,
+            "active_model_identity": self.model_identity,
+            "reset_digest": self.reset_digest,
+        }
+
+    @property
+    def scientific_digest(self) -> str:
+        return payload_identity("scientific_state_payload", self.scientific_payload)
+
+    def lifecycle_digest(self, receipts: tuple[SuccessfulReceiptEnvelope, ...]) -> str:
+        return payload_identity(
+            "lifecycle_envelope_payload",
+            {
+                "schema_version": "grcv4-lifecycle-envelope-v1",
+                "scientific_state_digest": self.scientific_digest,
+                "receipt_ids": [r.receipt_id for r in receipts],
+            },
+        )
+
+    def to_payload(self) -> dict[str, Any]:
+        return {
+            "inputs": self.inputs.to_payload(),
+            "specialization": self.specialization.to_payload(),
+            "scientific_digest": self.scientific_digest,
+            "reset_digest": self.reset_digest,
+            "model_identity": self.model_identity,
+        }
+
+
+def _cos_readmit(state: GRC9V4COSState) -> None:
+    """Read both complete OS surfaces, without advancing either resource role.
+
+    A zero step checks charge/reference current but deliberately bypasses OS
+    geometry/corrector/split admission. Paper 12.7.5 requires those additional
+    surfaces at an event. CandidateCOSPass has a positive-duration API gate;
+    its read equations do not consume duration or advance resource/clock.
+    The local dt=1 probe only opens that read path and is never published.
+    """
+    ProvisionalCandidateCOSStep(replace(state.inputs, dt=0))
+    reference = state.inputs.geometry.reference
+    graph = reference.graph.port_graph
+    assert graph is not None
+    rows = GRC9V4RowDifferential(
+        graph, cast(int, state.specialization.identity_payload["hessian_sign"])
+    )
+    weights = tuple(
+        cast(float, reference.edge_weights[e]) for e in reference.graph.live_edge_ids
+    )
+    for authority in (state.inputs.current, state.inputs.reset):
+        surface = CandidateCOSPass(replace(state.inputs, current=authority, dt=1))
+        # Target analysis is reconstructed, not copied from source caches or
+        # advertised as a new postbeat candidate/completed-spark observation.
+        rows.evaluate(authority.C, weights, surface.corrector.current.values)
+
+
+def _cos_receipts(
+    before: GRC9V4COSState,
+    after: GRC9V4COSState,
+    target: GRC9V4COSExpansion,
+    ledger: tuple[SuccessfulReceiptEnvelope, ...],
+) -> list[dict[str, Any]]:
+    history: dict[str, Any] = dict(
+        schema_version="grcv4-history-bundle-receipt-v1",
+        **{
+            subject: {
+                "subject": subject,
+                "disposition": disposition,
+                "source_history_digest": None,
+                "target_history_digest": None,
+                "information_loss": "none",
+            }
+            for subject, disposition in (
+                ("candidate", "rederived"),
+                ("carrier", "not_applicable"),
+            )
+        },
+    )
+    charges = [
+        ChargeEvaluation(
+            VertexScalar(s.inputs.geometry.reference.graph, s.inputs.current.C),
+            s.inputs.Q_target,
+            s.inputs.geometry.reference.profile,
+        )
+        for s in (before, after)
+    ]
+    core: dict[str, Any] = {
+        "operation_id": target.plan.request.operation_id,
+        "resource_transform_digest": payload_identity(
+            "resource_transform_identity_payload",
+            {
+                "schema_version": "grcv4-resource-transform-identity-v1",
+                "transform": target.resource_transform_payload(),
+            },
+        ),
+        "history_bundle_digest": payload_identity(
+            "expansion_history_identity_payload",
+            {
+                "schema_version": "grc9v4-expansion-history-identity-v1",
+                "history_policy": target.plan.request.history_policy,
+            },
+        ),
+        "actual_charge_delta": float(
+            exact_number(charges[1].actual) - exact_number(charges[0].actual)
+        ),
+        "information_losses": [],
+        "disposition": "committed",
+        "parent_receipt_ids": []
+        if not ledger
+        else [
+            next(r.receipt_id for r in ledger if r.commit_id == ledger[-1].commit_id)
+        ],
+    }
+    for prefix, state in (("source", before), ("target", after)):
+        core.update(
+            {
+                prefix + "_state_digest": state.scientific_digest,
+                prefix
+                + "_graph_digest": state.inputs.geometry.reference.graph.graph_digest,
+                prefix + "_model_identity": state.model_identity,
+                prefix + "_reset_digest": state.reset_digest,
+                prefix + "_authoritative_digest": payload_identity(
+                    "authoritative_state_identity_payload",
+                    {
+                        "schema_version": "grcv4-authoritative-state-identity-v1",
+                        "authoritative": state.scientific_payload["authoritative"],
+                    },
+                ),
+            }
+        )
+    return [
+        {
+            "schema_version": "grcv4-topology-event-receipt-v1",
+            "core": core,
+            "history": history,
+            "event_id": target.plan.event_id,
+        },
+        dict(
+            schema_version="grcv4-charge-receipt-v1",
+            core=core,
+            **charges[1].receipt_values(),
+        ),
+        *(
+            {
+                "schema_version": "grcv4-history-disposition-receipt-v1",
+                "core": core,
+                "subject": subject,
+                "history_disposition": history[subject]["disposition"],
+                "information_loss": "none",
+            }
+            for subject in ("candidate", "carrier")
+        ),
+    ]
+
+
+@dataclass(frozen=True, slots=True)
+class _COSEventPublication:
+    state: GRC9V4COSState
+    receipts: tuple[SuccessfulReceiptEnvelope, ...] = ()
+    requests: tuple[GRC9V4ExpansionRequestInput, ...] = ()
+
+
+class GRC9V4COSOperation:
+    """Atomic bounded event receiver over an admitted postbeat C_OS seed.
+
+    The seed is numerical state, not proof of earlier operation chronology.
+    Checkpoints replay every event from that admitted seed and verify the full
+    resulting payload/ledger. This is deliberately an internal event checkpoint,
+    not the later public model snapshot/load/reset/step/capability facade.
+    The owner captures ExactScalar backend selection at construction.
+    """
+
+    def __init__(self, state: GRC9V4COSState) -> None:
+        if type(state) is not GRC9V4COSState:
+            raise TypeError("expected native C_OS state")
+        self._backend = current_exact_backend()
+        with exact_backend(self._backend):
+            state = GRC9V4COSState(
+                GeometryStageInputs.from_payload(state.inputs.to_payload()),
+                replace(state.specialization),
+            )
+            _cos_readmit(state)
+        self._initial = state
+        self._published = _COSEventPublication(state)
+        self._lock = Lock()
+
+    @property
+    def state(self) -> GRC9V4COSState:
+        return self._published.state
+
+    @property
+    def receipts(self) -> tuple[SuccessfulReceiptEnvelope, ...]:
+        return self._published.receipts
+
+    def checkpoint(self) -> bytes:
+        with self._lock:
+            published = self._published
+            return canonical_json_bytes(
+                {
+                    "descriptor_version": "grc9v4-cos-event-checkpoint-v1",
+                    "initial": self._initial.to_payload(),
+                    "requests": [r.to_payload() for r in published.requests],
+                    "state": published.state.to_payload(),
+                    "receipts": [r.to_payload() for r in published.receipts],
+                    "lifecycle_digest": published.state.lifecycle_digest(
+                        published.receipts
+                    ),
+                }
+            )
+
+    @classmethod
+    def replay(cls, checkpoint: bytes) -> GRC9V4COSOperation:
+        data: Any = _local_payload(
+            decode_canonical_json(checkpoint),
+            {
+                "descriptor_version",
+                "initial",
+                "requests",
+                "state",
+                "receipts",
+                "lifecycle_digest",
+            },
+            "descriptor_version",
+            "grc9v4-cos-event-checkpoint-v1",
+        )
+        initial = data["initial"]
+        specialization = initial["specialization"]
+        state = GRC9V4COSState(
+            GeometryStageInputs.from_payload(initial["inputs"]),
+            GRC9V4Specialization(
+                FrozenJSONMap(specialization["resolved"]),
+                FrozenJSONMap(specialization["identity_payload"]),
+            ),
+        )
+        result = cls(state)
+        for request in data["requests"]:
+            if not result.expand(
+                GRC9V4ExpansionRequestInput.from_payload(request)
+            ).committed:
+                raise ValueError("event checkpoint replay rejected")
+        if result.checkpoint() != checkpoint:
+            raise ValueError("event checkpoint differs from native replay")
+        return result
+
+    def expand(self, request: GRC9V4ExpansionRequestInput) -> GRCV4LifecycleResult:
+        if type(request) is not GRC9V4ExpansionRequestInput:
+            raise TypeError("expected a closed expansion request")
+        with self._lock, exact_backend(self._backend):
+            published = self._published
+            before = published.state
+            stage: OperationStage = "admission"
+            try:
+                request = replace(request)
+                if (
+                    request.target_specialization_id
+                    != before.specialization.specialization_id
+                ):
+                    raise ValueError(
+                        "target specialization differs from the admitted declaration"
+                    )
+                if before.inputs.step_index == 0:
+                    raise ValueError("expansion requires a postbeat seed")
+                graph = before.inputs.geometry.reference.graph.port_graph
+                assert graph is not None
+                plan = GRC9V4ExpansionPlan(
+                    graph,
+                    before.scientific_digest,
+                    request,
+                    GRC9ExpansionPolicy.from_payload(
+                        before.specialization.resolved["expansion"]
+                    ),
+                )
+                _cos_readmit(before)
+                current = CandidateCCurrent(before.inputs).current.values
+                detection = GRC9V4CandidateDetection(
+                    GRC9V4PostbeatRows(
+                        graph,
+                        before.inputs.geometry.reference.profile,
+                        before.inputs.current,
+                        current,
+                        before.inputs.step_index,
+                        cast(
+                            int, before.specialization.identity_payload["hessian_sign"]
+                        ),
+                    ),
+                    GRC9SparkPolicy.from_payload(
+                        before.specialization.resolved["spark"]
+                    ),
+                )
+                if request.source_node_id not in detection.candidate_node_ids():
+                    raise ValueError("source is not a fresh hybrid spark candidate")
+                stage = "target_construction"
+                target = GRC9V4COSExpansion(plan, before.inputs.geometry.reference)
+                inputs = replace(
+                    before.inputs,
+                    geometry=target.target.geometry(),
+                    current=target.transfer(before.inputs.current),
+                    reset=target.transfer(before.inputs.reset),
+                    dt=0,
+                    operation_id=request.operation_id,
+                )
+                after = GRC9V4COSState(inputs, before.specialization)
+                stage = "target_readmission"
+                _cos_readmit(after)
+                stage = "commit"
+                commit, receipts = make_commit_receipts(
+                    _cos_receipts(before, after, target, published.receipts),
+                    operation_id=request.operation_id,
+                    source_state_digest=before.scientific_digest,
+                    target_state_digest=after.scientific_digest,
+                    target_step_index=inputs.step_index,
+                    target_time=inputs.time,
+                )
+                following = _COSEventPublication(
+                    after,
+                    published.receipts + receipts,
+                    published.requests + (request,),
+                )
+                result = GRCV4LifecycleResult(
+                    "committed",
+                    True,
+                    payload_identity("commit_payload", commit.to_payload()),
+                    None,
+                    receipts,
+                )
+                # One publication: no target resource/profile/reset/receipt can
+                # become visible while any construction or result check can fail.
+                self._published = following
+                return result
+            except (ValueError, TypeError, ArithmeticError) as exc:
+                code: FailureCode = (
+                    "target_readmission_failure"
+                    if stage == "target_readmission"
+                    else "invalid_topology_event"
+                )
+                if isinstance(exc, GRC9V4ExpansionError):
+                    codes: dict[str, FailureCode] = {
+                        "source_not_saturated": "source_node_not_saturated",
+                        "source_self_loop_unsupported": "source_self_loop_unsupported",
+                        "module_chirality_required": "module_chirality_required",
+                        "module_growth_phase_required": "module_growth_phase_required",
+                        "reject_noncanonical_inactive_growth_phase": "reject_noncanonical_inactive_growth_phase",
+                    }
+                    code = codes.get(exc.code, code)
+                digest = before.scientific_digest
+                lifecycle = before.lifecycle_digest(published.receipts)
+                payload = FailureReceiptIdentityPayload(
+                    "grcv4-failure-receipt-v1",
+                    request.operation_id,
+                    stage,
+                    code,
+                    digest,
+                    digest,
+                )
+                receipt = FailureReceipt(
+                    "grcv4-failure-receipt-envelope-v1",
+                    payload_identity(
+                        "failure_receipt_identity_payload", payload.to_payload()
+                    ),
+                    payload,
+                )
+                failure = GRCV4Failure(
+                    stage,
+                    None,
+                    code,
+                    str(exc) or type(exc).__name__,
+                    digest,
+                    digest,
+                    lifecycle,
+                    lifecycle,
+                    receipt,
+                )
+                return GRCV4LifecycleResult(
+                    "rejected", False, None, failure, (receipt,)
+                )

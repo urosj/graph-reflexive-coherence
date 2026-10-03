@@ -2536,6 +2536,47 @@ before beginning the separately scoped P9-8.3C-OS integration.
 
 ##### Profile integration after shared mechanics
 
+2026-10-03: accepted P9-8.2 is committed at `e7a6fda` and merged at
+`79e0e8f`. The user requests P9-8.3C-OS on the new branch
+`work/p9-8-3-profile-integration`. Its implementation includes the required
+port-owned numerical projection, C_OS resource/reference and combined-identity
+reconstruction, and a bounded event transaction with failure/replay checks.
+Open the reviewed expansion/lifecycle source/test pairs and the existing generic
+geometry pair solely for port-owner projection support. Ordinary generic graph
+payloads and identities remain unchanged. The native companion has its own
+exact profile and binary64 resource tuple; the rational P9-8.0 companion's
+equal shares and distinct per-role charge targets are not copied into one
+native current/reset owner without admission. Later profile and Tranche 9
+conformance/capability duties retain their separate scope.
+
+The three checkpoints are P9-8.3C-OS.1 port-owned numerical projection and native
+identity, `.2` pure current/reset resource and complete C reference reconstruction,
+and `.3` event publication, independent numerical continuation, rollback and replay.
+The bounded adapter requires unit vertex measures and zero structural K4 base;
+a nonzero structural base needs a separately admitted transport policy. It accepts
+only the current specialization identity and C_OS reference-rebuild template,
+not a caller-supplied target graph/profile or history reinterpretation.
+The internal event checkpoint starts from an admitted postbeat numerical seed;
+it does not authenticate an earlier ordinary-operation chronology. All events
+after that seed are recomputed and their complete result/receipt payloads checked
+on replay. Public ordinary-step/reset/save/load/compatibility wiring remains
+Tranche 9 work. No new native G2/profile advertisement is inferred from this
+bounded integration or its positive local fixture.
+All three implementation/own-review checkpoints now pass together: 267 passing
+regression methods (one opt-in installed-package skip), seven authorization
+checks, three preserved P9-8.0 cutoff probes and twelve side-tool provenance
+checks. Additional paper/side-tool pressure exposed and corrected missing
+full OS current/reset readmission. Actual split/conditioning/nonfinite/charge
+failures reject atomically; weighted/oriented independent equation comparisons
+pass. Simplex-vertex event admission does not establish positive-resource
+continuation or child completion. The exact native fixture,
+Python/FLINT parity, independent numerical comparisons and subject hashes are
+in the [C_OS review](./Phase-9-GRCV4-Handoff.md#p9-83c-os-native-event-integration).
+The user explicitly accepts this bounded C_OS checkpoint, including the
+pressure-review correction and recorded continuation limits, on 2026-10-03
+("this is much better, great. accept and commit"). P9-8.3C-OS is complete;
+other profile children retain their separate acceptance requirements.
+
 After the all-ten feasibility review, use one shared mechanical implementation,
 with explicit candidate/realization adapters and separately reviewed conformance.
 The intended implementation progression is:

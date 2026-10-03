@@ -1,26 +1,43 @@
-"""P9-8.1c independent baseline gates and admitted post-commit handoff.
+"""Baseline gates and bounded P9-8.3C-OS native event/continuation evidence.
 
-No expansion, completed-spark or native nine-port lifecycle claim.
+No completed-spark, full public lifecycle or broad profile conformance claim.
 """
 
 from __future__ import annotations
 
+import hashlib
+import importlib.util
 import json
 import math
 import random
 import sys
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 from dataclasses import FrozenInstanceError, replace
 from decimal import Decimal, localcontext
 from fractions import Fraction
 from itertools import product
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
+from unittest.mock import patch
 
+import numpy as np
+
+from pygrc.models import grc_9_v4_lifecycle as native
+from pygrc.models.grc_9_v4_expansion import (
+    GRC9ExpansionPolicy,
+    GRC9V4COSExpansion,
+    GRC9V4ExpansionPlan,
+    GRC9V4ExpansionRequestInput,
+    cos_profile_template,
+)
 from pygrc.models.grc_9_v4_lifecycle import (
     GRC9SparkPolicy,
     GRC9V4CandidateDetection,
+    GRC9V4COSOperation,
+    GRC9V4COSState,
+    GRC9V4Specialization,
     UnsupportedGRC9SparkLane,
 )
 from pygrc.models.grc_9_v4_topology import (
@@ -28,17 +45,113 @@ from pygrc.models.grc_9_v4_topology import (
     GRC9V4PostbeatRows,
 )
 from pygrc.models.grc_v4 import GRCV4StepRequestInput
-from pygrc.models.grc_v4_codec import canonical_json_bytes
+from pygrc.models.grc_v4_codec import canonical_json_bytes, payload_identity
+from pygrc.models.grc_v4_exact import ExactBackend, current_exact_backend, exact_backend
 from pygrc.models.grc_v4_geometry import (
     GRCV4Graph,
     NonfiniteGeometryError,
     OrientedEdge,
 )
 from pygrc.models.grc_v4_lifecycle import GRCV4Operation
-from pygrc.models.grc_v4_profile import get_supported_profile, list_supported_profiles
+from pygrc.models.grc_v4_profile import (
+    get_supported_profile,
+    list_supported_profiles,
+    resolve_profile,
+)
+from pygrc.models.grc_v4_realizations import CandidateCOSPass, OSStageError
 from pygrc.models.grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState
+from pygrc.models.grc_v4_step import ProvisionalCandidateCOSStep, ResourceBoundaryError
 from tests.models.test_grc_9_v4_topology import edge, row_profile
-from tests.models.test_grc_v4_candidate_c import current_fixture
+from tests.models.test_grc_v4_candidate_c import current_fixture, dense_current_oracle
+from tests.models.test_grc_v4_geometry import (
+    stage_inputs_fixture,
+    stage_reference_fixture,
+)
+
+
+def native_cos_fixture(
+    *, cutoff: float = 1 / 512
+) -> tuple[GRC9V4COSState, GRC9V4ExpansionRequestInput]:
+    """Separate P9-8.3 native companion: dyadic shares and one shared Q.
+
+    It does not relabel the P980 equal-third, separate-Q research experiment
+    or the frozen cutoff=1 allocation vector as a native numerical success.
+    """
+    vectors = json.loads(
+        (
+            Path(__file__).resolve().parents[2]
+            / "specs/grc-v4-conformance-vectors.json"
+        ).read_text()
+    )
+    declarations = {v["vector_id"]: v["payload"] for v in vectors["identity_vectors"]}
+    params = deepcopy(declarations["IDENTITY-GRC9V4-PARAMS"])
+    params["expansion"]["bond_seed"] = 1
+    identity = deepcopy(declarations["IDENTITY-GRC9V4-SPECIALIZATION"])
+    identity.update(
+        hessian_sign=-1,
+        specialization_params_hash=payload_identity("resolved_specialization", params),
+    )
+    specialization = GRC9V4Specialization(
+        FrozenJSONMap(params), FrozenJSONMap(identity)
+    )
+    port_graph = GRC9V4PortGraph(
+        ("s", *range(1, 10)),
+        tuple(edge(f"e{p}", ("s", p), (p, p)) for p in range(1, 10)),
+    )
+    reference = stage_reference_fixture(
+        graph=GRCV4Graph.from_port_graph(port_graph),
+        weights={f"e{i}": 1.0 for i in range(1, 10)},
+        base=[[0.0] * 9 for _ in range(9)],
+        changes={
+            "candidate": {
+                "Lambda_C": cutoff,
+                "kappa_M_C": 2**-24,
+                "kappa_Phi_C": 1,
+                "eta_C": 1,
+                "tau_C": 1,
+                "chi_C": 16,
+                "zeta_C": 2**-37,
+            },
+            "geometry": {"kappa_H": 0.5},
+            "realization": {"tolerance": 1e-8},
+            "solver": {
+                "conditioning_limit": 1e8,
+                "absolute_tolerance": 1e-11,
+                "relative_tolerance": 1e-11,
+            },
+            "charge": {"absolute_tolerance": 1e-11},
+        },
+    )
+    current = GRCV4AuthoritativeState((3.0, *((3 + 1 / 64,) * 9)), None, None)
+    reset = GRCV4AuthoritativeState(
+        (2.0, *((3 + 1 / 64 + 1 / 8,) * 8), 3 + 1 / 64), None, None
+    )
+    inputs = replace(
+        stage_inputs_fixture(reference),
+        current=current,
+        reset=reset,
+        Q_target=sum(current.C),
+        dt=1 / 4096,
+    )
+    inputs = ProvisionalCandidateCOSStep(inputs).next_inputs
+    state = GRC9V4COSState(replace(inputs, dt=0), specialization)
+    request = deepcopy(vectors["grc9_expansion_vectors"][0]["request"])
+    request.update(
+        schema_version="grc9v4-expansion-event-request-input-v1",
+        operation_id="native-cos-expand-1",
+        source_state_digest=state.scientific_digest,
+        source_graph_digest=port_graph.graph_digest,
+        source_node_id="s",
+        target_profile_template_id=cos_profile_template(reference).profile_template_id,
+        target_specialization_id=specialization.specialization_id,
+        target_effective_degree=52,
+        module_chirality=1,
+        growth_phase=3,
+        resource_distribution=[0.5, 0.25, 0.25],
+        expected_event_id=None,
+        expected_target_graph_digest=None,
+    )
+    return state, GRC9V4ExpansionRequestInput.from_payload(request)
 
 
 def policy(**changes: Any) -> GRC9SparkPolicy:
@@ -584,6 +697,847 @@ class CandidateBoundaryTests(unittest.TestCase):
         with self.assertRaises(NonfiniteGeometryError):
             detector.assess()
         self.assertEqual(canonical_json_bytes(bad.port_graph.to_payload()), before)
+
+
+def independent_cos_beat(inputs: Any) -> np.ndarray:
+    """Literal dense OS equations and independent exact binary64 continuity."""
+    from pygrc.models.grc_v4_geometry import GRCV4Geometry, OneFormHodge
+
+    ref = inputs.geometry.reference
+    predictor = dense_current_oracle(inputs)
+    b = np.array(ref.graph.incidence)
+    # Each nonloop edge is covered by its two endpoint stars. Diagonal=1;
+    # off-diagonal=1/2 exactly when the two edges share an endpoint.
+    cover = abs(b).T @ abs(b) / 2
+    lowered = np.linalg.solve(
+        np.array(inputs.geometry.one_form_hodge.matrix), predictor["read"]
+    )
+    assembly = np.array(
+        [
+            [
+                float(Fraction(float(w)) * Fraction(float(x)) * Fraction(float(y)))
+                for w, y in zip(row, lowered, strict=True)
+            ]
+            for row, x in zip(cover, lowered, strict=True)
+        ]
+    )
+    h = np.array(
+        ref.pairings.one_form.matrix
+    ) + ref.profile.params_resolved.geometry.kappa_H * (
+        ref.profile.params_resolved.candidate.zeta_C * assembly
+    )
+    corrector = dense_current_oracle(
+        replace(
+            inputs,
+            geometry=GRCV4Geometry(ref, OneFormHodge(ref.graph, tuple(map(tuple, h)))),
+        )
+    )
+    # Numerical flux is binary64 authority for this continuity boundary;
+    # compare the independent equation within solver error, not bitwise NumPy.
+    return np.array(
+        [
+            float(
+                Fraction(c)
+                - Fraction(inputs.dt)
+                * sum(
+                    (
+                        Fraction(float(a)) * Fraction(float(j))
+                        for a, j in zip(row, corrector["current"], strict=True)
+                    ),
+                    Fraction(),
+                )
+            )
+            for c, row in zip(inputs.current.C, b, strict=True)
+        ]
+    )
+
+
+class NativeCOSEventTests(unittest.TestCase):
+    backend: ExactBackend
+    seed: GRC9V4COSState
+    request: GRC9V4ExpansionRequestInput
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.backend = (
+            ExactBackend.FLINT
+            if importlib.util.find_spec("flint")
+            else ExactBackend.PYTHON
+        )
+        with exact_backend(cls.backend):
+            cls.seed, cls.request = native_cos_fixture()
+
+    def setUp(self) -> None:
+        scope = exact_backend(self.backend)
+        scope.__enter__()
+        self.addCleanup(scope.__exit__, None, None, None)
+        self.owner = GRC9V4COSOperation(self.seed)
+
+    def committed(self) -> Any:
+        result = self.owner.expand(self.request)
+        self.assertTrue(
+            result.committed, None if result.failure is None else result.failure.message
+        )
+        return result
+
+    def test_native_identities_and_independent_target_resources_references(
+        self,
+    ) -> None:
+        before = self.seed
+        result = self.committed()
+        after = self.owner.state
+        self.assertEqual(len(after.inputs.current.C), 17)
+        self.assertNotEqual(before.inputs.current, before.inputs.reset)
+        self.assertEqual(before.inputs.Q_target, after.inputs.Q_target)
+        self.assertEqual(
+            (after.inputs.step_index, after.inputs.time),
+            (before.inputs.step_index, before.inputs.time),
+        )
+        self.assertNotEqual(after.model_identity, before.model_identity)
+        self.assertNotEqual(after.reset_digest, before.reset_digest)
+        self.assertNotEqual(after.scientific_digest, after.inputs.scientific_state_id)
+        primary = result.emitted_receipts[0].identity_payload.to_dict()
+        event = primary["event_id"]
+        graph = after.inputs.geometry.reference.graph
+        assert graph.port_graph is not None
+        self.assertEqual(graph.port_graph.graph_digest, graph.graph_digest)
+        self.assertEqual(primary["core"]["target_model_identity"], after.model_identity)
+        self.assertEqual(primary["core"]["target_reset_digest"], after.reset_digest)
+        self.assertEqual(primary["core"]["actual_charge_delta"], 0)
+        self.assertEqual(primary["core"]["information_losses"], [])
+        for subject, disposition in (
+            ("candidate", "rederived"),
+            ("carrier", "not_applicable"),
+        ):
+            self.assertEqual(
+                primary["history"][subject],
+                {
+                    "subject": subject,
+                    "disposition": disposition,
+                    "source_history_digest": None,
+                    "target_history_digest": None,
+                    "information_loss": "none",
+                },
+            )
+        for role in ("current", "reset"):
+            source = dict(
+                zip(
+                    before.inputs.geometry.reference.graph.live_node_ids,
+                    getattr(before.inputs, role).C,
+                    strict=True,
+                )
+            )
+            expected = {node: source.get(node, 0.0) for node in graph.live_node_ids}
+            expected.update(
+                {
+                    event + f"/satellite/{b}": float(Fraction(source["s"]) * share)
+                    for b, share in enumerate(
+                        (Fraction(1, 2), Fraction(1, 4), Fraction(1, 4)), 1
+                    )
+                }
+            )
+            authority = getattr(after.inputs, role)
+            self.assertEqual(
+                authority.C, tuple(expected[n] for n in graph.live_node_ids)
+            )
+            self.assertEqual(sum(x == 0 for x in authority.C), 5)
+            self.assertIsNone(authority.W_A)
+            self.assertIsNone(authority.Z_4)
+            self.assertEqual(
+                sum(map(Fraction, authority.C)),
+                sum(map(Fraction, getattr(before.inputs, role).C)),
+            )
+        weights = after.inputs.geometry.reference.edge_weights.to_dict()
+        self.assertEqual(weights, {e: 1 for e in graph.live_edge_ids})
+        model_payload = {
+            "schema_version": "grc9v4-complete-identity-v1",
+            "grcv4_complete_profile_id": after.inputs.geometry.reference.profile.complete_profile_id,
+            "specialization_id": after.specialization.specialization_id,
+        }
+        self.assertEqual(
+            after.model_identity,
+            "grc9v4-model-sha256:"
+            + hashlib.sha256(canonical_json_bytes(model_payload)).hexdigest(),
+        )
+        # Exact IDs are independently hashed from the authoritative D11 fields.
+        payload: dict[str, Any] = {
+            k: self.request.to_payload()[k]
+            for k in (
+                "source_state_digest",
+                "source_graph_digest",
+                "source_node_id",
+                "target_profile_template_id",
+                "target_specialization_id",
+                "target_effective_degree",
+                "module_chirality",
+                "growth_phase",
+                "expansion_policy_id",
+                "resource_distribution",
+            )
+        }
+        ep = before.specialization.resolved["expansion"]
+        payload.update(
+            schema_version="grc9v4-expansion-event-identity-v1",
+            canonical_module_node_count=8,
+            expansion_policy_digest=payload_identity(
+                "expansion_policy_identity_payload",
+                {"schema_version": "grc9v4-expansion-policy-identity-v1", "policy": ep},
+            ),
+            bond_seed=1,
+            **{
+                k: self.request.history_policy[k]
+                for k in (
+                    "candidate_history_policy_digest",
+                    "carrier_history_policy_digest",
+                )
+            },
+        )
+        self.assertEqual(
+            event,
+            "grc-event-sha256:"
+            + hashlib.sha256(canonical_json_bytes(payload)).hexdigest(),
+        )
+
+    def test_independent_numerics_and_ten_beat_continuation_for_both_roles(
+        self,
+    ) -> None:
+        source = replace(
+            self.seed.inputs,
+            current=GRCV4AuthoritativeState((3.0, *((3 + 1 / 64,) * 9)), None, None),
+            step_index=0,
+            time=0,
+            dt=1 / 4096,
+        )
+        np.testing.assert_allclose(
+            self.seed.inputs.current.C,
+            independent_cos_beat(source),
+            atol=2e-13,
+            rtol=2e-13,
+        )
+        self.committed()
+        for role in ("current", "reset"):
+            inputs = replace(
+                self.owner.state.inputs,
+                current=getattr(self.owner.state.inputs, role),
+                dt=1 / 4096,
+            )
+            for beat in range(10):
+                with self.subTest(role=role, beat=beat):
+                    expected = independent_cos_beat(inputs)
+                    step = ProvisionalCandidateCOSStep(inputs)
+                    np.testing.assert_allclose(
+                        step.next_inputs.current.C, expected, atol=2e-13, rtol=2e-13
+                    )
+                    self.assertGreaterEqual(min(step.next_inputs.current.C), 0)
+                    self.assertEqual(
+                        step.next_inputs.reset, self.owner.state.inputs.reset
+                    )
+                    inputs = step.next_inputs
+            native._cos_readmit(
+                GRC9V4COSState(replace(inputs, dt=0), self.seed.specialization)
+            )
+
+    def test_checkpoint_replay_and_detached_payload_tampering(self) -> None:
+        self.assertIsNot(
+            self.owner.state.inputs.geometry.reference,
+            self.seed.inputs.geometry.reference,
+        )
+        self.assertIsNot(
+            self.owner.state.inputs.geometry.reference.graph.port_graph,
+            self.seed.inputs.geometry.reference.graph.port_graph,
+        )
+        self.committed()
+        checkpoint = self.owner.checkpoint()
+        self.assertEqual(GRC9V4COSOperation.replay(checkpoint).checkpoint(), checkpoint)
+        mutations: tuple[Any, ...] = (
+            lambda d: d["state"]["inputs"]["current"]["C"].__setitem__(0, 123),
+            lambda d: d["state"]["inputs"]["reset"]["C"].__setitem__(0, 123),
+            lambda d: d["state"]["inputs"]["reference"]["graph"]["edges"][0][
+                "tail"
+            ].__setitem__("port", 9),
+            lambda d: d["receipts"].pop(),
+            lambda d: d["requests"][0].__setitem__("module_chirality", -1),
+            lambda d: d["initial"].__setitem__(
+                "model_identity", d["state"]["model_identity"]
+            ),
+        )
+        for mutate in mutations:
+            data = json.loads(checkpoint)
+            mutate(data)
+            with self.assertRaises(ValueError):
+                GRC9V4COSOperation.replay(canonical_json_bytes(data))
+        self.assertEqual(self.owner.checkpoint(), checkpoint)
+
+    def test_stale_input_predicate_and_semantic_failures_leave_everything_intact(
+        self,
+    ) -> None:
+        for changes in (
+            {"source_state_digest": "grcv4-state-sha256:" + "0" * 64},
+            {"target_specialization_id": "grc9v4-specialization-sha256:" + "0" * 64},
+            {"module_chirality": None},
+            {"growth_phase": None},
+            {"resource_distribution": (1 / 3, 1 / 3, 1 / 3)},
+            {"expected_target_graph_digest": "grc-graph-sha256:" + "0" * 64},
+            {"source_node_id": 1},
+        ):
+            with self.subTest(changes=changes):
+                checkpoint = self.owner.checkpoint()
+                result = self.owner.expand(replace(self.request, **changes))
+                self.assertFalse(result.committed)
+                assert result.failure is not None
+                self.assertEqual(
+                    result.failure.prestate_digest, result.failure.poststate_digest
+                )
+                self.assertEqual(self.owner.checkpoint(), checkpoint)
+                self.assertEqual(self.owner.receipts, ())
+        self.committed()
+        checkpoint = self.owner.checkpoint()
+        self.assertFalse(self.owner.expand(self.request).committed)
+        self.assertEqual(self.owner.checkpoint(), checkpoint)
+
+    def test_current_and_reset_charge_failures_and_late_receipt_failure_are_atomic(
+        self,
+    ) -> None:
+        transfer = GRC9V4COSExpansion.transfer
+        for failing_role in (0, 1):
+            calls: list[Any] = []
+
+            def changed(
+                target: Any,
+                state: Any,
+                calls: list[Any] = calls,
+                failing_role: int = failing_role,
+            ) -> Any:
+                result = transfer(target, state)
+                calls.append(state)
+                return (
+                    replace(result, C=(result.C[0] + 1.0, *result.C[1:]))
+                    if len(calls) - 1 == failing_role
+                    else result
+                )
+
+            before = self.owner.checkpoint()
+            with patch.object(GRC9V4COSExpansion, "transfer", changed):
+                result = self.owner.expand(self.request)
+            self.assertFalse(result.committed)
+            assert result.failure is not None
+            self.assertEqual(result.failure.code, "target_readmission_failure")
+            self.assertEqual(self.owner.checkpoint(), before)
+        with patch.object(
+            native, "make_commit_receipts", side_effect=ValueError("receipt failure")
+        ):
+            result = self.owner.expand(self.request)
+        self.assertFalse(result.committed)
+        self.assertEqual(self.owner.checkpoint(), before)
+
+    def test_concurrent_requests_publish_exactly_one_event(self) -> None:
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(self.owner.expand, (self.request, self.request)))
+        self.assertEqual(sum(r.committed for r in results), 1)
+        self.assertEqual(len(self.owner.receipts), 4)
+
+    def test_history_channels_cannot_claim_carrier_reset_or_drop_c_rederivation(
+        self,
+    ) -> None:
+        for subject in ("candidate", "carrier"):
+            history: Any = self.request.to_payload()["history_policy"]
+            history[subject]["source_history_digest"] = (
+                "grcv4-history-content-sha256:" + "0" * 64
+            )
+            if subject == "carrier":
+                history[subject].update(
+                    policy_id="carrier_archive_and_reset_whole_v1",
+                    disposition="whole_carrier_reset",
+                    information_loss="carrier_history_loss",
+                )
+            # Rehash the altered declaration: policy consistency, not stale
+            # digest detection, must reject the claimed nonexistent history.
+            history[subject + "_history_policy_digest"] = payload_identity(
+                "history_channel_policy_identity_payload",
+                {
+                    "schema_version": "grcv4-history-channel-policy-identity-v1",
+                    "policy": history[subject],
+                },
+            )
+            checkpoint = self.owner.checkpoint()
+            result = self.owner.expand(replace(self.request, history_policy=history))
+            self.assertFalse(result.committed)
+            assert result.failure is not None
+            self.assertIn("absent carrier history", result.failure.message)
+            self.assertEqual(self.owner.checkpoint(), checkpoint)
+
+    def test_source_reset_charge_and_exact_cutoff_regressions(self) -> None:
+        bad = replace(self.seed.inputs.reset, C=(0.0,) * 10)
+        with self.assertRaises(ValueError):
+            GRC9V4COSOperation(
+                replace(self.seed, inputs=replace(self.seed.inputs, reset=bad))
+            )
+        with self.assertRaisesRegex(ValueError, "cutoff|gap|singular"):
+            native_cos_fixture(cutoff=1)
+
+    def with_os_tolerance(
+        self, tolerance: float, *, equal_roles: bool = False
+    ) -> tuple[GRC9V4COSState, GRC9V4ExpansionRequestInput]:
+        reference = self.seed.inputs.geometry.reference
+        params: Any = reference.profile.params_resolved.to_payload()
+        identity = reference.profile.identity_payload.to_payload()
+        params["realization"]["tolerance"] = tolerance
+        identity["params_hash"] = payload_identity("resolved_params", params)
+        reference = replace(reference, profile=resolve_profile(params, identity))
+        inputs = replace(self.seed.inputs, geometry=reference.geometry())
+        if equal_roles:
+            inputs = replace(inputs, reset=inputs.current)
+        seed = replace(self.seed, inputs=inputs)
+        return seed, replace(
+            self.request,
+            source_state_digest=seed.scientific_digest,
+            target_profile_template_id=cos_profile_template(
+                reference
+            ).profile_template_id,
+        )
+
+    def test_actual_target_os_split_failures_reject_current_and_reset_atomically(
+        self,
+    ) -> None:
+        # These are genuine domain failures, with no injected kernel exception.
+        # Both source roles and the old zero-duration target gate pass. The
+        # strict complete OS read rejects target reset alone at 2^-54, and
+        # target current (and the equal reset) at 2^-56.
+        for tolerance, equal_roles in ((2**-54, False), (2**-56, True)):
+            with self.subTest(tolerance=tolerance):
+                seed, request = self.with_os_tolerance(
+                    tolerance, equal_roles=equal_roles
+                )
+                for role in (seed.inputs.current, seed.inputs.reset):
+                    CandidateCOSPass(replace(seed.inputs, current=role, dt=1))
+                owner = GRC9V4COSOperation(seed)
+                graph = seed.inputs.geometry.reference.graph.port_graph
+                assert graph is not None
+                plan = GRC9V4ExpansionPlan(
+                    graph,
+                    seed.scientific_digest,
+                    request,
+                    GRC9ExpansionPolicy.from_payload(
+                        seed.specialization.resolved["expansion"]
+                    ),
+                )
+                target = GRC9V4COSExpansion(plan, seed.inputs.geometry.reference)
+                inputs = replace(
+                    seed.inputs,
+                    geometry=target.target.geometry(),
+                    current=target.transfer(seed.inputs.current),
+                    reset=target.transfer(seed.inputs.reset),
+                )
+                ProvisionalCandidateCOSStep(replace(inputs, dt=0))
+                if not equal_roles:
+                    CandidateCOSPass(replace(inputs, dt=1))
+                failing = inputs.current if equal_roles else inputs.reset
+                with self.assertRaisesRegex(OSStageError, "split tolerance"):
+                    CandidateCOSPass(replace(inputs, current=failing, dt=1))
+                checkpoint = owner.checkpoint()
+                result = owner.expand(request)
+                self.assertFalse(result.committed)
+                assert result.failure is not None
+                self.assertEqual(result.failure.code, "target_readmission_failure")
+                self.assertEqual(result.failure.stage, "target_readmission")
+                self.assertIn("split tolerance", result.failure.message)
+                self.assertEqual(
+                    result.failure.prestate_digest, result.failure.poststate_digest
+                )
+                self.assertEqual(owner.checkpoint(), checkpoint)
+                self.assertEqual(owner.receipts, ())
+
+    def test_seed_admission_checks_reset_os_even_when_zero_step_passes(self) -> None:
+        seed, _ = self.with_os_tolerance(2**-58)
+        ProvisionalCandidateCOSStep(replace(seed.inputs, dt=0))
+        CandidateCOSPass(replace(seed.inputs, dt=1))
+        with self.assertRaisesRegex(OSStageError, "split tolerance"):
+            GRC9V4COSOperation(seed)
+
+    def test_os_read_duration_is_irrelevant_and_event_never_advances_clock(
+        self,
+    ) -> None:
+        surfaces = [
+            CandidateCOSPass(replace(self.seed.inputs, dt=dt))
+            for dt in (2**-1074, 1.0, 2**52)
+        ]
+        for surface in surfaces[1:]:
+            self.assertEqual(
+                surface.corrector.current.values, surfaces[0].corrector.current.values
+            )
+            self.assertEqual(
+                surface.residual.exact_values, surfaces[0].residual.exact_values
+            )
+        # No headroom for an ordinary step-index increment; event reads must
+        # still succeed and retain the exact clock/index/current/reset role.
+        seed = replace(
+            self.seed,
+            inputs=replace(self.seed.inputs, time=2**52, step_index=2**53 - 1),
+        )
+        owner = GRC9V4COSOperation(seed)
+        result = owner.expand(
+            replace(self.request, source_state_digest=seed.scientific_digest)
+        )
+        self.assertTrue(result.committed, result.failure)
+        self.assertEqual(owner.state.inputs.time, seed.inputs.time)
+        self.assertEqual(owner.state.inputs.step_index, seed.inputs.step_index)
+        self.assertEqual(owner.state.inputs.dt, 0)
+        self.assertNotEqual(owner.state.inputs.current, owner.state.inputs.reset)
+
+    def weighted_seed(self) -> GRC9V4COSState:
+        reference = self.seed.inputs.geometry.reference
+        weights = {f"e{i}": i / 4 for i in range(1, 10)}
+        params: Any = reference.profile.params_resolved.to_payload()
+        identity = reference.profile.identity_payload.to_payload()
+        params["candidate"].update(
+            W_C_tr=weights,
+            W_C_tr_content_digest=payload_identity(
+                "wctr_identity_payload",
+                {"schema_version": "grcv4-wctr-identity-v1", "W_C_tr": weights},
+            ),
+            eta_C=1.5,
+            kappa_M_C=0.25,
+        )
+        params["geometry"]["reference_hodge_digest"] = payload_identity(
+            "reference_hodge_identity_payload",
+            {
+                "schema_version": "grcv4-reference-hodge-identity-v1",
+                "edge_weights": weights,
+            },
+        )
+        identity["params_hash"] = payload_identity("resolved_params", params)
+        reference = replace(
+            reference,
+            profile=resolve_profile(params, identity),
+            edge_weights=FrozenJSONMap(weights),
+        )
+        data = self.seed.specialization.to_payload()
+        data["resolved"]["expansion"]["bond_seed"] = 0.5
+        data["identity_payload"]["specialization_params_hash"] = payload_identity(
+            "resolved_specialization", data["resolved"]
+        )
+        return replace(
+            self.seed,
+            inputs=replace(self.seed.inputs, geometry=reference.geometry()),
+            specialization=GRC9V4Specialization(
+                FrozenJSONMap(data["resolved"]), FrozenJSONMap(data["identity_payload"])
+            ),
+        )
+
+    def request_for(
+        self, seed: GRC9V4COSState, **changes: Any
+    ) -> GRC9V4ExpansionRequestInput:
+        reference = seed.inputs.geometry.reference
+        return replace(
+            self.request,
+            source_state_digest=seed.scientific_digest,
+            source_graph_digest=reference.graph.graph_digest,
+            target_profile_template_id=cos_profile_template(
+                reference
+            ).profile_template_id,
+            target_specialization_id=seed.specialization.specialization_id,
+            **changes,
+        )
+
+    def test_weighted_native_targets_match_paper_equations_and_simplex_extremes(
+        self,
+    ) -> None:
+        # Paper D.3.2--D.3.5, D.5.3 and A.6. Nonidentity H, nonunit eta,
+        # retained conditioning and a distinct new-edge seed prevent accidental
+        # equality of H_M, mobility and the two identification maps.
+        seed = self.weighted_seed()
+        for degree, chirality, phase, shares in (
+            (9, -1, None, (1.0, 0.0, 0.0)),
+            (31, 1, 1, (0.0, 1.0, 0.0)),
+            (52, -1, 2, (0.0, 0.0, 1.0)),
+            (52, 1, 3, (0.5, 0.25, 0.25)),
+        ):
+            with self.subTest(degree=degree, chirality=chirality, phase=phase):
+                owner = GRC9V4COSOperation(seed)
+                result = owner.expand(
+                    self.request_for(
+                        seed,
+                        target_effective_degree=degree,
+                        module_chirality=chirality,
+                        growth_phase=phase,
+                        resource_distribution=shares,
+                    )
+                )
+                self.assertTrue(result.committed, result.failure)
+                for source, target in (
+                    (seed.inputs.current, owner.state.inputs.current),
+                    (seed.inputs.reset, owner.state.inputs.reset),
+                ):
+                    graph = owner.state.inputs.geometry.reference.graph
+                    primary: Any = result.emitted_receipts[0].identity_payload
+                    prefix = cast(str, primary["event_id"]) + "/"
+                    for node, value in zip(graph.live_node_ids, target.C, strict=True):
+                        if isinstance(node, int):
+                            expected = source.C[node]
+                        elif "/satellite/" in node:
+                            expected = float(
+                                Fraction(source.C[0])
+                                * Fraction(shares[int(node[-1]) - 1])
+                            )
+                        else:
+                            self.assertTrue(node.startswith(prefix))
+                            expected = 0.0
+                        self.assertEqual(value, expected)
+                    inputs = replace(owner.state.inputs, current=target, dt=1 / 4096)
+                    surface = CandidateCOSPass(inputs)
+                    for point in (surface.predictor, surface.corrector):
+                        oracle = dense_current_oracle(point.inputs)
+                        for field, actual in (
+                            ("hm", point.algebra.retained_hodge.matrix),
+                            ("phi", point.algebra.potential.values),
+                            ("j0", point.algebra.baseline.values),
+                            ("q", point.algebra.physical_identification),
+                            ("current", point.current.values),
+                            ("read", point.read.flux.values),
+                        ):
+                            np.testing.assert_allclose(
+                                actual,
+                                oracle[field],
+                                rtol=3e-12,
+                                atol=3e-12,
+                                err_msg=field,
+                            )
+                        weights = point.algebra.transport.params.W_C_tr
+                        np.testing.assert_array_equal(
+                            point.algebra.transport.mobility.matrix,
+                            np.diag(
+                                np.array(
+                                    [
+                                        1.5 * cast(float, weights[e])
+                                        for e in graph.live_edge_ids
+                                    ]
+                                )
+                            ),
+                        )
+                        self.assertNotEqual(
+                            point.algebra.retained_hodge.matrix,
+                            point.algebra.transport.mobility.matrix,
+                        )
+                    expected_next = independent_cos_beat(inputs)
+                    if max(shares) == 1:
+                        # A valid event is not a positive-cone invariance proof.
+                        # The paper's fourth-order transport can point outward
+                        # at a newly zero coordinate; shrinking dt cannot admit
+                        # that outward derivative. Never floor or clip it.
+                        self.assertLess(float(min(expected_next)), 0)
+                        divergence = (
+                            np.array(graph.incidence) @ surface.corrector.current.values
+                        )
+                        self.assertTrue(
+                            any(
+                                c == 0 and d > 1e-10
+                                for c, d in zip(target.C, divergence, strict=True)
+                            )
+                        )
+                        checkpoint = owner.checkpoint()
+                        for dt in (1 / 4096, 2**-20):
+                            with self.assertRaisesRegex(
+                                ResourceBoundaryError, "nonnegative"
+                            ):
+                                ProvisionalCandidateCOSStep(replace(inputs, dt=dt))
+                        self.assertEqual(owner.checkpoint(), checkpoint)
+                    else:
+                        step = ProvisionalCandidateCOSStep(inputs)
+                        np.testing.assert_allclose(
+                            step.next_inputs.current.C,
+                            expected_next,
+                            rtol=3e-12,
+                            atol=3e-12,
+                        )
+
+    def test_weighted_event_covaries_under_order_and_orientation_changes(self) -> None:
+        seed = self.weighted_seed()
+        base_owner = GRC9V4COSOperation(seed)
+        first = base_owner.expand(self.request_for(seed))
+        self.assertTrue(first.committed, first.failure)
+        original = seed.inputs.geometry.reference.graph.port_graph
+        assert original is not None
+        for mask in (0b101010101, 0b111111111):
+            graph = GRC9V4PortGraph(
+                original.live_node_ids[::-1],
+                tuple(
+                    replace(e, tail=e.head, head=e.tail) if mask & (1 << i) else e
+                    for i, e in reversed(list(enumerate(original.edges)))
+                ),
+            )
+            reference = replace(
+                seed.inputs.geometry.reference, graph=GRCV4Graph.from_port_graph(graph)
+            )
+            transformed = replace(
+                seed,
+                inputs=replace(
+                    seed.inputs,
+                    geometry=reference.geometry(),
+                    current=replace(seed.inputs.current, C=seed.inputs.current.C[::-1]),
+                    reset=replace(seed.inputs.reset, C=seed.inputs.reset.C[::-1]),
+                ),
+            )
+            owner = GRC9V4COSOperation(transformed)
+            second = owner.expand(self.request_for(transformed))
+            self.assertTrue(second.committed, second.failure)
+            states = (base_owner.state, owner.state)
+            events = [
+                cast(Any, r.emitted_receipts[0].identity_payload)["event_id"]
+                for r in (first, second)
+            ]
+            self.assertNotEqual(events[0], events[1])
+            for role in ("current", "reset"):
+                resources, divergences = [], []
+                for state, event in zip(states, events, strict=True):
+                    inputs = state.inputs
+                    authority = getattr(inputs, role)
+                    target_graph = inputs.geometry.reference.graph
+                    labels = [
+                        n.replace(event, "event") if type(n) is str else n
+                        for n in target_graph.live_node_ids
+                    ]
+                    resources.append(dict(zip(labels, authority.C, strict=True)))
+                    current = CandidateCOSPass(
+                        replace(inputs, current=authority, dt=1)
+                    ).corrector.current.values
+                    divergences.append(
+                        dict(
+                            zip(
+                                labels,
+                                np.array(target_graph.incidence) @ current,
+                                strict=True,
+                            )
+                        )
+                    )
+                self.assertEqual(resources[0], resources[1])
+                for node in resources[0]:
+                    self.assertAlmostEqual(
+                        divergences[0][node], divergences[1][node], delta=3e-12
+                    )
+
+    def test_specialization_binding_and_candidate_gate(self) -> None:
+        data = self.seed.specialization.to_payload()
+        data["resolved"]["spark"]["gradient_tolerance"] = 0
+        with self.assertRaises(ValueError):
+            GRC9V4Specialization(
+                FrozenJSONMap(data["resolved"]), FrozenJSONMap(data["identity_payload"])
+            )
+        data["identity_payload"]["specialization_params_hash"] = payload_identity(
+            "resolved_specialization", data["resolved"]
+        )
+        spec = GRC9V4Specialization(
+            FrozenJSONMap(data["resolved"]), FrozenJSONMap(data["identity_payload"])
+        )
+        owner = GRC9V4COSOperation(replace(self.seed, specialization=spec))
+        request = replace(
+            self.request,
+            target_specialization_id=spec.specialization_id,
+            source_state_digest=owner.state.scientific_digest,
+        )
+        result = owner.expand(request)
+        self.assertFalse(result.committed)
+        assert result.failure is not None
+        self.assertIn("candidate", result.failure.message)
+        self.assertEqual(owner.receipts, ())
+
+    def test_extreme_positive_bonds_fail_real_target_admission_atomically(self) -> None:
+        for bond, message in ((2**-1074, "conditioning"), (1e308, "finite")):
+            with self.subTest(bond=bond):
+                data = self.seed.specialization.to_payload()
+                data["resolved"]["expansion"]["bond_seed"] = bond
+                data["identity_payload"]["specialization_params_hash"] = (
+                    payload_identity("resolved_specialization", data["resolved"])
+                )
+                seed = replace(
+                    self.seed,
+                    specialization=GRC9V4Specialization(
+                        FrozenJSONMap(data["resolved"]),
+                        FrozenJSONMap(data["identity_payload"]),
+                    ),
+                )
+                owner = GRC9V4COSOperation(seed)
+                checkpoint = owner.checkpoint()
+                result = owner.expand(self.request_for(seed))
+                self.assertFalse(result.committed)
+                assert result.failure is not None
+                self.assertEqual(result.failure.code, "target_readmission_failure")
+                self.assertIn(message, result.failure.message)
+                self.assertEqual(owner.checkpoint(), checkpoint)
+
+    def test_rounded_charge_delta_is_receipted_and_zero_tolerance_rejects(self) -> None:
+        # Exact dyadic simplex, but satellite products/reduction can round.
+        # Use a literal independent implementation of the specified adjacent
+        # binary64 charge tree, not a mathematical/f-sum substitute.
+        shares = (5421 / 32768, 29653 / 65536, 25041 / 65536)
+        self.assertEqual(sum(map(Fraction, shares)), 1)
+
+        def charge(values: tuple[float, ...]) -> float:
+            while len(values) > 1:
+                values = tuple(
+                    values[i] + values[i + 1] if i + 1 < len(values) else values[i]
+                    for i in range(0, len(values), 2)
+                )
+            return values[0]
+
+        source_charge = charge(self.seed.inputs.current.C)
+        self.assertEqual(source_charge, self.seed.inputs.Q_target)
+        self.assertEqual(charge(self.seed.inputs.reset.C), source_charge)
+        result = self.owner.expand(replace(self.request, resource_distribution=shares))
+        self.assertTrue(result.committed, result.failure)
+        target_charge = charge(self.owner.state.inputs.current.C)
+        self.assertEqual(target_charge, math.nextafter(source_charge, -math.inf))
+        core = cast(Any, result.emitted_receipts[0].identity_payload)["core"]
+        self.assertEqual(core["actual_charge_delta"], target_charge - source_charge)
+        # The conservative map has zero declared injection. Retain Q_target;
+        # charge tolerance admits only the measured binary64 reduction error.
+        self.assertEqual(self.owner.state.inputs.Q_target, self.seed.inputs.Q_target)
+        reference = self.seed.inputs.geometry.reference
+        params: Any = reference.profile.params_resolved.to_payload()
+        identity = reference.profile.identity_payload.to_payload()
+        params["charge"].update(absolute_tolerance=0, relative_tolerance=0)
+        identity["params_hash"] = payload_identity("resolved_params", params)
+        reference = replace(reference, profile=resolve_profile(params, identity))
+        seed = replace(
+            self.seed, inputs=replace(self.seed.inputs, geometry=reference.geometry())
+        )
+        owner = GRC9V4COSOperation(seed)
+        checkpoint = owner.checkpoint()
+        rejected = owner.expand(self.request_for(seed, resource_distribution=shares))
+        self.assertFalse(rejected.committed)
+        assert rejected.failure is not None
+        self.assertEqual(rejected.failure.code, "target_readmission_failure")
+        self.assertIn("charge", rejected.failure.message)
+        self.assertEqual(owner.checkpoint(), checkpoint)
+
+    @unittest.skipUnless(importlib.util.find_spec("flint"), "optional FLINT backend")
+    def test_backend_capture_and_python_flint_event_parity(self) -> None:
+        checkpoints = []
+        for backend in (ExactBackend.PYTHON, ExactBackend.FLINT):
+            with exact_backend(backend):
+                owner = GRC9V4COSOperation(self.seed)
+            observations: list[ExactBackend] = []
+            readmit = native._cos_readmit
+
+            def observed(
+                state: Any,
+                observations: list[ExactBackend] = observations,
+                readmit: Any = readmit,
+            ) -> None:
+                observations.append(current_exact_backend())
+                readmit(state)
+
+            with (
+                exact_backend(
+                    ExactBackend.FLINT
+                    if backend is ExactBackend.PYTHON
+                    else ExactBackend.PYTHON
+                ),
+                patch.object(native, "_cos_readmit", observed),
+            ):
+                self.assertTrue(owner.expand(self.request).committed)
+            self.assertEqual(observations, [backend, backend])
+            checkpoints.append(owner.checkpoint())
+        self.assertEqual(checkpoints[0], checkpoints[1])
 
 
 if __name__ == "__main__":

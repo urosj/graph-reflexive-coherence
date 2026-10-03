@@ -11,7 +11,7 @@ from __future__ import annotations
 from collections import deque
 from collections.abc import Mapping
 from dataclasses import dataclass, field, replace
-from typing import ClassVar, Literal
+from typing import Any, ClassVar, Literal
 
 from .grc_9_v4_topology import (
     GRC9V4PortEdge,
@@ -27,9 +27,20 @@ from .grc_v4_codec import (
     validate_payload,
 )
 from .grc_v4_exact import exact_number
-from .grc_v4_geometry import NodeId, _node_id
-from .grc_v4_profile import _Record
-from .grc_v4_state import _number
+from .grc_v4_geometry import (
+    GRCV4Graph,
+    GRCV4ReferenceGeometry,
+    NodeId,
+    _computed,
+    _node_id,
+)
+from .grc_v4_profile import (
+    GRCV4ProfileTemplate,
+    _Record,
+    resolve_profile,
+    resolve_profile_template,
+)
+from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number
 
 
 class GRC9V4ExpansionError(ValueError):
@@ -384,3 +395,170 @@ class GRC9V4ExpansionPlan:
         return {
             edge_id: (self.policy.bond_seed, 0.0) for edge_id in self.internal_edge_ids
         }
+
+
+def cos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    """The single C reference rebuild policy, bound to the full source profile."""
+    return resolve_profile_template(
+        {
+            "schema_version": "grcv4-profile-template-v1",
+            "source_complete_profile_id": reference.profile.complete_profile_id,
+            "profile_family_id": "C_OS",
+            "topology_dependent_map_policy_id": "preserve_old_stable_edges_seed_new_internal_edges_v1",
+            "geometry_reference_policy_id": "rebuild_reference_hodge_from_target_W_C_tr_v1",
+        },
+        source=reference.profile,
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4COSExpansion:
+    """Pure unit-measure C_OS reconstruction with zero structural K4 base.
+
+    The bounded adapter transports no W_A or Z_4. Both resource roles use
+    one exact affine map, rounded once per output; numerical charge/current
+    admission and publication remain with the transaction owner. Nonzero
+    structural bases require their own admitted transport policy.
+    """
+
+    plan: GRC9V4ExpansionPlan
+    source: GRCV4ReferenceGeometry
+    target: GRCV4ReferenceGeometry = field(init=False)
+
+    def __post_init__(self) -> None:
+        if (
+            type(self.plan) is not GRC9V4ExpansionPlan
+            or type(self.source) is not GRCV4ReferenceGeometry
+        ):
+            raise TypeError("C_OS expansion requires a plan and reference geometry")
+        plan, source = replace(self.plan), replace(self.source)
+        if source.graph.port_graph != plan.source_graph:
+            raise ValueError("reference does not derive from the source port owner")
+        if source.profile.identity_payload.profile_family_id != "C_OS":
+            raise ValueError("C_OS expansion requires C_OS")
+        if any(x != 0 for row in source.K4_base for x in row):
+            raise ValueError(
+                "C_OS expansion currently requires zero structural K4 base"
+            )
+        template = cos_profile_template(source)
+        if template.profile_template_id != plan.request.target_profile_template_id:
+            raise ValueError("target profile template mismatch")
+        for subject, policy_id, disposition in (
+            ("candidate", "candidate_c_rederive_no_history_v1", "rederived"),
+            ("carrier", "carrier_not_applicable_v1", "not_applicable"),
+        ):
+            expected = {
+                "schema_version": "grcv4-history-channel-policy-v1",
+                "subject": subject,
+                "policy_id": policy_id,
+                "disposition": disposition,
+                "source_history_digest": None,
+                "target_initializer_id": None,
+                "information_loss": "none",
+            }
+            if canonical_json_bytes(
+                plan.request.history_policy[subject]
+            ) != canonical_json_bytes(expected):
+                raise ValueError("C_OS requires rederived C and absent carrier history")
+        graph = GRCV4Graph.from_port_graph(plan.target_graph)
+        weights = {
+            **source.edge_weights.to_dict(),
+            **{edge: seed[0] for edge, seed in plan.internal_reference_seeds().items()},
+        }
+        size = len(graph.live_edge_ids)
+        base = tuple((0.0,) * size for _ in range(size))
+        params: Any = source.profile.params_resolved.to_payload()
+        identity: Any = source.profile.identity_payload.to_payload()
+        params["candidate"].update(
+            W_C_tr=weights,
+            W_C_tr_content_digest=payload_identity(
+                "wctr_identity_payload",
+                {"schema_version": "grcv4-wctr-identity-v1", "W_C_tr": weights},
+            ),
+        )
+        params["geometry"].update(
+            K4_base_digest=payload_identity(
+                "k4_identity_payload",
+                {
+                    "schema_version": "grcv4-k4-identity-v1",
+                    "K4_base": [list(row) for row in base],
+                },
+            ),
+            reference_hodge_digest=payload_identity(
+                "reference_hodge_identity_payload",
+                {
+                    "schema_version": "grcv4-reference-hodge-identity-v1",
+                    "edge_weights": weights,
+                },
+            ),
+        )
+        identity["params_hash"] = payload_identity("resolved_params", params)
+        target = GRCV4ReferenceGeometry(
+            graph,
+            resolve_profile(params, identity),
+            source.context,
+            base,
+            FrozenJSONMap(weights),
+        )
+        object.__setattr__(self, "plan", plan)
+        object.__setattr__(self, "source", source)
+        object.__setattr__(self, "target", target)
+
+    def resource_transform_payload(self) -> dict[str, JSONValue]:
+        source, target, request = (
+            self.plan.source_graph,
+            self.plan.target_graph,
+            self.plan.request,
+        )
+        satellites: dict[NodeId, float] = {
+            self.plan.event_id + f"/satellite/{b}": request.resource_distribution[b - 1]
+            for b in (1, 2, 3)
+        }
+        coefficients = [
+            satellites.get(node, 0.0)
+            if old == request.source_node_id
+            else float(node == old)
+            for node in target.live_node_ids
+            for old in source.live_node_ids
+        ]
+        return validate_payload(
+            "resource_event_transform",
+            {
+                "schema_version": "grcv4-resource-event-transform-v1",
+                "policy_id": "grc9v4_source_to_primary_satellite_affine_v1",
+                "source_vertex_ids": list(source.live_node_ids),
+                "target_vertex_ids": list(target.live_node_ids),
+                "row_major_coefficients": coefficients,
+                "target_increment": [0.0] * len(target.live_node_ids),
+            },
+        )
+
+    def transfer(self, state: GRCV4AuthoritativeState) -> GRCV4AuthoritativeState:
+        if (
+            type(state) is not GRCV4AuthoritativeState
+            or state.W_A is not None
+            or state.Z_4 is not None
+        ):
+            raise ValueError("C_OS authority has neither W_A nor Z_4")
+        width = len(self.plan.source_graph.live_node_ids)
+        if len(state.C) != width:
+            raise ValueError("source resource coordinates mismatch")
+        transform: Any = self.resource_transform_payload()
+        coefficients = transform["row_major_coefficients"]
+        values = tuple(
+            _computed(
+                float(
+                    sum(
+                        (
+                            exact_number(a) * exact_number(c)
+                            for a, c in zip(
+                                coefficients[i : i + width], state.C, strict=True
+                            )
+                        ),
+                        exact_number(),
+                    )
+                )
+            )
+            for i in range(0, len(coefficients), width)
+        )
+        return GRCV4AuthoritativeState(values, None, None)

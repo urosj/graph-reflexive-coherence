@@ -166,3 +166,39 @@ def allocator_authorization(root):
 def allocator_permitted(path, leaf):
     """Call only after allocator_authorization(root); no lifecycle mutation."""
     return leaf == ALLOCATOR_ENTRY and path in ALLOCATOR_PATHS
+
+
+COS_ENTRY = 'P9-8.3C-OS'
+COS_PATHS = (
+    'src/pygrc/models/grc_v4_geometry.py',
+    'tests/models/test_grc_v4_geometry.py',
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'tests/models/test_grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_lifecycle.py',
+)
+COS_PREDECESSOR = '79e0e8fca830ea9441e0b9bc7fb98d896f4d0c2c'
+COS_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': '808fe2e819dbed2502694de9f520f2030b789411127a742b952ae8f54551dcef',
+    'src/pygrc/models/grc_v4_geometry.py': '38964b047669fad08c509ec4f657c6048072e0eae26a8470211564453a387eb0',
+    'tests/models/test_grc_v4_geometry.py': '4167e6839e8a555ba278337d9ccefce543661df020adb5ab915d82266b2a492a',
+    'src/pygrc/models/grc_9_v4_expansion.py': 'c9edb7b584401b761538d7ad48b257697eabe1d92d16331c98903cf882f60ee3',
+    'tests/models/test_grc_9_v4_expansion.py': '0e015347abe22457f0ffd3256ef0cbc60bcb7d13af4c809b39bd417e9064c86d',
+    'src/pygrc/models/grc_9_v4_lifecycle.py': 'a79de2f92f85e591980acfb2bcf529d4b8d124a40401e37848333d036fa03527',
+    'tests/models/test_grc_9_v4_lifecycle.py': 'f6a991a8e742361df3a02e0a24d7a9827f484c9d97e56c6697bb6ad042c00b7e',
+}
+
+
+def cos_authorization(root):
+    """2026-10-03 user request: C_OS integration after accepted allocator merge."""
+    accepted(root)
+    p.git(root, 'merge-base', '--is-ancestor', COS_PREDECESSOR, 'HEAD')
+    for path, expected in COS_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', COS_PREDECESSOR + ':' + path)) == expected,
+                  'C_OS integration requires the accepted allocator and numerical subjects')
+    return COS_ENTRY
+
+
+def cos_permitted(path, leaf):
+    """Call only after cos_authorization(root); exact C_OS implementation owners."""
+    return leaf == COS_ENTRY and path in COS_PATHS
