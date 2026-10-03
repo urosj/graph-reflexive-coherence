@@ -5,12 +5,14 @@ explicit target reference-stage flux. Ordinary current reads incoming retained
 W_A; its separate writer consumes admitted final C and the selected current.
 These provisional primitives do not execute a full OS pass or lifecycle commit.
 See specs/grc-v4-spec.md, Candidate A and lifecycle contracts, and the GRCV3
-specification's Appendix A.2 for the host-frame WLS differential used here.
+specification's Appendix A.2 for the host-frame WLS differential. The closed
+GRC9V4 A_OS bridge instead consumes its declared fixed rows with incoming W.
 """
 
 from __future__ import annotations
 
 import math
+from collections.abc import Mapping
 from dataclasses import dataclass, field, replace
 from decimal import (
     ROUND_HALF_EVEN,
@@ -24,6 +26,7 @@ from decimal import (
 from typing import TYPE_CHECKING, cast
 
 from . import grc_v4_numerics as numerics
+from .grc_9_v4_topology import GRC9V4CandidateADifferentialReference
 from .grc_v4_codec import JSONValue, canonical_json_bytes, json_value
 from .grc_v4_exact import ExactScalar, exact_number
 from .grc_v4_geometry import (
@@ -199,6 +202,31 @@ class CandidateADifferentialReference:
                         a[k][column] += weight * delta[k] * delta[column]
             result.append(_solve_spd(a, b))
         return tuple(result)
+
+
+CandidateADifferential = (
+    CandidateADifferentialReference | GRC9V4CandidateADifferentialReference
+)
+
+
+def candidate_a_differential_from_payload(value: object) -> CandidateADifferential:
+    """Closed dispatch: no callback protocol or implicit WLS substitution."""
+    if (
+        isinstance(value, Mapping)
+        and value.get("descriptor_version") == "grc9v4-candidate-a-fixed-row-v1"
+    ):
+        return GRC9V4CandidateADifferentialReference.from_payload(value)
+    return CandidateADifferentialReference.from_payload(value)
+
+
+def _stage_descriptors(
+    backend: CandidateADifferential, C: VertexScalar, incoming_W: tuple[float, ...]
+) -> Matrix:
+    if type(backend) is GRC9V4CandidateADifferentialReference:
+        return backend.rebuild(C, incoming_W)
+    if type(backend) is CandidateADifferentialReference:
+        return backend.rebuild(C)
+    raise TypeError("A requires an exact admitted differential type")
 
 
 def _conductance(
@@ -521,7 +549,7 @@ class CandidateACurrent:
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference
+    differential_reference: CandidateADifferential
     authority: CandidateARetainedAuthority = field(init=False)
     descriptors: Matrix = field(init=False)
     reference_potential_exact: tuple[ExactScalar, ...] = field(init=False)
@@ -541,7 +569,9 @@ class CandidateACurrent:
 
         if type(self.inputs) is not GeometryStageInputs:
             raise TypeError("A current requires exact typed stage inputs")
-        if type(self.differential_reference) is not CandidateADifferentialReference:
+        if type(self.differential_reference) not in (
+            CandidateADifferentialReference, GRC9V4CandidateADifferentialReference
+        ):
             raise TypeError("A current requires a declared differential recipe")
         ref = self.inputs.geometry.reference
         profile, graph = ref.profile, ref.graph
@@ -566,13 +596,22 @@ class CandidateACurrent:
         if (
             backend.graph != graph
             or backend.identity != params.descriptor_backend_id
-            or canonical_json_bytes(backend.reference_weights)
-            != canonical_json_bytes(ref.edge_weights)
+            or (
+                type(backend) is CandidateADifferentialReference
+                and canonical_json_bytes(backend.reference_weights)
+                != canonical_json_bytes(ref.edge_weights)
+            )
         ):
             raise ValueError("A stage differential reference/profile mismatch")
+        if (
+            type(backend) is GRC9V4CandidateADifferentialReference
+            and profile.identity_payload.profile_family_id != "A_OS"
+        ):
+            raise ValueError("fixed-row A bridge is currently scoped to A_OS")
         C = VertexScalar(graph, authority.state.C)
         try:
-            descriptors = backend.rebuild(C)
+            assert authority.state.W_A is not None
+            descriptors = _stage_descriptors(backend, C, authority.state.W_A)
         except NonfiniteGeometryError as exc:
             raise CandidateAStageError("nonfinite", str(exc)) from exc
         B = tuple(tuple(exact_number(x) for x in row) for row in graph.incidence)
@@ -775,7 +814,7 @@ class CandidateACurrent:
             raise ValueError("unsupported A current numerical recipe")
         return cls(
             GeometryStageInputs.from_payload(data["inputs"]),
-            CandidateADifferentialReference.from_payload(
+            candidate_a_differential_from_payload(
                 data["differential_reference"]
             ),
         )
@@ -835,6 +874,26 @@ def candidate_a_log_interpolation(
     return _vector(result, positive=True)
 
 
+def candidate_a_writer_target(
+    point: CandidateACurrent, C: VertexScalar
+) -> tuple[Matrix, tuple[float, ...]]:
+    """Reconstruct the write surface without advancing retained history.
+
+    Event readmission uses this on target C; ordinary writing uses admitted
+    post-continuity C. Both use incoming W and the selected physical current.
+    """
+    if type(point) is not CandidateACurrent:
+        raise TypeError("A writer surface requires its actual current owner")
+    ref = point.inputs.geometry.reference
+    _require_coordinates(C, VertexScalar, ref.graph)
+    params = ref.profile.params_resolved.candidate
+    assert isinstance(params, CandidateAParams)
+    incoming = point.inputs.current.W_A
+    assert incoming is not None
+    descriptors = _stage_descriptors(point.differential_reference, C, incoming)
+    return descriptors, _conductance(ref.graph, params, C, descriptors, point.current)
+
+
 @dataclass(frozen=True, slots=True)
 class CandidateAWriter:
     """Consume admitted final C and the actual fixed-stage corrector current.
@@ -882,8 +941,7 @@ class CandidateAWriter:
         params = ref.profile.params_resolved.candidate
         assert isinstance(params, CandidateAParams)
         try:
-            descriptors = self.point.differential_reference.rebuild(C)
-            target = _conductance(ref.graph, params, C, descriptors, self.point.current)
+            descriptors, target = candidate_a_writer_target(self.point, C)
             assert inputs.current.W_A is not None
             weights = candidate_a_log_interpolation(
                 inputs.current.W_A, target, inputs.dt, params.tau_A

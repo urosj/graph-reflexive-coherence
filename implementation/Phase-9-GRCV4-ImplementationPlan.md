@@ -2634,13 +2634,19 @@ declared exact A scope before its closure:
 On 2026-10-03, after accepted C_PC commit `4f82313`, the user requests A.1 and
 A.2 and permits separate checkpoints. Start with A_OS and separate A.1 to pin
 its independent expectations before adapting the generic evaluator, whose
-current closed descriptor is host-frame WLS. The required fixed-port-row
+then-current closed descriptor was host-frame WLS. The required fixed-port-row
 descriptor must consume incoming W during A reads/writing and preserve the
-existing WLS identity. A.1 now prepares complete native identities, the exact
+existing WLS identity. A.1 pinned complete native identities, the exact
 old-edge/positive-new-edge history policy, 25 point/interval comparisons,
 both-role continuation and a certified target-split negative; the user explicitly
-accepts A.1 on 2026-10-03 ("ok, accept and commit, then do A.2"). A.2 still owns actual runtime matching, role readmission, receipts,
-rollback and replay. The [oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md)
+accepts A.1 on 2026-10-03 ("ok, accept and commit, then do A.2"). A.2 now
+implements actual runtime matching, role readmission, receipts,
+rollback and replay; the user separately accepts its bounded implementation
+and pressure review on 2026-10-03 ("awesome. accept, commit"). Both children
+are reconciled for A_OS; the other A profiles retain their own open rows. The three execution checkpoints cover the closed incoming-W backend,
+the atomic two-role event owner, and independent numerical/adversarial validation.
+See the [A.2 review](./phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-RuntimeReview.md).
+The [oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md)
 records the fixture's separate G2/G3 prerequisite, scope and implementation gap.
 
 - `P9-8.3A.1`: Own the A-history/initialization binding and independent oracle

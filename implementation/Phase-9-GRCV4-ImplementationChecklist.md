@@ -2243,8 +2243,10 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   authorization/cutoff checks and 12 side-tool checks pass. The real target
   whole-chart failure probe rejects atomically despite regular point currents.
   See the [C_PC review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-83c-pc-whole-carrier-event-integration).
-- [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
+- [x] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
+  Reconciled for the bounded A_OS scope on 2026-10-03: both children are
+  explicitly user-accepted. Other A profiles remain open in the register below.
   - [x] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
     starting with A_OS. Prepare and review its bounded mathematical inputs and
     expectations during P9-8.0 using accepted port/chart, fixed-row initializer
@@ -2264,16 +2266,29 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     preparation checkpoints cover exact native/history/reference bindings,
     independent point/interval expectations, and adversarial consumer review.
     The pinned oracle covers 25 positive comparisons and a target OS split
-    failure despite a regular current and positive updates. A.2 is separated
-    because the current generic A evaluator requires WLS; its fixed-port-row
-    incoming-W bridge is an explicit implementation obligation. See the
+    failure despite a regular current and positive updates. A.1 was separated
+    because the then-current generic A evaluator required WLS; A.2 now supplies
+    the explicit fixed-port-row incoming-W bridge. See the
     [A_OS oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md).
-  - [ ] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
+  - [x] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
     independent current/reset targets, reconstruction/readmission, receipts,
     whole-lifecycle rollback and replay. Do not replace expected values with
     production output. Accept separately from oracle construction.
+    A_OS implementation and bounded own review are complete on 2026-10-03
+    against the unchanged accepted A.1 checkpoint `0c995f9`; explicitly
+    user-accepted on 2026-10-03 ("awesome. accept, commit"). Three
+    implementation checkpoints are complete:
+    - [x] Closed fixed-row A_OS descriptor/current/OS/writer bridge, with
+      incoming-W stage operands and unchanged WLS behavior/identity.
+    - [x] Actual two-role W lineage, complete target references, fresh source
+      reference currents, full target OS/writer-surface readmission and atomic
+      state/receipt/checkpoint replay publication.
+    - [x] Native oracle comparison and both-role continuation; certified target
+      split rejection, invalid policy/charge/receipt/replay controls, numerical
+      outliers/covariance, regression and exact boundary binding review.
+    See the [A.2 review](./phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-RuntimeReview.md).
   - Escalation: genuinely absent generic authority found in `.1` holds the
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
@@ -2287,9 +2302,10 @@ their own `.1` oracle and `.2` execution acceptance):
 
 - [x] C_OS — first mechanical checkpoint; complete C references, absent Z.
   Bounded implementation and pressure correction accepted at `eeb82e9`.
-- [ ] A_OS — first A oracle/implementation; explicit W history policy.
+- [x] A_OS — first A oracle/implementation; explicit W history policy.
   A.1 oracle and pressure review explicitly user-accepted on 2026-10-03;
-  A.2 runtime integration remains pending.
+  A.2 runtime integration and pressure review separately user-accepted on
+  2026-10-03 ("awesome. accept, commit"); bounded A_OS reconciliation is complete.
 - [x] C_PC — nonnull whole-carrier policy and target continuation.
   Bounded implementation and pressure review user-accepted on 2026-10-03.
 - [ ] C_CI — joint target-root/domain evidence, no carrier.

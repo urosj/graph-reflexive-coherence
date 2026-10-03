@@ -232,3 +232,45 @@ def cpc_authorization(root):
 def cpc_permitted(path, leaf):
     """Call only after cpc_authorization(root); carrier event integration only."""
     return leaf == CPC_ENTRY and path in CPC_PATHS
+
+
+AOS_ENTRY = "P9-8.3A.2"
+AOS_PATHS = (
+    'src/pygrc/models/grc_9_v4_topology.py',
+    'src/pygrc/models/grc_v4_candidate_a.py',
+    'src/pygrc/models/grc_v4_realizations.py',
+    'src/pygrc/models/grc_v4_step.py',
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_aos.py',
+)
+AOS_NEW_PATHS = ("tests/models/test_grc_9_v4_aos.py",)
+AOS_PREDECESSOR = '0c995f9443d6e659157b51eb324d2d0aac8b65b4'
+AOS_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': '87b729076d556065365f8e7ee9a8de9ffde5500b9758d6befdd5741689c4ec5b',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-Oracle.json': 'ce7f4ae309d9256d93ce7d96f10073e4380f92b26a9af548df1269f98507a06e',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md': '33457f9ac29f59322aa4d1da4fdba4dac80a9abea8d7d9748281f8bd2002d128',
+    'implementation/phase-9-grcv4/verification/verify_p983a_aos_oracle.py': 'a72c76123ccd280f472f5728840e9a19f7bc8316a9f7746cb6380cfe6061eb66',
+    'implementation/phase-9-grcv4/verification/test_p983a_aos_oracle.py': 'f04cef6dd849e753f1cdd8c44df710bf135f313ca1a1f9d57c3142dd71b6e06f',
+}
+AOS_G2 = "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+
+
+def aos_authorization(root):
+    """Explicit user acceptance of A.1 and request for A.2, no new G2 claim."""
+    decision = accepted(root)
+    p.require(AOS_G2 in decision['accepted_generic_runtime_support'],
+              'A_OS integration requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', AOS_PREDECESSOR, 'HEAD')
+    for path, expected in AOS_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', AOS_PREDECESSOR + ':' + path)) == expected,
+                  'A_OS integration requires the accepted A.1 oracle checkpoint')
+        if path != 'implementation/Phase-9-GRCV4-Handoff.md':
+            p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                      'A.2 cannot replace accepted oracle expectations')
+    return AOS_ENTRY
+
+
+def aos_permitted(path, leaf):
+    """Call after aos_authorization(root); exact fixed-row A_OS bridge owners."""
+    return leaf == AOS_ENTRY and path in AOS_PATHS

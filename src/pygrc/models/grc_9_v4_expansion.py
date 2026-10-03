@@ -14,6 +14,7 @@ from dataclasses import dataclass, field, replace
 from typing import Any, ClassVar, Literal
 
 from .grc_9_v4_topology import (
+    GRC9V4CandidateADifferentialReference,
     GRC9V4PortEdge,
     GRC9V4PortEndpoint,
     GRC9V4PortGraph,
@@ -31,6 +32,7 @@ from .grc_v4_geometry import (
     GRCV4Graph,
     GRCV4ReferenceGeometry,
     NodeId,
+    PhysicalFlux,
     _computed,
     _node_id,
 )
@@ -494,6 +496,36 @@ def cpc_history_policy(
     )
 
 
+def _resource_transform(plan: GRC9V4ExpansionPlan) -> dict[str, JSONValue]:
+    source, target, request = (
+        plan.source_graph,
+        plan.target_graph,
+        plan.request,
+    )
+    satellites: dict[NodeId, float] = {
+        plan.event_id + f"/satellite/{b}": request.resource_distribution[b - 1]
+        for b in (1, 2, 3)
+    }
+    coefficients = [
+        satellites.get(node, 0.0)
+        if old == request.source_node_id
+        else float(node == old)
+        for node in target.live_node_ids
+        for old in source.live_node_ids
+    ]
+    return validate_payload(
+        "resource_event_transform",
+        {
+            "schema_version": "grcv4-resource-event-transform-v1",
+            "policy_id": "grc9v4_source_to_primary_satellite_affine_v1",
+            "source_vertex_ids": list(source.live_node_ids),
+            "target_vertex_ids": list(target.live_node_ids),
+            "row_major_coefficients": coefficients,
+            "target_increment": [0.0] * len(target.live_node_ids),
+        },
+    )
+
+
 @dataclass(frozen=True, slots=True)
 class _GRC9V4CExpansion:
     """Shared exact resource and complete-reference construction for C events."""
@@ -573,33 +605,7 @@ class _GRC9V4CExpansion:
         raise NotImplementedError
 
     def resource_transform_payload(self) -> dict[str, JSONValue]:
-        source, target, request = (
-            self.plan.source_graph,
-            self.plan.target_graph,
-            self.plan.request,
-        )
-        satellites: dict[NodeId, float] = {
-            self.plan.event_id + f"/satellite/{b}": request.resource_distribution[b - 1]
-            for b in (1, 2, 3)
-        }
-        coefficients = [
-            satellites.get(node, 0.0)
-            if old == request.source_node_id
-            else float(node == old)
-            for node in target.live_node_ids
-            for old in source.live_node_ids
-        ]
-        return validate_payload(
-            "resource_event_transform",
-            {
-                "schema_version": "grcv4-resource-event-transform-v1",
-                "policy_id": "grc9v4_source_to_primary_satellite_affine_v1",
-                "source_vertex_ids": list(source.live_node_ids),
-                "target_vertex_ids": list(target.live_node_ids),
-                "row_major_coefficients": coefficients,
-                "target_increment": [0.0] * len(target.live_node_ids),
-            },
-        )
+        return _resource_transform(self.plan)
 
     def transfer(self, state: GRCV4AuthoritativeState) -> GRCV4AuthoritativeState:
         if type(state) is not GRCV4AuthoritativeState or state.W_A is not None:
@@ -713,3 +719,215 @@ class GRC9V4CPCExpansion(_GRC9V4CExpansion):
                 "history_content_identity_payload", content
             ),
         }
+
+
+def candidate_content_payload(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    """A_OS history, current then reset, in the bound graph's live edge order."""
+    if any(
+        type(s) is not GRCV4AuthoritativeState or s.W_A is None or s.Z_4 is not None
+        for s in (current, reset)
+    ):
+        raise ValueError("A_OS requires both W roles and absent carrier")
+    assert current.W_A is not None and reset.W_A is not None
+    if len(current.W_A) != len(reset.W_A):
+        raise ValueError("candidate history role dimensions disagree")
+    return validate_payload(
+        "history_content_identity_payload",
+        {
+            "schema_version": "grcv4-history-content-identity-v1",
+            "subject": "candidate",
+            "content": list(current.W_A + reset.W_A),
+        },
+    )
+
+
+def aos_history_policy(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    candidate = {
+        "schema_version": "grcv4-history-channel-policy-v1",
+        "subject": "candidate",
+        "policy_id": "candidate_a_exact_old_edge_lineage_positive_bond_seed_v1",
+        "disposition": "exact_transport",
+        "source_history_digest": payload_identity(
+            "history_content_identity_payload",
+            candidate_content_payload(current, reset),
+        ),
+        "target_initializer_id": "grc9v4_new_internal_edge_positive_bond_seed_v1",
+        "information_loss": "none",
+    }
+    carrier = {
+        "schema_version": "grcv4-history-channel-policy-v1",
+        "subject": "carrier",
+        "policy_id": "carrier_not_applicable_v1",
+        "disposition": "not_applicable",
+        "source_history_digest": None,
+        "target_initializer_id": None,
+        "information_loss": "none",
+    }
+    return validate_payload(
+        "expansion_history_policy",
+        {
+            "schema_version": "grc9v4-expansion-history-policy-v2",
+            "candidate": candidate,
+            "carrier": carrier,
+            **{
+                s + "_history_policy_digest": payload_identity(
+                    "history_channel_policy_identity_payload",
+                    {
+                        "schema_version": "grcv4-history-channel-policy-identity-v1",
+                        "policy": v,
+                    },
+                )
+                for s, v in (("candidate", candidate), ("carrier", carrier))
+            },
+        },
+    )
+
+
+def aos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return resolve_profile_template(
+        {
+            "schema_version": "grcv4-profile-template-v1",
+            "source_complete_profile_id": reference.profile.complete_profile_id,
+            "profile_family_id": "A_OS",
+            "topology_dependent_map_policy_id": "initialize_target_W_A_over_complete_live_edge_set_v1",
+            "geometry_reference_policy_id": "rebuild_reference_hodge_from_target_candidate_A_reference_v1",
+        },
+        source=reference.profile,
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4AOSExpansion:
+    """Exact old-edge lineage and positive new-edge seeding for both A roles.
+
+    Complete target-vector construction is the selected history policy, not a
+    WLS/reference-pass reinitialization. Incoming reference currents are mapped
+    separately; new entries are zero and never replace solved target currents.
+    """
+
+    plan: GRC9V4ExpansionPlan
+    source: GRCV4ReferenceGeometry
+    source_current: GRCV4AuthoritativeState
+    source_reset: GRCV4AuthoritativeState
+    target: GRCV4ReferenceGeometry = field(init=False)
+
+    def __post_init__(self) -> None:
+        from .grc_v4_candidate_a import CandidateARetainedAuthority
+
+        if (
+            type(self.plan) is not GRC9V4ExpansionPlan
+            or type(self.source) is not GRCV4ReferenceGeometry
+        ):
+            raise TypeError("A expansion requires exact plan and reference owners")
+        plan, source = replace(self.plan), replace(self.source)
+        if (
+            source.graph.port_graph != plan.source_graph
+            or source.profile.identity_payload.profile_family_id != "A_OS"
+        ):
+            raise ValueError("A_OS source port/reference mismatch")
+        backend = GRC9V4CandidateADifferentialReference(plan.source_graph)
+        params: Any = source.profile.params_resolved.to_payload()
+        if params["candidate"]["descriptor_backend_id"] != backend.identity:
+            raise ValueError("A_OS requires the source fixed-row descriptor")
+        if any(x != 0 for row in source.K4_base for x in row):
+            raise ValueError("bounded A expansion requires zero structural K4 base")
+        for role in (self.source_current, self.source_reset):
+            CandidateARetainedAuthority(source.graph, source.profile, role)
+        if canonical_json_bytes(plan.request.history_policy) != canonical_json_bytes(
+            aos_history_policy(self.source_current, self.source_reset)
+        ):
+            raise ValueError(
+                "A_OS requires exact actual old-edge lineage and positive bond seeds"
+            )
+        if (
+            aos_profile_template(source).profile_template_id
+            != plan.request.target_profile_template_id
+        ):
+            raise ValueError("A_OS target profile template mismatch")
+        graph = GRCV4Graph.from_port_graph(plan.target_graph)
+        weights = {
+            **source.edge_weights.to_dict(),
+            **{e: seed[0] for e, seed in plan.internal_reference_seeds().items()},
+        }
+        size = len(graph.live_edge_ids)
+        base = tuple((0.0,) * size for _ in range(size))
+        params["candidate"]["descriptor_backend_id"] = (
+            GRC9V4CandidateADifferentialReference(plan.target_graph).identity
+        )
+        params["geometry"].update(
+            K4_base_digest=payload_identity(
+                "k4_identity_payload",
+                {
+                    "schema_version": "grcv4-k4-identity-v1",
+                    "K4_base": [list(row) for row in base],
+                },
+            ),
+            reference_hodge_digest=payload_identity(
+                "reference_hodge_identity_payload",
+                {
+                    "schema_version": "grcv4-reference-hodge-identity-v1",
+                    "edge_weights": weights,
+                },
+            ),
+        )
+        identity = source.profile.identity_payload.to_payload()
+        identity["params_hash"] = payload_identity("resolved_params", params)
+        target = GRCV4ReferenceGeometry(
+            graph,
+            resolve_profile(params, identity),
+            source.context,
+            base,
+            FrozenJSONMap(weights),
+        )
+        object.__setattr__(self, "plan", plan)
+        object.__setattr__(self, "source", source)
+        object.__setattr__(self, "target", target)
+
+    def resource_transform_payload(self) -> dict[str, JSONValue]:
+        return _resource_transform(self.plan)
+
+    def transfer(self, state: GRCV4AuthoritativeState) -> GRCV4AuthoritativeState:
+        if type(state) is not GRCV4AuthoritativeState or state not in (
+            self.source_current,
+            self.source_reset,
+        ):
+            raise ValueError("A transfer requires one of the policy-bound source roles")
+        assert state.W_A is not None
+        width = len(self.plan.source_graph.live_node_ids)
+        transform: Any = self.resource_transform_payload()
+        coefficients = transform["row_major_coefficients"]
+        values = tuple(
+            _computed(
+                float(
+                    sum(
+                        (
+                            exact_number(a) * exact_number(c)
+                            for a, c in zip(
+                                coefficients[i : i + width], state.C, strict=True
+                            )
+                        ),
+                        exact_number(),
+                    )
+                )
+            )
+            for i in range(0, len(coefficients), width)
+        )
+        old = dict(zip(self.source.graph.live_edge_ids, state.W_A, strict=True))
+        weights = tuple(
+            old.get(e, self.plan.policy.bond_seed)
+            for e in self.target.graph.live_edge_ids
+        )
+        return GRCV4AuthoritativeState(values, weights, None)
+
+    def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
+        if type(current) is not PhysicalFlux or current.graph != self.source.graph:
+            raise ValueError("reference current must belong to the source graph")
+        old = dict(zip(self.source.graph.live_edge_ids, current.values, strict=True))
+        return PhysicalFlux(
+            self.target.graph,
+            tuple(old.get(e, 0.0) for e in self.target.graph.live_edge_ids),
+        )
