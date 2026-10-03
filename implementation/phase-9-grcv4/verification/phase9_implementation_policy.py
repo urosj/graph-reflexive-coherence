@@ -231,6 +231,11 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p983a_acipc_oracle.py",
+    HERE + "test_p983a_acipc_oracle.py",
+    PHASE + "tranche-8/P9-8.3A.1-ACIPC-Oracle.json",
+    PHASE + "tranche-8/P9-8.3A.1-ACIPC-OracleReview.md",
+    PHASE + "tranche-8/P9-8.3A.1-ACIPC-Validation.json",
     PHASE + "tranche-8/P9-8.3A.1-ACI-Acceptance.json",
     PHASE + "tranche-8/P9-8.3A.2-ACI-RuntimeReview.md",
     PHASE + "tranche-8/P9-8.3A.2-ACI-Validation.json",

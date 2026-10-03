@@ -2350,6 +2350,29 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
 
     See the [A_PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json).
+    A_CI+PC preparation and bounded own review are complete on 2026-10-03
+    after accepted C_CI+PC commit `571f65d`; oracle acceptance remains pending.
+    Its content-specific checkpoints are:
+
+    - [x] Prove the complete composite B_2R chart, strict source-envelope slack
+      and root contraction. Separately propose R=2048, kappa_H=2^-15 and
+      rho=1/8; accepted A_PC's old-Z-only chart is insufficient for the sum.
+    - [x] Bind fixed old Z, incoming-W rows/fresh trial conductance, simultaneous
+      current/geometry root, same-root source and separate W/Z physical writers.
+    - [x] Construct native identity/event expectations, distinct source stages,
+      exact retained W/unit seeds, whole source Z archives/zero target carriers
+      and both ten-step continuations using the independent research producer.
+    - [x] Certify 25 comparisons and 32 full-error/ULP effects; complete 24
+      pressure methods, paper/spec/side-tool claim review and unchanged carrier
+      regressions. Retain combined-domain, frozen-conductance, history-stage,
+      covariance and admitted-event/negative-next-step controls.
+    - [x] Specify the closed fixed-row composite proof/replay/event extension,
+      ExactScalar production bounds and native comparison/rejection obligations.
+    - [ ] Explicitly accept this separately declared A_CI+PC oracle scope
+      before its A.2 runtime implementation/comparison.
+
+    See the [A_CI+PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json).
   - [x] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
@@ -2449,6 +2472,11 @@ their own `.1` oracle and `.2` execution acceptance):
   whole-carrier reset, full composite-domain roots, same-root writing,
   finite continuation and failure/replay pressure do not add public support.
 - [ ] A_CI_PC — combined W, coupled root and carrier evidence.
+  A.1 independent oracle and bounded own review are complete on 2026-10-03;
+  separately declared composite-domain/fixture acceptance is pending.
+  Its 25 comparisons, 32 effects and 24 pressure methods pass. A.2 fixed-row
+  composite proof/replay and native transaction implementation remain unstarted
+  until that oracle acceptance; no runtime or public support is added here.
 - [ ] C_RG2b — target completion/section reconstruction and domain evidence.
 - [ ] A_RG2b — A history and target completion/section evidence.
 

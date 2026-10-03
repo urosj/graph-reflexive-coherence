@@ -2,7 +2,39 @@
 
 ## Current continuation — 2026-10-03
 
-The user requests C_CI+PC after accepting and committing A_PC runtime at
+The user requests A_CI+PC (written "A_CI+CP") after accepting and committing
+C_CI+PC at `571f65d`. A.1 independent oracle construction and bounded own
+review are complete; **oracle acceptance is pending and A.2 is unstarted**.
+The checklist's "Review and accept before runtime comparison" gate applies
+to this separately declared native scope.
+
+Five content-specific checkpoints cover the composite B_2R proof, coupled
+root/two-writer source stages, independent event/history/continuation
+expectations, adversarial scientific review, and the closed A.2 handoff.
+The proposed chart retains R=2048, M=16 and W in [1/2,513/512], but halves
+kappa_H to 2^-15 so rho=1/8 covers both old Z and the instantaneous source.
+Uniform source/target source bounds are below 1425/507 with strict slack;
+root contraction bounds are below 0.141/0.050. The accepted PC-only chart and
+older local research scope remain unchanged and do not authorize this fixture.
+
+All 25 independent interval comparisons and 32 full-error/ULP effects pass,
+with minimum effect margin about 3.947. The 24 pressure methods include full
+chart outliers, frozen trial conductance, PC substitution, fixed-old-Z and
+same-root-source timing, exact archive stages, signed covariance and a valid
+event with independently certified next-step resource negativity. All five
+unchanged carrier-companion methods and twelve existing D11 side-tool checks
+pass. Eight provenance traces retain their bounded/indeterminate dispositions.
+
+See the [A_CI+PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json).
+After acceptance, A.2 must extend the closed fixed-row composite current,
+envelope/root certificates and replay owners using ExactScalar, then integrate
+both-role W/Z event channels and test atomic failure/continuation against this
+pinned oracle. No native composite A numerical execution, new runtime
+authorization or public support is claimed by A.1. The remaining RG rows and
+end-of-tranche cache review remain open.
+
+The preceding user request was C_CI+PC after accepting and committing A_PC runtime at
 `5966746`. P9-8.3C-CI-PC now integrates C/Z authority, reference-root restart
 with fixed old Z, the combined B_2R geometry domain, and both-role certified
 readmission. Complete target C references, exact resource maps, whole source

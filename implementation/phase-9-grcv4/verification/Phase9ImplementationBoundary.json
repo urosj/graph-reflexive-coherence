@@ -11,11 +11,11 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "d5a35ee3a7035ce6150316b6f094d8ecb142255806db2b09d68d56358d0bc6a2"
+      "sha256": "39e0e5d94a7c7d07c579a883b37ec53e212ecd3283ffb096fadb5b29bc5f3369"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "021986228ef99c1f8e126fa5dc8c4ea47339d4ed9fe43d03c29bb9149da5b5f6"
+      "sha256": "835c33f376541d5bd85da4a1e04a77ac8396bde57b787dc952a63bfe5be36b4c"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "016013c2ce1ea83e169de86074fdd989e73fb09dc511fb87ff64759d93ccf1b0"
+      "sha256": "0c8f180d0534a1877f605842021788d99df916838bcdc24b0975e13177379dd1"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3508,7 +3508,27 @@
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p983ccipc_native.py",
       "sha256": "127f811850c64af1b70be7e28ea64d15e7f7526b59c21e7ff244c3ca1eaf51b5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Oracle.json",
+      "sha256": "e34243fd149d4f4cccc720232a3d7d2ac92b04a7e16059e8adf04f839c2a7238"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md",
+      "sha256": "a8583b21c180f813e4658a2cee70e409540eedd13c5dc8fdcb17db8df9a274ec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json",
+      "sha256": "f978016e13779e1a365c8a6c7fa3ddd6db5c4776b93e1689b09916e2befdc32b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_acipc_oracle.py",
+      "sha256": "e47466fab85a1ca107dc38212e1403c119088c204171e3518a010caa1bdecaba"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_acipc_oracle.py",
+      "sha256": "e132b79aba42d4d9ea2d2be49dfdc20a7f06a38f437600c6e35e3445d9b6a781"
     }
   ],
-  "record_digest": "72b8ac3ee93aa67ce49e50ad3e173ab3e106f9d28902209baae9fd84cd905fd8"
+  "record_digest": "2477d0806b4a653db68964f6b6c5cba936a4b98eb99a48678d506a7dcca61fea"
 }
