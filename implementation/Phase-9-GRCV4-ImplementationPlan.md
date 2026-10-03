@@ -2577,6 +2577,29 @@ pressure-review correction and recorded continuation limits, on 2026-10-03
 ("this is much better, great. accept and commit"). P9-8.3C-OS is complete;
 other profile children retain their separate acceptance requirements.
 
+After accepted C_OS commit `eeb82e9`, the user requests P9-8.3C-PC on the same
+branch. Execute three connected checkpoints together: (1) bind/archive the
+actual current/reset carrier pair, apply the frozen whole-carrier zero-reset
+policy with explicit loss and rebuild C references; (2) integrate old-Z PC
+admission, native receipts and atomic archive/state publication plus replay;
+(3) independently verify source writing, both-role continuation, delayed carrier
+consumption and adversarial domain/history failures. Reuse shared C resource,
+reference and transaction code with separate closed OS/PC state/checkpoint
+types. Preserve accepted C_OS checkpoint bytes. Open only the existing four
+expansion/lifecycle source/test paths under `P9-8.3C-PC`; generic PC kernels,
+other native profiles and the public model facade retain their own scope.
+The native companion has its own complete parameter identities and does not
+inherit the P9-8.0 research radius or exact-real continuation theorem by label.
+All three checkpoints now pass implementation and own review: the regression
+batch runs 329 methods with one opt-in packaging skip, and independent equations
+cover the actual source writer and ten target steps for each role. Full target
+PC admission also rejects a real whole-chart failure with regular point currents.
+The user accepts this bounded C_PC checkpoint on 2026-10-03
+("great, then commit changes"), after confirmation of the paper, side-tool
+and adversarial numerical review and its recorded limits. P9-8.3C-PC is
+complete; other profile children retain their own acceptance requirements.
+See the [C_PC review](./Phase-9-GRCV4-Handoff.md#p9-83c-pc-whole-carrier-event-integration).
+
 After the all-ten feasibility review, use one shared mechanical implementation,
 with explicit candidate/realization adapters and separately reviewed conformance.
 The intended implementation progression is:

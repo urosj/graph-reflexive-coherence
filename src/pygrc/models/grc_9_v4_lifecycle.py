@@ -1,4 +1,4 @@
-"""Fresh mechanical detection and bounded native C_OS event transactions.
+"""Fresh mechanical detection and bounded native C_OS/C_PC event transactions.
 
 The event checkpoint/replay owner is internal integration, not the later full
 GRC9V4 facade, compatibility crossing, completion rule or capability claim.
@@ -9,14 +9,18 @@ from __future__ import annotations
 from collections.abc import Mapping
 from dataclasses import dataclass, replace
 from threading import Lock
-from typing import Any, ClassVar, Literal, cast
+from typing import Any, ClassVar, Literal, Self, cast
 
 from .grc_9_v4_expansion import (
     GRC9ExpansionPolicy,
     GRC9V4COSExpansion,
+    GRC9V4CPCExpansion,
     GRC9V4ExpansionError,
     GRC9V4ExpansionPlan,
     GRC9V4ExpansionRequestInput,
+    _GRC9V4CExpansion,
+    carrier_content_payload,
+    cpc_history_policy,
 )
 from .grc_9_v4_topology import (
     PORT_COUNT,
@@ -41,6 +45,7 @@ from .grc_v4_geometry import (
     _local_payload,
     _ordered,
 )
+from .grc_v4_pc import CandidatePCRead, ProvisionalCandidatePCStep, carrier_geometry
 from .grc_v4_profile import _Record
 from .grc_v4_realizations import CandidateCOSPass
 from .grc_v4_state import FrozenJSONMap, GRCV4LifecycleResult, _number
@@ -253,7 +258,7 @@ class GRC9V4Specialization:
 
 
 @dataclass(frozen=True, slots=True)
-class GRC9V4COSState:
+class _GRC9V4CState:
     """Native identity over port-owned numerical inputs; admission is separate.
 
     GeometryStageInputs identities remain internal kernel diagnostics. Enabled
@@ -263,32 +268,38 @@ class GRC9V4COSState:
 
     inputs: GeometryStageInputs
     specialization: GRC9V4Specialization
+    FAMILY: ClassVar[Literal["C_OS", "C_PC"]]
 
     def __post_init__(self) -> None:
         if (
             type(self.inputs) is not GeometryStageInputs
             or type(self.specialization) is not GRC9V4Specialization
         ):
-            raise TypeError(
-                "native C_OS state requires typed inputs and specialization"
-            )
+            raise TypeError("native C state requires typed inputs and specialization")
         inputs, spec = replace(self.inputs), replace(self.specialization)
         reference = inputs.geometry.reference
         if (
             reference.graph.port_graph is None
-            or reference.profile.identity_payload.profile_family_id != "C_OS"
+            or reference.profile.identity_payload.profile_family_id != self.FAMILY
         ):
-            raise ValueError("native C_OS requires a port-owned C_OS reference")
+            raise ValueError(
+                f"native {self.FAMILY} requires a port-owned {self.FAMILY} reference"
+            )
+        geometry = (
+            reference.geometry()
+            if self.FAMILY == "C_OS"
+            else carrier_geometry(inputs, inputs.current)
+        )
         if (
-            inputs.geometry != reference.geometry()
+            inputs.geometry != geometry
             or inputs.stage != "pre_read"
             or inputs.trial_current is not None
         ):
-            raise ValueError("native state must restart from reference geometry")
+            raise ValueError("native state must restart from its realization geometry")
         if inputs.receipt_ids:
             raise ValueError("kernel diagnostic receipts are not a native event ledger")
         if any(x != 0 for row in reference.K4_base for x in row):
-            raise ValueError("bounded C_OS scope requires zero structural K4 base")
+            raise ValueError("bounded C event scope requires zero structural K4 base")
         _baseline_policy(GRC9SparkPolicy.from_payload(spec.resolved["spark"]))
         object.__setattr__(self, "inputs", inputs)
         object.__setattr__(self, "specialization", spec)
@@ -348,6 +359,20 @@ class GRC9V4COSState:
         }
 
 
+@dataclass(frozen=True, slots=True)
+class GRC9V4COSState(_GRC9V4CState):
+    """Native OS state with no independent carrier authority."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC"]] = "C_OS"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CPCState(_GRC9V4CState):
+    """Native PC state; geometry must derive from current's own committed Z."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC"]] = "C_PC"
+
+
 def _cos_readmit(state: GRC9V4COSState) -> None:
     """Read both complete OS surfaces, without advancing either resource role.
 
@@ -374,10 +399,42 @@ def _cos_readmit(state: GRC9V4COSState) -> None:
         rows.evaluate(authority.C, weights, surface.corrector.current.values)
 
 
-def _cos_receipts(
-    before: GRC9V4COSState,
-    after: GRC9V4COSState,
-    target: GRC9V4COSExpansion,
+def _cpc_readmit(state: GRC9V4CPCState) -> None:
+    """PC's zero step admits both whole-chart envelopes and old-Z reads.
+
+    Unlike OS's zero step, this kernel performs the full PC read. It runs no
+    carrier writer and supplies independent current/reset reconstructed points.
+    """
+    probe = ProvisionalCandidatePCStep(replace(state.inputs, dt=0))
+    reference = state.inputs.geometry.reference
+    graph = reference.graph.port_graph
+    assert graph is not None
+    rows = GRC9V4RowDifferential(
+        graph, cast(int, state.specialization.identity_payload["hessian_sign"])
+    )
+    weights = tuple(
+        cast(float, reference.edge_weights[e]) for e in reference.graph.live_edge_ids
+    )
+    for authority, read in (
+        (state.inputs.current, probe.read),
+        (state.inputs.reset, probe.reset_read),
+    ):
+        rows.evaluate(authority.C, weights, read.point.current.values)
+
+
+def _c_readmit(state: _GRC9V4CState) -> None:
+    if type(state) is GRC9V4COSState:
+        _cos_readmit(state)
+    elif type(state) is GRC9V4CPCState:
+        _cpc_readmit(state)
+    else:
+        raise TypeError("expected a closed native C state")
+
+
+def _c_receipts(
+    before: _GRC9V4CState,
+    after: _GRC9V4CState,
+    target: _GRC9V4CExpansion,
     ledger: tuple[SuccessfulReceiptEnvelope, ...],
 ) -> list[dict[str, Any]]:
     history: dict[str, Any] = dict(
@@ -396,6 +453,19 @@ def _cos_receipts(
             )
         },
     )
+    if type(target) is GRC9V4CPCExpansion:
+        history["carrier"].update(
+            disposition="whole_carrier_reset",
+            source_history_digest=payload_identity(
+                "history_content_identity_payload",
+                carrier_content_payload(before.inputs.current, before.inputs.reset),
+            ),
+            target_history_digest=payload_identity(
+                "history_content_identity_payload",
+                carrier_content_payload(after.inputs.current, after.inputs.reset),
+            ),
+            information_loss="carrier_history_loss",
+        )
     charges = [
         ChargeEvaluation(
             VertexScalar(s.inputs.geometry.reference.graph, s.inputs.current.C),
@@ -423,7 +493,9 @@ def _cos_receipts(
         "actual_charge_delta": float(
             exact_number(charges[1].actual) - exact_number(charges[0].actual)
         ),
-        "information_losses": [],
+        "information_losses": ["carrier_history_loss"]
+        if type(target) is GRC9V4CPCExpansion
+        else [],
         "disposition": "committed",
         "parent_receipt_ids": []
         if not ledger
@@ -466,7 +538,7 @@ def _cos_receipts(
                 "core": core,
                 "subject": subject,
                 "history_disposition": history[subject]["disposition"],
-                "information_loss": "none",
+                "information_loss": history[subject]["information_loss"],
             }
             for subject in ("candidate", "carrier")
         ),
@@ -474,14 +546,15 @@ def _cos_receipts(
 
 
 @dataclass(frozen=True, slots=True)
-class _COSEventPublication:
-    state: GRC9V4COSState
+class _CEventPublication:
+    state: _GRC9V4CState
     receipts: tuple[SuccessfulReceiptEnvelope, ...] = ()
     requests: tuple[GRC9V4ExpansionRequestInput, ...] = ()
+    archives: tuple[FrozenJSONMap, ...] = ()
 
 
-class GRC9V4COSOperation:
-    """Atomic bounded event receiver over an admitted postbeat C_OS seed.
+class _GRC9V4COperation:
+    """Shared atomic receiver; public siblings retain closed realization types.
 
     The seed is numerical state, not proof of earlier operation chronology.
     Checkpoints replay every event from that admitted seed and verify the full
@@ -490,22 +563,25 @@ class GRC9V4COSOperation:
     The owner captures ExactScalar backend selection at construction.
     """
 
-    def __init__(self, state: GRC9V4COSState) -> None:
-        if type(state) is not GRC9V4COSState:
-            raise TypeError("expected native C_OS state")
+    STATE: ClassVar[type[_GRC9V4CState]]
+    CHECKPOINT: ClassVar[str]
+
+    def __init__(self, state: _GRC9V4CState) -> None:
+        if type(state) is not self.STATE:
+            raise TypeError("expected native " + self.STATE.FAMILY + " state")
         self._backend = current_exact_backend()
         with exact_backend(self._backend):
-            state = GRC9V4COSState(
+            state = self.STATE(
                 GeometryStageInputs.from_payload(state.inputs.to_payload()),
                 replace(state.specialization),
             )
-            _cos_readmit(state)
+            _c_readmit(state)
         self._initial = state
-        self._published = _COSEventPublication(state)
+        self._published = _CEventPublication(state)
         self._lock = Lock()
 
     @property
-    def state(self) -> GRC9V4COSState:
+    def state(self) -> _GRC9V4CState:
         return self._published.state
 
     @property
@@ -517,7 +593,12 @@ class GRC9V4COSOperation:
             published = self._published
             return canonical_json_bytes(
                 {
-                    "descriptor_version": "grc9v4-cos-event-checkpoint-v1",
+                    "descriptor_version": self.CHECKPOINT,
+                    **(
+                        {"carrier_archives": [a.to_dict() for a in published.archives]}
+                        if self.STATE is GRC9V4CPCState
+                        else {}
+                    ),
                     "initial": self._initial.to_payload(),
                     "requests": [r.to_payload() for r in published.requests],
                     "state": published.state.to_payload(),
@@ -529,7 +610,7 @@ class GRC9V4COSOperation:
             )
 
     @classmethod
-    def replay(cls, checkpoint: bytes) -> GRC9V4COSOperation:
+    def replay(cls, checkpoint: bytes) -> Self:
         data: Any = _local_payload(
             decode_canonical_json(checkpoint),
             {
@@ -539,13 +620,14 @@ class GRC9V4COSOperation:
                 "state",
                 "receipts",
                 "lifecycle_digest",
-            },
+            }
+            | ({"carrier_archives"} if cls.STATE is GRC9V4CPCState else set()),
             "descriptor_version",
-            "grc9v4-cos-event-checkpoint-v1",
+            cls.CHECKPOINT,
         )
         initial = data["initial"]
         specialization = initial["specialization"]
-        state = GRC9V4COSState(
+        state = cls.STATE(
             GeometryStageInputs.from_payload(initial["inputs"]),
             GRC9V4Specialization(
                 FrozenJSONMap(specialization["resolved"]),
@@ -582,6 +664,14 @@ class GRC9V4COSOperation:
                     raise ValueError("expansion requires a postbeat seed")
                 graph = before.inputs.geometry.reference.graph.port_graph
                 assert graph is not None
+                if type(before) is GRC9V4CPCState and canonical_json_bytes(
+                    request.history_policy
+                ) != canonical_json_bytes(
+                    cpc_history_policy(before.inputs.current, before.inputs.reset)
+                ):
+                    raise ValueError(
+                        "C_PC requires the actual whole carrier pair and explicit reset/loss policy"
+                    )
                 plan = GRC9V4ExpansionPlan(
                     graph,
                     before.scientific_digest,
@@ -590,8 +680,12 @@ class GRC9V4COSOperation:
                         before.specialization.resolved["expansion"]
                     ),
                 )
-                _cos_readmit(before)
-                current = CandidateCCurrent(before.inputs).current.values
+                _c_readmit(before)
+                current = (
+                    CandidatePCRead(before.inputs).point.current.values
+                    if type(before) is GRC9V4CPCState
+                    else CandidateCCurrent(before.inputs).current.values
+                )
                 detection = GRC9V4CandidateDetection(
                     GRC9V4PostbeatRows(
                         graph,
@@ -610,7 +704,16 @@ class GRC9V4COSOperation:
                 if request.source_node_id not in detection.candidate_node_ids():
                     raise ValueError("source is not a fresh hybrid spark candidate")
                 stage = "target_construction"
-                target = GRC9V4COSExpansion(plan, before.inputs.geometry.reference)
+                target: _GRC9V4CExpansion
+                if type(before) is GRC9V4CPCState:
+                    target = GRC9V4CPCExpansion(
+                        plan,
+                        before.inputs.geometry.reference,
+                        before.inputs.current,
+                        before.inputs.reset,
+                    )
+                else:
+                    target = GRC9V4COSExpansion(plan, before.inputs.geometry.reference)
                 inputs = replace(
                     before.inputs,
                     geometry=target.target.geometry(),
@@ -619,22 +722,26 @@ class GRC9V4COSOperation:
                     dt=0,
                     operation_id=request.operation_id,
                 )
-                after = GRC9V4COSState(inputs, before.specialization)
+                after = self.STATE(inputs, before.specialization)
                 stage = "target_readmission"
-                _cos_readmit(after)
+                _c_readmit(after)
                 stage = "commit"
                 commit, receipts = make_commit_receipts(
-                    _cos_receipts(before, after, target, published.receipts),
+                    _c_receipts(before, after, target, published.receipts),
                     operation_id=request.operation_id,
                     source_state_digest=before.scientific_digest,
                     target_state_digest=after.scientific_digest,
                     target_step_index=inputs.step_index,
                     target_time=inputs.time,
                 )
-                following = _COSEventPublication(
+                archives = published.archives
+                if type(target) is GRC9V4CPCExpansion:
+                    archives += (FrozenJSONMap(target.carrier_archive_payload()),)
+                following = _CEventPublication(
                     after,
                     published.receipts + receipts,
                     published.requests + (request,),
+                    archives,
                 )
                 result = GRCV4LifecycleResult(
                     "committed",
@@ -693,3 +800,34 @@ class GRC9V4COSOperation:
                 return GRCV4LifecycleResult(
                     "rejected", False, None, failure, (receipt,)
                 )
+
+
+class GRC9V4COSOperation(_GRC9V4COperation):
+    """Bounded native OS event owner; archive-free checkpoint bytes are stable."""
+
+    STATE = GRC9V4COSState
+    CHECKPOINT = "grc9v4-cos-event-checkpoint-v1"
+
+    @property
+    def state(self) -> GRC9V4COSState:
+        return cast(GRC9V4COSState, self._published.state)
+
+
+class GRC9V4CPCOperation(_GRC9V4COperation):
+    """Bounded native PC event owner with atomic whole-carrier archives.
+
+    The archive binds actual current then reset content and source edge order.
+    It is retained evidence only; no archived coordinate enters target history.
+    This internal event checkpoint is not the public Tranche 9 model facade.
+    """
+
+    STATE = GRC9V4CPCState
+    CHECKPOINT = "grc9v4-cpc-event-checkpoint-v1"
+
+    @property
+    def state(self) -> GRC9V4CPCState:
+        return cast(GRC9V4CPCState, self._published.state)
+
+    @property
+    def carrier_archives(self) -> tuple[FrozenJSONMap, ...]:
+        return self._published.archives

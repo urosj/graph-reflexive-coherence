@@ -202,3 +202,33 @@ def cos_authorization(root):
 def cos_permitted(path, leaf):
     """Call only after cos_authorization(root); exact C_OS implementation owners."""
     return leaf == COS_ENTRY and path in COS_PATHS
+
+
+CPC_ENTRY = 'P9-8.3C-PC'
+CPC_PATHS = (*ALLOCATOR_PATHS, *TRIGGER_PATHS)
+CPC_PREDECESSOR = 'eeb82e983651303f767b8f70853208ce1ee9d82f'
+CPC_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': '62d9b9014ebe50a925db9fa31704d45ff27e9e68c96b9e7a03df8be4c6aed1a4',
+    ALLOCATOR_PATHS[0]: 'e00ff377f3da9ce5e17be8722e091cd0787bd4a57f6ea9a2950a7e69aa84529b',
+    ALLOCATOR_PATHS[1]: '68b3be6347d6dc8eb0c180f55e7cf0c2d49e08b1e9ba81e9fed360a05ab85574',
+    TRIGGER_PATHS[0]: 'fd7400c61276ef6f61999a7da9740ca15ed319ea1531b0be6d30da5746fe011f',
+    TRIGGER_PATHS[1]: '8573b3531157dabc0e580d1eea26f4a9374d902e765f18452b1caa12edffe6af',
+}
+CPC_G2 = 'grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f'
+
+
+def cpc_authorization(root):
+    """User-requested C_PC integration after accepted C_OS; no new G2 claim."""
+    decision = accepted(root)
+    p.require(CPC_G2 in decision['accepted_generic_runtime_support'],
+              'C_PC integration requires its accepted G2 in the G3 consumed set')
+    p.git(root, 'merge-base', '--is-ancestor', CPC_PREDECESSOR, 'HEAD')
+    for path, expected in CPC_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', CPC_PREDECESSOR + ':' + path)) == expected,
+                  'C_PC integration requires the accepted C_OS predecessor')
+    return CPC_ENTRY
+
+
+def cpc_permitted(path, leaf):
+    """Call only after cpc_authorization(root); carrier event integration only."""
+    return leaf == CPC_ENTRY and path in CPC_PATHS

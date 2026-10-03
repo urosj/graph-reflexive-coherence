@@ -2223,9 +2223,26 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   resources, source/target admission and continuation. Execute natively only
   after aggregate feasibility review. Do not reinterpret
   construction-vector `committed: true` as native numerical success.
-- [ ] P9-8.3C-PC: After C_PC's G2 and G3 entry, execute the separate C_PC
-  nonnull carrier reset/loss vector and target readmission. Pending C_PC
-  runtime support does not hold the C_OS child after all-ten feasibility review.
+- [x] P9-8.3C-PC: After C_PC's G2 and G3 entry, execute the separate C_PC
+  nonnull carrier reset/loss vector and target readmission. The bounded native
+  implementation and pressure review are user-accepted on 2026-10-03
+  ("great, then commit changes"), after confirmation of the paper, side-tool
+  and adversarial numerical checks and their recorded limits.
+  Requested on 2026-10-03 after accepted C_OS commit `eeb82e9`; execute these
+  content-specific checkpoints together on `work/p9-8-3-profile-integration`:
+  - [x] P9-8.3C-PC.1: Bind whole current/reset carrier content to the frozen
+    reset/loss policy; archive source order/content and zero every target
+    carrier coordinate while rebuilding the complete C reference profile.
+  - [x] P9-8.3C-PC.2: Integrate native PC state, old-carrier numerical
+    readmission, atomic event/archive/receipt publication and checkpoint replay.
+  - [x] P9-8.3C-PC.3: Independently check source carrier writing, both-role
+    target continuation, delayed carrier effects and adversarial domain/history
+    failures against the paper, frozen vector and accepted carrier companion.
+  The regression batch passes (329 methods, one opt-in packaging skip), including
+  independent source writing and ten target steps for each role; 13 focused
+  authorization/cutoff checks and 12 side-tool checks pass. The real target
+  whole-chart failure probe rejects atomically despite regular point currents.
+  See the [C_PC review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-83c-pc-whole-carrier-event-integration).
 - [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
   - [ ] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
@@ -2258,10 +2275,11 @@ P9-8.3 per-profile completion register (all include independent targets,
 history channels, readmission, failure/rollback and replay; A rows require
 their own `.1` oracle and `.2` execution acceptance):
 
-- [ ] C_OS — first mechanical checkpoint; complete C references, absent Z.
-  Bounded implementation/own review passes; user acceptance is pending.
+- [x] C_OS — first mechanical checkpoint; complete C references, absent Z.
+  Bounded implementation and pressure correction accepted at `eeb82e9`.
 - [ ] A_OS — first A oracle/implementation; explicit W history policy.
-- [ ] C_PC — nonnull whole-carrier policy and target continuation.
+- [x] C_PC — nonnull whole-carrier policy and target continuation.
+  Bounded implementation and pressure review user-accepted on 2026-10-03.
 - [ ] C_CI — joint target-root/domain evidence, no carrier.
 - [ ] A_CI — A history plus joint target-root/domain evidence.
 - [ ] A_PC — A history plus persistent carrier evidence.

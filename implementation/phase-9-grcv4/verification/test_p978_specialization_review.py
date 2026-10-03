@@ -139,7 +139,7 @@ class SpecializationReviewTests(unittest.TestCase):
         for path in ('src/pygrc/models/grc_9_v3.py', 'src/pygrc/models/grc_9_v4.py',
                      'src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
             self.assertFalse(admission.row_bridge_permitted(path, 'P9-8.1b'))
-        for leaf in ('P9-8.3C-PC',):
+        for leaf in ('P9-8.3C-CI',):
             self.assertNotIn(leaf, ready)
 
     def test_row_bridge_requires_the_committed_review_and_accepted_g3(self):
@@ -169,7 +169,7 @@ class SpecializationReviewTests(unittest.TestCase):
         for path in (*admission.PATHS, 'src/pygrc/models/grc_9_v3.py',
                      'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
             self.assertFalse(admission.trigger_permitted(path, 'P9-8.1c'))
-        for leaf in ('P9-8.3C-PC', 'P9-9.1'):
+        for leaf in ('P9-8.3C-CI', 'P9-9.1'):
             self.assertNotIn(leaf, ready)
 
     def test_trigger_requires_accepted_g3_and_committed_row_subject(self):
@@ -199,7 +199,7 @@ class SpecializationReviewTests(unittest.TestCase):
         for path in (*admission.TRIGGER_PATHS, 'src/pygrc/models/grc_9_v4_coarse.py',
                      'src/pygrc/models/grc_9_coarse.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
             self.assertFalse(admission.coarse_permitted(path, 'P9-8.1d'))
-        for leaf in ('P9-8.3C-PC', 'P9-9.1'):
+        for leaf in ('P9-8.3C-CI', 'P9-9.1'):
             self.assertNotIn(leaf, ready)
 
     def test_coarse_requires_accepted_g3_and_committed_shared_subject(self):
@@ -230,7 +230,7 @@ class SpecializationReviewTests(unittest.TestCase):
         for path in ('src/pygrc/models/grc_v4_exact.py', 'src/pygrc/models/grc_v4_lifecycle.py',
                      'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v4_expansion.py'):
             self.assertFalse(admission.backend_permitted(path, 'P9-8.1e'))
-        for leaf in ('P9-8.3C-PC', 'P9-9.1'):
+        for leaf in ('P9-8.3C-CI', 'P9-9.1'):
             self.assertNotIn(leaf, ready)
 
     def test_backend_requires_accepted_g3_and_committed_coarse_subject(self):
@@ -262,7 +262,7 @@ class SpecializationReviewTests(unittest.TestCase):
         for path in (*admission.BACKEND_PATHS, 'src/pygrc/models/grc_v4_events.py',
                      'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v3.py'):
             self.assertFalse(admission.allocator_permitted(path, 'P9-8.2'))
-        for leaf in ('P9-8.3C-PC', 'P9-8.3A.2', 'P9-9.1'):
+        for leaf in ('P9-8.3C-CI', 'P9-8.3A.2', 'P9-9.1'):
             self.assertNotIn(leaf, ready)
 
     def test_allocator_requires_g3_and_merged_parent_acceptance(self):
@@ -299,7 +299,7 @@ class SpecializationReviewTests(unittest.TestCase):
         for path in ('src/pygrc/models/grc_v4_step.py', 'src/pygrc/models/grc_v4_lifecycle.py',
                      'src/pygrc/models/grc_9_v4.py', 'src/pygrc/models/grc_9_v3.py'):
             self.assertFalse(admission.cos_permitted(path, 'P9-8.3C-OS'))
-        for leaf in ('P9-8.3C-PC', 'P9-8.3A.2', 'P9-9.1'):
+        for leaf in ('P9-8.3C-CI', 'P9-8.3A.2', 'P9-9.1'):
             self.assertNotIn(leaf, ready)
 
     def test_cos_requires_g3_and_accepted_allocator_merge_subjects(self):
@@ -321,6 +321,50 @@ class SpecializationReviewTests(unittest.TestCase):
             return original_git(root, *args)
         with patch.object(p, 'git', side_effect=missing), self.assertRaisesRegex(ValueError, 'merge missing'):
             admission.cos_authorization(p.ROOT)
+
+    def test_cpc_successor_preserves_other_profile_and_generic_boundaries(self):
+        self.assertEqual(admission.cpc_authorization(p.ROOT), 'P9-8.3C-PC')
+        ready, owners = p.leaf_permissions(p.ROOT)
+        self.assertIn('P9-8.3C-PC', ready)
+        self.assertEqual(set(admission.CPC_PATHS), set(admission.ALLOCATOR_PATHS + admission.TRIGGER_PATHS))
+        for path in admission.CPC_PATHS:
+            self.assertIn('P9-8.3C-PC', owners[path])
+            self.assertTrue(admission.cpc_permitted(path, 'P9-8.3C-PC'))
+            for leaf in ('P9-8.3C-OS', 'P9-8.3C-CI', 'P9-8.3A.2', 'P9-9.1'):
+                self.assertFalse(admission.cpc_permitted(path, leaf))
+        for path in ('src/pygrc/models/grc_v4_pc.py', 'src/pygrc/models/grc_v4_geometry.py',
+                     'src/pygrc/models/grc_v4_lifecycle.py', 'src/pygrc/models/grc_9_v4.py',
+                     'src/pygrc/models/grc_9_v3.py'):
+            self.assertFalse(admission.cpc_permitted(path, 'P9-8.3C-PC'))
+        for leaf in ('P9-8.3C-CI', 'P9-8.3A.2', 'P9-9.1'):
+            self.assertNotIn(leaf, ready)
+
+    def test_cpc_requires_g3_and_accepted_cos_subjects(self):
+        with patch.object(admission, 'accepted', side_effect=ValueError('G3 missing')):
+            with self.assertRaisesRegex(ValueError, 'G3 missing'):
+                admission.cpc_authorization(p.ROOT)
+        original_git = p.git
+        for changed_path in admission.CPC_PREDECESSOR_HASHES:
+            def changed(root, *args, changed_path=changed_path):
+                if args == ('show', admission.CPC_PREDECESSOR + ':' + changed_path):
+                    return b'changed accepted C_OS subject'
+                return original_git(root, *args)
+            with patch.object(p, 'git', side_effect=changed):
+                with self.assertRaisesRegex(ValueError, 'accepted C_OS predecessor'):
+                    admission.cpc_authorization(p.ROOT)
+        def missing(root, *args):
+            if args == ('merge-base', '--is-ancestor', admission.CPC_PREDECESSOR, 'HEAD'):
+                raise ValueError('parent missing')
+            return original_git(root, *args)
+        with patch.object(p, 'git', side_effect=missing), self.assertRaisesRegex(ValueError, 'parent missing'):
+            admission.cpc_authorization(p.ROOT)
+
+    def test_cpc_requires_its_exact_generic_g2_in_the_consumed_set(self):
+        decision = deepcopy(admission.accepted(p.ROOT))
+        decision['accepted_generic_runtime_support'].remove(admission.CPC_G2)
+        with patch.object(admission, 'accepted', return_value=decision):
+            with self.assertRaisesRegex(ValueError, 'accepted G2 in the G3 consumed set'):
+                admission.cpc_authorization(p.ROOT)
 
     def test_api_browser_notebook_transport_and_failure_cleanup(self):
         tool = p.ROOT / p.SIDE / 'tool'

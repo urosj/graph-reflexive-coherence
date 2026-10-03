@@ -12,6 +12,7 @@ import math
 import random
 import sys
 import unittest
+from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 from dataclasses import FrozenInstanceError, replace
@@ -28,15 +29,20 @@ from pygrc.models import grc_9_v4_lifecycle as native
 from pygrc.models.grc_9_v4_expansion import (
     GRC9ExpansionPolicy,
     GRC9V4COSExpansion,
+    GRC9V4CPCExpansion,
     GRC9V4ExpansionPlan,
     GRC9V4ExpansionRequestInput,
     cos_profile_template,
+    cpc_history_policy,
+    cpc_profile_template,
 )
 from pygrc.models.grc_9_v4_lifecycle import (
     GRC9SparkPolicy,
     GRC9V4CandidateDetection,
     GRC9V4COSOperation,
     GRC9V4COSState,
+    GRC9V4CPCOperation,
+    GRC9V4CPCState,
     GRC9V4Specialization,
     UnsupportedGRC9SparkLane,
 )
@@ -45,15 +51,25 @@ from pygrc.models.grc_9_v4_topology import (
     GRC9V4PostbeatRows,
 )
 from pygrc.models.grc_v4 import GRCV4StepRequestInput
+from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
 from pygrc.models.grc_v4_codec import canonical_json_bytes, payload_identity
 from pygrc.models.grc_v4_exact import ExactBackend, current_exact_backend, exact_backend
 from pygrc.models.grc_v4_geometry import (
+    GeometryStageInputs,
     GRCV4Graph,
     NonfiniteGeometryError,
     OrientedEdge,
 )
 from pygrc.models.grc_v4_lifecycle import GRCV4Operation
+from pygrc.models.grc_v4_pc import (
+    CandidatePCRead,
+    PCBaseChart,
+    ProvisionalCandidatePCStep,
+    carrier_geometry,
+)
 from pygrc.models.grc_v4_profile import (
+    CandidateCParams,
+    PCParams,
     get_supported_profile,
     list_supported_profiles,
     resolve_profile,
@@ -152,6 +168,126 @@ def native_cos_fixture(
         expected_target_graph_digest=None,
     )
     return state, GRC9V4ExpansionRequestInput.from_payload(request)
+
+
+def native_cpc_fixture() -> tuple[
+    GRC9V4CPCState, GRC9V4ExpansionRequestInput, GeometryStageInputs
+]:
+    """Separate native PC recipe; current takes one beat, reset none.
+
+    The inherited C_OS helper supplies only graph, policy and resource recipe.
+    PC uses its own identified R=1, kappa_H=2^-16, zeta=2^-30, M=16 chart;
+    these are not the P9-8.0 R=2^-22 research parameters or a new G2 declaration.
+    """
+    seed, request = native_cos_fixture()
+    reference = seed.inputs.geometry.reference
+    params: Any = reference.profile.params_resolved.to_payload()
+    identity = reference.profile.identity_payload.to_payload()
+    params["realization"] = {
+        "schema_version": "grcv4-pc-params-v1",
+        "tau_PC": 1,
+        "radius": 1,
+        "carrier_norm_id": "symmetric_star_frobenius_v1",
+        "source_envelope_id": PCBaseChart(16).identity,
+        "writer_id": "zero_order_hold_exponential_v1",
+    }
+    params["geometry"]["kappa_H"] = 2**-16
+    params["candidate"]["zeta_C"] = 2**-30
+    identity.update(
+        realization="PC",
+        profile_family_id="C_PC",
+        solver_id="direct_unique_root_v1",
+        params_hash=payload_identity("resolved_params", params),
+    )
+    reference = replace(reference, profile=resolve_profile(params, identity))
+    z = tuple(
+        (1 if i == j else 0.5) * (-1) ** (i + j) / 16
+        for i in range(9)
+        for j in range(9)
+    )
+    initial = replace(
+        seed.inputs,
+        geometry=reference.geometry(),
+        current=GRCV4AuthoritativeState((3.0, *((193 / 64,) * 9)), None, z),
+        reset=GRCV4AuthoritativeState(seed.inputs.reset.C, None, tuple(-x for x in z)),
+        step_index=0,
+        time=0,
+        dt=1 / 4096,
+    )
+    initial = replace(initial, geometry=carrier_geometry(initial, initial.current))
+    stepped = ProvisionalCandidatePCStep(initial).next_inputs
+    state = GRC9V4CPCState(replace(stepped, dt=0), seed.specialization)
+    request = replace(
+        request,
+        operation_id="native-cpc-expand-1",
+        source_state_digest=state.scientific_digest,
+        target_profile_template_id=cpc_profile_template(reference).profile_template_id,
+        history_policy=cpc_history_policy(state.inputs.current, state.inputs.reset),
+    )
+    return state, request, initial
+
+
+def independent_pc_beat(
+    inputs: GeometryStageInputs,
+) -> tuple[np.ndarray, tuple[float, ...], np.ndarray]:
+    """Paper D.7: old-Z read, continuity, held-source scalar ODE solution.
+
+    No production carrier, source, continuity or scalar-ZOH routine is called.
+    The dense C evaluator independently implements the fixed-h paper equations.
+    This nonloop fixture has overlap 1 on diagonal and 1/2 per common endpoint.
+    """
+    ref = inputs.geometry.reference
+    assert isinstance(ref.profile.params_resolved.candidate, CandidateCParams)
+    assert isinstance(ref.profile.params_resolved.realization, PCParams)
+    point = dense_current_oracle(inputs)
+    b = np.array(ref.graph.incidence)
+    lowered = np.linalg.solve(
+        np.array(inputs.geometry.one_form_hodge.matrix), point["read"]
+    )
+    overlap = abs(b).T @ abs(b) / 2
+    zeta = ref.profile.params_resolved.candidate.zeta_C
+    source = np.array(
+        [
+            [
+                float(
+                    Fraction(zeta)
+                    * Fraction(float(a))
+                    * Fraction(float(x))
+                    * Fraction(float(y))
+                )
+                for a, y in zip(row, lowered, strict=True)
+            ]
+            for row, x in zip(overlap, lowered, strict=True)
+        ]
+    )
+    resource = np.array(
+        [
+            float(
+                Fraction(c)
+                - Fraction(inputs.dt)
+                * sum(
+                    (
+                        Fraction(float(a)) * Fraction(float(j))
+                        for a, j in zip(row, point["current"], strict=True)
+                    ),
+                    Fraction(),
+                )
+            )
+            for c, row in zip(inputs.current.C, b, strict=True)
+        ]
+    )
+    assert inputs.current.Z_4 is not None
+    with localcontext() as context:
+        context.prec = 150
+        a = (
+            -Decimal.from_float(inputs.dt)
+            / Decimal.from_float(ref.profile.params_resolved.realization.tau_PC)
+        ).exp()
+        z = tuple(
+            float(a * Decimal.from_float(old) + (1 - a) * Decimal.from_float(float(s)))
+            for old, s in zip(inputs.current.Z_4, source.flat, strict=True)
+        )
+    return resource, z, source
 
 
 def policy(**changes: Any) -> GRC9SparkPolicy:
@@ -948,6 +1084,12 @@ class NativeCOSEventTests(unittest.TestCase):
         )
         self.committed()
         checkpoint = self.owner.checkpoint()
+        # Recorded by executing the accepted eeb82e9 owner against this exact
+        # fixture; the C_PC sharing refactor must preserve all C_OS wire bytes.
+        self.assertEqual(
+            hashlib.sha256(checkpoint).hexdigest(),
+            "b87595b68e6a344b17062de0df5b44fd498780ed3121233e33c27cfbed8b78f4",
+        )
         self.assertEqual(GRC9V4COSOperation.replay(checkpoint).checkpoint(), checkpoint)
         mutations: tuple[Any, ...] = (
             lambda d: d["state"]["inputs"]["current"]["C"].__setitem__(0, 123),
@@ -1538,6 +1680,550 @@ class NativeCOSEventTests(unittest.TestCase):
             self.assertEqual(observations, [backend, backend])
             checkpoints.append(owner.checkpoint())
         self.assertEqual(checkpoints[0], checkpoints[1])
+
+
+class NativeCPCEventTests(unittest.TestCase):
+    backend: ExactBackend
+    seed: GRC9V4CPCState
+    request: GRC9V4ExpansionRequestInput
+    initial: GeometryStageInputs
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.backend = (
+            ExactBackend.FLINT
+            if importlib.util.find_spec("flint")
+            else ExactBackend.PYTHON
+        )
+        with exact_backend(cls.backend):
+            cls.seed, cls.request, cls.initial = native_cpc_fixture()
+
+    def setUp(self) -> None:
+        scope = exact_backend(self.backend)
+        scope.__enter__()
+        self.addCleanup(scope.__exit__, None, None, None)
+        self.owner = GRC9V4CPCOperation(self.seed)
+
+    def committed(self) -> Any:
+        result = self.owner.expand(self.request)
+        self.assertTrue(result.committed, result.failure)
+        return result
+
+    def test_actual_whole_role_archives_zero_target_and_separate_loss_receipts(
+        self,
+    ) -> None:
+        result = self.committed()
+        before, after = self.seed, self.owner.state
+        self.assertNotEqual(before.inputs.current.Z_4, self.initial.current.Z_4)
+        self.assertEqual(before.inputs.reset, self.initial.reset)
+        self.assertNotEqual(before.inputs.current.Z_4, before.inputs.reset.Z_4)
+        self.assertTrue(any(cast(tuple[float, ...], before.inputs.current.Z_4)))
+        self.assertTrue(any(cast(tuple[float, ...], before.inputs.reset.Z_4)))
+        archive = self.owner.carrier_archives[0].to_dict()
+        source = before.inputs.geometry.reference.graph
+        target = after.inputs.geometry.reference.graph
+        self.assertEqual(archive["source_edge_ids"], list(source.live_edge_ids))
+        self.assertEqual(archive["source_state_digest"], before.scientific_digest)
+        self.assertEqual(archive["source_graph_digest"], source.graph_digest)
+        content = {
+            "schema_version": "grcv4-history-content-identity-v1",
+            "subject": "carrier",
+            "content": list(
+                cast(tuple[float, ...], before.inputs.current.Z_4)
+                + cast(tuple[float, ...], before.inputs.reset.Z_4)
+            ),
+        }
+        self.assertEqual(archive["history_content"], content)
+        self.assertEqual(
+            archive["history_digest"],
+            payload_identity("history_content_identity_payload", content),
+        )
+        primary = result.emitted_receipts[0].identity_payload.to_dict()
+        self.assertEqual(
+            primary["history"]["carrier"]["source_history_digest"],
+            archive["history_digest"],
+        )
+        expected_zero = {
+            **content,
+            "content": [0.0] * (2 * len(target.live_edge_ids) ** 2),
+        }
+        self.assertEqual(
+            primary["history"]["carrier"]["target_history_digest"],
+            payload_identity("history_content_identity_payload", expected_zero),
+        )
+        self.assertEqual(
+            primary["history"]["carrier"]["disposition"], "whole_carrier_reset"
+        )
+        for receipt in result.emitted_receipts:
+            self.assertEqual(
+                receipt.identity_payload["core"]["information_losses"],
+                ("carrier_history_loss",),
+            )
+        self.assertEqual(
+            result.emitted_receipts[2].identity_payload["information_loss"], "none"
+        )
+        self.assertEqual(
+            result.emitted_receipts[3].identity_payload["information_loss"],
+            "carrier_history_loss",
+        )
+        self.assertEqual(primary["history"]["candidate"]["disposition"], "rederived")
+        self.assertIsNone(primary["history"]["candidate"]["source_history_digest"])
+        self.assertIsNone(primary["history"]["candidate"]["target_history_digest"])
+        self.assertEqual(primary["core"]["target_model_identity"], after.model_identity)
+        self.assertEqual(primary["core"]["target_reset_digest"], after.reset_digest)
+        self.assertEqual(primary["core"]["actual_charge_delta"], 0)
+        self.assertNotEqual(after.model_identity, before.model_identity)
+        self.assertNotEqual(after.reset_digest, before.reset_digest)
+        for state in (before, after):
+            self.assertNotIn(
+                state.inputs.geometry.reference.profile.complete_profile_id,
+                list_supported_profiles(),
+            )
+        self.assertEqual(
+            (after.inputs.time, after.inputs.step_index, after.inputs.Q_target),
+            (before.inputs.time, before.inputs.step_index, before.inputs.Q_target),
+        )
+        self.assertEqual(
+            after.inputs.geometry, after.inputs.geometry.reference.geometry()
+        )
+        self.assertEqual(
+            after.inputs.geometry.reference.profile.params_resolved.realization,
+            before.inputs.geometry.reference.profile.params_resolved.realization,
+        )
+        for old, new in (
+            (before.inputs.current, after.inputs.current),
+            (before.inputs.reset, after.inputs.reset),
+        ):
+            self.assertEqual(new.Z_4, (0.0,) * len(target.live_edge_ids) ** 2)
+            self.assertIsNone(new.W_A)
+            for node, value in zip(target.live_node_ids, new.C, strict=True):
+                if isinstance(node, int):
+                    expected = old.C[node]
+                elif "/satellite/" in node:
+                    expected = float(
+                        Fraction(old.C[0])
+                        * (Fraction(1, 2) if node.endswith("/1") else Fraction(1, 4))
+                    )
+                else:
+                    expected = 0.0
+                self.assertEqual(value, expected)
+        for e in source.live_edge_ids:
+            self.assertEqual(
+                after.inputs.geometry.reference.edge_weights[e],
+                before.inputs.geometry.reference.edge_weights[e],
+            )
+        for e in set(target.live_edge_ids) - set(source.live_edge_ids):
+            self.assertEqual(after.inputs.geometry.reference.edge_weights[e], 1)
+
+    def assert_independent_step(
+        self, inputs: GeometryStageInputs
+    ) -> GeometryStageInputs:
+        ref = inputs.geometry.reference
+        size = len(ref.graph.live_edge_ids)
+        assert inputs.current.Z_4 is not None
+        weights = ref.edge_weights
+        # Exact represented affine Hodge, including off-diagonal old carrier.
+        expected_h = [
+            [
+                float(
+                    Fraction(cast(float, weights[e])) * int(i == j)
+                    + Fraction(ref.profile.params_resolved.geometry.kappa_H)
+                    * Fraction(inputs.current.Z_4[i * size + j])
+                )
+                for j in range(size)
+            ]
+            for i, e in enumerate(ref.graph.live_edge_ids)
+        ]
+        np.testing.assert_array_equal(inputs.geometry.one_form_hodge.matrix, expected_h)
+        resource, carrier, source = independent_pc_beat(inputs)
+        step = ProvisionalCandidatePCStep(inputs)
+        np.testing.assert_allclose(
+            step.read.point.current.values,
+            dense_current_oracle(inputs)["current"],
+            rtol=3e-12,
+            atol=3e-12,
+        )
+        np.testing.assert_allclose(
+            step.read.structural_source.increment, source, rtol=3e-12, atol=3e-20
+        )
+        np.testing.assert_allclose(
+            step.next_inputs.current.C, resource, rtol=3e-12, atol=3e-12
+        )
+        assert step.next_inputs.current.Z_4 is not None
+        np.testing.assert_allclose(
+            np.array(step.next_inputs.current.Z_4),
+            np.array(carrier),
+            rtol=3e-12,
+            atol=3e-20,
+        )
+        self.assertEqual(step.carrier_writes, 1)
+        self.assertEqual(step.next_inputs.reset, inputs.reset)
+        return step.next_inputs
+
+    def test_independent_source_schedule_both_role_continuation_and_delayed_geometry(
+        self,
+    ) -> None:
+        source = self.assert_independent_step(self.initial)
+        self.assertEqual(source.current, self.seed.inputs.current)
+        self.assertEqual(source.reset, self.seed.inputs.reset)
+        self.committed()
+        base = self.owner.state.inputs
+        for role in (base.current, base.reset):
+            with self.subTest(reset=role == base.reset):
+                inputs = replace(base, current=role, dt=1 / 4096)
+                self.assertEqual(inputs.geometry, inputs.geometry.reference.geometry())
+                for i in range(10):
+                    inputs = self.assert_independent_step(inputs)
+                    self.assertTrue(any(cast(tuple[float, ...], inputs.current.Z_4)))
+                    self.assertNotEqual(
+                        inputs.geometry, inputs.geometry.reference.geometry()
+                    )
+                native._cpc_readmit(
+                    replace(self.owner.state, inputs=replace(inputs, dt=0))
+                )
+                # The zero old-carrier entry has no geometry/history effect.
+                # After formation and ten writes, old Z changes the next read.
+                zero = replace(
+                    inputs.current,
+                    Z_4=(0.0,) * len(cast(tuple[float, ...], inputs.current.Z_4)),
+                )
+                control = replace(
+                    inputs, current=zero, geometry=inputs.geometry.reference.geometry()
+                )
+                actual = np.array(CandidatePCRead(inputs).point.current.values)
+                other = np.array(CandidatePCRead(control).point.current.values)
+                truth, control_truth = (
+                    dense_current_oracle(inputs)["current"],
+                    dense_current_oracle(control)["current"],
+                )
+                error = max(abs(actual - truth)) + max(abs(other - control_truth))
+                ulp = max(math.ulp(float(x)) for x in (*actual, *other))
+                self.assertGreater(float(max(abs(actual - other))), 4 * error + 8 * ulp)
+
+    def test_zero_duration_admission_never_writes_or_advances(self) -> None:
+        before = self.seed.to_payload()
+        with patch.object(
+            native, "ProvisionalCandidatePCStep", wraps=ProvisionalCandidatePCStep
+        ) as probe:
+            native._cpc_readmit(self.seed)
+        self.assertEqual(probe.call_args.args[0].dt, 0)
+        self.assertEqual(self.seed.to_payload(), before)
+        zero_step = ProvisionalCandidatePCStep(replace(self.seed.inputs, dt=0))
+        self.assertEqual(zero_step.carrier_writes, 0)
+        self.assertEqual(zero_step.next_inputs.current, self.seed.inputs.current)
+        self.assertEqual(zero_step.next_inputs.reset, self.seed.inputs.reset)
+        at_limit = replace(
+            self.seed,
+            inputs=replace(self.seed.inputs, step_index=2**53 - 1, time=2**52),
+        )
+        owner = GRC9V4CPCOperation(at_limit)
+        result = owner.expand(
+            replace(self.request, source_state_digest=at_limit.scientific_digest)
+        )
+        self.assertTrue(result.committed, result.failure)
+        self.assertEqual(owner.state.inputs.time, at_limit.inputs.time)
+        self.assertEqual(owner.state.inputs.step_index, at_limit.inputs.step_index)
+
+    def test_checkpoint_replays_complete_archives_and_rejects_tampering(self) -> None:
+        self.committed()
+        checkpoint = self.owner.checkpoint()
+        restored = GRC9V4CPCOperation.replay(checkpoint)
+        self.assertEqual(restored.checkpoint(), checkpoint)
+        exported = self.owner.carrier_archives[0].to_dict()
+        cast(Any, exported["history_content"])["content"][0] += 1
+        self.assertEqual(self.owner.checkpoint(), checkpoint)
+        for mutation in (
+            "missing",
+            "content",
+            "order",
+            "digest",
+            "reset",
+            "policy",
+            "target",
+            "loss",
+        ):
+            data = json.loads(checkpoint)
+            archive = data["carrier_archives"][0]
+            if mutation == "missing":
+                data["carrier_archives"] = []
+            elif mutation == "content":
+                archive["history_content"]["content"][0] += 1 / 256
+                archive["history_digest"] = payload_identity(
+                    "history_content_identity_payload", archive["history_content"]
+                )
+            elif mutation == "order":
+                archive["source_edge_ids"].reverse()
+            elif mutation == "digest":
+                archive["source_state_digest"] = "grcv4-state-sha256:" + "0" * 64
+            elif mutation == "reset":
+                archive["history_content"]["content"][-1] *= -1
+            elif mutation == "policy":
+                data["requests"][0]["history_policy"]["carrier"]["information_loss"] = (
+                    "none"
+                )
+            elif mutation == "target":
+                data["state"]["inputs"]["current"]["Z_4"][0] = 1 / 256
+            else:
+                data["receipts"][0]["identity_payload"]["core"][
+                    "information_losses"
+                ] = []
+            with (
+                self.subTest(mutation=mutation),
+                self.assertRaises((ValueError, TypeError)),
+            ):
+                GRC9V4CPCOperation.replay(canonical_json_bytes(data))
+        with self.assertRaises(ValueError):
+            GRC9V4COSOperation.replay(checkpoint)
+        with self.assertRaises(TypeError):
+            GRC9V4COSOperation(self.seed)
+        cos, _ = native_cos_fixture()
+        with self.assertRaises(TypeError):
+            GRC9V4CPCOperation(cos)
+
+    def test_history_policy_binds_actual_current_and_reset_before_transfer(
+        self,
+    ) -> None:
+        for role in ("current", "reset"):
+            authority = getattr(self.seed.inputs, role)
+            z = list(authority.Z_4)
+            z[-1] += 1 / 256
+            inputs = replace(
+                self.seed.inputs, **{role: replace(authority, Z_4=tuple(z))}
+            )
+            inputs = replace(inputs, geometry=carrier_geometry(inputs, inputs.current))
+            seed = replace(self.seed, inputs=inputs)
+            owner = GRC9V4CPCOperation(seed)
+            checkpoint = owner.checkpoint()
+            # A fresh scientific digest is insufficient: the independently bound
+            # request carrier digest must also describe this actual role pair.
+            request = replace(self.request, source_state_digest=seed.scientific_digest)
+            with patch.object(
+                native,
+                "GRC9V4ExpansionPlan",
+                side_effect=AssertionError("must not allocate"),
+            ):
+                result = owner.expand(request)
+            self.assertFalse(result.committed)
+            assert result.failure is not None
+            self.assertIn("actual whole carrier pair", result.failure.message)
+            self.assertEqual(owner.checkpoint(), checkpoint)
+        for field, value in (
+            ("policy_id", "identity_carrier_history_v1"),
+            ("target_initializer_id", None),
+            ("information_loss", "none"),
+            ("disposition", "not_applicable"),
+        ):
+            policy: Any = self.request.to_payload()["history_policy"]
+            policy["carrier"][field] = value
+            if field == "disposition":
+                policy["carrier"].update(
+                    source_history_digest=None,
+                    target_initializer_id=None,
+                    information_loss="none",
+                )
+            policy["carrier_history_policy_digest"] = payload_identity(
+                "history_channel_policy_identity_payload",
+                {
+                    "schema_version": "grcv4-history-channel-policy-identity-v1",
+                    "policy": policy["carrier"],
+                },
+            )
+            checkpoint = self.owner.checkpoint()
+            result = self.owner.expand(replace(self.request, history_policy=policy))
+            self.assertFalse(result.committed)
+            self.assertEqual(self.owner.checkpoint(), checkpoint)
+
+    def test_target_whole_chart_failure_rejects_even_with_regular_zero_carrier_point(
+        self,
+    ) -> None:
+        data = self.seed.specialization.to_payload()
+        data["resolved"]["expansion"]["bond_seed"] = 2
+        data["identity_payload"]["specialization_params_hash"] = payload_identity(
+            "resolved_specialization", data["resolved"]
+        )
+        spec = GRC9V4Specialization(
+            FrozenJSONMap(data["resolved"]), FrozenJSONMap(data["identity_payload"])
+        )
+        seed = replace(self.seed, specialization=spec)
+        request = replace(
+            self.request,
+            source_state_digest=seed.scientific_digest,
+            target_specialization_id=spec.specialization_id,
+        )
+        owner = GRC9V4CPCOperation(seed)
+        graph = seed.inputs.geometry.reference.graph.port_graph
+        assert graph is not None
+        plan = GRC9V4ExpansionPlan(
+            graph,
+            seed.scientific_digest,
+            request,
+            GRC9ExpansionPolicy.from_payload(spec.resolved["expansion"]),
+        )
+        target = GRC9V4CPCExpansion(
+            plan, seed.inputs.geometry.reference, seed.inputs.current, seed.inputs.reset
+        )
+        inputs = replace(
+            seed.inputs,
+            geometry=target.target.geometry(),
+            current=target.transfer(seed.inputs.current),
+            reset=target.transfer(seed.inputs.reset),
+        )
+        for role in (inputs.current, inputs.reset):
+            # A point solve and zero carrier radius check alone would pass.
+            CandidateCCurrent(replace(inputs, current=role))
+            self.assertFalse(any(cast(tuple[float, ...], role.Z_4)))
+        checkpoint = owner.checkpoint()
+        result = owner.expand(request)
+        self.assertFalse(result.committed)
+        assert result.failure is not None
+        self.assertEqual(result.failure.code, "target_readmission_failure")
+        self.assertIn("uniform source envelope", result.failure.message)
+        self.assertEqual(
+            result.failure.prestate_digest, result.failure.poststate_digest
+        )
+        self.assertEqual(
+            result.failure.pre_lifecycle_digest, result.failure.post_lifecycle_digest
+        )
+        self.assertEqual(owner.checkpoint(), checkpoint)
+        self.assertEqual(owner.carrier_archives, ())
+        self.assertEqual(owner.receipts, ())
+
+    def test_source_current_and_reset_carrier_domains_are_independent(self) -> None:
+        for role in ("current", "reset"):
+            for failure in ("radius", "symmetry", "absent"):
+                authority = getattr(self.seed.inputs, role)
+                z = list(authority.Z_4)
+                if failure == "radius":
+                    z[0] = 2
+                elif failure == "symmetry":
+                    z[1] += 1 / 256
+                with (
+                    self.subTest(role=role, failure=failure),
+                    self.assertRaises(ValueError),
+                ):
+                    inputs = replace(
+                        self.seed.inputs,
+                        **{
+                            role: replace(
+                                authority, Z_4=None if failure == "absent" else tuple(z)
+                            )
+                        },
+                    )
+                    inputs = replace(
+                        inputs, geometry=carrier_geometry(inputs, inputs.current)
+                    )
+                    GRC9V4CPCOperation(replace(self.seed, inputs=inputs))
+        with self.assertRaisesRegex(ValueError, "realization geometry"):
+            replace(
+                self.seed,
+                inputs=replace(
+                    self.seed.inputs,
+                    geometry=self.seed.inputs.geometry.reference.geometry(),
+                ),
+            )
+
+    def test_both_resource_failures_and_late_archive_receipt_failures_publish_nothing(
+        self,
+    ) -> None:
+        checkpoint = self.owner.checkpoint()
+        transfer = GRC9V4CPCExpansion.transfer
+        for failing in (self.seed.inputs.current, self.seed.inputs.reset):
+
+            def corrupted(target: Any, state: Any, failing: Any = failing) -> Any:
+                mapped = transfer(target, state)
+                return (
+                    replace(mapped, C=(mapped.C[0] + 1, *mapped.C[1:]))
+                    if state == failing
+                    else mapped
+                )
+
+            with patch.object(GRC9V4CPCExpansion, "transfer", corrupted):
+                result = self.owner.expand(self.request)
+            self.assertFalse(result.committed)
+            self.assertEqual(self.owner.checkpoint(), checkpoint)
+        for target, attr in (
+            (GRC9V4CPCExpansion, "carrier_archive_payload"),
+            (native, "make_commit_receipts"),
+        ):
+            with patch.object(
+                target, attr, side_effect=ValueError("late publication failure")
+            ):
+                result = self.owner.expand(self.request)
+            self.assertFalse(result.committed)
+            self.assertEqual(self.owner.checkpoint(), checkpoint)
+            self.assertEqual(self.owner.carrier_archives, ())
+            self.assertEqual(self.owner.receipts, ())
+        self.committed()
+        self.assertEqual(len(self.owner.carrier_archives), 1)
+        self.assertEqual(len(self.owner.receipts), 4)
+
+    def test_concurrent_requests_archive_and_publish_exactly_once(self) -> None:
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(self.owner.expand, (self.request, self.request)))
+        self.assertEqual(sum(r.committed for r in results), 1)
+        self.assertEqual(len(self.owner.carrier_archives), 1)
+        self.assertEqual(len(self.owner.receipts), 4)
+
+    def test_present_zero_source_carriers_still_use_explicit_reset_policy(self) -> None:
+        zeros = (0.0,) * 81
+        inputs = replace(
+            self.seed.inputs,
+            geometry=self.seed.inputs.geometry.reference.geometry(),
+            current=replace(self.seed.inputs.current, Z_4=zeros),
+            reset=replace(self.seed.inputs.reset, Z_4=zeros),
+        )
+        seed = replace(self.seed, inputs=inputs)
+        owner = GRC9V4CPCOperation(seed)
+        result = owner.expand(
+            replace(
+                self.request,
+                source_state_digest=seed.scientific_digest,
+                history_policy=cpc_history_policy(inputs.current, inputs.reset),
+            )
+        )
+        self.assertTrue(result.committed, result.failure)
+        history = cast(Any, result.emitted_receipts[0].identity_payload)["history"][
+            "carrier"
+        ]
+        self.assertEqual(history["disposition"], "whole_carrier_reset")
+        self.assertEqual(history["information_loss"], "carrier_history_loss")
+        self.assertIsNotNone(history["source_history_digest"])
+        self.assertNotEqual(
+            history["source_history_digest"], history["target_history_digest"]
+        )
+        self.assertEqual(
+            cast(Any, owner.carrier_archives[0])["history_content"]["content"],
+            zeros + zeros,
+        )
+
+    @unittest.skipUnless(importlib.util.find_spec("flint"), "optional FLINT backend")
+    def test_python_flint_checkpoint_parity_and_captured_backend(self) -> None:
+        checkpoints = []
+        for backend in (ExactBackend.PYTHON, ExactBackend.FLINT):
+            with exact_backend(backend):
+                owner = GRC9V4CPCOperation(self.seed)
+            observations: list[ExactBackend] = []
+            readmit = native._cpc_readmit
+
+            def observed(
+                state: GRC9V4CPCState,
+                observations: list[ExactBackend] = observations,
+                readmit: Callable[[GRC9V4CPCState], None] = readmit,
+            ) -> None:
+                observations.append(current_exact_backend())
+                readmit(state)
+
+            other = (
+                ExactBackend.FLINT
+                if backend is ExactBackend.PYTHON
+                else ExactBackend.PYTHON
+            )
+            with exact_backend(other), patch.object(native, "_cpc_readmit", observed):
+                result = owner.expand(self.request)
+            self.assertTrue(result.committed, result.failure)
+            self.assertEqual(observations, [backend, backend])
+            checkpoints.append(owner.checkpoint())
+        self.assertEqual(*checkpoints)
 
 
 if __name__ == "__main__":

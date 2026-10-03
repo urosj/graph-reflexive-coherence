@@ -1634,6 +1634,12 @@ def leaf_permissions(root):
     for name in COS_PATHS:
         require(name in owners, 'C_OS integration outside reviewed runtime roster')
         owners[name] = owners[name] | {cos_entry}
+    from phase9_specialization_acceptance import cpc_authorization, CPC_PATHS
+    cpc_entry = cpc_authorization(root)
+    ready = sorted(set(ready) | {cpc_entry})
+    for name in CPC_PATHS:
+        require(name in owners, 'C_PC integration outside reviewed runtime roster')
+        owners[name] = owners[name] | {cpc_entry}
     return ready, owners
 
 
@@ -1852,6 +1858,7 @@ def work_entries(root, approval):
         coarse_authorization, coarse_permitted,
         backend_authorization, backend_permitted,
         allocator_authorization, allocator_permitted, cos_authorization, cos_permitted,
+        cpc_authorization, cpc_permitted,
     )
     g3 = accepted_g3(root)
     row_entry = row_bridge_authorization(root)
@@ -1860,10 +1867,12 @@ def work_entries(root, approval):
     backend_entry = backend_authorization(root)
     allocator_entry = allocator_authorization(root)
     cos_entry = cos_authorization(root)
+    cpc_entry = cpc_authorization(root)
     def g3_permitted(name, leaf):
         return (permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
-                or backend_permitted(name, leaf) or allocator_permitted(name, leaf) or cos_permitted(name, leaf))
+                or backend_permitted(name, leaf) or allocator_permitted(name, leaf)
+                or cos_permitted(name, leaf) or cpc_permitted(name, leaf))
     leaves.update(g3['new_runtime_iterations_authorized'])
     leaves.add(row_entry)
     leaves.add(trigger_entry)
@@ -1871,6 +1880,7 @@ def work_entries(root, approval):
     leaves.add(backend_entry)
     leaves.add(allocator_entry)
     leaves.add(cos_entry)
+    leaves.add(cpc_entry)
     require(
         value["accepted_generic_runtime_support"] == accepted_generic_support(root)
         and value["admitted_specialization_support_sets"] == g3['admitted_specialization_support_sets'],

@@ -815,5 +815,99 @@ class COSReconstructionTests(unittest.TestCase):
                 target.transfer(GRCV4AuthoritativeState((1.0,) * 10, (1.0,) * 9, None))
 
 
+class CPCReconstructionTests(unittest.TestCase):
+    def test_frozen_carrier_policy_and_content_preimages_are_reproduced(self) -> None:
+        from pygrc.models.grc_9_v4_expansion import (
+            carrier_content_payload,
+            cpc_history_policy,
+        )
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+
+        vectors = json.loads(
+            (ROOT / "specs/grc-v4-conformance-vectors.json").read_text()
+        )
+        vector = next(
+            v
+            for v in vectors["grc9_expansion_vectors"]
+            if v["fixture_id"] == "G9-EXPAND-C-PC-CARRIER-RESET"
+        )
+        # The frozen vector's two content tokens exercise the identity codec;
+        # they are not a 9x9 current/reset numerical carrier fixture.
+        current = GRCV4AuthoritativeState((3,), None, (0.5,))
+        reset = GRCV4AuthoritativeState((2,), None, (-0.25,))
+        policy = cpc_history_policy(current, reset)
+        self.assertEqual(policy, vector["request"]["history_policy"])
+        content = carrier_content_payload(current, reset)
+        self.assertEqual(content["content"], vector["expected"]["source_carrier"])
+        # Literal ASCII JCS is unambiguous for these finite dyadic tokens.
+        encoded = b'{"content":[0.5,-0.25],"schema_version":"grcv4-history-content-identity-v1","subject":"carrier"}'
+        self.assertEqual(
+            "grcv4-history-content-sha256:" + hashlib.sha256(encoded).hexdigest(),
+            vector["expected"]["source_carrier_digest"],
+        )
+        target = carrier_content_payload(
+            replace(current, Z_4=(0.0,)), replace(reset, Z_4=(0.0,))
+        )
+        self.assertEqual(
+            payload_identity("history_content_identity_payload", target),
+            vector["expected"]["target_carrier_digest"],
+        )
+
+    def test_native_cpc_resource_reference_and_carrier_transfer_is_closed(self) -> None:
+        from pygrc.models.grc_9_v4_expansion import (
+            GRC9V4CPCExpansion,
+            cpc_history_policy,
+        )
+        from tests.models.test_grc_9_v4_lifecycle import native_cpc_fixture
+
+        backend = (
+            ExactBackend.FLINT
+            if importlib.util.find_spec("flint")
+            else ExactBackend.PYTHON
+        )
+        with exact_backend(backend):
+            seed, request, _ = native_cpc_fixture()
+            graph = seed.inputs.geometry.reference.graph.port_graph
+            assert graph is not None
+            plan = GRC9V4ExpansionPlan(
+                graph,
+                seed.scientific_digest,
+                request,
+                GRC9ExpansionPolicy.from_payload(
+                    seed.specialization.resolved["expansion"]
+                ),
+            )
+            target = GRC9V4CPCExpansion(
+                plan,
+                seed.inputs.geometry.reference,
+                seed.inputs.current,
+                seed.inputs.reset,
+            )
+            source_params: Any = target.source.profile.params_resolved.to_payload()
+            expected: Any = target.target.profile.params_resolved.to_payload()
+            for key in ("W_C_tr", "W_C_tr_content_digest"):
+                source_params["candidate"][key] = expected["candidate"][key]
+            for key in ("K4_base_digest", "reference_hodge_digest"):
+                source_params["geometry"][key] = expected["geometry"][key]
+            self.assertEqual(source_params, expected)
+            with self.assertRaises(FrozenInstanceError):
+                target.source_current = seed.inputs.reset  # type: ignore[misc]
+            with self.assertRaisesRegex(ValueError, "bound source roles"):
+                target.transfer(
+                    replace(seed.inputs.current, C=(4.0, *seed.inputs.current.C[1:]))
+                )
+            with self.assertRaisesRegex(ValueError, "coordinates mismatch"):
+                pair = (
+                    replace(seed.inputs.current, Z_4=(0.5,)),
+                    replace(seed.inputs.reset, Z_4=(-0.25,)),
+                )
+                altered = replace(request, history_policy=cpc_history_policy(*pair))
+                small = replace(plan, request=altered)
+                GRC9V4CPCExpansion(small, seed.inputs.geometry.reference, *pair)
+            archive = target.carrier_archive_payload()
+            archive["history_content"]["content"][0] = 99
+            self.assertNotEqual(archive, target.carrier_archive_payload())
+
+
 if __name__ == "__main__":
     unittest.main()
