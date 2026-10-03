@@ -2,45 +2,53 @@
 
 ## Current continuation — 2026-10-03
 
-The user requests A_CI+PC (written "A_CI+CP") after accepting and committing
-C_CI+PC at `571f65d`. A.1 independent oracle construction and bounded own
-review are complete; **oracle acceptance is pending and A.2 is unstarted**.
-The checklist's "Review and accept before runtime comparison" gate applies
-to this separately declared native scope.
+The user requested "commit first, then continue with A_CI+PC". The pending
+P9-8.3 graph-size/configuration guide scheduling change was committed first at
+`a47f360`. The instruction accepts the previously reviewed A.1 scope for
+runtime continuation; its four unchanged oracle/review/producer/test subjects
+remain pinned to `1711923`. A.2 runtime integration and bounded own review are
+complete and **separately user-accepted on 2026-10-03** ("accept and commit").
+The A_CI_PC completion row is closed for this bounded native scope. The
+remaining C_RG2b/A_RG2b rows and the scheduled documentation closeout stay open.
 
-Five content-specific checkpoints cover the composite B_2R proof, coupled
-root/two-writer source stages, independent event/history/continuation
-expectations, adversarial scientific review, and the closed A.2 handoff.
-The proposed chart retains R=2048, M=16 and W in [1/2,513/512], but halves
-kappa_H to 2^-15 so rho=1/8 covers both old Z and the instantaneous source.
-Uniform source/target source bounds are below 1425/507 with strict slack;
-root contraction bounds are below 0.141/0.050. The accepted PC-only chart and
-older local research scope remain unchanged and do not authorize this fixture.
+Three content-specific checkpoints cover the closed fixed-row composite
+proof/replay bridge, atomic two-role W/Z event integration, and independent
+scientific/adversarial pressure. The accepted chart is R=2048, M=16,
+W in [1/2,513/512], kappa_H=2^-15 and rho=1/8. ExactScalar proof bounds cover
+the full composite image, with strict source slack, self-map and root
+contraction. The native confirming-root numerical recipe is explicitly bound;
+existing WLS/C/A_CI recipes retain their behavior and identities.
 
-All 25 independent interval comparisons and 32 full-error/ULP effects pass,
-with minimum effect margin about 3.947. The 24 pressure methods include full
-chart outliers, frozen trial conductance, PC substitution, fixed-old-Z and
-same-root-source timing, exact archive stages, signed covariance and a valid
-event with independently certified next-step resource negativity. All five
-unchanged carrier-companion methods and twelve existing D11 side-tool checks
-pass. Eight provenance traces retain their bounded/indeterminate dispositions.
+The event preserves exact old-edge W with unit new-edge seeds, archives both
+complete actual source Z tensors and resets both complete target tensors.
+Both source/target roles undergo fresh root and writer-surface admission at
+zero duration. State, receipts, archives and reference-current evidence
+publish atomically and replay through the closed native owner.
 
-See the [A_CI+PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
-and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json).
-After acceptance, A.2 must extend the closed fixed-row composite current,
-envelope/root certificates and replay owners using ExactScalar, then integrate
-both-role W/Z event channels and test atomic failure/continuation against this
-pinned oracle. No native composite A numerical execution, new runtime
-authorization or public support is claimed by A.1. The remaining RG rows and
-end-of-tranche cache review remain open.
+Independent paper/interval checks cover 49 full numerical comparisons across
+source reads, the actual source beat and both target-entry continuation paths.
+All 32 effect controls and 24 chart-corner roots pass. The 25 native pressure
+methods include real current and reset-only target iteration failures,
+frozen-reference-conductance rejection, same-root source/two-writer timing,
+exact archive stages, signed covariance, replay attacks and valid events with
+certified negative next resource steps. Unchanged A.1/carrier-companion and
+shared runtime regressions, the twelve existing D11 side-tool checks, static
+checks and phase-boundary validation are retained with the review.
 
-The A_CI+PC A.1 oracle work is committed at `1711923`. The user requests a
-[graph-size and configuration/admission guide](./Phase-9-GRCV4-ImplementationPlan.md#end-of-p9-83-graph-size-and-configuration-guide)
-as the P9-8.3 documentation closeout, after its profile work and before
-starting P9-8.4. The new unchecked checklist task separates numerical graph
-coverage from allocator coverage, explains configurable parameters and
-immutable identities, and documents the practical automated admission path
-and current usage gaps. It grants no larger-graph support or oracle acceptance.
+See the [A_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-RuntimeReview.md),
+[portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-Validation.json)
+and [A.1 acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json).
+The pinned [A.1 review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
+retains its historical pre-runtime disposition; the acceptance record and
+appended validation metadata record its subsequent acceptance. No public
+support, arbitrary-graph coverage or indefinite positivity is claimed.
+
+The [graph-size and configuration/admission guide](./Phase-9-GRCV4-ImplementationPlan.md#end-of-p9-83-graph-size-and-configuration-guide)
+remains the unchecked P9-8.3 closeout after its remaining RG profile work and
+before P9-8.4. It separates numerical coverage from allocator coverage,
+explains configurable parameters and immutable identities, and documents the
+practical automated admission path and current usage gaps. The end-of-tranche
+cache review also remains open.
 
 The preceding user request was C_CI+PC after accepting and committing A_PC runtime at
 `5966746`. P9-8.3C-CI-PC now integrates C/Z authority, reference-root restart

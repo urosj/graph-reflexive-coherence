@@ -417,3 +417,33 @@ def ccipc_authorization(root):
 
 def ccipc_permitted(path, leaf):
     return leaf == CCIPC_ENTRY and path in CCIPC_PATHS
+
+
+ACIPC_ENTRY = "P9-8.3A.2"
+ACIPC_PATHS = ('src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_pc.py', 'src/pygrc/models/grc_v4_ci.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_apc.py', 'tests/models/test_grc_9_v4_acipc.py')
+ACIPC_NEW_PATHS = ("tests/models/test_grc_9_v4_acipc.py",)
+ACIPC_G2 = "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689"
+ACIPC_PREDECESSOR = '171192344bac3ab1750c7e5b0667cb571a7142cd'
+ACIPC_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json'
+ACIPC_ACCEPTANCE_SHA = '4447c640b9a7e619caf3876aaf4276dad6b7d26771994fd0bc5d43805a30a6c3'
+ACIPC_ORACLE_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Oracle.json': 'e34243fd149d4f4cccc720232a3d7d2ac92b04a7e16059e8adf04f839c2a7238', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md': 'a8583b21c180f813e4658a2cee70e409540eedd13c5dc8fdcb17db8df9a274ec', 'implementation/phase-9-grcv4/verification/verify_p983a_acipc_oracle.py': 'e132b79aba42d4d9ea2d2be49dfdc20a7f06a38f437600c6e35e3445d9b6a781', 'implementation/phase-9-grcv4/verification/test_p983a_acipc_oracle.py': 'e47466fab85a1ca107dc38212e1403c119088c204171e3518a010caa1bdecaba'}
+
+
+def acipc_authorization(root):
+    """User continuation accepts pinned A.1; bounded composite runtime only."""
+    decision = accepted(root)
+    p.require(ACIPC_G2 in decision['accepted_generic_runtime_support'],
+              'A_CI+PC requires its exact G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', ACIPC_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, ACIPC_ACCEPTANCE).read_bytes()) == ACIPC_ACCEPTANCE_SHA,
+              'A_CI+PC requires its unchanged oracle acceptance')
+    for path, expected in ACIPC_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_CI+PC runtime cannot replace accepted oracle subjects')
+        p.require(p.sha(p.git(root, 'show', ACIPC_PREDECESSOR + ':' + path)) == expected,
+                  'A_CI+PC oracle differs from its accepted commit')
+    return ACIPC_ENTRY
+
+
+def acipc_permitted(path, leaf):
+    return leaf == ACIPC_ENTRY and path in ACIPC_PATHS

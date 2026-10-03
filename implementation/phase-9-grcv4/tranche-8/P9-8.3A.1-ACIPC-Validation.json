@@ -156,5 +156,14 @@
     "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
     "exit_code": 0,
     "output": "PHASE9_CHECK_PASS label=unchanged_accepted_release_with_historical_proposal_subject result=P972A_RELEASE_SUBJECT_PASS release_id=grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24\nPHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton scope=current_boundary_only handoff=verified\n"
+  },
+  "acceptance": {
+    "status": "accepted_by_user",
+    "date": "2026-10-03",
+    "user_instruction": "commit first, then continue with A_CI+PC",
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json",
+    "execution_time_disposition_and_scope_preserved": true,
+    "immutable_subjects_unchanged": true,
+    "runtime_accepted": false
   }
 }

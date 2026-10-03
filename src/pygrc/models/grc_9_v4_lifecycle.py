@@ -14,6 +14,7 @@ from typing import Any, ClassVar, Literal, Self, cast
 from .grc_9_v4_expansion import (
     GRC9ExpansionPolicy,
     GRC9V4ACIExpansion,
+    GRC9V4ACIPCExpansion,
     GRC9V4AOSExpansion,
     GRC9V4APCExpansion,
     GRC9V4CCIExpansion,
@@ -283,7 +284,9 @@ class _GRC9V4EventState:
 
     inputs: GeometryStageInputs
     specialization: GRC9V4Specialization
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]]
+    FAMILY: ClassVar[
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+    ]
 
     def __post_init__(self) -> None:
         if (
@@ -304,7 +307,7 @@ class _GRC9V4EventState:
             )
         geometry = (
             reference.geometry()
-            if self.FAMILY in {"C_OS", "A_OS", "C_CI", "A_CI", "C_CI_PC"}
+            if self.FAMILY in {"C_OS", "A_OS", "C_CI", "A_CI", "C_CI_PC", "A_CI_PC"}
             else carrier_geometry(inputs, inputs.current)
         )
         if (
@@ -317,7 +320,7 @@ class _GRC9V4EventState:
             raise ValueError("kernel diagnostic receipts are not a native event ledger")
         if any(x != 0 for row in reference.K4_base for x in row):
             raise ValueError("bounded event scope requires zero structural K4 base")
-        if self.FAMILY in {"A_OS", "A_CI", "A_PC"}:
+        if self.FAMILY in {"A_OS", "A_CI", "A_PC", "A_CI_PC"}:
             backend = GRC9V4CandidateADifferentialReference(reference.graph.port_graph)
             candidate = reference.profile.params_resolved.candidate
             if (
@@ -389,7 +392,7 @@ class GRC9V4COSState(_GRC9V4EventState):
     """Native OS state with no independent carrier authority."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
     ] = "C_OS"
 
 
@@ -398,7 +401,7 @@ class GRC9V4CPCState(_GRC9V4EventState):
     """Native PC state; geometry must derive from current's own committed Z."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
     ] = "C_PC"
 
 
@@ -407,7 +410,7 @@ class GRC9V4AOSState(_GRC9V4EventState):
     """A_OS port owner with distinct current/reset retained W and no carrier."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
     ] = "A_OS"
 
     @property
@@ -422,7 +425,7 @@ class GRC9V4ACIState(_GRC9V4EventState):
     """A_CI authority with distinct W roles and fresh reference-root restart."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
     ] = "A_CI"
 
     @property
@@ -437,8 +440,23 @@ class GRC9V4APCState(_GRC9V4EventState):
     """A_PC authority: independent current/reset W and old committed Z."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
     ] = "A_PC"
+
+    @property
+    def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
+        graph = self.inputs.geometry.reference.graph.port_graph
+        assert graph is not None
+        return GRC9V4CandidateADifferentialReference(graph)
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ACIPCState(_GRC9V4EventState):
+    """Fixed old Z enters a fresh root; both W/Z roles remain authoritative."""
+
+    FAMILY: ClassVar[
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+    ] = "A_CI_PC"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -466,7 +484,9 @@ def _apc_readmit(state: GRC9V4APCState) -> tuple[PhysicalFlux, PhysicalFlux]:
     return probe.read.point.current, probe.reset_read.point.current
 
 
-def _aci_readmit(state: GRC9V4ACIState) -> tuple[PhysicalFlux, PhysicalFlux]:
+def _aci_readmit(
+    state: GRC9V4ACIState | GRC9V4ACIPCState,
+) -> tuple[PhysicalFlux, PhysicalFlux]:
     """Admit both full roots and writer surfaces without a temporal operation."""
     backend = state.differential_reference
     probe = ProvisionalCandidateCIStep(replace(state.inputs, dt=0), backend)
@@ -492,7 +512,7 @@ class GRC9V4CCIState(_GRC9V4EventState):
     """C_CI authority; geometry restarts from reference, never a previous root."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
     ] = "C_CI"
 
 
@@ -501,7 +521,7 @@ class GRC9V4CCIPCState(_GRC9V4EventState):
     """Old Z is fixed root input; restart from reference, never cached root H."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC"]
+        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
     ] = "C_CI_PC"
 
 
@@ -561,7 +581,8 @@ def _event_readmit(
     if type(state) in {GRC9V4CCIState, GRC9V4CCIPCState}:
         assert isinstance(state, (GRC9V4CCIState, GRC9V4CCIPCState))
         return _cci_readmit(state)
-    if type(state) is GRC9V4ACIState:
+    if type(state) in {GRC9V4ACIState, GRC9V4ACIPCState}:
+        assert isinstance(state, (GRC9V4ACIState, GRC9V4ACIPCState))
         return _aci_readmit(state)
     if type(state) is GRC9V4APCState:
         return _apc_readmit(state)
@@ -633,7 +654,8 @@ def _event_receipts(
     target: _GRC9V4CExpansion
     | GRC9V4AOSExpansion
     | GRC9V4ACIExpansion
-    | GRC9V4APCExpansion,
+    | GRC9V4APCExpansion
+    | GRC9V4ACIPCExpansion,
     ledger: tuple[SuccessfulReceiptEnvelope, ...],
 ) -> list[dict[str, Any]]:
     history: dict[str, Any] = dict(
@@ -652,14 +674,19 @@ def _event_receipts(
             )
         },
     )
-    if type(target) in {GRC9V4AOSExpansion, GRC9V4ACIExpansion, GRC9V4APCExpansion}:
+    if type(target) in {
+        GRC9V4AOSExpansion,
+        GRC9V4ACIExpansion,
+        GRC9V4APCExpansion,
+        GRC9V4ACIPCExpansion,
+    }:
         history["candidate"].update(
             disposition="exact_transport",
             source_history_digest=payload_identity(
                 "history_content_identity_payload",
                 (
                     apc_candidate_content_payload
-                    if type(target) is GRC9V4APCExpansion
+                    if type(target) in {GRC9V4APCExpansion, GRC9V4ACIPCExpansion}
                     else candidate_content_payload
                 )(before.inputs.current, before.inputs.reset),
             ),
@@ -667,19 +694,24 @@ def _event_receipts(
                 "history_content_identity_payload",
                 (
                     apc_candidate_content_payload
-                    if type(target) is GRC9V4APCExpansion
+                    if type(target) in {GRC9V4APCExpansion, GRC9V4ACIPCExpansion}
                     else candidate_content_payload
                 )(after.inputs.current, after.inputs.reset),
             ),
         )
-    if type(target) in {GRC9V4CPCExpansion, GRC9V4APCExpansion, GRC9V4CCIPCExpansion}:
+    if type(target) in {
+        GRC9V4CPCExpansion,
+        GRC9V4APCExpansion,
+        GRC9V4CCIPCExpansion,
+        GRC9V4ACIPCExpansion,
+    }:
         history["carrier"].update(
             disposition="whole_carrier_reset",
             source_history_digest=payload_identity(
                 "history_content_identity_payload",
                 (
                     apc_carrier_content_payload
-                    if type(target) is GRC9V4APCExpansion
+                    if type(target) in {GRC9V4APCExpansion, GRC9V4ACIPCExpansion}
                     else carrier_content_payload
                 )(before.inputs.current, before.inputs.reset),
             ),
@@ -687,7 +719,7 @@ def _event_receipts(
                 "history_content_identity_payload",
                 (
                     apc_carrier_content_payload
-                    if type(target) is GRC9V4APCExpansion
+                    if type(target) in {GRC9V4APCExpansion, GRC9V4ACIPCExpansion}
                     else carrier_content_payload
                 )(after.inputs.current, after.inputs.reset),
             ),
@@ -722,7 +754,12 @@ def _event_receipts(
         ),
         "information_losses": ["carrier_history_loss"]
         if type(target)
-        in {GRC9V4CPCExpansion, GRC9V4APCExpansion, GRC9V4CCIPCExpansion}
+        in {
+            GRC9V4CPCExpansion,
+            GRC9V4APCExpansion,
+            GRC9V4CCIPCExpansion,
+            GRC9V4ACIPCExpansion,
+        }
         else [],
         "disposition": "committed",
         "parent_receipt_ids": []
@@ -826,7 +863,12 @@ class _GRC9V4EventOperation:
                     **(
                         {"carrier_archives": [a.to_dict() for a in published.archives]}
                         if self.STATE
-                        in {GRC9V4CPCState, GRC9V4APCState, GRC9V4CCIPCState}
+                        in {
+                            GRC9V4CPCState,
+                            GRC9V4APCState,
+                            GRC9V4CCIPCState,
+                            GRC9V4ACIPCState,
+                        }
                         else {}
                     ),
                     **(
@@ -842,6 +884,7 @@ class _GRC9V4EventOperation:
                             GRC9V4CCIPCState,
                             GRC9V4ACIState,
                             GRC9V4APCState,
+                            GRC9V4ACIPCState,
                         }
                         else {}
                     ),
@@ -869,7 +912,8 @@ class _GRC9V4EventOperation:
             }
             | (
                 {"carrier_archives"}
-                if cls.STATE in {GRC9V4CPCState, GRC9V4APCState, GRC9V4CCIPCState}
+                if cls.STATE
+                in {GRC9V4CPCState, GRC9V4APCState, GRC9V4CCIPCState, GRC9V4ACIPCState}
                 else set()
             )
             | (
@@ -880,6 +924,7 @@ class _GRC9V4EventOperation:
                     GRC9V4CCIState,
                     GRC9V4ACIState,
                     GRC9V4APCState,
+                    GRC9V4ACIPCState,
                     GRC9V4CCIPCState,
                 }
                 else set()
@@ -937,13 +982,16 @@ class _GRC9V4EventOperation:
                     raise ValueError(
                         "persistent C requires the actual whole carrier pair and explicit reset/loss policy"
                     )
-                if type(before) is GRC9V4APCState and canonical_json_bytes(
+                if type(before) in {
+                    GRC9V4APCState,
+                    GRC9V4ACIPCState,
+                } and canonical_json_bytes(
                     request.history_policy
                 ) != canonical_json_bytes(
                     apc_history_policy(before.inputs.current, before.inputs.reset)
                 ):
                     raise ValueError(
-                        "A_PC requires the actual W/Z role pairs and exact lineage/whole reset policy"
+                        "persistent A requires the actual W/Z role pairs and exact lineage/whole reset policy"
                     )
                 if type(before) in {
                     GRC9V4AOSState,
@@ -995,6 +1043,7 @@ class _GRC9V4EventOperation:
                     | GRC9V4AOSExpansion
                     | GRC9V4ACIExpansion
                     | GRC9V4APCExpansion
+                    | GRC9V4ACIPCExpansion
                 )
                 if type(before) is GRC9V4AOSState:
                     target = GRC9V4AOSExpansion(
@@ -1005,6 +1054,13 @@ class _GRC9V4EventOperation:
                     )
                 elif type(before) is GRC9V4ACIState:
                     target = GRC9V4ACIExpansion(
+                        plan,
+                        before.inputs.geometry.reference,
+                        before.inputs.current,
+                        before.inputs.reset,
+                    )
+                elif type(before) is GRC9V4ACIPCState:
+                    target = GRC9V4ACIPCExpansion(
                         plan,
                         before.inputs.geometry.reference,
                         before.inputs.current,
@@ -1059,6 +1115,7 @@ class _GRC9V4EventOperation:
                 if type(target) in {
                     GRC9V4CPCExpansion,
                     GRC9V4APCExpansion,
+                    GRC9V4ACIPCExpansion,
                     GRC9V4CCIPCExpansion,
                 }:
                     assert isinstance(
@@ -1073,6 +1130,7 @@ class _GRC9V4EventOperation:
                     GRC9V4CCIPCExpansion,
                     GRC9V4ACIExpansion,
                     GRC9V4APCExpansion,
+                    GRC9V4ACIPCExpansion,
                 }:
                     assert isinstance(
                         target,
@@ -1272,6 +1330,21 @@ class GRC9V4CCIPCOperation(_GRC9V4EventOperation):
     @property
     def state(self) -> GRC9V4CCIPCState:
         return cast(GRC9V4CCIPCState, self._published.state)
+
+    @property
+    def carrier_archives(self) -> tuple[FrozenJSONMap, ...]:
+        return self._published.archives
+
+
+class GRC9V4ACIPCOperation(_GRC9V4EventOperation):
+    """Atomic fixed-row composite roots, exact W lineage and whole Z reset."""
+
+    STATE = GRC9V4ACIPCState
+    CHECKPOINT = "grc9v4-acipc-event-checkpoint-v1"
+
+    @property
+    def state(self) -> GRC9V4ACIPCState:
+        return cast(GRC9V4ACIPCState, self._published.state)
 
     @property
     def carrier_archives(self) -> tuple[FrozenJSONMap, ...]:

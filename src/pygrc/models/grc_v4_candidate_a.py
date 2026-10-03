@@ -605,9 +605,9 @@ class CandidateACurrent:
             raise ValueError("A stage differential reference/profile mismatch")
         if (
             type(backend) is GRC9V4CandidateADifferentialReference
-            and profile.identity_payload.profile_family_id not in {"A_OS", "A_CI", "A_PC"}
+            and profile.identity_payload.profile_family_id not in {"A_OS", "A_CI", "A_PC", "A_CI_PC"}
         ):
-            raise ValueError("fixed-row A bridge is scoped to A_OS, A_CI and A_PC")
+            raise ValueError("fixed-row A bridge requires OS, CI, PC or CI+PC")
         C = VertexScalar(graph, authority.state.C)
         try:
             assert authority.state.W_A is not None

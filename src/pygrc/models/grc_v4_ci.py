@@ -59,6 +59,7 @@ JOINT_NORM = "joint_current_geometry_l2_v1"
 NUMERICS = "ci_analytic_residual_enclosure_binary64_v2"
 CIPC_NUMERICS = "cipc_same_root_source_enclosed_zoh_binary64_v1"
 GRC9_ACI_NUMERICS = "grc9v4_ci_fixed_rows_confirmed_joint_residual_v1"
+GRC9_ACIPC_NUMERICS = "grc9v4_cipc_fixed_rows_confirmed_same_source_zoh_v1"
 Point: TypeAlias = CandidateACurrent | CandidateCCurrent
 
 
@@ -66,7 +67,9 @@ def _numerical_recipe(
     inputs: GeometryStageInputs, backend: CandidateADifferential | None
 ) -> str:
     if type(backend) is GRC9V4CandidateADifferentialReference:
-        return GRC9_ACI_NUMERICS
+        return (
+            GRC9_ACIPC_NUMERICS if inputs.current.Z_4 is not None else GRC9_ACI_NUMERICS
+        )
     return CIPC_NUMERICS if inputs.current.Z_4 is not None else NUMERICS
 
 
@@ -1048,12 +1051,6 @@ class CIContractionCertificate:
         if isinstance(composite, CIPCParams):
             from .grc_v4_pc import PCEnvelopeCertificate
 
-            if (
-                self.differential_reference is not None
-                and type(self.differential_reference)
-                is not CandidateADifferentialReference
-            ):
-                raise TypeError("CI+PC requires its existing WLS differential contract")
             # Certify B_2R/current regularity and same-root source over the full
             # compact base chart before any candidate solve is attempted.
             envelope = PCEnvelopeCertificate(

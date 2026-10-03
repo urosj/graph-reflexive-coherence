@@ -1,0 +1,54 @@
+{
+  "schema": "p983a_acipc_oracle_acceptance_v1",
+  "date": "2026-10-03",
+  "status": "accepted_by_user",
+  "user_instruction": "commit first, then continue with A_CI+PC",
+  "acceptance_basis": "The reviewed A.1 oracle was committed at 1711923; after discussion of its scope and scheduling the usage guide, the user explicitly requests continuation with A_CI+PC runtime.",
+  "accepted_scope": "bounded A_CI+PC P9-8.3A.1 independent oracle and pressure review, including its separately declared composite chart and native fixture",
+  "authorized_next": "P9-8.3A.2 A_CI+PC runtime and closure",
+  "accepted_predecessor": "171192344bac3ab1750c7e5b0667cb571a7142cd",
+  "oracle_record_digest": "5e6c9050ff56e6ae4473448d01249a355000ff4fb0a494f3d24453bcd36c8ddb",
+  "accepted_fixture": {
+    "dt": 0.000244140625,
+    "target_steps_per_role": 10,
+    "carrier_radius": 2048,
+    "kappa_H": 3.0517578125e-05,
+    "root_radius": 0.125,
+    "joint_tolerance": 5.684341886080802e-14,
+    "iteration_limit": 60,
+    "composition_gain": 2,
+    "resource_radius": 16,
+    "W_bounds": [
+      0.5,
+      1.001953125
+    ],
+    "source_absolute_error": "1/72057594037927936",
+    "carrier_absolute_error": "1/1099511627776",
+    "geometry_absolute_error": "1/281474976710656",
+    "resource_absolute_error": "1/1099511627776",
+    "current_absolute_error": "1/1099511627776",
+    "history_absolute_error": "1/281474976710656",
+    "native_runtime_executed": false,
+    "earlier_chronology_authenticated": false
+  },
+  "immutable_subjects": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Oracle.json",
+      "sha256": "e34243fd149d4f4cccc720232a3d7d2ac92b04a7e16059e8adf04f839c2a7238"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md",
+      "sha256": "a8583b21c180f813e4658a2cee70e409540eedd13c5dc8fdcb17db8df9a274ec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_acipc_oracle.py",
+      "sha256": "e132b79aba42d4d9ea2d2be49dfdc20a7f06a38f437600c6e35e3445d9b6a781"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_acipc_oracle.py",
+      "sha256": "e47466fab85a1ca107dc38212e1403c119088c204171e3518a010caa1bdecaba"
+    }
+  ],
+  "public_support_added": false,
+  "runtime_accepted": false
+}

@@ -2351,7 +2351,8 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     See the [A_PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json).
     A_CI+PC preparation and bounded own review are complete on 2026-10-03
-    after accepted C_CI+PC commit `571f65d`; oracle acceptance remains pending.
+    after accepted C_CI+PC commit `571f65d`; the user accepted runtime
+    continuation against the committed oracle `1711923` on 2026-10-03.
     Its content-specific checkpoints are:
 
     - [x] Prove the complete composite B_2R chart, strict source-envelope slack
@@ -2368,8 +2369,11 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
       covariance and admitted-event/negative-next-step controls.
     - [x] Specify the closed fixed-row composite proof/replay/event extension,
       ExactScalar production bounds and native comparison/rejection obligations.
-    - [ ] Explicitly accept this separately declared A_CI+PC oracle scope
-      before its A.2 runtime implementation/comparison.
+    - [x] Accept this separately declared A_CI+PC oracle scope before its A.2
+      runtime implementation/comparison. The instruction "commit first, then
+      continue with A_CI+PC" accepts the reviewed scope for continuation;
+      the [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json)
+      pins all four unchanged oracle/review/producer/test subjects.
 
     See the [A_CI+PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json).
@@ -2429,6 +2433,26 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
 
     See the [A_PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-RuntimeReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json).
+    A_CI+PC runtime and bounded closure review are complete on 2026-10-03
+    against the unchanged A.1 oracle committed at `1711923`:
+
+    - [x] Extend the closed incoming-W fixed-row current, whole composite
+      envelope and root proof with ExactScalar; bind the confirming composite
+      replay recipe and retain existing WLS/C/A_CI behavior and identities.
+    - [x] Integrate exact W lineage and whole source Z archive/target reset for
+      both roles, complete joint-root/writer-surface readmission, separate
+      history channels and atomic state/receipt/reference/checkpoint replay.
+    - [x] Certify the actual source stage, both target-entry paths and finite
+      continuations, 32 effect controls and 24 chart-corner roots. Complete
+      25 native pressure methods, including real current/reset-only iteration
+      failures, frozen-conductance rejection, resource-boundary and history
+      attacks; retain paper/spec/side-tool review and portable validation.
+    - [x] Separately accept the bounded A_CI+PC runtime and closure review;
+      explicitly user-accepted on 2026-10-03 ("accept and commit"), distinct
+      from the earlier oracle acceptance.
+
+    See the [A_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-Validation.json).
   - Escalation: genuinely absent generic authority found in `.1` holds the
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
@@ -2471,12 +2495,13 @@ their own `.1` oracle and `.2` execution acceptance):
   are explicitly user-accepted on 2026-10-03 ("accept and commit"). Both-role
   whole-carrier reset, full composite-domain roots, same-root writing,
   finite continuation and failure/replay pressure do not add public support.
-- [ ] A_CI_PC — combined W, coupled root and carrier evidence.
-  A.1 independent oracle and bounded own review are complete on 2026-10-03;
-  separately declared composite-domain/fixture acceptance is pending.
-  Its 25 comparisons, 32 effects and 24 pressure methods pass. A.2 fixed-row
-  composite proof/replay and native transaction implementation remain unstarted
-  until that oracle acceptance; no runtime or public support is added here.
+- [x] A_CI_PC — combined W, coupled root and carrier evidence.
+  A.1 reviewed scope is accepted for the requested runtime continuation on
+  2026-10-03. A.2 fixed-row composite proof/replay and native two-history
+  transaction are implemented and own-reviewed against the unchanged oracle;
+  independent root/writer/continuation, effects, corner and rollback checks
+  pass. Bounded A.2 runtime and closure review separately user-accepted on
+  2026-10-03 ("accept and commit"); no public support promotion is claimed.
 - [ ] C_RG2b — target completion/section reconstruction and domain evidence.
 - [ ] A_RG2b — A history and target completion/section evidence.
 

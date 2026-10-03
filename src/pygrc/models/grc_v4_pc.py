@@ -308,11 +308,9 @@ class PCEnvelopeCertificate:
             ):
                 raise TypeError("A_PC requires its declared differential reference")
             assert backend is not None
-            _require(
-                type(backend) is CandidateADifferentialReference
-                or type(pc) is PCParams,
-                "fixed-row PC certificate does not enable CI+PC",
-            )
+            # The same convex-row descriptor bound applies to PC and CI+PC.
+            # Composite admission covers B_2R and strict source slack below;
+            # the CI certificate adds self-map and contraction before any root.
             _require(
                 backend.graph == ref.graph
                 and backend.identity == p.descriptor_backend_id
