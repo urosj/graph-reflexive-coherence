@@ -231,6 +231,10 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p983a_aos_oracle.py",
+    HERE + "test_p983a_aos_oracle.py",
+    PHASE + "tranche-8/P9-8.3A.1-AOS-Oracle.json",
+    PHASE + "tranche-8/P9-8.3A.1-AOS-OracleReview.md",
     HERE + "c_ci_pc_g2_source_reuse.py",
     HERE + "test_p977_c_ci_pc_g2_acceptance.py",
     PHASE + "tranche-7/P9-7.7-C_CI_PC-G2SourceReuse.json",

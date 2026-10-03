@@ -2245,7 +2245,7 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   See the [C_PC review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-83c-pc-whole-carrier-event-integration).
 - [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
-  - [ ] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
+  - [x] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
     starting with A_OS. Prepare and review its bounded mathematical inputs and
     expectations during P9-8.0 using accepted port/chart, fixed-row initializer
     and D11-G9 contracts; this research preparation has no production-runtime
@@ -2258,6 +2258,16 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     completing native identity/fixture details for that scope outside the frozen
     release. Review and accept before runtime comparison; P9-8.0 closure alone
     does not mark this leaf or the runtime coverage hold complete.
+    A_OS oracle preparation and own review are complete on 2026-10-03 after
+    accepted C_PC commit `4f82313`; explicitly user-accepted on 2026-10-03
+    ("ok, accept and commit, then do A.2"). Three
+    preparation checkpoints cover exact native/history/reference bindings,
+    independent point/interval expectations, and adversarial consumer review.
+    The pinned oracle covers 25 positive comparisons and a target OS split
+    failure despite a regular current and positive updates. A.2 is separated
+    because the current generic A evaluator requires WLS; its fixed-port-row
+    incoming-W bridge is an explicit implementation obligation. See the
+    [A_OS oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md).
   - [ ] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
@@ -2278,6 +2288,8 @@ their own `.1` oracle and `.2` execution acceptance):
 - [x] C_OS — first mechanical checkpoint; complete C references, absent Z.
   Bounded implementation and pressure correction accepted at `eeb82e9`.
 - [ ] A_OS — first A oracle/implementation; explicit W history policy.
+  A.1 oracle and pressure review explicitly user-accepted on 2026-10-03;
+  A.2 runtime integration remains pending.
 - [x] C_PC — nonnull whole-carrier policy and target continuation.
   Bounded implementation and pressure review user-accepted on 2026-10-03.
 - [ ] C_CI — joint target-root/domain evidence, no carrier.

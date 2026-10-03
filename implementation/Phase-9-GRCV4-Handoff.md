@@ -2,6 +2,19 @@
 
 ## Current continuation — 2026-10-03
 
+P9-8.3C-PC is accepted and committed at `4f82313`. The user requests P9-8.3A.1
+and A.2 next and permits separate checkpoints. A_OS is the first selected A
+scope. A.1 provides the independently checked native oracle and pressure
+review, explicitly user-accepted on 2026-10-03 ("ok, accept and commit, then
+do A.2"). A.2 is authorized as the next implementation step:
+the generic A evaluator currently accepts only its host-frame WLS descriptor,
+so the declared fixed-port-row/incoming-W bridge must be implemented explicitly.
+The oracle is pinned first, as the checklist's A.1-before-A.2 ordering requires.
+See the [A_OS oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md)
+for the complete identities, 25 positive numerical comparisons, certified
+target-split negative and actual runtime obligations. No runtime files or
+public support declarations change in this checkpoint.
+
 P9-8.2 is explicitly accepted, committed at `e7a6fda`, and merged into `main`
 with `--no-ff` at `79e0e8f`. Branch `work/p9-8-3-profile-integration` starts
 from that merge, following the user's request to continue with P9-8.3C-OS.

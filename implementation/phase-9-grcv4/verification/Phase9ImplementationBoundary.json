@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "483cad87eec24d689c4743a2e7c268faca389e24b27a7f9f165598deb82f0113"
+      "sha256": "87b729076d556065365f8e7ee9a8de9ffde5500b9758d6befdd5741689c4ec5b"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "16e6aee7580f829f1d83e39ca491ba9a03baf51f77e0a9de9c17e3d4a68e47ca"
+      "sha256": "c5580530676f2fc968c1069195f90f2736952df9b683690e97780f43e9d57e58"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "42b56ec7c26b8a9470be4d280751c78a9f370c4864cd4236040828c1786b75a4"
+      "sha256": "5877eed4c6462580490d9a8b22bb53052ae40c0936b65c1c0be1c6abca1637f1"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "dcacfe6dabe968b911d79d888e194a002a77feb1e3013f2cdf9c3625794b74ff"
+      "sha256": "545d1b73e01bf6881d04185731fb89e3f7d53abbd7fd7f3ad069605e65e3991c"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3388,7 +3388,23 @@
     {
       "path": "src/pygrc/models/grc_v4_event_codec.py",
       "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-Oracle.json",
+      "sha256": "ce7f4ae309d9256d93ce7d96f10073e4380f92b26a9af548df1269f98507a06e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md",
+      "sha256": "33457f9ac29f59322aa4d1da4fdba4dac80a9abea8d7d9748281f8bd2002d128"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_aos_oracle.py",
+      "sha256": "f04cef6dd849e753f1cdd8c44df710bf135f313ca1a1f9d57c3142dd71b6e06f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_aos_oracle.py",
+      "sha256": "a72c76123ccd280f472f5728840e9a19f7bc8316a9f7746cb6380cfe6061eb66"
     }
   ],
-  "record_digest": "d5be017de82dab56bb9ac2b35ac6c4cffd110229e3011acf3a1011a00754909e"
+  "record_digest": "a05c984fd6e8c4b918fe3f35a4ba84eec05d3d53ffb1d006d72ebf0cd27e363c"
 }
