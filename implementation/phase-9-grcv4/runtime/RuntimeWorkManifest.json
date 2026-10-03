@@ -1572,6 +1572,16 @@
       "path": "tests/models/test_grc_v4_transport.py",
       "sha256": "fa955b5e116a4bcf2d255ed02e501bfca1a3210daa77ae207150d518460937e6",
       "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "c9edb7b584401b761538d7ad48b257697eabe1d92d16331c98903cf882f60ee3",
+      "iteration_id": "P9-8.2"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_expansion.py",
+      "sha256": "0e015347abe22457f0ffd3256ef0cbc60bcb7d13af4c809b39bd417e9064c86d",
+      "iteration_id": "P9-8.2"
     }
   ],
   "accepted_generic_runtime_support": [
@@ -1600,6 +1610,6 @@
       "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
     ]
   ],
-  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows. The user-requested P9-8.1e successor after accepted .d at a2d3d36 corrects shared exact-backend use and extends its source/parity guard on exactly the recorded five existing paths; it opens no other runtime implementation or conformance.",
-  "record_digest": "b486760547b9a1fd31883ea42b8fc47d07f1d21f82744947c91162fbac424037"
+  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows. The user-requested P9-8.1e successor after accepted .d at a2d3d36 corrects shared exact-backend use and extends its source/parity guard on exactly the recorded five existing paths; it opens no other runtime implementation or conformance. The 2026-10-03 user-requested P9-8.2 successor after merged parent acceptance at 184919b opens only the reviewed allocator source/test pair. Its pure mechanical plan does not confer native target admission, lifecycle publication, P9-8.3 acceptance or broader specialization conformance.",
+  "record_digest": "f58f55cbd8b18cad03e7f09f621817478fd951849e59e3f2b72037fb73f2faa3"
 }

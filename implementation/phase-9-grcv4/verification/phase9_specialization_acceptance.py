@@ -137,3 +137,32 @@ def backend_authorization(root):
 def backend_permitted(path, leaf):
     """Call only after backend_authorization(root); no generic numerical rewrite."""
     return leaf == BACKEND_ENTRY and path in BACKEND_PATHS
+
+
+ALLOCATOR_ENTRY = 'P9-8.2'
+ALLOCATOR_PATHS = ('src/pygrc/models/grc_9_v4_expansion.py',
+                   'tests/models/test_grc_9_v4_expansion.py')
+ALLOCATOR_PREDECESSOR = '184919b352d96605037fd25cda2e9d38ef66b0f1'
+ALLOCATOR_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': '6dac16efecccb57686cd2d9d5727c299c21d7b48082b0a7462ca1f384e006337',
+    PATHS[0]: 'f566cfd6c1cd42301d86b825da46ead8ba1d9142fc1d7e357b7d241577656f28',
+    PATHS[1]: '4aa9ba5677eb5328a62dee478fdb1ee55ec98a0635d7d99d5a832c5355212c4b',
+    TRIGGER_PATHS[0]: 'a79de2f92f85e591980acfb2bcf529d4b8d124a40401e37848333d036fa03527',
+    TRIGGER_PATHS[1]: 'f6a991a8e742361df3a02e0a24d7a9827f484c9d97e56c6697bb6ad042c00b7e',
+    BACKEND_PATHS[-1]: '0a936127aa5994491ce2cb0c77c51cba303e1d645237011419d08988db28accc',
+}
+
+
+def allocator_authorization(root):
+    """2026-10-03 user request: pure allocator after merged parent acceptance."""
+    accepted(root)
+    p.git(root, 'merge-base', '--is-ancestor', ALLOCATOR_PREDECESSOR, 'HEAD')
+    for path, expected in ALLOCATOR_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', ALLOCATOR_PREDECESSOR + ':' + path)) == expected,
+                  'allocator requires the accepted shared mechanics parent')
+    return ALLOCATOR_ENTRY
+
+
+def allocator_permitted(path, leaf):
+    """Call only after allocator_authorization(root); no lifecycle mutation."""
+    return leaf == ALLOCATOR_ENTRY and path in ALLOCATOR_PATHS

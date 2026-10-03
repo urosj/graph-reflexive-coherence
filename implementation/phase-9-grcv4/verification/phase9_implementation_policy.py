@@ -1622,6 +1622,12 @@ def leaf_permissions(root):
     for name in BACKEND_PATHS:
         require(name in owners, 'exact-backend correction outside reviewed runtime roster')
         owners[name] = owners[name] | {backend_entry}
+    from phase9_specialization_acceptance import allocator_authorization, ALLOCATOR_PATHS
+    allocator_entry = allocator_authorization(root)
+    ready = sorted(set(ready) | {allocator_entry})
+    for name in ALLOCATOR_PATHS:
+        require(name in owners, 'allocator outside reviewed runtime roster')
+        owners[name] = owners[name] | {allocator_entry}
     return ready, owners
 
 
@@ -1839,21 +1845,24 @@ def work_entries(root, approval):
         row_bridge_permitted, trigger_authorization, trigger_permitted,
         coarse_authorization, coarse_permitted,
         backend_authorization, backend_permitted,
+        allocator_authorization, allocator_permitted,
     )
     g3 = accepted_g3(root)
     row_entry = row_bridge_authorization(root)
     trigger_entry = trigger_authorization(root)
     coarse_entry = coarse_authorization(root)
     backend_entry = backend_authorization(root)
+    allocator_entry = allocator_authorization(root)
     def g3_permitted(name, leaf):
         return (permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
-                or backend_permitted(name, leaf))
+                or backend_permitted(name, leaf) or allocator_permitted(name, leaf))
     leaves.update(g3['new_runtime_iterations_authorized'])
     leaves.add(row_entry)
     leaves.add(trigger_entry)
     leaves.add(coarse_entry)
     leaves.add(backend_entry)
+    leaves.add(allocator_entry)
     require(
         value["accepted_generic_runtime_support"] == accepted_generic_support(root)
         and value["admitted_specialization_support_sets"] == g3['admitted_specialization_support_sets'],

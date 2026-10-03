@@ -1,12 +1,26 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current continuation — 2026-10-02
+## Current continuation — 2026-10-03
 
-**Latest disposition:** P9-8.1 is complete and explicitly user-accepted as a
+P9-8.1 acceptance is committed at `4cc4f5e` and merged into `main` with
+`--no-ff` at `184919b`. The user now requests P9-8.2 in content-specific
+substeps delivered together, followed later by P9-8.3. Development proceeds on
+`work/p9-8-2-expansion-allocator` from that merge. The scoped allocator opening
+uses only its reviewed source/test owner and preserves P9-8.1 runtime bytes.
+The checklist and plan record request/identity admission, reserve-first tree
+construction, and integrated vector/pressure review as its three substeps.
+All three are implemented and own-reviewed together; see the
+[allocator review](#p9-82-pure-expansion-allocator).
+The user explicitly accepts P9-8.2 on 2026-10-03 after reviewing its agreement
+with the specifications and papers, and requests commit, merge into `main`,
+then a new P9-8.3 branch and continuation with P9-8.3C-OS.
+The dated parent disposition below is historical acceptance, not pending merge.
+
+**Accepted predecessor:** P9-8.1 is complete and explicitly user-accepted as a
 whole on 2026-10-02, covering `.a`–`.e` at `c27583c`. The user requests merging
 `work/p9-8-1-shared-mechanics` into `main`; see the
 [parent acceptance](#p9-81-shared-mechanics-parent-acceptance).
-P9-8.2 remains the next implementation task, with its own scoped opening.
+At that checkpoint P9-8.2 was next, with its own scoped opening.
 
 The [aggregate technical review](./phase-9-grcv4/tranche-8/P9-8.0-AggregateReview.md)
 and focused restriction pressure check are complete. The user explicitly
@@ -52,8 +66,8 @@ by the user's 2026-10-02 request to commit the completed changes; see the
 [backend correction and P9-8.0 audit](#p9-81e-exact-backend-correction-and-p9-80-audit).
 P9-8.0's independent proof arithmetic is retained. The audit found no reason
 from this backend issue to reopen its accepted bounded mathematics; it did
-not establish general native/FLINT conformance. P9-8.2 is next, requiring its
-own scoped opening.
+not establish general native/FLINT conformance. At that checkpoint P9-8.2 was
+next, requiring its own scoped opening.
 The chronology below
 records earlier checkpoints and does not reopen their resolved items.
 
@@ -243,8 +257,9 @@ RG status is reconciled. Following the focused restriction pressure check,
 the user explicitly accepts R1–R10 and the aggregate scope. All ten rows are
 provisionally closed and P9-8.0 is complete.
 
-**Next planned implementation task:** P9-8.2 D11-G9-P4a expansion allocator,
-subject to its scoped execution opening. P9-8.1a is committed at `75a6629`;
+**Next planned implementation task:** P9-8.3C-OS profile integration, building
+on the completed [P9-8.2 allocator review](#p9-82-pure-expansion-allocator).
+P9-8.1a is committed at `75a6629`;
 P9-8.1b is accepted and committed at `7f33a42`; P9-8.1c is accepted and committed
 at `e9dfad7`. P9-8.1d is accepted and committed at `a2d3d36`. P9-8.1e is
 implemented, own-reviewed and user-accepted: topology source/test, trigger source and the
@@ -1121,6 +1136,100 @@ closed until their own scoped openings.
 | `src/pygrc/models/grc_9_v4_lifecycle.py` | `a79de2f92f85e591980acfb2bcf529d4b8d124a40401e37848333d036fa03527` |
 | `tests/models/test_grc_9_v4_topology.py` | `4aa9ba5677eb5328a62dee478fdb1ee55ec98a0635d7d99d5a832c5355212c4b` |
 | `tests/models/test_grc_v4_exact_backend.py` | `0a936127aa5994491ce2cb0c77c51cba303e1d645237011419d08988db28accc` |
+
+## P9-8.2 pure expansion allocator
+
+2026-10-03, branch `work/p9-8-2-expansion-allocator`, baseline merge
+`184919b352d96605037fd25cda2e9d38ef66b0f1`. The user requests substeps reflecting
+the actual scope, delivered in one pass, followed later by P9-8.3. **Own-review
+verdict: pass for the pure mechanical allocator.** All three substeps are
+complete. The user explicitly accepts this reviewed implementation on
+2026-10-03 ("implementation mathches specs and papers, accepted") and requests
+commit and merge before P9-8.3C-OS. This accepts the mechanical allocator's
+recorded scope; native specialization conformance retains its later owners.
+
+1. **Request and identity admission.** The existing closed policy and input
+   schemas produce frozen records. The plan binds the actual ordered port
+   graph and the receiver-supplied source-state digest, checks live membership,
+   rejects source self-loops and requires all nine occupied ports. Integer
+   arithmetic computes `max(4, ceil((D-2)/7))`; explicit chirality and the
+   conditional remainder phase select the balanced branch counts. Policy and
+   both history-channel digest preimages are recomputed. The noncircular
+   event payload determines the namespace; expected IDs/digests only assert
+   equality, and a caller target graph or harness-fault field is rejected.
+2. **Reserve-first construction.** Old boundary ports are reserved before
+   internal allocation. Rewiring preserves each old edge's identity, kind,
+   external endpoint and tail/head orientation. Both Latin spines and branch
+   row rotors use the same port at both ends. A FIFO of free rotor slots is
+   equivalent to the creation-order parent scan: the primary has one free
+   slot, and each child consumes one and adds two. Thus every finite branch
+   can grow, each new vertex has one parent, and the module is a tree with
+   `n-1` internal edges and capacity `7n+2`. Role IDs include canonical padding;
+   collisions reject. The immutable target is admitted through the sole port
+   graph owner. Each new internal reference edge has the resolved positive
+   bond seed and zero reference current; no constitutive state is inferred.
+3. **Integrated pressure review.** All 17 frozen expansion graphs, event
+   identity preimages/bytes and graph digests match exactly. All three frozen
+   metamorphic vectors reproduce namespace/role transport before comparison.
+   Four named semantic failure vectors reject before target allocation. A
+   separate literal-chart oracle scans creation-order nodes and checks 224
+   layouts over 48 sizes, through 1,004-node modules, both chiralities and all
+   active phases. Connectivity, tree edge count, unique occupied ports, row/
+   column balance, capacity and padding pass. The 4,995 capacity probes include
+   safe-integer extrema without allocating those enormous graphs. All 512
+   source-edge orientations, parallel external incidences, unaffected loops,
+   isolates and typed/empty node IDs pass. Stale bindings, digest assertions,
+   collisions, malformed types, deep input ownership, replacement, numerical
+   extremes, Python/FLINT parity and three process hash seeds are covered.
+
+Array order remains part of the source graph identity. Permuting source edges
+therefore changes the event ID; after namespace normalization it produces the
+same allocation. Target nodes use a deterministic typed/JCS scalar order and
+target edges use UTF-16 ID order. Each unaffected edge record stays identical.
+
+Resource tuples use the existing strict binary64 wire domain and must sum to
+one in the selected exact backend. In particular, three rounded `1/3` values
+and `(0.5, 0.5, minimum_subnormal)` reject even though rounded addition displays
+one; exact tuples such as `(0.5, 0.25, 0.25)` pass. No silent normalization is
+introduced. P9-8.0's rational uniform-third research companions remain their
+own evidence. P9-8.3 must bind and verify its actual wire resource tuple and
+charge-preserving transfer, rather than substituting rounded thirds for that
+rational research input or treating allocation-vector `committed` labels as
+new numerical successes.
+
+The plan is a detached mechanical value. Its state/profile/history identities
+are declared bindings, not proof of an ordinary beat or executable target
+history policy. P9-8.3 retains resource/current/reset transport, candidate and
+whole-carrier semantics, complete target references and numerical readmission.
+Atomic publication, failure receipts, facade/capability integration, completed
+sparks, and later native conformance remain with their existing owners.
+
+Validation: **125 methods pass, no skips**, covering the allocator, topology,
+candidate trigger and shared exact-backend suite (including its 14 nested
+P9-8.0 executions); **seven scoped-entry checks pass**, including altered
+parent subjects and missing G3/ancestor rejection. Ruff and strict mypy pass
+for the new source/test pair. The current phase-boundary audit passes with
+the allocator work entries and refreshed documentation/verification bindings;
+historical scientific-source reconciliation is not promoted by this integrity
+check.
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest -q test_grc_9_v4_expansion test_grc_9_v4_topology test_grc_9_v4_lifecycle test_grc_v4_exact_backend
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_expansion.py tests/models/test_grc_9_v4_expansion.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_expansion.py tests/models/test_grc_9_v4_expansion.py
+PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest -q test_p978_specialization_review.SpecializationReviewTests.test_allocator_successor_is_exact_and_preserves_later_boundaries test_p978_specialization_review.SpecializationReviewTests.test_allocator_requires_g3_and_merged_parent_acceptance test_p978_specialization_review.SpecializationReviewTests.test_row_bridge_successor_is_exact_and_preserves_historical_entry test_p978_specialization_review.SpecializationReviewTests.test_trigger_successor_uses_only_reviewed_lifecycle_owner test_p978_specialization_review.SpecializationReviewTests.test_coarse_successor_is_exact_and_preserves_historical_owners test_p978_specialization_review.SpecializationReviewTests.test_backend_successor_is_exact_and_preserves_other_owners test_p978_specialization_review.SpecializationReviewTests.test_fresh_api_policy_import_resolves_acceptance_helper
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+The narrow execution successor checks accepted G3, the merged parent acceptance
+and its exact source/test subjects before permitting only the reviewed new
+allocator source/test pair. Existing mechanics, frozen specifications, P9-8.0
+proofs and support/conformance records are unchanged. R1–R10 remain in force.
+
+| P9-8.2 subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_expansion.py` | `c9edb7b584401b761538d7ad48b257697eabe1d92d16331c98903cf882f60ee3` |
+| `tests/models/test_grc_9_v4_expansion.py` | `0e015347abe22457f0ffd3256ef0cbc60bcb7d13af4c809b39bd417e9064c86d` |
 
 ## End-of-Tranche-8 performance and cache review
 
