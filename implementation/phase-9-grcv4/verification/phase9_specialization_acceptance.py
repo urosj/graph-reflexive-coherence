@@ -391,3 +391,29 @@ def apc_authorization(root):
 
 def apc_permitted(path, leaf):
     return leaf == APC_ENTRY and path in APC_PATHS
+
+
+CCIPC_ENTRY = "P9-8.3C-CI-PC"
+CCIPC_PATHS = ('src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_ccipc.py')
+CCIPC_NEW_PATHS = ("tests/models/test_grc_9_v4_ccipc.py",)
+CCIPC_G2 = 'grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b'
+CCIPC_PREDECESSOR = '59667467bda8a5369bedb23edfaf77a940d78610'
+CCIPC_RESEARCH_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventInputs.json': 'ea066d7eb291367a7fe564b43a8b22a715b8ada8c265283fdff26322d62797b7', 'implementation/phase-9-grcv4/verification/test_p980_carrier_event_companion.py': 'a671accc50e08757d40a2fa7a28d41fe8917f6058d4ef31b6d188c519fda9ec7', 'implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py': '8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9', 'implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py': '944385027e388619e1d70510ac1cc9eb7cfdb7ed1c15be3ea3a78524ee9b2d28'}
+
+
+def ccipc_authorization(root):
+    """User-requested C_CI+PC after accepted A_PC; exact G2, no new support."""
+    decision = accepted(root)
+    p.require(CCIPC_G2 in decision['accepted_generic_runtime_support'],
+              'C_CI+PC requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', CCIPC_PREDECESSOR, 'HEAD')
+    for path, expected in CCIPC_RESEARCH_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', CCIPC_PREDECESSOR + ':' + path)) == expected,
+                  'C_CI+PC requires its accepted research subjects')
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'C_CI+PC cannot replace accepted research expectations')
+    return CCIPC_ENTRY
+
+
+def ccipc_permitted(path, leaf):
+    return leaf == CCIPC_ENTRY and path in CCIPC_PATHS

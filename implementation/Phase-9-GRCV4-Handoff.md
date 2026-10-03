@@ -2,6 +2,38 @@
 
 ## Current continuation — 2026-10-03
 
+The user requests C_CI+PC after accepting and committing A_PC runtime at
+`5966746`. P9-8.3C-CI-PC now integrates C/Z authority, reference-root restart
+with fixed old Z, the combined B_2R geometry domain, and both-role certified
+readmission. Complete target C references, exact resource maps, whole source
+carrier archives, canonical zero target carriers and fresh selected-reference
+currents publish atomically and replay through the native owner. Generic CI/PC
+solvers and accepted P9-8.0 research expectations are unchanged.
+
+Three recorded checkpoints cover root/domain binding, whole-carrier transaction
+and replay, and independent scientific/adversarial review. The independent
+constant-sector whole-chart proof, eighty-digit root solver and full-formula
+interval comparisons distinguish the native R=1 compact chart from P9-8.0's
+small local domain. The actual source beat, both ten-step target continuations,
+same-root carrier writing, named error/ULP effect controls and genuine target
+domain/iteration failures are retained in portable evidence. Concentrated-C
+and carrier-boundary probes meet the declared root tolerance, which does not
+promise the nominal trajectory's tighter comparison budget. Simplex-vertex
+events admit while independently certified negative next steps fail closed.
+All 298 native/shared/research test methods and twelve existing side-tool
+checks pass. The twenty effect controls clear their complete-error/ULP bounds,
+with minimum margin about 9.10; targeted static and phase-boundary checks pass.
+
+See the [C_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-Validation.json).
+The user explicitly accepts this bounded implementation and own review on
+2026-10-03 ("accept and commit"), including its domain, accuracy and continuation
+limits. The C_CI_PC completion row is closed for this scope; portable validation
+appends the acceptance while preserving its execution-time evidence.
+Seven side-tool provenance traces retain their original dispositions. No public
+profile, other realization, global stability, all-time positivity or cache
+acceptance follows; the end-of-tranche cache review remains open.
+
 A_PC's independent A.1 oracle and separately declared native fixture were
 explicitly accepted on 2026-10-03 ("accept and commit, then continue with A_PC")
 and committed at `3493fcd`. The

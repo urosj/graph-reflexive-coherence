@@ -400,7 +400,8 @@ class GRC9V4ExpansionPlan:
 
 
 def _c_profile_template(
-    reference: GRCV4ReferenceGeometry, family: Literal["C_OS", "C_PC", "C_CI"]
+    reference: GRCV4ReferenceGeometry,
+    family: Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"],
 ) -> GRCV4ProfileTemplate:
     """The single C reference rebuild policy, bound to the full source profile."""
     return resolve_profile_template(
@@ -427,6 +428,10 @@ def cci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTempl
     return _c_profile_template(reference, "C_CI")
 
 
+def ccipc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_CI_PC")
+
+
 def carrier_content_payload(
     current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
 ) -> dict[str, JSONValue]:
@@ -441,7 +446,7 @@ def carrier_content_payload(
         or state.Z_4 is None
         for state in (current, reset)
     ):
-        raise ValueError("C_PC requires both carrier roles and no A history")
+        raise ValueError("persistent C requires both carrier roles and no A history")
     assert current.Z_4 is not None and reset.Z_4 is not None
     if len(current.Z_4) != len(reset.Z_4):
         raise ValueError("carrier role dimensions disagree")
@@ -534,7 +539,7 @@ def _resource_transform(plan: GRC9V4ExpansionPlan) -> dict[str, JSONValue]:
 class _GRC9V4CExpansion:
     """Shared exact resource and complete-reference construction for C events."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]]
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]]
     plan: GRC9V4ExpansionPlan
     source: GRCV4ReferenceGeometry
     target: GRCV4ReferenceGeometry = field(init=False)
@@ -616,7 +621,7 @@ class _GRC9V4CExpansion:
             raise ValueError(
                 f"{self.FAMILY} authority has neither W_A nor Z_4"
                 if self.FAMILY in {"C_OS", "C_CI"}
-                else "C_PC authority requires typed resources and no W_A"
+                else "persistent C authority requires typed resources and no W_A"
             )
         carrier = self._carrier_target(state)
         width = len(self.plan.source_graph.live_node_ids)
@@ -681,14 +686,14 @@ class _GRC9V4NonpersistentCExpansion(_GRC9V4CExpansion):
 class GRC9V4COSExpansion(_GRC9V4NonpersistentCExpansion):
     """C_OS reference reconstruction with absent candidate/carrier history."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]] = "C_OS"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_OS"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4CCIExpansion(_GRC9V4NonpersistentCExpansion):
     """C_CI reference reconstruction; target joint-root admission is separate."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]] = "C_CI"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_CI"
 
     def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
         """Replay evidence only: preserve signed stable IDs, zero new edges."""
@@ -710,7 +715,7 @@ class GRC9V4CPCExpansion(_GRC9V4CExpansion):
     the owner's responsibility; pure construction alone is not admission.
     """
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]] = "C_PC"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_PC"
     source_current: GRCV4AuthoritativeState
     source_reset: GRCV4AuthoritativeState
 
@@ -726,12 +731,14 @@ class GRC9V4CPCExpansion(_GRC9V4CExpansion):
             expected
         ):
             raise ValueError(
-                "C_PC requires the actual whole carrier pair and explicit reset/loss policy"
+                "persistent C requires the actual whole carrier pair and explicit reset/loss policy"
             )
 
     def _carrier_target(self, state: GRCV4AuthoritativeState) -> tuple[float, ...]:
         if state not in (self.source_current, self.source_reset):
-            raise ValueError("C_PC transfer requires one of its bound source roles")
+            raise ValueError(
+                "persistent C transfer requires one of its bound source roles"
+            )
         return (0.0,) * len(self.plan.target_graph.edges) ** 2
 
     def carrier_archive_payload(self) -> dict[str, Any]:
@@ -747,6 +754,23 @@ class GRC9V4CPCExpansion(_GRC9V4CExpansion):
                 "history_content_identity_payload", content
             ),
         }
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CCIPCExpansion(GRC9V4CPCExpansion):
+    """Whole-carrier C_CI+PC maps; both target joint roots require readmission."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_CI_PC"
+
+    def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
+        """Fresh source root evidence, signed old IDs and zero new entries."""
+        if type(current) is not PhysicalFlux or current.graph != self.source.graph:
+            raise ValueError("reference current must belong to the source graph")
+        old = dict(zip(self.source.graph.live_edge_ids, current.values, strict=True))
+        return PhysicalFlux(
+            self.target.graph,
+            tuple(old.get(e, 0.0) for e in self.target.graph.live_edge_ids),
+        )
 
 
 def candidate_content_payload(

@@ -2263,6 +2263,26 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   scope and are included in this explicit acceptance.
   See the [C_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-RuntimeReview.md)
   and [validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-Validation.json).
+- [x] P9-8.3C-CI-PC: Native C_CI+PC integration after its exact G2/G3,
+  requested after accepted A_PC runtime commit `5966746`. The bounded
+  implementation and mathematical/adversarial review are explicitly
+  user-accepted on 2026-10-03 ("accept and commit"), including the recorded
+  domain, accuracy and continuation limits. All three checkpoints are complete:
+  - [x] P9-8.3C-CI-PC.1: Bind C/Z authority, reference-root restart with fixed
+    old Z, the combined B_2R geometry domain, strict uniform source slack and
+    both-role coupled root/carrier readmission using unchanged generic solvers.
+  - [x] P9-8.3C-CI-PC.2: Integrate complete C references, exact two-role resource
+    maps, whole source-Z archive/whole target-Z reset, fresh reference-current
+    evidence, atomic publication and authenticated checkpoint replay.
+  - [x] P9-8.3C-CI-PC.3: Independently pressure paper equations and side-tool
+    claims, same-root writing, source and both-role continuation, composite
+    domain/iteration failures, outliers, signed covariance and rollback.
+  The separately declared native R=1 compact carrier chart differs from the
+  smaller accepted P9-8.0 research chart. Nominal comparison budgets are not
+  promoted to tighter whole-chart accuracy guarantees. Simplex-vertex events
+  can admit while the next physical step fails certified resource negativity.
+  See the [C_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-RuntimeReview.md)
+  and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-Validation.json).
 - [x] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
   Reconciled for the bounded A_OS scope on 2026-10-03: both children are
@@ -2423,7 +2443,11 @@ their own `.1` oracle and `.2` execution acceptance):
   stage, effects, rollback, replay and admitted-event/negative-next-step pressure
   pass. A.2 runtime and bounded closure review separately user-accepted on
   2026-10-03 ("accept and commit"); no public support promotion.
-- [ ] C_CI_PC — coupled root/carrier target evidence.
+- [x] C_CI_PC — coupled root/carrier target evidence.
+  Internal native integration and bounded own review under P9-8.3C-CI-PC
+  are explicitly user-accepted on 2026-10-03 ("accept and commit"). Both-role
+  whole-carrier reset, full composite-domain roots, same-root writing,
+  finite continuation and failure/replay pressure do not add public support.
 - [ ] A_CI_PC — combined W, coupled root and carrier evidence.
 - [ ] C_RG2b — target completion/section reconstruction and domain evidence.
 - [ ] A_RG2b — A history and target completion/section evidence.
