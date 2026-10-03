@@ -2314,7 +2314,7 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
 
     - [x] Separate the local research domain from the native full compact chart;
       prove the uniform source/carrier bound and retain the small-radius
-      counterexample. Proposed R=2048, kappa_H=2^-14, M=16 and W in [1/2,513/512].
+      counterexample. Accepted R=2048, kappa_H=2^-14, M=16 and W in [1/2,513/512].
     - [x] Bind independent physical source stages, old W near 15/16 with exact
       lineage/unit new seeds, whole Z archives/zero resets, shares (1/4,3/8,3/8),
       native identity preimages and distinct W/Z receipt channels.
@@ -2367,6 +2367,25 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
 
     See the [A_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-RuntimeReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-Validation.json).
+    A_PC runtime and bounded closure review are complete on 2026-10-03 against
+    the unchanged A.1 oracle accepted and committed at `3493fcd`:
+
+    - [x] Extend the exact whole-chart PC proof and closed replay to incoming-W
+      fixed rows; retain the scalar-ZOH/binary64 recipe, WLS behavior and the
+      closed fixed-row CI+PC boundary.
+    - [x] Integrate both-role exact W lineage, complete actual source Z archives,
+      whole target Z resets, separate loss channels, complete readmission,
+      atomic receipts/reference evidence and checkpoint replay.
+    - [x] Compare the actual source beat and both target continuations to the
+      immutable oracle and independent interval equations; complete 20 native
+      pressure methods, 24 effect controls, scientific/side-tool claim review,
+      shared regressions, portable evidence, static checks and phase bindings.
+    - [x] Separately accept the bounded A_PC runtime and closure review;
+      explicitly user-accepted on 2026-10-03 ("accept and commit"), distinct
+      from the earlier oracle acceptance.
+
+    See the [A_PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json).
   - Escalation: genuinely absent generic authority found in `.1` holds the
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
@@ -2396,11 +2415,14 @@ their own `.1` oracle and `.2` execution acceptance):
   the source-reset precision correction, event/rollback and continuation pass.
   A.2 runtime and bounded closure review separately user-accepted on
   2026-10-03 ("accept and commit"); no public support promotion.
-- [ ] A_PC — A history plus persistent carrier evidence.
+- [x] A_PC — A history plus persistent carrier evidence.
   A.1 independent oracle and bounded own review complete on 2026-10-03;
   separately declared chart/history/resource scope explicitly user-accepted.
   A.2 fixed-row PC proof/replay and two-channel event/archive integration are
-  authorized next; native rollback and public support are not claimed by the oracle.
+  implemented and own-reviewed against that unchanged oracle; source/target
+  stage, effects, rollback, replay and admitted-event/negative-next-step pressure
+  pass. A.2 runtime and bounded closure review separately user-accepted on
+  2026-10-03 ("accept and commit"); no public support promotion.
 - [ ] C_CI_PC — coupled root/carrier target evidence.
 - [ ] A_CI_PC — combined W, coupled root and carrier evidence.
 - [ ] C_RG2b — target completion/section reconstruction and domain evidence.

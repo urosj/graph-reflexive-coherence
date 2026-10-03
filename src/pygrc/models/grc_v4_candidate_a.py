@@ -6,7 +6,7 @@ W_A; its separate writer consumes admitted final C and the selected current.
 These provisional primitives do not execute a full OS pass or lifecycle commit.
 See specs/grc-v4-spec.md, Candidate A and lifecycle contracts, and the GRCV3
 specification's Appendix A.2 for the host-frame WLS differential. The closed
-GRC9V4 A_OS/A_CI bridges instead consume declared fixed rows with incoming W.
+GRC9V4 A_OS/A_CI/A_PC bridges consume declared fixed rows with incoming W.
 """
 
 from __future__ import annotations
@@ -605,9 +605,9 @@ class CandidateACurrent:
             raise ValueError("A stage differential reference/profile mismatch")
         if (
             type(backend) is GRC9V4CandidateADifferentialReference
-            and profile.identity_payload.profile_family_id not in {"A_OS", "A_CI"}
+            and profile.identity_payload.profile_family_id not in {"A_OS", "A_CI", "A_PC"}
         ):
-            raise ValueError("fixed-row A bridge is scoped to A_OS and A_CI")
+            raise ValueError("fixed-row A bridge is scoped to A_OS, A_CI and A_PC")
         C = VertexScalar(graph, authority.state.C)
         try:
             assert authority.state.W_A is not None

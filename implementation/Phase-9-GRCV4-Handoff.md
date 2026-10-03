@@ -2,29 +2,42 @@
 
 ## Current continuation — 2026-10-03
 
-After accepted A_CI commit `d431e2e`, the user requests A_PC next. Its
-independent A.1 oracle and bounded own review are complete and explicitly
-user-accepted on 2026-10-03 ("accept and commit, then continue with A_PC").
-The [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json)
-pins the four unchanged subjects and the separately identified native fixture.
-The same instruction authorizes A.2 runtime and closure after committing A.1.
-The native full compact chart cannot borrow the earlier small local research
-carrier radius. The proposed fixture explicitly binds R=2048, kappa_H=2^-14,
-M=16, W in [1/2,513/512], supplied old W near 15/16 and satellite shares
-(1/4,3/8,3/8). Independent whole-chart source bounds are below 1425/507 on
-source/target, both below R. W lineage remains exact; both actual source
-carriers are archived and both whole target carriers reset to zero with
-carrier loss only. All 25 independent numerical comparisons, 24 full-error/ULP
-effect controls and 21 pressure methods pass. Five unchanged carrier-companion
-tests and the side tool's 12 existing checks pass. The review retains a
-counterexample to using the research radius on the full chart and an admitted
-event whose next physical step must reject a certified negative resource.
-See the [A_PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
-and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json).
-A.2 must extend PC's WLS-only descriptor proof/replay to fixed rows and add the
-two-channel A_PC event/state/archive receiver under that explicit acceptance.
-No runtime source, public support, earlier accepted oracle or P9-8.0 scope is
-changed by this research preparation.
+A_PC's independent A.1 oracle and separately declared native fixture were
+explicitly accepted on 2026-10-03 ("accept and commit, then continue with A_PC")
+and committed at `3493fcd`. The
+[acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json)
+pins all four unchanged oracle subjects. A.2 runtime and bounded own closure
+review are complete and separately user-accepted on 2026-10-03
+("accept and commit").
+
+PC's analytic whole-chart certificate and replay now admit the closed fixed-row
+A_PC backend. Exact proof bounds use incoming-W convex row averages, with no
+sampled or cached descriptor. The accepted chart remains R=2048,
+kappa_H=2^-14, M=16 and W in [1/2,513/512]; source/target uniform source bounds
+are below 1425/507. The existing physical binary64/scalar-ZOH recipe and WLS
+path are unchanged. Fixed-row CI+PC remains closed.
+
+The native A_PC event maps both W roles by exact stable-edge lineage and
+positive new seeds, archives both actual source Z tensors, and resets both
+whole target carriers to zero with carrier loss only. Complete zero-duration
+readmission runs no temporal W/Z writer. Atomic state/receipts/archive/reference
+publication and replay bind the two channels separately. The actual source
+stage, both ten-step target continuations, 27 interval comparisons and all
+24 full-error/ULP effects pass (minimum margin about 9.253). All 20 native
+pressure methods and 26 unchanged oracle/carrier-companion methods pass;
+shared regressions and static/boundary checks are retained in validation.
+The W=0.75 adverse event admits, but its next physical step correctly rejects
+independently certified resource negativity for either role, without repair.
+
+See the [A_PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json).
+The [oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
+retains the distinction from P9-8.0's smaller local research domains. Six
+source-bound side-tool traces and the twelve existing D11 checks preserve
+their bounded/indeterminate dispositions. No public support, global positivity,
+matched-forcing contraction, other realization or end-of-tranche cache
+acceptance is implied. The bounded A_PC completion row is now closed by the
+separate runtime acceptance recorded in portable validation.
 
 The user accepted A_CI's independent A.1 oracle and requested runtime/closure
 on 2026-10-03 ("i accept, coninue with A_CI runtime and closure"). The

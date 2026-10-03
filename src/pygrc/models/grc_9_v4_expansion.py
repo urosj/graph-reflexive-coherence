@@ -815,8 +815,59 @@ def aos_history_policy(
     )
 
 
+def _apc_roles(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> None:
+    if any(
+        type(s) is not GRCV4AuthoritativeState
+        or s.W_A is None
+        or s.Z_4 is None
+        or len(s.Z_4) != len(s.W_A) ** 2
+        for s in (current, reset)
+    ):
+        raise ValueError("A_PC requires complete W and whole Z for both roles")
+
+
+def apc_candidate_content_payload(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    _apc_roles(current, reset)
+    return candidate_content_payload(
+        GRCV4AuthoritativeState(current.C, current.W_A, None),
+        GRCV4AuthoritativeState(reset.C, reset.W_A, None),
+    )
+
+
+def apc_carrier_content_payload(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    _apc_roles(current, reset)
+    return carrier_content_payload(
+        GRCV4AuthoritativeState(current.C, None, current.Z_4),
+        GRCV4AuthoritativeState(reset.C, None, reset.Z_4),
+    )
+
+
+def apc_history_policy(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    """Exact retained-W lineage and whole-Z reset, with distinct loss channels."""
+    _apc_roles(current, reset)
+    policy = aos_history_policy(
+        GRCV4AuthoritativeState(current.C, current.W_A, None),
+        GRCV4AuthoritativeState(reset.C, reset.W_A, None),
+    )
+    carrier = cpc_history_policy(
+        GRCV4AuthoritativeState(current.C, None, current.Z_4),
+        GRCV4AuthoritativeState(reset.C, None, reset.Z_4),
+    )
+    for key in ("carrier", "carrier_history_policy_digest"):
+        policy[key] = carrier[key]
+    return validate_payload("expansion_history_policy", policy)
+
+
 def _a_profile_template(
-    reference: GRCV4ReferenceGeometry, family: Literal["A_OS", "A_CI"]
+    reference: GRCV4ReferenceGeometry, family: Literal["A_OS", "A_CI", "A_PC"]
 ) -> GRCV4ProfileTemplate:
     return resolve_profile_template(
         {
@@ -838,6 +889,10 @@ def aci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTempl
     return _a_profile_template(reference, "A_CI")
 
 
+def apc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_PC")
+
+
 @dataclass(frozen=True, slots=True)
 class _GRC9V4AExpansion:
     """Exact old-edge lineage and positive new-edge seeding for both A roles.
@@ -847,7 +902,7 @@ class _GRC9V4AExpansion:
     separately; new entries are zero and never replace solved target currents.
     """
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI"]]
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC"]]
     plan: GRC9V4ExpansionPlan
     source: GRCV4ReferenceGeometry
     source_current: GRCV4AuthoritativeState
@@ -877,7 +932,9 @@ class _GRC9V4AExpansion:
         for role in (self.source_current, self.source_reset):
             CandidateARetainedAuthority(source.graph, source.profile, role)
         if canonical_json_bytes(plan.request.history_policy) != canonical_json_bytes(
-            aos_history_policy(self.source_current, self.source_reset)
+            (apc_history_policy if self.FAMILY == "A_PC" else aos_history_policy)(
+                self.source_current, self.source_reset
+            )
         ):
             raise ValueError(
                 "A requires exact actual old-edge lineage and positive bond seeds"
@@ -960,7 +1017,12 @@ class _GRC9V4AExpansion:
             old.get(e, self.plan.policy.bond_seed)
             for e in self.target.graph.live_edge_ids
         )
-        return GRCV4AuthoritativeState(values, weights, None)
+        carrier = (
+            (0.0,) * len(self.target.graph.live_edge_ids) ** 2
+            if self.FAMILY == "A_PC"
+            else None
+        )
+        return GRCV4AuthoritativeState(values, weights, carrier)
 
     def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
         if type(current) is not PhysicalFlux or current.graph != self.source.graph:
@@ -976,11 +1038,32 @@ class _GRC9V4AExpansion:
 class GRC9V4AOSExpansion(_GRC9V4AExpansion):
     """Closed A_OS resource/reference and retained-W expansion."""
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI"]] = "A_OS"
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC"]] = "A_OS"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4ACIExpansion(_GRC9V4AExpansion):
     """Closed A_CI maps; both target joint roots remain readmission obligations."""
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI"]] = "A_CI"
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC"]] = "A_CI"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4APCExpansion(_GRC9V4AExpansion):
+    """Closed A_PC exact W lineage and complete source archive/target Z reset."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC"]] = "A_PC"
+
+    def carrier_archive_payload(self) -> dict[str, Any]:
+        content = apc_carrier_content_payload(self.source_current, self.source_reset)
+        return {
+            "descriptor_version": "grc9v4-carrier-archive-v1",
+            "event_id": self.plan.event_id,
+            "source_state_digest": self.plan.source_state_digest,
+            "source_graph_digest": self.plan.source_graph.graph_digest,
+            "source_edge_ids": [edge.edge_id for edge in self.plan.source_graph.edges],
+            "history_content": content,
+            "history_digest": payload_identity(
+                "history_content_identity_payload", content
+            ),
+        }

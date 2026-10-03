@@ -362,3 +362,32 @@ def aci_authorization(root):
 def aci_permitted(path, leaf):
     """Exact fixed-row CI proof and native transaction owners only."""
     return leaf == ACI_ENTRY and path in ACI_PATHS
+
+
+APC_ENTRY = "P9-8.3A.2"
+APC_PATHS = ('src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_pc.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_apc.py')
+APC_NEW_PATHS = ("tests/models/test_grc_9_v4_apc.py",)
+APC_G2 = "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75"
+APC_PREDECESSOR = '3493fcd6f65fb45f56ff4efaad391fbfa1783960'
+APC_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json'
+APC_ACCEPTANCE_SHA = '232632413f02c34b250d5f8ed850742def3f1b17b6e7b46957d2654d06a6618d'
+APC_ORACLE_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Oracle.json': '169554a8b01b99484fba8fcb2b6c1854a8a17b23e0d4c9efe0dd203a26c02eec', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md': '2e00b770fea009dfb4082bc89677178656e2a7312867fa7220f9e6415e160b74', 'implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py': '6daa9c200d80fd041c0eb5badff1cbf0b971373290adcc504869c9c654af7359', 'implementation/phase-9-grcv4/verification/test_p983a_apc_oracle.py': 'f2dd3e52ab607acfd1aeb731cac8c639d122dc2774a96c8025b2c943b2f6b435'}
+
+
+def apc_authorization(root):
+    """Accepted exact A_PC oracle/fixture; closed runtime entry, no support promotion."""
+    decision = accepted(root)
+    p.require(APC_G2 in decision['accepted_generic_runtime_support'], 'A_PC requires its exact G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', APC_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, APC_ACCEPTANCE).read_bytes()) == APC_ACCEPTANCE_SHA,
+              'A_PC requires the unchanged explicit oracle acceptance')
+    for path, expected in APC_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_PC runtime cannot replace accepted oracle subjects')
+        p.require(p.sha(p.git(root, 'show', APC_PREDECESSOR + ':' + path)) == expected,
+                  'A_PC oracle differs from its accepted commit')
+    return APC_ENTRY
+
+
+def apc_permitted(path, leaf):
+    return leaf == APC_ENTRY and path in APC_PATHS

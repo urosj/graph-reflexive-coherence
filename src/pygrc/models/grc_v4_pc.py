@@ -14,14 +14,17 @@ from decimal import ROUND_HALF_EVEN, Context, Decimal, localcontext
 from typing import TYPE_CHECKING, Any, cast
 
 from . import grc_v4_numerics as numerics
+from .grc_9_v4_topology import GRC9V4CandidateADifferentialReference
 from .grc_v4_candidate_a import (
     ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
+    CandidateADifferential,
     CandidateADifferentialReference,
     CandidateAStageError,
     CandidateAWriter,
+    candidate_a_differential_from_payload,
 )
-from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+from .grc_v4_candidate_c import CandidateCCurrent
 
 # Shared exact norm/exponential utilities; standalone PC invokes no CI root.
 # Composite declarations also resolve the explicit CI+PC domain.
@@ -40,6 +43,7 @@ from .grc_v4_geometry import (
     _identity,
     _local_payload,
 )
+from .grc_v4_numerics import MatrixError as CandidateCStageError
 from .grc_v4_profile import CandidateAParams, CandidateCParams, CIPCParams, PCParams
 from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number, _vector
 
@@ -154,7 +158,8 @@ def _declarations(
 
 def _ball(values: Any, radius: float, label: str) -> None:
     _require(
-        sum((exact_number(x) ** 2 for x in values), exact_number()) <= exact_number(radius) ** 2,
+        sum((exact_number(x) ** 2 for x in values), exact_number())
+        <= exact_number(radius) ** 2,
         label + " exceeds the declared PC Frobenius ball",
     )
 
@@ -196,13 +201,19 @@ def carrier_geometry(
 
 
 def _descriptor_bound(
-    backend: CandidateADifferentialReference, radius: ExactScalar
+    backend: CandidateADifferential, radius: ExactScalar
 ) -> ExactScalar:
-    """Uniform WLS gradient bound over ||C||<=M, using exact normal matrices.
+    """Uniform gradient bound over ||C||<=M for the closed descriptor union.
 
-    At each node ||b_i|| <= sqrt(2) M sum_j w_ij ||delta_ij||;
-    ||gradient_i|| <= ||normal_i^-1|| ||b_i||. No sampled base state.
+    Positive-weight fixed rows are convex averages of neighbor differences:
+    each component is <=sqrt(2) M, hence the three-row norm is <=sqrt(6) M.
+    Empty rows vanish; loop differences vanish. This holds for every incoming
+    positive W in the chart, without sampling or freezing its reference value.
+    WLS retains its exact normal-matrix bound.
     """
+    if type(backend) is GRC9V4CandidateADifferentialReference:
+        return _sqrt_upper(exact_number(6)) * radius
+    assert isinstance(backend, CandidateADifferentialReference)
     graph, d = backend.graph, backend.dimension
     bound = exact_number()
     for i, node in enumerate(graph.live_node_ids):
@@ -249,7 +260,7 @@ class PCEnvelopeCertificate:
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     bounds: FrozenJSONMap = field(init=False)
 
     def __post_init__(self) -> None:
@@ -261,11 +272,12 @@ class PCEnvelopeCertificate:
         _base_state(self.inputs.current, chart, pc)
         p = ref.profile.params_resolved.candidate
         weights = tuple(
-            exact_number(cast(float, ref.edge_weights[e])) for e in ref.graph.live_edge_ids
+            exact_number(cast(float, ref.edge_weights[e]))
+            for e in ref.graph.live_edge_ids
         )
-        radius = abs(exact_number(ref.profile.params_resolved.geometry.kappa_H)) * exact_number(
-            pc.radius
-        )
+        radius = abs(
+            exact_number(ref.profile.params_resolved.geometry.kappa_H)
+        ) * exact_number(pc.radius)
         if isinstance(pc, CIPCParams):
             from .grc_v4_ci import CIBoundedDomain
 
@@ -290,12 +302,27 @@ class PCEnvelopeCertificate:
         extra: dict[str, Any] = {}
         if isinstance(p, CandidateAParams):
             backend = self.differential_reference
-            if type(backend) is not CandidateADifferentialReference:
+            if type(backend) not in (
+                CandidateADifferentialReference,
+                GRC9V4CandidateADifferentialReference,
+            ):
                 raise TypeError("A_PC requires its declared differential reference")
+            assert backend is not None
+            _require(
+                type(backend) is CandidateADifferentialReference
+                or type(pc) is PCParams,
+                "fixed-row PC certificate does not enable CI+PC",
+            )
             _require(
                 backend.graph == ref.graph
                 and backend.identity == p.descriptor_backend_id
-                and backend.reference_weights == ref.edge_weights,
+                and (
+                    type(backend) is GRC9V4CandidateADifferentialReference
+                    or (
+                        isinstance(backend, CandidateADifferentialReference)
+                        and backend.reference_weights == ref.edge_weights
+                    )
+                ),
                 "A PC differential reference/profile mismatch",
             )
             w = exact_number(chart.weight_upper)
@@ -303,14 +330,19 @@ class PCEnvelopeCertificate:
                 exact_number(p.eta)
                 * w
                 * b2
-                * (abs(exact_number(p.kappa_c)) * w + abs(exact_number(p.kappa_Ah)) * radius)
+                * (
+                    abs(exact_number(p.kappa_c)) * w
+                    + abs(exact_number(p.kappa_Ah)) * radius
+                )
                 * dc
             )
             beta = abs(exact_number(p.zeta_A) * exact_number(p.chi_A))
             margin, response = 1 - beta, exact_number(1)
             _require(margin > 0, "A PC whole-chart current inverse is uncertified")
             current = baseline / margin
-            baseline_lip = exact_number(p.eta) * w * b2 * abs(exact_number(p.kappa_Ah)) * dc
+            baseline_lip = (
+                exact_number(p.eta) * w * b2 * abs(exact_number(p.kappa_Ah)) * dc
+            )
             # log(max(floor, exp(x))) = max(log(floor), x) is 1-Lipschitz.
             # The contrast derivative w.r.t. log target has magnitude <= 1/2.
             contrast_lip = abs(exact_number(p.gamma)) * baseline * baseline_lip / 2
@@ -328,7 +360,9 @@ class PCEnvelopeCertificate:
                 else _sqrt_upper(exact_number(2))
             )
             exponent = (
-                abs(exact_number(p.alpha)) * endpoint_norm * exact_number(chart.resource_radius)
+                abs(exact_number(p.alpha))
+                * endpoint_norm
+                * exact_number(chart.resource_radius)
                 + abs(exact_number(p.beta)) * (2 * descriptor) ** 2
                 + abs(exact_number(p.gamma)) * current**2
             ) / 2
@@ -348,7 +382,10 @@ class PCEnvelopeCertificate:
             assert isinstance(p, CandidateCParams)
             if self.differential_reference is not None:
                 raise TypeError("C_PC has no A differential reference")
-            stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
+            stiffness = numerics.matmul(
+                numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)),
+                bt,
+            )
             shifted = tuple(
                 tuple(
                     x - (exact_number(p.Lambda_C) if i == j else 0)
@@ -401,7 +438,10 @@ class PCEnvelopeCertificate:
             gain, chi = abs(exact_number(p.zeta_C)), abs(exact_number(p.chi_C))
             sector_lip = 2 * b2 * exact_number(chart.resource_radius) / gap
             d_lip = (
-                d * abs(exact_number(p.kappa_M_C)) * sector_lip / (2 * exact_number(p.C_ref))
+                d
+                * abs(exact_number(p.kappa_M_C))
+                * sector_lip
+                / (2 * exact_number(p.C_ref))
             )
             retained_lip = d * d + 2 * d * upper * d_lip
             baseline_lip = (
@@ -508,7 +548,10 @@ def scalar_zoh(
             hi = exact_number((-r.next_minus(ctx)).exp().next_plus(ctx))
         result = []
         for z, s in zip(old, source, strict=True):
-            ends = [exact_number(s) + a * (exact_number(z) - exact_number(s)) for a in (lo, hi)]
+            ends = [
+                exact_number(s) + a * (exact_number(z) - exact_number(s))
+                for a in (lo, hi)
+            ]
             rounded = [float(x) for x in ends]
             if rounded[0] != rounded[1]:
                 break
@@ -523,7 +566,7 @@ class CandidatePCRead:
     """Old-Z geometry and the complete fixed-h candidate chain, with held S."""
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     certificate: PCEnvelopeCertificate = field(init=False)
     point: Point = field(init=False)
     structural_source: K4Tensor = field(init=False)
@@ -561,7 +604,8 @@ class CandidatePCRead:
                 if p.zeta_C == 0
                 else tuple(
                     tuple(
-                        _computed(float(exact_number(p.zeta_C) * exact_number(x))) for x in row
+                        _computed(float(exact_number(p.zeta_C) * exact_number(x)))
+                        for x in row
                     )
                     for row in StarAssembly(point.read.causal_flat).matrix
                 )
@@ -587,7 +631,7 @@ class ProvisionalCandidatePCStep:
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     read: CandidatePCRead = field(init=False)
     reset_read: CandidatePCRead = field(init=False)
     resource: ProvisionalResourceStep = field(init=False)
@@ -717,14 +761,14 @@ class ProvisionalCandidatePCStep:
             object.__setattr__(self, name, value)
 
     def to_payload(self) -> dict[str, Any]:
-        return dict(
-            schema_version="grcv4-pc-step-recipe-v1",
-            numerics=NUMERICS,
-            inputs=self.inputs.to_payload(),
-            differential_reference=None
+        return {
+            "schema_version": "grcv4-pc-step-recipe-v1",
+            "numerics": NUMERICS,
+            "inputs": self.inputs.to_payload(),
+            "differential_reference": None
             if self.differential_reference is None
             else self.differential_reference.to_payload(),
-        )
+        }
 
     @property
     def identity(self) -> str:
@@ -742,7 +786,5 @@ class ProvisionalCandidatePCStep:
         backend = data["differential_reference"]
         return cls(
             GeometryStageInputs.from_payload(data["inputs"]),
-            None
-            if backend is None
-            else CandidateADifferentialReference.from_payload(backend),
+            None if backend is None else candidate_a_differential_from_payload(backend),
         )

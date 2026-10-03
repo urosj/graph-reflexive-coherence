@@ -11,11 +11,11 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "b2eaf1b4d2aec0919a1680b73f02eee5908c1642e86166910c71f3f391f0230b"
+      "sha256": "7592bd6622ac43c88240835a7cf7278d9d782fb73d25bff586d9253b3d0af798"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "4527d777c7fb053e07479ca017ef9cb51777dd06e1808f2d5700a270d1ced4b6"
+      "sha256": "fda7f793b24594e450daee276bd65e1a0a09bfac52f4a7029ee5d48515168d15"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
@@ -2575,11 +2575,11 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "91cd485d249fc286bb8736886a47710c9095333bc859f686b6be5e0a659b0d26"
+      "sha256": "4a2de9f5f9df230dee18864b6d81ea055741b7648ed162ab79c18911ddc38945"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
-      "sha256": "467fd8ab74411829bcd78cf3f92f78f58df3f30f9e4c094078d345357bedfdcb"
+      "sha256": "9e661a3a8406ac322a38b6ee6a5d78e680118cbc85b0fe95bf893437e760143a"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/profile_g2_registry.py",
@@ -3484,7 +3484,19 @@
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json",
       "sha256": "232632413f02c34b250d5f8ed850742def3f1b17b6e7b46957d2654d06a6618d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-APC-RuntimeReview.md",
+      "sha256": "c6c336327838b8320369cb084e5879eb4c45cf8c17742864428aa10ee196b907"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json",
+      "sha256": "d6716ad45cdb20666cd2eed0048d6376145697877e8d71543aecb8e8b8625fe8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983apc_native.py",
+      "sha256": "c791299cec0437f7817ede75e27cb97b54b1da1e3816bcd43667912ff9e5685f"
     }
   ],
-  "record_digest": "584c6f451da6f049cb245a58045d8e2f1cac38c74870e0b56aa8b7cba3cc0771"
+  "record_digest": "ef2c9bf4469eb772840dc59ad54967841505d16e8cfab0eaeec08e553a65d3ff"
 }
