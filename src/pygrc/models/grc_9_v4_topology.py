@@ -1135,9 +1135,31 @@ class GRC9V4CandidateADifferentialReference:
         return result
 
     def rebuild(self, C: VertexScalar, incoming_W: tuple[float, ...]) -> Matrix:
+        return tuple(
+            tuple(_rounded(x) for x in row) for row in self.rebuild_exact(C, incoming_W)
+        )
+
+    def rebuild_exact(
+        self, C: VertexScalar, incoming_W: tuple[float, ...]
+    ) -> tuple[tuple[ExactScalar, ...], ...]:
+        """Unrounded fixed-row operands for analytic residual/domain proofs.
+
+        The same admitted incidence terms supply binary64 point descriptors.
+        No stored or rounded summary can become an analytic proof operand.
+        """
         _require_coordinates(C, VertexScalar, self.graph)
         weights = _vector(incoming_W, positive=True)
-        rows = GRC9V4RowDifferential(self.port_graph).evaluate(
+        terms = GRC9V4RowDifferential(self.port_graph)._terms(
             C.values, weights, (0.0,) * len(self.port_graph.edges)
         )
-        return tuple(row.gradient for row in rows)
+        result = []
+        for rows in terms:
+            gradient = []
+            for row in rows:
+                denominator = sum((w for w, _, _ in row), exact_number())
+                numerator = sum((w * delta for w, delta, _ in row), exact_number())
+                gradient.append(
+                    numerator / denominator if denominator else exact_number()
+                )
+            result.append(tuple(gradient))
+        return tuple(result)

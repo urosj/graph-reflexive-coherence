@@ -2290,6 +2290,23 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     because the then-current generic A evaluator required WLS; A.2 now supplies
     the explicit fixed-port-row incoming-W bridge. See the
     [A_OS oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md).
+    A_CI preparation and bounded own review are complete on 2026-10-03 after
+    accepted C_CI commit `2a1d6c0`; A_CI oracle explicitly user-accepted on
+    2026-10-03 ("i accept, coninue with A_CI runtime and closure"), distinct
+    from the accepted A_OS scope. Its preparation checkpoints are:
+
+    - [x] Bind exact A_CI profile/domain and fixed-row descriptor, independent
+      current/reset inputs, W lineage, native identity and reference recipes.
+    - [x] Construct and independently certify 25 simultaneous-root/continuation
+      expectations, full Frobenius domains and a genuine target self-map exit.
+    - [x] Complete 15 oracle pressure methods, 18 full-error/ULP effect controls,
+      paper/spec and side-tool review; record the exact CI proof/replay bridge.
+    - [x] Accept this exact A_CI oracle before A_CI `.2` runtime comparison.
+      The [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json)
+      pins the reviewed working-tree bytes; all four oracle subjects are unchanged.
+
+    See the [A_CI oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Validation.json).
   - [x] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
@@ -2309,6 +2326,24 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
       split rejection, invalid policy/charge/receipt/replay controls, numerical
       outliers/covariance, regression and exact boundary binding review.
     See the [A.2 review](./phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-RuntimeReview.md).
+    A_CI runtime and bounded closure review are complete on 2026-10-03,
+    following explicit acceptance of its separate A.1 oracle. Three checkpoints:
+
+    - [x] Exact incoming-C/W fixed-row CI residual/domain bridge, explicit
+      descriptor replay and a bound confirming-root numerical recipe. The latter
+      closes the source-reset early-stop precision gap without changing the
+      oracle, profile, tolerance, domain or iteration budget.
+    - [x] Closed A_CI event/state/template, independent two-role W lineage and
+      full root/writer-surface readmission, atomic receipts and checkpoint replay.
+    - [x] Native source/twenty target beats, 18 effect controls, 23 pressure
+      methods, certified domain and resource-boundary outliers, paper/spec and
+      side-tool claim review, regressions, static checks and phase bindings.
+    - [x] Separately accept the bounded A_CI runtime review; explicitly
+      user-accepted on 2026-10-03 ("accept and commit"), distinct from the
+      earlier oracle acceptance.
+
+    See the [A_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-Validation.json).
   - Escalation: genuinely absent generic authority found in `.1` holds the
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
@@ -2332,7 +2367,12 @@ their own `.1` oracle and `.2` execution acceptance):
   Native integration and bounded pressure review explicitly user-accepted on
   2026-10-03 ("found it. accept and commit").
   See P9-8.3C-CI above for the exact separate scope.
-- [ ] A_CI — A history plus joint target-root/domain evidence.
+- [x] A_CI — A history plus joint target-root/domain evidence.
+  A.1 explicitly user-accepted on 2026-10-03. A.2 implementation and bounded
+  closure review are complete against the unchanged oracle; exact proof/replay,
+  the source-reset precision correction, event/rollback and continuation pass.
+  A.2 runtime and bounded closure review separately user-accepted on
+  2026-10-03 ("accept and commit"); no public support promotion.
 - [ ] A_PC — A history plus persistent carrier evidence.
 - [ ] C_CI_PC — coupled root/carrier target evidence.
 - [ ] A_CI_PC — combined W, coupled root and carrier evidence.

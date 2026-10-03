@@ -815,12 +815,14 @@ def aos_history_policy(
     )
 
 
-def aos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+def _a_profile_template(
+    reference: GRCV4ReferenceGeometry, family: Literal["A_OS", "A_CI"]
+) -> GRCV4ProfileTemplate:
     return resolve_profile_template(
         {
             "schema_version": "grcv4-profile-template-v1",
             "source_complete_profile_id": reference.profile.complete_profile_id,
-            "profile_family_id": "A_OS",
+            "profile_family_id": family,
             "topology_dependent_map_policy_id": "initialize_target_W_A_over_complete_live_edge_set_v1",
             "geometry_reference_policy_id": "rebuild_reference_hodge_from_target_candidate_A_reference_v1",
         },
@@ -828,8 +830,16 @@ def aos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTempl
     )
 
 
+def aos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_OS")
+
+
+def aci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_CI")
+
+
 @dataclass(frozen=True, slots=True)
-class GRC9V4AOSExpansion:
+class _GRC9V4AExpansion:
     """Exact old-edge lineage and positive new-edge seeding for both A roles.
 
     Complete target-vector construction is the selected history policy, not a
@@ -837,6 +847,7 @@ class GRC9V4AOSExpansion:
     separately; new entries are zero and never replace solved target currents.
     """
 
+    FAMILY: ClassVar[Literal["A_OS", "A_CI"]]
     plan: GRC9V4ExpansionPlan
     source: GRCV4ReferenceGeometry
     source_current: GRCV4AuthoritativeState
@@ -854,13 +865,13 @@ class GRC9V4AOSExpansion:
         plan, source = replace(self.plan), replace(self.source)
         if (
             source.graph.port_graph != plan.source_graph
-            or source.profile.identity_payload.profile_family_id != "A_OS"
+            or source.profile.identity_payload.profile_family_id != self.FAMILY
         ):
-            raise ValueError("A_OS source port/reference mismatch")
+            raise ValueError(f"{self.FAMILY} source port/reference mismatch")
         backend = GRC9V4CandidateADifferentialReference(plan.source_graph)
         params: Any = source.profile.params_resolved.to_payload()
         if params["candidate"]["descriptor_backend_id"] != backend.identity:
-            raise ValueError("A_OS requires the source fixed-row descriptor")
+            raise ValueError("A requires the source fixed-row descriptor")
         if any(x != 0 for row in source.K4_base for x in row):
             raise ValueError("bounded A expansion requires zero structural K4 base")
         for role in (self.source_current, self.source_reset):
@@ -869,13 +880,13 @@ class GRC9V4AOSExpansion:
             aos_history_policy(self.source_current, self.source_reset)
         ):
             raise ValueError(
-                "A_OS requires exact actual old-edge lineage and positive bond seeds"
+                "A requires exact actual old-edge lineage and positive bond seeds"
             )
         if (
-            aos_profile_template(source).profile_template_id
+            _a_profile_template(source, self.FAMILY).profile_template_id
             != plan.request.target_profile_template_id
         ):
-            raise ValueError("A_OS target profile template mismatch")
+            raise ValueError("A target profile template mismatch")
         graph = GRCV4Graph.from_port_graph(plan.target_graph)
         weights = {
             **source.edge_weights.to_dict(),
@@ -959,3 +970,17 @@ class GRC9V4AOSExpansion:
             self.target.graph,
             tuple(old.get(e, 0.0) for e in self.target.graph.live_edge_ids),
         )
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4AOSExpansion(_GRC9V4AExpansion):
+    """Closed A_OS resource/reference and retained-W expansion."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI"]] = "A_OS"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ACIExpansion(_GRC9V4AExpansion):
+    """Closed A_CI maps; both target joint roots remain readmission obligations."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI"]] = "A_CI"

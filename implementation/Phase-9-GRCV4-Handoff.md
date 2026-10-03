@@ -2,7 +2,30 @@
 
 ## Current continuation — 2026-10-03
 
-The user requests C_CI next after accepted A_OS commit `ba5cf5c`.
+The user accepted A_CI's independent A.1 oracle and requested runtime/closure
+on 2026-10-03 ("i accept, coninue with A_CI runtime and closure"). The
+[acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json)
+pins its reviewed working-tree subjects, all unchanged. A_CI A.2 implementation
+and bounded closure review are now complete: exact fixed-row analytic CI
+operands, explicit descriptor/recipe replay, two-role W lineage, full target
+root/writer-surface admission and atomic publication/reference evidence.
+The first-pass solver met the declared joint tolerance but missed the oracle's
+source-reset geometry budget. A separately identified native confirming-root
+recipe closes that gap without changing the oracle, domain, tolerance or
+iteration budget; WLS and C keep their existing recipe. Simplex-vertex events
+admit zero resources, but a separately bounded next-step negativity correctly
+fails charge admission without repair. These limits are explicit in the
+[A_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-Validation.json).
+All 23 native pressure methods, 18 effect controls and the independent oracle/
+research checks pass. Shared regressions pass 481 tests (one existing skip),
+with 86 CI/CI+PC tests rerun after the precision fix; the side tool's 12 checks
+and targeted Ruff/mypy pass. The user separately accepted the bounded A_CI
+runtime and closure review on 2026-10-03 ("accept and commit"); the A_CI
+completion row is now closed for this scope. No other A profile, global stability, public lifecycle facade
+or new public supported profile is accepted by this scope.
+
+The preceding user request was C_CI after accepted A_OS commit `ba5cf5c`.
 P9-8.3C-CI adds a closed native event owner using the unchanged generic joint
 root/certificate. Both roles rebuild from complete target C references; the
 same atomic receiver publishes state, receipts and fresh selected-reference

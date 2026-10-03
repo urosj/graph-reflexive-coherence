@@ -318,3 +318,47 @@ def cci_authorization(root):
 def cci_permitted(path, leaf):
     """Call after cci_authorization(root); event integration owners only."""
     return leaf == CCI_ENTRY and path in CCI_PATHS
+
+
+ACI_ENTRY = 'P9-8.3A.2'
+ACI_PATHS = (
+    'src/pygrc/models/grc_9_v4_topology.py',
+    'src/pygrc/models/grc_v4_candidate_a.py',
+    'src/pygrc/models/grc_v4_ci.py',
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_aci.py',
+)
+ACI_NEW_PATHS = ('tests/models/test_grc_9_v4_aci.py',)
+ACI_G2 = 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'
+ACI_PREDECESSOR = '2a1d6c098f1154a973614364f680ee69e5b7511b'
+ACI_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json'
+ACI_ACCEPTANCE_SHA = 'c46fdb1dfd155a693b192ed27692b322026c0ab5b08c2805a70f20501b4c2906'
+ACI_ORACLE_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Oracle.json': '846e491b8eaa637ebcdac0a049a26f2192bf1054f0e341af0a8a9e51f70ebb44', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-OracleReview.md': '9544b4a46da678c2c9af50111465fff3416174fddf213055aac6da3cce47dd32', 'implementation/phase-9-grcv4/verification/verify_p983a_aci_oracle.py': 'ad00edb92b3cf7868f7ae888972c8c646c966cf9b8619939a0a25e346350bf51', 'implementation/phase-9-grcv4/verification/test_p983a_aci_oracle.py': '0666b3051fc391be6cbb02ec7615de166e3f8c0c2f41721454c91bb716201f8e'}
+
+
+def aci_authorization(root):
+    """Explicit A_CI oracle acceptance and requested runtime closure, no G2 promotion.
+
+    The oracle was accepted in the working tree. Pin its exact reviewed bytes
+    and the explicit acceptance record instead of inventing a committed subject.
+    """
+    decision = accepted(root)
+    p.require(ACI_G2 in decision['accepted_generic_runtime_support'],
+              'A_CI requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', ACI_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, ACI_ACCEPTANCE).read_bytes()) == ACI_ACCEPTANCE_SHA,
+              'A_CI requires its explicit accepted oracle scope')
+    value = p.read(p.safe_path(root, ACI_ACCEPTANCE))
+    p.require(value['status'] == 'accepted_by_user'
+              and {r['path']: r['sha256'] for r in value['immutable_subjects']} == ACI_ORACLE_HASHES,
+              'A_CI oracle acceptance bindings changed')
+    for path, expected in ACI_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_CI A.2 cannot replace accepted oracle expectations')
+    return ACI_ENTRY
+
+
+def aci_permitted(path, leaf):
+    """Exact fixed-row CI proof and native transaction owners only."""
+    return leaf == ACI_ENTRY and path in ACI_PATHS

@@ -13,6 +13,7 @@ from typing import Any, ClassVar, Literal, Self, cast
 
 from .grc_9_v4_expansion import (
     GRC9ExpansionPolicy,
+    GRC9V4ACIExpansion,
     GRC9V4AOSExpansion,
     GRC9V4CCIExpansion,
     GRC9V4COSExpansion,
@@ -34,7 +35,7 @@ from .grc_9_v4_topology import (
     GRC9V4RowSummary,
     _coordinate,
 )
-from .grc_v4_candidate_a import candidate_a_writer_target
+from .grc_v4_candidate_a import CandidateACurrent, candidate_a_writer_target
 from .grc_v4_candidate_c import CandidateCCurrent
 from .grc_v4_ci import ProvisionalCandidateCIStep
 from .grc_v4_codec import (
@@ -277,7 +278,7 @@ class _GRC9V4EventState:
 
     inputs: GeometryStageInputs
     specialization: GRC9V4Specialization
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI"]]
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI"]]
 
     def __post_init__(self) -> None:
         if (
@@ -298,7 +299,7 @@ class _GRC9V4EventState:
             )
         geometry = (
             reference.geometry()
-            if self.FAMILY in {"C_OS", "A_OS", "C_CI"}
+            if self.FAMILY in {"C_OS", "A_OS", "C_CI", "A_CI"}
             else carrier_geometry(inputs, inputs.current)
         )
         if (
@@ -311,14 +312,14 @@ class _GRC9V4EventState:
             raise ValueError("kernel diagnostic receipts are not a native event ledger")
         if any(x != 0 for row in reference.K4_base for x in row):
             raise ValueError("bounded event scope requires zero structural K4 base")
-        if self.FAMILY == "A_OS":
+        if self.FAMILY in {"A_OS", "A_CI"}:
             backend = GRC9V4CandidateADifferentialReference(reference.graph.port_graph)
             candidate = reference.profile.params_resolved.candidate
             if (
                 type(candidate) is not CandidateAParams
                 or candidate.descriptor_backend_id != backend.identity
             ):
-                raise ValueError("native A_OS requires its bound fixed-row descriptor")
+                raise ValueError("native A requires its bound fixed-row descriptor")
         _baseline_policy(GRC9SparkPolicy.from_payload(spec.resolved["spark"]))
         object.__setattr__(self, "inputs", inputs)
         object.__setattr__(self, "specialization", spec)
@@ -382,21 +383,21 @@ class _GRC9V4EventState:
 class GRC9V4COSState(_GRC9V4EventState):
     """Native OS state with no independent carrier authority."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI"]] = "C_OS"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI"]] = "C_OS"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4CPCState(_GRC9V4EventState):
     """Native PC state; geometry must derive from current's own committed Z."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI"]] = "C_PC"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI"]] = "C_PC"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4AOSState(_GRC9V4EventState):
     """A_OS port owner with distinct current/reset retained W and no carrier."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI"]] = "A_OS"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI"]] = "A_OS"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -406,10 +407,44 @@ class GRC9V4AOSState(_GRC9V4EventState):
 
 
 @dataclass(frozen=True, slots=True)
+class GRC9V4ACIState(_GRC9V4EventState):
+    """A_CI authority with distinct W roles and fresh reference-root restart."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI"]] = "A_CI"
+
+    @property
+    def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
+        graph = self.inputs.geometry.reference.graph.port_graph
+        assert graph is not None
+        return GRC9V4CandidateADifferentialReference(graph)
+
+
+def _aci_readmit(state: GRC9V4ACIState) -> tuple[PhysicalFlux, PhysicalFlux]:
+    """Admit both full roots and writer surfaces without a temporal operation."""
+    backend = state.differential_reference
+    probe = ProvisionalCandidateCIStep(replace(state.inputs, dt=0), backend)
+    rows = GRC9V4RowDifferential(
+        backend.port_graph,
+        cast(int, state.specialization.identity_payload["hessian_sign"]),
+    )
+    for authority, root in (
+        (state.inputs.current, probe.root),
+        (state.inputs.reset, probe.reset_root),
+    ):
+        assert authority.W_A is not None
+        rows.evaluate(authority.C, authority.W_A, root.current.values)
+        assert isinstance(root.selected.point, CandidateACurrent)
+        candidate_a_writer_target(
+            root.selected.point, VertexScalar(backend.graph, authority.C)
+        )
+    return probe.root.current, probe.reset_root.current
+
+
+@dataclass(frozen=True, slots=True)
 class GRC9V4CCIState(_GRC9V4EventState):
     """C_CI authority; geometry restarts from reference, never a previous root."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI"]] = "C_CI"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI"]] = "C_CI"
 
 
 def _cci_readmit(state: GRC9V4CCIState) -> tuple[PhysicalFlux, PhysicalFlux]:
@@ -465,6 +500,8 @@ def _event_readmit(
         return _aos_readmit(state)
     if type(state) is GRC9V4CCIState:
         return _cci_readmit(state)
+    if type(state) is GRC9V4ACIState:
+        return _aci_readmit(state)
     _c_readmit(state)
     return None
 
@@ -530,7 +567,7 @@ def _c_readmit(state: _GRC9V4EventState) -> None:
 def _event_receipts(
     before: _GRC9V4EventState,
     after: _GRC9V4EventState,
-    target: _GRC9V4CExpansion | GRC9V4AOSExpansion,
+    target: _GRC9V4CExpansion | GRC9V4AOSExpansion | GRC9V4ACIExpansion,
     ledger: tuple[SuccessfulReceiptEnvelope, ...],
 ) -> list[dict[str, Any]]:
     history: dict[str, Any] = dict(
@@ -549,7 +586,7 @@ def _event_receipts(
             )
         },
     )
-    if type(target) is GRC9V4AOSExpansion:
+    if type(target) in {GRC9V4AOSExpansion, GRC9V4ACIExpansion}:
         history["candidate"].update(
             disposition="exact_transport",
             source_history_digest=payload_identity(
@@ -714,7 +751,8 @@ class _GRC9V4EventOperation:
                                 a.to_dict() for a in published.reference_currents
                             ]
                         }
-                        if self.STATE in {GRC9V4AOSState, GRC9V4CCIState}
+                        if self.STATE
+                        in {GRC9V4AOSState, GRC9V4CCIState, GRC9V4ACIState}
                         else {}
                     ),
                     "initial": self._initial.to_payload(),
@@ -742,7 +780,7 @@ class _GRC9V4EventOperation:
             | ({"carrier_archives"} if cls.STATE is GRC9V4CPCState else set())
             | (
                 {"reference_currents"}
-                if cls.STATE in {GRC9V4AOSState, GRC9V4CCIState}
+                if cls.STATE in {GRC9V4AOSState, GRC9V4CCIState, GRC9V4ACIState}
                 else set()
             ),
             "descriptor_version",
@@ -795,13 +833,16 @@ class _GRC9V4EventOperation:
                     raise ValueError(
                         "C_PC requires the actual whole carrier pair and explicit reset/loss policy"
                     )
-                if type(before) is GRC9V4AOSState and canonical_json_bytes(
+                if type(before) in {
+                    GRC9V4AOSState,
+                    GRC9V4ACIState,
+                } and canonical_json_bytes(
                     request.history_policy
                 ) != canonical_json_bytes(
                     aos_history_policy(before.inputs.current, before.inputs.reset)
                 ):
                     raise ValueError(
-                        "A_OS requires the actual candidate-history pair and exact lineage policy"
+                        "A requires the actual candidate-history pair and exact lineage policy"
                     )
                 plan = GRC9V4ExpansionPlan(
                     graph,
@@ -837,9 +878,16 @@ class _GRC9V4EventOperation:
                 if request.source_node_id not in detection.candidate_node_ids():
                     raise ValueError("source is not a fresh hybrid spark candidate")
                 stage = "target_construction"
-                target: _GRC9V4CExpansion | GRC9V4AOSExpansion
+                target: _GRC9V4CExpansion | GRC9V4AOSExpansion | GRC9V4ACIExpansion
                 if type(before) is GRC9V4AOSState:
                     target = GRC9V4AOSExpansion(
+                        plan,
+                        before.inputs.geometry.reference,
+                        before.inputs.current,
+                        before.inputs.reset,
+                    )
+                elif type(before) is GRC9V4ACIState:
+                    target = GRC9V4ACIExpansion(
                         plan,
                         before.inputs.geometry.reference,
                         before.inputs.current,
@@ -880,8 +928,15 @@ class _GRC9V4EventOperation:
                 if type(target) is GRC9V4CPCExpansion:
                     archives += (FrozenJSONMap(target.carrier_archive_payload()),)
                 reference_currents = published.reference_currents
-                if type(target) in {GRC9V4AOSExpansion, GRC9V4CCIExpansion}:
-                    assert isinstance(target, (GRC9V4AOSExpansion, GRC9V4CCIExpansion))
+                if type(target) in {
+                    GRC9V4AOSExpansion,
+                    GRC9V4CCIExpansion,
+                    GRC9V4ACIExpansion,
+                }:
+                    assert isinstance(
+                        target,
+                        (GRC9V4AOSExpansion, GRC9V4CCIExpansion, GRC9V4ACIExpansion),
+                    )
                     assert role_reads is not None
                     reference_currents += (
                         FrozenJSONMap(
@@ -1030,3 +1085,17 @@ class GRC9V4CCIOperation(_GRC9V4EventOperation):
     @property
     def state(self) -> GRC9V4CCIState:
         return cast(GRC9V4CCIState, self._published.state)
+
+
+class GRC9V4ACIOperation(_GRC9V4EventOperation):
+    """Bounded A_CI event with exact W lineage and atomic two-role admission.
+
+    Selected source currents are replay evidence, never target root seeds.
+    """
+
+    STATE = GRC9V4ACIState
+    CHECKPOINT = "grc9v4-aci-event-checkpoint-v1"
+
+    @property
+    def state(self) -> GRC9V4ACIState:
+        return cast(GRC9V4ACIState, self._published.state)
