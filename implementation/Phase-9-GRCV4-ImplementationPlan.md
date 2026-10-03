@@ -2679,6 +2679,47 @@ claims. A missing specialization fixture alone does not reopen generic G2.
 An A template identity is not expansion evidence. After the all-ten feasibility
 review, A and C_PC runtime dependencies do not hold the C_OS implementation path.
 
+#### End-of-P9-8.3 graph-size and configuration guide
+
+User-requested on 2026-10-03, after committing the A_CI+PC A.1 oracle at
+`1711923`. Complete this documentation task after the P9-8.3 profile work
+and before starting P9-8.4. Publish a repository guide linked from the checklist
+and handoff, checked against the implementation and evidence available then.
+
+The guide must:
+
+- Distinguish required scientific equations/stage rules, configurable profile
+  parameters, immutable profile identities and oracle records, and evolving
+  C/W/Z state. Explain R as an admitted carrier bound, kappa_H as a dynamics
+  coefficient, and base-state/root bounds as declared domains. Explain new
+  configuration versus in-run migration; never silently change a requested
+  coupling or clip state to make admission pass.
+- Record actual source/target vertex and edge counts for each realization's
+  numerical evidence, separately from mechanical allocator coverage, hard
+  structural constraints and measured performance. A tested size does not
+  certify every graph of that size; an absent hard size cap is not an
+  arbitrary-size or performance guarantee.
+- Explain the practical path from a supplied graph/state and desired profile
+  to rebuilt references, automated graph-dependent certificates and execution.
+  Use 100 vertices/400 edges as an illustrative configuration: the total port
+  count permits it, but every vertex still needs degree at most nine and unique
+  port assignments. Do not present this example as tested support unless it
+  is actually executed and reviewed. Keep generic GRCV4 and GRC9V4 distinct.
+- Separate per-configuration admission from additional development validation
+  and advertised support acceptance. Identify current facade/configuration
+  gaps and assign follow-up work to the applicable owners; human approval of
+  each simulation is not the intended usage workflow. Explain that failure
+  of a sufficient certificate may reflect a conservative bound and does not
+  itself prove mathematical invalidity.
+
+Completion requires concrete usage steps, an evidence-linked coverage table,
+and explicit remaining limitations. This schedules documentation and gap
+identification; it does not execute new large-graph experiments, change
+runtime authorization, close P9-8.6 or the performance/cache review, or widen
+any accepted profile's claims.
+
+#### P9-8.4–8.6 runtime conformance
+
 Execute runtime counterparts of every applicable accepted D30, D31, D45,
 and D52 vector, including the exact chirality/phase cases. D37 and D44 are
 additional capacity-shell boundary probes, never substitutes for those

@@ -34,6 +34,14 @@ pinned oracle. No native composite A numerical execution, new runtime
 authorization or public support is claimed by A.1. The remaining RG rows and
 end-of-tranche cache review remain open.
 
+The A_CI+PC A.1 oracle work is committed at `1711923`. The user requests a
+[graph-size and configuration/admission guide](./Phase-9-GRCV4-ImplementationPlan.md#end-of-p9-83-graph-size-and-configuration-guide)
+as the P9-8.3 documentation closeout, after its profile work and before
+starting P9-8.4. The new unchecked checklist task separates numerical graph
+coverage from allocator coverage, explains configurable parameters and
+immutable identities, and documents the practical automated admission path
+and current usage gaps. It grants no larger-graph support or oracle acceptance.
+
 The preceding user request was C_CI+PC after accepting and committing A_PC runtime at
 `5966746`. P9-8.3C-CI-PC now integrates C/Z authority, reference-root restart
 with fixed old Z, the combined B_2R geometry domain, and both-role certified

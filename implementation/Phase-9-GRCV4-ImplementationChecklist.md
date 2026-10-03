@@ -2486,6 +2486,18 @@ feasibility prerequisite is reviewed may a partial runtime-accepted subset
 proceed to its applicable P9-8.4–8.6 and Tranche 9 obligations without closing
 the full ten-profile plan.
 
+- [ ] P9-8.3 closeout: Document graph-size coverage and configuration/admission
+  after the P9-8.3 profile work and before starting P9-8.4. User-requested on
+  2026-10-03. Distinguish immutable scientific/evidence contracts from
+  configurable, identity-bearing parameters and evolving state; explain R,
+  kappa_H, base-state bounds and profile changes. Record actual per-realization
+  numerical graph sizes separately from mechanical allocation coverage and
+  measured performance limits. Describe the practical admission path for a
+  new graph, using 100 vertices/400 edges as an illustrative case subject to
+  the per-vertex nine-port rule. Separate automated per-configuration checks
+  from development validation/support acceptance, and identify current API or
+  automation gaps without introducing manual approval for every simulation.
+  [Guide scope and completion criteria](./Phase-9-GRCV4-ImplementationPlan.md#end-of-p9-83-graph-size-and-configuration-guide).
 - [ ] P9-8.4: Execute all applicable accepted D30, D31, D45, and D52 runtime
   counterparts, with exact chirality/phase cases. Add separately labeled
   D37/D44 capacity-shell boundary probes and deeper declared probes. Execute
