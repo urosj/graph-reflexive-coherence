@@ -2307,6 +2307,29 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
 
     See the [A_CI oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-OracleReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Validation.json).
+    A_PC preparation and bounded own review are complete on 2026-10-03 after
+    accepted A_CI commit `d431e2e`; explicitly user-accepted on 2026-10-03
+    ("accept and commit, then continue with A_PC"), including its separately
+    declared native fixture. Its preparation checkpoints are:
+
+    - [x] Separate the local research domain from the native full compact chart;
+      prove the uniform source/carrier bound and retain the small-radius
+      counterexample. Proposed R=2048, kappa_H=2^-14, M=16 and W in [1/2,513/512].
+    - [x] Bind independent physical source stages, old W near 15/16 with exact
+      lineage/unit new seeds, whole Z archives/zero resets, shares (1/4,3/8,3/8),
+      native identity preimages and distinct W/Z receipt channels.
+    - [x] Independently certify 25 PC read/writer/continuation expectations and
+      24 full-error/ULP effects at their named W/Z consumers; no geometry effect
+      claimed at zero-carrier target entry.
+    - [x] Complete 21 pressure methods, paper/spec/side-tool claim checks and
+      unchanged carrier regressions; retain source-stage, domain, covariance,
+      tampering and admitted-event/negative-next-step controls for A.2.
+    - [x] Explicitly accept this separately declared A_PC oracle scope before
+      A_PC `.2`; the [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json)
+      pins all four unchanged oracle/review/producer/test subjects.
+
+    See the [A_PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json).
   - [x] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
@@ -2374,6 +2397,10 @@ their own `.1` oracle and `.2` execution acceptance):
   A.2 runtime and bounded closure review separately user-accepted on
   2026-10-03 ("accept and commit"); no public support promotion.
 - [ ] A_PC — A history plus persistent carrier evidence.
+  A.1 independent oracle and bounded own review complete on 2026-10-03;
+  separately declared chart/history/resource scope explicitly user-accepted.
+  A.2 fixed-row PC proof/replay and two-channel event/archive integration are
+  authorized next; native rollback and public support are not claimed by the oracle.
 - [ ] C_CI_PC — coupled root/carrier target evidence.
 - [ ] A_CI_PC — combined W, coupled root and carrier evidence.
 - [ ] C_RG2b — target completion/section reconstruction and domain evidence.

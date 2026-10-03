@@ -11,11 +11,11 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "a9f0b503525292e34f5e1a310637b34ee74fc90a5d907cbc6736d6f929e62752"
+      "sha256": "b2eaf1b4d2aec0919a1680b73f02eee5908c1642e86166910c71f3f391f0230b"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "dc8cb7074b83346dde5562391fa325ab2634844ca7ab43cdf067e546debf5528"
+      "sha256": "4527d777c7fb053e07479ca017ef9cb51777dd06e1808f2d5700a270d1ced4b6"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "64f9ac7d28385eca0da8f892a73f8477f1c9f78ea9713e65817f01f18fb03ee2"
+      "sha256": "91cd485d249fc286bb8736886a47710c9095333bc859f686b6be5e0a659b0d26"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3460,7 +3460,31 @@
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p983aci_native.py",
       "sha256": "f0f6ff496b24b26e2992fb9279edc81f88c1435ade5558f99aca2b8b7ca3f0b2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Oracle.json",
+      "sha256": "169554a8b01b99484fba8fcb2b6c1854a8a17b23e0d4c9efe0dd203a26c02eec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md",
+      "sha256": "2e00b770fea009dfb4082bc89677178656e2a7312867fa7220f9e6415e160b74"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json",
+      "sha256": "bf74d0aac20903cb8c93ddb7007c9e3c90529da59585c8a00454db62cbb5d634"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_apc_oracle.py",
+      "sha256": "f2dd3e52ab607acfd1aeb731cac8c639d122dc2774a96c8025b2c943b2f6b435"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py",
+      "sha256": "6daa9c200d80fd041c0eb5badff1cbf0b971373290adcc504869c9c654af7359"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json",
+      "sha256": "232632413f02c34b250d5f8ed850742def3f1b17b6e7b46957d2654d06a6618d"
     }
   ],
-  "record_digest": "7aa30be39d1e65159b9fafd935068381df075ef969aa85f134c7324a6a87b54e"
+  "record_digest": "584c6f451da6f049cb245a58045d8e2f1cac38c74870e0b56aa8b7cba3cc0771"
 }

@@ -2,6 +2,30 @@
 
 ## Current continuation — 2026-10-03
 
+After accepted A_CI commit `d431e2e`, the user requests A_PC next. Its
+independent A.1 oracle and bounded own review are complete and explicitly
+user-accepted on 2026-10-03 ("accept and commit, then continue with A_PC").
+The [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json)
+pins the four unchanged subjects and the separately identified native fixture.
+The same instruction authorizes A.2 runtime and closure after committing A.1.
+The native full compact chart cannot borrow the earlier small local research
+carrier radius. The proposed fixture explicitly binds R=2048, kappa_H=2^-14,
+M=16, W in [1/2,513/512], supplied old W near 15/16 and satellite shares
+(1/4,3/8,3/8). Independent whole-chart source bounds are below 1425/507 on
+source/target, both below R. W lineage remains exact; both actual source
+carriers are archived and both whole target carriers reset to zero with
+carrier loss only. All 25 independent numerical comparisons, 24 full-error/ULP
+effect controls and 21 pressure methods pass. Five unchanged carrier-companion
+tests and the side tool's 12 existing checks pass. The review retains a
+counterexample to using the research radius on the full chart and an admitted
+event whose next physical step must reject a certified negative resource.
+See the [A_PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json).
+A.2 must extend PC's WLS-only descriptor proof/replay to fixed rows and add the
+two-channel A_PC event/state/archive receiver under that explicit acceptance.
+No runtime source, public support, earlier accepted oracle or P9-8.0 scope is
+changed by this research preparation.
+
 The user accepted A_CI's independent A.1 oracle and requested runtime/closure
 on 2026-10-03 ("i accept, coninue with A_CI runtime and closure"). The
 [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json)
