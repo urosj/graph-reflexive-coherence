@@ -274,3 +274,47 @@ def aos_authorization(root):
 def aos_permitted(path, leaf):
     """Call after aos_authorization(root); exact fixed-row A_OS bridge owners."""
     return leaf == AOS_ENTRY and path in AOS_PATHS
+
+
+CCI_ENTRY = 'P9-8.3C-CI'
+CCI_PATHS = (
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_cci.py',
+)
+CCI_NEW_PATHS = ('tests/models/test_grc_9_v4_cci.py',)
+CCI_PREDECESSOR = 'ba5cf5c12efc30de7977853876bf801edcbca7d2'
+CCI_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': 'e2f4e7204e0afb2cc940452c6c48a85a7a9da894b760efcfc9dd615ebce54efe',
+    'src/pygrc/models/grc_9_v4_expansion.py': '5cb2832b05bba367c74e2022630c4d3c06594576c3fa33095909c9c355382ec4',
+    'src/pygrc/models/grc_9_v4_lifecycle.py': '59baa8b766f41524c9923e3361dec1f4d3c16423939572d8c4bd3dedaf4840de',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json': 'fe0175aec8119ff85efe8685638eeece5b70d2efe705b0a3a475e3ca8bc55f24',
+    'implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py': '0ddd5b79cc2492a1d6635158f81fce308872fa240a6630074676d18d1b983136',
+    'implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py': '8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9',
+}
+CCI_RESEARCH_PATHS = (
+    'implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json',
+    'implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py',
+    'implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py',
+)
+CCI_G2 = 'grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e'
+
+
+def cci_authorization(root):
+    """User-requested C_CI after accepted A.2; exact existing G2, no promotion."""
+    decision = accepted(root)
+    p.require(CCI_G2 in decision['accepted_generic_runtime_support'],
+              'C_CI requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', CCI_PREDECESSOR, 'HEAD')
+    for path, expected in CCI_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', CCI_PREDECESSOR + ':' + path)) == expected,
+                  'C_CI requires its accepted predecessor and research subjects')
+        if path in CCI_RESEARCH_PATHS:
+            p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                      'C_CI cannot replace accepted research expectations')
+    return CCI_ENTRY
+
+
+def cci_permitted(path, leaf):
+    """Call after cci_authorization(root); event integration owners only."""
+    return leaf == CCI_ENTRY and path in CCI_PATHS

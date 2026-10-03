@@ -2243,6 +2243,26 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   authorization/cutoff checks and 12 side-tool checks pass. The real target
   whole-chart failure probe rejects atomically despite regular point currents.
   See the [C_PC review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-83c-pc-whole-carrier-event-integration).
+- [x] P9-8.3C-CI: Native C_CI event integration after exact C_CI G2/G3,
+  requested on 2026-10-03 after accepted A_OS commit `ba5cf5c`. The bounded
+  implementation and pressure review are explicitly user-accepted on 2026-10-03
+  ("found it. accept and commit"), including their documented scientific and
+  side-tool scope limits. All content-specific checkpoints are complete:
+  - [x] P9-8.3C-CI.1: Bind the nonpersistent C template/authority and complete
+    target references; use the unchanged certified joint-root solver for both
+    roles, with separately identified native and research domain norms.
+  - [x] P9-8.3C-CI.2: Integrate exact two-role resource transfer, fresh selected
+    source reference currents, full target root/domain and row readmission,
+    atomic receipts/reference evidence, and deterministic checkpoint replay.
+  - [x] P9-8.3C-CI.3: Complete independent paper/interval/side-tool pressure,
+    actual source and both-role ten-step continuations, genuine domain and
+    iteration failures, outliers, rollback/replay, and portable boundary review.
+  All three checkpoints pass own review: 16 native pressure tests, 208 shared
+  regressions, six unchanged research tests, 12 side-tool checks, targeted
+  Ruff/mypy and the phase boundary audit. Explicit domain limits remain in
+  scope and are included in this explicit acceptance.
+  See the [C_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-RuntimeReview.md)
+  and [validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-Validation.json).
 - [x] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
   Reconciled for the bounded A_OS scope on 2026-10-03: both children are
@@ -2308,7 +2328,10 @@ their own `.1` oracle and `.2` execution acceptance):
   2026-10-03 ("awesome. accept, commit"); bounded A_OS reconciliation is complete.
 - [x] C_PC — nonnull whole-carrier policy and target continuation.
   Bounded implementation and pressure review user-accepted on 2026-10-03.
-- [ ] C_CI — joint target-root/domain evidence, no carrier.
+- [x] C_CI — joint target-root/domain evidence, no carrier.
+  Native integration and bounded pressure review explicitly user-accepted on
+  2026-10-03 ("found it. accept and commit").
+  See P9-8.3C-CI above for the exact separate scope.
 - [ ] A_CI — A history plus joint target-root/domain evidence.
 - [ ] A_PC — A history plus persistent carrier evidence.
 - [ ] C_CI_PC — coupled root/carrier target evidence.

@@ -231,6 +231,9 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p983cci_native.py",
+    PHASE + "tranche-8/P9-8.3C-CI-RuntimeReview.md",
+    PHASE + "tranche-8/P9-8.3C-CI-Validation.json",
     PHASE + "tranche-8/P9-8.3A.2-AOS-RuntimeReview.md",
     PHASE + "tranche-8/P9-8.3A.2-AOS-Validation.json",
     HERE + "verify_p983a_aos_oracle.py",
@@ -1652,16 +1655,22 @@ def leaf_permissions(root):
     for name in AOS_PATHS:
         require(name in owners or name in AOS_NEW_PATHS, 'A_OS outside reviewed runtime roster')
         owners[name] = owners.get(name, set()) | {aos_entry}
+    from phase9_specialization_acceptance import cci_authorization, CCI_PATHS, CCI_NEW_PATHS
+    cci_entry = cci_authorization(root)
+    ready = sorted(set(ready) | {cci_entry})
+    for name in CCI_PATHS:
+        require(name in owners or name in CCI_NEW_PATHS, 'C_CI outside reviewed runtime roster')
+        owners[name] = owners.get(name, set()) | {cci_entry}
     return ready, owners
 
 
 def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
-    from phase9_specialization_acceptance import AOS_NEW_PATHS
+    from phase9_specialization_acceptance import AOS_NEW_PATHS, CCI_NEW_PATHS
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_lifecycle"}
-        for name in AOS_NEW_PATHS
+        for name in (*AOS_NEW_PATHS, *CCI_NEW_PATHS)
     ), *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": row["module_owner"]}
@@ -1876,6 +1885,7 @@ def work_entries(root, approval):
         backend_authorization, backend_permitted,
         allocator_authorization, allocator_permitted, cos_authorization, cos_permitted,
         cpc_authorization, cpc_permitted, aos_authorization, aos_permitted,
+        cci_authorization, cci_permitted,
     )
     g3 = accepted_g3(root)
     row_entry = row_bridge_authorization(root)
@@ -1886,12 +1896,13 @@ def work_entries(root, approval):
     cos_entry = cos_authorization(root)
     cpc_entry = cpc_authorization(root)
     aos_entry = aos_authorization(root)
+    cci_entry = cci_authorization(root)
     def g3_permitted(name, leaf):
         return (permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
                 or backend_permitted(name, leaf) or allocator_permitted(name, leaf)
                 or cos_permitted(name, leaf) or cpc_permitted(name, leaf)
-                or aos_permitted(name, leaf))
+                or aos_permitted(name, leaf) or cci_permitted(name, leaf))
     leaves.update(g3['new_runtime_iterations_authorized'])
     leaves.add(row_entry)
     leaves.add(trigger_entry)
@@ -1901,6 +1912,7 @@ def work_entries(root, approval):
     leaves.add(cos_entry)
     leaves.add(cpc_entry)
     leaves.add(aos_entry)
+    leaves.add(cci_entry)
     require(
         value["accepted_generic_runtime_support"] == accepted_generic_support(root)
         and value["admitted_specialization_support_sets"] == g3['admitted_specialization_support_sets'],

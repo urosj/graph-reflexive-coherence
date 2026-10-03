@@ -1265,8 +1265,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
-      "sha256": "59baa8b766f41524c9923e3361dec1f4d3c16423939572d8c4bd3dedaf4840de",
-      "iteration_id": "P9-8.3A.2"
+      "sha256": "0751fa4858f0d232d31c2c483120fdbb4c61923234ae589f1b5e83582bd6dfb8",
+      "iteration_id": "P9-8.3C-CI"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_topology.py",
@@ -1575,8 +1575,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_expansion.py",
-      "sha256": "5cb2832b05bba367c74e2022630c4d3c06594576c3fa33095909c9c355382ec4",
-      "iteration_id": "P9-8.3A.2"
+      "sha256": "f33ecb85e0ea25242175c2e4982fd619eed64fb61afe40f23ec063c5971faeb8",
+      "iteration_id": "P9-8.3C-CI"
     },
     {
       "path": "tests/models/test_grc_9_v4_expansion.py",
@@ -1587,6 +1587,11 @@
       "path": "tests/models/test_grc_9_v4_aos.py",
       "sha256": "07fa8036ac640be0107d2120aa451e9ca910a4ad65cf97c25ee2d62e861f1d7e",
       "iteration_id": "P9-8.3A.2"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_cci.py",
+      "sha256": "33ae22f2345e5e363f4a9e9760c51da76219ac9ebcf4cc636a90a5b3d860f50e",
+      "iteration_id": "P9-8.3C-CI"
     }
   ],
   "accepted_generic_runtime_support": [
@@ -1615,6 +1620,6 @@
       "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
     ]
   ],
-  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows. The user-requested P9-8.1e successor after accepted .d at a2d3d36 corrects shared exact-backend use and extends its source/parity guard on exactly the recorded five existing paths; it opens no other runtime implementation or conformance. The 2026-10-03 user-requested P9-8.2 successor after merged parent acceptance at 184919b opens only the reviewed allocator source/test pair. Its pure mechanical plan does not confer native target admission, lifecycle publication, P9-8.3 acceptance or broader specialization conformance. The 2026-10-03 user-requested P9-8.3C-OS successor after accepted allocator merge 79e0e8f opens exactly six reviewed geometry/expansion/lifecycle source/test paths for bounded port-owned C_OS event integration. Its separately identified native numerical fixture, current/reset admission, atomic publication and event replay do not advertise a new G2/native profile or open other P9-8.3 profiles, P9-8.4\u20138.6, or the Tranche 9 public model lifecycle. The 2026-10-03 user-requested P9-8.3C-PC successor after accepted C_OS commit eeb82e9 opens exactly the four existing expansion/lifecycle source/test paths. Its whole-current/reset carrier archive, explicit zero-reset/loss policy, full PC readmission, atomic publication and bounded numerical continuation remain internal native integration; no new G2 advertisement, other native profile, public facade or user acceptance follows.",
-  "record_digest": "2bdd1c1062ed23799a2b634c0ab0347d35f823d2651aaefb168df02a2b225907"
+  "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows. The user-requested P9-8.1e successor after accepted .d at a2d3d36 corrects shared exact-backend use and extends its source/parity guard on exactly the recorded five existing paths; it opens no other runtime implementation or conformance. The 2026-10-03 user-requested P9-8.2 successor after merged parent acceptance at 184919b opens only the reviewed allocator source/test pair. Its pure mechanical plan does not confer native target admission, lifecycle publication, P9-8.3 acceptance or broader specialization conformance. The 2026-10-03 user-requested P9-8.3C-OS successor after accepted allocator merge 79e0e8f opens exactly six reviewed geometry/expansion/lifecycle source/test paths for bounded port-owned C_OS event integration. Its separately identified native numerical fixture, current/reset admission, atomic publication and event replay do not advertise a new G2/native profile or open other P9-8.3 profiles, P9-8.4\u20138.6, or the Tranche 9 public model lifecycle. The 2026-10-03 user-requested P9-8.3C-PC successor after accepted C_OS commit eeb82e9 opens exactly the four existing expansion/lifecycle source/test paths. Its whole-current/reset carrier archive, explicit zero-reset/loss policy, full PC readmission, atomic publication and bounded numerical continuation remain internal native integration; no new G2 advertisement, other native profile, public facade or user acceptance follows. The 2026-10-03 user-requested P9-8.3C-CI successor after accepted A_OS commit ba5cf5c opens exactly the existing expansion/lifecycle owners and new native C_CI test file. It consumes the accepted exact C_CI G2 in G3 and preserves the accepted CI research expectations. Both-role joint-root/domain admission, reference-current replay and atomic publication remain bounded internal integration; no new profile registration, other-profile acceptance or public model lifecycle is claimed.",
+  "record_digest": "c46de0b9f8cdd4e3de2bc666d9a6638a547632fd446c0cd0474cf94a75a7cd98"
 }

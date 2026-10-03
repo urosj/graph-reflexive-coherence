@@ -400,7 +400,7 @@ class GRC9V4ExpansionPlan:
 
 
 def _c_profile_template(
-    reference: GRCV4ReferenceGeometry, family: Literal["C_OS", "C_PC"]
+    reference: GRCV4ReferenceGeometry, family: Literal["C_OS", "C_PC", "C_CI"]
 ) -> GRCV4ProfileTemplate:
     """The single C reference rebuild policy, bound to the full source profile."""
     return resolve_profile_template(
@@ -421,6 +421,10 @@ def cos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTempl
 
 def cpc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
     return _c_profile_template(reference, "C_PC")
+
+
+def cci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_CI")
 
 
 def carrier_content_payload(
@@ -530,7 +534,7 @@ def _resource_transform(plan: GRC9V4ExpansionPlan) -> dict[str, JSONValue]:
 class _GRC9V4CExpansion:
     """Shared exact resource and complete-reference construction for C events."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC"]]
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]]
     plan: GRC9V4ExpansionPlan
     source: GRCV4ReferenceGeometry
     target: GRCV4ReferenceGeometry = field(init=False)
@@ -610,8 +614,8 @@ class _GRC9V4CExpansion:
     def transfer(self, state: GRCV4AuthoritativeState) -> GRCV4AuthoritativeState:
         if type(state) is not GRCV4AuthoritativeState or state.W_A is not None:
             raise ValueError(
-                "C_OS authority has neither W_A nor Z_4"
-                if self.FAMILY == "C_OS"
+                f"{self.FAMILY} authority has neither W_A nor Z_4"
+                if self.FAMILY in {"C_OS", "C_CI"}
                 else "C_PC authority requires typed resources and no W_A"
             )
         carrier = self._carrier_target(state)
@@ -640,14 +644,12 @@ class _GRC9V4CExpansion:
 
 
 @dataclass(frozen=True, slots=True)
-class GRC9V4COSExpansion(_GRC9V4CExpansion):
-    """Pure C_OS transfer, with absent candidate and carrier history.
+class _GRC9V4NonpersistentCExpansion(_GRC9V4CExpansion):
+    """Pure nonpersistent C transfer, with absent candidate and carrier history.
 
     Both roles use the same exact affine map, rounded once per output.
     Numerical admission and publication remain with the transaction owner.
     """
-
-    FAMILY: ClassVar[Literal["C_OS", "C_PC"]] = "C_OS"
 
     def _admit_history(self, plan: GRC9V4ExpansionPlan) -> None:
         for subject, policy_id, disposition in (
@@ -666,11 +668,37 @@ class GRC9V4COSExpansion(_GRC9V4CExpansion):
             if canonical_json_bytes(
                 plan.request.history_policy[subject]
             ) != canonical_json_bytes(expected):
-                raise ValueError("C_OS requires rederived C and absent carrier history")
+                raise ValueError(
+                    f"{self.FAMILY} requires rederived C and absent carrier history"
+                )
 
     def _carrier_target(self, state: GRCV4AuthoritativeState) -> None:
         if state.Z_4 is not None:
-            raise ValueError("C_OS authority has neither W_A nor Z_4")
+            raise ValueError(f"{self.FAMILY} authority has neither W_A nor Z_4")
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4COSExpansion(_GRC9V4NonpersistentCExpansion):
+    """C_OS reference reconstruction with absent candidate/carrier history."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]] = "C_OS"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CCIExpansion(_GRC9V4NonpersistentCExpansion):
+    """C_CI reference reconstruction; target joint-root admission is separate."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]] = "C_CI"
+
+    def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
+        """Replay evidence only: preserve signed stable IDs, zero new edges."""
+        if type(current) is not PhysicalFlux or current.graph != self.source.graph:
+            raise ValueError("reference current must belong to the source graph")
+        old = dict(zip(self.source.graph.live_edge_ids, current.values, strict=True))
+        return PhysicalFlux(
+            self.target.graph,
+            tuple(old.get(e, 0.0) for e in self.target.graph.live_edge_ids),
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -682,7 +710,7 @@ class GRC9V4CPCExpansion(_GRC9V4CExpansion):
     the owner's responsibility; pure construction alone is not admission.
     """
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC"]] = "C_PC"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI"]] = "C_PC"
     source_current: GRCV4AuthoritativeState
     source_reset: GRCV4AuthoritativeState
 

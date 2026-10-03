@@ -2,6 +2,23 @@
 
 ## Current continuation — 2026-10-03
 
+The user requests C_CI next after accepted A_OS commit `ba5cf5c`.
+P9-8.3C-CI adds a closed native event owner using the unchanged generic joint
+root/certificate. Both roles rebuild from complete target C references; the
+same atomic receiver publishes state, receipts and fresh selected-reference
+current evidence. Three checkpoints cover the exact root/domain binding,
+two-role transaction/replay, and independent mathematical/adversarial review.
+Implementation and bounded own review are complete and explicitly user-accepted
+on 2026-10-03 ("found it. accept and commit"), following confirmation of the
+scientific, adversarial and side-tool claim checks and their recorded limits.
+All 230 test methods and 12 side-tool checks pass, along with targeted
+Ruff/mypy and phase boundary verification.
+See the [C_CI review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-Validation.json).
+The native Frobenius domain is independently identified from the research
+infinity ball. No generic CI change, public support promotion or other-profile
+acceptance is implied by this event integration.
+
 P9-8.3A.1 is explicitly user-accepted and committed at `0c995f9`. The same
 instruction authorizes A.2, whose bounded A_OS implementation and own pressure
 review are complete and explicitly user-accepted on 2026-10-03
