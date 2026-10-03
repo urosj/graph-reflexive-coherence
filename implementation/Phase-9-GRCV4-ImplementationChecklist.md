@@ -18,7 +18,11 @@ that checkpoint is committed at `a2d3d36`. P9-8.1e is implemented, own-reviewed
 and user-accepted with real Python/FLINT parity and P9-8.0 arithmetic classification,
 committed at `c27583c`. The user explicitly accepts the complete P9-8.1 parent
 on 2026-10-02 and requests merging its branch into `main`.
-P9-8.2 is next. End-of-Tranche-8 cache review remains open.
+P9-8.2 is implemented and own-reviewed on 2026-10-03 in three substeps delivered
+together on `work/p9-8-2-expansion-allocator`, from merge `184919b`.
+The user explicitly accepts P9-8.2 on 2026-10-03 after specification/paper
+review and requests commit and merge, then P9-8.3C-OS on a new branch.
+The end-of-Tranche-8 cache review remains open.
 General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
@@ -1621,7 +1625,7 @@ automatic complete request generation or specialization conformance is inferred.
 Entry is the accepted G3 set of ten exact generic declarations, not ten
 conformant nine-port models. All-ten bounded feasibility is now reviewed and
 user-accepted. P9-8.1 shared mechanics is complete and user-accepted; P9-8.2
-is next, then C_OS first while retaining the population. P9-8.1 and P9-8.3
+is implemented and own-reviewed, then C_OS first while retaining the population. P9-8.1 and P9-8.3
 are parent registers with independently reviewed children.
 General 7T is not a prerequisite for the defined mechanical scope. Accepted
 Tranche 7 and current execution permissions remain unchanged.
@@ -2158,8 +2162,32 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   identified by this audit. The user's 2026-10-02 request to commit the completed
   changes accepts `.e` and its bounded audit finding, without broader native/FLINT
   conformance acceptance.
-- [ ] P9-8.2: Implement exact D11-G9-P4a boundary reservation, primary spine,
+- [x] P9-8.2: Implement exact D11-G9-P4a boundary reservation, primary spine,
   both chiralities, conditional phase, tree construction, and capacity rules.
+  Requested on 2026-10-03 after P9-8.1 acceptance and merge at `184919b`.
+  Deliver these content-specific substeps together on
+  `work/p9-8-2-expansion-allocator`; they are not separate acceptance gates.
+  - [x] P9-8.2.1: Admit the closed request/policy and source bindings, compute
+    exact capacity, conditional phase and noncircular event identity; check
+    digest assertions and reject source loops before constructing the target.
+  - [x] P9-8.2.2: Reserve inherited boundary ports first, build both primary
+    spines and the arbitrary-size creation-order BFS/rotor tree, preserving
+    old identities/orientations and allocating collision-free role IDs with
+    uniform internal reference seeds. Return an immutable admitted graph plan.
+  - [x] P9-8.2.3: Execute frozen allocation and covariance vectors, independent
+    capacity/tree oracles, deep recursion and malformed/outlier pressure;
+    review exact subjects and pass the current phase-boundary audit.
+  Resource/history transfer, target numerical admission and atomic publication
+  remain with P9-8.3 and the later lifecycle owners.
+  All three implementation/own-review substeps pass; see the
+  [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-82-pure-expansion-allocator).
+  Evidence covers 17 frozen allocation vectors, three metamorphic vectors,
+  four preallocation failure vectors, 224 independent tree layouts through
+  1,004 nodes, 512 orientations and real Python/FLINT parity. The exact-simplex
+  wire restriction and its P9-8.0 research distinction are recorded for P9-8.3.
+  The user explicitly accepts the reviewed implementation on 2026-10-03
+  ("implementation mathches specs and papers, accepted"), with commit and
+  merge requested before continuing with P9-8.3C-OS.
 - [ ] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource
   distribution, C reference transport, and carrier `not_applicable` semantics.
   During P9-8.0 feasibility, construct an independently checked, separately identified numerical

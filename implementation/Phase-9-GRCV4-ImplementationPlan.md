@@ -19,7 +19,10 @@ and own review, including real Python/FLINT parity and P9-8.0 classification,
 and is user-accepted through the 2026-10-02 request to commit the completed changes,
 committed at `c27583c`. The user now explicitly accepts P9-8.1 as a whole
 and requests merging `work/p9-8-1-shared-mechanics` into `main`.
-P9-8.2 is next, with its scoped opening still required. Performance/cache review
+On 2026-10-03 P9-8.2 is implemented and own-reviewed in three substeps delivered
+together on `work/p9-8-2-expansion-allocator` from merge `184919b`.
+The user explicitly accepts P9-8.2 on 2026-10-03 after specification/paper
+review and requests commit and merge, then P9-8.3C-OS on a new branch. Performance/cache review
 is scheduled at the end of Tranche 8. The reconciliation review records
 separate historical scientific-source failures without promoting their scope.
 C_OS remains the first profile integration checkpoint.
@@ -2489,6 +2492,47 @@ to native/FLINT conformance. See the
 [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-81e-exact-backend-correction-and-p9-80-audit).
 The user's 2026-10-02 request to commit the completed changes accepts `.e` and
 its bounded P9-8.0 finding; broader native/FLINT conformance remains separate.
+
+##### P9-8.2 allocator work breakdown
+
+The 2026-10-03 user request opens the pure allocator after accepted P9-8.1
+is merged at `184919b`. The three substeps are delivered together:
+request/source/identity admission; reserve-first boundary, spine and recursive
+tree construction; integrated vector and pressure review. Formal ownership
+stays `P9-8.2` in the reviewed `grc_9_v4_expansion.py` source/test pair.
+
+Use the [accepted D11-G9 contract](../specs/grc-9-v4-spec.md#accepted-d11-g9-chiral-same-port-expansion),
+closed request and policy schemas, and the 17 frozen allocation vectors plus
+three metamorphic vectors. The allocator computes its own target graph and
+event namespace; supplied expected digests are assertions only. Recompute
+policy/history preimages and bind the actual ordered source graph. An input
+edge permutation changes its digest and event ID; normalized role allocation
+must still agree. Retain strict typed node identity and source orientation.
+
+Integer capacity arithmetic must work through the admitted safe-integer limit
+without materializing a graph for that limit. Exercise D30/D31/D45/D52,
+additional D37/D44 shells and deeper finite trees. Check connectivity,
+acyclicity, occupancy, same-port row rotors, row/column balance, exact capacity,
+role padding and stable canonical target order. Use the selected exact backend
+for numerical admission and retain no backend-specific scalar in the plan.
+
+This immutable plan binds declared state/profile/history identities; P9-8.3
+supplies the actual admitted lifecycle, resource/history transforms and target
+readmission. Planner errors carry typed reasons for that later receipt owner;
+the allocator does not publish a committed event or completed spark.
+
+Implementation/own-review status: all three substeps pass together. The pure
+allocator reproduces all 17 frozen graph/event subjects and three covariance
+vectors. Independent creation-order scans verify 224 layouts through 1,004
+nodes; capacity, orientation, identity, malformed-input and backend pressure
+pass. The 125-method regression batch and seven execution-scope checks pass,
+as do Ruff and mypy. See the [review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-82-pure-expansion-allocator)
+for commands and the exact-simplex wire boundary. P9-8.0 rational thirds are
+not silently converted into an admitted binary64 resource tuple. P9-8.3 must
+verify the actual transferred numerical source/target; pure allocation success
+does not grant native specialization conformance. The user explicitly accepts
+the reviewed P9-8.2 implementation on 2026-10-03 and requests its commit/merge
+before beginning the separately scoped P9-8.3C-OS integration.
 
 ##### Profile integration after shared mechanics
 
