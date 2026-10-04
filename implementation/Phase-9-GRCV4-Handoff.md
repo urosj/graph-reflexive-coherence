@@ -1,6 +1,39 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current continuation — 2026-10-03
+## Current continuation — 2026-10-04
+
+After accepted A_CI+PC commit `d5eee1a`, the user requests C_RG2b. The native
+signed argument-completion evaluator and both-role atomic event integration
+and bounded own review are complete. Independent scientific/adversarial
+validation passes. The bounded runtime and closure review is explicitly
+user-accepted on 2026-10-04 ("accept and commit"); the C_RG2b completion row
+is closed for this exact scope.
+The separate completion identity binds C in [-1,5], K_minus=[-1/4,17/4],
+K=[-1/2,9/2], unit references, the accepted fixed C coefficients, and connected
+port-owned trees with at most 17 vertices satisfying the actual operator/mask
+bounds. Ordinary duration is 2^-12; readmission is a zero-write section read.
+A six-level/eighteen-sweep proposal is fully recertified with ExactScalar
+outward intervals and an invariant-section tail in the induced infinity norm.
+Neither signed auxiliary predecessors nor computed geometry become state.
+
+All 18 native pressure methods, 222 distinct shared regressions and 29
+unchanged research methods pass (269 tests: 268 passed, one existing skip),
+as do 12 side-tool checks. Independent intervals certify 24 numerical
+comparisons, the actual source beat and both ten-step target continuations,
+and 24 effects with minimum complete-error/ULP margin ratio above 4.39354.
+Own review corrected the new current-error bridge to the common Euclidean
+solver norm; a distributed-error control proves rejection at unchanged
+tolerances, and the complete numerical export was rerun. Resource/geometry
+proofs retain their infinity norms. The phase-boundary audit passes; final
+evidence and documentation are rebound before the repeated closing audit.
+
+See the [C_RG2b runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-RG2b-RuntimeReview.md)
+and [validation](./phase-9-grcv4/tranche-8/P9-8.3C-RG2b-Validation.json).
+Acceptance preserves the reviewed bounds and introduces no public support.
+A_RG2b and the scheduled graph-size/configuration guide before P9-8.4 remain
+open, as does the end-of-tranche cache/proof review.
+
+## Previous accepted continuation — 2026-10-03
 
 The user requested "commit first, then continue with A_CI+PC". The pending
 P9-8.3 graph-size/configuration guide scheduling change was committed first at

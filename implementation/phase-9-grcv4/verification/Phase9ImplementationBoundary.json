@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "0147e139956ca960b9fc84ea5080360eb136006a60d871f773ce104b6127624b"
+      "sha256": "2acfef565f81ef70125fe52d3d8b27821119103b01feb36e7a7bd5dc039d373d"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "eed128a642ee703810fa60fceeb5d20e3190f2781902de02961935c65ddc9ac8"
+      "sha256": "2551bb434876057d00003ebfc3d28c660bd48974ae6340a3da53a02da08072a3"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "1c47b90233f55b50cf9b22a106c339a43b5f650afbb7acd56b06854d1fd5d376"
+      "sha256": "5123469b1da2cb61181fbced04443c5abdc4ddff2dd6e2032b6dd5b692c6ba69"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,11 +2575,11 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "bd7c2dd2f0f4e05033c5de36d678080d8bddc3b9cc53ccaa1c79ce524632ed29"
+      "sha256": "a52ea727ccef282b69c00070049804abd95807aa7be96c4cab259d6215d839df"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
-      "sha256": "fad84032c6c232fa75147fc426b490fd0dd58e2c93c605ef6230c48a5b5138a9"
+      "sha256": "0ae19010fd221e10b147b3c12d28e4656ecb26a27f437ddf036710ca72b017a9"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/profile_g2_registry.py",
@@ -3544,7 +3544,19 @@
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p983acipc_native.py",
       "sha256": "ca1ef3fcdf6d21681277d3cc427cec1017a33dc7a9a00137148a3b14cf31e8e9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-RG2b-RuntimeReview.md",
+      "sha256": "bbea9acdc865d54772864f9aa9b6384db16f53cd4cb9443376995ad69d73d585"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-RG2b-Validation.json",
+      "sha256": "ad7998a604bc3f9812472593f69223629174060a80867b6068c399fc3a3f5dc2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983crg2b_native.py",
+      "sha256": "40a669716cc7440ab9e4402992f555943034113d2a6752f79765f6132bb03c39"
     }
   ],
-  "record_digest": "d8db87614219c34ab8d44cf86a79174e2274b6ebad607554f797897486d82d31"
+  "record_digest": "d7fe76d3b78e3b4da960c65652971e2612736364e78cc1e013700586e24b233f"
 }

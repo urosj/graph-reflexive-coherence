@@ -2611,6 +2611,17 @@ The intended implementation progression is:
 | Remaining non-RG products | C_CI, A_CI, A_PC, C_CI_PC, A_CI_PC | Joint-root/domain and persistent-history combinations, each with its own target, lifecycle and numerical evidence. |
 | Section-based products | C_RG2b, A_RG2b | Exact target completion/section domains and reconstruction; no inherited CI solve or unproved C1 authority. |
 
+The 2026-10-04 C_RG2b continuation has content-specific checkpoints: a closed
+signed-completion proof/evaluator, complete finite-chain and native arithmetic
+certification, two-role graph-specific event reconstruction, then independent
+scientific/edge-case review and separate acceptance. The new completion is
+not the original compact-support paper construction: it implements the bounded
+argument-retraction construction explicitly accepted under P9-8.0 R6 and proves
+its containment/inversion/contraction hypotheses anew. The old completion and
+its exact generic G2 identity remain unchanged; no C1 authority is added.
+The bounded C_RG2b runtime and closure review is explicitly user-accepted on
+2026-10-04 ("accept and commit"); A_RG2b remains a separate open obligation.
+
 Instantiate P9-8.3A.1/.2 for each exact A profile, beginning with A_OS;
 retain P9-8.3C-OS and C-PC and add corresponding C_CI/C_CI_PC/C_RG2b children.
 These are coverage obligations, not ten copies of the shared mechanics or an

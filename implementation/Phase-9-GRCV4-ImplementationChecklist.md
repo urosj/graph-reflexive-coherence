@@ -2283,6 +2283,23 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   can admit while the next physical step fails certified resource negativity.
   See the [C_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-RuntimeReview.md)
   and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-Validation.json).
+- [x] P9-8.3C-RG2b: Implement the separately identified signed-completion
+  C_RG2b native event after its exact generic G2/G3 and accepted P9-8.0 scope.
+  Content-specific checkpoints (one implementation/review pass):
+  - [x] Bind the signed argument-only completion, graph hypotheses, induced
+    infinity norm and ExactScalar containment/inverse/Lipschitz contraction
+    proof. Preserve the old positive compact-support completion identity.
+  - [x] Certify the six-level finite chain, all state/geometry residuals and
+    section tail; bridge full native C reads/continuity and final invariance.
+  - [x] Integrate both-role target reconstruction on K, absent W/Z, fresh
+    reference currents and atomic state/receipt/reference/checkpoint replay.
+  - [x] Pressure independent full equations, signed predecessors, face/norm
+    outliers, graph/budget/ordinary-entry boundaries, effects and rollback;
+    retain paper/spec/side-tool scope review and portable validation.
+  - [x] Separately accept the bounded C_RG2b runtime and closure review.
+    Explicitly user-accepted on 2026-10-04 ("accept and commit").
+  See the [C_RG2b review](./phase-9-grcv4/tranche-8/P9-8.3C-RG2b-RuntimeReview.md).
+
 - [x] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
   Reconciled for the bounded A_OS scope on 2026-10-03: both children are
@@ -2502,7 +2519,14 @@ their own `.1` oracle and `.2` execution acceptance):
   independent root/writer/continuation, effects, corner and rollback checks
   pass. Bounded A.2 runtime and closure review separately user-accepted on
   2026-10-03 ("accept and commit"); no public support promotion is claimed.
-- [ ] C_RG2b — target completion/section reconstruction and domain evidence.
+- [x] C_RG2b — target completion/section reconstruction and domain evidence.
+  P9-8.3C-RG2b implementation and bounded own review are complete on
+  2026-10-04: signed completion, full finite-chain/tail certification, both-role
+  reconstruction, 18 pressure methods and independent physical/effect checks.
+  A final current-bridge norm correction is pressure-tested and the complete
+  numerical export rerun. Bounded runtime and closure review explicitly
+  user-accepted on 2026-10-04 ("accept and commit"), separately from P9-8.0
+  research acceptance; no public support promotion is claimed.
 - [ ] A_RG2b — A history and target completion/section evidence.
 
 These rows nominate no new production profile or ATC completion. Unselected

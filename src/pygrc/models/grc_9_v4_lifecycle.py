@@ -21,6 +21,7 @@ from .grc_9_v4_expansion import (
     GRC9V4CCIPCExpansion,
     GRC9V4COSExpansion,
     GRC9V4CPCExpansion,
+    GRC9V4CRG2bExpansion,
     GRC9V4ExpansionError,
     GRC9V4ExpansionPlan,
     GRC9V4ExpansionRequestInput,
@@ -285,7 +286,17 @@ class _GRC9V4EventState:
     inputs: GeometryStageInputs
     specialization: GRC9V4Specialization
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ]
 
     def __post_init__(self) -> None:
@@ -307,7 +318,8 @@ class _GRC9V4EventState:
             )
         geometry = (
             reference.geometry()
-            if self.FAMILY in {"C_OS", "A_OS", "C_CI", "A_CI", "C_CI_PC", "A_CI_PC"}
+            if self.FAMILY
+            in {"C_OS", "A_OS", "C_CI", "A_CI", "C_CI_PC", "A_CI_PC", "C_RG2b"}
             else carrier_geometry(inputs, inputs.current)
         )
         if (
@@ -392,7 +404,17 @@ class GRC9V4COSState(_GRC9V4EventState):
     """Native OS state with no independent carrier authority."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "C_OS"
 
 
@@ -401,7 +423,17 @@ class GRC9V4CPCState(_GRC9V4EventState):
     """Native PC state; geometry must derive from current's own committed Z."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "C_PC"
 
 
@@ -410,7 +442,17 @@ class GRC9V4AOSState(_GRC9V4EventState):
     """A_OS port owner with distinct current/reset retained W and no carrier."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "A_OS"
 
     @property
@@ -425,7 +467,17 @@ class GRC9V4ACIState(_GRC9V4EventState):
     """A_CI authority with distinct W roles and fresh reference-root restart."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "A_CI"
 
     @property
@@ -440,7 +492,17 @@ class GRC9V4APCState(_GRC9V4EventState):
     """A_PC authority: independent current/reset W and old committed Z."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "A_PC"
 
     @property
@@ -455,7 +517,17 @@ class GRC9V4ACIPCState(_GRC9V4EventState):
     """Fixed old Z enters a fresh root; both W/Z roles remain authoritative."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "A_CI_PC"
 
     @property
@@ -512,7 +584,17 @@ class GRC9V4CCIState(_GRC9V4EventState):
     """C_CI authority; geometry restarts from reference, never a previous root."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "C_CI"
 
 
@@ -521,8 +603,62 @@ class GRC9V4CCIPCState(_GRC9V4EventState):
     """Old Z is fixed root input; restart from reference, never cached root H."""
 
     FAMILY: ClassVar[
-        Literal["C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC"]
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
     ] = "C_CI_PC"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CRG2bState(_GRC9V4EventState):
+    """C_RG2b resource authority; each read reconstructs its own section."""
+
+    FAMILY: ClassVar[
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+        ]
+    ] = "C_RG2b"
+
+
+def _crg2b_readmit(state: GRC9V4CRG2bState) -> tuple[PhysicalFlux, PhysicalFlux]:
+    """Read both sections on K, without imposing ordinary-entry K_minus."""
+    from .grc_v4_rg2b import CandidateRG2bSection
+    from .grc_v4_step import _resource_charge
+
+    inputs = replace(state.inputs, dt=0)
+    ref = inputs.geometry.reference
+    graph = ref.graph.port_graph
+    assert graph is not None
+    rows = GRC9V4RowDifferential(
+        graph, cast(int, state.specialization.identity_payload["hessian_sign"])
+    )
+    weights = tuple(cast(float, ref.edge_weights[e]) for e in ref.graph.live_edge_ids)
+    currents = []
+    for authority in (inputs.current, inputs.reset):
+        _resource_charge(inputs, VertexScalar(ref.graph, authority.C), "admission")
+        section = CandidateRG2bSection(replace(inputs, current=authority))
+        point = CandidateCCurrent(
+            replace(section.inputs, geometry=section.geometry, stage="rg2b_section")
+        )
+        rows.evaluate(authority.C, weights, point.current.values)
+        currents.append(point.current)
+    return currents[0], currents[1]
 
 
 def _cci_readmit(
@@ -576,6 +712,8 @@ def _aos_readmit(state: GRC9V4AOSState) -> tuple[PhysicalFlux, PhysicalFlux]:
 def _event_readmit(
     state: _GRC9V4EventState,
 ) -> tuple[PhysicalFlux, PhysicalFlux] | None:
+    if type(state) is GRC9V4CRG2bState:
+        return _crg2b_readmit(state)
     if type(state) is GRC9V4AOSState:
         return _aos_readmit(state)
     if type(state) in {GRC9V4CCIState, GRC9V4CCIPCState}:
@@ -881,6 +1019,7 @@ class _GRC9V4EventOperation:
                         in {
                             GRC9V4AOSState,
                             GRC9V4CCIState,
+                            GRC9V4CRG2bState,
                             GRC9V4CCIPCState,
                             GRC9V4ACIState,
                             GRC9V4APCState,
@@ -922,6 +1061,7 @@ class _GRC9V4EventOperation:
                 in {
                     GRC9V4AOSState,
                     GRC9V4CCIState,
+                    GRC9V4CRG2bState,
                     GRC9V4ACIState,
                     GRC9V4APCState,
                     GRC9V4ACIPCState,
@@ -1087,6 +1227,10 @@ class _GRC9V4EventOperation:
                         before.inputs.current,
                         before.inputs.reset,
                     )
+                elif type(before) is GRC9V4CRG2bState:
+                    target = GRC9V4CRG2bExpansion(
+                        plan, before.inputs.geometry.reference
+                    )
                 elif type(before) is GRC9V4CCIState:
                     target = GRC9V4CCIExpansion(plan, before.inputs.geometry.reference)
                 else:
@@ -1127,6 +1271,7 @@ class _GRC9V4EventOperation:
                 if type(target) in {
                     GRC9V4AOSExpansion,
                     GRC9V4CCIExpansion,
+                    GRC9V4CRG2bExpansion,
                     GRC9V4CCIPCExpansion,
                     GRC9V4ACIExpansion,
                     GRC9V4APCExpansion,
@@ -1137,6 +1282,7 @@ class _GRC9V4EventOperation:
                         (
                             GRC9V4AOSExpansion,
                             GRC9V4CCIExpansion,
+                            GRC9V4CRG2bExpansion,
                             GRC9V4CCIPCExpansion,
                             GRC9V4ACIExpansion,
                             GRC9V4APCExpansion,
@@ -1349,3 +1495,14 @@ class GRC9V4ACIPCOperation(_GRC9V4EventOperation):
     @property
     def carrier_archives(self) -> tuple[FrozenJSONMap, ...]:
         return self._published.archives
+
+
+class GRC9V4CRG2bOperation(_GRC9V4EventOperation):
+    """Atomic bounded C_RG2b event with graph-specific current/reset sections."""
+
+    STATE = GRC9V4CRG2bState
+    CHECKPOINT = "grc9v4-crg2b-event-checkpoint-v1"
+
+    @property
+    def state(self) -> GRC9V4CRG2bState:
+        return cast(GRC9V4CRG2bState, self._published.state)

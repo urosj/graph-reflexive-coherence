@@ -44,11 +44,23 @@ CONTAINMENT = "rg2b_derived_compact_linfty_C_W_certificate_v1"
 
 
 def _graph_mode(inputs: GeometryStageInputs) -> bool:
-    return getattr(
-        inputs.geometry.reference.profile.params_resolved.realization,
-        "extension_evaluator_id",
-        "",
-    ).startswith("rg2b_graph_cubic_completion_v1:")
+    return (
+        getattr(
+            inputs.geometry.reference.profile.params_resolved.realization,
+            "extension_evaluator_id",
+            "",
+        ).startswith("rg2b_graph_cubic_completion_v1:")
+        or _native_mode(inputs)
+    )
+
+
+def _native_mode(inputs: GeometryStageInputs) -> bool:
+    return (
+        getattr(
+            inputs.geometry.reference.profile.params_resolved.realization,
+            "extension_evaluator_id", "",
+        ) == "grc9v4_c_rg2b_signed_argument_completion_v1"
+    )
 
 
 class RG2bStageError(ValueError):
@@ -230,7 +242,14 @@ def _declarations(
     params = profile.params_resolved.realization
     approximation, norm, containment = APPROXIMATION, ERROR_NORM, CONTAINMENT
     domain_class = RG2bDomain
-    if _graph_mode(inputs):
+    if _native_mode(inputs):
+        from . import grc_9_v4_rg2b as native
+
+        approximation, norm, containment = (
+            native.APPROXIMATION, native.ERROR_NORM, native.CONTAINMENT
+        )
+        domain_class = native.NativeCRG2bDomain
+    elif _graph_mode(inputs):
         from . import grc_v4_rg2b_graph as general
 
         approximation, norm, containment = (
@@ -417,6 +436,15 @@ class RG2bCertificate:
 
     def __post_init__(self) -> None:
         domain = _declarations(self.inputs, self.differential_reference)
+        if _native_mode(self.inputs):
+            from .grc_9_v4_rg2b import NativeCRG2bDomain
+            from .grc_9_v4_rg2b import certificate as native_certificate
+
+            for name, value in native_certificate(
+                self.inputs, self.differential_reference, cast(NativeCRG2bDomain, domain)
+            ).items():
+                object.__setattr__(self, name, value)
+            return
         if _graph_mode(self.inputs):
             from .grc_v4_rg2b_graph import RG2bGraphDomain, certificate
 
@@ -567,6 +595,12 @@ class CandidateRG2bSection:
 
     def __post_init__(self) -> None:
         cert = RG2bCertificate(self.inputs, self.differential_reference)
+        if _native_mode(self.inputs):
+            from .grc_9_v4_rg2b import section as native_section
+
+            for name, value in dict(certificate=cert, **native_section(cert)).items():
+                object.__setattr__(self, name, value)
+            return
         if _graph_mode(self.inputs):
             from .grc_v4_rg2b_graph import section
 
@@ -749,9 +783,9 @@ class ProvisionalCandidateRG2bStep:
 
     def __post_init__(self) -> None:
         from .grc_v4_candidate_a import CandidateAStageError
-        from .grc_v4_candidate_c import CandidateCStageError
         from .grc_v4_ci import CIStageError
         from .grc_v4_geometry import GeometryDomainError, NonfiniteGeometryError
+        from .grc_v4_numerics import MatrixError as CandidateCStageError
         from .grc_v4_step import (
             CurrentSelection,
             ProvisionalResourceStep,
@@ -857,7 +891,16 @@ class ProvisionalCandidateRG2bStep:
                 restart = CandidateRG2bSection(following, self.differential_reference)
                 restart_point = native(restart)
                 kh = exact_number(ref.profile.params_resolved.geometry.kappa_H)
-                if _graph_mode(before):
+                if _native_mode(before):
+                    from .grc_9_v4_rg2b import native_bridge as signed_bridge
+
+                    (
+                        native_current_error,
+                        native_state_error,
+                        native_geometry_error,
+                        current_norm,
+                    ) = signed_bridge(section, point, following, generated)
+                elif _graph_mode(before):
                     from .grc_v4_rg2b_graph import native_bridge
 
                     (
@@ -916,15 +959,21 @@ class ProvisionalCandidateRG2bStep:
                 )
                 from .grc_v4_ci import _norm
 
-                residual = _norm(
-                    exact_number(a) - exact_number(b)
+                differences = tuple(
+                    tuple(exact_number(a) - exact_number(b)
+                          for a, b in zip(row, old, strict=True))
                     for row, old in zip(
                         restart.geometry.one_form_hodge.matrix,
                         generated.one_form_hodge.matrix,
                         strict=True,
                     )
-                    for a, b in zip(row, old, strict=True)
                 )
+                if _native_mode(before):
+                    from .grc_9_v4_rg2b import infinity
+
+                    residual = infinity(differences)
+                else:
+                    residual = _norm(v for row in differences for v in row)
                 _require(
                     residual <= bound,
                     "RG2b poststate invariance failed its independent error bound",

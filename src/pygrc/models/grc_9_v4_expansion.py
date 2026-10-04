@@ -401,7 +401,7 @@ class GRC9V4ExpansionPlan:
 
 def _c_profile_template(
     reference: GRCV4ReferenceGeometry,
-    family: Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"],
+    family: Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"],
 ) -> GRCV4ProfileTemplate:
     """The single C reference rebuild policy, bound to the full source profile."""
     return resolve_profile_template(
@@ -426,6 +426,10 @@ def cpc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTempl
 
 def cci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
     return _c_profile_template(reference, "C_CI")
+
+
+def crg2b_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_RG2b")
 
 
 def ccipc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
@@ -539,7 +543,7 @@ def _resource_transform(plan: GRC9V4ExpansionPlan) -> dict[str, JSONValue]:
 class _GRC9V4CExpansion:
     """Shared exact resource and complete-reference construction for C events."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]]
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]]
     plan: GRC9V4ExpansionPlan
     source: GRCV4ReferenceGeometry
     target: GRCV4ReferenceGeometry = field(init=False)
@@ -681,20 +685,6 @@ class _GRC9V4NonpersistentCExpansion(_GRC9V4CExpansion):
         if state.Z_4 is not None:
             raise ValueError(f"{self.FAMILY} authority has neither W_A nor Z_4")
 
-
-@dataclass(frozen=True, slots=True)
-class GRC9V4COSExpansion(_GRC9V4NonpersistentCExpansion):
-    """C_OS reference reconstruction with absent candidate/carrier history."""
-
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_OS"
-
-
-@dataclass(frozen=True, slots=True)
-class GRC9V4CCIExpansion(_GRC9V4NonpersistentCExpansion):
-    """C_CI reference reconstruction; target joint-root admission is separate."""
-
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_CI"
-
     def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
         """Replay evidence only: preserve signed stable IDs, zero new edges."""
         if type(current) is not PhysicalFlux or current.graph != self.source.graph:
@@ -707,6 +697,27 @@ class GRC9V4CCIExpansion(_GRC9V4NonpersistentCExpansion):
 
 
 @dataclass(frozen=True, slots=True)
+class GRC9V4COSExpansion(_GRC9V4NonpersistentCExpansion):
+    """C_OS reference reconstruction with absent candidate/carrier history."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_OS"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CCIExpansion(_GRC9V4NonpersistentCExpansion):
+    """C_CI reference reconstruction; target joint-root admission is separate."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_CI"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CRG2bExpansion(_GRC9V4NonpersistentCExpansion):
+    """No-history C map; target completion/section reconstruction is separate."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_RG2b"
+
+
+@dataclass(frozen=True, slots=True)
 class GRC9V4CPCExpansion(_GRC9V4CExpansion):
     """Whole-source archive / whole-target zero reset, never partial transport.
 
@@ -715,7 +726,7 @@ class GRC9V4CPCExpansion(_GRC9V4CExpansion):
     the owner's responsibility; pure construction alone is not admission.
     """
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_PC"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_PC"
     source_current: GRCV4AuthoritativeState
     source_reset: GRCV4AuthoritativeState
 
@@ -760,7 +771,7 @@ class GRC9V4CPCExpansion(_GRC9V4CExpansion):
 class GRC9V4CCIPCExpansion(GRC9V4CPCExpansion):
     """Whole-carrier C_CI+PC maps; both target joint roots require readmission."""
 
-    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC"]] = "C_CI_PC"
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_CI_PC"
 
     def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
         """Fresh source root evidence, signed old IDs and zero new entries."""
