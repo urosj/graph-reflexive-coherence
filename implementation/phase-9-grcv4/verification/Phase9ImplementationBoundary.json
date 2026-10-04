@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "2acfef565f81ef70125fe52d3d8b27821119103b01feb36e7a7bd5dc039d373d"
+      "sha256": "74499fc5466666a54151186a5177692643728f1c7b596ee6cfdf72ba0c5be848"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "2551bb434876057d00003ebfc3d28c660bd48974ae6340a3da53a02da08072a3"
+      "sha256": "ccdcd288039b3e852602a2e9f3a98b7b3f0bd6cf1d5f0d1b5e6333182a0ef27d"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "5123469b1da2cb61181fbced04443c5abdc4ddff2dd6e2032b6dd5b692c6ba69"
+      "sha256": "c787cfafd74712349f5f9bba8a642aaa29da7db5e50f819992626bbfbeac2cc0"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "a52ea727ccef282b69c00070049804abd95807aa7be96c4cab259d6215d839df"
+      "sha256": "e847e1fe4cccc8e9e3b2745f3d10772c7230f7407a0b33c26594846ac47ed3e1"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3556,7 +3556,31 @@
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p983crg2b_native.py",
       "sha256": "40a669716cc7440ab9e4402992f555943034113d2a6752f79765f6132bb03c39"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json",
+      "sha256": "521787954476c351e5fc99e492ce0e00f1a972255c8274729c7d0c03098ffbc9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md",
+      "sha256": "1b814ade05b0bb19e8a6bca37f5b7ebb909e67c6d4fc2b93ff419af98baba97c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Validation.json",
+      "sha256": "13080cdfc439dba0ead3a80a6d11aa3c5bd64a918dd864c58e6776af79f1b7c2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_arg2b_oracle.py",
+      "sha256": "fc12f2efaff10c2c4bd156e255bfd983ada5a9cd9929198638f08687873d6617"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_arg2b_oracle.py",
+      "sha256": "e1d56071ab8c75ab6686c8e82cb9455489cc08b21d03ec8a1f9bcaf86815433a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json",
+      "sha256": "5c9fd726b6f40424d1097212af84c1460770e3df10f4795b3bc668fb117faacf"
     }
   ],
-  "record_digest": "d7fe76d3b78e3b4da960c65652971e2612736364e78cc1e013700586e24b233f"
+  "record_digest": "8ba5ebe11a070b422b8254c18051d83773c61d8ea489869271443c28959094c0"
 }

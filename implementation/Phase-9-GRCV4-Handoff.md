@@ -2,6 +2,49 @@
 
 ## Current continuation — 2026-10-04
 
+After accepted C_RG2b commit `6c3798e`, the user requests the last realization,
+A_RG2b. Its independent A.1 oracle and bounded mathematical/adversarial review
+are complete. **A.1 oracle explicitly user-accepted on 2026-10-04**
+("accept and commit"). Its review, oracle, producer and pressure tests are
+unchanged; A.2 runtime remains unstarted and requires separate closure acceptance.
+
+The accepted A.1 fixture uses the signed argument-only completion in
+(C,512 log W), four inverse levels/eighteen sweeps, induced-infinity section
+proofs and the complete fresh-resource logarithmic writer. Exact A G2/G3 and
+native profile/state/event/reference/history preimages are bound separately.
+Both physical source roles map to graph-specific D52 targets with shares
+(1/2,1/4,1/4), exact retained W, unit new W and absent Z. No source section or
+reference current becomes target section history.
+
+All 25 full comparisons and 30 effect controls pass, including composed writer
+controls through the next RG current; minimum error/ULP margin ratio exceeds
+7.33108. Both roles have ten positive target beats. The 90-digit reconstruction
+independently encloses 3,466 entries. Both first inverse cores are certified
+negative; all six simplex-vertex controls certify a negative next physical C.
+The latter are valid transfer/section probes and A.2 rejection obligations,
+not a claim that native events have executed. Twenty distinct oracle pressure
+methods, the eight unchanged global-completion methods and twelve side-tool
+checks cover the bounded review. Final source and phase-boundary bindings are
+checked with the portable validation.
+
+See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md),
+[oracle](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json) and
+[validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Validation.json) and
+[acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json).
+The immutable review retains its historical pre-acceptance disposition;
+the acceptance record and appended validation metadata record this decision.
+A.2 must extend closed fixed-row A dispatch and signed completion with
+ExactScalar bounds, distinguish K readmission from K_minus ordinary entry,
+convert physical W error into scaled-log error, preserve the Euclidean current
+budget and prove final complete-state invariance. Event/receipt/reference
+publication and replay must preserve both actual W roles atomically.
+
+The A_RG2b completion row, subsequent graph-size/configuration guide before
+P9-8.4 and end-of-tranche cache/proof review remain open. No runtime source or
+accepted research subject changes in this A.1 work.
+
+## Previous accepted continuation — 2026-10-04
+
 After accepted A_CI+PC commit `d5eee1a`, the user requests C_RG2b. The native
 signed argument-completion evaluator and both-role atomic event integration
 and bounded own review are complete. Independent scientific/adversarial

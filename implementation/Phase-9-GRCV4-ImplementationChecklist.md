@@ -2394,6 +2394,28 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
 
     See the [A_CI+PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json).
+    A_RG2b preparation and bounded own review are complete on 2026-10-04
+    after accepted C_RG2b commit `6c3798e`. Its content-specific checkpoints are:
+
+    - [x] Bind exact A G2/G3, signed C/scaled-log-W completion and native
+      identities; prove whole-chart writer/section bounds and containment.
+    - [x] Bind the physical source beat and independent reset, exact old W/unit
+      new seeds, fresh source references, dyadic resource columns and no carrier.
+    - [x] Certify all four backward levels, complete residuals and section tail,
+      25 numerical expectations and both ten-step native-scoped target paths.
+    - [x] Pressure 30 full-error/ULP effects, independent 90-digit equations,
+      graph/norm/C/Y boundaries, chain/history corruption, signed covariance
+      and negative-next-resource controls; review paper/spec/side-tool claims.
+    - [x] Specify closed fixed-row A_RG2b proof/replay/runtime owners, scaled-log
+      state versus Euclidean current error bounds, and A.2 failure obligations.
+    - [x] Accept this exact A_RG2b oracle before its A.2 runtime comparison.
+      Explicitly user-accepted on 2026-10-04 ("accept and commit"); the
+      [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json)
+      pins all four unchanged oracle/review/producer/test subjects.
+      A.2 runtime and profile-register closure remain pending.
+
+    See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Validation.json).
   - [x] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
@@ -2528,6 +2550,11 @@ their own `.1` oracle and `.2` execution acceptance):
   user-accepted on 2026-10-04 ("accept and commit"), separately from P9-8.0
   research acceptance; no public support promotion is claimed.
 - [ ] A_RG2b — A history and target completion/section evidence.
+  A.1 independent oracle and bounded own review are complete on 2026-10-04:
+  signed C/scaled-log-W proof, four-level certified chains, exact history/event
+  identities, 25 comparisons, 30 effects and scientific/adversarial review.
+  A.1 oracle explicitly user-accepted on 2026-10-04 ("accept and commit").
+  A.2 native runtime/closure remains unstarted and requires separate acceptance.
 
 These rows nominate no new production profile or ATC completion. Unselected
 or held profiles remain pending and unadvertised. Only after the all-ten

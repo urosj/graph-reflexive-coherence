@@ -2622,6 +2622,17 @@ its exact generic G2 identity remain unchanged; no C1 authority is added.
 The bounded C_RG2b runtime and closure review is explicitly user-accepted on
 2026-10-04 ("accept and commit"); A_RG2b remains a separate open obligation.
 
+The following A_RG2b A.1 preparation has five scope-specific checkpoints:
+signed C/scaled-log-W proof and native identity binding; actual source stages
+and exact W/reference/resource transfer; complete four-level chain and finite
+continuation certificates; independent equation/effect/corner/claim pressure;
+and the closed A.2 implementation handoff. Its completion agrees with the
+accepted argument-only P9-8.0 R6 construction and includes the W writer inside
+the inverse base map. The A.1 oracle is explicitly user-accepted on 2026-10-04
+("accept and commit"), separately from A.2 execution and closure. Its four
+reviewed subjects remain unchanged; no native runtime or public support is added.
+See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md).
+
 Instantiate P9-8.3A.1/.2 for each exact A profile, beginning with A_OS;
 retain P9-8.3C-OS and C-PC and add corresponding C_CI/C_CI_PC/C_RG2b children.
 These are coverage obligations, not ten copies of the shared mechanics or an
