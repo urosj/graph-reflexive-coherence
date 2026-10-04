@@ -244,6 +244,10 @@ def _rg2b_beat(reference: GRCV4ReferenceGeometry) -> float:
     from .grc_9_v4_rg2b import NativeCRG2bDomain
     if identity == NATIVE_EXTENSION:
         return NativeCRG2bDomain.from_identity(identity).beat_dt
+    from .grc_9_v4_arg2b import EXTENSION as NATIVE_A_EXTENSION
+    from .grc_9_v4_arg2b import NativeARG2bDomain
+    if identity == NATIVE_A_EXTENSION:
+        return NativeARG2bDomain.from_identity(identity).beat_dt
     domain = RG2bGraphDomain if identity.startswith(EXTENSION) else RG2bDomain
     return domain.from_identity(identity).beat_dt
 

@@ -2620,7 +2620,7 @@ argument-retraction construction explicitly accepted under P9-8.0 R6 and proves
 its containment/inversion/contraction hypotheses anew. The old completion and
 its exact generic G2 identity remain unchanged; no C1 authority is added.
 The bounded C_RG2b runtime and closure review is explicitly user-accepted on
-2026-10-04 ("accept and commit"); A_RG2b remains a separate open obligation.
+2026-10-04 ("accept and commit"); A_RG2b has its own acceptance below.
 
 The following A_RG2b A.1 preparation has five scope-specific checkpoints:
 signed C/scaled-log-W proof and native identity binding; actual source stages
@@ -2630,8 +2630,21 @@ and the closed A.2 implementation handoff. Its completion agrees with the
 accepted argument-only P9-8.0 R6 construction and includes the W writer inside
 the inverse base map. The A.1 oracle is explicitly user-accepted on 2026-10-04
 ("accept and commit"), separately from A.2 execution and closure. Its four
-reviewed subjects remain unchanged; no native runtime or public support is added.
+reviewed subjects remain unchanged; that A.1 checkpoint added no native runtime
+or public support.
 See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md).
+
+The requested A_RG2b A.2 continuation now implements that unchanged oracle's
+scope in four content-specific checkpoints: the complete signed C/Y proof and
+certified inverse chain; closed fixed-row ordinary-step/replay and native norm
+bridges; exact two-role W/reference event publication; and independent
+scientific/edge-case/effect/rollback validation. Production bounds use
+ExactScalar, W arithmetic errors are certified in scaled-log coordinates, and
+current budgets retain the common Euclidean norm. The bounded runtime and
+closure review is separately user-accepted on 2026-10-04 ("accept and commit"),
+closing the A_RG2b profile-register row without extending its reviewed scope.
+The graph-size/configuration guide remains open before P9-8.4. See the
+[A_RG2b runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md).
 
 Instantiate P9-8.3A.1/.2 for each exact A profile, beginning with A_OS;
 retain P9-8.3C-OS and C-PC and add corresponding C_CI/C_CI_PC/C_RG2b children.

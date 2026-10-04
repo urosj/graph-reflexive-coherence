@@ -17,6 +17,7 @@ from .grc_9_v4_expansion import (
     GRC9V4ACIPCExpansion,
     GRC9V4AOSExpansion,
     GRC9V4APCExpansion,
+    GRC9V4ARG2bExpansion,
     GRC9V4CCIExpansion,
     GRC9V4CCIPCExpansion,
     GRC9V4COSExpansion,
@@ -296,6 +297,7 @@ class _GRC9V4EventState:
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ]
 
@@ -319,7 +321,16 @@ class _GRC9V4EventState:
         geometry = (
             reference.geometry()
             if self.FAMILY
-            in {"C_OS", "A_OS", "C_CI", "A_CI", "C_CI_PC", "A_CI_PC", "C_RG2b"}
+            in {
+                "C_OS",
+                "A_OS",
+                "C_CI",
+                "A_CI",
+                "C_CI_PC",
+                "A_CI_PC",
+                "C_RG2b",
+                "A_RG2b",
+            }
             else carrier_geometry(inputs, inputs.current)
         )
         if (
@@ -332,7 +343,7 @@ class _GRC9V4EventState:
             raise ValueError("kernel diagnostic receipts are not a native event ledger")
         if any(x != 0 for row in reference.K4_base for x in row):
             raise ValueError("bounded event scope requires zero structural K4 base")
-        if self.FAMILY in {"A_OS", "A_CI", "A_PC", "A_CI_PC"}:
+        if self.FAMILY in {"A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"}:
             backend = GRC9V4CandidateADifferentialReference(reference.graph.port_graph)
             candidate = reference.profile.params_resolved.candidate
             if (
@@ -414,6 +425,7 @@ class GRC9V4COSState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "C_OS"
 
@@ -433,6 +445,7 @@ class GRC9V4CPCState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "C_PC"
 
@@ -452,8 +465,35 @@ class GRC9V4AOSState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "A_OS"
+
+    @property
+    def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
+        graph = self.inputs.geometry.reference.graph.port_graph
+        assert graph is not None
+        return GRC9V4CandidateADifferentialReference(graph)
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ARG2bState(_GRC9V4EventState):
+    """A_RG2b C/W authority; no persistent section or geometry history."""
+
+    FAMILY: ClassVar[
+        Literal[
+            "C_OS",
+            "C_PC",
+            "A_OS",
+            "C_CI",
+            "A_CI",
+            "A_PC",
+            "C_CI_PC",
+            "A_CI_PC",
+            "C_RG2b",
+            "A_RG2b",
+        ]
+    ] = "A_RG2b"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -477,6 +517,7 @@ class GRC9V4ACIState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "A_CI"
 
@@ -502,6 +543,7 @@ class GRC9V4APCState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "A_PC"
 
@@ -527,6 +569,7 @@ class GRC9V4ACIPCState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "A_CI_PC"
 
@@ -594,6 +637,7 @@ class GRC9V4CCIState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "C_CI"
 
@@ -613,6 +657,7 @@ class GRC9V4CCIPCState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "C_CI_PC"
 
@@ -632,8 +677,35 @@ class GRC9V4CRG2bState(_GRC9V4EventState):
             "C_CI_PC",
             "A_CI_PC",
             "C_RG2b",
+            "A_RG2b",
         ]
     ] = "C_RG2b"
+
+
+def _arg2b_readmit(state: GRC9V4ARG2bState) -> tuple[PhysicalFlux, PhysicalFlux]:
+    """Fresh graph-specific C/W sections on K; no continuity or temporal writer."""
+    from .grc_v4_rg2b import CandidateRG2bSection
+    from .grc_v4_step import _resource_charge
+
+    inputs = replace(state.inputs, dt=0)
+    backend = state.differential_reference
+    rows = GRC9V4RowDifferential(
+        backend.port_graph,
+        cast(int, state.specialization.identity_payload["hessian_sign"]),
+    )
+    currents = []
+    for authority in (inputs.current, inputs.reset):
+        _resource_charge(inputs, VertexScalar(backend.graph, authority.C), "admission")
+        section = CandidateRG2bSection(replace(inputs, current=authority), backend)
+        point = CandidateACurrent(
+            replace(section.inputs, geometry=section.geometry, stage="rg2b_section"),
+            backend,
+        )
+        assert authority.W_A is not None
+        rows.evaluate(authority.C, authority.W_A, point.current.values)
+        candidate_a_writer_target(point, VertexScalar(backend.graph, authority.C))
+        currents.append(point.current)
+    return currents[0], currents[1]
 
 
 def _crg2b_readmit(state: GRC9V4CRG2bState) -> tuple[PhysicalFlux, PhysicalFlux]:
@@ -712,6 +784,8 @@ def _aos_readmit(state: GRC9V4AOSState) -> tuple[PhysicalFlux, PhysicalFlux]:
 def _event_readmit(
     state: _GRC9V4EventState,
 ) -> tuple[PhysicalFlux, PhysicalFlux] | None:
+    if type(state) is GRC9V4ARG2bState:
+        return _arg2b_readmit(state)
     if type(state) is GRC9V4CRG2bState:
         return _crg2b_readmit(state)
     if type(state) is GRC9V4AOSState:
@@ -791,6 +865,7 @@ def _event_receipts(
     after: _GRC9V4EventState,
     target: _GRC9V4CExpansion
     | GRC9V4AOSExpansion
+    | GRC9V4ARG2bExpansion
     | GRC9V4ACIExpansion
     | GRC9V4APCExpansion
     | GRC9V4ACIPCExpansion,
@@ -814,6 +889,7 @@ def _event_receipts(
     )
     if type(target) in {
         GRC9V4AOSExpansion,
+        GRC9V4ARG2bExpansion,
         GRC9V4ACIExpansion,
         GRC9V4APCExpansion,
         GRC9V4ACIPCExpansion,
@@ -1018,6 +1094,7 @@ class _GRC9V4EventOperation:
                         if self.STATE
                         in {
                             GRC9V4AOSState,
+                            GRC9V4ARG2bState,
                             GRC9V4CCIState,
                             GRC9V4CRG2bState,
                             GRC9V4CCIPCState,
@@ -1060,6 +1137,7 @@ class _GRC9V4EventOperation:
                 if cls.STATE
                 in {
                     GRC9V4AOSState,
+                    GRC9V4ARG2bState,
                     GRC9V4CCIState,
                     GRC9V4CRG2bState,
                     GRC9V4ACIState,
@@ -1135,6 +1213,7 @@ class _GRC9V4EventOperation:
                     )
                 if type(before) in {
                     GRC9V4AOSState,
+                    GRC9V4ARG2bState,
                     GRC9V4ACIState,
                 } and canonical_json_bytes(
                     request.history_policy
@@ -1181,12 +1260,20 @@ class _GRC9V4EventOperation:
                 target: (
                     _GRC9V4CExpansion
                     | GRC9V4AOSExpansion
+                    | GRC9V4ARG2bExpansion
                     | GRC9V4ACIExpansion
                     | GRC9V4APCExpansion
                     | GRC9V4ACIPCExpansion
                 )
                 if type(before) is GRC9V4AOSState:
                     target = GRC9V4AOSExpansion(
+                        plan,
+                        before.inputs.geometry.reference,
+                        before.inputs.current,
+                        before.inputs.reset,
+                    )
+                elif type(before) is GRC9V4ARG2bState:
+                    target = GRC9V4ARG2bExpansion(
                         plan,
                         before.inputs.geometry.reference,
                         before.inputs.current,
@@ -1270,6 +1357,7 @@ class _GRC9V4EventOperation:
                 reference_currents = published.reference_currents
                 if type(target) in {
                     GRC9V4AOSExpansion,
+                    GRC9V4ARG2bExpansion,
                     GRC9V4CCIExpansion,
                     GRC9V4CRG2bExpansion,
                     GRC9V4CCIPCExpansion,
@@ -1281,6 +1369,7 @@ class _GRC9V4EventOperation:
                         target,
                         (
                             GRC9V4AOSExpansion,
+                            GRC9V4ARG2bExpansion,
                             GRC9V4CCIExpansion,
                             GRC9V4CRG2bExpansion,
                             GRC9V4CCIPCExpansion,
@@ -1506,3 +1595,14 @@ class GRC9V4CRG2bOperation(_GRC9V4EventOperation):
     @property
     def state(self) -> GRC9V4CRG2bState:
         return cast(GRC9V4CRG2bState, self._published.state)
+
+
+class GRC9V4ARG2bOperation(_GRC9V4EventOperation):
+    """Atomic A_RG2b event with exact W lineage and independent target sections."""
+
+    STATE = GRC9V4ARG2bState
+    CHECKPOINT = "grc9v4-arg2b-event-checkpoint-v1"
+
+    @property
+    def state(self) -> GRC9V4ARG2bState:
+        return cast(GRC9V4ARG2bState, self._published.state)

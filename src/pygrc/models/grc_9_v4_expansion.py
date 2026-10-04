@@ -903,7 +903,7 @@ def apc_history_policy(
 
 def _a_profile_template(
     reference: GRCV4ReferenceGeometry,
-    family: Literal["A_OS", "A_CI", "A_PC", "A_CI_PC"],
+    family: Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"],
 ) -> GRCV4ProfileTemplate:
     return resolve_profile_template(
         {
@@ -925,6 +925,10 @@ def aci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTempl
     return _a_profile_template(reference, "A_CI")
 
 
+def arg2b_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_RG2b")
+
+
 def apc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
     return _a_profile_template(reference, "A_PC")
 
@@ -942,7 +946,7 @@ class _GRC9V4AExpansion:
     separately; new entries are zero and never replace solved target currents.
     """
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC"]]
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]]
     plan: GRC9V4ExpansionPlan
     source: GRCV4ReferenceGeometry
     source_current: GRCV4AuthoritativeState
@@ -1080,21 +1084,21 @@ class _GRC9V4AExpansion:
 class GRC9V4AOSExpansion(_GRC9V4AExpansion):
     """Closed A_OS resource/reference and retained-W expansion."""
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC"]] = "A_OS"
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_OS"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4ACIExpansion(_GRC9V4AExpansion):
     """Closed A_CI maps; both target joint roots remain readmission obligations."""
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC"]] = "A_CI"
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_CI"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4APCExpansion(_GRC9V4AExpansion):
     """Closed A_PC exact W lineage and complete source archive/target Z reset."""
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC"]] = "A_PC"
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_PC"
 
     def carrier_archive_payload(self) -> dict[str, Any]:
         content = apc_carrier_content_payload(self.source_current, self.source_reset)
@@ -1115,4 +1119,11 @@ class GRC9V4APCExpansion(_GRC9V4AExpansion):
 class GRC9V4ACIPCExpansion(GRC9V4APCExpansion):
     """Same exact W lineage and whole Z archive/reset, with composite identity."""
 
-    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC"]] = "A_CI_PC"
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_CI_PC"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ARG2bExpansion(_GRC9V4AExpansion):
+    """Exact W lineage; target sections are independently reconstructed on K."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_RG2b"

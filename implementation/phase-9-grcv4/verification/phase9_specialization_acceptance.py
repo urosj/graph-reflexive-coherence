@@ -473,3 +473,33 @@ def crg2b_authorization(root):
 
 def crg2b_permitted(path, leaf):
     return leaf == CRG2B_ENTRY and path in CRG2B_PATHS
+
+
+ARG2B_ENTRY = "P9-8.3A.2"
+ARG2B_PATHS = ('src/pygrc/models/grc_9_v4_arg2b.py', 'src/pygrc/models/grc_v4_rg2b.py', 'src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_lifecycle.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_arg2b.py')
+ARG2B_NEW_PATHS = ('src/pygrc/models/grc_9_v4_arg2b.py', 'tests/models/test_grc_9_v4_arg2b.py')
+ARG2B_G2 = 'grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b'
+ARG2B_PREDECESSOR = '90744875c2f66d2e98083d16b93192b1379735fd'
+ARG2B_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json'
+ARG2B_ACCEPTANCE_SHA = '5c9fd726b6f40424d1097212af84c1460770e3df10f4795b3bc668fb117faacf'
+ARG2B_ORACLE_HASHES = {'implementation/phase-9-grcv4/verification/verify_p983a_arg2b_oracle.py': 'e1d56071ab8c75ab6686c8e82cb9455489cc08b21d03ec8a1f9bcaf86815433a', 'implementation/phase-9-grcv4/verification/test_p983a_arg2b_oracle.py': 'fc12f2efaff10c2c4bd156e255bfd983ada5a9cd9929198638f08687873d6617', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json': '521787954476c351e5fc99e492ce0e00f1a972255c8274729c7d0c03098ffbc9', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md': '1b814ade05b0bb19e8a6bca37f5b7ebb909e67c6d4fc2b93ff419af98baba97c'}
+
+
+def arg2b_authorization(root):
+    """Accepted immutable A.1 and requested signed A.2; no public G2 promotion."""
+    decision = accepted(root)
+    p.require(ARG2B_G2 in decision['accepted_generic_runtime_support'],
+              'A_RG2b requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', ARG2B_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, ARG2B_ACCEPTANCE).read_bytes()) == ARG2B_ACCEPTANCE_SHA,
+              'A_RG2b requires its unchanged explicit oracle acceptance')
+    for path, expected in ARG2B_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_RG2b runtime cannot replace accepted oracle subjects')
+        p.require(p.sha(p.git(root, 'show', ARG2B_PREDECESSOR + ':' + path)) == expected,
+                  'A_RG2b oracle differs from its accepted commit')
+    return ARG2B_ENTRY
+
+
+def arg2b_permitted(path, leaf):
+    return leaf == ARG2B_ENTRY and path in ARG2B_PATHS

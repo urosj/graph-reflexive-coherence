@@ -2,6 +2,46 @@
 
 ## Current continuation — 2026-10-04
 
+After the A_RG2b A.1 oracle was accepted at `9074487`, the user requested A.2
+runtime continuation. The closed signed-completion owner, native C/W step and
+atomic both-role event/replay integration are implemented. **The bounded runtime
+and closure review is separately user-accepted on 2026-10-04** ("accept and
+commit"). The four accepted oracle subjects and their comparison budgets remain
+unchanged; no public profile is added.
+
+The production proof uses ExactScalar and outward intervals for the complete
+C/scaled-log-W map. Four inverse levels/eighteen sweeps are fully recertified,
+including input-log error and the invariant-section tail. Native current errors
+use L2; C/Y and H use their declared infinity norms. The final section is checked
+at the complete native C/W poststate. Final backend pressure corrected the
+shared RG ln(2) cache to key and construct its intervals by exact backend; Python
+and FLINT now preserve the original enclosures and identical complete native
+steps. K event readmission stays distinct from K_minus ordinary entry, including
+dt=0. Events write no temporal history and advance no clock; exact W lineage, fresh source references and receipt evidence
+publish atomically for both roles.
+
+The numerical campaign compares 25 entries to the immutable oracle and full
+independent interval equations, and pressures 30 mechanism effects. Native
+controls cover malformed chains, signed predecessor and clamp outliers,
+physical C/Y boundaries, graph/operator limits, both error norms, actual
+current-only/reset-only target-tolerance failures, history/replay attacks,
+concurrency and six admitted-event/negative-next-step probes. Source and target
+remain the bounded 10/9 and 17/16 fixture, under the separately accepted P9-8.0
+R6 argument-only completion rather than the paper's compact-support extension.
+
+All 25 native pressure methods, 295 shared regressions (one existing skip),
+28 unchanged oracle/global-proof methods and 12 side-tool checks pass. Focused
+generic cache/step rechecks pass after the correction; the final numerical
+observations are unchanged. The phase boundary is rebound and rechecked.
+
+See the [runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-Validation.json).
+The A_RG2b completion row is closed for this accepted bounded scope. The
+graph-size and configuration/admission guide remains the next P9-8.3 closeout before
+P9-8.4; the end-of-tranche caching/proof review remains scheduled separately.
+
+## Previous accepted oracle continuation — 2026-10-04
+
 After accepted C_RG2b commit `6c3798e`, the user requests the last realization,
 A_RG2b. Its independent A.1 oracle and bounded mathematical/adversarial review
 are complete. **A.1 oracle explicitly user-accepted on 2026-10-04**

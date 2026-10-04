@@ -2412,7 +2412,8 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
       Explicitly user-accepted on 2026-10-04 ("accept and commit"); the
       [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json)
       pins all four unchanged oracle/review/producer/test subjects.
-      A.2 runtime and profile-register closure remain pending.
+      The separate bounded A.2 runtime review is also user-accepted on
+      2026-10-04, closing the A_RG2b profile-register row below.
 
     See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Validation.json).
@@ -2492,6 +2493,31 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
 
     See the [A_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-RuntimeReview.md)
     and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-Validation.json).
+    A_RG2b runtime continuation follows the separately accepted A.1 oracle
+    committed at `9074487`. Its content-specific checkpoints are:
+
+    - [x] Implement the separate signed C/scaled-log-W global proof and complete
+      incoming-W/fresh-C/selected-J map; certify every four-level inverse-chain
+      residual, logarithm conversion and invariant-section tail with ExactScalar.
+    - [x] Bind closed fixed-row RG dispatch/replay and the complete native step,
+      Euclidean current and scaled-log state error bridges, final section
+      invariance, and distinct K versus K_minus admission including dt=0.
+      Correct the inherited ln(2) cache's missing exact-backend key; prove
+      unchanged enclosures and identical Python/FLINT native steps.
+    - [x] Integrate exact two-role W lineage, fresh graph-specific source/target
+      reconstruction, no temporal event writer, atomic receipts/reference
+      evidence, full rollback and deterministic checkpoint replay.
+    - [x] Compare the unchanged oracle and independent equations; pressure
+      25 numerical entries, 30 effects, graph/C/Y/chain outliers, actual
+      current-only/reset-only target failures, replay/history attacks and six
+      admitted-event/negative-next-resource controls. Record scientific and
+      side-tool claim limits, regressions and portable phase-boundary evidence.
+    - [x] Separately accept the bounded A_RG2b runtime and closure review;
+      explicitly user-accepted on 2026-10-04 ("accept and commit"), distinct
+      from the earlier A.1 oracle acceptance. No public support is added.
+
+    See the [A_RG2b runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-Validation.json).
   - Escalation: genuinely absent generic authority found in `.1` holds the
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
@@ -2549,12 +2575,16 @@ their own `.1` oracle and `.2` execution acceptance):
   numerical export rerun. Bounded runtime and closure review explicitly
   user-accepted on 2026-10-04 ("accept and commit"), separately from P9-8.0
   research acceptance; no public support promotion is claimed.
-- [ ] A_RG2b — A history and target completion/section evidence.
+- [x] A_RG2b — A history and target completion/section evidence.
   A.1 independent oracle and bounded own review are complete on 2026-10-04:
   signed C/scaled-log-W proof, four-level certified chains, exact history/event
   identities, 25 comparisons, 30 effects and scientific/adversarial review.
   A.1 oracle explicitly user-accepted on 2026-10-04 ("accept and commit").
-  A.2 native runtime/closure remains unstarted and requires separate acceptance.
+  A.2 native signed-completion proof, full C/W step and atomic event/replay
+  are implemented with independent numerical/scientific pressure and portable
+  evidence. Bounded runtime and closure review separately user-accepted on
+  2026-10-04 ("accept and commit"); no public profile or arbitrary
+  graph/parameter admission is claimed.
 
 These rows nominate no new production profile or ATC completion. Unselected
 or held profiles remain pending and unadvertised. Only after the all-ten

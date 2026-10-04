@@ -238,6 +238,9 @@ PATHS = {
     PHASE + "tranche-8/P9-8.3A.1-ARG2b-OracleReview.md",
     PHASE + "tranche-8/P9-8.3A.1-ARG2b-Validation.json",
     PHASE + "tranche-8/P9-8.3A.1-ACIPC-Acceptance.json",
+    HERE + "verify_p983arg2b_native.py",
+    PHASE + "tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md",
+    PHASE + "tranche-8/P9-8.3A.2-ARG2b-Validation.json",
     HERE + "verify_p983crg2b_native.py",
     PHASE + "tranche-8/P9-8.3C-RG2b-RuntimeReview.md",
     PHASE + "tranche-8/P9-8.3C-RG2b-Validation.json",
@@ -1730,16 +1733,22 @@ def leaf_permissions(root):
     for name in CRG2B_PATHS:
         require(name in owners or name in CRG2B_NEW_PATHS, 'C_RG2b outside reviewed runtime roster')
         owners[name] = owners.get(name, set()) | {crg2b_entry}
+    from phase9_specialization_acceptance import arg2b_authorization, ARG2B_PATHS, ARG2B_NEW_PATHS
+    arg2b_entry = arg2b_authorization(root)
+    ready = sorted(set(ready) | {arg2b_entry})
+    for name in ARG2B_PATHS:
+        require(name in owners or name in ARG2B_NEW_PATHS, 'A_RG2b outside reviewed runtime roster')
+        owners[name] = owners.get(name, set()) | {arg2b_entry}
     return ready, owners
 
 
 def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
-    from phase9_specialization_acceptance import AOS_NEW_PATHS, CCI_NEW_PATHS, ACI_NEW_PATHS, APC_NEW_PATHS, CCIPC_NEW_PATHS, ACIPC_NEW_PATHS, CRG2B_NEW_PATHS
+    from phase9_specialization_acceptance import AOS_NEW_PATHS, CCI_NEW_PATHS, ACI_NEW_PATHS, APC_NEW_PATHS, CCIPC_NEW_PATHS, ACIPC_NEW_PATHS, CRG2B_NEW_PATHS, ARG2B_NEW_PATHS
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_lifecycle"}
-        for name in (*AOS_NEW_PATHS, *CCI_NEW_PATHS, *ACI_NEW_PATHS, *APC_NEW_PATHS, *CCIPC_NEW_PATHS, *ACIPC_NEW_PATHS, *CRG2B_NEW_PATHS)
+        for name in (*AOS_NEW_PATHS, *CCI_NEW_PATHS, *ACI_NEW_PATHS, *APC_NEW_PATHS, *CCIPC_NEW_PATHS, *ACIPC_NEW_PATHS, *CRG2B_NEW_PATHS, *ARG2B_NEW_PATHS)
     ), *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": row["module_owner"]}
@@ -1957,6 +1966,7 @@ def work_entries(root, approval):
         cci_authorization, cci_permitted, aci_authorization, aci_permitted,
         apc_authorization, apc_permitted, ccipc_authorization, ccipc_permitted,
         acipc_authorization, acipc_permitted, crg2b_authorization, crg2b_permitted,
+        arg2b_authorization, arg2b_permitted,
     )
     g3 = accepted_g3(root)
     row_entry = row_bridge_authorization(root)
@@ -1973,12 +1983,13 @@ def work_entries(root, approval):
     ccipc_entry = ccipc_authorization(root)
     acipc_entry = acipc_authorization(root)
     crg2b_entry = crg2b_authorization(root)
+    arg2b_entry = arg2b_authorization(root)
     def g3_permitted(name, leaf):
         return (permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
                 or backend_permitted(name, leaf) or allocator_permitted(name, leaf)
                 or cos_permitted(name, leaf) or cpc_permitted(name, leaf)
-                or aos_permitted(name, leaf) or cci_permitted(name, leaf) or aci_permitted(name, leaf) or apc_permitted(name, leaf) or ccipc_permitted(name, leaf) or acipc_permitted(name, leaf) or crg2b_permitted(name, leaf))
+                or aos_permitted(name, leaf) or cci_permitted(name, leaf) or aci_permitted(name, leaf) or apc_permitted(name, leaf) or ccipc_permitted(name, leaf) or acipc_permitted(name, leaf) or crg2b_permitted(name, leaf) or arg2b_permitted(name, leaf))
     leaves.update(g3['new_runtime_iterations_authorized'])
     leaves.add(row_entry)
     leaves.add(trigger_entry)
@@ -1994,6 +2005,7 @@ def work_entries(root, approval):
     leaves.add(ccipc_entry)
     leaves.add(acipc_entry)
     leaves.add(crg2b_entry)
+    leaves.add(arg2b_entry)
     require(
         value["accepted_generic_runtime_support"] == accepted_generic_support(root)
         and value["admitted_specialization_support_sets"] == g3['admitted_specialization_support_sets'],
