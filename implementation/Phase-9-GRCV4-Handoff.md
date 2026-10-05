@@ -1,6 +1,22 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current continuation — 2026-10-05: configuration discovery CLI
+## Current continuation — 2026-10-05: P9-8.4 planning breakdown
+
+After accepted closeout/catalog commit `cd84425`, the user asks to assess and
+split P9-8.4 before implementation. The
+[plan](./Phase-9-GRCV4-ImplementationPlan.md#p9-84-execution-breakdown) and
+[checklist](./Phase-9-GRCV4-ImplementationChecklist.md) now give nine pending
+children: coverage/comparison contracts, frozen runtime counterparts, capacity/
+phase boundaries, deeper recursion, ordering/signed-edge covariance, chart/
+chirality covariance, larger-graph prerequisites, larger-graph execution and
+coverage handoff. Start with P9-8.4a. Larger prerequisites/execution are tracked
+per family so incomplete probes or cyclic RG completion work do not stop
+unrelated ready cases. P9-8.5 retains full atomicity/rollback, P9-8.6 retains
+conformance closure, and Tranche 9 retains public lifecycle integration.
+This is planning only; no child is executed or accepted by this edit. The
+accepted P9-8.3 validation records remain historical, unchanged evidence.
+
+## Accepted continuation — 2026-10-05: configuration discovery CLI
 
 The user requests repository tooling to investigate and select configurations,
 with readable CLI tables and JSON export. The
