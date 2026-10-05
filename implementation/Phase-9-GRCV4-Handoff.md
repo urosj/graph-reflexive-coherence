@@ -1,4 +1,71 @@
-# Phase 9 GRCV4 handoff — All-ten feasibility before production
+# Phase 9 GRCV4 handoff — Runtime expansion and covariance
+
+## Current work — 2026-10-05: P9-8.4b C_OS counterparts
+
+This supersedes the pre-merge branch instructions below. Accepted P9-8.4a is
+merged into `main` at `ec18481c`. The user requested a new branch and P9-8.4b;
+current work is on `work/p9-8-4b-runtime-counterparts`. The user accepts the
+bounded C_OS work on 2026-10-05; it is not yet committed. No production module,
+frozen vector, accepted `.a` record or
+public support declaration changed.
+
+The [first runtime batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md)
+implements the capture/comparison contract for sixteen C_OS companions and
+retains all ten families' 322 applicable expansion/history cells. Fourteen
+cases pass source/event/both-role ten-step continuation/final reads. Both D52
+phase-one cases commit the event but fail their first current continuation:
+the initially zero `/extra/1/1` would become approximately `-0.0003544455590641839`.
+The independent dense calculation agrees; production correctly rejects
+nonnegative-resource admission. Neither reset continuation nor final reads run
+after that failure. Smaller positive dt does not repair its negative sign.
+
+The [bound cases](./phase-9-grcv4/tranche-8/P9-8.4b-COSCases.json) precede
+execution; the [results](./phase-9-grcv4/tranche-8/P9-8.4b-COSResults.json)
+retain actual inputs, comparisons, admission observations, receipts/checkpoints
+and all sixteen outcomes. Thirteen harness tests and two discovered-gap
+regression tests pass. Exact frozen construction is separate from numerical
+companions; dense comparisons are not certified full-error or effect bounds.
+The [two successors](./phase-9-grcv4/tranche-8/P9-8.4b-COSPhaseOneCases.json)
+now supply positive phase-one witnesses using separately named requests with
+shares `(1/4, 1/2, 1/4)`. Exact uncoupled boundary stencils motivate the choice;
+enabled dense preflight and native source/event/both-role ten-beat/final-read
+execution both pass. Source states, profile, dt, horizon and tolerances are
+unchanged. The [new results](./phase-9-grcv4/tranche-8/P9-8.4b-COSPhaseOneResults.json)
+also capture actual current/geometry consumption, staged continuity, alternate
+Read-Back surfaces and final refresh. Twelve new hardening tests plus the two
+original failure regressions pass. The earlier campaign is not rewritten or
+retroactively credited with these extra captures.
+
+Across the original fourteen passes and two successors there are 32 successful
+C_OS history cells, now accepted as `P9-8.4b[C_OS]`, and 290
+other-family/literal-C_PC cells still pending. The review records the scoped
+acceptance and exact evidence digests; execution-time JSON flags remain intact.
+This is not P9-8.4b closure.
+
+The plan and checklist now give `.b` ten explicit family items: C_OS, A_OS,
+C_CI, A_CI, C_PC, A_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b. Each owns
+sixteen shared layouts × two histories (32 cells); C_PC additionally owns its
+two literal reset-fixture cells (34). Only C_OS is checked off. All ten items
+and all 322 applicable cells must be accepted to close `.b`; a first-family
+implementation or a missing sibling cannot close the parent.
+
+**Continue within P9-8.4b:** extend the adapter to C_PC's whole-carrier
+archive/reset/loss requirements and the other family-specific cases. New A
+scientific scope retains oracle review before runtime comparison. P9-8.4c–i,
+P9-8.5, P9-8.6 and Tranche 9 retain their separate obligations.
+
+The review contains focused reproduction commands. Use
+`p984b_cos_successor.py --check-retained --original` for the original campaign
+and `--check-retained` for its two successors. These verify retained integrity
+and dense comparisons without native reruns, reporting that fact explicitly.
+Event commitment, complete-case success and user acceptance are separate fields;
+the original remains 14/16 even though both successors pass. The legacy checker
+is preserved with its hash-bound source. A new `--run` needs a fresh
+repository-relative output path and exits 1 on an incomplete case. Use the
+declared `.venv`, including `python-flint==0.9.0`, with BLAS/OpenMP threads at one.
+The original sixteen-case campaign takes about 265 seconds; do not rerun it
+just to resume or update documentation. Commit/publish this branch only when
+requested; another checkout must receive the new files before resuming here.
 
 ## Machine handoff — 2026-10-05: resume with P9-8.4b
 

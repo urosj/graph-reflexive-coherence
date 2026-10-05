@@ -2844,7 +2844,7 @@ New layouts, chiralities, depths and configurations require their own evidence.
 | Child | Scope and deliverable | Dependency / completion evidence |
 | --- | --- | --- |
 | **P9-8.4a — Coverage map and comparison contracts** | Inventory exact frozen fixture IDs/hashes and applicable profile, chirality, phase, current/reset role and stage. Map existing evidence, numerical prerequisites, independent oracles, comparison norms/budgets and missing runtime coverage. Specify shared harness inputs and retained result fields. | First executable planning leaf. Every required cell has an owner and explicit pending/blocked/reusable disposition; no silent omissions or blanket applicability exemptions. |
-| **P9-8.4b — Frozen expansion runtime counterparts** | Execute the applicable D30/D31/D45/D52 chirality/phase cases and C_PC reset case through native operation owners. Compare frozen discrete allocation/identity expectations, actual fresh trigger/request, reference reconstruction, both-role resource/history transfer, numerical readmission and declared finite continuation. | After `.a` and each cell's numerical/oracle prerequisites. Retain event/receipt identities, exact discrete comparisons and independently checked numerical results. A pure transfer or certificate alone is insufficient. |
+| **P9-8.4b — All-ten frozen expansion runtime counterparts** | Complete each of the ten family items below: D30/D31/D45/D52 chirality/phase cases for every family, plus the literal C_PC reset case. Compare frozen discrete allocation/identity expectations, actual fresh trigger/request, reference reconstruction, both-role resource/history transfer, numerical readmission and declared finite continuation. | After `.a` and each cell's numerical/oracle prerequisites. All ten family items and all 322 applicable cells must be reviewed and accepted. One family's success, a pure transfer or a certificate alone cannot close `.b`. |
 | **P9-8.4c — Capacity and phase boundaries** | Add named D37/D44 probes and requests immediately below/at/above capacity transitions. Cover active phases 1–3, inactive `None`, both chiralities, absent/extra phase and malformed versus semantically invalid requests. Check phase/branch allocation and the specified failure classification. | Use the `.a` contracts and `.b` runtime path. These are additional probes, not replacement frozen fixtures. Whole-state rollback, replay and injected atomic failures remain P9-8.5. |
 | **P9-8.4d — Deeper recursive runtime expansion** | Declare finite module sizes/depths beyond D52, including different remainders and both chiralities. Exercise actual recursive parent/rotor allocation, balanced rows/columns, fresh references and both-role transfer/readmission/continuation. If successive events are claimed, each must consume its actual predecessor state and fresh identities. | After a working bounded runtime counterpart and graph-specific prerequisites. Compare against an independent BFS/role construction and numerical oracle; distinguish a deep pure plan, one executed event and any separately declared event sequence. No mechanical size result widens a numerical domain such as tree17. |
 | **P9-8.4e — Ordering, relabeling and signed-edge covariance** | Execute the frozen source-edge-order vector plus separately declared node/edge reorderings, label changes and signed reorientations through the applicable native paths. Transport resources, unsigned A W, signed currents/reference operands, geometry and carrier coordinates by their respective laws. Include inconsistent partial-transport controls. | After baseline cases are bound. Compare normalized discrete results exactly and numerical results in declared norms/error bounds, for both histories and relevant stages. Raw digest equality is not the covariance criterion. |
@@ -2863,6 +2863,70 @@ rows. A blocked family does not stop unrelated ready rows or disappear from
 parent reconciliation. Finish with `.i`. This is a work breakdown, not a
 requirement to stop for user input after every helper or shared harness edit;
 the existing scientific-oracle and bounded-review acceptance rules still apply.
+
+**P9-8.4b family items.** The population is two candidates times five
+realizations, using the canonical family IDs below (`CI_PC` means CI+PC).
+Each item owns all sixteen shared layout subjects: D30 × two chiralities,
+D31 × both chiralities/three phases, D45 × two chiralities and D52 × both
+chiralities/three phases. Each subject requires current and reset evidence,
+giving 32 cells per family. C_PC additionally owns both histories of its
+literal reset fixture, giving 34 cells and **322 cells in total**. These are
+the existing accepted `.a` cells, not new fixtures or widened numerical claims.
+
+Every family must bind fresh source/request/event identities, exact allocation,
+complete references, both-role transfer/readmission and declared finite
+continuation/final reads to independent expectations. All C families retain
+strict selector checks at every required geometry and complete `W_C_tr`.
+All A families retain an independently reviewed oracle before execution of new
+scientific scope, fixed-row reference operands, positive W lineage, selected-J
+history writing and final-C/next-read evidence. Persistent families must cover
+the actual whole-source carrier archive, whole-target zero initialization and
+explicit loss receipt; the literal fixture's C_PC-only identity does not exempt
+A_PC, A_CI_PC or C_CI_PC from their own history obligations.
+
+| Family item | Applicable history cells | Additional realization-specific obligations | Status |
+| --- | ---: | --- | --- |
+| `P9-8.4b[C_OS]` | 32 | Predictor, generated geometry, fresh corrector and split admission; selector and poststate admission. | Accepted 2026-10-05 at the bounded scope below. |
+| `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Pending. |
+| `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | Pending. |
+| `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | Pending. |
+| `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | Pending; next item. |
+| `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | Pending. |
+| `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | Pending. |
+| `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | Pending. |
+| `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | Pending. |
+| `P9-8.4b[A_RG2b]` | 32 | A graph-specific completion and inverse/section/error bridges, K versus K-minus admission and W lifecycle. | Pending. |
+
+Family-specific prerequisites are those in the accepted coverage record;
+the table summarizes rather than replaces them. Reuse the shared harness and
+accepted evidence at their actual scope, without copying C_OS numerical
+success to siblings. A blocked/incomplete family stays open. **P9-8.4b closes
+only after all ten items and all 322 applicable cells are complete and
+accepted**, unless the user explicitly approves a recorded scope change.
+The `.c`–`.i` work remains separate; this breakdown does not close it.
+
+**Current `.b` execution (2026-10-05, C_OS accepted only).** The
+[C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds
+sixteen companions and implements the shared capture/comparison contract for
+this family. Fourteen complete their declared schedule; both D52 phase-one
+cases commit an admitted event and then reject the first current beat because
+an initially zero extra node would become negative. The independent dense
+calculation agrees. This does not invalidate the accepted phase-three scope
+or imply phase-one impossibility for all lawful requests. Those negative
+subjects are preserved. Two independently justified successors supply the
+four remaining history cells with separately bound shares `(1/4, 1/2, 1/4)`, exact
+uncoupled boundary-stencil diagnostics, enabled dense preflight, and native
+both-role ten-beat/final-read evidence. Source states, profile, dt and
+tolerances are unchanged; the original negative subjects stay failed.
+The successor checker separates event/case/integrity status and captures
+actual current/geometry consumption, staged continuity and final refresh.
+The other nine families and literal C_PC reset case retain 290 pending cells;
+all 32 C_OS cells now have successful named evidence accepted by the user on
+2026-10-05 ("accept. i would then expand 8.4b so that items cover all 10
+realizations"). This accepts `P9-8.4b[C_OS]`, not the all-ten parent.
+The original fourteen passes are not retroactively credited with the new
+consumption captures. No production/scientific authority or public support is
+changed by this bounded verification batch.
 
 **Frozen versus numerical subjects.** Keep the literal frozen-vector bytes,
 plans and identities unchanged. Where a construction vector's declaration is

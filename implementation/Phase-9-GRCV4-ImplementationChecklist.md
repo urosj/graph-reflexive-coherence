@@ -2670,12 +2670,65 @@ the full ten-profile plan.
     pass. [Review and reuse limits](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md),
     [portable validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json).
     No `.b`–`.h` runtime case is executed or accepted by this inventory.
-  - [ ] P9-8.4b: Execute applicable frozen expansion runtime counterparts:
+  - [ ] P9-8.4b: Complete all ten family items below, covering 322 applicable
+    expansion/history cells. For every family execute the shared counterparts:
     D30 × two chiralities, D31 × both chiralities/all three active phases,
     D45 × two chiralities, D52 × both chiralities/all three active phases,
     plus the separate C_PC reset fixture. Bind fresh trigger/request, native
     event/receipt, references, both-role transfer/readmission and declared
     finite continuation to exact discrete and independent numerical expectations.
+    Started on `work/p9-8-4b-runtime-counterparts` after merged `.a` acceptance.
+    [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md):
+    sixteen separately bound companions execute; fourteen pass both histories'
+    ten-step continuation and final reads. Both D52 phase-one cases commit
+    an event but fail the first current beat at nonnegative-resource admission;
+    independent dense expectations confirm the negative zero-extra-node value.
+    Two separately bound phase-one successors now pass with shares
+    `(1/4, 1/2, 1/4)`, independent stencil/preflight expectations and unchanged
+    source/profile/dt/tolerances. All 32 C_OS history cells have successful named
+    evidence; the original two failed subjects are preserved unchanged.
+    Twelve new reporting/consumption tests and the two original failure
+    regressions pass. Retained checking explicitly reports no native rerun;
+    actual current/geometry/Read-Back/continuity/final-refresh captures apply
+    to the successors, not retroactively to the original campaign.
+    The user accepts the bounded C_OS work on 2026-10-05. Its 32 cells are
+    accepted; the other 290 remain pending. Exact frozen construction checks
+    are not native success. Every item below inherits the shared source/event/
+    both-role continuation contract and its own `.a` numerical prerequisites.
+    All C items require complete `W_C_tr` and strict selectors; all A items
+    require independent-oracle review for new scope plus fixed-row/W lifecycle
+    evidence. Each persistent item owns whole-source Z archive, target zero
+    initialization and explicit loss receipts, not just the literal C_PC case.
+    The parent stays open until all ten items and applicable cells are accepted;
+    unresolved families cannot be omitted without an explicit scope decision.
+
+    - [x] P9-8.4b[C_OS]: All sixteen shared layouts × current/reset = 32 cells.
+      Accepted 2026-10-05: fourteen original passes plus two separately bound
+      phase-one successors, with original failures preserved. Bounded dense
+      comparisons, not rigorous full-error/effect certificates. Acceptance is
+      recorded in the [runtime review](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md#scoped-user-acceptance).
+    - [ ] P9-8.4b[A_OS]: 32 cells. A predictor/geometry/corrector and split
+      admission, independent expansion oracle, W transfer/write and final read.
+    - [ ] P9-8.4b[C_CI]: 32 cells. Whole-domain self-map/contraction, joint
+      current/geometry roots and output-error evidence for each target.
+    - [ ] P9-8.4b[A_CI]: 32 cells. A joint-root/domain/error evidence and
+      independent oracle, with transferred/written W and final reconstruction.
+    - [ ] P9-8.4b[C_PC]: 34 cells, next item. All sixteen shared layouts plus
+      both histories of the literal C_PC reset fixture; base-chart/carrier
+      envelope, actual old-Z read, one same-source Z write and loss handling.
+    - [ ] P9-8.4b[A_PC]: 32 cells. A base-chart/carrier envelope, independent
+      oracle, separate W lifecycle and whole-carrier reset/loss/read/write.
+    - [ ] P9-8.4b[C_CI_PC]: 32 cells. Composite self-map/contraction and strict
+      slack, joint-root/output error, base chart and carrier lifecycle.
+    - [ ] P9-8.4b[A_CI_PC]: 32 cells. A composite contraction/slack and root
+      error, independent oracle, base chart and separate W/carrier lifecycle.
+    - [ ] P9-8.4b[C_RG2b]: 32 cells. Graph-specific signed completion,
+      every inverse-level residual/error, section/tail/input bounds, native
+      current-L2/geometry bridges and K readmission versus K-minus step entry.
+    - [ ] P9-8.4b[A_RG2b]: 32 cells. Independent Candidate-A expansion oracle,
+      graph-specific completion/inverse/section/error bridges, K versus
+      K-minus admission and W transfer/write/next-read evidence.
+
   - [ ] P9-8.4c: Pressure capacity and phase boundaries. Add separately named
     D37/D44 and adjacent-capacity probes, active/inactive phases, both
     chiralities and missing/extra phase failures. Keep wire errors distinct

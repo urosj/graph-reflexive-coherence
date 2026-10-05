@@ -231,6 +231,17 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    # User-authorized P9-8.4b verification; no production/support promotion.
+    HERE + "p984b_runtime.py",
+    HERE + "test_p984b_runtime.py",
+    HERE + "test_p984b_cos_phase1.py",
+    HERE + "p984b_cos_successor.py",
+    HERE + "test_p984b_cos_successor.py",
+    PHASE + "tranche-8/P9-8.4b-COSCases.json",
+    PHASE + "tranche-8/P9-8.4b-COSResults.json",
+    PHASE + "tranche-8/P9-8.4b-COSPhaseOneCases.json",
+    PHASE + "tranche-8/P9-8.4b-COSPhaseOneResults.json",
+    PHASE + "tranche-8/P9-8.4b-RuntimeReview.md",
     HERE + "prepare_p984a_coverage.py",
     HERE + "test_p984a_coverage.py",
     PHASE + "tranche-8/P9-8.4a-Coverage.json",
