@@ -2813,8 +2813,29 @@ the full ten-profile plan.
         128 cells across four families remain pending.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md).
-    - [ ] P9-8.4b[C_CI_PC]: 32 cells. Composite self-map/contraction and strict
+    - [x] P9-8.4b[C_CI_PC]: 32 cells. Composite self-map/contraction and strict
       slack, joint-root/output error, base chart and carrier lifecycle.
+      - [x] Bind sixteen layout companions and both histories to the accepted
+        native composite chart; independently prove strict source slack,
+        B_2R coverage, contraction and both-role finite continuations.
+      - [x] Certify every selected joint root and signed Read-Back/flat;
+        pressure old-Z geometry, instantaneous-source and feedback effects,
+        the same-root carrier writer and next-root history consumption.
+      - [x] Verify complete C references, fresh trigger/reference currents,
+        whole-carrier archive/reset/loss, both-role readmission and rollback.
+      - [x] Execute all 32 history cells, ten target beats per role and fresh
+        final roots; retain failures, root/output bounds and effect margins.
+        All sixteen pass: 1,059 signed-root certificates and 192 effect controls;
+        independent retained numerical recomputation also passes all cases.
+      - [x] Synchronize CLI/API/notebook/browser and source bindings; perform
+        retained numerical and phase-boundary checks before scoped acceptance.
+        Fourteen source/API tests, nine browser logic tests, both notebook
+        cells and real HTTP desktop/mobile verification pass.
+      - [x] User accepted the bounded C_CI_PC result on 2026-10-06,
+        separately from unchanged raw execution. Accepted coverage is 226/322;
+        96 cells across three families remain pending.
+        [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance).
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md).
     - [ ] P9-8.4b[A_CI_PC]: 32 cells. A composite contraction/slack and root
       error, independent oracle, base chart and separate W/carrier lifecycle.
     - [ ] P9-8.4b[C_RG2b]: 32 cells. Graph-specific signed completion,

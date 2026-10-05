@@ -2039,6 +2039,21 @@ instead of stale fixed totals and opens any pending case details explicitly.
   The explicit A_PC retained command and full interval recomputation pass
   without native trajectory reruns.
 
+### P9-8.4b C_CI_PC evidence successor
+
+- [x] Expose sixteen composite outcomes and 32 current/reset history cells
+  through the shared CLI/API/notebook/browser, with exact source retrieval.
+- [x] Bind the separate scoped user acceptance of 2026-10-06: 226/322
+  accepted cells, 96 pending across three families; preserve raw execution flags.
+- [x] Expose independent composite chart/root bounds, signed intermediate and
+  same-root-writer/next-root effects, retaining gain-two and claim restrictions.
+- [x] Provide explicit retained/interval checks and complete source/API,
+  browser, notebook and phase-boundary verification without native reruns.
+  Fourteen source/API tests, nine browser logic tests, both notebook cells
+  and the real HTTP desktop/mobile scenario pass. The shared retained CLI
+  command and full independent interval recomputation pass all sixteen
+  cases; current-boundary checking preserves separate acceptance.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

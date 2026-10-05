@@ -43,7 +43,7 @@ export function renderTranche8(value, container, create = tag => document.create
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
   append(container, 'h3', 'Recorded cases: event commit is not case success');
-  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI, A_CI, C_PC and A_PC also have pointwise interval checks. None is a uniform parameter tube.');
+  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI, A_CI, C_PC, A_PC and C_CI_PC also have pointwise interval checks. None is a uniform parameter tube.');
   const supplements = append(container, 'p', 'Expanded A_OS oracle and pressure: ');
   for (const ref of c.oracle_and_pressure) { link(supplements, ref, ref.path.split('/').at(-1)); append(supplements, 'span', ' · '); }
   for (const run of c.runs) {
@@ -55,7 +55,8 @@ export function renderTranche8(value, container, create = tag => document.create
     else { link(p, run.review, 'Review pending acceptance'); append(p, 'span', ' · No accepted coverage credited.'); }
     if (run.signed_stage_pressure) { append(p, 'span', ' · '); link(p, run.signed_stage_pressure, 'Signed Read-Back/flat checks'); }
     if (run.pc_claim_restrictions) { link(p, run.claim_source, ' PC claim source'); details(section, 'PC claim restrictions', run.pc_claim_restrictions); }
-    if (run.stage_evidence) details(section, 'Signed reads, W/Z effects and declared chart', run.stage_evidence);
+    if (run.stage_evidence) details(section, run.stage_evidence_label || 'Signed reads, W/Z effects and declared chart', run.stage_evidence);
+    if (run.numerical_recheck) { append(p, 'span', ' · '); link(p, run.numerical_recheck, 'Independent interval recomputation'); }
     if (run.original_attempt) {
       const original=append(section,'p','Original attempt retained: ');
       link(original,run.original_attempt.results,'Original execution and timeout');

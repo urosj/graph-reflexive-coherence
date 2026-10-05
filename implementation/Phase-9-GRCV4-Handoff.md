@@ -1,5 +1,36 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b C_CI_PC
+
+Work follows accepted A_PC commit `a6d16c2` on `work/p9-8-4b-cpc`.
+The [composite review](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md)
+binds all sixteen layouts and both histories. All 32 cells pass: 320 target
+beats, 32 fresh final roots, 1,059 signed joint-root certificates and 192
+same-root-writer/next-root effect controls. The minimum effect margin is
+8.866057 times the full-error/ULP threshold. Native case time totals 4047.8
+seconds, with no failure or timeout. The result digest is
+`92cb962a36558af35133baefdc7ef25bad6c6cbf834c2927191cefac8b68bf7b`.
+
+Ten focused methods and 154 existing native/generic methods pass, along with
+17 frozen construction checks and 12 D11 side-tool checks. Independent interval
+recomputation passes all sixteen saved cases with native execution disabled;
+the final shared source matches its separately checked digest. Production,
+accepted numerical inputs and tolerances are unchanged. The native chart keeps
+R=1, kappa_H=2^-16, geometry radius 2^-15, root tolerance 2^-44 and gain two. No global
+root, endpoint hysteresis, stability or arbitrary-graph claim is inferred.
+
+Side-tool verification passes fourteen source/API tests, nine browser logic
+tests, both notebook cells and the real HTTP desktop/mobile scenario, including
+failed-refresh clearing. The explicit retained CLI command and current
+phase-boundary audit also pass; handoff evidence verifies and the accepted
+release is unchanged. The user accepted this bounded result on 2026-10-06
+and requested its commit before A_CI_PC. The separate
+[scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance)
+preserves the raw execution and recheck flags. Accepted coverage is 226/322;
+96 cells remain pending across A_CI_PC, C_RG2b and A_RG2b. Parent 8.4b and later work stay open. A_CI_PC is the next unexecuted
+family after this work. The review provides retained checking and independent
+numerical recomputation commands; neither repeats native trajectories.
+
 ## Accepted checkpoint — P9-8.4b A_PC
 
 The user selected A_PC after accepted C_PC commit `7820bbf`, continuing on
@@ -29,7 +60,7 @@ preserves the original execution flags and scientific inputs.
 
 Accepted coverage is **194/322**, including A_PC's 32 cells; 128 cells across
 four families remain pending. Parent 8.4b and `.c`–`.i`, 8.5 and 8.6 stay open. The next
-unexecuted family after A_PC is C_CI_PC. Side-tool status remains source and
+unexecuted family at that checkpoint was C_CI_PC. Side-tool status remains source and
 structure inspection; `run.py tranche8-query verify-retained --family A_PC`
 checks the saved staged evidence, with `--recheck-numerics` for independent
 interval recomputation. Neither repeats native trajectories.

@@ -2468,6 +2468,14 @@ certificates and W/Z effects at next-current consumers. Distinguish explicit
 retained checking and interval recomputation from normal status or native
 execution; keep D10/D11 claim limits and larger-runtime ownership unchanged.
 
+The C_CI_PC successor adds sixteen composite cases and 32 history cells
+accepted separately by the user on 2026-10-06. Reuse the shared source routes and checker command
+for independent all-layout contraction/slack bounds, signed root intermediates,
+the fixed-old-Z/same-root-source writer and complete next-root controls. Preserve
+226/322 accepted cells and all three pending family owners. Keep the gain-two
+identity and D10-CL-O-007/C-004/C-012 restrictions explicit across surfaces;
+normal status does not recompute interval equations or grant acceptance.
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC

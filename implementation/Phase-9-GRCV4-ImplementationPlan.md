@@ -2892,7 +2892,7 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | [Accepted by the user on 2026-10-05](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#scoped-user-acceptance): all sixteen cases and nine focused tests pass. |
 | `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | [All seventeen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 34 cells, 340 target beats and 34 final reads. |
 | `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 32 cells, 320 target beats and 32 final reads. |
-| `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | Pending. |
+| `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance) 2026-10-06: 32 cells, 320 target beats and 32 fresh final roots. |
 | `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | Pending. |
 | `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | Pending. |
 | `P9-8.4b[A_RG2b]` | 32 | A graph-specific completion and inverse/section/error bridges, K versus K-minus admission and W lifecycle. | Pending. |
@@ -3000,6 +3000,21 @@ The user accepted all sixteen bounded cases on 2026-10-05. The
 brings accepted coverage to **194/322**, with 128 cells pending across four
 families. Acceptance refreshes source bindings and shared views without
 numerical reruns or changes to raw execution flags or scientific scope.
+
+**Accepted C_CI_PC successor.** Work follows accepted A_PC commit `a6d16c2`.
+The work is one bounded campaign with content-specific substeps: all-layout
+composite admission and independent continuations; signed joint-root/error and
+same-source writer pressure; complete references and whole-carrier event
+transactions; sixteen native cases with both histories and fresh final roots;
+then synchronized evidence access and separate user acceptance. Keep old Z
+fixed inside each solve, rho_inst=1 and identity-bearing gain two. The accepted
+native R=1, kappa_H=2^-16 chart requires geometry radius 2^-15 and strict
+uniform source slack; do not substitute the earlier research chart. Independent
+full errors must resolve claimed effects at their actual consumers. No formed
+branch, global root, endpoint hysteresis, arbitrary-graph or aggregate claim
+follows from this bounded campaign. The user accepted this result on
+2026-10-06. Separate acceptance brings coverage to **226/322**, with 96 cells
+pending across A_CI_PC, C_RG2b and A_RG2b; raw execution flags stay unchanged.
 
 **Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds
