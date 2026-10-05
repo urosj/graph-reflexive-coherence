@@ -5,11 +5,13 @@ all ten bounded 8.3 profile integrations, larger-configuration preparation,
 and current 8.4 coverage. It reads existing records; it does not create claims,
 accept results, authorize work or rerun models.
 
-With the separate C_PC acceptance, C_OS, A_OS, C_CI, A_CI and C_PC supply
-**162 of 322 accepted 8.4b history cells**. Five families own 160 pending cells.
+With the separate A_PC acceptance, C_OS, A_OS, C_CI, A_CI, C_PC and A_PC supply
+**194 of 322 accepted 8.4b history cells**. Four families own 128 pending cells.
 C_PC contributes 34 accepted cells, including the separate literal reset
 subject. Raw execution retains its original unaccepted flags; the separately
-pinned review records user acceptance. The all-ten parent and `.c`–`.i` remain open.
+pinned reviews record user acceptance. The A_PC successor contributes 32
+accepted cells through its own separate scoped decision.
+The all-ten parent and `.c`–`.i` remain open.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.
@@ -59,7 +61,7 @@ from grcv4_explorer.tranche8 import tranche8_status, tranche8_source
 
 view = tranche8_status(root)
 assert len(view["profiles"]) == 10
-assert view["coverage"]["accepted_cells"] == 162
+assert view["coverage"]["accepted_cells"] == 194
 assert view["coverage"]["executed_pending_cells"] == 0
 raw, identity = tranche8_source(root, view["coverage"]["record"]["path"])
 ```
@@ -124,12 +126,13 @@ the original negative cases.
 
 | Scenario | Required outcome |
 | --- | --- |
-| Load API, actual notebook cell and browser | Same checked ten-profile view; 162/322 accepted, 160 pending |
+| Load API, actual notebook cell and browser | Same checked ten-profile view; 194/322 accepted, 128 pending |
 | Inspect original C_OS phase-one case | Event committed, case incomplete, first failure visible |
 | Inspect its successor | Separate input/result identity and scoped acceptance |
 | Inspect accepted C_CI execution | All case outcomes, exact sources and separate scoped acceptance; original timeout remains incomplete |
 | Inspect accepted A_CI execution | All case outcomes, exact sources and joint-root/W-lifecycle scope; 32 cells credited through separate scoped acceptance |
 | Inspect accepted C_PC execution | Seventeen cases, 34 cells and signed Read-Back/flat pressure; separate scoped acceptance |
+| Inspect accepted A_PC execution | Sixteen cases, both W/Z histories, signed-read certificates and consumer effects; 32 cells credited through separate scoped acceptance |
 | Inspect a larger CI/PC pass or RG rejection | Probe outcome retained; larger-runtime acceptance remains false |
 | Alter counts, acceptance, source hash or runtime roster | Reject; no stale fallback or widened permission |
 | Request an unindexed or traversal path | Reject without reading it |
@@ -197,5 +200,31 @@ add `--recheck-numerics` for independent interval recomputation. The status
 query remains read-only source/structure inspection. The user accepted all
 34 cells on 2026-10-05 through the review's
 [separate scoped decision](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance).
-Shared coverage is 162/322 accepted and 160 pending. Raw execution and
+Shared coverage at that checkpoint was 162/322 accepted and 160 pending. Raw execution and
 scientific restrictions remain unchanged; acceptance requires no native rerun.
+
+
+## Accepted A_PC execution
+
+The [bounded A_PC review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md)
+records sixteen layout companions, both history roles, exact W transport and
+complete Z archive/reset. Unlike C_PC's separate signed-stage supplement,
+A_PC retains its signed Read-Back and lowered-vector certificates in each
+native read record. W/Z consumer controls and final read-path effects stay
+bounded by full formula error plus ULP margins. These are distinct from
+endpoint hysteresis or arbitrary-graph support.
+
+Use `run.py tranche8-query verify-retained --family A_PC` to check staged
+operands and saved certificates; add `--recheck-numerics` to recompute interval
+equations and effects without native trajectory reruns. All surfaces bind the
+[separate 2026-10-05 acceptance](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance)
+of all 32 A_PC cells: 194/322 accepted, with 128 pending across four families.
+Raw execution flags stay unchanged. Exact source links retrieve the manifest,
+result and review; no generated projection grants acceptance on its own.
+
+
+The A_PC update passes thirteen source/API tests, eight browser logic tests,
+both notebook cells and the real HTTP desktop/mobile browser scenario. The
+explicit retained CLI command and full independent interval recomputation
+also pass without native trajectory reruns. The current-boundary audit checks
+these source and projection bindings without supplying acceptance on its own.

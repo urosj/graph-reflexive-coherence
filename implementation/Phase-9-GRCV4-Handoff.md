@@ -1,5 +1,39 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b A_PC
+
+The user selected A_PC after accepted C_PC commit `7820bbf`, continuing on
+`work/p9-8-4b-cpc`. The [A_PC review](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md)
+binds sixteen layout companions and both histories. It preserves A_PC's
+accepted R=2048 chart, coefficients, incoming W/Z and shares (1/4,3/8,3/8).
+Independent whole-chart proofs and both-role continuations precede native
+comparison. Exact W lineage and full carrier archive/reset remain separate.
+
+Eleven new pressure methods and 68 existing native A_PC/generic PC methods
+pass, including negative continuation, signed covariance, domain boundaries,
+replay and actual W/Z writer consumers. All seventeen literal allocator
+construction checks pass. All sixteen native cases pass: 32 history cells,
+320 target beats, 32 final reads, 1,059 signed-read certificates and 320
+consumer/read-path effects. The minimum effect margin is 7.565 times the
+full-error/ULP threshold. Native case time totals 839.4 seconds. No production
+change was required. Retained checking, thirteen source/API methods, eight
+browser logic tests, the two-cell notebook and real desktop/mobile HTTP
+browser checks pass. Full independent interval recomputation passes with
+native step/read/event entry points disabled; current phase-boundary
+verification also passes. The result digest is
+`0ff8d09fc6925e062167ad8f29632a6c847cefb9d2dfd881e75966f8207555f4`.
+The completed 18.30 MiB artifact replaces its temporary progress journal.
+The user accepted the bounded result on 2026-10-05 and requested its commit.
+The [separate scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance)
+preserves the original execution flags and scientific inputs.
+
+Accepted coverage is **194/322**, including A_PC's 32 cells; 128 cells across
+four families remain pending. Parent 8.4b and `.c`–`.i`, 8.5 and 8.6 stay open. The next
+unexecuted family after A_PC is C_CI_PC. Side-tool status remains source and
+structure inspection; `run.py tranche8-query verify-retained --family A_PC`
+checks the saved staged evidence, with `--recheck-numerics` for independent
+interval recomputation. Neither repeats native trajectories.
+
 ## Accepted checkpoint — P9-8.4b C_PC
 
 Branch `work/p9-8-4b-cpc` starts from `dc9e4b3`. The
@@ -21,11 +55,11 @@ trajectories. A separate signed Read-Back/flat supplement prevents outer-product
 sign blindness from standing in for direct intermediate checks.
 
 The user accepted bounded C_PC on 2026-10-05 and requested its commit.
-Accepted coverage is **162/322**, including C_PC's **34 accepted cells**; five
-other families own the remaining 160. Side-tool CLI/API/notebook/browser bind
+Accepted coverage at that checkpoint was **162/322**, including C_PC's
+**34 accepted cells**; five other families owned the remaining 160. Side-tool CLI/API/notebook/browser bind
 the separate decision while original execution flags remain unchanged.
-Parent 8.4b and later `.c`–`.i`, 8.5 and 8.6 stay open. A_PC is the next
-unexecuted family; this acceptance starts no new family. All 1,125 signed-stage
+Parent 8.4b and later `.c`–`.i`, 8.5 and 8.6 stayed open. A_PC was the next
+unexecuted family; this acceptance started no new family. All 1,125 signed-stage
 certificates, twelve source/API methods, seven browser logic tests, the real
 desktop/mobile browser scenario, two notebook cells and the current phase
 boundary pass. The browser used an isolated font configuration after this

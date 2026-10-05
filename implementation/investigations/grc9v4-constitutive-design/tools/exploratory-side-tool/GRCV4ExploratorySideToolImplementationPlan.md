@@ -2457,8 +2457,16 @@ The C_PC successor adds seventeen named outcomes, including the literal reset
 subject, and signed Read-Back/flat pressure over every saved read. Expose the
 same source links and optional retained/interval checks through all surfaces.
 Bind the separate 2026-10-05 user acceptance of all 34 cells while preserving
-raw execution flags. Accepted coverage is 162/322, with 160 pending. Keep the whole-carrier loss, old-Z/single-source writer and
+raw execution flags. Coverage at that checkpoint was 162/322, with 160 pending. Keep the whole-carrier loss, old-Z/single-source writer and
 bounded native declaration visible; do not widen D10/D11 scientific claims.
+
+The A_PC successor exposes sixteen cases and 32 history cells accepted through
+the separate 2026-10-05 decision. Accepted coverage is 194/322, with 128 pending
+across four families; raw execution flags stay unchanged. Reuse shared exact
+source routes for its independent whole-chart bounds, integrated signed-read
+certificates and W/Z effects at next-current consumers. Distinguish explicit
+retained checking and interval recomputation from normal status or native
+execution; keep D10/D11 claim limits and larger-runtime ownership unchanged.
 
 ## ATC A_OS bounded research source admission
 

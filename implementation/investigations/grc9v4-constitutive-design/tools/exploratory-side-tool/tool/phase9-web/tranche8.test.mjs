@@ -10,7 +10,7 @@ test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', (
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);
   for(const row of evidence.profiles) assert.ok(content.includes(row.family));
-  for(const s of ['162/322','160 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
+  for(const s of ['194/322','128 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
   assert.ok(out.children.length > 20);
 });
 
@@ -49,7 +49,7 @@ test('A_CI acceptance is separately bound without widening scope', () => {
   assert.equal(evidence.coverage.families.find(r => r.family === 'A_CI').accepted_cells, 32);
   assert.equal(evidence.coverage.executed_pending_cells, 0);
   const out=element('div');renderTranche8(evidence,out,element);
-  assert.match(text(out), /162\/322/);
+  assert.match(text(out), /194\/322/);
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r => r.family === 'A_CI').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
@@ -75,9 +75,24 @@ test('C_PC binds scoped acceptance for all 17 subjects', () => {
   assert.equal(row.accepted_cells,34);assert.equal(row.executed_pending_cells,0);
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out),/Separate scoped acceptance/);
-  assert.doesNotMatch(text(out),/No accepted coverage credited/);
   assert.match(text(out),/G9-EXPAND-C-PC-CARRIER-RESET/);
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r=>r.family==='C_PC').acceptance=null;
+  assert.throws(()=>checkedTranche8(forged));
+});
+
+
+test('A_PC binds scoped acceptance with both histories and W/Z evidence', () => {
+  const run=evidence.coverage.runs.find(r=>r.family==='A_PC');
+  assert.equal(run.acceptance.anchor,'scoped-user-acceptance');
+  assert.equal(run.status,'accepted_bounded');
+  assert.equal(run.passed_cases,16);
+  const row=evidence.coverage.families.find(r=>r.family==='A_PC');
+  assert.equal(row.accepted_cells,32);assert.equal(row.executed_pending_cells,0);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Separate scoped acceptance/);
+  assert.doesNotMatch(text(out),/No accepted coverage credited/);
+  const forged=structuredClone(evidence);
+  forged.coverage.runs.find(r=>r.family==='A_PC').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
 });

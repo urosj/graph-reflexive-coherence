@@ -2691,8 +2691,8 @@ the full ten-profile plan.
     regressions pass. Retained checking explicitly reports no native rerun;
     actual current/geometry/Read-Back/continuity/final-refresh captures apply
     to the successors, not retroactively to the original campaign.
-    The user accepted bounded C_OS, A_OS, C_CI, A_CI and C_PC work on 2026-10-05.
-    Their 162 cells are accepted; the other 160 remain pending. Exact frozen
+    The user accepted bounded C_OS, A_OS, C_CI, A_CI, C_PC and A_PC work on 2026-10-05.
+    Their 194 cells are accepted; the other 128 remain pending. Exact frozen
     construction checks are not native success. Every item below inherits the shared source/event/
     both-role continuation contract and its own `.a` numerical prerequisites.
     All C items require complete `W_C_tr` and strict selectors; all A items
@@ -2787,12 +2787,32 @@ the full ten-profile plan.
       - [x] Verify synchronized CLI/API/notebook/browser, source pins and
         the current phase boundary; retain separate acceptance status.
       - [x] User accepted the bounded C_PC result on 2026-10-05, separately
-        from unchanged raw execution. Accepted coverage is 162/322;
-        160 cells across five families remain pending.
+        from unchanged raw execution. Coverage at that checkpoint was 162/322;
+        160 cells across five families remained pending.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md).
-    - [ ] P9-8.4b[A_PC]: 32 cells. A base-chart/carrier envelope, independent
+    - [x] P9-8.4b[A_PC]: 32 cells. A base-chart/carrier envelope, independent
       oracle, separate W lifecycle and whole-carrier reset/loss/read/write.
+      - [x] Bind all sixteen layout companions to the accepted A_PC chart;
+        independently certify both histories, whole-chart bounds and finite
+        continuations before native comparison.
+      - [x] Pressure exact old-edge W lineage/new-edge seeds, full Z archive
+        and target reset, both writer operands and signed Read-Back/flat
+        equations; resolve W/Z effects at their next-current consumers.
+      - [x] Execute 32 native history cells, each with ten target beats and
+        a fresh final read, preserving failures and stage-specific errors.
+        All sixteen pass: 320 target beats, 32 final reads, 1,059 signed-read
+        certificates and 320 effect controls; minimum margin 7.565 times
+        the full-error/ULP threshold. Eleven new plus 68 existing tests pass.
+      - [x] Synchronize side-tool CLI/API/notebook/browser, retained checking,
+        source bindings and current phase boundary. Thirteen source/API tests,
+        eight browser logic tests, the two-cell notebook, real desktop/mobile
+        HTTP browser and full independent interval recomputation pass.
+      - [x] User accepted the bounded A_PC result on 2026-10-05, separately
+        from unchanged raw execution. Accepted coverage is 194/322;
+        128 cells across four families remain pending.
+        [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance).
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md).
     - [ ] P9-8.4b[C_CI_PC]: 32 cells. Composite self-map/contraction and strict
       slack, joint-root/output error, base chart and carrier lifecycle.
     - [ ] P9-8.4b[A_CI_PC]: 32 cells. A composite contraction/slack and root

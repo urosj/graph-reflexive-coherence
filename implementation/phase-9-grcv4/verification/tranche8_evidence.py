@@ -19,6 +19,12 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+# A_PC execution and separate scoped user acceptance have exact source pins.
+ACCEPTED_APC_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json": "b0f2b8eb1718c23579f208573eec1e9e463c6b740beeaf68b925ec2728c91163",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md": "5e8f762b3a323980eac6255be62030793aa68502a3b5f6a7e1d83296a3238b56"
+}
 # C_PC execution and separate scoped user acceptance have exact source pins.
 ACCEPTED_CPC_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCCases.json": "c23e2a9a2a9d653f433316a57e7b7d3c1c3de557d7d8d507f136d6310ad4271e",
@@ -99,11 +105,11 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            pins = {**ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES}
+            pins = {**ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES, **ACCEPTED_APC_SOURCES}
             if name in pins:
                 require(not historical, "current pinned evidence is not a historical Git snapshot")
                 frozen = path.read_bytes()
-                family = "C_PC" if name in ACCEPTED_CPC_SOURCES else "A_CI" if name in ACCEPTED_ACI_SOURCES else "C_CI"
+                family = "A_PC" if name in ACCEPTED_APC_SOURCES else "C_PC" if name in ACCEPTED_CPC_SOURCES else "A_CI" if name in ACCEPTED_ACI_SOURCES else "C_CI"
                 require(hashlib.sha256(frozen).hexdigest() == pins[name],
                         "accepted " + family + " source drift: " + name)
                 self.values[name] = frozen
@@ -325,6 +331,46 @@ def build(root=ROOT):
         "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json")
     covered.update(pending_cells)
     pending_cells.clear()
+    input_name, result_name = (BASE + "P9-8.4b-APC" + n + ".json" for n in ("Cases", "Results"))
+    inputs, result = sources.read(input_name), sources.read(result_name)
+    require(result["manifest_digest"] == inputs["record_digest"] and result["native_runtime_executed"] is True
+            and result["user_accepted"] is False and result["aggregate_closed"] is False, "accepted A_PC execution/scope drift")
+    require([r["case_id"] for r in result["cases"]] == [r["case_id"] for r in inputs["cases"]], "accepted A_PC roster drift")
+    cases = []
+    for case, row in zip(inputs["cases"], result["cases"], strict=True):
+        ids = row["coverage_binding"]["cell_ids"]
+        require(row["coverage_binding"] == case["coverage_binding"] and len(ids) == 2
+                and all(i in cells and cells[i]["family"] == "A_PC" for i in ids), "accepted A_PC foreign coverage")
+        passed = row["outcome"] == "passed_named_case"
+        require(row["case_passed"] == passed and (not passed or row["event_committed"] is True
+                and row["first_failure"] is None), "accepted A_PC false success")
+        if passed:
+            require(not pending_cells.intersection(ids) and not covered.intersection(ids), "duplicate A_PC credit")
+            pending_cells.update(ids)
+        cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
+            event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
+    for ref in inputs["source_bindings"]:
+        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+                "accepted A_PC execution source drift: " + ref["path"])
+    review_name = BASE + "P9-8.4b-APCRuntimeReview.md"
+    require("## Scoped user acceptance" in sources.raw(review_name).decode(), "A_PC separate acceptance missing")
+    runs.append(dict(family="A_PC", inputs=sources.ref(input_name), results=sources.ref(result_name),
+        record_digest=result["record_digest"], acceptance=sources.ref(review_name, anchor="scoped-user-acceptance"),
+        review=sources.ref(review_name),
+        stage_evidence=dict(signed_read_certificates=3 + sum(4 + 3*len(r["continuation"]) + len(r["final_reads"]) for r in result["cases"]),
+            target_beats=sum(len(r["continuation"]) for r in result["cases"]),
+            fresh_final_reads=sum(len(r["final_reads"]) for r in result["cases"]),
+            entry_W_Z_effects=sum(len(e) for r in result["cases"] for e in r["entry_effects"].values()),
+            minimum_W_Z_effect_margin=min(e["minimum_margin_ratio"] for r in result["cases"] for v in r["entry_effects"].values() for e in v.values()),
+            independent_source_chart=inputs["independent_source_chart"],
+            resource_recipe=inputs["resource_recipe"]),
+        pc_claim_restrictions=inputs["scientific_contracts"]["claim_restrictions"],
+        claim_source=sources.ref("implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json"),
+        passed_cases=sum(c["case_passed"] for c in cases), incomplete_cases=sum(not c["case_passed"] for c in cases),
+        cases=cases, status="accepted_bounded"))
+    require(len(pending_cells) == 32 and len(cases) == 16, "accepted A_PC coverage drift")
+    covered.update(pending_cells)
+    pending_cells.clear()
     rows = []
     for family in FAMILIES:
         required = sorted(i for i, r in cells.items() if r["family"] == family)
@@ -408,7 +454,7 @@ def next_work(value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
-    parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC"))
+    parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC"))
     parser.add_argument("--recheck-numerics", action="store_true")
     args = parser.parse_args()
     value = checked()
@@ -423,7 +469,7 @@ def main():
         commands = [[sys.executable, str(ROOT / HERE / "p984b_cos_successor.py"), "--check-retained", *extra] for extra in (["--original"], [])]
     else:
         script = {"C_CI": "p984b_cci_completion.py", "A_CI": "p984b_aci_runtime.py", "A_OS": "p984b_aos_runtime.py",
-                  "C_PC": "p984b_cpc_runtime.py"}[args.family]
+                  "C_PC": "p984b_cpc_runtime.py", "A_PC": "p984b_apc_runtime.py"}[args.family]
         commands = [[sys.executable, str(ROOT / HERE / script), "--check-retained",
                      *(["--recheck-numerics"] if args.recheck_numerics else [])]]
         if args.family == "C_PC":

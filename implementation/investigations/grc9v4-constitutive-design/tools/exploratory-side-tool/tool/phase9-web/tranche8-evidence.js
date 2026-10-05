@@ -7645,9 +7645,9 @@ export const TRANCHE8_EVIDENCE = {
       {
         "family": "A_PC",
         "required_cells": 32,
-        "accepted_cells": 0,
+        "accepted_cells": 32,
         "executed_pending_cells": 0,
-        "pending_cells": 32,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::reset",
@@ -7682,8 +7682,41 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "A_CI_PC",
@@ -9250,6 +9283,250 @@ export const TRANCHE8_EVIDENCE = {
           "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
           "basis": "current_equals_accepted_checkpoint"
         }
+      },
+      {
+        "family": "A_PC",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json",
+          "sha256": "b0f2b8eb1718c23579f208573eec1e9e463c6b740beeaf68b925ec2728c91163",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json",
+          "sha256": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "0ff8d09fc6925e062167ad8f29632a6c847cefb9d2dfd881e75966f8207555f4",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md",
+          "sha256": "5e8f762b3a323980eac6255be62030793aa68502a3b5f6a7e1d83296a3238b56",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md",
+          "sha256": "5e8f762b3a323980eac6255be62030793aa68502a3b5f6a7e1d83296a3238b56",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "stage_evidence": {
+          "signed_read_certificates": 1059,
+          "target_beats": 320,
+          "fresh_final_reads": 32,
+          "entry_W_Z_effects": 256,
+          "minimum_W_Z_effect_margin": 7.564892445615027,
+          "independent_source_chart": {
+            "carrier_radius": "2048",
+            "geometry_radius": "1/8",
+            "resource_radius": "16",
+            "weight_lower": "1/2",
+            "weight_upper": "513/512",
+            "hodge_lower": "7/8",
+            "hodge_upper": "9/8",
+            "current_margin_lower": "31/32",
+            "current_condition_upper": "33/31",
+            "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+            "conductance_exponent_absolute_upper": "91834804879905728083141403965245352151828445106208953591710982543700426476078316470715666401866301241832302851791520531990573663276345/5456968859750611107952345151409159043076948028285255124457125636035893405288870346222418747936928019561662369247045289016615251289833472",
+            "current_norm_upper": "9530578373543190701091981371942657172572271401580715391692099250475/12752660319239346826701011164819466413616202958660243940951719936",
+            "source_frobenius_upper": "90831924134249170225778946432063913142958645134312001843552617371687452494570063822609375373751199476948864586129794493958056787725625/63751095325417505333343723397028158452694524141783118509864605943145460333622609845375661527850502242689479850078873434499298885632"
+          },
+          "resource_recipe": "accepted [1/4,3/8,3/8] shares on every layout, independently checked"
+        },
+        "pc_claim_restrictions": {
+          "D10-CL-O-006": "scalar_ZOH_PC_only",
+          "D10-CL-C-004": "no_endpoint_hysteresis_inferred",
+          "D10-CL-C-012": "no_universal_realization_or_graph_support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded"
       }
     ],
     "oracle_and_pressure": [
@@ -9279,8 +9556,8 @@ export const TRANCHE8_EVIDENCE = {
       }
     ],
     "required_cells": 322,
-    "accepted_cells": 162,
-    "pending_cells": 160,
+    "accepted_cells": 194,
+    "pending_cells": 128,
     "executed_pending_cells": 0,
     "aggregate_closed": false,
     "other_vector_cells": 60,
@@ -9878,6 +10155,24 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json",
+      "sha256": "b0f2b8eb1718c23579f208573eec1e9e463c6b740beeaf68b925ec2728c91163",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json",
+      "sha256": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md",
+      "sha256": "5e8f762b3a323980eac6255be62030793aa68502a3b5f6a7e1d83296a3238b56",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICases.json",
       "sha256": "473bf8252a1b6e5b02816e261686f53e3c39c927bf957dbae87ef7f705802a85",
       "revision": null,
@@ -10100,5 +10395,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "73b80a573c114db9988b0a0cc51131ac3a50d3d16bd3bdbfcc438fad56937393"
+  "view_digest": "9c8fdbe0d37f2c6169fa466653791c709b50f87734efba5c2f03335f1b514c0c"
 };

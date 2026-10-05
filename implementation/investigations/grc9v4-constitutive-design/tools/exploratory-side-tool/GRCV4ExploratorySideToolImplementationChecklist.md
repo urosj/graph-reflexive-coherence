@@ -2016,13 +2016,28 @@ instead of stale fixed totals and opens any pending case details explicitly.
 - [x] Add seventeen outcomes and the signed Read-Back/flat supplement to the
   shared CLI/API/notebook/browser projection, with exact source retrieval.
 - [x] Bind separate user acceptance on 2026-10-05 for all 34 cells, including
-  the literal carrier-reset subject. Accepted coverage is 162/322, with 160
-  pending; original execution flags remain unchanged.
+  the literal carrier-reset subject. Coverage at that checkpoint was 162/322,
+  with 160 pending; original execution flags remain unchanged.
 - [x] Add explicit retained/interval checking without native trajectory reruns.
 - [x] Finish source/API, browser, notebook and current-boundary verification:
   twelve Python methods, seven browser logic tests, the real desktop/mobile
   scenario, two notebook cells and the phase-boundary audit pass. The browser
   scenario diagnoses a zero-height font environment before checking the UI.
+
+### P9-8.4b A_PC evidence successor
+
+- [x] Add sixteen outcomes, both W/Z histories and integrated signed-read
+  evidence to CLI/API/notebook/browser with exact source retrieval.
+- [x] Bind separate user acceptance on 2026-10-05 for all 32 cells. Accepted
+  coverage is 194/322, with 128 pending across four families; original execution
+  flags remain unchanged.
+- [x] Expose independent chart/consumer-effect summaries and an explicit
+  retained checker, with optional interval recomputation and no native rerun.
+- [x] Complete source/API, notebook, browser and current-boundary checks:
+  thirteen Python methods, eight browser logic tests, two notebook cells,
+  the real desktop/mobile HTTP scenario and phase-boundary audit pass.
+  The explicit A_PC retained command and full interval recomputation pass
+  without native trajectory reruns.
 
 ## ATC A_OS bounded research source admission
 

@@ -2891,7 +2891,7 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md#scoped-user-acceptance) 2026-10-05; original timeout retained. |
 | `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | [Accepted by the user on 2026-10-05](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#scoped-user-acceptance): all sixteen cases and nine focused tests pass. |
 | `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | [All seventeen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 34 cells, 340 target beats and 34 final reads. |
-| `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | Pending. |
+| `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 32 cells, 320 target beats and 32 final reads. |
 | `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | Pending. |
 | `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | Pending. |
 | `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | Pending. |
@@ -2981,9 +2981,25 @@ formation or read-path effects; the paper and side-tool retain that boundary.
 The user accepted this bounded result on 2026-10-05: all seventeen cases,
 34 history cells, 340 target beats and 34 final reads, plus 1,125 signed-stage
 certificates. The [separate decision](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance)
-raises accepted coverage to **162/322**, with 160 cells pending across five
-families. Source bindings and shared views are refreshed without a native
+raised accepted coverage at that checkpoint to **162/322**, with 160 cells pending
+across five families. Source bindings and shared views are refreshed without a native
 rerun or interval recomputation; raw execution and scientific scope remain unchanged.
+
+**Accepted A_PC successor.** The user selected A_PC after C_PC commit
+`7820bbf`. Its content-specific substeps are independent all-layout chart and
+continuation proofs; separate W lineage and complete Z archive/reset; signed
+Read-Back/flat and actual dual-writer consumption/effect pressure; all 32 native
+history cells and fresh final reads; then synchronized side-tool access and
+scoped acceptance. Keep the accepted native R=2048, kappa_H=2^-14 declaration
+and (1/4,3/8,3/8) shares. Record the prescribed binary64 charge residuals against
+the existing tolerance, independently of exact simplex conservation. Passing
+execution and complete-chain W/Z effects do not imply endpoint hysteresis,
+indefinite positivity, arbitrary-graph support or aggregate closure.
+The user accepted all sixteen bounded cases on 2026-10-05. The
+[separate decision](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance)
+brings accepted coverage to **194/322**, with 128 cells pending across four
+families. Acceptance refreshes source bindings and shared views without
+numerical reruns or changes to raw execution flags or scientific scope.
 
 **Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds
