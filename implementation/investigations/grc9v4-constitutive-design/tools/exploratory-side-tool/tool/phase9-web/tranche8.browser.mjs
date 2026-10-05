@@ -13,6 +13,8 @@ try {
   await page.route('**/api/status', route=>route.fulfill({status:503,contentType:'application/json',body:'{"error":"separate full-boundary check not requested by this focused test"}'}));
   const response=page.waitForResponse(r=>r.url()===base+'/api/tranche8',{timeout:120000});
   await page.goto(base);
+  assert.ok(await page.locator('h1').evaluate(e => e.getBoundingClientRect().height > 0),
+    'Browser font environment renders zero-height text; repair font configuration before UI verification');
   const network=await response;assert.equal(network.status(),200);const value=await network.json();
   await page.locator('#tranche8-status').filter({hasText:'Retained sources checked'}).waitFor({timeout:15000});
   const content=await page.locator('#tranche8-evidence').innerText();

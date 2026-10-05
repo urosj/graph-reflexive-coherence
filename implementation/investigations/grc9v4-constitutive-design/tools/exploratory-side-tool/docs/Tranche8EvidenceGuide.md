@@ -5,9 +5,11 @@ all ten bounded 8.3 profile integrations, larger-configuration preparation,
 and current 8.4 coverage. It reads existing records; it does not create claims,
 accept results, authorize work or rerun models.
 
-With the separate A_CI acceptance, C_OS, A_OS, C_CI and A_CI supply **128 of 322
-accepted 8.4b history cells**. Six families own 194 pending cells, including C_PC's
-separate literal reset subject. The all-ten parent and `.c`–`.i` remain open.
+With the separate C_PC acceptance, C_OS, A_OS, C_CI, A_CI and C_PC supply
+**162 of 322 accepted 8.4b history cells**. Five families own 160 pending cells.
+C_PC contributes 34 accepted cells, including the separate literal reset
+subject. Raw execution retains its original unaccepted flags; the separately
+pinned review records user acceptance. The all-ten parent and `.c`–`.i` remain open.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.
@@ -57,7 +59,8 @@ from grcv4_explorer.tranche8 import tranche8_status, tranche8_source
 
 view = tranche8_status(root)
 assert len(view["profiles"]) == 10
-assert view["coverage"]["accepted_cells"] == 64
+assert view["coverage"]["accepted_cells"] == 162
+assert view["coverage"]["executed_pending_cells"] == 0
 raw, identity = tranche8_source(root, view["coverage"]["record"]["path"])
 ```
 
@@ -121,11 +124,12 @@ the original negative cases.
 
 | Scenario | Required outcome |
 | --- | --- |
-| Load API, actual notebook cell and browser | Same checked ten-profile view; 128/322 accepted, 194 pending |
+| Load API, actual notebook cell and browser | Same checked ten-profile view; 162/322 accepted, 160 pending |
 | Inspect original C_OS phase-one case | Event committed, case incomplete, first failure visible |
 | Inspect its successor | Separate input/result identity and scoped acceptance |
 | Inspect accepted C_CI execution | All case outcomes, exact sources and separate scoped acceptance; original timeout remains incomplete |
 | Inspect accepted A_CI execution | All case outcomes, exact sources and joint-root/W-lifecycle scope; 32 cells credited through separate scoped acceptance |
+| Inspect accepted C_PC execution | Seventeen cases, 34 cells and signed Read-Back/flat pressure; separate scoped acceptance |
 | Inspect a larger CI/PC pass or RG rejection | Probe outcome retained; larger-runtime acceptance remains false |
 | Alter counts, acceptance, source hash or runtime roster | Reject; no stale fallback or widened permission |
 | Request an unindexed or traversal path | Reject without reading it |
@@ -164,8 +168,8 @@ states the numerical scope and commands for a separately named native run.
 The shared view binds A_CI execution to its separate 2026-10-05 user acceptance and
 [bounded review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md).
 Source pins authenticate the exact execution and the separate decision; raw
-execution flags remain unchanged. Its 32 accepted cells bring the total to
-128/322, with 194 pending. Use `run.py tranche8-query verify-retained --family A_CI` for retained
+execution flags remain unchanged. Its 32 accepted cells brought the total at
+that checkpoint to 128/322, with 194 pending. Use `run.py tranche8-query verify-retained --family A_CI` for retained
 identity, stage, schedule and bound checking, or add `--recheck-numerics` for
 independent interval recomputation. Neither runs a native trajectory. Normal
 API/browser/notebook status authenticates source bytes and retained structure,
@@ -178,3 +182,20 @@ records exact reconstruction of the original accepted file. Retrieval returns
 the compact bytes with their current advertised SHA-256. For future large
 records, prefer compact serialization before freezing source-byte bindings;
 do not silently reformat previously pinned files or drop numerical evidence.
+
+## Accepted C_PC execution
+
+The [bounded C_PC review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md)
+defines seventeen native companions, including the separate literal reset
+subject. Its source archive, target zero pair, carrier-loss receipts, old-Z
+reads and one incoming-source write are visible through the same source
+routes. Signed Read-Back/flat pressure supplements the current/source and
+writer evidence, without changing the retained execution.
+
+Use `run.py tranche8-query verify-retained --family C_PC` to check both records;
+add `--recheck-numerics` for independent interval recomputation. The status
+query remains read-only source/structure inspection. The user accepted all
+34 cells on 2026-10-05 through the review's
+[separate scoped decision](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance).
+Shared coverage is 162/322 accepted and 160 pending. Raw execution and
+scientific restrictions remain unchanged; acceptance requires no native rerun.

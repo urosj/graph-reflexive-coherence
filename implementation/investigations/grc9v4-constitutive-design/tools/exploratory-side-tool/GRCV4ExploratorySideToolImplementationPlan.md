@@ -2449,9 +2449,16 @@ checking remains opt-in and performs no native trajectory rerun.
 The A_CI successor reuses those shared access paths for its separately pinned
 execution and 2026-10-05 scoped user acceptance. Display all sixteen outcomes
 and the full-root/W-lifecycle scope, with raw execution flags unchanged.
-Accepted coverage is now 128/322, with 194 cells pending. Expose the A_CI
+Accepted coverage at that checkpoint was 128/322, with 194 cells pending. Expose the A_CI
 retained checker explicitly and distinguish interval recomputation from native
 execution. No other realization inherits its conformance.
+
+The C_PC successor adds seventeen named outcomes, including the literal reset
+subject, and signed Read-Back/flat pressure over every saved read. Expose the
+same source links and optional retained/interval checks through all surfaces.
+Bind the separate 2026-10-05 user acceptance of all 34 cells while preserving
+raw execution flags. Accepted coverage is 162/322, with 160 pending. Keep the whole-carrier loss, old-Z/single-source writer and
+bounded native declaration visible; do not widen D10/D11 scientific claims.
 
 ## ATC A_OS bounded research source admission
 

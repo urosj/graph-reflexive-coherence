@@ -10,7 +10,7 @@ test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', (
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);
   for(const row of evidence.profiles) assert.ok(content.includes(row.family));
-  for(const s of ['128/322','194 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
+  for(const s of ['162/322','160 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
   assert.ok(out.children.length > 20);
 });
 
@@ -49,7 +49,7 @@ test('A_CI acceptance is separately bound without widening scope', () => {
   assert.equal(evidence.coverage.families.find(r => r.family === 'A_CI').accepted_cells, 32);
   assert.equal(evidence.coverage.executed_pending_cells, 0);
   const out=element('div');renderTranche8(evidence,out,element);
-  assert.match(text(out), /128\/322/);
+  assert.match(text(out), /162\/322/);
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r => r.family === 'A_CI').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
@@ -64,4 +64,20 @@ test('failed refresh clears previous success and ignores delayed old response', 
   const reload=tranche8Loader(out,status,async()=>++n===1 ? new Promise(r=>resolve=r) : {ok:false},element);
   const first=reload();await reload();resolve({ok:true,json:async()=>evidence});await first;
   assert.equal(out.children.length,0);assert.match(status.textContent,/Unavailable/);
+});
+
+test('C_PC binds scoped acceptance for all 17 subjects', () => {
+  const run=evidence.coverage.runs.find(r=>r.family==='C_PC');
+  assert.equal(run.acceptance.anchor,'scoped-user-acceptance');
+  assert.equal(run.passed_cases,17);
+  assert.equal(run.status,'accepted_bounded');
+  const row=evidence.coverage.families.find(r=>r.family==='C_PC');
+  assert.equal(row.accepted_cells,34);assert.equal(row.executed_pending_cells,0);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Separate scoped acceptance/);
+  assert.doesNotMatch(text(out),/No accepted coverage credited/);
+  assert.match(text(out),/G9-EXPAND-C-PC-CARRIER-RESET/);
+  const forged=structuredClone(evidence);
+  forged.coverage.runs.find(r=>r.family==='C_PC').acceptance=null;
+  assert.throws(()=>checkedTranche8(forged));
 });

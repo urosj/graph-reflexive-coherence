@@ -2691,8 +2691,8 @@ the full ten-profile plan.
     regressions pass. Retained checking explicitly reports no native rerun;
     actual current/geometry/Read-Back/continuity/final-refresh captures apply
     to the successors, not retroactively to the original campaign.
-    The user accepted bounded C_OS, A_OS and C_CI work on 2026-10-05.
-    Their 96 cells are accepted; the other 226 remain pending. Exact frozen
+    The user accepted bounded C_OS, A_OS, C_CI, A_CI and C_PC work on 2026-10-05.
+    Their 162 cells are accepted; the other 160 remain pending. Exact frozen
     construction checks are not native success. Every item below inherits the shared source/event/
     both-role continuation contract and its own `.a` numerical prerequisites.
     All C items require complete `W_C_tr` and strict selectors; all A items
@@ -2770,11 +2770,27 @@ the full ten-profile plan.
         execution remains separate from accepted coverage.
       - [x] User accepted the bounded result on 2026-10-05, separately from
         unchanged raw execution; no separate independent audit is asserted.
-        Accepted 8.4b coverage is 128/322; 194 cells across six families remain.
+        Accepted coverage at that checkpoint was 128/322; 194 cells remained.
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md).
-    - [ ] P9-8.4b[C_PC]: 34 cells. All sixteen shared layouts plus
+    - [x] P9-8.4b[C_PC]: 34 cells. All sixteen shared layouts plus
       both histories of the literal C_PC reset fixture; base-chart/carrier
       envelope, actual old-Z read, one same-source Z write and loss handling.
+      - [x] Bind all seventeen companions, independent topology/resource/zero-Z
+        expectations and native-specific interval budgets; explicit D52
+        phase-one shares, fixed 480-second operational budget.
+      - [x] Pressure whole-carrier archives, both-role admission, actual
+        current/single-writer consumption, delayed geometry and wrong-law
+        effects against paper/specification/side-tool claim restrictions.
+      - [x] Complete 34 native cells: 340 target beats and 34 final reads;
+        all 1,125 signed Read-Back/flat certificates pass. Eight focused and
+        59 existing PC/native-C_PC test methods pass.
+      - [x] Verify synchronized CLI/API/notebook/browser, source pins and
+        the current phase boundary; retain separate acceptance status.
+      - [x] User accepted the bounded C_PC result on 2026-10-05, separately
+        from unchanged raw execution. Accepted coverage is 162/322;
+        160 cells across five families remain pending.
+        [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance).
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md).
     - [ ] P9-8.4b[A_PC]: 32 cells. A base-chart/carrier envelope, independent
       oracle, separate W lifecycle and whole-carrier reset/loss/read/write.
     - [ ] P9-8.4b[C_CI_PC]: 32 cells. Composite self-map/contraction and strict

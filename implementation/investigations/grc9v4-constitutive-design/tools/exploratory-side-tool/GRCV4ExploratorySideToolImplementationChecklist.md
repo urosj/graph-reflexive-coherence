@@ -2011,6 +2011,19 @@ Ten focused source/API tests, six browser logic tests and the actual two-cell
 notebook pass. The real-browser scenario uses the checked coverage projection
 instead of stale fixed totals and opens any pending case details explicitly.
 
+### P9-8.4b C_PC evidence successor
+
+- [x] Add seventeen outcomes and the signed Read-Back/flat supplement to the
+  shared CLI/API/notebook/browser projection, with exact source retrieval.
+- [x] Bind separate user acceptance on 2026-10-05 for all 34 cells, including
+  the literal carrier-reset subject. Accepted coverage is 162/322, with 160
+  pending; original execution flags remain unchanged.
+- [x] Add explicit retained/interval checking without native trajectory reruns.
+- [x] Finish source/API, browser, notebook and current-boundary verification:
+  twelve Python methods, seven browser logic tests, the real desktop/mobile
+  scenario, two notebook cells and the phase-boundary audit pass. The browser
+  scenario diagnoses a zero-height font environment before checking the UI.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

@@ -1,5 +1,38 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b C_PC
+
+Branch `work/p9-8-4b-cpc` starts from `dc9e4b3`. The
+[C_PC review](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md) records all
+seventeen native companions, including the separate literal reset subject.
+All 34 history cells pass: 340 target beats and 34 fresh final reads, with
+whole-carrier archives/reset/loss, actual old-Z/single-source writes,
+independent full-formula intervals and final read-path effect margins.
+Eight focused methods and 59 existing PC/native-C_PC methods pass, as do
+all seventeen frozen construction checks. No production change was needed.
+
+The review records the first attempt's final JSON serialization failure and
+the necessary replacement execution. Only the complete saved campaign gets
+positive evidence credit. The corrected runner validates and saves each
+case before starting another, without changing numerical inputs or budgets.
+Use `run.py tranche8-query verify-retained --family C_PC` for retained checks;
+add `--recheck-numerics` for interval recomputation. Neither repeats native
+trajectories. A separate signed Read-Back/flat supplement prevents outer-product
+sign blindness from standing in for direct intermediate checks.
+
+The user accepted bounded C_PC on 2026-10-05 and requested its commit.
+Accepted coverage is **162/322**, including C_PC's **34 accepted cells**; five
+other families own the remaining 160. Side-tool CLI/API/notebook/browser bind
+the separate decision while original execution flags remain unchanged.
+Parent 8.4b and later `.c`–`.i`, 8.5 and 8.6 stay open. A_PC is the next
+unexecuted family; this acceptance starts no new family. All 1,125 signed-stage
+certificates, twelve source/API methods, seven browser logic tests, the real
+desktop/mobile browser scenario, two notebook cells and the current phase
+boundary pass. The browser used an isolated font configuration after this
+machine's default produced zero-height text; no visibility check was weakened.
+Acceptance verification refreshes source bindings and shared views without
+rerunning native trajectories or interval equations.
+
 ## Accepted checkpoint — P9-8.4b A_CI
 
 C_CI acceptance is committed at `b8d1dd33`. The user selected A_CI next on
@@ -13,7 +46,7 @@ reads, without failure or timeout. One actual source beat supplies the event
 identities; no completed case was rerun. The result retains pointwise interval
 certificates and actual writer consumption, not a global trajectory bound.
 The user accepted this bounded result on 2026-10-05 and requested its commit.
-Accepted 8.4b coverage is now **128/322**, with 194 cells pending across six
+Accepted 8.4b coverage at that checkpoint was **128/322**, with 194 cells pending across six
 families. The shared CLI/API/notebook/browser view binds the separate decision
 and exact repository-relative source links. Ten source/API tests, six browser
 logic tests and the actual notebook pass without numerical reruns.

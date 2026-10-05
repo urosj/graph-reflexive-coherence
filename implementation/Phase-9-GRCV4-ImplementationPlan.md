@@ -2890,7 +2890,7 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Oracle, scientific pressure and all 32 bounded native cells accepted 2026-10-05. |
 | `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md#scoped-user-acceptance) 2026-10-05; original timeout retained. |
 | `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | [Accepted by the user on 2026-10-05](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#scoped-user-acceptance): all sixteen cases and nine focused tests pass. |
-| `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | Pending. |
+| `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | [All seventeen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 34 cells, 340 target beats and 34 final reads. |
 | `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | Pending. |
 | `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | Pending. |
 | `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | Pending. |
@@ -2960,14 +2960,30 @@ runtime/covariance cell.
 with 226 pending across seven families. Original failed execution remains
 recorded.
 
-**Current A_CI successor.** A_CI reuses its own accepted A.1 equations/domain
+**Accepted A_CI successor.** A_CI reuses its own accepted A.1 equations/domain
 and A.2 native recipe. The user accepted its bounded all-layout result on
 2026-10-05: sixteen cases, 32 history cells, 320 target steps and 32 fresh
 final reads, with nine focused scientific/lifecycle methods passing. The
 [separate decision](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#scoped-user-acceptance)
-leaves execution-time flags unchanged. Accepted coverage is **128/322**, with
+leaves execution-time flags unchanged. Accepted coverage at that checkpoint was **128/322**, with
 194 cells pending across six families. Side-tool access is synchronized;
 no production change, broader guarantee or parent 8.4b closure is inferred.
+
+**Accepted C_PC successor.** On branch `work/p9-8-4b-cpc`, retain all seventeen
+native companions and both histories. Substeps cover input/domain binding,
+independent full-formula and signed-intermediate pressure, whole-carrier
+archive/reset/loss, actual old-Z/single held-source write, the complete
+ten-beat/final-read campaign, and synchronized evidence access. Use the
+accepted native R=1 declaration, with explicit D52 phase-one companion
+shares. Native execution, retained checking, interval recomputation and user
+acceptance remain distinct. Do not infer endpoint hysteresis from carrier
+formation or read-path effects; the paper and side-tool retain that boundary.
+The user accepted this bounded result on 2026-10-05: all seventeen cases,
+34 history cells, 340 target beats and 34 final reads, plus 1,125 signed-stage
+certificates. The [separate decision](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance)
+raises accepted coverage to **162/322**, with 160 cells pending across five
+families. Source bindings and shared views are refreshed without a native
+rerun or interval recomputation; raw execution and scientific scope remain unchanged.
 
 **Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds

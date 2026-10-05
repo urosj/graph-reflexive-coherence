@@ -43,15 +43,18 @@ export function renderTranche8(value, container, create = tag => document.create
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
   append(container, 'h3', 'Recorded cases: event commit is not case success');
-  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI and A_CI also have pointwise interval checks. None is a uniform parameter tube.');
+  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI, A_CI and C_PC also have pointwise interval checks. None is a uniform parameter tube.');
   const supplements = append(container, 'p', 'Expanded A_OS oracle and pressure: ');
   for (const ref of c.oracle_and_pressure) { link(supplements, ref, ref.path.split('/').at(-1)); append(supplements, 'span', ' · '); }
   for (const run of c.runs) {
     const section = append(container, 'details', '');
     append(section, 'summary', `${run.family}: ${run.passed_cases} passed, ${run.incomplete_cases} incomplete — ${run.results.path.split('/').at(-1)}`);
     const p = append(section, 'p', `${run.status}. `); link(p, run.results, 'Exact execution'); append(p, 'span', ' · ');
+    link(p, run.inputs, 'Inputs and budgets'); append(p, 'span', ' · ');
     if (run.acceptance) link(p, run.acceptance, 'Separate scoped acceptance');
     else { link(p, run.review, 'Review pending acceptance'); append(p, 'span', ' · No accepted coverage credited.'); }
+    if (run.signed_stage_pressure) { append(p, 'span', ' · '); link(p, run.signed_stage_pressure, 'Signed Read-Back/flat checks'); }
+    if (run.pc_claim_restrictions) { link(p, run.claim_source, ' PC claim source'); details(section, 'PC claim restrictions', run.pc_claim_restrictions); }
     if (run.original_attempt) {
       const original=append(section,'p','Original attempt retained: ');
       link(original,run.original_attempt.results,'Original execution and timeout');
