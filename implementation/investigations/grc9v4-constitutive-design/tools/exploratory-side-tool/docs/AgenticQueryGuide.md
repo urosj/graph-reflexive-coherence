@@ -775,3 +775,11 @@ the ET-C11 API/notebook/browser candidate. It runs desktop/mobile D11 browser
 pressure alongside historical regressions and checks the active post-D11
 paper-propagation boundary. It does not promote a scientific claim or treat
 pending paper/specification/runtime work as evidence.
+
+## Tranche 8 implementation evidence (not claim authority)
+
+For 8.1 mechanics, 8.2 allocation, all ten bounded 8.3 integrations and current
+8.4 acceptance/coverage, use the [Tranche 8 API, CLI, notebook and browser](./Tranche8EvidenceGuide.md).
+Its retained traces preserve classification and provenance, but the projection
+is not a new forensic trace or scientific claim. Continue using the typed
+contract/debt/object queries above for claim investigation.

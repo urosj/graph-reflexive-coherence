@@ -1,0 +1,217 @@
+{
+  "schema": "phase9_tranche8_historical_source_bridge_v1",
+  "base_commit": "ffbcabf108ccf2f4e71e0cfbd9d122b2fe017f40",
+  "accepted_checkpoint": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+  "purpose": "Historical input reconstruction only; no rerun, numerical equivalence, new support or permission inferred.",
+  "changes": {
+    "implementation/phase-9-grcv4/verification/c_rg2b_g2_source_reuse.py": {
+      "before_sha256": "15e9fb27e77400ade411e9376671b5957f045c6742fb3be1f8ce8066c753be51",
+      "after_sha256": "758503af33163825d0efc8a8c7939c34061c01edb9b5fa66a7681503132cf7af"
+    },
+    "implementation/phase-9-grcv4/verification/g2_source_reuse.py": {
+      "before_sha256": "a7d5bdacd0015756b936ec807500aebaa4552c3a243b6f8cd0242e0ddd233cba",
+      "after_sha256": "b9be8835864a386a067fc8fe16d5ecbfbc10490a0e3d690e2bd76d37b8282738"
+    },
+    "implementation/phase-9-grcv4/verification/test_p977_c_ci_local.py": {
+      "before_sha256": "ba2450caaf30bbe984627141a8aed5ec62d1dc6e6590712068053756e9f23b17",
+      "after_sha256": "79750a4ccae947d3c4f546de9048cda9d30bdc4df2a7bdbb8a2dea60aff547d7"
+    },
+    "implementation/phase-9-grcv4/verification/test_p977_c_ci_pc_local.py": {
+      "before_sha256": "d90d9cec9dbc2bb6308c1d895046f71c0eb963f0f27bf380208b6c0368f5a559",
+      "after_sha256": "a7b1b03110c9efcce96c0d002ebd78ea738a586ae16075da43fcabcf5c039871"
+    },
+    "implementation/phase-9-grcv4/verification/test_p977_c_pc_local.py": {
+      "before_sha256": "a8ddefb02408c4e5cbc6c383488720b3f02e7bf4c05609e31d903c52b6d2ee01",
+      "after_sha256": "bdf2783dde78984eefef3a9b900cae3cfe32165b3634df3a8d63b0ea9d49f3d7"
+    },
+    "implementation/phase-9-grcv4/verification/test_p977_c_rg2b_local.py": {
+      "before_sha256": "e48b1a3b7baaf29b5b191a2ea79444ad4b475796972d2000ea267cc8fa4fd2c5",
+      "after_sha256": "b3c76409be8a915b0afb594b5b60b412f842191c944da688b21727798d6f8e44"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p977_c_rg2b_local.py": {
+      "before_sha256": "cfd78a8e7117f26af263ab9fae8b59fb2e973e8925755eaa68b0a4bb3507c823",
+      "after_sha256": "f9095f021fbc286af4152cf8bed06e6bafe2622b232eb45e09fbaa9c399a2fa1"
+    },
+    "src/pygrc/models/grc_v4.py": {
+      "before_sha256": "eaf8fb26d0f3cb4f9f6ac9c761fb17d90d3d1142f0e145c0bd0ab746a3c477d1",
+      "after_sha256": "19fedb493dd01bb650043516a6cb88fbe401be0aaf34d865305a707f8d7ff9a4"
+    },
+    "src/pygrc/models/grc_v4_candidate_a.py": {
+      "before_sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5",
+      "after_sha256": "00b92688cb4bc82cf54ac462e6a8f5eb6f09e4386d4db1b2a6ac373758b98f19"
+    },
+    "src/pygrc/models/grc_v4_candidate_c.py": {
+      "before_sha256": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+      "after_sha256": "6e951a7393f1c95f77acbf5de0ca0e11f42cf5acacaf098b123ba3b423af5a0e"
+    },
+    "src/pygrc/models/grc_v4_ci.py": {
+      "before_sha256": "948027b168191d428423421d19a4c354fb9a1c18df25dd47b93e6275bcfd7b02",
+      "after_sha256": "42af05ee7f927f38de3a435aab6ca92aaa53cca039b3e2ad7c7c02ae16bdd501"
+    },
+    "src/pygrc/models/grc_v4_codec.py": {
+      "before_sha256": "c7e835d7d371737e4c983573da4c2139d21c2dd52f02cd9539f1f1029c2063cf",
+      "after_sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    },
+    "src/pygrc/models/grc_v4_event_codec.py": {
+      "before_sha256": "6955698da860261a145a2b825ce217de010c814b579e076fabf324262a277f04",
+      "after_sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
+    },
+    "src/pygrc/models/grc_v4_geometry.py": {
+      "before_sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+      "after_sha256": "c965f0ec7165ebe769cf4dd25ece98349213da1ae98f378acc0db8c1d231bebc"
+    },
+    "src/pygrc/models/grc_v4_initializer.py": {
+      "before_sha256": "a1922092b5dcb11d33eef471ebf2410c9d59f812e55b635299ecd80db29974c4",
+      "after_sha256": "28ed997c515cf249c188e53e728c860a79cdc816909f2b1769a2be97694000fc"
+    },
+    "src/pygrc/models/grc_v4_lifecycle.py": {
+      "before_sha256": "21e308326722b7ee6ef5b2e936153b11502bcd233c4839813d4025bb8358b724",
+      "after_sha256": "24032419cfcee5b29c23423f817f8f0283d4d3fe5ffe12080e0d600e44ab67d5"
+    },
+    "src/pygrc/models/grc_v4_pc.py": {
+      "before_sha256": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+      "after_sha256": "c72cb21a7293bdefac925938d7b22506fdf51551b7f1ca3661240dc2c2938b89"
+    },
+    "src/pygrc/models/grc_v4_profile.py": {
+      "before_sha256": "327a2fb22bd38cbbcac5470a45c6bb61f5cc8dc1771bcb3aaa74b1d933a05d82",
+      "after_sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546"
+    },
+    "src/pygrc/models/grc_v4_realizations.py": {
+      "before_sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f",
+      "after_sha256": "e5dacafed23c96f84b046bd4ddb991a295e9ec18eab978478b4b31fd5f1ba18e"
+    },
+    "src/pygrc/models/grc_v4_rg2b.py": {
+      "before_sha256": "5bd9b12cd72edcf2e1f82fcea9e4472ba0bfc6cda22712e95cac958a7ae1f347",
+      "after_sha256": "f4538b8d23409aac96375bb1a952712c37f25b7c0a7df4c8fa5a61e90cdcc181"
+    },
+    "src/pygrc/models/grc_v4_rg2b_graph.py": {
+      "before_sha256": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+      "after_sha256": "a86a80068dc71eea43fd9fcc56cfdcb4e676fa316fe76bfe009a1c296441a058"
+    },
+    "src/pygrc/models/grc_v4_step.py": {
+      "before_sha256": "185e00a0ad73a79f10e5a66acd24970365976bb54b3cba9397dc2aff71673b1b",
+      "after_sha256": "299fc7924704b9f17591a1767c28d3d112ada0334a934092312fe0a9e6be66e0"
+    },
+    "src/pygrc/models/grc_v4_transport.py": {
+      "before_sha256": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730",
+      "after_sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    },
+    "tests/models/test_grc_v4.py": {
+      "before_sha256": "9c88154b67232824a38b667173cae9b0d4c695ddcf006b54ebe3204bf83681f0",
+      "after_sha256": "b67209f43f5cc80793029aebf26b5692a1a9c94fc72621115abd4b29887963b2"
+    },
+    "tests/models/test_grc_v4_candidate_c.py": {
+      "before_sha256": "d2335fe0944b4c4d3de65508ba02a922e2b9cf51fdd9d61e2c3725b60697b1ae",
+      "after_sha256": "fd5e680e1947ce1ebfb76301780f38ceee1414586ba92009e3d407bfd30d6317"
+    },
+    "tests/models/test_grc_v4_ci.py": {
+      "before_sha256": "04c802416bbdb08efde3a42b243d938927155c428f6dca207fb281875a15e83a",
+      "after_sha256": "8556fad09cc159037c3d8bae5eac8843e2b0dccc887cace0d44354a48fc2af6c"
+    },
+    "tests/models/test_grc_v4_codec.py": {
+      "before_sha256": "e2bb5ee7225f854fa7b017d7ac947c53664a4a680b5d2d6d1f8c15c257190670",
+      "after_sha256": "bcc7162663dc753b491401210c212bdb9f225cb037a855d937385660b2fa1ace"
+    },
+    "tests/models/test_grc_v4_generic_lifecycle.py": {
+      "before_sha256": "6b22807881dfe1fe1afa0ffd0b3057a67b3d1d612134ea7846e2d427cc134b38",
+      "after_sha256": "239a9740e40f843f89d1a5ff1266da0337d18d8b0e4feb10da1719148c52b338"
+    },
+    "tests/models/test_grc_v4_geometry.py": {
+      "before_sha256": "4167e6839e8a555ba278337d9ccefce543661df020adb5ab915d82266b2a492a",
+      "after_sha256": "fc58f82d73037f6330aa48b6d372f1f259864ca3c1013952c6f109676f7cab82"
+    },
+    "tests/models/test_grc_v4_lifecycle.py": {
+      "before_sha256": "3af96fc343d33f94dde2066c2092b21d1143a9fbf5fc6d13b68915c5ca7aa788",
+      "after_sha256": "c5b50465bc5d7bcd33bac1af44de29868c5f55707c1509367b1eac9984bc37cb"
+    },
+    "tests/models/test_grc_v4_profile.py": {
+      "before_sha256": "4bd35a14caa59fc45c8e3a3b1fa3df33efe58064972c661899575ff42e4bd896",
+      "after_sha256": "e1cf7fd5e1b6354ba8d6054c27908679773418a5298f898abe22f8793e5b6867"
+    },
+    "tests/models/test_grc_v4_realizations.py": {
+      "before_sha256": "68ca00832aa25ee96ed7993a61cf4d56d32af2792bffbbea381d550883da9aa3",
+      "after_sha256": "2f204a264325796405adae4556fff5606d932748021c9464e4f8285d6d33285a"
+    },
+    "tests/models/test_grc_v4_rg2b.py": {
+      "before_sha256": "e77723f9814e2acbb444c8d7c84cbcedc37787b51338d721311406d818a857b9",
+      "after_sha256": "7ddfe7e1d7e9e551e46ffdfd51a77a80c7d35ae210e562a9c6baf8b7e88adae2"
+    },
+    "pyproject.toml": {
+      "before_sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
+      "after_sha256": "430dea4e6baf96ddad427c8953f3c085b1b7de4431d758c5c9221a25a1faa018"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": {
+      "before_sha256": "53597ef89019c35ed6acdf871706b2a0984ba2e217aca62280a8e0b5b2a26c3e",
+      "after_sha256": "3f6a3ffd8588d78c81e8d33c22b4f3b0a1dd2287f54ad35f7ebf3053959d6b3e"
+    },
+    "implementation/phase-9-grcv4/verification/a_rg2b_g2_source_reuse.py": {
+      "before_sha256": "fbd43a85097b7427261704a87e7aa9e91b800643469aa3fa2ad95a061ba79a5b",
+      "after_sha256": "a6055f1b3859267e54d43c78fd230d6160f01ed8eb4e04784b04a5834d3a872d"
+    },
+    "implementation/phase-9-grcv4/verification/c_ci_pc_g2_source_reuse.py": {
+      "before_sha256": "23ebf4fd8ac1d883c0f303dc87e51185d46306c7547a4b067aff80cb176a832b",
+      "after_sha256": "16e085399f906e86a65ace44b5db174f48018d4dcd3cc8089697b08647c05a2e"
+    },
+    "implementation/phase-9-grcv4/verification/a_ci_pc_g2_source_reuse.py": {
+      "before_sha256": "e322ffb0ce83b931e89aaa9c6f7732649a466058cda586fcd73ffc0132f5827f",
+      "after_sha256": "292119617d6df77aeb1ccd762dd5e92c17ab72c91dab7326c31849853643b969"
+    },
+    "implementation/phase-9-grcv4/verification/c_pc_g2_source_reuse.py": {
+      "before_sha256": "8a7999a04a6ecd5b484ebdd6831efc653424022d819eff778723c478d77ccf32",
+      "after_sha256": "c2cb8e5a7016608fe22475c97ce211752d0c0b661c853168757a7ea3d3aab389"
+    },
+    "implementation/phase-9-grcv4/verification/a_pc_g2_source_reuse.py": {
+      "before_sha256": "0fc5395e72580b146b7b1803e5933070e466b045ff02a1db66be12e4b233a5d3",
+      "after_sha256": "80cd6d1c3afb473cad4f73f4c7e8dbec1239305193c9dfb10644e9b7f3fd8d6b"
+    },
+    "implementation/phase-9-grcv4/verification/c_ci_g2_source_reuse.py": {
+      "before_sha256": "8d30bfa52bc7c907d5d46b621c0906e3aa811476701f9a964b46ed07b5e5190b",
+      "after_sha256": "a1cae3e4a0e1a5242fa3ec8298b34ec2b61a6a817e3f28fe6bb430e42a1767de"
+    },
+    "implementation/phase-9-grcv4/verification/a_os_g2_source_reuse.py": {
+      "before_sha256": "b0b5530cfed9bcee16cf39f134d3a22775aa1accc3cb2c4d706424c8a5d7bfbd",
+      "after_sha256": "4e0e34131a387a46b65626012c3b44a76231e4cce4c8fbf9f176ae1599a522a0"
+    }
+  },
+  "record_digest": "f9c4450eccc148b0c7680c12f962952c1d7543578d2756009e9328728a6587f8",
+  "additions": {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc.py": "299d82c896e7f452d737615d6578fac7cc07e7eea044147277e6ce8f596efd05",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_ci.py": "772d98f4301eeb3ffc7cd64d0d61a3cb389eaa553de5ea1701d28c44c4cf7982",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_cip.py": "9419b8204d740b5beb29fd1e6201fee1e01bfb43cce3ed71d6e760cb115755dc",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_pc.py": "33ba82d8aa1fd704efdcb9fbe35e4cc294bb88ddb5986d9746879cfa57cc53a8",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/atc_rgatc.py": "d32b39de5339226eda7ce231694efed51b82fd408784219725a3475b508bb178",
+    "src/pygrc/models/_grc_v4_evidence.py": "dd164fc95543e9f803263929d73d58b1e8df0e8b1ba765a14fa532c7ffbe8ed9",
+    "src/pygrc/models/_grc_v4_matrix.py": "8dfde86b5ee48e2b9d2c0d968f72ffc98f9aca13f01c04f435ac537441cdc951",
+    "src/pygrc/models/_grc_v4_matrix_flint.py": "7ff0e9ca6d7f42ad150b06c8d604f5b3b79de1943b1e8e6f5621386262af7121",
+    "src/pygrc/models/grc_9_v4_arg2b.py": "68d48b020c2d9efefca82cdef24bd1cca159ddd1cf80fe29bc815c61aab5a616",
+    "src/pygrc/models/grc_9_v4_expansion.py": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767",
+    "src/pygrc/models/grc_9_v4_lifecycle.py": "b9421a320b343005016e9e6554f37f25662eb50e0b164ec7f5f1712253f2f398",
+    "src/pygrc/models/grc_9_v4_rg2b.py": "22026ccf6f949247690ce4d35494468161e0a77525b1cb90eb228d5d9bf0a3ae",
+    "src/pygrc/models/grc_9_v4_topology.py": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c",
+    "src/pygrc/models/grc_v4_exact.py": "42491644b46d947483ab1706b4fb4b14abf247495916db64ea60b021d5c9e065",
+    "src/pygrc/models/grc_v4_linear.py": "ff5acc2040027ef9ba1773af04b575c2f15dd2ece265e451c93b658edb9b69e3",
+    "src/pygrc/models/grc_v4_numerics.py": "1f18ba4b5ae1ac315c81ef9fb47767b91d512e3c35402aa89589f7d3baed52d0",
+    "tests/models/test_grc_9_v4_aci.py": "a73e974a44b70e310fd132584cb3d404506d4baa55d44dd4d5a861e33402345b",
+    "tests/models/test_grc_9_v4_acipc.py": "a3d40ec42e9967cb140141ce1e6099c973af7e57b59503fedc0b86731950f646",
+    "tests/models/test_grc_9_v4_aos.py": "07fa8036ac640be0107d2120aa451e9ca910a4ad65cf97c25ee2d62e861f1d7e",
+    "tests/models/test_grc_9_v4_apc.py": "3e77c82937b43544c0a6742fff017d6f4acab01d2a60c235452cf23f1bb83cb4",
+    "tests/models/test_grc_9_v4_arg2b.py": "868a36613d7d152310aa025131c72989205af24b60e721bb208d72059f249bb6",
+    "tests/models/test_grc_9_v4_cci.py": "33ae22f2345e5e363f4a9e9760c51da76219ac9ebcf4cc636a90a5b3d860f50e",
+    "tests/models/test_grc_9_v4_ccipc.py": "1ac922e779112f0766e06d53ebaa14a6de7670b961028cd49c8470a3e4e3f780",
+    "tests/models/test_grc_9_v4_crg2b.py": "42fcfc84159be3939bbb39d8c9277e9fab90f944c5bacfeaa9cdfff59f4dac8a",
+    "tests/models/test_grc_9_v4_expansion.py": "9fa8ac43bc4d2822a5b3db9c25ac127fc82dffe81779805217bee52d9c09902c",
+    "tests/models/test_grc_9_v4_lifecycle.py": "40b0f0ddb984175f7c391815413838c3a8c6e704171e92af3c7149b7aef1129c",
+    "tests/models/test_grc_9_v4_topology.py": "4aa9ba5677eb5328a62dee478fdb1ee55ec98a0635d7d99d5a832c5355212c4b",
+    "tests/models/test_grc_v4_archive.py": "e6e878311cee65af4bdb6a0bfe3460d1a46eca550ac42f68cdb346febaa4f8b9",
+    "tests/models/test_grc_v4_event_codec.py": "a1194c030031f018839e7c72e5c407eb9f4b67aeb4ad84245ec9514fe20d2f76",
+    "tests/models/test_grc_v4_evidence.py": "8d62e8e73312f55d859a1b46b4e0f90cf7679cc24dd835c77d89173997b0edeb",
+    "tests/models/test_grc_v4_exact_backend.py": "0a936127aa5994491ce2cb0c77c51cba303e1d645237011419d08988db28accc",
+    "tests/models/test_grc_v4_linear.py": "4c7e9398875f0661101d9e93b0454ebdbe5cac3d655185080f5a61f0dcb6f164",
+    "tests/models/test_grc_v4_matrix_continuation.py": "b24a9288f2521f647625d8877bcfa3bea870138ea0f64ff541dc04792297d713",
+    "tests/models/test_grc_v4_numerics.py": "2c6825b70c01873bcf2949b860a25c0d58e128bd73a0520629f515357e6e7185",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche8.py": "215ed6ff138b3169e9c16b2fede1fc892bba12f587e16ab72741c30c22c98181"
+  },
+  "maintenance_additions": [
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche8.py"
+  ]
+}

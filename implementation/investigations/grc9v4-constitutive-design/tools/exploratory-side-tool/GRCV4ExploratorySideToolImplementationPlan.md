@@ -2418,6 +2418,28 @@ source/test paths. All other specialization leaves retain their prerequisites.
 API/notebook/browser support must agree with the work manifest and clear the
 G3 projection on failure. Update the main Phase 9 handoff for continuation.
 
+## Phase 9 Tranche 8 — evidence and surface catch-up
+
+Expose the existing 8.0 scope restrictions, 8.1 shared mechanics, 8.2 pure
+allocator, all ten bounded 8.3 integrations and current 8.4 coverage through one
+checked projection. Reuse retained records and scoped reviews; do not edit
+scientific authority, old acceptance records, production code or public support.
+
+Provide API/CLI, an actual notebook query, and browser tables with retrievable
+source links. Bind 322 required 8.4b history cells, 64 accepted C_OS/A_OS cells
+and 258 pending cells. Keep the two original C_OS failures, their successful
+successors, larger probe dispositions, per-family owners and forty disabled
+Tranche 9 cells distinct. Default checks authenticate sources/structure only;
+explicit stronger checks never masquerade as a native rerun.
+
+Fix stale historical source inspection with exact before/after Git bindings,
+not a directory waiver. Current permission remains independently policy-checked.
+Replace old browser roster counts with trusted exact projections. Include the
+index in normal phase verification and clear stale output on surface failure.
+
+This catch-up is a prerequisite before 8.5; it is not closure of 8.4i or the
+all-ten 8.4 parent. See [access and scenarios](./docs/Tranche8EvidenceGuide.md).
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC

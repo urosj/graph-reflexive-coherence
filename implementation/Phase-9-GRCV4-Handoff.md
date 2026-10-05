@@ -1,6 +1,35 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — 2026-10-05: P9-8.4b A_OS native results accepted
+## Current work — 2026-10-05: full Tranche 8 side-tool catch-up
+
+A_OS native acceptance is committed at `dbfcd311`. The user next requested
+full side-tool catch-up. The shared evidence index now covers 8.1 mechanics,
+8.2 allocation, every bounded 8.3 profile integration, larger preparation and
+8.4a/b, through actual API, CLI, notebook and browser access. See the
+[portable access guide](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Tranche8EvidenceGuide.md).
+No production, scientific authority, accepted campaign or public support changed.
+The user accepted this tooling catch-up by requesting its commit on 2026-10-05.
+That acceptance does not close 8.4b or widen scientific/runtime support.
+
+A stale G2 source-binding chain also needed exact historical reconstruction
+after accepted implementation/optimization changes. The finite source bridge
+pins before/after bytes and rejects unknown changes; historical execution is
+not relabeled as current numerical verification. Normal phase verification
+now includes the source/structure index, not a native campaign.
+
+The current population remains **64/322 accepted 8.4b history cells**, with
+258 pending in eight families. Parent 8.4b and `.c`–`.i` remain open. The
+side-tool portion of 8.4i is in place, not aggregate reconciliation. Before
+8.5, keep the view synchronized with each subsequent accepted family.
+
+For a lean restart, run `run.py tranche8-query check` or
+`run.py notebook-phase9 --tranche8-only` using the side-tool runner and repository
+`.venv`; commands are spelled out in the guide. These authenticate retained
+inputs and structure. Stronger retained numerical checks and new native runs
+remain distinct, explicit operations. Preserve the accepted Git history when
+moving machines; no external files or machine-local paths are required.
+
+## Accepted checkpoint — 2026-10-05: P9-8.4b A_OS native results accepted
 
 Work remains on `work/p9-8-4b-runtime-counterparts`. C_OS acceptance is committed
 at `0a79ece5`; the expanded A_OS oracle and scientific pressure are accepted

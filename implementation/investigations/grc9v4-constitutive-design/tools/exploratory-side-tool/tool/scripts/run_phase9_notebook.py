@@ -19,7 +19,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--status-only", action="store_true",
                         help="query current authority without requesting cached pressure evidence")
+    parser.add_argument("--tranche8-only", action="store_true",
+                        help="execute the real retained Tranche 8 query cell without historical or numerical reruns")
     args = parser.parse_args()
+    if args.status_only and args.tranche8_only:
+        parser.error("select one focused notebook mode")
     root = repository_root()
     if Path(sys.prefix).resolve() != (root / ".venv").resolve():
         raise RuntimeError("use the existing repository .venv")
@@ -28,6 +32,8 @@ def main():
     cells = [c for c in notebook["cells"] if c["cell_type"] == "code"]
     if args.status_only:
         cells = [c for c in cells if c["id"] in {"discover-and-import", "query-status"}]
+    if args.tranche8_only:
+        cells = [c for c in cells if c["id"] in {"discover-and-import", "query-tranche8"}]
     for index, cell in enumerate(cells):
         exec(
             compile(
@@ -37,6 +43,14 @@ def main():
             ),
             namespace,
         )
+    if args.tranche8_only:
+        from grcv4_explorer.tranche8 import tranche8_status
+        observed = namespace["phase9_tranche8"]
+        if observed != tranche8_status(root):
+            raise RuntimeError("notebook/API Tranche 8 mismatch")
+        print("PHASE9_TRANCHE8_NOTEBOOK_PASS cells=2 native_rerun=false "
+              f"accepted_cells={observed['coverage']['accepted_cells']}")
+        return
     observed = namespace["phase9_status"]
     if (
         observed != verification_status(root)

@@ -2948,7 +2948,12 @@ requests commitment of A_OS on 2026-10-05; the
 binds the evidence without rewriting execution-time flags or rerunning the
 campaign. C_OS and A_OS now have 64 accepted cells; the other eight families'
 258 cells await completion. Tranche 8 side-tool reconciliation is separate
-follow-up work and is not completed by this acceptance.
+follow-up work and is not completed by this acceptance. The subsequent full
+side-tool catch-up implements API/CLI/notebook/browser access across 8.1–8.4,
+including exact historical source reconstruction and source/structure checks.
+See the [access guide](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Tranche8EvidenceGuide.md).
+Keep this view synchronized before 8.5; it does not close 8.4i or any pending
+runtime/covariance cell.
 
 **Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds

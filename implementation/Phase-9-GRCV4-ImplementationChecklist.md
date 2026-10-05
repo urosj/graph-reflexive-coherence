@@ -2796,6 +2796,10 @@ the full ten-profile plan.
     Record actual outputs or first rejection. A certificate/negative control
     does not close a required successful execution. Keep original proposals
     separate from any newly identified parameter choice.
+  - [x] Tranche 8 side-tool catch-up: expose 8.1/8.2, all ten bounded 8.3
+    integrations and current 8.4 evidence through CLI/API/notebook/browser;
+    keep original failures, scoped acceptance and pending family cells distinct.
+    Source/structure checks are not numerical reruns; update this view before 8.5.
   - [ ] P9-8.4i: Reconcile coverage and hand off. Bind commands/results,
     independent paper/spec/side-tool checks, exact subjects, review outcomes and
     outstanding debt. Update configuration discovery only for newly reviewed

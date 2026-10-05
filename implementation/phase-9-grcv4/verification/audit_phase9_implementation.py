@@ -73,6 +73,8 @@ def predecessor_checks(root, commands):
 
 def verify(root, boundary_only=False):
     boundary, tree = policy.current_boundary(root)
+    from tranche8_evidence import checked as tranche8_check
+    tranche8 = tranche8_check(root)
     commands = []
     policy.prior.run_logged(
         [
@@ -130,11 +132,16 @@ def verify(root, boundary_only=False):
         "predecessor_release_id": policy.PARENT_RELEASE_ID,
         "runtime_authorized": True,
         "P9_G1_accepted": True,
-        "accepted_generic_runtime_support": policy.accepted_g2(root)["accepted_generic_runtime_support"],
-        "admitted_specialization_support_sets": [],
+        "accepted_generic_runtime_support": policy.accepted_generic_support(root),
+        "admitted_specialization_support_sets": policy.read(root / policy.WORK)["admitted_specialization_support_sets"],
+        "tranche8_evidence": {"view_digest": tranche8["view_digest"],
+            "verification": tranche8["verification"],
+            "accepted_history_cells": tranche8["coverage"]["accepted_cells"],
+            "required_history_cells": tranche8["coverage"]["required_cells"],
+            "aggregate_closed": False},
         "commands": commands,
         "handoff_evidence": policy.handoff_status(root),
-        "claim_ceiling": "G1_implementation_permission_plus_separate_exact_C_OS_G2_acceptance",
+        "claim_ceiling": "separate_exact_G2_and_G3_decisions; bounded_Tranche8_evidence_not_general_specialization_conformance",
     }
     result["receipt_digest"] = policy.digest_record(result, "receipt_digest")
     return result
@@ -153,7 +160,7 @@ def main():
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(policy.canonical(result) + b"\n")
     print(
-        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton scope={result['scope']} handoff={result['handoff_evidence']['status']}"
+        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted accepted_exact_profiles={len(result['accepted_generic_runtime_support'])} tranche8_check=pinned_sources_and_retained_structure native_rerun=false scope={result['scope']} handoff={result['handoff_evidence']['status']}"
     )
     if result["handoff_evidence"]["status"] != "verified":
         print("PHASE9_HANDOFF_WARNING " + result["handoff_evidence"]["detail"])

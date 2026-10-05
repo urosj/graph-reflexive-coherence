@@ -16,11 +16,42 @@ from grcv4_explorer.phase9_verification import pressure_projection  # noqa: E402
 from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 from grcv4_explorer.abundance import abundance_authority  # noqa: E402
 from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
+from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E402
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
+        if request.path in {"/api/tranche8", "/api/tranche8/source"}:
+            content_type = "application/json"
+            try:
+                if request.path == "/api/tranche8":
+                    if request.query:
+                        raise KeyError("Tranche 8 status takes no query arguments")
+                    content = json.dumps(tranche8_status(repository_root()), ensure_ascii=False).encode()
+                else:
+                    query = parse_qs(request.query, strict_parsing=True)
+                    if set(query) != {"path"} or len(query["path"]) != 1:
+                        raise KeyError("one indexed repository-relative path required")
+                    content, ref = tranche8_source(repository_root(), query["path"][0])
+                    content_type = "text/plain; charset=utf-8"
+                self.send_response(200)
+                if request.path.endswith("/source"):
+                    self.send_header("X-Evidence-SHA256", ref["sha256"])
+                    self.send_header("X-Evidence-Revision", ref["revision"])
+            except KeyError as error:
+                content = json.dumps({"error": str(error)}).encode()
+                self.send_response(404)
+            except Exception as error:
+                content = json.dumps({"error": str(error), "evidence_state": "unavailable_not_admitted"}).encode()
+                self.send_response(503)
+            self.send_header("Content-Type", content_type)
+            self.send_header("X-Content-Type-Options", "nosniff")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
         if self.path in {"/api/receipt-parents", "/api/abundance", "/api/a-initializer"}:
             try:
                 query = {"/api/abundance": abundance_authority,
@@ -71,7 +102,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -83,6 +114,8 @@ class Handler(BaseHTTPRequestHandler):
                     "g2-registry.js": "text/javascript",
                     "aggregate-review.js": "text/javascript",
                     "specialization-review.js": "text/javascript",
+                    "tranche8-evidence.js": "text/javascript",
+                    "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],
             )

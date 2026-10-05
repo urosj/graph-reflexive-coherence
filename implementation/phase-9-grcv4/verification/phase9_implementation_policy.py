@@ -231,6 +231,18 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    SIDE + "README.md",
+    HERE + "tranche8_evidence.py",
+    HERE + "tranche8_source_reuse.py",
+    HERE + "test_tranche8_evidence.py",
+    PHASE + "tranche-8/P9-8-SideToolSourceBridge.json",
+    SIDE + "docs/Tranche8EvidenceGuide.md",
+    SIDE + "tool/src/grcv4_explorer/tranche8.py",
+    SIDE + "tool/scripts/tranche8_query.py",
+    SIDE + "tool/phase9-web/tranche8-evidence.js",
+    SIDE + "tool/phase9-web/tranche8.js",
+    SIDE + "tool/phase9-web/tranche8.test.mjs",
+    SIDE + "tool/phase9-web/tranche8.browser.mjs",
     # User-authorized P9-8.4b verification; no production/support promotion.
     HERE + "p984b_runtime.py",
     HERE + "test_p984b_runtime.py",
@@ -1893,9 +1905,8 @@ def accepted_a_os(root):
 
 
 def g2_retained_bindings(current):
-    from a_os_g2_source_reuse import retained_bindings
-    from g2_source_reuse import retained_bindings as successor_bindings
-    return retained_bindings(successor_bindings(current))
+    from tranche8_source_reuse import through
+    return through(current, "a_os_g2_source_reuse")
 
 
 def g2_bindings_match(expected, current):

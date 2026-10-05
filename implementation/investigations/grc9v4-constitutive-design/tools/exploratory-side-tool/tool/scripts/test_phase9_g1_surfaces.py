@@ -40,7 +40,7 @@ def status_only_check(root):
     require(namespace["phase9_status"] == api.verification_status(root)
             and namespace["phase9_status"]["current_boundary"] == "passed"
             and "P9-4.9.1a" in namespace["phase9_status"]["dependency_ready_leaves"]
-            and "P9-7.2a" in namespace["phase9_status"]["next_gate"]
+            and "Tranche 8" in namespace["phase9_status"]["next_gate"]
             and namespace["phase9_pressure"] is None and not calls,
             "status-only mode queried or promoted pressure evidence")
     namespace["PHASE9_STATUS_ONLY"] = False
@@ -74,11 +74,12 @@ def acceptance_status_check(root):
     require(status["g2_acceptance"]["G2_accepted"] is True
             and status["g2_acceptance"]["G3_accepted"] is False
             and status["g2_acceptance"]["tranche_4_status"] == "closed"
-            and status["accepted_generic_runtime_support"] == policy.accepted_g2(root)["accepted_generic_runtime_support"],
+            and status["accepted_generic_runtime_support"] == policy.accepted_generic_support(root),
             "accepted G2 projection differs")
     require(set(policy.LIFECYCLE_LEAVES | policy.MIGRATION_LEAVES) <= set(status["dependency_ready_leaves"])
             and {"tests/models/test_grc_v4_generic_lifecycle.py", "src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"} <= set(status["permitted_runtime_paths"])
-            and "C-to-A positive migration remains pending" in status["next_gate"]
+            and status["initializer_runtime"]["aggregate_closed"] is True
+            and "Tranche 8" in status["next_gate"]
             and not {"P9-7.2a-A_OS", "P9-7.2b-A_PC"} & set(status["dependency_ready_leaves"]),
             "7.1/7.2a permission omitted a child or opened a generic event")
     boundary = policy.current_boundary(root)
@@ -88,12 +89,14 @@ def acceptance_status_check(root):
         held = api.verification_status(root)
     require(held["current_boundary"] == "failed_closed"
             and held["accepted_generic_runtime_support"] == []
-            and "g2_acceptance" not in held, "held status retained current G2 support")
+            and "g2_acceptance" not in held and "tranche8_evidence" not in held, "held status retained current G2 support")
 
 
 def checks(root):
     status_only_check(root)
     acceptance_status_check(root)
+    from tranche8_evidence import checked
+    expected_tranche8 = checked(root)
     policy = api._policy(root)
     status = api.verification_status(root)
     require = policy.require
@@ -119,7 +122,7 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-4.9.3","P9-5.1","P9-5.2","P9-5.3","P9-5.4","P9-6.1a","P9-6.1b","P9-6.1c","P9-6.2a","P9-6.2b","P9-6.2c","P9-6.3a","P9-6.3b","P9-6.3c","P9-6.4a","P9-6.4b","P9-6.4c","P9-6.4d","P9-6.5","P9-7.1","P9-7.1-A_CI","P9-7.1-A_CI_PC","P9-7.1-A_OS","P9-7.1-A_PC","P9-7.1-A_RG2b","P9-7.1-C_CI","P9-7.1-C_CI_PC","P9-7.1-C_OS","P9-7.1-C_PC","P9-7.1-C_RG2b","P9-7.2a","P9-7.2a-A_CIPC_PC","P9-7.2a-A_C_DROP","P9-7.2a-A_C_NH","P9-7.2a-A_C_PC","P9-7.2a-A_NH_NH","P9-7.2a-A_NH_PC","P9-7.2a-A_PC_CIPC","P9-7.2a-A_PC_NH","P9-7.2a-C_CIPC_PC","P9-7.2a-C_NH_NH","P9-7.2a-C_NH_PC","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2a-C_PC_CIPC","P9-7.2a-C_PC_NH","P9-7.2a-C_TO_A_UNRESOLVED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
+        status["dependency_ready_leaves"] == expected_tranche8["dependency_ready_snapshot"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST
@@ -155,7 +158,7 @@ def checks(root):
         and status["request_acceptance"]["accepted_iterations"] == ["P9-2.3"]
         and status["foundation_acceptance"]["record_digest"] == policy.FOUNDATION_DIGEST
         and status["foundation_acceptance"]["accepted_iterations"] == ["P9-2.1", "P9-2.2"]
-        and len(status["permitted_runtime_paths"]) == 43
+        and status["permitted_runtime_paths"] == expected_tranche8["permitted_paths_snapshot"]
         and "tests/models/grcv4_conformance_harness.py" in status["permitted_runtime_paths"]
         and "tests/models/grcv4_reference_oracles.py" in status["permitted_runtime_paths"]
         and "pyproject.toml" in status["permitted_runtime_paths"]
@@ -178,8 +181,8 @@ def checks(root):
         "accepted G1 authority lost",
     )
     require(
-        status["accepted_generic_runtime_support"] == policy.accepted_g2(root)["accepted_generic_runtime_support"]
-        and status["admitted_specialization_support_sets"] == [],
+        status["accepted_generic_runtime_support"] == policy.accepted_generic_support(root)
+        and status["admitted_specialization_support_sets"] == policy.read(root / policy.WORK)["admitted_specialization_support_sets"],
         "G1 promoted conformance",
     )
     require(
@@ -384,7 +387,7 @@ def checks(root):
         policy.canonical(output) + b"\n"
     )
     print(
-        "PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton"
+        "PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=exact_accepted_registry"
     )
 
 

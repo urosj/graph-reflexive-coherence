@@ -1,5 +1,7 @@
 # GRCv4 Exploratory Side Tool
 
+Current Phase 9 mechanics and numerical evidence: [Tranche 8 access and scenarios](./docs/Tranche8EvidenceGuide.md).
+
 **Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented
 
 This investigation defines a read-only exploratory tool over the accepted
