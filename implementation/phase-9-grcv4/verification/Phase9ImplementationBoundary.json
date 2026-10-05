@@ -11,7 +11,7 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "77a5675cbab7724b65f8d5760cc3c6ca3ce334c92588536d0b1aabb7fd448e2d"
+      "sha256": "26f560c085115adc5a0789d2a567b9fb36a598459d3a638c611116a0e45f3ce6"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
@@ -3766,5 +3766,5 @@
       "sha256": "dcae60e2e8007bbd42c3b7db8ed9bbd50dea418fa095bc6226fb9887b2f8aaf5"
     }
   ],
-  "record_digest": "f1d85c541c6d76236f444c1d9c5857a088cfe25d68f786702a087f239f0d345b"
+  "record_digest": "1e7aba5a3775dbc03305b0d48f202deb0916127a5a0e6de52c0917933409e2f8"
 }
