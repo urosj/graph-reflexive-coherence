@@ -2652,12 +2652,24 @@ the full ten-profile plan.
   bounded native tests count only at their exact demonstrated scope.
   [Detailed scope, dependencies and exit evidence](./Phase-9-GRCV4-ImplementationPlan.md#p9-84-execution-breakdown).
 
-  - [ ] P9-8.4a: Bind the coverage map and comparison contracts. Inventory all
+  - [x] P9-8.4a: Bind the coverage map and comparison contracts. Inventory all
     17 frozen expansion fixtures and three metamorphic fixtures; map applicable
     families, both histories, stages, phases/chiralities, existing evidence,
     numerical prerequisites and independent oracles. Give every required cell
     an explicit disposition/owner. Distinguish literal frozen replay from any
     separately named admissible numerical companion and its changed identities.
+    Strengthened, own-reviewed and accepted by the user on 2026-10-05
+    ("ok, great, let's strenghten  8.4a, then accept and commit").
+    [Coverage and contracts](./phase-9-grcv4/tranche-8/P9-8.4a-Coverage.json)
+    explicitly retain 400 fixture/family/history rows (382 applicable, 18
+    C_PC-identity-only exclusions), twenty larger-family/history rows and
+    the P9-8.5 atomic handoff. An independent meaning table verifies exact
+    fixture phases/owners and cell assignments; eight carrier crosswalk rows
+    retain all four persistent families' obligations despite literal-fixture
+    exclusions. Twenty pressure tests plus three unchanged readiness tests
+    pass. [Review and reuse limits](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md),
+    [portable validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json).
+    No `.b`–`.h` runtime case is executed or accepted by this inventory.
   - [ ] P9-8.4b: Execute applicable frozen expansion runtime counterparts:
     D30 × two chiralities, D31 × both chiralities/all three active phases,
     D45 × two chiralities, D52 × both chiralities/all three active phases,

@@ -231,6 +231,11 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "prepare_p984a_coverage.py",
+    HERE + "test_p984a_coverage.py",
+    PHASE + "tranche-8/P9-8.4a-Coverage.json",
+    PHASE + "tranche-8/P9-8.4a-CoverageReview.md",
+    PHASE + "tranche-8/P9-8.4a-Validation.json",
     "README.md",
     "examples/README.md",
     "examples/grcv4/README.md",

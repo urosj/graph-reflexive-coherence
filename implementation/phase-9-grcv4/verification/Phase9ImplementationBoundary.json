@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "ba9f7faede2b27a133467391f98320fff7bb23c2aca5cd55c97882b0a3b0b8a2"
+      "sha256": "77a5675cbab7724b65f8d5760cc3c6ca3ce334c92588536d0b1aabb7fd448e2d"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "6b6a14d5f0fa8e7a4aa8cbf790edc71f1ac6200078353486c51c24d8d3949cde"
+      "sha256": "f7c28cd6b02afef1c589653ceb61580764ecfd6bbd939223829ece1ed4cf315a"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "f29fd24dedbceb5a050a82fabb139df9d11628faf746943c46e40406e31e8345"
+      "sha256": "21b164e0d6cc29285b5d093716c4e4ad946f5d37b9d44fedc37739e7d1a0200a"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "0ff7c6c67951b98feca2513ff22db4f6cb557e66995126cd3bb8ab29e5cb0fa0"
+      "sha256": "7fb90b80699723d131177e72b2f623d6a277b262a174b4d280dfa57c38b97b04"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3744,7 +3744,27 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p983_configuration_catalog.py",
       "sha256": "18e422394eb29f32527c3320981fad434b74cc329fbeca8605065f826e404b21"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4a-Coverage.json",
+      "sha256": "535999df62d4331c145d533136db17103220912b61e2df50f85c062c3a6baee2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md",
+      "sha256": "7e2b57fd10856f38d44d55a7d602904d8b29793f90847d1070edcea35b99b520"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4a-Validation.json",
+      "sha256": "8408643aedb7219282eb03d812f15508f3a0c7e1296f0bea2eaa44506b647b8d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/prepare_p984a_coverage.py",
+      "sha256": "96732b46ce36e5b8a6eb2d0769d40ea208a42d67332ef57c7b159f5189beb5c0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984a_coverage.py",
+      "sha256": "dcae60e2e8007bbd42c3b7db8ed9bbd50dea418fa095bc6226fb9887b2f8aaf5"
     }
   ],
-  "record_digest": "d32f3c09150f48462cb876f86a1bcec7be0f05426900966979cf2e19ad901748"
+  "record_digest": "f1d85c541c6d76236f444c1d9c5857a088cfe25d68f786702a087f239f0d345b"
 }

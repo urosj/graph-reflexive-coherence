@@ -2804,6 +2804,26 @@ the separately recorded larger-graph admission/runtime obligations.
 
 ##### P9-8.4 execution breakdown
 
+P9-8.4a's [source-bound coverage record](./phase-9-grcv4/tranche-8/P9-8.4a-Coverage.json)
+and [comparison/reuse review](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md)
+are strengthened and own-reviewed on 2026-10-05, after planning commit
+`5748b94`. The user accepts P9-8.4a ("ok, great, let's strenghten  8.4a,
+then accept and commit"). The 400 explicit frozen-subject/
+family/history rows distinguish 382 applicable cells from 18 literal C_PC
+fixture exclusions; all ten families retain the complete shared-case scope.
+Twenty larger-family/history rows retain the forty numerical outcomes.
+The record binds actual profiles, requests, both role identities, old comparison
+budgets/norms, required independent-oracle work and the future harness fields.
+An independent fixture-meaning table and exact cell checks reject consistently
+wrong generator phases, owners and count-preserving exemptions. Eight carrier
+crosswalk rows explicitly map the four persistent families and both histories
+to 128 shared expansion obligations, 24 covariance cells, the two literal C_PC
+rows and larger prerequisite/execution owners. Twenty pressure methods and
+three existing readiness methods pass; see
+[validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json).
+Runtime children remain pending and begin with `.b`; no allocator result,
+nearby accepted fixture, certificate, timeout or rejection is promoted by `.a`.
+
 On 2026-10-05 the user requests a scope-based decomposition before execution.
 P9-8.4 is an aggregate of the nine children below, all initially pending.
 The frozen bundle has **17 expansion fixtures**: two D30, six D31, two D45,

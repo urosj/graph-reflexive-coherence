@@ -1,6 +1,38 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current continuation — 2026-10-05: P9-8.4 planning breakdown
+## Current continuation — 2026-10-05: P9-8.4a coverage and contracts
+
+On `work/p9-8-4-planning`, after planning commit `5748b94`, the user requests
+P9-8.4a. The [coverage record](./phase-9-grcv4/tranche-8/P9-8.4a-Coverage.json),
+[review](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md) and
+[validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json) complete its
+inventory, prerequisites and comparison/harness contracts with bounded own
+review. The user accepts the strengthened P9-8.4a on 2026-10-05:
+"ok, great, let's strenghten  8.4a, then accept and commit".
+No P9-8.4b–h event or physical step runs.
+
+The matrix explicitly covers 20 frozen subjects × ten families × two histories:
+382 applicable cells and 18 justified exclusions for the literal C_PC-only
+reset identity fixture. Every family remains in all 16 shared expansions and
+three covariance subjects. Twenty larger-family/history rows retain all forty
+prior numerical outcomes; the five atomic-failure vectors stay with P9-8.5.
+Exact frozen construction, accepted named native companions, new numerical
+subjects and larger certificates/rejections/incompletion have separate scope.
+The existing literal C_OS selector obstruction is reverified, not newly found.
+
+Twenty inventory/contract pressure methods and the three existing readiness
+methods pass. An independent fixture-meaning table closes the phase and exact
+owner assertion gaps; generator-fault controls also reject swapped exemptions
+that preserve aggregate counts. Eight carrier requirement rows link all four
+persistent families and both roles to 128 shared expansion cells, 24 covariance
+cells, the two literal C_PC rows and larger prerequisites. The next child is
+P9-8.4b: bind each actual native companion,
+its independent expectations and case-specific budgets before executing the
+remaining stages. P9-8.4a supplies the shared runner input/result contract;
+it does not execute or accept that runtime campaign. Earlier accepted evidence,
+runtime source, work manifest and supported profiles remain unchanged.
+
+## Planning breakdown — 2026-10-05
 
 After accepted closeout/catalog commit `cd84425`, the user asks to assess and
 split P9-8.4 before implementation. The
