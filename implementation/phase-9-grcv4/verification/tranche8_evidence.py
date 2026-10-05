@@ -31,8 +31,8 @@ ACCEPTED_CCI_SOURCES = {
 HANDOFF = "implementation/Phase-9-GRCV4-Handoff.md"
 ACCEPTED_ACI_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACICases.json": "c3a5dd33e640c2f73dbc97373f27c21b53d98bf967aef524d7a84baaf7e671d8",
-    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json": "2d2dbec6eb6c07db9b4fd996fe2d231a6ec2bb43682202a9f176c776c13f9466",
-    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md": "c8b941240c91e6f316e1666549702077042d53007f9b08ffbb37d6e3a10823aa"
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json": "01a86bde6105776ecd955e3f3583925c5ec1edbe03a17cb09d9c454e09a43100",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md": "db5e7ef7529bd2412df49f7db6f1b153d1787737f9e19118f54a4ff07cb84003"
 }
 PLAN = "implementation/Phase-9-GRCV4-ImplementationPlan.md"
 FAMILIES = tuple(c + "_" + r for c in ("A", "C") for r in ("OS", "CI", "PC", "CI_PC", "RG2b"))

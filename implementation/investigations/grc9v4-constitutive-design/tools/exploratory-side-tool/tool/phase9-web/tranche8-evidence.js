@@ -8778,21 +8778,21 @@ export const TRANCHE8_EVIDENCE = {
         },
         "results": {
           "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json",
-          "sha256": "2d2dbec6eb6c07db9b4fd996fe2d231a6ec2bb43682202a9f176c776c13f9466",
+          "sha256": "01a86bde6105776ecd955e3f3583925c5ec1edbe03a17cb09d9c454e09a43100",
           "revision": null,
           "basis": "pinned_execution_with_separate_scoped_user_acceptance"
         },
         "record_digest": "8b2691fc8623142e40ddc891379cb5e6c9450408190789fbb30448dbde1336a3",
         "acceptance": {
           "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md",
-          "sha256": "c8b941240c91e6f316e1666549702077042d53007f9b08ffbb37d6e3a10823aa",
+          "sha256": "db5e7ef7529bd2412df49f7db6f1b153d1787737f9e19118f54a4ff07cb84003",
           "revision": null,
           "basis": "pinned_execution_with_separate_scoped_user_acceptance",
           "anchor": "scoped-user-acceptance"
         },
         "review": {
           "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md",
-          "sha256": "c8b941240c91e6f316e1666549702077042d53007f9b08ffbb37d6e3a10823aa",
+          "sha256": "db5e7ef7529bd2412df49f7db6f1b153d1787737f9e19118f54a4ff07cb84003",
           "revision": null,
           "basis": "pinned_execution_with_separate_scoped_user_acceptance"
         },
@@ -9546,13 +9546,13 @@ export const TRANCHE8_EVIDENCE = {
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json",
-      "sha256": "2d2dbec6eb6c07db9b4fd996fe2d231a6ec2bb43682202a9f176c776c13f9466",
+      "sha256": "01a86bde6105776ecd955e3f3583925c5ec1edbe03a17cb09d9c454e09a43100",
       "revision": null,
       "basis": "pinned_execution_with_separate_scoped_user_acceptance"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md",
-      "sha256": "c8b941240c91e6f316e1666549702077042d53007f9b08ffbb37d6e3a10823aa",
+      "sha256": "db5e7ef7529bd2412df49f7db6f1b153d1787737f9e19118f54a4ff07cb84003",
       "revision": null,
       "basis": "pinned_execution_with_separate_scoped_user_acceptance"
     },
@@ -9797,5 +9797,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "c06fec1dcf47ae6721481690f32eb3c39e4b151c17caad0225fd7f7fee899d49"
+  "view_digest": "ff22b8ea38de119a50e70a6025fa569521f0ff91b6164dcc1f60b6e4faa60280"
 };

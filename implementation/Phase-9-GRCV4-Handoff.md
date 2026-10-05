@@ -21,6 +21,13 @@ Use the review's retained check for a lean restart, not a new native campaign.
 Raw execution flags remain unchanged. Parent 8.4b and later tasks remain open;
 no next profile was started as part of this acceptance.
 
+Acceptance is committed at `83952bf2` and merged into main at `d4276ded`.
+The subsequent user-requested [lossless storage compaction](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#lossless-storage-compaction)
+halves the A_CI results file to 27.37 MiB. Its scientific record digest and
+all values remain unchanged; the original accepted bytes reconstruct exactly.
+The same retained checker and source-access routes work with refreshed byte
+bindings. This storage correction does not reopen or widen acceptance.
+
 ## Accepted checkpoint — P9-8.4b C_CI
 
 After accepted side-tool commit `7fed33a0`, the user selected C_CI next on

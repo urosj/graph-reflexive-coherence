@@ -103,6 +103,23 @@ class EvidenceTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "browser evidence drift"):
                 index.checked()
 
+    def test_aci_compaction_restores_exact_accepted_execution(self):
+        from pygrc.models.grc_v4_codec import canonical_json_bytes
+
+        raw = index.Sources(index.ROOT).raw(index.BASE + "P9-8.4b-ACIResults.json")
+        value = json.loads(raw)
+        compact = (json.dumps(value, ensure_ascii=False, allow_nan=False, separators=(",", ":")) + "\n").encode()
+        self.assertEqual(raw, compact)
+        # Formatting is reversible: even the accepted file's original byte
+        # identity is recoverable, not merely numerically equivalent values.
+        original = (json.dumps(value, indent=2, allow_nan=False) + "\n").encode()
+        self.assertEqual(index.hashlib.sha256(original).hexdigest(),
+                         "2d2dbec6eb6c07db9b4fd996fe2d231a6ec2bb43682202a9f176c776c13f9466")
+        self.assertLess(len(raw), 0.501 * len(original))
+        record_digest = value.pop("record_digest")
+        self.assertEqual(record_digest, "8b2691fc8623142e40ddc891379cb5e6c9450408190789fbb30448dbde1336a3")
+        self.assertEqual(index.hashlib.sha256(canonical_json_bytes(value)).hexdigest(), record_digest)
+
     def test_bridge_rejects_third_identity_and_live_drift(self):
         name, row = next(iter(bridge.record()["changes"].items()))
         self.assertEqual(bridge.retained_bindings({name: row["after_sha256"]}), {name: row["before_sha256"]})

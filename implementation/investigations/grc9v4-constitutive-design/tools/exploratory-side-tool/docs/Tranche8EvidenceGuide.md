@@ -170,3 +170,11 @@ identity, stage, schedule and bound checking, or add `--recheck-numerics` for
 independent interval recomputation. Neither runs a native trajectory. Normal
 API/browser/notebook status authenticates source bytes and retained structure,
 not a new scientific execution or aggregate acceptance.
+
+The A_CI result uses compact JSON to avoid storing indentation at numerical
+record scale. Its schema, values and scientific record digest are unchanged;
+the [storage note](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#lossless-storage-compaction)
+records exact reconstruction of the original accepted file. Retrieval returns
+the compact bytes with their current advertised SHA-256. For future large
+records, prefer compact serialization before freezing source-byte bindings;
+do not silently reformat previously pinned files or drop numerical evidence.
