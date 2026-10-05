@@ -10,7 +10,7 @@ test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', (
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);
   for(const row of evidence.profiles) assert.ok(content.includes(row.family));
-  for(const s of ['64/322','258 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
+  for(const s of ['96/322','226 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
   assert.ok(out.children.length > 20);
 });
 
@@ -22,6 +22,17 @@ test('mutated counts, scope, input identities and failures cannot be promoted', 
     v=>v.dependency_ready_snapshot.push('P9-8.5')]) {
     const value=structuredClone(evidence);mutate(value);assert.throws(()=>checkedTranche8(value));
   }
+});
+
+test('C_CI scoped acceptance preserves original incomplete evidence', () => {
+  const run = evidence.coverage.runs.find(r => r.family === 'C_CI');
+  assert.equal(run.acceptance.anchor, 'scoped-user-acceptance');
+  assert.equal(evidence.coverage.families.find(r => r.family === 'C_CI').accepted_cells, 32);
+  const out=element('div'); renderTranche8(evidence,out,element);
+  assert.match(text(out), /Original execution and timeout/);
+  const forged = structuredClone(evidence);
+  forged.coverage.runs.find(r => r.family === 'C_CI').acceptance=null;
+  assert.throws(() => checkedTranche8(forged));
 });
 
 test('only exact indexed source links are exposed', () => {

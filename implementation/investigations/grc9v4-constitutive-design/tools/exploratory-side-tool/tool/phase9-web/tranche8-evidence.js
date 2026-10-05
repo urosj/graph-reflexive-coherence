@@ -7494,6 +7494,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "A_OS",
         "required_cells": 32,
         "accepted_cells": 32,
+        "executed_pending_cells": 0,
         "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_OS::current",
@@ -7569,6 +7570,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "A_CI",
         "required_cells": 32,
         "accepted_cells": 0,
+        "executed_pending_cells": 0,
         "pending_cells": 32,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI::current",
@@ -7611,6 +7613,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "A_PC",
         "required_cells": 32,
         "accepted_cells": 0,
+        "executed_pending_cells": 0,
         "pending_cells": 32,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::current",
@@ -7653,6 +7656,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "A_CI_PC",
         "required_cells": 32,
         "accepted_cells": 0,
+        "executed_pending_cells": 0,
         "pending_cells": 32,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI_PC::current",
@@ -7695,6 +7699,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "A_RG2b",
         "required_cells": 32,
         "accepted_cells": 0,
+        "executed_pending_cells": 0,
         "pending_cells": 32,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::current",
@@ -7737,6 +7742,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "C_OS",
         "required_cells": 32,
         "accepted_cells": 32,
+        "executed_pending_cells": 0,
         "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_OS::current",
@@ -7811,8 +7817,9 @@ export const TRANCHE8_EVIDENCE = {
       {
         "family": "C_CI",
         "required_cells": 32,
-        "accepted_cells": 0,
-        "pending_cells": 32,
+        "accepted_cells": 32,
+        "executed_pending_cells": 0,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI::reset",
@@ -7847,13 +7854,47 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "C_PC",
         "required_cells": 34,
         "accepted_cells": 0,
+        "executed_pending_cells": 0,
         "pending_cells": 34,
         "required_cell_ids": [
           "G9-EXPAND-C-PC-CARRIER-RESET::C_PC::current",
@@ -7898,6 +7939,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "C_CI_PC",
         "required_cells": 32,
         "accepted_cells": 0,
+        "executed_pending_cells": 0,
         "pending_cells": 32,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI_PC::current",
@@ -7940,6 +7982,7 @@ export const TRANCHE8_EVIDENCE = {
         "family": "C_RG2b",
         "required_cells": 32,
         "accepted_cells": 0,
+        "executed_pending_cells": 0,
         "pending_cells": 32,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_RG2b::current",
@@ -8451,6 +8494,246 @@ export const TRANCHE8_EVIDENCE = {
           }
         ],
         "status": "accepted_bounded"
+      },
+      {
+        "family": "C_CI",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionCases.json",
+          "sha256": "23d05f40ab6fceba84a5257c0dea7ff03de1ff057946380e5dcbc3e42008876d",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json",
+          "sha256": "b7bdb1f848e3b904a6ff9cb99df37882227ea8cc562bbe00a7387a9f2860631f",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "eea9363c0296ecf49c5b6b8c29fd8dc9c8b919778a9cec7c360d910735dc9e25",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md",
+          "sha256": "fbf40e6e109fbbc9c7bad9492807a770a3e2fab7db2d734f3767631517dce679",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md",
+          "sha256": "fbf40e6e109fbbc9c7bad9492807a770a3e2fab7db2d734f3767631517dce679",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D45-CHIRALITY-POSITIVE-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D45-CHIRALITY-NEGATIVE-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCI-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3-BUDGET480",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded",
+        "execution_partition": {
+          "retained_cases": 8,
+          "newly_executed_cases": 8,
+          "retained_source_beats": 1,
+          "new_source_beats": 0,
+          "predecessor_record_digest": "d88891462b4edb236faa21b98a02b50b7f3320505e6b7e476c1da82e3327030d"
+        },
+        "original_attempt": {
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json",
+            "sha256": "8b6648142a4cf5c863cd4b4ebc6849fcf6b2329401e2ade1bfc2eb2bea2b69a6",
+            "revision": null,
+            "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+          },
+          "failures": [
+            {
+              "case_id": "P984B-CCI-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+              "event_committed": true,
+              "case_passed": false,
+              "first_failure": {
+                "stage": "target_continuation",
+                "role": "reset",
+                "index": 6,
+                "type": "BudgetExpired",
+                "message": "case operational budget exhausted",
+                "kind": "operational_timeout"
+              }
+            }
+          ]
+        }
       }
     ],
     "oracle_and_pressure": [
@@ -8480,8 +8763,9 @@ export const TRANCHE8_EVIDENCE = {
       }
     ],
     "required_cells": 322,
-    "accepted_cells": 64,
-    "pending_cells": 258,
+    "accepted_cells": 96,
+    "pending_cells": 226,
+    "executed_pending_cells": 0,
     "aggregate_closed": false,
     "other_vector_cells": 60,
     "larger_history_cells": 20
@@ -9054,6 +9338,36 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICases.json",
+      "sha256": "473bf8252a1b6e5b02816e261686f53e3c39c927bf957dbae87ef7f705802a85",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionCases.json",
+      "sha256": "23d05f40ab6fceba84a5257c0dea7ff03de1ff057946380e5dcbc3e42008876d",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json",
+      "sha256": "b7bdb1f848e3b904a6ff9cb99df37882227ea8cc562bbe00a7387a9f2860631f",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json",
+      "sha256": "8b6648142a4cf5c863cd4b4ebc6849fcf6b2329401e2ade1bfc2eb2bea2b69a6",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md",
+      "sha256": "fbf40e6e109fbbc9c7bad9492807a770a3e2fab7db2d734f3767631517dce679",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-COSCases.json",
       "sha256": "1b122a5a006d94e5b8f7ea33a301273cef05982da8ccdcf6fb591c5f8a747830",
       "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -9222,5 +9536,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "67e84868b512e71bf8518366b123f8a5593ed2709c10c0fe931c528fb9046f63"
+  "view_digest": "148a1376b55fa72a265d79be076b0655a82e0a51bbc536da3d3647ddb244f252"
 };

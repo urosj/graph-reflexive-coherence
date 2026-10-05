@@ -2888,7 +2888,7 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | --- | ---: | --- | --- |
 | `P9-8.4b[C_OS]` | 32 | Predictor, generated geometry, fresh corrector and split admission; selector and poststate admission. | Accepted 2026-10-05 at the bounded scope below. |
 | `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Oracle, scientific pressure and all 32 bounded native cells accepted 2026-10-05. |
-| `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | Pending. |
+| `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md#scoped-user-acceptance) 2026-10-05; original timeout retained. |
 | `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | Pending. |
 | `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | Pending. |
 | `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | Pending. |

@@ -1,5 +1,34 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b C_CI
+
+After accepted side-tool commit `7fed33a0`, the user selected C_CI next on
+`work/p9-8-4b-runtime-counterparts`. The [bounded C_CI review](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md)
+and [input manifest](./phase-9-grcv4/tranche-8/P9-8.4b-CCICases.json) bind all
+sixteen shared layouts and both histories, reusing the accepted native CI
+domain and independent interval equations. No production/specification or
+accepted predecessor changes are part of this work.
+
+All sixteen cases now pass: 32 current/reset cells, 320 completed target steps
+and 32 fresh final reads. Eight focused scientific/lifecycle tests and two
+completion/reuse tests pass. The original 180-second D45 timeout is retained;
+the [completion](./phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json)
+reuses eight passing cases and executes only the unfinished eight with a
+480-second budget. Scientific inputs, tolerances and horizons are unchanged.
+The review records a harness-only staged-rounding correction as well.
+
+The user accepted this bounded scope on 2026-10-05 and requested its commit
+before continuing to A_CI. The current accepted 8.4b total is **96/322**, with
+226 pending across seven families. The shared side-tool binds the separate
+acceptance and original timeout without rewriting raw execution.
+Nine focused source/API checks, five browser tests and the actual two-cell
+Tranche 8 notebook pass without rerunning native trajectories.
+
+Use the review's repository-relative commands to check retained evidence or
+run explicitly named new output. Do not repeat a native campaign merely to
+inspect its result. **Next: A_CI**, including joint-root admission and W-history
+transfer/write/final reconstruction. Parent 8.4b and later 8.4 tasks remain open.
+
 ## Current work — 2026-10-05: full Tranche 8 side-tool catch-up
 
 A_OS native acceptance is committed at `dbfcd311`. The user next requested

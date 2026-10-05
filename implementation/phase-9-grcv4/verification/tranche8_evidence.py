@@ -19,6 +19,15 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+# Exact C_CI execution/review pins. The review records the separate scoped
+# user acceptance; raw execution retains its original unaccepted flags.
+ACCEPTED_CCI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICases.json": "473bf8252a1b6e5b02816e261686f53e3c39c927bf957dbae87ef7f705802a85",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json": "8b6648142a4cf5c863cd4b4ebc6849fcf6b2329401e2ade1bfc2eb2bea2b69a6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionCases.json": "23d05f40ab6fceba84a5257c0dea7ff03de1ff057946380e5dcbc3e42008876d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json": "b7bdb1f848e3b904a6ff9cb99df37882227ea8cc562bbe00a7387a9f2860631f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md": "fbf40e6e109fbbc9c7bad9492807a770a3e2fab7db2d734f3767631517dce679"
+}
 HANDOFF = "implementation/Phase-9-GRCV4-Handoff.md"
 PLAN = "implementation/Phase-9-GRCV4-ImplementationPlan.md"
 FAMILIES = tuple(c + "_" + r for c in ("A", "C") for r in ("OS", "CI", "PC", "CI_PC", "RG2b"))
@@ -76,9 +85,17 @@ class Sources:
     def raw(self, name, *, historical=False):
         require(not Path(name).is_absolute() and ".." not in Path(name).parts, "repository-relative source required")
         if name not in self.values:
-            frozen = git(self.root, "show", CHECKPOINT + ":" + name)
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
+            if name in ACCEPTED_CCI_SOURCES:
+                require(not historical, "current pinned evidence is not a historical Git snapshot")
+                frozen = path.read_bytes()
+                require(hashlib.sha256(frozen).hexdigest() == ACCEPTED_CCI_SOURCES[name], "accepted C_CI source drift: " + name)
+                self.values[name] = frozen
+                self.refs[name] = dict(path=name, sha256=ACCEPTED_CCI_SOURCES[name], revision=None,
+                                       basis="pinned_execution_with_separate_scoped_user_acceptance")
+                return frozen
+            frozen = git(self.root, "show", CHECKPOINT + ":" + name)
             require(historical or path.read_bytes() == frozen, "Tranche 8 retained source drift: " + name)
             self.values[name] = frozen
             self.refs[name] = dict(path=name, sha256=hashlib.sha256(frozen).hexdigest(),
@@ -172,13 +189,61 @@ def build(root=ROOT):
                          record_digest=result["record_digest"], acceptance=sources.ref(review_name, anchor="scoped-user-acceptance"),
                          passed_cases=expected_pass, incomplete_cases=expected_failure, cases=cases,
                          status="accepted_bounded"))
+    pending_cells = set()
+    if ACCEPTED_CCI_SOURCES:
+        input_name, result_name = (BASE + "P9-8.4b-CCICompletion" + n + ".json" for n in ("Cases", "Results"))
+        inputs, result = sources.read(input_name), sources.read(result_name)
+        require(result["manifest_digest"] == inputs["record_digest"] and result["native_runtime_executed"] is True,
+                "accepted C_CI execution binding drift")
+        require(result["user_accepted"] is False and result["aggregate_closed"] is False, "accepted C_CI authority widened")
+        require([r["case_id"] for r in result["cases"]] == [r["case_id"] for r in inputs["cases"]], "C_CI case roster drift")
+        pending_cases = []
+        for case, row in zip(inputs["cases"], result["cases"], strict=True):
+            ids = row["coverage_binding"]["cell_ids"]
+            require(row["coverage_binding"] == case["coverage_binding"] and len(ids) == 2
+                    and all(i in cells and cells[i]["family"] == "C_CI" for i in ids), "C_CI foreign coverage")
+            passed = row["outcome"] == "passed_named_case"
+            require(row["case_passed"] == passed and (not passed or
+                    row["event_committed"] is True and row["first_failure"] is None), "C_CI false case success")
+            if passed:
+                require(not pending_cells.intersection(ids), "duplicate C_CI cell")
+                pending_cells.update(ids)
+            pending_cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
+                event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
+        for ref in inputs["source_bindings"]:
+            require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+                    "accepted C_CI execution source drift: " + ref["path"])
+        original_name = BASE + "P9-8.4b-CCIResults.json"
+        original = sources.read(original_name)
+        sources.ref(BASE + "P9-8.4b-CCICases.json")
+        require(result["cases"][:8] == original["cases"][:8]
+                and result["shared"] == original["shared"]
+                and result["execution_partition"]["predecessor_record_digest"] == original["record_digest"],
+                "C_CI retained execution reuse drift")
+        failures = [dict(case_id=r["case_id"], event_committed=r["event_committed"],
+                         case_passed=r["case_passed"], first_failure=r["first_failure"])
+                    for r in original["cases"] if not r["case_passed"]]
+        runs.append(dict(family="C_CI", inputs=sources.ref(input_name), results=sources.ref(result_name),
+            record_digest=result["record_digest"],
+            acceptance=sources.ref(BASE + "P9-8.4b-CCIRuntimeReview.md", anchor="scoped-user-acceptance"),
+            review=sources.ref(BASE + "P9-8.4b-CCIRuntimeReview.md"),
+            passed_cases=sum(c["case_passed"] for c in pending_cases),
+            incomplete_cases=sum(not c["case_passed"] for c in pending_cases),
+            cases=pending_cases, status="accepted_bounded",
+            execution_partition=result["execution_partition"],
+            original_attempt=dict(results=sources.ref(original_name), failures=failures)))
+        require(len(pending_cells) == 32 and len(pending_cases) == 16, "accepted C_CI coverage drift")
+        covered.update(pending_cells)
+        pending_cells.clear()
     rows = []
     for family in FAMILIES:
         required = sorted(i for i, r in cells.items() if r["family"] == family)
         accepted = sorted(set(required) & covered)
         rows.append(dict(family=family, required_cells=len(required), accepted_cells=len(accepted),
+                         executed_pending_cells=len(set(required) & pending_cells),
                          pending_cells=len(required) - len(accepted), required_cell_ids=required,
-                         accepted_cell_ids=accepted, status="accepted_bounded" if len(accepted) == len(required) else "pending"))
+                         accepted_cell_ids=accepted, status="accepted_bounded" if len(accepted) == len(required)
+                         else "executed_pending_review_and_acceptance" if set(required) <= pending_cells else "pending"))
     children = [dict(work_id="P9-8.4" + key, title=title,
                      status="accepted_inventory_not_execution" if key == "a" else "partial" if key == "b" else "pending",
                      accepted=key == "a") for key, title in CHILDREN.items()]
@@ -218,6 +283,7 @@ def build(root=ROOT):
         coverage=dict(record=sources.ref(coverage_path), children=children, families=rows, runs=runs,
                       oracle_and_pressure=supplements,
                       required_cells=322, accepted_cells=len(covered), pending_cells=len(cells) - len(covered),
+                      executed_pending_cells=len(pending_cells),
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),
         scientific_claim_mapping=mapping,
         verification=dict(level="pinned_sources_and_retained_structure", native_trajectories_rerun=False,
@@ -244,6 +310,7 @@ def next_work(value):
     c = value["coverage"]
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
+            f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
             "8.4c–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
@@ -251,7 +318,7 @@ def next_work(value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
-    parser.add_argument("--family", choices=("A_OS", "C_OS"))
+    parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI"))
     parser.add_argument("--recheck-numerics", action="store_true")
     args = parser.parse_args()
     value = checked()
@@ -265,7 +332,8 @@ def main():
         require(not args.recheck_numerics, "C_OS retained checker always recomputes its dense comparisons, not native trajectories")
         commands = [[sys.executable, str(ROOT / HERE / "p984b_cos_successor.py"), "--check-retained", *extra] for extra in (["--original"], [])]
     else:
-        commands = [[sys.executable, str(ROOT / HERE / "p984b_aos_runtime.py"), "--check-retained",
+        script = "p984b_cci_completion.py" if args.family == "C_CI" else "p984b_aos_runtime.py"
+        commands = [[sys.executable, str(ROOT / HERE / script), "--check-retained",
                      *(["--recheck-numerics"] if args.recheck_numerics else [])]]
     for command in commands:
         subprocess.run(command, cwd=ROOT, check=True)

@@ -2743,8 +2743,20 @@ the full ten-profile plan.
         Execution-time flags remain unchanged. No public support or parent
         closure follows; the other eight families still own 258 uncompleted cells.
 
-    - [ ] P9-8.4b[C_CI]: 32 cells. Whole-domain self-map/contraction, joint
+    - [x] P9-8.4b[C_CI]: 32 cells. Whole-domain self-map/contraction, joint
       current/geometry roots and output-error evidence for each target.
+      - [x] Bind all sixteen requests, independent target maps, existing CI
+        domain/error budgets and fresh source plus both-role continuation.
+      - [x] Add focused wrong-law/stage, joint-root, reference and reset-only
+        admission/rollback pressure without changing production.
+      - [x] Finish all sixteen cases: 32 cells, 320 completed target steps and
+        32 fresh final reads. Retain the original D45 operational timeout;
+        reuse eight passes and complete only the unfinished eight with a
+        480-second budget, unchanged scientific inputs and error criteria.
+        Eight scientific/lifecycle and two completion/reuse tests pass.
+      - [x] User accepted the bounded scope on 2026-10-05, separately from
+        unchanged raw execution; no separate independent audit is asserted.
+      [Scope, checks and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md).
     - [ ] P9-8.4b[A_CI]: 32 cells. A joint-root/domain/error evidence and
       independent oracle, with transferred/written W and final reconstruction.
     - [ ] P9-8.4b[C_PC]: 34 cells. All sixteen shared layouts plus

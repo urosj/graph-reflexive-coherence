@@ -23,6 +23,7 @@ export function renderTranche8(value, container, create = tag => document.create
   const details = (parent, label, data) => { const e = append(parent, 'details', ''); append(e, 'summary', label); append(e, 'pre', JSON.stringify(data, null, 2)); };
   const c = value.coverage;
   append(container, 'p', `8.4b: ${c.accepted_cells}/${c.required_cells} accepted history cells; ${c.pending_cells} pending. Parent open. No new support or execution permission.`);
+  if (c.executed_pending_cells) append(container, 'p', `${c.executed_pending_cells} additional cells have passing execution evidence pending review and acceptance; they are not accepted coverage.`);
   append(container, 'p', `Check level: ${value.verification.level}. No native trajectory rerun or interval-equation recomputation. Historical 8.3 runs do not certify later code.`);
   append(container, 'h3', 'Shared mechanics and bounded profile integrations');
   for (const row of value.mechanics) {
@@ -35,19 +36,28 @@ export function renderTranche8(value, container, create = tag => document.create
     const profile = value.profiles.find(r => r.family === row.family);
     const tr = append(table, 'tr', '');
     append(tr, 'td', row.family); append(tr, 'td', 'Accepted bounded integration');
-    append(tr, 'td', `${row.accepted_cells} / ${row.required_cells}`); append(tr, 'td', String(row.pending_cells));
+    append(tr, 'td', `${row.accepted_cells} / ${row.required_cells}`);
+    append(tr, 'td', String(row.pending_cells) + (row.executed_pending_cells ? ` (${row.executed_pending_cells} executed; unaccepted)` : ''));
     const td = append(tr, 'td', ''); link(td, profile.review, 'Review');
     if (profile.independent_A_oracle) { append(td, 'span', ' · '); link(td, profile.independent_A_oracle.review, 'A oracle'); }
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
   append(container, 'h3', 'Recorded cases: event commit is not case success');
-  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS also has pointwise interval checks. Neither is a uniform parameter tube.');
+  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS and C_CI also have pointwise interval checks. None is a uniform parameter tube.');
   const supplements = append(container, 'p', 'Expanded A_OS oracle and pressure: ');
   for (const ref of c.oracle_and_pressure) { link(supplements, ref, ref.path.split('/').at(-1)); append(supplements, 'span', ' · '); }
   for (const run of c.runs) {
     const section = append(container, 'details', '');
     append(section, 'summary', `${run.family}: ${run.passed_cases} passed, ${run.incomplete_cases} incomplete — ${run.results.path.split('/').at(-1)}`);
-    const p = append(section, 'p', ''); link(p, run.results, 'Exact execution'); append(p, 'span', ' · '); link(p, run.acceptance, 'Separate scoped acceptance');
+    const p = append(section, 'p', `${run.status}. `); link(p, run.results, 'Exact execution'); append(p, 'span', ' · ');
+    if (run.acceptance) link(p, run.acceptance, 'Separate scoped acceptance');
+    else { link(p, run.review, 'Review pending acceptance'); append(p, 'span', ' · No accepted coverage credited.'); }
+    if (run.original_attempt) {
+      const original=append(section,'p','Original attempt retained: ');
+      link(original,run.original_attempt.results,'Original execution and timeout');
+      details(section,'Retained versus new execution',run.execution_partition);
+      details(section,'Original incomplete cases — not passing evidence',run.original_attempt.failures);
+    }
     for (const row of run.cases) append(section, 'p', `${row.case_id}: ${row.case_passed ? 'CASE PASSED' : 'INCOMPLETE CASE'}; event committed=${row.event_committed}; first failure=${JSON.stringify(row.first_failure)}`);
   }
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');

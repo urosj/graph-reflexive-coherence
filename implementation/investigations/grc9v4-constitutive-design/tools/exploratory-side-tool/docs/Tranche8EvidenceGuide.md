@@ -124,6 +124,7 @@ the original negative cases.
 | Load API, actual notebook cell and browser | Same checked ten-profile view; 64/322 accepted, 258 pending |
 | Inspect original C_OS phase-one case | Event committed, case incomplete, first failure visible |
 | Inspect its successor | Separate input/result identity and scoped acceptance |
+| Inspect accepted C_CI execution | All case outcomes, exact sources and separate scoped acceptance; original timeout remains incomplete |
 | Inspect a larger CI/PC pass or RG rejection | Probe outcome retained; larger-runtime acceptance remains false |
 | Alter counts, acceptance, source hash or runtime roster | Reject; no stale fallback or widened permission |
 | Request an unindexed or traversal path | Reject without reading it |
@@ -140,3 +141,19 @@ access, and the live full-status payload through the shipped browser validator.
 The phase-aware boundary/index check passed. No native numerical campaign or
 full historical replay suite was rerun; the broad G1 surface fixture now uses
 the current trusted support/permission rosters instead of old singleton counts.
+
+## Accepted C_CI execution
+
+The shared view binds C_CI execution to its separate 2026-10-05 user acceptance.
+C_CI sources have finite content pins; altered bytes fail closed. They can be
+retrieved through the same source links. The accepted total is now 96/322,
+with 226 cells pending. Raw execution retains its original unaccepted flags.
+The combined record contains eight unchanged retained passes and eight new
+passes. The original D45 operational timeout remains linked and explicitly
+incomplete; increasing its wall-clock budget did not change numerical criteria.
+
+Use `run.py tranche8-query verify-retained --family C_CI` for the explicit
+retained checker, adding `--recheck-numerics` only when independent interval
+recomputation is needed. Neither option reruns native trajectories. The
+[C_CI review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md)
+states the numerical scope and commands for a separately named native run.

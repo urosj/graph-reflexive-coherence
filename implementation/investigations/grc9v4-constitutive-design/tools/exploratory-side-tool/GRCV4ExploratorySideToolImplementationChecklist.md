@@ -1987,6 +1987,17 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 
 Guide and scenarios: [Tranche8EvidenceGuide](./docs/Tranche8EvidenceGuide.md).
 
+### P9-8.4b C_CI evidence successor
+
+- [x] Expose all sixteen new C_CI case outcomes and retrievable sources across
+  the shared CLI/API/notebook/browser view.
+- [x] Separate raw execution from the user's 2026-10-05 scoped acceptance;
+  publish 96/322 accepted cells without promoting the original timeout.
+- [x] Expose explicit C_CI retained/interval checking without native reruns.
+
+Nine focused Python checks, five browser tests and the actual two-cell
+Tranche 8 notebook execution pass. None reruns a native campaign.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

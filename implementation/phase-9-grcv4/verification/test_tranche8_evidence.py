@@ -23,8 +23,8 @@ class EvidenceTests(unittest.TestCase):
         v = self.value
         self.assertEqual({r["family"] for r in v["profiles"]}, set(index.FAMILIES))
         c = v["coverage"]
-        self.assertEqual((c["accepted_cells"], c["required_cells"], c["pending_cells"]), (64, 322, 258))
-        self.assertEqual(sum(r["pending_cells"] > 0 for r in c["families"]), 8)
+        self.assertEqual((c["accepted_cells"], c["required_cells"], c["pending_cells"]), (96, 322, 226))
+        self.assertEqual(sum(r["pending_cells"] > 0 for r in c["families"]), 7)
         self.assertEqual(next(r["required_cells"] for r in c["families"] if r["family"] == "C_PC"), 34)
         failures = [r for run in c["runs"] for r in run["cases"] if not r["case_passed"]]
         self.assertEqual(len(failures), 2)
@@ -33,6 +33,34 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse(v["verification"]["native_trajectories_rerun"])
         self.assertFalse(any(r["runtime_accepted"] for r in v["configuration"]["families"]))
         self.assertEqual(v["future"]["new_public_support"], [])
+
+    def test_cci_acceptance_is_separate_and_original_failure_preserved(self):
+        c = self.value["coverage"]
+        row = next(r for r in c["families"] if r["family"] == "C_CI")
+        self.assertEqual(row["accepted_cells"], 32)
+        run = next(r for r in c["runs"] if r["family"] == "C_CI")
+        self.assertEqual(run["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(run["status"], "accepted_bounded")
+        self.assertEqual(run["execution_partition"]["retained_cases"], 8)
+        self.assertEqual(len(run["original_attempt"]["failures"]), 1)
+        failure = run["original_attempt"]["failures"][0]
+        self.assertTrue(failure["event_committed"])
+        self.assertFalse(failure["case_passed"])
+        self.assertEqual(failure["first_failure"]["kind"], "operational_timeout")
+        self.assertEqual(row["executed_pending_cells"], 0)
+        self.assertEqual(row["accepted_cells"], 2 * run["passed_cases"])
+        ref = run["results"]
+        self.assertIsNone(ref["revision"])
+        self.assertEqual(ref["basis"], "pinned_execution_with_separate_scoped_user_acceptance")
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+            self.assertEqual(actual, ref)
+            self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        original = Path.read_bytes
+        path = index.ROOT / ref["path"]
+        with patch.object(Path, "read_bytes", lambda p: b"forged" if p == path else original(p)):
+            with self.assertRaisesRegex(ValueError, "accepted C_CI source drift"):
+                index.Sources(index.ROOT).raw(ref["path"])
 
     def test_mutated_source_and_missing_git_never_fall_back(self):
         path = index.ROOT / index.BASE / "P9-8.4a-Coverage.json"

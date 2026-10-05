@@ -2440,6 +2440,12 @@ index in normal phase verification and clear stale output on surface failure.
 This catch-up is a prerequisite before 8.5; it is not closure of 8.4i or the
 all-ten 8.4 parent. See [access and scenarios](./docs/Tranche8EvidenceGuide.md).
 
+The C_CI successor adds pinned execution and separate user acceptance rather than revising
+the accepted checkpoint. Keep all sixteen outcomes and source links visible.
+The 2026-10-05 scoped acceptance raises accepted coverage to 96/322, while
+the original timeout stays incomplete. Stronger C_CI retained interval
+checking remains opt-in and performs no native trajectory rerun.
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC
