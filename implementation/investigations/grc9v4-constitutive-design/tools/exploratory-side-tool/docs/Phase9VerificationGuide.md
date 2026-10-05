@@ -5,8 +5,10 @@ P9-4.9.2 adds a separately admitted parent-contract overlay and propagates its
 accepted rule through proposal, paper and a V4 successor release; historical
 D10/D11 graph and acceptance records retain their authority and bytes. P9-G1 is accepted;
 bounded implementation is authorized. Separately, the user accepted P9-4.8B
-for one exact C_OS profile on 2026-09-09, closing Tranche 4. GRC9V4 still
-requires separate P9-G3 admission; other profiles remain unaccepted.
+for one exact C_OS profile on 2026-09-09, closing Tranche 4. Subsequent accepted
+G2 decisions cover ten exact declarations; 7.8/G3 admission and Tranche 7 closure
+are recorded separately. The current [Tranche 8 view](./Tranche8EvidenceGuide.md)
+covers shared mechanics, all ten bounded 8.3 integrations and partial 8.4 evidence.
 
 ## CLI and browser
 
@@ -30,7 +32,7 @@ Git subject, then the current Phase 9 browser regressions. Historical source
 clones are disposable, under the repository's ignored generated directory.
 Neither command creates approval; both validate the separately recorded user
 acceptance. `--boundary-only` on `verify-phase9` or
-`verify-post-d10-specifications` checks current authority/release only and is
+`verify-post-d10-specifications` checks current authority/release and the retained Tranche 8 index only and is
 never labeled a full verification pass.
 
 `serve-phase9` opens a read-only local server at `http://127.0.0.1:4174`.
@@ -65,9 +67,8 @@ status = verification_status(root)
 assert status["P9_G1_accepted"] is True  # separately accepted implementation scope
 assert status["runtime_authorized"] is True
 assert status["g2_acceptance"]["G2_accepted"] is True  # separate scoped decision
-assert status["accepted_generic_runtime_support"] == [
-    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
-]
+assert len(status["accepted_generic_runtime_support"]) == 10
+assert status["tranche8_evidence"]["coverage"]["accepted_cells"] == 64
 assert status["g2_acceptance"]["G3_accepted"] is False
 ```
 
@@ -369,11 +370,11 @@ paths are repository-relative.
 
 The accepted consumed set is ten exact accepted generic declarations. This
 does not advertise ten GRC9V4 models: G3 and Tranche 7 closure are accepted,
-with only P9-8.1a chart/port-graph source entry authorized. The nested `a_expansion_work` assigns oracle production/review to
+with only P9-8.1a chart/port-graph entry authorized **by that historical decision**. The nested `a_expansion_work` assigns oracle production/review to
 P9-8.3A.1 and implementation/comparison to P9-8.3A.2, with explicit dependencies
-and generic-authority-gap routing back to Tranche 7. Both tasks remain pending;
-forty disabled surfaces are
-future work, and later specialization leaves remain gated. The normal failed
+and generic-authority-gap routing back to Tranche 7. The historical projection
+is not current task status: the Tranche 8 view records the subsequent accepted
+A oracles and integrations. Forty disabled surfaces remain Tranche 9 work. The normal failed
 boundary clears this view; no stale review is displayed as current authority.
 Use the dedicated `verify_p978_specialization_review.py` checker under
 `implementation/phase-9-grcv4/verification/` for a read-only recheck without

@@ -2670,12 +2670,124 @@ the full ten-profile plan.
     pass. [Review and reuse limits](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md),
     [portable validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json).
     No `.b`–`.h` runtime case is executed or accepted by this inventory.
-  - [ ] P9-8.4b: Execute applicable frozen expansion runtime counterparts:
+  - [ ] P9-8.4b: Complete all ten family items below, covering 322 applicable
+    expansion/history cells. For every family execute the shared counterparts:
     D30 × two chiralities, D31 × both chiralities/all three active phases,
     D45 × two chiralities, D52 × both chiralities/all three active phases,
     plus the separate C_PC reset fixture. Bind fresh trigger/request, native
     event/receipt, references, both-role transfer/readmission and declared
     finite continuation to exact discrete and independent numerical expectations.
+    Started on `work/p9-8-4b-runtime-counterparts` after merged `.a` acceptance.
+    [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md):
+    sixteen separately bound companions execute; fourteen pass both histories'
+    ten-step continuation and final reads. Both D52 phase-one cases commit
+    an event but fail the first current beat at nonnegative-resource admission;
+    independent dense expectations confirm the negative zero-extra-node value.
+    Two separately bound phase-one successors now pass with shares
+    `(1/4, 1/2, 1/4)`, independent stencil/preflight expectations and unchanged
+    source/profile/dt/tolerances. All 32 C_OS history cells have successful named
+    evidence; the original two failed subjects are preserved unchanged.
+    Twelve new reporting/consumption tests and the two original failure
+    regressions pass. Retained checking explicitly reports no native rerun;
+    actual current/geometry/Read-Back/continuity/final-refresh captures apply
+    to the successors, not retroactively to the original campaign.
+    The user accepted bounded C_OS, A_OS and C_CI work on 2026-10-05.
+    Their 96 cells are accepted; the other 226 remain pending. Exact frozen
+    construction checks are not native success. Every item below inherits the shared source/event/
+    both-role continuation contract and its own `.a` numerical prerequisites.
+    All C items require complete `W_C_tr` and strict selectors; all A items
+    require independent-oracle review for new scope plus fixed-row/W lifecycle
+    evidence. Each persistent item owns whole-source Z archive, target zero
+    initialization and explicit loss receipts, not just the literal C_PC case.
+    The parent stays open until all ten items and applicable cells are accepted;
+    unresolved families cannot be omitted without an explicit scope decision.
+
+    - [x] P9-8.4b[C_OS]: All sixteen shared layouts × current/reset = 32 cells.
+      Accepted 2026-10-05: fourteen original passes plus two separately bound
+      phase-one successors, with original failures preserved. Bounded dense
+      comparisons, not rigorous full-error/effect certificates. Acceptance is
+      recorded in the [runtime review](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md#scoped-user-acceptance).
+    - [x] P9-8.4b[A_OS]: 32 cells. A predictor/geometry/corrector and split
+      admission, independent expansion oracle, W transfer/write and final read.
+      Selected next by the user after C_OS commit `0a79ece5`, before C_PC.
+
+      - [x] Prepare the [expanded independent oracle](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
+        for all sixteen layouts and both histories. All sixteen cases, 355
+        pointwise interval checks and eleven focused tests pass; no native
+        event/step or new runtime-cell closure is claimed.
+      - [x] Run focused scientific pressure: eight tests pass, including 36
+        wrong-law comparisons, sixteen nearby C/W probes, original-share
+        controls, split/resource/floor/history boundaries and lawful zero
+        effects. Output tolerances miss twelve subtle substitutions; separate
+        research stage-consumption checks reject those substitutions.
+        [Evidence and limits](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#focused-scientific-pressure).
+      - [x] Review and accept this new oracle scope before native comparison.
+        User acceptance on 2026-10-05 covers the expanded oracle and focused
+        scientific pressure, not native runtime cells. Exact records and limits
+        are bound in the [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#scoped-user-acceptance).
+      - [x] Implement the A_OS runtime adapter and execute all 32 cells with
+        actual fresh identities, W/reference-current lineage, both-role atomic
+        admission, consumption checks, ten-step continuation and final reads.
+        Explicitly bind writer incoming
+        W/final C/selected corrector J and regenerated geometry to the actual
+        corrector source, with substitution-rejection tests: numerical budgets
+        and split admission alone do not establish those stage bindings.
+        All sixteen native cases pass on 2026-10-05: 320 target steps and 32
+        final reads, with pointwise interval and nominal checks, actual operand
+        captures, replay and focused rollback pressure. Existing production
+        code and accepted oracle remain unchanged.
+        [Runtime evidence and limits](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md).
+      - [x] Review and accept the bounded A_OS native results. User acceptance
+        on 2026-10-05 binds the 32 successful cells and eleven focused tests in
+        the [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md#scoped-user-acceptance).
+        Execution-time flags remain unchanged. No public support or parent
+        closure follows; the other eight families still own 258 uncompleted cells.
+
+    - [x] P9-8.4b[C_CI]: 32 cells. Whole-domain self-map/contraction, joint
+      current/geometry roots and output-error evidence for each target.
+      - [x] Bind all sixteen requests, independent target maps, existing CI
+        domain/error budgets and fresh source plus both-role continuation.
+      - [x] Add focused wrong-law/stage, joint-root, reference and reset-only
+        admission/rollback pressure without changing production.
+      - [x] Finish all sixteen cases: 32 cells, 320 completed target steps and
+        32 fresh final reads. Retain the original D45 operational timeout;
+        reuse eight passes and complete only the unfinished eight with a
+        480-second budget, unchanged scientific inputs and error criteria.
+        Eight scientific/lifecycle and two completion/reuse tests pass.
+      - [x] User accepted the bounded scope on 2026-10-05, separately from
+        unchanged raw execution; no separate independent audit is asserted.
+      [Scope, checks and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md).
+    - [x] P9-8.4b[A_CI]: 32 cells. A joint-root/domain/error evidence and
+      independent oracle, with transferred/written W and final reconstruction.
+      - [x] Bind all sixteen frozen-layout companions to accepted fixed-row
+        equations, actual source identities and independent both-role maps.
+      - [x] Complete focused joint-root, writer-consumption, effect and
+        reset-only readmission/rollback pressure.
+      - [x] Execute all 32 cells with ten target steps and fresh final roots.
+        All sixteen cases pass without failure or timeout: 320 steps and 32
+        final reads. Nine focused scientific/lifecycle methods also pass.
+      - [x] Synchronize side-tool CLI/API/notebook/browser and handoff; passing
+        execution remains separate from accepted coverage.
+      - [x] User accepted the bounded result on 2026-10-05, separately from
+        unchanged raw execution; no separate independent audit is asserted.
+        Accepted 8.4b coverage is 128/322; 194 cells across six families remain.
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md).
+    - [ ] P9-8.4b[C_PC]: 34 cells. All sixteen shared layouts plus
+      both histories of the literal C_PC reset fixture; base-chart/carrier
+      envelope, actual old-Z read, one same-source Z write and loss handling.
+    - [ ] P9-8.4b[A_PC]: 32 cells. A base-chart/carrier envelope, independent
+      oracle, separate W lifecycle and whole-carrier reset/loss/read/write.
+    - [ ] P9-8.4b[C_CI_PC]: 32 cells. Composite self-map/contraction and strict
+      slack, joint-root/output error, base chart and carrier lifecycle.
+    - [ ] P9-8.4b[A_CI_PC]: 32 cells. A composite contraction/slack and root
+      error, independent oracle, base chart and separate W/carrier lifecycle.
+    - [ ] P9-8.4b[C_RG2b]: 32 cells. Graph-specific signed completion,
+      every inverse-level residual/error, section/tail/input bounds, native
+      current-L2/geometry bridges and K readmission versus K-minus step entry.
+    - [ ] P9-8.4b[A_RG2b]: 32 cells. Independent Candidate-A expansion oracle,
+      graph-specific completion/inverse/section/error bridges, K versus
+      K-minus admission and W transfer/write/next-read evidence.
+
   - [ ] P9-8.4c: Pressure capacity and phase boundaries. Add separately named
     D37/D44 and adjacent-capacity probes, active/inactive phases, both
     chiralities and missing/extra phase failures. Keep wire errors distinct
@@ -2709,6 +2821,10 @@ the full ten-profile plan.
     Record actual outputs or first rejection. A certificate/negative control
     does not close a required successful execution. Keep original proposals
     separate from any newly identified parameter choice.
+  - [x] Tranche 8 side-tool catch-up: expose 8.1/8.2, all ten bounded 8.3
+    integrations and current 8.4 evidence through CLI/API/notebook/browser;
+    keep original failures, scoped acceptance and pending family cells distinct.
+    Source/structure checks are not numerical reruns; update this view before 8.5.
   - [ ] P9-8.4i: Reconcile coverage and hand off. Bind commands/results,
     independent paper/spec/side-tool checks, exact subjects, review outcomes and
     outstanding debt. Update configuration discovery only for newly reviewed

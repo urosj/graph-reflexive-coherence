@@ -7,6 +7,13 @@ from pathlib import Path
 import subprocess
 
 
+def status_digest(payload):
+    """Match browser number serialization, including Tranche 8 scientific floats."""
+    import hashlib
+    import rfc8785
+    return hashlib.sha256(rfc8785.dumps({k: v for k, v in payload.items() if k != "status_digest"})).hexdigest()
+
+
 def _policy(root):
     path = root / "implementation/phase-9-grcv4/verification/phase9_policy.py"
     successor = path.with_name("phase9_implementation_policy.py")
@@ -22,6 +29,10 @@ def _policy(root):
 
 def _profile_next_gate(views):
     """Display only: consume checked materializer views, never grant authority."""
+    if 'tranche8_evidence' in views:
+        from .tranche8 import _index
+        from .paths import repository_root
+        return _index(repository_root()).next_work(views['tranche8_evidence'])
     accepted=[r for r in views['profile_g2'] if r['state']=='accepted']
     ids={r['complete_profile_id'] for r in accepted}
     labels=', '.join(r['profile_family_id'] for r in accepted)
@@ -124,6 +135,11 @@ def verification_status(repo_root: Path) -> dict:
             profile_views, accepted_support = materialize(root, profile_conformance_review)
             profile_views['profile_aggregate_reconciliation'] = _checker(root, 'verify_p977_aggregate')(profile_views=profile_views)
             profile_views['specialization_admission_review'] = _checker(root, 'verify_p978_specialization_review')()
+            from .tranche8 import tranche8_status
+            profile_views['tranche8_evidence'] = tranche8_status(root)
+            # current_boundary authenticated these rows; the end-of-read check
+            # rejects concurrent changes. Do not repeat the whole policy chain.
+            work = {r['path']: r for r in module.read(root / module.WORK)['entries']}
             profile_view_keys = set(profile_views)
             payload.update(
                 **profile_views,
@@ -245,7 +261,7 @@ def verification_status(repo_root: Path) -> dict:
                     "iteration_id": "P9-4.9.2",
                     "G2_accepted": False,
                 },
-                implementation_scope=module.runtime_targets(approval),
+                implementation_scope=sorted(module.runtime_targets(approval), key=lambda r: r['path']),
                 abundance_interface_authority={
                     "record_digest": module.accepted_abundance_authority(root)["record_digest"],
                     "path": module.ABUNDANCE_AUTHORITY,
@@ -258,7 +274,7 @@ def verification_status(repo_root: Path) -> dict:
                 permitted_runtime_paths=sorted(
                     r["path"]
                     for r in module.runtime_targets(approval)
-                    if (r["requires_gate"] == "P9-G1" or r['path'] in profile_views['specialization_admission_review']['runtime_paths']) and set(ready) & owners[r["path"]]
+                    if (r["requires_gate"] == "P9-G1" or r['path'] in work) and set(ready) & owners[r["path"]]
                 ),
                 next_gate=_profile_next_gate(profile_views),
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete profiles and reviewed domains; no family-wide, unlisted-profile or specialization conformance is inferred.",
@@ -438,7 +454,8 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("recorded_receipt_digest", None)
         payload.update(source_refs=[], iterations=[], policy_digest=None)
         payload["error"] = str(error)
-    payload["status_digest"] = module.digest_record(payload, "status_digest")
+    payload["status_digest_encoding"] = "rfc8785"
+    payload["status_digest"] = status_digest(payload)
     return payload
 
 

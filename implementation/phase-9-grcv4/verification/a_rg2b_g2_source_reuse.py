@@ -17,17 +17,5 @@ def record():
 
 
 def retained_bindings(current):
-    from c_rg2b_g2_source_reuse import retained_bindings as successor_bindings
-    result = successor_bindings(current)
-    for name, row in record()['changes'].items():
-        if name not in result:
-            continue
-        live = successor_bindings({name: p.sha(p.safe_path(p.ROOT, name).read_bytes())})[name]
-        p.require(live == row['after_sha256'],
-                  'unreviewed change after A_RG2b discovery: ' + name)
-        p.require(p.sha(p.git(p.ROOT, 'show', BASE + ':' + name)) == row['before_sha256'],
-                  'unrecoverable pre-A_RG2b source: ' + name)
-        p.require(result[name] in (row['before_sha256'], row['after_sha256']),
-                  'unrelated source identity cannot use A_RG2b bridge: ' + name)
-        result[name] = row['before_sha256']
-    return result
+    from tranche8_source_reuse import through
+    return through(current, "a_rg2b_g2_source_reuse")

@@ -1969,6 +1969,48 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       missing ownership, bypassed oracle acceptance or generic-gap workaround.
       Oracle/runtime tasks remain pending, not completed by this registration.
 
+## Phase 9 Tranche 8 — evidence and surface catch-up
+
+- [x] Index accepted 8.0/8.1/8.2 scope, all ten 8.3 profiles, configuration
+  preparation and current 8.4 records without rewriting historical acceptance.
+- [x] Expose the same projection through CLI/API, actual notebook and browser;
+  provide checked repository-relative source retrieval.
+- [x] Preserve 64/322 accepted cells, 258 pending cells, original failures,
+  separate successors, larger runtime holds and forty deferred disabled cells.
+- [x] Repair exact historical source reconstruction and stale browser/runtime
+  roster assumptions without granting authority or claiming a numerical rerun.
+- [x] Wire source/structure checking into normal phase verification; distinguish
+  optional numerical comparison from native execution.
+- [x] Add focused mutation, source access, stale-output and cross-surface tests.
+- [x] Record user acceptance of this catch-up through the commit request on
+  2026-10-05; 8.4 parent closure remains open.
+
+Guide and scenarios: [Tranche8EvidenceGuide](./docs/Tranche8EvidenceGuide.md).
+
+### P9-8.4b C_CI evidence successor
+
+- [x] Expose all sixteen new C_CI case outcomes and retrievable sources across
+  the shared CLI/API/notebook/browser view.
+- [x] Separate raw execution from the user's 2026-10-05 scoped acceptance;
+  publish 96/322 accepted cells without promoting the original timeout.
+- [x] Expose explicit C_CI retained/interval checking without native reruns.
+
+Nine focused Python checks, five browser tests and the actual two-cell
+Tranche 8 notebook execution pass. None reruns a native campaign.
+
+### P9-8.4b A_CI evidence successor
+
+- [x] Expose all sixteen A_CI outcomes and exact source retrieval through
+  CLI/API/notebook/browser, separately from accepted C_CI coverage.
+- [x] Reject evidence drift and unbound acceptance. Project the separate
+  2026-10-05 scoped user decision: 128/322 accepted cells, 194 pending;
+  raw execution flags remain unchanged.
+- [x] Expose explicit retained/interval verification without native reruns.
+
+Ten focused source/API tests, six browser logic tests and the actual two-cell
+notebook pass. The real-browser scenario uses the checked coverage projection
+instead of stale fixed totals and opens any pending case details explicitly.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

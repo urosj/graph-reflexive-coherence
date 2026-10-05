@@ -40,7 +40,8 @@ class AcceptanceTests(unittest.TestCase):
         for name, row in value['changes'].items():
             with self.subTest(path=name):
                 live = p.sha((p.ROOT/name).read_bytes())
-                self.assertEqual(live, row['after_sha256'])
+                from tranche8_source_reuse import retained_bindings as successor
+                self.assertEqual(successor({name:live})[name], row['after_sha256'])
                 self.assertEqual(reuse.retained_bindings({name:live}), {name:row['before_sha256']})
                 self.assertTrue(p.g2_bindings_match({name:row['before_sha256']}, {name:live}))
                 with self.assertRaises(ValueError): reuse.retained_bindings({name:'0'*64})

@@ -1,4 +1,215 @@
-# Phase 9 GRCV4 handoff — All-ten feasibility before production
+# Phase 9 GRCV4 handoff — Runtime expansion and covariance
+
+## Accepted checkpoint — P9-8.4b A_CI
+
+C_CI acceptance is committed at `b8d1dd33`. The user selected A_CI next on
+the same branch. The [A_CI review](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md)
+defines all sixteen shared layouts, both histories, fixed-row joint roots,
+exact W transfer, correctly staged W writing and final reconstruction.
+The accepted oracle, production code, domain and numerical tolerances are
+unchanged. Nine focused scientific/lifecycle tests pass, followed by all
+sixteen native cases: 32 history cells, 320 target steps and 32 fresh final
+reads, without failure or timeout. One actual source beat supplies the event
+identities; no completed case was rerun. The result retains pointwise interval
+certificates and actual writer consumption, not a global trajectory bound.
+The user accepted this bounded result on 2026-10-05 and requested its commit.
+Accepted 8.4b coverage is now **128/322**, with 194 cells pending across six
+families. The shared CLI/API/notebook/browser view binds the separate decision
+and exact repository-relative source links. Ten source/API tests, six browser
+logic tests and the actual notebook pass without numerical reruns.
+Use the review's retained check for a lean restart, not a new native campaign.
+Raw execution flags remain unchanged. Parent 8.4b and later tasks remain open;
+no next profile was started as part of this acceptance.
+
+## Accepted checkpoint — P9-8.4b C_CI
+
+After accepted side-tool commit `7fed33a0`, the user selected C_CI next on
+`work/p9-8-4b-runtime-counterparts`. The [bounded C_CI review](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md)
+and [input manifest](./phase-9-grcv4/tranche-8/P9-8.4b-CCICases.json) bind all
+sixteen shared layouts and both histories, reusing the accepted native CI
+domain and independent interval equations. No production/specification or
+accepted predecessor changes are part of this work.
+
+All sixteen cases now pass: 32 current/reset cells, 320 completed target steps
+and 32 fresh final reads. Eight focused scientific/lifecycle tests and two
+completion/reuse tests pass. The original 180-second D45 timeout is retained;
+the [completion](./phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json)
+reuses eight passing cases and executes only the unfinished eight with a
+480-second budget. Scientific inputs, tolerances and horizons are unchanged.
+The review records a harness-only staged-rounding correction as well.
+
+The user accepted this bounded scope on 2026-10-05 and requested its commit
+before continuing to A_CI. At that checkpoint the accepted 8.4b total was **96/322**, with
+226 pending across seven families. The shared side-tool binds the separate
+acceptance and original timeout without rewriting raw execution.
+Nine focused source/API checks, five browser tests and the actual two-cell
+Tranche 8 notebook pass without rerunning native trajectories.
+
+Use the review's repository-relative commands to check retained evidence or
+run explicitly named new output. Do not repeat a native campaign merely to
+inspect its result. **Next: A_CI**, including joint-root admission and W-history
+transfer/write/final reconstruction. Parent 8.4b and later 8.4 tasks remain open.
+
+## Earlier checkpoint — 2026-10-05: full Tranche 8 side-tool catch-up
+
+A_OS native acceptance is committed at `dbfcd311`. The user next requested
+full side-tool catch-up. The shared evidence index now covers 8.1 mechanics,
+8.2 allocation, every bounded 8.3 profile integration, larger preparation and
+8.4a/b, through actual API, CLI, notebook and browser access. See the
+[portable access guide](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Tranche8EvidenceGuide.md).
+No production, scientific authority, accepted campaign or public support changed.
+The user accepted this tooling catch-up by requesting its commit on 2026-10-05.
+That acceptance does not close 8.4b or widen scientific/runtime support.
+
+A stale G2 source-binding chain also needed exact historical reconstruction
+after accepted implementation/optimization changes. The finite source bridge
+pins before/after bytes and rejects unknown changes; historical execution is
+not relabeled as current numerical verification. Normal phase verification
+now includes the source/structure index, not a native campaign.
+
+At that checkpoint the population was **64/322 accepted 8.4b history cells**, with
+258 pending in eight families. Parent 8.4b and `.c`–`.i` remain open. The
+side-tool portion of 8.4i is in place, not aggregate reconciliation. Before
+8.5, keep the view synchronized with each subsequent accepted family.
+
+For a lean restart, run `run.py tranche8-query check` or
+`run.py notebook-phase9 --tranche8-only` using the side-tool runner and repository
+`.venv`; commands are spelled out in the guide. These authenticate retained
+inputs and structure. Stronger retained numerical checks and new native runs
+remain distinct, explicit operations. Preserve the accepted Git history when
+moving machines; no external files or machine-local paths are required.
+
+## Accepted checkpoint — 2026-10-05: P9-8.4b A_OS native results accepted
+
+Work remains on `work/p9-8-4b-runtime-counterparts`. C_OS acceptance is committed
+at `0a79ece5`; the expanded A_OS oracle and scientific pressure are accepted
+and committed at `643ce12a`. The user then authorized the native A_OS campaign
+and now explicitly accepts and requests its commit. This handoff accompanies
+that accepted checkpoint; transfer the commit containing these files before
+resuming on another machine.
+
+The [native runtime review](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md),
+[bound inputs](./phase-9-grcv4/tranche-8/P9-8.4b-AOSCases.json) and
+[results](./phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json) record **sixteen
+passing layouts and 32 successful current/reset cells**. One actual native
+source beat supplies fresh event/history identities. Each native expansion
+completes both-role admission, exact resource/W/reference lineage and replay;
+both actual target roles then complete ten steps and a final read. This gives
+320 target steps and 32 final passes, with no failure or timeout. The campaign
+reuses the accepted phase-one shares `(1/4,1/2,1/4)` and changes no other
+parameters, timestep, horizon or error budget.
+
+Numerical outputs satisfy both frozen nominal comparisons and pointwise
+independent interval checks at actual C/W. Native observations now also bind
+the writer's incoming W/final C/selected corrector J and the corrector source
+used for geometry regeneration. These close the consumption-evidence gap
+identified by the accepted pressure; output agreement alone was insufficient.
+Focused tests reject those substitutions, stale final/restart reads, duplicate
+writes and altered event evidence. Current-only/reset-only target split
+rejections and injected late publication failure preserve the entire checkpoint.
+No production code, accepted oracle, C_OS evidence or public support changed.
+
+The [scoped user acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md#scoped-user-acceptance)
+binds these 32 cells and eleven passing focused tests without changing raw
+execution records. C_OS and A_OS now have 64 accepted cells. The other eight
+families still own 258 uncompleted cells.
+The all-ten parent P9-8.4b and `.c`–`.i` remain open. These finite-fixture
+results are not a uniform parameter tube or a general continuation guarantee.
+
+**Next:** address the identified side-tool integration gap across Tranche 8,
+including 8.1/8.2 mechanics, all 8.3 profiles and current 8.4 evidence, before
+entering 8.5. Current API/notebook status still reflects the older 8.1a entry;
+artifact hashes alone are not a current execution/acceptance view. The broader
+catch-up has been discussed but is not implemented by this A_OS commit. Reuse
+accepted evidence and preserve its limits; do not skip 8.2/8.3 or infer new
+scientific authority from a presentation update.
+
+For a lean restart, run from the repository root:
+
+```bash
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/p984b_aos_runtime.py --check-retained
+```
+
+This verifies retained identities, operand captures, schedules, nominal
+comparisons and certificate bindings/bounds, **not a native rerun**. Add
+`--recheck-numerics` to recompute interval bounds only. `--run --output
+<fresh-relative-file.json>` performs a new native campaign and refuses to
+overwrite the original. Use the review's exact commands and dependencies:
+`.venv`, `mpmath==1.3.0`, `python-flint==0.9.0`, and single-threaded BLAS/OpenMP.
+Do not repeat the roughly six-minute campaign merely to record acceptance.
+
+The [accepted oracle review](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
+and its 355 oracle checks, eleven focused tests and eight scientific-pressure
+tests remain unchanged. Their historical execution-time acceptance flags do
+not replace the later scoped user decision. Native runtime acceptance is now
+likewise recorded separately; successful execution alone did not grant it.
+
+## Accepted checkpoint — 2026-10-05: P9-8.4b C_OS counterparts
+
+This supersedes the pre-merge branch instructions below. Accepted P9-8.4a is
+merged into `main` at `ec18481c`. The user requested a new branch and P9-8.4b;
+current work is on `work/p9-8-4b-runtime-counterparts`. The user accepts the
+bounded C_OS work on 2026-10-05; it is committed at `0a79ece5`. No production module,
+frozen vector, accepted `.a` record or
+public support declaration changed.
+
+The [first runtime batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md)
+implements the capture/comparison contract for sixteen C_OS companions and
+retains all ten families' 322 applicable expansion/history cells. Fourteen
+cases pass source/event/both-role ten-step continuation/final reads. Both D52
+phase-one cases commit the event but fail their first current continuation:
+the initially zero `/extra/1/1` would become approximately `-0.0003544455590641839`.
+The independent dense calculation agrees; production correctly rejects
+nonnegative-resource admission. Neither reset continuation nor final reads run
+after that failure. Smaller positive dt does not repair its negative sign.
+
+The [bound cases](./phase-9-grcv4/tranche-8/P9-8.4b-COSCases.json) precede
+execution; the [results](./phase-9-grcv4/tranche-8/P9-8.4b-COSResults.json)
+retain actual inputs, comparisons, admission observations, receipts/checkpoints
+and all sixteen outcomes. Thirteen harness tests and two discovered-gap
+regression tests pass. Exact frozen construction is separate from numerical
+companions; dense comparisons are not certified full-error or effect bounds.
+The [two successors](./phase-9-grcv4/tranche-8/P9-8.4b-COSPhaseOneCases.json)
+now supply positive phase-one witnesses using separately named requests with
+shares `(1/4, 1/2, 1/4)`. Exact uncoupled boundary stencils motivate the choice;
+enabled dense preflight and native source/event/both-role ten-beat/final-read
+execution both pass. Source states, profile, dt, horizon and tolerances are
+unchanged. The [new results](./phase-9-grcv4/tranche-8/P9-8.4b-COSPhaseOneResults.json)
+also capture actual current/geometry consumption, staged continuity, alternate
+Read-Back surfaces and final refresh. Twelve new hardening tests plus the two
+original failure regressions pass. The earlier campaign is not rewritten or
+retroactively credited with these extra captures.
+
+Across the original fourteen passes and two successors there are 32 successful
+C_OS history cells, now accepted as `P9-8.4b[C_OS]`, and 290
+other-family/literal-C_PC cells still pending. The review records the scoped
+acceptance and exact evidence digests; execution-time JSON flags remain intact.
+This is not P9-8.4b closure.
+
+The plan and checklist now give `.b` ten explicit family items: C_OS, A_OS,
+C_CI, A_CI, C_PC, A_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b. Each owns
+sixteen shared layouts × two histories (32 cells); C_PC additionally owns its
+two literal reset-fixture cells (34). Only C_OS is checked off. All ten items
+and all 322 applicable cells must be accepted to close `.b`; a first-family
+implementation or a missing sibling cannot close the parent.
+
+**Earlier recommendation, superseded above:** C_PC's whole-carrier archive/
+reset/loss work remains required, but the user selects A_OS first. New A
+scientific scope retains oracle review before runtime comparison. P9-8.4c–i,
+P9-8.5, P9-8.6 and Tranche 9 retain their separate obligations.
+
+The review contains focused reproduction commands. Use
+`p984b_cos_successor.py --check-retained --original` for the original campaign
+and `--check-retained` for its two successors. These verify retained integrity
+and dense comparisons without native reruns, reporting that fact explicitly.
+Event commitment, complete-case success and user acceptance are separate fields;
+the original remains 14/16 even though both successors pass. The legacy checker
+is preserved with its hash-bound source. A new `--run` needs a fresh
+repository-relative output path and exits 1 on an incomplete case. Use the
+declared `.venv`, including `python-flint==0.9.0`, with BLAS/OpenMP threads at one.
+The original sixteen-case campaign takes about 265 seconds; do not rerun it
+just to resume or update documentation. Commit/publish this branch only when
+requested; another checkout must receive the new files before resuming here.
 
 ## Machine handoff — 2026-10-05: resume with P9-8.4b
 

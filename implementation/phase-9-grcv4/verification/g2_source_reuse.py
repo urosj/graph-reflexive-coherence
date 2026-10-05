@@ -21,55 +21,18 @@ def record():
 
 
 def retained_bindings(current):
-    from c_ci_g2_source_reuse import retained_bindings as successor_bindings
-    result = successor_bindings(current)
-    for name, row in record()['changes'].items():
-        if name not in result:
-            continue
-        live = successor_bindings({name: p.sha(p.safe_path(p.ROOT, name).read_bytes())})[name]
-        p.require(live == row['after_sha256'],
-                  'unreviewed change after G2 discovery: ' + name)
-        p.require(p.sha(p.git(p.ROOT, 'show', BASE + ':' + name)) == row['before_sha256'],
-                  'unrecoverable pre-discovery source: ' + name)
-        p.require(result[name] in (row['before_sha256'], row['after_sha256']),
-                  'unrelated source identity cannot use G2 discovery bridge: ' + name)
-        result[name] = row['before_sha256']
-    return result
-
+    from tranche8_source_reuse import through
+    return through(current, "g2_source_reuse")
 
 def matches(expected, current):
-    if expected.keys() != current.keys():
+    from tranche8_source_reuse import retained_bindings as successor, projections
+    if not expected.keys() <= current.keys():
         return False
-    changed = {n: value for n, value in current.items() if expected[n] != value}
+    extras = {n: current[n] for n in current.keys() - expected.keys()}
+    if extras and successor(extras):
+        return False
+    changed = {n: current[n] for n in expected if expected[n] != current[n]}
     if not changed:
         return True
     desired = {n: expected[n] for n in changed}
-    from c_rg2b_g2_source_reuse import retained_bindings as c_rg_successor
-    if desired == c_rg_successor(changed):
-        return True
-    from a_rg2b_g2_source_reuse import retained_bindings as rg_successor
-    if desired == rg_successor(changed):
-        return True
-    from c_ci_pc_g2_source_reuse import retained_bindings as accepted_successor
-    if desired == accepted_successor(changed):
-        return True
-    from a_ci_pc_g2_source_reuse import retained_bindings as exact_successor
-    if desired == exact_successor(changed):
-        return True
-    from c_pc_g2_source_reuse import retained_bindings as latest_successor
-    newest = latest_successor(changed)
-    if desired == newest:
-        return True
-    from a_pc_g2_source_reuse import retained_bindings as current_successor
-    newest = current_successor(changed)
-    if desired == newest:
-        return True
-    from c_ci_g2_source_reuse import retained_bindings as newest_bindings
-    newest = newest_bindings(changed)
-    if desired == newest:
-        return True
-    projected = retained_bindings(changed)
-    if desired == projected:
-        return True
-    from a_os_g2_source_reuse import matches as historical_matches
-    return historical_matches(desired, projected)
+    return any(desired == value for _, value in projections(changed))

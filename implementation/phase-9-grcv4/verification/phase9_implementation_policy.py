@@ -231,6 +231,57 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    SIDE + "README.md",
+    HERE + "tranche8_evidence.py",
+    HERE + "tranche8_source_reuse.py",
+    HERE + "test_tranche8_evidence.py",
+    PHASE + "tranche-8/P9-8-SideToolSourceBridge.json",
+    SIDE + "docs/Tranche8EvidenceGuide.md",
+    SIDE + "tool/src/grcv4_explorer/tranche8.py",
+    SIDE + "tool/scripts/tranche8_query.py",
+    SIDE + "tool/phase9-web/tranche8-evidence.js",
+    SIDE + "tool/phase9-web/tranche8.js",
+    SIDE + "tool/phase9-web/tranche8.test.mjs",
+    SIDE + "tool/phase9-web/tranche8.browser.mjs",
+    # User-authorized P9-8.4b verification; no production/support promotion.
+    HERE + "p984b_runtime.py",
+    HERE + "test_p984b_runtime.py",
+    HERE + "test_p984b_cos_phase1.py",
+    HERE + "p984b_cos_successor.py",
+    HERE + "test_p984b_cos_successor.py",
+    PHASE + "tranche-8/P9-8.4b-COSCases.json",
+    PHASE + "tranche-8/P9-8.4b-COSResults.json",
+    PHASE + "tranche-8/P9-8.4b-COSPhaseOneCases.json",
+    PHASE + "tranche-8/P9-8.4b-COSPhaseOneResults.json",
+    PHASE + "tranche-8/P9-8.4b-RuntimeReview.md",
+    HERE + "p984b_aos_oracle.py",
+    HERE + "test_p984b_aos_oracle.py",
+    PHASE + "tranche-8/P9-8.4b-AOSOracleInputs.json",
+    PHASE + "tranche-8/P9-8.4b-AOSOracleResults.json",
+    PHASE + "tranche-8/P9-8.4b-AOSOracleReview.md",
+    HERE + "p984b_aos_pressure.py",
+    HERE + "test_p984b_aos_pressure.py",
+    PHASE + "tranche-8/P9-8.4b-AOSScientificPressure.json",
+    HERE + "p984b_aos_capture.py",
+    HERE + "p984b_aos_runtime.py",
+    HERE + "test_p984b_aos_runtime.py",
+    PHASE + "tranche-8/P9-8.4b-AOSCases.json",
+    PHASE + "tranche-8/P9-8.4b-AOSResults.json",
+    PHASE + "tranche-8/P9-8.4b-AOSRuntimeReview.md",
+    HERE + "p984b_cci_runtime.py",
+    HERE + "test_p984b_cci_runtime.py",
+    PHASE + "tranche-8/P9-8.4b-CCICases.json",
+    PHASE + "tranche-8/P9-8.4b-CCIResults.json",
+    PHASE + "tranche-8/P9-8.4b-CCIRuntimeReview.md",
+    HERE + "p984b_cci_completion.py",
+    HERE + "test_p984b_cci_completion.py",
+    PHASE + "tranche-8/P9-8.4b-CCICompletionCases.json",
+    PHASE + "tranche-8/P9-8.4b-CCICompletionResults.json",
+    HERE + "p984b_aci_runtime.py",
+    HERE + "test_p984b_aci_runtime.py",
+    PHASE + "tranche-8/P9-8.4b-ACICases.json",
+    PHASE + "tranche-8/P9-8.4b-ACIResults.json",
+    PHASE + "tranche-8/P9-8.4b-ACIRuntimeReview.md",
     HERE + "prepare_p984a_coverage.py",
     HERE + "test_p984a_coverage.py",
     PHASE + "tranche-8/P9-8.4a-Coverage.json",
@@ -1868,9 +1919,8 @@ def accepted_a_os(root):
 
 
 def g2_retained_bindings(current):
-    from a_os_g2_source_reuse import retained_bindings
-    from g2_source_reuse import retained_bindings as successor_bindings
-    return retained_bindings(successor_bindings(current))
+    from tranche8_source_reuse import through
+    return through(current, "a_os_g2_source_reuse")
 
 
 def g2_bindings_match(expected, current):

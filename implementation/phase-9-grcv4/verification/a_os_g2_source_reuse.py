@@ -13,23 +13,8 @@ EXPECTED_DIGEST = '5552fa5a4cf58807708221a1d4016594e88c8aff85cd43b060868a8e4a0cf
 
 
 def retained_bindings(current):
-    value = p.read(p.ROOT / RECORD)
-    p.require(value['record_digest'] == p.digest_record(value) == EXPECTED_DIGEST and value['base_commit'] == BASE,
-              'A_OS discovery source-reuse record drift')
-    result = dict(current)
-    for name, row in value['changes'].items():
-        if name not in result:
-            continue
-        from g2_source_reuse import retained_bindings as successor_bindings
-        live = successor_bindings({name: p.sha((p.ROOT / name).read_bytes())})[name]
-        p.require(live == row['after_sha256'],
-                  'unreviewed change after A_OS discovery: ' + name)
-        p.require(p.sha(p.git(p.ROOT, 'show', BASE + ':' + name)) == row['before_sha256'],
-                  'unrecoverable pre-discovery source: ' + name)
-        p.require(result[name] in (row['before_sha256'], row['after_sha256']),
-                  'unrelated source identity cannot use discovery bridge: ' + name)
-        result[name] = row['before_sha256']
-    return result
+    from tranche8_source_reuse import through
+    return through(current, "a_os_g2_source_reuse")
 
 
 def matches(expected, current):

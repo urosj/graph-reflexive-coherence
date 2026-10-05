@@ -97,7 +97,9 @@ def execution_sources(value, sources):
               "initializer status changed beyond the accepted closure view")
     # Explicitly separate this new, independently pinned wire decoder from
     # the old execution. No old codec/producer/loaded source is exempted.
-    p.require(sources.get(EVENT_PACKAGE_CODEC) == EVENT_PACKAGE_CODEC_SHA256,
+    p.require(EVENT_PACKAGE_CODEC in sources and p.g2_bindings_match(
+                  {EVENT_PACKAGE_CODEC: EVENT_PACKAGE_CODEC_SHA256},
+                  {EVENT_PACKAGE_CODEC: sources[EVENT_PACKAGE_CODEC]}),
               "event package decoder differs from the bounded additive source")
     sources = {name: digest for name, digest in sources.items() if name != EVENT_PACKAGE_CODEC}
     from verify_p972a_initializer_authority import historical_blobs
