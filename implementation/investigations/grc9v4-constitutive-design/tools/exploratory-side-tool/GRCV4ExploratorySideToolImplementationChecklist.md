@@ -1998,6 +1998,19 @@ Guide and scenarios: [Tranche8EvidenceGuide](./docs/Tranche8EvidenceGuide.md).
 Nine focused Python checks, five browser tests and the actual two-cell
 Tranche 8 notebook execution pass. None reruns a native campaign.
 
+### P9-8.4b A_CI evidence successor
+
+- [x] Expose all sixteen A_CI outcomes and exact source retrieval through
+  CLI/API/notebook/browser, separately from accepted C_CI coverage.
+- [x] Reject evidence drift and unbound acceptance. Project the separate
+  2026-10-05 scoped user decision: 128/322 accepted cells, 194 pending;
+  raw execution flags remain unchanged.
+- [x] Expose explicit retained/interval verification without native reruns.
+
+Ten focused source/API tests, six browser logic tests and the actual two-cell
+notebook pass. The real-browser scenario uses the checked coverage projection
+instead of stale fixed totals and opens any pending case details explicitly.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

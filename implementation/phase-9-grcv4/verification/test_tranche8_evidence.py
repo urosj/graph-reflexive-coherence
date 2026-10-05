@@ -23,8 +23,8 @@ class EvidenceTests(unittest.TestCase):
         v = self.value
         self.assertEqual({r["family"] for r in v["profiles"]}, set(index.FAMILIES))
         c = v["coverage"]
-        self.assertEqual((c["accepted_cells"], c["required_cells"], c["pending_cells"]), (96, 322, 226))
-        self.assertEqual(sum(r["pending_cells"] > 0 for r in c["families"]), 7)
+        self.assertEqual((c["accepted_cells"], c["required_cells"], c["pending_cells"]), (128, 322, 194))
+        self.assertEqual(sum(r["pending_cells"] > 0 for r in c["families"]), 6)
         self.assertEqual(next(r["required_cells"] for r in c["families"] if r["family"] == "C_PC"), 34)
         failures = [r for run in c["runs"] for r in run["cases"] if not r["case_passed"]]
         self.assertEqual(len(failures), 2)
@@ -71,6 +71,30 @@ class EvidenceTests(unittest.TestCase):
         with patch.object(index, "git", side_effect=FileNotFoundError("Git history unavailable")):
             with self.assertRaises(FileNotFoundError):
                 index.build()
+
+    def test_aci_acceptance_is_separate_from_execution(self):
+        c = self.value["coverage"]
+        row = next(r for r in c["families"] if r["family"] == "A_CI")
+        run = next(r for r in c["runs"] if r["family"] == "A_CI")
+        self.assertEqual((row["accepted_cells"], row["executed_pending_cells"]), (32, 0))
+        self.assertEqual(c["accepted_cells"], 128)
+        self.assertEqual(run["status"], "accepted_bounded")
+        self.assertEqual(run["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(run["passed_cases"], 16)
+        ref = run["results"]
+        self.assertEqual(ref["basis"], "pinned_execution_with_separate_scoped_user_acceptance")
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+            self.assertEqual(ref, actual)
+            self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+            execution = json.loads(raw)
+            self.assertFalse(execution["user_accepted"])
+            self.assertFalse(execution["aggregate_closed"])
+        original = Path.read_bytes
+        path = index.ROOT / ref["path"]
+        with patch.object(Path, "read_bytes", lambda p: b"forged" if p == path else original(p)):
+            with self.assertRaisesRegex(ValueError, "accepted A_CI source drift"):
+                index.Sources(index.ROOT).raw(ref["path"])
 
     def test_generated_projection_cannot_supply_its_own_authority(self):
         original = Path.read_text

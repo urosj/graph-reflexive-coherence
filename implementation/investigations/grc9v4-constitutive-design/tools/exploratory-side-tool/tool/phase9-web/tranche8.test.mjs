@@ -10,7 +10,7 @@ test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', (
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);
   for(const row of evidence.profiles) assert.ok(content.includes(row.family));
-  for(const s of ['96/322','226 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
+  for(const s of ['128/322','194 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
   assert.ok(out.children.length > 20);
 });
 
@@ -39,6 +39,20 @@ test('only exact indexed source links are exposed', () => {
   const ref=evidence.source_refs[0];assert.ok(sourceURL(ref).startsWith('/api/tranche8/source?path='));
   assert.throws(()=>sourceURL({...ref,path:'../../secret'}));
   assert.throws(()=>sourceURL({...ref,sha256:'0'.repeat(64)}));
+});
+
+test('A_CI acceptance is separately bound without widening scope', () => {
+  const run = evidence.coverage.runs.find(r => r.family === 'A_CI');
+  assert.equal(run.acceptance.anchor, 'scoped-user-acceptance');
+  assert.equal(run.status, 'accepted_bounded');
+  assert.equal(run.passed_cases, 16);
+  assert.equal(evidence.coverage.families.find(r => r.family === 'A_CI').accepted_cells, 32);
+  assert.equal(evidence.coverage.executed_pending_cells, 0);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /128\/322/);
+  const forged=structuredClone(evidence);
+  forged.coverage.runs.find(r => r.family === 'A_CI').acceptance=null;
+  assert.throws(()=>checkedTranche8(forged));
 });
 
 test('failed refresh clears previous success and ignores delayed old response', async () => {

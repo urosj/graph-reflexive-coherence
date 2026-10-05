@@ -1,5 +1,26 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b A_CI
+
+C_CI acceptance is committed at `b8d1dd33`. The user selected A_CI next on
+the same branch. The [A_CI review](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md)
+defines all sixteen shared layouts, both histories, fixed-row joint roots,
+exact W transfer, correctly staged W writing and final reconstruction.
+The accepted oracle, production code, domain and numerical tolerances are
+unchanged. Nine focused scientific/lifecycle tests pass, followed by all
+sixteen native cases: 32 history cells, 320 target steps and 32 fresh final
+reads, without failure or timeout. One actual source beat supplies the event
+identities; no completed case was rerun. The result retains pointwise interval
+certificates and actual writer consumption, not a global trajectory bound.
+The user accepted this bounded result on 2026-10-05 and requested its commit.
+Accepted 8.4b coverage is now **128/322**, with 194 cells pending across six
+families. The shared CLI/API/notebook/browser view binds the separate decision
+and exact repository-relative source links. Ten source/API tests, six browser
+logic tests and the actual notebook pass without numerical reruns.
+Use the review's retained check for a lean restart, not a new native campaign.
+Raw execution flags remain unchanged. Parent 8.4b and later tasks remain open;
+no next profile was started as part of this acceptance.
+
 ## Accepted checkpoint — P9-8.4b C_CI
 
 After accepted side-tool commit `7fed33a0`, the user selected C_CI next on
@@ -18,7 +39,7 @@ reuses eight passing cases and executes only the unfinished eight with a
 The review records a harness-only staged-rounding correction as well.
 
 The user accepted this bounded scope on 2026-10-05 and requested its commit
-before continuing to A_CI. The current accepted 8.4b total is **96/322**, with
+before continuing to A_CI. At that checkpoint the accepted 8.4b total was **96/322**, with
 226 pending across seven families. The shared side-tool binds the separate
 acceptance and original timeout without rewriting raw execution.
 Nine focused source/API checks, five browser tests and the actual two-cell
@@ -29,7 +50,7 @@ run explicitly named new output. Do not repeat a native campaign merely to
 inspect its result. **Next: A_CI**, including joint-root admission and W-history
 transfer/write/final reconstruction. Parent 8.4b and later 8.4 tasks remain open.
 
-## Current work — 2026-10-05: full Tranche 8 side-tool catch-up
+## Earlier checkpoint — 2026-10-05: full Tranche 8 side-tool catch-up
 
 A_OS native acceptance is committed at `dbfcd311`. The user next requested
 full side-tool catch-up. The shared evidence index now covers 8.1 mechanics,
@@ -46,7 +67,7 @@ pins before/after bytes and rejects unknown changes; historical execution is
 not relabeled as current numerical verification. Normal phase verification
 now includes the source/structure index, not a native campaign.
 
-The current population remains **64/322 accepted 8.4b history cells**, with
+At that checkpoint the population was **64/322 accepted 8.4b history cells**, with
 258 pending in eight families. Parent 8.4b and `.c`–`.i` remain open. The
 side-tool portion of 8.4i is in place, not aggregate reconciliation. Before
 8.5, keep the view synchronized with each subsequent accepted family.

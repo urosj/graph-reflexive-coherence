@@ -29,6 +29,11 @@ ACCEPTED_CCI_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md": "fbf40e6e109fbbc9c7bad9492807a770a3e2fab7db2d734f3767631517dce679"
 }
 HANDOFF = "implementation/Phase-9-GRCV4-Handoff.md"
+ACCEPTED_ACI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACICases.json": "c3a5dd33e640c2f73dbc97373f27c21b53d98bf967aef524d7a84baaf7e671d8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json": "2d2dbec6eb6c07db9b4fd996fe2d231a6ec2bb43682202a9f176c776c13f9466",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md": "c8b941240c91e6f316e1666549702077042d53007f9b08ffbb37d6e3a10823aa"
+}
 PLAN = "implementation/Phase-9-GRCV4-ImplementationPlan.md"
 FAMILIES = tuple(c + "_" + r for c in ("A", "C") for r in ("OS", "CI", "PC", "CI_PC", "RG2b"))
 PROFILE_RECORDS = {
@@ -87,13 +92,16 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            if name in ACCEPTED_CCI_SOURCES:
+            pins = {**ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES}
+            if name in pins:
                 require(not historical, "current pinned evidence is not a historical Git snapshot")
                 frozen = path.read_bytes()
-                require(hashlib.sha256(frozen).hexdigest() == ACCEPTED_CCI_SOURCES[name], "accepted C_CI source drift: " + name)
+                family = "A_CI" if name in ACCEPTED_ACI_SOURCES else "C_CI"
+                require(hashlib.sha256(frozen).hexdigest() == pins[name],
+                        "accepted " + family + " source drift: " + name)
                 self.values[name] = frozen
-                self.refs[name] = dict(path=name, sha256=ACCEPTED_CCI_SOURCES[name], revision=None,
-                                       basis="pinned_execution_with_separate_scoped_user_acceptance")
+                self.refs[name] = dict(path=name, sha256=pins[name], revision=None,
+                    basis="pinned_execution_with_separate_scoped_user_acceptance")
                 return frozen
             frozen = git(self.root, "show", CHECKPOINT + ":" + name)
             require(historical or path.read_bytes() == frozen, "Tranche 8 retained source drift: " + name)
@@ -235,6 +243,38 @@ def build(root=ROOT):
         require(len(pending_cells) == 32 and len(pending_cases) == 16, "accepted C_CI coverage drift")
         covered.update(pending_cells)
         pending_cells.clear()
+    if ACCEPTED_ACI_SOURCES:
+        input_name, result_name = (BASE + "P9-8.4b-ACI" + n + ".json" for n in ("Cases", "Results"))
+        inputs, result = sources.read(input_name), sources.read(result_name)
+        require(result["manifest_digest"] == inputs["record_digest"] and result["native_runtime_executed"] is True
+                and result["user_accepted"] is False and result["aggregate_closed"] is False, "accepted A_CI execution/scope drift")
+        require([r["case_id"] for r in result["cases"]] == [r["case_id"] for r in inputs["cases"]], "accepted A_CI case roster drift")
+        cases = []
+        for case, row in zip(inputs["cases"], result["cases"], strict=True):
+            ids = row["coverage_binding"]["cell_ids"]
+            require(row["coverage_binding"] == case["coverage_binding"] and len(ids) == 2
+                    and all(i in cells and cells[i]["family"] == "A_CI" for i in ids), "accepted A_CI foreign coverage")
+            passed = row["outcome"] == "passed_named_case"
+            require(row["case_passed"] == passed and (not passed or row["event_committed"] is True
+                    and row["first_failure"] is None), "accepted A_CI false success")
+            if passed:
+                require(not pending_cells.intersection(ids), "duplicate A_CI cell")
+                pending_cells.update(ids)
+            cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
+                event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
+        for ref in inputs["source_bindings"]:
+            require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+                    "accepted A_CI execution source drift: " + ref["path"])
+        review_name = BASE + "P9-8.4b-ACIRuntimeReview.md"
+        require("## Scoped user acceptance" in sources.raw(review_name).decode(), "missing scoped A_CI acceptance")
+        runs.append(dict(family="A_CI", inputs=sources.ref(input_name), results=sources.ref(result_name),
+            record_digest=result["record_digest"], acceptance=sources.ref(review_name, anchor="scoped-user-acceptance"),
+            review=sources.ref(review_name),
+            passed_cases=sum(c["case_passed"] for c in cases), incomplete_cases=sum(not c["case_passed"] for c in cases),
+            cases=cases, status="accepted_bounded"))
+        require(len(pending_cells) == 32 and len(cases) == 16, "accepted A_CI coverage drift")
+        covered.update(pending_cells)
+        pending_cells.clear()
     rows = []
     for family in FAMILIES:
         required = sorted(i for i, r in cells.items() if r["family"] == family)
@@ -318,7 +358,7 @@ def next_work(value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
-    parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI"))
+    parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI"))
     parser.add_argument("--recheck-numerics", action="store_true")
     args = parser.parse_args()
     value = checked()
@@ -332,7 +372,7 @@ def main():
         require(not args.recheck_numerics, "C_OS retained checker always recomputes its dense comparisons, not native trajectories")
         commands = [[sys.executable, str(ROOT / HERE / "p984b_cos_successor.py"), "--check-retained", *extra] for extra in (["--original"], [])]
     else:
-        script = "p984b_cci_completion.py" if args.family == "C_CI" else "p984b_aos_runtime.py"
+        script = {"C_CI": "p984b_cci_completion.py", "A_CI": "p984b_aci_runtime.py", "A_OS": "p984b_aos_runtime.py"}[args.family]
         commands = [[sys.executable, str(ROOT / HERE / script), "--check-retained",
                      *(["--recheck-numerics"] if args.recheck_numerics else [])]]
     for command in commands:

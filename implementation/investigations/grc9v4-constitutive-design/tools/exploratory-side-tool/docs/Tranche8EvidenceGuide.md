@@ -5,8 +5,8 @@ all ten bounded 8.3 profile integrations, larger-configuration preparation,
 and current 8.4 coverage. It reads existing records; it does not create claims,
 accept results, authorize work or rerun models.
 
-At checkpoint `dbfcd311`, C_OS and A_OS supply **64 of 322 accepted 8.4b
-history cells**. Eight families still own 258 pending cells, including C_PC's
+With the separate A_CI acceptance, C_OS, A_OS, C_CI and A_CI supply **128 of 322
+accepted 8.4b history cells**. Six families own 194 pending cells, including C_PC's
 separate literal reset subject. The all-ten parent and `.c`–`.i` remain open.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
@@ -121,10 +121,11 @@ the original negative cases.
 
 | Scenario | Required outcome |
 | --- | --- |
-| Load API, actual notebook cell and browser | Same checked ten-profile view; 64/322 accepted, 258 pending |
+| Load API, actual notebook cell and browser | Same checked ten-profile view; 128/322 accepted, 194 pending |
 | Inspect original C_OS phase-one case | Event committed, case incomplete, first failure visible |
 | Inspect its successor | Separate input/result identity and scoped acceptance |
 | Inspect accepted C_CI execution | All case outcomes, exact sources and separate scoped acceptance; original timeout remains incomplete |
+| Inspect accepted A_CI execution | All case outcomes, exact sources and joint-root/W-lifecycle scope; 32 cells credited through separate scoped acceptance |
 | Inspect a larger CI/PC pass or RG rejection | Probe outcome retained; larger-runtime acceptance remains false |
 | Alter counts, acceptance, source hash or runtime roster | Reject; no stale fallback or widened permission |
 | Request an unindexed or traversal path | Reject without reading it |
@@ -146,8 +147,8 @@ the current trusted support/permission rosters instead of old singleton counts.
 
 The shared view binds C_CI execution to its separate 2026-10-05 user acceptance.
 C_CI sources have finite content pins; altered bytes fail closed. They can be
-retrieved through the same source links. The accepted total is now 96/322,
-with 226 cells pending. Raw execution retains its original unaccepted flags.
+retrieved through the same source links. That checkpoint raised the accepted
+total to 96/322. Raw execution retains its original unaccepted flags.
 The combined record contains eight unchanged retained passes and eight new
 passes. The original D45 operational timeout remains linked and explicitly
 incomplete; increasing its wall-clock budget did not change numerical criteria.
@@ -157,3 +158,15 @@ retained checker, adding `--recheck-numerics` only when independent interval
 recomputation is needed. Neither option reruns native trajectories. The
 [C_CI review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md)
 states the numerical scope and commands for a separately named native run.
+
+## Accepted A_CI execution
+
+The shared view binds A_CI execution to its separate 2026-10-05 user acceptance and
+[bounded review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md).
+Source pins authenticate the exact execution and the separate decision; raw
+execution flags remain unchanged. Its 32 accepted cells bring the total to
+128/322, with 194 pending. Use `run.py tranche8-query verify-retained --family A_CI` for retained
+identity, stage, schedule and bound checking, or add `--recheck-numerics` for
+independent interval recomputation. Neither runs a native trajectory. Normal
+API/browser/notebook status authenticates source bytes and retained structure,
+not a new scientific execution or aggregate acceptance.

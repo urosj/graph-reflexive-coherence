@@ -2691,8 +2691,8 @@ the full ten-profile plan.
     regressions pass. Retained checking explicitly reports no native rerun;
     actual current/geometry/Read-Back/continuity/final-refresh captures apply
     to the successors, not retroactively to the original campaign.
-    The user accepts the bounded C_OS and subsequent A_OS work on 2026-10-05.
-    Their 64 cells are accepted; the other 258 remain pending. Exact frozen
+    The user accepted bounded C_OS, A_OS and C_CI work on 2026-10-05.
+    Their 96 cells are accepted; the other 226 remain pending. Exact frozen
     construction checks are not native success. Every item below inherits the shared source/event/
     both-role continuation contract and its own `.a` numerical prerequisites.
     All C items require complete `W_C_tr` and strict selectors; all A items
@@ -2757,8 +2757,21 @@ the full ten-profile plan.
       - [x] User accepted the bounded scope on 2026-10-05, separately from
         unchanged raw execution; no separate independent audit is asserted.
       [Scope, checks and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md).
-    - [ ] P9-8.4b[A_CI]: 32 cells. A joint-root/domain/error evidence and
+    - [x] P9-8.4b[A_CI]: 32 cells. A joint-root/domain/error evidence and
       independent oracle, with transferred/written W and final reconstruction.
+      - [x] Bind all sixteen frozen-layout companions to accepted fixed-row
+        equations, actual source identities and independent both-role maps.
+      - [x] Complete focused joint-root, writer-consumption, effect and
+        reset-only readmission/rollback pressure.
+      - [x] Execute all 32 cells with ten target steps and fresh final roots.
+        All sixteen cases pass without failure or timeout: 320 steps and 32
+        final reads. Nine focused scientific/lifecycle methods also pass.
+      - [x] Synchronize side-tool CLI/API/notebook/browser and handoff; passing
+        execution remains separate from accepted coverage.
+      - [x] User accepted the bounded result on 2026-10-05, separately from
+        unchanged raw execution; no separate independent audit is asserted.
+        Accepted 8.4b coverage is 128/322; 194 cells across six families remain.
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md).
     - [ ] P9-8.4b[C_PC]: 34 cells. All sixteen shared layouts plus
       both histories of the literal C_PC reset fixture; base-chart/carrier
       envelope, actual old-Z read, one same-source Z write and loss handling.

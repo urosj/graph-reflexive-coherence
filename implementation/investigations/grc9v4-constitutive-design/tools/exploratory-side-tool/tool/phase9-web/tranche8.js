@@ -43,7 +43,7 @@ export function renderTranche8(value, container, create = tag => document.create
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
   append(container, 'h3', 'Recorded cases: event commit is not case success');
-  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS and C_CI also have pointwise interval checks. None is a uniform parameter tube.');
+  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI and A_CI also have pointwise interval checks. None is a uniform parameter tube.');
   const supplements = append(container, 'p', 'Expanded A_OS oracle and pressure: ');
   for (const ref of c.oracle_and_pressure) { link(supplements, ref, ref.path.split('/').at(-1)); append(supplements, 'span', ' · '); }
   for (const run of c.runs) {

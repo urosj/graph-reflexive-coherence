@@ -2446,6 +2446,13 @@ The 2026-10-05 scoped acceptance raises accepted coverage to 96/322, while
 the original timeout stays incomplete. Stronger C_CI retained interval
 checking remains opt-in and performs no native trajectory rerun.
 
+The A_CI successor reuses those shared access paths for its separately pinned
+execution and 2026-10-05 scoped user acceptance. Display all sixteen outcomes
+and the full-root/W-lifecycle scope, with raw execution flags unchanged.
+Accepted coverage is now 128/322, with 194 cells pending. Expose the A_CI
+retained checker explicitly and distinguish interval recomputation from native
+execution. No other realization inherits its conformance.
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC
