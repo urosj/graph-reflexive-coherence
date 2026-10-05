@@ -1,0 +1,46 @@
+{
+  "schema": "p983-larger-numerical-probe-v1",
+  "family": "C_CI",
+  "prepared_digest": "897768de09b7cf86259857005f051950c6449c1665d10fa136ebeb07d8f4cfd4",
+  "scope": "numerical_read_or_certificate_only; timeout_is_not_rejection",
+  "physical_steps": 0,
+  "events_committed": 0,
+  "supported_profiles_added": [],
+  "source": {
+    "current": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0,
+      "seconds": 70.07525191298919,
+      "owner": "CIContractionCertificate"
+    },
+    "reset": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0,
+      "seconds": 70.12964556697989,
+      "owner": "CIContractionCertificate"
+    }
+  },
+  "target": {
+    "current": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0,
+      "seconds": 79.99457556701964,
+      "owner": "CIContractionCertificate"
+    },
+    "reset": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0,
+      "seconds": 79.32463808800094,
+      "owner": "CIContractionCertificate"
+    }
+  },
+  "record_digest": "195a15ecba6af32b738562286c3e07bb99b3c9809eddabeb25d10b0d8356387e"
+}

@@ -1,0 +1,203 @@
+{
+  "schema": "p983a_aci_oracle_validation_v1",
+  "date": "2026-10-03",
+  "phase": "P9-8.3A.1",
+  "profile_family_id": "A_CI",
+  "disposition": "bounded_oracle_own_review_pass_user_acceptance_pending",
+  "accepted_predecessor": "2a1d6c098f1154a973614364f680ee69e5b7511b",
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_aci_oracle.py",
+      "sha256": "ad00edb92b3cf7868f7ae888972c8c646c966cf9b8619939a0a25e346350bf51"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_aci_oracle.py",
+      "sha256": "0666b3051fc391be6cbb02ec7615de166e3f8c0c2f41721454c91bb716201f8e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Oracle.json",
+      "sha256": "846e491b8eaa637ebcdac0a049a26f2192bf1054f0e341af0a8a9e51f70ebb44"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-OracleReview.md",
+      "sha256": "9544b4a46da678c2c9af50111465fff3416174fddf213055aac6da3cce47dd32"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "fdf221792c63eeaab78cebc2111de10426d6ce2716bed17699142fd5554a1f10"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "be7bef55071b79a82e57110be8711b01cd73255184f558ab8784343c2333c260"
+    },
+    {
+      "path": "specs/grc-9-v4-spec.md",
+      "sha256": "588878aabbe35a8b0c6ae5019f1d1116ab2a3bf15168793e37468abcf369e082"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.md",
+      "sha256": "fde4adedfec32d3d365d4742ed2352d6546067fdf32676a692d69b28048d38d5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AOS-ConstructionInputs.json",
+      "sha256": "8418d3ad949464e5c2eb6a6c2f9d373151bb30222d926353d6b0a40ea3f6930c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-COS-ConstructionInputs.json",
+      "sha256": "568217418ca4059b93f2a64ab6f1f9364b65925f417ee43a822de5fbbbdbc7c1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventConstruction.md",
+      "sha256": "90fa64266699d6ef84ea027c4c3c14c938a82209efa8670e14cca45940ca9952"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-AEventIndependentReview.md",
+      "sha256": "c5b780a2d800fb5bc65a24bb8fc24fc79449ec04e146c7e3e4725ef30e7411e4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_a_event_companion.py",
+      "sha256": "7d98b7ac5801858d7bc6b953a4f3725f8180942c85ffa55a103ed050d38bd30e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py",
+      "sha256": "944385027e388619e1d70510ac1cc9eb7cfdb7ed1c15be3ea3a78524ee9b2d28"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_os_numerical_feasibility.py",
+      "sha256": "dbb2dcb7384988cb5a0f1106c34006101ff3d9896db91300c566788e827913e4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_fixed_row_bounds.py",
+      "sha256": "c16a4d48ca6b22160cfe45ccb5e6557ecb86dd2964525b262542183a09a6b573"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json",
+      "sha256": "cec72b3d11d6368c78cabcc351463adda0409d1eff74d7c222e93085593d9468"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-7/P9-7.8-G3Acceptance.json",
+      "sha256": "573458dd245bfc8f55c2fc51e99034813a90a72cbc0e225dd3a430341d21da61"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+      "sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json",
+      "sha256": "66a60cebbe25c97abbf5e00ffc9d623c6d215558d81d7be907347203e28ee910"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json",
+      "sha256": "fe0175aec8119ff85efe8685638eeece5b70d2efe705b0a3a475e3ca8bc55f24"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventConstruction.md",
+      "sha256": "e90d2f90ebb649831e1c990a3968756df54039b9bf6c12b3accc3c1068734e57"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-CIEventIndependentReview.md",
+      "sha256": "3cae2daa9669b228d2272765a88ca0ad9ad58bbf5332e65ab602aa8f6b738fca"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py",
+      "sha256": "0ddd5b79cc2492a1d6635158f81fce308872fa240a6630074676d18d1b983136"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py",
+      "sha256": "8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_revised_realization_bounds.py",
+      "sha256": "f1210bf1aa43b9189108d934f87b933186e33c8d79bf03f5b3fdd54e782b5286"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_aos_oracle.py",
+      "sha256": "a72c76123ccd280f472f5728840e9a19f7bc8316a9f7746cb6380cfe6061eb66"
+    }
+  ],
+  "oracle_digest": "de9adc6d6ecd5d2a18983fae2367eb8aa946d995a31b5ad48debd323814b2ad9",
+  "numerical_observations": {
+    "result": "P983A_ACI_ORACLE_PASS",
+    "comparisons": 25,
+    "effect_controls": 18,
+    "minimum_effect_margin": 9.549048075342819,
+    "negative": {
+      "image_frobenius_squared_lower": "3767508278534674017792791110146301879982840753361852107333676449641717500132145373255903008432931814559380170725256690449303049973590707786413567497/3514776401986872174070733209129673327241950873673372369609965291102998109899599898686750536018664732148375711432438199315006457855854921632037902485050909261824",
+      "radius_squared": "1/1099511627776",
+      "current_regularity_lower": "6427752082341647590743234812078789522773132603061229144705843/6427752177035961102167848369364650410088811975131171341205504"
+    },
+    "record_digest": "de9adc6d6ecd5d2a18983fae2367eb8aa946d995a31b5ad48debd323814b2ad9"
+  },
+  "commands": [
+    {
+      "label": "oracle",
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/verify_p983a_aci_oracle.py",
+      "exit_code": 0,
+      "output": "{\n  \"result\": \"P983A_ACI_ORACLE_PASS\",\n  \"comparisons\": 25,\n  \"effect_controls\": 18,\n  \"minimum_effect_margin\": 9.549048075342819,\n  \"negative\": {\n    \"image_frobenius_squared_lower\": \"3767508278534674017792791110146301879982840753361852107333676449641717500132145373255903008432931814559380170725256690449303049973590707786413567497/3514776401986872174070733209129673327241950873673372369609965291102998109899599898686750536018664732148375711432438199315006457855854921632037902485050909261824\",\n    \"radius_squared\": \"1/1099511627776\",\n    \"current_regularity_lower\": \"6427752082341647590743234812078789522773132603061229144705843/6427752177035961102167848369364650410088811975131171341205504\"\n  },\n  \"record_digest\": \"de9adc6d6ecd5d2a18983fae2367eb8aa946d995a31b5ad48debd323814b2ad9\"\n}\n"
+    },
+    {
+      "label": "oracle_pressure",
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest test_p983a_aci_oracle -v",
+      "exit_code": 0,
+      "output": "test_G2_G3_and_native_numerical_independence (test_p983a_aci_oracle.ACIOracleTests.test_G2_G3_and_native_numerical_independence) ... ok\ntest_all_effect_controls_exceed_actual_full_error_and_ULP (test_p983a_aci_oracle.ACIOracleTests.test_all_effect_controls_exceed_actual_full_error_and_ULP) ... ok\ntest_corrupt_producer_outputs_are_rejected_against_saved_operands (test_p983a_aci_oracle.ACIOracleTests.test_corrupt_producer_outputs_are_rejected_against_saved_operands) ... ok\ntest_declared_domain_and_profile_are_exact_and_not_OS_or_carrier (test_p983a_aci_oracle.ACIOracleTests.test_declared_domain_and_profile_are_exact_and_not_OS_or_carrier) ... ok\ntest_domain_outliers_do_not_turn_a_failed_bound_into_admission (test_p983a_aci_oracle.ACIOracleTests.test_domain_outliers_do_not_turn_a_failed_bound_into_admission) ... ok\ntest_exact_history_left_inverse_and_resource_charge_map (test_p983a_aci_oracle.ACIOracleTests.test_exact_history_left_inverse_and_resource_charge_map) ... ok\ntest_full_interval_comparison_and_both_role_continuation (test_p983a_aci_oracle.ACIOracleTests.test_full_interval_comparison_and_both_role_continuation) ... ok\ntest_joint_residual_gate_is_stricter_than_output_comparison_allowance (test_p983a_aci_oracle.ACIOracleTests.test_joint_residual_gate_is_stricter_than_output_comparison_allowance) ... ok\ntest_native_identity_and_independent_d52_topology_match_accepted_mechanics (test_p983a_aci_oracle.ACIOracleTests.test_native_identity_and_independent_d52_topology_match_accepted_mechanics) ... ok\ntest_negative_proves_image_exit_with_regular_current_and_admitted_source (test_p983a_aci_oracle.ACIOracleTests.test_negative_proves_image_exit_with_regular_current_and_admitted_source) ... ok\ntest_point_oracle_detaches_graph_and_preserves_operand_arrays (test_p983a_aci_oracle.ACIOracleTests.test_point_oracle_detaches_graph_and_preserves_operand_arrays) ... ok\ntest_rehashed_identity_stage_history_domain_and_provenance_tampering (test_p983a_aci_oracle.ACIOracleTests.test_rehashed_identity_stage_history_domain_and_provenance_tampering) ... ok\ntest_signed_reordering_covaries_vectors_and_both_geometry_tensors (test_p983a_aci_oracle.ACIOracleTests.test_signed_reordering_covaries_vectors_and_both_geometry_tensors) ... ok\ntest_wls_cannot_replace_the_declared_fixed_row_backend (test_p983a_aci_oracle.ACIOracleTests.test_wls_cannot_replace_the_declared_fixed_row_backend) ... ok\ntest_wrong_entry_current_and_reference_geometry_cannot_supply_CI_root (test_p983a_aci_oracle.ACIOracleTests.test_wrong_entry_current_and_reference_geometry_cannot_supply_CI_root) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 40.713s\n\nOK\n",
+      "tests": 15
+    },
+    {
+      "label": "unchanged_research_companion",
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest test_p980_ci_event_companion -v",
+      "exit_code": 0,
+      "output": "test_both_candidates_roles_ten_target_steps (test_p980_ci_event_companion.CIEventCompanionTests.test_both_candidates_roles_ten_target_steps) ... ok\ntest_event_channels_and_nonuniform_history_controls (test_p980_ci_event_companion.CIEventCompanionTests.test_event_channels_and_nonuniform_history_controls) ... ok\ntest_event_input_ownership_and_scratch (test_p980_ci_event_companion.CIEventCompanionTests.test_event_input_ownership_and_scratch) ... ok\ntest_recipe_and_consumed_model_binding (test_p980_ci_event_companion.CIEventCompanionTests.test_recipe_and_consumed_model_binding) ... ok\ntest_source_stage_is_bound_through_event (test_p980_ci_event_companion.CIEventCompanionTests.test_source_stage_is_bound_through_event) ... ok\ntest_target_root_and_history_effects (test_p980_ci_event_companion.CIEventCompanionTests.test_target_root_and_history_effects) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 45.032s\n\nOK\n",
+      "tests": 6
+    },
+    {
+      "label": "side_tool",
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_iteration10_d11.py",
+      "exit_code": 0,
+      "output": "ET_C10_D11_TEST_PASS checks=12 fail_closed=true\n",
+      "checks": 12
+    }
+  ],
+  "static_checks": {
+    "ruff": "passed on new oracle and tests",
+    "whitespace": "git diff --check passed"
+  },
+  "scope": {
+    "native_runtime_executed": false,
+    "runtime_changed": false,
+    "public_support_added": false,
+    "user_accepted": false,
+    "root_claim": "unique regular local root in declared independently certified Frobenius ball; no global root or transition-stability claim",
+    "negative_claim": "certified point-image exit disproves the target self-map property; does not prove absence of a root",
+    "historical_research_domain": "infinity norm; separate from proposed native and newly certified oracle Frobenius domains",
+    "side_tool_claim": "six source-bound contract traces and 12 existing D11 adversarial/provenance checks; no exhaustive new tool audit"
+  },
+  "development_findings": [
+    "The shared six-profile research checker additionally enforces a persistent-carrier radius for CI. The new independent checker certifies the declared carrier-free Frobenius domain directly; old research tests and numerical limits remain unchanged.",
+    "A_CI native analytic residual/domain paths still assume WLS descriptors. Exact fixed-row incoming-C/W and replay dispatch remain required in A.2."
+  ],
+  "boundary_audit": {
+    "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+    "exit_code": 0,
+    "output": "PHASE9_CHECK_PASS label=unchanged_accepted_release_with_historical_proposal_subject result=P972A_RELEASE_SUBJECT_PASS release_id=grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24\nPHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton scope=current_boundary_only handoff=verified\n"
+  }
+}

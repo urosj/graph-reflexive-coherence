@@ -1178,6 +1178,42 @@ class ExactPositiveDomainTests(unittest.TestCase):
 # P9-3.2 independent reconstruction, domain and stage pressure.
 
 
+class PortOwnedNumericalGraphTests(unittest.TestCase):
+    def test_projection_roundtrip_keeps_port_identity_and_occupancy(self) -> None:
+        from pygrc.models.grc_9_v4_topology import GRC9V4PortGraph
+
+        payload: Any = {"schema_version": "grc9v4-port-graph-v1", "live_node_ids": ["", 1, "1"],
+            "edges": [{"edge_id": "e", "kind": "boundary", "tail": {"node_id": "", "port": 2},
+                "head": {"node_id": 1, "port": 7}}]}
+        owner = GRC9V4PortGraph.from_payload(payload)
+        graph = GRCV4Graph.from_port_graph(owner)
+        self.assertEqual(graph.to_payload(), payload)
+        self.assertEqual(graph.graph_digest, owner.graph_digest)
+        self.assertEqual(graph.orientation_identity, owner.orientation_identity)
+        self.assertEqual(GRCV4Graph.from_payload(graph.to_payload()), graph)
+        generic = GRCV4Graph(graph.live_node_ids, graph.oriented_edges)
+        self.assertNotEqual(generic.graph_digest, graph.graph_digest)
+        with self.assertRaisesRegex(ValueError, "differ"):
+            replace(graph, live_node_ids=graph.live_node_ids[::-1])
+        with self.assertRaisesRegex(ValueError, "differ"):
+            replace(graph, oriented_edges=())
+        payload["edges"][0]["tail"]["port"] = 3
+        other = GRCV4Graph.from_payload(payload)
+        self.assertEqual(other.oriented_edges, graph.oriented_edges)
+        self.assertNotEqual(other.graph_digest, graph.graph_digest)
+
+    def test_reference_and_stage_roundtrip_use_port_payload(self) -> None:
+        from pygrc.models.grc_9_v4_topology import GRC9V4PortEdge, GRC9V4PortEndpoint, GRC9V4PortGraph
+
+        owner = GRC9V4PortGraph(("a", "b"), (GRC9V4PortEdge("e", "tree",
+            GRC9V4PortEndpoint("a", 1), GRC9V4PortEndpoint("b", 9)),))
+        reference = stage_reference_fixture(graph=GRCV4Graph.from_port_graph(owner))
+        inputs = stage_inputs_fixture(reference)
+        restored = geometry_stage.GeometryStageInputs.from_payload(inputs.to_payload())
+        self.assertEqual(restored.geometry.reference.graph.port_graph, owner)
+        self.assertEqual(restored.to_payload(), inputs.to_payload())
+
+
 def stage_reference_fixture(
     candidate: str = "C",
     realization: str = "OS",

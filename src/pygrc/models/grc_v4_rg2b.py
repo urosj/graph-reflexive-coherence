@@ -1,9 +1,10 @@
 """Finite certified RG2b completions; no lifecycle/support authority.
 
 The scalar reference domain and graph-general successor share ordinary-step
-ownership. A fixed compact cutoff extends the lagged candidate maps;
-enclosed graph transforms approximate its unique Lipschitz section. Neither a
-CI root nor a previous geometry supplies that section. See P9-6.4ab-Review.md.
+ownership. Their compact cutoff and the separately identified native signed
+argument completions each bind their own lagged maps and Lipschitz proof.
+Enclosed graph transforms certify the selected section; neither a CI root nor
+a previous geometry supplies it. See P9-6.4ab and the P9-8.3 RG reviews.
 """
 
 from __future__ import annotations
@@ -16,12 +17,20 @@ from typing import TYPE_CHECKING, Any, cast
 from .grc_v4_candidate_a import (
     ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
+    CandidateADifferential,
     CandidateADifferentialReference,
     CandidateAWriter,
+    candidate_a_differential_from_payload,
 )
 from .grc_v4_candidate_c import CandidateCCurrent
 from .grc_v4_ci import _iexp, _Interval, _itanh, _iv, _source
-from .grc_v4_exact import ExactScalar, exact_number
+from .grc_v4_exact import (
+    ExactBackend,
+    ExactScalar,
+    current_exact_backend,
+    exact_backend,
+    exact_number,
+)
 from .grc_v4_geometry import (
     GeometryStageInputs,
     GRCV4Geometry,
@@ -48,7 +57,18 @@ def _graph_mode(inputs: GeometryStageInputs) -> bool:
         inputs.geometry.reference.profile.params_resolved.realization,
         "extension_evaluator_id",
         "",
-    ).startswith("rg2b_graph_cubic_completion_v1:")
+    ).startswith("rg2b_graph_cubic_completion_v1:") or _native_mode(inputs)
+
+
+def _native_mode(inputs: GeometryStageInputs) -> bool:
+    return getattr(
+        inputs.geometry.reference.profile.params_resolved.realization,
+        "extension_evaluator_id",
+        "",
+    ) in {
+        "grc9v4_c_rg2b_signed_argument_completion_v1",
+        "grc9v4_a_rg2b_signed_argument_completion_v1",
+    }
 
 
 class RG2bStageError(ValueError):
@@ -106,9 +126,16 @@ class RG2bDomain:
         return result
 
 
-@lru_cache(maxsize=1)
+@lru_cache(maxsize=2)
+def _ln2_for_backend(backend: ExactBackend) -> _Interval:
+    # The value is universal, but its ExactScalar representation is not.
+    # Bind construction as well as lookup to the explicit cache key.
+    with exact_backend(backend):
+        return _log_unit(exact_number(2))
+
+
 def _ln2() -> _Interval:
-    return _log_unit(exact_number(2))
+    return _ln2_for_backend(current_exact_backend())
 
 
 def _log_unit(q: ExactScalar) -> _Interval:
@@ -220,8 +247,30 @@ class _Jet:
         return _Jet(value, tuple(derivative * d for d in self.derivative))
 
 
+def _native_implementation(inputs: GeometryStageInputs) -> Any:
+    """Closed completion dispatch; no caller-provided evaluator protocol."""
+    if _native_a_mode(inputs):
+        from . import grc_9_v4_arg2b
+
+        return grc_9_v4_arg2b
+    from . import grc_9_v4_rg2b
+
+    return grc_9_v4_rg2b
+
+
+def _native_a_mode(inputs: GeometryStageInputs) -> bool:
+    return (
+        getattr(
+            inputs.geometry.reference.profile.params_resolved.realization,
+            "extension_evaluator_id",
+            "",
+        )
+        == "grc9v4_a_rg2b_signed_argument_completion_v1"
+    )
+
+
 def _declarations(
-    inputs: GeometryStageInputs, backend: CandidateADifferentialReference | None
+    inputs: GeometryStageInputs, backend: CandidateADifferential | None
 ) -> RG2bDomain:
     if type(inputs) is not GeometryStageInputs:
         raise TypeError("RG2b requires typed captured inputs")
@@ -230,7 +279,20 @@ def _declarations(
     params = profile.params_resolved.realization
     approximation, norm, containment = APPROXIMATION, ERROR_NORM, CONTAINMENT
     domain_class = RG2bDomain
-    if _graph_mode(inputs):
+    if _native_mode(inputs):
+        native = _native_implementation(inputs)
+
+        approximation, norm, containment = (
+            native.APPROXIMATION,
+            native.ERROR_NORM,
+            native.CONTAINMENT,
+        )
+        domain_class = (
+            native.NativeARG2bDomain
+            if _native_a_mode(inputs)
+            else native.NativeCRG2bDomain
+        )
+    elif _graph_mode(inputs):
         from . import grc_v4_rg2b_graph as general
 
         approximation, norm, containment = (
@@ -282,14 +344,29 @@ def _declarations(
     )
     candidate = profile.params_resolved.candidate
     if isinstance(candidate, CandidateAParams):
-        if type(backend) is not CandidateADifferentialReference:
+        from .grc_9_v4_topology import GRC9V4CandidateADifferentialReference
+
+        expected_backend = (
+            GRC9V4CandidateADifferentialReference
+            if _native_a_mode(inputs)
+            else CandidateADifferentialReference
+        )
+        if type(backend) is not expected_backend:
             raise TypeError("A_RG2b requires its differential reference")
+        assert backend is not None
         _require(
             backend.graph == graph
             and backend.identity == candidate.descriptor_backend_id
-            and backend.reference_weights == ref.edge_weights
-            and domain.outer < domain.center_W
-            and profile.params_resolved.lifecycle.history_policy_id in ADMITTED_HISTORY_POLICIES,
+            and (
+                _native_a_mode(inputs)
+                or (
+                    isinstance(backend, CandidateADifferentialReference)
+                    and backend.reference_weights == ref.edge_weights
+                    and domain.outer < domain.center_W
+                )
+            )
+            and profile.params_resolved.lifecycle.history_policy_id
+            in ADMITTED_HISTORY_POLICIES,
             "A_RG2b backend, positive mobility chart or writer mismatch",
         )
     else:
@@ -303,7 +380,9 @@ def _coordinates(
     inputs: GeometryStageInputs, state: GRCV4AuthoritativeState
 ) -> tuple[ExactScalar, ...]:
     if _graph_mode(inputs):
-        return tuple(map(exact_number, state.C + (() if state.W_A is None else state.W_A)))
+        return tuple(
+            map(exact_number, state.C + (() if state.W_A is None else state.W_A))
+        )
     edge = inputs.geometry.reference.graph.oriented_edges[0]
     graph = inputs.geometry.reference.graph
     values = (
@@ -349,7 +428,10 @@ def _raw(
             * (ct - ch)
         )
         target = (
-            -(exact_number(p.alpha) * (ct + ch) + exact_number(p.gamma) * baseline * baseline)
+            -(
+                exact_number(p.alpha) * (ct + ch)
+                + exact_number(p.gamma) * baseline * baseline
+            )
             / 2
         ).exp()
         _require(
@@ -395,7 +477,11 @@ def _raw(
     )
     if isinstance(p, CandidateAParams):
         writer_exponent = (
-            -(exact_number(p.alpha) * (ct + ch) + exact_number(p.gamma) * current * current) / 2
+            -(
+                exact_number(p.alpha) * (ct + ch)
+                + exact_number(p.gamma) * current * current
+            )
+            / 2
         )
         _require(
             writer_exponent.exp().value.lo > exact_number(p.W_floor),
@@ -409,7 +495,7 @@ def _raw(
 @dataclass(frozen=True, slots=True)
 class RG2bCertificate:
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     domain: RG2bDomain = field(init=False)
     bounds: FrozenJSONMap = field(init=False)
     selector_rank: int = field(init=False)
@@ -417,11 +503,23 @@ class RG2bCertificate:
 
     def __post_init__(self) -> None:
         domain = _declarations(self.inputs, self.differential_reference)
+        if _native_mode(self.inputs):
+            for name, value in (
+                _native_implementation(self.inputs)
+                .certificate(self.inputs, self.differential_reference, domain)
+                .items()
+            ):
+                object.__setattr__(self, name, value)
+            return
         if _graph_mode(self.inputs):
             from .grc_v4_rg2b_graph import RG2bGraphDomain, certificate
 
             for name, value in certificate(
-                self.inputs, self.differential_reference, cast(RG2bGraphDomain, domain)
+                self.inputs,
+                cast(
+                    CandidateADifferentialReference | None, self.differential_reference
+                ),
+                cast(RG2bGraphDomain, domain),
             ).items():
                 object.__setattr__(self, name, value)
             return
@@ -444,7 +542,7 @@ class RG2bCertificate:
         if is_a:
             CandidateACurrent(
                 self.inputs,
-                cast(CandidateADifferentialReference, self.differential_reference),
+                cast(CandidateADifferential, self.differential_reference),
             )
         else:
             CandidateCCurrent(self.inputs)
@@ -557,7 +655,7 @@ def _extended(
 @dataclass(frozen=True, slots=True)
 class CandidateRG2bSection:
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     certificate: RG2bCertificate = field(init=False)
     geometry: GRCV4Geometry = field(init=False)
     enclosure: tuple[str, str] = field(init=False)
@@ -567,6 +665,12 @@ class CandidateRG2bSection:
 
     def __post_init__(self) -> None:
         cert = RG2bCertificate(self.inputs, self.differential_reference)
+        if _native_mode(self.inputs):
+            for name, value in dict(
+                certificate=cert, **_native_implementation(self.inputs).section(cert)
+            ).items():
+                object.__setattr__(self, name, value)
+            return
         if _graph_mode(self.inputs):
             from .grc_v4_rg2b_graph import section
 
@@ -655,7 +759,8 @@ class CandidateRG2bSection:
             value = _Interval(value.lo - tail, value.hi + tail)
             rounded = float((value.lo + value.hi) / 2)
             error = max(
-                abs(exact_number(rounded) - value.lo), abs(exact_number(rounded) - value.hi)
+                abs(exact_number(rounded) - value.lo),
+                abs(exact_number(rounded) - value.hi),
             )
             if error <= tolerance:
                 chosen = (level, value, rounded, error)
@@ -715,9 +820,7 @@ class CandidateRG2bSection:
             inputs,
             None
             if data["differential_reference"] is None
-            else CandidateADifferentialReference.from_payload(
-                data["differential_reference"]
-            ),
+            else candidate_a_differential_from_payload(data["differential_reference"]),
         )
 
     def classical_jacobian(self) -> None:
@@ -734,7 +837,7 @@ class ProvisionalCandidateRG2bStep:
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     section: CandidateRG2bSection = field(init=False)
     reset_section: CandidateRG2bSection = field(init=False)
     restart: CandidateRG2bSection = field(init=False)
@@ -749,9 +852,9 @@ class ProvisionalCandidateRG2bStep:
 
     def __post_init__(self) -> None:
         from .grc_v4_candidate_a import CandidateAStageError
-        from .grc_v4_candidate_c import CandidateCStageError
         from .grc_v4_ci import CIStageError
         from .grc_v4_geometry import GeometryDomainError, NonfiniteGeometryError
+        from .grc_v4_numerics import MatrixError as CandidateCStageError
         from .grc_v4_step import (
             CurrentSelection,
             ProvisionalResourceStep,
@@ -788,7 +891,7 @@ class ProvisionalCandidateRG2bStep:
             return (
                 CandidateACurrent(
                     selected,
-                    cast(CandidateADifferentialReference, self.differential_reference),
+                    cast(CandidateADifferential, self.differential_reference),
                 )
                 if isinstance(ref.profile.params_resolved.candidate, CandidateAParams)
                 else CandidateCCurrent(selected)
@@ -797,6 +900,9 @@ class ProvisionalCandidateRG2bStep:
         stage: OperationStage = "pre_read_reconstruction"
         try:
             for state in (before.current, before.reset):
+                if _native_a_mode(before):
+                    _native_implementation(before).admit(state, ordinary=True)
+                    continue
                 coords = _coordinates(before, state)
                 centers = _centers(before, d)
                 _require(
@@ -857,7 +963,16 @@ class ProvisionalCandidateRG2bStep:
                 restart = CandidateRG2bSection(following, self.differential_reference)
                 restart_point = native(restart)
                 kh = exact_number(ref.profile.params_resolved.geometry.kappa_H)
-                if _graph_mode(before):
+                if _native_mode(before):
+                    (
+                        native_current_error,
+                        native_state_error,
+                        native_geometry_error,
+                        current_norm,
+                    ) = _native_implementation(before).native_bridge(
+                        section, point, following, generated
+                    )
+                elif _graph_mode(before):
                     from .grc_v4_rg2b_graph import native_bridge
 
                     (
@@ -916,15 +1031,23 @@ class ProvisionalCandidateRG2bStep:
                 )
                 from .grc_v4_ci import _norm
 
-                residual = _norm(
-                    exact_number(a) - exact_number(b)
+                differences = tuple(
+                    tuple(
+                        exact_number(a) - exact_number(b)
+                        for a, b in zip(row, old, strict=True)
+                    )
                     for row, old in zip(
                         restart.geometry.one_form_hodge.matrix,
                         generated.one_form_hodge.matrix,
                         strict=True,
                     )
-                    for a, b in zip(row, old, strict=True)
                 )
+                if _native_mode(before):
+                    from .grc_9_v4_rg2b import infinity
+
+                    residual = infinity(differences)
+                else:
+                    residual = _norm(v for row in differences for v in row)
                 _require(
                     residual <= bound,
                     "RG2b poststate invariance failed its independent error bound",
@@ -1011,7 +1134,5 @@ class ProvisionalCandidateRG2bStep:
             inputs,
             None
             if data["differential_reference"] is None
-            else CandidateADifferentialReference.from_payload(
-                data["differential_reference"]
-            ),
+            else candidate_a_differential_from_payload(data["differential_reference"]),
         )

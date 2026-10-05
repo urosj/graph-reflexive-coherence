@@ -2536,6 +2536,70 @@ before beginning the separately scoped P9-8.3C-OS integration.
 
 ##### Profile integration after shared mechanics
 
+2026-10-03: accepted P9-8.2 is committed at `e7a6fda` and merged at
+`79e0e8f`. The user requests P9-8.3C-OS on the new branch
+`work/p9-8-3-profile-integration`. Its implementation includes the required
+port-owned numerical projection, C_OS resource/reference and combined-identity
+reconstruction, and a bounded event transaction with failure/replay checks.
+Open the reviewed expansion/lifecycle source/test pairs and the existing generic
+geometry pair solely for port-owner projection support. Ordinary generic graph
+payloads and identities remain unchanged. The native companion has its own
+exact profile and binary64 resource tuple; the rational P9-8.0 companion's
+equal shares and distinct per-role charge targets are not copied into one
+native current/reset owner without admission. Later profile and Tranche 9
+conformance/capability duties retain their separate scope.
+
+The three checkpoints are P9-8.3C-OS.1 port-owned numerical projection and native
+identity, `.2` pure current/reset resource and complete C reference reconstruction,
+and `.3` event publication, independent numerical continuation, rollback and replay.
+The bounded adapter requires unit vertex measures and zero structural K4 base;
+a nonzero structural base needs a separately admitted transport policy. It accepts
+only the current specialization identity and C_OS reference-rebuild template,
+not a caller-supplied target graph/profile or history reinterpretation.
+The internal event checkpoint starts from an admitted postbeat numerical seed;
+it does not authenticate an earlier ordinary-operation chronology. All events
+after that seed are recomputed and their complete result/receipt payloads checked
+on replay. Public ordinary-step/reset/save/load/compatibility wiring remains
+Tranche 9 work. No new native G2/profile advertisement is inferred from this
+bounded integration or its positive local fixture.
+All three implementation/own-review checkpoints now pass together: 267 passing
+regression methods (one opt-in installed-package skip), seven authorization
+checks, three preserved P9-8.0 cutoff probes and twelve side-tool provenance
+checks. Additional paper/side-tool pressure exposed and corrected missing
+full OS current/reset readmission. Actual split/conditioning/nonfinite/charge
+failures reject atomically; weighted/oriented independent equation comparisons
+pass. Simplex-vertex event admission does not establish positive-resource
+continuation or child completion. The exact native fixture,
+Python/FLINT parity, independent numerical comparisons and subject hashes are
+in the [C_OS review](./Phase-9-GRCV4-Handoff.md#p9-83c-os-native-event-integration).
+The user explicitly accepts this bounded C_OS checkpoint, including the
+pressure-review correction and recorded continuation limits, on 2026-10-03
+("this is much better, great. accept and commit"). P9-8.3C-OS is complete;
+other profile children retain their separate acceptance requirements.
+
+After accepted C_OS commit `eeb82e9`, the user requests P9-8.3C-PC on the same
+branch. Execute three connected checkpoints together: (1) bind/archive the
+actual current/reset carrier pair, apply the frozen whole-carrier zero-reset
+policy with explicit loss and rebuild C references; (2) integrate old-Z PC
+admission, native receipts and atomic archive/state publication plus replay;
+(3) independently verify source writing, both-role continuation, delayed carrier
+consumption and adversarial domain/history failures. Reuse shared C resource,
+reference and transaction code with separate closed OS/PC state/checkpoint
+types. Preserve accepted C_OS checkpoint bytes. Open only the existing four
+expansion/lifecycle source/test paths under `P9-8.3C-PC`; generic PC kernels,
+other native profiles and the public model facade retain their own scope.
+The native companion has its own complete parameter identities and does not
+inherit the P9-8.0 research radius or exact-real continuation theorem by label.
+All three checkpoints now pass implementation and own review: the regression
+batch runs 329 methods with one opt-in packaging skip, and independent equations
+cover the actual source writer and ten target steps for each role. Full target
+PC admission also rejects a real whole-chart failure with regular point currents.
+The user accepts this bounded C_PC checkpoint on 2026-10-03
+("great, then commit changes"), after confirmation of the paper, side-tool
+and adversarial numerical review and its recorded limits. P9-8.3C-PC is
+complete; other profile children retain their own acceptance requirements.
+See the [C_PC review](./Phase-9-GRCV4-Handoff.md#p9-83c-pc-whole-carrier-event-integration).
+
 After the all-ten feasibility review, use one shared mechanical implementation,
 with explicit candidate/realization adapters and separately reviewed conformance.
 The intended implementation progression is:
@@ -2546,6 +2610,42 @@ The intended implementation progression is:
 | Independent next branches | A_OS; C_PC | A W-history/initializer oracle; nonnull whole-carrier reset/loss. Neither branch blocks the other. |
 | Remaining non-RG products | C_CI, A_CI, A_PC, C_CI_PC, A_CI_PC | Joint-root/domain and persistent-history combinations, each with its own target, lifecycle and numerical evidence. |
 | Section-based products | C_RG2b, A_RG2b | Exact target completion/section domains and reconstruction; no inherited CI solve or unproved C1 authority. |
+
+The 2026-10-04 C_RG2b continuation has content-specific checkpoints: a closed
+signed-completion proof/evaluator, complete finite-chain and native arithmetic
+certification, two-role graph-specific event reconstruction, then independent
+scientific/edge-case review and separate acceptance. The new completion is
+not the original compact-support paper construction: it implements the bounded
+argument-retraction construction explicitly accepted under P9-8.0 R6 and proves
+its containment/inversion/contraction hypotheses anew. The old completion and
+its exact generic G2 identity remain unchanged; no C1 authority is added.
+The bounded C_RG2b runtime and closure review is explicitly user-accepted on
+2026-10-04 ("accept and commit"); A_RG2b has its own acceptance below.
+
+The following A_RG2b A.1 preparation has five scope-specific checkpoints:
+signed C/scaled-log-W proof and native identity binding; actual source stages
+and exact W/reference/resource transfer; complete four-level chain and finite
+continuation certificates; independent equation/effect/corner/claim pressure;
+and the closed A.2 implementation handoff. Its completion agrees with the
+accepted argument-only P9-8.0 R6 construction and includes the W writer inside
+the inverse base map. The A.1 oracle is explicitly user-accepted on 2026-10-04
+("accept and commit"), separately from A.2 execution and closure. Its four
+reviewed subjects remain unchanged; that A.1 checkpoint added no native runtime
+or public support.
+See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md).
+
+The requested A_RG2b A.2 continuation now implements that unchanged oracle's
+scope in four content-specific checkpoints: the complete signed C/Y proof and
+certified inverse chain; closed fixed-row ordinary-step/replay and native norm
+bridges; exact two-role W/reference event publication; and independent
+scientific/edge-case/effect/rollback validation. Production bounds use
+ExactScalar, W arithmetic errors are certified in scaled-log coordinates, and
+current budgets retain the common Euclidean norm. The bounded runtime and
+closure review is separately user-accepted on 2026-10-04 ("accept and commit"),
+closing the A_RG2b profile-register row without extending its reviewed scope.
+The graph-size/configuration closeout is completed below with a separately
+identified larger-graph preparation package. See the
+[A_RG2b runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md).
 
 Instantiate P9-8.3A.1/.2 for each exact A profile, beginning with A_OS;
 retain P9-8.3C-OS and C-PC and add corresponding C_CI/C_CI_PC/C_RG2b children.
@@ -2566,6 +2666,24 @@ native solve. P9-8.1c also requires an admitted candidate-detection fixture.
 after C_PC's generic and specialization entry gates. `P9-8.3A` is an aggregate
 of two independently reviewed children; both must be accepted for the same
 declared exact A scope before its closure:
+
+On 2026-10-03, after accepted C_PC commit `4f82313`, the user requests A.1 and
+A.2 and permits separate checkpoints. Start with A_OS and separate A.1 to pin
+its independent expectations before adapting the generic evaluator, whose
+then-current closed descriptor was host-frame WLS. The required fixed-port-row
+descriptor must consume incoming W during A reads/writing and preserve the
+existing WLS identity. A.1 pinned complete native identities, the exact
+old-edge/positive-new-edge history policy, 25 point/interval comparisons,
+both-role continuation and a certified target-split negative; the user explicitly
+accepts A.1 on 2026-10-03 ("ok, accept and commit, then do A.2"). A.2 now
+implements actual runtime matching, role readmission, receipts,
+rollback and replay; the user separately accepts its bounded implementation
+and pressure review on 2026-10-03 ("awesome. accept, commit"). Both children
+are reconciled for A_OS; the other A profiles retain their own open rows. The three execution checkpoints cover the closed incoming-W backend,
+the atomic two-role event owner, and independent numerical/adversarial validation.
+See the [A.2 review](./phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-RuntimeReview.md).
+The [oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md)
+records the fixture's separate G2/G3 prerequisite, scope and implementation gap.
 
 - `P9-8.3A.1`: Own the A-history/initialization binding and independent oracle
   for each exact A scope. Prepare and review bounded research inputs and
@@ -2596,6 +2714,93 @@ process. Do not invent a GRC9-specific workaround or reopen unrelated accepted
 claims. A missing specialization fixture alone does not reopen generic G2.
 An A template identity is not expansion evidence. After the all-ten feasibility
 review, A and C_PC runtime dependencies do not hold the C_OS implementation path.
+
+#### End-of-P9-8.3 graph-size and configuration guide
+
+User-requested on 2026-10-03, after committing the A_CI+PC A.1 oracle at
+`1711923`. Complete this documentation task after the P9-8.3 profile work
+and before starting P9-8.4. Publish a repository guide linked from the checklist
+and handoff, checked against the implementation and evidence available then.
+
+The guide must:
+
+- Distinguish required scientific equations/stage rules, configurable profile
+  parameters, immutable profile identities and oracle records, and evolving
+  C/W/Z state. Explain R as an admitted carrier bound, kappa_H as a dynamics
+  coefficient, and base-state/root bounds as declared domains. Explain new
+  configuration versus in-run migration; never silently change a requested
+  coupling or clip state to make admission pass.
+- Record actual source/target vertex and edge counts for each realization's
+  numerical evidence, separately from mechanical allocator coverage, hard
+  structural constraints and measured performance. A tested size does not
+  certify every graph of that size; an absent hard size cap is not an
+  arbitrary-size or performance guarantee.
+- Explain the practical path from a supplied graph/state and desired profile
+  to rebuilt references, automated graph-dependent certificates and execution.
+  Use 100 vertices/400 edges as an illustrative configuration: the total port
+  count permits it, but every vertex still needs degree at most nine and unique
+  port assignments. Do not present this example as tested support unless it
+  is actually executed and reviewed. Keep generic GRCV4 and GRC9V4 distinct.
+- Separate per-configuration admission from additional development validation
+  and advertised support acceptance. Identify current facade/configuration
+  gaps and assign follow-up work to the applicable owners; human approval of
+  each simulation is not the intended usage workflow. Explain that failure
+  of a sufficient certificate may reflect a conservative bound and does not
+  itself prove mathematical invalidity.
+
+The 2026-10-04 user request extends this item to concrete preparation of
+"different from what is already accepted" **for all ten realizations**. The
+[guide](./phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md) contains the
+evidence-linked coverage table and practical workflow. The
+[all-ten request](./phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json)
+and ten linked packages bind a common 100/400 cyclic source and 107/407 D52
+target, separately resolved family profiles, specialization, current/reset
+histories, native identities and actual pure reference/history transfers.
+Every A example has nonuniform role-specific W; every PC example has nonzero
+source Z, whole-target reset and an explicit larger chart. CI+PC includes its
+norm/domain and composition-gain requirements. Every changed coupling, radius
+or cutoff is explicit before admission and produces a new configuration identity.
+
+Completion includes pressure against malformed/stale identities, omitted
+families, illegal port occupancy, whole-vector/carrier norms, composite geometry
+coverage, incorrect W lineage and rehashed false-execution claims. Production
+numerical reports record passes, exact rejections and time-budget incompletion
+separately. RG2b supplies actual negative examples against its native tree17
+completion, not a silently widened proof. See
+[validation](./phase-9-grcv4/tranche-8/P9-8.3-CloseoutValidation.json).
+
+The guide assigns LG-C-SELECTOR, LG-OS-SPLIT, LG-CI-ROOT, LG-PC-CHART,
+LG-RG-COMPLETION, LG-A-ORACLE, LG-VALIDATION, LG-FACADE and LG-PERFORMANCE
+obligations to their existing owners. They start from complete examples for
+every family; none remains an unselected declaration. These are development
+obligations and automated configuration checks, not per-simulation manual gates.
+
+Actual larger-graph event/continuation and independent scientific validation
+remain separately labeled P9-8.4–8.6 work, preserving frozen-vector evidence.
+A numerical certificate does not close the full lifecycle, and a time limit
+proves neither admission nor mathematical rejection. New A scope retains the
+independent oracle-before-runtime workflow; successful cyclic native RG2b needs
+a separately proved completion. P9-8.6, public lifecycle and the performance/cache
+review remain open; no accepted support claim is widened by this preparation.
+
+#### P9-8.4–8.6 runtime conformance
+
+The 2026-10-05 repository UX continuation adds a
+[configuration CLI and declarative inventory](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
+before this runtime work: 42 retained small/large native and generic examples,
+graph/parameter/evidence filters, inspection, comparison, portable selections
+and drift verification. Every native family has both a small and a large entry.
+Browsing reads only retained files and neither invokes numerical owners nor
+alters the supported-profile registry. Explicit maintenance retains the three
+small C state pairs absent from prior JSON. Selection integrity is distinct from
+scientific admission, acceptance and execution; the future public lifecycle
+owner retains consuming selections as runnable inputs. Reproduction commands
+expose the current owners and identify possible declaration changes on rerun.
+Pressure coverage and source bindings are retained in
+[catalog validation](./phase-9-grcv4/tranche-8/P9-8.3-CatalogValidation.json).
+The user explicitly accepts the repository UX and pending all-ten preparation
+closeout on 2026-10-05 ("ok, accept and commit"). This acceptance preserves
+the separately recorded larger-graph admission/runtime obligations.
 
 Execute runtime counterparts of every applicable accepted D30, D31, D45,
 and D52 vector, including the exact chirality/phase cases. D37 and D44 are

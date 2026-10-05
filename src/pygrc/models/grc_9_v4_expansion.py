@@ -11,9 +11,10 @@ from __future__ import annotations
 from collections import deque
 from collections.abc import Mapping
 from dataclasses import dataclass, field, replace
-from typing import ClassVar, Literal
+from typing import Any, ClassVar, Literal
 
 from .grc_9_v4_topology import (
+    GRC9V4CandidateADifferentialReference,
     GRC9V4PortEdge,
     GRC9V4PortEndpoint,
     GRC9V4PortGraph,
@@ -27,9 +28,21 @@ from .grc_v4_codec import (
     validate_payload,
 )
 from .grc_v4_exact import exact_number
-from .grc_v4_geometry import NodeId, _node_id
-from .grc_v4_profile import _Record
-from .grc_v4_state import _number
+from .grc_v4_geometry import (
+    GRCV4Graph,
+    GRCV4ReferenceGeometry,
+    NodeId,
+    PhysicalFlux,
+    _computed,
+    _node_id,
+)
+from .grc_v4_profile import (
+    GRCV4ProfileTemplate,
+    _Record,
+    resolve_profile,
+    resolve_profile_template,
+)
+from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number
 
 
 class GRC9V4ExpansionError(ValueError):
@@ -384,3 +397,733 @@ class GRC9V4ExpansionPlan:
         return {
             edge_id: (self.policy.bond_seed, 0.0) for edge_id in self.internal_edge_ids
         }
+
+
+def _c_profile_template(
+    reference: GRCV4ReferenceGeometry,
+    family: Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"],
+) -> GRCV4ProfileTemplate:
+    """The single C reference rebuild policy, bound to the full source profile."""
+    return resolve_profile_template(
+        {
+            "schema_version": "grcv4-profile-template-v1",
+            "source_complete_profile_id": reference.profile.complete_profile_id,
+            "profile_family_id": family,
+            "topology_dependent_map_policy_id": "preserve_old_stable_edges_seed_new_internal_edges_v1",
+            "geometry_reference_policy_id": "rebuild_reference_hodge_from_target_W_C_tr_v1",
+        },
+        source=reference.profile,
+    )
+
+
+def cos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_OS")
+
+
+def cpc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_PC")
+
+
+def cci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_CI")
+
+
+def crg2b_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_RG2b")
+
+
+def ccipc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _c_profile_template(reference, "C_CI_PC")
+
+
+def carrier_content_payload(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    """Whole carrier, current then reset, in the bound source/target edge order.
+
+    This content digest is the generic V4 convention. Graph, profile, role
+    dimensions and archive ordering are independently bound by the event owner.
+    """
+    if any(
+        type(state) is not GRCV4AuthoritativeState
+        or state.W_A is not None
+        or state.Z_4 is None
+        for state in (current, reset)
+    ):
+        raise ValueError("persistent C requires both carrier roles and no A history")
+    assert current.Z_4 is not None and reset.Z_4 is not None
+    if len(current.Z_4) != len(reset.Z_4):
+        raise ValueError("carrier role dimensions disagree")
+    return validate_payload(
+        "history_content_identity_payload",
+        {
+            "schema_version": "grcv4-history-content-identity-v1",
+            "subject": "carrier",
+            "content": list(current.Z_4 + reset.Z_4),
+        },
+    )
+
+
+def cpc_history_policy(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    """Frozen C-PC vector policy, bound to the actual complete role pair."""
+    content = carrier_content_payload(current, reset)
+    candidate = {
+        "schema_version": "grcv4-history-channel-policy-v1",
+        "subject": "candidate",
+        "policy_id": "candidate_c_rederive_no_history_v1",
+        "disposition": "rederived",
+        "source_history_digest": None,
+        "target_initializer_id": None,
+        "information_loss": "none",
+    }
+    carrier = {
+        "schema_version": "grcv4-history-channel-policy-v1",
+        "subject": "carrier",
+        "policy_id": "whole_carrier_reset_with_loss_receipt_v1",
+        "disposition": "whole_carrier_reset",
+        "source_history_digest": payload_identity(
+            "history_content_identity_payload", content
+        ),
+        "target_initializer_id": "zero_carrier_v1",
+        "information_loss": "carrier_history_loss",
+    }
+    return validate_payload(
+        "expansion_history_policy",
+        {
+            "schema_version": "grc9v4-expansion-history-policy-v2",
+            "candidate": candidate,
+            "carrier": carrier,
+            **{
+                subject + "_history_policy_digest": payload_identity(
+                    "history_channel_policy_identity_payload",
+                    {
+                        "schema_version": "grcv4-history-channel-policy-identity-v1",
+                        "policy": policy,
+                    },
+                )
+                for subject, policy in (("candidate", candidate), ("carrier", carrier))
+            },
+        },
+    )
+
+
+def _resource_transform(plan: GRC9V4ExpansionPlan) -> dict[str, JSONValue]:
+    source, target, request = (
+        plan.source_graph,
+        plan.target_graph,
+        plan.request,
+    )
+    satellites: dict[NodeId, float] = {
+        plan.event_id + f"/satellite/{b}": request.resource_distribution[b - 1]
+        for b in (1, 2, 3)
+    }
+    coefficients = [
+        satellites.get(node, 0.0)
+        if old == request.source_node_id
+        else float(node == old)
+        for node in target.live_node_ids
+        for old in source.live_node_ids
+    ]
+    return validate_payload(
+        "resource_event_transform",
+        {
+            "schema_version": "grcv4-resource-event-transform-v1",
+            "policy_id": "grc9v4_source_to_primary_satellite_affine_v1",
+            "source_vertex_ids": list(source.live_node_ids),
+            "target_vertex_ids": list(target.live_node_ids),
+            "row_major_coefficients": coefficients,
+            "target_increment": [0.0] * len(target.live_node_ids),
+        },
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class _GRC9V4CExpansion:
+    """Shared exact resource and complete-reference construction for C events."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]]
+    plan: GRC9V4ExpansionPlan
+    source: GRCV4ReferenceGeometry
+    target: GRCV4ReferenceGeometry = field(init=False)
+
+    def __post_init__(self) -> None:
+        if (
+            type(self.plan) is not GRC9V4ExpansionPlan
+            or type(self.source) is not GRCV4ReferenceGeometry
+        ):
+            raise TypeError("C expansion requires a plan and reference geometry")
+        plan, source = replace(self.plan), replace(self.source)
+        if source.graph.port_graph != plan.source_graph:
+            raise ValueError("reference does not derive from the source port owner")
+        if source.profile.identity_payload.profile_family_id != self.FAMILY:
+            raise ValueError(f"{self.FAMILY} expansion requires {self.FAMILY}")
+        if any(x != 0 for row in source.K4_base for x in row):
+            raise ValueError("C expansion currently requires zero structural K4 base")
+        template = _c_profile_template(source, self.FAMILY)
+        if template.profile_template_id != plan.request.target_profile_template_id:
+            raise ValueError("target profile template mismatch")
+        self._admit_history(plan)
+        graph = GRCV4Graph.from_port_graph(plan.target_graph)
+        weights = {
+            **source.edge_weights.to_dict(),
+            **{edge: seed[0] for edge, seed in plan.internal_reference_seeds().items()},
+        }
+        size = len(graph.live_edge_ids)
+        base = tuple((0.0,) * size for _ in range(size))
+        params: Any = source.profile.params_resolved.to_payload()
+        identity: Any = source.profile.identity_payload.to_payload()
+        params["candidate"].update(
+            W_C_tr=weights,
+            W_C_tr_content_digest=payload_identity(
+                "wctr_identity_payload",
+                {"schema_version": "grcv4-wctr-identity-v1", "W_C_tr": weights},
+            ),
+        )
+        params["geometry"].update(
+            K4_base_digest=payload_identity(
+                "k4_identity_payload",
+                {
+                    "schema_version": "grcv4-k4-identity-v1",
+                    "K4_base": [list(row) for row in base],
+                },
+            ),
+            reference_hodge_digest=payload_identity(
+                "reference_hodge_identity_payload",
+                {
+                    "schema_version": "grcv4-reference-hodge-identity-v1",
+                    "edge_weights": weights,
+                },
+            ),
+        )
+        identity["params_hash"] = payload_identity("resolved_params", params)
+        target = GRCV4ReferenceGeometry(
+            graph,
+            resolve_profile(params, identity),
+            source.context,
+            base,
+            FrozenJSONMap(weights),
+        )
+        object.__setattr__(self, "plan", plan)
+        object.__setattr__(self, "source", source)
+        object.__setattr__(self, "target", target)
+
+    def _admit_history(self, plan: GRC9V4ExpansionPlan) -> None:
+        raise NotImplementedError
+
+    def _carrier_target(
+        self, state: GRCV4AuthoritativeState
+    ) -> tuple[float, ...] | None:
+        raise NotImplementedError
+
+    def resource_transform_payload(self) -> dict[str, JSONValue]:
+        return _resource_transform(self.plan)
+
+    def transfer(self, state: GRCV4AuthoritativeState) -> GRCV4AuthoritativeState:
+        if type(state) is not GRCV4AuthoritativeState or state.W_A is not None:
+            raise ValueError(
+                f"{self.FAMILY} authority has neither W_A nor Z_4"
+                if self.FAMILY in {"C_OS", "C_CI"}
+                else "persistent C authority requires typed resources and no W_A"
+            )
+        carrier = self._carrier_target(state)
+        width = len(self.plan.source_graph.live_node_ids)
+        if len(state.C) != width:
+            raise ValueError("source resource coordinates mismatch")
+        transform: Any = self.resource_transform_payload()
+        coefficients = transform["row_major_coefficients"]
+        values = tuple(
+            _computed(
+                float(
+                    sum(
+                        (
+                            exact_number(a) * exact_number(c)
+                            for a, c in zip(
+                                coefficients[i : i + width], state.C, strict=True
+                            )
+                        ),
+                        exact_number(),
+                    )
+                )
+            )
+            for i in range(0, len(coefficients), width)
+        )
+        return GRCV4AuthoritativeState(values, None, carrier)
+
+
+@dataclass(frozen=True, slots=True)
+class _GRC9V4NonpersistentCExpansion(_GRC9V4CExpansion):
+    """Pure nonpersistent C transfer, with absent candidate and carrier history.
+
+    Both roles use the same exact affine map, rounded once per output.
+    Numerical admission and publication remain with the transaction owner.
+    """
+
+    def _admit_history(self, plan: GRC9V4ExpansionPlan) -> None:
+        for subject, policy_id, disposition in (
+            ("candidate", "candidate_c_rederive_no_history_v1", "rederived"),
+            ("carrier", "carrier_not_applicable_v1", "not_applicable"),
+        ):
+            expected = {
+                "schema_version": "grcv4-history-channel-policy-v1",
+                "subject": subject,
+                "policy_id": policy_id,
+                "disposition": disposition,
+                "source_history_digest": None,
+                "target_initializer_id": None,
+                "information_loss": "none",
+            }
+            if canonical_json_bytes(
+                plan.request.history_policy[subject]
+            ) != canonical_json_bytes(expected):
+                raise ValueError(
+                    f"{self.FAMILY} requires rederived C and absent carrier history"
+                )
+
+    def _carrier_target(self, state: GRCV4AuthoritativeState) -> None:
+        if state.Z_4 is not None:
+            raise ValueError(f"{self.FAMILY} authority has neither W_A nor Z_4")
+
+    def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
+        """Replay evidence only: preserve signed stable IDs, zero new edges."""
+        if type(current) is not PhysicalFlux or current.graph != self.source.graph:
+            raise ValueError("reference current must belong to the source graph")
+        old = dict(zip(self.source.graph.live_edge_ids, current.values, strict=True))
+        return PhysicalFlux(
+            self.target.graph,
+            tuple(old.get(e, 0.0) for e in self.target.graph.live_edge_ids),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4COSExpansion(_GRC9V4NonpersistentCExpansion):
+    """C_OS reference reconstruction with absent candidate/carrier history."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_OS"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CCIExpansion(_GRC9V4NonpersistentCExpansion):
+    """C_CI reference reconstruction; target joint-root admission is separate."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_CI"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CRG2bExpansion(_GRC9V4NonpersistentCExpansion):
+    """No-history C map; target completion/section reconstruction is separate."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_RG2b"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CPCExpansion(_GRC9V4CExpansion):
+    """Whole-source archive / whole-target zero reset, never partial transport.
+
+    The complete actual current/reset carrier pair binds policy identity before
+    target construction. Carrier geometry, ball and numerical readmission remain
+    the owner's responsibility; pure construction alone is not admission.
+    """
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_PC"
+    source_current: GRCV4AuthoritativeState
+    source_reset: GRCV4AuthoritativeState
+
+    def _admit_history(self, plan: GRC9V4ExpansionPlan) -> None:
+        expected = cpc_history_policy(self.source_current, self.source_reset)
+        for state in (self.source_current, self.source_reset):
+            assert state.Z_4 is not None
+            if len(state.Z_4) != len(plan.source_graph.edges) ** 2 or len(
+                state.C
+            ) != len(plan.source_graph.live_node_ids):
+                raise ValueError("source carrier/resource coordinates mismatch")
+        if canonical_json_bytes(plan.request.history_policy) != canonical_json_bytes(
+            expected
+        ):
+            raise ValueError(
+                "persistent C requires the actual whole carrier pair and explicit reset/loss policy"
+            )
+
+    def _carrier_target(self, state: GRCV4AuthoritativeState) -> tuple[float, ...]:
+        if state not in (self.source_current, self.source_reset):
+            raise ValueError(
+                "persistent C transfer requires one of its bound source roles"
+            )
+        return (0.0,) * len(self.plan.target_graph.edges) ** 2
+
+    def carrier_archive_payload(self) -> dict[str, Any]:
+        content = carrier_content_payload(self.source_current, self.source_reset)
+        return {
+            "descriptor_version": "grc9v4-carrier-archive-v1",
+            "event_id": self.plan.event_id,
+            "source_state_digest": self.plan.source_state_digest,
+            "source_graph_digest": self.plan.source_graph.graph_digest,
+            "source_edge_ids": [edge.edge_id for edge in self.plan.source_graph.edges],
+            "history_content": content,
+            "history_digest": payload_identity(
+                "history_content_identity_payload", content
+            ),
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CCIPCExpansion(GRC9V4CPCExpansion):
+    """Whole-carrier C_CI+PC maps; both target joint roots require readmission."""
+
+    FAMILY: ClassVar[Literal["C_OS", "C_PC", "C_CI", "C_CI_PC", "C_RG2b"]] = "C_CI_PC"
+
+    def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
+        """Fresh source root evidence, signed old IDs and zero new entries."""
+        if type(current) is not PhysicalFlux or current.graph != self.source.graph:
+            raise ValueError("reference current must belong to the source graph")
+        old = dict(zip(self.source.graph.live_edge_ids, current.values, strict=True))
+        return PhysicalFlux(
+            self.target.graph,
+            tuple(old.get(e, 0.0) for e in self.target.graph.live_edge_ids),
+        )
+
+
+def candidate_content_payload(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    """A_OS history, current then reset, in the bound graph's live edge order."""
+    if any(
+        type(s) is not GRCV4AuthoritativeState or s.W_A is None or s.Z_4 is not None
+        for s in (current, reset)
+    ):
+        raise ValueError("A_OS requires both W roles and absent carrier")
+    assert current.W_A is not None and reset.W_A is not None
+    if len(current.W_A) != len(reset.W_A):
+        raise ValueError("candidate history role dimensions disagree")
+    return validate_payload(
+        "history_content_identity_payload",
+        {
+            "schema_version": "grcv4-history-content-identity-v1",
+            "subject": "candidate",
+            "content": list(current.W_A + reset.W_A),
+        },
+    )
+
+
+def aos_history_policy(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    candidate = {
+        "schema_version": "grcv4-history-channel-policy-v1",
+        "subject": "candidate",
+        "policy_id": "candidate_a_exact_old_edge_lineage_positive_bond_seed_v1",
+        "disposition": "exact_transport",
+        "source_history_digest": payload_identity(
+            "history_content_identity_payload",
+            candidate_content_payload(current, reset),
+        ),
+        "target_initializer_id": "grc9v4_new_internal_edge_positive_bond_seed_v1",
+        "information_loss": "none",
+    }
+    carrier = {
+        "schema_version": "grcv4-history-channel-policy-v1",
+        "subject": "carrier",
+        "policy_id": "carrier_not_applicable_v1",
+        "disposition": "not_applicable",
+        "source_history_digest": None,
+        "target_initializer_id": None,
+        "information_loss": "none",
+    }
+    return validate_payload(
+        "expansion_history_policy",
+        {
+            "schema_version": "grc9v4-expansion-history-policy-v2",
+            "candidate": candidate,
+            "carrier": carrier,
+            **{
+                s + "_history_policy_digest": payload_identity(
+                    "history_channel_policy_identity_payload",
+                    {
+                        "schema_version": "grcv4-history-channel-policy-identity-v1",
+                        "policy": v,
+                    },
+                )
+                for s, v in (("candidate", candidate), ("carrier", carrier))
+            },
+        },
+    )
+
+
+def _apc_roles(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> None:
+    if any(
+        type(s) is not GRCV4AuthoritativeState
+        or s.W_A is None
+        or s.Z_4 is None
+        or len(s.Z_4) != len(s.W_A) ** 2
+        for s in (current, reset)
+    ):
+        raise ValueError("A_PC requires complete W and whole Z for both roles")
+
+
+def apc_candidate_content_payload(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    _apc_roles(current, reset)
+    return candidate_content_payload(
+        GRCV4AuthoritativeState(current.C, current.W_A, None),
+        GRCV4AuthoritativeState(reset.C, reset.W_A, None),
+    )
+
+
+def apc_carrier_content_payload(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    _apc_roles(current, reset)
+    return carrier_content_payload(
+        GRCV4AuthoritativeState(current.C, None, current.Z_4),
+        GRCV4AuthoritativeState(reset.C, None, reset.Z_4),
+    )
+
+
+def apc_history_policy(
+    current: GRCV4AuthoritativeState, reset: GRCV4AuthoritativeState
+) -> dict[str, JSONValue]:
+    """Exact retained-W lineage and whole-Z reset, with distinct loss channels."""
+    _apc_roles(current, reset)
+    policy = aos_history_policy(
+        GRCV4AuthoritativeState(current.C, current.W_A, None),
+        GRCV4AuthoritativeState(reset.C, reset.W_A, None),
+    )
+    carrier = cpc_history_policy(
+        GRCV4AuthoritativeState(current.C, None, current.Z_4),
+        GRCV4AuthoritativeState(reset.C, None, reset.Z_4),
+    )
+    for key in ("carrier", "carrier_history_policy_digest"):
+        policy[key] = carrier[key]
+    return validate_payload("expansion_history_policy", policy)
+
+
+def _a_profile_template(
+    reference: GRCV4ReferenceGeometry,
+    family: Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"],
+) -> GRCV4ProfileTemplate:
+    return resolve_profile_template(
+        {
+            "schema_version": "grcv4-profile-template-v1",
+            "source_complete_profile_id": reference.profile.complete_profile_id,
+            "profile_family_id": family,
+            "topology_dependent_map_policy_id": "initialize_target_W_A_over_complete_live_edge_set_v1",
+            "geometry_reference_policy_id": "rebuild_reference_hodge_from_target_candidate_A_reference_v1",
+        },
+        source=reference.profile,
+    )
+
+
+def aos_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_OS")
+
+
+def aci_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_CI")
+
+
+def arg2b_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_RG2b")
+
+
+def apc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_PC")
+
+
+def acipc_profile_template(reference: GRCV4ReferenceGeometry) -> GRCV4ProfileTemplate:
+    return _a_profile_template(reference, "A_CI_PC")
+
+
+@dataclass(frozen=True, slots=True)
+class _GRC9V4AExpansion:
+    """Exact old-edge lineage and positive new-edge seeding for both A roles.
+
+    Complete target-vector construction is the selected history policy, not a
+    WLS/reference-pass reinitialization. Incoming reference currents are mapped
+    separately; new entries are zero and never replace solved target currents.
+    """
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]]
+    plan: GRC9V4ExpansionPlan
+    source: GRCV4ReferenceGeometry
+    source_current: GRCV4AuthoritativeState
+    source_reset: GRCV4AuthoritativeState
+    target: GRCV4ReferenceGeometry = field(init=False)
+
+    def __post_init__(self) -> None:
+        from .grc_v4_candidate_a import CandidateARetainedAuthority
+
+        if (
+            type(self.plan) is not GRC9V4ExpansionPlan
+            or type(self.source) is not GRCV4ReferenceGeometry
+        ):
+            raise TypeError("A expansion requires exact plan and reference owners")
+        plan, source = replace(self.plan), replace(self.source)
+        if (
+            source.graph.port_graph != plan.source_graph
+            or source.profile.identity_payload.profile_family_id != self.FAMILY
+        ):
+            raise ValueError(f"{self.FAMILY} source port/reference mismatch")
+        backend = GRC9V4CandidateADifferentialReference(plan.source_graph)
+        params: Any = source.profile.params_resolved.to_payload()
+        if params["candidate"]["descriptor_backend_id"] != backend.identity:
+            raise ValueError("A requires the source fixed-row descriptor")
+        if any(x != 0 for row in source.K4_base for x in row):
+            raise ValueError("bounded A expansion requires zero structural K4 base")
+        for role in (self.source_current, self.source_reset):
+            CandidateARetainedAuthority(source.graph, source.profile, role)
+        if canonical_json_bytes(plan.request.history_policy) != canonical_json_bytes(
+            (
+                apc_history_policy
+                if self.FAMILY in {"A_PC", "A_CI_PC"}
+                else aos_history_policy
+            )(self.source_current, self.source_reset)
+        ):
+            raise ValueError(
+                "A requires exact actual old-edge lineage and positive bond seeds"
+            )
+        if (
+            _a_profile_template(source, self.FAMILY).profile_template_id
+            != plan.request.target_profile_template_id
+        ):
+            raise ValueError("A target profile template mismatch")
+        graph = GRCV4Graph.from_port_graph(plan.target_graph)
+        weights = {
+            **source.edge_weights.to_dict(),
+            **{e: seed[0] for e, seed in plan.internal_reference_seeds().items()},
+        }
+        size = len(graph.live_edge_ids)
+        base = tuple((0.0,) * size for _ in range(size))
+        params["candidate"]["descriptor_backend_id"] = (
+            GRC9V4CandidateADifferentialReference(plan.target_graph).identity
+        )
+        params["geometry"].update(
+            K4_base_digest=payload_identity(
+                "k4_identity_payload",
+                {
+                    "schema_version": "grcv4-k4-identity-v1",
+                    "K4_base": [list(row) for row in base],
+                },
+            ),
+            reference_hodge_digest=payload_identity(
+                "reference_hodge_identity_payload",
+                {
+                    "schema_version": "grcv4-reference-hodge-identity-v1",
+                    "edge_weights": weights,
+                },
+            ),
+        )
+        identity = source.profile.identity_payload.to_payload()
+        identity["params_hash"] = payload_identity("resolved_params", params)
+        target = GRCV4ReferenceGeometry(
+            graph,
+            resolve_profile(params, identity),
+            source.context,
+            base,
+            FrozenJSONMap(weights),
+        )
+        object.__setattr__(self, "plan", plan)
+        object.__setattr__(self, "source", source)
+        object.__setattr__(self, "target", target)
+
+    def resource_transform_payload(self) -> dict[str, JSONValue]:
+        return _resource_transform(self.plan)
+
+    def transfer(self, state: GRCV4AuthoritativeState) -> GRCV4AuthoritativeState:
+        if type(state) is not GRCV4AuthoritativeState or state not in (
+            self.source_current,
+            self.source_reset,
+        ):
+            raise ValueError("A transfer requires one of the policy-bound source roles")
+        assert state.W_A is not None
+        width = len(self.plan.source_graph.live_node_ids)
+        transform: Any = self.resource_transform_payload()
+        coefficients = transform["row_major_coefficients"]
+        values = tuple(
+            _computed(
+                float(
+                    sum(
+                        (
+                            exact_number(a) * exact_number(c)
+                            for a, c in zip(
+                                coefficients[i : i + width], state.C, strict=True
+                            )
+                        ),
+                        exact_number(),
+                    )
+                )
+            )
+            for i in range(0, len(coefficients), width)
+        )
+        old = dict(zip(self.source.graph.live_edge_ids, state.W_A, strict=True))
+        weights = tuple(
+            old.get(e, self.plan.policy.bond_seed)
+            for e in self.target.graph.live_edge_ids
+        )
+        carrier = (
+            (0.0,) * len(self.target.graph.live_edge_ids) ** 2
+            if self.FAMILY in {"A_PC", "A_CI_PC"}
+            else None
+        )
+        return GRCV4AuthoritativeState(values, weights, carrier)
+
+    def transfer_reference_current(self, current: PhysicalFlux) -> PhysicalFlux:
+        if type(current) is not PhysicalFlux or current.graph != self.source.graph:
+            raise ValueError("reference current must belong to the source graph")
+        old = dict(zip(self.source.graph.live_edge_ids, current.values, strict=True))
+        return PhysicalFlux(
+            self.target.graph,
+            tuple(old.get(e, 0.0) for e in self.target.graph.live_edge_ids),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4AOSExpansion(_GRC9V4AExpansion):
+    """Closed A_OS resource/reference and retained-W expansion."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_OS"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ACIExpansion(_GRC9V4AExpansion):
+    """Closed A_CI maps; both target joint roots remain readmission obligations."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_CI"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4APCExpansion(_GRC9V4AExpansion):
+    """Closed A_PC exact W lineage and complete source archive/target Z reset."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_PC"
+
+    def carrier_archive_payload(self) -> dict[str, Any]:
+        content = apc_carrier_content_payload(self.source_current, self.source_reset)
+        return {
+            "descriptor_version": "grc9v4-carrier-archive-v1",
+            "event_id": self.plan.event_id,
+            "source_state_digest": self.plan.source_state_digest,
+            "source_graph_digest": self.plan.source_graph.graph_digest,
+            "source_edge_ids": [edge.edge_id for edge in self.plan.source_graph.edges],
+            "history_content": content,
+            "history_digest": payload_identity(
+                "history_content_identity_payload", content
+            ),
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ACIPCExpansion(GRC9V4APCExpansion):
+    """Same exact W lineage and whole Z archive/reset, with composite identity."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_CI_PC"
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ARG2bExpansion(_GRC9V4AExpansion):
+    """Exact W lineage; target sections are independently reconstructed on K."""
+
+    FAMILY: ClassVar[Literal["A_OS", "A_CI", "A_PC", "A_CI_PC", "A_RG2b"]] = "A_RG2b"

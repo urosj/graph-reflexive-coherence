@@ -2188,20 +2188,123 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
   The user explicitly accepts the reviewed implementation on 2026-10-03
   ("implementation mathches specs and papers, accepted"), with commit and
   merge requested before continuing with P9-8.3C-OS.
-- [ ] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource
+- [x] P9-8.3C-OS: Verify C_OS event/node/edge IDs, current/reset resource
   distribution, C reference transport, and carrier `not_applicable` semantics.
+  Execute on `work/p9-8-3-profile-integration` after accepted P9-8.2 merge
+  `79e0e8f`, as requested on 2026-10-03. Record projection/identity integration,
+  pure resource/reference reconstruction, and event admission/publication plus
+  independent continuation/failure/replay checks together.
+  - [x] P9-8.3C-OS.1: Connect numerical coordinates to the sole immutable port
+    owner; preserve generic graph bytes; bind specialization, combined model,
+    native reset and scientific identities.
+  - [x] P9-8.3C-OS.2: Rebuild the complete stable-edge C reference/Hodge map
+    and target profile; apply the exact satellite resource transform to current
+    and reset independently; require rederived C and absent carrier channels.
+  - [x] P9-8.3C-OS.3: Complete integrated own review of source/target numerical
+    admission, independent continuation, native receipts, rollback and replay.
+  The implementation is an internal C_OS event owner with unit measures and
+  zero structural K4 base; the separately identified native fixture uses dyadic
+  shares `(1/2,1/4,1/4)` and one shared charge target. Full public model lifecycle,
+  later profiles and broader numerical claims remain separate.
+  The user explicitly accepts this bounded checkpoint and its pressure-review
+  correction on 2026-10-03 ("this is much better, great. accept and commit").
+  All three checkpoints pass own review: 267 passing regression methods plus
+  one opt-in package skip, seven scope checks, three original cutoff probes,
+  twelve side-tool provenance checks, Ruff and targeted strict mypy.
+  The additional paper/side-tool pressure review corrected missing full OS
+  current/reset readmission; actual split, conditioning, nonfinite and charge
+  failures now have atomic rollback regressions. Weighted/oriented equation
+  checks pass; simplex-vertex events do not guarantee nonnegative subsequent
+  continuity. See the [pressure findings](./Phase-9-GRCV4-Handoff.md#p9-83c-os-pressure-review) and
+  [bounded review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-83c-os-native-event-integration).
   During P9-8.0 feasibility, construct an independently checked, separately identified numerical
   source/target companion to the frozen allocation vectors; preserve the
   P9-8.0 exact-cutoff regression. Include distinct current/reset roles, zero
   resources, source/target admission and continuation. Execute natively only
   after aggregate feasibility review. Do not reinterpret
   construction-vector `committed: true` as native numerical success.
-- [ ] P9-8.3C-PC: After C_PC's G2 and G3 entry, execute the separate C_PC
-  nonnull carrier reset/loss vector and target readmission. Pending C_PC
-  runtime support does not hold the C_OS child after all-ten feasibility review.
-- [ ] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
+- [x] P9-8.3C-PC: After C_PC's G2 and G3 entry, execute the separate C_PC
+  nonnull carrier reset/loss vector and target readmission. The bounded native
+  implementation and pressure review are user-accepted on 2026-10-03
+  ("great, then commit changes"), after confirmation of the paper, side-tool
+  and adversarial numerical checks and their recorded limits.
+  Requested on 2026-10-03 after accepted C_OS commit `eeb82e9`; execute these
+  content-specific checkpoints together on `work/p9-8-3-profile-integration`:
+  - [x] P9-8.3C-PC.1: Bind whole current/reset carrier content to the frozen
+    reset/loss policy; archive source order/content and zero every target
+    carrier coordinate while rebuilding the complete C reference profile.
+  - [x] P9-8.3C-PC.2: Integrate native PC state, old-carrier numerical
+    readmission, atomic event/archive/receipt publication and checkpoint replay.
+  - [x] P9-8.3C-PC.3: Independently check source carrier writing, both-role
+    target continuation, delayed carrier effects and adversarial domain/history
+    failures against the paper, frozen vector and accepted carrier companion.
+  The regression batch passes (329 methods, one opt-in packaging skip), including
+  independent source writing and ten target steps for each role; 13 focused
+  authorization/cutoff checks and 12 side-tool checks pass. The real target
+  whole-chart failure probe rejects atomically despite regular point currents.
+  See the [C_PC review and exact subjects](./Phase-9-GRCV4-Handoff.md#p9-83c-pc-whole-carrier-event-integration).
+- [x] P9-8.3C-CI: Native C_CI event integration after exact C_CI G2/G3,
+  requested on 2026-10-03 after accepted A_OS commit `ba5cf5c`. The bounded
+  implementation and pressure review are explicitly user-accepted on 2026-10-03
+  ("found it. accept and commit"), including their documented scientific and
+  side-tool scope limits. All content-specific checkpoints are complete:
+  - [x] P9-8.3C-CI.1: Bind the nonpersistent C template/authority and complete
+    target references; use the unchanged certified joint-root solver for both
+    roles, with separately identified native and research domain norms.
+  - [x] P9-8.3C-CI.2: Integrate exact two-role resource transfer, fresh selected
+    source reference currents, full target root/domain and row readmission,
+    atomic receipts/reference evidence, and deterministic checkpoint replay.
+  - [x] P9-8.3C-CI.3: Complete independent paper/interval/side-tool pressure,
+    actual source and both-role ten-step continuations, genuine domain and
+    iteration failures, outliers, rollback/replay, and portable boundary review.
+  All three checkpoints pass own review: 16 native pressure tests, 208 shared
+  regressions, six unchanged research tests, 12 side-tool checks, targeted
+  Ruff/mypy and the phase boundary audit. Explicit domain limits remain in
+  scope and are included in this explicit acceptance.
+  See the [C_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-RuntimeReview.md)
+  and [validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-Validation.json).
+- [x] P9-8.3C-CI-PC: Native C_CI+PC integration after its exact G2/G3,
+  requested after accepted A_PC runtime commit `5966746`. The bounded
+  implementation and mathematical/adversarial review are explicitly
+  user-accepted on 2026-10-03 ("accept and commit"), including the recorded
+  domain, accuracy and continuation limits. All three checkpoints are complete:
+  - [x] P9-8.3C-CI-PC.1: Bind C/Z authority, reference-root restart with fixed
+    old Z, the combined B_2R geometry domain, strict uniform source slack and
+    both-role coupled root/carrier readmission using unchanged generic solvers.
+  - [x] P9-8.3C-CI-PC.2: Integrate complete C references, exact two-role resource
+    maps, whole source-Z archive/whole target-Z reset, fresh reference-current
+    evidence, atomic publication and authenticated checkpoint replay.
+  - [x] P9-8.3C-CI-PC.3: Independently pressure paper equations and side-tool
+    claims, same-root writing, source and both-role continuation, composite
+    domain/iteration failures, outliers, signed covariance and rollback.
+  The separately declared native R=1 compact carrier chart differs from the
+  smaller accepted P9-8.0 research chart. Nominal comparison budgets are not
+  promoted to tighter whole-chart accuracy guarantees. Simplex-vertex events
+  can admit while the next physical step fails certified resource negativity.
+  See the [C_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-RuntimeReview.md)
+  and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-Validation.json).
+- [x] P9-8.3C-RG2b: Implement the separately identified signed-completion
+  C_RG2b native event after its exact generic G2/G3 and accepted P9-8.0 scope.
+  Content-specific checkpoints (one implementation/review pass):
+  - [x] Bind the signed argument-only completion, graph hypotheses, induced
+    infinity norm and ExactScalar containment/inverse/Lipschitz contraction
+    proof. Preserve the old positive compact-support completion identity.
+  - [x] Certify the six-level finite chain, all state/geometry residuals and
+    section tail; bridge full native C reads/continuity and final invariance.
+  - [x] Integrate both-role target reconstruction on K, absent W/Z, fresh
+    reference currents and atomic state/receipt/reference/checkpoint replay.
+  - [x] Pressure independent full equations, signed predecessors, face/norm
+    outliers, graph/budget/ordinary-entry boundaries, effects and rollback;
+    retain paper/spec/side-tool scope review and portable validation.
+  - [x] Separately accept the bounded C_RG2b runtime and closure review.
+    Explicitly user-accepted on 2026-10-04 ("accept and commit").
+  See the [C_RG2b review](./phase-9-grcv4/tranche-8/P9-8.3C-RG2b-RuntimeReview.md).
+
+- [x] P9-8.3A: Reconcile acceptance of both children for the same exact A scope;
   template identity alone is not expansion evidence. C-family work is independent.
-  - [ ] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
+  Reconciled for the bounded A_OS scope on 2026-10-03: both children are
+  explicitly user-accepted. Other A profiles remain open in the register below.
+  - [x] P9-8.3A.1: Own the independent oracle for each selected exact A profile,
     starting with A_OS. Prepare and review its bounded mathematical inputs and
     expectations during P9-8.0 using accepted port/chart, fixed-row initializer
     and D11-G9 contracts; this research preparation has no production-runtime
@@ -2214,12 +2317,207 @@ target/history/readmission/lifecycle acceptance remains profile-specific.
     completing native identity/fixture details for that scope outside the frozen
     release. Review and accept before runtime comparison; P9-8.0 closure alone
     does not mark this leaf or the runtime coverage hold complete.
-  - [ ] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
+    A_OS oracle preparation and own review are complete on 2026-10-03 after
+    accepted C_PC commit `4f82313`; explicitly user-accepted on 2026-10-03
+    ("ok, accept and commit, then do A.2"). Three
+    preparation checkpoints cover exact native/history/reference bindings,
+    independent point/interval expectations, and adversarial consumer review.
+    The pinned oracle covers 25 positive comparisons and a target OS split
+    failure despite a regular current and positive updates. A.1 was separated
+    because the then-current generic A evaluator required WLS; A.2 now supplies
+    the explicit fixed-port-row incoming-W bridge. See the
+    [A_OS oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md).
+    A_CI preparation and bounded own review are complete on 2026-10-03 after
+    accepted C_CI commit `2a1d6c0`; A_CI oracle explicitly user-accepted on
+    2026-10-03 ("i accept, coninue with A_CI runtime and closure"), distinct
+    from the accepted A_OS scope. Its preparation checkpoints are:
+
+    - [x] Bind exact A_CI profile/domain and fixed-row descriptor, independent
+      current/reset inputs, W lineage, native identity and reference recipes.
+    - [x] Construct and independently certify 25 simultaneous-root/continuation
+      expectations, full Frobenius domains and a genuine target self-map exit.
+    - [x] Complete 15 oracle pressure methods, 18 full-error/ULP effect controls,
+      paper/spec and side-tool review; record the exact CI proof/replay bridge.
+    - [x] Accept this exact A_CI oracle before A_CI `.2` runtime comparison.
+      The [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json)
+      pins the reviewed working-tree bytes; all four oracle subjects are unchanged.
+
+    See the [A_CI oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Validation.json).
+    A_PC preparation and bounded own review are complete on 2026-10-03 after
+    accepted A_CI commit `d431e2e`; explicitly user-accepted on 2026-10-03
+    ("accept and commit, then continue with A_PC"), including its separately
+    declared native fixture. Its preparation checkpoints are:
+
+    - [x] Separate the local research domain from the native full compact chart;
+      prove the uniform source/carrier bound and retain the small-radius
+      counterexample. Accepted R=2048, kappa_H=2^-14, M=16 and W in [1/2,513/512].
+    - [x] Bind independent physical source stages, old W near 15/16 with exact
+      lineage/unit new seeds, whole Z archives/zero resets, shares (1/4,3/8,3/8),
+      native identity preimages and distinct W/Z receipt channels.
+    - [x] Independently certify 25 PC read/writer/continuation expectations and
+      24 full-error/ULP effects at their named W/Z consumers; no geometry effect
+      claimed at zero-carrier target entry.
+    - [x] Complete 21 pressure methods, paper/spec/side-tool claim checks and
+      unchanged carrier regressions; retain source-stage, domain, covariance,
+      tampering and admitted-event/negative-next-step controls for A.2.
+    - [x] Explicitly accept this separately declared A_PC oracle scope before
+      A_PC `.2`; the [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json)
+      pins all four unchanged oracle/review/producer/test subjects.
+
+    See the [A_PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json).
+    A_CI+PC preparation and bounded own review are complete on 2026-10-03
+    after accepted C_CI+PC commit `571f65d`; the user accepted runtime
+    continuation against the committed oracle `1711923` on 2026-10-03.
+    Its content-specific checkpoints are:
+
+    - [x] Prove the complete composite B_2R chart, strict source-envelope slack
+      and root contraction. Separately propose R=2048, kappa_H=2^-15 and
+      rho=1/8; accepted A_PC's old-Z-only chart is insufficient for the sum.
+    - [x] Bind fixed old Z, incoming-W rows/fresh trial conductance, simultaneous
+      current/geometry root, same-root source and separate W/Z physical writers.
+    - [x] Construct native identity/event expectations, distinct source stages,
+      exact retained W/unit seeds, whole source Z archives/zero target carriers
+      and both ten-step continuations using the independent research producer.
+    - [x] Certify 25 comparisons and 32 full-error/ULP effects; complete 24
+      pressure methods, paper/spec/side-tool claim review and unchanged carrier
+      regressions. Retain combined-domain, frozen-conductance, history-stage,
+      covariance and admitted-event/negative-next-step controls.
+    - [x] Specify the closed fixed-row composite proof/replay/event extension,
+      ExactScalar production bounds and native comparison/rejection obligations.
+    - [x] Accept this separately declared A_CI+PC oracle scope before its A.2
+      runtime implementation/comparison. The instruction "commit first, then
+      continue with A_CI+PC" accepts the reviewed scope for continuation;
+      the [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json)
+      pins all four unchanged oracle/review/producer/test subjects.
+
+    See the [A_CI+PC oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json).
+    A_RG2b preparation and bounded own review are complete on 2026-10-04
+    after accepted C_RG2b commit `6c3798e`. Its content-specific checkpoints are:
+
+    - [x] Bind exact A G2/G3, signed C/scaled-log-W completion and native
+      identities; prove whole-chart writer/section bounds and containment.
+    - [x] Bind the physical source beat and independent reset, exact old W/unit
+      new seeds, fresh source references, dyadic resource columns and no carrier.
+    - [x] Certify all four backward levels, complete residuals and section tail,
+      25 numerical expectations and both ten-step native-scoped target paths.
+    - [x] Pressure 30 full-error/ULP effects, independent 90-digit equations,
+      graph/norm/C/Y boundaries, chain/history corruption, signed covariance
+      and negative-next-resource controls; review paper/spec/side-tool claims.
+    - [x] Specify closed fixed-row A_RG2b proof/replay/runtime owners, scaled-log
+      state versus Euclidean current error bounds, and A.2 failure obligations.
+    - [x] Accept this exact A_RG2b oracle before its A.2 runtime comparison.
+      Explicitly user-accepted on 2026-10-04 ("accept and commit"); the
+      [acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json)
+      pins all four unchanged oracle/review/producer/test subjects.
+      The separate bounded A.2 runtime review is also user-accepted on
+      2026-10-04, closing the A_RG2b profile-register row below.
+
+    See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Validation.json).
+  - [x] P9-8.3A.2: For that same exact A profile, after accepted `.1`,
     exact A G2/G3 and applicable P9-8.1a–c
     and P9-8.2 implementation, implement/test against the pinned oracle:
     independent current/reset targets, reconstruction/readmission, receipts,
     whole-lifecycle rollback and replay. Do not replace expected values with
     production output. Accept separately from oracle construction.
+    A_OS implementation and bounded own review are complete on 2026-10-03
+    against the unchanged accepted A.1 checkpoint `0c995f9`; explicitly
+    user-accepted on 2026-10-03 ("awesome. accept, commit"). Three
+    implementation checkpoints are complete:
+    - [x] Closed fixed-row A_OS descriptor/current/OS/writer bridge, with
+      incoming-W stage operands and unchanged WLS behavior/identity.
+    - [x] Actual two-role W lineage, complete target references, fresh source
+      reference currents, full target OS/writer-surface readmission and atomic
+      state/receipt/checkpoint replay publication.
+    - [x] Native oracle comparison and both-role continuation; certified target
+      split rejection, invalid policy/charge/receipt/replay controls, numerical
+      outliers/covariance, regression and exact boundary binding review.
+    See the [A.2 review](./phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-RuntimeReview.md).
+    A_CI runtime and bounded closure review are complete on 2026-10-03,
+    following explicit acceptance of its separate A.1 oracle. Three checkpoints:
+
+    - [x] Exact incoming-C/W fixed-row CI residual/domain bridge, explicit
+      descriptor replay and a bound confirming-root numerical recipe. The latter
+      closes the source-reset early-stop precision gap without changing the
+      oracle, profile, tolerance, domain or iteration budget.
+    - [x] Closed A_CI event/state/template, independent two-role W lineage and
+      full root/writer-surface readmission, atomic receipts and checkpoint replay.
+    - [x] Native source/twenty target beats, 18 effect controls, 23 pressure
+      methods, certified domain and resource-boundary outliers, paper/spec and
+      side-tool claim review, regressions, static checks and phase bindings.
+    - [x] Separately accept the bounded A_CI runtime review; explicitly
+      user-accepted on 2026-10-03 ("accept and commit"), distinct from the
+      earlier oracle acceptance.
+
+    See the [A_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-Validation.json).
+    A_PC runtime and bounded closure review are complete on 2026-10-03 against
+    the unchanged A.1 oracle accepted and committed at `3493fcd`:
+
+    - [x] Extend the exact whole-chart PC proof and closed replay to incoming-W
+      fixed rows; retain the scalar-ZOH/binary64 recipe, WLS behavior and the
+      closed fixed-row CI+PC boundary.
+    - [x] Integrate both-role exact W lineage, complete actual source Z archives,
+      whole target Z resets, separate loss channels, complete readmission,
+      atomic receipts/reference evidence and checkpoint replay.
+    - [x] Compare the actual source beat and both target continuations to the
+      immutable oracle and independent interval equations; complete 20 native
+      pressure methods, 24 effect controls, scientific/side-tool claim review,
+      shared regressions, portable evidence, static checks and phase bindings.
+    - [x] Separately accept the bounded A_PC runtime and closure review;
+      explicitly user-accepted on 2026-10-03 ("accept and commit"), distinct
+      from the earlier oracle acceptance.
+
+    See the [A_PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json).
+    A_CI+PC runtime and bounded closure review are complete on 2026-10-03
+    against the unchanged A.1 oracle committed at `1711923`:
+
+    - [x] Extend the closed incoming-W fixed-row current, whole composite
+      envelope and root proof with ExactScalar; bind the confirming composite
+      replay recipe and retain existing WLS/C/A_CI behavior and identities.
+    - [x] Integrate exact W lineage and whole source Z archive/target reset for
+      both roles, complete joint-root/writer-surface readmission, separate
+      history channels and atomic state/receipt/reference/checkpoint replay.
+    - [x] Certify the actual source stage, both target-entry paths and finite
+      continuations, 32 effect controls and 24 chart-corner roots. Complete
+      25 native pressure methods, including real current/reset-only iteration
+      failures, frozen-conductance rejection, resource-boundary and history
+      attacks; retain paper/spec/side-tool review and portable validation.
+    - [x] Separately accept the bounded A_CI+PC runtime and closure review;
+      explicitly user-accepted on 2026-10-03 ("accept and commit"), distinct
+      from the earlier oracle acceptance.
+
+    See the [A_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-Validation.json).
+    A_RG2b runtime continuation follows the separately accepted A.1 oracle
+    committed at `9074487`. Its content-specific checkpoints are:
+
+    - [x] Implement the separate signed C/scaled-log-W global proof and complete
+      incoming-W/fresh-C/selected-J map; certify every four-level inverse-chain
+      residual, logarithm conversion and invariant-section tail with ExactScalar.
+    - [x] Bind closed fixed-row RG dispatch/replay and the complete native step,
+      Euclidean current and scaled-log state error bridges, final section
+      invariance, and distinct K versus K_minus admission including dt=0.
+      Correct the inherited ln(2) cache's missing exact-backend key; prove
+      unchanged enclosures and identical Python/FLINT native steps.
+    - [x] Integrate exact two-role W lineage, fresh graph-specific source/target
+      reconstruction, no temporal event writer, atomic receipts/reference
+      evidence, full rollback and deterministic checkpoint replay.
+    - [x] Compare the unchanged oracle and independent equations; pressure
+      25 numerical entries, 30 effects, graph/C/Y/chain outliers, actual
+      current-only/reset-only target failures, replay/history attacks and six
+      admitted-event/negative-next-resource controls. Record scientific and
+      side-tool claim limits, regressions and portable phase-boundary evidence.
+    - [x] Separately accept the bounded A_RG2b runtime and closure review;
+      explicitly user-accepted on 2026-10-04 ("accept and commit"), distinct
+      from the earlier A.1 oracle acceptance. No public support is added.
+
+    See the [A_RG2b runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md)
+    and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-Validation.json).
   - Escalation: genuinely absent generic authority found in `.1` holds the
     affected child and returns to a bounded Tranche 7 contract correction;
     follow the established authority propagation process, not a specialization
@@ -2231,16 +2529,62 @@ P9-8.3 per-profile completion register (all include independent targets,
 history channels, readmission, failure/rollback and replay; A rows require
 their own `.1` oracle and `.2` execution acceptance):
 
-- [ ] C_OS — first mechanical checkpoint; complete C references, absent Z.
-- [ ] A_OS — first A oracle/implementation; explicit W history policy.
-- [ ] C_PC — nonnull whole-carrier policy and target continuation.
-- [ ] C_CI — joint target-root/domain evidence, no carrier.
-- [ ] A_CI — A history plus joint target-root/domain evidence.
-- [ ] A_PC — A history plus persistent carrier evidence.
-- [ ] C_CI_PC — coupled root/carrier target evidence.
-- [ ] A_CI_PC — combined W, coupled root and carrier evidence.
-- [ ] C_RG2b — target completion/section reconstruction and domain evidence.
-- [ ] A_RG2b — A history and target completion/section evidence.
+- [x] C_OS — first mechanical checkpoint; complete C references, absent Z.
+  Bounded implementation and pressure correction accepted at `eeb82e9`.
+- [x] A_OS — first A oracle/implementation; explicit W history policy.
+  A.1 oracle and pressure review explicitly user-accepted on 2026-10-03;
+  A.2 runtime integration and pressure review separately user-accepted on
+  2026-10-03 ("awesome. accept, commit"); bounded A_OS reconciliation is complete.
+- [x] C_PC — nonnull whole-carrier policy and target continuation.
+  Bounded implementation and pressure review user-accepted on 2026-10-03.
+- [x] C_CI — joint target-root/domain evidence, no carrier.
+  Native integration and bounded pressure review explicitly user-accepted on
+  2026-10-03 ("found it. accept and commit").
+  See P9-8.3C-CI above for the exact separate scope.
+- [x] A_CI — A history plus joint target-root/domain evidence.
+  A.1 explicitly user-accepted on 2026-10-03. A.2 implementation and bounded
+  closure review are complete against the unchanged oracle; exact proof/replay,
+  the source-reset precision correction, event/rollback and continuation pass.
+  A.2 runtime and bounded closure review separately user-accepted on
+  2026-10-03 ("accept and commit"); no public support promotion.
+- [x] A_PC — A history plus persistent carrier evidence.
+  A.1 independent oracle and bounded own review complete on 2026-10-03;
+  separately declared chart/history/resource scope explicitly user-accepted.
+  A.2 fixed-row PC proof/replay and two-channel event/archive integration are
+  implemented and own-reviewed against that unchanged oracle; source/target
+  stage, effects, rollback, replay and admitted-event/negative-next-step pressure
+  pass. A.2 runtime and bounded closure review separately user-accepted on
+  2026-10-03 ("accept and commit"); no public support promotion.
+- [x] C_CI_PC — coupled root/carrier target evidence.
+  Internal native integration and bounded own review under P9-8.3C-CI-PC
+  are explicitly user-accepted on 2026-10-03 ("accept and commit"). Both-role
+  whole-carrier reset, full composite-domain roots, same-root writing,
+  finite continuation and failure/replay pressure do not add public support.
+- [x] A_CI_PC — combined W, coupled root and carrier evidence.
+  A.1 reviewed scope is accepted for the requested runtime continuation on
+  2026-10-03. A.2 fixed-row composite proof/replay and native two-history
+  transaction are implemented and own-reviewed against the unchanged oracle;
+  independent root/writer/continuation, effects, corner and rollback checks
+  pass. Bounded A.2 runtime and closure review separately user-accepted on
+  2026-10-03 ("accept and commit"); no public support promotion is claimed.
+- [x] C_RG2b — target completion/section reconstruction and domain evidence.
+  P9-8.3C-RG2b implementation and bounded own review are complete on
+  2026-10-04: signed completion, full finite-chain/tail certification, both-role
+  reconstruction, 18 pressure methods and independent physical/effect checks.
+  A final current-bridge norm correction is pressure-tested and the complete
+  numerical export rerun. Bounded runtime and closure review explicitly
+  user-accepted on 2026-10-04 ("accept and commit"), separately from P9-8.0
+  research acceptance; no public support promotion is claimed.
+- [x] A_RG2b — A history and target completion/section evidence.
+  A.1 independent oracle and bounded own review are complete on 2026-10-04:
+  signed C/scaled-log-W proof, four-level certified chains, exact history/event
+  identities, 25 comparisons, 30 effects and scientific/adversarial review.
+  A.1 oracle explicitly user-accepted on 2026-10-04 ("accept and commit").
+  A.2 native signed-completion proof, full C/W step and atomic event/replay
+  are implemented with independent numerical/scientific pressure and portable
+  evidence. Bounded runtime and closure review separately user-accepted on
+  2026-10-04 ("accept and commit"); no public profile or arbitrary
+  graph/parameter admission is claimed.
 
 These rows nominate no new production profile or ATC completion. Unselected
 or held profiles remain pending and unadvertised. Only after the all-ten
@@ -2248,13 +2592,72 @@ feasibility prerequisite is reviewed may a partial runtime-accepted subset
 proceed to its applicable P9-8.4–8.6 and Tranche 9 obligations without closing
 the full ten-profile plan.
 
+- [x] P9-8.3 closeout: Document graph-size coverage and configuration/admission
+  after the P9-8.3 profile work and before starting P9-8.4. User-requested on
+  2026-10-03. Distinguish immutable scientific/evidence contracts from
+  configurable, identity-bearing parameters and evolving state; explain R,
+  kappa_H, base-state bounds and profile changes. Record actual per-realization
+  numerical graph sizes separately from mechanical allocation coverage and
+  measured performance limits. Describe the practical admission path for a
+  new graph, using 100 vertices/400 edges as an illustrative case subject to
+  the per-vertex nine-port rule. Separate automated per-configuration checks
+  from development validation/support acceptance, and identify current API or
+  automation gaps without introducing manual approval for every simulation.
+  [Guide scope and completion criteria](./Phase-9-GRCV4-ImplementationPlan.md#end-of-p9-83-graph-size-and-configuration-guide).
+  The 2026-10-04 request extends this to reproducible new-configuration
+  preparation after A_RG2b acceptance at `a04095f`, with concrete examples for
+  **all ten realizations**. Preparation checkpoints:
+
+  - [x] Reconcile all ten native numerical sizes, mechanical coverage, generic
+    benchmarks, identity/configuration/state semantics and automated admission.
+  - [x] Construct every family's 100/400 source and D52 107/407 target with
+    full profiles, references, both histories, specialization, native identities
+    and event requests through the actual pure expansion owners. Preserve
+    nonuniform A W lineage and exercise nonzero PC source/whole-target reset.
+  - [x] Declare every new coupling/radius/cutoff explicitly, including all PC
+    M/R/W charts and CI+PC domain/composition requirements. Keep cyclic RG2b
+    examples bound to the current completion and record its actual rejection.
+  - [x] Record all forty numerical outcomes and pressure checks; bind the
+    complete all-ten evidence and rerun the phase-boundary audit. Sixteen
+    envelope/contraction checks pass, eight RG2b domain checks reject, and
+    sixteen probes remain incomplete at their declared numerical budget.
+
+  See the [guide and concrete examples](./phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md),
+  [all-ten request](./phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json)
+  and [validation](./phase-9-grcv4/tranche-8/P9-8.3-CloseoutValidation.json).
+  All-ten preparation and bounded own review are complete and user-accepted
+  with the repository UX continuation on 2026-10-05 ("ok, accept and commit").
+  Larger-graph runtime scope retains its separate obligations. Construction, numerical
+  certificate/read, incomplete probe, and full runtime
+  acceptance have separate meanings. No larger event or physical continuation
+  is claimed. Successful cyclic native RG2b needs a new completion proof;
+  routine supported configurations require automatic admission.
+- [x] P9-8.3 repository UX continuation (2026-10-05): Provide a discoverable
+  CLI/catalog for all ten small/large native configurations and retained generic
+  examples. List/filter size, family, model, coupling and evidence; inspect full
+  parameters/provenance; compare; export source/target selections; verify pinned
+  choices and reject stale artifacts without silently hiding them. Readable
+  tables and JSON export are the user's selected interface. Discovery performs
+  no numerical execution, support-registry update or automatic runtime acceptance.
+  [CLI usage and extension](../examples/grcv4/README.md#find-and-select-a-graph-configuration),
+  [portable validation](./phase-9-grcv4/tranche-8/P9-8.3-CatalogValidation.json).
+  Explicitly user-accepted on 2026-10-05 ("ok, accept and commit").
+  Direct execution of saved selections remains with the future public
+  configuration/lifecycle owner; displayed reproduction recipes disclose setup
+  changes and do not claim exact historical replay.
 - [ ] P9-8.4: Execute all applicable accepted D30, D31, D45, and D52 runtime
   counterparts, with exact chirality/phase cases. Add separately labeled
   D37/D44 capacity-shell boundary probes and deeper declared probes. Execute
   permutation, chart rotation, reflection/chirality conjugacy, signed-edge
   reorientation, and phase-boundary cases; probes never replace frozen vectors.
+  Track `LG-VALIDATION` from the closeout guide as a separately labeled
+  all-ten 100/400 source → 107/407 target examples. Resolve each recorded
+  numerical rejection/incomplete probe before dependent execution. Record
+  full admission or first rejection for both roles without extrapolating support.
 - [ ] P9-8.5: Verify unique target occupancy, whole-lifecycle target
   reconstruction/readmission, and atomic failures.
+  Include the prepared larger proposal's event rollback/replay obligations
+  when its numerical prerequisites pass; preparation alone does not close them.
 - [ ] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
   covariance evidence passes.
 - [ ] End-of-Tranche-8 performance/cache review (after P9-8.6, before Tranche 9).

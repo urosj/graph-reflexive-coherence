@@ -1,19 +1,370 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current continuation — 2026-10-03
+## Current continuation — 2026-10-05: configuration discovery CLI
 
-P9-8.1 acceptance is committed at `4cc4f5e` and merged into `main` with
-`--no-ff` at `184919b`. The user now requests P9-8.2 in content-specific
-substeps delivered together, followed later by P9-8.3. Development proceeds on
-`work/p9-8-2-expansion-allocator` from that merge. The scoped allocator opening
-uses only its reviewed source/test owner and preserves P9-8.1 runtime bytes.
-The checklist and plan record request/identity admission, reserve-first tree
-construction, and integrated vector/pressure review as its three substeps.
-All three are implemented and own-reviewed together; see the
-[allocator review](#p9-82-pure-expansion-allocator).
-The user explicitly accepts P9-8.2 on 2026-10-03 after reviewing its agreement
-with the specifications and papers, and requests commit, merge into `main`,
-then a new P9-8.3 branch and continuation with P9-8.3C-OS.
+The user requests repository tooling to investigate and select configurations,
+with readable CLI tables and JSON export. The
+[catalog workflow](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
+now indexes 42 concrete retained configurations: all ten native small examples,
+all ten larger proposals, and 22 generic branch/grid runs. It lists and filters
+sizes/couplings/evidence, shows full parameters and provenance, compares changes,
+exports portable source/target selections and verifies them against pinned files.
+Stale artifacts remain visible and cannot be selected. Existing scientific
+identities and recorded admission/acceptance distinctions are preserved.
+
+Discovery reads retained files using only the standard library. It imports no
+runtime or numerical package and executes no fixture or admission. Three small
+C state pairs are retained by an explicit maintenance producer. Selections are
+saved investigation/downstream choices; public runners do not yet consume them.
+They display reproduction commands with the caveat that a new generic grid run
+may choose different admitted parameters. See
+[portable catalog validation](./phase-9-grcv4/tranche-8/P9-8.3-CatalogValidation.json).
+The user explicitly accepts this work on 2026-10-05 ("ok, accept and commit"),
+including the pending all-ten preparation closeout below. Acceptance covers
+the documented preparation, bounded review and repository UX; larger-graph
+runtime acceptance and P9-8.4 execution retain their separate obligations.
+
+## P9-8.3 closeout — 2026-10-04
+
+After bounded A_RG2b runtime acceptance at `a04095f`, the user requested the
+coverage/configuration closeout and concrete preparation for a larger graph,
+then clarified that the examples must cover **all ten realizations**.
+The [guide](./phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md) and
+[all-ten request](./phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json)
+now provide ten separate native configuration/transfer packages on the same
+100/400 cyclic source and 107/407 D52 target. Every package carries full source
+and target profiles, graph envelopes, both role histories, specialization,
+event request and native identities. Actual production pure expansion owners
+construct references and transfer both roles; no family is only a future-work row.
+
+The shared graph has one saturated vertex and cycle rank 301. Both roles have
+Q=200 and distinct resource pulses. Every A example has distinct nonuniform W
+histories, preserved on old edges with new-edge W=1. Every PC example has
+opposite nonzero diagonal carriers in its source roles and whole-carrier target
+reset. The explicit new PC chart uses M=32; R/coupling/CI-domain choices are
+recorded per family. Changing those choices reidentifies the configuration.
+Native RG2b examples retain the existing tree17 completion and record its
+actual rejection on both cyclic graphs; a vertex-limit edit cannot extend its proof.
+
+Numerical reports distinguish production envelope/contraction checks, OS reads,
+completion rejection, and probes that did not finish within their declared
+budget. A construction or certificate is not a committed event or successful
+continuation. See [portable validation](./phase-9-grcv4/tranche-8/P9-8.3-CloseoutValidation.json)
+for all-ten outcomes, reproduction, pressure checks and the phase-boundary result.
+Accepted oracles, runtime code, work manifest and supported-profile registry
+remain unchanged. This is concrete all-ten preparation and bounded own review;
+no larger-graph runtime acceptance is inferred.
+
+P9-8.4–8.6 retain actual event/continuation, covariance and atomicity obligations
+for each example, separately from frozen-vector evidence. New A scientific
+scope keeps oracle-before-runtime review; cyclic RG2b needs a separately proved
+completion. Public configuration/lifecycle entry and the end-of-tranche cache
+review remain with their existing owners. Routine supported runs require
+automated admission, not human approval for each simulation.
+
+## Previous accepted continuation — 2026-10-04: A_RG2b runtime
+
+After the A_RG2b A.1 oracle was accepted at `9074487`, the user requested A.2
+runtime continuation. The closed signed-completion owner, native C/W step and
+atomic both-role event/replay integration are implemented. **The bounded runtime
+and closure review is separately user-accepted on 2026-10-04** ("accept and
+commit"). The four accepted oracle subjects and their comparison budgets remain
+unchanged; no public profile is added.
+
+The production proof uses ExactScalar and outward intervals for the complete
+C/scaled-log-W map. Four inverse levels/eighteen sweeps are fully recertified,
+including input-log error and the invariant-section tail. Native current errors
+use L2; C/Y and H use their declared infinity norms. The final section is checked
+at the complete native C/W poststate. Final backend pressure corrected the
+shared RG ln(2) cache to key and construct its intervals by exact backend; Python
+and FLINT now preserve the original enclosures and identical complete native
+steps. K event readmission stays distinct from K_minus ordinary entry, including
+dt=0. Events write no temporal history and advance no clock; exact W lineage, fresh source references and receipt evidence
+publish atomically for both roles.
+
+The numerical campaign compares 25 entries to the immutable oracle and full
+independent interval equations, and pressures 30 mechanism effects. Native
+controls cover malformed chains, signed predecessor and clamp outliers,
+physical C/Y boundaries, graph/operator limits, both error norms, actual
+current-only/reset-only target-tolerance failures, history/replay attacks,
+concurrency and six admitted-event/negative-next-step probes. Source and target
+remain the bounded 10/9 and 17/16 fixture, under the separately accepted P9-8.0
+R6 argument-only completion rather than the paper's compact-support extension.
+
+All 25 native pressure methods, 295 shared regressions (one existing skip),
+28 unchanged oracle/global-proof methods and 12 side-tool checks pass. Focused
+generic cache/step rechecks pass after the correction; the final numerical
+observations are unchanged. The phase boundary is rebound and rechecked.
+
+See the [runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-Validation.json).
+The A_RG2b completion row is closed for this accepted bounded scope. The
+graph-size and configuration/admission guide remains the next P9-8.3 closeout before
+P9-8.4; the end-of-tranche caching/proof review remains scheduled separately.
+
+## Previous accepted oracle continuation — 2026-10-04
+
+After accepted C_RG2b commit `6c3798e`, the user requests the last realization,
+A_RG2b. Its independent A.1 oracle and bounded mathematical/adversarial review
+are complete. **A.1 oracle explicitly user-accepted on 2026-10-04**
+("accept and commit"). Its review, oracle, producer and pressure tests are
+unchanged; A.2 runtime remains unstarted and requires separate closure acceptance.
+
+The accepted A.1 fixture uses the signed argument-only completion in
+(C,512 log W), four inverse levels/eighteen sweeps, induced-infinity section
+proofs and the complete fresh-resource logarithmic writer. Exact A G2/G3 and
+native profile/state/event/reference/history preimages are bound separately.
+Both physical source roles map to graph-specific D52 targets with shares
+(1/2,1/4,1/4), exact retained W, unit new W and absent Z. No source section or
+reference current becomes target section history.
+
+All 25 full comparisons and 30 effect controls pass, including composed writer
+controls through the next RG current; minimum error/ULP margin ratio exceeds
+7.33108. Both roles have ten positive target beats. The 90-digit reconstruction
+independently encloses 3,466 entries. Both first inverse cores are certified
+negative; all six simplex-vertex controls certify a negative next physical C.
+The latter are valid transfer/section probes and A.2 rejection obligations,
+not a claim that native events have executed. Twenty distinct oracle pressure
+methods, the eight unchanged global-completion methods and twelve side-tool
+checks cover the bounded review. Final source and phase-boundary bindings are
+checked with the portable validation.
+
+See the [A_RG2b oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md),
+[oracle](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json) and
+[validation](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Validation.json) and
+[acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json).
+The immutable review retains its historical pre-acceptance disposition;
+the acceptance record and appended validation metadata record this decision.
+A.2 must extend closed fixed-row A dispatch and signed completion with
+ExactScalar bounds, distinguish K readmission from K_minus ordinary entry,
+convert physical W error into scaled-log error, preserve the Euclidean current
+budget and prove final complete-state invariance. Event/receipt/reference
+publication and replay must preserve both actual W roles atomically.
+
+The A_RG2b completion row, subsequent graph-size/configuration guide before
+P9-8.4 and end-of-tranche cache/proof review remain open. No runtime source or
+accepted research subject changes in this A.1 work.
+
+## Previous accepted continuation — 2026-10-04
+
+After accepted A_CI+PC commit `d5eee1a`, the user requests C_RG2b. The native
+signed argument-completion evaluator and both-role atomic event integration
+and bounded own review are complete. Independent scientific/adversarial
+validation passes. The bounded runtime and closure review is explicitly
+user-accepted on 2026-10-04 ("accept and commit"); the C_RG2b completion row
+is closed for this exact scope.
+The separate completion identity binds C in [-1,5], K_minus=[-1/4,17/4],
+K=[-1/2,9/2], unit references, the accepted fixed C coefficients, and connected
+port-owned trees with at most 17 vertices satisfying the actual operator/mask
+bounds. Ordinary duration is 2^-12; readmission is a zero-write section read.
+A six-level/eighteen-sweep proposal is fully recertified with ExactScalar
+outward intervals and an invariant-section tail in the induced infinity norm.
+Neither signed auxiliary predecessors nor computed geometry become state.
+
+All 18 native pressure methods, 222 distinct shared regressions and 29
+unchanged research methods pass (269 tests: 268 passed, one existing skip),
+as do 12 side-tool checks. Independent intervals certify 24 numerical
+comparisons, the actual source beat and both ten-step target continuations,
+and 24 effects with minimum complete-error/ULP margin ratio above 4.39354.
+Own review corrected the new current-error bridge to the common Euclidean
+solver norm; a distributed-error control proves rejection at unchanged
+tolerances, and the complete numerical export was rerun. Resource/geometry
+proofs retain their infinity norms. The phase-boundary audit passes; final
+evidence and documentation are rebound before the repeated closing audit.
+
+See the [C_RG2b runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-RG2b-RuntimeReview.md)
+and [validation](./phase-9-grcv4/tranche-8/P9-8.3C-RG2b-Validation.json).
+Acceptance preserves the reviewed bounds and introduces no public support.
+A_RG2b and the scheduled graph-size/configuration guide before P9-8.4 remain
+open, as does the end-of-tranche cache/proof review.
+
+## Previous accepted continuation — 2026-10-03
+
+The user requested "commit first, then continue with A_CI+PC". The pending
+P9-8.3 graph-size/configuration guide scheduling change was committed first at
+`a47f360`. The instruction accepts the previously reviewed A.1 scope for
+runtime continuation; its four unchanged oracle/review/producer/test subjects
+remain pinned to `1711923`. A.2 runtime integration and bounded own review are
+complete and **separately user-accepted on 2026-10-03** ("accept and commit").
+The A_CI_PC completion row is closed for this bounded native scope. The
+remaining C_RG2b/A_RG2b rows and the scheduled documentation closeout stay open.
+
+Three content-specific checkpoints cover the closed fixed-row composite
+proof/replay bridge, atomic two-role W/Z event integration, and independent
+scientific/adversarial pressure. The accepted chart is R=2048, M=16,
+W in [1/2,513/512], kappa_H=2^-15 and rho=1/8. ExactScalar proof bounds cover
+the full composite image, with strict source slack, self-map and root
+contraction. The native confirming-root numerical recipe is explicitly bound;
+existing WLS/C/A_CI recipes retain their behavior and identities.
+
+The event preserves exact old-edge W with unit new-edge seeds, archives both
+complete actual source Z tensors and resets both complete target tensors.
+Both source/target roles undergo fresh root and writer-surface admission at
+zero duration. State, receipts, archives and reference-current evidence
+publish atomically and replay through the closed native owner.
+
+Independent paper/interval checks cover 49 full numerical comparisons across
+source reads, the actual source beat and both target-entry continuation paths.
+All 32 effect controls and 24 chart-corner roots pass. The 25 native pressure
+methods include real current and reset-only target iteration failures,
+frozen-reference-conductance rejection, same-root source/two-writer timing,
+exact archive stages, signed covariance, replay attacks and valid events with
+certified negative next resource steps. Unchanged A.1/carrier-companion and
+shared runtime regressions, the twelve existing D11 side-tool checks, static
+checks and phase-boundary validation are retained with the review.
+
+See the [A_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-RuntimeReview.md),
+[portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-Validation.json)
+and [A.1 acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json).
+The pinned [A.1 review](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md)
+retains its historical pre-runtime disposition; the acceptance record and
+appended validation metadata record its subsequent acceptance. No public
+support, arbitrary-graph coverage or indefinite positivity is claimed.
+
+The [graph-size and configuration/admission guide](./Phase-9-GRCV4-ImplementationPlan.md#end-of-p9-83-graph-size-and-configuration-guide)
+remains the unchecked P9-8.3 closeout after its remaining RG profile work and
+before P9-8.4. It separates numerical coverage from allocator coverage,
+explains configurable parameters and immutable identities, and documents the
+practical automated admission path and current usage gaps. The end-of-tranche
+cache review also remains open.
+
+The preceding user request was C_CI+PC after accepting and committing A_PC runtime at
+`5966746`. P9-8.3C-CI-PC now integrates C/Z authority, reference-root restart
+with fixed old Z, the combined B_2R geometry domain, and both-role certified
+readmission. Complete target C references, exact resource maps, whole source
+carrier archives, canonical zero target carriers and fresh selected-reference
+currents publish atomically and replay through the native owner. Generic CI/PC
+solvers and accepted P9-8.0 research expectations are unchanged.
+
+Three recorded checkpoints cover root/domain binding, whole-carrier transaction
+and replay, and independent scientific/adversarial review. The independent
+constant-sector whole-chart proof, eighty-digit root solver and full-formula
+interval comparisons distinguish the native R=1 compact chart from P9-8.0's
+small local domain. The actual source beat, both ten-step target continuations,
+same-root carrier writing, named error/ULP effect controls and genuine target
+domain/iteration failures are retained in portable evidence. Concentrated-C
+and carrier-boundary probes meet the declared root tolerance, which does not
+promise the nominal trajectory's tighter comparison budget. Simplex-vertex
+events admit while independently certified negative next steps fail closed.
+All 298 native/shared/research test methods and twelve existing side-tool
+checks pass. The twenty effect controls clear their complete-error/ULP bounds,
+with minimum margin about 9.10; targeted static and phase-boundary checks pass.
+
+See the [C_CI+PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-Validation.json).
+The user explicitly accepts this bounded implementation and own review on
+2026-10-03 ("accept and commit"), including its domain, accuracy and continuation
+limits. The C_CI_PC completion row is closed for this scope; portable validation
+appends the acceptance while preserving its execution-time evidence.
+Seven side-tool provenance traces retain their original dispositions. No public
+profile, other realization, global stability, all-time positivity or cache
+acceptance follows; the end-of-tranche cache review remains open.
+
+A_PC's independent A.1 oracle and separately declared native fixture were
+explicitly accepted on 2026-10-03 ("accept and commit, then continue with A_PC")
+and committed at `3493fcd`. The
+[acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json)
+pins all four unchanged oracle subjects. A.2 runtime and bounded own closure
+review are complete and separately user-accepted on 2026-10-03
+("accept and commit").
+
+PC's analytic whole-chart certificate and replay now admit the closed fixed-row
+A_PC backend. Exact proof bounds use incoming-W convex row averages, with no
+sampled or cached descriptor. The accepted chart remains R=2048,
+kappa_H=2^-14, M=16 and W in [1/2,513/512]; source/target uniform source bounds
+are below 1425/507. The existing physical binary64/scalar-ZOH recipe and WLS
+path are unchanged. Fixed-row CI+PC remains closed.
+
+The native A_PC event maps both W roles by exact stable-edge lineage and
+positive new seeds, archives both actual source Z tensors, and resets both
+whole target carriers to zero with carrier loss only. Complete zero-duration
+readmission runs no temporal W/Z writer. Atomic state/receipts/archive/reference
+publication and replay bind the two channels separately. The actual source
+stage, both ten-step target continuations, 27 interval comparisons and all
+24 full-error/ULP effects pass (minimum margin about 9.253). All 20 native
+pressure methods and 26 unchanged oracle/carrier-companion methods pass;
+shared regressions and static/boundary checks are retained in validation.
+The W=0.75 adverse event admits, but its next physical step correctly rejects
+independently certified resource negativity for either role, without repair.
+
+See the [A_PC runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json).
+The [oracle review](./phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md)
+retains the distinction from P9-8.0's smaller local research domains. Six
+source-bound side-tool traces and the twelve existing D11 checks preserve
+their bounded/indeterminate dispositions. No public support, global positivity,
+matched-forcing contraction, other realization or end-of-tranche cache
+acceptance is implied. The bounded A_PC completion row is now closed by the
+separate runtime acceptance recorded in portable validation.
+
+The user accepted A_CI's independent A.1 oracle and requested runtime/closure
+on 2026-10-03 ("i accept, coninue with A_CI runtime and closure"). The
+[acceptance record](./phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json)
+pins its reviewed working-tree subjects, all unchanged. A_CI A.2 implementation
+and bounded closure review are now complete: exact fixed-row analytic CI
+operands, explicit descriptor/recipe replay, two-role W lineage, full target
+root/writer-surface admission and atomic publication/reference evidence.
+The first-pass solver met the declared joint tolerance but missed the oracle's
+source-reset geometry budget. A separately identified native confirming-root
+recipe closes that gap without changing the oracle, domain, tolerance or
+iteration budget; WLS and C keep their existing recipe. Simplex-vertex events
+admit zero resources, but a separately bounded next-step negativity correctly
+fails charge admission without repair. These limits are explicit in the
+[A_CI runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-Validation.json).
+All 23 native pressure methods, 18 effect controls and the independent oracle/
+research checks pass. Shared regressions pass 481 tests (one existing skip),
+with 86 CI/CI+PC tests rerun after the precision fix; the side tool's 12 checks
+and targeted Ruff/mypy pass. The user separately accepted the bounded A_CI
+runtime and closure review on 2026-10-03 ("accept and commit"); the A_CI
+completion row is now closed for this scope. No other A profile, global stability, public lifecycle facade
+or new public supported profile is accepted by this scope.
+
+The preceding user request was C_CI after accepted A_OS commit `ba5cf5c`.
+P9-8.3C-CI adds a closed native event owner using the unchanged generic joint
+root/certificate. Both roles rebuild from complete target C references; the
+same atomic receiver publishes state, receipts and fresh selected-reference
+current evidence. Three checkpoints cover the exact root/domain binding,
+two-role transaction/replay, and independent mathematical/adversarial review.
+Implementation and bounded own review are complete and explicitly user-accepted
+on 2026-10-03 ("found it. accept and commit"), following confirmation of the
+scientific, adversarial and side-tool claim checks and their recorded limits.
+All 230 test methods and 12 side-tool checks pass, along with targeted
+Ruff/mypy and phase boundary verification.
+See the [C_CI review](./phase-9-grcv4/tranche-8/P9-8.3C-CI-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3C-CI-Validation.json).
+The native Frobenius domain is independently identified from the research
+infinity ball. No generic CI change, public support promotion or other-profile
+acceptance is implied by this event integration.
+
+P9-8.3A.1 is explicitly user-accepted and committed at `0c995f9`. The same
+instruction authorizes A.2, whose bounded A_OS implementation and own pressure
+review are complete and explicitly user-accepted on 2026-10-03
+("awesome. accept, commit"). The fixed-row bridge
+consumes incoming W in current and writing; native events preserve old W by
+stable ID, seed new W positively, readmit both complete OS roles and publish
+receipts and replay evidence atomically. The accepted oracle remains unchanged.
+See the [A.2 implementation and pressure review](./phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-RuntimeReview.md)
+and [portable validation](./phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-Validation.json).
+The bounded A_OS row and P9-8.3A reconciliation are complete for this scope;
+other A profiles and new public support remain open. C_OS/C_PC behavior remains covered by existing regressions.
+
+P9-8.2 is explicitly accepted, committed at `e7a6fda`, and merged into `main`
+with `--no-ff` at `79e0e8f`. Branch `work/p9-8-3-profile-integration` starts
+from that merge, following the user's request to continue with P9-8.3C-OS.
+Its three C_OS checkpoints cover numerical port ownership/native identity,
+pure resource/reference reconstruction, and atomic event/readmission/replay.
+The bounded C_OS integration and pressure correction are explicitly accepted
+and committed at `eeb82e9`. The user now requests P9-8.3C-PC on the same branch:
+whole-carrier current/reset archive and zero-reset policy, native PC numerical
+admission/atomic publication/replay, and independent continuation/domain review.
+See the [native C_OS review](#p9-83c-os-native-event-integration) for its exact
+fixture, limitations and review subjects, and the
+[C_PC integration review](#p9-83c-pc-whole-carrier-event-integration) for the bounded
+scope, now user-accepted on 2026-10-03 after confirmation of the mathematical
+and adversarial pressure review ("great, then commit changes"). P9-8.3C-PC is
+complete; other profile children remain open. The accepted allocator is recorded in its
+[own review](#p9-82-pure-expansion-allocator).
 The dated parent disposition below is historical acceptance, not pending merge.
 
 **Accepted predecessor:** P9-8.1 is complete and explicitly user-accepted as a
@@ -1230,6 +1581,437 @@ proofs and support/conformance records are unchanged. R1–R10 remain in force.
 | --- | --- |
 | `src/pygrc/models/grc_9_v4_expansion.py` | `c9edb7b584401b761538d7ad48b257697eabe1d92d16331c98903cf882f60ee3` |
 | `tests/models/test_grc_9_v4_expansion.py` | `0e015347abe22457f0ffd3256ef0cbc60bcb7d13af4c809b39bd417e9064c86d` |
+
+## P9-8.3C-OS native event integration
+
+2026-10-03, branch `work/p9-8-3-profile-integration`, from accepted allocator
+merge `79e0e8f`. The user requested this C_OS checkpoint after committing and
+merging P9-8.2. Implementation and own review are distinct from user acceptance
+and from a new G2/native-profile conformance claim.
+
+The three content-specific checkpoints are delivered together:
+
+1. `GRCV4Graph.from_port_graph()` gives the numerical kernels ordered node/edge
+   coordinates derived from the immutable port owner. Serialization, graph and
+   orientation identities include the ports/kinds; replacement cannot detach
+   different coordinates from that owner. Ordinary generic graph bytes stay
+   unchanged. Reference/stage reconstruction round-trips the port payload.
+   `GRC9V4Specialization` checks resolved-policy/identity consistency;
+   `GRC9V4COSState` binds the combined model, native reset and scientific state.
+2. `GRC9V4COSExpansion` resolves the source-bound C reference template, preserves
+   all old stable-edge weights, seeds every new internal reference edge, and
+   reidentifies the complete target C profile/Hodge. Current and reset use the
+   same exact affine coefficients independently. Zero core/extra resources
+   remain zero, with no clipping or floor. C is rederived; W_A and Z_4 are absent.
+   Carrier reset/loss cannot be reported for this absent channel.
+3. `GRC9V4COSOperation` checks the actual native source digest, specialization,
+   saturation and fresh hybrid predicate, constructs its own target, and
+   numerically readmits both roles. All target authority and four native-bound
+   receipts publish through one immutable pointer replacement only after result
+   validation. Failure receipts remain outside the persistent ledger. The
+   internal checkpoint replays requests from the admitted seed and compares
+   the entire state/receipt payload, including reset and profile content.
+
+The owner captures `ExactBackend`; all exact arithmetic uses `ExactScalar`
+through `exact_number`. Retained state and wire numbers remain binary64, as in
+the surrounding V4 kernels. Exact fractions in tests are independent oracles.
+No new cache or memoized numerical-admission shortcut is introduced; the
+end-of-tranche cache review below remains applicable.
+
+**Exact bounded numerical companion.**
+`native_cos_fixture()` in `tests/models/test_grc_9_v4_lifecycle.py` is a
+separately identified source/target recipe, not the frozen construction vector
+or the P9-8.0 rational experiment. It uses the ten-node saturated unit-weight
+star with center `"s"`, exterior integer nodes 1–9 and port r at both ends of
+edge `e<r>`. The source current starts at 3 at the center and 193/64 at each
+exterior. Reset starts at 2 at the center, 201/64 at exteriors 1–8, and 193/64 at
+exterior 9. Both have the same `Q_target=30.140625`. Only current takes one
+source beat of `dt=1/4096`; reset remains independently retained.
+The baseline hybrid lane uses Hessian sign -1, gradient/basin tolerances 1/2
+and spark-Hessian tolerance zero, with no child-stabilization policy.
+
+The event is positive-chirality, phase-three D52 (eight module nodes), with
+exactly admitted binary64 shares `(1/2,1/4,1/4)` and bond seed 1. It retains
+unit measures, zero structural K4 base and constant-zero context. C parameters
+include cutoff `1/512`, kappa_M=`2^-24`, kappa_Phi=eta=tau=1, chi=16,
+zeta=`2^-37`, and kappa_H=1/2. Solver residual tolerances are `1e-11`, condition
+limit `1e8`, OS tolerance `1e-8`, and charge absolute tolerance `1e-11`; all
+remaining explicit parameters are bound by the fixture's full profile ID.
+
+| Identity | Value |
+| --- | --- |
+| Source profile | `grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048` |
+| Target profile | `grcv4-profile-sha256:5547a6331724cfeed1f8b23d601ff3d6c4b7b2051821bc5e69b63b3173b49b64` |
+| Specialization | `grc9v4-specialization-sha256:2257e35e18ca0f911f3a13fbf68174a8e8df2c7c18e2b552425e615edbae2503` |
+| Event | `grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5` |
+
+Independent expected resources use literal role maps and Fraction products;
+event/model identities are independently hashed from declared preimages.
+Target numerical continuation uses a literal dense C/OS equation oracle and
+exact represented-resource continuity. Both roles complete ten target beats
+plus final readmission. Python and real FLINT produce identical event
+checkpoints; backend selection stays with the owner after caller scope changes.
+The original P9-8.0 cutoff=1 source/target rejection remains a negative
+regression. Rational thirds and the research experiment's two different charge
+targets are not silently imported into this native fixture. No R1–R10 research
+bound is extended to the new recipe by assertion.
+
+Pressure includes nonuniform old-edge weights, distinct seed weights, zero and
+extreme resource inputs, independent current/reset failures, absent-history
+misdeclarations, late receipt failure, stale IDs, exact-simplex rejection,
+candidate gating, concurrent submissions and altered replay payloads. Pure
+resource-map extreme tests establish rounding behavior, not numerical admission
+of those extreme states. The adapter rejects nonzero structural K4 bases and
+specialization changes without inventing a missing transfer policy.
+
+This is an internal C_OS event checkpoint, not the complete Tranche 9 model
+facade. Its initial postbeat seed is numerically admitted, not evidence of an
+authenticated earlier ordinary-operation/receipt chronology. Public ordinary
+steps, reset, save/load, compatibility and capability advertisement remain
+separate work. P9-8.4–8.6 deeper/covariance/whole-lifecycle duties and every
+other P9-8.3 profile remain open. On 2026-10-03 the user explicitly accepts
+this bounded checkpoint and the pressure-review correction below:
+"this is much better, great. accept and commit". P9-8.3C-OS is complete for
+the reviewed scope, including its recorded continuation limits; the user
+requests committing these changes on `work/p9-8-3-profile-integration`.
+
+### P9-8.3C-OS pressure review
+
+The additional review requested on 2026-10-03 found and corrected one runtime
+admission defect. The earlier zero-duration `ProvisionalCandidateCOSStep`
+read checked resource/charge and reference current, but deliberately skipped
+OS predictor/geometry/corrector/split reconstruction. That was insufficient
+for the event contract in paper §12.7.5 and Appendix E.10's OS event row.
+An ordinary successful continuation of the positive fixture had not exercised
+this missing rejection path.
+
+Two genuine counterexamples preserve the baseline source equations and vary
+only the declared OS tolerance (and, in the second case, set reset equal to
+current). At tolerance `2^-54`, both source roles and target current pass full
+OS admission, but target reset fails the split residual. At `2^-56`, both
+source roles pass and target current/reset fail. The old zero-step target
+gate accepts both counterexamples. The corrected event rejects both at
+`target_readmission`, with identical pre/post scientific and lifecycle state,
+unchanged checkpoint and no appended receipt. A third `2^-58` regression
+rejects an initial seed whose current and zero-step checks pass but whose
+reset OS surface fails. These are numerical failures, not injected exceptions.
+
+`_cos_readmit` now checks resource/charge and reconstructs the complete OS
+pass and fixed-row analysis independently for current and reset. This applies
+at initial/replayed seed admission, source re-admission and target admission.
+The existing pure `CandidateCOSPass` API requires positive `dt`; its read
+equations do not use duration. The local `dt=1` opens only that read path:
+it never calls positive-duration continuity, advances time/index, stores
+generated geometry as authority or performs a second OS iteration. Tests
+compare subnormal/unit/large durations and commit an event at the largest
+admitted step index without advancing its clock.
+
+Mathematical comparison uses the repository
+[paper](./investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md),
+§§12.7.1–12.7.5, Appendix A.6–A.7 and D.3.2–D.3.5/D.5.3–D.5.4, plus the
+[D11-C transport resolution](./investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.md)
+and [D11-G9 allocation resolution](./investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.md).
+The independent dense oracle matches the paper's `H_M=D H D`,
+`Phi=kappa_Phi B H_M B^T C`, `J0=-eta diag(W) B^T Phi`,
+`I_4M=H_M H^-1`, `Q=I_4M G_J`, `G_J=H^-1`, ungated resolvent,
+single causal chi factor, predictor-star geometry and full corrector. It uses
+NumPy eigen/linear algebra rather than production selector/solve routines;
+resource products and continuity expectations use independent Fraction
+arithmetic on represented binary64 values. This is bounded numerical
+cross-checking, not a new analytic theorem or profile advertisement.
+
+Additional permanent regressions in `NativeCOSEventTests` cover:
+
+- Nonuniform old weights `W(e_i)=i/4`, distinct new-edge seed `1/2`,
+  `eta=3/2` and `kappa_M=1/4`, on D9/D31/D52 targets, both chiralities and
+  all three active phases. Both roles' predictor/corrector Hodge, potential,
+  baseline, physical identification, current and read agree with the
+  independent equations at `3e-12` absolute/relative tolerance. Mobility
+  remains exactly `eta diag(W)` at both geometry stages; it is not inherited
+  from retained Hodge. Target resources match literal satellite-role products.
+- Two reversals (alternating old edges and all old edges), together with
+  reversed node/edge ordering. Resources agree exactly after event-namespace
+  role normalization; corrected-current divergence agrees within `3e-12`.
+  This is selected numerical pressure, not closure of the later full
+  representation/chart-covariance checklist.
+- All three simplex vertices are legal event maps but can leave a zero
+  resource coordinate with an outward derivative under this fourth-order
+  transport. The independent equation predicts a negative next resource;
+  ordinary steps at `dt=2^-12` and `2^-20` correctly fail without repair.
+  Event admission alone does not establish positive-cone invariance or
+  completed-child continuation. The separately identified baseline fixture
+  still carries its own ten-beat current/reset continuation evidence.
+- Positive finite bond seeds `2^-1074` and `1e308`: real target flat-map
+  conditioning and nonfinite C-stage failures respectively, with atomic
+  rollback and no injected failure.
+- The exact dyadic simplex `(5421/32768,29653/65536,25041/65536)` produces
+  target current charge one binary64 neighbor below `30.140625` under the
+  specified adjacent reduction. The event receipts report the actual
+  `-2^-48` delta; the zero-injection map retains `Q_target` and only the
+  declared charge tolerance permits this rounding error. Reidentifying the
+  profile with zero charge tolerances makes the same event reject. The
+  implementation does not assert exact stored-sum conservation from an exact
+  column-sum identity or silently repair resource coordinates.
+
+The source-bound side tool was queried through
+`load_successor_forensic_context(repo_root, side_tool_root)` and
+`contract_provenance(context, contract_id)` (module path
+`implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src`).
+The following trace digests identify the queried contracts; their source
+pointers resolve in the two D11 provenance supplements under `decisions/`.
+
+| Contract | Source record / pointer | Trace SHA-256 |
+| --- | --- | --- |
+| `D11-G9-EC-LIFECYCLE-READMISSION` | `GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1`, `/equation_contracts/18` | `7de5da6b8cd676f15c7e9d7a4c684f008b3fb827cd4ce8fd1a584a0b7c29880c` |
+| `D11-G9-EC-RESOURCE-DISTRIBUTION` | Same G9 record, `/equation_contracts/15` | `333da148d836e073a468bc1fffe2c2341e66a4f970981d93002a5032a28254e7` |
+| `D11-C-EC-C-J0-LIFECYCLE` | `GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1`, `/equation_contracts/10` | `12c7d5adc9fd0d42d0501483d9b5a0a71a442cc18290e05ee9cc9c7b1a6bb2fe` |
+| `D11-C-EC-C-M4-FACTORIZATION` | Same C record, `/equation_contracts/1` | `a83b99b84339eca89f2d7427cb6ed6ba087cc6062f1b3ef13fbdfa28ddbbff89` |
+
+The source record digests are respectively
+`f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a`
+and `57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1`;
+the source bundle is
+`98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa`.
+The lifecycle rows explicitly retain runtime-conformance-pending support,
+while the resource/factorization rows have bounded successor support. These
+queries establish provenance and scope, not numerical correctness. The side
+tool's `tool/scripts/test_iteration10_d11.py` reports
+`ET_C10_D11_TEST_PASS checks=12 fail_closed=true`. Frozen paper, side-tool
+records and accepted research artifacts were not edited; reproducible pressure
+code is in the repository test suite, with no `/tmp` evidence dependency.
+
+Final verification commands (from repository root):
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_expansion tests.models.test_grc_9_v4_topology tests.models.test_grc_9_v4_lifecycle tests.models.test_grc_v4_exact_backend tests.models.test_grc_v4_geometry.GraphTests tests.models.test_grc_v4_geometry.PortOwnedNumericalGraphTests tests.models.test_grc_v4_geometry.ReconstructionTests tests.models.test_grc_v4_geometry.StageCacheTests tests.models.test_grc_v4_events tests.models.test_grc_v4_lifecycle
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_expansion.py src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_expansion.py tests/models/test_grc_9_v4_lifecycle.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_expansion.py src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_expansion.py tests/models/test_grc_9_v4_lifecycle.py
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+After the pressure correction, the final regression batch runs **268 methods:
+267 pass, one opt-in installed wheel/sdist test skips** (332.2 seconds),
+including seven additional permanent pressure methods. Seven focused successor-authorization
+checks and all three `test_p980_readiness` methods pass; the authorization
+checks cover each later entry, G3/accepted-parent mutation rejection and the
+exact six-path C_OS scope. Ruff and strict mypy pass for the expansion/lifecycle
+source/test pairs. The side tool's twelve D11 provenance checks also pass.
+Whole-file geometry static checking retains its pre-existing
+untyped evidence-helper diagnostics; it is not claimed clean by this increment.
+The clean installed wheel/sdist primitive test is opt-in and is not part of
+this local runtime result.
+
+Reviewed source/test bindings for this checkpoint:
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_v4_geometry.py` | `c965f0ec7165ebe769cf4dd25ece98349213da1ae98f378acc0db8c1d231bebc` |
+| `tests/models/test_grc_v4_geometry.py` | `fc58f82d73037f6330aa48b6d372f1f259864ca3c1013952c6f109676f7cab82` |
+| `src/pygrc/models/grc_9_v4_expansion.py` | `e00ff377f3da9ce5e17be8722e091cd0787bd4a57f6ea9a2950a7e69aa84529b` |
+| `tests/models/test_grc_9_v4_expansion.py` | `68b3be6347d6dc8eb0c180f55e7cf0c2d49e08b1e9ba81e9fed360a05ab85574` |
+| `src/pygrc/models/grc_9_v4_lifecycle.py` | `fd7400c61276ef6f61999a7da9740ca15ed319ea1531b0be6d30da5746fe011f` |
+| `tests/models/test_grc_9_v4_lifecycle.py` | `8573b3531157dabc0e580d1eea26f4a9374d902e765f18452b1caa12edffe6af` |
+
+Only these six runtime entries and the edited maintenance/permission subjects
+are rebound for `P9-8.3C-OS`. Frozen specifications, accepted P9-8.0 evidence,
+historical reconciliation records, profile advertisements and other native
+profile entries remain unchanged. The current-boundary command above is the
+required final check on these bindings before handoff or commit; it does not
+replay or recertify every historical scientific evidence bundle.
+
+## P9-8.3C-PC whole-carrier event integration
+
+2026-10-03, requested after accepted C_OS commit `eeb82e9` on
+`work/p9-8-3-profile-integration`. C_PC's exact generic G2 declaration
+`grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f`
+is already in G3's accepted consumed set. The successor opens only the four
+existing expansion/lifecycle source/test paths. This is a separately identified
+bounded native companion; no new G2 discovery entry, generic PC change, other
+native profile, public facade or whole-tranche closure is introduced.
+The user accepts this bounded C_PC checkpoint on 2026-10-03
+("great, then commit changes"), after confirmation that the review includes
+outliers and edge cases, independent paper-equation checks and side-tool claims.
+The acceptance includes the fixture, continuation and proof limits recorded
+below; it closes P9-8.3C-PC without closing other native profile children.
+
+The three content-specific checkpoints are implemented together:
+
+1. `cpc_history_policy` reproduces the frozen
+   `G9-EXPAND-C-PC-CARRIER-RESET` policy and digest convention:
+   `whole_carrier_reset_with_loss_receipt_v1`, `whole_carrier_reset`,
+   `zero_carrier_v1`, and exactly `carrier_history_loss`. The event owner
+   recomputes the declaration from its actual current/reset pair before graph
+   allocation. `GRC9V4CPCExpansion` independently checks that binding and
+   source dimensions. Shared C construction rebuilds the complete stable-edge
+   reference map/profile and uses the same exact affine resource map for both
+   roles. Every target carrier coordinate is zero, including old-edge blocks.
+2. `GRC9V4CPCState` derives geometry from current's old committed carrier.
+   `GRC9V4CPCOperation` uses PC's full zero-duration admission for both roles:
+   independent reset geometry, compact resource chart, symmetric star-supported
+   carrier ball, whole-ball geometry/selector/current/source certificates,
+   fixed-h current and row analysis. No carrier writer or clock increment runs
+   during an event. Source policy, candidate gate, target construction, numerical
+   readmission, result validation and all archive/receipt work precede one
+   immutable publication. Failures append no archive or successful receipt.
+3. Native replay starts from the declared postbeat seed, recomputes every event,
+   and compares the complete canonical checkpoint, including ordered archives.
+   Independent source/target numerical comparisons, delayed carrier effects,
+   actual domain negatives, failure injection and backend parity are covered in
+   `NativeCPCEventTests`; pure vector/reference checks are in
+   `CPCReconstructionTests`.
+
+`carrier_content_payload` uses the existing generic V4 convention: all current
+row-major entries followed by all reset row-major entries. Each
+`grc9v4-carrier-archive-v1` record retains that complete preimage and its digest,
+source edge order, source graph/native-state digest and event ID. The primary
+receipt binds both source and zero-target carrier digests, source/target model
+and reset identities, and the explicit carrier loss. Candidate C remains
+`rederived` with null candidate-history digests and no candidate loss. A present
+all-zero source carrier still uses the explicit reset policy and nonnull content
+digest. Archives are immutable evidence, never target authority. The new
+`grc9v4-cpc-event-checkpoint-v1` format includes them; OS retains its prior format.
+
+Shared private C construction/state/transaction owners avoid copying the event
+engine. The closed public OS/PC siblings reject cross-realization states and
+checkpoint formats. The accepted `eeb82e9` C_OS owner was executed independently
+against the same fixture and compared byte-for-byte with the refactor. The
+unchanged full checkpoint SHA-256 is
+`b87595b68e6a344b17062de0df5b44fd498780ed3121233e33c27cfbed8b78f4`,
+now pinned by a regression. The earlier C_OS binding table identifies its
+accepted checkpoint; current shared-owner bindings are recorded below.
+
+**Native numerical recipe and limits.** `native_cpc_fixture` uses the same
+literal ten-node port star and baseline specialization as the C_OS companion.
+Current starts at `(3,193/64,...,193/64)`; reset starts at
+`(2,201/64,...,201/64,193/64)` with eight `201/64` values. Both share
+`Q_target=30.140625`. The initial source carrier is
+`Z[i,j]=sign(role)*(-1)^(i+j)*A_star[i,j]/16`, with current sign +1, reset -1,
+unit diagonal and half-weight off-diagonal overlap on this star. Current takes
+one actual PC beat of `dt=2^-12`; reset takes none. The archive binds that
+postbeat current and independently retained reset, not a reference probe's
+hypothetical writer output.
+
+The complete PC declaration uses `R=1`, compact resource radius `M=16`,
+`tau_PC=1`, `kappa_H=2^-16`, and `zeta_C=2^-30`. Remaining C parameters are
+`Lambda_C=1/512`, `kappa_M=2^-24`, `kappa_Phi=eta=tau_C=1`, `chi=16`.
+It retains zero structural K4 base, unit vertex measures, constant-zero context,
+unit old/new reference weights, and the C_OS companion's declared solver/charge
+controls. The event is D52, positive chirality, phase three, dyadic shares
+`(1/2,1/4,1/4)`, with 16 target edges and a complete 256-entry carrier per role.
+Both roles take ten target PC steps and a final readmission.
+
+These PC parameters have their own complete identities. They do not import
+P9-8.0's research radius `2^-22`, equal-third resource tuple or different
+per-role charge targets into this owner. The frozen C-PC vector's two history
+content tokens reproduce its codec identities; they are not interpreted as a
+full numerical 9x9 current/reset carrier. All frozen mechanical vectors,
+including its D30 allocation, remain unchanged and executed by the allocator
+suite. The native full-carrier numerical evidence is the separate D52 recipe.
+
+| Identity | Value |
+| --- | --- |
+| Source profile | `grcv4-profile-sha256:027fcc14b47d8cb4c0f1465109c1ca2c47cb5fefb3b002f499c9273c3b8c12f8` |
+| Target profile | `grcv4-profile-sha256:54f87913e6b495b6828dd6854c57761a4a77c8ca8ac16626b5262152c2a1e630` |
+| Specialization | `grc9v4-specialization-sha256:2257e35e18ca0f911f3a13fbf68174a8e8df2c7c18e2b552425e615edbae2503` |
+| Event | `grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f` |
+| Source carrier content | `grcv4-history-content-sha256:7d216270d9ab3739dd3f671dd2d061f0818d3ecd531bc0a898463ab0865ac43c` |
+| Full native checkpoint SHA-256 | `8ac4c8c8d2cdc608deca4cbbd371e7fef79270f761dfd45931642f6775f1ea47` |
+
+The admitted generic PC certificate reports source/target selector-gap lower
+bounds `0.001800537109375` / `0.0018310546875`, Hodge lower bound
+`0.9999847412109375`, and uniform source-norm upper bounds approximately
+`0.109894` / `0.039074`, each below `R=1`. These are whole-chart certificates,
+not inferred from zero target Z. The source and target share the same PC
+radius, chart and writer declarations; no target-specific loosening occurs.
+
+**Mathematical review and pressure.** The review compares the
+[paper](./investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md)
+§§12.7.3–12.7.5, Appendix A.6–A.7, D.3, D.7 and E.10, the
+[D11-G9 resolution](./investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.md),
+and the accepted [carrier companion](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventConstruction.md)
+and [CEC-F1 review](./phase-9-grcv4/tranche-8/P9-8.0-CarrierEventIndependentReview.md).
+`independent_pc_beat` independently implements old-Z fixed-h C equations,
+`S=zeta*A_star(flat(read))`, continuity and the held-source solution
+`Z_next=exp(-dt/tau)*Z+(1-exp(-dt/tau))*S` using NumPy, Fraction and a
+150-digit Decimal exponential. It calls no production carrier geometry,
+source assembler, continuity or ZOH writer. Exact represented Hodge entries
+are checked separately against `diag(W)+kappa_H*Z`. Each actual source/target
+step is compared with these equations, at `3e-12` relative tolerance, absolute
+`3e-12` for resource/current and `3e-20` for source/carrier.
+
+Target Z is zero at event entry. The first write forms nonzero Z; only a later
+PC read consumes it. Both roles' step-ten old-Z/zero-Z current comparisons exceed
+four times their two independent dense-comparison errors plus eight maximum
+output ULPs. This is a bounded cross-implementation effect check, not the
+research companion's interval-certified error theorem or a hysteresis claim.
+
+Pressure includes stale current-only/reset-only carrier bindings rejected
+before allocation; rehashed wrong loss/initializer/preservation policies;
+absent, asymmetric and out-of-ball carriers; wrong old-Z geometry; changed
+archive content/order/digests, omitted archives, changed target/reset policy
+and stripped losses on replay; independent current/reset charge failures;
+late archive/receipt failures; concurrent publication; maximum step index;
+present zero carriers; and real Python/FLINT checkpoint/backend-scope parity.
+With only bond seed changed to 2, both zero-carrier target point currents are
+regular, but the full target uniform source envelope exceeds R. That event
+correctly fails at `target_readmission` with unchanged scientific/lifecycle
+state, checkpoint, archive and receipt populations. Point solvability alone
+cannot replace the PC whole-chart obligation.
+
+The side tool's source-bound queries reproduce
+`D11-G9-EC-LIFECYCLE-READMISSION` trace
+`7de5da6b8cd676f15c7e9d7a4c684f008b3fb827cd4ce8fd1a584a0b7c29880c`,
+`D11-C-EC-C-J0-LIFECYCLE` trace
+`12c7d5adc9fd0d42d0501483d9b5a0a71a442cc18290e05ee9cc9c7b1a6bb2fe`,
+and `D11-G9-EC-FIXED-BOND-SEED` trace
+`640a23034ac44cf894472a05c818477e68f818921ebcad72b433f3554106ee75`.
+The first two retain runtime-conformance-pending support; provenance is not
+numerical proof. Its twelve D11 regression checks pass. No frozen paper,
+specification, vector, side-tool record or research evidence is modified.
+All reproducing fixtures/oracles/regressions are retained in repository tests.
+
+As with C_OS, the internal event checkpoint admits its supplied postbeat seed
+without authenticating earlier ordinary-operation chronology. Full public
+ordinary-step/reset/save/load wiring, P9-8.4–8.6 duties, other native profiles
+and broader continuation remain separate. The end-of-tranche caching review
+remains deferred; no numerical admission shortcut is introduced here.
+
+Final verification (repository root):
+
+```bash
+PYTHONPATH=src:tests/models OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_expansion tests.models.test_grc_9_v4_topology tests.models.test_grc_9_v4_lifecycle tests.models.test_grc_v4_exact_backend tests.models.test_grc_v4_geometry.GraphTests tests.models.test_grc_v4_geometry.PortOwnedNumericalGraphTests tests.models.test_grc_v4_geometry.ReconstructionTests tests.models.test_grc_v4_geometry.StageCacheTests tests.models.test_grc_v4_events tests.models.test_grc_v4_lifecycle tests.models.test_grc_v4_pc
+.venv/bin/ruff check src/pygrc/models/grc_9_v4_expansion.py src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_expansion.py tests/models/test_grc_9_v4_lifecycle.py
+.venv/bin/mypy --follow-imports=silent src/pygrc/models/grc_9_v4_expansion.py src/pygrc/models/grc_9_v4_lifecycle.py tests/models/test_grc_9_v4_expansion.py tests/models/test_grc_9_v4_lifecycle.py
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+The final regression batch runs **329 methods: 328 pass, one opt-in installed
+wheel/sdist test skips** (403.6 seconds). This includes 11 native C_PC methods,
+two pure C_PC reconstruction methods, the accepted C_OS regressions and all
+48 generic PC methods. Thirteen focused successor-authorization/cutoff checks
+pass: the prior seven successor checks, three new C_PC scope/G2/G3/predecessor
+checks in `test_p978_specialization_review`, and all three
+`test_p980_readiness` methods. The original exact-cutoff failure remains a
+negative; no frozen fixture is relabeled as numerical success. Ruff and strict
+mypy pass on the four expansion/lifecycle source/test files. The side tool's
+12 D11 checks also pass. The opt-in packaging test is outside this local result.
+
+Reviewed current C_PC source/test bindings:
+
+| Subject | SHA-256 |
+| --- | --- |
+| `src/pygrc/models/grc_9_v4_expansion.py` | `8307090f3137bf29e4558a90b45a5547ae4bfb303cc5abbbc98694abfea39d22` |
+| `tests/models/test_grc_9_v4_expansion.py` | `9fa8ac43bc4d2822a5b3db9c25ac127fc82dffe81779805217bee52d9c09902c` |
+| `src/pygrc/models/grc_9_v4_lifecycle.py` | `4e64678878f287574e180f6862ee8700dc3174c8ff4a4b643d47de8f14f920b9` |
+| `tests/models/test_grc_9_v4_lifecycle.py` | `40b0f0ddb984175f7c391815413838c3a8c6e704171e92af3c7149b7aef1129c` |
+
+Only these four runtime entries are rebound to `P9-8.3C-PC`. The boundary
+refresh covers the edited plan/checklist/handoff and the three edited
+permission/review-checker subjects; every other bound subject must retain its
+previous hash. This includes generic PC, the accepted C_OS geometry correction,
+frozen authority and historical research/reconciliation records. The boundary
+audit above is the final required check on these bindings; it does not replay
+or recertify every historical scientific evidence bundle.
 
 ## End-of-Tranche-8 performance and cache review
 

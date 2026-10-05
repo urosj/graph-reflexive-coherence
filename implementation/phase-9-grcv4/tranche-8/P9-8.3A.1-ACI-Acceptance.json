@@ -1,0 +1,30 @@
+{
+  "schema": "p983a_aci_oracle_acceptance_v1",
+  "date": "2026-10-03",
+  "status": "accepted_by_user",
+  "user_instruction": "i accept, coninue with A_CI runtime and closure",
+  "accepted_scope": "bounded A_CI P9-8.3A.1 independent oracle and pressure review",
+  "authorized_next": "P9-8.3A.2 A_CI runtime and closure",
+  "accepted_predecessor": "2a1d6c098f1154a973614364f680ee69e5b7511b",
+  "oracle_record_digest": "de9adc6d6ecd5d2a18983fae2367eb8aa946d995a31b5ad48debd323814b2ad9",
+  "immutable_subjects": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Oracle.json",
+      "sha256": "846e491b8eaa637ebcdac0a049a26f2192bf1054f0e341af0a8a9e51f70ebb44"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-OracleReview.md",
+      "sha256": "9544b4a46da678c2c9af50111465fff3416174fddf213055aac6da3cce47dd32"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_aci_oracle.py",
+      "sha256": "ad00edb92b3cf7868f7ae888972c8c646c966cf9b8619939a0a25e346350bf51"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_aci_oracle.py",
+      "sha256": "0666b3051fc391be6cbb02ec7615de166e3f8c0c2f41721454c91bb716201f8e"
+    }
+  ],
+  "public_support_added": false,
+  "runtime_accepted": false
+}

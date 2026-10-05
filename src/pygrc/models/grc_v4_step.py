@@ -16,9 +16,10 @@ from ._grc_v4_evidence import _lifecycle_identity
 from .grc_v4 import GRCV4StepRequest, GRCV4StepRequestInput, _nested_record
 from .grc_v4_candidate_a import (
     CandidateACurrent,
-    CandidateADifferentialReference,
+    CandidateADifferential,
     CandidateAStageError,
     CandidateAWriter,
+    candidate_a_differential_from_payload,
 )
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_codec import (
@@ -1185,7 +1186,7 @@ class ProvisionalCandidateAOSStep:
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference
+    differential_reference: CandidateADifferential
     os_pass: CandidateAOSPass | None = dataclass_field(init=False)
     resource: ProvisionalResourceStep = dataclass_field(init=False)
     writer: CandidateAWriter | None = dataclass_field(init=False)
@@ -1330,7 +1331,7 @@ class ProvisionalCandidateAOSStep:
         )
         return cls(
             GeometryStageInputs.from_payload(data["inputs"]),
-            CandidateADifferentialReference.from_payload(
+            candidate_a_differential_from_payload(
                 data["differential_reference"]
             ),
         )

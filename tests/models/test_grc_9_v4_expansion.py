@@ -691,5 +691,223 @@ print(p.event_id, p.target_graph.graph_digest)
             self.assertEqual(result.stdout.strip(), " ".join(signature))
 
 
+class COSReconstructionTests(unittest.TestCase):
+    def test_nonuniform_old_reference_weights_and_seed_are_stable_id_bound(
+        self,
+    ) -> None:
+        from pygrc.models.grc_9_v4_expansion import (
+            GRC9V4COSExpansion,
+            cos_profile_template,
+        )
+        from tests.models.test_grc_9_v4_lifecycle import native_cos_fixture
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+
+        seed, request = native_cos_fixture()
+        original = seed.inputs.geometry.reference
+        weights = {
+            e: float(i + 2)
+            for i, e in enumerate(reversed(original.graph.live_edge_ids))
+        }
+        reference = stage_reference_fixture(
+            graph=original.graph, weights=weights, base=[[0.0] * 9 for _ in range(9)]
+        )
+        request = replace(
+            request,
+            target_profile_template_id=cos_profile_template(
+                reference
+            ).profile_template_id,
+        )
+        policy = GRC9ExpansionPolicy.from_payload(
+            seed.specialization.resolved["expansion"]
+        )
+        assert original.graph.port_graph is not None
+        plan = GRC9V4ExpansionPlan(
+            original.graph.port_graph,
+            seed.scientific_digest,
+            request,
+            replace(policy, bond_seed=0.125),
+        )
+        target = GRC9V4COSExpansion(plan, reference)
+        expected = {**weights, **{e: 0.125 for e in plan.internal_edge_ids}}
+        self.assertEqual(target.target.edge_weights.to_dict(), expected)
+        self.assertEqual(
+            target.target.profile.params_resolved.candidate.to_payload()["W_C_tr"],
+            expected,
+        )
+        self.assertEqual(
+            target.target.pairings.one_form.matrix,
+            tuple(
+                tuple(
+                    expected[a] if a == b else 0
+                    for b in target.target.graph.live_edge_ids
+                )
+                for a in target.target.graph.live_edge_ids
+            ),
+        )
+        # Scalar physics and the resolved template remain unchanged; only
+        # graph-dependent maps/preimages and the resulting profile ID change.
+        old: Any = reference.profile.params_resolved.to_payload()
+        new: Any = target.target.profile.params_resolved.to_payload()
+        for group in old:
+            if group not in ("candidate", "geometry"):
+                self.assertEqual(old[group], new[group])
+        for field in old["candidate"]:
+            if field not in ("W_C_tr", "W_C_tr_content_digest"):
+                self.assertEqual(old["candidate"][field], new["candidate"][field])
+        with self.assertRaisesRegex(ValueError, "zero structural"):
+            nonzero = stage_reference_fixture(graph=original.graph, weights=weights)
+            GRC9V4COSExpansion(plan, nonzero)
+        with self.assertRaisesRegex(ValueError, "template"):
+            GRC9V4COSExpansion(
+                replace(
+                    plan,
+                    request=replace(
+                        request,
+                        target_profile_template_id="grcv4-profile-template-sha256:"
+                        + "0" * 64,
+                    ),
+                ),
+                reference,
+            )
+
+    def test_resource_map_extremes_use_exact_products_and_leave_core_extras_zero(
+        self,
+    ) -> None:
+        from pygrc.models.grc_9_v4_expansion import GRC9V4COSExpansion
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+        from tests.models.test_grc_9_v4_lifecycle import native_cos_fixture
+
+        seed, request = native_cos_fixture()
+        ref = seed.inputs.geometry.reference
+        assert ref.graph.port_graph is not None
+        policy = GRC9ExpansionPolicy.from_payload(
+            seed.specialization.resolved["expansion"]
+        )
+        for shares in ((1.0, 0.0, 0.0), (0.0, 0.0, 1.0), (0.5, 0.25, 0.25)):
+            request = replace(request, resource_distribution=shares)
+            plan = GRC9V4ExpansionPlan(
+                ref.graph.port_graph, seed.scientific_digest, request, policy
+            )
+            target = GRC9V4COSExpansion(plan, ref)
+            for resource in (0.0, math.ulp(0.0), sys.float_info.max):
+                state = GRCV4AuthoritativeState((resource, *([2.0] * 9)), None, None)
+                actual = dict(
+                    zip(
+                        plan.target_graph.live_node_ids,
+                        target.transfer(state).C,
+                        strict=True,
+                    )
+                )
+                for b in (1, 2, 3):
+                    self.assertEqual(
+                        actual[plan.event_id + f"/satellite/{b}"],
+                        float(Fraction(resource) * Fraction(shares[b - 1])),
+                    )
+                self.assertTrue(
+                    all(
+                        actual[n] == 0
+                        for n in plan.module_node_ids
+                        if "/satellite/" not in n
+                    )
+                )
+                self.assertTrue(all(actual[n] == 2 for n in range(1, 10)))
+            with self.assertRaisesRegex(ValueError, "neither"):
+                target.transfer(GRCV4AuthoritativeState((1.0,) * 10, (1.0,) * 9, None))
+
+
+class CPCReconstructionTests(unittest.TestCase):
+    def test_frozen_carrier_policy_and_content_preimages_are_reproduced(self) -> None:
+        from pygrc.models.grc_9_v4_expansion import (
+            carrier_content_payload,
+            cpc_history_policy,
+        )
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+
+        vectors = json.loads(
+            (ROOT / "specs/grc-v4-conformance-vectors.json").read_text()
+        )
+        vector = next(
+            v
+            for v in vectors["grc9_expansion_vectors"]
+            if v["fixture_id"] == "G9-EXPAND-C-PC-CARRIER-RESET"
+        )
+        # The frozen vector's two content tokens exercise the identity codec;
+        # they are not a 9x9 current/reset numerical carrier fixture.
+        current = GRCV4AuthoritativeState((3,), None, (0.5,))
+        reset = GRCV4AuthoritativeState((2,), None, (-0.25,))
+        policy = cpc_history_policy(current, reset)
+        self.assertEqual(policy, vector["request"]["history_policy"])
+        content = carrier_content_payload(current, reset)
+        self.assertEqual(content["content"], vector["expected"]["source_carrier"])
+        # Literal ASCII JCS is unambiguous for these finite dyadic tokens.
+        encoded = b'{"content":[0.5,-0.25],"schema_version":"grcv4-history-content-identity-v1","subject":"carrier"}'
+        self.assertEqual(
+            "grcv4-history-content-sha256:" + hashlib.sha256(encoded).hexdigest(),
+            vector["expected"]["source_carrier_digest"],
+        )
+        target = carrier_content_payload(
+            replace(current, Z_4=(0.0,)), replace(reset, Z_4=(0.0,))
+        )
+        self.assertEqual(
+            payload_identity("history_content_identity_payload", target),
+            vector["expected"]["target_carrier_digest"],
+        )
+
+    def test_native_cpc_resource_reference_and_carrier_transfer_is_closed(self) -> None:
+        from pygrc.models.grc_9_v4_expansion import (
+            GRC9V4CPCExpansion,
+            cpc_history_policy,
+        )
+        from tests.models.test_grc_9_v4_lifecycle import native_cpc_fixture
+
+        backend = (
+            ExactBackend.FLINT
+            if importlib.util.find_spec("flint")
+            else ExactBackend.PYTHON
+        )
+        with exact_backend(backend):
+            seed, request, _ = native_cpc_fixture()
+            graph = seed.inputs.geometry.reference.graph.port_graph
+            assert graph is not None
+            plan = GRC9V4ExpansionPlan(
+                graph,
+                seed.scientific_digest,
+                request,
+                GRC9ExpansionPolicy.from_payload(
+                    seed.specialization.resolved["expansion"]
+                ),
+            )
+            target = GRC9V4CPCExpansion(
+                plan,
+                seed.inputs.geometry.reference,
+                seed.inputs.current,
+                seed.inputs.reset,
+            )
+            source_params: Any = target.source.profile.params_resolved.to_payload()
+            expected: Any = target.target.profile.params_resolved.to_payload()
+            for key in ("W_C_tr", "W_C_tr_content_digest"):
+                source_params["candidate"][key] = expected["candidate"][key]
+            for key in ("K4_base_digest", "reference_hodge_digest"):
+                source_params["geometry"][key] = expected["geometry"][key]
+            self.assertEqual(source_params, expected)
+            with self.assertRaises(FrozenInstanceError):
+                target.source_current = seed.inputs.reset  # type: ignore[misc]
+            with self.assertRaisesRegex(ValueError, "bound source roles"):
+                target.transfer(
+                    replace(seed.inputs.current, C=(4.0, *seed.inputs.current.C[1:]))
+                )
+            with self.assertRaisesRegex(ValueError, "coordinates mismatch"):
+                pair = (
+                    replace(seed.inputs.current, Z_4=(0.5,)),
+                    replace(seed.inputs.reset, Z_4=(-0.25,)),
+                )
+                altered = replace(request, history_policy=cpc_history_policy(*pair))
+                small = replace(plan, request=altered)
+                GRC9V4CPCExpansion(small, seed.inputs.geometry.reference, *pair)
+            archive = target.carrier_archive_payload()
+            archive["history_content"]["content"][0] = 99
+            self.assertNotEqual(archive, target.carrier_archive_payload())
+
+
 if __name__ == "__main__":
     unittest.main()

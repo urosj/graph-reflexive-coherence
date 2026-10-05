@@ -1,0 +1,46 @@
+{
+  "schema": "p983-larger-numerical-probe-v1",
+  "family": "A_OS",
+  "prepared_digest": "42728c2967c2c7a9fa85e7ae40d4c8f4a3478fa13af7edb6806dcd60e1c43689",
+  "scope": "numerical_read_or_certificate_only; timeout_is_not_rejection",
+  "physical_steps": 0,
+  "events_committed": 0,
+  "supported_profiles_added": [],
+  "source": {
+    "current": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 60.02109797898447,
+      "owner": "CandidateAOSPass"
+    },
+    "reset": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 60.0225580210099,
+      "owner": "CandidateAOSPass"
+    }
+  },
+  "target": {
+    "current": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 60.023207839985844,
+      "owner": "CandidateAOSPass"
+    },
+    "reset": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 60.030869412992615,
+      "owner": "CandidateAOSPass"
+    }
+  },
+  "record_digest": "07504b3cbd6fce3c1ff809b96010e27ac82788b92d4757d7bfcf8d06b4edaf6c"
+}

@@ -12,8 +12,9 @@ from . import grc_v4_numerics as numerics
 from .grc_v4_candidate_a import (
     ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
-    CandidateADifferentialReference,
+    CandidateADifferential,
     CandidateAStageError,
+    candidate_a_differential_from_payload,
 )
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_exact import exact_number
@@ -330,7 +331,7 @@ class CandidateAOSPass:
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference
+    differential_reference: CandidateADifferential
     predictor: CandidateACurrent = field(init=False)
     corrector: CandidateACurrent = field(init=False)
     residual: OSSplitResidual = field(init=False)
@@ -390,7 +391,7 @@ class CandidateAOSPass:
         )
         return cls(
             GeometryStageInputs.from_payload(data["inputs"]),
-            CandidateADifferentialReference.from_payload(
+            candidate_a_differential_from_payload(
                 data["differential_reference"]
             ),
         )

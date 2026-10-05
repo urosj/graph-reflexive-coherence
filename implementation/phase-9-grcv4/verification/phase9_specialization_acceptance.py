@@ -166,3 +166,340 @@ def allocator_authorization(root):
 def allocator_permitted(path, leaf):
     """Call only after allocator_authorization(root); no lifecycle mutation."""
     return leaf == ALLOCATOR_ENTRY and path in ALLOCATOR_PATHS
+
+
+COS_ENTRY = 'P9-8.3C-OS'
+COS_PATHS = (
+    'src/pygrc/models/grc_v4_geometry.py',
+    'tests/models/test_grc_v4_geometry.py',
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'tests/models/test_grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_lifecycle.py',
+)
+COS_PREDECESSOR = '79e0e8fca830ea9441e0b9bc7fb98d896f4d0c2c'
+COS_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': '808fe2e819dbed2502694de9f520f2030b789411127a742b952ae8f54551dcef',
+    'src/pygrc/models/grc_v4_geometry.py': '38964b047669fad08c509ec4f657c6048072e0eae26a8470211564453a387eb0',
+    'tests/models/test_grc_v4_geometry.py': '4167e6839e8a555ba278337d9ccefce543661df020adb5ab915d82266b2a492a',
+    'src/pygrc/models/grc_9_v4_expansion.py': 'c9edb7b584401b761538d7ad48b257697eabe1d92d16331c98903cf882f60ee3',
+    'tests/models/test_grc_9_v4_expansion.py': '0e015347abe22457f0ffd3256ef0cbc60bcb7d13af4c809b39bd417e9064c86d',
+    'src/pygrc/models/grc_9_v4_lifecycle.py': 'a79de2f92f85e591980acfb2bcf529d4b8d124a40401e37848333d036fa03527',
+    'tests/models/test_grc_9_v4_lifecycle.py': 'f6a991a8e742361df3a02e0a24d7a9827f484c9d97e56c6697bb6ad042c00b7e',
+}
+
+
+def cos_authorization(root):
+    """2026-10-03 user request: C_OS integration after accepted allocator merge."""
+    accepted(root)
+    p.git(root, 'merge-base', '--is-ancestor', COS_PREDECESSOR, 'HEAD')
+    for path, expected in COS_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', COS_PREDECESSOR + ':' + path)) == expected,
+                  'C_OS integration requires the accepted allocator and numerical subjects')
+    return COS_ENTRY
+
+
+def cos_permitted(path, leaf):
+    """Call only after cos_authorization(root); exact C_OS implementation owners."""
+    return leaf == COS_ENTRY and path in COS_PATHS
+
+
+CPC_ENTRY = 'P9-8.3C-PC'
+CPC_PATHS = (*ALLOCATOR_PATHS, *TRIGGER_PATHS)
+CPC_PREDECESSOR = 'eeb82e983651303f767b8f70853208ce1ee9d82f'
+CPC_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': '62d9b9014ebe50a925db9fa31704d45ff27e9e68c96b9e7a03df8be4c6aed1a4',
+    ALLOCATOR_PATHS[0]: 'e00ff377f3da9ce5e17be8722e091cd0787bd4a57f6ea9a2950a7e69aa84529b',
+    ALLOCATOR_PATHS[1]: '68b3be6347d6dc8eb0c180f55e7cf0c2d49e08b1e9ba81e9fed360a05ab85574',
+    TRIGGER_PATHS[0]: 'fd7400c61276ef6f61999a7da9740ca15ed319ea1531b0be6d30da5746fe011f',
+    TRIGGER_PATHS[1]: '8573b3531157dabc0e580d1eea26f4a9374d902e765f18452b1caa12edffe6af',
+}
+CPC_G2 = 'grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f'
+
+
+def cpc_authorization(root):
+    """User-requested C_PC integration after accepted C_OS; no new G2 claim."""
+    decision = accepted(root)
+    p.require(CPC_G2 in decision['accepted_generic_runtime_support'],
+              'C_PC integration requires its accepted G2 in the G3 consumed set')
+    p.git(root, 'merge-base', '--is-ancestor', CPC_PREDECESSOR, 'HEAD')
+    for path, expected in CPC_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', CPC_PREDECESSOR + ':' + path)) == expected,
+                  'C_PC integration requires the accepted C_OS predecessor')
+    return CPC_ENTRY
+
+
+def cpc_permitted(path, leaf):
+    """Call only after cpc_authorization(root); carrier event integration only."""
+    return leaf == CPC_ENTRY and path in CPC_PATHS
+
+
+AOS_ENTRY = "P9-8.3A.2"
+AOS_PATHS = (
+    'src/pygrc/models/grc_9_v4_topology.py',
+    'src/pygrc/models/grc_v4_candidate_a.py',
+    'src/pygrc/models/grc_v4_realizations.py',
+    'src/pygrc/models/grc_v4_step.py',
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_aos.py',
+)
+AOS_NEW_PATHS = ("tests/models/test_grc_9_v4_aos.py",)
+AOS_PREDECESSOR = '0c995f9443d6e659157b51eb324d2d0aac8b65b4'
+AOS_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': '87b729076d556065365f8e7ee9a8de9ffde5500b9758d6befdd5741689c4ec5b',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-Oracle.json': 'ce7f4ae309d9256d93ce7d96f10073e4380f92b26a9af548df1269f98507a06e',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-OracleReview.md': '33457f9ac29f59322aa4d1da4fdba4dac80a9abea8d7d9748281f8bd2002d128',
+    'implementation/phase-9-grcv4/verification/verify_p983a_aos_oracle.py': 'a72c76123ccd280f472f5728840e9a19f7bc8316a9f7746cb6380cfe6061eb66',
+    'implementation/phase-9-grcv4/verification/test_p983a_aos_oracle.py': 'f04cef6dd849e753f1cdd8c44df710bf135f313ca1a1f9d57c3142dd71b6e06f',
+}
+AOS_G2 = "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+
+
+def aos_authorization(root):
+    """Explicit user acceptance of A.1 and request for A.2, no new G2 claim."""
+    decision = accepted(root)
+    p.require(AOS_G2 in decision['accepted_generic_runtime_support'],
+              'A_OS integration requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', AOS_PREDECESSOR, 'HEAD')
+    for path, expected in AOS_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', AOS_PREDECESSOR + ':' + path)) == expected,
+                  'A_OS integration requires the accepted A.1 oracle checkpoint')
+        if path != 'implementation/Phase-9-GRCV4-Handoff.md':
+            p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                      'A.2 cannot replace accepted oracle expectations')
+    return AOS_ENTRY
+
+
+def aos_permitted(path, leaf):
+    """Call after aos_authorization(root); exact fixed-row A_OS bridge owners."""
+    return leaf == AOS_ENTRY and path in AOS_PATHS
+
+
+CCI_ENTRY = 'P9-8.3C-CI'
+CCI_PATHS = (
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_cci.py',
+)
+CCI_NEW_PATHS = ('tests/models/test_grc_9_v4_cci.py',)
+CCI_PREDECESSOR = 'ba5cf5c12efc30de7977853876bf801edcbca7d2'
+CCI_PREDECESSOR_HASHES = {
+    'implementation/Phase-9-GRCV4-Handoff.md': 'e2f4e7204e0afb2cc940452c6c48a85a7a9da894b760efcfc9dd615ebce54efe',
+    'src/pygrc/models/grc_9_v4_expansion.py': '5cb2832b05bba367c74e2022630c4d3c06594576c3fa33095909c9c355382ec4',
+    'src/pygrc/models/grc_9_v4_lifecycle.py': '59baa8b766f41524c9923e3361dec1f4d3c16423939572d8c4bd3dedaf4840de',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json': 'fe0175aec8119ff85efe8685638eeece5b70d2efe705b0a3a475e3ca8bc55f24',
+    'implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py': '0ddd5b79cc2492a1d6635158f81fce308872fa240a6630074676d18d1b983136',
+    'implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py': '8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9',
+}
+CCI_RESEARCH_PATHS = (
+    'implementation/phase-9-grcv4/tranche-8/P9-8.0-CI-ConstructionInputs.json',
+    'implementation/phase-9-grcv4/verification/test_p980_ci_event_companion.py',
+    'implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py',
+)
+CCI_G2 = 'grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e'
+
+
+def cci_authorization(root):
+    """User-requested C_CI after accepted A.2; exact existing G2, no promotion."""
+    decision = accepted(root)
+    p.require(CCI_G2 in decision['accepted_generic_runtime_support'],
+              'C_CI requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', CCI_PREDECESSOR, 'HEAD')
+    for path, expected in CCI_PREDECESSOR_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', CCI_PREDECESSOR + ':' + path)) == expected,
+                  'C_CI requires its accepted predecessor and research subjects')
+        if path in CCI_RESEARCH_PATHS:
+            p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                      'C_CI cannot replace accepted research expectations')
+    return CCI_ENTRY
+
+
+def cci_permitted(path, leaf):
+    """Call after cci_authorization(root); event integration owners only."""
+    return leaf == CCI_ENTRY and path in CCI_PATHS
+
+
+ACI_ENTRY = 'P9-8.3A.2'
+ACI_PATHS = (
+    'src/pygrc/models/grc_9_v4_topology.py',
+    'src/pygrc/models/grc_v4_candidate_a.py',
+    'src/pygrc/models/grc_v4_ci.py',
+    'src/pygrc/models/grc_9_v4_expansion.py',
+    'src/pygrc/models/grc_9_v4_lifecycle.py',
+    'tests/models/test_grc_9_v4_aci.py',
+)
+ACI_NEW_PATHS = ('tests/models/test_grc_9_v4_aci.py',)
+ACI_G2 = 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'
+ACI_PREDECESSOR = '2a1d6c098f1154a973614364f680ee69e5b7511b'
+ACI_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json'
+ACI_ACCEPTANCE_SHA = 'c46fdb1dfd155a693b192ed27692b322026c0ab5b08c2805a70f20501b4c2906'
+ACI_ORACLE_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Oracle.json': '846e491b8eaa637ebcdac0a049a26f2192bf1054f0e341af0a8a9e51f70ebb44', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-OracleReview.md': '9544b4a46da678c2c9af50111465fff3416174fddf213055aac6da3cce47dd32', 'implementation/phase-9-grcv4/verification/verify_p983a_aci_oracle.py': 'ad00edb92b3cf7868f7ae888972c8c646c966cf9b8619939a0a25e346350bf51', 'implementation/phase-9-grcv4/verification/test_p983a_aci_oracle.py': '0666b3051fc391be6cbb02ec7615de166e3f8c0c2f41721454c91bb716201f8e'}
+
+
+def aci_authorization(root):
+    """Explicit A_CI oracle acceptance and requested runtime closure, no G2 promotion.
+
+    The oracle was accepted in the working tree. Pin its exact reviewed bytes
+    and the explicit acceptance record instead of inventing a committed subject.
+    """
+    decision = accepted(root)
+    p.require(ACI_G2 in decision['accepted_generic_runtime_support'],
+              'A_CI requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', ACI_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, ACI_ACCEPTANCE).read_bytes()) == ACI_ACCEPTANCE_SHA,
+              'A_CI requires its explicit accepted oracle scope')
+    value = p.read(p.safe_path(root, ACI_ACCEPTANCE))
+    p.require(value['status'] == 'accepted_by_user'
+              and {r['path']: r['sha256'] for r in value['immutable_subjects']} == ACI_ORACLE_HASHES,
+              'A_CI oracle acceptance bindings changed')
+    for path, expected in ACI_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_CI A.2 cannot replace accepted oracle expectations')
+    return ACI_ENTRY
+
+
+def aci_permitted(path, leaf):
+    """Exact fixed-row CI proof and native transaction owners only."""
+    return leaf == ACI_ENTRY and path in ACI_PATHS
+
+
+APC_ENTRY = "P9-8.3A.2"
+APC_PATHS = ('src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_pc.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_apc.py')
+APC_NEW_PATHS = ("tests/models/test_grc_9_v4_apc.py",)
+APC_G2 = "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75"
+APC_PREDECESSOR = '3493fcd6f65fb45f56ff4efaad391fbfa1783960'
+APC_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json'
+APC_ACCEPTANCE_SHA = '232632413f02c34b250d5f8ed850742def3f1b17b6e7b46957d2654d06a6618d'
+APC_ORACLE_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Oracle.json': '169554a8b01b99484fba8fcb2b6c1854a8a17b23e0d4c9efe0dd203a26c02eec', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md': '2e00b770fea009dfb4082bc89677178656e2a7312867fa7220f9e6415e160b74', 'implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py': '6daa9c200d80fd041c0eb5badff1cbf0b971373290adcc504869c9c654af7359', 'implementation/phase-9-grcv4/verification/test_p983a_apc_oracle.py': 'f2dd3e52ab607acfd1aeb731cac8c639d122dc2774a96c8025b2c943b2f6b435'}
+
+
+def apc_authorization(root):
+    """Accepted exact A_PC oracle/fixture; closed runtime entry, no support promotion."""
+    decision = accepted(root)
+    p.require(APC_G2 in decision['accepted_generic_runtime_support'], 'A_PC requires its exact G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', APC_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, APC_ACCEPTANCE).read_bytes()) == APC_ACCEPTANCE_SHA,
+              'A_PC requires the unchanged explicit oracle acceptance')
+    for path, expected in APC_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_PC runtime cannot replace accepted oracle subjects')
+        p.require(p.sha(p.git(root, 'show', APC_PREDECESSOR + ':' + path)) == expected,
+                  'A_PC oracle differs from its accepted commit')
+    return APC_ENTRY
+
+
+def apc_permitted(path, leaf):
+    return leaf == APC_ENTRY and path in APC_PATHS
+
+
+CCIPC_ENTRY = "P9-8.3C-CI-PC"
+CCIPC_PATHS = ('src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_ccipc.py')
+CCIPC_NEW_PATHS = ("tests/models/test_grc_9_v4_ccipc.py",)
+CCIPC_G2 = 'grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b'
+CCIPC_PREDECESSOR = '59667467bda8a5369bedb23edfaf77a940d78610'
+CCIPC_RESEARCH_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.0-CarrierEventInputs.json': 'ea066d7eb291367a7fe564b43a8b22a715b8ada8c265283fdff26322d62797b7', 'implementation/phase-9-grcv4/verification/test_p980_carrier_event_companion.py': 'a671accc50e08757d40a2fa7a28d41fe8917f6058d4ef31b6d188c519fda9ec7', 'implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py': '8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9', 'implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py': '944385027e388619e1d70510ac1cc9eb7cfdb7ed1c15be3ea3a78524ee9b2d28'}
+
+
+def ccipc_authorization(root):
+    """User-requested C_CI+PC after accepted A_PC; exact G2, no new support."""
+    decision = accepted(root)
+    p.require(CCIPC_G2 in decision['accepted_generic_runtime_support'],
+              'C_CI+PC requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', CCIPC_PREDECESSOR, 'HEAD')
+    for path, expected in CCIPC_RESEARCH_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', CCIPC_PREDECESSOR + ':' + path)) == expected,
+                  'C_CI+PC requires its accepted research subjects')
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'C_CI+PC cannot replace accepted research expectations')
+    return CCIPC_ENTRY
+
+
+def ccipc_permitted(path, leaf):
+    return leaf == CCIPC_ENTRY and path in CCIPC_PATHS
+
+
+ACIPC_ENTRY = "P9-8.3A.2"
+ACIPC_PATHS = ('src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_pc.py', 'src/pygrc/models/grc_v4_ci.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_apc.py', 'tests/models/test_grc_9_v4_acipc.py')
+ACIPC_NEW_PATHS = ("tests/models/test_grc_9_v4_acipc.py",)
+ACIPC_G2 = "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689"
+ACIPC_PREDECESSOR = '171192344bac3ab1750c7e5b0667cb571a7142cd'
+ACIPC_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json'
+ACIPC_ACCEPTANCE_SHA = '4447c640b9a7e619caf3876aaf4276dad6b7d26771994fd0bc5d43805a30a6c3'
+ACIPC_ORACLE_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Oracle.json': 'e34243fd149d4f4cccc720232a3d7d2ac92b04a7e16059e8adf04f839c2a7238', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-OracleReview.md': 'a8583b21c180f813e4658a2cee70e409540eedd13c5dc8fdcb17db8df9a274ec', 'implementation/phase-9-grcv4/verification/verify_p983a_acipc_oracle.py': 'e132b79aba42d4d9ea2d2be49dfdc20a7f06a38f437600c6e35e3445d9b6a781', 'implementation/phase-9-grcv4/verification/test_p983a_acipc_oracle.py': 'e47466fab85a1ca107dc38212e1403c119088c204171e3518a010caa1bdecaba'}
+
+
+def acipc_authorization(root):
+    """User continuation accepts pinned A.1; bounded composite runtime only."""
+    decision = accepted(root)
+    p.require(ACIPC_G2 in decision['accepted_generic_runtime_support'],
+              'A_CI+PC requires its exact G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', ACIPC_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, ACIPC_ACCEPTANCE).read_bytes()) == ACIPC_ACCEPTANCE_SHA,
+              'A_CI+PC requires its unchanged oracle acceptance')
+    for path, expected in ACIPC_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_CI+PC runtime cannot replace accepted oracle subjects')
+        p.require(p.sha(p.git(root, 'show', ACIPC_PREDECESSOR + ':' + path)) == expected,
+                  'A_CI+PC oracle differs from its accepted commit')
+    return ACIPC_ENTRY
+
+
+def acipc_permitted(path, leaf):
+    return leaf == ACIPC_ENTRY and path in ACIPC_PATHS
+
+
+CRG2B_ENTRY = "P9-8.3C-RG2b"
+CRG2B_PATHS = ('src/pygrc/models/grc_9_v4_rg2b.py', 'src/pygrc/models/grc_v4_rg2b.py', 'src/pygrc/models/grc_v4_lifecycle.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_crg2b.py')
+CRG2B_NEW_PATHS = ('src/pygrc/models/grc_9_v4_rg2b.py', 'tests/models/test_grc_9_v4_crg2b.py')
+CRG2B_G2 = "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0"
+CRG2B_PREDECESSOR = "d5eee1a6c2d50e635569353e85c5e4f4791eae09"
+CRG2B_RESEARCH_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md': 'bc029c5e927e3ae4793af91eb95c07e565cfb733324ec8c0ff3c8104b491776b', 'implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md': '357c225f8acbed978c5f50852112117c9f6dcef313bae2fef614f030496c453b', 'implementation/phase-9-grcv4/tranche-8/P9-8.0-RG-ConstructionInputs.json': 'c4890e5a98e00e06c0a226012700f02e0cb8e740bbd977b551761e821e4a4294', 'implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py': '5725f799116395e74601c04578a1caaa8811f76657589b334514122553fa0c79', 'implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py': 'b4c41363d07beee6c4b0e18f88c52f19574abc55cfd5b73a264514df62cb297e', 'implementation/phase-9-grcv4/verification/test_p980_rg_event_companion.py': '3ea4c72d64b1204ce19ed433b0f164851e8f622e8aade6aaf44a40f905d4bfb7'}
+
+
+def crg2b_authorization(root):
+    """Requested native C_RG2b continuation; separate signed completion, no G2 promotion."""
+    decision = accepted(root)
+    p.require(CRG2B_G2 in decision['accepted_generic_runtime_support'],
+              'C_RG2b requires its exact accepted generic G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', CRG2B_PREDECESSOR, 'HEAD')
+    for path, expected in CRG2B_RESEARCH_HASHES.items():
+        p.require(p.sha(p.git(root, 'show', CRG2B_PREDECESSOR + ':' + path)) == expected,
+                  'C_RG2b requires its accepted research subjects')
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'C_RG2b cannot replace accepted research expectations')
+    return CRG2B_ENTRY
+
+
+def crg2b_permitted(path, leaf):
+    return leaf == CRG2B_ENTRY and path in CRG2B_PATHS
+
+
+ARG2B_ENTRY = "P9-8.3A.2"
+ARG2B_PATHS = ('src/pygrc/models/grc_9_v4_arg2b.py', 'src/pygrc/models/grc_v4_rg2b.py', 'src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_lifecycle.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_arg2b.py')
+ARG2B_NEW_PATHS = ('src/pygrc/models/grc_9_v4_arg2b.py', 'tests/models/test_grc_9_v4_arg2b.py')
+ARG2B_G2 = 'grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b'
+ARG2B_PREDECESSOR = '90744875c2f66d2e98083d16b93192b1379735fd'
+ARG2B_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json'
+ARG2B_ACCEPTANCE_SHA = '5c9fd726b6f40424d1097212af84c1460770e3df10f4795b3bc668fb117faacf'
+ARG2B_ORACLE_HASHES = {'implementation/phase-9-grcv4/verification/verify_p983a_arg2b_oracle.py': 'e1d56071ab8c75ab6686c8e82cb9455489cc08b21d03ec8a1f9bcaf86815433a', 'implementation/phase-9-grcv4/verification/test_p983a_arg2b_oracle.py': 'fc12f2efaff10c2c4bd156e255bfd983ada5a9cd9929198638f08687873d6617', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json': '521787954476c351e5fc99e492ce0e00f1a972255c8274729c7d0c03098ffbc9', 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md': '1b814ade05b0bb19e8a6bca37f5b7ebb909e67c6d4fc2b93ff419af98baba97c'}
+
+
+def arg2b_authorization(root):
+    """Accepted immutable A.1 and requested signed A.2; no public G2 promotion."""
+    decision = accepted(root)
+    p.require(ARG2B_G2 in decision['accepted_generic_runtime_support'],
+              'A_RG2b requires its exact accepted G2 in G3')
+    p.git(root, 'merge-base', '--is-ancestor', ARG2B_PREDECESSOR, 'HEAD')
+    p.require(p.sha(p.safe_path(root, ARG2B_ACCEPTANCE).read_bytes()) == ARG2B_ACCEPTANCE_SHA,
+              'A_RG2b requires its unchanged explicit oracle acceptance')
+    for path, expected in ARG2B_ORACLE_HASHES.items():
+        p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
+                  'A_RG2b runtime cannot replace accepted oracle subjects')
+        p.require(p.sha(p.git(root, 'show', ARG2B_PREDECESSOR + ':' + path)) == expected,
+                  'A_RG2b oracle differs from its accepted commit')
+    return ARG2B_ENTRY
+
+
+def arg2b_permitted(path, leaf):
+    return leaf == ARG2B_ENTRY and path in ARG2B_PATHS

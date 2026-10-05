@@ -1,0 +1,120 @@
+{
+  "schema": "p983a_arg2b_oracle_acceptance_v1",
+  "date": "2026-10-04",
+  "status": "accepted_by_user",
+  "user_instruction": "accept and commit",
+  "acceptance_basis": "Explicit acceptance of the completed A_RG2b A.1 independent oracle and bounded mathematical/adversarial review presented in the preceding turn; the four reviewed subjects are pinned below without changing their bytes.",
+  "accepted_scope": "bounded A_RG2b P9-8.3A.1 independent oracle and pressure review, including its separately identified signed C/scaled-log-W completion and native fixture",
+  "accepted_predecessor": "6c3798eceeab921950762e1f3cec361ed74e2e23",
+  "exact_generic_G2_prerequisite": "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+  "oracle_record_digest": "a12ed9c786376289c6bdd3e966e66c597b991adb9a4dc1f39e52cf6d80ccce0a",
+  "accepted_fixture": {
+    "numerical_scope": {
+      "dt": 0.000244140625,
+      "target_steps_per_role": 10,
+      "section_tolerance": 3.552713678800501e-15,
+      "depth": 4,
+      "sweeps": 18,
+      "map_budget": 148,
+      "source_absolute_error": "1/18446744073709551616",
+      "section_absolute_error": "1/281474976710656",
+      "resource_absolute_error": "1/1099511627776",
+      "current_absolute_error": "1/1099511627776",
+      "history_absolute_error": "1/281474976710656",
+      "native_runtime_executed": false,
+      "earlier_chronology_authenticated": false
+    },
+    "completion_proof": {
+      "global": {
+        "A_X": "87872062424953835764057962688129336764313757715169358967094512233389215/1968215769825474065028538635325186621893927801328880640802902665125167104",
+        "A_H": "849157741378719461424511609841209961510997463889060597470237095/12856416635810342978311163989323045272656844422124056886665805824",
+        "M_f": "41498124350377495139174931975/313494218786553217047307140608",
+        "M_S": "118657926849551278827600869906435160697395017416704000/3104573422948717202091483832909873609174001492738062244761",
+        "B_X": "14622819481837739064507427786719474598882494066089492312981715461803924497028180237549275/145222939517845005802304069573707655628437731530638782727885730286016919879545979339379705856",
+        "B_H": "1497323185400955312773172133035656227379022130236840494360481196130638041028783283200/12627743831148230652223036871643564875653430743647689529795286371723966973686976478301157",
+        "J": "36887221644779995679266606200/612293396067486752045521759",
+        "J_X": "9763562491661537307117551409792148529368195301685484329677168025932135/480521428180047379157358065264938140110822217121308750196021158477824",
+        "J_H": "94350860153191051269390178871245551278999718209895621941137455/3138773592727134516189249020830821599769737407745131075846144",
+        "current_margin": "2344864626236444989279/2344940703847010856928",
+        "read_exponent_upper": "4441404896155777/36606101097222766592",
+        "writer_exponent_upper": "25249079184644568116982773485348251347062084639562927052805843/206105215421836261601418895108677860809402875745675683005022076928",
+        "read_drive_upper": "16777216/16777215",
+        "weight_lower": "511/512",
+        "weight_upper": "512/511",
+        "M_C": "41498124350377495139174931975/313494218786553217047307140608",
+        "M_Y": "427798328055418516557254052994484698240427076330335745421989587/1648841723374690092811351160869422886475223005965405464040176615424"
+      },
+      "section": {
+        "ell": "12571287843417274262631253267406719574057071125715804154665528937148585/281173681403639152146934090760740945984846828761268662971843237875023872",
+        "inverse_lip": "281173681403639152146934090760740945984846828761268662971843237875023872/268602393560221877884302837493334226410789757635552858817177708937875287",
+        "value_radius": "59328963424775639413800434953217580348697508708352000/3104573422948717202091483832909873609174001492738062244761",
+        "image_lip": "934168946454784465091199014759620827150307624579977633924016751916196456046189913230283061696921600/17704986123747678994803478403081550313074627216089726395989216067985165887900880616402494753692898131949",
+        "q_section": "33343966414604290193059210727591608952468451566171436636201856970238966544481007566113587895574465768351251727761958321206067200/531191657970822536740093707739490891131838422360164489210862736101378918731788884526042552490305151524001912296251417512684496336259"
+      },
+      "K_minus_C": [
+        -0.25,
+        4.25
+      ],
+      "K_C": [
+        -0.5,
+        4.5
+      ],
+      "K_minus_Y": [
+        -0.625,
+        0.625
+      ],
+      "K_Y": [
+        -0.75,
+        0.75
+      ],
+      "auxiliary_C": [
+        -1,
+        5
+      ],
+      "auxiliary_Y": [
+        -1,
+        1
+      ],
+      "Y_scale": 512,
+      "h_radius": "1/4096",
+      "section_lipschitz": "1/1024",
+      "graph_class": "connected_port_trees_2_to_17_vertices_with_checked_B_D_mask_norms"
+    },
+    "resource_distribution": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "source_graph_size": [
+      10,
+      9
+    ],
+    "target_graph_size": [
+      17,
+      16
+    ]
+  },
+  "immutable_subjects": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_arg2b_oracle.py",
+      "sha256": "e1d56071ab8c75ab6686c8e82cb9455489cc08b21d03ec8a1f9bcaf86815433a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_arg2b_oracle.py",
+      "sha256": "fc12f2efaff10c2c4bd156e255bfd983ada5a9cd9929198638f08687873d6617"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json",
+      "sha256": "521787954476c351e5fc99e492ce0e00f1a972255c8274729c7d0c03098ffbc9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-OracleReview.md",
+      "sha256": "1b814ade05b0bb19e8a6bca37f5b7ebb909e67c6d4fc2b93ff419af98baba97c"
+    }
+  ],
+  "accepted_limits": "Signed argument-only completion, not the original compact-support construction. C/W physical authority; no persistent geometry or carrier. Reviewed fixed parameters and checked connected port-tree hypotheses only. Per-entry numerical budgets and finite continuations; no arbitrary graph/parameter support, indefinite positivity, C1 section or spectrum claim. A.2 must execute the declared native reconstruction, failure, rollback and replay obligations against this immutable oracle.",
+  "next_iteration": "P9-8.3A.2 A_RG2b runtime and closure",
+  "runtime_implementation_started": false,
+  "public_support_added": false,
+  "runtime_accepted": false
+}

@@ -240,6 +240,14 @@ def _rg2b_beat(reference: GRCV4ReferenceGeometry) -> float:
     from .grc_v4_rg2b import RG2bDomain
     from .grc_v4_rg2b_graph import EXTENSION, RG2bGraphDomain
     identity = reference.profile.params_resolved.realization.extension_evaluator_id
+    from .grc_9_v4_rg2b import EXTENSION as NATIVE_EXTENSION
+    from .grc_9_v4_rg2b import NativeCRG2bDomain
+    if identity == NATIVE_EXTENSION:
+        return NativeCRG2bDomain.from_identity(identity).beat_dt
+    from .grc_9_v4_arg2b import EXTENSION as NATIVE_A_EXTENSION
+    from .grc_9_v4_arg2b import NativeARG2bDomain
+    if identity == NATIVE_A_EXTENSION:
+        return NativeARG2bDomain.from_identity(identity).beat_dt
     domain = RG2bGraphDomain if identity.startswith(EXTENSION) else RG2bDomain
     return domain.from_identity(identity).beat_dt
 

@@ -2,8 +2,9 @@
 
 The serialized order is the coordinate order. Positive tail-to-head flux has
 positive outward divergence at its tail: B[tail,e]=+1, B[head,e]=-1. Loops
-cancel in B; parallel edges keep distinct IDs. No legacy slots or port chart
-enter this backend. Descriptor hashes below are versioned implementation-local
+cancel in B; parallel edges keep distinct IDs. Numerical algebra uses node/edge
+coordinates; an enabled port graph retains serialization and identity ownership.
+Descriptor hashes below are versioned implementation-local
 identities, not additions to the frozen wire schema. Pure pairing descriptors
 do not establish freshness; the separate stage/cache package binds its inputs.
 
@@ -20,7 +21,7 @@ import math
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field, replace
 from types import MappingProxyType
-from typing import ClassVar, Literal, Self, TypeAlias, cast
+from typing import TYPE_CHECKING, ClassVar, Literal, Self, TypeAlias, cast
 
 from ._grc_v4_evidence import _lifecycle_identity, _owns_stage_reference
 from .grc_v4_codec import (
@@ -44,6 +45,8 @@ from .grc_v4_state import (
 )
 
 NodeId: TypeAlias = str | int
+if TYPE_CHECKING:
+    from .grc_9_v4_topology import GRC9V4PortGraph
 Matrix: TypeAlias = tuple[tuple[float, ...], ...]
 POSITIVITY_POLICY_ID = "exact_binary64_sylvester_bareiss_v1"
 
@@ -194,8 +197,16 @@ class OrientedEdge:
 
 @dataclass(frozen=True, slots=True)
 class GRCV4Graph:
+    """Numerical coordinates, optionally derived from the sole port owner.
+
+    The specialized route serializes and identifies the port graph itself.
+    Copied coordinate indexes are disposable; they cannot change independently
+    of that owner, including through dataclasses.replace or deserialization.
+    """
+
     live_node_ids: tuple[NodeId, ...]
     oriented_edges: tuple[OrientedEdge, ...]
+    _port_owner: GRC9V4PortGraph | None = field(default=None, kw_only=True, repr=False)
     _node_index: Mapping[NodeId, int] = field(init=False, repr=False, compare=False)
     _edge_index: Mapping[str, int] = field(init=False, repr=False, compare=False)
 
@@ -206,7 +217,18 @@ class GRCV4Graph:
             raise TypeError("expected typed oriented edges")
         object.__setattr__(self, "live_node_ids", nodes)
         object.__setattr__(self, "oriented_edges", edges)
-        validate_payload("serialized_graph_payload", self.to_payload())
+        if self._port_owner is None:
+            validate_payload("serialized_graph_payload", self.to_payload())
+        else:
+            from .grc_9_v4_topology import GRC9V4PortGraph
+
+            if type(self._port_owner) is not GRC9V4PortGraph:
+                raise TypeError("expected the sole admitted port-graph owner")
+            owner = replace(self._port_owner)
+            projection = owner.generic_projection()
+            if nodes != projection.live_node_ids or edges != projection.oriented_edges:
+                raise ValueError("numerical coordinates differ from port owner")
+            object.__setattr__(self, "_port_owner", owner)
         node_index = {x: i for i, x in enumerate(nodes)}
         edge_index = {e.edge_id: i for i, e in enumerate(self.oriented_edges)}
         if len(node_index) != len(nodes) or len(edge_index) != len(edges):
@@ -220,7 +242,27 @@ class GRCV4Graph:
         object.__setattr__(self, "_edge_index", MappingProxyType(edge_index))
 
     @classmethod
+    def from_port_graph(cls, graph: GRC9V4PortGraph) -> Self:
+        from .grc_9_v4_topology import GRC9V4PortGraph
+
+        if type(graph) is not GRC9V4PortGraph:
+            raise TypeError("expected an admitted port graph")
+        view = graph.generic_projection()
+        return cls(view.live_node_ids, view.oriented_edges, _port_owner=graph)
+
+    @property
+    def port_graph(self) -> GRC9V4PortGraph | None:
+        return self._port_owner
+
+    @classmethod
     def from_payload(cls, value: object) -> Self:
+        if (
+            isinstance(value, Mapping)
+            and value.get("schema_version") == "grc9v4-port-graph-v1"
+        ):
+            from .grc_9_v4_topology import GRC9V4PortGraph
+
+            return cls.from_port_graph(GRC9V4PortGraph.from_payload(value))
         data = validate_payload("serialized_graph_payload", value)
         raw_nodes = data["live_node_ids"]
         raw_edges = data["oriented_edges"]
@@ -251,6 +293,8 @@ class GRCV4Graph:
         return cls.from_payload(value)
 
     def to_payload(self) -> dict[str, JSONValue]:
+        if self._port_owner is not None:
+            return self._port_owner.to_payload()
         return {
             "schema_version": "grcv4-serialized-graph-v1",
             "live_node_ids": list(self.live_node_ids),

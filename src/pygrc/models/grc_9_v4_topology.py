@@ -33,14 +33,18 @@ from .grc_v4_exact import (
     integer_ratio,
 )
 from .grc_v4_geometry import (
+    GRCV4Graph,
     Matrix,
     NodeId,
     NonfiniteGeometryError,
     OrientedEdge,
+    VertexScalar,
     _diagonal,
     _identity,
+    _local_payload,
     _node_id,
     _ordered,
+    _require_coordinates,
 )
 from .grc_v4_profile import CandidateCParams, GRCV4Profile, _Record
 from .grc_v4_state import (
@@ -1063,3 +1067,99 @@ def split_columns(
                 values[port - 1] = value
         rows.append(tuple(values))
     return GRC9V4PortField(port_graph, source.field_family, tuple(rows))
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CandidateADifferentialReference:
+    """Closed fixed-row A recipe; incoming W is a required stage operand.
+
+    This descriptor binds the port owner, never a cached gradient or retained
+    weight vector. The WLS initializer remains a separate, unchanged contract.
+    """
+
+    port_graph: GRC9V4PortGraph
+
+    def __post_init__(self) -> None:
+        if type(self.port_graph) is not GRC9V4PortGraph:
+            raise TypeError("fixed-row A requires the exact port graph owner")
+        object.__setattr__(
+            self,
+            "port_graph",
+            GRC9V4PortGraph.from_payload(self.port_graph.to_payload()),
+        )
+
+    @property
+    def graph(self) -> GRCV4Graph:
+        return GRCV4Graph.from_port_graph(self.port_graph)
+
+    def to_payload(self) -> dict[str, JSONValue]:
+        return {
+            "descriptor_version": "grc9v4-candidate-a-fixed-row-v1",
+            "port_graph": self.port_graph.to_payload(),
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "curvature_backend": "none",
+            "read_weights": "incoming_W_A",
+            "writer_weights": "incoming_W_A",
+            "writer_resources": "admitted_final_C",
+            "writer_current": "selected_physical_current",
+            "empty_row": "exact_zero",
+            "rounding": "exact_row_ratio_then_binary64_v1",
+        }
+
+    @property
+    def identity(self) -> str:
+        return _identity("grcv4-a-descriptor-sha256", self.to_payload())
+
+    @classmethod
+    def from_payload(cls, value: object) -> Self:
+        data = _local_payload(
+            value,
+            {
+                "descriptor_version",
+                "port_graph",
+                "frame_mode",
+                "hessian_backend",
+                "curvature_backend",
+                "read_weights",
+                "writer_weights",
+                "writer_resources",
+                "writer_current",
+                "empty_row",
+                "rounding",
+            },
+        )
+        result = cls(GRC9V4PortGraph.from_payload(data["port_graph"]))
+        if canonical_json_bytes(data) != canonical_json_bytes(result.to_payload()):
+            raise ValueError("unsupported fixed-row A recipe")
+        return result
+
+    def rebuild(self, C: VertexScalar, incoming_W: tuple[float, ...]) -> Matrix:
+        return tuple(
+            tuple(_rounded(x) for x in row) for row in self.rebuild_exact(C, incoming_W)
+        )
+
+    def rebuild_exact(
+        self, C: VertexScalar, incoming_W: tuple[float, ...]
+    ) -> tuple[tuple[ExactScalar, ...], ...]:
+        """Unrounded fixed-row operands for analytic residual/domain proofs.
+
+        The same admitted incidence terms supply binary64 point descriptors.
+        No stored or rounded summary can become an analytic proof operand.
+        """
+        _require_coordinates(C, VertexScalar, self.graph)
+        weights = _vector(incoming_W, positive=True)
+        terms = GRC9V4RowDifferential(self.port_graph)._terms(
+            C.values, weights, (0.0,) * len(self.port_graph.edges)
+        )
+        result = []
+        for rows in terms:
+            gradient = []
+            for row in rows:
+                denominator = sum((w for w, _, _ in row), exact_number())
+                numerator = sum((w * delta for w, delta, _ in row), exact_number())
+                gradient.append(
+                    numerator / denominator if denominator else exact_number()
+                )
+            result.append(tuple(gradient))
+        return tuple(result)

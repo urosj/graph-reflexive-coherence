@@ -1,0 +1,376 @@
+{
+  "schema": "p983a_apc_oracle_validation_v1",
+  "date": "2026-10-03",
+  "phase": "P9-8.3A.1",
+  "profile_family_id": "A_PC",
+  "disposition": "bounded_oracle_own_review_pass_user_acceptance_pending",
+  "accepted_predecessor": "d431e2e2784cd42e6be7af071f48c065b8d196bb",
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py",
+      "sha256": "6daa9c200d80fd041c0eb5badff1cbf0b971373290adcc504869c9c654af7359"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_apc_oracle.py",
+      "sha256": "f2dd3e52ab607acfd1aeb731cac8c639d122dc2774a96c8025b2c943b2f6b435"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Oracle.json",
+      "sha256": "169554a8b01b99484fba8fcb2b6c1854a8a17b23e0d4c9efe0dd203a26c02eec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md",
+      "sha256": "2e00b770fea009dfb4082bc89677178656e2a7312867fa7220f9e6415e160b74"
+    }
+  ],
+  "oracle_record_digest": "6548f25d485d8aa43d8e587b51b989b5d5d516085d9d637614776af53e4baf5c",
+  "numerical_summary": {
+    "result": "P983A_APC_ORACLE_PASS",
+    "comparisons": 25,
+    "effect_controls": 24,
+    "minimum_effect_margin": 8.369164860755353,
+    "maximum_errors": {
+      "C": 2.2130460763843175e-16,
+      "W_A": 5.5068591288111776e-17,
+      "Z_4": 7.059646874001537e-15,
+      "current": 8.569382661206623e-16,
+      "baseline": 8.881784153315776e-16,
+      "H": 1.1063122649143755e-16,
+      "source": 1.3511424691004116e-20
+    },
+    "chart_bounds": {
+      "source": {
+        "carrier_radius": 2048.0,
+        "geometry_radius": 0.125,
+        "resource_radius": 16.0,
+        "weight_lower": 0.5,
+        "weight_upper": 1.001953125,
+        "hodge_lower": 0.875,
+        "hodge_upper": 1.125,
+        "current_margin_lower": 0.96875,
+        "current_condition_upper": 1.064516129032258,
+        "descriptor_norm_upper": 39.191835884530846,
+        "conductance_exponent_absolute_upper": 0.01682890396484738,
+        "current_norm_upper": 747.3404085863441,
+        "source_frobenius_upper": 1424.7900160867441
+      },
+      "target": {
+        "carrier_radius": 2048.0,
+        "geometry_radius": 0.125,
+        "resource_radius": 16.0,
+        "weight_lower": 0.5,
+        "weight_upper": 1.001953125,
+        "hodge_lower": 0.875,
+        "hodge_upper": 1.125,
+        "current_margin_lower": 0.96875,
+        "current_condition_upper": 1.064516129032258,
+        "descriptor_norm_upper": 39.191835884530846,
+        "conductance_exponent_absolute_upper": 0.006102046181533713,
+        "current_norm_upper": 445.6277215817421,
+        "source_frobenius_upper": 506.5920057197313
+      }
+    },
+    "effects": [
+      {
+        "graph": "source",
+        "role": "current",
+        "effect": "geometry",
+        "represented_difference": 0.0003502664267403255,
+        "combined_full_error": 2.71609925238592e-17,
+        "exact_effect_lower": 0.00035026642674029833,
+        "minimum_margin_ratio": 1059203290342.4185
+      },
+      {
+        "graph": "source",
+        "role": "current",
+        "effect": "feedback",
+        "represented_difference": 0.00014159123148191344,
+        "combined_full_error": 2.7021398027288154e-17,
+        "exact_effect_lower": 0.00014159123148188641,
+        "minimum_margin_ratio": 428895123057.31946
+      },
+      {
+        "graph": "source",
+        "role": "reset",
+        "effect": "geometry",
+        "represented_difference": 0.02435137125244502,
+        "combined_full_error": 1.542644680234412e-15,
+        "exact_effect_lower": 0.024351371252443476,
+        "minimum_margin_ratio": 1194782071081.7136
+      },
+      {
+        "graph": "source",
+        "role": "reset",
+        "effect": "feedback",
+        "represented_difference": 0.009963746020773101,
+        "combined_full_error": 1.3335832106613611e-15,
+        "exact_effect_lower": 0.009963746020771767,
+        "minimum_margin_ratio": 509780015734.4936
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "feedback",
+        "represented_difference": 0.006604030497100233,
+        "combined_full_error": 8.286665593737436e-16,
+        "exact_effect_lower": 0.0066040304970994045,
+        "minimum_margin_ratio": 633778424044.895
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "written_carrier_next_current",
+        "represented_difference": 1.1070255823142361e-11,
+        "combined_full_error": 2.33010198809361e-15,
+        "exact_effect_lower": 1.1067925721154267e-11,
+        "minimum_margin_ratio": 673.9539033621853
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "next_geometry",
+        "represented_difference": 1.1070255823142361e-11,
+        "combined_full_error": 2.33010198809361e-15,
+        "exact_effect_lower": 1.1067925721154267e-11,
+        "minimum_margin_ratio": 673.9539033621853
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "same_source_carrier",
+        "represented_difference": 2.566349546257318e-10,
+        "combined_full_error": 2.1162766064801238e-23,
+        "exact_effect_lower": 2.5663495462571067e-10,
+        "minimum_margin_ratio": 2309512290484.229
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "same_source_next_current",
+        "represented_difference": 1.3322676295501878e-13,
+        "combined_full_error": 2.2033342400449957e-15,
+        "exact_effect_lower": 1.310234287149738e-13,
+        "minimum_margin_ratio": 8.369164860755353
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "stale_resource_writer_W",
+        "represented_difference": 1.2069234500700077e-12,
+        "combined_full_error": 1.0344295503645644e-16,
+        "exact_effect_lower": 1.2068200071149711e-12,
+        "minimum_margin_ratio": 927.0119649218029
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "stale_resource_writer_next_current",
+        "represented_difference": 1.7959855824756232e-11,
+        "combined_full_error": 2.598096320191652e-15,
+        "exact_effect_lower": 1.7957257728436042e-11,
+        "minimum_margin_ratio": 1026.405768305891
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "baseline_current_writer_W",
+        "represented_difference": 5.906386491005833e-13,
+        "combined_full_error": 1.0613939276611728e-16,
+        "exact_effect_lower": 5.905325097078172e-13,
+        "minimum_margin_ratio": 449.9295008713593
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "baseline_current_writer_next_current",
+        "represented_difference": 9.250378241176804e-12,
+        "combined_full_error": 2.5102285426078598e-15,
+        "exact_effect_lower": 9.247868012634196e-12,
+        "minimum_margin_ratio": 539.4957417623708
+      },
+      {
+        "graph": "target",
+        "role": "current",
+        "effect": "next_current_consumes_written_W",
+        "represented_difference": 0.00023124690930220737,
+        "combined_full_error": 2.037366359625697e-15,
+        "exact_effect_lower": 0.00023124690930017,
+        "minimum_margin_ratio": 15158868200.061655
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "feedback",
+        "represented_difference": 0.008404404438673296,
+        "combined_full_error": 1.74511668145224e-15,
+        "exact_effect_lower": 0.008404404438671551,
+        "minimum_margin_ratio": 396596524764.543
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "written_carrier_next_current",
+        "represented_difference": 2.0905943642901548e-11,
+        "combined_full_error": 2.615596673451561e-15,
+        "exact_effect_lower": 2.0903328046228096e-11,
+        "minimum_margin_ratio": 847.3124100860435
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "next_geometry",
+        "represented_difference": 2.0905943642901548e-11,
+        "combined_full_error": 2.615596673451561e-15,
+        "exact_effect_lower": 2.0903328046228096e-11,
+        "minimum_margin_ratio": 847.3124100860435
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "same_source_carrier",
+        "represented_difference": 4.622154234919826e-10,
+        "combined_full_error": 4.8696461557666016e-23,
+        "exact_effect_lower": 4.622154234919339e-10,
+        "minimum_margin_ratio": 1865837791978.1829
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "same_source_next_current",
+        "represented_difference": 2.8066438062523957e-13,
+        "combined_full_error": 2.4252635033779356e-15,
+        "exact_effect_lower": 2.7823911712186165e-13,
+        "minimum_margin_ratio": 11.737431077102345
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "stale_resource_writer_W",
+        "represented_difference": 1.9544366125501256e-12,
+        "combined_full_error": 1.0019061298326285e-16,
+        "exact_effect_lower": 1.9543364219371423e-12,
+        "minimum_margin_ratio": 1516.3120788261763
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "stale_resource_writer_next_current",
+        "represented_difference": 3.5566216638471815e-11,
+        "combined_full_error": 2.4361868695698886e-15,
+        "exact_effect_lower": 3.556378045160224e-11,
+        "minimum_margin_ratio": 1484.6722011500744
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "baseline_current_writer_W",
+        "represented_difference": 9.563461134121098e-13,
+        "combined_full_error": 9.822882153006429e-17,
+        "exact_effect_lower": 9.562478845905797e-13,
+        "minimum_margin_ratio": 746.5075420066077
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "baseline_current_writer_next_current",
+        "represented_difference": 1.8196999462816166e-11,
+        "combined_full_error": 2.78969694329395e-15,
+        "exact_effect_lower": 1.819420976587287e-11,
+        "minimum_margin_ratio": 717.2745722038642
+      },
+      {
+        "graph": "target",
+        "role": "reset",
+        "effect": "next_current_consumes_written_W",
+        "represented_difference": 0.00028101334888930296,
+        "combined_full_error": 2.2118891587534466e-15,
+        "exact_effect_lower": 0.0002810133488870911,
+        "minimum_margin_ratio": 12187021240.154654
+      }
+    ],
+    "record_digest": "6548f25d485d8aa43d8e587b51b989b5d5d516085d9d637614776af53e4baf5c"
+  },
+  "commands": [
+    {
+      "label": "oracle_comparison_and_effects",
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py",
+      "exit_code": 0,
+      "output": "{\n  \"result\": \"P983A_APC_ORACLE_PASS\",\n  \"comparisons\": 25,\n  \"effect_controls\": 24,\n  \"minimum_effect_margin\": 8.369164860755353,\n  \"maximum_errors\": {\n    \"C\": 2.2130460763843175e-16,\n    \"W_A\": 5.5068591288111776e-17,\n    \"Z_4\": 7.059646874001537e-15,\n    \"current\": 8.569382661206623e-16,\n    \"baseline\": 8.881784153315776e-16,\n    \"H\": 1.1063122649143755e-16,\n    \"source\": 1.3511424691004116e-20\n  },\n  \"chart_bounds\": {\n    \"source\": {\n      \"carrier_radius\": 2048.0,\n      \"geometry_radius\": 0.125,\n      \"resource_radius\": 16.0,\n      \"weight_lower\": 0.5,\n      \"weight_upper\": 1.001953125,\n      \"hodge_lower\": 0.875,\n      \"hodge_upper\": 1.125,\n      \"current_margin_lower\": 0.96875,\n      \"current_condition_upper\": 1.064516129032258,\n      \"descriptor_norm_upper\": 39.191835884530846,\n      \"conductance_exponent_absolute_upper\": 0.01682890396484738,\n      \"current_norm_upper\": 747.3404085863441,\n      \"source_frobenius_upper\": 1424.7900160867441\n    },\n    \"target\": {\n      \"carrier_radius\": 2048.0,\n      \"geometry_radius\": 0.125,\n      \"resource_radius\": 16.0,\n      \"weight_lower\": 0.5,\n      \"weight_upper\": 1.001953125,\n      \"hodge_lower\": 0.875,\n      \"hodge_upper\": 1.125,\n      \"current_margin_lower\": 0.96875,\n      \"current_condition_upper\": 1.064516129032258,\n      \"descriptor_norm_upper\": 39.191835884530846,\n      \"conductance_exponent_absolute_upper\": 0.006102046181533713,\n      \"current_norm_upper\": 445.6277215817421,\n      \"source_frobenius_upper\": 506.5920057197313\n    }\n  },\n  \"effects\": [\n    {\n      \"graph\": \"source\",\n      \"role\": \"current\",\n      \"effect\": \"geometry\",\n      \"represented_difference\": 0.0003502664267403255,\n      \"combined_full_error\": 2.71609925238592e-17,\n      \"exact_effect_lower\": 0.00035026642674029833,\n      \"minimum_margin_ratio\": 1059203290342.4185\n    },\n    {\n      \"graph\": \"source\",\n      \"role\": \"current\",\n      \"effect\": \"feedback\",\n      \"represented_difference\": 0.00014159123148191344,\n      \"combined_full_error\": 2.7021398027288154e-17,\n      \"exact_effect_lower\": 0.00014159123148188641,\n      \"minimum_margin_ratio\": 428895123057.31946\n    },\n    {\n      \"graph\": \"source\",\n      \"role\": \"reset\",\n      \"effect\": \"geometry\",\n      \"represented_difference\": 0.02435137125244502,\n      \"combined_full_error\": 1.542644680234412e-15,\n      \"exact_effect_lower\": 0.024351371252443476,\n      \"minimum_margin_ratio\": 1194782071081.7136\n    },\n    {\n      \"graph\": \"source\",\n      \"role\": \"reset\",\n      \"effect\": \"feedback\",\n      \"represented_difference\": 0.009963746020773101,\n      \"combined_full_error\": 1.3335832106613611e-15,\n      \"exact_effect_lower\": 0.009963746020771767,\n      \"minimum_margin_ratio\": 509780015734.4936\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"feedback\",\n      \"represented_difference\": 0.006604030497100233,\n      \"combined_full_error\": 8.286665593737436e-16,\n      \"exact_effect_lower\": 0.0066040304970994045,\n      \"minimum_margin_ratio\": 633778424044.895\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"written_carrier_next_current\",\n      \"represented_difference\": 1.1070255823142361e-11,\n      \"combined_full_error\": 2.33010198809361e-15,\n      \"exact_effect_lower\": 1.1067925721154267e-11,\n      \"minimum_margin_ratio\": 673.9539033621853\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"next_geometry\",\n      \"represented_difference\": 1.1070255823142361e-11,\n      \"combined_full_error\": 2.33010198809361e-15,\n      \"exact_effect_lower\": 1.1067925721154267e-11,\n      \"minimum_margin_ratio\": 673.9539033621853\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"same_source_carrier\",\n      \"represented_difference\": 2.566349546257318e-10,\n      \"combined_full_error\": 2.1162766064801238e-23,\n      \"exact_effect_lower\": 2.5663495462571067e-10,\n      \"minimum_margin_ratio\": 2309512290484.229\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"same_source_next_current\",\n      \"represented_difference\": 1.3322676295501878e-13,\n      \"combined_full_error\": 2.2033342400449957e-15,\n      \"exact_effect_lower\": 1.310234287149738e-13,\n      \"minimum_margin_ratio\": 8.369164860755353\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"stale_resource_writer_W\",\n      \"represented_difference\": 1.2069234500700077e-12,\n      \"combined_full_error\": 1.0344295503645644e-16,\n      \"exact_effect_lower\": 1.2068200071149711e-12,\n      \"minimum_margin_ratio\": 927.0119649218029\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"stale_resource_writer_next_current\",\n      \"represented_difference\": 1.7959855824756232e-11,\n      \"combined_full_error\": 2.598096320191652e-15,\n      \"exact_effect_lower\": 1.7957257728436042e-11,\n      \"minimum_margin_ratio\": 1026.405768305891\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"baseline_current_writer_W\",\n      \"represented_difference\": 5.906386491005833e-13,\n      \"combined_full_error\": 1.0613939276611728e-16,\n      \"exact_effect_lower\": 5.905325097078172e-13,\n      \"minimum_margin_ratio\": 449.9295008713593\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"baseline_current_writer_next_current\",\n      \"represented_difference\": 9.250378241176804e-12,\n      \"combined_full_error\": 2.5102285426078598e-15,\n      \"exact_effect_lower\": 9.247868012634196e-12,\n      \"minimum_margin_ratio\": 539.4957417623708\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"current\",\n      \"effect\": \"next_current_consumes_written_W\",\n      \"represented_difference\": 0.00023124690930220737,\n      \"combined_full_error\": 2.037366359625697e-15,\n      \"exact_effect_lower\": 0.00023124690930017,\n      \"minimum_margin_ratio\": 15158868200.061655\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"feedback\",\n      \"represented_difference\": 0.008404404438673296,\n      \"combined_full_error\": 1.74511668145224e-15,\n      \"exact_effect_lower\": 0.008404404438671551,\n      \"minimum_margin_ratio\": 396596524764.543\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"written_carrier_next_current\",\n      \"represented_difference\": 2.0905943642901548e-11,\n      \"combined_full_error\": 2.615596673451561e-15,\n      \"exact_effect_lower\": 2.0903328046228096e-11,\n      \"minimum_margin_ratio\": 847.3124100860435\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"next_geometry\",\n      \"represented_difference\": 2.0905943642901548e-11,\n      \"combined_full_error\": 2.615596673451561e-15,\n      \"exact_effect_lower\": 2.0903328046228096e-11,\n      \"minimum_margin_ratio\": 847.3124100860435\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"same_source_carrier\",\n      \"represented_difference\": 4.622154234919826e-10,\n      \"combined_full_error\": 4.8696461557666016e-23,\n      \"exact_effect_lower\": 4.622154234919339e-10,\n      \"minimum_margin_ratio\": 1865837791978.1829\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"same_source_next_current\",\n      \"represented_difference\": 2.8066438062523957e-13,\n      \"combined_full_error\": 2.4252635033779356e-15,\n      \"exact_effect_lower\": 2.7823911712186165e-13,\n      \"minimum_margin_ratio\": 11.737431077102345\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"stale_resource_writer_W\",\n      \"represented_difference\": 1.9544366125501256e-12,\n      \"combined_full_error\": 1.0019061298326285e-16,\n      \"exact_effect_lower\": 1.9543364219371423e-12,\n      \"minimum_margin_ratio\": 1516.3120788261763\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"stale_resource_writer_next_current\",\n      \"represented_difference\": 3.5566216638471815e-11,\n      \"combined_full_error\": 2.4361868695698886e-15,\n      \"exact_effect_lower\": 3.556378045160224e-11,\n      \"minimum_margin_ratio\": 1484.6722011500744\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"baseline_current_writer_W\",\n      \"represented_difference\": 9.563461134121098e-13,\n      \"combined_full_error\": 9.822882153006429e-17,\n      \"exact_effect_lower\": 9.562478845905797e-13,\n      \"minimum_margin_ratio\": 746.5075420066077\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"baseline_current_writer_next_current\",\n      \"represented_difference\": 1.8196999462816166e-11,\n      \"combined_full_error\": 2.78969694329395e-15,\n      \"exact_effect_lower\": 1.819420976587287e-11,\n      \"minimum_margin_ratio\": 717.2745722038642\n    },\n    {\n      \"graph\": \"target\",\n      \"role\": \"reset\",\n      \"effect\": \"next_current_consumes_written_W\",\n      \"represented_difference\": 0.00028101334888930296,\n      \"combined_full_error\": 2.2118891587534466e-15,\n      \"exact_effect_lower\": 0.0002810133488870911,\n      \"minimum_margin_ratio\": 12187021240.154654\n    }\n  ],\n  \"record_digest\": \"6548f25d485d8aa43d8e587b51b989b5d5d516085d9d637614776af53e4baf5c\"\n}\n"
+    },
+    {
+      "label": "oracle_pressure",
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest test_p983a_apc_oracle -v",
+      "exit_code": 0,
+      "output": "test_all_named_effects_exceed_composed_errors_and_ULPs (test_p983a_apc_oracle.APCOracleTests.test_all_named_effects_exceed_composed_errors_and_ULPs) ... ok\ntest_carrier_boundary_symmetry_support_and_shape (test_p983a_apc_oracle.APCOracleTests.test_carrier_boundary_symmetry_support_and_shape) ... ok\ntest_carrier_seed_every_coordinate_and_exact_ball_bound (test_p983a_apc_oracle.APCOracleTests.test_carrier_seed_every_coordinate_and_exact_ball_bound) ... ok\ntest_each_numerical_output_has_an_independent_interval_guard (test_p983a_apc_oracle.APCOracleTests.test_each_numerical_output_has_an_independent_interval_guard) ... ok\ntest_entry_resource_W_and_carrier_domain_guards (test_p983a_apc_oracle.APCOracleTests.test_entry_resource_W_and_carrier_domain_guards) ... ok\ntest_event_admission_does_not_imply_next_resource_positivity (test_p983a_apc_oracle.APCOracleTests.test_event_admission_does_not_imply_next_resource_positivity) ... ok\ntest_exact_G2_G3_required_without_new_public_support (test_p983a_apc_oracle.APCOracleTests.test_exact_G2_G3_required_without_new_public_support) ... ok\ntest_exact_W_lineage_carrier_archive_loss_and_reference_maps (test_p983a_apc_oracle.APCOracleTests.test_exact_W_lineage_carrier_archive_loss_and_reference_maps) ... ok\ntest_full_independent_intervals_and_both_role_continuations (test_p983a_apc_oracle.APCOracleTests.test_full_independent_intervals_and_both_role_continuations) ... ok\ntest_native_identity_d52_allocator_and_candidate_match_mechanics (test_p983a_apc_oracle.APCOracleTests.test_native_identity_d52_allocator_and_candidate_match_mechanics) ... ok\ntest_producer_is_independent_of_native_numerics_and_event_allocation (test_p983a_apc_oracle.APCOracleTests.test_producer_is_independent_of_native_numerics_and_event_allocation) ... ok\ntest_producer_owns_inputs_and_point_writer_corruption_is_detected (test_p983a_apc_oracle.APCOracleTests.test_producer_owns_inputs_and_point_writer_corruption_is_detected) ... ok\ntest_rational_resource_columns_and_history_left_inverse (test_p983a_apc_oracle.APCOracleTests.test_rational_resource_columns_and_history_left_inverse) ... ok\ntest_read_uses_old_carrier_not_current_source_or_new_writer (test_p983a_apc_oracle.APCOracleTests.test_read_uses_old_carrier_not_current_source_or_new_writer) ... ok\ntest_rehashed_history_archive_profile_outputs_and_claims_cannot_drift (test_p983a_apc_oracle.APCOracleTests.test_rehashed_history_archive_profile_outputs_and_claims_cannot_drift) ... ok\ntest_signed_reorder_covaries_both_histories_geometry_and_source (test_p983a_apc_oracle.APCOracleTests.test_signed_reorder_covaries_both_histories_geometry_and_source) ... ok\ntest_source_archive_stage_is_exact_even_below_numeric_error_budget (test_p983a_apc_oracle.APCOracleTests.test_source_archive_stage_is_exact_even_below_numeric_error_budget) ... ok\ntest_uniform_chart_not_sampled_trajectory_and_separate_research_domain (test_p983a_apc_oracle.APCOracleTests.test_uniform_chart_not_sampled_trajectory_and_separate_research_domain) ... ok\ntest_whole_chart_extreme_points_fit_the_proved_bound (test_p983a_apc_oracle.APCOracleTests.test_whole_chart_extreme_points_fit_the_proved_bound) ... ok\ntest_whole_chart_extremes_reject_without_repair (test_p983a_apc_oracle.APCOracleTests.test_whole_chart_extremes_reject_without_repair) ... ok\ntest_zero_source_native_release_is_exponential_not_event_reset (test_p983a_apc_oracle.APCOracleTests.test_zero_source_native_release_is_exponential_not_event_reset) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 21.855s\n\nOK\n",
+      "tests": 21
+    },
+    {
+      "label": "unchanged_carrier_companion",
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest test_p980_carrier_event_companion -v",
+      "exit_code": 0,
+      "output": "test_event_input_ownership_and_scratch (test_p980_carrier_event_companion.CarrierEventCompanionTests.test_event_input_ownership_and_scratch) ... ok\ntest_four_profiles_both_roles_actual_reset_continuation (test_p980_carrier_event_companion.CarrierEventCompanionTests.test_four_profiles_both_roles_actual_reset_continuation) ... ok\ntest_physical_source_stage_through_event_consumer (test_p980_carrier_event_companion.CarrierEventCompanionTests.test_physical_source_stage_through_event_consumer) ... ok\ntest_policy_binding_and_event_output_controls (test_p980_carrier_event_companion.CarrierEventCompanionTests.test_policy_binding_and_event_output_controls) ... ok\ntest_reset_effects_at_declared_consumers (test_p980_carrier_event_companion.CarrierEventCompanionTests.test_reset_effects_at_declared_consumers) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 120.726s\n\nOK\n",
+      "tests": 5
+    },
+    {
+      "label": "side_tool",
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_iteration10_d11.py",
+      "exit_code": 0,
+      "output": "ET_C10_D11_TEST_PASS checks=12 fail_closed=true\n"
+    }
+  ],
+  "static_checks": {
+    ".venv/bin/ruff check implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py implementation/phase-9-grcv4/verification/test_p983a_apc_oracle.py": {
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    ".venv/bin/ruff format --check implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py implementation/phase-9-grcv4/verification/test_p983a_apc_oracle.py": {
+      "exit_code": 0,
+      "output": "2 files already formatted\n"
+    },
+    "git diff --check": {
+      "exit_code": 0,
+      "output": ""
+    }
+  },
+  "scope": {
+    "user_accepted": false,
+    "native_runtime_executed": false,
+    "runtime_changed": false,
+    "public_support_added": false,
+    "fixture_is_separately_declared": true,
+    "prior_research_scope_changed": false,
+    "proposed_fixture": "separate R=2048, kappa_H=2^-14, M=16, W in [1/2,513/512]; initial W=15/16 plus signed 2^-40 offsets; satellite shares [1/4,3/8,3/8]",
+    "domain_claim": "uniform exact-real current/source bounds on the two declared compact base/carrier charts; no indefinite C/W invariance or uniform floating-point trajectory bound",
+    "effects": "24 named-stage comparisons with composed errors; no geometry effect at zero-carrier entry",
+    "side_tool": "six source-bound traces and 12 existing D11 adversarial/provenance checks; no exhaustive new tool audit",
+    "acceptance_required_before": "A_PC A.2 native implementation/comparison"
+  },
+  "development_findings": [
+    "The small P9-8.0 local research carrier radius cannot bound the complete native base chart; an interval source diagonal greater than 0.34001559 supplies a counterexample outside those old neighborhoods.",
+    "The proposed native fixture separately declares R=2048, kappa_H=2^-14, old W near 15/16 and satellite shares [1/4,3/8,3/8]. Earlier accepted parameters and records are unchanged; oracle-scope acceptance remains pending.",
+    "An admitted expanded target at old W=3/4 has a certified negative next core resource; native A.2 must distinguish successful event admission from physical-step charge rejection.",
+    "PC whole-chart proof and replay still assume WLS; A.2 must explicitly extend the closed fixed-row path and both W/Z event channels after oracle acceptance."
+  ],
+  "environment": {
+    "python": "3.12.3"
+  },
+  "boundary_audit": {
+    "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+    "exit_code": 0,
+    "output": "PHASE9_CHECK_PASS label=unchanged_accepted_release_with_historical_proposal_subject result=P972A_RELEASE_SUBJECT_PASS release_id=grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24\nPHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton scope=current_boundary_only handoff=verified\n"
+  },
+  "boundary_administrative_retry": {
+    "initial_exit_code": 1,
+    "initial_error": "verification inputs changed during execution",
+    "cause": "Boundary roster order was restored while the first audit was running; the next run used stable inputs and passed. No runtime or numerical change was involved."
+  },
+  "acceptance": {
+    "status": "accepted_by_user",
+    "date": "2026-10-03",
+    "user_instruction": "accept and commit, then continue with A_PC",
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json",
+    "execution_time_disposition_and_scope_preserved": true,
+    "immutable_subjects_unchanged": true,
+    "runtime_accepted": false
+  }
+}

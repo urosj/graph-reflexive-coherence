@@ -1,0 +1,98 @@
+{
+  "schema": "p983-larger-numerical-probe-v1",
+  "family": "A_PC",
+  "prepared_digest": "9d1c8f76d1beff11b26d223c3cfcea82c6270a44a76c4a95b35f4df2e5fef23f",
+  "scope": "numerical_read_or_certificate_only; timeout_is_not_rejection",
+  "physical_steps": 0,
+  "events_committed": 0,
+  "supported_profiles_added": [],
+  "source": {
+    "current": {
+      "status": "passed",
+      "owner": "PCEnvelopeCertificate",
+      "bounds": {
+        "conductance_exponent_absolute_upper": "2116289204022459691636365241001094638237863021455566440624897401/12354139684263117238366604565918858088190696616202111317796978688",
+        "descriptor_norm_upper": "740312848732945195211021/9444732965739290427392",
+        "geometry_radius": "1/2048",
+        "hodge_lower": "2047/2048",
+        "hodge_upper": "2049/2048",
+        "current_norm_upper": "45904510670011281902603037570165/19188070608923394260936425472",
+        "current_inverse_upper": "32/31",
+        "current_conditioning_upper": "33/31",
+        "flat_norm_upper": "1995848290000490517504479894355/13341705345267047572057358336",
+        "flat_geometry_lipschitz_upper": "40241675981866547672204709787905923735816678311734203636317933693561134855931273666655522527197/170059159083728979676777417878283404157524547278916766479305200786983875107635210165046738944",
+        "source_norm_upper": "3983410396697882097045062769583037007083178626878431960866025/356002203039854618128090350243449483665457620725417377792",
+        "carrier_radius": "32768"
+      },
+      "seconds": 0.49236415803898126,
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    },
+    "reset": {
+      "status": "passed",
+      "owner": "PCEnvelopeCertificate",
+      "bounds": {
+        "conductance_exponent_absolute_upper": "2116289204022459691636365241001094638237863021455566440624897401/12354139684263117238366604565918858088190696616202111317796978688",
+        "descriptor_norm_upper": "740312848732945195211021/9444732965739290427392",
+        "geometry_radius": "1/2048",
+        "hodge_lower": "2047/2048",
+        "hodge_upper": "2049/2048",
+        "current_norm_upper": "45904510670011281902603037570165/19188070608923394260936425472",
+        "current_inverse_upper": "32/31",
+        "current_conditioning_upper": "33/31",
+        "flat_norm_upper": "1995848290000490517504479894355/13341705345267047572057358336",
+        "flat_geometry_lipschitz_upper": "40241675981866547672204709787905923735816678311734203636317933693561134855931273666655522527197/170059159083728979676777417878283404157524547278916766479305200786983875107635210165046738944",
+        "source_norm_upper": "3983410396697882097045062769583037007083178626878431960866025/356002203039854618128090350243449483665457620725417377792",
+        "carrier_radius": "32768"
+      },
+      "seconds": 0.5443668870138936,
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    }
+  },
+  "target": {
+    "current": {
+      "status": "passed",
+      "owner": "PCEnvelopeCertificate",
+      "bounds": {
+        "conductance_exponent_absolute_upper": "97106162111238584235577620441640042417779546203587689/719105573619198824649595455611058166727347800985567232",
+        "descriptor_norm_upper": "740312848732945195211021/9444732965739290427392",
+        "geometry_radius": "1/2048",
+        "hodge_lower": "2047/2048",
+        "hodge_upper": "2049/2048",
+        "current_norm_upper": "2105865/992",
+        "current_inverse_upper": "32/31",
+        "current_conditioning_upper": "33/31",
+        "flat_norm_upper": "8423460/63457",
+        "flat_geometry_lipschitz_upper": "112227894594659123631/540466718883971072",
+        "source_norm_upper": "35477339185800/4026790849",
+        "carrier_radius": "32768"
+      },
+      "seconds": 0.7528371480293572,
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    },
+    "reset": {
+      "status": "passed",
+      "owner": "PCEnvelopeCertificate",
+      "bounds": {
+        "conductance_exponent_absolute_upper": "97106162111238584235577620441640042417779546203587689/719105573619198824649595455611058166727347800985567232",
+        "descriptor_norm_upper": "740312848732945195211021/9444732965739290427392",
+        "geometry_radius": "1/2048",
+        "hodge_lower": "2047/2048",
+        "hodge_upper": "2049/2048",
+        "current_norm_upper": "2105865/992",
+        "current_inverse_upper": "32/31",
+        "current_conditioning_upper": "33/31",
+        "flat_norm_upper": "8423460/63457",
+        "flat_geometry_lipschitz_upper": "112227894594659123631/540466718883971072",
+        "source_norm_upper": "35477339185800/4026790849",
+        "carrier_radius": "32768"
+      },
+      "seconds": 0.6268714879988693,
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    }
+  },
+  "record_digest": "2fba4f9717fcf61061b6763d13bed18eff4e951bbe6b4a691582362c621719b9"
+}

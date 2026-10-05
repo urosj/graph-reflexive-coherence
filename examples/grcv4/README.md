@@ -4,6 +4,101 @@ These checkout-only examples construct matched declarations using test fixtures
 and execute production numerical steps. They do not register new supported
 profiles, modify the runtime, or create lifecycle acceptance receipts.
 
+## Find and select a graph configuration
+
+Start with the standard-library-only [configuration CLI](catalog.py). From the
+repository root:
+
+```bash
+python examples/grcv4/catalog.py list
+python examples/grcv4/catalog.py list --family A_PC --min-vertices 50
+python examples/grcv4/catalog.py show native-large-A_PC
+python examples/grcv4/catalog.py compare native-small-A_PC native-large-A_PC
+python examples/grcv4/catalog.py select native-large-A_PC --side target --output outputs/selections/large-apc.json
+python examples/grcv4/catalog.py verify-selection outputs/selections/large-apc.json
+```
+
+The [catalog](configurations.json) currently indexes **42 configurations**:
+all ten native small fixtures (10/9 source → 17/16 target vertices/edges),
+all ten native larger proposals (100/400 → 107/407), ten generic four-node
+branch examples, and twelve retained generic grid runs up to 36 vertices/60
+edges. Generic `GRCV4` and native port-owned `GRC9V4` are labeled separately.
+The catalog is a curated inventory of concrete retained examples, not a limit
+on graph sizes and not the runtime supported-profile registry.
+
+`list` supports `--model`, `--family` (including `A_CI+PC`), `--scenario`,
+`--status`, `--kappa-h`, and minimum/maximum vertices/edges. Size and coupling
+filters apply to `--side source|target` (default `source`). Generic examples
+have no expansion target. Tables show coupling, carrier radius R and resource
+bound M; `show` adds decoded chart/domain bounds, declared norms, profile
+identity, both-history probe outcomes, evidence paths and reproduction commands.
+`compare` reports differing parameters, graph statistics, graph/history content
+fingerprints and evidence scope. Long table values are abbreviated.
+
+Use `--json` on `list`, `show`, `compare` or `verify-selection` for full values:
+
+```bash
+python examples/grcv4/catalog.py list --model GRC9V4 --json > outputs/native-configurations.json
+python examples/grcv4/catalog.py show native-large-A_CI_PC --json
+```
+
+Create the output directory first when using shell redirection. `select` emits
+JSON on stdout by default, or creates a new `--output` file and its parent
+directories. It preserves existing files. The selection pins the graph side,
+full resolved profile, retained initial histories/reference data or construction
+recipe, and evidence bindings. Paths are repository-relative; selections remain
+verifiable in another checkout with the same artifacts. Adding an unrelated
+catalog entry does not invalidate an existing selection.
+
+Selection is an explicit saved choice for investigation or downstream tooling;
+it does not activate a global configuration or run a solver. The public runners
+below do not yet consume selection files. Use the displayed reproduction
+command to run its owner, and inspect the resulting declaration: configurable
+grid setup can propose more conservative parameters, so a new run is not
+automatically an exact replay of the selected historical input. Native large
+examples still require their recorded admission/closure obligations.
+
+Evidence labels have precise scope:
+
+| Label | Recorded evidence |
+| --- | --- |
+| `bounded-runtime` | Accepted native fixture with bounded event/continuation evidence. |
+| `measured-run` | Retained generic public physical run; no native event-support claim. |
+| `certificate-passed` / `read-passed` | Numerical certificate or read probe only. |
+| `rejected` | The declared owner rejected the proposal. |
+| `incomplete` | A probe exceeded its budget; no mathematical rejection follows. |
+| `mixed` | Source/target or current/reset probe outcomes differ. |
+| `stale` | A referenced file is missing, changed or inconsistent; selection is blocked. |
+
+Every inspection checks pinned file hashes. `verify-selection` also compares
+the complete selection with its current catalog entry, detecting parameter,
+history or evidence edits even if someone recalculates the selection hash.
+These are discovery integrity checks, not new scientific admission proofs.
+Original scientific/JCS identities are retained verbatim; the selection's own
+SHA256 fingerprint uses the CLI's sorted compact JSON encoding.
+
+For a new configuration, retain its input/evidence files under the repository
+and add an entry with a unique ID, model/family/scenario, adapter, source/target
+JSON pointers, notes, reproduction commands and file SHA256 bindings. The five
+adapters in `catalog.py` cover the existing native preparation, native state,
+native oracle, generic comparison and generic grid report formats. Existing
+formats need only JSON inventory edits; a new producer schema needs its own
+adapter and pressure tests. `--catalog PATH` selects another repository-relative
+inventory; verification defaults to the saved selection's inventory. Review any
+changed artifact before refreshing its binding; changing a hash is not acceptance.
+
+Three small C fixture pairs are retained separately because their earlier
+reports lack complete state pairs. Their explicit maintenance command is:
+
+```bash
+PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_catalog_inputs.py
+```
+
+This reconstructs and compares the fixtures and pure transfers. `--write`
+regenerates them; browsing never calls it. See the
+[graph configuration guide](../../implementation/phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md)
+for the scientific meaning of different sizes and contracts.
+
 ## Larger public simulation: 20-node transport grid
 
 [grid_transport.py](grid_transport.py) runs **A_OS through the strict public

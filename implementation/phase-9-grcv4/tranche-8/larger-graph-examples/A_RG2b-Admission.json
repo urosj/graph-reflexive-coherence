@@ -1,0 +1,50 @@
+{
+  "schema": "p983-larger-numerical-probe-v1",
+  "family": "A_RG2b",
+  "prepared_digest": "03eb411a86f9363843aebf190114a79381a4f649c3be6b9bdd2d6ca4a3989997",
+  "scope": "numerical_read_or_certificate_only; timeout_is_not_rejection",
+  "physical_steps": 0,
+  "events_committed": 0,
+  "supported_profiles_added": [],
+  "source": {
+    "current": {
+      "status": "rejected",
+      "error_type": "RG2bStageError",
+      "reason": "signed A completion requires a connected tree with at most 17 vertices",
+      "seconds": 0.04621834197314456,
+      "owner": "RG2bCertificate",
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    },
+    "reset": {
+      "status": "rejected",
+      "error_type": "RG2bStageError",
+      "reason": "signed A completion requires a connected tree with at most 17 vertices",
+      "seconds": 0.05868405901128426,
+      "owner": "RG2bCertificate",
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    }
+  },
+  "target": {
+    "current": {
+      "status": "rejected",
+      "error_type": "RG2bStageError",
+      "reason": "signed A completion requires a connected tree with at most 17 vertices",
+      "seconds": 0.04785712796729058,
+      "owner": "RG2bCertificate",
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    },
+    "reset": {
+      "status": "rejected",
+      "error_type": "RG2bStageError",
+      "reason": "signed A completion requires a connected tree with at most 17 vertices",
+      "seconds": 0.043457547028083354,
+      "owner": "RG2bCertificate",
+      "numerical_budget_seconds": null,
+      "read_dt": 0
+    }
+  },
+  "record_digest": "3fba9f6a34c8570a3c1f654e083ba10422d027d3628b5e67acc9ae60c14367aa"
+}

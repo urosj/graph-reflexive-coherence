@@ -19,14 +19,17 @@ from functools import lru_cache
 from typing import TYPE_CHECKING, Any, TypeAlias, cast
 
 from . import grc_v4_numerics as numerics
+from .grc_9_v4_topology import GRC9V4CandidateADifferentialReference
 from .grc_v4_candidate_a import (
     ADMITTED_HISTORY_POLICIES,
     CandidateACurrent,
+    CandidateADifferential,
     CandidateADifferentialReference,
     CandidateAStageError,
     CandidateAWriter,
+    candidate_a_differential_from_payload,
 )
-from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError, _c_components
+from .grc_v4_candidate_c import CandidateCCurrent, _c_components
 from .grc_v4_exact import ExactScalar, exact_number, is_exact
 from .grc_v4_geometry import (
     GeometryDomainError,
@@ -43,6 +46,7 @@ from .grc_v4_geometry import (
     _identity,
     _local_payload,
 )
+from .grc_v4_numerics import MatrixError as CandidateCStageError
 from .grc_v4_profile import CandidateAParams, CIPCParams, CISolverParams
 from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number
 
@@ -54,7 +58,19 @@ SOLVER_ID = "ci_reduced_fixed_point_v1"
 JOINT_NORM = "joint_current_geometry_l2_v1"
 NUMERICS = "ci_analytic_residual_enclosure_binary64_v2"
 CIPC_NUMERICS = "cipc_same_root_source_enclosed_zoh_binary64_v1"
+GRC9_ACI_NUMERICS = "grc9v4_ci_fixed_rows_confirmed_joint_residual_v1"
+GRC9_ACIPC_NUMERICS = "grc9v4_cipc_fixed_rows_confirmed_same_source_zoh_v1"
 Point: TypeAlias = CandidateACurrent | CandidateCCurrent
+
+
+def _numerical_recipe(
+    inputs: GeometryStageInputs, backend: CandidateADifferential | None
+) -> str:
+    if type(backend) is GRC9V4CandidateADifferentialReference:
+        return (
+            GRC9_ACIPC_NUMERICS if inputs.current.Z_4 is not None else GRC9_ACI_NUMERICS
+        )
+    return CIPC_NUMERICS if inputs.current.Z_4 is not None else NUMERICS
 
 
 class CIStageError(ValueError):
@@ -92,7 +108,9 @@ def _opnorm(matrix: Any) -> ExactScalar:
     """sqrt(||A||_1 ||A||_inf), bounding the physical Euclidean operator."""
     if not matrix or not matrix[0]:
         return exact_number()
-    rows = max(sum((abs(exact_number(x)) for x in row), exact_number()) for row in matrix)
+    rows = max(
+        sum((abs(exact_number(x)) for x in row), exact_number()) for row in matrix
+    )
     columns = max(
         sum((abs(exact_number(x)) for x in col), exact_number())
         for col in zip(*matrix, strict=True)
@@ -197,7 +215,9 @@ class _Interval:
 
 
 def _iv(x: Any) -> _Interval:
-    return x if isinstance(x, _Interval) else _Interval(exact_number(x), exact_number(x))
+    return (
+        x if isinstance(x, _Interval) else _Interval(exact_number(x), exact_number(x))
+    )
 
 
 def _iexp(x: _Interval) -> _Interval:
@@ -255,8 +275,13 @@ def _iinverse(a: Any) -> Any:
 
 
 def _a_descriptors_exact(point: CandidateACurrent) -> Any:
-    """Rebuild the declared differential linear systems before output rounding."""
+    """Rebuild exact WLS solves or incoming-weight port rows before rounding."""
     backend, c = point.differential_reference, point.inputs.current.C
+    if type(backend) is GRC9V4CandidateADifferentialReference:
+        weights = point.inputs.current.W_A
+        assert weights is not None
+        return backend.rebuild_exact(VertexScalar(backend.graph, c), weights)
+    assert isinstance(backend, CandidateADifferentialReference)
     graph, d = backend.graph, backend.dimension
     result = []
     for i, node in enumerate(graph.live_node_ids):
@@ -284,7 +309,9 @@ def _a_descriptors_exact(point: CandidateACurrent) -> Any:
         result.append(
             tuple(
                 row[0]
-                for row in numerics.matmul(numerics.inverse(tuple(map(tuple, a))), tuple(map(tuple, b)))
+                for row in numerics.matmul(
+                    numerics.inverse(tuple(map(tuple, a))), tuple(map(tuple, b))
+                )
             )
         )
     return tuple(result)
@@ -343,9 +370,15 @@ def _projector_enclosure(point: CandidateCCurrent) -> Any:
     )
     b = numerics.exact_matrix(graph.incidence)
     a = numerics.matmul(
-        numerics.matmul(b, numerics.exact_matrix(point.inputs.geometry.one_form_hodge.matrix)), numerics.transpose(b)
+        numerics.matmul(
+            b, numerics.exact_matrix(point.inputs.geometry.one_form_hodge.matrix)
+        ),
+        numerics.transpose(b),
     )
-    left, right = numerics.matmul(numerics.matmul(e, a), e), numerics.matmul(numerics.matmul(complement, a), complement)
+    left, right = (
+        numerics.matmul(numerics.matmul(e, a), e),
+        numerics.matmul(numerics.matmul(complement, a), complement),
+    )
     cutoff = exact_number(point.algebra.transport.params.Lambda_C)
     signs = (
         tuple(
@@ -429,7 +462,10 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
             exponent = (
                 -(
                     exact_number(p.alpha)
-                    * (exact_number(inputs.current.C[u]) + exact_number(inputs.current.C[v]))
+                    * (
+                        exact_number(inputs.current.C[u])
+                        + exact_number(inputs.current.C[v])
+                    )
                     + exact_number(p.beta) * square
                     + exact_number(p.gamma) * baseline[i][0].lo ** 2
                 )
@@ -440,7 +476,8 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
             else:
                 exp = _iexp(_iv(exponent))
                 target = _Interval(
-                    max(exact_number(p.W_floor), exp.lo), max(exact_number(p.W_floor), exp.hi)
+                    max(exact_number(p.W_floor), exp.lo),
+                    max(exact_number(p.W_floor), exp.hi),
                 )
             contrast = (_iv(w[i]) - target) / (_iv(w[i]) + target)
             flux.append((exact_number(p.chi_A) * contrast * j[i][0],))
@@ -484,7 +521,8 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
             resolvent = _iinverse(
                 tuple(
                     tuple(
-                        int(i == k) + exact_number(p.tau_C) * x for k, x in enumerate(row)
+                        int(i == k) + exact_number(p.tau_C) * x
+                        for k, x in enumerate(row)
                     )
                     for i, row in enumerate(lap)
                 )
@@ -598,7 +636,9 @@ def _effective_source(inputs: GeometryStageInputs, source: K4Tensor) -> K4Tensor
     old = _old_carrier(inputs)
     try:
         increment = tuple(
-            tuple(_computed(float(z + exact_number(s))) for z, s in zip(a, b, strict=True))
+            tuple(
+                _computed(float(z + exact_number(s))) for z, s in zip(a, b, strict=True)
+            )
             for a, b in zip(old, source.increment, strict=True)
         )
     except OverflowError as exc:
@@ -609,11 +649,15 @@ def _effective_source(inputs: GeometryStageInputs, source: K4Tensor) -> K4Tensor
 
 
 def _point(
-    inputs: GeometryStageInputs, backend: CandidateADifferentialReference | None
+    inputs: GeometryStageInputs, backend: CandidateADifferential | None
 ) -> Point:
     if inputs.geometry.reference.profile.identity_payload.candidate == "A":
-        if type(backend) is not CandidateADifferentialReference:
+        if type(backend) not in (
+            CandidateADifferentialReference,
+            GRC9V4CandidateADifferentialReference,
+        ):
             raise TypeError("A_CI requires its declared differential reference")
+        assert backend is not None
         return CandidateACurrent(inputs, backend)
     if backend is not None:
         raise TypeError("C_CI has no Candidate A differential input")
@@ -669,7 +713,7 @@ class CITrial:
     """Fresh numerical trial plus an independent analytic residual enclosure."""
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     point: Point = field(init=False)
     generated: GRCV4Geometry = field(init=False)
     structural_source: K4Tensor = field(init=False)
@@ -817,7 +861,9 @@ def _a_read_bounds(
             ),
             exact_number(),
         )
-        constant = -(exact_number(p.alpha) * (c[u] + c[v]) + exact_number(p.beta) * square) / 2
+        constant = (
+            -(exact_number(p.alpha) * (c[u] + c[v]) + exact_number(p.beta) * square) / 2
+        )
         lo, hi = j - lip * radius, j + lip * radius
         smin = exact_number() if lo <= 0 <= hi else min(lo * lo, hi * hi)
         smax = max(lo * lo, hi * hi)
@@ -867,7 +913,8 @@ def _a_read_bounds(
     margin = min(dlow, default=exact_number(1))
     condition = max(dhigh, default=exact_number(1)) / margin
     _require(
-        condition <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
+        condition
+        <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
         "A CI whole-domain current conditioning is uncertified",
     )
     j0, lj0 = _norm(jbounds), _norm(lj)
@@ -879,28 +926,35 @@ def _a_read_bounds(
     flat_lip = chi * (
         qmax * current / lower**2 + (lq * current + qmax * current_lip) / lower
     )
-    return dict(
-        flat=flat,
-        flat_lip=flat_lip,
-        current=current,
-        current_lip=current_lip,
-        current_inverse=1 / margin,
-        conditioning_upper=condition,
-        floor_charts=charts,
-    )
+    return {
+        "flat": flat,
+        "flat_lip": flat_lip,
+        "current": current,
+        "current_lip": current_lip,
+        "current_inverse": 1 / margin,
+        "conditioning_upper": condition,
+        "floor_charts": charts,
+    }
 
 
 def _c_read_bounds(
-    point: CandidateCCurrent, radius: ExactScalar, lower: ExactScalar, upper: ExactScalar
+    point: CandidateCCurrent,
+    radius: ExactScalar,
+    lower: ExactScalar,
+    upper: ExactScalar,
 ) -> dict[str, Any]:
     """Physical-coordinate bounds; retained positivity is not a flux margin."""
     ref, p = point.inputs.geometry.reference, point.algebra.transport.params
     b = numerics.exact_matrix(ref.graph.incidence)
     bt = numerics.transpose(b)
     b2 = _opnorm(numerics.matmul(bt, b))
-    stiffness = numerics.matmul(numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt)
+    stiffness = numerics.matmul(
+        numerics.matmul(b, numerics.exact_matrix(ref.pairings.one_form.matrix)), bt
+    )
     shifted = tuple(
-        tuple(x - (exact_number(p.Lambda_C) if i == j else 0) for j, x in enumerate(row))
+        tuple(
+            x - (exact_number(p.Lambda_C) if i == j else 0) for j, x in enumerate(row)
+        )
         for i, row in enumerate(stiffness)
     )
     inverse = numerics.inverse(shifted)
@@ -911,7 +965,9 @@ def _c_read_bounds(
     # equation. 2/gap is conservative for the two off-diagonal projector blocks.
     sector_lip = 2 * b2 * _norm(point.inputs.current.C) / gap
     d = _exp_bounds(abs(exact_number(p.kappa_M_C)) / 2)[1]
-    d_lip = d * abs(exact_number(p.kappa_M_C)) * sector_lip / (2 * exact_number(p.C_ref))
+    d_lip = (
+        d * abs(exact_number(p.kappa_M_C)) * sector_lip / (2 * exact_number(p.C_ref))
+    )
     retained_upper, retained_lower = d * d * upper, lower / (d * d)
     retained_lip = d * d + 2 * d * upper * d_lip
     dc = tuple(
@@ -950,7 +1006,8 @@ def _c_read_bounds(
     _require(margin > 0, "C CI physical current inverse is not certified on the ball")
     conditioning = (1 + beta * response) / margin
     _require(
-        conditioning <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
+        conditioning
+        <= exact_number(ref.profile.params_resolved.solver.conditioning_limit),
         "C CI whole-domain physical conditioning is uncertified",
     )
     current = baseline / margin
@@ -961,17 +1018,17 @@ def _c_read_bounds(
         response * current / lower**2
         + (response_lip * current + response * current_lip) / lower
     )
-    return dict(
-        flat=flat,
-        flat_lip=flat_lip,
-        current=current,
-        current_lip=current_lip,
-        current_inverse=1 / margin,
-        conditioning_upper=conditioning,
-        selector_gap_lower=gap,
-        selector_rank=point.algebra.selector.rank,
-        admitted_strata=1,
-    )
+    return {
+        "flat": flat,
+        "flat_lip": flat_lip,
+        "current": current,
+        "current_lip": current_lip,
+        "current_inverse": 1 / margin,
+        "conditioning_upper": conditioning,
+        "selector_gap_lower": gap,
+        "selector_rank": point.algebra.selector.rank,
+        "admitted_strata": 1,
+    }
 
 
 @dataclass(frozen=True, slots=True)
@@ -979,7 +1036,7 @@ class CIContractionCertificate:
     """Computed whole-domain sufficient conditions, not a numerical detector."""
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     bounds: FrozenJSONMap = field(init=False)
 
     def __post_init__(self) -> None:
@@ -996,10 +1053,14 @@ class CIContractionCertificate:
 
             # Certify B_2R/current regularity and same-root source over the full
             # compact base chart before any candidate solve is attempted.
-            envelope = PCEnvelopeCertificate(self.inputs, self.differential_reference)
+            envelope = PCEnvelopeCertificate(
+                self.inputs,
+                self.differential_reference,
+            )
         point = _point(self.inputs, self.differential_reference)
         weights = tuple(
-            exact_number(cast(float, ref.edge_weights[e])) for e in ref.graph.live_edge_ids
+            exact_number(cast(float, ref.edge_weights[e]))
+            for e in ref.graph.live_edge_ids
         )
         radius = exact_number(domain.radius)
         lower, upper = (
@@ -1060,9 +1121,7 @@ class CIContractionCertificate:
         object.__setattr__(
             self,
             "bounds",
-            FrozenJSONMap(
-                {k: str(v) if is_exact(v) else v for k, v in bounds.items()}
-            ),
+            FrozenJSONMap({k: str(v) if is_exact(v) else v for k, v in bounds.items()}),
         )
 
 
@@ -1073,10 +1132,14 @@ class CandidateCIRoot:
     Every inner current is solved directly at the current trial Hodge. The
     generated geometry then advances the outer iteration. The selected output
     binds that iteration's actual current and geometry, with no old-root seed.
+    The native fixed-row recipe requires two consecutive residual passes. Its
+    confirming update reduces the error of early accepted iterates without
+    changing the declared tolerance, domain or iteration budget. WLS and C
+    retain their original first-pass recipe and identity.
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     certificate: CIContractionCertificate = field(init=False)
     selected: CITrial = field(init=False)
     evaluations: int = field(init=False)
@@ -1090,6 +1153,10 @@ class CandidateCIRoot:
         assert isinstance(params, (CISolverParams, CIPCParams))
         h = ref.geometry()
         zero = PhysicalFlux(ref.graph, (0.0,) * len(ref.graph.live_edge_ids))
+        confirm = (
+            type(self.differential_reference) is GRC9V4CandidateADifferentialReference
+        )
+        previous_pass = False
         for index in range(params.iteration_limit):
             seed = replace(
                 before,
@@ -1115,7 +1182,8 @@ class CandidateCIRoot:
                     params.radius,
                     "stored same-root source",
                 )
-            if trial.residual_squared <= exact_number(params.tolerance) ** 2:
+            passed = trial.residual_squared <= exact_number(params.tolerance) ** 2
+            if passed and (not confirm or previous_pass):
                 for name, value in (
                     ("certificate", certificate),
                     ("selected", trial),
@@ -1123,10 +1191,11 @@ class CandidateCIRoot:
                 ):
                     object.__setattr__(self, name, value)
                 return
+            previous_pass = passed
             h = trial.generated
         raise CIStageError(
             "no_admitted_root",
-            "CI iteration limit exhausted without a joint residual pass",
+            "CI iteration limit exhausted without the required joint residual passes",
         )
 
     @property
@@ -1134,14 +1203,14 @@ class CandidateCIRoot:
         return self.selected.point.current
 
     def to_payload(self) -> dict[str, Any]:
-        return dict(
-            schema_version="grcv4-ci-root-recipe-v1",
-            numerics=CIPC_NUMERICS if self.inputs.current.Z_4 is not None else NUMERICS,
-            inputs=self.inputs.to_payload(),
-            differential_reference=None
+        return {
+            "schema_version": "grcv4-ci-root-recipe-v1",
+            "numerics": _numerical_recipe(self.inputs, self.differential_reference),
+            "inputs": self.inputs.to_payload(),
+            "differential_reference": None
             if self.differential_reference is None
             else self.differential_reference.to_payload(),
-        )
+        }
 
     @property
     def identity(self) -> str:
@@ -1156,18 +1225,16 @@ class CandidateCIRoot:
             "grcv4-ci-root-recipe-v1",
         )
         inputs = GeometryStageInputs.from_payload(data["inputs"])
+        backend = (
+            None
+            if data["differential_reference"] is None
+            else candidate_a_differential_from_payload(data["differential_reference"])
+        )
         _require(
-            data["numerics"]
-            == (CIPC_NUMERICS if inputs.current.Z_4 is not None else NUMERICS),
+            data["numerics"] == _numerical_recipe(inputs, backend),
             "unsupported CI numerical recipe",
         )
-        backend = data["differential_reference"]
-        return cls(
-            inputs,
-            None
-            if backend is None
-            else CandidateADifferentialReference.from_payload(backend),
-        )
+        return cls(inputs, backend)
 
 
 @dataclass(frozen=True, slots=True)
@@ -1182,7 +1249,7 @@ class ProvisionalCandidateCIStep:
     """
 
     inputs: GeometryStageInputs
-    differential_reference: CandidateADifferentialReference | None = None
+    differential_reference: CandidateADifferential | None = None
     root: CandidateCIRoot = field(init=False)
     reset_root: CandidateCIRoot = field(init=False)
     resource: ProvisionalResourceStep = field(init=False)
@@ -1316,14 +1383,14 @@ class ProvisionalCandidateCIStep:
             object.__setattr__(self, name, value)
 
     def to_payload(self) -> dict[str, Any]:
-        return dict(
-            schema_version="grcv4-ci-step-recipe-v1",
-            numerics=CIPC_NUMERICS if self.inputs.current.Z_4 is not None else NUMERICS,
-            inputs=self.inputs.to_payload(),
-            differential_reference=None
+        return {
+            "schema_version": "grcv4-ci-step-recipe-v1",
+            "numerics": _numerical_recipe(self.inputs, self.differential_reference),
+            "inputs": self.inputs.to_payload(),
+            "differential_reference": None
             if self.differential_reference is None
             else self.differential_reference.to_payload(),
-        )
+        }
 
     @classmethod
     def from_payload(cls, value: object) -> ProvisionalCandidateCIStep:
@@ -1334,15 +1401,13 @@ class ProvisionalCandidateCIStep:
             "grcv4-ci-step-recipe-v1",
         )
         inputs = GeometryStageInputs.from_payload(data["inputs"])
+        backend = (
+            None
+            if data["differential_reference"] is None
+            else candidate_a_differential_from_payload(data["differential_reference"])
+        )
         _require(
-            data["numerics"]
-            == (CIPC_NUMERICS if inputs.current.Z_4 is not None else NUMERICS),
+            data["numerics"] == _numerical_recipe(inputs, backend),
             "unsupported CI step recipe",
         )
-        backend = data["differential_reference"]
-        return cls(
-            inputs,
-            None
-            if backend is None
-            else CandidateADifferentialReference.from_payload(backend),
-        )
+        return cls(inputs, backend)

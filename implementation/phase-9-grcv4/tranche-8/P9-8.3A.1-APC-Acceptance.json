@@ -1,0 +1,45 @@
+{
+  "schema": "p983a_apc_oracle_acceptance_v1",
+  "date": "2026-10-03",
+  "status": "accepted_by_user",
+  "user_instruction": "accept and commit, then continue with A_PC",
+  "accepted_scope": "bounded A_PC P9-8.3A.1 independent oracle and pressure review, including its separately declared native fixture",
+  "authorized_next": "P9-8.3A.2 A_PC runtime and closure",
+  "accepted_predecessor": "d431e2e2784cd42e6be7af071f48c065b8d196bb",
+  "oracle_record_digest": "6548f25d485d8aa43d8e587b51b989b5d5d516085d9d637614776af53e4baf5c",
+  "accepted_fixture": {
+    "carrier_radius": 2048,
+    "kappa_H": 6.103515625e-05,
+    "resource_radius": 16,
+    "W_bounds": [
+      0.5,
+      1.001953125
+    ],
+    "initial_W_center": 0.9375,
+    "resource_distribution": [
+      0.25,
+      0.375,
+      0.375
+    ]
+  },
+  "immutable_subjects": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Oracle.json",
+      "sha256": "169554a8b01b99484fba8fcb2b6c1854a8a17b23e0d4c9efe0dd203a26c02eec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-OracleReview.md",
+      "sha256": "2e00b770fea009dfb4082bc89677178656e2a7312867fa7220f9e6415e160b74"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_apc_oracle.py",
+      "sha256": "6daa9c200d80fd041c0eb5badff1cbf0b971373290adcc504869c9c654af7359"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983a_apc_oracle.py",
+      "sha256": "f2dd3e52ab607acfd1aeb731cac8c639d122dc2774a96c8025b2c943b2f6b435"
+    }
+  ],
+  "public_support_added": false,
+  "runtime_accepted": false
+}
