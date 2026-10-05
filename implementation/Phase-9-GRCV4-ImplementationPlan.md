@@ -2802,15 +2802,111 @@ The user explicitly accepts the repository UX and pending all-ten preparation
 closeout on 2026-10-05 ("ok, accept and commit"). This acceptance preserves
 the separately recorded larger-graph admission/runtime obligations.
 
-Execute runtime counterparts of every applicable accepted D30, D31, D45,
-and D52 vector, including the exact chirality/phase cases. D37 and D44 are
-additional capacity-shell boundary probes, never substitutes for those
-normative vectors. Keep any deeper declared probes separately labeled.
-Execute accepted edge-order permutation, cyclic chart rotation, reflection/
-chirality conjugacy vectors, signed-edge reorientation, phase-boundary,
-and target occupancy/resource/history/readmission cases. Existing D52
-construction vectors remain preimplementation evidence; runtime D52 and
-covariance execution are required before arbitrary-size conformance claims.
+##### P9-8.4 execution breakdown
+
+P9-8.4a's [source-bound coverage record](./phase-9-grcv4/tranche-8/P9-8.4a-Coverage.json)
+and [comparison/reuse review](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md)
+are strengthened and own-reviewed on 2026-10-05, after planning commit
+`5748b94`. The user accepts P9-8.4a ("ok, great, let's strenghten  8.4a,
+then accept and commit"). The 400 explicit frozen-subject/
+family/history rows distinguish 382 applicable cells from 18 literal C_PC
+fixture exclusions; all ten families retain the complete shared-case scope.
+Twenty larger-family/history rows retain the forty numerical outcomes.
+The record binds actual profiles, requests, both role identities, old comparison
+budgets/norms, required independent-oracle work and the future harness fields.
+An independent fixture-meaning table and exact cell checks reject consistently
+wrong generator phases, owners and count-preserving exemptions. Eight carrier
+crosswalk rows explicitly map the four persistent families and both histories
+to 128 shared expansion obligations, 24 covariance cells, the two literal C_PC
+rows and larger prerequisite/execution owners. Twenty pressure methods and
+three existing readiness methods pass; see
+[validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json).
+Runtime children remain pending and begin with `.b`; no allocator result,
+nearby accepted fixture, certificate, timeout or rejection is promoted by `.a`.
+
+On 2026-10-05 the user requests a scope-based decomposition before execution.
+P9-8.4 is an aggregate of the nine children below, all initially pending.
+The frozen bundle has **17 expansion fixtures**: two D30, six D31, two D45,
+six D52 and the separate C_PC carrier-reset fixture. The three frozen
+metamorphic fixtures cover edge order, cyclic chart rotation and reflection.
+These counts are fixture inventory, not a claim that all ten numerical
+profiles can reuse every fixture unchanged. D denotes requested effective
+degree/capacity; it does not give the source graph's vertex count.
+
+Existing P9-8.2 allocator tests already cover the frozen plans and much deeper
+pure trees, and P9-8.3 supplies bounded native profile/event evidence. Reuse
+those results at their exact scope. P9-8.4 must connect them to actual native
+execution and independent numerical expectations; rerunning only the allocator
+or relabeling a P9-8.3 test does not discharge the remaining runtime coverage.
+The accepted R1–R10 restrictions remain attached to their original subjects.
+New layouts, chiralities, depths and configurations require their own evidence.
+
+| Child | Scope and deliverable | Dependency / completion evidence |
+| --- | --- | --- |
+| **P9-8.4a — Coverage map and comparison contracts** | Inventory exact frozen fixture IDs/hashes and applicable profile, chirality, phase, current/reset role and stage. Map existing evidence, numerical prerequisites, independent oracles, comparison norms/budgets and missing runtime coverage. Specify shared harness inputs and retained result fields. | First executable planning leaf. Every required cell has an owner and explicit pending/blocked/reusable disposition; no silent omissions or blanket applicability exemptions. |
+| **P9-8.4b — Frozen expansion runtime counterparts** | Execute the applicable D30/D31/D45/D52 chirality/phase cases and C_PC reset case through native operation owners. Compare frozen discrete allocation/identity expectations, actual fresh trigger/request, reference reconstruction, both-role resource/history transfer, numerical readmission and declared finite continuation. | After `.a` and each cell's numerical/oracle prerequisites. Retain event/receipt identities, exact discrete comparisons and independently checked numerical results. A pure transfer or certificate alone is insufficient. |
+| **P9-8.4c — Capacity and phase boundaries** | Add named D37/D44 probes and requests immediately below/at/above capacity transitions. Cover active phases 1–3, inactive `None`, both chiralities, absent/extra phase and malformed versus semantically invalid requests. Check phase/branch allocation and the specified failure classification. | Use the `.a` contracts and `.b` runtime path. These are additional probes, not replacement frozen fixtures. Whole-state rollback, replay and injected atomic failures remain P9-8.5. |
+| **P9-8.4d — Deeper recursive runtime expansion** | Declare finite module sizes/depths beyond D52, including different remainders and both chiralities. Exercise actual recursive parent/rotor allocation, balanced rows/columns, fresh references and both-role transfer/readmission/continuation. If successive events are claimed, each must consume its actual predecessor state and fresh identities. | After a working bounded runtime counterpart and graph-specific prerequisites. Compare against an independent BFS/role construction and numerical oracle; distinguish a deep pure plan, one executed event and any separately declared event sequence. No mechanical size result widens a numerical domain such as tree17. |
+| **P9-8.4e — Ordering, relabeling and signed-edge covariance** | Execute the frozen source-edge-order vector plus separately declared node/edge reorderings, label changes and signed reorientations through the applicable native paths. Transport resources, unsigned A W, signed currents/reference operands, geometry and carrier coordinates by their respective laws. Include inconsistent partial-transport controls. | After baseline cases are bound. Compare normalized discrete results exactly and numerical results in declared norms/error bounds, for both histories and relevant stages. Raw digest equality is not the covariance criterion. |
+| **P9-8.4f — Chart rotation and reflection/chirality covariance** | Execute the exact frozen cyclic and reflection base/target pairs. Transport the full row/column/branch chart, ports, external labels, namespace/roles, chirality and active phase using the named normalization policy; pressure both chiralities and active/inactive phase boundaries. Extend comparisons to native numerical operands and history. | After baseline cases and the comparison contracts. Independently reproduce normalization; column-only permutations, stale phase/chirality or untransported reference/history must fail. Retain exact normalized plan and certified numerical comparisons. |
+| **P9-8.4g — Larger-graph admission and independent oracles** | Resolve the prerequisites for each retained 100/400 source → 107/407 target configuration, preserving its exact family/profile/history identities. Route selector, OS, CI, PC/CI+PC, RG-completion and A-oracle obligations to the named closeout owners; bind independent new-configuration expectations before dependent execution. | Track all ten families separately. Read/envelope/contraction certificates, computed roots, incomplete probes and completion rejection have distinct dispositions. A family is ready for `.h` only when its required prerequisites pass; unresolved rows remain visible and open. |
+| **P9-8.4h — Larger-graph runtime and covariance campaign** | For each ready family, execute the actual source admission, fresh trigger/request, native event, both-role target reconstruction/readmission and declared physical continuation. Apply the relevant `.e`/`.f` transforms to this larger subject, and compare with its independent scientific expectations. | Depends on `.g` for that family and the relevant covariance harnesses. Retain actual outputs or the first rejection, duration/horizon and error bounds. A passing certificate or an expected rejection does not close a required successful runtime row. |
+| **P9-8.4i — Coverage reconciliation and handoff** | Reconcile `.a` against all child results, frozen IDs and separately named additional/deep/large probes. Retain commands, independent checks, code/profile/fixture bindings, review dispositions and unresolved debt. Update discovery evidence only for the exact newly reviewed configurations. | Aggregate closes only when its required runtime/covariance cells are reviewed and complete, or an explicit user-approved scope change is recorded. Hand positive-state witnesses and rejection subjects to P9-8.5; pass precise coverage to P9-8.6 without claiming arbitrary-size conformance. |
+
+**Execution order.** Start with `.a`, then the bounded frozen counterparts in
+`.b`. Children `.c`–`.f` may share harness work and run in coherent batches,
+while retaining separate evidence/review records. Work on `.g` can proceed
+independently of ready small-graph rows. Execute `.g`/`.h` per family rather
+than waiting for every sibling: use family-indexed records such as
+`P9-8.4g[A_CI]` and `P9-8.4h[A_CI]` for all ten A/C × OS/CI/PC/CI_PC/RG2b
+rows. A blocked family does not stop unrelated ready rows or disappear from
+parent reconciliation. Finish with `.i`. This is a work breakdown, not a
+requirement to stop for user input after every helper or shared harness edit;
+the existing scientific-oracle and bounded-review acceptance rules still apply.
+
+**Frozen versus numerical subjects.** Keep the literal frozen-vector bytes,
+plans and identities unchanged. Where a construction vector's declaration is
+not numerically admissible, bind a separately named admissible native companion
+and document exactly which frozen structural expectations it exercises and
+which identities/parameters differ. Review new A oracle scope before runtime
+comparison. A companion never silently replaces byte-exact fixture coverage,
+and a numerical rejection never becomes a successful runtime witness. `.a`
+must make this distinction explicit for every affected cell.
+
+**Large-graph entry state.** The accepted P9-8.3 preparation at `cd84425`
+records PC envelopes for C_PC/A_PC and contraction certificates for A_CI/A_CI_PC.
+Those four families still need full step/event/continuation checks. C_OS/A_OS,
+C_CI and C_CI_PC have incomplete budgeted probes; rerun or resolve their exact
+numerical work without treating a timeout as mathematical rejection. C_RG2b
+and A_RG2b reject the cyclic graphs under the existing tree17 completion.
+Successful cyclic execution needs the separately identified LG-RG-COMPLETION
+proof/domain work; changing a vertex limit or the accepted completion identity
+is insufficient. LG-A-ORACLE remains a prerequisite for new A scientific scope.
+Changes to requested parameters produce new named configurations and evidence;
+they do not overwrite the retained proposal or count as its original pass.
+
+**Review standard.** Each executed child records relevant specification
+sections, paper equations and side-tool claims, and checks the actual runtime
+operands against independent algebraic/numerical expectations. Pressure
+boundary/outlier inputs and deliberately inconsistent transformations. Keep
+exact mechanical/JCS identity checks separate from numerical error-bound
+comparisons; use the production ExactScalar/outward-bound contracts where
+required. Preserve charge, A W lineage and whole-carrier loss/reset semantics
+for both histories. Declare horizons and norms before comparison; do not infer
+uniform neighborhoods, indefinite continuation or arbitrary-size support from
+finite examples. Reuse accepted evidence only where its hypotheses match.
+
+**Adjacent owners.** P9-8.5 owns the complete unique-occupancy,
+whole-lifecycle reconstruction/readmission, rollback/replay and atomic-failure
+campaign, including the five frozen G9 atomic-failure vectors and larger cases
+whose numerical prerequisites permit execution. P9-8.4 records the positive
+state/receipt and rejection evidence those tests consume; it does not mark
+P9-8.5 complete. P9-8.6 reconciles the deep/runtime/covariance evidence and
+keeps arbitrary-size conformance held until its actual requirements pass.
+Tranche 9 retains public lifecycle/configuration entry, saved-selection runner
+integration, disabled compatibility and branch crossing. The end-of-tranche
+performance/cache review remains separately scheduled. This planning split
+changes no runtime work-manifest entry or accepted scientific evidence.
 
 #### End-of-Tranche-8 performance and cache review
 

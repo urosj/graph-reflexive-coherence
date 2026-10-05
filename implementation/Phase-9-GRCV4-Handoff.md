@@ -1,6 +1,193 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current continuation — 2026-10-05: configuration discovery CLI
+## Machine handoff — 2026-10-05: resume with P9-8.4b
+
+This is the current restart instruction; it supersedes the older machine-transfer
+and work-order sections below. P9-8.4a is strengthened, explicitly accepted and
+committed as **`f67bf930d1f212b31f39937da070861efe212fad`** on
+**`work/p9-8-4-planning`**. Its parent `5748b94` contains the nine-child P9-8.4
+breakdown; `main` is still at the accepted P9-8.3 merge `43598c8`.
+P9-8.4b has not started. No numerical/runtime child is accepted by the `.a`
+coverage inventory, and P9-8.4 remains open.
+
+Transfer the later branch tip containing this handoff, not just `f67bf93`.
+At preparation this branch has no configured upstream; remote availability has
+not been verified. Keep full Git history because the phase audit checks earlier
+accepted subjects. All substantive inputs and evidence are in the repository;
+temporary logs, attachments and the original machine's virtual environment are
+unnecessary. After receiving the updated branch, inspect it from the repo root:
+
+```bash
+git switch work/p9-8-4-planning
+git merge-base --is-ancestor f67bf930d1f212b31f39937da070861efe212fad HEAD
+git log -3 --oneline
+git status --short
+```
+
+### Read and implement next
+
+1. Read [P9-8.4's execution breakdown](./Phase-9-GRCV4-ImplementationPlan.md#p9-84-execution-breakdown)
+   and the [checklist](./Phase-9-GRCV4-ImplementationChecklist.md), then the
+   accepted [P9-8.4a review](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md),
+   [coverage/contracts](./phase-9-grcv4/tranche-8/P9-8.4a-Coverage.json) and
+   [validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json).
+2. Implement the shared case runner and retained-result capture specified by
+   `.a`'s `harness_contract`. Bind a named native case, actual source/current/reset
+   identities, fresh request, independent expected target, numerical norms/error
+   budgets and finite continuation before execution. Keep exact frozen
+   construction comparisons and changed numerical-companion identities separate.
+3. Start with the already demonstrated C_OS positive D52 phase-three companion
+   (`Lambda_C=1/512`): `native_cos_fixture`, `NativeCOSEventTests` and
+   `independent_cos_beat` in
+   [the lifecycle tests](../tests/models/test_grc_9_v4_lifecycle.py).
+   Reconcile each actual stage with its coverage cell; merely renaming an older
+   passing test does not complete `.b`. Its retained schedule is one current
+   source beat, reset preservation, one event, ten target beats for each role,
+   and a final read at `dt=1/4096`.
+4. Extend the `.b` expansion cases across all ten families: D30 and D45 under
+   both chiralities, D31 and D52 under both chiralities/all three active phases,
+   plus the literal C_PC reset subject. Preserve each case's missing stages or
+   numerical prerequisites. New A scientific scope retains independent oracle
+   review before runtime comparison. Shared harness work may be grouped, while
+   each family's proof, execution and acceptance scope remains explicit.
+
+The 400 fixture/family/history rows have 382 applicable cells and 18 literal
+C_PC-fixture exclusions. The latter waive no persistent-family behavior:
+`carrier_requirement_crosswalk` maps C_PC, A_PC, C_CI_PC and A_CI_PC × both
+histories to 128 shared expansion cells, 24 covariance cells, the two literal
+C_PC rows, and the corresponding larger prerequisites. Whole actual source Z
+archive, whole target Z reset, loss receipts and A W lineage remain separate
+obligations. The three metamorphic subjects belong to `.e`/`.f`.
+
+### Constraints and existing evidence
+
+- The frozen C_OS cutoff `Lambda_C=1` has an exact selector-boundary witness.
+  All sixteen literal C_OS expansion fixtures share that source. Preserve the
+  frozen bytes and record separately identified numerical companions; the
+  existing bounded companion establishes feasibility only at its named scope.
+- D is requested effective degree/capacity, not a vertex count. The accepted
+  small D52 companion is 10/9 source to 17/16 target. No case inherits a new
+  layout's, horizon's or graph's numerical budgets automatically.
+- Larger 100/400 to 107/407 proposals remain separately tracked under `.g`/`.h`:
+  C_PC/A_PC envelope passes, A_CI/A_CI_PC contraction-certificate passes,
+  C_OS/A_OS/C_CI/C_CI_PC incomplete probes, and both native RG2b cyclic-completion
+  rejections. They have zero committed events and physical steps. RG proof work
+  belongs to `.g[A_RG2b]`/`.g[C_RG2b]` and LG-RG-COMPLETION; changing tree17 limits
+  does not supply a graph-valid proof.
+- Keep all ten families visible. Full atomicity/rollback is P9-8.5, conformance
+  closure P9-8.6, and public lifecycle integration Tranche 9. The end-of-Tranche-8
+  performance/cache review remains pending, with measured benefit and complete
+  cache validity/invalidation/equivalence obligations.
+- Accepted `.a` evidence has 20 coverage tests, three readiness tests, Ruff and
+  a passing final phase-boundary audit. Its independent literal meaning table
+  rejects wrong generator phases/owners and count-preserving applicability
+  swaps, in addition to reconstruction/hash checks. This is inventory assurance,
+  not numerical execution evidence.
+
+Discover available configurations without invoking admission:
+
+```bash
+.venv/bin/python examples/grcv4/catalog.py list
+.venv/bin/python examples/grcv4/catalog.py show native-small-C_OS --json
+.venv/bin/python examples/grcv4/catalog.py compare native-small-C_OS native-large-C_OS
+```
+
+### Environment and focused restart checks
+
+The accepted local environment used Python 3.12.3, NumPy 2.4.6, python-flint
+0.9.0, rfc8785 0.1.4, jsonschema 4.26.0, mpmath 1.3.0 and Ruff 0.16.3.
+Recreate a checkout-local environment from the declared dependencies. The
+tracked root `uv.lock` predates the current V4/FLINT extras: it records pygrc
+0.0.0, NumPy 2.4.5 and Ruff 0.15.13 and lacks those extras. The older frozen-uv
+instructions below therefore do not reproduce this checkpoint. Use the current
+project declaration and explicit research/tool pins; a package source is required:
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -e ".[v4,v4-flint,dev]" "mpmath==1.3.0" "ruff==0.16.3"
+```
+
+The V4/FLINT extras pin their versions in [pyproject.toml](../pyproject.toml).
+Other platforms/backends are new validation environments; do not overwrite the
+retained run or assume bitwise identity. From the repository root:
+
+```bash
+PYTHONPATH=src .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p984a_coverage.py
+PYTHONPATH=src .venv/bin/python -m unittest discover -s implementation/phase-9-grcv4/verification -p test_p984a_coverage.py -v
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest discover -s implementation/phase-9-grcv4/verification -p test_p980_readiness.py -v
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+```
+
+The expected test counts are 20 and three. Runtime tests that import test
+helpers use `PYTHONPATH=src:.:tests`; keep BLAS/OpenMP threads at one for the
+recorded numerical workflow. Browser/Node setup and the full historical suite
+are unnecessary for these focused checks.
+
+This handoff updates only this document and its current boundary binding.
+The accepted `.a` validation retains its historical handoff hash at `f67bf93`.
+Do not rewrite accepted validation or regenerate `.a` with `--write` merely
+because later `.b` code changes cause its current-source reconstruction to drift:
+use the accepted Git checkpoint for historical verification and bind new subjects
+in successor evidence. Before each later handoff/commit, refresh only reviewed
+maintenance bindings and run the final current boundary audit. A failed audit
+must be investigated rather than recorded as implementation readiness.
+
+Suggested first message on the destination machine:
+
+> Read the latest machine handoff in `implementation/Phase-9-GRCV4-Handoff.md`.
+> Inspect branch `work/p9-8-4-planning` after accepted checkpoint `f67bf93`, then
+> continue with P9-8.4b. Preserve the independent coverage checks, all ten
+> families, both histories and the oracle-before-runtime rule for new A scope.
+
+## Accepted checkpoint — 2026-10-05: P9-8.4a coverage and contracts
+
+On `work/p9-8-4-planning`, after planning commit `5748b94`, the user requests
+P9-8.4a. The [coverage record](./phase-9-grcv4/tranche-8/P9-8.4a-Coverage.json),
+[review](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md) and
+[validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json) complete its
+inventory, prerequisites and comparison/harness contracts with bounded own
+review. The user accepts the strengthened P9-8.4a on 2026-10-05:
+"ok, great, let's strenghten  8.4a, then accept and commit".
+No P9-8.4b–h event or physical step runs.
+
+The matrix explicitly covers 20 frozen subjects × ten families × two histories:
+382 applicable cells and 18 justified exclusions for the literal C_PC-only
+reset identity fixture. Every family remains in all 16 shared expansions and
+three covariance subjects. Twenty larger-family/history rows retain all forty
+prior numerical outcomes; the five atomic-failure vectors stay with P9-8.5.
+Exact frozen construction, accepted named native companions, new numerical
+subjects and larger certificates/rejections/incompletion have separate scope.
+The existing literal C_OS selector obstruction is reverified, not newly found.
+
+Twenty inventory/contract pressure methods and the three existing readiness
+methods pass. An independent fixture-meaning table closes the phase and exact
+owner assertion gaps; generator-fault controls also reject swapped exemptions
+that preserve aggregate counts. Eight carrier requirement rows link all four
+persistent families and both roles to 128 shared expansion cells, 24 covariance
+cells, the two literal C_PC rows and larger prerequisites. The next child is
+P9-8.4b: bind each actual native companion,
+its independent expectations and case-specific budgets before executing the
+remaining stages. P9-8.4a supplies the shared runner input/result contract;
+it does not execute or accept that runtime campaign. Earlier accepted evidence,
+runtime source, work manifest and supported profiles remain unchanged.
+
+## Planning breakdown — 2026-10-05
+
+After accepted closeout/catalog commit `cd84425`, the user asks to assess and
+split P9-8.4 before implementation. The
+[plan](./Phase-9-GRCV4-ImplementationPlan.md#p9-84-execution-breakdown) and
+[checklist](./Phase-9-GRCV4-ImplementationChecklist.md) now give nine pending
+children: coverage/comparison contracts, frozen runtime counterparts, capacity/
+phase boundaries, deeper recursion, ordering/signed-edge covariance, chart/
+chirality covariance, larger-graph prerequisites, larger-graph execution and
+coverage handoff. Start with P9-8.4a. Larger prerequisites/execution are tracked
+per family so incomplete probes or cyclic RG completion work do not stop
+unrelated ready cases. P9-8.5 retains full atomicity/rollback, P9-8.6 retains
+conformance closure, and Tranche 9 retains public lifecycle integration.
+This is planning only; no child is executed or accepted by this edit. The
+accepted P9-8.3 validation records remain historical, unchanged evidence.
+
+## Accepted continuation — 2026-10-05: configuration discovery CLI
 
 The user requests repository tooling to investigate and select configurations,
 with readable CLI tables and JSON export. The
