@@ -1,62 +1,69 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — 2026-10-05: P9-8.4b A_OS oracle accepted
+## Current work — 2026-10-05: P9-8.4b A_OS native results accepted
 
-C_OS acceptance and the all-ten family breakdown are committed at `0a79ece5`
-on `work/p9-8-4b-runtime-counterparts`. The user selects **A_OS next**, replacing
-the earlier C_PC recommendation. The working branch is unchanged.
+Work remains on `work/p9-8-4b-runtime-counterparts`. C_OS acceptance is committed
+at `0a79ece5`; the expanded A_OS oracle and scientific pressure are accepted
+and committed at `643ce12a`. The user then authorized the native A_OS campaign
+and now explicitly accepts and requests its commit. This handoff accompanies
+that accepted checkpoint; transfer the commit containing these files before
+resuming on another machine.
 
-The [A_OS oracle extension](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
-now covers all sixteen layouts × current/reset. Its bound
-[inputs](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleInputs.json) and
-[results](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleResults.json) record sixteen
-passing oracle cases, 355 complete-formula interval checks and zero native
-events/steps. Eleven focused tests pass. It reuses accepted A.1 equations;
-the original D52 phase-three target remains exact. The two phase-one D52
-requests use separately declared shares `(1/4,1/2,1/4)`, with independent A
-checks rather than transferred C evidence. All scalar parameters, dt and
-comparison budgets stay fixed.
+The [native runtime review](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md),
+[bound inputs](./phase-9-grcv4/tranche-8/P9-8.4b-AOSCases.json) and
+[results](./phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json) record **sixteen
+passing layouts and 32 successful current/reset cells**. One actual native
+source beat supplies fresh event/history identities. Each native expansion
+completes both-role admission, exact resource/W/reference lineage and replay;
+both actual target roles then complete ten steps and a final read. This gives
+320 target steps and 32 final passes, with no failure or timeout. The campaign
+reuses the accepted phase-one shares `(1/4,1/2,1/4)` and changes no other
+parameters, timestep, horizon or error budget.
 
-A separate [scientific pressure pass](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#focused-scientific-pressure)
-adds eight passing tests and [retained evidence](./phase-9-grcv4/tranche-8/P9-8.4b-AOSScientificPressure.json),
-without rerunning or changing the original campaign. Twenty-four of 36
-wrong-law controls fail the numerical gate; twelve subtle writer-J and
-regeneration substitutions fit within its tolerances. Separate research
-consumption checks reject those substitutions. Native checks must capture
-actual writer incoming W/final C/selected corrector J and the corrector source
-used for regeneration; output agreement cannot replace them. Sixteen nearby
-C/W points pass. The old phase-one shares produce negative current-role C
-but nonnegative reset C; split and resource probes also establish genuinely
-failing points. The floor probe distinguishes loss of the smooth certificate
-from a valid clipped law. No uniform robustness or native completion is claimed.
+Numerical outputs satisfy both frozen nominal comparisons and pointwise
+independent interval checks at actual C/W. Native observations now also bind
+the writer's incoming W/final C/selected corrector J and the corrector source
+used for geometry regeneration. These close the consumption-evidence gap
+identified by the accepted pressure; output agreement alone was insufficient.
+Focused tests reject those substitutions, stale final/restart reads, duplicate
+writes and altered event evidence. Current-only/reset-only target split
+rejections and injected late publication failure preserve the entire checkpoint.
+No production code, accepted oracle, C_OS evidence or public support changed.
 
-The user accepts the expanded oracle and scientific pressure on 2026-10-05.
-The [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#scoped-user-acceptance)
-binds their exact record digests and satisfies the declared oracle prerequisite.
-Execution-time `user_accepted=false` flags remain historical; they do not undo
-this later decision. This acceptance does not close A_OS runtime cells.
+The [scoped user acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md#scoped-user-acceptance)
+binds these 32 cells and eleven passing focused tests without changing raw
+execution records. C_OS and A_OS now have 64 accepted cells. The other eight
+families still own 258 uncompleted cells.
+The all-ten parent P9-8.4b and `.c`–`.i` remain open. These finite-fixture
+results are not a uniform parameter tube or a general continuation guarantee.
 
-**Next:** implement the native A_OS adapter and campaign for its 32 cells.
-Actual source-step output must own
-fresh identities and history-policy hashes; nominal oracle identities cannot
-stand in for a rounded native source. Retain consumption observations for
-current, geometry, W writer, both-role admission and final reads. This boundary
-is the existing A-oracle-before-runtime requirement, now satisfied at this scope.
-Only C_OS's 32 cells are runtime-accepted; the remaining 290 remain open.
+**Next:** address the identified side-tool integration gap across Tranche 8,
+including 8.1/8.2 mechanics, all 8.3 profiles and current 8.4 evidence, before
+entering 8.5. Current API/notebook status still reflects the older 8.1a entry;
+artifact hashes alone are not a current execution/acceptance view. The broader
+catch-up has been discussed but is not implemented by this A_OS commit. Reuse
+accepted evidence and preserve its limits; do not skip 8.2/8.3 or infer new
+scientific authority from a presentation update.
 
-`p984b_aos_oracle.py --check-retained` is an integrity/chain/bound check, not
-recomputation or native execution. Add `--recheck-numerics` for every interval
-enclosure; `--run-oracle --output <fresh-relative-file.json>` runs only the
-paper expectations and independent interval checks. See the review for portable
-commands and limits. This checkpoint records acceptance and prepares its commit;
-it does not start the native campaign. No production module, prior accepted
-oracle, C_OS evidence or public support changed.
+For a lean restart, run from the repository root:
 
-`p984b_aos_pressure.py --check-retained` checks retained integrity only.
-`--run --output <fresh-relative-file.json>` executes just the eight scientific
-pressure tests and preserves the original evidence; use the interpreter and
-repository-relative command prefix in the oracle review. Do not repeat the
-full campaign merely to check this accepted record.
+```bash
+PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/p984b_aos_runtime.py --check-retained
+```
+
+This verifies retained identities, operand captures, schedules, nominal
+comparisons and certificate bindings/bounds, **not a native rerun**. Add
+`--recheck-numerics` to recompute interval bounds only. `--run --output
+<fresh-relative-file.json>` performs a new native campaign and refuses to
+overwrite the original. Use the review's exact commands and dependencies:
+`.venv`, `mpmath==1.3.0`, `python-flint==0.9.0`, and single-threaded BLAS/OpenMP.
+Do not repeat the roughly six-minute campaign merely to record acceptance.
+
+The [accepted oracle review](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
+and its 355 oracle checks, eleven focused tests and eight scientific-pressure
+tests remain unchanged. Their historical execution-time acceptance flags do
+not replace the later scoped user decision. Native runtime acceptance is now
+likewise recorded separately; successful execution alone did not grant it.
 
 ## Accepted checkpoint — 2026-10-05: P9-8.4b C_OS counterparts
 

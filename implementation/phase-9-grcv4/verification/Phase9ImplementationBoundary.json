@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "34ebc296f4f938d2cdc8070d01266e16e0cabfd5abf89d1f3e872ae52c38cd64"
+      "sha256": "1c9007e7c524240ff58d49d655e0fa019717f3d10f88fae7ff41b86b370c5806"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "d32487e4c4e1b899c6eab82d0c32713a2c7a04c9d3f089fda7a1c47b5531d18b"
+      "sha256": "f931acea47ed73534cf999b3ecd1622c2eeced94e8188eccd4940e796e8085cf"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "2c5a7b2d8d1a581196bd93665b4864c38e7d28ca6d3477170422e61b06dd856e"
+      "sha256": "fb2f42465aaaa82bf17ef3d849ee6764f936c99f8e82cb2ac427b222e1346e71"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "4c0d9ed7663d99191da2f11258506f6b1180ccab68aa34a72e501545273f4f35"
+      "sha256": "6917bf737263223c094b2d89aa4dea0e4c3b819d0f9f709ce8ecefdc75ae4e78"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3836,7 +3836,31 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p984b_aos_pressure.py",
       "sha256": "97912366cccc79f6e37f8e6c511e093fe19b79b119f8ab730931549ebeb25bb0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSCases.json",
+      "sha256": "38cbec44a9a2e6911a302efb96fecd35cab6613982e70e4de262ff9348ae816c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json",
+      "sha256": "4d4904d03bef8992a96ec8835f824f99767777d24bb3f4f8e3469ab2c5e33327"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md",
+      "sha256": "e731466f1ffed685a29281a7651a0db4508d7d63d50cb2e4ea85e8680cfd09c8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984b_aos_capture.py",
+      "sha256": "41897b264a49e23dcbbd5b2aebdb47039f1e318774f40beb47032cfecca7a98a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984b_aos_runtime.py",
+      "sha256": "d4fee2ca835f554c446021f64b1e89284cf361d85f76fc4f4ad22b93db30c5ea"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984b_aos_runtime.py",
+      "sha256": "0ec668e06f922a166e926629598d9c7026275bde0605053bbfff4970d982ddff"
     }
   ],
-  "record_digest": "32d877bf0820c0c775bb1ab841bc2fd11ee8df9b5cd28d2c2a6252bdaf673934"
+  "record_digest": "9ada45e79663cdca048114407024af997c7ef28d90c2ac4220fbe287c3c5cd04"
 }

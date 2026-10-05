@@ -2691,9 +2691,9 @@ the full ten-profile plan.
     regressions pass. Retained checking explicitly reports no native rerun;
     actual current/geometry/Read-Back/continuity/final-refresh captures apply
     to the successors, not retroactively to the original campaign.
-    The user accepts the bounded C_OS work on 2026-10-05. Its 32 cells are
-    accepted; the other 290 remain pending. Exact frozen construction checks
-    are not native success. Every item below inherits the shared source/event/
+    The user accepts the bounded C_OS and subsequent A_OS work on 2026-10-05.
+    Their 64 cells are accepted; the other 258 remain pending. Exact frozen
+    construction checks are not native success. Every item below inherits the shared source/event/
     both-role continuation contract and its own `.a` numerical prerequisites.
     All C items require complete `W_C_tr` and strict selectors; all A items
     require independent-oracle review for new scope plus fixed-row/W lifecycle
@@ -2707,7 +2707,7 @@ the full ten-profile plan.
       phase-one successors, with original failures preserved. Bounded dense
       comparisons, not rigorous full-error/effect certificates. Acceptance is
       recorded in the [runtime review](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md#scoped-user-acceptance).
-    - [ ] P9-8.4b[A_OS]: 32 cells. A predictor/geometry/corrector and split
+    - [x] P9-8.4b[A_OS]: 32 cells. A predictor/geometry/corrector and split
       admission, independent expansion oracle, W transfer/write and final read.
       Selected next by the user after C_OS commit `0a79ece5`, before C_PC.
 
@@ -2725,13 +2725,23 @@ the full ten-profile plan.
         User acceptance on 2026-10-05 covers the expanded oracle and focused
         scientific pressure, not native runtime cells. Exact records and limits
         are bound in the [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#scoped-user-acceptance).
-      - [ ] Implement the A_OS runtime adapter and execute all 32 cells with
+      - [x] Implement the A_OS runtime adapter and execute all 32 cells with
         actual fresh identities, W/reference-current lineage, both-role atomic
-        admission, consumption checks, ten-step continuation and final reads;
-        review and accept the bounded results. Explicitly bind writer incoming
+        admission, consumption checks, ten-step continuation and final reads.
+        Explicitly bind writer incoming
         W/final C/selected corrector J and regenerated geometry to the actual
         corrector source, with substitution-rejection tests: numerical budgets
         and split admission alone do not establish those stage bindings.
+        All sixteen native cases pass on 2026-10-05: 320 target steps and 32
+        final reads, with pointwise interval and nominal checks, actual operand
+        captures, replay and focused rollback pressure. Existing production
+        code and accepted oracle remain unchanged.
+        [Runtime evidence and limits](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md).
+      - [x] Review and accept the bounded A_OS native results. User acceptance
+        on 2026-10-05 binds the 32 successful cells and eleven focused tests in
+        the [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md#scoped-user-acceptance).
+        Execution-time flags remain unchanged. No public support or parent
+        closure follows; the other eight families still own 258 uncompleted cells.
 
     - [ ] P9-8.4b[C_CI]: 32 cells. Whole-domain self-map/contraction, joint
       current/geometry roots and output-error evidence for each target.

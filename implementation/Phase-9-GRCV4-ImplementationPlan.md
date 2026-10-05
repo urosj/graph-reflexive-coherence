@@ -2887,7 +2887,7 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | Family item | Applicable history cells | Additional realization-specific obligations | Status |
 | --- | ---: | --- | --- |
 | `P9-8.4b[C_OS]` | 32 | Predictor, generated geometry, fresh corrector and split admission; selector and poststate admission. | Accepted 2026-10-05 at the bounded scope below. |
-| `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Oracle and scientific pressure accepted 2026-10-05; native adapter/campaign next, runtime cells still open. |
+| `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Oracle, scientific pressure and all 32 bounded native cells accepted 2026-10-05. |
 | `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | Pending. |
 | `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | Pending. |
 | `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | Pending. |
@@ -2905,7 +2905,7 @@ only after all ten items and all 322 applicable cells are complete and
 accepted**, unless the user explicitly approves a recorded scope change.
 The `.c`–`.i` work remains separate; this breakdown does not close it.
 
-**Current A_OS preparation (2026-10-05).** After committing C_OS at `0a79ece5`,
+**A_OS oracle prerequisite (2026-10-05).** After committing C_OS at `0a79ece5`,
 the user selects A_OS next, superseding the earlier C_PC recommendation.
 The [A_OS oracle extension](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
 binds all sixteen layouts and both histories. It reuses the accepted A.1
@@ -2916,8 +2916,8 @@ their A equations are checked independently of C_OS. This is oracle-only work,
 not 32 completed native cells. The user accepts the expanded oracle and
 scientific pressure on 2026-10-05; the [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#scoped-user-acceptance)
 binds the exact records without rewriting their execution-time flags. The
-oracle prerequisite is satisfied; the native adapter/campaign is next.
-A_OS's runtime item and its parent stay open.
+oracle prerequisite is satisfied and committed at `643ce12a`. Native results
+and subsequent runtime acceptance are recorded below; the parent stays open.
 
 The [focused scientific pressure](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#focused-scientific-pressure)
 adds eight passing tests without rerunning that campaign. Of 36 wrong-law
@@ -2932,7 +2932,25 @@ split/resource/floor/history boundary probes distinguish actual violations
 from an unavailable certificate. This adds bounded pressure, not uniform
 robustness, native execution or runtime acceptance.
 
-**Current `.b` execution (2026-10-05, C_OS accepted only).** The
+**A_OS native counterparts (accepted 2026-10-05).** The
+[runtime review](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md) records
+sixteen passing layouts × current/reset = 32 successful cells. One actual
+source beat feeds fresh requests/history identities; sixteen native expansions
+then complete both-role admission, replay, 320 target steps and 32 final reads.
+Pointwise interval checks and frozen nominal comparisons pass. Actual operand
+captures bind writer incoming W/final C/selected corrector J, corrector-source
+regeneration and subsequent written-state reads; focused substitutions and
+current-only/reset-only target rejection are checked. No production code or
+accepted oracle changed. These are finite-case results, not uniform robustness,
+new public support or closure of `.c`–`.i`. The user explicitly accepts and
+requests commitment of A_OS on 2026-10-05; the
+[scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-AOSRuntimeReview.md#scoped-user-acceptance)
+binds the evidence without rewriting execution-time flags or rerunning the
+campaign. C_OS and A_OS now have 64 accepted cells; the other eight families'
+258 cells await completion. Tranche 8 side-tool reconciliation is separate
+follow-up work and is not completed by this acceptance.
+
+**Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds
 sixteen companions and implements the shared capture/comparison contract for
 this family. Fourteen complete their declared schedule; both D52 phase-one
@@ -2947,8 +2965,9 @@ both-role ten-beat/final-read evidence. Source states, profile, dt and
 tolerances are unchanged; the original negative subjects stay failed.
 The successor checker separates event/case/integrity status and captures
 actual current/geometry consumption, staged continuity and final refresh.
-The other nine families and literal C_PC reset case retain 290 pending cells;
-all 32 C_OS cells now have successful named evidence accepted by the user on
+At that checkpoint, the other nine families and literal C_PC reset case
+retained 290 pending cells; A_OS's subsequent acceptance is recorded above.
+All 32 C_OS cells have successful named evidence accepted by the user on
 2026-10-05 ("accept. i would then expand 8.4b so that items cover all 10
 realizations"). This accepts `P9-8.4b[C_OS]`, not the all-ten parent.
 The original fourteen passes are not retroactively credited with the new
