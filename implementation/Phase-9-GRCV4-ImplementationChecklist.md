@@ -2592,7 +2592,7 @@ feasibility prerequisite is reviewed may a partial runtime-accepted subset
 proceed to its applicable P9-8.4–8.6 and Tranche 9 obligations without closing
 the full ten-profile plan.
 
-- [ ] P9-8.3 closeout: Document graph-size coverage and configuration/admission
+- [x] P9-8.3 closeout: Document graph-size coverage and configuration/admission
   after the P9-8.3 profile work and before starting P9-8.4. User-requested on
   2026-10-03. Distinguish immutable scientific/evidence contracts from
   configurable, identity-bearing parameters and evolving state; explain R,
@@ -2604,13 +2604,60 @@ the full ten-profile plan.
   from development validation/support acceptance, and identify current API or
   automation gaps without introducing manual approval for every simulation.
   [Guide scope and completion criteria](./Phase-9-GRCV4-ImplementationPlan.md#end-of-p9-83-graph-size-and-configuration-guide).
+  The 2026-10-04 request extends this to reproducible new-configuration
+  preparation after A_RG2b acceptance at `a04095f`, with concrete examples for
+  **all ten realizations**. Preparation checkpoints:
+
+  - [x] Reconcile all ten native numerical sizes, mechanical coverage, generic
+    benchmarks, identity/configuration/state semantics and automated admission.
+  - [x] Construct every family's 100/400 source and D52 107/407 target with
+    full profiles, references, both histories, specialization, native identities
+    and event requests through the actual pure expansion owners. Preserve
+    nonuniform A W lineage and exercise nonzero PC source/whole-target reset.
+  - [x] Declare every new coupling/radius/cutoff explicitly, including all PC
+    M/R/W charts and CI+PC domain/composition requirements. Keep cyclic RG2b
+    examples bound to the current completion and record its actual rejection.
+  - [x] Record all forty numerical outcomes and pressure checks; bind the
+    complete all-ten evidence and rerun the phase-boundary audit. Sixteen
+    envelope/contraction checks pass, eight RG2b domain checks reject, and
+    sixteen probes remain incomplete at their declared numerical budget.
+
+  See the [guide and concrete examples](./phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md),
+  [all-ten request](./phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json)
+  and [validation](./phase-9-grcv4/tranche-8/P9-8.3-CloseoutValidation.json).
+  All-ten preparation and bounded own review are complete and user-accepted
+  with the repository UX continuation on 2026-10-05 ("ok, accept and commit").
+  Larger-graph runtime scope retains its separate obligations. Construction, numerical
+  certificate/read, incomplete probe, and full runtime
+  acceptance have separate meanings. No larger event or physical continuation
+  is claimed. Successful cyclic native RG2b needs a new completion proof;
+  routine supported configurations require automatic admission.
+- [x] P9-8.3 repository UX continuation (2026-10-05): Provide a discoverable
+  CLI/catalog for all ten small/large native configurations and retained generic
+  examples. List/filter size, family, model, coupling and evidence; inspect full
+  parameters/provenance; compare; export source/target selections; verify pinned
+  choices and reject stale artifacts without silently hiding them. Readable
+  tables and JSON export are the user's selected interface. Discovery performs
+  no numerical execution, support-registry update or automatic runtime acceptance.
+  [CLI usage and extension](../examples/grcv4/README.md#find-and-select-a-graph-configuration),
+  [portable validation](./phase-9-grcv4/tranche-8/P9-8.3-CatalogValidation.json).
+  Explicitly user-accepted on 2026-10-05 ("ok, accept and commit").
+  Direct execution of saved selections remains with the future public
+  configuration/lifecycle owner; displayed reproduction recipes disclose setup
+  changes and do not claim exact historical replay.
 - [ ] P9-8.4: Execute all applicable accepted D30, D31, D45, and D52 runtime
   counterparts, with exact chirality/phase cases. Add separately labeled
   D37/D44 capacity-shell boundary probes and deeper declared probes. Execute
   permutation, chart rotation, reflection/chirality conjugacy, signed-edge
   reorientation, and phase-boundary cases; probes never replace frozen vectors.
+  Track `LG-VALIDATION` from the closeout guide as a separately labeled
+  all-ten 100/400 source → 107/407 target examples. Resolve each recorded
+  numerical rejection/incomplete probe before dependent execution. Record
+  full admission or first rejection for both roles without extrapolating support.
 - [ ] P9-8.5: Verify unique target occupancy, whole-lifecycle target
   reconstruction/readmission, and atomic failures.
+  Include the prepared larger proposal's event rollback/replay obligations
+  when its numerical prerequisites pass; preparation alone does not close them.
 - [ ] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
   covariance evidence passes.
 - [ ] End-of-Tranche-8 performance/cache review (after P9-8.6, before Tranche 9).

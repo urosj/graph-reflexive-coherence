@@ -1,6 +1,68 @@
 # Phase 9 GRCV4 handoff — All-ten feasibility before production
 
-## Current continuation — 2026-10-04
+## Current continuation — 2026-10-05: configuration discovery CLI
+
+The user requests repository tooling to investigate and select configurations,
+with readable CLI tables and JSON export. The
+[catalog workflow](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
+now indexes 42 concrete retained configurations: all ten native small examples,
+all ten larger proposals, and 22 generic branch/grid runs. It lists and filters
+sizes/couplings/evidence, shows full parameters and provenance, compares changes,
+exports portable source/target selections and verifies them against pinned files.
+Stale artifacts remain visible and cannot be selected. Existing scientific
+identities and recorded admission/acceptance distinctions are preserved.
+
+Discovery reads retained files using only the standard library. It imports no
+runtime or numerical package and executes no fixture or admission. Three small
+C state pairs are retained by an explicit maintenance producer. Selections are
+saved investigation/downstream choices; public runners do not yet consume them.
+They display reproduction commands with the caveat that a new generic grid run
+may choose different admitted parameters. See
+[portable catalog validation](./phase-9-grcv4/tranche-8/P9-8.3-CatalogValidation.json).
+The user explicitly accepts this work on 2026-10-05 ("ok, accept and commit"),
+including the pending all-ten preparation closeout below. Acceptance covers
+the documented preparation, bounded review and repository UX; larger-graph
+runtime acceptance and P9-8.4 execution retain their separate obligations.
+
+## P9-8.3 closeout — 2026-10-04
+
+After bounded A_RG2b runtime acceptance at `a04095f`, the user requested the
+coverage/configuration closeout and concrete preparation for a larger graph,
+then clarified that the examples must cover **all ten realizations**.
+The [guide](./phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md) and
+[all-ten request](./phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json)
+now provide ten separate native configuration/transfer packages on the same
+100/400 cyclic source and 107/407 D52 target. Every package carries full source
+and target profiles, graph envelopes, both role histories, specialization,
+event request and native identities. Actual production pure expansion owners
+construct references and transfer both roles; no family is only a future-work row.
+
+The shared graph has one saturated vertex and cycle rank 301. Both roles have
+Q=200 and distinct resource pulses. Every A example has distinct nonuniform W
+histories, preserved on old edges with new-edge W=1. Every PC example has
+opposite nonzero diagonal carriers in its source roles and whole-carrier target
+reset. The explicit new PC chart uses M=32; R/coupling/CI-domain choices are
+recorded per family. Changing those choices reidentifies the configuration.
+Native RG2b examples retain the existing tree17 completion and record its
+actual rejection on both cyclic graphs; a vertex-limit edit cannot extend its proof.
+
+Numerical reports distinguish production envelope/contraction checks, OS reads,
+completion rejection, and probes that did not finish within their declared
+budget. A construction or certificate is not a committed event or successful
+continuation. See [portable validation](./phase-9-grcv4/tranche-8/P9-8.3-CloseoutValidation.json)
+for all-ten outcomes, reproduction, pressure checks and the phase-boundary result.
+Accepted oracles, runtime code, work manifest and supported-profile registry
+remain unchanged. This is concrete all-ten preparation and bounded own review;
+no larger-graph runtime acceptance is inferred.
+
+P9-8.4–8.6 retain actual event/continuation, covariance and atomicity obligations
+for each example, separately from frozen-vector evidence. New A scientific
+scope keeps oracle-before-runtime review; cyclic RG2b needs a separately proved
+completion. Public configuration/lifecycle entry and the end-of-tranche cache
+review remain with their existing owners. Routine supported runs require
+automated admission, not human approval for each simulation.
+
+## Previous accepted continuation — 2026-10-04: A_RG2b runtime
 
 After the A_RG2b A.1 oracle was accepted at `9074487`, the user requested A.2
 runtime continuation. The closed signed-completion owner, native C/W step and

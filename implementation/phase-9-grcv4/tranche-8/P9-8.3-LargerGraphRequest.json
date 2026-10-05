@@ -1,0 +1,37 @@
+{
+  "schema": "p983-graph-preparation-request-v1",
+  "purpose": "Reproducible new-configuration preparation; not a runtime admission token",
+  "graph_recipe": "circulant_100_offsets_1_to_4_move_50_54_tail_to_0_port9_v1",
+  "worked_family": "C_OS",
+  "candidate_overrides": {
+    "Lambda_C": 0.00006103515625,
+    "C_ref": 1,
+    "kappa_M_C": 5.960464477539063e-8,
+    "kappa_Phi_C": 1,
+    "eta_C": 1,
+    "tau_C": 1,
+    "chi_C": 16,
+    "zeta_C": 7.275957614183426e-12
+  },
+  "kappa_H": 0.5,
+  "os_split_tolerance": 1e-8,
+  "conditioning_limit": 100000000,
+  "absolute_tolerance": 1e-11,
+  "relative_tolerance": 1e-11,
+  "charge_absolute_tolerance": 1e-11,
+  "state_recipe": "C2_remote_dyadic_pulses_distinct_equal_charge_roles_v1",
+  "ordinary_dt": 0.000244140625,
+  "planned_target_steps_per_role": 10,
+  "event": {
+    "source_node_id": 0,
+    "target_effective_degree": 52,
+    "module_chirality": 1,
+    "growth_phase": 3,
+    "resource_distribution": [0.5, 0.25, 0.25]
+  },
+  "parameter_selection_policy": "explicit_new_declaration_no_automatic_retuning",
+  "history_policy": "C_rederive_no_W_no_Z",
+  "required_families": [
+    "C_OS", "C_PC", "A_OS", "C_CI", "A_CI", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"
+  ]
+}

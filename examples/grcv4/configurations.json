@@ -1,0 +1,1358 @@
+{
+  "schema": "grc-configuration-catalog-v1",
+  "scope": "curated_retained_examples_not_supported_profile_registry",
+  "entries": [
+    {
+      "id": "native-small-A_OS",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "A_OS",
+      "scenario": "native-small",
+      "format": "native-oracle",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-Oracle.json",
+        "sha256": "ce7f4ae309d9256d93ce7d96f10073e4380f92b26a9af548df1269f98507a06e"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-Validation.json",
+          "sha256": "e985d7f675ac98e5294d5508a6f79a634f3ef6ed41a16fa5142854f9c6f1a616"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_aos -v"
+      ]
+    },
+    {
+      "id": "native-large-A_OS",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "A_OS",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS.json",
+        "sha256": "cd8f260595a1d9fbd4b78e82d1beede49b6798ab563ae307dfe0ea635bfa6814"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS-Admission.json",
+        "sha256": "28186470eb6dba3a70e5da9497737c9fe6d36a8c5747c798abad6057c84a7e3c"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS-Admission.json",
+          "sha256": "28186470eb6dba3a70e5da9497737c9fe6d36a8c5747c798abad6057c84a7e3c"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family A_OS --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-A_OS",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "A_OS",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_a_five.json",
+        "sha256": "5e0d9dcabe390ce49efea61b78640b44e8941a449dd398cf25a168f21a06e7d9"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_a_five.md",
+          "sha256": "6e102d131dc01f0ed8fcab9eca25c5e75815576858a3ca19f1671bb63570f82b"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_a.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-A_CI",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "A_CI",
+      "scenario": "native-small",
+      "format": "native-oracle",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Oracle.json",
+        "sha256": "846e491b8eaa637ebcdac0a049a26f2192bf1054f0e341af0a8a9e51f70ebb44"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-Validation.json",
+          "sha256": "554f6e315d67befbe910a286b04cd8c4084cc9bcdf2a1af63936614e68350615"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_aci -v"
+      ]
+    },
+    {
+      "id": "native-large-A_CI",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "A_CI",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI.json",
+        "sha256": "e2cbc0c686e590db9bf6c3ab761bb96a1aaa996427875a695fe3b08c1ded2109"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
+        "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
+          "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family A_CI --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-A_CI",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "A_CI",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_a_five.json",
+        "sha256": "5e0d9dcabe390ce49efea61b78640b44e8941a449dd398cf25a168f21a06e7d9"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_a_five.md",
+          "sha256": "6e102d131dc01f0ed8fcab9eca25c5e75815576858a3ca19f1671bb63570f82b"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_a.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-A_PC",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "A_PC",
+      "scenario": "native-small",
+      "format": "native-oracle",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Oracle.json",
+        "sha256": "169554a8b01b99484fba8fcb2b6c1854a8a17b23e0d4c9efe0dd203a26c02eec"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json",
+          "sha256": "d6716ad45cdb20666cd2eed0048d6376145697877e8d71543aecb8e8b8625fe8"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_apc -v"
+      ]
+    },
+    {
+      "id": "native-large-A_PC",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "A_PC",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_PC.json",
+        "sha256": "2a6d5ed6614dd009622d9860100e41499b6116dcd5c120fd9569e53b8e76e367"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_PC-Admission.json",
+        "sha256": "44b8e2deccf5dd25e01804b918135065076933216fd1eb344b11dafd6fd22260"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_PC-Admission.json",
+          "sha256": "44b8e2deccf5dd25e01804b918135065076933216fd1eb344b11dafd6fd22260"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family A_PC --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-A_PC",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "A_PC",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_a_five.json",
+        "sha256": "5e0d9dcabe390ce49efea61b78640b44e8941a449dd398cf25a168f21a06e7d9"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_a_five.md",
+          "sha256": "6e102d131dc01f0ed8fcab9eca25c5e75815576858a3ca19f1671bb63570f82b"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_a.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-A_CI_PC",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "A_CI_PC",
+      "scenario": "native-small",
+      "format": "native-oracle",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Oracle.json",
+        "sha256": "e34243fd149d4f4cccc720232a3d7d2ac92b04a7e16059e8adf04f839c2a7238"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-Validation.json",
+          "sha256": "8c2755cf29b449e9fbcfa5c409cb53f2a92783b0ebc3719e1163f91a38ff4638"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_acipc -v"
+      ]
+    },
+    {
+      "id": "native-large-A_CI_PC",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "A_CI_PC",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI_PC.json",
+        "sha256": "9a9ea82bd4cfc6e8858132c029e0bdd7bb917528491ba4c58c0b917d2166f2ba"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI_PC-Admission.json",
+        "sha256": "ccf9e4e26de9c58c7cdf7091df14adcf440c85f933f05761bd5473ef816fb157"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI_PC-Admission.json",
+          "sha256": "ccf9e4e26de9c58c7cdf7091df14adcf440c85f933f05761bd5473ef816fb157"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family A_CI_PC --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-A_CI_PC",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "A_CI_PC",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_a_five.json",
+        "sha256": "5e0d9dcabe390ce49efea61b78640b44e8941a449dd398cf25a168f21a06e7d9"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_a_five.md",
+          "sha256": "6e102d131dc01f0ed8fcab9eca25c5e75815576858a3ca19f1671bb63570f82b"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_a.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-A_RG2b",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "A_RG2b",
+      "scenario": "native-small",
+      "format": "native-oracle",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json",
+        "sha256": "521787954476c351e5fc99e492ce0e00f1a972255c8274729c7d0c03098ffbc9"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-Validation.json",
+          "sha256": "3a7692cc48ebd4f51bcdab31333b3823c93ca3df48b57a5556fd03b6b3627d17"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_arg2b -v"
+      ]
+    },
+    {
+      "id": "native-large-A_RG2b",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "A_RG2b",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b.json",
+        "sha256": "d6c3ee7f10b025bbd429b829895fd36b168dbf58cf6bc5d9b9e4bb4228ec0340"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b-Admission.json",
+        "sha256": "391aadb5fa4cdeee9adaddb5c03db535d7f7050b66056d00bda81cb02c63b9f9"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b-Admission.json",
+          "sha256": "391aadb5fa4cdeee9adaddb5c03db535d7f7050b66056d00bda81cb02c63b9f9"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family A_RG2b --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-A_RG2b",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "A_RG2b",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_a_five.json",
+        "sha256": "5e0d9dcabe390ce49efea61b78640b44e8941a449dd398cf25a168f21a06e7d9"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_a_five.md",
+          "sha256": "6e102d131dc01f0ed8fcab9eca25c5e75815576858a3ca19f1671bb63570f82b"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_a.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-C_OS",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "C_OS",
+      "scenario": "native-small",
+      "format": "native-states",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-CatalogSmallCInputs.json",
+        "sha256": "8f804decaa5b660be54cd4d36605b74f022c17be3fcfc17e56e346a9f05375b3"
+      },
+      "sides": {
+        "source": "/states/C_OS/source",
+        "target": "/states/C_OS/target"
+      },
+      "evidence": [
+        {
+          "path": "tests/models/test_grc_9_v4_lifecycle.py",
+          "sha256": "40b0f0ddb984175f7c391815413838c3a8c6e704171e92af3c7149b7aef1129c"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_lifecycle -v"
+      ]
+    },
+    {
+      "id": "native-large-C_OS",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "C_OS",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS.json",
+        "sha256": "0d67f3c26289bd305ae5438bfdfaea638a328a977c632ac5fbe39bf83fa71d44"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS-Admission.json",
+        "sha256": "bcc5743cdf606db5f132804ce6f879d4f2bb3d00bfa361414582a075a64bd2c1"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS-Admission.json",
+          "sha256": "bcc5743cdf606db5f132804ce6f879d4f2bb3d00bfa361414582a075a64bd2c1"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family C_OS --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-C_OS",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "C_OS",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_c_five.json",
+        "sha256": "9ca23c9e0f1b89dc5a73cbd0656f2a16cdeb5bb32ccf01cd1be6fd61e1556786"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_c_five.md",
+          "sha256": "ce9aa2efc1c7b8510e5a455a6d007630ef767c15bf406854030cbc1adf87a90a"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_c.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-C_CI",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "C_CI",
+      "scenario": "native-small",
+      "format": "native-states",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-CI-Validation.json",
+        "sha256": "f722e08c03ec73595b1b16ad6fb8b908dde9d5505731f2e3fbe9b164398ad296"
+      },
+      "sides": {
+        "source": "/numerical_observations/checkpoint/initial",
+        "target": "/numerical_observations/checkpoint/state"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-CI-RuntimeReview.md",
+          "sha256": "ee77a1435f7dfd3a6b7058f091c6fd6c31d0b0ac21f99d38afd6614c4044bb88"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_cci -v"
+      ]
+    },
+    {
+      "id": "native-large-C_CI",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "C_CI",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI.json",
+        "sha256": "f40f5fdada51afbeaed55c1565f10cc9e59eb50a304709ffff39b948a474c626"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI-Admission.json",
+        "sha256": "58531c5fab5839eda9eadfe60ae3bebd7caeef3a60c7ba9539aeaf093da8664f"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI-Admission.json",
+          "sha256": "58531c5fab5839eda9eadfe60ae3bebd7caeef3a60c7ba9539aeaf093da8664f"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family C_CI --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-C_CI",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "C_CI",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_c_five.json",
+        "sha256": "9ca23c9e0f1b89dc5a73cbd0656f2a16cdeb5bb32ccf01cd1be6fd61e1556786"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_c_five.md",
+          "sha256": "ce9aa2efc1c7b8510e5a455a6d007630ef767c15bf406854030cbc1adf87a90a"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_c.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-C_PC",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "C_PC",
+      "scenario": "native-small",
+      "format": "native-states",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-CatalogSmallCInputs.json",
+        "sha256": "8f804decaa5b660be54cd4d36605b74f022c17be3fcfc17e56e346a9f05375b3"
+      },
+      "sides": {
+        "source": "/states/C_PC/source",
+        "target": "/states/C_PC/target"
+      },
+      "evidence": [
+        {
+          "path": "tests/models/test_grc_9_v4_lifecycle.py",
+          "sha256": "40b0f0ddb984175f7c391815413838c3a8c6e704171e92af3c7149b7aef1129c"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_lifecycle -v"
+      ]
+    },
+    {
+      "id": "native-large-C_PC",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "C_PC",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_PC.json",
+        "sha256": "051cb715e9db99a14ca5d53a1c8685b06c025a9c2fe009de2c7583dde5491023"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_PC-Admission.json",
+        "sha256": "928e69500537174d9afc06e03d1f1cc85f8cdfb408cbbb80884c32576fa81393"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_PC-Admission.json",
+          "sha256": "928e69500537174d9afc06e03d1f1cc85f8cdfb408cbbb80884c32576fa81393"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family C_PC --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-C_PC",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "C_PC",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_c_five.json",
+        "sha256": "9ca23c9e0f1b89dc5a73cbd0656f2a16cdeb5bb32ccf01cd1be6fd61e1556786"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_c_five.md",
+          "sha256": "ce9aa2efc1c7b8510e5a455a6d007630ef767c15bf406854030cbc1adf87a90a"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_c.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-C_CI_PC",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "C_CI_PC",
+      "scenario": "native-small",
+      "format": "native-states",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-Validation.json",
+        "sha256": "c79fb89dc8c1d9114dba622284555e21a66da07802fe5b029f7ed51c94575d61"
+      },
+      "sides": {
+        "source": "/numerical_observations/checkpoint/initial",
+        "target": "/numerical_observations/checkpoint/state"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-CI-PC-RuntimeReview.md",
+          "sha256": "6c466eee8339e3264eefd0c95833c9a69fad02ead04d5064a5dbe0663e5cd81d"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_ccipc -v"
+      ]
+    },
+    {
+      "id": "native-large-C_CI_PC",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "C_CI_PC",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI_PC.json",
+        "sha256": "c2a8b732f7e7e3fe21e9bc8af1e3e6a8b33d61d40868cb64d2a37f65082beae7"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI_PC-Admission.json",
+        "sha256": "52336cae3064bf121a18f29ecf154d581cc9f93c4de9abfa0149ea0a69f6c2bb"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI_PC-Admission.json",
+          "sha256": "52336cae3064bf121a18f29ecf154d581cc9f93c4de9abfa0149ea0a69f6c2bb"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family C_CI_PC --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-C_CI_PC",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "C_CI_PC",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_c_five.json",
+        "sha256": "9ca23c9e0f1b89dc5a73cbd0656f2a16cdeb5bb32ccf01cd1be6fd61e1556786"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_c_five.md",
+          "sha256": "ce9aa2efc1c7b8510e5a455a6d007630ef767c15bf406854030cbc1adf87a90a"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_c.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "native-small-C_RG2b",
+      "title": "Bounded native star expansion",
+      "model": "GRC9V4",
+      "family": "C_RG2b",
+      "scenario": "native-small",
+      "format": "native-states",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-CatalogSmallCInputs.json",
+        "sha256": "8f804decaa5b660be54cd4d36605b74f022c17be3fcfc17e56e346a9f05375b3"
+      },
+      "sides": {
+        "source": "/states/C_RG2b/source",
+        "target": "/states/C_RG2b/target"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-RG2b-Validation.json",
+          "sha256": "ad7998a604bc3f9812472593f69223629174060a80867b6068c399fc3a3f5dc2"
+        }
+      ],
+      "recorded_status": "bounded-runtime",
+      "acceptance": "accepted_bounded_native_example",
+      "notes": [
+        "10/9 source and 17/16 target; accepted bounded native event and finite continuation scope.",
+        "This is an internal native configuration; public facade availability and arbitrary-size support are separate.",
+        "The target is the retained oracle/checkpoint or pure transfer, as identified by the data file."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest tests.models.test_grc_9_v4_crg2b -v"
+      ]
+    },
+    {
+      "id": "native-large-C_RG2b",
+      "title": "Larger cyclic graph with explicit parameters",
+      "model": "GRC9V4",
+      "family": "C_RG2b",
+      "scenario": "native-large",
+      "format": "prepared-native",
+      "data": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_RG2b.json",
+        "sha256": "bb5a13ad5b0574d58eabb995f5940166e2c8cd783e4145c26c455fbc13c7383d"
+      },
+      "sides": {
+        "source": "/source",
+        "target": "/target"
+      },
+      "admission": {
+        "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_RG2b-Admission.json",
+        "sha256": "54c60cac6e6677ad2edaed35fbac44113e6264df0c45e7b8c3d7eb36f2b0c72e"
+      },
+      "evidence": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_RG2b-Admission.json",
+          "sha256": "54c60cac6e6677ad2edaed35fbac44113e6264df0c45e7b8c3d7eb36f2b0c72e"
+        }
+      ],
+      "acceptance": "not_accepted",
+      "notes": [
+        "100/400 source and 107/407 pure expansion target, with distinct current/reset histories.",
+        "Recorded probes are read/certificate checks. There are no committed events or physical continuation on this configuration.",
+        "An incomplete probe is not a mathematical rejection. Native RG2b uses the existing tree17 completion and rejects these cyclic inputs."
+      ],
+      "commands": [
+        "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --family C_RG2b --admit --numerical-budget 60"
+      ]
+    },
+    {
+      "id": "generic-branch-C_RG2b",
+      "title": "Four-node generic branching comparison",
+      "model": "GRCV4",
+      "family": "C_RG2b",
+      "scenario": "generic-branch",
+      "format": "generic-report",
+      "data": {
+        "path": "examples/grcv4/results/candidate_c_five.json",
+        "sha256": "9ca23c9e0f1b89dc5a73cbd0656f2a16cdeb5bb32ccf01cd1be6fd61e1556786"
+      },
+      "sides": {
+        "source": ""
+      },
+      "evidence": [
+        {
+          "path": "examples/grcv4/results/candidate_c_five.md",
+          "sha256": "ce9aa2efc1c7b8510e5a455a6d007630ef767c15bf406854030cbc1adf87a90a"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic graph with 4 vertices and 3 edges; ten retained physical steps.",
+        "The generic A descriptor and generic RG2b completion differ from native GRC9V4.",
+        "The reproduction command runs all five realizations for this candidate. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/compare_candidate_c.py --output-dir outputs/examples/grcv4"
+      ]
+    },
+    {
+      "id": "generic-grid-4x5-A_OS",
+      "title": "4x5 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "A_OS",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_5.json",
+        "sha256": "864bec58a08c087d09ca7004757470c42a0d4c2520190f0c9e57c44b2b30a6c4"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_a_realizations_comparison.md",
+          "sha256": "5297443cc85b631f1735c698209a8a584c30177c5f3e9a362122056de2acedc9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_transport.py --rows 4 --cols 5 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-4x5-A_CI",
+      "title": "4x5 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "A_CI",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_a_ci_4x5_5.json",
+        "sha256": "bad36c899040a4bcf2fe9236b388ac81511f9a524e2731d4ca72228dd6e94aea"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_a_realizations_comparison.md",
+          "sha256": "5297443cc85b631f1735c698209a8a584c30177c5f3e9a362122056de2acedc9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization \"CI\" --rows 4 --cols 5 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-4x5-A_PC",
+      "title": "4x5 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "A_PC",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_a_pc_4x5_5.json",
+        "sha256": "c77d0547bcc898b35e6d9e4c454ce6a9048e4707900f9158a1dcdec7c803470d"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_a_realizations_comparison.md",
+          "sha256": "5297443cc85b631f1735c698209a8a584c30177c5f3e9a362122056de2acedc9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization \"PC\" --rows 4 --cols 5 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-4x5-A_CI_PC",
+      "title": "4x5 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "A_CI_PC",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_a_ci_pc_4x5_5.json",
+        "sha256": "f82296694eb132d488fc4e5d55a0b75c25dbe32d125fac022b08b03dc177740f"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_a_realizations_comparison.md",
+          "sha256": "5297443cc85b631f1735c698209a8a584c30177c5f3e9a362122056de2acedc9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization \"CI+PC\" --rows 4 --cols 5 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-4x5-A_RG2b",
+      "title": "4x5 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "A_RG2b",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_a_rg2b_4x5_5.json",
+        "sha256": "4108a60ed34b0bc794e3c515fd59ca1ff78b24323002977bc0a9b638e21f5ef9"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_a_realizations_comparison.md",
+          "sha256": "5297443cc85b631f1735c698209a8a584c30177c5f3e9a362122056de2acedc9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_a.py --realization \"RG2b\" --rows 4 --cols 5 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-3x4-C_OS",
+      "title": "3x4 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "C_OS",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_c_os_3x4_5_exact_psd.json",
+        "sha256": "49330d2c9db7f8bbbd7b0c0cfeb7193acc6f2d7406d4158a3c610ff66274f599"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_c_exact_psd_comparison.md",
+          "sha256": "384af487caf639abde7d96d08cd360596bb6766f5f4dc5107a024a20c4e371c9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization \"OS\" --rows 3 --cols 4 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-3x4-C_CI",
+      "title": "3x4 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "C_CI",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_c_ci_3x4_5_exact_psd.json",
+        "sha256": "31a025abdab122e9335325abf3abfb622ff36c67de2c8cd6dfce7ff24854df34"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_c_exact_psd_comparison.md",
+          "sha256": "384af487caf639abde7d96d08cd360596bb6766f5f4dc5107a024a20c4e371c9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization \"CI\" --rows 3 --cols 4 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-3x4-C_PC",
+      "title": "3x4 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "C_PC",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_c_pc_3x4_5_exact_psd.json",
+        "sha256": "7a00c4715edb86cf2c15b37a7e47f4f5dbcc5eed3807a59d6b77f2a3eada1088"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_c_exact_psd_comparison.md",
+          "sha256": "384af487caf639abde7d96d08cd360596bb6766f5f4dc5107a024a20c4e371c9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization \"PC\" --rows 3 --cols 4 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-3x4-C_CI_PC",
+      "title": "3x4 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "C_CI_PC",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_c_ci_pc_3x4_5_exact_psd.json",
+        "sha256": "1341094feb7137ed41ef21f8fcd3fa912aaea3ad02175bbbb015f6ba83b8cbe9"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_c_exact_psd_comparison.md",
+          "sha256": "384af487caf639abde7d96d08cd360596bb6766f5f4dc5107a024a20c4e371c9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization \"CI+PC\" --rows 3 --cols 4 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-3x4-C_RG2b",
+      "title": "3x4 generic grid, five retained public steps",
+      "model": "GRCV4",
+      "family": "C_RG2b",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_c_rg2b_3x4_5_exact_psd.json",
+        "sha256": "978e9b567e1c86723df595cb24d60077f1b8d5b6eb3e0659285ac560b61a409b"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_c_exact_psd_comparison.md",
+          "sha256": "384af487caf639abde7d96d08cd360596bb6766f5f4dc5107a024a20c4e371c9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization \"RG2b\" --rows 3 --cols 4 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-6x6-A_OS",
+      "title": "6x6 generic grid, 5 retained public steps",
+      "model": "GRCV4",
+      "family": "A_OS",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_6x6_flint_5.json",
+        "sha256": "a4781e0438b1d37520b12868773f476785197a0e0ce48b7364d12dd6580800bb"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_6x6_flint_comparison.md",
+          "sha256": "7099edeb9d2710b137ddfb4a65fea2861e3a038f1052b8be7bbfaccd4b353b23"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_transport.py --rows 6 --cols 6 --steps 5"
+      ]
+    },
+    {
+      "id": "generic-grid-4x5-C_OS",
+      "title": "4x5 generic grid, 1 retained public steps",
+      "model": "GRCV4",
+      "family": "C_OS",
+      "scenario": "generic-grid",
+      "format": "generic-inputs",
+      "data": {
+        "path": "implementation/evidence/grcv4-performance/grid_transport_c_os_4x5_1_exact_psd.json",
+        "sha256": "c26c5267ea20b292c2f75cbe7cb49321b6a75c429953bd38b486ef7d61133b40"
+      },
+      "sides": {
+        "source": "/initial_inputs"
+      },
+      "evidence": [
+        {
+          "path": "implementation/evidence/grcv4-performance/grid_transport_c_exact_psd_comparison.md",
+          "sha256": "384af487caf639abde7d96d08cd360596bb6766f5f4dc5107a024a20c4e371c9"
+        }
+      ],
+      "recorded_status": "measured-run",
+      "acceptance": "retained_measurement_only",
+      "notes": [
+        "Generic GRCV4 public lifecycle measurement; this does not establish native GRC9V4 event support.",
+        "The selected JSON retains the exact historical admitted declaration. Setup on a new run may propose more conservative parameters; inspect its new report.",
+        "Timing is a historical measurement, not a guarantee. No expansion target is defined."
+      ],
+      "commands": [
+        "PYTHONPATH=src:.:tests .venv/bin/python examples/grcv4/grid_realizations_c.py --realization OS --rows 4 --cols 5 --steps 1"
+      ]
+    }
+  ]
+}

@@ -2643,7 +2643,8 @@ ExactScalar, W arithmetic errors are certified in scaled-log coordinates, and
 current budgets retain the common Euclidean norm. The bounded runtime and
 closure review is separately user-accepted on 2026-10-04 ("accept and commit"),
 closing the A_RG2b profile-register row without extending its reviewed scope.
-The graph-size/configuration guide remains open before P9-8.4. See the
+The graph-size/configuration closeout is completed below with a separately
+identified larger-graph preparation package. See the
 [A_RG2b runtime review](./phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-RuntimeReview.md).
 
 Instantiate P9-8.3A.1/.2 for each exact A profile, beginning with A_OS;
@@ -2747,13 +2748,59 @@ The guide must:
   of a sufficient certificate may reflect a conservative bound and does not
   itself prove mathematical invalidity.
 
-Completion requires concrete usage steps, an evidence-linked coverage table,
-and explicit remaining limitations. This schedules documentation and gap
-identification; it does not execute new large-graph experiments, change
-runtime authorization, close P9-8.6 or the performance/cache review, or widen
-any accepted profile's claims.
+The 2026-10-04 user request extends this item to concrete preparation of
+"different from what is already accepted" **for all ten realizations**. The
+[guide](./phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md) contains the
+evidence-linked coverage table and practical workflow. The
+[all-ten request](./phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json)
+and ten linked packages bind a common 100/400 cyclic source and 107/407 D52
+target, separately resolved family profiles, specialization, current/reset
+histories, native identities and actual pure reference/history transfers.
+Every A example has nonuniform role-specific W; every PC example has nonzero
+source Z, whole-target reset and an explicit larger chart. CI+PC includes its
+norm/domain and composition-gain requirements. Every changed coupling, radius
+or cutoff is explicit before admission and produces a new configuration identity.
+
+Completion includes pressure against malformed/stale identities, omitted
+families, illegal port occupancy, whole-vector/carrier norms, composite geometry
+coverage, incorrect W lineage and rehashed false-execution claims. Production
+numerical reports record passes, exact rejections and time-budget incompletion
+separately. RG2b supplies actual negative examples against its native tree17
+completion, not a silently widened proof. See
+[validation](./phase-9-grcv4/tranche-8/P9-8.3-CloseoutValidation.json).
+
+The guide assigns LG-C-SELECTOR, LG-OS-SPLIT, LG-CI-ROOT, LG-PC-CHART,
+LG-RG-COMPLETION, LG-A-ORACLE, LG-VALIDATION, LG-FACADE and LG-PERFORMANCE
+obligations to their existing owners. They start from complete examples for
+every family; none remains an unselected declaration. These are development
+obligations and automated configuration checks, not per-simulation manual gates.
+
+Actual larger-graph event/continuation and independent scientific validation
+remain separately labeled P9-8.4–8.6 work, preserving frozen-vector evidence.
+A numerical certificate does not close the full lifecycle, and a time limit
+proves neither admission nor mathematical rejection. New A scope retains the
+independent oracle-before-runtime workflow; successful cyclic native RG2b needs
+a separately proved completion. P9-8.6, public lifecycle and the performance/cache
+review remain open; no accepted support claim is widened by this preparation.
 
 #### P9-8.4–8.6 runtime conformance
+
+The 2026-10-05 repository UX continuation adds a
+[configuration CLI and declarative inventory](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
+before this runtime work: 42 retained small/large native and generic examples,
+graph/parameter/evidence filters, inspection, comparison, portable selections
+and drift verification. Every native family has both a small and a large entry.
+Browsing reads only retained files and neither invokes numerical owners nor
+alters the supported-profile registry. Explicit maintenance retains the three
+small C state pairs absent from prior JSON. Selection integrity is distinct from
+scientific admission, acceptance and execution; the future public lifecycle
+owner retains consuming selections as runnable inputs. Reproduction commands
+expose the current owners and identify possible declaration changes on rerun.
+Pressure coverage and source bindings are retained in
+[catalog validation](./phase-9-grcv4/tranche-8/P9-8.3-CatalogValidation.json).
+The user explicitly accepts the repository UX and pending all-ten preparation
+closeout on 2026-10-05 ("ok, accept and commit"). This acceptance preserves
+the separately recorded larger-graph admission/runtime obligations.
 
 Execute runtime counterparts of every applicable accepted D30, D31, D45,
 and D52 vector, including the exact chirality/phase cases. D37 and D44 are

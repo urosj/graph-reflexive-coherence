@@ -1,0 +1,46 @@
+{
+  "schema": "p983-larger-numerical-probe-v1",
+  "family": "C_OS",
+  "prepared_digest": "c14817c582c4e07bf773952f60ccbdac606a51679fbb0dbb10835bd86eaf4425",
+  "scope": "numerical_read_or_certificate_only; timeout_is_not_rejection",
+  "physical_steps": 0,
+  "events_committed": 0,
+  "supported_profiles_added": [],
+  "source": {
+    "current": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 87.5800552550354,
+      "owner": "CandidateCOSPass"
+    },
+    "reset": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 72.45534198201494,
+      "owner": "CandidateCOSPass"
+    }
+  },
+  "target": {
+    "current": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 84.37783810298424,
+      "owner": "CandidateCOSPass"
+    },
+    "reset": {
+      "status": "incomplete",
+      "reason": "numerical probe time budget exhausted; no admission conclusion",
+      "numerical_budget_seconds": 60,
+      "read_dt": 0.000244140625,
+      "seconds": 84.53893433499616,
+      "owner": "CandidateCOSPass"
+    }
+  },
+  "record_digest": "bc6d0f90970b2900c3dc235855c9a6fba21f5bbd86fdf18bd4f5c9287915dcf8"
+}

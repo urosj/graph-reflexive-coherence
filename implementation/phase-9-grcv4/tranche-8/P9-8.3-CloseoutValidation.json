@@ -1,0 +1,623 @@
+{
+  "schema": "p983-graph-closeout-validation-v2",
+  "date": "2026-10-04",
+  "phase": "P9-8.3 closeout",
+  "predecessor_commit": "a04095f889ec6a373c8f318dacf6c0a298d3b058",
+  "status": "all_ten_preparation_and_bounded_own_review_complete",
+  "entry_authority": "User requested concrete larger-graph policy/contract preparation for all ten realizations; no larger-graph runtime acceptance is inferred.",
+  "scope": "Ten resolved native source/target declarations, actual pure transfers, both histories and native identity reconstruction; forty production numerical read/certificate probes with explicit outcomes.",
+  "preparation_record_digest": "3adb433e3c6b7e8d2a050e063c4a75b0327de191ab08447bcec05c6649b9ac47",
+  "examples": {
+    "C_OS": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS.json",
+      "record_digest": "c14817c582c4e07bf773952f60ccbdac606a51679fbb0dbb10835bd86eaf4425",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS-Admission.json",
+      "numerical_report_digest": "bc6d0f90970b2900c3dc235855c9a6fba21f5bbd86fdf18bd4f5c9287915dcf8",
+      "outcomes": {
+        "source": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        },
+        "target": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        }
+      }
+    },
+    "C_PC": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_PC.json",
+      "record_digest": "6e1bafc9b10843f8393b5aef7a27b59eec2b3d40a68b114bbbc8f34104b313af",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_PC-Admission.json",
+      "numerical_report_digest": "6486ef1f27899907ad129afd927975e126aad25e3be84be41f1fe355d8a072d2",
+      "outcomes": {
+        "source": {
+          "current": "passed",
+          "reset": "passed"
+        },
+        "target": {
+          "current": "passed",
+          "reset": "passed"
+        }
+      }
+    },
+    "A_OS": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS.json",
+      "record_digest": "42728c2967c2c7a9fa85e7ae40d4c8f4a3478fa13af7edb6806dcd60e1c43689",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS-Admission.json",
+      "numerical_report_digest": "07504b3cbd6fce3c1ff809b96010e27ac82788b92d4757d7bfcf8d06b4edaf6c",
+      "outcomes": {
+        "source": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        },
+        "target": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        }
+      }
+    },
+    "C_CI": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI.json",
+      "record_digest": "897768de09b7cf86259857005f051950c6449c1665d10fa136ebeb07d8f4cfd4",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI-Admission.json",
+      "numerical_report_digest": "195a15ecba6af32b738562286c3e07bb99b3c9809eddabeb25d10b0d8356387e",
+      "outcomes": {
+        "source": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        },
+        "target": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        }
+      }
+    },
+    "A_CI": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI.json",
+      "record_digest": "5dc06df148f187ae5a8db3e7d08d7354436632e4f63919d49c9ef4ea35bd4e5a",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
+      "numerical_report_digest": "831dfa9d08b90eb737882ad95cfc5f201b87c649be282478536a29652a3cdc83",
+      "outcomes": {
+        "source": {
+          "current": "passed",
+          "reset": "passed"
+        },
+        "target": {
+          "current": "passed",
+          "reset": "passed"
+        }
+      }
+    },
+    "A_PC": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_PC.json",
+      "record_digest": "9d1c8f76d1beff11b26d223c3cfcea82c6270a44a76c4a95b35f4df2e5fef23f",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_PC-Admission.json",
+      "numerical_report_digest": "2fba4f9717fcf61061b6763d13bed18eff4e951bbe6b4a691582362c621719b9",
+      "outcomes": {
+        "source": {
+          "current": "passed",
+          "reset": "passed"
+        },
+        "target": {
+          "current": "passed",
+          "reset": "passed"
+        }
+      }
+    },
+    "C_CI_PC": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI_PC.json",
+      "record_digest": "c78ca28399df17c8adc62ccdc2b138dffe58b6400aa6d61d9b7aa18fb9e013f5",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI_PC-Admission.json",
+      "numerical_report_digest": "bfc5d66611260147c0222be7bb71456e5967af6150b9811bb5f3ac4df61656b9",
+      "outcomes": {
+        "source": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        },
+        "target": {
+          "current": "incomplete",
+          "reset": "incomplete"
+        }
+      }
+    },
+    "A_CI_PC": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI_PC.json",
+      "record_digest": "a183767e3133ca18955062de0331504f2c5c09c3722879468a6ad0f4508130d5",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI_PC-Admission.json",
+      "numerical_report_digest": "509001dfc3a332b9d0d414c86c55dab9bddb2ad3e95ae68509a9ab6415944dd4",
+      "outcomes": {
+        "source": {
+          "current": "passed",
+          "reset": "passed"
+        },
+        "target": {
+          "current": "passed",
+          "reset": "passed"
+        }
+      }
+    },
+    "C_RG2b": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_RG2b.json",
+      "record_digest": "99d5ba042e6fbee96ffb112fb50d5e578f95832ab9e42282777e271aede49956",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_RG2b-Admission.json",
+      "numerical_report_digest": "b38d585db5a2c446bc7cf8728c04cbfa316c35aa0da4eee6b7b18d2413b1f80d",
+      "outcomes": {
+        "source": {
+          "current": "rejected",
+          "reset": "rejected"
+        },
+        "target": {
+          "current": "rejected",
+          "reset": "rejected"
+        }
+      }
+    },
+    "A_RG2b": {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b.json",
+      "record_digest": "03eb411a86f9363843aebf190114a79381a4f649c3be6b9bdd2d6ca4a3989997",
+      "numerical_report": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b-Admission.json",
+      "numerical_report_digest": "3fba9f6a34c8570a3c1f654e083ba10422d027d3628b5e67acc9ae60c14367aa",
+      "outcomes": {
+        "source": {
+          "current": "rejected",
+          "reset": "rejected"
+        },
+        "target": {
+          "current": "rejected",
+          "reset": "rejected"
+        }
+      }
+    }
+  },
+  "outcome_counts": {
+    "incomplete": 16,
+    "passed": 16,
+    "rejected": 8
+  },
+  "execution_harness": {
+    "construction": "prepare_p983_all_realizations.build(family, common.prepare()) under ExactBackend.FLINT for every family; actual native source/target constructors and family expansion transfer owners.",
+    "numerical": "materialize(record, side), then admit(state, numerical_budget), for each family/side/current-reset combination; probe_report adds scope metadata without changing outcomes.",
+    "reproduce": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py --admit --numerical-budget 60",
+    "budgets": "The PC and RG2b runs completed with no numerical timeout. OS/CI/CI+PC use a 60-second budget per numerical owner. All input setup is outside the probe budget. An exploratory unbounded A_OS attempt was interrupted without a result, then replaced by the bounded probes.",
+    "environment": {
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "exact_backend": "FLINT",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    },
+    "outputs": {
+      "construction_first_six": "C_OS, C_PC, A_OS, C_CI, A_CI, A_PC: constructed and transferred through production owners.",
+      "construction_remaining": "C_CI_PC: prepared\nA_CI_PC: prepared\nC_RG2b current: rejected\nC_RG2b reset: rejected\nC_RG2b current: rejected\nC_RG2b reset: rejected\nC_RG2b: prepared\nA_RG2b current: rejected\nA_RG2b reset: rejected\nA_RG2b current: rejected\nA_RG2b reset: rejected\nA_RG2b: prepared\n",
+      "pc": "A_PC source reconstructing\nA_PC source checking\nA_PC current: passed\nA_PC reset: passed\nA_PC target reconstructing\nA_PC target checking\nA_PC current: passed\nA_PC reset: passed\nC_PC source reconstructing\nC_PC source checking\nC_PC current: passed\nC_PC reset: passed\nC_PC target reconstructing\nC_PC target checking\nC_PC current: passed\nC_PC reset: passed\n",
+      "os_ci": "A_OS source reconstructing\nA_OS source checking\nA_OS current: incomplete\nA_OS reset: incomplete\nA_OS target reconstructing\nA_OS target checking\nA_OS current: incomplete\nA_OS reset: incomplete\nC_OS source reconstructing\nC_OS source checking\nC_OS current: incomplete\nC_OS reset: incomplete\nC_OS target reconstructing\nC_OS target checking\nC_OS current: incomplete\nC_OS reset: incomplete\nA_CI source reconstructing\nA_CI source checking\nA_CI current: passed\nA_CI reset: passed\nA_CI target reconstructing\nA_CI target checking\nA_CI current: passed\nA_CI reset: passed\nC_CI source reconstructing\nC_CI source checking\nC_CI current: incomplete\nC_CI reset: incomplete\nC_CI target reconstructing\nC_CI target checking\nC_CI current: incomplete\nC_CI reset: incomplete\n",
+      "composite": "A_CI_PC source reconstructing\nA_CI_PC source checking\nA_CI_PC current: passed\nA_CI_PC reset: passed\nA_CI_PC target reconstructing\nA_CI_PC target checking\nA_CI_PC current: passed\nA_CI_PC reset: passed\nC_CI_PC source reconstructing\nC_CI_PC source checking\nC_CI_PC current: incomplete\nC_CI_PC reset: incomplete\nC_CI_PC target reconstructing\nC_CI_PC target checking\nC_CI_PC current: incomplete\nC_CI_PC reset: incomplete\n"
+    }
+  },
+  "commands": [
+    {
+      "command": "PYTHONPATH=src .venv/bin/python implementation/phase-9-grcv4/verification/prepare_p983_graph_admission.py --write",
+      "exit_code": 0,
+      "output": "P983_GRAPH_PREPARATION_PASS source=100/400 target=107/407 numerical_admission=not_run runtime_support=unchanged\n"
+    },
+    {
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest test_p983_graph_admission test_p983_all_realizations -v",
+      "exit_code": 0,
+      "scope": "Shared nine checks plus initial seven all-ten checks. Shared source files and preparation remain unchanged since this run; the final all-ten run below supersedes its seven all-ten cases.",
+      "output": "test_actual_materialized_source_matches_prepared_identity (test_p983_graph_admission.LargerGraphPreparationTests.test_actual_materialized_source_matches_prepared_identity) ... ok\ntest_legal_size_is_insufficient_and_existing_domains_fail (test_p983_graph_admission.LargerGraphPreparationTests.test_legal_size_is_insufficient_and_existing_domains_fail) ... ok\ntest_literal_topology_counts_connectivity_and_port_occupancy (test_p983_graph_admission.LargerGraphPreparationTests.test_literal_topology_counts_connectivity_and_port_occupancy) ... ok\ntest_operator_norms_against_literal_integer_matrices (test_p983_graph_admission.LargerGraphPreparationTests.test_operator_norms_against_literal_integer_matrices) ... ok\ntest_parameter_change_reidentifies_without_rewriting_old_declaration (test_p983_graph_admission.LargerGraphPreparationTests.test_parameter_change_reidentifies_without_rewriting_old_declaration) ... ok\ntest_rehashed_claim_promotion_and_omitted_profile_reject (test_p983_graph_admission.LargerGraphPreparationTests.test_rehashed_claim_promotion_and_omitted_profile_reject) ... ok\ntest_retained_record_reconstructs_and_registry_does_not_change (test_p983_graph_admission.LargerGraphPreparationTests.test_retained_record_reconstructs_and_registry_does_not_change) ... ok\ntest_target_resource_lineage_and_equal_charge_both_roles (test_p983_graph_admission.LargerGraphPreparationTests.test_target_resource_lineage_and_equal_charge_both_roles) ... ok\ntest_unknown_recipe_and_reference_cutoff_not_certified_reject (test_p983_graph_admission.LargerGraphPreparationTests.test_unknown_recipe_and_reference_cutoff_not_certified_reject) ... ok\ntest_all_actual_history_shapes_lineage_and_carrier_reset (test_p983_all_realizations.AllRealizationPreparationTests.test_all_actual_history_shapes_lineage_and_carrier_reset) ... ok\ntest_carrier_recipe_cannot_hide_unknown_fields (test_p983_all_realizations.AllRealizationPreparationTests.test_carrier_recipe_cannot_hide_unknown_fields) ... ok\ntest_every_family_has_resolved_source_and_target_profiles (test_p983_all_realizations.AllRealizationPreparationTests.test_every_family_has_resolved_source_and_target_profiles) ... ok\ntest_explicit_new_domains_and_unchanged_rg_completion_identity (test_p983_all_realizations.AllRealizationPreparationTests.test_explicit_new_domains_and_unchanged_rg_completion_identity) ... ok\ntest_profile_tampering_cannot_reuse_accepted_identity (test_p983_all_realizations.AllRealizationPreparationTests.test_profile_tampering_cannot_reuse_accepted_identity) ... ok\ntest_rehashed_promotion_and_omitted_or_extra_family_reject (test_p983_all_realizations.AllRealizationPreparationTests.test_rehashed_promotion_and_omitted_or_extra_family_reject) ... ok\ntest_whole_carrier_norm_and_composite_double_image (test_p983_all_realizations.AllRealizationPreparationTests.test_whole_carrier_norm_and_composite_double_image) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 130.407s\n\nOK\n"
+    },
+    {
+      "command": "PYTHONPATH=src:implementation/phase-9-grcv4/verification OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m unittest test_p983_all_realizations -v",
+      "exit_code": 0,
+      "output": "test_all_actual_history_shapes_lineage_and_carrier_reset (test_p983_all_realizations.AllRealizationPreparationTests.test_all_actual_history_shapes_lineage_and_carrier_reset) ... ok\ntest_all_forty_numerical_outcomes_are_explicit_and_scope_bound (test_p983_all_realizations.AllRealizationPreparationTests.test_all_forty_numerical_outcomes_are_explicit_and_scope_bound) ... ok\ntest_carrier_recipe_cannot_hide_unknown_fields (test_p983_all_realizations.AllRealizationPreparationTests.test_carrier_recipe_cannot_hide_unknown_fields) ... ok\ntest_every_family_has_resolved_source_and_target_profiles (test_p983_all_realizations.AllRealizationPreparationTests.test_every_family_has_resolved_source_and_target_profiles) ... ok\ntest_explicit_new_domains_and_unchanged_rg_completion_identity (test_p983_all_realizations.AllRealizationPreparationTests.test_explicit_new_domains_and_unchanged_rg_completion_identity) ... ok\ntest_profile_tampering_cannot_reuse_accepted_identity (test_p983_all_realizations.AllRealizationPreparationTests.test_profile_tampering_cannot_reuse_accepted_identity) ... ok\ntest_rehashed_promotion_and_omitted_or_extra_family_reject (test_p983_all_realizations.AllRealizationPreparationTests.test_rehashed_promotion_and_omitted_or_extra_family_reject) ... ok\ntest_whole_carrier_norm_and_composite_double_image (test_p983_all_realizations.AllRealizationPreparationTests.test_whole_carrier_norm_and_composite_double_image) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 8.872s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/ruff check implementation/phase-9-grcv4/verification/prepare_p983_graph_admission.py implementation/phase-9-grcv4/verification/test_p983_graph_admission.py implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py implementation/phase-9-grcv4/verification/test_p983_all_realizations.py",
+      "exit_code": 0,
+      "output": "All checks passed!"
+    },
+    {
+      "command": ".venv/bin/ruff format --check implementation/phase-9-grcv4/verification/prepare_p983_graph_admission.py implementation/phase-9-grcv4/verification/test_p983_graph_admission.py implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py implementation/phase-9-grcv4/verification/test_p983_all_realizations.py",
+      "exit_code": 0,
+      "output": "4 files already formatted"
+    }
+  ],
+  "distinct_passing_tests": 17,
+  "source_bindings": [
+    {
+      "path": "implementation/Phase-9-GRCV4-Handoff.md",
+      "sha256": "c65d6a5922c01a19d1113d5b0ed85a194554d43b28ce26cdb370b0feb1860280"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "sha256": "4cf76538b653c6953c0f65b33810cd00da6e1fbbd344bf89c01d73496b983d69"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+      "sha256": "3790c5593333fe7e998e9343c754902f7bf0c3427ccb35f2464fdb6594cc149a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json",
+      "sha256": "ca9f070a087c0c12ac70760e43c604e785fc2e327a693c3b0054a0969e588efb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md",
+      "sha256": "e95ea72cd159121c16d29e8b59adc951aba9391802ec6a24df2b8c4ddead1e6c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-LargerGraphPreparation.json",
+      "sha256": "1d50a712fa5ff10ca97c4059409fdfb7fa038e40271b29df64f7628ed468c7f3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-LargerGraphRequest.json",
+      "sha256": "03cbdab526d2f0c963e3895394611846a995fa07edf5fc7eee3795b2619dc381"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-Oracle.json",
+      "sha256": "ce7f4ae309d9256d93ce7d96f10073e4380f92b26a9af548df1269f98507a06e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
+      "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI.json",
+      "sha256": "e2cbc0c686e590db9bf6c3ab761bb96a1aaa996427875a695fe3b08c1ded2109"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI_PC-Admission.json",
+      "sha256": "ccf9e4e26de9c58c7cdf7091df14adcf440c85f933f05761bd5473ef816fb157"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI_PC.json",
+      "sha256": "9a9ea82bd4cfc6e8858132c029e0bdd7bb917528491ba4c58c0b917d2166f2ba"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS-Admission.json",
+      "sha256": "28186470eb6dba3a70e5da9497737c9fe6d36a8c5747c798abad6057c84a7e3c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS.json",
+      "sha256": "cd8f260595a1d9fbd4b78e82d1beede49b6798ab563ae307dfe0ea635bfa6814"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_PC-Admission.json",
+      "sha256": "44b8e2deccf5dd25e01804b918135065076933216fd1eb344b11dafd6fd22260"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_PC.json",
+      "sha256": "2a6d5ed6614dd009622d9860100e41499b6116dcd5c120fd9569e53b8e76e367"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b-Admission.json",
+      "sha256": "391aadb5fa4cdeee9adaddb5c03db535d7f7050b66056d00bda81cb02c63b9f9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b.json",
+      "sha256": "d6c3ee7f10b025bbd429b829895fd36b168dbf58cf6bc5d9b9e4bb4228ec0340"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI-Admission.json",
+      "sha256": "58531c5fab5839eda9eadfe60ae3bebd7caeef3a60c7ba9539aeaf093da8664f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI.json",
+      "sha256": "f40f5fdada51afbeaed55c1565f10cc9e59eb50a304709ffff39b948a474c626"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI_PC-Admission.json",
+      "sha256": "52336cae3064bf121a18f29ecf154d581cc9f93c4de9abfa0149ea0a69f6c2bb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI_PC.json",
+      "sha256": "c2a8b732f7e7e3fe21e9bc8af1e3e6a8b33d61d40868cb64d2a37f65082beae7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS-Admission.json",
+      "sha256": "bcc5743cdf606db5f132804ce6f879d4f2bb3d00bfa361414582a075a64bd2c1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS.json",
+      "sha256": "0d67f3c26289bd305ae5438bfdfaea638a328a977c632ac5fbe39bf83fa71d44"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_PC-Admission.json",
+      "sha256": "928e69500537174d9afc06e03d1f1cc85f8cdfb408cbbb80884c32576fa81393"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_PC.json",
+      "sha256": "051cb715e9db99a14ca5d53a1c8685b06c025a9c2fe009de2c7583dde5491023"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_RG2b-Admission.json",
+      "sha256": "54c60cac6e6677ad2edaed35fbac44113e6264df0c45e7b8c3d7eb36f2b0c72e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_RG2b.json",
+      "sha256": "bb5a13ad5b0574d58eabb995f5940166e2c8cd783e4145c26c455fbc13c7383d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "sha256": "0ff7c6c67951b98feca2513ff22db4f6cb557e66995126cd3bb8ab29e5cb0fa0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py",
+      "sha256": "abe7444c3c62edaef3e0f9ed797f9e802ddcaf2a9826278df66e42dfc59f3f40"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/prepare_p983_graph_admission.py",
+      "sha256": "b6e7fd7b32393320877c01e3937fa40d44985330ef90c1aeea0777227df51a52"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983_all_realizations.py",
+      "sha256": "f000f52de8aad7b5793c2bd717d201735d989ada4c4917e6e674327c963c5291"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p983_graph_admission.py",
+      "sha256": "69146bf4dc4c657d86416b33484268d0f41d20125cfd16a0eec3952dacabe94b"
+    },
+    {
+      "path": "specs/grc-9-v4-spec.md",
+      "sha256": "588878aabbe35a8b0c6ae5019f1d1116ab2a3bf15168793e37468abcf369e082"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_arg2b.py",
+      "sha256": "68d48b020c2d9efefca82cdef24bd1cca159ddd1cf80fe29bc815c61aab5a616"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "b9421a320b343005016e9e6554f37f25662eb50e0b164ec7f5f1712253f2f398"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_rg2b.py",
+      "sha256": "22026ccf6f949247690ce4d35494468161e0a77525b1cb90eb228d5d9bf0a3ae"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "19fedb493dd01bb650043516a6cb88fbe401be0aaf34d865305a707f8d7ff9a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "00b92688cb4bc82cf54ac462e6a8f5eb6f09e4386d4db1b2a6ac373758b98f19"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "6e951a7393f1c95f77acbf5de0ca0e11f42cf5acacaf098b123ba3b423af5a0e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "42af05ee7f927f38de3a435aab6ca92aaa53cca039b3e2ad7c7c02ae16bdd501"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_event_codec.py",
+      "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_events.py",
+      "sha256": "66d4778ed273871066a020ee8d8c5e33122c31f56b26569711876c1c4c2b8a11"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_exact.py",
+      "sha256": "42491644b46d947483ab1706b4fb4b14abf247495916db64ea60b021d5c9e065"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "c965f0ec7165ebe769cf4dd25ece98349213da1ae98f378acc0db8c1d231bebc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_initializer.py",
+      "sha256": "28ed997c515cf249c188e53e728c860a79cdc816909f2b1769a2be97694000fc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "24032419cfcee5b29c23423f817f8f0283d4d3fe5ffe12080e0d600e44ab67d5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_linear.py",
+      "sha256": "ff5acc2040027ef9ba1773af04b575c2f15dd2ece265e451c93b658edb9b69e3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_migration.py",
+      "sha256": "714f37b346842370eb4d49ec279edc82a82e91d668b066942846e655f0d92dc0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "1f18ba4b5ae1ac315c81ef9fb47767b91d512e3c35402aa89589f7d3baed52d0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "c72cb21a7293bdefac925938d7b22506fdf51551b7f1ca3661240dc2c2938b89"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "e5dacafed23c96f84b046bd4ddb991a295e9ec18eab978478b4b31fd5f1ba18e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "f4538b8d23409aac96375bb1a952712c37f25b7c0a7df4c8fa5a61e90cdcc181"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b_graph.py",
+      "sha256": "a86a80068dc71eea43fd9fcc56cfdcb4e676fa316fe76bfe009a1c296441a058"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "299fc7924704b9f17591a1767c28d3d112ada0334a934092312fe0a9e6be66e0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    }
+  ],
+  "immutable_previous_A_evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Acceptance.json",
+      "sha256": "c46fdb1dfd155a693b192ed27692b322026c0ab5b08c2805a70f20501b4c2906"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Oracle.json",
+      "sha256": "846e491b8eaa637ebcdac0a049a26f2192bf1054f0e341af0a8a9e51f70ebb44"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Validation.json",
+      "sha256": "14b2c0b7b41f13b3df3463b232093cda228267caf3d791c853d8c38b57534418"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Acceptance.json",
+      "sha256": "4447c640b9a7e619caf3876aaf4276dad6b7d26771994fd0bc5d43805a30a6c3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Oracle.json",
+      "sha256": "e34243fd149d4f4cccc720232a3d7d2ac92b04a7e16059e8adf04f839c2a7238"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACIPC-Validation.json",
+      "sha256": "61fa3ae4c76e36274ee2c53d71cbd5c5df4cf0a7574e51afabc5e917e0fb4ab7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-AOS-Oracle.json",
+      "sha256": "ce7f4ae309d9256d93ce7d96f10073e4380f92b26a9af548df1269f98507a06e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Acceptance.json",
+      "sha256": "232632413f02c34b250d5f8ed850742def3f1b17b6e7b46957d2654d06a6618d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Oracle.json",
+      "sha256": "169554a8b01b99484fba8fcb2b6c1854a8a17b23e0d4c9efe0dd203a26c02eec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-APC-Validation.json",
+      "sha256": "bf74d0aac20903cb8c93ddb7007c9e3c90529da59585c8a00454db62cbb5d634"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json",
+      "sha256": "5c9fd726b6f40424d1097212af84c1460770e3df10f4795b3bc668fb117faacf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Oracle.json",
+      "sha256": "521787954476c351e5fc99e492ce0e00f1a972255c8274729c7d0c03098ffbc9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Validation.json",
+      "sha256": "13080cdfc439dba0ead3a80a6d11aa3c5bd64a918dd864c58e6776af79f1b7c2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-ACI-Validation.json",
+      "sha256": "554f6e315d67befbe910a286b04cd8c4084cc9bcdf2a1af63936614e68350615"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-ACIPC-Validation.json",
+      "sha256": "8c2755cf29b449e9fbcfa5c409cb53f2a92783b0ebc3719e1163f91a38ff4638"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-AOS-Validation.json",
+      "sha256": "e985d7f675ac98e5294d5508a6f79a634f3ef6ed41a16fa5142854f9c6f1a616"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-APC-Validation.json",
+      "sha256": "d6716ad45cdb20666cd2eed0048d6376145697877e8d71543aecb8e8b8625fe8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.2-ARG2b-Validation.json",
+      "sha256": "3a7692cc48ebd4f51bcdab31333b3823c93ca3df48b57a5556fd03b6b3627d17"
+    }
+  ],
+  "scope_checks": {
+    "runtime_source_unchanged": true,
+    "runtime_tests_unchanged": true,
+    "runtime_work_manifest_unchanged": true,
+    "specification_assets_unchanged": true,
+    "supported_profiles_unchanged": true
+  },
+  "review_findings": [
+    "All ten examples contain complete resolved source/target profiles, graph envelopes, specialization, two histories, event requests and native identities; all twenty typed states reconstructed and matched their recorded identities.",
+    "The source is simple and connected with one saturated node, 100 vertices and 400 edges. The target has 107 vertices/407 edges. Independent integer incidence matrices and exact arithmetic verify counts, operator norms, charge and resource transfer.",
+    "All A examples preserve distinct nonuniform retained W by stable edge identity and initialize each new edge at W=1. Every PC example has nonzero opposite source-role carriers and complete 407-squared target resets.",
+    "Both PC examples pass the production whole-chart envelope on both graphs and both roles. A_CI and A_CI_PC pass production contraction certificates on all four inputs; no root, writer, event or continuation is inferred.",
+    "C_OS, A_OS, C_CI and C_CI_PC numerical probes remain incomplete at their time budget. Their results imply neither success nor mathematical rejection.",
+    "Native C_RG2b/A_RG2b reject all source/target roles at the tree17 hypothesis; independent Gram/star norms also exceed accepted proof bounds. Successful cyclic support requires a new completion proof, not a changed vertex cap.",
+    "Pressure checks reject omitted/extra families, unknown carrier fields, stale profile identities and rehashed execution promotion. Exact whole-resource/carrier norms and composite double-image requirements are independently checked.",
+    "Profile parameters, history/state and step duration are distinguished. PC requests carry no unused tolerance knob; ordinary duration is a step request, subject to the selected completion/domain."
+  ],
+  "followup_obligations": [
+    "LG-C-SELECTOR",
+    "LG-OS-SPLIT",
+    "LG-CI-ROOT",
+    "LG-PC-CHART",
+    "LG-RG-COMPLETION",
+    "LG-A-ORACLE",
+    "LG-VALIDATION",
+    "LG-FACADE",
+    "LG-PERFORMANCE"
+  ],
+  "nonclaims": {
+    "trigger_evaluation": "not_run",
+    "CI_roots": "not_computed",
+    "RG_sections": "not_computed",
+    "physical_steps": 0,
+    "events_committed": 0,
+    "receipts": [],
+    "larger_runtime_scope_accepted": false,
+    "supported_profiles_added": [],
+    "performance_benchmark": false
+  },
+  "phase_boundary": {
+    "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+    "status": "passed_before_final_record_binding",
+    "finalization_protocol": "Capture the passing audit, bind this final record and annotated documentation, then rerun the boundary audit without editing bound artifacts to avoid a self-hash cycle.",
+    "initial_exit_code": 0,
+    "initial_output": "PHASE9_CHECK_PASS label=unchanged_accepted_release_with_historical_proposal_subject result=P972A_RELEASE_SUBJECT_PASS release_id=grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24\nPHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton scope=current_boundary_only handoff=verified\n"
+  },
+  "static_checks": {
+    "local_document_links": "pass",
+    "git_diff_check": "pass"
+  },
+  "record_digest": "1a90701a39d9c99ec7ea1f0fc301ae99e0c5d4be5c3322c8f20cac891e96b1b3",
+  "catalog_continuation": {
+    "date": "2026-10-05",
+    "scope": "User-requested CLI discovery continuation updates documentation and boundary policy only; the ten prepared examples, numerical reports and prior scientific test observations are unchanged.",
+    "refreshed_bindings": [
+      "implementation/Phase-9-GRCV4-Handoff.md",
+      "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+      "implementation/phase-9-grcv4/tranche-8/P9-8.3-GraphConfigurationGuide.md",
+      "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py"
+    ],
+    "validation": "implementation/phase-9-grcv4/tranche-8/P9-8.3-CatalogValidation.json"
+  },
+  "acceptance": {
+    "date": "2026-10-05",
+    "decision": "accepted",
+    "user_instruction": "ok, accept and commit",
+    "scope": "All-ten concrete larger-graph preparation and bounded own review, with the recorded numerical outcomes and deferred runtime obligations unchanged.",
+    "larger_graph_runtime_accepted": false
+  }
+}

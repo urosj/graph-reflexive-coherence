@@ -1,0 +1,5914 @@
+{
+  "schema": "p983-catalog-small-c-inputs-v1",
+  "states": {
+    "C_OS": {
+      "source": {
+        "inputs": {
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grc9v4-port-graph-v1",
+              "live_node_ids": [
+                "s",
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "edges": [
+                {
+                  "edge_id": "e1",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 1
+                  },
+                  "head": {
+                    "node_id": 1,
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "e2",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": 2,
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "e3",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": 3,
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "e4",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": 4,
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "e5",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 5
+                  },
+                  "head": {
+                    "node_id": 5,
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "e6",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": 6,
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "e7",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": 7,
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "e8",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": 8,
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "e9",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": 9,
+                    "port": 9
+                  }
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "C_OS",
+                "candidate": "C",
+                "realization": "OS",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:072a46be12e82f83b16e7c46c61c5f4fe8bfec9b100cc865ca0fb6159733c17a"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-c-params-v1",
+                  "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                  "Lambda_C": 0.001953125,
+                  "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+                  "C_ref": 1,
+                  "kappa_M_C": 5.960464477539063e-08,
+                  "kappa_Phi_C": 1,
+                  "eta_C": 1,
+                  "W_C_tr": {
+                    "e1": 1,
+                    "e2": 1,
+                    "e3": 1,
+                    "e4": 1,
+                    "e5": 1,
+                    "e6": 1,
+                    "e7": 1,
+                    "e8": 1,
+                    "e9": 1
+                  },
+                  "W_C_tr_content_digest": "grcv4-wctr-sha256:7b6c62a05a726b67b07cfde726f27d13bedc5df11a03e04a23797aa27d6a4303",
+                  "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_C": 1,
+                  "chi_C": 16,
+                  "zeta_C": 7.275957614183426e-12,
+                  "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+                  "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+                  "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-os-params-v1",
+                  "predictor_policy_id": "reference_geometry_predictor_v1",
+                  "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+                  "split_residual_norm_id": "edge_l2_v1",
+                  "tolerance": 1e-08
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:8fef0317e52488f0938026de96b49d8a5275fb51f2a923c8ec3302bb13f24be0",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:e40298a56e02aaa0bc5b5efc76c1c6318972a2a1a0217ee4e4127f619070ce7b",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100000000,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 1e-11,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_c_no_independent_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e1": 1,
+                "e2": 1,
+                "e3": 1,
+                "e4": 1,
+                "e5": 1,
+                "e6": 1,
+                "e7": 1,
+                "e8": 1,
+                "e9": 1
+              }
+            }
+          },
+          "H1_form": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              2.9996566772257247,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "reset": {
+            "C": [
+              2.0,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.015625
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "operation_id": "ordinary-step-1",
+          "Q_target": 30.140625,
+          "receipt_ids": [],
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:dad3624e4735d12d69d7c3540d3419bb07cc2167391533f84fff887b33c5bee8",
+          "scientific_state_id": "grcv4-state-sha256:f924cad7fdac5f1e9f51ae1eba8394e981c48feb4c86fd71d36698e45d99cf0d",
+          "reset_id": "grcv4-reset-sha256:ec8bf11d8fc2f413caa22d18c83537979c67b0cf3c28b6ba56c12e9956b354d5",
+          "step_index": 1,
+          "time": 0.000244140625,
+          "dt": 0.0,
+          "stage": "pre_read",
+          "evaluation_index": 0,
+          "trial_current": null
+        },
+        "specialization": {
+          "resolved": {
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "row_weight": {
+              "schema_version": "grc9v4-row-weight-policy-v1",
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection"
+            },
+            "spark": {
+              "schema_version": "grc9v4-spark-policy-v1",
+              "lane": "current_hybrid_signed_hessian",
+              "gradient_tolerance": 0.5,
+              "basin_hessian_tolerance": 0.5,
+              "spark_hessian_tolerance": 0,
+              "child_stabilization": null
+            },
+            "expansion": {
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1",
+              "bond_seed": 1,
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "source_self_loop_policy": "reject_before_target_construction"
+            },
+            "coarse_graining": {
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "nonnegative_field_mode": "simplex_profile",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            }
+          },
+          "identity_payload": {
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "port_count": 9,
+            "port_chart_id": "fixed_3x3_row_column",
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "spark_lane": "current_hybrid_signed_hessian",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          }
+        },
+        "scientific_digest": "grcv4-state-sha256:aa7faa271d756f222ae122327d08095b9d83719c6108a66e9264ab2fd8506969",
+        "reset_digest": "grcv4-reset-sha256:aa149dda9afbd3bb530dbc972cb93e419cdadd546cb9efbfae13c59d216a9bc7",
+        "model_identity": "grc9v4-model-sha256:910f6d4a714d1e8b576fc0537f0641ea5d023a08aeae86122905771c1abe6408"
+      },
+      "target": {
+        "inputs": {
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grc9v4-port-graph-v1",
+              "live_node_ids": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/core",
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/1/1",
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/2/1",
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/3/1",
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/3/2",
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/1",
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/2",
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/3"
+              ],
+              "edges": [
+                {
+                  "edge_id": "e1",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/1",
+                    "port": 1
+                  },
+                  "head": {
+                    "node_id": 1,
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "e2",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/2",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": 2,
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "e3",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/3",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": 3,
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "e4",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/1",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": 4,
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "e5",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/2",
+                    "port": 5
+                  },
+                  "head": {
+                    "node_id": 5,
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "e6",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/3",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": 6,
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "e7",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/1",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": 7,
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "e8",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/2",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": 8,
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "e9",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/3",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": 9,
+                    "port": 9
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/1",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/core",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/1",
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/2",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/core",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/2",
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/3",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/core",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/3",
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/1/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/1",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/1/1",
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/2/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/2",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/2/1",
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/3/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/3",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/3/1",
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/3/2",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/3/1",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/extra/3/2",
+                    "port": 9
+                  }
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "C_OS",
+                "candidate": "C",
+                "realization": "OS",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:5f6d226f45942a2210fadb7dbd0f1ee7f09503c27df9df656fe6076764537477"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-c-params-v1",
+                  "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                  "Lambda_C": 0.001953125,
+                  "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+                  "C_ref": 1,
+                  "kappa_M_C": 5.960464477539063e-08,
+                  "kappa_Phi_C": 1,
+                  "eta_C": 1,
+                  "W_C_tr": {
+                    "e1": 1,
+                    "e2": 1,
+                    "e3": 1,
+                    "e4": 1,
+                    "e5": 1,
+                    "e6": 1,
+                    "e7": 1,
+                    "e8": 1,
+                    "e9": 1,
+                    "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/1": 1.0,
+                    "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/1/1": 1.0,
+                    "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/2": 1.0,
+                    "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/2/1": 1.0,
+                    "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/3": 1.0,
+                    "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/3/1": 1.0,
+                    "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/3/2": 1.0
+                  },
+                  "W_C_tr_content_digest": "grcv4-wctr-sha256:01ba49b27ae50b4a2a83b542cf7e441b27622b9ae81f5721041a6fa915ca6c34",
+                  "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_C": 1,
+                  "chi_C": 16,
+                  "zeta_C": 7.275957614183426e-12,
+                  "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+                  "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+                  "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-os-params-v1",
+                  "predictor_policy_id": "reference_geometry_predictor_v1",
+                  "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+                  "split_residual_norm_id": "edge_l2_v1",
+                  "tolerance": 1e-08
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:89cbd2ab69cd22bc68fd279b18d161ac9e4785ba28dd02f661e3acd7be20f8ae",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:2452f8f3ec8d9ff94628f1300ea5a0dec9954edb49228dfe1d26fe30efca8272",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100000000,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 1e-11,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_c_no_independent_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:5547a6331724cfeed1f8b23d601ff3d6c4b7b2051821bc5e69b63b3173b49b64"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e1": 1,
+                "e2": 1,
+                "e3": 1,
+                "e4": 1,
+                "e5": 1,
+                "e6": 1,
+                "e7": 1,
+                "e8": 1,
+                "e9": 1,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/1": 1.0,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/1/1": 1.0,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/2": 1.0,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/2/1": 1.0,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/3": 1.0,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/3/1": 1.0,
+                "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/internal/extra/3/2": 1.0
+              }
+            }
+          },
+          "H1_form": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.4998283386128624,
+              0.7499141693064312,
+              0.7499141693064312
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "reset": {
+            "C": [
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.015625,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.5,
+              0.5
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "operation_id": "ordinary-step-1",
+          "Q_target": 30.140625,
+          "receipt_ids": [],
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:83fa941c9908abb3be534d09a44967ddcb0c046c28410c635de2fb85ef3bf2d7",
+          "scientific_state_id": "grcv4-state-sha256:8e131e99b029c44d4ff35989521745f0cd22632b446c28e736990a5ab5648875",
+          "reset_id": "grcv4-reset-sha256:8f867720d788f614d8fe7053c96a123cdd0105f2902713ef368fba04734cb3f5",
+          "step_index": 1,
+          "time": 0.000244140625,
+          "dt": 0.0,
+          "stage": "pre_read",
+          "evaluation_index": 0,
+          "trial_current": null
+        },
+        "specialization": {
+          "resolved": {
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "row_weight": {
+              "schema_version": "grc9v4-row-weight-policy-v1",
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection"
+            },
+            "spark": {
+              "schema_version": "grc9v4-spark-policy-v1",
+              "lane": "current_hybrid_signed_hessian",
+              "gradient_tolerance": 0.5,
+              "basin_hessian_tolerance": 0.5,
+              "spark_hessian_tolerance": 0,
+              "child_stabilization": null
+            },
+            "expansion": {
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1",
+              "bond_seed": 1,
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "source_self_loop_policy": "reject_before_target_construction"
+            },
+            "coarse_graining": {
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "nonnegative_field_mode": "simplex_profile",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            }
+          },
+          "identity_payload": {
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "port_count": 9,
+            "port_chart_id": "fixed_3x3_row_column",
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "spark_lane": "current_hybrid_signed_hessian",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          }
+        },
+        "scientific_digest": "grcv4-state-sha256:8aeb4daa43ecae98c28578538f7e9de9400a97c87b78feacdb464604d5f64c84",
+        "reset_digest": "grcv4-reset-sha256:71ce8f04151f9885fb2f9eb8722ef742aa5ce62719f6ee8b5b0228853428318e",
+        "model_identity": "grc9v4-model-sha256:b7a3eaa92ed3ec15e7bf953852739318165b98606f45753f7715eeb1b6bdfe42"
+      },
+      "request": {
+        "schema_version": "grc9v4-expansion-event-request-input-v1",
+        "operation_id": "native-cos-expand-1",
+        "source_state_digest": "grcv4-state-sha256:aa7faa271d756f222ae122327d08095b9d83719c6108a66e9264ab2fd8506969",
+        "source_graph_digest": "grc-graph-sha256:cddd6d4753e36177f472d6a81f0b0a3d2224044ba29bcfe71c68a79f642355a2",
+        "source_node_id": "s",
+        "target_profile_template_id": "grcv4-profile-template-sha256:ea5a08adac7c5962ab649f88aa1f3b1f113ad1ed70ade78cc5eae554446b07d2",
+        "target_specialization_id": "grc9v4-specialization-sha256:2257e35e18ca0f911f3a13fbf68174a8e8df2c7c18e2b552425e615edbae2503",
+        "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+        "target_effective_degree": 52,
+        "module_chirality": 1,
+        "growth_phase": 3,
+        "resource_distribution": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "history_policy": {
+          "schema_version": "grc9v4-expansion-history-policy-v2",
+          "candidate": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "candidate",
+            "policy_id": "candidate_c_rederive_no_history_v1",
+            "disposition": "rederived",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "carrier": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "carrier",
+            "policy_id": "carrier_not_applicable_v1",
+            "disposition": "not_applicable",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "candidate_history_policy_digest": "grcv4-history-policy-sha256:8bdcbf5699444cfc346f4d69845b14225efffdd3f91eb7cd093528a7a83188df",
+          "carrier_history_policy_digest": "grcv4-history-policy-sha256:f261adf42cb39380b2b0b30f1d0d3a00a56685ac0b293acb55de6629ebfa4142"
+        },
+        "expected_event_id": null,
+        "expected_target_graph_digest": null
+      }
+    },
+    "C_PC": {
+      "source": {
+        "inputs": {
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grc9v4-port-graph-v1",
+              "live_node_ids": [
+                "s",
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "edges": [
+                {
+                  "edge_id": "e1",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 1
+                  },
+                  "head": {
+                    "node_id": 1,
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "e2",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": 2,
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "e3",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": 3,
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "e4",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": 4,
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "e5",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 5
+                  },
+                  "head": {
+                    "node_id": 5,
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "e6",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": 6,
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "e7",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": 7,
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "e8",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": 8,
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "e9",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": 9,
+                    "port": 9
+                  }
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "C_PC",
+                "candidate": "C",
+                "realization": "PC",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:0208d7b0da45e8f7ad2a11b392294e21c78cc18480e662c717e93481abab54cb"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-c-params-v1",
+                  "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                  "Lambda_C": 0.001953125,
+                  "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+                  "C_ref": 1,
+                  "kappa_M_C": 5.960464477539063e-08,
+                  "kappa_Phi_C": 1,
+                  "eta_C": 1,
+                  "W_C_tr": {
+                    "e1": 1,
+                    "e2": 1,
+                    "e3": 1,
+                    "e4": 1,
+                    "e5": 1,
+                    "e6": 1,
+                    "e7": 1,
+                    "e8": 1,
+                    "e9": 1
+                  },
+                  "W_C_tr_content_digest": "grcv4-wctr-sha256:7b6c62a05a726b67b07cfde726f27d13bedc5df11a03e04a23797aa27d6a4303",
+                  "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_C": 1,
+                  "chi_C": 16,
+                  "zeta_C": 9.313225746154785e-10,
+                  "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+                  "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+                  "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-pc-params-v1",
+                  "tau_PC": 1,
+                  "radius": 1,
+                  "carrier_norm_id": "symmetric_star_frobenius_v1",
+                  "source_envelope_id": "pc_compact_base_chart_v1:0x1.0000000000000p+4:0x1.0000000000000p+0:0x1.0000000000000p+0",
+                  "writer_id": "zero_order_hold_exponential_v1"
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:8fef0317e52488f0938026de96b49d8a5275fb51f2a923c8ec3302bb13f24be0",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:e40298a56e02aaa0bc5b5efc76c1c6318972a2a1a0217ee4e4127f619070ce7b",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 1.52587890625e-05
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100000000,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 1e-11,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_c_no_independent_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:027fcc14b47d8cb4c0f1465109c1ca2c47cb5fefb3b002f499c9273c3b8c12f8"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e1": 1,
+                "e2": 1,
+                "e3": 1,
+                "e4": 1,
+                "e5": 1,
+                "e6": 1,
+                "e7": 1,
+                "e8": 1,
+                "e9": 1
+              }
+            }
+          },
+          "H1_form": [
+            [
+              1.0000009534415142,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07
+            ],
+            [
+              -4.767207570909068e-07,
+              1.0000009534415142,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07
+            ],
+            [
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              1.0000009534415142,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07
+            ],
+            [
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              1.0000009534415142,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07
+            ],
+            [
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              1.0000009534415142,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07
+            ],
+            [
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              1.0000009534415142,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07
+            ],
+            [
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              1.0000009534415142,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07
+            ],
+            [
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              1.0000009534415142,
+              -4.767207570909068e-07
+            ],
+            [
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              4.7672075709108594e-07,
+              -4.767207570909068e-07,
+              1.0000009534415142
+            ]
+          ],
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              2.9996566770433644,
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987
+            ],
+            "W_A": null,
+            "Z_4": [
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.03124237153672141,
+              -0.031242371536709668,
+              0.06248474307344282
+            ]
+          },
+          "reset": {
+            "C": [
+              2.0,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.015625
+            ],
+            "W_A": null,
+            "Z_4": [
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.03125,
+              0.03125,
+              -0.0625
+            ]
+          },
+          "operation_id": "ordinary-step-1",
+          "Q_target": 30.140625,
+          "receipt_ids": [],
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:efdce82b7287b0c7b04daa1460b1c433b5ec3a458a1539fa63675d7d6a1c4feb",
+          "scientific_state_id": "grcv4-state-sha256:635400217e785342b11644ad58eb0b810bbf77d21d2cd741a6027ec075a46410",
+          "reset_id": "grcv4-reset-sha256:fb5551d2c1ed625915ba848c40da77e9f5dd31937618388e5c3a267fbf2c61c5",
+          "step_index": 1,
+          "time": 0.000244140625,
+          "dt": 0.0,
+          "stage": "pre_read",
+          "evaluation_index": 0,
+          "trial_current": null
+        },
+        "specialization": {
+          "resolved": {
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "row_weight": {
+              "schema_version": "grc9v4-row-weight-policy-v1",
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection"
+            },
+            "spark": {
+              "schema_version": "grc9v4-spark-policy-v1",
+              "lane": "current_hybrid_signed_hessian",
+              "gradient_tolerance": 0.5,
+              "basin_hessian_tolerance": 0.5,
+              "spark_hessian_tolerance": 0,
+              "child_stabilization": null
+            },
+            "expansion": {
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1",
+              "bond_seed": 1,
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "source_self_loop_policy": "reject_before_target_construction"
+            },
+            "coarse_graining": {
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "nonnegative_field_mode": "simplex_profile",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            }
+          },
+          "identity_payload": {
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "port_count": 9,
+            "port_chart_id": "fixed_3x3_row_column",
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "spark_lane": "current_hybrid_signed_hessian",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          }
+        },
+        "scientific_digest": "grcv4-state-sha256:4842cacab89ed4e6be76a3d9d092091083774c0d28536ee339ccfef28f068284",
+        "reset_digest": "grcv4-reset-sha256:7fd17f9aa2bbcb088f6c530d61ec381e440aee532abdb90c7b648ed688910541",
+        "model_identity": "grc9v4-model-sha256:562a08909dadc90d769682dae18a24640d5eb106f5a93c5f155d574508acc79f"
+      },
+      "target": {
+        "inputs": {
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grc9v4-port-graph-v1",
+              "live_node_ids": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/core",
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/1/1",
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/2/1",
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/3/1",
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/3/2",
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/1",
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/2",
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/3"
+              ],
+              "edges": [
+                {
+                  "edge_id": "e1",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/1",
+                    "port": 1
+                  },
+                  "head": {
+                    "node_id": 1,
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "e2",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/2",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": 2,
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "e3",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/3",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": 3,
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "e4",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/1",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": 4,
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "e5",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/2",
+                    "port": 5
+                  },
+                  "head": {
+                    "node_id": 5,
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "e6",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/3",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": 6,
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "e7",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/1",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": 7,
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "e8",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/2",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": 8,
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "e9",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/3",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": 9,
+                    "port": 9
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/1",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/core",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/1",
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/2",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/core",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/2",
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/3",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/core",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/3",
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/1/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/1",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/1/1",
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/2/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/2",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/2/1",
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/3/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/3",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/3/1",
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/3/2",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/3/1",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/extra/3/2",
+                    "port": 9
+                  }
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "C_PC",
+                "candidate": "C",
+                "realization": "PC",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:eb8ac2f507aa6c95674ff9d39b4e74c35232e4c5b7f2b2c4aa8c6c8d3a69b2ad"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-c-params-v1",
+                  "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                  "Lambda_C": 0.001953125,
+                  "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+                  "C_ref": 1,
+                  "kappa_M_C": 5.960464477539063e-08,
+                  "kappa_Phi_C": 1,
+                  "eta_C": 1,
+                  "W_C_tr": {
+                    "e1": 1,
+                    "e2": 1,
+                    "e3": 1,
+                    "e4": 1,
+                    "e5": 1,
+                    "e6": 1,
+                    "e7": 1,
+                    "e8": 1,
+                    "e9": 1,
+                    "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/1": 1.0,
+                    "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/1/1": 1.0,
+                    "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/2": 1.0,
+                    "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/2/1": 1.0,
+                    "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/3": 1.0,
+                    "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/3/1": 1.0,
+                    "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/3/2": 1.0
+                  },
+                  "W_C_tr_content_digest": "grcv4-wctr-sha256:9d9a250f4aff6e78dd2971f72f96cede286e93b2ed8798ed7d5a40e0343786cd",
+                  "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_C": 1,
+                  "chi_C": 16,
+                  "zeta_C": 9.313225746154785e-10,
+                  "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+                  "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+                  "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-pc-params-v1",
+                  "tau_PC": 1,
+                  "radius": 1,
+                  "carrier_norm_id": "symmetric_star_frobenius_v1",
+                  "source_envelope_id": "pc_compact_base_chart_v1:0x1.0000000000000p+4:0x1.0000000000000p+0:0x1.0000000000000p+0",
+                  "writer_id": "zero_order_hold_exponential_v1"
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:89cbd2ab69cd22bc68fd279b18d161ac9e4785ba28dd02f661e3acd7be20f8ae",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:ca7a730f1f5c4e6f39f7c24fbf06083a9b5c59079e0dcaf416dd2cb2b159ac50",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 1.52587890625e-05
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100000000,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 1e-11,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_c_no_independent_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:54f87913e6b495b6828dd6854c57761a4a77c8ca8ac16626b5262152c2a1e630"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e1": 1,
+                "e2": 1,
+                "e3": 1,
+                "e4": 1,
+                "e5": 1,
+                "e6": 1,
+                "e7": 1,
+                "e8": 1,
+                "e9": 1,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/1": 1.0,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/1/1": 1.0,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/2": 1.0,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/2/1": 1.0,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/3": 1.0,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/3/1": 1.0,
+                "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/internal/extra/3/2": 1.0
+              }
+            }
+          },
+          "H1_form": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987,
+              3.0156631469931607,
+              3.0156631469967987,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.4998283385216822,
+              0.7499141692608411,
+              0.7499141692608411
+            ],
+            "W_A": null,
+            "Z_4": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "reset": {
+            "C": [
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.015625,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.5,
+              0.5
+            ],
+            "W_A": null,
+            "Z_4": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "operation_id": "ordinary-step-1",
+          "Q_target": 30.140625,
+          "receipt_ids": [],
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:cfc553f4a59b56c11cfe243af4e0a1a9bfa0b701b68a757940a22a45ba03affe",
+          "scientific_state_id": "grcv4-state-sha256:de1d162e3d3250474a291b62691b4dbced3b7233df62ce8100bf78461f7e5746",
+          "reset_id": "grcv4-reset-sha256:2f3b452d3d74f17305a5070b8921f5b7dbd4e0ee3167ec00bf600bf8fc9d5844",
+          "step_index": 1,
+          "time": 0.000244140625,
+          "dt": 0.0,
+          "stage": "pre_read",
+          "evaluation_index": 0,
+          "trial_current": null
+        },
+        "specialization": {
+          "resolved": {
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "row_weight": {
+              "schema_version": "grc9v4-row-weight-policy-v1",
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection"
+            },
+            "spark": {
+              "schema_version": "grc9v4-spark-policy-v1",
+              "lane": "current_hybrid_signed_hessian",
+              "gradient_tolerance": 0.5,
+              "basin_hessian_tolerance": 0.5,
+              "spark_hessian_tolerance": 0,
+              "child_stabilization": null
+            },
+            "expansion": {
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1",
+              "bond_seed": 1,
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "source_self_loop_policy": "reject_before_target_construction"
+            },
+            "coarse_graining": {
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "nonnegative_field_mode": "simplex_profile",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            }
+          },
+          "identity_payload": {
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "port_count": 9,
+            "port_chart_id": "fixed_3x3_row_column",
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "spark_lane": "current_hybrid_signed_hessian",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          }
+        },
+        "scientific_digest": "grcv4-state-sha256:549cd0b19f4b5583c0a265e046decf90d146b2a1168e0386b29c3b9810b08054",
+        "reset_digest": "grcv4-reset-sha256:705f12d1e6816d6463bc2aa7872ca31bb7674a115a3a2441902e531407c12f80",
+        "model_identity": "grc9v4-model-sha256:1daf6eeb8e6acc5fe4766dc85f3031c12c6085e331da49d520021e66cc505206"
+      },
+      "request": {
+        "schema_version": "grc9v4-expansion-event-request-input-v1",
+        "operation_id": "native-cpc-expand-1",
+        "source_state_digest": "grcv4-state-sha256:4842cacab89ed4e6be76a3d9d092091083774c0d28536ee339ccfef28f068284",
+        "source_graph_digest": "grc-graph-sha256:cddd6d4753e36177f472d6a81f0b0a3d2224044ba29bcfe71c68a79f642355a2",
+        "source_node_id": "s",
+        "target_profile_template_id": "grcv4-profile-template-sha256:7706da744fd0343f57ea5a3ef4a3a653ba26395044cde14447c6c709eb84b5dc",
+        "target_specialization_id": "grc9v4-specialization-sha256:2257e35e18ca0f911f3a13fbf68174a8e8df2c7c18e2b552425e615edbae2503",
+        "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+        "target_effective_degree": 52,
+        "module_chirality": 1,
+        "growth_phase": 3,
+        "resource_distribution": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "history_policy": {
+          "schema_version": "grc9v4-expansion-history-policy-v2",
+          "candidate": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "candidate",
+            "policy_id": "candidate_c_rederive_no_history_v1",
+            "disposition": "rederived",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "carrier": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "carrier",
+            "policy_id": "whole_carrier_reset_with_loss_receipt_v1",
+            "disposition": "whole_carrier_reset",
+            "source_history_digest": "grcv4-history-content-sha256:7d216270d9ab3739dd3f671dd2d061f0818d3ecd531bc0a898463ab0865ac43c",
+            "target_initializer_id": "zero_carrier_v1",
+            "information_loss": "carrier_history_loss"
+          },
+          "candidate_history_policy_digest": "grcv4-history-policy-sha256:8bdcbf5699444cfc346f4d69845b14225efffdd3f91eb7cd093528a7a83188df",
+          "carrier_history_policy_digest": "grcv4-history-policy-sha256:01915bcc7c0063e4a00fcf1cb65053348d79b53dc2d3049e89ea4762bc0effed"
+        },
+        "expected_event_id": null,
+        "expected_target_graph_digest": null
+      }
+    },
+    "C_RG2b": {
+      "source": {
+        "inputs": {
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grc9v4-port-graph-v1",
+              "live_node_ids": [
+                "s",
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "edges": [
+                {
+                  "edge_id": "e1",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 1
+                  },
+                  "head": {
+                    "node_id": 1,
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "e2",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": 2,
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "e3",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": 3,
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "e4",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": 4,
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "e5",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 5
+                  },
+                  "head": {
+                    "node_id": 5,
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "e6",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": 6,
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "e7",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": 7,
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "e8",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": 8,
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "e9",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "s",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": 9,
+                    "port": 9
+                  }
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "C_RG2b",
+                "candidate": "C",
+                "realization": "RG2b",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:49f0885ca53f5f219117d5a231eebfaa85d24814a44668eed6912b423d568975"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-c-params-v1",
+                  "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                  "Lambda_C": 0.001953125,
+                  "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+                  "C_ref": 1,
+                  "kappa_M_C": 5.960464477539063e-08,
+                  "kappa_Phi_C": 1,
+                  "eta_C": 1,
+                  "W_C_tr": {
+                    "e1": 1,
+                    "e2": 1,
+                    "e3": 1,
+                    "e4": 1,
+                    "e5": 1,
+                    "e6": 1,
+                    "e7": 1,
+                    "e8": 1,
+                    "e9": 1
+                  },
+                  "W_C_tr_content_digest": "grcv4-wctr-sha256:7b6c62a05a726b67b07cfde726f27d13bedc5df11a03e04a23797aa27d6a4303",
+                  "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_C": 1,
+                  "chi_C": 16,
+                  "zeta_C": 7.275957614183426e-12,
+                  "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+                  "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+                  "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-rg2b-params-v1",
+                  "extension_evaluator_id": "grc9v4_c_rg2b_signed_argument_completion_v1",
+                  "approximation_policy_id": "grc9v4_c_rg2b_chain6_sweeps18_binary64_interval160_v1",
+                  "error_norm_id": "grc9v4_rg2b_hodge_induced_infinity_v1",
+                  "error_tolerance": 3.552713678800501e-15,
+                  "containment_certificate_id": "grc9v4_c_rg2b_signed_tree17_global_certificate_v1",
+                  "iteration_limit": 222,
+                  "failure_policy_id": "fail_closed_on_uncertified_section_v1"
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:8fef0317e52488f0938026de96b49d8a5275fb51f2a923c8ec3302bb13f24be0",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:e40298a56e02aaa0bc5b5efc76c1c6318972a2a1a0217ee4e4127f619070ce7b",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100000000,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 1e-11,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_c_no_independent_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:e73ff3087e7d96f0d4fde3264bba2047776b70bfd5c063f148194e61418f9666"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e1": 1,
+                "e2": 1,
+                "e3": 1,
+                "e4": 1,
+                "e5": 1,
+                "e6": 1,
+                "e7": 1,
+                "e8": 1,
+                "e9": 1
+              }
+            }
+          },
+          "H1_form": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              2.9996566772257247,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "reset": {
+            "C": [
+              2.0,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.015625
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "operation_id": "ordinary-step-1",
+          "Q_target": 30.140625,
+          "receipt_ids": [],
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:6917476a41bc2d0d89f5358e7f017d36699a2fd8b77d8a13d5a8b2e6c3ff2573",
+          "scientific_state_id": "grcv4-state-sha256:404c7891c0049bd8fa8553bfc6b1c9f4bf102ce754ac3779dfe6f90b5dba76aa",
+          "reset_id": "grcv4-reset-sha256:c645253bd4f74d695f6fca295a3918bbefbfe2ef35a118a1b9a4832b89eae9a0",
+          "step_index": 1,
+          "time": 0.000244140625,
+          "dt": 0.0,
+          "stage": "pre_read",
+          "evaluation_index": 0,
+          "trial_current": null
+        },
+        "specialization": {
+          "resolved": {
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "row_weight": {
+              "schema_version": "grc9v4-row-weight-policy-v1",
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection"
+            },
+            "spark": {
+              "schema_version": "grc9v4-spark-policy-v1",
+              "lane": "current_hybrid_signed_hessian",
+              "gradient_tolerance": 0.5,
+              "basin_hessian_tolerance": 0.5,
+              "spark_hessian_tolerance": 0,
+              "child_stabilization": null
+            },
+            "expansion": {
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1",
+              "bond_seed": 1,
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "source_self_loop_policy": "reject_before_target_construction"
+            },
+            "coarse_graining": {
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "nonnegative_field_mode": "simplex_profile",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            }
+          },
+          "identity_payload": {
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "port_count": 9,
+            "port_chart_id": "fixed_3x3_row_column",
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "spark_lane": "current_hybrid_signed_hessian",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          }
+        },
+        "scientific_digest": "grcv4-state-sha256:c60dfc840b716a815ada9aa1eb25ebe4eff89a01f2cbbff68796e74703579abb",
+        "reset_digest": "grcv4-reset-sha256:ba4f8fa339074ade4c8a41f85bb74f4a5cf9ad0edd3e04d365dc30eeb7f1c0c1",
+        "model_identity": "grc9v4-model-sha256:4dac73e294077db3e0c91ded05ac62acfee21be5be258d244219a4761542f492"
+      },
+      "target": {
+        "inputs": {
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grc9v4-port-graph-v1",
+              "live_node_ids": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/core",
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/1/1",
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/2/1",
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/3/1",
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/3/2",
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/1",
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/2",
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/3"
+              ],
+              "edges": [
+                {
+                  "edge_id": "e1",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/1",
+                    "port": 1
+                  },
+                  "head": {
+                    "node_id": 1,
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "e2",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/2",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": 2,
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "e3",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/3",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": 3,
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "e4",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/1",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": 4,
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "e5",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/2",
+                    "port": 5
+                  },
+                  "head": {
+                    "node_id": 5,
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "e6",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/3",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": 6,
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "e7",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/1",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": 7,
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "e8",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/2",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": 8,
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "e9",
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/3",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": 9,
+                    "port": 9
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/1",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/core",
+                    "port": 2
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/1",
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/2",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/core",
+                    "port": 6
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/2",
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/3",
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/core",
+                    "port": 7
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/3",
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/1/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/1",
+                    "port": 3
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/1/1",
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/2/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/2",
+                    "port": 4
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/2/1",
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/3/1",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/satellite/3",
+                    "port": 8
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/3/1",
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/3/2",
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/3/1",
+                    "port": 9
+                  },
+                  "head": {
+                    "node_id": "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/extra/3/2",
+                    "port": 9
+                  }
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "C_RG2b",
+                "candidate": "C",
+                "realization": "RG2b",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:e9ab9ef53cbca83ac1d1b36a5f7389d12cbe3a620c14ed31d8c803866286a1c3"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-c-params-v1",
+                  "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+                  "Lambda_C": 0.001953125,
+                  "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+                  "C_ref": 1,
+                  "kappa_M_C": 5.960464477539063e-08,
+                  "kappa_Phi_C": 1,
+                  "eta_C": 1,
+                  "W_C_tr": {
+                    "e1": 1,
+                    "e2": 1,
+                    "e3": 1,
+                    "e4": 1,
+                    "e5": 1,
+                    "e6": 1,
+                    "e7": 1,
+                    "e8": 1,
+                    "e9": 1,
+                    "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/1": 1.0,
+                    "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/1/1": 1.0,
+                    "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/2": 1.0,
+                    "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/2/1": 1.0,
+                    "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/3": 1.0,
+                    "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/3/1": 1.0,
+                    "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/3/2": 1.0
+                  },
+                  "W_C_tr_content_digest": "grcv4-wctr-sha256:2d010838aa58e35ccebb5904549dfc3c52db3f4f6b4e81b843fb2337c4b7351f",
+                  "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_C": 1,
+                  "chi_C": 16,
+                  "zeta_C": 7.275957614183426e-12,
+                  "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+                  "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+                  "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-rg2b-params-v1",
+                  "extension_evaluator_id": "grc9v4_c_rg2b_signed_argument_completion_v1",
+                  "approximation_policy_id": "grc9v4_c_rg2b_chain6_sweeps18_binary64_interval160_v1",
+                  "error_norm_id": "grc9v4_rg2b_hodge_induced_infinity_v1",
+                  "error_tolerance": 3.552713678800501e-15,
+                  "containment_certificate_id": "grc9v4_c_rg2b_signed_tree17_global_certificate_v1",
+                  "iteration_limit": 222,
+                  "failure_policy_id": "fail_closed_on_uncertified_section_v1"
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:89cbd2ab69cd22bc68fd279b18d161ac9e4785ba28dd02f661e3acd7be20f8ae",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:58565f4f480921dc2084087c4c45dff43aba9f0592052d9878263f6d9518c444",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100000000,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 1e-11,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 1e-11,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_c_no_independent_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:e11357e446d2a685d49f59953f554449c2e05c1c7dc615273770c9d2552d8754"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e1": 1,
+                "e2": 1,
+                "e3": 1,
+                "e4": 1,
+                "e5": 1,
+                "e6": 1,
+                "e7": 1,
+                "e8": 1,
+                "e9": 1,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/1": 1.0,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/1/1": 1.0,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/2": 1.0,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/2/1": 1.0,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/3": 1.0,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/3/1": 1.0,
+                "grc-event-sha256:2fe99814170f0ec948c6037d07e4dc3e1d337ca90de8a2b1ce06751508501c37/internal/extra/3/2": 1.0
+              }
+            }
+          },
+          "H1_form": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              3.0156631469749193,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.4998283386128624,
+              0.7499141693064312,
+              0.7499141693064312
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "reset": {
+            "C": [
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.015625,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.5,
+              0.5
+            ],
+            "W_A": null,
+            "Z_4": null
+          },
+          "operation_id": "ordinary-step-1",
+          "Q_target": 30.140625,
+          "receipt_ids": [],
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:542ed6158171ce7247a337b91d64b87d761674e53b7521a1929c812137aa9e22",
+          "scientific_state_id": "grcv4-state-sha256:5ea7a000cb118e1f447878c12be14fc164dc10c92a734460d9d37caafc397167",
+          "reset_id": "grcv4-reset-sha256:237869427ad9b5adaa60eb2c21136ea1633f4877127dd8f84c86755e86d5f125",
+          "step_index": 1,
+          "time": 0.000244140625,
+          "dt": 0.0,
+          "stage": "pre_read",
+          "evaluation_index": 0,
+          "trial_current": null
+        },
+        "specialization": {
+          "resolved": {
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "row_weight": {
+              "schema_version": "grc9v4-row-weight-policy-v1",
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection"
+            },
+            "spark": {
+              "schema_version": "grc9v4-spark-policy-v1",
+              "lane": "current_hybrid_signed_hessian",
+              "gradient_tolerance": 0.5,
+              "basin_hessian_tolerance": 0.5,
+              "spark_hessian_tolerance": 0,
+              "child_stabilization": null
+            },
+            "expansion": {
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1",
+              "bond_seed": 1,
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "source_self_loop_policy": "reject_before_target_construction"
+            },
+            "coarse_graining": {
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "nonnegative_field_mode": "simplex_profile",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            }
+          },
+          "identity_payload": {
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "port_count": 9,
+            "port_chart_id": "fixed_3x3_row_column",
+            "frame_mode": "fixed_port_chart",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "spark_lane": "current_hybrid_signed_hessian",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          }
+        },
+        "scientific_digest": "grcv4-state-sha256:6b1d8bbd316ea781ab536fc6553ae70b6e9a05aec0bd153c22594eab72ca2d90",
+        "reset_digest": "grcv4-reset-sha256:f0737532a7ef2e803bd6acece20f861a9acca35f0469463333c919650ef2514c",
+        "model_identity": "grc9v4-model-sha256:2db68fc436162df746e9e34cd2252e19447a55022a05fc548bdcca3033755507"
+      },
+      "request": {
+        "schema_version": "grc9v4-expansion-event-request-input-v1",
+        "operation_id": "native-crg2b-expand-1",
+        "source_state_digest": "grcv4-state-sha256:c60dfc840b716a815ada9aa1eb25ebe4eff89a01f2cbbff68796e74703579abb",
+        "source_graph_digest": "grc-graph-sha256:cddd6d4753e36177f472d6a81f0b0a3d2224044ba29bcfe71c68a79f642355a2",
+        "source_node_id": "s",
+        "target_profile_template_id": "grcv4-profile-template-sha256:b0044f96a9cb3dd5ef8bd66f82db28eb45c771a6dee29e4edf3035d71b159f8e",
+        "target_specialization_id": "grc9v4-specialization-sha256:2257e35e18ca0f911f3a13fbf68174a8e8df2c7c18e2b552425e615edbae2503",
+        "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+        "target_effective_degree": 52,
+        "module_chirality": 1,
+        "growth_phase": 3,
+        "resource_distribution": [
+          0.5,
+          0.25,
+          0.25
+        ],
+        "history_policy": {
+          "schema_version": "grc9v4-expansion-history-policy-v2",
+          "candidate": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "candidate",
+            "policy_id": "candidate_c_rederive_no_history_v1",
+            "disposition": "rederived",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "carrier": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "carrier",
+            "policy_id": "carrier_not_applicable_v1",
+            "disposition": "not_applicable",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "candidate_history_policy_digest": "grcv4-history-policy-sha256:8bdcbf5699444cfc346f4d69845b14225efffdd3f91eb7cd093528a7a83188df",
+          "carrier_history_policy_digest": "grcv4-history-policy-sha256:f261adf42cb39380b2b0b30f1d0d3a00a56685ac0b293acb55de6629ebfa4142"
+        },
+        "expected_event_id": null,
+        "expected_target_graph_digest": null
+      }
+    }
+  },
+  "scope": "existing_fixture_and_pure_transfer; no_new_acceptance",
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/prepare_p983_catalog_inputs.py",
+      "sha256": "d953111f86ddb055d29557039b6d2f97106d490c07c34186e96ca7c67113e96c"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_lifecycle.py",
+      "sha256": "40b0f0ddb984175f7c391815413838c3a8c6e704171e92af3c7149b7aef1129c"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_crg2b.py",
+      "sha256": "42fcfc84159be3939bbb39d8c9277e9fab90f944c5bacfeaa9cdfff59f4dac8a"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_arg2b.py",
+      "sha256": "68d48b020c2d9efefca82cdef24bd1cca159ddd1cf80fe29bc815c61aab5a616"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "b9421a320b343005016e9e6554f37f25662eb50e0b164ec7f5f1712253f2f398"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_rg2b.py",
+      "sha256": "22026ccf6f949247690ce4d35494468161e0a77525b1cb90eb228d5d9bf0a3ae"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "19fedb493dd01bb650043516a6cb88fbe401be0aaf34d865305a707f8d7ff9a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "00b92688cb4bc82cf54ac462e6a8f5eb6f09e4386d4db1b2a6ac373758b98f19"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "6e951a7393f1c95f77acbf5de0ca0e11f42cf5acacaf098b123ba3b423af5a0e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "42af05ee7f927f38de3a435aab6ca92aaa53cca039b3e2ad7c7c02ae16bdd501"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_event_codec.py",
+      "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_events.py",
+      "sha256": "66d4778ed273871066a020ee8d8c5e33122c31f56b26569711876c1c4c2b8a11"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_exact.py",
+      "sha256": "42491644b46d947483ab1706b4fb4b14abf247495916db64ea60b021d5c9e065"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "c965f0ec7165ebe769cf4dd25ece98349213da1ae98f378acc0db8c1d231bebc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_initializer.py",
+      "sha256": "28ed997c515cf249c188e53e728c860a79cdc816909f2b1769a2be97694000fc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "24032419cfcee5b29c23423f817f8f0283d4d3fe5ffe12080e0d600e44ab67d5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_linear.py",
+      "sha256": "ff5acc2040027ef9ba1773af04b575c2f15dd2ece265e451c93b658edb9b69e3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_migration.py",
+      "sha256": "714f37b346842370eb4d49ec279edc82a82e91d668b066942846e655f0d92dc0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "1f18ba4b5ae1ac315c81ef9fb47767b91d512e3c35402aa89589f7d3baed52d0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "c72cb21a7293bdefac925938d7b22506fdf51551b7f1ca3661240dc2c2938b89"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "e5dacafed23c96f84b046bd4ddb991a295e9ec18eab978478b4b31fd5f1ba18e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "f4538b8d23409aac96375bb1a952712c37f25b7c0a7df4c8fa5a61e90cdcc181"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b_graph.py",
+      "sha256": "a86a80068dc71eea43fd9fcc56cfdcb4e676fa316fe76bfe009a1c296441a058"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "299fc7924704b9f17591a1767c28d3d112ada0334a934092312fe0a9e6be66e0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    }
+  ]
+}
