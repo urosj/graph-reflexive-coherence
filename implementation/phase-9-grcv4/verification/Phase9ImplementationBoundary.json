@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "7d482c6993a64a5d6f0e902443a46bd06474f932ce8d6466174d4cd2afb4af42"
+      "sha256": "34ebc296f4f938d2cdc8070d01266e16e0cabfd5abf89d1f3e872ae52c38cd64"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "14ea2f0aee83991931bcb21af10a06756fa2fca6a57c883744fc3dd87f653cc8"
+      "sha256": "d32487e4c4e1b899c6eab82d0c32713a2c7a04c9d3f089fda7a1c47b5531d18b"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "dbf920c4b95f7e67da8cdc971404323efae57eace6bcd6be9758a6d9fe844ea5"
+      "sha256": "2c5a7b2d8d1a581196bd93665b4864c38e7d28ca6d3477170422e61b06dd856e"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "4108f3d4a1c7b42cc27501a1b37c48d8991f504f006e121d74dd8591d1c1e792"
+      "sha256": "4c0d9ed7663d99191da2f11258506f6b1180ccab68aa34a72e501545273f4f35"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3804,7 +3804,39 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p984b_cos_successor.py",
       "sha256": "5e190d02663da3b4815b05226993699384acf37105c1d184ada41e28c54dfaaf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleInputs.json",
+      "sha256": "14a5969be5ba4c16986994b78b4c7458e353ba29d0d112c745e728684abd04c7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleResults.json",
+      "sha256": "ece1109975bd8c4b17f1e79fe845c373465cbb85b33c71d8cc3af94dc0248b8b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md",
+      "sha256": "fe06b0713881ee0dae4f438d49c634d7380e5bc1a7b5d0b023d3670fd51bfd3c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984b_aos_oracle.py",
+      "sha256": "a69157835931b66bff4830079fc04ca39a3b0c3c68a6ce1a09681c4c8846ddc5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984b_aos_oracle.py",
+      "sha256": "a9d4be26ae74387f253c26daee26c0753b58aba86b17773ec9fc42b75bce6120"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSScientificPressure.json",
+      "sha256": "857f64ee0b4a6191f2c049768a6599cde5fcca942a24af286ebbaf054630d5d7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984b_aos_pressure.py",
+      "sha256": "3a9763a23b32a30431faddc38404dfeebedc8997ab4e9a24f362a4884621d728"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984b_aos_pressure.py",
+      "sha256": "97912366cccc79f6e37f8e6c511e093fe19b79b119f8ab730931549ebeb25bb0"
     }
   ],
-  "record_digest": "d58a87b275b732763be431c59babbcd06ffd44da6bff7a72577a9debf7427687"
+  "record_digest": "32d877bf0820c0c775bb1ab841bc2fd11ee8df9b5cd28d2c2a6252bdaf673934"
 }

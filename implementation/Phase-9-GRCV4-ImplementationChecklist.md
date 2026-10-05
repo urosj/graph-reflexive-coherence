@@ -2709,11 +2709,35 @@ the full ten-profile plan.
       recorded in the [runtime review](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md#scoped-user-acceptance).
     - [ ] P9-8.4b[A_OS]: 32 cells. A predictor/geometry/corrector and split
       admission, independent expansion oracle, W transfer/write and final read.
+      Selected next by the user after C_OS commit `0a79ece5`, before C_PC.
+
+      - [x] Prepare the [expanded independent oracle](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
+        for all sixteen layouts and both histories. All sixteen cases, 355
+        pointwise interval checks and eleven focused tests pass; no native
+        event/step or new runtime-cell closure is claimed.
+      - [x] Run focused scientific pressure: eight tests pass, including 36
+        wrong-law comparisons, sixteen nearby C/W probes, original-share
+        controls, split/resource/floor/history boundaries and lawful zero
+        effects. Output tolerances miss twelve subtle substitutions; separate
+        research stage-consumption checks reject those substitutions.
+        [Evidence and limits](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#focused-scientific-pressure).
+      - [x] Review and accept this new oracle scope before native comparison.
+        User acceptance on 2026-10-05 covers the expanded oracle and focused
+        scientific pressure, not native runtime cells. Exact records and limits
+        are bound in the [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#scoped-user-acceptance).
+      - [ ] Implement the A_OS runtime adapter and execute all 32 cells with
+        actual fresh identities, W/reference-current lineage, both-role atomic
+        admission, consumption checks, ten-step continuation and final reads;
+        review and accept the bounded results. Explicitly bind writer incoming
+        W/final C/selected corrector J and regenerated geometry to the actual
+        corrector source, with substitution-rejection tests: numerical budgets
+        and split admission alone do not establish those stage bindings.
+
     - [ ] P9-8.4b[C_CI]: 32 cells. Whole-domain self-map/contraction, joint
       current/geometry roots and output-error evidence for each target.
     - [ ] P9-8.4b[A_CI]: 32 cells. A joint-root/domain/error evidence and
       independent oracle, with transferred/written W and final reconstruction.
-    - [ ] P9-8.4b[C_PC]: 34 cells, next item. All sixteen shared layouts plus
+    - [ ] P9-8.4b[C_PC]: 34 cells. All sixteen shared layouts plus
       both histories of the literal C_PC reset fixture; base-chart/carrier
       envelope, actual old-Z read, one same-source Z write and loss handling.
     - [ ] P9-8.4b[A_PC]: 32 cells. A base-chart/carrier envelope, independent

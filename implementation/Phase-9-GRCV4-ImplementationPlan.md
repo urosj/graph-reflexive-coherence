@@ -2887,10 +2887,10 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | Family item | Applicable history cells | Additional realization-specific obligations | Status |
 | --- | ---: | --- | --- |
 | `P9-8.4b[C_OS]` | 32 | Predictor, generated geometry, fresh corrector and split admission; selector and poststate admission. | Accepted 2026-10-05 at the bounded scope below. |
-| `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Pending. |
+| `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Oracle and scientific pressure accepted 2026-10-05; native adapter/campaign next, runtime cells still open. |
 | `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | Pending. |
 | `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | Pending. |
-| `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | Pending; next item. |
+| `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | Pending. |
 | `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | Pending. |
 | `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | Pending. |
 | `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | Pending. |
@@ -2904,6 +2904,33 @@ success to siblings. A blocked/incomplete family stays open. **P9-8.4b closes
 only after all ten items and all 322 applicable cells are complete and
 accepted**, unless the user explicitly approves a recorded scope change.
 The `.c`–`.i` work remains separate; this breakdown does not close it.
+
+**Current A_OS preparation (2026-10-05).** After committing C_OS at `0a79ece5`,
+the user selects A_OS next, superseding the earlier C_PC recommendation.
+The [A_OS oracle extension](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
+binds all sixteen layouts and both histories. It reuses the accepted A.1
+100-digit equations and separate 60-digit interval evaluator; all 355 entry
+checks and eleven focused tests pass. The original D52 phase-three subject
+is unchanged. Both D52 phase-one requests separately bind `(1/4,1/2,1/4)`;
+their A equations are checked independently of C_OS. This is oracle-only work,
+not 32 completed native cells. The user accepts the expanded oracle and
+scientific pressure on 2026-10-05; the [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#scoped-user-acceptance)
+binds the exact records without rewriting their execution-time flags. The
+oracle prerequisite is satisfied; the native adapter/campaign is next.
+A_OS's runtime item and its parent stay open.
+
+The [focused scientific pressure](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#focused-scientific-pressure)
+adds eight passing tests without rerunning that campaign. Of 36 wrong-law
+controls, 24 exceed the frozen accuracy budgets; predictor-J history writes
+and predictor-H regeneration substitutions do not. Separate research
+consumption checks reject these substitutions. The native adapter must bind
+the actual writer operands (incoming W, final C, selected corrector J) and the
+regenerated geometry's actual corrector source, with negative substitution
+tests; small output errors are insufficient. Sixteen nearby C/W points pass;
+original phase-one shares fail current-role resources but not reset, and
+split/resource/floor/history boundary probes distinguish actual violations
+from an unavailable certificate. This adds bounded pressure, not uniform
+robustness, native execution or runtime acceptance.
 
 **Current `.b` execution (2026-10-05, C_OS accepted only).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds

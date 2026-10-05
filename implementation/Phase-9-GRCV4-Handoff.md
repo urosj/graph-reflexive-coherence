@@ -1,11 +1,69 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — 2026-10-05: P9-8.4b C_OS counterparts
+## Current work — 2026-10-05: P9-8.4b A_OS oracle accepted
+
+C_OS acceptance and the all-ten family breakdown are committed at `0a79ece5`
+on `work/p9-8-4b-runtime-counterparts`. The user selects **A_OS next**, replacing
+the earlier C_PC recommendation. The working branch is unchanged.
+
+The [A_OS oracle extension](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md)
+now covers all sixteen layouts × current/reset. Its bound
+[inputs](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleInputs.json) and
+[results](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleResults.json) record sixteen
+passing oracle cases, 355 complete-formula interval checks and zero native
+events/steps. Eleven focused tests pass. It reuses accepted A.1 equations;
+the original D52 phase-three target remains exact. The two phase-one D52
+requests use separately declared shares `(1/4,1/2,1/4)`, with independent A
+checks rather than transferred C evidence. All scalar parameters, dt and
+comparison budgets stay fixed.
+
+A separate [scientific pressure pass](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#focused-scientific-pressure)
+adds eight passing tests and [retained evidence](./phase-9-grcv4/tranche-8/P9-8.4b-AOSScientificPressure.json),
+without rerunning or changing the original campaign. Twenty-four of 36
+wrong-law controls fail the numerical gate; twelve subtle writer-J and
+regeneration substitutions fit within its tolerances. Separate research
+consumption checks reject those substitutions. Native checks must capture
+actual writer incoming W/final C/selected corrector J and the corrector source
+used for regeneration; output agreement cannot replace them. Sixteen nearby
+C/W points pass. The old phase-one shares produce negative current-role C
+but nonnegative reset C; split and resource probes also establish genuinely
+failing points. The floor probe distinguishes loss of the smooth certificate
+from a valid clipped law. No uniform robustness or native completion is claimed.
+
+The user accepts the expanded oracle and scientific pressure on 2026-10-05.
+The [scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleReview.md#scoped-user-acceptance)
+binds their exact record digests and satisfies the declared oracle prerequisite.
+Execution-time `user_accepted=false` flags remain historical; they do not undo
+this later decision. This acceptance does not close A_OS runtime cells.
+
+**Next:** implement the native A_OS adapter and campaign for its 32 cells.
+Actual source-step output must own
+fresh identities and history-policy hashes; nominal oracle identities cannot
+stand in for a rounded native source. Retain consumption observations for
+current, geometry, W writer, both-role admission and final reads. This boundary
+is the existing A-oracle-before-runtime requirement, now satisfied at this scope.
+Only C_OS's 32 cells are runtime-accepted; the remaining 290 remain open.
+
+`p984b_aos_oracle.py --check-retained` is an integrity/chain/bound check, not
+recomputation or native execution. Add `--recheck-numerics` for every interval
+enclosure; `--run-oracle --output <fresh-relative-file.json>` runs only the
+paper expectations and independent interval checks. See the review for portable
+commands and limits. This checkpoint records acceptance and prepares its commit;
+it does not start the native campaign. No production module, prior accepted
+oracle, C_OS evidence or public support changed.
+
+`p984b_aos_pressure.py --check-retained` checks retained integrity only.
+`--run --output <fresh-relative-file.json>` executes just the eight scientific
+pressure tests and preserves the original evidence; use the interpreter and
+repository-relative command prefix in the oracle review. Do not repeat the
+full campaign merely to check this accepted record.
+
+## Accepted checkpoint — 2026-10-05: P9-8.4b C_OS counterparts
 
 This supersedes the pre-merge branch instructions below. Accepted P9-8.4a is
 merged into `main` at `ec18481c`. The user requested a new branch and P9-8.4b;
 current work is on `work/p9-8-4b-runtime-counterparts`. The user accepts the
-bounded C_OS work on 2026-10-05; it is not yet committed. No production module,
+bounded C_OS work on 2026-10-05; it is committed at `0a79ece5`. No production module,
 frozen vector, accepted `.a` record or
 public support declaration changed.
 
@@ -49,8 +107,8 @@ two literal reset-fixture cells (34). Only C_OS is checked off. All ten items
 and all 322 applicable cells must be accepted to close `.b`; a first-family
 implementation or a missing sibling cannot close the parent.
 
-**Continue within P9-8.4b:** extend the adapter to C_PC's whole-carrier
-archive/reset/loss requirements and the other family-specific cases. New A
+**Earlier recommendation, superseded above:** C_PC's whole-carrier archive/
+reset/loss work remains required, but the user selects A_OS first. New A
 scientific scope retains oracle review before runtime comparison. P9-8.4c–i,
 P9-8.5, P9-8.6 and Tranche 9 retain their separate obligations.
 
