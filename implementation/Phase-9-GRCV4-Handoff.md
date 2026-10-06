@@ -1,5 +1,35 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b A_CI_PC
+
+Work follows accepted C_CI_PC commit `9670d97` on `work/p9-8-4b-cpc`.
+The [A composite review](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md)
+binds all sixteen layouts and both histories. All 32 cells pass: 320 target
+beats, 32 fresh final roots, 1,059 signed joint-root certificates and 388 effect
+controls across old Z, separate W/Z writers and complete next roots. The minimum
+effect margin is 3.597160 times the full-error/ULP threshold. The result
+digest is `2601d71f7918b440e7978dd6f66c976cea09190032ad4b4708f90981289e55a6`. No native case fails or times out.
+
+Sixteen focused methods and 159 existing native/generic methods pass (175 total),
+along with 17 frozen construction checks and 12 D11 side-tool checks. Independent
+interval recomputation passes all sixteen cases with native execution disabled;
+every recomputed case binds the final shared-source digest. The complete chart
+keeps R=2048, kappa_H=2^-15, geometry radius 1/8 and incoming W in [1/2,513/512].
+Both history writers retain their own source stages. No production model,
+accepted numerical declaration or tolerance changed.
+
+Side-tool verification passes fifteen source/API tests, ten browser logic
+tests, both notebook cells and the real HTTP desktop/mobile scenario, including
+failed-refresh clearing. The retained CLI command and current phase-boundary
+audit pass; handoff evidence verifies and the accepted release is unchanged.
+The user accepted this bounded result on 2026-10-06 and requested its commit.
+The separate [scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md#scoped-user-acceptance)
+preserves the raw execution and numerical-recheck flags. Coverage is now
+258/322 accepted, with 64 cells pending across C_RG2b and A_RG2b. Parent 8.4b
+and later work stay open. C_RG2b is the next unexecuted family after this work.
+Retained numerical commands and scientific claim limits are in the review;
+these checks do not repeat native trajectories.
+
 ## Accepted checkpoint — P9-8.4b C_CI_PC
 
 Work follows accepted A_PC commit `a6d16c2` on `work/p9-8-4b-cpc`.

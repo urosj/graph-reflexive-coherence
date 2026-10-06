@@ -2476,6 +2476,15 @@ the fixed-old-Z/same-root-source writer and complete next-root controls. Preserv
 identity and D10-CL-O-007/C-004/C-012 restrictions explicit across surfaces;
 normal status does not recompute interval equations or grant acceptance.
 
+The A_CI_PC successor was accepted on 2026-10-06: sixteen composite cases
+and 32 history cells bring coverage to 258/322, with 64 cells pending across
+C_RG2b and A_RG2b. Raw execution flags stay unchanged. Expose both
+authoritative histories, exact W lineage and whole-Z archive/reset, independent
+full chart/joint-root bounds, signed reads and both writer channels' next-root
+effects. Use the shared CLI/source routes and browser/notebook view, including
+the explicit numerical-recheck record and D10 claim limits. Normal status does
+not recompute intervals or grant acceptance.
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC

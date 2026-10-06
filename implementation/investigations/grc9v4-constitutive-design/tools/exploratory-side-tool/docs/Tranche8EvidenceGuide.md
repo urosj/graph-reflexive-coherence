@@ -5,9 +5,9 @@ all ten bounded 8.3 profile integrations, larger-configuration preparation,
 and current 8.4 coverage. It reads existing records; it does not create claims,
 accept results, authorize work or rerun models.
 
-With the separate C_CI_PC acceptance, C_OS, A_OS, C_CI, A_CI, C_PC, A_PC and
-C_CI_PC supply **226 of 322 accepted 8.4b history cells**. Three families own
-96 pending cells.
+With the separate A_CI_PC acceptance, C_OS, A_OS, C_CI, A_CI, C_PC, A_PC,
+C_CI_PC and A_CI_PC supply **258 of 322 accepted 8.4b history cells**.
+C_RG2b and A_RG2b own the remaining 64 pending cells.
 C_PC contributes 34 accepted cells, including the separate literal reset
 subject. Raw execution retains its original unaccepted flags; the separately
 pinned reviews record user acceptance. The A_PC successor contributes 32
@@ -63,7 +63,7 @@ from grcv4_explorer.tranche8 import tranche8_status, tranche8_source
 
 view = tranche8_status(root)
 assert len(view["profiles"]) == 10
-assert view["coverage"]["accepted_cells"] == 226
+assert view["coverage"]["accepted_cells"] == 258
 assert view["coverage"]["executed_pending_cells"] == 0
 raw, identity = tranche8_source(root, view["coverage"]["record"]["path"])
 ```
@@ -128,7 +128,7 @@ the original negative cases.
 
 | Scenario | Required outcome |
 | --- | --- |
-| Load API, actual notebook cell and browser | Same checked ten-profile view; 226/322 accepted, 96 pending |
+| Load API, actual notebook cell and browser | Same checked ten-profile view; 258/322 accepted, 64 pending |
 | Inspect original C_OS phase-one case | Event committed, case incomplete, first failure visible |
 | Inspect its successor | Separate input/result identity and scoped acceptance |
 | Inspect accepted C_CI execution | All case outcomes, exact sources and separate scoped acceptance; original timeout remains incomplete |
@@ -136,6 +136,7 @@ the original negative cases.
 | Inspect accepted C_PC execution | Seventeen cases, 34 cells and signed Read-Back/flat pressure; separate scoped acceptance |
 | Inspect accepted A_PC execution | Sixteen cases, both W/Z histories, signed-read certificates and consumer effects; 32 cells credited through separate scoped acceptance |
 | Inspect accepted C_CI_PC execution | Sixteen cases, composite chart/root certificates, signed vectors and carrier effects; 32 cells credited through separate scoped acceptance |
+| Inspect accepted A_CI_PC execution | Sixteen cases, full composite roots, exact W lineage and separate W/Z consumer controls; 32 cells credited through separate scoped acceptance |
 | Inspect a larger CI/PC pass or RG rejection | Probe outcome retained; larger-runtime acceptance remains false |
 | Alter counts, acceptance, source hash or runtime roster | Reject; no stale fallback or widened permission |
 | Request an unindexed or traversal path | Reject without reading it |
@@ -255,3 +256,27 @@ This successor passes fourteen source/API tests, nine browser logic tests, both
 notebook cells and the real HTTP desktop/mobile scenario. The explicit retained
 CLI command, complete independent numerical recomputation and current-boundary
 audit also pass. These checks preserve the separate user-acceptance decision.
+
+
+## Accepted A_CI_PC execution
+
+The [bounded A composite review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md)
+binds sixteen layouts and 32 history cells. Shared surfaces expose independent
+whole-chart admission, joint residual/full-root certificates, signed Read-Back,
+both-role exact W lineage, complete Z archive/reset and separate W/Z writer
+effects at their next-root consumers. Exact source routes include the numerical
+recheck. The separate scoped user decision of 2026-10-06 credits these 32
+cells: 258/322 are accepted, with 64 pending across C_RG2b and A_RG2b. Raw
+execution flags remain unchanged; parent 8.4b and later work remain open.
+
+Use `run.py tranche8-query verify-retained --family A_CI_PC` for retained
+structure, or add `--recheck-numerics` to recompute interval equations and
+counterfactual effect margins. Neither repeats native trajectories. The source
+review retains the gain-two, bounded-root, event-versus-continuation and
+no-endpoint/no-stability claim limits.
+
+
+This successor passes fifteen source/API tests, ten browser logic tests, both
+notebook cells and the real HTTP desktop/mobile scenario. The retained CLI
+command, complete independent numerical recomputation and current-boundary
+audit also pass, preserving the separate user-acceptance decision.

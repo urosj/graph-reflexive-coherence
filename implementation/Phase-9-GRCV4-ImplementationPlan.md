@@ -2893,7 +2893,7 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | [All seventeen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 34 cells, 340 target beats and 34 final reads. |
 | `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 32 cells, 320 target beats and 32 final reads. |
 | `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance) 2026-10-06: 32 cells, 320 target beats and 32 fresh final roots. |
-| `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | Pending. |
+| `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md#scoped-user-acceptance) 2026-10-06: 32 cells, 320 target beats and 32 fresh final roots. |
 | `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | Pending. |
 | `P9-8.4b[A_RG2b]` | 32 | A graph-specific completion and inverse/section/error bridges, K versus K-minus admission and W lifecycle. | Pending. |
 
@@ -3015,6 +3015,20 @@ branch, global root, endpoint hysteresis, arbitrary-graph or aggregate claim
 follows from this bounded campaign. The user accepted this result on
 2026-10-06. Separate acceptance brings coverage to **226/322**, with 96 cells
 pending across A_CI_PC, C_RG2b and A_RG2b; raw execution flags stay unchanged.
+
+**Accepted A_CI_PC successor.** The campaign following C_CI_PC commit `9670d97`
+passes all sixteen layouts and both histories. It preserves the native
+R=2048, kappa_H=2^-15, geometry radius 1/8, W in [1/2,513/512] and gain-two
+declaration. Complete composite chart proofs precede native comparison;
+1,059 signed joint-root certificates and 388 W/Z and complete-root controls
+pass, along with both-role event/history/reference transactions and independent
+numerical recomputation. The side-tool exposes the exact evidence.
+Incoming W and old Z stay fixed inside the root. The A writer uses refreshed C
+and selected J; the carrier writer uses that root's original source exactly once.
+The user accepted this bounded result on 2026-10-06. Separate acceptance brings
+coverage to **258/322**, with 64 cells pending across C_RG2b and A_RG2b; raw
+execution flags stay unchanged. No general root, arbitrary-graph, physical
+stability, endpoint or future-exhaustive claim follows.
 
 **Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds

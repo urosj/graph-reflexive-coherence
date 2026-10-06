@@ -10,7 +10,7 @@ test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', (
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);
   for(const row of evidence.profiles) assert.ok(content.includes(row.family));
-  for(const s of ['226/322','96 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
+  for(const s of ['258/322','64 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
   assert.ok(out.children.length > 20);
 });
 
@@ -49,7 +49,7 @@ test('A_CI acceptance is separately bound without widening scope', () => {
   assert.equal(evidence.coverage.families.find(r => r.family === 'A_CI').accepted_cells, 32);
   assert.equal(evidence.coverage.executed_pending_cells, 0);
   const out=element('div');renderTranche8(evidence,out,element);
-  assert.match(text(out), /226\/322/);
+  assert.match(text(out), /258\/322/);
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r => r.family === 'A_CI').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
@@ -112,5 +112,25 @@ test('C_CI_PC keeps composite execution separate from acceptance', () => {
   assert.match(text(out),/Signed reads, composite roots and carrier effects/);
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r=>r.family==='C_CI_PC').acceptance=null;
+  assert.throws(()=>checkedTranche8(forged));
+});
+
+
+test('A_CI_PC binds separate acceptance with both writer channels', () => {
+  const run=evidence.coverage.runs.find(r=>r.family==='A_CI_PC');
+  assert.equal(run.acceptance.anchor,'scoped-user-acceptance');
+  assert.equal(run.status,'accepted_bounded');
+  assert.equal(run.passed_cases,16);
+  assert.equal(run.stage_evidence.signed_read_certificates,1059);
+  assert.equal(run.stage_evidence.entry_W_Z_effects,288);
+  assert.equal(run.stage_evidence.final_root_effects,96);
+  assert.equal(run.stage_evidence.source_old_Z_effects,4);
+  const row=evidence.coverage.families.find(r=>r.family==='A_CI_PC');
+  assert.equal(row.accepted_cells,32);assert.equal(row.executed_pending_cells,0);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Separate scoped acceptance/);
+  assert.match(text(out),/Signed joint roots and separate W\/Z consumers/);
+  const forged=structuredClone(evidence);
+  forged.coverage.runs.find(r=>r.family==='A_CI_PC').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
 });

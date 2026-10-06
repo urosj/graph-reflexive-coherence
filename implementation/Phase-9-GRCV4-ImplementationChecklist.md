@@ -2836,8 +2836,30 @@ the full ten-profile plan.
         96 cells across three families remain pending.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md).
-    - [ ] P9-8.4b[A_CI_PC]: 32 cells. A composite contraction/slack and root
+    - [x] P9-8.4b[A_CI_PC]: 32 cells. A composite contraction/slack and root
       error, independent oracle, base chart and separate W/carrier lifecycle.
+      - [x] Bind all sixteen layouts and both roles to the accepted R=2048
+        composite declaration; independently prove full C/W/Z chart admission,
+        strict source slack, B_2R coverage and finite continuations.
+      - [x] Certify the joint current/geometry residual and full root errors,
+        including signed Read-Back/flat and fresh incoming-W descriptors.
+      - [x] Pressure one refreshed-C/incoming-W/selected-J mobility write and
+        one old-Z/same-root-source carrier write; resolve each next-root effect.
+      - [x] Verify exact W lineage, complete Z archive/reset/loss, fresh trigger
+        and reference currents, both-role readmission and late-fault rollback.
+      - [x] Execute 32 history cells, ten target beats per role and fresh final
+        roots; retain independent interval/error/effect recomputation.
+        All sixteen pass: 1,059 signed-root certificates and 388 effect controls;
+        independent numerical recomputation also passes every case.
+      - [x] Synchronize CLI/API/notebook/browser and source bindings; complete
+        scientific, side-tool and phase-boundary review before scoped acceptance.
+        Fifteen source/API tests, ten browser logic tests, both notebook cells
+        and real HTTP desktop/mobile verification pass.
+      - [x] User acceptance of the bounded A_CI_PC result (2026-10-06),
+        separately from unchanged raw execution. Accepted coverage is 258/322;
+        64 cells across C_RG2b and A_RG2b remain pending.
+        [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md#scoped-user-acceptance).
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md).
     - [ ] P9-8.4b[C_RG2b]: 32 cells. Graph-specific signed completion,
       every inverse-level residual/error, section/tail/input bounds, native
       current-L2/geometry bridges and K readmission versus K-minus step entry.

@@ -23,8 +23,8 @@ class EvidenceTests(unittest.TestCase):
         v = self.value
         self.assertEqual({r["family"] for r in v["profiles"]}, set(index.FAMILIES))
         c = v["coverage"]
-        self.assertEqual((c["accepted_cells"], c["required_cells"], c["pending_cells"]), (226, 322, 96))
-        self.assertEqual(sum(r["pending_cells"] > 0 for r in c["families"]), 3)
+        self.assertEqual((c["accepted_cells"], c["required_cells"], c["pending_cells"]), (258, 322, 64))
+        self.assertEqual(sum(r["pending_cells"] > 0 for r in c["families"]), 2)
         self.assertEqual(next(r["required_cells"] for r in c["families"] if r["family"] == "C_PC"), 34)
         failures = [r for run in c["runs"] for r in run["cases"] if not r["case_passed"]]
         self.assertEqual(len(failures), 2)
@@ -77,7 +77,7 @@ class EvidenceTests(unittest.TestCase):
         row = next(r for r in c["families"] if r["family"] == "A_CI")
         run = next(r for r in c["runs"] if r["family"] == "A_CI")
         self.assertEqual((row["accepted_cells"], row["executed_pending_cells"]), (32, 0))
-        self.assertEqual(c["accepted_cells"], 226)
+        self.assertEqual(c["accepted_cells"], 258)
         self.assertEqual(run["status"], "accepted_bounded")
         self.assertEqual(run["acceptance"]["anchor"], "scoped-user-acceptance")
         self.assertEqual(run["passed_cases"], 16)
@@ -163,6 +163,26 @@ class EvidenceTests(unittest.TestCase):
         original = Path.read_bytes
         with patch.object(Path, "read_bytes", lambda p: b"forged" if p == index.ROOT / ref["path"] else original(p)):
             with self.assertRaisesRegex(ValueError, "accepted C_CI_PC source drift"):
+                index.Sources(index.ROOT).raw(ref["path"])
+
+    def test_acipc_acceptance_is_separate_from_execution(self):
+        coverage = self.value["coverage"]
+        row = next(r for r in coverage["families"] if r["family"] == "A_CI_PC")
+        run = next(r for r in coverage["runs"] if r["family"] == "A_CI_PC")
+        self.assertEqual((row["accepted_cells"], row["executed_pending_cells"], row["pending_cells"]), (32, 0, 0))
+        self.assertEqual(run["status"], "accepted_bounded")
+        self.assertEqual(run["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(run["passed_cases"], 16)
+        ref = run["results"]
+        self.assertEqual(ref["basis"], "pinned_execution_with_separate_scoped_user_acceptance")
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+            self.assertEqual(actual, ref)
+            self.assertFalse(json.loads(raw)["user_accepted"])
+            self.assertFalse(json.loads(raw)["aggregate_closed"])
+        original = Path.read_bytes
+        with patch.object(Path, "read_bytes", lambda p: b"forged" if p == index.ROOT / ref["path"] else original(p)):
+            with self.assertRaisesRegex(ValueError, "accepted A_CI_PC source drift"):
                 index.Sources(index.ROOT).raw(ref["path"])
 
     def test_aci_compaction_restores_exact_accepted_execution(self):
