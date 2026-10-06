@@ -1,5 +1,223 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b A_RG2b and bounded all-ten closure
+
+Work follows accepted C_RG2b `5ff017c` and lossless-storage `ee34742` on
+`work/p9-8-4b-cpc`. The
+[bounded A_RG2b review](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md)
+records sixteen passing layouts and both histories: 32 cells, 320 target beats
+and 32 fresh final reads. Retained evidence contains 1,061 section certificates,
+4,244 C/Y inverse-level residual pairs, 321 ordinary bridges and 648 effect
+controls, with minimum complete-error/ULP margin 7.7280207576. The result digest
+is `91c634e6692afade225b637f3cdcd54f995c62fdc0d55cb26e9272121c1a6446`.
+
+All sixteen focused methods, 25 native A_RG2b methods, 29 unchanged research
+methods and twelve D11 checks pass. Independent interval recomputation passes
+all sixteen final cases with native numerical entry points disabled. It checks
+the coupled four-level C/Y chains, represented-log queries, distinct section
+and predecessor tails, signed reads, declared norm bridges, exact W lineage
+and single fresh-C/selected-J writer with composed next-read controls.
+Event admission on K remains distinct from ordinary entry on K-minus,
+including dt=0. Late/reference and reset-only history failures roll back.
+The accepted signed argument completion remains distinct from the paper's
+exterior completion; unresolved C1 debt and finite-horizon limits remain.
+No production model, accepted numerical declaration, paper or specification
+changed.
+
+The CLI retained check, seventeen source/API methods, twelve browser logic
+tests and both notebook cells pass. Real HTTP desktop/mobile verification
+also passes, including pending-review source identity, invalid-path rejection
+and failed-refresh clearing. The review includes the current phase-boundary
+audit command; artifact bindings cover the complete evidence and query surfaces.
+
+The complete result restores 46,110,769 exact JSON bytes from a 1,680,576-byte
+XZ archive. Fresh-directory restoration and all thirteen retained archives
+verify byte-for-byte. No Git-visible file exceeds 10 MB; incomplete runs and
+operational tracking records are not retained. The review gives the retained
+and independent numerical checking commands without native trajectory reruns.
+
+The user accepted A_RG2b on 2026-10-06 and requested its commit. The
+[separate scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance)
+preserves raw execution/recheck flags and credits the final 32 cells.
+Coverage is **322/322 accepted**, closing bounded P9-8.4b under its existing
+all-ten rule. Later 8.4c–i, 8.5 and 8.6 remain open; 8.4c is the next planned
+item. Earlier checkpoints below describe their historical coverage and storage
+populations. The pre-acceptance current phase-boundary audit passed.
+
+## Accepted checkpoint — P9-8.4b C_RG2b
+
+Work follows accepted A_CI_PC commit `7639c5c` on `work/p9-8-4b-cpc`.
+The [bounded signed-completion review](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md)
+binds all sixteen layouts and both histories: 32 cells, 320 target beats and
+32 fresh final reads pass. Retained evidence includes 1,061 signed-section
+certificates, 6,366 inverse-level residual pairs, 321 ordinary bridges and
+396 controls, with minimum full-error/ULP margin 4.393549. All final cases pass. The result digest is
+`171b63a39682c1292f4f17a6e1651f7f2ae148d367f1a5a80f5b2a04ad27f53d`.
+
+All sixteen focused methods, 78 native/generic regression methods (one optional
+32-vertex slow test skipped), 29 unchanged research methods, twelve recovery
+checks and twelve D11 checks pass. Complete independent
+numerical recomputation passes every case with native execution disabled and
+exact final shared-source/case digest binding. Source admission uses K;
+ordinary entry still requires K-minus, even at dt=0. Both-role reference/resource
+transfer and fresh sections are checked, with no W/Z state or history loss.
+The signed argument completion remains distinct from the paper's exterior
+compact-support construction. C1 debt and the finite-horizon claim limits remain.
+The final independent record binds all sixteen completed case checks.
+Operational journals, incomplete attempts and progress checkpoints are discarded.
+No production model or accepted numerical declaration changed.
+
+Side-tool verification passes sixteen source/API tests, eleven browser logic
+tests, both notebook cells and the real HTTP desktop/mobile scenario, including
+failed-refresh clearing. The retained CLI command and current phase-boundary
+audit pass; handoff evidence verifies and the accepted release is unchanged.
+The user accepted this bounded result on 2026-10-06 and requested its commit.
+The separate [scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance)
+preserves raw execution and numerical-recheck flags. Coverage is now
+290/322 accepted, with 32 A_RG2b cells pending and no executed cells awaiting
+acceptance. Parent 8.4b and later work stay open. A_RG2b is next. The review provides retained and numerical-recheck
+commands; neither repeats native trajectories. Accepted coverage depends only
+on the completed subjects and their checks.
+
+The user's storage maintenance request packs all twelve retained repository evidence
+files above 10 MB into 9.84 MB of byte-exact XZ archives (389.21 MB expanded).
+C_RG2b's final result is 1.24 MB in Git. Original paths are ignored local copies;
+current Phase 9 tools restore them, while standalone historical scripts first
+run `python scripts/evidence_storage.py restore`. The
+[storage guide](../docs/reference/EvidenceStorage.md) distinguishes scientific
+checks from identity/repeatability checks and sets retention rules for subsequent
+campaigns. A staged-blob check and GitHub workflow enforce the 10 MB file limit.
+The storage migration changes neither completed scientific payloads nor acceptance. Historical Git blobs
+remain in history; no history rewrite is part of this maintenance.
+
+## Accepted checkpoint — P9-8.4b A_CI_PC
+
+Work follows accepted C_CI_PC commit `9670d97` on `work/p9-8-4b-cpc`.
+The [A composite review](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md)
+binds all sixteen layouts and both histories. All 32 cells pass: 320 target
+beats, 32 fresh final roots, 1,059 signed joint-root certificates and 388 effect
+controls across old Z, separate W/Z writers and complete next roots. The minimum
+effect margin is 3.597160 times the full-error/ULP threshold. The result
+digest is `2601d71f7918b440e7978dd6f66c976cea09190032ad4b4708f90981289e55a6`. No native case fails or times out.
+
+Sixteen focused methods and 159 existing native/generic methods pass (175 total),
+along with 17 frozen construction checks and 12 D11 side-tool checks. Independent
+interval recomputation passes all sixteen cases with native execution disabled;
+every recomputed case binds the final shared-source digest. The complete chart
+keeps R=2048, kappa_H=2^-15, geometry radius 1/8 and incoming W in [1/2,513/512].
+Both history writers retain their own source stages. No production model,
+accepted numerical declaration or tolerance changed.
+
+Side-tool verification passes fifteen source/API tests, ten browser logic
+tests, both notebook cells and the real HTTP desktop/mobile scenario, including
+failed-refresh clearing. The retained CLI command and current phase-boundary
+audit pass; handoff evidence verifies and the accepted release is unchanged.
+The user accepted this bounded result on 2026-10-06 and requested its commit.
+The separate [scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md#scoped-user-acceptance)
+preserves the raw execution and numerical-recheck flags. Coverage is now
+258/322 accepted, with 64 cells pending across C_RG2b and A_RG2b. Parent 8.4b
+and later work stay open. C_RG2b is the next unexecuted family after this work.
+Retained numerical commands and scientific claim limits are in the review;
+these checks do not repeat native trajectories.
+
+## Accepted checkpoint — P9-8.4b C_CI_PC
+
+Work follows accepted A_PC commit `a6d16c2` on `work/p9-8-4b-cpc`.
+The [composite review](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md)
+binds all sixteen layouts and both histories. All 32 cells pass: 320 target
+beats, 32 fresh final roots, 1,059 signed joint-root certificates and 192
+same-root-writer/next-root effect controls. The minimum effect margin is
+8.866057 times the full-error/ULP threshold. Native case time totals 4047.8
+seconds, with no failure or timeout. The result digest is
+`92cb962a36558af35133baefdc7ef25bad6c6cbf834c2927191cefac8b68bf7b`.
+
+Ten focused methods and 154 existing native/generic methods pass, along with
+17 frozen construction checks and 12 D11 side-tool checks. Independent interval
+recomputation passes all sixteen saved cases with native execution disabled;
+the final shared source matches its separately checked digest. Production,
+accepted numerical inputs and tolerances are unchanged. The native chart keeps
+R=1, kappa_H=2^-16, geometry radius 2^-15, root tolerance 2^-44 and gain two. No global
+root, endpoint hysteresis, stability or arbitrary-graph claim is inferred.
+
+Side-tool verification passes fourteen source/API tests, nine browser logic
+tests, both notebook cells and the real HTTP desktop/mobile scenario, including
+failed-refresh clearing. The explicit retained CLI command and current
+phase-boundary audit also pass; handoff evidence verifies and the accepted
+release is unchanged. The user accepted this bounded result on 2026-10-06
+and requested its commit before A_CI_PC. The separate
+[scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance)
+preserves the raw execution and recheck flags. Accepted coverage is 226/322;
+96 cells remain pending across A_CI_PC, C_RG2b and A_RG2b. Parent 8.4b and later work stay open. A_CI_PC is the next unexecuted
+family after this work. The review provides retained checking and independent
+numerical recomputation commands; neither repeats native trajectories.
+
+## Accepted checkpoint — P9-8.4b A_PC
+
+The user selected A_PC after accepted C_PC commit `7820bbf`, continuing on
+`work/p9-8-4b-cpc`. The [A_PC review](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md)
+binds sixteen layout companions and both histories. It preserves A_PC's
+accepted R=2048 chart, coefficients, incoming W/Z and shares (1/4,3/8,3/8).
+Independent whole-chart proofs and both-role continuations precede native
+comparison. Exact W lineage and full carrier archive/reset remain separate.
+
+Eleven new pressure methods and 68 existing native A_PC/generic PC methods
+pass, including negative continuation, signed covariance, domain boundaries,
+replay and actual W/Z writer consumers. All seventeen literal allocator
+construction checks pass. All sixteen native cases pass: 32 history cells,
+320 target beats, 32 final reads, 1,059 signed-read certificates and 320
+consumer/read-path effects. The minimum effect margin is 7.565 times the
+full-error/ULP threshold. Native case time totals 839.4 seconds. No production
+change was required. Retained checking, thirteen source/API methods, eight
+browser logic tests, the two-cell notebook and real desktop/mobile HTTP
+browser checks pass. Full independent interval recomputation passes with
+native step/read/event entry points disabled; current phase-boundary
+verification also passes. The result digest is
+`0ff8d09fc6925e062167ad8f29632a6c847cefb9d2dfd881e75966f8207555f4`.
+The completed 18.30 MiB artifact replaces its temporary progress journal.
+The user accepted the bounded result on 2026-10-05 and requested its commit.
+The [separate scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance)
+preserves the original execution flags and scientific inputs.
+
+Accepted coverage is **194/322**, including A_PC's 32 cells; 128 cells across
+four families remain pending. Parent 8.4b and `.c`–`.i`, 8.5 and 8.6 stay open. The next
+unexecuted family at that checkpoint was C_CI_PC. Side-tool status remains source and
+structure inspection; `run.py tranche8-query verify-retained --family A_PC`
+checks the saved staged evidence, with `--recheck-numerics` for independent
+interval recomputation. Neither repeats native trajectories.
+
+## Accepted checkpoint — P9-8.4b C_PC
+
+Branch `work/p9-8-4b-cpc` starts from `dc9e4b3`. The
+[C_PC review](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md) records all
+seventeen native companions, including the separate literal reset subject.
+All 34 history cells pass: 340 target beats and 34 fresh final reads, with
+whole-carrier archives/reset/loss, actual old-Z/single-source writes,
+independent full-formula intervals and final read-path effect margins.
+Eight focused methods and 59 existing PC/native-C_PC methods pass, as do
+all seventeen frozen construction checks. No production change was needed.
+
+The review records the first attempt's final JSON serialization failure and
+the necessary replacement execution. Only the complete saved campaign gets
+positive evidence credit. The corrected runner validates and saves each
+case before starting another, without changing numerical inputs or budgets.
+Use `run.py tranche8-query verify-retained --family C_PC` for retained checks;
+add `--recheck-numerics` for interval recomputation. Neither repeats native
+trajectories. A separate signed Read-Back/flat supplement prevents outer-product
+sign blindness from standing in for direct intermediate checks.
+
+The user accepted bounded C_PC on 2026-10-05 and requested its commit.
+Accepted coverage at that checkpoint was **162/322**, including C_PC's
+**34 accepted cells**; five other families owned the remaining 160. Side-tool CLI/API/notebook/browser bind
+the separate decision while original execution flags remain unchanged.
+Parent 8.4b and later `.c`–`.i`, 8.5 and 8.6 stayed open. A_PC was the next
+unexecuted family; this acceptance started no new family. All 1,125 signed-stage
+certificates, twelve source/API methods, seven browser logic tests, the real
+desktop/mobile browser scenario, two notebook cells and the current phase
+boundary pass. The browser used an isolated font configuration after this
+machine's default produced zero-height text; no visibility check was weakened.
+Acceptance verification refreshes source bindings and shared views without
+rerunning native trajectories or interval equations.
+
 ## Accepted checkpoint — P9-8.4b A_CI
 
 C_CI acceptance is committed at `b8d1dd33`. The user selected A_CI next on
@@ -13,7 +231,7 @@ reads, without failure or timeout. One actual source beat supplies the event
 identities; no completed case was rerun. The result retains pointwise interval
 certificates and actual writer consumption, not a global trajectory bound.
 The user accepted this bounded result on 2026-10-05 and requested its commit.
-Accepted 8.4b coverage is now **128/322**, with 194 cells pending across six
+Accepted 8.4b coverage at that checkpoint was **128/322**, with 194 cells pending across six
 families. The shared CLI/API/notebook/browser view binds the separate decision
 and exact repository-relative source links. Ten source/API tests, six browser
 logic tests and the actual notebook pass without numerical reruns.

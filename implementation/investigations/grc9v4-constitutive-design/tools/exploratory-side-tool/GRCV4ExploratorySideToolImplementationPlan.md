@@ -2449,9 +2449,49 @@ checking remains opt-in and performs no native trajectory rerun.
 The A_CI successor reuses those shared access paths for its separately pinned
 execution and 2026-10-05 scoped user acceptance. Display all sixteen outcomes
 and the full-root/W-lifecycle scope, with raw execution flags unchanged.
-Accepted coverage is now 128/322, with 194 cells pending. Expose the A_CI
+Accepted coverage at that checkpoint was 128/322, with 194 cells pending. Expose the A_CI
 retained checker explicitly and distinguish interval recomputation from native
 execution. No other realization inherits its conformance.
+
+The C_PC successor adds seventeen named outcomes, including the literal reset
+subject, and signed Read-Back/flat pressure over every saved read. Expose the
+same source links and optional retained/interval checks through all surfaces.
+Bind the separate 2026-10-05 user acceptance of all 34 cells while preserving
+raw execution flags. Coverage at that checkpoint was 162/322, with 160 pending. Keep the whole-carrier loss, old-Z/single-source writer and
+bounded native declaration visible; do not widen D10/D11 scientific claims.
+
+The A_PC successor exposes sixteen cases and 32 history cells accepted through
+the separate 2026-10-05 decision. Accepted coverage is 194/322, with 128 pending
+across four families; raw execution flags stay unchanged. Reuse shared exact
+source routes for its independent whole-chart bounds, integrated signed-read
+certificates and W/Z effects at next-current consumers. Distinguish explicit
+retained checking and interval recomputation from normal status or native
+execution; keep D10/D11 claim limits and larger-runtime ownership unchanged.
+
+The C_CI_PC successor adds sixteen composite cases and 32 history cells
+accepted separately by the user on 2026-10-06. Reuse the shared source routes and checker command
+for independent all-layout contraction/slack bounds, signed root intermediates,
+the fixed-old-Z/same-root-source writer and complete next-root controls. Preserve
+226/322 accepted cells and all three pending family owners. Keep the gain-two
+identity and D10-CL-O-007/C-004/C-012 restrictions explicit across surfaces;
+normal status does not recompute interval equations or grant acceptance.
+
+The A_CI_PC successor was accepted on 2026-10-06: sixteen composite cases
+and 32 history cells bring coverage to 258/322, with 64 cells pending across
+C_RG2b and A_RG2b. Raw execution flags stay unchanged. Expose both
+authoritative histories, exact W lineage and whole-Z archive/reset, independent
+full chart/joint-root bounds, signed reads and both writer channels' next-root
+effects. Use the shared CLI/source routes and browser/notebook view, including
+the explicit numerical-recheck record and D10 claim limits. Normal status does
+not recompute intervals or grant acceptance.
+
+The C_RG2b successor binds sixteen signed-completion cases and the separate
+2026-10-06 scoped acceptance of all 32 history cells. Coverage is 290/322
+accepted, with 32 A_RG2b cells pending; raw execution flags stay unchanged. Expose actual
+inverse chains, complete section/tail/input errors, distinct current/geometry
+bridge norms and lagged invariance. Preserve the separately accepted completion,
+K versus K-minus and C1 debt restrictions across CLI/API/notebook/browser. Normal
+status checks source bindings and never reruns native or interval trajectories.
 
 ## ATC A_OS bounded research source admission
 

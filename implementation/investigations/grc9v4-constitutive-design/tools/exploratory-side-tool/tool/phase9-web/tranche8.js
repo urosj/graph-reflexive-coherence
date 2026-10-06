@@ -22,7 +22,7 @@ export function renderTranche8(value, container, create = tag => document.create
   const link = (parent, ref, label) => { const e = append(parent, 'a', label); e.href = sourceURL(ref); e.target = '_blank'; e.rel = 'noopener'; return e; };
   const details = (parent, label, data) => { const e = append(parent, 'details', ''); append(e, 'summary', label); append(e, 'pre', JSON.stringify(data, null, 2)); };
   const c = value.coverage;
-  append(container, 'p', `8.4b: ${c.accepted_cells}/${c.required_cells} accepted history cells; ${c.pending_cells} pending. Parent open. No new support or execution permission.`);
+  append(container, 'p', `8.4b: ${c.accepted_cells}/${c.required_cells} accepted history cells; ${c.pending_cells} pending. P9-8.4 remains open. No new support or execution permission.`);
   if (c.executed_pending_cells) append(container, 'p', `${c.executed_pending_cells} additional cells have passing execution evidence pending review and acceptance; they are not accepted coverage.`);
   append(container, 'p', `Check level: ${value.verification.level}. No native trajectory rerun or interval-equation recomputation. Historical 8.3 runs do not certify later code.`);
   append(container, 'h3', 'Shared mechanics and bounded profile integrations');
@@ -43,15 +43,21 @@ export function renderTranche8(value, container, create = tag => document.create
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
   append(container, 'h3', 'Recorded cases: event commit is not case success');
-  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI and A_CI also have pointwise interval checks. None is a uniform parameter tube.');
+  append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI, A_CI, C_PC, A_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b also have pointwise interval checks. Both RG2b families retain signed inverse chains and completion-relative section bounds. A_RG2b also checks scaled-log-W state, history lineage and the composed writer’s next read. None is a uniform parameter tube.');
   const supplements = append(container, 'p', 'Expanded A_OS oracle and pressure: ');
   for (const ref of c.oracle_and_pressure) { link(supplements, ref, ref.path.split('/').at(-1)); append(supplements, 'span', ' · '); }
   for (const run of c.runs) {
     const section = append(container, 'details', '');
     append(section, 'summary', `${run.family}: ${run.passed_cases} passed, ${run.incomplete_cases} incomplete — ${run.results.path.split('/').at(-1)}`);
     const p = append(section, 'p', `${run.status}. `); link(p, run.results, 'Exact execution'); append(p, 'span', ' · ');
+    link(p, run.inputs, 'Inputs and budgets'); append(p, 'span', ' · ');
     if (run.acceptance) link(p, run.acceptance, 'Separate scoped acceptance');
     else { link(p, run.review, 'Review pending acceptance'); append(p, 'span', ' · No accepted coverage credited.'); }
+    if (run.signed_stage_pressure) { append(p, 'span', ' · '); link(p, run.signed_stage_pressure, 'Signed Read-Back/flat checks'); }
+    if (run.pc_claim_restrictions) { link(p, run.claim_source, ' PC claim source'); details(section, 'PC claim restrictions', run.pc_claim_restrictions); }
+    if (run.rg_claim_restrictions) { link(p, run.claim_source, ' RG claim source'); details(section, 'RG completion and C1 claim restrictions', run.rg_claim_restrictions); }
+    if (run.stage_evidence) details(section, run.stage_evidence_label || 'Signed reads, W/Z effects and declared chart', run.stage_evidence);
+    if (run.numerical_recheck) { append(p, 'span', ' · '); link(p, run.numerical_recheck, 'Independent interval recomputation'); }
     if (run.original_attempt) {
       const original=append(section,'p','Original attempt retained: ');
       link(original,run.original_attempt.results,'Original execution and timeout');

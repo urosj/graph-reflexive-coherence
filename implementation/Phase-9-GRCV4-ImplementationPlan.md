@@ -2890,12 +2890,12 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | `P9-8.4b[A_OS]` | 32 | A predictor/geometry/corrector and split admission, W transfer/write and independent expansion oracle. | Oracle, scientific pressure and all 32 bounded native cells accepted 2026-10-05. |
 | `P9-8.4b[C_CI]` | 32 | Whole-domain self-map/contraction, joint current/geometry root and output error. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIRuntimeReview.md#scoped-user-acceptance) 2026-10-05; original timeout retained. |
 | `P9-8.4b[A_CI]` | 32 | A joint root, whole-domain self-map/contraction, output error and W lifecycle. | [Accepted by the user on 2026-10-05](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#scoped-user-acceptance): all sixteen cases and nine focused tests pass. |
-| `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | Pending. |
-| `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | Pending. |
-| `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | Pending. |
-| `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | Pending. |
-| `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | Pending. |
-| `P9-8.4b[A_RG2b]` | 32 | A graph-specific completion and inverse/section/error bridges, K versus K-minus admission and W lifecycle. | Pending. |
+| `P9-8.4b[C_PC]` | 34 | Whole base-chart/carrier envelope, old-Z read and one same-source Z write; shared cases plus literal reset fixture. | [All seventeen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 34 cells, 340 target beats and 34 final reads. |
+| `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 32 cells, 320 target beats and 32 final reads. |
+| `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance) 2026-10-06: 32 cells, 320 target beats and 32 fresh final roots. |
+| `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md#scoped-user-acceptance) 2026-10-06: 32 cells, 320 target beats and 32 fresh final roots. |
+| `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | [Accepted 2026-10-06](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance); all sixteen bounded cases pass. |
+| `P9-8.4b[A_RG2b]` | 32 | A graph-specific completion and inverse/section/error bridges, K versus K-minus admission and W lifecycle. | [Accepted 2026-10-06](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance); all sixteen bounded cases pass. |
 
 Family-specific prerequisites are those in the accepted coverage record;
 the table summarizes rather than replaces them. Reuse the shared harness and
@@ -2903,7 +2903,9 @@ accepted evidence at their actual scope, without copying C_OS numerical
 success to siblings. A blocked/incomplete family stays open. **P9-8.4b closes
 only after all ten items and all 322 applicable cells are complete and
 accepted**, unless the user explicitly approves a recorded scope change.
-The `.c`–`.i` work remains separate; this breakdown does not close it.
+That condition is satisfied by the final A_RG2b scoped acceptance on
+2026-10-06: **322/322 accepted**, closing bounded P9-8.4b. The `.c`–`.i` work
+remains separate and open.
 
 **A_OS oracle prerequisite (2026-10-05).** After committing C_OS at `0a79ece5`,
 the user selects A_OS next, superseding the earlier C_PC recommendation.
@@ -2960,14 +2962,116 @@ runtime/covariance cell.
 with 226 pending across seven families. Original failed execution remains
 recorded.
 
-**Current A_CI successor.** A_CI reuses its own accepted A.1 equations/domain
+**Accepted A_CI successor.** A_CI reuses its own accepted A.1 equations/domain
 and A.2 native recipe. The user accepted its bounded all-layout result on
 2026-10-05: sixteen cases, 32 history cells, 320 target steps and 32 fresh
 final reads, with nine focused scientific/lifecycle methods passing. The
 [separate decision](./phase-9-grcv4/tranche-8/P9-8.4b-ACIRuntimeReview.md#scoped-user-acceptance)
-leaves execution-time flags unchanged. Accepted coverage is **128/322**, with
+leaves execution-time flags unchanged. Accepted coverage at that checkpoint was **128/322**, with
 194 cells pending across six families. Side-tool access is synchronized;
 no production change, broader guarantee or parent 8.4b closure is inferred.
+
+**Accepted C_PC successor.** On branch `work/p9-8-4b-cpc`, retain all seventeen
+native companions and both histories. Substeps cover input/domain binding,
+independent full-formula and signed-intermediate pressure, whole-carrier
+archive/reset/loss, actual old-Z/single held-source write, the complete
+ten-beat/final-read campaign, and synchronized evidence access. Use the
+accepted native R=1 declaration, with explicit D52 phase-one companion
+shares. Native execution, retained checking, interval recomputation and user
+acceptance remain distinct. Do not infer endpoint hysteresis from carrier
+formation or read-path effects; the paper and side-tool retain that boundary.
+The user accepted this bounded result on 2026-10-05: all seventeen cases,
+34 history cells, 340 target beats and 34 final reads, plus 1,125 signed-stage
+certificates. The [separate decision](./phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md#scoped-user-acceptance)
+raised accepted coverage at that checkpoint to **162/322**, with 160 cells pending
+across five families. Source bindings and shared views are refreshed without a native
+rerun or interval recomputation; raw execution and scientific scope remain unchanged.
+
+**Accepted A_PC successor.** The user selected A_PC after C_PC commit
+`7820bbf`. Its content-specific substeps are independent all-layout chart and
+continuation proofs; separate W lineage and complete Z archive/reset; signed
+Read-Back/flat and actual dual-writer consumption/effect pressure; all 32 native
+history cells and fresh final reads; then synchronized side-tool access and
+scoped acceptance. Keep the accepted native R=2048, kappa_H=2^-14 declaration
+and (1/4,3/8,3/8) shares. Record the prescribed binary64 charge residuals against
+the existing tolerance, independently of exact simplex conservation. Passing
+execution and complete-chain W/Z effects do not imply endpoint hysteresis,
+indefinite positivity, arbitrary-graph support or aggregate closure.
+The user accepted all sixteen bounded cases on 2026-10-05. The
+[separate decision](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance)
+brings accepted coverage to **194/322**, with 128 cells pending across four
+families. Acceptance refreshes source bindings and shared views without
+numerical reruns or changes to raw execution flags or scientific scope.
+
+**Accepted C_CI_PC successor.** Work follows accepted A_PC commit `a6d16c2`.
+The work is one bounded campaign with content-specific substeps: all-layout
+composite admission and independent continuations; signed joint-root/error and
+same-source writer pressure; complete references and whole-carrier event
+transactions; sixteen native cases with both histories and fresh final roots;
+then synchronized evidence access and separate user acceptance. Keep old Z
+fixed inside each solve, rho_inst=1 and identity-bearing gain two. The accepted
+native R=1, kappa_H=2^-16 chart requires geometry radius 2^-15 and strict
+uniform source slack; do not substitute the earlier research chart. Independent
+full errors must resolve claimed effects at their actual consumers. No formed
+branch, global root, endpoint hysteresis, arbitrary-graph or aggregate claim
+follows from this bounded campaign. The user accepted this result on
+2026-10-06. Separate acceptance brings coverage to **226/322**, with 96 cells
+pending across A_CI_PC, C_RG2b and A_RG2b; raw execution flags stay unchanged.
+
+**Accepted A_CI_PC successor.** The campaign following C_CI_PC commit `9670d97`
+passes all sixteen layouts and both histories. It preserves the native
+R=2048, kappa_H=2^-15, geometry radius 1/8, W in [1/2,513/512] and gain-two
+declaration. Complete composite chart proofs precede native comparison;
+1,059 signed joint-root certificates and 388 W/Z and complete-root controls
+pass, along with both-role event/history/reference transactions and independent
+numerical recomputation. The side-tool exposes the exact evidence.
+Incoming W and old Z stay fixed inside the root. The A writer uses refreshed C
+and selected J; the carrier writer uses that root's original source exactly once.
+The user accepted this bounded result on 2026-10-06. Separate acceptance brings
+coverage to **258/322**, with 64 cells pending across C_RG2b and A_RG2b; raw
+execution flags stay unchanged. No general root, arbitrary-graph, physical
+stability, endpoint or future-exhaustive claim follows.
+
+**Accepted C_RG2b successor (2026-10-06).** Work followed A_CI_PC commit `7639c5c`
+as one bounded campaign with completion-specific checkpoints. Independently
+check the actual graph hypotheses and global contraction/containment before
+using each target. Retain all native six-level inverse chains, certify their
+full state/geometry residuals and tails, and resolve signed intermediates and
+lagged invariance in the declared norms. Separate K event readmission from
+K-minus ordinary entry, then execute both-role finite continuations and fresh
+final reads. The signed argument-retraction completion is the separately
+accepted R6/native construction; it does not inherit the paper's exterior
+compact-support property. Side-tool evidence must preserve the unresolved C1
+debt, completion-relative uniqueness and finite-horizon claim ceiling. The
+separate [scoped user acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance)
+credits all 32 C_RG2b cells without changing raw execution flags. Coverage is
+**290/322 accepted**, with **32 A_RG2b cells pending**; parent 8.4b remains open.
+
+**Accepted A_RG2b successor (2026-10-06).** Work follows
+accepted C_RG2b commit `5ff017c` and artifact-storage commit `ee34742`.
+The [bounded A review](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md)
+records all sixteen layouts passing both histories: 32 cells, 320 target beats
+and 32 fresh final reads. Independent native-disabled recomputation checks
+1,061 section certificates, 4,244 inverse-level residual pairs, 321 ordinary
+bridges and 648 effects. The four-level, eighteen-sweep recipe retains coupled
+C/Y residuals for `Y=512 log W`, represented-log query error, the section tail
+and the larger first-predecessor tail. Complete fresh-C/selected-J W writes,
+physical W lineage and composed next-read controls pass; current-L2, C/Y-sup
+and H-row-sum bounds remain distinct. Pressure covers both-role event
+readmission on K versus ordinary entry on K-minus, signed intermediates,
+history substitutions and late/reset-only rollback.
+
+Representative and largest D52 pilots separated native, independent-check and
+publication costs before execution. Shared context and compact step records
+retain the complete operands consumed by the independent checker; the final
+46.11 MB result is stored as 1.68 MB of byte-exact XZ. Only completed evidence
+is retained. Scientific review preserves the accepted signed completion,
+its distinction from the paper's exterior completion and unresolved C1 debt.
+CLI/API/notebook/browser expose execution separately from acceptance. The
+[scoped user decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance)
+credits these 32 cells without rewriting raw execution flags. Coverage is now
+**322/322 accepted**, with no pending cells, closing bounded parent P9-8.4b.
+P9-8.4c–i and later work remain open.
 
 **Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds
@@ -3037,6 +3141,16 @@ integration, disabled compatibility and branch crossing. The end-of-tranche
 performance/cache review remains separately scheduled. This planning split
 changes no runtime work-manifest entry or accepted scientific evidence.
 
+All remaining Tranche 8 campaigns must follow the
+[retention/storage rules](../docs/reference/EvidenceStorage.md): declare the
+consumer and budget for large traces before execution, store shared inputs once,
+and avoid repeated full successful journals. Suspended/incomplete runs and
+their tracking records are disposable working data and must not be published.
+The 10 MB Git-file limit applies
+now. Lossless packing preserves the current checked subjects; a future compact
+schema must preserve the operands needed by its independent checker. Evidence
+volume and repeated executions of the same checker are not independent proofs.
+
 #### End-of-Tranche-8 performance and cache review
 
 The user requests this review on 2026-10-02, after P9-8.6 and before Tranche 9.
@@ -3056,6 +3170,13 @@ projection/index/incidence reuse, and other measured mechanical or numerical
 recomputation. Do not assume that a reusable matrix, row summary or certificate
 remains valid after a change to topology, orientation, profile, parameters,
 resources, history, current/reset role, stage, context, duration or proof domain.
+
+Include the retained Tranche 8 CLI/API/browser paths: each status or source
+request currently rebuilds and authenticates the complete evidence index.
+The RG2b campaigns expose this cost even without native numerical reruns.
+Measure decompression/restoration, byte authentication, canonicalization and
+projection separately. Any reuse must still detect missing or changed sources,
+changed acceptance pins and stale generated views before exposing success.
 
 For every proposed cache, record the derived quantity and authoritative owner,
 the complete typed/content key or immutable-owner lifetime, invalidation and

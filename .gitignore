@@ -42,3 +42,24 @@ dist/
 # Local tool state
 .codex/
 .continue/
+
+# Expanded evidence; see artifact-storage.json
+/experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json
+/experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/conductance_retention_probe.json
+/experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/return_orbit_registry.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json
+
+# Operational progress is disposable working data, not repository evidence.
+*.progress.jsonl
+/implementation/phase-9-grcv4/tranche-8/*RecheckProgress/
+
+# Expanded evidence; see artifact-storage.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json

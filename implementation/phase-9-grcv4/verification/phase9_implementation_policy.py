@@ -231,6 +231,21 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json.xz",
+    "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/conductance_retention_probe.json.xz",
+    "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/return_orbit_registry.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz",
+    ".gitignore", ".github/workflows/artifact-size.yml",
+    "artifact-storage.json", "scripts/evidence_storage.py",
+    "tests/test_evidence_storage.py", "docs/reference/EvidenceStorage.md",
     SIDE + "README.md",
     HERE + "tranche8_evidence.py",
     HERE + "tranche8_source_reuse.py",
@@ -282,6 +297,52 @@ PATHS = {
     PHASE + "tranche-8/P9-8.4b-ACICases.json",
     PHASE + "tranche-8/P9-8.4b-ACIResults.json",
     PHASE + "tranche-8/P9-8.4b-ACIRuntimeReview.md",
+    HERE + "p984b_arg2b_runtime.py",
+    HERE + "p984b_arg2b_recheck.py",
+    HERE + "test_p984b_arg2b_runtime.py",
+    PHASE + "tranche-8/P9-8.4b-ARG2bCases.json",
+    PHASE + "tranche-8/P9-8.4b-ARG2bResults.json",
+    PHASE + "tranche-8/P9-8.4b-ARG2bResults.json.xz",
+    PHASE + "tranche-8/P9-8.4b-ARG2bNumericalRecheck.json",
+    PHASE + "tranche-8/P9-8.4b-ARG2bRuntimeReview.md",
+    HERE + "p984b_crg2b_runtime.py",
+    HERE + "test_p984b_crg2b_runtime.py",
+    HERE + "p984b_crg2b_recheck.py",
+    PHASE + "tranche-8/P9-8.4b-CRG2bCases.json",
+    PHASE + "tranche-8/P9-8.4b-CRG2bResults.json",
+    PHASE + "tranche-8/P9-8.4b-CRG2bNumericalRecheck.json",
+    PHASE + "tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
+    PHASE + "verification/p984b_crg2b_resume.py",
+    PHASE + "verification/p984b_crg2b_retry.py",
+    PHASE + "verification/test_p984b_crg2b_retry.py",
+    PHASE + "verification/test_p984b_crg2b_recovery.py",
+    HERE + "p984b_acipc_runtime.py",
+    HERE + "test_p984b_acipc_runtime.py",
+    HERE + "p984b_acipc_recheck.py",
+    PHASE + "tranche-8/P9-8.4b-ACIPCCases.json",
+    PHASE + "tranche-8/P9-8.4b-ACIPCResults.json",
+    PHASE + "tranche-8/P9-8.4b-ACIPCNumericalRecheck.json",
+    PHASE + "tranche-8/P9-8.4b-ACIPCRuntimeReview.md",
+    HERE + "p984b_ccipc_recheck.py",
+    PHASE + "tranche-8/P9-8.4b-CCIPCNumericalRecheck.json",
+    HERE + "p984b_ccipc_runtime.py",
+    HERE + "test_p984b_ccipc_runtime.py",
+    PHASE + "tranche-8/P9-8.4b-CCIPCCases.json",
+    PHASE + "tranche-8/P9-8.4b-CCIPCResults.json",
+    PHASE + "tranche-8/P9-8.4b-CCIPCRuntimeReview.md",
+    HERE + "p984b_apc_runtime.py",
+    HERE + "test_p984b_apc_runtime.py",
+    PHASE + "tranche-8/P9-8.4b-APCCases.json",
+    PHASE + "tranche-8/P9-8.4b-APCResults.json",
+    PHASE + "tranche-8/P9-8.4b-APCRuntimeReview.md",
+    HERE + "p984b_cpc_runtime.py",
+    HERE + "test_p984b_cpc_runtime.py",
+    PHASE + "tranche-8/P9-8.4b-CPCCases.json",
+    PHASE + "tranche-8/P9-8.4b-CPCResults.json",
+    PHASE + "tranche-8/P9-8.4b-CPCRuntimeReview.md",
+    HERE + "p984b_cpc_pressure.py",
+    HERE + "test_p984b_cpc_pressure.py",
+    PHASE + "tranche-8/P9-8.4b-CPCScientificPressure.json",
     HERE + "prepare_p984a_coverage.py",
     HERE + "test_p984a_coverage.py",
     PHASE + "tranche-8/P9-8.4a-Coverage.json",
@@ -2202,7 +2263,18 @@ def work_entries(root, approval):
     return result
 
 
+def restore_packed_evidence(root):
+    """Recreate ignored evidence bytes; no solver execution or acceptance change."""
+    spec = importlib.util.spec_from_file_location(
+        "repository_evidence_storage", Path(root) / "scripts/evidence_storage.py"
+    )
+    storage = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(storage)
+    return storage.restore(Path(root), prefix=PHASE)
+
+
 def current_boundary(root):
+    restore_packed_evidence(root)
     approval = acceptance(root)
     check_binding_reconciliation(root)
     policy = read(safe_path(root, POLICY))

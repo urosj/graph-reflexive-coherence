@@ -2011,6 +2011,78 @@ Ten focused source/API tests, six browser logic tests and the actual two-cell
 notebook pass. The real-browser scenario uses the checked coverage projection
 instead of stale fixed totals and opens any pending case details explicitly.
 
+### P9-8.4b C_PC evidence successor
+
+- [x] Add seventeen outcomes and the signed Read-Back/flat supplement to the
+  shared CLI/API/notebook/browser projection, with exact source retrieval.
+- [x] Bind separate user acceptance on 2026-10-05 for all 34 cells, including
+  the literal carrier-reset subject. Coverage at that checkpoint was 162/322,
+  with 160 pending; original execution flags remain unchanged.
+- [x] Add explicit retained/interval checking without native trajectory reruns.
+- [x] Finish source/API, browser, notebook and current-boundary verification:
+  twelve Python methods, seven browser logic tests, the real desktop/mobile
+  scenario, two notebook cells and the phase-boundary audit pass. The browser
+  scenario diagnoses a zero-height font environment before checking the UI.
+
+### P9-8.4b A_PC evidence successor
+
+- [x] Add sixteen outcomes, both W/Z histories and integrated signed-read
+  evidence to CLI/API/notebook/browser with exact source retrieval.
+- [x] Bind separate user acceptance on 2026-10-05 for all 32 cells. Accepted
+  coverage is 194/322, with 128 pending across four families; original execution
+  flags remain unchanged.
+- [x] Expose independent chart/consumer-effect summaries and an explicit
+  retained checker, with optional interval recomputation and no native rerun.
+- [x] Complete source/API, notebook, browser and current-boundary checks:
+  thirteen Python methods, eight browser logic tests, two notebook cells,
+  the real desktop/mobile HTTP scenario and phase-boundary audit pass.
+  The explicit A_PC retained command and full interval recomputation pass
+  without native trajectory reruns.
+
+### P9-8.4b C_CI_PC evidence successor
+
+- [x] Expose sixteen composite outcomes and 32 current/reset history cells
+  through the shared CLI/API/notebook/browser, with exact source retrieval.
+- [x] Bind the separate scoped user acceptance of 2026-10-06: 226/322
+  accepted cells, 96 pending across three families; preserve raw execution flags.
+- [x] Expose independent composite chart/root bounds, signed intermediate and
+  same-root-writer/next-root effects, retaining gain-two and claim restrictions.
+- [x] Provide explicit retained/interval checks and complete source/API,
+  browser, notebook and phase-boundary verification without native reruns.
+  Fourteen source/API tests, nine browser logic tests, both notebook cells
+  and the real HTTP desktop/mobile scenario pass. The shared retained CLI
+  command and full independent interval recomputation pass all sixteen
+  cases; current-boundary checking preserves separate acceptance.
+
+### P9-8.4b A_CI_PC evidence successor
+
+- [x] Expose sixteen A composite outcomes and 32 history cells through the
+  shared CLI/API/notebook/browser, with exact input/result/recheck sources.
+- [x] Bind the separate scoped user acceptance of 2026-10-06: 258/322
+  accepted cells, 64 pending across C_RG2b and A_RG2b; preserve raw execution flags.
+- [x] Expose full composite chart and joint-root bounds, signed intermediates,
+  separate W/Z writer/next-root effects and the gain-two claim restrictions.
+- [x] Complete retained/interval, source/API, browser, notebook and current
+  phase-boundary checks without repeating native trajectories. Fifteen source/
+  API tests, ten browser logic tests, both notebook cells and the real HTTP
+  desktop/mobile scenario pass. Explicit retained checking and complete
+  independent numerical recomputation pass all sixteen cases.
+
+### P9-8.4b C_RG2b evidence successor
+
+- [x] Expose sixteen signed-completion outcomes and 32 history cells through
+  shared CLI/API/notebook/browser with exact input/result/recheck sources.
+- [x] Bind the separate scoped user acceptance of 2026-10-06: 290/322
+  accepted cells, with 32 A_RG2b cells pending; preserve raw execution/
+  recheck flags. Bind completed results without retaining operational run history.
+- [x] Expose per-level inverse residuals, full section and signed-read errors,
+  Euclidean current/row-sum geometry bridges, lagged invariance and C1 limits.
+- [x] Complete retained/interval, source/API, browser, notebook and current
+  phase-boundary verification without repeating native trajectories. Sixteen source/
+  API tests, eleven browser logic tests, both notebook cells and the real HTTP
+  desktop/mobile scenario pass. Explicit retained checking and complete
+  independent numerical recomputation pass all sixteen cases.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

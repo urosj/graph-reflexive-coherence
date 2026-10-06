@@ -7443,8 +7443,8 @@ export const TRANCHE8_EVIDENCE = {
       {
         "work_id": "P9-8.4b",
         "title": "All-ten frozen expansion counterparts",
-        "status": "partial",
-        "accepted": false
+        "status": "accepted_bounded",
+        "accepted": true
       },
       {
         "work_id": "P9-8.4c",
@@ -7645,9 +7645,9 @@ export const TRANCHE8_EVIDENCE = {
       {
         "family": "A_PC",
         "required_cells": 32,
-        "accepted_cells": 0,
+        "accepted_cells": 32,
         "executed_pending_cells": 0,
-        "pending_cells": 32,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::reset",
@@ -7682,15 +7682,48 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "A_CI_PC",
         "required_cells": 32,
-        "accepted_cells": 0,
+        "accepted_cells": 32,
         "executed_pending_cells": 0,
-        "pending_cells": 32,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI_PC::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI_PC::reset",
@@ -7725,15 +7758,48 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI_PC::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_CI_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_CI_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_CI_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_CI_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "A_RG2b",
         "required_cells": 32,
-        "accepted_cells": 0,
+        "accepted_cells": 32,
         "executed_pending_cells": 0,
-        "pending_cells": 32,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::reset",
@@ -7768,8 +7834,41 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "C_OS",
@@ -7926,9 +8025,9 @@ export const TRANCHE8_EVIDENCE = {
       {
         "family": "C_PC",
         "required_cells": 34,
-        "accepted_cells": 0,
+        "accepted_cells": 34,
         "executed_pending_cells": 0,
-        "pending_cells": 34,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-C-PC-CARRIER-RESET::C_PC::current",
           "G9-EXPAND-C-PC-CARRIER-RESET::C_PC::reset",
@@ -7965,15 +8064,50 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_PC::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_PC::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-C-PC-CARRIER-RESET::C_PC::current",
+          "G9-EXPAND-C-PC-CARRIER-RESET::C_PC::reset",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_PC::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_PC::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "C_CI_PC",
         "required_cells": 32,
-        "accepted_cells": 0,
+        "accepted_cells": 32,
         "executed_pending_cells": 0,
-        "pending_cells": 32,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI_PC::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI_PC::reset",
@@ -8008,15 +8142,48 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI_PC::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI_PC::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI_PC::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI_PC::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "C_RG2b",
         "required_cells": 32,
-        "accepted_cells": 0,
+        "accepted_cells": 32,
         "executed_pending_cells": 0,
-        "pending_cells": 32,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_RG2b::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_RG2b::reset",
@@ -8051,8 +8218,41 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_RG2b::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_RG2b::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_RG2b::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_RG2b::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_RG2b::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_RG2b::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::reset"
+        ],
+        "status": "accepted_bounded"
       }
     ],
     "runs": [
@@ -8977,6 +9177,2419 @@ export const TRANCHE8_EVIDENCE = {
           }
         ],
         "status": "accepted_bounded"
+      },
+      {
+        "family": "C_PC",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCCases.json",
+          "sha256": "c23e2a9a2a9d653f433316a57e7b7d3c1c3de557d7d8d507f136d6310ad4271e",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json",
+          "sha256": "9ca4dae9633e8d91154c8f5f1a9a4454f3dd5a3e83456edb5a27cf5664bc080a",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "58ce40b25febdc95c9ec7d1212c744c7d31df707d639eb6f64be1333818bc129",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md",
+          "sha256": "4343ca0bc237f1627c2a8a7a724f04b4174b5bc69fc95c6aab3a3cfa1f0f1d27",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md",
+          "sha256": "4343ca0bc237f1627c2a8a7a724f04b4174b5bc69fc95c6aab3a3cfa1f0f1d27",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "signed_stage_pressure": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCScientificPressure.json",
+          "sha256": "59d0ed4fd9351e783e71e0a462ff0f8df669524871ecf4f1f0b88d9f4a7a4a2e",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "passed_cases": 17,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CPC-G9-EXPAND-C-PC-CARRIER-RESET",
+            "cells": [
+              "G9-EXPAND-C-PC-CARRIER-RESET::C_PC::current",
+              "G9-EXPAND-C-PC-CARRIER-RESET::C_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded",
+        "pc_claim_restrictions": {
+          "D10-CL-O-006": "scalar_ZOH_PC_only",
+          "D10-CL-C-004": "no_committed_endpoint_hysteresis_inferred",
+          "D10-CL-C-012": "no_universal_realization_or_graph_support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        }
+      },
+      {
+        "family": "A_PC",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json",
+          "sha256": "b0f2b8eb1718c23579f208573eec1e9e463c6b740beeaf68b925ec2728c91163",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json",
+          "sha256": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "0ff8d09fc6925e062167ad8f29632a6c847cefb9d2dfd881e75966f8207555f4",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md",
+          "sha256": "5e8f762b3a323980eac6255be62030793aa68502a3b5f6a7e1d83296a3238b56",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md",
+          "sha256": "5e8f762b3a323980eac6255be62030793aa68502a3b5f6a7e1d83296a3238b56",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "stage_evidence": {
+          "signed_read_certificates": 1059,
+          "target_beats": 320,
+          "fresh_final_reads": 32,
+          "entry_W_Z_effects": 256,
+          "minimum_W_Z_effect_margin": 7.564892445615027,
+          "independent_source_chart": {
+            "carrier_radius": "2048",
+            "geometry_radius": "1/8",
+            "resource_radius": "16",
+            "weight_lower": "1/2",
+            "weight_upper": "513/512",
+            "hodge_lower": "7/8",
+            "hodge_upper": "9/8",
+            "current_margin_lower": "31/32",
+            "current_condition_upper": "33/31",
+            "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+            "conductance_exponent_absolute_upper": "91834804879905728083141403965245352151828445106208953591710982543700426476078316470715666401866301241832302851791520531990573663276345/5456968859750611107952345151409159043076948028285255124457125636035893405288870346222418747936928019561662369247045289016615251289833472",
+            "current_norm_upper": "9530578373543190701091981371942657172572271401580715391692099250475/12752660319239346826701011164819466413616202958660243940951719936",
+            "source_frobenius_upper": "90831924134249170225778946432063913142958645134312001843552617371687452494570063822609375373751199476948864586129794493958056787725625/63751095325417505333343723397028158452694524141783118509864605943145460333622609845375661527850502242689479850078873434499298885632"
+          },
+          "resource_recipe": "accepted [1/4,3/8,3/8] shares on every layout, independently checked"
+        },
+        "pc_claim_restrictions": {
+          "D10-CL-O-006": "scalar_ZOH_PC_only",
+          "D10-CL-C-004": "no_endpoint_hysteresis_inferred",
+          "D10-CL-C-012": "no_universal_realization_or_graph_support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-APC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded"
+      },
+      {
+        "family": "C_CI_PC",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCCases.json",
+          "sha256": "0c489a674c35cad9c3f5a64f3fe970414fadf950a7c2aa378ef740f3b3a6978f",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json",
+          "sha256": "6ae474557161f9d9e6d3c5d350b023f2742eeb1cafa8c24733c39beafe132db2",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "92cb962a36558af35133baefdc7ef25bad6c6cbf834c2927191cefac8b68bf7b",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md",
+          "sha256": "5d3cd84eb1a6c2b91ab9326818cdd7d372088d160bf87d25131683ab39919e3e",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md",
+          "sha256": "5d3cd84eb1a6c2b91ab9326818cdd7d372088d160bf87d25131683ab39919e3e",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "stage_evidence": {
+          "signed_read_certificates": 1059,
+          "target_beats": 320,
+          "fresh_final_reads": 32,
+          "same_root_writer_effects": 32,
+          "final_root_effects": 160,
+          "minimum_effect_margin": 8.866057038021479,
+          "independent_source_chart": {
+            "reference_gap_lower": "205688069665150755269371147819668813122841983204197482918576128/238598160811574876112470531470815823222496700516869080185548633",
+            "selector_gap_lower": "105070479631657093841254473228014934170467554294044676588454826151/122162258335526336569584912113057701489918310664636969055000900096",
+            "hodge_lower": "32767/32768",
+            "hodge_upper": "32769/32768",
+            "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+            "current_upper": "20905064420732465649575956402653876500008672754729975080691910952546196676877534880715562030940238776998970162380006094779305/41315997433715401988472702192452105699774332331531267436035580603436605735781612783434362557641661596564068367659022942208",
+            "source_upper": "4514272637527731121314179463994348082003163582585943352026077512739720927246805530525158413898424812775526771193315730075054529584227221927810867664223131274281761507011419125480407287900018359980647310931175007723912276003717761660081070605115655294835423586347871551866666819300821627815275733241874692318006437033811115780595981984168560547938705496295867618941351025/73948290295921867019436222880526607705260049389055174133878520520233941416907969380167642516517302144409454567075012813797733903839519011103485713272987466226315651917972799938137718112757159774647281792244935617411156719054289568546419568782956150218649436095894889777671033014720691663121784391612015060739799654397521979055955349804566520858209061497225699234219556864",
+            "contraction_upper": "572960992040622526530153511450519485883371253682478313299622803580868675275091287044168553031674908464469193866386044740110239652620982766594389092581993364022798202412667312517751546163539125059270480845582742792162050918832967068406919327501501050662810761417757759285569323511159141983736724802756252775739716815410048626806391624260548369077484317740758818865388558295898099046528722350545122446871493860093541160926356584361010542081915117229844593801864294925671428542884377901517625715675/25628490404199024822481590800911695186752884609555347797351955079969706474592564905111669202167274593192292555829221499172873577699509583996815038963584828076954815076653238855511459724385577226407103751215294188608478113902638958334855774580208174952428191323979117228906266067298146597766261616202468693980160929400137590884987042618601996015845931386321852371504633101639985653497061483553496193645584911531938385569598645692131056958952923162635432486262450013734077037153417058859266380476186624",
+            "displacement_upper": "78462562933449598140750402344520955787263212971641117485904598032973662344154774910692800930415726957184981338268328543872788433423746233031296580937210597500597413424984219063618125400657178134627929103176110625135068995058007330206500639388071805513484859682242761329537699834021513290937060124853889753057806091431333094836551331788735081406147766993521566853160907889/4846275152833535476985772302698191762571922596761119892037862720814051584698480681298666619962477913336018014507828039765048289122026717911678039705058506586607822564096265416745793494237653222991284259536564100622657566739941921164258152859759814260729409443980567496469448819652735248834349261888685019020643510150596000419411089804792071510963589054282183425013812878639104",
+            "source_slack": "69434017658394135898122043416532259623256885806469230781852443007494220489661163849642484102618877331633927795881697083722679374255291789175674845608764334952033890410961380812657310824857141414666634481313760609687244443050571806886338498177840494923814012509547018225804366195419870035306508658370140368421793217363710863275359367820397960310270356000929831615278205839/73948290295921867019436222880526607705260049389055174133878520520233941416907969380167642516517302144409454567075012813797733903839519011103485713272987466226315651917972799938137718112757159774647281792244935617411156719054289568546419568782956150218649436095894889777671033014720691663121784391612015060739799654397521979055955349804566520858209061497225699234219556864",
+            "root_radius": "1/32768",
+            "carrier_radius": "1",
+            "dimension": "9"
+          },
+          "independent_target_charts": {
+            "P984B-CCIPC-G9-EXPAND-D30-CHIRALITY-POSITIVE": {
+              "reference_gap_lower": "205688069665150755269371147819668813122841983204197482918576128/1310805035676729961095341575158481134516572875212548456232605413",
+              "selector_gap_lower": "14856896108113134108038800312046752694167639731335571030343967053/95876025466640820011544983783020334410355044586974972798727710208",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "391785671266003467833856123622754549752465616025042375121275993787778572256685220283529847209253264239709759706781802972188021/1322111917878892863631126470158467382392778634609000557953138579309971383545011609069899601844533171090050187765088734150656",
+              "source_upper": "32358306265798776677580038397911487051798676559976041947322927545901982771883043568413023034139360052011565293741494560227884713828887637596964380413891589789034910849588342701363735522398019709680184412012450778597332890628477973340153753873486486390995959694034925217051310173558274929715042386055774066426172687604756380405916196141038409987586801733266218874371006889/1545368352306612078120463106727739720207883481110050985981461326790195020630893074393707468100279946854597581156832920843446520765952397293264681028398758477872392399265390757890878027499251665494669725617526817800592336332889643228398645682321369343344837195146864635353778322593346699245647086061442926983623568287817602174557107718364818721608287325982839102364098494464",
+              "contraction_upper": "6160466116745186471891523726133385420106116409918810043464925884420832346330087764035325076182737094032168488218104838171793681629611869575033756979775932325202014082284756574067261477283877430525398921039919017183794041940546063584509403159055299265587905106371251920649483560889320735683002216576219778485399208470215582061444405225391495274649575486214920754050873649731835712600475596118235108190838261841518297593782912539829370014513707814883205991608023113929267732937247239971468861307537/1071166292812236792580455060413615341683059340415701067121975591913835895101338222972830582164052619731792146006902972047062144635277461796438310199947382202073540026060935370940560602357993105299627520050794336699391085250461318095301727068168700863317815016969576164995919038894420494535210281428217467046354481294111873186376601291487691588580662601616064360343703848819565114660448610577909391930329753037089996196868122987295600094937460951777089096568683625063824281063065268092730154024800616448",
+              "displacement_upper": "1577726658572410854798043145125651207259682157670027027928784254336097003402776117962120491134419306906609146450574415403674405479781284930861645408812650067661427310114979100592241763021649685204349910029539268579189669223518121201738799436194855829735833154840899560570829632766904974175362128447498701050049740975422358554963023914505857131595874127716105321238469501353/101277260336766129151702670162509150303543851818028301417281049512522220872066208523466012629419946597062907078694202300396111184917456309011394135877141035605845108278256648709136582410190957149858675138070237531379619353912255658616333643436613261285447250421144920742545216149477569281762727432122723662798754171310414376111774611430756759739320718195611343412533558933192704",
+              "source_slack": "1513010046040813301442883068329828233156084804550074944034138399244293037859010030825294445066140586802586015863091426283218636052123509655667716647984866888083357488415802415189514291976853645784989541205514367021995003442261165255058491928447882856953841235452829710136727012419788424315932043675387152917197395600212845794151191522223780311620700524249572883489727487575/1545368352306612078120463106727739720207883481110050985981461326790195020630893074393707468100279946854597581156832920843446520765952397293264681028398758477872392399265390757890878027499251665494669725617526817800592336332889643228398645682321369343344837195146864635353778322593346699245647086061442926983623568287817602174557107718364818721608287325982839102364098494464",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "12"
+            },
+            "P984B-CCIPC-G9-EXPAND-D30-CHIRALITY-NEGATIVE": {
+              "reference_gap_lower": "205688069665150755269371147819668813122841983204197482918576128/1310805035676729961095341575158481134516572875212548456232605413",
+              "selector_gap_lower": "14856896108113134108038800312046752694167639731335571030343967053/95876025466640820011544983783020334410355044586974972798727710208",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "391785671266003467833856123622754549752465616025042375121275993787778572256685220283529847209253264239709759706781802972188021/1322111917878892863631126470158467382392778634609000557953138579309971383545011609069899601844533171090050187765088734150656",
+              "source_upper": "32358306265798776677580038397911487051798676559976041947322927545901982771883043568413023034139360052011565293741494560227884713828887637596964380413891589789034910849588342701363735522398019709680184412012450778597332890628477973340153753873486486390995959694034925217051310173558274929715042386055774066426172687604756380405916196141038409987586801733266218874371006889/1545368352306612078120463106727739720207883481110050985981461326790195020630893074393707468100279946854597581156832920843446520765952397293264681028398758477872392399265390757890878027499251665494669725617526817800592336332889643228398645682321369343344837195146864635353778322593346699245647086061442926983623568287817602174557107718364818721608287325982839102364098494464",
+              "contraction_upper": "6160466116745186471891523726133385420106116409918810043464925884420832346330087764035325076182737094032168488218104838171793681629611869575033756979775932325202014082284756574067261477283877430525398921039919017183794041940546063584509403159055299265587905106371251920649483560889320735683002216576219778485399208470215582061444405225391495274649575486214920754050873649731835712600475596118235108190838261841518297593782912539829370014513707814883205991608023113929267732937247239971468861307537/1071166292812236792580455060413615341683059340415701067121975591913835895101338222972830582164052619731792146006902972047062144635277461796438310199947382202073540026060935370940560602357993105299627520050794336699391085250461318095301727068168700863317815016969576164995919038894420494535210281428217467046354481294111873186376601291487691588580662601616064360343703848819565114660448610577909391930329753037089996196868122987295600094937460951777089096568683625063824281063065268092730154024800616448",
+              "displacement_upper": "1577726658572410854798043145125651207259682157670027027928784254336097003402776117962120491134419306906609146450574415403674405479781284930861645408812650067661427310114979100592241763021649685204349910029539268579189669223518121201738799436194855829735833154840899560570829632766904974175362128447498701050049740975422358554963023914505857131595874127716105321238469501353/101277260336766129151702670162509150303543851818028301417281049512522220872066208523466012629419946597062907078694202300396111184917456309011394135877141035605845108278256648709136582410190957149858675138070237531379619353912255658616333643436613261285447250421144920742545216149477569281762727432122723662798754171310414376111774611430756759739320718195611343412533558933192704",
+              "source_slack": "1513010046040813301442883068329828233156084804550074944034138399244293037859010030825294445066140586802586015863091426283218636052123509655667716647984866888083357488415802415189514291976853645784989541205514367021995003442261165255058491928447882856953841235452829710136727012419788424315932043675387152917197395600212845794151191522223780311620700524249572883489727487575/1545368352306612078120463106727739720207883481110050985981461326790195020630893074393707468100279946854597581156832920843446520765952397293264681028398758477872392399265390757890878027499251665494669725617526817800592336332889643228398645682321369343344837195146864635353778322593346699245647086061442926983623568287817602174557107718364818721608287325982839102364098494464",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "12"
+            },
+            "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1": {
+              "reference_gap_lower": "205688069665150755269371147819668813122841983204197482918576128/1408333619850164865160694287622426261279867048265474602432318801",
+              "selector_gap_lower": "103900744172618503852206249471863323732410183946296071066208055983/721066813363284410962275475262682245775291928711922996445347226112",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "13"
+            },
+            "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2": {
+              "reference_gap_lower": "205688069665150755269371147819668813122841983204197482918576128/1408333619850164865160694287622426261279867048265474602432319815",
+              "selector_gap_lower": "103900744172618503852206249471863323732410183946296071066208054969/721066813363284410962275475262682245775291928711922996445347745280",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "13"
+            },
+            "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3": {
+              "reference_gap_lower": "25711008708143844408671393477458601640355247900524685364822016/176041702481270608145086785952803282659983381033184325304040025",
+              "selector_gap_lower": "12987593021577312981525781183982915466551272993287008883276006823/90133351670410551370284434407835280721911491088990374555668492800",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "13"
+            },
+            "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1": {
+              "reference_gap_lower": "205688069665150755269371147819668813122841983204197482918576128/1408333619850164865160694287622426261279867048265474602432318801",
+              "selector_gap_lower": "103900744172618503852206249471863323732410183946296071066208055983/721066813363284410962275475262682245775291928711922996445347226112",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "13"
+            },
+            "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2": {
+              "reference_gap_lower": "205688069665150755269371147819668813122841983204197482918576128/1408333619850164865160694287622426261279867048265474602432319815",
+              "selector_gap_lower": "103900744172618503852206249471863323732410183946296071066208054969/721066813363284410962275475262682245775291928711922996445347745280",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "13"
+            },
+            "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3": {
+              "reference_gap_lower": "25711008708143844408671393477458601640355247900524685364822016/176041702481270608145086785952803282659983381033184325304040025",
+              "selector_gap_lower": "12987593021577312981525781183982915466551272993287008883276006823/90133351670410551370284434407835280721911491088990374555668492800",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "13"
+            },
+            "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE": {
+              "reference_gap_lower": "102844034832575377634685573909834406561420991602098741459288064/792220455819682205842187311524193163043446075934916867803597169",
+              "selector_gap_lower": "51862318440414652152841284568218681833801579421345855966516590223/405616873379677289391199903500386899478244390878677436315441750528",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "15"
+            },
+            "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE": {
+              "reference_gap_lower": "102844034832575377634685573909834406561420991602098741459288064/792220455819682205842187311524193163043446075934916867803597169",
+              "selector_gap_lower": "51862318440414652152841284568218681833801579421345855966516590223/405616873379677289391199903500386899478244390878677436315441750528",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "15"
+            },
+            "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1": {
+              "reference_gap_lower": "102844034832575377634685573909834406561420991602098741459288064/1070787892080343637725843916590628821257147971386557484605564329",
+              "selector_gap_lower": "51583751004153990720957627963152246175587877525894215349714623063/548243400745135942515632085294401956483659761349917432118048936448",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "16"
+            },
+            "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2": {
+              "reference_gap_lower": "102844034832575377634685573909834406561420991602098741459288064/1070787892080343637725843916590628821257147971386557484605566037",
+              "selector_gap_lower": "1663991967875935184547020256875878908889931533093361785474665205/17685270991778578790826841461109740531730960043545723616711284224",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "16"
+            },
+            "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3": {
+              "reference_gap_lower": "6427752177035961102167848369364650410088811975131171341205504/66924243255021477357865244786914301328571748211659842787847995",
+              "selector_gap_lower": "3223984437759624420059851747697015385974242345368388459357163717/34265212546570996407227005330900122280228735084369839507378173440",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "16"
+            },
+            "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1": {
+              "reference_gap_lower": "102844034832575377634685573909834406561420991602098741459288064/1070787892080343637725843916590628821257147971386557484605564329",
+              "selector_gap_lower": "51583751004153990720957627963152246175587877525894215349714623063/548243400745135942515632085294401956483659761349917432118048936448",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "16"
+            },
+            "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2": {
+              "reference_gap_lower": "102844034832575377634685573909834406561420991602098741459288064/1070787892080343637725843916590628821257147971386557484605566037",
+              "selector_gap_lower": "1663991967875935184547020256875878908889931533093361785474665205/17685270991778578790826841461109740531730960043545723616711284224",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "16"
+            },
+            "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3": {
+              "reference_gap_lower": "6427752177035961102167848369364650410088811975131171341205504/66924243255021477357865244786914301328571748211659842787847995",
+              "selector_gap_lower": "3223984437759624420059851747697015385974242345368388459357163717/34265212546570996407227005330900122280228735084369839507378173440",
+              "hodge_lower": "32767/32768",
+              "hodge_upper": "32769/32768",
+              "current_margin_lower": "215679570123230948628116803126907414075924255347230302761905859119089/215679573337205118357336120696157045389097155380324579848828881993728",
+              "current_upper": "3519634456001510183418081637613118935622152526252579139262929716915693821863093912791878079418898937097476491093740048986087/9721411160874212232581812280576966047005725254477945279067195436102730761360379478455144131209802728603310204155064221696",
+              "source_upper": "127961665905284336836698125152393423833113896430948262767465842483802733280646954013789444301775411422251746549342196722576864352482360496698757154179619411408835613744210164295343187407524425587126257164521537250746338708982963674025559453264442623385146613913064463966458871616240253736385077411485788088776972134496751891426583784205494627779171680697902752199693649/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "contraction_upper": "3383572419737145738032514119693758146290367953967643629328265548214509212176555654216350402818956406806705663574946310140204658646413669016719652320262854583943658654392518099746994925587012679961947401918528358576501872893024606854491800761162079490743309635987441237921666708871760543678300571739091191670088362381077723371588830217201338210854231503759328333778310691613971813611996398047069651246297911991738946431770916932797379676470864816073866685854477211670068252833228979006288369535/354719590369536675743689838074902355525991482485195125222864430172591093073945535018846632555948437276017890046079190299970568549474181093381523030637852291722557994140529257515729546358277885486603512127547324409805925451939639561728107606646479930137414412788638300746107488820735593048667980847092992304223680683738928593563834499911446311638005970744939133169614298984636479633177321571674687801322974554075271772589600632417038850642947033392877958287369550363101412278940028496322026027352064",
+              "displacement_upper": "4221984658067048600888530533762863054574154693056840256338595006233778728680396123850060310268131239486443002857993425168126146225950541042220457542995534496602781740690801164330649380501346420031266425593306900152402074019947092036457092673082084157981655186696172548543401875891434255846933694248137140932502904557888972185181897268195336613008739099229429353402160465/268305890814313382808900888730695737720244849647674457690677520875518426834517961594389847471971095548014838173443766907407517736859610680231310156681439811023270453375571787778313826670596718227891170078148877543122910269339345116360312961093968955611316785825913771430834536728179114122316914153006783059966422707299432549171548224486758284344004930340882127336404865253376",
+              "source_slack": "3966061326256479927215134283458076206907926900194943730803663321266173262119102215822481421664580416641939509759309031722972417520985820048822943234636295673785110513202380835739963005686297568857013911264263825650909396601981164688405973766553198911211361958870043620610484132658953748374163539425165564754948960288895468402328729699784347357450395737833623849002773167/4094022992161764264051832408610469630741040796625891993571129163749975995399749169836270865966355828064191256308651228445549281873468180545521700388815915085193946126946591000035306193093821994444140168428785362901655735310964128362431533219817641534596508572783108084576943004275194002110548616836651352843725932423392220293755313483989841985229567418531526601202466816",
+              "root_radius": "1/32768",
+              "carrier_radius": "1",
+              "dimension": "16"
+            }
+          }
+        },
+        "stage_evidence_label": "Signed reads, composite roots and carrier effects",
+        "pc_claim_restrictions": {
+          "D10-CL-O-007": "rho_inst=1; fixed old Z and same-root source; identity-bearing gain two, not amplitude equivalence",
+          "D10-CL-C-004": "root nonannihilation and distinct retained state do not establish committed endpoint effects or hysteresis",
+          "D10-CL-C-012": "bounded initial realization, not universal or arbitrary-graph support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CCIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded",
+        "numerical_recheck": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCNumericalRecheck.json",
+          "sha256": "99e1156bbec61a6a5f311c7912021f88fcb0d2af9f9171bb9781395c7753f52d",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        }
+      },
+      {
+        "family": "A_CI_PC",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCCases.json",
+          "sha256": "a768952d08ec38f9c034f904ec73569de21fc0cb32d755633c8a1860007ade15",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json",
+          "sha256": "a1f5da445f6fbce1d17d98a872ab7558477083dea9b288af9a409c540c06f194",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "2601d71f7918b440e7978dd6f66c976cea09190032ad4b4708f90981289e55a6",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md",
+          "sha256": "210865b79e318b126f8385078954fae5e3e897abde74c973495f8ef3840f226e",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md",
+          "sha256": "210865b79e318b126f8385078954fae5e3e897abde74c973495f8ef3840f226e",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "stage_evidence": {
+          "signed_read_certificates": 1059,
+          "target_beats": 320,
+          "fresh_final_reads": 32,
+          "entry_W_Z_effects": 288,
+          "source_old_Z_effects": 4,
+          "final_root_effects": 96,
+          "minimum_effect_margin": 3.597159937617559,
+          "independent_source_chart": {
+            "carrier_radius": "2048",
+            "geometry_radius": "1/8",
+            "resource_radius": "16",
+            "weight_lower": "1/2",
+            "weight_upper": "513/512",
+            "hodge_lower": "7/8",
+            "hodge_upper": "9/8",
+            "current_margin_lower": "31/32",
+            "current_condition_upper": "33/31",
+            "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+            "conductance_exponent_absolute_upper": "91834804879905728083141403965245352151828445106208953591710982543700426476078316470715666401866301241832302851791520531990573663276345/5456968859750611107952345151409159043076948028285255124457125636035893405288870346222418747936928019561662369247045289016615251289833472",
+            "current_norm_upper": "9530578373543190701091981371942657172572271401580715391692099250475/12752660319239346826701011164819466413616202958660243940951719936",
+            "source_frobenius_upper": "90831924134249170225778946432063913142958645134312001843552617371687452494570063822609375373751199476948864586129794493958056787725625/63751095325417505333343723397028158452694524141783118509864605943145460333622609845375661527850502242689479850078873434499298885632",
+            "strict_source_slack": "39730319092205880696908999085049755368159740308059824864650095599874450268689041140719979435286629116079190146831738299896507330048711/63751095325417505333343723397028158452694524141783118509864605943145460333622609845375661527850502242689479850078873434499298885632",
+            "displacement_upper": "221394167360704221148466891949177581654077030576683828551755330343249355257829168785938730182789028069976919319091327287812620905499961/2088995891623280814763007128273818696177894167077949227331243407544990444212145679413269676944605257488448875727384524701673025884389376",
+            "contraction_upper": "22666957910253584915226514058870209913914604515722653861723350065902194498968769669232070203543122760198678566701333840327772474756963891837391092142821967081420868253866042181925043725676729785550954526289417560339597150056255097225726018621098743181303432122215248375/160881247381343631459782010454822944256884526510540813778040664688839891113523091941792101063167273479926407370768017480435857699447410260444854697604017719535156114761052299697024925368510427956457472099095648324953170163279506238885968802268233680700875712787774439424"
+          },
+          "independent_target_charts": {
+            "P984B-ACIPC-G9-EXPAND-D30-CHIRALITY-POSITIVE": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "332544885358288701082291293876405725937826034151687269949846050737868578389820507231543283200192034577849013166476086929593590661052545/87311501756009777727237522422546544689231168452564081991314010176574294484621925539558699966990848312986597907952724624265844020637335552",
+              "current_norm_upper": "17790412963947289308705031894292960055468239949617335397825251281855/51010641276957387306804044659277865654464811834640975763806879744",
+              "source_frobenius_upper": "6459159049546607660499836190724544934610392542884409019985963428278795809912009486976380137762253190606408181956907557572924911270225/20816684187891430312928562741886745617206375229969997880772116226333211537509423622979807845828735426184319951046162754122220044288",
+              "strict_source_slack": "36173410167255041620377860304659510089428263928094146639835330603251621418907290092886266330494996962219079077785633762869381739431599/20816684187891430312928562741886745617206375229969997880772116226333211537509423622979807845828735426184319951046162754122220044288",
+              "displacement_upper": "49091728266348256941377532686108599958649049013862964679807257459809213038731309066839026606019503343431895441699448878015231561972049/682121107468826388494043143926144880384618503535656890557140704504486675661108793277802343492116002445207796155880661127076906411229184",
+              "contraction_upper": "25695649172050410314566007587498010952619752485442578580800892131866048264593499497216706252452361895263932554621291511393714544396097185213141746960428445795535783642996317322468267695416542692337103209833742671793087332520216809323784334094736978201174053766705990615/840522435298448360279677442376217831219641607891805067901600207353939022960447174226505670860629020629819597692175764795746521858337490340283322501767929310224489089363865075968130222333442235854145160354458897371183909424480685656220571701646282086927024132115719520256"
+            },
+            "P984B-ACIPC-G9-EXPAND-D30-CHIRALITY-NEGATIVE": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "332544885358288701082291293876405725937826034151687269949846050737868578389820507231543283200192034577849013166476086929593590661052545/87311501756009777727237522422546544689231168452564081991314010176574294484621925539558699966990848312986597907952724624265844020637335552",
+              "current_norm_upper": "17790412963947289308705031894292960055468239949617335397825251281855/51010641276957387306804044659277865654464811834640975763806879744",
+              "source_frobenius_upper": "6459159049546607660499836190724544934610392542884409019985963428278795809912009486976380137762253190606408181956907557572924911270225/20816684187891430312928562741886745617206375229969997880772116226333211537509423622979807845828735426184319951046162754122220044288",
+              "strict_source_slack": "36173410167255041620377860304659510089428263928094146639835330603251621418907290092886266330494996962219079077785633762869381739431599/20816684187891430312928562741886745617206375229969997880772116226333211537509423622979807845828735426184319951046162754122220044288",
+              "displacement_upper": "49091728266348256941377532686108599958649049013862964679807257459809213038731309066839026606019503343431895441699448878015231561972049/682121107468826388494043143926144880384618503535656890557140704504486675661108793277802343492116002445207796155880661127076906411229184",
+              "contraction_upper": "25695649172050410314566007587498010952619752485442578580800892131866048264593499497216706252452361895263932554621291511393714544396097185213141746960428445795535783642996317322468267695416542692337103209833742671793087332520216809323784334094736978201174053766705990615/840522435298448360279677442376217831219641607891805067901600207353939022960447174226505670860629020629819597692175764795746521858337490340283322501767929310224489089363865075968130222333442235854145160354458897371183909424480685656220571701646282086927024132115719520256"
+            },
+            "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            },
+            "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3": {
+              "carrier_radius": "2048",
+              "geometry_radius": "1/8",
+              "resource_radius": "16",
+              "weight_lower": "1/2",
+              "weight_upper": "513/512",
+              "hodge_lower": "7/8",
+              "hodge_upper": "9/8",
+              "current_margin_lower": "31/32",
+              "current_condition_upper": "33/31",
+              "descriptor_norm_upper": "3936178256700457352641408744313313995450328459476455761887721/100433627766186892221372630771322662657637687111424552206336",
+              "conductance_exponent_absolute_upper": "32518238274794527499864881334769691095626721373358395359461114266755987570249534642977443767119052529463950726272022947901171584505/5329071152100206160109712061923006878004832058872319457477661753941302153602412447482830808532156269103185907467817665055288331337728",
+              "current_norm_upper": "177591842567766313541941215990699309933040299126386227685102146635/398520634976229588334406598900608325425506342458132623154741248",
+              "source_frobenius_upper": "31538862546614295217284356400022192063527307338302778417900210778462067666432881666311143934975398462194968044961743613885041823225/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "strict_source_slack": "95963328104220715449403090394034124841861740945263458601829001107828853000812338024440179120725606023183991655196003255113555948039/62256929028728032552093479879910310988959496232210076669789654241352988607053329927124669460791506096376445166092649838378221568",
+              "displacement_upper": "159041053197449305883971803194078508968916355621869015437629422664752988333678101357062466990676402947573927745119490482883639594489/2040035050413360170666999148704901070486224772537059792315667390180654730675923515052021168891216071766063355202523949903977564340224",
+              "contraction_upper": "7662850890902535831085010107067171621247717574647724532458408594452256635203674894624071203293139559857336334131776564590853016745635182966495611479503775209395236643185569851586062195338591872602409220543488368357426657146989969269892397434873903278872518076535/153428313618987685642034540610144562012562300215283216264763512314643756021044818822662449896971963386465461130874650459705217074820909748501639077762620658431202044259121226975464749687681606251199218844504974675133867419509416808019608309047921829892039978778624"
+            }
+          }
+        },
+        "stage_evidence_label": "Signed joint roots and separate W/Z consumers",
+        "pc_claim_restrictions": {
+          "D10-CL-O-007": "rho_inst=1; fixed old Z and same-root source; identity-bearing gain two, not amplitude equivalence",
+          "D10-CL-C-004": "no_endpoint_hysteresis_inferred",
+          "D10-CL-C-012": "no_universal_realization_or_graph_support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_CI_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI_PC::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_CI_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_CI_PC::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ACIPC-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_CI_PC::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded",
+        "numerical_recheck": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCNumericalRecheck.json",
+          "sha256": "75cd7300811f5c869fb761afb407f73bba208f3e6492e38609f78549449150cb",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        }
+      },
+      {
+        "family": "C_RG2b",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bCases.json",
+          "sha256": "59b97d15e3e29b6dab6e23714c18137d7236a302283be56a78e34226c8bf5fe1",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json",
+          "sha256": "b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "171b63a39682c1292f4f17a6e1651f7f2ae148d367f1a5a80f5b2a04ad27f53d",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
+          "sha256": "40beb6140f4b5581ab6156b5b68a5a4451e2229deead8800fa48b9e84daf86f7",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
+          "sha256": "40beb6140f4b5581ab6156b5b68a5a4451e2229deead8800fa48b9e84daf86f7",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "stage_evidence": {
+          "signed_read_certificates": 1061,
+          "inverse_level_residuals": 6366,
+          "ordinary_bridges": 321,
+          "target_beats": 320,
+          "fresh_final_reads": 32,
+          "source_controls": 12,
+          "entry_controls": 192,
+          "final_controls": 192,
+          "minimum_effect_margin": 4.393548527854172,
+          "independent_source_chart": {
+            "vertices": 10,
+            "edges": 9,
+            "incidence_norm": "9",
+            "gram_norm": "10",
+            "mask_norm": "5",
+            "selector_gap_lower": "91/8192",
+            "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+            "graph_digest": "grc-graph-sha256:cddd6d4753e36177f472d6a81f0b0a3d2224044ba29bcfe71c68a79f642355a2"
+          },
+          "independent_global_proof": {
+            "global_bounds": {
+              "A_X": "84448173184758217920118941184/1921195595521636495038309581067",
+              "A_H": "1037698985891529667980591118680064/7871138354852144720171954353631499",
+              "M_f": "1159641169920/8793945534463",
+              "M_S": "104862521091111391952704353861632/19329946182715326255725873593591229805",
+              "B_X": "5011762921911642033832339066941895298550880796672/139218938516302736693639870255796177582206667640896585",
+              "B_H": "1030405449869391908170564091594137685157505478426624/232031564193837894489399783759660295970344446068160975",
+              "J": "527765581332480/8793945534463",
+              "J_X": "345899717364769660600807183089664/17290760359694728455344786229603",
+              "J_H": "4250415046211705520048501222113542144/70840245193669302481547589182683491",
+              "current_margin": "8793945534463/8793945538560",
+              "response_bound": "16388/4095",
+              "modulation_upper": "16777216/16777215",
+              "M_C": "1159641169920/8793945534463",
+              "M_Y": "0"
+            },
+            "section_bounds": {
+              "ell": "115665847817954705253371532681728/2623712784950714906723984784543833",
+              "inverse_lip": "2623712784950714906723984784543833/2508046937132760201470613251862105",
+              "value_radius": "52431260545555695976352176930816/19329946182715326255725873593591229805",
+              "image_lip": "57516923809879552097604101667460734806477171870138368/2726174522395901569877333658804927856533809817159285814125",
+              "q_section": "1324086161244375571301792697044643671543723750211063948683433897321562112/595581865332775742113003021947903011777735332707717719243926660981895564625"
+            },
+            "native_bounds": {
+              "base_X_lipschitz": "84448173184758217920118941184/1921195595521636495038309581067",
+              "base_h_lipschitz": "1037698985891529667980591118680064/7871138354852144720171954353631499",
+              "base_displacement_upper": "1159641169920/8793945534463",
+              "source_upper": "104862521091111391952704353861632/19329946182715326255725873593591229805",
+              "source_X_lipschitz": "5011762921911642033832339066941895298550880796672/139218938516302736693639870255796177582206667640896585",
+              "source_h_lipschitz": "1030405449869391908170564091594137685157505478426624/232031564193837894489399783759660295970344446068160975",
+              "current_upper": "527765581332480/8793945534463",
+              "inverse_lipschitz": "2623712784950714906723984784543833/2508046937132760201470613251862105",
+              "contraction_upper": "1324086161244375571301792697044643671543723750211063948683433897321562112/595581865332775742113003021947903011777735332707717719243926660981895564625",
+              "section_lipschitz": "1/1024",
+              "section_radius": "1/4096",
+              "section_value_radius": "52431260545555695976352176930816/19329946182715326255725873593591229805",
+              "image_lipschitz": "57516923809879552097604101667460734806477171870138368/2726174522395901569877333658804927856533809817159285814125",
+              "current_inverse_upper": "8793945538560/8793945534463"
+            }
+          },
+          "independent_target_charts": {
+            "P984B-CRG2B-G9-EXPAND-D30-CHIRALITY-POSITIVE": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 12,
+              "gram_norm": "7",
+              "graph_digest": "grc-graph-sha256:3c426c62dd8167c84c2246b4fa1a118bab738666aaeb638f8d9ce8657f8462d2",
+              "incidence_norm": "4",
+              "mask_norm": "7/2",
+              "selector_gap_lower": "105/16384",
+              "vertices": 13
+            },
+            "P984B-CRG2B-G9-EXPAND-D30-CHIRALITY-NEGATIVE": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 12,
+              "gram_norm": "7",
+              "graph_digest": "grc-graph-sha256:ef110e58acc51031ab9611cf7da059f2f464e232bc460e615fdb9362a891f931",
+              "incidence_norm": "4",
+              "mask_norm": "7/2",
+              "selector_gap_lower": "105/16384",
+              "vertices": 13
+            },
+            "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 13,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:5d95468a419f1e86e2b38a70d4104a51c1179e1c482e22dc7b9ef3bba9b79297",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "45/8192",
+              "vertices": 14
+            },
+            "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 13,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:a6c1c91e6d7f21319bd77437b76b9feacd3cf48819d32b81dcd55bbb8a34293b",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "45/8192",
+              "vertices": 14
+            },
+            "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 13,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:76ccac987b4f9b39aedffc393f99caa6049ff493fceea0a461a719f7fa46d6de",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "45/8192",
+              "vertices": 14
+            },
+            "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 13,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:881a84741d0226cf8863a38e3822632f5f1d32f1062cf6077ef34347271d7e47",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "45/8192",
+              "vertices": 14
+            },
+            "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 13,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:dff09ab9d18b676f09ca5e339784ebe6c456e39c208ee1ded9568e41aea066f5",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "45/8192",
+              "vertices": 14
+            },
+            "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 13,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:717f6789a15f9c0f31f5721b0b4173c3310e416890a18d26a8283d237241678c",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "45/8192",
+              "vertices": 14
+            },
+            "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 15,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:ee04e8b6ce6f3da9a23fbb93f751978bac39c7d5c84246480b748fd04bade07c",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "273/65536",
+              "vertices": 16
+            },
+            "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 15,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:c7eb5f4b10bd4df9b75cfc7c9bd1ef1a25e37aae676806ed7ca276875cdacf8b",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "273/65536",
+              "vertices": 16
+            },
+            "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 16,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:e84a6a7e0ab2e5b03abf022483342bf7cbee68fd77789ca3f37d515c7e279bd3",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "4095/1114112",
+              "vertices": 17
+            },
+            "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 16,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:35c948bf189b75c494749be2765548d0fc986be26274d84eba334b4ba27d43c3",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "4095/1114112",
+              "vertices": 17
+            },
+            "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 16,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:2c70a036f45d4d14a7cfa98d9d6bc337949af0f46cebc2a0ce5cdbaf4e212cc6",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "4095/1114112",
+              "vertices": 17
+            },
+            "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 16,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:0b94b6f124a205a39b7cda9bec6aa388688afd231e05b7e81fbd9461d44206d5",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "4095/1114112",
+              "vertices": 17
+            },
+            "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 16,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:85cd21ed1aa43e06d3972ae70cacfac9088c90fbc179cd6e9aa72da0b66c2c83",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "4095/1114112",
+              "vertices": 17
+            },
+            "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3": {
+              "completion": "grc9v4_c_rg2b_signed_argument_completion_v1",
+              "edges": 16,
+              "gram_norm": "8",
+              "graph_digest": "grc-graph-sha256:86d59c3145afd03066d4e8a27ad2b00525d7d370cf0f64585f6bbc897c254ab0",
+              "incidence_norm": "5",
+              "mask_norm": "4",
+              "selector_gap_lower": "4095/1114112",
+              "vertices": 17
+            }
+          }
+        },
+        "stage_evidence_label": "Signed inverse chains, complete section errors and lagged invariance",
+        "rg_claim_restrictions": {
+          "GTRS-RG-DEBT-C1-SECTION-REGULARITY": "narrowed_unresolved",
+          "D10.2-EC-RG-CLAIM-CEILING": "completion_relative_Lipschitz_no_spectrum_or_indefinite_positivity",
+          "D10-CL-C-012": "no_arbitrary_graph_or_future_exhaustive_support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_RG2b::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_RG2b::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_RG2b::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_RG2b::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-CRG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::C_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded",
+        "numerical_recheck": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bNumericalRecheck.json",
+          "sha256": "b823638b97a2cd2e59c2ce63a96b4f20d85b1d56bc6f4a7c6524d8aaa4061e06",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        }
+      },
+      {
+        "family": "A_RG2b",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json",
+          "sha256": "cecede14b568698ea5c2500e07123838ef2e344519e509d5f79abfb7e0f48a08",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json",
+          "sha256": "d23a612386ea7d1966b09f159d996b306d240b11cc1f8fb2cc692dce5572564b",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "91c634e6692afade225b637f3cdcd54f995c62fdc0d55cb26e9272121c1a6446",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md",
+          "sha256": "9692b616a09a3c764cede9b109d3fbcb6fe849844c383dc97f84a9fe6e89f295",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md",
+          "sha256": "9692b616a09a3c764cede9b109d3fbcb6fe849844c383dc97f84a9fe6e89f295",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "stage_evidence": {
+          "signed_read_certificates": 1061,
+          "inverse_level_residuals": 4244,
+          "ordinary_bridges": 321,
+          "target_beats": 320,
+          "fresh_final_reads": 32,
+          "writer_controls": 192,
+          "source_controls": 8,
+          "entry_controls": 224,
+          "final_controls": 224,
+          "minimum_effect_margin": 7.7280207575636295,
+          "independent_source_chart": {
+            "vertices": 10,
+            "edges": 9,
+            "incidence_norm": "9",
+            "gram_norm": "10",
+            "mask_norm": "5",
+            "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+            "graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36"
+          },
+          "independent_global_proof": {
+            "global_bounds": {
+              "A_X": "87872062424953835764057962688129336764313757715169358967094512233389215/1968215769825474065028538635325186621893927801328880640802902665125167104",
+              "A_H": "849157741378719461424511609841209961510997463889060597470237095/12856416635810342978311163989323045272656844422124056886665805824",
+              "M_f": "41498124350377495139174931975/313494218786553217047307140608",
+              "M_S": "118657926849551278827600869906435160697395017416704000/3104573422948717202091483832909873609174001492738062244761",
+              "B_X": "14622819481837739064507427786719474598882494066089492312981715461803924497028180237549275/145222939517845005802304069573707655628437731530638782727885730286016919879545979339379705856",
+              "B_H": "1497323185400955312773172133035656227379022130236840494360481196130638041028783283200/12627743831148230652223036871643564875653430743647689529795286371723966973686976478301157",
+              "J": "36887221644779995679266606200/612293396067486752045521759",
+              "J_X": "9763562491661537307117551409792148529368195301685484329677168025932135/480521428180047379157358065264938140110822217121308750196021158477824",
+              "J_H": "94350860153191051269390178871245551278999718209895621941137455/3138773592727134516189249020830821599769737407745131075846144",
+              "current_margin": "2344864626236444989279/2344940703847010856928",
+              "read_exponent_upper": "4441404896155777/36606101097222766592",
+              "writer_exponent_upper": "25249079184644568116982773485348251347062084639562927052805843/206105215421836261601418895108677860809402875745675683005022076928",
+              "read_drive_upper": "16777216/16777215",
+              "weight_lower": "511/512",
+              "weight_upper": "512/511",
+              "M_C": "41498124350377495139174931975/313494218786553217047307140608",
+              "M_Y": "427798328055418516557254052994484698240427076330335745421989587/1648841723374690092811351160869422886475223005965405464040176615424"
+            },
+            "section_bounds": {
+              "ell": "12571287843417274262631253267406719574057071125715804154665528937148585/281173681403639152146934090760740945984846828761268662971843237875023872",
+              "inverse_lip": "281173681403639152146934090760740945984846828761268662971843237875023872/268602393560221877884302837493334226410789757635552858817177708937875287",
+              "value_radius": "59328963424775639413800434953217580348697508708352000/3104573422948717202091483832909873609174001492738062244761",
+              "image_lip": "934168946454784465091199014759620827150307624579977633924016751916196456046189913230283061696921600/17704986123747678994803478403081550313074627216089726395989216067985165887900880616402494753692898131949",
+              "q_section": "33343966414604290193059210727591608952468451566171436636201856970238966544481007566113587895574465768351251727761958321206067200/531191657970822536740093707739490891131838422360164489210862736101378918731788884526042552490305151524001912296251417512684496336259"
+            },
+            "native_bounds": {
+              "base_X_lipschitz": "87872062424953835764057962688129336764313757715169358967094512233389215/1968215769825474065028538635325186621893927801328880640802902665125167104",
+              "base_h_lipschitz": "849157741378719461424511609841209961510997463889060597470237095/12856416635810342978311163989323045272656844422124056886665805824",
+              "base_displacement_upper": "41498124350377495139174931975/313494218786553217047307140608",
+              "source_upper": "118657926849551278827600869906435160697395017416704000/3104573422948717202091483832909873609174001492738062244761",
+              "source_X_lipschitz": "14622819481837739064507427786719474598882494066089492312981715461803924497028180237549275/145222939517845005802304069573707655628437731530638782727885730286016919879545979339379705856",
+              "source_h_lipschitz": "1497323185400955312773172133035656227379022130236840494360481196130638041028783283200/12627743831148230652223036871643564875653430743647689529795286371723966973686976478301157",
+              "current_upper": "36887221644779995679266606200/612293396067486752045521759",
+              "inverse_lipschitz": "281173681403639152146934090760740945984846828761268662971843237875023872/268602393560221877884302837493334226410789757635552858817177708937875287",
+              "contraction_upper": "33343966414604290193059210727591608952468451566171436636201856970238966544481007566113587895574465768351251727761958321206067200/531191657970822536740093707739490891131838422360164489210862736101378918731788884526042552490305151524001912296251417512684496336259",
+              "section_lipschitz": "1/1024",
+              "section_radius": "1/4096",
+              "section_value_radius": "59328963424775639413800434953217580348697508708352000/3104573422948717202091483832909873609174001492738062244761",
+              "image_lipschitz": "934168946454784465091199014759620827150307624579977633924016751916196456046189913230283061696921600/17704986123747678994803478403081550313074627216089726395989216067985165887900880616402494753692898131949",
+              "current_inverse_upper": "2344940703847010856928/2344864626236444989279",
+              "resource_displacement_upper": "41498124350377495139174931975/313494218786553217047307140608",
+              "scaled_log_displacement_upper": "427798328055418516557254052994484698240427076330335745421989587/1648841723374690092811351160869422886475223005965405464040176615424"
+            }
+          },
+          "independent_target_charts": {
+            "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-POSITIVE": {
+              "vertices": 13,
+              "edges": 12,
+              "incidence_norm": "4",
+              "gram_norm": "7",
+              "mask_norm": "7/2",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:78b285538f9c7dc80f2a0b34047672fa98c8d05419c190700c161464f841b1c8"
+            },
+            "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-NEGATIVE": {
+              "vertices": 13,
+              "edges": 12,
+              "incidence_norm": "4",
+              "gram_norm": "7",
+              "mask_norm": "7/2",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:fd7fd2e84ba4b88e3779854d4067d4db5395532134fe7060c538f1a238b9ade6"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:8289315d2e6638878e35b0d0405b3bf702a823cf2638db4d1146ded48a4f713b"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:62e4cd2cb47c69ca656239bc7d12733e97e03cbf3df1faa2e9d57945401da5a5"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:3bf01c61737c84e0103878b16cce0250199cdf8d046036928fcfe59dcced5c95"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:559be3c8103a5366c174f3db48b8f09077679d7aa6077db66f24059087b4f149"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:f83487c55260a8d0dc334e8a1207ea2d2dcbaa8623ea1414573991d7e43d4639"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:f8bafd38553f81f4ee7b8c0ad04242f4329f0f6fa5981994be9f60504e929393"
+            },
+            "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE": {
+              "vertices": 16,
+              "edges": 15,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:b80570e43eb20048593ba2483b8b295ae2f6d369f51d7a12c80aef711c270a56"
+            },
+            "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE": {
+              "vertices": 16,
+              "edges": 15,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:9b903f1b523c69d159edf32664c2c280ed5d57bd3e06df7818d40dd900fc2e4a"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:77e974f5f7c7d2f05479634c73e0b894062bd45ecc8979d61a39f2a80274bf6b"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:8d687c0339ad77faf722b18d3db21cf915b7228df882e3ed79ba306fe5e2d2fa"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:2e28e4b5dfaaea80bd95fafd4fa673166c3c41922da53f421348554c7565b7b5"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:d6266e939c66ea981dcdb7cf2d57a22ab6a3e4fbf1169697927d48c555e1c220"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:9204b043edfaa6010d6fb210dbe2286046883c46e8524e306b770db0b1d257a9"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:3cc9c345f7d55eeec53bf25cb3935e94e9e5c150ef889b72e45bcd852643ee48"
+            }
+          }
+        },
+        "stage_evidence_label": "Signed C/Y chains, W lineage and composed writer controls",
+        "rg_claim_restrictions": {
+          "GTRS-RG-DEBT-C1-SECTION-REGULARITY": "narrowed_unresolved",
+          "D10.2-EC-RG-CLAIM-CEILING": "completion_relative_Lipschitz_no_spectrum_or_indefinite_positivity",
+          "D10-CL-C-012": "no_arbitrary_graph_or_future_exhaustive_support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded",
+        "numerical_recheck": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bNumericalRecheck.json",
+          "sha256": "871a82f8040d989fbbc6587dc4bf656dae9d3ad136b5addb36b14b1ef7b22dfe",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        }
       }
     ],
     "oracle_and_pressure": [
@@ -9006,8 +11619,8 @@ export const TRANCHE8_EVIDENCE = {
       }
     ],
     "required_cells": 322,
-    "accepted_cells": 128,
-    "pending_cells": 194,
+    "accepted_cells": 322,
+    "pending_cells": 0,
     "executed_pending_cells": 0,
     "aggregate_closed": false,
     "other_vector_cells": 60,
@@ -9299,6 +11912,12 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "historical_git"
     },
     {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+      "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+      "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+      "basis": "current_equals_accepted_checkpoint"
+    },
+    {
       "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
       "sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f",
       "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -9545,6 +12164,30 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_execution_with_separate_scoped_user_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCCases.json",
+      "sha256": "a768952d08ec38f9c034f904ec73569de21fc0cb32d755633c8a1860007ade15",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCNumericalRecheck.json",
+      "sha256": "75cd7300811f5c869fb761afb407f73bba208f3e6492e38609f78549449150cb",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json",
+      "sha256": "a1f5da445f6fbce1d17d98a872ab7558477083dea9b288af9a409c540c06f194",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md",
+      "sha256": "210865b79e318b126f8385078954fae5e3e897abde74c973495f8ef3840f226e",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json",
       "sha256": "01a86bde6105776ecd955e3f3583925c5ec1edbe03a17cb09d9c454e09a43100",
       "revision": null,
@@ -9599,6 +12242,48 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json",
+      "sha256": "b0f2b8eb1718c23579f208573eec1e9e463c6b740beeaf68b925ec2728c91163",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json",
+      "sha256": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md",
+      "sha256": "5e8f762b3a323980eac6255be62030793aa68502a3b5f6a7e1d83296a3238b56",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json",
+      "sha256": "cecede14b568698ea5c2500e07123838ef2e344519e509d5f79abfb7e0f48a08",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bNumericalRecheck.json",
+      "sha256": "871a82f8040d989fbbc6587dc4bf656dae9d3ad136b5addb36b14b1ef7b22dfe",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json",
+      "sha256": "d23a612386ea7d1966b09f159d996b306d240b11cc1f8fb2cc692dce5572564b",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md",
+      "sha256": "9692b616a09a3c764cede9b109d3fbcb6fe849844c383dc97f84a9fe6e89f295",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICases.json",
       "sha256": "473bf8252a1b6e5b02816e261686f53e3c39c927bf957dbae87ef7f705802a85",
       "revision": null,
@@ -9613,6 +12298,30 @@ export const TRANCHE8_EVIDENCE = {
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json",
       "sha256": "b7bdb1f848e3b904a6ff9cb99df37882227ea8cc562bbe00a7387a9f2860631f",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCCases.json",
+      "sha256": "0c489a674c35cad9c3f5a64f3fe970414fadf950a7c2aa378ef740f3b3a6978f",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCNumericalRecheck.json",
+      "sha256": "99e1156bbec61a6a5f311c7912021f88fcb0d2af9f9171bb9781395c7753f52d",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json",
+      "sha256": "6ae474557161f9d9e6d3c5d350b023f2742eeb1cafa8c24733c39beafe132db2",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md",
+      "sha256": "5d3cd84eb1a6c2b91ab9326818cdd7d372088d160bf87d25131683ab39919e3e",
       "revision": null,
       "basis": "pinned_execution_with_separate_scoped_user_acceptance"
     },
@@ -9651,6 +12360,54 @@ export const TRANCHE8_EVIDENCE = {
       "sha256": "6d57ab10d1a5407cc6b8acea3d64487f34a94af0a10e2ef28efb4876a0101308",
       "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
       "basis": "current_equals_accepted_checkpoint"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCCases.json",
+      "sha256": "c23e2a9a2a9d653f433316a57e7b7d3c1c3de557d7d8d507f136d6310ad4271e",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json",
+      "sha256": "9ca4dae9633e8d91154c8f5f1a9a4454f3dd5a3e83456edb5a27cf5664bc080a",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCRuntimeReview.md",
+      "sha256": "4343ca0bc237f1627c2a8a7a724f04b4174b5bc69fc95c6aab3a3cfa1f0f1d27",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCScientificPressure.json",
+      "sha256": "59d0ed4fd9351e783e71e0a462ff0f8df669524871ecf4f1f0b88d9f4a7a4a2e",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bCases.json",
+      "sha256": "59b97d15e3e29b6dab6e23714c18137d7236a302283be56a78e34226c8bf5fe1",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bNumericalRecheck.json",
+      "sha256": "b823638b97a2cd2e59c2ce63a96b4f20d85b1d56bc6f4a7c6524d8aaa4061e06",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json",
+      "sha256": "b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
+      "sha256": "40beb6140f4b5581ab6156b5b68a5a4451e2229deead8800fa48b9e84daf86f7",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md",
@@ -9797,5 +12554,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "ff22b8ea38de119a50e70a6025fa569521f0ff91b6164dcc1f60b6e4faa60280"
+  "view_digest": "335d3400fca7a17636d0df3e5c89d7acb02e6952cb4fd6f0102a244d63f9ef0f"
 };
