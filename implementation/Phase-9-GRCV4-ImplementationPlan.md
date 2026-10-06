@@ -3113,6 +3113,16 @@ integration, disabled compatibility and branch crossing. The end-of-tranche
 performance/cache review remains separately scheduled. This planning split
 changes no runtime work-manifest entry or accepted scientific evidence.
 
+All remaining Tranche 8 campaigns must follow the
+[retention/storage rules](../docs/reference/EvidenceStorage.md): declare the
+consumer and budget for large traces before execution, store shared inputs once,
+and avoid repeated full successful journals. Suspended/incomplete runs and
+their tracking records are disposable working data and must not be published.
+The 10 MB Git-file limit applies
+now. Lossless packing preserves the current checked subjects; a future compact
+schema must preserve the operands needed by its independent checker. Evidence
+volume and repeated executions of the same checker are not independent proofs.
+
 #### End-of-Tranche-8 performance and cache review
 
 The user requests this review on 2026-10-02, after P9-8.6 and before Tranche 9.

@@ -231,8 +231,21 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json.xz",
+    "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/conductance_retention_probe.json.xz",
+    "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/return_orbit_registry.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json.xz",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json.xz",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz",
-    ".gitignore",
+    ".gitignore", ".github/workflows/artifact-size.yml",
+    "artifact-storage.json", "scripts/evidence_storage.py",
+    "tests/test_evidence_storage.py", "docs/reference/EvidenceStorage.md",
     SIDE + "README.md",
     HERE + "tranche8_evidence.py",
     HERE + "tranche8_source_reuse.py",
@@ -2243,41 +2256,13 @@ def work_entries(root, approval):
 
 
 def restore_packed_evidence(root):
-    """Restore the exact completed C_RG2b subject without any numerical execution."""
-    import lzma
-    import os
-    import tempfile
-
-    root = Path(root).resolve()
-    rows = [
-        (
-            'implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json',
-            49102617,
-            'b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea',
-            'e52c0baf53e43cf492a0e43512ddb38ee64f10dc4ad7540670bb2e77d7dc634e',
-        ),
-    ]
-    for name, size, original_sha, packed_sha in rows:
-        path = _paths.safe_path(root, name)
-        packed = safe_path(root, name + ".xz").read_bytes()
-        require(sha(packed) == packed_sha, "C_RG2b archive drift: " + name)
-        if path.exists():
-            require(path.stat().st_size == size and sha(path.read_bytes()) == original_sha,
-                    "C_RG2b expanded evidence drift: " + name)
-            continue
-        decoder = lzma.LZMADecompressor(format=lzma.FORMAT_XZ, memlimit=128 * 1024**2)
-        raw = decoder.decompress(packed, max_length=size + 1)
-        require(decoder.eof and not decoder.unused_data and len(raw) == size
-                and sha(raw) == original_sha, "C_RG2b expanded evidence drift: " + name)
-        with tempfile.NamedTemporaryFile(dir=path.parent, prefix=".crg2b-") as tmp:
-            tmp.write(raw)
-            tmp.flush()
-            os.chmod(tmp.name, 0o644)
-            try:
-                os.link(tmp.name, path)
-            except FileExistsError:
-                require(not path.is_symlink() and sha(path.read_bytes()) == original_sha,
-                        "C_RG2b concurrent restore drift: " + name)
+    """Recreate ignored evidence bytes; no solver execution or acceptance change."""
+    spec = importlib.util.spec_from_file_location(
+        "repository_evidence_storage", Path(root) / "scripts/evidence_storage.py"
+    )
+    storage = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(storage)
+    return storage.restore(Path(root), prefix=PHASE)
 
 
 def current_boundary(root):

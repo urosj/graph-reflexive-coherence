@@ -24,7 +24,7 @@ CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
 ACCEPTED_CRG2B_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bCases.json": "59b97d15e3e29b6dab6e23714c18137d7236a302283be56a78e34226c8bf5fe1",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json": "b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea",
-    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md": "2e430449f6751a2effc45233071cb2b76c83e5639ffd4a21a65d1c3783c79d32",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md": "40beb6140f4b5581ab6156b5b68a5a4451e2229deead8800fa48b9e84daf86f7",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bNumericalRecheck.json": "b823638b97a2cd2e59c2ce63a96b4f20d85b1d56bc6f4a7c6524d8aaa4061e06"
 }
 # A_CI_PC execution and separate scoped user acceptance have exact source pins.

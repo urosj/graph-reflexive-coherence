@@ -35,6 +35,17 @@ acceptance. Parent 8.4b and later work stay open. A_RG2b is next. The review pro
 commands; neither repeats native trajectories. Accepted coverage depends only
 on the completed subjects and their checks.
 
+The user's storage maintenance request packs all twelve retained repository evidence
+files above 10 MB into 9.84 MB of byte-exact XZ archives (389.21 MB expanded).
+C_RG2b's final result is 1.24 MB in Git. Original paths are ignored local copies;
+current Phase 9 tools restore them, while standalone historical scripts first
+run `python scripts/evidence_storage.py restore`. The
+[storage guide](../docs/reference/EvidenceStorage.md) distinguishes scientific
+checks from identity/repeatability checks and sets retention rules for subsequent
+campaigns. A staged-blob check and GitHub workflow enforce the 10 MB file limit.
+The storage migration changes neither completed scientific payloads nor acceptance. Historical Git blobs
+remain in history; no history rewrite is part of this maintenance.
+
 ## Accepted checkpoint — P9-8.4b A_CI_PC
 
 Work follows accepted C_CI_PC commit `9670d97` on `work/p9-8-4b-cpc`.

@@ -10682,14 +10682,14 @@ export const TRANCHE8_EVIDENCE = {
         "record_digest": "171b63a39682c1292f4f17a6e1651f7f2ae148d367f1a5a80f5b2a04ad27f53d",
         "acceptance": {
           "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
-          "sha256": "2e430449f6751a2effc45233071cb2b76c83e5639ffd4a21a65d1c3783c79d32",
+          "sha256": "40beb6140f4b5581ab6156b5b68a5a4451e2229deead8800fa48b9e84daf86f7",
           "revision": null,
           "basis": "pinned_execution_with_separate_scoped_user_acceptance",
           "anchor": "scoped-user-acceptance"
         },
         "review": {
           "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
-          "sha256": "2e430449f6751a2effc45233071cb2b76c83e5639ffd4a21a65d1c3783c79d32",
+          "sha256": "40beb6140f4b5581ab6156b5b68a5a4451e2229deead8800fa48b9e84daf86f7",
           "revision": null,
           "basis": "pinned_execution_with_separate_scoped_user_acceptance"
         },
@@ -11907,7 +11907,7 @@ export const TRANCHE8_EVIDENCE = {
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
-      "sha256": "2e430449f6751a2effc45233071cb2b76c83e5639ffd4a21a65d1c3783c79d32",
+      "sha256": "40beb6140f4b5581ab6156b5b68a5a4451e2229deead8800fa48b9e84daf86f7",
       "revision": null,
       "basis": "pinned_execution_with_separate_scoped_user_acceptance"
     },
@@ -12056,5 +12056,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "32bac9b46cb658a1c9a7f25abb9caa909b7ec049a2c30c283bb9388c168bf707"
+  "view_digest": "04756fae006d291126e42d751b00469ba93b043e0ca091c8852c255cef424985"
 };

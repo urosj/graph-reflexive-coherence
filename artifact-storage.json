@@ -1,0 +1,102 @@
+{
+  "schema": "exact-evidence-storage-v1",
+  "max_git_file_bytes": 10000000,
+  "files": [
+    {
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json",
+      "size": 12108757,
+      "sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+      "storage_path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json.xz",
+      "storage_size": 99332,
+      "storage_sha256": "3d5623993d0127dd9d3ff86f8348a496e493dd4b8650627d155189fb818179f2"
+    },
+    {
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/conductance_retention_probe.json",
+      "size": 54109579,
+      "sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+      "storage_path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/conductance_retention_probe.json.xz",
+      "storage_size": 572020,
+      "storage_sha256": "f9421b870779bcdb84925a3d4816c62d3c1a81da814ab3140d5076f10762795d"
+    },
+    {
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/return_orbit_registry.json",
+      "size": 13235986,
+      "sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+      "storage_path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/return_orbit_registry.json.xz",
+      "storage_size": 359684,
+      "storage_sha256": "f3777c92416d3d7231c7c71f6e7933991f06100593657374f4a1f6a7227e0cd3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json",
+      "size": 31806097,
+      "sha256": "a1f5da445f6fbce1d17d98a872ab7558477083dea9b288af9a409c540c06f194",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json.xz",
+      "storage_size": 1099760,
+      "storage_sha256": "def7c81a0a4dab2ccfbe85d93eba670ebe450e0ec8b745a80b41144fbeb8665b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json",
+      "size": 28696098,
+      "sha256": "01a86bde6105776ecd955e3f3583925c5ec1edbe03a17cb09d9c454e09a43100",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json.xz",
+      "storage_size": 1214780,
+      "storage_sha256": "77c1a8afb9e6a4f4c15123daac287800ad07e6847c4b35e34d366fde58e77328"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json",
+      "size": 39015080,
+      "sha256": "4d4904d03bef8992a96ec8835f824f99767777d24bb3f4f8e3469ab2c5e33327",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json.xz",
+      "storage_size": 1314672,
+      "storage_sha256": "b40b78734dc83436d3b2280c700a578130811d6e5ae99a3e6065e4c577e14e57"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json",
+      "size": 19194132,
+      "sha256": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json.xz",
+      "storage_size": 611172,
+      "storage_sha256": "b19e9568b7ae28f1ed79c00402ca3dbda249d1235e7a633b523e82f7b78902d8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json",
+      "size": 50380458,
+      "sha256": "b7bdb1f848e3b904a6ff9cb99df37882227ea8cc562bbe00a7387a9f2860631f",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json.xz",
+      "storage_size": 1183484,
+      "storage_sha256": "6ae80b55769fbc96163717760f064f4337ae0f2d9a5d234a78fbc5d78956a83f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json",
+      "size": 42958544,
+      "sha256": "6ae474557161f9d9e6d3c5d350b023f2742eeb1cafa8c24733c39beafe132db2",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json.xz",
+      "storage_size": 912180,
+      "storage_sha256": "6d04349be897c01ebf7af5e2f7dab4f0d5de432fe9b0401bb9806bd10158e9a1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json",
+      "size": 25049176,
+      "sha256": "8b6648142a4cf5c863cd4b4ebc6849fcf6b2329401e2ade1bfc2eb2bea2b69a6",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json.xz",
+      "storage_size": 732236,
+      "storage_sha256": "01fbe7e935211cf33d16e2083b172aee120f4a395f34169b496ed4ce78182e31"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json",
+      "size": 23552026,
+      "sha256": "9ca4dae9633e8d91154c8f5f1a9a4454f3dd5a3e83456edb5a27cf5664bc080a",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json.xz",
+      "storage_size": 496724,
+      "storage_sha256": "ee4102a31615ea2f449d8667db0b72b1728506a35310e27760c7a6d6a3ef1dff"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json",
+      "size": 49102617,
+      "sha256": "b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz",
+      "storage_size": 1242592,
+      "storage_sha256": "e52c0baf53e43cf492a0e43512ddb38ee64f10dc4ad7540670bb2e77d7dc634e"
+    }
+  ]
+}

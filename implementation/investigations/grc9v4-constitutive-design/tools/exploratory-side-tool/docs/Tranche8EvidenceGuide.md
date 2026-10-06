@@ -311,3 +311,11 @@ This successor passes sixteen source/API tests, eleven browser logic tests, both
 notebook cells and the real HTTP desktop/mobile scenario. The retained CLI
 command, complete independent numerical recomputation and current-boundary
 audit also pass, preserving the separate user-acceptance decision.
+
+
+Large retained JSON is now a byte-exact, ignored local copy of an adjacent XZ
+archive. The current evidence index restores missing copies automatically;
+standalone historical readers first run `python scripts/evidence_storage.py restore`
+from the repository root. This is storage reconstruction, not a numerical rerun
+or a new acceptance. See the [storage and value guide](../../../../../../docs/reference/EvidenceStorage.md)
+for archive links, the 10 MB Git-file rule and limits of the evidence claims.

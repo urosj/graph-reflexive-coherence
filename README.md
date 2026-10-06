@@ -30,6 +30,12 @@ support them.
 
 ## Status and maturity
 
+Large evidence is stored in lossless `.xz` archives; expanded JSON is ignored
+local data. Run `python scripts/evidence_storage.py restore` before replaying
+historical standalone scripts. Current Phase 9 verification and its Tranche 8
+evidence view restore it automatically. See [evidence storage and its limits](docs/reference/EvidenceStorage.md)
+for the archive index, the 10 MB Git-file limit, and what these records actually establish.
+
 This is an active research implementation, not a stabilized product API. The
 core graph runtimes, specs, tests, telemetry, visualization, and example paths
 are runnable, while public API boundaries and packaging remain intentionally

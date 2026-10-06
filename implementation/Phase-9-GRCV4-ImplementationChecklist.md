@@ -2929,6 +2929,13 @@ the full ten-profile plan.
     integrations and current 8.4 evidence through CLI/API/notebook/browser;
     keep original failures, scoped acceptance and pending family cells distinct.
     Source/structure checks are not numerical reruns; update this view before 8.5.
+  Remaining campaigns must declare a retained-data budget and a named consumer
+  for large traces before execution. Avoid duplicate successful prefixes and
+  shared-state dumps. Discard suspended/incomplete run artifacts and their
+  tracking records; progress belongs in ignored working data. Retain concise
+  reviews, completed results and meaningful tests as primary evidence. Enforce the 10 MB Git-file limit and
+  [retention/storage rules](../docs/reference/EvidenceStorage.md).
+
   - [ ] P9-8.4i: Reconcile coverage and hand off. Bind commands/results,
     independent paper/spec/side-tool checks, exact subjects, review outcomes and
     outstanding debt. Update configuration discovery only for newly reviewed
