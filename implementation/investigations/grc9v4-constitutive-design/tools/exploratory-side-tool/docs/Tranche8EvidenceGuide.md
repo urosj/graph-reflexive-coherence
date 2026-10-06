@@ -7,7 +7,8 @@ accept results, authorize work or rerun models.
 
 With the separate A_CI_PC acceptance, C_OS, A_OS, C_CI, A_CI, C_PC, A_PC,
 C_CI_PC and A_CI_PC supply **258 of 322 accepted 8.4b history cells**.
-C_RG2b and A_RG2b own the remaining 64 pending cells.
+C_RG2b and A_RG2b own the remaining 64 pending cells. C_RG2b contributes 32
+executed cells pending separate acceptance within that pending population.
 C_PC contributes 34 accepted cells, including the separate literal reset
 subject. Raw execution retains its original unaccepted flags; the separately
 pinned reviews record user acceptance. The A_PC successor contributes 32
@@ -64,7 +65,7 @@ from grcv4_explorer.tranche8 import tranche8_status, tranche8_source
 view = tranche8_status(root)
 assert len(view["profiles"]) == 10
 assert view["coverage"]["accepted_cells"] == 258
-assert view["coverage"]["executed_pending_cells"] == 0
+assert view["coverage"]["executed_pending_cells"] == 32
 raw, identity = tranche8_source(root, view["coverage"]["record"]["path"])
 ```
 
@@ -277,6 +278,36 @@ no-endpoint/no-stability claim limits.
 
 
 This successor passes fifteen source/API tests, ten browser logic tests, both
+notebook cells and the real HTTP desktop/mobile scenario. The retained CLI
+command, complete independent numerical recomputation and current-boundary
+audit also pass, preserving the separate user-acceptance decision.
+
+
+## C_RG2b scoped acceptance
+
+The [bounded C_RG2b review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md)
+binds all sixteen layouts and both histories. Shared surfaces expose actual
+six-level signed chains, full section and signed-read certificates, Euclidean
+current and row-sum geometry bridges, lagged invariance and held-section
+mechanism controls. Exact source retrieval includes numerical recomputation.
+The separate [2026-10-06 scoped user decision](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance)
+credits all 32 cells: 290/322 are accepted, with 32 A_RG2b cells pending. Raw
+execution and recheck flags stay unchanged; parent 8.4b remains open.
+
+Use `run.py tranche8-query verify-retained --family C_RG2b` for retained
+structure, or add `--recheck-numerics` for complete independent interval and
+effect recomputation without native trajectories. The signed argument completion
+is separately accepted; it does not inherit the paper's exterior compact-support
+property. Completion-relative Lipschitz uniqueness does not close the C1 debt,
+prove arbitrary-graph support or promise indefinite positive continuation.
+
+
+The C_RG2b view binds completed cases and their independent numerical checks.
+Suspended/incomplete runs, working journals and progress checkpoints are not
+published or required by the retained checker. The final case bodies and
+independent case-check digests are unchanged by this retention decision.
+
+This successor passes sixteen source/API tests, eleven browser logic tests, both
 notebook cells and the real HTTP desktop/mobile scenario. The retained CLI
 command, complete independent numerical recomputation and current-boundary
 audit also pass, preserving the separate user-acceptance decision.

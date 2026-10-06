@@ -2860,9 +2860,34 @@ the full ten-profile plan.
         64 cells across C_RG2b and A_RG2b remain pending.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md).
-    - [ ] P9-8.4b[C_RG2b]: 32 cells. Graph-specific signed completion,
+    - [x] P9-8.4b[C_RG2b]: 32 cells. Graph-specific signed completion,
       every inverse-level residual/error, section/tail/input bounds, native
       current-L2/geometry bridges and K readmission versus K-minus step entry.
+      - [x] Bind all sixteen layouts to the accepted signed argument completion,
+        its actual tree/incidence/Gram/star-mask hypotheses and exact global
+        inverse, containment, section self-map and contraction bounds.
+      - [x] Retain the actual six-level native chains and independently check
+        every inverse/geometry residual, query and terminal identity, signed
+        predecessors, input propagation and tails in their declared norms.
+      - [x] Certify full selected-section/current/baseline/signed Read-Back
+        outputs, the Euclidean current bridge, resource/geometry bridges and
+        lagged invariance; distinguish the section from an instantaneous image.
+      - [x] Verify exact resource/reference transfer, fresh source/target reads
+        for both roles, absent W/Z history and atomic event publication. Pressure
+        K versus K-minus, completion faces, malformed chains and late failures.
+      - [x] Execute 32 history cells, ten target beats per role and fresh final
+        reads with explicit finite-continuation declarations; retain the complete
+        result and independent numerical recomputation without native reruns.
+      - [x] Synchronize CLI/API/notebook/browser and source bindings. Reconcile
+        paper/spec/side-tool claims, the separately accepted completion and
+        unresolved C1 debt; finish scientific and phase-boundary review.
+        Sixteen source/API tests, eleven browser logic tests, both notebook cells
+        and real HTTP desktop/mobile verification pass.
+      - [x] User acceptance of the bounded C_RG2b result on 2026-10-06,
+        separately from completed execution/recheck records with unchanged scientific fields. Accepted
+        coverage is 290/322, with 32 A_RG2b cells pending.
+        [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance).
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md).
     - [ ] P9-8.4b[A_RG2b]: 32 cells. Independent Candidate-A expansion oracle,
       graph-specific completion/inverse/section/error bridges, K versus
       K-minus admission and W transfer/write/next-read evidence.

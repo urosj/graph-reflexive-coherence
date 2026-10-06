@@ -1,5 +1,40 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b C_RG2b
+
+Work follows accepted A_CI_PC commit `7639c5c` on `work/p9-8-4b-cpc`.
+The [bounded signed-completion review](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md)
+binds all sixteen layouts and both histories: 32 cells, 320 target beats and
+32 fresh final reads pass. Retained evidence includes 1,061 signed-section
+certificates, 6,366 inverse-level residual pairs, 321 ordinary bridges and
+396 controls, with minimum full-error/ULP margin 4.393549. All final cases pass. The result digest is
+`171b63a39682c1292f4f17a6e1651f7f2ae148d367f1a5a80f5b2a04ad27f53d`.
+
+All sixteen focused methods, 78 native/generic regression methods (one optional
+32-vertex slow test skipped), 29 unchanged research methods, twelve recovery
+checks and twelve D11 checks pass. Complete independent
+numerical recomputation passes every case with native execution disabled and
+exact final shared-source/case digest binding. Source admission uses K;
+ordinary entry still requires K-minus, even at dt=0. Both-role reference/resource
+transfer and fresh sections are checked, with no W/Z state or history loss.
+The signed argument completion remains distinct from the paper's exterior
+compact-support construction. C1 debt and the finite-horizon claim limits remain.
+The final independent record binds all sixteen completed case checks.
+Operational journals, incomplete attempts and progress checkpoints are discarded.
+No production model or accepted numerical declaration changed.
+
+Side-tool verification passes sixteen source/API tests, eleven browser logic
+tests, both notebook cells and the real HTTP desktop/mobile scenario, including
+failed-refresh clearing. The retained CLI command and current phase-boundary
+audit pass; handoff evidence verifies and the accepted release is unchanged.
+The user accepted this bounded result on 2026-10-06 and requested its commit.
+The separate [scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance)
+preserves raw execution and numerical-recheck flags. Coverage is now
+290/322 accepted, with 32 A_RG2b cells pending and no executed cells awaiting
+acceptance. Parent 8.4b and later work stay open. A_RG2b is next. The review provides retained and numerical-recheck
+commands; neither repeats native trajectories. Accepted coverage depends only
+on the completed subjects and their checks.
+
 ## Accepted checkpoint — P9-8.4b A_CI_PC
 
 Work follows accepted C_CI_PC commit `9670d97` on `work/p9-8-4b-cpc`.

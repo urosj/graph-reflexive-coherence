@@ -42,3 +42,10 @@ dist/
 # Local tool state
 .codex/
 .continue/
+
+# Expanded C_RG2b evidence; adjacent XZ archives preserve the exact bytes.
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json
+
+# Operational progress is disposable working data.
+*.progress.jsonl
+/implementation/phase-9-grcv4/tranche-8/*RecheckProgress/

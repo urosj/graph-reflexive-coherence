@@ -10,7 +10,7 @@ test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', (
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);
   for(const row of evidence.profiles) assert.ok(content.includes(row.family));
-  for(const s of ['258/322','64 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
+  for(const s of ['290/322','32 pending','INCOMPLETE CASE','event committed=true','No native trajectory rerun','not runtime acceptance']) assert.ok(content.includes(s),s);
   assert.ok(out.children.length > 20);
 });
 
@@ -49,7 +49,7 @@ test('A_CI acceptance is separately bound without widening scope', () => {
   assert.equal(evidence.coverage.families.find(r => r.family === 'A_CI').accepted_cells, 32);
   assert.equal(evidence.coverage.executed_pending_cells, 0);
   const out=element('div');renderTranche8(evidence,out,element);
-  assert.match(text(out), /258\/322/);
+  assert.match(text(out), /290\/322/);
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r => r.family === 'A_CI').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
@@ -132,5 +132,29 @@ test('A_CI_PC binds separate acceptance with both writer channels', () => {
   assert.match(text(out),/Signed joint roots and separate W\/Z consumers/);
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r=>r.family==='A_CI_PC').acceptance=null;
+  assert.throws(()=>checkedTranche8(forged));
+});
+
+
+test('C_RG2b exposes complete chains and claim limits with separate scoped acceptance', () => {
+  const run=evidence.coverage.runs.find(r=>r.family==='C_RG2b');
+  assert.equal(run.acceptance.anchor,'scoped-user-acceptance');
+  assert.equal(run.status,'accepted_bounded');
+  assert.equal(run.passed_cases,16);
+  assert.equal(run.stage_evidence.signed_read_certificates,1061);
+  assert.equal(run.stage_evidence.inverse_level_residuals,6366);
+  assert.equal(run.stage_evidence.source_controls,12);
+  assert.equal(run.stage_evidence.entry_controls,192);
+  assert.equal(run.stage_evidence.final_controls,192);
+  assert.equal(run.execution_recovery,undefined);
+  assert.equal(run.operational_retry,undefined);
+  const row=evidence.coverage.families.find(r=>r.family==='C_RG2b');
+  assert.equal(row.accepted_cells,32);assert.equal(row.executed_pending_cells,0);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Separate scoped acceptance/);
+  assert.match(text(out),/Signed inverse chains, complete section errors and lagged invariance/);
+  assert.match(text(out),/RG completion and C1 claim restrictions/);
+  const forged=structuredClone(evidence);
+  forged.coverage.runs.find(r=>r.family==='C_RG2b').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
 });

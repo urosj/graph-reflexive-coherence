@@ -2068,6 +2068,21 @@ instead of stale fixed totals and opens any pending case details explicitly.
   desktop/mobile scenario pass. Explicit retained checking and complete
   independent numerical recomputation pass all sixteen cases.
 
+### P9-8.4b C_RG2b evidence successor
+
+- [x] Expose sixteen signed-completion outcomes and 32 history cells through
+  shared CLI/API/notebook/browser with exact input/result/recheck sources.
+- [x] Bind the separate scoped user acceptance of 2026-10-06: 290/322
+  accepted cells, with 32 A_RG2b cells pending; preserve raw execution/
+  recheck flags. Bind completed results without retaining operational run history.
+- [x] Expose per-level inverse residuals, full section and signed-read errors,
+  Euclidean current/row-sum geometry bridges, lagged invariance and C1 limits.
+- [x] Complete retained/interval, source/API, browser, notebook and current
+  phase-boundary verification without repeating native trajectories. Sixteen source/
+  API tests, eleven browser logic tests, both notebook cells and the real HTTP
+  desktop/mobile scenario pass. Explicit retained checking and complete
+  independent numerical recomputation pass all sixteen cases.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

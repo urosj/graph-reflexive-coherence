@@ -2,7 +2,8 @@
 
 The committed checkpoint pins existing acceptance, not a new acceptance ledger.
 Historical mutable handoffs are read from Git; immutable retained evidence must
-still match on disk. Numerical checkers are exposed only by explicit CLI action.
+still match on disk. Missing ignored copies may be restored from lossless archives.
+Numerical checkers are exposed only by explicit CLI action.
 """
 
 import argparse
@@ -19,6 +20,13 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+# C_RG2b passing execution remains separate from user acceptance.
+ACCEPTED_CRG2B_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bCases.json": "59b97d15e3e29b6dab6e23714c18137d7236a302283be56a78e34226c8bf5fe1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json": "b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md": "2e430449f6751a2effc45233071cb2b76c83e5639ffd4a21a65d1c3783c79d32",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bNumericalRecheck.json": "b823638b97a2cd2e59c2ce63a96b4f20d85b1d56bc6f4a7c6524d8aaa4061e06"
+}
 # A_CI_PC execution and separate scoped user acceptance have exact source pins.
 ACCEPTED_ACIPC_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCCases.json": "a768952d08ec38f9c034f904ec73569de21fc0cb32d755633c8a1860007ade15",
@@ -119,11 +127,11 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            pins = {**ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES, **ACCEPTED_APC_SOURCES, **ACCEPTED_CCIPC_SOURCES, **ACCEPTED_ACIPC_SOURCES}
+            pins = {**ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES, **ACCEPTED_APC_SOURCES, **ACCEPTED_CCIPC_SOURCES, **ACCEPTED_ACIPC_SOURCES, **ACCEPTED_CRG2B_SOURCES}
             if name in pins:
                 require(not historical, "current pinned evidence is not a historical Git snapshot")
                 frozen = path.read_bytes()
-                family = "A_CI_PC" if name in ACCEPTED_ACIPC_SOURCES else "C_CI_PC" if name in ACCEPTED_CCIPC_SOURCES else "A_PC" if name in ACCEPTED_APC_SOURCES else "C_PC" if name in ACCEPTED_CPC_SOURCES else "A_CI" if name in ACCEPTED_ACI_SOURCES else "C_CI"
+                family = "C_RG2b" if name in ACCEPTED_CRG2B_SOURCES else "A_CI_PC" if name in ACCEPTED_ACIPC_SOURCES else "C_CI_PC" if name in ACCEPTED_CCIPC_SOURCES else "A_PC" if name in ACCEPTED_APC_SOURCES else "C_PC" if name in ACCEPTED_CPC_SOURCES else "A_CI" if name in ACCEPTED_ACI_SOURCES else "C_CI"
                 require(hashlib.sha256(frozen).hexdigest() == pins[name],
                         "accepted " + family + " source drift: " + name)
                 self.values[name] = frozen
@@ -146,6 +154,8 @@ class Sources:
 
 
 def build(root=ROOT):
+    import phase9_implementation_policy as policy
+    policy.restore_packed_evidence(root)
     sources = Sources(root)
     handoff = sources.ref(HANDOFF, historical=True)
     sources.ref(PLAN, historical=True)
@@ -501,6 +511,79 @@ def build(root=ROOT):
     runs[-1]["numerical_recheck"] = sources.ref(recheck_name)
     covered.update(pending_cells)
     pending_cells.clear()
+    input_name, result_name = (BASE + "P9-8.4b-CRG2b" + n + ".json" for n in ("Cases", "Results"))
+    inputs, result = sources.read(input_name), sources.read(result_name)
+    require(result["manifest_digest"] == inputs["record_digest"] and result["native_runtime_executed"] is True
+            and result["user_accepted"] is False and result["aggregate_closed"] is False, "accepted C_RG2b execution/scope drift")
+    require([r["case_id"] for r in result["cases"]] == [r["case_id"] for r in inputs["cases"]], "accepted C_RG2b roster drift")
+    cases = []
+    for case, row in zip(inputs["cases"], result["cases"], strict=True):
+        ids = row["coverage_binding"]["cell_ids"]
+        require(row["coverage_binding"] == case["coverage_binding"] and len(ids) == 2
+                and all(i in cells and cells[i]["family"] == "C_RG2b" for i in ids), "accepted C_RG2b foreign coverage")
+        passed = row["outcome"] == "passed_named_case"
+        require(row["case_passed"] == passed and (not passed or row["event_committed"] is True
+                and row["first_failure"] is None), "accepted C_RG2b false success")
+        if passed:
+            require(not pending_cells.intersection(ids) and not covered.intersection(ids), "duplicate C_RG2b credit")
+            pending_cells.update(ids)
+        cases.append({"case_id": row["case_id"], "cells": ids, "case_passed": passed,
+            "event_committed": row["event_committed"], "outcome": row["outcome"], "first_failure": row["first_failure"]})
+    for ref in inputs["source_bindings"]:
+        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+                "accepted C_RG2b execution source drift: " + ref["path"])
+    review_name = BASE + "P9-8.4b-CRG2bRuntimeReview.md"
+    require(b"## Scoped user acceptance" in sources.raw(review_name), "missing C_RG2b scoped acceptance")
+    runs.append({"family": "C_RG2b", "inputs": sources.ref(input_name), "results": sources.ref(result_name),
+        "record_digest": result["record_digest"], "acceptance": sources.ref(review_name, anchor="scoped-user-acceptance"),
+        "review": sources.ref(review_name),
+        "stage_evidence": {"signed_read_certificates": 5 + sum(4 + 3*len(r["continuation"]) + len(r["final_reads"]) for r in result["cases"]),
+            "inverse_level_residuals": 6*(5 + sum(4 + 3*len(r["continuation"]) + len(r["final_reads"]) for r in result["cases"])),
+            "ordinary_bridges": 1 + sum(len(r["continuation"]) for r in result["cases"]),
+            "target_beats": sum(len(r["continuation"]) for r in result["cases"]),
+            "fresh_final_reads": sum(len(r["final_reads"]) for r in result["cases"]),
+            "source_controls": sum(len(v) for v in result["shared"]["source_effects"].values()),
+            "entry_controls": sum(len(v) for r in result["cases"] for v in r["entry_effects"].values()),
+            "final_controls": sum(len(v) for r in result["cases"] for v in r["final_effects"].values()),
+            "minimum_effect_margin": min(e["minimum_margin_ratio"] for e in
+                [*[e for v in result["shared"]["source_effects"].values() for e in v.values()],
+                 *[e for r in result["cases"] for section in ("entry_effects", "final_effects") for v in r[section].values() for e in v.values()]]),
+            "independent_source_chart": inputs["independent_source_chart"],
+            "independent_global_proof": inputs["independent_global_proof"],
+            "independent_target_charts": {r["case_id"]:r["executed_case"]["independent_graph_chart"] for r in result["cases"]}},
+        "stage_evidence_label": "Signed inverse chains, complete section errors and lagged invariance",
+        "rg_claim_restrictions": inputs["scientific_contracts"]["claim_restrictions"],
+        "claim_source": sources.ref("implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json"),
+        "passed_cases": sum(c["case_passed"] for c in cases), "incomplete_cases": sum(not c["case_passed"] for c in cases),
+        "cases": cases, "status": "accepted_bounded"})
+    require(len(pending_cells) == 32 and len(cases) == 16, "accepted C_RG2b coverage drift")
+    recheck_name = BASE + "P9-8.4b-CRG2bNumericalRecheck.json"
+    recheck = sources.read(recheck_name)
+    require(recheck["manifest_digest"] == inputs["record_digest"]
+            and recheck["runtime_digest"] == result["record_digest"]
+            and recheck["cases_passed"] == 16 and recheck["successful_history_cells"] == 32
+            and recheck["interval_equations_recomputed"] is True
+            and recheck["native_entry_points_disabled"] is True
+            and recheck["native_trajectories_rerun"] is False
+            and recheck["user_accepted"] is False and recheck["aggregate_closed"] is False,
+            "C_RG2b numerical recheck binding/scope drift")
+    from pygrc.models.grc_v4_codec import canonical_json_bytes
+    shared_digest = hashlib.sha256(canonical_json_bytes(result["shared"])).hexdigest()
+    require(len(recheck["cases"]) == len(result["cases"])
+            and all(check["case_id"] == row["case_id"]
+                    and check["case_digest"] == hashlib.sha256(canonical_json_bytes(row)).hexdigest()
+                    and check["shared_digest"] == shared_digest
+                    and check["successful_history_cells"] == 2
+                    and check["interval_equations_recomputed"] is True
+                    and check["native_trajectories_rerun"] is False
+                    for check, row in zip(recheck["cases"], result["cases"], strict=True)),
+            "C_RG2b completed numerical cases drift")
+    for ref in recheck["source_bindings"]:
+        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
+                "C_RG2b numerical recheck source drift: " + ref["path"])
+    runs[-1]["numerical_recheck"] = sources.ref(recheck_name)
+    covered.update(pending_cells)
+    pending_cells.clear()
     rows = []
     for family in FAMILIES:
         required = sorted(i for i, r in cells.items() if r["family"] == family)
@@ -531,7 +614,6 @@ def build(root=ROOT):
         for ref in sources.read(BASE + "P9-8.4b-" + tag + "Cases.json")["source_bindings"]:
             require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
                     "8.4 execution source drift: " + ref["path"])
-    import phase9_implementation_policy as policy
     scope = sorted(policy.runtime_targets(policy.recorded_acceptance(sources.root)), key=lambda r: r["path"])
     work = sources.read(policy.WORK)
     work_paths = {r["path"] for r in work["entries"]}
@@ -584,7 +666,7 @@ def next_work(value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
-    parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC"))
+    parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b"))
     parser.add_argument("--recheck-numerics", action="store_true")
     args = parser.parse_args()
     value = checked()
@@ -599,7 +681,7 @@ def main():
         commands = [[sys.executable, str(ROOT / HERE / "p984b_cos_successor.py"), "--check-retained", *extra] for extra in (["--original"], [])]
     else:
         script = {"C_CI": "p984b_cci_completion.py", "A_CI": "p984b_aci_runtime.py", "A_OS": "p984b_aos_runtime.py",
-                  "C_PC": "p984b_cpc_runtime.py", "A_PC": "p984b_apc_runtime.py", "C_CI_PC": "p984b_ccipc_runtime.py", "A_CI_PC": "p984b_acipc_runtime.py"}[args.family]
+                  "C_PC": "p984b_cpc_runtime.py", "A_PC": "p984b_apc_runtime.py", "C_CI_PC": "p984b_ccipc_runtime.py", "A_CI_PC": "p984b_acipc_runtime.py", "C_RG2b": "p984b_crg2b_runtime.py"}[args.family]
         commands = [[sys.executable, str(ROOT / HERE / script), "--check-retained",
                      *(["--recheck-numerics"] if args.recheck_numerics else [])]]
         if args.family == "C_PC":

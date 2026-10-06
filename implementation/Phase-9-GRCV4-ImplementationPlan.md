@@ -2894,7 +2894,7 @@ A_PC, A_CI_PC or C_CI_PC from their own history obligations.
 | `P9-8.4b[A_PC]` | 32 | A base-chart/carrier envelope, old-Z read/single write and separate W lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-APCRuntimeReview.md#scoped-user-acceptance) 2026-10-05: 32 cells, 320 target beats and 32 final reads. |
 | `P9-8.4b[C_CI_PC]` | 32 | Composite self-map/contraction with strict slack, joint-root/output error, base chart and carrier read/write. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-CCIPCRuntimeReview.md#scoped-user-acceptance) 2026-10-06: 32 cells, 320 target beats and 32 fresh final roots. |
 | `P9-8.4b[A_CI_PC]` | 32 | A composite contraction/slack and joint-root error, base chart, separate W and carrier lifecycle. | [All sixteen bounded cases accepted](./phase-9-grcv4/tranche-8/P9-8.4b-ACIPCRuntimeReview.md#scoped-user-acceptance) 2026-10-06: 32 cells, 320 target beats and 32 fresh final roots. |
-| `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | Pending. |
+| `P9-8.4b[C_RG2b]` | 32 | Graph-specific signed completion, every inverse-level residual/error, section/tail/input errors, current-L2/geometry bridges and K versus K-minus admission. | [Accepted 2026-10-06](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance); all sixteen bounded cases pass. |
 | `P9-8.4b[A_RG2b]` | 32 | A graph-specific completion and inverse/section/error bridges, K versus K-minus admission and W lifecycle. | Pending. |
 
 Family-specific prerequisites are those in the accepted coverage record;
@@ -3029,6 +3029,21 @@ The user accepted this bounded result on 2026-10-06. Separate acceptance brings
 coverage to **258/322**, with 64 cells pending across C_RG2b and A_RG2b; raw
 execution flags stay unchanged. No general root, arbitrary-graph, physical
 stability, endpoint or future-exhaustive claim follows.
+
+**Accepted C_RG2b successor (2026-10-06).** Work followed A_CI_PC commit `7639c5c`
+as one bounded campaign with completion-specific checkpoints. Independently
+check the actual graph hypotheses and global contraction/containment before
+using each target. Retain all native six-level inverse chains, certify their
+full state/geometry residuals and tails, and resolve signed intermediates and
+lagged invariance in the declared norms. Separate K event readmission from
+K-minus ordinary entry, then execute both-role finite continuations and fresh
+final reads. The signed argument-retraction completion is the separately
+accepted R6/native construction; it does not inherit the paper's exterior
+compact-support property. Side-tool evidence must preserve the unresolved C1
+debt, completion-relative uniqueness and finite-horizon claim ceiling. The
+separate [scoped user acceptance](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance)
+credits all 32 C_RG2b cells without changing raw execution flags. Coverage is
+**290/322 accepted**, with **32 A_RG2b cells pending**; parent 8.4b remains open.
 
 **Earlier C_OS `.b` execution (accepted 2026-10-05).** The
 [C_OS first batch](./phase-9-grcv4/tranche-8/P9-8.4b-RuntimeReview.md) binds

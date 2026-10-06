@@ -231,6 +231,8 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz",
+    ".gitignore",
     SIDE + "README.md",
     HERE + "tranche8_evidence.py",
     HERE + "tranche8_source_reuse.py",
@@ -282,6 +284,17 @@ PATHS = {
     PHASE + "tranche-8/P9-8.4b-ACICases.json",
     PHASE + "tranche-8/P9-8.4b-ACIResults.json",
     PHASE + "tranche-8/P9-8.4b-ACIRuntimeReview.md",
+    HERE + "p984b_crg2b_runtime.py",
+    HERE + "test_p984b_crg2b_runtime.py",
+    HERE + "p984b_crg2b_recheck.py",
+    PHASE + "tranche-8/P9-8.4b-CRG2bCases.json",
+    PHASE + "tranche-8/P9-8.4b-CRG2bResults.json",
+    PHASE + "tranche-8/P9-8.4b-CRG2bNumericalRecheck.json",
+    PHASE + "tranche-8/P9-8.4b-CRG2bRuntimeReview.md",
+    PHASE + "verification/p984b_crg2b_resume.py",
+    PHASE + "verification/p984b_crg2b_retry.py",
+    PHASE + "verification/test_p984b_crg2b_retry.py",
+    PHASE + "verification/test_p984b_crg2b_recovery.py",
     HERE + "p984b_acipc_runtime.py",
     HERE + "test_p984b_acipc_runtime.py",
     HERE + "p984b_acipc_recheck.py",
@@ -2229,7 +2242,46 @@ def work_entries(root, approval):
     return result
 
 
+def restore_packed_evidence(root):
+    """Restore the exact completed C_RG2b subject without any numerical execution."""
+    import lzma
+    import os
+    import tempfile
+
+    root = Path(root).resolve()
+    rows = [
+        (
+            'implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json',
+            49102617,
+            'b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea',
+            'e52c0baf53e43cf492a0e43512ddb38ee64f10dc4ad7540670bb2e77d7dc634e',
+        ),
+    ]
+    for name, size, original_sha, packed_sha in rows:
+        path = _paths.safe_path(root, name)
+        packed = safe_path(root, name + ".xz").read_bytes()
+        require(sha(packed) == packed_sha, "C_RG2b archive drift: " + name)
+        if path.exists():
+            require(path.stat().st_size == size and sha(path.read_bytes()) == original_sha,
+                    "C_RG2b expanded evidence drift: " + name)
+            continue
+        decoder = lzma.LZMADecompressor(format=lzma.FORMAT_XZ, memlimit=128 * 1024**2)
+        raw = decoder.decompress(packed, max_length=size + 1)
+        require(decoder.eof and not decoder.unused_data and len(raw) == size
+                and sha(raw) == original_sha, "C_RG2b expanded evidence drift: " + name)
+        with tempfile.NamedTemporaryFile(dir=path.parent, prefix=".crg2b-") as tmp:
+            tmp.write(raw)
+            tmp.flush()
+            os.chmod(tmp.name, 0o644)
+            try:
+                os.link(tmp.name, path)
+            except FileExistsError:
+                require(not path.is_symlink() and sha(path.read_bytes()) == original_sha,
+                        "C_RG2b concurrent restore drift: " + name)
+
+
 def current_boundary(root):
+    restore_packed_evidence(root)
     approval = acceptance(root)
     check_binding_reconciliation(root)
     policy = read(safe_path(root, POLICY))

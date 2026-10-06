@@ -2485,6 +2485,14 @@ effects. Use the shared CLI/source routes and browser/notebook view, including
 the explicit numerical-recheck record and D10 claim limits. Normal status does
 not recompute intervals or grant acceptance.
 
+The C_RG2b successor binds sixteen signed-completion cases and the separate
+2026-10-06 scoped acceptance of all 32 history cells. Coverage is 290/322
+accepted, with 32 A_RG2b cells pending; raw execution flags stay unchanged. Expose actual
+inverse chains, complete section/tail/input errors, distinct current/geometry
+bridge norms and lagged invariance. Preserve the separately accepted completion,
+K versus K-minus and C1 debt restrictions across CLI/API/notebook/browser. Normal
+status checks source bindings and never reruns native or interval trajectories.
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC
