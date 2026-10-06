@@ -59,6 +59,14 @@
       "storage_sha256": "b19e9568b7ae28f1ed79c00402ca3dbda249d1235e7a633b523e82f7b78902d8"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json",
+      "size": 46110769,
+      "sha256": "d23a612386ea7d1966b09f159d996b306d240b11cc1f8fb2cc692dce5572564b",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json.xz",
+      "storage_size": 1680576,
+      "storage_sha256": "0332a0819b0b733d730fd315d932eceaf2ab64bf98188cfea29751644aaa3071"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json",
       "size": 50380458,
       "sha256": "b7bdb1f848e3b904a6ff9cb99df37882227ea8cc562bbe00a7387a9f2860631f",

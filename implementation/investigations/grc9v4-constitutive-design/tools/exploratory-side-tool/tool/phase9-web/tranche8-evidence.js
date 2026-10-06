@@ -7443,8 +7443,8 @@ export const TRANCHE8_EVIDENCE = {
       {
         "work_id": "P9-8.4b",
         "title": "All-ten frozen expansion counterparts",
-        "status": "partial",
-        "accepted": false
+        "status": "accepted_bounded",
+        "accepted": true
       },
       {
         "work_id": "P9-8.4c",
@@ -7797,9 +7797,9 @@ export const TRANCHE8_EVIDENCE = {
       {
         "family": "A_RG2b",
         "required_cells": 32,
-        "accepted_cells": 0,
+        "accepted_cells": 32,
         "executed_pending_cells": 0,
-        "pending_cells": 32,
+        "pending_cells": 0,
         "required_cell_ids": [
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::current",
           "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::reset",
@@ -7834,8 +7834,41 @@ export const TRANCHE8_EVIDENCE = {
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
           "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
         ],
-        "accepted_cell_ids": [],
-        "status": "pending"
+        "accepted_cell_ids": [
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::current",
+          "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::reset",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::current",
+          "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::current",
+          "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::reset",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::current",
+          "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+          "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
+        ],
+        "status": "accepted_bounded"
       },
       {
         "family": "C_OS",
@@ -11116,6 +11149,447 @@ export const TRANCHE8_EVIDENCE = {
           "revision": null,
           "basis": "pinned_execution_with_separate_scoped_user_acceptance"
         }
+      },
+      {
+        "family": "A_RG2b",
+        "inputs": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json",
+          "sha256": "cecede14b568698ea5c2500e07123838ef2e344519e509d5f79abfb7e0f48a08",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "results": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json",
+          "sha256": "d23a612386ea7d1966b09f159d996b306d240b11cc1f8fb2cc692dce5572564b",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "record_digest": "91c634e6692afade225b637f3cdcd54f995c62fdc0d55cb26e9272121c1a6446",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md",
+          "sha256": "9692b616a09a3c764cede9b109d3fbcb6fe849844c383dc97f84a9fe6e89f295",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md",
+          "sha256": "9692b616a09a3c764cede9b109d3fbcb6fe849844c383dc97f84a9fe6e89f295",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        },
+        "stage_evidence": {
+          "signed_read_certificates": 1061,
+          "inverse_level_residuals": 4244,
+          "ordinary_bridges": 321,
+          "target_beats": 320,
+          "fresh_final_reads": 32,
+          "writer_controls": 192,
+          "source_controls": 8,
+          "entry_controls": 224,
+          "final_controls": 224,
+          "minimum_effect_margin": 7.7280207575636295,
+          "independent_source_chart": {
+            "vertices": 10,
+            "edges": 9,
+            "incidence_norm": "9",
+            "gram_norm": "10",
+            "mask_norm": "5",
+            "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+            "graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36"
+          },
+          "independent_global_proof": {
+            "global_bounds": {
+              "A_X": "87872062424953835764057962688129336764313757715169358967094512233389215/1968215769825474065028538635325186621893927801328880640802902665125167104",
+              "A_H": "849157741378719461424511609841209961510997463889060597470237095/12856416635810342978311163989323045272656844422124056886665805824",
+              "M_f": "41498124350377495139174931975/313494218786553217047307140608",
+              "M_S": "118657926849551278827600869906435160697395017416704000/3104573422948717202091483832909873609174001492738062244761",
+              "B_X": "14622819481837739064507427786719474598882494066089492312981715461803924497028180237549275/145222939517845005802304069573707655628437731530638782727885730286016919879545979339379705856",
+              "B_H": "1497323185400955312773172133035656227379022130236840494360481196130638041028783283200/12627743831148230652223036871643564875653430743647689529795286371723966973686976478301157",
+              "J": "36887221644779995679266606200/612293396067486752045521759",
+              "J_X": "9763562491661537307117551409792148529368195301685484329677168025932135/480521428180047379157358065264938140110822217121308750196021158477824",
+              "J_H": "94350860153191051269390178871245551278999718209895621941137455/3138773592727134516189249020830821599769737407745131075846144",
+              "current_margin": "2344864626236444989279/2344940703847010856928",
+              "read_exponent_upper": "4441404896155777/36606101097222766592",
+              "writer_exponent_upper": "25249079184644568116982773485348251347062084639562927052805843/206105215421836261601418895108677860809402875745675683005022076928",
+              "read_drive_upper": "16777216/16777215",
+              "weight_lower": "511/512",
+              "weight_upper": "512/511",
+              "M_C": "41498124350377495139174931975/313494218786553217047307140608",
+              "M_Y": "427798328055418516557254052994484698240427076330335745421989587/1648841723374690092811351160869422886475223005965405464040176615424"
+            },
+            "section_bounds": {
+              "ell": "12571287843417274262631253267406719574057071125715804154665528937148585/281173681403639152146934090760740945984846828761268662971843237875023872",
+              "inverse_lip": "281173681403639152146934090760740945984846828761268662971843237875023872/268602393560221877884302837493334226410789757635552858817177708937875287",
+              "value_radius": "59328963424775639413800434953217580348697508708352000/3104573422948717202091483832909873609174001492738062244761",
+              "image_lip": "934168946454784465091199014759620827150307624579977633924016751916196456046189913230283061696921600/17704986123747678994803478403081550313074627216089726395989216067985165887900880616402494753692898131949",
+              "q_section": "33343966414604290193059210727591608952468451566171436636201856970238966544481007566113587895574465768351251727761958321206067200/531191657970822536740093707739490891131838422360164489210862736101378918731788884526042552490305151524001912296251417512684496336259"
+            },
+            "native_bounds": {
+              "base_X_lipschitz": "87872062424953835764057962688129336764313757715169358967094512233389215/1968215769825474065028538635325186621893927801328880640802902665125167104",
+              "base_h_lipschitz": "849157741378719461424511609841209961510997463889060597470237095/12856416635810342978311163989323045272656844422124056886665805824",
+              "base_displacement_upper": "41498124350377495139174931975/313494218786553217047307140608",
+              "source_upper": "118657926849551278827600869906435160697395017416704000/3104573422948717202091483832909873609174001492738062244761",
+              "source_X_lipschitz": "14622819481837739064507427786719474598882494066089492312981715461803924497028180237549275/145222939517845005802304069573707655628437731530638782727885730286016919879545979339379705856",
+              "source_h_lipschitz": "1497323185400955312773172133035656227379022130236840494360481196130638041028783283200/12627743831148230652223036871643564875653430743647689529795286371723966973686976478301157",
+              "current_upper": "36887221644779995679266606200/612293396067486752045521759",
+              "inverse_lipschitz": "281173681403639152146934090760740945984846828761268662971843237875023872/268602393560221877884302837493334226410789757635552858817177708937875287",
+              "contraction_upper": "33343966414604290193059210727591608952468451566171436636201856970238966544481007566113587895574465768351251727761958321206067200/531191657970822536740093707739490891131838422360164489210862736101378918731788884526042552490305151524001912296251417512684496336259",
+              "section_lipschitz": "1/1024",
+              "section_radius": "1/4096",
+              "section_value_radius": "59328963424775639413800434953217580348697508708352000/3104573422948717202091483832909873609174001492738062244761",
+              "image_lipschitz": "934168946454784465091199014759620827150307624579977633924016751916196456046189913230283061696921600/17704986123747678994803478403081550313074627216089726395989216067985165887900880616402494753692898131949",
+              "current_inverse_upper": "2344940703847010856928/2344864626236444989279",
+              "resource_displacement_upper": "41498124350377495139174931975/313494218786553217047307140608",
+              "scaled_log_displacement_upper": "427798328055418516557254052994484698240427076330335745421989587/1648841723374690092811351160869422886475223005965405464040176615424"
+            }
+          },
+          "independent_target_charts": {
+            "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-POSITIVE": {
+              "vertices": 13,
+              "edges": 12,
+              "incidence_norm": "4",
+              "gram_norm": "7",
+              "mask_norm": "7/2",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:78b285538f9c7dc80f2a0b34047672fa98c8d05419c190700c161464f841b1c8"
+            },
+            "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-NEGATIVE": {
+              "vertices": 13,
+              "edges": 12,
+              "incidence_norm": "4",
+              "gram_norm": "7",
+              "mask_norm": "7/2",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:fd7fd2e84ba4b88e3779854d4067d4db5395532134fe7060c538f1a238b9ade6"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:8289315d2e6638878e35b0d0405b3bf702a823cf2638db4d1146ded48a4f713b"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:62e4cd2cb47c69ca656239bc7d12733e97e03cbf3df1faa2e9d57945401da5a5"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:3bf01c61737c84e0103878b16cce0250199cdf8d046036928fcfe59dcced5c95"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:559be3c8103a5366c174f3db48b8f09077679d7aa6077db66f24059087b4f149"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:f83487c55260a8d0dc334e8a1207ea2d2dcbaa8623ea1414573991d7e43d4639"
+            },
+            "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3": {
+              "vertices": 14,
+              "edges": 13,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:f8bafd38553f81f4ee7b8c0ad04242f4329f0f6fa5981994be9f60504e929393"
+            },
+            "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE": {
+              "vertices": 16,
+              "edges": 15,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:b80570e43eb20048593ba2483b8b295ae2f6d369f51d7a12c80aef711c270a56"
+            },
+            "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE": {
+              "vertices": 16,
+              "edges": 15,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:9b903f1b523c69d159edf32664c2c280ed5d57bd3e06df7818d40dd900fc2e4a"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:77e974f5f7c7d2f05479634c73e0b894062bd45ecc8979d61a39f2a80274bf6b"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:8d687c0339ad77faf722b18d3db21cf915b7228df882e3ed79ba306fe5e2d2fa"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:2e28e4b5dfaaea80bd95fafd4fa673166c3c41922da53f421348554c7565b7b5"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:d6266e939c66ea981dcdb7cf2d57a22ab6a3e4fbf1169697927d48c555e1c220"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:9204b043edfaa6010d6fb210dbe2286046883c46e8524e306b770db0b1d257a9"
+            },
+            "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3": {
+              "vertices": 17,
+              "edges": 16,
+              "incidence_norm": "5",
+              "gram_norm": "8",
+              "mask_norm": "4",
+              "completion": "grc9v4_a_rg2b_signed_argument_completion_v1",
+              "graph_digest": "grc-graph-sha256:3cc9c345f7d55eeec53bf25cb3935e94e9e5c150ef889b72e45bcd852643ee48"
+            }
+          }
+        },
+        "stage_evidence_label": "Signed C/Y chains, W lineage and composed writer controls",
+        "rg_claim_restrictions": {
+          "GTRS-RG-DEBT-C1-SECTION-REGULARITY": "narrowed_unresolved",
+          "D10.2-EC-RG-CLAIM-CEILING": "completion_relative_Lipschitz_no_spectrum_or_indefinite_positivity",
+          "D10-CL-C-012": "no_arbitrary_graph_or_future_exhaustive_support"
+        },
+        "claim_source": {
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+          "sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f",
+          "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+          "basis": "current_equals_accepted_checkpoint"
+        },
+        "passed_cases": 16,
+        "incomplete_cases": 0,
+        "cases": [
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::current",
+              "G9-EXPAND-D30-CHIRALITY-POSITIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D30-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::current",
+              "G9-EXPAND-D30-CHIRALITY-NEGATIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D31-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::current",
+              "G9-EXPAND-D45-CHIRALITY-POSITIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+            "cells": [
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::current",
+              "G9-EXPAND-D45-CHIRALITY-NEGATIVE::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          },
+          {
+            "case_id": "P984B-ARG2B-G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3",
+            "cells": [
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::current",
+              "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-3::A_RG2b::reset"
+            ],
+            "case_passed": true,
+            "event_committed": true,
+            "outcome": "passed_named_case",
+            "first_failure": null
+          }
+        ],
+        "status": "accepted_bounded",
+        "numerical_recheck": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bNumericalRecheck.json",
+          "sha256": "871a82f8040d989fbbc6587dc4bf656dae9d3ad136b5addb36b14b1ef7b22dfe",
+          "revision": null,
+          "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+        }
       }
     ],
     "oracle_and_pressure": [
@@ -11145,8 +11619,8 @@ export const TRANCHE8_EVIDENCE = {
       }
     ],
     "required_cells": 322,
-    "accepted_cells": 290,
-    "pending_cells": 32,
+    "accepted_cells": 322,
+    "pending_cells": 0,
     "executed_pending_cells": 0,
     "aggregate_closed": false,
     "other_vector_cells": 60,
@@ -11786,6 +12260,30 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_execution_with_separate_scoped_user_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json",
+      "sha256": "cecede14b568698ea5c2500e07123838ef2e344519e509d5f79abfb7e0f48a08",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bNumericalRecheck.json",
+      "sha256": "871a82f8040d989fbbc6587dc4bf656dae9d3ad136b5addb36b14b1ef7b22dfe",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json",
+      "sha256": "d23a612386ea7d1966b09f159d996b306d240b11cc1f8fb2cc692dce5572564b",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md",
+      "sha256": "9692b616a09a3c764cede9b109d3fbcb6fe849844c383dc97f84a9fe6e89f295",
+      "revision": null,
+      "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICases.json",
       "sha256": "473bf8252a1b6e5b02816e261686f53e3c39c927bf957dbae87ef7f705802a85",
       "revision": null,
@@ -12056,5 +12554,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "04756fae006d291126e42d751b00469ba93b043e0ca091c8852c255cef424985"
+  "view_digest": "335d3400fca7a17636d0df3e5c89d7acb02e6952cb4fd6f0102a244d63f9ef0f"
 };

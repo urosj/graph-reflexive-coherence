@@ -5,16 +5,14 @@ all ten bounded 8.3 profile integrations, larger-configuration preparation,
 and current 8.4 coverage. It reads existing records; it does not create claims,
 accept results, authorize work or rerun models.
 
-With the separate A_CI_PC acceptance, C_OS, A_OS, C_CI, A_CI, C_PC, A_PC,
-C_CI_PC and A_CI_PC supply **258 of 322 accepted 8.4b history cells**.
-C_RG2b and A_RG2b own the remaining 64 pending cells. C_RG2b contributes 32
-executed cells pending separate acceptance within that pending population.
+With the separate A_RG2b acceptance, all ten families supply **322 of 322
+accepted 8.4b history cells**. No cells remain pending acceptance.
 C_PC contributes 34 accepted cells, including the separate literal reset
 subject. Raw execution retains its original unaccepted flags; the separately
 pinned reviews record user acceptance. The A_PC successor contributes 32
 accepted cells through its own separate scoped decision. C_CI_PC adds 32
 accepted cells through its own separate scoped decision.
-The all-ten parent and `.c`–`.i` remain open.
+The bounded all-ten P9-8.4b item is closed; P9-8.4c–i remain open.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.
@@ -64,8 +62,8 @@ from grcv4_explorer.tranche8 import tranche8_status, tranche8_source
 
 view = tranche8_status(root)
 assert len(view["profiles"]) == 10
-assert view["coverage"]["accepted_cells"] == 258
-assert view["coverage"]["executed_pending_cells"] == 32
+assert view["coverage"]["accepted_cells"] == 322
+assert view["coverage"]["executed_pending_cells"] == 0
 raw, identity = tranche8_source(root, view["coverage"]["record"]["path"])
 ```
 
@@ -319,3 +317,24 @@ standalone historical readers first run `python scripts/evidence_storage.py rest
 from the repository root. This is storage reconstruction, not a numerical rerun
 or a new acceptance. See the [storage and value guide](../../../../../../docs/reference/EvidenceStorage.md)
 for archive links, the 10 MB Git-file rule and limits of the evidence claims.
+
+
+## A_RG2b bounded execution and scoped acceptance
+
+The [A_RG2b review](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md)
+binds sixteen layouts and both histories. Shared surfaces expose four-level
+C/scaled-log-W chains, complete query/tail errors, signed Read-Back/flat,
+current-L2 and C/Y-state bridges, exact W lineage and composed temporal-writer
+controls. The next read propagates intended C/W errors. No geometry history or
+carrier coordinate is added. The signed completion and C1 claim limits remain.
+
+Use `run.py tranche8-query verify-retained --family A_RG2b` for source,
+operand, schedule and bound checks; add `--recheck-numerics` for independent
+interval recomputation. Neither reruns native trajectories. The separately
+linked numerical report disables native numerical producers throughout its
+checks. The user accepted this bounded result on 2026-10-06; the separate
+[decision](../../../../../phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance)
+supplies acceptance while raw execution/recheck flags stay unchanged. It
+credits the final 32 cells and closes bounded P9-8.4b, without closing later
+8.4 work. Completed evidence uses compact poststates and
+lossless XZ storage; interrupted runs are not repository artifacts.

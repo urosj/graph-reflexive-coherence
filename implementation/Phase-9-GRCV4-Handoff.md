@@ -1,5 +1,49 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.4b A_RG2b and bounded all-ten closure
+
+Work follows accepted C_RG2b `5ff017c` and lossless-storage `ee34742` on
+`work/p9-8-4b-cpc`. The
+[bounded A_RG2b review](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md)
+records sixteen passing layouts and both histories: 32 cells, 320 target beats
+and 32 fresh final reads. Retained evidence contains 1,061 section certificates,
+4,244 C/Y inverse-level residual pairs, 321 ordinary bridges and 648 effect
+controls, with minimum complete-error/ULP margin 7.7280207576. The result digest
+is `91c634e6692afade225b637f3cdcd54f995c62fdc0d55cb26e9272121c1a6446`.
+
+All sixteen focused methods, 25 native A_RG2b methods, 29 unchanged research
+methods and twelve D11 checks pass. Independent interval recomputation passes
+all sixteen final cases with native numerical entry points disabled. It checks
+the coupled four-level C/Y chains, represented-log queries, distinct section
+and predecessor tails, signed reads, declared norm bridges, exact W lineage
+and single fresh-C/selected-J writer with composed next-read controls.
+Event admission on K remains distinct from ordinary entry on K-minus,
+including dt=0. Late/reference and reset-only history failures roll back.
+The accepted signed argument completion remains distinct from the paper's
+exterior completion; unresolved C1 debt and finite-horizon limits remain.
+No production model, accepted numerical declaration, paper or specification
+changed.
+
+The CLI retained check, seventeen source/API methods, twelve browser logic
+tests and both notebook cells pass. Real HTTP desktop/mobile verification
+also passes, including pending-review source identity, invalid-path rejection
+and failed-refresh clearing. The review includes the current phase-boundary
+audit command; artifact bindings cover the complete evidence and query surfaces.
+
+The complete result restores 46,110,769 exact JSON bytes from a 1,680,576-byte
+XZ archive. Fresh-directory restoration and all thirteen retained archives
+verify byte-for-byte. No Git-visible file exceeds 10 MB; incomplete runs and
+operational tracking records are not retained. The review gives the retained
+and independent numerical checking commands without native trajectory reruns.
+
+The user accepted A_RG2b on 2026-10-06 and requested its commit. The
+[separate scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance)
+preserves raw execution/recheck flags and credits the final 32 cells.
+Coverage is **322/322 accepted**, closing bounded P9-8.4b under its existing
+all-ten rule. Later 8.4c–i, 8.5 and 8.6 remain open; 8.4c is the next planned
+item. Earlier checkpoints below describe their historical coverage and storage
+populations. The pre-acceptance current phase-boundary audit passed.
+
 ## Accepted checkpoint — P9-8.4b C_RG2b
 
 Work follows accepted A_CI_PC commit `7639c5c` on `work/p9-8-4b-cpc`.

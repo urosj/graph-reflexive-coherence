@@ -60,3 +60,6 @@ dist/
 # Operational progress is disposable working data, not repository evidence.
 *.progress.jsonl
 /implementation/phase-9-grcv4/tranche-8/*RecheckProgress/
+
+# Expanded evidence; see artifact-storage.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json

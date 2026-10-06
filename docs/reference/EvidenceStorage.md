@@ -14,6 +14,8 @@ certificates, controls or passing checks is not a count of independent proofs.
   operands are consumed by `chain`, `level_residuals`, `truth` and
   `check_read(..., numerics=True)` in
   [the retained checker](../../implementation/phase-9-grcv4/verification/p984b_crg2b_runtime.py).
+  The [A_RG2b checker](../../implementation/phase-9-grcv4/verification/p984b_arg2b_runtime.py)
+  additionally checks scaled-log history, writer operands and the next read.
   The mutation tests check that meaningful corruption is rejected.
 - A recheck using the same independent checker is repeatability/integrity work,
   not another independently designed mathematical audit. Hashes authenticate
@@ -48,11 +50,18 @@ change alone does not require rerunning native trajectories or interval math.
 
 ## Lossless migration
 
-Twelve files over **10,000,000 bytes** are stored as adjacent `.xz` archives.
+The initial migration stored twelve files over **10,000,000 bytes** as adjacent `.xz` archives.
 Their combined payload falls from **389,208,550 to 9,838,636 bytes** (97.47%
 smaller); the largest archive is 1,314,672 bytes. C_RG2b's final result falls
 from **49,102,617 to 1,242,592 bytes**; the exact size and both SHA256
 identities are recorded in the [storage manifest](../../artifact-storage.json).
+
+A_RG2b adds a completed **46,110,769-byte** result stored in **1,680,576 bytes**.
+Its compact step schema reconstructs unchanged context and keeps C/W poststates
+plus the chains actually consumed by the independent checker. The current
+thirteen-file total is **435,319,319 bytes expanded, 11,519,212 bytes stored**;
+the largest individual archive is 1,680,576 bytes. No interrupted A run is
+part of the evidence set.
 
 The archives preserve the original bytes, including serialization and record
 digests. Frozen scientific source and input bindings are unchanged.
@@ -117,4 +126,5 @@ The machine-readable manifest records exact original/stored sizes and SHA256s.
 | [P9-8.4b-CCIPCResults.json.xz](../../implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json.xz) | 42.96 | 0.912 |
 | [P9-8.4b-CCIResults.json.xz](../../implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json.xz) | 25.05 | 0.732 |
 | [P9-8.4b-CPCResults.json.xz](../../implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json.xz) | 23.55 | 0.497 |
-| [P9-8.4b-CRG2bResults.json.xz](../../implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz) | 49.11 | 1.243 |
+| [P9-8.4b-CRG2bResults.json.xz](../../implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz) | 49.10 | 1.243 |
+| [P9-8.4b-ARG2bResults.json.xz](../../implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json.xz) | 46.11 | 1.681 |

@@ -2670,7 +2670,7 @@ the full ten-profile plan.
     pass. [Review and reuse limits](./phase-9-grcv4/tranche-8/P9-8.4a-CoverageReview.md),
     [portable validation](./phase-9-grcv4/tranche-8/P9-8.4a-Validation.json).
     No `.b`–`.h` runtime case is executed or accepted by this inventory.
-  - [ ] P9-8.4b: Complete all ten family items below, covering 322 applicable
+  - [x] P9-8.4b: Complete all ten family items below, covering 322 applicable
     expansion/history cells. For every family execute the shared counterparts:
     D30 × two chiralities, D31 × both chiralities/all three active phases,
     D45 × two chiralities, D52 × both chiralities/all three active phases,
@@ -2692,15 +2692,17 @@ the full ten-profile plan.
     actual current/geometry/Read-Back/continuity/final-refresh captures apply
     to the successors, not retroactively to the original campaign.
     The user accepted bounded C_OS, A_OS, C_CI, A_CI, C_PC and A_PC work on 2026-10-05.
-    Their 194 cells are accepted; the other 128 remain pending. Exact frozen
+    Their 194 cells were accepted at that checkpoint; subsequent scoped
+    decisions below, ending with A_RG2b on 2026-10-06, bring coverage to
+    **322/322 accepted** and close this bounded all-ten item. Exact frozen
     construction checks are not native success. Every item below inherits the shared source/event/
     both-role continuation contract and its own `.a` numerical prerequisites.
     All C items require complete `W_C_tr` and strict selectors; all A items
     require independent-oracle review for new scope plus fixed-row/W lifecycle
     evidence. Each persistent item owns whole-source Z archive, target zero
     initialization and explicit loss receipts, not just the literal C_PC case.
-    The parent stays open until all ten items and applicable cells are accepted;
-    unresolved families cannot be omitted without an explicit scope decision.
+    All ten items and applicable cells are now accepted with no omitted family.
+    P9-8.4c–i and later work remain open; bounded `.b` closure does not close them.
 
     - [x] P9-8.4b[C_OS]: All sixteen shared layouts × current/reset = 32 cells.
       Accepted 2026-10-05: fourteen original passes plus two separately bound
@@ -2888,9 +2890,38 @@ the full ten-profile plan.
         coverage is 290/322, with 32 A_RG2b cells pending.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-CRG2bRuntimeReview.md).
-    - [ ] P9-8.4b[A_RG2b]: 32 cells. Independent Candidate-A expansion oracle,
+    - [x] P9-8.4b[A_RG2b]: 32 cells. Independent Candidate-A expansion oracle,
       graph-specific completion/inverse/section/error bridges, K versus
       K-minus admission and W transfer/write/next-read evidence.
+      - [x] Bind all sixteen layouts to independent A graph/resource/W-transfer
+        expectations, the accepted signed C/scaled-log-W completion, actual
+        graph norm hypotheses and global inverse/containment/contraction bounds.
+      - [x] Capture the four-level native chains and independently recompute
+        every C/Y and geometry residual, represented-log query error, coupled
+        chain error, section tail and larger first-predecessor tail.
+      - [x] Check selected current, baseline, signed Read-Back/flat and source;
+        certify the current-L2, C/Y-sup and H-row-sum arithmetic bridges and
+        complete C/W lagged invariance. Verify the single fresh-C/selected-J W
+        writer and its next-read effects against independent composed inputs.
+      - [x] Pressure exact W retention/seeding for both roles, fresh event
+        sections/references, absent carrier state, K versus K-minus (including
+        dt=0), malformed chains/log histories and late/reset-only rollback.
+      - [x] Time a representative and largest D52 complete case, separating
+        native work, independent checks and publication cost before the full
+        campaign. Execute all 32 cells and fresh final reads; retain completed
+        results only, with shared context and compact step records.
+      - [x] Complete independent native-disabled numerical rechecking, own
+        paper/spec/side-tool review and synchronized CLI/API/notebook/browser
+        sources. Preserve the signed-completion and unresolved C1 claim limits.
+        All sixteen numerical cases, seventeen source/API methods, twelve
+        browser logic tests, both notebook cells and real HTTP desktop/mobile
+        verification pass. The complete result is 1.68 MB in lossless storage.
+      - [x] User acceptance of the bounded A_RG2b result on 2026-10-06,
+        separately from the unchanged execution and numerical-recheck records.
+        Coverage is 322/322 accepted, closing bounded P9-8.4b. P9-8.4c–i,
+        8.5 and 8.6 remain open.
+        [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance).
+      [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md).
 
   - [ ] P9-8.4c: Pressure capacity and phase boundaries. Add separately named
     D37/D44 and adjacent-capacity probes, active/inactive phases, both
@@ -2961,6 +2992,8 @@ the full ten-profile plan.
   explicit validity argument for each cache's owner, complete key, lifetime,
   invalidation and memory bound; prove cached/uncached results and rejections
   agree. Preserve asset checks, typed identity and numerical evidence domains.
+  Include Tranche 8 CLI/API status and source retrieval, whose repeated full
+  evidence-index authentication became costly during the RG2b campaigns.
   [Scope and proof obligations](./Phase-9-GRCV4-ImplementationPlan.md#end-of-tranche-8-performance-and-cache-review).
   This schedules review; implementation stays with the applicable existing
   work owners and introduces no new machine gate or conformance claim.
