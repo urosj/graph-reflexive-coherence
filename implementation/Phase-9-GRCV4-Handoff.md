@@ -6,7 +6,7 @@ On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
-`additional_work_register`; C_OS and A_OS are accepted and the other eight family items remain open.
+`additional_work_register`; C_OS, A_OS and C_CI are accepted and the other seven family items remain open.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
@@ -37,7 +37,7 @@ The result digest is `c1224a6a5970b4540c466c6869863b6391401f7a651f8392beee1bc270
 Its 38,261,443-byte shared-context JSON is stored as a 549,040-byte byte-exact
 XZ archive; restore it through `scripts/evidence_storage.py restore`.
 The side-tool exposes `.c` execution separately from `.b`'s accepted 322 cells
-and the unchanged preregistration. The eight other `.c` families remain open.
+and the unchanged preregistration. The seven other `.c` families remain open.
 C_OS acceptance is committed as `28628dcb`. The independent A_OS oracle
 successor now passes all 32 boundary expectations: thirty new cases with
 660 saved-entry evaluations and two exact D45 reuses. The three shared source
@@ -66,8 +66,39 @@ mutations and actual-input interval rechecking on D38 phase 1. Oracle acceptance
 and native acceptance are distinct in the
 side-tool; `--family A_OS --checkpoint 8.4c` checks native retained evidence,
 while `--oracle` selects only its prerequisite. Neither command reruns native
-trajectories. Next is C_CI boundary domain/reference preparation and native
-continuation. Deeper, covariance/larger work and full 8.5 atomicity remain separate.
+trajectories. A_OS acceptance is committed as `f1e1f48b`.
+
+The [C_CI preparation](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationReview.md)
+now passes all 32 boundary targets: thirty new and two exact D45 reuses, with
+60 new read-only native joint-root proposals, independent entry error bounds,
+complete C references and exact both-role resource transfer. The 600 nominal
+updates are independent predictions, not native continuation. Retained checks
+and three focused methods pass, including geometry/domain/source/role-swap
+mutations and interval rechecking on D38. The 2,455,533-byte result digest is
+`d8e15f31ae56406b158d12c18e7198e2d14db7d64ccc13466a1e37c6adae0bd1`.
+There are zero new topology events, native steps or C_CI runtime-cell closures.
+Side-tool access selects `--family C_CI --checkpoint 8.4c --preparation` for
+this prerequisite only. No further scientific approval gate is required for
+this C-only preparation.
+
+The [native C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md)
+now passes thirty new layouts, with both-role admission/publication/replay,
+600 target steps and 60 fresh final joint roots. Two exact D45 reuses complete
+**64 history cells, accepted by the user on 2026-10-07**. The accepted source beat
+is reused exactly; each new event reads it afresh. No production code,
+scientific parameter, tolerance or resource share changed. Maximum recorded
+joint-root/current/source error bounds are below `2.573e-16`, `6.287e-15` and
+`1.245e-23`; minimum poststep resource is `1.1723489818468796e-5`.
+The result digest is
+`8ce2d62b37ce72310e7dd79111d73c7ac7aec80f62ebde8ff353af978f012deb`;
+its 921,324-byte XZ archive restores 38,742,349 exact JSON bytes.
+Full retained checking passes with native producers disabled; three focused
+methods pass, including actual-entry interval rechecking for both D38 phase-one
+histories and resealed geometry/source/domain plus lifecycle mutations.
+Default `--family C_CI --checkpoint 8.4c` checks native retained operands,
+not trajectories; `--preparation` keeps the earlier scope separate. Acceptance
+is recorded separately from original execution flags. A_CI is next. The other seven `.c` families, deeper,
+covariance/larger work and full 8.5 atomicity remain open.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

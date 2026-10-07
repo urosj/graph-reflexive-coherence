@@ -148,6 +148,48 @@ class EvidenceTests(unittest.TestCase):
             self.assertEqual(command[-1], "--check-retained")
             self.assertNotIn("--run", command)
 
+    def test_boundary_cci_preparation_never_promotes_native_coverage(self):
+        row, = self.value["coverage"]["boundary_contract"]["target_preparations"]
+        self.assertEqual((row["family"], row["passed_cases"], row["exact_reuse_cases"]), ("C_CI", 30, 2))
+        self.assertEqual(row["new_native_root_reads"], 60)
+        self.assertEqual((row["native_steps"], row["topology_events"], row["runtime_cells_closed"]), (0, 0, 0))
+        self.assertFalse(row["interval_equations_recomputed"])
+        self.assertEqual({r["family"] for r in self.value["coverage"]["boundary_contract"]["family_results"]}, {"C_OS", "A_OS", "C_CI"})
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = row[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        argv = ["tranche8", "verify-retained", "--family", "C_CI", "--checkpoint", "8.4c"]
+        with patch.object(sys, "argv", [*argv, "--preparation"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            self.assertTrue(execute.call_args.args[0][-2].endswith("p984c_cci_preparation.py"))
+            self.assertEqual(execute.call_args.args[0][-1], "--check-retained")
+
+    def test_boundary_cci_native_acceptance_is_separate(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "C_CI")
+        self.assertEqual((row["native_cases"], row["passed_cases"], row["exact_reuse_cases"]), (30, 30, 2))
+        self.assertEqual((row["accepted_cells"], row["passing_pending_cells"]), (64, 0))
+        self.assertEqual(row["status"], "accepted_bounded")
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertFalse(row["native_trajectories_rerun"])
+        self.assertFalse(row["interval_equations_recomputed"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = row[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_boundary_execution_with_scoped_acceptance")
+        argv = ["tranche8", "verify-retained", "--family", "C_CI", "--checkpoint", "8.4c"]
+        with patch.object(sys, "argv", argv), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_cci_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+
     def test_cci_acceptance_is_separate_and_original_failure_preserved(self):
         c = self.value["coverage"]
         row = next(r for r in c["families"] if r["family"] == "C_CI")

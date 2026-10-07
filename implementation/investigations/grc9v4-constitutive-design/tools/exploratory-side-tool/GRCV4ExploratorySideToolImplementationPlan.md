@@ -2509,6 +2509,15 @@ CLI/API/notebook/browser. Project native boundary results separately with
 separate 64-cell acceptance, actual-input checks and exact D45 reuse. Explicit retained
 checking may recompute interval equations, never native steps. The A_OS `.c`
 checker defaults to native evidence; `--oracle` explicitly selects its prerequisite.
+Expose C_CI's entry joint-root/domain preparation under `target_preparations`,
+not `family_results`. Native root proposals and nominal predictions cannot
+become event/continuation credit. Native C_CI `.c` evidence belongs in a separate
+`family_results` row with its own passing/pending counts, exact D45 reuse and
+actual-entry comparison scope. The CLI defaults to native retained checking;
+`--preparation` explicitly selects only the prerequisite. API/notebook/browser
+present the same distinct scopes and source links. Neither mode grants scoped
+user acceptance or reruns native trajectories. C_CI's 2026-10-07 scoped decision
+now supplies its separate 64-cell acceptance; the raw execution flags stay unchanged.
 
 The first-task boundary contract is exposed as `coverage.boundary_contract`
 through the shared data surface and a separate browser section. It records

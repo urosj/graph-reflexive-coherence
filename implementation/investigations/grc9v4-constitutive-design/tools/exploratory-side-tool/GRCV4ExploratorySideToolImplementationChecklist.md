@@ -2107,6 +2107,15 @@ instead of stale fixed totals and opens any pending case details explicitly.
     boundary result distinct, with its separate 64-cell user acceptance. Route native retained
     checking through `--family A_OS --checkpoint 8.4c`, and oracle-only checking
     with the additional `--oracle`; neither mode runs native trajectories.
+  - [x] Expose C_CI target preparation separately: complete references, both-role
+    joint-root/domain evidence and nominal predictions, with explicit root-read
+    counts but zero events, native steps and runtime-cell closures. Require
+    `--family C_CI --checkpoint 8.4c --preparation` for its retained checker.
+  - [x] Expose native C_CI boundary results separately: thirty new passing
+    cases and two exact D45 reuses, 64 cells with separate scoped acceptance. Default
+    `--family C_CI --checkpoint 8.4c` checks native retained evidence, not the
+    prerequisite or a trajectory rerun. Preserve source identities, full-root
+    comparison scope and event-versus-case failure distinctions across surfaces.
 - [ ] Synchronize exact sources, scoped decisions and the handoff as family
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local

@@ -2982,8 +2982,23 @@ the full ten-profile plan.
         [native scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md).
       - [x] Accept the bounded native results separately. User acceptance on
         2026-10-07 covers all 64 named history cells, not aggregate `.c` closure.
-    - [ ] P9-8.4c[C_CI]: Complete C references and the full selected joint
+    - [x] P9-8.4c[C_CI]: Complete C references and the full selected joint
       root, with target-domain/error bounds for both roles.
+
+      - [x] Prepare all 32 target/reference/domain subjects: thirty new targets
+        and two exact D45 reuses. Both-role joint-root proposals, independent
+        entry error bounds and nominal continuation predictions pass, as do
+        retained checks and three focused methods. This is not native event
+        or continuation coverage; see the
+        [preparation scope](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationReview.md).
+      - [x] Bind and execute the native event/continuation campaign against
+        these targets; check each actual-entry joint root, both histories,
+        publication/receipts/replay and fresh final roots. Thirty new native
+        cases pass, with 600 target steps and 60 fresh final reads; two exact
+        D45 reuses complete 64 passing history cells. See the
+        [native result and scope](./phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md).
+      - [x] Review and accept bounded C_CI native results separately. User
+        acceptance on 2026-10-07 covers all 64 named cells, not aggregate `.c`.
     - [ ] P9-8.4c[A_CI]: Independent joint-root/domain expectations and W
       transfer/write/next-root consumption.
     - [ ] P9-8.4c[C_PC]: C readmission and base-chart/carrier envelope,

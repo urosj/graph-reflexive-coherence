@@ -47,6 +47,17 @@ BOUNDARY_AOS_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json": "ac2918f910ff07f7f57301d45ce5b043d206bb2436d650adddc93ebeb4832f4c",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md": "26849e5d563dcd9f68de0168fab9e1946d38f19f643c6e46aef8d8bdc46aeab9"
 }
+BOUNDARY_CCI_PREPARATION_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationInputs.json": "da8f99df3a1ef69317b72161e3e20f35130b62c80bc55a60dcbf0da78d625592",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationResults.json": "53afccc62c76594a80e5640e40c2abb8289db39ffd756250ca63f2551747d25e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationReview.md": "4a394abc0e8026a5a5ce739557b3ecc7d053ee0da00d36ca3ef98ec4db00992b"
+}
+
+BOUNDARY_CCI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCICases.json": "ba21a1f7e47f4fc8ce79b1fe5ca03b78027195b219997df6853cdfa390e5985e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIResults.json": "f4edf55cee5bb408e29998b5c04416893df0b562653de57a76a9d58b6e350957",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md": "3707b3f42692eb76f31ea86ee573de0b13078fb4f386cb8f1c9ddb829bdd1fa7"
+}
 
 # A_RG2b execution and separate scoped user acceptance have exact source pins.
 ACCEPTED_ARG2B_SOURCES = {
@@ -162,14 +173,16 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            boundary_pins = {**BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES}
+            boundary_pins = {**BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES}
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = path.read_bytes()
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_accepted_independent_oracle_not_runtime_acceptance" if name in BOUNDARY_AOS_ORACLE_SOURCES else
+                    basis=("pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CCI_SOURCES else
+                        "pinned_target_preparation_not_native_campaign_or_acceptance" if name in BOUNDARY_CCI_PREPARATION_SOURCES else
+                        "pinned_accepted_independent_oracle_not_runtime_acceptance" if name in BOUNDARY_AOS_ORACLE_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_AOS_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_COS_SOURCES else
                         "pinned_accepted_mechanical_evidence_not_numerical" if name in BOUNDARY_MECHANICAL_SOURCES else "pinned_preregistration_not_runtime_acceptance"))
@@ -794,6 +807,25 @@ def build(root=ROOT):
         review=sources.ref(boundary_aos_runtime.REVIEW),
         reuse_evidence=sources.ref(BASE + "P9-8.4b-AOSResults.json"),
         comparison_scope="actual_saved_entry_full_formula_intervals_and_native_consumer_checks_not_uniform_trajectory_bound"))
+    import p984c_cci_preparation as cci_preparation
+    cci_ready = cci_preparation.status(sources.read(cci_preparation.INPUTS), sources.read(cci_preparation.RESULTS))
+    preparation_status = "prepared_scope_only" if cci_ready["passed_cases"] + cci_ready["exact_reuse_cases"] == cci_ready["cases_required"] else "incomplete_preparation"
+    boundary_view["target_preparations"] = [dict(**cci_ready, status=preparation_status,
+        inputs=sources.ref(cci_preparation.INPUTS), results=sources.ref(cci_preparation.RESULTS),
+        review=sources.ref(cci_preparation.REVIEW),
+        scope="entry_joint_root_certificates_and_nominal_predictions_not_native_event_or_continuation")]
+    import p984c_cci_runtime as boundary_cci_runtime
+    native_cci = boundary_cci_runtime.status(sources.read(boundary_cci_runtime.INPUTS), sources.read(boundary_cci_runtime.RESULTS))
+    require("## Scoped user acceptance" in sources.raw(boundary_cci_runtime.REVIEW).decode(), "missing C_CI boundary acceptance")
+    require(native_cci["successful_history_cells"] == 64, "incomplete C_CI boundary acceptance")
+    native_cci["accepted_cells"] = 64
+    boundary_view["family_results"].append(dict(**native_cci,
+        status="accepted_bounded", required_cells=64, passing_pending_cells=0,
+        acceptance=sources.ref(boundary_cci_runtime.REVIEW, anchor="scoped-user-acceptance"),
+        inputs=sources.ref(boundary_cci_runtime.INPUTS), results=sources.ref(boundary_cci_runtime.RESULTS),
+        review=sources.ref(boundary_cci_runtime.REVIEW),
+        reuse_evidence=sources.ref(BASE + "P9-8.4b-CCICompletionResults.json"),
+        comparison_scope="actual_entry_joint_root_full_formula_intervals_and_native_whole_ball_admission_not_uniform_trajectory_bound"))
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
         runtime_scope_snapshot=scope,
@@ -838,10 +870,13 @@ def next_work(value):
     oracle_summary = " ".join(
         f"{r['family']} boundary oracle: {r['oracle_cases_passed']}/{r['oracle_cases_required']} expectations pass; oracle scope accepted, no runtime acceptance follows from the oracle."
         for r in c["boundary_contract"]["oracle_preparations"])
+    preparation_summary = " ".join(
+        f"{r['family']} target preparation: {r['passed_cases'] + r['exact_reuse_cases']}/{r['cases_required']} cases; native event/continuation evidence and acceptance reported separately."
+        for r in c["boundary_contract"]["target_preparations"])
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} 8.4c–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -852,18 +887,24 @@ def main():
     parser.add_argument("--recheck-numerics", action="store_true")
     parser.add_argument("--checkpoint", choices=("8.4b", "8.4c"), default="8.4b")
     parser.add_argument("--oracle", action="store_true", help="check the A_OS 8.4c oracle rather than native retained evidence")
+    parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     value = checked()
     if args.action != "verify-retained":
-        require(not args.family and not args.recheck_numerics and not args.oracle and args.checkpoint == "8.4b", "numerical/checker options require verify-retained")
+        require(not args.family and not args.recheck_numerics and not args.oracle and not args.preparation and args.checkpoint == "8.4b", "numerical/checker options require verify-retained")
         print(json.dumps(value if args.action == "status" else dict(status="passed", view_digest=value["view_digest"],
               level=value["verification"]["level"], accepted_cells=value["coverage"]["accepted_cells"], native_trajectories_rerun=False), indent=2))
         return
     require(args.family is not None, "select one completed family explicitly")
     require(not args.oracle or (args.family == "A_OS" and args.checkpoint == "8.4c"), "oracle selection requires A_OS boundary checkpoint")
+    require(not args.preparation or (args.family == "C_CI" and args.checkpoint == "8.4c"), "preparation selection requires C_CI boundary checkpoint")
     if args.checkpoint == "8.4c":
-        require(args.family in ("C_OS", "A_OS"), "boundary evidence unavailable for this family")
-        if args.family == "C_OS":
+        require(args.family in ("C_OS", "A_OS", "C_CI"), "boundary evidence unavailable for this family")
+        if args.family == "C_CI":
+            script = "p984c_cci_preparation.py" if args.preparation else "p984c_cci_runtime.py"
+            commands = [[sys.executable, str(ROOT / HERE / script), "--check-retained",
+                *(["--recheck-numerics"] if args.recheck_numerics else [])]]
+        elif args.family == "C_OS":
             require(not args.recheck_numerics, "C_OS checker already recomputes dense comparisons")
             commands = [[sys.executable, str(ROOT / HERE / "p984c_cos.py"), "--check"]]
         else:

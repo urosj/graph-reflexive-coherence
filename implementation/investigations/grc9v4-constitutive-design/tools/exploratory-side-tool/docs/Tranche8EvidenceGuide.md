@@ -38,6 +38,17 @@ execution flags, and grants zero runtime-cell acceptance. A_OS native boundary
 results have their own 64-cell scoped acceptance and actual-source/history binding.
 Normal status recomputes neither interval equations nor native trajectories. Other
 unimplemented `.c` family checkers fail closed.
+C_CI `.c` exposes native evidence separately from its target prerequisite:
+`verify-retained --family C_CI --checkpoint 8.4c` checks native retained
+operands; add `--preparation` for the prerequisite only. Either mode accepts
+`--recheck-numerics` to recompute independent interval equations without native
+trajectories. Its `target_preparations` row exposes both-role
+joint-root certificates and nominal predictions, counting 60 new native root
+reads but zero native steps, topology events or runtime-cell closures.
+The separate native `family_results` row records event/continuation success,
+exact D45 reuse and the separate 2026-10-07 scoped acceptance of 64 cells. A committed event is
+not a passing case if later continuation fails. The shared CLI/API/notebook/
+browser projection never infers user acceptance from passing execution.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

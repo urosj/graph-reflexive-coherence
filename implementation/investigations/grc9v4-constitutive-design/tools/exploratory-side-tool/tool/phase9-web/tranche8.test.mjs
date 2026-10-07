@@ -35,6 +35,34 @@ test('A_OS native results bind separate scoped acceptance', () => {
   }
 });
 
+test('C_CI native boundary evidence is distinct from preparation and acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c C_CI — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const index=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='C_CI');
+  const r=evidence.coverage.boundary_contract.family_results[index];
+  assert.equal(r.passed_cases,30);assert.equal(r.exact_reuse_cases,2);
+  assert.equal(r.acceptance.anchor,'scoped-user-acceptance');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=640,r=>r.native_trajectories_rerun=true,r=>r.passing_pending_cells=640,r=>r.acceptance=null]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_CI preparation displays native root reads without event or runtime credit', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /60 new read-only native joint-root proposals/);
+  assert.match(text(out), /0 topology events, 0 native steps and 0 runtime cells closed/);
+  const r=evidence.coverage.boundary_contract.target_preparations[0];
+  assert.equal(r.family,'C_CI');assert.equal(r.passed_cases,30);
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.native_steps=600,r=>r.runtime_cells_closed=64,r=>r.topology_events=30,r=>r.new_native_root_reads=0]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.target_preparations[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('C_OS boundary execution cannot confer acceptance or native rerun', () => {
   const out=element('div'); renderTranche8(evidence,out,element);
   assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);

@@ -2893,6 +2893,21 @@ source/history identities, both-role admission/replay, 600 continuation steps
 and 60 final reads pass at unchanged budgets. This is saved-entry evidence,
 not a uniform trajectory bound or aggregate `.c` closure.
 
+After A_OS acceptance commit `f1e1f48b`, the
+[C_CI target preparation](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationReview.md)
+passes all 32 layouts: thirty new targets and two exact D45 reuses. Complete
+references, exact both-role resource maps, native whole-ball joint-root proposals
+and independent entry error bounds are checked. Ten-step independent resource
+predictions are not native continuation; preparation itself closes no runtime
+history cells and introduces no new scientific approval gate. The separately
+bound [native campaign](./phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md)
+now passes thirty new events with both-role admission, 600 target steps and
+60 fresh final joint roots. Two exact D45 reuses complete 64 passing history
+cells, separately accepted by the user on 2026-10-07. Actual-entry certificates and unchanged
+budgets remain distinct from the preparation predictions and from a uniform
+trajectory bound. A_CI is the next family; aggregate `.c`
+and the seven other family items remain open.
+
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.
 The 2026-10-07 checklist makes those family items explicit; `.b`'s 322 accepted

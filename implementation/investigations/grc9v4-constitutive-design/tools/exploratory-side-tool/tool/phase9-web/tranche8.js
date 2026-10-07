@@ -99,6 +99,14 @@ export function renderTranche8(value, container, create = tag => document.create
       link(links,oracle[key],label); append(links,'span',' · ');
     }
   }
+  for (const prepared of boundary.target_preparations) {
+    append(container, 'h3', `8.4c ${prepared.family} target preparation — ${prepared.status}`);
+    append(container, 'p', `${prepared.passed_cases} new target preparations pass; ${prepared.exact_reuse_cases} exact reused targets. ${prepared.new_native_root_reads} new read-only native joint-root proposals, checked by independent interval equations. ${prepared.topology_events} topology events, ${prepared.native_steps} native steps and ${prepared.runtime_cells_closed} runtime cells closed. Nominal continuation predictions are not a native campaign or a uniform trajectory bound. Status does not rerun roots or interval equations.`);
+    const links=append(container, 'p', '');
+    for (const [key,label] of [['inputs','Bound C_CI targets'],['results','Joint roots and nominal predictions'],['review','Preparation scope and reproduction']]) {
+      link(links,prepared[key],label); append(links,'span',' · ');
+    }
+  }
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {
