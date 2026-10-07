@@ -2526,6 +2526,13 @@ native retained evidence. Oracle acceptance does not accept native results.
 The separate 2026-10-07 user decision accepts all 64 named native A_CI cells.
 Source retrieval and CLI/API/notebook/browser share labels and source identities.
 
+Expose C_PC boundary execution and its 2026-10-07 scoped acceptance:
+thirty new cases and two exact D45 reuses give 64 accepted history
+cells. Source-bound CLI/API/notebook/browser access preserves whole-carrier
+and signed-read comparison scope. `--family C_PC --checkpoint 8.4c` selects
+the retained checker; optional `--recheck-numerics` recomputes certificates,
+not native trajectories. Neither mode grants acceptance or broadens `.b`.
+
 The 2026-10-07 streamlining keeps frozen numerical checkers and acceptance
 identities intact. Full status builds reuse read-only prerequisites inside one
 content-checked operation, never across operations or as numerical verdicts.

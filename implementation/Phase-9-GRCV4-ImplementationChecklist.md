@@ -3026,8 +3026,17 @@ the full ten-profile plan.
         See the [native scope](./phase-9-grcv4/tranche-8/P9-8.4c-ACIRuntimeReview.md).
       - [x] Review and accept the native A_CI result separately. User acceptance
         on 2026-10-07 covers all 64 named cells, not aggregate `.c`.
-    - [ ] P9-8.4c[C_PC]: C readmission and base-chart/carrier envelope,
+    - [x] P9-8.4c[C_PC]: C readmission and base-chart/carrier envelope,
       whole-source Z archive/target reset, loss receipt and next-read effects.
+      - [x] Bind all 32 layouts/64 histories, prove the independent whole-ball
+        selector condition and check both-role ten-step positive predictions
+        before native execution, with unchanged parameters, shares and budgets.
+      - [x] Execute thirty new events, 600 target steps and 60 final reads;
+        reuse two exact accepted D45 cases. Retain pointwise full-formula and
+        signed Read-Back/flat certificates, single-writer and complete carrier
+        archive/reset checks. See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-CPCRuntimeReview.md).
+      - [x] User acceptance on 2026-10-07 covers all 64 named C_PC cells,
+        separately from aggregate `.c`.
     - [ ] P9-8.4c[A_PC]: Independent A expectations, exact W lineage and
       separate W/Z writer, archive/reset and continuation obligations.
     - [ ] P9-8.4c[C_CI_PC]: Gain-two joint-root contraction/slack and C

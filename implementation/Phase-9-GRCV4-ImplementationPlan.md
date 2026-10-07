@@ -2923,7 +2923,17 @@ two exact D45 reuses complete 64 passing history cells. Native admission,
 Read-Back, C/W transfer/writing and post-write root consumption are checked at
 actual operands under unchanged budgets. The user separately accepted native
 A_CI on 2026-10-07: four families now contribute 256 accepted `.c` history
-cells. The other six families remain open; C_PC is the next unexecuted family.
+cells. The other six families remain open pending their scoped acceptance.
+
+The [C_PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-CPCRuntimeReview.md)
+executes the same 32-layout population using the accepted R=1 carrier law:
+thirty new events, 600 target steps and 60 final reads, plus two exact D45
+reuses. All-layout independent preparation precedes execution. Pointwise
+interval and signed Read-Back checks, whole-carrier archive/reset/loss and
+single held-source writing retain the unchanged bounds. The user accepted
+its 64 named cells on 2026-10-07: five families now contribute 320 accepted
+cells; the other five families and aggregate `.c` remain open.
+A_PC follows this bounded checkpoint, not another C_PC discovery stage.
 
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.

@@ -110,7 +110,7 @@ class ScopeTests(unittest.TestCase):
             index.main()
             selected.assert_called_once_with(index.ROOT, "A_CI")
         with self.assertRaisesRegex(ValueError, "unavailable"):
-            index.family_status(index.ROOT, "C_PC")
+            index.family_status(index.ROOT, "A_PC")
 
     def test_retained_launcher_refuses_execution_and_unindexed_input(self):
         for name, option in (("p984c_aci_runtime.py", "--run"), ("p984c_aci_oracle.py", "--run-oracle"), ("unregistered.py", "--check-retained")):

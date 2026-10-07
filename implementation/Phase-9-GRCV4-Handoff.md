@@ -6,7 +6,7 @@ On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
-`additional_work_register`; C_OS, A_OS, C_CI and A_CI are accepted and the other six family items remain open.
+`additional_work_register`; C_OS, A_OS, C_CI, A_CI and C_PC are accepted and the other five family items remain open.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
@@ -125,7 +125,7 @@ Full retained checking passes with native producers disabled. All three focused
 pressure methods pass, including both-role actual-entry interval rechecks and
 resealed root/history/lifecycle/scope mutations. Storage verification is byte-exact.
 The default `--family A_CI --checkpoint 8.4c` checks native retained evidence;
-`--oracle` keeps the prerequisite separate. Next is C_PC preparation.
+`--oracle` keeps the prerequisite separate. C_PC followed this checkpoint.
 No production/specification changes, new
 public support or aggregate `.c` acceptance are included.
 
@@ -137,7 +137,25 @@ Operation-local validation reuses immutable prerequisite data, checks content
 drift before returning, and never caches numerical verdicts. The side-tool can
 query one completed `.c` family without validating unrelated families; explicit
 retained checking dispatches directly to the selected unchanged checker.
-C_PC work has not started; scientific records, native code and specs are unchanged.
+The streamlining was accepted and committed as `325bbed4`.
+
+The [C_PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-CPCRuntimeReview.md)
+now passes all thirty new cases: 30 events, 600 target steps and 60 final
+reads, plus two exact accepted D45 reuses. All-layout independent target,
+whole-ball selector and positive nominal-continuation preparation passed
+before native execution. Full retained checking and four focused pressure
+methods pass, including both-role second-step interval rechecks, wrong-law
+controls, signed-vector ambiguity, single carrier writing, reset archives and
+publication order. No production code, parameter, share recipe or bound changed.
+
+Result `a9dc58e6074c3b305a48d228f43a377d887a42953e7e3acb95bcc96251784d6e`
+retains 1,636 distinct signed-read certificates. A 701,880-byte archive restores
+25,360,043 exact JSON bytes; fresh restoration and storage tests pass.
+CLI/API/notebook/browser exposes `--family C_PC --checkpoint 8.4c` as
+**64 accepted cells**, following scoped user acceptance on 2026-10-07.
+Five families contribute 320 accepted `.c` cells; `.b` stays closed at
+322/322. A_PC is next under the approved single-work-unit workflow.
+Aggregate `.c`, deeper/covariance/larger work and 8.5 remain open.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

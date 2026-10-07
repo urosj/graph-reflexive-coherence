@@ -58,6 +58,14 @@ for independent interval recomputation. Without `--oracle`, A_CI `.c` checks
 the native campaign: both-role event/readmission, W transport and writing,
 ten target steps and fresh full-root consumption. Separate user acceptance on
 2026-10-07 covers all 64 named cells; neither check mode reruns native trajectories.
+C_PC `.c` adds thirty new cases and two exact D45 reuses, with all 64
+history cells accepted separately on 2026-10-07. Use
+`verify-retained --family C_PC --checkpoint 8.4c` for the whole-carrier,
+signed Read-Back and consumer checks. `--recheck-numerics` additionally
+recomputes independent interval and signed-vector certificates, not native
+trajectories. Family-scoped status is available through the same CLI and
+`tranche8_status(root, family="C_PC")`; it does not imply acceptance.
+
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

@@ -2123,6 +2123,10 @@ instead of stale fixed totals and opens any pending case details explicitly.
   - [x] Expose A_CI native boundary evidence through the default family command,
     separately from accepted oracle scope. Bind the 2026-10-07 native acceptance and
     preserve event-versus-case failures, exact reuse and saved-entry limits.
+  - [x] Expose C_PC boundary execution separately: thirty new cases, two exact
+    D45 reuses and 64 cells accepted on 2026-10-07. Bind retained source
+    access and whole-carrier/signed-read scope; family-scoped status and explicit
+    retained checking do not rerun native trajectories or grant acceptance.
 - [ ] Synchronize exact sources, scoped decisions and the handoff as family
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local
