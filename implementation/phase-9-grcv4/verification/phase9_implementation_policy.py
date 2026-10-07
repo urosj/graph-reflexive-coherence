@@ -248,6 +248,9 @@ PATHS = {
     "tests/test_evidence_storage.py", "docs/reference/EvidenceStorage.md",
     SIDE + "README.md",
     HERE + "tranche8_evidence.py",
+    HERE + "tranche8_validation.py",
+    HERE + "tranche8_retained.py",
+    HERE + "test_tranche8_validation.py",
     HERE + "tranche8_source_reuse.py",
     HERE + "test_tranche8_evidence.py",
     # First .c task: preregistration only; no new native/support acceptance.

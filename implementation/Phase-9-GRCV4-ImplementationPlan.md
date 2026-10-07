@@ -2939,11 +2939,27 @@ it from the family rows; verify each family's dispatch and numerical lifecycle
 separately. Positive cases require both-role target reconstruction/readmission
 and declared continuation/final reads. Preserve full OS split, CI joint-root,
 PC/CI+PC carrier/writer and RG section/completion obligations, including A W
-history and C reference coverage. New A numerical scope requires its own
-oracle-before-runtime review. Exact accepted evidence can be reused at its
+history and C reference coverage. Independent expectations must be checked
+before runtime, but an extension within accepted mathematics does not require
+a separate user interruption. New scientific authority or changed domains,
+tolerances, mechanisms or required coverage still requires explicit review.
+Exact accepted evidence can be reused at its
 bound subject and stage; a nearby degree or sibling family is not that subject.
 An expected rejection does not close a required positive row. Pending/blocked
 family rows remain visible until resolved or explicitly rescoped by the user.
+
+**Lean family workflow (approved 2026-10-07).** Treat preparation, execution,
+focused pressure and side-tool/handoff synchronization as one work unit,
+followed by one final review/acceptance. Stop earlier for a new scientific
+choice, failed bound or scope change. Keep all declared cells and both-role
+scientific/lifecycle checks. Reuse unchanged prerequisites within one operation;
+never use a stale filename/mtime-based verdict. A numerical change requires
+the affected numerical cases and pressure; a checker change requires retained
+operands and meaningful corruption tests; acceptance/docs/display changes need
+bindings and affected surface tests, not another numerical campaign. Broader
+regressions belong to shared changes and tranche closure. Existing accepted
+checkers and original evidence stay unchanged. Use family-scoped side-tool
+checks during work; synchronize the full view once at the completed checkpoint.
 
 Keep the shared side-tool views and handoff synchronized with each reviewed
 family. Closure requires all ten family items and the declared required cells,

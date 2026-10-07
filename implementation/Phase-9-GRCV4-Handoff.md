@@ -129,6 +129,16 @@ The default `--family A_CI --checkpoint 8.4c` checks native retained evidence;
 No production/specification changes, new
 public support or aggregate `.c` acceptance are included.
 
+After acceptance commit `1678503f`, the user approved streamlining before C_PC.
+Use the plan's lean family work unit: checked expectations first, then native
+execution, focused pressure and one final review. Routine preparation is not
+another human gate; changed scientific authority/bounds/scope still is.
+Operation-local validation reuses immutable prerequisite data, checks content
+drift before returning, and never caches numerical verdicts. The side-tool can
+query one completed `.c` family without validating unrelated families; explicit
+retained checking dispatches directly to the selected unchanged checker.
+C_PC work has not started; scientific records, native code and specs are unchanged.
+
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed
 evidence only, shared inputs once, byte-exact XZ for files over 10 MB, ignored

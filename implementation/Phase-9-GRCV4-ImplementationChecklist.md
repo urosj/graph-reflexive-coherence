@@ -2927,6 +2927,12 @@ the full ten-profile plan.
     families and both current/reset histories**, as already required by
     `P9-8.4a-Coverage.json`'s `additional_work_register`. These are new named
     probes, not a rerun or reopening of the 322 accepted `.b` cells.
+    - [x] Adopt the 2026-10-07 lean workflow: one family work unit through
+      preparation, execution, focused pressure and synchronized handoff, then
+      final review. Check expectations before runtime without a separate user
+      pause when using accepted mathematics. Escalate changed scientific scope
+      or failed bounds. Select checks by the change; preserve every declared
+      cell and original accepted evidence. See the implementation plan.
     - [x] Freeze the additional-case matrix and comparison budgets before
       execution: D37/D44, immediately below/at/above the selected capacity
       transitions, active phases 1–3, inactive `None`, both chiralities and
@@ -2953,8 +2959,10 @@ the full ten-profile plan.
     Each family item covers its applicable named matrix, both histories,
     actual event admission/rejection, independently checked target reconstruction
     and declared continuation/final reads for positive subjects. Bind its own
-    numerical domain and comparison contract; new A-oracle scope needs review
-    before dependent runtime execution. Reuse exact accepted subjects by explicit
+    numerical domain and comparison contract; check independent expectations
+    before dependent runtime execution. Within accepted scientific scope, review
+    the complete family result once; new authority, bounds or scope still require
+    explicit review before use. Reuse exact accepted subjects by explicit
     identity/stage links, not by adjacency or a sibling family's pass. A blocked
     positive row stays open; an expected rejection does not replace it.
     - [x] P9-8.4c[C_OS]: Complete C references, strict selectors and OS

@@ -2127,6 +2127,10 @@ instead of stale fixed totals and opens any pending case details explicitly.
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local
   storage/staged-blob checks. Do not introduce a GitHub workflow.
+- [x] Apply the approved lean boundary workflow: operation-local prerequisite
+  reuse, selected-family status/API access and direct retained-check dispatch.
+  Preserve frozen checkers, source-drift rejection, evidence scope and numerical
+  obligations; perform full-view synchronization once at final family closure.
 
 ## ATC A_OS bounded research source admission
 

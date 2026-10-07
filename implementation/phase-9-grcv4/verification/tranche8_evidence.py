@@ -12,6 +12,9 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+from copy import deepcopy
+
+from tranche8_validation import ACTIVE, validation_session
 
 ROOT = Path(__file__).resolve().parents[3]
 PHASE = "implementation/phase-9-grcv4/"
@@ -178,7 +181,15 @@ def git(root, *args):
 class Sources:
     def __init__(self, root):
         self.root, self.refs, self.values = Path(root).resolve(), {}, {}
+        self.decoded = {}
         git(self.root, "merge-base", "--is-ancestor", CHECKPOINT, "HEAD")
+
+    def current_bytes(self, name):
+        snapshot = ACTIVE.get()
+        if snapshot is not None:
+            require(snapshot.root == self.root, "snapshot root mismatch")
+            return snapshot.raw(name)
+        return (self.root / name).read_bytes()
 
     def raw(self, name, *, historical=False):
         require(not Path(name).is_absolute() and ".." not in Path(name).parts, "repository-relative source required")
@@ -188,7 +199,7 @@ class Sources:
             boundary_pins = {**BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES, **BOUNDARY_ACI_ORACLE_SOURCES, **BOUNDARY_ACI_SOURCES}
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
-                frozen = path.read_bytes()
+                frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
@@ -204,7 +215,7 @@ class Sources:
             pins = {**ACCEPTED_ARG2B_SOURCES, **ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES, **ACCEPTED_APC_SOURCES, **ACCEPTED_CCIPC_SOURCES, **ACCEPTED_ACIPC_SOURCES, **ACCEPTED_CRG2B_SOURCES}
             if name in pins:
                 require(not historical, "current pinned evidence is not a historical Git snapshot")
-                frozen = path.read_bytes()
+                frozen = self.current_bytes(name)
                 family = "A_RG2b" if name in ACCEPTED_ARG2B_SOURCES else "C_RG2b" if name in ACCEPTED_CRG2B_SOURCES else "A_CI_PC" if name in ACCEPTED_ACIPC_SOURCES else "C_CI_PC" if name in ACCEPTED_CCIPC_SOURCES else "A_PC" if name in ACCEPTED_APC_SOURCES else "C_PC" if name in ACCEPTED_CPC_SOURCES else "A_CI" if name in ACCEPTED_ACI_SOURCES else "C_CI"
                 require(hashlib.sha256(frozen).hexdigest() == pins[name],
                         "accepted " + family + " source drift: " + name)
@@ -213,14 +224,16 @@ class Sources:
                     basis="pinned_execution_with_separate_scoped_user_acceptance")
                 return frozen
             frozen = git(self.root, "show", CHECKPOINT + ":" + name)
-            require(historical or path.read_bytes() == frozen, "Tranche 8 retained source drift: " + name)
+            require(historical or self.current_bytes(name) == frozen, "Tranche 8 retained source drift: " + name)
             self.values[name] = frozen
             self.refs[name] = dict(path=name, sha256=hashlib.sha256(frozen).hexdigest(),
                                    revision=CHECKPOINT, basis="historical_git" if historical else "current_equals_accepted_checkpoint")
         return self.values[name]
 
     def read(self, name):
-        return json.loads(self.raw(name))
+        if name not in self.decoded:
+            self.decoded[name] = json.loads(self.raw(name))
+        return deepcopy(self.decoded[name])
 
     def ref(self, name, *, historical=False, anchor=None):
         self.raw(name, historical=historical)
@@ -230,6 +243,12 @@ class Sources:
 def build(root=ROOT):
     import phase9_implementation_policy as policy
     policy.restore_packed_evidence(root)
+    with validation_session(root=root):
+        return _build(root)
+
+
+def _build(root):
+    import phase9_implementation_policy as policy
     sources = Sources(root)
     handoff = sources.ref(HANDOFF, historical=True)
     sources.ref(PLAN, historical=True)
@@ -900,6 +919,33 @@ def checked(root=ROOT):
     return value
 
 
+BOUNDARY_RUNTIME = {"C_OS": "p984c_cos", "A_OS": "p984c_aos_runtime",
+    "C_CI": "p984c_cci_runtime", "A_CI": "p984c_aci_runtime"}
+
+
+def family_status(root, family):
+    """Selected 8.4c family only; not full-index or current-boundary validity."""
+    import importlib
+    import phase9_implementation_policy as policy
+    require(family in BOUNDARY_RUNTIME, "boundary evidence unavailable for this family")
+    policy.restore_packed_evidence(root)
+    name = BOUNDARY_RUNTIME[family]
+    with validation_session((name,), root=root):
+        module = importlib.import_module(name)
+        sources = Sources(root)
+        summary = module.status(sources.read(module.INPUTS), sources.read(module.RESULTS))
+        require("## Scoped user acceptance" in sources.raw(module.REVIEW).decode(), "missing scoped acceptance")
+        cells = 2 * (summary["passed_cases"] + summary["exact_reuse_cases"])
+        require(cells == 64, "incomplete accepted boundary scope")
+        summary.update(accepted_cells=cells, status="accepted_bounded",
+            acceptance=sources.ref(module.REVIEW, anchor="scoped-user-acceptance"),
+            inputs=sources.ref(module.INPUTS), results=sources.ref(module.RESULTS))
+        return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint="8.4c",
+            scope="selected_family_only_not_full_index_or_execution_permission",
+            native=summary, source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
+            other_families_checked=False, native_trajectories_rerun=False)
+
+
 def next_work(value):
     c = value["coverage"]
     boundary_summary = " ".join(
@@ -927,13 +973,21 @@ def main():
     parser.add_argument("--oracle", action="store_true", help="check A_OS or A_CI 8.4c independent oracle scope, not native execution")
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
-    value = checked()
     if args.action != "verify-retained":
+        if args.family:
+            require(args.action == "status" and args.checkpoint == "8.4c"
+                and not args.recheck_numerics and not args.oracle and not args.preparation,
+                "family status requires the 8.4c checkpoint without numerical options")
+            print(json.dumps(family_status(ROOT, args.family), indent=2))
+            return
+        value = checked()
         require(not args.family and not args.recheck_numerics and not args.oracle and not args.preparation and args.checkpoint == "8.4b", "numerical/checker options require verify-retained")
         print(json.dumps(value if args.action == "status" else dict(status="passed", view_digest=value["view_digest"],
               level=value["verification"]["level"], accepted_cells=value["coverage"]["accepted_cells"], native_trajectories_rerun=False), indent=2))
         return
     require(args.family is not None, "select one completed family explicitly")
+    if args.checkpoint != "8.4c":
+        checked()  # Keep historical .b dispatch unchanged in this bounded refactor.
     require(not args.oracle or (args.family in ("A_OS", "A_CI") and args.checkpoint == "8.4c"), "oracle selection requires A_OS/A_CI boundary checkpoint")
     require(not args.preparation or (args.family == "C_CI" and args.checkpoint == "8.4c"), "preparation selection requires C_CI boundary checkpoint")
     if args.checkpoint == "8.4c":
@@ -965,6 +1019,8 @@ def main():
             commands.append([sys.executable, str(ROOT / HERE / "p984b_cpc_pressure.py"), "--check-retained",
                              *(["--recheck-numerics"] if args.recheck_numerics else [])])
     for command in commands:
+        if args.checkpoint == "8.4c":
+            command.insert(1, str(ROOT / HERE / "tranche8_retained.py"))
         subprocess.run(command, cwd=ROOT, check=True)
 
 

@@ -65,6 +65,26 @@ Forty disabled-profile surfaces remain Tranche 9 work. General ATC is not implie
 
 ## Choose the check you need
 
+For work on one completed capacity-boundary family, use
+`tranche8-query status --family A_CI --checkpoint 8.4c`. This checks only that
+family and its dependencies, and explicitly does not certify the other families,
+the global generated view or current implementation permission. The API/notebook
+equivalent is `tranche8_status(root, family="A_CI")`. Unavailable families fail
+closed. Full status/check commands retain the full view and its original scope.
+
+The boundary retained command goes directly to the selected frozen checker,
+without a preceding full-index rebuild. Read-only prerequisites are reused
+within a single operation; mutable return values are detached copies and file
+content drift rejects the operation before return. No numerical verdicts or
+cross-operation results are cached. Native execution remains a separate command.
+
+Run changed numerical subjects and meaningful pressure once. For unchanged
+scientific inputs, acceptance/docs/display edits need binding and surface checks,
+not new native trajectories or interval math. Regenerate the full browser view
+once when completing a family. Do not use rare test failures as a reason to drop
+independent equations, domains, both-role history/lifecycle checks or declared
+coverage.
+
 From the repository root, using the existing `.venv`:
 
 ```bash

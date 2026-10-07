@@ -2526,6 +2526,17 @@ native retained evidence. Oracle acceptance does not accept native results.
 The separate 2026-10-07 user decision accepts all 64 named native A_CI cells.
 Source retrieval and CLI/API/notebook/browser share labels and source identities.
 
+The 2026-10-07 streamlining keeps frozen numerical checkers and acceptance
+identities intact. Full status builds reuse read-only prerequisites inside one
+content-checked operation, never across operations or as numerical verdicts.
+Use `status --family A_CI --checkpoint 8.4c` (or another completed boundary
+family) during scoped work; its result explicitly excludes other families and
+full-boundary validity. Boundary `verify-retained` authenticates the selected
+sources and invokes the unchanged checker without first rebuilding the entire
+index. Regenerate/check the full shared browser view once at final family
+closure, rather than at every intermediate step. Shared changes and tranche
+closure still receive broader regression checks.
+
 The first-task boundary contract is exposed as `coverage.boundary_contract`
 through the shared data surface and a separate browser section. It records
 32 layouts/640 history obligations, zero executions/acceptances, exact source
