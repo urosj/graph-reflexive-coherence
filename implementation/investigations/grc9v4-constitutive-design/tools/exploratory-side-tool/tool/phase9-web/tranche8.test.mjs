@@ -6,6 +6,21 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('shared mechanics cannot become numerical coverage or lose mock labels', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  assert.match(text(out), /mocked numerical reads, detection and target construction/);
+  assert.match(text(out), /No numerical admission or continuation credit/);
+  const mechanical=evidence.coverage.boundary_contract.mechanics;
+  assert.equal(mechanical.status, 'accepted_shared_mechanics');
+  assert.equal(mechanical.test_methods, 6);
+  assert.ok(sourceURL(mechanical.record).startsWith('/api/tranche8/source?'));
+  for (const mutate of [m=>m.numerical_history_credit=640, m=>m.status='accepted',
+      m=>m.observations.receiver_probes[0].numerical_reads_mocked=false]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.mechanics);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('boundary contract renders separately and rejects false runtime credit', () => {
   const out=element('div'); renderTranche8(evidence,out,element);
   for (const phrase of ['640 current/reset obligations', '600 new, 40 exact-reuse candidates', '0 executed; 0 accepted', 'not new target certificates'])

@@ -75,6 +75,13 @@ export function renderTranche8(value, container, create = tag => document.create
   details(container, 'Independent capacity/phase expectations', boundary.layouts);
   details(container, 'All-ten required comparison ceilings — not new target certificates', boundary.families);
   details(container, 'Bounded schedule, retention budget and prerequisites', {schedule:boundary.schedule, retention:boundary.retention, prerequisites:boundary.prerequisites});
+  const mechanical = boundary.mechanics;
+  append(container, 'h3', '8.4c shared mechanics — accepted mechanical scope only');
+  append(container, 'p', `${mechanical.observations.shared_layouts} layouts checked once; ${mechanical.observations.exact_real_resource_maps} exact-real resource maps. All ten receiver routes checked with mocked numerical reads, detection and target construction. No numerical admission or continuation credit; integrity check does not rerun tests.`);
+  const mechanicalLinks = append(container, 'p', '');
+  link(mechanicalLinks, mechanical.record, 'Completed mechanical checks');
+  append(mechanicalLinks, 'span', ' · '); link(mechanicalLinks, mechanical.review, 'Mechanical review and reproduction');
+  details(container, 'Shared negatives, outliers and explicitly mocked receiver probes', mechanical.observations);
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {

@@ -2940,12 +2940,16 @@ the full ten-profile plan.
       layouts, 320 shared requests and 640 both-role obligations (600 new,
       40 exact D45 reuse candidates). Eight focused contract tests pass;
       no native campaign or new target-domain certificate was produced.
-    - [ ] Verify shared allocation and wire/semantic boundary rules once with
+    - [x] Verify shared allocation and wire/semantic boundary rules once with
       named reusable tests, including malformed types and invalid phase use.
       Distinguish decode rejection, typed request failure and numerical
       readmission failure. Check per-family dispatch without repeating the
       entire common mechanical suite ten times; allocator passes alone do not
       discharge the family runtime obligations below.
+      Accepted after `2c3097e0` for shared mechanical scope: [shared tests and scope](./phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md).
+      Six methods cover 32 shared layouts, 60 exact-real resource maps, 31
+      shared negative recipes, outliers and all-ten mocked receiver routing.
+      A seventh test pressures retained integrity. No numerical credit follows.
     Each family item covers its applicable named matrix, both histories,
     actual event admission/rejection, independently checked target reconstruction
     and declared continuation/final reads for positive subjects. Bind its own

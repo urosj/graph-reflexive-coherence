@@ -16,8 +16,13 @@ contract tests pass. Budgets and source recipes are frozen; fresh runtime
 identities, target domains and new A-oracle scope still require binding/review.
 The two-remainder targets are not certified by the inherited D31 share recipe.
 
-Next: shared allocation and wire/semantic boundary tests, then each family's
-target prerequisites and bounded execution. The side-tool shows the new
+The boundary acceptance is committed as `2c3097e0`. Its successor
+[shared mechanical tests](./phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md)
+are accepted: 32 shared layouts, 60 exact-real resource
+maps, 31 shared negatives, outlier checks and ten mocked receiver routes.
+The result is about 14 KB; `--check` is retained integrity, not a rerun.
+Next: C_OS target prerequisites, explicit equivalence/reuse decisions and
+bounded execution. The side-tool shows the new
 preregistration separately from `.b`'s accepted 322 cells. No native `.c` case
 has run or been accepted. Deeper/covariance/larger work and full 8.5 atomicity
 remain separate.

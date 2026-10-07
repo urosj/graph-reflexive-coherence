@@ -2870,7 +2870,10 @@ implements the first `.c` task, accepted by the user after pressure testing:
 obligations across ten families, including 40 exact-reuse candidates. It
 freezes source recipes, independent structural expectations and required
 comparison ceilings, not new target-domain or native success evidence.
-Next are shared allocation/wire checks, then family-specific prerequisites.
+The [shared allocation/wire tests](./phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md)
+are now accepted for their mechanical scope. They check 32 layouts once and all-ten
+receiver routing with explicitly mocked numerical gates. Next are C_OS target
+prerequisites; no numerical reuse or family closure follows from these tests.
 
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.

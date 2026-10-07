@@ -2095,6 +2095,9 @@ instead of stale fixed totals and opens any pending case details explicitly.
   exact runtime subjects, independent comparisons and admission/rejection
   classification. A common allocator pass or a sibling family cannot supply
   numerical acceptance; blocked required positive cases remain visible.
+  - [x] Expose the shared mechanical result and review, with all-ten receiver
+    routing explicitly labelled mocked, scoped acceptance and zero numerical credit. Family
+    numerical results and scoped acceptance remain pending.
 - [ ] Synchronize exact sources, scoped decisions and the handoff as family
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local

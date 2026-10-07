@@ -59,8 +59,27 @@ class EvidenceTests(unittest.TestCase):
         path = index.ROOT / b["record"]["path"]
         original = Path.read_bytes
         with patch.object(Path, "read_bytes", lambda p: b"forged" if p == path else original(p)):
-            with self.assertRaisesRegex(ValueError, "preregistration source drift"):
+            with self.assertRaisesRegex(ValueError, "preregistration/mechanical source drift"):
                 index.Sources(index.ROOT).raw(b["record"]["path"])
+
+    def test_shared_mechanics_is_not_numerical_admission(self):
+        view = self.value["coverage"]["boundary_contract"]
+        m = view["mechanics"]
+        self.assertEqual(m["test_methods"], 6)
+        self.assertEqual(m["observations"]["shared_layouts"], 32)
+        self.assertEqual(len(m["observations"]["receiver_probes"]), 10)
+        self.assertEqual(m["numerical_history_credit"], 0)
+        self.assertFalse(m["tests_rerun"])
+        self.assertTrue(view["contract_accepted"])
+        self.assertEqual(m["status"], "accepted_shared_mechanics")
+        self.assertEqual(self.value["coverage"]["accepted_cells"], 322)
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("record", "review"):
+                ref = m[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_accepted_mechanical_evidence_not_numerical")
 
     def test_cci_acceptance_is_separate_and_original_failure_preserved(self):
         c = self.value["coverage"]

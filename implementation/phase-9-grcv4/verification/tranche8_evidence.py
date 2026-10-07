@@ -25,6 +25,10 @@ BOUNDARY_CONTRACT_SOURCES = {
     BASE + "P9-8.4c-BoundaryContract.json": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
     BASE + "P9-8.4c-BoundaryReview.md": "d13fa1298d0d10526bb89fd43499a346da480ec04da11df064e383c5f8750895",
 }
+BOUNDARY_MECHANICAL_SOURCES = {
+    BASE + "P9-8.4c-MechanicalChecks.json": "bfca9935d05b5fb793406765e10e48a1652ec7e203ea40deb93590d0f6cc3c1a",
+    BASE + "P9-8.4c-MechanicalReview.md": "df80ed367b159007fc8552f85e5f4fa0276e3e786305077718de6395a310d598",
+}
 # A_RG2b execution and separate scoped user acceptance have exact source pins.
 ACCEPTED_ARG2B_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json": "cecede14b568698ea5c2500e07123838ef2e344519e509d5f79abfb7e0f48a08",
@@ -139,13 +143,14 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            if name in BOUNDARY_CONTRACT_SOURCES:
+            boundary_pins = {**BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES}
+            if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = path.read_bytes()
-                require(hashlib.sha256(frozen).hexdigest() == BOUNDARY_CONTRACT_SOURCES[name], "boundary preregistration source drift")
+                require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
-                self.refs[name] = dict(path=name, sha256=BOUNDARY_CONTRACT_SOURCES[name], revision=None,
-                    basis="pinned_preregistration_not_runtime_acceptance")
+                self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
+                    basis="pinned_accepted_mechanical_evidence_not_numerical" if name in BOUNDARY_MECHANICAL_SOURCES else "pinned_preregistration_not_runtime_acceptance")
                 return frozen
             pins = {**ACCEPTED_ARG2B_SOURCES, **ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES, **ACCEPTED_APC_SOURCES, **ACCEPTED_CCIPC_SOURCES, **ACCEPTED_ACIPC_SOURCES, **ACCEPTED_CRG2B_SOURCES}
             if name in pins:
@@ -717,10 +722,18 @@ def build(root=ROOT):
     import prepare_p984c_boundaries as boundary
     boundary_contract = sources.read(boundary.OUTPUT)
     boundary.validate(boundary_contract, sources.root)
+    import test_p984c_mechanics as mechanics_checks
+    mechanics_result = sources.read(mechanics_checks.RESULT)
+    mechanics_checks.check(mechanics_result)
+    require("## Scoped user acceptance" in sources.raw(mechanics_checks.REVIEW).decode(), "missing shared mechanics decision")
     require("## Scoped user acceptance" in sources.raw(boundary.REVIEW).decode(), "missing boundary contract decision")
     boundary_view = dict(record=sources.ref(boundary.OUTPUT), review=sources.ref(boundary.REVIEW),
         contract_accepted=True, acceptance_scope="matrix_and_budgets_only_not_numerical_history_cells",
         acceptance=sources.ref(boundary.REVIEW, anchor="scoped-user-acceptance"),
+        mechanics=dict(record=sources.ref(mechanics_checks.RESULT), review=sources.ref(mechanics_checks.REVIEW),
+            status="accepted_shared_mechanics", acceptance=sources.ref(mechanics_checks.REVIEW, anchor="scoped-user-acceptance"), observations=mechanics_result["observations"],
+            test_methods=mechanics_result["tests_passed"], scope=mechanics_result["scope"],
+            tests_rerun=False, numerical_history_credit=0, committed_events=0),
         record_digest=boundary_contract["record_digest"], disposition=boundary_contract["disposition"],
         counts=boundary_contract["counts"], layouts=boundary_contract["layouts"],
         families=boundary_contract["families"], schedule=boundary_contract["schedule"],

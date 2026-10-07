@@ -2495,6 +2495,10 @@ status checks source bindings and never reruns native or interval trajectories.
 
 ### P9-8.4c capacity and phase evidence
 
+The accepted shared mechanical result is exposed alongside the accepted contract,
+with its independent layout checks and explicitly mocked all-ten receiver
+routing. It credits no numerical admission or continuation cells.
+
 The first-task boundary contract is exposed as `coverage.boundary_contract`
 through the shared data surface and a separate browser section. It records
 32 layouts/640 history obligations, zero executions/acceptances, exact source

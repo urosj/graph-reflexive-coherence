@@ -18,6 +18,10 @@ The bounded all-ten P9-8.4b item is closed; P9-8.4c–i remain open.
 prerequisites and exact contract/review links. The user accepted the matrix and
 budgets, with zero native executions or accepted `.c` cells. Its structural
 checks do not certify new numerical targets or reopen `.b` acceptance.
+Its `mechanics` field links the completed shared allocation/rejection tests,
+accepted for mechanical scope only. All-ten receiver probes mock numerical reads, detection and
+target construction; the browser labels these limitations. Source-bound
+integrity checking does not rerun the suite or grant numerical credit.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

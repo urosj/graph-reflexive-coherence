@@ -11640,6 +11640,144 @@ export const TRANCHE8_EVIDENCE = {
         "basis": "pinned_preregistration_not_runtime_acceptance",
         "anchor": "scoped-user-acceptance"
       },
+      "mechanics": {
+        "record": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalChecks.json",
+          "sha256": "bfca9935d05b5fb793406765e10e48a1652ec7e203ea40deb93590d0f6cc3c1a",
+          "revision": null,
+          "basis": "pinned_accepted_mechanical_evidence_not_numerical"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md",
+          "sha256": "df80ed367b159007fc8552f85e5f4fa0276e3e786305077718de6395a310d598",
+          "revision": null,
+          "basis": "pinned_accepted_mechanical_evidence_not_numerical"
+        },
+        "status": "accepted_shared_mechanics",
+        "acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md",
+          "sha256": "df80ed367b159007fc8552f85e5f4fa0276e3e786305077718de6395a310d598",
+          "revision": null,
+          "basis": "pinned_accepted_mechanical_evidence_not_numerical",
+          "anchor": "scoped-user-acceptance"
+        },
+        "observations": {
+          "exact_real_resource_maps": 60,
+          "shared_negative_recipes": 31,
+          "shared_layouts": 32,
+          "normalized_module_classes": 14,
+          "receiver_probes": [
+            {
+              "family": "C_OS",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "A_OS",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "C_CI",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "A_CI",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "C_PC",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "A_PC",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "C_CI_PC",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "A_CI_PC",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "C_RG2b",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            },
+            {
+              "family": "A_RG2b",
+              "semantic_rejections": 3,
+              "malformed_wire": 1,
+              "dispatch": "correct_sibling",
+              "injected_target_readmission": "correct_failure_stage",
+              "numerical_reads_mocked": true,
+              "candidate_detection_mocked": true,
+              "target_construction_mocked": true
+            }
+          ],
+          "safe_integer_cases": 195,
+          "scalar_outliers": 20,
+          "identity_and_source_rejections": 7
+        },
+        "test_methods": 6,
+        "scope": "mechanical_tests_and_mocked_receiver_control_flow_only",
+        "tests_rerun": false,
+        "numerical_history_credit": 0,
+        "committed_events": 0
+      },
       "record_digest": "d7cb579d9bf2feeb4121cb868a82a16a15ec8e86f0d53cbdc464006bc0fefdd0",
       "disposition": "preregistered_contract_pending_review",
       "counts": {
@@ -13681,6 +13819,18 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_preregistration_not_runtime_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalChecks.json",
+      "sha256": "bfca9935d05b5fb793406765e10e48a1652ec7e203ea40deb93590d0f6cc3c1a",
+      "revision": null,
+      "basis": "pinned_accepted_mechanical_evidence_not_numerical"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md",
+      "sha256": "df80ed367b159007fc8552f85e5f4fa0276e3e786305077718de6395a310d598",
+      "revision": null,
+      "basis": "pinned_accepted_mechanical_evidence_not_numerical"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
       "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca",
       "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -13819,5 +13969,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "d19447174c91b620bdc53178f650399d38e5b11c983c4e9106ff93e5bbc02437"
+  "view_digest": "af9ff0efd5cf38550fd4ec1ab30ec4b2ae60fee043541a00a2feac04212d99c5"
 };
