@@ -1,5 +1,217 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current work — P9-8.4c capacity and phase boundaries
+
+On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
+main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
+P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
+families and both histories, as already assigned by the accepted `.a`
+`additional_work_register`; C_OS, A_OS, C_CI, A_CI, C_PC, A_PC and C_CI+PC
+are accepted (448 history cells); the other three family items remain open.
+
+Planning was committed as `26714bd4`. The user accepted the first task after
+pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
+D36/37/38/43/44/45 give 32 layouts and 640 all-ten/both-role obligations:
+600 new and 40 D45 exact-reuse candidates at preregistration. Eight focused
+contract tests pass. Budgets and source recipes are frozen; fresh runtime
+identities, target domains and new A-oracle scope still require binding/review.
+The two-remainder targets are not certified by the inherited D31 share recipe.
+
+The boundary acceptance is committed as `2c3097e0`. Its successor
+[shared mechanical tests](./phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md)
+are accepted: 32 shared layouts, 60 exact-real resource
+maps, 31 shared negatives, outlier checks and ten mocked receiver routes.
+The result is about 14 KB; `--check` is retained integrity, not a rerun.
+Shared mechanical acceptance is committed as `dfd5687e`. Its C_OS successor
+has now executed thirty new native layouts successfully, with both-role target
+readmission, 600 target beats and 60 fresh final reads. Two exact accepted D45
+subjects supply four additional history cells by explicit reuse, not rerun.
+All **64/64 C_OS history cells are accepted** by the user on 2026-10-07;
+aggregate `.c` remains open. See the
+[C_OS review and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-COSReview.md).
+The retained dense/consumer recheck passed with native steps, OS passes and
+event owners explicitly disabled. Maximum recorded component error is
+`6.394884621840902e-14`; minimum new-run poststep resource is
+`1.1723489818468796e-05`. Five focused test methods pass, including all-64-role
+wrong-stage discrimination and resealed/valid-point mechanism substitutions.
+The result digest is `c1224a6a5970b4540c466c6869863b6391401f7a651f8392beee1bc2709aa899`.
+Its 38,261,443-byte shared-context JSON is stored as a 549,040-byte byte-exact
+XZ archive; restore it through `scripts/evidence_storage.py restore`.
+The side-tool exposes `.c` execution separately from `.b`'s accepted 322 cells
+and the unchanged preregistration. The six other `.c` families remain open.
+C_OS acceptance is committed as `28628dcb`. The independent A_OS oracle
+successor now passes all 32 boundary expectations: thirty new cases with
+660 saved-entry evaluations and two exact D45 reuses. The three shared source
+expectations remain exact predecessor references. Eight focused methods cover
+history/charge maps, both-role two-remainder predictions, scientific mechanism
+mutations and nearby split/resource/floor/history boundaries. Native numerical
+and event producers are disabled; this is not a native campaign.
+See the [oracle scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md).
+Maximum current/baseline full-formula error is below `8.872e-16`, maximum split
+upper bound below `2.616e-15`, and minimum C/W lower bounds exceed `1.06389e-5`
+and `0.99902367`. Budgets, shares, parameters and history policy are unchanged.
+The 12,230,089-byte completed result uses byte-exact XZ storage; no interrupted
+dump is retained. Side-tool CLI/API/notebook/browser exposes this prerequisite
+separately from C_OS acceptance, with zero A_OS runtime credit.
+The user accepted the expanded A_OS oracle scope on 2026-10-07. Its
+[native successor](./phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md) now
+passes thirty new layouts with both-role admission/replay, 600 target steps
+and 60 final reads. Two exact D45 reuses complete 64 passing history cells,
+**separately accepted by the user on 2026-10-07**. Actual source, role-history and target
+identities are bound; parameters and error budgets are unchanged. The result
+digest is `61f6c518b73e0a5417a4263b6cd15d14297d56aaf8447249208a52e14759a6e9`.
+Its 32,231,823-byte canonical shared-context record uses an 853,516-byte XZ
+archive. Full retained-consumer checking passes with native producers disabled;
+four focused native-evidence tests pass, including both-role stage/lifecycle
+mutations and actual-input interval rechecking on D38 phase 1. Oracle acceptance
+and native acceptance are distinct in the
+side-tool; `--family A_OS --checkpoint 8.4c` checks native retained evidence,
+while `--oracle` selects only its prerequisite. Neither command reruns native
+trajectories. A_OS acceptance is committed as `f1e1f48b`.
+
+The [C_CI preparation](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationReview.md)
+now passes all 32 boundary targets: thirty new and two exact D45 reuses, with
+60 new read-only native joint-root proposals, independent entry error bounds,
+complete C references and exact both-role resource transfer. The 600 nominal
+updates are independent predictions, not native continuation. Retained checks
+and three focused methods pass, including geometry/domain/source/role-swap
+mutations and interval rechecking on D38. The 2,455,533-byte result digest is
+`d8e15f31ae56406b158d12c18e7198e2d14db7d64ccc13466a1e37c6adae0bd1`.
+There are zero new topology events, native steps or C_CI runtime-cell closures.
+Side-tool access selects `--family C_CI --checkpoint 8.4c --preparation` for
+this prerequisite only. No further scientific approval gate is required for
+this C-only preparation.
+
+The [native C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md)
+now passes thirty new layouts, with both-role admission/publication/replay,
+600 target steps and 60 fresh final joint roots. Two exact D45 reuses complete
+**64 history cells, accepted by the user on 2026-10-07**. The accepted source beat
+is reused exactly; each new event reads it afresh. No production code,
+scientific parameter, tolerance or resource share changed. Maximum recorded
+joint-root/current/source error bounds are below `2.573e-16`, `6.287e-15` and
+`1.245e-23`; minimum poststep resource is `1.1723489818468796e-5`.
+The result digest is
+`8ce2d62b37ce72310e7dd79111d73c7ac7aec80f62ebde8ff353af978f012deb`;
+its 921,324-byte XZ archive restores 38,742,349 exact JSON bytes.
+Full retained checking passes with native producers disabled; three focused
+methods pass, including actual-entry interval rechecking for both D38 phase-one
+histories and resealed geometry/source/domain plus lifecycle mutations.
+Default `--family C_CI --checkpoint 8.4c` checks native retained operands,
+not trajectories; `--preparation` keeps the earlier scope separate. Acceptance
+is recorded separately from original execution flags. A_CI followed this checkpoint. The other six `.c` families, deeper,
+covariance/larger work and full 8.5 atomicity remain open.
+
+C_CI acceptance is committed as `67f3813d`. The next
+[A_CI boundary oracle](./phase-9-grcv4/tranche-8/P9-8.4c-ACIOracleReview.md)
+now passes thirty new independent cases, with two exact accepted D45 target
+reuses (not new oracle runs). There are 660 saved-entry evaluations, zero native
+roots/events/steps and zero runtime-cell closures. Both-role transfer, full
+joint-root/domain bounds, Read-Back/lowered read and C/W evolution are checked;
+three focused pressure methods and retained checking pass. The result digest is
+`5791b2531aa13a37a01466d2bc3ca6c780cf1874b9b1b7c71f148ac4c89b885a`;
+403,904 archived bytes restore 14,138,197 exact JSON bytes. Side-tool access is
+`--family A_CI --checkpoint 8.4c --oracle`. The user accepted this bounded
+oracle scope on 2026-10-07 and authorized the native campaign with actual-entry/
+history identities. Native acceptance is recorded separately below.
+
+The [native A_CI boundary campaign](./phase-9-grcv4/tranche-8/P9-8.4c-ACIRuntimeReview.md)
+now passes all thirty new cases: 30 events, 600 target steps and 60 fresh final
+joint roots, plus two exact D45 reuses. The user separately accepted all 64
+named native history cells on 2026-10-07. Four families now contribute 256
+accepted `.c` history cells; six families and aggregate `.c` remain open.
+Actual-entry root/domain, Read-Back and W-writer/restart checks use unchanged
+budgets. Result `4bba95de9e2454cced8efd27196d678888a5e6108b2a8ae657b37388c30c0591`
+is stored in 1,298,440 XZ bytes restoring 47,256,468 exact JSON bytes.
+Full retained checking passes with native producers disabled. All three focused
+pressure methods pass, including both-role actual-entry interval rechecks and
+resealed root/history/lifecycle/scope mutations. Storage verification is byte-exact.
+The default `--family A_CI --checkpoint 8.4c` checks native retained evidence;
+`--oracle` keeps the prerequisite separate. C_PC followed this checkpoint.
+No production/specification changes, new
+public support or aggregate `.c` acceptance are included.
+
+After acceptance commit `1678503f`, the user approved streamlining before C_PC.
+Use the plan's lean family work unit: checked expectations first, then native
+execution, focused pressure and one final review. Routine preparation is not
+another human gate; changed scientific authority/bounds/scope still is.
+Operation-local validation reuses immutable prerequisite data, checks content
+drift before returning, and never caches numerical verdicts. The side-tool can
+query one completed `.c` family without validating unrelated families; explicit
+retained checking dispatches directly to the selected unchanged checker.
+The streamlining was accepted and committed as `325bbed4`.
+
+The [C_PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-CPCRuntimeReview.md)
+now passes all thirty new cases: 30 events, 600 target steps and 60 final
+reads, plus two exact accepted D45 reuses. All-layout independent target,
+whole-ball selector and positive nominal-continuation preparation passed
+before native execution. Full retained checking and four focused pressure
+methods pass, including both-role second-step interval rechecks, wrong-law
+controls, signed-vector ambiguity, single carrier writing, reset archives and
+publication order. No production code, parameter, share recipe or bound changed.
+
+Result `a9dc58e6074c3b305a48d228f43a377d887a42953e7e3acb95bcc96251784d6e`
+retains 1,636 distinct signed-read certificates. A 701,880-byte archive restores
+25,360,043 exact JSON bytes; fresh restoration and storage tests pass.
+CLI/API/notebook/browser exposes `--family C_PC --checkpoint 8.4c` as
+**64 accepted cells**, following scoped user acceptance on 2026-10-07.
+Five families contribute 320 accepted `.c` cells; `.b` stays closed at
+322/322. A_PC is next under the approved single-work-unit workflow.
+Aggregate `.c`, deeper/covariance/larger work and 8.5 remain open.
+
+After accepted C_PC commit `2c4bb938`, the
+[A_PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md)
+passes thirty new cases and two exact D45 reuses: 64 passing history cells,
+600 new target steps and 60 final reads. Both-role independent predictions
+precede each event; the accepted R=2048 law, shares and budgets are unchanged.
+All-layout preparation, full retained checking and four focused methods pass.
+Pressure covers exact W lineage, both writers' staging and next-read effects,
+signed Read-Back, whole-Z archive/reset, both-role admission and publication.
+
+Result `7ae5dd6163184f7b8e76acca8dd19a2255ef0a20448db7345ac85abb6eb496b2`
+is stored in 689,972 XZ bytes restoring 18,972,544 exact JSON bytes. Fresh
+restoration passes. The user accepted A_PC's 64 named cells on 2026-10-07;
+CLI/API/notebook/browser bind that separate decision. C_CI_PC is next under
+the approved single-work-unit workflow. Six accepted boundary families
+contribute 384 cells. No production/spec
+change, new ATC claim or uniform trajectory bound is introduced.
+
+A_PC acceptance is committed as `5ef33b97`. The
+[C_CI+PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPCRuntimeReview.md)
+now passes thirty new native cases: 30 events, 600 target steps and 60 fresh
+final joint roots, plus two exact D45 reuses. All 64 history cells pass;
+**C_CI+PC was accepted by the user on 2026-10-07**. The seven accepted
+families contribute 448 `.c` cells. The next unexecuted
+family is A_CI+PC, followed by the RG2b pair; aggregate `.c` remains open.
+
+All-layout independent preparation retains the accepted R=1 composite law,
+B_2R domain, strict source slack, contraction, shares and budgets. Both-role
+positive nominal predictions precede each event. Full roots, signed reads,
+fixed old Z plus instantaneous formation, single same-root-source Z writing
+and fresh restart consumption remain distinct obligations. Retained checking
+does not rerun native trajectories; the focused pressure suite covers these
+scientific/lifecycle distinctions and nearby domain/error boundaries.
+
+Result `ae4013da019b2be9bc9a9baaf5b3ace3d380bbf839173954afef6735f14876f7`
+uses a 1,009,392-byte XZ archive restoring 59,180,592 exact JSON bytes; fresh
+restoration passes. Minimum new-run poststep resource is
+`1.1723487306344568e-5`; the minimum retained final-read effect margin is
+`9.232000291064645` times its error/rounding allowance. Scope remains pointwise
+and layout-bounded, not a uniform accumulated trajectory theorem or general
+ATC. Side-tool access uses `--family C_CI_PC --checkpoint 8.4c`; API/notebook/
+browser preserve the separate acceptance and exact source bindings. No production
+or specification changes were needed.
+
+The user requested this accepted checkpoint be committed and the capacity/phase
+branch merged into `main` with a merge commit. Resume from `main` on a new
+branch for A_CI+PC; merging this checkpoint does not close aggregate P9-8.4c.
+
+Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
+the last two main commits `932d9fd9` and `19a2d8fc`: justified completed
+evidence only, shared inputs once, byte-exact XZ for files over 10 MB, ignored
+expanded/progress files and local storage tests plus staged-blob checks before
+commit or publication. `/.github/` is ignored; no workflow execution is assumed.
+Document-only changes need no native trajectory or interval-math rerun.
+
 ## Accepted checkpoint — P9-8.4b A_RG2b and bounded all-ten closure
 
 Work follows accepted C_RG2b `5ff017c` and lossless-storage `ee34742` on

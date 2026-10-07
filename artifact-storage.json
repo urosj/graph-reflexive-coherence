@@ -105,6 +105,78 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz",
       "storage_size": 1242592,
       "storage_sha256": "e52c0baf53e43cf492a0e43512ddb38ee64f10dc4ad7540670bb2e77d7dc634e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIOracleResults.json",
+      "size": 14138197,
+      "sha256": "52d43cda43359691f18cbeb1287489a730b6271c2982741a36a5d7f14b62d905",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIOracleResults.json.xz",
+      "storage_size": 403904,
+      "storage_sha256": "5cc2204c17e53a817d8f12b6f9f31b211b7d4d178de42b81a164ae87e14f258e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIResults.json",
+      "size": 47256468,
+      "sha256": "add9d33980c2e548632da35f121735b8ba1453e27875c8cc59a3a1f2710fffb8",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIResults.json.xz",
+      "storage_size": 1298440,
+      "storage_sha256": "31c8010b766cb78afa1eb71ad7e10ad433391171dd5ae68d7ae5d1daded7f216"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleResults.json",
+      "size": 12230089,
+      "sha256": "33b1c41fd3a5764d8317cf2233e19762222e98c5b38301cdd3c91b7a8121b500",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleResults.json.xz",
+      "storage_size": 258692,
+      "storage_sha256": "bc4e0598caa8bce8987b767d8c4916d62c45ab22824234a245d205c630372129"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json",
+      "size": 32231823,
+      "sha256": "ac2918f910ff07f7f57301d45ce5b043d206bb2436d650adddc93ebeb4832f4c",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json.xz",
+      "storage_size": 853516,
+      "storage_sha256": "c2636911ee56769a5e00da2e564172970e590400f4317c4713251c1936f90cd1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCResults.json",
+      "size": 18972544,
+      "sha256": "6eb4ded39b423ac35b8ee276eaa2a399b566b2716ce9810ec93f37cc3cd74038",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCResults.json.xz",
+      "storage_size": 689972,
+      "storage_sha256": "5e5565db5a94b6e93ef14177df6cb6bba01769a9bc84c4598e6b952d6faf3789"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCResults.json",
+      "size": 59180592,
+      "sha256": "a1963f2b54f66ca49b6ede03add0fe3fda41ad6a1b1b6065cd1437b3fbf8252a",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCResults.json.xz",
+      "storage_size": 1009392,
+      "storage_sha256": "9c3fb8dbdbb21282555bdb0a6d30a508436862c477d4d34540e8ab203074e22c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIResults.json",
+      "size": 38742349,
+      "sha256": "f4edf55cee5bb408e29998b5c04416893df0b562653de57a76a9d58b6e350957",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIResults.json.xz",
+      "storage_size": 921324,
+      "storage_sha256": "71eca8c8f518244982375f6fe60cfae08acdd32e815b6379964dbf4051107159"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-COSResults.json",
+      "size": 38261443,
+      "sha256": "5da7e5d80188774a8403e079265c55a27d109fd31ab0136c99dcaa5e7d78b329",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-COSResults.json.xz",
+      "storage_size": 549040,
+      "storage_sha256": "8ca2190e3a100e216ea091689bd1240ac489e269b5df42e8fd0023e058b9b6c4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CPCResults.json",
+      "size": 25360043,
+      "sha256": "d281d25dad72d00a3ae1ad4aa40e7489a48ea7065fe6091edcf5ca23505b8f85",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CPCResults.json.xz",
+      "storage_size": 701880,
+      "storage_sha256": "9879c587b587ce6c67aa8835c58dd5b05a5a20de19583cbe9e9099af92e19eb5"
     }
   ]
 }

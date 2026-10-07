@@ -6,6 +6,174 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_PC boundary execution binds scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c C_PC — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='C_PC');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=640,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_PC boundary execution binds scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_PC — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_PC');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=640,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_CI_PC boundary execution binds scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c C_CI_PC — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='C_CI_PC');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=640,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_OS oracle scope is not native boundary acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /32\/32 independent oracle expectations pass/);
+  assert.match(text(out), /0 native steps and 0 runtime cells closed/);
+  const r=evidence.coverage.boundary_contract.oracle_preparations[0];
+  assert.equal(r.oracle_scope_accepted, true);
+  assert.equal(r.user_accepted, false);
+  assert.equal(r.status, 'accepted_oracle_scope');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.native_runtime_executed=true,r=>r.runtime_cells_closed=64,r=>r.user_accepted=true]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.oracle_preparations[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_CI joint-root oracle scope cannot become native evidence or acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_CI oracle — accepted_oracle_scope/);
+  assert.match(text(out), /30 new independent oracle cases; 2 exact accepted native target reuses, not new oracle executions/);
+  const index=evidence.coverage.boundary_contract.oracle_preparations.findIndex(r=>r.family==='A_CI');
+  const r=evidence.coverage.boundary_contract.oracle_preparations[index];
+  assert.equal(r.native_steps,0);assert.equal(r.native_roots,0);
+  assert.equal(r.oracle_scope_accepted,true);assert.equal(r.acceptance.anchor,'scoped-user-acceptance');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.native_steps=600,r=>r.acceptance=null,r=>r.runtime_cells_closed=64,r=>r.exact_accepted_target_reuses=0]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.oracle_preparations[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_CI native boundary results bind separate scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_CI — accepted_bounded/);
+  const index=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_CI');
+  const r=evidence.coverage.boundary_contract.family_results[index];
+  assert.equal(r.successful_history_cells,64);assert.equal(r.accepted_cells,64);
+  assert.equal(r.passing_pending_cells,0);assert.equal(r.acceptance.anchor,'scoped-user-acceptance');
+  for(const mutate of [r=>r.acceptance=null,r=>r.native_trajectories_rerun=true,r=>r.passed_cases=32]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_OS native results bind separate scoped acceptance', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const index=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_OS');
+  const r=evidence.coverage.boundary_contract.family_results[index];
+  assert.equal(r.status, 'accepted_bounded');
+  assert.equal(r.acceptance.anchor, 'scoped-user-acceptance');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=640,r=>r.native_trajectories_rerun=true,r=>r.interval_equations_recomputed=true]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.family_results[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_CI native boundary evidence is distinct from preparation and acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c C_CI — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const index=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='C_CI');
+  const r=evidence.coverage.boundary_contract.family_results[index];
+  assert.equal(r.passed_cases,30);assert.equal(r.exact_reuse_cases,2);
+  assert.equal(r.acceptance.anchor,'scoped-user-acceptance');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=640,r=>r.native_trajectories_rerun=true,r=>r.passing_pending_cells=640,r=>r.acceptance=null]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_CI preparation displays native root reads without event or runtime credit', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /60 new read-only native joint-root proposals/);
+  assert.match(text(out), /0 topology events, 0 native steps and 0 runtime cells closed/);
+  const r=evidence.coverage.boundary_contract.target_preparations[0];
+  assert.equal(r.family,'C_CI');assert.equal(r.passed_cases,30);
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.native_steps=600,r=>r.runtime_cells_closed=64,r=>r.topology_events=30,r=>r.new_native_root_reads=0]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.target_preparations[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_OS boundary execution cannot confer acceptance or native rerun', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const r=evidence.coverage.boundary_contract.family_results[0];
+  assert.equal(r.family, 'C_OS');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for (const mutate of [r=>r.accepted_cells=640, r=>r.native_trajectories_rerun=true, r=>r.exact_reuse_cases=32]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.family_results[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('shared mechanics cannot become numerical coverage or lose mock labels', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  assert.match(text(out), /mocked numerical reads, detection and target construction/);
+  assert.match(text(out), /No numerical admission or continuation credit/);
+  const mechanical=evidence.coverage.boundary_contract.mechanics;
+  assert.equal(mechanical.status, 'accepted_shared_mechanics');
+  assert.equal(mechanical.test_methods, 6);
+  assert.ok(sourceURL(mechanical.record).startsWith('/api/tranche8/source?'));
+  for (const mutate of [m=>m.numerical_history_credit=640, m=>m.status='accepted',
+      m=>m.observations.receiver_probes[0].numerical_reads_mocked=false]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.mechanics);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('boundary contract renders separately and rejects false runtime credit', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  for (const phrase of ['640 current/reset obligations', '600 new, 40 exact-reuse candidates', '0 executed; 0 accepted', 'not new target certificates'])
+    assert.ok(text(out).includes(phrase), phrase);
+  assert.ok(sourceURL(evidence.coverage.boundary_contract.record).startsWith('/api/tranche8/source?'));
+  for (const mutate of [b=>b.counts.accepted_cells=640, b=>b.native_runtime_executed=true, b=>b.families.pop()]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', () => {
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);

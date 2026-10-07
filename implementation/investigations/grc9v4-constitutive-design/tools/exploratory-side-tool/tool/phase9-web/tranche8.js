@@ -66,6 +66,49 @@ export function renderTranche8(value, container, create = tag => document.create
     }
     for (const row of run.cases) append(section, 'p', `${row.case_id}: ${row.case_passed ? 'CASE PASSED' : 'INCOMPLETE CASE'}; event committed=${row.event_committed}; first failure=${JSON.stringify(row.first_failure)}`);
   }
+  const boundary = c.boundary_contract;
+  append(container, 'h3', '8.4c boundary preregistration — no runtime credit');
+  append(container, 'p', `${boundary.counts.layouts} layouts across ${boundary.counts.families} families; ${boundary.counts.history_cells} current/reset obligations: ${boundary.counts.new_history_cells} new, ${boundary.counts.reuse_candidates} exact-reuse candidates. ${boundary.counts.executed_cells} executed; ${boundary.counts.accepted_cells} accepted. Matrix and budgets accepted; target-domain and oracle prerequisites remain open.`);
+  const boundaryLinks = append(container, 'p', '');
+  link(boundaryLinks, boundary.record, 'Full matrix, recipes and authority traces');
+  append(boundaryLinks, 'span', ' · '); link(boundaryLinks, boundary.review, 'Boundary review');
+  details(container, 'Independent capacity/phase expectations', boundary.layouts);
+  details(container, 'All-ten required comparison ceilings — not new target certificates', boundary.families);
+  details(container, 'Bounded schedule, retention budget and prerequisites', {schedule:boundary.schedule, retention:boundary.retention, prerequisites:boundary.prerequisites});
+  const mechanical = boundary.mechanics;
+  append(container, 'h3', '8.4c shared mechanics — accepted mechanical scope only');
+  append(container, 'p', `${mechanical.observations.shared_layouts} layouts checked once; ${mechanical.observations.exact_real_resource_maps} exact-real resource maps. All ten receiver routes checked with mocked numerical reads, detection and target construction. No numerical admission or continuation credit; integrity check does not rerun tests.`);
+  const mechanicalLinks = append(container, 'p', '');
+  link(mechanicalLinks, mechanical.record, 'Completed mechanical checks');
+  append(mechanicalLinks, 'span', ' · '); link(mechanicalLinks, mechanical.review, 'Mechanical review and reproduction');
+  details(container, 'Shared negatives, outliers and explicitly mocked receiver probes', mechanical.observations);
+  for (const run of boundary.family_results) {
+    append(container, 'h3', `8.4c ${run.family} — ${run.status}`);
+    append(container, 'p', `${run.native_cases} new native cases (${run.passed_cases} passed); ${run.exact_reuse_cases} exact accepted-case reuses. ${run.accepted_cells}/${run.required_cells} accepted history cells; ${run.passing_pending_cells} passing cells pending acceptance. Status is retained integrity only: no dense, interval or native rerun. Comparison scope: ${run.comparison_scope}.`);
+    const links = append(container, 'p', '');
+    for (const [key, label] of [['inputs','Bound subjects'],['results','Completed operands'],['review','Scope and reproduction'],['acceptance','Scoped acceptance'],['reuse_evidence','Exact historical reuse']]) {
+      if (run[key]) { link(links, run[key], label); append(links, 'span', ' · '); }
+    }
+    for (const row of run.cases) append(container, 'p', `${row.case_id}: ${row.case_passed ? 'CASE PASSED' : 'INCOMPLETE CASE'}; event committed=${row.event_committed}; first failure=${JSON.stringify(row.first_failure)}`);
+  }
+  for (const oracle of boundary.oracle_preparations) {
+    append(container, 'h3', `8.4c ${oracle.family} oracle — ${oracle.status}`);
+    const reusedNative = oracle.exact_accepted_target_reuses || 0;
+    const summary = reusedNative ? `${oracle.oracle_cases_passed}/${oracle.oracle_cases_required} target expectations available (${oracle.new_oracle_cases} new independent oracle cases; ${reusedNative} exact accepted native target reuses, not new oracle executions)` : `${oracle.oracle_cases_passed}/${oracle.oracle_cases_required} independent oracle expectations pass (${oracle.new_oracle_cases} new, ${oracle.exact_reuse_cases} exact reuses)`;
+    append(container, 'p', `${summary}; ${oracle.native_steps} native steps and ${oracle.runtime_cells_closed} runtime cells closed by this oracle. Saved-entry full-formula bounds, not a uniform trajectory bound. Oracle scope ${oracle.oracle_scope_accepted ? 'accepted' : 'pending review'}; native runtime acceptance remains separate and original execution flags are unchanged.`);
+    const links=append(container, 'p', '');
+    for (const [key,label] of [['inputs','Bound oracle subjects'],['results','Oracle expectations and certificates'],['review','Scope, pressure and reproduction'],['acceptance','Oracle-scope acceptance']]) {
+      if (oracle[key]) { link(links,oracle[key],label); append(links,'span',' · '); }
+    }
+  }
+  for (const prepared of boundary.target_preparations) {
+    append(container, 'h3', `8.4c ${prepared.family} target preparation — ${prepared.status}`);
+    append(container, 'p', `${prepared.passed_cases} new target preparations pass; ${prepared.exact_reuse_cases} exact reused targets. ${prepared.new_native_root_reads} new read-only native joint-root proposals, checked by independent interval equations. ${prepared.topology_events} topology events, ${prepared.native_steps} native steps and ${prepared.runtime_cells_closed} runtime cells closed. Nominal continuation predictions are not a native campaign or a uniform trajectory bound. Status does not rerun roots or interval equations.`);
+    const links=append(container, 'p', '');
+    for (const [key,label] of [['inputs','Bound C_CI targets'],['results','Joint roots and nominal predictions'],['review','Preparation scope and reproduction']]) {
+      link(links,prepared[key],label); append(links,'span',' · ');
+    }
+  }
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {

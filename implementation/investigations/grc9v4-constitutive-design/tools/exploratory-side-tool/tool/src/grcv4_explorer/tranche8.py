@@ -14,13 +14,16 @@ def _index(root):
     return module
 
 
-def tranche8_status(repo_root):
+def tranche8_status(repo_root, *, family=None):
     """Authenticate pinned sources and structure; never execute numerical work.
 
     Raises on missing Git history, source drift or a stale generated projection.
     Does not authorize implementation or claim current full-boundary validity.
     """
-    return _index(repo_root).checked(Path(repo_root))
+    index = _index(repo_root)
+    if family is not None:
+        return index.family_status(Path(repo_root), family)
+    return index.checked(Path(repo_root))
 
 
 def tranche8_source(repo_root, path):

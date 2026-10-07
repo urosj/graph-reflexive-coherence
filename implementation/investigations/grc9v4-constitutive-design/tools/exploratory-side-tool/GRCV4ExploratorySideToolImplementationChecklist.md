@@ -2083,6 +2083,66 @@ instead of stale fixed totals and opens any pending case details explicitly.
   desktop/mobile scenario pass. Explicit retained checking and complete
   independent numerical recomputation pass all sixteen cases.
 
+### P9-8.4c capacity and phase evidence
+
+- [x] Expose the named additional-case matrix for all ten families and both
+  histories through shared CLI/API/notebook/browser views. Keep `.b`'s
+  322/322 acceptance separate from `.c` pending/executed/accepted coverage.
+  First-task preregistration: 32 layouts, 640 obligations, zero executed or
+  accepted. Shared data and browser link the pinned contract/review, comparison
+  ceilings and still-open target prerequisites. This is not family closure.
+- [ ] Reference common mechanical checks once while retaining each family's
+  exact runtime subjects, independent comparisons and admission/rejection
+  classification. A common allocator pass or a sibling family cannot supply
+  numerical acceptance; blocked required positive cases remain visible.
+  - [x] Expose the shared mechanical result and review, with all-ten receiver
+    routing explicitly labelled mocked, scoped acceptance and zero numerical credit. Family
+    numerical results and scoped acceptance remain pending.
+  - [x] Expose C_OS boundary execution and exact D45 reuse through the shared
+    CLI/API/notebook/browser view, with source links and explicit non-rerun
+    scope. The separate user decision accepts 64 C_OS cells only; no
+    other-family credit or aggregate closure is inferred.
+  - [x] Expose the separately accepted A_OS oracle scope with zero runtime
+    acceptance credit and unchanged original execution flags. Keep the native
+    boundary result distinct, with its separate 64-cell user acceptance. Route native retained
+    checking through `--family A_OS --checkpoint 8.4c`, and oracle-only checking
+    with the additional `--oracle`; neither mode runs native trajectories.
+  - [x] Expose C_CI target preparation separately: complete references, both-role
+    joint-root/domain evidence and nominal predictions, with explicit root-read
+    counts but zero events, native steps and runtime-cell closures. Require
+    `--family C_CI --checkpoint 8.4c --preparation` for its retained checker.
+  - [x] Expose native C_CI boundary results separately: thirty new passing
+    cases and two exact D45 reuses, 64 cells with separate scoped acceptance. Default
+    `--family C_CI --checkpoint 8.4c` checks native retained evidence, not the
+    prerequisite or a trajectory rerun. Preserve source identities, full-root
+    comparison scope and event-versus-case failure distinctions across surfaces.
+  - [x] Expose A_CI boundary oracle expectations separately from runtime:
+    thirty new independent cases and two exact accepted native D45 target
+    reuses, zero new native roots/events/steps and no runtime credit. Require
+    `--family A_CI --checkpoint 8.4c --oracle`; scope accepted on 2026-10-07.
+  - [x] Expose A_CI native boundary evidence through the default family command,
+    separately from accepted oracle scope. Bind the 2026-10-07 native acceptance and
+    preserve event-versus-case failures, exact reuse and saved-entry limits.
+  - [x] Expose C_PC boundary execution separately: thirty new cases, two exact
+    D45 reuses and 64 cells accepted on 2026-10-07. Bind retained source
+    access and whole-carrier/signed-read scope; family-scoped status and explicit
+    retained checking do not rerun native trajectories or grant acceptance.
+  - [x] Expose A_PC boundary execution: thirty new cases, two exact D45 reuses
+    and 64 cells accepted on 2026-10-07. Bind fixed-row signed reads,
+    exact W lineage and separate W/Z consumer scope across all four surfaces.
+  - [x] Expose C_CI+PC boundary execution: thirty new cases, two exact D45
+    reuses and 64 cells accepted separately on 2026-10-07. Bind full joint
+    roots, strict composite slack, signed reads and same-root-source carrier
+    writing across all four surfaces, without broadening accepted support.
+- [ ] Synchronize exact sources, scoped decisions and the handoff as family
+  work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
+  completed evidence, shared inputs, byte-exact archives where needed and local
+  storage/staged-blob checks. Do not introduce a GitHub workflow.
+- [x] Apply the approved lean boundary workflow: operation-local prerequisite
+  reuse, selected-family status/API access and direct retained-check dispatch.
+  Preserve frozen checkers, source-drift rejection, evidence scope and numerical
+  obligations; perform full-view synchronization once at final family closure.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

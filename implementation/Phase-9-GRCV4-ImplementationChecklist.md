@@ -2923,10 +2923,163 @@ the full ten-profile plan.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md).
 
-  - [ ] P9-8.4c: Pressure capacity and phase boundaries. Add separately named
-    D37/D44 and adjacent-capacity probes, active/inactive phases, both
-    chiralities and missing/extra phase failures. Keep wire errors distinct
-    from typed semantic failures; full atomic rollback remains P9-8.5.
+  - [ ] P9-8.4c: Pressure capacity and phase boundaries across **all ten
+    families and both current/reset histories**, as already required by
+    `P9-8.4a-Coverage.json`'s `additional_work_register`. These are new named
+    probes, not a rerun or reopening of the 322 accepted `.b` cells.
+    - [x] Adopt the 2026-10-07 lean workflow: one family work unit through
+      preparation, execution, focused pressure and synchronized handoff, then
+      final review. Check expectations before runtime without a separate user
+      pause when using accepted mathematics. Escalate changed scientific scope
+      or failed bounds. Select checks by the change; preserve every declared
+      cell and original accepted evidence. See the implementation plan.
+    - [x] Freeze the additional-case matrix and comparison budgets before
+      execution: D37/D44, immediately below/at/above the selected capacity
+      transitions, active phases 1–3, inactive `None`, both chiralities and
+      missing/extra phase. Derive module size, capacity, remainder/phase and
+      expected admission or rejection independently from the spec. Record
+      exact subjects, both roles, finite horizons and retained-data budgets;
+      do not invent a cell count or presume every requested subject admits.
+      Implemented 2026-10-07; [contract and review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md)
+      accepted by the user after pressure testing, not runtime acceptance:
+      D36/37/38/43/44/45 give 32
+      layouts, 320 shared requests and 640 both-role obligations (600 new,
+      40 exact D45 reuse candidates). Eight focused contract tests pass;
+      no native campaign or new target-domain certificate was produced.
+    - [x] Verify shared allocation and wire/semantic boundary rules once with
+      named reusable tests, including malformed types and invalid phase use.
+      Distinguish decode rejection, typed request failure and numerical
+      readmission failure. Check per-family dispatch without repeating the
+      entire common mechanical suite ten times; allocator passes alone do not
+      discharge the family runtime obligations below.
+      Accepted after `2c3097e0` for shared mechanical scope: [shared tests and scope](./phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md).
+      Six methods cover 32 shared layouts, 60 exact-real resource maps, 31
+      shared negative recipes, outliers and all-ten mocked receiver routing.
+      A seventh test pressures retained integrity. No numerical credit follows.
+    Each family item covers its applicable named matrix, both histories,
+    actual event admission/rejection, independently checked target reconstruction
+    and declared continuation/final reads for positive subjects. Bind its own
+    numerical domain and comparison contract; check independent expectations
+    before dependent runtime execution. Within accepted scientific scope, review
+    the complete family result once; new authority, bounds or scope still require
+    explicit review before use. Reuse exact accepted subjects by explicit
+    identity/stage links, not by adjacency or a sibling family's pass. A blocked
+    positive row stays open; an expected rejection does not replace it.
+    - [x] P9-8.4c[C_OS]: Complete C references, strict selectors and OS
+      predictor/corrector split admission at the new boundaries.
+      Accepted by the user on 2026-10-07:
+      [bound subjects and evidence scope](./phase-9-grcv4/tranche-8/P9-8.4c-COSReview.md).
+      Thirty new native layouts pass both histories and ten target beats each;
+      two exact D45 reuse subjects complete 64 passing history cells. No
+      rigorous full-error/effect-separation or other-family credit is claimed.
+    - [x] P9-8.4c[A_OS]: Independent A expectations, OS split, exact W
+      transfer, correctly staged writer and fresh final reconstruction.
+      Oracle prerequisite accepted by the user on 2026-10-07:
+      [scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md).
+      All 32 boundary expectations pass (30 new and two exact D45 reuses),
+      with full-formula saved-entry interval bounds and eight focused test
+      methods. Oracle acceptance closes no native runtime cell.
+
+      - [x] Review and accept the expanded independent oracle scope before
+        native comparison; preserve the original execution-time flags.
+      - [x] Complete native boundary execution and bounded own review against
+        that oracle, with actual source/history identities and exact D45 reuse
+        checks. Thirty new cases and two exact reuses give 64 passing history
+        cells, 600 new target updates and 60 final reads. Full retained-consumer
+        checking and four focused tests pass; see the
+        [native scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md).
+      - [x] Accept the bounded native results separately. User acceptance on
+        2026-10-07 covers all 64 named history cells, not aggregate `.c` closure.
+    - [x] P9-8.4c[C_CI]: Complete C references and the full selected joint
+      root, with target-domain/error bounds for both roles.
+
+      - [x] Prepare all 32 target/reference/domain subjects: thirty new targets
+        and two exact D45 reuses. Both-role joint-root proposals, independent
+        entry error bounds and nominal continuation predictions pass, as do
+        retained checks and three focused methods. This is not native event
+        or continuation coverage; see the
+        [preparation scope](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPreparationReview.md).
+      - [x] Bind and execute the native event/continuation campaign against
+        these targets; check each actual-entry joint root, both histories,
+        publication/receipts/replay and fresh final roots. Thirty new native
+        cases pass, with 600 target steps and 60 fresh final reads; two exact
+        D45 reuses complete 64 passing history cells. See the
+        [native result and scope](./phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md).
+      - [x] Review and accept bounded C_CI native results separately. User
+        acceptance on 2026-10-07 covers all 64 named cells, not aggregate `.c`.
+    - [x] P9-8.4c[A_CI]: Independent joint-root/domain expectations and W
+      transfer/write/next-root consumption.
+
+      - [x] Prepare the independent boundary oracle: thirty new cases pass
+        660 saved-entry checks, with two exact accepted D45 target reuses.
+        Both-role C/W transfer, whole joint root, Read-Back/lowered read,
+        history evolution and whole-domain bounds are retained. Three focused
+        pressure methods pass; no native root, event or step executes. See the
+        [oracle scope](./phase-9-grcv4/tranche-8/P9-8.4c-ACIOracleReview.md).
+      - [x] Review and accept the new A_CI oracle scope before native execution.
+        Explicit user acceptance on 2026-10-07; native results remain separate.
+      - [x] Bind the actual native source/history identities and execute
+        both-role event/readmission/continuation/final-root checks against
+        those expectations: 30 new events, 600 steps and 60 fresh final roots
+        pass; two exact D45 reuses complete 64 passing named history cells.
+        Full retained checking and three focused pressure methods pass.
+        See the [native scope](./phase-9-grcv4/tranche-8/P9-8.4c-ACIRuntimeReview.md).
+      - [x] Review and accept the native A_CI result separately. User acceptance
+        on 2026-10-07 covers all 64 named cells, not aggregate `.c`.
+    - [x] P9-8.4c[C_PC]: C readmission and base-chart/carrier envelope,
+      whole-source Z archive/target reset, loss receipt and next-read effects.
+      - [x] Bind all 32 layouts/64 histories, prove the independent whole-ball
+        selector condition and check both-role ten-step positive predictions
+        before native execution, with unchanged parameters, shares and budgets.
+      - [x] Execute thirty new events, 600 target steps and 60 final reads;
+        reuse two exact accepted D45 cases. Retain pointwise full-formula and
+        signed Read-Back/flat certificates, single-writer and complete carrier
+        archive/reset checks. See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-CPCRuntimeReview.md).
+      - [x] User acceptance on 2026-10-07 covers all 64 named C_PC cells,
+        separately from aggregate `.c`.
+    - [x] P9-8.4c[A_PC]: Independent A expectations, exact W lineage and
+      separate W/Z writer, archive/reset and continuation obligations.
+      - [x] Bind all 32 layouts and both actual histories; check independent
+        port graphs, W lineage/seed, zero Z and whole-chart bounds with no
+        production or parameter changes. Independent ten-step predictions
+        precede each new native event under the accepted budgets.
+      - [x] Thirty new cases plus two exact D45 reuses pass: 600 new target
+        steps, 60 fresh reads and 64 passing cells. Full retained checking and
+        four focused methods pass. W/Z/signed-read pressure, exact history and
+        source-bound side-tool access retain unchanged budgets. See the
+        [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md).
+      - [x] User acceptance on 2026-10-07 covers all 64 named A_PC cells,
+        separately from aggregate `.c`.
+    - [x] P9-8.4c[C_CI_PC]: Gain-two joint-root contraction/slack and C
+      reference coverage, fixed-old-Z/same-source writing and next-root effects.
+      - [x] Bind all 32 layouts and both histories with unchanged shares,
+        parameters and budgets. Independently check complete C references,
+        charge/zero-carrier transfer, strict slack, contraction and B_2R
+        coverage. Resource/carrier outliers reject at the declared boundary.
+      - [x] Complete thirty new cases plus two exact D45 reuses, retained
+        full-root/signed-read/writer checking, focused pressure and side-tool
+        synchronization.
+      - [x] Review and accept the bounded C_CI+PC result separately from `.c`:
+        user acceptance on 2026-10-07 covers all 64 named history cells.
+    - [ ] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,
+      exact W lineage, whole-Z reset/loss and both writers' next-root effects.
+    - [ ] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section
+      bounds, K event versus K-minus ordinary entry, including reset; retain C1 limits.
+    - [ ] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W
+      lineage/log writing and fresh sections; retain completion and C1 limits.
+    - [ ] Reconcile shared checks and all ten family dispositions through
+      CLI/API/notebook/browser and the handoff. Keep execution and acceptance
+      separate; close `.c` only after its required cells and all ten family
+      items are reviewed and accepted, or an explicit scope change is approved.
+      Deeper expansion/covariance/larger graphs remain `.d`–`.h`; full atomic
+      rollback, replay and injected publication failures remain P9-8.5.
+    Use the [current evidence rules](../docs/reference/EvidenceStorage.md):
+    shared inputs once, completed results only, a named consumer for retained
+    operands, and byte-exact XZ for justified files over 10,000,000 bytes.
+    After staging, run `.venv/bin/python -m unittest tests.test_evidence_storage -q`,
+    `.venv/bin/python scripts/evidence_storage.py check` and
+    `git diff --cached --check`. Expanded copies and progress stay ignored;
+    `/.github/` remains ignored and no GitHub workflow is assumed.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.

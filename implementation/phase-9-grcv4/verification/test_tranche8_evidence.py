@@ -39,6 +39,248 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse(any(r["runtime_accepted"] for r in v["configuration"]["families"]))
         self.assertEqual(v["future"]["new_public_support"], [])
 
+    def test_boundary_preregistration_is_exposed_without_runtime_credit(self):
+        c = self.value["coverage"]
+        b = c["boundary_contract"]
+        self.assertEqual((b["counts"]["history_cells"], b["counts"]["accepted_cells"], b["counts"]["executed_cells"]), (640, 0, 0))
+        self.assertEqual(len(b["families"]), 10)
+        self.assertFalse(b["user_accepted"])
+        self.assertFalse(b["native_runtime_executed"])
+        self.assertTrue(b["contract_accepted"])
+        self.assertEqual(b["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(c["accepted_cells"], 322)
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("record", "review"):
+                ref = b[key]
+                self.assertEqual(ref["basis"], "pinned_preregistration_not_runtime_acceptance")
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        path = index.ROOT / b["record"]["path"]
+        original = Path.read_bytes
+        with patch.object(Path, "read_bytes", lambda p: b"forged" if p == path else original(p)):
+            with self.assertRaisesRegex(ValueError, "preregistration/mechanical source drift"):
+                index.Sources(index.ROOT).raw(b["record"]["path"])
+
+    def test_shared_mechanics_is_not_numerical_admission(self):
+        view = self.value["coverage"]["boundary_contract"]
+        m = view["mechanics"]
+        self.assertEqual(m["test_methods"], 6)
+        self.assertEqual(m["observations"]["shared_layouts"], 32)
+        self.assertEqual(len(m["observations"]["receiver_probes"]), 10)
+        self.assertEqual(m["numerical_history_credit"], 0)
+        self.assertFalse(m["tests_rerun"])
+        self.assertTrue(view["contract_accepted"])
+        self.assertEqual(m["status"], "accepted_shared_mechanics")
+        self.assertEqual(self.value["coverage"]["accepted_cells"], 322)
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("record", "review"):
+                ref = m[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_accepted_mechanical_evidence_not_numerical")
+
+    def test_boundary_cos_execution_is_separate_from_acceptance(self):
+        b = self.value["coverage"]["boundary_contract"]
+        r = next(r for r in b["family_results"] if r["family"] == "C_OS")
+        self.assertEqual((r["family"], r["native_cases"], r["exact_reuse_cases"]), ("C_OS", 30, 2))
+        self.assertEqual(r["passing_pending_cells"], 0)
+        self.assertEqual(r["accepted_cells"], 64)
+        self.assertFalse(r["native_trajectories_rerun"])
+        self.assertFalse(r["dense_comparisons_rerun"])
+        self.assertEqual(b["counts"]["accepted_cells"], 0)
+        self.assertEqual(self.value["coverage"]["accepted_cells"], 322)
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = r[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+
+    def test_explicit_boundary_checker_dispatch_never_runs_native_campaign(self):
+        with patch.object(sys, "argv", ["tranche8", "verify-retained", "--family", "C_OS", "--checkpoint", "8.4c"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            self.assertEqual(execute.call_count, 1)
+            command = execute.call_args.args[0]
+            self.assertEqual(command[-1], "--check")
+            self.assertTrue(command[-2].endswith("p984c_cos.py"))
+            self.assertNotIn("--run", command)
+
+    def test_boundary_cpc_accepted_execution_source_and_dispatch(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "C_PC")
+        self.assertEqual((row["passed_cases"], row["exact_reuse_cases"], row["passing_pending_cells"]), (30, 2, 0))
+        self.assertEqual(row["accepted_cells"], 64)
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(row["status"], "accepted_bounded")
+        self.assertFalse(row["native_trajectories_rerun"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                raw, ref = api.tranche8_source(index.ROOT, row[key]["path"])
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_boundary_execution_with_scoped_acceptance")
+        with patch.object(sys, "argv", ["query", "verify-retained", "--family", "C_PC", "--checkpoint", "8.4c"]), patch.object(index, "checked", side_effect=AssertionError("unrelated family check")), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_cpc_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+
+    def test_boundary_apc_accepted_execution_source_and_dispatch(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "A_PC")
+        self.assertEqual((row["passed_cases"], row["exact_reuse_cases"], row["passing_pending_cells"]), (30, 2, 0))
+        self.assertEqual(row["accepted_cells"], 64)
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(row["status"], "accepted_bounded")
+        self.assertFalse(row["native_trajectories_rerun"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                raw, ref = api.tranche8_source(index.ROOT, row[key]["path"])
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_boundary_execution_with_scoped_acceptance")
+        with patch.object(sys, "argv", ["query", "verify-retained", "--family", "A_PC", "--checkpoint", "8.4c"]), patch.object(index, "checked", side_effect=AssertionError("unrelated family check")), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_apc_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+
+    def test_boundary_ccipc_accepted_execution_source_and_dispatch(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "C_CI_PC")
+        self.assertEqual((row["passed_cases"], row["exact_reuse_cases"], row["passing_pending_cells"]), (30, 2, 0))
+        self.assertEqual(row["accepted_cells"], 64)
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(row["status"], "accepted_bounded")
+        self.assertFalse(row["native_trajectories_rerun"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                raw, ref = api.tranche8_source(index.ROOT, row[key]["path"])
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_boundary_execution_with_scoped_acceptance")
+        with patch.object(sys, "argv", ["query", "verify-retained", "--family", "C_CI_PC", "--checkpoint", "8.4c"]), patch.object(index, "checked", side_effect=AssertionError("unrelated family check")), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_ccipc_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+
+    def test_boundary_aos_oracle_does_not_promote_runtime_or_acceptance(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["oracle_preparations"] if r["family"] == "A_OS")
+        self.assertEqual((row["family"], row["oracle_cases_passed"], row["oracle_cases_required"]), ("A_OS", 32, 32))
+        self.assertEqual(row["runtime_cells_closed"], 0)
+        self.assertFalse(row["native_runtime_executed"])
+        self.assertFalse(row["user_accepted"])
+        self.assertTrue(row["oracle_scope_accepted"])
+        self.assertEqual(row["status"], "accepted_oracle_scope")
+        self.assertFalse(row["interval_equations_recomputed"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = row[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        with patch.object(sys, "argv", ["tranche8", "verify-retained", "--family", "A_OS", "--checkpoint", "8.4c", "--oracle", "--recheck-numerics"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-3].endswith("p984c_aos_oracle.py"))
+            self.assertEqual(command[-2:], ["--check-retained", "--recheck-numerics"])
+
+    def test_boundary_aos_native_acceptance_is_separate_from_oracle_acceptance(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "A_OS")
+        self.assertEqual((row["native_cases"], row["passed_cases"], row["exact_reuse_cases"]), (30, 30, 2))
+        self.assertEqual((row["accepted_cells"], row["passing_pending_cells"]), (64, 0))
+        self.assertFalse(row["native_trajectories_rerun"])
+        self.assertFalse(row["interval_equations_recomputed"])
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = row[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        with patch.object(sys, "argv", ["tranche8", "verify-retained", "--family", "A_OS", "--checkpoint", "8.4c"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_aos_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+
+    def test_boundary_cci_preparation_never_promotes_native_coverage(self):
+        row, = self.value["coverage"]["boundary_contract"]["target_preparations"]
+        self.assertEqual((row["family"], row["passed_cases"], row["exact_reuse_cases"]), ("C_CI", 30, 2))
+        self.assertEqual(row["new_native_root_reads"], 60)
+        self.assertEqual((row["native_steps"], row["topology_events"], row["runtime_cells_closed"]), (0, 0, 0))
+        self.assertFalse(row["interval_equations_recomputed"])
+        self.assertEqual({r["family"] for r in self.value["coverage"]["boundary_contract"]["family_results"]}, {"C_OS", "A_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC"})
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = row[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        argv = ["tranche8", "verify-retained", "--family", "C_CI", "--checkpoint", "8.4c"]
+        with patch.object(sys, "argv", [*argv, "--preparation"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            self.assertTrue(execute.call_args.args[0][-2].endswith("p984c_cci_preparation.py"))
+            self.assertEqual(execute.call_args.args[0][-1], "--check-retained")
+
+    def test_boundary_cci_native_acceptance_is_separate(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "C_CI")
+        self.assertEqual((row["native_cases"], row["passed_cases"], row["exact_reuse_cases"]), (30, 30, 2))
+        self.assertEqual((row["accepted_cells"], row["passing_pending_cells"]), (64, 0))
+        self.assertEqual(row["status"], "accepted_bounded")
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertFalse(row["native_trajectories_rerun"])
+        self.assertFalse(row["interval_equations_recomputed"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = row[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_boundary_execution_with_scoped_acceptance")
+        argv = ["tranche8", "verify-retained", "--family", "C_CI", "--checkpoint", "8.4c"]
+        with patch.object(sys, "argv", argv), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_cci_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+
+    def test_boundary_aci_oracle_requires_explicit_scope(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["oracle_preparations"] if r["family"] == "A_CI")
+        self.assertEqual((row["new_oracle_cases"], row["passed_cases"], row["exact_accepted_target_reuses"]), (30, 30, 2))
+        self.assertEqual(row["oracle_cases_passed"], 32)
+        self.assertTrue(row["oracle_scope_accepted"])
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertFalse(row["user_accepted"])
+        self.assertEqual((row["native_steps"], row["native_roots"], row["topology_events"], row["runtime_cells_closed"]), (0, 0, 0, 0))
+        native = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "A_CI")
+        self.assertEqual(native["accepted_cells"], 64)
+        self.assertEqual(native["successful_history_cells"], 64)
+        self.assertEqual(native["passing_pending_cells"], 0)
+        self.assertEqual(native["acceptance"]["anchor"], "scoped-user-acceptance")
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for subject in (row, native):
+                for key in ("inputs", "results", "review"):
+                    ref = subject[key]
+                    raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                    self.assertEqual(actual, ref)
+                    self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        argv = ["tranche8", "verify-retained", "--family", "A_CI", "--checkpoint", "8.4c"]
+        with patch.object(sys, "argv", argv), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_aci_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+        with patch.object(sys, "argv", [*argv, "--oracle"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_aci_oracle.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run-oracle", command)
+
     def test_cci_acceptance_is_separate_and_original_failure_preserved(self):
         c = self.value["coverage"]
         row = next(r for r in c["families"] if r["family"] == "C_CI")

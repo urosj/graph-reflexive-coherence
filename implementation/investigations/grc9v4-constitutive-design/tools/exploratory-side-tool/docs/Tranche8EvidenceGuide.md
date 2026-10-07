@@ -13,12 +13,102 @@ pinned reviews record user acceptance. The A_PC successor contributes 32
 accepted cells through its own separate scoped decision. C_CI_PC adds 32
 accepted cells through its own separate scoped decision.
 The bounded all-ten P9-8.4b item is closed; P9-8.4c–i remain open.
+`coverage.boundary_contract` now exposes the first `.c` task: 32 layouts,
+640 both-role obligations (600 new, 40 exact-reuse candidates), budgets,
+prerequisites and exact contract/review links. The user accepted the matrix and
+budgets, with zero native executions or accepted `.c` cells. Its structural
+checks do not certify new numerical targets or reopen `.b` acceptance.
+Its `mechanics` field links the completed shared allocation/rejection tests,
+accepted for mechanical scope only. All-ten receiver probes mock numerical reads, detection and
+target construction; the browser labels these limitations. Source-bound
+integrity checking does not rerun the suite or grant numerical credit.
+The separate `family_results` list now exposes C_OS `.c` execution, exact
+D45 reuse and scoped acceptance links (64 C_OS cells accepted). These counts do not alter `.b` acceptance
+or the historical preregistration. The side-tool checks pinned subjects and
+retained structure only; the review's explicit `p984c_cos.py --check` command
+recomputes dense comparisons and consumer consistency without native reruns.
+The same explicit checker is available through `tranche8_query.py
+verify-retained --family C_OS --checkpoint 8.4c`; the default checkpoint
+remains `8.4b`. With `--family A_OS --checkpoint 8.4c`, it checks the native
+boundary evidence; add `--oracle` to select only the independent prerequisite.
+In either A mode, `--recheck-numerics` recomputes the relevant interval equations,
+not native trajectories. The separate `oracle_preparations` view links its
+inputs/results/review and explicit scoped acceptance, preserves the original
+execution flags, and grants zero runtime-cell acceptance. A_OS native boundary
+results have their own 64-cell scoped acceptance and actual-source/history binding.
+Normal status recomputes neither interval equations nor native trajectories. Other
+unimplemented `.c` family checkers fail closed.
+C_CI `.c` exposes native evidence separately from its target prerequisite:
+`verify-retained --family C_CI --checkpoint 8.4c` checks native retained
+operands; add `--preparation` for the prerequisite only. Either mode accepts
+`--recheck-numerics` to recompute independent interval equations without native
+trajectories. Its `target_preparations` row exposes both-role
+joint-root certificates and nominal predictions, counting 60 new native root
+reads but zero native steps, topology events or runtime-cell closures.
+The separate native `family_results` row records event/continuation success,
+exact D45 reuse and the separate 2026-10-07 scoped acceptance of 64 cells. A committed event is
+not a passing case if later continuation fails. The shared CLI/API/notebook/
+browser projection never infers user acceptance from passing execution.
+A_CI `.c` has a separately accepted oracle scope:
+`verify-retained --family A_CI --checkpoint 8.4c --oracle`. Thirty new independent
+joint-root/C/W/Read-Back/domain cases and two exact accepted native D45 target
+reuses supply the expectations. The reuses are not new oracle executions, and
+the prerequisite grants zero native runtime credit. Add `--recheck-numerics`
+for independent interval recomputation. Without `--oracle`, A_CI `.c` checks
+the native campaign: both-role event/readmission, W transport and writing,
+ten target steps and fresh full-root consumption. Separate user acceptance on
+2026-10-07 covers all 64 named cells; neither check mode reruns native trajectories.
+C_PC `.c` adds thirty new cases and two exact D45 reuses, with all 64
+history cells accepted separately on 2026-10-07. Use
+`verify-retained --family C_PC --checkpoint 8.4c` for the whole-carrier,
+signed Read-Back and consumer checks. `--recheck-numerics` additionally
+recomputes independent interval and signed-vector certificates, not native
+trajectories. Family-scoped status is available through the same CLI and
+`tranche8_status(root, family="C_PC")`; it does not imply acceptance.
+
+A_PC `.c` exposes 30 new cases and two exact D45 reuses: all 64 cells
+accepted separately on 2026-10-07. Select `verify-retained --family A_PC --checkpoint 8.4c`
+for actual-source binding, signed reads, exact W lineage, both W/Z writers,
+carrier archive/reset and both-role publication checks. Add `--recheck-numerics`
+to recompute independent interval certificates and nominal predictions without
+native trajectories. Status/API/notebook/browser access uses the same family
+selection and source pins; the six accepted families contribute 384 `.c` cells.
+
+C_CI+PC `.c` adds thirty new cases and two exact D45 reuses, giving 64 passing
+history cells accepted separately on 2026-10-07. Select
+`verify-retained --family C_CI_PC --checkpoint 8.4c` for full joint-root,
+signed-read, strict-slack and carrier-writer/restart checks. Optional
+`--recheck-numerics` recomputes pointwise interval certificates and independent
+nominal predictions; neither command reruns native trajectories. Family status
+uses `tranche8_status(root, family="C_CI_PC")`. The seven accepted `.c` families
+contribute 448 cells; three families and aggregate `.c` remain open.
+
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.
 Forty disabled-profile surfaces remain Tranche 9 work. General ATC is not implied.
 
 ## Choose the check you need
+
+For work on one completed capacity-boundary family, use
+`tranche8-query status --family A_CI --checkpoint 8.4c`. This checks only that
+family and its dependencies, and explicitly does not certify the other families,
+the global generated view or current implementation permission. The API/notebook
+equivalent is `tranche8_status(root, family="A_CI")`. Unavailable families fail
+closed. Full status/check commands retain the full view and its original scope.
+
+The boundary retained command goes directly to the selected frozen checker,
+without a preceding full-index rebuild. Read-only prerequisites are reused
+within a single operation; mutable return values are detached copies and file
+content drift rejects the operation before return. No numerical verdicts or
+cross-operation results are cached. Native execution remains a separate command.
+
+Run changed numerical subjects and meaningful pressure once. For unchanged
+scientific inputs, acceptance/docs/display edits need binding and surface checks,
+not new native trajectories or interval math. Regenerate the full browser view
+once when completing a family. Do not use rare test failures as a reason to drop
+independent equations, domains, both-role history/lifecycle checks or declared
+coverage.
 
 From the repository root, using the existing `.venv`:
 
@@ -64,6 +154,8 @@ view = tranche8_status(root)
 assert len(view["profiles"]) == 10
 assert view["coverage"]["accepted_cells"] == 322
 assert view["coverage"]["executed_pending_cells"] == 0
+assert view["coverage"]["boundary_contract"]["counts"]["history_cells"] == 640
+assert view["coverage"]["boundary_contract"]["counts"]["executed_cells"] == 0
 raw, identity = tranche8_source(root, view["coverage"]["record"]["path"])
 ```
 

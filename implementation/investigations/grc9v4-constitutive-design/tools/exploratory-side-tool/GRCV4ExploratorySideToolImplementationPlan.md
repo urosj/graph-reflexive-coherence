@@ -2493,6 +2493,92 @@ bridge norms and lagged invariance. Preserve the separately accepted completion,
 K versus K-minus and C1 debt restrictions across CLI/API/notebook/browser. Normal
 status checks source bindings and never reruns native or interval trajectories.
 
+### P9-8.4c capacity and phase evidence
+
+The accepted shared mechanical result is exposed alongside the accepted contract,
+with its independent layout checks and explicitly mocked all-ten receiver
+routing. It credits no numerical admission or continuation cells.
+The first numerical successor, C_OS, is projected separately with new native
+case counts, exact historical reuse, per-case outcome/first failure and the
+separate user decision accepting 64 C_OS cells on 2026-10-07. Normal status does not
+rerun native trajectories or the dense comparator.
+Expose the A_OS oracle prerequisite separately as independent expectations,
+with the 2026-10-07 scoped acceptance, not native execution or runtime acceptance.
+Link its targets, interval certificates and scope review through
+CLI/API/notebook/browser. Project native boundary results separately with
+separate 64-cell acceptance, actual-input checks and exact D45 reuse. Explicit retained
+checking may recompute interval equations, never native steps. The A_OS `.c`
+checker defaults to native evidence; `--oracle` explicitly selects its prerequisite.
+Expose C_CI's entry joint-root/domain preparation under `target_preparations`,
+not `family_results`. Native root proposals and nominal predictions cannot
+become event/continuation credit. Native C_CI `.c` evidence belongs in a separate
+`family_results` row with its own passing/pending counts, exact D45 reuse and
+actual-entry comparison scope. The CLI defaults to native retained checking;
+`--preparation` explicitly selects only the prerequisite. API/notebook/browser
+present the same distinct scopes and source links. Neither mode grants scoped
+user acceptance or reruns native trajectories. C_CI's 2026-10-07 scoped decision
+now supplies its separate 64-cell acceptance; the raw execution flags stay unchanged.
+Expose A_CI's joint-root/domain oracle as an accepted-scope prerequisite through
+the same oracle view. Distinguish thirty new independent cases from two exact
+accepted native target reuses; neither grants new runtime credit. Require
+explicit `--oracle` for its prerequisite; the default A_CI `.c` selection checks
+native retained evidence. Oracle acceptance does not accept native results.
+The separate 2026-10-07 user decision accepts all 64 named native A_CI cells.
+Source retrieval and CLI/API/notebook/browser share labels and source identities.
+
+Expose C_PC boundary execution and its 2026-10-07 scoped acceptance:
+thirty new cases and two exact D45 reuses give 64 accepted history
+cells. Source-bound CLI/API/notebook/browser access preserves whole-carrier
+and signed-read comparison scope. `--family C_PC --checkpoint 8.4c` selects
+the retained checker; optional `--recheck-numerics` recomputes certificates,
+not native trajectories. Neither mode grants acceptance or broadens `.b`.
+
+Expose A_PC boundary execution separately from accepted C_PC: thirty new
+cases, two exact D45 reuses and 64 cells accepted separately on 2026-10-07.
+`--family A_PC --checkpoint 8.4c` selects fixed-row/signed-read/W/Z consumer
+checks; `--recheck-numerics` recomputes pointwise certificates and independent
+predictions, not native trajectories. Source retrieval and all four surfaces
+preserve exact W lineage, carrier-loss scope and bounded comparison limits.
+
+Expose C_CI+PC boundary execution and its separate 2026-10-07 acceptance:
+thirty new cases and two exact D45 reuses, with all 64 named cells accepted.
+`--family C_CI_PC --checkpoint 8.4c` selects whole joint-root,
+signed-read and same-root-source carrier-consumer checks. Preserve the strict
+composite source slack, old-Z/instantaneous distinction and unchanged bounds.
+CLI/API/notebook/browser share source identities; `--recheck-numerics` is
+independent saved-operand recomputation, not native trajectory replay.
+
+The 2026-10-07 streamlining keeps frozen numerical checkers and acceptance
+identities intact. Full status builds reuse read-only prerequisites inside one
+content-checked operation, never across operations or as numerical verdicts.
+Use `status --family A_CI --checkpoint 8.4c` (or another completed boundary
+family) during scoped work; its result explicitly excludes other families and
+full-boundary validity. Boundary `verify-retained` authenticates the selected
+sources and invokes the unchanged checker without first rebuilding the entire
+index. Regenerate/check the full shared browser view once at final family
+closure, rather than at every intermediate step. Shared changes and tranche
+closure still receive broader regression checks.
+
+The first-task boundary contract is exposed as `coverage.boundary_contract`
+through the shared data surface and a separate browser section. It records
+32 layouts/640 history obligations, zero executions/acceptances, exact source
+links and all-ten ceilings/prerequisites. Source-bound reconstruction checks
+the preregistration only; it does not call a native solver or allocator.
+
+Follow the main plan's all-ten, both-history boundary matrix. Reuse the shared
+CLI/API/notebook/browser projection, exposing named additional probes separately
+from the 322 accepted `.b` cells. Common allocation/wire evidence is shared;
+numerical admission, continuation, failures and acceptance stay bound to each
+family's exact subjects. Keep required positive rows pending when blocked,
+and distinguish decoding, typed semantic and numerical failures.
+
+Update source retrieval and the handoff with each family result, using the
+[current retention/storage policy](../../../../../docs/reference/EvidenceStorage.md).
+Retain completed evidence only, share identical inputs, pack justified large
+operands losslessly and run local storage/staged-blob checks before publication.
+The 2026-10-07 main changes leave `/.github/` ignored and the workflow untracked;
+side-tool completion must not depend on GitHub automation.
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC
