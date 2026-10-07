@@ -21,6 +21,21 @@ test('C_PC boundary execution binds scoped acceptance', () => {
   }
 });
 
+test('A_PC boundary execution binds scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_PC — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_PC');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=640,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('A_OS oracle scope is not native boundary acceptance', () => {
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out), /32\/32 independent oracle expectations pass/);

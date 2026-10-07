@@ -2127,6 +2127,9 @@ instead of stale fixed totals and opens any pending case details explicitly.
     D45 reuses and 64 cells accepted on 2026-10-07. Bind retained source
     access and whole-carrier/signed-read scope; family-scoped status and explicit
     retained checking do not rerun native trajectories or grant acceptance.
+  - [x] Expose A_PC boundary execution: thirty new cases, two exact D45 reuses
+    and 64 cells accepted on 2026-10-07. Bind fixed-row signed reads,
+    exact W lineage and separate W/Z consumer scope across all four surfaces.
 - [ ] Synchronize exact sources, scoped decisions and the handoff as family
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local

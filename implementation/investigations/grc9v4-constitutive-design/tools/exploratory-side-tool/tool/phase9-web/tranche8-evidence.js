@@ -14142,6 +14142,233 @@ export const TRANCHE8_EVIDENCE = {
             "basis": "pinned_execution_with_separate_scoped_user_acceptance"
           },
           "comparison_scope": "pointwise_full_formula_signed_readback_whole_carrier_reset_and_single_writer_checks_not_uniform_trajectory_bound"
+        },
+        {
+          "family": "A_PC",
+          "native_cases": 30,
+          "passed_cases": 30,
+          "exact_reuse_cases": 2,
+          "successful_history_cells": 64,
+          "accepted_cells": 64,
+          "native_trajectories_rerun": false,
+          "interval_equations_recomputed": false,
+          "cases": [
+            {
+              "case_id": "P984C-D36-E-1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E-1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E-1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E-1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E-1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E-1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E-1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E-1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E-1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E-1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E-1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E-1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E-1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E-1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E-1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E1-P1::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E1-P2::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E1-P3::A_PC",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            }
+          ],
+          "status": "accepted_bounded",
+          "required_cells": 64,
+          "passing_pending_cells": 0,
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md",
+            "sha256": "cefe1d6e94b81c6797e8f5828ff9e6d78c2daa1f1c347a52ecaf5efebabd8c15",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCCases.json",
+            "sha256": "cf12a1d35d0a8489eb16345f414dc3ef445dfbfcf013828c0c73f18a02eb301c",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCResults.json",
+            "sha256": "6eb4ded39b423ac35b8ee276eaa2a399b566b2716ce9810ec93f37cc3cd74038",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md",
+            "sha256": "cefe1d6e94b81c6797e8f5828ff9e6d78c2daa1f1c347a52ecaf5efebabd8c15",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance"
+          },
+          "reuse_evidence": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json",
+            "sha256": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+            "revision": null,
+            "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+          },
+          "comparison_scope": "pointwise_fixed_row_signed_readback_exact_W_lineage_and_separate_W_Z_writers_not_uniform_trajectory_bound"
         }
       ],
       "oracle_preparations": [
@@ -15139,6 +15366,24 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_boundary_execution_with_scoped_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCCases.json",
+      "sha256": "cf12a1d35d0a8489eb16345f414dc3ef445dfbfcf013828c0c73f18a02eb301c",
+      "revision": null,
+      "basis": "pinned_boundary_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCResults.json",
+      "sha256": "6eb4ded39b423ac35b8ee276eaa2a399b566b2716ce9810ec93f37cc3cd74038",
+      "revision": null,
+      "basis": "pinned_boundary_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md",
+      "sha256": "cefe1d6e94b81c6797e8f5828ff9e6d78c2daa1f1c347a52ecaf5efebabd8c15",
+      "revision": null,
+      "basis": "pinned_boundary_execution_with_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryContract.json",
       "sha256": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
       "revision": null,
@@ -15373,5 +15618,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "d3ac8b050e83af88f76091cc1cf8d840e5acc8b4d3bc5435d1d0c7a11d2fa3ef"
+  "view_digest": "e0296d583f31ee9f8dc6d936783a08bbb02bb8b64482dad3ce097c631c53ecab"
 };

@@ -126,6 +126,25 @@ class EvidenceTests(unittest.TestCase):
             self.assertEqual(command[-1], "--check-retained")
             self.assertNotIn("--run", command)
 
+    def test_boundary_apc_accepted_execution_source_and_dispatch(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "A_PC")
+        self.assertEqual((row["passed_cases"], row["exact_reuse_cases"], row["passing_pending_cells"]), (30, 2, 0))
+        self.assertEqual(row["accepted_cells"], 64)
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(row["status"], "accepted_bounded")
+        self.assertFalse(row["native_trajectories_rerun"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                raw, ref = api.tranche8_source(index.ROOT, row[key]["path"])
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_boundary_execution_with_scoped_acceptance")
+        with patch.object(sys, "argv", ["query", "verify-retained", "--family", "A_PC", "--checkpoint", "8.4c"]), patch.object(index, "checked", side_effect=AssertionError("unrelated family check")), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_apc_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+
     def test_boundary_aos_oracle_does_not_promote_runtime_or_acceptance(self):
         row = next(r for r in self.value["coverage"]["boundary_contract"]["oracle_preparations"] if r["family"] == "A_OS")
         self.assertEqual((row["family"], row["oracle_cases_passed"], row["oracle_cases_required"]), ("A_OS", 32, 32))
@@ -173,7 +192,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(row["new_native_root_reads"], 60)
         self.assertEqual((row["native_steps"], row["topology_events"], row["runtime_cells_closed"]), (0, 0, 0))
         self.assertFalse(row["interval_equations_recomputed"])
-        self.assertEqual({r["family"] for r in self.value["coverage"]["boundary_contract"]["family_results"]}, {"C_OS", "A_OS", "C_CI"})
+        self.assertEqual({r["family"] for r in self.value["coverage"]["boundary_contract"]["family_results"]}, {"C_OS", "A_OS", "C_CI", "A_CI", "C_PC", "A_PC"})
         with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
             for key in ("inputs", "results", "review"):
                 ref = row[key]

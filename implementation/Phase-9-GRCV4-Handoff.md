@@ -6,7 +6,7 @@ On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
-`additional_work_register`; C_OS, A_OS, C_CI, A_CI and C_PC are accepted and the other five family items remain open.
+`additional_work_register`; C_OS, A_OS, C_CI, A_CI, C_PC and A_PC are accepted and the other four family items remain open.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
@@ -156,6 +156,23 @@ CLI/API/notebook/browser exposes `--family C_PC --checkpoint 8.4c` as
 Five families contribute 320 accepted `.c` cells; `.b` stays closed at
 322/322. A_PC is next under the approved single-work-unit workflow.
 Aggregate `.c`, deeper/covariance/larger work and 8.5 remain open.
+
+After accepted C_PC commit `2c4bb938`, the
+[A_PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md)
+passes thirty new cases and two exact D45 reuses: 64 passing history cells,
+600 new target steps and 60 final reads. Both-role independent predictions
+precede each event; the accepted R=2048 law, shares and budgets are unchanged.
+All-layout preparation, full retained checking and four focused methods pass.
+Pressure covers exact W lineage, both writers' staging and next-read effects,
+signed Read-Back, whole-Z archive/reset, both-role admission and publication.
+
+Result `7ae5dd6163184f7b8e76acca8dd19a2255ef0a20448db7345ac85abb6eb496b2`
+is stored in 689,972 XZ bytes restoring 18,972,544 exact JSON bytes. Fresh
+restoration passes. The user accepted A_PC's 64 named cells on 2026-10-07;
+CLI/API/notebook/browser bind that separate decision. C_CI_PC is next under
+the approved single-work-unit workflow. Six accepted boundary families
+contribute 384 cells. No production/spec
+change, new ATC claim or uniform trajectory bound is introduced.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

@@ -2533,6 +2533,13 @@ and signed-read comparison scope. `--family C_PC --checkpoint 8.4c` selects
 the retained checker; optional `--recheck-numerics` recomputes certificates,
 not native trajectories. Neither mode grants acceptance or broadens `.b`.
 
+Expose A_PC boundary execution separately from accepted C_PC: thirty new
+cases, two exact D45 reuses and 64 cells accepted separately on 2026-10-07.
+`--family A_PC --checkpoint 8.4c` selects fixed-row/signed-read/W/Z consumer
+checks; `--recheck-numerics` recomputes pointwise certificates and independent
+predictions, not native trajectories. Source retrieval and all four surfaces
+preserve exact W lineage, carrier-loss scope and bounded comparison limits.
+
 The 2026-10-07 streamlining keeps frozen numerical checkers and acceptance
 identities intact. Full status builds reuse read-only prerequisites inside one
 content-checked operation, never across operations or as numerical verdicts.

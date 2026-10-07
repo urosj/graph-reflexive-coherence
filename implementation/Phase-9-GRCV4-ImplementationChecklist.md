@@ -3037,8 +3037,19 @@ the full ten-profile plan.
         archive/reset checks. See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-CPCRuntimeReview.md).
       - [x] User acceptance on 2026-10-07 covers all 64 named C_PC cells,
         separately from aggregate `.c`.
-    - [ ] P9-8.4c[A_PC]: Independent A expectations, exact W lineage and
+    - [x] P9-8.4c[A_PC]: Independent A expectations, exact W lineage and
       separate W/Z writer, archive/reset and continuation obligations.
+      - [x] Bind all 32 layouts and both actual histories; check independent
+        port graphs, W lineage/seed, zero Z and whole-chart bounds with no
+        production or parameter changes. Independent ten-step predictions
+        precede each new native event under the accepted budgets.
+      - [x] Thirty new cases plus two exact D45 reuses pass: 600 new target
+        steps, 60 fresh reads and 64 passing cells. Full retained checking and
+        four focused methods pass. W/Z/signed-read pressure, exact history and
+        source-bound side-tool access retain unchanged budgets. See the
+        [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md).
+      - [x] User acceptance on 2026-10-07 covers all 64 named A_PC cells,
+        separately from aggregate `.c`.
     - [ ] P9-8.4c[C_CI_PC]: Gain-two joint-root contraction/slack and C
       reference coverage, fixed-old-Z/same-source writing and next-root effects.
     - [ ] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,

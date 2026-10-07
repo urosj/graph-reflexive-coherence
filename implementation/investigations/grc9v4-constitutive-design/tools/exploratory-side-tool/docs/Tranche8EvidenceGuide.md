@@ -66,6 +66,14 @@ recomputes independent interval and signed-vector certificates, not native
 trajectories. Family-scoped status is available through the same CLI and
 `tranche8_status(root, family="C_PC")`; it does not imply acceptance.
 
+A_PC `.c` exposes 30 new cases and two exact D45 reuses: all 64 cells
+accepted separately on 2026-10-07. Select `verify-retained --family A_PC --checkpoint 8.4c`
+for actual-source binding, signed reads, exact W lineage, both W/Z writers,
+carrier archive/reset and both-role publication checks. Add `--recheck-numerics`
+to recompute independent interval certificates and nominal predictions without
+native trajectories. Status/API/notebook/browser access uses the same family
+selection and source pins; the six accepted families contribute 384 `.c` cells.
+
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

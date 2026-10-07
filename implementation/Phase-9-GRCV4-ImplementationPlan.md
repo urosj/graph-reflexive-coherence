@@ -2935,6 +2935,16 @@ its 64 named cells on 2026-10-07: five families now contribute 320 accepted
 cells; the other five families and aggregate `.c` remain open.
 A_PC follows this bounded checkpoint, not another C_PC discovery stage.
 
+The [A_PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md)
+now passes all 64 named history cells: thirty new events, 600 target steps and
+60 final reads, with two exact D45 reuses. Independent fixed-row predictions
+precede each new event. Exact W lineage, whole-Z archive/reset, separate W/Z
+writers and fresh consumer reads retain the accepted law and error bounds.
+Four focused pressure methods and full retained checking pass. The user
+accepted all 64 named A_PC cells on 2026-10-07; six families now contribute
+384 accepted `.c` cells. C_CI+PC is next; four families and aggregate `.c`
+remain open.
+
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.
 The 2026-10-07 checklist makes those family items explicit; `.b`'s 322 accepted
