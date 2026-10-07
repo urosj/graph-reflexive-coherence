@@ -2874,6 +2874,12 @@ The [shared allocation/wire tests](./phase-9-grcv4/tranche-8/P9-8.4c-MechanicalR
 are now accepted for their mechanical scope. They check 32 layouts once and all-ten
 receiver routing with explicitly mocked numerical gates. Next are C_OS target
 prerequisites; no numerical reuse or family closure follows from these tests.
+The [C_OS successor](./phase-9-grcv4/tranche-8/P9-8.4c-COSReview.md) binds thirty
+new event subjects and two exact accepted D45 subjects. It retains the frozen
+comparison budgets and both-history ten-beat horizon, independently constructs
+each target, and keeps numerical execution separate from scoped acceptance.
+C_OS is accepted on 2026-10-07 for 64/64 history cells; the nine other
+family items and aggregate closure remain open. A_OS oracle preparation is next.
 
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.

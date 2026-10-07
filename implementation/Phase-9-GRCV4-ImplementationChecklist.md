@@ -2957,8 +2957,13 @@ the full ten-profile plan.
     before dependent runtime execution. Reuse exact accepted subjects by explicit
     identity/stage links, not by adjacency or a sibling family's pass. A blocked
     positive row stays open; an expected rejection does not replace it.
-    - [ ] P9-8.4c[C_OS]: Complete C references, strict selectors and OS
+    - [x] P9-8.4c[C_OS]: Complete C references, strict selectors and OS
       predictor/corrector split admission at the new boundaries.
+      Accepted by the user on 2026-10-07:
+      [bound subjects and evidence scope](./phase-9-grcv4/tranche-8/P9-8.4c-COSReview.md).
+      Thirty new native layouts pass both histories and ten target beats each;
+      two exact D45 reuse subjects complete 64 passing history cells. No
+      rigorous full-error/effect-separation or other-family credit is claimed.
     - [ ] P9-8.4c[A_OS]: Independent A expectations, OS split, exact W
       transfer, correctly staged writer and fresh final reconstruction.
     - [ ] P9-8.4c[C_CI]: Complete C references and the full selected joint

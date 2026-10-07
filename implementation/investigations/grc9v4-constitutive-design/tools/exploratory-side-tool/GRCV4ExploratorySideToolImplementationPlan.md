@@ -2498,6 +2498,10 @@ status checks source bindings and never reruns native or interval trajectories.
 The accepted shared mechanical result is exposed alongside the accepted contract,
 with its independent layout checks and explicitly mocked all-ten receiver
 routing. It credits no numerical admission or continuation cells.
+The first numerical successor, C_OS, is projected separately with new native
+case counts, exact historical reuse, per-case outcome/first failure and the
+separate user decision accepting 64 C_OS cells on 2026-10-07. Normal status does not
+rerun native trajectories or the dense comparator.
 
 The first-task boundary contract is exposed as `coverage.boundary_contract`
 through the shared data surface and a separate browser section. It records

@@ -6,12 +6,12 @@ On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
-`additional_work_register`; its new per-family checklist entries remain open.
+`additional_work_register`; C_OS is accepted and the other nine family items remain open.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
 D36/37/38/43/44/45 give 32 layouts and 640 all-ten/both-role obligations:
-600 new and 40 D45 exact-reuse candidates, none credited yet. Eight focused
+600 new and 40 D45 exact-reuse candidates at preregistration. Eight focused
 contract tests pass. Budgets and source recipes are frozen; fresh runtime
 identities, target domains and new A-oracle scope still require binding/review.
 The two-remainder targets are not certified by the inherited D31 share recipe.
@@ -21,11 +21,26 @@ The boundary acceptance is committed as `2c3097e0`. Its successor
 are accepted: 32 shared layouts, 60 exact-real resource
 maps, 31 shared negatives, outlier checks and ten mocked receiver routes.
 The result is about 14 KB; `--check` is retained integrity, not a rerun.
-Next: C_OS target prerequisites, explicit equivalence/reuse decisions and
-bounded execution. The side-tool shows the new
-preregistration separately from `.b`'s accepted 322 cells. No native `.c` case
-has run or been accepted. Deeper/covariance/larger work and full 8.5 atomicity
-remain separate.
+Shared mechanical acceptance is committed as `dfd5687e`. Its C_OS successor
+has now executed thirty new native layouts successfully, with both-role target
+readmission, 600 target beats and 60 fresh final reads. Two exact accepted D45
+subjects supply four additional history cells by explicit reuse, not rerun.
+All **64/64 C_OS history cells are accepted** by the user on 2026-10-07;
+aggregate `.c` remains open. See the
+[C_OS review and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-COSReview.md).
+The retained dense/consumer recheck passed with native steps, OS passes and
+event owners explicitly disabled. Maximum recorded component error is
+`6.394884621840902e-14`; minimum new-run poststep resource is
+`1.1723489818468796e-05`. Five focused test methods pass, including all-64-role
+wrong-stage discrimination and resealed/valid-point mechanism substitutions.
+The result digest is `c1224a6a5970b4540c466c6869863b6391401f7a651f8392beee1bc2709aa899`.
+Its 38,261,443-byte shared-context JSON is stored as a 549,040-byte byte-exact
+XZ archive; restore it through `scripts/evidence_storage.py restore`.
+The side-tool exposes `.c` execution separately from `.b`'s accepted 322 cells
+and the unchanged preregistration. The nine other `.c` families remain open.
+Next: proceed to A_OS's
+independent target/oracle prerequisites. Deeper/covariance/larger work and
+full 8.5 atomicity remain separate.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

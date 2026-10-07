@@ -6,6 +6,18 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_OS boundary execution cannot confer acceptance or native rerun', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const r=evidence.coverage.boundary_contract.family_results[0];
+  assert.equal(r.family, 'C_OS');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for (const mutate of [r=>r.accepted_cells=640, r=>r.native_trajectories_rerun=true, r=>r.exact_reuse_cases=32]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.family_results[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('shared mechanics cannot become numerical coverage or lose mock labels', () => {
   const out=element('div'); renderTranche8(evidence,out,element);
   assert.match(text(out), /mocked numerical reads, detection and target construction/);

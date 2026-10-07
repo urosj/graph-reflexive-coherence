@@ -81,6 +81,32 @@ class EvidenceTests(unittest.TestCase):
                 self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
                 self.assertEqual(ref["basis"], "pinned_accepted_mechanical_evidence_not_numerical")
 
+    def test_boundary_cos_execution_is_separate_from_acceptance(self):
+        b = self.value["coverage"]["boundary_contract"]
+        r, = b["family_results"]
+        self.assertEqual((r["family"], r["native_cases"], r["exact_reuse_cases"]), ("C_OS", 30, 2))
+        self.assertEqual(r["passing_pending_cells"], 0)
+        self.assertEqual(r["accepted_cells"], 64)
+        self.assertFalse(r["native_trajectories_rerun"])
+        self.assertFalse(r["dense_comparisons_rerun"])
+        self.assertEqual(b["counts"]["accepted_cells"], 0)
+        self.assertEqual(self.value["coverage"]["accepted_cells"], 322)
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                ref = r[key]
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+
+    def test_explicit_boundary_checker_dispatch_never_runs_native_campaign(self):
+        with patch.object(sys, "argv", ["tranche8", "verify-retained", "--family", "C_OS", "--checkpoint", "8.4c"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            self.assertEqual(execute.call_count, 1)
+            command = execute.call_args.args[0]
+            self.assertEqual(command[-1], "--check")
+            self.assertTrue(command[-2].endswith("p984c_cos.py"))
+            self.assertNotIn("--run", command)
+
     def test_cci_acceptance_is_separate_and_original_failure_preserved(self):
         c = self.value["coverage"]
         row = next(r for r in c["families"] if r["family"] == "C_CI")

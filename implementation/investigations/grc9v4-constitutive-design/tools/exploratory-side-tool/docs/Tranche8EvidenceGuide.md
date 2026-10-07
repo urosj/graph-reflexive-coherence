@@ -22,6 +22,14 @@ Its `mechanics` field links the completed shared allocation/rejection tests,
 accepted for mechanical scope only. All-ten receiver probes mock numerical reads, detection and
 target construction; the browser labels these limitations. Source-bound
 integrity checking does not rerun the suite or grant numerical credit.
+The separate `family_results` list now exposes C_OS `.c` execution, exact
+D45 reuse and scoped acceptance links (64 C_OS cells accepted). These counts do not alter `.b` acceptance
+or the historical preregistration. The side-tool checks pinned subjects and
+retained structure only; the review's explicit `p984c_cos.py --check` command
+recomputes dense comparisons and consumer consistency without native reruns.
+The same explicit checker is available through `tranche8_query.py
+verify-retained --family C_OS --checkpoint 8.4c`; the default checkpoint
+remains `8.4b`, and selecting another `.c` family fails closed.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

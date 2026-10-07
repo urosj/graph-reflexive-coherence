@@ -29,6 +29,13 @@ BOUNDARY_MECHANICAL_SOURCES = {
     BASE + "P9-8.4c-MechanicalChecks.json": "bfca9935d05b5fb793406765e10e48a1652ec7e203ea40deb93590d0f6cc3c1a",
     BASE + "P9-8.4c-MechanicalReview.md": "df80ed367b159007fc8552f85e5f4fa0276e3e786305077718de6395a310d598",
 }
+# Boundary execution pins do not confer scoped user acceptance.
+BOUNDARY_COS_SOURCES = {
+    BASE + "P9-8.4c-COSCases.json": "78d0e3e10e47742114f30e129dc62dce3683cbd1dcde1bae9062c644b293a754",
+    BASE + "P9-8.4c-COSResults.json": "5da7e5d80188774a8403e079265c55a27d109fd31ab0136c99dcaa5e7d78b329",
+    BASE + "P9-8.4c-COSReview.md": "66ff1d9a0e829cc0fb2349e1bc7e182236cc0e0196db5496af61e4201f067af9"
+}
+
 # A_RG2b execution and separate scoped user acceptance have exact source pins.
 ACCEPTED_ARG2B_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json": "cecede14b568698ea5c2500e07123838ef2e344519e509d5f79abfb7e0f48a08",
@@ -143,14 +150,15 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            boundary_pins = {**BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES}
+            boundary_pins = {**BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES}
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = path.read_bytes()
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis="pinned_accepted_mechanical_evidence_not_numerical" if name in BOUNDARY_MECHANICAL_SOURCES else "pinned_preregistration_not_runtime_acceptance")
+                    basis=("pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_COS_SOURCES else
+                        "pinned_accepted_mechanical_evidence_not_numerical" if name in BOUNDARY_MECHANICAL_SOURCES else "pinned_preregistration_not_runtime_acceptance"))
                 return frozen
             pins = {**ACCEPTED_ARG2B_SOURCES, **ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES, **ACCEPTED_APC_SOURCES, **ACCEPTED_CCIPC_SOURCES, **ACCEPTED_ACIPC_SOURCES, **ACCEPTED_CRG2B_SOURCES}
             if name in pins:
@@ -739,6 +747,18 @@ def build(root=ROOT):
         families=boundary_contract["families"], schedule=boundary_contract["schedule"],
         retention=boundary_contract["retention"], prerequisites=boundary_contract["prerequisites"],
         native_runtime_executed=False, user_accepted=False)
+    import p984c_cos as boundary_cos
+    cos_summary = boundary_cos.status(sources.read(boundary_cos.INPUTS), sources.read(boundary_cos.RESULTS))
+    require("## Scoped user acceptance" in sources.raw(boundary_cos.REVIEW).decode(), "missing C_OS boundary acceptance")
+    require(cos_summary["passed_cases"] == 30 and cos_summary["exact_reuse_cases"] == 2, "incomplete C_OS boundary acceptance")
+    cos_summary["accepted_cells"] = 64
+    boundary_view["family_results"] = [dict(**cos_summary,
+        status="accepted_bounded", required_cells=64, passing_pending_cells=0,
+        acceptance=sources.ref(boundary_cos.REVIEW, anchor="scoped-user-acceptance"),
+        inputs=sources.ref(boundary_cos.INPUTS), results=sources.ref(boundary_cos.RESULTS),
+        review=sources.ref(boundary_cos.REVIEW),
+        reuse_evidence=sources.ref(BASE + "P9-8.4b-COSResults.json"),
+        comparison_scope="bounded_dense_crosscheck_not_rigorous_full_error_or_effect_separation")]
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
         runtime_scope_snapshot=scope,
@@ -777,10 +797,13 @@ def checked(root=ROOT):
 
 def next_work(value):
     c = value["coverage"]
+    boundary_summary = " ".join(
+        f"8.4c {r['family']}: {r['accepted_cells']}/{r['required_cells']} accepted history cells; {r['passing_pending_cells']} passing cells pending acceptance."
+        for r in c["boundary_contract"]["family_results"])
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            "8.4c–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} 8.4c–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -789,15 +812,20 @@ def main():
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
     parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"))
     parser.add_argument("--recheck-numerics", action="store_true")
+    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c"), default="8.4b")
     args = parser.parse_args()
     value = checked()
     if args.action != "verify-retained":
-        require(not args.family and not args.recheck_numerics, "numerical/checker options require verify-retained")
+        require(not args.family and not args.recheck_numerics and args.checkpoint == "8.4b", "numerical/checker options require verify-retained")
         print(json.dumps(value if args.action == "status" else dict(status="passed", view_digest=value["view_digest"],
               level=value["verification"]["level"], accepted_cells=value["coverage"]["accepted_cells"], native_trajectories_rerun=False), indent=2))
         return
     require(args.family is not None, "select one completed family explicitly")
-    if args.family == "C_OS":
+    if args.checkpoint == "8.4c":
+        require(args.family == "C_OS" and not args.recheck_numerics,
+                "only C_OS boundary evidence is available; its checker already recomputes dense comparisons")
+        commands = [[sys.executable, str(ROOT / HERE / "p984c_cos.py"), "--check"]]
+    elif args.family == "C_OS":
         require(not args.recheck_numerics, "C_OS retained checker always recomputes its dense comparisons, not native trajectories")
         commands = [[sys.executable, str(ROOT / HERE / "p984b_cos_successor.py"), "--check-retained", *extra] for extra in (["--original"], [])]
     else:
