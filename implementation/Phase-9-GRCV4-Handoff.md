@@ -6,7 +6,7 @@ On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
-`additional_work_register`; C_OS is accepted and the other nine family items remain open.
+`additional_work_register`; C_OS and A_OS are accepted and the other eight family items remain open.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
@@ -37,10 +37,37 @@ The result digest is `c1224a6a5970b4540c466c6869863b6391401f7a651f8392beee1bc270
 Its 38,261,443-byte shared-context JSON is stored as a 549,040-byte byte-exact
 XZ archive; restore it through `scripts/evidence_storage.py restore`.
 The side-tool exposes `.c` execution separately from `.b`'s accepted 322 cells
-and the unchanged preregistration. The nine other `.c` families remain open.
-Next: proceed to A_OS's
-independent target/oracle prerequisites. Deeper/covariance/larger work and
-full 8.5 atomicity remain separate.
+and the unchanged preregistration. The eight other `.c` families remain open.
+C_OS acceptance is committed as `28628dcb`. The independent A_OS oracle
+successor now passes all 32 boundary expectations: thirty new cases with
+660 saved-entry evaluations and two exact D45 reuses. The three shared source
+expectations remain exact predecessor references. Eight focused methods cover
+history/charge maps, both-role two-remainder predictions, scientific mechanism
+mutations and nearby split/resource/floor/history boundaries. Native numerical
+and event producers are disabled; this is not a native campaign.
+See the [oracle scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md).
+Maximum current/baseline full-formula error is below `8.872e-16`, maximum split
+upper bound below `2.616e-15`, and minimum C/W lower bounds exceed `1.06389e-5`
+and `0.99902367`. Budgets, shares, parameters and history policy are unchanged.
+The 12,230,089-byte completed result uses byte-exact XZ storage; no interrupted
+dump is retained. Side-tool CLI/API/notebook/browser exposes this prerequisite
+separately from C_OS acceptance, with zero A_OS runtime credit.
+The user accepted the expanded A_OS oracle scope on 2026-10-07. Its
+[native successor](./phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md) now
+passes thirty new layouts with both-role admission/replay, 600 target steps
+and 60 final reads. Two exact D45 reuses complete 64 passing history cells,
+**separately accepted by the user on 2026-10-07**. Actual source, role-history and target
+identities are bound; parameters and error budgets are unchanged. The result
+digest is `61f6c518b73e0a5417a4263b6cd15d14297d56aaf8447249208a52e14759a6e9`.
+Its 32,231,823-byte canonical shared-context record uses an 853,516-byte XZ
+archive. Full retained-consumer checking passes with native producers disabled;
+four focused native-evidence tests pass, including both-role stage/lifecycle
+mutations and actual-input interval rechecking on D38 phase 1. Oracle acceptance
+and native acceptance are distinct in the
+side-tool; `--family A_OS --checkpoint 8.4c` checks native retained evidence,
+while `--oracle` selects only its prerequisite. Neither command reruns native
+trajectories. Next is C_CI boundary domain/reference preparation and native
+continuation. Deeper, covariance/larger work and full 8.5 atomicity remain separate.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

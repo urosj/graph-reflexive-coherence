@@ -107,6 +107,22 @@
       "storage_sha256": "e52c0baf53e43cf492a0e43512ddb38ee64f10dc4ad7540670bb2e77d7dc634e"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleResults.json",
+      "size": 12230089,
+      "sha256": "33b1c41fd3a5764d8317cf2233e19762222e98c5b38301cdd3c91b7a8121b500",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleResults.json.xz",
+      "storage_size": 258692,
+      "storage_sha256": "bc4e0598caa8bce8987b767d8c4916d62c45ab22824234a245d205c630372129"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json",
+      "size": 32231823,
+      "sha256": "ac2918f910ff07f7f57301d45ce5b043d206bb2436d650adddc93ebeb4832f4c",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json.xz",
+      "storage_size": 853516,
+      "storage_sha256": "c2636911ee56769a5e00da2e564172970e590400f4317c4713251c1936f90cd1"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-COSResults.json",
       "size": 38261443,
       "sha256": "5da7e5d80188774a8403e079265c55a27d109fd31ab0136c99dcaa5e7d78b329",

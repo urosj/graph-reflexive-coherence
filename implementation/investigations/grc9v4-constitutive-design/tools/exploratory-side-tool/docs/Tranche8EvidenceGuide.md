@@ -29,7 +29,15 @@ retained structure only; the review's explicit `p984c_cos.py --check` command
 recomputes dense comparisons and consumer consistency without native reruns.
 The same explicit checker is available through `tranche8_query.py
 verify-retained --family C_OS --checkpoint 8.4c`; the default checkpoint
-remains `8.4b`, and selecting another `.c` family fails closed.
+remains `8.4b`. With `--family A_OS --checkpoint 8.4c`, it checks the native
+boundary evidence; add `--oracle` to select only the independent prerequisite.
+In either A mode, `--recheck-numerics` recomputes the relevant interval equations,
+not native trajectories. The separate `oracle_preparations` view links its
+inputs/results/review and explicit scoped acceptance, preserves the original
+execution flags, and grants zero runtime-cell acceptance. A_OS native boundary
+results have their own 64-cell scoped acceptance and actual-source/history binding.
+Normal status recomputes neither interval equations nor native trajectories. Other
+unimplemented `.c` family checkers fail closed.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

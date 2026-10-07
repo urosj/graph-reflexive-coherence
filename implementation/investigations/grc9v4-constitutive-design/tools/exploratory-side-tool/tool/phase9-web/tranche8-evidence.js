@@ -13234,6 +13234,276 @@ export const TRANCHE8_EVIDENCE = {
             "basis": "current_equals_accepted_checkpoint"
           },
           "comparison_scope": "bounded_dense_crosscheck_not_rigorous_full_error_or_effect_separation"
+        },
+        {
+          "family": "A_OS",
+          "native_cases": 30,
+          "passed_cases": 30,
+          "exact_reuse_cases": 2,
+          "successful_history_cells": 64,
+          "accepted_cells": 64,
+          "native_trajectories_rerun": false,
+          "interval_equations_recomputed": false,
+          "cases": [
+            {
+              "case_id": "P984C-D36-E-1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E-1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E-1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D36-E1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E-1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E-1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E-1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D37-E1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E-1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E-1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E-1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D38-E1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E-1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E-1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E-1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D43-E1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E-1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E-1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E-1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E1-P1::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E1-P2::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984C-D44-E1-P3::A_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            }
+          ],
+          "status": "accepted_bounded",
+          "required_cells": 64,
+          "passing_pending_cells": 0,
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md",
+            "sha256": "26849e5d563dcd9f68de0168fab9e1946d38f19f643c6e46aef8d8bdc46aeab9",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSCases.json",
+            "sha256": "6c3c9e24351fcd7b42c65f0b8e54758a13291bcf94cd5d980921f0a12309879b",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json",
+            "sha256": "ac2918f910ff07f7f57301d45ce5b043d206bb2436d650adddc93ebeb4832f4c",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md",
+            "sha256": "26849e5d563dcd9f68de0168fab9e1946d38f19f643c6e46aef8d8bdc46aeab9",
+            "revision": null,
+            "basis": "pinned_boundary_execution_with_scoped_acceptance"
+          },
+          "reuse_evidence": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json",
+            "sha256": "4d4904d03bef8992a96ec8835f824f99767777d24bb3f4f8e3469ab2c5e33327",
+            "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+            "basis": "current_equals_accepted_checkpoint"
+          },
+          "comparison_scope": "actual_saved_entry_full_formula_intervals_and_native_consumer_checks_not_uniform_trajectory_bound"
+        }
+      ],
+      "oracle_preparations": [
+        {
+          "retained_integrity": "passed",
+          "interval_equations_recomputed": false,
+          "native_runtime_executed": false,
+          "oracle_cases_passed": 32,
+          "oracle_cases_required": 32,
+          "runtime_cells_closed": 0,
+          "user_accepted": false,
+          "new_oracle_cases": 30,
+          "exact_reuse_cases": 2,
+          "family": "A_OS",
+          "status": "accepted_oracle_scope",
+          "oracle_scope_accepted": true,
+          "native_steps": 0,
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md",
+            "sha256": "ac3b85a497a4828eb6c5dbf3ebe4683b833050790952d03b9022fef55c5c1ecf",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleInputs.json",
+            "sha256": "d6c4c325474d7de8f601fe7a098e90e6027b152826cb9aadda0c9177ee2ed049",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleResults.json",
+            "sha256": "33b1c41fd3a5764d8317cf2233e19762222e98c5b38301cdd3c91b7a8121b500",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md",
+            "sha256": "ac3b85a497a4828eb6c5dbf3ebe4683b833050790952d03b9022fef55c5c1ecf",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+          },
+          "scope": "saved_entry_full_formula_bounds_not_native_admission_or_uniform_trajectory_bound"
         }
       ]
     },
@@ -14035,6 +14305,42 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSCases.json",
+      "sha256": "6c3c9e24351fcd7b42c65f0b8e54758a13291bcf94cd5d980921f0a12309879b",
+      "revision": null,
+      "basis": "pinned_boundary_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleInputs.json",
+      "sha256": "d6c4c325474d7de8f601fe7a098e90e6027b152826cb9aadda0c9177ee2ed049",
+      "revision": null,
+      "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleResults.json",
+      "sha256": "33b1c41fd3a5764d8317cf2233e19762222e98c5b38301cdd3c91b7a8121b500",
+      "revision": null,
+      "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md",
+      "sha256": "ac3b85a497a4828eb6c5dbf3ebe4683b833050790952d03b9022fef55c5c1ecf",
+      "revision": null,
+      "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json",
+      "sha256": "ac2918f910ff07f7f57301d45ce5b043d206bb2436d650adddc93ebeb4832f4c",
+      "revision": null,
+      "basis": "pinned_boundary_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md",
+      "sha256": "26849e5d563dcd9f68de0168fab9e1946d38f19f643c6e46aef8d8bdc46aeab9",
+      "revision": null,
+      "basis": "pinned_boundary_execution_with_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryContract.json",
       "sha256": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
       "revision": null,
@@ -14215,5 +14521,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "662c0a35c413a2f89967c280c80a16a72cc4ac80352a2671a8b807eb46fdb552"
+  "view_digest": "38e360563e38a8739ac13348850057948014d31fa60200614408b306a1524604"
 };

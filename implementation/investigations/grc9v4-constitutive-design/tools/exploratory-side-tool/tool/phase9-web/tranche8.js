@@ -84,12 +84,20 @@ export function renderTranche8(value, container, create = tag => document.create
   details(container, 'Shared negatives, outliers and explicitly mocked receiver probes', mechanical.observations);
   for (const run of boundary.family_results) {
     append(container, 'h3', `8.4c ${run.family} — ${run.status}`);
-    append(container, 'p', `${run.native_cases} new native cases (${run.passed_cases} passed); ${run.exact_reuse_cases} exact accepted-case reuses. ${run.accepted_cells}/${run.required_cells} accepted history cells; ${run.passing_pending_cells} passing cells pending acceptance. Status is retained integrity only: no dense or native rerun. Bounded dense comparison, not a rigorous full-error certificate.`);
+    append(container, 'p', `${run.native_cases} new native cases (${run.passed_cases} passed); ${run.exact_reuse_cases} exact accepted-case reuses. ${run.accepted_cells}/${run.required_cells} accepted history cells; ${run.passing_pending_cells} passing cells pending acceptance. Status is retained integrity only: no dense, interval or native rerun. Comparison scope: ${run.comparison_scope}.`);
     const links = append(container, 'p', '');
     for (const [key, label] of [['inputs','Bound subjects'],['results','Completed operands'],['review','Scope and reproduction'],['acceptance','Scoped acceptance'],['reuse_evidence','Exact historical reuse']]) {
-      link(links, run[key], label); append(links, 'span', ' · ');
+      if (run[key]) { link(links, run[key], label); append(links, 'span', ' · '); }
     }
     for (const row of run.cases) append(container, 'p', `${row.case_id}: ${row.case_passed ? 'CASE PASSED' : 'INCOMPLETE CASE'}; event committed=${row.event_committed}; first failure=${JSON.stringify(row.first_failure)}`);
+  }
+  for (const oracle of boundary.oracle_preparations) {
+    append(container, 'h3', `8.4c ${oracle.family} oracle — ${oracle.status}`);
+    append(container, 'p', `${oracle.oracle_cases_passed}/${oracle.oracle_cases_required} independent oracle expectations pass (${oracle.new_oracle_cases} new, ${oracle.exact_reuse_cases} exact reuses); ${oracle.native_steps} native steps and ${oracle.runtime_cells_closed} runtime cells closed by this oracle. Saved-entry full-formula bounds, not a uniform trajectory bound. Oracle-scope acceptance is separate from native runtime acceptance; original execution flags are unchanged.`);
+    const links=append(container, 'p', '');
+    for (const [key,label] of [['inputs','Bound oracle subjects'],['results','Oracle expectations and certificates'],['review','Scope, pressure and reproduction'],['acceptance','Oracle-scope acceptance']]) {
+      link(links,oracle[key],label); append(links,'span',' · ');
+    }
   }
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);

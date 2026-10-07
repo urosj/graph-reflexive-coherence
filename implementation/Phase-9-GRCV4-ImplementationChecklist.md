@@ -2964,8 +2964,24 @@ the full ten-profile plan.
       Thirty new native layouts pass both histories and ten target beats each;
       two exact D45 reuse subjects complete 64 passing history cells. No
       rigorous full-error/effect-separation or other-family credit is claimed.
-    - [ ] P9-8.4c[A_OS]: Independent A expectations, OS split, exact W
+    - [x] P9-8.4c[A_OS]: Independent A expectations, OS split, exact W
       transfer, correctly staged writer and fresh final reconstruction.
+      Oracle prerequisite accepted by the user on 2026-10-07:
+      [scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md).
+      All 32 boundary expectations pass (30 new and two exact D45 reuses),
+      with full-formula saved-entry interval bounds and eight focused test
+      methods. Oracle acceptance closes no native runtime cell.
+
+      - [x] Review and accept the expanded independent oracle scope before
+        native comparison; preserve the original execution-time flags.
+      - [x] Complete native boundary execution and bounded own review against
+        that oracle, with actual source/history identities and exact D45 reuse
+        checks. Thirty new cases and two exact reuses give 64 passing history
+        cells, 600 new target updates and 60 final reads. Full retained-consumer
+        checking and four focused tests pass; see the
+        [native scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md).
+      - [x] Accept the bounded native results separately. User acceptance on
+        2026-10-07 covers all 64 named history cells, not aggregate `.c` closure.
     - [ ] P9-8.4c[C_CI]: Complete C references and the full selected joint
       root, with target-domain/error bounds for both roles.
     - [ ] P9-8.4c[A_CI]: Independent joint-root/domain expectations and W

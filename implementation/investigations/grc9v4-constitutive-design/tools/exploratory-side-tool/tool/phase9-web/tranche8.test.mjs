@@ -6,6 +6,35 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('A_OS oracle scope is not native boundary acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /32\/32 independent oracle expectations pass/);
+  assert.match(text(out), /0 native steps and 0 runtime cells closed/);
+  const r=evidence.coverage.boundary_contract.oracle_preparations[0];
+  assert.equal(r.oracle_scope_accepted, true);
+  assert.equal(r.user_accepted, false);
+  assert.equal(r.status, 'accepted_oracle_scope');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.native_runtime_executed=true,r=>r.runtime_cells_closed=64,r=>r.user_accepted=true]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.oracle_preparations[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_OS native results bind separate scoped acceptance', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const index=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_OS');
+  const r=evidence.coverage.boundary_contract.family_results[index];
+  assert.equal(r.status, 'accepted_bounded');
+  assert.equal(r.acceptance.anchor, 'scoped-user-acceptance');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=640,r=>r.native_trajectories_rerun=true,r=>r.interval_equations_recomputed=true]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract.family_results[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('C_OS boundary execution cannot confer acceptance or native rerun', () => {
   const out=element('div'); renderTranche8(evidence,out,element);
   assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);

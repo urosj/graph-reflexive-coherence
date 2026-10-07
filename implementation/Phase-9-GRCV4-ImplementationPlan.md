@@ -2878,8 +2878,20 @@ The [C_OS successor](./phase-9-grcv4/tranche-8/P9-8.4c-COSReview.md) binds thirt
 new event subjects and two exact accepted D45 subjects. It retains the frozen
 comparison budgets and both-history ten-beat horizon, independently constructs
 each target, and keeps numerical execution separate from scoped acceptance.
-C_OS is accepted on 2026-10-07 for 64/64 history cells; the nine other
-family items and aggregate closure remain open. A_OS oracle preparation is next.
+C_OS and A_OS are separately accepted on 2026-10-07 for 64/64 history cells
+each; eight other family items and aggregate closure remain open. C_CI is next.
+The A_OS oracle scope was accepted before the dependent native campaign.
+The [A_OS oracle extension](./phase-9-grcv4/tranche-8/P9-8.4c-AOSOracleReview.md)
+reuses the accepted paper evaluator and interval equations with unchanged
+parameters, shares and budgets. It binds thirty new targets and two exact D45
+oracle reuses; all 32 expectations pass and source expectations are shared by
+predecessor linkage. The separate scoped acceptance preserves original oracle
+records and grants no native history-cell closure.
+The [native A_OS successor](./phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md)
+executes thirty new layouts and reuses two exact D45 native records. Actual
+source/history identities, both-role admission/replay, 600 continuation steps
+and 60 final reads pass at unchanged budgets. This is saved-entry evidence,
+not a uniform trajectory bound or aggregate `.c` closure.
 
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.

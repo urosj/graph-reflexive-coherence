@@ -2502,6 +2502,13 @@ The first numerical successor, C_OS, is projected separately with new native
 case counts, exact historical reuse, per-case outcome/first failure and the
 separate user decision accepting 64 C_OS cells on 2026-10-07. Normal status does not
 rerun native trajectories or the dense comparator.
+Expose the A_OS oracle prerequisite separately as independent expectations,
+with the 2026-10-07 scoped acceptance, not native execution or runtime acceptance.
+Link its targets, interval certificates and scope review through
+CLI/API/notebook/browser. Project native boundary results separately with
+separate 64-cell acceptance, actual-input checks and exact D45 reuse. Explicit retained
+checking may recompute interval equations, never native steps. The A_OS `.c`
+checker defaults to native evidence; `--oracle` explicitly selects its prerequisite.
 
 The first-task boundary contract is exposed as `coverage.boundary_contract`
 through the shared data surface and a separate browser section. It records

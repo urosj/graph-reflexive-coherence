@@ -2102,6 +2102,11 @@ instead of stale fixed totals and opens any pending case details explicitly.
     CLI/API/notebook/browser view, with source links and explicit non-rerun
     scope. The separate user decision accepts 64 C_OS cells only; no
     other-family credit or aggregate closure is inferred.
+  - [x] Expose the separately accepted A_OS oracle scope with zero runtime
+    acceptance credit and unchanged original execution flags. Keep the native
+    boundary result distinct, with its separate 64-cell user acceptance. Route native retained
+    checking through `--family A_OS --checkpoint 8.4c`, and oracle-only checking
+    with the additional `--oracle`; neither mode runs native trajectories.
 - [ ] Synchronize exact sources, scoped decisions and the handoff as family
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local
