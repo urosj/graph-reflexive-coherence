@@ -66,6 +66,15 @@ export function renderTranche8(value, container, create = tag => document.create
     }
     for (const row of run.cases) append(section, 'p', `${row.case_id}: ${row.case_passed ? 'CASE PASSED' : 'INCOMPLETE CASE'}; event committed=${row.event_committed}; first failure=${JSON.stringify(row.first_failure)}`);
   }
+  const boundary = c.boundary_contract;
+  append(container, 'h3', '8.4c boundary preregistration — no runtime credit');
+  append(container, 'p', `${boundary.counts.layouts} layouts across ${boundary.counts.families} families; ${boundary.counts.history_cells} current/reset obligations: ${boundary.counts.new_history_cells} new, ${boundary.counts.reuse_candidates} exact-reuse candidates. ${boundary.counts.executed_cells} executed; ${boundary.counts.accepted_cells} accepted. Matrix and budgets accepted; target-domain and oracle prerequisites remain open.`);
+  const boundaryLinks = append(container, 'p', '');
+  link(boundaryLinks, boundary.record, 'Full matrix, recipes and authority traces');
+  append(boundaryLinks, 'span', ' · '); link(boundaryLinks, boundary.review, 'Boundary review');
+  details(container, 'Independent capacity/phase expectations', boundary.layouts);
+  details(container, 'All-ten required comparison ceilings — not new target certificates', boundary.families);
+  details(container, 'Bounded schedule, retention budget and prerequisites', {schedule:boundary.schedule, retention:boundary.retention, prerequisites:boundary.prerequisites});
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {

@@ -11618,6 +11618,1259 @@ export const TRANCHE8_EVIDENCE = {
         "basis": "current_equals_accepted_checkpoint"
       }
     ],
+    "boundary_contract": {
+      "record": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryContract.json",
+        "sha256": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
+        "revision": null,
+        "basis": "pinned_preregistration_not_runtime_acceptance"
+      },
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md",
+        "sha256": "d13fa1298d0d10526bb89fd43499a346da480ec04da11df064e383c5f8750895",
+        "revision": null,
+        "basis": "pinned_preregistration_not_runtime_acceptance"
+      },
+      "contract_accepted": true,
+      "acceptance_scope": "matrix_and_budgets_only_not_numerical_history_cells",
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md",
+        "sha256": "d13fa1298d0d10526bb89fd43499a346da480ec04da11df064e383c5f8750895",
+        "revision": null,
+        "basis": "pinned_preregistration_not_runtime_acceptance",
+        "anchor": "scoped-user-acceptance"
+      },
+      "record_digest": "d7cb579d9bf2feeb4121cb868a82a16a15ec8e86f0d53cbdc464006bc0fefdd0",
+      "disposition": "preregistered_contract_pending_review",
+      "counts": {
+        "layouts": 32,
+        "families": 10,
+        "cases": 320,
+        "history_cells": 640,
+        "new_history_cells": 600,
+        "reuse_candidates": 40,
+        "negative_recipes": 31,
+        "accepted_cells": 0,
+        "executed_cells": 0
+      },
+      "layouts": [
+        {
+          "id": "P984C-D36-E-1-P1",
+          "degree": 36,
+          "chirality": -1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              1,
+              0,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D36-E-1-P2",
+          "degree": 36,
+          "chirality": -1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              1,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D36-E-1-P3",
+          "degree": 36,
+          "chirality": -1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              0,
+              1
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D36-E1-P1",
+          "degree": 36,
+          "chirality": 1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              1,
+              0,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D36-E1-P2",
+          "degree": 36,
+          "chirality": 1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              1,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D36-E1-P3",
+          "degree": 36,
+          "chirality": 1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              0,
+              1
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D37-E-1-P1",
+          "degree": 37,
+          "chirality": -1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              1,
+              0,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D37-E-1-P2",
+          "degree": 37,
+          "chirality": -1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              1,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D37-E-1-P3",
+          "degree": 37,
+          "chirality": -1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              0,
+              1
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D37-E1-P1",
+          "degree": 37,
+          "chirality": 1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              1,
+              0,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D37-E1-P2",
+          "degree": 37,
+          "chirality": 1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              1,
+              0
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D37-E1-P3",
+          "degree": 37,
+          "chirality": 1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 5,
+            "internal_edges": 4,
+            "capacity": 37,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 1,
+            "branch_extras": [
+              0,
+              0,
+              1
+            ],
+            "target_vertices": 14,
+            "target_edges": 13
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D38-E-1-P1",
+          "degree": 38,
+          "chirality": -1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 6,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              0,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D38-E-1-P2",
+          "degree": 38,
+          "chirality": -1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 6,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              1,
+              0
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D38-E-1-P3",
+          "degree": 38,
+          "chirality": -1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 6,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              0,
+              1,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D38-E1-P1",
+          "degree": 38,
+          "chirality": 1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 6,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              1,
+              0
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D38-E1-P2",
+          "degree": 38,
+          "chirality": 1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 6,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              0,
+              1,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D38-E1-P3",
+          "degree": 38,
+          "chirality": 1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 6,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              0,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D43-E-1-P1",
+          "degree": 43,
+          "chirality": -1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              0,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D43-E-1-P2",
+          "degree": 43,
+          "chirality": -1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              1,
+              0
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D43-E-1-P3",
+          "degree": 43,
+          "chirality": -1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              0,
+              1,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D43-E1-P1",
+          "degree": 43,
+          "chirality": 1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              1,
+              0
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D43-E1-P2",
+          "degree": 43,
+          "chirality": 1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              0,
+              1,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D43-E1-P3",
+          "degree": 43,
+          "chirality": 1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 1,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              0,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D44-E-1-P1",
+          "degree": 44,
+          "chirality": -1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              0,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D44-E-1-P2",
+          "degree": 44,
+          "chirality": -1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              1,
+              0
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D44-E-1-P3",
+          "degree": 44,
+          "chirality": -1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              0,
+              1,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D44-E1-P1",
+          "degree": 44,
+          "chirality": 1,
+          "phase": 1,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              1,
+              0
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D44-E1-P2",
+          "degree": 44,
+          "chirality": 1,
+          "phase": 2,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              0,
+              1,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D44-E1-P3",
+          "degree": 44,
+          "chirality": 1,
+          "phase": 3,
+          "expected": {
+            "module_nodes": 6,
+            "internal_edges": 5,
+            "capacity": 44,
+            "unused_capacity": 0,
+            "quotient": 0,
+            "remainder": 2,
+            "branch_extras": [
+              1,
+              0,
+              1
+            ],
+            "target_vertices": 15,
+            "target_edges": 14
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D45-E-1-P0",
+          "degree": 45,
+          "chirality": -1,
+          "phase": null,
+          "expected": {
+            "module_nodes": 7,
+            "internal_edges": 6,
+            "capacity": 51,
+            "unused_capacity": 6,
+            "quotient": 1,
+            "remainder": 0,
+            "branch_extras": [
+              1,
+              1,
+              1
+            ],
+            "target_vertices": 16,
+            "target_edges": 15
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        },
+        {
+          "id": "P984C-D45-E1-P0",
+          "degree": 45,
+          "chirality": 1,
+          "phase": null,
+          "expected": {
+            "module_nodes": 7,
+            "internal_edges": 6,
+            "capacity": 51,
+            "unused_capacity": 6,
+            "quotient": 1,
+            "remainder": 0,
+            "branch_extras": [
+              1,
+              1,
+              1
+            ],
+            "target_vertices": 16,
+            "target_edges": 15
+          },
+          "structural_admissibility": "valid_under_bound_saturated_source_and_request",
+          "numerical_admissibility": "not_established_for_new_subject"
+        }
+      ],
+      "families": [
+        {
+          "family": "C_OS",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-COSCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "3abdc136b49dbcda9fb292ba846e071f1eac1c8904933582816a45a0fc816de8"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-COSCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "855afbe0732e614807ef59e6310c1ddb135a99a0554fa05dca52d1ce6cf1c158"
+          },
+          "comparison": {
+            "kind": "bounded_independent_dense_crosscheck_not_certified_full_error",
+            "norm": "componentwise_abs_plus_relative",
+            "atol": 2e-13,
+            "rtol": 2e-13,
+            "quantities": [
+              "C",
+              "predictor_J",
+              "predictor_readback",
+              "H",
+              "corrector_J",
+              "corrector_readback"
+            ],
+            "roles": [
+              "current",
+              "reset"
+            ],
+            "stages": [
+              "source_schedule",
+              "target_readmission",
+              "target_continuation",
+              "final_read"
+            ],
+            "domain": "this_named_graph_and_reference_only; native_strict_selector_OS_split_charge_at_each_executed_stage",
+            "precision": "binary64_dense; exact_dyadic_continuity; FLINT_native",
+            "oracle": "dense_current_oracle + independent OS assembly/continuity in p984b_runtime.py",
+            "effect_claim": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-COSCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "d3cf61aa297d0fed406e6e538aeffe953882b186539fb3cbd150cb8f05126d42"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 120,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_cos_successor.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": false,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "A_OS",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "e972f3fbd2d5ad67a29116f884a91e9f535073b32203ecdcd091d969e0b2ea8b"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "81ae3f2154d961b63b2caa494662e2fe5f8a188cc41b8ffa1395211b8769ab4d"
+          },
+          "comparison": {
+            "norm": "maximum_coordinate_absolute_full_formula_error",
+            "budgets": {
+              "C": "1/1099511627776",
+              "W_A": "1/281474976710656",
+              "current": "1/1099511627776",
+              "baseline": "1/1099511627776",
+              "H": "1/281474976710656",
+              "regenerated": "1/281474976710656",
+              "predictor_current": "1/1099511627776",
+              "predictor_readback": "1/1099511627776",
+              "corrector_readback": "1/1099511627776"
+            },
+            "dt": 0.000244140625,
+            "target_steps_per_role": 10,
+            "point_digits": 100,
+            "interval_digits": 60,
+            "split_tolerance": "1/1099511627776",
+            "accumulated_trajectory_error_bound": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSOracleInputs.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "e512116b7f255b9c23f8242a8f576f15079530aac4e1f5d82b00bd843b15d900"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 120,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_aos_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": true,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "C_CI",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "7814639a08392352a765626f350699034bde36287154c022ddfd09ffc373a3f2"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "2e91f58c4e8d2b1210ea7bd6ea832f329e52d41aa646ad2225144b13f69ab8a6"
+          },
+          "comparison": {
+            "kind": "pointwise_full_formula_interval_error_and_native_whole_ball_admission",
+            "budgets": {
+              "root_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "source_error": "1/18446744073709551616",
+              "resource_error": "1/1099511627776"
+            },
+            "native_geometry_domain": "Frobenius ball radius 2^-18",
+            "independent_geometry_domain": "infinity ball radius 2^-20",
+            "joint_residual_tolerance": "2^-44",
+            "interval_digits": 60,
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "3bb5d5839ba2fb26e882208bbcfea404c17aa612b1d1633a0d6c4174745e29fd"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 480,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_cci_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": false,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "A_CI",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACICases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "ab35c46e4a7bf19b902f3abe4ca645603cf122c16d7238f0ea6baae7f096ad94"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACICases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "c694892b7827e0a7aff756a1d96c65d1928b1213b1dc0ba077c48d51564408e3"
+          },
+          "comparison": {
+            "kind": "pointwise_full_formula_interval_and_native_whole_Frobenius_ball",
+            "budgets": {
+              "root_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "baseline_error": "1/1099511627776",
+              "source_error": "1/18446744073709551616",
+              "resource_error": "1/1099511627776",
+              "history_error": "1/281474976710656",
+              "readback_error": "1/1099511627776",
+              "flat_error": "1/1099511627776"
+            },
+            "native_radius": "2^-20",
+            "joint_residual_tolerance": "2^-44",
+            "numerical_recipe": "grc9v4_ci_fixed_rows_confirmed_joint_residual_v1",
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACICases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "7a5f3e2d8e1d8ae899f70f4c971a91a780c456fa5ecc5cbd44a55d2e1c99f7a1"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 600,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_aci_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": true,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "C_PC",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "a86bfc28345b2fd24758c58cdcdf2d58a77b228dec455f06893c0ceda58b50a7"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "c904c2beca1557ad842ff4c032ba0f1697d3389235548b8fdcd2c2fffc1ee1ac"
+          },
+          "comparison": {
+            "kind": "full_formula_pointwise_interval_error_and_native_whole_chart_admission",
+            "budgets": {
+              "geometry_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "source_error": "1/1152921504606846976",
+              "resource_error": "1/1099511627776",
+              "carrier_error": "1/281474976710656"
+            },
+            "interval_digits": 60,
+            "nominal_trajectory_tolerance": 1.8189894035458565e-12,
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "a78429e69dd82b3469b381ee6856522e1b154ca08b5db3233ab5825744b55824"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 480,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_cpc_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": false,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "A_PC",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "f3e915de2c9f2fd2131af3fbbba95664b2d8c79cbe34da8a1fd7aec186acf519"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "3a38c348ddb29c61b10495bb39949383dce5ef688ad2c42310efcb99ebc9599b"
+          },
+          "comparison": {
+            "kind": "pointwise_full_formula_interval_and_native_whole_base_chart_carrier_ball",
+            "budgets": {
+              "geometry_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "source_error": "1/72057594037927936",
+              "resource_error": "1/1099511627776",
+              "carrier_error": "1/1099511627776",
+              "history_error": "1/281474976710656",
+              "readback_error": "1/1099511627776",
+              "flat_error": "1/1099511627776"
+            },
+            "native_radius": "2048",
+            "numerical_recipe": "pc_exact_input_enclosed_scalar_zoh_binary64_v1",
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "1b102cc4b767abb7079b0ffc1afcf276f299657f11b646679e993095183d45b9"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 600,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_apc_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": true,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "C_CI_PC",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "bb5ac8834e477166c70c07c8b5be02ec125c7be67c025352b580c64cbe9c3e14"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "7a1f661857b8bb1627903fbd70d4224c52ab252d1c92313941f104470b452359"
+          },
+          "comparison": {
+            "kind": "full_formula_pointwise_interval_error_and_native_whole_chart_admission",
+            "budgets": {
+              "geometry_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "source_error": "1/4503599627370496",
+              "readback_error": "1/68719476736",
+              "flat_error": "1/68719476736",
+              "resource_error": "1/1099511627776",
+              "carrier_error": "1/281474976710656"
+            },
+            "interval_digits": 60,
+            "independent_root_digits": 80,
+            "nominal_trajectory_tolerance": 1.8189894035458565e-12,
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "ef24649d8dc483812c63aac07adb06b681912dedaa232f1d7c84323164a0a30c"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 900,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_ccipc_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": false,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "A_CI_PC",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "9a3ea1a74e8d3d4523ac91edd0588a307712ddf8d777d444d7f0ab5c6eba7fce"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "dba84b23506562d797826a896e004fe74db651a68e3b71d3e2a5187691072037"
+          },
+          "comparison": {
+            "kind": "pointwise_joint_root_interval_and_whole_composite_chart",
+            "budgets": {
+              "geometry_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "source_error": "1/72057594037927936",
+              "resource_error": "1/1099511627776",
+              "carrier_error": "1/1099511627776",
+              "history_error": "1/281474976710656",
+              "drive_error": "1/281474976710656",
+              "readback_error": "1/1099511627776",
+              "flat_error": "1/1099511627776"
+            },
+            "native_radius": "2048",
+            "numerical_recipe": "grc9v4_cipc_fixed_rows_confirmed_same_source_zoh_v1",
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "33c2d8d202884bb0b3048152e0d1e6dcc963bafb6a4d16b64f73e9f745a1e66f"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 900,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_acipc_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": true,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "C_RG2b",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "38e74e26aeb2513277107dd262b532f039f87673414193cbc3c3a5845272407e"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "11fe3389618eab216ef743380f85416204885da0cebea7c7c768b3065e694e50"
+          },
+          "comparison": {
+            "kind": "complete_native_chain_and_independent_interval_equations",
+            "budgets": {
+              "geometry_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "baseline_error": "1/1099511627776",
+              "source_error": "1/18446744073709551616",
+              "readback_error": "1/1099511627776",
+              "flat_error": "1/1099511627776",
+              "resource_error": "1/1099511627776"
+            },
+            "section_norm": "induced_infinity",
+            "current_bridge_norm": "edge_l2",
+            "depth": 6,
+            "sweeps": 18,
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "582df785c47576c5916b8ffa850d64c52719a256c09fedc66849aa7b630652f9"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 900,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_crg2b_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": false,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        },
+        {
+          "family": "A_RG2b",
+          "initial_inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json",
+            "pointer": "/initial_inputs",
+            "payload_digest": "67f7ea50992e0c5e084381268d67c578a1c89f11c5c6f2c3d6a217ad53166b39"
+          },
+          "inherited_numerical_parameters": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json",
+            "pointer": "/initial_inputs/reference",
+            "payload_digest": "88af22138eafa6640b658e59b4760aa7b2b32f3310be5b1b9d60fa4a51f33b75"
+          },
+          "comparison": {
+            "kind": "complete_native_A_chain_and_independent_interval_equations",
+            "budgets": {
+              "geometry_error": "1/281474976710656",
+              "current_error": "1/1099511627776",
+              "baseline_error": "1/1099511627776",
+              "source_error": "1/18446744073709551616",
+              "readback_error": "1/1099511627776",
+              "flat_error": "1/1099511627776",
+              "resource_error": "1/1099511627776",
+              "history_error": "1/281474976710656"
+            },
+            "section_norm": "induced_infinity",
+            "current_bridge_norm": "edge_l2",
+            "state_bridge_norm": "C_and_scaled_log_W_sup",
+            "depth": 4,
+            "sweeps": 18,
+            "accumulated_trajectory_error_bound": false,
+            "uniform_parameter_tube": false
+          },
+          "comparison_source": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json",
+            "pointer": "/cases/0/comparison",
+            "payload_digest": "b41306f7bc2937dc8f571ffa7f71cb6faab24b385579d4eb83740b7aadee0853"
+          },
+          "budget_status": "frozen_required_ceiling_not_new_target_certificate",
+          "execution_budget_seconds": 1800,
+          "budget_kind": "operational_not_scientific",
+          "retained_operand_consumer": "implementation/phase-9-grcv4/verification/p984b_arg2b_runtime.py",
+          "readiness": "pending_exact_target_oracle_domain_and_runtime_binding",
+          "new_A_oracle_review_required": true,
+          "raw_completed_result_budget_bytes": 64000000,
+          "current_reset_shared_source": true
+        }
+      ],
+      "schedule": {
+        "source_current_beats": 1,
+        "source_reset_beats": 0,
+        "target_beats_per_role": 10,
+        "dt": 0.000244140625,
+        "final_read": true,
+        "source_per_family": "shared_once_or_exact_bound_reuse"
+      },
+      "retention": {
+        "primary": [
+          "short_review",
+          "frozen_contract",
+          "focused_tests",
+          "completed_coverage",
+          "worst_bounds"
+        ],
+        "format": "shared_context_once_and_only_operands_consumed_by_named_checker",
+        "max_contract_bytes": 2000000,
+        "max_git_file_bytes": 10000000,
+        "large_operand_storage": "byte_exact_XZ_via_scripts/evidence_storage.py",
+        "operational_or_incomplete_runs_retained": false,
+        "budget_overrun": "stop_and_review_retention_design_not_drop_required_operands"
+      },
+      "prerequisites": [
+        "independent_exact_target_graph_and_reference_construction",
+        "both_role_resource_history_maps",
+        "target_domain_and_error_bounds",
+        "review_new_A_oracle_scope",
+        "bind_actual_runtime_sources_and_requests"
+      ],
+      "native_runtime_executed": false,
+      "user_accepted": false
+    },
     "required_cells": 322,
     "accepted_cells": 322,
     "pending_cells": 0,
@@ -12416,6 +13669,18 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryContract.json",
+      "sha256": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
+      "revision": null,
+      "basis": "pinned_preregistration_not_runtime_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md",
+      "sha256": "d13fa1298d0d10526bb89fd43499a346da480ec04da11df064e383c5f8750895",
+      "revision": null,
+      "basis": "pinned_preregistration_not_runtime_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
       "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca",
       "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -12554,5 +13819,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "335d3400fca7a17636d0df3e5c89d7acb02e6952cb4fd6f0102a244d63f9ef0f"
+  "view_digest": "d19447174c91b620bdc53178f650399d38e5b11c983c4e9106ff93e5bbc02437"
 };

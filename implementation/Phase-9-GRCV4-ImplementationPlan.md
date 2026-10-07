@@ -2864,6 +2864,14 @@ parent reconciliation. Finish with `.i`. This is a work breakdown, not a
 requirement to stop for user input after every helper or shared harness edit;
 the existing scientific-oracle and bounded-review acceptance rules still apply.
 
+The 2026-10-07 [boundary preregistration](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md)
+implements the first `.c` task, accepted by the user after pressure testing:
+32 layouts, 640 both-role
+obligations across ten families, including 40 exact-reuse candidates. It
+freezes source recipes, independent structural expectations and required
+comparison ceilings, not new target-domain or native success evidence.
+Next are shared allocation/wire checks, then family-specific prerequisites.
+
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.
 The 2026-10-07 checklist makes those family items explicit; `.b`'s 322 accepted

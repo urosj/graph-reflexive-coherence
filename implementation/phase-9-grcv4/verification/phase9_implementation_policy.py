@@ -250,6 +250,11 @@ PATHS = {
     HERE + "tranche8_evidence.py",
     HERE + "tranche8_source_reuse.py",
     HERE + "test_tranche8_evidence.py",
+    # First .c task: preregistration only; no new native/support acceptance.
+    HERE + "prepare_p984c_boundaries.py",
+    HERE + "test_p984c_boundaries.py",
+    PHASE + "tranche-8/P9-8.4c-BoundaryContract.json",
+    PHASE + "tranche-8/P9-8.4c-BoundaryReview.md",
     PHASE + "tranche-8/P9-8-SideToolSourceBridge.json",
     SIDE + "docs/Tranche8EvidenceGuide.md",
     SIDE + "tool/src/grcv4_explorer/tranche8.py",

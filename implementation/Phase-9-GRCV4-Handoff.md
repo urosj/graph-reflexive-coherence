@@ -8,12 +8,19 @@ P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
 `additional_work_register`; its new per-family checklist entries remain open.
 
-Next: freeze the D37/D44 and adjacent-capacity/phase matrix, independent
-expectations and per-case budgets. Share common mechanical/wire tests; check
-each family's numerical target admission and bounded continuation separately.
-Reuse accepted evidence only at exact subjects/stages. This planning update
-does not execute or accept a `.c` case. Deeper/covariance/larger work and full
-8.5 atomicity remain separate.
+Planning was committed as `26714bd4`. The user accepted the first task after
+pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
+D36/37/38/43/44/45 give 32 layouts and 640 all-ten/both-role obligations:
+600 new and 40 D45 exact-reuse candidates, none credited yet. Eight focused
+contract tests pass. Budgets and source recipes are frozen; fresh runtime
+identities, target domains and new A-oracle scope still require binding/review.
+The two-remainder targets are not certified by the inherited D31 share recipe.
+
+Next: shared allocation and wire/semantic boundary tests, then each family's
+target prerequisites and bounded execution. The side-tool shows the new
+preregistration separately from `.b`'s accepted 322 cells. No native `.c` case
+has run or been accepted. Deeper/covariance/larger work and full 8.5 atomicity
+remain separate.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

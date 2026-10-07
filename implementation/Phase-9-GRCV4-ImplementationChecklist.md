@@ -2927,13 +2927,19 @@ the full ten-profile plan.
     families and both current/reset histories**, as already required by
     `P9-8.4a-Coverage.json`'s `additional_work_register`. These are new named
     probes, not a rerun or reopening of the 322 accepted `.b` cells.
-    - [ ] Freeze the additional-case matrix and comparison budgets before
+    - [x] Freeze the additional-case matrix and comparison budgets before
       execution: D37/D44, immediately below/at/above the selected capacity
       transitions, active phases 1–3, inactive `None`, both chiralities and
       missing/extra phase. Derive module size, capacity, remainder/phase and
       expected admission or rejection independently from the spec. Record
       exact subjects, both roles, finite horizons and retained-data budgets;
       do not invent a cell count or presume every requested subject admits.
+      Implemented 2026-10-07; [contract and review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md)
+      accepted by the user after pressure testing, not runtime acceptance:
+      D36/37/38/43/44/45 give 32
+      layouts, 320 shared requests and 640 both-role obligations (600 new,
+      40 exact D45 reuse candidates). Eight focused contract tests pass;
+      no native campaign or new target-domain certificate was produced.
     - [ ] Verify shared allocation and wire/semantic boundary rules once with
       named reusable tests, including malformed types and invalid phase use.
       Distinguish decode rejection, typed request failure and numerical

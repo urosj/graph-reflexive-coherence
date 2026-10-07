@@ -6,6 +6,17 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('boundary contract renders separately and rejects false runtime credit', () => {
+  const out=element('div'); renderTranche8(evidence,out,element);
+  for (const phrase of ['640 current/reset obligations', '600 new, 40 exact-reuse candidates', '0 executed; 0 accepted', 'not new target certificates'])
+    assert.ok(text(out).includes(phrase), phrase);
+  assert.ok(sourceURL(evidence.coverage.boundary_contract.record).startsWith('/api/tranche8/source?'));
+  for (const mutate of [b=>b.counts.accepted_cells=640, b=>b.native_runtime_executed=true, b=>b.families.pop()]) {
+    const forged=structuredClone(evidence); mutate(forged.coverage.boundary_contract);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('all ten accepted 8.3 profiles and partial 8.4 coverage actually render', () => {
   const out=element('div'); renderTranche8(evidence,out,element);
   const content=text(out);

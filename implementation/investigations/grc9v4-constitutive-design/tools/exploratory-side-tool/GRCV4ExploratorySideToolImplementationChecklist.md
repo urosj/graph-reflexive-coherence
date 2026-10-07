@@ -2085,9 +2085,12 @@ instead of stale fixed totals and opens any pending case details explicitly.
 
 ### P9-8.4c capacity and phase evidence
 
-- [ ] Expose the named additional-case matrix for all ten families and both
+- [x] Expose the named additional-case matrix for all ten families and both
   histories through shared CLI/API/notebook/browser views. Keep `.b`'s
   322/322 acceptance separate from `.c` pending/executed/accepted coverage.
+  First-task preregistration: 32 layouts, 640 obligations, zero executed or
+  accepted. Shared data and browser link the pinned contract/review, comparison
+  ceilings and still-open target prerequisites. This is not family closure.
 - [ ] Reference common mechanical checks once while retaining each family's
   exact runtime subjects, independent comparisons and admission/rejection
   classification. A common allocator pass or a sibling family cannot supply

@@ -13,6 +13,11 @@ pinned reviews record user acceptance. The A_PC successor contributes 32
 accepted cells through its own separate scoped decision. C_CI_PC adds 32
 accepted cells through its own separate scoped decision.
 The bounded all-ten P9-8.4b item is closed; P9-8.4c–i remain open.
+`coverage.boundary_contract` now exposes the first `.c` task: 32 layouts,
+640 both-role obligations (600 new, 40 exact-reuse candidates), budgets,
+prerequisites and exact contract/review links. The user accepted the matrix and
+budgets, with zero native executions or accepted `.c` cells. Its structural
+checks do not certify new numerical targets or reopen `.b` acceptance.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.
@@ -64,6 +69,8 @@ view = tranche8_status(root)
 assert len(view["profiles"]) == 10
 assert view["coverage"]["accepted_cells"] == 322
 assert view["coverage"]["executed_pending_cells"] == 0
+assert view["coverage"]["boundary_contract"]["counts"]["history_cells"] == 640
+assert view["coverage"]["boundary_contract"]["counts"]["executed_cells"] == 0
 raw, identity = tranche8_source(root, view["coverage"]["record"]["path"])
 ```
 

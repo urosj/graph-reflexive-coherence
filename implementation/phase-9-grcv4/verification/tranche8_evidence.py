@@ -20,6 +20,11 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+# Preregistration pins confer neither numerical evidence nor acceptance.
+BOUNDARY_CONTRACT_SOURCES = {
+    BASE + "P9-8.4c-BoundaryContract.json": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
+    BASE + "P9-8.4c-BoundaryReview.md": "d13fa1298d0d10526bb89fd43499a346da480ec04da11df064e383c5f8750895",
+}
 # A_RG2b execution and separate scoped user acceptance have exact source pins.
 ACCEPTED_ARG2B_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bCases.json": "cecede14b568698ea5c2500e07123838ef2e344519e509d5f79abfb7e0f48a08",
@@ -134,6 +139,14 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
+            if name in BOUNDARY_CONTRACT_SOURCES:
+                require(not historical, "preregistration is not a historical acceptance")
+                frozen = path.read_bytes()
+                require(hashlib.sha256(frozen).hexdigest() == BOUNDARY_CONTRACT_SOURCES[name], "boundary preregistration source drift")
+                self.values[name] = frozen
+                self.refs[name] = dict(path=name, sha256=BOUNDARY_CONTRACT_SOURCES[name], revision=None,
+                    basis="pinned_preregistration_not_runtime_acceptance")
+                return frozen
             pins = {**ACCEPTED_ARG2B_SOURCES, **ACCEPTED_CCI_SOURCES, **ACCEPTED_ACI_SOURCES, **ACCEPTED_CPC_SOURCES, **ACCEPTED_APC_SOURCES, **ACCEPTED_CCIPC_SOURCES, **ACCEPTED_ACIPC_SOURCES, **ACCEPTED_CRG2B_SOURCES}
             if name in pins:
                 require(not historical, "current pinned evidence is not a historical Git snapshot")
@@ -701,6 +714,18 @@ def build(root=ROOT):
     work = sources.read(policy.WORK)
     work_paths = {r["path"] for r in work["entries"]}
     ready, owners = policy.leaf_permissions(sources.root)
+    import prepare_p984c_boundaries as boundary
+    boundary_contract = sources.read(boundary.OUTPUT)
+    boundary.validate(boundary_contract, sources.root)
+    require("## Scoped user acceptance" in sources.raw(boundary.REVIEW).decode(), "missing boundary contract decision")
+    boundary_view = dict(record=sources.ref(boundary.OUTPUT), review=sources.ref(boundary.REVIEW),
+        contract_accepted=True, acceptance_scope="matrix_and_budgets_only_not_numerical_history_cells",
+        acceptance=sources.ref(boundary.REVIEW, anchor="scoped-user-acceptance"),
+        record_digest=boundary_contract["record_digest"], disposition=boundary_contract["disposition"],
+        counts=boundary_contract["counts"], layouts=boundary_contract["layouts"],
+        families=boundary_contract["families"], schedule=boundary_contract["schedule"],
+        retention=boundary_contract["retention"], prerequisites=boundary_contract["prerequisites"],
+        native_runtime_executed=False, user_accepted=False)
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
         runtime_scope_snapshot=scope,
@@ -712,7 +737,7 @@ def build(root=ROOT):
         configuration=dict(status="accepted_preparation_not_large_runtime", review=sources.ref(closeout_name),
                            outcome_counts=closeout["outcome_counts"], families=large, catalog_size=42),
         coverage=dict(record=sources.ref(coverage_path), children=children, families=rows, runs=runs,
-                      oracle_and_pressure=supplements,
+                      oracle_and_pressure=supplements, boundary_contract=boundary_view,
                       required_cells=322, accepted_cells=len(covered), pending_cells=len(cells) - len(covered),
                       executed_pending_cells=len(pending_cells),
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),

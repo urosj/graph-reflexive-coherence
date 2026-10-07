@@ -2495,6 +2495,12 @@ status checks source bindings and never reruns native or interval trajectories.
 
 ### P9-8.4c capacity and phase evidence
 
+The first-task boundary contract is exposed as `coverage.boundary_contract`
+through the shared data surface and a separate browser section. It records
+32 layouts/640 history obligations, zero executions/acceptances, exact source
+links and all-ten ceilings/prerequisites. Source-bound reconstruction checks
+the preregistration only; it does not call a native solver or allocator.
+
 Follow the main plan's all-ten, both-history boundary matrix. Reuse the shared
 CLI/API/notebook/browser projection, exposing named additional probes separately
 from the 322 accepted `.b` cells. Common allocation/wire evidence is shared;

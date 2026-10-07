@@ -39,6 +39,29 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse(any(r["runtime_accepted"] for r in v["configuration"]["families"]))
         self.assertEqual(v["future"]["new_public_support"], [])
 
+    def test_boundary_preregistration_is_exposed_without_runtime_credit(self):
+        c = self.value["coverage"]
+        b = c["boundary_contract"]
+        self.assertEqual((b["counts"]["history_cells"], b["counts"]["accepted_cells"], b["counts"]["executed_cells"]), (640, 0, 0))
+        self.assertEqual(len(b["families"]), 10)
+        self.assertFalse(b["user_accepted"])
+        self.assertFalse(b["native_runtime_executed"])
+        self.assertTrue(b["contract_accepted"])
+        self.assertEqual(b["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(c["accepted_cells"], 322)
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("record", "review"):
+                ref = b[key]
+                self.assertEqual(ref["basis"], "pinned_preregistration_not_runtime_acceptance")
+                raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                self.assertEqual(actual, ref)
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        path = index.ROOT / b["record"]["path"]
+        original = Path.read_bytes
+        with patch.object(Path, "read_bytes", lambda p: b"forged" if p == path else original(p)):
+            with self.assertRaisesRegex(ValueError, "preregistration source drift"):
+                index.Sources(index.ROOT).raw(b["record"]["path"])
+
     def test_cci_acceptance_is_separate_and_original_failure_preserved(self):
         c = self.value["coverage"]
         row = next(r for r in c["families"] if r["family"] == "C_CI")
