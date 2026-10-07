@@ -2923,10 +2923,63 @@ the full ten-profile plan.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md).
 
-  - [ ] P9-8.4c: Pressure capacity and phase boundaries. Add separately named
-    D37/D44 and adjacent-capacity probes, active/inactive phases, both
-    chiralities and missing/extra phase failures. Keep wire errors distinct
-    from typed semantic failures; full atomic rollback remains P9-8.5.
+  - [ ] P9-8.4c: Pressure capacity and phase boundaries across **all ten
+    families and both current/reset histories**, as already required by
+    `P9-8.4a-Coverage.json`'s `additional_work_register`. These are new named
+    probes, not a rerun or reopening of the 322 accepted `.b` cells.
+    - [ ] Freeze the additional-case matrix and comparison budgets before
+      execution: D37/D44, immediately below/at/above the selected capacity
+      transitions, active phases 1–3, inactive `None`, both chiralities and
+      missing/extra phase. Derive module size, capacity, remainder/phase and
+      expected admission or rejection independently from the spec. Record
+      exact subjects, both roles, finite horizons and retained-data budgets;
+      do not invent a cell count or presume every requested subject admits.
+    - [ ] Verify shared allocation and wire/semantic boundary rules once with
+      named reusable tests, including malformed types and invalid phase use.
+      Distinguish decode rejection, typed request failure and numerical
+      readmission failure. Check per-family dispatch without repeating the
+      entire common mechanical suite ten times; allocator passes alone do not
+      discharge the family runtime obligations below.
+    Each family item covers its applicable named matrix, both histories,
+    actual event admission/rejection, independently checked target reconstruction
+    and declared continuation/final reads for positive subjects. Bind its own
+    numerical domain and comparison contract; new A-oracle scope needs review
+    before dependent runtime execution. Reuse exact accepted subjects by explicit
+    identity/stage links, not by adjacency or a sibling family's pass. A blocked
+    positive row stays open; an expected rejection does not replace it.
+    - [ ] P9-8.4c[C_OS]: Complete C references, strict selectors and OS
+      predictor/corrector split admission at the new boundaries.
+    - [ ] P9-8.4c[A_OS]: Independent A expectations, OS split, exact W
+      transfer, correctly staged writer and fresh final reconstruction.
+    - [ ] P9-8.4c[C_CI]: Complete C references and the full selected joint
+      root, with target-domain/error bounds for both roles.
+    - [ ] P9-8.4c[A_CI]: Independent joint-root/domain expectations and W
+      transfer/write/next-root consumption.
+    - [ ] P9-8.4c[C_PC]: C readmission and base-chart/carrier envelope,
+      whole-source Z archive/target reset, loss receipt and next-read effects.
+    - [ ] P9-8.4c[A_PC]: Independent A expectations, exact W lineage and
+      separate W/Z writer, archive/reset and continuation obligations.
+    - [ ] P9-8.4c[C_CI_PC]: Gain-two joint-root contraction/slack and C
+      reference coverage, fixed-old-Z/same-source writing and next-root effects.
+    - [ ] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,
+      exact W lineage, whole-Z reset/loss and both writers' next-root effects.
+    - [ ] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section
+      bounds, K event versus K-minus ordinary entry, including reset; retain C1 limits.
+    - [ ] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W
+      lineage/log writing and fresh sections; retain completion and C1 limits.
+    - [ ] Reconcile shared checks and all ten family dispositions through
+      CLI/API/notebook/browser and the handoff. Keep execution and acceptance
+      separate; close `.c` only after its required cells and all ten family
+      items are reviewed and accepted, or an explicit scope change is approved.
+      Deeper expansion/covariance/larger graphs remain `.d`–`.h`; full atomic
+      rollback, replay and injected publication failures remain P9-8.5.
+    Use the [current evidence rules](../docs/reference/EvidenceStorage.md):
+    shared inputs once, completed results only, a named consumer for retained
+    operands, and byte-exact XZ for justified files over 10,000,000 bytes.
+    After staging, run `.venv/bin/python -m unittest tests.test_evidence_storage -q`,
+    `.venv/bin/python scripts/evidence_storage.py check` and
+    `git diff --cached --check`. Expanded copies and progress stay ignored;
+    `/.github/` remains ignored and no GitHub workflow is assumed.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.

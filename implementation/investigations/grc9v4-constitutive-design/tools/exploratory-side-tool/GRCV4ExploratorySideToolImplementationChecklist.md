@@ -2083,6 +2083,20 @@ instead of stale fixed totals and opens any pending case details explicitly.
   desktop/mobile scenario pass. Explicit retained checking and complete
   independent numerical recomputation pass all sixteen cases.
 
+### P9-8.4c capacity and phase evidence
+
+- [ ] Expose the named additional-case matrix for all ten families and both
+  histories through shared CLI/API/notebook/browser views. Keep `.b`'s
+  322/322 acceptance separate from `.c` pending/executed/accepted coverage.
+- [ ] Reference common mechanical checks once while retaining each family's
+  exact runtime subjects, independent comparisons and admission/rejection
+  classification. A common allocator pass or a sibling family cannot supply
+  numerical acceptance; blocked required positive cases remain visible.
+- [ ] Synchronize exact sources, scoped decisions and the handoff as family
+  work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
+  completed evidence, shared inputs, byte-exact archives where needed and local
+  storage/staged-blob checks. Do not introduce a GitHub workflow.
+
 ## ATC A_OS bounded research source admission
 
 - [x] Relocate evidence/reviews, preserve scientific payloads and rebuild

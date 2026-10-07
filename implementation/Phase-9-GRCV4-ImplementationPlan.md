@@ -2845,7 +2845,7 @@ New layouts, chiralities, depths and configurations require their own evidence.
 | --- | --- | --- |
 | **P9-8.4a — Coverage map and comparison contracts** | Inventory exact frozen fixture IDs/hashes and applicable profile, chirality, phase, current/reset role and stage. Map existing evidence, numerical prerequisites, independent oracles, comparison norms/budgets and missing runtime coverage. Specify shared harness inputs and retained result fields. | First executable planning leaf. Every required cell has an owner and explicit pending/blocked/reusable disposition; no silent omissions or blanket applicability exemptions. |
 | **P9-8.4b — All-ten frozen expansion runtime counterparts** | Complete each of the ten family items below: D30/D31/D45/D52 chirality/phase cases for every family, plus the literal C_PC reset case. Compare frozen discrete allocation/identity expectations, actual fresh trigger/request, reference reconstruction, both-role resource/history transfer, numerical readmission and declared finite continuation. | After `.a` and each cell's numerical/oracle prerequisites. All ten family items and all 322 applicable cells must be reviewed and accepted. One family's success, a pure transfer or a certificate alone cannot close `.b`. |
-| **P9-8.4c — Capacity and phase boundaries** | Add named D37/D44 probes and requests immediately below/at/above capacity transitions. Cover active phases 1–3, inactive `None`, both chiralities, absent/extra phase and malformed versus semantically invalid requests. Check phase/branch allocation and the specified failure classification. | Use the `.a` contracts and `.b` runtime path. These are additional probes, not replacement frozen fixtures. Whole-state rollback, replay and injected atomic failures remain P9-8.5. |
+| **P9-8.4c — All-ten capacity and phase boundaries** | Add named D37/D44 and below/at/above-capacity probes for all ten families and both histories. Cover active phases 1–3, inactive `None`, both chiralities, absent/extra phase and malformed versus semantically invalid requests. Separate common allocation rules from each family's target admission and finite continuation. | Freeze the new case matrix and budgets under `.a`, reusing `.b`'s exact runtime/oracle subjects where applicable. All ten `P9-8.4c[family]` items require reviewed dispositions and accepted required coverage. Shared mechanics alone cannot close numerical rows. Whole-state rollback, replay and injected atomic failures remain P9-8.5. |
 | **P9-8.4d — Deeper recursive runtime expansion** | Declare finite module sizes/depths beyond D52, including different remainders and both chiralities. Exercise actual recursive parent/rotor allocation, balanced rows/columns, fresh references and both-role transfer/readmission/continuation. If successive events are claimed, each must consume its actual predecessor state and fresh identities. | After a working bounded runtime counterpart and graph-specific prerequisites. Compare against an independent BFS/role construction and numerical oracle; distinguish a deep pure plan, one executed event and any separately declared event sequence. No mechanical size result widens a numerical domain such as tree17. |
 | **P9-8.4e — Ordering, relabeling and signed-edge covariance** | Execute the frozen source-edge-order vector plus separately declared node/edge reorderings, label changes and signed reorientations through the applicable native paths. Transport resources, unsigned A W, signed currents/reference operands, geometry and carrier coordinates by their respective laws. Include inconsistent partial-transport controls. | After baseline cases are bound. Compare normalized discrete results exactly and numerical results in declared norms/error bounds, for both histories and relevant stages. Raw digest equality is not the covariance criterion. |
 | **P9-8.4f — Chart rotation and reflection/chirality covariance** | Execute the exact frozen cyclic and reflection base/target pairs. Transport the full row/column/branch chart, ports, external labels, namespace/roles, chirality and active phase using the named normalization policy; pressure both chiralities and active/inactive phase boundaries. Extend comparisons to native numerical operands and history. | After baseline cases and the comparison contracts. Independently reproduce normalization; column-only permutations, stale phase/chirality or untransported reference/history must fail. Retain exact normalized plan and certified numerical comparisons. |
@@ -2863,6 +2863,37 @@ rows. A blocked family does not stop unrelated ready rows or disappear from
 parent reconciliation. Finish with `.i`. This is a work breakdown, not a
 requirement to stop for user input after every helper or shared harness edit;
 the existing scientific-oracle and bounded-review acceptance rules still apply.
+
+**P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
+this additional work to all ten canonical families and `current`/`reset`.
+The 2026-10-07 checklist makes those family items explicit; `.b`'s 322 accepted
+cells remain closed and are not the count of the new `.c` matrix. Start by
+binding separately named D37/D44 and adjacent-capacity subjects to independent
+specification expectations for module size, capacity and active/inactive phase.
+Freeze exact subjects, admissibility expectations, finite horizons, numerical
+norms/budgets and storage needs before native execution.
+
+Run the common allocation and wire/semantic negative suite once and reference
+it from the family rows; verify each family's dispatch and numerical lifecycle
+separately. Positive cases require both-role target reconstruction/readmission
+and declared continuation/final reads. Preserve full OS split, CI joint-root,
+PC/CI+PC carrier/writer and RG section/completion obligations, including A W
+history and C reference coverage. New A numerical scope requires its own
+oracle-before-runtime review. Exact accepted evidence can be reused at its
+bound subject and stage; a nearby degree or sibling family is not that subject.
+An expected rejection does not close a required positive row. Pending/blocked
+family rows remain visible until resolved or explicitly rescoped by the user.
+
+Keep the shared side-tool views and handoff synchronized with each reviewed
+family. Closure requires all ten family items and the declared required cells,
+without advancing `.d`–`.i`, 8.5 or 8.6. Apply the
+[retention and storage policy](../docs/reference/EvidenceStorage.md): retain
+shared inputs once, justify original numerical operands by a named checker,
+publish completed results only, pack justified files over 10,000,000 bytes
+with the existing byte-exact XZ tooling, and run the documented local storage
+tests/staged-blob checks before committing. The last two main commits
+`932d9fd9` and `19a2d8fc` establish local checks without a tracked GitHub
+workflow; do not restore one as part of `.c`.
 
 **P9-8.4b family items.** The population is two candidates times five
 realizations, using the canonical family IDs below (`CI_PC` means CI+PC).

@@ -1,5 +1,27 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current work — P9-8.4c capacity and phase boundaries
+
+On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
+main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
+P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
+families and both histories, as already assigned by the accepted `.a`
+`additional_work_register`; its new per-family checklist entries remain open.
+
+Next: freeze the D37/D44 and adjacent-capacity/phase matrix, independent
+expectations and per-case budgets. Share common mechanical/wire tests; check
+each family's numerical target admission and bounded continuation separately.
+Reuse accepted evidence only at exact subjects/stages. This planning update
+does not execute or accept a `.c` case. Deeper/covariance/larger work and full
+8.5 atomicity remain separate.
+
+Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
+the last two main commits `932d9fd9` and `19a2d8fc`: justified completed
+evidence only, shared inputs once, byte-exact XZ for files over 10 MB, ignored
+expanded/progress files and local storage tests plus staged-blob checks before
+commit or publication. `/.github/` is ignored; no workflow execution is assumed.
+Document-only changes need no native trajectory or interval-math rerun.
+
 ## Accepted checkpoint — P9-8.4b A_RG2b and bounded all-ten closure
 
 Work follows accepted C_RG2b `5ff017c` and lossless-storage `ee34742` on

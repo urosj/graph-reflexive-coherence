@@ -2493,6 +2493,22 @@ bridge norms and lagged invariance. Preserve the separately accepted completion,
 K versus K-minus and C1 debt restrictions across CLI/API/notebook/browser. Normal
 status checks source bindings and never reruns native or interval trajectories.
 
+### P9-8.4c capacity and phase evidence
+
+Follow the main plan's all-ten, both-history boundary matrix. Reuse the shared
+CLI/API/notebook/browser projection, exposing named additional probes separately
+from the 322 accepted `.b` cells. Common allocation/wire evidence is shared;
+numerical admission, continuation, failures and acceptance stay bound to each
+family's exact subjects. Keep required positive rows pending when blocked,
+and distinguish decoding, typed semantic and numerical failures.
+
+Update source retrieval and the handoff with each family result, using the
+[current retention/storage policy](../../../../../docs/reference/EvidenceStorage.md).
+Retain completed evidence only, share identical inputs, pack justified large
+operands losslessly and run local storage/staged-blob checks before publication.
+The 2026-10-07 main changes leave `/.github/` ignored and the workflow untracked;
+side-tool completion must not depend on GitHub automation.
+
 ## ATC A_OS bounded research source admission
 
 Admit the reconciled research ledger through an explicit append-only ATC
