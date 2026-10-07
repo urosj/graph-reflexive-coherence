@@ -4123,7 +4123,7 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "0441640aacb303829aa6985031b4ade9babf5d5f3c62946c8fe0d422dd173a9e"
+      "sha256": "d629f6ec779bd2551ec0dcc09991349370e06768b56c672519289f4bfb86e466"
     },
     {
       "path": "artifact-storage.json",
@@ -4131,7 +4131,7 @@
     },
     {
       "path": "docs/reference/EvidenceStorage.md",
-      "sha256": "778cf951195e4d752b6c5c43dcd37970168984e92f873bae871256c5cdcb418b"
+      "sha256": "34d6a5221f9c7feb29f7eefa77c804511c38a308304e236d115e0babb4b9ba55"
     },
     {
       "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json.xz",
@@ -4222,5 +4222,5 @@
       "sha256": "ef1857cc94622b407f361a8c0f157b101e98ca4275d784aeeff76617fdc4ae61"
     }
   ],
-  "record_digest": "67717a10ea7ddc6b9377a8aed4c8fc644b3eb7119d13d437470280db0579bb82"
+  "record_digest": "05c875b2a9e102e6b5bbbb0eb41c6b4874793b0dcf5c16c861c30952acbf8b74"
 }

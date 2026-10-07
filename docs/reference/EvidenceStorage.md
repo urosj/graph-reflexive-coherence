@@ -109,6 +109,38 @@ a large work file with a small one cannot hide an oversized staged blob. The
 same check runs in the repository's GitHub workflow. This is a storage limit,
 not a substitute for deciding whether the data deserves retention.
 
+## Local checks for Tranche 8 and later work
+
+Use this process for every tranche that adds or changes retained evidence.
+Before a campaign, apply the retention rules above and identify which checker
+consumes each retained operand. Publish completed results only. Minimize
+repeated data and use the packing steps above for justified files over 10 MB.
+Refresh the applicable phase bindings after changing storage or documentation.
+
+After staging the intended changes, run these checks from the repository root:
+
+```bash
+python -m unittest tests.test_evidence_storage -q
+python scripts/evidence_storage.py check
+git diff --cached --check
+```
+
+Use the repository's `.venv/bin/python` where available. The first command
+checks storage behavior, including corruption rejection and the staged-blob
+limit. The second verifies registered archives and their exact restored bytes,
+then checks every staged Git blob against the 10,000,000-byte limit. Run it
+again after changing the staged contents. Scientific checks remain those
+required by the affected realization and claim; storage checks do not replace
+them. Verify restoration from a fresh directory when introducing a new archive.
+
+On 2026-10-07 the user requested that `/.github/` be ignored for now. These
+local commands preserve the evidence-storage process independently of GitHub
+configuration. The existing tracked `.github/workflows/artifact-size.yml`
+runs the same storage unit tests and `check` command on pushes and pull
+requests. An ignore rule affects new files; it does not untrack that existing
+workflow or disable its execution. Future workflow configuration can use the
+commands documented here.
+
 ## Archive index
 
 The machine-readable manifest records exact original/stored sizes and SHA256s.

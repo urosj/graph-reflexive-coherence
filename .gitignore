@@ -43,6 +43,9 @@ dist/
 .codex/
 .continue/
 
+# GitHub configuration is ignored for now.
+/.github/
+
 # Expanded evidence; see artifact-storage.json
 /experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json
 /experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/conductance_retention_probe.json
