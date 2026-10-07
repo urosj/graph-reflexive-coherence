@@ -6,7 +6,7 @@ On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
-`additional_work_register`; C_OS, A_OS and C_CI are accepted and the other seven family items remain open.
+`additional_work_register`; C_OS, A_OS, C_CI and A_CI are accepted and the other six family items remain open.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
@@ -37,7 +37,7 @@ The result digest is `c1224a6a5970b4540c466c6869863b6391401f7a651f8392beee1bc270
 Its 38,261,443-byte shared-context JSON is stored as a 549,040-byte byte-exact
 XZ archive; restore it through `scripts/evidence_storage.py restore`.
 The side-tool exposes `.c` execution separately from `.b`'s accepted 322 cells
-and the unchanged preregistration. The seven other `.c` families remain open.
+and the unchanged preregistration. The six other `.c` families remain open.
 C_OS acceptance is committed as `28628dcb`. The independent A_OS oracle
 successor now passes all 32 boundary expectations: thirty new cases with
 660 saved-entry evaluations and two exact D45 reuses. The three shared source
@@ -97,8 +97,37 @@ methods pass, including actual-entry interval rechecking for both D38 phase-one
 histories and resealed geometry/source/domain plus lifecycle mutations.
 Default `--family C_CI --checkpoint 8.4c` checks native retained operands,
 not trajectories; `--preparation` keeps the earlier scope separate. Acceptance
-is recorded separately from original execution flags. A_CI is next. The other seven `.c` families, deeper,
+is recorded separately from original execution flags. A_CI followed this checkpoint. The other six `.c` families, deeper,
 covariance/larger work and full 8.5 atomicity remain open.
+
+C_CI acceptance is committed as `67f3813d`. The next
+[A_CI boundary oracle](./phase-9-grcv4/tranche-8/P9-8.4c-ACIOracleReview.md)
+now passes thirty new independent cases, with two exact accepted D45 target
+reuses (not new oracle runs). There are 660 saved-entry evaluations, zero native
+roots/events/steps and zero runtime-cell closures. Both-role transfer, full
+joint-root/domain bounds, Read-Back/lowered read and C/W evolution are checked;
+three focused pressure methods and retained checking pass. The result digest is
+`5791b2531aa13a37a01466d2bc3ca6c780cf1874b9b1b7c71f148ac4c89b885a`;
+403,904 archived bytes restore 14,138,197 exact JSON bytes. Side-tool access is
+`--family A_CI --checkpoint 8.4c --oracle`. The user accepted this bounded
+oracle scope on 2026-10-07 and authorized the native campaign with actual-entry/
+history identities. Native acceptance is recorded separately below.
+
+The [native A_CI boundary campaign](./phase-9-grcv4/tranche-8/P9-8.4c-ACIRuntimeReview.md)
+now passes all thirty new cases: 30 events, 600 target steps and 60 fresh final
+joint roots, plus two exact D45 reuses. The user separately accepted all 64
+named native history cells on 2026-10-07. Four families now contribute 256
+accepted `.c` history cells; six families and aggregate `.c` remain open.
+Actual-entry root/domain, Read-Back and W-writer/restart checks use unchanged
+budgets. Result `4bba95de9e2454cced8efd27196d678888a5e6108b2a8ae657b37388c30c0591`
+is stored in 1,298,440 XZ bytes restoring 47,256,468 exact JSON bytes.
+Full retained checking passes with native producers disabled. All three focused
+pressure methods pass, including both-role actual-entry interval rechecks and
+resealed root/history/lifecycle/scope mutations. Storage verification is byte-exact.
+The default `--family A_CI --checkpoint 8.4c` checks native retained evidence;
+`--oracle` keeps the prerequisite separate. Next is C_PC preparation.
+No production/specification changes, new
+public support or aggregate `.c` acceptance are included.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

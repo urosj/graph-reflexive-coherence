@@ -49,6 +49,15 @@ The separate native `family_results` row records event/continuation success,
 exact D45 reuse and the separate 2026-10-07 scoped acceptance of 64 cells. A committed event is
 not a passing case if later continuation fails. The shared CLI/API/notebook/
 browser projection never infers user acceptance from passing execution.
+A_CI `.c` has a separately accepted oracle scope:
+`verify-retained --family A_CI --checkpoint 8.4c --oracle`. Thirty new independent
+joint-root/C/W/Read-Back/domain cases and two exact accepted native D45 target
+reuses supply the expectations. The reuses are not new oracle executions, and
+the prerequisite grants zero native runtime credit. Add `--recheck-numerics`
+for independent interval recomputation. Without `--oracle`, A_CI `.c` checks
+the native campaign: both-role event/readmission, W transport and writing,
+ten target steps and fresh full-root consumption. Separate user acceptance on
+2026-10-07 covers all 64 named cells; neither check mode reruns native trajectories.
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

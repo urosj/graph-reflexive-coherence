@@ -108,7 +108,7 @@ class EvidenceTests(unittest.TestCase):
             self.assertNotIn("--run", command)
 
     def test_boundary_aos_oracle_does_not_promote_runtime_or_acceptance(self):
-        row, = self.value["coverage"]["boundary_contract"]["oracle_preparations"]
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["oracle_preparations"] if r["family"] == "A_OS")
         self.assertEqual((row["family"], row["oracle_cases_passed"], row["oracle_cases_required"]), ("A_OS", 32, 32))
         self.assertEqual(row["runtime_cells_closed"], 0)
         self.assertFalse(row["native_runtime_executed"])
@@ -189,6 +189,40 @@ class EvidenceTests(unittest.TestCase):
             self.assertTrue(command[-2].endswith("p984c_cci_runtime.py"))
             self.assertEqual(command[-1], "--check-retained")
             self.assertNotIn("--run", command)
+
+    def test_boundary_aci_oracle_requires_explicit_scope(self):
+        row = next(r for r in self.value["coverage"]["boundary_contract"]["oracle_preparations"] if r["family"] == "A_CI")
+        self.assertEqual((row["new_oracle_cases"], row["passed_cases"], row["exact_accepted_target_reuses"]), (30, 30, 2))
+        self.assertEqual(row["oracle_cases_passed"], 32)
+        self.assertTrue(row["oracle_scope_accepted"])
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertFalse(row["user_accepted"])
+        self.assertEqual((row["native_steps"], row["native_roots"], row["topology_events"], row["runtime_cells_closed"]), (0, 0, 0, 0))
+        native = next(r for r in self.value["coverage"]["boundary_contract"]["family_results"] if r["family"] == "A_CI")
+        self.assertEqual(native["accepted_cells"], 64)
+        self.assertEqual(native["successful_history_cells"], 64)
+        self.assertEqual(native["passing_pending_cells"], 0)
+        self.assertEqual(native["acceptance"]["anchor"], "scoped-user-acceptance")
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for subject in (row, native):
+                for key in ("inputs", "results", "review"):
+                    ref = subject[key]
+                    raw, actual = api.tranche8_source(index.ROOT, ref["path"])
+                    self.assertEqual(actual, ref)
+                    self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+        argv = ["tranche8", "verify-retained", "--family", "A_CI", "--checkpoint", "8.4c"]
+        with patch.object(sys, "argv", argv), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_aci_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+        with patch.object(sys, "argv", [*argv, "--oracle"]), patch.object(index, "checked", return_value=self.value), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_aci_oracle.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run-oracle", command)
 
     def test_cci_acceptance_is_separate_and_original_failure_preserved(self):
         c = self.value["coverage"]

@@ -2905,8 +2905,25 @@ now passes thirty new events with both-role admission, 600 target steps and
 60 fresh final joint roots. Two exact D45 reuses complete 64 passing history
 cells, separately accepted by the user on 2026-10-07. Actual-entry certificates and unchanged
 budgets remain distinct from the preparation predictions and from a uniform
-trajectory bound. A_CI is the next family; aggregate `.c`
-and the seven other family items remain open.
+trajectory bound. A_CI followed this checkpoint; aggregate `.c` remains open.
+
+After C_CI acceptance commit `67f3813d`, the
+[A_CI boundary oracle](./phase-9-grcv4/tranche-8/P9-8.4c-ACIOracleReview.md)
+supplies thirty new passing independent cases and two exact accepted native
+D45 target reuses. The 660 new saved-entry evaluations bind both-role C/W,
+the full joint root, Read-Back/lowered read, history evolution and whole-domain
+bounds without native roots, events or steps. Three focused pressure methods
+pass. The user accepted this oracle scope on 2026-10-07 and authorized the
+native campaign. Oracle acceptance confers no runtime-cell acceptance or
+uniform trajectory theorem. Native A_CI results and acceptance are separate.
+
+The [native A_CI successor](./phase-9-grcv4/tranche-8/P9-8.4c-ACIRuntimeReview.md)
+passes thirty new cases, with 600 target steps and 60 fresh full joint roots;
+two exact D45 reuses complete 64 passing history cells. Native admission,
+Read-Back, C/W transfer/writing and post-write root consumption are checked at
+actual operands under unchanged budgets. The user separately accepted native
+A_CI on 2026-10-07: four families now contribute 256 accepted `.c` history
+cells. The other six families remain open; C_PC is the next unexecuted family.
 
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.

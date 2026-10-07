@@ -2518,6 +2518,13 @@ actual-entry comparison scope. The CLI defaults to native retained checking;
 present the same distinct scopes and source links. Neither mode grants scoped
 user acceptance or reruns native trajectories. C_CI's 2026-10-07 scoped decision
 now supplies its separate 64-cell acceptance; the raw execution flags stay unchanged.
+Expose A_CI's joint-root/domain oracle as an accepted-scope prerequisite through
+the same oracle view. Distinguish thirty new independent cases from two exact
+accepted native target reuses; neither grants new runtime credit. Require
+explicit `--oracle` for its prerequisite; the default A_CI `.c` selection checks
+native retained evidence. Oracle acceptance does not accept native results.
+The separate 2026-10-07 user decision accepts all 64 named native A_CI cells.
+Source retrieval and CLI/API/notebook/browser share labels and source identities.
 
 The first-task boundary contract is exposed as `coverage.boundary_contract`
 through the shared data surface and a separate browser section. It records

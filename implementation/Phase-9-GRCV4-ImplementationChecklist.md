@@ -2999,8 +2999,25 @@ the full ten-profile plan.
         [native result and scope](./phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md).
       - [x] Review and accept bounded C_CI native results separately. User
         acceptance on 2026-10-07 covers all 64 named cells, not aggregate `.c`.
-    - [ ] P9-8.4c[A_CI]: Independent joint-root/domain expectations and W
+    - [x] P9-8.4c[A_CI]: Independent joint-root/domain expectations and W
       transfer/write/next-root consumption.
+
+      - [x] Prepare the independent boundary oracle: thirty new cases pass
+        660 saved-entry checks, with two exact accepted D45 target reuses.
+        Both-role C/W transfer, whole joint root, Read-Back/lowered read,
+        history evolution and whole-domain bounds are retained. Three focused
+        pressure methods pass; no native root, event or step executes. See the
+        [oracle scope](./phase-9-grcv4/tranche-8/P9-8.4c-ACIOracleReview.md).
+      - [x] Review and accept the new A_CI oracle scope before native execution.
+        Explicit user acceptance on 2026-10-07; native results remain separate.
+      - [x] Bind the actual native source/history identities and execute
+        both-role event/readmission/continuation/final-root checks against
+        those expectations: 30 new events, 600 steps and 60 fresh final roots
+        pass; two exact D45 reuses complete 64 passing named history cells.
+        Full retained checking and three focused pressure methods pass.
+        See the [native scope](./phase-9-grcv4/tranche-8/P9-8.4c-ACIRuntimeReview.md).
+      - [x] Review and accept the native A_CI result separately. User acceptance
+        on 2026-10-07 covers all 64 named cells, not aggregate `.c`.
     - [ ] P9-8.4c[C_PC]: C readmission and base-chart/carrier envelope,
       whole-source Z archive/target reset, loss receipt and next-read effects.
     - [ ] P9-8.4c[A_PC]: Independent A expectations, exact W lineage and

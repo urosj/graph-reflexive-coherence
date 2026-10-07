@@ -21,6 +21,34 @@ test('A_OS oracle scope is not native boundary acceptance', () => {
   }
 });
 
+test('A_CI joint-root oracle scope cannot become native evidence or acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_CI oracle — accepted_oracle_scope/);
+  assert.match(text(out), /30 new independent oracle cases; 2 exact accepted native target reuses, not new oracle executions/);
+  const index=evidence.coverage.boundary_contract.oracle_preparations.findIndex(r=>r.family==='A_CI');
+  const r=evidence.coverage.boundary_contract.oracle_preparations[index];
+  assert.equal(r.native_steps,0);assert.equal(r.native_roots,0);
+  assert.equal(r.oracle_scope_accepted,true);assert.equal(r.acceptance.anchor,'scoped-user-acceptance');
+  assert.ok(sourceURL(r.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.native_steps=600,r=>r.acceptance=null,r=>r.runtime_cells_closed=64,r=>r.exact_accepted_target_reuses=0]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.oracle_preparations[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_CI native boundary results bind separate scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_CI — accepted_bounded/);
+  const index=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_CI');
+  const r=evidence.coverage.boundary_contract.family_results[index];
+  assert.equal(r.successful_history_cells,64);assert.equal(r.accepted_cells,64);
+  assert.equal(r.passing_pending_cells,0);assert.equal(r.acceptance.anchor,'scoped-user-acceptance');
+  for(const mutate of [r=>r.acceptance=null,r=>r.native_trajectories_rerun=true,r=>r.passed_cases=32]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[index]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('A_OS native results bind separate scoped acceptance', () => {
   const out=element('div'); renderTranche8(evidence,out,element);
   assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);

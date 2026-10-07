@@ -2116,6 +2116,13 @@ instead of stale fixed totals and opens any pending case details explicitly.
     `--family C_CI --checkpoint 8.4c` checks native retained evidence, not the
     prerequisite or a trajectory rerun. Preserve source identities, full-root
     comparison scope and event-versus-case failure distinctions across surfaces.
+  - [x] Expose A_CI boundary oracle expectations separately from runtime:
+    thirty new independent cases and two exact accepted native D45 target
+    reuses, zero new native roots/events/steps and no runtime credit. Require
+    `--family A_CI --checkpoint 8.4c --oracle`; scope accepted on 2026-10-07.
+  - [x] Expose A_CI native boundary evidence through the default family command,
+    separately from accepted oracle scope. Bind the 2026-10-07 native acceptance and
+    preserve event-versus-case failures, exact reuse and saved-entry limits.
 - [ ] Synchronize exact sources, scoped decisions and the handoff as family
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local

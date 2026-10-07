@@ -93,10 +93,12 @@ export function renderTranche8(value, container, create = tag => document.create
   }
   for (const oracle of boundary.oracle_preparations) {
     append(container, 'h3', `8.4c ${oracle.family} oracle — ${oracle.status}`);
-    append(container, 'p', `${oracle.oracle_cases_passed}/${oracle.oracle_cases_required} independent oracle expectations pass (${oracle.new_oracle_cases} new, ${oracle.exact_reuse_cases} exact reuses); ${oracle.native_steps} native steps and ${oracle.runtime_cells_closed} runtime cells closed by this oracle. Saved-entry full-formula bounds, not a uniform trajectory bound. Oracle-scope acceptance is separate from native runtime acceptance; original execution flags are unchanged.`);
+    const reusedNative = oracle.exact_accepted_target_reuses || 0;
+    const summary = reusedNative ? `${oracle.oracle_cases_passed}/${oracle.oracle_cases_required} target expectations available (${oracle.new_oracle_cases} new independent oracle cases; ${reusedNative} exact accepted native target reuses, not new oracle executions)` : `${oracle.oracle_cases_passed}/${oracle.oracle_cases_required} independent oracle expectations pass (${oracle.new_oracle_cases} new, ${oracle.exact_reuse_cases} exact reuses)`;
+    append(container, 'p', `${summary}; ${oracle.native_steps} native steps and ${oracle.runtime_cells_closed} runtime cells closed by this oracle. Saved-entry full-formula bounds, not a uniform trajectory bound. Oracle scope ${oracle.oracle_scope_accepted ? 'accepted' : 'pending review'}; native runtime acceptance remains separate and original execution flags are unchanged.`);
     const links=append(container, 'p', '');
     for (const [key,label] of [['inputs','Bound oracle subjects'],['results','Oracle expectations and certificates'],['review','Scope, pressure and reproduction'],['acceptance','Oracle-scope acceptance']]) {
-      link(links,oracle[key],label); append(links,'span',' · ');
+      if (oracle[key]) { link(links,oracle[key],label); append(links,'span',' · '); }
     }
   }
   for (const prepared of boundary.target_preparations) {
