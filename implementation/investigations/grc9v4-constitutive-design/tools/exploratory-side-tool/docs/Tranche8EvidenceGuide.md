@@ -74,6 +74,15 @@ to recompute independent interval certificates and nominal predictions without
 native trajectories. Status/API/notebook/browser access uses the same family
 selection and source pins; the six accepted families contribute 384 `.c` cells.
 
+C_CI+PC `.c` adds thirty new cases and two exact D45 reuses, giving 64 passing
+history cells accepted separately on 2026-10-07. Select
+`verify-retained --family C_CI_PC --checkpoint 8.4c` for full joint-root,
+signed-read, strict-slack and carrier-writer/restart checks. Optional
+`--recheck-numerics` recomputes pointwise interval certificates and independent
+nominal predictions; neither command reruns native trajectories. Family status
+uses `tranche8_status(root, family="C_CI_PC")`. The seven accepted `.c` families
+contribute 448 cells; three families and aggregate `.c` remain open.
+
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

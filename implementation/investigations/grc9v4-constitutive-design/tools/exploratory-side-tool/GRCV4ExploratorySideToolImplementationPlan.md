@@ -2540,6 +2540,14 @@ checks; `--recheck-numerics` recomputes pointwise certificates and independent
 predictions, not native trajectories. Source retrieval and all four surfaces
 preserve exact W lineage, carrier-loss scope and bounded comparison limits.
 
+Expose C_CI+PC boundary execution and its separate 2026-10-07 acceptance:
+thirty new cases and two exact D45 reuses, with all 64 named cells accepted.
+`--family C_CI_PC --checkpoint 8.4c` selects whole joint-root,
+signed-read and same-root-source carrier-consumer checks. Preserve the strict
+composite source slack, old-Z/instantaneous distinction and unchanged bounds.
+CLI/API/notebook/browser share source identities; `--recheck-numerics` is
+independent saved-operand recomputation, not native trajectory replay.
+
 The 2026-10-07 streamlining keeps frozen numerical checkers and acceptance
 identities intact. Full status builds reuse read-only prerequisites inside one
 content-checked operation, never across operations or as numerical verdicts.

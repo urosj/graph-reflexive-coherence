@@ -2942,8 +2942,18 @@ precede each new event. Exact W lineage, whole-Z archive/reset, separate W/Z
 writers and fresh consumer reads retain the accepted law and error bounds.
 Four focused pressure methods and full retained checking pass. The user
 accepted all 64 named A_PC cells on 2026-10-07; six families now contribute
-384 accepted `.c` cells. C_CI+PC is next; four families and aggregate `.c`
-remain open.
+384 accepted `.c` cells. Four families and aggregate `.c` remain open.
+
+The [C_CI+PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPCRuntimeReview.md)
+uses the same lean work unit: all-layout independent composite-domain and
+positive-continuation preparation, thirty new native events with both histories,
+and two exact D45 reuses. Its joint-root evidence includes geometry, signed
+Read-Back, fixed old Z plus instantaneous formation, one same-root-source
+carrier write and fresh consumer roots. The user separately accepted all 64
+named C_CI+PC cells on 2026-10-07: seven families contribute 448 accepted
+`.c` cells, with three families and aggregate `.c` still open.
+A_CI+PC is the next unexecuted family. No generic ATC or uniform
+trajectory-error claim follows from this bounded capacity/phase campaign.
 
 **P9-8.4c all-ten scope.** The accepted `.a` coverage record already assigns
 this additional work to all ten canonical families and `current`/`reset`.

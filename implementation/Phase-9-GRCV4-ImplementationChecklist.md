@@ -3050,8 +3050,17 @@ the full ten-profile plan.
         [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md).
       - [x] User acceptance on 2026-10-07 covers all 64 named A_PC cells,
         separately from aggregate `.c`.
-    - [ ] P9-8.4c[C_CI_PC]: Gain-two joint-root contraction/slack and C
+    - [x] P9-8.4c[C_CI_PC]: Gain-two joint-root contraction/slack and C
       reference coverage, fixed-old-Z/same-source writing and next-root effects.
+      - [x] Bind all 32 layouts and both histories with unchanged shares,
+        parameters and budgets. Independently check complete C references,
+        charge/zero-carrier transfer, strict slack, contraction and B_2R
+        coverage. Resource/carrier outliers reject at the declared boundary.
+      - [x] Complete thirty new cases plus two exact D45 reuses, retained
+        full-root/signed-read/writer checking, focused pressure and side-tool
+        synchronization.
+      - [x] Review and accept the bounded C_CI+PC result separately from `.c`:
+        user acceptance on 2026-10-07 covers all 64 named history cells.
     - [ ] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,
       exact W lineage, whole-Z reset/loss and both writers' next-root effects.
     - [ ] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section

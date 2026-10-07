@@ -25,7 +25,7 @@ PREFIXES = ("p984", "prepare_p984", "verify_p983")
 HELPERS = ("predecessor", "accepted_oracle", "make_manifest")
 DIRECT_FILES = ("SELF", "TEST", "INPUTS", "RESULTS", "REVIEW", "PREDECESSOR", "RECORD")
 BOUNDARY_MODULES = ("p984c_cos", "p984c_aos_oracle", "p984c_aos_runtime",
-    "p984c_cci_preparation", "p984c_cci_runtime", "p984c_aci_oracle", "p984c_aci_runtime", "p984c_cpc_runtime", "p984c_apc_runtime")
+    "p984c_cci_preparation", "p984c_cci_runtime", "p984c_aci_oracle", "p984c_aci_runtime", "p984c_cpc_runtime", "p984c_apc_runtime", "p984c_ccipc_runtime")
 
 
 class Snapshot:

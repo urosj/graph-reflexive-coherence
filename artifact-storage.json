@@ -147,6 +147,14 @@
       "storage_sha256": "5e5565db5a94b6e93ef14177df6cb6bba01769a9bc84c4598e6b952d6faf3789"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCResults.json",
+      "size": 59180592,
+      "sha256": "a1963f2b54f66ca49b6ede03add0fe3fda41ad6a1b1b6065cd1437b3fbf8252a",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCResults.json.xz",
+      "storage_size": 1009392,
+      "storage_sha256": "9c3fb8dbdbb21282555bdb0a6d30a508436862c477d4d34540e8ab203074e22c"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIResults.json",
       "size": 38742349,
       "sha256": "f4edf55cee5bb408e29998b5c04416893df0b562653de57a76a9d58b6e350957",

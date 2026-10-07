@@ -6,7 +6,8 @@ On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
-`additional_work_register`; C_OS, A_OS, C_CI, A_CI, C_PC and A_PC are accepted and the other four family items remain open.
+`additional_work_register`; C_OS, A_OS, C_CI, A_CI, C_PC, A_PC and C_CI+PC
+are accepted (448 history cells); the other three family items remain open.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
@@ -173,6 +174,36 @@ CLI/API/notebook/browser bind that separate decision. C_CI_PC is next under
 the approved single-work-unit workflow. Six accepted boundary families
 contribute 384 cells. No production/spec
 change, new ATC claim or uniform trajectory bound is introduced.
+
+A_PC acceptance is committed as `5ef33b97`. The
+[C_CI+PC boundary successor](./phase-9-grcv4/tranche-8/P9-8.4c-CCIPCRuntimeReview.md)
+now passes thirty new native cases: 30 events, 600 target steps and 60 fresh
+final joint roots, plus two exact D45 reuses. All 64 history cells pass;
+**C_CI+PC was accepted by the user on 2026-10-07**. The seven accepted
+families contribute 448 `.c` cells. The next unexecuted
+family is A_CI+PC, followed by the RG2b pair; aggregate `.c` remains open.
+
+All-layout independent preparation retains the accepted R=1 composite law,
+B_2R domain, strict source slack, contraction, shares and budgets. Both-role
+positive nominal predictions precede each event. Full roots, signed reads,
+fixed old Z plus instantaneous formation, single same-root-source Z writing
+and fresh restart consumption remain distinct obligations. Retained checking
+does not rerun native trajectories; the focused pressure suite covers these
+scientific/lifecycle distinctions and nearby domain/error boundaries.
+
+Result `ae4013da019b2be9bc9a9baaf5b3ace3d380bbf839173954afef6735f14876f7`
+uses a 1,009,392-byte XZ archive restoring 59,180,592 exact JSON bytes; fresh
+restoration passes. Minimum new-run poststep resource is
+`1.1723487306344568e-5`; the minimum retained final-read effect margin is
+`9.232000291064645` times its error/rounding allowance. Scope remains pointwise
+and layout-bounded, not a uniform accumulated trajectory theorem or general
+ATC. Side-tool access uses `--family C_CI_PC --checkpoint 8.4c`; API/notebook/
+browser preserve the separate acceptance and exact source bindings. No production
+or specification changes were needed.
+
+The user requested this accepted checkpoint be committed and the capacity/phase
+branch merged into `main` with a merge commit. Resume from `main` on a new
+branch for A_CI+PC; merging this checkpoint does not close aggregate P9-8.4c.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed

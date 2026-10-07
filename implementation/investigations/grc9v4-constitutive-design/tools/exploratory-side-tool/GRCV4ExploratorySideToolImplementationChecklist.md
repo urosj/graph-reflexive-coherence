@@ -2130,6 +2130,10 @@ instead of stale fixed totals and opens any pending case details explicitly.
   - [x] Expose A_PC boundary execution: thirty new cases, two exact D45 reuses
     and 64 cells accepted on 2026-10-07. Bind fixed-row signed reads,
     exact W lineage and separate W/Z consumer scope across all four surfaces.
+  - [x] Expose C_CI+PC boundary execution: thirty new cases, two exact D45
+    reuses and 64 cells accepted separately on 2026-10-07. Bind full joint
+    roots, strict composite slack, signed reads and same-root-source carrier
+    writing across all four surfaces, without broadening accepted support.
 - [ ] Synchronize exact sources, scoped decisions and the handoff as family
   work lands. Follow [retention and storage rules](../../../../../docs/reference/EvidenceStorage.md):
   completed evidence, shared inputs, byte-exact archives where needed and local
