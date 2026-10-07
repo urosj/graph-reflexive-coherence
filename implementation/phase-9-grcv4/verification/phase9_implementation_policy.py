@@ -243,7 +243,7 @@ PATHS = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIResults.json.xz",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json.xz",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json.xz",
-    ".gitignore", ".github/workflows/artifact-size.yml",
+    ".gitignore",
     "artifact-storage.json", "scripts/evidence_storage.py",
     "tests/test_evidence_storage.py", "docs/reference/EvidenceStorage.md",
     SIDE + "README.md",

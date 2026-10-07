@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "d3f23ef35174701be6d98695dbef478ca6c708665e4ca0b3c5fee02513a1d262"
+      "sha256": "f8f34611c4b448cf9f01e3dad7b0d57ec2e488a3805131c721a276f87838c96f"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -4118,10 +4118,6 @@
       "sha256": "e634302e264b2c5b2095cd74c0fdd119d45ee32c2a6c918d8ba5d4d489028473"
     },
     {
-      "path": ".github/workflows/artifact-size.yml",
-      "sha256": "6953487eaede17a38a3e89258b0813a874910f02f714bb236e5aa73eabb77bb9"
-    },
-    {
       "path": ".gitignore",
       "sha256": "d629f6ec779bd2551ec0dcc09991349370e06768b56c672519289f4bfb86e466"
     },
@@ -4131,7 +4127,7 @@
     },
     {
       "path": "docs/reference/EvidenceStorage.md",
-      "sha256": "34d6a5221f9c7feb29f7eefa77c804511c38a308304e236d115e0babb4b9ba55"
+      "sha256": "3cbc5e3d638a0281df0d94a98e282a9c59d29de8bccef0bf1224ad955d8bb11e"
     },
     {
       "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json.xz",
@@ -4222,5 +4218,5 @@
       "sha256": "ef1857cc94622b407f361a8c0f157b101e98ca4275d784aeeff76617fdc4ae61"
     }
   ],
-  "record_digest": "05c875b2a9e102e6b5bbbb0eb41c6b4874793b0dcf5c16c861c30952acbf8b74"
+  "record_digest": "04e6a0d98587662acededfb7e5a58392fd7bdcdcce0cc9d92010007191398ff0"
 }

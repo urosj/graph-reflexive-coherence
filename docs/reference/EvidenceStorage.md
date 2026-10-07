@@ -106,8 +106,8 @@ path. Refresh current phase/storage bindings when the storage roster changes.
 
 `check` verifies the archives and checks **staged Git blob sizes**, so replacing
 a large work file with a small one cannot hide an oversized staged blob. The
-same check runs in the repository's GitHub workflow. This is a storage limit,
-not a substitute for deciding whether the data deserves retention.
+local checks below are required before committing or publishing. This is a
+storage limit, not a substitute for deciding whether the data deserves retention.
 
 ## Local checks for Tranche 8 and later work
 
@@ -135,11 +135,13 @@ them. Verify restoration from a fresh directory when introducing a new archive.
 
 On 2026-10-07 the user requested that `/.github/` be ignored for now. These
 local commands preserve the evidence-storage process independently of GitHub
-configuration. The existing tracked `.github/workflows/artifact-size.yml`
-runs the same storage unit tests and `check` command on pushes and pull
-requests. An ignore rule affects new files; it does not untrack that existing
-workflow or disable its execution. Future workflow configuration can use the
-commands documented here.
+configuration. The workflow introduced on the expansion branch was subsequently
+removed from Git tracking because the push token lacks GitHub's `workflow`
+scope. An ignored local `.github/workflows/artifact-size.yml` copy may remain,
+but fresh checkouts use the commands above without depending on that file.
+The temporary policy is to run these checks locally; no GitHub automation is
+claimed. Future workflow configuration can use the same commands when workflow
+publication is enabled.
 
 ## Archive index
 
