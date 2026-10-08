@@ -51,6 +51,54 @@ test('C_CI_PC boundary execution binds scoped acceptance', () => {
   }
 });
 
+test('A_CI_PC boundary execution binds separate scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_CI_PC — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_CI_PC');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.equal(row.passing_pending_cells,0);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=64,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_RG2b boundary execution records separate scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c C_RG2b — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='C_RG2b');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.match(row.comparison_scope,/six_level_inverse_chain/);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=64,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_RG2b boundary execution records separate scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c A_RG2b — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='A_RG2b');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.match(row.comparison_scope,/four_level_CY_chain/);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=64,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('A_OS oracle scope is not native boundary acceptance', () => {
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out), /32\/32 independent oracle expectations pass/);
@@ -347,4 +395,22 @@ test('A_RG2b binds separate acceptance without closing later 8.4 work', () => {
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r=>r.family==='A_RG2b').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
+});
+
+test('8.4c aggregate closes exact accepted scope while later work stays open', () => {
+  const closure=evidence.coverage.boundary_contract.closeout;
+  assert.equal(closure.accepted_cells,640);
+  assert.equal(closure.pending_cells,0);
+  assert.equal(closure.aggregate_closed,true);
+  assert.equal(evidence.coverage.children.find(r=>r.work_id==='P9-8.4c').accepted,true);
+  assert.equal(evidence.coverage.aggregate_closed,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/8.4c closed/);
+  assert.match(text(out),/640\/640 accepted history cells across all ten families/);
+  assert.match(text(out),/8.4d–i and 8.5\/8.6 remain open/);
+  for (const mutate of [v=>v.coverage.boundary_contract.closeout.accepted_cells--,
+      v=>v.coverage.boundary_contract.closeout.families.pop(),
+      v=>v.coverage.aggregate_closed=true]) {
+    const v=structuredClone(evidence);mutate(v);assert.throws(()=>checkedTranche8(v));
+  }
 });

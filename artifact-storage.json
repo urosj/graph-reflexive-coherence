@@ -115,6 +115,14 @@
       "storage_sha256": "5cc2204c17e53a817d8f12b6f9f31b211b7d4d178de42b81a164ae87e14f258e"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIPCResults.json",
+      "size": 38686217,
+      "sha256": "24210e42fb52a25cf5c6c0e89bf377dbb0911ed9ace14018d1e5fe16348f4ef3",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIPCResults.json.xz",
+      "storage_size": 1107848,
+      "storage_sha256": "73729cf5d2dcebbf40f756d38df67f0f92a9f4c52290e56c354d59b8e21603ff"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIResults.json",
       "size": 47256468,
       "sha256": "add9d33980c2e548632da35f121735b8ba1453e27875c8cc59a3a1f2710fffb8",
@@ -147,6 +155,14 @@
       "storage_sha256": "5e5565db5a94b6e93ef14177df6cb6bba01769a9bc84c4598e6b952d6faf3789"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ARG2bResults.json",
+      "size": 46824936,
+      "sha256": "cd2ad8d3a5e17fc12f525c54801540864cddf5f6b6110112068282570871dead",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ARG2bResults.json.xz",
+      "storage_size": 1399220,
+      "storage_sha256": "a90d2ade1fd455890d9ed445a37f75dd76850828876eeb73db7080eff60e98d1"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCResults.json",
       "size": 59180592,
       "sha256": "a1963f2b54f66ca49b6ede03add0fe3fda41ad6a1b1b6065cd1437b3fbf8252a",
@@ -177,6 +193,14 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CPCResults.json.xz",
       "storage_size": 701880,
       "storage_sha256": "9879c587b587ce6c67aa8835c58dd5b05a5a20de19583cbe9e9099af92e19eb5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bResults.json",
+      "size": 44620259,
+      "sha256": "180aee7f94b0a90d8502eaaf1c473e70f5a39637171dc07dd1478dc10cef37af",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bResults.json.xz",
+      "storage_size": 1180412,
+      "storage_sha256": "0227b041b4945fd3befa40ba18d0284376866f2be4941f2a769a7198f2383ac1"
     }
   ]
 }

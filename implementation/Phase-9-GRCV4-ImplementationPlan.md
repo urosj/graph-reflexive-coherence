@@ -2991,6 +2991,65 @@ regressions belong to shared changes and tranche closure. Existing accepted
 checkers and original evidence stay unchanged. Use family-scoped side-tool
 checks during work; synchronize the full view once at the completed checkpoint.
 
+**A_CI+PC boundary work unit (2026-10-08).** On
+`work/p9-8-4c-acipc`, bind all 32 layouts and both actual histories using the
+accepted R=2048, kappa_H=2^-15, resource radius 16, positive W chart and
+unit-plus-unit composite law. Check independent target construction, exact
+C/W transfer, zero target Z and strict whole-domain root bounds; predict each
+both-role continuation before its native event. Execute thirty new events and
+ten steps per role with fresh final roots, reusing only the two exact accepted
+D45 subjects. Pressure full roots and signed reads, fixed old Z/same-root
+source, fresh-C/incoming-W/selected-J history writing, both writers' next-root
+effects, domain outliers and corrupted lifecycle evidence. Synchronize the
+side-tool and handoff once; all 64 cells were separately accepted by the user on 2026-10-08.
+No new parameter authority, uniform trajectory theorem or numerical caching
+is introduced.
+
+**C_RG2b boundary work unit (2026-10-08).** Continue on the same
+`work/p9-8-4c-acipc` branch. Bind 32 charts and both actual resource histories
+to the accepted signed argument completion. Preserve the six-level/18-sweep
+section recipe, q^6 section tail and distinct q^5 first-predecessor tail.
+Pressure signed clamp faces, noncommuting H/D, physical K versus ordinary
+K-minus entry (also at zero timestep), and the side-tool's eight equation traces
+plus unresolved C1 debt. Predict both ten-step continuations before each new
+event; execute thirty cases and reuse only the two exact D45 subjects. Check
+saved inverse levels, signed vectors, lagged invariance and separate current-L2,
+resource-sup and geometry-row-sum bridges, publication and reference consumers.
+Complete source/display/storage reconciliation once; user acceptance remains
+separate from passing execution. No compact-support exterior theorem, C1
+regularity, arbitrary-graph support or accumulated trajectory bound is inferred.
+The [completed bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md)
+records 64 passing cells and fourteen focused methods. The user separately
+accepted this scope on 2026-10-08, bringing `.c` coverage to 576/640; A_RG2b
+and aggregate reconciliation remain open.
+
+**A_RG2b boundary work unit (2026-10-08).** Continue on the same branch
+from accepted C_RG2b `7192265`. Bind all 32 target trees to the unchanged
+signed C/scaled-log-W completion, four inverse levels and eighteen sweeps;
+keep q^4 section and q^3 first-predecessor tails distinct. Check exact C/W
+transfer and all eleven side-tool traces, physical K versus ordinary K-minus
+and signed C/Y clamp outliers. Predict both-role ten-step continuations before
+each event; execute thirty cases with fresh final sections and reuse only the
+two exact D45 subjects. Pressure saved coupled-chain residuals, log-query
+uncertainty, signed vectors, lagged invariance, current-L2/state-CY/geometry
+norms and fresh-C/incoming-W/selected-J writing through its next-read effect.
+Retain complete consumed operands in shared-context, losslessly packed results;
+no incomplete run record. Synchronize discovery/review/handoff once. Acceptance
+remains separate; the signed-completion and unresolved C1 restrictions remain.
+The [completed bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md)
+records 64 passing cells, three preparation/storage methods and eleven
+saved-operand methods. The user accepted all 64 cells on 2026-10-08, bringing
+`.c` to 640/640 accepted; family acceptance is committed as `270783f`.
+
+**P9-8.4c closeout (2026-10-08).** The user requested aggregate closure
+after that commit. The [closeout review](./phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md)
+and compact machine-checked reconciliation account for every named cell and
+separate family acceptance: 600 new plus 40 exact reuses, 640/640 total.
+Shared mechanical checks contribute no numerical credit. CLI/API/notebook/
+browser now expose this bounded closure separately from unchanged planning
+and execution flags. No numerical rerun or widened scientific claim is needed.
+P9-8.4d is next; `.d–i`, 8.5 and 8.6 remain open.
+
 Keep the shared side-tool views and handoff synchronized with each reviewed
 family. Closure requires all ten family items and the declared required cells,
 without advancing `.d`–`.i`, 8.5 or 8.6. Apply the

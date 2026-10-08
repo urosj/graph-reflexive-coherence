@@ -23,6 +23,7 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+BOUNDARY_CLOSEOUT_SOURCES = {'implementation/phase-9-grcv4/tranche-8/P9-8.4c-Closeout.json': '052d1a81bfdd3ebe1b763fa87da26805df53a84624e6ffee27fdb30204a4d440', 'implementation/phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md': '206643c340ef1e4303973da67685fa373707b68b2336e39a1d16f01732627ab0'}
 # Preregistration pins confer neither numerical evidence nor acceptance.
 BOUNDARY_CONTRACT_SOURCES = {
     BASE + "P9-8.4c-BoundaryContract.json": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
@@ -93,6 +94,27 @@ BOUNDARY_CCIPC_SOURCES = {
     BASE + "P9-8.4c-CCIPCCases.json": "7641e8bd06a3e617c72a2892f4a9a1eba1c0eda3ba96fd02a1fa2775e13beb74",
     BASE + "P9-8.4c-CCIPCResults.json": "a1963f2b54f66ca49b6ede03add0fe3fda41ad6a1b1b6065cd1437b3fbf8252a",
     BASE + "P9-8.4c-CCIPCRuntimeReview.md": "8e57b3f67cba32062e538d126cc353072d0adf9789f96b7e63bea0182cb2fa4a",
+}
+
+# A_RG2b execution and separate scoped acceptance have exact source pins.
+BOUNDARY_ARG2B_SOURCES = {
+    BASE + "P9-8.4c-ARG2bCases.json": "054fc9a297d4c573dfa84bb0a452c08952a73a9710bebdb245995ce519355aeb",
+    BASE + "P9-8.4c-ARG2bResults.json": "cd2ad8d3a5e17fc12f525c54801540864cddf5f6b6110112068282570871dead",
+    BASE + "P9-8.4c-ARG2bRuntimeReview.md": "39a7c4f815c1d3fbe44a41b06310983fbb9c1e1185bc74741b30da0daefe20eb",
+}
+
+# C_RG2b execution and separate scoped acceptance have exact source pins.
+BOUNDARY_CRG2B_SOURCES = {
+    BASE + "P9-8.4c-CRG2bCases.json": "23f26abf7ec82008ee5b554dc43a08a994c2be8315965569d81fe670fbf718f9",
+    BASE + "P9-8.4c-CRG2bResults.json": "180aee7f94b0a90d8502eaaf1c473e70f5a39637171dc07dd1478dc10cef37af",
+    BASE + "P9-8.4c-CRG2bRuntimeReview.md": "fe1a582e1a9025cd7208afb00870d7d47f5970ec09535c532f9a7aeac93a16e7",
+}
+
+# A_CI+PC execution and separate scoped acceptance have exact source pins.
+BOUNDARY_ACIPC_SOURCES = {
+    BASE + "P9-8.4c-ACIPCCases.json": "60508ea1e13b7b924972a01c0ab743670c06380760fea6b2123c00a0aca04db2",
+    BASE + "P9-8.4c-ACIPCResults.json": "24210e42fb52a25cf5c6c0e89bf377dbb0911ed9ace14018d1e5fe16348f4ef3",
+    BASE + "P9-8.4c-ACIPCRuntimeReview.md": "5a65669e68aca9073f58d6d85103e955e39db0b4b79e39c54ba88818b6fd559d",
 }
 
 # A_RG2b execution and separate scoped user acceptance have exact source pins.
@@ -217,14 +239,18 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            boundary_pins = {**BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES, **BOUNDARY_ACI_ORACLE_SOURCES, **BOUNDARY_ACI_SOURCES, **BOUNDARY_CPC_SOURCES, **BOUNDARY_APC_SOURCES, **BOUNDARY_CCIPC_SOURCES}
+            boundary_pins = {**BOUNDARY_CLOSEOUT_SOURCES, **BOUNDARY_ARG2B_SOURCES, **BOUNDARY_CRG2B_SOURCES, **BOUNDARY_ACIPC_SOURCES, **BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES, **BOUNDARY_ACI_ORACLE_SOURCES, **BOUNDARY_ACI_SOURCES, **BOUNDARY_CPC_SOURCES, **BOUNDARY_APC_SOURCES, **BOUNDARY_CCIPC_SOURCES}
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CCIPC_SOURCES else
+                    basis=("pinned_boundary_aggregate_closeout" if name in BOUNDARY_CLOSEOUT_SOURCES else
+                        "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_ARG2B_SOURCES else
+                        "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CRG2B_SOURCES else
+                        "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_ACIPC_SOURCES else
+                        "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CCIPC_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_APC_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CPC_SOURCES else
                         "pinned_accepted_independent_oracle_not_runtime_acceptance" if name in BOUNDARY_ACI_ORACLE_SOURCES else
@@ -943,6 +969,50 @@ def _build(root):
         review=sources.ref(boundary_ccipc_runtime.REVIEW),
         reuse_evidence=sources.ref(BASE + "P9-8.4b-CCIPCResults.json"),
         comparison_scope="pointwise_full_joint_root_signed_readback_fixed_old_Z_same_source_writer_and_strict_composite_slack_not_uniform_trajectory_bound"))
+    import p984c_acipc_runtime as boundary_acipc_runtime
+    native_acipc = boundary_acipc_runtime.status(sources.read(boundary_acipc_runtime.INPUTS), sources.read(boundary_acipc_runtime.RESULTS))
+    require("## Scoped user acceptance" in sources.raw(boundary_acipc_runtime.REVIEW).decode()
+            and native_acipc["successful_history_cells"] == 64, "A_CI_PC acceptance scope drift")
+    native_acipc["accepted_cells"] = 64
+    boundary_view["family_results"].append(dict(**native_acipc,
+        status="accepted_bounded", required_cells=64,
+        passing_pending_cells=0, acceptance=sources.ref(boundary_acipc_runtime.REVIEW, anchor="scoped-user-acceptance"),
+        inputs=sources.ref(boundary_acipc_runtime.INPUTS), results=sources.ref(boundary_acipc_runtime.RESULTS),
+        review=sources.ref(boundary_acipc_runtime.REVIEW),
+        reuse_evidence=sources.ref(BASE + "P9-8.4b-ACIPCResults.json"),
+        comparison_scope="pointwise_full_joint_root_signed_readback_exact_W_lineage_fixed_old_Z_same_source_W_Z_writers_and_strict_composite_slack_not_uniform_trajectory_bound"))
+    import p984c_crg2b_runtime as boundary_crg2b_runtime
+    native_crg2b = boundary_crg2b_runtime.status(sources.read(boundary_crg2b_runtime.INPUTS), sources.read(boundary_crg2b_runtime.RESULTS))
+    require("## Scoped user acceptance" in sources.raw(boundary_crg2b_runtime.REVIEW).decode()
+            and native_crg2b["successful_history_cells"] == 64, "C_RG2b acceptance scope drift")
+    native_crg2b["accepted_cells"] = 64
+    boundary_view["family_results"].append(dict(**native_crg2b,
+        status="accepted_bounded", required_cells=64,
+        passing_pending_cells=0, acceptance=sources.ref(boundary_crg2b_runtime.REVIEW, anchor="scoped-user-acceptance"),
+        inputs=sources.ref(boundary_crg2b_runtime.INPUTS), results=sources.ref(boundary_crg2b_runtime.RESULTS),
+        review=sources.ref(boundary_crg2b_runtime.REVIEW),
+        reuse_evidence=sources.ref(BASE + "P9-8.4b-CRG2bResults.json"),
+        comparison_scope="signed_completion_six_level_inverse_chain_pointwise_section_and_lagged_invariance_checks_not_C1_or_uniform_trajectory_bound"))
+    import p984c_arg2b_runtime as boundary_arg2b_runtime
+    native_arg2b = boundary_arg2b_runtime.status(sources.read(boundary_arg2b_runtime.INPUTS), sources.read(boundary_arg2b_runtime.RESULTS))
+    require("## Scoped user acceptance" in sources.raw(boundary_arg2b_runtime.REVIEW).decode()
+            and native_arg2b["successful_history_cells"] == 64, "A_RG2b acceptance scope drift")
+    native_arg2b["accepted_cells"] = 64
+    boundary_view["family_results"].append(dict(**native_arg2b,
+        status="accepted_bounded", required_cells=64,
+        passing_pending_cells=0, acceptance=sources.ref(boundary_arg2b_runtime.REVIEW, anchor="scoped-user-acceptance"),
+        inputs=sources.ref(boundary_arg2b_runtime.INPUTS), results=sources.ref(boundary_arg2b_runtime.RESULTS),
+        review=sources.ref(boundary_arg2b_runtime.REVIEW),
+        reuse_evidence=sources.ref(BASE + "P9-8.4b-ARG2bResults.json"),
+        comparison_scope="signed_completion_four_level_CY_chain_pointwise_section_lagged_invariance_exact_W_lineage_and_writer_next_read_effects_not_C1_or_uniform_trajectory_bound"))
+    import p984c_closeout as boundary_closeout
+    reconciliation = boundary_closeout.reconcile(boundary_contract, boundary_view,
+        {r["family"]: sources.read(r["inputs"]["path"]) for r in boundary_view["family_results"]})
+    require(sources.read(boundary_closeout.RECORD) == reconciliation, "boundary aggregate reconciliation drift")
+    boundary_view["closeout"] = dict(reconciliation, record=sources.ref(boundary_closeout.RECORD),
+                                     review=sources.ref(boundary_closeout.REVIEW))
+    child = next(r for r in children if r["work_id"] == "P9-8.4c")
+    child.update(status="accepted_bounded", accepted=True)
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
         runtime_scope_snapshot=scope,
@@ -980,7 +1050,7 @@ def checked(root=ROOT):
 
 
 BOUNDARY_RUNTIME = {"C_OS": "p984c_cos", "A_OS": "p984c_aos_runtime",
-    "C_CI": "p984c_cci_runtime", "A_CI": "p984c_aci_runtime", "C_PC": "p984c_cpc_runtime", "A_PC": "p984c_apc_runtime", "C_CI_PC": "p984c_ccipc_runtime"}
+    "C_CI": "p984c_cci_runtime", "A_CI": "p984c_aci_runtime", "C_PC": "p984c_cpc_runtime", "A_PC": "p984c_apc_runtime", "C_CI_PC": "p984c_ccipc_runtime", "A_CI_PC": "p984c_acipc_runtime", "C_RG2b": "p984c_crg2b_runtime", "A_RG2b": "p984c_arg2b_runtime"}
 
 
 def family_status(root, family):
@@ -996,8 +1066,8 @@ def family_status(root, family):
         summary = module.status(sources.read(module.INPUTS), sources.read(module.RESULTS))
         review = sources.raw(module.REVIEW).decode()
         cells = 2 * (summary["passed_cases"] + summary["exact_reuse_cases"])
+        require(cells == 64, "incomplete boundary scope")
         require("## Scoped user acceptance" in review, "missing scoped acceptance")
-        require(cells == 64, "incomplete accepted boundary scope")
         summary.update(accepted_cells=cells, status="accepted_bounded", passing_pending_cells=0,
             acceptance=sources.ref(module.REVIEW, anchor="scoped-user-acceptance"))
         summary.update(inputs=sources.ref(module.INPUTS), results=sources.ref(module.RESULTS))
@@ -1021,7 +1091,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -1053,7 +1123,7 @@ def main():
     require(not args.preparation or (args.family == "C_CI" and args.checkpoint == "8.4c"), "preparation selection requires C_CI boundary checkpoint")
     if args.checkpoint == "8.4c":
         require(args.family in BOUNDARY_RUNTIME, "boundary evidence unavailable for this family")
-        if args.family in ("C_PC", "A_PC", "C_CI_PC"):
+        if args.family in ("C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"):
             commands = [[sys.executable, str(ROOT / HERE / (BOUNDARY_RUNTIME[args.family] + ".py")), "--check-retained",
                 *(["--recheck-numerics"] if args.recheck_numerics else [])]]
         elif args.family == "A_CI":

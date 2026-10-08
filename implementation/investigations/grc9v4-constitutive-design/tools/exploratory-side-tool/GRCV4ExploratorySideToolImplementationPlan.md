@@ -2681,3 +2681,48 @@ Historical loaders/pins, scientific certificates and global debts are unchanged.
 No browser/notebook/native or aggregate admission is added.
 Reuse the supplied section evaluator and pressure commands; do not mistake
 local retained-evidence checks for a full E/R rerun or native admission.
+
+
+### P9-8.4c A_CI+PC boundary evidence
+
+Expose the thirty new A_CI+PC cases and two exact D45 reuses as 64 passing
+history cells accepted separately on 2026-10-08. Keep accepted `.c` coverage
+at 512/640 and `.b` at 322/322. Preserve full-root, signed-read, strict composite
+slack, W lineage and separate W/Z writer scope. The selected-family CLI/API and
+notebook cell avoid unrelated family validation; full browser data is rebuilt
+once at the completed checkpoint. Status authenticates retained sources and
+structure; numerical recomputation remains an explicit selected checker action.
+
+
+### P9-8.4c C_RG2b boundary evidence
+
+Expose thirty new C_RG2b cases and two exact D45 subjects as 64 passing cells
+separately accepted on 2026-10-08. Keep `.c` accepted coverage at 576/640 and
+`.b` at 322/322. Bind complete signed chains, first-predecessor and section
+tails, lagged invariance, full C current/readback and distinct bridge norms.
+The signed completion differs from the paper's compact-support extension;
+C1 remains unresolved. Reuse the selected-family CLI/API/notebook routes and
+pinned browser view, preserving fail-closed source and scope checks. Publish
+only completed, exactly compacted and losslessly compressed evidence.
+
+
+### P9-8.4c A_RG2b boundary evidence
+
+Expose thirty new A_RG2b cases and two exact D45 reuses as 64 passing cells
+separately accepted on 2026-10-08. Keep `.c` at 640/640 accepted and `.b`
+at 322/322. Bind coupled four-level C/Y chains, q^4/q^3 tails, log-query
+uncertainty, lagged invariance, exact W lineage and writer/next-current effects.
+Preserve signed-completion and unresolved C1 limits. Selected CLI/API/notebook
+status authenticates this family only; full browser data is rebuilt once at
+the completed checkpoint. Numerical rechecking remains explicit and never
+executes native trajectories. Publish completed, losslessly compressed evidence.
+
+### P9-8.4c aggregate closeout (2026-10-08)
+
+Expose the completed aggregate reconciliation in CLI/API/notebook/browser:
+  all ten families, 640/640 accepted cells (600 new, 40 exact reuses), separate
+  review decisions and unchanged original execution flags. Authenticate exact
+  case/role coverage and A_OS oracle-to-runtime reuse mapping. Preserve each
+  comparison scope, RG2b completion/C1 limits and shared-mechanics boundaries.
+  `coverage.boundary_contract.closeout` and child P9-8.4c are closed; whole
+  P9-8.4 and `.d–i`, 8.5/8.6 remain open. No numerical rerun or new authority.

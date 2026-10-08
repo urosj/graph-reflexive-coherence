@@ -2233,3 +2233,48 @@ instead of stale fixed totals and opens any pending case details explicitly.
 - [x] Pressure changed/missing/new package sources, repinned mutations,
       reciprocal debt routing, provenance and closure boundaries with the
       focused admission suite; no scientific campaign reruns.
+
+
+### P9-8.4c A_CI+PC boundary successor
+
+- [x] Expose thirty new native cases plus two exact D45 reuses as 64 passing
+  history cells separately accepted on 2026-10-08, with 512/640 accepted `.c`
+  and 322/322 accepted `.b` coverage.
+- [x] Bind CLI/API/notebook/browser sources and full-root/signed-read/W/Z scope;
+  selected status/checker dispatch avoids unrelated numerical campaigns.
+- [x] Record the 2026-10-08 scoped user acceptance separately. Aggregate `.c`,
+  C_RG2b and A_RG2b boundary campaigns remain open.
+
+
+### P9-8.4c C_RG2b boundary successor
+
+- [x] Expose thirty new cases and two exact D45 reuses as 64 passing history
+  cells separately accepted on 2026-10-08; `.c` is 576/640 and `.b` 322/322.
+- [x] Bind signed six-level chains, q^5/q^6 tails, lagged invariance,
+  signed reads and separate bridge norms without C1 or compact-support claims.
+- [x] Synchronize selected-family CLI/API/notebook, pinned browser/source
+  routes and corruption/dispatch checks without repeating native campaigns.
+- [x] Record separate user acceptance on 2026-10-08; A_RG2b and aggregate
+  `.c` remain open.
+
+
+### P9-8.4c A_RG2b boundary successor
+
+- [x] Expose thirty new cases and two exact D45 reuses as 64 passing history
+  cells separately accepted on 2026-10-08; `.c` is 640/640 and `.b` 322/322.
+- [x] Bind C/Y inverse chains, signed reads, log-query uncertainty, lagged
+  invariance and exact W lineage/writer/next-read scope without C1 claims.
+- [x] Synchronize selected CLI/API/notebook, pinned browser/source routes and
+  rejection/dispatch checks without repeating native campaigns.
+- [x] Record separate scoped acceptance on 2026-10-08; aggregate `.c`
+  reconciliation follows the family commit.
+
+### P9-8.4c aggregate closeout (2026-10-08)
+
+- [x] Expose the completed aggregate reconciliation in CLI/API/notebook/browser:
+  all ten families, 640/640 accepted cells (600 new, 40 exact reuses), separate
+  review decisions and unchanged original execution flags. Authenticate exact
+  case/role coverage and A_OS oracle-to-runtime reuse mapping. Preserve each
+  comparison scope, RG2b completion/C1 limits and shared-mechanics boundaries.
+  `coverage.boundary_contract.closeout` and child P9-8.4c are closed; whole
+  P9-8.4 and `.d–i`, 8.5/8.6 remain open. No numerical rerun or new authority.

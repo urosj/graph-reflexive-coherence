@@ -12,7 +12,14 @@ subject. Raw execution retains its original unaccepted flags; the separately
 pinned reviews record user acceptance. The A_PC successor contributes 32
 accepted cells through its own separate scoped decision. C_CI_PC adds 32
 accepted cells through its own separate scoped decision.
-The bounded all-ten P9-8.4b item is closed; P9-8.4c–i remain open.
+Both bounded all-ten items are now closed: P9-8.4b at 322/322 and P9-8.4c
+at **640/640 accepted history cells**. P9-8.4d–i, 8.5 and 8.6 remain open.
+`coverage.boundary_contract.closeout` exposes the aggregate record, exact
+coverage digest, all ten acceptance/source links, 600 new and 40 reused
+cells, retained comparison scopes and remaining work. The browser labels
+planning counts as historical. Selected-family status checks only that family;
+use the complete status view to authenticate aggregate closure.
+The paragraphs below retain the successive family checkpoints.
 `coverage.boundary_contract` now exposes the first `.c` task: 32 layouts,
 640 both-role obligations (600 new, 40 exact-reuse candidates), budgets,
 prerequisites and exact contract/review links. The user accepted the matrix and
@@ -83,10 +90,51 @@ nominal predictions; neither command reruns native trajectories. Family status
 uses `tranche8_status(root, family="C_CI_PC")`. The seven accepted `.c` families
 contribute 448 cells; three families and aggregate `.c` remain open.
 
+A_CI+PC now supplies thirty new native cases and two exact D45 reuses: 64
+`.c` history cells **accepted separately on 2026-10-08**, bringing accepted
+coverage to 512/640. Its unchanged composite law retains full joint roots, exact W
+lineage, whole-source Z archives/target reset and correctly staged W/Z writers.
+Use `status --family A_CI_PC --checkpoint 8.4c` for the selected-family view,
+`verify-retained --family A_CI_PC --checkpoint 8.4c` for the retained checker,
+or `tranche8_status(root, family="A_CI_PC")` in the API/notebook. Optional
+`--recheck-numerics` recomputes independent interval certificates; ordinary
+status does not. A_RG2b remains unexecuted at this boundary checkpoint.
+The [review](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md)
+records the pressure, claim restrictions and separate user decision.
+
+C_RG2b now supplies thirty new native cases plus two exact D45 reuses:
+64 passing `.c` cells **separately accepted on 2026-10-08**. Accepted coverage
+is now 576/640; A_RG2b and aggregate `.c` remain open. `.b` remains 322/322. The
+[review](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md)
+binds signed completion, six-level inverse chains, the q^5 first-predecessor
+and q^6 section tails, lagged invariance and separate error norms. No C1 or
+compact-support exterior claim follows. Repeated chains/certificates are
+stored once and packed losslessly; only completed evidence is published.
+Use `status --family C_RG2b --checkpoint 8.4c`,
+`verify-retained --family C_RG2b --checkpoint 8.4c`, or
+`tranche8_status(root, family="C_RG2b")`. Optional `--recheck-numerics`
+recomputes independent equations and effect bounds; status only authenticates
+sources and retained structure. Neither reruns native trajectories.
+
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.
 Forty disabled-profile surfaces remain Tranche 9 work. General ATC is not implied.
+
+A_RG2b now supplies thirty new native cases and two exact D45 reuses:
+64 passing `.c` cells **separately accepted on 2026-10-08**. Accepted coverage
+is now 640/640 across all ten families, while aggregate
+reconciliation remains open. The
+[bounded review](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md)
+binds coupled C/Y chains, scaled-log query uncertainty, q^4/q^3 tails, lagged
+invariance, W lineage and fresh-C/selected-J writing through the next read.
+Signed-completion and C1 restrictions remain unchanged. Select
+`status --family A_RG2b --checkpoint 8.4c` or
+`tranche8_status(root, family="A_RG2b")`. Use `verify-retained` with the same
+family/checkpoint for consumer checking; `--recheck-numerics` explicitly
+recomputes independent interval equations. These commands do not run native
+trajectories. The complete record uses authenticated XZ storage.
+
 
 ## Choose the check you need
 
@@ -430,3 +478,7 @@ supplies acceptance while raw execution/recheck flags stay unchanged. It
 credits the final 32 cells and closes bounded P9-8.4b, without closing later
 8.4 work. Completed evidence uses compact poststates and
 lossless XZ storage; interrupted runs are not repository artifacts.
+
+The 2026-10-08 aggregate reconciliation is complete; the preceding family
+checkpoints retain their historical acceptance order. See
+[bounded closeout](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md).

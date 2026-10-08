@@ -2923,7 +2923,7 @@ the full ten-profile plan.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md).
 
-  - [ ] P9-8.4c: Pressure capacity and phase boundaries across **all ten
+  - [x] P9-8.4c: Pressure capacity and phase boundaries across **all ten
     families and both current/reset histories**, as already required by
     `P9-8.4a-Coverage.json`'s `additional_work_register`. These are new named
     probes, not a rerun or reopening of the 322 accepted `.b` cells.
@@ -3061,16 +3061,58 @@ the full ten-profile plan.
         synchronization.
       - [x] Review and accept the bounded C_CI+PC result separately from `.c`:
         user acceptance on 2026-10-07 covers all 64 named history cells.
-    - [ ] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,
+    - [x] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,
       exact W lineage, whole-Z reset/loss and both writers' next-root effects.
-    - [ ] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section
+      - [x] Bind all 32 layouts/both actual histories under the accepted
+        R=2048, kappa_H=2^-15 and gain-two law. Check independent port graphs,
+        exact charge/W lineage, zero target Z, B_2R coverage, strict source
+        slack and contraction. Both-role predictions precede each event.
+      - [x] Complete thirty new events, 600 target steps and 60 fresh final
+        roots; reuse two exact D45 cases. Full retained checking and four
+        focused methods pass: signed reads, both writer stages/next-root
+        effects, domain/certificate outliers and lifecycle corruption. The
+        side-tool records separate acceptance, with 512/640 accepted.
+        See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md).
+      - [x] User acceptance on 2026-10-08 covers all 64 named A_CI+PC
+        history cells, separately from aggregate `.c`.
+    - [x] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section
       bounds, K event versus K-minus ordinary entry, including reset; retain C1 limits.
-    - [ ] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W
+      - [x] Bind all 32 target charts, exact charge maps, completion/section
+        budgets and exact D45 reuse; reconcile paper/spec and eight live
+        side-tool equation traces, retaining the C1 debt. Signed clamp faces,
+        noncommuting H/D and adjacent K/K-minus boundaries pass preparation.
+      - [x] Finish thirty native cases with independent pre-event predictions,
+        both-role ten-step continuations and fresh final sections.
+      - [x] Pressure saved six-level chains, first-predecessor tail, signed
+        reads, lagged invariance, distinct error norms and lifecycle consumers;
+        publish completed compact evidence and synchronize discovery surfaces.
+        See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md).
+        Accepted `.c` coverage is now 576/640 across nine families.
+      - [x] User acceptance on 2026-10-08 covers all 64 named C_RG2b
+        history cells, separately from aggregate `.c`.
+    - [x] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W
       lineage/log writing and fresh sections; retain completion and C1 limits.
-    - [ ] Reconcile shared checks and all ten family dispositions through
+      - [x] Bind 32 target charts, both-role C/W transfer, four-level section
+        bounds and exact D45 reuse; pressure signed C/Y clamp faces, physical
+        K/K-minus gates and all eleven live side-tool traces with the C1 debt.
+      - [x] Predict both-role continuations before each new event; execute
+        thirty cases, 600 target steps and 60 fresh final sections.
+      - [x] Pressure saved coupled inverse levels and log-query uncertainty,
+        q^4/q^3 tails, signed reads, current-L2/state-CY/geometry bounds,
+        exact W lineage and fresh-C/selected-J writer/next-read effects.
+      - [x] Publish completed compact evidence and synchronize side-tool,
+        review and handoff. All 64 history cells pass; see the
+        [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md).
+      - [x] User acceptance on 2026-10-08 covers all 64 A_RG2b history
+        cells; `.c` now has 640/640 accepted. Acceptance committed as `270783f`.
+    - [x] Reconcile shared checks and all ten family dispositions through
       CLI/API/notebook/browser and the handoff. Keep execution and acceptance
       separate; close `.c` only after its required cells and all ten family
       items are reviewed and accepted, or an explicit scope change is approved.
+      Closed on 2026-10-08 at 640/640 under the user-requested closeout:
+      [exact reconciliation and restrictions](./phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md).
+      All ten families, shared mechanics and both roles reconcile; 600 new
+      and 40 exact reused cells, with no scope change or numerical rerun.
       Deeper expansion/covariance/larger graphs remain `.d`–`.h`; full atomic
       rollback, replay and injected publication failures remain P9-8.5.
     Use the [current evidence rules](../docs/reference/EvidenceStorage.md):

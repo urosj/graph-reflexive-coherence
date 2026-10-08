@@ -1,13 +1,56 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — P9-8.4c capacity and phase boundaries
+## Current status — P9-8.4c closed; P9-8.4d next
+
+On 2026-10-08 the user accepted A_RG2b, committed as `270783f`, then
+requested P9-8.4c closure on the same `work/p9-8-4c-acipc` branch.
+The [aggregate closeout](./phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md)
+reconciles all ten separately accepted families and shared mechanical checks:
+**640/640 accepted history cells**, consisting of 600 new and 40 exact D45
+reuses. Every named subject and both roles are accounted for. Original
+planning/execution flags and all scientific restrictions are unchanged.
+CLI/API/notebook/browser expose the closeout and its exact source links.
+P9-8.4b stays closed at 322/322; P9-8.4 overall remains open. Next is `.d`
+(deeper expansion); `.e–i`, 8.5 and 8.6 remain open. No native or interval
+campaign is repeated for aggregate reconciliation. The family milestones
+below describe the state at their respective checkpoints.
+
+## Accepted checkpoint — P9-8.4c capacity and phase families
 
 On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
 P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
 `additional_work_register`; C_OS, A_OS, C_CI, A_CI, C_PC, A_PC and C_CI+PC
-are accepted (448 history cells); the other three family items remain open.
+were accepted at 448 history cells. A_CI+PC and C_RG2b are now separately
+accepted. A_RG2b was separately accepted on 2026-10-08, bringing the current
+total to 640/640; aggregate reconciliation follows its family commit.
+Current work is on
+`work/p9-8-4c-acipc`, created from main `aa965673` on 2026-10-08.
+
+The user accepted A_CI+PC in commit `1a5ad19` and asked to continue on the
+same branch. The [C_RG2b successor](./phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md)
+now completes thirty new events, 600 target steps and 60 fresh final sections;
+two exact accepted D45 subjects complete 64 passing history cells. The user
+separately accepted all 64 on 2026-10-08 and requested their commit. Signed completion, six-level chains, distinct q^5/q^6
+tails, lagged invariance and K/K-minus limits remain unchanged. Preparation
+and saved-operand pressure pass; the current side-tool exposes this scope
+through CLI/API/notebook/browser. Original acceptance and aggregate-closure
+flags remain false.
+Repeated chains/certificates and matrix context are stored once by exact digest,
+then packed losslessly. No incomplete or progress records are retained.
+
+The [A_RG2b successor](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md)
+now completes thirty new events, 600 target steps and 60 fresh final sections;
+two exact D45 subjects complete 64 history cells, accepted on 2026-10-08.
+Preparation, full retained-consumer checking and eleven saved-operand methods
+pass. Four-level coupled C/Y chains, log-query uncertainty, q^4/q^3 tails,
+lagged invariance, exact W lineage and writer/next-read effects retain their
+accepted bounds and completion/C1 restrictions. All eleven live side-tool
+claim traces match. Completed results share repeated operands and use byte-exact
+XZ storage; no incomplete run is retained. CLI/API/notebook/browser exposes the
+new family and the 640 accepted cells. No production/specification
+change, arbitrary-graph support or aggregate `.c` closure is claimed.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).
@@ -180,8 +223,8 @@ A_PC acceptance is committed as `5ef33b97`. The
 now passes thirty new native cases: 30 events, 600 target steps and 60 fresh
 final joint roots, plus two exact D45 reuses. All 64 history cells pass;
 **C_CI+PC was accepted by the user on 2026-10-07**. The seven accepted
-families contribute 448 `.c` cells. The next unexecuted
-family is A_CI+PC, followed by the RG2b pair; aggregate `.c` remains open.
+families contribute 448 `.c` cells. A_CI+PC follows below; the RG2b pair
+remains unexecuted and aggregate `.c` remains open.
 
 All-layout independent preparation retains the accepted R=1 composite law,
 B_2R domain, strict source slack, contraction, shares and budgets. Both-role
@@ -201,9 +244,37 @@ ATC. Side-tool access uses `--family C_CI_PC --checkpoint 8.4c`; API/notebook/
 browser preserve the separate acceptance and exact source bindings. No production
 or specification changes were needed.
 
-The user requested this accepted checkpoint be committed and the capacity/phase
-branch merged into `main` with a merge commit. Resume from `main` on a new
-branch for A_CI+PC; merging this checkpoint does not close aggregate P9-8.4c.
+The accepted C_CI+PC checkpoint was merged into `main` at `aa965673`.
+Its [A_CI+PC successor](./phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md)
+on `work/p9-8-4c-acipc` now passes thirty new native cases and two exact D45
+reuses: **64 history cells accepted by the user on 2026-10-08**, 600 new target
+steps and 60 fresh final joint roots. The full retained-consumer check passed
+before publication. All four focused pressure methods pass. The linked review records reproduction
+and the test-only binding correction, with all scientific observations unchanged.
+
+All-layout independent preparation keeps R=2048, kappa_H=2^-15, root radius
+1/8, resource radius 16, the positive W chart and the accepted gain-two law.
+Both-role positive predictions precede each new event. Full roots and signed
+reads, fixed old Z, same-root source, fresh-C/incoming-W/selected-J history
+writing, whole-source carrier archives/target reset and fresh W/Z consumers
+retain their separate checks. Live side-tool traces match all eight accepted
+equation traces; no endpoint, amplitude-equivalence or arbitrary-graph claim
+is added. No production, spec, tolerance, budget or share recipe changed.
+
+Result `598d339bad68bfb1784687849fe99fba484f50e3d8504989519d754a93124921`
+uses a **1,107,848-byte XZ archive** restoring **38,686,217 exact JSON bytes**;
+fresh restoration passes. Maximum new-case time is 224.44 seconds against the
+900-second budget. Minimum poststep C/W are about 0.000474419/0.937515;
+the smallest retained writer-effect margin is 3.664 times its full error/ULP
+allowance. Operation-local prerequisite reuse and exact accepted subjects avoid
+redundant work; numerical verdicts are not cached. No incomplete run is retained.
+
+CLI/API/notebook/browser expose `--family A_CI_PC --checkpoint 8.4c` and
+`tranche8_status(root, family="A_CI_PC")`. Source/structure status is separate
+from explicit interval recomputation and user acceptance. Accepted `.c`
+coverage is **512/640**, with **zero passing pending cells**; `.b` remains
+closed at 322/322. C_RG2b and A_RG2b are next, then all-ten reconciliation.
+Aggregate `.c`, `.d`–`.i`, 8.5 and 8.6 remain open.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed
