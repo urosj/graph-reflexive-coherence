@@ -3075,8 +3075,21 @@ the full ten-profile plan.
         See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md).
       - [x] User acceptance on 2026-10-08 covers all 64 named A_CI+PC
         history cells, separately from aggregate `.c`.
-    - [ ] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section
+    - [x] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section
       bounds, K event versus K-minus ordinary entry, including reset; retain C1 limits.
+      - [x] Bind all 32 target charts, exact charge maps, completion/section
+        budgets and exact D45 reuse; reconcile paper/spec and eight live
+        side-tool equation traces, retaining the C1 debt. Signed clamp faces,
+        noncommuting H/D and adjacent K/K-minus boundaries pass preparation.
+      - [x] Finish thirty native cases with independent pre-event predictions,
+        both-role ten-step continuations and fresh final sections.
+      - [x] Pressure saved six-level chains, first-predecessor tail, signed
+        reads, lagged invariance, distinct error norms and lifecycle consumers;
+        publish completed compact evidence and synchronize discovery surfaces.
+        See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md).
+        Accepted `.c` coverage is now 576/640 across nine families.
+      - [x] User acceptance on 2026-10-08 covers all 64 named C_RG2b
+        history cells, separately from aggregate `.c`.
     - [ ] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W
       lineage/log writing and fresh sections; retain completion and C1 limits.
     - [ ] Reconcile shared checks and all ten family dispositions through

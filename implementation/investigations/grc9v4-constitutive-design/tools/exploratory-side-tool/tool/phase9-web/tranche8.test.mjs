@@ -67,6 +67,22 @@ test('A_CI_PC boundary execution binds separate scoped acceptance', () => {
   }
 });
 
+test('C_RG2b boundary execution records separate scoped acceptance', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out), /8.4c C_RG2b — accepted_bounded/);
+  assert.match(text(out), /64\/64 accepted history cells; 0 passing cells pending acceptance/);
+  const i=evidence.coverage.boundary_contract.family_results.findIndex(r=>r.family==='C_RG2b');
+  const row=evidence.coverage.boundary_contract.family_results[i];
+  assert.equal(row.passed_cases,30);assert.equal(row.exact_reuse_cases,2);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');assert.equal(row.accepted_cells,64);
+  assert.match(row.comparison_scope,/six_level_inverse_chain/);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=64,r=>r.native_trajectories_rerun=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('A_OS oracle scope is not native boundary acceptance', () => {
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out), /32\/32 independent oracle expectations pass/);

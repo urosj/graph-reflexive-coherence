@@ -2692,3 +2692,15 @@ slack, W lineage and separate W/Z writer scope. The selected-family CLI/API and
 notebook cell avoid unrelated family validation; full browser data is rebuilt
 once at the completed checkpoint. Status authenticates retained sources and
 structure; numerical recomputation remains an explicit selected checker action.
+
+
+### P9-8.4c C_RG2b boundary evidence
+
+Expose thirty new C_RG2b cases and two exact D45 subjects as 64 passing cells
+separately accepted on 2026-10-08. Keep `.c` accepted coverage at 576/640 and
+`.b` at 322/322. Bind complete signed chains, first-predecessor and section
+tails, lagged invariance, full C current/readback and distinct bridge norms.
+The signed completion differs from the paper's compact-support extension;
+C1 remains unresolved. Reuse the selected-family CLI/API/notebook routes and
+pinned browser view, preserving fail-closed source and scope checks. Publish
+only completed, exactly compacted and losslessly compressed evidence.

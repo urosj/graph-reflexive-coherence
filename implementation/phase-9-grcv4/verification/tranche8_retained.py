@@ -1,7 +1,7 @@
 """Run an unchanged boundary checker with operation-local prerequisite reuse."""
 
 import importlib
-from contextlib import redirect_stdout
+from contextlib import redirect_stdout, nullcontext
 from io import StringIO
 from pathlib import Path
 import sys
@@ -35,7 +35,8 @@ def main():
         original = sys.argv
         try:
             sys.argv = [str(expected), *options]
-            with redirect_stdout(output):
+            with redirect_stdout(output), (module.b.exact_backend(module.b.ExactBackend.FLINT)
+                    if name == "p984c_crg2b_runtime" else nullcontext()):
                 module.main()
         finally:
             sys.argv = original

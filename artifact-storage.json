@@ -185,6 +185,14 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CPCResults.json.xz",
       "storage_size": 701880,
       "storage_sha256": "9879c587b587ce6c67aa8835c58dd5b05a5a20de19583cbe9e9099af92e19eb5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bResults.json",
+      "size": 44620259,
+      "sha256": "180aee7f94b0a90d8502eaaf1c473e70f5a39637171dc07dd1478dc10cef37af",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bResults.json.xz",
+      "storage_size": 1180412,
+      "storage_sha256": "0227b041b4945fd3befa40ba18d0284376866f2be4941f2a769a7198f2383ac1"
     }
   ]
 }

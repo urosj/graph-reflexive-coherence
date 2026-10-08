@@ -91,9 +91,23 @@ Use `status --family A_CI_PC --checkpoint 8.4c` for the selected-family view,
 `verify-retained --family A_CI_PC --checkpoint 8.4c` for the retained checker,
 or `tranche8_status(root, family="A_CI_PC")` in the API/notebook. Optional
 `--recheck-numerics` recomputes independent interval certificates; ordinary
-status does not. C_RG2b and A_RG2b remain unexecuted at this boundary checkpoint.
+status does not. A_RG2b remains unexecuted at this boundary checkpoint.
 The [review](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md)
 records the pressure, claim restrictions and separate user decision.
+
+C_RG2b now supplies thirty new native cases plus two exact D45 reuses:
+64 passing `.c` cells **separately accepted on 2026-10-08**. Accepted coverage
+is now 576/640; A_RG2b and aggregate `.c` remain open. `.b` remains 322/322. The
+[review](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md)
+binds signed completion, six-level inverse chains, the q^5 first-predecessor
+and q^6 section tails, lagged invariance and separate error norms. No C1 or
+compact-support exterior claim follows. Repeated chains/certificates are
+stored once and packed losslessly; only completed evidence is published.
+Use `status --family C_RG2b --checkpoint 8.4c`,
+`verify-retained --family C_RG2b --checkpoint 8.4c`, or
+`tranche8_status(root, family="C_RG2b")`. Optional `--recheck-numerics`
+recomputes independent equations and effect bounds; status only authenticates
+sources and retained structure. Neither reruns native trajectories.
 
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,

@@ -3005,6 +3005,24 @@ side-tool and handoff once; all 64 cells were separately accepted by the user on
 No new parameter authority, uniform trajectory theorem or numerical caching
 is introduced.
 
+**C_RG2b boundary work unit (2026-10-08).** Continue on the same
+`work/p9-8-4c-acipc` branch. Bind 32 charts and both actual resource histories
+to the accepted signed argument completion. Preserve the six-level/18-sweep
+section recipe, q^6 section tail and distinct q^5 first-predecessor tail.
+Pressure signed clamp faces, noncommuting H/D, physical K versus ordinary
+K-minus entry (also at zero timestep), and the side-tool's eight equation traces
+plus unresolved C1 debt. Predict both ten-step continuations before each new
+event; execute thirty cases and reuse only the two exact D45 subjects. Check
+saved inverse levels, signed vectors, lagged invariance and separate current-L2,
+resource-sup and geometry-row-sum bridges, publication and reference consumers.
+Complete source/display/storage reconciliation once; user acceptance remains
+separate from passing execution. No compact-support exterior theorem, C1
+regularity, arbitrary-graph support or accumulated trajectory bound is inferred.
+The [completed bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md)
+records 64 passing cells and fourteen focused methods. The user separately
+accepted this scope on 2026-10-08, bringing `.c` coverage to 576/640; A_RG2b
+and aggregate reconciliation remain open.
+
 Keep the shared side-tool views and handoff synchronized with each reviewed
 family. Closure requires all ten family items and the declared required cells,
 without advancing `.d`–`.i`, 8.5 or 8.6. Apply the

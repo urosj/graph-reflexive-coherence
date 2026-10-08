@@ -2244,3 +2244,15 @@ instead of stale fixed totals and opens any pending case details explicitly.
   selected status/checker dispatch avoids unrelated numerical campaigns.
 - [x] Record the 2026-10-08 scoped user acceptance separately. Aggregate `.c`,
   C_RG2b and A_RG2b boundary campaigns remain open.
+
+
+### P9-8.4c C_RG2b boundary successor
+
+- [x] Expose thirty new cases and two exact D45 reuses as 64 passing history
+  cells separately accepted on 2026-10-08; `.c` is 576/640 and `.b` 322/322.
+- [x] Bind signed six-level chains, q^5/q^6 tails, lagged invariance,
+  signed reads and separate bridge norms without C1 or compact-support claims.
+- [x] Synchronize selected-family CLI/API/notebook, pinned browser/source
+  routes and corruption/dispatch checks without repeating native campaigns.
+- [x] Record separate user acceptance on 2026-10-08; A_RG2b and aggregate
+  `.c` remain open.
