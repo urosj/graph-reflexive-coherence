@@ -83,6 +83,18 @@ nominal predictions; neither command reruns native trajectories. Family status
 uses `tranche8_status(root, family="C_CI_PC")`. The seven accepted `.c` families
 contribute 448 cells; three families and aggregate `.c` remain open.
 
+A_CI+PC now supplies thirty new native cases and two exact D45 reuses: 64
+`.c` history cells **accepted separately on 2026-10-08**, bringing accepted
+coverage to 512/640. Its unchanged composite law retains full joint roots, exact W
+lineage, whole-source Z archives/target reset and correctly staged W/Z writers.
+Use `status --family A_CI_PC --checkpoint 8.4c` for the selected-family view,
+`verify-retained --family A_CI_PC --checkpoint 8.4c` for the retained checker,
+or `tranche8_status(root, family="A_CI_PC")` in the API/notebook. Optional
+`--recheck-numerics` recomputes independent interval certificates; ordinary
+status does not. C_RG2b and A_RG2b remain unexecuted at this boundary checkpoint.
+The [review](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md)
+records the pressure, claim restrictions and separate user decision.
+
 All ten accepted 8.3 integrations are bounded small-graph results, not ten
 arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.

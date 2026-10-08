@@ -2991,6 +2991,20 @@ regressions belong to shared changes and tranche closure. Existing accepted
 checkers and original evidence stay unchanged. Use family-scoped side-tool
 checks during work; synchronize the full view once at the completed checkpoint.
 
+**A_CI+PC boundary work unit (2026-10-08).** On
+`work/p9-8-4c-acipc`, bind all 32 layouts and both actual histories using the
+accepted R=2048, kappa_H=2^-15, resource radius 16, positive W chart and
+unit-plus-unit composite law. Check independent target construction, exact
+C/W transfer, zero target Z and strict whole-domain root bounds; predict each
+both-role continuation before its native event. Execute thirty new events and
+ten steps per role with fresh final roots, reusing only the two exact accepted
+D45 subjects. Pressure full roots and signed reads, fixed old Z/same-root
+source, fresh-C/incoming-W/selected-J history writing, both writers' next-root
+effects, domain outliers and corrupted lifecycle evidence. Synchronize the
+side-tool and handoff once; all 64 cells were separately accepted by the user on 2026-10-08.
+No new parameter authority, uniform trajectory theorem or numerical caching
+is introduced.
+
 Keep the shared side-tool views and handoff synchronized with each reviewed
 family. Closure requires all ten family items and the declared required cells,
 without advancing `.d`–`.i`, 8.5 or 8.6. Apply the

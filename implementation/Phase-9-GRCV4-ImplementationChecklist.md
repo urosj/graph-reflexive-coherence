@@ -3061,8 +3061,20 @@ the full ten-profile plan.
         synchronization.
       - [x] Review and accept the bounded C_CI+PC result separately from `.c`:
         user acceptance on 2026-10-07 covers all 64 named history cells.
-    - [ ] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,
+    - [x] P9-8.4c[A_CI_PC]: Independent composite root/domain bounds,
       exact W lineage, whole-Z reset/loss and both writers' next-root effects.
+      - [x] Bind all 32 layouts/both actual histories under the accepted
+        R=2048, kappa_H=2^-15 and gain-two law. Check independent port graphs,
+        exact charge/W lineage, zero target Z, B_2R coverage, strict source
+        slack and contraction. Both-role predictions precede each event.
+      - [x] Complete thirty new events, 600 target steps and 60 fresh final
+        roots; reuse two exact D45 cases. Full retained checking and four
+        focused methods pass: signed reads, both writer stages/next-root
+        effects, domain/certificate outliers and lifecycle corruption. The
+        side-tool records separate acceptance, with 512/640 accepted.
+        See the [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md).
+      - [x] User acceptance on 2026-10-08 covers all 64 named A_CI+PC
+        history cells, separately from aggregate `.c`.
     - [ ] P9-8.4c[C_RG2b]: Accepted completion and inverse-chain/section
       bounds, K event versus K-minus ordinary entry, including reset; retain C1 limits.
     - [ ] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W

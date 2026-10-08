@@ -2233,3 +2233,14 @@ instead of stale fixed totals and opens any pending case details explicitly.
 - [x] Pressure changed/missing/new package sources, repinned mutations,
       reciprocal debt routing, provenance and closure boundaries with the
       focused admission suite; no scientific campaign reruns.
+
+
+### P9-8.4c A_CI+PC boundary successor
+
+- [x] Expose thirty new native cases plus two exact D45 reuses as 64 passing
+  history cells separately accepted on 2026-10-08, with 512/640 accepted `.c`
+  and 322/322 accepted `.b` coverage.
+- [x] Bind CLI/API/notebook/browser sources and full-root/signed-read/W/Z scope;
+  selected status/checker dispatch avoids unrelated numerical campaigns.
+- [x] Record the 2026-10-08 scoped user acceptance separately. Aggregate `.c`,
+  C_RG2b and A_RG2b boundary campaigns remain open.

@@ -2681,3 +2681,14 @@ Historical loaders/pins, scientific certificates and global debts are unchanged.
 No browser/notebook/native or aggregate admission is added.
 Reuse the supplied section evaluator and pressure commands; do not mistake
 local retained-evidence checks for a full E/R rerun or native admission.
+
+
+### P9-8.4c A_CI+PC boundary evidence
+
+Expose the thirty new A_CI+PC cases and two exact D45 reuses as 64 passing
+history cells accepted separately on 2026-10-08. Keep accepted `.c` coverage
+at 512/640 and `.b` at 322/322. Preserve full-root, signed-read, strict composite
+slack, W lineage and separate W/Z writer scope. The selected-family CLI/API and
+notebook cell avoid unrelated family validation; full browser data is rebuilt
+once at the completed checkpoint. Status authenticates retained sources and
+structure; numerical recomputation remains an explicit selected checker action.
