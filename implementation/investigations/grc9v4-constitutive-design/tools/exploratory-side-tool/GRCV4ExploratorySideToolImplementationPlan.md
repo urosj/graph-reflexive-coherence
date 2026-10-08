@@ -2704,3 +2704,15 @@ The signed completion differs from the paper's compact-support extension;
 C1 remains unresolved. Reuse the selected-family CLI/API/notebook routes and
 pinned browser view, preserving fail-closed source and scope checks. Publish
 only completed, exactly compacted and losslessly compressed evidence.
+
+
+### P9-8.4c A_RG2b boundary evidence
+
+Expose thirty new A_RG2b cases and two exact D45 reuses as 64 passing cells
+separately accepted on 2026-10-08. Keep `.c` at 640/640 accepted and `.b`
+at 322/322. Bind coupled four-level C/Y chains, q^4/q^3 tails, log-query
+uncertainty, lagged invariance, exact W lineage and writer/next-current effects.
+Preserve signed-completion and unresolved C1 limits. Selected CLI/API/notebook
+status authenticates this family only; full browser data is rebuilt once at
+the completed checkpoint. Numerical rechecking remains explicit and never
+executes native trajectories. Publish completed, losslessly compressed evidence.

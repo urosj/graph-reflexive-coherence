@@ -3023,6 +3023,24 @@ records 64 passing cells and fourteen focused methods. The user separately
 accepted this scope on 2026-10-08, bringing `.c` coverage to 576/640; A_RG2b
 and aggregate reconciliation remain open.
 
+**A_RG2b boundary work unit (2026-10-08).** Continue on the same branch
+from accepted C_RG2b `7192265`. Bind all 32 target trees to the unchanged
+signed C/scaled-log-W completion, four inverse levels and eighteen sweeps;
+keep q^4 section and q^3 first-predecessor tails distinct. Check exact C/W
+transfer and all eleven side-tool traces, physical K versus ordinary K-minus
+and signed C/Y clamp outliers. Predict both-role ten-step continuations before
+each event; execute thirty cases with fresh final sections and reuse only the
+two exact D45 subjects. Pressure saved coupled-chain residuals, log-query
+uncertainty, signed vectors, lagged invariance, current-L2/state-CY/geometry
+norms and fresh-C/incoming-W/selected-J writing through its next-read effect.
+Retain complete consumed operands in shared-context, losslessly packed results;
+no incomplete run record. Synchronize discovery/review/handoff once. Acceptance
+remains separate; the signed-completion and unresolved C1 restrictions remain.
+The [completed bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md)
+records 64 passing cells, three preparation/storage methods and eleven
+saved-operand methods. The user accepted all 64 cells on 2026-10-08, bringing
+`.c` to 640/640 accepted; aggregate reconciliation follows the family commit.
+
 Keep the shared side-tool views and handoff synchronized with each reviewed
 family. Closure requires all ten family items and the declared required cells,
 without advancing `.d`–`.i`, 8.5 or 8.6. Apply the

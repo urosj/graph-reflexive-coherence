@@ -172,7 +172,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(row["status"], "accepted_bounded")
         self.assertFalse(row["native_trajectories_rerun"])
         rows = self.value["coverage"]["boundary_contract"]["family_results"]
-        self.assertEqual(sum(v["accepted_cells"] for v in rows), 576)
+        self.assertEqual(sum(v["accepted_cells"] for v in rows), 640)
         self.assertEqual(sum(v["passing_pending_cells"] for v in rows), 0)
         with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
             for key in ("inputs", "results", "review"):
@@ -193,7 +193,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(row["accepted_cells"], 64)
         self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
         self.assertEqual(row["status"], "accepted_bounded")
-        self.assertEqual(sum(v["accepted_cells"] for v in rows), 576)
+        self.assertEqual(sum(v["accepted_cells"] for v in rows), 640)
         self.assertFalse(row["native_trajectories_rerun"])
         with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
             for key in ("inputs", "results", "review"):
@@ -208,6 +208,33 @@ class EvidenceTests(unittest.TestCase):
             self.assertNotIn("--run", command)
         original = Path.read_bytes
         for name in index.BOUNDARY_CRG2B_SOURCES:
+            path = index.ROOT / name
+            with patch.object(Path, "read_bytes", lambda p: b"forged" if p == path else original(p)):
+                with self.subTest(source=name), self.assertRaisesRegex(ValueError, "source drift"):
+                    index.Sources(index.ROOT).raw(name)
+
+    def test_boundary_arg2b_accepted_execution_sources_and_dispatch(self):
+        rows = self.value["coverage"]["boundary_contract"]["family_results"]
+        row = next(r for r in rows if r["family"] == "A_RG2b")
+        self.assertEqual((row["passed_cases"], row["exact_reuse_cases"], row["passing_pending_cells"]), (30, 2, 0))
+        self.assertEqual(row["accepted_cells"], 64)
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        self.assertEqual(row["status"], "accepted_bounded")
+        self.assertEqual(sum(v["accepted_cells"] for v in rows), 640)
+        self.assertFalse(row["native_trajectories_rerun"])
+        with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
+            for key in ("inputs", "results", "review"):
+                raw, ref = api.tranche8_source(index.ROOT, row[key]["path"])
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(), ref["sha256"])
+                self.assertEqual(ref["basis"], "pinned_boundary_execution_with_scoped_acceptance")
+        with patch.object(sys, "argv", ["query", "verify-retained", "--family", "A_RG2b", "--checkpoint", "8.4c"]), patch.object(index, "checked", side_effect=AssertionError("unrelated family check")), patch.object(index.subprocess, "run") as execute:
+            index.main()
+            command = execute.call_args.args[0]
+            self.assertTrue(command[-2].endswith("p984c_arg2b_runtime.py"))
+            self.assertEqual(command[-1], "--check-retained")
+            self.assertNotIn("--run", command)
+        original = Path.read_bytes
+        for name in index.BOUNDARY_ARG2B_SOURCES:
             path = index.ROOT / name
             with patch.object(Path, "read_bytes", lambda p: b"forged" if p == path else original(p)):
                 with self.subTest(source=name), self.assertRaisesRegex(ValueError, "source drift"):
@@ -268,7 +295,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(row["new_native_root_reads"], 60)
         self.assertEqual((row["native_steps"], row["topology_events"], row["runtime_cells_closed"]), (0, 0, 0))
         self.assertFalse(row["interval_equations_recomputed"])
-        self.assertEqual({r["family"] for r in self.value["coverage"]["boundary_contract"]["family_results"]}, {"C_OS", "A_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b"})
+        self.assertEqual({r["family"] for r in self.value["coverage"]["boundary_contract"]["family_results"]}, {"C_OS", "A_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"})
         with patch.object(index, "checked", return_value=self.value), patch.object(api, "_index", return_value=index):
             for key in ("inputs", "results", "review"):
                 ref = row[key]

@@ -2256,3 +2256,15 @@ instead of stale fixed totals and opens any pending case details explicitly.
   routes and corruption/dispatch checks without repeating native campaigns.
 - [x] Record separate user acceptance on 2026-10-08; A_RG2b and aggregate
   `.c` remain open.
+
+
+### P9-8.4c A_RG2b boundary successor
+
+- [x] Expose thirty new cases and two exact D45 reuses as 64 passing history
+  cells separately accepted on 2026-10-08; `.c` is 640/640 and `.b` 322/322.
+- [x] Bind C/Y inverse chains, signed reads, log-query uncertainty, lagged
+  invariance and exact W lineage/writer/next-read scope without C1 claims.
+- [x] Synchronize selected CLI/API/notebook, pinned browser/source routes and
+  rejection/dispatch checks without repeating native campaigns.
+- [x] Record separate scoped acceptance on 2026-10-08; aggregate `.c`
+  reconciliation follows the family commit.

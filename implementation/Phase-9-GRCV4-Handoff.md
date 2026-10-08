@@ -8,8 +8,9 @@ P9-8.4b remains closed at **322/322 accepted cells**. P9-8.4c covers all ten
 families and both histories, as already assigned by the accepted `.a`
 `additional_work_register`; C_OS, A_OS, C_CI, A_CI, C_PC, A_PC and C_CI+PC
 were accepted at 448 history cells. A_CI+PC and C_RG2b are now separately
-accepted, bringing the current total to 576/640. A_RG2b remains unexecuted
-at `.c`; aggregate reconciliation remains open. Current work is on
+accepted. A_RG2b was separately accepted on 2026-10-08, bringing the current
+total to 640/640; aggregate reconciliation follows its family commit.
+Current work is on
 `work/p9-8-4c-acipc`, created from main `aa965673` on 2026-10-08.
 
 The user accepted A_CI+PC in commit `1a5ad19` and asked to continue on the
@@ -23,6 +24,18 @@ through CLI/API/notebook/browser. Original acceptance and aggregate-closure
 flags remain false.
 Repeated chains/certificates and matrix context are stored once by exact digest,
 then packed losslessly. No incomplete or progress records are retained.
+
+The [A_RG2b successor](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md)
+now completes thirty new events, 600 target steps and 60 fresh final sections;
+two exact D45 subjects complete 64 history cells, accepted on 2026-10-08.
+Preparation, full retained-consumer checking and eleven saved-operand methods
+pass. Four-level coupled C/Y chains, log-query uncertainty, q^4/q^3 tails,
+lagged invariance, exact W lineage and writer/next-read effects retain their
+accepted bounds and completion/C1 restrictions. All eleven live side-tool
+claim traces match. Completed results share repeated operands and use byte-exact
+XZ storage; no incomplete run is retained. CLI/API/notebook/browser exposes the
+new family and the 640 accepted cells. No production/specification
+change, arbitrary-graph support or aggregate `.c` closure is claimed.
 
 Planning was committed as `26714bd4`. The user accepted the first task after
 pressure testing: [boundary contract/review](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md).

@@ -114,6 +114,21 @@ arbitrary-graph implementations. Larger-configuration probes retain 16 passed,
 16 incomplete and eight rejected outcomes; none is larger-runtime acceptance.
 Forty disabled-profile surfaces remain Tranche 9 work. General ATC is not implied.
 
+A_RG2b now supplies thirty new native cases and two exact D45 reuses:
+64 passing `.c` cells **separately accepted on 2026-10-08**. Accepted coverage
+is now 640/640 across all ten families, while aggregate
+reconciliation remains open. The
+[bounded review](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md)
+binds coupled C/Y chains, scaled-log query uncertainty, q^4/q^3 tails, lagged
+invariance, W lineage and fresh-C/selected-J writing through the next read.
+Signed-completion and C1 restrictions remain unchanged. Select
+`status --family A_RG2b --checkpoint 8.4c` or
+`tranche8_status(root, family="A_RG2b")`. Use `verify-retained` with the same
+family/checkpoint for consumer checking; `--recheck-numerics` explicitly
+recomputes independent interval equations. These commands do not run native
+trajectories. The complete record uses authenticated XZ storage.
+
+
 ## Choose the check you need
 
 For work on one completed capacity-boundary family, use

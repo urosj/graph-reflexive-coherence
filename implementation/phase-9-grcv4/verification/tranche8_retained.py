@@ -36,7 +36,7 @@ def main():
         try:
             sys.argv = [str(expected), *options]
             with redirect_stdout(output), (module.b.exact_backend(module.b.ExactBackend.FLINT)
-                    if name == "p984c_crg2b_runtime" else nullcontext()):
+                    if name in ("p984c_crg2b_runtime", "p984c_arg2b_runtime") else nullcontext()):
                 module.main()
         finally:
             sys.argv = original

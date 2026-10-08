@@ -3090,8 +3090,21 @@ the full ten-profile plan.
         Accepted `.c` coverage is now 576/640 across nine families.
       - [x] User acceptance on 2026-10-08 covers all 64 named C_RG2b
         history cells, separately from aggregate `.c`.
-    - [ ] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W
+    - [x] P9-8.4c[A_RG2b]: Independent coupled C/Y chain bounds, exact W
       lineage/log writing and fresh sections; retain completion and C1 limits.
+      - [x] Bind 32 target charts, both-role C/W transfer, four-level section
+        bounds and exact D45 reuse; pressure signed C/Y clamp faces, physical
+        K/K-minus gates and all eleven live side-tool traces with the C1 debt.
+      - [x] Predict both-role continuations before each new event; execute
+        thirty cases, 600 target steps and 60 fresh final sections.
+      - [x] Pressure saved coupled inverse levels and log-query uncertainty,
+        q^4/q^3 tails, signed reads, current-L2/state-CY/geometry bounds,
+        exact W lineage and fresh-C/selected-J writer/next-read effects.
+      - [x] Publish completed compact evidence and synchronize side-tool,
+        review and handoff. All 64 history cells pass; see the
+        [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md).
+      - [x] User acceptance on 2026-10-08 covers all 64 A_RG2b history
+        cells; `.c` now has 640/640 accepted, pending aggregate reconciliation.
     - [ ] Reconcile shared checks and all ten family dispositions through
       CLI/API/notebook/browser and the handoff. Keep execution and acceptance
       separate; close `.c` only after its required cells and all ten family
