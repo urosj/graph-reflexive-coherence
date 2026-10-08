@@ -67,8 +67,14 @@ export function renderTranche8(value, container, create = tag => document.create
     for (const row of run.cases) append(section, 'p', `${row.case_id}: ${row.case_passed ? 'CASE PASSED' : 'INCOMPLETE CASE'}; event committed=${row.event_committed}; first failure=${JSON.stringify(row.first_failure)}`);
   }
   const boundary = c.boundary_contract;
+  const closeout = boundary.closeout;
+  append(container, 'h3', '8.4c closed — accepted bounded capacity/phase coverage');
+  append(container, 'p', `${closeout.accepted_cells}/${closeout.required_cells} accepted history cells across all ten families; ${closeout.new_history_cells} new and ${closeout.exact_reused_history_cells} exact reuses. 8.4d–i and 8.5/8.6 remain open.`);
+  const closeoutLinks = append(container, 'p', '');
+  link(closeoutLinks, closeout.record, 'Exact aggregate reconciliation');
+  append(closeoutLinks, 'span', ' · '); link(closeoutLinks, closeout.review, 'Closeout scope');
   append(container, 'h3', '8.4c boundary preregistration — no runtime credit');
-  append(container, 'p', `${boundary.counts.layouts} layouts across ${boundary.counts.families} families; ${boundary.counts.history_cells} current/reset obligations: ${boundary.counts.new_history_cells} new, ${boundary.counts.reuse_candidates} exact-reuse candidates. ${boundary.counts.executed_cells} executed; ${boundary.counts.accepted_cells} accepted. Matrix and budgets accepted; target-domain and oracle prerequisites remain open.`);
+  append(container, 'p', `${boundary.counts.layouts} layouts across ${boundary.counts.families} families; ${boundary.counts.history_cells} current/reset obligations: ${boundary.counts.new_history_cells} new, ${boundary.counts.reuse_candidates} exact-reuse candidates. ${boundary.counts.executed_cells} executed; ${boundary.counts.accepted_cells} accepted at preregistration. These original planning counts are unchanged; completed family evidence and aggregate acceptance are reported separately.`);
   const boundaryLinks = append(container, 'p', '');
   link(boundaryLinks, boundary.record, 'Full matrix, recipes and authority traces');
   append(boundaryLinks, 'span', ' · '); link(boundaryLinks, boundary.review, 'Boundary review');

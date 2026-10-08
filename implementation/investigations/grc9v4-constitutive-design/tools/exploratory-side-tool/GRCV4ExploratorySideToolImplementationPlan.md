@@ -2716,3 +2716,13 @@ Preserve signed-completion and unresolved C1 limits. Selected CLI/API/notebook
 status authenticates this family only; full browser data is rebuilt once at
 the completed checkpoint. Numerical rechecking remains explicit and never
 executes native trajectories. Publish completed, losslessly compressed evidence.
+
+### P9-8.4c aggregate closeout (2026-10-08)
+
+Expose the completed aggregate reconciliation in CLI/API/notebook/browser:
+  all ten families, 640/640 accepted cells (600 new, 40 exact reuses), separate
+  review decisions and unchanged original execution flags. Authenticate exact
+  case/role coverage and A_OS oracle-to-runtime reuse mapping. Preserve each
+  comparison scope, RG2b completion/C1 limits and shared-mechanics boundaries.
+  `coverage.boundary_contract.closeout` and child P9-8.4c are closed; whole
+  P9-8.4 and `.d–i`, 8.5/8.6 remain open. No numerical rerun or new authority.

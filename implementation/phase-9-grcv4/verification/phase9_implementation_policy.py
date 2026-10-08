@@ -231,6 +231,10 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4c-Closeout.json',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md',
+    'implementation/phase-9-grcv4/verification/p984c_closeout.py',
+    'implementation/phase-9-grcv4/verification/test_p984c_closeout.py',
     "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json.xz",
     "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/conductance_retention_probe.json.xz",
     "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/return_orbit_registry.json.xz",

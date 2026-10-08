@@ -34,7 +34,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(children["P9-8.4b"]["status"], "accepted_bounded")
         self.assertTrue(children["P9-8.4b"]["accepted"])
         self.assertTrue(all(not row["accepted"] for name, row in children.items()
-                            if name not in {"P9-8.4a", "P9-8.4b"}))
+                            if name not in {"P9-8.4a", "P9-8.4b", "P9-8.4c"}))
         self.assertFalse(v["verification"]["native_trajectories_rerun"])
         self.assertFalse(any(r["runtime_accepted"] for r in v["configuration"]["families"]))
         self.assertEqual(v["future"]["new_public_support"], [])

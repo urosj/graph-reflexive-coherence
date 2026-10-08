@@ -2923,7 +2923,7 @@ the full ten-profile plan.
         [Scoped decision](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md#scoped-user-acceptance).
       [Scope and reproduction](./phase-9-grcv4/tranche-8/P9-8.4b-ARG2bRuntimeReview.md).
 
-  - [ ] P9-8.4c: Pressure capacity and phase boundaries across **all ten
+  - [x] P9-8.4c: Pressure capacity and phase boundaries across **all ten
     families and both current/reset histories**, as already required by
     `P9-8.4a-Coverage.json`'s `additional_work_register`. These are new named
     probes, not a rerun or reopening of the 322 accepted `.b` cells.
@@ -3104,11 +3104,15 @@ the full ten-profile plan.
         review and handoff. All 64 history cells pass; see the
         [bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md).
       - [x] User acceptance on 2026-10-08 covers all 64 A_RG2b history
-        cells; `.c` now has 640/640 accepted, pending aggregate reconciliation.
-    - [ ] Reconcile shared checks and all ten family dispositions through
+        cells; `.c` now has 640/640 accepted. Acceptance committed as `270783f`.
+    - [x] Reconcile shared checks and all ten family dispositions through
       CLI/API/notebook/browser and the handoff. Keep execution and acceptance
       separate; close `.c` only after its required cells and all ten family
       items are reviewed and accepted, or an explicit scope change is approved.
+      Closed on 2026-10-08 at 640/640 under the user-requested closeout:
+      [exact reconciliation and restrictions](./phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md).
+      All ten families, shared mechanics and both roles reconcile; 600 new
+      and 40 exact reused cells, with no scope change or numerical rerun.
       Deeper expansion/covariance/larger graphs remain `.d`–`.h`; full atomic
       rollback, replay and injected publication failures remain P9-8.5.
     Use the [current evidence rules](../docs/reference/EvidenceStorage.md):

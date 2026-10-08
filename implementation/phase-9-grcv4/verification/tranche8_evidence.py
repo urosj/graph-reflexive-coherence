@@ -23,6 +23,7 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+BOUNDARY_CLOSEOUT_SOURCES = {'implementation/phase-9-grcv4/tranche-8/P9-8.4c-Closeout.json': '052d1a81bfdd3ebe1b763fa87da26805df53a84624e6ffee27fdb30204a4d440', 'implementation/phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md': '206643c340ef1e4303973da67685fa373707b68b2336e39a1d16f01732627ab0'}
 # Preregistration pins confer neither numerical evidence nor acceptance.
 BOUNDARY_CONTRACT_SOURCES = {
     BASE + "P9-8.4c-BoundaryContract.json": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
@@ -238,14 +239,15 @@ class Sources:
         if name not in self.values:
             path = self.root / name
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
-            boundary_pins = {**BOUNDARY_ARG2B_SOURCES, **BOUNDARY_CRG2B_SOURCES, **BOUNDARY_ACIPC_SOURCES, **BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES, **BOUNDARY_ACI_ORACLE_SOURCES, **BOUNDARY_ACI_SOURCES, **BOUNDARY_CPC_SOURCES, **BOUNDARY_APC_SOURCES, **BOUNDARY_CCIPC_SOURCES}
+            boundary_pins = {**BOUNDARY_CLOSEOUT_SOURCES, **BOUNDARY_ARG2B_SOURCES, **BOUNDARY_CRG2B_SOURCES, **BOUNDARY_ACIPC_SOURCES, **BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES, **BOUNDARY_ACI_ORACLE_SOURCES, **BOUNDARY_ACI_SOURCES, **BOUNDARY_CPC_SOURCES, **BOUNDARY_APC_SOURCES, **BOUNDARY_CCIPC_SOURCES}
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_ARG2B_SOURCES else
+                    basis=("pinned_boundary_aggregate_closeout" if name in BOUNDARY_CLOSEOUT_SOURCES else
+                        "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_ARG2B_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CRG2B_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_ACIPC_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CCIPC_SOURCES else
@@ -1003,6 +1005,14 @@ def _build(root):
         review=sources.ref(boundary_arg2b_runtime.REVIEW),
         reuse_evidence=sources.ref(BASE + "P9-8.4b-ARG2bResults.json"),
         comparison_scope="signed_completion_four_level_CY_chain_pointwise_section_lagged_invariance_exact_W_lineage_and_writer_next_read_effects_not_C1_or_uniform_trajectory_bound"))
+    import p984c_closeout as boundary_closeout
+    reconciliation = boundary_closeout.reconcile(boundary_contract, boundary_view,
+        {r["family"]: sources.read(r["inputs"]["path"]) for r in boundary_view["family_results"]})
+    require(sources.read(boundary_closeout.RECORD) == reconciliation, "boundary aggregate reconciliation drift")
+    boundary_view["closeout"] = dict(reconciliation, record=sources.ref(boundary_closeout.RECORD),
+                                     review=sources.ref(boundary_closeout.REVIEW))
+    child = next(r for r in children if r["work_id"] == "P9-8.4c")
+    child.update(status="accepted_bounded", accepted=True)
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
         runtime_scope_snapshot=scope,
@@ -1081,7 +1091,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 

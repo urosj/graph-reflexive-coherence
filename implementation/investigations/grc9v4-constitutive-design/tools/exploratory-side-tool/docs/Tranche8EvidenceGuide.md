@@ -12,7 +12,14 @@ subject. Raw execution retains its original unaccepted flags; the separately
 pinned reviews record user acceptance. The A_PC successor contributes 32
 accepted cells through its own separate scoped decision. C_CI_PC adds 32
 accepted cells through its own separate scoped decision.
-The bounded all-ten P9-8.4b item is closed; P9-8.4c–i remain open.
+Both bounded all-ten items are now closed: P9-8.4b at 322/322 and P9-8.4c
+at **640/640 accepted history cells**. P9-8.4d–i, 8.5 and 8.6 remain open.
+`coverage.boundary_contract.closeout` exposes the aggregate record, exact
+coverage digest, all ten acceptance/source links, 600 new and 40 reused
+cells, retained comparison scopes and remaining work. The browser labels
+planning counts as historical. Selected-family status checks only that family;
+use the complete status view to authenticate aggregate closure.
+The paragraphs below retain the successive family checkpoints.
 `coverage.boundary_contract` now exposes the first `.c` task: 32 layouts,
 640 both-role obligations (600 new, 40 exact-reuse candidates), budgets,
 prerequisites and exact contract/review links. The user accepted the matrix and
@@ -471,3 +478,7 @@ supplies acceptance while raw execution/recheck flags stay unchanged. It
 credits the final 32 cells and closes bounded P9-8.4b, without closing later
 8.4 work. Completed evidence uses compact poststates and
 lossless XZ storage; interrupted runs are not repository artifacts.
+
+The 2026-10-08 aggregate reconciliation is complete; the preceding family
+checkpoints retain their historical acceptance order. See
+[bounded closeout](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md).

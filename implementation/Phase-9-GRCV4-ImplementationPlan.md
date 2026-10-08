@@ -3039,7 +3039,16 @@ remains separate; the signed-completion and unresolved C1 restrictions remain.
 The [completed bounded review](./phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md)
 records 64 passing cells, three preparation/storage methods and eleven
 saved-operand methods. The user accepted all 64 cells on 2026-10-08, bringing
-`.c` to 640/640 accepted; aggregate reconciliation follows the family commit.
+`.c` to 640/640 accepted; family acceptance is committed as `270783f`.
+
+**P9-8.4c closeout (2026-10-08).** The user requested aggregate closure
+after that commit. The [closeout review](./phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md)
+and compact machine-checked reconciliation account for every named cell and
+separate family acceptance: 600 new plus 40 exact reuses, 640/640 total.
+Shared mechanical checks contribute no numerical credit. CLI/API/notebook/
+browser now expose this bounded closure separately from unchanged planning
+and execution flags. No numerical rerun or widened scientific claim is needed.
+P9-8.4d is next; `.d–i`, 8.5 and 8.6 remain open.
 
 Keep the shared side-tool views and handoff synchronized with each reviewed
 family. Closure requires all ten family items and the declared required cells,

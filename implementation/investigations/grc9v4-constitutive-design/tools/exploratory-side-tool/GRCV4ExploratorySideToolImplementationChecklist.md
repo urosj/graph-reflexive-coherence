@@ -2268,3 +2268,13 @@ instead of stale fixed totals and opens any pending case details explicitly.
   rejection/dispatch checks without repeating native campaigns.
 - [x] Record separate scoped acceptance on 2026-10-08; aggregate `.c`
   reconciliation follows the family commit.
+
+### P9-8.4c aggregate closeout (2026-10-08)
+
+- [x] Expose the completed aggregate reconciliation in CLI/API/notebook/browser:
+  all ten families, 640/640 accepted cells (600 new, 40 exact reuses), separate
+  review decisions and unchanged original execution flags. Authenticate exact
+  case/role coverage and A_OS oracle-to-runtime reuse mapping. Preserve each
+  comparison scope, RG2b completion/C1 limits and shared-mechanics boundaries.
+  `coverage.boundary_contract.closeout` and child P9-8.4c are closed; whole
+  P9-8.4 and `.d–i`, 8.5/8.6 remain open. No numerical rerun or new authority.

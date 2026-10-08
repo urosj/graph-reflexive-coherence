@@ -7449,8 +7449,8 @@ export const TRANCHE8_EVIDENCE = {
       {
         "work_id": "P9-8.4c",
         "title": "Capacity and phase boundaries",
-        "status": "pending",
-        "accepted": false
+        "status": "accepted_bounded",
+        "accepted": true
       },
       {
         "work_id": "P9-8.4d",
@@ -15402,7 +15402,522 @@ export const TRANCHE8_EVIDENCE = {
           },
           "scope": "entry_joint_root_certificates_and_nominal_predictions_not_native_event_or_continuation"
         }
-      ]
+      ],
+      "closeout": {
+        "schema": "p984c_closeout_v1",
+        "work_id": "P9-8.4c",
+        "date": "2026-10-08",
+        "status": "accepted_bounded",
+        "aggregate_closed": true,
+        "required_cells": 640,
+        "accepted_cells": 640,
+        "pending_cells": 0,
+        "new_history_cells": 600,
+        "exact_reused_history_cells": 40,
+        "new_cases": 300,
+        "exact_reused_cases": 20,
+        "coverage_digest": "707eaceb821acf7282b885426c811d97fe48020201ecb6e9d8b4fbbaba942b90",
+        "contract": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryContract.json",
+          "sha256": "c7a142d0691cce9a3e7807bc58c1f6d10481772e26103a7210b81a1f69bcf8d9",
+          "revision": null,
+          "basis": "pinned_preregistration_not_runtime_acceptance"
+        },
+        "contract_acceptance": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md",
+          "sha256": "d13fa1298d0d10526bb89fd43499a346da480ec04da11df064e383c5f8750895",
+          "revision": null,
+          "basis": "pinned_preregistration_not_runtime_acceptance",
+          "anchor": "scoped-user-acceptance"
+        },
+        "mechanics": {
+          "record": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalChecks.json",
+            "sha256": "bfca9935d05b5fb793406765e10e48a1652ec7e203ea40deb93590d0f6cc3c1a",
+            "revision": null,
+            "basis": "pinned_accepted_mechanical_evidence_not_numerical"
+          },
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalReview.md",
+            "sha256": "df80ed367b159007fc8552f85e5f4fa0276e3e786305077718de6395a310d598",
+            "revision": null,
+            "basis": "pinned_accepted_mechanical_evidence_not_numerical",
+            "anchor": "scoped-user-acceptance"
+          },
+          "scope": "mechanical_tests_and_mocked_receiver_control_flow_only"
+        },
+        "families": [
+          {
+            "family": "A_CI",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "actual_entry_joint_root_readback_W_writer_restart_and_whole_ball_checks_not_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::A_CI",
+                "planned_subject": "P984B-ACI-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-ACI-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::A_CI",
+                "planned_subject": "P984B-ACI-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-ACI-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACICases.json",
+              "sha256": "d68172e494d2882a678b473894f3823af80edb34c7fbe2deddabaef48f9eec47",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIResults.json",
+              "sha256": "add9d33980c2e548632da35f121735b8ba1453e27875c8cc59a3a1f2710fffb8",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIRuntimeReview.md",
+              "sha256": "b83315cc8715b8ef8c6fd09bed32e3108abd50f48b4f1c86bbb1b54fea3512af",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIResults.json",
+              "sha256": "01a86bde6105776ecd955e3f3583925c5ec1edbe03a17cb09d9c454e09a43100",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          },
+          {
+            "family": "A_CI_PC",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "pointwise_full_joint_root_signed_readback_exact_W_lineage_fixed_old_Z_same_source_W_Z_writers_and_strict_composite_slack_not_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::A_CI_PC",
+                "planned_subject": "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::A_CI_PC",
+                "planned_subject": "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-ACIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIPCCases.json",
+              "sha256": "60508ea1e13b7b924972a01c0ab743670c06380760fea6b2123c00a0aca04db2",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIPCResults.json",
+              "sha256": "24210e42fb52a25cf5c6c0e89bf377dbb0911ed9ace14018d1e5fe16348f4ef3",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ACIPCRuntimeReview.md",
+              "sha256": "5a65669e68aca9073f58d6d85103e955e39db0b4b79e39c54ba88818b6fd559d",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json",
+              "sha256": "a1f5da445f6fbce1d17d98a872ab7558477083dea9b288af9a409c540c06f194",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          },
+          {
+            "family": "A_OS",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "actual_saved_entry_full_formula_intervals_and_native_consumer_checks_not_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::A_OS",
+                "planned_subject": "P984B-AOS-ORACLE-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-AOS-RUNTIME-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::A_OS",
+                "planned_subject": "P984B-AOS-ORACLE-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-AOS-RUNTIME-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSCases.json",
+              "sha256": "6c3c9e24351fcd7b42c65f0b8e54758a13291bcf94cd5d980921f0a12309879b",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSResults.json",
+              "sha256": "ac2918f910ff07f7f57301d45ce5b043d206bb2436d650adddc93ebeb4832f4c",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-AOSRuntimeReview.md",
+              "sha256": "26849e5d563dcd9f68de0168fab9e1946d38f19f643c6e46aef8d8bdc46aeab9",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-AOSResults.json",
+              "sha256": "4d4904d03bef8992a96ec8835f824f99767777d24bb3f4f8e3469ab2c5e33327",
+              "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+              "basis": "current_equals_accepted_checkpoint"
+            }
+          },
+          {
+            "family": "A_PC",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "pointwise_fixed_row_signed_readback_exact_W_lineage_and_separate_W_Z_writers_not_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::A_PC",
+                "planned_subject": "P984B-APC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-APC-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::A_PC",
+                "planned_subject": "P984B-APC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-APC-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCCases.json",
+              "sha256": "cf12a1d35d0a8489eb16345f414dc3ef445dfbfcf013828c0c73f18a02eb301c",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCResults.json",
+              "sha256": "6eb4ded39b423ac35b8ee276eaa2a399b566b2716ce9810ec93f37cc3cd74038",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-APCRuntimeReview.md",
+              "sha256": "cefe1d6e94b81c6797e8f5828ff9e6d78c2daa1f1c347a52ecaf5efebabd8c15",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-APCResults.json",
+              "sha256": "cd37259572c53dfec62f9fbf30fe0fb043add1d2d34c1d2f126dfa0deb06b4bc",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          },
+          {
+            "family": "A_RG2b",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "signed_completion_four_level_CY_chain_pointwise_section_lagged_invariance_exact_W_lineage_and_writer_next_read_effects_not_C1_or_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::A_RG2b",
+                "planned_subject": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::A_RG2b",
+                "planned_subject": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-ARG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ARG2bCases.json",
+              "sha256": "054fc9a297d4c573dfa84bb0a452c08952a73a9710bebdb245995ce519355aeb",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ARG2bResults.json",
+              "sha256": "cd2ad8d3a5e17fc12f525c54801540864cddf5f6b6110112068282570871dead",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ARG2bRuntimeReview.md",
+              "sha256": "39a7c4f815c1d3fbe44a41b06310983fbb9c1e1185bc74741b30da0daefe20eb",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ARG2bResults.json",
+              "sha256": "d23a612386ea7d1966b09f159d996b306d240b11cc1f8fb2cc692dce5572564b",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          },
+          {
+            "family": "C_CI",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "actual_entry_joint_root_full_formula_intervals_and_native_whole_ball_admission_not_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::C_CI",
+                "planned_subject": "P984B-CCI-G9-EXPAND-D45-CHIRALITY-NEGATIVE-BUDGET480",
+                "accepted_runtime_subject": "P984B-CCI-G9-EXPAND-D45-CHIRALITY-NEGATIVE-BUDGET480"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::C_CI",
+                "planned_subject": "P984B-CCI-G9-EXPAND-D45-CHIRALITY-POSITIVE-BUDGET480",
+                "accepted_runtime_subject": "P984B-CCI-G9-EXPAND-D45-CHIRALITY-POSITIVE-BUDGET480"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCICases.json",
+              "sha256": "ba21a1f7e47f4fc8ce79b1fe5ca03b78027195b219997df6853cdfa390e5985e",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIResults.json",
+              "sha256": "f4edf55cee5bb408e29998b5c04416893df0b562653de57a76a9d58b6e350957",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIRuntimeReview.md",
+              "sha256": "3707b3f42692eb76f31ea86ee573de0b13078fb4f386cb8f1c9ddb829bdd1fa7",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCICompletionResults.json",
+              "sha256": "b7bdb1f848e3b904a6ff9cb99df37882227ea8cc562bbe00a7387a9f2860631f",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          },
+          {
+            "family": "C_CI_PC",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "pointwise_full_joint_root_signed_readback_fixed_old_Z_same_source_writer_and_strict_composite_slack_not_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::C_CI_PC",
+                "planned_subject": "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::C_CI_PC",
+                "planned_subject": "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-CCIPC-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCCases.json",
+              "sha256": "7641e8bd06a3e617c72a2892f4a9a1eba1c0eda3ba96fd02a1fa2775e13beb74",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCResults.json",
+              "sha256": "a1963f2b54f66ca49b6ede03add0fe3fda41ad6a1b1b6065cd1437b3fbf8252a",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CCIPCRuntimeReview.md",
+              "sha256": "8e57b3f67cba32062e538d126cc353072d0adf9789f96b7e63bea0182cb2fa4a",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CCIPCResults.json",
+              "sha256": "6ae474557161f9d9e6d3c5d350b023f2742eeb1cafa8c24733c39beafe132db2",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          },
+          {
+            "family": "C_OS",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "bounded_dense_crosscheck_not_rigorous_full_error_or_effect_separation",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::C_OS",
+                "planned_subject": "P984B-COS-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-COS-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::C_OS",
+                "planned_subject": "P984B-COS-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-COS-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-COSCases.json",
+              "sha256": "78d0e3e10e47742114f30e129dc62dce3683cbd1dcde1bae9062c644b293a754",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-COSResults.json",
+              "sha256": "5da7e5d80188774a8403e079265c55a27d109fd31ab0136c99dcaa5e7d78b329",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-COSReview.md",
+              "sha256": "66ff1d9a0e829cc0fb2349e1bc7e182236cc0e0196db5496af61e4201f067af9",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-COSResults.json",
+              "sha256": "6d57ab10d1a5407cc6b8acea3d64487f34a94af0a10e2ef28efb4876a0101308",
+              "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
+              "basis": "current_equals_accepted_checkpoint"
+            }
+          },
+          {
+            "family": "C_PC",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "pointwise_full_formula_signed_readback_whole_carrier_reset_and_single_writer_checks_not_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::C_PC",
+                "planned_subject": "P984B-CPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-CPC-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::C_PC",
+                "planned_subject": "P984B-CPC-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-CPC-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CPCCases.json",
+              "sha256": "efea21c39271508f9b85b5147659613662e11d614fbb2d3dbc571f16e2350616",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CPCResults.json",
+              "sha256": "d281d25dad72d00a3ae1ad4aa40e7489a48ea7065fe6091edcf5ca23505b8f85",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CPCRuntimeReview.md",
+              "sha256": "bdca0a46d77e33189bf7ad1d9f557cea3097cbeee1cd1dc736a77e8bfd6dcbca",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CPCResults.json",
+              "sha256": "9ca4dae9633e8d91154c8f5f1a9a4454f3dd5a3e83456edb5a27cf5664bc080a",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          },
+          {
+            "family": "C_RG2b",
+            "accepted_cells": 64,
+            "new_cases": 30,
+            "exact_reuse_cases": 2,
+            "comparison_scope": "signed_completion_six_level_inverse_chain_pointwise_section_and_lagged_invariance_checks_not_C1_or_uniform_trajectory_bound",
+            "reuse_links": [
+              {
+                "case_id": "P984C-D45-E-1-P0::C_RG2b",
+                "planned_subject": "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE",
+                "accepted_runtime_subject": "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-NEGATIVE"
+              },
+              {
+                "case_id": "P984C-D45-E1-P0::C_RG2b",
+                "planned_subject": "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE",
+                "accepted_runtime_subject": "P984B-CRG2B-G9-EXPAND-D45-CHIRALITY-POSITIVE"
+              }
+            ],
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bCases.json",
+              "sha256": "23f26abf7ec82008ee5b554dc43a08a994c2be8315965569d81fe670fbf718f9",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bResults.json",
+              "sha256": "180aee7f94b0a90d8502eaaf1c473e70f5a39637171dc07dd1478dc10cef37af",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bRuntimeReview.md",
+              "sha256": "fe1a582e1a9025cd7208afb00870d7d47f5970ec09535c532f9a7aeac93a16e7",
+              "revision": null,
+              "basis": "pinned_boundary_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            },
+            "reuse_evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-CRG2bResults.json",
+              "sha256": "b0ffbbdcac92732738401306c4d53365c370eaf393e0cbedc9f7369a46e9baea",
+              "revision": null,
+              "basis": "pinned_execution_with_separate_scoped_user_acceptance"
+            }
+          }
+        ],
+        "native_trajectories_rerun": false,
+        "interval_equations_recomputed": false,
+        "scope": "named_capacity_and_phase_boundaries_only",
+        "remaining": [
+          "P9-8.4d",
+          "P9-8.4e",
+          "P9-8.4f",
+          "P9-8.4g",
+          "P9-8.4h",
+          "P9-8.4i",
+          "P9-8.5",
+          "P9-8.6"
+        ],
+        "whole_8_4_closed": false,
+        "new_public_support": [],
+        "arbitrary_graph_support": false,
+        "record_digest": "c359d420278fc050b6e89518f2ea087fbaf86447b437d43d4b4e9e91f4887add",
+        "record": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-Closeout.json",
+          "sha256": "052d1a81bfdd3ebe1b763fa87da26805df53a84624e6ffee27fdb30204a4d440",
+          "revision": null,
+          "basis": "pinned_boundary_aggregate_closeout"
+        },
+        "review": {
+          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md",
+          "sha256": "206643c340ef1e4303973da67685fa373707b68b2336e39a1d16f01732627ab0",
+          "revision": null,
+          "basis": "pinned_boundary_aggregate_closeout"
+        }
+      }
     },
     "required_cells": 322,
     "accepted_cells": 322,
@@ -16448,6 +16963,18 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_boundary_execution_with_scoped_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-Closeout.json",
+      "sha256": "052d1a81bfdd3ebe1b763fa87da26805df53a84624e6ffee27fdb30204a4d440",
+      "revision": null,
+      "basis": "pinned_boundary_aggregate_closeout"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md",
+      "sha256": "206643c340ef1e4303973da67685fa373707b68b2336e39a1d16f01732627ab0",
+      "revision": null,
+      "basis": "pinned_boundary_aggregate_closeout"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-MechanicalChecks.json",
       "sha256": "bfca9935d05b5fb793406765e10e48a1652ec7e203ea40deb93590d0f6cc3c1a",
       "revision": null,
@@ -16598,5 +17125,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "9fd4263e55e4e246b567ef8c85c46f720203e6b84fda80fa1148d6fae05a8a01"
+  "view_digest": "0e13f765904d499dee4173526dff198fc0d428767dc6a2083d76c245fd155906"
 };

@@ -396,3 +396,21 @@ test('A_RG2b binds separate acceptance without closing later 8.4 work', () => {
   forged.coverage.runs.find(r=>r.family==='A_RG2b').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
 });
+
+test('8.4c aggregate closes exact accepted scope while later work stays open', () => {
+  const closure=evidence.coverage.boundary_contract.closeout;
+  assert.equal(closure.accepted_cells,640);
+  assert.equal(closure.pending_cells,0);
+  assert.equal(closure.aggregate_closed,true);
+  assert.equal(evidence.coverage.children.find(r=>r.work_id==='P9-8.4c').accepted,true);
+  assert.equal(evidence.coverage.aggregate_closed,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/8.4c closed/);
+  assert.match(text(out),/640\/640 accepted history cells across all ten families/);
+  assert.match(text(out),/8.4d–i and 8.5\/8.6 remain open/);
+  for (const mutate of [v=>v.coverage.boundary_contract.closeout.accepted_cells--,
+      v=>v.coverage.boundary_contract.closeout.families.pop(),
+      v=>v.coverage.aggregate_closed=true]) {
+    const v=structuredClone(evidence);mutate(v);assert.throws(()=>checkedTranche8(v));
+  }
+});

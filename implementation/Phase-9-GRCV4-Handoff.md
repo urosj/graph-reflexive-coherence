@@ -1,6 +1,21 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — P9-8.4c capacity and phase boundaries
+## Current status — P9-8.4c closed; P9-8.4d next
+
+On 2026-10-08 the user accepted A_RG2b, committed as `270783f`, then
+requested P9-8.4c closure on the same `work/p9-8-4c-acipc` branch.
+The [aggregate closeout](./phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md)
+reconciles all ten separately accepted families and shared mechanical checks:
+**640/640 accepted history cells**, consisting of 600 new and 40 exact D45
+reuses. Every named subject and both roles are accounted for. Original
+planning/execution flags and all scientific restrictions are unchanged.
+CLI/API/notebook/browser expose the closeout and its exact source links.
+P9-8.4b stays closed at 322/322; P9-8.4 overall remains open. Next is `.d`
+(deeper expansion); `.e–i`, 8.5 and 8.6 remain open. No native or interval
+campaign is repeated for aggregate reconciliation. The family milestones
+below describe the state at their respective checkpoints.
+
+## Accepted checkpoint — P9-8.4c capacity and phase families
 
 On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from
 main `19a2d8fc`, after `.b`'s all-ten acceptance and merge `615a56cb`.
