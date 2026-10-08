@@ -15,6 +15,31 @@ P9-8.4b stays closed at 322/322; P9-8.4 overall remains open. Next is `.d`
 campaign is repeated for aggregate reconciliation. The family milestones
 below describe the state at their respective checkpoints.
 
+## Next work — first four families through P9-8.4d–h
+
+The `.c` closeout was committed as `f1c799c` and merged into `main` with
+`--no-ff` as `de57137`. On 2026-10-08 the user changed the next work order:
+**C_OS, C_CI, A_CI and A_PC** proceed through `.d`, `.e`, `.f`, `.g`, `.h`
+first. Then fill **A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b**.
+Start with the first group's `.d` scope and graph-specific prerequisites;
+do not complete all ten `.d` realizations before proceeding to `.e`.
+
+The plan explains the mechanism coverage; the checklist has first-group and
+remaining-family checkpoints under every child. Accept and expose exact
+family/child portions as partial progress. All-ten parents remain open until
+all required coverage is accepted; no representative result certifies a sibling.
+Keep blocked prerequisites and owners visible while advancing unrelated ready
+rows. `.h` needs that family's `.g` readiness and applicable covariance checks.
+
+Preserve independent mathematics, paper/spec/side-tool checks and focused
+outlier/corruption pressure. Reuse exact unchanged evidence and shared checks;
+recompute only affected scientific dependencies or investigate a concrete
+failure. Metadata/acceptance/storage updates need integrity and surface checks,
+not repeated numerical campaigns. Synchronize the full view once per coherent
+checkpoint. Retain completed compact evidence, named operand consumers and
+byte-exact XZ under the 10 MB rule; no suspended/incomplete run artifacts.
+This is planning only; no `.d–h` cell is yet executed or accepted.
+
 ## Accepted checkpoint — P9-8.4c capacity and phase families
 
 On 2026-10-07, branch `work/p9-8-4c-capacity-phase-boundaries` starts from

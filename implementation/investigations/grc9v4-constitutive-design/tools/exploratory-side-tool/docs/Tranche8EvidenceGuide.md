@@ -482,3 +482,15 @@ lossless XZ storage; interrupted runs are not repository artifacts.
 The 2026-10-08 aggregate reconciliation is complete; the preceding family
 checkpoints retain their historical acceptance order. See
 [bounded closeout](../../../../../phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md).
+
+## Planned progression after P9-8.4c
+
+The user-directed 2026-10-08 order is C_OS, C_CI, A_CI and A_PC through
+`.d–h`, followed by the remaining six families. The implementation checklist
+tracks first-group checkpoints and all-ten completion separately. Future views
+must show accepted family/child portions, unexecuted remaining rows and blocked
+prerequisites without turning representative coverage into parent closure.
+The current evidence projection still correctly leaves every `.d–h` row open:
+this scheduling change adds no execution or acceptance. Family-scoped checks
+and exact evidence reuse avoid repeated numerical campaigns; full discovery
+synchronization belongs at completed coherent checkpoints.

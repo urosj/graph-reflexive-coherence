@@ -2726,3 +2726,18 @@ Expose the completed aggregate reconciliation in CLI/API/notebook/browser:
   comparison scope, RG2b completion/C1 limits and shared-mechanics boundaries.
   `coverage.boundary_contract.closeout` and child P9-8.4c are closed; whole
   P9-8.4 and `.d–i`, 8.5/8.6 remain open. No numerical rerun or new authority.
+
+### P9-8.4d–h representative-first progression (2026-10-08)
+
+Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
+  `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
+  Keep the full ten-family scope; representatives confer no sibling credit.
+As results arrive, expose each child/family's exact required, executed,
+  accepted and blocked coverage, with first-group checkpoints separate from
+  all-ten parent closure. `.h` depends on that family's admission/oracle and
+  relevant covariance evidence. Keep unexecuted second-group rows visible.
+  Update CLI/API/notebook/browser at coherent checkpoints; authenticate shared
+  inputs/results once per unchanged operation, without weakening source checks.
+  Use affected binding/surface checks for metadata changes and recompute only
+  affected numerical work. Preserve paper/spec/claim limits, meaningful pressure,
+  completed compact evidence and byte-exact storage; no new cache authority.

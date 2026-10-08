@@ -3122,21 +3122,56 @@ the full ten-profile plan.
     `.venv/bin/python scripts/evidence_storage.py check` and
     `git diff --cached --check`. Expanded copies and progress stay ignored;
     `/.github/` remains ignored and no GitHub workflow is assumed.
+  - [x] Adopt the user-directed 2026-10-08 `.d–h` execution order:
+    **C_OS, C_CI, A_CI and A_PC first**, through `.d`, `.e`, `.f`, `.g`, `.h`;
+    only then fill **A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b**.
+    This is a scheduling change with accepted partial checkpoints, not a
+    reduction of the final all-ten scope. Parent items remain open until their
+    complete required coverage is accepted. See the implementation plan's
+    representative-family rationale and validation/reuse rules.
+    Track each child/family's exact required cells and both histories; keep
+    pending, passed-but-unaccepted, accepted and blocked dispositions distinct.
+    A blocker holds dependent rows only, and stays visible with its owner.
+    Do not infer sibling evidence, omit required cases or mark a blocked
+    first-group checkpoint complete to advance unrelated ready work.
+    Shared checks run once per affected implementation; new numerical work
+    follows changed scientific dependencies and claims. Acceptance/docs/storage
+    changes require integrity/surface checks, not repeated numerical campaigns.
+    Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
+    completed compact evidence and the existing 10 MB storage rules.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.
     State finite depth/horizon and numerical domain; distinguish a deep pure
     plan from an event and any separately declared successive-event sequence.
+    - [ ] First-group checkpoint: review and accept this child's required
+      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
+      advance ready rows without waiting for the remaining six families.
+    - [ ] Second-group completion: after first-group work through `.h`, fill
+      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
+      required coverage before closing this parent. No sibling credit.
   - [ ] P9-8.4e: Execute ordering, relabeling and signed-edge covariance.
     Include the frozen edge-order vector and explicit node/edge permutations;
     transport resources, unsigned A W, signed currents/references and carrier/
     geometry coordinates correctly. Reject inconsistent partial transforms and
     compare both histories in the declared exact/numerical comparison contracts.
+    - [ ] First-group checkpoint: review and accept this child's required
+      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
+      advance ready rows without waiting for the remaining six families.
+    - [ ] Second-group completion: after first-group work through `.h`, fill
+      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
+      required coverage before closing this parent. No sibling credit.
   - [ ] P9-8.4f: Execute frozen cyclic chart rotation and reflection/chirality
     base/target pairs using the named namespace/role normalization policy.
     Transport rows, columns, branches, ports, labels, chirality, active phase
     and numerical operands/history. Reject column-only or stale phase/chirality
     controls; a boolean equality assertion or raw digest equality is insufficient.
+    - [ ] First-group checkpoint: review and accept this child's required
+      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
+      advance ready rows without waiting for the remaining six families.
+    - [ ] Second-group completion: after first-group work through `.h`, fill
+      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
+      required coverage before closing this parent. No sibling credit.
   - [ ] P9-8.4g: Resolve larger-graph admission and independent-oracle
     prerequisites per family for all ten retained 100/400 → 107/407 examples.
     Track LG-C-SELECTOR, LG-OS-SPLIT, LG-CI-ROOT, LG-PC-CHART,
@@ -3144,6 +3179,12 @@ the full ten-profile plan.
     passed certificates, computed reads/roots, incomplete probes and rejection.
     New A scope needs oracle-before-runtime review; cyclic RG2b needs a new
     proved completion. Unresolved rows remain open and visible.
+    - [ ] First-group checkpoint: review and accept this child's required
+      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
+      advance ready rows without waiting for the remaining six families.
+    - [ ] Second-group completion: after first-group work through `.h`, fill
+      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
+      required coverage before closing this parent. No sibling credit.
   - [ ] P9-8.4h: Execute the larger-graph runtime/covariance campaign per
     ready family. Perform actual source admission, fresh trigger/request,
     committed event, both-role target readmission and declared continuation;
@@ -3151,6 +3192,12 @@ the full ten-profile plan.
     Record actual outputs or first rejection. A certificate/negative control
     does not close a required successful execution. Keep original proposals
     separate from any newly identified parameter choice.
+    - [ ] First-group checkpoint: review and accept this child's required
+      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
+      advance ready rows without waiting for the remaining six families.
+    - [ ] Second-group completion: after first-group work through `.h`, fill
+      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
+      required coverage before closing this parent. No sibling credit.
   - [x] Tranche 8 side-tool catch-up: expose 8.1/8.2, all ten bounded 8.3
     integrations and current 8.4 evidence through CLI/API/notebook/browser;
     keep original failures, scoped acceptance and pending family cells distinct.
@@ -3169,12 +3216,14 @@ the full ten-profile plan.
     no unresolved required row or omitted family closes the parent without an
     explicit user-approved scope change.
 
-  Execute `.a` first, then bounded `.b`; `.c`–`.f` may share coherent batches
-  with separate review records. Track `.g`/`.h` separately for every family
-  (for example `P9-8.4g[A_CI]`, `P9-8.4h[A_CI]`); one blocked family does
-  not stop unrelated ready rows. Finish with `.i`. The implementation plan
-  gives the current four certificate-pass, four incomplete and two RG-rejected
-  larger-family dispositions. Planning these children executes none of them.
+  `.a–c` are complete. Execute the first four families through `.d–h`, then
+  fill the remaining six; use coherent batches with separate family/child
+  evidence and acceptance. `.h[family]` depends on its own `.g` readiness and
+  applicable `.e/.f` covariance checks, not all-ten closure of earlier children.
+  Reconcile accepted partial coverage at each checkpoint and finish all-ten
+  closure with `.i`. The retained larger proposals have four certificate-pass,
+  four incomplete and two RG-rejected dispositions; none alone is runtime
+  acceptance. Planning this order executes no new numerical cell.
 - [ ] P9-8.5: Verify unique target occupancy, whole-lifecycle target
   reconstruction/readmission, and atomic failures.
   Include the prepared larger proposal's event rollback/replay obligations

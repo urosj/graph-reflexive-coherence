@@ -2853,16 +2853,77 @@ New layouts, chiralities, depths and configurations require their own evidence.
 | **P9-8.4h — Larger-graph runtime and covariance campaign** | For each ready family, execute the actual source admission, fresh trigger/request, native event, both-role target reconstruction/readmission and declared physical continuation. Apply the relevant `.e`/`.f` transforms to this larger subject, and compare with its independent scientific expectations. | Depends on `.g` for that family and the relevant covariance harnesses. Retain actual outputs or the first rejection, duration/horizon and error bounds. A passing certificate or an expected rejection does not close a required successful runtime row. |
 | **P9-8.4i — Coverage reconciliation and handoff** | Reconcile `.a` against all child results, frozen IDs and separately named additional/deep/large probes. Retain commands, independent checks, code/profile/fixture bindings, review dispositions and unresolved debt. Update discovery evidence only for the exact newly reviewed configurations. | Aggregate closes only when its required runtime/covariance cells are reviewed and complete, or an explicit user-approved scope change is recorded. Hand positive-state witnesses and rejection subjects to P9-8.5; pass precise coverage to P9-8.6 without claiming arbitrary-size conformance. |
 
-**Execution order.** Start with `.a`, then the bounded frozen counterparts in
-`.b`. Children `.c`–`.f` may share harness work and run in coherent batches,
-while retaining separate evidence/review records. Work on `.g` can proceed
-independently of ready small-graph rows. Execute `.g`/`.h` per family rather
-than waiting for every sibling: use family-indexed records such as
-`P9-8.4g[A_CI]` and `P9-8.4h[A_CI]` for all ten A/C × OS/CI/PC/CI_PC/RG2b
-rows. A blocked family does not stop unrelated ready rows or disappear from
-parent reconciliation. Finish with `.i`. This is a work breakdown, not a
-requirement to stop for user input after every helper or shared harness edit;
-the existing scientific-oracle and bounded-review acceptance rules still apply.
+**Execution order — representative families first (user-directed 2026-10-08).**
+P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
+as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
+this group before filling the remaining six families. Do not finish all ten
+realizations at `.d` before advancing to `.e`, or impose that barrier at any
+later child. This changes scheduling and permits accepted partial coverage;
+it preserves the final all-ten scope and every family's scientific obligations.
+
+| First-group family | Mechanisms exercised | Evidence still specific to later families |
+| --- | --- | --- |
+| C_OS | C reference reconstruction, strict selectors, predictor/corrector OS splitting | A_OS couples the split with W history and its writer. |
+| C_CI | C references and complete selected CI joint roots | C_CI+PC adds carrier coupling and composite root/writer obligations. |
+| A_CI | Independent A joint-root expectations, exact W transfer, writer and next-root consumption | A_CI+PC adds the coupled W/Z channels and composite law. |
+| A_PC | PC chart/carrier admission, whole-Z archive/reset, A W lineage and separate W/Z writers | C_PC retains its own C references; C_RG2b/A_RG2b require their own inverse-section/completion mathematics. |
+
+The second group is **A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b**.
+After the first group's `.d–h` work, fill these families using the established
+harnesses and exact reusable inputs. Group coherent work by dependencies;
+there is no requirement to repeat the first group's implementation sequence
+or all-ten numerical campaigns. A representative pass supplies no numerical
+credit or acceptance to another family.
+
+Track every `P9-8.4{d,e,f,g,h}[family]` independently. At each child, record
+a first-group checkpoint with exact accepted cells, pending execution,
+passing-but-unaccepted results and blocked prerequisites distinguished. An
+accepted family/child portion is usable bounded progress even while its
+parent remains open. Advance ready first-group rows to the next child without
+waiting for the second group. A blocked row holds its own dependent work,
+not unrelated ready rows; keep its missing proof/domain/implementation owner
+visible and review the blocker rather than substituting another family or
+claiming first-group completion. In particular `.h[family]` requires that
+family's `.g` admission/oracle prerequisites and the relevant `.e/.f` baselines
+and transforms. A negative control cannot close a required positive row.
+
+The checklist records both groups under each child. `.d–h` parent checkboxes
+close only after the full required all-ten coverage is accepted; first-group
+checkpoints can close earlier. `.i` reconciles all families and retained debt.
+No frozen `.a` inventory, accepted `.b/.c` result or scientific restriction is
+rewritten by this scheduling decision. Existing scientific review rules apply;
+there is no new pause after every helper, shared harness edit or substep.
+
+**Validation and evidence for `.d–h`.** Carry forward the lean workflow below
+and the [evidence/storage policy](../docs/reference/EvidenceStorage.md):
+
+- Before a coherent batch, map each obligation to unchanged accepted evidence,
+  a shared check, a new independent numerical check or a required new native
+  execution. Name the subject, roles/stages, consumer, budget and reason for
+  recomputation. Reuse needs matching scientific inputs and dependencies, or
+  an explicit proved transport law whose hypotheses are checked. Changes to
+  graph/size, domain, precision, oracle, checker or relevant code that are not
+  covered by that proof invalidate the affected reuse; adjacent layouts and
+  sibling passes are not substitutes.
+- Check shared mechanics once per affected implementation and independent
+  expectations before dependent execution. Run new numerical work and focused
+  outlier/corruption pressure where it can expose a changed mathematical or
+  implementation failure. Retain paper/spec/side-tool claim checks and each
+  family's specific norms, strict bounds, history and writer-stage rules.
+- Do not rerun completed trajectories, roots, inverse chains or interval math
+  merely to update acceptance, documentation, discovery or lossless storage.
+  Reuse an authenticated validation result within the same unchanged operation;
+  checker changes still need affected operands and meaningful corruption tests.
+  Status/metadata changes need binding and affected surface checks. Rebuild
+  the full index once at a completed coherent checkpoint, not per query/helper;
+  broad regression is for shared changes and aggregate closure. This permits
+  no unproved cross-operation cache; the end-of-tranche cache review remains.
+- Publish concise reviews, completed coverage and consumed operands with shared
+  context stored once. Discard suspended/incomplete run artifacts; keep a
+  concise reproducible blocker or negative test when needed. Justified files
+  over 10,000,000 bytes use byte-exact XZ and the established storage checks.
+  Keep accepted checkpoints accessible through CLI/API/notebook/browser as
+  partial family/child coverage, without changing parent acceptance or support.
 
 The 2026-10-07 [boundary preregistration](./phase-9-grcv4/tranche-8/P9-8.4c-BoundaryReview.md)
 implements the first `.c` task, accepted by the user after pressure testing:

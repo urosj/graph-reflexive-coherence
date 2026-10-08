@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "4fdd60bbd01d111deb556597c0b1db21bbdf5042c9bb698c6c97e6b97a01f3f7"
+      "sha256": "ae5bf2fc990815d423acc653047168d74791e173a4aaa670199206491aef829f"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "1756bc2ab7de9373ce04f49610f0457da5788c5870df0f7cd4a4fd419130faab"
+      "sha256": "e706fc3e1380a0b1735f3df8a0b4c4866ba2b5950ffc2e7f889873b102b116a1"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "ac5601570b2e3cbd4a9b34232897c1ea64768b2a4a5b9d40a2d0661bdf826afd"
+      "sha256": "bb227b9f4b12669f71da6b00e9fb8ac9651f2d5695f9a404f511a50f4ecb0859"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -1131,11 +1131,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
-      "sha256": "b76576b9e19a0561674213d8ec5b2cae05edcc4acfa07a804ecc530e3b75d4ac"
+      "sha256": "fe54f3a3b596e3a15f61f3d02b858e61f8d1355758961ee9846c27bbd2869f75"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
-      "sha256": "42073e943f1cec4c0481a1f15aba7ab5693514bec270493e3ed309f55dcd7d34"
+      "sha256": "714bc7eef113fe5801c7198163ed786125d5e9c226121877604a13b6bf5a48da"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/ATCQueryGuide.md",
@@ -3863,7 +3863,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Tranche8EvidenceGuide.md",
-      "sha256": "fd34a617e1a0ee96e84c775305cd72b0d4090df716a0aaef9766b8554c1a462a"
+      "sha256": "5761165d49005dd08682bc2753b1ae90715876a1822b3a518195b7f4aa663a44"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8-evidence.js",
@@ -4590,5 +4590,5 @@
       "sha256": "d8781a9e9f3f9382e4968f65bcf06eda6b816cc9c0a3a5387b1d9308baffa82e"
     }
   ],
-  "record_digest": "d995c61901bcdeb1381a50061c8b1424638fa8edb877d8121c738403a21959a2"
+  "record_digest": "0f6f49c8bb44fe42c51156bec7d62d0826848e36c02c4e69c5516aa64a60decd"
 }
