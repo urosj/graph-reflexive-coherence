@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "50ef8106b4725483ad1c3a1574c9ac600c5173db7ecb238dbfe83e1a4ef840f6"
+      "sha256": "c157139442278ea63f649cc4b2108e94fc9d351f4eea565ffd6357ea551cf59c"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3719,7 +3719,7 @@
     },
     {
       "path": "examples/grcv4/README.md",
-      "sha256": "e5cf47debd53e682520af6633d2fb98916515b3cdb4b6f62eef63cf19567ea38"
+      "sha256": "a2c4cc7b5d7133a9a918748a39fb02ef639405fdbb56600f54c8cc6f87bafa7a"
     },
     {
       "path": "examples/grcv4/catalog.py",
@@ -4588,7 +4588,23 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p984c_closeout.py",
       "sha256": "d8781a9e9f3f9382e4968f65bcf06eda6b816cc9c0a3a5387b1d9308baffa82e"
+    },
+    {
+      "path": "examples/grcv4/api_sessions.md",
+      "sha256": "f45f2a37c2f6eed18204b4cb27295ccdb253759091f0548988f23fa4c83ba52b"
+    },
+    {
+      "path": "examples/grcv4/api_sessions.py",
+      "sha256": "706cb948895dcdc75db16e4feaca817bdfde9e5b9e27ea32d574bf5045ebeaef"
+    },
+    {
+      "path": "examples/grcv4/session_support.py",
+      "sha256": "f921b41f4702104e04746f3208c37bf8504c3be020c20cc0fffb2766f40fddb7"
+    },
+    {
+      "path": "examples/grcv4/test_api_sessions.py",
+      "sha256": "387ef5857d4792ff06b78b54993184b76d2dc79676f327f167fd0f8c173cf7f3"
     }
   ],
-  "record_digest": "0f6f49c8bb44fe42c51156bec7d62d0826848e36c02c4e69c5516aa64a60decd"
+  "record_digest": "17a136053b19d7058fac105472440c5934977bc8093fddedccb5c0a6387d9c06"
 }

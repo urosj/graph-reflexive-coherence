@@ -1,8 +1,27 @@
 # GRC-v4 numerical examples
 
-These checkout-only examples construct matched declarations using test fixtures
-and execute production numerical steps. They do not register new supported
-profiles, modify the runtime, or create lifecycle acceptance receipts.
+These checkout-only examples construct declarations using test fixtures and
+execute production numerical steps or the public lifecycle, as labeled below.
+They do not register new globally supported profiles or modify the runtime.
+Public lifecycle examples produce ordinary operation receipts, not new support
+or conformance acceptance.
+
+## Debugging, migration and restoration
+
+Use [the API session guide](api_sessions.md) and [runnable examples](api_sessions.py)
+for trace/inspect/fork/edit/replay, A_CI → A_PC → A_OS migration, OS and carrier
+excursions, charge/domain failures, and public snapshot/save/load/reset:
+
+```bash
+.venv/bin/python examples/grcv4/api_sessions.py --list
+.venv/bin/python examples/grcv4/api_sessions.py --scenario debug
+.venv/bin/python examples/grcv4/api_sessions.py --scenario lifecycle
+```
+
+The guide distinguishes pure numerical experiments from public transactions,
+compares matched step/time horizons, and records fixture-specific results without
+assuming OS/CI equivalence. JSON export and saved-report inspection avoid reruns.
+GRC9V4 counterparts wait for its public façade; no native capability is implied.
 
 ## Find and select a graph configuration
 
