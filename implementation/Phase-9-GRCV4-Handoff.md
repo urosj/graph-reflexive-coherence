@@ -1,5 +1,52 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current checkpoint — A_CI native deep result accepted
+
+The user accepted the A_CI deep oracle and its separate native counterpart
+on 2026-10-12. The [native result](./phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md)
+passes all 20 D59/66/73/94 cases: 40 histories, 400 continuation steps and
+40 fresh full-root reads. The accepted actual source and independent oracle
+are reused; no production, spec, timestep or tolerance changes were needed.
+Full retained-consumer checking passes without native reruns.
+
+The smallest represented resource is about 3.6786068e-22 at D94 E-1 phase
+three, reset role, first update. Maximum binary64 charge residual is about
+7.106e-15 against the unchanged 1e-11 tolerance. All 400 ordinary updates have
+small nonzero exact coordinate-sum changes (maximum absolute step delta about
+1.330e-15); this is admitted rounding, not exact conservation. Exact initial
+event transfer and positive represented continuation remain separately checked.
+No robustness neighborhood or accumulated exact-real trajectory tube follows.
+
+The roughly 45.10 MB record is losslessly stored as roughly 2.40 MB XZ under
+the 1 MB rule; compressed files may be larger. Restore through
+`scripts/evidence_storage.py restore`. CLI/API/notebook/browser show the
+accepted oracle separately from 40 accepted native cells.
+C_OS and C_CI remain at 40 accepted cells each; seven `.d` families remain
+unexecuted. Next: A_PC carrier-domain prerequisites, then its deeper-layout
+evidence in the first group. Work remains on `work/p9-8-4d`.
+
+## Prior checkpoint — A_CI deep oracle
+
+C_CI, its D94 hardening and the 1 MB storage policy are accepted and committed
+as `faccfa0e` on `work/p9-8-4d`. The next [A_CI prerequisite](./phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md)
+passes all 20 independent deep-layout cases: 40 histories, 440 saved-entry
+joint-root observations and three focused scientific pressure tests. No native
+A_CI roots, steps or events ran. The dimension-aware A proof covers the actual
+18/19/20/23-vertex targets without widening historical C or carrier certificates.
+
+Review the oracle scope before its native counterpart. Its smallest componentwise
+resource lower bound is about 3.678424e-22 at D94 E-1 phase three, reset role,
+first update; this is not a robust native positivity guarantee or a uniform
+trajectory tube. Native admission/represented continuation remains to be tested.
+The 14,146,015-byte result is retained as 938,480-byte XZ; restore it with
+`scripts/evidence_storage.py restore`, without rerunning the oracle.
+CLI/API/notebook/browser expose the pending oracle separately. Native `.d`
+coverage stays at 40 accepted C_OS and 40 accepted C_CI cells; eight families,
+including A_CI, remain unexecuted. Next: oracle review, then native A_CI.
+
+Earlier entries describe their respective checkpoints; oracle acceptance and
+native execution are now recorded above.
+
 ## Accepted checkpoint — P9-8.4d C_CI; A_CI is next
 
 Storage update (2026-10-12): compress new/changed raw files over 1,000,000

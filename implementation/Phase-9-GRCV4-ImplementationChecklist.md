@@ -3165,6 +3165,20 @@ the full ten-profile plan.
         All 36 steps and three focused tests pass. Six initial images preserve
         exact charge; three remain explicitly rounded-transfer controls.
       - [x] User acceptance; no sibling or successive-event credit.
+    - [x] A_CI: deep native counterpart and separate acceptance.
+      - [x] [Independent oracle](./phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md):
+        20 layouts / 40 histories, 440 saved-entry joint-root observations;
+        dimension-aware Frobenius domain, exact initial W/resource transfer,
+        writer/Read-Back and next-root operands. Three focused tests pass.
+        Evidence above 1 MB is byte-exact XZ; side-tool scope is oracle-only.
+      - [x] Review/accept the deep oracle before native execution (2026-10-12).
+      - [x] [Native counterpart](./phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md):
+        20 passing cases / 40 histories, 400 steps and 40 fresh full-root reads.
+        Native D94 minimum resource remains positive at about 3.68e-22;
+        binary64 charge admission passes but exact per-step coordinate charge
+        is not conserved. Captured consumers, history writers and replay checked.
+      - [x] Separate native acceptance by the user on 2026-10-12. No uniform
+        trajectory tube, successive-event or sibling credit is inferred.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.
     State finite depth/horizon and numerical domain; distinguish a deep pure

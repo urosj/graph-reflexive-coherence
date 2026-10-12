@@ -137,6 +137,11 @@ export function renderTranche8(value, container, create = tag => document.create
       for (const key of ['inputs','results','review']) { link(refs,h[key],`Hardening ${key}`); append(refs,'span',' · '); }
     }
   }
+  for (const oracle of deep.oracle_preparations ?? []) {
+    append(container,'p',`${oracle.family} independent deep oracle: ${oracle.passed_cases}/${oracle.cases_required} cases, ${oracle.independent_observations} joint-root observations; ${oracle.oracle_scope_accepted ? 'oracle scope accepted' : 'pending review'}. Zero native steps, events or accepted runtime cells from this oracle. Pointwise bounds, not a uniform trajectory tube.`);
+    const refs=append(container,'p','');
+    for (const key of ['inputs','results','review']) { link(refs,oracle[key],`Oracle ${key}`); append(refs,'span',' · '); }
+  }
   append(container,'p',`Unexecuted 8.4d families: ${deep.families_not_executed.join(', ')}. No sibling credit; first group remains C_OS, C_CI, A_CI, A_PC.`);
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);

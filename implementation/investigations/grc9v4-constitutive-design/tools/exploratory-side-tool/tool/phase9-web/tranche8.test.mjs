@@ -6,6 +6,30 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('deep A_CI oracle is visible without native or acceptance promotion', () => {
+  const deep=evidence.coverage.deep_expansion;
+  const row=deep.oracle_preparations.find(r=>r.family==='A_CI');
+  assert.equal(row.passed_cases,20);
+  assert.equal(row.independent_observations,440);
+  assert.equal(row.runtime_cells_closed,0);
+  assert.equal(row.native_steps,0);
+  assert.equal(row.oracle_scope_accepted,true);
+  assert.ok(!deep.families_not_executed.includes('A_CI'));
+  const native=deep.family_results.find(r=>r.family==='A_CI');
+  assert.equal(native.passing_pending_cells,0);
+  assert.equal(native.accepted_cells,40);
+  assert.equal(native.target_steps,400);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/A_CI independent deep oracle: 20\/20 cases, 440 joint-root observations; oracle scope accepted/);
+  assert.match(text(out),/A_CI: 20 single-event cases; 40\/40 accepted history cells, 0 passing pending acceptance/);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.runtime_cells_closed=40,r=>r.oracle_scope_accepted=false,r=>r.review.sha256='forged']) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.deep_expansion.oracle_preparations[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('deep C_OS evidence is partial and not acceptance or an event sequence', () => {
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out),/8.4d deeper expansion/);
@@ -14,9 +38,9 @@ test('deep C_OS evidence is partial and not acceptance or an event sequence', ()
   assert.match(text(out),/3 are rounded-transfer controls, not exact-conserving event evidence/);
   assert.match(text(out),/40\/40 accepted history cells, 0 passing pending acceptance/);
   const deep=evidence.coverage.deep_expansion;
-  assert.equal(deep.family_results.length,2);
+  assert.equal(deep.family_results.length,3);
   assert.equal(deep.family_results[0].maximum_core_depth,4);
-  assert.equal(deep.families_not_executed.length,8);
+  assert.equal(deep.families_not_executed.length,7);
   const hardened=structuredClone(evidence);
   hardened.coverage.deep_expansion.family_results[0].hardening.uniform_tube=true;
   assert.throws(()=>checkedTranche8(hardened));

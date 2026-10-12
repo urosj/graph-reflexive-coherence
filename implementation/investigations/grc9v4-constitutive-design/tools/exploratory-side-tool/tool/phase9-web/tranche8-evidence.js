@@ -16214,6 +16214,58 @@ export const TRANCHE8_EVIDENCE = {
               "anchor": "scoped-user-acceptance"
             }
           }
+        },
+        {
+          "family": "A_CI",
+          "status": "accepted_bounded",
+          "native_cases": 20,
+          "passed_cases": 20,
+          "required_cells": 40,
+          "successful_history_cells": 40,
+          "accepted_cells": 40,
+          "passing_pending_cells": 0,
+          "target_steps": 400,
+          "final_reads": 40,
+          "degrees": [
+            59,
+            66,
+            73,
+            94
+          ],
+          "maximum_core_depth": 4,
+          "native_trajectories_rerun": false,
+          "interval_equations_recomputed": false,
+          "successive_events": false,
+          "arbitrary_depth": false,
+          "user_accepted": false,
+          "aggregate_closed": false,
+          "failures": [],
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACICases.json",
+            "sha256": "00414b326bc9221d38e5e8efc6e138e73b7db23b365fc0f6a4e6256d5044c59c",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json",
+            "sha256": "691fcf4eb5d30405353594d97a0c7e9c81f35540c105f59e862f66f90d67a0a7",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md",
+            "sha256": "25443d5138d121b94e0cc9b37ddc7870929726d55e38d3dffb0dccf5cdbe5d74",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md",
+            "sha256": "25443d5138d121b94e0cc9b37ddc7870929726d55e38d3dffb0dccf5cdbe5d74",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "comparison_scope": "A_full_joint_root_pointwise_bounds_actual_history_writer_not_uniform_trajectory_tube"
         }
       ],
       "aggregate_closed": false,
@@ -16225,7 +16277,6 @@ export const TRANCHE8_EVIDENCE = {
       ],
       "families_not_executed": [
         "A_OS",
-        "A_CI",
         "A_PC",
         "A_CI_PC",
         "A_RG2b",
@@ -16234,7 +16285,51 @@ export const TRANCHE8_EVIDENCE = {
         "C_RG2b"
       ],
       "other_family_credit": 0,
-      "successive_event_credit": 0
+      "successive_event_credit": 0,
+      "oracle_preparations": [
+        {
+          "family": "A_CI",
+          "status": "accepted_oracle_scope",
+          "cases_required": 20,
+          "passed_cases": 20,
+          "independent_observations": 440,
+          "native_steps": 0,
+          "native_roots": 0,
+          "topology_events": 0,
+          "runtime_cells_closed": 0,
+          "user_accepted": false,
+          "aggregate_closed": false,
+          "native_trajectories_rerun": false,
+          "interval_equations_recomputed": false,
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleInputs.json",
+            "sha256": "bfe65e401dad40b9e3e6488a706ac8130fafef0ecab0aff32572ab4bf5c2f399",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleResults.json",
+            "sha256": "5ee490e6e603295235524fc31327ba94b78722bade72be852776d865de4a4bb6",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md",
+            "sha256": "17bd90f66ccea96e26c0c2d0207f25fa66c6720a56d322b3999d7b178c9022c2",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+          },
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md",
+            "sha256": "17bd90f66ccea96e26c0c2d0207f25fa66c6720a56d322b3999d7b178c9022c2",
+            "revision": null,
+            "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "oracle_scope_accepted": true,
+          "comparison_scope": "pointwise_A_joint_root_enclosures_not_native_or_uniform_trajectory_tube"
+        }
+      ]
     },
     "required_cells": 322,
     "accepted_cells": 322,
@@ -17304,6 +17399,42 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_accepted_mechanical_evidence_not_numerical"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACICases.json",
+      "sha256": "00414b326bc9221d38e5e8efc6e138e73b7db23b365fc0f6a4e6256d5044c59c",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleInputs.json",
+      "sha256": "bfe65e401dad40b9e3e6488a706ac8130fafef0ecab0aff32572ab4bf5c2f399",
+      "revision": null,
+      "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleResults.json",
+      "sha256": "5ee490e6e603295235524fc31327ba94b78722bade72be852776d865de4a4bb6",
+      "revision": null,
+      "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md",
+      "sha256": "17bd90f66ccea96e26c0c2d0207f25fa66c6720a56d322b3999d7b178c9022c2",
+      "revision": null,
+      "basis": "pinned_accepted_independent_oracle_not_runtime_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json",
+      "sha256": "691fcf4eb5d30405353594d97a0c7e9c81f35540c105f59e862f66f90d67a0a7",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md",
+      "sha256": "25443d5138d121b94e0cc9b37ddc7870929726d55e38d3dffb0dccf5cdbe5d74",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCICases.json",
       "sha256": "714becd26009a5794e3d610c76959f56402aa0463127ac21281bfdc4e11598fe",
       "revision": null,
@@ -17508,5 +17639,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "b0679cf2b3f34621e8aab4fabfea1cd95d17f4a9e5480e59fbb33b02ab2e31f6"
+  "view_digest": "2727386fa755da874df17eea592c82babcf46b498a80a1ab2a4fccfe79671c08"
 };

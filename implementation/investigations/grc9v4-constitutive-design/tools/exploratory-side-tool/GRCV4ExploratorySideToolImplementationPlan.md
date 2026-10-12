@@ -2751,6 +2751,13 @@ and results: nine finite two-step/both-role target probes, full pointwise CI
 and resource margins, native excluded continuation and late-event rollback.
 Retained checking includes the supplement without repeating the campaign.
 
+A_CI `.d` starts with a separate independent joint-root oracle for the twenty
+deep layouts. Its scoped acceptance is recorded separately from native results
+through CLI/API/notebook/browser. Native evidence has its own family row and
+pending/accepted counts; oracle acceptance never closes runtime cells. Selected queries
+must not rebuild other families or recompute interval equations. Explicit
+retained numerical checking remains available; native execution follows review.
+
 Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

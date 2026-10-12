@@ -203,6 +203,22 @@
       "storage_sha256": "0227b041b4945fd3befa40ba18d0284376866f2be4941f2a769a7198f2383ac1"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleResults.json",
+      "size": 14146015,
+      "sha256": "5ee490e6e603295235524fc31327ba94b78722bade72be852776d865de4a4bb6",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleResults.json.xz",
+      "storage_size": 938480,
+      "storage_sha256": "fe7ff4f382ca473fba7178a38fcf7b7c7351675853b04641ebd96bbf093be2eb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json",
+      "size": 45100088,
+      "sha256": "691fcf4eb5d30405353594d97a0c7e9c81f35540c105f59e862f66f90d67a0a7",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json.xz",
+      "storage_size": 2403952,
+      "storage_sha256": "cedf6f862e3bdec343801950f2f450b4f6c1b6f5c6e461aa0f332b9a9b8751b8"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json",
       "size": 3840153,
       "sha256": "a0b9437a93578491de8e53e3505ef669c87db6f170915960e44f3bed1500688f",

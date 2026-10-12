@@ -31,7 +31,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse(h["user_accepted"])
         self.assertEqual(row["degrees"], [59,66,73,94])
         self.assertFalse(row["successive_events"])
-        self.assertEqual(set(d["families_not_executed"]), set(index.FAMILIES)-{"C_OS", "C_CI"})
+        self.assertEqual(set(d["families_not_executed"]), set(index.FAMILIES)-{"C_OS", "C_CI", "A_CI"})
         with patch.object(api, "_index", return_value=index), patch.object(index, "family_status", return_value={}) as selected:
             api.tranche8_status(index.ROOT, family="C_OS", checkpoint="8.4d")
             selected.assert_called_once_with(index.ROOT, "C_OS", "8.4d")

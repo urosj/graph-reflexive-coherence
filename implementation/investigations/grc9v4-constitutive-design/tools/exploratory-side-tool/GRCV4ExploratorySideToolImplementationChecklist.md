@@ -2295,6 +2295,16 @@ instead of stale fixed totals and opens any pending case details explicitly.
     - [x] Expose the separate D94 hardening supplement: nine finite probes,
       pointwise margins, native excluded continuation and late-event rollback.
       Preserve scoped acceptance and distinguish finite probes from a tube.
+  - [x] A_CI `.d` independent oracle: expose 20 passing cases / 440 saved-entry
+    observations with separate scoped oracle acceptance (2026-10-12), with zero
+    native/accepted cells contributed by the oracle. CLI/API/
+    notebook/browser keep it separate from completed native family evidence.
+    Authenticate selected sources and reject scope/dispatch promotion without
+    rebuilding other families or rerunning numerical campaigns.
+    - [x] Native A_CI `.d`: expose 20 passing cases / 40 accepted cells,
+      400 continuation steps and 40 fresh roots separately from accepted
+      oracle scope; authenticate native source links and explicit retained
+      checker dispatch. Native scope accepted on 2026-10-12.
 
 - [x] Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.

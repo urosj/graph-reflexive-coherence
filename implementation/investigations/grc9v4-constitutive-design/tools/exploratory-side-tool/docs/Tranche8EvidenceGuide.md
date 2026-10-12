@@ -20,6 +20,15 @@ cells, retained comparison scopes and remaining work. The browser labels
 planning counts as historical. Selected-family status checks only that family;
 use the complete status view to authenticate aggregate closure.
 The paragraphs below retain the successive family checkpoints.
+For A_CI `.d`, use `status --family A_CI --checkpoint 8.4d` through
+`tranche8_query.py`. `verify-retained --family A_CI --checkpoint 8.4d` checks
+the native capture; add `--oracle` to select its independently accepted
+prerequisite instead. `--recheck-numerics` explicitly recomputes interval
+equations, never native trajectories. The selected API and notebook call
+`tranche8_status(root, family="A_CI", checkpoint="8.4d")` returns separate
+`oracle` and `native` fields. Browser `coverage.deep_expansion` keeps oracle
+acceptance separate from native results pending their own acceptance.
+
 `coverage.boundary_contract` now exposes the first `.c` task: 32 layouts,
 640 both-role obligations (600 new, 40 exact-reuse candidates), budgets,
 prerequisites and exact contract/review links. The user accepted the matrix and

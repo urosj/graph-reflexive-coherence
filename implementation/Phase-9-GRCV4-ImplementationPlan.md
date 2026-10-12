@@ -2878,6 +2878,18 @@ for two steps. Report full pointwise CI/resource margins and execute a known
 excluded continuation plus late-event rollback. These finite target probes
 do not certify an allocation law, uniform neighborhood or accumulated trajectory.
 
+The [A_CI deep oracle](./phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md)
+reuses the accepted Candidate-A joint-root equations and dimension-aware
+Frobenius-domain proof on the same twenty declared layouts, up to 23 vertices.
+Freeze independent expectations for both histories before native execution;
+retain full selected joint points, W writers, Read-Back and next-root operands.
+The user accepted this oracle scope on 2026-10-12. Its native counterpart
+must consume actual admitted roots/resources and W writer outputs, distinguish
+the frozen binary64 charge policy from exact coordinate conservation, and check
+fresh full-root consumption after ten steps in both histories. Native results
+require separate acceptance. Pointwise
+enclosures do not constitute an accumulated exact-real trajectory tube.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten

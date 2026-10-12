@@ -23,6 +23,16 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+DEEP_ACI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACICases.json": "00414b326bc9221d38e5e8efc6e138e73b7db23b365fc0f6a4e6256d5044c59c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json": "691fcf4eb5d30405353594d97a0c7e9c81f35540c105f59e862f66f90d67a0a7",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md": "25443d5138d121b94e0cc9b37ddc7870929726d55e38d3dffb0dccf5cdbe5d74"
+}
+DEEP_ACI_ORACLE_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleInputs.json": "bfe65e401dad40b9e3e6488a706ac8130fafef0ecab0aff32572ab4bf5c2f399",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleResults.json": "5ee490e6e603295235524fc31327ba94b78722bade72be852776d865de4a4bb6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md": "17bd90f66ccea96e26c0c2d0207f25fa66c6720a56d322b3999d7b178c9022c2"
+}
 DEEP_CCI_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCICases.json": "714becd26009a5794e3d610c76959f56402aa0463127ac21281bfdc4e11598fe",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningCases.json": "e0ac0e8adae13015ef5ccbddc2ea03d3f6a30ae064c6f6f8e15d8caf26e8a0cf",
@@ -257,13 +267,17 @@ class Sources:
             boundary_pins = {**BOUNDARY_CLOSEOUT_SOURCES, **BOUNDARY_ARG2B_SOURCES, **BOUNDARY_CRG2B_SOURCES, **BOUNDARY_ACIPC_SOURCES, **BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES, **BOUNDARY_ACI_ORACLE_SOURCES, **BOUNDARY_ACI_SOURCES, **BOUNDARY_CPC_SOURCES, **BOUNDARY_APC_SOURCES, **BOUNDARY_CCIPC_SOURCES}
             boundary_pins.update(DEEP_COS_SOURCES)
             boundary_pins.update(DEEP_CCI_SOURCES)
+            boundary_pins.update(DEEP_ACI_ORACLE_SOURCES)
+            boundary_pins.update(DEEP_ACI_SOURCES)
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_deep_execution_with_scoped_acceptance" if name in DEEP_CCI_SOURCES else
+                    basis=("pinned_deep_execution_with_scoped_acceptance" if name in DEEP_ACI_SOURCES else
+                        "pinned_accepted_independent_oracle_not_runtime_acceptance" if name in DEEP_ACI_ORACLE_SOURCES else
+                        "pinned_deep_execution_with_scoped_acceptance" if name in DEEP_CCI_SOURCES else
                         "pinned_deep_execution_with_scoped_acceptance" if name in DEEP_COS_SOURCES else
                         "pinned_boundary_aggregate_closeout" if name in BOUNDARY_CLOSEOUT_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_ARG2B_SOURCES else
@@ -1075,6 +1089,15 @@ BOUNDARY_RUNTIME = {"C_OS": "p984c_cos", "A_OS": "p984c_aos_runtime",
 
 
 def deep_family_view(sources, family):
+    if family == "A_CI":
+        import p984d_aci_runtime as deep
+        summary = deep.status(sources.read(deep.INPUTS), sources.read(deep.RESULTS))
+        require("## Scoped user acceptance" in sources.raw(deep.REVIEW).decode(), "missing A_CI deep acceptance")
+        require(summary["passed_cases"] == 20, "incomplete A_CI deep acceptance")
+        summary.update(status="accepted_bounded", accepted_cells=40, passing_pending_cells=0)
+        return dict(summary, inputs=sources.ref(deep.INPUTS), results=sources.ref(deep.RESULTS),
+            acceptance=sources.ref(deep.REVIEW, anchor="scoped-user-acceptance"), review=sources.ref(deep.REVIEW),
+            comparison_scope="A_full_joint_root_pointwise_bounds_actual_history_writer_not_uniform_trajectory_tube")
     if family == "C_CI":
         import p984d_cci as deep
         import p984d_cci_hardening as hardening
@@ -1110,9 +1133,20 @@ def deep_family_view(sources, family):
     return summary
 
 
+def deep_oracle_view(sources):
+    import p984d_aci_oracle as oracle
+    summary = oracle.status(sources.read(oracle.INPUTS), sources.read(oracle.RESULTS))
+    require('## Scoped user acceptance' in sources.raw(oracle.REVIEW).decode(), 'missing deep A_CI oracle acceptance')
+    summary.update(status="accepted_oracle_scope")
+    return dict(summary, inputs=sources.ref(oracle.INPUTS), results=sources.ref(oracle.RESULTS),
+        review=sources.ref(oracle.REVIEW), acceptance=sources.ref(oracle.REVIEW, anchor="scoped-user-acceptance"), oracle_scope_accepted=True,
+        comparison_scope="pointwise_A_joint_root_enclosures_not_native_or_uniform_trajectory_tube")
+
+
 def deep_view(sources):
-    families = ("C_OS", "C_CI")
+    families = ("C_OS", "C_CI", "A_CI")
     return dict(checkpoint="8.4d", family_results=[deep_family_view(sources, f) for f in families], aggregate_closed=False,
+        oracle_preparations=[deep_oracle_view(sources)],
         first_group=["C_OS", "C_CI", "A_CI", "A_PC"],
         families_not_executed=[f for f in FAMILIES if f not in families],
         other_family_credit=0, successive_event_credit=0)
@@ -1124,8 +1158,17 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d"), "unknown family checkpoint")
     if checkpoint == "8.4d":
-        require(family in ("C_OS", "C_CI"), "deep evidence unavailable for this family")
+        require(family in ("C_OS", "C_CI", "A_CI"), "deep evidence unavailable for this family")
         policy.restore_packed_evidence(root)
+        if family == "A_CI":
+            with validation_session(("p984d_aci_runtime",), root=root):
+                sources = Sources(root)
+                summary = deep_oracle_view(sources)
+                return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
+                    scope="selected_family_only_not_execution_permission", oracle=summary,
+                    native=deep_family_view(sources, family),
+                    source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
+                    other_families_checked=False, native_trajectories_rerun=False)
         with validation_session(("p984d_cos" if family == "C_OS" else "p984d_cci",), root=root):
             sources = Sources(root)
             summary = deep_family_view(sources, family)
@@ -1167,7 +1210,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells; eight other families unexecuted. A_CI is next. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC is next and seven families remain unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -1181,6 +1224,18 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == "8.4d":
+        if args.family == "A_CI":
+            require(not args.preparation and args.action in ("status", "verify-retained"),
+                "select A_CI status or verify-retained; --oracle selects the independent prerequisite")
+            require(not args.recheck_numerics or args.action == "verify-retained", "recheck requires verify-retained")
+            if args.action == "status":
+                print(json.dumps(family_status(ROOT, args.family, args.checkpoint), indent=2))
+            else:
+                script = "p984d_aci_oracle.py" if args.oracle else "p984d_aci_runtime.py"
+                subprocess.run([sys.executable, str(ROOT / HERE / "tranche8_retained.py"),
+                    str(ROOT / HERE / script), "--check-retained",
+                    *(["--recheck-numerics"] if args.recheck_numerics else [])], cwd=ROOT, check=True)
+            return
         require(args.family in ("C_OS", "C_CI") and not args.oracle and not args.preparation,
             "select completed C_OS or C_CI deep evidence")
         require(not args.recheck_numerics or (args.family == "C_CI" and args.action == "verify-retained"),
