@@ -10,11 +10,13 @@ test('deep C_OS evidence is partial and not acceptance or an event sequence', ()
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out),/8.4d deeper expansion/);
   assert.match(text(out),/24 pointwise sign enclosures; 18\/18 positive finite-probe histories/);
+  assert.match(text(out),/Bounded C_CI hardening: 9 finite target probes, 18 histories, 36 native steps/);
+  assert.match(text(out),/3 are rounded-transfer controls, not exact-conserving event evidence/);
   assert.match(text(out),/40\/40 accepted history cells, 0 passing pending acceptance/);
   const deep=evidence.coverage.deep_expansion;
-  assert.equal(deep.family_results.length,1);
+  assert.equal(deep.family_results.length,2);
   assert.equal(deep.family_results[0].maximum_core_depth,4);
-  assert.equal(deep.families_not_executed.length,9);
+  assert.equal(deep.families_not_executed.length,8);
   const hardened=structuredClone(evidence);
   hardened.coverage.deep_expansion.family_results[0].hardening.uniform_tube=true;
   assert.throws(()=>checkedTranche8(hardened));
@@ -36,6 +38,25 @@ test('C_PC boundary execution binds scoped acceptance', () => {
   assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
   for(const mutate of [r=>r.accepted_cells=0,r=>r.acceptance=null,r=>r.passing_pending_cells=640,r=>r.native_trajectories_rerun=true]) {
     const forged=structuredClone(evidence);mutate(forged.coverage.boundary_contract.family_results[i]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('deep C_CI binds complete joint-root evidence without acceptance widening', () => {
+  const deep=evidence.coverage.deep_expansion;
+  const row=deep.family_results.find(r=>r.family==='C_CI');
+  assert.equal(row.passed_cases,20);
+  assert.equal(row.target_steps,400);
+  assert.equal(row.accepted_cells,40);
+  assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.acceptance.anchor,'scoped-user-acceptance');
+  assert.match(row.comparison_scope,/CI_only_tree23_pointwise_full_joint_root/);
+  assert.ok(sourceURL(row.review).startsWith('/api/tranche8/source?'));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/C_CI: 20 single-event cases; 40\/40 accepted history cells/);
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.final_reads=0,r=>r.interval_equations_recomputed=true,r=>r.review.sha256='forged']) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.deep_expansion.family_results.find(r=>r.family==='C_CI'));
     assert.throws(()=>checkedTranche8(forged));
   }
 });

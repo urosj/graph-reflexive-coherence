@@ -2865,6 +2865,19 @@ separates native failed continuation, event rollback, pointwise interval signs
 and finite neighborhood probes. Neither a rounded charge receipt nor sampled
 positivity is promoted into exact conservation or a uniform trajectory tube.
 
+The [C_CI deep successor](./phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md)
+uses the same named layouts, with its own full joint-root evidence. Its largest
+target has 23 total vertices: the old tree17 independent certificate does not
+apply. A separate CI-only tree23 argument checks the strict selector gap and
+actual dimension-dependent norms, without importing the PC carrier dimension
+constant or changing the native domain/tolerances. Both-role continuation and
+scoped acceptance are separate requirements, not inferred from C_OS.
+The bounded D94 hardening adds a center, six pairwise share transfers of
+1/4096, and two opposite external resource transfers of 1/16384, both roles
+for two steps. Report full pointwise CI/resource margins and execute a known
+excluded continuation plus late-event rollback. These finite target probes
+do not certify an allocation law, uniform neighborhood or accumulated trajectory.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten
@@ -2932,7 +2945,8 @@ and the [evidence/storage policy](../docs/reference/EvidenceStorage.md):
 - Publish concise reviews, completed coverage and consumed operands with shared
   context stored once. Discard suspended/incomplete run artifacts; keep a
   concise reproducible blocker or negative test when needed. Justified files
-  over 10,000,000 bytes use byte-exact XZ and the established storage checks.
+  over 1,000,000 bytes use byte-exact XZ and the established storage checks;
+  compressed files may be larger. This applies to new/changed raw files.
   Keep accepted checkpoints accessible through CLI/API/notebook/browser as
   partial family/child coverage, without changing parent acceptance or support.
 
@@ -3127,7 +3141,7 @@ family. Closure requires all ten family items and the declared required cells,
 without advancing `.d`–`.i`, 8.5 or 8.6. Apply the
 [retention and storage policy](../docs/reference/EvidenceStorage.md): retain
 shared inputs once, justify original numerical operands by a named checker,
-publish completed results only, pack justified files over 10,000,000 bytes
+publish completed results only, pack new/changed raw files over 1,000,000 bytes
 with the existing byte-exact XZ tooling, and run the documented local storage
 tests/staged-blob checks before committing. The last two main commits
 `932d9fd9` and `19a2d8fc` establish local checks without a tracked GitHub
@@ -3415,8 +3429,8 @@ All remaining Tranche 8 campaigns must follow the
 consumer and budget for large traces before execution, store shared inputs once,
 and avoid repeated full successful journals. Suspended/incomplete runs and
 their tracking records are disposable working data and must not be published.
-The 10 MB Git-file limit applies
-now. Lossless packing preserves the current checked subjects; a future compact
+The 1 MB compression threshold applies to new/changed raw files; compressed
+files may be larger. Lossless packing preserves the current checked subjects; a future compact
 schema must preserve the operands needed by its independent checker. Evidence
 volume and repeated executions of the same checker are not independent proofs.
 

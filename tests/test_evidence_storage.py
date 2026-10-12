@@ -1,12 +1,16 @@
 """Pressure lossless storage, failure-closed restoration and the Git size gate."""
 
 import importlib.util
+import bz2
+import gzip
+import io
 import json
 import lzma
 import os
 import subprocess
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -34,8 +38,8 @@ class StorageTests(unittest.TestCase):
         }
         (self.root / "data").mkdir()
         (self.root / self.row["storage_path"]).write_bytes(self.packed)
-        self.manifest = {"schema": "exact-evidence-storage-v1",
-                         "max_git_file_bytes": 256, "files": [self.row]}
+        self.manifest = {"schema": "exact-evidence-storage-v2",
+                         "compression_threshold_bytes": 256, "files": [self.row]}
         self.save()
 
     def save(self):
@@ -94,8 +98,8 @@ class StorageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "symlink"):
             storage.safe_path(self.root, "alias/result.json")
 
-    def test_manifest_types_and_archive_budget_are_strict(self):
-        for key, value in (("size", True), ("storage_size", -1), ("storage_size", 257)):
+    def test_manifest_types_and_positive_sizes_are_strict(self):
+        for key, value in (("size", True), ("storage_size", -1), ("storage_size", True)):
             old = self.row[key]
             self.row[key] = value
             self.save()
@@ -124,11 +128,11 @@ class StorageTests(unittest.TestCase):
         path.write_bytes(self.raw)
         git("add", "large.json")
         path.write_bytes(b"{}")
-        with self.assertRaisesRegex(ValueError, "Git files exceed 10 MB"):
+        with self.assertRaisesRegex(ValueError, "raw Git files exceed compression threshold"):
             storage.git_size_check(self.root)
         git("add", "large.json")
         (self.root / "ignored-local.json").write_bytes(self.raw)
-        self.assertEqual(storage.git_size_check(self.root)["git_files"], 1)
+        self.assertEqual(storage.git_size_check(self.root)["changed_git_files"], 1)
 
     def test_pack_new_subject_and_resume_exact_archive(self):
         name = "data/new.json"
@@ -142,13 +146,64 @@ class StorageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "refusing overwrite"):
             storage.pack(self.root, [name])
 
-    def test_pack_rejects_archive_over_budget_without_registering_it(self):
-        name = "data/entropy.json"
+    def test_pack_allows_large_archive_and_non_json_payload(self):
+        name = "data/entropy.bin"
         (self.root / name).write_bytes(os.urandom(1024))
-        with self.assertRaisesRegex(ValueError, "archive still exceeds"):
+        storage.pack(self.root, [name])
+        row = next(r for r in storage.entries(self.root) if r['path'] == name)
+        self.assertGreater(row['storage_size'], storage.LIMIT)
+        self.assertEqual(storage.unpack(storage.packed_bytes(self.root, row), row), (self.root/name).read_bytes())
+        with self.assertRaisesRegex(ValueError, 'already compressed'):
+            storage.pack(self.root, [name+'.xz'])
+
+    def test_threshold_is_strictly_greater_and_legacy_manifest_reads(self):
+        name = 'data/boundary.txt'
+        (self.root/name).write_bytes(b'a'*storage.LIMIT)
+        with self.assertRaisesRegex(ValueError, 'does not exceed'):
             storage.pack(self.root, [name])
-        self.assertFalse((self.root / (name + ".xz")).exists())
-        self.assertEqual(len(storage.entries(self.root)), 1)
+        (self.root/name).write_bytes(b'a'*(storage.LIMIT+1))
+        storage.pack(self.root,[name])
+        self.assertEqual(len(storage.entries(self.root)),2)
+        self.manifest = {'schema':'exact-evidence-storage-v1','max_git_file_bytes':10_000_000,'files':[self.row]}
+        self.save()
+        self.assertEqual(storage.entries(self.root), [self.row])
+
+    def test_git_gate_is_forward_only_and_checks_compressed_bytes(self):
+        def git(*args):
+            subprocess.run(['git',*args],cwd=self.root,check=True,capture_output=True)
+        git('init','--quiet')
+        historical=self.root/'historical.json'
+        historical.write_bytes(self.raw)
+        git('add','historical.json')
+        git('-c','user.name=Storage Test','-c','user.email=storage@example.invalid',
+            'commit','--quiet','-m','fixture')
+        self.assertEqual(storage.git_size_check(self.root)['changed_git_files'],0)
+        archive=self.root/'new.xz'
+        archive.write_bytes(lzma.compress(os.urandom(1024)))
+        git('add','new.xz')
+        self.assertFalse(storage.git_size_check(self.root)['compressed_size_limited'])
+        archive.write_bytes(os.urandom(1024))
+        git('add','new.xz')
+        archive.write_bytes(lzma.compress(self.raw))
+        with self.assertRaisesRegex(ValueError,'new.xz'):
+            storage.git_size_check(self.root)
+        git('add','new.xz')
+        historical.write_bytes(self.raw+b' ')
+        git('add','historical.json')
+        with self.assertRaisesRegex(ValueError,'historical.json'):
+            storage.git_size_check(self.root)
+
+    def test_recognized_archives_are_validated_not_just_named(self):
+        buffer=io.BytesIO()
+        with zipfile.ZipFile(buffer,'w',compression=zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr('payload',self.raw)
+        for name,data in [('a.xz',self.packed),('a.gz',gzip.compress(self.raw)),
+                          ('a.bz2',bz2.compress(self.raw)),('a.zip',buffer.getvalue())]:
+            with self.subTest(name=name):
+                self.assertTrue(storage.valid_compressed(name,data))
+                self.assertFalse(storage.valid_compressed(name,self.raw))
+                self.assertFalse(storage.valid_compressed(name,data[:-8]))
+        self.assertFalse(storage.valid_compressed('a.xz',self.packed+b'raw trailing bytes'))
 
     def test_scoped_restore_does_not_require_unrelated_local_outputs(self):
         path = self.root / self.row["path"]

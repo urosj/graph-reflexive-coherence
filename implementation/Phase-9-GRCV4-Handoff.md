@@ -1,6 +1,39 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — P9-8.4d C_OS
+## Accepted checkpoint — P9-8.4d C_CI; A_CI is next
+
+Storage update (2026-10-12): compress new/changed raw files over 1,000,000
+bytes; valid compressed files may be larger. Unchanged historical files are
+grandfathered. C_CI hardening is now byte-exact XZ: 3,840,153 bytes restored,
+272,860 bytes stored. The original 1,300,916-byte C_CI archive remains valid.
+Use `scripts/evidence_storage.py restore` for standalone readers on a fresh
+clone; side-tool restoration is automatic. No numerical rerun is required.
+
+C_OS and its bounded hardening were accepted and committed as `dcc04f87`.
+The [C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md) is accepted:
+20 declared D59/66/73/94 cases, 40 histories, ten steps per history. The
+first prerequisite probe exposed the independent checker's tree17 ceiling.
+A separate CI-only tree23 certificate now covers the named larger targets;
+the old certificates and production code are unchanged. Numerical execution
+and user acceptance are reported separately: **20/20 cases, 40 histories,
+400 native target steps and 40 fresh final reads pass**, with five focused
+pressure tests. All 400 pointwise resource-error margins are positive; no
+accumulated trajectory tube is claimed. Completed evidence is 33.92 MB raw /
+1.30 MB XZ, byte-exactly restored in a fresh directory. CLI/API/notebook/browser
+expose 40 accepted C_CI cells; C_OS stays accepted at 40.
+Eight other `.d` families remain unexecuted. The user accepted C_CI and its
+hardening on 2026-10-12; A_CI is next. No `src/` or spec files changed.
+
+The separate D94 C_CI hardening also passes: nine predeclared finite target
+probes, both histories/two steps (36 native steps), full pointwise CI/resource
+margins, native excluded-continuation rejection and late-event rollback.
+Worst positivity margin is about 9.846e-15; all three focused tests pass.
+Six probes preserve both-role exact coordinate charge; three allocation images
+have explicit current-role rounding deltas and confer no exact-conserving
+event credit. Side-tool surfaces include the supplement. Neither this nor the
+original run claims a uniform neighborhood or accumulated exact-real tube.
+
+## Accepted checkpoint — P9-8.4d C_OS
 
 Branch `work/p9-8-4d` starts from `1c56da51` on 2026-10-12.
 The [C_OS deeper-expansion checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
@@ -11,13 +44,13 @@ target steps, 40 final reads and four focused scientific tests. Completed
 with depth; regression controls retain the failed older tuples. The law,
 source, timestep and comparison budgets stay fixed. This is bounded dense
 cross-check evidence, not arbitrary-depth support or successive-event coverage.
-Accepted by the user on 2026-10-12; all nine other `.d` families remain unexecuted.
+Accepted by the user on 2026-10-12; the C_CI successor is described above.
 The [bounded hardening supplement](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md)
 adds native excluded-recipe behavior, late-event atomicity, 24 pointwise Arb
 sign enclosures and nine finite neighborhood probes (18 positive histories).
 Rounded charge admission is distinguished from exact coordinate conservation.
 No public ordinary-step owner or continuous trajectory tube is claimed.
-Next in the first group is C_CI, then A_CI and A_PC. Keep `.d` open.
+The first-group order is C_OS, C_CI, A_CI and A_PC. Keep `.d` open.
 
 ## Accepted predecessor — P9-8.4c closed
 
@@ -56,7 +89,8 @@ recompute only affected scientific dependencies or investigate a concrete
 failure. Metadata/acceptance/storage updates need integrity and surface checks,
 not repeated numerical campaigns. Synchronize the full view once per coherent
 checkpoint. Retain completed compact evidence, named operand consumers and
-byte-exact XZ under the 10 MB rule; no suspended/incomplete run artifacts.
+byte-exact XZ for new/changed raw files over 1 MB (larger archives allowed);
+no suspended/incomplete run artifacts.
 The C_OS `.d` checkpoint above is the first execution work; its 40 C_OS cells are accepted; no other `.d–h`
 cells have user acceptance yet.
 
@@ -323,7 +357,7 @@ Aggregate `.c`, `.d`–`.i`, 8.5 and 8.6 remain open.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed
-evidence only, shared inputs once, byte-exact XZ for files over 10 MB, ignored
+evidence only, shared inputs once, byte-exact XZ for new/changed raw files over 1 MB, ignored
 expanded/progress files and local storage tests plus staged-blob checks before
 commit or publication. `/.github/` is ignored; no workflow execution is assumed.
 Document-only changes need no native trajectory or interval-math rerun.

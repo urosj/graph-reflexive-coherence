@@ -126,7 +126,13 @@ export function renderTranche8(value, container, create = tag => document.create
     details(container,'Named deep cases and numerical comparison limits',run);
     if (run.hardening) {
       const h=run.hardening;
-      append(container,'p',`Bounded C_OS hardening: ${h.pointwise_sign_certificates} pointwise sign enclosures; ${h.neighborhood_positive_roles}/18 positive finite-probe histories. Native excluded cases and event rollback checked. No uniform tube or public ordinary-step owner claim.`);
+      const detail = h.finite_probes !== undefined
+        ? `${h.finite_probes} finite target probes, ${h.histories} histories, ${h.native_steps} native steps with pointwise joint-root/resource bounds`
+        : `${h.pointwise_sign_certificates} pointwise sign enclosures; ${h.neighborhood_positive_roles}/18 positive finite-probe histories`;
+      append(container,'p',`Bounded ${run.family} hardening: ${detail}. Native excluded cases and event rollback checked. No uniform tube or public ordinary-step owner claim.`);
+      if (h.rounded_transfer_controls !== undefined) {
+        append(container,'p',`${h.exact_charge_preserving_probes} probes preserve both-role exact coordinate charge; ${h.rounded_transfer_controls} are rounded-transfer controls, not exact-conserving event evidence.`);
+      }
       const refs=append(container,'p','');
       for (const key of ['inputs','results','review']) { link(refs,h[key],`Hardening ${key}`); append(refs,'span',' · '); }
     }

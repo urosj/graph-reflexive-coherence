@@ -23,6 +23,13 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+DEEP_CCI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCICases.json": "714becd26009a5794e3d610c76959f56402aa0463127ac21281bfdc4e11598fe",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningCases.json": "e0ac0e8adae13015ef5ccbddc2ea03d3f6a30ae064c6f6f8e15d8caf26e8a0cf",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json": "a0b9437a93578491de8e53e3505ef669c87db6f170915960e44f3bed1500688f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIResults.json": "cc39be3684c262ea3ce6210221663ed5ecc5caefc46b1c53449217c0a96e082b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md": "ef124afe356d847acaddea2254d9e250fa33bca448f76478a5588e19c96c638e"
+}
 DEEP_COS_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningCases.json": "cdad7743261c594a2e48276ab717cf82acea2d934ac49bd5f73c54fadaceb37e",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningResults.json": "e05a9a2697906d827a90d92a7d4831faa5e8c803a8fc3da34c2a39a901cda467",
@@ -249,13 +256,15 @@ class Sources:
             require(not path.is_symlink() and path.resolve().is_relative_to(self.root), "unsafe source path")
             boundary_pins = {**BOUNDARY_CLOSEOUT_SOURCES, **BOUNDARY_ARG2B_SOURCES, **BOUNDARY_CRG2B_SOURCES, **BOUNDARY_ACIPC_SOURCES, **BOUNDARY_CONTRACT_SOURCES, **BOUNDARY_MECHANICAL_SOURCES, **BOUNDARY_COS_SOURCES, **BOUNDARY_AOS_ORACLE_SOURCES, **BOUNDARY_AOS_SOURCES, **BOUNDARY_CCI_PREPARATION_SOURCES, **BOUNDARY_CCI_SOURCES, **BOUNDARY_ACI_ORACLE_SOURCES, **BOUNDARY_ACI_SOURCES, **BOUNDARY_CPC_SOURCES, **BOUNDARY_APC_SOURCES, **BOUNDARY_CCIPC_SOURCES}
             boundary_pins.update(DEEP_COS_SOURCES)
+            boundary_pins.update(DEEP_CCI_SOURCES)
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_deep_execution_with_scoped_acceptance" if name in DEEP_COS_SOURCES else
+                    basis=("pinned_deep_execution_with_scoped_acceptance" if name in DEEP_CCI_SOURCES else
+                        "pinned_deep_execution_with_scoped_acceptance" if name in DEEP_COS_SOURCES else
                         "pinned_boundary_aggregate_closeout" if name in BOUNDARY_CLOSEOUT_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_ARG2B_SOURCES else
                         "pinned_boundary_execution_with_scoped_acceptance" if name in BOUNDARY_CRG2B_SOURCES else
@@ -1065,7 +1074,27 @@ BOUNDARY_RUNTIME = {"C_OS": "p984c_cos", "A_OS": "p984c_aos_runtime",
     "C_CI": "p984c_cci_runtime", "A_CI": "p984c_aci_runtime", "C_PC": "p984c_cpc_runtime", "A_PC": "p984c_apc_runtime", "C_CI_PC": "p984c_ccipc_runtime", "A_CI_PC": "p984c_acipc_runtime", "C_RG2b": "p984c_crg2b_runtime", "A_RG2b": "p984c_arg2b_runtime"}
 
 
-def deep_view(sources):
+def deep_family_view(sources, family):
+    if family == "C_CI":
+        import p984d_cci as deep
+        import p984d_cci_hardening as hardening
+        summary = deep.status(sources.read(deep.INPUTS), sources.read(deep.RESULTS))
+        require('## Scoped user acceptance' in sources.raw(deep.REVIEW).decode(), 'missing C_CI deep acceptance')
+        summary.update(inputs=sources.ref(deep.INPUTS), results=sources.ref(deep.RESULTS),
+            review=sources.ref(deep.REVIEW), acceptance=sources.ref(deep.REVIEW, anchor='scoped-user-acceptance'),
+            status='accepted_bounded', accepted_cells=40, passing_pending_cells=0,
+            comparison_scope="CI_only_tree23_pointwise_full_joint_root_bounds_not_uniform_trajectory_tube")
+        supplement = sources.read(hardening.RESULTS)
+        exact_transfers = sum(all(v == '0' for v in row['exact_coordinate_transfer_deltas'].values())
+            for row in supplement['neighborhood'])
+        summary['hardening'] = dict(**hardening.check(sources.read(hardening.INPUTS), supplement),
+            exact_charge_preserving_probes=exact_transfers,
+            rounded_transfer_controls=len(supplement['neighborhood'])-exact_transfers,
+            inputs=sources.ref(hardening.INPUTS), results=sources.ref(hardening.RESULTS), review=sources.ref(deep.REVIEW),
+            scope='nine_finite_target_probes_both_roles_two_steps_not_uniform_tube;native_excluded_step_and_late_event_rollback')
+        summary['hardening'].update(status='accepted_bounded', acceptance=summary['acceptance'])
+        return summary
+    require(family == "C_OS", "deep evidence unavailable for this family")
     import p984d_cos as deep
     import p984d_cos_hardening as hardening
     summary = deep.status(sources.read(deep.INPUTS), sources.read(deep.RESULTS))
@@ -1078,9 +1107,14 @@ def deep_view(sources):
     summary["hardening"] = dict(**hardening.check(sources.read(hardening.INPUTS),sources.read(hardening.RESULTS)),
         inputs=sources.ref(hardening.INPUTS),results=sources.ref(hardening.RESULTS),review=sources.ref(hardening.REVIEW),
         scope="24_pointwise_exact_real_sign_enclosures_at_represented_prestates_not_uniform_trajectory_tube;finite_neighborhood_not_native_event_admission")
-    return dict(checkpoint="8.4d", family_results=[summary], aggregate_closed=False,
+    return summary
+
+
+def deep_view(sources):
+    families = ("C_OS", "C_CI")
+    return dict(checkpoint="8.4d", family_results=[deep_family_view(sources, f) for f in families], aggregate_closed=False,
         first_group=["C_OS", "C_CI", "A_CI", "A_PC"],
-        families_not_executed=[f for f in FAMILIES if f != "C_OS"],
+        families_not_executed=[f for f in FAMILIES if f not in families],
         other_family_credit=0, successive_event_credit=0)
 
 
@@ -1090,11 +1124,11 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d"), "unknown family checkpoint")
     if checkpoint == "8.4d":
-        require(family == "C_OS", "deep evidence unavailable for this family")
+        require(family in ("C_OS", "C_CI"), "deep evidence unavailable for this family")
         policy.restore_packed_evidence(root)
-        with validation_session(("p984d_cos",), root=root):
+        with validation_session(("p984d_cos" if family == "C_OS" else "p984d_cci",), root=root):
             sources = Sources(root)
-            summary = deep_view(sources)["family_results"][0]
+            summary = deep_family_view(sources, family)
             return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
                 scope="selected_family_only_not_full_index_or_execution_permission", native=summary,
                 source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
@@ -1133,7 +1167,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI is next, nine other families unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells; eight other families unexecuted. A_CI is next. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -1147,12 +1181,25 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == "8.4d":
-        require(args.family == "C_OS" and not args.oracle and not args.preparation and not args.recheck_numerics,
-            "deep C_OS scope only; --check already recomputes dense comparisons")
+        require(args.family in ("C_OS", "C_CI") and not args.oracle and not args.preparation,
+            "select completed C_OS or C_CI deep evidence")
+        require(not args.recheck_numerics or (args.family == "C_CI" and args.action == "verify-retained"),
+            "C_CI numerical recheck requires verify-retained")
         if args.action == "status":
             print(json.dumps(family_status(ROOT, args.family, args.checkpoint), indent=2))
         else:
             require(args.action == "verify-retained", "use verify-retained for the deep checker")
+            if args.family == "C_CI":
+                subprocess.run([sys.executable, str(ROOT / HERE / "tranche8_retained.py"),
+                    str(ROOT / HERE / "p984d_cci.py"), "--check-retained",
+                    *(["--recheck-numerics"] if args.recheck_numerics else [])], cwd=ROOT, check=True)
+                import p984d_cci_hardening as hardening
+                sources = Sources(ROOT)
+                for name in (hardening.INPUTS, hardening.RESULTS):
+                    sources.raw(name)
+                subprocess.run([sys.executable, str(ROOT / hardening.SELF), 'check',
+                    *(['--recheck-numerics'] if args.recheck_numerics else [])], cwd=ROOT, check=True)
+                return
             subprocess.run([sys.executable, str(ROOT / HERE / "tranche8_retained.py"),
                 str(ROOT / HERE / "p984d_cos.py"), "--check"], cwd=ROOT, check=True)
             sources=Sources(ROOT)

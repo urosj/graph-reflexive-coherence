@@ -16121,6 +16121,99 @@ export const TRANCHE8_EVIDENCE = {
             },
             "scope": "24_pointwise_exact_real_sign_enclosures_at_represented_prestates_not_uniform_trajectory_tube;finite_neighborhood_not_native_event_admission"
           }
+        },
+        {
+          "family": "C_CI",
+          "status": "accepted_bounded",
+          "native_cases": 20,
+          "passed_cases": 20,
+          "required_cells": 40,
+          "successful_history_cells": 40,
+          "accepted_cells": 40,
+          "passing_pending_cells": 0,
+          "target_steps": 400,
+          "final_reads": 40,
+          "degrees": [
+            59,
+            66,
+            73,
+            94
+          ],
+          "maximum_core_depth": 4,
+          "native_trajectories_rerun": false,
+          "interval_equations_recomputed": false,
+          "successive_events": false,
+          "arbitrary_depth": false,
+          "user_accepted": false,
+          "aggregate_closed": false,
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCICases.json",
+            "sha256": "714becd26009a5794e3d610c76959f56402aa0463127ac21281bfdc4e11598fe",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIResults.json",
+            "sha256": "cc39be3684c262ea3ce6210221663ed5ecc5caefc46b1c53449217c0a96e082b",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md",
+            "sha256": "ef124afe356d847acaddea2254d9e250fa33bca448f76478a5588e19c96c638e",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md",
+            "sha256": "ef124afe356d847acaddea2254d9e250fa33bca448f76478a5588e19c96c638e",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "comparison_scope": "CI_only_tree23_pointwise_full_joint_root_bounds_not_uniform_trajectory_tube",
+          "hardening": {
+            "status": "accepted_bounded",
+            "finite_probes": 9,
+            "histories": 18,
+            "native_steps": 36,
+            "native_excluded_continuations": 1,
+            "injected_late_event_failures": 1,
+            "uniform_tube": false,
+            "accumulated_exact_real_trajectory": false,
+            "native_trajectories_rerun": false,
+            "interval_equations_recomputed": false,
+            "user_accepted": false,
+            "aggregate_closed": false,
+            "exact_charge_preserving_probes": 6,
+            "rounded_transfer_controls": 3,
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningCases.json",
+              "sha256": "e0ac0e8adae13015ef5ccbddc2ea03d3f6a30ae064c6f6f8e15d8caf26e8a0cf",
+              "revision": null,
+              "basis": "pinned_deep_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json",
+              "sha256": "a0b9437a93578491de8e53e3505ef669c87db6f170915960e44f3bed1500688f",
+              "revision": null,
+              "basis": "pinned_deep_execution_with_scoped_acceptance"
+            },
+            "review": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md",
+              "sha256": "ef124afe356d847acaddea2254d9e250fa33bca448f76478a5588e19c96c638e",
+              "revision": null,
+              "basis": "pinned_deep_execution_with_scoped_acceptance"
+            },
+            "scope": "nine_finite_target_probes_both_roles_two_steps_not_uniform_tube;native_excluded_step_and_late_event_rollback",
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md",
+              "sha256": "ef124afe356d847acaddea2254d9e250fa33bca448f76478a5588e19c96c638e",
+              "revision": null,
+              "basis": "pinned_deep_execution_with_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            }
+          }
         }
       ],
       "aggregate_closed": false,
@@ -16136,7 +16229,6 @@ export const TRANCHE8_EVIDENCE = {
         "A_PC",
         "A_CI_PC",
         "A_RG2b",
-        "C_CI",
         "C_PC",
         "C_CI_PC",
         "C_RG2b"
@@ -17212,6 +17304,36 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_accepted_mechanical_evidence_not_numerical"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCICases.json",
+      "sha256": "714becd26009a5794e3d610c76959f56402aa0463127ac21281bfdc4e11598fe",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningCases.json",
+      "sha256": "e0ac0e8adae13015ef5ccbddc2ea03d3f6a30ae064c6f6f8e15d8caf26e8a0cf",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json",
+      "sha256": "a0b9437a93578491de8e53e3505ef669c87db6f170915960e44f3bed1500688f",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIResults.json",
+      "sha256": "cc39be3684c262ea3ce6210221663ed5ecc5caefc46b1c53449217c0a96e082b",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md",
+      "sha256": "ef124afe356d847acaddea2254d9e250fa33bca448f76478a5588e19c96c638e",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSCases.json",
       "sha256": "f2f62f2c5c741a0997f49e0286f1f23b05a796b1f28e9f2cf93ace08649eac50",
       "revision": null,
@@ -17386,5 +17508,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "2929ff41b38903990126149037bac479cea6e4209440bb67cd2a8783a20d4221"
+  "view_digest": "b0679cf2b3f34621e8aab4fabfea1cd95d17f4a9e5480e59fbb33b02ab2e31f6"
 };

@@ -31,7 +31,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse(h["user_accepted"])
         self.assertEqual(row["degrees"], [59,66,73,94])
         self.assertFalse(row["successive_events"])
-        self.assertEqual(set(d["families_not_executed"]), set(index.FAMILIES)-{"C_OS"})
+        self.assertEqual(set(d["families_not_executed"]), set(index.FAMILIES)-{"C_OS", "C_CI"})
         with patch.object(api, "_index", return_value=index), patch.object(index, "family_status", return_value={}) as selected:
             api.tranche8_status(index.ROOT, family="C_OS", checkpoint="8.4d")
             selected.assert_called_once_with(index.ROOT, "C_OS", "8.4d")
@@ -60,6 +60,31 @@ class EvidenceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.value = index.checked()
+
+    def test_deep_cci_sources_scope_and_dispatch(self):
+        row = next(r for r in self.value['coverage']['deep_expansion']['family_results'] if r['family']=='C_CI')
+        self.assertEqual((row['passed_cases'],row['accepted_cells'],row['passing_pending_cells']), (20,40,0))
+        self.assertEqual(row['acceptance']['anchor'],'scoped-user-acceptance')
+        self.assertIn('tree23',row['comparison_scope'])
+        self.assertEqual(row['hardening']['native_steps'],36)
+        self.assertEqual(row['hardening']['finite_probes'],9)
+        self.assertEqual(row['hardening']['exact_charge_preserving_probes'],6)
+        self.assertEqual(row['hardening']['rounded_transfer_controls'],3)
+        self.assertFalse(row['hardening']['uniform_tube'])
+        self.assertFalse(row['native_trajectories_rerun'])
+        with patch.object(api, '_index', return_value=index), patch.object(index, 'family_status', return_value={}) as selected:
+            api.tranche8_status(index.ROOT,family='C_CI',checkpoint='8.4d')
+            selected.assert_called_once_with(index.ROOT,'C_CI','8.4d')
+        for path in index.DEEP_CCI_SOURCES:
+            with patch.object(index.Sources,'current_bytes',return_value=b'forged'), self.assertRaisesRegex(ValueError,'source drift'):
+                index.Sources(index.ROOT).raw(path)
+        with patch.object(sys,'argv',['query','verify-retained','--family','C_CI','--checkpoint','8.4d','--recheck-numerics']), patch.object(index.subprocess,'run') as execute:
+            index.main()
+            command=execute.call_args_list[0].args[0]
+            self.assertTrue(command[-3].endswith('p984d_cci.py'))
+            self.assertEqual(command[-2:],['--check-retained','--recheck-numerics'])
+            self.assertTrue(execute.call_args.args[0][-3].endswith('p984d_cci_hardening.py'))
+            self.assertEqual(execute.call_args.args[0][-2:],['check','--recheck-numerics'])
 
     def test_complete_population_and_separate_acceptance(self):
         v = self.value

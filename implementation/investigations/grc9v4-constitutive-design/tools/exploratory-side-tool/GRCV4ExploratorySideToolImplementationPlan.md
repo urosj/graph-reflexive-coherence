@@ -2740,6 +2740,17 @@ Expose the bounded hardening alongside that row: native excluded cases,
 coverage. Preserve the distinction between rounded and exact charge, and
 between event atomicity and provisional ordinary continuation.
 
+C_CI `.d` follows with separately bound tree23 pointwise joint-root evidence.
+Reuse the same CLI/API/notebook/browser projection and select only that family's
+prerequisites for a scoped query. Integrity-only checking and explicit interval
+recomputation remain distinct; neither reruns native trajectories or supplies
+acceptance. Keep C_OS and C_CI accepted and all other families unexecuted
+until their own records exist. No PC/CI+PC carrier or uniform-tube credit follows.
+Expose the C_CI D94 hardening alongside its original run, with separate inputs
+and results: nine finite two-step/both-role target probes, full pointwise CI
+and resource margins, native excluded continuation and late-event rollback.
+Retained checking includes the supplement without repeating the campaign.
+
 Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

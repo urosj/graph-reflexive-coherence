@@ -1,6 +1,6 @@
 {
-  "schema": "exact-evidence-storage-v1",
-  "max_git_file_bytes": 10000000,
+  "schema": "exact-evidence-storage-v2",
+  "compression_threshold_bytes": 1000000,
   "files": [
     {
       "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json",
@@ -201,6 +201,22 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-CRG2bResults.json.xz",
       "storage_size": 1180412,
       "storage_sha256": "0227b041b4945fd3befa40ba18d0284376866f2be4941f2a769a7198f2383ac1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json",
+      "size": 3840153,
+      "sha256": "a0b9437a93578491de8e53e3505ef669c87db6f170915960e44f3bed1500688f",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json.xz",
+      "storage_size": 272860,
+      "storage_sha256": "bfead87a36a98f6e3569e0385d9a22699421868d5f03228e4fdddd33bf1331b8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIResults.json",
+      "size": 33916808,
+      "sha256": "cc39be3684c262ea3ce6210221663ed5ecc5caefc46b1c53449217c0a96e082b",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIResults.json.xz",
+      "storage_size": 1300916,
+      "storage_sha256": "842efb5573ae6cae40729c1a1494a6839c18dbc373ed39c674a05a924f451666"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSResults.json",

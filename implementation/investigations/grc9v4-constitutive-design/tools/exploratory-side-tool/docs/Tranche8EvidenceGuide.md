@@ -456,7 +456,8 @@ archive. The current evidence index restores missing copies automatically;
 standalone historical readers first run `python scripts/evidence_storage.py restore`
 from the repository root. This is storage reconstruction, not a numerical rerun
 or a new acceptance. See the [storage and value guide](../../../../../../docs/reference/EvidenceStorage.md)
-for archive links, the 10 MB Git-file rule and limits of the evidence claims.
+for archive links, the 1 MB compression threshold for new/changed raw files
+(larger compressed files are allowed), and limits of the evidence claims.
 
 
 ## A_RG2b bounded execution and scoped acceptance
@@ -500,7 +501,8 @@ synchronization belongs at completed coherent checkpoints.
 The [C_OS review](../../../../../phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
 and `coverage.deep_expansion` expose 20 single-event cases / 40 history cells
 at D59/66/73/94 (maximum core-relative depth four), accepted on 2026-10-12.
-All nine other families remain unexecuted here; `.c` stays closed at 640/640.
+C_CI is reported separately below; eight other families remain unexecuted.
+`.c` stays closed at 640/640.
 This is bounded dense-comparison and captured-consumer evidence, not a rigorous
 error tube, arbitrary-depth admission or successive-event coverage.
 
@@ -521,3 +523,27 @@ coverage. The scoped `verify-retained` also authenticates this supplement;
 its explicit `p984d_cos_hardening.py recheck` command recomputes intervals and
 finite dense probes without rerunning native events. See the linked review
 for the lack of a continuous tube or public ordinary-step-owner claim.
+
+## P9-8.4d C_CI deeper expansion
+
+The [C_CI review](../../../../../phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md)
+explains the separate CI-only tree23 certificate and completed operands.
+Select `run.py tranche8-query status --family C_CI --checkpoint 8.4d` or
+`tranche8_status(repo_root, family="C_CI", checkpoint="8.4d")` from API/notebook.
+The existing browser deep-expansion section shows the same authenticated row.
+This is separate from the accepted `.c` checkpoint and C_OS `.d` acceptance.
+
+Use `verify-retained --family C_CI --checkpoint 8.4d` for source, complete
+joint-root, admission, represented-continuity and restart integrity checks.
+Add `--recheck-numerics` only when independent interval equations and nominal
+predictions need recomputation. Both modes disable native producers; neither
+is a new trajectory run or user acceptance. The tree23 proof is CI only, not
+a carrier-domain extension or an accumulated trajectory tube. No C_OS result
+is silently substituted for a C_CI root, current or continuation.
+
+The same C_CI row also exposes the D94 hardening inputs/results: nine finite
+target probes, both histories/two steps, pointwise joint-root and resource
+margins, a native excluded continuation and an injected late event failure.
+The selected retained command checks this supplement too; optional numerical
+rechecking recomputes its intervals, never native trajectories. These probes
+are not a continuous robustness neighborhood or a new allocation law.

@@ -2287,6 +2287,14 @@ instead of stale fixed totals and opens any pending case details explicitly.
   completed lossless evidence storage.
   - [x] Link C_OS hardening inputs/results/review and expose its bounded
     sign, negative-path and neighborhood results without additional coverage.
+  - [x] C_CI `.d`: expose 20 cases / 40 history cells with its separate
+    CI-only tree23 proof boundary, complete joint-root evidence and scoped
+    acceptance on 2026-10-12. Selected CLI/API/notebook queries must not rebuild other
+    families; browser and pinned source links must agree. Pressure source,
+    scope and dispatch drift; preserve the old tree17 and `.c` records.
+    - [x] Expose the separate D94 hardening supplement: nine finite probes,
+      pointwise margins, native excluded continuation and late-event rollback.
+      Preserve scoped acceptance and distinguish finite probes from a tube.
 
 - [x] Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.

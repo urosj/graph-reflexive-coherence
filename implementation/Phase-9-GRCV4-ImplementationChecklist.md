@@ -3117,7 +3117,8 @@ the full ten-profile plan.
       rollback, replay and injected publication failures remain P9-8.5.
     Use the [current evidence rules](../docs/reference/EvidenceStorage.md):
     shared inputs once, completed results only, a named consumer for retained
-    operands, and byte-exact XZ for justified files over 10,000,000 bytes.
+    operands, and byte-exact XZ for new/changed raw files over 1,000,000 bytes
+    (compressed files may be larger).
     After staging, run `.venv/bin/python -m unittest tests.test_evidence_storage -q`,
     `.venv/bin/python scripts/evidence_storage.py check` and
     `git diff --cached --check`. Expanded copies and progress stay ignored;
@@ -3138,7 +3139,7 @@ the full ten-profile plan.
     follows changed scientific dependencies and claims. Acceptance/docs/storage
     changes require integrity/surface checks, not repeated numerical campaigns.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
-    completed compact evidence and the existing 10 MB storage rules.
+    completed compact evidence and the 1 MB raw-file compression rule.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
     - [x] C_OS: [20 cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md),
       D59/66/73/94, depths three/four; accepted 2026-10-12.
@@ -3150,6 +3151,20 @@ the full ten-profile plan.
       - [x] [Bounded hardening](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md):
         native exclusions and late-event rollback; 24 pointwise sign enclosures;
         nine finite neighborhood probes, with separate rounded/exact charge.
+    - [x] C_CI: [deep successor](./phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md),
+      20 declared cases / 40 history cells; accepted 2026-10-12.
+      - [x] Independent layouts and exact transfer, frozen CI source/profile,
+        CI-only tree23 joint-root certificate and focused proof-boundary pressure.
+        Historical tree17 and PC/CI+PC certificates are not widened.
+      - [x] Completed native events/400 continuation steps, both-role full-root
+        and consumer checks; compact retained evidence and side-tool exposure.
+        All 20 cases pass; five focused pressure tests pass. Accepted.
+      - [x] Bounded D94 hardening: nine predeclared target-neighborhood probes,
+        both histories/two steps, full joint-root and positivity margins;
+        native excluded continuation and late-event rollback. No uniform tube.
+        All 36 steps and three focused tests pass. Six initial images preserve
+        exact charge; three remain explicitly rounded-transfer controls.
+      - [x] User acceptance; no sibling or successive-event credit.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.
     State finite depth/horizon and numerical domain; distinguish a deep pure
@@ -3216,7 +3231,8 @@ the full ten-profile plan.
   for large traces before execution. Avoid duplicate successful prefixes and
   shared-state dumps. Discard suspended/incomplete run artifacts and their
   tracking records; progress belongs in ignored working data. Retain concise
-  reviews, completed results and meaningful tests as primary evidence. Enforce the 10 MB Git-file limit and
+  reviews, completed results and meaningful tests as primary evidence. Enforce
+  compression for new/changed raw files over 1 MB, allowing larger compressed files, and
   [retention/storage rules](../docs/reference/EvidenceStorage.md).
 
   - [ ] P9-8.4i: Reconcile coverage and hand off. Bind commands/results,
