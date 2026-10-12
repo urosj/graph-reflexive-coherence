@@ -1,6 +1,25 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current status — P9-8.4c closed; P9-8.4d next
+## Current work — P9-8.4d C_OS
+
+Branch `work/p9-8-4d` starts from `1c56da51` on 2026-10-12.
+The [C_OS deeper-expansion checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
+covers 20 single-event cases at D59/66/73/94, depths three/four, both
+histories and ten target steps each: all 20 cases / 40 cells pass, with 400
+target steps, 40 final reads and four focused scientific tests. Completed
+36.40 MB evidence is stored as a byte-exact 0.886 MB XZ archive. The explicit resource fixtures change
+with depth; regression controls retain the failed older tuples. The law,
+source, timestep and comparison budgets stay fixed. This is bounded dense
+cross-check evidence, not arbitrary-depth support or successive-event coverage.
+Accepted by the user on 2026-10-12; all nine other `.d` families remain unexecuted.
+The [bounded hardening supplement](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md)
+adds native excluded-recipe behavior, late-event atomicity, 24 pointwise Arb
+sign enclosures and nine finite neighborhood probes (18 positive histories).
+Rounded charge admission is distinguished from exact coordinate conservation.
+No public ordinary-step owner or continuous trajectory tube is claimed.
+Next in the first group is C_CI, then A_CI and A_PC. Keep `.d` open.
+
+## Accepted predecessor — P9-8.4c closed
 
 On 2026-10-08 the user accepted A_RG2b, committed as `270783f`, then
 requested P9-8.4c closure on the same `work/p9-8-4c-acipc` branch.
@@ -38,7 +57,8 @@ failure. Metadata/acceptance/storage updates need integrity and surface checks,
 not repeated numerical campaigns. Synchronize the full view once per coherent
 checkpoint. Retain completed compact evidence, named operand consumers and
 byte-exact XZ under the 10 MB rule; no suspended/incomplete run artifacts.
-This is planning only; no `.d–h` cell is yet executed or accepted.
+The C_OS `.d` checkpoint above is the first execution work; its 40 C_OS cells are accepted; no other `.d–h`
+cells have user acceptance yet.
 
 ## Accepted checkpoint — P9-8.4c capacity and phase families
 

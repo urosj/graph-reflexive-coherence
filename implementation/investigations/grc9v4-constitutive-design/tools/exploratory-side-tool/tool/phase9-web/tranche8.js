@@ -115,6 +115,23 @@ export function renderTranche8(value, container, create = tag => document.create
       link(links,prepared[key],label); append(links,'span',' · ');
     }
   }
+  const deep = c.deep_expansion;
+  append(container, 'h3', '8.4d deeper expansion — partial family evidence');
+  for (const run of deep.family_results) {
+    append(container, 'p', `${run.family}: ${run.passed_cases} single-event cases; ${run.accepted_cells}/${run.required_cells} accepted history cells, ${run.passing_pending_cells} passing pending acceptance. Degrees ${run.degrees.join(', ')}, maximum core depth ${run.maximum_core_depth}, ${run.target_steps} continuation steps. No successive-event or arbitrary-depth claim.`);
+    const links=append(container, 'p', '');
+    for (const [key,label] of [['inputs','Declared deep subjects'],['results','Completed operands'],['review','Scope and excluded share recipes']]) {
+      link(links,run[key],label); append(links,'span',' · ');
+    }
+    details(container,'Named deep cases and numerical comparison limits',run);
+    if (run.hardening) {
+      const h=run.hardening;
+      append(container,'p',`Bounded C_OS hardening: ${h.pointwise_sign_certificates} pointwise sign enclosures; ${h.neighborhood_positive_roles}/18 positive finite-probe histories. Native excluded cases and event rollback checked. No uniform tube or public ordinary-step owner claim.`);
+      const refs=append(container,'p','');
+      for (const key of ['inputs','results','review']) { link(refs,h[key],`Hardening ${key}`); append(refs,'span',' · '); }
+    }
+  }
+  append(container,'p',`Unexecuted 8.4d families: ${deep.families_not_executed.join(', ')}. No sibling credit; first group remains C_OS, C_CI, A_CI, A_PC.`);
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {

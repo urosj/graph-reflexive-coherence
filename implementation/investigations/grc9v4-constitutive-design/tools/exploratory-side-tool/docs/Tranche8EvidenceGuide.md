@@ -490,7 +490,34 @@ The user-directed 2026-10-08 order is C_OS, C_CI, A_CI and A_PC through
 tracks first-group checkpoints and all-ten completion separately. Future views
 must show accepted family/child portions, unexecuted remaining rows and blocked
 prerequisites without turning representative coverage into parent closure.
-The current evidence projection still correctly leaves every `.d–h` row open:
-this scheduling change adds no execution or acceptance. Family-scoped checks
+The all-ten `.d–h` rows remain open; bounded execution is reported separately
+from acceptance. Family-scoped checks
 and exact evidence reuse avoid repeated numerical campaigns; full discovery
 synchronization belongs at completed coherent checkpoints.
+
+## P9-8.4d C_OS deeper expansion
+
+The [C_OS review](../../../../../phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
+and `coverage.deep_expansion` expose 20 single-event cases / 40 history cells
+at D59/66/73/94 (maximum core-relative depth four), accepted on 2026-10-12.
+All nine other families remain unexecuted here; `.c` stays closed at 640/640.
+This is bounded dense-comparison and captured-consumer evidence, not a rigorous
+error tube, arbitrary-depth admission or successive-event coverage.
+
+Use `run.py tranche8-query status --family C_OS --checkpoint 8.4d` for the
+selected scope, or `verify-retained --family C_OS --checkpoint 8.4d` for dense
+equation and captured-consumer checks with native producers disabled. The
+Python/notebook equivalent is
+`tranche8_status(repo_root, family="C_OS", checkpoint="8.4d")`.
+The browser's existing Tranche 8 view includes the separate deeper-expansion
+section and authenticated input/result/review links. Compressed result bytes
+restore automatically; a retained check is not a native trajectory rerun.
+
+The row's `hardening` field links the small supplementary inputs/results/review:
+24 pointwise interval sign enclosures, three native excluded-recipe events,
+late-event rollback and nine finite neighborhood probes. It distinguishes
+exact coordinate sums from the prescribed rounded charge and grants no new
+coverage. The scoped `verify-retained` also authenticates this supplement;
+its explicit `p984d_cos_hardening.py recheck` command recomputes intervals and
+finite dense probes without rerunning native events. See the linked review
+for the lack of a continuous tube or public ordinary-step-owner claim.

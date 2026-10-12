@@ -20,9 +20,10 @@ def main():
     index.require(name in BOUNDARY_MODULES and script.resolve() == expected,
         "unknown retained checker")
     options = sys.argv[2:]
-    expected_mode = "--check" if name == "p984c_cos" else "--check-retained"
+    dense_cos = name in ("p984c_cos", "p984d_cos")
+    expected_mode = "--check" if dense_cos else "--check-retained"
     index.require(options in ([expected_mode], [expected_mode, "--recheck-numerics"])
-        and (name != "p984c_cos" or len(options) == 1), "retained-only arguments required")
+        and (not dense_cos or len(options) == 1), "retained-only arguments required")
     policy.restore_packed_evidence(ROOT)
     module = importlib.import_module(name)
     output = StringIO()

@@ -3140,6 +3140,16 @@ the full ten-profile plan.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
     completed compact evidence and the existing 10 MB storage rules.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+    - [x] C_OS: [20 cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md),
+      D59/66/73/94, depths three/four; accepted 2026-10-12.
+      - [x] Independent layouts, complete references, exact represented charge,
+        both-role dense preflight and negative resource-fixture controls.
+      - [x] Native ten-step continuation and saved-consumer pressure: 20/20
+        cases, 400 target steps, 40 final reads; surfaces expose separate scoped acceptance.
+      - [x] User acceptance; no credit for the nine unexecuted families.
+      - [x] [Bounded hardening](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md):
+        native exclusions and late-event rollback; 24 pointwise sign enclosures;
+        nine finite neighborhood probes, with separate rounded/exact charge.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.
     State finite depth/horizon and numerical domain; distinguish a deep pure

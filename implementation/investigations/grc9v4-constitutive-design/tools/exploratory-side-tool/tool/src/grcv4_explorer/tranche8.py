@@ -14,7 +14,7 @@ def _index(root):
     return module
 
 
-def tranche8_status(repo_root, *, family=None):
+def tranche8_status(repo_root, *, family=None, checkpoint="8.4c"):
     """Authenticate pinned sources and structure; never execute numerical work.
 
     Raises on missing Git history, source drift or a stale generated projection.
@@ -22,7 +22,9 @@ def tranche8_status(repo_root, *, family=None):
     """
     index = _index(repo_root)
     if family is not None:
-        return index.family_status(Path(repo_root), family)
+        return index.family_status(Path(repo_root), family, checkpoint)
+    if checkpoint != "8.4c":
+        raise ValueError("select a family for a checkpoint-specific query")
     return index.checked(Path(repo_root))
 
 

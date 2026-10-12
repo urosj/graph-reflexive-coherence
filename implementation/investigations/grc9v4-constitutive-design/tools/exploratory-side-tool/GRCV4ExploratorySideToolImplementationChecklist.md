@@ -2281,6 +2281,13 @@ instead of stale fixed totals and opens any pending case details explicitly.
 
 ### P9-8.4d–h representative-first progression (2026-10-08)
 
+- [x] C_OS `.d` checkpoint: CLI/API/notebook/browser show 20 cases / 40
+  accepted history cells (2026-10-12); nine families remain unexecuted.
+  Validate source drift, closed `.c` preservation, no acceptance widening and
+  completed lossless evidence storage.
+  - [x] Link C_OS hardening inputs/results/review and expose its bounded
+    sign, negative-path and neighborhood results without additional coverage.
+
 - [x] Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

@@ -6,6 +6,25 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('deep C_OS evidence is partial and not acceptance or an event sequence', () => {
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/8.4d deeper expansion/);
+  assert.match(text(out),/24 pointwise sign enclosures; 18\/18 positive finite-probe histories/);
+  assert.match(text(out),/40\/40 accepted history cells, 0 passing pending acceptance/);
+  const deep=evidence.coverage.deep_expansion;
+  assert.equal(deep.family_results.length,1);
+  assert.equal(deep.family_results[0].maximum_core_depth,4);
+  assert.equal(deep.families_not_executed.length,9);
+  const hardened=structuredClone(evidence);
+  hardened.coverage.deep_expansion.family_results[0].hardening.uniform_tube=true;
+  assert.throws(()=>checkedTranche8(hardened));
+  assert.ok(sourceURL(deep.family_results[0].results).startsWith('/api/tranche8/source?'));
+  for (const mutate of [d=>d.aggregate_closed=true,d=>d.family_results[0].accepted_cells=0,d=>d.family_results[0].successive_events=true,d=>d.families_not_executed.pop()]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.deep_expansion);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('C_PC boundary execution binds scoped acceptance', () => {
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out), /8.4c C_PC — accepted_bounded/);

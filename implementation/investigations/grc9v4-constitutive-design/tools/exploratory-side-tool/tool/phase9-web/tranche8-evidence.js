@@ -7455,7 +7455,7 @@ export const TRANCHE8_EVIDENCE = {
       {
         "work_id": "P9-8.4d",
         "title": "Deeper recursive runtime expansion",
-        "status": "pending",
+        "status": "partial_execution_accepted",
         "accepted": false
       },
       {
@@ -15919,6 +15919,231 @@ export const TRANCHE8_EVIDENCE = {
         }
       }
     },
+    "deep_expansion": {
+      "checkpoint": "8.4d",
+      "family_results": [
+        {
+          "family": "C_OS",
+          "status": "accepted_bounded",
+          "required_cells": 40,
+          "passed_cases": 20,
+          "passing_pending_cells": 0,
+          "accepted_cells": 40,
+          "degrees": [
+            59,
+            66,
+            73,
+            94
+          ],
+          "maximum_core_depth": 4,
+          "new_events": 20,
+          "target_steps": 400,
+          "final_reads": 40,
+          "successive_events": false,
+          "native_trajectories_rerun": false,
+          "dense_comparisons_rerun": false,
+          "cases": [
+            {
+              "case_id": "P984D-D59-E-1-P1::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D59-E-1-P2::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D59-E-1-P3::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D59-E1-P1::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D59-E1-P2::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D59-E1-P3::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D66-E-1-PNone::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D66-E1-PNone::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D73-E-1-P1::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D73-E-1-P2::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D73-E-1-P3::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D73-E1-P1::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D73-E1-P2::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D73-E1-P3::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D94-E-1-P1::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D94-E-1-P2::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D94-E-1-P3::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D94-E1-P1::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D94-E1-P2::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            },
+            {
+              "case_id": "P984D-D94-E1-P3::C_OS",
+              "case_passed": true,
+              "event_committed": true,
+              "first_failure": null
+            }
+          ],
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSCases.json",
+            "sha256": "f2f62f2c5c741a0997f49e0286f1f23b05a796b1f28e9f2cf93ace08649eac50",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSResults.json",
+            "sha256": "8baefd52c9c41847905e49f7299aa57fb42b0f881d9b108817538836a0d60ce1",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md",
+            "sha256": "956ad81e2dbb49215d8fd27d198b3571459edc0728692dd1586099120761e128",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance"
+          },
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md",
+            "sha256": "956ad81e2dbb49215d8fd27d198b3571459edc0728692dd1586099120761e128",
+            "revision": null,
+            "basis": "pinned_deep_execution_with_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "comparison_scope": "bounded_independent_dense_crosscheck_and_captured_consumers_not_rigorous_error_tube",
+          "hardening": {
+            "status": "passed_bounded_hardening",
+            "native_events": 3,
+            "pointwise_sign_certificates": 24,
+            "neighborhood_probes": 9,
+            "neighborhood_positive_roles": 18,
+            "native_rerun": false,
+            "intervals_recomputed": false,
+            "uniform_tube": false,
+            "public_ordinary_step_owner_tested": false,
+            "user_accepted": false,
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningCases.json",
+              "sha256": "cdad7743261c594a2e48276ab717cf82acea2d934ac49bd5f73c54fadaceb37e",
+              "revision": null,
+              "basis": "pinned_deep_execution_with_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningResults.json",
+              "sha256": "e05a9a2697906d827a90d92a7d4831faa5e8c803a8fc3da34c2a39a901cda467",
+              "revision": null,
+              "basis": "pinned_deep_execution_with_scoped_acceptance"
+            },
+            "review": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md",
+              "sha256": "84408902b486d2c491e397e60902b1b4a0bb35569e2a716aee766662ccfe28bb",
+              "revision": null,
+              "basis": "pinned_deep_execution_with_scoped_acceptance"
+            },
+            "scope": "24_pointwise_exact_real_sign_enclosures_at_represented_prestates_not_uniform_trajectory_tube;finite_neighborhood_not_native_event_admission"
+          }
+        }
+      ],
+      "aggregate_closed": false,
+      "first_group": [
+        "C_OS",
+        "C_CI",
+        "A_CI",
+        "A_PC"
+      ],
+      "families_not_executed": [
+        "A_OS",
+        "A_CI",
+        "A_PC",
+        "A_CI_PC",
+        "A_RG2b",
+        "C_CI",
+        "C_PC",
+        "C_CI_PC",
+        "C_RG2b"
+      ],
+      "other_family_credit": 0,
+      "successive_event_credit": 0
+    },
     "required_cells": 322,
     "accepted_cells": 322,
     "pending_cells": 0,
@@ -16987,6 +17212,42 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_accepted_mechanical_evidence_not_numerical"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSCases.json",
+      "sha256": "f2f62f2c5c741a0997f49e0286f1f23b05a796b1f28e9f2cf93ace08649eac50",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningCases.json",
+      "sha256": "cdad7743261c594a2e48276ab717cf82acea2d934ac49bd5f73c54fadaceb37e",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningResults.json",
+      "sha256": "e05a9a2697906d827a90d92a7d4831faa5e8c803a8fc3da34c2a39a901cda467",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md",
+      "sha256": "84408902b486d2c491e397e60902b1b4a0bb35569e2a716aee766662ccfe28bb",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSResults.json",
+      "sha256": "8baefd52c9c41847905e49f7299aa57fb42b0f881d9b108817538836a0d60ce1",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md",
+      "sha256": "956ad81e2dbb49215d8fd27d198b3571459edc0728692dd1586099120761e128",
+      "revision": null,
+      "basis": "pinned_deep_execution_with_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
       "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca",
       "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -17125,5 +17386,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "0e13f765904d499dee4173526dff198fc0d428767dc6a2083d76c245fd155906"
+  "view_digest": "2929ff41b38903990126149037bac479cea6e4209440bb67cd2a8783a20d4221"
 };

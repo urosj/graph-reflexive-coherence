@@ -2729,6 +2729,17 @@ Expose the completed aggregate reconciliation in CLI/API/notebook/browser:
 
 ### P9-8.4d–h representative-first progression (2026-10-08)
 
+The first `.d` checkpoint is C_OS: 20 single-event cases, 40 current/reset
+cells at D59/66/73/94 and maximum depth four. Expose it separately from `.c`
+through CLI/API/notebook/browser, with 40 separately accepted cells (2026-10-12).
+Bind changed explicit resource fixtures, completed evidence and scope limits;
+keep nine unexecuted families visible. Neither depth nor a passing comparison
+grants arbitrary-graph, uniform-error or successive-event authority.
+Expose the bounded hardening alongside that row: native excluded cases,
+24 pointwise sign enclosures and nine finite probes, with unchanged accepted
+coverage. Preserve the distinction between rounded and exact charge, and
+between event atomicity and provisional ordinary continuation.
+
 Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

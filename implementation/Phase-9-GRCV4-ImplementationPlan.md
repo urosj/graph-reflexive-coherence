@@ -2854,6 +2854,17 @@ New layouts, chiralities, depths and configurations require their own evidence.
 | **P9-8.4i — Coverage reconciliation and handoff** | Reconcile `.a` against all child results, frozen IDs and separately named additional/deep/large probes. Retain commands, independent checks, code/profile/fixture bindings, review dispositions and unresolved debt. Update discovery evidence only for the exact newly reviewed configurations. | Aggregate closes only when its required runtime/covariance cells are reviewed and complete, or an explicit user-approved scope change is recorded. Hand positive-state witnesses and rejection subjects to P9-8.5; pass precise coverage to P9-8.6 without claiming arbitrary-size conformance. |
 
 **Execution order — representative families first (user-directed 2026-10-08).**
+The [C_OS `.d` checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
+declares 20 cases at D59/66/73/94, depths three/four, both histories and ten
+steps. Depth-specific supplied resource tuples are explicit new event inputs;
+failed predecessors stay as controls, without changing the law or tolerances.
+This checkpoint and its hardening were accepted on 2026-10-12 and grant no sibling or
+successive-event credit.
+Its [hardening supplement](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md)
+separates native failed continuation, event rollback, pointwise interval signs
+and finite neighborhood probes. Neither a rounded charge receipt nor sampled
+positivity is promoted into exact conservation or a uniform trajectory tube.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten
