@@ -305,6 +305,14 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSResults.json.xz",
       "storage_size": 87784,
       "storage_sha256": "54d26f8cf57ee16df632c631fc043ffe43f1fd1eac119e668f803a15eaf2db43"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-COSResults.json",
+      "size": 4596557,
+      "sha256": "020d614b2f1c6e69b789642be0e865887956a39a378dac084e20d0a1628dd747",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-COSResults.json.xz",
+      "storage_size": 91168,
+      "storage_sha256": "e03cce8e1cb82a9d56f9173c13502d8e3fba1e8bbd526d7d412e4037a43b2836"
     }
   ]
 }

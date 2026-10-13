@@ -2974,6 +2974,15 @@ Chart transformations remain `.f` and C_OS grants
 no history/carrier or sibling evidence. Status and explicit numerical rechecks
 remain separate, with packed retained operands for portability.
 
+The [C_OS `.f` successor](./phase-9-grcv4/tranche-8/P9-8.4f-COSReview.md)
+now supplies 24 accepted chart-covariance history cells (2026-10-13).
+D45/D52 in both chiralities exercise inactive/active phases under identity,
+one/two cyclic turns and reflection: 16 numerical events, 64 target steps,
+32 final reads. Four exact frozen plans are separate mechanical evidence.
+Full normalization transports branch shares and reference/resource operands;
+no rigorous uniform-domain or sibling credit follows. Continue with C_CI,
+then A_CI and A_PC. All-ten `.f` remains open.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten

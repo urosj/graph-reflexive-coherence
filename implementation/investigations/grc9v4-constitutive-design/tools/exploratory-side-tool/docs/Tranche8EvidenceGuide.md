@@ -658,3 +658,16 @@ status authenticates retained evidence; `verify-retained --family A_PC
 Neither mode executes native trajectories or grants acceptance. The pinned
 review supplies acceptance separately; first-group `.e` is now accepted at
 80/80 history cells, with six second-group families still unexecuted.
+
+### Full chart covariance at P9-8.4f
+
+Select `C_OS` with checkpoint `8.4f` in API/CLI or the notebook. The browser
+shows 24 separately accepted cells, 16 numerical events, 64 target
+steps and 32 final reads, separately from four exact frozen plan executions.
+Full row/column/branch transport includes ports, namespace/roles, chirality,
+phase and branch shares. Reflection does not reverse edge orientation.
+D45/D52 native counterparts are not the literal frozen scientific states.
+Normal status does not rerun trajectories or dense equations. Use
+`tranche8-query verify-retained --family C_OS --checkpoint 8.4f` to check
+retained evidence, adding `--recheck-numerics` for dense recomputation.
+No rigorous full-error certificate, sibling coverage or aggregate acceptance follows.

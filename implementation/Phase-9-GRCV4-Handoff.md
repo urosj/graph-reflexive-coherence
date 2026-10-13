@@ -1,6 +1,23 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — first-group P9-8.4e accepted at 80/80
+## Current checkpoint — C_OS P9-8.4f accepted
+
+Branch `work/p9-8-4f` starts from the no-fast-forward `.e` merge. The
+[C_OS chart review](./phase-9-grcv4/tranche-8/P9-8.4f-COSReview.md) records
+24 accepted history cells on D45/D52 and both chiralities: 16 events, four
+fresh source steps, 64 target steps and 32 final reads. Full cyclic/reflection
+transport includes ports, namespace/roles, chirality, phase and branch shares;
+maximum observed covariance discrepancy is zero. Four exact frozen mechanical
+plan executions are separate from native numerical coverage. Sixteen stale
+requests and 32 semantic rejects preserve the checkpoint.
+
+Evidence is exact XZ; default retained status executes neither native work nor
+dense recomputation. API/CLI, browser and notebook expose `C_OS` at `8.4f`.
+The numerical result is a bounded dense cross-check, not a uniform or rigorous
+full-error certificate. Next is first-group family C_CI. A_CI and A_PC follow; the six second-group families remain separate.
+C_OS acceptance is separate from execution; no `.f` aggregate closure follows.
+
+## Prior checkpoint — first-group P9-8.4e accepted at 80/80
 
 Branch `work/p9-8-4e` starts from the no-fast-forward P9-8.4d merge on main.
 The [C_OS covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md)

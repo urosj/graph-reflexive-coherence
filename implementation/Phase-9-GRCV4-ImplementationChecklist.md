@@ -3271,6 +3271,16 @@ the full ten-profile plan.
     Transport rows, columns, branches, ports, labels, chirality, active phase
     and numerical operands/history. Reject column-only or stale phase/chirality
     controls; a boolean equality assertion or raw digest equality is insufficient.
+    - [x] C_OS bounded full-chart execution:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4f-COSReview.md). 24 passing
+      history cells, 16 numerical events, 64 target steps and 32 final reads;
+      four exact frozen mechanical plans remain separately counted. Both
+      chiralities, active/inactive phases, transported shares and rejection
+      rollback are covered; dense cross-check, not uniform certification.
+    - [x] C_OS scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
+    - [ ] C_CI full-joint-root chart covariance and separate acceptance.
+    - [ ] A_CI unsigned-history/writer chart covariance and separate acceptance.
+    - [ ] A_PC persistent-carrier chart covariance and separate acceptance.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.

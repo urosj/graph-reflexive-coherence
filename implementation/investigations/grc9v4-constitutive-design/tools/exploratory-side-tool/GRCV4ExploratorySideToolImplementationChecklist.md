@@ -2364,3 +2364,8 @@ instead of stale fixed totals and opens any pending case details explicitly.
   Use affected binding/surface checks for metadata changes and recompute only
   affected numerical work. Preserve paper/spec/claim limits, meaningful pressure,
   completed compact evidence and byte-exact storage; no new cache authority.
+
+- [x] Expose C_OS P9-8.4f full chart covariance in API/CLI, notebook and
+  browser: 24 accepted history cells / 16 numerical events, four exact frozen
+  plans separately counted; pin scope and keep all other families unexecuted.
+  Separate normal retained status from explicit dense numerical rechecking.

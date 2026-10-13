@@ -6,6 +6,24 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_OS chart covariance separates exact plans from accepted native cells', () => {
+  const view=evidence.coverage.chart_covariance,row=view.family_results[0];
+  assert.equal(row.family,'C_OS');assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.accepted_cells,24);assert.ok(row.acceptance);
+  assert.equal(row.frozen_plan_executions,4);assert.equal(row.native_events,16);
+  assert.equal(row.target_steps,64);assert.equal(row.final_reads,32);
+  assert.equal(row.chart_symmetries,true);assert.equal(view.aggregate_closed,false);
+  assert.equal(view.families_not_executed.length,9);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/4 exact frozen mechanical-plan executions are separate/);
+  assert.match(text(out),/Reflection is not edge reversal/);
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.native_events=20,
+      r=>r.normalization_policy_id='column_only',r=>r.uniform_domain=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.chart_covariance.family_results[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('C_OS ordering covariance projects scoped acceptance without sibling credit', () => {
   const view=evidence.coverage.ordering_covariance,row=view.family_results[0];
   assert.equal(row.family,'C_OS'); assert.equal(row.passing_pending_cells,0);
