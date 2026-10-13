@@ -2820,6 +2820,12 @@ not current-only covariance. Selected C_CI queries do not run C_OS checking.
 The retained-only command can explicitly recompute CI interval certificates;
 routine status does not execute roots, steps or those interval computations.
 
+A_CI adds twenty accepted covariance cells (2026-10-13). API/CLI,
+notebook and browser distinguish unsigned W_A/conductance/writer transport
+from signed roots and reference lineage. Reuse the A_CI interval consumer;
+capture computes certificates once, normal status does not recompute them,
+and explicit retained numerical mode is available. No carrier/sibling credit.
+
 Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

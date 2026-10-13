@@ -3250,7 +3250,11 @@ the full ten-profile plan.
       five transforms, 20 accepted cells, 12 events, 48 target steps, 24 final
       roots; full J/H, both histories, interval certificates and exact replay.
     - [x] C_CI scoped user acceptance on 2026-10-13: 20 cells; siblings remain open.
-    - [ ] A_CI ordering/relabeling/signed covariance and separate acceptance.
+    - [x] A_CI bounded covariance execution and history/writer pressure:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md). Twenty passing
+      cells, 12 events, 48 target steps, 24 final roots; signed J/H/read channels
+      and unsigned W_A/conductance/writer outputs, both roles, exact replay.
+    - [x] A_CI scoped user acceptance on 2026-10-13: twenty cells; original execution flags unchanged.
     - [ ] A_PC ordering/relabeling/signed covariance and separate acceptance.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and

@@ -16952,12 +16952,72 @@ export const TRANCHE8_EVIDENCE = {
             "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
           },
           "comparison_scope": "two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound"
+        },
+        {
+          "family": "A_CI",
+          "status": "accepted_bounded",
+          "required_cells": 20,
+          "passing_pending_cells": 0,
+          "accepted_cells": 20,
+          "native_events": 12,
+          "target_steps": 48,
+          "source_steps": 6,
+          "final_reads": 24,
+          "maximum_covariance_error": 0.0,
+          "transforms": [
+            "edge_order",
+            "node_order",
+            "relabel",
+            "signed",
+            "combined"
+          ],
+          "degrees": [
+            52,
+            94
+          ],
+          "full_joint_roots": true,
+          "unsigned_candidate_history": true,
+          "native_trajectories_rerun": false,
+          "interval_certificates_rerun": false,
+          "uniform_domain": false,
+          "aggregate_closed": false,
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md",
+            "sha256": "cdc4ed50e2e5681dff43d66d6adcc5417816bc1297cf328c6b1bba14e325d538",
+            "revision": null,
+            "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIInputs.json",
+            "sha256": "e266ff8ce7e5dadf60354c47f7dd008188acd6108954132af72851794c335e63",
+            "revision": null,
+            "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIResults.json",
+            "sha256": "70cbc37ee27773ff6545022b5f72f328c663a02868347a2b36fca48332f19292",
+            "revision": null,
+            "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+          },
+          "plan": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIPlan.md",
+            "sha256": "21f39b20eaaf686361a63f3f4f819a7a8cdfdad9e50d8dcb71cd885b8792a69f",
+            "revision": null,
+            "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md",
+            "sha256": "cdc4ed50e2e5681dff43d66d6adcc5417816bc1297cf328c6b1bba14e325d538",
+            "revision": null,
+            "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+          },
+          "comparison_scope": "two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound"
         }
       ],
       "aggregate_closed": false,
       "families_not_executed": [
         "A_OS",
-        "A_CI",
         "A_PC",
         "A_CI_PC",
         "A_RG2b",
@@ -18316,6 +18376,30 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_deep_execution_with_scoped_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIInputs.json",
+      "sha256": "e266ff8ce7e5dadf60354c47f7dd008188acd6108954132af72851794c335e63",
+      "revision": null,
+      "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIPlan.md",
+      "sha256": "21f39b20eaaf686361a63f3f4f819a7a8cdfdad9e50d8dcb71cd885b8792a69f",
+      "revision": null,
+      "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIResults.json",
+      "sha256": "70cbc37ee27773ff6545022b5f72f328c663a02868347a2b36fca48332f19292",
+      "revision": null,
+      "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md",
+      "sha256": "cdc4ed50e2e5681dff43d66d6adcc5417816bc1297cf328c6b1bba14e325d538",
+      "revision": null,
+      "basis": "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIInputs.json",
       "sha256": "093d2ac796cc7b22baf9690b8f3e3422194d575ee7a3eff5eb17b5f5a2154b97",
       "revision": null,
@@ -18502,5 +18586,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "eaa19c2c96c126f6f7c2690abffcee4b9ede0d0b58bb8e8f062dd18100fa8e21"
+  "view_digest": "eaadf7d8949033771e14c6b538031124e19bef886c6e73858619ac00a398ae42"
 };

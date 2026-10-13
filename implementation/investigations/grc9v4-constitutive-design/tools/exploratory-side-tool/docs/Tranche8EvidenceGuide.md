@@ -621,7 +621,7 @@ The selected retained command checks this supplement too; optional numerical
 rechecking recomputes its intervals, never native trajectories. These probes
 are not a continuous robustness neighborhood or a new allocation law.
 
-## P9-8.4e ordering covariance: C_OS and C_CI
+## P9-8.4e ordering covariance: C_OS, C_CI and A_CI
 
 Select `run.py tranche8-query status --family C_CI --checkpoint 8.4e`, or
 `tranche8_status(repo_root, family="C_CI", checkpoint="8.4e")` in the API or
@@ -640,3 +640,10 @@ the independent CI interval certificates; it does not run native trajectories.
 The C_OS counterpart optionally recomputes its dense comparisons. Routine
 status does neither numerical recomputation. Exact packed evidence restores
 through the repository storage manifest; no machine-local path is required.
+
+Select `A_CI` with the same checkpoint to inspect twenty accepted cells. It adds unsigned W_A/conductance/writer-output covariance alongside
+signed current, geometry, Read-Back and reference lineage. The native capture
+computes independent A_CI certificates once; routine retained checking does not
+repeat them. Explicit numerical checking uses the same `--recheck-numerics`
+option. The browser and notebook show this evidence with its own pinned acceptance alongside
+C_OS/C_CI, without carrier, chart-symmetry or sibling credit.

@@ -2961,7 +2961,12 @@ same two-layout/five-transform scope, with full joint CI roots (J,H), generated
 geometry, structural source, Read-Back, reset/restart and final-root identities.
 Individual interval certificates remain distinct from the nominal covariance
 comparison and from any whole-trajectory bound. Its 20 cells were accepted on
-2026-10-13; proceed to A_CI and A_PC. Chart transformations remain `.f` and C_OS grants
+2026-10-13. The [A_CI covariance successor](./phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md)
+now supplies twenty cells accepted on 2026-10-13, with unsigned W_A,
+conductance and writer outputs compared separately from signed J/H/read
+channels. It reuses the accepted independent A_CI interval equations without
+repeating the ten-step depth campaign. A_PC follows this accepted bounded scope.
+Chart transformations remain `.f` and C_OS grants
 no history/carrier or sibling evidence. Status and explicit numerical rechecks
 remain separate, with packed retained operands for portability.
 
