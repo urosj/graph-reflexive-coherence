@@ -2336,6 +2336,10 @@ instead of stale fixed totals and opens any pending case details explicitly.
       first-group checkpoint closed at 160, all-ten `.d` still open. Preserve prior layers and separate authenticated status from
       explicit retained-consumer/numerical checking. Pack both new large JSONs.
 
+- [x] Expose P9-8.4e A_PC covariance in API/CLI, notebook and browser:
+  twenty accepted cells (2026-10-13), coupled D59/D94 witness provenance,
+  signed carrier/archive/reset/loss and unsigned W; first-group 80/80 accepted,
+  no sibling or all-ten closure promotion.
 - [x] Expose P9-8.4e A_CI joint-root and unsigned-history/writer covariance
   in API/CLI, notebook and browser: twenty accepted cells (2026-10-13);
   selected-family and retained-only modes preserve no-carrier/sibling scope.

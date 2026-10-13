@@ -3255,10 +3255,14 @@ the full ten-profile plan.
       cells, 12 events, 48 target steps, 24 final roots; signed J/H/read channels
       and unsigned W_A/conductance/writer outputs, both roles, exact replay.
     - [x] A_CI scoped user acceptance on 2026-10-13: twenty cells; original execution flags unchanged.
-    - [ ] A_PC ordering/relabeling/signed covariance and separate acceptance.
-    - [ ] First-group checkpoint: review and accept this child's required
-      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
-      advance ready rows without waiting for the remaining six families.
+    - [x] A_PC bounded ordering/relabeling/signed covariance:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4e-APCReview.md). Twenty passing
+      cells on accepted coupled D59/D94 witnesses; signed carrier/archive/
+      reset/loss, unsigned W, 12 events, 48 target steps and 24 final reads.
+    - [x] A_PC scoped user acceptance on 2026-10-13: twenty cells; saved run unchanged.
+    - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
+      A_CI and A_PC each contribute twenty cells, 80/80 total. Next `.f`;
+      all-ten parent remains open for the six second-group families.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.

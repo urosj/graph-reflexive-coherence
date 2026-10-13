@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — C_OS, C_CI and A_CI covariance accepted
+## Current checkpoint — first-group P9-8.4e accepted at 80/80
 
 Branch `work/p9-8-4e` starts from the no-fast-forward P9-8.4d merge on main.
 The [C_OS covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md)
@@ -34,9 +34,21 @@ interval certificates are computed during capture; routine retained checking
 does not repeat those computations. Optional numerical rechecking remains
 available. The result is stored as byte-exact XZ (7.34 MB raw, 206 KB stored).
 API/CLI, browser and notebook expose `A_CI` at checkpoint `8.4e` with
-separate acceptance and no sibling promotion. Next: A_PC; the remaining six
+separate acceptance and no sibling promotion. A_PC now supplies the final first-group execution below; the remaining six
 families follow the first-group schedule. Do not reopen accepted `.d` or infer
 sibling credit.
+
+The [A_PC covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-APCReview.md)
+records twenty cells accepted on 2026-10-13: twelve events, six source
+steps, 48 target steps and 24 final reads, with zero measured covariance
+error. D59/D94 use the accepted coupled history31/allocation witnesses;
+the original-source D94 exclusion is not revised. Signed carrier transport,
+whole-source archive/reset/loss and single held-source writing are checked
+alongside unsigned W. API/CLI, browser and notebook expose this distinct
+scope. Evidence is exact XZ, and normal status does not rerun intervals.
+First-group `.e` is accepted at 80/80 history cells. Merge `work/p9-8-4e`
+into `main` with `--no-ff`, then create a new branch for first-group `.f`
+chart symmetries. All-ten `.e` remains open for the second group.
 
 ## Prior checkpoint — first-group P9-8.4d accepted
 

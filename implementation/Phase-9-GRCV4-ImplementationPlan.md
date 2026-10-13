@@ -2965,7 +2965,11 @@ comparison and from any whole-trajectory bound. Its 20 cells were accepted on
 now supplies twenty cells accepted on 2026-10-13, with unsigned W_A,
 conductance and writer outputs compared separately from signed J/H/read
 channels. It reuses the accepted independent A_CI interval equations without
-repeating the ten-step depth campaign. A_PC follows this accepted bounded scope.
+repeating the ten-step depth campaign. The [A_PC successor](./phase-9-grcv4/tranche-8/P9-8.4e-APCReview.md) now
+supplies twenty accepted cells (2026-10-13) on coupled D59/D94 witnesses,
+including persistent carrier transport/archive/reset/loss and unsigned W.
+First-group `.e` is accepted at 80/80 cells; next is first-group `.f`;
+the original-source D94 exclusion and six unexecuted sibling rows remain.
 Chart transformations remain `.f` and C_OS grants
 no history/carrier or sibling evidence. Status and explicit numerical rechecks
 remain separate, with packed retained operands for portability.

@@ -2820,6 +2820,12 @@ not current-only covariance. Selected C_CI queries do not run C_OS checking.
 The retained-only command can explicitly recompute CI interval certificates;
 routine status does not execute roots, steps or those interval computations.
 
+A_PC adds twenty accepted covariance cells (2026-10-13) on accepted coupled D59/D94
+witnesses. Expose signed persistent-carrier transport, whole-source archive,
+explicit loss and zero target reset alongside unsigned W. Preserve the prior
+source exclusion and separately pinned acceptance. First-group `.e` is
+accepted at 80/80; the all-ten parent remains open. Selected queries and explicit retained checks remain producer-free.
+
 A_CI adds twenty accepted covariance cells (2026-10-13). API/CLI,
 notebook and browser distinguish unsigned W_A/conductance/writer transport
 from signed roots and reference lineage. Reuse the A_CI interval consumer;

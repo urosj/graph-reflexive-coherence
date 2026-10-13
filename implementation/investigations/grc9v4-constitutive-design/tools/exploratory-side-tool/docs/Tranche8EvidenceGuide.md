@@ -647,3 +647,14 @@ computes independent A_CI certificates once; routine retained checking does not
 repeat them. Explicit numerical checking uses the same `--recheck-numerics`
 option. The browser and notebook show this evidence with its own pinned acceptance alongside
 C_OS/C_CI, without carrier, chart-symmetry or sibling credit.
+
+Select `A_PC` at checkpoint `8.4e` for twenty accepted cells (2026-10-13).
+These use accepted coupled D59/D94 witnesses, not the excluded original D94
+source. In addition to unsigned W and signed current, the view covers signed
+whole-carrier transport, complete source archive, explicit carrier-history
+loss, zero target initialization and single held-source writing. Routine
+status authenticates retained evidence; `verify-retained --family A_PC
+--checkpoint 8.4e --recheck-numerics` explicitly recomputes interval equations.
+Neither mode executes native trajectories or grants acceptance. The pinned
+review supplies acceptance separately; first-group `.e` is now accepted at
+80/80 history cells, with six second-group families still unexecuted.

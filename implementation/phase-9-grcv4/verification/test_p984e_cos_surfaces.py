@@ -25,7 +25,7 @@ class CovarianceSurfaceTests(unittest.TestCase):
         for path in index.COVARIANCE_COS_SOURCES:
             with patch.object(index.Sources,'current_bytes',return_value=b'forged'),self.assertRaisesRegex(ValueError,'source drift'):
                 index.Sources(index.ROOT).raw(path)
-        with self.assertRaisesRegex(ValueError,'not executed'):index.family_status(index.ROOT,'A_PC','8.4e')
+        with self.assertRaisesRegex(ValueError,'not executed'):index.family_status(index.ROOT,'A_OS','8.4e')
 
     def test_retained_dispatch_and_no_execution_modes(self):
         with patch.object(sys,'argv',['query','verify-retained','--family','C_OS','--checkpoint','8.4e','--recheck-numerics']),patch.object(index.subprocess,'run') as run:
