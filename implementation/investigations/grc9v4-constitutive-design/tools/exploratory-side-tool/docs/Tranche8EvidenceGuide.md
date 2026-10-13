@@ -671,3 +671,11 @@ Normal status does not rerun trajectories or dense equations. Use
 `tranche8-query verify-retained --family C_OS --checkpoint 8.4f` to check
 retained evidence, adding `--recheck-numerics` for dense recomputation.
 No rigorous full-error certificate, sibling coverage or aggregate acceptance follows.
+
+C_CI is also available at `8.4f`: 24 separately accepted history cells,
+16 native events, 64 target steps and 32 final joint roots. Its pointwise
+interval certificates bind geometry and current, not merely current equality.
+The four frozen mechanical plans are reused from accepted C_OS evidence,
+not new C_CI executions. Use `--family C_CI --checkpoint 8.4f` with
+`status` or `verify-retained`; `--recheck-numerics` explicitly recomputes
+interval certificates. C_OS remains separately accepted at 24 cells.

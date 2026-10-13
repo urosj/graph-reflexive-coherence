@@ -2369,3 +2369,9 @@ instead of stale fixed totals and opens any pending case details explicitly.
   browser: 24 accepted history cells / 16 numerical events, four exact frozen
   plans separately counted; pin scope and keep all other families unexecuted.
   Separate normal retained status from explicit dense numerical rechecking.
+
+- [x] Expose C_CI `8.4f` full-chart evidence in selected API/CLI, browser
+  and notebook: 24 separately accepted full-joint-root cells, pointwise interval
+  certificates, 16 events and four explicitly reused mechanical plans.
+  Keep C_OS's 24 accepted cells separate; no first-group/all-ten closure.
+  Normal status is producer-free; numerical rechecking is explicit.

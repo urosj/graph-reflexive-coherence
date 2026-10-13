@@ -14,6 +14,7 @@ from tranche8_validation import BOUNDARY_MODULES, ROOT, validation_session
 EXTRA_MODES = {
     'p984e_cos': ('check',),
     'p984f_cos': ('check',),
+    'p984f_cci': ('check',),
     'p984e_cci': ('check',),
     'p984e_aci': ('check',),
     'p984e_apc': ('check',),

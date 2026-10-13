@@ -2854,3 +2854,9 @@ plan executions. Full chart normalization includes branch shares, active phase
 and reflected chirality; dense cross-checks are not uniform certification.
 Normal status is producer-free; explicit retained numerical mode recomputes
 dense expectations only. No sibling or aggregate promotion.
+
+Expose C_CI `8.4f` full-chart evidence in selected API/CLI, browser
+  and notebook: 24 separately accepted full-joint-root cells, pointwise interval
+  certificates, 16 events and four explicitly reused mechanical plans.
+  Keep C_OS's 24 accepted cells separate; no first-group/all-ten closure.
+  Normal status is producer-free; numerical rechecking is explicit.

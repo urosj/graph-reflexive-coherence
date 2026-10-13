@@ -3278,7 +3278,12 @@ the full ten-profile plan.
       chiralities, active/inactive phases, transported shares and rejection
       rollback are covered; dense cross-check, not uniform certification.
     - [x] C_OS scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
-    - [ ] C_CI full-joint-root chart covariance and separate acceptance.
+    - [x] C_CI full-joint-root chart execution:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4f-CCIReview.md). 24 passing
+      cells, 16 events, 64 target steps, 32 final roots; both source/target
+      admission roles, pointwise interval certificates and semantic rollback.
+      Four frozen plans reused from C_OS, zero new mechanical executions.
+    - [x] C_CI scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
     - [ ] A_CI unsigned-history/writer chart covariance and separate acceptance.
     - [ ] A_PC persistent-carrier chart covariance and separate acceptance.
     - [ ] First-group checkpoint: review and accept this child's required

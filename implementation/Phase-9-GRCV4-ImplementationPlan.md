@@ -2983,6 +2983,14 @@ Full normalization transports branch shares and reference/resource operands;
 no rigorous uniform-domain or sibling credit follows. Continue with C_CI,
 then A_CI and A_PC. All-ten `.f` remains open.
 
+The [C_CI chart successor](./phase-9-grcv4/tranche-8/P9-8.4f-CCIReview.md)
+now supplies 24 accepted full-joint-root cells (2026-10-13): 16 events,
+64 target steps and 32 final roots. Both source/target admission roles and
+continuations retain independent pointwise interval certificates. Four
+frozen mechanical plans are explicitly reused, not new C_CI execution.
+No uniform trajectory or sibling credit follows. Next,
+continue with A_CI.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten
