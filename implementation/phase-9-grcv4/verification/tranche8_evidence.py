@@ -1286,6 +1286,9 @@ def deep_family_view(sources, family):
         import p984d_apc_joint_successor as joint
         import p984d_apc_full as full
         c=companion.c
+        # Keep the original preflight review in provenance even though the
+        # displayed acceptance now belongs to the successful full campaign.
+        sources.ref(deep.REVIEW)
         original = deep.status(sources.read(deep.INPUTS), sources.read(deep.RESULTS))
         accepted=sources.read(c.ACCEPTANCE)
         require(accepted==c.acceptance(), "bounded exclusion acceptance drift")

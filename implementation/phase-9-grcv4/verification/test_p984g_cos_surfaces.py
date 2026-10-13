@@ -13,6 +13,32 @@ from grcv4_explorer import tranche8 as api
 
 
 class PrerequisiteSurfaces(unittest.TestCase):
+    def test_frozen_preflight_registers_review_before_scientific_validation(self):
+        import p984d_apc_runtime as deep
+
+        class ReachedScientificChecker(Exception):
+            pass
+
+        # Exercise the real projection wiring, stopping before the expensive
+        # historical checker: this test covers references, not its numerics.
+        sources=index.Sources(index.ROOT)
+        with patch.object(deep,'status',side_effect=ReachedScientificChecker), self.assertRaises(ReachedScientificChecker):
+            index.deep_family_view(sources,'A_PC')
+        self.assertEqual(set(sources.refs),{deep.INPUTS,deep.RESULTS,deep.REVIEW})
+        saved=json.loads((index.ROOT/index.ASSET).read_text().split(' = ',1)[1].rstrip(';\n'))
+        refs={r['path']:r for r in saved['source_refs']}
+        self.assertEqual(sources.refs,{p:refs[p] for p in sources.refs})
+
+        # Restoring the reference must authenticate it, not silently trust the
+        # browser's existing catalog or merely insert a path into the output.
+        original=index.Sources.current_bytes
+        def altered(source,name):
+            return b'forged review' if name==deep.REVIEW else original(source,name)
+        with patch.object(index.Sources,'current_bytes',altered), patch.object(deep,'status') as scientific:
+            with self.assertRaisesRegex(ValueError,'source drift'):
+                index.deep_family_view(index.Sources(index.ROOT),'A_PC')
+            scientific.assert_not_called()
+
     def test_storage_successor_is_one_exact_document_not_a_scientific_waiver(self):
         import prepare_p984c_boundaries as boundary
         retained=json.loads((index.ROOT/boundary.OUTPUT).read_text())

@@ -11,7 +11,7 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "64efde7e7486ca1b20081d9e6cb160475e029a3ef14086f5fcd449268e1070fa"
+      "sha256": "fc23e2c6551025abe63561f45a5f9fd205c2be75caf5d749e9b00212d6431ebd"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
@@ -3899,7 +3899,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/tranche8_evidence.py",
-      "sha256": "b9c463fc4e9253facff3225bf3ed6271977140fa9621ed6ac82b793d38021528"
+      "sha256": "525900d5c33e43e65dd1117a5617902a9aefb9a481ab8f81967236f6781b32cf"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/tranche8_source_reuse.py",
@@ -5235,7 +5235,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p984g_cos_surfaces.py",
-      "sha256": "9d4adcdced6b9a4deabcdbafdd91b25e0b7df66d67b4cc4b24e46591ec8230b7"
+      "sha256": "0a2d5194fe1604d297b68e13e25739370819212c256a86e17a0cec1f82523c15"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsInputs.json",
@@ -5262,5 +5262,5 @@
       "sha256": "f84df33548a7502e92c34d82b557665a887d23c70f017f436d104624baf0e794"
     }
   ],
-  "record_digest": "f032d647841e3c3e4032cfad123bdcc6356fd1d212b94660a6c2a741fb7caefe"
+  "record_digest": "bb755a16d1d11ecbc313b71956a62b95bc86cc474008190dd834b4dad1b532d3"
 }

@@ -31,6 +31,14 @@ reconstructs interval bounds, not native trajectories. Completed new evidence
 is 244,263 bytes; no large dumps or new compression required. C_CI, A_CI and
 A_PC follow the remaining C_OS prerequisites; first-group/all-ten parents stay open.
 
+Checkpoint `3dd37407` recorded a full-view source-index mismatch. The builder
+omitted the original A_PC preflight review while the browser still retained
+that pinned reference. The follow-up restores its authenticated registration;
+a focused regression reproduces the omission and rejects altered review bytes
+before entering the expensive scientific checker. Scientific evidence and the
+browser's retained values are unchanged. This narrow correction is not a full
+historical-audit rerun or optimization work.
+
 ## Prior checkpoint — C_OS P9-8.4g equation preflight
 
 Branch `work/p9-8-4g` starts from the no-ff `.f` merge on main.
