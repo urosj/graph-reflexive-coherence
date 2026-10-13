@@ -2844,3 +2844,32 @@ As results arrive, expose each child/family's exact required, executed,
   Use affected binding/surface checks for metadata changes and recompute only
   affected numerical work. Preserve paper/spec/claim limits, meaningful pressure,
   completed compact evidence and byte-exact storage; no new cache authority.
+
+### P9-8.4f full chart evidence
+
+Expose C_OS at checkpoint `8.4f` in selected-family API/CLI, notebook and
+browser. Pin the separate plan, inputs, result and review. Display 24 separately accepted
+history cells / 16 native events separately from four frozen mechanical
+plan executions. Full chart normalization includes branch shares, active phase
+and reflected chirality; dense cross-checks are not uniform certification.
+Normal status is producer-free; explicit retained numerical mode recomputes
+dense expectations only. No sibling or aggregate promotion.
+
+Expose C_CI `8.4f` full-chart evidence in selected API/CLI, browser
+  and notebook: 24 separately accepted full-joint-root cells, pointwise interval
+  certificates, 16 events and four explicitly reused mechanical plans.
+  Keep C_OS's 24 accepted cells separate; no first-group/all-ten closure.
+  Normal status is producer-free; numerical rechecking is explicit.
+
+Expose A_CI `8.4f` in selected API/CLI, browser and notebook:
+  24 separately accepted full-chart history cells, unsigned W and writer covariance,
+  complete joint roots, pointwise certificates and explicit frozen-plan reuse.
+  Keep C_OS/C_CI acceptance separate; no sibling or aggregate promotion.
+  Routine status remains producer-free; numerical rechecking is explicit.
+
+- [x] Expose A_PC `8.4f` in selected API/CLI, browser and notebook:
+  24 accepted full-chart history cells on D59/D94, unsigned W and two-sided
+  carrier transport, actual archive/loss/zero initialization, ZOH/log-W
+  continuation and pointwise certificates. Four frozen plans are reused.
+  First-group `.f` is accepted at 96/96 cells; all-ten closure remains open.
+  Status is producer-free; explicit numerical recheck remains available.

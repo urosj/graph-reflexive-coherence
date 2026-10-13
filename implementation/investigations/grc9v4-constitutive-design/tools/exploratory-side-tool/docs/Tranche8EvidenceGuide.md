@@ -658,3 +658,45 @@ status authenticates retained evidence; `verify-retained --family A_PC
 Neither mode executes native trajectories or grants acceptance. The pinned
 review supplies acceptance separately; first-group `.e` is now accepted at
 80/80 history cells, with six second-group families still unexecuted.
+
+### Full chart covariance at P9-8.4f
+
+Select `C_OS` with checkpoint `8.4f` in API/CLI or the notebook. The browser
+shows 24 separately accepted cells, 16 numerical events, 64 target
+steps and 32 final reads, separately from four exact frozen plan executions.
+Full row/column/branch transport includes ports, namespace/roles, chirality,
+phase and branch shares. Reflection does not reverse edge orientation.
+D45/D52 native counterparts are not the literal frozen scientific states.
+Normal status does not rerun trajectories or dense equations. Use
+`tranche8-query verify-retained --family C_OS --checkpoint 8.4f` to check
+retained evidence, adding `--recheck-numerics` for dense recomputation.
+No rigorous full-error certificate, sibling coverage or aggregate acceptance follows.
+
+C_CI is also available at `8.4f`: 24 separately accepted history cells,
+16 native events, 64 target steps and 32 final joint roots. Its pointwise
+interval certificates bind geometry and current, not merely current equality.
+The four frozen mechanical plans are reused from accepted C_OS evidence,
+not new C_CI executions. Use `--family C_CI --checkpoint 8.4f` with
+`status` or `verify-retained`; `--recheck-numerics` explicitly recomputes
+interval certificates. C_OS remains separately accepted at 24 cells.
+
+A_CI is available at `8.4f`: 24 separately accepted cells, with
+unsigned W_A/effective conductance, fixed-row reconstruction, history
+transfer, writer covariance and complete joint roots. Sixteen events,
+64 target steps and 32 final roots retain pointwise certificates; four
+frozen mechanical plans are explicitly reused, not new A_CI execution.
+Use `--family A_CI --checkpoint 8.4f` for selected status or retained
+verification; `--recheck-numerics` recomputes certificates explicitly.
+C_OS/C_CI stay separately accepted; no first-group/all-ten closure follows.
+
+A_PC is available at `8.4f`: 24 accepted cells on the
+accepted coupled D59/D94 source/allocation witnesses, both chiralities.
+Unsigned W, full two-sided carrier transport, both-role archives, explicit
+loss and zero target initialization are checked alongside subsequent
+ZOH/log-W writes and complete PC reads. Sixteen events, 64 target steps and
+32 final reads retain pointwise interval certificates, not a uniform tube.
+Four frozen mechanical plans are reused, not new A_PC execution.
+Use `--family A_PC --checkpoint 8.4f` with `status` or `verify-retained`;
+`--recheck-numerics` explicitly recomputes interval certificates. The first
+group is accepted at 96/96 cells on 2026-10-13. All-ten acceptance is not
+inferred; the other six families remain separate. Next is first-group `.g`.

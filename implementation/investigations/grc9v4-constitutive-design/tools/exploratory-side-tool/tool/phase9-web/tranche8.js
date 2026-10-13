@@ -176,6 +176,18 @@ export function renderTranche8(value, container, create = tag => document.create
     for (const key of ['inputs','results','review']) { link(refs,oracle[key],`Oracle ${key}`); append(refs,'span',' · '); }
   }
   append(container,'p',`Unexecuted 8.4d families: ${deep.families_not_executed.join(', ')}. No sibling credit; first group remains C_OS, C_CI, A_CI, A_PC.`);
+  append(container,'h3','8.4f full chart rotation and reflection');
+  append(container,'p',`First-group 8.4f checkpoint: ${c.chart_covariance.first_group_closed ? 'accepted' : 'open'}, ${c.chart_covariance.first_group_accepted_cells}/96 accepted cells. All-ten closure remains open.`);
+  for(const row of c.chart_covariance.family_results) {
+    append(container,'p',`${row.family}: ${row.passing_pending_cells}/${row.required_cells} chart covariance history cells passing pending acceptance, ${row.accepted_cells} accepted; ${row.native_events} numerical events, ${row.target_steps} target steps, ${row.final_reads} final reads. ${row.frozen_plan_executions} exact frozen mechanical-plan executions are separate, not numerical events. Maximum discrepancy ${row.maximum_covariance_error}.`);
+    if(row.reused_frozen_plan_executions) append(container,'p',`${row.reused_frozen_plan_executions} frozen mechanical plans are reused from accepted evidence, not new ${row.family} executions.`);
+    if(row.unsigned_candidate_history) append(container,'p',`Unsigned W_A and effective conductance, fixed-row differential reconstruction, both-role history transfer and writer covariance are checked; ${row.persistent_carrier ? 'whole-carrier archive, explicit loss, zero target initialization and fresh ZOH continuation are checked separately.' : 'no carrier credit.'}`);
+    append(container,'p',row.full_joint_roots ? 'Complete joint-root covariance with pointwise independent interval certificates; no uniform parameter tube or whole-trajectory enclosure.' : row.persistent_carrier ? 'Complete PC read and W/Z writer checks with pointwise independent interval certificates; no uniform covariance or whole-trajectory enclosure.' : 'Bounded dense comparisons, not a rigorous full-error certificate.');
+    append(container,'p',`Full rows/columns/branches, endpoint ports, external labels, namespace/roles, chirality, active phase and branch shares are transported together. Reflection is not edge reversal. ${row.persistent_carrier ? 'Both declared layouts have active phase; no inactive-phase numerical credit.' : 'Inactive phase remains None.'} No sibling credit.`);
+    const refs=append(container,'p','');
+    for(const key of ['inputs','results','plan','review']) {link(refs,row[key],key);append(refs,'span',' · ');}
+  }
+  append(container,'p',`Unexecuted 8.4f families: ${c.chart_covariance.families_not_executed.join(', ')}. Aggregate remains open.`);
   append(container, 'h3', '8.4e ordering and signed covariance');
   for (const row of c.ordering_covariance.family_results) {
     append(container, 'p', `${row.family}: ${row.passing_pending_cells}/${row.required_cells} covariance history cells passing pending acceptance, ${row.accepted_cells} accepted; ${row.native_events} events, ${row.target_steps} target steps and ${row.final_reads} final reads. Maximum covariance discrepancy ${row.maximum_covariance_error}. Two layouts, five transforms; no chart-symmetry or uniform-domain claim.`);

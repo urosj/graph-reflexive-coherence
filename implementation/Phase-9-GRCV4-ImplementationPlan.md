@@ -2974,6 +2974,36 @@ Chart transformations remain `.f` and C_OS grants
 no history/carrier or sibling evidence. Status and explicit numerical rechecks
 remain separate, with packed retained operands for portability.
 
+The [C_OS `.f` successor](./phase-9-grcv4/tranche-8/P9-8.4f-COSReview.md)
+now supplies 24 accepted chart-covariance history cells (2026-10-13).
+D45/D52 in both chiralities exercise inactive/active phases under identity,
+one/two cyclic turns and reflection: 16 numerical events, 64 target steps,
+32 final reads. Four exact frozen plans are separate mechanical evidence.
+Full normalization transports branch shares and reference/resource operands;
+no rigorous uniform-domain or sibling credit follows. Continue with C_CI,
+then A_CI and A_PC. All-ten `.f` remains open.
+
+The [C_CI chart successor](./phase-9-grcv4/tranche-8/P9-8.4f-CCIReview.md)
+now supplies 24 accepted full-joint-root cells (2026-10-13): 16 events,
+64 target steps and 32 final roots. Both source/target admission roles and
+continuations retain independent pointwise interval certificates. Four
+frozen mechanical plans are explicitly reused, not new C_CI execution.
+No uniform trajectory or sibling credit follows.
+
+The [A_CI chart successor](./phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md)
+now supplies 24 accepted cells (2026-10-13), with unsigned history,
+fixed-row reconstruction, full joint roots and writer covariance. Sixteen
+events, 64 target steps and 32 final reads pass with pointwise root/output
+certificates. Four frozen mechanical plans are reused separately.
+
+The [A_PC chart successor](./phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md)
+supplies the last first-group execution: 24 accepted cells (2026-10-13)
+on the coupled D59/D94 witnesses in both chiralities. Sixteen events,
+64 target steps and 32 final reads cover unsigned W, two-sided carrier,
+actual archive/loss/zero initialization and subsequent ZOH/log-W writes.
+Pointwise certificates and explicit frozen-plan reuse remain separate.
+First-group `.f` is accepted at 96/96 cells; next is `.g` prerequisites. All-ten `.f` stays open for the other six families.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten

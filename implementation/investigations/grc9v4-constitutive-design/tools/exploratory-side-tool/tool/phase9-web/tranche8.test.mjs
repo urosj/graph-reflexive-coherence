@@ -6,6 +6,84 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_OS chart covariance separates exact plans from accepted native cells', () => {
+  const view=evidence.coverage.chart_covariance,row=view.family_results[0];
+  assert.equal(row.family,'C_OS');assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.accepted_cells,24);assert.ok(row.acceptance);
+  assert.equal(row.frozen_plan_executions,4);assert.equal(row.native_events,16);
+  assert.equal(row.target_steps,64);assert.equal(row.final_reads,32);
+  assert.equal(row.chart_symmetries,true);assert.equal(view.aggregate_closed,false);
+  assert.equal(view.families_not_executed.length,6);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/4 exact frozen mechanical-plan executions are separate/);
+  assert.match(text(out),/Reflection is not edge reversal/);
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.native_events=20,
+      r=>r.normalization_policy_id='column_only',r=>r.uniform_domain=true]) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.chart_covariance.family_results[0]);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_CI chart covariance binds full roots and separately reused frozen plans', () => {
+  const row=evidence.coverage.chart_covariance.family_results.find(r=>r.family==='C_CI');
+  assert.equal(row.full_joint_roots,true);assert.equal(row.chart_symmetries,true);
+  assert.equal(row.accepted_cells,24);assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.native_events,16);assert.equal(row.target_steps,64);assert.equal(row.final_reads,32);
+  assert.equal(row.frozen_plan_executions,0);assert.equal(row.reused_frozen_plan_executions,4);
+  assert.equal(row.interval_certificates_rerun,false);assert.ok(row.acceptance);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Complete joint-root covariance with pointwise independent interval certificates/);
+  assert.match(text(out),/4 frozen mechanical plans are reused/);
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.full_joint_roots=false,
+      r=>r.frozen_plan_executions=4,r=>r.interval_certificates_rerun=true]) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.chart_covariance.family_results.find(r=>r.family==='C_CI'));
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_CI chart covariance keeps unsigned history and scoped acceptance explicit', () => {
+  const row=evidence.coverage.chart_covariance.family_results.find(r=>r.family==='A_CI');
+  assert.equal(row.full_joint_roots,true);assert.equal(row.unsigned_candidate_history,true);
+  assert.equal(row.accepted_cells,24);assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.native_events,16);assert.equal(row.target_steps,64);assert.equal(row.final_reads,32);
+  assert.equal(row.frozen_plan_executions,0);assert.equal(row.reused_frozen_plan_executions,4);
+  assert.ok(row.acceptance);assert.equal(row.interval_certificates_rerun,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Unsigned W_A and effective conductance/);
+  assert.match(text(out),/not new A_CI executions/);
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.unsigned_candidate_history=false,
+      r=>r.full_joint_roots=false,r=>r.native_events=20]) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.chart_covariance.family_results.find(r=>r.family==='A_CI'));
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_PC full-chart covariance keeps carrier loss and scoped acceptance explicit', () => {
+  const group=evidence.coverage.chart_covariance;
+  const row=group.family_results.find(r=>r.family==='A_PC');
+  assert.equal(row.accepted_cells,24);assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.native_events,16);assert.equal(row.target_steps,64);assert.equal(row.final_reads,32);
+  assert.equal(row.full_joint_roots,false);assert.equal(row.persistent_carrier,true);
+  assert.equal(row.unsigned_candidate_history,true);assert.equal(row.chart_symmetries,true);
+  assert.equal(row.frozen_plan_executions,0);assert.equal(row.reused_frozen_plan_executions,4);
+  assert.ok(row.acceptance);assert.equal(row.interval_certificates_rerun,false);
+  assert.equal(group.family_results.reduce((n,r)=>n+r.accepted_cells,0),96);
+  assert.equal(group.first_group_closed,true);assert.equal(group.first_group_accepted_cells,96);
+  assert.equal(group.family_results.reduce((n,r)=>n+r.passing_pending_cells,0),0);
+  assert.equal(group.families_not_executed.length,6);assert.equal(group.aggregate_closed,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/whole-carrier archive, explicit loss, zero target initialization/);
+  assert.match(text(out),/Both declared layouts have active phase/);
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.persistent_carrier=false,
+      r=>r.full_joint_roots=true,r=>r.native_events=20,r=>r.interval_certificates_rerun=true]) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.chart_covariance.family_results.find(r=>r.family==='A_PC'));
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('C_OS ordering covariance projects scoped acceptance without sibling credit', () => {
   const view=evidence.coverage.ordering_covariance,row=view.family_results[0];
   assert.equal(row.family,'C_OS'); assert.equal(row.passing_pending_cells,0);

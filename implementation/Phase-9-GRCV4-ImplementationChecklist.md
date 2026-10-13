@@ -3271,9 +3271,35 @@ the full ten-profile plan.
     Transport rows, columns, branches, ports, labels, chirality, active phase
     and numerical operands/history. Reject column-only or stale phase/chirality
     controls; a boolean equality assertion or raw digest equality is insufficient.
-    - [ ] First-group checkpoint: review and accept this child's required
-      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
-      advance ready rows without waiting for the remaining six families.
+    - [x] C_OS bounded full-chart execution:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4f-COSReview.md). 24 passing
+      history cells, 16 numerical events, 64 target steps and 32 final reads;
+      four exact frozen mechanical plans remain separately counted. Both
+      chiralities, active/inactive phases, transported shares and rejection
+      rollback are covered; dense cross-check, not uniform certification.
+    - [x] C_OS scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
+    - [x] C_CI full-joint-root chart execution:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4f-CCIReview.md). 24 passing
+      cells, 16 events, 64 target steps, 32 final roots; both source/target
+      admission roles, pointwise interval certificates and semantic rollback.
+      Four frozen plans reused from C_OS, zero new mechanical executions.
+    - [x] C_CI scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
+    - [x] A_CI unsigned-history/writer full-chart execution:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md). 24 passing
+      cells, 16 events, 64 target steps and 32 final joint roots; complete
+      history/transfer/writer checks, pointwise certificates and rollback.
+      Frozen mechanical plans reused, not new A_CI executions.
+    - [x] A_CI scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
+    - [x] A_PC persistent-carrier full-chart execution and pressure:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md). D59/D94,
+      both chiralities; 24 passing cells, 16 events, 64 target steps, 32 reads.
+      Unsigned W, whole-carrier archives/loss/zero initialization and ZOH
+      continuation; pointwise certificates, exact replay and semantic rollback.
+      Four frozen plans reused, not new A_PC mechanical execution.
+    - [x] A_PC scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
+    - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
+      A_CI and A_PC each contribute 24 cells, 96/96 total. Next `.g`;
+      all-ten parent remains open for the six second-group families.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.
