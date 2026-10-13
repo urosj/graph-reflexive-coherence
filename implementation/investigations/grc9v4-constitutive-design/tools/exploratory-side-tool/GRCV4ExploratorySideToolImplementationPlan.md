@@ -2860,3 +2860,9 @@ Expose C_CI `8.4f` full-chart evidence in selected API/CLI, browser
   certificates, 16 events and four explicitly reused mechanical plans.
   Keep C_OS's 24 accepted cells separate; no first-group/all-ten closure.
   Normal status is producer-free; numerical rechecking is explicit.
+
+Expose A_CI `8.4f` in selected API/CLI, browser and notebook:
+  24 separately accepted full-chart history cells, unsigned W and writer covariance,
+  complete joint roots, pointwise certificates and explicit frozen-plan reuse.
+  Keep C_OS/C_CI acceptance separate; no sibling or aggregate promotion.
+  Routine status remains producer-free; numerical rechecking is explicit.

@@ -13,7 +13,7 @@ test('C_OS chart covariance separates exact plans from accepted native cells', (
   assert.equal(row.frozen_plan_executions,4);assert.equal(row.native_events,16);
   assert.equal(row.target_steps,64);assert.equal(row.final_reads,32);
   assert.equal(row.chart_symmetries,true);assert.equal(view.aggregate_closed,false);
-  assert.equal(view.families_not_executed.length,8);
+  assert.equal(view.families_not_executed.length,7);
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out),/4 exact frozen mechanical-plan executions are separate/);
   assert.match(text(out),/Reflection is not edge reversal/);
@@ -38,6 +38,24 @@ test('C_CI chart covariance binds full roots and separately reused frozen plans'
       r=>r.frozen_plan_executions=4,r=>r.interval_certificates_rerun=true]) {
     const forged=structuredClone(evidence);
     mutate(forged.coverage.chart_covariance.family_results.find(r=>r.family==='C_CI'));
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_CI chart covariance keeps unsigned history and scoped acceptance explicit', () => {
+  const row=evidence.coverage.chart_covariance.family_results.find(r=>r.family==='A_CI');
+  assert.equal(row.full_joint_roots,true);assert.equal(row.unsigned_candidate_history,true);
+  assert.equal(row.accepted_cells,24);assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.native_events,16);assert.equal(row.target_steps,64);assert.equal(row.final_reads,32);
+  assert.equal(row.frozen_plan_executions,0);assert.equal(row.reused_frozen_plan_executions,4);
+  assert.ok(row.acceptance);assert.equal(row.interval_certificates_rerun,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Unsigned W_A and effective conductance/);
+  assert.match(text(out),/not new A_CI executions/);
+  for(const mutate of [r=>r.accepted_cells=0,r=>r.unsigned_candidate_history=false,
+      r=>r.full_joint_roots=false,r=>r.native_events=20]) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.chart_covariance.family_results.find(r=>r.family==='A_CI'));
     assert.throws(()=>checkedTranche8(forged));
   }
 });

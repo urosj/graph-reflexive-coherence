@@ -15,6 +15,7 @@ EXTRA_MODES = {
     'p984e_cos': ('check',),
     'p984f_cos': ('check',),
     'p984f_cci': ('check',),
+    'p984f_aci': ('check',),
     'p984e_cci': ('check',),
     'p984e_aci': ('check',),
     'p984e_apc': ('check',),

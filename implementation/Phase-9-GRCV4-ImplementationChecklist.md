@@ -3284,7 +3284,12 @@ the full ten-profile plan.
       admission roles, pointwise interval certificates and semantic rollback.
       Four frozen plans reused from C_OS, zero new mechanical executions.
     - [x] C_CI scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
-    - [ ] A_CI unsigned-history/writer chart covariance and separate acceptance.
+    - [x] A_CI unsigned-history/writer full-chart execution:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md). 24 passing
+      cells, 16 events, 64 target steps and 32 final joint roots; complete
+      history/transfer/writer checks, pointwise certificates and rollback.
+      Frozen mechanical plans reused, not new A_CI executions.
+    - [x] A_CI scoped user acceptance on 2026-10-13: 24 cells; saved run unchanged.
     - [ ] A_PC persistent-carrier chart covariance and separate acceptance.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and

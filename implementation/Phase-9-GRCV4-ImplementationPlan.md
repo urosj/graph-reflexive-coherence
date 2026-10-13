@@ -2988,8 +2988,14 @@ now supplies 24 accepted full-joint-root cells (2026-10-13): 16 events,
 64 target steps and 32 final roots. Both source/target admission roles and
 continuations retain independent pointwise interval certificates. Four
 frozen mechanical plans are explicitly reused, not new C_CI execution.
-No uniform trajectory or sibling credit follows. Next,
-continue with A_CI.
+No uniform trajectory or sibling credit follows.
+
+The [A_CI chart successor](./phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md)
+now supplies 24 accepted cells (2026-10-13), with unsigned history,
+fixed-row reconstruction, full joint roots and writer covariance. Sixteen
+events, 64 target steps and 32 final reads pass with pointwise root/output
+certificates. Four frozen mechanical plans are reused separately. A_PC is
+next; first-group and all-ten `.f` remain open.
 
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with

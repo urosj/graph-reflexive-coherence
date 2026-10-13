@@ -179,7 +179,8 @@ export function renderTranche8(value, container, create = tag => document.create
   append(container,'h3','8.4f full chart rotation and reflection');
   for(const row of c.chart_covariance.family_results) {
     append(container,'p',`${row.family}: ${row.passing_pending_cells}/${row.required_cells} chart covariance history cells passing pending acceptance, ${row.accepted_cells} accepted; ${row.native_events} numerical events, ${row.target_steps} target steps, ${row.final_reads} final reads. ${row.frozen_plan_executions} exact frozen mechanical-plan executions are separate, not numerical events. Maximum discrepancy ${row.maximum_covariance_error}.`);
-    if(row.reused_frozen_plan_executions) append(container,'p',`${row.reused_frozen_plan_executions} frozen mechanical plans are reused from accepted evidence, not new C_CI executions.`);
+    if(row.reused_frozen_plan_executions) append(container,'p',`${row.reused_frozen_plan_executions} frozen mechanical plans are reused from accepted evidence, not new ${row.family} executions.`);
+    if(row.unsigned_candidate_history) append(container,'p','Unsigned W_A and effective conductance, fixed-row differential reconstruction, both-role history transfer and writer covariance are checked; no carrier credit.');
     append(container,'p',row.full_joint_roots ? 'Complete joint-root covariance with pointwise independent interval certificates; no uniform parameter tube or whole-trajectory enclosure.' : 'Bounded dense comparisons, not a rigorous full-error certificate.');
     append(container,'p','Full rows/columns/branches, endpoint ports, external labels, namespace/roles, chirality, active phase and branch shares are transported together. Reflection is not edge reversal. Inactive phase remains None. No sibling credit.');
     const refs=append(container,'p','');

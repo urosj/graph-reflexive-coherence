@@ -1,6 +1,24 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — C_CI P9-8.4f accepted
+## Current checkpoint — A_CI P9-8.4f accepted
+
+C_CI acceptance is committed as `d3b80b1e` on `work/p9-8-4f`.
+The [A_CI chart review](./phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md)
+records 24 accepted history cells on D45/D52 in both chiralities: 16 events,
+four source steps, 64 target steps and 32 final roots. Full chart transport
+includes unsigned W_A/effective conductance, the fixed-row backend, history
+transfer and writer covariance. Maximum observed discrepancy is zero.
+Independent pointwise root/output certificates accompany native capture.
+Sixteen stale-source and 32 semantic rejections preserve the checkpoint.
+
+Exact XZ evidence retains original operands and identities. API/CLI, browser
+and notebook expose `A_CI` at `8.4f`; normal status does not rerun native
+work or interval certification. Four frozen mechanical plans are explicitly
+reused, not new A_CI executions. A_CI was accepted on 2026-10-13; A_PC is next.
+C_OS/C_CI remain separately accepted at 24 cells each. First-group/all-ten
+closure and uniform-domain claims remain out of scope.
+
+## Prior checkpoint — C_CI P9-8.4f accepted
 
 C_OS acceptance is committed as `603cbe20` on `work/p9-8-4f`.
 The [C_CI chart review](./phase-9-grcv4/tranche-8/P9-8.4f-CCIReview.md)

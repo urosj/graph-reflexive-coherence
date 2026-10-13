@@ -679,3 +679,12 @@ The four frozen mechanical plans are reused from accepted C_OS evidence,
 not new C_CI executions. Use `--family C_CI --checkpoint 8.4f` with
 `status` or `verify-retained`; `--recheck-numerics` explicitly recomputes
 interval certificates. C_OS remains separately accepted at 24 cells.
+
+A_CI is available at `8.4f`: 24 separately accepted cells, with
+unsigned W_A/effective conductance, fixed-row reconstruction, history
+transfer, writer covariance and complete joint roots. Sixteen events,
+64 target steps and 32 final roots retain pointwise certificates; four
+frozen mechanical plans are explicitly reused, not new A_CI execution.
+Use `--family A_CI --checkpoint 8.4f` for selected status or retained
+verification; `--recheck-numerics` recomputes certificates explicitly.
+C_OS/C_CI stay separately accepted; no first-group/all-ten closure follows.

@@ -16,6 +16,13 @@ from copy import deepcopy
 
 from tranche8_validation import ACTIVE, validation_session
 
+CHART_ACI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4f-ACIInputs.json": "1296e5960804eddf32e0e3c1e2c3048371c2c681f18bdcd57b77fee41f676c85",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4f-ACIResults.json": "63a9bea44ec97ff48640e11036f17700f2b92589604eab63fe78620b157b1e9a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4f-ACIPlan.md": "90ad2433ed41ad8542f7f74383eb5bfc0be89e15b1a2bce09a9696fb67ba4e2d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md": "9a3139bbbf5a0e915e944aef9348aeae6968c19afb8f22623fbb4495e8363847"
+}
+
 CHART_CCI_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4f-CCIInputs.json": "dbc19d1486606bb3436d3ca6378907ac91ead58c28e4b4c1c558002e3bad6109",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4f-CCIResults.json": "5e5afa130d2269be45711797f918d90d9d11517d6179db3b1b63c833b8a8fd31",
@@ -362,6 +369,7 @@ class Sources:
             boundary_pins.update(COVARIANCE_COS_SOURCES)
             boundary_pins.update(CHART_COS_SOURCES)
             boundary_pins.update(CHART_CCI_SOURCES)
+            boundary_pins.update(CHART_ACI_SOURCES)
             boundary_pins.update(COVARIANCE_CCI_SOURCES)
             boundary_pins.update(COVARIANCE_ACI_SOURCES)
             boundary_pins.update(COVARIANCE_APC_SOURCES)
@@ -371,7 +379,8 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_C_CI_joint_root_chart_covariance_and_scoped_acceptance" if name in CHART_CCI_SOURCES else
+                    basis=("pinned_A_CI_unsigned_history_joint_root_chart_covariance_and_scoped_acceptance" if name in CHART_ACI_SOURCES else
+                        "pinned_C_CI_joint_root_chart_covariance_and_scoped_acceptance" if name in CHART_CCI_SOURCES else
                         "pinned_C_OS_chart_covariance_and_scoped_acceptance" if name in CHART_COS_SOURCES else
                         "pinned_A_PC_carrier_covariance_scoped_acceptance" if name in COVARIANCE_APC_SOURCES else
                         "pinned_A_joint_root_unsigned_history_covariance_scoped_acceptance" if name in COVARIANCE_ACI_SOURCES else
@@ -1332,9 +1341,9 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f"), "unknown family checkpoint")
     if checkpoint == "8.4f":
-        require(family in ("C_OS","C_CI"), "chart covariance not executed for this family")
+        require(family in ("C_OS","C_CI","A_CI"), "chart covariance not executed for this family")
         policy.restore_packed_evidence(root)
-        with validation_session(({"C_OS":"p984f_cos","C_CI":"p984f_cci"}[family],), root=root):
+        with validation_session(({"C_OS":"p984f_cos","C_CI":"p984f_cci","A_CI":"p984f_aci"}[family],), root=root):
             sources = Sources(root)
             return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
                 scope="selected_family_only_not_execution_permission", native=chart_view(sources,family=family)["family_results"][0],
@@ -1393,14 +1402,14 @@ def family_status(root, family, checkpoint="8.4c"):
 
 def chart_view(sources, *, family=None):
     import importlib
-    modules={"C_OS":"p984f_cos","C_CI":"p984f_cci"}
+    modules={"C_OS":"p984f_cos","C_CI":"p984f_cci","A_CI":"p984f_aci"}
     rows=[]
     for name,module in modules.items():
         if family is not None and name != family:continue
         chart=importlib.import_module(module)
         summary=chart.check(sources.read(chart.INPUTS),sources.read(chart.RESULTS))
         review=sources.raw(chart.REVIEW).decode();acceptance=None
-        if name in ("C_OS","C_CI"):
+        if name in ("C_OS","C_CI","A_CI"):
             require("## Scoped user acceptance" in review and sources.read(chart.RESULTS)["record_digest"] in review,
                     "missing or unbound chart acceptance")
             summary.update(status="accepted_bounded",accepted_cells=24,passing_pending_cells=0)
@@ -1408,7 +1417,7 @@ def chart_view(sources, *, family=None):
         rows.append(dict(summary,acceptance=acceptance,inputs=sources.ref(chart.INPUTS),
             results=sources.ref(chart.RESULTS),plan=sources.ref(chart.PLAN),review=sources.ref(chart.REVIEW),
             comparison_scope=("pointwise_full_joint_root_certificates_and_chart_covariance_not_uniform_trajectory_enclosure"
-                if name=="C_CI" else "exact_frozen_pairs_and_bounded_dense_native_counterparts_not_uniform_error_certificate")))
+                if name in ("C_CI","A_CI") else "exact_frozen_pairs_and_bounded_dense_native_counterparts_not_uniform_error_certificate")))
     return dict(checkpoint="8.4f",aggregate_closed=False,family_results=rows,
         families_not_executed=[f for f in FAMILIES if f not in modules])
 
@@ -1452,7 +1461,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. First-group .e C_OS has 20 accepted covariance cells on two layouts and five transforms. C_CI has 20 accepted full-joint-root covariance cells. A_CI has 20 accepted covariance cells with unsigned history/writer and full joint roots. A_PC has 20 accepted covariance cells on D59/D94 using the accepted coupled history/allocation source, with unsigned W and signed carrier transport/archive/reset. First-group .e is accepted at 80/80 history cells; C_OS .f now supplies 24 accepted chart-covariance history cells, separately from four frozen mechanical-plan executions. C_CI .f supplies 24 accepted full-joint-root chart cells, with independent pointwise interval certificates and explicit frozen-plan reuse. A_CI is next. Other .f families remain unexecuted. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. First-group .e C_OS has 20 accepted covariance cells on two layouts and five transforms. C_CI has 20 accepted full-joint-root covariance cells. A_CI has 20 accepted covariance cells with unsigned history/writer and full joint roots. A_PC has 20 accepted covariance cells on D59/D94 using the accepted coupled history/allocation source, with unsigned W and signed carrier transport/archive/reset. First-group .e is accepted at 80/80 history cells; C_OS .f now supplies 24 accepted chart-covariance history cells, separately from four frozen mechanical-plan executions. C_CI .f supplies 24 accepted full-joint-root chart cells, with independent pointwise interval certificates and explicit frozen-plan reuse. A_CI .f supplies 24 accepted unsigned-history/writer/full-joint-root chart cells, with pointwise root/output certificates and explicit frozen-plan reuse. A_PC is next. Other .f families remain unexecuted. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -1466,15 +1475,15 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == "8.4f":
-        require(args.family in ("C_OS","C_CI") and not args.oracle and not args.preparation,
-            "select C_OS/C_CI chart covariance")
+        require(args.family in ("C_OS","C_CI","A_CI") and not args.oracle and not args.preparation,
+            "select C_OS/C_CI/A_CI chart covariance")
         require(args.action in ("status","verify-retained") and
             (not args.recheck_numerics or args.action == "verify-retained"),"invalid chart mode")
         if args.action == "status":
             print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2))
         else:
             subprocess.run([sys.executable,str(ROOT/HERE/"tranche8_retained.py"),
-                str(ROOT/HERE/{"C_OS":"p984f_cos.py","C_CI":"p984f_cci.py"}[args.family]),"check",*(["--recheck-numerics"] if args.recheck_numerics else [])],cwd=ROOT,check=True)
+                str(ROOT/HERE/{"C_OS":"p984f_cos.py","C_CI":"p984f_cci.py","A_CI":"p984f_aci.py"}[args.family]),"check",*(["--recheck-numerics"] if args.recheck_numerics else [])],cwd=ROOT,check=True)
         return
     if args.checkpoint == "8.4e":
         require(args.family in ("C_OS", "C_CI", "A_CI", "A_PC") and not args.oracle and not args.preparation,
