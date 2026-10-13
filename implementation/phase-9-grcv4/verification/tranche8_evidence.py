@@ -16,6 +16,13 @@ from copy import deepcopy
 
 from tranche8_validation import ACTIVE, validation_session
 
+COVARIANCE_CCI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIInputs.json": "093d2ac796cc7b22baf9690b8f3e3422194d575ee7a3eff5eb17b5f5a2154b97",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIResults.json": "ceabcf333bae5dd985deef4fef043fa36a02d1ac54137aff5cca73fc26c52402",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIPlan.md": "5591fcd48a75b724dc91a93dbd6dba40d587327959f9f296554fd6d010232d3d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md": "c8c5d6b1e975048c4223306c89c5636440ed62266f6657528f37c71d8260b519",
+}
+
 COVARIANCE_COS_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSInputs.json": "b04c6d3e50540c172f5b35aa869ea801f55f2cf3be367130aff92a6b2006bb2d",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSResults.json": "5e1642e44b1b93847131c2dd2b564e0641e243bee1f0d6afc313270fa4b21fb8",
@@ -325,13 +332,15 @@ class Sources:
             boundary_pins.update(DEEP_APC_JOINT_SOURCES)
             boundary_pins.update(DEEP_APC_FULL_SOURCES)
             boundary_pins.update(COVARIANCE_COS_SOURCES)
+            boundary_pins.update(COVARIANCE_CCI_SOURCES)
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_covariance_execution_and_scoped_acceptance" if name in COVARIANCE_COS_SOURCES else
+                    basis=("pinned_joint_root_covariance_and_scoped_acceptance" if name in COVARIANCE_CCI_SOURCES else
+                        "pinned_covariance_execution_and_scoped_acceptance" if name in COVARIANCE_COS_SOURCES else
                         "pinned_full_coupled_execution_and_scoped_acceptance" if name in DEEP_APC_FULL_SOURCES else
                         "pinned_coupled_witnesses_not_family_acceptance" if name in DEEP_APC_JOINT_SOURCES else
                         "pinned_eligible_source_failed_target_history_companion" if name in DEEP_APC_HISTORY_SOURCES else
@@ -1286,11 +1295,12 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d", "8.4e"), "unknown family checkpoint")
     if checkpoint == "8.4e":
-        require(family == "C_OS", "ordering covariance not executed for this family")
+        require(family in ("C_OS", "C_CI"), "ordering covariance not executed for this family")
         policy.restore_packed_evidence(root)
-        with validation_session(("p984e_cos",), root=root):
+        module = {"C_OS": "p984e_cos", "C_CI": "p984e_cci"}[family]
+        with validation_session((module,), root=root):
             sources = Sources(root)
-            view = covariance_view(sources)
+            view = covariance_view(sources, family=family)
             return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
                 scope="selected_family_only_not_execution_permission", native=view["family_results"][0],
                 source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
@@ -1335,19 +1345,29 @@ def family_status(root, family, checkpoint="8.4c"):
             other_families_checked=False, native_trajectories_rerun=False)
 
 
-def covariance_view(sources):
-    import p984e_cos as covariance
-    summary = covariance.check(sources.read(covariance.INPUTS), sources.read(covariance.RESULTS))
-    review = sources.raw(covariance.REVIEW).decode()
-    require("## Scoped user acceptance" in review
-            and sources.read(covariance.RESULTS)["record_digest"] in review,
-            "missing or unbound C_OS covariance acceptance")
-    summary.update(status="accepted_bounded", accepted_cells=20, passing_pending_cells=0)
-    row = dict(summary, acceptance=sources.ref(covariance.REVIEW, anchor="scoped-user-acceptance"), inputs=sources.ref(covariance.INPUTS), results=sources.ref(covariance.RESULTS),
-               plan=sources.ref(covariance.PLAN), review=sources.ref(covariance.REVIEW),
-               comparison_scope="two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound")
-    return dict(checkpoint="8.4e", family_results=[row], aggregate_closed=False,
-                families_not_executed=[f for f in FAMILIES if f != "C_OS"])
+def covariance_view(sources, *, family=None):
+    import importlib
+    modules = {"C_OS": "p984e_cos", "C_CI": "p984e_cci"}
+    rows = []
+    for name, module in modules.items():
+        if family is not None and name != family:
+            continue
+        covariance = importlib.import_module(module)
+        summary = covariance.check(sources.read(covariance.INPUTS), sources.read(covariance.RESULTS))
+        review = sources.raw(covariance.REVIEW).decode()
+        acceptance = None
+        if name in ("C_OS", "C_CI"):
+            require("## Scoped user acceptance" in review
+                    and sources.read(covariance.RESULTS)["record_digest"] in review,
+                    "missing or unbound covariance acceptance")
+            summary.update(status="accepted_bounded", accepted_cells=20, passing_pending_cells=0)
+            acceptance = sources.ref(covariance.REVIEW, anchor="scoped-user-acceptance")
+        rows.append(dict(summary, acceptance=acceptance,
+            inputs=sources.ref(covariance.INPUTS), results=sources.ref(covariance.RESULTS),
+            plan=sources.ref(covariance.PLAN), review=sources.ref(covariance.REVIEW),
+            comparison_scope="two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound"))
+    return dict(checkpoint="8.4e", family_results=rows, aggregate_closed=False,
+                families_not_executed=[f for f in FAMILIES if f not in modules])
 
 
 def next_work(value):
@@ -1364,7 +1384,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. First-group .e C_OS has 20 accepted covariance cells on two layouts and five transforms. Next C_CI. Chart symmetries remain .f. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. First-group .e C_OS has 20 accepted covariance cells on two layouts and five transforms. C_CI has 20 accepted full-joint-root covariance cells. Next A_CI. Chart symmetries remain .f. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -1378,15 +1398,15 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == "8.4e":
-        require(args.family == "C_OS" and not args.oracle and not args.preparation,
-                "select C_OS ordering covariance, not oracle/preparation")
+        require(args.family in ("C_OS", "C_CI") and not args.oracle and not args.preparation,
+                "select C_OS/C_CI ordering covariance, not oracle/preparation")
         require(args.action in ("status", "verify-retained")
                 and (not args.recheck_numerics or args.action == "verify-retained"), "invalid covariance mode")
         if args.action == "status":
             print(json.dumps(family_status(ROOT, args.family, args.checkpoint), indent=2))
         else:
             subprocess.run([sys.executable, str(ROOT / HERE / "tranche8_retained.py"),
-                str(ROOT / HERE / "p984e_cos.py"), "check", *(["--recheck-numerics"] if args.recheck_numerics else [])],
+                str(ROOT / HERE / {"C_OS": "p984e_cos.py", "C_CI": "p984e_cci.py"}[args.family]), "check", *(["--recheck-numerics"] if args.recheck_numerics else [])],
                 cwd=ROOT, check=True)
         return
     if args.checkpoint == "8.4d":

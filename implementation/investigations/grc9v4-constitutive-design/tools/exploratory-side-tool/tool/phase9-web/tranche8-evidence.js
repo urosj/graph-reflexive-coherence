@@ -16892,6 +16892,66 @@ export const TRANCHE8_EVIDENCE = {
             "basis": "pinned_covariance_execution_and_scoped_acceptance"
           },
           "comparison_scope": "two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound"
+        },
+        {
+          "family": "C_CI",
+          "status": "accepted_bounded",
+          "required_cells": 20,
+          "passing_pending_cells": 0,
+          "accepted_cells": 20,
+          "native_events": 12,
+          "target_steps": 48,
+          "source_steps": 6,
+          "final_reads": 24,
+          "maximum_covariance_error": 0.0,
+          "transforms": [
+            "edge_order",
+            "node_order",
+            "relabel",
+            "signed",
+            "combined"
+          ],
+          "degrees": [
+            52,
+            94
+          ],
+          "full_joint_roots": true,
+          "native_trajectories_rerun": false,
+          "interval_certificates_rerun": false,
+          "uniform_domain": false,
+          "aggregate_closed": false,
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md",
+            "sha256": "c8c5d6b1e975048c4223306c89c5636440ed62266f6657528f37c71d8260b519",
+            "revision": null,
+            "basis": "pinned_joint_root_covariance_and_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIInputs.json",
+            "sha256": "093d2ac796cc7b22baf9690b8f3e3422194d575ee7a3eff5eb17b5f5a2154b97",
+            "revision": null,
+            "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIResults.json",
+            "sha256": "ceabcf333bae5dd985deef4fef043fa36a02d1ac54137aff5cca73fc26c52402",
+            "revision": null,
+            "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+          },
+          "plan": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIPlan.md",
+            "sha256": "5591fcd48a75b724dc91a93dbd6dba40d587327959f9f296554fd6d010232d3d",
+            "revision": null,
+            "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md",
+            "sha256": "c8c5d6b1e975048c4223306c89c5636440ed62266f6657528f37c71d8260b519",
+            "revision": null,
+            "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+          },
+          "comparison_scope": "two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound"
         }
       ],
       "aggregate_closed": false,
@@ -16901,7 +16961,6 @@ export const TRANCHE8_EVIDENCE = {
         "A_PC",
         "A_CI_PC",
         "A_RG2b",
-        "C_CI",
         "C_PC",
         "C_CI_PC",
         "C_RG2b"
@@ -18257,6 +18316,30 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_deep_execution_with_scoped_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIInputs.json",
+      "sha256": "093d2ac796cc7b22baf9690b8f3e3422194d575ee7a3eff5eb17b5f5a2154b97",
+      "revision": null,
+      "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIPlan.md",
+      "sha256": "5591fcd48a75b724dc91a93dbd6dba40d587327959f9f296554fd6d010232d3d",
+      "revision": null,
+      "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIResults.json",
+      "sha256": "ceabcf333bae5dd985deef4fef043fa36a02d1ac54137aff5cca73fc26c52402",
+      "revision": null,
+      "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md",
+      "sha256": "c8c5d6b1e975048c4223306c89c5636440ed62266f6657528f37c71d8260b519",
+      "revision": null,
+      "basis": "pinned_joint_root_covariance_and_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSInputs.json",
       "sha256": "b04c6d3e50540c172f5b35aa869ea801f55f2cf3be367130aff92a6b2006bb2d",
       "revision": null,
@@ -18419,5 +18502,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "198c8cb909d486a3c62dc1a95f1835cd4ac2cfa8026ec1d65c97932b8ae049a0"
+  "view_digest": "eaa19c2c96c126f6f7c2690abffcee4b9ede0d0b58bb8e8f062dd18100fa8e21"
 };

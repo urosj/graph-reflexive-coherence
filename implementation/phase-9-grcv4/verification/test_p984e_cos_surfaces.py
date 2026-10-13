@@ -21,7 +21,7 @@ class CovarianceSurfaceTests(unittest.TestCase):
         self.assertEqual(v['native']['accepted_cells'],20)
         self.assertFalse(v['native']['dense_comparisons_rerun'])
         saved=json.loads((index.ROOT/index.ASSET).read_text().split(' = ',1)[1].rstrip(';\n'))
-        self.assertEqual(saved['coverage']['ordering_covariance']['family_results'],[v['native']])
+        self.assertEqual(next(r for r in saved['coverage']['ordering_covariance']['family_results'] if r['family']=='C_OS'),v['native'])
         for path in index.COVARIANCE_COS_SOURCES:
             with patch.object(index.Sources,'current_bytes',return_value=b'forged'),self.assertRaisesRegex(ValueError,'source drift'):
                 index.Sources(index.ROOT).raw(path)

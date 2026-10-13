@@ -6,12 +6,12 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
-test('C_OS ordering covariance is visible without acceptance or sibling credit', () => {
+test('C_OS ordering covariance projects scoped acceptance without sibling credit', () => {
   const view=evidence.coverage.ordering_covariance,row=view.family_results[0];
   assert.equal(row.family,'C_OS'); assert.equal(row.passing_pending_cells,0);
   assert.equal(row.accepted_cells,20); assert.equal(row.native_events,12);
   assert.equal(row.target_steps,48); assert.equal(row.final_reads,24);
-  assert.equal(view.families_not_executed.length,9);assert.equal(view.aggregate_closed,false);
+  assert.equal(view.families_not_executed.length,8);assert.equal(view.aggregate_closed,false);
   const out=element('div');renderTranche8(evidence,out,element);
   assert.match(text(out),/C_OS: 0\/20 covariance history cells passing pending acceptance, 20 accepted/);
   assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
@@ -20,6 +20,20 @@ test('C_OS ordering covariance is visible without acceptance or sibling credit',
       v=>v.family_results[0].results.sha256='forged']) {
     const forged=structuredClone(evidence);mutate(forged.coverage.ordering_covariance);
     assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_CI ordering covariance retains full-root scope and scoped acceptance', () => {
+  const row=evidence.coverage.ordering_covariance.family_results.find(r=>r.family==='C_CI');
+  assert.equal(row.passing_pending_cells,0);assert.equal(row.accepted_cells,20);
+  assert.ok(row.acceptance);assert.equal(row.full_joint_roots,true);
+  assert.equal(row.interval_certificates_rerun,false);assert.equal(row.native_trajectories_rerun,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Full joint CI roots/);
+  for(const field of ['full_joint_roots','interval_certificates_rerun','native_trajectories_rerun']) {
+    const forged=structuredClone(evidence);
+    const changed=forged.coverage.ordering_covariance.family_results.find(r=>r.family==='C_CI');
+    changed[field]=!changed[field];assert.throws(()=>checkedTranche8(forged));
   }
 });
 

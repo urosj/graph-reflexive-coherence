@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — C_OS ordering covariance accepted
+## Current checkpoint — C_OS and C_CI covariance accepted
 
 Branch `work/p9-8-4e` starts from the no-fast-forward P9-8.4d merge on main.
 The [C_OS covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md)
@@ -14,8 +14,18 @@ composition are covered. Chart/phase covariance remains P9-8.4f.
 Side-tool API/CLI, browser and notebook expose checkpoint `8.4e`, family
 `C_OS`, with 20 accepted cells. Explicit retained numerical checking is
 separate from routine status. Large evidence is byte-exact XZ; older evidence
-and production/spec sources are unchanged. Next: C_CI; A_CI and A_PC follow before the remaining six families. Do not
-reopen the accepted first-group `.d` checkpoint or infer sibling credit.
+and production/spec sources are unchanged.
+
+The [C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md) supplies
+20 covariance cells accepted on 2026-10-13: the same two layouts and five
+transforms, 12 events, 48 target steps and 24 fresh final roots. It validates
+the full selected CI root, not just current, including both roles, Read-Back,
+geometry, structural source, reset/restart and domain/certificate identities.
+Select `C_CI` at checkpoint `8.4e` in API/CLI or the notebook; the browser
+shows both families with separately pinned acceptance. Explicit interval rechecking
+is not a native rerun. Next: A_CI, then A_PC; the remaining six
+families follow the first-group schedule. Do not reopen accepted `.d` or infer
+sibling credit.
 
 ## Prior checkpoint — first-group P9-8.4d accepted
 

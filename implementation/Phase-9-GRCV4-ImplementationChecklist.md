@@ -3245,7 +3245,11 @@ the full ten-profile plan.
       Exact normalized topology and zero saved numerical covariance error;
       unchanged 2e-13 comparison budget. No uniform or chart-symmetry credit.
     - [x] C_OS scoped user acceptance on 2026-10-13: 20 cells; siblings remain open.
-    - [ ] C_CI ordering/relabeling/signed covariance and separate acceptance.
+    - [x] C_CI bounded execution and focused joint-root pressure:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md). Two layouts,
+      five transforms, 20 accepted cells, 12 events, 48 target steps, 24 final
+      roots; full J/H, both histories, interval certificates and exact replay.
+    - [x] C_CI scoped user acceptance on 2026-10-13: 20 cells; siblings remain open.
     - [ ] A_CI ordering/relabeling/signed covariance and separate acceptance.
     - [ ] A_PC ordering/relabeling/signed covariance and separate acceptance.
     - [ ] First-group checkpoint: review and accept this child's required

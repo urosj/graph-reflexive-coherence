@@ -13,6 +13,7 @@ from tranche8_validation import BOUNDARY_MODULES, ROOT, validation_session
 # infer permission from a filename prefix or admit prepare/run/derive actions.
 EXTRA_MODES = {
     'p984e_cos': ('check',),
+    'p984e_cci': ('check',),
     'p984d_apc_feasibility': ('--check',),
     'p984d_apc_companion': ('--check',),
     'p984d_apc_companion_runtime': ('--check',),

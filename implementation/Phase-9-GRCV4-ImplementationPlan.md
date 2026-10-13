@@ -2954,8 +2954,14 @@ The first P9-8.4e family is [C_OS](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.m
 ordering/relabeling/signed transformations. Twelve native events and 48 target
 steps use the unchanged comparison budget. Native admission, normalized graph
 equality, predictor/corrector/Read-Back/H/resource covariance, final reads and
-partial-transport controls are covered. Proceed next
-to C_CI, then A_CI and A_PC. Chart transformations remain `.f` and C_OS grants
+partial-transport controls are covered.
+
+The [C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md) uses the
+same two-layout/five-transform scope, with full joint CI roots (J,H), generated
+geometry, structural source, Read-Back, reset/restart and final-root identities.
+Individual interval certificates remain distinct from the nominal covariance
+comparison and from any whole-trajectory bound. Its 20 cells were accepted on
+2026-10-13; proceed to A_CI and A_PC. Chart transformations remain `.f` and C_OS grants
 no history/carrier or sibling evidence. Status and explicit numerical rechecks
 remain separate, with packed retained operands for portability.
 

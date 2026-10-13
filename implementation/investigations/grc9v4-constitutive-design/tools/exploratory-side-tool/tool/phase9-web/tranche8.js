@@ -179,6 +179,7 @@ export function renderTranche8(value, container, create = tag => document.create
   append(container, 'h3', '8.4e ordering and signed covariance');
   for (const row of c.ordering_covariance.family_results) {
     append(container, 'p', `${row.family}: ${row.passing_pending_cells}/${row.required_cells} covariance history cells passing pending acceptance, ${row.accepted_cells} accepted; ${row.native_events} events, ${row.target_steps} target steps and ${row.final_reads} final reads. Maximum covariance discrepancy ${row.maximum_covariance_error}. Two layouts, five transforms; no chart-symmetry or uniform-domain claim.`);
+    if(row.full_joint_roots) append(container,'p','Full joint CI roots: current, H, generated geometry, structural source and Read-Back; selected, reset, restart and final roots. Individual interval certificates are not a whole-trajectory enclosure.');
     const refs=append(container,'p','');
     for(const key of ['inputs','results','plan','review']) { link(refs,row[key],key); append(refs,'span',' · '); }
   }

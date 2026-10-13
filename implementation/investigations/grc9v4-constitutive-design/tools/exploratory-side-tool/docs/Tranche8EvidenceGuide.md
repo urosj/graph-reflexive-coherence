@@ -620,3 +620,23 @@ margins, a native excluded continuation and an injected late event failure.
 The selected retained command checks this supplement too; optional numerical
 rechecking recomputes its intervals, never native trajectories. These probes
 are not a continuous robustness neighborhood or a new allocation law.
+
+## P9-8.4e ordering covariance: C_OS and C_CI
+
+Select `run.py tranche8-query status --family C_CI --checkpoint 8.4e`, or
+`tranche8_status(repo_root, family="C_CI", checkpoint="8.4e")` in the API or
+notebook. Use `C_OS` to inspect its separately accepted 20-cell scope. C_CI
+has 20 accepted cells (2026-10-13); the browser's ordering-covariance
+section exposes both records without granting sibling or aggregate credit.
+
+Both campaigns cover five explicit transformations on two layouts, with two
+target steps per role. C_CI compares full joint roots, not just current:
+selected H, generated geometry, structural source, Read-Back and reset/restart
+roots retain their input/domain/certificate bindings. Chart symmetry is `.f`.
+
+`verify-retained --family C_CI --checkpoint 8.4e` performs retained checking
+with native producers disabled. `--recheck-numerics` additionally recomputes
+the independent CI interval certificates; it does not run native trajectories.
+The C_OS counterpart optionally recomputes its dense comparisons. Routine
+status does neither numerical recomputation. Exact packed evidence restores
+through the repository storage manifest; no machine-local path is required.
