@@ -2281,6 +2281,61 @@ instead of stale fixed totals and opens any pending case details explicitly.
 
 ### P9-8.4d–h representative-first progression (2026-10-08)
 
+- [x] C_OS `.d` checkpoint: CLI/API/notebook/browser show 20 cases / 40
+  accepted history cells (2026-10-12); nine families remain unexecuted.
+  Validate source drift, closed `.c` preservation, no acceptance widening and
+  completed lossless evidence storage.
+  - [x] Link C_OS hardening inputs/results/review and expose its bounded
+    sign, negative-path and neighborhood results without additional coverage.
+  - [x] C_CI `.d`: expose 20 cases / 40 history cells with its separate
+    CI-only tree23 proof boundary, complete joint-root evidence and scoped
+    acceptance on 2026-10-12. Selected CLI/API/notebook queries must not rebuild other
+    families; browser and pinned source links must agree. Pressure source,
+    scope and dispatch drift; preserve the old tree17 and `.c` records.
+    - [x] Expose the separate D94 hardening supplement: nine finite probes,
+      pointwise margins, native excluded continuation and late-event rollback.
+      Preserve scoped acceptance and distinguish finite probes from a tube.
+  - [x] A_CI `.d` independent oracle: expose 20 passing cases / 440 saved-entry
+    observations with separate scoped oracle acceptance (2026-10-12), with zero
+    native/accepted cells contributed by the oracle. CLI/API/
+    notebook/browser keep it separate from completed native family evidence.
+    Authenticate selected sources and reject scope/dispatch promotion without
+    rebuilding other families or rerunning numerical campaigns.
+    - [x] Native A_CI `.d`: expose 20 passing cases / 40 accepted cells,
+      400 continuation steps and 40 fresh roots separately from accepted
+      oracle scope; authenticate native source links and explicit retained
+      checker dispatch. Native scope accepted on 2026-10-12.
+  - [x] A_PC `.d` preflight hold: expose the passing whole-carrier charts and
+    two enabled interval resource exclusions separately from native execution.
+    One pilot failed before an event; 19 cases unattempted, zero native steps
+    and zero accepted cells. CLI/API/notebook/browser keep A_PC in the native
+    unexecuted set and reject false completion/general-impossibility promotion.
+    - [x] Expose the successor allocation certificate: full simplex excluded
+      on all six D94 layouts for the frozen current history, with exact-real
+      and existing-error-budget bounds. Separate this from the two pointwise
+      controls, native coverage and an all-source impossibility claim.
+      Explicit numerical checking recomputes the interval corrections.
+    - [x] Separate accepted exclusion from the resource-only companion:
+      positive independent target pilot, one native source beat and rejected
+      event attempt, zero commits/native target steps/accepted cells, complete
+      lifecycle rollback and open runtime obligation. Expose linked API,
+      notebook/browser evidence and explicit CLI retained-check dispatch.
+    - [x] Add the history-only companion without overwriting those predecessors:
+      eligible fresh source, first current target update interval-negative
+      beyond the existing error allowance, zero native events/target steps and
+      no gated neighbors. Link the signed diagnostic; keep joint feasibility
+      and the runtime obligation open in CLI/API/notebook/browser.
+    - [x] Expose the coupled allocation derivation, partial first witness and
+      successful mean-31/32 successor separately: 1/20 cases, 20 target steps,
+      2 final reads, 2/40 passing-pending cells and zero accepted. No uniform
+      domain. Authenticate additional retained records and explicitly admit
+      check-only successor modes; reject execution and scope promotion.
+    - [x] Expose the full A_PC campaign: twenty cases, forty history cells,
+      four hundred continuation steps and forty final reads; nineteen new
+      cases plus exact pilot reuse. Forty cells accepted on 2026-10-13;
+      first-group checkpoint closed at 160, all-ten `.d` still open. Preserve prior layers and separate authenticated status from
+      explicit retained-consumer/numerical checking. Pack both new large JSONs.
+
 - [x] Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

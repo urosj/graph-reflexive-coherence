@@ -2854,6 +2854,101 @@ New layouts, chiralities, depths and configurations require their own evidence.
 | **P9-8.4i — Coverage reconciliation and handoff** | Reconcile `.a` against all child results, frozen IDs and separately named additional/deep/large probes. Retain commands, independent checks, code/profile/fixture bindings, review dispositions and unresolved debt. Update discovery evidence only for the exact newly reviewed configurations. | Aggregate closes only when its required runtime/covariance cells are reviewed and complete, or an explicit user-approved scope change is recorded. Hand positive-state witnesses and rejection subjects to P9-8.5; pass precise coverage to P9-8.6 without claiming arbitrary-size conformance. |
 
 **Execution order — representative families first (user-directed 2026-10-08).**
+The [C_OS `.d` checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
+declares 20 cases at D59/66/73/94, depths three/four, both histories and ten
+steps. Depth-specific supplied resource tuples are explicit new event inputs;
+failed predecessors stay as controls, without changing the law or tolerances.
+This checkpoint and its hardening were accepted on 2026-10-12 and grant no sibling or
+successive-event credit.
+Its [hardening supplement](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md)
+separates native failed continuation, event rollback, pointwise interval signs
+and finite neighborhood probes. Neither a rounded charge receipt nor sampled
+positivity is promoted into exact conservation or a uniform trajectory tube.
+
+The [C_CI deep successor](./phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md)
+uses the same named layouts, with its own full joint-root evidence. Its largest
+target has 23 total vertices: the old tree17 independent certificate does not
+apply. A separate CI-only tree23 argument checks the strict selector gap and
+actual dimension-dependent norms, without importing the PC carrier dimension
+constant or changing the native domain/tolerances. Both-role continuation and
+scoped acceptance are separate requirements, not inferred from C_OS.
+The bounded D94 hardening adds a center, six pairwise share transfers of
+1/4096, and two opposite external resource transfers of 1/16384, both roles
+for two steps. Report full pointwise CI/resource margins and execute a known
+excluded continuation plus late-event rollback. These finite target probes
+do not certify an allocation law, uniform neighborhood or accumulated trajectory.
+
+The [A_CI deep oracle](./phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md)
+reuses the accepted Candidate-A joint-root equations and dimension-aware
+Frobenius-domain proof on the same twenty declared layouts, up to 23 vertices.
+Freeze independent expectations for both histories before native execution;
+retain full selected joint points, W writers, Read-Back and next-root operands.
+The user accepted this oracle scope on 2026-10-12. Its native counterpart
+must consume actual admitted roots/resources and W writer outputs, distinguish
+the frozen binary64 charge policy from exact coordinate conservation, and check
+fresh full-root consumption after ten steps in both histories. Native results
+require separate acceptance. Pointwise
+enclosures do not constitute an accumulated exact-real trajectory tube.
+
+The [A_PC deep gate](./phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md)
+reuses the graph-specific whole-carrier proof without changing its radius or
+native law. All twenty larger charts pass, but the D94 current history fails
+the original allocation at step one and a balanced control at step two,
+before native execution. Resolve both-role multi-step resource feasibility
+and bind any successor explicitly before the native campaign. Neither the
+passing chart nor the two exclusions establishes general continuation or
+general impossibility. Keep the first-group checkpoint open.
+
+The subsequent [D94 allocation certificate](./phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md)
+excludes the entire simplex for this frozen source on all six D94 layouts,
+including the existing numerical error allowances. Stop allocation-only
+search for that source. A separately declared source companion requires a
+scoped decision, its actual source beat and trigger, and both-role continuation
+evidence under the unchanged law. This does not change the ten-family goal or
+prove general A_PC infeasibility; no native coverage is added.
+
+The exclusion was accepted on 2026-10-12. The authorized
+[resource-only source companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionReview.md)
+passes both-role independent ten-step target continuation at the D94 pilot,
+but fails the actual source's hybrid trigger. One native source beat and one
+rejected event attempt establish no successful expansion cells; whole-lifecycle
+rollback is checked. Do not run the remaining nineteen cases of this companion.
+Typed claim/debt traces preserve the bounded design resolution and open runtime
+obligation. Next analyze source history with trigger-eligible resources, under
+the unchanged law, before claiming a nonempty operational domain. Acceptance
+of negative evidence does not close A_PC `.d` or justify weakening thresholds.
+
+The subsequent [history-only companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md)
+keeps original resources and changes initial current W to mean 63/64. Its fresh
+source trigger passes, but the unchanged D94 pilot allocation gives a negative
+first current target update, with full enabled interval evidence beyond the
+existing error allowance. No native event or target step runs; the wider
+campaign and gated neighborhood are stopped. Next derive joint history/share
+feasibility constraints rather than repeating one-parameter adjustments.
+Preserve both failed companions and the accepted original-source exclusion;
+none proves all-source impossibility or closes the open runtime obligation.
+
+The [joint history/allocation successor](./phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md)
+now passes one D94/E−1/P3 case: mean initial W 31/32, derived shares
+(47/128, 47/128, 17/64), fresh eligible source, both-role independent preflight,
+one native event, twenty target steps and two final reads. Unchanged W/Z
+effect controls pass. The first 63/64 allocation witness's finer effect
+separation failure is retained separately. This is two passing-pending cells,
+not acceptance or a uniform domain; exact-zero resources remain. It supplies
+the source/coupled procedure for screening the other nineteen layouts before
+their native runs, rather than assuming the shares generalize.
+The design-debt resolution is unchanged; runtime evidence remains open.
+
+The [full A_PC successor campaign](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md)
+now passes all twenty layouts, forty histories, four hundred native target
+steps and forty final reads. Nineteen cases are newly executed; the pilot is
+reused exactly. Per-layout derived shares and the unchanged mean-31/32 source
+replace blanket allocation assumptions. Earlier exclusions remain intact.
+Forty A_PC cells and the 160-cell first-group `.d` checkpoint were accepted
+on 2026-10-13. No uniform domain or later `.e–h` work is closed. Continue
+first-group `.e`; the six other families remain second-group `.d` work.
+Do not repeat a separate pilot checkpoint.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten
@@ -2921,7 +3016,8 @@ and the [evidence/storage policy](../docs/reference/EvidenceStorage.md):
 - Publish concise reviews, completed coverage and consumed operands with shared
   context stored once. Discard suspended/incomplete run artifacts; keep a
   concise reproducible blocker or negative test when needed. Justified files
-  over 10,000,000 bytes use byte-exact XZ and the established storage checks.
+  over 1,000,000 bytes use byte-exact XZ and the established storage checks;
+  compressed files may be larger. This applies to new/changed raw files.
   Keep accepted checkpoints accessible through CLI/API/notebook/browser as
   partial family/child coverage, without changing parent acceptance or support.
 
@@ -3116,7 +3212,7 @@ family. Closure requires all ten family items and the declared required cells,
 without advancing `.d`–`.i`, 8.5 or 8.6. Apply the
 [retention and storage policy](../docs/reference/EvidenceStorage.md): retain
 shared inputs once, justify original numerical operands by a named checker,
-publish completed results only, pack justified files over 10,000,000 bytes
+publish completed results only, pack new/changed raw files over 1,000,000 bytes
 with the existing byte-exact XZ tooling, and run the documented local storage
 tests/staged-blob checks before committing. The last two main commits
 `932d9fd9` and `19a2d8fc` establish local checks without a tracked GitHub
@@ -3404,8 +3500,8 @@ All remaining Tranche 8 campaigns must follow the
 consumer and budget for large traces before execution, store shared inputs once,
 and avoid repeated full successful journals. Suspended/incomplete runs and
 their tracking records are disposable working data and must not be published.
-The 10 MB Git-file limit applies
-now. Lossless packing preserves the current checked subjects; a future compact
+The 1 MB compression threshold applies to new/changed raw files; compressed
+files may be larger. Lossless packing preserves the current checked subjects; a future compact
 schema must preserve the operands needed by its independent checker. Evidence
 volume and repeated executions of the same checker are not independent proofs.
 

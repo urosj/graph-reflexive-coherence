@@ -9,6 +9,19 @@ import sys
 from tranche8_validation import BOUNDARY_MODULES, ROOT, validation_session
 
 
+# Successor research checkers have explicit retained-only entry points. Never
+# infer permission from a filename prefix or admit prepare/run/derive actions.
+EXTRA_MODES = {
+    'p984d_apc_feasibility': ('--check',),
+    'p984d_apc_companion': ('--check',),
+    'p984d_apc_companion_runtime': ('--check',),
+    'p984d_apc_history': ('--check', '--check-pressure'),
+    'p984d_apc_joint': ('check', 'check-derivation'),
+    'p984d_apc_joint_successor': ('check',),
+    'p984d_apc_full': ('check',),
+}
+
+
 def main():
     import tranche8_evidence as index
     import phase9_implementation_policy as policy
@@ -17,12 +30,14 @@ def main():
     script = Path(sys.argv[1])
     name = script.stem
     expected = ROOT / index.HERE / (name + ".py")
-    index.require(name in BOUNDARY_MODULES and script.resolve() == expected,
+    index.require(name in (*BOUNDARY_MODULES, *EXTRA_MODES) and script.resolve() == expected,
         "unknown retained checker")
     options = sys.argv[2:]
-    expected_mode = "--check" if name == "p984c_cos" else "--check-retained"
-    index.require(options in ([expected_mode], [expected_mode, "--recheck-numerics"])
-        and (name != "p984c_cos" or len(options) == 1), "retained-only arguments required")
+    dense_cos = name in ("p984c_cos", "p984d_cos")
+    expected_mode = "--check" if dense_cos else "--check-retained"
+    modes = EXTRA_MODES.get(name, (expected_mode,))
+    index.require(any(options in ([mode], [mode, "--recheck-numerics"]) for mode in modes)
+        and (not dense_cos or len(options) == 1), "retained-only arguments required")
     policy.restore_packed_evidence(ROOT)
     module = importlib.import_module(name)
     output = StringIO()
@@ -30,8 +45,12 @@ def main():
         sources = index.Sources(ROOT)
         # Authenticate selected inputs/results before dispatch, not a self-signed
         # status payload. The unchanged checker validates its transitive bindings.
-        for path in (module.INPUTS, module.RESULTS, module.REVIEW):
-            sources.raw(path)
+        fields = ['INPUTS', 'RESULTS', 'REVIEW']
+        if name == 'p984d_apc_feasibility': fields.remove('INPUTS')
+        if name == 'p984d_apc_history': fields.append('PRESSURE')
+        if name == 'p984d_apc_joint': fields.append('DERIVATION')
+        for field in fields:
+            sources.raw(getattr(module, field))
         original = sys.argv
         try:
             sys.argv = [str(expected), *options]

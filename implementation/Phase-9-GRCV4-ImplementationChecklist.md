@@ -3117,7 +3117,8 @@ the full ten-profile plan.
       rollback, replay and injected publication failures remain P9-8.5.
     Use the [current evidence rules](../docs/reference/EvidenceStorage.md):
     shared inputs once, completed results only, a named consumer for retained
-    operands, and byte-exact XZ for justified files over 10,000,000 bytes.
+    operands, and byte-exact XZ for new/changed raw files over 1,000,000 bytes
+    (compressed files may be larger).
     After staging, run `.venv/bin/python -m unittest tests.test_evidence_storage -q`,
     `.venv/bin/python scripts/evidence_storage.py check` and
     `git diff --cached --check`. Expanded copies and progress stay ignored;
@@ -3138,15 +3139,98 @@ the full ten-profile plan.
     follows changed scientific dependencies and claims. Acceptance/docs/storage
     changes require integrity/surface checks, not repeated numerical campaigns.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
-    completed compact evidence and the existing 10 MB storage rules.
+    completed compact evidence and the 1 MB raw-file compression rule.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+    - [x] C_OS: [20 cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md),
+      D59/66/73/94, depths three/four; accepted 2026-10-12.
+      - [x] Independent layouts, complete references, exact represented charge,
+        both-role dense preflight and negative resource-fixture controls.
+      - [x] Native ten-step continuation and saved-consumer pressure: 20/20
+        cases, 400 target steps, 40 final reads; surfaces expose separate scoped acceptance.
+      - [x] User acceptance; no credit for the nine unexecuted families.
+      - [x] [Bounded hardening](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md):
+        native exclusions and late-event rollback; 24 pointwise sign enclosures;
+        nine finite neighborhood probes, with separate rounded/exact charge.
+    - [x] C_CI: [deep successor](./phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md),
+      20 declared cases / 40 history cells; accepted 2026-10-12.
+      - [x] Independent layouts and exact transfer, frozen CI source/profile,
+        CI-only tree23 joint-root certificate and focused proof-boundary pressure.
+        Historical tree17 and PC/CI+PC certificates are not widened.
+      - [x] Completed native events/400 continuation steps, both-role full-root
+        and consumer checks; compact retained evidence and side-tool exposure.
+        All 20 cases pass; five focused pressure tests pass. Accepted.
+      - [x] Bounded D94 hardening: nine predeclared target-neighborhood probes,
+        both histories/two steps, full joint-root and positivity margins;
+        native excluded continuation and late-event rollback. No uniform tube.
+        All 36 steps and three focused tests pass. Six initial images preserve
+        exact charge; three remain explicitly rounded-transfer controls.
+      - [x] User acceptance; no sibling or successive-event credit.
+    - [x] A_CI: deep native counterpart and separate acceptance.
+      - [x] [Independent oracle](./phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md):
+        20 layouts / 40 histories, 440 saved-entry joint-root observations;
+        dimension-aware Frobenius domain, exact initial W/resource transfer,
+        writer/Read-Back and next-root operands. Three focused tests pass.
+        Evidence above 1 MB is byte-exact XZ; side-tool scope is oracle-only.
+      - [x] Review/accept the deep oracle before native execution (2026-10-12).
+      - [x] [Native counterpart](./phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md):
+        20 passing cases / 40 histories, 400 steps and 40 fresh full-root reads.
+        Native D94 minimum resource remains positive at about 3.68e-22;
+        binary64 charge admission passes but exact per-step coordinate charge
+        is not conserved. Captured consumers, history writers and replay checked.
+      - [x] Separate native acceptance by the user on 2026-10-12. No uniform
+        trajectory tube, successive-event or sibling credit is inferred.
+    - [x] A_PC: deeper native counterpart and separate acceptance.
+      - [x] Recompute existing whole-carrier bounds on all twenty named targets;
+        source bound about 506.592 remains below radius 2048, up to 23 vertices.
+      - [x] Gate on the largest pilot before native execution. Original D94
+        E−1 phase-three current history fails at update one; a balanced control
+        fails at update two. Both exclusions independently interval-checked.
+        See the [preflight hold](./phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md).
+      - [x] Resolve bounded both-role, multi-step D94 resource feasibility; declare any
+        justified successor separately. Neither a chart bound nor first-step
+        success closes this gap; no general infeasibility is established.
+        - [x] [Frozen-source allocation exclusion](./phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md):
+          all six D94 layouts, entire closed simplex, two current-history
+          updates; full enabled interval corrections and existing numerical
+          error allowances. No all-source/general-A_PC impossibility follows.
+        - [x] Accept the bounded exclusion and authorize a separate source
+          companion (2026-10-12); retain original evidence and typed ledger
+          traces. Port-allocation design debt unchanged, runtime route open.
+        - [x] Preregister and check the resource-only source companion:
+          both-role independent ten-step D94 target pilot passes, but one
+          actual source beat and one native event attempt fail the unchanged
+          hybrid trigger. Full lifecycle rollback checked; zero commits.
+        - [x] Preregister and test the [history-only companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md):
+          original resources, current W mean 63/64, reset and carriers unchanged.
+          One native source beat; fresh trigger passes, but D94 current target
+          step one is interval-negative (~−9.92e-6), beyond the existing error
+          allowance. No native event/target steps; nineteen layouts and gated
+          neighbors not run. Retained exclusion; no positive coverage credit.
+        - [x] Derive joint history/allocation constraints and select a dyadic
+          witness before enabled target execution. Preserve the 63/64 witness:
+          one event/one step pass, then a fine effect-separation control fails.
+        - [x] [Separate 31/32 successor](./phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md):
+          fresh source eligibility, both-role preflight, one native event,
+          twenty target steps, unchanged W/Z controls, replay and two final
+          reads pass. Pilot accepted within the complete campaign below. Original
+          exclusions unchanged; no uniform neighborhood or all-source claim.
+        - [x] Extend the source/coupled allocation procedure to the nineteen
+          remaining layouts, independently screening before native execution;
+          do not assume the pilot's shares generalize. Accept scope separately.
+      - [x] [Complete 20 native cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md),
+        independent comparisons, writer/Read-Back/history/replay pressure and
+        side-tool evidence. Nineteen new cases plus exact pilot reuse total
+        400 native target steps and 40 final reads. Earlier failures stay
+        distinct; unchanged tolerances, no uniform neighborhood or general ATC.
+      - [x] User acceptance of complete A_PC `.d` on 2026-10-13: 40 accepted
+        cells. No further pilot-only checkpoint or native rerun needed.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.
     State finite depth/horizon and numerical domain; distinguish a deep pure
     plan from an event and any separately declared successive-event sequence.
-    - [ ] First-group checkpoint: review and accept this child's required
-      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
-      advance ready rows without waiting for the remaining six families.
+    - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
+      A_CI and A_PC total 160 accepted cells. Continue first-group `.e`;
+      aggregate all-ten `.d` remains open for the six remaining families.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.
@@ -3206,7 +3290,8 @@ the full ten-profile plan.
   for large traces before execution. Avoid duplicate successful prefixes and
   shared-state dumps. Discard suspended/incomplete run artifacts and their
   tracking records; progress belongs in ignored working data. Retain concise
-  reviews, completed results and meaningful tests as primary evidence. Enforce the 10 MB Git-file limit and
+  reviews, completed results and meaningful tests as primary evidence. Enforce
+  compression for new/changed raw files over 1 MB, allowing larger compressed files, and
   [retention/storage rules](../docs/reference/EvidenceStorage.md).
 
   - [ ] P9-8.4i: Reconcile coverage and hand off. Bind commands/results,

@@ -115,6 +115,67 @@ export function renderTranche8(value, container, create = tag => document.create
       link(links,prepared[key],label); append(links,'span',' · ');
     }
   }
+  const deep = c.deep_expansion;
+  append(container, 'h3', '8.4d deeper expansion — partial family evidence');
+  append(container, 'p', `First-group checkpoint: ${deep.first_group_closed ? 'accepted' : 'open'}, ${deep.first_group_accepted_cells} accepted history cells. All-ten closure remains open; six families follow first-group .e–h.`);
+  for (const run of deep.family_results) {
+    append(container, 'p', `${run.family}: ${run.passed_cases} single-event cases; ${run.accepted_cells}/${run.required_cells} accepted history cells, ${run.passing_pending_cells} passing pending acceptance. Degrees ${run.degrees.join(', ')}, maximum core depth ${run.maximum_core_depth}, ${run.target_steps} continuation steps. No successive-event or arbitrary-depth claim.`);
+    const links=append(container, 'p', '');
+    for (const [key,label] of [['inputs','Declared deep subjects'],['results','Completed operands'],['review','Scope and excluded share recipes']]) {
+      link(links,run[key],label); append(links,'span',' · ');
+    }
+    details(container,'Named deep cases and numerical comparison limits',run);
+    if (run.preflight_pressure) {
+      const pressure=run.preflight_pressure;
+      const original=run.frozen_source_preflight || run;
+      append(container,'p',`${run.family} frozen-source PREFLIGHT HOLD: ${original.attempted_cases} case attempted, ${original.unattempted_cases} not attempted; ${original.native_cases} native events and ${original.target_steps} native continuation steps. ${pressure.certified_exclusions} independent resource exclusions do not establish general infeasibility.`);
+      const refs=append(container,'p','');link(refs,pressure.evidence,'Enabled interval exclusion evidence');
+    }
+    if (run.allocation_feasibility) {
+      const f=run.allocation_feasibility;
+      append(container,'p',`${run.family} allocation exclusion: ${f.D94_cases} declared D94 layouts, entire closed simplex, at most ${f.max_updates} updates. Frozen source only; represented result is conditional on existing error budgets. Zero native or accepted-cell credit; not general A_PC impossibility.`);
+      const refs=append(container,'p','');link(refs,f.evidence,'Allocation certificate');link(refs,f.review,' Proof and scope');
+      if(f.acceptance)link(refs,f.acceptance,' Bounded exclusion acceptance');
+    }
+    if(run.source_companion) {
+      const c=run.source_companion;
+      append(container,'p',`${run.family} source companion: independent ten-step target pilot passes both histories, but the fresh source trigger rejects. ${c.native.source_steps} native source step; ${c.native.native_event_attempts} event attempt, ${c.native.committed_events} commits, ${c.native.target_steps} native target steps. Full lifecycle unchanged. No successful operational domain, accepted cells or uniform neighborhood follows.`);
+      const refs=append(container,'p','');link(refs,c.plan,'Source preregistration');link(refs,c.results,' Independent target evidence');link(refs,c.native_results,' Native rejection and rollback');link(refs,c.review,' Claim and debt implications');
+    }
+    if(run.history_companion) {
+      const h=run.history_companion;
+      append(container,'p',`${run.family} history companion: fresh source eligible; current-role target preflight fails at step ${h.pressure.first_negative_step}. ${h.source_steps} native source step, ${h.native_cases} event attempts, ${h.target_steps} native target steps. Signed resource interval stays negative after the existing error allowance. Gated neighbors not run; no completed cells or general impossibility claim.`);
+      const refs=append(container,'p','');link(refs,h.plan,'History preregistration');link(refs,h.results,' Source and held pilot');link(refs,h.diagnostic,' Signed target exclusion');link(refs,h.review,' Scope and next question');
+    }
+    if(run.full_campaign) {
+      const f=run.full_campaign;
+      append(container,'p',`${run.family} full coupled campaign: ${f.passed_cases}/${f.cases_required} cases, ${f.target_steps} native continuation steps, ${f.final_reads} final reads; ${f.passing_pending_cells}/${f.required_cells} passing-pending cells, ${f.accepted_cells} accepted. ${f.newly_executed_cases} newly executed cases and ${f.reused_cases} exact pilot reuse (${f.reused_target_steps} steps); no new source beat. Acceptance is separately recorded; no uniform domain inferred.`);
+      const refs=append(container,'p','');link(refs,f.plan,'Full campaign plan');link(refs,f.results,' Full results');link(refs,f.review,' Review and limits');
+    }
+    if(run.joint_successor) {
+      const j=run.joint_successor,p=run.joint_witness;
+      append(container,'p',`${run.family} coupled successor: ${j.passed_cases} D94 case, ${j.target_steps} native target steps, ${j.final_reads} final reads; ${j.passing_pending_cells}/40 passing-pending cells, ${j.accepted_cells} accepted. Initial W ${j.initial_history_mean}; shares ${j.shares.join(', ')}. Earlier allocation witness: ${p.committed_events} event, ${p.target_steps} step, zero completed cases (fine source-staging effect separation). No uniform neighborhood or family closure.`);
+      const refs=append(container,'p','');link(refs,j.plan,'Successor plan');link(refs,j.results,' Passing witness');link(refs,j.review,' Scope and limitations');link(refs,p.results,' Earlier partial run');
+    }
+    if (run.hardening) {
+      const h=run.hardening;
+      const detail = h.finite_probes !== undefined
+        ? `${h.finite_probes} finite target probes, ${h.histories} histories, ${h.native_steps} native steps with pointwise joint-root/resource bounds`
+        : `${h.pointwise_sign_certificates} pointwise sign enclosures; ${h.neighborhood_positive_roles}/18 positive finite-probe histories`;
+      append(container,'p',`Bounded ${run.family} hardening: ${detail}. Native excluded cases and event rollback checked. No uniform tube or public ordinary-step owner claim.`);
+      if (h.rounded_transfer_controls !== undefined) {
+        append(container,'p',`${h.exact_charge_preserving_probes} probes preserve both-role exact coordinate charge; ${h.rounded_transfer_controls} are rounded-transfer controls, not exact-conserving event evidence.`);
+      }
+      const refs=append(container,'p','');
+      for (const key of ['inputs','results','review']) { link(refs,h[key],`Hardening ${key}`); append(refs,'span',' · '); }
+    }
+  }
+  for (const oracle of deep.oracle_preparations ?? []) {
+    append(container,'p',`${oracle.family} independent deep oracle: ${oracle.passed_cases}/${oracle.cases_required} cases, ${oracle.independent_observations} joint-root observations; ${oracle.oracle_scope_accepted ? 'oracle scope accepted' : 'pending review'}. Zero native steps, events or accepted runtime cells from this oracle. Pointwise bounds, not a uniform trajectory tube.`);
+    const refs=append(container,'p','');
+    for (const key of ['inputs','results','review']) { link(refs,oracle[key],`Oracle ${key}`); append(refs,'span',' · '); }
+  }
+  append(container,'p',`Unexecuted 8.4d families: ${deep.families_not_executed.join(', ')}. No sibling credit; first group remains C_OS, C_CI, A_CI, A_PC.`);
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {

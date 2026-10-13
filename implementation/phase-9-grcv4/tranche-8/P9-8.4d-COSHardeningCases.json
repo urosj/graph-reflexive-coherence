@@ -1,0 +1,104 @@
+{
+  "schema": "p984d-cos-hardening-inputs-v1",
+  "predecessor": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSCases.json",
+      "sha256": "f2f62f2c5c741a0997f49e0286f1f23b05a796b1f28e9f2cf93ace08649eac50"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSResults.json",
+      "sha256": "8baefd52c9c41847905e49f7299aa57fb42b0f881d9b108817538836a0d60ce1"
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984b_cos_successor.py",
+      "sha256": "82edd96cab6eef6b77e43a89cd5f992e9f50a143c4a11eb55dc8f7bd81ac1ecf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984b_runtime.py",
+      "sha256": "3fc2db0c327b6221df68deb3eb151959548be0605cc0eef370d4337b2466c037"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984d_cos.py",
+      "sha256": "4d1ef163917f03254a3c9b00ca5c2d71a667a2284ac026de75de1ab13dedb3c7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984d_cos_hardening.py",
+      "sha256": "dfce434f8d28578b5afb3e7aea209a1d051c91701d8b93eb6892d39de9f691f1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984d_cos_hardening.py",
+      "sha256": "7da3e27d49c3936c526108d88ec1c64a46827a3cff6ee448240a2bd5911e5809"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "b9421a320b343005016e9e6554f37f25662eb50e0b164ec7f5f1712253f2f398"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "299fc7924704b9f17591a1767c28d3d112ada0334a934092312fe0a9e6be66e0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "fd5e680e1947ce1ebfb76301780f38ceee1414586ba92009e3d407bfd30d6317"
+    }
+  ],
+  "native": {
+    "layout": "D94 E+1 P1",
+    "shares": [
+      [
+        0.25,
+        0.5,
+        0.25
+      ],
+      [
+        0.34375,
+        0.328125,
+        0.328125
+      ],
+      [
+        0.25,
+        0.375,
+        0.375
+      ]
+    ],
+    "target_attempts_per_role": 2,
+    "late_receipt_failure_probe": true
+  },
+  "signs": {
+    "layouts": "all six D94",
+    "roles": [
+      "current",
+      "reset"
+    ],
+    "beats": [
+      1,
+      2
+    ],
+    "precision_bits": 192
+  },
+  "neighborhood": {
+    "layout": "D94 E+1 P1",
+    "share_radius": 0.000244140625,
+    "resource_radius": 6.103515625e-05,
+    "roles": [
+      "current",
+      "reset"
+    ],
+    "beats": 10,
+    "directions": "center; six oriented pairwise share transfers; plus/minus resource transfer between first two external nodes",
+    "scope": "nine finite target-continuation probes; not a box or new source-trigger/event admission"
+  },
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "record_digest": "8f15f839e1c9876a151cc63ae8dc8ad0e633164d51e28d37ff42eee9a27d3afb"
+}

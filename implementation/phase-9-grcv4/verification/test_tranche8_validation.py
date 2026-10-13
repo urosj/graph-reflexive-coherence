@@ -129,6 +129,24 @@ class ScopeTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "unindexed"):
                 retained.main()
 
+    def test_deep_retained_launcher_selects_check_without_native_execution(self):
+        from contextlib import nullcontext
+        module = SimpleNamespace(INPUTS="inputs", RESULTS="results", REVIEW="review", main=lambda: None)
+        argv = ["retained", str(index.ROOT / index.HERE / "p984d_cos.py"), "--check"]
+        import phase9_implementation_policy as policy
+        with ExitStack() as stack:
+            stack.enter_context(patch.object(sys, "argv", argv))
+            stack.enter_context(patch.object(retained.importlib, "import_module", return_value=module))
+            stack.enter_context(patch.object(retained, "validation_session", return_value=nullcontext()))
+            stack.enter_context(patch.object(policy, "restore_packed_evidence"))
+            authenticated = stack.enter_context(patch.object(index.Sources, "raw"))
+            execute = stack.enter_context(patch.object(module, "main"))
+            retained.main()
+            self.assertEqual([c.args[0] for c in authenticated.call_args_list], ["inputs", "results", "review"])
+            execute.assert_called_once_with()
+        with patch.object(sys, "argv", argv + ["--recheck-numerics"]), self.assertRaisesRegex(ValueError, "retained-only"):
+            retained.main()
+
     def test_frozen_producers_and_evidence_were_not_rewritten(self):
         manifest = json.loads((index.ROOT / index.BASE / "P9-8.4c-ACICases.json").read_text())
         for binding in manifest["source_bindings"]:
@@ -136,6 +154,30 @@ class ScopeTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256((index.ROOT / binding["path"]).read_bytes()).hexdigest(), binding["sha256"])
         for name, expected in index.BOUNDARY_ACI_SOURCES.items():
             self.assertEqual(hashlib.sha256((index.ROOT / name).read_bytes()).hexdigest(), expected)
+
+    def test_successor_retained_modes_authenticate_extra_records(self):
+        from contextlib import nullcontext
+        import phase9_implementation_policy as policy
+        module = SimpleNamespace(INPUTS='inputs', RESULTS='results', REVIEW='review',
+            PRESSURE='pressure', DERIVATION='derivation', main=lambda: None)
+        for name, modes in retained.EXTRA_MODES.items():
+            for mode in modes:
+                argv=['retained',str(index.ROOT/index.HERE/(name+'.py')),mode]
+                with ExitStack() as stack:
+                    stack.enter_context(patch.object(sys,'argv',argv))
+                    stack.enter_context(patch.object(retained.importlib,'import_module',return_value=module))
+                    stack.enter_context(patch.object(retained,'validation_session',return_value=nullcontext()))
+                    stack.enter_context(patch.object(policy,'restore_packed_evidence'))
+                    authenticated=stack.enter_context(patch.object(index.Sources,'raw'))
+                    execute=stack.enter_context(patch.object(module,'main'))
+                    retained.main();execute.assert_called_once_with()
+                    fields=[c.args[0] for c in authenticated.call_args_list]
+                    if name=='p984d_apc_feasibility':self.assertNotIn('inputs',fields)
+                    if name=='p984d_apc_history':self.assertIn('pressure',fields)
+                    if name=='p984d_apc_joint':self.assertIn('derivation',fields)
+            for forbidden in ('--run','run','prepare','derive'):
+                with patch.object(sys,'argv',['retained',str(index.ROOT/index.HERE/(name+'.py')),forbidden]), self.assertRaises(ValueError):
+                    retained.main()
 
 
 if __name__ == "__main__":

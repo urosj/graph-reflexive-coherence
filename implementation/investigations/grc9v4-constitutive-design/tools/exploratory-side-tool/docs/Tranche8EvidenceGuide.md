@@ -1,5 +1,58 @@
 # Tranche 8 evidence access
 
+For the current A_PC deeper-layout gate, select `family="A_PC"` and
+`checkpoint="8.4d"` in the API/notebook, or use:
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m tranche8_evidence status --family A_PC --checkpoint 8.4d
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m tranche8_evidence verify-retained --family A_PC --checkpoint 8.4d --recheck-numerics
+```
+
+The historical frozen-source **preflight hold** stays visible: one attempted
+case, 19 unattempted cases, zero native events/steps, two certified resource
+exclusions. Its full-simplex exclusion is now separately accepted. The new
+resource-only source companion passes independent target continuation but
+fails fresh source eligibility: one native source step, one event attempt,
+zero commits/native target steps and complete lifecycle rollback. Its
+nonempty operational domain and runtime obligation remain open. Passing
+integrity checks change none of these dispositions; native trajectories are
+not rerun. The selected view links the separate evidence layers and ledger scope.
+
+The full A_PC campaign now passes twenty cases: forty history cells, four
+hundred native continuation steps and forty final reads. `full_campaign`
+distinguishes nineteen newly executed cases from one exact pilot reuse.
+Top-level A_PC counts now describe this full campaign, not summed earlier
+attempts. All forty cells were accepted on 2026-10-13, closing the 160-cell
+first-group checkpoint. Six families and all-ten `.d` remain open. Status authenticates
+bindings, saved structure and scope without repeating the full consumer audit;
+the explicit retained `p984d_apc_full.py check` still performs that audit.
+Both large JSONs are retained byte-exactly as XZ. No uniform domain follows.
+
+The earlier coupled source/allocation successor passes one D94 native case:
+twenty target steps, two final reads, two passing-pending cells and zero accepted.
+`joint_successor` reports that run; `joint_witness` preserves the preceding
+one-event/one-step result held by a fine effect-separation control. Counts at
+the row's top level describe the full campaign, not summed historical
+attempts. Some resources remain zero; no uniform neighborhood or family closure
+follows. Retained checking authenticates the additional records and allows only
+explicit check modes; native trajectories are never implicitly rerun.
+
+The earlier history-only successor passes the fresh source trigger, but its first
+current-role D94 target update is interval-negative (~−9.92e-6), even allowing
+the existing numerical error budget. Its nested `history_companion` record
+links the source/pilot and signed diagnostic: one source step, zero event
+attempts/target steps, no gated neighborhood probes, zero completed cells.
+The earlier native trigger rejection is preserved under `source_companion`.
+Selected retained verification includes both history checks; full interval
+recomputation remains explicit and never confers native execution credit.
+
+The same selected view now also exposes the **D94 allocation certificate**:
+all simplex tuples are excluded for two current-history updates on the six
+declared layouts, under the frozen source and existing error budgets. This
+does not exclude other sources or A_PC generally. Retained verification runs
+the point-control checker and the allocation checker; `--recheck-numerics`
+recomputes both, without native execution or an all-family campaign.
+
 The side-tool now exposes the accepted shared 8.1 mechanics, pure 8.2 allocator,
 all ten bounded 8.3 profile integrations, larger-configuration preparation,
 and current 8.4 coverage. It reads existing records; it does not create claims,
@@ -20,6 +73,15 @@ cells, retained comparison scopes and remaining work. The browser labels
 planning counts as historical. Selected-family status checks only that family;
 use the complete status view to authenticate aggregate closure.
 The paragraphs below retain the successive family checkpoints.
+For A_CI `.d`, use `status --family A_CI --checkpoint 8.4d` through
+`tranche8_query.py`. `verify-retained --family A_CI --checkpoint 8.4d` checks
+the native capture; add `--oracle` to select its independently accepted
+prerequisite instead. `--recheck-numerics` explicitly recomputes interval
+equations, never native trajectories. The selected API and notebook call
+`tranche8_status(root, family="A_CI", checkpoint="8.4d")` returns separate
+`oracle` and `native` fields. Browser `coverage.deep_expansion` keeps oracle
+acceptance separate from native results pending their own acceptance.
+
 `coverage.boundary_contract` now exposes the first `.c` task: 32 layouts,
 640 both-role obligations (600 new, 40 exact-reuse candidates), budgets,
 prerequisites and exact contract/review links. The user accepted the matrix and
@@ -456,7 +518,8 @@ archive. The current evidence index restores missing copies automatically;
 standalone historical readers first run `python scripts/evidence_storage.py restore`
 from the repository root. This is storage reconstruction, not a numerical rerun
 or a new acceptance. See the [storage and value guide](../../../../../../docs/reference/EvidenceStorage.md)
-for archive links, the 10 MB Git-file rule and limits of the evidence claims.
+for archive links, the 1 MB compression threshold for new/changed raw files
+(larger compressed files are allowed), and limits of the evidence claims.
 
 
 ## A_RG2b bounded execution and scoped acceptance
@@ -490,7 +553,59 @@ The user-directed 2026-10-08 order is C_OS, C_CI, A_CI and A_PC through
 tracks first-group checkpoints and all-ten completion separately. Future views
 must show accepted family/child portions, unexecuted remaining rows and blocked
 prerequisites without turning representative coverage into parent closure.
-The current evidence projection still correctly leaves every `.d–h` row open:
-this scheduling change adds no execution or acceptance. Family-scoped checks
+The all-ten `.d–h` rows remain open; bounded execution is reported separately
+from acceptance. Family-scoped checks
 and exact evidence reuse avoid repeated numerical campaigns; full discovery
 synchronization belongs at completed coherent checkpoints.
+
+## P9-8.4d C_OS deeper expansion
+
+The [C_OS review](../../../../../phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
+and `coverage.deep_expansion` expose 20 single-event cases / 40 history cells
+at D59/66/73/94 (maximum core-relative depth four), accepted on 2026-10-12.
+C_CI is reported separately below; eight other families remain unexecuted.
+`.c` stays closed at 640/640.
+This is bounded dense-comparison and captured-consumer evidence, not a rigorous
+error tube, arbitrary-depth admission or successive-event coverage.
+
+Use `run.py tranche8-query status --family C_OS --checkpoint 8.4d` for the
+selected scope, or `verify-retained --family C_OS --checkpoint 8.4d` for dense
+equation and captured-consumer checks with native producers disabled. The
+Python/notebook equivalent is
+`tranche8_status(repo_root, family="C_OS", checkpoint="8.4d")`.
+The browser's existing Tranche 8 view includes the separate deeper-expansion
+section and authenticated input/result/review links. Compressed result bytes
+restore automatically; a retained check is not a native trajectory rerun.
+
+The row's `hardening` field links the small supplementary inputs/results/review:
+24 pointwise interval sign enclosures, three native excluded-recipe events,
+late-event rollback and nine finite neighborhood probes. It distinguishes
+exact coordinate sums from the prescribed rounded charge and grants no new
+coverage. The scoped `verify-retained` also authenticates this supplement;
+its explicit `p984d_cos_hardening.py recheck` command recomputes intervals and
+finite dense probes without rerunning native events. See the linked review
+for the lack of a continuous tube or public ordinary-step-owner claim.
+
+## P9-8.4d C_CI deeper expansion
+
+The [C_CI review](../../../../../phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md)
+explains the separate CI-only tree23 certificate and completed operands.
+Select `run.py tranche8-query status --family C_CI --checkpoint 8.4d` or
+`tranche8_status(repo_root, family="C_CI", checkpoint="8.4d")` from API/notebook.
+The existing browser deep-expansion section shows the same authenticated row.
+This is separate from the accepted `.c` checkpoint and C_OS `.d` acceptance.
+
+Use `verify-retained --family C_CI --checkpoint 8.4d` for source, complete
+joint-root, admission, represented-continuity and restart integrity checks.
+Add `--recheck-numerics` only when independent interval equations and nominal
+predictions need recomputation. Both modes disable native producers; neither
+is a new trajectory run or user acceptance. The tree23 proof is CI only, not
+a carrier-domain extension or an accumulated trajectory tube. No C_OS result
+is silently substituted for a C_CI root, current or continuation.
+
+The same C_CI row also exposes the D94 hardening inputs/results: nine finite
+target probes, both histories/two steps, pointwise joint-root and resource
+margins, a native excluded continuation and an injected late event failure.
+The selected retained command checks this supplement too; optional numerical
+rechecking recomputes its intervals, never native trajectories. These probes
+are not a continuous robustness neighborhood or a new allocation law.

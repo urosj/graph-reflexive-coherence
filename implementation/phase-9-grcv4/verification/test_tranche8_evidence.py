@@ -15,9 +15,76 @@ from grcv4_explorer import tranche8 as api  # noqa: E402
 
 
 class EvidenceTests(unittest.TestCase):
+    def test_deep_cos_scope_sources_and_dispatch(self):
+        d = self.value["coverage"]["deep_expansion"]
+        self.assertFalse(d["aggregate_closed"])
+        closed = self.value["coverage"]["boundary_contract"]["closeout"]
+        self.assertTrue(closed["aggregate_closed"])
+        self.assertEqual((closed["accepted_cells"], closed["required_cells"]), (640, 640))
+        row = d["family_results"][0]
+        self.assertEqual((row["family"], row["passed_cases"], row["passing_pending_cells"], row["accepted_cells"]), ("C_OS", 20, 0, 40))
+        self.assertEqual(row["acceptance"]["anchor"], "scoped-user-acceptance")
+        h=row["hardening"]
+        self.assertEqual((h["pointwise_sign_certificates"],h["neighborhood_positive_roles"]),(24,18))
+        self.assertFalse(h["uniform_tube"])
+        self.assertFalse(h["public_ordinary_step_owner_tested"])
+        self.assertFalse(h["user_accepted"])
+        self.assertEqual(row["degrees"], [59,66,73,94])
+        self.assertFalse(row["successive_events"])
+        self.assertEqual(set(d["families_not_executed"]), set(index.FAMILIES)-{"C_OS", "C_CI", "A_CI"})
+        with patch.object(api, "_index", return_value=index), patch.object(index, "family_status", return_value={}) as selected:
+            api.tranche8_status(index.ROOT, family="C_OS", checkpoint="8.4d")
+            selected.assert_called_once_with(index.ROOT, "C_OS", "8.4d")
+        with patch.object(api, "_index", return_value=index), self.assertRaises(ValueError):
+            api.tranche8_status(index.ROOT, checkpoint="8.4d")
+        with self.assertRaisesRegex(ValueError, "unavailable"):
+            index.family_status(index.ROOT, "A_OS", "8.4d")
+        for path in index.DEEP_COS_SOURCES:
+            with patch.object(index.Sources, "current_bytes", return_value=b"changed"), self.assertRaisesRegex(ValueError, "source drift"):
+                index.Sources(index.ROOT).raw(path)
+        with patch.object(index,"checked",return_value=self.value),patch.object(api,"_index",return_value=index):
+            for key in ("inputs","results","review"):
+                raw,ref=api.tranche8_source(index.ROOT,row[key]["path"])
+                self.assertEqual(index.hashlib.sha256(raw).hexdigest(),ref["sha256"])
+                self.assertEqual(ref["basis"],"pinned_deep_execution_with_scoped_acceptance")
+        with patch.object(sys,"argv",["query","verify-retained","--family","C_OS","--checkpoint","8.4d"]),patch.object(index,"checked",side_effect=AssertionError("unrelated full build")),patch.object(index.subprocess,"run") as execute:
+            index.main()
+            # Sources also checks the pinned Git checkpoint's ancestry.
+            commands=[c.args[0] for c in execute.call_args_list if c.args[0][0]==sys.executable]
+            self.assertEqual(len(commands),2)
+            self.assertTrue(execute.call_args_list[0].args[0][-2].endswith("p984d_cos.py"))
+            self.assertEqual(execute.call_args_list[0].args[0][-1],"--check")
+            self.assertTrue(execute.call_args.args[0][-2].endswith("p984d_cos_hardening.py"))
+            self.assertEqual(execute.call_args.args[0][-1],"check")
+
     @classmethod
     def setUpClass(cls):
         cls.value = index.checked()
+
+    def test_deep_cci_sources_scope_and_dispatch(self):
+        row = next(r for r in self.value['coverage']['deep_expansion']['family_results'] if r['family']=='C_CI')
+        self.assertEqual((row['passed_cases'],row['accepted_cells'],row['passing_pending_cells']), (20,40,0))
+        self.assertEqual(row['acceptance']['anchor'],'scoped-user-acceptance')
+        self.assertIn('tree23',row['comparison_scope'])
+        self.assertEqual(row['hardening']['native_steps'],36)
+        self.assertEqual(row['hardening']['finite_probes'],9)
+        self.assertEqual(row['hardening']['exact_charge_preserving_probes'],6)
+        self.assertEqual(row['hardening']['rounded_transfer_controls'],3)
+        self.assertFalse(row['hardening']['uniform_tube'])
+        self.assertFalse(row['native_trajectories_rerun'])
+        with patch.object(api, '_index', return_value=index), patch.object(index, 'family_status', return_value={}) as selected:
+            api.tranche8_status(index.ROOT,family='C_CI',checkpoint='8.4d')
+            selected.assert_called_once_with(index.ROOT,'C_CI','8.4d')
+        for path in index.DEEP_CCI_SOURCES:
+            with patch.object(index.Sources,'current_bytes',return_value=b'forged'), self.assertRaisesRegex(ValueError,'source drift'):
+                index.Sources(index.ROOT).raw(path)
+        with patch.object(sys,'argv',['query','verify-retained','--family','C_CI','--checkpoint','8.4d','--recheck-numerics']), patch.object(index.subprocess,'run') as execute:
+            index.main()
+            command=execute.call_args_list[0].args[0]
+            self.assertTrue(command[-3].endswith('p984d_cci.py'))
+            self.assertEqual(command[-2:],['--check-retained','--recheck-numerics'])
+            self.assertTrue(execute.call_args.args[0][-3].endswith('p984d_cci_hardening.py'))
+            self.assertEqual(execute.call_args.args[0][-2:],['check','--recheck-numerics'])
 
     def test_complete_population_and_separate_acceptance(self):
         v = self.value

@@ -3,18 +3,22 @@
 from __future__ import annotations
 
 import argparse
+import bz2
+import gzip
 import hashlib
+import io
 import json
 import lzma
 import os
 import re
 import subprocess
 import tempfile
+import zipfile
 from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = "artifact-storage.json"
-LIMIT = 10_000_000  # Decimal MB, inclusive; no exceptions in the Git payload.
+LIMIT = 1_000_000  # Compress new/changed raw files above decimal 1 MB.
 
 
 def sha(data: bytes) -> str:
@@ -41,11 +45,17 @@ def safe_path(root: Path, name: str) -> Path:
 
 def entries(root: Path) -> list[dict]:
     value = json.loads(safe_path(root, MANIFEST).read_bytes())
-    require(
+    legacy = (
         set(value) == {"schema", "max_git_file_bytes", "files"}
         and value["schema"] == "exact-evidence-storage-v1"
         and type(value["max_git_file_bytes"]) is int
-        and value["max_git_file_bytes"] == LIMIT,
+        and value["max_git_file_bytes"] == 10_000_000
+    )
+    require(legacy or (
+        set(value) == {"schema", "compression_threshold_bytes", "files"}
+        and value["schema"] == "exact-evidence-storage-v2"
+        and type(value["compression_threshold_bytes"]) is int
+        and value["compression_threshold_bytes"] == LIMIT),
         "unsupported evidence storage manifest",
     )
     rows = value["files"]
@@ -62,12 +72,11 @@ def entries(root: Path) -> list[dict]:
         for key in ("path", "storage_path"):
             safe_path(root, row[key])
         require(row["storage_path"] == row["path"] + ".xz", "archive path mismatch")
-        require(row["path"].endswith((".json", ".jsonl")), "unsupported evidence type")
         require(not names.intersection((row["path"], row["storage_path"])), "duplicate artifact")
         names.update((row["path"], row["storage_path"]))
         require(
             type(row["size"]) is int and row["size"] > LIMIT
-            and type(row["storage_size"]) is int and 0 < row["storage_size"] <= LIMIT,
+            and type(row["storage_size"]) is int and row["storage_size"] > 0,
             "invalid artifact size",
         )
         for key in ("sha256", "storage_sha256"):
@@ -156,8 +165,21 @@ def verify(root: Path = ROOT) -> dict:
 
 
 def git_size_check(root: Path = ROOT) -> dict:
-    """Check staged Git blobs, including a large blob hidden by a smaller work file."""
+    """Check new/changed staged blobs; unchanged HEAD subjects are grandfathered.
+
+Compressed files may exceed LIMIT. Validate the staged bytes, not just a suffix
+or a smaller working copy. No historical Git objects are rewritten.
+"""
     root = Path(root)
+    head = subprocess.run(["git", "rev-parse", "--verify", "HEAD"], cwd=root, capture_output=True)
+    previous = {}
+    if head.returncode == 0:
+        tree = subprocess.run(["git", "ls-tree", "-rz", "HEAD"], cwd=root, check=True, capture_output=True)
+        for entry in filter(None, tree.stdout.split(b"\0")):
+            metadata, name = entry.split(b"\t", 1)
+            _, kind, oid = metadata.decode().split()
+            if kind == 'blob':
+                previous[name.decode()] = oid
     result = subprocess.run(["git", "ls-files", "--stage", "-z"], cwd=root,
                             check=True, capture_output=True)
     blobs: dict[str, list[str]] = {}
@@ -166,7 +188,8 @@ def git_size_check(root: Path = ROOT) -> dict:
         mode, oid, stage = metadata.decode().split()
         require(stage == "0", "unmerged index entry: " + name.decode())
         if mode != "160000":  # Submodules refer to commits, not file blobs.
-            blobs.setdefault(oid, []).append(name.decode())
+            if previous.get(name.decode()) != oid:
+                blobs.setdefault(oid, []).append(name.decode())
     result = subprocess.run(["git", "cat-file", "--batch-check=%(objectname) %(objectsize)"],
                             input="\n".join(blobs) + ("\n" if blobs else ""), cwd=root,
                             check=True, capture_output=True, text=True)
@@ -174,9 +197,49 @@ def git_size_check(root: Path = ROOT) -> dict:
     for line in result.stdout.splitlines():
         oid, size = line.split()
         if int(size) > LIMIT:
-            oversized.extend(f"{name} ({size} bytes)" for name in blobs[oid])
-    require(not oversized, "Git files exceed 10 MB:\n" + "\n".join(oversized))
-    return {"git_files": sum(map(len, blobs.values())), "max_bytes": LIMIT}
+            data = subprocess.run(['git', 'cat-file', 'blob', oid], cwd=root, check=True, capture_output=True).stdout
+            for name in blobs[oid]:
+                if not valid_compressed(name, data):
+                    oversized.append(f"{name} ({size} bytes)")
+    require(not oversized, "New/changed raw Git files exceed compression threshold:\n" + "\n".join(oversized))
+    return {"changed_git_files": sum(map(len, blobs.values())), "compression_threshold_bytes": LIMIT,
+            "compressed_size_limited": False}
+
+
+def valid_compressed(name: str, data: bytes) -> bool:
+    """Recognized lossless containers, not a rename-based size-gate bypass."""
+    try:
+        if name.endswith('.xz'):
+            remaining = data
+            if not remaining:
+                return False
+            while remaining:
+                decoder = lzma.LZMADecompressor(format=lzma.FORMAT_XZ)
+                decoder.decompress(remaining)
+                if not decoder.eof:
+                    return False
+                remaining = decoder.unused_data
+        elif name.endswith(('.gz', '.tgz')):
+            gzip.decompress(data)
+        elif name.endswith(('.bz2', '.tbz2')):
+            remaining = data
+            if not remaining:
+                return False
+            while remaining:
+                decoder = bz2.BZ2Decompressor()
+                decoder.decompress(remaining)
+                if not decoder.eof:
+                    return False
+                remaining = decoder.unused_data
+        elif name.endswith('.zip'):
+            with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                if archive.testzip() is not None:
+                    return False
+        else:
+            return False
+        return True
+    except (OSError, EOFError, ValueError, RuntimeError, zipfile.BadZipFile, lzma.LZMAError):
+        return False
 
 
 def pack(root: Path, names: list[str]) -> dict:
@@ -191,11 +254,10 @@ def pack(root: Path, names: list[str]) -> dict:
             check_expanded(source, registered[name])
             unpack(packed_bytes(root, registered[name]), registered[name])
             continue
-        require(name.endswith((".json", ".jsonl")), "only JSON evidence is packed")
         raw = source.read_bytes()
-        require(len(raw) > LIMIT, "artifact does not exceed 10 MB: " + name)
+        require(len(raw) > LIMIT, "artifact does not exceed compression threshold: " + name)
+        require(not valid_compressed(name, raw), "already compressed: " + name)
         packed = lzma.compress(raw, preset=6)
-        require(len(packed) <= LIMIT, "archive still exceeds 10 MB; reduce retained data")
         destination = safe_path(root, name + ".xz")
         row = {"path": name, "size": len(raw), "sha256": sha(raw),
                "storage_path": name + ".xz", "storage_size": len(packed),
@@ -209,7 +271,7 @@ def pack(root: Path, names: list[str]) -> dict:
                 stream.write(packed)
         rows.append(row)
         registered[name] = row
-    value = {"schema": "exact-evidence-storage-v1", "max_git_file_bytes": LIMIT,
+    value = {"schema": "exact-evidence-storage-v2", "compression_threshold_bytes": LIMIT,
              "files": sorted(rows, key=lambda r: r["path"])}
     write_metadata(manifest, json.dumps(value, indent=2) + "\n")
     ignore = safe_path(root, ".gitignore")

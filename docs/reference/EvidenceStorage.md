@@ -30,6 +30,19 @@ Suspended/incomplete run dumps and their tracking records are not retained.
 
 ## Retention rule for subsequent work
 
+From 2026-10-12, **compress every new or changed uncompressed file larger
+than 1,000,000 bytes (decimal 1 MB)**, including the current C_CI run.
+Compressed files may exceed 1 MB, even if compression does not reduce their
+size. This replaces the former 10 MB Git-file cap; it is a compression
+threshold, not an archive-size ceiling. Unchanged historical files are not
+retroactively migrated, and Git history is not rewritten.
+
+The packer accepts any file type and produces byte-exact `.xz` storage.
+The staged-file gate also recognizes valid XZ, gzip, bzip2 and ZIP containers;
+renaming an uncompressed file to an archive extension does not exempt it.
+Manifest v2 records `compression_threshold_bytes`; the reader remains
+compatible with historical v1 manifests.
+
 Keep a short claim/review, frozen inputs, reproducible commands, meaningful
 tests, worst bounds and completed coverage as the primary review
 material. Retain a large trace only when a named consumer needs its original
@@ -101,11 +114,12 @@ python scripts/evidence_storage.py check
 
 Use `git rm --cached` only for raw files already tracked; it keeps the local
 copy. The pack command refuses to rewrite a registered scientific subject and
-rejects an archive that still exceeds 10 MB. A new run should use a new subject
+allows archives above 1 MB. A new run should use a new subject
 path. Refresh current phase/storage bindings when the storage roster changes.
 
-`check` verifies the archives and checks **staged Git blob sizes**, so replacing
-a large work file with a small one cannot hide an oversized staged blob. The
+`check` verifies the archives and checks **new/changed staged Git blobs against
+HEAD**, so replacing a large work file with a small one cannot hide an
+uncompressed oversized staged blob. Unchanged historical blobs are exempt. The
 local checks below are required before committing or publishing. This is a
 storage limit, not a substitute for deciding whether the data deserves retention.
 
@@ -114,7 +128,7 @@ storage limit, not a substitute for deciding whether the data deserves retention
 Use this process for every tranche that adds or changes retained evidence.
 Before a campaign, apply the retention rules above and identify which checker
 consumes each retained operand. Publish completed results only. Minimize
-repeated data and use the packing steps above for justified files over 10 MB.
+repeated data and use the packing steps above for justified raw files over 1 MB.
 Refresh the applicable phase bindings after changing storage or documentation.
 
 After staging the intended changes, run these checks from the repository root:
@@ -128,7 +142,8 @@ git diff --cached --check
 Use the repository's `.venv/bin/python` where available. The first command
 checks storage behavior, including corruption rejection and the staged-blob
 limit. The second verifies registered archives and their exact restored bytes,
-then checks every staged Git blob against the 10,000,000-byte limit. Run it
+then enforces the 1,000,000-byte compression threshold for new/changed staged
+raw blobs, allowing valid compressed files to be larger. Run it
 again after changing the staged contents. Scientific checks remain those
 required by the affected realization and claim; storage checks do not replace
 them. Verify restoration from a fresh directory when introducing a new archive.

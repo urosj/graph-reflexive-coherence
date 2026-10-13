@@ -1,6 +1,240 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current status — P9-8.4c closed; P9-8.4d next
+## Current checkpoint — first-group P9-8.4d accepted
+
+The [full coupled A_PC campaign](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md)
+passes all 20 D59/66/73/94 cases: 40 histories, 400 native continuation steps
+and 40 final reads. Nineteen cases are new; the exactly bound D94 pilot and
+its twenty steps are reused. The source is reused without another beat;
+allocations are independently derived per layout. No law, timestep, tolerance
+or production change. All saved controls pass; the weakest margin ratio is
+about 1.645 at D73/E−1/P2/current. Some resources remain exactly zero.
+
+Accepted by the user on **2026-10-13**: **40/40 A_PC cells** and the
+**160-cell first-group P9-8.4d checkpoint** (C_OS, C_CI, A_CI, A_PC).
+All prior exclusions and partial failures remain separately visible. The
+runtime obligation and later `.e–h` work are not automatically closed.
+Next: first-group P9-8.4e covariance on a new branch after merging this
+checkpoint into main with `--no-ff`. The remaining six families stay open
+for second-group `.d` completion after first-group `.e–h`; all-ten `.d`
+is not closed. No further pilot checkpoint or numerical rerun is needed.
+
+Both full-campaign JSON files are byte-exact XZ under the 1 MB rule. Side-tool
+status shows authenticated saved coverage without repeating the full consumer
+audit; explicit retained checking remains available. The accepted
+`work/p9-8-4d` checkpoint is ready for the requested no-fast-forward merge. No production/spec edits, uniform neighborhood or general ATC claim.
+
+## Prior checkpoint — A_PC coupled D94 witness passes
+
+The [joint derivation and witness](./phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md)
+now establish a successful bounded D94/E−1/P3 case. Initial current W mean
+31/32 plus the derived shares (47/128, 47/128, 17/64) preserve source eligibility
+and pass both-role preflight, one native expansion, twenty native target steps,
+writer/consumer controls, replay and two fresh final reads. Law, timestep and
+tolerances are unchanged. This is **2/40 passing-pending cells, zero accepted**;
+nineteen layouts and A_PC `.d` remain open. Some resources stay exactly zero;
+no uniform neighborhood or all-source continuation claim follows.
+
+The earlier history-63/64 source with the same derived shares reached one
+committed event and one successful current step, then failed a fine
+source-staging effect-separation control. Retain that distinct result; do not
+confuse it with resource failure or full case success. The stronger contrast
+successor clears the same control by a minimum margin ratio about 2.850.
+All prior exclusions remain unchanged. The design-debt scope is unchanged and
+the runtime obligation stays open. Next extend the declared source/coupled
+allocation procedure to the other nineteen layouts, each with its own screen;
+do not assume universal shares. CLI/API/browser/notebook expose the separate
+runs. The 2.91 MB raw successor result is stored byte-exactly as XZ.
+Work remains uncommitted on `work/p9-8-4d`; no native production changes.
+
+## Prior checkpoint — A_PC history companion preserves trigger, fails target
+
+The 2026-10-13 [history-only companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md)
+is implemented and retained, pending user acceptance. It keeps original
+near-flat resources and increases only initial current W by 3/64, to mean
+63/64. The native source beat matches the independent equations. Fresh source
+eligibility passes (gradient squared about 0.000767555 < 0.25, signed Hessian
+negative), but D94/E−1/P3 fails its first current target update: one added node
+has about −9.91774e-6 resource, with a full enabled negative interval even after
+the existing 2^-40 error allowance. This is not a rounding ambiguity.
+
+This companion attempts zero native events and runs zero native target steps.
+Nineteen layouts and the gated ±1/256 history probes remain unexecuted. Retain
+the accepted original-source exclusion and the resource-only trigger rejection
+unchanged. A_PC `.d` still has zero completed/accepted cells; no successful
+neighborhood, general impossibility or aggregate closure follows.
+
+Next derive joint **history/allocation** feasibility constraints with eligible
+near-flat source resources, before selecting another witness. Changing history
+alone did not fix the frozen shares. Do not loosen thresholds or generalize the
+old entire-simplex exclusion to this changed source. Design debt stays resolved
+at its original scope; target-readmission/runtime evidence remains open.
+The side-tool exposes all three distinct evidence layers. New evidence above
+1 MB uses byte-exact XZ. Work remains uncommitted on `work/p9-8-4d`.
+
+## Prior checkpoint — A_PC exclusion accepted; first source companion rejects
+
+The user accepted the frozen-source exclusion and authorized a separate
+companion on 2026-10-12. The [follow-up](./phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionReview.md)
+preserves the full typed claim/debt traces and original evidence. It changes
+only initial current resources, conserves charge and retains distinct reset
+and W/Z histories. Its D94/E−1/P3 independent target pilot passes ten updates
+in both roles. **This is not a successful expansion domain:** one actual
+source beat followed by one native event attempt finds that the source is
+not a fresh hybrid spark candidate. Zero events commit; zero native target
+steps run; the complete lifecycle checkpoint remains unchanged. The source
+gradient squared is about 2.25675 against the strict upper threshold 0.25.
+
+The remaining nineteen companion cases were not run. A_PC `.d` stays open,
+with zero accepted cells. The port-allocation design debt is not reopened;
+its target-readmission/runtime obligation is not closed. No accepted claim,
+law, threshold, tolerance, production or specification file changed. The
+accepted exclusion and new follow-up are uncommitted.
+
+Next: analyze a source **history** companion under unchanged law, keeping
+trigger-eligible near-flat resources. Require fresh trigger eligibility and
+both-role continuation jointly before a broader native campaign. No new
+history companion or successful neighborhood is claimed yet. Retain the
+resource-only rejection as a control; do not weaken the trigger or hide it
+behind the passing target trajectory. CLI/API/notebook/browser expose the
+accepted exclusion separately from the failed native companion. New raw
+evidence over 1 MB uses byte-exact XZ and the storage manifest.
+
+## Prior checkpoint — A_PC frozen-source allocation exclusion
+
+The [D94 feasibility certificate](./phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md)
+excludes every simplex allocation for two current-history updates on all six
+declared D94 layouts, under the frozen A_PC source/history and zero target Z.
+Exact-real and existing-error-budget variants both exclude the full simplex;
+the least negative terminal bound is about −2.83369e-8. This is not a general
+A_PC or expansion impossibility claim, and no native event was run.
+
+Next requires a scoped decision to create a separately named **source companion**
+under the unchanged law. Further allocation-only tuning cannot fix this source.
+Do not edit the accepted/frozen source image or silently change transfers,
+timestep or tolerances. A companion needs its own ordinary source beat/trigger,
+charge and distinct histories, followed by both-role target continuation.
+The result and updated side-tool remain uncommitted and pending review.
+
+## Prior checkpoint — A_CI committed and A_PC held at preflight
+
+A_CI's accepted oracle/native work is committed as `11f3571b` on
+`work/p9-8-4d`. The next [A_PC checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md)
+has graph-specific whole-carrier bounds for all 20 deeper targets, but its
+D94 E−1 phase-three pilot fails before any native event: the first current
+update is about −7.4842e-5. A separately identified balanced control passes
+the first update but fails the second at about −1.5900e-7. Both exclusions
+have full enabled pointwise interval checks; reset passes the two checked
+updates. No general infeasibility result follows.
+
+There are zero new A_PC native events/steps or accepted cells; 19 cases remain
+unattempted. Next: resolve D94 both-role, multi-step resource feasibility under
+the frozen A_PC source/law before declaring a successor and resuming native
+execution. Do not repeat the all-family campaign or promote the passing carrier
+chart into continuation support. The first-group `.d` checkpoint stays open.
+CLI/API/notebook/browser expose the preflight hold separately from the three
+accepted families. New A_PC files remain uncommitted for review.
+
+## Accepted checkpoint — A_CI native deep result
+
+The user accepted the A_CI deep oracle and its separate native counterpart
+on 2026-10-12. The [native result](./phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md)
+passes all 20 D59/66/73/94 cases: 40 histories, 400 continuation steps and
+40 fresh full-root reads. The accepted actual source and independent oracle
+are reused; no production, spec, timestep or tolerance changes were needed.
+Full retained-consumer checking passes without native reruns.
+
+The smallest represented resource is about 3.6786068e-22 at D94 E-1 phase
+three, reset role, first update. Maximum binary64 charge residual is about
+7.106e-15 against the unchanged 1e-11 tolerance. All 400 ordinary updates have
+small nonzero exact coordinate-sum changes (maximum absolute step delta about
+1.330e-15); this is admitted rounding, not exact conservation. Exact initial
+event transfer and positive represented continuation remain separately checked.
+No robustness neighborhood or accumulated exact-real trajectory tube follows.
+
+The roughly 45.10 MB record is losslessly stored as roughly 2.40 MB XZ under
+the 1 MB rule; compressed files may be larger. Restore through
+`scripts/evidence_storage.py restore`. CLI/API/notebook/browser show the
+accepted oracle separately from 40 accepted native cells.
+C_OS and C_CI remain at 40 accepted cells each; seven `.d` families remain
+unexecuted. Next: A_PC carrier-domain prerequisites, then its deeper-layout
+evidence in the first group. Work remains on `work/p9-8-4d`.
+
+## Prior checkpoint — A_CI deep oracle
+
+C_CI, its D94 hardening and the 1 MB storage policy are accepted and committed
+as `faccfa0e` on `work/p9-8-4d`. The next [A_CI prerequisite](./phase-9-grcv4/tranche-8/P9-8.4d-ACIOracleReview.md)
+passes all 20 independent deep-layout cases: 40 histories, 440 saved-entry
+joint-root observations and three focused scientific pressure tests. No native
+A_CI roots, steps or events ran. The dimension-aware A proof covers the actual
+18/19/20/23-vertex targets without widening historical C or carrier certificates.
+
+Review the oracle scope before its native counterpart. Its smallest componentwise
+resource lower bound is about 3.678424e-22 at D94 E-1 phase three, reset role,
+first update; this is not a robust native positivity guarantee or a uniform
+trajectory tube. Native admission/represented continuation remains to be tested.
+The 14,146,015-byte result is retained as 938,480-byte XZ; restore it with
+`scripts/evidence_storage.py restore`, without rerunning the oracle.
+CLI/API/notebook/browser expose the pending oracle separately. Native `.d`
+coverage stays at 40 accepted C_OS and 40 accepted C_CI cells; eight families,
+including A_CI, remain unexecuted. Next: oracle review, then native A_CI.
+
+Earlier entries describe their respective checkpoints; oracle acceptance and
+native execution are now recorded above.
+
+## Accepted checkpoint — P9-8.4d C_CI; A_CI is next
+
+Storage update (2026-10-12): compress new/changed raw files over 1,000,000
+bytes; valid compressed files may be larger. Unchanged historical files are
+grandfathered. C_CI hardening is now byte-exact XZ: 3,840,153 bytes restored,
+272,860 bytes stored. The original 1,300,916-byte C_CI archive remains valid.
+Use `scripts/evidence_storage.py restore` for standalone readers on a fresh
+clone; side-tool restoration is automatic. No numerical rerun is required.
+
+C_OS and its bounded hardening were accepted and committed as `dcc04f87`.
+The [C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4d-CCIReview.md) is accepted:
+20 declared D59/66/73/94 cases, 40 histories, ten steps per history. The
+first prerequisite probe exposed the independent checker's tree17 ceiling.
+A separate CI-only tree23 certificate now covers the named larger targets;
+the old certificates and production code are unchanged. Numerical execution
+and user acceptance are reported separately: **20/20 cases, 40 histories,
+400 native target steps and 40 fresh final reads pass**, with five focused
+pressure tests. All 400 pointwise resource-error margins are positive; no
+accumulated trajectory tube is claimed. Completed evidence is 33.92 MB raw /
+1.30 MB XZ, byte-exactly restored in a fresh directory. CLI/API/notebook/browser
+expose 40 accepted C_CI cells; C_OS stays accepted at 40.
+Eight other `.d` families remain unexecuted. The user accepted C_CI and its
+hardening on 2026-10-12; A_CI is next. No `src/` or spec files changed.
+
+The separate D94 C_CI hardening also passes: nine predeclared finite target
+probes, both histories/two steps (36 native steps), full pointwise CI/resource
+margins, native excluded-continuation rejection and late-event rollback.
+Worst positivity margin is about 9.846e-15; all three focused tests pass.
+Six probes preserve both-role exact coordinate charge; three allocation images
+have explicit current-role rounding deltas and confer no exact-conserving
+event credit. Side-tool surfaces include the supplement. Neither this nor the
+original run claims a uniform neighborhood or accumulated exact-real tube.
+
+## Accepted checkpoint — P9-8.4d C_OS
+
+Branch `work/p9-8-4d` starts from `1c56da51` on 2026-10-12.
+The [C_OS deeper-expansion checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
+covers 20 single-event cases at D59/66/73/94, depths three/four, both
+histories and ten target steps each: all 20 cases / 40 cells pass, with 400
+target steps, 40 final reads and four focused scientific tests. Completed
+36.40 MB evidence is stored as a byte-exact 0.886 MB XZ archive. The explicit resource fixtures change
+with depth; regression controls retain the failed older tuples. The law,
+source, timestep and comparison budgets stay fixed. This is bounded dense
+cross-check evidence, not arbitrary-depth support or successive-event coverage.
+Accepted by the user on 2026-10-12; the C_CI successor is described above.
+The [bounded hardening supplement](./phase-9-grcv4/tranche-8/P9-8.4d-COSHardeningReview.md)
+adds native excluded-recipe behavior, late-event atomicity, 24 pointwise Arb
+sign enclosures and nine finite neighborhood probes (18 positive histories).
+Rounded charge admission is distinguished from exact coordinate conservation.
+No public ordinary-step owner or continuous trajectory tube is claimed.
+The first-group order is C_OS, C_CI, A_CI and A_PC. Keep `.d` open.
+
+## Accepted predecessor — P9-8.4c closed
 
 On 2026-10-08 the user accepted A_RG2b, committed as `270783f`, then
 requested P9-8.4c closure on the same `work/p9-8-4c-acipc` branch.
@@ -37,8 +271,10 @@ recompute only affected scientific dependencies or investigate a concrete
 failure. Metadata/acceptance/storage updates need integrity and surface checks,
 not repeated numerical campaigns. Synchronize the full view once per coherent
 checkpoint. Retain completed compact evidence, named operand consumers and
-byte-exact XZ under the 10 MB rule; no suspended/incomplete run artifacts.
-This is planning only; no `.d–h` cell is yet executed or accepted.
+byte-exact XZ for new/changed raw files over 1 MB (larger archives allowed);
+no suspended/incomplete run artifacts.
+The C_OS `.d` checkpoint above is the first execution work; its 40 C_OS cells are accepted; no other `.d–h`
+cells have user acceptance yet.
 
 ## Accepted checkpoint — P9-8.4c capacity and phase families
 
@@ -303,7 +539,7 @@ Aggregate `.c`, `.d`–`.i`, 8.5 and 8.6 remain open.
 
 Use the [current storage policy](../docs/reference/EvidenceStorage.md), including
 the last two main commits `932d9fd9` and `19a2d8fc`: justified completed
-evidence only, shared inputs once, byte-exact XZ for files over 10 MB, ignored
+evidence only, shared inputs once, byte-exact XZ for new/changed raw files over 1 MB, ignored
 expanded/progress files and local storage tests plus staged-blob checks before
 commit or publication. `/.github/` is ignored; no workflow execution is assumed.
 Document-only changes need no native trajectory or interval-math rerun.
