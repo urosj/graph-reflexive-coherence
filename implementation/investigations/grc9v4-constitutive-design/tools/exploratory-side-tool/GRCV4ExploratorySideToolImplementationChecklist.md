@@ -2381,3 +2381,10 @@ instead of stale fixed totals and opens any pending case details explicitly.
   complete joint roots, pointwise certificates and explicit frozen-plan reuse.
   Keep C_OS/C_CI acceptance separate; no sibling or aggregate promotion.
   Routine status remains producer-free; numerical rechecking is explicit.
+
+- [x] Expose A_PC `8.4f` in selected API/CLI, browser and notebook:
+  24 accepted full-chart history cells on D59/D94, unsigned W and two-sided
+  carrier transport, actual archive/loss/zero initialization, ZOH/log-W
+  continuation and pointwise certificates. Four frozen plans are reused.
+  First-group `.f` is accepted at 96/96 cells; all-ten closure remains open.
+  Status is producer-free; explicit numerical recheck remains available.

@@ -688,3 +688,15 @@ frozen mechanical plans are explicitly reused, not new A_CI execution.
 Use `--family A_CI --checkpoint 8.4f` for selected status or retained
 verification; `--recheck-numerics` recomputes certificates explicitly.
 C_OS/C_CI stay separately accepted; no first-group/all-ten closure follows.
+
+A_PC is available at `8.4f`: 24 accepted cells on the
+accepted coupled D59/D94 source/allocation witnesses, both chiralities.
+Unsigned W, full two-sided carrier transport, both-role archives, explicit
+loss and zero target initialization are checked alongside subsequent
+ZOH/log-W writes and complete PC reads. Sixteen events, 64 target steps and
+32 final reads retain pointwise interval certificates, not a uniform tube.
+Four frozen mechanical plans are reused, not new A_PC execution.
+Use `--family A_PC --checkpoint 8.4f` with `status` or `verify-retained`;
+`--recheck-numerics` explicitly recomputes interval certificates. The first
+group is accepted at 96/96 cells on 2026-10-13. All-ten acceptance is not
+inferred; the other six families remain separate. Next is first-group `.g`.

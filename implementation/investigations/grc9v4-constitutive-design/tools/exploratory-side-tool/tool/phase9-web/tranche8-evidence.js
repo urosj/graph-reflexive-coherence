@@ -17090,6 +17090,8 @@ export const TRANCHE8_EVIDENCE = {
     "chart_covariance": {
       "checkpoint": "8.4f",
       "aggregate_closed": false,
+      "first_group_closed": true,
+      "first_group_accepted_cells": 96,
       "family_results": [
         {
           "family": "C_OS",
@@ -17275,11 +17277,74 @@ export const TRANCHE8_EVIDENCE = {
             "basis": "pinned_A_CI_unsigned_history_joint_root_chart_covariance_and_scoped_acceptance"
           },
           "comparison_scope": "pointwise_full_joint_root_certificates_and_chart_covariance_not_uniform_trajectory_enclosure"
+        },
+        {
+          "family": "A_PC",
+          "status": "accepted_bounded",
+          "required_cells": 24,
+          "passing_pending_cells": 0,
+          "accepted_cells": 24,
+          "native_events": 16,
+          "target_steps": 64,
+          "source_steps": 4,
+          "final_reads": 32,
+          "maximum_covariance_error": 0.0,
+          "transforms": [
+            "rotate",
+            "rotate_twice",
+            "reflect"
+          ],
+          "degrees": [
+            59,
+            94
+          ],
+          "full_joint_roots": false,
+          "persistent_carrier": true,
+          "unsigned_candidate_history": true,
+          "chart_symmetries": true,
+          "normalization_policy_id": "grc9v4-event-namespace-and-role-covariance-normalization-v1",
+          "frozen_plan_executions": 0,
+          "reused_frozen_plan_executions": 4,
+          "native_trajectories_rerun": false,
+          "interval_certificates_rerun": false,
+          "uniform_domain": false,
+          "aggregate_closed": false,
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md",
+            "sha256": "e75b95cd259551d432e271da3dc84477dab5b60cb2578b7625b872c1914a08fb",
+            "revision": null,
+            "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCInputs.json",
+            "sha256": "b4d581c9b6bc060d568f9602cc7baa9b4d6654107a503ef18d9e4ed3aa156a72",
+            "revision": null,
+            "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCResults.json",
+            "sha256": "e10656da11f663cbf82c6634281c6ebe8a720b57be727e8a4caefd7ce6736083",
+            "revision": null,
+            "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+          },
+          "plan": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCPlan.md",
+            "sha256": "7a6f66f79682c895f3a4dd3147f72a4522b765999d2d1b8bd4cf155e1503f0c2",
+            "revision": null,
+            "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md",
+            "sha256": "e75b95cd259551d432e271da3dc84477dab5b60cb2578b7625b872c1914a08fb",
+            "revision": null,
+            "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+          },
+          "comparison_scope": "pointwise_PC_read_writer_carrier_certificates_and_chart_covariance_not_uniform_trajectory_enclosure"
         }
       ],
       "families_not_executed": [
         "A_OS",
-        "A_PC",
         "A_CI_PC",
         "A_RG2b",
         "C_PC",
@@ -18757,6 +18822,30 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_A_CI_unsigned_history_joint_root_chart_covariance_and_scoped_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCInputs.json",
+      "sha256": "b4d581c9b6bc060d568f9602cc7baa9b4d6654107a503ef18d9e4ed3aa156a72",
+      "revision": null,
+      "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCPlan.md",
+      "sha256": "7a6f66f79682c895f3a4dd3147f72a4522b765999d2d1b8bd4cf155e1503f0c2",
+      "revision": null,
+      "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCResults.json",
+      "sha256": "e10656da11f663cbf82c6634281c6ebe8a720b57be727e8a4caefd7ce6736083",
+      "revision": null,
+      "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md",
+      "sha256": "e75b95cd259551d432e271da3dc84477dab5b60cb2578b7625b872c1914a08fb",
+      "revision": null,
+      "basis": "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-CCIInputs.json",
       "sha256": "dbc19d1486606bb3436d3ca6378907ac91ead58c28e4b4c1c558002e3bad6109",
       "revision": null,
@@ -18943,5 +19032,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "39491d5e80bfe29e50a022e286af4b52db7993973ff89d32af33a433ecc9b21a"
+  "view_digest": "41c6af00b7ae32130f844d33a476619de09467323a8a0fe0249a4db8cad41d57"
 };

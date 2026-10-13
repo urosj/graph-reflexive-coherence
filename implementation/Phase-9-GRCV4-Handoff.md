@@ -1,6 +1,26 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — A_CI P9-8.4f accepted
+## Current checkpoint — first-group P9-8.4f accepted at 96/96
+
+A_CI acceptance is committed as `8d6ca7c9` on `work/p9-8-4f`.
+The [A_PC chart review](./phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md)
+records 24 accepted history cells on coupled D59/D94 witnesses,
+both chiralities: 16 events, four source steps, 64 target steps and 32 final
+reads. Maximum observed covariance discrepancy is zero. Unsigned W, two-sided
+carrier/geometry transport, actual both-role carrier archives, explicit loss,
+zero target initialization and subsequent ZOH/log-W writes are checked.
+Pointwise certificates retain the existing budgets; no uniform tube follows.
+
+Sixteen stale-source and 32 semantic rejections preserve the whole checkpoint.
+Four frozen mechanical plans are reused by digest, not new A_PC executions.
+Exact XZ retains all original operands. Selected API/CLI, browser and notebook
+expose `A_PC` at `8.4f`; routine status repeats neither native work nor interval
+certification. A_PC and first-group `.f` were accepted on 2026-10-13:
+C_OS/C_CI/A_CI/A_PC each contribute 24 cells, 96/96 total. Next is
+first-group `.g` prerequisites, not another `.f` campaign. All-ten `.f`
+remains open for six other families. No production or specification changes.
+
+## Prior checkpoint — A_CI P9-8.4f accepted
 
 C_CI acceptance is committed as `d3b80b1e` on `work/p9-8-4f`.
 The [A_CI chart review](./phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md)

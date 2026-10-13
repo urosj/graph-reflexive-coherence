@@ -2994,8 +2994,15 @@ The [A_CI chart successor](./phase-9-grcv4/tranche-8/P9-8.4f-ACIReview.md)
 now supplies 24 accepted cells (2026-10-13), with unsigned history,
 fixed-row reconstruction, full joint roots and writer covariance. Sixteen
 events, 64 target steps and 32 final reads pass with pointwise root/output
-certificates. Four frozen mechanical plans are reused separately. A_PC is
-next; first-group and all-ten `.f` remain open.
+certificates. Four frozen mechanical plans are reused separately.
+
+The [A_PC chart successor](./phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md)
+supplies the last first-group execution: 24 accepted cells (2026-10-13)
+on the coupled D59/D94 witnesses in both chiralities. Sixteen events,
+64 target steps and 32 final reads cover unsigned W, two-sided carrier,
+actual archive/loss/zero initialization and subsequent ZOH/log-W writes.
+Pointwise certificates and explicit frozen-plan reuse remain separate.
+First-group `.f` is accepted at 96/96 cells; next is `.g` prerequisites. All-ten `.f` stays open for the other six families.
 
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
