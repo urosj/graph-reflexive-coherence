@@ -6,6 +6,71 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_OS ordering covariance projects scoped acceptance without sibling credit', () => {
+  const view=evidence.coverage.ordering_covariance,row=view.family_results[0];
+  assert.equal(row.family,'C_OS'); assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.accepted_cells,20); assert.equal(row.native_events,12);
+  assert.equal(row.target_steps,48); assert.equal(row.final_reads,24);
+  assert.equal(view.families_not_executed.length,6);assert.equal(view.aggregate_closed,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/C_OS: 0\/20 covariance history cells passing pending acceptance, 20 accepted/);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [v=>v.aggregate_closed=true,v=>v.family_results[0].accepted_cells=0,
+      v=>v.family_results[0].uniform_domain=true,v=>v.families_not_executed.pop(),
+      v=>v.family_results[0].results.sha256='forged']) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.ordering_covariance);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('C_CI ordering covariance retains full-root scope and scoped acceptance', () => {
+  const row=evidence.coverage.ordering_covariance.family_results.find(r=>r.family==='C_CI');
+  assert.equal(row.passing_pending_cells,0);assert.equal(row.accepted_cells,20);
+  assert.ok(row.acceptance);assert.equal(row.full_joint_roots,true);
+  assert.equal(row.interval_certificates_rerun,false);assert.equal(row.native_trajectories_rerun,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Full joint CI roots/);
+  for(const field of ['full_joint_roots','interval_certificates_rerun','native_trajectories_rerun']) {
+    const forged=structuredClone(evidence);
+    const changed=forged.coverage.ordering_covariance.family_results.find(r=>r.family==='C_CI');
+    changed[field]=!changed[field];assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_CI covariance keeps unsigned history and scoped acceptance visible', () => {
+  const row=evidence.coverage.ordering_covariance.family_results.find(r=>r.family==='A_CI');
+  assert.equal(row.passing_pending_cells,0);assert.equal(row.accepted_cells,20);
+  assert.equal(row.unsigned_candidate_history,true);assert.equal(row.full_joint_roots,true);
+  assert.notEqual(row.acceptance,null);assert.equal(row.interval_certificates_rerun,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Unsigned Candidate-A history/);
+  for(const key of ['unsigned_candidate_history','full_joint_roots','interval_certificates_rerun']) {
+    const forged=structuredClone(evidence);
+    const changed=forged.coverage.ordering_covariance.family_results.find(r=>r.family==='A_CI');
+    changed[key]=!changed[key];assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('A_PC covariance keeps persistent carrier loss and scoped acceptance visible', () => {
+  const row=evidence.coverage.ordering_covariance.family_results.find(r=>r.family==='A_PC');
+  assert.equal(row.passing_pending_cells,0);assert.equal(row.accepted_cells,20);
+  assert.equal(row.persistent_carrier,true);assert.equal(row.full_joint_roots,false);
+  assert.equal(row.unsigned_candidate_history,true);assert.ok(row.acceptance);
+  assert.deepEqual(row.degrees,[59,94]);
+  const group=evidence.coverage.ordering_covariance;
+  assert.deepEqual(group.family_results.map(r=>r.family),['C_OS','C_CI','A_CI','A_PC']);
+  assert.equal(group.family_results.reduce((n,r)=>n+r.accepted_cells,0),80);
+  assert.equal(group.family_results.reduce((n,r)=>n+r.passing_pending_cells,0),0);
+  assert.equal(group.families_not_executed.length,6);assert.equal(group.aggregate_closed,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Persistent carrier: two-sided signed Z transport/);
+  for(const key of ['persistent_carrier','full_joint_roots','interval_certificates_rerun']) {
+    const forged=structuredClone(evidence);
+    const changed=forged.coverage.ordering_covariance.family_results.find(r=>r.family==='A_PC');
+    changed[key]=!changed[key];assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('deep A_CI oracle is visible without native or acceptance promotion', () => {
   const deep=evidence.coverage.deep_expansion;
   const row=deep.oracle_preparations.find(r=>r.family==='A_CI');

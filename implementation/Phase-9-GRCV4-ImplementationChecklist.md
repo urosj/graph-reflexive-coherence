@@ -3239,9 +3239,30 @@ the full ten-profile plan.
     transport resources, unsigned A W, signed currents/references and carrier/
     geometry coordinates correctly. Reject inconsistent partial transforms and
     compare both histories in the declared exact/numerical comparison contracts.
-    - [ ] First-group checkpoint: review and accept this child's required
-      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
-      advance ready rows without waiting for the remaining six families.
+    - [x] C_OS bounded execution and pressure: [review](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md).
+      D52/+1/phase-1 and D94/−1/phase-3; five transforms, both histories,
+      20 accepted cells, 12 events, 48 target steps and 24 final reads.
+      Exact normalized topology and zero saved numerical covariance error;
+      unchanged 2e-13 comparison budget. No uniform or chart-symmetry credit.
+    - [x] C_OS scoped user acceptance on 2026-10-13: 20 cells; siblings remain open.
+    - [x] C_CI bounded execution and focused joint-root pressure:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md). Two layouts,
+      five transforms, 20 accepted cells, 12 events, 48 target steps, 24 final
+      roots; full J/H, both histories, interval certificates and exact replay.
+    - [x] C_CI scoped user acceptance on 2026-10-13: 20 cells; siblings remain open.
+    - [x] A_CI bounded covariance execution and history/writer pressure:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md). Twenty passing
+      cells, 12 events, 48 target steps, 24 final roots; signed J/H/read channels
+      and unsigned W_A/conductance/writer outputs, both roles, exact replay.
+    - [x] A_CI scoped user acceptance on 2026-10-13: twenty cells; original execution flags unchanged.
+    - [x] A_PC bounded ordering/relabeling/signed covariance:
+      [review](./phase-9-grcv4/tranche-8/P9-8.4e-APCReview.md). Twenty passing
+      cells on accepted coupled D59/D94 witnesses; signed carrier/archive/
+      reset/loss, unsigned W, 12 events, 48 target steps and 24 final reads.
+    - [x] A_PC scoped user acceptance on 2026-10-13: twenty cells; saved run unchanged.
+    - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
+      A_CI and A_PC each contribute twenty cells, 80/80 total. Next `.f`;
+      all-ten parent remains open for the six second-group families.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.

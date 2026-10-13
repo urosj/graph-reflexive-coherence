@@ -1,6 +1,56 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — first-group P9-8.4d accepted
+## Current checkpoint — first-group P9-8.4e accepted at 80/80
+
+Branch `work/p9-8-4e` starts from the no-fast-forward P9-8.4d merge on main.
+The [C_OS covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md)
+records 20 accepted history cells (2026-10-13): five transforms on D52 and D94,
+both current/reset. Twelve events, 48 target steps, six source steps and 24
+final reads pass. Saved numerical covariance discrepancy is zero in these
+bounded comparisons; no general bitwise or uniform-domain claim follows.
+The frozen edge-order vector, node order, labels, signed orientation and their
+composition are covered. Chart/phase covariance remains P9-8.4f.
+
+Side-tool API/CLI, browser and notebook expose checkpoint `8.4e`, family
+`C_OS`, with 20 accepted cells. Explicit retained numerical checking is
+separate from routine status. Large evidence is byte-exact XZ; older evidence
+and production/spec sources are unchanged.
+
+The [C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md) supplies
+20 covariance cells accepted on 2026-10-13: the same two layouts and five
+transforms, 12 events, 48 target steps and 24 fresh final roots. It validates
+the full selected CI root, not just current, including both roles, Read-Back,
+geometry, structural source, reset/restart and domain/certificate identities.
+Select `C_CI` at checkpoint `8.4e` in API/CLI or the notebook; the browser
+shows both families with separately pinned acceptance. Explicit interval rechecking
+is not a native rerun.
+
+The [A_CI covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md)
+records twenty cells accepted on 2026-10-13: 12 events, 48 target steps,
+24 final roots, zero saved covariance discrepancy. Unsigned W_A/conductance/
+writer outputs are checked separately from signed current, Read-Back, H and
+reference lineage, with both roles and exact replay. The existing independent
+interval certificates are computed during capture; routine retained checking
+does not repeat those computations. Optional numerical rechecking remains
+available. The result is stored as byte-exact XZ (7.34 MB raw, 206 KB stored).
+API/CLI, browser and notebook expose `A_CI` at checkpoint `8.4e` with
+separate acceptance and no sibling promotion. A_PC now supplies the final first-group execution below; the remaining six
+families follow the first-group schedule. Do not reopen accepted `.d` or infer
+sibling credit.
+
+The [A_PC covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-APCReview.md)
+records twenty cells accepted on 2026-10-13: twelve events, six source
+steps, 48 target steps and 24 final reads, with zero measured covariance
+error. D59/D94 use the accepted coupled history31/allocation witnesses;
+the original-source D94 exclusion is not revised. Signed carrier transport,
+whole-source archive/reset/loss and single held-source writing are checked
+alongside unsigned W. API/CLI, browser and notebook expose this distinct
+scope. Evidence is exact XZ, and normal status does not rerun intervals.
+First-group `.e` is accepted at 80/80 history cells. Merge `work/p9-8-4e`
+into `main` with `--no-ff`, then create a new branch for first-group `.f`
+chart symmetries. All-ten `.e` remains open for the second group.
+
+## Prior checkpoint — first-group P9-8.4d accepted
 
 The [full coupled A_PC campaign](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md)
 passes all 20 D59/66/73/94 cases: 40 histories, 400 native continuation steps

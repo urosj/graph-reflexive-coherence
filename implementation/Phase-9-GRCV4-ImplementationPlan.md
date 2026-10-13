@@ -2949,6 +2949,31 @@ on 2026-10-13. No uniform domain or later `.e–h` work is closed. Continue
 first-group `.e`; the six other families remain second-group `.d` work.
 Do not repeat a separate pilot checkpoint.
 
+The first P9-8.4e family is [C_OS](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md):
+20 covariance history cells accepted on 2026-10-13 cover two named layouts under five explicit
+ordering/relabeling/signed transformations. Twelve native events and 48 target
+steps use the unchanged comparison budget. Native admission, normalized graph
+equality, predictor/corrector/Read-Back/H/resource covariance, final reads and
+partial-transport controls are covered.
+
+The [C_CI successor](./phase-9-grcv4/tranche-8/P9-8.4e-CCIReview.md) uses the
+same two-layout/five-transform scope, with full joint CI roots (J,H), generated
+geometry, structural source, Read-Back, reset/restart and final-root identities.
+Individual interval certificates remain distinct from the nominal covariance
+comparison and from any whole-trajectory bound. Its 20 cells were accepted on
+2026-10-13. The [A_CI covariance successor](./phase-9-grcv4/tranche-8/P9-8.4e-ACIReview.md)
+now supplies twenty cells accepted on 2026-10-13, with unsigned W_A,
+conductance and writer outputs compared separately from signed J/H/read
+channels. It reuses the accepted independent A_CI interval equations without
+repeating the ten-step depth campaign. The [A_PC successor](./phase-9-grcv4/tranche-8/P9-8.4e-APCReview.md) now
+supplies twenty accepted cells (2026-10-13) on coupled D59/D94 witnesses,
+including persistent carrier transport/archive/reset/loss and unsigned W.
+First-group `.e` is accepted at 80/80 cells; next is first-group `.f`;
+the original-source D94 exclusion and six unexecuted sibling rows remain.
+Chart transformations remain `.f` and C_OS grants
+no history/carrier or sibling evidence. Status and explicit numerical rechecks
+remain separate, with packed retained operands for portability.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten

@@ -2336,6 +2336,22 @@ instead of stale fixed totals and opens any pending case details explicitly.
       first-group checkpoint closed at 160, all-ten `.d` still open. Preserve prior layers and separate authenticated status from
       explicit retained-consumer/numerical checking. Pack both new large JSONs.
 
+- [x] Expose P9-8.4e A_PC covariance in API/CLI, notebook and browser:
+  twenty accepted cells (2026-10-13), coupled D59/D94 witness provenance,
+  signed carrier/archive/reset/loss and unsigned W; first-group 80/80 accepted,
+  no sibling or all-ten closure promotion.
+- [x] Expose P9-8.4e A_CI joint-root and unsigned-history/writer covariance
+  in API/CLI, notebook and browser: twenty accepted cells (2026-10-13);
+  selected-family and retained-only modes preserve no-carrier/sibling scope.
+- [x] Expose P9-8.4e C_CI full-joint-root covariance in API/CLI, notebook and
+  browser: 20 accepted cells (2026-10-13), separate selected-family
+  checking and explicit interval rechecking; no sibling/aggregate promotion.
+- [x] Expose P9-8.4e C_OS ordering covariance in API/CLI, notebook and browser:
+  20 accepted history cells (2026-10-13); 12 events, 48 target steps,
+  24 final reads. Pin inputs/results/plan/review; reject altered counts,
+  acceptance, uniform-domain and sibling promotion. Explicit retained numerical
+  mode is separate; reject native prepare/run through the read-only launcher.
+
 - [x] Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

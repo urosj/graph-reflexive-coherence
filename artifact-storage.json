@@ -273,6 +273,38 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSResults.json.xz",
       "storage_size": 885816,
       "storage_sha256": "2a298dcb282ec0697ba79ff966fe4992cf173aaca340a55f80d1741a18b79798"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIResults.json",
+      "size": 7336746,
+      "sha256": "70cbc37ee27773ff6545022b5f72f328c663a02868347a2b36fca48332f19292",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-ACIResults.json.xz",
+      "storage_size": 206040,
+      "storage_sha256": "46639e4ea67222a8a97580dbfa95660bdda836f34d69a502d8b3191cabb82ce3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-APCResults.json",
+      "size": 7741996,
+      "sha256": "983054f5298b83b586b07adc9b527392aa1f90bedaca0c24360cf76b3c367ad9",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-APCResults.json.xz",
+      "storage_size": 150000,
+      "storage_sha256": "1dc0aae222d2e6678b310f18ab24cd528e10b4a1640bf76b3a25691a1b846798"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIResults.json",
+      "size": 6654173,
+      "sha256": "ceabcf333bae5dd985deef4fef043fa36a02d1ac54137aff5cca73fc26c52402",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-CCIResults.json.xz",
+      "storage_size": 182064,
+      "storage_sha256": "aa1b22c7f960d17a68b2ff10f49c4b49ecfbf56f391511fe0f4202c28e0a5c04"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSResults.json",
+      "size": 4063146,
+      "sha256": "5e1642e44b1b93847131c2dd2b564e0641e243bee1f0d6afc313270fa4b21fb8",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSResults.json.xz",
+      "storage_size": 87784,
+      "storage_sha256": "54d26f8cf57ee16df632c631fc043ffe43f1fd1eac119e668f803a15eaf2db43"
     }
   ]
 }

@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[3]
 PREFIXES = ("p984", "prepare_p984", "verify_p983")
 HELPERS = ("predecessor", "accepted_oracle", "make_manifest")
 DIRECT_FILES = ("SELF", "TEST", "INPUTS", "RESULTS", "REVIEW", "PREDECESSOR", "RECORD")
-BOUNDARY_MODULES = ("p984d_apc_full", "p984d_apc_joint_successor", "p984d_apc_history", "p984d_apc_runtime", "p984d_aci_runtime", "p984d_aci_oracle", "p984d_cci", "p984d_cos", "p984c_cos", "p984c_aos_oracle", "p984c_aos_runtime",
+BOUNDARY_MODULES = ("p984e_apc", "p984e_aci", "p984e_cci", "p984e_cos", "p984d_apc_full", "p984d_apc_joint_successor", "p984d_apc_history", "p984d_apc_runtime", "p984d_aci_runtime", "p984d_aci_oracle", "p984d_cci", "p984d_cos", "p984c_cos", "p984c_aos_oracle", "p984c_aos_runtime",
     "p984c_cci_preparation", "p984c_cci_runtime", "p984c_aci_oracle", "p984c_aci_runtime", "p984c_cpc_runtime", "p984c_apc_runtime", "p984c_ccipc_runtime", "p984c_acipc_runtime", "p984c_crg2b_runtime", "p984c_arg2b_runtime")
 
 

@@ -18,6 +18,17 @@ nonempty operational domain and runtime obligation remain open. Passing
 integrity checks change none of these dispositions; native trajectories are
 not rerun. The selected view links the separate evidence layers and ledger scope.
 
+P9-8.4e now exposes C_OS ordering/relabeling/signed covariance: 20 accepted
+history cells (2026-10-13), on D52 and D94 with five explicit transforms.
+Twelve native events, 48 target steps and 24 final reads pass. This does not
+cover chart rotation/reflection or sibling realizations. Select
+`tranche8_status(root, family="C_OS", checkpoint="8.4e")` in Python or
+`status --family C_OS --checkpoint 8.4e` in the Tranche 8 CLI. Use
+`verify-retained --family C_OS --checkpoint 8.4e --recheck-numerics` only for
+an explicit dense/consumer recheck; routine status never executes native
+trajectories or dense equations. The browser's separate 8.4e section exposes
+inputs, results, plan and review; failed source authentication clears the view.
+
 The full A_PC campaign now passes twenty cases: forty history cells, four
 hundred native continuation steps and forty final reads. `full_campaign`
 distinguishes nineteen newly executed cases from one exact pilot reuse.
@@ -609,3 +620,41 @@ margins, a native excluded continuation and an injected late event failure.
 The selected retained command checks this supplement too; optional numerical
 rechecking recomputes its intervals, never native trajectories. These probes
 are not a continuous robustness neighborhood or a new allocation law.
+
+## P9-8.4e ordering covariance: C_OS, C_CI and A_CI
+
+Select `run.py tranche8-query status --family C_CI --checkpoint 8.4e`, or
+`tranche8_status(repo_root, family="C_CI", checkpoint="8.4e")` in the API or
+notebook. Use `C_OS` to inspect its separately accepted 20-cell scope. C_CI
+has 20 accepted cells (2026-10-13); the browser's ordering-covariance
+section exposes both records without granting sibling or aggregate credit.
+
+Both campaigns cover five explicit transformations on two layouts, with two
+target steps per role. C_CI compares full joint roots, not just current:
+selected H, generated geometry, structural source, Read-Back and reset/restart
+roots retain their input/domain/certificate bindings. Chart symmetry is `.f`.
+
+`verify-retained --family C_CI --checkpoint 8.4e` performs retained checking
+with native producers disabled. `--recheck-numerics` additionally recomputes
+the independent CI interval certificates; it does not run native trajectories.
+The C_OS counterpart optionally recomputes its dense comparisons. Routine
+status does neither numerical recomputation. Exact packed evidence restores
+through the repository storage manifest; no machine-local path is required.
+
+Select `A_CI` with the same checkpoint to inspect twenty accepted cells. It adds unsigned W_A/conductance/writer-output covariance alongside
+signed current, geometry, Read-Back and reference lineage. The native capture
+computes independent A_CI certificates once; routine retained checking does not
+repeat them. Explicit numerical checking uses the same `--recheck-numerics`
+option. The browser and notebook show this evidence with its own pinned acceptance alongside
+C_OS/C_CI, without carrier, chart-symmetry or sibling credit.
+
+Select `A_PC` at checkpoint `8.4e` for twenty accepted cells (2026-10-13).
+These use accepted coupled D59/D94 witnesses, not the excluded original D94
+source. In addition to unsigned W and signed current, the view covers signed
+whole-carrier transport, complete source archive, explicit carrier-history
+loss, zero target initialization and single held-source writing. Routine
+status authenticates retained evidence; `verify-retained --family A_PC
+--checkpoint 8.4e --recheck-numerics` explicitly recomputes interval equations.
+Neither mode executes native trajectories or grants acceptance. The pinned
+review supplies acceptance separately; first-group `.e` is now accepted at
+80/80 history cells, with six second-group families still unexecuted.

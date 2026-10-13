@@ -12,6 +12,10 @@ from tranche8_validation import BOUNDARY_MODULES, ROOT, validation_session
 # Successor research checkers have explicit retained-only entry points. Never
 # infer permission from a filename prefix or admit prepare/run/derive actions.
 EXTRA_MODES = {
+    'p984e_cos': ('check',),
+    'p984e_cci': ('check',),
+    'p984e_aci': ('check',),
+    'p984e_apc': ('check',),
     'p984d_apc_feasibility': ('--check',),
     'p984d_apc_companion': ('--check',),
     'p984d_apc_companion_runtime': ('--check',),
