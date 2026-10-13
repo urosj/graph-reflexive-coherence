@@ -3239,6 +3239,15 @@ the full ten-profile plan.
     transport resources, unsigned A W, signed currents/references and carrier/
     geometry coordinates correctly. Reject inconsistent partial transforms and
     compare both histories in the declared exact/numerical comparison contracts.
+    - [x] C_OS bounded execution and pressure: [review](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md).
+      D52/+1/phase-1 and D94/−1/phase-3; five transforms, both histories,
+      20 accepted cells, 12 events, 48 target steps and 24 final reads.
+      Exact normalized topology and zero saved numerical covariance error;
+      unchanged 2e-13 comparison budget. No uniform or chart-symmetry credit.
+    - [x] C_OS scoped user acceptance on 2026-10-13: 20 cells; siblings remain open.
+    - [ ] C_CI ordering/relabeling/signed covariance and separate acceptance.
+    - [ ] A_CI ordering/relabeling/signed covariance and separate acceptance.
+    - [ ] A_PC ordering/relabeling/signed covariance and separate acceptance.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.

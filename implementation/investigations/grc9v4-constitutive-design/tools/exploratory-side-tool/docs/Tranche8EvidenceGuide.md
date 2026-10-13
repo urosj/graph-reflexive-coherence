@@ -18,6 +18,17 @@ nonempty operational domain and runtime obligation remain open. Passing
 integrity checks change none of these dispositions; native trajectories are
 not rerun. The selected view links the separate evidence layers and ledger scope.
 
+P9-8.4e now exposes C_OS ordering/relabeling/signed covariance: 20 accepted
+history cells (2026-10-13), on D52 and D94 with five explicit transforms.
+Twelve native events, 48 target steps and 24 final reads pass. This does not
+cover chart rotation/reflection or sibling realizations. Select
+`tranche8_status(root, family="C_OS", checkpoint="8.4e")` in Python or
+`status --family C_OS --checkpoint 8.4e` in the Tranche 8 CLI. Use
+`verify-retained --family C_OS --checkpoint 8.4e --recheck-numerics` only for
+an explicit dense/consumer recheck; routine status never executes native
+trajectories or dense equations. The browser's separate 8.4e section exposes
+inputs, results, plan and review; failed source authentication clears the view.
+
 The full A_PC campaign now passes twenty cases: forty history cells, four
 hundred native continuation steps and forty final reads. `full_campaign`
 distinguishes nineteen newly executed cases from one exact pilot reuse.

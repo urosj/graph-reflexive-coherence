@@ -2809,6 +2809,13 @@ retained checking performs the full consumer audit, and numerical rechecking
 is separately requested. Do not repeat the consumer audit for normal display.
 Keep all earlier exclusions and later covariance/atomicity obligations visible.
 
+P9-8.4e adds a separate ordering-covariance projection, initially C_OS only:
+20 accepted history cells (2026-10-13), 12 events, 48 target steps and 24 final reads.
+Expose five transforms and two layout bounds, not chart/phase covariance or
+uniform numerical error. Bind exact retained sources; keep status producer-free
+and expose dense/consumer checking only through explicit retained mode. API,
+CLI, notebook and browser project the separately pinned 20-cell acceptance.
+
 Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

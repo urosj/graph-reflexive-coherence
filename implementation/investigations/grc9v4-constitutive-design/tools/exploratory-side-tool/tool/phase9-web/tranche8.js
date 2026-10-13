@@ -176,6 +176,13 @@ export function renderTranche8(value, container, create = tag => document.create
     for (const key of ['inputs','results','review']) { link(refs,oracle[key],`Oracle ${key}`); append(refs,'span',' · '); }
   }
   append(container,'p',`Unexecuted 8.4d families: ${deep.families_not_executed.join(', ')}. No sibling credit; first group remains C_OS, C_CI, A_CI, A_PC.`);
+  append(container, 'h3', '8.4e ordering and signed covariance');
+  for (const row of c.ordering_covariance.family_results) {
+    append(container, 'p', `${row.family}: ${row.passing_pending_cells}/${row.required_cells} covariance history cells passing pending acceptance, ${row.accepted_cells} accepted; ${row.native_events} events, ${row.target_steps} target steps and ${row.final_reads} final reads. Maximum covariance discrepancy ${row.maximum_covariance_error}. Two layouts, five transforms; no chart-symmetry or uniform-domain claim.`);
+    const refs=append(container,'p','');
+    for(const key of ['inputs','results','plan','review']) { link(refs,row[key],key); append(refs,'span',' · '); }
+  }
+  append(container,'p',`Unexecuted 8.4e families: ${c.ordering_covariance.families_not_executed.join(', ')}. Aggregate remains open.`);
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {

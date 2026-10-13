@@ -7461,7 +7461,7 @@ export const TRANCHE8_EVIDENCE = {
       {
         "work_id": "P9-8.4e",
         "title": "Ordering, relabeling and signed-edge covariance",
-        "status": "pending",
+        "status": "partial_execution_accepted",
         "accepted": false
       },
       {
@@ -16831,6 +16831,82 @@ export const TRANCHE8_EVIDENCE = {
       "first_group_accepted_cells": 160,
       "first_group_closed": true
     },
+    "ordering_covariance": {
+      "checkpoint": "8.4e",
+      "family_results": [
+        {
+          "family": "C_OS",
+          "status": "accepted_bounded",
+          "required_cells": 20,
+          "passing_pending_cells": 0,
+          "accepted_cells": 20,
+          "native_events": 12,
+          "target_steps": 48,
+          "source_steps": 6,
+          "final_reads": 24,
+          "maximum_covariance_error": 0.0,
+          "transforms": [
+            "edge_order",
+            "node_order",
+            "relabel",
+            "signed",
+            "combined"
+          ],
+          "degrees": [
+            52,
+            94
+          ],
+          "native_trajectories_rerun": false,
+          "dense_comparisons_rerun": false,
+          "uniform_domain": false,
+          "aggregate_closed": false,
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md",
+            "sha256": "583b17dcf86d1e2e0d5671016fb8ba1331ce133164ab15b858d0272d5901b30f",
+            "revision": null,
+            "basis": "pinned_covariance_execution_and_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSInputs.json",
+            "sha256": "b04c6d3e50540c172f5b35aa869ea801f55f2cf3be367130aff92a6b2006bb2d",
+            "revision": null,
+            "basis": "pinned_covariance_execution_and_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSResults.json",
+            "sha256": "5e1642e44b1b93847131c2dd2b564e0641e243bee1f0d6afc313270fa4b21fb8",
+            "revision": null,
+            "basis": "pinned_covariance_execution_and_scoped_acceptance"
+          },
+          "plan": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSPlan.md",
+            "sha256": "380f0e4da8eb65e94fe8dda4dd77004be42c1c13b7327b4e5e916c282366cee0",
+            "revision": null,
+            "basis": "pinned_covariance_execution_and_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md",
+            "sha256": "583b17dcf86d1e2e0d5671016fb8ba1331ce133164ab15b858d0272d5901b30f",
+            "revision": null,
+            "basis": "pinned_covariance_execution_and_scoped_acceptance"
+          },
+          "comparison_scope": "two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound"
+        }
+      ],
+      "aggregate_closed": false,
+      "families_not_executed": [
+        "A_OS",
+        "A_CI",
+        "A_PC",
+        "A_CI_PC",
+        "A_RG2b",
+        "C_CI",
+        "C_PC",
+        "C_CI_PC",
+        "C_RG2b"
+      ]
+    },
     "required_cells": 322,
     "accepted_cells": 322,
     "pending_cells": 0,
@@ -18181,6 +18257,30 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_deep_execution_with_scoped_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSInputs.json",
+      "sha256": "b04c6d3e50540c172f5b35aa869ea801f55f2cf3be367130aff92a6b2006bb2d",
+      "revision": null,
+      "basis": "pinned_covariance_execution_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSPlan.md",
+      "sha256": "380f0e4da8eb65e94fe8dda4dd77004be42c1c13b7327b4e5e916c282366cee0",
+      "revision": null,
+      "basis": "pinned_covariance_execution_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSResults.json",
+      "sha256": "5e1642e44b1b93847131c2dd2b564e0641e243bee1f0d6afc313270fa4b21fb8",
+      "revision": null,
+      "basis": "pinned_covariance_execution_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md",
+      "sha256": "583b17dcf86d1e2e0d5671016fb8ba1331ce133164ab15b858d0272d5901b30f",
+      "revision": null,
+      "basis": "pinned_covariance_execution_and_scoped_acceptance"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
       "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca",
       "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -18319,5 +18419,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "96c61dbcd243effd59575a67e581b9000e5109396f084ea4d84916cdd5cef0b2"
+  "view_digest": "198c8cb909d486a3c62dc1a95f1835cd4ac2cfa8026ec1d65c97932b8ae049a0"
 };

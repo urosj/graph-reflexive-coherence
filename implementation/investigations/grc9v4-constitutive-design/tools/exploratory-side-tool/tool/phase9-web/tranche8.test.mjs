@@ -6,6 +6,23 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_OS ordering covariance is visible without acceptance or sibling credit', () => {
+  const view=evidence.coverage.ordering_covariance,row=view.family_results[0];
+  assert.equal(row.family,'C_OS'); assert.equal(row.passing_pending_cells,0);
+  assert.equal(row.accepted_cells,20); assert.equal(row.native_events,12);
+  assert.equal(row.target_steps,48); assert.equal(row.final_reads,24);
+  assert.equal(view.families_not_executed.length,9);assert.equal(view.aggregate_closed,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/C_OS: 0\/20 covariance history cells passing pending acceptance, 20 accepted/);
+  assert.ok(sourceURL(row.results).startsWith('/api/tranche8/source?'));
+  for(const mutate of [v=>v.aggregate_closed=true,v=>v.family_results[0].accepted_cells=0,
+      v=>v.family_results[0].uniform_domain=true,v=>v.families_not_executed.pop(),
+      v=>v.family_results[0].results.sha256='forged']) {
+    const forged=structuredClone(evidence);mutate(forged.coverage.ordering_covariance);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('deep A_CI oracle is visible without native or acceptance promotion', () => {
   const deep=evidence.coverage.deep_expansion;
   const row=deep.oracle_preparations.find(r=>r.family==='A_CI');

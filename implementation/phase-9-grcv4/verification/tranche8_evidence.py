@@ -16,6 +16,13 @@ from copy import deepcopy
 
 from tranche8_validation import ACTIVE, validation_session
 
+COVARIANCE_COS_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSInputs.json": "b04c6d3e50540c172f5b35aa869ea801f55f2cf3be367130aff92a6b2006bb2d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSResults.json": "5e1642e44b1b93847131c2dd2b564e0641e243bee1f0d6afc313270fa4b21fb8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSPlan.md": "380f0e4da8eb65e94fe8dda4dd77004be42c1c13b7327b4e5e916c282366cee0",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md": "583b17dcf86d1e2e0d5671016fb8ba1331ce133164ab15b858d0272d5901b30f"
+}
+
 ROOT = Path(__file__).resolve().parents[3]
 PHASE = "implementation/phase-9-grcv4/"
 BASE = PHASE + "tranche-8/"
@@ -317,13 +324,15 @@ class Sources:
             boundary_pins.update(DEEP_APC_HISTORY_SOURCES)
             boundary_pins.update(DEEP_APC_JOINT_SOURCES)
             boundary_pins.update(DEEP_APC_FULL_SOURCES)
+            boundary_pins.update(COVARIANCE_COS_SOURCES)
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_full_coupled_execution_and_scoped_acceptance" if name in DEEP_APC_FULL_SOURCES else
+                    basis=("pinned_covariance_execution_and_scoped_acceptance" if name in COVARIANCE_COS_SOURCES else
+                        "pinned_full_coupled_execution_and_scoped_acceptance" if name in DEEP_APC_FULL_SOURCES else
                         "pinned_coupled_witnesses_not_family_acceptance" if name in DEEP_APC_JOINT_SOURCES else
                         "pinned_eligible_source_failed_target_history_companion" if name in DEEP_APC_HISTORY_SOURCES else
                         "pinned_scoped_exclusion_acceptance_and_failed_source_companion" if name in DEEP_APC_COMPANION_SOURCES else
@@ -1102,6 +1111,7 @@ def _build(root):
     child.update(status="accepted_bounded", accepted=True)
     deep = deep_view(sources)
     next(r for r in children if r["work_id"] == "P9-8.4d").update(status="partial_execution_accepted", accepted=False)
+    next(r for r in children if r["work_id"] == "P9-8.4e").update(status="partial_execution_accepted", accepted=False)
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
         runtime_scope_snapshot=scope,
@@ -1114,6 +1124,7 @@ def _build(root):
                            outcome_counts=closeout["outcome_counts"], families=large, catalog_size=42),
         coverage=dict(record=sources.ref(coverage_path), children=children, families=rows, runs=runs,
                       oracle_and_pressure=supplements, boundary_contract=boundary_view, deep_expansion=deep,
+                      ordering_covariance=covariance_view(sources),
                       required_cells=322, accepted_cells=len(covered), pending_cells=len(cells) - len(covered),
                       executed_pending_cells=len(pending_cells),
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),
@@ -1273,7 +1284,17 @@ def family_status(root, family, checkpoint="8.4c"):
     """Selected checkpoint/family only; not full-index or boundary validity."""
     import importlib
     import phase9_implementation_policy as policy
-    require(checkpoint in ("8.4c", "8.4d"), "unknown family checkpoint")
+    require(checkpoint in ("8.4c", "8.4d", "8.4e"), "unknown family checkpoint")
+    if checkpoint == "8.4e":
+        require(family == "C_OS", "ordering covariance not executed for this family")
+        policy.restore_packed_evidence(root)
+        with validation_session(("p984e_cos",), root=root):
+            sources = Sources(root)
+            view = covariance_view(sources)
+            return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
+                scope="selected_family_only_not_execution_permission", native=view["family_results"][0],
+                source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
+                other_families_checked=False, native_trajectories_rerun=False)
     if checkpoint == "8.4d":
         require(family in ("C_OS", "C_CI", "A_CI", "A_PC"), "deep evidence unavailable for this family")
         policy.restore_packed_evidence(root)
@@ -1314,6 +1335,21 @@ def family_status(root, family, checkpoint="8.4c"):
             other_families_checked=False, native_trajectories_rerun=False)
 
 
+def covariance_view(sources):
+    import p984e_cos as covariance
+    summary = covariance.check(sources.read(covariance.INPUTS), sources.read(covariance.RESULTS))
+    review = sources.raw(covariance.REVIEW).decode()
+    require("## Scoped user acceptance" in review
+            and sources.read(covariance.RESULTS)["record_digest"] in review,
+            "missing or unbound C_OS covariance acceptance")
+    summary.update(status="accepted_bounded", accepted_cells=20, passing_pending_cells=0)
+    row = dict(summary, acceptance=sources.ref(covariance.REVIEW, anchor="scoped-user-acceptance"), inputs=sources.ref(covariance.INPUTS), results=sources.ref(covariance.RESULTS),
+               plan=sources.ref(covariance.PLAN), review=sources.ref(covariance.REVIEW),
+               comparison_scope="two_layouts_five_transforms_two_steps_per_role_not_chart_symmetry_or_uniform_error_bound")
+    return dict(checkpoint="8.4e", family_results=[row], aggregate_closed=False,
+                families_not_executed=[f for f in FAMILIES if f != "C_OS"])
+
+
 def next_work(value):
     c = value["coverage"]
     boundary_summary = " ".join(
@@ -1328,7 +1364,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. Next proceed to first-group .e covariance. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. First-group .e C_OS has 20 accepted covariance cells on two layouts and five transforms. Next C_CI. Chart symmetries remain .f. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -1337,10 +1373,22 @@ def main():
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
     parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"))
     parser.add_argument("--recheck-numerics", action="store_true")
-    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d"), default="8.4b")
+    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d", "8.4e"), default="8.4b")
     parser.add_argument("--oracle", action="store_true", help="check A_OS or A_CI 8.4c independent oracle scope, not native execution")
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
+    if args.checkpoint == "8.4e":
+        require(args.family == "C_OS" and not args.oracle and not args.preparation,
+                "select C_OS ordering covariance, not oracle/preparation")
+        require(args.action in ("status", "verify-retained")
+                and (not args.recheck_numerics or args.action == "verify-retained"), "invalid covariance mode")
+        if args.action == "status":
+            print(json.dumps(family_status(ROOT, args.family, args.checkpoint), indent=2))
+        else:
+            subprocess.run([sys.executable, str(ROOT / HERE / "tranche8_retained.py"),
+                str(ROOT / HERE / "p984e_cos.py"), "check", *(["--recheck-numerics"] if args.recheck_numerics else [])],
+                cwd=ROOT, check=True)
+        return
     if args.checkpoint == "8.4d":
         if args.family in ("A_CI", "A_PC"):
             require(args.family == "A_CI" or not args.oracle, "A_PC uses its in-case independent preflight")

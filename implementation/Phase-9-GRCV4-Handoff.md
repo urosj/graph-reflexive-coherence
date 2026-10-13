@@ -1,6 +1,23 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — first-group P9-8.4d accepted
+## Current checkpoint — C_OS ordering covariance accepted
+
+Branch `work/p9-8-4e` starts from the no-fast-forward P9-8.4d merge on main.
+The [C_OS covariance review](./phase-9-grcv4/tranche-8/P9-8.4e-COSReview.md)
+records 20 accepted history cells (2026-10-13): five transforms on D52 and D94,
+both current/reset. Twelve events, 48 target steps, six source steps and 24
+final reads pass. Saved numerical covariance discrepancy is zero in these
+bounded comparisons; no general bitwise or uniform-domain claim follows.
+The frozen edge-order vector, node order, labels, signed orientation and their
+composition are covered. Chart/phase covariance remains P9-8.4f.
+
+Side-tool API/CLI, browser and notebook expose checkpoint `8.4e`, family
+`C_OS`, with 20 accepted cells. Explicit retained numerical checking is
+separate from routine status. Large evidence is byte-exact XZ; older evidence
+and production/spec sources are unchanged. Next: C_CI; A_CI and A_PC follow before the remaining six families. Do not
+reopen the accepted first-group `.d` checkpoint or infer sibling credit.
+
+## Prior checkpoint — first-group P9-8.4d accepted
 
 The [full coupled A_PC campaign](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md)
 passes all 20 D59/66/73/94 cases: 40 histories, 400 native continuation steps
