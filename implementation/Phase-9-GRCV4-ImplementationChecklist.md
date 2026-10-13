@@ -3310,6 +3310,20 @@ the full ten-profile plan.
     passed certificates, computed reads/roots, incomplete probes and rejection.
     New A scope needs oracle-before-runtime review; cyclic RG2b needs a new
     proved completion. Unresolved rows remain open and visible.
+    - [x] C_OS equation preflight: four unchanged source/target × current/reset
+      points, independent dense equations and exact FLINT bounds on represented
+      oracle geometry. Four focused pressure tests; no native admission credit.
+    - [x] C_OS pointwise regularity/sign successor implemented: equivalent
+      regularity proof, four exact-real and four conditional staged-positive
+      resource enclosures, focused singularity/rounding/native-stage pressure.
+      No parameter or tolerance changes; bounded checkpoint accepted 2026-10-13.
+      [Result and scope](./phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsReview.md).
+    - [ ] C_OS native/validated-current bridge: resolve incomplete native
+      checking. Proposed shared certified solver/conditioning optimization and
+      proven regularity shortcut are not started; preserve rounding and
+      conditioning/residual checks. Complete native charge/final-C admission;
+      pointwise resource signs alone do not close this item. LG-C-SELECTOR and
+      LG-OS-SPLIT native integration remain open; no `.h` readiness yet.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.

@@ -1,0 +1,92 @@
+{
+  "schema": "p984g-cos-bounds-inputs-v1",
+  "cases": [
+    [
+      "source",
+      "current"
+    ],
+    [
+      "source",
+      "reset"
+    ],
+    [
+      "target",
+      "current"
+    ],
+    [
+      "target",
+      "reset"
+    ]
+  ],
+  "bits": 192,
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cos_bounds.py",
+      "sha256": "d9544cddd7ecb1babb3629c33681892982725b0387ddc099723ab4ac49c26e39"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cos_bounds.py",
+      "sha256": "f84df33548a7502e92c34d82b557665a887d23c70f017f436d104624baf0e794"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsPlan.md",
+      "sha256": "cac8de1f42cdca7c25f4564df825719c0220670aec590c5f2e580e52c29e278f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cos.py",
+      "sha256": "4d4badbca2875a301526d8239e7454eb07896cb3b8fcc8b7ab2674c66843507e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cos.py",
+      "sha256": "d9a7609f5bdf3337d24327ad089938a45450247a3520bf006151bf662b4907db"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSInputs.json",
+      "sha256": "6704e0b7e88dd1882bdaf9c33efa3ae41bb50243dd63dc9d8b2bcb23f7b667ee"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSResults.json",
+      "sha256": "371c3c24b2d03ec3d1093e58c7dbac71692d1dffe947756c5a9aa3b9d284b020"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS.json",
+      "sha256": "0d67f3c26289bd305ae5438bfdfaea638a328a977c632ac5fbe39bf83fa71d44"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "6e951a7393f1c95f77acbf5de0ca0e11f42cf5acacaf098b123ba3b423af5a0e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "e5dacafed23c96f84b046bd4ddb991a295e9ec18eab978478b4b31fd5f1ba18e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "1f18ba4b5ae1ac315c81ef9fb47767b91d512e3c35402aa89589f7d3baed52d0"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix.py",
+      "sha256": "8dfde86b5ee48e2b9d2c0d968f72ffc98f9aca13f01c04f435ac537441cdc951"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "c965f0ec7165ebe769cf4dd25ece98349213da1ae98f378acc0db8c1d231bebc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    }
+  ],
+  "source_configuration": "unchanged_P9_8_3_C_OS",
+  "consumer": "implementation/phase-9-grcv4/verification/p984g_cos_bounds.py",
+  "retained_budget_bytes": 500000,
+  "native_implementation_changed": false,
+  "native_admission": false,
+  "ready_for_8_4h": false,
+  "scope": "pointwise_full_law_and_conditional_staged_outputs_not_trajectory_or_lifecycle",
+  "record_digest": "3137d3325cdf635563810307ee00f2038ef6a8fd5c3091d2a40aacdbe2982086"
+}

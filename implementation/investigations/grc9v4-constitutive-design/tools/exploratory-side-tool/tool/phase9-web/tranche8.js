@@ -199,6 +199,18 @@ export function renderTranche8(value, container, create = tag => document.create
   }
   append(container,'p',`Unexecuted 8.4e families: ${c.ordering_covariance.families_not_executed.join(', ')}. Aggregate remains open.`);
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
+  for(const row of c.larger_prerequisites.family_results) {
+    append(container,'h3',`8.4g ${row.family} equation preflight — native admission open`);
+    append(container,'p',`${row.cases} original independent equation points; ${row.exact_oracle_geometry_bounds} exact FLINT geometry bounds on represented oracle operands. The original preflight alone supplies no full error enclosure.`);
+    const bounds=row.pointwise_bounds;
+    append(container,'p',`Pointwise successor: ${bounds.exact_real_positive}/4 exact-real and ${bounds.staged_positive}/4 staged resource sign checks pass. Equivalent regularity proof needs no discarded inverse. Production shortcut not integrated; native admission, event and continuation credit remain absent. Not ready for 8.4h. Bounded research checkpoint accepted; optimization not started.`);
+    details(container,'Resource lower bounds and dense-proposal sign separation',bounds.points);
+    const boundRefs=append(container,'p','Bounds successor: ');
+    for(const key of ['inputs','results','plan','review']) {link(boundRefs,bounds[key],key);append(boundRefs,'span',' · ');}
+    details(container,'Remaining prerequisite obligations',row.open_obligations);
+    const refs=append(container,'p','');
+    for(const key of ['inputs','results','plan','review']) {link(refs,row[key],key);append(refs,'span',' · ');}
+  }
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {
     const p = append(container, 'p', `${row.family}: ${JSON.stringify(row.outcomes)}. Owners: ${row.next_owners.join(', ')}. `);

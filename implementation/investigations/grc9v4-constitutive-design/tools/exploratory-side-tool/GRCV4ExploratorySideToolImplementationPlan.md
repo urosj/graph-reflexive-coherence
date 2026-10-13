@@ -2873,3 +2873,18 @@ Expose A_CI `8.4f` in selected API/CLI, browser and notebook:
   continuation and pointwise certificates. Four frozen plans are reused.
   First-group `.f` is accepted at 96/96 cells; all-ten closure remains open.
   Status is producer-free; explicit numerical recheck remains available.
+
+### P9-8.4g larger graph prerequisites
+
+Selected-family API/CLI, browser and notebook expose the C_OS larger-graph
+equation preflight: four points, FLINT exact bounds on represented oracle
+geometry, with no full error enclosure in that original record. A separately
+bound successor supplies full-law pointwise resource enclosures, conditional
+staged outputs and the equivalent regularity proof. Surface both records and
+their 2026-10-13 bounded checkpoint acceptance, keeping execution flags intact;
+never silently upgrade the original. Keep native LG-C-SELECTOR/LG-OS-SPLIT
+integration and `.h` readiness open. Retained status checks arithmetic and
+source bindings without new current solves; explicit numerical recheck
+reconstructs the successor interval stages, not native trajectories.
+The generated browser projection uses smaller indentation without dropping
+fields, staying below the 1 MB raw-file threshold.

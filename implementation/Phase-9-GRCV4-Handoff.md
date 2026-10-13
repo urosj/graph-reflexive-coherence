@@ -1,6 +1,63 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — first-group P9-8.4f accepted at 96/96
+## Current checkpoint — C_OS P9-8.4g regularity and sign bounds
+
+On `work/p9-8-4g`, the [pointwise successor review](./phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsReview.md)
+records four passing exact-real and four conditional staged resource checks.
+Both target minima are about 1.0961e-13 and are rigorously positive at these
+points. A similarity proof supplies an equivalent regularity decision without
+constructing the discarded inverse. Exact singular/cycle boundaries and small
+native OS stage fidelity are pressured. No source parameters, tolerances,
+production code or original preflight evidence changed.
+
+Accepted by the user as a bounded checkpoint on 2026-10-13. Optimization is
+explicitly deferred. A 900-second native FLINT diagnostic remained in the first
+predictor: regularity inverse 52.4 seconds, retained-resolvent inverse 57.3
+seconds, its conditioning certificate 362.0 seconds, and unfinished physical
+current-block inverse at least 390.6 seconds. Removing only the first inverse
+does not resolve the cost. Proposed next: a shared certified direct-solve and
+conditioning component plus the proven C regularity shortcut, retaining
+rounding and all admission guards. A's physical current is already diagonal;
+its structural Read-Back uses the same matrix API. Nothing from this proposed
+optimization has started. Native read/charge/final-C admission remains open.
+No large native event/step,
+ten-step continuation, uniform domain or P9-8.4h readiness is claimed.
+
+Selected side-tool API/CLI `C_OS`/`8.4g`, browser and notebook expose both
+the original preflight and the separately pinned successor with bounded
+checkpoint acceptance. Original execution flags remain unchanged. Routine status
+does not solve currents; `verify-retained --recheck-numerics` explicitly
+reconstructs interval bounds, not native trajectories. Completed new evidence
+is 244,263 bytes; no large dumps or new compression required. C_CI, A_CI and
+A_PC follow the remaining C_OS prerequisites; first-group/all-ten parents stay open.
+
+## Prior checkpoint — C_OS P9-8.4g equation preflight
+
+Branch `work/p9-8-4g` starts from the no-ff `.f` merge on main.
+The [C_OS prerequisite review](./phase-9-grcv4/tranche-8/P9-8.4g-COSReview.md)
+retains four independent larger-graph equation points and exact FLINT bounds
+on their represented geometry operands. This is not native admission or
+P9-8.4h readiness. The original declaration and tolerances are unchanged.
+The 180-second FLINT native source probe was incomplete, not rejected.
+An interrupted diagnostic stack locates work in Candidate C's exact
+`regularity_block` inverse (`grc_v4_candidate_c.py`), dispatched to FLINT's
+`fmpq_mat.inv()`. This identifies a concrete next performance investigation,
+not permission to remove mathematical regularity checking or replace it with
+a floating-point determinant. No production source changed.
+Target one-step proposals have marginal resources around 1.10e-13, without
+a propagated error bound; no positive continuation domain is claimed.
+
+Four focused pressure tests pass. Next resolve the native/validated-current
+bridge and target sign margins; LG-C-SELECTOR and LG-OS-SPLIT remain open.
+Selected API/CLI checkpoint `8.4g`, browser and notebook expose this partial
+scope. No native events/steps or new acceptance. First-group `.g` and all-ten
+parents remain open; C_CI, A_CI and A_PC follow the C_OS prerequisite work.
+
+The full side-tool projection also reconciles the historical 8.4c storage
+document with the exact accepted `faccfa0e` 1 MB successor. Its scientific
+contract and retained digest are unchanged; any other difference still fails.
+
+## Prior checkpoint — first-group P9-8.4f accepted at 96/96
 
 A_CI acceptance is committed as `8d6ca7c9` on `work/p9-8-4f`.
 The [A_PC chart review](./phase-9-grcv4/tranche-8/P9-8.4f-APCReview.md)

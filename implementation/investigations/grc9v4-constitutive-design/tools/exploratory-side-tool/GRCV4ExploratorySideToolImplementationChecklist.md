@@ -2388,3 +2388,16 @@ instead of stale fixed totals and opens any pending case details explicitly.
   continuation and pointwise certificates. Four frozen plans are reused.
   First-group `.f` is accepted at 96/96 cells; all-ten closure remains open.
   Status is producer-free; explicit numerical recheck remains available.
+
+- [x] Expose C_OS `8.4g` larger equation preflight in selected API/CLI,
+  browser and notebook: four independent points and exact FLINT bounds on
+  represented oracle geometry. No native admission, event, step,
+  full error enclosure or `.h` readiness. Keep native obligations visible.
+  Reject forged sources and execution modes in the read-only launcher.
+- [x] Expose the separate C_OS regularity/sign successor at `8.4g`:
+  four exact-real and four conditional staged-positive resource enclosures,
+  unique represented currents and a proved regularity shortcut. Original
+  preflight remains unchanged; no production integration, native admission,
+  uniform domain or `.h` readiness. Bounded preflight/successor checkpoint
+  accepted 2026-10-13; original execution flags stay unchanged. Retained-only checks and
+  explicit interval replay stay distinct; source/scope mutations reject.

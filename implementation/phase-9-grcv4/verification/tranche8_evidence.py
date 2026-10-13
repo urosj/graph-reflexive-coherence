@@ -16,6 +16,20 @@ from copy import deepcopy
 
 from tranche8_validation import ACTIVE, validation_session
 
+LARGER_COS_BOUNDS_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsInputs.json": "82f32adb6b551aa5a955f631010f9a6937ff757a528a0f4d6b46db8f920a9dda",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsResults.json": "45ca2fa88ad865612af6a546a2226dec4058c5f8d68b65a7bf51be9cff36f95d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsPlan.md": "cac8de1f42cdca7c25f4564df825719c0220670aec590c5f2e580e52c29e278f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsReview.md": "279e986f9631dbf33e6992073da60616a9ed69bf658b84d5353ddfb1d29993f0"
+}
+
+LARGER_COS_SOURCES = {
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSInputs.json': '6704e0b7e88dd1882bdaf9c33efa3ae41bb50243dd63dc9d8b2bcb23f7b667ee',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSResults.json': '371c3c24b2d03ec3d1093e58c7dbac71692d1dffe947756c5a9aa3b9d284b020',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSPlan.md': '59e97792c3f9258f8009bd33060f25b5ae069e554c5319e892f7eb35ee578899',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSReview.md': '8846a32f33864afbe718bf293d3323db923fe86c1cd52af80c39250d7103ac1a',
+}
+
 CHART_APC_SOURCES = {
     'implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCInputs.json': 'b4d581c9b6bc060d568f9602cc7baa9b4d6654107a503ef18d9e4ed3aa156a72',
     'implementation/phase-9-grcv4/tranche-8/P9-8.4f-APCResults.json': 'e10656da11f663cbf82c6634281c6ebe8a720b57be727e8a4caefd7ce6736083',
@@ -378,6 +392,8 @@ class Sources:
             boundary_pins.update(CHART_CCI_SOURCES)
             boundary_pins.update(CHART_ACI_SOURCES)
             boundary_pins.update(CHART_APC_SOURCES)
+            boundary_pins.update(LARGER_COS_SOURCES)
+            boundary_pins.update(LARGER_COS_BOUNDS_SOURCES)
             boundary_pins.update(COVARIANCE_CCI_SOURCES)
             boundary_pins.update(COVARIANCE_ACI_SOURCES)
             boundary_pins.update(COVARIANCE_APC_SOURCES)
@@ -387,7 +403,9 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance" if name in CHART_APC_SOURCES else
+                    basis=("pinned_larger_pointwise_bounds_not_native_admission" if name in LARGER_COS_BOUNDS_SOURCES else
+                        "pinned_larger_equation_preflight_not_native_admission" if name in LARGER_COS_SOURCES else
+                        "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance" if name in CHART_APC_SOURCES else
                         "pinned_A_CI_unsigned_history_joint_root_chart_covariance_and_scoped_acceptance" if name in CHART_ACI_SOURCES else
                         "pinned_C_CI_joint_root_chart_covariance_and_scoped_acceptance" if name in CHART_CCI_SOURCES else
                         "pinned_C_OS_chart_covariance_and_scoped_acceptance" if name in CHART_COS_SOURCES else
@@ -998,10 +1016,10 @@ def _build(root):
     ready, owners = policy.leaf_permissions(sources.root)
     import prepare_p984c_boundaries as boundary
     boundary_contract = sources.read(boundary.OUTPUT)
-    boundary.validate(boundary_contract, sources.root)
+    check_boundary_storage_successor(boundary, boundary_contract, sources.root)
     import test_p984c_mechanics as mechanics_checks
     mechanics_result = sources.read(mechanics_checks.RESULT)
-    mechanics_checks.check(mechanics_result)
+    check_mechanics_storage_successor(mechanics_checks, mechanics_result)
     require("## Scoped user acceptance" in sources.raw(mechanics_checks.REVIEW).decode(), "missing shared mechanics decision")
     require("## Scoped user acceptance" in sources.raw(boundary.REVIEW).decode(), "missing boundary contract decision")
     boundary_view = dict(record=sources.ref(boundary.OUTPUT), review=sources.ref(boundary.REVIEW),
@@ -1189,6 +1207,7 @@ def _build(root):
         coverage=dict(record=sources.ref(coverage_path), children=children, families=rows, runs=runs,
                       oracle_and_pressure=supplements, boundary_contract=boundary_view, deep_expansion=deep,
                       ordering_covariance=covariance_view(sources),chart_covariance=chart_view(sources),
+                      larger_prerequisites=larger_view(sources),
                       required_cells=322, accepted_cells=len(covered), pending_cells=len(cells) - len(covered),
                       executed_pending_cells=len(pending_cells),
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),
@@ -1203,8 +1222,49 @@ def _build(root):
     return value
 
 
+def check_boundary_storage_successor(boundary, retained, root):
+    """Only the accepted 1 MB storage-policy successor differs from 8.4c.
+
+    Reconstruct every scientific/declaration field unchanged. Do not rewrite
+    the historical contract or accept an arbitrary edited storage document.
+    """
+    path='docs/reference/EvidenceStorage.md'
+    commit='faccfa0e2887ed411325ab19fd3151c394d0b08a'
+    old='3cbc5e3d638a0281df0d94a98e282a9c59d29de8bccef0bf1224ad955d8bb11e'
+    new='89e4728977ee45c8ea158179c3a5e7329fa5f45484c5df3e289c2ea3361f4a63'
+    git(root,'merge-base','--is-ancestor',commit,'HEAD')
+    require(hashlib.sha256(git(root,'show',commit+':'+path)).hexdigest()==new
+        and hashlib.sha256((Path(root)/path).read_bytes()).hexdigest()==new,
+        'unrecognized storage-policy successor')
+    require(hashlib.sha256(git(root,'show',commit+'^:'+path)).hexdigest()==old,
+        'storage-policy predecessor mismatch')
+    reconstructed=boundary.build(root)
+    row=next(r for r in reconstructed['source_bindings'] if r['path']==path)
+    require(row['sha256']==new,'storage changed during reconstruction')
+    row['sha256']=old
+    require(boundary.seal(reconstructed)==retained,'boundary contract differs beyond accepted storage policy')
+
+
+def check_mechanics_storage_successor(checker, retained):
+    """Validate a detached metadata adaptation; original execution stays pinned.
+
+    The preceding boundary check authenticates the exact accepted document
+    transition. All runtime-source bindings and scientific fields still pass
+    through the unchanged mechanical validator.
+    """
+    require(retained==checker.contract.seal(retained),'original mechanical digest drift')
+    adapted=deepcopy(retained)
+    row=next(r for r in adapted['source_bindings'] if r['path']=='docs/reference/EvidenceStorage.md')
+    require(row['sha256']=='3cbc5e3d638a0281df0d94a98e282a9c59d29de8bccef0bf1224ad955d8bb11e',
+            'unrecognized mechanical storage predecessor')
+    row['sha256']='89e4728977ee45c8ea158179c3a5e7329fa5f45484c5df3e289c2ea3361f4a63'
+    checker.check(checker.contract.seal(adapted))
+
+
 def browser_source(value):
-    return "// Generated from checked retained Tranche 8 evidence; not new authority.\nexport const TRANCHE8_EVIDENCE = " + json.dumps(value, indent=2, ensure_ascii=False) + ";\n"
+    # Smaller indentation preserves every field while keeping this generated
+    # executable asset below the raw-file storage threshold; no lossy summary.
+    return "// Generated from checked retained Tranche 8 evidence; not new authority.\nexport const TRANCHE8_EVIDENCE = " + json.dumps(value, indent=1, ensure_ascii=False) + ";\n"
 
 
 def checked(root=ROOT):
@@ -1344,11 +1404,47 @@ def deep_view(sources):
         other_family_credit=0, successive_event_credit=0)
 
 
+def larger_view(sources):
+    import p984g_cos as preflight
+    import p984g_cos_bounds as bounds
+    m,r=sources.read(preflight.INPUTS),sources.read(preflight.RESULTS)
+    row=preflight.check(m,r)
+    row.update(inputs=sources.ref(preflight.INPUTS),results=sources.ref(preflight.RESULTS),
+        plan=sources.ref(preflight.PLAN),review=sources.ref(preflight.REVIEW))
+    bm,br=sources.read(bounds.INPUTS),sources.read(bounds.RESULTS)
+    successor=bounds.check(bm,br)
+    successor.update(inputs=sources.ref(bounds.INPUTS),results=sources.ref(bounds.RESULTS),
+        plan=sources.ref(bounds.PLAN),review=sources.ref(bounds.REVIEW),
+        pointwise_resource_enclosures=True,uniform_domain=False,
+        conditional_staged_outputs=True,production_shortcut_integrated=False,
+        points=[dict(graph=c['graph'],role=c['role'],
+            exact_real_minimum_lower=c['exact_real']['minimum_lower'],
+            staged_minimum_lower=c['staged']['minimum_lower'],
+            dense_proposal_sign_separation=c['staged']['minimum_oracle_sign_separation']) for c in br['cases']])
+    for summary,review in ((row,preflight.REVIEW),(successor,bounds.REVIEW)):
+        require('## Scoped user acceptance' in sources.raw(review).decode(),
+            'missing larger C_OS bounded checkpoint acceptance')
+        summary.update(user_accepted=True,acceptance_scope='bounded_research_checkpoint_not_native_admission',
+            acceptance=sources.ref(review,anchor='scoped-user-acceptance'))
+    row['pointwise_bounds']=successor
+    row['open_obligations']=['proposed certified shared solver/conditioning and C regularity shortcut; not started; preserve rounding and admission guards',
+        'complete native read/residual/charge/final-C admission; then assess 8.4h readiness']
+    return dict(family_results=[row],aggregate_closed=False,first_group_closed=False,
+        families_without_preflight=[f for f in FAMILIES if f!='C_OS'])
+
+
 def family_status(root, family, checkpoint="8.4c"):
     """Selected checkpoint/family only; not full-index or boundary validity."""
     import importlib
     import phase9_implementation_policy as policy
-    require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f"), "unknown family checkpoint")
+    require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g"), "unknown family checkpoint")
+    if checkpoint == "8.4g":
+        require(family=='C_OS','larger prerequisite preflight not available for this family')
+        sources=Sources(root)
+        return dict(schema="phase9_tranche8_family_status_v1",family=family,checkpoint=checkpoint,
+            scope="equation_preflight_not_native_admission",oracle=larger_view(sources)['family_results'][0],
+            source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
+            other_families_checked=False,native_trajectories_rerun=False)
     if checkpoint == "8.4f":
         require(family in ("C_OS","C_CI","A_CI","A_PC"), "chart covariance not executed for this family")
         policy.restore_packed_evidence(root)
@@ -1484,10 +1580,19 @@ def main():
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
     parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"))
     parser.add_argument("--recheck-numerics", action="store_true")
-    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d", "8.4e", "8.4f"), default="8.4b")
+    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d", "8.4e", "8.4f", "8.4g"), default="8.4b")
     parser.add_argument("--oracle", action="store_true", help="check A_OS or A_CI 8.4c independent oracle scope, not native execution")
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
+    if args.checkpoint == '8.4g':
+        require(args.family=='C_OS' and not args.oracle and not args.preparation,'select C_OS prerequisite preflight')
+        require(args.action in ('status','verify-retained') and
+            (not args.recheck_numerics or args.action=='verify-retained'),'invalid prerequisite mode')
+        if args.action=='status':print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2))
+        else:
+            subprocess.run([sys.executable,str(ROOT/HERE/'tranche8_retained.py'),
+                str(ROOT/HERE/'p984g_cos_bounds.py'),'check',*(['--recheck-numerics'] if args.recheck_numerics else [])],cwd=ROOT,check=True)
+        return
     if args.checkpoint == "8.4f":
         require(args.family in ("C_OS","C_CI","A_CI","A_PC") and not args.oracle and not args.preparation,
             "select C_OS/C_CI/A_CI/A_PC chart covariance")

@@ -6,6 +6,32 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('larger equation preflight confers no native admission or readiness', () => {
+  const row=evidence.coverage.larger_prerequisites.family_results[0];
+  assert.equal(row.family,'C_OS'); assert.equal(row.cases,4);
+  assert.equal(row.user_accepted,true);
+  assert.equal(row.pointwise_bounds.user_accepted,true);
+  assert.equal(row.acceptance_scope,'bounded_research_checkpoint_not_native_admission');
+  for(const key of ['native_admission','ready_for_8_4h','full_error_enclosure','aggregate_closed']) {
+    assert.equal(row[key],false);
+    const forged=structuredClone(evidence);
+    forged.coverage.larger_prerequisites.family_results[0][key]=true;
+    assert.throws(()=>checkedTranche8(forged));
+  }
+  const container=element('div'); renderTranche8(evidence,container,element);
+  assert.match(text(container),/8.4g C_OS equation preflight/);
+  assert.match(text(container),/Not ready for 8.4h/);
+  assert.match(text(container),/Bounded research checkpoint accepted; optimization not started/);
+  assert.equal(row.pointwise_bounds.staged_positive,4);
+  assert.equal(row.pointwise_bounds.exact_real_positive,4);
+  assert.match(text(container),/Production shortcut not integrated/);
+  for(const key of ['native_admission','ready_for_8_4h','production_shortcut_integrated','uniform_domain']) {
+    const forged=structuredClone(evidence);
+    forged.coverage.larger_prerequisites.family_results[0].pointwise_bounds[key]=true;
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('C_OS chart covariance separates exact plans from accepted native cells', () => {
   const view=evidence.coverage.chart_covariance,row=view.family_results[0];
   assert.equal(row.family,'C_OS');assert.equal(row.passing_pending_cells,0);

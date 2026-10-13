@@ -2783,6 +2783,17 @@ independent oracle-before-runtime workflow; successful cyclic native RG2b needs
 a separately proved completion. P9-8.6, public lifecycle and the performance/cache
 review remain open; no accepted support claim is widened by this preparation.
 
+The first C_OS `8.4g` increment retains four independent larger-graph equation
+points with FLINT exact bounds on represented oracle geometry. See the
+[preflight review](./phase-9-grcv4/tranche-8/P9-8.4g-COSReview.md).
+Its [pointwise successor](./phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsPlan.md)
+derives an equivalent regularity decision without a discarded inverse and
+encloses exact-real and staged resource outputs separately. Preserve the
+original configuration and old evidence. Integration of the shortcut into
+production, native residual/charge/final-C admission and subsequent runtime
+feasibility remain separate obligations. Do not grant `.h` readiness merely
+from these pointwise certificates.
+
 #### P9-8.4–8.6 runtime conformance
 
 The 2026-10-05 repository UX continuation adds a
