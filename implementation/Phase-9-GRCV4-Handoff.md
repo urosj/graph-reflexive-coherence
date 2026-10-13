@@ -1,6 +1,141 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — A_CI native deep result accepted
+## Current checkpoint — first-group P9-8.4d accepted
+
+The [full coupled A_PC campaign](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md)
+passes all 20 D59/66/73/94 cases: 40 histories, 400 native continuation steps
+and 40 final reads. Nineteen cases are new; the exactly bound D94 pilot and
+its twenty steps are reused. The source is reused without another beat;
+allocations are independently derived per layout. No law, timestep, tolerance
+or production change. All saved controls pass; the weakest margin ratio is
+about 1.645 at D73/E−1/P2/current. Some resources remain exactly zero.
+
+Accepted by the user on **2026-10-13**: **40/40 A_PC cells** and the
+**160-cell first-group P9-8.4d checkpoint** (C_OS, C_CI, A_CI, A_PC).
+All prior exclusions and partial failures remain separately visible. The
+runtime obligation and later `.e–h` work are not automatically closed.
+Next: first-group P9-8.4e covariance on a new branch after merging this
+checkpoint into main with `--no-ff`. The remaining six families stay open
+for second-group `.d` completion after first-group `.e–h`; all-ten `.d`
+is not closed. No further pilot checkpoint or numerical rerun is needed.
+
+Both full-campaign JSON files are byte-exact XZ under the 1 MB rule. Side-tool
+status shows authenticated saved coverage without repeating the full consumer
+audit; explicit retained checking remains available. The accepted
+`work/p9-8-4d` checkpoint is ready for the requested no-fast-forward merge. No production/spec edits, uniform neighborhood or general ATC claim.
+
+## Prior checkpoint — A_PC coupled D94 witness passes
+
+The [joint derivation and witness](./phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md)
+now establish a successful bounded D94/E−1/P3 case. Initial current W mean
+31/32 plus the derived shares (47/128, 47/128, 17/64) preserve source eligibility
+and pass both-role preflight, one native expansion, twenty native target steps,
+writer/consumer controls, replay and two fresh final reads. Law, timestep and
+tolerances are unchanged. This is **2/40 passing-pending cells, zero accepted**;
+nineteen layouts and A_PC `.d` remain open. Some resources stay exactly zero;
+no uniform neighborhood or all-source continuation claim follows.
+
+The earlier history-63/64 source with the same derived shares reached one
+committed event and one successful current step, then failed a fine
+source-staging effect-separation control. Retain that distinct result; do not
+confuse it with resource failure or full case success. The stronger contrast
+successor clears the same control by a minimum margin ratio about 2.850.
+All prior exclusions remain unchanged. The design-debt scope is unchanged and
+the runtime obligation stays open. Next extend the declared source/coupled
+allocation procedure to the other nineteen layouts, each with its own screen;
+do not assume universal shares. CLI/API/browser/notebook expose the separate
+runs. The 2.91 MB raw successor result is stored byte-exactly as XZ.
+Work remains uncommitted on `work/p9-8-4d`; no native production changes.
+
+## Prior checkpoint — A_PC history companion preserves trigger, fails target
+
+The 2026-10-13 [history-only companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md)
+is implemented and retained, pending user acceptance. It keeps original
+near-flat resources and increases only initial current W by 3/64, to mean
+63/64. The native source beat matches the independent equations. Fresh source
+eligibility passes (gradient squared about 0.000767555 < 0.25, signed Hessian
+negative), but D94/E−1/P3 fails its first current target update: one added node
+has about −9.91774e-6 resource, with a full enabled negative interval even after
+the existing 2^-40 error allowance. This is not a rounding ambiguity.
+
+This companion attempts zero native events and runs zero native target steps.
+Nineteen layouts and the gated ±1/256 history probes remain unexecuted. Retain
+the accepted original-source exclusion and the resource-only trigger rejection
+unchanged. A_PC `.d` still has zero completed/accepted cells; no successful
+neighborhood, general impossibility or aggregate closure follows.
+
+Next derive joint **history/allocation** feasibility constraints with eligible
+near-flat source resources, before selecting another witness. Changing history
+alone did not fix the frozen shares. Do not loosen thresholds or generalize the
+old entire-simplex exclusion to this changed source. Design debt stays resolved
+at its original scope; target-readmission/runtime evidence remains open.
+The side-tool exposes all three distinct evidence layers. New evidence above
+1 MB uses byte-exact XZ. Work remains uncommitted on `work/p9-8-4d`.
+
+## Prior checkpoint — A_PC exclusion accepted; first source companion rejects
+
+The user accepted the frozen-source exclusion and authorized a separate
+companion on 2026-10-12. The [follow-up](./phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionReview.md)
+preserves the full typed claim/debt traces and original evidence. It changes
+only initial current resources, conserves charge and retains distinct reset
+and W/Z histories. Its D94/E−1/P3 independent target pilot passes ten updates
+in both roles. **This is not a successful expansion domain:** one actual
+source beat followed by one native event attempt finds that the source is
+not a fresh hybrid spark candidate. Zero events commit; zero native target
+steps run; the complete lifecycle checkpoint remains unchanged. The source
+gradient squared is about 2.25675 against the strict upper threshold 0.25.
+
+The remaining nineteen companion cases were not run. A_PC `.d` stays open,
+with zero accepted cells. The port-allocation design debt is not reopened;
+its target-readmission/runtime obligation is not closed. No accepted claim,
+law, threshold, tolerance, production or specification file changed. The
+accepted exclusion and new follow-up are uncommitted.
+
+Next: analyze a source **history** companion under unchanged law, keeping
+trigger-eligible near-flat resources. Require fresh trigger eligibility and
+both-role continuation jointly before a broader native campaign. No new
+history companion or successful neighborhood is claimed yet. Retain the
+resource-only rejection as a control; do not weaken the trigger or hide it
+behind the passing target trajectory. CLI/API/notebook/browser expose the
+accepted exclusion separately from the failed native companion. New raw
+evidence over 1 MB uses byte-exact XZ and the storage manifest.
+
+## Prior checkpoint — A_PC frozen-source allocation exclusion
+
+The [D94 feasibility certificate](./phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md)
+excludes every simplex allocation for two current-history updates on all six
+declared D94 layouts, under the frozen A_PC source/history and zero target Z.
+Exact-real and existing-error-budget variants both exclude the full simplex;
+the least negative terminal bound is about −2.83369e-8. This is not a general
+A_PC or expansion impossibility claim, and no native event was run.
+
+Next requires a scoped decision to create a separately named **source companion**
+under the unchanged law. Further allocation-only tuning cannot fix this source.
+Do not edit the accepted/frozen source image or silently change transfers,
+timestep or tolerances. A companion needs its own ordinary source beat/trigger,
+charge and distinct histories, followed by both-role target continuation.
+The result and updated side-tool remain uncommitted and pending review.
+
+## Prior checkpoint — A_CI committed and A_PC held at preflight
+
+A_CI's accepted oracle/native work is committed as `11f3571b` on
+`work/p9-8-4d`. The next [A_PC checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md)
+has graph-specific whole-carrier bounds for all 20 deeper targets, but its
+D94 E−1 phase-three pilot fails before any native event: the first current
+update is about −7.4842e-5. A separately identified balanced control passes
+the first update but fails the second at about −1.5900e-7. Both exclusions
+have full enabled pointwise interval checks; reset passes the two checked
+updates. No general infeasibility result follows.
+
+There are zero new A_PC native events/steps or accepted cells; 19 cases remain
+unattempted. Next: resolve D94 both-role, multi-step resource feasibility under
+the frozen A_PC source/law before declaring a successor and resuming native
+execution. Do not repeat the all-family campaign or promote the passing carrier
+chart into continuation support. The first-group `.d` checkpoint stays open.
+CLI/API/notebook/browser expose the preflight hold separately from the three
+accepted families. New A_PC files remain uncommitted for review.
+
+## Accepted checkpoint — A_CI native deep result
 
 The user accepted the A_CI deep oracle and its separate native counterpart
 on 2026-10-12. The [native result](./phase-9-grcv4/tranche-8/P9-8.4d-ACIRuntimeReview.md)

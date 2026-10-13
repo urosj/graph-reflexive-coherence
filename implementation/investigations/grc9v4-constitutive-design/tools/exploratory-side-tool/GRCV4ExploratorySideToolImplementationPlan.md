@@ -2758,6 +2758,57 @@ pending/accepted counts; oracle acceptance never closes runtime cells. Selected 
 must not rebuild other families or recompute interval equations. Explicit
 retained numerical checking remains available; native execution follows review.
 
+A_PC `.d` currently stops at independent preflight despite passing whole-carrier
+chart bounds. Expose its original first-step and balanced-control second-step
+resource exclusions, both at declared represented prestates. A checked failed
+record remains failed: no new native event, continuation or accepted-cell credit.
+The selected family query and browser must show 19 unattempted cases and keep
+A_PC among native-unexecuted families. Explicit numerical checking recomputes
+the exclusions without native execution or an all-family campaign.
+
+The D94 allocation successor adds an entire-simplex exclusion for the frozen
+source on all six named layouts, including the existing represented-error
+budgets. Project its exact source/history scope and keep zero native/accepted
+credit. Selected retained verification checks both the prior point controls
+and the new certificate; interval recomputation remains explicit. The next
+decision is a separately declared source companion, not further share tuning.
+
+The exclusion is now separately accepted. Project its acceptance without
+promoting the new resource-only companion: independent both-role ten-step
+target pilot passes, but one native source beat leads to a rejected trigger.
+Expose one event attempt, zero commits/target steps, full lifecycle rollback,
+and the unchanged design-debt/open runtime-obligation scope. A_PC has attempted
+native evidence but no completed or accepted deep cells. Preserve the original
+preflight hold as historical evidence. Selected retained checking covers the
+exclusion and both companion layers; interval recomputation stays explicit.
+
+The history-only successor is also held: its native source beat and fresh
+trigger pass, but D94's first current target update is interval-negative,
+including the existing resource error allowance. Expose its independent
+diagnostic and zero event/target/neighbor counts separately. Do not overwrite
+the resource companion's native rejection or confer completed cells from
+passing source eligibility. Retained checking and explicit numerical diagnostic
+recomputation are available through the same selected A_PC `.d` interface.
+
+The coupled A_PC successor adds one passing D94 native case, twenty target
+steps and two final reads: two passing-pending cells, zero accepted. Project
+the latest run counts separately from the earlier allocation witness's one
+event/one step followed by effect-separation failure. Expose the constraints,
+mean-31/32 source, dyadic allocation and unchanged scope limits. No uniform
+domain or family closure. Selected retained dispatch explicitly admits the
+successor check-only modes and authenticates their additional records; it
+must never admit prepare/run/derive. Fix the older companion dispatch mismatch
+as part of this narrow integration, without rerunning historical trajectories.
+
+The full A_PC coupled campaign now supplies twenty passing cases, forty
+history cells, four hundred target steps and forty final reads. Nineteen
+cases are newly executed; the exact pilot is reused. Expose full-campaign
+counts separately from pilot and failed-companion layers. Forty cells are accepted (2026-10-13), closing the
+160-cell first-group checkpoint; six families and all-ten `.d` remain open. Status authenticates saved structure and scope; explicit
+retained checking performs the full consumer audit, and numerical rechecking
+is separately requested. Do not repeat the consumer audit for normal display.
+Keep all earlier exclusions and later covariance/atomicity obligations visible.
+
 Record the user-directed order: C_OS, C_CI, A_CI and A_PC through
   `.d–h`, then A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b.
   Keep the full ten-family scope; representatives confer no sibling credit.

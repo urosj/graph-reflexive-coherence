@@ -3179,13 +3179,58 @@ the full ten-profile plan.
         is not conserved. Captured consumers, history writers and replay checked.
       - [x] Separate native acceptance by the user on 2026-10-12. No uniform
         trajectory tube, successive-event or sibling credit is inferred.
+    - [x] A_PC: deeper native counterpart and separate acceptance.
+      - [x] Recompute existing whole-carrier bounds on all twenty named targets;
+        source bound about 506.592 remains below radius 2048, up to 23 vertices.
+      - [x] Gate on the largest pilot before native execution. Original D94
+        E−1 phase-three current history fails at update one; a balanced control
+        fails at update two. Both exclusions independently interval-checked.
+        See the [preflight hold](./phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md).
+      - [x] Resolve bounded both-role, multi-step D94 resource feasibility; declare any
+        justified successor separately. Neither a chart bound nor first-step
+        success closes this gap; no general infeasibility is established.
+        - [x] [Frozen-source allocation exclusion](./phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md):
+          all six D94 layouts, entire closed simplex, two current-history
+          updates; full enabled interval corrections and existing numerical
+          error allowances. No all-source/general-A_PC impossibility follows.
+        - [x] Accept the bounded exclusion and authorize a separate source
+          companion (2026-10-12); retain original evidence and typed ledger
+          traces. Port-allocation design debt unchanged, runtime route open.
+        - [x] Preregister and check the resource-only source companion:
+          both-role independent ten-step D94 target pilot passes, but one
+          actual source beat and one native event attempt fail the unchanged
+          hybrid trigger. Full lifecycle rollback checked; zero commits.
+        - [x] Preregister and test the [history-only companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md):
+          original resources, current W mean 63/64, reset and carriers unchanged.
+          One native source beat; fresh trigger passes, but D94 current target
+          step one is interval-negative (~−9.92e-6), beyond the existing error
+          allowance. No native event/target steps; nineteen layouts and gated
+          neighbors not run. Retained exclusion; no positive coverage credit.
+        - [x] Derive joint history/allocation constraints and select a dyadic
+          witness before enabled target execution. Preserve the 63/64 witness:
+          one event/one step pass, then a fine effect-separation control fails.
+        - [x] [Separate 31/32 successor](./phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md):
+          fresh source eligibility, both-role preflight, one native event,
+          twenty target steps, unchanged W/Z controls, replay and two final
+          reads pass. Pilot accepted within the complete campaign below. Original
+          exclusions unchanged; no uniform neighborhood or all-source claim.
+        - [x] Extend the source/coupled allocation procedure to the nineteen
+          remaining layouts, independently screening before native execution;
+          do not assume the pilot's shares generalize. Accept scope separately.
+      - [x] [Complete 20 native cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md),
+        independent comparisons, writer/Read-Back/history/replay pressure and
+        side-tool evidence. Nineteen new cases plus exact pilot reuse total
+        400 native target steps and 40 final reads. Earlier failures stay
+        distinct; unchanged tolerances, no uniform neighborhood or general ATC.
+      - [x] User acceptance of complete A_PC `.d` on 2026-10-13: 40 accepted
+        cells. No further pilot-only checkpoint or native rerun needed.
     Check BFS parent/rotor allocation, row/column balance, fresh references and
     both-role transfer/readmission/continuation against independent expectations.
     State finite depth/horizon and numerical domain; distinguish a deep pure
     plan from an event and any separately declared successive-event sequence.
-    - [ ] First-group checkpoint: review and accept this child's required
-      C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
-      advance ready rows without waiting for the remaining six families.
+    - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
+      A_CI and A_PC total 160 accepted cells. Continue first-group `.e`;
+      aggregate all-ten `.d` remains open for the six remaining families.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.

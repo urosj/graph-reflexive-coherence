@@ -16266,6 +16266,505 @@ export const TRANCHE8_EVIDENCE = {
             "basis": "pinned_deep_execution_with_scoped_acceptance"
           },
           "comparison_scope": "A_full_joint_root_pointwise_bounds_actual_history_writer_not_uniform_trajectory_tube"
+        },
+        {
+          "family": "A_PC",
+          "status": "accepted_bounded",
+          "native_cases": 20,
+          "attempted_cases": 20,
+          "unattempted_cases": 0,
+          "cases_required": 20,
+          "passed_cases": 20,
+          "required_cells": 40,
+          "successful_history_cells": 40,
+          "accepted_cells": 40,
+          "passing_pending_cells": 0,
+          "target_steps": 400,
+          "final_reads": 40,
+          "degrees": [
+            59,
+            66,
+            73,
+            94
+          ],
+          "maximum_core_depth": 4,
+          "native_trajectories_rerun": false,
+          "interval_equations_recomputed": false,
+          "successive_events": false,
+          "arbitrary_depth": false,
+          "user_accepted": false,
+          "aggregate_closed": false,
+          "failures": [],
+          "committed_events": 20,
+          "source_steps": 0,
+          "source_reused": true,
+          "source_companions_tested": 3,
+          "native_event_attempts": 20,
+          "count_scope": "full_twenty_layout_campaign_including_exact_pilot_reuse_prior_failures_separate",
+          "inputs": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json",
+            "sha256": "2044970cc9659caf3b2f52027e8f0e03fa61b7ed98c2fa248e1bca7a139bb6cc",
+            "revision": null,
+            "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+          },
+          "results": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullResults.json",
+            "sha256": "ac5749112b6585c26b454ed7f84146f26550a38db52c8b4ab57208ea941dd5ca",
+            "revision": null,
+            "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+          },
+          "review": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md",
+            "sha256": "bf10d06cb5ac223269267037c0423d8315a552231ed594cac4098bc2c8010dd6",
+            "revision": null,
+            "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+          },
+          "acceptance": {
+            "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md",
+            "sha256": "bf10d06cb5ac223269267037c0423d8315a552231ed594cac4098bc2c8010dd6",
+            "revision": null,
+            "basis": "pinned_full_coupled_execution_and_scoped_acceptance",
+            "anchor": "scoped-user-acceptance"
+          },
+          "full_campaign": {
+            "family": "A_PC",
+            "status": "accepted_bounded",
+            "cases_required": 20,
+            "attempted_cases": 20,
+            "unattempted_cases": 0,
+            "passed_cases": 20,
+            "native_cases": 20,
+            "committed_events": 20,
+            "target_steps": 400,
+            "final_reads": 40,
+            "required_cells": 40,
+            "passing_pending_cells": 0,
+            "accepted_cells": 40,
+            "new_source_steps": 0,
+            "newly_executed_cases": 19,
+            "reused_cases": 1,
+            "reused_target_steps": 20,
+            "native_trajectories_rerun": false,
+            "interval_equations_recomputed": false,
+            "verification_level": "authenticated_structure",
+            "failures": [],
+            "uniform_native_domain": false,
+            "user_accepted": false,
+            "aggregate_closed": false,
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json",
+              "sha256": "2044970cc9659caf3b2f52027e8f0e03fa61b7ed98c2fa248e1bca7a139bb6cc",
+              "revision": null,
+              "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullResults.json",
+              "sha256": "ac5749112b6585c26b454ed7f84146f26550a38db52c8b4ab57208ea941dd5ca",
+              "revision": null,
+              "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+            },
+            "plan": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullPlan.md",
+              "sha256": "b56d1caeab85a0371c774dc5e5b44d7843a78b1416c5fd0ceab677fb56119dd2",
+              "revision": null,
+              "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+            },
+            "review": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md",
+              "sha256": "bf10d06cb5ac223269267037c0423d8315a552231ed594cac4098bc2c8010dd6",
+              "revision": null,
+              "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+            },
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md",
+              "sha256": "bf10d06cb5ac223269267037c0423d8315a552231ed594cac4098bc2c8010dd6",
+              "revision": null,
+              "basis": "pinned_full_coupled_execution_and_scoped_acceptance",
+              "anchor": "scoped-user-acceptance"
+            }
+          },
+          "frozen_source_preflight": {
+            "family": "A_PC",
+            "status": "incomplete_campaign",
+            "native_cases": 0,
+            "attempted_cases": 1,
+            "unattempted_cases": 19,
+            "cases_required": 20,
+            "passed_cases": 0,
+            "required_cells": 40,
+            "successful_history_cells": 0,
+            "accepted_cells": 0,
+            "passing_pending_cells": 0,
+            "target_steps": 0,
+            "final_reads": 0,
+            "degrees": [
+              59,
+              66,
+              73,
+              94
+            ],
+            "maximum_core_depth": 4,
+            "native_trajectories_rerun": false,
+            "interval_equations_recomputed": false,
+            "successive_events": false,
+            "arbitrary_depth": false,
+            "user_accepted": false,
+            "aggregate_closed": false,
+            "failures": [
+              {
+                "case_id": "P984D-D94-E-1-P3::A_PC",
+                "event_committed": false,
+                "first_failure": {
+                  "stage": "independent_preflight",
+                  "role": "both",
+                  "index": 0,
+                  "type": "ValueError",
+                  "message": "negative next resource",
+                  "kind": "numerical_or_lifecycle_failure"
+                }
+              }
+            ]
+          },
+          "joint_witness": {
+            "status": "joint_witness_held",
+            "family": "A_PC",
+            "source_reused": true,
+            "new_source_steps": 0,
+            "attempted_cases": 1,
+            "native_cases": 1,
+            "committed_events": 1,
+            "passed_cases": 0,
+            "target_steps": 1,
+            "final_reads": 0,
+            "passing_pending_cells": 0,
+            "accepted_cells": 0,
+            "required_cells": 40,
+            "unattempted_cases": 19,
+            "first_failure": {
+              "stage": "target_continuation",
+              "role": "current",
+              "index": 1,
+              "type": "AssertionError",
+              "message": "full effect margin unresolved: delta=9.77e-15, errors=1.854e-15, ulp=8.882e-16",
+              "kind": "numerical_or_lifecycle_failure"
+            },
+            "native_trajectories_rerun": false,
+            "interval_equations_recomputed": false,
+            "uniform_native_domain": false,
+            "aggregate_closed": false,
+            "user_accepted": false,
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessInputs.json",
+              "sha256": "0b9355ea7d8dcbda94a2a80e708d18894c954f00f86d950f2f4ffd369f3e337d",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessResults.json",
+              "sha256": "35d6a21c09b206ccf2a5feadd9a991c77dfce9b6dde5dd02e92ef6f0e266427c",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "constraints": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointConstraints.json",
+              "sha256": "72db98f577f4e49e1e7ba8f6a44e6bcf4e12bee9f8c5d9a4b239ec2afb87f08e",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "plan": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointFeasibility.md",
+              "sha256": "50e1cbce93a65612d4209a505391d36b07a160276712bf6634b495405f19d493",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "failure_control": "same_source_next_current_effect_separation_not_resource_failure"
+          },
+          "joint_successor": {
+            "family": "A_PC",
+            "status": "positive_joint_witness_pending_acceptance",
+            "source_eligible": true,
+            "new_source_steps": 1,
+            "attempted_cases": 1,
+            "native_cases": 1,
+            "committed_events": 1,
+            "passed_cases": 1,
+            "target_steps": 20,
+            "final_reads": 2,
+            "passing_pending_cells": 2,
+            "accepted_cells": 0,
+            "required_cells": 40,
+            "unattempted_cases": 19,
+            "first_failure": null,
+            "native_trajectories_rerun": false,
+            "interval_equations_recomputed": false,
+            "uniform_native_domain": false,
+            "user_accepted": false,
+            "aggregate_closed": false,
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorInputs.json",
+              "sha256": "b92a98dc182b9029093b8adf8ea8d77309c705ef6c3c0e911170be5bdd4a9162",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorResults.json",
+              "sha256": "c3416a413782e812c3b96d48aae93137d9f927d5aafd8e5c620d4c3763ea807c",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "plan": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorPlan.md",
+              "sha256": "5bac0d2334ef4e23f82f2fd78187b998f7f61f347fa7b62f73756a695251d6ac",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "review": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md",
+              "sha256": "80d91acefca99be2511ffdd2090d6a5d5e413f19b065c382b60068a1ee651d10",
+              "revision": null,
+              "basis": "pinned_coupled_witnesses_not_family_acceptance"
+            },
+            "initial_history_mean": "31/32",
+            "shares": [
+              "47/128",
+              "47/128",
+              "17/64"
+            ]
+          },
+          "history_companion": {
+            "family": "A_PC",
+            "status": "history_companion_held",
+            "source_steps": 1,
+            "source_eligible": true,
+            "cases_required": 20,
+            "attempted_cases": 1,
+            "passed_cases": 0,
+            "native_cases": 0,
+            "committed_events": 0,
+            "target_steps": 0,
+            "final_reads": 0,
+            "accepted_cells": 0,
+            "passing_pending_cells": 0,
+            "required_cells": 40,
+            "failures": [
+              {
+                "case_id": "P984D-D94-E-1-P3::A_PC",
+                "first_failure": {
+                  "stage": "independent_preflight",
+                  "role": "both",
+                  "index": 0,
+                  "type": "ValueError",
+                  "message": "negative next resource",
+                  "kind": "numerical_or_lifecycle_failure"
+                }
+              }
+            ],
+            "native_trajectories_rerun": false,
+            "interval_equations_recomputed": false,
+            "uniform_neighborhood_proved": false,
+            "aggregate_closed": false,
+            "user_accepted": false,
+            "pressure": {
+              "case_id": "P984D-D94-E-1-P3::A_PC",
+              "role": "current",
+              "first_negative_step": 1,
+              "negative_nodes": 1,
+              "worst": {
+                "node_id": "grc-event-sha256:187a48f7466ec800357b176979b48779faa44d8214d5909d4b19bfc66a3a7eed/extra/2/01",
+                "interval": [
+                  "-130557535404778754425667862745792253328578845551523449061955/13164036458569648337239753460458804039861886925068638906788872192",
+                  "-2039961490699668037901060355403003958259044461742553891593/205688069665150755269371147819668813122841983204197482918576128"
+                ],
+                "represented_output": -9.917743377244081e-06
+              },
+              "neighbor_probes": 0,
+              "resource_error_budget": "1/1099511627776",
+              "negative_upper_with_budget": "-2039961303627458459545486825331345370574817945783188390665/205688069665150755269371147819668813122841983204197482918576128",
+              "native_steps": 0,
+              "native_events": 0,
+              "interval_equations_recomputed": false,
+              "claim_scope": "pointwise_enabled_equations_at_named_independent_preflight_input_not_general_infeasibility"
+            },
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionInputs.json",
+              "sha256": "4e0dbdd36444007abdf371fd86560f056e122d319eac5844230d91656fff3754",
+              "revision": null,
+              "basis": "pinned_eligible_source_failed_target_history_companion"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionResults.json",
+              "sha256": "1878085da9623d3e7dab0ef030b51cc73056411e1f58e0f0b8a0a6772316492e",
+              "revision": null,
+              "basis": "pinned_eligible_source_failed_target_history_companion"
+            },
+            "diagnostic": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionPressure.json",
+              "sha256": "280e7ba8860fa5ba17010701623eed14f26896f27a0d14ce2e7a3dfa643c0dff",
+              "revision": null,
+              "basis": "pinned_eligible_source_failed_target_history_companion"
+            },
+            "plan": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionPlan.md",
+              "sha256": "c5e7edfe4eb194caec2932601ebba6754b47df254578646fd12ef304f1442aaf",
+              "revision": null,
+              "basis": "pinned_eligible_source_failed_target_history_companion"
+            },
+            "review": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md",
+              "sha256": "2beb5cd96b11d37d8bbb2f86b58423217b56ece6e9ee71fbbbf03d68a11a761c",
+              "revision": null,
+              "basis": "pinned_eligible_source_failed_target_history_companion"
+            }
+          },
+          "source_companion": {
+            "independent": {
+              "status": "pilot_positive_pending_remaining_layouts",
+              "failures": [],
+              "native_events": 0,
+              "runtime_cells_closed": 0,
+              "interval_equations_recomputed": false,
+              "uniform_neighborhood_proved": false
+            },
+            "native": {
+              "status": "incomplete_companion",
+              "cases_required": 20,
+              "native_cases": 1,
+              "native_event_attempts": 1,
+              "committed_events": 0,
+              "passed_cases": 0,
+              "successful_history_cells": 0,
+              "accepted_cells": 0,
+              "source_steps": 1,
+              "target_steps": 0,
+              "final_reads": 0,
+              "failures": [
+                {
+                  "case_id": "P984D-D94-E-1-P3::A_PC",
+                  "first_failure": {
+                    "stage": "event",
+                    "role": "both",
+                    "index": 0,
+                    "type": "ValueError",
+                    "message": "native event rejected: {'stage': 'admission', 'solver_disposition': None, 'code': 'invalid_topology_event', 'message': 'source is not a fresh hybrid spark candidate', 'prestate_digest': 'grcv4-state-sha256:b9113bdda7e12e9eb09571e4c707863314ea9795a4cf5af32fd7b4ecf43b05ed', 'poststate_digest': 'grcv4-state-sha256:b9113bdda7e12e9eb09571e4c707863314ea9795a4cf5af32fd7b4ecf43b05ed', 'pre_lifecycle_digest': 'grcv4-lifecycle-sha256:0fa297ce30d7bbd695a5bfbc73d80a14df2bf54859b83c5515355822a569bb20', 'post_lifecycle_digest': 'grcv4-lifecycle-sha256:0fa297ce30d7bbd695a5bfbc73d80a14df2bf54859b83c5515355822a569bb20', 'failure_receipt': {'schema_version': 'grcv4-failure-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:1dd77283c2d076d4428b44988173274ced1b519cddc42feec77d79340d08dfc3', 'identity_payload': {'schema_version': 'grcv4-failure-receipt-v1', 'operation_id': 'p984d-apc-P984D-D94-E-1-P3-source-companion', 'stage': 'admission', 'code': 'invalid_topology_event', 'source_state_digest': 'grcv4-state-sha256:b9113bdda7e12e9eb09571e4c707863314ea9795a4cf5af32fd7b4ecf43b05ed', 'observed_poststate_digest': 'grcv4-state-sha256:b9113bdda7e12e9eb09571e4c707863314ea9795a4cf5af32fd7b4ecf43b05ed'}}}",
+                    "kind": "numerical_or_lifecycle_failure"
+                  }
+                }
+              ],
+              "trigger_certificate": {
+                "source_state_digest": "grcv4-state-sha256:b9113bdda7e12e9eb09571e4c707863314ea9795a4cf5af32fd7b4ecf43b05ed",
+                "gradient_intervals": [
+                  [
+                    "11282213674856210408598189834314842994157767247152022353193479/12855504354071922204335696738729300820177623950262342682411008",
+                    "1410276709357026301074773729289355374269720905894002794149185/1606938044258990275541962092341162602522202993782792835301376"
+                  ],
+                  [
+                    "352569085766180293839073508924884962457306041969018417716829/401734511064747568885490523085290650630550748445698208825344",
+                    "11282210744517769402850352285596318798633793343008589366938529/12855504354071922204335696738729300820177623950262342682411008"
+                  ],
+                  [
+                    "1360049108538361799551151794727070552354173712190623404874479/1606938044258990275541962092341162602522202993782792835301376",
+                    "10880392868306894396409214357816564418833389697524987238995833/12855504354071922204335696738729300820177623950262342682411008"
+                  ]
+                ],
+                "squared_norm_interval": [
+                  "3626458007649024734338403721978078392662664333918066632707989/1606938044258990275541962092341162602522202993782792835301376",
+                  "7252916015298049468676807443956156785325328667836133265415981/3213876088517980551083924184682325205044405987565585670602752"
+                ],
+                "strict_upper_required": "1/4",
+                "gradient_gate_passes": false,
+                "gradient_gate_excluded": true
+              },
+              "native_trajectories_rerun": false,
+              "interval_equations_recomputed": false,
+              "uniform_neighborhood_proved": false,
+              "accumulated_trajectory_error_bound": false,
+              "user_accepted": false,
+              "aggregate_closed": false
+            },
+            "inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionInputs.json",
+              "sha256": "da5eba81d29b5aa4798090fcd7e8f59d6522c149a596399296b931346bf6c844",
+              "revision": null,
+              "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+            },
+            "results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionResults.json",
+              "sha256": "e780807d129fd78647c2b81f0a6dbe6634e332a102fb3f1ef8e323651f83f1a1",
+              "revision": null,
+              "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+            },
+            "native_inputs": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionNativeInputs.json",
+              "sha256": "e28fef81dbb8b959da01ef16322ca9631cc34ee849b342dbe3c19cc3c3bbcb01",
+              "revision": null,
+              "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+            },
+            "native_results": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionNativeResults.json",
+              "sha256": "de183797241e5826995300f3ee46754c50535df913be5011e4633aa12a94477e",
+              "revision": null,
+              "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+            },
+            "plan": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionPlan.md",
+              "sha256": "269adc706aebc9fa85f83fef8b7d7e385d3f28f739773eae377818f18971e644",
+              "revision": null,
+              "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+            },
+            "review": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionReview.md",
+              "sha256": "046e716cbb5aaa9b29c139a225bc0ffe35e08df35c59c95c4ac0bbff108658f0",
+              "revision": null,
+              "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+            },
+            "ledger_scope": "historical_design_debt_unchanged_runtime_obligation_open"
+          },
+          "preflight_pressure": {
+            "controls": 2,
+            "independent_pointwise_steps": 7,
+            "certified_exclusions": 2,
+            "native_steps": 0,
+            "runtime_cells_closed": 0,
+            "general_infeasibility_proved": false,
+            "interval_equations_recomputed": false,
+            "evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCPreflightPressure.json",
+              "sha256": "df0b249f1fcb0b5e38d955ab5f623809ed37d8cf8da1d273b1601c6529ab68fa",
+              "revision": null,
+              "basis": "pinned_failed_preflight_no_native_credit"
+            }
+          },
+          "allocation_feasibility": {
+            "status": "frozen_source_allocation_excluded",
+            "D94_cases": 6,
+            "simplex_coverage": "entire_closed_simplex3",
+            "max_updates": 2,
+            "native_steps": 0,
+            "runtime_cells_closed": 0,
+            "interval_equations_recomputed": false,
+            "least_negative_resource_upper": -2.833690527720604e-08,
+            "evidence": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.json",
+              "sha256": "837dcc9f42c679edbb6ccc78c5fc894d3df7c1c5d733f2962dcc127ccd571fca",
+              "revision": null,
+              "basis": "pinned_frozen_source_allocation_exclusion_no_native_credit"
+            },
+            "review": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md",
+              "sha256": "64ac782f43da980cd5821e1dbf643f4ab9c4e3da6749c97f48fdd09a9d63a6ac",
+              "revision": null,
+              "basis": "pinned_frozen_source_allocation_exclusion_no_native_credit"
+            },
+            "claim_scope": "frozen_source_six_D94_layouts_only_conditional_on_existing_error_budgets",
+            "acceptance": {
+              "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationAcceptance.json",
+              "sha256": "be371116faef9605e248ebb4c201e7da4fbfefff4c4f88458e62b2bfe65fb990",
+              "revision": null,
+              "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+            },
+            "user_accepted": true
+          },
+          "comparison_scope": "accepted_twenty_declared_coupled_layouts_with_exact_pilot_reuse_not_uniform_domain"
         }
       ],
       "aggregate_closed": false,
@@ -16277,7 +16776,6 @@ export const TRANCHE8_EVIDENCE = {
       ],
       "families_not_executed": [
         "A_OS",
-        "A_PC",
         "A_CI_PC",
         "A_RG2b",
         "C_PC",
@@ -16329,7 +16827,9 @@ export const TRANCHE8_EVIDENCE = {
           "oracle_scope_accepted": true,
           "comparison_scope": "pointwise_A_joint_root_enclosures_not_native_or_uniform_trajectory_tube"
         }
-      ]
+      ],
+      "first_group_accepted_cells": 160,
+      "first_group_closed": true
     },
     "required_cells": 322,
     "accepted_cells": 322,
@@ -17435,6 +17935,186 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "pinned_deep_execution_with_scoped_acceptance"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationAcceptance.json",
+      "sha256": "be371116faef9605e248ebb4c201e7da4fbfefff4c4f88458e62b2bfe65fb990",
+      "revision": null,
+      "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.json",
+      "sha256": "837dcc9f42c679edbb6ccc78c5fc894d3df7c1c5d733f2962dcc127ccd571fca",
+      "revision": null,
+      "basis": "pinned_frozen_source_allocation_exclusion_no_native_credit"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md",
+      "sha256": "64ac782f43da980cd5821e1dbf643f4ab9c4e3da6749c97f48fdd09a9d63a6ac",
+      "revision": null,
+      "basis": "pinned_frozen_source_allocation_exclusion_no_native_credit"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCCases.json",
+      "sha256": "e4cb7e08fbdc4613ca4f0f6b936808804bc4d71b6bc3859074368bb31507fb96",
+      "revision": null,
+      "basis": "pinned_failed_preflight_no_native_credit"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json",
+      "sha256": "2044970cc9659caf3b2f52027e8f0e03fa61b7ed98c2fa248e1bca7a139bb6cc",
+      "revision": null,
+      "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullPlan.md",
+      "sha256": "b56d1caeab85a0371c774dc5e5b44d7843a78b1416c5fd0ceab677fb56119dd2",
+      "revision": null,
+      "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullResults.json",
+      "sha256": "ac5749112b6585c26b454ed7f84146f26550a38db52c8b4ab57208ea941dd5ca",
+      "revision": null,
+      "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md",
+      "sha256": "bf10d06cb5ac223269267037c0423d8315a552231ed594cac4098bc2c8010dd6",
+      "revision": null,
+      "basis": "pinned_full_coupled_execution_and_scoped_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionInputs.json",
+      "sha256": "4e0dbdd36444007abdf371fd86560f056e122d319eac5844230d91656fff3754",
+      "revision": null,
+      "basis": "pinned_eligible_source_failed_target_history_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionPlan.md",
+      "sha256": "c5e7edfe4eb194caec2932601ebba6754b47df254578646fd12ef304f1442aaf",
+      "revision": null,
+      "basis": "pinned_eligible_source_failed_target_history_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionPressure.json",
+      "sha256": "280e7ba8860fa5ba17010701623eed14f26896f27a0d14ce2e7a3dfa643c0dff",
+      "revision": null,
+      "basis": "pinned_eligible_source_failed_target_history_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionResults.json",
+      "sha256": "1878085da9623d3e7dab0ef030b51cc73056411e1f58e0f0b8a0a6772316492e",
+      "revision": null,
+      "basis": "pinned_eligible_source_failed_target_history_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md",
+      "sha256": "2beb5cd96b11d37d8bbb2f86b58423217b56ece6e9ee71fbbbf03d68a11a761c",
+      "revision": null,
+      "basis": "pinned_eligible_source_failed_target_history_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointConstraints.json",
+      "sha256": "72db98f577f4e49e1e7ba8f6a44e6bcf4e12bee9f8c5d9a4b239ec2afb87f08e",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointFeasibility.md",
+      "sha256": "50e1cbce93a65612d4209a505391d36b07a160276712bf6634b495405f19d493",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorInputs.json",
+      "sha256": "b92a98dc182b9029093b8adf8ea8d77309c705ef6c3c0e911170be5bdd4a9162",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorPlan.md",
+      "sha256": "5bac0d2334ef4e23f82f2fd78187b998f7f61f347fa7b62f73756a695251d6ac",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorResults.json",
+      "sha256": "c3416a413782e812c3b96d48aae93137d9f927d5aafd8e5c620d4c3763ea807c",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessInputs.json",
+      "sha256": "0b9355ea7d8dcbda94a2a80e708d18894c954f00f86d950f2f4ffd369f3e337d",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessResults.json",
+      "sha256": "35d6a21c09b206ccf2a5feadd9a991c77dfce9b6dde5dd02e92ef6f0e266427c",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md",
+      "sha256": "80d91acefca99be2511ffdd2090d6a5d5e413f19b065c382b60068a1ee651d10",
+      "revision": null,
+      "basis": "pinned_coupled_witnesses_not_family_acceptance"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCPreflightPressure.json",
+      "sha256": "df0b249f1fcb0b5e38d955ab5f623809ed37d8cf8da1d273b1601c6529ab68fa",
+      "revision": null,
+      "basis": "pinned_failed_preflight_no_native_credit"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCResults.json",
+      "sha256": "2b18893b2f31dbfde9e14ed1cc51a13cf04255b0b1fa9507737a94057663f57b",
+      "revision": null,
+      "basis": "pinned_failed_preflight_no_native_credit"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md",
+      "sha256": "564cece4af11bd880fe47a444fa35176c325589c3f3d6fa5c42db226341892f6",
+      "revision": null,
+      "basis": "pinned_failed_preflight_no_native_credit"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionInputs.json",
+      "sha256": "da5eba81d29b5aa4798090fcd7e8f59d6522c149a596399296b931346bf6c844",
+      "revision": null,
+      "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionNativeInputs.json",
+      "sha256": "e28fef81dbb8b959da01ef16322ca9631cc34ee849b342dbe3c19cc3c3bbcb01",
+      "revision": null,
+      "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionNativeResults.json",
+      "sha256": "de183797241e5826995300f3ee46754c50535df913be5011e4633aa12a94477e",
+      "revision": null,
+      "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionPlan.md",
+      "sha256": "269adc706aebc9fa85f83fef8b7d7e385d3f28f739773eae377818f18971e644",
+      "revision": null,
+      "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionResults.json",
+      "sha256": "e780807d129fd78647c2b81f0a6dbe6634e332a102fb3f1ef8e323651f83f1a1",
+      "revision": null,
+      "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionReview.md",
+      "sha256": "046e716cbb5aaa9b29c139a225bc0ffe35e08df35c59c95c4ac0bbff108658f0",
+      "revision": null,
+      "basis": "pinned_scoped_exclusion_acceptance_and_failed_source_companion"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCICases.json",
       "sha256": "714becd26009a5794e3d610c76959f56402aa0463127ac21281bfdc4e11598fe",
       "revision": null,
@@ -17639,5 +18319,5 @@ export const TRANCHE8_EVIDENCE = {
       "basis": "current_equals_accepted_checkpoint"
     }
   ],
-  "view_digest": "2727386fa755da874df17eea592c82babcf46b498a80a1ab2a4fccfe79671c08"
+  "view_digest": "96c61dbcd243effd59575a67e581b9000e5109396f084ea4d84916cdd5cef0b2"
 };

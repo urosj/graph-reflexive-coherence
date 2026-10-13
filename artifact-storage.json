@@ -219,6 +219,38 @@
       "storage_sha256": "cedf6f862e3bdec343801950f2f450b4f6c1b6f5c6e461aa0f332b9a9b8751b8"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json",
+      "size": 4019544,
+      "sha256": "2044970cc9659caf3b2f52027e8f0e03fa61b7ed98c2fa248e1bca7a139bb6cc",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json.xz",
+      "storage_size": 99784,
+      "storage_sha256": "a33aa958aaa0b0ee808f2074383a7eddda768d9357b855aab3920decb80defe7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullResults.json",
+      "size": 40819366,
+      "sha256": "ac5749112b6585c26b454ed7f84146f26550a38db52c8b4ab57208ea941dd5ca",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullResults.json.xz",
+      "storage_size": 1154008,
+      "storage_sha256": "08a349d5cda5469fe0dfbc7a06fc7da62b973ca2e6bbe68052ea48320548925b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorResults.json",
+      "size": 2907630,
+      "sha256": "c3416a413782e812c3b96d48aae93137d9f927d5aafd8e5c620d4c3763ea807c",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorResults.json.xz",
+      "storage_size": 131252,
+      "storage_sha256": "a06c7c816c8e12bf355c2789cb8e3a42c42e39ea792f43583ee6e91555297f50"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionResults.json",
+      "size": 1231492,
+      "sha256": "e780807d129fd78647c2b81f0a6dbe6634e332a102fb3f1ef8e323651f83f1a1",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionResults.json.xz",
+      "storage_size": 91008,
+      "storage_sha256": "34a63b1850cd468c1a510b9d9053c9dfca3a3791afae34196e854c7a0a7fefba"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json",
       "size": 3840153,
       "sha256": "a0b9437a93578491de8e53e3505ef669c87db6f170915960e44f3bed1500688f",

@@ -1,0 +1,34 @@
+{
+  "schema": "p984d-apc-allocation-acceptance-v1",
+  "status": "accepted_by_user",
+  "date": "2026-10-12",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.json",
+      "sha256": "837dcc9f42c679edbb6ccc78c5fc894d3df7c1c5d733f2962dcc127ccd571fca"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md",
+      "sha256": "64ac782f43da980cd5821e1dbf643f4ab9c4e3da6749c97f48fdd09a9d63a6ac"
+    }
+  ],
+  "evidence_digest": "5d27357fd2d036d8234b911fc46f0ad7a79b585dac2d535d5994d8de901b235c",
+  "accepted_scope": {
+    "shares": "entire_closed_simplex3",
+    "source": "frozen_actual_A_PC_source",
+    "role": "current_suffices_to_exclude_both_role_admission",
+    "max_updates": 2,
+    "initial_resource_rounding_allowance": "1/281474976710656",
+    "represented_step_budgets": {
+      "resource_error": "1/1099511627776",
+      "history_error": "1/281474976710656",
+      "carrier_error": "1/1099511627776"
+    },
+    "represented_claim": "conditional_on_existing_full_formula_error_budgets_not_native_execution"
+  },
+  "companion_authorized": true,
+  "native_cells_accepted": 0,
+  "general_impossibility_accepted": false,
+  "aggregate_closed": false,
+  "record_digest": "cd16607a7569878928822317fe130768a3e193c4cdeb8e20202b5798c271b5b4"
+}

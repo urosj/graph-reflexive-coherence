@@ -38,15 +38,67 @@ test('deep C_OS evidence is partial and not acceptance or an event sequence', ()
   assert.match(text(out),/3 are rounded-transfer controls, not exact-conserving event evidence/);
   assert.match(text(out),/40\/40 accepted history cells, 0 passing pending acceptance/);
   const deep=evidence.coverage.deep_expansion;
-  assert.equal(deep.family_results.length,3);
+  assert.equal(deep.family_results.length,4);
   assert.equal(deep.family_results[0].maximum_core_depth,4);
-  assert.equal(deep.families_not_executed.length,7);
+  assert.equal(deep.families_not_executed.length,6);
   const hardened=structuredClone(evidence);
   hardened.coverage.deep_expansion.family_results[0].hardening.uniform_tube=true;
   assert.throws(()=>checkedTranche8(hardened));
   assert.ok(sourceURL(deep.family_results[0].results).startsWith('/api/tranche8/source?'));
   for (const mutate of [d=>d.aggregate_closed=true,d=>d.family_results[0].accepted_cells=0,d=>d.family_results[0].successive_events=true,d=>d.families_not_executed.pop()]) {
     const forged=structuredClone(evidence);mutate(forged.coverage.deep_expansion);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('deep A_PC distinguishes accepted exclusion from trigger-rejected companion', () => {
+  const deep=evidence.coverage.deep_expansion;
+  const row=deep.family_results.find(r=>r.family==='A_PC');
+  assert.equal(row.native_cases,20);assert.equal(row.target_steps,400);
+  assert.equal(row.committed_events,20);
+  assert.equal(row.source_companion.native.source_steps,1);
+  assert.equal(row.history_companion.source_eligible,true);
+  assert.equal(row.history_companion.native_cases,0);
+  assert.equal(row.history_companion.pressure.neighbor_probes,0);
+  assert.equal(row.accepted_cells,40);assert.equal(row.passing_pending_cells,0);
+  assert.equal(deep.first_group_closed,true);
+  assert.equal(deep.first_group_accepted_cells,160);
+  assert.equal(deep.aggregate_closed,false);
+  assert.equal(row.full_campaign.newly_executed_cases,19);
+  assert.equal(row.full_campaign.reused_cases,1);
+  assert.equal(row.full_campaign.reused_target_steps,20);
+  assert.equal(row.full_campaign.final_reads,40);
+  assert.equal(row.full_campaign.uniform_native_domain,false);
+  assert.equal(row.joint_witness.passed_cases,0);
+  assert.equal(row.joint_witness.target_steps,1);
+  assert.equal(row.joint_successor.passed_cases,1);
+  assert.equal(row.joint_successor.uniform_native_domain,false);
+  assert.equal(row.attempted_cases,20);assert.equal(row.unattempted_cases,0);
+  assert.equal(row.preflight_pressure.certified_exclusions,2);
+  assert.equal(row.allocation_feasibility.D94_cases,6);
+  assert.equal(row.allocation_feasibility.runtime_cells_closed,0);
+  assert.ok(!deep.families_not_executed.includes('A_PC'));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/A_PC frozen-source PREFLIGHT HOLD: 1 case attempted, 19 not attempted; 0 native events and 0 native continuation steps/);
+  assert.match(text(out),/1 native source step; 1 event attempt, 0 commits, 0 native target steps/);
+  assert.match(text(out),/A_PC allocation exclusion: 6 declared D94 layouts, entire closed simplex/);
+  assert.match(text(out),/A_PC history companion: fresh source eligible; current-role target preflight fails at step 1/);
+  assert.match(text(out),/A_PC coupled successor: 1 D94 case, 20 native target steps, 2 final reads/);
+  assert.match(text(out),/A_PC full coupled campaign: 20\/20 cases, 400 native continuation steps, 40 final reads/);
+  assert.ok(sourceURL(row.preflight_pressure.evidence).startsWith('/api/tranche8/source?'));
+  for(const mutate of [r=>r.committed_events=2,r=>r.accepted_cells=0,r=>r.unattempted_cases=1,r=>r.full_campaign.uniform_native_domain=true,r=>r.full_campaign.reused_cases=0,r=>r.joint_successor.uniform_native_domain=true,r=>r.joint_witness.passed_cases=1,r=>r.source_companion.native.uniform_neighborhood_proved=true,r=>r.preflight_pressure.general_infeasibility_proved=true]) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.deep_expansion.family_results.find(r=>r.family==='A_PC'));
+    assert.throws(()=>checkedTranche8(forged));
+  }
+  for(const mutate of [f=>f.claim_scope='all_sources',f=>f.runtime_cells_closed=40,f=>f.D94_cases=10,f=>f.evidence.sha256='forged']) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.deep_expansion.family_results.find(r=>r.family==='A_PC').allocation_feasibility);
+    assert.throws(()=>checkedTranche8(forged));
+  }
+  for(const mutate of [h=>h.source_eligible=false,h=>h.native_cases=1,h=>h.pressure.neighbor_probes=2,h=>h.accepted_cells=40]) {
+    const forged=structuredClone(evidence);
+    mutate(forged.coverage.deep_expansion.family_results.find(r=>r.family==='A_PC').history_companion);
     assert.throws(()=>checkedTranche8(forged));
   }
 });

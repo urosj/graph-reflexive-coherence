@@ -155,6 +155,30 @@ class ScopeTests(unittest.TestCase):
         for name, expected in index.BOUNDARY_ACI_SOURCES.items():
             self.assertEqual(hashlib.sha256((index.ROOT / name).read_bytes()).hexdigest(), expected)
 
+    def test_successor_retained_modes_authenticate_extra_records(self):
+        from contextlib import nullcontext
+        import phase9_implementation_policy as policy
+        module = SimpleNamespace(INPUTS='inputs', RESULTS='results', REVIEW='review',
+            PRESSURE='pressure', DERIVATION='derivation', main=lambda: None)
+        for name, modes in retained.EXTRA_MODES.items():
+            for mode in modes:
+                argv=['retained',str(index.ROOT/index.HERE/(name+'.py')),mode]
+                with ExitStack() as stack:
+                    stack.enter_context(patch.object(sys,'argv',argv))
+                    stack.enter_context(patch.object(retained.importlib,'import_module',return_value=module))
+                    stack.enter_context(patch.object(retained,'validation_session',return_value=nullcontext()))
+                    stack.enter_context(patch.object(policy,'restore_packed_evidence'))
+                    authenticated=stack.enter_context(patch.object(index.Sources,'raw'))
+                    execute=stack.enter_context(patch.object(module,'main'))
+                    retained.main();execute.assert_called_once_with()
+                    fields=[c.args[0] for c in authenticated.call_args_list]
+                    if name=='p984d_apc_feasibility':self.assertNotIn('inputs',fields)
+                    if name=='p984d_apc_history':self.assertIn('pressure',fields)
+                    if name=='p984d_apc_joint':self.assertIn('derivation',fields)
+            for forbidden in ('--run','run','prepare','derive'):
+                with patch.object(sys,'argv',['retained',str(index.ROOT/index.HERE/(name+'.py')),forbidden]), self.assertRaises(ValueError):
+                    retained.main()
+
 
 if __name__ == "__main__":
     unittest.main()

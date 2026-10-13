@@ -1,5 +1,58 @@
 # Tranche 8 evidence access
 
+For the current A_PC deeper-layout gate, select `family="A_PC"` and
+`checkpoint="8.4d"` in the API/notebook, or use:
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m tranche8_evidence status --family A_PC --checkpoint 8.4d
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m tranche8_evidence verify-retained --family A_PC --checkpoint 8.4d --recheck-numerics
+```
+
+The historical frozen-source **preflight hold** stays visible: one attempted
+case, 19 unattempted cases, zero native events/steps, two certified resource
+exclusions. Its full-simplex exclusion is now separately accepted. The new
+resource-only source companion passes independent target continuation but
+fails fresh source eligibility: one native source step, one event attempt,
+zero commits/native target steps and complete lifecycle rollback. Its
+nonempty operational domain and runtime obligation remain open. Passing
+integrity checks change none of these dispositions; native trajectories are
+not rerun. The selected view links the separate evidence layers and ledger scope.
+
+The full A_PC campaign now passes twenty cases: forty history cells, four
+hundred native continuation steps and forty final reads. `full_campaign`
+distinguishes nineteen newly executed cases from one exact pilot reuse.
+Top-level A_PC counts now describe this full campaign, not summed earlier
+attempts. All forty cells were accepted on 2026-10-13, closing the 160-cell
+first-group checkpoint. Six families and all-ten `.d` remain open. Status authenticates
+bindings, saved structure and scope without repeating the full consumer audit;
+the explicit retained `p984d_apc_full.py check` still performs that audit.
+Both large JSONs are retained byte-exactly as XZ. No uniform domain follows.
+
+The earlier coupled source/allocation successor passes one D94 native case:
+twenty target steps, two final reads, two passing-pending cells and zero accepted.
+`joint_successor` reports that run; `joint_witness` preserves the preceding
+one-event/one-step result held by a fine effect-separation control. Counts at
+the row's top level describe the full campaign, not summed historical
+attempts. Some resources remain zero; no uniform neighborhood or family closure
+follows. Retained checking authenticates the additional records and allows only
+explicit check modes; native trajectories are never implicitly rerun.
+
+The earlier history-only successor passes the fresh source trigger, but its first
+current-role D94 target update is interval-negative (~−9.92e-6), even allowing
+the existing numerical error budget. Its nested `history_companion` record
+links the source/pilot and signed diagnostic: one source step, zero event
+attempts/target steps, no gated neighborhood probes, zero completed cells.
+The earlier native trigger rejection is preserved under `source_companion`.
+Selected retained verification includes both history checks; full interval
+recomputation remains explicit and never confers native execution credit.
+
+The same selected view now also exposes the **D94 allocation certificate**:
+all simplex tuples are excluded for two current-history updates on the six
+declared layouts, under the frozen source and existing error budgets. This
+does not exclude other sources or A_PC generally. Retained verification runs
+the point-control checker and the allocation checker; `--recheck-numerics`
+recomputes both, without native execution or an all-family campaign.
+
 The side-tool now exposes the accepted shared 8.1 mechanics, pure 8.2 allocator,
 all ten bounded 8.3 profile integrations, larger-configuration preparation,
 and current 8.4 coverage. It reads existing records; it does not create claims,

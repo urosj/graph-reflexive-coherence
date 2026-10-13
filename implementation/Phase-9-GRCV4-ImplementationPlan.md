@@ -2890,6 +2890,65 @@ fresh full-root consumption after ten steps in both histories. Native results
 require separate acceptance. Pointwise
 enclosures do not constitute an accumulated exact-real trajectory tube.
 
+The [A_PC deep gate](./phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md)
+reuses the graph-specific whole-carrier proof without changing its radius or
+native law. All twenty larger charts pass, but the D94 current history fails
+the original allocation at step one and a balanced control at step two,
+before native execution. Resolve both-role multi-step resource feasibility
+and bind any successor explicitly before the native campaign. Neither the
+passing chart nor the two exclusions establishes general continuation or
+general impossibility. Keep the first-group checkpoint open.
+
+The subsequent [D94 allocation certificate](./phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md)
+excludes the entire simplex for this frozen source on all six D94 layouts,
+including the existing numerical error allowances. Stop allocation-only
+search for that source. A separately declared source companion requires a
+scoped decision, its actual source beat and trigger, and both-role continuation
+evidence under the unchanged law. This does not change the ten-family goal or
+prove general A_PC infeasibility; no native coverage is added.
+
+The exclusion was accepted on 2026-10-12. The authorized
+[resource-only source companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionReview.md)
+passes both-role independent ten-step target continuation at the D94 pilot,
+but fails the actual source's hybrid trigger. One native source beat and one
+rejected event attempt establish no successful expansion cells; whole-lifecycle
+rollback is checked. Do not run the remaining nineteen cases of this companion.
+Typed claim/debt traces preserve the bounded design resolution and open runtime
+obligation. Next analyze source history with trigger-eligible resources, under
+the unchanged law, before claiming a nonempty operational domain. Acceptance
+of negative evidence does not close A_PC `.d` or justify weakening thresholds.
+
+The subsequent [history-only companion](./phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md)
+keeps original resources and changes initial current W to mean 63/64. Its fresh
+source trigger passes, but the unchanged D94 pilot allocation gives a negative
+first current target update, with full enabled interval evidence beyond the
+existing error allowance. No native event or target step runs; the wider
+campaign and gated neighborhood are stopped. Next derive joint history/share
+feasibility constraints rather than repeating one-parameter adjustments.
+Preserve both failed companions and the accepted original-source exclusion;
+none proves all-source impossibility or closes the open runtime obligation.
+
+The [joint history/allocation successor](./phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md)
+now passes one D94/E−1/P3 case: mean initial W 31/32, derived shares
+(47/128, 47/128, 17/64), fresh eligible source, both-role independent preflight,
+one native event, twenty target steps and two final reads. Unchanged W/Z
+effect controls pass. The first 63/64 allocation witness's finer effect
+separation failure is retained separately. This is two passing-pending cells,
+not acceptance or a uniform domain; exact-zero resources remain. It supplies
+the source/coupled procedure for screening the other nineteen layouts before
+their native runs, rather than assuming the shares generalize.
+The design-debt resolution is unchanged; runtime evidence remains open.
+
+The [full A_PC successor campaign](./phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md)
+now passes all twenty layouts, forty histories, four hundred native target
+steps and forty final reads. Nineteen cases are newly executed; the pilot is
+reused exactly. Per-layout derived shares and the unchanged mean-31/32 source
+replace blanket allocation assumptions. Earlier exclusions remain intact.
+Forty A_PC cells and the 160-cell first-group `.d` checkpoint were accepted
+on 2026-10-13. No uniform domain or later `.e–h` work is closed. Continue
+first-group `.e`; the six other families remain second-group `.d` work.
+Do not repeat a separate pilot checkpoint.
+
 P9-8.4a–c are complete. For `.d–h`, use **C_OS, C_CI, A_CI and A_PC**
 as the first group. Work through `.d`, `.e`, `.f`, `.g`, then `.h` with
 this group before filling the remaining six families. Do not finish all ten

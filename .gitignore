@@ -117,3 +117,15 @@ dist/
 
 # Expanded evidence; see artifact-storage.json
 /implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json
+
+# Expanded evidence; see artifact-storage.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionResults.json
+
+# Expanded evidence; see artifact-storage.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorResults.json
+
+# Expanded evidence; see artifact-storage.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json
+
+# Expanded evidence; see artifact-storage.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullResults.json

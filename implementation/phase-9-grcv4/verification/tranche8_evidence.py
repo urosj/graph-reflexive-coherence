@@ -23,6 +23,48 @@ HERE = PHASE + "verification/"
 SIDE = "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/"
 ASSET = SIDE + "tool/phase9-web/tranche8-evidence.js"
 CHECKPOINT = "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1"
+DEEP_APC_FULL_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json": "2044970cc9659caf3b2f52027e8f0e03fa61b7ed98c2fa248e1bca7a139bb6cc",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullPlan.md": "b56d1caeab85a0371c774dc5e5b44d7843a78b1416c5fd0ceab677fb56119dd2",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullResults.json": "ac5749112b6585c26b454ed7f84146f26550a38db52c8b4ab57208ea941dd5ca",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullReview.md": "bf10d06cb5ac223269267037c0423d8315a552231ed594cac4098bc2c8010dd6"
+}
+DEEP_APC_JOINT_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointConstraints.json": "72db98f577f4e49e1e7ba8f6a44e6bcf4e12bee9f8c5d9a4b239ec2afb87f08e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointFeasibility.md": "50e1cbce93a65612d4209a505391d36b07a160276712bf6634b495405f19d493",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorInputs.json": "b92a98dc182b9029093b8adf8ea8d77309c705ef6c3c0e911170be5bdd4a9162",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorPlan.md": "5bac0d2334ef4e23f82f2fd78187b998f7f61f347fa7b62f73756a695251d6ac",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointSuccessorResults.json": "c3416a413782e812c3b96d48aae93137d9f927d5aafd8e5c620d4c3763ea807c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessInputs.json": "0b9355ea7d8dcbda94a2a80e708d18894c954f00f86d950f2f4ffd369f3e337d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessResults.json": "35d6a21c09b206ccf2a5feadd9a991c77dfce9b6dde5dd02e92ef6f0e266427c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCJointWitnessReview.md": "80d91acefca99be2511ffdd2090d6a5d5e413f19b065c382b60068a1ee651d10"
+}
+DEEP_APC_HISTORY_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionInputs.json": "4e0dbdd36444007abdf371fd86560f056e122d319eac5844230d91656fff3754",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionPlan.md": "c5e7edfe4eb194caec2932601ebba6754b47df254578646fd12ef304f1442aaf",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionPressure.json": "280e7ba8860fa5ba17010701623eed14f26896f27a0d14ce2e7a3dfa643c0dff",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionResults.json": "1878085da9623d3e7dab0ef030b51cc73056411e1f58e0f0b8a0a6772316492e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCHistoryCompanionReview.md": "2beb5cd96b11d37d8bbb2f86b58423217b56ece6e9ee71fbbbf03d68a11a761c"
+}
+DEEP_APC_COMPANION_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationAcceptance.json": "be371116faef9605e248ebb4c201e7da4fbfefff4c4f88458e62b2bfe65fb990",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionInputs.json": "da5eba81d29b5aa4798090fcd7e8f59d6522c149a596399296b931346bf6c844",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionNativeInputs.json": "e28fef81dbb8b959da01ef16322ca9631cc34ee849b342dbe3c19cc3c3bbcb01",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionNativeResults.json": "de183797241e5826995300f3ee46754c50535df913be5011e4633aa12a94477e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionPlan.md": "269adc706aebc9fa85f83fef8b7d7e385d3f28f739773eae377818f18971e644",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionResults.json": "e780807d129fd78647c2b81f0a6dbe6634e332a102fb3f1ef8e323651f83f1a1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCSourceCompanionReview.md": "046e716cbb5aaa9b29c139a225bc0ffe35e08df35c59c95c4ac0bbff108658f0"
+}
+DEEP_APC_FEASIBILITY_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.json": "837dcc9f42c679edbb6ccc78c5fc894d3df7c1c5d733f2962dcc127ccd571fca",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCAllocationFeasibility.md": "64ac782f43da980cd5821e1dbf643f4ab9c4e3da6749c97f48fdd09a9d63a6ac"
+}
+DEEP_APC_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCCases.json": "e4cb7e08fbdc4613ca4f0f6b936808804bc4d71b6bc3859074368bb31507fb96",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCResults.json": "2b18893b2f31dbfde9e14ed1cc51a13cf04255b0b1fa9507737a94057663f57b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCPreflightPressure.json": "df0b249f1fcb0b5e38d955ab5f623809ed37d8cf8da1d273b1601c6529ab68fa",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCRuntimeReview.md": "564cece4af11bd880fe47a444fa35176c325589c3f3d6fa5c42db226341892f6"
+}
 DEEP_ACI_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACICases.json": "00414b326bc9221d38e5e8efc6e138e73b7db23b365fc0f6a4e6256d5044c59c",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json": "691fcf4eb5d30405353594d97a0c7e9c81f35540c105f59e862f66f90d67a0a7",
@@ -269,13 +311,25 @@ class Sources:
             boundary_pins.update(DEEP_CCI_SOURCES)
             boundary_pins.update(DEEP_ACI_ORACLE_SOURCES)
             boundary_pins.update(DEEP_ACI_SOURCES)
+            boundary_pins.update(DEEP_APC_SOURCES)
+            boundary_pins.update(DEEP_APC_FEASIBILITY_SOURCES)
+            boundary_pins.update(DEEP_APC_COMPANION_SOURCES)
+            boundary_pins.update(DEEP_APC_HISTORY_SOURCES)
+            boundary_pins.update(DEEP_APC_JOINT_SOURCES)
+            boundary_pins.update(DEEP_APC_FULL_SOURCES)
             if name in boundary_pins:
                 require(not historical, "preregistration is not a historical acceptance")
                 frozen = self.current_bytes(name)
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_deep_execution_with_scoped_acceptance" if name in DEEP_ACI_SOURCES else
+                    basis=("pinned_full_coupled_execution_and_scoped_acceptance" if name in DEEP_APC_FULL_SOURCES else
+                        "pinned_coupled_witnesses_not_family_acceptance" if name in DEEP_APC_JOINT_SOURCES else
+                        "pinned_eligible_source_failed_target_history_companion" if name in DEEP_APC_HISTORY_SOURCES else
+                        "pinned_scoped_exclusion_acceptance_and_failed_source_companion" if name in DEEP_APC_COMPANION_SOURCES else
+                        "pinned_frozen_source_allocation_exclusion_no_native_credit" if name in DEEP_APC_FEASIBILITY_SOURCES else
+                        "pinned_failed_preflight_no_native_credit" if name in DEEP_APC_SOURCES else
+                        "pinned_deep_execution_with_scoped_acceptance" if name in DEEP_ACI_SOURCES else
                         "pinned_accepted_independent_oracle_not_runtime_acceptance" if name in DEEP_ACI_ORACLE_SOURCES else
                         "pinned_deep_execution_with_scoped_acceptance" if name in DEEP_CCI_SOURCES else
                         "pinned_deep_execution_with_scoped_acceptance" if name in DEEP_COS_SOURCES else
@@ -1089,6 +1143,65 @@ BOUNDARY_RUNTIME = {"C_OS": "p984c_cos", "A_OS": "p984c_aos_runtime",
 
 
 def deep_family_view(sources, family):
+    if family == "A_PC":
+        import p984d_apc_runtime as deep
+        import p984d_apc_feasibility as feasibility
+        import p984d_apc_companion_runtime as companion
+        import p984d_apc_history as history
+        import p984d_apc_joint_successor as joint
+        import p984d_apc_full as full
+        c=companion.c
+        original = deep.status(sources.read(deep.INPUTS), sources.read(deep.RESULTS))
+        accepted=sources.read(c.ACCEPTANCE)
+        require(accepted==c.acceptance(), "bounded exclusion acceptance drift")
+        candidate=c.check(sources.read(c.INPUTS),sources.read(c.RESULTS))
+        native=companion.check(sources.read(companion.INPUTS),sources.read(companion.RESULTS))
+        hm,hr,hp=(sources.read(p) for p in (history.INPUTS,history.RESULTS,history.PRESSURE))
+        hs=history.check(hm,hr);pressure=history.check_pressure(hm,hr,hp)
+        earlier=joint.j.check(sources.read(joint.j.INPUTS),sources.read(joint.j.RESULTS))
+        jm,jr=(sources.read(p) for p in (joint.INPUTS,joint.RESULTS))
+        latest=joint.check(jm,jr)
+        full_record = sources.read(full.RESULTS)
+        fs=full.status(sources.read(full.INPUTS),full_record)
+        acceptance_text = sources.raw(full.REVIEW).decode()
+        require("## Scoped user acceptance" in acceptance_text
+                and full_record["record_digest"] in acceptance_text,
+                "missing or unbound A_PC deep acceptance")
+        require(fs["passed_cases"] == 20, "incomplete A_PC deep acceptance")
+        fs.update(status="accepted_bounded", accepted_cells=40, passing_pending_cells=0)
+        summary=dict(original,**{k:fs[k] for k in ('status','native_cases','passed_cases','attempted_cases',
+            'unattempted_cases','committed_events','target_steps','final_reads','passing_pending_cells','accepted_cells','failures')},
+            source_steps=0,source_reused=True,successful_history_cells=2*fs['passed_cases'],
+            source_companions_tested=3,native_event_attempts=fs['native_cases'],
+            count_scope="full_twenty_layout_campaign_including_exact_pilot_reuse_prior_failures_separate")
+        return dict(summary, inputs=sources.ref(full.INPUTS), results=sources.ref(full.RESULTS),
+            review=sources.ref(full.REVIEW),
+            acceptance=sources.ref(full.REVIEW, anchor="scoped-user-acceptance"),
+            full_campaign=dict(**fs,inputs=sources.ref(full.INPUTS),results=sources.ref(full.RESULTS),
+                plan=sources.ref(full.PLAN),review=sources.ref(full.REVIEW),
+                acceptance=sources.ref(full.REVIEW, anchor="scoped-user-acceptance")),
+            frozen_source_preflight=original,
+            joint_witness=dict(**earlier,inputs=sources.ref(joint.j.INPUTS),results=sources.ref(joint.j.RESULTS),
+                constraints=sources.ref(joint.j.DERIVATION),plan=sources.ref(joint.j.PLAN),
+                failure_control="same_source_next_current_effect_separation_not_resource_failure"),
+            joint_successor=dict(**latest,inputs=sources.ref(joint.INPUTS),results=sources.ref(joint.RESULTS),
+                plan=sources.ref(joint.PLAN),review=sources.ref(joint.REVIEW),
+                initial_history_mean=jm['initial_history_mean'],shares=jm['derivation']['selection']['shares']),
+            history_companion=dict(**hs,pressure=pressure,inputs=sources.ref(history.INPUTS),
+                results=sources.ref(history.RESULTS),diagnostic=sources.ref(history.PRESSURE),
+                plan=sources.ref(history.PLAN),review=sources.ref(history.REVIEW)),
+            source_companion=dict(independent=candidate,native=native,
+                inputs=sources.ref(c.INPUTS),results=sources.ref(c.RESULTS),
+                native_inputs=sources.ref(companion.INPUTS),native_results=sources.ref(companion.RESULTS),
+                plan=sources.ref(c.PLAN),review=sources.ref(c.REVIEW),
+                ledger_scope="historical_design_debt_unchanged_runtime_obligation_open"),
+            preflight_pressure=dict(**deep.check_pressure(sources.read(deep.INPUTS), sources.read(deep.PRESSURE)),
+                evidence=sources.ref(deep.PRESSURE)),
+            allocation_feasibility=dict(**feasibility.check(sources.read(feasibility.RESULTS)),
+                evidence=sources.ref(feasibility.RESULTS),review=sources.ref(feasibility.REVIEW),
+                claim_scope="frozen_source_six_D94_layouts_only_conditional_on_existing_error_budgets",
+                acceptance=sources.ref(c.ACCEPTANCE),user_accepted=True),
+            comparison_scope="accepted_twenty_declared_coupled_layouts_with_exact_pilot_reuse_not_uniform_domain")
     if family == "A_CI":
         import p984d_aci_runtime as deep
         summary = deep.status(sources.read(deep.INPUTS), sources.read(deep.RESULTS))
@@ -1144,11 +1257,15 @@ def deep_oracle_view(sources):
 
 
 def deep_view(sources):
-    families = ("C_OS", "C_CI", "A_CI")
-    return dict(checkpoint="8.4d", family_results=[deep_family_view(sources, f) for f in families], aggregate_closed=False,
+    families = ("C_OS", "C_CI", "A_CI", "A_PC")
+    rows = [deep_family_view(sources, f) for f in families]
+    executed = {r["family"] for r in rows if r.get("native_cases", 0) > 0 or r["target_steps"] > 0}
+    return dict(checkpoint="8.4d", family_results=rows, aggregate_closed=False,
         oracle_preparations=[deep_oracle_view(sources)],
         first_group=["C_OS", "C_CI", "A_CI", "A_PC"],
-        families_not_executed=[f for f in FAMILIES if f not in families],
+        first_group_accepted_cells=sum(r["accepted_cells"] for r in rows),
+        first_group_closed=all(r["accepted_cells"] == 40 for r in rows),
+        families_not_executed=[f for f in FAMILIES if f not in executed],
         other_family_credit=0, successive_event_credit=0)
 
 
@@ -1158,7 +1275,7 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d"), "unknown family checkpoint")
     if checkpoint == "8.4d":
-        require(family in ("C_OS", "C_CI", "A_CI"), "deep evidence unavailable for this family")
+        require(family in ("C_OS", "C_CI", "A_CI", "A_PC"), "deep evidence unavailable for this family")
         policy.restore_packed_evidence(root)
         if family == "A_CI":
             with validation_session(("p984d_aci_runtime",), root=root):
@@ -1169,7 +1286,8 @@ def family_status(root, family, checkpoint="8.4c"):
                     native=deep_family_view(sources, family),
                     source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
                     other_families_checked=False, native_trajectories_rerun=False)
-        with validation_session(("p984d_cos" if family == "C_OS" else "p984d_cci",), root=root):
+        module = {"C_OS": "p984d_cos", "C_CI": "p984d_cci", "A_PC": "p984d_apc_full"}[family]
+        with validation_session((module,), root=root):
             sources = Sources(root)
             summary = deep_family_view(sources, family)
             return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
@@ -1210,7 +1328,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC is next and seven families remain unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. Next proceed to first-group .e covariance. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -1224,17 +1342,36 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == "8.4d":
-        if args.family == "A_CI":
+        if args.family in ("A_CI", "A_PC"):
+            require(args.family == "A_CI" or not args.oracle, "A_PC uses its in-case independent preflight")
             require(not args.preparation and args.action in ("status", "verify-retained"),
-                "select A_CI status or verify-retained; --oracle selects the independent prerequisite")
+                "select status or verify-retained; --oracle selects the A_CI independent prerequisite")
             require(not args.recheck_numerics or args.action == "verify-retained", "recheck requires verify-retained")
             if args.action == "status":
                 print(json.dumps(family_status(ROOT, args.family, args.checkpoint), indent=2))
             else:
-                script = "p984d_aci_oracle.py" if args.oracle else "p984d_aci_runtime.py"
+                script = "p984d_aci_oracle.py" if args.oracle else {"A_CI": "p984d_aci_runtime.py", "A_PC": "p984d_apc_runtime.py"}[args.family]
                 subprocess.run([sys.executable, str(ROOT / HERE / "tranche8_retained.py"),
                     str(ROOT / HERE / script), "--check-retained",
                     *(["--recheck-numerics"] if args.recheck_numerics else [])], cwd=ROOT, check=True)
+                if args.family == "A_PC":
+                    subprocess.run([sys.executable, str(ROOT / HERE / "tranche8_retained.py"),
+                        str(ROOT / HERE / "p984d_apc_feasibility.py"), "--check",
+                        *(["--recheck-numerics"] if args.recheck_numerics else [])], cwd=ROOT, check=True)
+                    for companion_script in ("p984d_apc_companion.py", "p984d_apc_companion_runtime.py"):
+                        subprocess.run([sys.executable,str(ROOT / HERE / "tranche8_retained.py"),
+                            str(ROOT / HERE / companion_script),"--check",
+                            *(["--recheck-numerics"] if args.recheck_numerics else [])],cwd=ROOT,check=True)
+                    for mode in ("--check", "--check-pressure"):
+                        subprocess.run([sys.executable,str(ROOT / HERE / "tranche8_retained.py"),
+                            str(ROOT / HERE / "p984d_apc_history.py"),mode,
+                            *(["--recheck-numerics"] if args.recheck_numerics else [])],cwd=ROOT,check=True)
+                    for script,mode in (("p984d_apc_joint.py","check-derivation"),
+                            ("p984d_apc_joint.py","check"),("p984d_apc_joint_successor.py","check"),
+                            ("p984d_apc_full.py","check")):
+                        subprocess.run([sys.executable,str(ROOT / HERE / "tranche8_retained.py"),
+                            str(ROOT / HERE / script),mode,
+                            *(["--recheck-numerics"] if args.recheck_numerics else [])],cwd=ROOT,check=True)
             return
         require(args.family in ("C_OS", "C_CI") and not args.oracle and not args.preparation,
             "select completed C_OS or C_CI deep evidence")
