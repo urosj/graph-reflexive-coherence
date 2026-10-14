@@ -224,6 +224,30 @@ def _iexp(x: _Interval) -> _Interval:
     return _Interval(_exp_bounds(x.lo)[0], _exp_bounds(x.hi)[1])
 
 
+def _isquare(x: _Interval) -> _Interval:
+    """Full square image, including an interior zero (not endpoint sampling)."""
+    lower = exact_number() if x.lo <= 0 <= x.hi else min(x.lo**2, x.hi**2)
+    return _Interval(lower, max(x.lo**2, x.hi**2))
+
+
+def _ifloored_exp(x: _Interval, floor: float) -> _Interval:
+    """Enclose max(floor, exp(x)); never collapse a nonpoint exponent.
+
+    The positive binary64 floor exceeds exp(-1000), including at the smallest
+    subnormal. A lower tail outside the exponential budget can therefore be
+    bounded by zero before taking the floor. No libm or adaptive retry is used.
+    """
+    bound = exact_number(floor)
+    _require(bound > 0, "positive exponential floor required")
+    if x.hi < -1000:
+        return _iv(bound)
+    exp = (
+        _Interval(exact_number(), _exp_bounds(x.hi)[1])
+        if x.lo < -1000 else _iexp(x)
+    )
+    return _Interval(max(bound, exp.lo), max(bound, exp.hi))
+
+
 def _itanh(x: _Interval) -> _Interval:
     def endpoint(q: ExactScalar) -> _Interval:
         if q < 0:
@@ -432,7 +456,9 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
     graph, p = ref.graph, ref.profile.params_resolved.candidate
     h = numerics.exact_matrix(inputs.geometry.one_form_hodge.matrix)
     b = _im(graph.incidence)
-    bt, ih = tuple(zip(*b, strict=True)), _im(numerics.inverse(h))
+    # Analytic enclosure, not an exact matrix fact: honor the explicitly
+    # selected interval policy also for the physical Hodge inverse.
+    bt, ih = tuple(zip(*b, strict=True)), _iinverse(_im(h))
     c, j = (
         _im(tuple((x,) for x in inputs.current.C)),
         _im(tuple((x,) for x in current.values)),
@@ -480,18 +506,11 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
                         + exact_number(inputs.current.C[v])
                     )
                     + exact_number(p.beta) * square
-                    + exact_number(p.gamma) * baseline[i][0].lo ** 2
+                    + exact_number(p.gamma) * _isquare(baseline[i][0])
                 )
                 / 2
             )
-            if exponent < -1000:
-                target = _iv(p.W_floor)
-            else:
-                exp = _iexp(_iv(exponent))
-                target = _Interval(
-                    max(exact_number(p.W_floor), exp.lo),
-                    max(exact_number(p.W_floor), exp.hi),
-                )
+            target = _ifloored_exp(exponent, p.W_floor)
             contrast = (_iv(w[i]) - target) / (_iv(w[i]) + target)
             flux.append((exact_number(p.chi_A) * contrast * j[i][0],))
         flux = tuple(flux)

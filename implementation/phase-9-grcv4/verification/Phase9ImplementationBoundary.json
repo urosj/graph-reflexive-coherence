@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "4b6b77b36c4a2821eb41c002d193732b8ea31bcb97d714fa1155719c40409c78"
+      "sha256": "755d7af1190e61a4ddc4e8ad875b55704f64c8415f7fcad8d207921286a461e6"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -5375,7 +5375,7 @@
     },
     {
       "path": "specs/grc-v4-numerical-policy.md",
-      "sha256": "a1d9f84423ead0ad62fdc70e54e9a897ec4f1642602975b404509619877b2f74"
+      "sha256": "5ac3fd66888ebe2233b3ac898d07d49769105dc219a45af21554ccfd93afcf7a"
     },
     {
       "path": "tests/models/_grc_v4_research_sources.py",
@@ -5582,5 +5582,5 @@
       "sha256": "1ac96c47174fcb30725ed0aa3852e2c9c2af0471867d7a1f63f4bf55a44cd957"
     }
   ],
-  "record_digest": "6dec1bd51af7fbace2480db3df3fa5439e0a72f6711767a2e9bde3df7f4ebbca"
+  "record_digest": "8e9742b102e5269060d2992924c49f41f7488e29e50bd1a743d7a09bf2efd9f6"
 }

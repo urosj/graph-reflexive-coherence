@@ -1218,6 +1218,7 @@ CERTIFIED_NUMERICAL_RUNTIME = {
         "tests/models/test_grc_v4_certified_policy.py",
         "src/pygrc/models/grc_v4_interval.py",
         "tests/models/test_grc_v4_interval.py",
+        "tests/models/test_grc_v4_ci_residual_policy.py",
     )
 }
 PATHS |= RECONCILED_CONTEXT_PATHS | {

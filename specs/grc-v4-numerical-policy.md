@@ -275,6 +275,42 @@ enclosure widths can affect an otherwise inconclusive boundary comparison;
 identical residual-bound bytes across execution policies are not promised.
 No represented root is admitted without its own full joint residual check.
 
+#### Analytic Hodge and nonlinear A enclosure correction
+
+This dispatch also covers the represented physical Hodge used inside the
+analytic residual. Replace the previously unconditional exact expression
+`interval(exact_inverse(H))` by the policy-selected `interval_inverse(interval(H))`.
+Under `certified_arb_256_weighted_v1` this returns a rigorous 256-bit Arb inverse
+enclosure; under the legacy policy a point operand retains the exact rational
+inverse. This is **not** a rounded physical solve or a cached exact inverse.
+Singular/unresolved enclosures fail explicitly; no exact fallback is allowed.
+
+For Candidate A, let the analytic baseline enclosure be $J_0\in[l,u]$.
+Its squared image is
+
+$$
+[l,u]^2=\begin{cases}
+[0,\max(l^2,u^2)],&l\le0\le u,\\
+[\min(l^2,u^2),\max(l^2,u^2)],&\text{otherwise}.
+\end{cases}
+$$
+
+The full interval, not $l^2$ alone, is propagated through the declared exponent,
+exponential and positive conductance floor. For an exponent enclosure $[a,b]$,
+the floored exponential image is
+$[\max(W_{\rm floor},\exp(a)),\max(W_{\rm floor},\exp(b))]$, with outward
+endpoint bounds. If $b<-1000$, every positive binary64 floor exceeds
+$\exp(b)$, so the image is the point floor. If only $a<-1000$, zero is a
+valid lower exponential bound before applying the floor; the upper endpoint
+must still be enclosed. The existing finite exponential budget otherwise
+applies, with explicit failure outside it.
+
+This corrects enclosure propagation when matrix arithmetic produces nonpoint
+baselines, including signed/zero-crossing intervals and floor boundaries.
+It does not change the underlying A law, staged physical arithmetic, history
+writer, root domain, tolerance or stopping rule. Historical executions remain
+bound to their original code; this correction does not retroactively rerun them.
+
 ## Scope and remaining costs
 
 Candidate A's direct diagonal physical-current formula, singularity and condition
