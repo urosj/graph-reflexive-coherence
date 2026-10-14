@@ -1,0 +1,109 @@
+{
+  "schema": "p984g-cci-continuation-bounds-v1",
+  "family": "C_CI",
+  "cases": [
+    {
+      "graph": "source",
+      "role": "current",
+      "exact_root_resource_minimum_lower": "8476025216021309335064077557704673819926571740308295155829473537146939078626833176580414188555817/4271974071841820164790043412339104229205409044713305539894083215644439451561281100045924173873152",
+      "exact_root_resource_minimum_upper": "8476025216021309335364963255863299271727952242817629007127771786827416182142877655713472185102807/4271974071841820164790043412339104229205409044713305539894083215644439451561281100045924173873152",
+      "certified_negative_vertices": [],
+      "certified_positive_vertices": 100,
+      "unresolved_vertices": 0,
+      "reference_staged_minimum": 1.9841003417810898,
+      "counterfactual_staged_minimum": 1.9841003417810898,
+      "exact_root_current_error_upper": "33894355468321313971/664613997892457936451903530140172288",
+      "research_case": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/source-current.json",
+        "sha256": "3534811a7422164b4bfa44f772ab57437e66c149d9fd995b88bcff0affaae685",
+        "record_digest": "1668f301c9e758bd80abf1c3a937fcd0afb07b434d18e2e95cfcb76e72129de4"
+      }
+    },
+    {
+      "graph": "source",
+      "role": "reset",
+      "exact_root_resource_minimum_lower": "525506393022436146267626800135734254515135683183958196166316420977554215485413290820211523149915/266998379490113760299377713271194014325338065294581596243380200977777465722580068752870260867072",
+      "exact_root_resource_minimum_upper": "525506393022436146338492448475486324640327553528455939229818440608130329220480288205043230089125/266998379490113760299377713271194014325338065294581596243380200977777465722580068752870260867072",
+      "certified_negative_vertices": [],
+      "certified_positive_vertices": 100,
+      "unresolved_vertices": 0,
+      "reference_staged_minimum": 1.9682006835621797,
+      "counterfactual_staged_minimum": 1.9682006835621797,
+      "exact_root_current_error_upper": "7982916735558222009/41538374868278621028243970633760768",
+      "research_case": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/source-reset.json",
+        "sha256": "dcb2cc399f74f7141928982dc70392899bc29565ae356215b1cc96fd4ad59c28",
+        "record_digest": "43346800d50476481f62dc7553dd32e2dcbc30f84dd30f246f81ce1c2505bfbf"
+      }
+    },
+    {
+      "graph": "target",
+      "role": "current",
+      "exact_root_resource_minimum_lower": "-25333604237796785/2535301200456458802993406410752",
+      "exact_root_resource_minimum_upper": "-24155649608915271/2535301200456458802993406410752",
+      "certified_negative_vertices": [
+        {
+          "index": 100,
+          "node": "grc-event-sha256:03a65f7c0953f42246df502498e891b1d3a2d866dd22c9029c6dcfdc91eab235/extra/1/1",
+          "lower": "-25333604237796785/2535301200456458802993406410752",
+          "upper": "-24155649608915271/2535301200456458802993406410752",
+          "initial_resource": 0.0,
+          "outward_rate_lower": "24155649608915271/618970019642690137449562112",
+          "excluded_for_every_positive_dt_at_this_state": true
+        }
+      ],
+      "certified_positive_vertices": 106,
+      "unresolved_vertices": 0,
+      "reference_staged_minimum": -9.760034397057428e-15,
+      "counterfactual_staged_minimum": -9.756402319779282e-15,
+      "exact_root_current_error_upper": "588977314440757/618970019642690137449562112",
+      "research_case": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/target-current.json",
+        "sha256": "7bf3d5d05a0d7c9dead11eee3c6b87588bd2c031b36edfe83f40db63f164319e",
+        "record_digest": "b8b451f0c7dee26b30200d6c387130738456783ca7b59564c427903f555ad8e0"
+      }
+    },
+    {
+      "graph": "target",
+      "role": "reset",
+      "exact_root_resource_minimum_lower": "-101342352467370303/10141204801825835211973625643008",
+      "exact_root_resource_minimum_upper": "-96630167444430881/10141204801825835211973625643008",
+      "certified_negative_vertices": [
+        {
+          "index": 100,
+          "node": "grc-event-sha256:03a65f7c0953f42246df502498e891b1d3a2d866dd22c9029c6dcfdc91eab235/extra/1/1",
+          "lower": "-101342352467370303/10141204801825835211973625643008",
+          "upper": "-96630167444430881/10141204801825835211973625643008",
+          "initial_resource": 0.0,
+          "outward_rate_lower": "96630167444430881/2475880078570760549798248448",
+          "excluded_for_every_positive_dt_at_this_state": true
+        }
+      ],
+      "certified_positive_vertices": 106,
+      "unresolved_vertices": 0,
+      "reference_staged_minimum": -9.760798829156767e-15,
+      "counterfactual_staged_minimum": -9.75716675187862e-15,
+      "exact_root_current_error_upper": "2356092511469711/2475880078570760549798248448",
+      "research_case": {
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/target-reset.json",
+        "sha256": "d36b3c6dc7bb78a2819a40829a60654715a37825ed06b7857d6d216283c390b4",
+        "record_digest": "affe456b874d23171b84c8938494bee1833a7bd63f412bd85d6a5805c81a4a84"
+      }
+    }
+  ],
+  "source_bindings": {
+    "implementation/phase-9-grcv4/verification/p984g_cci_continuation.py": "2cfc74d2502befcc21e4248195b956deacef1f75822ee605e007c7366e70878b",
+    "implementation/phase-9-grcv4/verification/test_p984g_cci_continuation.py": "73d99fe16fcf3bfc715b4f8a22836c762164ed0f4f39281894da54ad9ec11ddb",
+    "implementation/phase-9-grcv4/verification/p984g_cci_staged.py": "579268ad06f6fadea0f041c076a1494c15c64a89e2c8c12c09db1c4ac24aea6d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedResults.json": "1c1b37ab39de41cd12a7f1fc434fb45de8739abdc7d90401afc307fddb72ea78",
+    "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_CI.json": "f40f5fdada51afbeaed55c1565f10cc9e59eb50a304709ffff39b948a474c626"
+  },
+  "scope": "exact_real_first_step_at_unique_CI_root_not_native_rejection",
+  "native_steps": 0,
+  "native_events": 0,
+  "ready_for_8_4h": false,
+  "user_accepted": false,
+  "altered_timestep": false,
+  "clipped_resources": false,
+  "record_digest": "d00833b8bb85efa1f41fb33f0c04cbb50f096db5b8f4a8d441497aa217c4788b"
+}

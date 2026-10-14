@@ -112,6 +112,36 @@ does **not** rerun the large numerical trajectory.
 
 ## Historical evidence and remaining Phase 9 scope
 
+### Subsequent CI interval extension (accepted 2026-10-14)
+
+The C_CI larger-graph investigation adds
+[grc_v4_interval.py](../../src/pygrc/models/grc_v4_interval.py), used only when
+the certified FLINT policy is explicitly selected. It replaces CI analytic
+residual matrix products and verified-midpoint inverses with fixed-256-bit Arb
+**interval** products and rigorous inverse enclosures. Exact formulas, endpoint
+enclosure and explicit inconclusive behavior are specified in
+[supplement §7](../../specs/grc-v4-numerical-policy.md#7-ci-analytic-residual-interval-matrices).
+The physical staged solves, CI ball, tolerance, iteration recipe and default
+legacy path do not change. This is shared A/C CI machinery; a C_CI execution
+does not grant new A_CI or CI+PC coverage. Interval residual bounds can differ
+in width without changing the equation they enclose.
+
+Seven focused [kernel tests](../../tests/models/test_grc_v4_interval.py) cover
+signed-box products, inverse corner enclosures, singular/uncertain failure,
+extreme scales, unchanged legacy arithmetic and small A/C native-root parity.
+No retry, exact fallback or rounded inverse-as-proof is introduced. Native
+larger-graph progress is recorded separately in
+[the C_CI plan](../phase-9-grcv4/tranche-8/P9-8.4g-CCIClosurePlan.md).
+
+Earlier C_CI research and accepted C_OS native evidence retain their original
+hashes. The [narrow historical adapter](../phase-9-grcv4/verification/p984g_pre_ci_interval_sources.py)
+authenticates the old CI source and numerical supplement at `e1d61021`;
+other inputs must still match local bytes. The only new runtime roster member
+is the explicitly named interval module. This is historical checking, not a
+claim that the old executions used the new interval implementation.
+
+### Original integration history
+
 The research records and measured scripts are unchanged. Their source bindings
 resolve against pre-integration commit
 `5b9836358af2873e524e6ceae7256639e8a6bbce` using the

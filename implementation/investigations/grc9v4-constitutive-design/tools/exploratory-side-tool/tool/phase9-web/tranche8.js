@@ -218,6 +218,41 @@ export function renderTranche8(value, container, create = tag => document.create
     const refs=append(container,'p','');
     for(const key of ['inputs','results','plan','review']) {link(refs,row[key],key);append(refs,'span',' · ');}
   }
+  for(const research of c.larger_prerequisites.investigations || []) {
+    append(container,'h3',`8.4g ${research.family} — research and separately bound native prerequisites`);
+    append(container,'p',`Historical research: ${research.cases.length} whole-ball existence/uniqueness certificates. Native roots: ${research.native_roots}; steps: ${research.native_steps}; events: ${research.native_events}. 8.4h readiness: ${research.ready_for_8_4h}. Scalar certificates recomputed; no native trajectory rerun.`);
+    append(container,'p','Reference-geometry pairs already satisfy the exact-real residual tolerance. This does not establish feedback discrimination or a represented joint root.');
+    details(container,'Exact-real bounds and remaining obligations',{cases:research.cases,open:research.open_obligations});
+    if(research.staged_bridge) {
+      const bridge=research.staged_bridge;
+      append(container,'p','Historical represented joint-root bridge: includes analytic current defect, geometry residual and contraction tail. Counterfactual feedback reads are not extra native iterations. This original record does not verify native stopping; see the separate successor below.');
+      details(container,'Staged feedback discrimination (approximate display; exact bounds linked)',bridge.cases);
+      details(container,'Historical staged-bridge obligations (see native successor below)',bridge.open_obligations);
+      append(container,'p',`${bridge.continuation.excluded_target_roles} original target roles have certified negative exact-root first-step resources. At a zero-resource vertex this excludes every positive timestep at that state; no native rejection receipt is claimed.`);
+      details(container,'Exact-root continuation exclusion (approximate display)',bridge.continuation.cases);
+      link(container,bridge.continuation.results,'Exact continuity bound evidence');
+      const links=append(container,'p','Staged successor: ');
+      for(const key of ['results','plan','review']) {link(links,bridge[key],key);append(links,'span',' · ');}
+    }
+    if(research.feasibility) {
+      const f=research.feasibility;
+      append(container,'p',`C_CI lawful feasibility companion: shares ${f.shares.join(', ')}, source deficit ${f.source_deficit} at node 0 compensated at node ${f.source_compensation_node}. This research record provides exact-real first-step bounds only; separate native evidence follows.`);
+      append(container,'p','Allocation alone leaves the original staged source trigger at zero. The new source fixture has interior row margins; its full-ulp control is not native staged arithmetic. Current uses postbeat transfer; stored reset does not evolve.');
+      details(container,'Companion bounds (approximate display; no numerical rerun)',f.cases);
+      details(container,'Actual event role pairing, not an event receipt',f.event_pair);
+      const links=append(container,'p','Feasibility successor: ');
+      for(const key of ['results','plan','review']) {link(links,f[key],key);append(links,'span',' · ');}
+    }
+    if(research.native_prerequisites) {
+      const n=research.native_prerequisites;
+      append(container,'p',`C_CI native prerequisite successor: ${n.native_steps} numerical steps, ${n.native_roots} full joint roots; ${n.native_events} events and ${n.committed_steps} live commits. Status: ${n.status}. 8.4h readiness: ${n.ready_for_8_4h}. Retained checks do not rerun trajectories.`);
+      details(container,'Native C_CI cases, residuals and exact stored-resource drift',n.cases);
+      append(container,'p','The old negative target and sub-rounding feedback limitations remain. These four fixed companion cases are not a uniform domain or a lifecycle campaign.');
+      for(const key of ['results','plan','review']) {link(container,n[key],`Native ${key}`);append(container,'span',' · ');}
+    }
+    const refs=append(container,'p','');
+    for(const key of ['results','plan','review']) {link(refs,research[key],key);append(refs,'span',' · ');}
+  }
   append(container, 'p', `Retained probe outcomes: ${JSON.stringify(value.configuration.outcome_counts)}. Forty disabled-profile cells remain Tranche 9 work.`);
   for (const row of value.configuration.families) {
     const p = append(container, 'p', `${row.family}: ${JSON.stringify(row.outcomes)}. Owners: ${row.next_owners.join(', ')}. `);

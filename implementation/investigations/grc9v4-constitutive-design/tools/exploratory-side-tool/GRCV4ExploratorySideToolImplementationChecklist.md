@@ -2408,3 +2408,19 @@ instead of stale fixed totals and opens any pending case details explicitly.
   notebook and browser show scoped acceptance (2026-10-14) and `.h` eligibility,
   not execution or acceptance of that later campaign.
   Reject forged native scope/counts and execution through read-only dispatch.
+- [x] Expose the separate C_CI exact-real ball investigation at `8.4g` via
+  selected CLI/API/notebook and browser: four certificates, reference-residual
+  caveat, no represented-root/native/readiness credit; cheap scalar checking.
+- [x] Expose the C_CI staged joint-root successor and both exact-root target
+  continuation exclusions, preserving the earlier record's scope. Counterfactual
+  reads are not native iterations; approximate display values link exact bounds.
+  No interval-solve rerun, native stopping outcome or `.h` readiness follows.
+- [x] Expose the C_CI source/allocation feasibility successor in selected views:
+  preserve original exclusions and allocation-only staged trigger failure;
+  distinguish positive exact-real bounds from native admission, and live-current
+  postbeat transfer from unchanged reset. No vertex solve in status dispatch.
+- [x] Expose the separate C_CI native prerequisite successor: four numerical
+  steps/twelve full joint-root constructions, source bindings, residuals,
+  charge versus exact stored-resource drift, compressed case links and scoped
+  user acceptance (2026-10-14). Preserve original research/exclusions and historical source
+  identities; no numerical rerun, live event or other-family credit in status.

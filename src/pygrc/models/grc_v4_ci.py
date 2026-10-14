@@ -242,6 +242,14 @@ def _im(matrix: Any) -> Any:
 
 
 def _imm(a: Any, b: Any) -> Any:
+    from .grc_v4_certification import certified_policy
+    if certified_policy():
+        from .grc_v4_interval import matmul
+        result = matmul(
+            tuple(tuple((x.lo, x.hi) for x in row) for row in a),
+            tuple(tuple((x.lo, x.hi) for x in row) for row in b),
+        )
+        return tuple(tuple(_Interval(lo, hi) for lo, hi in row) for row in result)
     return tuple(
         tuple(
             sum((x * y for x, y in zip(row, col, strict=True)), _iv(0))
@@ -253,6 +261,11 @@ def _imm(a: Any, b: Any) -> Any:
 
 def _iinverse(a: Any) -> Any:
     """Verified midpoint inverse: ||I-M A||_inf=q<1 bounds the Neumann tail."""
+    from .grc_v4_certification import certified_policy
+    if certified_policy():
+        from .grc_v4_interval import inverse
+        result = inverse(tuple(tuple((x.lo, x.hi) for x in row) for row in a))
+        return tuple(tuple(_Interval(lo, hi) for lo, hi in row) for row in result)
     mid = tuple(tuple((x.lo + x.hi) / 2 for x in row) for row in a)
     try:
         inverse = numerics.inverse(mid)

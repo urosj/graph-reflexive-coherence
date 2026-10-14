@@ -3334,6 +3334,34 @@ the full ten-profile plan.
     - [x] C_OS native prerequisite scope accepted by the user on 2026-10-14;
       eligible for its separately declared `.h` campaign, not execution or
       acceptance of that campaign. Aggregate and the other nine families remain open.
+    - [x] C_CI investigation-first exact-real feasibility: four unchanged
+      cyclic source/target × current/reset Frobenius-ball self-map/contraction
+      bounds. [Proof and limitation](./phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigation.md).
+      Bounded research accepted with the C_CI successor on 2026-10-14;
+      this original record alone is not native or represented-root acceptance.
+    - [x] C_CI staged joint-root research bridge and feedback discrimination:
+      all four represented reference pairs meet an independent analytic residual
+      bound. Include current defect and geometry/root tail; exact feedback is
+      nonzero but source effects remain below whole-current rounding-error bounds.
+      [Successor and exclusions](./phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedReview.md).
+      No native stopping/conformance credit from this research record alone;
+      accepted within the bounded C_CI successor on 2026-10-14.
+    - [x] Derive C_CI source/allocation feasibility before a positive campaign:
+      [bounded successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibility.md)
+      uses shares (5/16,5/16,3/8) and a charge-preserving source deficit 2^-10.
+      Full-law first-step bounds and robust source postbeat row margins pass;
+      original target exclusions and allocation-only staged trigger failure stay
+      retained. Exact-real research accepted within the bounded C_CI successor
+      on 2026-10-14, not by itself native continuation.
+    - [x] C_CI native certificate/computed roots and poststate admission for
+      all four source/target × current/reset cases: twelve joint-root
+      constructions, independent analytic residuals, represented charge,
+      literal continuity and final-C admission. Explicit certified interval
+      extension; original exclusions remain. [Review](./phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure.md).
+      Bounded numerical prerequisites only, not `.h` events or a uniform domain.
+    - [x] Review and accept bounded C_CI `.g` research/native prerequisite
+      successor and explicit certified CI interval extension. User acceptance
+      on 2026-10-14 grants scoped `.h` eligibility, not execution or aggregate closure.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.

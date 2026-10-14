@@ -64,10 +64,12 @@ def main():
         for field in fields:
             sources.raw(getattr(module, field))
         original = sys.argv
+        from p984g_pre_ci_interval_sources import historical_sources as pre_ci_interval_sources
         try:
             sys.argv = [str(expected), *options]
             with redirect_stdout(output), (index.historical_larger_sources()
-                    if name in ('p984g_cos','p984g_cos_bounds') else nullcontext()), (module.b.exact_backend(module.b.ExactBackend.FLINT)
+                    if name in ('p984g_cos','p984g_cos_bounds') else nullcontext()), (pre_ci_interval_sources()
+                    if name == 'p984g_cos_native' else nullcontext()), (module.b.exact_backend(module.b.ExactBackend.FLINT)
                     if name in ("p984c_crg2b_runtime", "p984c_arg2b_runtime") else nullcontext()):
                 module.main()
         finally:

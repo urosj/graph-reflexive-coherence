@@ -244,6 +244,37 @@ may be unavailable on overflow without invalidating its exact certificate.
 The method applies to any topology with positive diagonal reference weights;
 it is shared by A_OS and C_OS, not an extra step in the other realizations.
 
+### 7. CI analytic residual interval matrices
+
+With the explicitly selected `certified_arb_256_weighted_v1` policy, CI analytic
+residual evaluation uses a shared fixed-256-bit Arb component for interval
+matrix products and inverses. This applies to A/C CI and their CI+PC analytic
+residual consumers; coverage is established separately, never inferred from
+the shared code path. The legacy policy retains its original implementation.
+
+For entrywise rational boxes A and B, the new product encloses every AB. The
+old product used Python scalar interval sums; the new one outward-encloses
+each rational endpoint in Arb, multiplies the interval matrices and returns
+exact rational lower/upper endpoints. CI then applies its existing outward
+160-significant-bit interval grid. It does not round an endpoint into a point
+coefficient or claim exact-real equality for the enclosure midpoint.
+
+The old inverse enclosure constructed an exact midpoint inverse M and bounded
+the Neumann tail from ||I-MA||_infinity. The selected replacement calls rigorous
+Arb interval inversion at 256 bits, enclosing the inverse for all matrices in
+the operand box. Unresolved or nonfinite enclosures raise
+`CertificationInconclusive`; there is no approximate mode, increased precision,
+or exact-midpoint-inverse fallback. Closed endpoint containment survives the
+subsequent outward grid conversion.
+
+These are enclosures of the **analytic residual equations**, not staged physical
+currents or cached exact inverses. The current/geometry equations, physical
+binary64 staging, root domain, residual norm/tolerance, iteration budget and
+first-pass versus confirming-pass recipes are unchanged. Different sound
+enclosure widths can affect an otherwise inconclusive boundary comparison;
+identical residual-bound bytes across execution policies are not promised.
+No represented root is admitted without its own full joint residual check.
+
 ## Scope and remaining costs
 
 Candidate A's direct diagonal physical-current formula, singularity and condition

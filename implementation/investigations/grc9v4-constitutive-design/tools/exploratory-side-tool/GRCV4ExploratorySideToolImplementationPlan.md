@@ -2899,3 +2899,32 @@ Original execution flags remain unchanged. Default selected
 retained verification checks the native successor without rerunning numerics;
 explicit interval recheck remains a historical research calculation. Neither
 mode executes the `.h` lifecycle campaign or grants other-family credit.
+
+C_CI begins with a separate exact-real investigation view: four graph/role
+whole-ball certificates, a visible reference-residual/feedback-discrimination
+limitation, and zero native root/step/event credit. Selected read-only checks
+recompute only scalar certificates; do not dispatch native owners or C_OS work.
+Staged error and native admission stay explicit open obligations.
+
+The staged successor now carries independent analytic residual/current-defect
+and joint-root bounds, separate counterfactual feedback reads and exact-root
+first-step sign propagation. Both original target roles are excluded at a
+zero-resource vertex for every positive dt at that state. Expose this without
+inventing native rejection or readiness. Display compact approximate numbers
+with exact source links; retained checks do not repeat the interval solves.
+
+The source/allocation feasibility view adds a separately identified conservative
+resource fixture and derived satellite shares. Preserve the original target
+exclusions and allocation-only zero-gradient staged trigger failure. Expose
+positive exact-real first-step bounds, current-postbeat/unchanged-reset pairing,
+and pending native stopping/charge/readmission without rerunning vertex solves
+from default API/CLI/notebook/browser status queries.
+
+The native C_CI successor is projected separately: four numerical steps and
+twelve joint roots, original research/exclusion flags unchanged, explicit
+policy and source bindings, independent residuals and exact stored-resource
+drift. Default status reads retained evidence and scalar checks only. User
+acceptance (recorded 2026-10-14) and `.h` eligibility remain separate from execution;
+no lifecycle event, uniform domain or other-family support is inferred.
+Authenticate the pre-extension CI/spec bindings at `e1d61021` for historical
+evidence, while requiring current bindings for the native successor.

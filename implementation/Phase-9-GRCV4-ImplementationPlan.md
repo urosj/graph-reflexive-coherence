@@ -2817,6 +2817,49 @@ do not rerun numerics, and scientific readiness is not execution authorization.
 
 #### P9-8.4–8.6 runtime conformance
 
+For C_CI, begin with the [larger-graph investigation](./phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigation.md),
+not a native campaign or an extension of the old tree23 certificate. The four
+unchanged declarations satisfy an exact-real whole-ball self-map/contraction
+argument. Their reference pairs also lie within the declared residual tolerance,
+so represented joint-root error and feedback discrimination are separate open
+obligations before native root/poststate work. No tolerance retuning, C_OS
+acceptance transfer, ATC dependency or production change follows.
+
+The [staged joint-root successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedReview.md)
+now encloses analytic current/geometry residuals at the represented reference
+pairs and bounds their distances to the exact root. Exact feedback is nonzero;
+source effects remain smaller than the whole-current rounding-error bounds.
+More importantly, both unchanged targets have a certified negative exact-root
+first-step resource at a zero-resource vertex. This excludes every positive dt
+at that fixed state; improved convergence cannot remove it. Derive a lawful
+source/allocation feasibility companion before claiming positive continuation.
+Original exclusions, native certificate/stopping comparison and `.h` remain
+separate; there is no tolerance, parameter or production change here.
+
+The [source/allocation feasibility successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibility.md)
+now derives that companion: shares (5/16,5/16,3/8), with an explicit source
+resource deficit 2^-10 at node 0 compensated at node 60. Allocation-only passes
+target signs but its old staged source trigger fails at zero; retain that fact.
+The full-law successor bounds both initial and source-postbeat transfers with
+positive first-step resources and strict source row margins. The actual event
+uses live postbeat current and unchanged reset; reset-as-current calculations
+are controls only. These are conditional exact-real research results, not native
+stopping, represented charge or lifecycle acceptance. Next investigate native
+certificate/stopping compatibility on the named companion before the `.h` run.
+
+The [native closure plan](./phase-9-grcv4/tranche-8/P9-8.4g-CCIClosurePlan.md)
+uses four source/target × current/reset numerical steps, with independent
+full joint-root residuals and explicit represented charge/continuity checks.
+Its shared certified-policy extension replaces CI analytic interval matrix
+products/inverses, not physical laws, root tolerance or iteration semantics.
+Old research and C_OS execution bindings remain historical; current native
+results are a separate successor. Scoped numerical closure still does not
+execute `.h`'s fresh postbeat event or multi-step continuation, and does not
+remove the original negative target or feedback-versus-rounding limitations.
+The user accepted this bounded C_CI prerequisite chain and numerical extension
+on 2026-10-14; C_CI `.g` is closed and eligible for `.h`, without executing that
+campaign or closing other families or the parent checkpoint.
+
 The 2026-10-05 repository UX continuation adds a
 [configuration CLI and declarative inventory](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
 before this runtime work: 42 retained small/large native and generic examples,

@@ -18,6 +18,57 @@ from unittest.mock import patch
 
 from tranche8_validation import ACTIVE, validation_session, LOCK
 
+LARGER_CCI_NATIVE_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_cci_closure.py": "e3e20404a3beb4e3234e9449f50818d3cd224d6a39a8b71f53c3e61912e781eb",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosurePlan.md": "f0a6ee755e24fd010f5e8fe78309b89e5f4eeb0bed485449f4b8cbe9fe44b503",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosureResults.json": "afa3842bde3bafbd2e4eb67a90522b40a86434644f6fd6e8bff6326d6be51f2e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure.md": "70b1a26d75c3122cda4a0f3d3810828f4b14b7f917d18b41073f5705465f5861",
+    "implementation/phase-9-grcv4/verification/p984g_cci_closure_check.py": "2d36804228de800f528eb1104c355aac02a842c1b3771fc5e13528c216bfef3b",
+    "implementation/phase-9-grcv4/verification/test_p984g_cci_closure.py": "1ac96c47174fcb30725ed0aa3852e2c9c2af0471867d7a1f63f4bf55a44cd957",
+    "implementation/phase-9-grcv4/verification/p984g_pre_ci_interval_sources.py": "7d8faca54f58405265b3f1ef82703742410ffa8f0f256f6deef5b94e329f7995",
+    "implementation/phase-9-grcv4/verification/p984g_cci_native.py": "67752c22f3f878a2e6fd88819620a4b519258948ebe6af07a19e30a6513a3fa1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCINativePlan.md": "1af932ec4b7a184329b7447415516ef8826fdb9a19405397b13f4e509b65c0d6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCINativeProbe.json": "2bbdb7835ebc650d7a78b70720dcfe060de58d9d31255524de0765621afb278b",
+    "implementation/phase-9-grcv4/verification/p984g_cci_native_admission.py": "7b07a97ce529da8226121a4707697892c6f66b0704c63f82ba0bbb60a346ba31",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCINativeCertificate.json": "4766136e554c4aa340fee0bb2bac27b2f93fb695db0298b188ee3fad55d1848c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/source-current.json.xz": "9868cb981bf35675fb20687183795702e34d88237a579a15246030bd9afffc34",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/source-reset.json.xz": "723e825d5c9940364e4c5f721cc3861b151b291bbb1cb1925f286df8067f355d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/target-current.json.xz": "905efd6a9972e24d0e60bbd9c84c1bbe7f1e74efcebab90fddc4e1396ff43196",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/target-reset.json.xz": "61928f0e01f9b4faa3a7e8af5523f7e18b44eea4890743bf7301ab063146fe5a"
+}
+
+LARGER_CCI_FEASIBILITY_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_cci_feasibility.py": "5194f1b61e892667fde22ff9984844da3384dd016327da300072ff5c0baeebbc",
+    "implementation/phase-9-grcv4/verification/test_p984g_cci_feasibility.py": "ae79fb01b87f095e279f3b6c75081c9e78e209795cc94edd97773d3d78eb3ae5",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibilityPlan.md": "8bb8a75b389f795a075d07369dd43f7d235f0ede98e0b46c1cbf4411dfd8aeb7",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibility.md": "4dd14f5d26bbc32c0818ac0c92e6e111090edf383bd70710bce5f3237c61ae31",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibilityResults.json": "aed82b3aa38ddc67297d3d1b2f747810b26c82df6ccf839845f5379b9f136773"
+}
+
+LARGER_CCI_STAGED_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_cci_staged.py": "579268ad06f6fadea0f041c076a1494c15c64a89e2c8c12c09db1c4ac24aea6d",
+    "implementation/phase-9-grcv4/verification/test_p984g_cci_staged.py": "ebb20fc152a192e7e7687bbe7503ae14cd9676337c10b62ed6d8bf542b56141d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedPlan.md": "8f87961a84596b34fc51a72c857ff8febbadfd1b2095de2c271523fcbaa92753",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedReview.md": "b0a94e381d662daf9f8d3d4cb8cc442912e247117b4f7137ee8dc0e7b1c50294",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedResults.json": "1c1b37ab39de41cd12a7f1fc434fb45de8739abdc7d90401afc307fddb72ea78",
+    "implementation/phase-9-grcv4/verification/p984g_cci_continuation.py": "2cfc74d2502befcc21e4248195b956deacef1f75822ee605e007c7366e70878b",
+    "implementation/phase-9-grcv4/verification/test_p984g_cci_continuation.py": "73d99fe16fcf3bfc715b4f8a22836c762164ed0f4f39281894da54ad9ec11ddb",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIContinuationBounds.json": "01df5c1efaf668bb534231095345bc711e6bc549e5ea3b883739e73fc375bf02",
+    "implementation/phase-9-grcv4/verification/test_p984g_cci_staged_controls.py": "cea0bf999c3fd47ee42f50805ca91c59f37c479e7d5e8117822181980ad83810",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/source-current.json": "3534811a7422164b4bfa44f772ab57437e66c149d9fd995b88bcff0affaae685",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/source-reset.json": "dcb2cc399f74f7141928982dc70392899bc29565ae356215b1cc96fd4ad59c28",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/target-current.json": "7bf3d5d05a0d7c9dead11eee3c6b87588bd2c031b36edfe83f40db63f164319e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/target-reset.json": "d36b3c6dc7bb78a2819a40829a60654715a37825ed06b7857d6d216283c390b4"
+}
+
+LARGER_CCI_RESEARCH_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_cci_investigation.py": "b7ab1106122b5cd6463edce6e66740c73976cc2e06116c3555896b7cf1a013c8",
+    "implementation/phase-9-grcv4/verification/test_p984g_cci_investigation.py": "7d3d0769d0d9bc33cd3382e225a9a3fdbc2c1ae022696aa60f22a0994de02825",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigationPlan.md": "dd4937bf06c2547b298fb2de7e5b57ad776691a2a1441e03683c729a4bf51320",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigation.md": "b2991fb5512b7c9db2e26eab230d69f0c9991c33436b834a8eb8a1670581265e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigationResults.json": "4cddc0df1b18132df92c181f93a508be9f0dd148b0b97c73cf373ef519e018f0"
+}
+
 # Populated with the exact completed successor records, never live discovery.
 LARGER_COS_NATIVE_SOURCES = {
     "implementation/phase-9-grcv4/verification/p984g_cos_native.py": "f45248934786ea7c0a8d1d068e0d7377df2ac142810f52a7eb1a886b7c0e5e5d",
@@ -434,6 +485,10 @@ class Sources:
             boundary_pins.update(LARGER_COS_SOURCES)
             boundary_pins.update(LARGER_COS_BOUNDS_SOURCES)
             boundary_pins.update(LARGER_COS_NATIVE_SOURCES)
+            boundary_pins.update(LARGER_CCI_RESEARCH_SOURCES)
+            boundary_pins.update(LARGER_CCI_STAGED_SOURCES)
+            boundary_pins.update(LARGER_CCI_FEASIBILITY_SOURCES)
+            boundary_pins.update(LARGER_CCI_NATIVE_SOURCES)
             boundary_pins.update(COVARIANCE_CCI_SOURCES)
             boundary_pins.update(COVARIANCE_ACI_SOURCES)
             boundary_pins.update(COVARIANCE_APC_SOURCES)
@@ -443,7 +498,11 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_C_OS_native_prerequisites_scoped_acceptance" if name in LARGER_COS_NATIVE_SOURCES else
+                    basis=("pinned_C_CI_native_prerequisites_scoped_acceptance" if name in LARGER_CCI_NATIVE_SOURCES else
+                        "pinned_C_CI_source_allocation_feasibility_not_native_admission" if name in LARGER_CCI_FEASIBILITY_SOURCES else
+                        "pinned_C_CI_staged_joint_bridge_not_native_stopping" if name in LARGER_CCI_STAGED_SOURCES else
+                        "pinned_C_CI_exact_real_investigation_not_native" if name in LARGER_CCI_RESEARCH_SOURCES else
+                        "pinned_C_OS_native_prerequisites_scoped_acceptance" if name in LARGER_COS_NATIVE_SOURCES else
                         "pinned_larger_pointwise_bounds_not_native_admission" if name in LARGER_COS_BOUNDS_SOURCES else
                         "pinned_larger_equation_preflight_not_native_admission" if name in LARGER_COS_SOURCES else
                         "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance" if name in CHART_APC_SOURCES else
@@ -1460,7 +1519,91 @@ def deep_view(sources):
         other_family_credit=0, successive_event_credit=0)
 
 
-def larger_view(sources):
+def larger_cci_investigation(sources):
+    from p984g_pre_ci_interval_sources import historical_sources
+    with historical_sources():
+        return _larger_cci_investigation(sources)
+
+
+def _larger_cci_investigation(sources):
+    import p984g_cci_investigation as research
+    for name in LARGER_CCI_RESEARCH_SOURCES:
+        sources.raw(name)
+    result=research.check(sources.read(research.RESULTS))
+    import p984g_cci_staged as staged
+    import p984g_cci_continuation as continuation
+    for name in LARGER_CCI_STAGED_SOURCES:
+        sources.raw(name)
+    assessed=continuation.check()  # includes the staged retained check once
+    checked=staged.read(staged.RESULTS)
+    import p984g_cci_feasibility as feasible
+    for name in LARGER_CCI_FEASIBILITY_SOURCES:
+        sources.raw(name)
+    f=feasible.check_retained(sources.read(feasible.RESULTS))
+    feasibility=dict(scope=f['scope'],shares=f['companion']['shares'],source_deficit=f['companion']['source_deficit'],
+        source_compensation_node=f['companion']['source_compensation_node'],event_pair=f['event_pair'],
+        native_roots=0,native_steps=0,native_events=0,ready_for_8_4h=False,user_accepted=False,
+        interval_solves_rerun=False,approximate_display_numbers=True,
+        allocation_only_staged_trigger_failed_roles=[r['role'] for r in f['allocation_only_diagnostic']['cases']],
+        cases=[dict(role=r['role'],
+            initial_target_minimum_lower_display=float(staged.q(r['initial_transfer']['minimum_lower'])),
+            fresh_transfer_target_minimum_lower_display=float(staged.q(r['fresh_postbeat_transfer']['minimum_lower'])),
+            source_postbeat_gradient_norm_upper_display=float(staged.q(r['source_postbeat_trigger']['gradient_norm_upper'])),
+            source_postbeat_signed_hessian_upper_display=float(staged.q(r['source_postbeat_trigger']['minimum_signed_hessian_upper'])),
+            rounded_exact_postbeat_control_passed=r['rounded_exact_postbeat_control']['strict_hessian_condition']) for r in f['cases']],
+        results=sources.ref(feasible.RESULTS),plan=sources.ref(feasible.PLAN),review=sources.ref(feasible.REVIEW))
+    # Compact display only: exact endpoints remain in the authenticated records.
+    cases=[dict(graph=c['graph'],role=c['role'],
+        analytic_joint_residual_display=float(staged.q(c['analytic_joint_residual_upper'])),
+        joint_root_error_display=float(staged.q(c['joint_root_bridge']['joint_error_upper'])),
+        exact_feedback_lower_display=float(staged.q(c['exact_feedback_current_max_lower'])),
+        exact_feedback_upper_display=float(staged.q(c['exact_feedback_current_max_upper'])),
+        independent_analytic_residual_pass=c['independent_analytic_residual_pass'],
+        counterfactual_changed_current_coordinates=c['counterfactual_changed_current_coordinates'],
+        generated_changed_diagonals=c['generated_changed_diagonals'],
+        generated_nonzero_offdiagonals=c['generated_nonzero_offdiagonals'],
+        minimum_continuity_proposal=c['minimum_continuity_proposal'],
+        evidence=sources.ref(c['path'])) for c in checked['cases']]
+    bridge=dict(scope=checked['scope'],cases=cases,approximate_display_numbers=True,
+        native_roots=0,native_steps=0,native_events=0,ready_for_8_4h=False,
+        user_accepted=False,native_stopping_outcome_verified=False,
+        interval_solves_rerun=False,results=sources.ref(staged.RESULTS),
+        plan=sources.ref(staged.PLAN),review=sources.ref(staged.REVIEW),
+        continuation=dict(scope=assessed['scope'],results=sources.ref(continuation.RESULTS),
+            excluded_target_roles=sum(c['graph']=='target' and bool(c['certified_negative_vertices']) for c in assessed['cases']),
+            cases=[dict(graph=c['graph'],role=c['role'],
+                minimum_lower_display=float(staged.q(c['exact_root_resource_minimum_lower'])),
+                minimum_upper_display=float(staged.q(c['exact_root_resource_minimum_upper'])),
+                negative_vertices=[dict(index=v['index'],node=v['node'],
+                    every_positive_dt=v['excluded_for_every_positive_dt_at_this_state']) for v in c['certified_negative_vertices']]) for c in assessed['cases']]),
+        open_obligations=['source/allocation companion has bounded exact-real feasibility; native admission remains unproved',
+            'native whole-domain certificate and analytic residual/stopping comparison',
+            'both-role computed roots, charge and final-C admission',
+            'preserve feedback-versus-rounding limits; no tolerance change or extra iteration implied'])
+    import p984g_cci_closure_check as closure
+    for name in LARGER_CCI_NATIVE_SOURCES:
+        sources.raw(name)
+    native=closure.check()
+    require(native==sources.read(closure.run.RESULTS),'C_CI native summary drift')
+    acceptance=sources.raw(closure.run.REVIEW).decode()
+    require('## Scoped user acceptance' in acceptance and native['record_digest'] in acceptance,
+            'missing or unbound C_CI native prerequisite acceptance')
+    native_view=dict(scope=native['scope'],native_steps=native['native_steps'],native_roots=native['native_roots'],
+        native_events=0,committed_steps=0,native_prerequisites_complete=True,user_accepted=True,
+        ready_for_8_4h=True,numerical_trajectories_rerun=False,status='accepted_C_CI_prerequisites',
+        acceptance=sources.ref(closure.run.REVIEW,anchor='scoped-user-acceptance'),
+        cases=[dict(graph=c['graph'],role=c['role'],seconds=c['seconds'],minimum_resource=c['minimum_resource'],
+            root_evaluations=c['root_evaluations'],independent_joint_residual_upper=c['independent_joint_residual_upper'],
+            exact_resource_sum_delta=c['exact_resource_sum_delta'],evidence=sources.ref(c['path'])) for c in native['cases']],
+        results=sources.ref(closure.run.RESULTS),plan=sources.ref(closure.run.PLAN),review=sources.ref(closure.run.REVIEW),
+        historical_source_revision='e1d61021',original_research_flags_unchanged=True)
+    return dict(result, staged_bridge=bridge, feasibility=feasibility, native_prerequisites=native_view,
+        results=sources.ref(research.RESULTS), plan=sources.ref(research.PLAN),
+        review=sources.ref(research.REVIEW), scalar_certificates_recomputed=True,
+        native_trajectories_rerun=False)
+
+
+def larger_view(sources, *, include_investigations=True):
     import p984g_cos as preflight
     import p984g_cos_bounds as bounds
     m,r=sources.read(preflight.INPUTS),sources.read(preflight.RESULTS)
@@ -1489,10 +1632,13 @@ def larger_view(sources):
     # Authenticate output bytes before trusting their internal summaries.
     for name in LARGER_COS_NATIVE_SOURCES:
         sources.raw(name)
-    checked = native.check(sources.read(native.INPUTS), sources.read(native.RESULTS))
+    from p984g_pre_ci_interval_sources import historical_sources
+    with historical_sources():
+        checked = native.check(sources.read(native.INPUTS), sources.read(native.RESULTS))
     row['native_prerequisites'] = dict(checked, inputs=sources.ref(native.INPUTS),
         results=sources.ref(native.RESULTS), plan=sources.ref(native.PLAN), review=sources.ref(native.REVIEW),
-        production_shortcut_integrated=True, native_trajectories_rerun=False)
+        production_shortcut_integrated=True, native_trajectories_rerun=False,
+        historical_source_revision='e1d61021',current_tree_execution=False)
     require('## Scoped user acceptance' in sources.raw(native.REVIEW).decode(),
             'missing C_OS native prerequisite acceptance')
     row['native_prerequisites'].update(status='accepted_C_OS_prerequisites',
@@ -1500,8 +1646,10 @@ def larger_view(sources):
         acceptance_scope='four_fixed_C_OS_numerical_prerequisites_not_lifecycle_campaign',
         acceptance=sources.ref(native.REVIEW,anchor='scoped-user-acceptance'))
     row['open_obligations']=['8.4h actual expansion/lifecycle and continuation campaign; not executed here']
-    return dict(family_results=[row],aggregate_closed=False,first_group_closed=False,
-        families_without_preflight=[f for f in FAMILIES if f!='C_OS'])
+    return dict(family_results=[row],investigations=([larger_cci_investigation(sources)] if include_investigations else []),
+        aggregate_closed=False,first_group_closed=False,
+        families_without_preflight=[f for f in FAMILIES if f not in
+            (('C_OS','C_CI') if include_investigations else ('C_OS',))])
 
 
 def family_status(root, family, checkpoint="8.4c"):
@@ -1510,10 +1658,17 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g"), "unknown family checkpoint")
     if checkpoint == "8.4g":
+        if family=='C_CI':
+            sources=Sources(root)
+            return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,
+                scope='historical_research_plus_native_prerequisites_not_lifecycle_campaign',
+                investigation=larger_cci_investigation(sources),
+                source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
+                other_families_checked=False,native_trajectories_rerun=False)
         require(family=='C_OS','larger prerequisite preflight not available for this family')
         sources=Sources(root)
         return dict(schema="phase9_tranche8_family_status_v1",family=family,checkpoint=checkpoint,
-            scope="historical_bounds_plus_native_prerequisites_not_lifecycle_campaign",oracle=larger_view(sources)['family_results'][0],
+            scope="historical_bounds_plus_native_prerequisites_not_lifecycle_campaign",oracle=larger_view(sources,include_investigations=False)['family_results'][0],
             source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
             other_families_checked=False,native_trajectories_rerun=False)
     if checkpoint == "8.4f":
@@ -1656,6 +1811,11 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == '8.4g':
+        if args.family=='C_CI':
+            require(args.action in ('status','verify-retained') and not args.recheck_numerics
+                and not args.oracle and not args.preparation,'select C_CI read-only scalar investigation')
+            print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2))
+            return
         require(args.family=='C_OS' and not args.oracle and not args.preparation,'select C_OS prerequisite preflight')
         require(args.action in ('status','verify-retained') and
             (not args.recheck_numerics or args.action=='verify-retained'),'invalid prerequisite mode')

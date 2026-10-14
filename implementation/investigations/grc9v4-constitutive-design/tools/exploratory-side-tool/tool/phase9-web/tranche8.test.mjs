@@ -6,6 +6,27 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('larger C_CI investigation does not promote exact-real roots to native admission', () => {
+  const row=evidence.coverage.larger_prerequisites.investigations[0];
+  assert.equal(row.family,'C_CI');assert.equal(row.cases.length,4);
+  assert.equal(row.native_roots,0);assert.equal(row.ready_for_8_4h,false);
+  assert.ok(row.cases.every(c=>c.reference_pair_already_within_exact_real_residual_tolerance));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/C_CI — research and separately bound native prerequisites/);
+  assert.match(text(out),/does not establish feedback discrimination/);
+  assert.equal(row.staged_bridge.cases.length,4);
+  assert.equal(row.staged_bridge.native_stopping_outcome_verified,false);
+  assert.match(text(out),/includes analytic current defect/);
+  assert.equal(row.staged_bridge.continuation.excluded_target_roles,2);
+  assert.match(text(out),/certified negative exact-root first-step resources/);
+  const bad=structuredClone(evidence);bad.coverage.larger_prerequisites.investigations[0].staged_bridge.native_stopping_outcome_verified=true;
+  assert.throws(()=>checkedTranche8(bad));
+  for(const key of ['native_roots','native_steps','ready_for_8_4h','user_accepted']) {
+    const forged=structuredClone(evidence);forged.coverage.larger_prerequisites.investigations[0][key]=1;
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('larger equation preflight confers no native admission or readiness', () => {
   const row=evidence.coverage.larger_prerequisites.family_results[0];
   assert.equal(row.family,'C_OS'); assert.equal(row.cases,4);
@@ -689,6 +710,39 @@ test('A_RG2b binds separate acceptance without closing later 8.4 work', () => {
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r=>r.family==='A_RG2b').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
+});
+
+test('C_CI feasibility preserves exclusions and reset chronology without native credit', () => {
+  const r=evidence.coverage.larger_prerequisites.investigations.find(x=>x.family==='C_CI');
+  assert.equal(r.staged_bridge.continuation.excluded_target_roles,2);
+  assert.deepEqual(r.feasibility.shares,['5/16','5/16','3/8']);
+  assert.equal(r.feasibility.source_deficit,'1/1024');
+  assert.equal(r.feasibility.event_pair.reset_evolves,false);
+  assert.equal(r.feasibility.ready_for_8_4h,false);
+  assert.equal(r.feasibility.interval_solves_rerun,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/stored reset does not evolve/);
+  for(const mutate of [x=>x.ready_for_8_4h=true,x=>x.event_pair.reset_evolves=true,
+      x=>x.shares=['1/2','1/4','1/4']]) {
+    const v=structuredClone(evidence);
+    mutate(v.coverage.larger_prerequisites.investigations.find(x=>x.family==='C_CI').feasibility);
+    assert.throws(()=>checkedTranche8(v));
+  }
+});
+
+test('C_CI native successor binds scoped acceptance without event credit', () => {
+  const n=evidence.coverage.larger_prerequisites.investigations[0].native_prerequisites;
+  assert.equal(n.native_steps,4);assert.equal(n.native_roots,12);
+  assert.equal(n.native_events,0);assert.equal(n.user_accepted,true);
+  assert.equal(n.ready_for_8_4h,true);assert.ok(n.acceptance);
+  assert.equal(n.numerical_trajectories_rerun,false);
+  assert.ok(n.cases.every(c=>c.minimum_resource>0 && c.root_evaluations.every(v=>v===1)));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/12 full joint roots/);
+  for(const key of ['native_events','user_accepted','ready_for_8_4h']) {
+    const bad=structuredClone(evidence);bad.coverage.larger_prerequisites.investigations[0].native_prerequisites[key]=key==='native_events'?1:false;
+    assert.throws(()=>checkedTranche8(bad));
+  }
 });
 
 test('8.4c aggregate closes exact accepted scope while later work stays open', () => {

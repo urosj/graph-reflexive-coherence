@@ -1,6 +1,92 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — C_OS P9-8.4g native prerequisites complete (2026-10-14)
+## Accepted checkpoint — C_CI native prerequisites (2026-10-14)
+
+The [closure record](./phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure.md) tracks four
+native source/target × current/reset numerical steps on the declared companion.
+All four complete (507.57–516.07 seconds per worker), including twelve full
+joint-root constructions and positive first-step resources. The user accepted
+this bounded C_CI checkpoint and requested commit on 2026-10-14. C_CI is eligible
+for later `.h` work; that campaign has not been executed here.
+The actual production path constructs reset, current and final-C joint roots,
+with independent analytic residual/error bounds and literal continuity checks.
+The explicitly selected certified FLINT policy now encloses CI analytic interval
+matrix products/inverses at 256 bits; no tolerance, physics, iteration recipe,
+default legacy behavior or fallback policy changes.
+
+The original negative target and allocation-only trigger failure are retained.
+The new companion does not claim a uniform domain, above-rounding source feedback,
+zero exact stored-resource drift or an executed topology event. The next runtime
+campaign remains `.h`: fresh postbeat request and identity, actual current
+transfer with unchanged reset, atomic event and target continuation. A_CI/A_PC
+larger prerequisites remain separate next-family work.
+
+Earlier evidence stays at its original source hashes. Explicit historical checks
+resolve the old CI/spec at `e1d61021`; current native cases bind the new code.
+Use selected `--family C_CI --checkpoint 8.4g` status/retained verification;
+neither API/browser/notebook status nor the retained checker reruns trajectories.
+Case evidence is compressed `.json.xz`. No new claim/debt or support promotion.
+
+## Prior research — C_CI source/allocation feasibility (2026-10-14)
+
+The [feasibility successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibility.md)
+derives zero-resource inflow inequalities and selects exact shares
+(5/16,5/16,3/8). Allocation alone fixes target signs but leaves the retained
+staged source's fresh trigger at exactly zero. A separately declared source
+fixture moves 2^-10 resource from node 0 to node 60 in both roles, conserving
+charge and preserving their original distinct perturbations. All parameters,
+tolerances and dt stay unchanged; original declarations/exclusions are intact.
+
+Full-law, fixed-192-bit FLINT/Arb bounds give target first-step resources above
+1.83e-4 and source postbeat trigger margins robust to a full-ulp-per-resource
+rounding control. That control is not native staged arithmetic. Source/target
+identities are rebuilt for the companion; fresh actual event identities remain
+downstream. The actual event pairs current's postbeat transfer with unchanged
+reset's initial transfer; a reset-as-current pressure calculation does not evolve
+stored reset. Side-tool views expose the companion and original failures.
+
+Next: native CI whole-domain certificate and residual/stopping investigation
+against this explicit companion, then bounded root/charge/final-C admission.
+No native root, step or event has run; `.g` and `.h` readiness remain open.
+Research is uncommitted and pending review. No broad numerical campaign is needed
+merely to review or commit this bounded result.
+
+## Prior research — C_CI joint-root bridge and target exclusion (2026-10-14)
+
+The [staged research successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedReview.md)
+completes four fixed-precision FLINT/Arb cases (76–83 seconds each). Represented
+reference pairs meet independent analytic joint residual bounds; current-defect
+and contraction-tail terms are retained. Exact feedback is nonzero, but source
+effects are below the whole-current rounding-error bound. Counterfactual reads
+are not extra native solver iterations; native stopping remains unverified.
+
+Both original target roles have certified negative **exact-root** first-step
+resources at target vertex 100 (`extra/1/1`): approximately [-9.993e-15,
+-9.527e-15]. Initial resource there is zero and divergence is outward, so every
+positive timestep has the same exact-real sign. No clipping, smaller dt,
+tolerance relaxation or solver improvement closes this target-feasibility gap.
+Next derive lawful source/allocation feasibility constraints before selecting
+a companion. Preserve the original negative examples and fresh-event obligations.
+Native certificate/performance/root/poststate work remains separate; no `.h`
+readiness, production edit or native campaign. Research is uncommitted, pending
+review. Selected side-tool views expose both the bridge and exclusions.
+
+## Prior research — C_CI P9-8.4g exact-real investigation (2026-10-14)
+
+The [C_CI investigation](./phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigation.md)
+proves exact-real existence/uniqueness on the unchanged declared Frobenius ball
+for source/target × current/reset. The small-tree independent proof is not reused
+outside its domain. FLINT/Arb scalar bounds give contraction below 5.112e-9.
+
+Important: displacement is already below the declared 1e-8 residual tolerance
+at all four subjects, so an exact reference pair passes that threshold. Next
+investigate staged joint-root error and feedback discrimination, then native
+certificate/root/charge/final-C admission. Do not silently tighten tolerance or
+claim a represented root from this exact-real result. No production campaign,
+native root or event has run; C_CI `.g` and `.h` readiness remain open. Research
+is pending review, uncommitted. CLI/API/notebook/browser expose it separately.
+
+## Accepted checkpoint — C_OS P9-8.4g native prerequisites (2026-10-14)
 
 On `work/p9-8-4g`, the [native bridge review](./phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md)
 records four passing unchanged source/target × current/reset numerical steps.
