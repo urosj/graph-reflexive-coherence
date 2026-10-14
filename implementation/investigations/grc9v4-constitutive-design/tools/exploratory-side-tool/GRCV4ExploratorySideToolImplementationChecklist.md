@@ -2424,3 +2424,23 @@ instead of stale fixed totals and opens any pending case details explicitly.
   charge versus exact stored-resource drift, compressed case links and scoped
   user acceptance (2026-10-14). Preserve original research/exclusions and historical source
   identities; no numerical rerun, live event or other-family credit in status.
+- [x] Expose A_CI `.g` exact-real investigation in selected CLI/API/notebook
+  and browser: four joint roots, the original reset continuation exclusion,
+  compact display with exact evidence links, no native/acceptance/readiness
+  credit; reject widened scope and execution flags.
+- [x] A_CI feasibility successor: expose original exclusions and source-trigger
+  diagnostic beside the conservative resource companion; distinguish interval
+  research from native/staged admission and live postbeat transfer from unchanged
+  reset. Retained status does not recompute the interval-input research.
+- [x] Expose A_CI staged full-joint-root oracle in the same selected surfaces:
+  whole-point digests, two residual passes, feedback/error separation and
+  resource bounds. Preserve source diagonal erasure and explicit zero native
+  execution/readiness; no interval solves or sibling campaigns on status.
+- [x] A_CI native investigation hold is separately visible: source timeout,
+  three unrun cases, small passing control and expected-failure enclosure pressure.
+  Distinguish attempted work from verified completion and timeout from scientific
+  rejection; bind exact-inverse/interval-propagation findings without closure credit.
+- [x] Add the corrected A_CI native successor as a separate view: full roots,
+  final-C/W writer/readmission, charge and exact stored sum, with acceptance
+  and `.h` readiness still false. Preserve historical timeout/staged/C_CI
+  source identities; no native or full-checker replay during status queries.

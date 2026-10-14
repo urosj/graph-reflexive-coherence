@@ -1,5 +1,55 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current work — A_CI larger-graph investigation (2026-10-14)
+
+[Investigation](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md): all four
+frozen source/target × current/reset states have a unique exact-real joint root
+in the declared Frobenius ball. The prepared target current has positive
+first-step resources (~3.72529e-9 minimum), but reset-as-current has a certified
+negative resource (~-3.72529e-9) at the initially empty `extra/1/1` vertex.
+History-role substitution reverses that sign and is only an ablation, not a fix.
+
+The [feasibility successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md)
+derives shares (5/16,5/16,3/8), preserving both W histories. Allocation alone
+has positive target resources but no certified strict source trigger. A separate
+charge-preserving shift of 2^-10 from vertex 0 to 60 in both source roles gives
+strict postbeat source margins and target minima above 1.83e-4, including
+interval-enclosed live-postbeat transfer and unchanged reset. Original exclusions
+and allocation-only diagnostic remain; exact-real research is not native credit.
+The [staged oracle](./phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md) now checks
+two consecutive full-joint residual passes in all four prepared cases, with
+whole-point digests and coordinatewise exact-root error bounds. Each case has
+feedback-separated coordinates and positive first-step resources. Source
+diagonal geometry changes still round away; not every current effect separates.
+Fixed 192-bit rigorous Arb single-RHS solves certify binary64 rounding without
+fallback. Compressed evidence retains explicit zero native execution counts.
+The [native prerequisite attempt](./phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md)
+now exposes two holds: the source-current step timed out at its 600-second cap
+while samples locate an exact analytic Hodge inverse despite the selected Arb
+policy; a separate conservative-interval pressure test exposes A's collapse
+of the baseline enclosure to its lower endpoint before nonlinear conductance.
+One small three-node native step passes writer/final-root checks. That original
+attempt contains no verified completed large step; its other cases were not run.
+The [corrected successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md)
+now routes analytic Hodge inversion through the selected interval policy and
+propagates the whole nonlinear A baseline interval. The old counterexample
+passes; 97 focused core CI/CIPC/interval tests and six native/binding tests pass.
+All four source/target × current/reset native steps complete in 222.73–230.65
+seconds, with twelve matching two-pass joint roots, writer/final-C admission
+and strict source poststep triggers. The retained checker passes. This is a
+separate successor, not a rewrite of the timeout. Exact stored-resource sum
+drift is reported separately from admitted charge receipts (source/reset's
+receipt residual is 2.842170943040401e-14; the other three are zero).
+Historical CI/spec bindings resolve from Git; current execution binds corrected
+sources. This is a production numerical correction, not new scientific law.
+No `.h` readiness, new claim/debt acceptance or general ATC inference.
+A_CI `.g` awaits review/user acceptance of the completed bounded prerequisites.
+Selected side-tool `--family A_CI --checkpoint 8.4g` recomputes cheap scalar
+bounds for the original investigation and authenticates retained companion
+enclosures and staged evidence without rerunning interval solves. Exact
+endpoints/reproduction are linked. These prepared targets are role controls,
+not `.h`'s actual postbeat event pair.
+
 ## Accepted checkpoint — C_CI native prerequisites (2026-10-14)
 
 The [closure record](./phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure.md) tracks four

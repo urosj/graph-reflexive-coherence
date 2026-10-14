@@ -9,6 +9,7 @@ Numerical checkers are exposed only by explicit CLI action.
 import argparse
 import hashlib
 import json
+import lzma
 from pathlib import Path
 import subprocess
 import sys
@@ -17,6 +18,55 @@ from contextlib import contextmanager
 from unittest.mock import patch
 
 from tranche8_validation import ACTIVE, validation_session, LOCK
+
+LARGER_ACI_SUCCESSOR_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_pre_aci_residual_sources.py": "71323c0db80f24375d87f8e26822cef3aedbf5502e10b4c4ab804be05ba399bb",
+    "implementation/phase-9-grcv4/verification/p984g_aci_native_successor.py": "50b9eec43ea97b10bf3de16a060924a883f3797e534dd65e0d4c60279b21c8b0",
+    "implementation/phase-9-grcv4/verification/p984g_aci_native_successor_check.py": "078a34de1ac47e1eafbec070c5925cb45553a2987d2a913f0ba74cdbfbe75a8a",
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_native_successor.py": "9e6197ec37c5d6e589c22fcbcf17f73627c24a454ae64293dbe905c00fe888f7",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorPlan.md": "9c6ad8120ea8835e50c5a03a56fa62e6fb5b06fa6ab5e2f7ecdcf549a8b45506",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md": "28a92d5269096c5ce9a2601a8c62aea2f46bf24f8e14fc98c3a5281b0777eccf",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorResults.json": "dac0903519e9b842ce16f37e94cbff3d09f38ab4dd8fe8ae9880851e39e06b12",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348",
+    "tests/models/test_grc_v4_ci_residual_policy.py": "c2bdde04913e6ec39b60f18f6cf90e3c24f0866021bc68ab8902420c8298e968"
+}
+
+LARGER_ACI_NATIVE_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_aci_native.py": "dcb67b4e3477e89f76ac9c0342150422ed47a547e6c8790e0bf94aa762065106",
+    "implementation/phase-9-grcv4/verification/p984g_aci_native_check.py": "d5173b435cfb8f2f29fe73d00e8687ce496209c6b5fe1936c286a704f925c4a3",
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_native.py": "66426a6864d282fbf35ad81b04582e9d8eac7f826f21d00c0d313fa90bb51d15",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativePlan.md": "7ba5b2dddf358507e9d3259b46a35fdff845e99621fb902e585182febd625e2d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeResults.json": "4bd971114c0f3d9b21130f14b33c9bf8296d3fe95bd128fd2daa4d7a3d8115b8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md": "af69c628a18043426938dbf7bed2c220ce8cc2998668014b53f17c7774056a47",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative/source-current.json.xz": "0ca3b8741aad62b527ff785dd855c1a3a1c10e2adfe3bef967c0bc4e77371794"
+}
+
+LARGER_ACI_STAGED_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_aci_staged.py": "9deb9304333f49e13a04b363d0c24443044b4df8521f908f6abc579e7823a9b4",
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_staged.py": "19746d14e28641e917269538e6fe90bff5ac5ad80a0fce7f335c793a478365b2",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedPlan.md": "2cb3b2c606103b567650eb388debfbcd745df774c2154107eb63ddadf45e9291",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md": "491192f320c14f7e50dcf504f7ea30fa95632c7755b81c6067b9b118946d187e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedResults.json.xz": "b3ce5cd335921033cb5fadad3c2724930923abb54215e7e977c525d18be3011a"
+}
+
+LARGER_ACI_FEASIBILITY_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_aci_feasibility.py": "28bfe6a9543bb67e13b5aef534577dac178e976548f2d22b15c7db00ebf29549",
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_feasibility.py": "d0441b3c9e60f18ed4d030a6754ad50ca0f9665e9b69d47c6f09c6a985eb50f8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityPlan.md": "485cacdb747816468c2c55a2dd4a6881856d0c56260660da99713422ddd7f253",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md": "9fad6e8b370c5baba01323852d78fc6acb2b71efdeaade28c95df5723ff02f85",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityResults.json": "5892c2c5a9cf2f15b9ffe4a22d6fbe7fd080544f2b174aae93a1be3e340d8e4f"
+}
+
+LARGER_ACI_RESEARCH_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_aci_investigation.py": "31b5c76b3d0b9199f25d8ce927ae455618a1baf12ccab0f70bbd8bff518a0993",
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_investigation.py": "ec6a1c2d6b8537a1bc9e8170bc39a1a2fdebabb0507ece0da0b2ec18df7db81d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md": "5fc3f8aea6b60f9e3057238efdb2e8a000f2668807b19d6c30900349a3d57581",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigationResults.json": "4a8bc6f7c3619e7b36177c622b0e76ba4c942c632df0f6575c293b1787b90b79",
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_surfaces.py": "b515e08be4f8ba8b4d58cc8835b4a806b94be3beaa0b17b544461274b52c41c1"
+}
 
 LARGER_CCI_NATIVE_SOURCES = {
     "implementation/phase-9-grcv4/verification/p984g_cci_closure.py": "e3e20404a3beb4e3234e9449f50818d3cd224d6a39a8b71f53c3e61912e781eb",
@@ -489,6 +539,11 @@ class Sources:
             boundary_pins.update(LARGER_CCI_STAGED_SOURCES)
             boundary_pins.update(LARGER_CCI_FEASIBILITY_SOURCES)
             boundary_pins.update(LARGER_CCI_NATIVE_SOURCES)
+            boundary_pins.update(LARGER_ACI_RESEARCH_SOURCES)
+            boundary_pins.update(LARGER_ACI_FEASIBILITY_SOURCES)
+            boundary_pins.update(LARGER_ACI_STAGED_SOURCES)
+            boundary_pins.update(LARGER_ACI_NATIVE_SOURCES)
+            boundary_pins.update(LARGER_ACI_SUCCESSOR_SOURCES)
             boundary_pins.update(COVARIANCE_CCI_SOURCES)
             boundary_pins.update(COVARIANCE_ACI_SOURCES)
             boundary_pins.update(COVARIANCE_APC_SOURCES)
@@ -498,7 +553,12 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_C_CI_native_prerequisites_scoped_acceptance" if name in LARGER_CCI_NATIVE_SOURCES else
+                    basis=("pinned_A_CI_corrected_native_prerequisites_pending_acceptance" if name in LARGER_ACI_SUCCESSOR_SOURCES else
+                        "pinned_A_CI_native_attempt_not_closure" if name in LARGER_ACI_NATIVE_SOURCES else
+                        "pinned_A_CI_staged_joint_oracle_not_native" if name in LARGER_ACI_STAGED_SOURCES else
+                        "pinned_A_CI_interval_input_feasibility_not_native" if name in LARGER_ACI_FEASIBILITY_SOURCES else
+                        "pinned_A_CI_exact_real_investigation_not_native" if name in LARGER_ACI_RESEARCH_SOURCES else
+                        "pinned_C_CI_native_prerequisites_scoped_acceptance" if name in LARGER_CCI_NATIVE_SOURCES else
                         "pinned_C_CI_source_allocation_feasibility_not_native_admission" if name in LARGER_CCI_FEASIBILITY_SOURCES else
                         "pinned_C_CI_staged_joint_bridge_not_native_stopping" if name in LARGER_CCI_STAGED_SOURCES else
                         "pinned_C_CI_exact_real_investigation_not_native" if name in LARGER_CCI_RESEARCH_SOURCES else
@@ -1519,6 +1579,118 @@ def deep_view(sources):
         other_family_credit=0, successive_event_credit=0)
 
 
+def larger_aci_successor(sources):
+    """Authenticate the compact result, not rerun roots or the full checker."""
+    import p984g_aci_native_successor_check as check
+    for path in LARGER_ACI_SUCCESSOR_SOURCES:sources.raw(path)
+    value=sources.read(check.RESULTS)
+    require(value==check.prior.seal(value) and value['family']=='A_CI' and
+        value['schema']=='p984g-aci-corrected-native-summary-v1','corrected native summary identity')
+    require(all(hashlib.sha256(sources.raw(p)).hexdigest()==h for p,h in value['source_bindings'].items()),
+        'corrected native summary sources')
+    require([(r['graph'],r['role']) for r in value['cases']]==list(check.run.base.CASES), 'corrected case roster')
+    require(value['native_steps']==4 and value['native_roots']==12 and value['native_prerequisites_complete']
+        and not value['known_implementation_holds'] and value['native_events']==value['committed_steps']==0
+        and not value['ready_for_8_4h'] and not value['user_accepted'],'corrected native scope')
+    bindings=check.run.bindings();cases=[]
+    for row in value['cases']:
+        require(row['path']==check.run.case_path(row['graph'],row['role']),'corrected native path')
+        raw=sources.raw(row['path']);record=json.loads(lzma.decompress(raw))
+        require(hashlib.sha256(raw).hexdigest()==row['sha256'] and record==check.prior.seal(record)
+            and record['record_digest']==row['record_digest'] and record['source_bindings']==bindings,
+            'corrected native execution binding')
+        require(record['outcome']==row['outcome']=='completed' and not record['timed_out']
+            and record['exit_code']==0 and record['error'] is None and row['root_evaluations']==[2,2,2],
+            'corrected native completion')
+        cases.append(dict(row,evidence=sources.ref(row['path'])))
+    return dict(value,cases=cases,full_retained_checker_rerun=False,
+        results=sources.ref(check.RESULTS),plan=sources.ref(check.run.PLAN),
+        review=sources.ref(check.run.BASE+'P9-8.4g-ACINativeSuccessor.md'))
+
+
+def larger_aci_investigation(sources):
+    import p984g_aci_investigation as research
+    for name in LARGER_ACI_RESEARCH_SOURCES:
+        sources.raw(name)
+    result=research.check(sources.read(research.RESULTS))
+    import p984g_aci_feasibility as feasible
+    for name in LARGER_ACI_FEASIBILITY_SOURCES:
+        sources.raw(name)
+    f=feasible.check_retained(sources.read(feasible.RESULTS))
+    import p984g_aci_staged as staged
+    for name in LARGER_ACI_STAGED_SOURCES:
+        sources.raw(name)
+    import p984g_pre_aci_residual_sources as residual_history
+    s=residual_history.check_staged(json.loads(lzma.decompress(sources.raw(staged.RESULTS))))
+    import p984g_aci_native_check as native
+    for name in LARGER_ACI_NATIVE_SOURCES:
+        sources.raw(name)
+    attempt=sources.read(native.RESULTS)
+    require(attempt==native.seal(attempt) and attempt['family']=='A_CI' and
+        attempt['source_bindings']=={native.SELF:hashlib.sha256((sources.root/native.SELF).read_bytes()).hexdigest()},
+        'A_CI native summary binding')
+    require(attempt['native_steps']==attempt['native_roots']==attempt['native_events']==0 and
+        not attempt['ready_for_8_4h'] and not attempt['user_accepted'] and not attempt['native_prerequisites_complete']
+        and attempt['known_implementation_holds']==native.KNOWN_HOLDS,'A_CI native hold promotion')
+    require([(r['graph'],r['role'],r['outcome']) for r in attempt['cases']]==
+        [('source','current','incomplete'),('source','reset','not_run'),('target','current','not_run'),('target','reset','not_run')],
+        'A_CI attempted case scope')
+    first=attempt['cases'][0];raw=sources.raw(first['path'])
+    record=json.loads(lzma.decompress(raw))
+    with residual_history.native_sources(native.run):
+        old_native_bindings=native.run.bindings()
+    require(hashlib.sha256(raw).hexdigest()==first['sha256'] and record==native.seal(record)
+        and record['record_digest']==first['record_digest'] and record['source_bindings']==old_native_bindings
+        and record['timed_out'] and record['outcome']=='incomplete','A_CI native attempt identity')
+    native_view=dict(attempt,results=sources.ref(native.RESULTS),review=sources.ref(native.run.BASE+'P9-8.4g-ACINative.md'),
+        plan=sources.ref(native.run.PLAN),attempt=sources.ref(first['path']),
+        root_work_attempted=True,full_retained_checker_rerun=False,
+        small_native_control='three_node_whole_step_writer_and_final_root_pass',
+        enclosure_pressure='expected_failure_not_conformance_pass')
+    staged_view=dict(scope=s['scope'],precision_bits=s['precision_bits'],linear_solve=s['linear_solve'],
+        native_roots=0,native_steps=0,native_events=0,ready_for_8_4h=False,user_accepted=False,
+        interval_research_recomputed=False,approximate_display_numbers=True,
+        cases=[dict(graph=c['graph'],role=c['role'],
+            selected_joint_point_digest=c['result']['selected_joint_point_digest'],
+            two_consecutive_independent_residual_passes=c['result']['two_consecutive_independent_residual_passes'],
+            native_stopping_outcome_verified=False,
+            confirming_joint_residual_upper_display=float(research.q(c['result']['stages'][1]['analytic_joint_residual_upper'])),
+            feedback_coordinates_above_selected_error=c['result']['feedback_coordinates_above_selected_error'],
+            generated_changed_diagonals=c['result']['generated_changed_diagonals'],
+            generated_nonzero_offdiagonals=c['result']['generated_nonzero_offdiagonals'],
+            exact_root_minimum_resource_lower_display=float(research.q(c['result']['exact_root_minimum_resource_lower']))) for c in s['cases']],
+        open_obligations=s['open_obligations'],results=sources.ref(staged.RESULTS),
+        plan=sources.ref(staged.PLAN),review=sources.ref(staged.NOTE))
+    companion=dict(scope=f['scope'],shares=f['companion']['shares'],source_deficit=f['companion']['source_deficit'],
+        source_compensation_node=f['companion']['source_compensation_node'],event_pair=f['event_pair'],
+        allocation_only_diagnostic_kind='uncertified_exact_strict_margin',
+        history_policy_unchanged=True,original_reset_exclusion_preserved=True,
+        native_roots=0,native_steps=0,native_events=0,ready_for_8_4h=False,user_accepted=False,
+        interval_research_recomputed=False,approximate_display_numbers=True,
+        cases=[dict(role=c['role'],
+            initial_target_minimum_lower_display=float(research.q(c['initial_target']['minimum_resource_lower'])),
+            fresh_transfer_target_minimum_lower_display=float(research.q(c['postbeat_transfer_target']['minimum_resource_lower'])),
+            source_postbeat_gradient_norm_upper_display=float(research.q(c['source_trigger']['gradient_norm_upper'])),
+            source_postbeat_signed_hessian_upper_display=float(research.q(c['source_trigger']['minimum_signed_hessian_upper']))) for c in f['cases']],
+        open_obligations=f['open_obligations'],results=sources.ref(feasible.RESULTS),
+        plan=sources.ref(feasible.PLAN),review=sources.ref(feasible.NOTE))
+    # Exact rational endpoints remain in the linked evidence, not duplicated
+    # into an executable browser asset. Display conversions grant no authority.
+    cases=[dict(graph=c['graph'],role=c['role'],vertices=c['vertices'],edges=c['edges'],
+        exact_real_unique_joint_root=c['exact_real_unique_joint_root'],
+        exact_real_first_step_resources_nonnegative=c['exact_real_first_step_resources_nonnegative'],
+        bounds_display={k:float(research.q(v)) for k,v in c['bounds'].items()},
+        negative_vertices=[v['vertex'] for v in c['certified_negative_vertices']],
+        unresolved_resource_vertices=c['unresolved_resource_vertices']) for c in result['cases']]
+    return dict(family='A_CI',scope=result['scope'],cases=cases,feasibility=companion,staged_oracle=staged_view,native_attempt=native_view,
+        native_successor=larger_aci_successor(sources),
+        native_roots=0,native_steps=0,native_events=0,ready_for_8_4h=False,user_accepted=False,
+        aggregate_closed=False,approximate_display_numbers=True,scalar_certificates_recomputed=True,
+        native_trajectories_rerun=False,open_obligations=result['open_obligations'],
+        authority=result['authority'],results=sources.ref(research.RESULTS),
+        plan=sources.ref(research.NOTE),review=sources.ref(research.NOTE))
+
+
 def larger_cci_investigation(sources):
     from p984g_pre_ci_interval_sources import historical_sources
     with historical_sources():
@@ -1583,7 +1755,9 @@ def _larger_cci_investigation(sources):
     import p984g_cci_closure_check as closure
     for name in LARGER_CCI_NATIVE_SOURCES:
         sources.raw(name)
-    native=closure.check()
+    from p984g_pre_aci_residual_sources import native_sources,REVISION
+    with native_sources(closure.run):
+        native=closure.check()
     require(native==sources.read(closure.run.RESULTS),'C_CI native summary drift')
     acceptance=sources.raw(closure.run.REVIEW).decode()
     require('## Scoped user acceptance' in acceptance and native['record_digest'] in acceptance,
@@ -1596,7 +1770,8 @@ def _larger_cci_investigation(sources):
             root_evaluations=c['root_evaluations'],independent_joint_residual_upper=c['independent_joint_residual_upper'],
             exact_resource_sum_delta=c['exact_resource_sum_delta'],evidence=sources.ref(c['path'])) for c in native['cases']],
         results=sources.ref(closure.run.RESULTS),plan=sources.ref(closure.run.PLAN),review=sources.ref(closure.run.REVIEW),
-        historical_source_revision='e1d61021',original_research_flags_unchanged=True)
+        historical_source_revision='e1d61021',native_runtime_source_revision=REVISION,
+        corrected_runtime_reexecuted=False,original_research_flags_unchanged=True)
     return dict(result, staged_bridge=bridge, feasibility=feasibility, native_prerequisites=native_view,
         results=sources.ref(research.RESULTS), plan=sources.ref(research.PLAN),
         review=sources.ref(research.REVIEW), scalar_certificates_recomputed=True,
@@ -1646,10 +1821,10 @@ def larger_view(sources, *, include_investigations=True):
         acceptance_scope='four_fixed_C_OS_numerical_prerequisites_not_lifecycle_campaign',
         acceptance=sources.ref(native.REVIEW,anchor='scoped-user-acceptance'))
     row['open_obligations']=['8.4h actual expansion/lifecycle and continuation campaign; not executed here']
-    return dict(family_results=[row],investigations=([larger_cci_investigation(sources)] if include_investigations else []),
+    return dict(family_results=[row],investigations=([larger_cci_investigation(sources),larger_aci_investigation(sources)] if include_investigations else []),
         aggregate_closed=False,first_group_closed=False,
         families_without_preflight=[f for f in FAMILIES if f not in
-            (('C_OS','C_CI') if include_investigations else ('C_OS',))])
+            (('C_OS','C_CI','A_CI') if include_investigations else ('C_OS',))])
 
 
 def family_status(root, family, checkpoint="8.4c"):
@@ -1658,6 +1833,13 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g"), "unknown family checkpoint")
     if checkpoint == "8.4g":
+        if family=='A_CI':
+            sources=Sources(root)
+            return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,
+                scope='exact_real_research_not_native_or_acceptance',
+                investigation=larger_aci_investigation(sources),
+                source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
+                other_families_checked=False,native_trajectories_rerun=False)
         if family=='C_CI':
             sources=Sources(root)
             return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,
@@ -1811,9 +1993,9 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == '8.4g':
-        if args.family=='C_CI':
+        if args.family in ('C_CI','A_CI'):
             require(args.action in ('status','verify-retained') and not args.recheck_numerics
-                and not args.oracle and not args.preparation,'select C_CI read-only scalar investigation')
+                and not args.oracle and not args.preparation,'select C_CI/A_CI read-only scalar investigation')
             print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2))
             return
         require(args.family=='C_OS' and not args.oracle and not args.preparation,'select C_OS prerequisite preflight')

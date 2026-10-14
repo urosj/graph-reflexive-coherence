@@ -18070,6 +18070,8 @@ export const TRANCHE8_EVIDENCE = {
        "basis": "pinned_C_CI_native_prerequisites_scoped_acceptance"
       },
       "historical_source_revision": "e1d61021",
+      "native_runtime_source_revision": "cc7ea94095b3ba16c0db4cdf1300cf90ff9c6874",
+      "corrected_runtime_reexecuted": false,
       "original_research_flags_unchanged": true
      },
      "results": {
@@ -18092,13 +18094,579 @@ export const TRANCHE8_EVIDENCE = {
      },
      "scalar_certificates_recomputed": true,
      "native_trajectories_rerun": false
+    },
+    {
+     "family": "A_CI",
+     "scope": "exact_real_joint_ball_and_first_resource_step_not_staged_or_native",
+     "cases": [
+      {
+       "graph": "source",
+       "role": "current",
+       "vertices": 100,
+       "edges": 400,
+       "exact_real_unique_joint_root": true,
+       "exact_real_first_step_resources_nonnegative": true,
+       "bounds_display": {
+        "radius": 0.0009765625,
+        "hodge_lower": 0.9990234375,
+        "conductance_lower": 0.9999998797036751,
+        "current_margin_lower": 0.9999997597036097,
+        "physical_condition_upper": 1.0000004768542579,
+        "current_upper": 0.5717718979868417,
+        "current_lipschitz_upper": 2.6520193150113833,
+        "flat_upper": 2.750580577251085e-07,
+        "flat_lipschitz_upper": 1.5511340493391592e-06,
+        "displacement_upper": 9.235465712830702e-18,
+        "contraction_upper": 1.0416306613342571e-16,
+        "reference_joint_residual_upper": 9.052800497627484e-18,
+        "root_geometry_distance_upper": 9.052800497627486e-18,
+        "root_current_distance_upper": 2.4008201774652755e-17,
+        "first_step_resource_lower": 1.984100341796355,
+        "first_step_resource_minimum_upper": 1.984100341796355
+       },
+       "negative_vertices": [],
+       "unresolved_resource_vertices": []
+      },
+      {
+       "graph": "source",
+       "role": "reset",
+       "vertices": 100,
+       "edges": 400,
+       "exact_real_unique_joint_root": true,
+       "exact_real_first_step_resources_nonnegative": true,
+       "bounds_display": {
+        "radius": 0.0009765625,
+        "hodge_lower": 0.9990234375,
+        "conductance_lower": 0.9999998773738701,
+        "current_margin_lower": 0.9999997596672064,
+        "physical_condition_upper": 1.0000004768906612,
+        "current_upper": 1.1435442181802777,
+        "current_lipschitz_upper": 5.3040386752258835,
+        "flat_upper": 5.501996572972223e-07,
+        "flat_lipschitz_upper": 3.1028576583564127e-06,
+        "displacement_upper": 3.695308384887462e-17,
+        "contraction_upper": 4.167947315111719e-16,
+        "reference_joint_residual_upper": 3.6218067655478706e-17,
+        "root_geometry_distance_upper": 3.621806765547872e-17,
+        "root_current_distance_upper": 1.9210203158660679e-16,
+        "first_step_resource_lower": 1.9682006835926982,
+        "first_step_resource_minimum_upper": 1.9682006835926982
+       },
+       "negative_vertices": [],
+       "unresolved_resource_vertices": []
+      },
+      {
+       "graph": "target",
+       "role": "current",
+       "vertices": 107,
+       "edges": 407,
+       "exact_real_unique_joint_root": true,
+       "exact_real_first_step_resources_nonnegative": true,
+       "bounds_display": {
+        "radius": 0.0009765625,
+        "hodge_lower": 0.9990234375,
+        "conductance_lower": 0.9999989908297107,
+        "current_margin_lower": 0.9999997458149461,
+        "physical_condition_upper": 1.0000004907429316,
+        "current_upper": 15.512717292277197,
+        "current_lipschitz_upper": 187.70675291663127,
+        "flat_upper": 7.893910657806178e-06,
+        "flat_lipschitz_upper": 0.00010465828150661977,
+        "displacement_upper": 7.606668148611569e-15,
+        "contraction_upper": 2.0169998139960574e-13,
+        "reference_joint_residual_upper": 5.81972667261563e-15,
+        "root_geometry_distance_upper": 5.819726672616804e-15,
+        "root_current_distance_upper": 1.0924019965792112e-12,
+        "first_step_resource_lower": 3.7252900400503e-09,
+        "first_step_resource_minimum_upper": 3.725290573449712e-09
+       },
+       "negative_vertices": [],
+       "unresolved_resource_vertices": []
+      },
+      {
+       "graph": "target",
+       "role": "reset",
+       "vertices": 107,
+       "edges": 407,
+       "exact_real_unique_joint_root": true,
+       "exact_real_first_step_resources_nonnegative": false,
+       "bounds_display": {
+        "radius": 0.0009765625,
+        "hodge_lower": 0.9990234375,
+        "conductance_lower": 0.9999989908146897,
+        "current_margin_lower": 0.9999997458147114,
+        "physical_condition_upper": 1.0000004907431663,
+        "current_upper": 15.546217226792308,
+        "current_lipschitz_upper": 187.76313383733395,
+        "flat_upper": 7.91096497519544e-06,
+        "flat_lipschitz_upper": 0.00010470719137880003,
+        "displacement_upper": 7.639571147310668e-15,
+        "contraction_upper": 2.022302059689387e-13,
+        "reference_joint_residual_upper": 6.196636467947394e-15,
+        "root_geometry_distance_upper": 6.196636467948646e-15,
+        "root_current_distance_upper": 1.1634998824727462e-12,
+        "first_step_resource_lower": -3.725290590807657e-09,
+        "first_step_resource_minimum_upper": -3.72529002269248e-09
+       },
+       "negative_vertices": [
+        "grc-event-sha256:9d5d2b802b760759680742bfa2a01496e4cec00081ad14ea34e7c115b63cdfc0/extra/1/1"
+       ],
+       "unresolved_resource_vertices": []
+      }
+     ],
+     "feasibility": {
+      "scope": "bounded_exact_real_resource_writer_trigger_feasibility_not_native_conformance",
+      "shares": [
+       "5/16",
+       "5/16",
+       "3/8"
+      ],
+      "source_deficit": "1/1024",
+      "source_compensation_node": 60,
+      "event_pair": {
+       "current": "postbeat_transfer_target/current",
+       "reset": "initial_target/reset",
+       "reset_evolves": false
+      },
+      "allocation_only_diagnostic_kind": "uncertified_exact_strict_margin",
+      "history_policy_unchanged": true,
+      "original_reset_exclusion_preserved": true,
+      "native_roots": 0,
+      "native_steps": 0,
+      "native_events": 0,
+      "ready_for_8_4h": false,
+      "user_accepted": false,
+      "interval_research_recomputed": false,
+      "approximate_display_numbers": true,
+      "cases": [
+       {
+        "role": "current",
+        "initial_target_minimum_lower_display": 0.00018301606184246166,
+        "fresh_transfer_target_minimum_lower_display": 0.00018301409734061366,
+        "source_postbeat_gradient_norm_upper_display": 0.0017341276631882465,
+        "source_postbeat_signed_hessian_upper_display": -0.0010017552874673423
+       },
+       {
+        "role": "reset",
+        "initial_target_minimum_lower_display": 0.0001830160618424578,
+        "fresh_transfer_target_minimum_lower_display": 0.00018301409732718297,
+        "source_postbeat_gradient_norm_upper_display": 0.0017341279791382538,
+        "source_postbeat_signed_hessian_upper_display": -0.001001755505679754
+       }
+      ],
+      "open_obligations": [
+       "staged joint-root/error and mechanism bridge",
+       "native stopping, charge and target history/final-C readmission",
+       "fresh postbeat event identity/commit and multistep continuation in 8.4h"
+      ],
+      "results": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityResults.json",
+       "sha256": "5892c2c5a9cf2f15b9ffe4a22d6fbe7fd080544f2b174aae93a1be3e340d8e4f",
+       "revision": null,
+       "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+      },
+      "plan": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityPlan.md",
+       "sha256": "485cacdb747816468c2c55a2dd4a6881856d0c56260660da99713422ddd7f253",
+       "revision": null,
+       "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+      },
+      "review": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md",
+       "sha256": "9fad6e8b370c5baba01323852d78fc6acb2b71efdeaade28c95df5723ff02f85",
+       "revision": null,
+       "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+      }
+     },
+     "staged_oracle": {
+      "scope": "independent_staged_two_trial_oracle_not_native_stopping",
+      "precision_bits": 192,
+      "linear_solve": "rigorous_Arb_LU_single_RHS_unique_binary64_no_fallback",
+      "native_roots": 0,
+      "native_steps": 0,
+      "native_events": 0,
+      "ready_for_8_4h": false,
+      "user_accepted": false,
+      "interval_research_recomputed": false,
+      "approximate_display_numbers": true,
+      "cases": [
+       {
+        "graph": "source",
+        "role": "current",
+        "selected_joint_point_digest": "2952379ee2556039b61ef95238adf1a7b6232c35544b1c7c033e2bb42e11b0b9",
+        "two_consecutive_independent_residual_passes": true,
+        "native_stopping_outcome_verified": false,
+        "confirming_joint_residual_upper_display": 4.197676648151991e-17,
+        "feedback_coordinates_above_selected_error": 116,
+        "generated_changed_diagonals": 0,
+        "generated_nonzero_offdiagonals": 1456,
+        "exact_root_minimum_resource_lower_display": 1.984100341796355
+       },
+       {
+        "graph": "source",
+        "role": "reset",
+        "selected_joint_point_digest": "28ff412ae91224e07675c74bc4a8643043c0a1e2976ad5846461932b448c9ea5",
+        "two_consecutive_independent_residual_passes": true,
+        "native_stopping_outcome_verified": false,
+        "confirming_joint_residual_upper_display": 7.755955830237682e-17,
+        "feedback_coordinates_above_selected_error": 127,
+        "generated_changed_diagonals": 0,
+        "generated_nonzero_offdiagonals": 1440,
+        "exact_root_minimum_resource_lower_display": 1.9682006835926982
+       },
+       {
+        "graph": "target",
+        "role": "current",
+        "selected_joint_point_digest": "3076ffb6b367cdd162ff7818c25b7f2f2fe71df66e8b23ad2afa124e2cb54906",
+        "two_consecutive_independent_residual_passes": true,
+        "native_stopping_outcome_verified": false,
+        "confirming_joint_residual_upper_display": 1.554532971187504e-15,
+        "feedback_coordinates_above_selected_error": 176,
+        "generated_changed_diagonals": 9,
+        "generated_nonzero_offdiagonals": 1550,
+        "exact_root_minimum_resource_lower_display": 0.0001830160618427012
+       },
+       {
+        "graph": "target",
+        "role": "reset",
+        "selected_joint_point_digest": "3e428ad20bb9b39f96d06a9f9f4800ce268c7767120d26ba44ace1e619a2c298",
+        "two_consecutive_independent_residual_passes": true,
+        "native_stopping_outcome_verified": false,
+        "confirming_joint_residual_upper_display": 1.4166442735037094e-15,
+        "feedback_coordinates_above_selected_error": 177,
+        "generated_changed_diagonals": 9,
+        "generated_nonzero_offdiagonals": 1534,
+        "exact_root_minimum_resource_lower_display": 0.0001830160618427012
+       }
+      ],
+      "open_obligations": [
+       "native certificate/two-pass stopping comparison",
+       "history writer, final-C admission and represented charge",
+       "8.4h fresh postbeat event/transfer and continuation"
+      ],
+      "results": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedResults.json.xz",
+       "sha256": "b3ce5cd335921033cb5fadad3c2724930923abb54215e7e977c525d18be3011a",
+       "revision": null,
+       "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+      },
+      "plan": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedPlan.md",
+       "sha256": "2cb3b2c606103b567650eb388debfbcd745df774c2154107eb63ddadf45e9291",
+       "revision": null,
+       "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+      },
+      "review": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md",
+       "sha256": "491192f320c14f7e50dcf504f7ea30fa95632c7755b81c6067b9b118946d187e",
+       "revision": null,
+       "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+      }
+     },
+     "native_attempt": {
+      "schema": "p984g-aci-native-summary-v1",
+      "family": "A_CI",
+      "cases": [
+       {
+        "graph": "source",
+        "role": "current",
+        "outcome": "incomplete",
+        "native_steps": 0,
+        "native_roots": 0,
+        "seconds": 600.2287777099991,
+        "error": null,
+        "timed_out": true,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative/source-current.json.xz",
+        "sha256": "0ca3b8741aad62b527ff785dd855c1a3a1c10e2adfe3bef967c0bc4e77371794",
+        "record_digest": "c92c8381ac1ac4f8592a0f9a8d811f8c81a578531621c686bfbe88dcd537c971"
+       },
+       {
+        "graph": "source",
+        "role": "reset",
+        "outcome": "not_run",
+        "native_steps": 0,
+        "native_roots": 0
+       },
+       {
+        "graph": "target",
+        "role": "current",
+        "outcome": "not_run",
+        "native_steps": 0,
+        "native_roots": 0
+       },
+       {
+        "graph": "target",
+        "role": "reset",
+        "outcome": "not_run",
+        "native_steps": 0,
+        "native_roots": 0
+       }
+      ],
+      "native_steps": 0,
+      "native_roots": 0,
+      "native_events": 0,
+      "committed_steps": 0,
+      "user_accepted": false,
+      "ready_for_8_4h": false,
+      "known_implementation_holds": [
+       "analytic_hodge_exact_inverse_bypasses_selected_interval_route",
+       "A_nonlinear_baseline_interval_collapsed_to_lower_endpoint"
+      ],
+      "native_prerequisites_complete": false,
+      "scope": "prepared_role_controls_not_postbeat_event_or_uniform_domain",
+      "retained_check_only": true,
+      "numerical_trajectories_rerun": false,
+      "source_bindings": {
+       "implementation/phase-9-grcv4/verification/p984g_aci_native_check.py": "d5173b435cfb8f2f29fe73d00e8687ce496209c6b5fe1936c286a704f925c4a3"
+      },
+      "record_digest": "302e0e9fd6008b0c2265cabdf0887768771783dc40ec7a1b7e5e731de27e9f3a",
+      "results": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeResults.json",
+       "sha256": "4bd971114c0f3d9b21130f14b33c9bf8296d3fe95bd128fd2daa4d7a3d8115b8",
+       "revision": null,
+       "basis": "pinned_A_CI_native_attempt_not_closure"
+      },
+      "review": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md",
+       "sha256": "af69c628a18043426938dbf7bed2c220ce8cc2998668014b53f17c7774056a47",
+       "revision": null,
+       "basis": "pinned_A_CI_native_attempt_not_closure"
+      },
+      "plan": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativePlan.md",
+       "sha256": "7ba5b2dddf358507e9d3259b46a35fdff845e99621fb902e585182febd625e2d",
+       "revision": null,
+       "basis": "pinned_A_CI_native_attempt_not_closure"
+      },
+      "attempt": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative/source-current.json.xz",
+       "sha256": "0ca3b8741aad62b527ff785dd855c1a3a1c10e2adfe3bef967c0bc4e77371794",
+       "revision": null,
+       "basis": "pinned_A_CI_native_attempt_not_closure"
+      },
+      "root_work_attempted": true,
+      "full_retained_checker_rerun": false,
+      "small_native_control": "three_node_whole_step_writer_and_final_root_pass",
+      "enclosure_pressure": "expected_failure_not_conformance_pass"
+     },
+     "native_successor": {
+      "schema": "p984g-aci-corrected-native-summary-v1",
+      "family": "A_CI",
+      "cases": [
+       {
+        "graph": "source",
+        "role": "current",
+        "outcome": "completed",
+        "seconds": 222.72902016500302,
+        "native_roots": 3,
+        "native_steps": 1,
+        "minimum_resource": 1.984100341796355,
+        "exact_resource_sum_delta": "1/1125899906842624",
+        "represented_charge": {
+         "target_charge": 200.0,
+         "admitted_charge": 200.0,
+         "residual": 0.0
+        },
+        "root_evaluations": [
+         2,
+         2,
+         2
+        ],
+        "writer_wrong_prestate_drive_changed": 273,
+        "writer_wrong_baseline_drive_changed": 19,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz",
+        "sha256": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
+        "record_digest": "6f970831c6b668ab160edced0ae0947759150154c2ee3c8672c0b945da2d41b4",
+        "evidence": {
+         "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz",
+         "sha256": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
+         "revision": null,
+         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+        }
+       },
+       {
+        "graph": "source",
+        "role": "reset",
+        "outcome": "completed",
+        "seconds": 223.09693204399082,
+        "native_roots": 3,
+        "native_steps": 1,
+        "minimum_resource": 1.9682006835926982,
+        "exact_resource_sum_delta": "-3/4503599627370496",
+        "represented_charge": {
+         "target_charge": 200.0,
+         "admitted_charge": 200.00000000000003,
+         "residual": 2.842170943040401e-14
+        },
+        "root_evaluations": [
+         2,
+         2,
+         2
+        ],
+        "writer_wrong_prestate_drive_changed": 310,
+        "writer_wrong_baseline_drive_changed": 23,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz",
+        "sha256": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
+        "record_digest": "2b5c7021778007d4484a135278f83101ba3a3c4473147b4f4c57a04208dd8a51",
+        "evidence": {
+         "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz",
+         "sha256": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
+         "revision": null,
+         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+        }
+       },
+       {
+        "graph": "target",
+        "role": "current",
+        "outcome": "completed",
+        "seconds": 230.0196465760091,
+        "native_roots": 3,
+        "native_steps": 1,
+        "minimum_resource": 0.0001830160618427012,
+        "exact_resource_sum_delta": "-8607/9223372036854775808",
+        "represented_charge": {
+         "target_charge": 200.0,
+         "admitted_charge": 200.0,
+         "residual": 0.0
+        },
+        "root_evaluations": [
+         2,
+         2,
+         2
+        ],
+        "writer_wrong_prestate_drive_changed": 319,
+        "writer_wrong_baseline_drive_changed": 69,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz",
+        "sha256": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2",
+        "record_digest": "c418b4d093adafb4b145bb4d16785233054c49bb9f52409caf78d4474bf006b5",
+        "evidence": {
+         "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz",
+         "sha256": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2",
+         "revision": null,
+         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+        }
+       },
+       {
+        "graph": "target",
+        "role": "reset",
+        "outcome": "completed",
+        "seconds": 230.64688334699895,
+        "native_roots": 3,
+        "native_steps": 1,
+        "minimum_resource": 0.0001830160618427012,
+        "exact_resource_sum_delta": "-16187/9223372036854775808",
+        "represented_charge": {
+         "target_charge": 200.0,
+         "admitted_charge": 200.0,
+         "residual": 0.0
+        },
+        "root_evaluations": [
+         2,
+         2,
+         2
+        ],
+        "writer_wrong_prestate_drive_changed": 356,
+        "writer_wrong_baseline_drive_changed": 71,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz",
+        "sha256": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348",
+        "record_digest": "39b1d751bd1e4a97d017be621bdbabcd46e970c7c8523b177c1f79ea0ede5472",
+        "evidence": {
+         "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz",
+         "sha256": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348",
+         "revision": null,
+         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+        }
+       }
+      ],
+      "native_steps": 4,
+      "native_roots": 12,
+      "native_events": 0,
+      "committed_steps": 0,
+      "user_accepted": false,
+      "ready_for_8_4h": false,
+      "known_implementation_holds": [],
+      "native_prerequisites_complete": true,
+      "scope": "prepared_role_controls_not_postbeat_event_or_uniform_domain",
+      "retained_check_only": true,
+      "numerical_trajectories_rerun": false,
+      "source_bindings": {
+       "implementation/phase-9-grcv4/verification/p984g_aci_native_successor_check.py": "078a34de1ac47e1eafbec070c5925cb45553a2987d2a913f0ba74cdbfbe75a8a",
+       "implementation/phase-9-grcv4/verification/p984g_aci_native_check.py": "d5173b435cfb8f2f29fe73d00e8687ce496209c6b5fe1936c286a704f925c4a3",
+       "implementation/phase-9-grcv4/verification/p984g_aci_native_successor.py": "50b9eec43ea97b10bf3de16a060924a883f3797e534dd65e0d4c60279b21c8b0",
+       "implementation/phase-9-grcv4/verification/test_p984g_aci_native_successor.py": "9e6197ec37c5d6e589c22fcbcf17f73627c24a454ae64293dbe905c00fe888f7"
+      },
+      "corrected_operations": [
+       "policy_selected_analytic_Hodge_inverse",
+       "whole_interval_A_conductance"
+      ],
+      "historical_timeout_preserved": true,
+      "predecessor_staged_source_revision": "cc7ea94095b3ba16c0db4cdf1300cf90ff9c6874",
+      "record_digest": "9da130df512401532e9d0379d45b83763139e564d8336164bf0f4ebf2051479c",
+      "full_retained_checker_rerun": false,
+      "results": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorResults.json",
+       "sha256": "dac0903519e9b842ce16f37e94cbff3d09f38ab4dd8fe8ae9880851e39e06b12",
+       "revision": null,
+       "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+      },
+      "plan": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorPlan.md",
+       "sha256": "9c6ad8120ea8835e50c5a03a56fa62e6fb5b06fa6ab5e2f7ecdcf549a8b45506",
+       "revision": null,
+       "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+      },
+      "review": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md",
+       "sha256": "28a92d5269096c5ce9a2601a8c62aea2f46bf24f8e14fc98c3a5281b0777eccf",
+       "revision": null,
+       "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+      }
+     },
+     "native_roots": 0,
+     "native_steps": 0,
+     "native_events": 0,
+     "ready_for_8_4h": false,
+     "user_accepted": false,
+     "aggregate_closed": false,
+     "approximate_display_numbers": true,
+     "scalar_certificates_recomputed": true,
+     "native_trajectories_rerun": false,
+     "open_obligations": [
+      "lawful source/allocation feasibility if excluded",
+      "fixed-row staged whole joint-root oracle and mechanism/error separation",
+      "review oracle before native roots; final-C/history readmission and trigger",
+      "8.4h actual event, both-role transfer and continued evolution"
+     ],
+     "authority": {
+      "contract_id": "D10.2-EC-PARENT-REAL-CI",
+      "trace_digest": "78573a598dca697e4d67e819b510ad29ac08631c40419b0fefb7282789ba99b6",
+      "support_disposition": "indeterminate_requires_review",
+      "interpretation": "provenance only; local root evidence is not global stability or new accepted authority"
+     },
+     "results": {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigationResults.json",
+      "sha256": "4a8bc6f7c3619e7b36177c622b0e76ba4c942c632df0f6575c293b1787b90b79",
+      "revision": null,
+      "basis": "pinned_A_CI_exact_real_investigation_not_native"
+     },
+     "plan": {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md",
+      "sha256": "5fc3f8aea6b60f9e3057238efdb2e8a000f2668807b19d6c30900349a3d57581",
+      "revision": null,
+      "basis": "pinned_A_CI_exact_real_investigation_not_native"
+     },
+     "review": {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md",
+      "sha256": "5fc3f8aea6b60f9e3057238efdb2e8a000f2668807b19d6c30900349a3d57581",
+      "revision": null,
+      "basis": "pinned_A_CI_exact_real_investigation_not_native"
+     }
     }
    ],
    "aggregate_closed": false,
    "first_group_closed": false,
    "families_without_preflight": [
     "A_OS",
-    "A_CI",
     "A_PC",
     "A_CI_PC",
     "A_RG2b",
@@ -19649,6 +20217,120 @@ export const TRANCHE8_EVIDENCE = {
    "basis": "pinned_C_OS_chart_covariance_and_scoped_acceptance"
   },
   {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md",
+   "sha256": "9fad6e8b370c5baba01323852d78fc6acb2b71efdeaade28c95df5723ff02f85",
+   "revision": null,
+   "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityPlan.md",
+   "sha256": "485cacdb747816468c2c55a2dd4a6881856d0c56260660da99713422ddd7f253",
+   "revision": null,
+   "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityResults.json",
+   "sha256": "5892c2c5a9cf2f15b9ffe4a22d6fbe7fd080544f2b174aae93a1be3e340d8e4f",
+   "revision": null,
+   "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md",
+   "sha256": "5fc3f8aea6b60f9e3057238efdb2e8a000f2668807b19d6c30900349a3d57581",
+   "revision": null,
+   "basis": "pinned_A_CI_exact_real_investigation_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigationResults.json",
+   "sha256": "4a8bc6f7c3619e7b36177c622b0e76ba4c942c632df0f6575c293b1787b90b79",
+   "revision": null,
+   "basis": "pinned_A_CI_exact_real_investigation_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md",
+   "sha256": "af69c628a18043426938dbf7bed2c220ce8cc2998668014b53f17c7774056a47",
+   "revision": null,
+   "basis": "pinned_A_CI_native_attempt_not_closure"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative/source-current.json.xz",
+   "sha256": "0ca3b8741aad62b527ff785dd855c1a3a1c10e2adfe3bef967c0bc4e77371794",
+   "revision": null,
+   "basis": "pinned_A_CI_native_attempt_not_closure"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativePlan.md",
+   "sha256": "7ba5b2dddf358507e9d3259b46a35fdff845e99621fb902e585182febd625e2d",
+   "revision": null,
+   "basis": "pinned_A_CI_native_attempt_not_closure"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeResults.json",
+   "sha256": "4bd971114c0f3d9b21130f14b33c9bf8296d3fe95bd128fd2daa4d7a3d8115b8",
+   "revision": null,
+   "basis": "pinned_A_CI_native_attempt_not_closure"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md",
+   "sha256": "28a92d5269096c5ce9a2601a8c62aea2f46bf24f8e14fc98c3a5281b0777eccf",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz",
+   "sha256": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz",
+   "sha256": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz",
+   "sha256": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz",
+   "sha256": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorPlan.md",
+   "sha256": "9c6ad8120ea8835e50c5a03a56fa62e6fb5b06fa6ab5e2f7ecdcf549a8b45506",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorResults.json",
+   "sha256": "dac0903519e9b842ce16f37e94cbff3d09f38ab4dd8fe8ae9880851e39e06b12",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md",
+   "sha256": "491192f320c14f7e50dcf504f7ea30fa95632c7755b81c6067b9b118946d187e",
+   "revision": null,
+   "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedPlan.md",
+   "sha256": "2cb3b2c606103b567650eb388debfbcd745df774c2154107eb63ddadf45e9291",
+   "revision": null,
+   "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedResults.json.xz",
+   "sha256": "b3ce5cd335921033cb5fadad3c2724930923abb54215e7e977c525d18be3011a",
+   "revision": null,
+   "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+  },
+  {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure.md",
    "sha256": "70b1a26d75c3122cda4a0f3d3810828f4b14b7f917d18b41073f5705465f5861",
    "revision": null,
@@ -20009,6 +20691,48 @@ export const TRANCHE8_EVIDENCE = {
    "basis": "current_equals_accepted_checkpoint"
   },
   {
+   "path": "implementation/phase-9-grcv4/verification/p984g_aci_feasibility.py",
+   "sha256": "28bfe6a9543bb67e13b5aef534577dac178e976548f2d22b15c7db00ebf29549",
+   "revision": null,
+   "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/p984g_aci_investigation.py",
+   "sha256": "31b5c76b3d0b9199f25d8ce927ae455618a1baf12ccab0f70bbd8bff518a0993",
+   "revision": null,
+   "basis": "pinned_A_CI_exact_real_investigation_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/p984g_aci_native.py",
+   "sha256": "dcb67b4e3477e89f76ac9c0342150422ed47a547e6c8790e0bf94aa762065106",
+   "revision": null,
+   "basis": "pinned_A_CI_native_attempt_not_closure"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_check.py",
+   "sha256": "d5173b435cfb8f2f29fe73d00e8687ce496209c6b5fe1936c286a704f925c4a3",
+   "revision": null,
+   "basis": "pinned_A_CI_native_attempt_not_closure"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_successor.py",
+   "sha256": "50b9eec43ea97b10bf3de16a060924a883f3797e534dd65e0d4c60279b21c8b0",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_successor_check.py",
+   "sha256": "078a34de1ac47e1eafbec070c5925cb45553a2987d2a913f0ba74cdbfbe75a8a",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/p984g_aci_staged.py",
+   "sha256": "9deb9304333f49e13a04b363d0c24443044b4df8521f908f6abc579e7823a9b4",
+   "revision": null,
+   "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+  },
+  {
    "path": "implementation/phase-9-grcv4/verification/p984g_cci_closure.py",
    "sha256": "e3e20404a3beb4e3234e9449f50818d3cd224d6a39a8b71f53c3e61912e781eb",
    "revision": null,
@@ -20063,10 +20787,52 @@ export const TRANCHE8_EVIDENCE = {
    "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
   },
   {
+   "path": "implementation/phase-9-grcv4/verification/p984g_pre_aci_residual_sources.py",
+   "sha256": "71323c0db80f24375d87f8e26822cef3aedbf5502e10b4c4ab804be05ba399bb",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
    "path": "implementation/phase-9-grcv4/verification/p984g_pre_ci_interval_sources.py",
    "sha256": "7d8faca54f58405265b3f1ef82703742410ffa8f0f256f6deef5b94e329f7995",
    "revision": null,
    "basis": "pinned_C_CI_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_feasibility.py",
+   "sha256": "d0441b3c9e60f18ed4d030a6754ad50ca0f9665e9b69d47c6f09c6a985eb50f8",
+   "revision": null,
+   "basis": "pinned_A_CI_interval_input_feasibility_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_investigation.py",
+   "sha256": "ec6a1c2d6b8537a1bc9e8170bc39a1a2fdebabb0507ece0da0b2ec18df7db81d",
+   "revision": null,
+   "basis": "pinned_A_CI_exact_real_investigation_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_native.py",
+   "sha256": "66426a6864d282fbf35ad81b04582e9d8eac7f826f21d00c0d313fa90bb51d15",
+   "revision": null,
+   "basis": "pinned_A_CI_native_attempt_not_closure"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_native_successor.py",
+   "sha256": "9e6197ec37c5d6e589c22fcbcf17f73627c24a454ae64293dbe905c00fe888f7",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_staged.py",
+   "sha256": "19746d14e28641e917269538e6fe90bff5ac5ad80a0fce7f335c793a478365b2",
+   "revision": null,
+   "basis": "pinned_A_CI_staged_joint_oracle_not_native"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_surfaces.py",
+   "sha256": "b515e08be4f8ba8b4d58cc8835b4a806b94be3beaa0b17b544461274b52c41c1",
+   "revision": null,
+   "basis": "pinned_A_CI_exact_real_investigation_not_native"
   },
   {
    "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_closure.py",
@@ -20121,7 +20887,13 @@ export const TRANCHE8_EVIDENCE = {
    "sha256": "40b0f0ddb984175f7c391815413838c3a8c6e704171e92af3c7149b7aef1129c",
    "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
    "basis": "current_equals_accepted_checkpoint"
+  },
+  {
+   "path": "tests/models/test_grc_v4_ci_residual_policy.py",
+   "sha256": "c2bdde04913e6ec39b60f18f6cf90e3c24f0866021bc68ab8902420c8298e968",
+   "revision": null,
+   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
   }
  ],
- "view_digest": "49e0d033ae11b99cc456cf6e323a79c80bf05ad244fc3fa07fd926f891231752"
+ "view_digest": "48a5bf854e58ea1a9c488510f27ba206cb0f23f592b2a0c93634baa4e1154c07"
 };

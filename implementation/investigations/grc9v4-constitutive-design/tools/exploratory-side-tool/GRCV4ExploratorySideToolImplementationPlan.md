@@ -2928,3 +2928,37 @@ acceptance (recorded 2026-10-14) and `.h` eligibility remain separate from execu
 no lifecycle event, uniform domain or other-family support is inferred.
 Authenticate the pre-extension CI/spec bindings at `e1d61021` for historical
 evidence, while requiring current bindings for the native successor.
+
+A_CI has its own selected `.g` research view: four exact-real joint-ball
+certificates, positive target-current resources and a certified negative
+reset-as-current resource. Recompute scalar bounds only, with native roots,
+steps/events, acceptance and `.h` readiness explicitly absent. The browser
+shows compact approximate bounds linked to exact rational evidence; do not
+reuse C_CI native readiness or treat a successful root as successful continuation.
+
+Expose A_CI's separate source/allocation companion: unchanged W, original reset
+exclusion and allocation-only missing trigger margin retained; exact-real
+postbeat writer/trigger and transfer enclosures with unchanged event reset.
+Default status authenticates retained companion bytes and source bindings,
+without recalculating interval boxes. The separate staged joint-root oracle
+now exposes four whole-point digests, two analytic residual checks per case,
+coordinatewise feedback separation and positive first-step resource bounds.
+Status checks retained records, not Arb solves. Source diagonal erasure and
+nonseparated coordinates remain visible. Native stopping, writer/final-C,
+charge and fresh events remain open; research completion grants no `.h` readiness.
+
+Expose the separate A_CI native investigation hold: one 600-second large source
+timeout and three unrun cases, zero verified completed large steps/roots, small
+native writer/final-root parity and an expected-failure interval-inclusion test.
+Name the exact analytic-Hodge inverse bypass and nonlinear baseline endpoint
+collapse. Authenticate compact summary/case bindings without rerunning the full
+checker, native trajectories or interval root solves. No native closure credit.
+
+Expose the separately bound corrected A_CI native successor, not a rewritten
+timeout: twelve full roots/four prepared role steps after residual-policy and
+nonlinear-enclosure corrections. Whole-point and writer checks, represented
+charge versus exact stored sum, pending user acceptance and no `.h` readiness
+remain distinct. Status authenticates current execution bindings and pinned
+summary/case bytes without running the full checker. Earlier A staged/timeout
+and accepted C_CI executions resolve their superseded CI/spec identities from
+the pinned Git revision; do not relabel them as corrected-runtime executions.

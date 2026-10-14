@@ -3365,6 +3365,41 @@ the full ten-profile plan.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.
+    - [x] A_CI initial exact-real investigation: four joint-ball certificates
+      and first-step resource bounds on the unchanged larger declarations.
+      Target current passes; target reset-as-current is excluded at `extra/1/1`.
+      [Research note](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md);
+      this completed calculation is not user acceptance or native credit.
+    - [x] A_CI both-role allocation/source feasibility research: derived shares
+      (5/16,5/16,3/8), unchanged W, conservative source shift 2^-10; full-law
+      current-postbeat/unchanged-reset transfer bounds and strict source margins.
+      Preserve original reset exclusion and allocation-only trigger diagnostic.
+      [Successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md), pending review;
+      calculation completion is not acceptance or native readiness.
+    - [x] A_CI staged full-joint-root/mechanism oracle calculation: four prepared
+      cases, two analytic residual passes each, whole-point digests, rigorous
+      represented-error bounds and some feedback-separated coordinates in each.
+      [Research evidence](./phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md);
+      source diagonal erasure and nonseparated coordinates remain limitations.
+      Completed research is not acceptance or native execution.
+    - [x] Bounded A_CI native investigation: source-current attempt capped at
+      600 seconds, three other large cases not run; small whole-step writer
+      control passes. Record exact analytic-inverse cost and a conservative
+      baseline-interval counterexample, not native closure.
+      [Findings](./phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md).
+    - [x] Correct shared CI analytic Hodge policy routing and A's whole-interval
+      nonlinear baseline propagation; 97 focused CI/CIPC/interval tests pass,
+      including the old counterexample, floor and no-fallback pressure.
+      [Replacement and historical separation](./phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md).
+      No changed law or silently rebound historical execution.
+    - [x] Complete A_CI bounded native certificate/stopping,
+      history/final-C readmission and represented-charge checks, followed by
+      source trigger checks: four provisional native steps, twelve matching
+      two-pass joint roots. Exact stored-resource drift retained separately
+      from admitted charge receipts; original timeout remains historical.
+    - [ ] Review and accept the bounded A_CI `.g` research/native prerequisite
+      successor and shared analytic-residual corrections. No `.h` readiness
+      before this acceptance; no executed event or uniform-domain claim.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.

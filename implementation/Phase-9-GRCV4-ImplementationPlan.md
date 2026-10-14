@@ -2860,6 +2860,51 @@ The user accepted this bounded C_CI prerequisite chain and numerical extension
 on 2026-10-14; C_CI `.g` is closed and eligible for `.h`, without executing that
 campaign or closing other families or the parent checkpoint.
 
+A_CI's [larger-graph investigation](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md)
+proves all four frozen joint roots in the declared ball, without a native run.
+First-step exact-real resources distinguish target current (positive) from
+target reset-as-current (negative at an initially empty vertex). Retain this
+history-sensitive exclusion. Next derive both-role history/allocation feasibility,
+then establish and review a staged full-joint-root oracle before native admission,
+writer/final-C and fresh-trigger checks. Do not borrow C_CI's companion or ATC
+authority, relax tolerances, evolve reset during events or infer `.h` readiness.
+
+The [A_CI feasibility successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md)
+derives the allocation from A's weighted-baseline zero-vertex inequalities and
+checks the full law. Allocation-only retains a missing source trigger margin;
+a separately identified conservative source shift restores it without changing
+either W history. Interval-input joint-root, continuity and logarithmic-writer
+bounds cover live-postbeat transfer versus unchanged reset, with positive target
+resources. The [staged joint-root oracle](./phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md)
+now independently passes both analytic residual stages on all four prepared
+cases, using fixed-precision rigorous Arb lowering with certified binary64
+rounding. Full current/geometry digests, exact-root error bounds and separated
+feedback coordinates are retained; source diagonal erasure and nonseparated
+coordinates remain explicit. Review this research result before native
+certificate/stopping, writer/final-C and charge checks. No native execution or
+`.h` readiness is inferred. Initial declarations and exclusions remain intact.
+
+The [A_CI native investigation](./phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md)
+retains a 600-second source-current timeout, not a numerical rejection; three
+other large cases remain unrun. Small native writer/final-root parity passes.
+Before additional large executions, close two shared implementation seams:
+analytic Hodge inversion still bypasses the selected certified interval route,
+and A's nonlinear exponent collapses a potentially nonpoint baseline enclosure
+to one endpoint. A conservative-widening counterexample is retained as an
+expected-failure inclusion test, not falsely reported as conformance PASS.
+Correct and document those operations, preserve historical bindings, then
+resume native full-joint/whole-step checks without changing the scientific witness.
+
+The [corrected residual successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md)
+implements both replacements in the shared CI evaluator, with explicit policy
+dispatch, full interval square/exp/floor propagation and no fallback. The legacy
+point route remains exact. The spec records formulas, assumptions and failure
+behavior; 97 focused core tests pass. New native runs are separately bound and
+compare whole selected points with the preserved oracle, including fresh final
+C/W. The old timeout and accepted C_CI executions retain their original source
+identities; they do not become corrected-runtime runs. Scope remains fixed-role
+numerical prerequisites, not `.h` events, a uniform domain or acceptance.
+
 The 2026-10-05 repository UX continuation adds a
 [configuration CLI and declarative inventory](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
 before this runtime work: 42 retained small/large native and generic examples,

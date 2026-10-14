@@ -1,0 +1,58 @@
+{
+  "schema": "p984g-aci-native-summary-v1",
+  "family": "A_CI",
+  "cases": [
+    {
+      "graph": "source",
+      "role": "current",
+      "outcome": "incomplete",
+      "native_steps": 0,
+      "native_roots": 0,
+      "seconds": 600.2287777099991,
+      "error": null,
+      "timed_out": true,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative/source-current.json.xz",
+      "sha256": "0ca3b8741aad62b527ff785dd855c1a3a1c10e2adfe3bef967c0bc4e77371794",
+      "record_digest": "c92c8381ac1ac4f8592a0f9a8d811f8c81a578531621c686bfbe88dcd537c971"
+    },
+    {
+      "graph": "source",
+      "role": "reset",
+      "outcome": "not_run",
+      "native_steps": 0,
+      "native_roots": 0
+    },
+    {
+      "graph": "target",
+      "role": "current",
+      "outcome": "not_run",
+      "native_steps": 0,
+      "native_roots": 0
+    },
+    {
+      "graph": "target",
+      "role": "reset",
+      "outcome": "not_run",
+      "native_steps": 0,
+      "native_roots": 0
+    }
+  ],
+  "native_steps": 0,
+  "native_roots": 0,
+  "native_events": 0,
+  "committed_steps": 0,
+  "user_accepted": false,
+  "ready_for_8_4h": false,
+  "known_implementation_holds": [
+    "analytic_hodge_exact_inverse_bypasses_selected_interval_route",
+    "A_nonlinear_baseline_interval_collapsed_to_lower_endpoint"
+  ],
+  "native_prerequisites_complete": false,
+  "scope": "prepared_role_controls_not_postbeat_event_or_uniform_domain",
+  "retained_check_only": true,
+  "numerical_trajectories_rerun": false,
+  "source_bindings": {
+    "implementation/phase-9-grcv4/verification/p984g_aci_native_check.py": "d5173b435cfb8f2f29fe73d00e8687ce496209c6b5fe1936c286a704f925c4a3"
+  },
+  "record_digest": "302e0e9fd6008b0c2265cabdf0887768771783dc40ec7a1b7e5e731de27e9f3a"
+}

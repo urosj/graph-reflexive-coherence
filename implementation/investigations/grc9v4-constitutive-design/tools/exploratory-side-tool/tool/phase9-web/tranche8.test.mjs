@@ -6,6 +6,58 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('A_CI larger joint roots retain reset exclusion without native credit', () => {
+  const row=evidence.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI');
+  assert.equal(row.cases.length,4);
+  assert.deepEqual(row.cases.map(c=>c.exact_real_first_step_resources_nonnegative),[true,true,true,false]);
+  assert.equal(row.native_roots,0);assert.equal(row.ready_for_8_4h,false);assert.equal(row.user_accepted,false);
+  assert.deepEqual(row.feasibility.shares,['5/16','5/16','3/8']);
+  assert.equal(row.feasibility.event_pair.reset_evolves,false);
+  assert.equal(row.feasibility.interval_research_recomputed,false);
+  assert.equal(row.feasibility.ready_for_8_4h,false);
+  assert.equal(row.staged_oracle.native_roots,0);
+  assert.equal(row.native_attempt.native_steps,0);
+  assert.equal(row.native_attempt.native_prerequisites_complete,false);
+  assert.deepEqual(row.native_attempt.cases.map(c=>c.outcome),['incomplete','not_run','not_run','not_run']);
+  assert.equal(row.native_attempt.known_implementation_holds.length,2);
+  assert.equal(row.native_successor.native_steps,4);assert.equal(row.native_successor.native_roots,12);
+  assert.equal(row.native_successor.native_prerequisites_complete,true);
+  assert.equal(row.native_successor.user_accepted,false);assert.equal(row.native_successor.ready_for_8_4h,false);
+  assert.equal(row.native_successor.full_retained_checker_rerun,false);
+  assert.equal(row.staged_oracle.ready_for_8_4h,false);
+  assert.equal(row.staged_oracle.interval_research_recomputed,false);
+  assert.equal(row.staged_oracle.cases.length,4);
+  assert.ok(row.staged_oracle.cases.every(c=>c.two_consecutive_independent_residual_passes && !c.native_stopping_outcome_verified && c.feedback_coordinates_above_selected_error>0));
+  assert.ok(row.feasibility.cases.every(c=>c.fresh_transfer_target_minimum_lower_display>0));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/A unique joint root is not a successful continuation/);
+  assert.match(text(out),/successor keeps both W histories unchanged/);
+  assert.match(text(out),/independent staged joint-root oracle/);
+  assert.match(text(out),/Source diagonal changes round away/);
+  assert.match(text(out),/native prerequisite HOLD/);
+  assert.match(text(out),/expected-failure test is not a conformance PASS/);
+  assert.match(text(out),/corrected native successor/);
+  assert.match(text(out),/not exact conservation/);
+  for(const key of ['ready_for_8_4h','user_accepted','native_events']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').native_successor[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  const promoted=structuredClone(evidence);
+  promoted.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').native_attempt.native_prerequisites_complete=true;
+  assert.throws(()=>checkedTranche8(promoted),/stale or widened/);
+  for(const key of ['ready_for_8_4h','user_accepted','native_roots']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').staged_oracle[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const key of ['ready_for_8_4h','user_accepted','native_roots']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI')[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
+
 test('larger C_CI investigation does not promote exact-real roots to native admission', () => {
   const row=evidence.coverage.larger_prerequisites.investigations[0];
   assert.equal(row.family,'C_CI');assert.equal(row.cases.length,4);

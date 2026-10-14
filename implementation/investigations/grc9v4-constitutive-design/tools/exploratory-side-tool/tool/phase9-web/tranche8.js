@@ -223,6 +223,10 @@ export function renderTranche8(value, container, create = tag => document.create
     append(container,'p',`Historical research: ${research.cases.length} whole-ball existence/uniqueness certificates. Native roots: ${research.native_roots}; steps: ${research.native_steps}; events: ${research.native_events}. 8.4h readiness: ${research.ready_for_8_4h}. Scalar certificates recomputed; no native trajectory rerun.`);
     append(container,'p','Reference-geometry pairs already satisfy the exact-real residual tolerance. This does not establish feedback discrimination or a represented joint root.');
     details(container,'Exact-real bounds and remaining obligations',{cases:research.cases,open:research.open_obligations});
+    if(research.family==='A_CI') {
+      append(container,'p','A_CI initial investigation, not accepted/native closure: the original target current has positive exact-real first-step resources; target reset-as-current has a certified negative resource. A unique joint root is not a successful continuation. The separately bound companion below supplies bounded feasibility, not staged/native closure.');
+      append(container,'p','Displayed A_CI bounds are approximate; exact rational endpoints are in the linked evidence. No history substitution or tolerance relaxation is authorized.');
+    }
     if(research.staged_bridge) {
       const bridge=research.staged_bridge;
       append(container,'p','Historical represented joint-root bridge: includes analytic current defect, geometry residual and contraction tail. Counterfactual feedback reads are not extra native iterations. This original record does not verify native stopping; see the separate successor below.');
@@ -236,18 +240,43 @@ export function renderTranche8(value, container, create = tag => document.create
     }
     if(research.feasibility) {
       const f=research.feasibility;
-      append(container,'p',`C_CI lawful feasibility companion: shares ${f.shares.join(', ')}, source deficit ${f.source_deficit} at node 0 compensated at node ${f.source_compensation_node}. This research record provides exact-real first-step bounds only; separate native evidence follows.`);
-      append(container,'p','Allocation alone leaves the original staged source trigger at zero. The new source fixture has interior row margins; its full-ulp control is not native staged arithmetic. Current uses postbeat transfer; stored reset does not evolve.');
+      append(container,'p',`${research.family} lawful feasibility companion: shares ${f.shares.join(', ')}, source deficit ${f.source_deficit} at node 0 compensated at node ${f.source_compensation_node}. This research record provides exact-real first-step bounds only; ${research.native_prerequisites ? 'separate native evidence follows' : research.staged_oracle ? 'separate staged research follows; native admission remains open' : 'staged/native admission remains open'}.`);
+      append(container,'p',f.allocation_only_diagnostic_kind==='uncertified_exact_strict_margin'
+        ? 'Allocation-only source intervals do not certify a strict trigger; the rounded-exact control also lacks a margin. This is not an exact-zero theorem or native receipt. The successor keeps both W histories unchanged, bounds the postbeat log writer and transfers live current while stored reset does not evolve.'
+        : 'Allocation alone leaves the original staged source trigger at zero. The new source fixture has interior row margins; its full-ulp control is not native staged arithmetic. Current uses postbeat transfer; stored reset does not evolve.');
       details(container,'Companion bounds (approximate display; no numerical rerun)',f.cases);
       details(container,'Actual event role pairing, not an event receipt',f.event_pair);
       const links=append(container,'p','Feasibility successor: ');
       for(const key of ['results','plan','review']) {link(links,f[key],key);append(links,'span',' · ');}
+    }
+    if(research.staged_oracle) {
+      const s=research.staged_oracle;
+      append(container,'p',`${research.family} independent staged joint-root oracle: ${s.cases.length} prepared cases, two analytic residual passes each; ${s.native_roots} native roots. Fixed ${s.precision_bits}-bit rigorous Arb lowering with certified binary64 rounding, no fallback. Native stopping and whole-step admission are not verified.`);
+      details(container,'Full joint-point identities, residuals, feedback separation and resources (approximate display)',s.cases);
+      append(container,'p','Some feedback coordinates separate from their bounded numerical error in every case, not all coordinates. Source diagonal changes round away; off-diagonals survive. These are prebeat target controls, not a postbeat event receipt. Status does not rerun interval solves.');
+      details(container,'Remaining native obligations',s.open_obligations);
+      for(const key of ['results','plan','review']) {link(container,s[key],`Staged ${key}`);append(container,'span',' · ');}
+    }
+    if(research.native_attempt) {
+      const n=research.native_attempt;
+      append(container,'p',`${research.family} historical native prerequisite HOLD: one large source-current attempt timed out at 600 seconds; three large cases were not run in that attempt. ${n.native_steps} verified completed large steps, ${n.native_roots} verified completed large roots—not a claim that no internal work occurred. No numerical rejection or scientific infeasibility is inferred.`);
+      append(container,'p','The original expected-failure test is not a conformance PASS: it exposed nonlinear endpoint collapse, alongside an exact analytic Hodge inverse bypass. These findings and the timeout remain historical; the separately bound corrected successor below reports current-runtime execution.');
+      details(container,'Native attempt outcomes and open findings',{cases:n.cases,holds:n.known_implementation_holds});
+      for(const key of ['results','plan','review','attempt']) {link(container,n[key],`Native investigation ${key}`);append(container,'span',' · ');}
+    }
+    if(research.native_successor) {
+      const n=research.native_successor;
+      append(container,'p',`${research.family} corrected native successor: ${n.native_steps} prepared numerical steps and ${n.native_roots} full joint roots, two evaluations each. Both residual corrections are implemented and the original enclosure regression passes. Acceptance: ${n.user_accepted}; 8.4h readiness: ${n.ready_for_8_4h}. No topology events or uniform-domain credit.`);
+      append(container,'p','Whole selected points, final-C/W roots and writer staging match independent checks. A passing represented charge receipt is not exact conservation of the sum of stored binary64 resources; the exact drift is shown separately. Status does not rerun trajectories or the full native-evidence checker.');
+      details(container,'Corrected native cases and exact stored-resource drift',n.cases);
+      for(const key of ['results','plan','review']) {link(container,n[key],`Corrected successor ${key}`);append(container,'span',' · ');}
     }
     if(research.native_prerequisites) {
       const n=research.native_prerequisites;
       append(container,'p',`C_CI native prerequisite successor: ${n.native_steps} numerical steps, ${n.native_roots} full joint roots; ${n.native_events} events and ${n.committed_steps} live commits. Status: ${n.status}. 8.4h readiness: ${n.ready_for_8_4h}. Retained checks do not rerun trajectories.`);
       details(container,'Native C_CI cases, residuals and exact stored-resource drift',n.cases);
       append(container,'p','The old negative target and sub-rounding feedback limitations remain. These four fixed companion cases are not a uniform domain or a lifecycle campaign.');
+      if(n.native_runtime_source_revision) append(container,'p',`Accepted C_CI execution remains bound to runtime ${n.native_runtime_source_revision}; it was not reexecuted under the later A_CI residual correction.`);
       for(const key of ['results','plan','review']) {link(container,n[key],`Native ${key}`);append(container,'span',' · ');}
     }
     const refs=append(container,'p','');
