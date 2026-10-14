@@ -2907,6 +2907,44 @@ split-commit instruction accepts this bounded A_CI chain (`16f10f10`, `642bf731`
 Its `.g` prerequisites are closed and eligible for separately declared `.h`
 work, not executed `.h` events, a uniform domain or aggregate closure.
 
+The [A_PC investigation](./phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigation.md)
+uses its own four unchanged larger declarations and PC whole-chart proof.
+Its carrier domain passes; original target reset continuation fails at an
+empty resource vertex. Retain that exclusion and the exact leading allocation
+constraints. The [separate companion](./phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibility.md)
+derives (1/4,3/8,3/8) on the first strict dyadic grid; a charge-preserving
+1/1024 source shift to the farthest node supplies robust postbeat trigger
+margin. Interval-input PC current/history/held-source norm checks certify
+positive targets for initial and postbeat-transferred histories. Allocation
+alone does not certify a strict trigger. Keep live postbeat current separate
+from unchanged reset and explicit whole-carrier loss. Represented two-writer/
+final-read evidence must use the actual non-diagonal updated source carrier
+before native prerequisites. The [represented successor](./phase-9-grcv4/tranche-8/P9-8.4g-APCStaged.md)
+now completes all four prepared reads/writes/final reads and focused pressure.
+Source carrier and Read-Back effects resolve; newly created target Z is nonzero
+but its first-step current effect is below represented error. Native comparison
+and charge admission remain open, with this limit explicit. No CI root
+substitution, borrowed small-graph witness or implicit `.h` readiness.
+
+The [carrier hardening](./phase-9-grcv4/tranche-8/P9-8.4g-APCHardening.md)
+binds full final geometry to stored Z even when current cannot distinguish stale
+reads. Its separate 7/8 inherited-history companion is selected by sensitivity
+subject to all ten empty-node baseline inequalities; full-law checks resolve
+target response above combined error and preserve positive resources. Retain
+the infeasible 11/16 unconstrained selection and original unresolved witness.
+Next native comparison must cover this companion's whole point and both writers;
+prepared layout labels are not a fresh postbeat event identity. No `.h` promotion.
+
+The [native prerequisite comparison](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md)
+now completes four detached steps and twelve full PC reads on that companion,
+with exact oracle parity and both writers/charge admission verified. A checker-
+only expected int/float normalization required target-only successor executions;
+preserve those earlier failures and reuse source successes. Exact stored drift
+is not relabeled conservation. Production laws, numerical policy and tolerances
+are unchanged. The user accepted these bounded A_PC `.g` prerequisites on
+2026-10-14; original execution flags remain unchanged. Next is a separately
+declared `.h` event/continuation campaign, not a rerun of these prerequisites.
+
 The 2026-10-05 repository UX continuation adds a
 [configuration CLI and declarative inventory](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
 before this runtime work: 42 retained small/large native and generic examples,

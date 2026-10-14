@@ -2445,3 +2445,26 @@ instead of stale fixed totals and opens any pending case details explicitly.
   2026-10-14 split-commit acceptance grants bounded `.h` eligibility; project
   it separately from the original false execution flags. Preserve historical timeout/staged/C_CI
   source identities; no native or full-checker replay during status queries.
+- [x] A_PC selected `8.4g` investigation: whole-chart carrier admission,
+  four role-specific first-step signs and original reset exclusion, held-source
+  ZOH versus post-C A writer, derived empty-node constraints. API/notebook/browser
+  authenticate pinned research without numerical reruns, native or `.h` credit.
+- [x] A_PC `.g` feasibility successor: bind the compressed original-law
+  companion, dyadic shares/source shift, positive both-history bounds and
+  robust source trigger. Keep original exclusion, unchanged-reset chronology,
+  explicit carrier loss and open non-diagonal final-read/native obligations
+  visible in API/notebook/browser; no interval rerun or readiness promotion.
+- [x] A_PC `.g` represented successor: four prepared full-chain oracles,
+  non-diagonal final reads, both writers, source-resolved versus target-unresolved
+  carrier effects and exact stored drift; compressed evidence, no solve during
+  API/browser viewing and no large-native or readiness credit.
+- [x] A_PC `.g` hardening: expose full-point stale-geometry rejection, separate
+  7/8 inherited-history companion, two-read effect/error separation and the
+  excluded 11/16 attempt. Preserve original limits; no status solve, native
+  execution, event identity or readiness promotion.
+- [x] A_PC `.g` native prerequisite view: separately pinned outcomes on the
+  7/8 history companion, full PC reads/two-writer parity and charge receipts
+  versus exact stored drift. API/browser/notebook status reruns no native
+  trajectory or full retained checker. Project scoped user acceptance dated
+  2026-10-14 and eligibility for separately declared `.h`, not event execution;
+  historical execution flags remain unchanged.

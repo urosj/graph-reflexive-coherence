@@ -19,6 +19,56 @@ from unittest.mock import patch
 
 from tranche8_validation import ACTIVE, validation_session, LOCK
 
+LARGER_APC_NATIVE_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_apc_native.py": "1e594aad85c58eea2776d1a610c57e667648c2e6c7e98ef590191eab614be8e8",
+    "implementation/phase-9-grcv4/verification/test_p984g_apc_native.py": "e92a93ef37835a1b46e05bed49ccbe0a662e847cc15feb768680701ee5377d7f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativePlan.md": "1248649340a5a6b49242ee7e78ab9c9579830acdfba8814bf7f88f0ca3dc8149",
+    "implementation/phase-9-grcv4/verification/p984g_apc_native_targets.py": "af4b79061ebda0945a804c961db1ef0cb29a2add99c20a1c36a1d98625d608a2",
+    "implementation/phase-9-grcv4/verification/test_p984g_apc_native_targets.py": "d1768d798e87bdef4ad8428afe1f1127eea35ee7ca56eac0dbe9e66a046e1e5b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeTargetPlan.md": "5e6ddb88b6046d2c71cfdb27f28c9741ffacc5bf645492e41b291dfdb6d3e084",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md": "6c5071b280fcb75d80ee38991a9cea09f22625b043d2141b6dffaf38d558cba7",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeResults.json": "5bc33747e81512b977debc30967e8c04b06c704782923058e31d0095299b4bf6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/source-current.json.xz": "769fd740ef872ef1cc8409f8e9129b093fc6a34dd7090e8e8e091e323dcf6342",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/source-reset.json.xz": "d12038b61518dca02aecf2f6874fc774fa4f088c8080fd7ca17af648123dac1d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeTargets/target-current.json.xz": "d98c4175a2ff6ed0a68a8a8feee1358c47ea17c75ed182ff13f361a75206e78f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeTargets/target-reset.json.xz": "02992d6603b625fd443f15c0d85ea23d88ca8dfc97aced52d4eb5813e4d9c62d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/target-current.json.xz": "4524aea2afd0a5d53ca4c17f6cbcb509a4374e8c7519cf182ee7a2549aa899ab",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/target-reset.json.xz": "11542b0e9b2c9944119a0721234e36c4d20f8d9bbe0139a0717f8e4612d40e4e"
+}
+
+LARGER_APC_HARDENING_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_apc_hardening.py": "d3444dab55701e0df2c4565882e3b7d9a4190ab9824249dbbecfc55b182e5027",
+    "implementation/phase-9-grcv4/verification/test_p984g_apc_hardening.py": "a6295342ea1606228c4b28b3a4c0a953d2c92095c4d1c038725f3c0a18a27d27",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCHardeningPlan.md": "4c0e22841be8833913a1f8a5a9edf71ee60ebe209cd6c8ed0542abbe0a75a148",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCHardening.md": "1e40a1f375fd039b18db6ebba66b1d66a2868870d84935f248dc99d40bc1d93f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCHardeningResults.json.xz": "4eb77d6c65a30f95d53313d9ba05272438dcb2aba995804bdc3c723d47fa2bc7"
+}
+
+LARGER_APC_STAGED_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_apc_staged.py": "06371f464dfd0bcf22087bf8e6c14d9c593a1f690116a402e94ed9acb364c182",
+    "implementation/phase-9-grcv4/verification/test_p984g_apc_staged.py": "0b681cadaa59f07869ac4502613e202675ffe1b24608b29ea0e73c383e58ab94",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCStagedPlan.md": "1e15755ebedad8976aa6af8eefb95967af7f132634bb81f8964244c4958e6df9",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCStaged.md": "5299a933ee87e18027d6ff221cd3a6abe023ab5b3681bfa9b6c67966c3e9c3d8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCStagedResults.json.xz": "17d33daf98c19fa4f1e67b4e89f9a097c516016fdf624c34c0cc747787f65da3"
+}
+
+LARGER_APC_FEASIBILITY_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_apc_feasibility.py": "b39607a5680cdbbfdfdb8ab5442a3256d64b82b45a93acb54ea02368205df68e",
+    "implementation/phase-9-grcv4/verification/test_p984g_apc_feasibility.py": "ae7f8ccde167cc81ca8bb61d4f7dd9b1b59b5b294cf57472ae0f1056bfc8b3a3",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibilityPlan.md": "db84eff81835994671d218db784f55ea4c4fe628edfd790b3965af4ce021b702",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibility.md": "b84079f6722251bba76eb2fb139122417b702d7de1ac7b156176f9b144cfbb80",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibilityResults.json.xz": "ce0d8df18806e5d3930c6412cd853291adde26a9a97de0034d215c34aa7eb3b7"
+}
+
+LARGER_APC_RESEARCH_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_apc_investigation.py": "b2e54c9b8093a9126470b0fae5ebd71280c65a57a514330e57000825c469e1d1",
+    "implementation/phase-9-grcv4/verification/test_p984g_apc_investigation.py": "4eed2e789cd6e7ffdde117c176fbb651f916ad77660f88d2695cd30d0fa5c839",
+    "implementation/phase-9-grcv4/verification/test_p984g_apc_surfaces.py": "a87fffd4d34f6b8a2f2afe305df20159820283a8b510b6b44c6711e1cf974efd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigation.md": "9d865d5491ef35a0b460a7037f0f7701ea0c70a87a42fbc4a5166983f723d0ba",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigationPlan.md": "c6e65f569ad9b3d83b91b8c140a96c73430be92fc32b2c5ceb4cb2edbc9301b4",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigationResults.json": "5c1201b1135920cea1a5b0bce7dfdc46032cfafcaaa522f45527b9d70a0799c3"
+}
+
 LARGER_ACI_SUCCESSOR_SOURCES = {
     "implementation/phase-9-grcv4/verification/p984g_pre_aci_residual_sources.py": "71323c0db80f24375d87f8e26822cef3aedbf5502e10b4c4ab804be05ba399bb",
     "implementation/phase-9-grcv4/verification/p984g_aci_native_successor.py": "50b9eec43ea97b10bf3de16a060924a883f3797e534dd65e0d4c60279b21c8b0",
@@ -544,6 +594,11 @@ class Sources:
             boundary_pins.update(LARGER_ACI_STAGED_SOURCES)
             boundary_pins.update(LARGER_ACI_NATIVE_SOURCES)
             boundary_pins.update(LARGER_ACI_SUCCESSOR_SOURCES)
+            boundary_pins.update(LARGER_APC_RESEARCH_SOURCES)
+            boundary_pins.update(LARGER_APC_FEASIBILITY_SOURCES)
+            boundary_pins.update(LARGER_APC_STAGED_SOURCES)
+            boundary_pins.update(LARGER_APC_HARDENING_SOURCES)
+            boundary_pins.update(LARGER_APC_NATIVE_SOURCES)
             boundary_pins.update(COVARIANCE_CCI_SOURCES)
             boundary_pins.update(COVARIANCE_ACI_SOURCES)
             boundary_pins.update(COVARIANCE_APC_SOURCES)
@@ -553,7 +608,8 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_A_CI_accepted_corrected_native_prerequisites" if name in LARGER_ACI_SUCCESSOR_SOURCES else
+                    basis=("pinned_A_PC_whole_chart_research_not_native" if name in LARGER_APC_RESEARCH_SOURCES else
+                        "pinned_A_CI_accepted_corrected_native_prerequisites" if name in LARGER_ACI_SUCCESSOR_SOURCES else
                         "pinned_A_CI_native_attempt_not_closure" if name in LARGER_ACI_NATIVE_SOURCES else
                         "pinned_A_CI_staged_joint_oracle_not_native" if name in LARGER_ACI_STAGED_SOURCES else
                         "pinned_A_CI_interval_input_feasibility_not_native" if name in LARGER_ACI_FEASIBILITY_SOURCES else
@@ -1434,9 +1490,9 @@ def check_mechanics_storage_successor(checker, retained):
 
 
 def browser_source(value):
-    # Smaller indentation preserves every field while keeping this generated
+    # Newlines without indentation preserve every field while keeping this generated
     # executable asset below the raw-file storage threshold; no lossy summary.
-    return "// Generated from checked retained Tranche 8 evidence; not new authority.\nexport const TRANCHE8_EVIDENCE = " + json.dumps(value, indent=1, ensure_ascii=False) + ";\n"
+    return "// Generated from checked retained Tranche 8 evidence; not new authority.\nexport const TRANCHE8_EVIDENCE = " + json.dumps(value, indent=0, ensure_ascii=False) + ";\n"
 
 
 def checked(root=ROOT):
@@ -1577,6 +1633,111 @@ def deep_view(sources):
         first_group_closed=all(r["accepted_cells"] == 40 for r in rows),
         families_not_executed=[f for f in FAMILIES if f not in executed],
         other_family_credit=0, successive_event_credit=0)
+
+
+def larger_apc_investigation(sources):
+    """Authenticate pinned A_PC research; do not rerun even scalar equations."""
+    import p984g_apc_investigation as research
+    for path in LARGER_APC_RESEARCH_SOURCES:sources.raw(path)
+    result=sources.read(research.RESULTS)
+    require(result==research.seal(result) and result['source_bindings']==research.bindings(), 'A_PC research identity/source drift')
+    require(result['schema']=='p984g-apc-investigation-v1' and result['family']=='A_PC'
+        and result['scope']=='exact_real_whole_chart_and_diagonal_prestate_not_native_or_staged'
+        and result['native_steps']==result['native_events']==0 and not result['ready_for_8_4h']
+        and not result['user_accepted'] and not result['aggregate_closed'],'A_PC research scope')
+    require([(c['graph'],c['role']) for c in result['cases']]==list(research.rows.shared.CASES),'A_PC case roster')
+    cases=[dict(graph=c['graph'],role=c['role'],vertices=c['vertices'],edges=c['edges'],
+        resource_sign=c['resource_sign'],minimum_resource_lower_display=float(research.q(c['first_resource_minimum_lower'])),
+        source_envelope_upper_display=float(research.q(c['whole_chart']['source_upper'])),
+        carrier_radius=float(research.q(c['whole_chart']['carrier_radius'])),
+        carrier_next_norm_upper_display=float(research.q(c['carrier_next_norm_upper'])),
+        carrier_next_in_ball=c['carrier_next_in_ball'],
+        negative_vertices=[r['vertex'] for r in c['negative_vertices']],
+        history_writer_certified=c['history_writer'] is not None,
+        leading_empty_node_constraints=len(c['leading_empty_node_constraints'])) for c in result['cases']]
+    import p984g_apc_feasibility as feasible
+    for path in LARGER_APC_FEASIBILITY_SOURCES:sources.raw(path)
+    f=feasible.check_retained(json.loads(lzma.decompress(sources.raw(feasible.RESULTS))))
+    bounds=[dict(role=c['role'],
+        initial_target_minimum_lower_display=float(research.q(c['initial_target']['minimum_resource_lower'])),
+        source_postbeat_minimum_lower_display=float(research.q(c['source_postbeat']['minimum_resource_lower'])),
+        source_signed_hessian_upper_display=float(research.q(c['source_trigger']['minimum_signed_hessian_upper'])),
+        postbeat_transfer_target_minimum_lower_display=float(research.q(c['postbeat_transfer_target']['minimum_resource_lower'])),
+        postbeat_role_use=c['postbeat_role_use']) for c in f['cases']]
+    companion=dict(shares=f['selection']['shares'],source_deficit=f['companion']['source_deficit'],
+        compensation_node=f['companion']['compensation_node'],compensation_distance=f['companion']['compensation_distance'],
+        cases=bounds,event_pair=f['event_pair'],original_reset_exclusion_preserved=True,
+        scope=f['scope'],native_steps=0,native_events=0,ready_for_8_4h=False,user_accepted=False,
+        interval_research_recomputed=False,poststate_read_executed=False,
+        open_obligations=f['open_obligations'],results=sources.ref(feasible.RESULTS),
+        plan=sources.ref(feasible.PLAN),review=sources.ref(feasible.NOTE))
+    import p984g_apc_staged as staged
+    for path in LARGER_APC_STAGED_SOURCES:sources.raw(path)
+    sv=staged.check_retained(json.loads(lzma.decompress(sources.raw(staged.RESULTS))))
+    scases=[]
+    for c in sv['cases']:
+        r=c['result']
+        scases.append(dict(graph=c['graph'],role=c['role'],minimum_resource=r['minimum_resource'],
+            final_current_error_upper_display=float(research.q(r['final']['errors']['current'])),
+            nonzero_offdiagonal_carrier_entries=r['nonzero_offdiagonal_carrier_entries'],
+            stale_Z_final_current_changed_coordinates=r['stale_Z_final_current_changed_coordinates'],
+            exact_stored_charge_drift=r['exact_stored_charge_drift'],
+            final_read_executed=r['final_read_executed'],
+            effects={stage:{key:dict(separated_coordinates=e['separated_coordinates'],maximum_lower_display=float(research.q(e['maximum_lower'])))
+                for key,e in r[stage]['effects'].items()} for stage in ('initial','final')}))
+    staged_view=dict(cases=scases,precision_bits=sv['precision_bits'],native_steps=0,native_events=0,
+        ready_for_8_4h=False,user_accepted=False,interval_research_recomputed=False,
+        scope=sv['scope'],open_obligations=sv['open_obligations'],results=sources.ref(staged.RESULTS),
+        plan=sources.ref(staged.PLAN),review=sources.ref(staged.NOTE))
+    import p984g_apc_hardening as hardening
+    for path in LARGER_APC_HARDENING_SOURCES:sources.raw(path)
+    hv=hardening.check_retained(json.loads(lzma.decompress(sources.raw(hardening.RESULTS))))
+    hardened=dict(scale=hv['selection']['scale'],unconstrained_scale=hv['selection']['unconstrained_scale'],
+        original_pressure=hv['original_pressure'],unconstrained_exclusion=hv['unconstrained_exclusion'],
+        cases=[dict(graph=c['graph'],role=c['role'],minimum_resource=c['result']['minimum_resource'],
+            separated_coordinates=c['carrier_separation']['separated_coordinates'],
+            changed_current_coordinates=c['carrier_separation']['changed_current_coordinates'],
+            effect_lower_display=float(research.q(c['carrier_separation']['effect_lower'])),
+            combined_error_upper_display=float(research.q(c['carrier_separation']['two_read_error_upper'])),
+            exact_stored_charge_drift=c['result']['exact_stored_charge_drift']) for c in hv['cases']],
+        scope=hv['scope'],native_steps=0,native_events=0,ready_for_8_4h=False,user_accepted=False,
+        numerical_recomputed=False,results=sources.ref(hardening.RESULTS),plan=sources.ref(hardening.PLAN),review=sources.ref(hardening.NOTE))
+    import p984g_apc_native_targets as native
+    for path in LARGER_APC_NATIVE_SOURCES:sources.raw(path)
+    nv=sources.read(native.RESULTS)
+    require(nv==native.seal(nv) and nv['source_bindings']==native.bindings() and
+        nv['hardening_digest']==hv['record_digest'] and nv['schema']=='p984g-apc-native-summary-v1','A_PC native binding')
+    require([(c['graph'],c['role']) for c in nv['cases']]==list(native.CASES),'A_PC native roster')
+    for c in nv['cases']:
+        if c['outcome']=='not_run':continue
+        require(c['path']==native.case_path(c['graph'],c['role']),'A_PC native path')
+        raw=sources.raw(c['path']);record=json.loads(lzma.decompress(raw))
+        runtime_bindings=native.base.bindings() if c['graph']=='source' else native.bindings()
+        require(hashlib.sha256(raw).hexdigest()==c['sha256'] and record==native.seal(record)
+            and record['record_digest']==c['record_digest'] and record['source_bindings']==runtime_bindings, 'A_PC native retained identity')
+    require(len(nv['historical_target_attempts'])==2,'A_PC historical attempts')
+    for c in nv['historical_target_attempts']:
+        raw=sources.raw(c['path']);record=json.loads(lzma.decompress(raw))
+        require(c['path']==native.base.case_path(c['graph'],c['role']) and c['outcome']=='incomplete' and c['native_steps']==0
+            and hashlib.sha256(raw).hexdigest()==c['sha256'] and record==native.seal(record)
+            and record['record_digest']==c['record_digest'] and record['source_bindings']==native.base.bindings(),'A_PC historical failure binding')
+    require(nv['native_steps']==sum(c['native_steps'] for c in nv['cases']) and
+        nv['native_reads']==sum(c['native_reads'] for c in nv['cases']) and
+        nv['native_prerequisites_complete']==all(c['outcome']=='completed' for c in nv['cases']) and
+        nv['native_events']==nv['committed_steps']==0 and not nv['ready_for_8_4h'] and not nv['user_accepted'],'A_PC native scope')
+    acceptance=sources.raw(native.NOTE).decode()
+    require('## Scoped user acceptance' in acceptance and nv['record_digest'] in acceptance,
+        'missing or unbound A_PC native prerequisite acceptance')
+    native_view=dict(nv,results=sources.ref(native.RESULTS),plan=sources.ref(native.PLAN),review=sources.ref(native.NOTE),
+        user_accepted=True,ready_for_8_4h=True,status='accepted_A_PC_prerequisites',
+        original_execution_flags_unchanged=True,
+        acceptance=sources.ref(native.NOTE,anchor='scoped-user-acceptance'))
+    native_view.pop('source_bindings')
+    return dict(family='A_PC',scope=result['scope'],pc_whole_chart=True,cases=cases,feasibility=companion,pc_staged=staged_view,pc_hardening=hardened,pc_native=native_view,
+        native_roots=0,native_steps=nv['native_steps'],native_events=0,ready_for_8_4h=True,user_accepted=True,
+        aggregate_closed=False,scalar_certificates_recomputed=False,native_trajectories_rerun=False,
+        approximate_display_numbers=True,open_obligations=result['open_obligations'],
+        results=sources.ref(research.RESULTS),plan=sources.ref(research.PLAN),review=sources.ref(research.NOTE))
 
 
 def larger_aci_successor(sources):
@@ -1828,10 +1989,10 @@ def larger_view(sources, *, include_investigations=True):
         acceptance_scope='four_fixed_C_OS_numerical_prerequisites_not_lifecycle_campaign',
         acceptance=sources.ref(native.REVIEW,anchor='scoped-user-acceptance'))
     row['open_obligations']=['8.4h actual expansion/lifecycle and continuation campaign; not executed here']
-    return dict(family_results=[row],investigations=([larger_cci_investigation(sources),larger_aci_investigation(sources)] if include_investigations else []),
+    return dict(family_results=[row],investigations=([larger_cci_investigation(sources),larger_aci_investigation(sources),larger_apc_investigation(sources)] if include_investigations else []),
         aggregate_closed=False,first_group_closed=False,
         families_without_preflight=[f for f in FAMILIES if f not in
-            (('C_OS','C_CI','A_CI') if include_investigations else ('C_OS',))])
+            (('C_OS','C_CI','A_CI','A_PC') if include_investigations else ('C_OS',))])
 
 
 def family_status(root, family, checkpoint="8.4c"):
@@ -1840,6 +2001,13 @@ def family_status(root, family, checkpoint="8.4c"):
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g"), "unknown family checkpoint")
     if checkpoint == "8.4g":
+        if family=='A_PC':
+            sources=Sources(root)
+            return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,
+                scope='whole_carrier_chart_and_first_step_research_not_native_or_acceptance',
+                investigation=larger_apc_investigation(sources),
+                source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
+                other_families_checked=False,native_trajectories_rerun=False)
         if family=='A_CI':
             sources=Sources(root)
             return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,

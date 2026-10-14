@@ -3404,6 +3404,46 @@ the full ten-profile plan.
       instruction on 2026-10-14 accepts `16f10f10` and `642bf731`; A_CI is eligible
       for separately declared `.h` work. Original execution flags stay unchanged;
       no executed event, uniform-domain or aggregate closure claim.
+    - [x] A_PC investigation-first whole-chart and exact-real first-step checks:
+      four frozen source/target × current/reset cases; both carrier envelopes
+      pass, but original target reset continuation is excluded at `extra/1/1`.
+      Old-carrier current, post-C history writer, held-source ZOH norm and
+      role-specific empty-node allocation coefficients are independent.
+      [Research](./phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigation.md), pending
+      review; no represented/native or `.h` credit.
+    - [x] A_PC: derive/select and certify a both-role exact-real feasibility
+      companion: shares (1/4,3/8,3/8), charge-preserving 1/1024 shift from node
+      0 to farthest node 29, full-law postbeat trigger and interval-input transfer.
+      Target lower bounds exceed 1.83e-4. Preserve allocation-only no-certified-
+      trigger control, original reset exclusion and unchanged W/Z histories.
+      [Companion](./phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibility.md); research
+      pending review, not represented/native or final-read credit.
+    - [x] A_PC represented current/two-writer/final-read oracle on four prepared
+      histories, with actual non-diagonal updated carriers; four focused parity,
+      stage, writer and evidence tests pass. Source carrier/all Read-Back effects
+      resolve; target first-step carrier-current response remains below error.
+      [Oracle and limits](./phase-9-grcv4/tranche-8/P9-8.4g-APCStaged.md).
+      No native admission, event or `.h` readiness credit.
+    - [x] A_PC carrier hardening: full-point/stored-Z geometry binding rejects
+      resealed stale reads despite unchanged current. Derive the separate 7/8
+      history companion from sensitivity plus ten empty-node inequalities;
+      retain excluded 11/16 attempt. Four prepared steps have positive resources
+      and carrier effects above combined two-read error (target 103/102
+      coordinates). Five focused tests, small native parity only.
+      [Hardening](./phase-9-grcv4/tranche-8/P9-8.4g-APCHardening.md); pending
+      review, no large-native/event/readiness promotion.
+    - [x] A_PC bounded native complete-step/charge/full-final-point comparison:
+      four detached prepared steps, twelve PC reads, exact two-writer/oracle
+      parity and reset preservation; all represented charge receipts pass.
+      Preserve exact stored drift, original exclusions and unresolved witness.
+      A target-only numeric-representation checker successor passes; original
+      target comparison failures remain and source successes are reused.
+      [Native evidence](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md).
+      Five focused tests; no production edit, event or `.h` readiness promotion.
+    - [x] User accepted A_PC bounded `.g` prerequisites, 2026-10-14:
+      [scoped decision](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md#scoped-user-acceptance).
+      Eligible for separately declared `.h`; no event or aggregate closure.
+      Original research/execution flags and exclusions remain unchanged.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.

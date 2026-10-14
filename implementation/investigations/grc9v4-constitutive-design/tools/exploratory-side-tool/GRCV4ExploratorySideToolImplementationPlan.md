@@ -2964,3 +2964,42 @@ flags, without event or aggregate credit. Status authenticates current execution
 summary/case bytes without running the full checker. Earlier A staged/timeout
 and accepted C_CI executions resolve their superseded CI/spec identities from
 the pinned Git revision; do not relabel them as corrected-runtime executions.
+
+Expose A_PC's independent whole-chart/diagonal-prestate investigation at selected
+`8.4g`: both carrier charts pass, while original target reset continuation is
+excluded. Keep current/reset, carrier/history timing, exact-real versus represented
+effects and leading allocation constraints distinct. Status authenticates pinned
+results only, with links to exact rational bounds; no equation rerun, native
+permission, event execution or acceptance follows from an available research row.
+
+Add the separately bound A_PC allocation/source feasibility companion without
+replacing the original exclusion. Expose its dyadic selection, charge-preserving
+shift, both-history resource and trigger bounds, and live-postbeat/current versus
+unchanged-reset pairing. The source's new carrier is not diagonal: its norm bound
+is not a final read. Keep represented two-writer/final-read and native obligations
+visible; status authenticates the compressed record without numerical replay.
+
+Expose the separate represented A_PC oracle: full non-diagonal final reads,
+both writers, stage-error bounds, stored charge drift and mechanism controls.
+Do not confuse source effect separation with target first-step carrier response:
+the latter is unresolved, despite nonzero Z. Retained viewing runs no dense
+solve and grants no large-native or `.h` credit. Keep generated browser JSON
+lossless but unindented so the executable asset stays below 1 MB.
+
+Expose the separate carrier-sensitive 7/8 history companion and full-point
+freshness pressure. Preserve the original target's unresolved effect and the
+excluded unconstrained 11/16 history. Show combined two-read error separation,
+positive prepared resources and exact stored charge drift; status reruns no
+solves, grants no native credit and does not turn old layout labels into a
+fresh event identity. Keep these distinctions in API, browser and notebook.
+
+Bind the separate A_PC native prerequisite record to the 7/8 hardening identity
+and exact runtime sources. Display detached steps, full PC reads, represented
+charge receipts and exact stored-charge drift separately. Do not call PC reads
+CI roots or turn prerequisite completion into user acceptance, live publication
+or `.h` readiness. Status authenticates compressed runs and their pinned summary;
+full retained comparison and native execution remain explicit actions.
+Project the separate 2026-10-14 scoped user acceptance from its pinned review
+and summary digest: bounded A_PC prerequisites are eligible for separately
+declared `.h` work. Original execution flags and exclusions remain unchanged;
+acceptance does not execute an event or close the all-ten parent.

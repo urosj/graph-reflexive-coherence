@@ -1,5 +1,62 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — A_PC larger-graph prerequisites (2026-10-14)
+
+A_CI's acceptance correction is committed as `38489f2c`. The subsequent **A_PC**
+research-to-native chain is now accepted within its bounded prerequisite scope.
+The [A_PC research](./phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigation.md)
+independently certifies both whole carrier charts and exact-real first-step
+operands on the four unchanged larger declarations. Source/current, source/reset
+and target/current have positive resources and admitted history bounds; the
+target/reset-as-current has a certified negative resource at `extra/1/1`.
+Both carrier charts pass, so this is a resource continuation exclusion, not
+capacity or solver failure. Exact source carrier/readback effects are retained;
+represented mechanism survival and native steps are not claimed.
+
+Exact leading empty-node allocation inequalities are derived for both histories;
+the original nonlinear corrections are only pointwise, not simplex-wide.
+The [separate feasibility companion](./phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibility.md)
+now selects (1/4,3/8,3/8) from the first strict dyadic grid, then shifts 1/1024
+resources from node 0 to the farthest node 29 (distance 8) in both histories.
+Both W/Z histories and all laws/charts/tolerances stay unchanged. Full-law
+interval-input checks give target resource lower bounds above 1.83e-4 and
+source postbeat signed-Hessian upper bounds below -0.001. Allocation alone
+fixes target positivity but certifies no strict source trigger; retain that
+diagnostic as well as the original exclusion. Live current transfers postbeat;
+stored reset does not evolve. Target Z is zero under explicit whole-carrier loss.
+
+The [represented PC oracle](./phase-9-grcv4/tranche-8/P9-8.4g-APCStaged.md)
+now completes four prepared histories, both writers and full non-diagonal final
+reads (about ten seconds/case, fixed 256-bit Arb, no fallback). Four focused
+tests pass, including exact small native-step parity and wrong-stage controls.
+Source carrier effects and all Read-Back effects are resolved. **Target first-
+step carrier-to-current response is not resolved**: Z' is nonzero/non-diagonal,
+but stale-Z target reads give the same represented current. Keep this limit
+and exact stored charge drift visible; no large native admission is claimed.
+The [hardening companion](./phase-9-grcv4/tranche-8/P9-8.4g-APCHardening.md)
+now rejects resealed stale geometry even with unchanged current. A separately
+derived 7/8 inherited-history scale preserves unit new-edge seeds and zero
+target Z, and resolves target carrier response on 103/102 coordinates above
+combined two-read error. All four prepared steps pass; target minima exceed
+6.92e-5. Preserve the excluded unconstrained 11/16 companion and original
+unresolved witness. Five targeted tests include scaled-history small native
+parity; no large native execution or production edits.
+The [native comparison](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md) now passes
+all four prepared cases: four detached steps and twelve complete PC reads,
+exact oracle parity for C/W/Z and every read field, unchanged reset and passing
+represented charge admission. Exact stored-charge drift remains separate.
+Both initial target recipes completed but a checker-only int/float seed digest
+mismatch stopped comparison. Preserve those attempts; a separately bound
+normalization successor repeats only the targets and passes. Source successes
+are reused; no production code or tolerances changed. Five focused tests and
+API/browser checks cover the retained evidence and scope. Status reruns no
+native steps. [Scoped user acceptance](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md#scoped-user-acceptance)
+closes A_PC's bounded `.g` prerequisites and grants eligibility for a separately
+declared `.h` campaign. Original execution flags remain unchanged.
+Next: declare `.h` actual postbeat event identities, both-role transfer/readmission
+and continuation; none is executed by this acceptance. Do not substitute A_CI's
+passing witness or the small D94 domain. Aggregate all-ten `.g` remains open.
+
 ## Accepted checkpoint — A_CI larger-graph prerequisites (2026-10-14)
 
 [Investigation](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md): all four

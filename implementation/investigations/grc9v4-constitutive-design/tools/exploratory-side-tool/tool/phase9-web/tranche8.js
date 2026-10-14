@@ -219,6 +219,50 @@ export function renderTranche8(value, container, create = tag => document.create
     for(const key of ['inputs','results','plan','review']) {link(refs,row[key],key);append(refs,'span',' · ');}
   }
   for(const research of c.larger_prerequisites.investigations || []) {
+    if(research.pc_whole_chart) {
+      append(container,'h3',`8.4g ${research.family} — carrier-chart and first-step research`);
+      append(container,'p','Both whole carrier charts pass, but original target reset-as-current has a certified negative first resource. Carrier admission is not resource continuation; no CI root or OS corrector is substituted.');
+      append(container,'p','Original independent exact-real old-carrier current, post-C history writer and held-source ZOH bounds are research, not native credit. See the separately bound native successor below. Status authenticates retained evidence without equation or trajectory reruns.');
+      details(container,'Four prepared roles (approximate display; exact endpoints linked)',research.cases);
+      details(container,'Initial A_PC obligations (successors below)',research.open_obligations);
+      append(container,'p',`Native steps: ${research.native_steps}; events: ${research.native_events}; 8.4h readiness: ${research.ready_for_8_4h}; user accepted: ${research.user_accepted}.`);
+      for(const key of ['results','plan','review']) {link(container,research[key],`A_PC ${key}`);append(container,'span',' · ');}
+      if(research.feasibility) {
+        const f=research.feasibility;
+        append(container,'p',`A_PC separately derived feasibility companion: shares ${f.shares.join(', ')}, source shift ${f.source_deficit} from node 0 to node ${f.compensation_node} (graph distance ${f.compensation_distance}). Original reset exclusion remains; this is not native admission.`);
+        append(container,'p','Full PC interval-input current and post-C W writer, held-source carrier norm bound and robust postbeat source trigger. Live current is transported after its beat; stored reset does not evolve. Whole-carrier loss resets the target carrier to zero. Updated source Z is not diagonal; this feasibility-only record does not execute its final read (see the separate oracle below).');
+        details(container,'A_PC companion bounds (approximate display; exact endpoints linked)',f.cases);
+        details(container,'A_PC event-role pairing, not an event receipt',f.event_pair);
+        details(container,'A_PC successor obligations',f.open_obligations);
+        append(container,'p',`Companion native steps: ${f.native_steps}; events: ${f.native_events}; final read executed: ${f.poststate_read_executed}; 8.4h readiness: ${f.ready_for_8_4h}. Retained checks do not rerun interval equations.`);
+        for(const key of ['results','plan','review']) {link(container,f[key],`A_PC companion ${key}`);append(container,'span',' · ');}
+      }
+      if(research.pc_staged) {
+        const s=research.pc_staged;
+        append(container,'p',`A_PC represented oracle: four prepared histories, both writers and fresh full non-diagonal final reads, fixed ${s.precision_bits}-bit Arb. ${s.native_steps} large native steps; no event or 8.4h readiness.`);
+        append(container,'p','Source carrier effects and Read-Back are resolved. Target first-step carrier-to-current response is not resolved: nonzero stored carrier and a full final read do not establish a current effect above rounding error. Stale-Z target reads produce identical represented currents. Exact stored charge drift is not exact conservation or a native admission receipt.');
+        details(container,'Represented A_PC stage errors and mechanism limits (approximate display)',s.cases);
+        details(container,'Next A_PC native and event obligations',s.open_obligations);
+        for(const key of ['results','plan','review']) {link(container,s[key],`A_PC represented ${key}`);append(container,'span',' · ');}
+      }
+      if(research.pc_hardening) {
+        const h=research.pc_hardening;
+        append(container,'p',`Separate carrier-sensitive history companion: scale ${h.scale}; original witness unchanged. Full-point binding rejects stale geometry even with identical current. Target carrier response now separates from combined two-read error. No large native step or fresh event identity.`);
+        details(container,'Carrier-sensitive prepared cases (approximate display)',h.cases);
+        details(container,'Unconstrained history exclusion; not a solver failure',h.unconstrained_exclusion);
+        details(container,'Original full-point stale-geometry pressure',h.original_pressure);
+        for(const key of ['results','plan','review']) {link(container,h[key],`A_PC hardening ${key}`);append(container,'span',' · ');}
+      }
+      if(research.pc_native) {
+        const n=research.pc_native;
+        append(container,'p',`A_PC native prerequisites: ${n.native_steps} detached prepared steps, ${n.native_reads} full PC reads, ${n.native_events} topology events and ${n.committed_steps} live commits. Prerequisites complete: ${n.native_prerequisites_complete}; user accepted: ${n.user_accepted}; 8.4h readiness: ${n.ready_for_8_4h}.`);
+        append(container,'p','The native successor uses the separate 7/8-history companion. Full-point, W/Z writer and represented charge comparison is distinct from exact stored-charge conservation. Reset-as-current is a diagnostic, not evolution of the event reset. Retained viewing does not rerun native steps.');
+        details(container,'A_PC native prepared-role outcomes and charge receipts',n.cases);
+        details(container,'Historical target checker failures, not conformance credit',n.historical_target_attempts);
+        for(const key of ['results','plan','review','acceptance']) {link(container,n[key],`A_PC native ${key}`);append(container,'span',' · ');}
+      }
+      continue;
+    }
     append(container,'h3',`8.4g ${research.family} — research and separately bound native prerequisites`);
     append(container,'p',`Historical research: ${research.cases.length} whole-ball existence/uniqueness certificates. Native roots: ${research.native_roots}; steps: ${research.native_steps}; events: ${research.native_events}. 8.4h readiness: ${research.ready_for_8_4h}. Scalar certificates recomputed; no native trajectory rerun.`);
     append(container,'p','Reference-geometry pairs already satisfy the exact-real residual tolerance. This does not establish feedback discrimination or a represented joint root.');
