@@ -1,6 +1,24 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — shared production numerical policy (2026-10-14)
+## Current work — C_OS P9-8.4g native prerequisites complete (2026-10-14)
+
+On `work/p9-8-4g`, the [native bridge review](./phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md)
+records four passing unchanged source/target × current/reset numerical steps.
+Production selector-path, split, continuity, represented charge and final-C
+readmission pass using the explicitly selected certified FLINT/Arb policy.
+Workers finish in 284–288 seconds; target minima are approximately 1.096e-13
+and satisfy the retained staged enclosures. Exact stored-resource sum drifts
+are retained; represented pairwise charge is 200 with zero residual.
+
+Status: **accepted by the user on 2026-10-14**, scoped C_OS P9-8.4g closure.
+Zero live committed steps/events; no uniform trajectory or other-family credit.
+Next is separately declared C_OS `.h`
+lifecycle/event/continuation work; other first-group `.g` rows remain open.
+Selected API/CLI/notebook/browser distinguish this current-source-bound native
+successor from accepted historical research. Read-only checking is not rerun.
+Do not repeat the old inverse probes or numerical campaign merely for commit.
+
+## Prior work — shared production numerical policy (2026-10-14)
 
 The [production integration record](./corrections/GRCV4-CertifiedNumericalPolicy.md)
 and [formula-level spec supplement](../specs/grc-v4-numerical-policy.md) describe

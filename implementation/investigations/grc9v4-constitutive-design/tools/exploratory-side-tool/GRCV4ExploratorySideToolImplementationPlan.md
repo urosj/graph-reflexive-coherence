@@ -2888,3 +2888,14 @@ source bindings without new current solves; explicit numerical recheck
 reconstructs the successor interval stages, not native trajectories.
 The generated browser projection uses smaller indentation without dropping
 fields, staying below the 1 MB raw-file threshold.
+
+The native successor now exposes four full production numerical steps for
+source/target × current/reset, all passing final-C admission. Keep the historical
+research flags unchanged, using the exact pre-integration source adapter;
+bind the native successor to current production separately. Report zero live
+commits/events, exact resource-sum drift alongside represented charge,
+scientific readiness and scoped user acceptance separately (accepted 2026-10-14).
+Original execution flags remain unchanged. Default selected
+retained verification checks the native successor without rerunning numerics;
+explicit interval recheck remains a historical research calculation. Neither
+mode executes the `.h` lifecycle campaign or grants other-family credit.

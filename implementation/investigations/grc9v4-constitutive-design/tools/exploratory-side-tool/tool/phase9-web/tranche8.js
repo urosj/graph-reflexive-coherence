@@ -200,10 +200,17 @@ export function renderTranche8(value, container, create = tag => document.create
   append(container,'p',`Unexecuted 8.4e families: ${c.ordering_covariance.families_not_executed.join(', ')}. Aggregate remains open.`);
   append(container, 'h3', 'Larger configurations: preparation is not runtime acceptance');
   for(const row of c.larger_prerequisites.family_results) {
-    append(container,'h3',`8.4g ${row.family} equation preflight — native admission open`);
+    append(container,'h3',`8.4g ${row.family} — historical bounds and native prerequisites`);
     append(container,'p',`${row.cases} original independent equation points; ${row.exact_oracle_geometry_bounds} exact FLINT geometry bounds on represented oracle operands. The original preflight alone supplies no full error enclosure.`);
     const bounds=row.pointwise_bounds;
-    append(container,'p',`Pointwise successor: ${bounds.exact_real_positive}/4 exact-real and ${bounds.staged_positive}/4 staged resource sign checks pass. Equivalent regularity proof needs no discarded inverse. Production shortcut not integrated; native admission, event and continuation credit remain absent. Not ready for 8.4h. Bounded research checkpoint accepted; optimization not started.`);
+    append(container,'p',`Historical pointwise successor: ${bounds.exact_real_positive}/4 exact-real and ${bounds.staged_positive}/4 staged resource sign checks pass. Bounded research checkpoint accepted; its original execution flags remain unchanged.`);
+    const native=row.native_prerequisites;
+    if(native) {
+      append(container,'p',`Native C_OS prerequisites: ${native.numerical_steps}/4 complete numerical steps through charge and final-C admission. Explicit certified FLINT/Arb policy integrated. ${native.committed_steps} committed lifecycle steps; ${native.native_events} events. ${native.status}. Scientific prerequisites ready: ${native.scientifically_ready_for_8_4h}; authorized 8.4h readiness: ${native.ready_for_8_4h}. No trajectory tube or other-family credit.`);
+      details(container,'Native case evidence and exact resource-sum drift',native.cases);
+      const nativeRefs=append(container,'p','Native successor: ');
+      for(const key of ['inputs','results','plan','review']) {link(nativeRefs,native[key],key);append(nativeRefs,'span',' · ');}
+    }
     details(container,'Resource lower bounds and dense-proposal sign separation',bounds.points);
     const boundRefs=append(container,'p','Bounds successor: ');
     for(const key of ['inputs','results','plan','review']) {link(boundRefs,bounds[key],key);append(boundRefs,'span',' · ');}

@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import patch
 import p984g_cos as p
 import p984g_cos_bounds as bounds
+import p984g_cos_native as native
 import tranche8_evidence as index
 
 sys.path.insert(0,str(index.ROOT/index.SIDE/'tool/src'))
@@ -55,6 +56,10 @@ class PrerequisiteSurfaces(unittest.TestCase):
         original=mechanics.read(mechanics.RESULT);saved=deepcopy(original)
         index.check_mechanics_storage_successor(mechanics,original)
         self.assertEqual(saved,original)
+        changed=deepcopy(original)
+        next(r for r in changed['source_bindings'] if r['path'].startswith('src/'))['sha256']='0'*64
+        with self.assertRaisesRegex(ValueError,'historical mechanical runtime bindings drift'):
+            index.check_mechanics_storage_successor(mechanics,boundary.seal(changed))
         forged=deepcopy(original);forged['observations']['shared_layouts']=33
         with self.assertRaisesRegex(ValueError,'counts drift'):
             index.check_mechanics_storage_successor(mechanics,boundary.seal(forged))
@@ -78,9 +83,20 @@ class PrerequisiteSurfaces(unittest.TestCase):
         self.assertTrue(row['pointwise_bounds']['pointwise_resource_enclosures'])
         self.assertFalse(row['pointwise_bounds']['native_admission'])
         self.assertFalse(row['pointwise_bounds']['production_shortcut_integrated'])
+        successor=row['native_prerequisites']
+        self.assertTrue(successor['production_shortcut_integrated'])
+        self.assertTrue(successor['native_admission'])
+        self.assertEqual(successor['numerical_steps'],4)
+        self.assertEqual(successor['committed_steps'],0)
+        self.assertEqual(successor['native_events'],0)
+        self.assertTrue(successor['user_accepted'])
+        self.assertTrue(successor['ready_for_8_4h'])
+        self.assertFalse(native.read(native.RESULTS)['user_accepted'])
+        self.assertIn('acceptance',successor)
+        self.assertTrue(successor['scientifically_ready_for_8_4h'])
         saved=json.loads((index.ROOT/index.ASSET).read_text().split(' = ',1)[1].rstrip(';\n'))
         self.assertEqual(saved['coverage']['larger_prerequisites']['family_results'][0],row)
-        for name in (*index.LARGER_COS_SOURCES,*index.LARGER_COS_BOUNDS_SOURCES):
+        for name in (*index.LARGER_COS_SOURCES,*index.LARGER_COS_BOUNDS_SOURCES,*index.LARGER_COS_NATIVE_SOURCES):
             with patch.object(index.Sources,'current_bytes',return_value=b'forged'),self.assertRaisesRegex(ValueError,'source drift'):
                 index.Sources(index.ROOT).raw(name)
         with self.assertRaises(ValueError):index.family_status(index.ROOT,'A_PC','8.4g')
@@ -97,6 +113,26 @@ class PrerequisiteSurfaces(unittest.TestCase):
         for mode in ('prepare','run'):
             with patch.object(sys,'argv',['retained',str(index.ROOT/bounds.SELF),mode]),self.assertRaisesRegex(ValueError,'retained-only'):
                 retained.main()
+        for options in (['prepare'],['run-case'],['summarize'],['check','--recheck-numerics']):
+            with patch.object(sys,'argv',['retained',str(index.ROOT/native.SELF),*options]),self.assertRaisesRegex(ValueError,'retained-only'):
+                retained.main()
+
+    def test_default_retained_dispatch_selects_native_successor(self):
+        with patch.object(sys,'argv',['query','verify-retained','--family','C_OS','--checkpoint','8.4g']),patch.object(index.subprocess,'run') as run:
+            index.main()
+            self.assertEqual(run.call_args.args[0][-1],'check')
+            self.assertTrue(run.call_args.args[0][-2].endswith('p984g_cos_native.py'))
+
+    def test_historical_adapter_keeps_old_bindings_and_science(self):
+        original=p.make_manifest
+        retained=p.read(p.INPUTS)
+        self.assertNotEqual(original(),retained)
+        with index.historical_larger_sources():
+            self.assertEqual(p.make_manifest(),retained)
+            forged=deepcopy(p.read(p.RESULTS));forged['native_admission']=True
+            with self.assertRaisesRegex(ValueError,'scope'):
+                p.check(retained,p.seal(forged))
+        self.assertIs(p.make_manifest,original)
 
 
 if __name__=='__main__':unittest.main()

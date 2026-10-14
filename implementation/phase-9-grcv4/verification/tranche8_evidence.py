@@ -13,8 +13,47 @@ from pathlib import Path
 import subprocess
 import sys
 from copy import deepcopy
+from contextlib import contextmanager
+from unittest.mock import patch
 
-from tranche8_validation import ACTIVE, validation_session
+from tranche8_validation import ACTIVE, validation_session, LOCK
+
+# Populated with the exact completed successor records, never live discovery.
+LARGER_COS_NATIVE_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984g_cos_native.py": "f45248934786ea7c0a8d1d068e0d7377df2ac142810f52a7eb1a886b7c0e5e5d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativePlan.md": "b4171105c4dc24afe42c67a4caaaeeb4f451928aa45eaa09af4ce41374b2fe4e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md": "944882be5959c41ca022125e2f7232ca28ffc06372648ec87f4d3fb1b9d18e32",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeInputs.json": "1ace3520005e441e8972ec4f7100ebab3683d662c0343b5e155167c7c9a71d02",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeResults.json": "68d61125cd69db6a2a2a8766fa015f221db8f8e92ac92b077663fbca0fad55ff",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-current.json": "b87740777122259ec3e9c05d08e066e521cd7c22b2f71ce73b5ecbf4028f91af",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-reset.json": "a79cf7134db57de9b9784f11d2bd61f6c37952840e15119edb1ff1c7544f8f8e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-current.json": "94961fbff7c660e095befd13da742364aaef078ccd6cc9a4fbe6b58813bc8929",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-reset.json": "08619442900f2427a1bfe54e457f7df7a62c6d46c3ffb3417ab0b0ac2a8af3a3"
+}
+
+
+@contextmanager
+def historical_larger_sources():
+    """Retain old scientific checks against their exact pre-integration sources.
+
+    Only src/ bindings resolve from the named Git subject. Checkers, equations,
+    tests and original result digests remain unchanged; no current runtime credit
+    follows from this historical source adapter.
+    """
+    import p984g_cos as preflight
+    import p984g_cos_bounds as bounds
+    revision = '5b9836358af2873e524e6ceae7256639e8a6bbce'
+    def bound_builder(original):
+        def build():
+            value = original()
+            for row in value['source_bindings']:
+                if row['path'].startswith('src/'):
+                    row['sha256'] = hashlib.sha256(git(ROOT, 'show', revision+':'+row['path'])).hexdigest()
+            return preflight.seal(value)
+        return build
+    with LOCK, patch.object(preflight, 'make_manifest', bound_builder(preflight.make_manifest)), \
+            patch.object(bounds, 'make_manifest', bound_builder(bounds.make_manifest)):
+        yield
 
 LARGER_COS_BOUNDS_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsInputs.json": "82f32adb6b551aa5a955f631010f9a6937ff757a528a0f4d6b46db8f920a9dda",
@@ -394,6 +433,7 @@ class Sources:
             boundary_pins.update(CHART_APC_SOURCES)
             boundary_pins.update(LARGER_COS_SOURCES)
             boundary_pins.update(LARGER_COS_BOUNDS_SOURCES)
+            boundary_pins.update(LARGER_COS_NATIVE_SOURCES)
             boundary_pins.update(COVARIANCE_CCI_SOURCES)
             boundary_pins.update(COVARIANCE_ACI_SOURCES)
             boundary_pins.update(COVARIANCE_APC_SOURCES)
@@ -403,7 +443,8 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_larger_pointwise_bounds_not_native_admission" if name in LARGER_COS_BOUNDS_SOURCES else
+                    basis=("pinned_C_OS_native_prerequisites_scoped_acceptance" if name in LARGER_COS_NATIVE_SOURCES else
+                        "pinned_larger_pointwise_bounds_not_native_admission" if name in LARGER_COS_BOUNDS_SOURCES else
                         "pinned_larger_equation_preflight_not_native_admission" if name in LARGER_COS_SOURCES else
                         "pinned_A_PC_history_carrier_chart_covariance_and_scoped_acceptance" if name in CHART_APC_SOURCES else
                         "pinned_A_CI_unsigned_history_joint_root_chart_covariance_and_scoped_acceptance" if name in CHART_ACI_SOURCES else
@@ -1249,8 +1290,9 @@ def check_mechanics_storage_successor(checker, retained):
     """Validate a detached metadata adaptation; original execution stays pinned.
 
     The preceding boundary check authenticates the exact accepted document
-    transition. All runtime-source bindings and scientific fields still pass
-    through the unchanged mechanical validator.
+    transition. Runtime bindings resolve from the exact pre-integration Git
+    tree, not the newer numerical-policy implementation. Scientific fields
+    still pass through the unchanged validator; no current-runtime credit.
     """
     require(retained==checker.contract.seal(retained),'original mechanical digest drift')
     adapted=deepcopy(retained)
@@ -1258,7 +1300,18 @@ def check_mechanics_storage_successor(checker, retained):
     require(row['sha256']=='3cbc5e3d638a0281df0d94a98e282a9c59d29de8bccef0bf1224ad955d8bb11e',
             'unrecognized mechanical storage predecessor')
     row['sha256']='89e4728977ee45c8ea158179c3a5e7329fa5f45484c5df3e289c2ea3361f4a63'
-    checker.check(checker.contract.seal(adapted))
+    revision='5b9836358af2873e524e6ceae7256639e8a6bbce'
+    git(ROOT,'merge-base','--is-ancestor',revision,'HEAD')
+    historical_paths=git(ROOT,'ls-tree','-r','--name-only',revision,'src/pygrc/models').decode().splitlines()
+    historical_paths={p for p in historical_paths if Path(p).name.startswith(('grc_v4','grc_9_v4')) and p.endswith('.py')}
+    historical_rows=[dict(path=p,sha256=hashlib.sha256(git(ROOT,'show',revision+':'+p)).hexdigest())
+                     for p in sorted(historical_paths)]
+    require([r for r in adapted['source_bindings'] if r['path'].startswith('src/')]==historical_rows,
+            'historical mechanical runtime bindings drift')
+    current_nonruntime=[r for r in checker.bindings() if not r['path'].startswith('src/')]
+    expected=sorted(current_nonruntime+historical_rows,key=lambda r:r['path'])
+    with LOCK, patch.object(checker,'bindings',return_value=expected):
+        checker.check(checker.contract.seal(adapted))
 
 
 def browser_source(value):
@@ -1411,11 +1464,13 @@ def larger_view(sources):
     import p984g_cos as preflight
     import p984g_cos_bounds as bounds
     m,r=sources.read(preflight.INPUTS),sources.read(preflight.RESULTS)
-    row=preflight.check(m,r)
+    with historical_larger_sources():
+        row=preflight.check(m,r)
     row.update(inputs=sources.ref(preflight.INPUTS),results=sources.ref(preflight.RESULTS),
         plan=sources.ref(preflight.PLAN),review=sources.ref(preflight.REVIEW))
     bm,br=sources.read(bounds.INPUTS),sources.read(bounds.RESULTS)
-    successor=bounds.check(bm,br)
+    with historical_larger_sources():
+        successor=bounds.check(bm,br)
     successor.update(inputs=sources.ref(bounds.INPUTS),results=sources.ref(bounds.RESULTS),
         plan=sources.ref(bounds.PLAN),review=sources.ref(bounds.REVIEW),
         pointwise_resource_enclosures=True,uniform_domain=False,
@@ -1430,8 +1485,21 @@ def larger_view(sources):
         summary.update(user_accepted=True,acceptance_scope='bounded_research_checkpoint_not_native_admission',
             acceptance=sources.ref(review,anchor='scoped-user-acceptance'))
     row['pointwise_bounds']=successor
-    row['open_obligations']=['proposed certified shared solver/conditioning and C regularity shortcut; not started; preserve rounding and admission guards',
-        'complete native read/residual/charge/final-C admission; then assess 8.4h readiness']
+    import p984g_cos_native as native
+    # Authenticate output bytes before trusting their internal summaries.
+    for name in LARGER_COS_NATIVE_SOURCES:
+        sources.raw(name)
+    checked = native.check(sources.read(native.INPUTS), sources.read(native.RESULTS))
+    row['native_prerequisites'] = dict(checked, inputs=sources.ref(native.INPUTS),
+        results=sources.ref(native.RESULTS), plan=sources.ref(native.PLAN), review=sources.ref(native.REVIEW),
+        production_shortcut_integrated=True, native_trajectories_rerun=False)
+    require('## Scoped user acceptance' in sources.raw(native.REVIEW).decode(),
+            'missing C_OS native prerequisite acceptance')
+    row['native_prerequisites'].update(status='accepted_C_OS_prerequisites',
+        user_accepted=True, ready_for_8_4h=True,
+        acceptance_scope='four_fixed_C_OS_numerical_prerequisites_not_lifecycle_campaign',
+        acceptance=sources.ref(native.REVIEW,anchor='scoped-user-acceptance'))
+    row['open_obligations']=['8.4h actual expansion/lifecycle and continuation campaign; not executed here']
     return dict(family_results=[row],aggregate_closed=False,first_group_closed=False,
         families_without_preflight=[f for f in FAMILIES if f!='C_OS'])
 
@@ -1445,7 +1513,7 @@ def family_status(root, family, checkpoint="8.4c"):
         require(family=='C_OS','larger prerequisite preflight not available for this family')
         sources=Sources(root)
         return dict(schema="phase9_tranche8_family_status_v1",family=family,checkpoint=checkpoint,
-            scope="equation_preflight_not_native_admission",oracle=larger_view(sources)['family_results'][0],
+            scope="historical_bounds_plus_native_prerequisites_not_lifecycle_campaign",oracle=larger_view(sources)['family_results'][0],
             source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
             other_families_checked=False,native_trajectories_rerun=False)
     if checkpoint == "8.4f":
@@ -1593,8 +1661,11 @@ def main():
             (not args.recheck_numerics or args.action=='verify-retained'),'invalid prerequisite mode')
         if args.action=='status':print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2))
         else:
+            # Optional interval recomputation remains a historical research check;
+            # ordinary verification checks the native successor without reruns.
+            script = 'p984g_cos_bounds.py' if args.recheck_numerics else 'p984g_cos_native.py'
             subprocess.run([sys.executable,str(ROOT/HERE/'tranche8_retained.py'),
-                str(ROOT/HERE/'p984g_cos_bounds.py'),'check',*(['--recheck-numerics'] if args.recheck_numerics else [])],cwd=ROOT,check=True)
+                str(ROOT/HERE/script),'check',*(['--recheck-numerics'] if args.recheck_numerics else [])],cwd=ROOT,check=True)
         return
     if args.checkpoint == "8.4f":
         require(args.family in ("C_OS","C_CI","A_CI","A_PC") and not args.oracle and not args.preparation,

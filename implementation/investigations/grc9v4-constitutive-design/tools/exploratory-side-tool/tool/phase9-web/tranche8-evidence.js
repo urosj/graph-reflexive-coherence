@@ -17368,8 +17368,7 @@ export const TRANCHE8_EVIDENCE = {
      "full_error_enclosure": false,
      "numerical_equations_recomputed": false,
      "open_obligations": [
-      "proposed certified shared solver/conditioning and C regularity shortcut; not started; preserve rounding and admission guards",
-      "complete native read/residual/charge/final-C admission; then assess 8.4h readiness"
+      "8.4h actual expansion/lifecycle and continuation campaign; not executed here"
      ],
      "inputs": {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSInputs.json",
@@ -17480,6 +17479,98 @@ export const TRANCHE8_EVIDENCE = {
        "sha256": "279e986f9631dbf33e6992073da60616a9ed69bf658b84d5353ddfb1d29993f0",
        "revision": null,
        "basis": "pinned_larger_pointwise_bounds_not_native_admission",
+       "anchor": "scoped-user-acceptance"
+      }
+     },
+     "native_prerequisites": {
+      "schema": "p984g-cos-native-results-v1",
+      "inputs_digest": "e1815a218237aa781ebb7605922d97316be37fac7bea181c2c59e7df8b88525f",
+      "cases": [
+       {
+        "graph": "source",
+        "role": "current",
+        "minimum_resource": 1.9841003417810896,
+        "exact_resource_sum_delta": "1/4503599627370496",
+        "worker_seconds": 285.00928218699846,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-current.json",
+        "sha256": "b87740777122259ec3e9c05d08e066e521cd7c22b2f71ce73b5ecbf4028f91af",
+        "record_digest": "84077e70433434bce337dcfa2f5cbe772b9f004b181c125a5aa7508a21b763ec"
+       },
+       {
+        "graph": "source",
+        "role": "reset",
+        "minimum_resource": 1.968200683562178,
+        "exact_resource_sum_delta": "-1/2251799813685248",
+        "worker_seconds": 283.5614629449992,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-reset.json",
+        "sha256": "a79cf7134db57de9b9784f11d2bd61f6c37952840e15119edb1ff1c7544f8f8e",
+        "record_digest": "b680e7c18d3b0d7b8f60b65953ac153734a8e987ada1570c5134b9ee1c552657"
+       },
+       {
+        "graph": "target",
+        "role": "current",
+        "minimum_resource": 1.0961062480399982e-13,
+        "exact_resource_sum_delta": "-18620214303321/79228162514264337593543950336",
+        "worker_seconds": 287.40722677000304,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-current.json",
+        "sha256": "94961fbff7c660e095befd13da742364aaef078ccd6cc9a4fbe6b58813bc8929",
+        "record_digest": "e55fa39d26d2f181c86e8789594c3c8f62b1d78ef1232e6975b26495c7f0e013"
+       },
+       {
+        "graph": "target",
+        "role": "reset",
+        "minimum_resource": 1.0962812917850738e-13,
+        "exact_resource_sum_delta": "10469164184075/79228162514264337593543950336",
+        "worker_seconds": 287.8298357750027,
+        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-reset.json",
+        "sha256": "08619442900f2427a1bfe54e457f7df7a62c6d46c3ffb3417ab0b0ac2a8af3a3",
+        "record_digest": "cf9db102df868e71397c4dc24be1dec9430191c17bddf8106b11bf45a8e461a6"
+       }
+      ],
+      "family": "C_OS",
+      "numerical_steps": 4,
+      "native_events": 0,
+      "committed_steps": 0,
+      "native_admission": true,
+      "status": "accepted_C_OS_prerequisites",
+      "scientifically_ready_for_8_4h": true,
+      "ready_for_8_4h": true,
+      "user_accepted": true,
+      "aggregate_closed": false,
+      "other_family_credit": 0,
+      "uniform_trajectory_enclosure": false,
+      "inputs": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeInputs.json",
+       "sha256": "1ace3520005e441e8972ec4f7100ebab3683d662c0343b5e155167c7c9a71d02",
+       "revision": null,
+       "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+      },
+      "results": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeResults.json",
+       "sha256": "68d61125cd69db6a2a2a8766fa015f221db8f8e92ac92b077663fbca0fad55ff",
+       "revision": null,
+       "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+      },
+      "plan": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativePlan.md",
+       "sha256": "b4171105c4dc24afe42c67a4caaaeeb4f451928aa45eaa09af4ce41374b2fe4e",
+       "revision": null,
+       "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+      },
+      "review": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md",
+       "sha256": "944882be5959c41ca022125e2f7232ca28ffc06372648ec87f4d3fb1b9d18e32",
+       "revision": null,
+       "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+      },
+      "production_shortcut_integrated": true,
+      "native_trajectories_rerun": false,
+      "acceptance_scope": "four_fixed_C_OS_numerical_prerequisites_not_lifecycle_campaign",
+      "acceptance": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md",
+       "sha256": "944882be5959c41ca022125e2f7232ca28ffc06372648ec87f4d3fb1b9d18e32",
+       "revision": null,
+       "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance",
        "anchor": "scoped-user-acceptance"
       }
      }
@@ -19071,6 +19162,54 @@ export const TRANCHE8_EVIDENCE = {
    "basis": "pinned_larger_equation_preflight_not_native_admission"
   },
   {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-current.json",
+   "sha256": "b87740777122259ec3e9c05d08e066e521cd7c22b2f71ce73b5ecbf4028f91af",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-reset.json",
+   "sha256": "a79cf7134db57de9b9784f11d2bd61f6c37952840e15119edb1ff1c7544f8f8e",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-current.json",
+   "sha256": "94961fbff7c660e095befd13da742364aaef078ccd6cc9a4fbe6b58813bc8929",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-reset.json",
+   "sha256": "08619442900f2427a1bfe54e457f7df7a62c6d46c3ffb3417ab0b0ac2a8af3a3",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeInputs.json",
+   "sha256": "1ace3520005e441e8972ec4f7100ebab3683d662c0343b5e155167c7c9a71d02",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativePlan.md",
+   "sha256": "b4171105c4dc24afe42c67a4caaaeeb4f451928aa45eaa09af4ce41374b2fe4e",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeResults.json",
+   "sha256": "68d61125cd69db6a2a2a8766fa015f221db8f8e92ac92b077663fbca0fad55ff",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
+   "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md",
+   "sha256": "944882be5959c41ca022125e2f7232ca28ffc06372648ec87f4d3fb1b9d18e32",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSPlan.md",
    "sha256": "59e97792c3f9258f8009bd33060f25b5ae069e554c5319e892f7eb35ee578899",
    "revision": null,
@@ -19209,6 +19348,12 @@ export const TRANCHE8_EVIDENCE = {
    "basis": "current_equals_accepted_checkpoint"
   },
   {
+   "path": "implementation/phase-9-grcv4/verification/p984g_cos_native.py",
+   "sha256": "f45248934786ea7c0a8d1d068e0d7377df2ac142810f52a7eb1a886b7c0e5e5d",
+   "revision": null,
+   "basis": "pinned_C_OS_native_prerequisites_scoped_acceptance"
+  },
+  {
    "path": "specs/grc-9-v4-spec.md",
    "sha256": "588878aabbe35a8b0c6ae5019f1d1116ab2a3bf15168793e37468abcf369e082",
    "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -19227,5 +19372,5 @@ export const TRANCHE8_EVIDENCE = {
    "basis": "current_equals_accepted_checkpoint"
   }
  ],
- "view_digest": "f4366907deaf6f93e2a90c44d9cd200cb9b4a037c2d487e6b8a1c21291496b47"
+ "view_digest": "8fdc16ce656b4e5c644067d1a71c7674ee1585ab118b30f66074197d81ca8414"
 };

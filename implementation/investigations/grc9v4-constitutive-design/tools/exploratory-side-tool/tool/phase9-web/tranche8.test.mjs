@@ -19,12 +19,21 @@ test('larger equation preflight confers no native admission or readiness', () =>
     assert.throws(()=>checkedTranche8(forged));
   }
   const container=element('div'); renderTranche8(evidence,container,element);
-  assert.match(text(container),/8.4g C_OS equation preflight/);
-  assert.match(text(container),/Not ready for 8.4h/);
-  assert.match(text(container),/Bounded research checkpoint accepted; optimization not started/);
+  assert.match(text(container),/8.4g C_OS — historical bounds and native prerequisites/);
+  assert.match(text(container),/authorized 8.4h readiness: true/);
+  assert.match(text(container),/Bounded research checkpoint accepted/);
   assert.equal(row.pointwise_bounds.staged_positive,4);
   assert.equal(row.pointwise_bounds.exact_real_positive,4);
-  assert.match(text(container),/Production shortcut not integrated/);
+  assert.match(text(container),/Explicit certified FLINT\/Arb policy integrated/);
+  assert.equal(row.native_prerequisites.numerical_steps,4);
+  assert.equal(row.native_prerequisites.committed_steps,0);
+  assert.equal(row.native_prerequisites.native_events,0);
+  assert.equal(row.native_prerequisites.user_accepted,true);
+  for(const [key,value] of [['numerical_steps',5],['native_events',1],['user_accepted',false],['ready_for_8_4h',false]]) {
+    const forged=structuredClone(evidence);
+    forged.coverage.larger_prerequisites.family_results[0].native_prerequisites[key]=value;
+    assert.throws(()=>checkedTranche8(forged));
+  }
   for(const key of ['native_admission','ready_for_8_4h','production_shortcut_integrated','uniform_domain']) {
     const forged=structuredClone(evidence);
     forged.coverage.larger_prerequisites.family_results[0].pointwise_bounds[key]=true;

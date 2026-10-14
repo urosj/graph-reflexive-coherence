@@ -3325,12 +3325,15 @@ the full ten-profile plan.
       and one native 100/400 source/current OS pass complete; clean worker exit.
       [Exact replacements, tests and scope](./corrections/GRCV4-CertifiedNumericalPolicy.md).
       This checked implementation item does not accept the parent checkpoint.
-    - [ ] C_OS native/validated-current bridge: complete large-source ordinary
-      step, including resource continuity, represented charge and final-C
-      readmission; then close required target/reset roles. Current-source
-      selector-path and split now execute natively, but do not close the
-      remaining LG-C-SELECTOR/LG-OS-SPLIT roles. Preserve pointwise sign bounds,
-      staged rounding and conditioning/residual checks; no `.h` readiness yet.
+    - [x] C_OS native/validated-current bridge implemented: four unchanged
+      source/target × current/reset production numerical steps pass continuity,
+      represented charge and final-C readmission, selector-path and split.
+      Staged outputs match retained enclosures; exact resource-sum drift is
+      retained separately from represented charge. Zero live committed steps
+      or events. [Review](./phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md).
+    - [x] C_OS native prerequisite scope accepted by the user on 2026-10-14;
+      eligible for its separately declared `.h` campaign, not execution or
+      acceptance of that campaign. Aggregate and the other nine families remain open.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.

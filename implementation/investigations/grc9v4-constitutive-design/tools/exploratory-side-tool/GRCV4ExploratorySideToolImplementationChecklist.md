@@ -2401,3 +2401,10 @@ instead of stale fixed totals and opens any pending case details explicitly.
   uniform domain or `.h` readiness. Bounded preflight/successor checkpoint
   accepted 2026-10-13; original execution flags stay unchanged. Retained-only checks and
   explicit interval replay stay distinct; source/scope mutations reject.
+- [x] Expose C_OS native prerequisite successor separately: four passing
+  source/target × current/reset numerical steps, current-source bindings,
+  final-C admission and exact resource-sum drift; zero live commits/events.
+  Preserve historical research through its pinned source adapter. API/CLI,
+  notebook and browser show scoped acceptance (2026-10-14) and `.h` eligibility,
+  not execution or acceptance of that later campaign.
+  Reject forged native scope/counts and execution through read-only dispatch.

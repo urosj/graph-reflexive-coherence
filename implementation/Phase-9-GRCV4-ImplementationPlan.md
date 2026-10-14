@@ -2805,7 +2805,15 @@ unchanged 100/400 source/current C_OS pass completes natively in 133.606 s
 Small complete A_OS/C_OS steps check strict scientific-byte parity. This closes
 the component implementation task, accepted by the user on 2026-10-14, **not** the larger-graph
 whole-step resource/charge/final-C, target/reset or other-family obligations.
-Those remain the next `8.4g` work before any dependent `.h` execution.
+The subsequent [C_OS native bridge](./phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md)
+now completes those numerical obligations for all four unchanged source/target
+× current/reset points. Each passes a full production provisional numerical
+step, including final-C reconstruction; no live step or event is committed.
+Native outputs satisfy the retained staged enclosures. Exact resource-sum
+drifts remain visible separately from admitted represented charge. C_OS's
+prerequisites were accepted by the user on 2026-10-14; its `.h` lifecycle
+campaign and all other families remain separate obligations. Retained checks
+do not rerun numerics, and scientific readiness is not execution authorization.
 
 #### P9-8.4–8.6 runtime conformance
 
