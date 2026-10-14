@@ -6,6 +6,7 @@ from enum import Enum
 from typing import TypeAlias, overload
 
 from .grc_v4_exact import ExactBackend, ExactScalar, current_exact_backend
+from .grc_v4_certification import NumericalPolicy, current_numerical_policy
 
 _ExactMatrix: TypeAlias = tuple[tuple[ExactScalar, ...], ...]
 _MatrixKey: TypeAlias = tuple[_ExactMatrix, ExactScalar | None]
@@ -51,10 +52,13 @@ class _MatrixContinuation:
 
     facts: tuple[_MatrixFact, ...] = ()
     backend: ExactBackend = ExactBackend.PYTHON
+    numerical_policy: NumericalPolicy = NumericalPolicy.LEGACY_EXACT
 
     def __post_init__(self) -> None:
         if type(self.backend) is not ExactBackend:
             raise TypeError("matrix continuation requires an exact backend")
+        if type(self.numerical_policy) is not NumericalPolicy:
+            raise TypeError("matrix continuation requires a numerical policy")
         if type(self.facts) is not tuple or len(self.facts) > 4:
             raise ValueError("matrix continuation must hold at most four facts")
         if any(type(fact) not in (_InverseFact, _ConditionFact) for fact in self.facts):
@@ -66,13 +70,14 @@ class _MatrixContinuation:
 class _MatrixFacts:
     """Keep at most 64 immutable inverse/conditioning facts in one operation."""
 
-    __slots__ = ("_entries", "_reuse", "_backend")
+    __slots__ = ("_entries", "_reuse", "_backend", "_numerical_policy")
 
     def __init__(self, *, reuse: MatrixReuse = MatrixReuse.AUTOMATIC) -> None:
         if type(reuse) is not MatrixReuse:
             raise TypeError("expected a MatrixReuse policy")
         self._reuse = reuse
         self._backend = current_exact_backend()
+        self._numerical_policy = current_numerical_policy()
         self._entries: OrderedDict[_MatrixKey, _MatrixFact] = OrderedDict()
 
     @property
@@ -92,6 +97,8 @@ class _MatrixFacts:
     def find(
         self, matrix: _ExactMatrix, conditioning_limit: ExactScalar | None = None
     ) -> _MatrixFact | None:
+        if self._numerical_policy is not current_numerical_policy():
+            raise TypeError("matrix facts belong to another numerical policy")
         if self._reuse is MatrixReuse.FRESH:
             return None
         key = (matrix, conditioning_limit)
@@ -116,6 +123,8 @@ class _MatrixFacts:
         """Copy immutable committed facts into this operation's private store."""
         if continuation.facts and continuation.backend is not self._backend:
             raise TypeError("matrix continuation belongs to another exact backend")
+        if continuation.facts and continuation.numerical_policy is not self._numerical_policy:
+            raise TypeError("matrix continuation belongs to another numerical policy")
         for fact in continuation.facts:
             self.remember(fact)
 
@@ -136,4 +145,4 @@ class _MatrixFacts:
             for limit in (None, conditioning_limit)
             if (fact := self._entries.get((matrix, limit))) is not None
         )
-        return _MatrixContinuation(facts, self._backend)
+        return _MatrixContinuation(facts, self._backend, self._numerical_policy)

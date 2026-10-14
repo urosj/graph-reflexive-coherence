@@ -2794,6 +2794,19 @@ production, native residual/charge/final-C admission and subsequent runtime
 feasibility remain separate obligations. Do not grant `.h` readiness merely
 from these pointwise certificates.
 
+The 2026-10-14 [production numerical-policy integration](./corrections/GRCV4-CertifiedNumericalPolicy.md)
+now implements the shared certified solve/conditioning, Hodge-positivity,
+C-regularity and weighted OS split route in `src/`, explicitly selected with
+FLINT. The [formula-level supplement](../specs/grc-v4-numerical-policy.md) records
+each replacement and its sufficient proof domain. Inconclusive certification
+raises explicitly; there is no inverse fallback or tolerance change. One
+unchanged 100/400 source/current C_OS pass completes natively in 133.606 s
+(140.517 s worker, clean exit), matching retained research stage results.
+Small complete A_OS/C_OS steps check strict scientific-byte parity. This closes
+the component implementation task, accepted by the user on 2026-10-14, **not** the larger-graph
+whole-step resource/charge/final-C, target/reset or other-family obligations.
+Those remain the next `8.4g` work before any dependent `.h` execution.
+
 #### P9-8.4–8.6 runtime conformance
 
 The 2026-10-05 repository UX continuation adds a

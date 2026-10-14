@@ -71,6 +71,7 @@ from .grc_v4_exact import (
     exact_backend,
     exact_number,
 )
+from .grc_v4_certification import current_numerical_policy, numerical_policy
 from .grc_v4_geometry import (
     GeometryDomainError,
     GeometryStageInputs,
@@ -1962,7 +1963,7 @@ def _with_owner_exact_backend(
     """Run an owner's numerical entry point on its declaration-bound backend."""
     @wraps(function)
     def bound(owner: Any, *args: _P.args, **kwargs: _P.kwargs) -> _R:
-        with exact_backend(owner._exact_backend_choice):
+        with exact_backend(owner._exact_backend_choice), numerical_policy(owner._numerical_policy_choice):
             return function(owner, *args, **kwargs)
 
     return bound
@@ -1978,7 +1979,7 @@ class GRCV4Operation:
     Calls that publish state are serialized, with one immutable pointer swap.
     """
 
-    __slots__ = ("_registry", "__owned", "_lock", "_backends", "_exact_backend_choice")
+    __slots__ = ("_registry", "__owned", "_lock", "_backends", "_exact_backend_choice", "_numerical_policy_choice")
 
     def _get_owned(self) -> _OwnedCOS:
         return self.__owned
@@ -2003,6 +2004,7 @@ class GRCV4Operation:
         target_differential_references: tuple[CandidateADifferentialReference, ...] = (),
     ) -> None:
         self._exact_backend_choice = current_exact_backend()
+        self._numerical_policy_choice = current_numerical_policy()
         before = GeometryStageInputs.from_payload(initial.to_payload())
         backend = (None if differential_reference is None else
                    CandidateADifferentialReference.from_payload(differential_reference.to_payload()))
@@ -2023,6 +2025,11 @@ class GRCV4Operation:
             _lifecycle_state(before, ()), (), before.geometry.reference, archive=archive
         )
         self._lock = Lock()
+
+    @property
+    def numerical_policy(self):
+        """Explicit execution policy; not scientific state or serialized authority."""
+        return self._numerical_policy_choice
 
     @property
     def state(self) -> GRCV4LifecycleState:
@@ -2209,6 +2216,7 @@ class GRCV4Operation:
         result._registry = registry
         result._backends = backends
         result._exact_backend_choice = current_exact_backend()
+        result._numerical_policy_choice = current_numerical_policy()
         result._owned = publication
         return result
 
@@ -2224,7 +2232,7 @@ class GRCV4Operation:
         return cls.from_state(decode_canonical_json(Path(path).read_bytes()))
 
     def duplicate(self) -> Self:
-        with exact_backend(self._exact_backend_choice):
+        with exact_backend(self._exact_backend_choice), numerical_policy(self._numerical_policy_choice):
             return type(self).from_state(self.snapshot())
 
     def __copy__(self) -> Self:

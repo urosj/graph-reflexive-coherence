@@ -31,6 +31,7 @@ from .grc_v4_geometry import (
     _local_payload,
 )
 from .grc_v4_profile import OSParams
+from .grc_v4_state import FrozenJSONMap
 
 
 class OSStageError(ValueError):
@@ -180,6 +181,7 @@ class OSSplitResidual:
     values: Matrix | None = field(init=False)
     exact_values: tuple[tuple[str, ...], ...] = field(init=False)
     admitted: bool = field(init=False)
+    execution_certificate: FrozenJSONMap | None = field(init=False, default=None, compare=False)
 
     def __post_init__(self) -> None:
         if (
@@ -206,19 +208,24 @@ class OSSplitResidual:
         )
         t = exact_number(policy.tolerance)
         reference = ref.pairings.one_form.matrix
-        admitted = all(
-            numerics.inertia(
-                tuple(
+        from .grc_v4_certification import certified_policy, weighted_split
+        if certified_policy():
+            proof = weighted_split(residual, reference, t)
+            object.__setattr__(self, "execution_certificate", FrozenJSONMap(proof))
+            admitted = True
+        else:
+            admitted = all(
+                numerics.inertia(
                     tuple(
-                        t * exact_number(h) + sign * r
-                        for h, r in zip(row, other, strict=True)
+                        tuple(
+                            t * exact_number(h) + sign * r
+                            for h, r in zip(row, other, strict=True)
+                        )
+                        for row, other in zip(reference, residual, strict=True)
                     )
-                    for row, other in zip(reference, residual, strict=True)
-                )
-            )[0]
-            == 0
-            for sign in (-1, 1)
-        )
+                )[0] == 0
+                for sign in (-1, 1)
+            )
         # Fraction conversion raises OverflowError outside binary64 range.
         # A missing display matrix must never veto the exact norm decision.
         try:

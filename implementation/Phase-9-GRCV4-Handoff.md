@@ -1,6 +1,191 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — C_OS P9-8.4g regularity and sign bounds
+## Current work — shared production numerical policy (2026-10-14)
+
+The [production integration record](./corrections/GRCV4-CertifiedNumericalPolicy.md)
+and [formula-level spec supplement](../specs/grc-v4-numerical-policy.md) describe
+the implemented opt-in `certified_arb_256_weighted_v1` policy in `src/`.
+Select it together with FLINT before constructing declarations/owners. Owners
+retain the choice; replay must explicitly reselect it. Legacy remains default.
+No inverse fallback, precision escalation, changed tolerances or silent
+approximation: unresolved certificates raise `CertificationInconclusive`
+without publishing state or inventing a scientific rejection receipt.
+
+The [new native source pass](./evidence/grcv4-performance/certified_native_os_pass.json)
+completes the unchanged 100-node/400-edge C_OS predictor/corrector, selector-path
+and split in 133.606 s (140.517 s worker, **clean exit 0**). There are no research
+callbacks. Both complete point summaries and the exact split operands match the
+retained research result. Small public A_OS/C_OS steps preserve exact receipt,
+snapshot, observation and reset bytes. Exact-inverse callers remain exact and
+may still be expensive; the selected sufficient domains are documented.
+
+Next: bounded native **whole ordinary step** on the unchanged large source,
+including continuity, represented charge and final-C readmission, then required
+target/reset admission. This pass is not whole-step evidence; `native_steps=0`
+and `native_events=0` remain explicit. P9-8.4g and `.h` readiness remain open.
+The user accepted this numerical-policy checkpoint for commit on 2026-10-14;
+this does not accept all-ten conformance or close P9-8.4g.
+Original research evidence is preserved against its pinned pre-integration Git
+source; the production successor binds current sources separately.
+
+## Prior work — weighted split certificate; complete bounded OS pass (2026-10-14)
+
+The [weighted split successor](./evidence/grcv4-performance/README.md#exact-weighted-split-certificate--2026-10-14)
+completes the unchanged 100-node/400-edge source/current C_OS pass under the
+explicit research numerical policy. Worker wall time is **139.353 s** under a
+single 300 s cap; the pass itself takes 132.904 s. Predictor/corrector, geometry,
+native selector-path and split admission all complete. Fourteen solves retain
+their residual passes, eight Arb outputs match the predecessor's digests, and
+the predictor matches the retained exact-materialization result.
+The completed payload is retained, but the inherited supervisor terminates the
+child after its 0.1 s teardown allowance (`worker_exitcode=-15`). This is numerical
+pass completion, not a clean child-process exit; both facts are recorded.
+
+The new split method uses exact FLINT weighted row sums of the **exact staged
+Hodge difference**, for any positive diagonal reference pairing. It proves the
+same normalized OS condition, including equality, with no inverse or inertia.
+The sufficient bound is about 1.05853e-24 against unchanged tolerance 1e-8;
+split admission takes **1.291 s**, versus over 162 s unfinished previously.
+An insufficient bound is explicitly inconclusive, not scientific rejection.
+No fallback, precision escalation, extra OS correction or `src/` change.
+
+The split certificate is topology-independent, but the enclosing research
+current policy still requires its identity-reference/constant-selector proof
+domain. Small exact-inertia pressure covers weighted boundaries, valid but
+inconclusive cases, signed coordinate changes and arithmetic extremes. Retained
+checks reconstruct the actual split operands without rerunning the trajectory.
+Old source-bound scripts and timed-out records remain unchanged.
+
+This is **not a complete ordinary step**, target/reset campaign, production
+integration or P9-8.4g closure. Resource/charge/final-C checks remain downstream.
+Next: use these measured results to integrate explicitly selected shared
+numerical policies through a proper component interface, not research callback
+patches; preserve supported-domain checks and explicit inconclusive failure.
+Plan separate bounded full-step evidence once all of its stage roles are wired.
+Do not silently broaden the predictor assumptions or repeat this pass merely
+to reconfirm the same matrices. No broad historical campaign is required.
+
+## Prior work — fixed-precision Arb with certified rounding (2026-10-14)
+
+The [explicit Arb successor](./evidence/grcv4-performance/README.md#explicit-arb-lu-with-certified-binary64-rounding--2026-10-14)
+uses one 256-bit LU enclosure and exact binary64 rounding-cell containment for
+each declared non-diagonal solve. Conditioning proofs and native exact rounded
+residuals remain separate and unchanged. Unresolved input/rounding certification
+stops explicitly; there is no precision escalation, exact fallback or retry.
+This is research instrumentation; production `src/` is unchanged.
+
+On the retained 100-node/400-edge source, the previously unfinished corrector
+structural-flat solve now completes in **6.958 s**, including certification and
+residual checks. Predictor and corrector complete in **24.172 s / 69.625 s**;
+all fourteen solves pass (eight Arb, six declared diagonal). The native
+selector-path check finishes in 18.108 s. The **300 s capped run is still
+incomplete**, now spending at least 162.589 s in native exact-inertia split
+admission. Its retained outcome is `resource_limit`, not scientific rejection
+or complete-pass success. No step/event or P9-8.4g closure follows.
+
+Focused pressure covers unique rounding, ties/subnormals/overflow, insufficient
+precision, small native full-pass equivalence, unchanged rejection and no
+fallback. Retained checks reproduce the actual large structural-flat output
+without rerunning currents. Old scripts and execution records remain unchanged.
+
+Next: isolate the normalized split gate and use a separately explicit, bounded
+certificate for its unchanged condition/tolerance, with inconclusive failure
+outside the certificate domain. Do not silently substitute a new gate or rerun
+the entire predictor just to investigate its cost. Full-pass/full-step completion
+and shared production component integration remain downstream work.
+
+## Prior work — exact FLINT Hodge positivity (2026-10-14)
+
+The [explicit positivity successor](./evidence/grcv4-performance/README.md#explicit-flint-hodge-positivity--2026-10-14)
+replaces the research run's Python-integer elimination with a fixed-scale,
+exact FLINT rational sufficient SPD certificate. It separately checks both
+the unrounded affine and represented Hodge, without changing assembly, rounding,
+solver tolerances or production `src/`. No automatic fallback; outside the proof
+domain it stops as certificate-inconclusive, not scientific rejection.
+
+On the same source, geometry construction now completes in **2.974 s** (earlier
+unfinished after over 209 s); its two proofs take 0.472 s and 0.545 s. The
+predictor finishes in 79.676 s and the corrector setup succeeds. The new
+300 s capped attempt then stalls in the corrector's **exact 400-RHS structural
+flat solve**, spending at least 188.120 s there. The full OS pass remains
+incomplete; no step/event or P9-8.4g closure follows. This is retained performance
+evidence, not a scientific rejection.
+
+Next: isolate that actual corrector matrix and test an explicitly selected,
+fixed-budget certified-enclosure/unique-rounding matrix solver. It must preserve
+the existing binary64 matrix entries and residual policy, or stop explicitly;
+no hidden exact fallback. Directly solving H x=j instead of materializing the
+rounded H inverse changes staging and cannot be silently substituted. Do not
+repeat the entire predictor to investigate this isolated cost. Native path/split
+and full-step admission still need later completion. Existing scripts/evidence
+remain unchanged; focused pressure includes exact-vs-represented positivity,
+native small-pass equivalence and retained certificate reconstruction.
+
+## Prior work — generated-geometry extension and bounded OS attempt (2026-10-14)
+
+The [explicit successor policy](./evidence/grcv4-performance/README.md#generated-geometry-corrector-policy--2026-10-14)
+adds non-diagonal corrector roles using fixed exact Dixon solves and exact
+sufficient conditioning/regularity proofs. Small native comparisons pass for
+tau=0 and tau=1, including all intermediate matrices, currents, Read-Back,
+selector paths and normalized split admission. Native rejection and explicit
+inconclusive/no-fallback behavior are pressured. No production source changed.
+
+The actual 100-node/400-edge OS attempt **does not complete** its 300 s budget.
+The predictor finishes in 78.716 s, then native source-geometry construction
+spends at least 209.234 s unfinished. The corrector is never reached. This is
+a retained resource-limit result, not native rejection or large-corrector
+validation. The entire geometry stage is timed, not its individual subcalls.
+
+Next: explicitly certify positivity of both the exact affine and represented
+generated Hodge, using a checked exact sufficient norm bound, with explicit
+inconclusive termination and no fallback. Pressure against native positivity
+on small cases; then resume the bounded full-pass timing. Do not integrate the
+research monkeypatches into production. Large-corrector solves, path/split
+checks, full steps and P9-8.4g admission still require work. Retain the current
+attempt unchanged; a rerun gets a new identity. No broad campaign is needed.
+
+## Prior work — resolvent proof and complete predictor (2026-10-14)
+
+The [successor probe](./evidence/grcv4-performance/README.md#resolvent-certificate-and-complete-predictor--2026-10-14)
+finishes the unchanged C_OS source/current predictor in 78.611 s (86.358 s
+complete worker), versus the earlier incomplete 900 s probe. A new exact
+Gram/rounding-perturbation certificate reduces resolvent conditioning to 0.153 s;
+its condition bound is about 19 against the unchanged 1e8 limit. Exact direct
+solving, all rounded residuals, native Read-Back and closure residual pass.
+The represented block, baseline and current match the prior probe exactly.
+
+This is an explicitly instrumented native predictor, not production integration:
+the worker injects named numerical callbacks, replaces only discarded inverse
+guards with proved checks, and fails on unknown roles or inconclusive certificates.
+No fallback or tolerance change. Production sources remain unchanged. The
+resolvent's 400-RHS solve plus verification still costs about 54 s. No corrector,
+complete OS pass, step, event, target/reset or all-realization coverage follows.
+
+Next: design/integrate the explicit shared numerical component, not the callback
+patches. The current experimental policy requires identity reference pairings and
+a constant selector; broader/generated geometry needs applicable stage contracts
+and tests. P9-8.4g stays open. Retained source-bound records are small; only focused
+pressure/retained checks are needed for this checkpoint, not a broad campaign.
+
+## Prior work — explicit exact direct-solve feasibility (2026-10-14)
+
+The [bounded performance probe](./evidence/grcv4-performance/README.md#exact-direct-solve-feasibility-probe--2026-10-14)
+reconstructs the unchanged C_OS source/current predictor block. Exact Dixon
+solving takes 3.893 s, exact identity and rounded residual pass. The existing
+conditioning method reaches its explicit 120 s cap; a separately selected exact
+identity-norm certificate takes 0.459 s and proves kappa below 1.00000000086.
+No automatic fallback occurs. A certificate outside its sufficient domain
+reports inconclusive rather than mathematical rejection. The block is byte-exact
+XZ under the 1 MB rule, with portable commands and focused regression tests.
+
+No production source changed and no large native admission/step/event was run.
+Next: integrate explicitly selected exact solving and certificate policies in
+the shared numerical API, preserving stage rounding, guards and lifecycle
+failure handling. The expensive multi-RHS resolvent and other condition blocks
+remain separate costs; this is not an end-to-end performance or P9-8.4g closure.
+Do not run a broad historical campaign merely to checkpoint these measurements.
+
+## Prior checkpoint — C_OS P9-8.4g regularity and sign bounds
 
 On `work/p9-8-4g`, the [pointwise successor review](./phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsReview.md)
 records four passing exact-real and four conditional staged resource checks.

@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "fc23e2c6551025abe63561f45a5f9fd205c2be75caf5d749e9b00212d6431ebd"
+      "sha256": "23626fef6ae298427897d6ca25eefd43f9c87dd79d69bf827076b9abba75f237"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "4e6b77e4f75e5dd10710d03fec74270ff9b7a3c60f4793272665fb975ba6b28f"
+      "sha256": "c47107e65c6ba84412edd07dafb39ce9e6bcb9820f4190fbf030c45148ecb9cf"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "788e7f135cb685231c22ee6ed577eacb7739c0fc774c3c8aba499ae059b360ae"
+      "sha256": "45c0923aae75e0350f8724294c23d0b922e384248f0f504ddea8cfc5720643e1"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "4f452047864a0675bdd0ce56e3632f41a292a8ca35d5b042e0908fb9fd577f87"
+      "sha256": "5ffbc58aa53c7e12b182a66ebc3a5bc3896a2cacf7b72c079b0a4fc8a244b5d3"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3299,7 +3299,7 @@
     },
     {
       "path": "specs/README.md",
-      "sha256": "9fb5b8d531051479af0ff1194f210be84a3911a0a11e8353309ff46e575feb32"
+      "sha256": "1fb3b0009b52879a0cf083a1d5ecfe4c78dc061c1c8532a12c5684b8b89e8f66"
     },
     {
       "path": "specs/grc-9-v4-spec.md",
@@ -4119,11 +4119,11 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "c23d7dff5c41e41deb6ea4d90886e68d3d772a761809122f7ff6bfaa2b363a63"
+      "sha256": "fb750fcda8154cfa2180bea4d563827880c1420a51f2d0a5a5867bf988aeb56d"
     },
     {
       "path": "artifact-storage.json",
-      "sha256": "15f8be1fbdf3171eae473768d3c9edf0d96a1e25f0a4eee60a2639fa722bf06d"
+      "sha256": "40dba171067090d8e6c08026a60194b90ddc623caaa82d39cfe5ea5df48f36c2"
     },
     {
       "path": "docs/reference/EvidenceStorage.md",
@@ -5260,7 +5260,127 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p984g_cos_bounds.py",
       "sha256": "f84df33548a7502e92c34d82b557665a887d23c70f017f436d104624baf0e794"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/README.md",
+      "sha256": "1a104ab0daf59b1e598fbcba10a991766854c6e90c22fb996707603672fb2ed6"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_block.json.xz",
+      "sha256": "b9b117e039dd48d205b19a13436da0e59bb999aa85f1c2a6c5b9a07f196d6d31"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_condition.json",
+      "sha256": "1af0b24180b08cb4fa708090e6de77ad49dd2ac5c2680681eac7c5dc792bb68f"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_dixon.json",
+      "sha256": "d03b870fb522a07ccee8d3142a8578b998072a91fe011c193254765bc58e4828"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_identity_condition.json",
+      "sha256": "6b5d6a0df094867e4ad73806c3cd9eb681e07821e392cd9eedd60bf2de7058ef"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_prepare.json",
+      "sha256": "7d79bf40ce3fd0c73ef37bc2fd2fd815d193576024c8ba7467ad2f7d0fc06114"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_exact_direct.py",
+      "sha256": "4a01a4df6704a49d75e8cd954c749cfe125c0cf639065f1f198eb778371111a1"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_identity_condition.py",
+      "sha256": "77d4ed7f766c362f8f04da4d347608643b0ffa3be72d12573d130ab94d4080e2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_exact_direct_probe.py",
+      "sha256": "fd4f2b168592e0640fc39096da669aaac232cc3284c6b1af83f816d7295865c5"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/exact_policy_predictor_probe.json",
+      "sha256": "9e6a3c0d50ca23078d4a30b3407d328bf700d6c838e8fccf2aadb39e9e70c6f3"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/resolvent_condition_probe.json",
+      "sha256": "b032591551d280fefacb818855ef340ac6a6197f32a30ea5042b7c865f90229e"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_resolvent_predictor.py",
+      "sha256": "c47fb358282c71e1776ed7a0bcf016c44f309e9f65eccc0c9a937e94bb0fe0e1"
+    },
+    {
+      "path": "tests/models/test_grc_v4_resolvent_predictor_probe.py",
+      "sha256": "f2680d5b8b91e8fcc31d1cebb92a75af9b7149e0c87bf3350d46a4e17b283ae2"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/exact_policy_os_pass_probe.json",
+      "sha256": "f7500630e5c5817eaa344459a39b7f65aed675f1bb4561ef94a784637619e6b4"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_os_pass.py",
+      "sha256": "0e1a5076f594c4c99d8a47ec84b078aac2b06b999e1db9efd10d39ec9e1be876"
+    },
+    {
+      "path": "tests/models/test_grc_v4_os_pass_probe.py",
+      "sha256": "d1f5a6a84fda8c4a7c6533336470d8e3dd77f0d50c49179c091ee06523f62878"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/exact_policy_hodge_positive_probe.json",
+      "sha256": "f55559af3183b91f8988176d616db2e997d4ff9f8f557bddc9fa71b107716e6a"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_hodge_positive.py",
+      "sha256": "4cb536daa119ceee9a4293aa8b5ca633468cad91119cba58f10d268a33112be5"
+    },
+    {
+      "path": "tests/models/test_grc_v4_hodge_positive_probe.py",
+      "sha256": "d2c0739f54602fb02f9653603d6cd39496397872c4ea953813333bf0082568c0"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/arb_policy_os_pass_probe.json",
+      "sha256": "f2d66087c73f90fb7384ea9028e19f87fc5dc6ee7bd64f3d2ab2268c3d510986"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_arb_policy.py",
+      "sha256": "b172f05afe83133f58258d9fe953ca750473e2f6f3e92515458cfb9d9be101b6"
+    },
+    {
+      "path": "tests/models/test_grc_v4_arb_policy.py",
+      "sha256": "802fbba655c3e42f7c910197941e95500a7e212b71ef8f1eec45b6a89b47d9de"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/weighted_split_os_pass_probe.json",
+      "sha256": "28f6dfc88ef2481e41af58fc944dd6f3dfcd3a0d897b1507f97abaadd2a78fc0"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_split_certificate.py",
+      "sha256": "30855c9692aa11c2b433b851e403c1c60e1d29422dafc816afd1c25074d65874"
+    },
+    {
+      "path": "tests/models/test_grc_v4_split_certificate.py",
+      "sha256": "7862cf9714b0d6b92a54442d299d00c6f7b44e1b89d3812644e527f5dfe17229"
+    },
+    {
+      "path": "implementation/corrections/GRCV4-CertifiedNumericalPolicy.md",
+      "sha256": "8e81853a8d230328d93e95c304c9127bc10d9eb4beccebb86b4d4b2435701ded"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/certified_native_os_pass.json",
+      "sha256": "3b4cd40be2df8c77fe52167970e1b33f8dd3d8ca3e52d98395448e9f48939215"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_certified_native.py",
+      "sha256": "c4f618e06481ad037562eea41b8bab8e040d1360e5e6d61710a6024e871cf534"
+    },
+    {
+      "path": "specs/grc-v4-numerical-policy.md",
+      "sha256": "228a3b5c40c44f003f36c2b00a3bd9208a3c9545f390e937232e7032200975c7"
+    },
+    {
+      "path": "tests/models/_grc_v4_research_sources.py",
+      "sha256": "0a374bc8630f80e1efb12e07301b0fd5bb465c88b5b7fca11b5728eff77dd86e"
     }
   ],
-  "record_digest": "bb755a16d1d11ecbc313b71956a62b95bc86cc474008190dd834b4dad1b532d3"
+  "record_digest": "ceb5ee3e4d7d2a9e3c76e660b9ac1c0c67e5e8a51b6c812bdfe036fe706291d0"
 }

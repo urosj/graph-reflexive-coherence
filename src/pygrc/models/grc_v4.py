@@ -378,10 +378,11 @@ class GRCV4(GRCModel):
 
     def duplicate(self) -> Self:
         from .grc_v4_exact import exact_backend
+        from .grc_v4_certification import numerical_policy
 
         # Capture parameters with the same atomic snapshot, never a second read.
         snapshot = self.snapshot()
-        with exact_backend(self._operation._exact_backend_choice):
+        with exact_backend(self._operation._exact_backend_choice), numerical_policy(self._operation.numerical_policy):
             return type(self).from_state(
                 snapshot, snapshot["reference"]["profile"]["params_resolved"]
             )
@@ -396,6 +397,10 @@ class GRCV4(GRCModel):
 
     def reset(self) -> None:
         self._operation.reset()
+
+    @property
+    def numerical_policy(self):
+        return self._operation.numerical_policy
 
     def rebase_reset_baseline(self) -> None:
         self._operation.rebase_reset_baseline()

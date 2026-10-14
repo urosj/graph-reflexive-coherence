@@ -31,8 +31,17 @@ from .grc_v4_geometry import Matrix
 from .grc_v4_linear import MatrixReuse, _ConditionFact, _InverseFact
 from .grc_v4_profile import SolverPolicy
 from .grc_v4_state import FrozenJSONMap
+from . import grc_v4_certification as _certified
+from .grc_v4_certification import (
+    CertificationInconclusive, NumericalPolicy, current_numerical_policy,
+    numerical_policy,
+)
 
 __all__ = [
+    "CertificationInconclusive",
+    "NumericalPolicy",
+    "current_numerical_policy",
+    "numerical_policy",
     "ExactBackend",
     "ExactMatrix",
     "MatrixError",
@@ -100,7 +109,8 @@ def condition_bound(exact: ExactMatrix, limit: float, label: str) -> ExactScalar
         fact = facts.find(exact, exact_limit)
         if fact is not None:
             return fact.condition_upper_squared
-    bound = _backend.condition_bound(exact, limit, label)
+    bound = (_certified.condition_bound(exact, limit) if _certified.certified_policy()
+             else _backend.condition_bound(exact, limit, label))
     if facts is not None:
         facts.remember(_ConditionFact(exact, exact_limit, bound))
     return bound
@@ -134,18 +144,29 @@ def solve(
     policy: SolverPolicy,
     label: str,
     certificates: list[FrozenJSONMap],
+    *,
+    condition_witness: tuple | None = None,
 ) -> Matrix:
     exact = exact_matrix(matrix)
-    prepared_inverse = inverse(exact)
+    use_certified = _certified.certified_policy()
+    prepared_inverse = None if use_certified else inverse(exact)
     certificates.append(
         _condition_certificate(
-            condition_bound(exact, policy.conditioning_limit, label),
+            (_certified.condition_bound(exact, policy.conditioning_limit, gram_witness=condition_witness)
+             if use_certified and condition_witness is not None else
+             condition_bound(exact, policy.conditioning_limit, label)),
             policy.conditioning_limit,
             label,
         )
     )
     exact_rhs = exact_matrix(rhs)
-    result = binary64_matrix(matmul(prepared_inverse, exact_rhs))
+    if use_certified:
+        result = _certified.rounded_solve(exact, exact_rhs)
+        certificates.append(FrozenJSONMap({"block": label, "execution_policy": current_numerical_policy().value,
+                                          "rounding": "unique_binary64_nearest_even", "arb_precision_bits": 256}))
+    else:
+        assert prepared_inverse is not None
+        result = binary64_matrix(matmul(prepared_inverse, exact_rhs))
     observed = matmul(exact, exact_matrix(result))
     for residual, target in zip(
         transpose(

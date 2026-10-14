@@ -231,6 +231,36 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    "specs/grc-v4-numerical-policy.md",
+    "implementation/corrections/GRCV4-CertifiedNumericalPolicy.md",
+    "scripts/benchmark_grcv4_certified_native.py",
+    "tests/models/_grc_v4_research_sources.py",
+    "implementation/evidence/grcv4-performance/certified_native_os_pass.json",
+    "scripts/benchmark_grcv4_split_certificate.py",
+    "tests/models/test_grc_v4_split_certificate.py",
+    "implementation/evidence/grcv4-performance/weighted_split_os_pass_probe.json",
+    "scripts/benchmark_grcv4_arb_policy.py",
+    "tests/models/test_grc_v4_arb_policy.py",
+    "implementation/evidence/grcv4-performance/arb_policy_os_pass_probe.json",
+    "scripts/benchmark_grcv4_hodge_positive.py",
+    "tests/models/test_grc_v4_hodge_positive_probe.py",
+    "implementation/evidence/grcv4-performance/exact_policy_hodge_positive_probe.json",
+    "scripts/benchmark_grcv4_os_pass.py",
+    "tests/models/test_grc_v4_os_pass_probe.py",
+    "implementation/evidence/grcv4-performance/exact_policy_os_pass_probe.json",
+    "scripts/benchmark_grcv4_resolvent_predictor.py",
+    "tests/models/test_grc_v4_resolvent_predictor_probe.py",
+    "implementation/evidence/grcv4-performance/resolvent_condition_probe.json",
+    "implementation/evidence/grcv4-performance/exact_policy_predictor_probe.json",
+    "scripts/benchmark_grcv4_exact_direct.py",
+    "scripts/benchmark_grcv4_identity_condition.py",
+    "tests/models/test_grc_v4_exact_direct_probe.py",
+    "implementation/evidence/grcv4-performance/README.md",
+    "implementation/evidence/grcv4-performance/direct_source_predictor_block.json.xz",
+    "implementation/evidence/grcv4-performance/direct_source_predictor_prepare.json",
+    "implementation/evidence/grcv4-performance/direct_source_predictor_dixon.json",
+    "implementation/evidence/grcv4-performance/direct_source_predictor_condition.json",
+    "implementation/evidence/grcv4-performance/direct_source_predictor_identity_condition.json",
     'implementation/phase-9-grcv4/tranche-8/P9-8.4c-Closeout.json',
     'implementation/phase-9-grcv4/tranche-8/P9-8.4c-CloseoutReview.md',
     'implementation/phase-9-grcv4/verification/p984c_closeout.py',
@@ -1128,6 +1158,16 @@ def binding_reconciliation(root):
 _reconciliation = binding_reconciliation(ROOT)
 RECONCILED_CONTEXT_PATHS = {r["path"] for r in _reconciliation["context_bindings"]}
 RECONCILED_RUNTIME = {r["path"]: r for r in _reconciliation["runtime_additions"]}
+# User-authorized shared numerical integration during P9-8.4g, under the
+# existing generic numerics owner. This is work permission, not G2/G3 or .g
+# acceptance; do not rewrite the historical reconciliation record.
+CERTIFIED_NUMERICAL_RUNTIME = {
+    name: {"module_owner": "grc_v4_numerics", "iteration_id": "P9-3.4"}
+    for name in (
+        "src/pygrc/models/grc_v4_certification.py",
+        "tests/models/test_grc_v4_certified_policy.py",
+    )
+}
 PATHS |= RECONCILED_CONTEXT_PATHS | {
     RECONCILIATION,
     PHASE + "tranche-8/P9-8.1-BindingReconciliation.md",
@@ -2066,6 +2106,9 @@ def leaf_permissions(root):
     for name, row in RECONCILED_RUNTIME.items():
         require(row["iteration_id"] in ready, "reconciled helper owner is not ready")
         owners[name] = {row["iteration_id"]}
+    for name, row in CERTIFIED_NUMERICAL_RUNTIME.items():
+        require(row["iteration_id"] in ready, "numerical component owner is not ready")
+        owners[name] = {row["iteration_id"]}
     from phase9_specialization_acceptance import backend_authorization, BACKEND_PATHS
     backend_entry = backend_authorization(root)
     ready = sorted(set(ready) | {backend_entry})
@@ -2151,7 +2194,7 @@ def runtime_targets(approval):
     ), *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": row["module_owner"]}
-        for name, row in sorted(RECONCILED_RUNTIME.items())
+        for name, row in sorted((RECONCILED_RUNTIME | CERTIFIED_NUMERICAL_RUNTIME).items())
     ), *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner":

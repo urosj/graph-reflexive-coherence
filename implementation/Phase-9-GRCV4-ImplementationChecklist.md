@@ -3318,12 +3318,19 @@ the full ten-profile plan.
       resource enclosures, focused singularity/rounding/native-stage pressure.
       No parameter or tolerance changes; bounded checkpoint accepted 2026-10-13.
       [Result and scope](./phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsReview.md).
-    - [ ] C_OS native/validated-current bridge: resolve incomplete native
-      checking. Proposed shared certified solver/conditioning optimization and
-      proven regularity shortcut are not started; preserve rounding and
-      conditioning/residual checks. Complete native charge/final-C admission;
-      pointwise resource signs alone do not close this item. LG-C-SELECTOR and
-      LG-OS-SPLIT native integration remain open; no `.h` readiness yet.
+    - [x] Shared production numerical component accepted by the user
+      (2026-10-14): explicit FLINT/256-bit Arb policy, exact sufficient
+      condition/positivity/regularity/split proofs, unchanged rounded outputs
+      and residual tests, no silent fallback. Small A_OS/C_OS lifecycle parity
+      and one native 100/400 source/current OS pass complete; clean worker exit.
+      [Exact replacements, tests and scope](./corrections/GRCV4-CertifiedNumericalPolicy.md).
+      This checked implementation item does not accept the parent checkpoint.
+    - [ ] C_OS native/validated-current bridge: complete large-source ordinary
+      step, including resource continuity, represented charge and final-C
+      readmission; then close required target/reset roles. Current-source
+      selector-path and split now execute natively, but do not close the
+      remaining LG-C-SELECTOR/LG-OS-SPLIT roles. Preserve pointwise sign bounds,
+      staged rounding and conditioning/residual checks; no `.h` readiness yet.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.
