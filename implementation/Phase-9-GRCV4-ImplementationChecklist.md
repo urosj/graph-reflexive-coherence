@@ -3310,9 +3310,140 @@ the full ten-profile plan.
     passed certificates, computed reads/roots, incomplete probes and rejection.
     New A scope needs oracle-before-runtime review; cyclic RG2b needs a new
     proved completion. Unresolved rows remain open and visible.
+    - [x] C_OS equation preflight: four unchanged source/target × current/reset
+      points, independent dense equations and exact FLINT bounds on represented
+      oracle geometry. Four focused pressure tests; no native admission credit.
+    - [x] C_OS pointwise regularity/sign successor implemented: equivalent
+      regularity proof, four exact-real and four conditional staged-positive
+      resource enclosures, focused singularity/rounding/native-stage pressure.
+      No parameter or tolerance changes; bounded checkpoint accepted 2026-10-13.
+      [Result and scope](./phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsReview.md).
+    - [x] Shared production numerical component accepted by the user
+      (2026-10-14): explicit FLINT/256-bit Arb policy, exact sufficient
+      condition/positivity/regularity/split proofs, unchanged rounded outputs
+      and residual tests, no silent fallback. Small A_OS/C_OS lifecycle parity
+      and one native 100/400 source/current OS pass complete; clean worker exit.
+      [Exact replacements, tests and scope](./corrections/GRCV4-CertifiedNumericalPolicy.md).
+      This checked implementation item does not accept the parent checkpoint.
+    - [x] C_OS native/validated-current bridge implemented: four unchanged
+      source/target × current/reset production numerical steps pass continuity,
+      represented charge and final-C readmission, selector-path and split.
+      Staged outputs match retained enclosures; exact resource-sum drift is
+      retained separately from represented charge. Zero live committed steps
+      or events. [Review](./phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md).
+    - [x] C_OS native prerequisite scope accepted by the user on 2026-10-14;
+      eligible for its separately declared `.h` campaign, not execution or
+      acceptance of that campaign. Aggregate and the other nine families remain open.
+    - [x] C_CI investigation-first exact-real feasibility: four unchanged
+      cyclic source/target × current/reset Frobenius-ball self-map/contraction
+      bounds. [Proof and limitation](./phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigation.md).
+      Bounded research accepted with the C_CI successor on 2026-10-14;
+      this original record alone is not native or represented-root acceptance.
+    - [x] C_CI staged joint-root research bridge and feedback discrimination:
+      all four represented reference pairs meet an independent analytic residual
+      bound. Include current defect and geometry/root tail; exact feedback is
+      nonzero but source effects remain below whole-current rounding-error bounds.
+      [Successor and exclusions](./phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedReview.md).
+      No native stopping/conformance credit from this research record alone;
+      accepted within the bounded C_CI successor on 2026-10-14.
+    - [x] Derive C_CI source/allocation feasibility before a positive campaign:
+      [bounded successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibility.md)
+      uses shares (5/16,5/16,3/8) and a charge-preserving source deficit 2^-10.
+      Full-law first-step bounds and robust source postbeat row margins pass;
+      original target exclusions and allocation-only staged trigger failure stay
+      retained. Exact-real research accepted within the bounded C_CI successor
+      on 2026-10-14, not by itself native continuation.
+    - [x] C_CI native certificate/computed roots and poststate admission for
+      all four source/target × current/reset cases: twelve joint-root
+      constructions, independent analytic residuals, represented charge,
+      literal continuity and final-C admission. Explicit certified interval
+      extension; original exclusions remain. [Review](./phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure.md).
+      Bounded numerical prerequisites only, not `.h` events or a uniform domain.
+    - [x] Review and accept bounded C_CI `.g` research/native prerequisite
+      successor and explicit certified CI interval extension. User acceptance
+      on 2026-10-14 grants scoped `.h` eligibility, not execution or aggregate closure.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.
+    - [x] A_CI initial exact-real investigation: four joint-ball certificates
+      and first-step resource bounds on the unchanged larger declarations.
+      Target current passes; target reset-as-current is excluded at `extra/1/1`.
+      [Research note](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md);
+      this calculation alone grants no native credit; accepted within the
+      bounded A_CI successor on 2026-10-14.
+    - [x] A_CI both-role allocation/source feasibility research: derived shares
+      (5/16,5/16,3/8), unchanged W, conservative source shift 2^-10; full-law
+      current-postbeat/unchanged-reset transfer bounds and strict source margins.
+      Preserve original reset exclusion and allocation-only trigger diagnostic.
+      [Successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md), accepted
+      within the bounded A_CI successor on 2026-10-14, not standalone native credit.
+    - [x] A_CI staged full-joint-root/mechanism oracle calculation: four prepared
+      cases, two analytic residual passes each, whole-point digests, rigorous
+      represented-error bounds and some feedback-separated coordinates in each.
+      [Research evidence](./phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md);
+      source diagonal erasure and nonseparated coordinates remain limitations.
+      Accepted within the bounded A_CI successor on 2026-10-14; these original
+      research records alone remain distinct from native execution.
+    - [x] Bounded A_CI native investigation: source-current attempt capped at
+      600 seconds, three other large cases not run; small whole-step writer
+      control passes. Record exact analytic-inverse cost and a conservative
+      baseline-interval counterexample, not native closure.
+      [Findings](./phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md).
+    - [x] Correct shared CI analytic Hodge policy routing and A's whole-interval
+      nonlinear baseline propagation; 97 focused CI/CIPC/interval tests pass,
+      including the old counterexample, floor and no-fallback pressure.
+      [Replacement and historical separation](./phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md).
+      No changed law or silently rebound historical execution.
+    - [x] Complete A_CI bounded native certificate/stopping,
+      history/final-C readmission and represented-charge checks, followed by
+      source trigger checks: four provisional native steps, twelve matching
+      two-pass joint roots. Exact stored-resource drift retained separately
+      from admitted charge receipts; original timeout remains historical.
+    - [x] Review and accept the bounded A_CI `.g` research/native prerequisite
+      successor and shared analytic-residual corrections. The user's split-commit
+      instruction on 2026-10-14 accepts `16f10f10` and `642bf731`; A_CI is eligible
+      for separately declared `.h` work. Original execution flags stay unchanged;
+      no executed event, uniform-domain or aggregate closure claim.
+    - [x] A_PC investigation-first whole-chart and exact-real first-step checks:
+      four frozen source/target × current/reset cases; both carrier envelopes
+      pass, but original target reset continuation is excluded at `extra/1/1`.
+      Old-carrier current, post-C history writer, held-source ZOH norm and
+      role-specific empty-node allocation coefficients are independent.
+      [Research](./phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigation.md), pending
+      review; no represented/native or `.h` credit.
+    - [x] A_PC: derive/select and certify a both-role exact-real feasibility
+      companion: shares (1/4,3/8,3/8), charge-preserving 1/1024 shift from node
+      0 to farthest node 29, full-law postbeat trigger and interval-input transfer.
+      Target lower bounds exceed 1.83e-4. Preserve allocation-only no-certified-
+      trigger control, original reset exclusion and unchanged W/Z histories.
+      [Companion](./phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibility.md); research
+      pending review, not represented/native or final-read credit.
+    - [x] A_PC represented current/two-writer/final-read oracle on four prepared
+      histories, with actual non-diagonal updated carriers; four focused parity,
+      stage, writer and evidence tests pass. Source carrier/all Read-Back effects
+      resolve; target first-step carrier-current response remains below error.
+      [Oracle and limits](./phase-9-grcv4/tranche-8/P9-8.4g-APCStaged.md).
+      No native admission, event or `.h` readiness credit.
+    - [x] A_PC carrier hardening: full-point/stored-Z geometry binding rejects
+      resealed stale reads despite unchanged current. Derive the separate 7/8
+      history companion from sensitivity plus ten empty-node inequalities;
+      retain excluded 11/16 attempt. Four prepared steps have positive resources
+      and carrier effects above combined two-read error (target 103/102
+      coordinates). Five focused tests, small native parity only.
+      [Hardening](./phase-9-grcv4/tranche-8/P9-8.4g-APCHardening.md); pending
+      review, no large-native/event/readiness promotion.
+    - [x] A_PC bounded native complete-step/charge/full-final-point comparison:
+      four detached prepared steps, twelve PC reads, exact two-writer/oracle
+      parity and reset preservation; all represented charge receipts pass.
+      Preserve exact stored drift, original exclusions and unresolved witness.
+      A target-only numeric-representation checker successor passes; original
+      target comparison failures remain and source successes are reused.
+      [Native evidence](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md).
+      Five focused tests; no production edit, event or `.h` readiness promotion.
+    - [x] User accepted A_PC bounded `.g` prerequisites, 2026-10-14:
+      [scoped decision](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md#scoped-user-acceptance).
+      Eligible for separately declared `.h`; no event or aggregate closure.
+      Original research/execution flags and exclusions remain unchanged.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.

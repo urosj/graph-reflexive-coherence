@@ -12,6 +12,9 @@ from tranche8_validation import BOUNDARY_MODULES, ROOT, validation_session
 # Successor research checkers have explicit retained-only entry points. Never
 # infer permission from a filename prefix or admit prepare/run/derive actions.
 EXTRA_MODES = {
+    'p984g_cos_native': ('check',),
+    'p984g_cos': ('check',),
+    'p984g_cos_bounds': ('check',),
     'p984e_cos': ('check',),
     'p984f_cos': ('check',),
     'p984f_cci': ('check',),
@@ -45,7 +48,8 @@ def main():
     expected_mode = "--check" if dense_cos else "--check-retained"
     modes = EXTRA_MODES.get(name, (expected_mode,))
     index.require(any(options in ([mode], [mode, "--recheck-numerics"]) for mode in modes)
-        and (not dense_cos or len(options) == 1), "retained-only arguments required")
+        and (not dense_cos or len(options) == 1)
+        and (name != 'p984g_cos_native' or options == ['check']), "retained-only arguments required")
     policy.restore_packed_evidence(ROOT)
     module = importlib.import_module(name)
     output = StringIO()
@@ -60,9 +64,12 @@ def main():
         for field in fields:
             sources.raw(getattr(module, field))
         original = sys.argv
+        from p984g_pre_ci_interval_sources import historical_sources as pre_ci_interval_sources
         try:
             sys.argv = [str(expected), *options]
-            with redirect_stdout(output), (module.b.exact_backend(module.b.ExactBackend.FLINT)
+            with redirect_stdout(output), (index.historical_larger_sources()
+                    if name in ('p984g_cos','p984g_cos_bounds') else nullcontext()), (pre_ci_interval_sources()
+                    if name == 'p984g_cos_native' else nullcontext()), (module.b.exact_backend(module.b.ExactBackend.FLINT)
                     if name in ("p984c_crg2b_runtime", "p984c_arg2b_runtime") else nullcontext()):
                 module.main()
         finally:

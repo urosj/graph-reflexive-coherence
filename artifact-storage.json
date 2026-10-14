@@ -27,6 +27,14 @@
       "storage_sha256": "f3777c92416d3d7231c7c71f6e7933991f06100593657374f4a1f6a7227e0cd3"
     },
     {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_block.json",
+      "size": 3715925,
+      "sha256": "4f5043db4c38551db2e0660d25dd441498bdc654eac01abb49271c2cf24fba95",
+      "storage_path": "implementation/evidence/grcv4-performance/direct_source_predictor_block.json.xz",
+      "storage_size": 880568,
+      "storage_sha256": "b9b117e039dd48d205b19a13436da0e59bb999aa85f1c2a6c5b9a07f196d6d31"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4b-ACIPCResults.json",
       "size": 31806097,
       "sha256": "a1f5da445f6fbce1d17d98a872ab7558477083dea9b288af9a409c540c06f194",

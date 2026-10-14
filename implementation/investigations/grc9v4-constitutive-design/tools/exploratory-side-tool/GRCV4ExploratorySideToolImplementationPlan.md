@@ -2873,3 +2873,133 @@ Expose A_CI `8.4f` in selected API/CLI, browser and notebook:
   continuation and pointwise certificates. Four frozen plans are reused.
   First-group `.f` is accepted at 96/96 cells; all-ten closure remains open.
   Status is producer-free; explicit numerical recheck remains available.
+
+### P9-8.4g larger graph prerequisites
+
+Selected-family API/CLI, browser and notebook expose the C_OS larger-graph
+equation preflight: four points, FLINT exact bounds on represented oracle
+geometry, with no full error enclosure in that original record. A separately
+bound successor supplies full-law pointwise resource enclosures, conditional
+staged outputs and the equivalent regularity proof. Surface both records and
+their 2026-10-13 bounded checkpoint acceptance, keeping execution flags intact;
+never silently upgrade the original. Keep native LG-C-SELECTOR/LG-OS-SPLIT
+integration and `.h` readiness open. Retained status checks arithmetic and
+source bindings without new current solves; explicit numerical recheck
+reconstructs the successor interval stages, not native trajectories.
+The generated browser projection uses smaller indentation without dropping
+fields, staying below the 1 MB raw-file threshold.
+
+The native successor now exposes four full production numerical steps for
+source/target × current/reset, all passing final-C admission. Keep the historical
+research flags unchanged, using the exact pre-integration source adapter;
+bind the native successor to current production separately. Report zero live
+commits/events, exact resource-sum drift alongside represented charge,
+scientific readiness and scoped user acceptance separately (accepted 2026-10-14).
+Original execution flags remain unchanged. Default selected
+retained verification checks the native successor without rerunning numerics;
+explicit interval recheck remains a historical research calculation. Neither
+mode executes the `.h` lifecycle campaign or grants other-family credit.
+
+C_CI begins with a separate exact-real investigation view: four graph/role
+whole-ball certificates, a visible reference-residual/feedback-discrimination
+limitation, and zero native root/step/event credit. Selected read-only checks
+recompute only scalar certificates; do not dispatch native owners or C_OS work.
+Staged error and native admission stay explicit open obligations.
+
+The staged successor now carries independent analytic residual/current-defect
+and joint-root bounds, separate counterfactual feedback reads and exact-root
+first-step sign propagation. Both original target roles are excluded at a
+zero-resource vertex for every positive dt at that state. Expose this without
+inventing native rejection or readiness. Display compact approximate numbers
+with exact source links; retained checks do not repeat the interval solves.
+
+The source/allocation feasibility view adds a separately identified conservative
+resource fixture and derived satellite shares. Preserve the original target
+exclusions and allocation-only zero-gradient staged trigger failure. Expose
+positive exact-real first-step bounds, current-postbeat/unchanged-reset pairing,
+and pending native stopping/charge/readmission without rerunning vertex solves
+from default API/CLI/notebook/browser status queries.
+
+The native C_CI successor is projected separately: four numerical steps and
+twelve joint roots, original research/exclusion flags unchanged, explicit
+policy and source bindings, independent residuals and exact stored-resource
+drift. Default status reads retained evidence and scalar checks only. User
+acceptance (recorded 2026-10-14) and `.h` eligibility remain separate from execution;
+no lifecycle event, uniform domain or other-family support is inferred.
+Authenticate the pre-extension CI/spec bindings at `e1d61021` for historical
+evidence, while requiring current bindings for the native successor.
+
+A_CI has its own selected `.g` research view: four exact-real joint-ball
+certificates, positive target-current resources and a certified negative
+reset-as-current resource. Recompute scalar bounds only, with native roots,
+steps/events, acceptance and `.h` readiness explicitly absent. The browser
+shows compact approximate bounds linked to exact rational evidence; do not
+reuse C_CI native readiness or treat a successful root as successful continuation.
+
+Expose A_CI's separate source/allocation companion: unchanged W, original reset
+exclusion and allocation-only missing trigger margin retained; exact-real
+postbeat writer/trigger and transfer enclosures with unchanged event reset.
+Default status authenticates retained companion bytes and source bindings,
+without recalculating interval boxes. The separate staged joint-root oracle
+now exposes four whole-point digests, two analytic residual checks per case,
+coordinatewise feedback separation and positive first-step resource bounds.
+Status checks retained records, not Arb solves. Source diagonal erasure and
+nonseparated coordinates remain visible. Native stopping, writer/final-C,
+charge and fresh events remain open; research completion grants no `.h` readiness.
+
+Expose the separate A_CI native investigation hold: one 600-second large source
+timeout and three unrun cases, zero verified completed large steps/roots, small
+native writer/final-root parity and an expected-failure interval-inclusion test.
+Name the exact analytic-Hodge inverse bypass and nonlinear baseline endpoint
+collapse. Authenticate compact summary/case bindings without rerunning the full
+checker, native trajectories or interval root solves. No native closure credit.
+
+Expose the separately bound corrected A_CI native successor, not a rewritten
+timeout: twelve full roots/four prepared role steps after residual-policy and
+nonlinear-enclosure corrections. Whole-point and writer checks, represented
+charge versus exact stored sum and scoped user acceptance remain distinct.
+The 2026-10-14 split-commit instruction accepts A_CI's bounded prerequisites;
+project `.h` eligibility separately from unchanged pre-acceptance execution
+flags, without event or aggregate credit. Status authenticates current execution bindings and pinned
+summary/case bytes without running the full checker. Earlier A staged/timeout
+and accepted C_CI executions resolve their superseded CI/spec identities from
+the pinned Git revision; do not relabel them as corrected-runtime executions.
+
+Expose A_PC's independent whole-chart/diagonal-prestate investigation at selected
+`8.4g`: both carrier charts pass, while original target reset continuation is
+excluded. Keep current/reset, carrier/history timing, exact-real versus represented
+effects and leading allocation constraints distinct. Status authenticates pinned
+results only, with links to exact rational bounds; no equation rerun, native
+permission, event execution or acceptance follows from an available research row.
+
+Add the separately bound A_PC allocation/source feasibility companion without
+replacing the original exclusion. Expose its dyadic selection, charge-preserving
+shift, both-history resource and trigger bounds, and live-postbeat/current versus
+unchanged-reset pairing. The source's new carrier is not diagonal: its norm bound
+is not a final read. Keep represented two-writer/final-read and native obligations
+visible; status authenticates the compressed record without numerical replay.
+
+Expose the separate represented A_PC oracle: full non-diagonal final reads,
+both writers, stage-error bounds, stored charge drift and mechanism controls.
+Do not confuse source effect separation with target first-step carrier response:
+the latter is unresolved, despite nonzero Z. Retained viewing runs no dense
+solve and grants no large-native or `.h` credit. Keep generated browser JSON
+lossless but unindented so the executable asset stays below 1 MB.
+
+Expose the separate carrier-sensitive 7/8 history companion and full-point
+freshness pressure. Preserve the original target's unresolved effect and the
+excluded unconstrained 11/16 history. Show combined two-read error separation,
+positive prepared resources and exact stored charge drift; status reruns no
+solves, grants no native credit and does not turn old layout labels into a
+fresh event identity. Keep these distinctions in API, browser and notebook.
+
+Bind the separate A_PC native prerequisite record to the 7/8 hardening identity
+and exact runtime sources. Display detached steps, full PC reads, represented
+charge receipts and exact stored-charge drift separately. Do not call PC reads
+CI roots or turn prerequisite completion into user acceptance, live publication
+or `.h` readiness. Status authenticates compressed runs and their pinned summary;
+full retained comparison and native execution remain explicit actions.
+Project the separate 2026-10-14 scoped user acceptance from its pinned review
+and summary digest: bounded A_PC prerequisites are eligible for separately
+declared `.h` work. Original execution flags and exclusions remain unchanged;
+acceptance does not execute an event or close the all-ten parent.

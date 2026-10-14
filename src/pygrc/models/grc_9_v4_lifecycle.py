@@ -53,6 +53,7 @@ from .grc_v4_codec import (
     validate_payload,
 )
 from .grc_v4_exact import current_exact_backend, exact_backend, exact_number
+from .grc_v4_certification import current_numerical_policy, numerical_policy
 from .grc_v4_geometry import (
     GeometryStageInputs,
     NodeId,
@@ -1050,7 +1051,8 @@ class _GRC9V4EventOperation:
         if type(state) is not self.STATE:
             raise TypeError("expected native " + self.STATE.FAMILY + " state")
         self._backend = current_exact_backend()
-        with exact_backend(self._backend):
+        self._numerical_policy_choice = current_numerical_policy()
+        with exact_backend(self._backend), numerical_policy(self._numerical_policy_choice):
             state = self.STATE(
                 GeometryStageInputs.from_payload(state.inputs.to_payload()),
                 replace(state.specialization),
@@ -1063,6 +1065,10 @@ class _GRC9V4EventOperation:
     @property
     def state(self) -> _GRC9V4EventState:
         return self._published.state
+
+    @property
+    def numerical_policy(self):
+        return self._numerical_policy_choice
 
     @property
     def receipts(self) -> tuple[SuccessfulReceiptEnvelope, ...]:
@@ -1172,7 +1178,7 @@ class _GRC9V4EventOperation:
     def expand(self, request: GRC9V4ExpansionRequestInput) -> GRCV4LifecycleResult:
         if type(request) is not GRC9V4ExpansionRequestInput:
             raise TypeError("expected a closed expansion request")
-        with self._lock, exact_backend(self._backend):
+        with self._lock, exact_backend(self._backend), numerical_policy(self._numerical_policy_choice):
             published = self._published
             before = published.state
             stage: OperationStage = "admission"

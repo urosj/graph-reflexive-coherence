@@ -1,0 +1,130 @@
+{
+  "schema": "p984g-aci-corrected-native-summary-v1",
+  "family": "A_CI",
+  "cases": [
+    {
+      "graph": "source",
+      "role": "current",
+      "outcome": "completed",
+      "seconds": 222.72902016500302,
+      "native_roots": 3,
+      "native_steps": 1,
+      "minimum_resource": 1.984100341796355,
+      "exact_resource_sum_delta": "1/1125899906842624",
+      "represented_charge": {
+        "target_charge": 200.0,
+        "admitted_charge": 200.0,
+        "residual": 0.0
+      },
+      "root_evaluations": [
+        2,
+        2,
+        2
+      ],
+      "writer_wrong_prestate_drive_changed": 273,
+      "writer_wrong_baseline_drive_changed": 19,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz",
+      "sha256": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
+      "record_digest": "6f970831c6b668ab160edced0ae0947759150154c2ee3c8672c0b945da2d41b4"
+    },
+    {
+      "graph": "source",
+      "role": "reset",
+      "outcome": "completed",
+      "seconds": 223.09693204399082,
+      "native_roots": 3,
+      "native_steps": 1,
+      "minimum_resource": 1.9682006835926982,
+      "exact_resource_sum_delta": "-3/4503599627370496",
+      "represented_charge": {
+        "target_charge": 200.0,
+        "admitted_charge": 200.00000000000003,
+        "residual": 2.842170943040401e-14
+      },
+      "root_evaluations": [
+        2,
+        2,
+        2
+      ],
+      "writer_wrong_prestate_drive_changed": 310,
+      "writer_wrong_baseline_drive_changed": 23,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz",
+      "sha256": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
+      "record_digest": "2b5c7021778007d4484a135278f83101ba3a3c4473147b4f4c57a04208dd8a51"
+    },
+    {
+      "graph": "target",
+      "role": "current",
+      "outcome": "completed",
+      "seconds": 230.0196465760091,
+      "native_roots": 3,
+      "native_steps": 1,
+      "minimum_resource": 0.0001830160618427012,
+      "exact_resource_sum_delta": "-8607/9223372036854775808",
+      "represented_charge": {
+        "target_charge": 200.0,
+        "admitted_charge": 200.0,
+        "residual": 0.0
+      },
+      "root_evaluations": [
+        2,
+        2,
+        2
+      ],
+      "writer_wrong_prestate_drive_changed": 319,
+      "writer_wrong_baseline_drive_changed": 69,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz",
+      "sha256": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2",
+      "record_digest": "c418b4d093adafb4b145bb4d16785233054c49bb9f52409caf78d4474bf006b5"
+    },
+    {
+      "graph": "target",
+      "role": "reset",
+      "outcome": "completed",
+      "seconds": 230.64688334699895,
+      "native_roots": 3,
+      "native_steps": 1,
+      "minimum_resource": 0.0001830160618427012,
+      "exact_resource_sum_delta": "-16187/9223372036854775808",
+      "represented_charge": {
+        "target_charge": 200.0,
+        "admitted_charge": 200.0,
+        "residual": 0.0
+      },
+      "root_evaluations": [
+        2,
+        2,
+        2
+      ],
+      "writer_wrong_prestate_drive_changed": 356,
+      "writer_wrong_baseline_drive_changed": 71,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz",
+      "sha256": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348",
+      "record_digest": "39b1d751bd1e4a97d017be621bdbabcd46e970c7c8523b177c1f79ea0ede5472"
+    }
+  ],
+  "native_steps": 4,
+  "native_roots": 12,
+  "native_events": 0,
+  "committed_steps": 0,
+  "user_accepted": false,
+  "ready_for_8_4h": false,
+  "known_implementation_holds": [],
+  "native_prerequisites_complete": true,
+  "scope": "prepared_role_controls_not_postbeat_event_or_uniform_domain",
+  "retained_check_only": true,
+  "numerical_trajectories_rerun": false,
+  "source_bindings": {
+    "implementation/phase-9-grcv4/verification/p984g_aci_native_successor_check.py": "078a34de1ac47e1eafbec070c5925cb45553a2987d2a913f0ba74cdbfbe75a8a",
+    "implementation/phase-9-grcv4/verification/p984g_aci_native_check.py": "d5173b435cfb8f2f29fe73d00e8687ce496209c6b5fe1936c286a704f925c4a3",
+    "implementation/phase-9-grcv4/verification/p984g_aci_native_successor.py": "50b9eec43ea97b10bf3de16a060924a883f3797e534dd65e0d4c60279b21c8b0",
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_native_successor.py": "9e6197ec37c5d6e589c22fcbcf17f73627c24a454ae64293dbe905c00fe888f7"
+  },
+  "corrected_operations": [
+    "policy_selected_analytic_Hodge_inverse",
+    "whole_interval_A_conductance"
+  ],
+  "historical_timeout_preserved": true,
+  "predecessor_staged_source_revision": "cc7ea94095b3ba16c0db4cdf1300cf90ff9c6874",
+  "record_digest": "9da130df512401532e9d0379d45b83763139e564d8336164bf0f4ebf2051479c"
+}

@@ -2388,3 +2388,83 @@ instead of stale fixed totals and opens any pending case details explicitly.
   continuation and pointwise certificates. Four frozen plans are reused.
   First-group `.f` is accepted at 96/96 cells; all-ten closure remains open.
   Status is producer-free; explicit numerical recheck remains available.
+
+- [x] Expose C_OS `8.4g` larger equation preflight in selected API/CLI,
+  browser and notebook: four independent points and exact FLINT bounds on
+  represented oracle geometry. No native admission, event, step,
+  full error enclosure or `.h` readiness. Keep native obligations visible.
+  Reject forged sources and execution modes in the read-only launcher.
+- [x] Expose the separate C_OS regularity/sign successor at `8.4g`:
+  four exact-real and four conditional staged-positive resource enclosures,
+  unique represented currents and a proved regularity shortcut. Original
+  preflight remains unchanged; no production integration, native admission,
+  uniform domain or `.h` readiness. Bounded preflight/successor checkpoint
+  accepted 2026-10-13; original execution flags stay unchanged. Retained-only checks and
+  explicit interval replay stay distinct; source/scope mutations reject.
+- [x] Expose C_OS native prerequisite successor separately: four passing
+  source/target × current/reset numerical steps, current-source bindings,
+  final-C admission and exact resource-sum drift; zero live commits/events.
+  Preserve historical research through its pinned source adapter. API/CLI,
+  notebook and browser show scoped acceptance (2026-10-14) and `.h` eligibility,
+  not execution or acceptance of that later campaign.
+  Reject forged native scope/counts and execution through read-only dispatch.
+- [x] Expose the separate C_CI exact-real ball investigation at `8.4g` via
+  selected CLI/API/notebook and browser: four certificates, reference-residual
+  caveat, no represented-root/native/readiness credit; cheap scalar checking.
+- [x] Expose the C_CI staged joint-root successor and both exact-root target
+  continuation exclusions, preserving the earlier record's scope. Counterfactual
+  reads are not native iterations; approximate display values link exact bounds.
+  No interval-solve rerun, native stopping outcome or `.h` readiness follows.
+- [x] Expose the C_CI source/allocation feasibility successor in selected views:
+  preserve original exclusions and allocation-only staged trigger failure;
+  distinguish positive exact-real bounds from native admission, and live-current
+  postbeat transfer from unchanged reset. No vertex solve in status dispatch.
+- [x] Expose the separate C_CI native prerequisite successor: four numerical
+  steps/twelve full joint-root constructions, source bindings, residuals,
+  charge versus exact stored-resource drift, compressed case links and scoped
+  user acceptance (2026-10-14). Preserve original research/exclusions and historical source
+  identities; no numerical rerun, live event or other-family credit in status.
+- [x] Expose A_CI `.g` exact-real investigation in selected CLI/API/notebook
+  and browser: four joint roots, the original reset continuation exclusion,
+  compact display with exact evidence links, no native/acceptance/readiness
+  credit; reject widened scope and execution flags.
+- [x] A_CI feasibility successor: expose original exclusions and source-trigger
+  diagnostic beside the conservative resource companion; distinguish interval
+  research from native/staged admission and live postbeat transfer from unchanged
+  reset. Retained status does not recompute the interval-input research.
+- [x] Expose A_CI staged full-joint-root oracle in the same selected surfaces:
+  whole-point digests, two residual passes, feedback/error separation and
+  resource bounds. Preserve source diagonal erasure and explicit zero native
+  execution/readiness; no interval solves or sibling campaigns on status.
+- [x] A_CI native investigation hold is separately visible: source timeout,
+  three unrun cases, small passing control and expected-failure enclosure pressure.
+  Distinguish attempted work from verified completion and timeout from scientific
+  rejection; bind exact-inverse/interval-propagation findings without closure credit.
+- [x] Add the corrected A_CI native successor as a separate view: full roots,
+  final-C/W writer/readmission, charge and exact stored sum. The user's
+  2026-10-14 split-commit acceptance grants bounded `.h` eligibility; project
+  it separately from the original false execution flags. Preserve historical timeout/staged/C_CI
+  source identities; no native or full-checker replay during status queries.
+- [x] A_PC selected `8.4g` investigation: whole-chart carrier admission,
+  four role-specific first-step signs and original reset exclusion, held-source
+  ZOH versus post-C A writer, derived empty-node constraints. API/notebook/browser
+  authenticate pinned research without numerical reruns, native or `.h` credit.
+- [x] A_PC `.g` feasibility successor: bind the compressed original-law
+  companion, dyadic shares/source shift, positive both-history bounds and
+  robust source trigger. Keep original exclusion, unchanged-reset chronology,
+  explicit carrier loss and open non-diagonal final-read/native obligations
+  visible in API/notebook/browser; no interval rerun or readiness promotion.
+- [x] A_PC `.g` represented successor: four prepared full-chain oracles,
+  non-diagonal final reads, both writers, source-resolved versus target-unresolved
+  carrier effects and exact stored drift; compressed evidence, no solve during
+  API/browser viewing and no large-native or readiness credit.
+- [x] A_PC `.g` hardening: expose full-point stale-geometry rejection, separate
+  7/8 inherited-history companion, two-read effect/error separation and the
+  excluded 11/16 attempt. Preserve original limits; no status solve, native
+  execution, event identity or readiness promotion.
+- [x] A_PC `.g` native prerequisite view: separately pinned outcomes on the
+  7/8 history companion, full PC reads/two-writer parity and charge receipts
+  versus exact stored drift. API/browser/notebook status reruns no native
+  trajectory or full retained checker. Project scoped user acceptance dated
+  2026-10-14 and eligibility for separately declared `.h`, not event execution;
+  historical execution flags remain unchanged.

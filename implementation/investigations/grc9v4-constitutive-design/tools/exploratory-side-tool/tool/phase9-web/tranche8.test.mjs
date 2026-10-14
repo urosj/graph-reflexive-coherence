@@ -6,6 +6,170 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('A_PC larger chart research retains exclusions and separates native successor credit', () => {
+  const row=evidence.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC');
+  assert.equal(row.pc_whole_chart,true);
+  assert.deepEqual(row.cases.map(c=>c.resource_sign),['nonnegative','nonnegative','nonnegative','excluded']);
+  assert.equal(row.native_steps,4);assert.equal(row.ready_for_8_4h,true);
+  assert.equal(row.pc_native.native_reads,12);assert.equal(row.pc_native.native_prerequisites_complete,true);
+  assert.equal(row.pc_native.committed_steps,0);assert.equal(row.pc_native.user_accepted,true);
+  assert.equal(row.pc_native.original_execution_flags_unchanged,true);
+  assert.equal(row.pc_native.historical_target_attempts.length,2);
+  assert.ok(row.pc_native.historical_target_attempts.every(c=>c.native_steps===0 && c.outcome==='incomplete'));
+  assert.equal(row.scalar_certificates_recomputed,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Carrier admission is not resource continuation/);
+  assert.deepEqual(row.feasibility.shares,['1/4','3/8','3/8']);
+  assert.equal(row.feasibility.event_pair.reset_evolves,false);
+  assert.equal(row.feasibility.poststate_read_executed,false);
+  assert.equal(row.feasibility.interval_research_recomputed,false);
+  assert.match(text(out),/A_PC separately derived feasibility companion/);
+  assert.match(text(out),/Updated source Z is not diagonal/);
+  assert.match(text(out),/Target first-step carrier-to-current response is not resolved/);
+  assert.equal(row.pc_staged.native_steps,0);assert.equal(row.pc_staged.ready_for_8_4h,false);
+  assert.ok(row.pc_staged.cases.every(c=>c.final_read_executed && c.nonzero_offdiagonal_carrier_entries>0));
+  assert.deepEqual(row.pc_staged.cases.filter(c=>c.graph==='target').map(c=>c.stale_Z_final_current_changed_coordinates),[0,0]);
+  assert.equal(row.pc_hardening.scale,'7/8');assert.equal(row.pc_hardening.native_steps,0);
+  assert.ok(row.pc_hardening.cases.every(c=>c.separated_coordinates>0 && c.effect_lower_display>c.combined_error_upper_display));
+  assert.match(text(out),/Separate carrier-sensitive history companion/);
+  assert.match(text(out),/A_PC native prerequisites: 4 detached prepared steps/);
+  for(const key of ['ready_for_8_4h','user_accepted','native_events','committed_steps']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC').pc_native[key]=['ready_for_8_4h','user_accepted'].includes(key)?false:true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const key of ['ready_for_8_4h','native_steps','numerical_recomputed']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC').pc_hardening[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const key of ['ready_for_8_4h','native_steps']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC').pc_staged[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const key of ['ready_for_8_4h','user_accepted','native_steps','poststate_read_executed']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC').feasibility[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const key of ['ready_for_8_4h','user_accepted','native_steps']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC')[key]=['ready_for_8_4h','user_accepted'].includes(key)?false:true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
+
+test('A_CI larger joint roots retain reset exclusion without native credit', () => {
+  const row=evidence.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI');
+  assert.equal(row.cases.length,4);
+  assert.deepEqual(row.cases.map(c=>c.exact_real_first_step_resources_nonnegative),[true,true,true,false]);
+  assert.equal(row.native_roots,0);assert.equal(row.ready_for_8_4h,false);assert.equal(row.user_accepted,false);
+  assert.deepEqual(row.feasibility.shares,['5/16','5/16','3/8']);
+  assert.equal(row.feasibility.event_pair.reset_evolves,false);
+  assert.equal(row.feasibility.interval_research_recomputed,false);
+  assert.equal(row.feasibility.ready_for_8_4h,false);
+  assert.equal(row.staged_oracle.native_roots,0);
+  assert.equal(row.native_attempt.native_steps,0);
+  assert.equal(row.native_attempt.native_prerequisites_complete,false);
+  assert.deepEqual(row.native_attempt.cases.map(c=>c.outcome),['incomplete','not_run','not_run','not_run']);
+  assert.equal(row.native_attempt.known_implementation_holds.length,2);
+  assert.equal(row.native_successor.native_steps,4);assert.equal(row.native_successor.native_roots,12);
+  assert.equal(row.native_successor.native_prerequisites_complete,true);
+  assert.equal(row.native_successor.user_accepted,true);assert.equal(row.native_successor.ready_for_8_4h,true);
+  assert.equal(row.native_successor.original_execution_flags_unchanged,true);
+  assert.equal(row.native_successor.full_retained_checker_rerun,false);
+  assert.equal(row.staged_oracle.ready_for_8_4h,false);
+  assert.equal(row.staged_oracle.interval_research_recomputed,false);
+  assert.equal(row.staged_oracle.cases.length,4);
+  assert.ok(row.staged_oracle.cases.every(c=>c.two_consecutive_independent_residual_passes && !c.native_stopping_outcome_verified && c.feedback_coordinates_above_selected_error>0));
+  assert.ok(row.feasibility.cases.every(c=>c.fresh_transfer_target_minimum_lower_display>0));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/A unique joint root is not a successful continuation/);
+  assert.match(text(out),/successor keeps both W histories unchanged/);
+  assert.match(text(out),/independent staged joint-root oracle/);
+  assert.match(text(out),/Source diagonal changes round away/);
+  assert.match(text(out),/native prerequisite HOLD/);
+  assert.match(text(out),/expected-failure test is not a conformance PASS/);
+  assert.match(text(out),/corrected native successor/);
+  assert.match(text(out),/Scoped A_CI prerequisite acceptance/);
+  assert.match(text(out),/not exact conservation/);
+  for(const [key,value] of [['ready_for_8_4h',false],['user_accepted',false],['native_events',1]]) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').native_successor[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  const promoted=structuredClone(evidence);
+  promoted.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').native_attempt.native_prerequisites_complete=true;
+  assert.throws(()=>checkedTranche8(promoted),/stale or widened/);
+  for(const key of ['ready_for_8_4h','user_accepted','native_roots']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').staged_oracle[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const key of ['ready_for_8_4h','user_accepted','native_roots']) {
+    const bad=structuredClone(evidence);
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI')[key]=true;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
+
+test('larger C_CI investigation does not promote exact-real roots to native admission', () => {
+  const row=evidence.coverage.larger_prerequisites.investigations[0];
+  assert.equal(row.family,'C_CI');assert.equal(row.cases.length,4);
+  assert.equal(row.native_roots,0);assert.equal(row.ready_for_8_4h,false);
+  assert.ok(row.cases.every(c=>c.reference_pair_already_within_exact_real_residual_tolerance));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/C_CI — research and separately bound native prerequisites/);
+  assert.match(text(out),/does not establish feedback discrimination/);
+  assert.equal(row.staged_bridge.cases.length,4);
+  assert.equal(row.staged_bridge.native_stopping_outcome_verified,false);
+  assert.match(text(out),/includes analytic current defect/);
+  assert.equal(row.staged_bridge.continuation.excluded_target_roles,2);
+  assert.match(text(out),/certified negative exact-root first-step resources/);
+  const bad=structuredClone(evidence);bad.coverage.larger_prerequisites.investigations[0].staged_bridge.native_stopping_outcome_verified=true;
+  assert.throws(()=>checkedTranche8(bad));
+  for(const key of ['native_roots','native_steps','ready_for_8_4h','user_accepted']) {
+    const forged=structuredClone(evidence);forged.coverage.larger_prerequisites.investigations[0][key]=1;
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
+test('larger equation preflight confers no native admission or readiness', () => {
+  const row=evidence.coverage.larger_prerequisites.family_results[0];
+  assert.equal(row.family,'C_OS'); assert.equal(row.cases,4);
+  assert.equal(row.user_accepted,true);
+  assert.equal(row.pointwise_bounds.user_accepted,true);
+  assert.equal(row.acceptance_scope,'bounded_research_checkpoint_not_native_admission');
+  for(const key of ['native_admission','ready_for_8_4h','full_error_enclosure','aggregate_closed']) {
+    assert.equal(row[key],false);
+    const forged=structuredClone(evidence);
+    forged.coverage.larger_prerequisites.family_results[0][key]=true;
+    assert.throws(()=>checkedTranche8(forged));
+  }
+  const container=element('div'); renderTranche8(evidence,container,element);
+  assert.match(text(container),/8.4g C_OS — historical bounds and native prerequisites/);
+  assert.match(text(container),/authorized 8.4h readiness: true/);
+  assert.match(text(container),/Bounded research checkpoint accepted/);
+  assert.equal(row.pointwise_bounds.staged_positive,4);
+  assert.equal(row.pointwise_bounds.exact_real_positive,4);
+  assert.match(text(container),/Explicit certified FLINT\/Arb policy integrated/);
+  assert.equal(row.native_prerequisites.numerical_steps,4);
+  assert.equal(row.native_prerequisites.committed_steps,0);
+  assert.equal(row.native_prerequisites.native_events,0);
+  assert.equal(row.native_prerequisites.user_accepted,true);
+  for(const [key,value] of [['numerical_steps',5],['native_events',1],['user_accepted',false],['ready_for_8_4h',false]]) {
+    const forged=structuredClone(evidence);
+    forged.coverage.larger_prerequisites.family_results[0].native_prerequisites[key]=value;
+    assert.throws(()=>checkedTranche8(forged));
+  }
+  for(const key of ['native_admission','ready_for_8_4h','production_shortcut_integrated','uniform_domain']) {
+    const forged=structuredClone(evidence);
+    forged.coverage.larger_prerequisites.family_results[0].pointwise_bounds[key]=true;
+    assert.throws(()=>checkedTranche8(forged));
+  }
+});
+
 test('C_OS chart covariance separates exact plans from accepted native cells', () => {
   const view=evidence.coverage.chart_covariance,row=view.family_results[0];
   assert.equal(row.family,'C_OS');assert.equal(row.passing_pending_cells,0);
@@ -654,6 +818,39 @@ test('A_RG2b binds separate acceptance without closing later 8.4 work', () => {
   const forged=structuredClone(evidence);
   forged.coverage.runs.find(r=>r.family==='A_RG2b').acceptance=null;
   assert.throws(()=>checkedTranche8(forged));
+});
+
+test('C_CI feasibility preserves exclusions and reset chronology without native credit', () => {
+  const r=evidence.coverage.larger_prerequisites.investigations.find(x=>x.family==='C_CI');
+  assert.equal(r.staged_bridge.continuation.excluded_target_roles,2);
+  assert.deepEqual(r.feasibility.shares,['5/16','5/16','3/8']);
+  assert.equal(r.feasibility.source_deficit,'1/1024');
+  assert.equal(r.feasibility.event_pair.reset_evolves,false);
+  assert.equal(r.feasibility.ready_for_8_4h,false);
+  assert.equal(r.feasibility.interval_solves_rerun,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/stored reset does not evolve/);
+  for(const mutate of [x=>x.ready_for_8_4h=true,x=>x.event_pair.reset_evolves=true,
+      x=>x.shares=['1/2','1/4','1/4']]) {
+    const v=structuredClone(evidence);
+    mutate(v.coverage.larger_prerequisites.investigations.find(x=>x.family==='C_CI').feasibility);
+    assert.throws(()=>checkedTranche8(v));
+  }
+});
+
+test('C_CI native successor binds scoped acceptance without event credit', () => {
+  const n=evidence.coverage.larger_prerequisites.investigations[0].native_prerequisites;
+  assert.equal(n.native_steps,4);assert.equal(n.native_roots,12);
+  assert.equal(n.native_events,0);assert.equal(n.user_accepted,true);
+  assert.equal(n.ready_for_8_4h,true);assert.ok(n.acceptance);
+  assert.equal(n.numerical_trajectories_rerun,false);
+  assert.ok(n.cases.every(c=>c.minimum_resource>0 && c.root_evaluations.every(v=>v===1)));
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/12 full joint roots/);
+  for(const key of ['native_events','user_accepted','ready_for_8_4h']) {
+    const bad=structuredClone(evidence);bad.coverage.larger_prerequisites.investigations[0].native_prerequisites[key]=key==='native_events'?1:false;
+    assert.throws(()=>checkedTranche8(bad));
+  }
 });
 
 test('8.4c aggregate closes exact accepted scope while later work stays open', () => {

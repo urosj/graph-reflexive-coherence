@@ -27,6 +27,11 @@ The implementation strategy assumed by these specs is:
 
 ## GRCV4 phase boundary
 
+The opt-in [V4 numerical execution policy](grc-v4-numerical-policy.md) documents
+the production certified-solve and exact sufficient-proof replacements, their
+formulas, supported domains, lifecycle selection and explicit inconclusive
+failure. It changes neither the constitutive law nor the frozen packaged release.
+
 The [Candidate A reference-pass supplement](grc-v4-a-initializer-spec.md) and
 [closed schema](grc-v4-a-initializer-schema.json) propagate the accepted P9
 initializer from the proposal and paper (`448e420`, `7d45218`). They are

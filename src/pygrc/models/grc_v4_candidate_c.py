@@ -495,7 +495,11 @@ class _CandidateCAlgebra:
             )
             for i, row in enumerate(exact_laplacian)
         )
-        numerics.inverse(regularity_block)
+        if numerics.current_numerical_policy() is numerics.NumericalPolicy.CERTIFIED_ARB_256:
+            from .grc_v4_certification import c_regularity
+            c_regularity(beta, params.tau_C, retained.matrix, self.pairings.vertex.matrix)
+        else:
+            numerics.inverse(regularity_block)
         gradient = numerics.matmul(bt, tuple((exact_number(c),) for c in self.resource.values))
 
         def potential(hodge: Matrix) -> numerics.ExactMatrix:
@@ -555,8 +559,11 @@ class _CandidateCAlgebra:
                 for i, row in enumerate(laplacian)
             )
         )
+        condition_options = ({"condition_witness": (graph.incidence, self.pairings.vertex.matrix,
+                                                     retained.matrix, params.tau_C)}
+                             if numerics.current_numerical_policy() is numerics.NumericalPolicy.CERTIFIED_ARB_256 else {})
         response = numerics.solve(
-            resolvent_block, eye, policy, "retained resolvent", certificates
+            resolvent_block, eye, policy, "retained resolvent", certificates, **condition_options
         )
         flux_response = (
             eye
@@ -586,7 +593,10 @@ class _CandidateCAlgebra:
             )
         )
         # Condition the actual physical block, never a retained-space margin.
-        numerics.inverse(numerics.exact_matrix(current_block))
+        # In the certified policy, the following positive singular-value lower
+        # bound proves invertibility. Do not materialize a discarded inverse.
+        if numerics.current_numerical_policy() is numerics.NumericalPolicy.LEGACY_EXACT:
+            numerics.inverse(numerics.exact_matrix(current_block))
         certificates.append(
             numerics.condition(
                 current_block, policy.conditioning_limit, "physical total-current block"

@@ -1,0 +1,59 @@
+{
+  "schema": "p984g-cos-native-results-v1",
+  "inputs_digest": "e1815a218237aa781ebb7605922d97316be37fac7bea181c2c59e7df8b88525f",
+  "cases": [
+    {
+      "graph": "source",
+      "role": "current",
+      "minimum_resource": 1.9841003417810896,
+      "exact_resource_sum_delta": "1/4503599627370496",
+      "worker_seconds": 285.00928218699846,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-current.json",
+      "sha256": "b87740777122259ec3e9c05d08e066e521cd7c22b2f71ce73b5ecbf4028f91af",
+      "record_digest": "84077e70433434bce337dcfa2f5cbe772b9f004b181c125a5aa7508a21b763ec"
+    },
+    {
+      "graph": "source",
+      "role": "reset",
+      "minimum_resource": 1.968200683562178,
+      "exact_resource_sum_delta": "-1/2251799813685248",
+      "worker_seconds": 283.5614629449992,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-reset.json",
+      "sha256": "a79cf7134db57de9b9784f11d2bd61f6c37952840e15119edb1ff1c7544f8f8e",
+      "record_digest": "b680e7c18d3b0d7b8f60b65953ac153734a8e987ada1570c5134b9ee1c552657"
+    },
+    {
+      "graph": "target",
+      "role": "current",
+      "minimum_resource": 1.0961062480399982e-13,
+      "exact_resource_sum_delta": "-18620214303321/79228162514264337593543950336",
+      "worker_seconds": 287.40722677000304,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-current.json",
+      "sha256": "94961fbff7c660e095befd13da742364aaef078ccd6cc9a4fbe6b58813bc8929",
+      "record_digest": "e55fa39d26d2f181c86e8789594c3c8f62b1d78ef1232e6975b26495c7f0e013"
+    },
+    {
+      "graph": "target",
+      "role": "reset",
+      "minimum_resource": 1.0962812917850738e-13,
+      "exact_resource_sum_delta": "10469164184075/79228162514264337593543950336",
+      "worker_seconds": 287.8298357750027,
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-reset.json",
+      "sha256": "08619442900f2427a1bfe54e457f7df7a62c6d46c3ffb3417ab0b0ac2a8af3a3",
+      "record_digest": "cf9db102df868e71397c4dc24be1dec9430191c17bddf8106b11bf45a8e461a6"
+    }
+  ],
+  "family": "C_OS",
+  "numerical_steps": 4,
+  "native_events": 0,
+  "committed_steps": 0,
+  "native_admission": true,
+  "status": "C_OS_prerequisites_complete_pending_acceptance",
+  "scientifically_ready_for_8_4h": true,
+  "ready_for_8_4h": false,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "other_family_credit": 0,
+  "uniform_trajectory_enclosure": false,
+  "record_digest": "5da6bc5d65684e211887f125c1e96bdafc6cc880b7e0d77731d23200e294c4ec"
+}

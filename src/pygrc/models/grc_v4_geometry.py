@@ -129,6 +129,10 @@ def _require_positive_definite(
     remain binary64. Dense validation costs O(n**3) integer operations, with
     growing integer bit lengths; diagonal reference pairings avoid elimination.
     """
+    from .grc_v4_certification import certified_policy, positive_definite
+    if certified_policy():
+        positive_definite(matrix)
+        return
     size = len(matrix)
     if any(matrix[i][i] <= 0 for i in range(size)):
         raise GeometryDomainError("Hodge matrix must be positive definite")

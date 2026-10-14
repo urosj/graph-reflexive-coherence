@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "529be06aa1d0d5f0217d4132ea7a97585ba1c5d603d0b1720b5afb392a324b6d"
+      "sha256": "3128abee1c79e7e4e688556b9b36acb01292049c47163757bc7768ce1dc6b274"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "05b8c8cd5d7cc294fb93294d0f87bcf3d06fe7f0b48c00ba25479a5d3d396eeb"
+      "sha256": "52e4a561bf36af3fda1fa390cbaefada57c05df2247d81ae6922e10ffd2c5e50"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "76bb98ac3201ad9d3242fd0829d2065e1b8efcc7ab1a0aabacc8432824053cca"
+      "sha256": "2c3bc2842403496604c0b999594d211ddb783902dc0d22ff2af96c95a5eb28cd"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -1131,11 +1131,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
-      "sha256": "1bb540283be058226f5a45c96ae9e6f954c0bbd43475a8e8306f65ec28c3aa16"
+      "sha256": "0e9576be175c5045324a1d97a060ae259b95a0746dcc930798db82978d6ad257"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
-      "sha256": "9d81b2b5123a4a834a5e5b39f9fa78aacf4b689b37c4d5e8d86c33c194e0caf7"
+      "sha256": "cb23f8a63ef16885a656d32ebb678663ab7ad261ec64e1cc5003a3aa4c3c0cac"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/ATCQueryGuide.md",
@@ -1183,7 +1183,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
-      "sha256": "415ca71ec3103b59cc91b254e3e69db33b87e8deb1f6c3fcaacff4a5f0794c6f"
+      "sha256": "0f70fc2e7d297c17f42f03b42001aa22e42e4d30492dc301c615fe70fd188b14"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/aggregate-review.js",
@@ -2575,7 +2575,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "5053671d7f022abeca586b65c4a21e63b3f9971ed33c2e2cae92cebc8a9eab4c"
+      "sha256": "751395572bac4fa236c9319a99118814d24d0e0e86cb114cef1bbdd885e9c236"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -3299,7 +3299,7 @@
     },
     {
       "path": "specs/README.md",
-      "sha256": "9fb5b8d531051479af0ff1194f210be84a3911a0a11e8353309ff46e575feb32"
+      "sha256": "1fb3b0009b52879a0cf083a1d5ecfe4c78dc061c1c8532a12c5684b8b89e8f66"
     },
     {
       "path": "specs/grc-9-v4-spec.md",
@@ -3867,7 +3867,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8-evidence.js",
-      "sha256": "8b837cffca7c64e44644c8269ca1252cee99e7875bfe5384bda10ef871e9c3ae"
+      "sha256": "c994f8a29f763bc4df830b87bbfafac09510fda96b8df48d656713e95dd7e644"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8.browser.mjs",
@@ -3875,11 +3875,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8.js",
-      "sha256": "4581c50ceef1087c5289e351b41d7c1cccef535414ed9bc29946847998981a8f"
+      "sha256": "c3fc53db42354e497565493828fce7b6715d18e7b823cd70fc95ce391bfaad26"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8.test.mjs",
-      "sha256": "d640983d132ee37d0699f0f31f20b15c690efa51906ca774ba529ff664b9a9ad"
+      "sha256": "6f4da3b881cd8d2ada753dcbabfaa737fac000a1d5e9d1cfb6d3f35a2dd48fd7"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/tranche8_query.py",
@@ -3899,7 +3899,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/tranche8_evidence.py",
-      "sha256": "7f94fb6d9040c5d192251f16571606f58a5db2618c2b61e2d784f56f8aaf4105"
+      "sha256": "0018d1a8670eb36bc56aeb0c4cbd5f91417918195b7b63a54f9576112d5ec00e"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/tranche8_source_reuse.py",
@@ -4119,11 +4119,11 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "c23d7dff5c41e41deb6ea4d90886e68d3d772a761809122f7ff6bfaa2b363a63"
+      "sha256": "fb750fcda8154cfa2180bea4d563827880c1420a51f2d0a5a5867bf988aeb56d"
     },
     {
       "path": "artifact-storage.json",
-      "sha256": "15f8be1fbdf3171eae473768d3c9edf0d96a1e25f0a4eee60a2639fa722bf06d"
+      "sha256": "40dba171067090d8e6c08026a60194b90ddc623caaa82d39cfe5ea5df48f36c2"
     },
     {
       "path": "docs/reference/EvidenceStorage.md",
@@ -4423,7 +4423,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/tranche8_retained.py",
-      "sha256": "aad8d940e2fe39c1706b25f3e912f49a130bfd4f2fa54122931caf0a234e517e"
+      "sha256": "868d27d9c81c7303cbc689b0df50610fa188cb6bc23d93c4fec1a2f2378415c1"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/tranche8_validation.py",
@@ -5208,7 +5208,651 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p984f_apc_surfaces.py",
       "sha256": "c24808333f2252a5d969fd81404de20ec4c4eb29703921d7402565d00485c25a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSInputs.json",
+      "sha256": "6704e0b7e88dd1882bdaf9c33efa3ae41bb50243dd63dc9d8b2bcb23f7b667ee"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSPlan.md",
+      "sha256": "59e97792c3f9258f8009bd33060f25b5ae069e554c5319e892f7eb35ee578899"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSResults.json",
+      "sha256": "371c3c24b2d03ec3d1093e58c7dbac71692d1dffe947756c5a9aa3b9d284b020"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSReview.md",
+      "sha256": "8846a32f33864afbe718bf293d3323db923fe86c1cd52af80c39250d7103ac1a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cos.py",
+      "sha256": "4d4badbca2875a301526d8239e7454eb07896cb3b8fcc8b7ab2674c66843507e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cos.py",
+      "sha256": "d9a7609f5bdf3337d24327ad089938a45450247a3520bf006151bf662b4907db"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cos_surfaces.py",
+      "sha256": "c8cec106e1f10afd575eda72bf4f97bd7f46309226aef1342e4ca19c2983142a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsInputs.json",
+      "sha256": "82f32adb6b551aa5a955f631010f9a6937ff757a528a0f4d6b46db8f920a9dda"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsPlan.md",
+      "sha256": "cac8de1f42cdca7c25f4564df825719c0220670aec590c5f2e580e52c29e278f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsResults.json",
+      "sha256": "45ca2fa88ad865612af6a546a2226dec4058c5f8d68b65a7bf51be9cff36f95d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsReview.md",
+      "sha256": "279e986f9631dbf33e6992073da60616a9ed69bf658b84d5353ddfb1d29993f0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cos_bounds.py",
+      "sha256": "d9544cddd7ecb1babb3629c33681892982725b0387ddc099723ab4ac49c26e39"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cos_bounds.py",
+      "sha256": "f84df33548a7502e92c34d82b557665a887d23c70f017f436d104624baf0e794"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/README.md",
+      "sha256": "1a104ab0daf59b1e598fbcba10a991766854c6e90c22fb996707603672fb2ed6"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_block.json.xz",
+      "sha256": "b9b117e039dd48d205b19a13436da0e59bb999aa85f1c2a6c5b9a07f196d6d31"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_condition.json",
+      "sha256": "1af0b24180b08cb4fa708090e6de77ad49dd2ac5c2680681eac7c5dc792bb68f"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_dixon.json",
+      "sha256": "d03b870fb522a07ccee8d3142a8578b998072a91fe011c193254765bc58e4828"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_identity_condition.json",
+      "sha256": "6b5d6a0df094867e4ad73806c3cd9eb681e07821e392cd9eedd60bf2de7058ef"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/direct_source_predictor_prepare.json",
+      "sha256": "7d79bf40ce3fd0c73ef37bc2fd2fd815d193576024c8ba7467ad2f7d0fc06114"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_exact_direct.py",
+      "sha256": "4a01a4df6704a49d75e8cd954c749cfe125c0cf639065f1f198eb778371111a1"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_identity_condition.py",
+      "sha256": "77d4ed7f766c362f8f04da4d347608643b0ffa3be72d12573d130ab94d4080e2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_exact_direct_probe.py",
+      "sha256": "fd4f2b168592e0640fc39096da669aaac232cc3284c6b1af83f816d7295865c5"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/exact_policy_predictor_probe.json",
+      "sha256": "9e6a3c0d50ca23078d4a30b3407d328bf700d6c838e8fccf2aadb39e9e70c6f3"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/resolvent_condition_probe.json",
+      "sha256": "b032591551d280fefacb818855ef340ac6a6197f32a30ea5042b7c865f90229e"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_resolvent_predictor.py",
+      "sha256": "c47fb358282c71e1776ed7a0bcf016c44f309e9f65eccc0c9a937e94bb0fe0e1"
+    },
+    {
+      "path": "tests/models/test_grc_v4_resolvent_predictor_probe.py",
+      "sha256": "f2680d5b8b91e8fcc31d1cebb92a75af9b7149e0c87bf3350d46a4e17b283ae2"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/exact_policy_os_pass_probe.json",
+      "sha256": "f7500630e5c5817eaa344459a39b7f65aed675f1bb4561ef94a784637619e6b4"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_os_pass.py",
+      "sha256": "0e1a5076f594c4c99d8a47ec84b078aac2b06b999e1db9efd10d39ec9e1be876"
+    },
+    {
+      "path": "tests/models/test_grc_v4_os_pass_probe.py",
+      "sha256": "d1f5a6a84fda8c4a7c6533336470d8e3dd77f0d50c49179c091ee06523f62878"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/exact_policy_hodge_positive_probe.json",
+      "sha256": "f55559af3183b91f8988176d616db2e997d4ff9f8f557bddc9fa71b107716e6a"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_hodge_positive.py",
+      "sha256": "4cb536daa119ceee9a4293aa8b5ca633468cad91119cba58f10d268a33112be5"
+    },
+    {
+      "path": "tests/models/test_grc_v4_hodge_positive_probe.py",
+      "sha256": "d2c0739f54602fb02f9653603d6cd39496397872c4ea953813333bf0082568c0"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/arb_policy_os_pass_probe.json",
+      "sha256": "f2d66087c73f90fb7384ea9028e19f87fc5dc6ee7bd64f3d2ab2268c3d510986"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_arb_policy.py",
+      "sha256": "b172f05afe83133f58258d9fe953ca750473e2f6f3e92515458cfb9d9be101b6"
+    },
+    {
+      "path": "tests/models/test_grc_v4_arb_policy.py",
+      "sha256": "802fbba655c3e42f7c910197941e95500a7e212b71ef8f1eec45b6a89b47d9de"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/weighted_split_os_pass_probe.json",
+      "sha256": "28f6dfc88ef2481e41af58fc944dd6f3dfcd3a0d897b1507f97abaadd2a78fc0"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_split_certificate.py",
+      "sha256": "30855c9692aa11c2b433b851e403c1c60e1d29422dafc816afd1c25074d65874"
+    },
+    {
+      "path": "tests/models/test_grc_v4_split_certificate.py",
+      "sha256": "7862cf9714b0d6b92a54442d299d00c6f7b44e1b89d3812644e527f5dfe17229"
+    },
+    {
+      "path": "implementation/corrections/GRCV4-CertifiedNumericalPolicy.md",
+      "sha256": "46b2548162de47c532e2da1348dd712434e5ba5cebf61e8f6f08244cfedb7dd4"
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/certified_native_os_pass.json",
+      "sha256": "3b4cd40be2df8c77fe52167970e1b33f8dd3d8ca3e52d98395448e9f48939215"
+    },
+    {
+      "path": "scripts/benchmark_grcv4_certified_native.py",
+      "sha256": "c4f618e06481ad037562eea41b8bab8e040d1360e5e6d61710a6024e871cf534"
+    },
+    {
+      "path": "specs/grc-v4-numerical-policy.md",
+      "sha256": "5ac3fd66888ebe2233b3ac898d07d49769105dc219a45af21554ccfd93afcf7a"
+    },
+    {
+      "path": "tests/models/_grc_v4_research_sources.py",
+      "sha256": "0a374bc8630f80e1efb12e07301b0fd5bb465c88b5b7fca11b5728eff77dd86e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-current.json",
+      "sha256": "b87740777122259ec3e9c05d08e066e521cd7c22b2f71ce73b5ecbf4028f91af"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/source-reset.json",
+      "sha256": "a79cf7134db57de9b9784f11d2bd61f6c37952840e15119edb1ff1c7544f8f8e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-current.json",
+      "sha256": "94961fbff7c660e095befd13da742364aaef078ccd6cc9a4fbe6b58813bc8929"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNative/target-reset.json",
+      "sha256": "08619442900f2427a1bfe54e457f7df7a62c6d46c3ffb3417ab0b0ac2a8af3a3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeInputs.json",
+      "sha256": "1ace3520005e441e8972ec4f7100ebab3683d662c0343b5e155167c7c9a71d02"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativePlan.md",
+      "sha256": "b4171105c4dc24afe42c67a4caaaeeb4f451928aa45eaa09af4ce41374b2fe4e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeResults.json",
+      "sha256": "68d61125cd69db6a2a2a8766fa015f221db8f8e92ac92b077663fbca0fad55ff"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md",
+      "sha256": "944882be5959c41ca022125e2f7232ca28ffc06372648ec87f4d3fb1b9d18e32"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cos_native.py",
+      "sha256": "f45248934786ea7c0a8d1d068e0d7377df2ac142810f52a7eb1a886b7c0e5e5d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cos_native.py",
+      "sha256": "22ce0db966f838f045f257072354949de66e3ed80db54982324e93d64808515f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigation.md",
+      "sha256": "b2991fb5512b7c9db2e26eab230d69f0c9991c33436b834a8eb8a1670581265e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigationPlan.md",
+      "sha256": "dd4937bf06c2547b298fb2de7e5b57ad776691a2a1441e03683c729a4bf51320"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigationResults.json",
+      "sha256": "4cddc0df1b18132df92c181f93a508be9f0dd148b0b97c73cf373ef519e018f0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_investigation.py",
+      "sha256": "b7ab1106122b5cd6463edce6e66740c73976cc2e06116c3555896b7cf1a013c8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_investigation.py",
+      "sha256": "7d3d0769d0d9bc33cd3382e225a9a3fdbc2c1ae022696aa60f22a0994de02825"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_surfaces.py",
+      "sha256": "4f0ef4effd8eea6cffff8d06662374191c8967a631cb2c30528bede269fee9d7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIContinuationBounds.json",
+      "sha256": "01df5c1efaf668bb534231095345bc711e6bc549e5ea3b883739e73fc375bf02"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/source-current.json",
+      "sha256": "3534811a7422164b4bfa44f772ab57437e66c149d9fd995b88bcff0affaae685"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/source-reset.json",
+      "sha256": "dcb2cc399f74f7141928982dc70392899bc29565ae356215b1cc96fd4ad59c28"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/target-current.json",
+      "sha256": "7bf3d5d05a0d7c9dead11eee3c6b87588bd2c031b36edfe83f40db63f164319e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStaged/target-reset.json",
+      "sha256": "d36b3c6dc7bb78a2819a40829a60654715a37825ed06b7857d6d216283c390b4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedPlan.md",
+      "sha256": "8f87961a84596b34fc51a72c857ff8febbadfd1b2095de2c271523fcbaa92753"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedResults.json",
+      "sha256": "1c1b37ab39de41cd12a7f1fc434fb45de8739abdc7d90401afc307fddb72ea78"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedReview.md",
+      "sha256": "b0a94e381d662daf9f8d3d4cb8cc442912e247117b4f7137ee8dc0e7b1c50294"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_continuation.py",
+      "sha256": "2cfc74d2502befcc21e4248195b956deacef1f75822ee605e007c7366e70878b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_staged.py",
+      "sha256": "579268ad06f6fadea0f041c076a1494c15c64a89e2c8c12c09db1c4ac24aea6d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_continuation.py",
+      "sha256": "73d99fe16fcf3bfc715b4f8a22836c762164ed0f4f39281894da54ad9ec11ddb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_staged.py",
+      "sha256": "ebb20fc152a192e7e7687bbe7503ae14cd9676337c10b62ed6d8bf542b56141d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_staged_controls.py",
+      "sha256": "cea0bf999c3fd47ee42f50805ca91c59f37c479e7d5e8117822181980ad83810"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibility.md",
+      "sha256": "4dd14f5d26bbc32c0818ac0c92e6e111090edf383bd70710bce5f3237c61ae31"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibilityPlan.md",
+      "sha256": "8bb8a75b389f795a075d07369dd43f7d235f0ede98e0b46c1cbf4411dfd8aeb7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibilityResults.json",
+      "sha256": "aed82b3aa38ddc67297d3d1b2f747810b26c82df6ccf839845f5379b9f136773"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_feasibility.py",
+      "sha256": "5194f1b61e892667fde22ff9984844da3384dd016327da300072ff5c0baeebbc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_feasibility.py",
+      "sha256": "ae79fb01b87f095e279f3b6c75081c9e78e209795cc94edd97773d3d78eb3ae5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure.md",
+      "sha256": "70b1a26d75c3122cda4a0f3d3810828f4b14b7f917d18b41073f5705465f5861"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/source-current.json.xz",
+      "sha256": "9868cb981bf35675fb20687183795702e34d88237a579a15246030bd9afffc34"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/source-reset.json.xz",
+      "sha256": "723e825d5c9940364e4c5f721cc3861b151b291bbb1cb1925f286df8067f355d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/target-current.json.xz",
+      "sha256": "905efd6a9972e24d0e60bbd9c84c1bbe7f1e74efcebab90fddc4e1396ff43196"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosure/target-reset.json.xz",
+      "sha256": "61928f0e01f9b4faa3a7e8af5523f7e18b44eea4890743bf7301ab063146fe5a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosurePlan.md",
+      "sha256": "f0a6ee755e24fd010f5e8fe78309b89e5f4eeb0bed485449f4b8cbe9fe44b503"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCIClosureResults.json",
+      "sha256": "afa3842bde3bafbd2e4eb67a90522b40a86434644f6fd6e8bff6326d6be51f2e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCINativeCertificate.json",
+      "sha256": "4766136e554c4aa340fee0bb2bac27b2f93fb695db0298b188ee3fad55d1848c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCINativePlan.md",
+      "sha256": "1af932ec4b7a184329b7447415516ef8826fdb9a19405397b13f4e509b65c0d6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CCINativeProbe.json",
+      "sha256": "2bbdb7835ebc650d7a78b70720dcfe060de58d9d31255524de0765621afb278b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_closure.py",
+      "sha256": "e3e20404a3beb4e3234e9449f50818d3cd224d6a39a8b71f53c3e61912e781eb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_closure_check.py",
+      "sha256": "2d36804228de800f528eb1104c355aac02a842c1b3771fc5e13528c216bfef3b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_native.py",
+      "sha256": "67752c22f3f878a2e6fd88819620a4b519258948ebe6af07a19e30a6513a3fa1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cci_native_admission.py",
+      "sha256": "7b07a97ce529da8226121a4707697892c6f66b0704c63f82ba0bbb60a346ba31"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_pre_ci_interval_sources.py",
+      "sha256": "7d8faca54f58405265b3f1ef82703742410ffa8f0f256f6deef5b94e329f7995"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cci_closure.py",
+      "sha256": "1ac96c47174fcb30725ed0aa3852e2c9c2af0471867d7a1f63f4bf55a44cd957"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md",
+      "sha256": "5fc3f8aea6b60f9e3057238efdb2e8a000f2668807b19d6c30900349a3d57581"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigationResults.json",
+      "sha256": "4a8bc6f7c3619e7b36177c622b0e76ba4c942c632df0f6575c293b1787b90b79"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_investigation.py",
+      "sha256": "31b5c76b3d0b9199f25d8ce927ae455618a1baf12ccab0f70bbd8bff518a0993"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_investigation.py",
+      "sha256": "ec6a1c2d6b8537a1bc9e8170bc39a1a2fdebabb0507ece0da0b2ec18df7db81d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_surfaces.py",
+      "sha256": "e9b298cbaa998574d339e89e843c9145c229647099fbe4e8759adba8814fc269"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md",
+      "sha256": "9fad6e8b370c5baba01323852d78fc6acb2b71efdeaade28c95df5723ff02f85"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityPlan.md",
+      "sha256": "485cacdb747816468c2c55a2dd4a6881856d0c56260660da99713422ddd7f253"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibilityResults.json",
+      "sha256": "5892c2c5a9cf2f15b9ffe4a22d6fbe7fd080544f2b174aae93a1be3e340d8e4f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_feasibility.py",
+      "sha256": "28bfe6a9543bb67e13b5aef534577dac178e976548f2d22b15c7db00ebf29549"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_feasibility.py",
+      "sha256": "d0441b3c9e60f18ed4d030a6754ad50ca0f9665e9b69d47c6f09c6a985eb50f8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md",
+      "sha256": "491192f320c14f7e50dcf504f7ea30fa95632c7755b81c6067b9b118946d187e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedPlan.md",
+      "sha256": "2cb3b2c606103b567650eb388debfbcd745df774c2154107eb63ddadf45e9291"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStagedResults.json.xz",
+      "sha256": "b3ce5cd335921033cb5fadad3c2724930923abb54215e7e977c525d18be3011a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_staged.py",
+      "sha256": "9deb9304333f49e13a04b363d0c24443044b4df8521f908f6abc579e7823a9b4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_staged.py",
+      "sha256": "19746d14e28641e917269538e6fe90bff5ac5ad80a0fce7f335c793a478365b2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md",
+      "sha256": "af69c628a18043426938dbf7bed2c220ce8cc2998668014b53f17c7774056a47"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINative/source-current.json.xz",
+      "sha256": "0ca3b8741aad62b527ff785dd855c1a3a1c10e2adfe3bef967c0bc4e77371794"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativePlan.md",
+      "sha256": "7ba5b2dddf358507e9d3259b46a35fdff845e99621fb902e585182febd625e2d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeResults.json",
+      "sha256": "4bd971114c0f3d9b21130f14b33c9bf8296d3fe95bd128fd2daa4d7a3d8115b8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_native.py",
+      "sha256": "dcb67b4e3477e89f76ac9c0342150422ed47a547e6c8790e0bf94aa762065106"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_check.py",
+      "sha256": "d5173b435cfb8f2f29fe73d00e8687ce496209c6b5fe1936c286a704f925c4a3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_native.py",
+      "sha256": "66426a6864d282fbf35ad81b04582e9d8eac7f826f21d00c0d313fa90bb51d15"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md",
+      "sha256": "5971110714a0c5f830a450f7d2897032842ff70d07681c28951204a5773c7940"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz",
+      "sha256": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz",
+      "sha256": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz",
+      "sha256": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz",
+      "sha256": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorPlan.md",
+      "sha256": "9c6ad8120ea8835e50c5a03a56fa62e6fb5b06fa6ab5e2f7ecdcf549a8b45506"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorResults.json",
+      "sha256": "dac0903519e9b842ce16f37e94cbff3d09f38ab4dd8fe8ae9880851e39e06b12"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_successor.py",
+      "sha256": "50b9eec43ea97b10bf3de16a060924a883f3797e534dd65e0d4c60279b21c8b0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_successor_check.py",
+      "sha256": "078a34de1ac47e1eafbec070c5925cb45553a2987d2a913f0ba74cdbfbe75a8a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_pre_aci_residual_sources.py",
+      "sha256": "71323c0db80f24375d87f8e26822cef3aedbf5502e10b4c4ab804be05ba399bb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_native_successor.py",
+      "sha256": "9e6197ec37c5d6e589c22fcbcf17f73627c24a454ae64293dbe905c00fe888f7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigation.md",
+      "sha256": "9d865d5491ef35a0b460a7037f0f7701ea0c70a87a42fbc4a5166983f723d0ba"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigationPlan.md",
+      "sha256": "c6e65f569ad9b3d83b91b8c140a96c73430be92fc32b2c5ceb4cb2edbc9301b4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigationResults.json",
+      "sha256": "5c1201b1135920cea1a5b0bce7dfdc46032cfafcaaa522f45527b9d70a0799c3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_apc_investigation.py",
+      "sha256": "b2e54c9b8093a9126470b0fae5ebd71280c65a57a514330e57000825c469e1d1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_apc_investigation.py",
+      "sha256": "4eed2e789cd6e7ffdde117c176fbb651f916ad77660f88d2695cd30d0fa5c839"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_apc_surfaces.py",
+      "sha256": "a87fffd4d34f6b8a2f2afe305df20159820283a8b510b6b44c6711e1cf974efd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibility.md",
+      "sha256": "b84079f6722251bba76eb2fb139122417b702d7de1ac7b156176f9b144cfbb80"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibilityPlan.md",
+      "sha256": "db84eff81835994671d218db784f55ea4c4fe628edfd790b3965af4ce021b702"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibilityResults.json.xz",
+      "sha256": "ce0d8df18806e5d3930c6412cd853291adde26a9a97de0034d215c34aa7eb3b7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_apc_feasibility.py",
+      "sha256": "b39607a5680cdbbfdfdb8ab5442a3256d64b82b45a93acb54ea02368205df68e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_apc_feasibility.py",
+      "sha256": "ae7f8ccde167cc81ca8bb61d4f7dd9b1b59b5b294cf57472ae0f1056bfc8b3a3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCStaged.md",
+      "sha256": "5299a933ee87e18027d6ff221cd3a6abe023ab5b3681bfa9b6c67966c3e9c3d8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCStagedPlan.md",
+      "sha256": "1e15755ebedad8976aa6af8eefb95967af7f132634bb81f8964244c4958e6df9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCStagedResults.json.xz",
+      "sha256": "17d33daf98c19fa4f1e67b4e89f9a097c516016fdf624c34c0cc747787f65da3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_apc_staged.py",
+      "sha256": "06371f464dfd0bcf22087bf8e6c14d9c593a1f690116a402e94ed9acb364c182"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_apc_staged.py",
+      "sha256": "0b681cadaa59f07869ac4502613e202675ffe1b24608b29ea0e73c383e58ab94"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCHardening.md",
+      "sha256": "1e40a1f375fd039b18db6ebba66b1d66a2868870d84935f248dc99d40bc1d93f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCHardeningPlan.md",
+      "sha256": "4c0e22841be8833913a1f8a5a9edf71ee60ebe209cd6c8ed0542abbe0a75a148"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCHardeningResults.json.xz",
+      "sha256": "4eb77d6c65a30f95d53313d9ba05272438dcb2aba995804bdc3c723d47fa2bc7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_apc_hardening.py",
+      "sha256": "d3444dab55701e0df2c4565882e3b7d9a4190ab9824249dbbecfc55b182e5027"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_apc_hardening.py",
+      "sha256": "a6295342ea1606228c4b28b3a4c0a953d2c92095c4d1c038725f3c0a18a27d27"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md",
+      "sha256": "6c5071b280fcb75d80ee38991a9cea09f22625b043d2141b6dffaf38d558cba7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/source-current.json.xz",
+      "sha256": "769fd740ef872ef1cc8409f8e9129b093fc6a34dd7090e8e8e091e323dcf6342"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/source-reset.json.xz",
+      "sha256": "d12038b61518dca02aecf2f6874fc774fa4f088c8080fd7ca17af648123dac1d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/target-current.json.xz",
+      "sha256": "4524aea2afd0a5d53ca4c17f6cbcb509a4374e8c7519cf182ee7a2549aa899ab"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNative/target-reset.json.xz",
+      "sha256": "11542b0e9b2c9944119a0721234e36c4d20f8d9bbe0139a0717f8e4612d40e4e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativePlan.md",
+      "sha256": "1248649340a5a6b49242ee7e78ab9c9579830acdfba8814bf7f88f0ca3dc8149"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeResults.json",
+      "sha256": "5bc33747e81512b977debc30967e8c04b06c704782923058e31d0095299b4bf6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeTargetPlan.md",
+      "sha256": "5e6ddb88b6046d2c71cfdb27f28c9741ffacc5bf645492e41b291dfdb6d3e084"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeTargets/target-current.json.xz",
+      "sha256": "d98c4175a2ff6ed0a68a8a8feee1358c47ea17c75ed182ff13f361a75206e78f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-APCNativeTargets/target-reset.json.xz",
+      "sha256": "02992d6603b625fd443f15c0d85ea23d88ca8dfc97aced52d4eb5813e4d9c62d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_apc_native.py",
+      "sha256": "1e594aad85c58eea2776d1a610c57e667648c2e6c7e98ef590191eab614be8e8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_apc_native_targets.py",
+      "sha256": "af4b79061ebda0945a804c961db1ef0cb29a2add99c20a1c36a1d98625d608a2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_apc_native.py",
+      "sha256": "e92a93ef37835a1b46e05bed49ccbe0a662e847cc15feb768680701ee5377d7f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_apc_native_targets.py",
+      "sha256": "d1768d798e87bdef4ad8428afe1f1127eea35ee7ca56eac0dbe9e66a046e1e5b"
     }
   ],
-  "record_digest": "0a8243652692a0c6cf173c1a4751fd3d612da765f503aa3734107e4a3e0a1452"
+  "record_digest": "e0b9243998fb4dd1e169dfe0aa891b1f626be713b95853907dab595924465051"
 }

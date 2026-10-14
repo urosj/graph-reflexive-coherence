@@ -1,0 +1,84 @@
+{
+  "schema": "p984g-cos-inputs-v1",
+  "family": "C_OS",
+  "cases": [
+    [
+      "source",
+      "current"
+    ],
+    [
+      "source",
+      "reset"
+    ],
+    [
+      "target",
+      "current"
+    ],
+    [
+      "target",
+      "reset"
+    ]
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_cos.py",
+      "sha256": "4d4badbca2875a301526d8239e7454eb07896cb3b8fcc8b7ab2674c66843507e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_cos.py",
+      "sha256": "d9a7609f5bdf3337d24327ad089938a45450247a3520bf006151bf662b4907db"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-COSPlan.md",
+      "sha256": "59e97792c3f9258f8009bd33060f25b5ae069e554c5319e892f7eb35ee578899"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/C_OS.json",
+      "sha256": "0d67f3c26289bd305ae5438bfdfaea638a328a977c632ac5fbe39bf83fa71d44"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3-AllRealizationsRequest.json",
+      "sha256": "ca9f070a087c0c12ac70760e43c604e785fc2e327a693c3b0054a0969e588efb"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-9-v4-spec.md",
+      "sha256": "588878aabbe35a8b0c6ae5019f1d1116ab2a3bf15168793e37468abcf369e082"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "e5dacafed23c96f84b046bd4ddb991a295e9ec18eab978478b4b31fd5f1ba18e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "c965f0ec7165ebe769cf4dd25ece98349213da1ae98f378acc0db8c1d231bebc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "6e951a7393f1c95f77acbf5de0ca0e11f42cf5acacaf098b123ba3b423af5a0e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    }
+  ],
+  "declaration": "unchanged_P9_8_3_larger_C_OS",
+  "exact_scalar_backend": "python-flint.fmpq",
+  "dense_comparison": {
+    "atol": 2e-11,
+    "rtol": 2e-11
+  },
+  "retained_budget_bytes": 500000,
+  "consumer": "implementation/phase-9-grcv4/verification/p984g_cos.py",
+  "ceiling": "independent_equation_preflight_and_exact_bounds_on_represented_oracle_operands",
+  "native_admission": false,
+  "native_steps": 0,
+  "native_events": 0,
+  "ready_for_8_4h": false,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "record_digest": "70623763e93a37649bec60a92642c51f3f96d65dcd7dc867ea9b50e46d1dccac"
+}

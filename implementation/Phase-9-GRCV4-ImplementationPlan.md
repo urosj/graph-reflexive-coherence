@@ -2783,7 +2783,167 @@ independent oracle-before-runtime workflow; successful cyclic native RG2b needs
 a separately proved completion. P9-8.6, public lifecycle and the performance/cache
 review remain open; no accepted support claim is widened by this preparation.
 
+The first C_OS `8.4g` increment retains four independent larger-graph equation
+points with FLINT exact bounds on represented oracle geometry. See the
+[preflight review](./phase-9-grcv4/tranche-8/P9-8.4g-COSReview.md).
+Its [pointwise successor](./phase-9-grcv4/tranche-8/P9-8.4g-COSBoundsPlan.md)
+derives an equivalent regularity decision without a discarded inverse and
+encloses exact-real and staged resource outputs separately. Preserve the
+original configuration and old evidence. Integration of the shortcut into
+production, native residual/charge/final-C admission and subsequent runtime
+feasibility remain separate obligations. Do not grant `.h` readiness merely
+from these pointwise certificates.
+
+The 2026-10-14 [production numerical-policy integration](./corrections/GRCV4-CertifiedNumericalPolicy.md)
+now implements the shared certified solve/conditioning, Hodge-positivity,
+C-regularity and weighted OS split route in `src/`, explicitly selected with
+FLINT. The [formula-level supplement](../specs/grc-v4-numerical-policy.md) records
+each replacement and its sufficient proof domain. Inconclusive certification
+raises explicitly; there is no inverse fallback or tolerance change. One
+unchanged 100/400 source/current C_OS pass completes natively in 133.606 s
+(140.517 s worker, clean exit), matching retained research stage results.
+Small complete A_OS/C_OS steps check strict scientific-byte parity. This closes
+the component implementation task, accepted by the user on 2026-10-14, **not** the larger-graph
+whole-step resource/charge/final-C, target/reset or other-family obligations.
+The subsequent [C_OS native bridge](./phase-9-grcv4/tranche-8/P9-8.4g-COSNativeReview.md)
+now completes those numerical obligations for all four unchanged source/target
+× current/reset points. Each passes a full production provisional numerical
+step, including final-C reconstruction; no live step or event is committed.
+Native outputs satisfy the retained staged enclosures. Exact resource-sum
+drifts remain visible separately from admitted represented charge. C_OS's
+prerequisites were accepted by the user on 2026-10-14; its `.h` lifecycle
+campaign and all other families remain separate obligations. Retained checks
+do not rerun numerics, and scientific readiness is not execution authorization.
+
 #### P9-8.4–8.6 runtime conformance
+
+For C_CI, begin with the [larger-graph investigation](./phase-9-grcv4/tranche-8/P9-8.4g-CCIInvestigation.md),
+not a native campaign or an extension of the old tree23 certificate. The four
+unchanged declarations satisfy an exact-real whole-ball self-map/contraction
+argument. Their reference pairs also lie within the declared residual tolerance,
+so represented joint-root error and feedback discrimination are separate open
+obligations before native root/poststate work. No tolerance retuning, C_OS
+acceptance transfer, ATC dependency or production change follows.
+
+The [staged joint-root successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIStagedReview.md)
+now encloses analytic current/geometry residuals at the represented reference
+pairs and bounds their distances to the exact root. Exact feedback is nonzero;
+source effects remain smaller than the whole-current rounding-error bounds.
+More importantly, both unchanged targets have a certified negative exact-root
+first-step resource at a zero-resource vertex. This excludes every positive dt
+at that fixed state; improved convergence cannot remove it. Derive a lawful
+source/allocation feasibility companion before claiming positive continuation.
+Original exclusions, native certificate/stopping comparison and `.h` remain
+separate; there is no tolerance, parameter or production change here.
+
+The [source/allocation feasibility successor](./phase-9-grcv4/tranche-8/P9-8.4g-CCIFeasibility.md)
+now derives that companion: shares (5/16,5/16,3/8), with an explicit source
+resource deficit 2^-10 at node 0 compensated at node 60. Allocation-only passes
+target signs but its old staged source trigger fails at zero; retain that fact.
+The full-law successor bounds both initial and source-postbeat transfers with
+positive first-step resources and strict source row margins. The actual event
+uses live postbeat current and unchanged reset; reset-as-current calculations
+are controls only. These are conditional exact-real research results, not native
+stopping, represented charge or lifecycle acceptance. Next investigate native
+certificate/stopping compatibility on the named companion before the `.h` run.
+
+The [native closure plan](./phase-9-grcv4/tranche-8/P9-8.4g-CCIClosurePlan.md)
+uses four source/target × current/reset numerical steps, with independent
+full joint-root residuals and explicit represented charge/continuity checks.
+Its shared certified-policy extension replaces CI analytic interval matrix
+products/inverses, not physical laws, root tolerance or iteration semantics.
+Old research and C_OS execution bindings remain historical; current native
+results are a separate successor. Scoped numerical closure still does not
+execute `.h`'s fresh postbeat event or multi-step continuation, and does not
+remove the original negative target or feedback-versus-rounding limitations.
+The user accepted this bounded C_CI prerequisite chain and numerical extension
+on 2026-10-14; C_CI `.g` is closed and eligible for `.h`, without executing that
+campaign or closing other families or the parent checkpoint.
+
+A_CI's [larger-graph investigation](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md)
+proves all four frozen joint roots in the declared ball, without a native run.
+First-step exact-real resources distinguish target current (positive) from
+target reset-as-current (negative at an initially empty vertex). Retain this
+history-sensitive exclusion. Next derive both-role history/allocation feasibility,
+then establish and review a staged full-joint-root oracle before native admission,
+writer/final-C and fresh-trigger checks. Do not borrow C_CI's companion or ATC
+authority, relax tolerances, evolve reset during events or infer `.h` readiness.
+
+The [A_CI feasibility successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md)
+derives the allocation from A's weighted-baseline zero-vertex inequalities and
+checks the full law. Allocation-only retains a missing source trigger margin;
+a separately identified conservative source shift restores it without changing
+either W history. Interval-input joint-root, continuity and logarithmic-writer
+bounds cover live-postbeat transfer versus unchanged reset, with positive target
+resources. The [staged joint-root oracle](./phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md)
+now independently passes both analytic residual stages on all four prepared
+cases, using fixed-precision rigorous Arb lowering with certified binary64
+rounding. Full current/geometry digests, exact-root error bounds and separated
+feedback coordinates are retained; source diagonal erasure and nonseparated
+coordinates remain explicit. Review this research result before native
+certificate/stopping, writer/final-C and charge checks. No native execution or
+`.h` readiness is inferred. Initial declarations and exclusions remain intact.
+
+The [A_CI native investigation](./phase-9-grcv4/tranche-8/P9-8.4g-ACINative.md)
+retains a 600-second source-current timeout, not a numerical rejection; three
+other large cases remain unrun. Small native writer/final-root parity passes.
+Before additional large executions, close two shared implementation seams:
+analytic Hodge inversion still bypasses the selected certified interval route,
+and A's nonlinear exponent collapses a potentially nonpoint baseline enclosure
+to one endpoint. A conservative-widening counterexample is retained as an
+expected-failure inclusion test, not falsely reported as conformance PASS.
+Correct and document those operations, preserve historical bindings, then
+resume native full-joint/whole-step checks without changing the scientific witness.
+
+The [corrected residual successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md)
+implements both replacements in the shared CI evaluator, with explicit policy
+dispatch, full interval square/exp/floor propagation and no fallback. The legacy
+point route remains exact. The spec records formulas, assumptions and failure
+behavior; 97 focused core tests pass. New native runs are separately bound and
+compare whole selected points with the preserved oracle, including fresh final
+C/W. The old timeout and accepted C_CI executions retain their original source
+identities; they do not become corrected-runtime runs. The user's 2026-10-14
+split-commit instruction accepts this bounded A_CI chain (`16f10f10`, `642bf731`).
+Its `.g` prerequisites are closed and eligible for separately declared `.h`
+work, not executed `.h` events, a uniform domain or aggregate closure.
+
+The [A_PC investigation](./phase-9-grcv4/tranche-8/P9-8.4g-APCInvestigation.md)
+uses its own four unchanged larger declarations and PC whole-chart proof.
+Its carrier domain passes; original target reset continuation fails at an
+empty resource vertex. Retain that exclusion and the exact leading allocation
+constraints. The [separate companion](./phase-9-grcv4/tranche-8/P9-8.4g-APCFeasibility.md)
+derives (1/4,3/8,3/8) on the first strict dyadic grid; a charge-preserving
+1/1024 source shift to the farthest node supplies robust postbeat trigger
+margin. Interval-input PC current/history/held-source norm checks certify
+positive targets for initial and postbeat-transferred histories. Allocation
+alone does not certify a strict trigger. Keep live postbeat current separate
+from unchanged reset and explicit whole-carrier loss. Represented two-writer/
+final-read evidence must use the actual non-diagonal updated source carrier
+before native prerequisites. The [represented successor](./phase-9-grcv4/tranche-8/P9-8.4g-APCStaged.md)
+now completes all four prepared reads/writes/final reads and focused pressure.
+Source carrier and Read-Back effects resolve; newly created target Z is nonzero
+but its first-step current effect is below represented error. Native comparison
+and charge admission remain open, with this limit explicit. No CI root
+substitution, borrowed small-graph witness or implicit `.h` readiness.
+
+The [carrier hardening](./phase-9-grcv4/tranche-8/P9-8.4g-APCHardening.md)
+binds full final geometry to stored Z even when current cannot distinguish stale
+reads. Its separate 7/8 inherited-history companion is selected by sensitivity
+subject to all ten empty-node baseline inequalities; full-law checks resolve
+target response above combined error and preserve positive resources. Retain
+the infeasible 11/16 unconstrained selection and original unresolved witness.
+Next native comparison must cover this companion's whole point and both writers;
+prepared layout labels are not a fresh postbeat event identity. No `.h` promotion.
+
+The [native prerequisite comparison](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md)
+now completes four detached steps and twelve full PC reads on that companion,
+with exact oracle parity and both writers/charge admission verified. A checker-
+only expected int/float normalization required target-only successor executions;
+preserve those earlier failures and reuse source successes. Exact stored drift
+is not relabeled conservation. Production laws, numerical policy and tolerances
+are unchanged. The user accepted these bounded A_PC `.g` prerequisites on
+2026-10-14; original execution flags remain unchanged. Next is a separately
+declared `.h` event/continuation campaign, not a rerun of these prerequisites.
 
 The 2026-10-05 repository UX continuation adds a
 [configuration CLI and declarative inventory](../examples/grcv4/README.md#find-and-select-a-graph-configuration)
