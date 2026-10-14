@@ -18481,7 +18481,7 @@ export const TRANCHE8_EVIDENCE = {
          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz",
          "sha256": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
          "revision": null,
-         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+         "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
         }
        },
        {
@@ -18512,7 +18512,7 @@ export const TRANCHE8_EVIDENCE = {
          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz",
          "sha256": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
          "revision": null,
-         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+         "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
         }
        },
        {
@@ -18543,7 +18543,7 @@ export const TRANCHE8_EVIDENCE = {
          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz",
          "sha256": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2",
          "revision": null,
-         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+         "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
         }
        },
        {
@@ -18574,7 +18574,7 @@ export const TRANCHE8_EVIDENCE = {
          "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz",
          "sha256": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348",
          "revision": null,
-         "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+         "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
         }
        }
       ],
@@ -18582,8 +18582,8 @@ export const TRANCHE8_EVIDENCE = {
       "native_roots": 12,
       "native_events": 0,
       "committed_steps": 0,
-      "user_accepted": false,
-      "ready_for_8_4h": false,
+      "user_accepted": true,
+      "ready_for_8_4h": true,
       "known_implementation_holds": [],
       "native_prerequisites_complete": true,
       "scope": "prepared_role_controls_not_postbeat_event_or_uniform_domain",
@@ -18603,23 +18603,32 @@ export const TRANCHE8_EVIDENCE = {
       "predecessor_staged_source_revision": "cc7ea94095b3ba16c0db4cdf1300cf90ff9c6874",
       "record_digest": "9da130df512401532e9d0379d45b83763139e564d8336164bf0f4ebf2051479c",
       "full_retained_checker_rerun": false,
+      "status": "accepted_A_CI_prerequisites",
+      "original_execution_flags_unchanged": true,
+      "acceptance": {
+       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md",
+       "sha256": "5971110714a0c5f830a450f7d2897032842ff70d07681c28951204a5773c7940",
+       "revision": null,
+       "basis": "pinned_A_CI_accepted_corrected_native_prerequisites",
+       "anchor": "scoped-user-acceptance"
+      },
       "results": {
        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorResults.json",
        "sha256": "dac0903519e9b842ce16f37e94cbff3d09f38ab4dd8fe8ae9880851e39e06b12",
        "revision": null,
-       "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+       "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
       },
       "plan": {
        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorPlan.md",
        "sha256": "9c6ad8120ea8835e50c5a03a56fa62e6fb5b06fa6ab5e2f7ecdcf549a8b45506",
        "revision": null,
-       "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+       "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
       },
       "review": {
        "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md",
-       "sha256": "28a92d5269096c5ce9a2601a8c62aea2f46bf24f8e14fc98c3a5281b0777eccf",
+       "sha256": "5971110714a0c5f830a450f7d2897032842ff70d07681c28951204a5773c7940",
        "revision": null,
-       "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+       "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
       }
      },
      "native_roots": 0,
@@ -20272,45 +20281,45 @@ export const TRANCHE8_EVIDENCE = {
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md",
-   "sha256": "28a92d5269096c5ce9a2601a8c62aea2f46bf24f8e14fc98c3a5281b0777eccf",
+   "sha256": "5971110714a0c5f830a450f7d2897032842ff70d07681c28951204a5773c7940",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz",
    "sha256": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz",
    "sha256": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-current.json.xz",
    "sha256": "e99728d142b6e5cc3be0488068e7ddf4877dd4d7775b40da48e21d2566259bf2",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/target-reset.json.xz",
    "sha256": "515c4ac0ea8ee92a80050df12fb04b07e96f2c0a034818326c59fdd855425348",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorPlan.md",
    "sha256": "9c6ad8120ea8835e50c5a03a56fa62e6fb5b06fa6ab5e2f7ecdcf549a8b45506",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorResults.json",
    "sha256": "dac0903519e9b842ce16f37e94cbff3d09f38ab4dd8fe8ae9880851e39e06b12",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md",
@@ -20718,13 +20727,13 @@ export const TRANCHE8_EVIDENCE = {
    "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_successor.py",
    "sha256": "50b9eec43ea97b10bf3de16a060924a883f3797e534dd65e0d4c60279b21c8b0",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/verification/p984g_aci_native_successor_check.py",
    "sha256": "078a34de1ac47e1eafbec070c5925cb45553a2987d2a913f0ba74cdbfbe75a8a",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/verification/p984g_aci_staged.py",
@@ -20790,7 +20799,7 @@ export const TRANCHE8_EVIDENCE = {
    "path": "implementation/phase-9-grcv4/verification/p984g_pre_aci_residual_sources.py",
    "sha256": "71323c0db80f24375d87f8e26822cef3aedbf5502e10b4c4ab804be05ba399bb",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/verification/p984g_pre_ci_interval_sources.py",
@@ -20820,7 +20829,7 @@ export const TRANCHE8_EVIDENCE = {
    "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_native_successor.py",
    "sha256": "9e6197ec37c5d6e589c22fcbcf17f73627c24a454ae64293dbe905c00fe888f7",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   },
   {
    "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_staged.py",
@@ -20830,7 +20839,7 @@ export const TRANCHE8_EVIDENCE = {
   },
   {
    "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_surfaces.py",
-   "sha256": "b515e08be4f8ba8b4d58cc8835b4a806b94be3beaa0b17b544461274b52c41c1",
+   "sha256": "e9b298cbaa998574d339e89e843c9145c229647099fbe4e8759adba8814fc269",
    "revision": null,
    "basis": "pinned_A_CI_exact_real_investigation_not_native"
   },
@@ -20892,8 +20901,8 @@ export const TRANCHE8_EVIDENCE = {
    "path": "tests/models/test_grc_v4_ci_residual_policy.py",
    "sha256": "c2bdde04913e6ec39b60f18f6cf90e3c24f0866021bc68ab8902420c8298e968",
    "revision": null,
-   "basis": "pinned_A_CI_corrected_native_prerequisites_pending_acceptance"
+   "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
   }
  ],
- "view_digest": "48a5bf854e58ea1a9c488510f27ba206cb0f23f592b2a0c93634baa4e1154c07"
+ "view_digest": "f8d73336532d748c451d83a14baba0c9861fdc945a59fde5c0a7d6285a878ffb"
 };

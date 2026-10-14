@@ -25,7 +25,7 @@ LARGER_ACI_SUCCESSOR_SOURCES = {
     "implementation/phase-9-grcv4/verification/p984g_aci_native_successor_check.py": "078a34de1ac47e1eafbec070c5925cb45553a2987d2a913f0ba74cdbfbe75a8a",
     "implementation/phase-9-grcv4/verification/test_p984g_aci_native_successor.py": "9e6197ec37c5d6e589c22fcbcf17f73627c24a454ae64293dbe905c00fe888f7",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorPlan.md": "9c6ad8120ea8835e50c5a03a56fa62e6fb5b06fa6ab5e2f7ecdcf549a8b45506",
-    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md": "28a92d5269096c5ce9a2601a8c62aea2f46bf24f8e14fc98c3a5281b0777eccf",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md": "5971110714a0c5f830a450f7d2897032842ff70d07681c28951204a5773c7940",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessorResults.json": "dac0903519e9b842ce16f37e94cbff3d09f38ab4dd8fe8ae9880851e39e06b12",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-current.json.xz": "9039dd93d7f70bc79317f4d5c7ca129ed2f31332a52db7794c5391007a343626",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor/source-reset.json.xz": "bd2db8d8c4922827730ca50f40dbd08cce0af2ab2b7986e65e6bd8b329b0cb95",
@@ -65,7 +65,7 @@ LARGER_ACI_RESEARCH_SOURCES = {
     "implementation/phase-9-grcv4/verification/test_p984g_aci_investigation.py": "ec6a1c2d6b8537a1bc9e8170bc39a1a2fdebabb0507ece0da0b2ec18df7db81d",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md": "5fc3f8aea6b60f9e3057238efdb2e8a000f2668807b19d6c30900349a3d57581",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigationResults.json": "4a8bc6f7c3619e7b36177c622b0e76ba4c942c632df0f6575c293b1787b90b79",
-    "implementation/phase-9-grcv4/verification/test_p984g_aci_surfaces.py": "b515e08be4f8ba8b4d58cc8835b4a806b94be3beaa0b17b544461274b52c41c1"
+    "implementation/phase-9-grcv4/verification/test_p984g_aci_surfaces.py": "e9b298cbaa998574d339e89e843c9145c229647099fbe4e8759adba8814fc269"
 }
 
 LARGER_CCI_NATIVE_SOURCES = {
@@ -553,7 +553,7 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_A_CI_corrected_native_prerequisites_pending_acceptance" if name in LARGER_ACI_SUCCESSOR_SOURCES else
+                    basis=("pinned_A_CI_accepted_corrected_native_prerequisites" if name in LARGER_ACI_SUCCESSOR_SOURCES else
                         "pinned_A_CI_native_attempt_not_closure" if name in LARGER_ACI_NATIVE_SOURCES else
                         "pinned_A_CI_staged_joint_oracle_not_native" if name in LARGER_ACI_STAGED_SOURCES else
                         "pinned_A_CI_interval_input_feasibility_not_native" if name in LARGER_ACI_FEASIBILITY_SOURCES else
@@ -1603,9 +1603,16 @@ def larger_aci_successor(sources):
             and record['exit_code']==0 and record['error'] is None and row['root_evaluations']==[2,2,2],
             'corrected native completion')
         cases.append(dict(row,evidence=sources.ref(row['path'])))
+    review=check.run.BASE+'P9-8.4g-ACINativeSuccessor.md'
+    acceptance=sources.raw(review).decode()
+    require('## Scoped user acceptance' in acceptance and value['record_digest'] in acceptance,
+        'missing or unbound A_CI native prerequisite acceptance')
     return dict(value,cases=cases,full_retained_checker_rerun=False,
+        user_accepted=True,ready_for_8_4h=True,status='accepted_A_CI_prerequisites',
+        original_execution_flags_unchanged=True,
+        acceptance=sources.ref(review,anchor='scoped-user-acceptance'),
         results=sources.ref(check.RESULTS),plan=sources.ref(check.run.PLAN),
-        review=sources.ref(check.run.BASE+'P9-8.4g-ACINativeSuccessor.md'))
+        review=sources.ref(review))
 
 
 def larger_aci_investigation(sources):

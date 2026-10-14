@@ -269,6 +269,7 @@ export function renderTranche8(value, container, create = tag => document.create
       append(container,'p',`${research.family} corrected native successor: ${n.native_steps} prepared numerical steps and ${n.native_roots} full joint roots, two evaluations each. Both residual corrections are implemented and the original enclosure regression passes. Acceptance: ${n.user_accepted}; 8.4h readiness: ${n.ready_for_8_4h}. No topology events or uniform-domain credit.`);
       append(container,'p','Whole selected points, final-C/W roots and writer staging match independent checks. A passing represented charge receipt is not exact conservation of the sum of stored binary64 resources; the exact drift is shown separately. Status does not rerun trajectories or the full native-evidence checker.');
       details(container,'Corrected native cases and exact stored-resource drift',n.cases);
+      if(n.acceptance)link(container,n.acceptance,'Scoped A_CI prerequisite acceptance (original execution flags unchanged)');
       for(const key of ['results','plan','review']) {link(container,n[key],`Corrected successor ${key}`);append(container,'span',' · ');}
     }
     if(research.native_prerequisites) {

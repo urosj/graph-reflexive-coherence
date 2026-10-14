@@ -2441,6 +2441,7 @@ instead of stale fixed totals and opens any pending case details explicitly.
   Distinguish attempted work from verified completion and timeout from scientific
   rejection; bind exact-inverse/interval-propagation findings without closure credit.
 - [x] Add the corrected A_CI native successor as a separate view: full roots,
-  final-C/W writer/readmission, charge and exact stored sum, with acceptance
-  and `.h` readiness still false. Preserve historical timeout/staged/C_CI
+  final-C/W writer/readmission, charge and exact stored sum. The user's
+  2026-10-14 split-commit acceptance grants bounded `.h` eligibility; project
+  it separately from the original false execution flags. Preserve historical timeout/staged/C_CI
   source identities; no native or full-checker replay during status queries.

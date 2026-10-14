@@ -2957,8 +2957,10 @@ checker, native trajectories or interval root solves. No native closure credit.
 Expose the separately bound corrected A_CI native successor, not a rewritten
 timeout: twelve full roots/four prepared role steps after residual-policy and
 nonlinear-enclosure corrections. Whole-point and writer checks, represented
-charge versus exact stored sum, pending user acceptance and no `.h` readiness
-remain distinct. Status authenticates current execution bindings and pinned
+charge versus exact stored sum and scoped user acceptance remain distinct.
+The 2026-10-14 split-commit instruction accepts A_CI's bounded prerequisites;
+project `.h` eligibility separately from unchanged pre-acceptance execution
+flags, without event or aggregate credit. Status authenticates current execution bindings and pinned
 summary/case bytes without running the full checker. Earlier A staged/timeout
 and accepted C_CI executions resolve their superseded CI/spec identities from
 the pinned Git revision; do not relabel them as corrected-runtime executions.

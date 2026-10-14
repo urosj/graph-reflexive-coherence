@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — A_CI larger-graph investigation (2026-10-14)
+## Accepted checkpoint — A_CI larger-graph prerequisites (2026-10-14)
 
 [Investigation](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md): all four
 frozen source/target × current/reset states have a unique exact-real joint root
@@ -42,8 +42,13 @@ drift is reported separately from admitted charge receipts (source/reset's
 receipt residual is 2.842170943040401e-14; the other three are zero).
 Historical CI/spec bindings resolve from Git; current execution binds corrected
 sources. This is a production numerical correction, not new scientific law.
-No `.h` readiness, new claim/debt acceptance or general ATC inference.
-A_CI `.g` awaits review/user acceptance of the completed bounded prerequisites.
+The user's split-commit instruction accepts the bounded prerequisite chain:
+production corrections `16f10f10`, A_CI evidence `642bf731`.
+[Scoped acceptance](./phase-9-grcv4/tranche-8/P9-8.4g-ACINativeSuccessor.md#scoped-user-acceptance)
+closes A_CI `.g` and grants eligibility for its separately declared `.h` campaign,
+not execution of that campaign, new claim/debt closure or general ATC inference.
+Execution records retain their original pre-acceptance flags; current status
+projects the separate accepted decision. Siblings and aggregate `.g` stay open.
 Selected side-tool `--family A_CI --checkpoint 8.4g` recomputes cheap scalar
 bounds for the original investigation and authenticates retained companion
 enclosures and staged evidence without rerunning interval solves. Exact

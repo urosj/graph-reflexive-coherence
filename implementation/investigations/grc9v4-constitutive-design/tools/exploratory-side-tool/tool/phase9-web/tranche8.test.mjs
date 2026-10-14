@@ -22,7 +22,8 @@ test('A_CI larger joint roots retain reset exclusion without native credit', () 
   assert.equal(row.native_attempt.known_implementation_holds.length,2);
   assert.equal(row.native_successor.native_steps,4);assert.equal(row.native_successor.native_roots,12);
   assert.equal(row.native_successor.native_prerequisites_complete,true);
-  assert.equal(row.native_successor.user_accepted,false);assert.equal(row.native_successor.ready_for_8_4h,false);
+  assert.equal(row.native_successor.user_accepted,true);assert.equal(row.native_successor.ready_for_8_4h,true);
+  assert.equal(row.native_successor.original_execution_flags_unchanged,true);
   assert.equal(row.native_successor.full_retained_checker_rerun,false);
   assert.equal(row.staged_oracle.ready_for_8_4h,false);
   assert.equal(row.staged_oracle.interval_research_recomputed,false);
@@ -37,10 +38,11 @@ test('A_CI larger joint roots retain reset exclusion without native credit', () 
   assert.match(text(out),/native prerequisite HOLD/);
   assert.match(text(out),/expected-failure test is not a conformance PASS/);
   assert.match(text(out),/corrected native successor/);
+  assert.match(text(out),/Scoped A_CI prerequisite acceptance/);
   assert.match(text(out),/not exact conservation/);
-  for(const key of ['ready_for_8_4h','user_accepted','native_events']) {
+  for(const [key,value] of [['ready_for_8_4h',false],['user_accepted',false],['native_events',1]]) {
     const bad=structuredClone(evidence);
-    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').native_successor[key]=true;
+    bad.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_CI').native_successor[key]=value;
     assert.throws(()=>checkedTranche8(bad),/stale or widened/);
   }
   const promoted=structuredClone(evidence);

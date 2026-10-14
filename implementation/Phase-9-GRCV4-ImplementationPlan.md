@@ -2902,8 +2902,10 @@ point route remains exact. The spec records formulas, assumptions and failure
 behavior; 97 focused core tests pass. New native runs are separately bound and
 compare whole selected points with the preserved oracle, including fresh final
 C/W. The old timeout and accepted C_CI executions retain their original source
-identities; they do not become corrected-runtime runs. Scope remains fixed-role
-numerical prerequisites, not `.h` events, a uniform domain or acceptance.
+identities; they do not become corrected-runtime runs. The user's 2026-10-14
+split-commit instruction accepts this bounded A_CI chain (`16f10f10`, `642bf731`).
+Its `.g` prerequisites are closed and eligible for separately declared `.h`
+work, not executed `.h` events, a uniform domain or aggregate closure.
 
 The 2026-10-05 repository UX continuation adds a
 [configuration CLI and declarative inventory](../examples/grcv4/README.md#find-and-select-a-graph-configuration)

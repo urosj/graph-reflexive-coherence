@@ -3369,19 +3369,21 @@ the full ten-profile plan.
       and first-step resource bounds on the unchanged larger declarations.
       Target current passes; target reset-as-current is excluded at `extra/1/1`.
       [Research note](./phase-9-grcv4/tranche-8/P9-8.4g-ACIInvestigation.md);
-      this completed calculation is not user acceptance or native credit.
+      this calculation alone grants no native credit; accepted within the
+      bounded A_CI successor on 2026-10-14.
     - [x] A_CI both-role allocation/source feasibility research: derived shares
       (5/16,5/16,3/8), unchanged W, conservative source shift 2^-10; full-law
       current-postbeat/unchanged-reset transfer bounds and strict source margins.
       Preserve original reset exclusion and allocation-only trigger diagnostic.
-      [Successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md), pending review;
-      calculation completion is not acceptance or native readiness.
+      [Successor](./phase-9-grcv4/tranche-8/P9-8.4g-ACIFeasibility.md), accepted
+      within the bounded A_CI successor on 2026-10-14, not standalone native credit.
     - [x] A_CI staged full-joint-root/mechanism oracle calculation: four prepared
       cases, two analytic residual passes each, whole-point digests, rigorous
       represented-error bounds and some feedback-separated coordinates in each.
       [Research evidence](./phase-9-grcv4/tranche-8/P9-8.4g-ACIStaged.md);
       source diagonal erasure and nonseparated coordinates remain limitations.
-      Completed research is not acceptance or native execution.
+      Accepted within the bounded A_CI successor on 2026-10-14; these original
+      research records alone remain distinct from native execution.
     - [x] Bounded A_CI native investigation: source-current attempt capped at
       600 seconds, three other large cases not run; small whole-step writer
       control passes. Record exact analytic-inverse cost and a conservative
@@ -3397,9 +3399,11 @@ the full ten-profile plan.
       source trigger checks: four provisional native steps, twelve matching
       two-pass joint roots. Exact stored-resource drift retained separately
       from admitted charge receipts; original timeout remains historical.
-    - [ ] Review and accept the bounded A_CI `.g` research/native prerequisite
-      successor and shared analytic-residual corrections. No `.h` readiness
-      before this acceptance; no executed event or uniform-domain claim.
+    - [x] Review and accept the bounded A_CI `.g` research/native prerequisite
+      successor and shared analytic-residual corrections. The user's split-commit
+      instruction on 2026-10-14 accepts `16f10f10` and `642bf731`; A_CI is eligible
+      for separately declared `.h` work. Original execution flags stay unchanged;
+      no executed event, uniform-domain or aggregate closure claim.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.
