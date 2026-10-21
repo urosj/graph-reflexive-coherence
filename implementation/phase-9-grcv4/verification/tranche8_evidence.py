@@ -18,6 +18,131 @@ from contextlib import contextmanager
 from unittest.mock import patch
 
 from tranche8_validation import ACTIVE, validation_session, LOCK
+from p984h_pre_solve_reuse_sources import historical_view, historical_binding
+
+LARGER_RUNTIME_COS_COVARIANCE_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-event.json.xz": "3729e0f6073ad5d4d4a343fcd67bd7deae525eab26aeb5e0526cf4da14286e84",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-ContinuationInputs.json": "4d4f237b17b8a32c7843af0c42ec83c0e0dc1a2216b033744938166ef37fc6a1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-current-successor.json.xz": "6be62d7eefda01394ea181dfd4e29403524865e9b001a2fb64f74b08fc5192c2",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-reset-successor.json.xz": "f3b7f8f3dd635d115bed58f1f4a8c5796cb3d3b306472091c9832e9e8a74961d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-event.json.xz": "26011e3cf8f28d0aefd433e12a0144c39f57dbd1c40615c5be31874103440d73",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-ContinuationInputs.json": "ca85039fea88f6232a52de632ae7f1905207cc1efc4ffdb5563914fcaa0e1f75",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-current-successor.json.xz": "4350b0bc929ecb8e68db45c50d199f4d2ba57ec7d2939b06f7d1e0709598bf3e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-reset-successor.json.xz": "9ca45d9103f12776e29392b14371efcdc1e8d057bfb6d937c285a6d8d1fcd7d1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-event.json.xz": "58207a61f725707b83a36ded308b166884cd805b95a2feaae867dd0d24bafa57",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-ContinuationInputs.json": "eee2509dc16a3c8f22203dd014a0f81694ea7b591eb8a1e939a1f5b2e7addc47",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-current-successor.json.xz": "4ac5d04ae6fb0ee6d6d55abe7e79da7889f5ac59c494ef1d8634ad0eda09bdaa",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-reset-successor.json.xz": "0deab4cabaeffbfe31ded746c0fc9b3c8b676091a4595492ed8c6fb10cd00ecc",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-event.json.xz": "4579cee45554bf5a9f97b265c83ebc8abecec581e0dd84e339af5756d818ad3b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-ContinuationInputs.json": "a8696c22a1aea8897fe3cdd0c37f45afa5e823b8082d4be9892c2f5a3b62c1ad",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-current-successor.json.xz": "56c74991c7b190e917980f2df8440e6b06f3481cb3a822cff238b0a5db2bd1dd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-reset-successor.json.xz": "21ff43129a9b40c1220ff2a73c5f102c91d350e44703497f2b045b3d5dbce71b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-event.json.xz": "12d9cffe125b2532b7fc6ad9b27e67182127275d6ae3955bca9eafbd45aa95b0",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-ContinuationInputs.json": "3f2562ead769108f5c1c8d3500061da3fc0b8ff301c4af832581c62d2428ace6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-current-successor.json.xz": "196a49c429037b066d50d7e0a3edced982c9c58d7b211a8b859b98fd54fc39c7",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-reset-successor.json.xz": "37a219e1c15824fca9424b97b807ac047feb24744d25ceb3e01173b0ec2476b6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-event.json.xz": "8ccc6e340f0078b699d2aac0b54eab80e5b6dd0928413fcaaeba23c532a64d19",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-ContinuationInputs.json": "3b802898d3c987f005b980d55dc56c0207121f357078f9fa19f1c26829a9cd90",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-current-successor.json.xz": "8331cac20db0a01151f6a021bcd9d037a86a648199a4461e43724bb7520476f1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-reset-successor.json.xz": "9c2bc3b8b499ff02e2db34d95a539ac0726f9e0e115cdefce5ee6f8e964d5839",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-current-successor.json.xz": "4792e92f7ccb9cd1994127a72623d5a10cdc064842974da53f4e1f48b14abefd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-reset-successor.json.xz": "1b31491c03e463edc575d90d7e98652d58c9e74008eb6564e24dce42239e3ebb",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-event.json.xz": "2ba51ec443e2e5f3ded0cbd1dff41cb414c091c04a162539e9eeab84bd834321",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-ContinuationInputs.json": "929d43b262f7b9e62bdc2a224629b15cafb5cc968ced3aaa14b77393f3cc3b18",
+    "implementation/phase-9-grcv4/verification/p984h_cos_covariance_transforms.py": "ae8f39749909882a88768212573124a4e1a336263c6c92fcf824ba526b3d67fe",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_covariance_transforms.py": "7ca4a8284ccbdf32bf97f8ab87f59f9e8ce67ccf233a5fec1165b69dc4e4162a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-all-mechanical.json.xz": "62e22a250b03f7ade5af2e93abd23674824c793422ba71c0061cf7d0d74712d6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-current-successor.json.xz": "94a429add199d14401966de1eb115b05f5a99c3f3f72cd06cf285fb4601ff7f7",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-event.json.xz": "d1de55f32e6e2af2d1bfb02e74b2139174db703569315fca4fe831f77b2edf0b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-reset-successor.json.xz": "2bc11fd11e9fe8c5bbe082e04a78236f75412ca0f2afa58313d52866aafdf179",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceContinuationInputs.json": "243b2996248fb5c1a395745fad1687cafc78c550e6212c1eb306f7675a595f4a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceInputs.json": "fadf62b844b82dc5657902a381f5ffb2a29fe244c33fec6027e23d4981c58d10",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariancePlan.md": "a5d7e6f0e3b6c80e8ffce4d1204f07c36de9fbdcc0bfbb930a0221a3499eb4af",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceReview.md": "25d51f7b315ca194b617267ba4412d4a54e7e4fc1e07b5f34eacdb4932ec5c40",
+    "implementation/phase-9-grcv4/verification/p984h_cos_covariance.py": "c04ae175b9c324b769202ad7d429d597ecd841d224dafad5e24da2ef6c1f10ad",
+    "implementation/phase-9-grcv4/verification/p984h_cos_covariance_continuation.py": "083636c82d1e771faa567d8ee69dc9b71936f3b744349ef1b5abdfd38d134dc6",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_covariance.py": "0da1636c98248ecaf2434610727892b3f3d399806ac60b2b93077e85f9316f9f",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_covariance_continuation.py": "9a8baf0d54cf2b4e4c7f9b81ce3b238a41124ae7f8be04aaec065c68115c8b78"
+}
+
+LARGER_RUNTIME_COS_CONTINUATION_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984h_cos_continuation.py": "c4fa19e52783a43f29edbed3f5ff93aadcd960281c821e676f160467306a224d",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_continuation.py": "a892c5d5c0547c132ed3cc411625dc82d93d93788d9eadb5bfe531e7103e2f79",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationInputs.json": "8d2b2d6869321ff462f2aca6038d281d6383b432767de019ae84290df0a1d3f6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationPlan.md": "9e15dba4b57932b11d4179d1ff48547e4a203d52aa1def1d8bf9dd888450f557",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationReview.md": "cea40c0ca021736f4f25293564043befd8a03cf565acd9ed7f4b6a09b74213f3",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-1.json.xz": "aac8fe517fa1a3269c8df26cc6cf1b2a62808f2f475a04a37ea900351e11aceb",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-2.json.xz": "771c42177f13647073841afeb8fb4144d7e00754e80c5918b48fb4d58829f89c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-3.json.xz": "a76ad1768ccf29cc2adde2971c5448d7015f3ce6aceb52a1236fbf63fa34889c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-4.json.xz": "4d0f878348da8fbdfcd793c2bb408a2c71ad58e699e9f9093e34d2561b13b605",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-5.json.xz": "6c2ee0d975923d1314c58f92ef26c6937706b7ca5dc9e69e131c25cf7607ff79",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-6.json.xz": "3ef55463df87731b625d002e32f08097ba5194b152f76ec6a998dc21e5262f1a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-7.json.xz": "a6fe2c28be6298d14a5106934ae9aa2f308bf5e00521a5819c5d0663104f3411",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-8.json.xz": "40bf97dd42153cd5dec133484f0d4f46c83f637b3ef17febdab7686542840b61",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-9.json.xz": "78900df8eac2baf3a9ce9086beb56e31be660aebecf8c6997fd0c358a0238c97",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-10.json.xz": "2967e331fe0c4c5804acbff33bcf13a978c1bbfc1f429cb9b6751f7c4f75236a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-final.json.xz": "b0014e538954eef38e50b8eb661d74240d26c7c4c9c9d774368bb420eb492c02",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-1.json.xz": "1f36b82bfb14831ba0f10d7298a2a1b64b6624cf69e0934c64736dce1203917f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-2.json.xz": "c5b1f35ca6bbcb6d18e0b958158a3949a27d5b4b234d9cd202dcf2df6f682774",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-3.json.xz": "d0f80f4577791b7cae05d7a47fcb1d0b9b1d6d715929ab8f9e422515e9d7376a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-4.json.xz": "da5d1b60a1a274402ad12fb10a30a2fb60ecc2dd348f917a94c95a0e1c321e3e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-5.json.xz": "0ecbb3636489a3972d7a35f7a1bd6856eac7a6bc38598def2c6de6e1615815fc",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-6.json.xz": "710626878a41f713b1a4aca4c2b9462af706dbc3d24202ba1ccc44fc9c1fc80b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-7.json.xz": "5471ef3e75d7d0f1cb74d09e66634552d1ffa6039c112442d8de18966da5a43d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-8.json.xz": "e9e46645d25462e34e6341bd20ad6ca55c1834bbfe782335e47ec878392d16be",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-9.json.xz": "4fa124edd53b2308461e30c28aff93d8f3de975f2e03f71ba34f6738b8776181",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-10.json.xz": "a7f72f095cedfae2a58be6df5d427b2809f1c9e4c46f5c6df0d50b63352ada21",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-final.json.xz": "45ddc6c65905cebfc814027a5a045298212a700a5d42149c5fe14912a4b27b29"
+}
+
+LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984h_cos_event_successor.py": "a894879e6cbafeb8ca6be3aa141e5cf8844b230aaa8e935e8b1e679f8e84baf3",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_event_successor.py": "ac17afba53573f7e3b7317a76712973f1ac27f3d5fdc94c57c15e80043002210",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessor.md": "e180bb0927d0944d640884d7fba93fe56feab4764bc066e3327650b63d42c7a8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorInputs.json": "760c8a5321b31e4dd74a54ff407b36d1cdfcde43219b8797f456be4a2bee60fd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessor.json.xz": "ad5eae5df68cf2e5a877a4f5f3aced0681349d9d5c4d0f10b9d70a16d23c0273",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorReview.md": "e126010e0f4ebcba2f5c46fbeed223f00735c393c259e3192b4d5f81ee4fd6b9"
+}
+
+LARGER_RUNTIME_COS_NATIVE_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984h_cos_native.py": "c9a6c8aceeda4b2c4d62f7cf187a3654cbffdc84c10f57bf69167f59fd895a8b",
+    "implementation/phase-9-grcv4/verification/p984h_cos_native_compact.py": "366330ba65f441a61bd835458fac687d774b38533acd2a136d4b2f34ab224375",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_native.py": "44dca9feac554172b2668daca14a7cc3e01118d1d9dc1d45ff825e725be9f083",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_native_pressure.py": "cee8919de0e9fba56409f3c240d7cea7c545125bc7c708f4a2aac3de316b09a6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativePlan.md": "45af24edf3590cb4aaafb0c91f0c6cc6ab884f4cdca84ea79c290ce58d5f08d3",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativeReview.md": "3997226270bf34d2b403f80ec9585212ce276e59b42964e0993034d6586216af",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativeInputs.json": "e7b7412c8365b6d191e0e2824dd48bbd040a775d1f4017d873c824d263b5e28e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNative-prefix.json.xz": "f94d4c22e33d84ec4a2a4cc8906d2a2e6be9fd4fdc355015fef9b526da776366"
+}
+LARGER_RUNTIME_COS_PERFORMANCE_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984h_cos_read_profile.py": "b0d238d812d00f255171547cd3891b3b9991d0319ff08fbef0927b46d8297ada",
+    "implementation/phase-9-grcv4/verification/p984h_cos_solve_reuse.py": "02d3910ad64c14ff11f9457aa753451dd7222395bd4900533baada728901add0",
+    "implementation/phase-9-grcv4/verification/p984h_pre_solve_reuse_sources.py": "6d6835ef34194ff2701bdefa4b3617ad05f9a32b5a0316a46106457f8995caba",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSReadProfile.json.xz": "1f156e0908aece3ada4270c0d6318cb32c2f6239252909402a82859d1c955261",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSSolveReuse.json.xz": "560defe685be0f4355e4cfe0e2941be2ba933d712c24977b5a623dbf0cf4292b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSPerformance.md": "281961bee7dfc198a501d2e746d02d091121c7f64548375db6b40acdb73c5dec",
+    "implementation/phase-9-grcv4/verification/p984h_cos_scalar_reuse.py": "42e993702cf13c792468b53e159309d0a0faeab0e05bce5347cd725c8d8923a6",
+    "implementation/phase-9-grcv4/verification/p984h_cos_kernel_profile.py": "132a61b568e420b93a199b941a941adb340e913475bfd0f5dcff9786bf008ff3",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSScalarReuse.json.xz": "00b0245298e332860b54d209689cdc17e9cb882cfc587b80136bced51e39cbd2",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSKernelProfile.json.xz": "e4eee02846b1aa87f00f68badc213363d9bcde2b7a4dfbdb2cde83c796268733",
+    "implementation/phase-9-grcv4/verification/p984h_cos_dyadic_rounding.py": "94d73bf79c8426f512c6b7e2b9316cec7bbe7e8afc3c5c4fec96cca31e93fe20",
+    "implementation/phase-9-grcv4/verification/p984h_cos_dyadic_step.py": "c9f5b75b722707b95d4b4d0316c2825eb89912bd5b6c6d0f9f7c92fafd96b660",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_dyadic.py": "01edde6d23ab1c59811fe9a6e61678f6ea26766feba6f31cad63b6af05edec78",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSDyadicRounding.json.xz": "83680a3cca4c636c0716ebc4a354052d916dc5a4b9384ae79ecd523463294668",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSDyadicStep.json.xz": "0655afbe1bbccdd43c6f26cfaa9523dcc480a57cb59014e8f6ca67fd5e29dbfc",
+    "implementation/phase-9-grcv4/tranche-8/kernel-predecessors/grc_v4_certification-scalar-reuse.py.xz": "6dc00b344ddbbfd15bf404b1597de8797d418770d3acaef22b3dd509fef52905",
+    "implementation/phase-9-grcv4/tranche-8/kernel-predecessors/grc-v4-numerical-policy-scalar-reuse.md.xz": "718b3ee30829f56dbb3d00c5c97887b64095071c1eb4186989982c1c6a388618"
+}
+
+LARGER_RUNTIME_COS_SOURCES = {
+    "implementation/phase-9-grcv4/verification/p984h_cos.py": "38d509e3ef87170ef9260b6932e6353b344490fd43d8577e53081d10045b7d08",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos.py": "fe0a15f17e511c3bb1316fe32cbcaf69d14b98229e374d1d635d1972c89e3f70",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_surfaces.py": "e5cb8fc660e85eac587d7cc4aafd3b9aebfd4777e0e0deea4df1f5a3adeb1e5e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSPlan.md": "0f807d49d1a1f9efe9e90bacb4dfd2cb8f16a88f912e1032453dd0bb048f17cc",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSReview.md": "933e912a261bab94c7886f3b9f07961494e15c1a6b3839470900bbeb03ab52c0",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSInputs.json": "5a4376f25b34ed58d12345eca716009bcc5e7942e8fb4ce6a4df99a8797f5108",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSOracle.json.xz": "73e5149c32fa417f5ea141ed354ffef84cc99f58225b67fcfded9786f426b7b4"
+}
 
 LARGER_APC_NATIVE_SOURCES = {
     "implementation/phase-9-grcv4/verification/p984g_apc_native.py": "1e594aad85c58eea2776d1a610c57e667648c2e6c7e98ef590191eab614be8e8",
@@ -585,6 +710,12 @@ class Sources:
             boundary_pins.update(LARGER_COS_SOURCES)
             boundary_pins.update(LARGER_COS_BOUNDS_SOURCES)
             boundary_pins.update(LARGER_COS_NATIVE_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_COS_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_COS_NATIVE_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_COS_PERFORMANCE_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_COS_CONTINUATION_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_COS_COVARIANCE_SOURCES)
             boundary_pins.update(LARGER_CCI_RESEARCH_SOURCES)
             boundary_pins.update(LARGER_CCI_STAGED_SOURCES)
             boundary_pins.update(LARGER_CCI_FEASIBILITY_SOURCES)
@@ -608,7 +739,12 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_A_PC_whole_chart_research_not_native" if name in LARGER_APC_RESEARCH_SOURCES else
+                    basis=("pinned_partial_larger_covariance_not_acceptance" if name in LARGER_RUNTIME_COS_COVARIANCE_SOURCES else
+                        "pinned_detached_continuation_not_covariance_or_acceptance" if name in LARGER_RUNTIME_COS_CONTINUATION_SOURCES else
+                        "pinned_event_successor_not_target_horizon_or_acceptance" if name in LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES else
+                        "pinned_read_performance_not_event_or_acceptance" if name in LARGER_RUNTIME_COS_PERFORMANCE_SOURCES else
+                        "pinned_native_segments_separate_success_and_timeout" if name in LARGER_RUNTIME_COS_NATIVE_SOURCES else
+                        "pinned_A_PC_whole_chart_research_not_native" if name in LARGER_APC_RESEARCH_SOURCES else
                         "pinned_A_CI_accepted_corrected_native_prerequisites" if name in LARGER_ACI_SUCCESSOR_SOURCES else
                         "pinned_A_CI_native_attempt_not_closure" if name in LARGER_ACI_NATIVE_SOURCES else
                         "pinned_A_CI_staged_joint_oracle_not_native" if name in LARGER_ACI_STAGED_SOURCES else
@@ -1410,6 +1546,7 @@ def _build(root):
     deep = deep_view(sources)
     next(r for r in children if r["work_id"] == "P9-8.4d").update(status="partial_execution_accepted", accepted=False)
     next(r for r in children if r["work_id"] == "P9-8.4e").update(status="partial_execution_accepted", accepted=False)
+    next(r for r in children if r["work_id"] == "P9-8.4h").update(status="native_prefix_event_timeout_performance_first", accepted=False)
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
         runtime_scope_snapshot=scope,
@@ -1424,11 +1561,13 @@ def _build(root):
                       oracle_and_pressure=supplements, boundary_contract=boundary_view, deep_expansion=deep,
                       ordering_covariance=covariance_view(sources),chart_covariance=chart_view(sources),
                       larger_prerequisites=larger_view(sources),
+                      larger_runtime=[larger_cos_runtime_view(sources)],
                       required_cells=322, accepted_cells=len(covered), pending_cells=len(cells) - len(covered),
                       executed_pending_cells=len(pending_cells),
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),
         scientific_claim_mapping=mapping,
         verification=dict(level="pinned_sources_and_retained_structure", native_trajectories_rerun=False,
+                          pre_solve_reuse_numerical_sources='718f95be_not_current_execution',
                           interval_equations_recomputed=False, historical_8_3_source_bindings_revalidated_against_current_code=False),
         future=dict(P9_8_5="pending_full_atomicity_campaign", P9_8_6="pending_conformance_review",
                     tranche_9="pending_public_lifecycle_and_compatibility", disabled_cells_pending=40,
@@ -1635,6 +1774,7 @@ def deep_view(sources):
         other_family_credit=0, successive_event_credit=0)
 
 
+@historical_view
 def larger_apc_investigation(sources):
     """Authenticate pinned A_PC research; do not rerun even scalar equations."""
     import p984g_apc_investigation as research
@@ -1740,6 +1880,7 @@ def larger_apc_investigation(sources):
         results=sources.ref(research.RESULTS),plan=sources.ref(research.PLAN),review=sources.ref(research.NOTE))
 
 
+@historical_view
 def larger_aci_successor(sources):
     """Authenticate the compact result, not rerun roots or the full checker."""
     import p984g_aci_native_successor_check as check
@@ -1776,6 +1917,7 @@ def larger_aci_successor(sources):
         review=sources.ref(review))
 
 
+@historical_view
 def larger_aci_investigation(sources):
     import p984g_aci_investigation as research
     for name in LARGER_ACI_RESEARCH_SOURCES:
@@ -1859,6 +2001,7 @@ def larger_aci_investigation(sources):
         plan=sources.ref(research.NOTE),review=sources.ref(research.NOTE))
 
 
+@historical_view
 def larger_cci_investigation(sources):
     from p984g_pre_ci_interval_sources import historical_sources
     with historical_sources():
@@ -1946,6 +2089,7 @@ def _larger_cci_investigation(sources):
         native_trajectories_rerun=False)
 
 
+@historical_view
 def larger_view(sources, *, include_investigations=True):
     import p984g_cos as preflight
     import p984g_cos_bounds as bounds
@@ -1995,11 +2139,352 @@ def larger_view(sources, *, include_investigations=True):
             (('C_OS','C_CI','A_CI','A_PC') if include_investigations else ('C_OS',))])
 
 
+def larger_cos_native_view(sources):
+    """Exact pinned completed segments; status never reruns native admission."""
+    import p984h_cos_native as run
+    for name in LARGER_RUNTIME_COS_NATIVE_SOURCES:
+        sources.raw(name)
+    m=sources.read(run.INPUTS)
+    require(m==run.seal(m), 'native manifest identity')
+    for name,sha in m['source_bindings'].items():
+        require(historical_binding(name,sha,sources.current_bytes(name)),'native source drift: '+name)
+    rows={}; failures=[]
+    oracle=json.loads(lzma.decompress(sources.raw(run.oracle.RESULTS)))
+    for segment in run.CAPS:
+        name=run.path(segment)
+        if name not in LARGER_RUNTIME_COS_NATIVE_SOURCES:
+            continue
+        record=json.loads(lzma.decompress(sources.raw(name)))
+        require(record==run.seal(record) and record['manifest_digest']==m['record_digest']
+                and record['segment']==segment, 'native segment identity')
+        require(not record['user_accepted'] and not record['aggregate_closed']
+                and not record['covariance_executed'], 'native scope widened')
+        if 'execution_driver' in record:
+            driver=record['execution_driver']
+            require(driver['path'] in LARGER_RUNTIME_COS_NATIVE_SOURCES
+                    and driver['sha256']==hashlib.sha256(sources.raw(driver['path'])).hexdigest()
+                    and driver['serialization']=='compact_json_xz','native execution driver drift')
+        if record['outcome']!='completed':
+            require(segment=='event' and record['outcome']=='failed'
+                    and record['failure']['type']=='TimeoutError', 'unknown native failure')
+            failures.append(dict(segment=segment,outcome=record['outcome'],error=record['failure'],
+                seconds=record['elapsed_seconds'],event_committed=False,result=sources.ref(name)))
+        else:rows[segment]=record
+    require('prefix' in rows, 'native prefix missing')
+    require(rows['prefix']['execution']['native_steps']==2, 'native source-step count')
+    if 'event' in rows:
+        require(rows['event']['execution']['predecessor_digest']==rows['prefix']['record_digest'], 'native event predecessor')
+        require(rows['event']['execution']['event_id']==oracle['event_id'], 'native/oracle event identity')
+    for role in ('current','reset'):
+        if role in rows:
+            require('event' in rows and rows[role]['execution']['predecessor_digest']==rows['event']['record_digest'], 'native role predecessor')
+            actual=rows[role]['execution']['steps']
+            expected=next(c for c in oracle['cases'] if c['role']==role)['steps'][0]
+            require(len(actual)==1 and actual[0]['corrector']['current']==expected['current']
+                    and actual[0]['after_C']==expected['after_C'],'native first-step oracle mismatch')
+    return dict(status='historical_native_prefix_complete',
+        source_steps=rows['prefix']['execution']['native_steps'],
+        native_events=rows.get('event',{}).get('execution',{}).get('native_events',0),
+        target_steps_by_role={r:rows.get(r,{}).get('execution',{}).get('native_steps',0) for r in ('current','reset')},
+        required_target_steps_per_role=m['planned_total_steps_per_role'],
+        first_step_minima={role:rows[role]['execution']['steps'][0]['minimum_resource']
+                           for role in ('current','reset') if role in rows},
+        remaining_covariance=True,detached_continuation=True,ten_step_campaign_complete=False,
+        native_numerics_rerun=False,user_accepted=False,failures=failures,
+        timeout_note='Original attempt exceeded 1200 s during target readmission; artifact removed at user request. No success credit.',
+        historical_source_revision='718f95be',current_tree_execution=False,
+        inputs=sources.ref(run.INPUTS),plan=sources.ref(run.PLAN),
+        segments=[dict(segment=s,result=sources.ref(run.path(s)),seconds=v['elapsed_seconds']) for s,v in rows.items()])
+
+
+def larger_cos_performance_view(sources):
+    import p984h_cos_solve_reuse as run
+    for name in LARGER_RUNTIME_COS_PERFORMANCE_SOURCES:sources.raw(name)
+    baseline=json.loads(lzma.decompress(sources.raw(run.probe.OUTPUT)))
+    value=json.loads(lzma.decompress(sources.raw(run.OUTPUT)))
+    require(baseline==run.run.seal(baseline) and value==run.run.seal(value), 'performance record identity')
+    for name,sha in baseline['source_bindings'].items():
+        require(historical_binding(name,sha,sources.current_bytes(name)), 'profile source drift: '+name)
+    for name,sha in value['source_bindings'].items():
+        require(historical_binding(name,sha,sources.current_bytes(name)), 'solve reuse source drift: '+name)
+    require(value['baseline_record_digest']==baseline['record_digest']
+            and value['input_digest']==baseline['input_digest'], 'performance predecessor/input drift')
+    require(value['native_events']==value['native_steps']==0, 'performance false execution credit')
+    require([r['name'] for r in value['records']]==['cold','warm'], 'performance read roster')
+    expected=run.run.digest({k:baseline[k] for k in run.FIELDS})
+    require(all(r['baseline_parity'] and r['scientific_view_digest']==expected for r in value['records']),
+            'performance full-point parity')
+    import p984h_cos_scalar_reuse as scalar
+    optimized=json.loads(lzma.decompress(sources.raw(scalar.OUTPUT)))
+    require(optimized==run.run.seal(optimized), 'scalar reuse record identity')
+    for name,sha in optimized['source_bindings'].items():
+        require(historical_binding(name,sha,sources.current_bytes(name)), 'scalar kernel source drift: '+name)
+    require(optimized['baseline_record_digest']==baseline['record_digest']
+            and optimized['input_digest']==baseline['input_digest']
+            and optimized['scientific_view_digest']==expected and optimized['baseline_parity']
+            and optimized['native_steps']==optimized['native_events']==0, 'scalar kernel parity/scope drift')
+    import p984h_cos_dyadic_rounding as dyadic
+    current=json.loads(lzma.decompress(sources.raw(dyadic.OUTPUT)))
+    require(current==run.run.seal(current), 'dyadic read record identity')
+    for name,sha in current['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha, 'dyadic source drift: '+name)
+    require(current['baseline_record_digest']==baseline['record_digest']
+            and current['input_digest']==baseline['input_digest']
+            and current['scientific_view_digest']==expected and current['baseline_parity']
+            and current['native_steps']==current['native_events']==0, 'dyadic parity/scope drift')
+    import p984h_cos_dyadic_step as step_probe
+    step=json.loads(lzma.decompress(sources.raw(step_probe.OUTPUT)))
+    prefix=json.loads(lzma.decompress(sources.raw(run.run.path('prefix'))))
+    require(step==run.run.seal(step) and step['prefix_record_digest']==prefix['record_digest']
+            and baseline['prefix_digest']==prefix['record_digest'], 'changing step predecessor drift')
+    for name,sha in step['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha, 'changing step source drift: '+name)
+    prior_step=prefix['execution']['steps'][1]
+    require(step['whole_step_parity'] and step['scientific_view_digest']==run.run.digest(
+        {k:v for k,v in prior_step.items() if k not in ('seconds','dense_errors','trigger')})
+        and step['native_steps']==1 and step['native_events']==step['new_campaign_steps']==0,
+        'changing step parity/scope drift')
+    return dict(baseline_seconds=baseline['elapsed_seconds'],cold_seconds=value['records'][0]['elapsed_seconds'],
+        warm_seconds=value['records'][1]['elapsed_seconds'],full_read_parity=True,
+        scalar_kernel_cold_seconds=optimized['elapsed_seconds'],scalar_kernel_result=sources.ref(scalar.OUTPUT),
+        dyadic_cold_seconds=current['elapsed_seconds'],dyadic_result=sources.ref(dyadic.OUTPUT),
+        repeated_source_step_seconds=step['elapsed_seconds'],repeated_source_step_full_parity=True,
+        repeated_source_step_result=sources.ref(step_probe.OUTPUT),
+        current_tree_read_only=True,event_execution=False,numerics_rerun=False,
+        results=sources.ref(run.OUTPUT),baseline=sources.ref(run.probe.OUTPUT),
+        review=sources.ref(BASE+'P9-8.4h-COSPerformance.md'))
+
+
+def larger_cos_event_successor_view(sources):
+    """Pinned execution projection; offline checker owns full reconstruction."""
+    import p984h_cos_event_successor as run
+    for name in LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES:sources.raw(name)
+    m=sources.read(run.INPUTS)
+    r=json.loads(lzma.decompress(sources.raw(run.RESULTS)))
+    require(m==run.seal(m) and r==run.seal(r) and r['manifest_digest']==m['record_digest'],
+            'event successor identity')
+    for name,sha in m['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha,
+                'event successor source drift: '+name)
+    prefix=json.loads(lzma.decompress(sources.raw(run.native.path('prefix'))))
+    require(m['prefix_record_digest']==prefix['record_digest'], 'event successor predecessor')
+    if 'retention_revision' in r:
+        require(r['retention_revision']['execution_payload_digest']==run.digest(r['execution'])
+                and r['retention_revision']['numerical_rerun'] is False, 'retention execution drift')
+    require(r['schema']=='p984h-cos-event-successor-v1'
+            and r['outcome'] in ('completed','failed') and r['cap_seconds']==m['cap_seconds']==1200
+            and r['native_steps']==0 and not r['user_accepted'] and not r['aggregate_closed']
+            and not r['covariance_executed'] and m['scientific_inputs_unchanged'], 'event successor scope')
+    completed=r['outcome']=='completed'
+    if completed:
+        e=r['execution']
+        require(r['native_events']==e['native_events']==1 and e['native_steps']==0
+                and e['predecessor_digest']==prefix['record_digest'] and e['event_id']==m['event_id']
+                and r['elapsed_seconds']<=1200 and r['publication_observation']=='committed_and_checked'
+                and len(e['admissions'])==4 and e['rollback_exact']
+                and all(a['split_admitted'] and a['old_publication_live'] for a in e['admissions'])
+                and not e['ten_step_campaign_complete'], 'event successor execution scope')
+    else:
+        require(r['native_events']==0 and 'execution' not in r and 'failure' in r
+                and r['publication_observation']=='unknown_on_failure', 'failed successor false credit')
+    return dict(outcome=r['outcome'],seconds=r['elapsed_seconds'],cap_seconds=1200,
+        native_events=r['native_events'],native_steps=0,both_role_admission_checked=completed,
+        publication_observation=r['publication_observation'],failure=r.get('failure'),
+        failed_attempt_artifact_retained=False,scientific_inputs_unchanged=True,
+        target_steps_by_role=dict(current=0,reset=0),user_accepted=False,
+        native_numerics_rerun=False,full_reconstruction_rerun=False,
+        inputs=sources.ref(run.INPUTS),results=sources.ref(run.RESULTS),plan=sources.ref(run.PLAN),
+        review=sources.ref(BASE+'P9-8.4h-COSEventSuccessorReview.md'))
+
+
+def larger_cos_continuation_view(sources):
+    """Authenticate pinned per-role chains without replaying native reads."""
+    import p984h_cos_continuation as run
+    for name in LARGER_RUNTIME_COS_CONTINUATION_SOURCES:sources.raw(name)
+    m=sources.read(run.INPUTS)
+    require(m==run.seal(m),'continuation manifest seal')
+    for name,sha in m['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha,'continuation source drift: '+name)
+    event=json.loads(lzma.decompress(sources.raw(run.event.RESULTS)))
+    require(event['record_digest']==m['event_record_digest'] and event['outcome']=='completed','continuation event linkage')
+    seed=event['execution']['checkpoint']['state']['inputs'];roles={}
+    for role in run.ROLES:
+        previous=m['event_record_digest'];post=None;records=[];minima=[];durations=[];charges=[];final=False
+        for step in (*range(1,11),'final'):
+            name=run.path(role,step)
+            if name not in LARGER_RUNTIME_COS_CONTINUATION_SOURCES:continue
+            r=json.loads(lzma.decompress(sources.raw(name)))
+            require(r==run.seal(r) and r['manifest_digest']==m['record_digest']
+                    and r['event_record_digest']==m['event_record_digest'] and r['predecessor_digest']==previous
+                    and r['role']==role and r['step']==step and r['outcome']=='completed'
+                    and 0<=r['elapsed_seconds']<=m['seconds_per_step_or_final_read']
+                    and not r['user_accepted'] and not r['aggregate_closed'] and not r['covariance_executed']
+                    and r['native_events']==0 and r['detached_continuation'],'continuation record linkage/scope')
+            if step=='final':
+                require(len(records)==10 and r['native_steps']==0 and r['final_reads']==1
+                        and r['input_digest']==run.digest(post) and r['split_admitted'],'final read linkage')
+                final=True
+            else:
+                require(step==len(records)+1 and r['native_steps']==1 and r['final_reads']==0,'continuation sequence')
+                row=r['observation'];next_inputs=r['next_inputs']
+                require(row['before_C']==(post['current']['C'] if post else seed[role]['C'])
+                        and (post is None or row['before_digest']==run.digest(post))
+                        and row['after_digest']==run.digest(next_inputs) and row['after_C']==next_inputs['current']['C']
+                        and next_inputs['reset']==seed['reset'] and next_inputs['reference']==seed['reference']
+                        and next_inputs['H1_form']==seed['H1_form']
+                        and row['minimum_resource']==min(row['after_C'])>0 and row['split_admitted']
+                        and row['after_index']==seed['step_index']+step,'continuation state/scope')
+                if step==1:
+                    oracle=json.loads(lzma.decompress(sources.raw(run.native.oracle.RESULTS)))
+                    expected=next(c for c in oracle['cases'] if c['role']==role)['steps'][0]
+                    require(row['corrector']['current']==expected['current'] and row['after_C']==expected['after_C'],'first step oracle')
+                post=next_inputs;records.append(step);minima.append(row['minimum_resource']);charges.append(row['charge'])
+            previous=r['record_digest'];durations.append(r['elapsed_seconds'])
+        roles[role]=dict(native_steps=len(records),final_reads=int(final),minimum_resources=minima,
+            charge_observations=charges,segment_seconds=durations,
+            results=[sources.ref(run.path(role,s)) for s in records]+([sources.ref(run.path(role,'final'))] if final else []))
+    return dict(roles=roles,target_steps=sum(r['native_steps'] for r in roles.values()),
+        final_reads=sum(r['final_reads'] for r in roles.values()),
+        baseline_complete=all(r['native_steps']==10 and r['final_reads']==1 for r in roles.values()),
+        detached_continuation=True,first_steps_match_certified_oracle=all(r['native_steps']>=1 for r in roles.values()),
+        native_numerics_rerun=False,uniform_trajectory_enclosure=False,covariance_executed=False,user_accepted=False,
+        inputs=sources.ref(run.INPUTS),plan=sources.ref(run.PLAN),review=sources.ref(BASE+'P9-8.4h-COSContinuationReview.md'))
+
+
+def larger_cos_covariance_view(sources):
+    """Pinned partial coverage, not a native/allocator/full-chain rerun."""
+    import p984h_cos_covariance as run
+    import p984h_cos_covariance_continuation as successor
+    import p984h_cos_covariance_transforms as individual
+    for name in LARGER_RUNTIME_COS_COVARIANCE_SOURCES:sources.raw(name)
+    m=sources.read(run.INPUTS)
+    require(m==run.seal(m),'covariance manifest seal')
+    for name,sha in m['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha,'covariance source drift: '+name)
+    successor_manifest=sources.read(successor.INPUTS)
+    require(successor_manifest==run.seal(successor_manifest) and successor_manifest['parent_manifest_digest']==m['record_digest'],
+        'covariance comparison successor identity')
+    for name,sha in successor_manifest['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha,'covariance successor source drift: '+name)
+    individual_manifests={}
+    for kind in individual.KINDS:
+        name=individual.inputs(kind)
+        if name not in LARGER_RUNTIME_COS_COVARIANCE_SOURCES:continue
+        declaration=sources.read(name)
+        require(declaration==run.seal(declaration) and declaration['parent_manifest_digest']==m['record_digest']
+            and declaration['selected_transform']==kind and declaration['numerical_law_changed'] is False
+            and declaration['parent_event_reexecuted'] is False,'individual covariance manifest identity/scope')
+        for source,sha in declaration['source_bindings'].items():
+            require(hashlib.sha256(sources.current_bytes(source)).hexdigest()==sha,'individual covariance source drift: '+source)
+        event=json.loads(lzma.decompress(sources.raw(run.path(kind,'event'))))
+        require(declaration['event_record_digest']==event['record_digest'],'individual covariance event binding')
+        individual_manifests[kind]=declaration
+    rows=[];mechanical=[];events=steps=0
+    for kind,segment in [('all','mechanical')]+[(k,s) for k in run.KINDS for s in ('event',*run.ROLES)]:
+        if segment in run.ROLES:
+            name=successor.path(segment) if kind=='combined' else individual.path(kind,segment)
+        else:name=run.path(kind,segment)
+        if name not in LARGER_RUNTIME_COS_COVARIANCE_SOURCES:continue
+        r=json.loads(lzma.decompress(sources.raw(name)))
+        expected_manifest=(successor_manifest if kind=='combined' else individual_manifests[kind]) if segment in run.ROLES else m
+        require(r==run.seal(r) and r['manifest_digest']==expected_manifest['record_digest'] and r['kind']==kind
+            and r['segment']==segment and r['outcome']=='completed' and not r['user_accepted']
+            and not r['aggregate_closed'],'covariance record identity/scope')
+        e=r['execution']
+        if segment=='mechanical':
+            require([v['kind'] for v in e]==list(run.KINDS) and all(v['exact_graph_and_both_role_transfer']
+                and v['native_events']==v['native_steps']==0 for v in e),'mechanical covariance scope')
+            mechanical=list(run.KINDS);continue
+        require(e['native_events']==int(segment=='event') and e['native_steps']==int(segment!='event'),'covariance counts')
+        require(0<=r['elapsed_seconds']<=m['event_cap_seconds' if segment=='event' else 'step_cap_seconds'],'covariance cap')
+        if segment=='event':
+            require(len(e['admissions'])==4 and all(v['split_admitted'] and v['old_publication_live'] for v in e['admissions'])
+                and e['rollback_exact'],'covariance admission/rollback')
+        else:
+            ev=json.loads(lzma.decompress(sources.raw(run.path(kind,'event'))))
+            require(e['event_record_digest']==ev['record_digest'] and e['role']==segment
+                and e['observation']['split_admitted'] and e['observation']['minimum_resource']>0
+                and e['detached_continuation'],'covariance continuation link')
+        rows.append(dict(kind=kind,segment=segment,seconds=r['elapsed_seconds'],
+            covariance_errors=e['covariance_errors'],results=sources.ref(name)))
+        events+=e['native_events'];steps+=e['native_steps']
+    completed=[kind for kind in run.KINDS if {r['segment'] for r in rows if r['kind']==kind}=={'event',*run.ROLES}]
+    pending=[kind for kind in run.KINDS if kind not in completed]
+    return dict(mechanical_transforms=mechanical,required_transforms=list(run.KINDS),segments=rows,
+        completed_numerical_transforms=completed,pending_numerical_transforms=pending,
+        native_events=events,target_steps=steps,transformed_horizon=1,source_prefix_rerun=False,
+        covariance_complete=not pending and mechanical==list(run.KINDS),user_accepted=False,native_numerics_rerun=False,
+        inputs=sources.ref(run.INPUTS),plan=sources.ref(run.PLAN),
+        review=sources.ref(BASE+'P9-8.4h-COSCovarianceReview.md'))
+
+
+def larger_cos_runtime_view(sources):
+    """Pinned oracle projection; no solves, materialization or native execution."""
+    import p984h_cos as run
+    for name in LARGER_RUNTIME_COS_SOURCES:sources.raw(name)
+    m=sources.read(run.INPUTS)
+    r=json.loads(lzma.decompress(sources.raw(run.RESULTS)))
+    require(m==run.seal(m) and r==run.seal(r) and r['inputs_digest']==m['record_digest'],'larger runtime oracle identity')
+    for name,sha in m['source_bindings'].items():
+        require(historical_binding(name,sha,sources.current_bytes(name)),'larger runtime source drift: '+name)
+    require([c['role'] for c in r['cases']]==list(run.ROLES) and all(len(c['steps'])==1 for c in r['cases']),
+        'larger runtime oracle coverage')
+    require(not m['original_postbeat_trigger']['eligible'] and r['trigger']['eligible'],'larger runtime trigger distinction')
+    require(r['native_events']==r['native_steps']==0 and not r['user_accepted'] and not r['aggregate_closed'],'larger runtime false credit')
+    result=dict(family='C_OS',checkpoint='8.4h',status='two_beat_oracle_complete_native_pending',
+        original_trigger=m['original_postbeat_trigger'],source_beats_before_request=m['source_beats_before_request'],
+        initial_conditions_unchanged=m['initial_conditions_unchanged'],fresh_trigger=r['trigger'],
+        oracle_steps=2,source_oracle_steps=1,exact_reused_reset_cases=1,dense_screen_steps=2*run.STEPS,
+        native_events=0,native_steps=0,
+        user_accepted=False,aggregate_closed=False,numerical_trajectories_rerun=False,
+        covariance_executed=False,uniform_trajectory_enclosure=False,
+        role_minima={c['role']:min(s['minimum_resource'] for s in c['steps']) for c in r['cases']},
+        inputs=sources.ref(run.INPUTS),results=sources.ref(run.RESULTS),plan=sources.ref(run.PLAN),review=sources.ref(run.REVIEW))
+    if LARGER_RUNTIME_COS_NATIVE_SOURCES:
+        native=larger_cos_native_view(sources)
+        result.update(status=native['status'],native=native,native_events=native['native_events'],
+            native_steps=native['source_steps']+sum(native['target_steps_by_role'].values()))
+    if LARGER_RUNTIME_COS_PERFORMANCE_SOURCES:
+        result['performance']=larger_cos_performance_view(sources)
+    if LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES:
+        successor=larger_cos_event_successor_view(sources)
+        result.update(event_successor=successor,native_events=successor['native_events'],
+            status=('native_event_successor_complete_target_continuation_pending'
+                if successor['outcome']=='completed' else 'native_event_successor_failed'))
+    if LARGER_RUNTIME_COS_CONTINUATION_SOURCES:
+        continuation=larger_cos_continuation_view(sources)
+        result.update(continuation=continuation,native_steps=result['native']['source_steps']+continuation['target_steps'],
+            status='native_baseline_complete_covariance_pending' if continuation['baseline_complete'] else 'native_target_continuation_partial')
+    if LARGER_RUNTIME_COS_COVARIANCE_SOURCES:
+        covariance=larger_cos_covariance_view(sources)
+        result.update(covariance=covariance,covariance_executed=covariance['native_events']>0,
+            native_events=result['native_events']+covariance['native_events'],
+            native_steps=result['native_steps']+covariance['target_steps'],
+            status=('native_baseline_and_covariance_complete_pending_acceptance'
+                if result['continuation']['baseline_complete'] and covariance['covariance_complete']
+                else 'native_baseline_complete_covariance_partial'))
+        acceptance=sources.raw(BASE+'P9-8.4h-COSCovarianceReview.md').decode()
+        require('## Scoped user acceptance' in acceptance and '2026-10-21' in acceptance,
+            'missing scoped C_OS 8.4h acceptance')
+        require(result['continuation']['baseline_complete'] and covariance['covariance_complete'],
+            'accepted C_OS 8.4h coverage incomplete')
+        result.update(status='native_baseline_and_covariance_accepted',user_accepted=True,
+            accepted_on='2026-10-21',acceptance_scope='C_OS P9-8.4h bounded baseline and eight covariance counterparts',
+            acceptance=covariance['review'],original_execution_flags_unchanged=True)
+    return result
+
+
 def family_status(root, family, checkpoint="8.4c"):
     """Selected checkpoint/family only; not full-index or boundary validity."""
     import importlib
     import phase9_implementation_policy as policy
-    require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g"), "unknown family checkpoint")
+    require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g", "8.4h"), "unknown family checkpoint")
+    if checkpoint == '8.4h':
+        require(family=='C_OS','8.4h family not yet executed or declared')
+        sources=Sources(root)
+        return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,
+            runtime=larger_cos_runtime_view(sources),source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
+            other_families_checked=False,native_trajectories_rerun=False)
     if checkpoint == "8.4g":
         if family=='A_PC':
             sources=Sources(root)
@@ -2154,7 +2639,7 @@ def next_work(value):
     return (f"Tranche 8: shared 8.1 mechanics and 8.2 allocator accepted; all ten 8.3 bounded profile integrations accepted. "
             f"8.4b has {c['accepted_cells']}/{c['required_cells']} accepted history cells; {c['pending_cells']} remain. "
             f"{c['executed_pending_cells']} additional cells have passing execution evidence awaiting review/acceptance. "
-            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. First-group .e C_OS has 20 accepted covariance cells on two layouts and five transforms. C_CI has 20 accepted full-joint-root covariance cells. A_CI has 20 accepted covariance cells with unsigned history/writer and full joint roots. A_PC has 20 accepted covariance cells on D59/D94 using the accepted coupled history/allocation source, with unsigned W and signed carrier transport/archive/reset. First-group .e is accepted at 80/80 history cells; C_OS .f now supplies 24 accepted chart-covariance history cells, separately from four frozen mechanical-plan executions. C_CI .f supplies 24 accepted full-joint-root chart cells, with independent pointwise interval certificates and explicit frozen-plan reuse. A_CI .f supplies 24 accepted unsigned-history/writer/full-joint-root chart cells, with pointwise root/output certificates and explicit frozen-plan reuse. A_PC .f supplies 24 accepted full-chart history/carrier cells on coupled D59/D94 witnesses, with archives, explicit loss, zero target initialization and ZOH/log-W continuation. The first group is accepted at 96/96 cells; .g prerequisites are next. Other .f families remain unexecuted. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
+            f"{boundary_summary} {oracle_summary} {preparation_summary} 8.4c is closed at 640/640 accepted history cells. 8.4d C_OS: 40 accepted history cells; C_CI: 40 accepted history cells. A_CI: 40 separately accepted native history cells; A_PC: frozen-source D94 exclusion accepted; resource-only companion passes target preflight but fails the fresh trigger. History-only companion preserves fresh source eligibility but fails D94 target positivity at step one. The full coupled campaign now passes all twenty A_PC cases: forty histories, four hundred native continuation steps and forty final reads; nineteen new cases plus exact pilot reuse. Forty A_PC cells are accepted. The first-group .d checkpoint is closed at 160 accepted cells. Prior failures remain separate. First-group .e C_OS has 20 accepted covariance cells on two layouts and five transforms. C_CI has 20 accepted full-joint-root covariance cells. A_CI has 20 accepted covariance cells with unsigned history/writer and full joint roots. A_PC has 20 accepted covariance cells on D59/D94 using the accepted coupled history/allocation source, with unsigned W and signed carrier transport/archive/reset. First-group .e is accepted at 80/80 history cells; C_OS .f now supplies 24 accepted chart-covariance history cells, separately from four frozen mechanical-plan executions. C_CI .f supplies 24 accepted full-joint-root chart cells, with independent pointwise interval certificates and explicit frozen-plan reuse. A_CI .f supplies 24 accepted unsigned-history/writer/full-joint-root chart cells, with pointwise root/output certificates and explicit frozen-plan reuse. A_PC .f supplies 24 accepted full-chart history/carrier cells on coupled D59/D94 witnesses, with archives, explicit loss, zero target initialization and ZOH/log-W continuation. The first group is accepted at 96/96 cells; .g prerequisites remain family-scoped; C_OS .h has two passing native source steps and one separately bound successful event in 871.507 s under the unchanged 1200 s cap. The original timeout is summarized only; its failed artifact was removed. Native target continuation now completes ten steps per role and two fresh final reads. The bounded baseline and all eight larger covariance counterparts are accepted for C_OS on 2026-10-21; other families and aggregate 8.4h remain open, with no uniform trajectory enclosure. Other .f families remain unexecuted. No uniform neighborhood follows. Six families remain native-unexecuted. 8.4d–i and 8.5/8.6 remain open. Larger-graph preparation is not runtime acceptance; "
             "public lifecycle and forty disabled cells remain Tranche 9 work. No new support or execution permission follows from this view.")
 
 
@@ -2163,10 +2648,14 @@ def main():
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
     parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"))
     parser.add_argument("--recheck-numerics", action="store_true")
-    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d", "8.4e", "8.4f", "8.4g"), default="8.4b")
+    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d", "8.4e", "8.4f", "8.4g", "8.4h"), default="8.4b")
     parser.add_argument("--oracle", action="store_true", help="check A_OS or A_CI 8.4c independent oracle scope, not native execution")
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
+    if args.checkpoint == '8.4h':
+        require(args.family=='C_OS' and args.action=='status' and not args.recheck_numerics
+            and not args.oracle and not args.preparation,'select C_OS 8.4h read-only status; use p984h_cos.py for explicit verification')
+        print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2));return
     if args.checkpoint == '8.4g':
         if args.family in ('C_CI','A_CI'):
             require(args.action in ('status','verify-retained') and not args.recheck_numerics

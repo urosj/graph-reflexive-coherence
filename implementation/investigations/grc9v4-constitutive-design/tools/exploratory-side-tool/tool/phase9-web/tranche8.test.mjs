@@ -6,6 +6,61 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_OS 8.4h distinguishes completed bounded coverage from acceptance', () => {
+  const row=evidence.coverage.larger_runtime[0];
+  assert.equal(row.family,'C_OS');assert.equal(row.original_trigger.eligible,false);
+  assert.equal(row.fresh_trigger.eligible,true);assert.equal(row.oracle_steps,2);
+  assert.equal(row.source_beats_before_request,2);assert.equal(row.initial_conditions_unchanged,true);
+  assert.equal(row.dense_screen_steps,20);assert.equal(row.exact_reused_reset_cases,1);
+  assert.equal(row.native_steps,38);assert.equal(row.native_events,9);
+  assert.equal(row.status,'native_baseline_and_covariance_accepted');
+  assert.equal(row.original_execution_flags_unchanged,true);
+  assert.equal(row.aggregate_closed,false);
+  assert.equal(row.native.native_events,0);
+  assert.equal(row.event_successor.outcome,'completed');assert.equal(row.event_successor.native_events,1);
+  assert.equal(row.event_successor.both_role_admission_checked,true);
+  assert.equal(row.event_successor.failed_attempt_artifact_retained,false);
+  assert.equal(row.event_successor.native_numerics_rerun,false);
+  assert.deepEqual(row.event_successor.target_steps_by_role,{current:0,reset:0});
+  assert.deepEqual(row.native.failures,[]);
+  assert.match(row.native.timeout_note,/artifact removed at user request/);
+  assert.equal(row.performance.full_read_parity,true);
+  assert.equal(row.performance.event_execution,false);
+  assert.equal(row.continuation.target_steps,20);assert.equal(row.continuation.final_reads,2);
+  assert.equal(row.continuation.baseline_complete,true);assert.equal(row.continuation.native_numerics_rerun,false);
+  assert.equal(row.continuation.uniform_trajectory_enclosure,false);
+  assert.equal(row.continuation.first_steps_match_certified_oracle,true);
+  assert.equal(row.covariance_executed,true);assert.equal(row.user_accepted,true);
+  assert.equal(row.covariance.mechanical_transforms.length,8);
+  assert.equal(row.covariance.native_events,8);assert.equal(row.covariance.target_steps,16);
+  assert.deepEqual(row.covariance.completed_numerical_transforms,row.covariance.required_transforms);
+  assert.deepEqual(row.covariance.pending_numerical_transforms,[]);
+  assert.equal(row.covariance.transformed_horizon,1);assert.equal(row.covariance.covariance_complete,true);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Oracle success is not native runtime acceptance/);
+  assert.match(text(out),/No success credit/);
+  assert.match(text(out),/Measured single OS read/);
+  assert.match(text(out),/Separately bound event successor: completed/);
+  assert.match(text(out),/20\/20 native steps and 2\/2 fresh final reads/);
+  assert.match(text(out),/Completed numerical counterparts: edge_order, node_order, relabel, signed, combined, rotate, rotate_twice, reflect/);
+  for(const [key,value] of [['native_events',0],['native_steps',20],['user_accepted',false],['aggregate_closed',true],['covariance_executed',false]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0][key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const [key,value] of [['native_events',9],['target_steps',20],['transformed_horizon',10],['covariance_complete',false],['source_prefix_rerun',true],['pending_numerical_transforms',['rotate_twice']],['user_accepted',true]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0].covariance[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const [key,value] of [['native_events',0],['both_role_admission_checked',false],['user_accepted',true],['native_numerics_rerun',true]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0].event_successor[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const [key,value] of [['target_steps',18],['final_reads',0],['user_accepted',true],['native_numerics_rerun',true],['uniform_trajectory_enclosure',true],['covariance_executed',true]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0].continuation[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
+
 test('A_PC larger chart research retains exclusions and separates native successor credit', () => {
   const row=evidence.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC');
   assert.equal(row.pc_whole_chart,true);

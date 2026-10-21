@@ -3013,6 +3013,83 @@ New layouts, chiralities, depths and configurations require their own evidence.
 | **P9-8.4h — Larger-graph runtime and covariance campaign** | For each ready family, execute the actual source admission, fresh trigger/request, native event, both-role target reconstruction/readmission and declared physical continuation. Apply the relevant `.e`/`.f` transforms to this larger subject, and compare with its independent scientific expectations. | Depends on `.g` for that family and the relevant covariance harnesses. Retain actual outputs or the first rejection, duration/horizon and error bounds. A passing certificate or an expected rejection does not close a required successful runtime row. |
 | **P9-8.4i — Coverage reconciliation and handoff** | Reconcile `.a` against all child results, frozen IDs and separately named additional/deep/large probes. Retain commands, independent checks, code/profile/fixture bindings, review dispositions and unresolved debt. Update discovery evidence only for the exact newly reviewed configurations. | Aggregate closes only when its required runtime/covariance cells are reviewed and complete, or an explicit user-approved scope change is recorded. Hand positive-state witnesses and rejection subjects to P9-8.5; pass precise coverage to P9-8.6 without claiming arbitrary-size conformance. |
 
+The 2026-10-19 [C_OS opening](./phase-9-grcv4/tranche-8/P9-8.4h-COSPlan.md)
+first binds actual postbeat operands. The accepted `.g` source has exactly zero
+fixed-row gradients at its saturated node, hence no strict spark. Preserve that
+no-event beat; check a second ordinary beat before changing initial conditions.
+The event-bound oracle does not inherit native `.g` credit for new execution.
+Then execute native baseline/continuation and larger coordinate/chart covariance;
+C_CI, A_CI and A_PC follow separately. No first-group or all-ten `.h` closure is
+inferred from an oracle or mechanical allocator check.
+
+The [C_OS native entry](./phase-9-grcv4/tranche-8/P9-8.4h-COSNativePlan.md)
+retains source prefix, actual event and one target step per role as separately
+capped segments. Continue the remaining nine steps from retained executed
+poststates rather than rerunning that prefix. A completed event is not a
+completed ten-step campaign; neither grants larger covariance or acceptance.
+Both native source beats now pass; the first event attempt timed out at its
+declared 1200-second cap. Before another event attempt, the
+[bounded performance task](./phase-9-grcv4/tranche-8/P9-8.4h-COSPerformance.md)
+measures the actual read and adds exact-operand reuse of certified rounded
+solutions in the shared numerical layer. Keep conditioning/residual/admission
+fresh, preserve explicit FRESH/no-fallback policies, and compare full points and
+split evidence. Old numerical records retain historical source bindings;
+new native execution needs a successor manifest, not edited old SHAs.
+The cold-kernel follow-up attributes 13.4 s to Arb LU versus 23.5 s to output
+extraction/rounding certification and 15.5 s to general exact conversion, with
+full retained read parity. Prioritize those shared kernels before restarting
+the event; verify unchanged rounding-cell proofs and changing-input parity.
+Neither the diagnostic nor identical-read reuse establishes campaign timing.
+The scalar-reuse successor passes fresh-read parity at 133.920 s and changing
+small-step regressions, but its 3.7% observed gain does not resolve the event
+budget. Dense output extraction/certification remains the next kernel target;
+a changing-state large step is still required before campaign timing claims.
+That successor is now implemented as exact integer rounding of outward dyadic
+endpoints: complete read parity at 113.725 s and a complete changing large
+source beat at 196.193 s, including dense checks. The repeat matches its
+predecessor scientific fields exactly and adds no campaign coverage. Proceed
+next to a separately bound event attempt; retain the original input/cap and
+original timeout explanation (no failed-session artifact is required).
+Neither measurement alone establishes event success.
+That [event successor](./phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorReview.md)
+now completes in 871.507 s under the unchanged 1200 s cap, with all four
+source/target-role reads, atomic publication and checkpoint/receipt checks.
+The [target continuation](./phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationReview.md)
+now supplies ten native steps per history and two fresh final reads, consuming
+the successful event and then each saved native poststate. Both first steps
+match the certified oracle exactly; all subsequent represented admission and
+dense checks pass within unchanged caps. No source-prefix/event rerun, failed
+session retention, uniform trajectory enclosure or `.h` acceptance follows.
+Next is the separately declared larger ordering/orientation/full-chart
+covariance campaign. The C_OS baseline is complete, not the `.h` checkpoint.
+The [larger covariance declaration](./phase-9-grcv4/tranche-8/P9-8.4h-COSCovariancePlan.md)
+separates eight exact allocator/resource counterparts from actual numerical
+events. Generalize `.e`/`.f` transport to arbitrary node/edge IDs in this fixed
+large witness. Execute the combined coordinate counterpart first, with fresh
+both-role event admission and one target step per role; then address remaining
+individual/chart numerical cells. Preserve the baseline and report partial
+coverage, not an inferred transformed prefix or ten-step horizon.
+Combined ordering/ID/orientation and full-chart reflection are now numerically
+complete for this one-step-per-history scope. Reflection transports phase,
+shares and chirality together, with fresh four-role event admission; event
+875.895 s and current/reset steps 219.298/217.368 s pass unchanged caps and
+have zero observed mapped discrepancy. A generic individual-transform runner
+reuses the corrected comparator and pins each event separately, without
+rewriting combined evidence. Edge order, node order, relabeling, signed
+orientation, rotation and rotation twice now also pass: six more events and
+twelve steps, zero observed mapped discrepancy, unchanged positive minima and
+caps, no retries. The full bounded matrix is 8/8; execution alone grants no acceptance.
+The user-approved finish line is frozen: execute those six counterparts as one
+bounded batch (six events/twelve target steps), reuse the completed baseline,
+oracle and comparator, then perform one retained coverage/integrity review and
+present C_OS for scoped acceptance. No new sweeps, horizons, fixtures or proofs
+are added unless a concrete failure exposes a missing requirement. Public
+lifecycle and further replay/atomicity work remain in P9-8.5.
+That numerical finish line and the one saved-payload coverage/integrity review
+now pass. The user accepted C_OS on 2026-10-21; no further C_OS validation
+cases are required by this declared scope. Selected API/browser and missing-cell
+checks also pass; other families and aggregate P9-8.4h remain open. C_CI is next.
+
 **Execution order — representative families first (user-directed 2026-10-08).**
 The [C_OS `.d` checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
 declares 20 cases at D59/66/73/94, depths three/four, both histories and ten

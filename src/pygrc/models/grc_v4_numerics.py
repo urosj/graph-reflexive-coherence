@@ -1,7 +1,8 @@
 """Shared V4 matrix API with automatic operation-owned fact reuse.
 
 Realizations use this module, never the private arithmetic implementation.
-Reuse applies only to successful exact inverse/conditioning facts. Every RHS,
+Reuse applies to successful exact inverse/conditioning facts and certified
+rounded solutions keyed by exact coefficients AND RHS. Every admission,
 residual and stage certificate remains fresh. Independent unscoped calls have
 no shared lifetime. Use matrix_operation for scoped standalone calculations or
 an explicit FRESH policy; nested scientific operations inherit that policy.
@@ -28,7 +29,7 @@ from ._grc_v4_matrix import (
 from .grc_v4_codec import _OPERATION_CONTEXT, _operation_contract_assets
 from .grc_v4_exact import ExactBackend, ExactScalar, exact_backend, exact_number
 from .grc_v4_geometry import Matrix
-from .grc_v4_linear import MatrixReuse, _ConditionFact, _InverseFact
+from .grc_v4_linear import MatrixReuse, _ConditionFact, _InverseFact, _RoundedSolveFact
 from .grc_v4_profile import SolverPolicy
 from .grc_v4_state import FrozenJSONMap
 from . import grc_v4_certification as _certified
@@ -160,8 +161,14 @@ def solve(
         )
     )
     exact_rhs = exact_matrix(rhs)
+    solve_fact = None
+    facts = None
     if use_certified:
-        result = _certified.rounded_solve(exact, exact_rhs)
+        context = _OPERATION_CONTEXT.get()
+        facts = None if context is None else context.matrix_facts
+        solve_fact = None if facts is None else facts.find_solve(exact, exact_rhs)
+        result = (_certified.rounded_solve(exact, exact_rhs) if solve_fact is None
+                  else solve_fact.result)
         certificates.append(FrozenJSONMap({"block": label, "execution_policy": current_numerical_policy().value,
                                           "rounding": "unique_binary64_nearest_even", "arb_precision_bits": 256}))
     else:
@@ -182,6 +189,8 @@ def solve(
             raise MatrixError(
                 "no_admitted_root", "declared residual tolerance failed: " + label
             )
+    if use_certified and facts is not None and solve_fact is None:
+        facts.remember_solve(_RoundedSolveFact(exact, exact_rhs, result))
     return result
 
 

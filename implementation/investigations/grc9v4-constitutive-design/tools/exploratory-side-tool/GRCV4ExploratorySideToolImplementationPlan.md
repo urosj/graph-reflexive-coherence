@@ -3003,3 +3003,51 @@ Project the separate 2026-10-14 scoped user acceptance from its pinned review
 and summary digest: bounded A_PC prerequisites are eligible for separately
 declared `.h` work. Original execution flags and exclusions remain unchanged;
 acceptance does not execute an event or close the all-ten parent.
+
+P9-8.4h begins with a C_OS two-beat event-bound oracle. CLI/API,
+notebook and browser must show the original zero-gradient trigger exclusion,
+the unchanged second ordinary source beat and its fresh trigger, two certified
+target first steps and twenty approximate screening steps, separately from native
+baseline segments and unexecuted larger covariance. Native source steps, event
+commits and per-role continuation counts are distinct; one target step does not
+satisfy the ten-step horizon. Status authenticates pins without solving or
+materializing large native objects. `.g` historical acceptance is unchanged.
+The native prefix now has two successful steps; the first event timed out at
+1200 seconds and receives zero commit credit. Expose a short failure explanation and
+the separate certified-solve performance comparison, never treating a faster
+read as a completed event. Original numerical bindings resolve only the named
+superseded files from their historical Git subject; new evidence binds current
+sources. Retained status performs no timing/numerical rerun.
+Also expose the exact-dyadic successor read and complete repeated source beat,
+with full predecessor parity and no new campaign-step credit. Immediately
+preceding uncommitted source/spec bytes have explicitly pinned compressed
+snapshots; authenticate them as historical evidence, never import them or
+silently rebind original executions to current sources.
+Expose the separately source-bound event successor alongside, not in place of,
+the original timeout explanation, without retaining its failed artifact.
+Its actual outcome controls event credit; target-step,
+covariance and acceptance counts stay separate. Pin its unchanged-cap manifest,
+execution and review. The status projection authenticates records and sources;
+the explicit offline checker reconstructs the full checkpoint without rerunning
+native numerics.
+The C_OS continuation view now exposes ten steps per history and two fresh final
+reads, linked to the successful event and each preceding native poststate. Keep
+the original source-prefix counts, event count, target-step count and read count
+distinct. Report exact first-step oracle matching, positive represented minima
+and both charge observations; do not infer uniform trajectory bounds or exact
+stored conservation. This is bounded baseline completion, not larger covariance,
+user acceptance or `.h` closure. Status performs no native/full-chain rerun.
+The larger covariance projection must show exact mechanical counterparts
+separately from each native transformed event and role step. Keep baseline
+counts distinct; partial numerical covariance does not imply all transforms,
+a transformed source prefix, ten-step covariance or acceptance. Authenticate
+pinned compact outputs without rerunning allocators or numerical trajectories.
+For individual transforms, authenticate the separately bound continuation
+manifest and its exact event predecessor. Expose completed and pending numerical
+transform lists in API/notebook/browser; never infer individual coverage from
+the combined counterpart. Keep earlier execution manifests unchanged.
+Compute bounded coverage completion from all eight event/current/reset triples
+and the mechanical panel, not a manually promoted flag. Full C_OS numerical
+coverage now exposes scoped `user_accepted=true` following the 2026-10-21
+user decision, while the original execution records keep their captured flags;
+baseline plus covariance completion is not all-family or aggregate `.h` closure.

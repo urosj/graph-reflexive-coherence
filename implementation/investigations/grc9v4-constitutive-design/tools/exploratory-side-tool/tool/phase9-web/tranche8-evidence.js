@@ -7479,7 +7479,7 @@ export const TRANCHE8_EVIDENCE = {
 {
 "work_id": "P9-8.4h",
 "title": "Larger-graph runtime and covariance",
-"status": "pending",
+"status": "native_prefix_event_timeout_performance_first",
 "accepted": false
 },
 {
@@ -19308,7 +19308,1765 @@ export const TRANCHE8_EVIDENCE = {
 "executed_pending_cells": 0,
 "aggregate_closed": false,
 "other_vector_cells": 60,
-"larger_history_cells": 20
+"larger_history_cells": 20,
+"larger_runtime": [
+{
+"family": "C_OS",
+"checkpoint": "8.4h",
+"status": "native_baseline_and_covariance_accepted",
+"original_trigger": {
+"gradient": [
+0.0,
+0.0,
+0.0
+],
+"gradient_squared": "0",
+"minimum_signed_hessian": -0.0,
+"source_node": 0,
+"eligible": false,
+"source_state_digest": "grcv4-state-sha256:d5553041b1691201f87521a74e10ea08a71db10c97cd68edfe34eb576d03f815"
+},
+"source_beats_before_request": 2,
+"initial_conditions_unchanged": true,
+"fresh_trigger": {
+"gradient": [
+0.0,
+3.104408582051595e-10,
+-3.104408582051595e-10
+],
+"gradient_squared": "36057617073158521194928777956921/187072209578355573530071658587684226515959365500928",
+"minimum_signed_hessian": -3.104408582051595e-10,
+"source_node": 0,
+"eligible": true,
+"source_state_digest": "grcv4-state-sha256:8026342aab5f6abc786272fc9bf4b79c366b2d6ae118d70f4286752cedd0d1b8"
+},
+"oracle_steps": 2,
+"source_oracle_steps": 1,
+"exact_reused_reset_cases": 1,
+"dense_screen_steps": 20,
+"native_events": 9,
+"native_steps": 38,
+"user_accepted": true,
+"aggregate_closed": false,
+"numerical_trajectories_rerun": false,
+"covariance_executed": true,
+"uniform_trajectory_enclosure": false,
+"role_minima": {
+"current": 3.369843003959132e-13,
+"reset": 1.0962812917850738e-13
+},
+"inputs": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSInputs.json",
+"sha256": "5a4376f25b34ed58d12345eca716009bcc5e7942e8fb4ce6a4df99a8797f5108",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSOracle.json.xz",
+"sha256": "73e5149c32fa417f5ea141ed354ffef84cc99f58225b67fcfded9786f426b7b4",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+"plan": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSPlan.md",
+"sha256": "0f807d49d1a1f9efe9e90bacb4dfd2cb8f16a88f912e1032453dd0bb048f17cc",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+"review": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSReview.md",
+"sha256": "933e912a261bab94c7886f3b9f07961494e15c1a6b3839470900bbeb03ab52c0",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+"native": {
+"status": "historical_native_prefix_complete",
+"source_steps": 2,
+"native_events": 0,
+"target_steps_by_role": {
+"current": 0,
+"reset": 0
+},
+"required_target_steps_per_role": 10,
+"first_step_minima": {},
+"remaining_covariance": true,
+"detached_continuation": true,
+"ten_step_campaign_complete": false,
+"native_numerics_rerun": false,
+"user_accepted": false,
+"failures": [],
+"timeout_note": "Original attempt exceeded 1200 s during target readmission; artifact removed at user request. No success credit.",
+"historical_source_revision": "718f95be",
+"current_tree_execution": false,
+"inputs": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativeInputs.json",
+"sha256": "e7b7412c8365b6d191e0e2824dd48bbd040a775d1f4017d873c824d263b5e28e",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+"plan": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativePlan.md",
+"sha256": "45af24edf3590cb4aaafb0c91f0c6cc6ab884f4cdca84ea79c290ce58d5f08d3",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+"segments": [
+{
+"segment": "prefix",
+"result": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNative-prefix.json.xz",
+"sha256": "f94d4c22e33d84ec4a2a4cc8906d2a2e6be9fd4fdc355015fef9b526da776366",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+"seconds": 586.5586581730004
+}
+]
+},
+"performance": {
+"baseline_seconds": 141.00996253300036,
+"cold_seconds": 141.96010706299967,
+"warm_seconds": 86.00755435000065,
+"full_read_parity": true,
+"scalar_kernel_cold_seconds": 133.92020918300022,
+"scalar_kernel_result": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSScalarReuse.json.xz",
+"sha256": "00b0245298e332860b54d209689cdc17e9cb882cfc587b80136bced51e39cbd2",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+"dyadic_cold_seconds": 113.72533779900004,
+"dyadic_result": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSDyadicRounding.json.xz",
+"sha256": "83680a3cca4c636c0716ebc4a354052d916dc5a4b9384ae79ecd523463294668",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+"repeated_source_step_seconds": 196.1932527000008,
+"repeated_source_step_full_parity": true,
+"repeated_source_step_result": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSDyadicStep.json.xz",
+"sha256": "0655afbe1bbccdd43c6f26cfaa9523dcc480a57cb59014e8f6ca67fd5e29dbfc",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+"current_tree_read_only": true,
+"event_execution": false,
+"numerics_rerun": false,
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSSolveReuse.json.xz",
+"sha256": "560defe685be0f4355e4cfe0e2941be2ba933d712c24977b5a623dbf0cf4292b",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+"baseline": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSReadProfile.json.xz",
+"sha256": "1f156e0908aece3ada4270c0d6318cb32c2f6239252909402a82859d1c955261",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+"review": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSPerformance.md",
+"sha256": "281961bee7dfc198a501d2e746d02d091121c7f64548375db6b40acdb73c5dec",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+}
+},
+"event_successor": {
+"outcome": "completed",
+"seconds": 871.5070663730003,
+"cap_seconds": 1200,
+"native_events": 1,
+"native_steps": 0,
+"both_role_admission_checked": true,
+"publication_observation": "committed_and_checked",
+"failure": null,
+"failed_attempt_artifact_retained": false,
+"scientific_inputs_unchanged": true,
+"target_steps_by_role": {
+"current": 0,
+"reset": 0
+},
+"user_accepted": false,
+"native_numerics_rerun": false,
+"full_reconstruction_rerun": false,
+"inputs": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorInputs.json",
+"sha256": "760c8a5321b31e4dd74a54ff407b36d1cdfcde43219b8797f456be4a2bee60fd",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessor.json.xz",
+"sha256": "ad5eae5df68cf2e5a877a4f5f3aced0681349d9d5c4d0f10b9d70a16d23c0273",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+"plan": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessor.md",
+"sha256": "e180bb0927d0944d640884d7fba93fe56feab4764bc066e3327650b63d42c7a8",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+"review": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorReview.md",
+"sha256": "e126010e0f4ebcba2f5c46fbeed223f00735c393c259e3192b4d5f81ee4fd6b9",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+}
+},
+"continuation": {
+"roles": {
+"current": {
+"native_steps": 10,
+"final_reads": 1,
+"minimum_resources": [
+3.369843003959132e-13,
+2.4735940952003955e-06,
+7.451755089958122e-06,
+1.4965784016857246e-05,
+2.5047311662694702e-05,
+3.772830215541543e-05,
+5.304105625402953e-05,
+7.101821467945091e-05,
+9.169276148724376e-05,
+0.00011509802748330405
+],
+"charge_observations": [
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "4128157489427/19807040628566084398385987584",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "19750610773741/19807040628566084398385987584",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-4297327/2361183241434822606848",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-486743/295147905179352825856",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 199.99999999999997,
+"residual": "-1/35184372088832",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-246301/590295810358705651712",
+"margin": "6172108010382485/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "42653/73786976294838206464",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-19339/73786976294838206464",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-35587/147573952589676412928",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "45027/36893488147419103232",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "643/73786976294838206464",
+"margin": "6189700196426901/618970019642690137449562112"
+}
+],
+"segment_seconds": [
+196.258819951001,
+197.76752984700033,
+208.413202877,
+213.9429496390003,
+218.08435872100017,
+219.51969658400049,
+220.4245454159991,
+220.7344195049991,
+219.19965114499973,
+218.32941217799998,
+122.12644526099939
+],
+"results": [
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-1.json.xz",
+"sha256": "aac8fe517fa1a3269c8df26cc6cf1b2a62808f2f475a04a37ea900351e11aceb",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-2.json.xz",
+"sha256": "771c42177f13647073841afeb8fb4144d7e00754e80c5918b48fb4d58829f89c",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-3.json.xz",
+"sha256": "a76ad1768ccf29cc2adde2971c5448d7015f3ce6aceb52a1236fbf63fa34889c",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-4.json.xz",
+"sha256": "4d0f878348da8fbdfcd793c2bb408a2c71ad58e699e9f9093e34d2561b13b605",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-5.json.xz",
+"sha256": "6c2ee0d975923d1314c58f92ef26c6937706b7ca5dc9e69e131c25cf7607ff79",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-6.json.xz",
+"sha256": "3ef55463df87731b625d002e32f08097ba5194b152f76ec6a998dc21e5262f1a",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-7.json.xz",
+"sha256": "a6fe2c28be6298d14a5106934ae9aa2f308bf5e00521a5819c5d0663104f3411",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-8.json.xz",
+"sha256": "40bf97dd42153cd5dec133484f0d4f46c83f637b3ef17febdab7686542840b61",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-9.json.xz",
+"sha256": "78900df8eac2baf3a9ce9086beb56e31be660aebecf8c6997fd0c358a0238c97",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-10.json.xz",
+"sha256": "2967e331fe0c4c5804acbff33bcf13a978c1bbfc1f429cb9b6751f7c4f75236a",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-final.json.xz",
+"sha256": "b0014e538954eef38e50b8eb661d74240d26c7c4c9c9d774368bb420eb492c02",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+}
+]
+},
+"reset": {
+"native_steps": 10,
+"final_reads": 1,
+"minimum_resources": [
+1.0962812917850738e-13,
+2.4735932655662254e-06,
+7.451753224774993e-06,
+1.4965780862733152e-05,
+2.504730740786313e-05,
+3.772829771628992e-05,
+5.3041053587911265e-05,
+7.101821712479165e-05,
+9.169277413292945e-05,
+0.00011509805756848218
+],
+"charge_observations": [
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "10469164184075/79228162514264337593543950336",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-89096593601035/79228162514264337593543950336",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "212417/1180591620717411303424",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-2307427/1180591620717411303424",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "263295/590295810358705651712",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.00000000000003,
+"residual": "1/35184372088832",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "29635/295147905179352825856",
+"margin": "6172108010382485/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-295407/147573952589676412928",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-13411/147573952589676412928",
+"margin": "6189700196426901/618970019642690137449562112"
+},
+{
+"pairwise": 199.99999999999997,
+"residual": "-1/35184372088832",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-151199/73786976294838206464",
+"margin": "6172108010382485/618970019642690137449562112"
+},
+{
+"pairwise": 200.0,
+"residual": "0",
+"tolerance": "6189700196426901/618970019642690137449562112",
+"exact_stored_delta": "-7397/73786976294838206464",
+"margin": "6189700196426901/618970019642690137449562112"
+}
+],
+"segment_seconds": [
+195.86583214799975,
+196.3795872360006,
+207.6502278300013,
+212.24959759400008,
+238.6819147740007,
+218.67969491000076,
+220.57980163899992,
+219.4498529600005,
+239.12029632000122,
+217.95002598800056,
+143.97708150400103
+],
+"results": [
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-1.json.xz",
+"sha256": "1f36b82bfb14831ba0f10d7298a2a1b64b6624cf69e0934c64736dce1203917f",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-2.json.xz",
+"sha256": "c5b1f35ca6bbcb6d18e0b958158a3949a27d5b4b234d9cd202dcf2df6f682774",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-3.json.xz",
+"sha256": "d0f80f4577791b7cae05d7a47fcb1d0b9b1d6d715929ab8f9e422515e9d7376a",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-4.json.xz",
+"sha256": "da5d1b60a1a274402ad12fb10a30a2fb60ecc2dd348f917a94c95a0e1c321e3e",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-5.json.xz",
+"sha256": "0ecbb3636489a3972d7a35f7a1bd6856eac7a6bc38598def2c6de6e1615815fc",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-6.json.xz",
+"sha256": "710626878a41f713b1a4aca4c2b9462af706dbc3d24202ba1ccc44fc9c1fc80b",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-7.json.xz",
+"sha256": "5471ef3e75d7d0f1cb74d09e66634552d1ffa6039c112442d8de18966da5a43d",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-8.json.xz",
+"sha256": "e9e46645d25462e34e6341bd20ad6ca55c1834bbfe782335e47ec878392d16be",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-9.json.xz",
+"sha256": "4fa124edd53b2308461e30c28aff93d8f3de975f2e03f71ba34f6738b8776181",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-10.json.xz",
+"sha256": "a7f72f095cedfae2a58be6df5d427b2809f1c9e4c46f5c6df0d50b63352ada21",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-final.json.xz",
+"sha256": "45ddc6c65905cebfc814027a5a045298212a700a5d42149c5fe14912a4b27b29",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+}
+]
+}
+},
+"target_steps": 20,
+"final_reads": 2,
+"baseline_complete": true,
+"detached_continuation": true,
+"first_steps_match_certified_oracle": true,
+"native_numerics_rerun": false,
+"uniform_trajectory_enclosure": false,
+"covariance_executed": false,
+"user_accepted": false,
+"inputs": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationInputs.json",
+"sha256": "8d2b2d6869321ff462f2aca6038d281d6383b432767de019ae84290df0a1d3f6",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+"plan": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationPlan.md",
+"sha256": "9e15dba4b57932b11d4179d1ff48547e4a203d52aa1def1d8bf9dd888450f557",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+"review": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationReview.md",
+"sha256": "cea40c0ca021736f4f25293564043befd8a03cf565acd9ed7f4b6a09b74213f3",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+}
+},
+"covariance": {
+"mechanical_transforms": [
+"edge_order",
+"node_order",
+"relabel",
+"signed",
+"combined",
+"rotate",
+"rotate_twice",
+"reflect"
+],
+"required_transforms": [
+"edge_order",
+"node_order",
+"relabel",
+"signed",
+"combined",
+"rotate",
+"rotate_twice",
+"reflect"
+],
+"segments": [
+{
+"kind": "edge_order",
+"segment": "event",
+"seconds": 887.295914931,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-event.json.xz",
+"sha256": "3729e0f6073ad5d4d4a343fcd67bd7deae525eab26aeb5e0526cf4da14286e84",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "edge_order",
+"segment": "current",
+"seconds": 223.52547414400033,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-current-successor.json.xz",
+"sha256": "6be62d7eefda01394ea181dfd4e29403524865e9b001a2fb64f74b08fc5192c2",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "edge_order",
+"segment": "reset",
+"seconds": 219.1818824640004,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-reset-successor.json.xz",
+"sha256": "f3b7f8f3dd635d115bed58f1f4a8c5796cb3d3b306472091c9832e9e8a74961d",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "node_order",
+"segment": "event",
+"seconds": 874.9503038259995,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-event.json.xz",
+"sha256": "26011e3cf8f28d0aefd433e12a0144c39f57dbd1c40615c5be31874103440d73",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "node_order",
+"segment": "current",
+"seconds": 221.55195080199974,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-current-successor.json.xz",
+"sha256": "4350b0bc929ecb8e68db45c50d199f4d2ba57ec7d2939b06f7d1e0709598bf3e",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "node_order",
+"segment": "reset",
+"seconds": 220.36113470599958,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-reset-successor.json.xz",
+"sha256": "9ca45d9103f12776e29392b14371efcdc1e8d057bfb6d937c285a6d8d1fcd7d1",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "relabel",
+"segment": "event",
+"seconds": 880.5384295739996,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-event.json.xz",
+"sha256": "58207a61f725707b83a36ded308b166884cd805b95a2feaae867dd0d24bafa57",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "relabel",
+"segment": "current",
+"seconds": 213.19352544400044,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-current-successor.json.xz",
+"sha256": "4ac5d04ae6fb0ee6d6d55abe7e79da7889f5ac59c494ef1d8634ad0eda09bdaa",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "relabel",
+"segment": "reset",
+"seconds": 211.13085356800002,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-reset-successor.json.xz",
+"sha256": "0deab4cabaeffbfe31ded746c0fc9b3c8b676091a4595492ed8c6fb10cd00ecc",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "signed",
+"segment": "event",
+"seconds": 890.7790632490005,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-event.json.xz",
+"sha256": "4579cee45554bf5a9f97b265c83ebc8abecec581e0dd84e339af5756d818ad3b",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "signed",
+"segment": "current",
+"seconds": 221.24213061599949,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-current-successor.json.xz",
+"sha256": "56c74991c7b190e917980f2df8440e6b06f3481cb3a822cff238b0a5db2bd1dd",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "signed",
+"segment": "reset",
+"seconds": 219.75459956800023,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-reset-successor.json.xz",
+"sha256": "21ff43129a9b40c1220ff2a73c5f102c91d350e44703497f2b045b3d5dbce71b",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "combined",
+"segment": "event",
+"seconds": 854.2621941420002,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-event.json.xz",
+"sha256": "d1de55f32e6e2af2d1bfb02e74b2139174db703569315fca4fe831f77b2edf0b",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "combined",
+"segment": "current",
+"seconds": 245.93968472199776,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-current-successor.json.xz",
+"sha256": "94a429add199d14401966de1eb115b05f5a99c3f3f72cd06cf285fb4601ff7f7",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "combined",
+"segment": "reset",
+"seconds": 245.009251219999,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-reset-successor.json.xz",
+"sha256": "2bc11fd11e9fe8c5bbe082e04a78236f75412ca0f2afa58313d52866aafdf179",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "rotate",
+"segment": "event",
+"seconds": 885.0873196379998,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-event.json.xz",
+"sha256": "12d9cffe125b2532b7fc6ad9b27e67182127275d6ae3955bca9eafbd45aa95b0",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "rotate",
+"segment": "current",
+"seconds": 223.6403549910001,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-current-successor.json.xz",
+"sha256": "196a49c429037b066d50d7e0a3edced982c9c58d7b211a8b859b98fd54fc39c7",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "rotate",
+"segment": "reset",
+"seconds": 221.5756553880001,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-reset-successor.json.xz",
+"sha256": "37a219e1c15824fca9424b97b807ac047feb24744d25ceb3e01173b0ec2476b6",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "rotate_twice",
+"segment": "event",
+"seconds": 889.4870372559999,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-event.json.xz",
+"sha256": "8ccc6e340f0078b699d2aac0b54eab80e5b6dd0928413fcaaeba23c532a64d19",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "rotate_twice",
+"segment": "current",
+"seconds": 224.1456154030002,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-current-successor.json.xz",
+"sha256": "8331cac20db0a01151f6a021bcd9d037a86a648199a4461e43724bb7520476f1",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "rotate_twice",
+"segment": "reset",
+"seconds": 222.21408104400052,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-reset-successor.json.xz",
+"sha256": "9c2bc3b8b499ff02e2db34d95a539ac0726f9e0e115cdefce5ee6f8e964d5839",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "reflect",
+"segment": "event",
+"seconds": 875.8948412719997,
+"covariance_errors": [
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+{
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+}
+],
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-event.json.xz",
+"sha256": "2ba51ec443e2e5f3ded0cbd1dff41cb414c091c04a162539e9eeab84bd834321",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "reflect",
+"segment": "current",
+"seconds": 219.2983174369997,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-current-successor.json.xz",
+"sha256": "4792e92f7ccb9cd1994127a72623d5a10cdc064842974da53f4e1f48b14abefd",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+{
+"kind": "reflect",
+"segment": "reset",
+"seconds": 217.367513875,
+"covariance_errors": {
+"points": {
+"predictor": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"corrector": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+},
+"final": {
+"current": 0.0,
+"baseline": 0.0,
+"read_flux": 0.0,
+"causal_flat": 0.0
+}
+},
+"resources": 0.0,
+"generated_geometry": 0.0
+},
+"results": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-reset-successor.json.xz",
+"sha256": "1b31491c03e463edc575d90d7e98652d58c9e74008eb6564e24dce42239e3ebb",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+}
+],
+"completed_numerical_transforms": [
+"edge_order",
+"node_order",
+"relabel",
+"signed",
+"combined",
+"rotate",
+"rotate_twice",
+"reflect"
+],
+"pending_numerical_transforms": [],
+"native_events": 8,
+"target_steps": 16,
+"transformed_horizon": 1,
+"source_prefix_rerun": false,
+"covariance_complete": true,
+"user_accepted": false,
+"native_numerics_rerun": false,
+"inputs": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceInputs.json",
+"sha256": "fadf62b844b82dc5657902a381f5ffb2a29fe244c33fec6027e23d4981c58d10",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+"plan": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariancePlan.md",
+"sha256": "a5d7e6f0e3b6c80e8ffce4d1204f07c36de9fbdcc0bfbb930a0221a3499eb4af",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+"review": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceReview.md",
+"sha256": "25d51f7b315ca194b617267ba4412d4a54e7e4fc1e07b5f34eacdb4932ec5c40",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+}
+},
+"accepted_on": "2026-10-21",
+"acceptance_scope": "C_OS P9-8.4h bounded baseline and eight covariance counterparts",
+"acceptance": {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceReview.md",
+"sha256": "25d51f7b315ca194b617267ba4412d4a54e7e4fc1e07b5f34eacdb4932ec5c40",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+"original_execution_flags_unchanged": true
+}
+]
 },
 "scientific_claim_mapping": {
 "paper": {
@@ -21330,6 +23088,498 @@ export const TRANCHE8_EVIDENCE = {
 "basis": "pinned_larger_equation_preflight_not_native_admission"
 },
 {
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-1.json.xz",
+"sha256": "aac8fe517fa1a3269c8df26cc6cf1b2a62808f2f475a04a37ea900351e11aceb",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-10.json.xz",
+"sha256": "2967e331fe0c4c5804acbff33bcf13a978c1bbfc1f429cb9b6751f7c4f75236a",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-2.json.xz",
+"sha256": "771c42177f13647073841afeb8fb4144d7e00754e80c5918b48fb4d58829f89c",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-3.json.xz",
+"sha256": "a76ad1768ccf29cc2adde2971c5448d7015f3ce6aceb52a1236fbf63fa34889c",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-4.json.xz",
+"sha256": "4d0f878348da8fbdfcd793c2bb408a2c71ad58e699e9f9093e34d2561b13b605",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-5.json.xz",
+"sha256": "6c2ee0d975923d1314c58f92ef26c6937706b7ca5dc9e69e131c25cf7607ff79",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-6.json.xz",
+"sha256": "3ef55463df87731b625d002e32f08097ba5194b152f76ec6a998dc21e5262f1a",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-7.json.xz",
+"sha256": "a6fe2c28be6298d14a5106934ae9aa2f308bf5e00521a5819c5d0663104f3411",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-8.json.xz",
+"sha256": "40bf97dd42153cd5dec133484f0d4f46c83f637b3ef17febdab7686542840b61",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-9.json.xz",
+"sha256": "78900df8eac2baf3a9ce9086beb56e31be660aebecf8c6997fd0c358a0238c97",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-current-final.json.xz",
+"sha256": "b0014e538954eef38e50b8eb661d74240d26c7c4c9c9d774368bb420eb492c02",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-1.json.xz",
+"sha256": "1f36b82bfb14831ba0f10d7298a2a1b64b6624cf69e0934c64736dce1203917f",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-10.json.xz",
+"sha256": "a7f72f095cedfae2a58be6df5d427b2809f1c9e4c46f5c6df0d50b63352ada21",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-2.json.xz",
+"sha256": "c5b1f35ca6bbcb6d18e0b958158a3949a27d5b4b234d9cd202dcf2df6f682774",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-3.json.xz",
+"sha256": "d0f80f4577791b7cae05d7a47fcb1d0b9b1d6d715929ab8f9e422515e9d7376a",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-4.json.xz",
+"sha256": "da5d1b60a1a274402ad12fb10a30a2fb60ecc2dd348f917a94c95a0e1c321e3e",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-5.json.xz",
+"sha256": "0ecbb3636489a3972d7a35f7a1bd6856eac7a6bc38598def2c6de6e1615815fc",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-6.json.xz",
+"sha256": "710626878a41f713b1a4aca4c2b9462af706dbc3d24202ba1ccc44fc9c1fc80b",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-7.json.xz",
+"sha256": "5471ef3e75d7d0f1cb74d09e66634552d1ffa6039c112442d8de18966da5a43d",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-8.json.xz",
+"sha256": "e9e46645d25462e34e6341bd20ad6ca55c1834bbfe782335e47ec878392d16be",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-9.json.xz",
+"sha256": "4fa124edd53b2308461e30c28aff93d8f3de975f2e03f71ba34f6738b8776181",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuation-reset-final.json.xz",
+"sha256": "45ddc6c65905cebfc814027a5a045298212a700a5d42149c5fe14912a4b27b29",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationInputs.json",
+"sha256": "8d2b2d6869321ff462f2aca6038d281d6383b432767de019ae84290df0a1d3f6",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationPlan.md",
+"sha256": "9e15dba4b57932b11d4179d1ff48547e4a203d52aa1def1d8bf9dd888450f557",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationReview.md",
+"sha256": "cea40c0ca021736f4f25293564043befd8a03cf565acd9ed7f4b6a09b74213f3",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-all-mechanical.json.xz",
+"sha256": "62e22a250b03f7ade5af2e93abd23674824c793422ba71c0061cf7d0d74712d6",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-current-successor.json.xz",
+"sha256": "94a429add199d14401966de1eb115b05f5a99c3f3f72cd06cf285fb4601ff7f7",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-event.json.xz",
+"sha256": "d1de55f32e6e2af2d1bfb02e74b2139174db703569315fca4fe831f77b2edf0b",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-combined-reset-successor.json.xz",
+"sha256": "2bc11fd11e9fe8c5bbe082e04a78236f75412ca0f2afa58313d52866aafdf179",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-ContinuationInputs.json",
+"sha256": "4d4f237b17b8a32c7843af0c42ec83c0e0dc1a2216b033744938166ef37fc6a1",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-current-successor.json.xz",
+"sha256": "6be62d7eefda01394ea181dfd4e29403524865e9b001a2fb64f74b08fc5192c2",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-event.json.xz",
+"sha256": "3729e0f6073ad5d4d4a343fcd67bd7deae525eab26aeb5e0526cf4da14286e84",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-reset-successor.json.xz",
+"sha256": "f3b7f8f3dd635d115bed58f1f4a8c5796cb3d3b306472091c9832e9e8a74961d",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-ContinuationInputs.json",
+"sha256": "ca85039fea88f6232a52de632ae7f1905207cc1efc4ffdb5563914fcaa0e1f75",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-current-successor.json.xz",
+"sha256": "4350b0bc929ecb8e68db45c50d199f4d2ba57ec7d2939b06f7d1e0709598bf3e",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-event.json.xz",
+"sha256": "26011e3cf8f28d0aefd433e12a0144c39f57dbd1c40615c5be31874103440d73",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-node_order-reset-successor.json.xz",
+"sha256": "9ca45d9103f12776e29392b14371efcdc1e8d057bfb6d937c285a6d8d1fcd7d1",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-ContinuationInputs.json",
+"sha256": "929d43b262f7b9e62bdc2a224629b15cafb5cc968ced3aaa14b77393f3cc3b18",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-current-successor.json.xz",
+"sha256": "4792e92f7ccb9cd1994127a72623d5a10cdc064842974da53f4e1f48b14abefd",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-event.json.xz",
+"sha256": "2ba51ec443e2e5f3ded0cbd1dff41cb414c091c04a162539e9eeab84bd834321",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-reflect-reset-successor.json.xz",
+"sha256": "1b31491c03e463edc575d90d7e98652d58c9e74008eb6564e24dce42239e3ebb",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-ContinuationInputs.json",
+"sha256": "eee2509dc16a3c8f22203dd014a0f81694ea7b591eb8a1e939a1f5b2e7addc47",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-current-successor.json.xz",
+"sha256": "4ac5d04ae6fb0ee6d6d55abe7e79da7889f5ac59c494ef1d8634ad0eda09bdaa",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-event.json.xz",
+"sha256": "58207a61f725707b83a36ded308b166884cd805b95a2feaae867dd0d24bafa57",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-relabel-reset-successor.json.xz",
+"sha256": "0deab4cabaeffbfe31ded746c0fc9b3c8b676091a4595492ed8c6fb10cd00ecc",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-ContinuationInputs.json",
+"sha256": "3f2562ead769108f5c1c8d3500061da3fc0b8ff301c4af832581c62d2428ace6",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-current-successor.json.xz",
+"sha256": "196a49c429037b066d50d7e0a3edced982c9c58d7b211a8b859b98fd54fc39c7",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-event.json.xz",
+"sha256": "12d9cffe125b2532b7fc6ad9b27e67182127275d6ae3955bca9eafbd45aa95b0",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate-reset-successor.json.xz",
+"sha256": "37a219e1c15824fca9424b97b807ac047feb24744d25ceb3e01173b0ec2476b6",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-ContinuationInputs.json",
+"sha256": "3b802898d3c987f005b980d55dc56c0207121f357078f9fa19f1c26829a9cd90",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-current-successor.json.xz",
+"sha256": "8331cac20db0a01151f6a021bcd9d037a86a648199a4461e43724bb7520476f1",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-event.json.xz",
+"sha256": "8ccc6e340f0078b699d2aac0b54eab80e5b6dd0928413fcaaeba23c532a64d19",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-rotate_twice-reset-successor.json.xz",
+"sha256": "9c2bc3b8b499ff02e2db34d95a539ac0726f9e0e115cdefce5ee6f8e964d5839",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-ContinuationInputs.json",
+"sha256": "a8696c22a1aea8897fe3cdd0c37f45afa5e823b8082d4be9892c2f5a3b62c1ad",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-current-successor.json.xz",
+"sha256": "56c74991c7b190e917980f2df8440e6b06f3481cb3a822cff238b0a5db2bd1dd",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-event.json.xz",
+"sha256": "4579cee45554bf5a9f97b265c83ebc8abecec581e0dd84e339af5756d818ad3b",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-signed-reset-successor.json.xz",
+"sha256": "21ff43129a9b40c1220ff2a73c5f102c91d350e44703497f2b045b3d5dbce71b",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceContinuationInputs.json",
+"sha256": "243b2996248fb5c1a395745fad1687cafc78c550e6212c1eb306f7675a595f4a",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceInputs.json",
+"sha256": "fadf62b844b82dc5657902a381f5ffb2a29fe244c33fec6027e23d4981c58d10",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariancePlan.md",
+"sha256": "a5d7e6f0e3b6c80e8ffce4d1204f07c36de9fbdcc0bfbb930a0221a3499eb4af",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceReview.md",
+"sha256": "25d51f7b315ca194b617267ba4412d4a54e7e4fc1e07b5f34eacdb4932ec5c40",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSDyadicRounding.json.xz",
+"sha256": "83680a3cca4c636c0716ebc4a354052d916dc5a4b9384ae79ecd523463294668",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSDyadicStep.json.xz",
+"sha256": "0655afbe1bbccdd43c6f26cfaa9523dcc480a57cb59014e8f6ca67fd5e29dbfc",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessor.json.xz",
+"sha256": "ad5eae5df68cf2e5a877a4f5f3aced0681349d9d5c4d0f10b9d70a16d23c0273",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessor.md",
+"sha256": "e180bb0927d0944d640884d7fba93fe56feab4764bc066e3327650b63d42c7a8",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorInputs.json",
+"sha256": "760c8a5321b31e4dd74a54ff407b36d1cdfcde43219b8797f456be4a2bee60fd",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorReview.md",
+"sha256": "e126010e0f4ebcba2f5c46fbeed223f00735c393c259e3192b4d5f81ee4fd6b9",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSInputs.json",
+"sha256": "5a4376f25b34ed58d12345eca716009bcc5e7942e8fb4ce6a4df99a8797f5108",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSKernelProfile.json.xz",
+"sha256": "e4eee02846b1aa87f00f68badc213363d9bcde2b7a4dfbdb2cde83c796268733",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNative-prefix.json.xz",
+"sha256": "f94d4c22e33d84ec4a2a4cc8906d2a2e6be9fd4fdc355015fef9b526da776366",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativeInputs.json",
+"sha256": "e7b7412c8365b6d191e0e2824dd48bbd040a775d1f4017d873c824d263b5e28e",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativePlan.md",
+"sha256": "45af24edf3590cb4aaafb0c91f0c6cc6ab884f4cdca84ea79c290ce58d5f08d3",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSNativeReview.md",
+"sha256": "3997226270bf34d2b403f80ec9585212ce276e59b42964e0993034d6586216af",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSOracle.json.xz",
+"sha256": "73e5149c32fa417f5ea141ed354ffef84cc99f58225b67fcfded9786f426b7b4",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSPerformance.md",
+"sha256": "281961bee7dfc198a501d2e746d02d091121c7f64548375db6b40acdb73c5dec",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSPlan.md",
+"sha256": "0f807d49d1a1f9efe9e90bacb4dfd2cb8f16a88f912e1032453dd0bb048f17cc",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSReadProfile.json.xz",
+"sha256": "1f156e0908aece3ada4270c0d6318cb32c2f6239252909402a82859d1c955261",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSReview.md",
+"sha256": "933e912a261bab94c7886f3b9f07961494e15c1a6b3839470900bbeb03ab52c0",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSScalarReuse.json.xz",
+"sha256": "00b0245298e332860b54d209689cdc17e9cb882cfc587b80136bced51e39cbd2",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSSolveReuse.json.xz",
+"sha256": "560defe685be0f4355e4cfe0e2941be2ba933d712c24977b5a623dbf0cf4292b",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/kernel-predecessors/grc-v4-numerical-policy-scalar-reuse.md.xz",
+"sha256": "718b3ee30829f56dbb3d00c5c97887b64095071c1eb4186989982c1c6a388618",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/tranche-8/kernel-predecessors/grc_v4_certification-scalar-reuse.py.xz",
+"sha256": "6dc00b344ddbbfd15bf404b1597de8797d418770d3acaef22b3dd509fef52905",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
 "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_CI-Admission.json",
 "sha256": "fc089dca3a2ac44c03618b91567eceb8d5990d1f010976d6b84220ce708460ca",
 "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -21594,6 +23844,96 @@ export const TRANCHE8_EVIDENCE = {
 "basis": "pinned_C_CI_native_prerequisites_scoped_acceptance"
 },
 {
+"path": "implementation/phase-9-grcv4/verification/p984h_cos.py",
+"sha256": "38d509e3ef87170ef9260b6932e6353b344490fd43d8577e53081d10045b7d08",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_continuation.py",
+"sha256": "c4fa19e52783a43f29edbed3f5ff93aadcd960281c821e676f160467306a224d",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_covariance.py",
+"sha256": "c04ae175b9c324b769202ad7d429d597ecd841d224dafad5e24da2ef6c1f10ad",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_covariance_continuation.py",
+"sha256": "083636c82d1e771faa567d8ee69dc9b71936f3b744349ef1b5abdfd38d134dc6",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_covariance_transforms.py",
+"sha256": "ae8f39749909882a88768212573124a4e1a336263c6c92fcf824ba526b3d67fe",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_dyadic_rounding.py",
+"sha256": "94d73bf79c8426f512c6b7e2b9316cec7bbe7e8afc3c5c4fec96cca31e93fe20",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_dyadic_step.py",
+"sha256": "c9f5b75b722707b95d4b4d0316c2825eb89912bd5b6c6d0f9f7c92fafd96b660",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_event_successor.py",
+"sha256": "a894879e6cbafeb8ca6be3aa141e5cf8844b230aaa8e935e8b1e679f8e84baf3",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_kernel_profile.py",
+"sha256": "132a61b568e420b93a199b941a941adb340e913475bfd0f5dcff9786bf008ff3",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_native.py",
+"sha256": "c9a6c8aceeda4b2c4d62f7cf187a3654cbffdc84c10f57bf69167f59fd895a8b",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_native_compact.py",
+"sha256": "366330ba65f441a61bd835458fac687d774b38533acd2a136d4b2f34ab224375",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_read_profile.py",
+"sha256": "b0d238d812d00f255171547cd3891b3b9991d0319ff08fbef0927b46d8297ada",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_scalar_reuse.py",
+"sha256": "42e993702cf13c792468b53e159309d0a0faeab0e05bce5347cd725c8d8923a6",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_cos_solve_reuse.py",
+"sha256": "02d3910ad64c14ff11f9457aa753451dd7222395bd4900533baada728901add0",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/p984h_pre_solve_reuse_sources.py",
+"sha256": "6d6835ef34194ff2701bdefa4b3617ad05f9a32b5a0316a46106457f8995caba",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
 "path": "implementation/phase-9-grcv4/verification/test_p984g_aci_feasibility.py",
 "sha256": "d0441b3c9e60f18ed4d030a6754ad50ca0f9665e9b69d47c6f09c6a985eb50f8",
 "revision": null,
@@ -21708,6 +24048,66 @@ export const TRANCHE8_EVIDENCE = {
 "basis": "pinned_C_CI_staged_joint_bridge_not_native_stopping"
 },
 {
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos.py",
+"sha256": "fe0a15f17e511c3bb1316fe32cbcaf69d14b98229e374d1d635d1972c89e3f70",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_continuation.py",
+"sha256": "a892c5d5c0547c132ed3cc411625dc82d93d93788d9eadb5bfe531e7103e2f79",
+"revision": null,
+"basis": "pinned_detached_continuation_not_covariance_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_covariance.py",
+"sha256": "0da1636c98248ecaf2434610727892b3f3d399806ac60b2b93077e85f9316f9f",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_covariance_continuation.py",
+"sha256": "9a8baf0d54cf2b4e4c7f9b81ce3b238a41124ae7f8be04aaec065c68115c8b78",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_covariance_transforms.py",
+"sha256": "7ca4a8284ccbdf32bf97f8ab87f59f9e8ce67ccf233a5fec1165b69dc4e4162a",
+"revision": null,
+"basis": "pinned_partial_larger_covariance_not_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_dyadic.py",
+"sha256": "01edde6d23ab1c59811fe9a6e61678f6ea26766feba6f31cad63b6af05edec78",
+"revision": null,
+"basis": "pinned_read_performance_not_event_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_event_successor.py",
+"sha256": "ac17afba53573f7e3b7317a76712973f1ac27f3d5fdc94c57c15e80043002210",
+"revision": null,
+"basis": "pinned_event_successor_not_target_horizon_or_acceptance"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_native.py",
+"sha256": "44dca9feac554172b2668daca14a7cc3e01118d1d9dc1d45ff825e725be9f083",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_native_pressure.py",
+"sha256": "cee8919de0e9fba56409f3c240d7cea7c545125bc7c708f4a2aac3de316b09a6",
+"revision": null,
+"basis": "pinned_native_segments_separate_success_and_timeout"
+},
+{
+"path": "implementation/phase-9-grcv4/verification/test_p984h_cos_surfaces.py",
+"sha256": "e5cb8fc660e85eac587d7cc4aafd3b9aebfd4777e0e0deea4df1f5a3adeb1e5e",
+"revision": null,
+"basis": "pinned_preregistration_not_runtime_acceptance"
+},
+{
 "path": "specs/grc-9-v4-spec.md",
 "sha256": "588878aabbe35a8b0c6ae5019f1d1116ab2a3bf15168793e37468abcf369e082",
 "revision": "dbfcd311b8ee67ad9a5d8ea0f38670d88b8d57b1",
@@ -21732,5 +24132,5 @@ export const TRANCHE8_EVIDENCE = {
 "basis": "pinned_A_CI_accepted_corrected_native_prerequisites"
 }
 ],
-"view_digest": "1996823aaad295ebe8872148aa98f8ae435450b2bcc5053e8801c3b772e98999"
+"view_digest": "733e77186dcf2724a3daf31548dd55e9f0342ad8dca19650978f2f3e1122a6d5"
 };

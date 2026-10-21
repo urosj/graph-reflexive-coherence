@@ -42,6 +42,55 @@ export function renderTranche8(value, container, create = tag => document.create
     if (profile.independent_A_oracle) { append(td, 'span', ' · '); link(td, profile.independent_A_oracle.review, 'A oracle'); }
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
+  for (const row of c.larger_runtime || []) {
+    append(container,'h3',`8.4h ${row.family} — two-beat event-bound oracle`);
+    append(container,'p',`First-beat trigger eligible: ${row.original_trigger.eligible}. Source beats before request: ${row.source_beats_before_request}; fresh trigger eligible: ${row.fresh_trigger.eligible}. Initial conditions unchanged: ${row.initial_conditions_unchanged}.`);
+    append(container,'p',`${row.source_oracle_steps} additional source oracle step and ${row.oracle_steps} certified target first steps (${row.exact_reused_reset_cases} exact reset reuse). ${row.dense_screen_steps} dense screening steps are not certified signs. Native steps: ${row.native_steps}; native events: ${row.native_events}; covariance executed: ${row.covariance_executed}. Oracle success is not native runtime acceptance.`);
+    append(container,'p',`Scoped C_OS acceptance: ${row.user_accepted}; original execution flags unchanged: ${row.original_execution_flags_unchanged}. Other families and aggregate 8.4h remain open.`);
+    details(container,'Bounded trajectory minima, not a uniform error tube',row.role_minima);
+    if (row.native) {
+      const n=row.native;
+      append(container,'p',`Original prefix record: ${n.source_steps} source steps, ${n.native_events} event commits. Its target continuation: current ${n.target_steps_by_role.current}/${n.required_target_steps_per_role}, reset ${n.target_steps_by_role.reset}/${n.required_target_steps_per_role}. Successor records are reported separately. Retained integrity does not rerun native numerics.`);
+      for (const segment of n.segments) {link(container,segment.result,`Native ${segment.segment}`);append(container,'span',' · ');}
+      if (n.timeout_note) append(container,'p',n.timeout_note);
+      for (const f of n.failures || []) {
+        append(container,'p',`${f.segment}: ${f.outcome}, ${f.error.type} after ${f.seconds.toFixed(1)} s. No successful event credited. Performance-first work; original evidence is not rebound to optimized code.`);
+        link(container,f.result,'Retained timeout');
+      }
+    }
+    if (row.event_successor) {
+      const e=row.event_successor;
+      append(container,'p',`Separately bound event successor: ${e.outcome} in ${e.seconds.toFixed(1)} s (unchanged ${e.cap_seconds} s cap); ${e.native_events} successful event credited. Both-role admission checked: ${e.both_role_admission_checked}; publication: ${e.publication_observation}. Failed attempt summarized only. No target continuation, covariance or acceptance follows.`);
+      for (const key of ['inputs','results','plan','review']) {link(container,e[key],`Event successor ${key}`);append(container,'span',' · ');}
+    }
+    if (row.performance) {
+      const p=row.performance;
+      append(container,'p',`Measured single OS read: baseline ${p.baseline_seconds.toFixed(1)} s; optimized cold ${p.cold_seconds.toFixed(1)} s; warm ${p.warm_seconds.toFixed(1)} s. Complete read/split identity parity: ${p.full_read_parity}. FLINT and certified Arb256; fresh residual/admission checks. Not event or horizon execution.`);
+      if (p.scalar_kernel_cold_seconds !== undefined) append(container,'p',`Shared scalar kernels: fresh cold read ${p.scalar_kernel_cold_seconds.toFixed(1)} s with complete baseline parity. Conversion and rounding-cell reuse only; every containment proof remains fresh. Not a changing-state large-step or event timing.`);
+      if (p.dyadic_cold_seconds !== undefined) append(container,'p',`Exact dyadic endpoint certification: fresh cold read ${p.dyadic_cold_seconds.toFixed(1)} s with complete baseline parity. Integer nearest-even proof; no approximation or fallback. Not event execution.`);
+      if (p.repeated_source_step_seconds !== undefined) append(container,'p',`Repeated complete source beat: ${p.repeated_source_step_seconds.toFixed(1)} s; whole-step parity ${p.repeated_source_step_full_parity}. Includes changed resources and final readmission. Adds no new campaign step or event credit.`);
+      link(container,p.review,'Performance scope');
+    }
+    if (row.continuation) {
+      const c=row.continuation;
+      append(container,'p',`Successful-event target continuation: ${c.target_steps}/20 native steps and ${c.final_reads}/2 fresh final reads; bounded baseline complete: ${c.baseline_complete}. Both first steps match the certified oracle: ${c.first_steps_match_certified_oracle}. Detached histories, not public owner step/reset. Later represented positivity and dense agreement are not a uniform trajectory enclosure. Larger covariance is reported separately; scoped acceptance is reported separately.`);
+      for (const [role,r] of Object.entries(c.roles)) {
+        append(container,'p',`${role}: ${r.native_steps}/10 steps; ${r.final_reads} final read. Minimum resources: ${r.minimum_resources.join(', ')}.`);
+        details(container,`${role}: represented charge admission versus exact stored-resource drift`,r.charge_observations);
+        for (const ref of r.results) {link(container,ref,ref.path.split('/').at(-1));append(container,'span',' · ');}
+      }
+      for (const key of ['inputs','plan','review']) {link(container,c[key],`Continuation ${key}`);append(container,'span',' · ');}
+    }
+    if(row.covariance) {
+      const v=row.covariance;
+      append(container,'p',`Larger covariance: ${v.mechanical_transforms.length}/${v.required_transforms.length} exact mechanical transforms (zero numerical-event credit); ${v.native_events} separately executed transformed events and ${v.target_steps} target steps. Transformed horizon: ${v.transformed_horizon}; complete: ${v.covariance_complete}. No transformed source-prefix or ten-step covariance claim; scoped acceptance is reported separately.`);
+      details(container,'Exact covariance coverage and errors',v.segments);
+      append(container,'p',`Completed numerical counterparts: ${(v.completed_numerical_transforms || []).join(', ')}. Pending: ${(v.pending_numerical_transforms || []).join(', ')}.`);
+      for(const s of v.segments) {link(container,s.results,`${s.kind} ${s.segment}`);append(container,'span',' · ');}
+      for(const key of ['inputs','plan','review']) {link(container,v[key],`Covariance ${key}`);append(container,'span',' · ');}
+    }
+    for (const key of ['inputs','results','plan','review']) {link(container,row[key],`8.4h C_OS ${key}`);append(container,'span',' · ');}
+  }
   append(container, 'h3', 'Recorded cases: event commit is not case success');
   append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI, A_CI, C_PC, A_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b also have pointwise interval checks. Both RG2b families retain signed inverse chains and completion-relative section bounds. A_RG2b also checks scaled-log-W state, history lineage and the composed writer’s next read. None is a uniform parameter tube.');
   const supplements = append(container, 'p', 'Expanded A_OS oracle and pressure: ');

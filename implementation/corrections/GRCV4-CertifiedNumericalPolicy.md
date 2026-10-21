@@ -159,3 +159,61 @@ the original pointwise sign bounds and fixtures; do not infer full-step success
 from this pass or small-case parity. Other profiles' nonlinear/domain obligations
 and `.h` readiness remain separate. No claim/debt status or accepted G2/G3 support
 is promoted by this execution optimization.
+
+## P9-8.4h scalar-kernel reuse (2026-10-19)
+
+This is an implementation of the unchanged exact-input/nearest-even contract
+in [the numerical policy](../../specs/grc-v4-numerical-policy.md), not another
+numerical policy or a new approximation. The fixed Arb precision and explicit
+inconclusive failure remain unchanged.
+
+`exact_rows` replaces repeated scalar conversions `q(x)` with a call-local
+lookup of the same exact rational value. Only built-in integers/floats enter
+the lookup after successful conversion; equal keys have identical rational
+images, including both signed zeros. Other types use the original conversion.
+The store holds at most 4096 values and is discarded after each matrix
+conversion. A full store merely stops retaining additional conversions; it
+does not change arithmetic, precision, or solver route.
+
+For each finite binary64 value `v`, the solve-local rounding cache stores the
+exact cell boundaries and tie parity:
+
+$$
+\ell(v)=\frac{\operatorname{prev}(v)+v}{2},\qquad
+u(v)=\frac{v+\operatorname{next}(v)}{2}.
+$$
+
+The existing zero cell is $[-2^{-1075},2^{-1075}]$; at the finite extrema the
+existing virtual neighbours $\pm2^{1024}$ are retained. Every interval
+$[a,b]$ still requires common finite endpoint rounding and fresh containment
+$\ell(v)\le a\le b\le u(v)$, with strict inequalities at boundaries belonging
+to odd significands. Thus the stored object is a cell, **not a successful
+rounding decision**. This store is also bounded at 4096 entries and discarded
+after each solve. It never crosses backends, threads, precision contexts or
+ordinary-step boundaries through persistent state.
+
+No matrix product, inverse, equation or intermediate rounding is removed.
+Conditioning, exact residual tests, whole-point construction and lifecycle
+admission remain fresh. Small Fraction/FLINT solves and two changing native
+C_OS steps are compared with uncached kernels; the larger fresh-read result
+is recorded separately in the [performance record](../phase-9-grcv4/tranche-8/P9-8.4h-COSPerformance.md).
+
+### Dense-output successor: exact dyadic endpoint proof
+
+The dense Arb output path now uses the equivalent dyadic proof specified in
+[the numerical policy](../../specs/grc-v4-numerical-policy.md#equivalent-exact-dyadic-output-certification).
+It extracts exact outward endpoints as mantissa/exponent pairs, rather than
+converting them to rationals and then to binary64 candidates. Integer division
+with exact remainder and even-tie handling implements nearest-even rounding.
+Equal finite rounded endpoints certify the whole interval by monotonicity.
+The rational diagonal path and public rational interval checker are unchanged.
+
+The fresh large read matches all retained predictor/corrector and split
+identities at 113.725 s; dense output certification takes 4.888 s versus 24.352 s
+for the scalar-reuse predecessor. This is measured performance, not a uniform
+complexity or event-budget guarantee. Independent Fraction boundary/fuzz tests
+and two changing small native steps pass; no approximate acceptance or fallback
+is introduced. The measured predecessor source/spec were uncommitted, so their
+exact bytes are preserved in pinned compressed evidence snapshots, never
+imported as executable modules. Historical records are not rehashed to match
+the successor.

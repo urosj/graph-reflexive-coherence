@@ -3454,6 +3454,86 @@ the full ten-profile plan.
     Record actual outputs or first rejection. A certificate/negative control
     does not close a required successful execution. Keep original proposals
     separate from any newly identified parameter choice.
+    - [x] C_OS: event-bound source/target oracle and native baseline, then larger
+      coordinate and full-chart covariance. [Declared work](./phase-9-grcv4/tranche-8/P9-8.4h-COSPlan.md).
+      Original first postbeat has zero gradients and fails the strict trigger;
+      bind the second ordinary beat before retuning initial conditions. Keep
+      certified first-step signs separate from a dense horizon screen.
+      - [x] Bind unchanged beat-two trigger, fresh identity/transfer, certified
+        current/reset first steps (one exact reset reuse) and ten-step dense
+        screens. No native event, acceptance or covariance credit.
+      - [x] Execute the unchanged native two-beat source prefix, with exact
+        first-beat predecessor and second-beat staged-oracle parity.
+      - [x] Execute fresh event with both-role admission; first attempt summarized
+        as timeout at the unchanged 1200-second cap, not successful execution.
+        Failed-session artifact removed at user request; no validation dependency.
+        [Capped baseline entry](./phase-9-grcv4/tranche-8/P9-8.4h-COSNativePlan.md)
+        retains prefix/event separately from continuation; no retuning.
+        [Optimized-kernel successor](./phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorReview.md)
+        passes in 871.507 s under the same cap, with four precommit reads,
+        atomic publication and checkpoint/receipt identity. One event only;
+        target continuation, covariance and user acceptance remain separate.
+      - [x] Resolve the repeated certified-solve cost before the event successor:
+        operation-local certified-solve reuse, full read parity, focused safety
+        tests and source-bound timing; no tolerance change or hidden fallback.
+        [Performance record](./phase-9-grcv4/tranche-8/P9-8.4h-COSPerformance.md).
+        Cold read 142 s; warm repeat 86 s versus 141 s pre-change, full point/
+        split parity. No claim that the whole event now fits its cap.
+      - [x] Attribute the cold-read kernels without a campaign rerun: 139 s,
+        full read/split parity; LU 13.4 s, output rounding/extraction 23.5 s,
+        exact conversion 15.5 s. Diagnostic only, no new production change.
+      - [x] Add bounded call-local exact scalar/cell reuse with unchanged
+        proofs; fresh large read 133.920 s and full parity, plus two changing
+        small native steps. Modest gain only; dense output remains expensive.
+      - [x] Replace dense-output rational cell construction by equivalent
+        exact dyadic endpoint proof: full read parity at 113.725 s, output
+        loop 4.888 s. One complete changing large source beat passes exact
+        parity at 196.193 s. No new campaign/event credit or event-cap claim.
+      - [x] Compare one native target step per role with the certified oracle,
+        including final-C readmission, and retain continuation poststates.
+        Both match exactly (about 196 s each); minima 3.369843e-13 current and
+        1.096281e-13 reset. [Resumable continuation](./phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationPlan.md)
+        binds the successful event, not a prepared target or failed attempt.
+      - [x] Complete the remaining nine target steps per role and final reads.
+        [Bounded baseline](./phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationReview.md):
+        twenty target steps plus two fresh final reads; all segments below 600 s,
+        positive represented resources, charge admission and exact stored drift
+        recorded separately. No source/event rerun, retries, uniform enclosure,
+        covariance or acceptance credit. All 22 records total 692,692 bytes.
+      - [x] Larger `.e`/`.f` covariance and scoped C_OS acceptance.
+        - [x] Generalize the transport harness beyond the ten-node star; all
+          eight exact mechanical graph/both-role maps pass on the large graph.
+          [Covariance declaration](./phase-9-grcv4/tranche-8/P9-8.4h-COSCovariancePlan.md).
+          This is not numerical-event credit.
+        - [x] Combined ordering/relabel/orientation native event and one target
+          step per history, with final-C admission and full geometry comparison.
+          Event 854.262 s; steps 245.940/245.009 s. Zero observed covariance
+          discrepancy; unchanged positive minima and tolerances. A comparison
+          name-shadowing fix is separately bound; failed sessions are summarized
+          only. [Bounded result](./phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceReview.md).
+        - [x] Full-chart reflection numerical event and both target histories:
+          phase/shares/chirality transported together; event 875.895 s, target
+          steps 219.298/217.368 s, zero observed full-point/geometry/resource
+          discrepancy and unchanged positive minima. Separate event-bound
+          continuation manifest; no combined or baseline rerun.
+        - [x] Individual edge-order numerical event and both target histories.
+        - [x] Individual node-order numerical event and both target histories.
+        - [x] Individual stable-ID relabel numerical event and both histories.
+        - [x] Individual signed-orientation event and both target histories.
+        - [x] Full-chart rotation event and both target histories.
+        - [x] Full-chart rotation-twice event and both target histories.
+          Final batch: six events/twelve steps, zero observed discrepancy,
+          unchanged caps and positive minima, no retries. All eight counterparts
+          now have an event plus both one-step histories; no new cases proposed.
+        - [x] Final retained C_OS coverage/integrity review, without native replay:
+          all eight events/sixteen steps pass existing scientific consumers;
+          selected API/browser and missing-required-cell checks pass. No further
+          numerical or validation cases proposed for this scoped C_OS closure.
+        - [x] Scoped user acceptance on 2026-10-21; transformed source-prefix and ten-step
+          coverage are not inferred from these one-step histories.
+    - [ ] C_CI: actual postbeat event and both-role continuation/covariance.
+    - [ ] A_CI: actual postbeat event and both-role continuation/covariance.
+    - [ ] A_PC: actual postbeat event, both writers/carrier effects and covariance.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.

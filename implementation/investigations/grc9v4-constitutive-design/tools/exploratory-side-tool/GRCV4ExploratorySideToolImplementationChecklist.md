@@ -2468,3 +2468,38 @@ instead of stale fixed totals and opens any pending case details explicitly.
   trajectory or full retained checker. Project scoped user acceptance dated
   2026-10-14 and eligibility for separately declared `.h`, not event execution;
   historical execution flags remain unchanged.
+- [x] P9-8.4h C_OS opening: CLI/API/notebook/browser projection separates the
+  original no-event beat, second-beat trigger and certified first-step/dense
+  screening evidence from native execution, covariance and acceptance.
+- [x] P9-8.4h selected performance-first view: show two native source steps, zero event
+  commits, short timeout explanation and source-bound read/solve-reuse measurements;
+  preserve historical `.g`/`.h` evidence and keep covariance/acceptance open.
+- [x] Extend the selected view with exact-dyadic read and repeated complete
+  source-step parity; retain two source-prefix steps/zero events, without
+  counting the performance repeat as new campaign coverage.
+- [x] Expose the separately bound successful event successor (871.507 s at the
+  unchanged 1200 s cap): one actual event, both-role precommit admission,
+  original timeout summarized only; failed artifact removed. Target steps remain zero per role; no covariance,
+  numerical status rerun, aggregate closure or user acceptance.
+- [ ] Repair the pre-existing full-index C_CI `.b` historical lifecycle-source
+  binding mismatch and older P9-7.2a `specs/README.md` release-check drift;
+  selected status/browser checks do not close these full-stack blockers.
+- [x] P9-8.4h C_OS continuation: expose twenty target steps and two fresh final
+  reads from the successful event, exact first-step oracle matches, per-step
+  minima and distinct represented-charge/exact-drift observations. Show bounded
+  baseline completion separately from larger covariance, acceptance and uniform
+  trajectory certification. Status authenticates pinned chains without solves.
+- [x] P9-8.4h larger C_OS covariance: expose eight exact mechanical counterparts
+  separately from native transformed event/role segments and unexecuted cells;
+  no transformed prefix/horizon or acceptance inference.
+- [x] Expose separately event-bound individual continuations, including the
+  completed full-chart reflection: two numerical counterparts (combined and
+  reflection), two transformed events/four target steps, six pending transforms.
+  API/notebook/browser distinguish these from the baseline and mechanical panel;
+  selected source-binding/browser tests pass without native reruns or acceptance.
+- [x] Frozen C_OS final batch: expose all eight numerical counterparts complete,
+  eight transformed events/sixteen target steps, and no pending numerical cells.
+  Completion is derived from the exact roster; a missing reset record restores
+  partial status. Selected API/browser and missing-cell tests pass.
+- [x] Record scoped C_OS acceptance on 2026-10-21 separately from unchanged
+  execution flags. All-family coverage and aggregate `.h` closure remain open.

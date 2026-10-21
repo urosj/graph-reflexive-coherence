@@ -99,6 +99,27 @@ In particular, if a caller materializes RN(H^-1) and later applies that rounded
 matrix, those **two stages remain separate**. Directly computing RN(H^-1 j)
 instead would generally change results and is not this policy.
 
+#### Operation-local reuse of certified rounded solves
+
+Under `MatrixReuse.AUTOMATIC`, a successful solve may retain the immutable
+triple `(A, B, RN(A^-1 B))` within the current numerical operation. Reuse requires
+exact equality of **both** rational coefficient and RHS matrices and the same
+exact backend/numerical policy. It is a memoized rounding proof, not an exact
+inverse, approximate factorization, cached current, or cached admission verdict.
+Each caller still supplies its own stage label, passes conditioning under its
+current limit/witness, and recomputes every exact represented residual under its
+current tolerance. A changed RHS or coefficient is a different solve.
+
+Only fully successful solves are retained. Exceptions are not cached; there is
+no fallback, precision escalation or tolerance adjustment. `MatrixReuse.FRESH`
+disables reuse explicitly. Unscoped calls do not share results; nested operations
+own independent stores; these facts never enter snapshots or continuation state.
+The LRU store holds at most sixteen solutions and eight million scalar references
+across coefficient/RHS/result tuples. Oversized entries are computed normally
+but not retained. Eviction changes cost only, never the arithmetic policy.
+Dimension buckets avoid hashing every rational scalar; a bucket match is never
+enough for reuse: full exact coefficient/RHS equality is required.
+
 ### 2. Generic conditioning
 
 The previous general check forms the exact normalized Gram matrix
@@ -312,6 +333,39 @@ writer, root domain, tolerance or stopping rule. Historical executions remain
 bound to their original code; this correction does not retroactively rerun them.
 
 ## Scope and remaining costs
+
+### Equivalent exact dyadic output certification
+
+The fixed Arb solve's outward finite endpoints are exact dyadics $x=m2^e$.
+They may be certified directly without materializing rational endpoints and
+rational rounding cells. For $m\ne0$, set
+
+$$
+t=\operatorname{bitlength}(|m|)-1+e,\qquad g=\max(t-52,-1074).
+$$
+
+Round $|m|2^{e-g}$ to an integer $n$ by exact quotient/remainder: round up
+above half, down below half, and at half choose the even integer. Restore the
+sign and form $n2^g$. The integer has at most 53 significant bits (a carry may
+produce exactly $2^{53}$); conversion and scaling are exact whenever finite.
+This includes subnormals and binade transitions. Canonical zero and explicit
+finite-overflow rejection remain as before. Very small endpoints can be proved
+to round to zero by comparing the shift with the mantissa bit length, without
+constructing an enormous power of two.
+
+Since nearest-even rounding is monotone, finite equality
+$\operatorname{RN}(l)=\operatorname{RN}(u)$ proves that the entire outward
+interval $[l,u]$ belongs to that same rounding cell, including its tie rules.
+Unequal results or nonfinite enclosures fail explicitly. This is an equivalent
+integer proof of whole-cell containment, not a midpoint approximation.
+
+The diagonal rational route retains its exact rational cell check. Optional
+call-local exact scalar conversion/cell reuse is bounded and never stores an
+admission decision. Every solve still performs the existing exact residual and
+conditioning checks. No staged matrix, intermediate rounding, precision,
+retry, fallback, domain or physical equation changes under this optimization.
+
+### Unchanged scope
 
 Candidate A's direct diagonal physical-current formula, singularity and condition
 tests are unchanged. A shares the rounded flat-solve API, Hodge validation and OS

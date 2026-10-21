@@ -313,9 +313,16 @@ class CertifiedPolicyTests(unittest.TestCase):
         )
         for name, expected in record["source_bindings"].items():
             self.assertFalse(Path(name).is_absolute())
-            if name == 'src/pygrc/models/grc_v4_ci.py':
+            if name in ('src/pygrc/models/grc_v4_ci.py',
+                        'src/pygrc/models/grc_v4_linear.py',
+                        'src/pygrc/models/grc_v4_numerics.py',
+                        'src/pygrc/models/grc_v4_exact.py',
+                        'src/pygrc/models/_grc_v4_matrix.py',
+                        'src/pygrc/models/grc_v4_certification.py',
+                        'specs/grc-v4-numerical-policy.md'):
                 # The accepted OS run predates the explicit CI interval
-                # extension. Authenticate its actual source, never rebind it.
+                # extension and solve reuse. Authenticate its actual source,
+                # never rebind it to later implementation.
                 import subprocess
                 raw = subprocess.check_output(['git','show','e1d61021:'+name], cwd=root)
             else:

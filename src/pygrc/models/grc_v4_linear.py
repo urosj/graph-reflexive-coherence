@@ -13,6 +13,23 @@ _MatrixKey: TypeAlias = tuple[_ExactMatrix, ExactScalar | None]
 # Primitive callers also use small descriptor and interval blocks. Keep one
 # fixed budget for all facts, independent of graph size and trace length.
 _MAX_MATRIX_FACTS = 64
+# Certified solutions are distinct from exact inverse facts, never continued
+# between operations. Bound both count and scalar references (keys + values).
+_MAX_ROUNDED_SOLVES = 16
+_MAX_ROUNDED_SOLVE_CELLS = 8_000_000
+
+
+@dataclass(frozen=True, slots=True)
+class _RoundedSolveKey:
+    matrix: _ExactMatrix
+    rhs: _ExactMatrix
+
+    def __hash__(self) -> int:
+        # Deliberate dimension buckets: dense FLINT rational hashing costs more
+        # than bounded equality scans. Dataclass equality still compares EVERY
+        # exact coefficient and RHS; this hash is never proof of a cache hit.
+        return hash((len(self.matrix), len(self.matrix[0]) if self.matrix else 0,
+                     len(self.rhs), len(self.rhs[0]) if self.rhs else 0))
 
 
 class MatrixReuse(Enum):
@@ -37,6 +54,19 @@ class _ConditionFact:
     matrix: _ExactMatrix
     conditioning_limit: ExactScalar
     condition_upper_squared: ExactScalar
+
+
+@dataclass(frozen=True, slots=True)
+class _RoundedSolveFact:
+    """Certified RN(A^-1 B), not an exact inverse or admission decision."""
+
+    matrix: _ExactMatrix
+    rhs: _ExactMatrix
+    result: tuple[tuple[float, ...], ...]
+
+    @property
+    def cells(self) -> int:
+        return sum(len(row) for rows in (self.matrix, self.rhs, self.result) for row in rows)
 
 
 _MatrixFact: TypeAlias = _InverseFact | _ConditionFact
@@ -70,7 +100,8 @@ class _MatrixContinuation:
 class _MatrixFacts:
     """Keep at most 64 immutable inverse/conditioning facts in one operation."""
 
-    __slots__ = ("_entries", "_reuse", "_backend", "_numerical_policy")
+    __slots__ = ("_entries", "_reuse", "_backend", "_numerical_policy",
+                 "_solves", "_solve_cells")
 
     def __init__(self, *, reuse: MatrixReuse = MatrixReuse.AUTOMATIC) -> None:
         if type(reuse) is not MatrixReuse:
@@ -79,6 +110,38 @@ class _MatrixFacts:
         self._backend = current_exact_backend()
         self._numerical_policy = current_numerical_policy()
         self._entries: OrderedDict[_MatrixKey, _MatrixFact] = OrderedDict()
+        self._solves: OrderedDict[_RoundedSolveKey, _RoundedSolveFact] = OrderedDict()
+        self._solve_cells = 0
+
+    def _check_execution(self) -> None:
+        if self._backend is not current_exact_backend():
+            raise TypeError("matrix facts belong to another exact backend")
+        if self._numerical_policy is not current_numerical_policy():
+            raise TypeError("matrix facts belong to another numerical policy")
+
+    def find_solve(self, matrix: _ExactMatrix, rhs: _ExactMatrix) -> _RoundedSolveFact | None:
+        self._check_execution()
+        if self._reuse is MatrixReuse.FRESH:
+            return None
+        key = _RoundedSolveKey(matrix, rhs)
+        fact = self._solves.get(key)
+        if fact is not None:
+            self._solves.move_to_end(key)
+        return fact
+
+    def remember_solve(self, fact: _RoundedSolveFact) -> None:
+        self._check_execution()
+        if self._reuse is MatrixReuse.FRESH or fact.cells > _MAX_ROUNDED_SOLVE_CELLS:
+            return
+        key = _RoundedSolveKey(fact.matrix, fact.rhs)
+        previous = self._solves.pop(key, None)
+        if previous is not None:
+            self._solve_cells -= previous.cells
+        self._solves[key] = fact
+        self._solve_cells += fact.cells
+        while len(self._solves) > _MAX_ROUNDED_SOLVES or self._solve_cells > _MAX_ROUNDED_SOLVE_CELLS:
+            _, evicted = self._solves.popitem(last=False)
+            self._solve_cells -= evicted.cells
 
     @property
     def reuse(self) -> MatrixReuse:
