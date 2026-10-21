@@ -3090,6 +3090,34 @@ now pass. The user accepted C_OS on 2026-10-21; no further C_OS validation
 cases are required by this declared scope. Selected API/browser and missing-cell
 checks also pass; other families and aggregate P9-8.4h remain open. C_CI is next.
 
+**C_CI bounded successor (2026-10-21).** The [frozen finish line](./phase-9-grcv4/tranche-8/P9-8.4h-CCIPlan.md)
+reuses accepted `.g` source/allocation feasibility and CI joint-root mathematics.
+Execute one source beat, a fresh both-role event, ten target steps per role and
+two final roots; then eight transformed events with one step per history as a
+single batch. Reuse large graph mappings and exact matching prerequisites,
+without crediting them as new C_CI numerical execution. Check full joint roots,
+not current alone. One final retained review/side-tool update precedes acceptance.
+New work is added only for a concrete failure; no generic optimization replay.
+The [continuation successor](./phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuationPlan.md)
+binds the actual published event target without modifying source/event records.
+Successful per-role prefixes are resumable. Each step checks all three joint
+roots and a local exact-root resource enclosure from its represented input;
+these local signs do not assert a uniform global trajectory-error bound.
+Both ten-step histories and two fresh final roots now pass; the eight short
+covariance counterparts now also pass. No baseline rerun was required.
+The [covariance batch](./phase-9-grcv4/tranche-8/P9-8.4h-CCICovariancePlan.md)
+freezes eight independent single-threaded workers, one per transform. Each runs
+event/current/reset serially with unchanged FLINT/Arb policy and segment caps.
+Reuse full CI joint-root checks and the existing 2e-13 absolute/relative
+covariance comparison. Exact roster completion, selected side-tool consistency
+and scoped user acceptance remain separate obligations.
+The completed batch has eight transformed events and sixteen target steps,
+zero observed mapped discrepancy and positive local exact-root resource bounds.
+It adds no transformed ten-step horizon or uniform trajectory claim. The user
+accepted the bounded C_CI scope on 2026-10-21 after retained coverage/status
+review; no new C_CI numerical cases are proposed. A_CI `.h` is next, while
+other families and aggregate `.h` remain open.
+
 **Execution order — representative families first (user-directed 2026-10-08).**
 The [C_OS `.d` checkpoint](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md)
 declares 20 cases at D59/66/73/94, depths three/four, both histories and ten

@@ -90,7 +90,7 @@ class LargerRuntimeSurfaces(unittest.TestCase):
         self.assertTrue(covariance['covariance_complete']);self.assertFalse(covariance['source_prefix_rerun'])
         self.assertFalse(covariance['native_numerics_rerun']);self.assertEqual(covariance['transformed_horizon'],1)
         saved=json.loads((index.ROOT/index.ASSET).read_text().split(' = ',1)[1].rstrip(';\n'))
-        self.assertEqual(saved['coverage']['larger_runtime'],[row])
+        self.assertEqual([r for r in saved['coverage']['larger_runtime'] if r['family']=='C_OS'],[row])
         for name in (*index.LARGER_RUNTIME_COS_SOURCES,*index.LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES,*index.LARGER_RUNTIME_COS_CONTINUATION_SOURCES,*index.LARGER_RUNTIME_COS_COVARIANCE_SOURCES):
             with patch.object(index.Sources,'current_bytes',return_value=b'forged'),self.assertRaisesRegex(ValueError,'source drift'):
                 index.Sources(index.ROOT).raw(name)

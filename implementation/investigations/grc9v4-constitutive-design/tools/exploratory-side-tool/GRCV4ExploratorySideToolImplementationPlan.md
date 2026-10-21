@@ -3051,3 +3051,23 @@ and the mechanical panel, not a manually promoted flag. Full C_OS numerical
 coverage now exposes scoped `user_accepted=true` following the 2026-10-21
 user decision, while the original execution records keep their captured flags;
 baseline plus covariance completion is not all-family or aggregate `.h` closure.
+
+The C_CI `.h` successor uses a separately selected status row. Bind its actual
+source beat and fresh request to the accepted CI fixture, distinguish source
+parity from event/target execution, and preserve the full joint-root boundary.
+Status authenticates retained bytes without reconstructing graphs or solving.
+Use the existing API/CLI and notebook selector; expose the same partial row in
+the browser. No C_OS acceptance or shared-mechanics result promotes C_CI.
+The continuation projection follows two separately pinned actual-target chains,
+with step/final-root counts, local sign bounds and stored-charge drift. A complete
+baseline still leaves covariance and user acceptance open. Display values are
+approximate summaries linked to exact retained bounds; status executes no roots.
+The covariance projection follows an exact eight-transform, three-segment roster:
+one event and current/reset target steps per transform. Reuse the existing family
+selector and expose full-joint-root scope, per-segment discrepancies and links.
+Missing segments restore partial status. Keep baseline counts (one event, twenty
+target steps, two final roots) separate from the additional eight events/sixteen
+steps; neither numerical completion nor a status check grants acceptance.
+Scoped C_CI acceptance was separately granted on 2026-10-21. Project it only
+with the pinned acceptance review and complete baseline/covariance roster;
+preserve original execution flags and leave aggregate `.h` and siblings open.

@@ -2503,3 +2503,17 @@ instead of stale fixed totals and opens any pending case details explicitly.
   partial status. Selected API/browser and missing-cell tests pass.
 - [x] Record scoped C_OS acceptance on 2026-10-21 separately from unchanged
   execution flags. All-family coverage and aggregate `.h` closure remain open.
+- [x] C_CI `.h` selected API/notebook/browser: source parity and fresh event
+  binding separate from event commits, target continuation and covariance;
+  authenticate exact retained sources without numerical reruns or acceptance.
+- [x] Extend the same C_CI row with 20 baseline target steps and two final
+  roots, per-role local sign/error summaries and compressed record links.
+  Keep covariance, uniform trajectory claims and scoped acceptance separate;
+  selected status does not reconstruct target graphs or solve joint roots.
+- [x] C_CI `.h` covariance: expose the exact eight-by-three roster, eight
+  transformed events and sixteen one-step histories, full-joint scope and
+  per-segment discrepancy/record links. Missing reset evidence restores partial
+  status. Selected API/browser and C_OS status regression pass. Baseline totals
+  remain separate; aggregate `.h` closure remains false.
+- [x] Record scoped C_CI `.h` user acceptance on 2026-10-21 from the pinned
+  review and complete roster; original execution flags remain unchanged.

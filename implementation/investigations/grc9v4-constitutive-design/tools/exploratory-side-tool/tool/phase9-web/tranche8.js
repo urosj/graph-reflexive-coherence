@@ -43,6 +43,33 @@ export function renderTranche8(value, container, create = tag => document.create
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
   for (const row of c.larger_runtime || []) {
+    if (row.family === 'C_CI') {
+      append(container,'h3','8.4h C_CI — bounded joint-root event integration');
+      append(container,'p',`Status: ${row.status}. Baseline native source steps: ${row.native_steps}; baseline events: ${row.native_events}; baseline target steps: ${row.target_steps}. Full joint-root source parity: ${row.source_full_joint_parity}; fresh trigger eligible: ${row.fresh_trigger.eligible}.`);
+      append(container,'p',`Baseline target continuation: ${row.target_steps}/20 steps and ${row.final_reads}/2 fresh final joint roots. User accepted: ${row.user_accepted}; aggregate closed: ${row.aggregate_closed}. Status does not rerun numerics. Source parity is not event or target-step credit.`);
+      if (row.continuation) {
+        append(container,'p',`Baseline complete: ${row.continuation.baseline_complete}. Full current-and-geometry residual checks and local exact-root resource enclosures; not a uniform trajectory enclosure. Detached histories, not public owner step/reset.`);
+        for (const [role,r] of Object.entries(row.continuation.roles)) {
+          details(container,`${role}: local sign bounds and exact stored-resource drift`,r.steps);
+          for (const ref of r.results) {link(container,ref,ref.path.split('/').at(-1));append(container,'span',' · ');}
+        }
+        link(container,row.continuation.plan,'Continuation scope');append(container,'span',' · ');
+        link(container,row.continuation.inputs,'Continuation bindings');
+        append(container,'span',' · ');link(container,row.continuation.review,'Continuation result and limits');
+      }
+      if (row.covariance) {
+        const v=row.covariance;
+        append(container,'p',`C_CI larger covariance: ${v.native_events}/8 transformed events and ${v.target_steps}/16 one-step histories. Complete: ${v.covariance_complete}. Full joint roots, including consumed and generated geometry; no transformed source-prefix or ten-step claim. Total with baseline: ${row.total_native_events} events and ${row.total_target_steps} target steps.`);
+        for (const c of v.cases) {
+          append(container,'p',`${c.kind}: complete ${c.complete}.`);
+          for (const s of c.segments) {link(container,s.result,`${s.segment} (${s.seconds.toFixed(1)} s; max discrepancy ${s.maximum_covariance_error})`);append(container,'span',' · ');}
+        }
+        for (const key of ['inputs','plan','review']) {link(container,v[key],`Covariance ${key}`);append(container,'span',' · ');}
+      } else append(container,'p','Eight numerical covariance counterparts remain open.');
+      link(container,row.plan,'Frozen C_CI scope');append(container,'span',' · ');link(container,row.inputs,'Bound inputs');
+      for (const s of row.segments) {append(container,'span',' · ');link(container,s.result,`Native ${s.segment} (${s.seconds.toFixed(1)} s)`);}
+      continue;
+    }
     append(container,'h3',`8.4h ${row.family} — two-beat event-bound oracle`);
     append(container,'p',`First-beat trigger eligible: ${row.original_trigger.eligible}. Source beats before request: ${row.source_beats_before_request}; fresh trigger eligible: ${row.fresh_trigger.eligible}. Initial conditions unchanged: ${row.initial_conditions_unchanged}.`);
     append(container,'p',`${row.source_oracle_steps} additional source oracle step and ${row.oracle_steps} certified target first steps (${row.exact_reused_reset_cases} exact reset reuse). ${row.dense_screen_steps} dense screening steps are not certified signs. Native steps: ${row.native_steps}; native events: ${row.native_events}; covariance executed: ${row.covariance_executed}. Oracle success is not native runtime acceptance.`);

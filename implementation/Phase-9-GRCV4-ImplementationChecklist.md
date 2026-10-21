@@ -3531,7 +3531,32 @@ the full ten-profile plan.
           numerical or validation cases proposed for this scoped C_OS closure.
         - [x] Scoped user acceptance on 2026-10-21; transformed source-prefix and ten-step
           coverage are not inferred from these one-step histories.
-    - [ ] C_CI: actual postbeat event and both-role continuation/covariance.
+    - [x] C_CI: actual postbeat event and both-role continuation/covariance.
+      [Frozen bounded scope](./phase-9-grcv4/tranche-8/P9-8.4h-CCIPlan.md): reuse
+      accepted `.g` companion, CI joint-root equations and shared large maps.
+      - [x] Current-code source beat, fresh trigger/identity and independent
+        live/reset transfer; no automatic second beat or fixture redesign.
+        402.919 s, exact accepted source/joint-root parity, positive source
+        resources; no fresh target-step or event credit from this result.
+      - [x] Actual event with both-role joint-root admission before publication.
+        723.996 s; fresh graph/profile and independent transfers match; four
+        independently checked event roots and stale-request rollback pass.
+      - [x] Ten actual target steps per role and two final roots.
+        [Continuation result](./phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuationReview.md):
+        20 native steps, full joint-root/domain checks and positive local
+        exact-root resource bounds; no uniform trajectory enclosure.
+        All steps below 371 s; final roots about 123 s. No source/event rerun.
+      - [x] Eight transformed events and sixteen one-step histories in one batch.
+        [Fixed covariance plan](./phase-9-grcv4/tranche-8/P9-8.4h-CCICovariancePlan.md):
+        eight independent single-threaded workers; full selected/generated
+        geometry and same-root source checks, unchanged comparison and caps.
+        All 24 segments pass; zero observed mapped discrepancy, positive local
+        exact-root resource bounds. No transformed ten-step trajectory claim.
+      - [x] One retained review and synchronized side-tool. Full-joint mutation,
+        missing-counterpart, selected API/browser and C_OS status regression pass.
+      - [x] Scoped user acceptance on 2026-10-21, separately recorded from
+        unchanged execution flags. Other families and aggregate `.h` remain open.
+      No repeated shared allocator proof, optimization programme or broad suite.
     - [ ] A_CI: actual postbeat event and both-role continuation/covariance.
     - [ ] A_PC: actual postbeat event, both writers/carrier effects and covariance.
     - [ ] First-group checkpoint: review and accept this child's required

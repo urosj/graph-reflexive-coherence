@@ -20,6 +20,73 @@ from unittest.mock import patch
 from tranche8_validation import ACTIVE, validation_session, LOCK
 from p984h_pre_solve_reuse_sources import historical_view, historical_binding
 
+LARGER_RUNTIME_CCI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCI-event.json.xz": "e04f8f9a514f2d9cc320a692965f48e7e67e66fd7cc71c03c129b752374b6862",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCI-source.json.xz": "3a5933d68415fdecfe3fa1ecbc78d87a046dd13e5384e71f60ee80d5ef1ccbca",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-1.json.xz": "a6d2ef8a150e29c47c7b68ed34582364587339215791b1d4215ed3542b1fb85f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-10.json.xz": "a600a4ae474c4de61f745cee58a4156c317aa29ead4f375724652c55ca041965",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-2.json.xz": "d789828b0e1e22690575dab11b2f29cc69d891df1326978749e0f218b7efa242",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-3.json.xz": "6ac3361ee061916205eb84697968c04c7ebecdd740d107b385e3a1f8839ce755",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-4.json.xz": "5ccbe535c4706f976b71a677c1df8ac1203920ebc314d2f81656837e791376eb",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-5.json.xz": "a851af437765ca820f5fd5a37d67430e7fdb7e8c896ea2fb274355be1cbdf875",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-6.json.xz": "89c47dc7cb63347548d74097a4f2a81d7c4e19cc1b6d84dd1499d1d8c4d94594",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-7.json.xz": "ee09c32f51b6248a5b9178a1bfb198e330754d1f3791ee7515605cbbb0cdbe04",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-8.json.xz": "10dde41ca816309690d51217a1cca7a9f98b4c57a786657ae8e66d418d508442",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-9.json.xz": "72a67e7413d0cd4cc1eed8d8330cf70e171f835b9b4abda4ed9170107a8ce00e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-current-final.json.xz": "c31e6dbaf83db2c203a947f55fc547c6a0763d78fd7f4b9460b3149929556eb5",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-1.json.xz": "558e6ee621d6f5f94b3435982ac2b24275588871f347f34e6aa627b06812f972",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-10.json.xz": "0afe0b01b5fd3165466305f096ff30e2512de9d7a336334d9a972638e18d8043",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-2.json.xz": "865f5b712a3066e6d7227cbaa87cd7767a1268412c8669f58606c86a8b60c029",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-3.json.xz": "4c8db957fd35794f7678b98c1782553eda421cb847d569ee579045f905df4fc4",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-4.json.xz": "f550b709fc8c3fd4d337a4a1cb20fb3de16db52f2ba3313d42c5a151199c4610",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-5.json.xz": "7e4598aafa46063d65868dc94ec6508559ca2fae12a760b1c9b171bd1e60140f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-6.json.xz": "9ff8aba570b5777c059a1e0aa2f59fcb44d1d56c9186431ae934cbfb25a536f2",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-7.json.xz": "dc20cd132f05e125c489c691e7473ec92f56db155019807f8bd7c239e58e3280",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-8.json.xz": "6c144ed91ae43c92be259cfa4c2e9ba70678f1cb455ce9ebb8a00f38623d1a8f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-9.json.xz": "ca08f4bb1b2633213bb4a3f82d673c817e7b5671a362a506583852cfe509ac73",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuation-reset-final.json.xz": "e2dc1d8a58c8090215a43628836ce233b0974becab64471afdc30fd7aaed60ca",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuationInputs.json": "5ac821188e30ea1df1d231b1290a6fc79b5dabf1bd540bcf5bb235cb7b48111e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuationPlan.md": "15b53dbf671d6ecb365aaddcec224bce2074bac013fe3cd40c1012f2b871fc27",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuationReview.md": "3866c5a63ec5814120ac968a7a0fb997fa9b70ac5fbddb7b52fbac4fdb6e45d7",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-combined-current.json.xz": "ad411331219293c970427eec4bc53154e0e0a229c71468b4407fc533c5a2578c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-combined-event.json.xz": "7411e84cd862d19efbdd99d25a72e72ef6c764495bea9d311bf9046f8932fba5",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-combined-reset.json.xz": "531f390e05eb5bc3bd746ea20d2e5add04cca453c794aa478f60346c1000dc1a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-edge_order-current.json.xz": "78780d9c2358a5ae1cab2f4f647a48159141643cbf3094ec5dc96ce0209c3453",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-edge_order-event.json.xz": "be9cd76efaf1bcb18087ffbcfe91e02c563720407c4674842d97af8316dc7b98",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-edge_order-reset.json.xz": "d067de33b13920faedaacbaae2116e632b019ac9c7480566f85cfae4e41f8707",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-node_order-current.json.xz": "7bff21586ba7647cea292985f91af8c403862b868af0239e461c1014cf8de417",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-node_order-event.json.xz": "554b754a4267fbd42059e172b3e657d48fa3368a77432de7e96a749ae6fdfbb5",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-node_order-reset.json.xz": "3199c0502f05a1b3cac1c4507101f78acbfb8f7c0217849980ec61cb6cabfbf0",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-reflect-current.json.xz": "910f46dfcefeb4677a7c93c4aed5dac3aef5e79b1eca66c856b0897b1da0f807",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-reflect-event.json.xz": "d8e7c31ef1a0fdb92ed558e79bfcc74e6675e8ee9e1bb46d077b595fc3007182",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-reflect-reset.json.xz": "88b0b7650a69c8a5aaaae5f8326f7d517f0322e1a7f37a7ec3bda6180b4cfbc4",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-relabel-current.json.xz": "85c95a907ae7b3e360e164cbe83f14f16bd3503aec25f82ebc6a3244a5a80352",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-relabel-event.json.xz": "645267d9581fe81983e8acc8c12feb6257572349ca8570f97a1de10f1e49abba",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-relabel-reset.json.xz": "28814a4fcef9bab2ce4d51446a33d569e9498d625cd97cc1abbf55d36422e05b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-rotate-current.json.xz": "910969ef7a747354a9b95263a83ec842c19c6113006121f86807b75bd5c35c2d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-rotate-event.json.xz": "8629423df0207cf6b578867d9955068edceb96411c462e5483b9a59296dcf807",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-rotate-reset.json.xz": "19b7ead0fb75ecdc9745e25083b9c51220f4972d3f5089b40f8e444386e757e2",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-rotate_twice-current.json.xz": "db86a068016e2b37e913321d410b3fc44ba6751b6c3f23a78f32c1b7d7269a04",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-rotate_twice-event.json.xz": "816da02f2c541aeef4b24134e8f670fe55fd7e0acdad9b0744070781f4f16654",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-rotate_twice-reset.json.xz": "6080eded0b985cf5a841140a0eae196c1982946713e1ff39feda2c1f92450dbc",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-signed-current.json.xz": "73be84611fdec290cdcdbcc7adaa935764b3dad12d83574d8fb39ac7334a5b71",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-signed-event.json.xz": "7647ac98648c084e7e1c146fa7e416a700ce1dc75ad290a57712a5b3ce9d9679",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariance-signed-reset.json.xz": "f8a19fc2afd3d0b878ca7292f737f032019dceb4bfd52c91239359de0aa019fe",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovarianceInputs.json": "a4c4a3729719506f721c084398f969851407aac1c157f172f60e27a0baf82b56",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovariancePlan.md": "245347c9df2f7f35c8596811ea1fbcbde69a41bceec427e5759e2977dd348168",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCICovarianceReview.md": "ba6388b315500f93045459a4d5c75ca14fcb63f9cc6722b9f7bee3cfbd67581c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIInputs.json": "67a1e101626b240e6022d09e3bcab5e572235ff182118849712f6edf0a71e761",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIPlan.md": "dd5c0e09b3145550169599dd0675f157706f6ab64f5c78c744b2b243bcea61b6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIReview.md": "dabc87f9698319bc698fe1c9c0363e82ff18431bedf88ba7051e5dc4feacb3aa",
+    "implementation/phase-9-grcv4/verification/p984h_cci.py": "76ed26a106bc249009920693a7f050cc350af900315026d3ddbc3c09b9d40953",
+    "implementation/phase-9-grcv4/verification/p984h_cci_continuation.py": "4121f3a2c93e781b8f9db76831adcb8a5d57c47425e04af613766ab43067089b",
+    "implementation/phase-9-grcv4/verification/p984h_cci_covariance.py": "444721c3031b5439ac7bc3fbcf7e4fc3e29913c6322749b95578bf21bbcc9101",
+    "implementation/phase-9-grcv4/verification/test_p984h_cci.py": "04ffab057f54cd869b6653278c41035cd3cc4083d246de0bc7277012e17ba4bf",
+    "implementation/phase-9-grcv4/verification/test_p984h_cci_continuation.py": "b16aa635573400e1c9d1114e4e59b6ebfb9421a76f8b0d62a204d926c0d23c0d",
+    "implementation/phase-9-grcv4/verification/test_p984h_cci_covariance.py": "6752364a085589b92662116fa1cad7dfa9395c94952a28e61e17d765e6352a5e",
+    "implementation/phase-9-grcv4/verification/test_p984h_cci_surfaces.py": "99c4c97275be5df10ea68dd0679a986148185190946ab6ea5766ee5b52032c04"
+}
+
 LARGER_RUNTIME_COS_COVARIANCE_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-event.json.xz": "3729e0f6073ad5d4d4a343fcd67bd7deae525eab26aeb5e0526cf4da14286e84",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSCovariance-edge_order-ContinuationInputs.json": "4d4f237b17b8a32c7843af0c42ec83c0e0dc1a2216b033744938166ef37fc6a1",
@@ -137,7 +204,7 @@ LARGER_RUNTIME_COS_PERFORMANCE_SOURCES = {
 LARGER_RUNTIME_COS_SOURCES = {
     "implementation/phase-9-grcv4/verification/p984h_cos.py": "38d509e3ef87170ef9260b6932e6353b344490fd43d8577e53081d10045b7d08",
     "implementation/phase-9-grcv4/verification/test_p984h_cos.py": "fe0a15f17e511c3bb1316fe32cbcaf69d14b98229e374d1d635d1972c89e3f70",
-    "implementation/phase-9-grcv4/verification/test_p984h_cos_surfaces.py": "e5cb8fc660e85eac587d7cc4aafd3b9aebfd4777e0e0deea4df1f5a3adeb1e5e",
+    "implementation/phase-9-grcv4/verification/test_p984h_cos_surfaces.py": "7f273c40c26ec9bf81deeb363ff2e5cd42cde69d0aad64282dc4889fa7da1bf0",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSPlan.md": "0f807d49d1a1f9efe9e90bacb4dfd2cb8f16a88f912e1032453dd0bb048f17cc",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSReview.md": "933e912a261bab94c7886f3b9f07961494e15c1a6b3839470900bbeb03ab52c0",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSInputs.json": "5a4376f25b34ed58d12345eca716009bcc5e7942e8fb4ce6a4df99a8797f5108",
@@ -711,6 +778,7 @@ class Sources:
             boundary_pins.update(LARGER_COS_BOUNDS_SOURCES)
             boundary_pins.update(LARGER_COS_NATIVE_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_CCI_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_NATIVE_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_PERFORMANCE_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES)
@@ -739,7 +807,8 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_partial_larger_covariance_not_acceptance" if name in LARGER_RUNTIME_COS_COVARIANCE_SOURCES else
+                    basis=("pinned_C_CI_large_event_integration_not_acceptance" if name in LARGER_RUNTIME_CCI_SOURCES else
+                        "pinned_partial_larger_covariance_not_acceptance" if name in LARGER_RUNTIME_COS_COVARIANCE_SOURCES else
                         "pinned_detached_continuation_not_covariance_or_acceptance" if name in LARGER_RUNTIME_COS_CONTINUATION_SOURCES else
                         "pinned_event_successor_not_target_horizon_or_acceptance" if name in LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES else
                         "pinned_read_performance_not_event_or_acceptance" if name in LARGER_RUNTIME_COS_PERFORMANCE_SOURCES else
@@ -1561,7 +1630,7 @@ def _build(root):
                       oracle_and_pressure=supplements, boundary_contract=boundary_view, deep_expansion=deep,
                       ordering_covariance=covariance_view(sources),chart_covariance=chart_view(sources),
                       larger_prerequisites=larger_view(sources),
-                      larger_runtime=[larger_cos_runtime_view(sources)],
+                      larger_runtime=[larger_cos_runtime_view(sources), *([larger_cci_runtime_view(sources)] if LARGER_RUNTIME_CCI_SOURCES else [])],
                       required_cells=322, accepted_cells=len(covered), pending_cells=len(cells) - len(covered),
                       executed_pending_cells=len(pending_cells),
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),
@@ -1629,9 +1698,9 @@ def check_mechanics_storage_successor(checker, retained):
 
 
 def browser_source(value):
-    # Newlines without indentation preserve every field while keeping this generated
+    # Compact whitespace preserves every field while keeping this generated
     # executable asset below the raw-file storage threshold; no lossy summary.
-    return "// Generated from checked retained Tranche 8 evidence; not new authority.\nexport const TRANCHE8_EVIDENCE = " + json.dumps(value, indent=0, ensure_ascii=False) + ";\n"
+    return "// Generated from checked retained Tranche 8 evidence; not new authority.\nexport const TRANCHE8_EVIDENCE = " + json.dumps(value, separators=(',', ':'), ensure_ascii=False) + ";\n"
 
 
 def checked(root=ROOT):
@@ -2474,16 +2543,160 @@ def larger_cos_runtime_view(sources):
     return result
 
 
+def larger_cci_covariance_view(sources, baseline_digest):
+    """Pinned eight-by-three roster; never reconstruct or solve a counterpart."""
+    import p984h_cci_covariance as cov
+    if cov.INPUTS not in LARGER_RUNTIME_CCI_SOURCES:return None
+    m=sources.read(cov.INPUTS)
+    require(m==cov.seal(m) and m['baseline_event_digest']==baseline_digest
+        and [d['kind'] for d in m['transforms']]==list(cov.KINDS),'C_CI covariance manifest/roster')
+    for name,sha in m['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha,'C_CI covariance source drift: '+name)
+    cases=[];events=0;steps=0
+    def maximum(value):
+        if isinstance(value,dict):return max((maximum(v) for v in value.values()),default=0.)
+        return float(value)
+    for kind in cov.KINDS:
+        event_record=None;segments=[]
+        for segment in ('event',*cov.ROLES):
+            name=cov.path(kind,segment)
+            if name not in LARGER_RUNTIME_CCI_SOURCES:continue
+            r=json.loads(lzma.decompress(sources.raw(name)))
+            require(r==cov.seal(r) and r['schema']=='p984h-cci-covariance-results-v1'
+                and r['manifest_digest']==m['record_digest'] and r['kind']==kind and r['segment']==segment
+                and r['outcome']=='completed' and not r['user_accepted'] and not r['aggregate_closed'],
+                'C_CI covariance segment identity/scope')
+            require(0<=r['elapsed_seconds']<=m['event_cap_seconds' if segment=='event' else 'step_cap_seconds'],
+                'C_CI covariance cap')
+            e=r['execution']
+            if segment=='event':
+                require(e['native_events']==1 and e['native_steps']==0 and len(e['admissions'])==2
+                    and e['rollback_exact'],'C_CI covariance event coverage')
+                event_record=r;events+=1
+            else:
+                require(event_record is not None and e['event_record_digest']==event_record['record_digest']
+                    and e['role']==segment and e['native_events']==0 and e['native_steps']==1
+                    and e['detached_continuation'] and cov.q(e['resource_bounds']['minimum_exact_root_lower'])>0,
+                    'C_CI covariance step predecessor/coverage')
+                steps+=1
+            segments.append(dict(segment=segment,seconds=r['elapsed_seconds'],
+                maximum_covariance_error=maximum(r['covariance_errors']),result=sources.ref(name)))
+        cases.append(dict(kind=kind,complete=[r['segment'] for r in segments]==['event',*cov.ROLES],segments=segments))
+    return dict(required_transforms=list(cov.KINDS),cases=cases,native_events=events,target_steps=steps,
+        covariance_complete=all(c['complete'] for c in cases),transformed_horizon=1,
+        source_prefix_rerun=False,full_joint_roots=True,user_accepted=False,aggregate_closed=False,
+        inputs=sources.ref(cov.INPUTS),plan=sources.ref(cov.PLAN),review=sources.ref(cov.REVIEW))
+
+
+def larger_cci_runtime_view(sources):
+    """C_CI segment status: pinned retained data only, no root or trajectory."""
+    import p984h_cci as run
+    for name in LARGER_RUNTIME_CCI_SOURCES:sources.raw(name)
+    m=sources.read(run.INPUTS)
+    require(m==run.seal(m) and m['family']=='C_CI','C_CI manifest')
+    for name,sha in m['source_bindings'].items():
+        require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha,'C_CI execution source drift: '+name)
+    records={}
+    for segment in run.CAPS:
+        name=run.path(segment)
+        if name not in LARGER_RUNTIME_CCI_SOURCES:continue
+        r=json.loads(lzma.decompress(sources.raw(name)))
+        require(r==run.seal(r) and r['manifest_digest']==m['record_digest'] and r['segment']==segment
+            and r['outcome']=='completed' and not r['user_accepted'] and not r['aggregate_closed'],
+            'C_CI retained segment identity/scope')
+        require(r['seconds']<=m['caps'][segment],'C_CI segment cap')
+        records[segment]=r
+    require('source' in records,'C_CI source not executed')
+    prefix=records['source']['execution']
+    require(prefix['accepted_source_full_parity'] and prefix['native_steps']==1 and prefix['native_events']==0
+        and prefix['fresh']['trigger']['eligible'],'C_CI source scope/trigger')
+    if 'event' in records:
+        e=records['event']['execution']
+        require(e['predecessor_digest']==records['source']['record_digest'] and e['native_events']==1
+            and e['native_steps']==0 and e['target']==prefix['fresh']['target']
+            and len(e['admissions'])==2,'C_CI event predecessor/target')
+    continuation=None
+    import p984h_cci_continuation as cont
+    if cont.INPUTS in LARGER_RUNTIME_CCI_SOURCES:
+        cm=sources.read(cont.INPUTS)
+        require(cm==run.seal(cm) and 'event' in records
+            and cm['event_record_digest']==records['event']['record_digest'],'C_CI continuation predecessor')
+        for name,sha in cm['source_bindings'].items():
+            require(hashlib.sha256(sources.current_bytes(name)).hexdigest()==sha,'C_CI continuation source drift: '+name)
+        roles={}
+        for role in cont.ROLES:
+            predecessor=cm['event_record_digest'];rows=[];final_reads=0;refs=[]
+            gap=False
+            for step in (*range(1,11),'final'):
+                name=cont.path(role,step)
+                if name not in LARGER_RUNTIME_CCI_SOURCES:
+                    gap=True;continue
+                require(not gap,'C_CI continuation gap')
+                r=json.loads(lzma.decompress(sources.raw(name)))
+                require(r==run.seal(r) and r['schema']=='p984h-cci-continuation-segment-v1'
+                    and r['manifest_digest']==cm['record_digest'] and r['role']==role and r['step']==step
+                    and r['predecessor_digest']==predecessor and r['event_record_digest']==cm['event_record_digest'],
+                    'C_CI continuation linkage')
+                require(r['outcome']=='completed' and 0<=r['elapsed_seconds']<=cont.CAP
+                    and r['native_events']==0 and not r['user_accepted'] and not r['aggregate_closed']
+                    and not r['covariance_executed'] and r['detached_continuation'],'C_CI continuation scope')
+                require(r['native_steps']==int(step!='final') and r['final_reads']==int(step=='final'),
+                    'C_CI continuation credit')
+                predecessor=r['record_digest'];refs.append(sources.ref(name))
+                if step=='final':final_reads=1
+                else:
+                    bounds=r['resource_bounds']
+                    require(cont.q(bounds['minimum_exact_root_lower'])>0 and bounds['minimum_represented_resource']>0
+                        and not bounds['uniform_trajectory_enclosure'],'C_CI continuation positivity scope')
+                    rows.append(dict(step=step,seconds=r['elapsed_seconds'],
+                        minimum_resource=bounds['minimum_represented_resource'],
+                        exact_root_lower_approx=float(cont.q(bounds['minimum_exact_root_lower'])),
+                        maximum_root_resource_radius_approx=float(cont.q(bounds['maximum_root_resource_radius'])),
+                        exact_resource_sum_delta=r['exact_resource_sum_delta']))
+            roles[role]=dict(native_steps=len(rows),final_reads=final_reads,steps=rows,results=refs)
+        continuation=dict(roles=roles,target_steps=sum(r['native_steps'] for r in roles.values()),
+            final_reads=sum(r['final_reads'] for r in roles.values()),
+            baseline_complete=all(r['native_steps']==10 and r['final_reads']==1 for r in roles.values()),
+            local_joint_root_resource_enclosures=True,uniform_trajectory_enclosure=False,
+            inputs=sources.ref(cont.INPUTS),plan=sources.ref(cont.PLAN),
+            review=sources.ref(cont.BASE+'P9-8.4h-CCIContinuationReview.md'))
+    covariance=larger_cci_covariance_view(sources,records['event']['record_digest']) if 'event' in records else None
+    result = dict(family='C_CI',checkpoint='8.4h',
+        status=('baseline_and_covariance_complete_pending_acceptance'
+                if continuation and continuation['baseline_complete'] and covariance and covariance['covariance_complete'] else
+                'baseline_complete_covariance_pending' if continuation and continuation['baseline_complete'] else
+                'native_event_complete_continuation_pending' if 'event' in records else 'native_source_complete_event_pending'),
+        native_steps=1,native_events=int('event' in records),
+        target_steps=continuation['target_steps'] if continuation else 0,
+        final_reads=continuation['final_reads'] if continuation else 0,continuation=continuation,
+        source_full_joint_parity=True,fresh_trigger=prefix['fresh']['trigger'],
+        native_numerics_rerun=False,covariance_executed=bool(covariance and covariance['native_events']),
+        covariance=covariance,user_accepted=False,aggregate_closed=False,
+        total_native_events=int('event' in records)+(covariance['native_events'] if covariance else 0),
+        total_target_steps=(continuation['target_steps'] if continuation else 0)+(covariance['target_steps'] if covariance else 0),
+        uniform_trajectory_enclosure=False,
+        segments=[dict(segment=k,seconds=v['seconds'],result=sources.ref(run.path(k))) for k,v in records.items()],
+        inputs=sources.ref(run.INPUTS),plan=sources.ref(run.PLAN))
+    if continuation and continuation['baseline_complete'] and covariance and covariance['covariance_complete']:
+        acceptance=sources.raw(BASE+'P9-8.4h-CCICovarianceReview.md').decode()
+        require('## Scoped user acceptance' in acceptance and '2026-10-21' in acceptance,
+            'missing scoped C_CI 8.4h acceptance')
+        result.update(status='baseline_and_covariance_accepted',user_accepted=True,
+            accepted_on='2026-10-21',acceptance_scope='C_CI P9-8.4h bounded baseline and eight covariance counterparts',
+            acceptance=covariance['review'],original_execution_flags_unchanged=True)
+    return result
+
+
 def family_status(root, family, checkpoint="8.4c"):
     """Selected checkpoint/family only; not full-index or boundary validity."""
     import importlib
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g", "8.4h"), "unknown family checkpoint")
     if checkpoint == '8.4h':
-        require(family=='C_OS','8.4h family not yet executed or declared')
+        require(family in ('C_OS','C_CI'),'8.4h family not yet executed or declared')
         sources=Sources(root)
         return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,
-            runtime=larger_cos_runtime_view(sources),source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
+            runtime=(larger_cos_runtime_view(sources) if family=='C_OS' else larger_cci_runtime_view(sources)),source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
             other_families_checked=False,native_trajectories_rerun=False)
     if checkpoint == "8.4g":
         if family=='A_PC':

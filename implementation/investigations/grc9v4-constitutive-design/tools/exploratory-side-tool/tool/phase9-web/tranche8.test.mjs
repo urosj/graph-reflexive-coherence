@@ -6,6 +6,31 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tran
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('C_CI 8.4h records scoped acceptance without changing execution flags', () => {
+  const row=evidence.coverage.larger_runtime.find(r=>r.family==='C_CI');
+  assert.equal(row.native_steps,1);assert.equal(row.target_steps,20);assert.equal(row.final_reads,2);
+  assert.equal(row.native_events,1);
+  assert.equal(row.status,'baseline_and_covariance_accepted');
+  assert.equal(row.original_execution_flags_unchanged,true);
+  assert.equal(row.accepted_on,'2026-10-21');
+  assert.equal(row.covariance.covariance_complete,true);
+  assert.equal(row.covariance.native_events,8);assert.equal(row.covariance.target_steps,16);
+  assert.equal(row.total_native_events,9);assert.equal(row.total_target_steps,36);
+  assert.equal(row.continuation.baseline_complete,true);
+  assert.equal(row.continuation.uniform_trajectory_enclosure,false);
+  assert.equal(row.source_full_joint_parity,true);assert.equal(row.fresh_trigger.eligible,true);
+  assert.equal(row.user_accepted,true);assert.equal(row.aggregate_closed,false);
+  assert.equal(row.native_numerics_rerun,false);assert.equal(row.covariance_executed,true);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/C_CI — bounded joint-root event integration/);
+  assert.match(text(out),/local exact-root resource enclosures/);
+  assert.match(text(out),/8\/8 transformed events and 16\/16 one-step histories/);
+  for(const [key,value] of [['native_steps',2],['target_steps',36],['user_accepted',false],['covariance_executed',false]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime.find(r=>r.family==='C_CI')[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
+
 test('C_OS 8.4h distinguishes completed bounded coverage from acceptance', () => {
   const row=evidence.coverage.larger_runtime[0];
   assert.equal(row.family,'C_OS');assert.equal(row.original_trigger.eligible,false);

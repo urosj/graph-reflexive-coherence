@@ -1,6 +1,42 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — C_OS P9-8.4h covariance (2026-10-21)
+## Current checkpoint — C_CI P9-8.4h accepted (2026-10-21)
+
+C_CI has a [frozen bounded plan](./phase-9-grcv4/tranche-8/P9-8.4h-CCIPlan.md).
+Reuse its accepted `.g` companion and full joint-root oracle. First bind the
+actual one-beat poststate, fresh event and distinct reset; then native event and
+continuation, followed by the eight short covariance counterparts in one batch.
+Do not restart C_OS discovery/optimization or add speculative strengthening.
+The [source result](./phase-9-grcv4/tranche-8/P9-8.4h-CCIReview.md) now passes:
+one current-code beat, exact accepted joint-root parity and fresh trigger/transfer
+binding (402.919 s). The actual event also passes (723.996 s), with both-role
+joint-root admission before publication, independent transfers and stale-request
+rollback. The [continuation successor](./phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuationReview.md)
+now completes ten actual target steps per role and two fresh final joint roots.
+All local exact-root resource lower bounds are positive; the largest root-induced
+resource radius is about 4.02e-15 versus a minimum lower bound about 1.83e-4.
+This is not a uniform global trajectory enclosure. Final minimum resources are
+0.0017932892368033623 / 0.001793310559706277. Every step was below 371 s;
+final roots about 123 s each. Successful chains are compressed and resumable.
+
+**All eight covariance counterparts now pass** (eight events and sixteen
+one-step histories), with zero observed mapped discrepancy and positive local
+exact-root resource bounds. Do not rerun source/event or ten-step histories.
+The [parallel batch](./phase-9-grcv4/tranche-8/P9-8.4h-CCICovarianceReview.md)
+completed with eight single-threaded workers in about 25.5 minutes. All 24
+segments are retained compressed. The initial checker-side integer/float hash
+mismatch was corrected and regression-tested before re-execution; no failed
+session dumps are retained. Total baseline plus covariance: nine events and
+36 target steps, one source beat and two final baseline roots.
+Retained coverage/status review passes, including full-joint mutation,
+missing-counterpart, selected API/browser and C_OS status regression checks.
+The user accepted the bounded C_CI scope on 2026-10-21; original execution
+records and their captured flags remain unchanged. **Next: A_CI P9-8.4h.**
+No additional C_CI numerical cases or storage refactor are required. No
+production code or numerical criteria changed. Aggregate `.h` remains open.
+Selected side-tool status is retained-only, not a rerun.
+
+## Accepted C_OS P9-8.4h covariance
 
 The frozen C_OS numerical finish line is complete: all eight covariance
 counterparts, eight transformed events and sixteen target steps, in addition
@@ -8,7 +44,7 @@ to the completed baseline. No further numerical C_OS cases are proposed.
 The final retained coverage/integrity review and selected API/browser checks
 pass. **C_OS is accepted on 2026-10-21**; original execution flags remain
 unchanged. Next is **C_CI P9-8.4h**, not another C_OS validation task.
-Other families and aggregate P9-8.4h remain open; C_CI has not been started here.
+Other families and aggregate P9-8.4h remain open; C_CI is now opened above.
 The chronology and bounded limits follow below.
 
 Branch: `work/p9-8-4h`, based on merge `718f95be`. Start with C_OS, then C_CI,
