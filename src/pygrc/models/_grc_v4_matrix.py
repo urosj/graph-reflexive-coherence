@@ -10,7 +10,7 @@ import math
 from typing import TypeAlias
 
 from .grc_v4_codec import _dependency
-from .grc_v4_exact import ExactBackend, ExactScalar, current_exact_backend, exact_number
+from .grc_v4_exact import ExactBackend, ExactScalar, current_exact_backend, exact_number, exact_rows
 from .grc_v4_geometry import Matrix, _computed
 from .grc_v4_state import SolverDisposition
 
@@ -39,7 +39,7 @@ class MatrixError(ValueError):
 
 
 def exact_matrix(matrix: Matrix) -> ExactMatrix:
-    return tuple(tuple(exact_number(x) for x in row) for row in matrix)
+    return exact_rows(matrix)
 
 
 def binary64_matrix(matrix: ExactMatrix) -> Matrix:

@@ -1,10 +1,147 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {TRANCHE8_EVIDENCE as evidence} from './tranche8-evidence.js';
-import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tranche8.js';
+import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader, checkedSelectedRuntime, selectedRuntimeLoader} from './tranche8.js';
 
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
+
+test('full historical index distinguishes provenance from current conformance',()=>{
+  assert.equal(evidence.verification.historical_8_4b_source_bindings_authenticated,true);
+  assert.equal(evidence.verification.current_runtime_conformance_inferred,false);
+  assert.equal(evidence.verification.native_trajectories_rerun,false);
+  assert.match(evidence.runtime_scope_note,/Historical display roster only/);
+  assert.match(evidence.verification.boundary_source_revision,/^[a-f0-9]{40}$/);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/current-code conformance or execution authorization is inferred/);
+  const bad=structuredClone(evidence);bad.verification.current_runtime_conformance_inferred=true;
+  assert.throws(()=>checkedTranche8(bad));
+});
+
+const selectedACI=()=>({schema:'phase9_tranche8_family_status_v1',family:'A_CI',checkpoint:'8.4h',
+  runtime:structuredClone(evidence.coverage.larger_runtime.find(r=>r.family==='A_CI')),
+  source_refs:evidence.source_refs.filter(r=>r.basis==='pinned_A_CI_8_4h_not_acceptance'),
+  other_families_checked:false,native_trajectories_rerun:false});
+
+test('selected A_CI browser loads its scoped route and clears unavailable evidence',async()=>{
+  const out=element('div'),status=element('p');let fail=false;const urls=[];
+  const load=selectedRuntimeLoader('A_CI',out,status,async url=>{
+    urls.push(url);return {ok:!fail,json:async()=>selectedACI()};
+  },element);
+  await load();assert.deepEqual(urls,['/api/tranche8?family=A_CI&checkpoint=8.4h']);
+  assert.match(text(out),/9 events; 36 target steps; 2 final roots/);
+  assert.match(text(out),/Accepted: true/);assert.match(status.textContent,/unrelated checks remain separate/);
+  const links=out.children.at(-1).children.filter(e=>e.tag==='a');
+  assert.ok(links.length>0);assert.ok(links.every(e=>e.href.includes('family=A_CI&checkpoint=8.4h&path=')));
+  fail=true;await load();assert.equal(out.children.length,0);assert.match(status.textContent,/Unavailable/);
+});
+
+test('selected A_CI rejects widened scope, altered rows and missing evidence links',()=>{
+  assert.doesNotThrow(()=>checkedSelectedRuntime(selectedACI(),'A_CI'));
+  for(const mutate of [v=>v.other_families_checked=true,v=>v.runtime.user_accepted=false,
+      v=>v.source_refs=[],v=>v.source_refs[0].sha256='forged']) {
+    const bad=structuredClone(selectedACI());mutate(bad);assert.throws(()=>checkedSelectedRuntime(bad,'A_CI'));
+  }
+});
+
+test('A_CI 8.4h exposes scoped acceptance with unchanged execution flags', () => {
+  const row=evidence.coverage.larger_runtime.find(r=>r.family==='A_CI');
+  assert.equal(row.native_steps,1);assert.equal(row.total_native_events,9);
+  assert.equal(row.total_target_steps,36);assert.equal(row.final_reads,2);
+  assert.equal(row.continuation.baseline_complete,true);assert.equal(row.covariance.covariance_complete,true);
+  assert.equal(row.unsigned_candidate_history,true);assert.equal(row.full_joint_roots,true);
+  assert.equal(row.user_accepted,true);assert.equal(row.accepted_on,'2026-10-26');
+  assert.equal(row.original_execution_flags_unchanged,true);assert.equal(row.aggregate_closed,false);
+  assert.equal(row.native_numerics_rerun,false);assert.equal(row.uniform_trajectory_enclosure,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/8.4h A_CI — bounded joint-root event integration/);
+  assert.match(text(out),/A_CI preserves unsigned candidate history/);
+  assert.match(text(out),/A_CI larger covariance: 8\/8 transformed events and 16\/16 one-step histories/);
+  for (const [key,value] of [['user_accepted',false],['aggregate_closed',true],['total_native_events',10],['total_target_steps',40],['unsigned_candidate_history',false]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime.find(r=>r.family==='A_CI')[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
+
+test('C_CI 8.4h records scoped acceptance without changing execution flags', () => {
+  const row=evidence.coverage.larger_runtime.find(r=>r.family==='C_CI');
+  assert.equal(row.native_steps,1);assert.equal(row.target_steps,20);assert.equal(row.final_reads,2);
+  assert.equal(row.native_events,1);
+  assert.equal(row.status,'baseline_and_covariance_accepted');
+  assert.equal(row.original_execution_flags_unchanged,true);
+  assert.equal(row.accepted_on,'2026-10-21');
+  assert.equal(row.covariance.covariance_complete,true);
+  assert.equal(row.covariance.native_events,8);assert.equal(row.covariance.target_steps,16);
+  assert.equal(row.total_native_events,9);assert.equal(row.total_target_steps,36);
+  assert.equal(row.continuation.baseline_complete,true);
+  assert.equal(row.continuation.uniform_trajectory_enclosure,false);
+  assert.equal(row.source_full_joint_parity,true);assert.equal(row.fresh_trigger.eligible,true);
+  assert.equal(row.user_accepted,true);assert.equal(row.aggregate_closed,false);
+  assert.equal(row.native_numerics_rerun,false);assert.equal(row.covariance_executed,true);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/C_CI — bounded joint-root event integration/);
+  assert.match(text(out),/local exact-root resource enclosures/);
+  assert.match(text(out),/8\/8 transformed events and 16\/16 one-step histories/);
+  for(const [key,value] of [['native_steps',2],['target_steps',36],['user_accepted',false],['covariance_executed',false]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime.find(r=>r.family==='C_CI')[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
+
+test('C_OS 8.4h distinguishes completed bounded coverage from acceptance', () => {
+  const row=evidence.coverage.larger_runtime[0];
+  assert.equal(row.family,'C_OS');assert.equal(row.original_trigger.eligible,false);
+  assert.equal(row.fresh_trigger.eligible,true);assert.equal(row.oracle_steps,2);
+  assert.equal(row.source_beats_before_request,2);assert.equal(row.initial_conditions_unchanged,true);
+  assert.equal(row.dense_screen_steps,20);assert.equal(row.exact_reused_reset_cases,1);
+  assert.equal(row.native_steps,38);assert.equal(row.native_events,9);
+  assert.equal(row.status,'native_baseline_and_covariance_accepted');
+  assert.equal(row.original_execution_flags_unchanged,true);
+  assert.equal(row.aggregate_closed,false);
+  assert.equal(row.native.native_events,0);
+  assert.equal(row.event_successor.outcome,'completed');assert.equal(row.event_successor.native_events,1);
+  assert.equal(row.event_successor.both_role_admission_checked,true);
+  assert.equal(row.event_successor.failed_attempt_artifact_retained,false);
+  assert.equal(row.event_successor.native_numerics_rerun,false);
+  assert.deepEqual(row.event_successor.target_steps_by_role,{current:0,reset:0});
+  assert.deepEqual(row.native.failures,[]);
+  assert.match(row.native.timeout_note,/artifact removed at user request/);
+  assert.equal(row.performance.full_read_parity,true);
+  assert.equal(row.performance.event_execution,false);
+  assert.equal(row.continuation.target_steps,20);assert.equal(row.continuation.final_reads,2);
+  assert.equal(row.continuation.baseline_complete,true);assert.equal(row.continuation.native_numerics_rerun,false);
+  assert.equal(row.continuation.uniform_trajectory_enclosure,false);
+  assert.equal(row.continuation.first_steps_match_certified_oracle,true);
+  assert.equal(row.covariance_executed,true);assert.equal(row.user_accepted,true);
+  assert.equal(row.covariance.mechanical_transforms.length,8);
+  assert.equal(row.covariance.native_events,8);assert.equal(row.covariance.target_steps,16);
+  assert.deepEqual(row.covariance.completed_numerical_transforms,row.covariance.required_transforms);
+  assert.deepEqual(row.covariance.pending_numerical_transforms,[]);
+  assert.equal(row.covariance.transformed_horizon,1);assert.equal(row.covariance.covariance_complete,true);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/Oracle success is not native runtime acceptance/);
+  assert.match(text(out),/No success credit/);
+  assert.match(text(out),/Measured single OS read/);
+  assert.match(text(out),/Separately bound event successor: completed/);
+  assert.match(text(out),/20\/20 native steps and 2\/2 fresh final reads/);
+  assert.match(text(out),/Completed numerical counterparts: edge_order, node_order, relabel, signed, combined, rotate, rotate_twice, reflect/);
+  for(const [key,value] of [['native_events',0],['native_steps',20],['user_accepted',false],['aggregate_closed',true],['covariance_executed',false]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0][key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const [key,value] of [['native_events',9],['target_steps',20],['transformed_horizon',10],['covariance_complete',false],['source_prefix_rerun',true],['pending_numerical_transforms',['rotate_twice']],['user_accepted',true]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0].covariance[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const [key,value] of [['native_events',0],['both_role_admission_checked',false],['user_accepted',true],['native_numerics_rerun',true]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0].event_successor[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+  for(const [key,value] of [['target_steps',18],['final_reads',0],['user_accepted',true],['native_numerics_rerun',true],['uniform_trajectory_enclosure',true],['covariance_executed',true]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime[0].continuation[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
 
 test('A_PC larger chart research retains exclusions and separates native successor credit', () => {
   const row=evidence.coverage.larger_prerequisites.investigations.find(r=>r.family==='A_PC');

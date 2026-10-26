@@ -1,5 +1,255 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current checkpoint — P9-8.4h first group accepted (2026-10-26)
+
+The user accepts **C_OS, C_CI, A_CI and A_PC: 4/4 first-group families**.
+The [plan reconciliation](./Phase-9-GRCV4-ImplementationPlan.md#accepted-first-group-checkpoint--p9-84h-2026-10-26)
+records 36 events, 144 target steps and eight final baseline reads, plus five
+separate source steps. Existing bounded results and original records are preserved.
+Next is the second group's remaining `.d`–`.h` work: A_OS, C_PC, C_CI_PC,
+A_CI_PC, C_RG2b and A_RG2b. All-ten `.h`, `.i` and 8.5/8.6 remain open.
+No numerical rerun is needed for this acceptance or merge.
+
+## Accepted family — A_PC P9-8.4h (2026-10-26)
+
+The [result review](./phase-9-grcv4/tranche-8/P9-8.4h-APCReview.md) completes
+one fresh source step, nine successful events, 36 target steps and two fresh
+final baseline reads. The source result equals accepted `.g` evidence exactly.
+Ten steps per history and all eight short covariance counterparts pass; the
+eight counterparts ran in parallel with zero observed mapped discrepancy.
+All 48 numerical records are XZ-compressed (11,202,668 bytes total).
+
+Checks cover full PC points and non-diagonal carrier geometry, both writers,
+independent target allocation/W lineage, complete source-carrier archive with
+explicit loss and zero target carrier, both-role admission and atomic stale
+rollback. Every local resource bound is positive (minimum about 6.926e-5).
+Final resource minima are about 8.93e-4; carrier effects are small but resolved
+above combined error at baseline steps one and ten. Represented charge residuals
+reach 2^-45 within the existing tolerance; exact stored-sum drift is separate.
+This is bounded conformance, not a uniform trajectory or general ATC theorem.
+
+Retained checkpoint review passes for all nine event checkpoints. Selected
+side-tool checks verify bounded counts, source access and rejection of widened credit.
+The user accepted A_PC and the first-group checkpoint on 2026-10-26.
+All-ten `.h` closure remains open.
+Do not rerun this numerical campaign for documentation, acceptance or commit.
+The browser has a separate **Check A_PC 8.4h** action and small projection;
+selected CLI/API/notebook status does not run numerics or imply a full-boundary
+pass. The preceding full-index snapshot remains unchanged.
+
+The explicit worker-local schema memo changes retention only (eight entries,
+four MiB each), leaving existing complete-content/schema keys, validators,
+asset checks and numerical kernels unchanged. It is not a production-default
+change. Preparation took 124.657 s versus 260.326 s; the fresh native source
+passes complete-result parity. No physical law, fixture, tolerance or cap changed.
+
+## Historical index repair (2026-10-26)
+
+The Tranche 8 read-only index authenticates old execution inputs against their
+original Git source identities. Later numerical optimizations must not make
+accepted old runs unreadable, nor may old runs certify those optimizations.
+The exact record/epoch roster is in
+[tranche8_execution_sources.py](./phase-9-grcv4/verification/tranche8_execution_sources.py).
+Original numerical records, acceptance decisions and scientific scope are unchanged.
+
+The `.b` records resolve their complete source rosters at named original commits;
+`.c–.f` metadata reconstruction uses 39 explicit source/specification identities
+at `5b9836358af2873e524e6ceae7256639e8a6bbce`. Historical G3 support and the original
+display-only runtime roster are authenticated separately from current execution
+permission. Missing history, changed records or wrong source hashes still fail.
+Ordinary execution and explicit numerical checks retain their current-source checks.
+No numerical campaign was rerun. The older live P9-7.2a README release-check issue
+remains a separate full-boundary concern; historical index success does not close it.
+The full index rebuild, 17 focused Python checks and 52 browser tests pass.
+The regenerated projection preserves all scientific results, coverage and
+acceptance fields; only provenance metadata and explanatory wording change.
+
+## Accepted predecessor — C_CI P9-8.4h (2026-10-21)
+
+C_CI has a [frozen bounded plan](./phase-9-grcv4/tranche-8/P9-8.4h-CCIPlan.md).
+Reuse its accepted `.g` companion and full joint-root oracle. First bind the
+actual one-beat poststate, fresh event and distinct reset; then native event and
+continuation, followed by the eight short covariance counterparts in one batch.
+Do not restart C_OS discovery/optimization or add speculative strengthening.
+The [source result](./phase-9-grcv4/tranche-8/P9-8.4h-CCIReview.md) now passes:
+one current-code beat, exact accepted joint-root parity and fresh trigger/transfer
+binding (402.919 s). The actual event also passes (723.996 s), with both-role
+joint-root admission before publication, independent transfers and stale-request
+rollback. The [continuation successor](./phase-9-grcv4/tranche-8/P9-8.4h-CCIContinuationReview.md)
+now completes ten actual target steps per role and two fresh final joint roots.
+All local exact-root resource lower bounds are positive; the largest root-induced
+resource radius is about 4.02e-15 versus a minimum lower bound about 1.83e-4.
+This is not a uniform global trajectory enclosure. Final minimum resources are
+0.0017932892368033623 / 0.001793310559706277. Every step was below 371 s;
+final roots about 123 s each. Successful chains are compressed and resumable.
+
+**All eight covariance counterparts now pass** (eight events and sixteen
+one-step histories), with zero observed mapped discrepancy and positive local
+exact-root resource bounds. Do not rerun source/event or ten-step histories.
+The [parallel batch](./phase-9-grcv4/tranche-8/P9-8.4h-CCICovarianceReview.md)
+completed with eight single-threaded workers in about 25.5 minutes. All 24
+segments are retained compressed. The initial checker-side integer/float hash
+mismatch was corrected and regression-tested before re-execution; no failed
+session dumps are retained. Total baseline plus covariance: nine events and
+36 target steps, one source beat and two final baseline roots.
+Retained coverage/status review passes, including full-joint mutation,
+missing-counterpart, selected API/browser and C_OS status regression checks.
+The user accepted the bounded C_CI scope on 2026-10-21; original execution
+records and their captured flags remain unchanged. A_CI is now accepted below.
+No additional C_CI numerical cases or storage refactor are required. No
+production code or numerical criteria changed. Aggregate `.h` remains open.
+Selected side-tool status is retained-only, not a rerun.
+
+## Accepted predecessor — A_CI P9-8.4h (2026-10-26)
+
+The [A_CI result](./phase-9-grcv4/tranche-8/P9-8.4h-ACIReview.md) completes the
+fixed numerical finish line on 2026-10-26: one actual source beat, nine events,
+36 target steps and two fresh final roots. The baseline runs ten steps per
+history; eight short covariance counterparts add one event and one step per
+history each, with zero observed mapped discrepancy. No source-prefix or
+transformed ten-step campaign was repeated. Current and reset stay distinct.
+
+Checks cover full H/J roots and two-pass stopping, old-edge W_A lineage/new
+positive seeds, post-continuity-C/incoming-W/physical-J writer staging, final-C/W
+readmission, reset, clocks, local exact-root positivity and charge. Baseline
+minimum bounds are about `1.83e-4`. Maximum represented charge residual is
+`2^-45`; exact stored-sum drift is separately retained. The
+[charge-check correction](./phase-9-grcv4/tranche-8/P9-8.4h-ACIChargeSuccessor.md)
+removes an erroneous extra zero-residual assertion, using the existing `1e-11`
+profile inequality. Explicit current/reset suffix bindings preserve all prior
+completed records. No production, fixture, tolerance or cap changes; no failed
+dumps. All 48 numerical records are compressed (12,323,620 bytes total).
+
+Retained closeout passes for all 48 records/nine event checkpoints; five focused
+surface checks and 51 browser tests pass. The user accepted this bounded scope
+on 2026-10-26. Do not rerun numerical campaigns for documentation,
+acceptance or commit maintenance. The selected CLI/API/notebook and browser
+**Check A_CI 8.4h** action authenticate this family's evidence independently.
+The historical C_CI full-index binding issue is addressed by the read-only
+index repair above; selected success still does not imply full-stack validity.
+
+A_PC `.h` is now in progress; see the current entry above.
+Aggregate `.h` and the remaining families stay open. Local positivity is not a
+uniform trajectory theorem, and accepted residuals do not remove prior
+feedback-resolution limitations. No general ATC or public-facade claim follows.
+
+## Accepted C_OS P9-8.4h covariance
+
+The frozen C_OS numerical finish line is complete: all eight covariance
+counterparts, eight transformed events and sixteen target steps, in addition
+to the completed baseline. No further numerical C_OS cases are proposed.
+The final retained coverage/integrity review and selected API/browser checks
+pass. **C_OS is accepted on 2026-10-21**; original execution flags remain
+unchanged. Next is **C_CI P9-8.4h**, not another C_OS validation task.
+Other families and aggregate P9-8.4h remain open; C_CI is now opened above.
+The chronology and bounded limits follow below.
+
+Branch: `work/p9-8-4h`, based on merge `718f95be`. Start with C_OS, then C_CI,
+A_CI and A_PC; other families remain separate. The [plan](./phase-9-grcv4/tranche-8/P9-8.4h-COSPlan.md)
+and [bounded result](./phase-9-grcv4/tranche-8/P9-8.4h-COSReview.md) distinguish
+numerical prerequisites from a real event. The original first source beat has
+exactly zero fixed-row gradients: a lawful no-event beat. The unchanged second
+beat is certified trigger-eligible (signed-Hessian minimum about -3.1044e-10).
+No initial resources, law, shares, timestep or tolerances are changed.
+
+The fresh beat-two namespace and both-role transfer have independent mechanical
+expectations. The target-current first step is newly certified; reset exactly
+reuses its accepted `.g` enclosure under a checked namespace/coordinate map.
+Minima are about 3.36984e-13 and 1.09628e-13. A separate ten-step-per-role dense
+screen is only approximate, not a sign proof or native execution. The abandoned
+resource companion contributes no retained execution evidence.
+
+The native source prefix now passes both beats (about 282/299 seconds). The
+first event attempt timed out during target readmission at its unchanged
+1200-second cap; that original attempt receives no successful event credit.
+See [native review](./phase-9-grcv4/tranche-8/P9-8.4h-COSNativeReview.md).
+
+The bounded repeated-solve optimization is complete. A 141-second actual read
+profile confirms FLINT/certified Arb256 and operation contract caching; solves
+cost about 50 seconds, input capture about six. The shared numerical layer now
+reuses successful certified rounded solutions only for identical exact A/B
+within one operation, with fresh conditioning, residuals and admission. See
+[measurement and scope](./phase-9-grcv4/tranche-8/P9-8.4h-COSPerformance.md).
+Corrected cold/warm reads take about 142/86 seconds with exact complete
+read/split parity; 31 focused numerical/policy tests pass. Cold solve cost is
+not improved; repeated identical systems are. Do not infer full-event timing.
+Original execution records remain bound to their original sources, not this
+optimization. The follow-up cold-kernel investigation passes full read parity
+in 139 s: Arb LU takes 13.4 s, output extraction/rounding certification 23.5 s,
+general exact-matrix conversion 15.5 s, and redundant regularity construction
+only 1.5 s. See the performance record for the complete attribution and limits.
+Shared call-local scalar/cell reuse is now implemented: fresh large read
+133.920 s with full baseline parity; 36 selected tests pass, including two
+changing small native C_OS steps. General exact conversion falls to 11.8 s,
+but dense output extraction/certification remains about 24.4 s. The observed
+whole-read gain is only 3.7%, not sufficient evidence of event-cap feasibility.
+The exact dyadic output successor now passes full fresh-read parity at
+113.725 s; its dense-output proof loop takes 4.888 s. One complete changing
+large source beat also passes exact scientific/poststate parity at 196.193 s,
+including dense comparison checks. It repeats the second prefix beat, adding
+no campaign coverage. The spec records the integer nearest-even proof.
+The [separately bound event successor](./phase-9-grcv4/tranche-8/P9-8.4h-COSEventSuccessorReview.md)
+now passes in **871.507 s** under the unchanged inputs/1200 s cap. All four
+source/target-role OS reads pass before atomic publication; target transfer,
+clock, event/receipt/checkpoint identities and stale-request rollback pass.
+One successful event is credited, not target continuation or `.h` acceptance.
+Successful measurements remain preserved; the timeout is summarized only, and
+its artifact/dependency was removed at user request. The successful execution
+payload is unchanged; a retention-only revision distinguishes new checker
+bindings from original execution, without a numerical rerun. Exact pre-dyadic source/spec
+snapshots retain the uncommitted predecessor identities.
+The [continuation](./phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationPlan.md)
+is source-bound to the successful successor checkpoint. Both first target steps
+pass exact oracle matching in about 196 s each, including final-C readmission.
+Current/reset minima are 3.369843e-13 / 1.096281e-13. The remaining nine steps per
+role and both fresh final reads now also pass: **twenty target steps, two final
+reads**, zero retries, each within its 600 s cap. Tenth-step minima are about
+1.15098e-4 for both histories. See the [bounded baseline review](./phase-9-grcv4/tranche-8/P9-8.4h-COSContinuationReview.md).
+All 22 compressed records total 692,692 bytes. `p984h_cos_continuation.py check`
+validates the retained chains without native reruns. Do not rerun completed
+segments or use the removed failed attempt as a predecessor. Pairwise charge
+admission and nonzero exact stored drift remain distinct; there is no uniform
+ten-step error enclosure. Next: separately bound larger `.e`/`.f` covariance,
+then scoped C_OS acceptance. The baseline is complete, but `.h` remains open.
+CLI/API/notebook/browser expose C_OS at checkpoint `8.4h` without numerical reruns.
+The [larger covariance work](./phase-9-grcv4/tranche-8/P9-8.4h-COSCovariancePlan.md)
+now has graph-size-independent transports: five ordering/ID/orientation
+counterparts and three full-chart counterparts. Exact mechanical mappings pass
+on the actual large graph; numerical covariance is separately segmented and
+must not be inferred from those allocator checks. The combined
+native event and one step per history now pass in 854.262 s and
+245.940/245.009 s, with zero observed mapped field/geometry/resource discrepancy.
+See the [covariance review](./phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceReview.md).
+For the role records use `p984h_cos_covariance_continuation.py check --role
+current` (or `reset`); its comparison-only successor fixes local-name shadowing
+without rewriting or rerunning the event. No failed-session dumps remain.
+The full-chart reflection now also passes: event **875.895 s**, target current/
+reset steps **219.298/217.368 s**, all within unchanged caps. Phase, branch shares
+and chirality are transformed together. All observed mapped vectors, generated
+geometry and resources agree exactly with the retained baseline; positive
+first-step minima are unchanged. Reflection adds one event and two detached
+steps, not another ten-step campaign. Seven covariance outputs total **417,096
+compressed bytes**. The generic `p984h_cos_covariance_transforms.py` binds each
+individual transform to its own event; use `check --kind reflect --role current`
+(or `reset`) for these role records. The original combined sources are unchanged.
+The six remaining counterparts (`edge_order`, `node_order`, `relabel`, `signed`,
+`rotate`, `rotate_twice`) now also pass as one frozen batch: six events/twelve
+steps, zero observed discrepancy, unchanged positive minima/caps, no retries.
+All 25 covariance outputs total 1,659,436 compressed bytes. Every numerical
+counterpart has its own event and one target step per history; the selected
+side-tool reports 8/8 coverage separately from acceptance. The retained review
+passes on the saved event/step payloads with native producers disabled.
+Do not rerun any completed segments. No transformed source-prefix or ten-step
+covariance claim; other families and aggregate `.h` acceptance remain open.
+Selected status/browser verification passes. At this checkpoint the full index
+was blocked by a historical C_CI `.b` source-binding mismatch. The 2026-10-26
+index repair above resolves that interpretation error without changing these
+accepted numerical records or claiming execution against later code.
+The broader boundary command also stops at the unchanged older P9-7.2a
+specification-release checker: `specification candidate drift: specs/README.md`.
+Neither that checker nor README was edited here. Artifact/work hashes were
+refreshed, but a passing full boundary audit is **not** claimed.
+
 ## Accepted checkpoint — A_PC larger-graph prerequisites (2026-10-14)
 
 A_CI's acceptance correction is committed as `38489f2c`. The subsequent **A_PC**
@@ -5972,10 +6222,9 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Resume branch `implementation/grc9v4-tranche-8` with the scope clarification
-> after accepted checkpoint `d6d3647`. First reconcile the exact all-ten P9-8.0
-> scopes and accepted evidence in the existing feasibility register/checklist.
-> The next calculation after that is RG section numerical feasibility, not
-> P9-8.1a production. Preserve the all-ten hold and use lean, relevant checks;
-> do not repeat accepted proof discovery. Do not change branches, commit,
-> publish, or start production without explicit authorization.
+> Resume from the accepted first-group checkpoint at the top of this handoff.
+> Inspect the branch after its requested no-ff merge into main. Plan the remaining
+> second-group work; do not silently close the all-ten aggregate row.
+> Do not rerun completed numerical evidence for documentation or acceptance.
+> C_OS, C_CI and A_CI are accepted predecessors. The six second-group families
+> and aggregate `.h` remain separate; do not infer acceptance, commit or merge.

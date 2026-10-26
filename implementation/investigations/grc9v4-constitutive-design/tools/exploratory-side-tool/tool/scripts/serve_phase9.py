@@ -25,15 +25,20 @@ class Handler(BaseHTTPRequestHandler):
         if request.path in {"/api/tranche8", "/api/tranche8/source"}:
             content_type = "application/json"
             try:
+                query = parse_qs(request.query, strict_parsing=True)
+                selected = {}
+                if "family" in query or "checkpoint" in query:
+                    if any(len(query.get(k, [])) != 1 for k in ("family", "checkpoint")):
+                        raise KeyError("one family and checkpoint required")
+                    selected = {k: query.pop(k)[0] for k in ("family", "checkpoint")}
                 if request.path == "/api/tranche8":
-                    if request.query:
-                        raise KeyError("Tranche 8 status takes no query arguments")
-                    content = json.dumps(tranche8_status(repository_root()), ensure_ascii=False).encode()
+                    if query:
+                        raise KeyError("unknown Tranche 8 status arguments")
+                    content = json.dumps(tranche8_status(repository_root(), **selected), ensure_ascii=False).encode()
                 else:
-                    query = parse_qs(request.query, strict_parsing=True)
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed repository-relative path required")
-                    content, ref = tranche8_source(repository_root(), query["path"][0])
+                    content, ref = tranche8_source(repository_root(), query["path"][0], **selected)
                     content_type = "text/plain; charset=utf-8"
                 self.send_response(200)
                 if request.path.endswith("/source"):
@@ -102,7 +107,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -115,6 +120,7 @@ class Handler(BaseHTTPRequestHandler):
                     "aggregate-review.js": "text/javascript",
                     "specialization-review.js": "text/javascript",
                     "tranche8-evidence.js": "text/javascript",
+                    "tranche8-apc-evidence.js": "text/javascript",
                     "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],

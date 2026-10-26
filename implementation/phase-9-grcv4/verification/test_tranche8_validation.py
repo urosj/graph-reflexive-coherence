@@ -158,6 +158,8 @@ class ScopeTests(unittest.TestCase):
     def test_successor_retained_modes_authenticate_extra_records(self):
         from contextlib import nullcontext
         import phase9_implementation_policy as policy
+        import p984h_pre_solve_reuse_sources as pre_solve
+        import p984g_pre_ci_interval_sources as pre_ci
         module = SimpleNamespace(INPUTS='inputs', RESULTS='results', REVIEW='review',
             PRESSURE='pressure', DERIVATION='derivation', main=lambda: None)
         for name, modes in retained.EXTRA_MODES.items():
@@ -167,6 +169,12 @@ class ScopeTests(unittest.TestCase):
                     stack.enter_context(patch.object(sys,'argv',argv))
                     stack.enter_context(patch.object(retained.importlib,'import_module',return_value=module))
                     stack.enter_context(patch.object(retained,'validation_session',return_value=nullcontext()))
+                    # This test substitutes a dispatch-only module. The later
+                    # .g source adapter requires real bindings() implementations
+                    # and is covered separately, not by this synthetic module.
+                    stack.enter_context(patch.object(pre_solve,'historical_sources',return_value=nullcontext()))
+                    stack.enter_context(patch.object(pre_ci,'historical_sources',return_value=nullcontext()))
+                    stack.enter_context(patch.object(index,'historical_larger_sources',return_value=nullcontext()))
                     stack.enter_context(patch.object(policy,'restore_packed_evidence'))
                     authenticated=stack.enter_context(patch.object(index.Sources,'raw'))
                     execute=stack.enter_context(patch.object(module,'main'))

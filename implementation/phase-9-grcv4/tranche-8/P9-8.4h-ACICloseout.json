@@ -1,0 +1,136 @@
+{
+  "schema": "p984h-aci-closeout-v1",
+  "family": "A_CI",
+  "native_source_steps": 1,
+  "native_events": 9,
+  "target_steps": 36,
+  "final_roots": 2,
+  "event_checkpoints": [
+    {
+      "event_id": "grc-event-sha256:1c741f38724097ce24613da0802bf51806f114f14a608796ceff52568b081d33",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:5d083655d8d654cd432fa491cf244dc8dbd1a90896ceb1a2c2c2dd5aa02c2ccb",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:32032b11d009a12eb01ae104f011178e2cc39f18a7826b3613e65c3900ce2106",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:27de25d860c73d5a7cbfc143069a3d26fe875533db2f6b2c9b0beee2e97d391a",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:9b0669236f720bb01f89047c977b264cc39bce52871ed1b032c54000579d18ac",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:a003502b8e170ad9f90cc5a92ba600930ba653bdbf508831e297aec72f331649",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:c9469a81481bcbfb26192a8f6f992533a56597a7cc4798550e146303747e3bca",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:f4d7f48ea44afc37d6ed0824a95a8de46e3c384c36655f2e72134b74890d70f8",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:718e838a56aa6c4d432bba37956b546d73068e41270d14cc6e515dfc03e1539e",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:fd069004555ff01180cd16e4f6662aa7b2ca8efec74bfe8d828b37df7e5365b4",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:721ed9c023fa2646be022710426885e048b0c24dc27b1c73a7dab8aa6a094912",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:76fc2db73bea040a9177e97c22b930b0ea46f7bbda53cb0ccff6c2923cc63aa1",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:50b2ce94825ac594b325e631bd3656747a5b9c33e7fe6355005eb1395c7c9fb4",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:4464f9bc60755673a2a23a5c1549d868b2c4e63c0b54135177a6d72025f04bf0",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:b8c5e8b978fcf37bf3967c12e5022db0038ebe1f1f3a2fa91498ff42138d48ca",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:2fad12fafcc94f0a533344ed47a72eca279201a10bf0916ff8ee660d4100d993",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:e0ed0ae30bfb5d3344fe4b294961b3a8877adfa2e1eb62e40916bf20e3b40274",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:a658653d656f750155e6e7f5bb12a43ae2001d1a28373e4353bb070d21ac2235",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:979dec06cea99b80767a6fa35ca297cae8c3bdbf327876bbc76f353427cdac6d",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:7caeb871f81860e52a2ee7bf76dcee121644c99d429bac4d7248f74ca4ba72b3",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:84f8c566eb52b39212637e7fe329f605f53269457d44e22791079ce39666c8fc",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:955c8288e4214019553f1618532d6bccbdecee0929665751981d07dffce606d8",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:73bb041b46994eb4b6358f8e31311685868475593f899137f5a5511156670958",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:caa91f47c40b63eeffeeaa82e6e7126a1390aeba47312a4561eba5e25695374f",
+      "both_role_reference_lineage": true
+    },
+    {
+      "event_id": "grc-event-sha256:842368493d7f59a3d38ecf624c5bbade8926db448d52595ed0797b7cd30bdd14",
+      "receipts": 4,
+      "commit_id": "grc-commit-sha256:54ab89139de2b7ef58d31388c8b626580e5cbf29bea947c27cf4ef5955a468e4",
+      "lifecycle_digest": "grcv4-lifecycle-sha256:4f71b1373579c64b3a4dd343a49cc8e06a4361ae7d77a9239b4526b15fddc7bf",
+      "both_role_reference_lineage": true
+    }
+  ],
+  "compressed_bytes": 12323620,
+  "record_bindings": {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-source.json.xz": "7975acfe75f44b3ceab8db01c110cee7204ae821c35f4562d1e15e403734f41b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-event.json.xz": "5381f789f81a445b51919231637270f8aaa896cc287c463625d300c9907ff858",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-1.json.xz": "a763c9d77fb7e645cd9f1b0a71ddac3f4f00291440071154760fb9aaa9404e2a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-2.json.xz": "ed3c805506a0309fd10dcdacec183aa475bcca603d89d82637197dbc63a2510b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-3.json.xz": "1a320c7c265850b40fbd9aefd35abf8f7dfa77621eabd4450d6999d8216ed47d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-4.json.xz": "455a8f3590969eeec1077df4362618c7b3bccb01e0aab25939ddcd4a4ef43cbe",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-5.json.xz": "8170766a83f62fd84cda5fe4b6ee1df283b367113f6642373f10287b03d1b69b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-6.json.xz": "4358df33cfefc752cbc705bbc58b6b247dc27e84db366db170cd57f57dd3331e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-7.json.xz": "f5a865063d28a7bf5c2d20d8f59d7f6b1840477279dba74b433b352a13b65abb",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-8.json.xz": "f0dd9da2812476a8b2529c144a947c603bb1fb5611c1c4f0f4b10a91bb462d58",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-9.json.xz": "6b226adae8b5a76fc735721f585130522043f3c32163403f18f285c7e7b4d5fd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-10.json.xz": "b4d5690b747ba23e12fc6b8fce23fadd939667f49ea79b5ab54dd051a4cd488c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-1.json.xz": "1ad3e1c2261f08ca11a1e11a55fc41d5c393376ec463751adca1e638824e6978",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-2.json.xz": "ee4799d8e32ec3f7c8ef3b8659d68fb755413087c466c122d78bb1eec1b1b84a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-3.json.xz": "40b1f442c5b3e8c8ea6528cf1a760752be6db2d31f3854b9082b997d230ee687",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-4.json.xz": "7050fa5a02025d4f169723ad8d411a873d626096bd04bf6ad7cc34e1ca6b2d31",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-5.json.xz": "16e1c2c0804f8863dfd18ad50247976723b08b033fcfb645c25c8cdf3d653906",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-6.json.xz": "e4ead9d9813ddce64c11059ed5a7bcad3a26ec101928f84503931bda0dd3bbd0",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-7.json.xz": "c99127842fd42d4f01768085921f2527899fe07131a097a7c194d0f99d7ad105",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-8.json.xz": "413352fe266d99f7a14c940263db57244fd2032cbe2ee3029c1678a9a8de848b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-9.json.xz": "a44b3de2a441c812886c9316a45dfa1bb2cd2b321e0026b905af21fa288a5740",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-10.json.xz": "123bc6119340a55aa7dc8898b06ba65b5ca64059715ff69fc58ef49fd77a93af",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-final.json.xz": "0406700b2861056cc59d02307cc20c4f9e1cba972e4a94e57eb066acaeb19b2d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-final.json.xz": "22f3a6cc6ac096e92ba592875ac1799a2a48471cb871b8eefc5702373b1ea11a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-edge_order-event.json.xz": "67894578c1562addd00dbf44ec97a0b925638dfeb55d8c3438dc21118d74bd8b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-edge_order-current.json.xz": "9a3a2c2b244bebdbe13c5360c8a32ea1831881952a544063e54baf2921f2c0e6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-edge_order-reset.json.xz": "0031896cb65597c794e0c772a1e3843522424fce087fb02f2d38f712f2ab59c5",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-node_order-event.json.xz": "2f1a97f549abfde3ee3c59392c270a4a9c1bd62407924b8032f07fefcfc3050d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-node_order-current.json.xz": "db67297b9888d4395700fc775e8b0dc70901a07b8dabd4376427c00274772a76",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-node_order-reset.json.xz": "c632fcb1fd7848138d9cc9b9f7a329df02f82bb029023c0a64636cfdfecb1cb8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-relabel-event.json.xz": "a7236601f4ea05c097c37082e181361c13e817251fcbdd518b806fbb315be724",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-relabel-current.json.xz": "a7e81c50565786f2b75ab0444cb4a7d2ef17843e9c069f9501fefa51ae789a56",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-relabel-reset.json.xz": "b6880903c87792720154e83e6d1dac8e706419512e15679dfd225886163d2f20",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-signed-event.json.xz": "d020dacdc914950e03c85a7afefb051b0fef08ddc00cecb15181a372763af676",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-signed-current.json.xz": "82dd38975f57b6233447a511421e045f8ad7a53b1ec31ff63eaa315572683143",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-signed-reset.json.xz": "aad33f4870aa9b075a0543b978cbbcd0ec57205daa891e9269ae52c9e1f06d19",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-combined-event.json.xz": "0bd7d85c09c1241f540f2a326f78b037e119c9115d5fedf9cf1a848462e6b9cd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-combined-current.json.xz": "af0f05525ec0a73e7a6b3e0c4aca178414b5f45a0d84efbb36124c8c4ad8640c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-combined-reset.json.xz": "3ca6d0dbd50922cfef51ec2decb99c1c72248ae0e3c1c1700fa3cf0676aa3f1f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate-event.json.xz": "8c4044179484272baff2ead4f6c35905caafc3272718e5d280b01f5e511624f1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate-current.json.xz": "ddaa8be439c5452bfeaf770ea92f618616e0a20f8b0e83aa5aafbd452944cb59",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate-reset.json.xz": "419388420cf024f5df89c036a6177c2e77855a5567567c6c02804141a611762a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate_twice-event.json.xz": "dde58132535e9e59920811ec7244aeec5a7fda798a70191f83021ddce41c38c4",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate_twice-current.json.xz": "60bd51696c111f4d8e699689ef1bd928d8c7fead3298193dc1b90f382217af77",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate_twice-reset.json.xz": "c751e9692761060be706c74deeea38d6b7f1f82bdabab5a737115950e5740c54",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-reflect-event.json.xz": "d65096a78f9236d437a7ff6bcf063d440ab90604a20c52126dce92820c55ed19",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-reflect-current.json.xz": "a7a2b0084d8b445c5ac53ebbd3ec9fc0929248880c2c51a3d57aab8b52c8c942",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-reflect-reset.json.xz": "b0bad6fabf96b94d5c806c23ff0dda3a6da6228a9786b3a9d0d7fd6a329628e1"
+  },
+  "checker_bindings": {
+    "implementation/phase-9-grcv4/verification/p984h_aci_closeout.py": "aea0c40cec65bb8c0c2d686aa262c52f5c9373270c1512af281050c5a4328a15",
+    "implementation/phase-9-grcv4/verification/test_p984h_aci_closeout.py": "ccd13f697e4cb3b8d5dff7f2172affe9f7297565f7ea7245c6addb5c82cab5c7",
+    "implementation/phase-9-grcv4/verification/p984h_aci_status.py": "30b9caeb63a613eb83ed8a59c2e4db3cc2994cc023afe41931714d9a95075a62"
+  },
+  "numerical_trajectories_rerun": false,
+  "interval_oracles_rerun": false,
+  "bounded_coverage_complete": true,
+  "uniform_trajectory_enclosure": false,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "record_digest": "7c953c333c62a48650b4a94b45699de5b594ce20b7cf29976fb6f6fc23e73f6a"
+}

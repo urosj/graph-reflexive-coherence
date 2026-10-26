@@ -107,6 +107,35 @@ def is_exact(value: object) -> bool:
     return isinstance(value, _flint_module().fmpq)
 
 
+def exact_rows(rows):
+    """Exact matrix conversion with bounded, call-local scalar reuse.
+
+    Only built-in finite floats/ints are memoized, after successful conversion.
+    Equal such values have equal rational images (including signed zero).
+    No matrix, rounding result, backend state or admission decision is cached.
+    Non-builtins retain exact_number's conversion/exception behavior.
+    """
+    cache = {}
+    convert = exact_number
+    native = (_flint_module().fmpq if current_exact_backend() is ExactBackend.FLINT
+              else Fraction)
+
+    def scalar(value):
+        if type(value) is native:
+            return value
+        if type(value) not in (float, int):
+            return convert(value)
+        try:
+            return cache[value]
+        except KeyError:
+            result = convert(value)
+            if len(cache) < 4096:
+                cache[value] = result
+            return result
+
+    return tuple(tuple(scalar(value) for value in row) for row in rows)
+
+
 def integer_ratio(value: object) -> tuple[int, int]:
     """Extract plain integers for exact validators and external conversion."""
     return _ratio(value)

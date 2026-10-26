@@ -2468,3 +2468,83 @@ instead of stale fixed totals and opens any pending case details explicitly.
   trajectory or full retained checker. Project scoped user acceptance dated
   2026-10-14 and eligibility for separately declared `.h`, not event execution;
   historical execution flags remain unchanged.
+- [x] P9-8.4h C_OS opening: CLI/API/notebook/browser projection separates the
+  original no-event beat, second-beat trigger and certified first-step/dense
+  screening evidence from native execution, covariance and acceptance.
+- [x] P9-8.4h selected performance-first view: show two native source steps, zero event
+  commits, short timeout explanation and source-bound read/solve-reuse measurements;
+  preserve historical `.g`/`.h` evidence and keep covariance/acceptance open.
+- [x] Extend the selected view with exact-dyadic read and repeated complete
+  source-step parity; retain two source-prefix steps/zero events, without
+  counting the performance repeat as new campaign coverage.
+- [x] Expose the separately bound successful event successor (871.507 s at the
+  unchanged 1200 s cap): one actual event, both-role precommit admission,
+  original timeout summarized only; failed artifact removed. Target steps remain zero per role; no covariance,
+  numerical status rerun, aggregate closure or user acceptance.
+- [x] Repair the historical full-index source-binding interpretation: authenticate
+  `.b` original record/source commits, the explicit `.c–.f` source epoch and
+  historical G3/display rosters. Preserve old evidence and current execution
+  checks; expose that index integrity does not certify current-code conformance.
+- [ ] Resolve the separate live P9-7.2a `specs/README.md` release-check drift;
+  historical index verification does not close this full-boundary blocker.
+- [x] P9-8.4h C_OS continuation: expose twenty target steps and two fresh final
+  reads from the successful event, exact first-step oracle matches, per-step
+  minima and distinct represented-charge/exact-drift observations. Show bounded
+  baseline completion separately from larger covariance, acceptance and uniform
+  trajectory certification. Status authenticates pinned chains without solves.
+- [x] P9-8.4h larger C_OS covariance: expose eight exact mechanical counterparts
+  separately from native transformed event/role segments and unexecuted cells;
+  no transformed prefix/horizon or acceptance inference.
+- [x] Expose separately event-bound individual continuations, including the
+  completed full-chart reflection: two numerical counterparts (combined and
+  reflection), two transformed events/four target steps, six pending transforms.
+  API/notebook/browser distinguish these from the baseline and mechanical panel;
+  selected source-binding/browser tests pass without native reruns or acceptance.
+- [x] Frozen C_OS final batch: expose all eight numerical counterparts complete,
+  eight transformed events/sixteen target steps, and no pending numerical cells.
+  Completion is derived from the exact roster; a missing reset record restores
+  partial status. Selected API/browser and missing-cell tests pass.
+- [x] Record scoped C_OS acceptance on 2026-10-21 separately from unchanged
+  execution flags. All-family coverage and aggregate `.h` closure remain open.
+- [x] C_CI `.h` selected API/notebook/browser: source parity and fresh event
+  binding separate from event commits, target continuation and covariance;
+  authenticate exact retained sources without numerical reruns or acceptance.
+- [x] Extend the same C_CI row with 20 baseline target steps and two final
+  roots, per-role local sign/error summaries and compressed record links.
+  Keep covariance, uniform trajectory claims and scoped acceptance separate;
+  selected status does not reconstruct target graphs or solve joint roots.
+- [x] C_CI `.h` covariance: expose the exact eight-by-three roster, eight
+  transformed events and sixteen one-step histories, full-joint scope and
+  per-segment discrepancy/record links. Missing reset evidence restores partial
+  status. Selected API/browser and C_OS status regression pass. Baseline totals
+  remain separate; aggregate `.h` closure remains false.
+- [x] Record scoped C_CI `.h` user acceptance on 2026-10-21 from the pinned
+  review and complete roster; original execution flags remain unchanged.
+- [x] A_CI `.h`: selected CLI/API/notebook/browser authenticates the source,
+  actual baseline event, twenty target steps/two final roots and eight short
+  event/current/reset counterparts. Expose unsigned W_A/writer and full joint
+  roots, local sign bounds, charge distinctions, checkpoint review and exact
+  partial counts. Missing evidence restores partial status; no native rerun,
+  implied acceptance, sibling credit or aggregate closure.
+  Five focused Python surface checks and 51 browser tests pass. The separate
+  browser action and scoped source links work without invoking the known-failing
+  historical full index. Its then-existing binding failure is addressed by the
+  historical-index repair above, separately from this accepted numerical scope.
+- [x] Record A_CI `.h` scoped user acceptance on 2026-10-26 from the pinned
+  review and complete retained roster; preserve original execution flags and
+  keep sibling/aggregate coverage separate.
+
+- [x] A_PC `.h`: selected CLI/API/notebook/browser supplement authenticates
+  the actual event, two persistent chains and eight short counterparts; expose
+  full PC points, unsigned W, signed carrier transport, explicit archive/loss/zero
+  initialization, both writers, local signs and resolved carrier effects.
+  Keep source parity, numerical completion, user acceptance and aggregate scope
+  distinct. Use a separate small browser projection; no numerical reruns.
+- [x] Record scoped A_PC `.h` acceptance on 2026-10-26 from the pinned
+  review and complete roster; preserve execution flags and aggregate limits.
+
+- [x] P9-8.4h first-group acceptance, 2026-10-26: C_OS, C_CI, A_CI and
+  A_PC (4/4), 36 events, 144 target steps and eight final baseline reads.
+  This is a checkpoint decision over existing scoped family evidence; original
+  execution flags and the historical index snapshot remain unchanged. All-ten
+  `.h` and second-group coverage stay open. See the Phase 9 plan reconciliation.

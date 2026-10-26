@@ -53,7 +53,8 @@ def main():
     policy.restore_packed_evidence(ROOT)
     module = importlib.import_module(name)
     output = StringIO()
-    with validation_session((name,)):
+    from p984h_pre_solve_reuse_sources import historical_sources as pre_solve_sources
+    with validation_session((name,)), (pre_solve_sources() if name.startswith('p984g_') else nullcontext()):
         sources = index.Sources(ROOT)
         # Authenticate selected inputs/results before dispatch, not a self-signed
         # status payload. The unchanged checker validates its transitive bindings.

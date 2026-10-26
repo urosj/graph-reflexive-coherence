@@ -17,8 +17,10 @@ def _index(root):
 def tranche8_status(repo_root, *, family=None, checkpoint="8.4c"):
     """Authenticate pinned sources and structure; never execute numerical work.
 
-    Raises on missing Git history, source drift or a stale generated projection.
-    Does not authorize implementation or claim current full-boundary validity.
+    Raises on missing Git history, altered retained evidence/source identities
+    or a stale generated projection. Completed runs use their historical source
+    epochs; current code need not equal those original bytes. Does not authorize
+    implementation or claim current-code conformance/full-boundary validity.
     """
     index = _index(repo_root)
     if family is not None:
@@ -28,10 +30,11 @@ def tranche8_status(repo_root, *, family=None, checkpoint="8.4c"):
     return index.checked(Path(repo_root))
 
 
-def tranche8_source(repo_root, path):
+def tranche8_source(repo_root, path, *, family=None, checkpoint="8.4c"):
     """Read only an indexed source, at its advertised exact revision/hash."""
     index = _index(repo_root)
-    value = index.checked(Path(repo_root))
+    value = (index.family_status(Path(repo_root), family, checkpoint)
+             if family is not None else index.checked(Path(repo_root)))
     refs = {r["path"]: r for r in value["source_refs"]}
     if path not in refs:
         raise KeyError("source is not in the checked Tranche 8 index")

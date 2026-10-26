@@ -1,5 +1,18 @@
 # Tranche 8 evidence access
 
+Select `family="A_PC", checkpoint="8.4h"` for the larger-graph persistent
+event/continuation work. The browser has a dedicated **Check A_PC 8.4h** action
+and a small separately generated projection, keeping the preceding full-index
+asset below 1,000,000 bytes. Its source links use the same family/checkpoint
+selector. This supplement does not assert a full-index or full-boundary pass.
+Status checks retained identities and coverage without reconstructing graphs,
+executing native models, or repeating interval equations. Completion and user
+acceptance are separate.
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m tranche8_evidence status --family A_PC --checkpoint 8.4h
+```
+
 For the current A_PC deeper-layout gate, select `family="A_PC"` and
 `checkpoint="8.4d"` in the API/notebook, or use:
 

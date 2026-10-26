@@ -16,6 +16,7 @@ from .grc_v4_exact import (
     _flint_module,
     current_exact_backend,
     exact_number,
+    exact_rows,
 )
 
 
@@ -60,7 +61,7 @@ def numerical_policy(policy):
 def _matrix(rows):
     if current_exact_backend() is not ExactBackend.FLINT:
         raise ValueError("certified matrix kernels require the FLINT backend")
-    return _flint_module().fmpq_mat([[exact_number(x) for x in row] for row in rows])
+    return _flint_module().fmpq_mat(exact_rows(rows))
 
 
 def _square(a):
@@ -89,6 +90,11 @@ def _norms(a):
 
 def round_interval(lo, hi):
     """Whole exact interval containment in one binary64 nearest/even cell."""
+    return _round_interval(lo, hi, None)
+
+
+def _round_interval(lo, hi, cells):
+    """Optional solve-local cell reuse; interval containment stays fresh."""
     q = exact_number
     lo, hi = q(lo), q(hi)
     if lo > hi:
@@ -102,6 +108,19 @@ def round_interval(lo, hi):
     if not math.isfinite(left) or not math.isfinite(right) or left != right:
         raise CertificationInconclusive("unique finite binary64 rounding unavailable")
     value = 0.0 if left == 0 else left
+    if cells is not None and value in cells:
+        low, high, even = cells[value]
+    else:
+        low, high, even = _rounding_cell(value)
+        if cells is not None and len(cells) < 4096:
+            cells[value] = (low, high, even)
+    if not (low <= lo <= hi <= high and (even or (lo > low and hi < high))):
+        raise CertificationInconclusive("exact rounding-cell containment failed")
+    return value
+
+
+def _rounding_cell(value):
+    q = exact_number
     if value == 0:
         low, high, even = -(q(2) ** -1075), q(2) ** -1075, True
     else:
@@ -109,15 +128,65 @@ def round_interval(lo, hi):
         low = ((q(prev) if math.isfinite(prev) else -(q(2) ** 1024)) + q(value)) / 2
         high = ((q(nex) if math.isfinite(nex) else q(2) ** 1024) + q(value)) / 2
         even = not (struct.unpack(">Q", struct.pack(">d", value))[0] & 1)
-    if not (low <= lo <= hi <= high and (even or (lo > low and hi < high))):
-        raise CertificationInconclusive("exact rounding-cell containment failed")
-    return value
+    return low, high, even
+
+
+def _round_dyadic(mantissa, exponent):
+    """Exact nearest/even binary64 rounding of mantissa * 2**exponent.
+
+    Integer quotient/remainder implements the cell proof, including subnormal
+    cells. No rational-to-float conversion, approximate candidate or retry.
+    """
+    m, e = int(mantissa), int(exponent)
+    if not m:
+        return 0.0
+    negative = m < 0
+    m = abs(m)
+    bits = m.bit_length()
+    top = bits - 1 + e
+    if top > 1023:
+        raise CertificationInconclusive("unique finite binary64 rounding unavailable")
+    grid = max(top - 52, -1074)
+    shift = grid - e
+    if shift > bits:
+        return 0.0
+    if shift > 0:
+        integer = m >> shift
+        remainder = m - (integer << shift)
+        half = 1 << (shift - 1)
+        if remainder > half or (remainder == half and integer & 1):
+            integer += 1
+    else:
+        integer = m << -shift
+    try:
+        value = math.ldexp(float(integer), grid)
+    except OverflowError as exc:
+        raise CertificationInconclusive("unique finite binary64 rounding unavailable") from exc
+    # integer <= 2**53, so both this conversion and the scaling are exact
+    # whenever finite. The grid is never below the least-subnormal exponent.
+    return -value if negative and value else value
+
+
+def _round_ball(ball):
+    """Whole Arb enclosure proof via exact dyadic endpoint rounding.
+
+    RN is monotone; equal finite RN(lower) and RN(upper) imply every point in
+    the outward enclosure lies in the same nearest/even rounding cell.
+    """
+    if not ball.is_finite():
+        raise CertificationInconclusive("nonfinite Arb enclosure")
+    left = _round_dyadic(*ball.lower().man_exp())
+    right = _round_dyadic(*ball.upper().man_exp())
+    if left != right:
+        raise CertificationInconclusive("unique finite binary64 rounding unavailable")
+    return left
 
 
 def rounded_solve(matrix, rhs):
     """Fixed structural route: exact diagonal, otherwise one 256-bit Arb LU."""
     f = _flint_module()
     a, b = _matrix(matrix), _matrix(rhs)
+    cells = {}
     _square(a)
     if b.nrows() != a.nrows():
         raise ValueError("RHS dimension mismatch")
@@ -128,7 +197,7 @@ def rounded_solve(matrix, rhs):
             raise CertificationInconclusive("diagonal solve has a zero pivot")
         return tuple(
             tuple(
-                round_interval(b[i, j] / a[i, i], b[i, j] / a[i, i])
+                _round_interval(b[i, j] / a[i, i], b[i, j] / a[i, i], cells)
                 for j in range(b.ncols())
             )
             for i in range(a.nrows())
@@ -154,10 +223,7 @@ def rounded_solve(matrix, rhs):
         for i in range(answer.nrows()):
             row = []
             for j in range(answer.ncols()):
-                ball = answer[i, j]
-                if not ball.is_finite():
-                    raise CertificationInconclusive("nonfinite Arb enclosure")
-                row.append(round_interval(ball.lower().fmpq(), ball.upper().fmpq()))
+                row.append(_round_ball(answer[i, j]))
             rows.append(tuple(row))
         return tuple(rows)
 

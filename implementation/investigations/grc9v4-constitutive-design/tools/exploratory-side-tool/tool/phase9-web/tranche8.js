@@ -1,4 +1,5 @@
 import {TRANCHE8_EVIDENCE} from './tranche8-evidence.js';
+import {TRANCHE8_APC_EVIDENCE} from './tranche8-apc-evidence.js';
 
 const canonical = value => JSON.stringify(value, (_, v) => v && typeof v === 'object' && !Array.isArray(v)
   ? Object.fromEntries(Object.keys(v).sort().map(k => [k, v[k]])) : v);
@@ -24,7 +25,7 @@ export function renderTranche8(value, container, create = tag => document.create
   const c = value.coverage;
   append(container, 'p', `8.4b: ${c.accepted_cells}/${c.required_cells} accepted history cells; ${c.pending_cells} pending. P9-8.4 remains open. No new support or execution permission.`);
   if (c.executed_pending_cells) append(container, 'p', `${c.executed_pending_cells} additional cells have passing execution evidence pending review and acceptance; they are not accepted coverage.`);
-  append(container, 'p', `Check level: ${value.verification.level}. No native trajectory rerun or interval-equation recomputation. Historical 8.3 runs do not certify later code.`);
+  append(container, 'p', `Check level: ${value.verification.level}. Historical execution sources and prerequisites are authenticated at their recorded Git epochs. No native trajectory rerun, interval-equation recomputation, current-code conformance or execution authorization is inferred.`);
   append(container, 'h3', 'Shared mechanics and bounded profile integrations');
   for (const row of value.mechanics) {
     const p = append(container, 'p', `${row.work_id}: ${row.scope}. `); link(p, row.acceptance, 'Recorded decision');
@@ -41,6 +42,84 @@ export function renderTranche8(value, container, create = tag => document.create
     const td = append(tr, 'td', ''); link(td, profile.review, 'Review');
     if (profile.independent_A_oracle) { append(td, 'span', ' · '); link(td, profile.independent_A_oracle.review, 'A oracle'); }
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
+  }
+  for (const row of c.larger_runtime || []) {
+    if (['C_CI','A_CI'].includes(row.family)) {
+      append(container,'h3',`8.4h ${row.family} — bounded joint-root event integration`);
+      if (row.family === 'A_CI') append(container,'p','A_CI preserves unsigned candidate history and writer transport separately from signed current/geometry. Two consecutive joint-residual passes; no C_CI first-pass substitution.');
+      if (row.retained_checkpoint_review) link(container,row.retained_checkpoint_review,'Retained coverage and nine event checkpoints');
+      append(container,'p',`Status: ${row.status}. Baseline native source steps: ${row.native_steps}; baseline events: ${row.native_events}; baseline target steps: ${row.target_steps}. Full joint-root source parity: ${row.source_full_joint_parity}; fresh trigger eligible: ${row.fresh_trigger.eligible}.`);
+      append(container,'p',`Baseline target continuation: ${row.target_steps}/20 steps and ${row.final_reads}/2 fresh final joint roots. User accepted: ${row.user_accepted}; aggregate closed: ${row.aggregate_closed}. Status does not rerun numerics. Source parity is not event or target-step credit.`);
+      if (row.continuation) {
+        append(container,'p',`Baseline complete: ${row.continuation.baseline_complete}. Full current-and-geometry residual checks and local exact-root resource enclosures; not a uniform trajectory enclosure. Detached histories, not public owner step/reset.`);
+        for (const [role,r] of Object.entries(row.continuation.roles)) {
+          details(container,`${role}: local sign bounds and exact stored-resource drift`,r.steps);
+          for (const ref of r.results) {link(container,ref,ref.path.split('/').at(-1));append(container,'span',' · ');}
+        }
+        link(container,row.continuation.plan,'Continuation scope');append(container,'span',' · ');
+        link(container,row.continuation.inputs,'Continuation bindings');
+        append(container,'span',' · ');link(container,row.continuation.review,'Continuation result and limits');
+      }
+      if (row.covariance) {
+        const v=row.covariance;
+        append(container,'p',`${row.family} larger covariance: ${v.native_events}/8 transformed events and ${v.target_steps}/16 one-step histories. Complete: ${v.covariance_complete}. Full joint roots, including consumed and generated geometry; no transformed source-prefix or ten-step claim. Total with baseline: ${row.total_native_events} events and ${row.total_target_steps} target steps.`);
+        for (const c of v.cases) {
+          append(container,'p',`${c.kind}: complete ${c.complete}.`);
+          for (const s of c.segments) {link(container,s.result,`${s.segment} (${s.seconds.toFixed(1)} s; max discrepancy ${s.maximum_covariance_error})`);append(container,'span',' · ');}
+        }
+        for (const key of ['inputs','plan','review']) {link(container,v[key],`Covariance ${key}`);append(container,'span',' · ');}
+      } else append(container,'p','Eight numerical covariance counterparts remain open.');
+      link(container,row.plan,`Frozen ${row.family} scope`);append(container,'span',' · ');link(container,row.inputs,'Bound inputs');
+      for (const s of row.segments) {append(container,'span',' · ');link(container,s.result,`Native ${s.segment} (${s.seconds.toFixed(1)} s)`);}
+      continue;
+    }
+    append(container,'h3',`8.4h ${row.family} — two-beat event-bound oracle`);
+    append(container,'p',`First-beat trigger eligible: ${row.original_trigger.eligible}. Source beats before request: ${row.source_beats_before_request}; fresh trigger eligible: ${row.fresh_trigger.eligible}. Initial conditions unchanged: ${row.initial_conditions_unchanged}.`);
+    append(container,'p',`${row.source_oracle_steps} additional source oracle step and ${row.oracle_steps} certified target first steps (${row.exact_reused_reset_cases} exact reset reuse). ${row.dense_screen_steps} dense screening steps are not certified signs. Native steps: ${row.native_steps}; native events: ${row.native_events}; covariance executed: ${row.covariance_executed}. Oracle success is not native runtime acceptance.`);
+    append(container,'p',`Scoped C_OS acceptance: ${row.user_accepted}; original execution flags unchanged: ${row.original_execution_flags_unchanged}. Other families and aggregate 8.4h remain open.`);
+    details(container,'Bounded trajectory minima, not a uniform error tube',row.role_minima);
+    if (row.native) {
+      const n=row.native;
+      append(container,'p',`Original prefix record: ${n.source_steps} source steps, ${n.native_events} event commits. Its target continuation: current ${n.target_steps_by_role.current}/${n.required_target_steps_per_role}, reset ${n.target_steps_by_role.reset}/${n.required_target_steps_per_role}. Successor records are reported separately. Retained integrity does not rerun native numerics.`);
+      for (const segment of n.segments) {link(container,segment.result,`Native ${segment.segment}`);append(container,'span',' · ');}
+      if (n.timeout_note) append(container,'p',n.timeout_note);
+      for (const f of n.failures || []) {
+        append(container,'p',`${f.segment}: ${f.outcome}, ${f.error.type} after ${f.seconds.toFixed(1)} s. No successful event credited. Performance-first work; original evidence is not rebound to optimized code.`);
+        link(container,f.result,'Retained timeout');
+      }
+    }
+    if (row.event_successor) {
+      const e=row.event_successor;
+      append(container,'p',`Separately bound event successor: ${e.outcome} in ${e.seconds.toFixed(1)} s (unchanged ${e.cap_seconds} s cap); ${e.native_events} successful event credited. Both-role admission checked: ${e.both_role_admission_checked}; publication: ${e.publication_observation}. Failed attempt summarized only. No target continuation, covariance or acceptance follows.`);
+      for (const key of ['inputs','results','plan','review']) {link(container,e[key],`Event successor ${key}`);append(container,'span',' · ');}
+    }
+    if (row.performance) {
+      const p=row.performance;
+      append(container,'p',`Measured single OS read: baseline ${p.baseline_seconds.toFixed(1)} s; optimized cold ${p.cold_seconds.toFixed(1)} s; warm ${p.warm_seconds.toFixed(1)} s. Complete read/split identity parity: ${p.full_read_parity}. FLINT and certified Arb256; fresh residual/admission checks. Not event or horizon execution.`);
+      if (p.scalar_kernel_cold_seconds !== undefined) append(container,'p',`Shared scalar kernels: fresh cold read ${p.scalar_kernel_cold_seconds.toFixed(1)} s with complete baseline parity. Conversion and rounding-cell reuse only; every containment proof remains fresh. Not a changing-state large-step or event timing.`);
+      if (p.dyadic_cold_seconds !== undefined) append(container,'p',`Exact dyadic endpoint certification: fresh cold read ${p.dyadic_cold_seconds.toFixed(1)} s with complete baseline parity. Integer nearest-even proof; no approximation or fallback. Not event execution.`);
+      if (p.repeated_source_step_seconds !== undefined) append(container,'p',`Repeated complete source beat: ${p.repeated_source_step_seconds.toFixed(1)} s; whole-step parity ${p.repeated_source_step_full_parity}. Includes changed resources and final readmission. Adds no new campaign step or event credit.`);
+      link(container,p.review,'Performance scope');
+    }
+    if (row.continuation) {
+      const c=row.continuation;
+      append(container,'p',`Successful-event target continuation: ${c.target_steps}/20 native steps and ${c.final_reads}/2 fresh final reads; bounded baseline complete: ${c.baseline_complete}. Both first steps match the certified oracle: ${c.first_steps_match_certified_oracle}. Detached histories, not public owner step/reset. Later represented positivity and dense agreement are not a uniform trajectory enclosure. Larger covariance is reported separately; scoped acceptance is reported separately.`);
+      for (const [role,r] of Object.entries(c.roles)) {
+        append(container,'p',`${role}: ${r.native_steps}/10 steps; ${r.final_reads} final read. Minimum resources: ${r.minimum_resources.join(', ')}.`);
+        details(container,`${role}: represented charge admission versus exact stored-resource drift`,r.charge_observations);
+        for (const ref of r.results) {link(container,ref,ref.path.split('/').at(-1));append(container,'span',' · ');}
+      }
+      for (const key of ['inputs','plan','review']) {link(container,c[key],`Continuation ${key}`);append(container,'span',' · ');}
+    }
+    if(row.covariance) {
+      const v=row.covariance;
+      append(container,'p',`Larger covariance: ${v.mechanical_transforms.length}/${v.required_transforms.length} exact mechanical transforms (zero numerical-event credit); ${v.native_events} separately executed transformed events and ${v.target_steps} target steps. Transformed horizon: ${v.transformed_horizon}; complete: ${v.covariance_complete}. No transformed source-prefix or ten-step covariance claim; scoped acceptance is reported separately.`);
+      details(container,'Exact covariance coverage and errors',v.segments);
+      append(container,'p',`Completed numerical counterparts: ${(v.completed_numerical_transforms || []).join(', ')}. Pending: ${(v.pending_numerical_transforms || []).join(', ')}.`);
+      for(const s of v.segments) {link(container,s.results,`${s.kind} ${s.segment}`);append(container,'span',' · ');}
+      for(const key of ['inputs','plan','review']) {link(container,v[key],`Covariance ${key}`);append(container,'span',' · ');}
+    }
+    for (const key of ['inputs','results','plan','review']) {link(container,row[key],`8.4h C_OS ${key}`);append(container,'span',' · ');}
   }
   append(container, 'h3', 'Recorded cases: event commit is not case success');
   append(container, 'p', 'C_OS uses bounded dense comparisons; A_OS, C_CI, A_CI, C_PC, A_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b also have pointwise interval checks. Both RG2b families retain signed inverse chains and completion-relative section bounds. A_RG2b also checks scaled-log-W state, history lineage and the composed writer’s next read. None is a uniform parameter tube.');
@@ -338,6 +417,59 @@ export function renderTranche8(value, container, create = tag => document.create
 }
 
 // Independent of the slower full phase-boundary API; never implies that it passed.
+export function checkedSelectedRuntime(value, family) {
+  const expected=family==='A_PC' ? TRANCHE8_APC_EVIDENCE?.runtime : TRANCHE8_EVIDENCE.coverage.larger_runtime.find(r=>r.family===family);
+  const knownRefs=family==='A_PC' ? TRANCHE8_APC_EVIDENCE?.source_refs : TRANCHE8_EVIDENCE.source_refs;
+  if (!expected || value.schema!=='phase9_tranche8_family_status_v1' || value.family!==family || value.checkpoint!=='8.4h'
+      || value.other_families_checked!==false || value.native_trajectories_rerun!==false
+      || canonical(value.runtime)!==canonical(expected) || !Array.isArray(value.source_refs))
+    throw new Error('Missing, stale or widened selected evidence');
+  const refs=new Map();
+  for (const ref of value.source_refs) {
+    if (refs.has(ref.path) || !knownRefs.some(r=>canonical(r)===canonical(ref)))
+      throw new Error('Unindexed selected source');
+    refs.set(ref.path,ref);
+  }
+  const visit=v=>{if (!v || typeof v!=='object') return;
+    if (v.path && v.sha256 && canonical(refs.get(v.path))!==canonical(v)) throw new Error('Missing selected source');
+    for (const child of Object.values(v)) visit(child);};
+  visit(value.runtime);
+  return value;
+}
+
+export function selectedRuntimeLoader(family, container, status, fetcher=fetch, create=tag=>document.createElement(tag)) {
+  let generation=0;
+  return async()=>{
+    const current=++generation;
+    container.replaceChildren();status.textContent=`Checking ${family} 8.4h retained evidence…`;
+    try {
+      const query=`family=${encodeURIComponent(family)}&checkpoint=8.4h`;
+      const response=await fetcher(`/api/tranche8?${query}`,{cache:'no-store'});
+      if (!response.ok) throw new Error('Selected evidence unavailable');
+      const value=checkedSelectedRuntime(await response.json(),family);
+      if (current!==generation) return;
+      const row=value.runtime;
+      const append=(parent,tag,text)=>{const e=create(tag);e.textContent=text;parent.append(e);return e;};
+      append(container,'p',`${family}: ${row.status}. ${row.total_native_events} events; ${row.total_target_steps} target steps; ${row.final_reads} final ${family==='A_PC'?'reads':'roots'}. Accepted: ${row.user_accepted}. Aggregate closed: ${row.aggregate_closed}.`);
+      append(container,'p',family==='A_PC'
+        ? 'Full PC points, unsigned W and signed carrier transport. Events archive the whole old carrier with explicit loss and initialize target Z to zero. Continuation checks both writers and resolved carrier effects. Local resource bounds, not a uniform trajectory theorem; no numerical rerun or full-index pass.'
+        : 'Full joint roots and unsigned candidate-history/writer transport. Local positive-resource bounds, not a uniform trajectory theorem. No numerical rerun or full-index pass is implied.');
+      const observations=append(container,'details','');append(observations,'summary','Per-history observations and covariance');
+      append(observations,'pre',JSON.stringify({continuation:row.continuation,covariance:row.covariance},null,2));
+      const sources=append(container,'details','');append(sources,'summary','Authenticated evidence and source links');
+      for (const ref of value.source_refs) {
+        const a=append(sources,'a',ref.path.split('/').at(-1));
+        a.href=`/api/tranche8/source?${query}&path=${encodeURIComponent(ref.path)}`;a.target='_blank';a.rel='noopener';
+        append(sources,'br','');
+      }
+      status.textContent='Selected retained evidence checked; acceptance and unrelated checks remain separate.';
+    } catch(error) {
+      if (current!==generation) return;
+      container.replaceChildren();status.textContent=`Unavailable: ${error.message}`;
+    }
+  };
+}
+
 export function tranche8Loader(container, status, fetcher = fetch, create) {
   let generation = 0;
   return async () => {
@@ -361,4 +493,12 @@ if (typeof document !== 'undefined' && document.querySelector('#tranche8-evidenc
   const load = tranche8Loader(document.querySelector('#tranche8-evidence'), document.querySelector('#tranche8-status'));
   document.querySelector('#tranche8-refresh').addEventListener('click', load);
   load();
+}
+if (typeof document !== 'undefined' && document.querySelector('#tranche8-aci-evidence')) {
+  const load=selectedRuntimeLoader('A_CI',document.querySelector('#tranche8-aci-evidence'),document.querySelector('#tranche8-aci-status'));
+  document.querySelector('#tranche8-aci-refresh').addEventListener('click',load);
+}
+if (typeof document !== 'undefined' && document.querySelector('#tranche8-apc-evidence')) {
+  const load=selectedRuntimeLoader('A_PC',document.querySelector('#tranche8-apc-evidence'),document.querySelector('#tranche8-apc-status'));
+  document.querySelector('#tranche8-apc-refresh').addEventListener('click',load);
 }
