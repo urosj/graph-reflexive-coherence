@@ -39,6 +39,9 @@ def tranche8_source(repo_root, path, *, family=None, checkpoint="8.4c"):
     if path not in refs:
         raise KeyError("source is not in the checked Tranche 8 index")
     ref = refs[path]
+    if checkpoint == '8.4i':
+        from p984i_first_group import authenticate
+        return authenticate(Path(repo_root), ref), ref
     sources = index.Sources(repo_root)
     raw = sources.raw(path, historical=ref["basis"] == "historical_git")
     index.require(sources.refs[path] == ref, "source identity changed during read")

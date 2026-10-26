@@ -3118,6 +3118,33 @@ accepted the bounded C_CI scope on 2026-10-21 after retained coverage/status
 review; no new C_CI numerical cases are proposed. A_CI `.h` is next, while
 other families and aggregate `.h` remain open.
 
+### First-group P9-8.4i handoff and scoped 8.5/8.6 route
+
+The user authorized first-group reconciliation on 2026-10-26 so C_OS, C_CI,
+A_CI and A_PC can proceed through 8.5 and 8.6 before the remaining six families.
+This is sequencing, not removal of those families from the intended population.
+The [handoff review](./phase-9-grcv4/tranche-8/P9-8.4i-FirstGroupReview.md)
+and [exact subject roster](./phase-9-grcv4/tranche-8/P9-8.4i-FirstGroup.json)
+reconcile `.a–h`, paper/specification boundaries, typed D11 claim/debt traces,
+positive event checkpoints, original exclusions and downstream obligations.
+The user accepted the handoff and closed P9-8.4 for this first group on
+2026-10-26. Next is scoped 8.5, then scoped 8.6; no numerical rerun.
+
+P9-8.5[first-group] uses those four actual event checkpoints for integrated
+occupancy, reconstruction/readmission, reset/replay and whole-publication failure
+pressure. Preserve both-role and realization-specific obligations. Reuse shared
+mechanical proof and existing comparisons; select cheap small negative controls
+and a bounded larger checkpoint per family instead of repeating all trajectories.
+Freeze exact cases/caps on entry. The five frozen atomic-failure classes stay
+explicit; a stale-request check alone does not discharge them.
+
+P9-8.6[first-group] follows that scoped 8.5 result and decides only the exact
+four-family conformance domain justified by mechanics, numerical evidence and
+lifecycle checks. Finite examples do not imply arbitrary-graph numerical
+admission or uniform trajectories. All-ten 8.4/8.5/8.6, Tranche 9 public/disabled
+lifecycle, and the end-of-tranche performance review retain their own scope.
+No new configuration identity, public support or G2/G3 is advertised here.
+
 ### Accepted first-group checkpoint — P9-8.4h (2026-10-26)
 
 The user accepts the first-group checkpoint for **C_OS, C_CI, A_CI and A_PC**.

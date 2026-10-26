@@ -231,6 +231,14 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8-handoff.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8-handoff.test.mjs',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4i-FirstGroup.json',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4i-FirstGroupAuthority.json',
+    'implementation/phase-9-grcv4/tranche-8/P9-8.4i-FirstGroupReview.md',
+    'implementation/phase-9-grcv4/verification/p984i_first_group.py',
+    'implementation/phase-9-grcv4/verification/test_p984i_first_group.py',
+
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8-apc-evidence.js",
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8-apc.test.mjs",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-APC-current-1.json.xz",

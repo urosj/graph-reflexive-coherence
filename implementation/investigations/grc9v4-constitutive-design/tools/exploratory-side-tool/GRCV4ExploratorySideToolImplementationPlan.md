@@ -3116,3 +3116,12 @@ P9-8.4h first-group acceptance, 2026-10-26: C_OS, C_CI, A_CI and
   This is a checkpoint decision over existing scoped family evidence; original
   execution flags and the historical index snapshot remain unchanged. All-ten
   `.h` and second-group coverage stay open. See the Phase 9 plan reconciliation.
+
+P9-8.4i[first-group]: retained CLI/API/notebook/browser handoff for C_OS,
+  C_CI, A_CI and A_PC. Exact accepted coverage, witness/rejection references,
+  typed authority boundaries and next-stage obligations are separate from
+  handoff acceptance, all-ten closure and configuration/public support.
+  Query `family=first_group`, `checkpoint=8.4i`; status performs no numerics.
+
+Scoped handoff accepted on 2026-10-26: first-group P9-8.4 closed;
+  next scoped 8.5 then 8.6. All-ten closure and public support remain unchanged.

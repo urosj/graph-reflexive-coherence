@@ -1,12 +1,34 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current checkpoint — first-group P9-8.4 closed (2026-10-26)
+
+On `work/p9-8-4i-first-group`, the [reconciliation](./phase-9-grcv4/tranche-8/P9-8.4i-FirstGroupReview.md)
+is accepted, closing P9-8.4 for this first group. The user requested commit and
+no-ff merge into main. The selected route is
+**8.4i[first-group] → 8.5[first-group] → 8.6[first-group]** before completing
+second-group `.d–h`. C_OS, C_CI, A_CI and A_PC remain the only selected families.
+Exact witnesses, exclusions, typed authority/debt traces and lifecycle obligations
+are bound in a compact record; no numerical campaign was rerun. All-ten parents
+remain open, with no new public/discovery support.
+
+The old P9-7.2a README failure is corrected for the exact already accepted
+numerical-policy paragraph at `7ca0c368`; all other candidate and release bytes
+stay checked. This is a validator compatibility correction, not a new release.
+The scoped checks and release check pass. One normal boundary-wrapper attempt
+reached the release-pass stage after initial boundary/index checking, but was
+interrupted at about fifteen minutes before the final receipt; no overall
+full-boundary pass is claimed. No numerical campaigns were repeated.
+Next: freeze the bounded 8.5 first-group failure/replay
+matrix and execute it. Do not restart larger numerical discovery or the ten-step
+runs. The second group, Tranche 9 and performance review retain their scope.
+
 ## Current checkpoint — P9-8.4h first group accepted (2026-10-26)
 
 The user accepts **C_OS, C_CI, A_CI and A_PC: 4/4 first-group families**.
 The [plan reconciliation](./Phase-9-GRCV4-ImplementationPlan.md#accepted-first-group-checkpoint--p9-84h-2026-10-26)
 records 36 events, 144 target steps and eight final baseline reads, plus five
 separate source steps. Existing bounded results and original records are preserved.
-Next is the second group's remaining `.d`–`.h` work: A_OS, C_PC, C_CI_PC,
+The later second group still needs its remaining `.d`–`.h` work: A_OS, C_PC, C_CI_PC,
 A_CI_PC, C_RG2b and A_RG2b. All-ten `.h`, `.i` and 8.5/8.6 remain open.
 No numerical rerun is needed for this acceptance or merge.
 
@@ -6222,9 +6244,9 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Resume from the accepted first-group checkpoint at the top of this handoff.
-> Inspect the branch after its requested no-ff merge into main. Plan the remaining
-> second-group work; do not silently close the all-ten aggregate row.
+> Resume from the first-group 8.4i handoff at the top of this file. Check its
+> merge/checkout state, then use its accepted witnesses for scoped 8.5 and 8.6.
+> Do not silently close all-ten parents or rerun completed numerical campaigns.
 > Do not rerun completed numerical evidence for documentation or acceptance.
 > C_OS, C_CI and A_CI are accepted predecessors. The six second-group families
 > and aggregate `.h` remain separate; do not infer acceptance, commit or merge.

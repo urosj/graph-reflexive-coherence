@@ -713,3 +713,14 @@ Use `--family A_PC --checkpoint 8.4f` with `status` or `verify-retained`;
 `--recheck-numerics` explicitly recomputes interval certificates. The first
 group is accepted at 96/96 cells on 2026-10-13. All-ten acceptance is not
 inferred; the other six families remain separate. Next is first-group `.g`.
+
+## First-group 8.4i handoff
+
+Use `tranche8_status(root, family="first_group", checkpoint="8.4i")`, CLI
+`tranche8_evidence.py status --family first_group --checkpoint 8.4i`, the notebook
+handoff cell or **Check first-group handoff** in the browser. The selected API is
+`/api/tranche8?family=first_group&checkpoint=8.4i`. Scoped source links retrieve
+exact evidence bytes, including archived large results and declared Git epochs.
+This reconciles C_OS/C_CI/A_CI/A_PC for scoped 8.5 then 8.6. It reruns no numerical
+trajectory and neither closes all-ten parents nor extends public discovery.
+The historical full index is preserved; the handoff has its own checked scope.

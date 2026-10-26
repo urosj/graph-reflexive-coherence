@@ -107,7 +107,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -121,6 +121,7 @@ class Handler(BaseHTTPRequestHandler):
                     "specialization-review.js": "text/javascript",
                     "tranche8-evidence.js": "text/javascript",
                     "tranche8-apc-evidence.js": "text/javascript",
+                    "tranche8-handoff.js": "text/javascript",
                     "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],
