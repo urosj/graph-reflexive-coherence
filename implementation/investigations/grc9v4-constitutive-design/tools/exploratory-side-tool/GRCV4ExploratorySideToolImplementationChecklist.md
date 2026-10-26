@@ -2517,3 +2517,15 @@ instead of stale fixed totals and opens any pending case details explicitly.
   remain separate; aggregate `.h` closure remains false.
 - [x] Record scoped C_CI `.h` user acceptance on 2026-10-21 from the pinned
   review and complete roster; original execution flags remain unchanged.
+- [x] A_CI `.h`: selected CLI/API/notebook/browser authenticates the source,
+  actual baseline event, twenty target steps/two final roots and eight short
+  event/current/reset counterparts. Expose unsigned W_A/writer and full joint
+  roots, local sign bounds, charge distinctions, checkpoint review and exact
+  partial counts. Missing evidence restores partial status; no native rerun,
+  implied acceptance, sibling credit or aggregate closure.
+  Five focused Python surface checks and 51 browser tests pass. The separate
+  browser action and scoped source links work without invoking the known-failing
+  historical full index; that full-index failure remains visible and unresolved.
+- [x] Record A_CI `.h` scoped user acceptance on 2026-10-26 from the pinned
+  review and complete retained roster; preserve original execution flags and
+  keep sibling/aggregate coverage separate.

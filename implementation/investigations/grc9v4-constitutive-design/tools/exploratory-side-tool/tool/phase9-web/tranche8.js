@@ -43,8 +43,10 @@ export function renderTranche8(value, container, create = tag => document.create
     details(td, 'Exact subject, domain, schedule, budget and retained claim traces', profile);
   }
   for (const row of c.larger_runtime || []) {
-    if (row.family === 'C_CI') {
-      append(container,'h3','8.4h C_CI — bounded joint-root event integration');
+    if (['C_CI','A_CI'].includes(row.family)) {
+      append(container,'h3',`8.4h ${row.family} — bounded joint-root event integration`);
+      if (row.family === 'A_CI') append(container,'p','A_CI preserves unsigned candidate history and writer transport separately from signed current/geometry. Two consecutive joint-residual passes; no C_CI first-pass substitution.');
+      if (row.retained_checkpoint_review) link(container,row.retained_checkpoint_review,'Retained coverage and nine event checkpoints');
       append(container,'p',`Status: ${row.status}. Baseline native source steps: ${row.native_steps}; baseline events: ${row.native_events}; baseline target steps: ${row.target_steps}. Full joint-root source parity: ${row.source_full_joint_parity}; fresh trigger eligible: ${row.fresh_trigger.eligible}.`);
       append(container,'p',`Baseline target continuation: ${row.target_steps}/20 steps and ${row.final_reads}/2 fresh final joint roots. User accepted: ${row.user_accepted}; aggregate closed: ${row.aggregate_closed}. Status does not rerun numerics. Source parity is not event or target-step credit.`);
       if (row.continuation) {
@@ -59,14 +61,14 @@ export function renderTranche8(value, container, create = tag => document.create
       }
       if (row.covariance) {
         const v=row.covariance;
-        append(container,'p',`C_CI larger covariance: ${v.native_events}/8 transformed events and ${v.target_steps}/16 one-step histories. Complete: ${v.covariance_complete}. Full joint roots, including consumed and generated geometry; no transformed source-prefix or ten-step claim. Total with baseline: ${row.total_native_events} events and ${row.total_target_steps} target steps.`);
+        append(container,'p',`${row.family} larger covariance: ${v.native_events}/8 transformed events and ${v.target_steps}/16 one-step histories. Complete: ${v.covariance_complete}. Full joint roots, including consumed and generated geometry; no transformed source-prefix or ten-step claim. Total with baseline: ${row.total_native_events} events and ${row.total_target_steps} target steps.`);
         for (const c of v.cases) {
           append(container,'p',`${c.kind}: complete ${c.complete}.`);
           for (const s of c.segments) {link(container,s.result,`${s.segment} (${s.seconds.toFixed(1)} s; max discrepancy ${s.maximum_covariance_error})`);append(container,'span',' · ');}
         }
         for (const key of ['inputs','plan','review']) {link(container,v[key],`Covariance ${key}`);append(container,'span',' · ');}
       } else append(container,'p','Eight numerical covariance counterparts remain open.');
-      link(container,row.plan,'Frozen C_CI scope');append(container,'span',' · ');link(container,row.inputs,'Bound inputs');
+      link(container,row.plan,`Frozen ${row.family} scope`);append(container,'span',' · ');link(container,row.inputs,'Bound inputs');
       for (const s of row.segments) {append(container,'span',' · ');link(container,s.result,`Native ${s.segment} (${s.seconds.toFixed(1)} s)`);}
       continue;
     }
@@ -414,6 +416,56 @@ export function renderTranche8(value, container, create = tag => document.create
 }
 
 // Independent of the slower full phase-boundary API; never implies that it passed.
+export function checkedSelectedRuntime(value, family) {
+  const expected=TRANCHE8_EVIDENCE.coverage.larger_runtime.find(r=>r.family===family);
+  if (!expected || value.schema!=='phase9_tranche8_family_status_v1' || value.family!==family || value.checkpoint!=='8.4h'
+      || value.other_families_checked!==false || value.native_trajectories_rerun!==false
+      || canonical(value.runtime)!==canonical(expected) || !Array.isArray(value.source_refs))
+    throw new Error('Missing, stale or widened selected evidence');
+  const refs=new Map();
+  for (const ref of value.source_refs) {
+    if (refs.has(ref.path) || !TRANCHE8_EVIDENCE.source_refs.some(r=>canonical(r)===canonical(ref)))
+      throw new Error('Unindexed selected source');
+    refs.set(ref.path,ref);
+  }
+  const visit=v=>{if (!v || typeof v!=='object') return;
+    if (v.path && v.sha256 && canonical(refs.get(v.path))!==canonical(v)) throw new Error('Missing selected source');
+    for (const child of Object.values(v)) visit(child);};
+  visit(value.runtime);
+  return value;
+}
+
+export function selectedRuntimeLoader(family, container, status, fetcher=fetch, create=tag=>document.createElement(tag)) {
+  let generation=0;
+  return async()=>{
+    const current=++generation;
+    container.replaceChildren();status.textContent=`Checking ${family} 8.4h retained evidence…`;
+    try {
+      const query=`family=${encodeURIComponent(family)}&checkpoint=8.4h`;
+      const response=await fetcher(`/api/tranche8?${query}`,{cache:'no-store'});
+      if (!response.ok) throw new Error('Selected evidence unavailable');
+      const value=checkedSelectedRuntime(await response.json(),family);
+      if (current!==generation) return;
+      const row=value.runtime;
+      const append=(parent,tag,text)=>{const e=create(tag);e.textContent=text;parent.append(e);return e;};
+      append(container,'p',`${family}: ${row.status}. ${row.total_native_events} events; ${row.total_target_steps} target steps; ${row.final_reads} final roots. Accepted: ${row.user_accepted}. Aggregate closed: ${row.aggregate_closed}.`);
+      append(container,'p','Full joint roots and unsigned candidate-history/writer transport. Local positive-resource bounds, not a uniform trajectory theorem. No numerical rerun or full-index pass is implied.');
+      const observations=append(container,'details','');append(observations,'summary','Per-history observations and covariance');
+      append(observations,'pre',JSON.stringify({continuation:row.continuation,covariance:row.covariance},null,2));
+      const sources=append(container,'details','');append(sources,'summary','Authenticated evidence and source links');
+      for (const ref of value.source_refs) {
+        const a=append(sources,'a',ref.path.split('/').at(-1));
+        a.href=`/api/tranche8/source?${query}&path=${encodeURIComponent(ref.path)}`;a.target='_blank';a.rel='noopener';
+        append(sources,'br','');
+      }
+      status.textContent='Selected retained evidence checked; acceptance and unrelated checks remain separate.';
+    } catch(error) {
+      if (current!==generation) return;
+      container.replaceChildren();status.textContent=`Unavailable: ${error.message}`;
+    }
+  };
+}
+
 export function tranche8Loader(container, status, fetcher = fetch, create) {
   let generation = 0;
   return async () => {
@@ -437,4 +489,8 @@ if (typeof document !== 'undefined' && document.querySelector('#tranche8-evidenc
   const load = tranche8Loader(document.querySelector('#tranche8-evidence'), document.querySelector('#tranche8-status'));
   document.querySelector('#tranche8-refresh').addEventListener('click', load);
   load();
+}
+if (typeof document !== 'undefined' && document.querySelector('#tranche8-aci-evidence')) {
+  const load=selectedRuntimeLoader('A_CI',document.querySelector('#tranche8-aci-evidence'),document.querySelector('#tranche8-aci-status'));
+  document.querySelector('#tranche8-aci-refresh').addEventListener('click',load);
 }

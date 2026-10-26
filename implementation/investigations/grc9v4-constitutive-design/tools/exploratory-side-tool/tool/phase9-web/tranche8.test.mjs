@@ -1,10 +1,55 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {TRANCHE8_EVIDENCE as evidence} from './tranche8-evidence.js';
-import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader} from './tranche8.js';
+import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader, checkedSelectedRuntime, selectedRuntimeLoader} from './tranche8.js';
 
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
+
+const selectedACI=()=>({schema:'phase9_tranche8_family_status_v1',family:'A_CI',checkpoint:'8.4h',
+  runtime:structuredClone(evidence.coverage.larger_runtime.find(r=>r.family==='A_CI')),
+  source_refs:evidence.source_refs.filter(r=>r.basis==='pinned_A_CI_8_4h_not_acceptance'),
+  other_families_checked:false,native_trajectories_rerun:false});
+
+test('selected A_CI browser loads its scoped route and clears unavailable evidence',async()=>{
+  const out=element('div'),status=element('p');let fail=false;const urls=[];
+  const load=selectedRuntimeLoader('A_CI',out,status,async url=>{
+    urls.push(url);return {ok:!fail,json:async()=>selectedACI()};
+  },element);
+  await load();assert.deepEqual(urls,['/api/tranche8?family=A_CI&checkpoint=8.4h']);
+  assert.match(text(out),/9 events; 36 target steps; 2 final roots/);
+  assert.match(text(out),/Accepted: true/);assert.match(status.textContent,/unrelated checks remain separate/);
+  const links=out.children.at(-1).children.filter(e=>e.tag==='a');
+  assert.ok(links.length>0);assert.ok(links.every(e=>e.href.includes('family=A_CI&checkpoint=8.4h&path=')));
+  fail=true;await load();assert.equal(out.children.length,0);assert.match(status.textContent,/Unavailable/);
+});
+
+test('selected A_CI rejects widened scope, altered rows and missing evidence links',()=>{
+  assert.doesNotThrow(()=>checkedSelectedRuntime(selectedACI(),'A_CI'));
+  for(const mutate of [v=>v.other_families_checked=true,v=>v.runtime.user_accepted=false,
+      v=>v.source_refs=[],v=>v.source_refs[0].sha256='forged']) {
+    const bad=structuredClone(selectedACI());mutate(bad);assert.throws(()=>checkedSelectedRuntime(bad,'A_CI'));
+  }
+});
+
+test('A_CI 8.4h exposes scoped acceptance with unchanged execution flags', () => {
+  const row=evidence.coverage.larger_runtime.find(r=>r.family==='A_CI');
+  assert.equal(row.native_steps,1);assert.equal(row.total_native_events,9);
+  assert.equal(row.total_target_steps,36);assert.equal(row.final_reads,2);
+  assert.equal(row.continuation.baseline_complete,true);assert.equal(row.covariance.covariance_complete,true);
+  assert.equal(row.unsigned_candidate_history,true);assert.equal(row.full_joint_roots,true);
+  assert.equal(row.user_accepted,true);assert.equal(row.accepted_on,'2026-10-26');
+  assert.equal(row.original_execution_flags_unchanged,true);assert.equal(row.aggregate_closed,false);
+  assert.equal(row.native_numerics_rerun,false);assert.equal(row.uniform_trajectory_enclosure,false);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/8.4h A_CI — bounded joint-root event integration/);
+  assert.match(text(out),/A_CI preserves unsigned candidate history/);
+  assert.match(text(out),/A_CI larger covariance: 8\/8 transformed events and 16\/16 one-step histories/);
+  for (const [key,value] of [['user_accepted',false],['aggregate_closed',true],['total_native_events',10],['total_target_steps',40],['unsigned_candidate_history',false]]) {
+    const bad=structuredClone(evidence);bad.coverage.larger_runtime.find(r=>r.family==='A_CI')[key]=value;
+    assert.throws(()=>checkedTranche8(bad),/stale or widened/);
+  }
+});
 
 test('C_CI 8.4h records scoped acceptance without changing execution flags', () => {
   const row=evidence.coverage.larger_runtime.find(r=>r.family==='C_CI');

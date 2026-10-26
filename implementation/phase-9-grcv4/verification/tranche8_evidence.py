@@ -20,6 +20,68 @@ from unittest.mock import patch
 from tranche8_validation import ACTIVE, validation_session, LOCK
 from p984h_pre_solve_reuse_sources import historical_view, historical_binding
 
+# Display references only. Execution manifests authenticate all underlying
+# code/fixture hashes; closeout authenticates its checker sources separately.
+LARGER_RUNTIME_ACI_SOURCES = {
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-1.json.xz": "a763c9d77fb7e645cd9f1b0a71ddac3f4f00291440071154760fb9aaa9404e2a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-10.json.xz": "b4d5690b747ba23e12fc6b8fce23fadd939667f49ea79b5ab54dd051a4cd488c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-2.json.xz": "ed3c805506a0309fd10dcdacec183aa475bcca603d89d82637197dbc63a2510b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-3.json.xz": "1a320c7c265850b40fbd9aefd35abf8f7dfa77621eabd4450d6999d8216ed47d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-4.json.xz": "455a8f3590969eeec1077df4362618c7b3bccb01e0aab25939ddcd4a4ef43cbe",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-5.json.xz": "8170766a83f62fd84cda5fe4b6ee1df283b367113f6642373f10287b03d1b69b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-6.json.xz": "4358df33cfefc752cbc705bbc58b6b247dc27e84db366db170cd57f57dd3331e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-7.json.xz": "f5a865063d28a7bf5c2d20d8f59d7f6b1840477279dba74b433b352a13b65abb",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-8.json.xz": "f0dd9da2812476a8b2529c144a947c603bb1fb5611c1c4f0f4b10a91bb462d58",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-9.json.xz": "6b226adae8b5a76fc735721f585130522043f3c32163403f18f285c7e7b4d5fd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-current-final.json.xz": "0406700b2861056cc59d02307cc20c4f9e1cba972e4a94e57eb066acaeb19b2d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-event.json.xz": "5381f789f81a445b51919231637270f8aaa896cc287c463625d300c9907ff858",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-1.json.xz": "1ad3e1c2261f08ca11a1e11a55fc41d5c393376ec463751adca1e638824e6978",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-10.json.xz": "123bc6119340a55aa7dc8898b06ba65b5ca64059715ff69fc58ef49fd77a93af",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-2.json.xz": "ee4799d8e32ec3f7c8ef3b8659d68fb755413087c466c122d78bb1eec1b1b84a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-3.json.xz": "40b1f442c5b3e8c8ea6528cf1a760752be6db2d31f3854b9082b997d230ee687",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-4.json.xz": "7050fa5a02025d4f169723ad8d411a873d626096bd04bf6ad7cc34e1ca6b2d31",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-5.json.xz": "16e1c2c0804f8863dfd18ad50247976723b08b033fcfb645c25c8cdf3d653906",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-6.json.xz": "e4ead9d9813ddce64c11059ed5a7bcad3a26ec101928f84503931bda0dd3bbd0",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-7.json.xz": "c99127842fd42d4f01768085921f2527899fe07131a097a7c194d0f99d7ad105",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-8.json.xz": "413352fe266d99f7a14c940263db57244fd2032cbe2ee3029c1678a9a8de848b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-9.json.xz": "a44b3de2a441c812886c9316a45dfa1bb2cd2b321e0026b905af21fa288a5740",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-reset-final.json.xz": "22f3a6cc6ac096e92ba592875ac1799a2a48471cb871b8eefc5702373b1ea11a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACI-source.json.xz": "7975acfe75f44b3ceab8db01c110cee7204ae821c35f4562d1e15e403734f41b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICampaignInputs.json": "6b54eb6dc816031f29d6209fa8a4509911186da5502a69b290aba22536bc841a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICampaignPlan.md": "8099d08f77445268cdd229727845044e789e7beef4069608d3232e81591d1ad8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACIChargeInputs.json": "4556fd2a89bb0dd218b1170b95ca0ad45e536e1d0cc983e0e0bdcca215a6512b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICloseout.json": "e82f44ccb055b9df10f754b7abe6d22944e375397b006797413f23771efc6221",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-combined-current.json.xz": "af0f05525ec0a73e7a6b3e0c4aca178414b5f45a0d84efbb36124c8c4ad8640c",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-combined-event.json.xz": "0bd7d85c09c1241f540f2a326f78b037e119c9115d5fedf9cf1a848462e6b9cd",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-combined-reset.json.xz": "3ca6d0dbd50922cfef51ec2decb99c1c72248ae0e3c1c1700fa3cf0676aa3f1f",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-edge_order-current.json.xz": "9a3a2c2b244bebdbe13c5360c8a32ea1831881952a544063e54baf2921f2c0e6",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-edge_order-event.json.xz": "67894578c1562addd00dbf44ec97a0b925638dfeb55d8c3438dc21118d74bd8b",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-edge_order-reset.json.xz": "0031896cb65597c794e0c772a1e3843522424fce087fb02f2d38f712f2ab59c5",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-node_order-current.json.xz": "db67297b9888d4395700fc775e8b0dc70901a07b8dabd4376427c00274772a76",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-node_order-event.json.xz": "2f1a97f549abfde3ee3c59392c270a4a9c1bd62407924b8032f07fefcfc3050d",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-node_order-reset.json.xz": "c632fcb1fd7848138d9cc9b9f7a329df02f82bb029023c0a64636cfdfecb1cb8",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-reflect-current.json.xz": "a7a2b0084d8b445c5ac53ebbd3ec9fc0929248880c2c51a3d57aab8b52c8c942",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-reflect-event.json.xz": "d65096a78f9236d437a7ff6bcf063d440ab90604a20c52126dce92820c55ed19",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-reflect-reset.json.xz": "b0bad6fabf96b94d5c806c23ff0dda3a6da6228a9786b3a9d0d7fd6a329628e1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-relabel-current.json.xz": "a7e81c50565786f2b75ab0444cb4a7d2ef17843e9c069f9501fefa51ae789a56",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-relabel-event.json.xz": "a7236601f4ea05c097c37082e181361c13e817251fcbdd518b806fbb315be724",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-relabel-reset.json.xz": "b6880903c87792720154e83e6d1dac8e706419512e15679dfd225886163d2f20",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate-current.json.xz": "ddaa8be439c5452bfeaf770ea92f618616e0a20f8b0e83aa5aafbd452944cb59",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate-event.json.xz": "8c4044179484272baff2ead4f6c35905caafc3272718e5d280b01f5e511624f1",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate-reset.json.xz": "419388420cf024f5df89c036a6177c2e77855a5567567c6c02804141a611762a",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate_twice-current.json.xz": "60bd51696c111f4d8e699689ef1bd928d8c7fead3298193dc1b90f382217af77",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate_twice-event.json.xz": "dde58132535e9e59920811ec7244aeec5a7fda798a70191f83021ddce41c38c4",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-rotate_twice-reset.json.xz": "c751e9692761060be706c74deeea38d6b7f1f82bdabab5a737115950e5740c54",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-signed-current.json.xz": "82dd38975f57b6233447a511421e045f8ad7a53b1ec31ff63eaa315572683143",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-signed-event.json.xz": "d020dacdc914950e03c85a7afefb051b0fef08ddc00cecb15181a372763af676",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariance-signed-reset.json.xz": "aad33f4870aa9b075a0543b978cbbcd0ec57205daa891e9269ae52c9e1f06d19",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovarianceInputs.json": "65854dd7e0036a37efb2025846645a8a1791aecd593f670f393b8d1f41379a21",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACICovariancePlan.md": "7216104f4e726d4c772d6699313305b45d91655a58c8a6df10b74f3b374c91f5",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACIResetChargeInputs.json": "7c8e7153cf63646b782835e9f5c902e97e1d048c86988214d7349ed245f5877e",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACIReview.md": "ff2a05fa90a79209e90e1073d857f1b7bc3204fbe5292b0b37afdf15c9c504ff",
+    "implementation/phase-9-grcv4/tranche-8/P9-8.4h-ACISourceInputs.json": "57773a2d0ed4a2693f076373f1cb17a811087c21f165be3893e2f1dec87dd1d9"
+}
+
 LARGER_RUNTIME_CCI_SOURCES = {
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCI-event.json.xz": "e04f8f9a514f2d9cc320a692965f48e7e67e66fd7cc71c03c129b752374b6862",
     "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCI-source.json.xz": "3a5933d68415fdecfe3fa1ecbc78d87a046dd13e5384e71f60ee80d5ef1ccbca",
@@ -779,6 +841,7 @@ class Sources:
             boundary_pins.update(LARGER_COS_NATIVE_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_CCI_SOURCES)
+            boundary_pins.update(LARGER_RUNTIME_ACI_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_NATIVE_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_PERFORMANCE_SOURCES)
             boundary_pins.update(LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES)
@@ -807,7 +870,8 @@ class Sources:
                 require(hashlib.sha256(frozen).hexdigest() == boundary_pins[name], "boundary preregistration/mechanical source drift")
                 self.values[name] = frozen
                 self.refs[name] = dict(path=name, sha256=boundary_pins[name], revision=None,
-                    basis=("pinned_C_CI_large_event_integration_not_acceptance" if name in LARGER_RUNTIME_CCI_SOURCES else
+                    basis=("pinned_A_CI_8_4h_not_acceptance" if name in LARGER_RUNTIME_ACI_SOURCES else
+                        "pinned_C_CI_large_event_integration_not_acceptance" if name in LARGER_RUNTIME_CCI_SOURCES else
                         "pinned_partial_larger_covariance_not_acceptance" if name in LARGER_RUNTIME_COS_COVARIANCE_SOURCES else
                         "pinned_detached_continuation_not_covariance_or_acceptance" if name in LARGER_RUNTIME_COS_CONTINUATION_SOURCES else
                         "pinned_event_successor_not_target_horizon_or_acceptance" if name in LARGER_RUNTIME_COS_EVENT_SUCCESSOR_SOURCES else
@@ -1630,7 +1694,8 @@ def _build(root):
                       oracle_and_pressure=supplements, boundary_contract=boundary_view, deep_expansion=deep,
                       ordering_covariance=covariance_view(sources),chart_covariance=chart_view(sources),
                       larger_prerequisites=larger_view(sources),
-                      larger_runtime=[larger_cos_runtime_view(sources), *([larger_cci_runtime_view(sources)] if LARGER_RUNTIME_CCI_SOURCES else [])],
+                      larger_runtime=[larger_cos_runtime_view(sources), *([larger_cci_runtime_view(sources)] if LARGER_RUNTIME_CCI_SOURCES else []),
+                                      *([larger_aci_runtime_view(sources)] if LARGER_RUNTIME_ACI_SOURCES else [])],
                       required_cells=322, accepted_cells=len(covered), pending_cells=len(cells) - len(covered),
                       executed_pending_cells=len(pending_cells),
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),
@@ -2687,16 +2752,29 @@ def larger_cci_runtime_view(sources):
     return result
 
 
+def larger_aci_runtime_view(sources):
+    from p984h_aci_status import view
+    result=view(sources,LARGER_RUNTIME_ACI_SOURCES)
+    if result['continuation']['baseline_complete'] and result['covariance'] and result['covariance']['covariance_complete'] and result['retained_checkpoint_review']:
+        acceptance=sources.raw(BASE+'P9-8.4h-ACIReview.md').decode()
+        require('## Scoped user acceptance' in acceptance and '**2026-10-26**' in acceptance,
+            'missing scoped A_CI 8.4h acceptance')
+        result.update(status='baseline_and_covariance_accepted',user_accepted=True,
+            accepted_on='2026-10-26',acceptance_scope='A_CI P9-8.4h bounded baseline and eight covariance counterparts',
+            acceptance=result['review'],original_execution_flags_unchanged=True)
+    return result
+
+
 def family_status(root, family, checkpoint="8.4c"):
     """Selected checkpoint/family only; not full-index or boundary validity."""
     import importlib
     import phase9_implementation_policy as policy
     require(checkpoint in ("8.4c", "8.4d", "8.4e", "8.4f", "8.4g", "8.4h"), "unknown family checkpoint")
     if checkpoint == '8.4h':
-        require(family in ('C_OS','C_CI'),'8.4h family not yet executed or declared')
+        require(family in ('C_OS','C_CI','A_CI'),'8.4h family not yet executed or declared')
         sources=Sources(root)
         return dict(schema='phase9_tranche8_family_status_v1',family=family,checkpoint=checkpoint,
-            runtime=(larger_cos_runtime_view(sources) if family=='C_OS' else larger_cci_runtime_view(sources)),source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
+            runtime={'C_OS':larger_cos_runtime_view,'C_CI':larger_cci_runtime_view,'A_CI':larger_aci_runtime_view}[family](sources),source_refs=sorted(sources.refs.values(),key=lambda r:r['path']),
             other_families_checked=False,native_trajectories_rerun=False)
     if checkpoint == "8.4g":
         if family=='A_PC':
@@ -2866,8 +2944,8 @@ def main():
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
     if args.checkpoint == '8.4h':
-        require(args.family=='C_OS' and args.action=='status' and not args.recheck_numerics
-            and not args.oracle and not args.preparation,'select C_OS 8.4h read-only status; use p984h_cos.py for explicit verification')
+        require(args.family in ('C_OS','C_CI','A_CI') and args.action=='status' and not args.recheck_numerics
+            and not args.oracle and not args.preparation,'select C_OS/C_CI/A_CI 8.4h read-only status; explicit numerical execution uses its family runner')
         print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2));return
     if args.checkpoint == '8.4g':
         if args.family in ('C_CI','A_CI'):

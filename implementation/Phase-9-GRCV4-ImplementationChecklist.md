@@ -3557,7 +3557,52 @@ the full ten-profile plan.
       - [x] Scoped user acceptance on 2026-10-21, separately recorded from
         unchanged execution flags. Other families and aggregate `.h` remain open.
       No repeated shared allocator proof, optimization programme or broad suite.
-    - [ ] A_CI: actual postbeat event and both-role continuation/covariance.
+    - [x] A_CI: actual postbeat event and both-role continuation/covariance.
+      [Next-family plan](./Phase-9-GRCV4-ImplementationPlan.md#next-family--a_ci-p9-84h-bounded-integration).
+      Bounded numerical coverage and retained closeout accepted on 2026-10-26.
+      Reuses accepted `.g` mathematics and existing A event/maps.
+      - [x] Bind unchanged companion and current numerical sources; preserve
+        historical execution identities. Declare caps, evidence budget and
+        consumers. Preflight serialization/geometry identities and comparator
+        self-consistency before parallel work; no new discovery programme.
+        [Preparation result](./phase-9-grcv4/tranche-8/P9-8.4h-ACIPreparation.md):
+        seven focused tests pass; exact reference-weight/Hodge comparison
+        normalization, full-joint/history/clock mutation pressure and no-numerics
+        guard. Zero new native steps/events/roots; next is the source beat.
+      - [x] One current-code source beat with independent joint-root/writer
+        comparison; fresh trigger/request/history bindings from postbeat C/W_A,
+        with distinct initial reset unchanged.
+        [Source result](./phase-9-grcv4/tranche-8/P9-8.4h-ACISourceReview.md):
+        221.616 s within 600 s; one beat, three two-pass joint roots, complete
+        accepted-result parity. Actual postbeat trigger passes; 107/407 target
+        is declared mechanically, not admitted. Three focused tests and retained
+        check pass. Zero native events/target steps; no acceptance implied.
+      - [x] One actual event: both-role transfer, old-edge W_A lineage and new
+        seeds, full-root/writer admission before publication, stale rollback.
+        Completed in 460.121 s within 1200 s; actual event checkpoint retained.
+        A prebeat prepared target is not credited as the actual event target.
+      - [x] Ten actual target steps per history and two final roots. Check
+        full joint points, fixed-row two-pass stopping, continuity/sign bounds,
+        post-continuity-C/incoming-W/physical-J writer staging, final-C/W
+        readmission, reset, clocks and separate represented/exact-sum charge.
+        Explicit suffix checkers correct an extra zero-residual assertion at
+        current step 8/reset step 10 to the existing `1e-11` charge inequality;
+        no native law, fixture, tolerance or cap change. Prior records preserved.
+      - [x] Eight covariance events and sixteen one-step histories in one
+        batch. Reuse source/baseline; distinguish unsigned W_A/conductance/writer
+        from signed current/geometry and rebuild the mapped fixed-row backend.
+        Up to eight single-threaded workers; no transformed ten-step reruns.
+        All 24 segments passed with zero observed mapped discrepancy.
+      - [x] One retained coverage review and selected side-tool synchronization;
+        keep actual observations, compact shared context and compressed evidence.
+        All 48 numerical records/nine checkpoints authenticate; five focused
+        surface checks and 51 browser tests pass. Selected A_CI access does not
+        imply repair of the recorded historical full-index C_CI binding failure.
+      - [x] Scoped user acceptance on 2026-10-26, separately from original
+        execution flags. A_PC `.h` is next; aggregate `.h` remains open.
+      Finish line: one source step, nine events, 36 target steps, two final
+      baseline roots. Preserve feedback-resolution limits; no uniform trajectory
+      or sibling/aggregate credit. Add work only for a concrete failure.
     - [ ] A_PC: actual postbeat event, both writers/carrier effects and covariance.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and

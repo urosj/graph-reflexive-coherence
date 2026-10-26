@@ -28,10 +28,11 @@ def tranche8_status(repo_root, *, family=None, checkpoint="8.4c"):
     return index.checked(Path(repo_root))
 
 
-def tranche8_source(repo_root, path):
+def tranche8_source(repo_root, path, *, family=None, checkpoint="8.4c"):
     """Read only an indexed source, at its advertised exact revision/hash."""
     index = _index(repo_root)
-    value = index.checked(Path(repo_root))
+    value = (index.family_status(Path(repo_root), family, checkpoint)
+             if family is not None else index.checked(Path(repo_root)))
     refs = {r["path"]: r for r in value["source_refs"]}
     if path not in refs:
         raise KeyError("source is not in the checked Tranche 8 index")

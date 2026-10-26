@@ -3071,3 +3071,18 @@ steps; neither numerical completion nor a status check grants acceptance.
 Scoped C_CI acceptance was separately granted on 2026-10-21. Project it only
 with the pinned acceptance review and complete baseline/covariance roster;
 preserve original execution flags and leave aggregate `.h` and siblings open.
+
+The A_CI `.h` projection uses the same selected CLI/API/notebook/browser path,
+with a separately pinned A-specific adapter. Authenticate the source, baseline
+event, two sequential ten-step chains/final roots and eight event/current/reset
+counterparts. Expose full joint-root checks, unsigned W_A/writer transport,
+local resource bounds and distinct represented/exact-sum charge observations.
+Do not infer acceptance from the complete 1-source/9-event/36-target/2-final
+roster. Missing counterpart evidence restores partial status; status neither
+reconstructs targets nor reruns native trajectories or independent interval solves.
+Provide a browser action and HTTP family/checkpoint parameters for this selected
+view and its exact source links. Its success does not suppress the recorded
+historical C_CI full-index binding failure or imply full-stack validity.
+Project the user's 2026-10-26 A_CI acceptance only when the baseline, all eight
+counterparts and retained checkpoint review are complete and the pinned review
+records that decision. Preserve original execution flags and aggregate limits.

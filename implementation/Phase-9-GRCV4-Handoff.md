@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — C_CI P9-8.4h accepted (2026-10-21)
+## Accepted predecessor — C_CI P9-8.4h (2026-10-21)
 
 C_CI has a [frozen bounded plan](./phase-9-grcv4/tranche-8/P9-8.4h-CCIPlan.md).
 Reuse its accepted `.g` companion and full joint-root oracle. First bind the
@@ -31,10 +31,43 @@ session dumps are retained. Total baseline plus covariance: nine events and
 Retained coverage/status review passes, including full-joint mutation,
 missing-counterpart, selected API/browser and C_OS status regression checks.
 The user accepted the bounded C_CI scope on 2026-10-21; original execution
-records and their captured flags remain unchanged. **Next: A_CI P9-8.4h.**
+records and their captured flags remain unchanged. A_CI is now accepted below.
 No additional C_CI numerical cases or storage refactor are required. No
 production code or numerical criteria changed. Aggregate `.h` remains open.
 Selected side-tool status is retained-only, not a rerun.
+
+## Current checkpoint — A_CI P9-8.4h accepted (2026-10-26)
+
+The [A_CI result](./phase-9-grcv4/tranche-8/P9-8.4h-ACIReview.md) completes the
+fixed numerical finish line on 2026-10-26: one actual source beat, nine events,
+36 target steps and two fresh final roots. The baseline runs ten steps per
+history; eight short covariance counterparts add one event and one step per
+history each, with zero observed mapped discrepancy. No source-prefix or
+transformed ten-step campaign was repeated. Current and reset stay distinct.
+
+Checks cover full H/J roots and two-pass stopping, old-edge W_A lineage/new
+positive seeds, post-continuity-C/incoming-W/physical-J writer staging, final-C/W
+readmission, reset, clocks, local exact-root positivity and charge. Baseline
+minimum bounds are about `1.83e-4`. Maximum represented charge residual is
+`2^-45`; exact stored-sum drift is separately retained. The
+[charge-check correction](./phase-9-grcv4/tranche-8/P9-8.4h-ACIChargeSuccessor.md)
+removes an erroneous extra zero-residual assertion, using the existing `1e-11`
+profile inequality. Explicit current/reset suffix bindings preserve all prior
+completed records. No production, fixture, tolerance or cap changes; no failed
+dumps. All 48 numerical records are compressed (12,323,620 bytes total).
+
+Retained closeout passes for all 48 records/nine event checkpoints; five focused
+surface checks and 51 browser tests pass. The user accepted this bounded scope
+on 2026-10-26. Do not rerun numerical campaigns for documentation,
+acceptance or commit maintenance. The selected CLI/API/notebook and browser
+**Check A_CI 8.4h** action authenticate this family's evidence independently.
+The pre-existing full-index historical C_CI lifecycle-source binding failure
+remains separate and visible; selected success is not full-stack validity.
+
+The next family is A_PC `.h`; it has not been started.
+Aggregate `.h` and the remaining families stay open. Local positivity is not a
+uniform trajectory theorem, and accepted residuals do not remove prior
+feedback-resolution limitations. No general ATC or public-facade claim follows.
 
 ## Accepted C_OS P9-8.4h covariance
 
