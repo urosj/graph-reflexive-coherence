@@ -3603,7 +3603,23 @@ the full ten-profile plan.
       Finish line: one source step, nine events, 36 target steps, two final
       baseline roots. Preserve feedback-resolution limits; no uniform trajectory
       or sibling/aggregate credit. Add work only for a concrete failure.
-    - [ ] A_PC: actual postbeat event, both writers/carrier effects and covariance.
+    - [x] A_PC: actual postbeat event, both writers/carrier effects and covariance.
+      [Bounded plan](./phase-9-grcv4/tranche-8/P9-8.4h-APCPlan.md): reuse the
+      accepted 7/8-history companion and PC oracle, not CI roots or a new fixture.
+      - [x] Bind historical/current sources, full C/W/Z serialization and fresh
+        history policies; predeclare caps, retention and failure handling.
+      - [x] One current-code source beat with complete independent-result parity
+        and a fresh postbeat trigger/request, preserving distinct initial reset.
+      - [x] One actual event with both-role readmission, W lineage/new seeds,
+        whole source-carrier archive/zero target carrier and atomic rollback.
+      - [x] Ten target steps per history and two final reads, including full
+        point parity, local signs, charge distinction, W/Z writer staging and
+        carrier-effect separation above combined numerical error.
+      - [x] Eight mapped events and sixteen target steps, transporting signed
+        J and two-sided Z/H separately from unsigned W/drive; no prefix reruns.
+      - [x] Focused pressure, retained coverage review and selected side-tool
+        synchronization; no repeated broad numerical campaign.
+      - [x] Scoped user acceptance on 2026-10-26, separate from original execution flags.
     - [ ] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.

@@ -2533,3 +2533,12 @@ instead of stale fixed totals and opens any pending case details explicitly.
 - [x] Record A_CI `.h` scoped user acceptance on 2026-10-26 from the pinned
   review and complete retained roster; preserve original execution flags and
   keep sibling/aggregate coverage separate.
+
+- [x] A_PC `.h`: selected CLI/API/notebook/browser supplement authenticates
+  the actual event, two persistent chains and eight short counterparts; expose
+  full PC points, unsigned W, signed carrier transport, explicit archive/loss/zero
+  initialization, both writers, local signs and resolved carrier effects.
+  Keep source parity, numerical completion, user acceptance and aggregate scope
+  distinct. Use a separate small browser projection; no numerical reruns.
+- [x] Record scoped A_PC `.h` acceptance on 2026-10-26 from the pinned
+  review and complete roster; preserve execution flags and aggregate limits.

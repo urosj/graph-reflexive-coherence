@@ -1,4 +1,5 @@
 import {TRANCHE8_EVIDENCE} from './tranche8-evidence.js';
+import {TRANCHE8_APC_EVIDENCE} from './tranche8-apc-evidence.js';
 
 const canonical = value => JSON.stringify(value, (_, v) => v && typeof v === 'object' && !Array.isArray(v)
   ? Object.fromEntries(Object.keys(v).sort().map(k => [k, v[k]])) : v);
@@ -417,14 +418,15 @@ export function renderTranche8(value, container, create = tag => document.create
 
 // Independent of the slower full phase-boundary API; never implies that it passed.
 export function checkedSelectedRuntime(value, family) {
-  const expected=TRANCHE8_EVIDENCE.coverage.larger_runtime.find(r=>r.family===family);
+  const expected=family==='A_PC' ? TRANCHE8_APC_EVIDENCE?.runtime : TRANCHE8_EVIDENCE.coverage.larger_runtime.find(r=>r.family===family);
+  const knownRefs=family==='A_PC' ? TRANCHE8_APC_EVIDENCE?.source_refs : TRANCHE8_EVIDENCE.source_refs;
   if (!expected || value.schema!=='phase9_tranche8_family_status_v1' || value.family!==family || value.checkpoint!=='8.4h'
       || value.other_families_checked!==false || value.native_trajectories_rerun!==false
       || canonical(value.runtime)!==canonical(expected) || !Array.isArray(value.source_refs))
     throw new Error('Missing, stale or widened selected evidence');
   const refs=new Map();
   for (const ref of value.source_refs) {
-    if (refs.has(ref.path) || !TRANCHE8_EVIDENCE.source_refs.some(r=>canonical(r)===canonical(ref)))
+    if (refs.has(ref.path) || !knownRefs.some(r=>canonical(r)===canonical(ref)))
       throw new Error('Unindexed selected source');
     refs.set(ref.path,ref);
   }
@@ -448,8 +450,10 @@ export function selectedRuntimeLoader(family, container, status, fetcher=fetch, 
       if (current!==generation) return;
       const row=value.runtime;
       const append=(parent,tag,text)=>{const e=create(tag);e.textContent=text;parent.append(e);return e;};
-      append(container,'p',`${family}: ${row.status}. ${row.total_native_events} events; ${row.total_target_steps} target steps; ${row.final_reads} final roots. Accepted: ${row.user_accepted}. Aggregate closed: ${row.aggregate_closed}.`);
-      append(container,'p','Full joint roots and unsigned candidate-history/writer transport. Local positive-resource bounds, not a uniform trajectory theorem. No numerical rerun or full-index pass is implied.');
+      append(container,'p',`${family}: ${row.status}. ${row.total_native_events} events; ${row.total_target_steps} target steps; ${row.final_reads} final ${family==='A_PC'?'reads':'roots'}. Accepted: ${row.user_accepted}. Aggregate closed: ${row.aggregate_closed}.`);
+      append(container,'p',family==='A_PC'
+        ? 'Full PC points, unsigned W and signed carrier transport. Events archive the whole old carrier with explicit loss and initialize target Z to zero. Continuation checks both writers and resolved carrier effects. Local resource bounds, not a uniform trajectory theorem; no numerical rerun or full-index pass.'
+        : 'Full joint roots and unsigned candidate-history/writer transport. Local positive-resource bounds, not a uniform trajectory theorem. No numerical rerun or full-index pass is implied.');
       const observations=append(container,'details','');append(observations,'summary','Per-history observations and covariance');
       append(observations,'pre',JSON.stringify({continuation:row.continuation,covariance:row.covariance},null,2));
       const sources=append(container,'details','');append(sources,'summary','Authenticated evidence and source links');
@@ -493,4 +497,8 @@ if (typeof document !== 'undefined' && document.querySelector('#tranche8-evidenc
 if (typeof document !== 'undefined' && document.querySelector('#tranche8-aci-evidence')) {
   const load=selectedRuntimeLoader('A_CI',document.querySelector('#tranche8-aci-evidence'),document.querySelector('#tranche8-aci-status'));
   document.querySelector('#tranche8-aci-refresh').addEventListener('click',load);
+}
+if (typeof document !== 'undefined' && document.querySelector('#tranche8-apc-evidence')) {
+  const load=selectedRuntimeLoader('A_PC',document.querySelector('#tranche8-apc-evidence'),document.querySelector('#tranche8-apc-status'));
+  document.querySelector('#tranche8-apc-refresh').addEventListener('click',load);
 }

@@ -3098,3 +3098,15 @@ queries; fresh runs and explicit numerical checkers retain current-tree binding
 checks. No changed numerical record, revived failed run, or new conformance
 credit follows. Missing Git history, changed evidence and wrong hashes fail
 explicitly. The older live P9-7.2a README check remains separate.
+
+
+A_PC `.h` uses the same selected CLI/API/notebook route with a separate small
+browser projection and visible action. Authenticate source parity, the actual
+event, both ten-step/final-read chains and eight short covariance counterparts.
+Show full PC points, unsigned W/writer transport, signed Z/H conjugation, complete
+source carrier archive with explicit loss and zero target carrier, local resource
+bounds, represented charge and exact stored-sum drift. Resolved carrier effects
+at baseline steps one/ten remain distinct from nonzero storage. Never label these
+reads CI roots. The preceding full-index projection stays unchanged; the selected
+A_PC supplement is checked independently. No numerical rerun, sibling support,
+aggregate closure or user acceptance follows from status.

@@ -1,5 +1,38 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current checkpoint — A_PC P9-8.4h accepted (2026-10-26)
+
+The [result review](./phase-9-grcv4/tranche-8/P9-8.4h-APCReview.md) completes
+one fresh source step, nine successful events, 36 target steps and two fresh
+final baseline reads. The source result equals accepted `.g` evidence exactly.
+Ten steps per history and all eight short covariance counterparts pass; the
+eight counterparts ran in parallel with zero observed mapped discrepancy.
+All 48 numerical records are XZ-compressed (11,202,668 bytes total).
+
+Checks cover full PC points and non-diagonal carrier geometry, both writers,
+independent target allocation/W lineage, complete source-carrier archive with
+explicit loss and zero target carrier, both-role admission and atomic stale
+rollback. Every local resource bound is positive (minimum about 6.926e-5).
+Final resource minima are about 8.93e-4; carrier effects are small but resolved
+above combined error at baseline steps one and ten. Represented charge residuals
+reach 2^-45 within the existing tolerance; exact stored-sum drift is separate.
+This is bounded conformance, not a uniform trajectory or general ATC theorem.
+
+Retained checkpoint review passes for all nine event checkpoints. Selected
+side-tool checks verify bounded counts, source access and rejection of widened credit.
+The user accepted A_PC on 2026-10-26. Next is first-group reconciliation;
+the first-group decision and all-ten `.h` closure remain open.
+Do not rerun this numerical campaign for documentation, acceptance or commit.
+The browser has a separate **Check A_PC 8.4h** action and small projection;
+selected CLI/API/notebook status does not run numerics or imply a full-boundary
+pass. The preceding full-index snapshot remains unchanged.
+
+The explicit worker-local schema memo changes retention only (eight entries,
+four MiB each), leaving existing complete-content/schema keys, validators,
+asset checks and numerical kernels unchanged. It is not a production-default
+change. Preparation took 124.657 s versus 260.326 s; the fresh native source
+passes complete-result parity. No physical law, fixture, tolerance or cap changed.
+
 ## Historical index repair (2026-10-26)
 
 The Tranche 8 read-only index authenticates old execution inputs against their
@@ -57,7 +90,7 @@ No additional C_CI numerical cases or storage refactor are required. No
 production code or numerical criteria changed. Aggregate `.h` remains open.
 Selected side-tool status is retained-only, not a rerun.
 
-## Current checkpoint — A_CI P9-8.4h accepted (2026-10-26)
+## Accepted predecessor — A_CI P9-8.4h (2026-10-26)
 
 The [A_CI result](./phase-9-grcv4/tranche-8/P9-8.4h-ACIReview.md) completes the
 fixed numerical finish line on 2026-10-26: one actual source beat, nine events,
@@ -85,7 +118,7 @@ acceptance or commit maintenance. The selected CLI/API/notebook and browser
 The historical C_CI full-index binding issue is addressed by the read-only
 index repair above; selected success still does not imply full-stack validity.
 
-The next family is A_PC `.h`; it has not been started.
+A_PC `.h` is now in progress; see the current entry above.
 Aggregate `.h` and the remaining families stay open. Local positivity is not a
 uniform trajectory theorem, and accepted residuals do not remove prior
 feedback-resolution limitations. No general ATC or public-facade claim follows.
@@ -6179,10 +6212,9 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Resume `work/p9-8-4h` at the current C_OS baseline entry. Inspect the retained
-> native segment outcomes and this handoff's opening section before choosing
-> work. Keep the unchanged two-beat source and separate oracle/native credit;
-> continue missing target steps and larger covariance from executed poststates,
-> without repeating the accepted `.g` discovery or completed native prefix.
-> C_CI, A_CI and A_PC follow separately. Do not infer acceptance, commit, merge
-> or broaden family coverage merely from this handoff.
+> Resume `work/p9-8-4h` from the A_PC completion at the top of this handoff.
+> Its bounded numerical and retained checkpoint coverage is accepted. The next
+> work is first-group reconciliation; do not silently close the aggregate row.
+> Do not rerun completed numerical evidence for documentation or acceptance.
+> C_OS, C_CI and A_CI are accepted predecessors. The six second-group families
+> and aggregate `.h` remain separate; do not infer acceptance, commit or merge.

@@ -3118,7 +3118,31 @@ accepted the bounded C_CI scope on 2026-10-21 after retained coverage/status
 review; no new C_CI numerical cases are proposed. A_CI `.h` is next, while
 other families and aggregate `.h` remain open.
 
-### Next family — A_CI P9-8.4h bounded integration
+### Current family — A_PC P9-8.4h bounded integration
+
+The bounded numerical finish line is complete on 2026-10-26: one source step,
+nine successful events, 36 target steps and two final reads. The eight mapped
+counterparts ran in parallel; every mapped comparison has zero observed
+discrepancy. Full PC points, both writers, carrier archive/loss/zero target and
+local positive-resource bounds and retained checkpoint review pass. Selected
+side-tool checks cover bounded credit and source integrity. The user accepted
+A_PC on 2026-10-26; the first-group decision remains separate.
+See the [result review](./phase-9-grcv4/tranche-8/P9-8.4h-APCReview.md).
+
+The [A_PC plan](./phase-9-grcv4/tranche-8/P9-8.4h-APCPlan.md) freezes the same
+bounded finish line: one source step, nine events, 36 target steps and two final
+baseline reads. Reuse the accepted 7/8 inherited-history companion, shares
+(1/4, 3/8, 3/8), both original carriers and independent PC staged oracle.
+Check fresh postbeat C/W/Z identities, whole-source carrier archive/whole-target
+zero reset, independent W lineage, both-role admission, and separate W/Z writers.
+Full geometry and carrier effects must remain visible even when current alone
+cannot discriminate them. Eight mapped event/two-step counterparts reuse the
+baseline and existing map mathematics; no broad campaign or new ATC law.
+FLINT/certified Arb, fixed tolerances and capped resumable segments remain
+explicit. Update selected side-tool access and perform one retained closeout;
+user acceptance and all-ten `.h` closure remain separate.
+
+### Accepted predecessor — A_CI P9-8.4h bounded integration
 
 Preparation completed on 2026-10-21; bounded numerical coverage completed on
 2026-10-26. Retained closeout and selected surface checks pass; the user accepted
