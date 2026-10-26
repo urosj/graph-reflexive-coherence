@@ -19,6 +19,18 @@ class ProposalReviewTests(unittest.TestCase):
         return patch.object(Path, "read_bytes",
                             lambda path: content if path == target else original(path))
 
+    def test_only_exact_accepted_readme_addition_is_allowed(self):
+        name = "specs/README.md"
+        raw = (v.p.ROOT / name).read_bytes()
+        v.checked_specification_bytes(name, raw)
+        v.checked_specification_bytes(name, raw.replace(v.README_ADDITION, b"", 1))
+        for changed in (raw + b"unreviewed", raw.replace(b"opt-in", b"default"),
+                        raw + v.README_ADDITION):
+            with self.subTest(changed=changed[-30:]), self.assertRaisesRegex(ValueError, "candidate drift"):
+                v.checked_specification_bytes(name, changed)
+        with patch.object(v, "historical_blobs", return_value={name: b"wrong epoch"}), self.assertRaises(ValueError):
+            v.checked_specification_bytes(name, raw)
+
     def test_accepted_documents_are_not_a_new_release_or_spec_acceptance(self):
         stage = v.proposal_status()
         release = v.verify_release()

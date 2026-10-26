@@ -3362,9 +3362,11 @@ the full ten-profile plan.
     - [x] Review and accept bounded C_CI `.g` research/native prerequisite
       successor and explicit certified CI interval extension. User acceptance
       on 2026-10-14 grants scoped `.h` eligibility, not execution or aggregate closure.
-    - [ ] First-group checkpoint: review and accept this child's required
+    - [x] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.
+      Reconciled under 8.4i from all four accepted `.g` prerequisites and `.h`
+      successors; no new numerical scope or all-ten closure.
     - [x] A_CI initial exact-real investigation: four joint-ball certificates
       and first-step resource bounds on the unchanged larger declarations.
       Target current passes; target reset-as-current is excluded at `extra/1/1`.
@@ -3640,7 +3642,17 @@ the full ten-profile plan.
   compression for new/changed raw files over 1 MB, allowing larger compressed files, and
   [retention/storage rules](../docs/reference/EvidenceStorage.md).
 
-  - [ ] P9-8.4i: Reconcile coverage and hand off. Bind commands/results,
+  - [ ] P9-8.4i: Reconcile coverage and hand off. All-ten parent remains open.
+    - [x] First-group reconciliation: exact `.a–h` subjects, original exclusions,
+      commands/reviews, paper/specification and typed claim/debt checks; portable
+      positive checkpoints and five failure classes handed to scoped 8.5/8.6.
+      [Review](./phase-9-grcv4/tranche-8/P9-8.4i-FirstGroupReview.md).
+    - [x] First-group CLI/API/notebook/browser handoff; no numerical rerun or
+      configuration/public-support promotion. Preserve historical execution flags.
+    - [x] Scoped acceptance of P9-8.4i[first-group] on 2026-10-26.
+      P9-8.4 is closed for C_OS, C_CI, A_CI and A_PC; next scoped 8.5/8.6.
+    - [ ] Second-group and all-ten reconciliation after their required work.
+    Bind commands/results,
     independent paper/spec/side-tool checks, exact subjects, review outcomes and
     outstanding debt. Update configuration discovery only for newly reviewed
     evidence. Hand witnesses/rejections to P9-8.5 and exact coverage to P9-8.6;
@@ -3651,16 +3663,24 @@ the full ten-profile plan.
   fill the remaining six; use coherent batches with separate family/child
   evidence and acceptance. `.h[family]` depends on its own `.g` readiness and
   applicable `.e/.f` covariance checks, not all-ten closure of earlier children.
-  Reconcile accepted partial coverage at each checkpoint and finish all-ten
-  closure with `.i`. The retained larger proposals have four certificate-pass,
+  Reconcile accepted partial coverage at each checkpoint. The user now authorizes
+  `.i[first-group]` → `8.5[first-group]` → `8.6[first-group]` before second-group
+  completion; finish all-ten closure separately with `.i`. The retained larger proposals have four certificate-pass,
   four incomplete and two RG-rejected dispositions; none alone is runtime
   acceptance. Planning this order executes no new numerical cell.
 - [ ] P9-8.5: Verify unique target occupancy, whole-lifecycle target
-  reconstruction/readmission, and atomic failures.
+  reconstruction/readmission, and atomic failures. All-ten parent remains open.
+  - [ ] First group: C_OS, C_CI, A_CI, A_PC. Consume the 8.4i handoff;
+    test occupancy, both-role reconstruction/reset/replay, five frozen failure
+    classes and family-specific late/reset-only failures with full rollback.
+  - [ ] Remaining six families and aggregate reconciliation.
   Include the prepared larger proposal's event rollback/replay obligations
   when its numerical prerequisites pass; preparation alone does not close them.
 - [ ] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
   covariance evidence passes.
+  - [ ] First-group decision after scoped 8.5; distinguish general mechanical
+    arguments from bounded numerical/lifecycle support and unresolved domains.
+  - [ ] Remaining six families and all-ten decision.
 - [ ] End-of-Tranche-8 performance/cache review (after P9-8.6, before Tranche 9).
   User-requested on 2026-10-02. Profile the integrated paths and review graph
   envelope/identity repetition plus other reusable derived work. Require an

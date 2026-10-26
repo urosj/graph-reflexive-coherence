@@ -30,6 +30,27 @@ SPECIFICATION_BINDINGS = {
     "specs/grc-v4-a-initializer-vectors.json": "3408ca55bad43b61763163e6f193608f47cb7597d02da1b91915785c0dbf60a6",
     "specs/grc-v4-spec.md": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877",
 }
+# Accepted numerical-policy registry addition; the historical initializer and
+# packaged release keep their exact old bytes. This is not a free README exemption.
+README_SUCCESSOR_COMMIT = "7ca0c36898c53c930d01e940fcbf1b719f3bfd62"
+README_ADDITION = (
+    "The opt-in [V4 numerical execution policy](grc-v4-numerical-policy.md) documents\n"
+    "the production certified-solve and exact sufficient-proof replacements, their\n"
+    "formulas, supported domains, lifecycle selection and explicit inconclusive\n"
+    "failure. It changes neither the constitutive law nor the frozen packaged release.\n\n"
+).encode()
+
+
+def checked_specification_bytes(name, raw):
+    if name == "specs/README.md" and p.sha(raw) != SPECIFICATION_BINDINGS[name]:
+        frozen = historical_blobs([name], commit=README_SUCCESSOR_COMMIT)[name]
+        p.require(raw == frozen and raw.count(README_ADDITION) == 1,
+                  "specification candidate drift: " + name)
+        raw = raw.replace(README_ADDITION, b"", 1)
+    p.require(p.sha(raw) == SPECIFICATION_BINDINGS[name],
+              "specification candidate drift: " + name)
+
+
 SUPPLEMENT_SCHEMA = "specs/grc-v4-a-initializer-schema.json"
 SUPPLEMENT_VECTORS = "specs/grc-v4-a-initializer-vectors.json"
 TRANSFERRED_SECTIONS = (
@@ -84,8 +105,7 @@ def specification_status():
         "specs/grc-v4-a-initializer-spec.md", SUPPLEMENT_SCHEMA, SUPPLEMENT_VECTORS}
     p.require(set(SPECIFICATION_BINDINGS) == expected_paths, "incomplete specification bindings")
     for name, expected in SPECIFICATION_BINDINGS.items():
-        p.require(p.sha((p.ROOT / name).read_bytes()) == expected,
-                  "specification candidate drift: " + name)
+        checked_specification_bytes(name, (p.ROOT / name).read_bytes())
     return dict(specification_propagated=True, specification_status="accepted",
                 specification_revision_accepted=True, payload_binding_prepared=True,
                 executable_successor_released=False)

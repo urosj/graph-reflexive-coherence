@@ -1,0 +1,1434 @@
+{
+  "schema": "p984i-first-group-authority-v1",
+  "authority_epoch": "D11 successor; does not promote historical claims with later runtime evidence",
+  "traces": [
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-G9-EC-PORT-PLAN-DETERMINISM"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-G9-EC-PORT-PLAN-DETERMINISM",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:D11-G9-EC-PORT-PLAN-DETERMINISM",
+              "kind": "equation_contract",
+              "identifier": "D11-G9-EC-PORT-PLAN-DETERMINISM",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_json_pointer": "/equation_contracts/16",
+              "attributes": {
+                "equation_contract_id": "D11-G9-EC-PORT-PLAN-DETERMINISM",
+                "parent_object_ids": [
+                  "GRC9-EXPANSION-SOURCE-ADMISSION",
+                  "GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE"
+                ],
+                "normative_equation_or_contract": "event_digest_payload_and_exact_role_ID_grammar_bind_source_sink_D_eff_canonical_phase_chirality_policies_and_history_modes_and_no_map_iteration_or_hidden_counter_is_scientific_identity",
+                "support_semantics": "accepted_bounded_GRC9V4_successor",
+                "accepted_claim_ids": [
+                  "D11-G9-CL-N-001",
+                  "D10-CL-N-008"
+                ]
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "accepted_bounded_GRC9V4_successor"
+            ],
+            "support_disposition": [
+              "accepted_bounded_GRC9V4_successor"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+            "source_json_pointer": "/equation_contracts/16",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0efe32a9b85cb4ed7989ef15fbc51cf36d8543786db38463db33f7217112f6b1",
+              "source": "equation_contract:D11-G9-EC-PORT-PLAN-DETERMINISM",
+              "target": "source_record:78e56a4179cbfbaa877d545f7dff6b07a4bbd3c37634c5689f9ac554fd6dcc4a",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/16"
+            },
+            {
+              "edge_id": "propagation:4bf310a3ec86b0bc2dfc2efb6c80fd084ee08e0993cb987c47b5695a8134f670",
+              "source": "equation_contract:D11-G9-EC-PORT-PLAN-DETERMINISM",
+              "target": "current_claim:D10-CL-N-008",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_GRC9V4_successor",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/16/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:72e4a619de8a2f60685895c0b69b7c47e8cc8cde2be20e73218b71c731007b96",
+              "source": "equation_contract:D11-G9-EC-PORT-PLAN-DETERMINISM",
+              "target": "normative_object:GRC9-EXPANSION-SOURCE-ADMISSION",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/16/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:a69a10219df4e727f61c684f95e1d0b6fa30dd5f53dd780c8b2eda903d0f4e12",
+              "source": "equation_contract:D11-G9-EC-PORT-PLAN-DETERMINISM",
+              "target": "normative_object:GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/16/parent_object_ids/1"
+            },
+            {
+              "edge_id": "propagation:dbd56ead7f492a9ec29a466eeabf4d3d72cfd665e3871630ecf4bf081c9f1a79",
+              "source": "equation_contract:D11-G9-EC-PORT-PLAN-DETERMINISM",
+              "target": "current_claim:D11-G9-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_GRC9V4_successor",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/16/accepted_claim_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "396bba5c313b43f8bab51c1f8c7800704847b23113fbcfeba1c4f3a4c6d6eceb",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-G9-EC-TREE-AND-CAPACITY"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-G9-EC-TREE-AND-CAPACITY",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:D11-G9-EC-TREE-AND-CAPACITY",
+              "kind": "equation_contract",
+              "identifier": "D11-G9-EC-TREE-AND-CAPACITY",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_json_pointer": "/equation_contracts/13",
+              "attributes": {
+                "equation_contract_id": "D11-G9-EC-TREE-AND-CAPACITY",
+                "parent_object_ids": [
+                  "GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE",
+                  "GRC9-EXPANSION-AXIS-BALANCE"
+                ],
+                "normative_equation_or_contract": "connected_acyclic_n_node_module_has_n_minus_one_internal_edges_and_external_capacity_nine_n_minus_two_times_n_minus_one_equals_seven_n_plus_two",
+                "support_semantics": "accepted_bounded_GRC9V4_successor",
+                "accepted_claim_ids": [
+                  "D11-G9-CL-N-001"
+                ]
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "accepted_bounded_GRC9V4_successor"
+            ],
+            "support_disposition": [
+              "accepted_bounded_GRC9V4_successor"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+            "source_json_pointer": "/equation_contracts/13",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:795022a3df030bc7f20a739b0bdb777207be7a1de4d658dd5c69ddce91a77597",
+              "source": "equation_contract:D11-G9-EC-TREE-AND-CAPACITY",
+              "target": "normative_object:GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/13/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:aa32390a535311054b472855a9227ea5df54cf2449973fc89170ec2b06dce539",
+              "source": "equation_contract:D11-G9-EC-TREE-AND-CAPACITY",
+              "target": "source_record:78e56a4179cbfbaa877d545f7dff6b07a4bbd3c37634c5689f9ac554fd6dcc4a",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/13"
+            },
+            {
+              "edge_id": "propagation:c13e32e6ec474a80e8f78522a711ac6aa9e08d7edb34bc6d7e1faf76f46931e9",
+              "source": "equation_contract:D11-G9-EC-TREE-AND-CAPACITY",
+              "target": "current_claim:D11-G9-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_GRC9V4_successor",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/13/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:f26dbc87ff7444baf279dea545be50ccb27c60ad6a48f5466b7322197a7d07c5",
+              "source": "equation_contract:D11-G9-EC-TREE-AND-CAPACITY",
+              "target": "normative_object:GRC9-EXPANSION-AXIS-BALANCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/13/parent_object_ids/1"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "96360f9b155ac5a3a15550cd126f3628b0a74e428b726b84851e57a2e273ea17",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-G9-EC-DIHEDRAL-COVARIANCE"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-G9-EC-DIHEDRAL-COVARIANCE",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:D11-G9-EC-DIHEDRAL-COVARIANCE",
+              "kind": "equation_contract",
+              "identifier": "D11-G9-EC-DIHEDRAL-COVARIANCE",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_json_pointer": "/equation_contracts/17",
+              "attributes": {
+                "equation_contract_id": "D11-G9-EC-DIHEDRAL-COVARIANCE",
+                "parent_object_ids": [
+                  "GRC9-EXPANSION-CHIRAL-SAME-PORT-SPINE",
+                  "GRC9-EXPANSION-GROWTH-PHASE",
+                  "GRC9-EXPANSION-AXIS-BALANCE"
+                ],
+                "normative_equation_or_contract": "simultaneous_row_column_branch_rotation_transforms_phase_and_preserves_chirality_while_reflection_flips_chirality_and_reflects_phase",
+                "support_semantics": "accepted_design_level_combinatorial_covariance_with_runtime_verification_pending",
+                "accepted_claim_ids": [
+                  "D11-G9-CL-N-001"
+                ]
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "accepted_design_level_combinatorial_covariance_with_runtime_verification_pending"
+            ],
+            "support_disposition": [
+              "accepted_design_level_combinatorial_covariance_with_runtime_verification_pending"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+            "source_json_pointer": "/equation_contracts/17",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:15cd6fdc95a408a12871f655fd78f36f0619bfba8ef64e5d0304dd603a213f98",
+              "source": "equation_contract:D11-G9-EC-DIHEDRAL-COVARIANCE",
+              "target": "normative_object:GRC9-EXPANSION-CHIRAL-SAME-PORT-SPINE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/17/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:446bef2a46eebc9fbfe35f3334a09f1cdb92c51f805d8fe248439424d02570e1",
+              "source": "equation_contract:D11-G9-EC-DIHEDRAL-COVARIANCE",
+              "target": "normative_object:GRC9-EXPANSION-GROWTH-PHASE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/17/parent_object_ids/1"
+            },
+            {
+              "edge_id": "propagation:63ba23024f2288fd53c5642c251070aadb2cb314a6ff05dfc468475d3fa9a112",
+              "source": "equation_contract:D11-G9-EC-DIHEDRAL-COVARIANCE",
+              "target": "source_record:78e56a4179cbfbaa877d545f7dff6b07a4bbd3c37634c5689f9ac554fd6dcc4a",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/17"
+            },
+            {
+              "edge_id": "propagation:9306a71fd74bbce73db8c04defd279c9d78f636420efbdb390302c23052fa7a4",
+              "source": "equation_contract:D11-G9-EC-DIHEDRAL-COVARIANCE",
+              "target": "current_claim:D11-G9-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_combinatorial_covariance_with_runtime_verification_pending",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/17/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:e46c91a152eddecf8c0e67cf1fd4b416a5483cd30373b95a7be5dc3070ef69c5",
+              "source": "equation_contract:D11-G9-EC-DIHEDRAL-COVARIANCE",
+              "target": "normative_object:GRC9-EXPANSION-AXIS-BALANCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/17/parent_object_ids/2"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "729830af7f201148a3585be54e5638f0a1760cc36c6c9618ff95116e32f32997",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-G9-EC-RESOURCE-DISTRIBUTION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-G9-EC-RESOURCE-DISTRIBUTION",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:D11-G9-EC-RESOURCE-DISTRIBUTION",
+              "kind": "equation_contract",
+              "identifier": "D11-G9-EC-RESOURCE-DISTRIBUTION",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_json_pointer": "/equation_contracts/15",
+              "attributes": {
+                "equation_contract_id": "D11-G9-EC-RESOURCE-DISTRIBUTION",
+                "parent_object_ids": [
+                  "GRC9-EXPANSION-RESOURCE-MAP"
+                ],
+                "normative_equation_or_contract": "C_core_and_C_extra_are_zero_C_satellite_b_equals_p_b_C_source_each_p_b_nonnegative_sum_p_b_one_and_the_same_map_applies_to_current_and_reset",
+                "support_semantics": "accepted_bounded_GRC9V4_successor",
+                "accepted_claim_ids": [
+                  "D11-G9-CL-N-001",
+                  "D10-CL-N-004",
+                  "D10-CL-N-005"
+                ]
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "accepted_bounded_GRC9V4_successor"
+            ],
+            "support_disposition": [
+              "accepted_bounded_GRC9V4_successor"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+            "source_json_pointer": "/equation_contracts/15",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0ee6ced3788d7cb5c66c28eec1e1b4a6fe9e17a91b0b93c57f89c5826f581b49",
+              "source": "equation_contract:D11-G9-EC-RESOURCE-DISTRIBUTION",
+              "target": "current_claim:D10-CL-N-004",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_GRC9V4_successor",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/15/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:26d822b4fc65da256ea8ed6f8ba2ae981926fd96dac7b1257028bbbfea8b48ca",
+              "source": "equation_contract:D11-G9-EC-RESOURCE-DISTRIBUTION",
+              "target": "normative_object:GRC9-EXPANSION-RESOURCE-MAP",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/15/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:3df3ad0a9a364a8b1fa59d3465f203e0efc6034698f0c6e443de4e1cc1abfe56",
+              "source": "equation_contract:D11-G9-EC-RESOURCE-DISTRIBUTION",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_GRC9V4_successor",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/15/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:6b05079e9502a88f930805db6da1efdbdfcb4d86840b8756eb9f5da64d94d9b5",
+              "source": "equation_contract:D11-G9-EC-RESOURCE-DISTRIBUTION",
+              "target": "current_claim:D11-G9-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_GRC9V4_successor",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/15/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:6b7da47eaa5a01ac7520409fa419c07cd97e74c1e10ad45cbacfda8f84f18197",
+              "source": "equation_contract:D11-G9-EC-RESOURCE-DISTRIBUTION",
+              "target": "source_record:78e56a4179cbfbaa877d545f7dff6b07a4bbd3c37634c5689f9ac554fd6dcc4a",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/15"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "333da148d836e073a468bc1fffe2c2341e66a4f970981d93002a5032a28254e7",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-G9-EC-LIFECYCLE-READMISSION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-G9-EC-LIFECYCLE-READMISSION",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "kind": "equation_contract",
+              "identifier": "D11-G9-EC-LIFECYCLE-READMISSION",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_json_pointer": "/equation_contracts/18",
+              "attributes": {
+                "equation_contract_id": "D11-G9-EC-LIFECYCLE-READMISSION",
+                "parent_object_ids": [
+                  "GRC9-EXPANSION-TARGET-READMISSION"
+                ],
+                "normative_equation_or_contract": "target_complete_profile_supplies_exact_W_C_tr_C_surfaces_are_rederived_A_history_is_typed_or_loss_receipted_K4_is_whole_carrier_mapped_or_whole_carrier_reset_and_all_targets_are_readmitted_before_atomic_commit",
+                "support_semantics": "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending",
+                "accepted_claim_ids": [
+                  "D11-G9-CL-N-001",
+                  "D10-CL-N-005",
+                  "D10-CL-N-006",
+                  "D10-CL-C-002",
+                  "D10-CL-X-001"
+                ]
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending"
+            ],
+            "support_disposition": [
+              "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+            "source_json_pointer": "/equation_contracts/18",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:024cdef918356cd5942c7df85a99a2b85519af7e3a71ce605e841c9267bcabcc",
+              "source": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/18/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:174fe6a99427cfad3f8c7ab84b26b2104444a9c1afff9d9195398d06f350b73b",
+              "source": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "target": "current_claim:D10-CL-C-002",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/18/accepted_claim_ids/3"
+            },
+            {
+              "edge_id": "propagation:47c3c796e455d029a6e51acd82aa3ce55d0dc383b8600d94d8b33d98d49556dc",
+              "source": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "target": "source_record:78e56a4179cbfbaa877d545f7dff6b07a4bbd3c37634c5689f9ac554fd6dcc4a",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/18"
+            },
+            {
+              "edge_id": "propagation:4f0b875d97eff29f5acb0e24bc186a6d42fec438fbdc139242d0365d1f4e517a",
+              "source": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "target": "current_claim:D11-G9-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/18/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:9adefed171ffbc045dc4c72e7a3749a585ea999126155654003227244c4bffd0",
+              "source": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "target": "normative_object:GRC9-EXPANSION-TARGET-READMISSION",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/18/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:9dc12cba5cff2af208d2fa18a7ab8c183343728eca410e99dbe34714966cc514",
+              "source": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "target": "current_claim:D10-CL-X-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/18/accepted_claim_ids/4"
+            },
+            {
+              "edge_id": "propagation:aa01c34eeadd3f0cbf606e50a72161f889ce567fa57fe3d1d12fc6af9a341dc4",
+              "source": "equation_contract:D11-G9-EC-LIFECYCLE-READMISSION",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending",
+              "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+              "source_json_pointer": "/equation_contracts/18/accepted_claim_ids/1"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "7de5da6b8cd676f15c7e9d7a4c684f008b3fb827cd4ce8fd1a584a0b7c29880c",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "debt_lifecycle",
+      "query": {
+        "debt_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 6,
+      "rows": [
+        {
+          "row_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION:opening",
+          "classification": "queued_preregistered_requires_accepted_D11_C",
+          "payload": {
+            "debt_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+            "gate_id": "D11-G9",
+            "status": "queued_preregistered_requires_accepted_D11_C",
+            "scope": "GRC9V4_only_canonical_collision_free_expansion_port_allocation",
+            "earliest_reopened_contracts": [
+              "D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION"
+            ],
+            "directly_bearing_claim_ids": [
+              "D10-CL-N-001",
+              "D10-CL-N-002",
+              "D10-CL-N-003",
+              "D10-CL-N-004",
+              "D10-CL-N-005",
+              "D10-CL-N-006",
+              "D10-CL-N-007",
+              "D10-CL-N-008",
+              "D10-CL-N-009",
+              "D10-CL-O-001",
+              "D10-CL-O-002",
+              "D10-CL-O-003",
+              "D10-CL-O-004",
+              "D10-CL-O-005",
+              "D10-CL-O-006",
+              "D10-CL-O-007",
+              "D10-CL-C-002",
+              "D10-CL-C-003",
+              "D10-CL-C-004",
+              "D10-CL-C-006",
+              "D10-CL-C-010",
+              "D10-CL-C-011",
+              "D10-CL-C-012",
+              "D10-CL-U-002",
+              "D10-CL-U-004",
+              "D10-CL-X-001",
+              "D10-CL-X-002",
+              "D10-CL-X-003"
+            ],
+            "claim_bearing_semantics": "pressure_and_downstream_consistency_only_no_claim_is_reclassified_or_invalidated_at_opening",
+            "affected_object_ids": [
+              "GRC9-ORDERED-PORTS",
+              "GRC9-ROW-COLUMN-CHART",
+              "GRC9-SATURATION",
+              "GRC9-MECHANICAL-EXPANSION",
+              "L-PROFILE-MIGRATION",
+              "L-TOPOLOGY-EVENT",
+              "L-ORDERED-RECEIPTS",
+              "SPEC-VERIFICATION-REGISTRY"
+            ],
+            "disposition_rule": "only_an_accepted_D11_G9_successor_may_add_or_transform_GRC9V4_claim_authority_and_no_GRC9_or_GRC9V3_record_is_mutated"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+            "record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+            "source_json_pointer": "/newly_exposed_D11_debts/1",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:036287646a2712e50cb57e375d512f7b258275845c2816d20920b7e507dfebb8",
+              "source": "current_claim:D10-CL-N-006",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/5"
+            },
+            {
+              "edge_id": "propagation:04453ab2242cd1dc0c164761c1125cee1ed56bb732ff8ce14865afb333778c8a",
+              "source": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "target": "source_record:566fd4d0ed82fa6fa7ba245652e3dabd4608b67f499c5bbceba93248c4a028d3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/debt_transformation"
+            },
+            {
+              "edge_id": "propagation:1016fb89ca88ca64259011b90a5ff7898502928758a54fd39486484b028130c0",
+              "source": "current_claim:D10-CL-O-005",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/13"
+            },
+            {
+              "edge_id": "propagation:12ac44aedb4e65c90d03b0233e3f9b7bcc1c2e4b0eef0073bd7ccb4de52eb558",
+              "source": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "target": "current_claim:D11-G9-CL-N-001",
+              "relation": "resolved_bounded_by",
+              "support_semantic": "required",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/debt_transformation/local_debt_successor_status"
+            },
+            {
+              "edge_id": "propagation:1519e2a1a485bddf396cc532d4c1eea9af0b62382e519569dab4d9b32eb8376c",
+              "source": "current_claim:D10-CL-O-001",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/9"
+            },
+            {
+              "edge_id": "propagation:156c17b7127aa18ff0c030d47e5a2b3dc9e0c9334b2a176f60bc24f97b052a65",
+              "source": "current_claim:D10-CL-X-001",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/25"
+            },
+            {
+              "edge_id": "propagation:17e61a1ca49de1ec8a88de6bf559c333bd2b5c496dd44a64712b6edd55ac4268",
+              "source": "current_claim:D10-CL-O-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/11"
+            },
+            {
+              "edge_id": "propagation:1acb9df518eff7f070a062584bdbd05b082620e35e96d8a81595925d8d787a90",
+              "source": "current_claim:D10-CL-N-001",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:1bc83e6365f1502808d5c8e52d616ee08e8e053f17d29de7f50119247817c6fb",
+              "source": "current_claim:D10-CL-N-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:22f1f86699b4c75e011e7943476d7b5996ab1715a5b09a91e1f894302cd984d3",
+              "source": "current_claim:D10-CL-C-006",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/19"
+            },
+            {
+              "edge_id": "propagation:3393277b1df8339def7fb8ff08df58797fbd42b40ba3e490ba385b417ef21cba",
+              "source": "current_claim:D10-CL-C-011",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/21"
+            },
+            {
+              "edge_id": "propagation:39dd344350ea9e358008c46517af6911a2c8680554b958c2ff5375b8249a7bbe",
+              "source": "current_claim:D10-CL-O-007",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/15"
+            },
+            {
+              "edge_id": "propagation:3c2cd55283056e8925ca730e8e5d99e9f513563e23bd8ed4517673df0774cef8",
+              "source": "current_claim:D10-CL-O-006",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/14"
+            },
+            {
+              "edge_id": "propagation:3f5586b0c9670cf33f46c407b2c964c0e46cb3bd18870acfeaefb05c66b6ce6e",
+              "source": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "target": "gate_record:GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "relation": "accepted_at",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/debt_transformation"
+            },
+            {
+              "edge_id": "propagation:482f4993db9ea0913a015db64b98f9c7ed3f409a53739b620614996dd7488b04",
+              "source": "current_claim:D10-CL-C-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/17"
+            },
+            {
+              "edge_id": "propagation:50450d8cb2ff81038e70ad4ce6589987dbc4eabca8ebed0c23a3092b7404124a",
+              "source": "current_claim:D10-CL-C-010",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/20"
+            },
+            {
+              "edge_id": "propagation:52d9f0c8f3e8244d862255dde14a72afb43cec66af4f298303ff7b6e085d939d",
+              "source": "current_claim:D10-CL-N-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/3"
+            },
+            {
+              "edge_id": "propagation:57e993ce78772fab9814d051efa5c9203fac456764b2752ffd3b6d68684afa37",
+              "source": "current_claim:D10-CL-O-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/12"
+            },
+            {
+              "edge_id": "propagation:5e432461297c081953df1b2ccd72aadd4033756d7d13c3f7fa07012c176488a8",
+              "source": "current_claim:D10-CL-C-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/16"
+            },
+            {
+              "edge_id": "propagation:8581b33617515223c5c8c40c1297eafca4fb4a14362920aca49e27093f40b7f2",
+              "source": "current_claim:D10-CL-U-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/23"
+            },
+            {
+              "edge_id": "propagation:8b1be3d1eb32b4da8e15180b514276e073cfb5b71e4b52ea6bb1aecaeb3b0150",
+              "source": "current_claim:D10-CL-X-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/27"
+            },
+            {
+              "edge_id": "propagation:a417feefc27e7999af2eeb7584784972a7b63116578f9e608e6cf86a157a6a6d",
+              "source": "current_claim:D10-CL-N-008",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/7"
+            },
+            {
+              "edge_id": "propagation:a901c16657235fb3b752ae02d7eaf73e77dd71916b9cfdc3c7a72778c2f6ce16",
+              "source": "current_claim:D10-CL-O-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/10"
+            },
+            {
+              "edge_id": "propagation:c40fbb304388c912f4a7f9c7af1f7d4ddac28d8385705c596f5cafea3105366a",
+              "source": "current_claim:D10-CL-U-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/24"
+            },
+            {
+              "edge_id": "propagation:ca065ffcc9f01b783ef873271e9a49656a26562eed06e1abe576cbd8c03d97ec",
+              "source": "current_claim:D10-CL-X-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/26"
+            },
+            {
+              "edge_id": "propagation:d7a31e353a355d22c5a0c4693afd74e4a92af6e7f5abfcf7fb09536d48fe9f55",
+              "source": "current_claim:D10-CL-N-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:e1a8e7fafe6759a4245c3dadbd1df8b57a72de97014c54486e8290f892e6ed83",
+              "source": "current_claim:D10-CL-C-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/18"
+            },
+            {
+              "edge_id": "propagation:f4d28dfd08181b9a8bccbbda0ed6dccfffce2c1b94b4f7afaf7b4ef55c2689c6",
+              "source": "current_claim:D10-CL-N-007",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/6"
+            },
+            {
+              "edge_id": "propagation:f750cd8686592255ef533732ffed679dc3b0036d3183f269be3cd87725173032",
+              "source": "current_claim:D10-CL-N-009",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/8"
+            },
+            {
+              "edge_id": "propagation:f7a919e7659783740d5c9d464b21d76dd153b17faacd956d8106d712c2a30f11",
+              "source": "current_claim:D10-CL-C-012",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/22"
+            },
+            {
+              "edge_id": "propagation:ffc7b1fe96440ead4e4df4c65f91c378d769e0682b415c80024b31d56ae9de93",
+              "source": "current_claim:D10-CL-N-005",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/4"
+            }
+          ]
+        },
+        {
+          "row_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION:resolution",
+          "classification": "resolved_bounded_by_D11_G9_P4a",
+          "payload": {
+            "predecessor_D10_debt_transformation_count": 29,
+            "predecessor_D10_debt_dispositions_changed": 0,
+            "D11_C_local_debt_status_carried": "resolved_bounded_by_D11_C_T3a",
+            "local_debt_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+            "local_debt_predecessor_status": "active_preregistered_after_accepted_D11_C",
+            "local_debt_successor_status": "resolved_bounded_by_D11_G9_P4a",
+            "local_debt_facets_closed": [
+              "saturated_port_five_conflict",
+              "exact_primary_and_recursive_internal_port_allocation",
+              "exact_old_boundary_port_identity",
+              "same_port_internal_typing",
+              "arbitrary_size_tree_and_capacity",
+              "explicit_chirality_and_conditional_growth_phase",
+              "row_and_column_balance",
+              "stable_role_identity_and_event_receipts",
+              "design_level_resource_candidate_history_and_target_readmission",
+              "append_only_successor_provenance",
+              "V4_only_legacy_defined_domain_boundary"
+            ],
+            "not_closed": [
+              "physical_or_affinity_based_chirality_selection",
+              "runtime_expansion_replay_and_atomicity_conformance",
+              "Candidate_A_history_preservation_evidence",
+              "persistent_K4_event_map_evidence",
+              "child_basin_stabilization",
+              "structural_or_temporal_stability",
+              "endpoint_effect_or_physical_channel_attribution",
+              "necessity_optimality_or_preference_for_nine_ports",
+              "generic_lossless_topology_history_transport"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+            "record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+            "source_json_pointer": "/debt_transformation",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:036287646a2712e50cb57e375d512f7b258275845c2816d20920b7e507dfebb8",
+              "source": "current_claim:D10-CL-N-006",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/5"
+            },
+            {
+              "edge_id": "propagation:04453ab2242cd1dc0c164761c1125cee1ed56bb732ff8ce14865afb333778c8a",
+              "source": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "target": "source_record:566fd4d0ed82fa6fa7ba245652e3dabd4608b67f499c5bbceba93248c4a028d3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/debt_transformation"
+            },
+            {
+              "edge_id": "propagation:1016fb89ca88ca64259011b90a5ff7898502928758a54fd39486484b028130c0",
+              "source": "current_claim:D10-CL-O-005",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/13"
+            },
+            {
+              "edge_id": "propagation:12ac44aedb4e65c90d03b0233e3f9b7bcc1c2e4b0eef0073bd7ccb4de52eb558",
+              "source": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "target": "current_claim:D11-G9-CL-N-001",
+              "relation": "resolved_bounded_by",
+              "support_semantic": "required",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/debt_transformation/local_debt_successor_status"
+            },
+            {
+              "edge_id": "propagation:1519e2a1a485bddf396cc532d4c1eea9af0b62382e519569dab4d9b32eb8376c",
+              "source": "current_claim:D10-CL-O-001",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/9"
+            },
+            {
+              "edge_id": "propagation:156c17b7127aa18ff0c030d47e5a2b3dc9e0c9334b2a176f60bc24f97b052a65",
+              "source": "current_claim:D10-CL-X-001",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/25"
+            },
+            {
+              "edge_id": "propagation:17e61a1ca49de1ec8a88de6bf559c333bd2b5c496dd44a64712b6edd55ac4268",
+              "source": "current_claim:D10-CL-O-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/11"
+            },
+            {
+              "edge_id": "propagation:1acb9df518eff7f070a062584bdbd05b082620e35e96d8a81595925d8d787a90",
+              "source": "current_claim:D10-CL-N-001",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:1bc83e6365f1502808d5c8e52d616ee08e8e053f17d29de7f50119247817c6fb",
+              "source": "current_claim:D10-CL-N-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:22f1f86699b4c75e011e7943476d7b5996ab1715a5b09a91e1f894302cd984d3",
+              "source": "current_claim:D10-CL-C-006",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/19"
+            },
+            {
+              "edge_id": "propagation:3393277b1df8339def7fb8ff08df58797fbd42b40ba3e490ba385b417ef21cba",
+              "source": "current_claim:D10-CL-C-011",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/21"
+            },
+            {
+              "edge_id": "propagation:39dd344350ea9e358008c46517af6911a2c8680554b958c2ff5375b8249a7bbe",
+              "source": "current_claim:D10-CL-O-007",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/15"
+            },
+            {
+              "edge_id": "propagation:3c2cd55283056e8925ca730e8e5d99e9f513563e23bd8ed4517673df0774cef8",
+              "source": "current_claim:D10-CL-O-006",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/14"
+            },
+            {
+              "edge_id": "propagation:3f5586b0c9670cf33f46c407b2c964c0e46cb3bd18870acfeaefb05c66b6ce6e",
+              "source": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "target": "gate_record:GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "relation": "accepted_at",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/debt_transformation"
+            },
+            {
+              "edge_id": "propagation:482f4993db9ea0913a015db64b98f9c7ed3f409a53739b620614996dd7488b04",
+              "source": "current_claim:D10-CL-C-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/17"
+            },
+            {
+              "edge_id": "propagation:50450d8cb2ff81038e70ad4ce6589987dbc4eabca8ebed0c23a3092b7404124a",
+              "source": "current_claim:D10-CL-C-010",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/20"
+            },
+            {
+              "edge_id": "propagation:52d9f0c8f3e8244d862255dde14a72afb43cec66af4f298303ff7b6e085d939d",
+              "source": "current_claim:D10-CL-N-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/3"
+            },
+            {
+              "edge_id": "propagation:57e993ce78772fab9814d051efa5c9203fac456764b2752ffd3b6d68684afa37",
+              "source": "current_claim:D10-CL-O-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/12"
+            },
+            {
+              "edge_id": "propagation:5e432461297c081953df1b2ccd72aadd4033756d7d13c3f7fa07012c176488a8",
+              "source": "current_claim:D10-CL-C-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/16"
+            },
+            {
+              "edge_id": "propagation:8581b33617515223c5c8c40c1297eafca4fb4a14362920aca49e27093f40b7f2",
+              "source": "current_claim:D10-CL-U-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/23"
+            },
+            {
+              "edge_id": "propagation:8b1be3d1eb32b4da8e15180b514276e073cfb5b71e4b52ea6bb1aecaeb3b0150",
+              "source": "current_claim:D10-CL-X-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/27"
+            },
+            {
+              "edge_id": "propagation:a417feefc27e7999af2eeb7584784972a7b63116578f9e608e6cf86a157a6a6d",
+              "source": "current_claim:D10-CL-N-008",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/7"
+            },
+            {
+              "edge_id": "propagation:a901c16657235fb3b752ae02d7eaf73e77dd71916b9cfdc3c7a72778c2f6ce16",
+              "source": "current_claim:D10-CL-O-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/10"
+            },
+            {
+              "edge_id": "propagation:c40fbb304388c912f4a7f9c7af1f7d4ddac28d8385705c596f5cafea3105366a",
+              "source": "current_claim:D10-CL-U-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/24"
+            },
+            {
+              "edge_id": "propagation:ca065ffcc9f01b783ef873271e9a49656a26562eed06e1abe576cbd8c03d97ec",
+              "source": "current_claim:D10-CL-X-002",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/26"
+            },
+            {
+              "edge_id": "propagation:d7a31e353a355d22c5a0c4693afd74e4a92af6e7f5abfcf7fb09536d48fe9f55",
+              "source": "current_claim:D10-CL-N-003",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:e1a8e7fafe6759a4245c3dadbd1df8b57a72de97014c54486e8290f892e6ed83",
+              "source": "current_claim:D10-CL-C-004",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/18"
+            },
+            {
+              "edge_id": "propagation:f4d28dfd08181b9a8bccbbda0ed6dccfffce2c1b94b4f7afaf7b4ef55c2689c6",
+              "source": "current_claim:D10-CL-N-007",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/6"
+            },
+            {
+              "edge_id": "propagation:f750cd8686592255ef533732ffed679dc3b0036d3183f269be3cd87725173032",
+              "source": "current_claim:D10-CL-N-009",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/8"
+            },
+            {
+              "edge_id": "propagation:f7a919e7659783740d5c9d464b21d76dd153b17faacd956d8106d712c2a30f11",
+              "source": "current_claim:D10-CL-C-012",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/22"
+            },
+            {
+              "edge_id": "propagation:ffc7b1fe96440ead4e4df4c65f91c378d769e0682b415c80024b31d56ae9de93",
+              "source": "current_claim:D10-CL-N-005",
+              "target": "debt_transformation:D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+              "relation": "directly_bearing_pressure",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+              "source_record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+              "source_json_pointer": "/newly_exposed_D11_debts/1/directly_bearing_claim_ids/4"
+            }
+          ]
+        },
+        {
+          "row_id": "D11-G9-VERIFY-PAPER-THEN-SPECIFICATION-PROPAGATION",
+          "classification": "forward_verification_routing",
+          "payload": {
+            "obligation_id": "D11-G9-VERIFY-PAPER-THEN-SPECIFICATION-PROPAGATION",
+            "status": "pending_forward"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+            "record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+            "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/0",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:7f6ba1ecaac307554892f2e46593d7fc3963967e790ceeef70212f1145947c5e",
+              "source": "verification_obligation:D11-G9-VERIFY-PAPER-THEN-SPECIFICATION-PROPAGATION",
+              "target": "source_record:566fd4d0ed82fa6fa7ba245652e3dabd4608b67f499c5bbceba93248c4a028d3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/0"
+            },
+            {
+              "edge_id": "propagation:d6275a86bc611ff6189bef9d56e3cf9fc9c63b0e7115f99d7eb6745c41c0a5b5",
+              "source": "current_claim:D11-G9-CL-N-001",
+              "target": "verification_obligation:D11-G9-VERIFY-PAPER-THEN-SPECIFICATION-PROPAGATION",
+              "relation": "requires_verification_from",
+              "support_semantic": "required",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/0"
+            }
+          ]
+        },
+        {
+          "row_id": "D11-G9-VERIFY-PORT-PLAN-ID-PHASE-AND-REPLAY-CONFORMANCE",
+          "classification": "forward_verification_routing",
+          "payload": {
+            "obligation_id": "D11-G9-VERIFY-PORT-PLAN-ID-PHASE-AND-REPLAY-CONFORMANCE",
+            "status": "pending_forward"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+            "record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+            "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/1",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:5a948176b7cc1c2ec91569f7ec14ea9059bc2859dcd3ed0e53186ca67798f329",
+              "source": "current_claim:D11-G9-CL-N-001",
+              "target": "verification_obligation:D11-G9-VERIFY-PORT-PLAN-ID-PHASE-AND-REPLAY-CONFORMANCE",
+              "relation": "requires_verification_from",
+              "support_semantic": "required",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/1"
+            },
+            {
+              "edge_id": "propagation:92ca193a05b543930534b5f662105ce6bb6e4e79461f45ccaef4d1ca56ed16ef",
+              "source": "verification_obligation:D11-G9-VERIFY-PORT-PLAN-ID-PHASE-AND-REPLAY-CONFORMANCE",
+              "target": "source_record:566fd4d0ed82fa6fa7ba245652e3dabd4608b67f499c5bbceba93248c4a028d3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/1"
+            }
+          ]
+        },
+        {
+          "row_id": "D11-G9-VERIFY-RESOURCE-HISTORY-TARGET-READMISSION-AND-ATOMICITY",
+          "classification": "forward_verification_routing",
+          "payload": {
+            "obligation_id": "D11-G9-VERIFY-RESOURCE-HISTORY-TARGET-READMISSION-AND-ATOMICITY",
+            "status": "pending_forward"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+            "record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+            "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/2",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:605edc692563f9056988b5e26227a3813ec422cb075b3f299928c6b0dfee0446",
+              "source": "current_claim:D11-G9-CL-N-001",
+              "target": "verification_obligation:D11-G9-VERIFY-RESOURCE-HISTORY-TARGET-READMISSION-AND-ATOMICITY",
+              "relation": "requires_verification_from",
+              "support_semantic": "required",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/2"
+            },
+            {
+              "edge_id": "propagation:c7c98ea14c88b0e83561229cbe947c49e4cf8bed34cd63e392a53a1e92ab96bc",
+              "source": "verification_obligation:D11-G9-VERIFY-RESOURCE-HISTORY-TARGET-READMISSION-AND-ATOMICITY",
+              "target": "source_record:566fd4d0ed82fa6fa7ba245652e3dabd4608b67f499c5bbceba93248c4a028d3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/2"
+            }
+          ]
+        },
+        {
+          "row_id": "D11-G9-VERIFY-DISABLED-LEGACY-DEFINED-DOMAIN-FAIL-CLOSED",
+          "classification": "forward_verification_routing",
+          "payload": {
+            "obligation_id": "D11-G9-VERIFY-DISABLED-LEGACY-DEFINED-DOMAIN-FAIL-CLOSED",
+            "status": "pending_forward"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+            "record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+            "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/3",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:07a5499969235aec75e5692d844cef194513fc301c49bf290f3e1e5e235833fe",
+              "source": "current_claim:D11-G9-CL-N-001",
+              "target": "verification_obligation:D11-G9-VERIFY-DISABLED-LEGACY-DEFINED-DOMAIN-FAIL-CLOSED",
+              "relation": "requires_verification_from",
+              "support_semantic": "required",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/3"
+            },
+            {
+              "edge_id": "propagation:13bafb616012df9d44f1fc3c1b94c65e16f15206a26aedd09668c7d095ea74ad",
+              "source": "verification_obligation:D11-G9-VERIFY-DISABLED-LEGACY-DEFINED-DOMAIN-FAIL-CLOSED",
+              "target": "source_record:566fd4d0ed82fa6fa7ba245652e3dabd4608b67f499c5bbceba93248c4a028d3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+              "source_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+              "source_json_pointer": "/verification_obligation_effect/new_forward_obligations/3"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "615b7ebdce9a6f09a311736e986bfff97c4694445e87e7ba8e91bc9971bb581d",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    }
+  ]
+}
