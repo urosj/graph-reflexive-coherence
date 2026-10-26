@@ -1,5 +1,43 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-8.5 first group (2026-10-26)
+
+Branch `work/p9-8-5-first-group`, based on first-group 8.4 no-ff merge
+`5b8a432e`. [C_OS](./phase-9-grcv4/tranche-8/P9-8.5-COSReview.md) is accepted.
+The remaining three families ran in independent parallel processes under the
+[frozen matrix](./phase-9-grcv4/tranche-8/P9-8.5-RemainingFirstGroupPlan.md):
+[C_CI](./phase-9-grcv4/tranche-8/P9-8.5-CCI-review.md),
+[A_CI](./phase-9-grcv4/tranche-8/P9-8.5-ACI-review.md), and
+[A_PC](./phase-9-grcv4/tranche-8/P9-8.5-APC-review.md).
+Each passed six small native lifecycle tests and one exact larger checkpoint
+replay with fresh both-role admission (C_CI 702.99 s, A_CI 414.98 s, A_PC 447.11 s
+for the larger replays). No trajectory/covariance campaign repeats.
+All four families and the first-group P9-8.5 checkpoint were accepted by the
+user on 2026-10-26. The [acceptance record](./phase-9-grcv4/tranche-8/P9-8.5-FirstGroupAcceptance.json)
+binds the exact manifests and execution pairs. The user requested commit and
+no-ff merge into main. All-ten 8.5 remains open.
+
+The A-family step/reset integration exposed a WLS-only differential decoder in
+the generic internal owner. It now uses the existing closed WLS/fixed-row decoder,
+with exact graph and recipe checks and unchanged WLS reference-weight checks.
+No equations, tolerances, numerical fallback or public facade changed. Eight
+C_OS lifecycle regressions and two focused decoder/registry tests also passed.
+C_OS's original accepted execution is preserved, including its lifecycle source
+at Git revision `5b8a432e`; selected source retrieval verifies that original hash.
+It is not relabeled as current-code conformance. The A-family manifests also
+bind an imported maintenance-policy module; its original bytes are retained
+in `P9-8.5-ExecutionMaintenancePolicy.py.txt`. Selected status verifies that
+snapshot and all current numerical sources, while later evidence-path registration
+is separate metadata maintenance. Use the selected status commands in the reviews.
+
+Side-tool selection: `checkpoint=8.5`, family `C_OS`, `C_CI`, `A_CI` or `A_PC`.
+CLI/API, browser selector and notebook expose retained integrity without numerical
+execution. Event and generic step/reset owners have explicitly linked seeds and
+separate ledgers; unified public GRC9V4 snapshot/configuration is still Tranche 9.
+Next: scoped first-group P9-8.6 reconciliation; start its branch from main.
+The six second-group families retain their separate obligations. Broad boundary
+status is still the interrupted predecessor attempt below, not a new pass.
+
 ## Current checkpoint — first-group P9-8.4 closed (2026-10-26)
 
 On `work/p9-8-4i-first-group`, the [reconciliation](./phase-9-grcv4/tranche-8/P9-8.4i-FirstGroupReview.md)
@@ -6244,8 +6282,8 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Resume from the first-group 8.4i handoff at the top of this file. Check its
-> merge/checkout state, then use its accepted witnesses for scoped 8.5 and 8.6.
+> Resume from the first-group 8.5 work at the top of this file. Check acceptance and
+> checkout state before proceeding to C_CI, then A_CI and A_PC; scoped 8.6 follows.
 > Do not silently close all-ten parents or rerun completed numerical campaigns.
 > Do not rerun completed numerical evidence for documentation or acceptance.
 > C_OS, C_CI and A_CI are accepted predecessors. The six second-group families

@@ -1,0 +1,82 @@
+{
+  "schema": "p985-family-execution-v1",
+  "family": "C_CI",
+  "segment": "small",
+  "manifest_digest": "fd6b94ffabb884eaafc33298d5a1f7f009c7aee5e04d05bb958e6c27dcf27811",
+  "outcome": "passed",
+  "observations": {
+    "tests": 6,
+    "cases": {
+      "atomicity": {
+        "passed": true,
+        "methods": [
+          "test_both_charge_failures_and_late_publication_errors_roll_back"
+        ],
+        "late_publication_pointer_unchanged": true,
+        "prospective_archive_and_reference_records_not_published": true
+      },
+      "continuation_reset": {
+        "passed": true,
+        "event_checkpoint_sha256": "692355bc5a94982b6e8e9f4e01690320535b7f1bfae1c99faca16ffed96e63b3",
+        "seed_snapshot_sha256": "3cf30457440091f2e4746bb91f8183a310bdf6c9a872a1534a7785e8c93e643a",
+        "step_snapshot_sha256": "1537bfdee0f95027609f09853b3f2cd7293fe9bab4a18187adf20e04e4e1bd74",
+        "reset_snapshot_sha256": "6a188e2b09a92e2380ceb5ca603733337db6d62bbe3604a6b7cfc06803112032",
+        "native_steps": 1,
+        "native_resets": 1,
+        "full_authority_restored": true,
+        "clock_preserved": true,
+        "reset_rollback": true,
+        "fresh_generic_ledger": true,
+        "public_specialization_facade": false
+      },
+      "domain_and_history": {
+        "passed": true,
+        "methods": [
+          "test_real_target_domain_failure_both_roles_and_reset_only",
+          "test_rehashed_history_policy_cannot_add_candidate_or_carrier_history"
+        ],
+        "family_specific": true,
+        "reset_only": true,
+        "domain_controls": "natural_sufficient_domain_rejection"
+      },
+      "readmission_no_writers": {
+        "passed": true,
+        "methods": [
+          "test_event_zero_step_runs_both_roots_without_os_continuity_or_writer"
+        ],
+        "zero_temporal_writes": true
+      },
+      "replay": {
+        "passed": true,
+        "methods": [
+          "test_replay_rejects_receipts_identities_roots_and_role_forgery"
+        ],
+        "checkpoint_exact": true,
+        "checkpoint_sha256": "692355bc5a94982b6e8e9f4e01690320535b7f1bfae1c99faca16ffed96e63b3",
+        "vertices": 17,
+        "edges": 16,
+        "occupied_ports": 32,
+        "archive_count": 0,
+        "independent_resource_and_history_transfer": true
+      },
+      "request_boundaries": {
+        "passed": true,
+        "codes": [
+          "module_chirality_required",
+          "module_growth_phase_required",
+          "reject_noncanonical_inactive_growth_phase"
+        ],
+        "full_publication_rollback": true,
+        "self_loop_reused_from": "implementation/phase-9-grcv4/tranche-8/P9-8.5-COS-small.json"
+      }
+    },
+    "shared_self_loop": "implementation/phase-9-grcv4/tranche-8/P9-8.5-COS-small.json"
+  },
+  "elapsed_seconds": 244.65653602599923,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "public_specialization_facade": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "9f36f2ce92378688e6cb2f27cd174089d46babecda21ffb5e9e0f3d8162aeb9f"
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "p985-family-execution-v1",
+  "family": "A_PC",
+  "segment": "small",
+  "manifest_digest": "fc9e428392101b4f90c603373a394608fee49f5131e4fd2af0d80954f7f9e382",
+  "outcome": "passed",
+  "observations": {
+    "tests": 6,
+    "cases": {
+      "atomicity": {
+        "passed": true,
+        "methods": [
+          "test_charge_both_roles_and_late_receipt_failures_roll_back"
+        ],
+        "late_publication_pointer_unchanged": true,
+        "prospective_archive_and_reference_records_not_published": true
+      },
+      "continuation_reset": {
+        "passed": true,
+        "event_checkpoint_sha256": "f22cc57e5d6ea7542a406f67ef67ebd7be973e42266e560f2b7c1717a866ae96",
+        "seed_snapshot_sha256": "26f46c13cc16d950459959f229398e54acfb986d5a5d4027af4ba4966e7364f2",
+        "step_snapshot_sha256": "9ee4a331f5b811d784d85bd33a792edce87331d4a38346b9ff24768e164ccf99",
+        "reset_snapshot_sha256": "5ff5092f4d9ad428d930b44b090eb64be6f233361a2b70a65ffc6a63d19ead8c",
+        "native_steps": 1,
+        "native_resets": 1,
+        "full_authority_restored": true,
+        "clock_preserved": true,
+        "reset_rollback": true,
+        "fresh_generic_ledger": true,
+        "public_specialization_facade": false
+      },
+      "domain_and_history": {
+        "passed": true,
+        "methods": [
+          "test_target_whole_chart_rejection_both_roles_even_when_points_regular",
+          "test_policy_rehashed_role_substitutions_fail_at_admission"
+        ],
+        "family_specific": true,
+        "reset_only": true,
+        "domain_controls": "injected_whole_chart_and_role_history"
+      },
+      "readmission_no_writers": {
+        "passed": true,
+        "methods": [
+          "test_event_admission_runs_neither_W_nor_Z_writer"
+        ],
+        "zero_temporal_writes": true
+      },
+      "replay": {
+        "passed": true,
+        "methods": [
+          "test_replay_rejects_history_reference_identity_and_receipt_tampering",
+          "test_rehashed_target_authority_and_source_policy_do_not_bypass_replay",
+          "test_complete_archives_and_rehashed_archive_replay_failures"
+        ],
+        "checkpoint_exact": true,
+        "checkpoint_sha256": "f22cc57e5d6ea7542a406f67ef67ebd7be973e42266e560f2b7c1717a866ae96",
+        "vertices": 17,
+        "edges": 16,
+        "occupied_ports": 32,
+        "archive_count": 1,
+        "independent_resource_and_history_transfer": true
+      },
+      "request_boundaries": {
+        "passed": true,
+        "codes": [
+          "module_chirality_required",
+          "module_growth_phase_required",
+          "reject_noncanonical_inactive_growth_phase"
+        ],
+        "full_publication_rollback": true,
+        "self_loop_reused_from": "implementation/phase-9-grcv4/tranche-8/P9-8.5-COS-small.json"
+      }
+    },
+    "shared_self_loop": "implementation/phase-9-grcv4/tranche-8/P9-8.5-COS-small.json"
+  },
+  "elapsed_seconds": 29.72644050300005,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "public_specialization_facade": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "d680faa70dda64293c833770a3ad3796516cf49a23c28b798619b36f528a649b"
+}

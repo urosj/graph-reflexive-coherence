@@ -1,0 +1,42 @@
+{
+  "schema": "p985-first-group-acceptance-v1",
+  "accepted_on": "2026-10-26",
+  "user_accepted": true,
+  "first_group_closed": true,
+  "aggregate_closed": false,
+  "families": {
+    "C_OS": {
+      "manifest_digest": "ec8206c1728754907aa5fc0fc819bdd5ed71fb6ae8070823bbcdd39a2804e6c4",
+      "execution_digests": {
+        "small": "b10a2e2116dc78458e8cd079d08c284f3545b19617a142e62a7f4ab633ca1f4f",
+        "large": "cb779fe08f6f37ee4ddaab0f577415db814cabb559b23963f31038843929ddf3"
+      }
+    },
+    "C_CI": {
+      "manifest_digest": "fd6b94ffabb884eaafc33298d5a1f7f009c7aee5e04d05bb958e6c27dcf27811",
+      "execution_digests": {
+        "small": "9f36f2ce92378688e6cb2f27cd174089d46babecda21ffb5e9e0f3d8162aeb9f",
+        "large": "e783fb7cba5c870c78097e035612d2c13db4e194c268f1a2add0cf7cafd8d23b"
+      }
+    },
+    "A_CI": {
+      "manifest_digest": "77057d852b99efb4c9402d447238e807154e7c7d02a550e4a0ce4ac7ec5a1ef4",
+      "execution_digests": {
+        "small": "08b9710f38da8638b7a6e08a1ee8aae3989df5c3f07b773f8890364a1ca7bab6",
+        "large": "307d9e09e903f4426f029448205bc328cdb9e8d9aa5755d8a2fbe8190f9506ee"
+      }
+    },
+    "A_PC": {
+      "manifest_digest": "fc9e428392101b4f90c603373a394608fee49f5131e4fd2af0d80954f7f9e382",
+      "execution_digests": {
+        "small": "d680faa70dda64293c833770a3ad3796516cf49a23c28b798619b36f528a649b",
+        "large": "135741328427e3d0404a919bc2996688ca1111cda7223004e470904a0287d630"
+      }
+    }
+  },
+  "scope": "Bounded internal lifecycle for C_OS/C_CI/A_CI/A_PC; no all-ten closure or public specialization facade",
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "public_specialization_facade": false,
+  "record_digest": "64f102670b4a46d0310ac2d2b2f6eca819dafb24203019408fe4e3d2ce42045c"
+}

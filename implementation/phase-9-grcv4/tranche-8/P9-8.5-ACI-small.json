@@ -1,0 +1,83 @@
+{
+  "schema": "p985-family-execution-v1",
+  "family": "A_CI",
+  "segment": "small",
+  "manifest_digest": "77057d852b99efb4c9402d447238e807154e7c7d02a550e4a0ce4ac7ec5a1ef4",
+  "outcome": "passed",
+  "observations": {
+    "tests": 6,
+    "cases": {
+      "atomicity": {
+        "passed": true,
+        "methods": [
+          "test_charge_both_roles_and_late_receipt_failures_roll_back"
+        ],
+        "late_publication_pointer_unchanged": true,
+        "prospective_archive_and_reference_records_not_published": true
+      },
+      "continuation_reset": {
+        "passed": true,
+        "event_checkpoint_sha256": "589fb5d443942f64f42f634e374fc24ecda9af7a52f838a38a3a4e71dab04615",
+        "seed_snapshot_sha256": "6114635e123e41bf2527ddfcc22ce4815f4a4d918fff461349fdd8a66054fba0",
+        "step_snapshot_sha256": "6784045978e8375fa1751043c5aadfa7f7bfc997873c2a16eaf1c10fe8a350ce",
+        "reset_snapshot_sha256": "33023fa21b5cdedd407dd4f65732a6b98fed9f20972a4c89ee2cfa00c2da7b12",
+        "native_steps": 1,
+        "native_resets": 1,
+        "full_authority_restored": true,
+        "clock_preserved": true,
+        "reset_rollback": true,
+        "fresh_generic_ledger": true,
+        "public_specialization_facade": false
+      },
+      "domain_and_history": {
+        "passed": true,
+        "methods": [
+          "test_real_target_domain_rejects_current_only_and_reset_only",
+          "test_policy_rehashed_role_substitutions_fail_at_admission"
+        ],
+        "family_specific": true,
+        "reset_only": true,
+        "domain_controls": "natural_sufficient_domain_rejection"
+      },
+      "readmission_no_writers": {
+        "passed": true,
+        "methods": [
+          "test_event_admission_never_advances_or_runs_a_writer"
+        ],
+        "zero_temporal_writes": true
+      },
+      "replay": {
+        "passed": true,
+        "methods": [
+          "test_replay_rejects_history_reference_identity_and_receipt_tampering",
+          "test_rehashed_target_authority_and_source_policy_do_not_bypass_replay"
+        ],
+        "checkpoint_exact": true,
+        "checkpoint_sha256": "589fb5d443942f64f42f634e374fc24ecda9af7a52f838a38a3a4e71dab04615",
+        "vertices": 17,
+        "edges": 16,
+        "occupied_ports": 32,
+        "archive_count": 0,
+        "independent_resource_and_history_transfer": true
+      },
+      "request_boundaries": {
+        "passed": true,
+        "codes": [
+          "module_chirality_required",
+          "module_growth_phase_required",
+          "reject_noncanonical_inactive_growth_phase"
+        ],
+        "full_publication_rollback": true,
+        "self_loop_reused_from": "implementation/phase-9-grcv4/tranche-8/P9-8.5-COS-small.json"
+      }
+    },
+    "shared_self_loop": "implementation/phase-9-grcv4/tranche-8/P9-8.5-COS-small.json"
+  },
+  "elapsed_seconds": 83.71927955900173,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "public_specialization_facade": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "08b9710f38da8638b7a6e08a1ee8aae3989df5c3f07b773f8890364a1ca7bab6"
+}

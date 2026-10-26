@@ -2557,3 +2557,9 @@ instead of stale fixed totals and opens any pending case details explicitly.
 
 - [x] Scoped handoff accepted on 2026-10-26: first-group P9-8.4 closed;
   next scoped 8.5 then 8.6. All-ten closure and public support remain unchanged.
+
+- [x] P9-8.5 first-group retained lifecycle CLI/API/notebook/browser selector and
+  source retrieval for C_OS/C_CI/A_CI/A_PC. All four and the first-group checkpoint
+  are accepted on 2026-10-26; all-ten 8.5 remains open. Execution is separate from retained validation.
+  Preserve exact historical C_OS source access, current-family bindings,
+  separate owner ledgers and Tranche 9 public facade boundary.

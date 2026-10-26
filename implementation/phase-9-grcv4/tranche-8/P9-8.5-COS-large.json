@@ -1,0 +1,54 @@
+{
+  "schema": "p985-cos-execution-v1",
+  "segment": "large",
+  "family": "C_OS",
+  "manifest_digest": "ec8206c1728754907aa5fc0fc819bdd5ed71fb6ae8070823bbcdd39a2804e6c4",
+  "outcome": "passed",
+  "observations": {
+    "checkpoint_sha256": "5af9ee42929a60f4d2a6d20592a1f3b6d6865d25f306d4866ed23e47e0f195e1",
+    "event_record_digest": "cc858a087fcfa73e57207e0f49fe59e2bdcc381254d20d7030d99c67ae81c0e8",
+    "event_id": "grc-event-sha256:3134a9417bec441bd3765af27b4c70f863e39df2c8a7ff76f488661b7199d433",
+    "source_vertices": 100,
+    "vertices": 107,
+    "edges": 407,
+    "occupied_ports": 814,
+    "readmissions": [
+      {
+        "scientific_digest": "grcv4-state-sha256:8026342aab5f6abc786272fc9bf4b79c366b2d6ae118d70f4286752cedd0d1b8",
+        "reset_digest": "grcv4-reset-sha256:b07ab4626f93b0b77583997c6947f81bcdf3e3838a25c4701e03a12723463a78",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      },
+      {
+        "scientific_digest": "grcv4-state-sha256:8026342aab5f6abc786272fc9bf4b79c366b2d6ae118d70f4286752cedd0d1b8",
+        "reset_digest": "grcv4-reset-sha256:b07ab4626f93b0b77583997c6947f81bcdf3e3838a25c4701e03a12723463a78",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      },
+      {
+        "scientific_digest": "grcv4-state-sha256:2abebe0d833fd0c572d902b93d117f55d1abc33cc04d1c66dfcfc3b2c377f848",
+        "reset_digest": "grcv4-reset-sha256:47516be7b5271d8196d63b19e33780ca6a9e8e09f23728daea2520cffc163ffe",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      }
+    ],
+    "checkpoint_exact": true,
+    "receipt_count": 4,
+    "fresh_native_events": 1,
+    "fresh_ordinary_steps": 0,
+    "lifecycle_digest": "grcv4-lifecycle-sha256:1271d0074c15dd721388ea3819b71b7f8bced27006be2d892dac122b160191f6"
+  },
+  "elapsed_seconds": 810.5164832359987,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "public_specialization_facade": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "cb779fe08f6f37ee4ddaab0f577415db814cabb559b23963f31038843929ddf3"
+}

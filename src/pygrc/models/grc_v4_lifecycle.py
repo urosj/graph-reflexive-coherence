@@ -41,7 +41,10 @@ from .grc_v4 import (
     GRCV4StepRequestInput,
     MissingV4StepRequest,
 )
-from .grc_v4_candidate_a import CandidateADifferentialReference, CandidateAStageError
+from .grc_v4_candidate_a import (
+    CandidateADifferential, CandidateADifferentialReference, CandidateAStageError,
+    GRC9V4CandidateADifferentialReference, candidate_a_differential_from_payload,
+)
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_codec import (
     _OPERATION_CONTEXT,
@@ -135,11 +138,11 @@ def _fresh_geometry(inputs: GeometryStageInputs) -> GeometryStageInputs:
     return replace(inputs, geometry=reference.geometry())
 
 
-def _profile_step(inputs: GeometryStageInputs, backend: CandidateADifferentialReference | None) -> Any:
+def _profile_step(inputs: GeometryStageInputs, backend: CandidateADifferential | None) -> Any:
     """Dispatch existing provisional numerical owners, never a second writer."""
     identity = inputs.geometry.reference.profile.identity_payload
     if identity.candidate == "A":
-        if type(backend) is not CandidateADifferentialReference:
+        if type(backend) not in (CandidateADifferentialReference, GRC9V4CandidateADifferentialReference):
             raise V4IdentityError("Candidate A requires its explicit differential reference")
     elif backend is not None:
         raise V4IdentityError("Candidate C cannot import Candidate A differential authority")
@@ -206,7 +209,7 @@ def _step_matrix_continuation(step: Any) -> _MatrixContinuation:
 
 
 def _readmit_state(
-    inputs: GeometryStageInputs, backend: CandidateADifferentialReference | None,
+    inputs: GeometryStageInputs, backend: CandidateADifferential | None,
 ) -> tuple[Any, ChargeEvaluation]:
     """Read current/reset authority without imposing eligibility for a new beat.
 
@@ -229,7 +232,7 @@ def _readmit_state(
     def native(state: GRCV4AuthoritativeState) -> Any:
         section = CandidateRG2bSection(replace(inputs, current=state), backend)
         selected = replace(section.inputs, geometry=section.geometry, stage="rg2b_section")
-        return (CandidateACurrent(selected, cast(CandidateADifferentialReference, backend))
+        return (CandidateACurrent(selected, cast(CandidateADifferential, backend))
                 if ref.profile.identity_payload.candidate == "A" else CandidateCCurrent(selected))
 
     native(inputs.reset)
@@ -627,18 +630,28 @@ def _resolve_reference(
     )
 
 
-def _backend_registry(values: object, references: tuple[GRCV4ReferenceGeometry, ...]) -> tuple[CandidateADifferentialReference, ...]:
+def _differential_matches(backend: CandidateADifferential, reference: GRCV4ReferenceGeometry) -> bool:
+    # Fixed-row descriptors consume authoritative incoming W, not WLS reference
+    # weights. The closed recipe binds every endpoint/port through graph equality.
+    return backend.graph == reference.graph and (
+        type(backend) is GRC9V4CandidateADifferentialReference
+        or type(backend) is CandidateADifferentialReference
+        and backend.reference_weights == reference.edge_weights
+    )
+
+
+def _backend_registry(values: object, references: tuple[GRCV4ReferenceGeometry, ...]) -> tuple[CandidateADifferential, ...]:
     if type(values) not in (list, tuple):
         raise V4SchemaError("differential registry requires an ordered array")
-    result: list[CandidateADifferentialReference] = []
+    result: list[CandidateADifferential] = []
     for value in values:
-        backend = CandidateADifferentialReference.from_payload(
-            value.to_payload() if type(value) is CandidateADifferentialReference else value)
+        backend = candidate_a_differential_from_payload(
+            value.to_payload() if type(value) in (CandidateADifferentialReference, GRC9V4CandidateADifferentialReference) else value)
         if any(row.identity == backend.identity for row in result):
             raise V4IdentityError("duplicate differential recipe")
         if not any(ref.profile.identity_payload.candidate == "A"
                    and ref.profile.params_resolved.candidate.descriptor_backend_id == backend.identity
-                   and ref.graph == backend.graph and ref.edge_weights == backend.reference_weights
+                   and _differential_matches(backend, ref)
                    for ref in references):
             raise V4IdentityError("differential recipe has no matching registered target")
         result.append(backend)
@@ -649,13 +662,13 @@ class _CrossingDeclarationError(V4IdentityError):
     """An explicitly unsupported declaration at the lifecycle admission owner."""
 
 
-def _backend_for(reference: GRCV4ReferenceGeometry, backends: tuple[CandidateADifferentialReference, ...]) -> CandidateADifferentialReference | None:
+def _backend_for(reference: GRCV4ReferenceGeometry, backends: tuple[CandidateADifferential, ...]) -> CandidateADifferential | None:
     if reference.profile.identity_payload.candidate == "C":
         return None
     identity = reference.profile.params_resolved.candidate.descriptor_backend_id
     for backend in backends:
         if backend.identity == identity:
-            if backend.graph != reference.graph or backend.reference_weights != reference.edge_weights:
+            if not _differential_matches(backend, reference):
                 raise _CrossingDeclarationError("Candidate A target differential graph/weights mismatch")
             return backend
     raise _CrossingDeclarationError("Candidate A reference has no registered differential recipe")
@@ -711,7 +724,7 @@ def _snapshot_layout(reference: GRCV4ReferenceGeometry, registry: tuple[GRCV4Ref
 
 
 def _readmit_crossing(inputs: GeometryStageInputs, stage: OperationStage,
-                      backends: tuple[CandidateADifferentialReference, ...] = ()) -> None:
+                      backends: tuple[CandidateADifferential, ...] = ()) -> None:
     from .grc_v4_ci import CIStageError
     from .grc_v4_rg2b import RG2bStageError
 
@@ -1028,7 +1041,7 @@ def _prepare_crossing(
     before: GeometryStageInputs,
     request: _CrossingRequest,
     target: GRCV4ReferenceGeometry,
-    backends: tuple[CandidateADifferentialReference, ...] = (),
+    backends: tuple[CandidateADifferential, ...] = (),
     initializer_pair: dict | None = None,
     event_version: int = 1,
 ) -> GeometryStageInputs:
@@ -1232,7 +1245,7 @@ def _restore_crossings(
     registry: tuple[GRCV4ReferenceGeometry, ...],
     *,
     readmit: bool = True,
-    backends: tuple[CandidateADifferentialReference, ...] = (),
+    backends: tuple[CandidateADifferential, ...] = (),
     event_versions: dict | None = None,
 ) -> dict[str, _Crossing]:
     result: dict[str, _Crossing] = {}
@@ -2000,14 +2013,14 @@ class GRCV4Operation:
         initial: GeometryStageInputs,
         *,
         targets: tuple[GRCV4ReferenceGeometry, ...] = (),
-        differential_reference: CandidateADifferentialReference | None = None,
-        target_differential_references: tuple[CandidateADifferentialReference, ...] = (),
+        differential_reference: CandidateADifferential | None = None,
+        target_differential_references: tuple[CandidateADifferential, ...] = (),
     ) -> None:
         self._exact_backend_choice = current_exact_backend()
         self._numerical_policy_choice = current_numerical_policy()
         before = GeometryStageInputs.from_payload(initial.to_payload())
         backend = (None if differential_reference is None else
-                   CandidateADifferentialReference.from_payload(differential_reference.to_payload()))
+                   candidate_a_differential_from_payload(differential_reference.to_payload()))
         if before.receipt_ids:
             raise ValueError("fresh lifecycle owner cannot import unauthenticated receipts")
         _readmit_state(replace(before, dt=0), backend)
@@ -2049,7 +2062,7 @@ class GRCV4Operation:
         return self._owned.state
 
     @property
-    def _backend(self) -> CandidateADifferentialReference | None:
+    def _backend(self) -> CandidateADifferential | None:
         # Active backend selection is part of the same reference publication;
         # migrations never mutate a second live backend pointer.
         return _backend_for(self._owned.reference, self._backends)

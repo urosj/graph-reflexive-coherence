@@ -783,3 +783,32 @@ For 8.1 mechanics, 8.2 allocation, all ten bounded 8.3 integrations and current
 Its retained traces preserve classification and provenance, but the projection
 is not a new forensic trace or scientific claim. Continue using the typed
 contract/debt/object queries above for claim investigation.
+
+### P9-8.5 selected lifecycle evidence
+
+Use `tranche8_status(repo_root, family="C_OS", checkpoint="8.5")`, or
+`tranche8_evidence.py status --family C_OS --checkpoint 8.5`. The browser has a
+**Check 8.5 lifecycle** action with a C_OS/C_CI/A_CI/A_PC selector; the
+verification notebook exposes the same four selected queries.
+This authenticates retained execution/source bytes and scope, without running
+numerics. Families outside this first group fail closed until their own records exist. Read indexed
+sources through `tranche8_source` with the same selection.
+
+The internal event checkpoint and generic step/reset snapshot have an explicit
+seed link and separate ledgers. Do not call them a unified public GRC9V4 snapshot.
+Exact OS split rejection and Arb256 `CertificationInconclusive` are different
+outcomes; both rollback checks pass, without automatic fallback. This evidence
+grants no scientific claim, public profile support, G2/G3 or aggregate closure.
+
+All four first-group 8.5 families are user-accepted on 2026-10-26.
+`first_group_closed=true` is separate from all-ten `aggregate_closed=false`. The
+C_OS lifecycle source is the original hash-verified Git blob at `5b8a432e`,
+returned by indexed source retrieval. Its acceptance is not a claim about
+current-code conformance. C_CI/A_CI/A_PC bind the current integration source.
+
+The A-family manifests also bind an imported maintenance-policy module. Its
+original bytes are retained in `P9-8.5-ExecutionMaintenancePolicy.py.txt`, with
+the original digest verified before projection. `execution_metadata_sources`
+explicitly maps that source to the indexed snapshot; current numerical/runtime
+source checks are not waived. Each selected API check runs in an isolated
+metadata worker so historical adapters cannot affect parallel family queries.

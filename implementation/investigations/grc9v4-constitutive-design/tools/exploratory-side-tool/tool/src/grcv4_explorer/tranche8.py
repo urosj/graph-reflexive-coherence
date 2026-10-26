@@ -39,7 +39,7 @@ def tranche8_source(repo_root, path, *, family=None, checkpoint="8.4c"):
     if path not in refs:
         raise KeyError("source is not in the checked Tranche 8 index")
     ref = refs[path]
-    if checkpoint == '8.4i':
+    if checkpoint in ('8.4i', '8.5'):
         from p984i_first_group import authenticate
         return authenticate(Path(repo_root), ref), ref
     sources = index.Sources(repo_root)

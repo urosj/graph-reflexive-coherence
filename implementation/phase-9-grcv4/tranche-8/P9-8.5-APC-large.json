@@ -1,0 +1,100 @@
+{
+  "schema": "p985-family-execution-v1",
+  "family": "A_PC",
+  "segment": "large",
+  "manifest_digest": "fc9e428392101b4f90c603373a394608fee49f5131e4fd2af0d80954f7f9e382",
+  "outcome": "passed",
+  "observations": {
+    "checkpoint_sha256": "ccaaca434bc566fd2b33545ffe4e8abe10c26938ca22fd5b6a248e27c56b01be",
+    "event_record_digest": "078b4b18209dd0e349e1796b375a3c17d186df1bea280fbb002fd14f067367c8",
+    "event_id": "grc-event-sha256:de2d4a5f08b20547963c073509f0331be7e46684e560d48979a435315200a3c8",
+    "checkpoint_exact": true,
+    "vertices": 107,
+    "edges": 407,
+    "occupied_ports": 814,
+    "readmissions": [
+      {
+        "scientific_digest": "grcv4-state-sha256:de491fcb053bb3ac5eb40b58592b1615d4b9ff262c999092cb2ab740c2e61077",
+        "reset_digest": "grcv4-reset-sha256:13607bba93c6a0941d40d480a62dc130134b554de953ef05d3090d19848e679e",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      },
+      {
+        "scientific_digest": "grcv4-state-sha256:de491fcb053bb3ac5eb40b58592b1615d4b9ff262c999092cb2ab740c2e61077",
+        "reset_digest": "grcv4-reset-sha256:13607bba93c6a0941d40d480a62dc130134b554de953ef05d3090d19848e679e",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      },
+      {
+        "scientific_digest": "grcv4-state-sha256:8f6977c04e66e921260db4370ec83a122df8473497087c320508ee115adfd8fd",
+        "reset_digest": "grcv4-reset-sha256:a2d2e086479ce707501621b6e47f267bade555132edb62bb1b3b37511b1536d1",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      }
+    ],
+    "selected_points": [
+      {
+        "current": {
+          "kind": "fixed_carrier_PC_point",
+          "point_digest": "d494b053fc543508dd90a242f433e64dd2f03d54c6485c24c39b384174f3fbe8",
+          "J_digest": "ff0d59170ff0dea1b9f5f5c8285f342f254f30fc2d34e699ab12558ed7ad62b9",
+          "H_digest": "5abb960c54dc099de4201b83c1b66545fa63ca1a57c7aca6a632078ab8121a72"
+        },
+        "reset": {
+          "kind": "fixed_carrier_PC_point",
+          "point_digest": "6b56372e08275ec30a88dfff638d64127f449128f2d995ddc35141ed97ea29c0",
+          "J_digest": "41cb8dd2c850a950a79387a6ca181598e149007c7d6c1b3d225b53047f529955",
+          "H_digest": "38c14f13ed1353cda662454094addfe591648089fc6304270c8fde22f0bd7039"
+        }
+      },
+      {
+        "current": {
+          "kind": "fixed_carrier_PC_point",
+          "point_digest": "d494b053fc543508dd90a242f433e64dd2f03d54c6485c24c39b384174f3fbe8",
+          "J_digest": "ff0d59170ff0dea1b9f5f5c8285f342f254f30fc2d34e699ab12558ed7ad62b9",
+          "H_digest": "5abb960c54dc099de4201b83c1b66545fa63ca1a57c7aca6a632078ab8121a72"
+        },
+        "reset": {
+          "kind": "fixed_carrier_PC_point",
+          "point_digest": "6b56372e08275ec30a88dfff638d64127f449128f2d995ddc35141ed97ea29c0",
+          "J_digest": "41cb8dd2c850a950a79387a6ca181598e149007c7d6c1b3d225b53047f529955",
+          "H_digest": "38c14f13ed1353cda662454094addfe591648089fc6304270c8fde22f0bd7039"
+        }
+      },
+      {
+        "current": {
+          "kind": "fixed_carrier_PC_point",
+          "point_digest": "d99a1ada97c2aa834d169d8f8e98d49dfec4c940b62c2b5e647b1a458b8aff3b",
+          "J_digest": "234f7e4270a2cf52b96e99552471b95f84d07c554f1276e2c973190956f9b0ba",
+          "H_digest": "ba75c82409a8d95e8b1123682665cd52e66afd1f14b7e25e0ee08e594a374cf0"
+        },
+        "reset": {
+          "kind": "fixed_carrier_PC_point",
+          "point_digest": "75df55028ceb5ec44bc54145d4c620f4fd26aae28a4ae2773c67f1a24e2d7f5e",
+          "J_digest": "b03849707557efd727aeb2abcc13b7a612189b6334c0670b38aaf0be2ca7f8da",
+          "H_digest": "ba75c82409a8d95e8b1123682665cd52e66afd1f14b7e25e0ee08e594a374cf0"
+        }
+      }
+    ],
+    "receipt_count": 4,
+    "reference_current_records": 1,
+    "archive_count": 1,
+    "archive_digest": "1a8e6838d1dc11288e8f1fcbdff3001645d08787e7e25276b1d2ea6323843529",
+    "lifecycle_digest": "grcv4-lifecycle-sha256:189659f7a17935aab01eff7d8821ae7362064df8c24b1f0f16639b216e73de41",
+    "fresh_native_events": 1,
+    "fresh_ordinary_steps": 0
+  },
+  "elapsed_seconds": 447.1094987300021,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "public_specialization_facade": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "135741328427e3d0404a919bc2996688ca1111cda7223004e470904a0287d630"
+}
