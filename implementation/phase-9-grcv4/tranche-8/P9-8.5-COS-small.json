@@ -1,0 +1,151 @@
+{
+  "schema": "p985-cos-execution-v1",
+  "segment": "small",
+  "family": "C_OS",
+  "manifest_digest": "ec8206c1728754907aa5fc0fc819bdd5ed71fb6ae8070823bbcdd39a2804e6c4",
+  "outcome": "passed",
+  "observations": {
+    "cases": {
+      "continuation_reset": {
+        "passed": true,
+        "event_checkpoint_sha256": "b87595b68e6a344b17062de0df5b44fd498780ed3121233e33c27cfbed8b78f4",
+        "event_target_inputs_sha256": "a75606c9a11a73cf92394fd48d17ac197a4b19a2447c56a329891518f368dde5",
+        "seed_snapshot_sha256": "30c2983a12c2c3ab34247de6208fa6471e1f003beca525e29e27c6b0b5164815",
+        "stepped_snapshot_sha256": "f54a7f40cd1d46241fb5900783ebe11ccb12b90ba8e6f5d38dd639b2aba6073b",
+        "reset_snapshot_sha256": "513e38e75a91c5da1c0d9904c7d5fbd5f7df56ce5622ebd7ce99c3bea9c78dd1",
+        "fresh_generic_ledger": true,
+        "native_steps": 1,
+        "native_resets": 1,
+        "reset_baseline_preserved": true,
+        "clock_preserved_on_reset": true,
+        "event_checkpoint_unchanged": true,
+        "public_specialization_facade": false
+      },
+      "event_replay": {
+        "passed": true,
+        "vertices": 17,
+        "edges": 16,
+        "occupied_ports": 32,
+        "checkpoint_sha256": "b87595b68e6a344b17062de0df5b44fd498780ed3121233e33c27cfbed8b78f4",
+        "receipt_count": 4,
+        "rejected_mutations": [
+          "current",
+          "reset",
+          "receipt",
+          "chirality",
+          "model_identity",
+          "lifecycle_identity"
+        ],
+        "checkpoint_exact": true
+      },
+      "frozen_request_failures": {
+        "passed": true,
+        "failures": [
+          {
+            "fixture_id": "G9-FAIL-MISSING-CHIRALITY",
+            "code": "module_chirality_required",
+            "stage": "admission",
+            "checkpoint_sha256": "86660077c29c4ff9e081b9c1d54eb7ae71f0fd0bc785216a8f50ca355b6cad2a",
+            "whole_publication_unchanged": true,
+            "failure_receipt_not_persisted": true
+          },
+          {
+            "fixture_id": "G9-FAIL-MISSING-ACTIVE-PHASE",
+            "code": "module_growth_phase_required",
+            "stage": "admission",
+            "checkpoint_sha256": "86660077c29c4ff9e081b9c1d54eb7ae71f0fd0bc785216a8f50ca355b6cad2a",
+            "whole_publication_unchanged": true,
+            "failure_receipt_not_persisted": true
+          },
+          {
+            "fixture_id": "G9-FAIL-NONCANONICAL-INACTIVE-PHASE",
+            "code": "reject_noncanonical_inactive_growth_phase",
+            "stage": "admission",
+            "checkpoint_sha256": "86660077c29c4ff9e081b9c1d54eb7ae71f0fd0bc785216a8f50ca355b6cad2a",
+            "whole_publication_unchanged": true,
+            "failure_receipt_not_persisted": true
+          }
+        ]
+      },
+      "incomplete_reference": {
+        "passed": true,
+        "content_and_params_reidentified": true,
+        "boundary": "reference reconstruction before ownership"
+      },
+      "publication_failures": {
+        "passed": true,
+        "failures": [
+          {
+            "role": "current",
+            "injected": true,
+            "code": "target_readmission_failure",
+            "stage": "target_readmission",
+            "checkpoint_sha256": "86660077c29c4ff9e081b9c1d54eb7ae71f0fd0bc785216a8f50ca355b6cad2a",
+            "whole_publication_unchanged": true,
+            "failure_receipt_not_persisted": true
+          },
+          {
+            "role": "reset",
+            "injected": true,
+            "code": "target_readmission_failure",
+            "stage": "target_readmission",
+            "checkpoint_sha256": "86660077c29c4ff9e081b9c1d54eb7ae71f0fd0bc785216a8f50ca355b6cad2a",
+            "whole_publication_unchanged": true,
+            "failure_receipt_not_persisted": true
+          },
+          {
+            "injected": true,
+            "location": "after_prospective_publication",
+            "code": "invalid_topology_event",
+            "stage": "commit",
+            "checkpoint_sha256": "86660077c29c4ff9e081b9c1d54eb7ae71f0fd0bc785216a8f50ca355b6cad2a",
+            "whole_publication_unchanged": true,
+            "failure_receipt_not_persisted": true
+          }
+        ],
+        "both_source_and_target_admitted": true
+      },
+      "reset_only_split": {
+        "passed": true,
+        "fixture_id": "G9-FAIL-TARGET-READMISSION",
+        "natural_OS_split_failure": true,
+        "exact_policy": "legacy_exact_v1",
+        "bounded_policy": "certified_arb_256_weighted_v1",
+        "bounded_outcome": "CertificationInconclusive",
+        "bounded_publication_unchanged": true,
+        "current_control_passes": true,
+        "reset_tolerance": 5.551115123125783e-17,
+        "current_failure_tolerance": 1.3877787807814457e-17,
+        "code": "target_readmission_failure",
+        "stage": "target_readmission",
+        "checkpoint_sha256": "19f2de6b7d80d821ca874b5294c5be9c422a0eb55b76308f78c8d8f2cbf678f4",
+        "whole_publication_unchanged": true,
+        "failure_receipt_not_persisted": true
+      },
+      "reset_rollback": {
+        "passed": true,
+        "injected": true,
+        "whole_publication_unchanged": true,
+        "generic_snapshot_sha256": "30c2983a12c2c3ab34247de6208fa6471e1f003beca525e29e27c6b0b5164815",
+        "event_checkpoint_unchanged": true
+      },
+      "self_loop": {
+        "passed": true,
+        "fixture_id": "G9-FAIL-SOURCE-SELF-LOOP",
+        "code": "source_self_loop_unsupported",
+        "stage": "admission",
+        "checkpoint_sha256": "50f57778eeb0f04ce1e1c6f3eda3850511ad8de3bbc54c3e48e0c1ad577593ef",
+        "whole_publication_unchanged": true,
+        "failure_receipt_not_persisted": true
+      }
+    },
+    "tests": 8
+  },
+  "elapsed_seconds": 30.09750563599664,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "public_specialization_facade": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "b10a2e2116dc78458e8cd079d08c284f3545b19617a142e62a7f4ab633ca1f4f"
+}

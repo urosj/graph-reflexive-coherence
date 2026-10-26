@@ -3670,9 +3670,19 @@ the full ten-profile plan.
   acceptance. Planning this order executes no new numerical cell.
 - [ ] P9-8.5: Verify unique target occupancy, whole-lifecycle target
   reconstruction/readmission, and atomic failures. All-ten parent remains open.
-  - [ ] First group: C_OS, C_CI, A_CI, A_PC. Consume the 8.4i handoff;
+  - [x] First group accepted 2026-10-26: C_OS, C_CI, A_CI, A_PC. Consumed the 8.4i handoff;
     test occupancy, both-role reconstruction/reset/replay, five frozen failure
     classes and family-specific late/reset-only failures with full rollback.
+    - [x] C_OS accepted 2026-10-26: [bounded internal lifecycle review](./phase-9-grcv4/tranche-8/P9-8.5-COSReview.md).
+      Eight native tests and one larger checkpoint replay; exact versus
+      inconclusive split outcomes remain distinct. Step/reset uses explicitly
+      linked event/generic owners, not the Tranche 9 public specialization facade.
+    - [x] C_CI accepted 2026-10-26: [family lifecycle review](./phase-9-grcv4/tranche-8/P9-8.5-CCI-review.md).
+      Separate joint-root/readmission and reset/rollback evidence; shared allocator reuse.
+    - [x] A_CI accepted 2026-10-26: [family lifecycle review](./phase-9-grcv4/tranche-8/P9-8.5-ACI-review.md).
+      Exact candidate history, joint roots and fixed-row lifecycle reconstruction.
+    - [x] A_PC accepted 2026-10-26: [family lifecycle review](./phase-9-grcv4/tranche-8/P9-8.5-APC-review.md).
+      Complete carrier archive, reset/loss, W lineage and both temporal writers.
   - [ ] Remaining six families and aggregate reconciliation.
   Include the prepared larger proposal's event rollback/replay obligations
   when its numerical prerequisites pass; preparation alone does not close them.

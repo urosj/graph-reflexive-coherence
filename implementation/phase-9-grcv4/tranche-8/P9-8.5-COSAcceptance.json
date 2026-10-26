@@ -1,0 +1,16 @@
+{
+  "schema": "p985-family-acceptance-v1",
+  "family": "C_OS",
+  "accepted_on": "2026-10-26",
+  "user_accepted": true,
+  "scope": "P9-8.5 bounded internal lifecycle; not public specialization facade",
+  "manifest_digest": "ec8206c1728754907aa5fc0fc819bdd5ed71fb6ae8070823bbcdd39a2804e6c4",
+  "execution_digests": {
+    "small": "b10a2e2116dc78458e8cd079d08c284f3545b19617a142e62a7f4ab633ca1f4f",
+    "large": "cb779fe08f6f37ee4ddaab0f577415db814cabb559b23963f31038843929ddf3"
+  },
+  "aggregate_closed": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "2bc1972e6cf6560a9fc4f4edc6aeca787c4222c655c2c6d4f1304964bc220701"
+}

@@ -3125,3 +3125,24 @@ P9-8.4i[first-group]: retained CLI/API/notebook/browser handoff for C_OS,
 
 Scoped handoff accepted on 2026-10-26: first-group P9-8.4 closed;
   next scoped 8.5 then 8.6. All-ten closure and public support remain unchanged.
+
+P9-8.5 C_OS/C_CI/A_CI/A_PC: selected retained lifecycle views in CLI/API/notebook and a visible
+browser action. Authenticate the two execution records and actual source epoch;
+distinguish internal event/generic-owner composition, exact split rejection,
+Arb256 inconclusive certification, user acceptance and all-ten closure. Source
+retrieval exposes only indexed relative paths. Status never runs numerics.
+
+C_OS acceptance is projected separately from its frozen execution flags. Its
+pre-integration lifecycle source is retrievable at Git revision `5b8a432e`,
+verified against the original hash; this does not imply current-code conformance.
+The other three families bind the current fixed-row-compatible internal owner
+and are accepted on 2026-10-26, closing first-group 8.5. Parallel API queries isolate historical source
+validation from current-family checks. The browser selector and notebook expose
+all four without rerunning numerics.
+
+The A-family manifests also bind an imported maintenance-policy module. Its
+original bytes are retained in `P9-8.5-ExecutionMaintenancePolicy.py.txt`, with
+the original digest verified before projection. `execution_metadata_sources`
+explicitly maps that source to the indexed snapshot; current numerical/runtime
+source checks are not waived. Each selected API check runs in an isolated
+metadata worker so historical adapters cannot affect parallel family queries.

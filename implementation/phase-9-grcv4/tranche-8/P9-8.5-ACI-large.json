@@ -1,0 +1,118 @@
+{
+  "schema": "p985-family-execution-v1",
+  "family": "A_CI",
+  "segment": "large",
+  "manifest_digest": "77057d852b99efb4c9402d447238e807154e7c7d02a550e4a0ce4ac7ec5a1ef4",
+  "outcome": "passed",
+  "observations": {
+    "checkpoint_sha256": "3d0d6349f1900fcff15fef63175c98dd7180fcd128d7707ee4d55cb51d3649a0",
+    "event_record_digest": "a937b9c0b89ee82cb9a7ea8a5d377c5aa005eacd310a1873df0b81349ed72779",
+    "event_id": "grc-event-sha256:1c741f38724097ce24613da0802bf51806f114f14a608796ceff52568b081d33",
+    "checkpoint_exact": true,
+    "vertices": 107,
+    "edges": 407,
+    "occupied_ports": 814,
+    "readmissions": [
+      {
+        "scientific_digest": "grcv4-state-sha256:1680d79235c8e4becda41b1e23d18ab17ab812ffeddc5b856980441e834a8c66",
+        "reset_digest": "grcv4-reset-sha256:69adf4a516fea779953279f16144d6d12b7318c81c7d7d764632151c697cf776",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      },
+      {
+        "scientific_digest": "grcv4-state-sha256:1680d79235c8e4becda41b1e23d18ab17ab812ffeddc5b856980441e834a8c66",
+        "reset_digest": "grcv4-reset-sha256:69adf4a516fea779953279f16144d6d12b7318c81c7d7d764632151c697cf776",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      },
+      {
+        "scientific_digest": "grcv4-state-sha256:d8d81d571bca5923e5ac8588d3eccb6a5405c98f350873b0ecddcef3ede7770b",
+        "reset_digest": "grcv4-reset-sha256:debeeb91863b04de046486184d2a80818a536418cb917219397b243d81578fac",
+        "roles": [
+          "current",
+          "reset"
+        ]
+      }
+    ],
+    "selected_points": [
+      {
+        "current": {
+          "kind": "joint_CI_root",
+          "joint_digest": "378b3f44ae2e2882e2cc59518298dc72663e3dfe932269c7aeea4d55689b74f8",
+          "J_digest": "af8a75d19667cd04af3064c4c793c78336f51bedf292e9340ffb94b8ce9b7c2e",
+          "H_digest": "cab2a11a01a9b6287aac8cc0826183016c55bf3d620b13af37d6a8d9d704f430",
+          "certificate_digest": "cf0684e356f3a519f873ab7515cb228530bbd399d3d1fda345fe96706c673233",
+          "domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-10",
+          "recipe_identity": "grcv4-ci-root-sha256:0e202ed7d976da4d6ae9a626250120e0b045bc82fa402e82ca1266e68e4fab6e"
+        },
+        "reset": {
+          "kind": "joint_CI_root",
+          "joint_digest": "e71ec3cc34a334f015e7155f637d43407d0adc9b74dd77dde98dfd912a7abba6",
+          "J_digest": "6cf76dfeffe5a33d27477d71b3999d7b978f7a04ed62607aad58f5f1637c775a",
+          "H_digest": "816d134c2f60e1bcb8decbaba4b615da9025b8a5f397fd14787bd225278063e8",
+          "certificate_digest": "733535065d84c59a7b1d17bbe8fc353bfa417cff5d57454bcdee9b754b10fb35",
+          "domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-10",
+          "recipe_identity": "grcv4-ci-root-sha256:95737ef7163c94ec850ceaf66e71d7061ed3c05e99a41dde4d606f9adb34ba7a"
+        }
+      },
+      {
+        "current": {
+          "kind": "joint_CI_root",
+          "joint_digest": "378b3f44ae2e2882e2cc59518298dc72663e3dfe932269c7aeea4d55689b74f8",
+          "J_digest": "af8a75d19667cd04af3064c4c793c78336f51bedf292e9340ffb94b8ce9b7c2e",
+          "H_digest": "cab2a11a01a9b6287aac8cc0826183016c55bf3d620b13af37d6a8d9d704f430",
+          "certificate_digest": "cf0684e356f3a519f873ab7515cb228530bbd399d3d1fda345fe96706c673233",
+          "domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-10",
+          "recipe_identity": "grcv4-ci-root-sha256:0e202ed7d976da4d6ae9a626250120e0b045bc82fa402e82ca1266e68e4fab6e"
+        },
+        "reset": {
+          "kind": "joint_CI_root",
+          "joint_digest": "e71ec3cc34a334f015e7155f637d43407d0adc9b74dd77dde98dfd912a7abba6",
+          "J_digest": "6cf76dfeffe5a33d27477d71b3999d7b978f7a04ed62607aad58f5f1637c775a",
+          "H_digest": "816d134c2f60e1bcb8decbaba4b615da9025b8a5f397fd14787bd225278063e8",
+          "certificate_digest": "733535065d84c59a7b1d17bbe8fc353bfa417cff5d57454bcdee9b754b10fb35",
+          "domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-10",
+          "recipe_identity": "grcv4-ci-root-sha256:95737ef7163c94ec850ceaf66e71d7061ed3c05e99a41dde4d606f9adb34ba7a"
+        }
+      },
+      {
+        "current": {
+          "kind": "joint_CI_root",
+          "joint_digest": "3f15da43af644b88632e9271d84ef29b212560e954a6685719fd461b831fabea",
+          "J_digest": "456d20f1814d2f491f6d0a733e7f1a7abf134f4962c7a45ce45e0ff445015de6",
+          "H_digest": "fa10803cdb6c3840d6448813deaed7ef5f9374ef596ce1615060552fcfae08c4",
+          "certificate_digest": "3089864910d3dde010f9f207c80471b617f35e3b71dd722579cd077354b5c5ef",
+          "domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-10",
+          "recipe_identity": "grcv4-ci-root-sha256:312ee112e81be25bff7ca32fe48e230542b72e9083454a8c13eb10d8bd1ed13b"
+        },
+        "reset": {
+          "kind": "joint_CI_root",
+          "joint_digest": "52b93b2adc9fc7f814871557e5a4ba8d684bd91f04e0072a45a9e011e89f8afc",
+          "J_digest": "372f14b22deea658e87772c5e17392192d6868ffdb7d34a82ce3f3fa5dde1be1",
+          "H_digest": "3c2d326d5958ce102be32f3529661ac40499d8679997d00c5f76596d44587a0d",
+          "certificate_digest": "2874dcb36060a36673d2410b33807d9921fb5f7a82501f6b74107843f1c2647c",
+          "domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-10",
+          "recipe_identity": "grcv4-ci-root-sha256:e173dd27040b66b74e3ac4ac8fe4cac2fe2fdf0a35701979c73ef671945c7c0d"
+        }
+      }
+    ],
+    "receipt_count": 4,
+    "reference_current_records": 1,
+    "archive_count": 0,
+    "archive_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "lifecycle_digest": "grcv4-lifecycle-sha256:32032b11d009a12eb01ae104f011178e2cc39f18a7826b3613e65c3900ce2106",
+    "fresh_native_events": 1,
+    "fresh_ordinary_steps": 0
+  },
+  "elapsed_seconds": 414.97698753700024,
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "public_specialization_facade": false,
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "307d9e09e903f4426f029448205bc328cdb9e8d9aa5755d8a2fbe8190f9506ee"
+}

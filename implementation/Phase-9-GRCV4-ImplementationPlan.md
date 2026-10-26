@@ -3138,6 +3138,32 @@ and a bounded larger checkpoint per family instead of repeating all trajectories
 Freeze exact cases/caps on entry. The five frozen atomic-failure classes stay
 explicit; a stale-request check alone does not discharge them.
 
+P9-8.5 C_OS now has a [frozen bounded matrix](./phase-9-grcv4/tranche-8/P9-8.5-COSPlan.md)
+and [internal lifecycle review](./phase-9-grcv4/tranche-8/P9-8.5-COSReview.md),
+accepted on 2026-10-26. Eight native tests cover five frozen failure classes,
+whole-publication rollback, replay tampering, independently checked resource
+transfer and a real generic-owner step/restore/reset/restore chain. One accepted
+larger event checkpoint is replayed with fresh both-role readmission and exact
+checkpoint equality. No trajectories are repeated. The event checkpoint and
+generic continuation ledger are explicitly linked but distinct; a unified public
+specialization snapshot remains Tranche 9. Exact split rejection and insufficient
+Arb certification are separately tested outcomes, never silently substituted.
+C_CI, A_CI and A_PC subsequently completed their separate results; C_OS alone
+did not close the first-group or all-ten parent.
+
+The user authorized the remaining **C_CI, A_CI and A_PC** as one parallel batch
+on 2026-10-26. The [frozen matrix](./phase-9-grcv4/tranche-8/P9-8.5-RemainingFirstGroupPlan.md)
+reuses C_OS's allocator/self-loop coverage, with separate per-family domain,
+history, full-publication rollback and readmission results. Each runs six small
+lifecycle methods and one accepted larger checkpoint replay; no trajectory or
+covariance repeat. A discovered shared-owner WLS-only decoder is corrected using
+the already defined closed fixed-row decoder, preserving WLS matching and all
+scientific equations. Tranche 9 still owns the public specialization facade.
+The user accepted the remaining three results on 2026-10-26, closing
+**first-group P9-8.5**. The [acceptance record](./phase-9-grcv4/tranche-8/P9-8.5-FirstGroupAcceptance.json)
+binds all four manifests and execution pairs; original execution flags are
+unchanged. All-ten 8.5 stays open. Next is scoped first-group P9-8.6.
+
 P9-8.6[first-group] follows that scoped 8.5 result and decides only the exact
 four-family conformance domain justified by mechanics, numerical evidence and
 lifecycle checks. Finite examples do not imply arbitrary-graph numerical
