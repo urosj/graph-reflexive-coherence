@@ -3110,3 +3110,9 @@ at baseline steps one/ten remain distinct from nonzero storage. Never label thes
 reads CI roots. The preceding full-index projection stays unchanged; the selected
 A_PC supplement is checked independently. No numerical rerun, sibling support,
 aggregate closure or user acceptance follows from status.
+
+P9-8.4h first-group acceptance, 2026-10-26: C_OS, C_CI, A_CI and
+  A_PC (4/4), 36 events, 144 target steps and eight final baseline reads.
+  This is a checkpoint decision over existing scoped family evidence; original
+  execution flags and the historical index snapshot remain unchanged. All-ten
+  `.h` and second-group coverage stay open. See the Phase 9 plan reconciliation.

@@ -3118,7 +3118,34 @@ accepted the bounded C_CI scope on 2026-10-21 after retained coverage/status
 review; no new C_CI numerical cases are proposed. A_CI `.h` is next, while
 other families and aggregate `.h` remain open.
 
-### Current family — A_PC P9-8.4h bounded integration
+### Accepted first-group checkpoint — P9-8.4h (2026-10-26)
+
+The user accepts the first-group checkpoint for **C_OS, C_CI, A_CI and A_PC**.
+Each family's frozen baseline, both-role continuation, eight short covariance
+counterparts and retained review have already passed and received scoped
+acceptance. This checkpoint reconciles those results; no numerical rerun or
+new scientific claim is needed.
+
+| Family | Accepted review | Events | Target steps | Final baseline reads |
+| --- | --- | ---: | ---: | ---: |
+| C_OS | [Review](./phase-9-grcv4/tranche-8/P9-8.4h-COSCovarianceReview.md) | 9 | 36 | 2 |
+| C_CI | [Review](./phase-9-grcv4/tranche-8/P9-8.4h-CCICovarianceReview.md) | 9 | 36 | 2 |
+| A_CI | [Review](./phase-9-grcv4/tranche-8/P9-8.4h-ACIReview.md) | 9 | 36 | 2 |
+| A_PC | [Review](./phase-9-grcv4/tranche-8/P9-8.4h-APCReview.md) | 9 | 36 | 2 |
+| **First group: 4/4 accepted** | | **36** | **144** | **8** |
+
+Source evolution is separate: two C_OS source steps and one per other family.
+Each mapped counterpart has one target step per history; only the baseline has
+ten per history. Local certificates retain their family-specific bounds; this
+is not a uniform trajectory theorem, general ATC or additional G2/G3 authority.
+Original execution records and flags remain unchanged. The historical full-index
+snapshot and selected family views remain distinct from this checkpoint decision.
+
+Next is the already planned second group: A_OS, C_PC, C_CI_PC, A_CI_PC,
+C_RG2b and A_RG2b, completing each family's remaining `.d`–`.h` obligations.
+All-ten P9-8.4h, P9-8.4i and P9-8.5/8.6 remain open.
+
+### Accepted family — A_PC P9-8.4h bounded integration
 
 The bounded numerical finish line is complete on 2026-10-26: one source step,
 nine successful events, 36 target steps and two final reads. The eight mapped
@@ -3126,7 +3153,7 @@ counterparts ran in parallel; every mapped comparison has zero observed
 discrepancy. Full PC points, both writers, carrier archive/loss/zero target and
 local positive-resource bounds and retained checkpoint review pass. Selected
 side-tool checks cover bounded credit and source integrity. The user accepted
-A_PC on 2026-10-26; the first-group decision remains separate.
+A_PC and the first-group checkpoint on 2026-10-26; all-ten closure remains open.
 See the [result review](./phase-9-grcv4/tranche-8/P9-8.4h-APCReview.md).
 
 The [A_PC plan](./phase-9-grcv4/tranche-8/P9-8.4h-APCPlan.md) freezes the same

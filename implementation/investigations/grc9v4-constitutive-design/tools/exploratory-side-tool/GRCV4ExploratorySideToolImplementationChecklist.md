@@ -2542,3 +2542,9 @@ instead of stale fixed totals and opens any pending case details explicitly.
   distinct. Use a separate small browser projection; no numerical reruns.
 - [x] Record scoped A_PC `.h` acceptance on 2026-10-26 from the pinned
   review and complete roster; preserve execution flags and aggregate limits.
+
+- [x] P9-8.4h first-group acceptance, 2026-10-26: C_OS, C_CI, A_CI and
+  A_PC (4/4), 36 events, 144 target steps and eight final baseline reads.
+  This is a checkpoint decision over existing scoped family evidence; original
+  execution flags and the historical index snapshot remain unchanged. All-ten
+  `.h` and second-group coverage stay open. See the Phase 9 plan reconciliation.

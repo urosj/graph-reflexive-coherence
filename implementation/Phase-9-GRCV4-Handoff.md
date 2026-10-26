@@ -1,6 +1,16 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — A_PC P9-8.4h accepted (2026-10-26)
+## Current checkpoint — P9-8.4h first group accepted (2026-10-26)
+
+The user accepts **C_OS, C_CI, A_CI and A_PC: 4/4 first-group families**.
+The [plan reconciliation](./Phase-9-GRCV4-ImplementationPlan.md#accepted-first-group-checkpoint--p9-84h-2026-10-26)
+records 36 events, 144 target steps and eight final baseline reads, plus five
+separate source steps. Existing bounded results and original records are preserved.
+Next is the second group's remaining `.d`–`.h` work: A_OS, C_PC, C_CI_PC,
+A_CI_PC, C_RG2b and A_RG2b. All-ten `.h`, `.i` and 8.5/8.6 remain open.
+No numerical rerun is needed for this acceptance or merge.
+
+## Accepted family — A_PC P9-8.4h (2026-10-26)
 
 The [result review](./phase-9-grcv4/tranche-8/P9-8.4h-APCReview.md) completes
 one fresh source step, nine successful events, 36 target steps and two fresh
@@ -20,8 +30,8 @@ This is bounded conformance, not a uniform trajectory or general ATC theorem.
 
 Retained checkpoint review passes for all nine event checkpoints. Selected
 side-tool checks verify bounded counts, source access and rejection of widened credit.
-The user accepted A_PC on 2026-10-26. Next is first-group reconciliation;
-the first-group decision and all-ten `.h` closure remain open.
+The user accepted A_PC and the first-group checkpoint on 2026-10-26.
+All-ten `.h` closure remains open.
 Do not rerun this numerical campaign for documentation, acceptance or commit.
 The browser has a separate **Check A_PC 8.4h** action and small projection;
 selected CLI/API/notebook status does not run numerics or imply a full-boundary
@@ -6212,9 +6222,9 @@ never overwrite published execution evidence.
 Suggested first message in the new conversation:
 
 > Read `implementation/Phase-9-GRCV4-Handoff.md` and inspect the current checkout.
-> Resume `work/p9-8-4h` from the A_PC completion at the top of this handoff.
-> Its bounded numerical and retained checkpoint coverage is accepted. The next
-> work is first-group reconciliation; do not silently close the aggregate row.
+> Resume from the accepted first-group checkpoint at the top of this handoff.
+> Inspect the branch after its requested no-ff merge into main. Plan the remaining
+> second-group work; do not silently close the all-ten aggregate row.
 > Do not rerun completed numerical evidence for documentation or acceptance.
 > C_OS, C_CI and A_CI are accepted predecessors. The six second-group families
 > and aggregate `.h` remain separate; do not infer acceptance, commit or merge.

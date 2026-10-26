@@ -3620,9 +3620,11 @@ the full ten-profile plan.
       - [x] Focused pressure, retained coverage review and selected side-tool
         synchronization; no repeated broad numerical campaign.
       - [x] Scoped user acceptance on 2026-10-26, separate from original execution flags.
-    - [ ] First-group checkpoint: review and accept this child's required
+    - [x] First-group checkpoint: review and accept this child's required
       C_OS, C_CI, A_CI and A_PC coverage; publish exact partial progress and
       advance ready rows without waiting for the remaining six families.
+      Accepted 2026-10-26: 4/4 families, 36 events, 144 target steps and eight
+      final baseline reads; five source steps counted separately. All-ten open.
     - [ ] Second-group completion: after first-group work through `.h`, fill
       A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
       required coverage before closing this parent. No sibling credit.
