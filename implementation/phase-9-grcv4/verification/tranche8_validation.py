@@ -29,11 +29,14 @@ BOUNDARY_MODULES = ("p984f_apc", "p984f_aci", "p984f_cci", "p984f_cos", "p984e_a
 
 
 class Snapshot:
-    def __init__(self, root):
+    def __init__(self, root, historical_bindings=None):
         self.root = Path(root).resolve()
         self._bytes, self._json, self._hashes, self._memo = {}, {}, {}, {}
         self.hits = 0
         self.modules = ()
+        # Explicit historical-index mode only. Ordinary execution and retained
+        # validation sessions keep comparing against the current tree.
+        self.historical_bindings = dict(historical_bindings or {})
 
     def config_key(self):
         # In-process pressure may replace an acceptance constant or helper.
@@ -68,7 +71,7 @@ class Snapshot:
         rows = []
         for name in sorted(set(paths)):
             self.raw(name)
-            rows.append(dict(path=name, sha256=self._hashes[str(name)]))
+            rows.append(dict(path=name, sha256=self.historical_bindings.get(str(name), self._hashes[str(name)])))
         return rows
 
     def check_bindings(self, rows):
@@ -76,7 +79,7 @@ class Snapshot:
             raise ValueError("duplicate bindings")
         for row in rows:
             self.raw(row["path"])
-            if self._hashes[str(row["path"])] != row["sha256"]:
+            if self.historical_bindings.get(str(row["path"]), self._hashes[str(row["path"])]) != row["sha256"]:
                 raise ValueError("source drift: " + row["path"])
 
     def unchanged(self):
@@ -126,7 +129,7 @@ def reader(function, method):
 
 
 @contextmanager
-def validation_session(names=BOUNDARY_MODULES, root=ROOT):
+def validation_session(names=BOUNDARY_MODULES, root=ROOT, historical_bindings=None):
     """One immutable-byte snapshot; ordinary callers outside it remain uncached.
 
     Serializes adapter installation, with context-local state so other threads
@@ -136,7 +139,7 @@ def validation_session(names=BOUNDARY_MODULES, root=ROOT):
     if ACTIVE.get() is not None:
         raise ValueError("nested validation sessions are not supported")
     with LOCK, ExitStack() as stack:
-        snapshot = Snapshot(root)
+        snapshot = Snapshot(root, historical_bindings=historical_bindings)
         snapshot.raw(str(Path(__file__).resolve().relative_to(snapshot.root)))
         selected = modules(names)
         snapshot.modules = selected

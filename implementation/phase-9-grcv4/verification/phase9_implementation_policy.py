@@ -282,6 +282,8 @@ PATHS = {
     "tests/test_evidence_storage.py", "docs/reference/EvidenceStorage.md",
     SIDE + "README.md",
     HERE + "tranche8_evidence.py",
+    HERE + "tranche8_execution_sources.py",
+    HERE + "test_tranche8_execution_sources.py",
     HERE + "p984g_cci_native.py",
     HERE + "p984g_cci_native_admission.py",
     HERE + "p984g_cci_closure.py",

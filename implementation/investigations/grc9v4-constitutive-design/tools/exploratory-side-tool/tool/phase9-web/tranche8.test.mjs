@@ -6,6 +6,18 @@ import {checkedTranche8, renderTranche8, sourceURL, tranche8Loader, checkedSelec
 const element = tag => ({tag, textContent:'', children:[], append(...nodes){this.children.push(...nodes);}, replaceChildren(...nodes){this.children=nodes;}});
 const text = node => node.textContent + node.children.map(text).join(' ');
 
+test('full historical index distinguishes provenance from current conformance',()=>{
+  assert.equal(evidence.verification.historical_8_4b_source_bindings_authenticated,true);
+  assert.equal(evidence.verification.current_runtime_conformance_inferred,false);
+  assert.equal(evidence.verification.native_trajectories_rerun,false);
+  assert.match(evidence.runtime_scope_note,/Historical display roster only/);
+  assert.match(evidence.verification.boundary_source_revision,/^[a-f0-9]{40}$/);
+  const out=element('div');renderTranche8(evidence,out,element);
+  assert.match(text(out),/current-code conformance or execution authorization is inferred/);
+  const bad=structuredClone(evidence);bad.verification.current_runtime_conformance_inferred=true;
+  assert.throws(()=>checkedTranche8(bad));
+});
+
 const selectedACI=()=>({schema:'phase9_tranche8_family_status_v1',family:'A_CI',checkpoint:'8.4h',
   runtime:structuredClone(evidence.coverage.larger_runtime.find(r=>r.family==='A_CI')),
   source_refs:evidence.source_refs.filter(r=>r.basis==='pinned_A_CI_8_4h_not_acceptance'),

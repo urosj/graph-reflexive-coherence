@@ -17,8 +17,10 @@ def _index(root):
 def tranche8_status(repo_root, *, family=None, checkpoint="8.4c"):
     """Authenticate pinned sources and structure; never execute numerical work.
 
-    Raises on missing Git history, source drift or a stale generated projection.
-    Does not authorize implementation or claim current full-boundary validity.
+    Raises on missing Git history, altered retained evidence/source identities
+    or a stale generated projection. Completed runs use their historical source
+    epochs; current code need not equal those original bytes. Does not authorize
+    implementation or claim current-code conformance/full-boundary validity.
     """
     index = _index(repo_root)
     if family is not None:

@@ -1,5 +1,26 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Historical index repair (2026-10-26)
+
+The Tranche 8 read-only index authenticates old execution inputs against their
+original Git source identities. Later numerical optimizations must not make
+accepted old runs unreadable, nor may old runs certify those optimizations.
+The exact record/epoch roster is in
+[tranche8_execution_sources.py](./phase-9-grcv4/verification/tranche8_execution_sources.py).
+Original numerical records, acceptance decisions and scientific scope are unchanged.
+
+The `.b` records resolve their complete source rosters at named original commits;
+`.c–.f` metadata reconstruction uses 39 explicit source/specification identities
+at `5b9836358af2873e524e6ceae7256639e8a6bbce`. Historical G3 support and the original
+display-only runtime roster are authenticated separately from current execution
+permission. Missing history, changed records or wrong source hashes still fail.
+Ordinary execution and explicit numerical checks retain their current-source checks.
+No numerical campaign was rerun. The older live P9-7.2a README release-check issue
+remains a separate full-boundary concern; historical index success does not close it.
+The full index rebuild, 17 focused Python checks and 52 browser tests pass.
+The regenerated projection preserves all scientific results, coverage and
+acceptance fields; only provenance metadata and explanatory wording change.
+
 ## Accepted predecessor — C_CI P9-8.4h (2026-10-21)
 
 C_CI has a [frozen bounded plan](./phase-9-grcv4/tranche-8/P9-8.4h-CCIPlan.md).
@@ -61,8 +82,8 @@ surface checks and 51 browser tests pass. The user accepted this bounded scope
 on 2026-10-26. Do not rerun numerical campaigns for documentation,
 acceptance or commit maintenance. The selected CLI/API/notebook and browser
 **Check A_CI 8.4h** action authenticate this family's evidence independently.
-The pre-existing full-index historical C_CI lifecycle-source binding failure
-remains separate and visible; selected success is not full-stack validity.
+The historical C_CI full-index binding issue is addressed by the read-only
+index repair above; selected success still does not imply full-stack validity.
 
 The next family is A_PC `.h`; it has not been started.
 Aggregate `.h` and the remaining families stay open. Local positivity is not a
@@ -177,12 +198,10 @@ side-tool reports 8/8 coverage separately from acceptance. The retained review
 passes on the saved event/step payloads with native producers disabled.
 Do not rerun any completed segments. No transformed source-prefix or ten-step
 covariance claim; other families and aggregate `.h` acceptance remain open.
-Selected status/browser verification passes. A separate full-index rebuild is
-blocked by a pre-existing C_CI `.b` lifecycle-source binding mismatch: the
-recorded hash differs even from committed `HEAD`. This is not a new numerical
-failure, and no broad historical-record rewrite was made. Do not claim full
-index verification from the selected view. Keep that tooling repair separate
-from the source-bound native event successor.
+Selected status/browser verification passes. At this checkpoint the full index
+was blocked by a historical C_CI `.b` source-binding mismatch. The 2026-10-26
+index repair above resolves that interpretation error without changing these
+accepted numerical records or claiming execution against later code.
 The broader boundary command also stops at the unchanged older P9-7.2a
 specification-release checker: `specification candidate drift: specs/README.md`.
 Neither that checker nor README was edited here. Artifact/work hashes were

@@ -2481,9 +2481,12 @@ instead of stale fixed totals and opens any pending case details explicitly.
   unchanged 1200 s cap): one actual event, both-role precommit admission,
   original timeout summarized only; failed artifact removed. Target steps remain zero per role; no covariance,
   numerical status rerun, aggregate closure or user acceptance.
-- [ ] Repair the pre-existing full-index C_CI `.b` historical lifecycle-source
-  binding mismatch and older P9-7.2a `specs/README.md` release-check drift;
-  selected status/browser checks do not close these full-stack blockers.
+- [x] Repair the historical full-index source-binding interpretation: authenticate
+  `.b` original record/source commits, the explicit `.c–.f` source epoch and
+  historical G3/display rosters. Preserve old evidence and current execution
+  checks; expose that index integrity does not certify current-code conformance.
+- [ ] Resolve the separate live P9-7.2a `specs/README.md` release-check drift;
+  historical index verification does not close this full-boundary blocker.
 - [x] P9-8.4h C_OS continuation: expose twenty target steps and two fresh final
   reads from the successful event, exact first-step oracle matches, per-step
   minima and distinct represented-charge/exact-drift observations. Show bounded
@@ -2525,7 +2528,8 @@ instead of stale fixed totals and opens any pending case details explicitly.
   implied acceptance, sibling credit or aggregate closure.
   Five focused Python surface checks and 51 browser tests pass. The separate
   browser action and scoped source links work without invoking the known-failing
-  historical full index; that full-index failure remains visible and unresolved.
+  historical full index. Its then-existing binding failure is addressed by the
+  historical-index repair above, separately from this accepted numerical scope.
 - [x] Record A_CI `.h` scoped user acceptance on 2026-10-26 from the pinned
   review and complete retained roster; preserve original execution flags and
   keep sibling/aggregate coverage separate.

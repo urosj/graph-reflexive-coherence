@@ -24,7 +24,7 @@ export function renderTranche8(value, container, create = tag => document.create
   const c = value.coverage;
   append(container, 'p', `8.4b: ${c.accepted_cells}/${c.required_cells} accepted history cells; ${c.pending_cells} pending. P9-8.4 remains open. No new support or execution permission.`);
   if (c.executed_pending_cells) append(container, 'p', `${c.executed_pending_cells} additional cells have passing execution evidence pending review and acceptance; they are not accepted coverage.`);
-  append(container, 'p', `Check level: ${value.verification.level}. No native trajectory rerun or interval-equation recomputation. Historical 8.3 runs do not certify later code.`);
+  append(container, 'p', `Check level: ${value.verification.level}. Historical execution sources and prerequisites are authenticated at their recorded Git epochs. No native trajectory rerun, interval-equation recomputation, current-code conformance or execution authorization is inferred.`);
   append(container, 'h3', 'Shared mechanics and bounded profile integrations');
   for (const row of value.mechanics) {
     const p = append(container, 'p', `${row.work_id}: ${row.scope}. `); link(p, row.acceptance, 'Recorded decision');

@@ -17,8 +17,9 @@ from copy import deepcopy
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from tranche8_validation import ACTIVE, validation_session, LOCK
+from tranche8_validation import ACTIVE, validation_session, LOCK, BOUNDARY_MODULES
 from p984h_pre_solve_reuse_sources import historical_view, historical_binding
+from tranche8_execution_sources import verify as verify_execution_sources, boundary_bindings, BOUNDARY_REVISION, historical_g3
 
 # Display references only. Execution manifests authenticate all underlying
 # code/fixture hashes; closeout authenticates its checker sources separately.
@@ -952,10 +953,37 @@ class Sources:
         return {**self.refs[name], **({"anchor": anchor} if anchor else {})}
 
 
+@contextmanager
+def historical_index_admission(root):
+    """Read-only prerequisite reconstruction; never a current execution grant.
+
+    The validation lock serializes installation. Context-local dispatch leaves
+    other threads and all callers outside this index on the live admission path.
+    """
+    import phase9_specialization_acceptance as admission
+    original=admission.accepted
+    snapshot=ACTIVE.get()
+    require(snapshot is not None and snapshot.historical_bindings,
+            'historical admission requires explicit index snapshot')
+    value=historical_g3(root,snapshot.raw)
+    def accepted(query_root):
+        if ACTIVE.get() is not snapshot:return original(query_root)
+        require(Path(query_root).resolve()==snapshot.root,'historical admission root mismatch')
+        return deepcopy(value)
+    with patch.object(admission,'accepted',accepted):yield
+
+
+@contextmanager
+def historical_index_session(names=BOUNDARY_MODULES, *, root=ROOT):
+    with validation_session(names,root=root,historical_bindings=boundary_bindings(root)):
+        with historical_index_admission(root):
+            yield
+
+
 def build(root=ROOT):
     import phase9_implementation_policy as policy
     policy.restore_packed_evidence(root)
-    with validation_session(root=root):
+    with historical_index_session(root=root):
         return _build(root)
 
 
@@ -1060,9 +1088,7 @@ def _build(root):
                 pending_cells.update(ids)
             pending_cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
                 event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
-        for ref in inputs["source_bindings"]:
-            require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                    "accepted C_CI execution source drift: " + ref["path"])
+        verify_execution_sources(sources, input_name)
         original_name = BASE + "P9-8.4b-CCIResults.json"
         original = sources.read(original_name)
         sources.ref(BASE + "P9-8.4b-CCICases.json")
@@ -1104,9 +1130,7 @@ def _build(root):
                 pending_cells.update(ids)
             cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
                 event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
-        for ref in inputs["source_bindings"]:
-            require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                    "accepted A_CI execution source drift: " + ref["path"])
+        verify_execution_sources(sources, input_name)
         review_name = BASE + "P9-8.4b-ACIRuntimeReview.md"
         require("## Scoped user acceptance" in sources.raw(review_name).decode(), "missing scoped A_CI acceptance")
         runs.append(dict(family="A_CI", inputs=sources.ref(input_name), results=sources.ref(result_name),
@@ -1135,9 +1159,7 @@ def _build(root):
             pending_cells.update(ids)
         cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
             event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
-    for ref in inputs["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "accepted C_PC execution source drift: " + ref["path"])
+    verify_execution_sources(sources, input_name)
     review_name = BASE + "P9-8.4b-CPCRuntimeReview.md"
     require("## Scoped user acceptance" in sources.raw(review_name).decode(), "missing scoped C_PC acceptance")
     runs.append(dict(family="C_PC", inputs=sources.ref(input_name), results=sources.ref(result_name),
@@ -1152,9 +1174,7 @@ def _build(root):
             and pressure["manifest_digest"] == inputs["record_digest"] and len(pressure["reads"]) == 1125
             and pressure["user_accepted"] is False and pressure["native_trajectories_rerun"] is False,
             "C_PC signed stage pressure binding drift")
-    for ref in pressure["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "C_PC signed stage pressure source drift: " + ref["path"])
+    verify_execution_sources(sources, BASE + "P9-8.4b-CPCScientificPressure.json")
     runs[-1]["pc_claim_restrictions"] = pressure["claim_restrictions"]
     runs[-1]["claim_source"] = sources.ref(
         "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json")
@@ -1178,9 +1198,7 @@ def _build(root):
             pending_cells.update(ids)
         cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
             event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
-    for ref in inputs["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "accepted A_PC execution source drift: " + ref["path"])
+    verify_execution_sources(sources, input_name)
     review_name = BASE + "P9-8.4b-APCRuntimeReview.md"
     require("## Scoped user acceptance" in sources.raw(review_name).decode(), "A_PC separate acceptance missing")
     runs.append(dict(family="A_PC", inputs=sources.ref(input_name), results=sources.ref(result_name),
@@ -1218,9 +1236,7 @@ def _build(root):
             pending_cells.update(ids)
         cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
             event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
-    for ref in inputs["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "accepted C_CI_PC execution source drift: " + ref["path"])
+    verify_execution_sources(sources, input_name)
     review_name = BASE + "P9-8.4b-CCIPCRuntimeReview.md"
     require("## Scoped user acceptance" in sources.raw(review_name).decode(), "C_CI_PC separate acceptance missing")
     runs.append(dict(family="C_CI_PC", inputs=sources.ref(input_name), results=sources.ref(result_name),
@@ -1251,9 +1267,7 @@ def _build(root):
             and recheck["native_trajectories_rerun"] is False
             and recheck["user_accepted"] is False and recheck["aggregate_closed"] is False,
             "C_CI_PC numerical recheck binding/scope drift")
-    for ref in recheck["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "C_CI_PC numerical recheck source drift: " + ref["path"])
+    verify_execution_sources(sources, recheck_name)
     runs[-1]["numerical_recheck"] = sources.ref(recheck_name)
     covered.update(pending_cells)
     pending_cells.clear()
@@ -1275,9 +1289,7 @@ def _build(root):
             pending_cells.update(ids)
         cases.append(dict(case_id=row["case_id"], cells=ids, case_passed=passed,
             event_committed=row["event_committed"], outcome=row["outcome"], first_failure=row["first_failure"]))
-    for ref in inputs["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "accepted A_CI_PC execution source drift: " + ref["path"])
+    verify_execution_sources(sources, input_name)
     review_name = BASE + "P9-8.4b-ACIPCRuntimeReview.md"
     require("## Scoped user acceptance" in sources.raw(review_name).decode(), "A_CI_PC separate acceptance missing")
     runs.append(dict(family="A_CI_PC", inputs=sources.ref(input_name), results=sources.ref(result_name),
@@ -1310,9 +1322,7 @@ def _build(root):
             and recheck["native_trajectories_rerun"] is False
             and recheck["user_accepted"] is False and recheck["aggregate_closed"] is False,
             "A_CI_PC numerical recheck binding/scope drift")
-    for ref in recheck["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "A_CI_PC numerical recheck source drift: " + ref["path"])
+    verify_execution_sources(sources, recheck_name)
     runs[-1]["numerical_recheck"] = sources.ref(recheck_name)
     covered.update(pending_cells)
     pending_cells.clear()
@@ -1334,9 +1344,7 @@ def _build(root):
             pending_cells.update(ids)
         cases.append({"case_id": row["case_id"], "cells": ids, "case_passed": passed,
             "event_committed": row["event_committed"], "outcome": row["outcome"], "first_failure": row["first_failure"]})
-    for ref in inputs["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "accepted C_RG2b execution source drift: " + ref["path"])
+    verify_execution_sources(sources, input_name)
     review_name = BASE + "P9-8.4b-CRG2bRuntimeReview.md"
     require(b"## Scoped user acceptance" in sources.raw(review_name), "missing C_RG2b scoped acceptance")
     runs.append({"family": "C_RG2b", "inputs": sources.ref(input_name), "results": sources.ref(result_name),
@@ -1383,9 +1391,7 @@ def _build(root):
                     and check["native_trajectories_rerun"] is False
                     for check, row in zip(recheck["cases"], result["cases"], strict=True)),
             "C_RG2b completed numerical cases drift")
-    for ref in recheck["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "C_RG2b numerical recheck source drift: " + ref["path"])
+    verify_execution_sources(sources, recheck_name)
     runs[-1]["numerical_recheck"] = sources.ref(recheck_name)
     covered.update(pending_cells)
     pending_cells.clear()
@@ -1407,9 +1413,7 @@ def _build(root):
             pending_cells.update(ids)
         cases.append({"case_id": row["case_id"], "cells": ids, "case_passed": passed,
             "event_committed": row["event_committed"], "outcome": row["outcome"], "first_failure": row["first_failure"]})
-    for ref in inputs["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "accepted A_RG2b execution source drift: " + ref["path"])
+    verify_execution_sources(sources, input_name)
     review_name = BASE + "P9-8.4b-ARG2bRuntimeReview.md"
     require(b"## Scoped user acceptance" in sources.raw(review_name), "missing A_RG2b scoped acceptance")
     runs.append({"family": "A_RG2b", "inputs": sources.ref(input_name), "results": sources.ref(result_name),
@@ -1457,9 +1461,7 @@ def _build(root):
                     and check["native_trajectories_rerun"] is False
                     for check, row in zip(recheck["cases"], result["cases"], strict=True)),
             "A_RG2b completed numerical cases drift")
-    for ref in recheck["source_bindings"]:
-        require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                "A_RG2b numerical recheck source drift: " + ref["path"])
+    verify_execution_sources(sources, recheck_name)
     runs[-1]["numerical_recheck"] = sources.ref(recheck_name)
     covered.update(pending_cells)
     pending_cells.clear()
@@ -1489,16 +1491,17 @@ def _build(root):
     sources.ref(BASE + "P9-8.3-GraphConfigurationGuide.md")
     sources.ref(BASE + "P9-8.3-CatalogValidation.json")
     sources.ref("examples/grcv4/configurations.json")
-    # Protect all current transitive inputs of the active 8.4 campaigns without
-    # pretending the historical 8.3 validations describe today's source bytes.
+    # These completed executions describe their frozen source epochs, not HEAD.
     for tag in ("COS", "COSPhaseOne", "AOS"):
-        for ref in sources.read(BASE + "P9-8.4b-" + tag + "Cases.json")["source_bindings"]:
-            require(hashlib.sha256((sources.root / ref["path"]).read_bytes()).hexdigest() == ref["sha256"],
-                    "8.4 execution source drift: " + ref["path"])
-    scope = sorted(policy.runtime_targets(policy.recorded_acceptance(sources.root)), key=lambda r: r["path"])
-    work = sources.read(policy.WORK)
-    work_paths = {r["path"] for r in work["entries"]}
-    ready, owners = policy.leaf_permissions(sources.root)
+        verify_execution_sources(sources, BASE + "P9-8.4b-" + tag + "Cases.json")
+    # Display the original accepted roster, not live execution authorization.
+    # These four fields have remained unchanged since the initial index release.
+    roster_revision='7fed33a0fd868ec4e1c31b4da3b088d76978a5b7'
+    git(sources.root,'merge-base','--is-ancestor',roster_revision,'HEAD')
+    roster=json.loads(git(sources.root,'show',roster_revision+':'+ASSET).decode().split(' = ',1)[1].rstrip(';\n'))
+    require(roster['checkpoint']==CHECKPOINT and roster['view_digest']==digest({k:v for k,v in roster.items() if k!='view_digest'}),
+            'historical runtime display roster drift')
+    sources.raw(policy.WORK,historical=True)
     import prepare_p984c_boundaries as boundary
     boundary_contract = sources.read(boundary.OUTPUT)
     check_boundary_storage_successor(boundary, boundary_contract, sources.root)
@@ -1682,12 +1685,9 @@ def _build(root):
     next(r for r in children if r["work_id"] == "P9-8.4h").update(status="native_prefix_event_timeout_performance_first", accepted=False)
     value = dict(schema="phase9_tranche8_evidence_v1", output_class="retained_implementation_evidence_not_forensic_authority",
         checkpoint=CHECKPOINT, mechanics=mechanics, profiles=profiles,
-        runtime_scope_snapshot=scope,
-        registered_runtime_paths=sorted(r["path"] for r in scope if r["path"] in work_paths),
-        dependency_ready_snapshot=ready,
-        permitted_paths_snapshot=sorted(r["path"] for r in scope if
-            (r["requires_gate"] == "P9-G1" or r["path"] in work_paths) and set(ready) & owners[r["path"]]),
-        runtime_scope_note="Display roster only; current policy must independently authenticate permission, dependency readiness and work bindings.",
+        **{k:roster[k] for k in ('runtime_scope_snapshot','registered_runtime_paths','dependency_ready_snapshot','permitted_paths_snapshot')},
+        runtime_scope_revision=roster_revision,
+        runtime_scope_note="Historical display roster only; current policy must independently authenticate permission, dependency readiness and work bindings.",
         configuration=dict(status="accepted_preparation_not_large_runtime", review=sources.ref(closeout_name),
                            outcome_counts=closeout["outcome_counts"], families=large, catalog_size=42),
         coverage=dict(record=sources.ref(coverage_path), children=children, families=rows, runs=runs,
@@ -1701,6 +1701,9 @@ def _build(root):
                       aggregate_closed=False, other_vector_cells=60, larger_history_cells=20),
         scientific_claim_mapping=mapping,
         verification=dict(level="pinned_sources_and_retained_structure", native_trajectories_rerun=False,
+                          historical_8_4b_source_bindings_authenticated=True,current_runtime_conformance_inferred=False,
+                          boundary_source_revision=BOUNDARY_REVISION,
+                          prerequisite_support="historical_G3_not_current_execution_authorization",
                           pre_solve_reuse_numerical_sources='718f95be_not_current_execution',
                           interval_equations_recomputed=False, historical_8_3_source_bindings_revalidated_against_current_code=False),
         future=dict(P9_8_5="pending_full_atomicity_campaign", P9_8_6="pending_conformance_review",
@@ -2807,47 +2810,51 @@ def family_status(root, family, checkpoint="8.4c"):
     if checkpoint == "8.4f":
         require(family in ("C_OS","C_CI","A_CI","A_PC"), "chart covariance not executed for this family")
         policy.restore_packed_evidence(root)
-        with validation_session(({"C_OS":"p984f_cos","C_CI":"p984f_cci","A_CI":"p984f_aci","A_PC":"p984f_apc"}[family],), root=root):
+        with historical_index_session(({"C_OS":"p984f_cos","C_CI":"p984f_cci","A_CI":"p984f_aci","A_PC":"p984f_apc"}[family],), root=root):
             sources = Sources(root)
             return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
                 scope="selected_family_only_not_execution_permission", native=chart_view(sources,family=family)["family_results"][0],
                 source_refs=sorted(sources.refs.values(),key=lambda r:r["path"]),
+                historical_source_revision=BOUNDARY_REVISION, current_runtime_conformance_inferred=False,
                 other_families_checked=False,native_trajectories_rerun=False)
     if checkpoint == "8.4e":
         require(family in ("C_OS", "C_CI", "A_CI", "A_PC"), "ordering covariance not executed for this family")
         policy.restore_packed_evidence(root)
         module = {"C_OS": "p984e_cos", "C_CI": "p984e_cci", "A_CI": "p984e_aci", "A_PC": "p984e_apc"}[family]
-        with validation_session((module,), root=root):
+        with historical_index_session((module,), root=root):
             sources = Sources(root)
             view = covariance_view(sources, family=family)
             return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
                 scope="selected_family_only_not_execution_permission", native=view["family_results"][0],
                 source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
+                historical_source_revision=BOUNDARY_REVISION, current_runtime_conformance_inferred=False,
                 other_families_checked=False, native_trajectories_rerun=False)
     if checkpoint == "8.4d":
         require(family in ("C_OS", "C_CI", "A_CI", "A_PC"), "deep evidence unavailable for this family")
         policy.restore_packed_evidence(root)
         if family == "A_CI":
-            with validation_session(("p984d_aci_runtime",), root=root):
+            with historical_index_session(("p984d_aci_runtime",), root=root):
                 sources = Sources(root)
                 summary = deep_oracle_view(sources)
                 return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
                     scope="selected_family_only_not_execution_permission", oracle=summary,
                     native=deep_family_view(sources, family),
                     source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
+                    historical_source_revision=BOUNDARY_REVISION, current_runtime_conformance_inferred=False,
                     other_families_checked=False, native_trajectories_rerun=False)
         module = {"C_OS": "p984d_cos", "C_CI": "p984d_cci", "A_PC": "p984d_apc_full"}[family]
-        with validation_session((module,), root=root):
+        with historical_index_session((module,), root=root):
             sources = Sources(root)
             summary = deep_family_view(sources, family)
             return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint=checkpoint,
                 scope="selected_family_only_not_full_index_or_execution_permission", native=summary,
                 source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
+                historical_source_revision=BOUNDARY_REVISION, current_runtime_conformance_inferred=False,
                 other_families_checked=False, native_trajectories_rerun=False)
     require(family in BOUNDARY_RUNTIME, "boundary evidence unavailable for this family")
     policy.restore_packed_evidence(root)
     name = BOUNDARY_RUNTIME[family]
-    with validation_session((name,), root=root):
+    with historical_index_session((name,), root=root):
         module = importlib.import_module(name)
         sources = Sources(root)
         summary = module.status(sources.read(module.INPUTS), sources.read(module.RESULTS))
@@ -2861,6 +2868,7 @@ def family_status(root, family, checkpoint="8.4c"):
         return dict(schema="phase9_tranche8_family_status_v1", family=family, checkpoint="8.4c",
             scope="selected_family_only_not_full_index_or_execution_permission",
             native=summary, source_refs=sorted(sources.refs.values(), key=lambda r: r["path"]),
+            historical_source_revision=BOUNDARY_REVISION, current_runtime_conformance_inferred=False,
             other_families_checked=False, native_trajectories_rerun=False)
 
 

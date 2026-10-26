@@ -3081,8 +3081,20 @@ Do not infer acceptance from the complete 1-source/9-event/36-target/2-final
 roster. Missing counterpart evidence restores partial status; status neither
 reconstructs targets nor reruns native trajectories or independent interval solves.
 Provide a browser action and HTTP family/checkpoint parameters for this selected
-view and its exact source links. Its success does not suppress the recorded
-historical C_CI full-index binding failure or imply full-stack validity.
+view and its exact source links. Its success does not imply full-stack validity.
 Project the user's 2026-10-26 A_CI acceptance only when the baseline, all eight
 counterparts and retained checkpoint review are complete and the pinned review
 records that decision. Preserve original execution flags and aggregate limits.
+
+Historical index maintenance (2026-10-26): authenticate completed `.b` records
+against their named original source commits; reconstruct `.c–.f` metadata using
+the closed 39-path source/specification roster at
+`5b9836358af2873e524e6ceae7256639e8a6bbce`. Read historical G3 support and the
+original display roster at their pinned identities, not as current execution
+authorization. The exact roster and rejection tests live in
+`implementation/phase-9-grcv4/verification/tranche8_execution_sources.py` and
+`test_tranche8_execution_sources.py`. This mode is confined to read-only index
+queries; fresh runs and explicit numerical checkers retain current-tree binding
+checks. No changed numerical record, revived failed run, or new conformance
+credit follows. Missing Git history, changed evidence and wrong hashes fail
+explicitly. The older live P9-7.2a README check remains separate.
