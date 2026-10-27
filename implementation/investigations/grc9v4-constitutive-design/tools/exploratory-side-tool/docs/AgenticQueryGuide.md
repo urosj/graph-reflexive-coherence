@@ -861,3 +861,12 @@ through `tranche9_compatibility_source` / `/api/tranche9/compatibility/source`.
 These checks authenticate retained evidence without rerunning native execution.
 Explicit disabled seeds do not establish an enabled/disabled crossing; that
 work remains P9-9.4. The browser and verification notebook expose the same scope.
+
+### P9-9.3 matrix reconciliation
+
+The existing `tranche9_compatibility_status(repo_root)` and
+`/api/tranche9/compatibility` now also check `P9-9.3-Matrix.json` against the
+frozen catalog/spec and 9.2 acceptance. `matrix_reconciliation` reports the
+separate 9.3 disposition: passing reconciliation, user-accepted on 2026-10-27,
+no native execution. All forty cells remain visible. Its matrix/review are
+indexed sources. This does not grant branch crossings or public runtime support.

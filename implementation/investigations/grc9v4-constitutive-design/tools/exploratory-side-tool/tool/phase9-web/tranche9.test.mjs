@@ -28,7 +28,7 @@ test('actual loader shows results and clears stale evidence on failure',async()=
 });
 
 import {checkedCompatibility,compatibilityLoader} from './tranche9.js';
-const compatibility={schema:'p992-compatibility-status-v1',families,selected_cells:16,passed_cells:16,unselected_cells:24,
+const compatibility={matrix_reconciliation:{iteration:'P9-9.3',outcome:'passed',user_accepted:true,native_execution:false,record_digest:'b'.repeat(64)},schema:'p992-compatibility-status-v1',families,selected_cells:16,passed_cells:16,unselected_cells:24,
  user_accepted:true,aggregate_closed:false,full_GRC9V4_conformance:false,crossings_executed:false,
  check_level:'retained_integrity_only_no_native_rerun',source_refs:[{path:'implementation/phase-9-grcv4/tranche-9/P9-9.2-Review.md'}],
  cells:['A','C'].flatMap(c=>['OS','CI','PC','CI_PC','RG2b'].flatMap(r=>['transition','state','observable','lifecycle'].map(surface=>{
@@ -36,6 +36,9 @@ const compatibility={schema:'p992-compatibility-status-v1',families,selected_cel
  state:families.includes(family)?'bounded_accepted':'unselected',record_digest:families.includes(family)?'a'.repeat(64):null};})))};
 test('exact forty-cell matrix rejects missing, duplicate and promoted cells',()=>{
  assert.equal(checkedCompatibility(compatibility),compatibility);
+ assert.throws(()=>checkedCompatibility({...compatibility,matrix_reconciliation:null}));
+ assert.throws(()=>checkedCompatibility({...compatibility,matrix_reconciliation:{...compatibility.matrix_reconciliation,user_accepted:false}}));
+ for(const key of ['native_execution'])assert.throws(()=>checkedCompatibility({...compatibility,matrix_reconciliation:{...compatibility.matrix_reconciliation,[key]:true}}));
  assert.throws(()=>checkedCompatibility({...compatibility,user_accepted:false}));
  for(const key of ['aggregate_closed','full_GRC9V4_conformance','crossings_executed'])assert.throws(()=>checkedCompatibility({...compatibility,[key]:true}));
  assert.throws(()=>checkedCompatibility({...compatibility,cells:compatibility.cells.slice(1)}));
@@ -47,7 +50,7 @@ test('compatibility loader renders all cells and clears stale data',async()=>{
  const status={textContent:''};let value=structuredClone(compatibility),ok=true;
  const load=compatibilityLoader(container,status,async()=>({ok,json:async()=>value}),create);
  await load();assert.match(status.textContent,/bounded acceptance recorded/);
- assert.equal(container.children[1].children.length,41);
+ assert.equal(container.children[2].children.length,41);
  assert(container.children.some(x=>x.href?.startsWith('/api/tranche9/compatibility/source?')));
  value.crossings_executed=true;await load();assert.equal(container.children.length,0);
  ok=false;await load();assert.equal(container.children.length,0);

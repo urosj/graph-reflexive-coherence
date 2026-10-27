@@ -3188,8 +3188,17 @@ Expose the four selected families' sixteen independent surface results and
 all twenty-four unselected cells. `tranche9_compatibility_status` and the
 `/api/tranche9/compatibility` route authenticate retained source-bound results;
 the source endpoint is restricted to indexed repository-relative records.
-Browser **Check sixteen delegate cells** and notebook expose the matrix,
+Browser **Check compatibility matrix (9.2/9.3)** and notebook expose the matrix,
 bounded acceptance recorded and absence of actual crossings/full conformance. Current
 next-work projection is P9-9.3 reconciliation, then P9-9.4.
 This is exact unchanged native delegate execution, not new scientific authority
 or a rerun of Tranche 8 numerical campaigns.
+
+### P9-9.3 — complete compatibility matrix reconciliation
+
+The existing compatibility API, browser table and notebook consume the checked
+P9-9.3 matrix, matching every catalog/spec contract with its 9.2 disposition.
+Sources include the matrix/review and original accepted evidence. Distinguish
+9.2 bounded acceptance from separate 9.3 matrix acceptance. No new native
+execution or support promotion occurs. Next is P9-9.4a
+crossings and P9-9.4b public API integration.

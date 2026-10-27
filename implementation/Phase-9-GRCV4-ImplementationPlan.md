@@ -4181,8 +4181,12 @@ Four parallel native delegate suites and two shared controls passed. This
 internal component begins from explicitly disabled legacy seeds; actual
 history projection and receipted enabled/disabled crossings remain P9-9.4.
 The side-tool exposes all forty slots, with twenty-four explicitly unselected.
-Next reconcile P9-9.3's full population matrix. Original execution bytes and
-all unselected dispositions remain unchanged.
+P9-9.3's full population matrix is reconciled and user-accepted on 2026-10-27; see
+[the matrix review](./phase-9-grcv4/tranche-9/P9-9.3-Review.md). All forty frozen
+contracts are accounted for: sixteen bounded-accepted components and twenty-four
+unselected/unexecuted cells, with exact accepted execution and identity links.
+Original execution bytes remain unchanged. No native trajectories are rerun,
+and this register grants no crossing, public API or full-conformance support.
 Then execute P9-9.4a crossings and P9-9.4b public API integration, P9-9.5
 public-entry conflict rejection, and P9-9.6 bounded review. Independent
 family/cell runs may use up to twelve single-thread

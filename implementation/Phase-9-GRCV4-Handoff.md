@@ -1,6 +1,29 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — P9-9.2 bounded delegate acceptance (2026-10-27)
+## Current checkpoint — P9-9.3 matrix acceptance (2026-10-27)
+
+Branch `work/p9-9-first-group`. Bounded 9.2 acceptance and the public API
+planning update were committed as `830b3170` before this work.
+[P9-9.3 review](./phase-9-grcv4/tranche-9/P9-9.3-Review.md) and its compact matrix
+account for all forty frozen contract cells: **16 bounded-accepted delegate
+components, 24 unselected/unexecuted, zero failed or unaccounted**. Each accepted
+row binds exact profile/model identity, execution file/digest/cell pointer and
+acceptance entry. The other six families acquire no implied support.
+
+The existing compatibility API, browser matrix and notebook now authenticate
+this reconciliation. 9.2 acceptance is true; separate 9.3 matrix acceptance
+is recorded in [the decision](./phase-9-grcv4/tranche-9/P9-9.3-Acceptance.json). Original numerical evidence and runtime sources are unchanged;
+there is no new native execution or full-boundary/numerical campaign.
+Eleven Python checks and four browser tests pass, with 22 matrix mutation
+subtests; maintenance bindings and formatting are checked.
+
+Next: P9-9.4a branch crossings and P9-9.4b the public
+`GRC9V4` API. P9-9.5 must test that public entry; P9-9.6 reviews its bounded
+support. Preserve optional completion/hierarchy and six-family exclusions,
+CI resolution limits and pointwise A_PC effect/error limits. This matrix is
+complete as a register; it does not claim that all forty cells were executed.
+
+## Previous checkpoint — P9-9.2 bounded delegate acceptance (2026-10-27)
 
 Branch `work/p9-9-first-group`. Bounded 9.1b acceptance was committed as
 `416b3dd9` before any 9.2 implementation. The sixteen selected C_OS/C_CI/A_CI/A_PC

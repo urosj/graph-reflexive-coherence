@@ -83,7 +83,7 @@ def tranche9_source(repo_root, path):
 def tranche9_compatibility_status(repo_root):
     root = Path(repo_root).resolve()
     _checker(root)  # Install the repository-owned verification import path.
-    return importlib.import_module("p992_acceptance").status(root)
+    return importlib.import_module("p993_acceptance").status(root)
 
 
 def tranche9_compatibility_source(repo_root, path):

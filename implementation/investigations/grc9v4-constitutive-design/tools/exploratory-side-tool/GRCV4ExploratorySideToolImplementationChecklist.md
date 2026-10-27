@@ -2605,3 +2605,10 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
 - [x] Actual browser button/table and notebook access; integrity is distinct from native execution.
 - [x] Reject stale/widened records and clear unavailable browser evidence.
 - [x] Bounded user acceptance on 2026-10-27; crossing/full-conformance gates remain separate.
+
+### P9-9.3 — complete compatibility matrix reconciliation
+
+- [x] Bind the existing forty-row view to frozen catalog/spec and accepted evidence.
+- [x] Expose matrix/review through indexed sources, actual browser and notebook.
+- [x] Reject incomplete, stale or promoted matrices; retain separate 9.2/9.3 acceptance.
+- [x] User acceptance of 9.3 reconciliation on 2026-10-27; no new native support inferred.

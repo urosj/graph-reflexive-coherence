@@ -30,7 +30,7 @@ def _policy(root):
 def _profile_next_gate(views):
     """Display only: consume checked materializer views, never grant authority."""
     if 'tranche9_compatibility' in views:
-        return 'P9-9.3 matrix reconciliation, then P9-9.4a crossings and P9-9.4b public API.'
+        return 'P9-9.4a crossings, then P9-9.4b public API.'
     if 'tranche9_evidence' in views:
         return views['tranche9_evidence']['next_work']
     if 'tranche8_evidence' in views:

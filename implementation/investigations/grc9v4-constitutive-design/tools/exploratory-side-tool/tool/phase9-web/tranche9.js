@@ -48,6 +48,10 @@ export function checkedCompatibility(v) {
     v.user_accepted!==true || v.full_GRC9V4_conformance!==false || v.aggregate_closed!==false || v.crossings_executed!==false ||
     v.check_level!=='retained_integrity_only_no_native_rerun' || !Array.isArray(v.cells) || v.cells.length!==40)
     throw new Error('Unexpected compatibility scope');
+  const matrix=v.matrix_reconciliation;
+  if(!matrix || matrix.iteration!=='P9-9.3' || matrix.outcome!=='passed' ||
+    matrix.user_accepted!==true || matrix.native_execution!==false || !/^[a-f0-9]{64}$/.test(matrix.record_digest))
+    throw new Error('Invalid matrix reconciliation');
   const seen=new Set(),population=['A','C'].flatMap(c=>['OS','CI','PC','CI_PC','RG2b'].map(r=>c+'_'+r));
   for(const row of v.cells){
     const key=row.family+'/'+row.surface,selected=families.includes(row.family);
@@ -69,6 +73,7 @@ export function compatibilityLoader(container,status,fetcher=fetch,create=tag=>d
       const v=checkedCompatibility(await response.json());if(ticket!==sequence)return;
       const add=(tag,text,parent=container)=>{const e=create(tag);e.textContent=text;parent.append(e);return e;};
       add('p','16 exact native delegate cells passed; bounded acceptance recorded. 24 cells unselected. Integrity only; no native rerun, crossings or full conformance.');
+      add('p','P9-9.3: all forty cells reconciled against the frozen catalog and accepted evidence; matrix acceptance recorded. No new native execution.');
       const table=add('table',''),head=add('tr','',table);
       for(const title of ['Family','Surface','Disposition'])add('th',title,head);
       for(const row of v.cells){const tr=add('tr','',table);for(const text of [row.family,row.surface,row.state])add('td',text,tr);}

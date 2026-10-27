@@ -3781,8 +3781,18 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
   - [x] Bounded component results accepted by the user on 2026-10-27;
     [decision](./phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json). Actual entry/history
     mapping and enabled/disabled crossings still belong to P9-9.4.
-- [ ] P9-9.3: Track the complete ten-by-four matrix; mark each unsupported or
+- [x] P9-9.3: Track the complete ten-by-four matrix; mark each unsupported or
   unexecuted slot explicitly and claim only the supported tested subset.
+  - [x] Reconcile all forty frozen contracts against the spec table and pinned
+    9.2 acceptance: sixteen accepted components, twenty-four unselected,
+    zero failed/unaccounted cells. Bind exact profile/model IDs and each
+    execution/acceptance entry; [review](./phase-9-grcv4/tranche-9/P9-9.3-Review.md).
+  - [x] Reject missing/duplicate/relabelled cells, altered identity/evidence,
+    unsupported promotion and projection drift; API/browser/notebook consume
+    the checked reconciliation without native reruns.
+  - [x] User acceptance of the matrix reconciliation on 2026-10-27;
+    [decision](./phase-9-grcv4/tranche-9/P9-9.3-Acceptance.json). Later runtime support
+    and public API obligations remain under P9-9.4–9.6.
 - [ ] P9-9.4: Complete both crossing and public API integration children.
   Depend on P9-9.1b and the applicable disabled lifecycle delegate, not the
   optional P9-9.1a child or aggregate P9-9.1.
