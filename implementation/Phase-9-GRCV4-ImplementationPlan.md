@@ -4175,10 +4175,17 @@ do not repeat the large-graph campaigns for lifecycle integration. The internal
 enabled owner does not advertise the later public full-conformance facade.
 See [the scoped implementation and review](./phase-9-grcv4/tranche-9/P9-9.1b-Review.md).
 
-Next execute the **sixteen selected P9-9.2 cells** (four surfaces per family)
-and maintain P9-9.3's full population matrix with twenty-four unselected cells.
-Then execute applicable P9-9.4 crossings, P9-9.5 conflict rejection, and P9-9.6
-bounded review. Independent family/cell runs may use up to twelve single-thread
+The **sixteen selected P9-9.2 cells** are bounded-accepted by the user
+on 2026-10-27; see [the review](./phase-9-grcv4/tranche-9/P9-9.2-Review.md).
+Four parallel native delegate suites and two shared controls passed. This
+internal component begins from explicitly disabled legacy seeds; actual
+history projection and receipted enabled/disabled crossings remain P9-9.4.
+The side-tool exposes all forty slots, with twenty-four explicitly unselected.
+Next reconcile P9-9.3's full population matrix. Original execution bytes and
+all unselected dispositions remain unchanged.
+Then execute P9-9.4a crossings and P9-9.4b public API integration, P9-9.5
+public-entry conflict rejection, and P9-9.6 bounded review. Independent
+family/cell runs may use up to twelve single-thread
 workers on this machine; dependencies and publication stay sequential.
 P9-9.1a remains explicitly unselected. Preserve the accepted CI resolution and
 pointwise A_PC carrier-effect limits through this tranche.
@@ -4210,6 +4217,33 @@ the defined domain. The saturated port-5 conflict must return
 GRC9V3 source behavior. An enabled-only implementation cannot claim full
 GRC9V4 conformance.
 
+**Public API delivery belongs to Tranche 9.** P9-9.4 now has two explicit
+implementation children. This makes the existing public lifecycle/configuration
+obligation executable; it adds no new scientific law or family scope.
+
+| Child | Implementation and completion evidence |
+| --- | --- |
+| P9-9.4a — enabled/disabled crossings | Connect the accepted enabled owner and applicable exact legacy delegate. Execute both migration directions with source-history projection/archive/loss, distinct current/reset transfer, entry receipts, target readmission, replay and whole-state rollback. |
+| P9-9.4b — public GRC9V4 API | Implement and export the specified `GRC9V4(GRCV4)` facade through the established package API. Wire validated configuration construction, ordinary step/run and typed request methods, canonical expansion, profile/branch migration, state/observables, reset/rebase, duplicate and save/load/replay to the existing owners. Integrate the existing saved-selection runner entry where applicable. Verify these paths through the public class for each selected family, including both branch crossings and mixed replay. |
+
+The public API must preserve complete generic-profile and combined nine-port
+model identities, explicit numerical policies, typed failures, receipts and
+atomic publication. Inherited `step()`/`run()` obey the serialized default
+request contract and reject a missing request as specified. Capability and
+profile discovery must expose only exact supported declarations and their
+applicable evidence-backed status; importing the class grants no conformance.
+The six unselected families and optional completion/hierarchy capabilities
+are not prerequisites for this four-family API and must not be advertised.
+
+P9-9.5 exercises `legacy_expansion_target_undefined` through that public API,
+including unchanged scientific state, reset baseline and successful receipt
+history on rejection. P9-9.6 requires both P9-9.4 children and the public-entry
+P9-9.5 checks before reviewing the bounded support declaration. Internal-owner
+tests alone do not satisfy public integration. Reuse accepted numerical
+evidence and small integration fixtures; repeat a larger campaign only if a
+concrete integration failure requires it. These are planned children, not
+completed work or a new runtime authorization granted by this text.
+
 ### Tranche 10. Conformance, evidence, and handoff
 
 Close the declared support matrix using actual runtime results with exact
@@ -4219,7 +4253,9 @@ Store new runtime vectors and evidence outside the frozen specification
 release; link them to its fixture IDs and state any independent oracle method.
 
 Publish capability discovery and a minimal API/replay example for supported
-profiles, plus a closeout and handoff. Review every inherited debt and coverage
+profiles, plus a closeout and handoff. P9-10.4 documents and publishes the API
+already implemented under P9-9.4b and reviewed under P9-9.6; it is not the first
+public-class implementation step. Review every inherited debt and coverage
 hold against the claim actually demonstrated. Record outstanding profiles,
 analysis, phenomenology, and integration work explicitly. P9-G4 acceptance
 requires review of the evidence and support boundary.

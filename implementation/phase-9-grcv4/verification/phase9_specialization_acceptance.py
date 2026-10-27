@@ -527,3 +527,26 @@ def enabled_lifecycle_authorization(root):
 
 def enabled_lifecycle_permitted(path, leaf):
     return leaf == ENABLED_LIFECYCLE_ENTRY and path in ENABLED_LIFECYCLE_PATHS
+
+
+DISABLED_DELEGATE_PATHS = (
+    "src/pygrc/models/grc_9_v4_legacy.py",
+    "tests/models/test_grc_9_v4_legacy.py",
+)
+DISABLED_DELEGATE_LEAVES = frozenset(
+    f"P9-9.2-{family}-{surface}"
+    for family in ("C_OS", "C_CI", "A_CI", "A_PC")
+    for surface in ("transition", "state", "observable", "lifecycle")
+)
+
+
+def disabled_delegate_authorization(root):
+    """Explicit 9.2 request after bounded 9.1b acceptance; no crossing grant."""
+    from p991b_acceptance import decision
+    p.git(root, "merge-base", "--is-ancestor", "416b3dd9", "HEAD")
+    decision(root)  # Exact pinned acceptance, not mutable status evidence.
+    return DISABLED_DELEGATE_LEAVES
+
+
+def disabled_delegate_permitted(path, leaf):
+    return leaf in DISABLED_DELEGATE_LEAVES and path in DISABLED_DELEGATE_PATHS

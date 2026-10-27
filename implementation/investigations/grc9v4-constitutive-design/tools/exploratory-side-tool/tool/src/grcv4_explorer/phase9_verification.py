@@ -29,6 +29,8 @@ def _policy(root):
 
 def _profile_next_gate(views):
     """Display only: consume checked materializer views, never grant authority."""
+    if 'tranche9_compatibility' in views:
+        return 'P9-9.3 matrix reconciliation, then P9-9.4a crossings and P9-9.4b public API.'
     if 'tranche9_evidence' in views:
         return views['tranche9_evidence']['next_work']
     if 'tranche8_evidence' in views:
@@ -139,8 +141,9 @@ def verification_status(repo_root: Path) -> dict:
             profile_views['specialization_admission_review'] = _checker(root, 'verify_p978_specialization_review')()
             from .tranche8 import tranche8_status
             profile_views['tranche8_evidence'] = tranche8_status(root)
-            from .tranche9 import tranche9_status
+            from .tranche9 import tranche9_status, tranche9_compatibility_status
             profile_views['tranche9_evidence'] = tranche9_status(root)
+            profile_views['tranche9_compatibility'] = tranche9_compatibility_status(root)
             # current_boundary authenticated these rows; the end-of-read check
             # rejects concurrent changes. Do not repeat the whole policy chain.
             work = {r['path']: r for r in module.read(root / module.WORK)['entries']}

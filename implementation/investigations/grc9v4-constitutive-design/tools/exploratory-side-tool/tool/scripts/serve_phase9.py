@@ -20,22 +20,25 @@ from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E4
 from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source
 
 
-from grcv4_explorer.tranche9 import tranche9_status, tranche9_source
+from grcv4_explorer.tranche9 import (tranche9_status, tranche9_source,
+    tranche9_compatibility_status, tranche9_compatibility_source)
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if request.path in {"/api/tranche9", "/api/tranche9/source"}:
+        if request.path in {"/api/tranche9", "/api/tranche9/source", "/api/tranche9/compatibility", "/api/tranche9/compatibility/source"}:
             try:
                 query = parse_qs(request.query, strict_parsing=True)
-                if request.path == "/api/tranche9":
+                if request.path in {"/api/tranche9", "/api/tranche9/compatibility"}:
                     if query: raise KeyError("Tranche 9 has a fixed four-family scope")
-                    content = json.dumps(tranche9_status(repository_root())).encode()
+                    view = tranche9_compatibility_status if request.path.endswith("compatibility") else tranche9_status
+                    content = json.dumps(view(repository_root())).encode()
                 else:
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed source path required")
-                    content, ref = tranche9_source(repository_root(), query["path"][0])
+                    source = tranche9_compatibility_source if "/compatibility/" in request.path else tranche9_source
+                    content, ref = source(repository_root(), query["path"][0])
                 self.send_response(200)
                 if request.path.endswith("/source"):
                     self.send_header("X-Evidence-SHA256", ref["sha256"])

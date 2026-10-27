@@ -2598,3 +2598,10 @@ instead of stale fixed totals and opens any pending case details explicitly.
 The new owner composes the accepted kernels; status never executes them.
 Independent runs use four single-thread workers; the user permits up to twelve
 when useful. No all-ten, ATC, scientific-authority or public support promotion.
+
+### P9-9.2 — bounded disabled-delegate evidence
+
+- [x] Read-only checked API and indexed sources for 16 executed/24 unselected cells.
+- [x] Actual browser button/table and notebook access; integrity is distinct from native execution.
+- [x] Reject stale/widened records and clear unavailable browser evidence.
+- [x] Bounded user acceptance on 2026-10-27; crossing/full-conformance gates remain separate.

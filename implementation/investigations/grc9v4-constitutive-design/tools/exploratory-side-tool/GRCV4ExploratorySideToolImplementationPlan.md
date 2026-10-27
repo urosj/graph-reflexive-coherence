@@ -3181,3 +3181,15 @@ Final Tranche 8 first-group follow-through, after 8.6 acceptance and before
 The new owner composes the accepted kernels; status never executes them.
 Independent runs use four single-thread workers; the user permits up to twelve
 when useful. No all-ten, ATC, scientific-authority or public support promotion.
+
+### P9-9.2 — bounded disabled-delegate evidence
+
+Expose the four selected families' sixteen independent surface results and
+all twenty-four unselected cells. `tranche9_compatibility_status` and the
+`/api/tranche9/compatibility` route authenticate retained source-bound results;
+the source endpoint is restricted to indexed repository-relative records.
+Browser **Check sixteen delegate cells** and notebook expose the matrix,
+bounded acceptance recorded and absence of actual crossings/full conformance. Current
+next-work projection is P9-9.3 reconciliation, then P9-9.4.
+This is exact unchanged native delegate execution, not new scientific authority
+or a rerun of Tranche 8 numerical campaigns.

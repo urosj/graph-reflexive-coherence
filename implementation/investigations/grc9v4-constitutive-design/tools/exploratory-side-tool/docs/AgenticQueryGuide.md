@@ -851,3 +851,13 @@ repository-relative sources. `/api/tranche9` and the Phase 9 browser/notebook
 provide the same view. These queries do not rerun kernels, grant acceptance,
 or settle the sixteen pending disabled-compatibility cells. For scientific
 authority continue using the typed forensic API and its support dispositions.
+
+### P9-9.2 disabled compatibility
+
+Use `grcv4_explorer.tranche9.tranche9_compatibility_status(repo_root)` or
+`GET /api/tranche9/compatibility` for all forty cells: sixteen native delegate
+results bounded acceptance recorded, twenty-four unselected. Sources are accessible
+through `tranche9_compatibility_source` / `/api/tranche9/compatibility/source`.
+These checks authenticate retained evidence without rerunning native execution.
+Explicit disabled seeds do not establish an enabled/disabled crossing; that
+work remains P9-9.4. The browser and verification notebook expose the same scope.

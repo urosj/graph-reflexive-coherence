@@ -1,6 +1,36 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — P9-9.1b bounded acceptance (2026-10-27)
+## Current checkpoint — P9-9.2 bounded delegate acceptance (2026-10-27)
+
+Branch `work/p9-9-first-group`. Bounded 9.1b acceptance was committed as
+`416b3dd9` before any 9.2 implementation. The sixteen selected C_OS/C_CI/A_CI/A_PC
+component cells now pass, plus two shared boundary/descriptor controls. Four
+family suites ran in parallel against the unchanged native GRC9V3 target.
+[Review and reproduction](./phase-9-grcv4/tranche-9/P9-9.2-Review.md) distinguishes
+exact delegate compatibility from a numerical proof and from actual crossings.
+
+Seven Python surface/integrity checks and four browser tests pass. The direct
+current-boundary check passes (703 protected baseline files, 338 runtime files,
+47.0 s); final text-only bindings are refreshed separately.
+
+Bounded-accepted by the user on 2026-10-27; [decision](./phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json). The API `/api/tranche9/compatibility`, browser
+**Check sixteen delegate cells**, indexed source endpoint and notebook show
+16 bounded-accepted/24 unselected slots. Checking retained records does not rerun
+native steps. The four family records exceed 1 MB raw and are retained as `.json.xz`
+(about 28 KB each); small records remain JSON. Exact signed-zero, native reset-clock and prune-noop semantics
+are retained. No old-version source, accepted evidence or scientific law changed.
+
+Next: P9-9.3 matrix reconciliation, then P9-9.4a
+actual enabled/disabled crossings (including source-history mapping, entry/loss
+receipts and both-role admission) and P9-9.4b public `GRC9V4(GRCV4)` API
+integration. P9-9.5 must exercise conflict rejection through that public API;
+P9-9.6 requires the integrated public surface before bounded support review.
+P9-10.4 publishes its discovery/example, rather than first implementing it.
+Optional completion/hierarchy and six other families stay
+unselected; full GRC9V4 conformance remains ungranted. Preserve the CI resolution
+and pointwise A_PC effect/error limits. No fresh large-graph campaign is needed.
+
+## Previous checkpoint — P9-9.1b bounded acceptance (2026-10-27)
 
 Branch `work/p9-9-first-group`, from accepted Tranche 8 closeout `3684bd02`.
 Selected families remain **C_OS, C_CI, A_CI, A_PC**. No additional family is
