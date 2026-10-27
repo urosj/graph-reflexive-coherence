@@ -1,5 +1,52 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current checkpoint — bounded first-group Tranche 8 accepted and closed (2026-10-27)
+
+Branch `work/p9-8-6-first-group`, from accepted 8.5 merge `df63d441`.
+The user accepted **P9-8.6 for C_OS, C_CI, A_CI and A_PC**.
+[Acceptance](./phase-9-grcv4/tranche-8/P9-8.6-FirstGroupAcceptance.json) pins
+four unchanged family reviews and their unchanged combined decision. The outer
+CLI/API/browser projection reflects acceptance; old execution flags do not change.
+
+The [final Tranche 8 reviews](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupEndResults.md)
+are accepted by the user, closing Tranche 8 for these four families.
+[Closeout acceptance](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json)
+pins both reviews and the 8.6 acceptance. They reused accepted scientific
+results, with no new native steps or oracle campaign:
+
+- C_CI: smaller accepted native joint roots have resolved fixed-geometry path
+  controls. The large first-pass/reference-geometry resolution limit remains.
+- A_CI: all four staged companions link to native full-point/geometry/primitive
+  evidence, two-pass stopping and final-C/W reconstruction. No all-coordinate
+  or postbeat-trajectory discrimination claim.
+- A_PC: same-coordinate effect/error ratios are 9.27/14.23 at step one and
+  160.21/50.84 at step ten, current/reset respectively. Retain pointwise scope;
+  nearby-input testing is not applicable without a wider domain claim.
+- Performance: existing cache keys, ownership, bounds and rejection parity
+  reviewed; actual small/large pre/post-event graph metadata measured. Existing
+  worker retention helps large repeated schema validation. 8.6 status/source
+  requests remain about 4.3–4.4 seconds with fresh authentication. No new cache.
+
+The first metadata attempt hit 240 seconds with no retained report. It has no
+accepted result or retained failed-session dump. The narrowed measurement
+completed with coarse timers and fewer redundant payload cases. Do not rerun
+native campaigns for this review. All new records are below 1 MB.
+
+Side-tool: `checkpoint=8.6` exposes scoped acceptance. The separate
+`tranche8_end_reviews(repo_root)` / **Check final reviews** / final notebook cell
+exposes the pinned mechanism/performance records and indexed sources. Review
+status is distinct from 8.6 acceptance, public support and all-ten closure.
+Twenty focused Python tests and three browser tests pass. The direct
+`phase9_implementation_policy.current_boundary` check passed in 47.287 seconds:
+703 protected baseline files and 334 registered runtime files. Result-note
+updates only are followed by a maintenance-roster/binding recheck; runtime
+sources and numerical evidence are unchanged. This is a completed direct
+current-boundary check, not a retrospective pass for the old interrupted wrapper.
+
+Next: scoped Tranche 9 planning. No Tranche 9 work has begun, and the six other
+families keep their own open obligations. The user requested one commit and a
+fast-forward merge into `main`; no merge commit is required for this checkpoint.
+
 ## Accepted checkpoint — P9-8.5 first group (2026-10-26)
 
 Branch `work/p9-8-5-first-group`, based on first-group 8.4 no-ff merge

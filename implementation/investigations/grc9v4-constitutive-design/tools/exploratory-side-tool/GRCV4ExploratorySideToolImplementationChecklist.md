@@ -2563,3 +2563,22 @@ instead of stale fixed totals and opens any pending case details explicitly.
   are accepted on 2026-10-26; all-ten 8.5 remains open. Execution is separate from retained validation.
   Preserve exact historical C_OS source access, current-family bindings,
   separate owner ledgers and Tranche 9 public facade boundary.
+
+- [x] P9-8.6 first-group conformance CLI/API/browser selector and notebook.
+  Four parallel family reviews and shared authority/source reconciliation retain
+  bounded domains, exclusions and historical epochs. First-group acceptance
+  recorded on 2026-10-27, with original review records unchanged; no
+  all-ten, public support, G2/G3 or arbitrary-graph numerical promotion. Source
+  retrieval rejects ambiguous epochs until an individual family is selected.
+
+- [x] Final Tranche 8 first-group follow-through, after 8.6 acceptance and before
+  Tranche 9: consume the mechanism-evidence and performance/cache review results.
+  Keep CI accuracy distinct from resolved feedback, preserve existing A_CI
+  separation, and report A_PC relative effect/error scale without inferring
+  fragility from absolute size. Project only actually reviewed diagnostics or
+  sampled robustness; do not widen pointwise support or change 8.6 acceptance.
+  Completed 2026-10-27: `tranche8_end_reviews` / **Check final reviews** and the
+  final notebook cell expose pinned records, limitations and indexed sources.
+  Existing numerical evidence is reused; new execution is metadata-only.
+  Final reviews accepted on 2026-10-27; bounded first-group Tranche 8 is closed.
+  Other families remain open; no new machine gate or public support.

@@ -3688,10 +3688,37 @@ the full ten-profile plan.
   when its numerical prerequisites pass; preparation alone does not close them.
 - [ ] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
   covariance evidence passes.
-  - [ ] First-group decision after scoped 8.5; distinguish general mechanical
-    arguments from bounded numerical/lifecycle support and unresolved domains.
+  - [x] First-group conformance review completed in parallel for C_OS, C_CI,
+    A_CI and A_PC on 2026-10-27: [bounded decision](./phase-9-grcv4/tranche-8/P9-8.6-FirstGroupReview.md).
+    Exact subjects/horizons, all linked sources, lifecycle predecessors and
+    family exclusions checked; no numerical rerun or arbitrary-graph grant.
+  - [x] First-group P9-8.6 accepted by the user on 2026-10-27;
+    [acceptance](./phase-9-grcv4/tranche-8/P9-8.6-FirstGroupAcceptance.json). General mechanical authority is
+    separate from bounded numerical support; public/disabled lifecycle remains open.
   - [ ] Remaining six families and all-ten decision.
-- [ ] End-of-Tranche-8 performance/cache review (after P9-8.6, before Tranche 9).
+- [x] End-of-Tranche-8 first-group mechanism-evidence review (after scoped
+  8.6 acceptance, before Tranche 9; added 2026-10-27).
+  [Scope and finish line](./Phase-9-GRCV4-ImplementationPlan.md#end-of-tranche-8-mechanism-evidence-review).
+  - [x] Inventory accepted C_CI/A_CI/A_PC native mechanism evidence and lawful
+    controls by exact subject, role, stage, observable and independent error bound;
+    reuse adequate evidence. C_OS is an existing reference, not a new campaign.
+  - [x] C_CI: distinguish admitted joint-root accuracy from resolved feedback;
+    if existing evidence is insufficient for the named mechanism claim, declare
+    and check one bounded native diagnostic with a lawful mechanism control.
+  - [x] A_CI: connect already separated coordinates/off-diagonal feedback to
+    native joint-root/stopping/continuation evidence; add only a missing-link
+    diagnostic. No requirement for all-coordinate or all-diagonal visibility.
+  - [x] A_PC: quantify effect/error separation and relative scale from retained
+    baseline step-one/step-ten evidence; distinguish small absolute margins
+    from demonstrated fragility. Handle zero-error ratios explicitly.
+  - [x] A_PC scope disposition: retain pointwise support, or predeclare and
+    execute a small nearby-input set if broader support is intended. Record
+    non-applicability explicitly if no wider domain is claimed; finite samples
+    are not a uniform neighborhood proof.
+  - [x] Record family conclusions, remaining claim limits and side-tool links;
+    preserve original exclusions and acceptance. No tolerance relaxation,
+    silent fallback, full-campaign repeat or new runtime gate.
+- [x] End-of-Tranche-8 performance/cache review (after P9-8.6, before Tranche 9).
   User-requested on 2026-10-02. Profile the integrated paths and review graph
   envelope/identity repetition plus other reusable derived work. Require an
   explicit validity argument for each cache's owner, complete key, lifetime,
@@ -3702,6 +3729,19 @@ the full ten-profile plan.
   [Scope and proof obligations](./Phase-9-GRCV4-ImplementationPlan.md#end-of-tranche-8-performance-and-cache-review).
   This schedules review; implementation stays with the applicable existing
   work owners and introduces no new machine gate or conformance claim.
+  Completed for the bounded four families on 2026-10-27:
+  [final results](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupEndResults.md).
+  Existing C_CI path controls and A_CI native linkage suffice; A_PC effect/error
+  ratios remain pointwise, so no wider-input campaign applies. No new cache,
+  production code or numerical trajectories. Final reviews accepted on 2026-10-27.
+- [x] Both final-review dispositions and the applicable current implementation
+  boundary are recorded: direct `current_boundary` passes on 2026-10-27
+  (703 protected baseline files, 334 registered runtime files, 47.287 s).
+  Final documentation-only bindings rechecked; no native campaign repeated.
+  The old interrupted full wrapper remains uncompleted.
+- [x] Bounded first-group Tranche 8 accepted and closed by the user on 2026-10-27:
+  C_OS, C_CI, A_CI and A_PC. [Closeout acceptance](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json).
+  The remaining six families and all-ten parent stay open; Tranche 9 is next.
 
 ## Tranche 9. Hybrid completion and disabled compatibility
 

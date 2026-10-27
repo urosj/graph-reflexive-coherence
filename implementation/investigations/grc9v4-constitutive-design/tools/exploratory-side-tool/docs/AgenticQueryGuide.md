@@ -812,3 +812,31 @@ the original digest verified before projection. `execution_metadata_sources`
 explicitly maps that source to the indexed snapshot; current numerical/runtime
 source checks are not waived. Each selected API check runs in an isolated
 metadata worker so historical adapters cannot affect parallel family queries.
+
+### P9-8.6 bounded conformance decision
+
+Use `tranche8_status(repo_root, family="first_group", checkpoint="8.6")`, or
+select C_OS, C_CI, A_CI or A_PC. The **Check 8.6 conformance** browser selector
+and notebook use the same retained endpoint. The result is bounded conformance
+accepted for the first group; all-ten closure remains false. Source hashes,
+exact subjects, numerical limits and accepted lifecycle predecessors are checked;
+no native trajectories or independent numerical proofs are rerun. For indexed
+sources with multiple historical revisions, select an individual family rather
+than an ambiguous first-group source. The historical 8.4i/8.5 views keep their
+own decisions; 8.6 neither rewrites those nor grants public support.
+
+The first-group 8.6 projection includes the separate user acceptance dated
+2026-10-27. The original decision retains its pre-acceptance flags; the outer
+projection is accepted only against the pinned acceptance record.
+
+### Final Tranche 8 first-group reviews
+
+`from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source`
+
+Call `tranche8_end_reviews(repo_root)` or use **Check final reviews** in the
+browser and the final notebook cell. The API authenticates pinned mechanism
+and performance records plus their sources without numerical execution.
+`tranche8_end_source(repo_root, path)` serves only a listed repository-relative
+source. The final reviews are accepted, closing bounded first-group Tranche 8 on
+2026-10-27; the projection includes their pinned acceptance separately from 8.6. Smaller C_CI path discrimination does not remove the large-run
+resolution limit, and A_PC ratios do not grant a robust parameter neighborhood.

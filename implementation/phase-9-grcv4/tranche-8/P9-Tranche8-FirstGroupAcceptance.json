@@ -1,0 +1,38 @@
+{
+  "schema": "tranche8-first-group-acceptance-v1",
+  "accepted_on": "2026-10-27",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "first_group_closed": true,
+  "aggregate_closed": false,
+  "review_digests": {
+    "mechanisms": "1760ea5359c49cc577d5240fb4c0d4d8fafb283a55b3a12d63a62078b779f694",
+    "performance": "2fa86400134184bf4677d2666dcdb59364347b6d6eb36ead04f58361cab4a1f9"
+  },
+  "conformance_acceptance_digest": "45e4b5bdabcc2027bce69036ff710861d5e10f865deff7665f9f66500fdbd01c",
+  "remaining_families": [
+    "A_OS",
+    "C_PC",
+    "C_CI_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "limits": {
+    "arbitrary_graph_numerical_admission": false,
+    "uniform_trajectory_enclosure": false,
+    "exact_stored_resource_conservation": false,
+    "public_specialization_facade": false,
+    "general_ATC": false,
+    "new_G2_G3_support": false,
+    "all_ten_closed": false,
+    "current_runtime_conformance_inferred": false
+  },
+  "scope": "Accepted bounded first-group Tranche 8 closeout, including final mechanism and performance reviews; no Tranche 9 execution or all-ten closure.",
+  "record_digest": "9b177f90bc5c38deea9769aca98fc16d9f6c0c10dc6ccc3b92583a3faa8f697c"
+}

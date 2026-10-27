@@ -2843,6 +2843,9 @@ def family_status(root, family, checkpoint="8.4c"):
     """Selected checkpoint/family only; not full-index or boundary validity."""
     import importlib
     import phase9_implementation_policy as policy
+    if checkpoint=='8.6':
+        from p986_acceptance import status
+        return status(root,family)
     if checkpoint=='8.5':
         from p985_status import view
         return view(root,family)
@@ -3037,10 +3040,15 @@ def main():
     parser.add_argument("action", choices=("status", "check", "verify-retained"), default="status", nargs="?")
     parser.add_argument("--family", choices=("A_OS", "C_OS", "C_CI", "A_CI", "C_PC", "A_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b", "first_group"))
     parser.add_argument("--recheck-numerics", action="store_true")
-    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d", "8.4e", "8.4f", "8.4g", "8.4h", "8.4i", "8.5"), default="8.4b")
+    parser.add_argument("--checkpoint", choices=("8.4b", "8.4c", "8.4d", "8.4e", "8.4f", "8.4g", "8.4h", "8.4i", "8.5", "8.6"), default="8.4b")
     parser.add_argument("--oracle", action="store_true", help="check A_OS or A_CI 8.4c independent oracle scope, not native execution")
     parser.add_argument("--preparation", action="store_true", help="check C_CI 8.4c target preparation, not a native campaign")
     args = parser.parse_args()
+    if args.checkpoint == '8.6':
+        require(args.family in ('first_group','C_OS','C_CI','A_CI','A_PC') and args.action=='status'
+            and not args.recheck_numerics and not args.oracle and not args.preparation,
+            '8.6 is retained conformance status only')
+        print(json.dumps(family_status(ROOT,args.family,args.checkpoint),indent=2));return
     if args.checkpoint == '8.5':
         require(args.family in ('C_OS','C_CI','A_CI','A_PC') and args.action=='status' and not args.recheck_numerics
             and not args.oracle and not args.preparation,'8.5 is selected retained lifecycle status only')

@@ -1,0 +1,668 @@
+{
+  "schema": "tranche8-first-group-performance-review-v1",
+  "date": "2026-10-27",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "new_native_steps": 0,
+  "new_native_events": 0,
+  "new_cache_implementation": false,
+  "metadata_measurements": [
+    {
+      "size": "small_C_CI",
+      "state": "initial",
+      "kind": "port_graph",
+      "canonical_bytes": 964,
+      "modes": {
+        "fresh": {
+          "first_seconds": 0.04540139899836504,
+          "repeat_seconds": 0.004026361999422079,
+          "memo_entries": 0
+        },
+        "default": {
+          "first_seconds": 0.0027081520020146854,
+          "repeat_seconds": 0.0012580769980559126,
+          "memo_entries": 1
+        },
+        "worker_8x4MiB": {
+          "first_seconds": 0.002715693997743074,
+          "repeat_seconds": 0.0012911820012959652,
+          "memo_entries": 1
+        }
+      },
+      "identity": "grc-graph-sha256:cddd6d4753e36177f472d6a81f0b0a3d2224044ba29bcfe71c68a79f642355a2",
+      "all_modes_identical": true
+    },
+    {
+      "size": "small_C_CI",
+      "state": "initial",
+      "kind": "K4",
+      "canonical_bytes": 233,
+      "modes": {
+        "fresh": {
+          "first_seconds": 0.0029069240008539055,
+          "repeat_seconds": 0.002159327999834204,
+          "memo_entries": 0
+        },
+        "default": {
+          "first_seconds": 0.002165054000215605,
+          "repeat_seconds": 0.0003051429994229693,
+          "memo_entries": 1
+        },
+        "worker_8x4MiB": {
+          "first_seconds": 0.002145638001820771,
+          "repeat_seconds": 0.00031555000168737024,
+          "memo_entries": 1
+        }
+      },
+      "identity": "grcv4-k4-sha256:8fef0317e52488f0938026de96b49d8a5275fb51f2a923c8ec3302bb13f24be0",
+      "all_modes_identical": true
+    },
+    {
+      "size": "small_C_CI",
+      "state": "state",
+      "kind": "port_graph",
+      "canonical_bytes": 5128,
+      "modes": {
+        "fresh": {
+          "first_seconds": 0.006641274001594866,
+          "repeat_seconds": 0.006483708999439841,
+          "memo_entries": 0
+        },
+        "default": {
+          "first_seconds": 0.004231631002767244,
+          "repeat_seconds": 0.0018111610006599221,
+          "memo_entries": 1
+        },
+        "worker_8x4MiB": {
+          "first_seconds": 0.004183858000033069,
+          "repeat_seconds": 0.0018437780017848127,
+          "memo_entries": 1
+        }
+      },
+      "identity": "grc-graph-sha256:860ca094efb52ffaf184096fad9d5fca9cea13006d794b6bd8ca03a6ce527f40",
+      "all_modes_identical": true
+    },
+    {
+      "size": "large_A_PC",
+      "state": "initial",
+      "kind": "port_graph",
+      "canonical_bytes": 42278,
+      "modes": {
+        "fresh": {
+          "first_seconds": 0.20387655000013183,
+          "repeat_seconds": 0.14083602400205564,
+          "memo_entries": 0
+        },
+        "default": {
+          "first_seconds": 0.142350981997879,
+          "repeat_seconds": 0.14194931800011545,
+          "memo_entries": 0
+        },
+        "worker_8x4MiB": {
+          "first_seconds": 0.08841913500145893,
+          "repeat_seconds": 0.03439215999969747,
+          "memo_entries": 1
+        }
+      },
+      "identity": "grc-graph-sha256:64250b0d8b08f50c6a4a1c3674e5b44d971ce9e79f2acacd564c28fd0a71e350",
+      "all_modes_identical": true
+    },
+    {
+      "size": "large_A_PC",
+      "state": "initial",
+      "kind": "K4",
+      "canonical_bytes": 320853,
+      "modes": {
+        "fresh": {
+          "first_seconds": 3.450193800999841,
+          "repeat_seconds": 3.4369746709999163,
+          "memo_entries": 0
+        },
+        "default": {
+          "first_seconds": 3.419581531001313,
+          "repeat_seconds": 3.384190132997901,
+          "memo_entries": 0
+        },
+        "worker_8x4MiB": {
+          "first_seconds": 3.4288065699984145,
+          "repeat_seconds": 0.09188996900047641,
+          "memo_entries": 1
+        }
+      },
+      "identity": "grcv4-k4-sha256:7affc918338383e529e2738e803e146d0dc1b3d7b6056d38f22a933b2b99d60c",
+      "all_modes_identical": true
+    },
+    {
+      "size": "large_A_PC",
+      "state": "state",
+      "kind": "port_graph",
+      "canonical_bytes": 46462,
+      "modes": {
+        "fresh": {
+          "first_seconds": 0.15256394400057616,
+          "repeat_seconds": 0.15112420600053156,
+          "memo_entries": 0
+        },
+        "default": {
+          "first_seconds": 0.15253935999862733,
+          "repeat_seconds": 0.15309474899913766,
+          "memo_entries": 0
+        },
+        "worker_8x4MiB": {
+          "first_seconds": 0.093569128002855,
+          "repeat_seconds": 0.03445411099892226,
+          "memo_entries": 1
+        }
+      },
+      "identity": "grc-graph-sha256:03a37aba309a34d900e04a3aaa51ce97b1dabbbd73658dc62b94c5c21fc9478e",
+      "all_modes_identical": true
+    }
+  ],
+  "pressure": [
+    {
+      "mode": "fresh",
+      "changed_key_distinguished": true,
+      "invalid_boolean_rejected": true
+    },
+    {
+      "mode": "worker_8x4MiB",
+      "changed_key_distinguished": true,
+      "invalid_boolean_rejected": true
+    }
+  ],
+  "status": {
+    "first": {
+      "wall_seconds": 4.362796408997383,
+      "components": {
+        "json_decode": {
+          "calls": 16,
+          "inclusive_seconds": 0.8109622369847784
+        },
+        "json_encode": {
+          "calls": 27,
+          "inclusive_seconds": 0.5733592659962596
+        },
+        "source_authentication": {
+          "calls": 580,
+          "inclusive_seconds": 0.6733457459959027
+        },
+        "decompression": {
+          "calls": 4,
+          "inclusive_seconds": 0.06374307200167095
+        },
+        "checkpoint_canonicalization": {
+          "calls": 4,
+          "inclusive_seconds": 2.1299132599997392
+        }
+      },
+      "inclusive_times_overlap": true,
+      "profiled_call": true,
+      "instrumentation": "coarse call timers; no scalar/function tracing"
+    },
+    "repeat_wall_seconds": 4.3652278459994704,
+    "identical": true,
+    "meaning": "fresh process-local first call versus warm repeat; no status-result cache",
+    "source": {
+      "wall_seconds": 4.301312053998117,
+      "components": {
+        "json_decode": {
+          "calls": 15,
+          "inclusive_seconds": 0.792438411997864
+        },
+        "json_encode": {
+          "calls": 26,
+          "inclusive_seconds": 0.5577425039991795
+        },
+        "source_authentication": {
+          "calls": 581,
+          "inclusive_seconds": 0.6457064719761547
+        },
+        "decompression": {
+          "calls": 4,
+          "inclusive_seconds": 0.047888148998026736
+        },
+        "checkpoint_canonicalization": {
+          "calls": 4,
+          "inclusive_seconds": 2.162665169002139
+        }
+      },
+      "inclusive_times_overlap": true,
+      "profiled_call": true,
+      "instrumentation": "coarse call timers; no scalar/function tracing"
+    }
+  },
+  "retained_native": {
+    "scope": "same_source_current_read_cold_and_warm_not_event",
+    "baseline_seconds": 141.00996253300036,
+    "comparisons": [
+      {
+        "name": "cold",
+        "elapsed_seconds": 141.96010706299967,
+        "baseline_parity": true,
+        "scientific_view_digest": "ea4eb923c28dd15790e10d4d598004e2f636df883dd5d9917af3d3de068a5a70"
+      },
+      {
+        "name": "warm",
+        "elapsed_seconds": 86.00755435000065,
+        "baseline_parity": true,
+        "scientific_view_digest": "ea4eb923c28dd15790e10d4d598004e2f636df883dd5d9917af3d3de068a5a70"
+      }
+    ],
+    "scalar_seconds": 133.92020918300022,
+    "scalar_baseline_parity": true
+  },
+  "generic_grid_comparisons": [
+    {
+      "path": "implementation/evidence/grcv4-performance/grid_transport_a_primitive_reuse_comparison.json",
+      "scope": "historical generic grid comparison, not a GRC9V4 timing claim",
+      "grid": {
+        "rows": 4,
+        "cols": 5,
+        "nodes": 20,
+        "edges": 31,
+        "steps": 5
+      },
+      "method": "Compare earlier a857940 shared-solve cache with current primitive-owned reuse, five evolving strict public steps per case with identical declarations. One sequential local run per setting. Step timing excludes declaration, unscoped constructor work and snapshots. New timings include a light fact lookup counter (not cProfile). Source hashes identify the modified runtime. Numerical counts cover scoped inverse and conditioning requests only. Their misses are actual computations; hits reuse existing facts. Old reports measured only combined solve preparations, so their volume counts are not directly comparable to these complete primitive counts.",
+      "comparisons": [
+        {
+          "family": "A_CI",
+          "previous_step_seconds": 153.38398734902148,
+          "primitive_step_seconds": 117.10001074199681,
+          "additional_speedup": 1.3098545967426778,
+          "additional_time_reduction_percent": 23.655648307317357,
+          "previous_steps": [
+            26.783437264995882,
+            32.23822998200194,
+            30.665607828006614,
+            33.79463938000845,
+            29.902072894008597
+          ],
+          "primitive_steps": [
+            19.373719514987897,
+            25.73273717900156,
+            25.38210453398642,
+            23.30638663400896,
+            23.305062880011974
+          ],
+          "previous_setup_seconds": 42.98219908500323,
+          "primitive_setup_seconds": 42.365951630985364,
+          "numerical_fact_counts": {
+            "inverse_requests": 1035,
+            "inverse_hits": 916,
+            "inverse_misses": 119,
+            "conditioning_requests": 105,
+            "conditioning_hits": 86,
+            "conditioning_misses": 19
+          },
+          "scope_counts": [
+            {
+              "inverse_requests": 207,
+              "inverse_hits": 184,
+              "inverse_misses": 23,
+              "conditioning_requests": 21,
+              "conditioning_hits": 18,
+              "conditioning_misses": 3
+            },
+            {
+              "inverse_requests": 207,
+              "inverse_hits": 183,
+              "inverse_misses": 24,
+              "conditioning_requests": 21,
+              "conditioning_hits": 17,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 207,
+              "inverse_hits": 183,
+              "inverse_misses": 24,
+              "conditioning_requests": 21,
+              "conditioning_hits": 17,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 207,
+              "inverse_hits": 183,
+              "inverse_misses": 24,
+              "conditioning_requests": 21,
+              "conditioning_hits": 17,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 207,
+              "inverse_hits": 183,
+              "inverse_misses": 24,
+              "conditioning_requests": 21,
+              "conditioning_hits": 17,
+              "conditioning_misses": 4
+            }
+          ],
+          "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+          "final_snapshot_sha256": "31888194381ab684f66c627dd3a3a4642ea2d4153b56454ff4a18ef0a3d37ce0",
+          "previous_report": "grid_transport_a_ci_4x5_5.json",
+          "primitive_report": "grid_transport_a_ci_4x5_5_primitive_reuse.json"
+        },
+        {
+          "family": "A_PC",
+          "previous_step_seconds": 72.23688853200292,
+          "primitive_step_seconds": 71.61081417402602,
+          "additional_speedup": 1.0087427348117484,
+          "additional_time_reduction_percent": 0.8666961862560552,
+          "previous_steps": [
+            7.715395420993445,
+            18.327890816988656,
+            16.93483590800315,
+            14.239024731010431,
+            15.019741655007238
+          ],
+          "primitive_steps": [
+            7.706537468009628,
+            17.5455814889865,
+            17.149906008999096,
+            14.4911588030227,
+            14.717630405008094
+          ],
+          "previous_setup_seconds": 1.0490308919979725,
+          "primitive_setup_seconds": 0.9335149010003079,
+          "numerical_fact_counts": {
+            "inverse_requests": 315,
+            "inverse_hits": 201,
+            "inverse_misses": 114,
+            "conditioning_requests": 15,
+            "conditioning_hits": 1,
+            "conditioning_misses": 14
+          },
+          "scope_counts": [
+            {
+              "inverse_requests": 63,
+              "inverse_hits": 41,
+              "inverse_misses": 22,
+              "conditioning_requests": 3,
+              "conditioning_hits": 1,
+              "conditioning_misses": 2
+            },
+            {
+              "inverse_requests": 63,
+              "inverse_hits": 40,
+              "inverse_misses": 23,
+              "conditioning_requests": 3,
+              "conditioning_hits": 0,
+              "conditioning_misses": 3
+            },
+            {
+              "inverse_requests": 63,
+              "inverse_hits": 40,
+              "inverse_misses": 23,
+              "conditioning_requests": 3,
+              "conditioning_hits": 0,
+              "conditioning_misses": 3
+            },
+            {
+              "inverse_requests": 63,
+              "inverse_hits": 40,
+              "inverse_misses": 23,
+              "conditioning_requests": 3,
+              "conditioning_hits": 0,
+              "conditioning_misses": 3
+            },
+            {
+              "inverse_requests": 63,
+              "inverse_hits": 40,
+              "inverse_misses": 23,
+              "conditioning_requests": 3,
+              "conditioning_hits": 0,
+              "conditioning_misses": 3
+            }
+          ],
+          "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+          "final_snapshot_sha256": "2f80ec318796d7730fbdd49dc57d109442401ad926f36fd1cdf4211e8708734a",
+          "previous_report": "grid_transport_a_pc_4x5_5.json",
+          "primitive_report": "grid_transport_a_pc_4x5_5_primitive_reuse.json"
+        },
+        {
+          "family": "A_CI_PC",
+          "previous_step_seconds": 161.75006183699588,
+          "primitive_step_seconds": 129.45278749099816,
+          "additional_speedup": 1.2494907600830425,
+          "additional_time_reduction_percent": 19.967395362448393,
+          "previous_steps": [
+            28.41286801599199,
+            36.28230048401747,
+            34.691324548999546,
+            35.72548837901559,
+            26.63808040897129
+          ],
+          "primitive_steps": [
+            21.54660509401583,
+            28.47234799398575,
+            27.376427223993232,
+            29.054148410010384,
+            23.003258768992964
+          ],
+          "previous_setup_seconds": 53.688701584003866,
+          "primitive_setup_seconds": 52.36307238100562,
+          "numerical_fact_counts": {
+            "inverse_requests": 1311,
+            "inverse_hits": 1193,
+            "inverse_misses": 118,
+            "conditioning_requests": 102,
+            "conditioning_hits": 84,
+            "conditioning_misses": 18
+          },
+          "scope_counts": [
+            {
+              "inverse_requests": 267,
+              "inverse_hits": 244,
+              "inverse_misses": 23,
+              "conditioning_requests": 21,
+              "conditioning_hits": 18,
+              "conditioning_misses": 3
+            },
+            {
+              "inverse_requests": 267,
+              "inverse_hits": 243,
+              "inverse_misses": 24,
+              "conditioning_requests": 21,
+              "conditioning_hits": 17,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 267,
+              "inverse_hits": 243,
+              "inverse_misses": 24,
+              "conditioning_requests": 21,
+              "conditioning_hits": 17,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 267,
+              "inverse_hits": 243,
+              "inverse_misses": 24,
+              "conditioning_requests": 21,
+              "conditioning_hits": 17,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 243,
+              "inverse_hits": 220,
+              "inverse_misses": 23,
+              "conditioning_requests": 18,
+              "conditioning_hits": 15,
+              "conditioning_misses": 3
+            }
+          ],
+          "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+          "final_snapshot_sha256": "da0885c4415b58073f39607e7344073ddf794f760975f89285e0af706d27012e",
+          "previous_report": "grid_transport_a_ci_pc_4x5_5.json",
+          "primitive_report": "grid_transport_a_ci_pc_4x5_5_primitive_reuse.json"
+        },
+        {
+          "family": "A_RG2b",
+          "previous_step_seconds": 224.29556886199862,
+          "primitive_step_seconds": 202.08968773603556,
+          "additional_speedup": 1.1098813174226279,
+          "additional_time_reduction_percent": 9.900276335653146,
+          "previous_steps": [
+            33.844969080993906,
+            48.31498273299076,
+            46.55278168799123,
+            47.30199230101425,
+            48.280843059008475
+          ],
+          "primitive_steps": [
+            30.0530214169994,
+            41.57651760498993,
+            43.35421208900516,
+            44.35784192601568,
+            42.74809469902539
+          ],
+          "previous_setup_seconds": 26.543460239015985,
+          "primitive_setup_seconds": 29.67758771701483,
+          "numerical_fact_counts": {
+            "inverse_requests": 1100,
+            "inverse_hits": 981,
+            "inverse_misses": 119,
+            "conditioning_requests": 65,
+            "conditioning_hits": 46,
+            "conditioning_misses": 19
+          },
+          "scope_counts": [
+            {
+              "inverse_requests": 220,
+              "inverse_hits": 197,
+              "inverse_misses": 23,
+              "conditioning_requests": 13,
+              "conditioning_hits": 10,
+              "conditioning_misses": 3
+            },
+            {
+              "inverse_requests": 220,
+              "inverse_hits": 196,
+              "inverse_misses": 24,
+              "conditioning_requests": 13,
+              "conditioning_hits": 9,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 220,
+              "inverse_hits": 196,
+              "inverse_misses": 24,
+              "conditioning_requests": 13,
+              "conditioning_hits": 9,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 220,
+              "inverse_hits": 196,
+              "inverse_misses": 24,
+              "conditioning_requests": 13,
+              "conditioning_hits": 9,
+              "conditioning_misses": 4
+            },
+            {
+              "inverse_requests": 220,
+              "inverse_hits": 196,
+              "inverse_misses": 24,
+              "conditioning_requests": 13,
+              "conditioning_hits": 9,
+              "conditioning_misses": 4
+            }
+          ],
+          "full_inputs_backend_states_receipt_counts_and_snapshot_digests_match": true,
+          "final_snapshot_sha256": "33a0b518e752c1b30090767046a40a24b1d7ec7c7938d8de632ece57bccc04ff",
+          "previous_report": "grid_transport_a_rg2b_4x5_5.json",
+          "primitive_report": "grid_transport_a_rg2b_4x5_5_primitive_reuse.json"
+        }
+      ]
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/grid_transport_matrix_reuse_comparison.json",
+      "scope": "historical generic grid comparison, not a GRC9V4 timing claim",
+      "grid": null,
+      "method": "Single fresh sequential unprofiled processes on unchanged declarations, public admission and publication with ordinary strict validation. No concurrent numerical workloads. First three cases compare saved pre-change samples; fourth is the same modified runtime with a test-only lookup-miss mock. Timing variation prevents treating these as statistical speedup estimates. Source hashes identify the uncommitted implementation.",
+      "comparisons": null
+    }
+  ],
+  "source_refs": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3C-CI-Validation.json",
+      "sha256": "f722e08c03ec73595b1b16ad6fb8b908dde9d5505731f2e3fbe9b164398ad296",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-APC-event.json.xz",
+      "sha256": "2e6eae7bc5b54bc54669491fa56afde311b2c01b655a347fe2145c5bfd4d5328",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSSolveReuse.json.xz",
+      "sha256": "560defe685be0f4355e4cfe0e2941be2ba933d712c24977b5a623dbf0cf4292b",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-COSScalarReuse.json.xz",
+      "sha256": "00b0245298e332860b54d209689cdc17e9cb882cfc587b80136bced51e39cbd2",
+      "revision": null
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/grid_transport_a_primitive_reuse_comparison.json",
+      "sha256": "005d737449f69331eecfd5449b5d3e60884c62fe2b9771eb75b44aec1aa31d3b",
+      "revision": null
+    },
+    {
+      "path": "implementation/evidence/grcv4-performance/grid_transport_matrix_reuse_comparison.json",
+      "sha256": "590508eb3a8e14cd53ed8c3f1f8d1041d75df9631f1e9381f4895f35ee79f444",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/tranche8_end_performance.py",
+      "sha256": "8daa4cf8858b1e0487491af2d489ce661654804fb1bba5105973b5a6ad5da36a",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupEndReview.md",
+      "sha256": "d3dc25b8f4a9d488de261b8a5103aa028c575a894327f6be95b03d53b9f81a56",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984h_validation_reuse.py",
+      "sha256": "bd4382424b67418057266223b760dc484f2166d32775e2f6a4833ac92311419e",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984h_validation_reuse.py",
+      "sha256": "ff510666fd41cf7f56b352e6c922978619fbf2cee73c6b3cc70487886c0ffb89",
+      "revision": null
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4",
+      "revision": null
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p986_acceptance.py",
+      "sha256": "beddf8dd8342a36a6fead989d53dd49b29743270008b2fb2080d0b59d66b01e5",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/tranche8_evidence.py",
+      "sha256": "fb1d8cf0b0815cd5c01b61e02db55834da20199bf6c58747e35603b9266f8ab9",
+      "revision": null
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche8.py",
+      "sha256": "4ec67fe8ec56d23d09a9f88225808c56bd9bf3302b8500aa6d80fe7129a11588",
+      "revision": null
+    }
+  ],
+  "disposition": "No new cache. Preserve exact operation-local numerical facts and explicit research-only schema memo. Public integrated-operation tuning belongs with Tranche 9 callers; read-only source authentication remains fresh.",
+  "record_digest": "2fa86400134184bf4677d2666dcdb59364347b6d6eb36ead04f58361cab4a1f9"
+}

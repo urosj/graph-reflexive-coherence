@@ -1,0 +1,103 @@
+{
+  "schema": "p986-shared-prerequisites-v1",
+  "handoff_digest": "f48d1cc06f8ffdf02285cb158e7e1f3315c75eed1b70a440400688d1022d5822",
+  "lifecycle_acceptance_digest": "64f102670b4a46d0310ac2d2b2f6eca819dafb24203019408fe4e3d2ce42045c",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "shared_source_count": 429,
+  "atomic_failure_vectors": [
+    {
+      "id": "G9-FAIL-MISSING-CHIRALITY",
+      "jcs_sha256": "890eaf61bd8d13cf35cf5daf862ea0ea1266d7bdfd23f7cc72692f511e16b06a",
+      "owner": "P9-8.5",
+      "disposition": "outside_P984_runtime_atomicity_campaign"
+    },
+    {
+      "id": "G9-FAIL-MISSING-ACTIVE-PHASE",
+      "jcs_sha256": "ed355eb5a71cda0f1a05afb52022ac710aa44e794a4d637c58c1ef28d2fd7ec1",
+      "owner": "P9-8.5",
+      "disposition": "outside_P984_runtime_atomicity_campaign"
+    },
+    {
+      "id": "G9-FAIL-NONCANONICAL-INACTIVE-PHASE",
+      "jcs_sha256": "f0b1a78f9f2b009c282f6a1071a8dec46c913732d4f70095634206e3fe7d3b93",
+      "owner": "P9-8.5",
+      "disposition": "outside_P984_runtime_atomicity_campaign"
+    },
+    {
+      "id": "G9-FAIL-SOURCE-SELF-LOOP",
+      "jcs_sha256": "061644fdadef877287d42efd170df12b1db13afd2d130e20aa3fa8e2537024a7",
+      "owner": "P9-8.5",
+      "disposition": "outside_P984_runtime_atomicity_campaign"
+    },
+    {
+      "id": "G9-FAIL-TARGET-READMISSION",
+      "jcs_sha256": "7dbaf7f3f7784606b20a040f089ee8b3407c75e343d016d57cf8861bab00ede7",
+      "owner": "P9-8.5",
+      "disposition": "outside_P984_runtime_atomicity_campaign"
+    }
+  ],
+  "authority_traces": [
+    {
+      "query": {
+        "contract_id": "D11-G9-EC-PORT-PLAN-DETERMINISM"
+      },
+      "trace_digest": "396bba5c313b43f8bab51c1f8c7800704847b23113fbcfeba1c4f3a4c6d6eceb"
+    },
+    {
+      "query": {
+        "contract_id": "D11-G9-EC-TREE-AND-CAPACITY"
+      },
+      "trace_digest": "96360f9b155ac5a3a15550cd126f3628b0a74e428b726b84851e57a2e273ea17"
+    },
+    {
+      "query": {
+        "contract_id": "D11-G9-EC-DIHEDRAL-COVARIANCE"
+      },
+      "trace_digest": "729830af7f201148a3585be54e5638f0a1760cc36c6c9618ff95116e32f32997"
+    },
+    {
+      "query": {
+        "contract_id": "D11-G9-EC-RESOURCE-DISTRIBUTION"
+      },
+      "trace_digest": "333da148d836e073a468bc1fffe2c2341e66a4f970981d93002a5032a28254e7"
+    },
+    {
+      "query": {
+        "contract_id": "D11-G9-EC-LIFECYCLE-READMISSION"
+      },
+      "trace_digest": "7de5da6b8cd676f15c7e9d7a4c684f008b3fb827cd4ce8fd1a584a0b7c29880c"
+    },
+    {
+      "query": {
+        "debt_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION"
+      },
+      "trace_digest": "615b7ebdce9a6f09a311736e986bfff97c4694445e87e7ba8e91bc9971bb581d"
+    }
+  ],
+  "mechanical_scope": "accepted recursive allocator contract and executed deep/covariance cases; numerical admission remains conditional",
+  "scientific_ledger_rewritten": false,
+  "numerical_trajectories_rerun": false,
+  "source_refs": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4i-FirstGroup.json",
+      "sha256": "aa5e0d509a8759a892b1a6153953bc2efabb685eb961ed03e4d5aefbf8d9abd5",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4i-FirstGroupAuthority.json",
+      "sha256": "7f6d028a020fb0b8d829ee4ef05606eaa1b10d8a84ae227007c7e62751d50686",
+      "revision": null
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.5-FirstGroupAcceptance.json",
+      "sha256": "772cfbd489f21f727b05ebb781dbd2a3e91e83fe91dfb2ee15d577bfa0bb002a",
+      "revision": null
+    }
+  ],
+  "record_digest": "7207d7e6c4a51c95556edba51d5372e87514c7d2a0a34b909bc75f37f8678d5b"
+}

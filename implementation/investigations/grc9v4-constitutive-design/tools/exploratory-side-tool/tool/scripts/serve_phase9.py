@@ -17,12 +17,13 @@ from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 from grcv4_explorer.abundance import abundance_authority  # noqa: E402
 from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
 from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E402
+from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if request.path in {"/api/tranche8", "/api/tranche8/source"}:
+        if request.path in {"/api/tranche8", "/api/tranche8/source", "/api/tranche8/end", "/api/tranche8/end/source"}:
             content_type = "application/json"
             try:
                 query = parse_qs(request.query, strict_parsing=True)
@@ -31,14 +32,21 @@ class Handler(BaseHTTPRequestHandler):
                     if any(len(query.get(k, [])) != 1 for k in ("family", "checkpoint")):
                         raise KeyError("one family and checkpoint required")
                     selected = {k: query.pop(k)[0] for k in ("family", "checkpoint")}
-                if request.path == "/api/tranche8":
+                if request.path in {"/api/tranche8", "/api/tranche8/end"}:
                     if query:
                         raise KeyError("unknown Tranche 8 status arguments")
-                    content = json.dumps(tranche8_status(repository_root(), **selected), ensure_ascii=False).encode()
+                    if request.path.endswith('/end'):
+                        if selected:raise KeyError('final reviews have a fixed four-family scope')
+                        value=tranche8_end_reviews(repository_root())
+                    else:value=tranche8_status(repository_root(), **selected)
+                    content = json.dumps(value, ensure_ascii=False).encode()
                 else:
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed repository-relative path required")
-                    content, ref = tranche8_source(repository_root(), query["path"][0], **selected)
+                    if request.path == '/api/tranche8/end/source':
+                        if selected:raise KeyError('final reviews have a fixed four-family scope')
+                        content,ref=tranche8_end_source(repository_root(),query['path'][0])
+                    else:content, ref = tranche8_source(repository_root(), query["path"][0], **selected)
                     content_type = "text/plain; charset=utf-8"
                 self.send_response(200)
                 if request.path.endswith("/source"):
@@ -107,7 +115,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -123,6 +131,8 @@ class Handler(BaseHTTPRequestHandler):
                     "tranche8-apc-evidence.js": "text/javascript",
                     "tranche8-handoff.js": "text/javascript",
                     "tranche8-lifecycle.js": "text/javascript",
+                    "tranche8-conformance.js": "text/javascript",
+                    "tranche8-end.js": "text/javascript",
                     "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],

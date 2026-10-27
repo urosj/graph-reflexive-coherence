@@ -3171,6 +3171,35 @@ admission or uniform trajectories. All-ten 8.4/8.5/8.6, Tranche 9 public/disable
 lifecycle, and the end-of-tranche performance review retain their own scope.
 No new configuration identity, public support or G2/G3 is advertised here.
 
+### First-group P9-8.6 conformance review (2026-10-27)
+
+The [bounded decision](./phase-9-grcv4/tranche-8/P9-8.6-FirstGroupReview.md) is
+accepted by the user on 2026-10-27; the separate
+[acceptance record](./phase-9-grcv4/tranche-8/P9-8.6-FirstGroupAcceptance.json)
+pins the unchanged decision and four family records. One shared authority/source check precedes
+four independent parallel family checks. The accepted 8.4 domain/horizon and
+8.5 lifecycle checkpoints match for C_OS, C_CI, A_CI and A_PC. No numerical
+campaign is repeated. The exact profiles, event/source/target/reset identities,
+exclusions, historical source epochs and family-specific certificate limitations
+are retained in separate records and one combined decision.
+
+This meets the scoped first-group review obligation. It leaves arbitrary-graph
+numerical admission, uniform trajectories, exact stored-resource conservation,
+general ATC, public/disabled specialization lifecycle and all-ten closure held.
+No support registry or original claim/debt ledger is changed. Next,
+complete the first-group mechanism-evidence review and the scheduled performance/
+cache review below before opening scoped Tranche 9 work. These final Tranche 8
+tasks were subsequently completed on 2026-10-27 in the
+[final first-group review](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupEndResults.md),
+using existing mechanism evidence and bounded metadata measurements. The user
+accepted both final reviews and closed bounded first-group Tranche 8 on
+2026-10-27; [closeout acceptance](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json)
+records this separately from the earlier 8.6 decision. The
+remaining six families retain their own route and do not block this group.
+The direct current implementation-boundary check passed on 2026-10-27;
+final-result documentation bindings were then refreshed and checked. No
+Tranche 9 execution has begun.
+
 ### Accepted first-group checkpoint — P9-8.4h (2026-10-26)
 
 The user accepts the first-group checkpoint for **C_OS, C_CI, A_CI and A_PC**.
@@ -4026,9 +4055,68 @@ files may be larger. Lossless packing preserves the current checked subjects; a 
 schema must preserve the operands needed by its independent checker. Evidence
 volume and repeated executions of the same checker are not independent proofs.
 
+#### End-of-Tranche-8 mechanism-evidence review
+
+Added by the user on 2026-10-27 for the first group, after scoped P9-8.6
+acceptance and before Tranche 9. This is bounded scientific follow-through,
+separate from the accepted accuracy/admission contracts and from performance
+optimization. It does not retroactively change the 8.6 acceptance criteria or
+create a new runtime gate. C_OS supplies an existing comparison/reference where
+needed; no additional C_OS campaign is requested.
+
+Begin with an inventory of existing accepted native cases, independent oracles
+and mechanism-disabled or wrong-mechanism controls for C_CI, A_CI and A_PC.
+Bind the exact subject, source/target and current/reset role, stage, observable,
+comparison law and numerical error bound. Distinguish an accurate admitted root,
+a changed represented value and a certified causal effect. Reuse adequate
+existing evidence before declaring any new computation.
+
+| Family | Existing result to preserve | Review obligation |
+| --- | --- | --- |
+| C_CI | Larger joint-root/resource admission and positive continuation pass; the native first-pass/reference-geometry regime does not establish above-rounding feedback discrimination. | Identify native evidence that exercises CI geometry/current feedback against a justified reference or disabled-feedback control. If the intended claim lacks it, select one bounded diagnostic case with an independent error bound and native consumption of that mechanism. |
+| A_CI | The staged companion already has many feedback-separated coordinates and surviving off-diagonals; some effects, including source diagonal changes, disappear in binary64. | Map that evidence to the native root/stopping/continuation path. Add a diagnostic only for a specific missing causal link. Do not demand visibility in every coordinate or nonzero changes where the law/symmetry gives none. |
+| A_PC | Baseline carrier effects are certified above combined error at steps one and ten; their small absolute margins do not establish fragility. | Report effect lower bounds, combined error upper bounds, their difference and signal/error ratio on matching observables, with scale/ulp context where meaningful. Handle zero error explicitly rather than dividing by zero. Determine the supported pointwise scope before proposing additional robustness work. |
+
+For any insufficient CI evidence, predeclare the specific missing discrimination,
+one justified diagnostic subject, lawful control, observed quantities, independent
+error/rounding budget and execution cap. Check the full relevant joint point and
+history/stage identity, not only a current component. Use an existing smaller
+admitted graph if it answers that question; a 400-edge or ten-step rerun is not
+required. Preserve the prior larger-graph results and their narrower claims.
+A new parameter/state declaration is a separately identified companion, not a
+repair of the original evidence. Do not retune tolerances, weaken admission,
+introduce clipping or use an implicit numerical fallback to obtain separation.
+
+For A_PC, first inspect existing retained operands and bounds. Add a small,
+predeclared nearby-input pressure set only if the intended support extends beyond
+the demonstrated points. Name its parameters, allowed perturbations, horizons,
+controls and positive-admission/separation criteria before execution. Passing
+finite perturbations establishes only that sampled scope, not a continuous
+parameter tube. No arbitrary universal signal/error ratio is imposed after seeing
+results, and no new optimization follows merely from a small absolute margin.
+
+Finish with one family-specific disposition: evidence already sufficient for the
+named mechanism claim; a bounded diagnostic closes the identified gap; or a
+remaining resolution/robustness limitation restricts that claim. A failure calls
+for analysis of that specific cause, not an open-ended witness search or another
+full campaign. Retain concise findings and only the operands needed to check new
+claims; preserve all original exclusions and the 1 MB compression rule. Update
+side-tool scope/limitations when results exist. Unresolved stronger claims are
+not silently promoted by later lifecycle tests, and do not erase bounded 8.6.
+
+The scientific review and the performance/cache review may reuse the same exact
+subjects, but report separate conclusions. Then confirm the applicable current
+implementation boundary before entering Tranche 9; the earlier interrupted
+full-wrapper attempt remains uncompleted, not a pass. Reuse accepted numerical
+campaigns rather than repeating them for bookkeeping.
+
 #### End-of-Tranche-8 performance and cache review
 
 The user requests this review on 2026-10-02, after P9-8.6 and before Tranche 9.
+For the first group, carry it out alongside or after the mechanism-evidence
+review above; finish both dispositions before entering scoped Tranche 9. Reuse
+existing profiles/benchmarks and run only measurements needed to resolve the
+remaining cost or correctness question. Review does not require an optimization.
 Keep correctness/admission first; defer optimization of the new graph envelope
 until integrated callers establish actual frequency and cost. The `.3` inquiry
 confirmed that public codec calls reach internal schema/validator/content caches,

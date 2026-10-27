@@ -35,11 +35,19 @@ def tranche8_source(repo_root, path, *, family=None, checkpoint="8.4c"):
     index = _index(repo_root)
     value = (index.family_status(Path(repo_root), family, checkpoint)
              if family is not None else index.checked(Path(repo_root)))
-    refs = {r["path"]: r for r in value["source_refs"]}
+    selected_refs = value["source_refs"]
+    if checkpoint == '8.6':
+        if family != 'first_group':
+            selected_refs = value['decision']['source_refs'] + [r for r in selected_refs
+                if r['path'].endswith(('P9-8.6-FirstGroup.json', 'P9-8.6-FirstGroupReview.md'))]
+        matches = [r for r in selected_refs if r['path'] == path]
+        if len({(r['sha256'], r.get('revision')) for r in matches}) > 1:
+            raise KeyError('multiple execution epochs; select an individual family')
+    refs = {r["path"]: r for r in selected_refs}
     if path not in refs:
         raise KeyError("source is not in the checked Tranche 8 index")
     ref = refs[path]
-    if checkpoint in ('8.4i', '8.5'):
+    if checkpoint in ('8.4i', '8.5', '8.6'):
         from p984i_first_group import authenticate
         return authenticate(Path(repo_root), ref), ref
     sources = index.Sources(repo_root)
