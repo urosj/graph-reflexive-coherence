@@ -55,3 +55,25 @@ test('compatibility loader renders all cells and clears stale data',async()=>{
  value.crossings_executed=true;await load();assert.equal(container.children.length,0);
  ok=false;await load();assert.equal(container.children.length,0);
 });
+
+import {checkedCrossings,crossingsLoader} from './tranche9.js';
+const crossings={schema:'p994a-crossing-status-v1',iteration:'P9-9.4a',families,
+  user_accepted:true,public_api:false,aggregate_closed:false,full_GRC9V4_conformance:false,
+  state:'bounded_accepted',check_level:'retained_integrity_only_no_native_rerun',
+  records:families.map(family=>({family,tests:4,outcome:'passed',record_digest:'a'.repeat(64)})),
+  source_refs:[{path:'implementation/phase-9-grcv4/tranche-9/P9-9.4a-Review.md'}]};
+test('crossing scope refuses public API/acceptance promotion or a missing family',()=>{
+  assert.equal(checkedCrossings(crossings),crossings);
+  for(const key of ['public_api','aggregate_closed','full_GRC9V4_conformance'])
+    assert.throws(()=>checkedCrossings({...crossings,[key]:true}));
+  assert.throws(()=>checkedCrossings({...crossings,records:crossings.records.slice(1)}));
+});
+test('crossing loader renders all families, linked evidence, and clears on failure',async()=>{
+  const children=[],container={replaceChildren(){children.length=0;},append(x){children.push(x);}};
+  const status={textContent:''};let ok=true;
+  const load=crossingsLoader(container,status,async()=>({ok,json:async()=>crossings}),()=>({}));
+  await load();assert.match(status.textContent,/bounded acceptance recorded/);
+  assert.equal(children.filter(x=>/4 tests passed/.test(x.textContent)).length,4);
+  assert(children.some(x=>x.href?.startsWith('/api/tranche9/crossings/source?')));
+  ok=false;await load();assert.equal(children.length,0);assert.match(status.textContent,/Unavailable/);
+});

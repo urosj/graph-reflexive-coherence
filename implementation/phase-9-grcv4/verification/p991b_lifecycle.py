@@ -141,7 +141,7 @@ def run(root, family):
 
 def check(root, family):
     if (root / BASE / "P9-9.1b-Acceptance.json").is_file():
-        from p991b_acceptance import check as accepted_check
+        from p994a_owner_successor import check as accepted_check
 
         return accepted_check(root, family)
     path = root / filename(family)

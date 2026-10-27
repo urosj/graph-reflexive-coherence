@@ -4230,6 +4230,17 @@ obligation executable; it adds no new scientific law or family scope.
 | P9-9.4a — enabled/disabled crossings | Connect the accepted enabled owner and applicable exact legacy delegate. Execute both migration directions with source-history projection/archive/loss, distinct current/reset transfer, entry receipts, target readmission, replay and whole-state rollback. |
 | P9-9.4b — public GRC9V4 API | Implement and export the specified `GRC9V4(GRCV4)` facade through the established package API. Wire validated configuration construction, ordinary step/run and typed request methods, canonical expansion, profile/branch migration, state/observables, reset/rebase, duplicate and save/load/replay to the existing owners. Integrate the existing saved-selection runner entry where applicable. Verify these paths through the public class for each selected family, including both branch crossings and mixed replay. |
 
+P9-9.4a now executes the bounded same-graph crossings for all four selected
+families; [review](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md). Four parallel
+family suites cover exact native parity, role-specific A initialization/C
+reconstruction, explicit history loss, both reset semantics, whole-publication
+rollback and replay. User acceptance is recorded on 2026-10-27. The declared native `2^-12`
+continuation passes; `1/32` is retained as an exclusion, with C_CI rejecting
+return admission and the other three rejecting the next enabled step. A bounded
+post-solver failure-reporting correction is covered without rewriting accepted
+history. Public API work must preserve the receiver's explicit same-graph
+crossing domain; legacy topology growth requires a separately defined return map.
+
 The public API must preserve complete generic-profile and combined nine-port
 model identities, explicit numerical policies, typed failures, receipts and
 atomic publication. Inherited `step()`/`run()` obey the serialized default
@@ -4245,8 +4256,8 @@ history on rejection. P9-9.6 requires both P9-9.4 children and the public-entry
 P9-9.5 checks before reviewing the bounded support declaration. Internal-owner
 tests alone do not satisfy public integration. Reuse accepted numerical
 evidence and small integration fixtures; repeat a larger campaign only if a
-concrete integration failure requires it. These are planned children, not
-completed work or a new runtime authorization granted by this text.
+concrete integration failure requires it. P9-9.4b remains planned; 9.4a execution
+does not grant public support or aggregate acceptance.
 
 ### Tranche 10. Conformance, evidence, and handoff
 

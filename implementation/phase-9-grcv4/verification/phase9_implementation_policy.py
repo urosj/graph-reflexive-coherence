@@ -1688,6 +1688,17 @@ PATHS |= RECONCILED_CONTEXT_PATHS | {
 
 # Bounded Tranche 9 implementation/evidence; no new support permission.
 PATHS |= {
+    'implementation/phase-9-grcv4/verification/p994a_acceptance.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.4a-Acceptance.json',
+    'implementation/phase-9-grcv4/verification/p994a_crossings.py',
+    'implementation/phase-9-grcv4/verification/p994a_owner_successor.py',
+    'implementation/phase-9-grcv4/verification/test_p994a_surfaces.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.4a-Review.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.4a-Authority.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.4a-C_OS.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.4a-C_CI.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.4a-A_CI.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.4a-A_PC.json',
     'implementation/phase-9-grcv4/verification/p993_acceptance.py',
     'implementation/phase-9-grcv4/tranche-9/P9-9.3-Acceptance.json',
     'implementation/phase-9-grcv4/verification/p993_matrix.py',
@@ -2732,14 +2743,23 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | entries)
     for name in DISABLED_DELEGATE_PATHS:
         owners[name] = owners.get(name, set()) | entries
+    from phase9_specialization_acceptance import branch_crossing_authorization, BRANCH_CROSSING_PATHS
+    entry = branch_crossing_authorization(root)
+    ready = sorted(set(ready) | {entry})
+    for name in BRANCH_CROSSING_PATHS:
+        owners[name] = owners.get(name, set()) | {entry}
     return ready, owners
 
 
 def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
     from phase9_specialization_acceptance import AOS_NEW_PATHS, CCI_NEW_PATHS, ACI_NEW_PATHS, APC_NEW_PATHS, CCIPC_NEW_PATHS, ACIPC_NEW_PATHS, CRG2B_NEW_PATHS, ARG2B_NEW_PATHS
-    from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS
+    from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS, BRANCH_CROSSING_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_crossing"}
+        for name in BRANCH_CROSSING_PATHS if name not in ENABLED_LIFECYCLE_PATHS
+    ), *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_legacy"}
         for name in DISABLED_DELEGATE_PATHS
@@ -2970,6 +2990,7 @@ def work_entries(root, approval):
         arg2b_authorization, arg2b_permitted,
         enabled_lifecycle_authorization, enabled_lifecycle_permitted,
         disabled_delegate_authorization, disabled_delegate_permitted,
+        branch_crossing_authorization, branch_crossing_permitted,
     )
     g3 = accepted_g3(root)
     row_entry = row_bridge_authorization(root)
@@ -2990,13 +3011,14 @@ def work_entries(root, approval):
     lifecycle_entry = enabled_lifecycle_authorization(root)
     leaves.add(lifecycle_entry)
     leaves.update(disabled_delegate_authorization(root))
+    leaves.add(branch_crossing_authorization(root))
     def g3_permitted(name, leaf):
         return (permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
                 or backend_permitted(name, leaf) or allocator_permitted(name, leaf)
                 or cos_permitted(name, leaf) or cpc_permitted(name, leaf)
                 or aos_permitted(name, leaf) or cci_permitted(name, leaf) or aci_permitted(name, leaf) or apc_permitted(name, leaf) or ccipc_permitted(name, leaf) or acipc_permitted(name, leaf) or crg2b_permitted(name, leaf) or arg2b_permitted(name, leaf)
-                or enabled_lifecycle_permitted(name, leaf) or disabled_delegate_permitted(name, leaf))
+                or enabled_lifecycle_permitted(name, leaf) or disabled_delegate_permitted(name, leaf) or branch_crossing_permitted(name, leaf))
     leaves.update(g3['new_runtime_iterations_authorized'])
     leaves.add(row_entry)
     leaves.add(trigger_entry)

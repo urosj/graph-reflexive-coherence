@@ -2612,3 +2612,11 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
 - [x] Expose matrix/review through indexed sources, actual browser and notebook.
 - [x] Reject incomplete, stale or promoted matrices; retain separate 9.2/9.3 acceptance.
 - [x] User acceptance of 9.3 reconciliation on 2026-10-27; no new native support inferred.
+
+
+### P9-9.4a — actual same-graph branch crossings
+
+- [x] Checked API, indexed sources, browser button and notebook for all four families.
+- [x] Reject input drift, acceptance/public API promotion and missing family coverage.
+- [x] Preserve historical records and constrain the post-solver owner successor by exact hashes.
+- [x] User acceptance of bounded crossings on 2026-10-27; public API remains P9-9.4b.

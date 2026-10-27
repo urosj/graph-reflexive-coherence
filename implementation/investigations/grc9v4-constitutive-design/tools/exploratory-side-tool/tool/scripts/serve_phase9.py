@@ -21,23 +21,24 @@ from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_sourc
 
 
 from grcv4_explorer.tranche9 import (tranche9_status, tranche9_source,
-    tranche9_compatibility_status, tranche9_compatibility_source)
+    tranche9_compatibility_status, tranche9_compatibility_source,
+    tranche9_crossing_status, tranche9_crossing_source)
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if request.path in {"/api/tranche9", "/api/tranche9/source", "/api/tranche9/compatibility", "/api/tranche9/compatibility/source"}:
+        if request.path in {"/api/tranche9", "/api/tranche9/source", "/api/tranche9/compatibility", "/api/tranche9/compatibility/source", "/api/tranche9/crossings", "/api/tranche9/crossings/source"}:
             try:
                 query = parse_qs(request.query, strict_parsing=True)
-                if request.path in {"/api/tranche9", "/api/tranche9/compatibility"}:
+                if request.path in {"/api/tranche9", "/api/tranche9/compatibility", "/api/tranche9/crossings"}:
                     if query: raise KeyError("Tranche 9 has a fixed four-family scope")
-                    view = tranche9_compatibility_status if request.path.endswith("compatibility") else tranche9_status
+                    view = tranche9_crossing_status if request.path.endswith("crossings") else tranche9_compatibility_status if request.path.endswith("compatibility") else tranche9_status
                     content = json.dumps(view(repository_root())).encode()
                 else:
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed source path required")
-                    source = tranche9_compatibility_source if "/compatibility/" in request.path else tranche9_source
+                    source = tranche9_crossing_source if "/crossings/" in request.path else tranche9_compatibility_source if "/compatibility/" in request.path else tranche9_source
                     content, ref = source(repository_root(), query["path"][0])
                 self.send_response(200)
                 if request.path.endswith("/source"):

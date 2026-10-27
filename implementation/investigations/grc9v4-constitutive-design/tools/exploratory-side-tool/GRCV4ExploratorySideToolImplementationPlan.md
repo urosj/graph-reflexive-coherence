@@ -3202,3 +3202,15 @@ Sources include the matrix/review and original accepted evidence. Distinguish
 9.2 bounded acceptance from separate 9.3 matrix acceptance. No new native
 execution or support promotion occurs. Next is P9-9.4a
 crossings and P9-9.4b public API integration.
+
+
+### P9-9.4a — actual same-graph branch crossings
+
+Expose all four new crossing records through `tranche9_crossing_status`,
+`/api/tranche9/crossings`, indexed sources, the browser button and notebook.
+Show separate bounded 9.4a acceptance alongside accepted 9.1b/9.2/9.3 history.
+Retained integrity never reruns native kernels or grants a public API. Preserve
+indeterminate forensic authority, explicit same-graph scope and distinct
+C_CI readmission versus other-family post-solver exclusions. Next is review,
+then P9-9.4b public integration. The 9.1b owner successor has one exact old/new
+hash pair; original accepted executions remain immutable.

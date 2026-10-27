@@ -1,6 +1,35 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — P9-9.3 matrix acceptance (2026-10-27)
+## Current checkpoint — P9-9.4a branch crossings (2026-10-27)
+
+Branch `work/p9-9-first-group`. User-accepted 9.3 was committed as `b894c95d`
+before crossing implementation. [9.4a review](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md)
+records sixteen passing tests in four parallel family processes: C_OS, C_CI,
+A_CI and A_PC. Actual same-graph entry/return, exact native step/snapshot/observable
+parity, independent row/exponent initialization, both histories, reset semantics,
+whole-state rollback and mixed replay are covered. User acceptance is recorded on 2026-10-27;
+[decision](./phase-9-grcv4/tranche-9/P9-9.4a-Acceptance.json). P9-9.4b public API work has not started.
+
+Positive continuation declares `dt=2^-12` in both branches. The original native
+`1/32` case remains an exclusion: C_CI return readmission rejects; C_OS/A_CI/A_PC
+reject their next enabled step. The newly found post-solver reporting defect is
+corrected to emit `valid_root` with a noncommitting failure. Original accepted
+records remain unchanged; a narrow 9.1b old/new owner hash adapter authenticates
+history, and 9.4a records bind the corrected runtime. No GRC9V3 source changed.
+
+The side-tool offers `/api/tranche9/crossings`, indexed sources, a browser button
+and a notebook cell. These are retained-integrity checks, never numerical reruns.
+All new files are below 1 MB. Fourteen focused Python checks, six browser tests
+and the current phase boundary (703 protected / 340 runtime files) pass.
+Reproduction commands are in the review.
+Next is the public four-family API in 9.4b,
+public saturated-target pressure in 9.5 and bounded support review in 9.6.
+Keep the explicit same-graph crossing domain: legacy topology growth is not an
+inferred return map. Six other families, optional completion/hierarchy, prior
+CI resolution limits and A_PC pointwise carrier margins remain unchanged.
+
+
+## Previous checkpoint — P9-9.3 matrix acceptance (2026-10-27)
 
 Branch `work/p9-9-first-group`. Bounded 9.2 acceptance and the public API
 planning update were committed as `830b3170` before this work.

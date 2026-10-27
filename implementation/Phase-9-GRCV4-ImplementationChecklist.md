@@ -3796,9 +3796,18 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
 - [ ] P9-9.4: Complete both crossing and public API integration children.
   Depend on P9-9.1b and the applicable disabled lifecycle delegate, not the
   optional P9-9.1a child or aggregate P9-9.1.
-  - [ ] P9-9.4a: Execute both enabled/disabled migration directions with exact
+  - [x] P9-9.4a: Execute both enabled/disabled migration directions with exact
     authority, source-history projection/archive/loss, distinct current/reset
     transfer, entry receipts, target readmission, replay and atomic rollback.
+    - [x] C_OS and C_CI: actual same-graph entry/return, exact native parity,
+      fresh target readmission and positive enabled continuation.
+    - [x] A_CI and A_PC: independently checked current/reset native initializer;
+      explicit W/carrier loss, canonical target carrier initialization.
+    - [x] All four: mixed parent chain, branch-specific reset, replay/duplicate,
+      malformed/reset-only/late-failure rollback and actual timestep exclusions.
+    - [x] Correct post-solver failure disposition; retain accepted source history
+      through an exact hash-pair adapter. API/browser/notebook expose this child.
+    - [x] User acceptance on 2026-10-27; [scope and evidence](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md).
   - [ ] P9-9.4b: Implement/export the public `GRC9V4(GRCV4)` facade using the
     existing owners for **C_OS, C_CI, A_CI, A_PC**. Wire validated configuration,
     ordinary step/run and typed requests, canonical expansion, migration,

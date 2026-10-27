@@ -90,3 +90,38 @@ if(typeof document!=='undefined'){
   const button=document.getElementById('tranche9-compatibility-refresh');
   if(button)button.addEventListener('click',compatibilityLoader(document.getElementById('tranche9-compatibility-output'),document.getElementById('tranche9-compatibility-status')));
 }
+
+export function checkedCrossings(v){
+  const families=['C_OS','C_CI','A_CI','A_PC'];
+  if(v.schema!=='p994a-crossing-status-v1' || v.iteration!=='P9-9.4a' ||
+    JSON.stringify(v.families)!==JSON.stringify(families) ||
+    v.user_accepted!==true || v.public_api!==false || v.aggregate_closed!==false || v.full_GRC9V4_conformance!==false ||
+    v.state!=='bounded_accepted' || v.check_level!=='retained_integrity_only_no_native_rerun' ||
+    !Array.isArray(v.records) || v.records.length!==4 ||
+    v.records.some((r,i)=>r.family!==families[i] || r.tests!==4 || r.outcome!=='passed' || !/^[a-f0-9]{64}$/.test(r.record_digest)))
+    throw new Error('Unexpected crossing scope');
+  return v;
+}
+export function crossingsLoader(container,status,fetcher=fetch,create=tag=>document.createElement(tag)){
+  let sequence=0;
+  return async()=>{
+    const ticket=++sequence;container.replaceChildren();status.textContent='Checking retained crossing evidence…';
+    try{
+      const response=await fetcher('/api/tranche9/crossings');if(!response.ok)throw new Error('Unavailable');
+      const v=checkedCrossings(await response.json());if(ticket!==sequence)return;
+      const add=(tag,text)=>{const e=create(tag);e.textContent=text;container.append(e);return e;};
+      add('p','P9-9.4a: both same-graph migration directions executed for four families. Bounded acceptance recorded. Integrity only; public API remains P9-9.4b.');
+      for(const r of v.records)add('p',`${r.family}: ${r.tests} tests passed, including exact legacy parity, both-role return, rollback and replay.`);
+      add('p','Larger legacy timestep: C_CI return admission rejects; the other three reject the next enabled step. No numerical thresholds weakened.');
+      for(const ref of v.source_refs){
+        if(!ref.path.startsWith('implementation/phase-9-grcv4/tranche-9/') || ref.path.includes('..'))throw new Error('Invalid source path');
+        const a=add('a',ref.path.split('/').at(-1));a.href='/api/tranche9/crossings/source?path='+encodeURIComponent(ref.path);a.target='_blank';a.rel='noopener';add('span',' · ');
+      }
+      status.textContent='Crossing evidence verified; bounded acceptance recorded.';
+    }catch(error){if(ticket!==sequence)return;container.replaceChildren();status.textContent=String(error);}
+  };
+}
+if(typeof document!=='undefined'){
+  const button=document.getElementById('tranche9-crossings-refresh');
+  if(button)button.addEventListener('click',crossingsLoader(document.getElementById('tranche9-crossings-output'),document.getElementById('tranche9-crossings-status')));
+}

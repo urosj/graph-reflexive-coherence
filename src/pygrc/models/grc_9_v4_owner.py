@@ -306,6 +306,15 @@ class GRC9V4EnabledOperation:
             solver = (
                 None
                 if exc.stage in ("admission", "pre_read_reconstruction")
+                else "valid_root"
+                if exc.stage
+                in (
+                    "continuity",
+                    "charge_admission",
+                    "final_reconstruction",
+                    "history_write",
+                    "commit",
+                )
                 else next(
                     (
                         s

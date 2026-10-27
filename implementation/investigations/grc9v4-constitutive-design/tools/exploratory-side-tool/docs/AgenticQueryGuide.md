@@ -870,3 +870,14 @@ frozen catalog/spec and 9.2 acceptance. `matrix_reconciliation` reports the
 separate 9.3 disposition: passing reconciliation, user-accepted on 2026-10-27,
 no native execution. All forty cells remain visible. Its matrix/review are
 indexed sources. This does not grant branch crossings or public runtime support.
+
+
+### P9-9.4a branch crossings
+
+Use `grcv4_explorer.tranche9.tranche9_crossing_status(repo_root)` or
+`GET /api/tranche9/crossings` for four actual same-graph entry/return executions.
+`tranche9_crossing_source` and `/api/tranche9/crossings/source` serve indexed
+repository-relative evidence. Browser and notebook expose the same view.
+Integrity checks do not execute kernels, confer acceptance, or deliver the
+public runtime API planned for P9-9.4b. The negative native timestep excludes
+C_CI at return admission and the other three at their next enabled step.

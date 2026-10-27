@@ -550,3 +550,22 @@ def disabled_delegate_authorization(root):
 
 def disabled_delegate_permitted(path, leaf):
     return leaf in DISABLED_DELEGATE_LEAVES and path in DISABLED_DELEGATE_PATHS
+
+
+BRANCH_CROSSING_PATHS = (
+    "src/pygrc/models/grc_9_v4_owner.py",
+    "src/pygrc/models/grc_9_v4_crossing.py",
+    "tests/models/test_grc_9_v4_crossing.py",
+)
+
+
+def branch_crossing_authorization(root):
+    """Explicit continuation after accepted 9.3; no public API/support grant."""
+    from p993_acceptance import decision
+    p.git(root, "merge-base", "--is-ancestor", "b894c95d", "HEAD")
+    decision(root)
+    return "P9-9.4a"
+
+
+def branch_crossing_permitted(path, leaf):
+    return leaf == "P9-9.4a" and path in BRANCH_CROSSING_PATHS

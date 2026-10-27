@@ -1,0 +1,43 @@
+{
+  "schema": "p994a-crossing-acceptance-v1",
+  "accepted_date": "2026-10-27",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "bounded_leaf_closed": true,
+  "aggregate_closed": false,
+  "public_api": false,
+  "full_GRC9V4_conformance": false,
+  "executions": {
+    "C_OS": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.4a-C_OS.json",
+      "sha256": "5948825940aba68fb1ae05e770d3490a48e6fa4faf92374ac3fc2d1d98f5406a",
+      "record_digest": "2dc877efc7192378e9ab69334d52b8eeaec256d1a9a55a32fb98603fe471e33c"
+    },
+    "C_CI": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.4a-C_CI.json",
+      "sha256": "d1be5cb19fd31fe51692d3ed3b80432ff801f2ccf4b7ea1c444f27e823e387a0",
+      "record_digest": "510c22380d492f05d4ae751ead5cd3e44ae148cc9758742ad9055e1dd02494e4"
+    },
+    "A_CI": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.4a-A_CI.json",
+      "sha256": "185e27b8b14b753e6c2784c62eeaaa844efe3787a0988bf31c2741e2112b0cbe",
+      "record_digest": "b0e5ad554492457f8ba3960f06abbbc03ed56074593d1da2de992c413ce6940e"
+    },
+    "A_PC": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.4a-A_PC.json",
+      "sha256": "477c5f44e392f1d269dd43e0dfe7baa1512e22a2371d78e308b67a7a6455574c",
+      "record_digest": "8258aa7ce1ed348b2ad17dc4580d4c01c64de1acf563b1b4789137073453e6c6"
+    }
+  },
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.4a-Review.md",
+    "sha256": "847edf17c1c45d5cd7c2df7697eff7cbe44b05c9e5277f745d046c91e340467f"
+  },
+  "scope": "Same-graph four-family crossings; preserve numerical exclusions, no public API or full support promotion",
+  "record_digest": "f0a45bfef9b71872442708ffbd17b6ddf9f2480513604504eb518456e8e24e4e"
+}
