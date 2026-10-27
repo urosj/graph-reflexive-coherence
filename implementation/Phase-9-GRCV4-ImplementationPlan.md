@@ -4162,6 +4162,27 @@ owners, not a new execution gate or permission to broaden an accepted scope.
 
 ### Tranche 9. Hybrid completion and disabled compatibility
 
+The current entry is the accepted first group **C_OS, C_CI, A_CI, A_PC**,
+after its Tranche 8 closeout at `3684bd02`. Retain the other six families as
+unselected, not failed or silently accepted. A concrete dependency on another
+family requires a scope decision before adding it.
+
+**P9-9.1b is bounded-accepted** (2026-10-27): one enabled specialization lifecycle owner for ordinary
+step, expansion, reset/rebase and mixed-journal snapshot replay. Preserve the
+combined model identity, port ownership, both histories and previous-successful
+primary receipt chain. Reuse accepted numerical kernels and bounded fixtures;
+do not repeat the large-graph campaigns for lifecycle integration. The internal
+enabled owner does not advertise the later public full-conformance facade.
+See [the scoped implementation and review](./phase-9-grcv4/tranche-9/P9-9.1b-Review.md).
+
+Next execute the **sixteen selected P9-9.2 cells** (four surfaces per family)
+and maintain P9-9.3's full population matrix with twenty-four unselected cells.
+Then execute applicable P9-9.4 crossings, P9-9.5 conflict rejection, and P9-9.6
+bounded review. Independent family/cell runs may use up to twelve single-thread
+workers on this machine; dependencies and publication stay sequential.
+P9-9.1a remains explicitly unselected. Preserve the accepted CI resolution and
+pointwise A_PC carrier-effect limits through this tranche.
+
 Keep P9-9.1 as an aggregate with two separately reviewed children:
 P9-9.1a covers optional child-basin stabilization, completed-spark registration,
 and hierarchy; P9-9.1b covers mandatory specialization lifecycle semantics.

@@ -840,3 +840,14 @@ and performance records plus their sources without numerical execution.
 source. The final reviews are accepted, closing bounded first-group Tranche 8 on
 2026-10-27; the projection includes their pinned acceptance separately from 8.6. Smaller C_CI path discrimination does not remove the large-run
 resolution limit, and A_PC ratios do not grant a robust parameter neighborhood.
+
+
+### Tranche 9 first-group lifecycle evidence
+
+`from grcv4_explorer.tranche9 import tranche9_status, tranche9_source` exposes
+P9-9.1b for C_OS, C_CI, A_CI and A_PC. Use `tranche9_status(repo_root)` for
+retained integrity and `tranche9_source(repo_root, indexed_path)` for exact
+repository-relative sources. `/api/tranche9` and the Phase 9 browser/notebook
+provide the same view. These queries do not rerun kernels, grant acceptance,
+or settle the sixteen pending disabled-compatibility cells. For scientific
+authority continue using the typed forensic API and its support dispositions.

@@ -503,3 +503,27 @@ def arg2b_authorization(root):
 
 def arg2b_permitted(path, leaf):
     return leaf == ARG2B_ENTRY and path in ARG2B_PATHS
+
+
+ENABLED_LIFECYCLE_ENTRY = "P9-9.1b"
+ENABLED_LIFECYCLE_PATHS = (
+    "src/pygrc/models/grc_9_v4_owner.py",
+    "tests/models/test_grc_9_v4_owner.py",
+)
+
+
+def enabled_lifecycle_authorization(root):
+    """User-requested first-group Tranche 9 entry; no disabled/full G3 grant."""
+    p.git(root, "merge-base", "--is-ancestor", "3684bd02", "HEAD")
+    path = "implementation/phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json"
+    value = p.read(p.safe_path(root, path))
+    p.require(value["record_digest"] == p.digest_record(value)
+              == "9b177f90bc5c38deea9769aca98fc16d9f6c0c10dc6ccc3b92583a3faa8f697c"
+              and value["user_accepted"] and value["first_group_closed"]
+              and set(value["families"]) == {"C_OS", "C_CI", "A_CI", "A_PC"},
+              "mandatory lifecycle requires accepted first-group Tranche 8")
+    return ENABLED_LIFECYCLE_ENTRY
+
+
+def enabled_lifecycle_permitted(path, leaf):
+    return leaf == ENABLED_LIFECYCLE_ENTRY and path in ENABLED_LIFECYCLE_PATHS

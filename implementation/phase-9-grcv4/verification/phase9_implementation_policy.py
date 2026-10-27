@@ -1686,6 +1686,24 @@ PATHS |= RECONCILED_CONTEXT_PATHS | {
 }
 
 
+# Bounded Tranche 9 implementation/evidence; no new support permission.
+PATHS |= {
+    'implementation/phase-9-grcv4/verification/p991b_lifecycle.py',
+    'implementation/phase-9-grcv4/verification/p991b_acceptance.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1b-Acceptance.json',
+    'implementation/phase-9-grcv4/verification/test_p991b_surfaces.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1b-Review.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1b-Authority.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1b-C_OS.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1b-C_CI.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1b-A_CI.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1b-A_PC.json',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche9.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche9.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche9.test.mjs',
+}
+
+
 def check_binding_reconciliation(root):
     """Retain exact committed context; never waive a directory or future file."""
     value = binding_reconciliation(root)
@@ -2687,13 +2705,23 @@ def leaf_permissions(root):
     for name in ARG2B_PATHS:
         require(name in owners or name in ARG2B_NEW_PATHS, 'A_RG2b outside reviewed runtime roster')
         owners[name] = owners.get(name, set()) | {arg2b_entry}
+    from phase9_specialization_acceptance import enabled_lifecycle_authorization, ENABLED_LIFECYCLE_PATHS
+    entry = enabled_lifecycle_authorization(root)
+    ready = sorted(set(ready) | {entry})
+    for name in ENABLED_LIFECYCLE_PATHS:
+        owners[name] = owners.get(name, set()) | {entry}
     return ready, owners
 
 
 def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
     from phase9_specialization_acceptance import AOS_NEW_PATHS, CCI_NEW_PATHS, ACI_NEW_PATHS, APC_NEW_PATHS, CCIPC_NEW_PATHS, ACIPC_NEW_PATHS, CRG2B_NEW_PATHS, ARG2B_NEW_PATHS
+    from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_owner"}
+        for name in ENABLED_LIFECYCLE_PATHS
+    ), *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_lifecycle"}
         for name in (*AOS_NEW_PATHS, *CCI_NEW_PATHS, *ACI_NEW_PATHS, *APC_NEW_PATHS, *CCIPC_NEW_PATHS, *ACIPC_NEW_PATHS, *CRG2B_NEW_PATHS, *ARG2B_NEW_PATHS)
@@ -2914,6 +2942,7 @@ def work_entries(root, approval):
         apc_authorization, apc_permitted, ccipc_authorization, ccipc_permitted,
         acipc_authorization, acipc_permitted, crg2b_authorization, crg2b_permitted,
         arg2b_authorization, arg2b_permitted,
+        enabled_lifecycle_authorization, enabled_lifecycle_permitted,
     )
     g3 = accepted_g3(root)
     row_entry = row_bridge_authorization(root)
@@ -2931,12 +2960,15 @@ def work_entries(root, approval):
     acipc_entry = acipc_authorization(root)
     crg2b_entry = crg2b_authorization(root)
     arg2b_entry = arg2b_authorization(root)
+    lifecycle_entry = enabled_lifecycle_authorization(root)
+    leaves.add(lifecycle_entry)
     def g3_permitted(name, leaf):
         return (permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
                 or backend_permitted(name, leaf) or allocator_permitted(name, leaf)
                 or cos_permitted(name, leaf) or cpc_permitted(name, leaf)
-                or aos_permitted(name, leaf) or cci_permitted(name, leaf) or aci_permitted(name, leaf) or apc_permitted(name, leaf) or ccipc_permitted(name, leaf) or acipc_permitted(name, leaf) or crg2b_permitted(name, leaf) or arg2b_permitted(name, leaf))
+                or aos_permitted(name, leaf) or cci_permitted(name, leaf) or aci_permitted(name, leaf) or apc_permitted(name, leaf) or ccipc_permitted(name, leaf) or acipc_permitted(name, leaf) or crg2b_permitted(name, leaf) or arg2b_permitted(name, leaf)
+                or enabled_lifecycle_permitted(name, leaf))
     leaves.update(g3['new_runtime_iterations_authorized'])
     leaves.add(row_entry)
     leaves.add(trigger_entry)

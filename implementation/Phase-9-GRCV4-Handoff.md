@@ -1,6 +1,34 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — bounded first-group Tranche 8 accepted and closed (2026-10-27)
+## Current checkpoint — P9-9.1b bounded acceptance (2026-10-27)
+
+Branch `work/p9-9-first-group`, from accepted Tranche 8 closeout `3684bd02`.
+Selected families remain **C_OS, C_CI, A_CI, A_PC**. No additional family is
+needed for this step. Up to twelve independent single-thread workers are
+permitted; the four lifecycle suites run in parallel.
+
+[P9-9.1b review](./phase-9-grcv4/tranche-9/P9-9.1b-Review.md) describes the new
+internal enabled lifecycle owner: one combined nine-port identity and ledger
+across ordinary step, mechanical expansion, reset/rebase and mixed snapshot
+replay. The numerical kernels and accepted Tranche 8 records are unchanged.
+Native execution is separate from `--check`, which only authenticates retained
+results/current input hashes. Side-tool **Check P9-9.1b lifecycle**, API
+`/api/tranche9`, indexed sources and notebook expose the bounded result.
+
+All 24 native tests, three API/notebook checks and two browser tests pass.
+The direct current-boundary check passes (703 protected baseline files,
+336 runtime files, 47.1 s). Final text-only maintenance bindings are rechecked;
+native evidence remains unchanged and every new record is below 1 MB.
+
+Bounded user acceptance is recorded in [the decision](./phase-9-grcv4/tranche-9/P9-9.1b-Acceptance.json).
+Original execution records are unchanged. Next is P9-9.2's sixteen selected
+compatibility cells alongside P9-9.3's full forty-cell matrix, then crossings,
+legacy port-5 rejection and bounded P9-9.6 review. P9-9.1a completion/hierarchy
+is unselected. There is no public full GRC9V4 conformance grant yet. Preserve
+CI resolution and pointwise A_PC effect/error limitations from Tranche 8.
+No large-graph campaign, new ATC work or old-version repair is required here.
+
+## Previous checkpoint — bounded first-group Tranche 8 accepted and closed (2026-10-27)
 
 Branch `work/p9-8-6-first-group`, from accepted 8.5 merge `df63d441`.
 The user accepted **P9-8.6 for C_OS, C_CI, A_CI and A_PC**.

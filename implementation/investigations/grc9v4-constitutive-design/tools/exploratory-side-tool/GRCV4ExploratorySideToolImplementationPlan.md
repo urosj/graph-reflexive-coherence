@@ -3165,3 +3165,19 @@ Final Tranche 8 first-group follow-through, after 8.6 acceptance and before
   Existing numerical evidence is reused; new execution is metadata-only.
   Final reviews accepted on 2026-10-27; bounded first-group Tranche 8 is closed.
   Other families remain open; no new machine gate or public support.
+
+
+### P9-9.1b — first-group mandatory lifecycle
+
+- [x] Read-only `tranche9_status(repo_root)` and `/api/tranche9` check the four
+  independent C_OS/C_CI/A_CI/A_PC execution records and their current source
+  bindings. `tranche9_source` exposes only indexed repository-relative files.
+- [x] Browser **Check P9-9.1b lifecycle** and notebook show results, source links
+  and the distinction between retained integrity, execution and acceptance.
+- [x] Current next-work projection points to the bounded Tranche 9 route.
+- [x] Bounded user acceptance recorded on 2026-10-27. Disabled compatibility,
+  crossings and full specialization conformance remain pending. Optional completion/hierarchy is unselected.
+
+The new owner composes the accepted kernels; status never executes them.
+Independent runs use four single-thread workers; the user permits up to twelve
+when useful. No all-ten, ATC, scientific-authority or public support promotion.

@@ -20,9 +20,38 @@ from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E4
 from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source
 
 
+from grcv4_explorer.tranche9 import tranche9_status, tranche9_source
+
+
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
+        if request.path in {"/api/tranche9", "/api/tranche9/source"}:
+            try:
+                query = parse_qs(request.query, strict_parsing=True)
+                if request.path == "/api/tranche9":
+                    if query: raise KeyError("Tranche 9 has a fixed four-family scope")
+                    content = json.dumps(tranche9_status(repository_root())).encode()
+                else:
+                    if set(query) != {"path"} or len(query["path"]) != 1:
+                        raise KeyError("one indexed source path required")
+                    content, ref = tranche9_source(repository_root(), query["path"][0])
+                self.send_response(200)
+                if request.path.endswith("/source"):
+                    self.send_header("X-Evidence-SHA256", ref["sha256"])
+            except KeyError as error:
+                self.send_response(404)
+                content = json.dumps({"error": str(error)}).encode()
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error), "evidence_state": "unavailable_not_admitted"}).encode()
+            self.send_header("Content-Type", "application/octet-stream" if request.path.endswith("/source") else "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("X-Content-Type-Options", "nosniff")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
         if request.path in {"/api/tranche8", "/api/tranche8/source", "/api/tranche8/end", "/api/tranche8/end/source"}:
             content_type = "application/json"
             try:
@@ -115,7 +144,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -133,6 +162,7 @@ class Handler(BaseHTTPRequestHandler):
                     "tranche8-lifecycle.js": "text/javascript",
                     "tranche8-conformance.js": "text/javascript",
                     "tranche8-end.js": "text/javascript",
+                    "tranche9.js": "text/javascript",
                     "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],

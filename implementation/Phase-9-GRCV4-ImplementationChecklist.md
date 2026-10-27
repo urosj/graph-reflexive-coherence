@@ -3745,15 +3745,33 @@ the full ten-profile plan.
 
 ## Tranche 9. Hybrid completion and disabled compatibility
 
+Current group: **C_OS, C_CI, A_CI, A_PC**; accepted Tranche 8 closeout
+`3684bd02`. The other six families remain unselected. No additional family is
+needed for P9-9.1b. Run independent family/cell work in parallel, up to twelve
+single-thread workers when useful. P9-9.1a is unselected, not a blocker.
+
 - [ ] P9-9.1: Reconcile the two child dispositions below as an aggregate,
   not a universal execution/crossing prerequisite. Unselected optional scope
   remains planned/deferred, not marked executed.
 - [ ] P9-9.1a: Execute optional child stabilization, completed-spark and
   hierarchy evidence when advertised or explicitly required by a stronger
   project handoff, after P9-8.6. Neither is selected by this planning review.
-- [ ] P9-9.1b: Execute mandatory specialization lifecycle after P9-8.6,
+- [x] P9-9.1b: Execute mandatory specialization lifecycle after P9-8.6,
   regardless of completion flags; preserve trigger/topology/charge/reset,
   receipt/readmission and legacy compatibility obligations.
+  Current four-family implementation and focused pressure are recorded in
+  [P9-9.1b](./phase-9-grcv4/tranche-9/P9-9.1b-Review.md); bounded user acceptance
+  recorded in [the decision](./phase-9-grcv4/tranche-9/P9-9.1b-Acceptance.json). This is enabled lifecycle integration, not disabled
+  compatibility or public full GRC9V4 conformance.
+  - [x] One immutable enabled publication and mixed successful receipt journal.
+  - [x] Combined model/reset identity, fresh event binding after ordinary source
+    evolution, target evolution, both-role reset and rebase semantics.
+  - [x] Exact mixed replay, save/load/duplicate, tampered-state rejection,
+    failed-operation rollback and explicit inconclusive numerical failures.
+  - [x] Four-family execution, source-bound retained evidence and side-tool
+    API/browser/notebook access; no large-graph campaign repeated.
+  - [x] Explicit bounded user acceptance on 2026-10-27; original execution
+    records remain unchanged. No separate independent-audit execution is inferred.
 - [ ] P9-9.2: Reconcile the forty-cell parent register below. Each child
   executes and reviews its exact unchanged GRC9V3 delegate/oracle separately;
   this parent is not a single execution iteration.
@@ -3780,7 +3798,8 @@ and review. Each cell binds the corresponding
 [frozen forty-contract matrix](../specs/grc-9-v4-spec.md#exact-disabled-grc9v3-compatibility).
 Controlled batches retain independent child outcomes. Pending cells for an
 unselected profile do not hold a different fully tested profile. All cells
-are initially pending and unexecuted.
+are initially pending and unexecuted. The sixteen C_OS/C_CI/A_CI/A_PC cells are
+selected next; the other twenty-four are unselected, not implied passes.
 
 | Execution child | State |
 | --- | --- |

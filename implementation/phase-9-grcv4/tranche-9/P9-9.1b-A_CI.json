@@ -1,0 +1,3552 @@
+{
+  "schema": "p991b-enabled-lifecycle-execution-v1",
+  "family": "A_CI",
+  "predecessor": {
+    "path": "implementation/phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json",
+    "sha256": "6f43a8f11e892ed4872fd83c0104dbd1725cced178018291b393bb6223eeed91",
+    "record_digest": "9b177f90bc5c38deea9769aca98fc16d9f6c0c10dc6ccc3b92583a3faa8f697c"
+  },
+  "outcome": "passed",
+  "tests": [
+    "tests.models.test_grc_9_v4_owner.ACILifecycle.test_mixed_event_step_reset_rebase_replay",
+    "tests.models.test_grc_9_v4_owner.ACILifecycle.test_native_result_binding_rejects_generic_model_and_wrong_profile",
+    "tests.models.test_grc_9_v4_owner.ACILifecycle.test_ordinary_source_evolution_invalidates_old_event_binding",
+    "tests.models.test_grc_9_v4_owner.ACILifecycle.test_rejection_and_unexpected_failure_are_atomic",
+    "tests.models.test_grc_9_v4_owner.ACILifecycle.test_reset_and_event_late_failures_preserve_whole_publication",
+    "tests.models.test_grc_9_v4_owner.ACILifecycle.test_snapshot_tampering_and_set_state_rollback"
+  ],
+  "tests_run": 6,
+  "errors": 0,
+  "failures": 0,
+  "skips": 0,
+  "elapsed_seconds": 69.12295427600111,
+  "execution": {
+    "exact_backend": "flint",
+    "numerical_policy": "legacy_exact_v1",
+    "python": "3.12.3",
+    "python_flint": "0.9.0",
+    "numpy": "2.4.6"
+  },
+  "source_refs": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/p991b_lifecycle.py",
+      "sha256": "0252ffddf1a7665806dec6e543c2b9f54d5e331571d7caf38b2bf285a2b9d328"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "sha256": "46d04addf08736d412e7774ecdd0ff58f870f03130950cf700ff93badb4c0d81"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
+      "sha256": "938aa283a30162ad65a5290ec3a251c8140a3b56c1dfa15221f983bc66f656cc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_boundary_continuation.py",
+      "sha256": "9318a8b8d910effd5b0c77a75772b0c5e4f67976791743c4aaf464886720b9bd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_feasibility.py",
+      "sha256": "7c80cbedea59523392518910711623a7f8ea354c4ac0107b0f937fddb9ba6794"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_fixed_row_bounds.py",
+      "sha256": "c16a4d48ca6b22160cfe45ccb5e6557ecb86dd2964525b262542183a09a6b573"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_os_effect_witness.py",
+      "sha256": "944385027e388619e1d70510ac1cc9eb7cfdb7ed1c15be3ea3a78524ee9b2d28"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_os_numerical_feasibility.py",
+      "sha256": "dbb2dcb7384988cb5a0f1106c34006101ff3d9896db91300c566788e827913e4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_realization_numerical.py",
+      "sha256": "8fd2e002526854866455f136026c19a0b0656b23d277130206f713ee5f6440f9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_revised_realization_bounds.py",
+      "sha256": "f1210bf1aa43b9189108d934f87b933186e33c8d79bf03f5b3fdd54e782b5286"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py",
+      "sha256": "5725f799116395e74601c04578a1caaa8811f76657589b334514122553fa0c79"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py",
+      "sha256": "b4c41363d07beee6c4b0e18f88c52f19574abc55cfd5b73a264514df62cb297e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_aci_oracle.py",
+      "sha256": "ad00edb92b3cf7868f7ae888972c8c646c966cf9b8619939a0a25e346350bf51"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/verify_p983a_aos_oracle.py",
+      "sha256": "a72c76123ccd280f472f5728840e9a19f7bc8316a9f7746cb6380cfe6061eb66"
+    },
+    {
+      "path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/__init__.py",
+      "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/__init__.py",
+      "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/artifacts.py",
+      "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/authority.py",
+      "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/candidates.py",
+      "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/effects.py",
+      "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/identity.py",
+      "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/scopes.py",
+      "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/session.py",
+      "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972"
+    },
+    {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae"
+    },
+    {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07"
+    },
+    {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b"
+    },
+    {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07"
+    },
+    {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31"
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2"
+    },
+    {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6"
+    },
+    {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428"
+    },
+    {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f"
+    },
+    {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207"
+    },
+    {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e"
+    },
+    {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4"
+    },
+    {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4"
+    },
+    {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397"
+    },
+    {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8"
+    },
+    {
+      "path": "src/pygrc/integrations/__init__.py",
+      "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237"
+    },
+    {
+      "path": "src/pygrc/integrations/graph_adapter_boundary.py",
+      "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d"
+    },
+    {
+      "path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53"
+    },
+    {
+      "path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/__init__.py",
+      "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+      "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+      "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+      "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+      "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+      "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcv3.py",
+      "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b"
+    },
+    {
+      "path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de"
+    },
+    {
+      "path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f"
+    },
+    {
+      "path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2"
+    },
+    {
+      "path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_evidence.py",
+      "sha256": "dd164fc95543e9f803263929d73d58b1e8df0e8b1ba765a14fa532c7ffbe8ed9"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix.py",
+      "sha256": "b80df50ebc14392016ab2eccde933f5c32e4a643fe6dc5cf957fe3f46552071c"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix_flint.py",
+      "sha256": "7ff0e9ca6d7f42ad150b06c8d604f5b3b79de1943b1e8e6f5621386262af7121"
+    },
+    {
+      "path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "c19670def351aaeb63f9331df1c817b7c82a4570dd6c8772645bbdb35460247c"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_owner.py",
+      "sha256": "64f2dadde0b2902444ea4b0dd10d139acda3f69053844d1d7e427231db254563"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "609a390888cdc97932c568a2c68b21a29d5ce6beffc1c9a62bd887147e98e6ef"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "6d4adce3ac2d98a1c16c82f31768be7e1a1480df5aaf886d2507b0e1a7dc55b2"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
+      "sha256": "245cf8a25709880c5ea57ca0a617d2c39f6bede26d59e650d753039230c6cd0b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json",
+      "sha256": "c1db8b898efb902a40521d99196458ba0bfb9811d555d8e3e89e31ce0574b08d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-event-contract-release.json",
+      "sha256": "e1ae563880b03cab512e5481f2db556032853bf8d558eeed689ec09e577ea699"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-representation-transport-schema.json",
+      "sha256": "edd12e5b3609ab8536c7f1583b213d0d1f703afd86504e6a1af1ed6121266602"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "946c8944b4b06645209d159ec056b891bf6fd153c51dedef38de0a862e127fff"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-topology-event-schema.json",
+      "sha256": "17bb626ac4e6271c24ae24c7b01180cdfb51713fe2ae01677a2cf1d285ac29e0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "00b92688cb4bc82cf54ac462e6a8f5eb6f09e4386d4db1b2a6ac373758b98f19"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "9557a67ad2b9867e919c29dace461fb0f1b175d4d0be597171de4c112f3f07b3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_certification.py",
+      "sha256": "6e65825a6e55e01e860eed6f778cdec0deb91039d3ddec8506a9802078b5d08b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "289d1d8088560ca2b74b13be418373eed3339a10a0c25a90dc811f50dd87797c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_event_codec.py",
+      "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_exact.py",
+      "sha256": "d336c356d31d3ed0f1b160ff5a9be683b9aa56229b94a96053b95f70df202204"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "fbacf20af4fe754634bf88d22898028e8f1223c7e3189e925abf790a26ec8ed3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "0facbe0ea5534d38c543e4d8fda3fa0fe277cf0dd364cc568d7b57a10c9ebd88"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_linear.py",
+      "sha256": "0d8217ad41ec907718a975568734bbbf76615342163947d91c761215a0ce0346"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "55dc6e7e32361cbf507e6998c9b4e02c82f3507d3245a8a4517aa3aba30242f7"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "c72cb21a7293bdefac925938d7b22506fdf51551b7f1ca3661240dc2c2938b89"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "29238f6ec72e74a9b61fe235d8ca6c40253ae2e1fdbb56213bc901f1a22c67ff"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "f4538b8d23409aac96375bb1a952712c37f25b7c0a7df4c8fa5a61e90cdcc181"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b_graph.py",
+      "sha256": "a86a80068dc71eea43fd9fcc56cfdcb4e676fa316fe76bfe009a1c296441a058"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "299fc7924704b9f17591a1767c28d3d112ada0334a934092312fe0a9e6be66e0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4"
+    },
+    {
+      "path": "src/pygrc/telemetry/__init__.py",
+      "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_defaults.py",
+      "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_results.py",
+      "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grc9_extensions.py",
+      "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+      "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_extensions.py",
+      "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+      "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+      "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+      "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+      "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_telemetry_utils.py",
+      "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb"
+    },
+    {
+      "path": "src/pygrc/telemetry/compare.py",
+      "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11"
+    },
+    {
+      "path": "src/pygrc/telemetry/experiments.py",
+      "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9_contract.py",
+      "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9v3_contract.py",
+      "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_contract.py",
+      "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+      "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb"
+    },
+    {
+      "path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929"
+    },
+    {
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+    },
+    {
+      "path": "src/pygrc/telemetry/recorder.py",
+      "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613"
+    },
+    {
+      "path": "src/pygrc/telemetry/reports.py",
+      "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556"
+    },
+    {
+      "path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc"
+    },
+    {
+      "path": "src/pygrc/utils/__init__.py",
+      "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16"
+    },
+    {
+      "path": "src/pygrc/visualization/__init__.py",
+      "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb"
+    },
+    {
+      "path": "src/pygrc/visualization/graph_render.py",
+      "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f"
+    },
+    {
+      "path": "src/pygrc/visualization/layout.py",
+      "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b"
+    },
+    {
+      "path": "src/pygrc/visualization/render.py",
+      "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340"
+    },
+    {
+      "path": "src/pygrc/visualization/representative.py",
+      "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e"
+    },
+    {
+      "path": "src/pygrc/visualization/representative_graphs.py",
+      "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "b8c1c2c06b79a3cda0ddac97e383a7023ef0b2901a0866925d7b96699a562434"
+    },
+    {
+      "path": "tests/models/__init__.py",
+      "sha256": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_aci.py",
+      "sha256": "a73e974a44b70e310fd132584cb3d404506d4baa55d44dd4d5a861e33402345b"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_owner.py",
+      "sha256": "fc4b201c7e7a6d2d7886969ea6275ade39611f48701936e54b1b48563cd8e134"
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_a.py",
+      "sha256": "362df9f71b87d8376ca7712a88b7fade692db42040daf9658d93be86645906d3"
+    },
+    {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "fd5e680e1947ce1ebfb76301780f38ceee1414586ba92009e3d407bfd30d6317"
+    },
+    {
+      "path": "tests/models/test_grc_v4_ci.py",
+      "sha256": "8556fad09cc159037c3d8bae5eac8843e2b0dccc887cace0d44354a48fc2af6c"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "fc58f82d73037f6330aa48b6d372f1f259864ca3c1013952c6f109676f7cab82"
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "e1cf7fd5e1b6354ba8d6054c27908679773418a5298f898abe22f8793e5b6867"
+    }
+  ],
+  "input_refs": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ACI-Oracle.json",
+      "sha256": "846e491b8eaa637ebcdac0a049a26f2192bf1054f0e341af0a8a9e51f70ebb44"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
+    }
+  ],
+  "evidence": {
+    "mixed_snapshot": {
+      "carrier_archives": [],
+      "descriptor_version": "grc9v4-enabled-lifecycle-checkpoint-v1",
+      "exact_backend": "flint",
+      "family": "A_CI",
+      "initial": {
+        "inputs": {
+          "H1_form": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "Q_target": 30.140625,
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              3.0156630719221225,
+              3.0156630719221225,
+              3.0156630719221225,
+              3.0156630719221225,
+              3.0156630719221225,
+              3.0156630719221225,
+              3.0156630719221225,
+              3.0156630719221225,
+              3.0156630719221225,
+              2.9996573527008974
+            ],
+            "W_A": [
+              0.9990236757255229,
+              0.9990236757264321,
+              0.9990236757273414,
+              0.9990236757282507,
+              0.99902367572916,
+              0.9990236757300692,
+              0.9990236757309785,
+              0.9990236757318878,
+              0.999023675732797
+            ],
+            "Z_4": null
+          },
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "dt": 0,
+          "evaluation_index": 0,
+          "operation_id": "aci-seed",
+          "receipt_ids": [],
+          "reference": {
+            "K4_base": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "graph": {
+              "edges": [
+                {
+                  "edge_id": "old-1",
+                  "head": {
+                    "node_id": "outside-1",
+                    "port": 1
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "old-2",
+                  "head": {
+                    "node_id": "outside-2",
+                    "port": 2
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "old-3",
+                  "head": {
+                    "node_id": "outside-3",
+                    "port": 3
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "old-4",
+                  "head": {
+                    "node_id": "outside-4",
+                    "port": 4
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "old-5",
+                  "head": {
+                    "node_id": "outside-5",
+                    "port": 5
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "old-6",
+                  "head": {
+                    "node_id": "outside-6",
+                    "port": 6
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "old-7",
+                  "head": {
+                    "node_id": "outside-7",
+                    "port": 7
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "old-8",
+                  "head": {
+                    "node_id": "outside-8",
+                    "port": 8
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "old-9",
+                  "head": {
+                    "node_id": "outside-9",
+                    "port": 9
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "source-s",
+                    "port": 9
+                  }
+                }
+              ],
+              "live_node_ids": [
+                "outside-1",
+                "outside-2",
+                "outside-3",
+                "outside-4",
+                "outside-5",
+                "outside-6",
+                "outside-7",
+                "outside-8",
+                "outside-9",
+                "source-s"
+              ],
+              "schema_version": "grc9v4-port-graph-v1"
+            },
+            "profile": {
+              "complete_profile_id": "grcv4-profile-sha256:6cca38d833f2776ad91d81dbdbc632ff71b5672fc7a3288871054d497f484665",
+              "identity_payload": {
+                "candidate": "A",
+                "candidate_c_transport_id": null,
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "composition_gain": null,
+                "context_contract_id": "constant_zero_context_v1",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "params_hash": "grcv4-params-sha256:41a9e86f05675f5ca8dca4e5ed7009905f5e35894453986bfb21534063063c8c",
+                "profile_family_id": "A_CI",
+                "realization": "CI",
+                "schema_version": "grcv4-profile-identity-v1",
+                "solver_id": "ci_reduced_fixed_point_v1",
+                "units_id": "grcv4_nondimensional_reference_v1"
+              },
+              "params_resolved": {
+                "candidate": {
+                  "W_floor": 0.5,
+                  "alpha": 5.960464477539063e-08,
+                  "beta": 5.960464477539063e-08,
+                  "chi_A": 0.0625,
+                  "conductance_evaluator_id": "curvature_disabled_G_W_v1",
+                  "descriptor_backend_id": "grcv4-a-descriptor-sha256:784371950e058b5cace78da4a74f06e35b78937d5d29bdf8dde45a104d2512ec",
+                  "eta": 1,
+                  "gamma": 5.960464477539063e-08,
+                  "kappa_Ah": 0.5,
+                  "kappa_c": 1,
+                  "schema_version": "grcv4-candidate-a-params-v1",
+                  "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_A": 1,
+                  "zeta_A": 0.5
+                },
+                "charge": {
+                  "absolute_tolerance": 1e-11,
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "relative_tolerance": 0,
+                  "remainder_policy": "compatibility_projection_is_none",
+                  "repair_policy": "never_mutate_resource",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "schema_version": "grcv4-charge-policy-v1"
+                },
+                "common": {
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "default_step_request": null,
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "schema_version": "grcv4-common-params-v1",
+                  "units_id": "grcv4_nondimensional_reference_v1"
+                },
+                "geometry": {
+                  "K4_base_digest": "grcv4-k4-sha256:8fef0317e52488f0938026de96b49d8a5275fb51f2a923c8ec3302bb13f24be0",
+                  "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5,
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:479be896b06d8e40bd6b1faa4eb7398d2f0371669c54fe6fdbf477e0e3cc8030",
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "star_cover_id": "vertex_star_exact_overlap_v1"
+                },
+                "lifecycle": {
+                  "history_policy_id": "candidate_a_explicit_reference_initialization_log_history_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                },
+                "realization": {
+                  "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-20",
+                  "iteration_limit": 60,
+                  "residual_norm_id": "joint_current_geometry_l2_v1",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "schema_version": "grcv4-ci-params-v1",
+                  "tolerance": 5.684341886080802e-14
+                },
+                "schema_version": "grcv4-resolved-params-v1",
+                "solver": {
+                  "absolute_tolerance": 1e-11,
+                  "conditioning_limit": 100000000,
+                  "failure_policy_id": "fail_closed_no_fallback_v1",
+                  "iteration_limit": 60,
+                  "relative_tolerance": 1e-11,
+                  "residual_norm_id": "edge_l2_v1",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "fixed_point"
+                }
+              }
+            },
+            "reference_hodge": {
+              "edge_weights": {
+                "old-1": 1,
+                "old-2": 1,
+                "old-3": 1,
+                "old-4": 1,
+                "old-5": 1,
+                "old-6": 1,
+                "old-7": 1,
+                "old-8": 1,
+                "old-9": 1
+              },
+              "schema_version": "grcv4-reference-hodge-identity-v1"
+            },
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1"
+          },
+          "reset": {
+            "C": [
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.140625,
+              3.015625,
+              2
+            ],
+            "W_A": [
+              0.999023437503638,
+              0.9990234375027285,
+              0.999023437501819,
+              0.9990234375009095,
+              0.9990234375,
+              0.9990234374990905,
+              0.999023437498181,
+              0.9990234374972715,
+              0.999023437496362
+            ],
+            "Z_4": null
+          },
+          "reset_id": "grcv4-reset-sha256:6b0485b676260675d9d63fbbd6c93c514b1b76619634e0760214675a2646e55e",
+          "scientific_state_id": "grcv4-state-sha256:562450dfeddc9cc767d30f0b3c88bedddcf048c1c54cbe771998c082c25497e9",
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:1f0c340844c98af310fdcef01df9b5c0193ab2772ca7c849518dd57aedee6d61",
+          "stage": "pre_read",
+          "step_index": 1,
+          "time": 0.000244140625,
+          "trial_current": null
+        },
+        "model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+        "reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+        "scientific_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+        "specialization": {
+          "identity_payload": {
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "frame_mode": "fixed_port_chart",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "port_chart_id": "fixed_3x3_row_column",
+            "port_count": 9,
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "spark_lane": "current_hybrid_signed_hessian",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          },
+          "resolved": {
+            "coarse_graining": {
+              "nonnegative_field_mode": "simplex_profile",
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            },
+            "expansion": {
+              "bond_seed": 1,
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "source_self_loop_policy": "reject_before_target_construction",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1"
+            },
+            "row_weight": {
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection",
+              "schema_version": "grc9v4-row-weight-policy-v1"
+            },
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "spark": {
+              "basin_hessian_tolerance": 0.5,
+              "child_stabilization": null,
+              "gradient_tolerance": 0.5,
+              "lane": "current_hybrid_signed_hessian",
+              "schema_version": "grc9v4-spark-policy-v1",
+              "spark_hessian_tolerance": 0
+            }
+          }
+        }
+      },
+      "journal": [
+        {
+          "kind": "step",
+          "request": {
+            "boundary_input": null,
+            "context_value": {},
+            "dt": 0,
+            "external_source": null,
+            "operation_id": "zero",
+            "schema_version": "grcv4-step-request-input-v1"
+          }
+        },
+        {
+          "kind": "expand",
+          "request": {
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "expected_event_id": null,
+            "expected_target_graph_digest": null,
+            "growth_phase": 3,
+            "history_policy": {
+              "candidate": {
+                "disposition": "exact_transport",
+                "information_loss": "none",
+                "policy_id": "candidate_a_exact_old_edge_lineage_positive_bond_seed_v1",
+                "schema_version": "grcv4-history-channel-policy-v1",
+                "source_history_digest": "grcv4-history-content-sha256:be79f9fe38397fb0bc35b9dc9f4f61580465b55eaa1838b91c7a169b0a79da47",
+                "subject": "candidate",
+                "target_initializer_id": "grc9v4_new_internal_edge_positive_bond_seed_v1"
+              },
+              "candidate_history_policy_digest": "grcv4-history-policy-sha256:6e978aa82af02ebb1e62c37b7887f6300d4c32d2ceb02a1bc27132b1f234f6fd",
+              "carrier": {
+                "disposition": "not_applicable",
+                "information_loss": "none",
+                "policy_id": "carrier_not_applicable_v1",
+                "schema_version": "grcv4-history-channel-policy-v1",
+                "source_history_digest": null,
+                "subject": "carrier",
+                "target_initializer_id": null
+              },
+              "carrier_history_policy_digest": "grcv4-history-policy-sha256:f261adf42cb39380b2b0b30f1d0d3a00a56685ac0b293acb55de6629ebfa4142",
+              "schema_version": "grc9v4-expansion-history-policy-v2"
+            },
+            "module_chirality": 1,
+            "operation_id": "native-aci-oracle-expand-1",
+            "resource_distribution": [
+              0.5,
+              0.25,
+              0.25
+            ],
+            "schema_version": "grc9v4-expansion-event-request-input-v1",
+            "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+            "source_node_id": "source-s",
+            "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+            "target_effective_degree": 52,
+            "target_profile_template_id": "grcv4-profile-template-sha256:0e565d49ebe2ecaa0494d958c11ad69b4f393350af0f722783d962dd1429b816",
+            "target_specialization_id": "grc9v4-specialization-sha256:2257e35e18ca0f911f3a13fbf68174a8e8df2c7c18e2b552425e615edbae2503"
+          }
+        },
+        {
+          "kind": "step",
+          "request": {
+            "boundary_input": null,
+            "context_value": {},
+            "dt": 0.000244140625,
+            "external_source": null,
+            "operation_id": "target-step",
+            "schema_version": "grcv4-step-request-input-v1"
+          }
+        },
+        {
+          "kind": "reset"
+        },
+        {
+          "kind": "step",
+          "request": {
+            "boundary_input": null,
+            "context_value": {},
+            "dt": 0.000244140625,
+            "external_source": null,
+            "operation_id": "after-reset",
+            "schema_version": "grcv4-step-request-input-v1"
+          }
+        },
+        {
+          "kind": "rebase"
+        },
+        {
+          "kind": "reset"
+        }
+      ],
+      "lifecycle_digest": "grcv4-lifecycle-sha256:3961cff495f25225fb2ed28c8017df8ca1b7c4c6ff2300c1ef07b9b2ecc4b76e",
+      "numerical_policy": "legacy_exact_v1",
+      "receipts": [
+        {
+          "commit_id": "grc-commit-sha256:02aee1ded952b39f49f058df3e787457af6b361bb26cf69327c0c8eef6d1d99c",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "zero",
+              "parent_receipt_ids": [],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:d22a023e961e9f9e22be292057590e6389d61e4a3ddcd223e598c7e8d373c2fa",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "target_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "target_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "target_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "target_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732"
+            },
+            "schema_version": "grcv4-step-commit-receipt-v1"
+          },
+          "receipt_id": "grc-receipt-sha256:aab8af04d6d4e5e08d852ee5ee2832dac88c23c771e04d93bc12ca5c76d4d6d8",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:02aee1ded952b39f49f058df3e787457af6b361bb26cf69327c0c8eef6d1d99c",
+          "identity_payload": {
+            "admitted_charge": 30.140625,
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "zero",
+              "parent_receipt_ids": [],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:d22a023e961e9f9e22be292057590e6389d61e4a3ddcd223e598c7e8d373c2fa",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "target_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "target_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "target_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "target_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732"
+            },
+            "residual": 0,
+            "schema_version": "grcv4-charge-receipt-v1",
+            "target_charge": 30.140625
+          },
+          "receipt_id": "grc-receipt-sha256:9da0ee86917398b80f5cce8156d0cc5a9204af4308b3baecec4941d482e228fb",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:02aee1ded952b39f49f058df3e787457af6b361bb26cf69327c0c8eef6d1d99c",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "zero",
+              "parent_receipt_ids": [],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:d22a023e961e9f9e22be292057590e6389d61e4a3ddcd223e598c7e8d373c2fa",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "target_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "target_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "target_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "target_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732"
+            },
+            "history_disposition": "exact_transport",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "candidate"
+          },
+          "receipt_id": "grc-receipt-sha256:715235e949af3c0905c3c91e466e7a883395a32d22032742fa40ebcab842b674",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:02aee1ded952b39f49f058df3e787457af6b361bb26cf69327c0c8eef6d1d99c",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "zero",
+              "parent_receipt_ids": [],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:d22a023e961e9f9e22be292057590e6389d61e4a3ddcd223e598c7e8d373c2fa",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "target_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "target_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "target_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "target_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732"
+            },
+            "history_disposition": "not_applicable",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "carrier"
+          },
+          "receipt_id": "grc-receipt-sha256:d251ff41c3dbd4516549d2a53e09a75082c4448206ac836ab0c3d977c2fb4262",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:d27778243e171976a50371d7556d197f96e9fd909442bb980a1dc84036d39c65",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:10059ba9dc2be75d2de0507b1625156e3eb88db8f520127aa0b761515dea66cc",
+              "information_losses": [],
+              "operation_id": "native-aci-oracle-expand-1",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:aab8af04d6d4e5e08d852ee5ee2832dac88c23c771e04d93bc12ca5c76d4d6d8"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:caaa404bcc21023f7b991d3c4e869a92bb3c6d1ccecd6694c648f2dbd3a97f94",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b"
+            },
+            "event_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55",
+            "history": {
+              "candidate": {
+                "disposition": "exact_transport",
+                "information_loss": "none",
+                "source_history_digest": "grcv4-history-content-sha256:be79f9fe38397fb0bc35b9dc9f4f61580465b55eaa1838b91c7a169b0a79da47",
+                "subject": "candidate",
+                "target_history_digest": "grcv4-history-content-sha256:116c9e669db1dae617da5f8b7e8de85146496669b4cff9e6cc688e7395084a2f"
+              },
+              "carrier": {
+                "disposition": "not_applicable",
+                "information_loss": "none",
+                "source_history_digest": null,
+                "subject": "carrier",
+                "target_history_digest": null
+              },
+              "schema_version": "grcv4-history-bundle-receipt-v1"
+            },
+            "schema_version": "grcv4-topology-event-receipt-v1"
+          },
+          "receipt_id": "grc-receipt-sha256:0987bf6591bed72c2cfb648da8fe905ab695f5e8f05b4656970cbd12d7d8ebcf",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:d27778243e171976a50371d7556d197f96e9fd909442bb980a1dc84036d39c65",
+          "identity_payload": {
+            "admitted_charge": 30.140625,
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:10059ba9dc2be75d2de0507b1625156e3eb88db8f520127aa0b761515dea66cc",
+              "information_losses": [],
+              "operation_id": "native-aci-oracle-expand-1",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:aab8af04d6d4e5e08d852ee5ee2832dac88c23c771e04d93bc12ca5c76d4d6d8"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:caaa404bcc21023f7b991d3c4e869a92bb3c6d1ccecd6694c648f2dbd3a97f94",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b"
+            },
+            "residual": 0,
+            "schema_version": "grcv4-charge-receipt-v1",
+            "target_charge": 30.140625
+          },
+          "receipt_id": "grc-receipt-sha256:feb91c9ad734d5f0c24b0cd86f79d3929be94cc0c5fbe43dc7f96286364522b5",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:d27778243e171976a50371d7556d197f96e9fd909442bb980a1dc84036d39c65",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:10059ba9dc2be75d2de0507b1625156e3eb88db8f520127aa0b761515dea66cc",
+              "information_losses": [],
+              "operation_id": "native-aci-oracle-expand-1",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:aab8af04d6d4e5e08d852ee5ee2832dac88c23c771e04d93bc12ca5c76d4d6d8"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:caaa404bcc21023f7b991d3c4e869a92bb3c6d1ccecd6694c648f2dbd3a97f94",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b"
+            },
+            "history_disposition": "exact_transport",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "candidate"
+          },
+          "receipt_id": "grc-receipt-sha256:8816c642bed7372ff076833fad8a9469b8754c4646df7956833bea84bfa62242",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:d27778243e171976a50371d7556d197f96e9fd909442bb980a1dc84036d39c65",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:10059ba9dc2be75d2de0507b1625156e3eb88db8f520127aa0b761515dea66cc",
+              "information_losses": [],
+              "operation_id": "native-aci-oracle-expand-1",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:aab8af04d6d4e5e08d852ee5ee2832dac88c23c771e04d93bc12ca5c76d4d6d8"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:caaa404bcc21023f7b991d3c4e869a92bb3c6d1ccecd6694c648f2dbd3a97f94",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:ff7b04195c1258f8e4fca782d793fb38844fa4d389d35c1422866ff0107fbf58",
+              "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+              "source_model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+              "source_reset_digest": "grcv4-reset-sha256:def8c578dfab6e4f0a6d0d0656b4d107d5b8f711b667acb54c91a52113c82586",
+              "source_state_digest": "grcv4-state-sha256:4f6a62f2521dbee1366abce7706f43882a9b1722fcfb6c01f8319ba51622b732",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b"
+            },
+            "history_disposition": "not_applicable",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "carrier"
+          },
+          "receipt_id": "grc-receipt-sha256:8f9db35c9c69bbd93310c39614f47533579008ba362a95a404233fa1235f5ee0",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:7ec41161bf95c51473e699ee340f15b6f374fb040ed30be26d4d9259859e99af",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "target-step",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:0987bf6591bed72c2cfb648da8fe905ab695f5e8f05b4656970cbd12d7d8ebcf"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233"
+            },
+            "schema_version": "grcv4-step-commit-receipt-v1"
+          },
+          "receipt_id": "grc-receipt-sha256:6dbda4dd0c322222986fe21ff8a40b0aa7f75216af6a13e2de93c776d22fd782",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:7ec41161bf95c51473e699ee340f15b6f374fb040ed30be26d4d9259859e99af",
+          "identity_payload": {
+            "admitted_charge": 30.140625,
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "target-step",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:0987bf6591bed72c2cfb648da8fe905ab695f5e8f05b4656970cbd12d7d8ebcf"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233"
+            },
+            "residual": 0,
+            "schema_version": "grcv4-charge-receipt-v1",
+            "target_charge": 30.140625
+          },
+          "receipt_id": "grc-receipt-sha256:fabd24c836b888819a9326c0fb266d4b5ec5333ee42f2c68c41dca4da2ce974d",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:7ec41161bf95c51473e699ee340f15b6f374fb040ed30be26d4d9259859e99af",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "target-step",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:0987bf6591bed72c2cfb648da8fe905ab695f5e8f05b4656970cbd12d7d8ebcf"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233"
+            },
+            "history_disposition": "exact_transport",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "candidate"
+          },
+          "receipt_id": "grc-receipt-sha256:015e67c09eb2d344760c39d5d82792d61b5f537ad744b73a6c22b1819be24128",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:7ec41161bf95c51473e699ee340f15b6f374fb040ed30be26d4d9259859e99af",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "target-step",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:0987bf6591bed72c2cfb648da8fe905ab695f5e8f05b4656970cbd12d7d8ebcf"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:96f8aab6fad2018a482e9c7534c5c7ad9e8d86cec571418ee39efbecb34161fb",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:bc4cb83a074479fdabf2d4b3b03ed74740b8945f388952eaf30cfee8173fef1b",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233"
+            },
+            "history_disposition": "not_applicable",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "carrier"
+          },
+          "receipt_id": "grc-receipt-sha256:3f041f63a42e7c65c5c90902acfec8fe22b56fb0fe681dd415a950ce27ce142b",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:964414452ee0f6210fc26f0f6491b76c4a0624932557661643b5262c469dc4ab",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:61bf4b21b3a56e5dfdff93e4866c12940a0f4b3590b536148b20f6ae2a817719",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:6dbda4dd0c322222986fe21ff8a40b0aa7f75216af6a13e2de93c776d22fd782"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18"
+            },
+            "reset_baseline_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+            "schema_version": "grcv4-reset-receipt-v1"
+          },
+          "receipt_id": "grc-receipt-sha256:881b15369a7a505ab894cbbe68a465d8872596d9dbd2d5ce3633885a8d78b89f",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:964414452ee0f6210fc26f0f6491b76c4a0624932557661643b5262c469dc4ab",
+          "identity_payload": {
+            "admitted_charge": 30.140625,
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:61bf4b21b3a56e5dfdff93e4866c12940a0f4b3590b536148b20f6ae2a817719",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:6dbda4dd0c322222986fe21ff8a40b0aa7f75216af6a13e2de93c776d22fd782"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18"
+            },
+            "residual": 0,
+            "schema_version": "grcv4-charge-receipt-v1",
+            "target_charge": 30.140625
+          },
+          "receipt_id": "grc-receipt-sha256:1d2b12a641a2adde0428dd5ec498d3b699697c44e7363726ac6e7261ca4e0496",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:964414452ee0f6210fc26f0f6491b76c4a0624932557661643b5262c469dc4ab",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:61bf4b21b3a56e5dfdff93e4866c12940a0f4b3590b536148b20f6ae2a817719",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:6dbda4dd0c322222986fe21ff8a40b0aa7f75216af6a13e2de93c776d22fd782"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18"
+            },
+            "history_disposition": "exact_transport",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "candidate"
+          },
+          "receipt_id": "grc-receipt-sha256:4d464393ec2e789723287104a75452248ba5324b180d9b46d4eea0b7b0bd05ab",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:964414452ee0f6210fc26f0f6491b76c4a0624932557661643b5262c469dc4ab",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:61bf4b21b3a56e5dfdff93e4866c12940a0f4b3590b536148b20f6ae2a817719",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:6dbda4dd0c322222986fe21ff8a40b0aa7f75216af6a13e2de93c776d22fd782"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:183499b89d89128f695ac1890c972bf6e1180f470cc684b07350865b9b38ad43",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:a91ae058d18b68247a6c47bb2600d6d90a76e589eedeefb516f51892216c5233",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18"
+            },
+            "history_disposition": "not_applicable",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "carrier"
+          },
+          "receipt_id": "grc-receipt-sha256:bd4ce83230eb2650d2f82b72286275896016c78a9601ab27d434618c0a995628",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:f196a489c0e5b4ac496f1d6762d2c7462338c878a1d0fd8068b5f2454e6b2e56",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "after-reset",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:881b15369a7a505ab894cbbe68a465d8872596d9dbd2d5ce3633885a8d78b89f"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a"
+            },
+            "schema_version": "grcv4-step-commit-receipt-v1"
+          },
+          "receipt_id": "grc-receipt-sha256:298d56065b064f46fb71f2e54e1869535af78bcbe1d661704d90071ab37eb917",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:f196a489c0e5b4ac496f1d6762d2c7462338c878a1d0fd8068b5f2454e6b2e56",
+          "identity_payload": {
+            "admitted_charge": 30.140625,
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "after-reset",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:881b15369a7a505ab894cbbe68a465d8872596d9dbd2d5ce3633885a8d78b89f"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a"
+            },
+            "residual": 0,
+            "schema_version": "grcv4-charge-receipt-v1",
+            "target_charge": 30.140625
+          },
+          "receipt_id": "grc-receipt-sha256:dd6338715e039560d31de073012fb3ff78e26fc6733970c9279c6ef37fa3f2f7",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:f196a489c0e5b4ac496f1d6762d2c7462338c878a1d0fd8068b5f2454e6b2e56",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "after-reset",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:881b15369a7a505ab894cbbe68a465d8872596d9dbd2d5ce3633885a8d78b89f"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a"
+            },
+            "history_disposition": "exact_transport",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "candidate"
+          },
+          "receipt_id": "grc-receipt-sha256:aba0bb245a3e4455499ec95d10c2193d2f9522729bb5216094fe3873cc8cf576",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:f196a489c0e5b4ac496f1d6762d2c7462338c878a1d0fd8068b5f2454e6b2e56",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "after-reset",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:881b15369a7a505ab894cbbe68a465d8872596d9dbd2d5ce3633885a8d78b89f"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:2d14b187add02205e78c1239381b72cd3e3ac9d127747eb78c29f19384c0b16d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:9d44629cb0f5f9535df7458de0649dedc3b134d91c9a64c0374e84fa63fefd18",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "target_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a"
+            },
+            "history_disposition": "not_applicable",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "carrier"
+          },
+          "receipt_id": "grc-receipt-sha256:34d9a7447bce8950584be3993e2c674c5c3c8cbeb66bb7a1c1bf20113c166990",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:06cdf53b29e98c34fb63d4db4a0e43771546b1b593436a9b6b9a5d20c889deed",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "rebase:grcv4-lifecycle-sha256:8b62ef30a1055b21a6e4942a7e45c329f9ac1655c639bc3e4be348a1697776a0",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:298d56065b064f46fb71f2e54e1869535af78bcbe1d661704d90071ab37eb917"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "new_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+            "old_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+            "schema_version": "grcv4-rebase-receipt-v1"
+          },
+          "receipt_id": "grc-receipt-sha256:4a45e914c1a5265cc2b306b812379ca162073894cce7a258f81a12393365a143",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:06cdf53b29e98c34fb63d4db4a0e43771546b1b593436a9b6b9a5d20c889deed",
+          "identity_payload": {
+            "admitted_charge": 30.140625,
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "rebase:grcv4-lifecycle-sha256:8b62ef30a1055b21a6e4942a7e45c329f9ac1655c639bc3e4be348a1697776a0",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:298d56065b064f46fb71f2e54e1869535af78bcbe1d661704d90071ab37eb917"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "residual": 0,
+            "schema_version": "grcv4-charge-receipt-v1",
+            "target_charge": 30.140625
+          },
+          "receipt_id": "grc-receipt-sha256:ab984152de8cf0722c45d213b07740eb0a5086b130d13b74f122e4e9e5abaa4b",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:06cdf53b29e98c34fb63d4db4a0e43771546b1b593436a9b6b9a5d20c889deed",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "rebase:grcv4-lifecycle-sha256:8b62ef30a1055b21a6e4942a7e45c329f9ac1655c639bc3e4be348a1697776a0",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:298d56065b064f46fb71f2e54e1869535af78bcbe1d661704d90071ab37eb917"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "history_disposition": "exact_transport",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "candidate"
+          },
+          "receipt_id": "grc-receipt-sha256:3d9decf32da0c264d7026dac7716b8f8059ff3979208daa55296c5dcd221ce23",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:06cdf53b29e98c34fb63d4db4a0e43771546b1b593436a9b6b9a5d20c889deed",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "rebase:grcv4-lifecycle-sha256:8b62ef30a1055b21a6e4942a7e45c329f9ac1655c639bc3e4be348a1697776a0",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:298d56065b064f46fb71f2e54e1869535af78bcbe1d661704d90071ab37eb917"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:98319c7196f6e042bb54ac6aa4e9eeba2337932e8dac110f6b0da7eb44b72485",
+              "source_state_digest": "grcv4-state-sha256:158298f40281d044d1187d512e6d6e7c78d550a428fddf3eb8685a1ff7d6fa1a",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "history_disposition": "not_applicable",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "carrier"
+          },
+          "receipt_id": "grc-receipt-sha256:f69a061f6a60d66a2061bfadb383fba27e4a62818c137d9e395bdce00e3b0deb",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:c3aa67dd3cc3debf24c8b03c090e698354f39ed626af6dbbe66926c147434c50",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:923f042c35e302fbd63a170fbc77eeede5993393370473ecf211e4a76a95196a",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:4a45e914c1a5265cc2b306b812379ca162073894cce7a258f81a12393365a143"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "source_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "reset_baseline_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+            "schema_version": "grcv4-reset-receipt-v1"
+          },
+          "receipt_id": "grc-receipt-sha256:df085b01dd1cbdf9b7997cda60d99c46cf629bc0e81d118723a4836e8f407775",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:c3aa67dd3cc3debf24c8b03c090e698354f39ed626af6dbbe66926c147434c50",
+          "identity_payload": {
+            "admitted_charge": 30.140625,
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:923f042c35e302fbd63a170fbc77eeede5993393370473ecf211e4a76a95196a",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:4a45e914c1a5265cc2b306b812379ca162073894cce7a258f81a12393365a143"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "source_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "residual": 0,
+            "schema_version": "grcv4-charge-receipt-v1",
+            "target_charge": 30.140625
+          },
+          "receipt_id": "grc-receipt-sha256:501553298324cb20f98fcc9f146834a05c1002cdf2420496c91536966d8098f6",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:c3aa67dd3cc3debf24c8b03c090e698354f39ed626af6dbbe66926c147434c50",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:923f042c35e302fbd63a170fbc77eeede5993393370473ecf211e4a76a95196a",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:4a45e914c1a5265cc2b306b812379ca162073894cce7a258f81a12393365a143"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "source_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "history_disposition": "exact_transport",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "candidate"
+          },
+          "receipt_id": "grc-receipt-sha256:814730727475224ebc59e91992db3be86739d9e97bd38d0879355b94b936a053",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        },
+        {
+          "commit_id": "grc-commit-sha256:c3aa67dd3cc3debf24c8b03c090e698354f39ed626af6dbbe66926c147434c50",
+          "identity_payload": {
+            "core": {
+              "actual_charge_delta": 0,
+              "disposition": "committed",
+              "history_bundle_digest": "grcv4-history-map-sha256:23940d94c4448925729bab73da3da947f446c73855383d14ba2e0b5c57c9d98d",
+              "information_losses": [],
+              "operation_id": "reset:grcv4-lifecycle-sha256:923f042c35e302fbd63a170fbc77eeede5993393370473ecf211e4a76a95196a",
+              "parent_receipt_ids": [
+                "grc-receipt-sha256:4a45e914c1a5265cc2b306b812379ca162073894cce7a258f81a12393365a143"
+              ],
+              "resource_transform_digest": "grcv4-resource-transform-sha256:6a3ab5728e5af26ff71bbfe5be1ecf7c80ec240e9ebeb682273a6451cb578221",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "source_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "source_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "source_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "source_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:df49cd7335139deff9f21d32ca482012e07c57806de5c0af0c4882bfea0cda3d",
+              "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19",
+              "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+              "target_reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+              "target_state_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c"
+            },
+            "history_disposition": "not_applicable",
+            "information_loss": "none",
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "subject": "carrier"
+          },
+          "receipt_id": "grc-receipt-sha256:57ac3f2a383559d772fafacead3674169194c4c70e150d2ad7c9dad9a07ecfc6",
+          "schema_version": "grcv4-successful-receipt-envelope-v1"
+        }
+      ],
+      "reference_currents": [
+        {
+          "event_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55",
+          "roles": {
+            "current": {
+              "source": [
+                0.15974237171774058,
+                0.1597423717179028,
+                0.159742371718065,
+                0.15974237171822717,
+                0.15974237171838937,
+                0.1597423717185516,
+                0.1597423717187138,
+                0.15974237171887598,
+                0.15974237171903818
+              ],
+              "target": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0.15974237171774058,
+                0.1597423717179028,
+                0.159742371718065,
+                0.15974237171822717,
+                0.15974237171838937,
+                0.1597423717185516,
+                0.1597423717187138,
+                0.15974237171887598,
+                0.15974237171903818
+              ]
+            },
+            "reset": {
+              "source": [
+                11.259056738450857,
+                11.25905673843941,
+                11.259056738427963,
+                11.259056738416517,
+                11.25905673840507,
+                11.259056738393625,
+                11.2590567378841,
+                11.259056737872653,
+                11.134302635853459
+              ],
+              "target": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                11.259056738450857,
+                11.25905673843941,
+                11.259056738427963,
+                11.259056738416517,
+                11.25905673840507,
+                11.259056738393625,
+                11.2590567378841,
+                11.259056737872653,
+                11.134302635853459
+              ]
+            }
+          },
+          "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+          "target_graph_digest": "grc-graph-sha256:46e285da935cc33a3be63774c9b4f5519f1542d1658c4a00e2491385f8e6bc19"
+        }
+      ],
+      "state": {
+        "inputs": {
+          "H1_form": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "Q_target": 30.140625,
+          "context": {
+            "contract_id": "constant_zero_context_v1",
+            "value": {}
+          },
+          "current": {
+            "C": [
+              0.0029587411721923203,
+              0.0008338876312898407,
+              0.0015659519352321848,
+              0.0014133938430100777,
+              0.00012207031252851246,
+              0.9937807320746268,
+              0.49024501618074806,
+              0.4904278219162749,
+              3.1422235444265665,
+              3.142954763640335,
+              3.1429243060957397,
+              3.1422235444332336,
+              3.1429547636283326,
+              3.1429243060957317,
+              3.1422235444332274,
+              3.1429547636403186,
+              3.017893848540612
+            ],
+            "W_A": [
+              0.9999999999037698,
+              0.9999999997664911,
+              0.9999999997753419,
+              0.999999999834319,
+              0.9999999995946944,
+              0.9999999996057468,
+              0.999999999997742,
+              0.9990236753326978,
+              0.99902367482956,
+              0.9990236748462097,
+              0.9990236752645679,
+              0.9990236749075944,
+              0.9990236748434819,
+              0.9990236752618401,
+              0.9990236748241044,
+              0.9990236749466367
+            ],
+            "Z_4": null
+          },
+          "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+          "dt": 0.000244140625,
+          "evaluation_index": 0,
+          "operation_id": "reset:grcv4-lifecycle-sha256:923f042c35e302fbd63a170fbc77eeede5993393370473ecf211e4a76a95196a",
+          "receipt_ids": [],
+          "reference": {
+            "K4_base": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "graph": {
+              "edges": [
+                {
+                  "edge_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/1",
+                  "head": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/1",
+                    "port": 2
+                  },
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/core",
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/2",
+                  "head": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/2",
+                    "port": 6
+                  },
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/core",
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/3",
+                  "head": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/3",
+                    "port": 7
+                  },
+                  "kind": "spine",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/core",
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/1/1",
+                  "head": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/1/1",
+                    "port": 3
+                  },
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/1",
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/2/1",
+                  "head": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/2/1",
+                    "port": 4
+                  },
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/2",
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/3/1",
+                  "head": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/3/1",
+                    "port": 8
+                  },
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/3",
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/3/2",
+                  "head": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/3/2",
+                    "port": 9
+                  },
+                  "kind": "tree",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/3/1",
+                    "port": 9
+                  }
+                },
+                {
+                  "edge_id": "old-1",
+                  "head": {
+                    "node_id": "outside-1",
+                    "port": 1
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/1",
+                    "port": 1
+                  }
+                },
+                {
+                  "edge_id": "old-2",
+                  "head": {
+                    "node_id": "outside-2",
+                    "port": 2
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/2",
+                    "port": 2
+                  }
+                },
+                {
+                  "edge_id": "old-3",
+                  "head": {
+                    "node_id": "outside-3",
+                    "port": 3
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/3",
+                    "port": 3
+                  }
+                },
+                {
+                  "edge_id": "old-4",
+                  "head": {
+                    "node_id": "outside-4",
+                    "port": 4
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/1",
+                    "port": 4
+                  }
+                },
+                {
+                  "edge_id": "old-5",
+                  "head": {
+                    "node_id": "outside-5",
+                    "port": 5
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/2",
+                    "port": 5
+                  }
+                },
+                {
+                  "edge_id": "old-6",
+                  "head": {
+                    "node_id": "outside-6",
+                    "port": 6
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/3",
+                    "port": 6
+                  }
+                },
+                {
+                  "edge_id": "old-7",
+                  "head": {
+                    "node_id": "outside-7",
+                    "port": 7
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/1",
+                    "port": 7
+                  }
+                },
+                {
+                  "edge_id": "old-8",
+                  "head": {
+                    "node_id": "outside-8",
+                    "port": 8
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/2",
+                    "port": 8
+                  }
+                },
+                {
+                  "edge_id": "old-9",
+                  "head": {
+                    "node_id": "outside-9",
+                    "port": 9
+                  },
+                  "kind": "boundary",
+                  "tail": {
+                    "node_id": "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/3",
+                    "port": 9
+                  }
+                }
+              ],
+              "live_node_ids": [
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/core",
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/1/1",
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/2/1",
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/3/1",
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/extra/3/2",
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/1",
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/2",
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/3",
+                "outside-1",
+                "outside-2",
+                "outside-3",
+                "outside-4",
+                "outside-5",
+                "outside-6",
+                "outside-7",
+                "outside-8",
+                "outside-9"
+              ],
+              "schema_version": "grc9v4-port-graph-v1"
+            },
+            "profile": {
+              "complete_profile_id": "grcv4-profile-sha256:b1f709bcf30d1613561328839b13e59f27ea570f3f25c34ebb39e46ff61b8d2a",
+              "identity_payload": {
+                "candidate": "A",
+                "candidate_c_transport_id": null,
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "composition_gain": null,
+                "context_contract_id": "constant_zero_context_v1",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "params_hash": "grcv4-params-sha256:1dfccefe5797bc515d95ec23761d3a952e926df8011340b409541f2cffd0dc0b",
+                "profile_family_id": "A_CI",
+                "realization": "CI",
+                "schema_version": "grcv4-profile-identity-v1",
+                "solver_id": "ci_reduced_fixed_point_v1",
+                "units_id": "grcv4_nondimensional_reference_v1"
+              },
+              "params_resolved": {
+                "candidate": {
+                  "W_floor": 0.5,
+                  "alpha": 5.960464477539063e-08,
+                  "beta": 5.960464477539063e-08,
+                  "chi_A": 0.0625,
+                  "conductance_evaluator_id": "curvature_disabled_G_W_v1",
+                  "descriptor_backend_id": "grcv4-a-descriptor-sha256:4dfa3619128073e69c58881f9cdefa23de0cb482f8eecc3b0c21e7f800162aa5",
+                  "eta": 1,
+                  "gamma": 5.960464477539063e-08,
+                  "kappa_Ah": 0.5,
+                  "kappa_c": 1,
+                  "schema_version": "grcv4-candidate-a-params-v1",
+                  "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+                  "tau_A": 1,
+                  "zeta_A": 0.5
+                },
+                "charge": {
+                  "absolute_tolerance": 1e-11,
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "relative_tolerance": 0,
+                  "remainder_policy": "compatibility_projection_is_none",
+                  "repair_policy": "never_mutate_resource",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "schema_version": "grcv4-charge-policy-v1"
+                },
+                "common": {
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "default_step_request": null,
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "schema_version": "grcv4-common-params-v1",
+                  "units_id": "grcv4_nondimensional_reference_v1"
+                },
+                "geometry": {
+                  "K4_base_digest": "grcv4-k4-sha256:89cbd2ab69cd22bc68fd279b18d161ac9e4785ba28dd02f661e3acd7be20f8ae",
+                  "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5,
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:8442193759e66777eb4231ac6c9644b21145f6a70b3f51f4cc9f48738993131a",
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "star_cover_id": "vertex_star_exact_overlap_v1"
+                },
+                "lifecycle": {
+                  "history_policy_id": "candidate_a_explicit_reference_initialization_log_history_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                },
+                "realization": {
+                  "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-20",
+                  "iteration_limit": 60,
+                  "residual_norm_id": "joint_current_geometry_l2_v1",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "schema_version": "grcv4-ci-params-v1",
+                  "tolerance": 5.684341886080802e-14
+                },
+                "schema_version": "grcv4-resolved-params-v1",
+                "solver": {
+                  "absolute_tolerance": 1e-11,
+                  "conditioning_limit": 100000000,
+                  "failure_policy_id": "fail_closed_no_fallback_v1",
+                  "iteration_limit": 60,
+                  "relative_tolerance": 1e-11,
+                  "residual_norm_id": "edge_l2_v1",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "fixed_point"
+                }
+              }
+            },
+            "reference_hodge": {
+              "edge_weights": {
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/1": 1,
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/2": 1,
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/3": 1,
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/1/1": 1,
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/2/1": 1,
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/3/1": 1,
+                "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/internal/extra/3/2": 1,
+                "old-1": 1,
+                "old-2": 1,
+                "old-3": 1,
+                "old-4": 1,
+                "old-5": 1,
+                "old-6": 1,
+                "old-7": 1,
+                "old-8": 1,
+                "old-9": 1
+              },
+              "schema_version": "grcv4-reference-hodge-identity-v1"
+            },
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1"
+          },
+          "reset": {
+            "C": [
+              0.0029587411721923203,
+              0.0008338876312898407,
+              0.0015659519352321848,
+              0.0014133938430100777,
+              0.00012207031252851246,
+              0.9937807320746268,
+              0.49024501618074806,
+              0.4904278219162749,
+              3.1422235444265665,
+              3.142954763640335,
+              3.1429243060957397,
+              3.1422235444332336,
+              3.1429547636283326,
+              3.1429243060957317,
+              3.1422235444332274,
+              3.1429547636403186,
+              3.017893848540612
+            ],
+            "W_A": [
+              0.9999999999037698,
+              0.9999999997664911,
+              0.9999999997753419,
+              0.999999999834319,
+              0.9999999995946944,
+              0.9999999996057468,
+              0.999999999997742,
+              0.9990236753326978,
+              0.99902367482956,
+              0.9990236748462097,
+              0.9990236752645679,
+              0.9990236749075944,
+              0.9990236748434819,
+              0.9990236752618401,
+              0.9990236748241044,
+              0.9990236749466367
+            ],
+            "Z_4": null
+          },
+          "reset_id": "grcv4-reset-sha256:ecd2bd9106a818f4499ddb4eb1b7a393e04d688a3fe4bb3c198c0fcb8cc39c11",
+          "scientific_state_id": "grcv4-state-sha256:d54753e31e2db3536478afd200786c883639ff74840bba0790a4138b7ded1913",
+          "source_lifecycle_id": "grcv4-lifecycle-sha256:ec7f0b49f64d2a520906aad99e8b4ed2bb18879e36b4918b79c81a95a3be9819",
+          "stage": "pre_read",
+          "step_index": 3,
+          "time": 0.000732421875,
+          "trial_current": null
+        },
+        "model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+        "reset_digest": "grcv4-reset-sha256:0e86aeb2f14f3fcdf8d089db3ef0801fb7da939d82b584629d00af2c5232a6bc",
+        "scientific_digest": "grcv4-state-sha256:c73d64826dc81e3446e51ab3b8b92246f81e57a9fae538d4ae17d20db517c64c",
+        "specialization": {
+          "identity_payload": {
+            "coarse_policy_id": "grc9v4-coarse-policy-v1",
+            "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+            "frame_mode": "fixed_port_chart",
+            "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+            "hessian_backend": "row_basis_diagonal",
+            "hessian_sign": -1,
+            "port_chart_id": "fixed_3x3_row_column",
+            "port_count": 9,
+            "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+            "schema_version": "grc9v4-specialization-identity-v1",
+            "spark_lane": "current_hybrid_signed_hessian",
+            "specialization_params_hash": "grc9v4-params-sha256:cda0bf280c63fea68ac2cfe696a0b60bc143188f1f130e61d30ccf143118aa9c"
+          },
+          "resolved": {
+            "coarse_graining": {
+              "nonnegative_field_mode": "simplex_profile",
+              "schema_version": "grc9v4-coarse-policy-v1",
+              "signed_flux_mode": "positive_negative_split"
+            },
+            "compatibility": {
+              "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+              "observable_policy_id": "exact_legacy_observable_set_v1",
+              "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+              "state_policy_id": "exact_candidate_specific_projection_v1",
+              "target_spec_version": "grc9v3-spec-2026-09-v1",
+              "transition_policy_id": "exact_profile_scoped_delegate_v1",
+              "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+            },
+            "expansion": {
+              "bond_seed": 1,
+              "boundary_policy": "reserve_exact_old_port_map_first",
+              "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+              "primary_spine_policy": "chiral_latin_same_port_transversal",
+              "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+              "resource_distribution_schema": "event_supplied_simplex3",
+              "schema_version": "grc9v4-expansion-policy-v1",
+              "source_self_loop_policy": "reject_before_target_construction",
+              "stable_id_policy": "grc_event_sha256_role_grammar_v1"
+            },
+            "row_weight": {
+              "candidate_a_source": "committed_postbeat_W_A",
+              "candidate_c_source": "stable_edge_W_C_tr",
+              "disabled_source": "exact_delegate_native_base_conductance",
+              "evaluation_stage": "fresh_postbeat_candidate_detection",
+              "schema_version": "grc9v4-row-weight-policy-v1"
+            },
+            "schema_version": "grc9v4-resolved-specialization-v1",
+            "spark": {
+              "basin_hessian_tolerance": 0.5,
+              "child_stabilization": null,
+              "gradient_tolerance": 0.5,
+              "lane": "current_hybrid_signed_hessian",
+              "schema_version": "grc9v4-spark-policy-v1",
+              "spark_hessian_tolerance": 0
+            }
+          }
+        }
+      }
+    },
+    "successful_groups": 7,
+    "event_commits": 1,
+    "positive_target_steps": 2,
+    "both_roles_distinct": true,
+    "full_reset_restored": true,
+    "exact_replay": true,
+    "source_beat_then_bound_event": true
+  },
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "disabled_compatibility_executed": false,
+  "completion_hierarchy_executed": false,
+  "large_graph_campaign_repeated": false,
+  "record_digest": "59393f1ae983f1f550625d4e4681e8bed440d590e1a3f641cbb3e294129150a0"
+}
