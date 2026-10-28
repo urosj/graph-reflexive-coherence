@@ -9,6 +9,31 @@ selection.
 
 ## Ledger Rules
 
+### Open implementation-originated successor: P9-10.1a (2026-10-28)
+
+This is an **open routing entry, not an accepted decision**. The
+[proposal](./decisions/P9BasinInterfaceAuthorityProposal.md) and
+[source audit/open debt](./evidence/p9-basin-interface/AuthorityAudit.json)
+record the missing enabled-V4 basin membership/identity producer.
+
+| Field | Pending successor disposition |
+| --- | --- |
+| gate_id / status | `P9-10.1a`; authority gap open, corrected design user-accepted; authority admission pending |
+| predecessor_decision_digest | P9-9.6 acceptance `8676df0db54680ca97417fb9bcf657e0cf84fc907bccd2b7c5db47264d8ab861` |
+| decision_record_digest | pending; no accepted successor decision |
+| supersedes | none; accepted historical records remain unchanged |
+| source_identities | Exact source hashes and forensic source/edge references in the linked audit |
+| assumptions | Local seed inequality does not determine whole-graph membership or persistent identity |
+| candidates_considered | Seed-only surface; legacy strongest-flow classifier; singleton assignment; all-route terminal-flow proposal |
+| decision / rejected_alternatives | Corrected all-route terminal-flow diagnostic design accepted; separate authority admission follows |
+| evidence_or_argument | Ten conditional checks; 4,096 four-node directed graphs; BIF-1/2/3 corrections and focused regressions; no native execution or stability theorem |
+| open_debt | `P9-10.1a-DEBT-BASIN-IDENTITY`, open; proposed claim `P9-10.1a-CL-P-BASIN-001` is not admitted |
+| blocked_relabels | Seed equals basin partition; flow labels equal stable attractors; disabled authority selects enabled classifier; diagnostic relabeling is physical basin birth |
+| authorization_effect | Research/proposal only; admit reviewed authority and propagate paper/spec before production implementation |
+| human_acceptance | [2026-10-28 design acceptance](../../phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json) |
+
+### Historical gate record requirements
+
 Every gate record must contain:
 
 ```text

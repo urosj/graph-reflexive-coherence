@@ -3275,6 +3275,17 @@ stale-output clearing. Do not upgrade production support discovery or old eviden
 
 ### P9-10.1 basin and expanded-target support closure — planned
 
+The P9-10.1a source trace now exposes missing enabled-V4 membership/identity
+authority. Its [proposal](../../decisions/P9BasinInterfaceAuthorityProposal.md)
+and [audit](../../evidence/p9-basin-interface/AuthorityAudit.json) are unadmitted;
+the mathematical review and ten conditional checks do not admit a classifier
+or close the runtime gap. The corrected proposal retains all SCCs, binds captured
+observations/replay and states the D4/D9 diagnostic bridge; design accepted by
+the user on 2026-10-28, authority admission next.
+The current forensic API still resolves predecessor constraints with their exact
+support status. Admit a reviewed successor claim/debt before adding it to the
+current authority graph or projecting basin capability support.
+
 P9-10.1a supplies the required baseline basin interface and lifecycle evidence;
 P9-10.1b supplies exact expanded-target disabled compatibility evidence for the
 four selected families. After those results are reviewed, P9-10.1c updates the

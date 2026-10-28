@@ -1,6 +1,35 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — accepted P9-9.6 bounded support review (2026-10-28)
+## Current work — P9-10.1a basin authority gap (2026-10-28)
+
+Branch `work/p9-10-basin-interface`, created from `main` merge `1735d671`.
+The [authority review](./phase-9-grcv4/tranche-10/P9-10.1a-AuthorityReview.md)
+finds that the required baseline basin surface lacks a selected enabled-V4
+membership/identity producer. The local seed inequality is already implemented;
+it cannot determine membership, competing destinations, cycles or ID lifetime.
+The forensic traces preserve their original authority limits.
+
+A concrete [successor proposal](./investigations/grc9v4-constitutive-design/decisions/P9BasinInterfaceAuthorityProposal.md)
+defines represented all-route terminal-flow regions with separate geometric seed
+attributes, explicit ambiguity/no-flow/recirculation, graph-scoped partial IDs
+and lifecycle semantics. Its corrected design is **user-accepted** on 2026-10-28
+([decision](./phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json)); authority
+admission is next. The new debt is open and no
+production, paper, frozen spec or accepted graph has changed. The independent
+review passes the finite mathematics; BIF-1/2/3 are corrected: full SCC/cycle
+evidence, exact captured-read/observation binding and the D4/D9 diagnostic bridge.
+Ten conditional checks pass, including the exhaustive four-node comparison,
+typed IDs and numerical edge cases. These are not native replay or stability
+proofs. The review's external scripts were not supplied or locally rerun.
+
+Next: admit the accepted claim/debt authority,
+propagate proposal → reviewed paper → V4 spec/schema, and implement/test the
+four-family public basin surface. If genuine stable attraction basins are required
+instead of flow-region labels, resolve that stronger classifier explicitly.
+P9-10.1a remains open; P9-10.1b/c have not started. Do not silently import V3's
+classifier or treat these conditional checks as implementation conformance.
+
+## Accepted checkpoint — P9-9.6 bounded support review (2026-10-28)
 
 Branch `work/p9-9-first-group`; accepted P9-9.5 committed at `5efecfd4`.
 P9-9.6 is **bounded-accepted** on 2026-10-28 for C_OS, C_CI, A_CI, A_PC;

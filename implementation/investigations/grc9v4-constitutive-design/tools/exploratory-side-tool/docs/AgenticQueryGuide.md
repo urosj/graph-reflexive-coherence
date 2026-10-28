@@ -937,3 +937,22 @@ this is separate from optional completed sparks/hierarchy. The frozen umbrella
 compatibility capability requires all forty vectors, while twenty-four remain
 unselected. These three items are routed to P9-10.1. A successful integrity check
 does not remove them, promote D10.2 indeterminate traces or grant full conformance.
+
+## P9-10.1a basin proposal — not admitted authority
+
+The [proposal](../../../decisions/P9BasinInterfaceAuthorityProposal.md) and
+[source audit](../../../evidence/p9-basin-interface/AuthorityAudit.json) record
+an open membership/identity producer gap. The current pre-ATC forensic context
+resolves the row, spark, child-completion, snapshot, atomicity and disabled
+lifecycle contracts used in that audit; their support dispositions remain
+unchanged. `GRC_basin_identity` is an unresolved premise reference, not a new
+queryable normative node. The failed lookup alone is not a universal absence proof.
+
+`P9-10.1a-CL-P-BASIN-001` is proposed and `P9-10.1a-DEBT-BASIN-IDENTITY` is open
+in the pending successor record. Neither is admitted to the current claim graph.
+Independent mathematical review passes and BIF-1/2/3 corrections are incorporated:
+full SCC/cycle evidence, captured observation/replay binding and the D4/D9 bridge.
+The ten executable checks concern the conditional graph/representation contract;
+they do not demonstrate native replay. Design accepted by the user on 2026-10-28.
+Use an explicit successor admission before querying them as
+accepted authority; do not silently interpret the proposal as production support.

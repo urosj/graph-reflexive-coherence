@@ -1,0 +1,34 @@
+{
+  "schema": "p9101a-basin-proposal-checks-v1",
+  "outcome": "passed_conditional_finite_graph_checks",
+  "tests": 10,
+  "exhaustive_directed_graphs": 4096,
+  "nodes_per_exhaustive_graph": 4,
+  "relabelings": 24,
+  "review_regressions": [
+    "nonterminal_and_self_loop_cycle_evidence",
+    "typed_node_identity_and_canonical_order",
+    "captured_read_sign_and_binding_distinctions_not_native_replay",
+    "exact_seed_squares_underflow_overflow",
+    "exhaustive_forward_closure_quiescent_isolation_divergence_free_unit_currents"
+  ],
+  "native_model_runs": 0,
+  "proposal_accepted": false,
+  "claim_ceiling": "Finite represented-graph rule only; not realization feasibility, attraction stability or native lifecycle conformance.",
+  "authority_audit_digest": "fba617c3374f32197348f721fdcba629d148e363952e4a632da936f7bf0ca803",
+  "source_refs": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_p9_basin_interface_proposal.py",
+      "sha256": "32bffeffd2835afbbd1db5e0e00e7fd38e6844cd332936a8532eb38234309a38"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9BasinInterfaceAuthorityProposal.md",
+      "sha256": "dfe65215d73af572ed57014579c0a7b10d0f675a018077a98fc92116e4f0bb46"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/p9-basin-interface/IndependentReview.md",
+      "sha256": "d40d887e4ec8be2f6ce83edd04452558b6d1d4f39f102bf5b30494cbf6cb6425"
+    }
+  ],
+  "record_digest": "b51658e1a7add07b9decf181cded80751ccd8284f3ca3744cba1391ff1414d56"
+}

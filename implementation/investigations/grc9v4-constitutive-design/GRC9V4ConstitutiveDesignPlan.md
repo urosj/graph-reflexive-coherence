@@ -7,6 +7,18 @@
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
 **Initialization:** [`GRC9V4ConstitutiveDesignInitialization.json`](./GRC9V4ConstitutiveDesignInitialization.json)
 
+**Implementation-originated successor — 2026-10-28:** P9-10.1a exposes an
+enabled-GRC9V4 basin membership/identity producer gap. The
+[baseline basin proposal](./decisions/P9BasinInterfaceAuthorityProposal.md)
+and [open debt/source audit](./evidence/p9-basin-interface/AuthorityAudit.json)
+are not admitted authority. The independent mathematical review passes; its
+full-cycle, captured-observation and D4/D9 corrections are incorporated. Ten
+investigation-local conditional checks pass; no production or accepted paper/spec
+is changed. The corrected flow-region/seed design is user-accepted on 2026-10-28.
+Next admit the claim/debt successor, then propagate through
+proposal, reviewed paper and V4 spec/schema before native implementation. This
+does not reopen ATC, select child completion or reinterpret GRC9V3.
+
 **Current research continuation — 2026-09-21:** the opening and ATC-1's
 bounded causal research envelope are [user-accepted](./decisions/ATC1Acceptance.md).
 [ATC-2](./decisions/ATC2CandidateClosureProposal.md) has a bounded independent

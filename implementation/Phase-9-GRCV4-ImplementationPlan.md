@@ -4313,6 +4313,18 @@ The API/browser/notebook expose these three limits alongside the passing evidenc
 P9-10.1 closes the two P9-9.6 gaps through the following bounded children,
 before capability publication and final conformance acceptance:
 
+P9-10.1a source review on 2026-10-28 found a missing enabled-V4 membership/identity
+producer behind the required public field. The seed test is defined, but a whole
+basin assignment and its lifecycle are not selected by that predicate. The
+[authority review](./phase-9-grcv4/tranche-10/P9-10.1a-AuthorityReview.md) links
+the proposed successor and open debt. The independent mathematical review passes;
+full cycle evidence, captured-read/replay binding and the D4/D9 bridge are
+corrected. Ten conditional checks pass; no native work has started. Next is
+admission of the user-accepted corrected contract, then authority →
+proposal/paper/spec propagation → runtime implementation. The proposed flow-region
+interpretation is an accepted bounded diagnostic design, not a stable-attractor
+result or implemented classifier.
+
 1. **P9-10.1a — Baseline basin interface closure.** Trace the existing local
    classification and basin-identity semantics, then implement the required public
    attributes and lifecycle identity for C_OS/C_CI/A_CI/A_PC. Test fresh evaluation,
