@@ -79,15 +79,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "99497fd665a17b8283f3e6c4d7e4b3a6338b8efe2c43381a01f1b74286ee97d2"
+      "sha256": "fcc3020e46e1ca25549c7101fde9da2d0550b24ce760f45c738303364e219014"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "cf4f209b5cd36db7f6870a053811ff9c6afc725b7ddc0de28ebcd4d7b5bb3971"
+      "sha256": "fbc221e1d588f0f6d0fe66e0c4a57df3798bdf079b7f72e8d1b1ff6869299973"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "551c2646b852f1139054b196760fe1ae70cc57d7dbc860f96f0e7daafa199b3a"
+      "sha256": "e8a0e2e4b66aa7d04dbdc07808b19d0a2c0881ac7855f8b93bb2a7b8cc284de0"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -1283,11 +1283,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
-      "sha256": "99076188a9fdc6bf8cef16c800bfa21169e3ab0480e6f09adfe6eab7e2adc1fe"
+      "sha256": "d4de88e2aaea77746fdf52a0b3be0aac76566ddb3a0a364f9f18e1a0e5950492"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
-      "sha256": "9302272e4dff3a44f6b1b4c34e13c7b18f899836b510d7cabf00414917105a78"
+      "sha256": "8bb0bd577a503de9e8aea1e37b29fb0eec0ae70f9f108512fcfffe6b6a0ec3da"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/README.md",
@@ -1347,7 +1347,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
-      "sha256": "57987d0f4e9292eaded88e1c98dc09b03dd863a59aa84e40f0e647937a4bd219"
+      "sha256": "3ca6cdb79c6204a87ff50216852dbd21459d82e3a7756bd1c4c383a8e1bf51eb"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/aggregate-review.js",
@@ -1371,7 +1371,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
-      "sha256": "f1200eda7a4c0c17312469721016adc5336638c7669a94faf396d4876d7bfdfb"
+      "sha256": "7d81602ec5c15a131bff3004f23e4752dcd602392dfbc9108bdaf5222d2b65ba"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/specialization-review.js",
@@ -1380,6 +1380,10 @@
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/specialization-review.test.mjs",
       "sha256": "5c7034f89dfd5ff5821d36afcacd013b2292c759c5e70d81ca35565342be66fc"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/target-compatibility.js",
+      "sha256": "52fd08366d63422a04d0fcceb97d6fabd5b757e66907de61e95d1381ff79d427"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche8-apc-evidence.js",
@@ -1495,7 +1499,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py",
-      "sha256": "758ec6f5f1322565683768f1509ff80adabbb0c9e06ba852e6d0783adc661017"
+      "sha256": "ca64d85be6019219cebef8e52c4261681e2f47c8b2d7c69ef8d4080f5dc7be1b"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_atc_ci_research.py",
@@ -1592,6 +1596,10 @@
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/successor.py",
       "sha256": "7657008a745230048a6fa008ffee1990582c5cce2ccb951475aeef2588f775bf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/target_compatibility.py",
+      "sha256": "42da042fb8c587d308c6763f3ce0cb47af868e2964bad8bc894c9b9777c8e43e"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche8.py",
@@ -1720,6 +1728,30 @@
     {
       "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Pressure-graph.json",
       "sha256": "64197f3d90dcce5f3283846c1c10929de67aa301f27796d3b2b1870bd0789cde"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-A_CI.json.xz",
+      "sha256": "2308c25c9cc7910016bfd241d36564ecc7d8b49006cef19cd1f339fd64ceadbf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-A_PC.json.xz",
+      "sha256": "017b03309562197eaf95de336e04a36044864448c5a41828252d1158f4915c37"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-Acceptance.json",
+      "sha256": "cd6223f2fcbaf451c14900d1dab2483ccce354f6b21dd9190a50a4940e8400cd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-C_CI.json.xz",
+      "sha256": "caccf897db4fbeb9ea4cdaf564e82bf2ee0e78ca8b8d67209c7afc47da6ff99f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-C_OS.json.xz",
+      "sha256": "bcbf4c353de937231b4cc5ef29a1b2c97775dca22208e86fd76b7614d3105cad"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-Review.md",
+      "sha256": "00d242decc56e99317df932a1900e7c6819e27dc14e644b60f2117f3e2bae55a"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
@@ -5666,6 +5698,14 @@
       "sha256": "a0f8f4dd1a31c40862e6d584ca463c344a242ac64a091e68a8a1172049059f8f"
     },
     {
+      "path": "implementation/phase-9-grcv4/verification/p9101b_acceptance.py",
+      "sha256": "8b8b039ea7b7864e800c89c3fb177db8208a42266a2a433c83de7ad230eed50f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9101b_target_compatibility.py",
+      "sha256": "5bfbc06a2d6f2fb6ffa903f7ea09b88117f980e0b61be15583af4cf7af83ae90"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/p984b_aci_runtime.py",
       "sha256": "a0b7cd8157d543b0ea194dc583dff4132c64d2c8685270dbcc78c58df21f7b18"
     },
@@ -6227,7 +6267,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "f19deed1c8c6ec34cd28ffadf5e56477237124e0c8c76eb1bb7bdbd90dc49019"
+      "sha256": "98619cefd2fe63d9b3d7a52a2e4ce74e21599520b3fedac2349495f03e37cf3c"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -6276,6 +6316,14 @@
     {
       "path": "implementation/phase-9-grcv4/verification/test_p9101a_native_surfaces.py",
       "sha256": "ab29d90d0c252ecb5a11a2dbdc2eac30df07fa87734b13097b573f01626af73e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p9101b_target_compatibility.py",
+      "sha256": "2c75100428bf4cd0b343397280a033c467ee6ad367095bbf26f0f6627838f41b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p9101b_target_surfaces.py",
+      "sha256": "03c31ac59c9c5816ec010023bc0f5da4c30c70d65bb719b9c68c36b9a70cb211"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p972a_initializer_runtime.py",
@@ -7830,5 +7878,5 @@
       "sha256": "d5ae02c94a9ff0a3ff68976a36549e963688a793c3862dfdc5016c6df9d6cedf"
     }
   ],
-  "record_digest": "4695ef6920f931435f25de369cfe73886cc2720734785f161bab58e8ac815870"
+  "record_digest": "7d6e684233ae8161f44088a3e6bcdc535b78b59d5d719e208853bec174c3feab"
 }

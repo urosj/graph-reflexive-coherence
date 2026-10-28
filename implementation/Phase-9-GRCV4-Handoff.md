@@ -1,5 +1,37 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-10.1b exact expanded-target compatibility (2026-10-28)
+
+Branch `work/p9-10-basin-interface`, following accepted native basin commit
+`ee603f5d`. [Target review](./phase-9-grcv4/tranche-10/P9-10.1b-Review.md) records
+the four exact 17-vertex/16-edge expanded subjects, with separate explicit v2
+basin successors. Original v1 identities and accepted records remain unchanged.
+All 12 native checks and three retained/API/browser/notebook checks pass, along
+with the existing basin HTTP/notebook regression. User accepted bounded P9-10.1b;
+[decision](./phase-9-grcv4/tranche-10/P9-10.1b-Acceptance.json). Overall P9-10.1
+remains open for P9-10.1c reconciliation and any further corrections the user
+identifies before closure.
+
+The focused suite independently constructs native V3 counterparts and checks
+transition/state/observable/lifecycle parity, both histories, native reset,
+return initialization, positive V4 continuation, enabled reset and exact replay.
+Six rejection controls per family preserve the complete publication and journal;
+rejections are never counted as successful compatibility. Saved target resource
+roles start equal, with deliberately distinct incoming history declarations;
+native evolution makes the current/reset resources distinct before return.
+
+Records above 1 MB are XZ-compressed. API `/api/tranche10/targets`, indexed source
+downloads, the browser panel and notebook `expanded-targets` cell expose exact
+subjects and honest scope. The checker verifies retained evidence only.
+No `src/`, legacy, paper/spec or scientific authority change was needed. No
+large Tranche 8 trajectory was rerun. The other 24 source-matrix cells, all-forty
+umbrella capability, other-six execution and G4/full conformance remain open.
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/p9101b_acceptance.py
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101b_target_surfaces -v
+```
+
 ## Accepted checkpoint — P9-10.1a native basin successor (2026-10-28)
 
 Branch `work/p9-10-basin-interface`. Accepted design `1275bd1f` and propagation

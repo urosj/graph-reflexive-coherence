@@ -3979,9 +3979,10 @@ migration or a full specialization conformance grant.
       resolves `P9-10.1a-VO-BASIN-NATIVE` for C_OS/C_CI/A_CI/A_PC.
       [Independent retained-evidence review](./phase-9-grcv4/tranche-10/P9-10.1a-IndependentReview.md) passes;
       its checks are not relabeled as an independent native transaction rerun.
-    Bounded P9-10.1a is closed. P9-10.1b/c, aggregate support reconciliation and
+    Bounded P9-10.1a is closed. The subsequent P9-10.1b acceptance is below;
+    P9-10.1c, aggregate support reconciliation and
     the frozen release boundary remain separate.
-  - [ ] P9-10.1b — Expanded-target compatibility closure (`target_identity_scope`):
+  - [x] P9-10.1b — Expanded-target compatibility closure (`target_identity_scope`):
     reuse the four accepted expanded targets and bind their exact profile,
     specialization and combined model identities. Verify disabled transition,
     state, observable and lifecycle parity against unchanged native GRC9V3;
@@ -3989,6 +3990,17 @@ migration or a full specialization conformance grant.
     Verify explicit refusal and rollback outside the defined legacy domain.
     Retain target-specific outcomes; source-cell acceptance does not transfer
     by family name, and a refusal is not successful target compatibility.
+    - [x] Bind each exact 17-vertex/16-edge P9-9.1b target to the P9-9.6
+      profile/specialization/model/graph identities; preserve v1.
+    - [x] Implement independent native V3 projection and four-surface checks,
+      including both roles, return, positive V4 continuation, reset and replay.
+    - [x] Add explicit basin-policy migration and separate v2 target identities;
+      never infer v2 compatibility from v1 acceptance.
+    - [x] Add reset-only, out-of-domain Hessian, wrong-graph, replay-tampering
+      and late-publication pressure with complete rollback assertions.
+    - [x] Final retained-integrity and API/browser/notebook checks, with compressed
+      evidence and indexed source access.
+    - [x] User acceptance of the bounded [target review](./phase-9-grcv4/tranche-10/P9-10.1b-Review.md).
   - [ ] P9-10.1c — Support reconciliation after a/b: attach successor evidence
     and reviewed dispositions to the two holds, update side-tool API/browser/
     notebook projections and handoff, and close only the demonstrated scope.

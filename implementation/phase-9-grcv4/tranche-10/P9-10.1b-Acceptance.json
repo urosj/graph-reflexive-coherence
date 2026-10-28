@@ -1,0 +1,60 @@
+{
+  "schema": "p9101b-target-acceptance-v1",
+  "status": "accepted_bounded_target_compatibility",
+  "accepted_on": "2026-10-28",
+  "user_instruction": "i'll accept, and if there's anything that needs updating, i'll let you know before closing 10.1",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "P9_10_1b_closed": true,
+  "P9_10_1_closed": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "other_six_native_execution": false,
+  "compatibility_capability_advertised": false,
+  "execution_projection_digest": "20d744fd5cad12432303be78166d30ec1c79834b3c7942f134addbcff13d9328",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-C_OS.json.xz",
+      "sha256": "bcbf4c353de937231b4cc5ef29a1b2c97775dca22208e86fd76b7614d3105cad",
+      "record_digest": "42744bd07acfad5dcc92070708144cc21734e17eec6bc273085e2d49515d7acd",
+      "family": "C_OS"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-C_CI.json.xz",
+      "sha256": "caccf897db4fbeb9ea4cdaf564e82bf2ee0e78ca8b8d67209c7afc47da6ff99f",
+      "record_digest": "5fdb3d62affabbe6621efbf80b66259470fd61c9ef72546da7e2ec2ef58acb63",
+      "family": "C_CI"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-A_CI.json.xz",
+      "sha256": "2308c25c9cc7910016bfd241d36564ecc7d8b49006cef19cd1f339fd64ceadbf",
+      "record_digest": "431325ad7e1faa2865a7682c519d1a04128ea2a658d146b83ac886900b488740",
+      "family": "A_CI"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-A_PC.json.xz",
+      "sha256": "017b03309562197eaf95de336e04a36044864448c5a41828252d1158f4915c37",
+      "record_digest": "3c820838268cfeadbfe30494302727929f5a90b393ad7b0181dde89501a06509",
+      "family": "A_PC"
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1b-Review.md",
+      "sha256": "00d242decc56e99317df932a1900e7c6819e27dc14e644b60f2117f3e2bae55a"
+    }
+  ],
+  "remaining_work": [
+    "P9-10.1c"
+  ],
+  "scope": "Exact four-family expanded v1 targets and explicit basin successors, with successful four-surface compatibility distinguished from refusal controls. No all-forty capability or family-wide support grant.",
+  "closure_note": "Overall P9-10.1 remains open for reconciliation and any further corrections identified by the user before closure.",
+  "historical_records": "Original execution flags and accepted predecessors remain unchanged; this decision supplies bounded user acceptance.",
+  "record_digest": "4904615dedd468be3ddafde5d23030709c66fc05d9c481848f6a4cf56ce9c770"
+}

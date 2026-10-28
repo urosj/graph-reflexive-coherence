@@ -2685,3 +2685,16 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
 - [x] Record bounded native acceptance and resolve `P9-10.1a-VO-BASIN-NATIVE`
   through the checked acceptance successor; retain the original design/execution
   snapshots and P9-10.1b/c holds.
+
+#### P9-10.1b expanded-target evidence
+
+- [x] Separate exact original-target and explicit basin-successor identities;
+  expose both through API, browser and notebook with indexed compressed sources.
+- [x] Separate successful compatibility from refusal/rollback controls, retained
+  checking from native execution, and execution from user acceptance.
+- [x] Verify source access, identity/scope mutation rejection and stale-output
+  clearing across the three surfaces.
+- [x] Expose bounded P9-10.1b acceptance and its indexed decision/review, keeping
+  overall P9-10.1 open and original execution records unchanged.
+- [ ] P9-10.1c: consume accepted target outcomes in aggregate support reconciliation
+  while retaining the all-forty condition and other-six exclusions.

@@ -4332,7 +4332,7 @@ C_OS observes its fresh reference restart; it does not run another corrector.
 User accepted bounded P9-10.1a on 2026-10-28;
 [decision](./phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json) closes its native
 verification obligation using unchanged execution subjects and the independent
-retained-evidence review. Next is P9-10.1b, then P9-10.1c. All-ten public declarations remain
+retained-evidence review. P9-10.1b is also bounded-accepted below; next is P9-10.1c. All-ten public declarations remain
 recognized; six additional native families are not enabled. The interpreted
 regions are diagnostic, not stable attractors; the frozen executable release,
 scientific authority and P9-9.6 support holds retain their accepted subjects.
@@ -4353,6 +4353,14 @@ scientific authority and P9-9.6 support holds retain their accepted subjects.
    defined legacy domain. Record actual target-specific success or exclusion;
    source-only evidence and a passing rejection test do not establish successful
    compatibility for that target. These checks extend P9-9.2/P9-9.4a evidence.
+   The bounded implementation reuses the saved 17-vertex/16-edge targets,
+   independently constructs native V3 counterparts, and separates original v1
+   subjects from explicitly migrated basin-enabled v2 subjects. It covers
+   step/reset/step parity, fresh A initialization, A_PC carrier reset, positive
+   enabled continuation, both replay states and six refusal/rollback controls.
+   [Execution and limits](./phase-9-grcv4/tranche-10/P9-10.1b-Review.md) were
+   bounded-accepted on 2026-10-28; overall P9-10.1 remains open. Indexed compressed evidence is accessible through the
+   side-tool; aggregate support changes remain exclusively P9-10.1c work.
 3. **P9-10.1c — Support reconciliation.** Bind the a/b successor results, review
    each hold's resulting scope, and update support projections through the side-tool
    API, browser and notebook plus the handoff. Preserve original accepted records,

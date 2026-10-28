@@ -1813,6 +1813,21 @@ PATHS |= {
 }
 
 
+# Exact expanded-target successors; accepted source/target evidence is unchanged.
+PATHS |= {
+    PHASE + "verification/p9101b_target_compatibility.py",
+    PHASE + "verification/p9101b_acceptance.py",
+    PHASE + "verification/test_p9101b_target_compatibility.py",
+    PHASE + "verification/test_p9101b_target_surfaces.py",
+    PHASE + "tranche-10/P9-10.1b-Review.md",
+    PHASE + "tranche-10/P9-10.1b-Acceptance.json",
+    *(PHASE + "tranche-10/P9-10.1b-" + f + ".json.xz"
+      for f in ("C_OS", "C_CI", "A_CI", "A_PC")),
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/target_compatibility.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/target-compatibility.js",
+}
+
+
 def check_binding_reconciliation(root):
     """Retain exact committed context; never waive a directory or future file."""
     value = binding_reconciliation(root)

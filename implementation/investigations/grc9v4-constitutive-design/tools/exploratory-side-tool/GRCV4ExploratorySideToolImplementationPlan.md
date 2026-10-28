@@ -3310,3 +3310,16 @@ rerun. User accepted bounded native conformance on 2026-10-28. The checked
 acceptance successor resolves `P9-10.1a-VO-BASIN-NATIVE`; API/browser/notebook expose
 the decision, review and source bindings. The original design/execution snapshots
 retain their historical flags. P9-10.1b/c and aggregate support remain open.
+
+#### P9-10.1b expanded-target evidence
+
+The separate `grcv4_explorer.target_compatibility` view binds the exact accepted
+expanded targets and explicitly migrated basin successors for C_OS/C_CI/A_CI/A_PC.
+API `/api/tranche10/targets` and `/api/tranche10/targets/source`, browser controls
+and the notebook `expanded-targets` cell expose retained results and sources.
+The projection separates successful four-surface parity from six rejection
+controls per family, v1 from v2 identity, and retained integrity from a native
+rerun. A checked acceptance successor records bounded user acceptance and rejects
+source/scope drift, leaving overall P9-10.1 open.
+P9-10.1c still owns aggregate support reconciliation; this view does not promote
+the frozen all-forty capability or fill the other-six source cells.
