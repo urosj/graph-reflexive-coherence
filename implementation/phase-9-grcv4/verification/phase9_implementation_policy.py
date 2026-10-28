@@ -1828,6 +1828,24 @@ PATHS |= {
 }
 
 
+PATHS |= {
+    PHASE + "verification/p9101c_support_reconciliation.py",
+    PHASE + "verification/p9101c_acceptance.py",
+    PHASE + "tranche-10/P9-10.1c-Acceptance.json",
+    PHASE + "verification/test_p9101c_support_reconciliation.py",
+    PHASE + "verification/p9101c_target_basin.py",
+    PHASE + "verification/test_p9101c_target_basin.py",
+    PHASE + "tranche-10/P9-10.1c-ExactTargetBasin-C_OS.json",
+    PHASE + "tranche-10/P9-10.1c-ExactTargetBasin-C_CI.json",
+    PHASE + "tranche-10/P9-10.1c-ExactTargetBasin-A_CI.json",
+    PHASE + "tranche-10/P9-10.1c-ExactTargetBasin-A_PC.json",
+    PHASE + "tranche-10/P9-10.1c-SupportReconciliation.json",
+    PHASE + "tranche-10/P9-10.1c-Review.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche10_support.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-support.js",
+}
+
+
 def check_binding_reconciliation(root):
     """Retain exact committed context; never waive a directory or future file."""
     value = binding_reconciliation(root)

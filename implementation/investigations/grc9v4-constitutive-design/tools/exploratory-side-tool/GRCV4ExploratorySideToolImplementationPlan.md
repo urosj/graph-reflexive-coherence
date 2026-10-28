@@ -3323,3 +3323,22 @@ rerun. A checked acceptance successor records bounded user acceptance and reject
 source/scope drift, leaving overall P9-10.1 open.
 P9-10.1c still owns aggregate support reconciliation; this view does not promote
 the frozen all-forty capability or fill the other-six source cells.
+
+#### P9-10.1c current support reconciliation
+
+`grcv4_explorer.tranche10_support` checks the accepted a/b successors and joins
+their exact versioned identities to the historical P9-9.6 subjects. Two holds
+are resolved in the proposed current view; the all-forty restriction remains a
+full-capability boundary. The independently pressured basin expansion and the
+compatibility target have different identities and remain distinct evidence.
+The direct-target supplement adds checked evidence on all four exact 10.1b v2
+targets at migration and disabled return (both roles), with assumptions, full
+root bindings, equation bounds and indexed raw records. It is new direct
+evidence included in P9-10.1c acceptance, not transferred pressure from 10.1a. Preserve
+the fixed-H/exact-CI-root distinction and explicit A_PC return carrier reset.
+Actual API/source access, browser and notebook expose this result, while main
+Phase 9 next-step guidance consumes the same view. The old support endpoint
+and original records remain historical. No native rerun or scientific/support
+promotion is performed. The separate acceptance view now records user-accepted
+P9-10.1c and bounded P9-10.1 closure, preserving raw snapshots and all-forty
+restrictions. API/browser/notebook and next-step guidance now point to P9-10.2.

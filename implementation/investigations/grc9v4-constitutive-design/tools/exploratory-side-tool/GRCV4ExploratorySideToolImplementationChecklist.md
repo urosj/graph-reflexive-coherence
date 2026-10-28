@@ -2656,7 +2656,7 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
 - [x] Bounded user acceptance on 2026-10-28, projected separately from the
   original review record; full conformance and P9-G4 remain held.
 
-### P9-10.1 basin and expanded-target support closure — planned
+### P9-10.1 basin and expanded-target support closure — bounded reconciliation
 
 - [x] Retain the P9-10.1a source audit with exact forensic authority boundaries
   and an explicitly unadmitted proposal/open debt; no accepted graph change.
@@ -2667,12 +2667,12 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
   preserve historical pins, source access and failure clearing.
 - [x] Validate proposal/paper/spec propagation and closed wire schema while
   retaining the native obligation and unchanged executable release.
-- [ ] Consume reviewed P9-10.1a baseline basin interface/lifecycle evidence and
+- [x] Consume reviewed P9-10.1a baseline basin interface/lifecycle evidence and
   P9-10.1b expanded-target disabled compatibility evidence for the four families.
-- [ ] P9-10.1c: update the checked support projection, API/browser/notebook and
+- [x] P9-10.1c: update the checked support projection, API/browser/notebook and
   indexed sources with exact target identities, successor outcomes and remaining
   holds; reject drift and unsupported promotion while preserving accepted records.
-- [ ] Retain the separate all-forty umbrella restriction, numerical/authority
+- [x] Retain the separate all-forty umbrella restriction, numerical/authority
   limits and optional/other-six exclusions when reporting closure of either gap.
 
 #### P9-10.1a native evidence successor
@@ -2696,5 +2696,20 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
   clearing across the three surfaces.
 - [x] Expose bounded P9-10.1b acceptance and its indexed decision/review, keeping
   overall P9-10.1 open and original execution records unchanged.
-- [ ] P9-10.1c: consume accepted target outcomes in aggregate support reconciliation
+- [x] P9-10.1c: consume accepted target outcomes in aggregate support reconciliation
   while retaining the all-forty condition and other-six exclusions.
+
+#### P9-10.1c current support reconciliation
+
+- [x] Preserve historical P9-9.6 and provide current exact-identity resolutions
+  through `/api/tranche10/support`, indexed sources, browser and notebook.
+- [x] Wire main Phase 9 next-step guidance to the current checked view.
+- [x] Keep distinct basin-pressure targets, v1/v2 identities, inherited numerical
+  limits and D10.2 authority dispositions explicit.
+- [x] Expose new independent checks on the four exact v2 compatibility targets,
+  eight boundaries/sixteen role captures, through the current support projection
+  and indexed sources. Distinguish direct evidence from historical attribution
+  and retained checking from native execution.
+- [x] Complete focused mutation/access regression checks.
+- [x] Record P9-10.1c and bounded P9-10.1 acceptance on 2026-10-28; expose the
+  decision and exact-target evidence without rewriting raw records. Next: P9-10.2.

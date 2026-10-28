@@ -83,7 +83,7 @@ export function nativeBasinLoader(output,status,fetcher=fetch,create=tag=>docume
       const response=await fetcher('/api/basin/native');if(!response.ok)throw new Error('Native evidence unavailable');
       const v=await checkedNativeBasin(await response.json());if(ticket!==sequence)return;
       const add=(tag,text)=>{const e=create(tag);e.textContent=text;output.append(e);return e;};
-      add('p','P9-10.1a bounded accepted for C_OS, C_CI, A_CI and A_PC. Native verification obligation resolved; P9-10.1b/c remain open.');
+      add('p','Historical P9-10.1a bounded acceptance for C_OS, C_CI, A_CI and A_PC. Native verification obligation resolved; see P9-10.1c for current support reconciliation.');
       add('p','This page checks retained execution evidence; it does not rerun numerics. No full-conformance or completed-spark claim.');
       add('p',v.scope);
       for(const r of v.records) {

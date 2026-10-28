@@ -3943,7 +3943,7 @@ migration or a full specialization conformance grant.
 
 ## Tranche 10. Conformance and handoff
 
-- [ ] P9-10.1: Reconcile every vector hold and acceptance-gate runtime debt
+- [x] P9-10.1: Reconcile every vector hold and acceptance-gate runtime debt
   with exact execution evidence or an explicit remaining support hold.
   - [x] P9-10.1a — Baseline basin interface closure (`basin_surface`): trace
     classification and identity semantics; resolve missing authority through the
@@ -4001,13 +4001,34 @@ migration or a full specialization conformance grant.
     - [x] Final retained-integrity and API/browser/notebook checks, with compressed
       evidence and indexed source access.
     - [x] User acceptance of the bounded [target review](./phase-9-grcv4/tranche-10/P9-10.1b-Review.md).
-  - [ ] P9-10.1c — Support reconciliation after a/b: attach successor evidence
+  - [x] P9-10.1c — Support reconciliation after a/b: attach successor evidence
     and reviewed dispositions to the two holds, update side-tool API/browser/
     notebook projections and handoff, and close only the demonstrated scope.
     Preserve the separate `umbrella_compatibility` all-forty condition: target
     checks do not execute the other twenty-four source-matrix cells or authorize
     a full label. Other-six execution or a contract change needs a separate
     scope decision. Preserve accepted records and numerical/authority limits.
+    - [x] Bind accepted a/b decisions and exact source/target v1/v2 identities;
+      retain the different basin-pressure expansion subjects explicitly.
+    - [x] Resolve `basin_surface` for explicit v2 successors and
+      `target_identity_scope` for exact tested targets; preserve v1 declarations.
+    - [x] Keep 16 accepted / 24 unselected source cells distinct from the
+      additional 16 v1 / 16 v2 target cells. Route the all-forty restriction to
+      future scope decisions and full-capability publication, without blocking
+      bounded four-family closure.
+    - [x] Directly check the four exact 10.1b v2 targets: migration and disabled
+      return boundaries, both roles, oracle assumptions, saved C/W/Z and graph/
+      context, independent equations/rows/classification, OS restart, complete
+      CI root and PC carrier. Preserve both earlier evidence sets and fixed-H
+      versus exact-root limits; no expansion rerun or wider population.
+    - [x] Expose current reconciliation and historical views through actual
+      API/browser/notebook access and current Phase 9 next-step guidance.
+    - [x] Complete focused mutation/access checks.
+    - [x] Complete phase-boundary integrity.
+    - [x] User review of [P9-10.1c](./phase-9-grcv4/tranche-10/P9-10.1c-Review.md)
+      and exact-target corrections accepted on 2026-10-28; bounded P9-10.1
+      closed. [Decision](./phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json).
+      Next: P9-10.2; umbrella/full-conformance limits remain.
 
   Reuse accepted fixtures and checkers; run focused new checks and affected
   regressions, with independent family runs parallel where practical. No broad

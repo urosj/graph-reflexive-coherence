@@ -1,0 +1,64 @@
+{
+  "schema": "p9101c-support-acceptance-v1",
+  "status": "accepted_bounded_support_reconciliation",
+  "accepted_on": "2026-10-28",
+  "user_instruction": "ok, accept, commit, then merge the branch",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "P9_10_1c_closed": true,
+  "P9_10_1_closed": true,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "other_six_native_execution": false,
+  "compatibility_capability_advertised": false,
+  "reconciliation_digest": "4f47c70163ad0575c54a45595648a313f3ef990cab138f9ecde3796ee0f2490a",
+  "direct_target_evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1c-ExactTargetBasin-C_OS.json",
+      "sha256": "15b9eb3ce7c5edfc3ad29142c388dcdc8d0c42ed06362c0ce826800f03e8899a",
+      "record_digest": "be964a626733fcf8ebc166c92d12ed383543cfe3f7a2acc2b15f1787560d919c",
+      "family": "C_OS"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1c-ExactTargetBasin-C_CI.json",
+      "sha256": "ae475404287bebdd056fee498978561ccb27a4628b7fd356176d8c887a22cb9a",
+      "record_digest": "d6f95d9a608532ddfe78f4d59444d04b03baa47a2afe8754cd756ed961be842d",
+      "family": "C_CI"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1c-ExactTargetBasin-A_CI.json",
+      "sha256": "e9c3373a7da255c2b5e2f1569c216249bfba96459deaf79f8b934f698eaa514b",
+      "record_digest": "98cbc1742c00ad9b64597356ea9b27b7658e0c9c28398e116b459b771b2ddab7",
+      "family": "A_CI"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1c-ExactTargetBasin-A_PC.json",
+      "sha256": "96c0a26c8764c48ab678e194b05c352e8873e7dc289d9efae653561ece71f71c",
+      "record_digest": "7e4b44622f772725afeae8f48de230e62f8d340ebd8313f3a090c685eefdfa7e",
+      "family": "A_PC"
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1c-SupportReconciliation.json",
+      "sha256": "b6de219588651d3c0fb1a3fb4c7887158967fd39048ea7dfb3f78cbd7d29589a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1c-Review.md",
+      "sha256": "396ebef18e775a891b7033c9d84a90f4085b20f00f0089094532b7ce8e58fbbb"
+    }
+  ],
+  "remaining_hold_ids": [
+    "umbrella_compatibility"
+  ],
+  "next_work": "P9-10.2: verify deterministic replay, numerical comparison conventions, independent charge-edge results and runtime-generated receipts for C_OS/C_CI/A_CI/A_PC. P9-10.3\u201310.6 and G4 remain separate; retain the all-forty umbrella restriction.",
+  "scope": "Accept bounded a/b/c reconciliation and direct checks on all four exact v2 targets. Two bounded holds resolved; fixed-H current signs are not exact-CI-root sign claims. No six-family execution, umbrella capability or full-conformance grant.",
+  "historical_records": "Original execution and reconciliation flags remain unchanged; this successor records user acceptance.",
+  "record_digest": "437506ebaa92a32a2af4579f3af43ba713a2be1fa72fb714e8ce37f3c76b6191"
+}

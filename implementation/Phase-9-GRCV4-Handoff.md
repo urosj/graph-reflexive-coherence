@@ -1,5 +1,47 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Accepted checkpoint — P9-10.1 bounded support closure (2026-10-28)
+
+Accepted P9-10.1b is committed at `cc51d9f6` on `work/p9-10-basin-interface`.
+[P9-10.1c review](./phase-9-grcv4/tranche-10/P9-10.1c-Review.md) and
+[record](./phase-9-grcv4/tranche-10/P9-10.1c-SupportReconciliation.json) join the
+accepted a/b evidence plus direct independent basin checks on all four exact
+10.1b v2 targets at migration and disabled return, both roles (16 captures).
+The focused supplement reuses the existing oracle after checking its assumptions,
+and certifies all 256 nonzero signs at captured H; no exact-CI-root sign claim.
+It executes two disabled steps per family to reach return, with no expansion
+or enabled evolution campaign and no production changes.
+User accepted P9-10.1c, its direct-target supplement and bounded P9-10.1
+closure on 2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json).
+Next: P9-10.2, preserving the four-family scope. No P9-10.2 work has started.
+
+The current view resolves `basin_surface` for explicit v2 successors and
+`target_identity_scope` for the four exact expanded v1/v2 compatibility targets.
+Historical v1 declarations are not upgraded. The independently pressured basin
+expansions in 10.1a are different exact subjects from 10.1b's compatibility
+targets; the latter's own accepted captures/replay do not inherit the former's
+independent equation pressure. Both evidence classes and identities are explicit;
+the supplement now supplies direct checks on the missing subjects. At return,
+resources differ in all four; A histories W differ, C has no W/Z, and A_PC's
+carrier is explicitly reset to zero. Existing numerical limits remain unchanged.
+
+The source matrix remains 16 accepted / 24 unselected. Additional target cells
+remain separate. The all-forty restriction blocks umbrella/full conformance,
+not bounded four-family closure; a wider execution or contract change needs a
+separate scope decision. Original numerical/authority limits, optional exclusions
+and all accepted records remain intact. P9-10.2–10.6 and G4 remain separate work.
+
+Current status is at `/api/tranche10/support`, its indexed source endpoint,
+the current-support browser panel and notebook `p9101c-support` cell. The main
+Phase 9 next-step guidance consumes that view. `/api/tranche9/support` remains
+the explicitly labeled historical checkpoint.
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/p9101c_acceptance.py
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101c_support_reconciliation -v
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101c_target_basin -v
+```
+
 ## Accepted checkpoint — P9-10.1b exact expanded-target compatibility (2026-10-28)
 
 Branch `work/p9-10-basin-interface`, following accepted native basin commit
