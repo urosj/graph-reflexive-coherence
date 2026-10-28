@@ -3214,3 +3214,30 @@ indeterminate forensic authority, explicit same-graph scope and distinct
 C_CI readmission versus other-family post-solver exclusions. Next is review,
 then P9-9.4b public integration. The 9.1b owner successor has one exact old/new
 hash pair; original accepted executions remain immutable.
+
+### P9-9.4b public API evidence
+
+Expose all ten public contract rows, four-family native integration and shared boundary/selection checks
+through `/api/tranche9/public`, indexed sources, browser and notebook. Check
+retained inputs/results only; no runtime execution from a status request. User
+acceptance and full support remain separate. Preserve the actual PC→CI exclusion,
+the native C→A initialization boundary, and the exact historical export adapter.
+Next is P9-9.5 public conflict pressure and P9-9.6 bounded support review.
+
+The public view separates `contract_families`/`contract_matrix` (ten) from native
+`families` (four). Its seven evidence groups include contract round-trip/authority
+pressure; schema/authority drift, missing rows or execution widening reject.
+Readable enabled/legacy state and typed configuration are documented in the
+public API guide; no native execution is inferred from contract availability.
+
+P9-9.4b also exposes the architecture group: independent public execution
+selection, complete expansion-artifact transfer, predecessor checkpoint parity,
+rollback and bounded replay counts. Link the architecture decision as an indexed
+source. The architecture group now checks immutable enabled preparation, sole
+branch receipt/journal/artifact ownership, no nested enabled owner, stale
+transition rejection and accepted crossing replay. Consolidation of standalone
+and branch checkpoint formats remains an option after all ten families are enabled.
+
+P9-9.4b bounded acceptance is recorded on 2026-10-28. Project the separate
+pinned decision through API/browser/notebook; preserve original execution flags.
+Both P9-9.4 children are closed; P9-9.5 and P9-9.6 remain.

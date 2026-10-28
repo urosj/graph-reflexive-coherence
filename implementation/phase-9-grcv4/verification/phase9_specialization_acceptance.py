@@ -569,3 +569,33 @@ def branch_crossing_authorization(root):
 
 def branch_crossing_permitted(path, leaf):
     return leaf == "P9-9.4a" and path in BRANCH_CROSSING_PATHS
+
+
+PUBLIC_API_PATHS = (
+    "src/pygrc/models/grc_9_v4.py",
+    "src/pygrc/models/grc_9_v4_contracts.py",
+    "src/pygrc/models/grc_9_v4_api_lifecycle.py",
+    "src/pygrc/models/__init__.py",
+    "tests/models/test_grc_9_v4.py",
+    "tests/models/test_grc_9_v4_contracts.py",
+    "tests/models/test_grc_9_v4_architecture.py",
+    "src/pygrc/models/grc_9_v4_lifecycle.py",
+    "src/pygrc/models/grc_9_v4_owner.py",
+    "src/pygrc/models/grc_9_v4_crossing.py",
+)
+PUBLIC_API_NEW_PATHS = tuple(p for p in PUBLIC_API_PATHS if p not in {
+    "src/pygrc/models/__init__.py", "src/pygrc/models/grc_9_v4_lifecycle.py",
+    "src/pygrc/models/grc_9_v4_owner.py", "src/pygrc/models/grc_9_v4_crossing.py",
+})
+
+
+def public_api_authorization(root):
+    """Explicit continuation after 9.4a acceptance; no 9.6 support promotion."""
+    from p994a_acceptance import decision
+    p.git(root, "merge-base", "--is-ancestor", "7b16696a", "HEAD")
+    decision(root)
+    return "P9-9.4b"
+
+
+def public_api_permitted(path, leaf):
+    return leaf == "P9-9.4b" and path in PUBLIC_API_PATHS

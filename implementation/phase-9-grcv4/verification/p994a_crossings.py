@@ -136,6 +136,7 @@ def read(root, f):
 
 
 def check(root, f):
+    from p994b_source_compatibility import execution_sha
     root = Path(root).resolve()
     v = read(root, f)
     names = (
@@ -192,7 +193,7 @@ def check(root, f):
         if (
             Path(ref["path"]).is_absolute()
             or not p.is_relative_to(root)
-            or sha(p.read_bytes()) != ref["sha256"]
+            or execution_sha(root, ref["path"], ref["sha256"]) != ref["sha256"]
         ):
             raise ValueError("crossing input drift: " + ref["path"])
     return v

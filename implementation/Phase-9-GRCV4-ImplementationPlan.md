@@ -4228,7 +4228,7 @@ obligation executable; it adds no new scientific law or family scope.
 | Child | Implementation and completion evidence |
 | --- | --- |
 | P9-9.4a — enabled/disabled crossings | Connect the accepted enabled owner and applicable exact legacy delegate. Execute both migration directions with source-history projection/archive/loss, distinct current/reset transfer, entry receipts, target readmission, replay and whole-state rollback. |
-| P9-9.4b — public GRC9V4 API | Implement and export the specified `GRC9V4(GRCV4)` facade through the established package API. Wire validated configuration construction, ordinary step/run and typed request methods, canonical expansion, profile/branch migration, state/observables, reset/rebase, duplicate and save/load/replay to the existing owners. Integrate the existing saved-selection runner entry where applicable. Verify these paths through the public class for each selected family, including both branch crossings and mixed replay. |
+| P9-9.4b — public GRC9V4 API | Implement and export the specified `GRC9V4(GRCV4)` facade through the established package API. Define typed public configurations and readable state contracts for all ten families; preserve their distinct candidate/realization types. Wire validated native construction for the four selected execution families, ordinary step/run and typed request methods, canonical expansion, profile/branch migration, state/observables, reset/rebase, duplicate and save/load/replay to the existing owners. Integrate the existing saved-selection runner entry where applicable. Verify these paths through the public class for each selected family, including both branch crossings and mixed replay. |
 
 P9-9.4a now executes the bounded same-graph crossings for all four selected
 families; [review](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md). Four parallel
@@ -4247,8 +4247,13 @@ atomic publication. Inherited `step()`/`run()` obey the serialized default
 request contract and reject a missing request as specified. Capability and
 profile discovery must expose only exact supported declarations and their
 applicable evidence-backed status; importing the class grants no conformance.
-The six unselected families and optional completion/hierarchy capabilities
-are not prerequisites for this four-family API and must not be advertised.
+All ten families are public contracts, including typed configuration validation,
+realization-aware state and contract discovery. These are required here. Native
+execution remains scoped to C_OS, C_CI, A_CI and A_PC. Known unselected families
+must raise an explicit execution-scope error before numerical admission; they
+must not appear unknown or be substituted with another family. Contract discovery
+and registered declarations remain distinct from supported execution. Optional
+completion/hierarchy and six-family native admission are not granted by this API.
 
 P9-9.5 exercises `legacy_expansion_target_undefined` through that public API,
 including unchanged scientific state, reset baseline and successful receipt
@@ -4256,8 +4261,28 @@ history on rejection. P9-9.6 requires both P9-9.4 children and the public-entry
 P9-9.5 checks before reviewing the bounded support declaration. Internal-owner
 tests alone do not satisfy public integration. Reuse accepted numerical
 evidence and small integration fixtures; repeat a larger campaign only if a
-concrete integration failure requires it. P9-9.4b remains planned; 9.4a execution
-does not grant public support or aggregate acceptance.
+concrete integration failure requires it. P9-9.4b implements all-ten public contracts with four-family native execution; [review](./phase-9-grcv4/tranche-9/P9-9.4b-Review.md).
+Six all-ten contract checks and four public family suites plus shared
+boundary/saved-selection pressure exercise the facade. Public configuration
+reuses the existing typed candidate and realization schemas; transaction handling
+is isolated from the facade and readable state from replay checkpoints. Bounded user acceptance is recorded on 2026-10-28; both P9-9.4 children are closed. Direct C→A profile migration
+requires the explicit native stage available through branch entry/return;
+retained A_PC→A_CI readmission rejects while the CI→PC→CI companion passes.
+No parameters or numerical laws are relaxed. The historical lazy-export
+successor is exact and leaves accepted execution records unchanged. Side-tool
+API/browser/notebook expose integration separately from support acceptance.
+The architecture refinement separates public execution selection from technical
+registration, uses immutable prepared transitions for every enabled action,
+and gives the branch sole receipt/journal/artifact ownership. The nested enabled
+owner, cross-owner receipt write and artifact-delta slicing are removed.
+Independent descriptor fields define candidate/persistence/reference retention.
+Checkpoint layouts remain unchanged; see the
+[architecture decision](./phase-9-grcv4/tranche-9/P9-9.4b-Architecture.md).
+After all ten families are fully enabled, consider unifying the standalone and
+branch checkpoint formats/action vocabulary against measured maintenance/replay
+costs, preserving historical import and scientific parity. This is a future option, not an extra
+closure gate for the selected four families.
+Next: P9-9.5 public conflict pressure, then P9-9.6 bounded review.
 
 ### Tranche 10. Conformance, evidence, and handoff
 

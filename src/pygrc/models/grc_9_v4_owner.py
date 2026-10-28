@@ -10,7 +10,7 @@ captured, with no retry, backend substitution, or precision fallback.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from threading import RLock
 
@@ -18,7 +18,6 @@ from . import grc_9_v4_lifecycle as events
 from . import grc_v4_lifecycle as generic
 from ._grc_v4_evidence import _operation_evidence
 from .grc_9_v4_expansion import GRC9V4ExpansionRequestInput
-from .grc_9_v4_topology import GRC9V4CandidateADifferentialReference
 from .grc_v4 import GRCV4StepRequestInput
 from .grc_v4_certification import (
     NumericalPolicy,
@@ -71,13 +70,7 @@ def _decode_state(value, family):
 
 
 def _backend(state):
-    return (
-        GRC9V4CandidateADifferentialReference(
-            state.inputs.geometry.reference.graph.port_graph
-        )
-        if state.FAMILY.startswith("A_")
-        else None
-    )
+    return events.family_implementation(state).differential_backend(state)
 
 
 def _payloads(before, after, charge, ledger):
@@ -164,8 +157,367 @@ class _Publication:
     state: events._GRC9V4EventState
     receipts: tuple = ()
     journal: tuple[FrozenJSONMap, ...] = ()
-    archives: tuple[FrozenJSONMap, ...] = ()
-    reference_currents: tuple[FrozenJSONMap, ...] = ()
+    artifacts: events.GRC9V4EventArtifacts = field(
+        default_factory=events.GRC9V4EventArtifacts
+    )
+
+    @property
+    def archives(self):
+        return self.artifacts.archives
+
+    @property
+    def reference_currents(self):
+        return self.artifacts.reference_currents
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4EnabledContext:
+    """An admitted state and the caller's sole receipt/artifact authority."""
+
+    state: events._GRC9V4EventState
+    receipts: tuple = ()
+    artifacts: events.GRC9V4EventArtifacts = field(
+        default_factory=events.GRC9V4EventArtifacts
+    )
+
+    def __post_init__(self):
+        if (
+            self.state.FAMILY not in _OWNERS
+            or type(self.state) is not _OWNERS[self.state.FAMILY].STATE
+        ):
+            raise TypeError("selected exact enabled state required")
+        if (
+            type(self.receipts) is not tuple
+            or type(self.artifacts) is not events.GRC9V4EventArtifacts
+        ):
+            raise TypeError("immutable enabled context required")
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4EnabledTransition:
+    """Complete prepared effect. No owner, lock, private clone or journal."""
+
+    source: GRC9V4EnabledContext
+    state: events._GRC9V4EventState
+    result: GRCV4StepResult | GRCV4LifecycleResult
+    artifacts: events.GRC9V4EventArtifacts
+
+    def __post_init__(self):
+        if (
+            type(self.source) is not GRC9V4EnabledContext
+            or type(self.state) is not type(self.source.state)
+            or type(self.result) not in (GRCV4StepResult, GRCV4LifecycleResult)
+            or type(self.artifacts) is not events.GRC9V4EventArtifacts
+        ):
+            raise TypeError("closed enabled transition required")
+        self.artifacts.require_extension_of(self.source.artifacts)
+        if self.result.committed:
+            _validate_receipts(self.source, self.state, self.result.emitted_receipts)
+        elif (
+            self.state is not self.source.state
+            or self.artifacts is not self.source.artifacts
+        ):
+            raise ValueError("rejected transition must retain its exact source")
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4EnabledBranch:
+    """Immutable branch value; receipt/artifact/journal ownership stays outside."""
+
+    state: events._GRC9V4EventState
+
+    def __post_init__(self):
+        GRC9V4EnabledContext(self.state)
+
+    @classmethod
+    def admit(cls, state):
+        return cls(_admit_state(state))
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4EnabledSeed:
+    checkpoint: bytes
+    branch: GRC9V4EnabledBranch
+    receipts: tuple
+    exact_backend: ExactBackend
+    numerical_policy: NumericalPolicy
+
+
+def _admit_state(state):
+    family = getattr(state, "FAMILY", None)
+    if family not in _OWNERS or type(state) is not _OWNERS[family].STATE:
+        raise TypeError("expected a selected native C_OS/C_CI/A_CI/A_PC state")
+    if state.specialization.resolved["spark"]["child_stabilization"] is not None:
+        raise ValueError("completion/hierarchy is unselected in P9-9.1b")
+    return _OWNERS[family](state).state
+
+
+def prepare_enabled(context, kind, request=None):
+    """Prepare one closed action using the caller's explicit numerical context."""
+    if type(context) is not GRC9V4EnabledContext:
+        raise TypeError("typed enabled context required")
+    if kind == "step":
+        if type(request) is not GRCV4StepRequestInput:
+            raise TypeError("typed ordinary request required")
+        return _prepare_step(
+            context, GRCV4StepRequestInput.from_payload(request.to_payload())
+        )
+    if kind == "expand":
+        if type(request) is not GRC9V4ExpansionRequestInput:
+            raise TypeError("typed expansion request required")
+        source = events.GRC9V4ExpansionContext(
+            context.state, context.receipts, context.artifacts
+        )
+        transition = events.prepare_expansion(source, request)
+        if (
+            type(transition) is not events.GRC9V4ExpansionTransition
+            or transition.source != source
+        ):
+            raise ValueError("prepared expansion differs from publication source")
+        return GRC9V4EnabledTransition(
+            context, transition.state, transition.result, transition.artifacts
+        )
+    if kind in ("reset", "rebase") and request is None:
+        return _prepare_administrative(context, kind)
+    raise ValueError("unknown or extended enabled action")
+
+
+def _validate_receipts(context, after, emitted):
+    # Validate the mixed chain before the sole write. Unexpected defects
+    # propagate; they never become an apparent scientific rejection.
+    parent = generic._previous_primary(context.receipts)
+    if not emitted or len({r.receipt_id for r in context.receipts + emitted}) != len(
+        context.receipts + emitted
+    ):
+        raise ValueError("successful receipt IDs must be globally unique")
+    for receipt in emitted:
+        core = receipt.identity_payload["core"]
+        if (
+            list(core["parent_receipt_ids"]) != ([] if parent is None else [parent])
+            or core["source_state_digest"] != context.state.scientific_digest
+            or core["target_state_digest"] != after.scientific_digest
+            or core["source_model_identity"] != context.state.model_identity
+            or core["target_model_identity"] != after.model_identity
+            or core["source_reset_digest"] != context.state.reset_digest
+            or core["target_reset_digest"] != after.reset_digest
+        ):
+            raise ValueError("specialization publication/receipt mismatch")
+
+
+@_operation_evidence
+def _prepare_step(context, request):
+    published = context
+    before = published.state
+    profile = before.inputs.geometry.reference.profile.complete_profile_id
+    if request.dt < 0:
+        return _rejected(
+            context, request, "admission", "invalid_duration", None, "negative duration"
+        )
+    inputs = replace(before.inputs, operation_id=request.operation_id, dt=request.dt)
+    try:
+        if (
+            request.context_value
+            or request.boundary_input is not None
+            or request.external_source is not None
+        ):
+            raise ResourceBoundaryError(
+                "admission",
+                "domain_failure",
+                "local enabled owner requires zero context and no external input",
+            )
+        step = generic._profile_step(inputs, _backend(before))
+        generic._check_step_target(inputs, step.next_inputs)
+        selected, restart, selected_stage = generic._step_currents(step)
+    except ResourceBoundaryError as exc:
+        solver = (
+            None
+            if exc.stage in ("admission", "pre_read_reconstruction")
+            else "valid_root"
+            if exc.stage
+            in (
+                "continuity",
+                "charge_admission",
+                "final_reconstruction",
+                "history_write",
+                "commit",
+            )
+            else next(
+                (
+                    s
+                    for s, c in generic._RESOURCE_SOLVER_FAILURES.items()
+                    if c == exc.code
+                ),
+                "valid_root",
+            )
+        )
+        return _rejected(context, request, exc.stage, exc.code, solver, str(exc))
+    except (
+        generic.OSStageError,
+        generic.CandidateCStageError,
+        generic.CandidateAStageError,
+        generic.GeometryDomainError,
+        generic.NonfiniteGeometryError,
+    ) as exc:
+        if isinstance(exc, generic.OSStageError):
+            solver = generic._failed_solver(exc)
+            return _rejected(
+                context,
+                request,
+                "candidate_solve",
+                generic._RESOURCE_SOLVER_FAILURES[solver],
+                solver,
+                str(exc),
+            )
+        return _rejected(
+            context,
+            request,
+            "pre_read_reconstruction",
+            "nonfinite_value"
+            if generic._failed_solver(exc) == "nonfinite"
+            else "domain_failure",
+            None,
+            str(exc),
+        )
+    after = type(before)(
+        replace(step.next_inputs, receipt_ids=()), before.specialization
+    )
+    # Bind receipt request to the actual operation; operation_id/dt are not
+    # scientific authority and do not change the source scientific digest.
+    source = type(before)(inputs, before.specialization)
+    commit, emitted = make_commit_receipts(
+        _payloads(source, after, step.resource.charge, published.receipts),
+        operation_id=request.operation_id,
+        source_state_digest=before.scientific_digest,
+        target_state_digest=after.scientific_digest,
+        target_step_index=after.inputs.step_index,
+        target_time=after.inputs.time,
+    )
+    observations = generic._public_observables(
+        after.inputs,
+        published.receipts + emitted,
+        step.resource.charge,
+        selected if request.dt > 0 else restart,
+        stage="commit",
+        current_stage=selected_stage if request.dt > 0 else "commit_reconstruction",
+        solver="valid_root",
+        consumed=request.dt > 0,
+    )
+    observations.update(
+        active_model_identity=after.model_identity,
+        compatibility_branch="enabled_v4",
+        support_status="bounded_enabled_lifecycle_not_full_GRC9V4_conformance",
+        charge=step.resource.charge.receipt_values(),
+        continuity_evaluations=step.resource.continuity_evaluations,
+    )
+    result = GRCV4StepResult(
+        after.inputs.step_index,
+        after.inputs.time,
+        (),
+        observations,
+        profile,
+        after.model_identity,
+        "committed",
+        "valid_root",
+        True,
+        emitted[0].commit_id,
+        None,
+        emitted,
+    )
+    _bind_result(result, request, before, after, published.receipts, commit=commit)
+    return GRC9V4EnabledTransition(context, after, result, context.artifacts)
+
+
+def _rejected(context, request, stage, code, solver, message):
+    before = context
+    state = before.state
+    identity = FailureReceiptIdentityPayload(
+        "grcv4-failure-receipt-v1",
+        request.operation_id,
+        stage,
+        code,
+        state.scientific_digest,
+        state.scientific_digest,
+    )
+    receipt = FailureReceipt(
+        "grcv4-failure-receipt-envelope-v1",
+        payload_identity("failure_receipt_identity_payload", identity.to_payload()),
+        identity,
+    )
+    life = state.lifecycle_digest(before.receipts)
+    failure = GRCV4Failure(
+        stage,
+        solver,
+        code,
+        message,
+        state.scientific_digest,
+        state.scientific_digest,
+        life,
+        life,
+        receipt,
+    )
+    result = GRCV4StepResult(
+        state.inputs.step_index,
+        state.inputs.time,
+        (),
+        {},
+        state.inputs.geometry.reference.profile.complete_profile_id,
+        state.model_identity,
+        "rejected",
+        solver,
+        False,
+        None,
+        failure,
+        (receipt,),
+    )
+    _bind_result(result, request, state, state, before.receipts)
+    return GRC9V4EnabledTransition(context, state, result, context.artifacts)
+
+
+def _prepare_administrative(context, kind):
+    published = context
+    before = published.state
+    inputs = replace(
+        before.inputs,
+        operation_id=kind + ":" + before.lifecycle_digest(published.receipts),
+    )
+    following = generic._fresh_geometry(
+        replace(
+            inputs,
+            **(
+                {"current": inputs.reset}
+                if kind == "reset"
+                else {"reset": inputs.current}
+            ),
+        )
+    )
+    _, charge = generic._readmit_state(following, _backend(before))
+    after = type(before)(following, before.specialization)
+    source = type(before)(inputs, before.specialization)
+    payloads = _payloads(source, after, charge, published.receipts)
+    payloads[0] = {
+        "schema_version": "grcv4-" + kind + "-receipt-v1",
+        "core": payloads[0]["core"],
+        **(
+            {"reset_baseline_digest": before.reset_digest}
+            if kind == "reset"
+            else {
+                "old_reset_digest": before.reset_digest,
+                "new_reset_digest": after.reset_digest,
+            }
+        ),
+    }
+    _, emitted = make_commit_receipts(
+        payloads,
+        operation_id=inputs.operation_id,
+        source_state_digest=before.scientific_digest,
+        target_state_digest=after.scientific_digest,
+        target_step_index=after.inputs.step_index,
+        target_time=after.inputs.time,
+    )
+    result = GRCV4LifecycleResult(
+        "committed", True, emitted[0].commit_id, None, emitted
+    )
+    return GRC9V4EnabledTransition(context, after, result, context.artifacts)
 
 
 class GRC9V4EnabledOperation:
@@ -177,18 +529,23 @@ class GRC9V4EnabledOperation:
     """
 
     def __init__(self, state):
-        family = getattr(state, "FAMILY", None)
-        if family not in _OWNERS or type(state) is not _OWNERS[family].STATE:
-            raise TypeError("expected a selected native C_OS/C_CI/A_CI/A_PC state")
-        if state.specialization.resolved["spark"]["child_stabilization"] is not None:
-            raise ValueError("completion/hierarchy is unselected in P9-9.1b")
         self._backend_choice = current_exact_backend()
         self._policy = current_numerical_policy()
-        # Reuse the closed constructor and both-role admission, not a flag.
-        seed = _OWNERS[family](state).state
+        seed = _admit_state(state)
         self._initial = seed
         self._published = _Publication(seed)
         self._lock = RLock()
+
+    def export_seed(self):
+        """Atomically export an immutable branch seed, never a mutable child owner."""
+        with self._lock:
+            return GRC9V4EnabledSeed(
+                self.snapshot(),
+                GRC9V4EnabledBranch(self.state),
+                self.receipts,
+                self._backend_choice,
+                self._policy,
+            )
 
     @property
     def state(self):
@@ -202,68 +559,42 @@ class GRC9V4EnabledOperation:
     def numerical_policy(self):
         return self._policy
 
-    def _publish(
-        self, before, after, emitted, action, *, archives=None, references=None
-    ):
-        # Validate the mixed chain before the sole write. Unexpected defects
-        # propagate; they never become an apparent scientific rejection.
-        parent = generic._previous_primary(before.receipts)
-        if not emitted or len({r.receipt_id for r in before.receipts + emitted}) != len(
-            before.receipts + emitted
+    def _publish(self, before, transition, action):
+        if self._published is not before:
+            raise RuntimeError("publication changed during transaction")
+        source = GRC9V4EnabledContext(before.state, before.receipts, before.artifacts)
+        if (
+            type(transition) is not GRC9V4EnabledTransition
+            or transition.source != source
         ):
-            raise ValueError("successful receipt IDs must be globally unique")
-        for receipt in emitted:
-            core = receipt.identity_payload["core"]
-            if (
-                list(core["parent_receipt_ids"]) != ([] if parent is None else [parent])
-                or core["source_state_digest"] != before.state.scientific_digest
-                or core["target_state_digest"] != after.scientific_digest
-                or core["source_model_identity"] != before.state.model_identity
-                or core["target_model_identity"] != after.model_identity
-                or core["source_reset_digest"] != before.state.reset_digest
-                or core["target_reset_digest"] != after.reset_digest
-            ):
-                raise ValueError("specialization publication/receipt mismatch")
-        publication = _Publication(
-            after,
-            before.receipts + emitted,
+            raise ValueError("enabled transition differs from publication source")
+        if not transition.result.committed:
+            raise ValueError("cannot publish a rejected transition")
+        self._published = _Publication(
+            transition.state,
+            before.receipts + transition.result.emitted_receipts,
             before.journal + (FrozenJSONMap(action),),
-            before.archives if archives is None else archives,
-            before.reference_currents if references is None else references,
+            transition.artifacts,
         )
-        self._published = publication
+
+    def _execute(self, kind, request=None):
+        before = self._published
+        context = GRC9V4EnabledContext(before.state, before.receipts, before.artifacts)
+        transition = prepare_enabled(context, kind, request)
+        if transition.result.committed:
+            action = {"kind": kind}
+            if request is not None:
+                action["request"] = request.to_payload()
+            self._publish(before, transition, action)
+        return transition.result
 
     def expand(self, request):
-        if type(request) is not GRC9V4ExpansionRequestInput:
-            raise TypeError("expected closed nine-port expansion request")
         with (
             self._lock,
             exact_backend(self._backend_choice),
             numerical_policy(self._policy),
         ):
-            before = self._published
-            # A disposable transaction receiver, not a second live owner. Seed
-            # its ledger with the entire mixed prefix so event parents are real.
-            receiver = _OWNERS[before.state.FAMILY](before.state)
-            receiver._published = events._EventPublication(
-                before.state,
-                before.receipts,
-                (),
-                before.archives,
-                before.reference_currents,
-            )
-            result = receiver.expand(request)
-            if result.committed:
-                target = receiver._published
-                self._publish(
-                    before,
-                    target.state,
-                    result.emitted_receipts,
-                    {"kind": "expand", "request": request.to_payload()},
-                    archives=target.archives,
-                    references=target.reference_currents,
-                )
-            return result
+            return self._execute("expand", request)
 
     def step_v4(self, request):
         if type(request) is not GRCV4StepRequestInput:
@@ -276,175 +607,8 @@ class GRC9V4EnabledOperation:
         ):
             return self._step(request)
 
-    @_operation_evidence
     def _step(self, request):
-        published = self._published
-        before = published.state
-        profile = before.inputs.geometry.reference.profile.complete_profile_id
-        if request.dt < 0:
-            return self._rejected(
-                request, "admission", "invalid_duration", None, "negative duration"
-            )
-        inputs = replace(
-            before.inputs, operation_id=request.operation_id, dt=request.dt
-        )
-        try:
-            if (
-                request.context_value
-                or request.boundary_input is not None
-                or request.external_source is not None
-            ):
-                raise ResourceBoundaryError(
-                    "admission",
-                    "domain_failure",
-                    "local enabled owner requires zero context and no external input",
-                )
-            step = generic._profile_step(inputs, _backend(before))
-            generic._check_step_target(inputs, step.next_inputs)
-            selected, restart, selected_stage = generic._step_currents(step)
-        except ResourceBoundaryError as exc:
-            solver = (
-                None
-                if exc.stage in ("admission", "pre_read_reconstruction")
-                else "valid_root"
-                if exc.stage
-                in (
-                    "continuity",
-                    "charge_admission",
-                    "final_reconstruction",
-                    "history_write",
-                    "commit",
-                )
-                else next(
-                    (
-                        s
-                        for s, c in generic._RESOURCE_SOLVER_FAILURES.items()
-                        if c == exc.code
-                    ),
-                    "valid_root",
-                )
-            )
-            return self._rejected(request, exc.stage, exc.code, solver, str(exc))
-        except (
-            generic.OSStageError,
-            generic.CandidateCStageError,
-            generic.CandidateAStageError,
-            generic.GeometryDomainError,
-            generic.NonfiniteGeometryError,
-        ) as exc:
-            if isinstance(exc, generic.OSStageError):
-                solver = generic._failed_solver(exc)
-                return self._rejected(
-                    request,
-                    "candidate_solve",
-                    generic._RESOURCE_SOLVER_FAILURES[solver],
-                    solver,
-                    str(exc),
-                )
-            return self._rejected(
-                request,
-                "pre_read_reconstruction",
-                "nonfinite_value"
-                if generic._failed_solver(exc) == "nonfinite"
-                else "domain_failure",
-                None,
-                str(exc),
-            )
-        after = type(before)(
-            replace(step.next_inputs, receipt_ids=()), before.specialization
-        )
-        # Bind receipt request to the actual operation; operation_id/dt are not
-        # scientific authority and do not change the source scientific digest.
-        source = type(before)(inputs, before.specialization)
-        commit, emitted = make_commit_receipts(
-            _payloads(source, after, step.resource.charge, published.receipts),
-            operation_id=request.operation_id,
-            source_state_digest=before.scientific_digest,
-            target_state_digest=after.scientific_digest,
-            target_step_index=after.inputs.step_index,
-            target_time=after.inputs.time,
-        )
-        observations = generic._public_observables(
-            after.inputs,
-            published.receipts + emitted,
-            step.resource.charge,
-            selected if request.dt > 0 else restart,
-            stage="commit",
-            current_stage=selected_stage if request.dt > 0 else "commit_reconstruction",
-            solver="valid_root",
-            consumed=request.dt > 0,
-        )
-        observations.update(
-            active_model_identity=after.model_identity,
-            compatibility_branch="enabled_v4",
-            support_status="bounded_enabled_lifecycle_not_full_GRC9V4_conformance",
-            charge=step.resource.charge.receipt_values(),
-            continuity_evaluations=step.resource.continuity_evaluations,
-        )
-        result = GRCV4StepResult(
-            after.inputs.step_index,
-            after.inputs.time,
-            (),
-            observations,
-            profile,
-            after.model_identity,
-            "committed",
-            "valid_root",
-            True,
-            emitted[0].commit_id,
-            None,
-            emitted,
-        )
-        _bind_result(result, request, before, after, published.receipts, commit=commit)
-        self._publish(
-            published, after, emitted, {"kind": "step", "request": request.to_payload()}
-        )
-        return result
-
-    def _rejected(self, request, stage, code, solver, message):
-        before = self._published
-        state = before.state
-        identity = FailureReceiptIdentityPayload(
-            "grcv4-failure-receipt-v1",
-            request.operation_id,
-            stage,
-            code,
-            state.scientific_digest,
-            state.scientific_digest,
-        )
-        receipt = FailureReceipt(
-            "grcv4-failure-receipt-envelope-v1",
-            payload_identity("failure_receipt_identity_payload", identity.to_payload()),
-            identity,
-        )
-        life = state.lifecycle_digest(before.receipts)
-        failure = GRCV4Failure(
-            stage,
-            solver,
-            code,
-            message,
-            state.scientific_digest,
-            state.scientific_digest,
-            life,
-            life,
-            receipt,
-        )
-        result = GRCV4StepResult(
-            state.inputs.step_index,
-            state.inputs.time,
-            (),
-            {},
-            state.inputs.geometry.reference.profile.complete_profile_id,
-            state.model_identity,
-            "rejected",
-            solver,
-            False,
-            None,
-            failure,
-            (receipt,),
-        )
-        _bind_result(result, request, state, state, before.receipts)
-        return result
+        return self._execute("step", request)
 
     def reset(self):
         return self._administrative("reset")
@@ -458,50 +622,7 @@ class GRC9V4EnabledOperation:
             exact_backend(self._backend_choice),
             numerical_policy(self._policy),
         ):
-            published = self._published
-            before = published.state
-            inputs = replace(
-                before.inputs,
-                operation_id=kind + ":" + before.lifecycle_digest(published.receipts),
-            )
-            following = generic._fresh_geometry(
-                replace(
-                    inputs,
-                    **(
-                        {"current": inputs.reset}
-                        if kind == "reset"
-                        else {"reset": inputs.current}
-                    ),
-                )
-            )
-            _, charge = generic._readmit_state(following, _backend(before))
-            after = type(before)(following, before.specialization)
-            source = type(before)(inputs, before.specialization)
-            payloads = _payloads(source, after, charge, published.receipts)
-            payloads[0] = {
-                "schema_version": "grcv4-" + kind + "-receipt-v1",
-                "core": payloads[0]["core"],
-                **(
-                    {"reset_baseline_digest": before.reset_digest}
-                    if kind == "reset"
-                    else {
-                        "old_reset_digest": before.reset_digest,
-                        "new_reset_digest": after.reset_digest,
-                    }
-                ),
-            }
-            _, emitted = make_commit_receipts(
-                payloads,
-                operation_id=inputs.operation_id,
-                source_state_digest=before.scientific_digest,
-                target_state_digest=after.scientific_digest,
-                target_step_index=after.inputs.step_index,
-                target_time=after.inputs.time,
-            )
-            self._publish(published, after, emitted, {"kind": kind})
-            return GRCV4LifecycleResult(
-                "committed", True, emitted[0].commit_id, None, emitted
-            )
+            return self._execute(kind)
 
     def snapshot(self):
         with self._lock:

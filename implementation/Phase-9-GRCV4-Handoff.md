@@ -1,6 +1,62 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — P9-9.4a branch crossings (2026-10-27)
+## Current checkpoint — accepted P9-9.4b public API (2026-10-28)
+
+Branch `work/p9-9-first-group`. Accepted 9.4a was committed as `7b16696a`
+before this work. Public `from pygrc.models import GRC9V4` now provides typed
+contracts/configurations for **all ten families**, with native execution kept at
+**C_OS, C_CI, A_CI, A_PC** as explicitly requested. Existing candidate/realization
+parameter types remain distinct. W_A depends on candidate; Z_4 independently
+depends on persistence. Both current/reset authority are validated.
+The facade delegates transaction handling to `grc_9_v4_api_lifecycle.py`;
+`grc_9_v4_contracts.py` owns declarations and readable branch-specific state.
+Complete replay checkpoints remain separate from the scientific view.
+[API guide](../examples/grcv4/grc9v4_api.md) and
+[review/reproduction](./phase-9-grcv4/tranche-9/P9-9.4b-Review.md).
+Six contract tests, twenty public integration/boundary tests and nine
+architecture tests pass; the seven groups executed in parallel. The
+[architecture decision](./phase-9-grcv4/tranche-9/P9-9.4b-Architecture.md) records
+explicit public execution selection, immutable preparation for all enabled
+actions, and sole branch receipt/journal/artifact ownership. The branch contains
+immutable enabled state, with no nested enabled owner or private receipt writes.
+Whole artifact bundles replace the previous delta slicing. Scientific descriptor
+properties are explicit; accepted mixed and crossing checkpoints must replay
+unchanged. No numerical kernel changes.
+Load of the small three-action case performs exactly two ordinary steps and
+one expansion, with no nested event-checkpoint replay. Retain the checkpoint
+formats. After all ten are enabled, consider consolidating standalone and branch
+formats/action vocabularies; current branch ownership is already unified.
+P9-9.4b is bounded-accepted on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-9/P9-9.4b-Acceptance.json). Both P9-9.4 children are closed. Side-tool `/api/tranche9/public`, browser and
+notebook expose ten contract rows, four execution families and retained integrity
+separately from numerical execution.
+
+The original A_PC fixture cannot readmit into the retained CI domain; this
+rejection is preserved. The CI→PC→CI companion passes without changing the CI
+parameters. Direct C→A profile migration rejects instead of using the generic
+WLS initializer; explicit native-stage initialization is exposed through the
+accepted branch entry/return route. Same-graph crossing restrictions, CI
+resolution limits, pointwise A_PC carrier margins and optional/six-family
+exclusions remain. Full conformance is not advertised.
+
+The catalog selection runner verifies inputs before public construction, with
+an all-ten typed decoder and identity-checked native construction for the four
+execution families. Known unavailable families fail explicitly before admission. New artifacts use
+relative paths and automatic compression above 1,000,000 bytes. Existing
+execution evidence remains immutable; the exact lazy package-export delta has
+a narrow historical-source adapter. The changed native event/lifecycle/crossing
+sources have explicit predecessor/successor pins; their accepted checkpoint
+outputs are compared exactly. No GRC9V3 source or numerical kernel changed.
+The 8.5 historical reader now authenticates its frozen input roster rather than
+adding later files discovered in today's tree; exact source/metadata epoch
+adapters preserve all four 8.5 views and bounded 8.6 acceptance. No historical
+execution record is rewritten. Seventeen Python evidence/surface checks, eight
+browser checks and the current phase boundary (703 protected / 346 runtime files)
+pass. No larger numerical campaign was repeated.
+Next: public saturated-target rejection in 9.5, then
+bounded support review in 9.6. Do not repeat large Tranche 8 campaigns.
+
+## Previous checkpoint — P9-9.4a branch crossings (2026-10-27)
 
 Branch `work/p9-9-first-group`. User-accepted 9.3 was committed as `b894c95d`
 before crossing implementation. [9.4a review](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md)

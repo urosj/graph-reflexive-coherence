@@ -21,7 +21,10 @@ excursions, charge/domain failures, and public snapshot/save/load/reset:
 The guide distinguishes pure numerical experiments from public transactions,
 compares matched step/time horizons, and records fixture-specific results without
 assuming OS/CI equivalence. JSON export and saved-report inspection avoid reruns.
-GRC9V4 counterparts wait for its public façade; no native capability is implied.
+The [public GRC9V4 API](grc9v4_api.md) defines typed contracts/configurations for
+all ten families, with native execution scoped to C_OS, C_CI, A_CI and A_PC.
+Its integration is documented in the [P9-9.4b review](../../implementation/phase-9-grcv4/tranche-9/P9-9.4b-Review.md).
+Full conformance review remains separate.
 
 ## Find and select a graph configuration
 
@@ -70,9 +73,15 @@ verifiable in another checkout with the same artifacts. Adding an unrelated
 catalog entry does not invalidate an existing selection.
 
 Selection is an explicit saved choice for investigation or downstream tooling;
-it does not activate a global configuration or run a solver. The public runners
-below do not yet consume selection files. Use the displayed reproduction
-command to run its owner, and inspect the resulting declaration: configurable
+it does not activate a global configuration or run a solver. The new native
+[selection runner](run_selection.py) consumes complete native states or pinned
+native-oracle selections into public configurations for all ten families.
+Its execution entry uses public `GRC9V4` for the four selected families;
+known unselected families receive an explicit execution-scope exception.
+It requires explicit step requests, exact backend and numerical policy; see the
+[P9-9.4b usage](../../implementation/phase-9-grcv4/tranche-9/P9-9.4b-Review.md#saved-selections).
+Other runners below retain their existing inputs. Use the displayed reproduction
+command for those owners, and inspect the resulting declaration: configurable
 grid setup can propose more conservative parameters, so a new run is not
 automatically an exact replay of the selected historical input. Native large
 examples still require their recorded admission/closure obligations.

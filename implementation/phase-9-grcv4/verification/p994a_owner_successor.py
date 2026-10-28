@@ -10,6 +10,7 @@ from p991b_acceptance import decision, sha, seal, BASE, FAMILIES, CONTEXT
 
 
 def check(root, family):
+    from p994b_source_compatibility import execution_sha
     root = Path(root).resolve()
     accepted = decision(root)
     if family not in FAMILIES:
@@ -52,7 +53,7 @@ def check(root, family):
             ):
                 raise ValueError("historical owner preimage mismatch")
         else:
-            actual = sha(path.read_bytes())
+            actual = execution_sha(root, name, row["sha256"])
         if actual != row["sha256"]:
             raise ValueError("accepted execution input drift: " + name)
     return value

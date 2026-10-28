@@ -881,3 +881,27 @@ repository-relative evidence. Browser and notebook expose the same view.
 Integrity checks do not execute kernels, confer acceptance, or deliver the
 public runtime API planned for P9-9.4b. The negative native timestep excludes
 C_CI at return admission and the other three at their next enabled step.
+
+### P9-9.4b public runtime integration
+
+`grcv4_explorer.tranche9.tranche9_public_status(repo_root)` and
+`GET /api/tranche9/public` authenticate four native public family suites, shared
+boundary checks and the all-ten contract suite. Indexed `/source?path=...` downloads retain content hashes.
+The browser **Check ten-family contracts / four-family execution** and notebook use the same
+projection. This is retained-integrity verification, not a native rerun or a
+G3/full-conformance grant. Runtime usage/reproduction is in
+`implementation/phase-9-grcv4/tranche-9/P9-9.4b-Review.md`.
+
+For P9-9.4b, `contract_matrix` describes all ten existing candidate/realization
+schemas and their authority fields; `families` remains the four-family native
+execution scope. The extra `contracts` evidence group validates all ten data
+contracts without executing the six unselected native lifecycles. Do not infer
+native conformance from configuration round trips or contract discovery.
+
+The `architecture` projection authenticates nine tests for execution selection,
+transition/artifact transfer, dispatch, sole branch ownership, rollback, and
+accepted mixed/crossing checkpoint parity. Its
+`replay_assessment` is one small three-action case, not a scaling benchmark.
+The source index includes `P9-9.4b-Architecture.md`, which records the possible
+consolidation of standalone and branch checkpoint formats after all ten
+families are fully enabled.

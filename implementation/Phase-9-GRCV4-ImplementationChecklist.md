@@ -3793,7 +3793,7 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
   - [x] User acceptance of the matrix reconciliation on 2026-10-27;
     [decision](./phase-9-grcv4/tranche-9/P9-9.3-Acceptance.json). Later runtime support
     and public API obligations remain under P9-9.4–9.6.
-- [ ] P9-9.4: Complete both crossing and public API integration children.
+- [x] P9-9.4: Complete both crossing and public API integration children.
   Depend on P9-9.1b and the applicable disabled lifecycle delegate, not the
   optional P9-9.1a child or aggregate P9-9.1.
   - [x] P9-9.4a: Execute both enabled/disabled migration directions with exact
@@ -3808,8 +3808,9 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
     - [x] Correct post-solver failure disposition; retain accepted source history
       through an exact hash-pair adapter. API/browser/notebook expose this child.
     - [x] User acceptance on 2026-10-27; [scope and evidence](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md).
-  - [ ] P9-9.4b: Implement/export the public `GRC9V4(GRCV4)` facade using the
-    existing owners for **C_OS, C_CI, A_CI, A_PC**. Wire validated configuration,
+  - [x] P9-9.4b: Implement/export the public `GRC9V4(GRCV4)` facade using the
+    existing owners. Define public contracts for **all ten families**, with native
+    execution scoped to **C_OS, C_CI, A_CI, A_PC**. Wire validated configuration,
     ordinary step/run and typed requests, canonical expansion, migration,
     state/observables, reset/rebase, duplicate and save/load/replay. Integrate
     the existing saved-selection runner entry where applicable.
@@ -3817,8 +3818,36 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
     mixed replay and typed rejection for each selected family. Preserve the
     serialized default-step-request rule and exact profile/combined model
     identities. Discovery must reflect supported declarations and applicable
-    evidence; no implicit six-family or completion/hierarchy advertisement.
+    evidence. All-ten contract/declaration discovery must be separate from native
+    executable support; no implicit six-family execution or completion/hierarchy
+    advertisement.
     Reuse bounded fixtures and accepted numerical evidence.
+    - [x] All-ten typed configurations round-trip existing candidate/realization
+      schemas. Validate independent W_A/Z_4 axes and both-role dimensions.
+    - [x] Readable enabled/disabled state, separate complete replay checkpoint,
+      separate transaction owner; no opaque-only state or solver parameter bag.
+    - [x] All-ten contract/target discovery with typed known-unavailable rejection
+      before execution of the other six. Six contract tests cover this boundary.
+    - [x] Lazy package export, explicit validated construction/policy, native
+      public state/observables, identity/default requests and local discovery.
+    - [x] Four-family public steps, canonical expansion, profile/branch
+      crossings, reset/rebase, save/load/duplicate and mixed replay.
+    - [x] Whole-publication rollback, target/backend/metadata rejection and
+      saved-selection execution; preserve actual PC→CI domain exclusion.
+    - [x] Public API/browser/notebook evidence and exact historical export
+      compatibility; [scope/reproduction](./phase-9-grcv4/tranche-9/P9-9.4b-Review.md).
+    - [x] Independent public execution selection; typed expansion transition and
+      whole-artifact transfer; exact family dispatch with shared family-ID alias.
+    - [x] Immutable preparation for step/expand/reset/rebase; one branch receipt
+      history, journal and artifact bundle. Remove enabled-owner cloning,
+      private receipt synchronization and artifact-delta slicing. Validate stale
+      transitions, preserved artifact prefixes and accepted crossing replay.
+    - [x] Verify predecessor checkpoint parity, rollback, and bounded replay
+      call counts/cost; retain current checkpoint formats unless evidence warrants change.
+    - [x] Record future consolidation of standalone/branch checkpoint formats
+      after all ten are enabled; current branch ownership is already unified.
+    - [x] User acceptance on 2026-10-28; [decision](./phase-9-grcv4/tranche-9/P9-9.4b-Acceptance.json).
+      No P9-9.6 conformance grant, optional completion or six-family promotion.
 - [ ] P9-9.5: Verify V4's `legacy_expansion_target_undefined` rejection through
   the P9-9.4b public API for the saturated port-5 conflict, without changing
   the legacy implementation. Check full scientific/reset rollback and no

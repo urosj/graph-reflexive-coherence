@@ -112,3 +112,20 @@ def tranche9_crossing_source(repo_root, path):
     if hashlib.sha256(raw).hexdigest() != refs[path]["sha256"]:
         raise ValueError("source changed during read")
     return raw, refs[path]
+
+
+def tranche9_public_status(repo_root):
+    root = Path(repo_root).resolve()
+    _checker(root)
+    return importlib.import_module("p994b_acceptance").status(root)
+
+
+def tranche9_public_source(repo_root, path):
+    root = Path(repo_root).resolve()
+    refs = {r["path"]: r for r in tranche9_public_status(root)["source_refs"]}
+    if path not in refs:
+        raise KeyError("unindexed public API source")
+    raw = (root / path).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != refs[path]["sha256"]:
+        raise ValueError("source changed during read")
+    return raw, refs[path]

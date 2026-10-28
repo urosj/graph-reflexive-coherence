@@ -1042,4 +1042,7 @@ def __getattr__(name):
     if name == "GRCV4":
         from .grc_v4 import GRCV4
         return GRCV4
+    if name == "GRC9V4":
+        from .grc_9_v4 import GRC9V4
+        return GRC9V4
     raise AttributeError(name)

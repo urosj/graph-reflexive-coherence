@@ -7,7 +7,7 @@ This internal receiver is not public capability discovery (P9-9.4b).
 """
 
 from copy import deepcopy
-from dataclasses import asdict, dataclass, replace
+from dataclasses import asdict, dataclass, field, replace
 import hashlib
 import json
 import math
@@ -290,13 +290,22 @@ class _Publication:
     specialization: object
     receipts: tuple = ()
     journal: tuple = ()
-    archives: tuple = ()
-    initializations: tuple = ()
+    artifacts: enabled.events.GRC9V4EventArtifacts = field(
+        default_factory=enabled.events.GRC9V4EventArtifacts
+    )
     entry_receipt: object = None
+
+    @property
+    def archives(self):
+        return self.artifacts.archives
+
+    @property
+    def initializations(self):
+        return self.artifacts.reference_currents
 
 
 class GRC9V4BranchOperation:
-    """One wrapper ledger across private-copy enabled/disabled transitions.
+    """Sole branch publication, receipt ledger and mixed action journal.
 
     P9-9.4a admits explicit same-graph crossings and ordinary/reset operations.
     Changed legacy topology needs a declared new coordinate/reference map; this
@@ -306,26 +315,18 @@ class GRC9V4BranchOperation:
     def __init__(self, owner):
         if type(owner) is not enabled.GRC9V4EnabledOperation:
             raise TypeError("admitted bounded enabled owner required")
-        self._initial = owner.snapshot()
-        clone = self._clone_enabled(owner)
-        self._backend = clone._backend_choice
-        self._policy = clone._policy
+        seed = owner.export_seed()
+        self._initial = seed.checkpoint
+        self._backend = seed.exact_backend
+        self._policy = seed.numerical_policy
         self._published = _Publication(
             "enabled_v4",
-            clone,
-            clone.state.inputs.geometry.reference,
-            clone.state.specialization,
-            clone.receipts,
+            seed.branch,
+            seed.branch.state.inputs.geometry.reference,
+            seed.branch.state.specialization,
+            seed.receipts,
         )
         self._lock = RLock()
-
-    @staticmethod
-    def _clone_enabled(owner):
-        clone = object.__new__(enabled.GRC9V4EnabledOperation)
-        for name in ("_backend_choice", "_policy", "_initial", "_published"):
-            setattr(clone, name, getattr(owner, name))
-        clone._lock = RLock()
-        return clone
 
     @property
     def branch(self):
@@ -600,10 +601,7 @@ class GRC9V4BranchOperation:
             receipts=before.receipts + emitted,
             journal=before.journal + (FrozenJSONMap(action),),
         )
-        if following.branch == "enabled_v4":
-            following.owner._published = replace(
-                following.owner._published, receipts=following.receipts
-            )
+        following.artifacts.require_extension_of(before.artifacts)
         self._published = following
 
     def migrate(self, request):
@@ -696,7 +694,7 @@ class GRC9V4BranchOperation:
             before,
             branch="disabled_grc9v3",
             owner=owner,
-            archives=before.archives + (archive,),
+            artifacts=replace(before.artifacts, archives=before.archives + (archive,)),
         )
 
     def _enable(self, before, request):
@@ -733,7 +731,7 @@ class GRC9V4BranchOperation:
         )
         inputs = generic._fresh_geometry(inputs)
         state = enabled._OWNERS[family].STATE(inputs, before.specialization)
-        owner = enabled.GRC9V4EnabledOperation(
+        owner = enabled.GRC9V4EnabledBranch.admit(
             state
         )  # Native independent current/reset admission.
         notes = tuple(FrozenJSONMap(v) for v in (ci, ri) if v is not None)
@@ -742,41 +740,61 @@ class GRC9V4BranchOperation:
             branch="enabled_v4",
             owner=owner,
             reference=ref,
-            initializations=before.initializations + notes,
+            artifacts=replace(
+                before.artifacts, reference_currents=before.initializations + notes
+            ),
             entry_receipt=None,
         )
 
-    def step_enabled(self, request):
+    @staticmethod
+    def _prepare_enabled(before, kind, request=None):
+        if (
+            before.branch != "enabled_v4"
+            or type(before.owner) is not enabled.GRC9V4EnabledBranch
+        ):
+            raise ValueError("enabled action requires the immutable enabled branch")
+        context = enabled.GRC9V4EnabledContext(
+            before.owner.state, before.receipts, before.artifacts
+        )
+        transition = enabled.prepare_enabled(context, kind, request)
+        if (
+            type(transition) is not enabled.GRC9V4EnabledTransition
+            or transition.source != context
+        ):
+            raise ValueError("prepared enabled action differs from branch source")
+        return transition
+
+    @staticmethod
+    def _enabled_target(before, transition):
+        return replace(
+            before,
+            owner=enabled.GRC9V4EnabledBranch(transition.state),
+            reference=transition.state.inputs.geometry.reference,
+            receipts=before.receipts + transition.result.emitted_receipts,
+            artifacts=transition.artifacts,
+        )
+
+    def _enabled_action(self, kind, request=None):
         with self._lock, exact_backend(self._backend), numerical_policy(self._policy):
             before = self._published
-            if before.branch != "enabled_v4":
-                raise ValueError("enabled step on disabled branch")
-            owner = self._clone_enabled(before.owner)
-            result = owner.step_v4(request)
-            if result.committed:
+            transition = self._prepare_enabled(before, kind, request)
+            if transition.result.committed:
+                action = {"kind": "enabled_" + kind}
+                if request is not None:
+                    action["request"] = request.to_payload()
                 self._publish(
                     before,
-                    replace(before, owner=owner),
-                    result.emitted_receipts,
-                    dict(kind="enabled_step", request=request.to_payload()),
+                    self._enabled_target(before, transition),
+                    transition.result.emitted_receipts,
+                    action,
                 )
-            return result
+            return transition.result
+
+    def step_enabled(self, request):
+        return self._enabled_action("step", request)
 
     def reset_enabled(self):
-        with self._lock, exact_backend(self._backend), numerical_policy(self._policy):
-            before = self._published
-            if before.branch != "enabled_v4":
-                raise ValueError("enabled reset on disabled branch")
-            owner = self._clone_enabled(before.owner)
-            result = owner.reset()
-            if result.committed:
-                self._publish(
-                    before,
-                    replace(before, owner=owner),
-                    result.emitted_receipts,
-                    dict(kind="enabled_reset"),
-                )
-            return result
+        return self._enabled_action("reset")
 
     def legacy_operation(self, operation_id, kind="step"):
         if type(operation_id) is not str or not operation_id:

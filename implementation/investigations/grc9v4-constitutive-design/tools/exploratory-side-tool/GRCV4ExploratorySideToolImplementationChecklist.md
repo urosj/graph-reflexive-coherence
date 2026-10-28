@@ -2620,3 +2620,15 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
 - [x] Reject input drift, acceptance/public API promotion and missing family coverage.
 - [x] Preserve historical records and constrain the post-solver owner successor by exact hashes.
 - [x] User acceptance of bounded crossings on 2026-10-27; public API remains P9-9.4b.
+
+### P9-9.4b public API integration
+
+- [x] Four-family and shared boundary evidence through the read-only API and indexed sources.
+- [x] Browser control/renderer and executable notebook status cell.
+- [x] Distinguish public API implementation from acceptance/conformance; reject scope/promotion/input drift.
+- [x] Render all ten typed contract rows separately from the four native execution
+  families; expose the contract evidence group and reject schema/axis drift,
+  incomplete rows and widened execution.
+- [x] Expose the architecture/replay group, sole branch ownership and accepted
+  crossing replay, with future standalone/branch format consolidation separate.
+- [x] User acceptance of bounded P9-9.4b on 2026-10-28; P9-9.5/P9-9.6 remain.

@@ -20,6 +20,30 @@ POLICY_SNAPSHOT=cos.BASE+'P9-8.5-ExecutionMaintenancePolicy.py.txt'
 POLICY_DIGEST='c7ebd6223b1c62ac2222f31b1e62c232346a7bb5e21d958a9ad76912472297f4'
 
 
+def successor_sources(root, manifest):
+    """Authenticate only exact named refactor epochs; never bless other drift."""
+    from p994b_runtime_successor import SOURCES, historical_source
+    result = {}
+    for name, row in SOURCES.items():
+        expected = manifest['source_bindings'].get(name)
+        if expected is not None and cos.sha((root/name).read_bytes()) != expected:
+            cos.require(historical_source(root,name,expected)==expected,
+                        'unrecognized execution source successor: '+name)
+            result[root/name] = subprocess.check_output(
+                ['git','show',row['predecessors'][expected]+':'+name],cwd=root)
+    return result
+
+
+def historical_refs(value):
+    from p994b_runtime_successor import SOURCES
+    for ref in value['source_refs']:
+        row = SOURCES.get(ref['path'])
+        if row and ref['sha256'] in row['predecessors']:
+            ref.update(revision=row['predecessors'][ref['sha256']],basis='historical_git')
+    value['current_code_conformance_inferred'] = False
+    return value
+
+
 @contextmanager
 def cos_execution_epoch(root):
     """Metadata-only adapter for the accepted pre-integration execution source.
@@ -31,8 +55,10 @@ def cos_execution_epoch(root):
     root=Path(root);m=json.loads((root/cos.INPUTS).read_text())
     raw=subprocess.check_output(['git','show',COS_REVISION+':'+LIFECYCLE],cwd=root)
     cos.require(cos.sha(raw)==m['source_bindings'][LIFECYCLE],'original C_OS execution source unavailable')
+    sources=successor_sources(root,m)
+    sources[root/LIFECYCLE]=raw
     original=Path.read_bytes
-    def read(path):return raw if path==root/LIFECYCLE else original(path)
+    def read(path):return sources[path] if path in sources else original(path)
     with patch.object(Path,'read_bytes',read):yield
 
 
@@ -41,14 +67,14 @@ def batch_execution_epoch(root, family):
     """Original imported maintenance metadata, not replacement numerical code."""
     root=Path(root)
     manifest=json.loads((root/batch.path(family,'inputs')).read_text())
-    if EXECUTION_POLICY not in manifest['source_bindings']:
-        yield
-        return
-    raw=(root/POLICY_SNAPSHOT).read_bytes()
-    cos.require(cos.sha(raw)==POLICY_DIGEST==manifest['source_bindings'][EXECUTION_POLICY],
-                'original execution maintenance source unavailable')
+    sources=successor_sources(root,manifest)
+    if EXECUTION_POLICY in manifest['source_bindings']:
+        raw=(root/POLICY_SNAPSHOT).read_bytes()
+        cos.require(cos.sha(raw)==POLICY_DIGEST==manifest['source_bindings'][EXECUTION_POLICY],
+                    'original execution maintenance source unavailable')
+        sources[root/EXECUTION_POLICY]=raw
     original=Path.read_bytes
-    def read(path):return raw if path==root/EXECUTION_POLICY else original(path)
+    def read(path):return sources[path] if path in sources else original(path)
     with patch.object(Path,'read_bytes',read):yield
 
 
@@ -78,8 +104,13 @@ def _view(root,family):
     cos.require(family in ('C_OS',*batch.FAMILIES),'8.5 requires an executed first-group family')
     if family=='C_OS':
         with cos_execution_epoch(root):
-            cos.require(json.loads((root/cos.INPUTS).read_text())==cos.manifest(),
-                '8.5 execution manifest differs from the complete frozen source roster')
+            frozen=json.loads((root/cos.INPUTS).read_text())
+            current=cos.manifest()
+            # Only the recorded execution population belongs to this epoch.
+            # New unrelated implementation files are not historical inputs.
+            current['source_bindings']={n:current['source_bindings'][n] for n in frozen['source_bindings']}
+            cos.require(frozen==cos.seal(current),
+                '8.5 execution manifest differs from its frozen source roster')
             value=cos.status(root)
         for ref in value['source_refs']:
             if ref['path']==LIFECYCLE:ref.update(revision=COS_REVISION,basis='historical_git')
@@ -93,19 +124,21 @@ def _view(root,family):
             'unbound C_OS acceptance')
         value.update(status='accepted',user_accepted=True,acceptance=acceptance)
         value['source_refs'].append(dict(path=ACCEPTANCE,sha256=cos.sha((root/ACCEPTANCE).read_bytes()),revision=None))
-        return accepted_group(root,value)
+        return accepted_group(root,historical_refs(value))
     manifest,records=checked_batch(root,family)
     paths=set(manifest['source_bindings'])|{batch.path(family,k) for k in ('inputs','small','large','review')}
     metadata_snapshot=EXECUTION_POLICY in manifest['source_bindings']
     if metadata_snapshot:
         paths.remove(EXECUTION_POLICY);paths.add(POLICY_SNAPSHOT)
+    with batch_execution_epoch(root,family):
+        source_refs=[dict(path=p,sha256=cos.sha(cos.safe(root,p).read_bytes()),revision=None) for p in sorted(paths)]
     value=dict(schema='phase9_tranche8_lifecycle_v1',checkpoint='8.5',family=family,
         status='verified_pending_acceptance',user_accepted=False,acceptance=None,aggregate_closed=False,
         public_specialization_facade=False,native_trajectories_rerun=False,retained_integrity_only=True,
         manifest_digest=manifest['record_digest'],executions=records,
         execution_metadata_sources=({EXECUTION_POLICY:POLICY_SNAPSHOT} if metadata_snapshot else {}),
-        source_refs=[dict(path=p,sha256=cos.sha(cos.safe(root,p).read_bytes()),revision=None) for p in sorted(paths)])
-    return accepted_group(root,value)
+        source_refs=source_refs)
+    return accepted_group(root,historical_refs(value))
 
 
 def view(root,family):

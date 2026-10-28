@@ -125,3 +125,66 @@ if(typeof document!=='undefined'){
   const button=document.getElementById('tranche9-crossings-refresh');
   if(button)button.addEventListener('click',crossingsLoader(document.getElementById('tranche9-crossings-output'),document.getElementById('tranche9-crossings-status')));
 }
+
+const publicFamilies = ['A','C'].flatMap(c=>['OS','CI','PC','CI_PC','RG2b'].map(r=>c+'_'+r));
+const realizationSchemas = {OS:'os_params', CI:'ci_params', PC:'pc_params', 'CI+PC':'cipc_params', RG2b:'rg2b_params'};
+export function checkedPublic(v) {
+  if(v.schema!=='p994b-public-api-status-v1' || v.iteration!=='P9-9.4b' ||
+     JSON.stringify(v.families)!==JSON.stringify(['C_OS','C_CI','A_CI','A_PC']) ||
+     v.public_api!==true || v.user_accepted!==true || v.aggregate_closed!==false ||
+     v.full_GRC9V4_conformance!==false || v.state!=='bounded_accepted' ||
+     v.check_level!=='retained_integrity_only_no_native_rerun' ||
+     v.acceptance_digest!=='eca188da8a0a75ad67e87124136dc89ff5c8d5642aa07ee5d0a15eda9f795c3c' ||
+     JSON.stringify(v.records?.map(r=>r.family))!==JSON.stringify([...v.families,'boundary','contracts','architecture']) ||
+     v.records.some(r=>r.tests!==(r.family==='contracts'?6:r.family==='architecture'?9:4) || r.outcome!=='passed' || !/^[0-9a-f]{64}$/.test(r.record_digest)))
+    throw new Error('Invalid bounded public API evidence');
+  if(JSON.stringify(v.contract_families)!==JSON.stringify(publicFamilies) ||
+     JSON.stringify(v.contract_matrix?.map(r=>r.profile_family_id))!==JSON.stringify(publicFamilies))
+    throw new Error('Incomplete public contract matrix');
+  for(const r of v.contract_matrix){
+    const candidate=r.profile_family_id[0], realization=r.profile_family_id.slice(2).replace('_','+');
+    const fields=['C',...(candidate==='A'?['W_A']:[]),...(['PC','CI+PC'].includes(realization)?['Z_4']:[])];
+    if(r.candidate!==candidate || r.realization!==realization || r.roundtrip!==true ||
+       r.candidate_parameter_schema!==`candidate_${candidate.toLowerCase()}_params` ||
+       r.realization_parameter_schema!==realizationSchemas[realization] ||
+       JSON.stringify(r.authoritative_fields)!==JSON.stringify(fields))
+      throw new Error('Invalid family contract axes');
+  }
+  const a=v.architecture;
+  if(a?.execution_selection?.registered_owner_does_not_enable!==true ||
+     a?.artifact_transfer?.complete_bundle_preserved!==true ||
+     a?.artifact_transfer?.dropped_prefix_rejected!==true ||
+     a?.accepted_replay?.checkpoint_bytes_equal!==true ||
+     a?.accepted_crossing_replay?.checkpoint_bytes_equal!==true ||
+     a?.branch_ownership?.no_nested_enabled_owner!==true ||
+     a?.branch_ownership?.sole_receipt_ledger!==true ||
+     a?.replay_assessment?.standalone_event_checkpoint_replays!==0)
+    throw new Error('Incomplete owner-boundary evidence');
+  return v;
+}
+
+export function publicLoader(container,status,fetcher=fetch) {
+  return async function() {
+    container.replaceChildren();status.textContent='Checking retained public API evidence…';
+    try {
+      const response=await fetcher('/api/tranche9/public');if(!response.ok)throw new Error('Unavailable');
+      const v=checkedPublic(await response.json());
+      const add=(tag,text)=>{const e=container.ownerDocument.createElement(tag);e.textContent=text;container.append(e);return e;};
+      add('p','Public GRC9V4: ten typed family contracts; native execution covers C_OS, C_CI, A_CI and A_PC. Thirty-five contract/integration/architecture tests passed; bounded-accepted on 2026-10-28. Retained integrity only; no native rerun or full conformance grant.');
+      for(const r of v.contract_matrix)add('p',`${r.profile_family_id}: ${r.authoritative_fields.join(', ')}; ${r.realization_parameter_schema}; ${v.families.includes(r.profile_family_id)?'native execution in scope':'contract only; native execution unavailable in this scope'}.`);
+      for(const r of v.records)add('p',`${r.family}: ${r.tests} tests; ${r.outcome}.`);
+      const replay=v.architecture.replay_assessment;
+      add('p',`One branch publication and receipt ledger; small C_OS replay: ${replay.executed_actions.ordinary} ordinary steps, ${replay.executed_actions.expansion} expansion, ${replay.standalone_event_checkpoint_replays} nested event-checkpoint replays. Unifying standalone and branch checkpoint formats remains a future consideration after all ten are enabled.`);
+      for(const ref of v.source_refs){
+        const a=add('a',ref.path.split('/').at(-1));a.href='/api/tranche9/public/source?path='+encodeURIComponent(ref.path);a.target='_blank';a.rel='noopener';add('span',' · ');
+      }
+      status.textContent='Checked bounded evidence; P9-9.5 and P9-9.6 remain.';
+    } catch(error) {
+      container.replaceChildren();status.textContent='Unavailable — not admitted.';
+    }
+  };
+}
+if(typeof document!=='undefined') {
+  const button=document.getElementById('tranche9-public-refresh');
+  if(button)button.addEventListener('click',publicLoader(document.getElementById('tranche9-public-output'),document.getElementById('tranche9-public-status')));
+}

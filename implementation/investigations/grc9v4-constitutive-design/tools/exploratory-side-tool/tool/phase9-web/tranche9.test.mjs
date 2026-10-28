@@ -77,3 +77,54 @@ test('crossing loader renders all families, linked evidence, and clears on failu
   assert(children.some(x=>x.href?.startsWith('/api/tranche9/crossings/source?')));
   ok=false;await load();assert.equal(children.length,0);assert.match(status.textContent,/Unavailable/);
 });
+
+import {checkedPublic,publicLoader} from './tranche9.js';
+const contractFamilies=['A','C'].flatMap(c=>['OS','CI','PC','CI_PC','RG2b'].map(r=>c+'_'+r));
+const contractMatrix=contractFamilies.map(profile_family_id=>{
+  const candidate=profile_family_id[0], realization=profile_family_id.slice(2).replace('_','+');
+  return {profile_family_id,candidate,realization,roundtrip:true,
+    candidate_parameter_schema:`candidate_${candidate.toLowerCase()}_params`,
+    realization_parameter_schema:{OS:'os_params',CI:'ci_params',PC:'pc_params','CI+PC':'cipc_params',RG2b:'rg2b_params'}[realization],
+    authoritative_fields:['C',...(candidate==='A'?['W_A']:[]),...(['PC','CI+PC'].includes(realization)?['Z_4']:[])]};
+});
+const publicAPI={architecture:{execution_selection:{registered_owner_does_not_enable:true},
+ artifact_transfer:{complete_bundle_preserved:true,dropped_prefix_rejected:true},
+ accepted_replay:{checkpoint_bytes_equal:true},
+ accepted_crossing_replay:{checkpoint_bytes_equal:true},
+ branch_ownership:{no_nested_enabled_owner:true,sole_receipt_ledger:true},
+ replay_assessment:{standalone_event_checkpoint_replays:0,executed_actions:{ordinary:2,expansion:1}}},contract_families:contractFamilies,contract_matrix:contractMatrix,schema:'p994b-public-api-status-v1',iteration:'P9-9.4b',families,
+  public_api:true,user_accepted:true,aggregate_closed:false,full_GRC9V4_conformance:false,
+  state:'bounded_accepted',acceptance_digest:'eca188da8a0a75ad67e87124136dc89ff5c8d5642aa07ee5d0a15eda9f795c3c',check_level:'retained_integrity_only_no_native_rerun',
+  records:[...families,'boundary','contracts','architecture'].map(family=>({family,tests:family==='contracts'?6:family==='architecture'?9:4,outcome:'passed',record_digest:'c'.repeat(64)})),
+  source_refs:[{path:'implementation/phase-9-grcv4/tranche-9/P9-9.4b-Review.md'}]};
+test('public API view rejects missing family/boundary, widened support and acceptance promotion',()=>{
+  assert.equal(checkedPublic(publicAPI),publicAPI);
+  assert.throws(()=>checkedPublic({...publicAPI,user_accepted:false}));
+  assert.throws(()=>checkedPublic({...publicAPI,acceptance_digest:'0'.repeat(64)}));
+  assert.throws(()=>checkedPublic({...publicAPI,architecture:null}));
+  for(const key of ['no_nested_enabled_owner','sole_receipt_ledger'])
+    assert.throws(()=>checkedPublic({...publicAPI,architecture:{...publicAPI.architecture,
+      branch_ownership:{...publicAPI.architecture.branch_ownership,[key]:false}}}));
+  assert.throws(()=>checkedPublic({...publicAPI,architecture:{...publicAPI.architecture,
+    accepted_crossing_replay:{checkpoint_bytes_equal:false}}}));
+  for(const key of ['full_GRC9V4_conformance','aggregate_closed'])assert.throws(()=>checkedPublic({...publicAPI,[key]:true}));
+  assert.throws(()=>checkedPublic({...publicAPI,records:publicAPI.records.slice(1)}));
+  assert.throws(()=>checkedPublic({...publicAPI,records:publicAPI.records.slice(0,4)}));
+  assert.throws(()=>checkedPublic({...publicAPI,families:[...families,'A_OS']}));
+  assert.throws(()=>checkedPublic({...publicAPI,contract_matrix:contractMatrix.slice(1)}));
+  for(const [key,value] of [['authoritative_fields',['C']],['realization_parameter_schema','ci_params'],['roundtrip',false]]){
+    const altered=structuredClone(publicAPI);altered.contract_matrix[0][key]=value;
+    assert.throws(()=>checkedPublic(altered));
+  }
+});
+test('public loader renders indexed evidence and clears stale successful output',async()=>{
+  const children=[],container={ownerDocument:{createElement:()=>({})},replaceChildren(){children.length=0;},append(x){children.push(x);}};
+  const status={textContent:''};let value=structuredClone(publicAPI);
+  const load=publicLoader(container,status,async()=>({ok:true,json:async()=>value}));
+  await load();assert.match(status.textContent,/P9-9.5 and P9-9.6 remain/);
+  assert.equal(children.filter(x=>/4 tests; passed/.test(x.textContent)).length,5);
+  assert.equal(children.filter(x=>/contract only; native execution unavailable/.test(x.textContent)).length,6);
+  assert.equal(children.filter(x=>/native execution in scope/.test(x.textContent)).length,4);
+  assert(children.some(x=>x.href?.startsWith('/api/tranche9/public/source?')));
+  value.records[0].outcome='failed';await load();assert.equal(children.length,0);assert.match(status.textContent,/Unavailable/);
+});

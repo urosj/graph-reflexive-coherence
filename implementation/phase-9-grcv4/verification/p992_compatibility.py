@@ -152,6 +152,7 @@ def read(root, family):
 
 
 def check(root, family):
+    from p994b_source_compatibility import execution_sha
     root = Path(root).resolve()
     v = read(root, family)
     count = 2 if family == "boundary" else 4
@@ -193,7 +194,7 @@ def check(root, family):
         if (
             Path(ref["path"]).is_absolute()
             or not path.is_relative_to(root)
-            or sha(path.read_bytes()) != ref["sha256"]
+            or execution_sha(root, ref["path"], ref["sha256"]) != ref["sha256"]
         ):
             raise ValueError("execution input drift: " + ref["path"])
     return v
