@@ -3284,8 +3284,8 @@ object, six contracts, resolved design debt and pending native obligation.
 API `/api/basin`, browser panel and notebook cell expose identical typed traces,
 source links and failure clearing. Six focused authority/schema/propagation/surface
 tests pass. Proposal/paper A.5.1 and the V4 spec/schema successor are propagated.
-Historical loaders/claims and the executable release remain unchanged; native
-basin capability is not yet granted.
+Historical loaders/claims and the executable release remain unchanged. Native
+implementation evidence is exposed separately below; native acceptance remains pending.
 
 P9-10.1a supplies the required baseline basin interface and lifecycle evidence;
 P9-10.1b supplies exact expanded-target disabled compatibility evidence for the
@@ -3295,3 +3295,18 @@ with successor evidence. Show target-specific success/exclusion and any remainin
 hold, preserving accepted predecessors and fail-closed source checking. Retain
 the all-forty umbrella-capability condition, numerical limits and authority status;
 do not infer completed sparks, hierarchy, other-six execution or full conformance.
+
+#### P9-10.1a native evidence successor
+
+The separate `grcv4_explorer.basin_native` view authenticates the four native
+execution records plus graph/seed pressure and exact source bindings. Its end-to-end
+successor also exposes independent saved-state equations/rows, full classifications,
+fresh CI roots and W/Z checks, lifecycle pressure and explicit seed/cycle limitations.
+Compressed records retain checked download links; the view separates the original
+20 checks from 17 pressure tests.
+`/api/basin/native` and `/api/basin/native/source` serve this evidence; browser
+and notebook consumers distinguish retained integrity checking from a numerical
+rerun. User accepted bounded native conformance on 2026-10-28. The checked
+acceptance successor resolves `P9-10.1a-VO-BASIN-NATIVE`; API/browser/notebook expose
+the decision, review and source bindings. The original design/execution snapshots
+retain their historical flags. P9-10.1b/c and aggregate support remain open.

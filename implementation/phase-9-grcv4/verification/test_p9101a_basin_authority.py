@@ -239,7 +239,7 @@ await assert.rejects(checkedBasin(forged));
 const output={children:[],replaceChildren(){this.children=[]},append(e){this.children.push(e)}},status={};
 let ok=true;
 const load=basinLoader(output,status,async()=>({ok,json:async()=>value}),tag=>({tag}));
-await load();assert.ok(output.children.length>10);assert.match(status.textContent,/native conformance pending/);
+await load();assert.ok(output.children.length>10);assert.match(status.textContent,/inspect native acceptance/);
 ok=false;await load();assert.equal(output.children.length,0);assert.match(status.textContent,/unavailable/);
 assert.match(readFileSync('index.html','utf8'),/id="basin-refresh"/);
 console.log('BASIN_BROWSER_PASS');

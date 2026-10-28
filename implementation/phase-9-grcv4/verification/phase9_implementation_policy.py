@@ -1789,6 +1789,30 @@ PATHS |= {
 }
 
 
+# Native basin successor evidence; no promotion of scientific or support authority.
+PATHS |= {'implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-graph.json', 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/basin_native.py', 'implementation/phase-9-grcv4/verification/test_p9101a_native_surfaces.py', 'implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-C_CI.json', 'implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-A_CI.json', 'implementation/phase-9-grcv4/tranche-10/P9-10.1a-NativeReview.md', 'implementation/phase-9-grcv4/verification/p9101a_native.py', 'implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-A_PC.json', 'implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-C_OS.json'}
+
+
+
+# Independent end-to-end basin pressure; original native evidence is unchanged.
+PATHS |= {
+    PHASE + "verification/p9101a_basin_oracle.py",
+    PHASE + "verification/p9101a_basin_pressure.py",
+    PHASE + "verification/test_p9101a_basin_pressure.py",
+    PHASE + "tranche-10/P9-10.1a-EndToEndReview.md",
+    PHASE + "tranche-10/P9-10.1a-Pressure-graph.json",
+    *(PHASE + "tranche-10/P9-10.1a-Pressure-" + f + ".json.xz"
+      for f in ("C_OS", "C_CI", "A_CI", "A_PC")),
+}
+
+
+PATHS |= {
+    PHASE + "verification/p9101a_acceptance.py",
+    PHASE + "tranche-10/P9-10.1a-NativeAcceptance.json",
+    PHASE + "tranche-10/P9-10.1a-IndependentReview.md",
+}
+
+
 def check_binding_reconciliation(root):
     """Retain exact committed context; never waive a directory or future file."""
     value = binding_reconciliation(root)
@@ -2813,6 +2837,11 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {entry})
     for name in PUBLIC_API_PATHS:
         owners[name] = owners.get(name, set()) | {entry}
+    from phase9_specialization_acceptance import basin_authorization, BASIN_PATHS
+    entry = basin_authorization(root)
+    ready = sorted(set(ready) | {entry})
+    for name in BASIN_PATHS:
+        owners[name] = owners.get(name, set()) | {entry}
     return ready, owners
 
 
@@ -2820,8 +2849,12 @@ def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
     from phase9_specialization_acceptance import AOS_NEW_PATHS, CCI_NEW_PATHS, ACI_NEW_PATHS, APC_NEW_PATHS, CCIPC_NEW_PATHS, ACIPC_NEW_PATHS, CRG2B_NEW_PATHS, ARG2B_NEW_PATHS
     from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS, BRANCH_CROSSING_PATHS
-    from phase9_specialization_acceptance import PUBLIC_API_NEW_PATHS
+    from phase9_specialization_acceptance import PUBLIC_API_NEW_PATHS, BASIN_NEW_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4_basin"}
+        for name in BASIN_NEW_PATHS
+    ), *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4"}
         for name in PUBLIC_API_NEW_PATHS
@@ -3062,6 +3095,7 @@ def work_entries(root, approval):
         disabled_delegate_authorization, disabled_delegate_permitted,
         branch_crossing_authorization, branch_crossing_permitted,
         public_api_authorization, public_api_permitted,
+        basin_authorization, basin_permitted,
     )
     g3 = accepted_g3(root)
     row_entry = row_bridge_authorization(root)
@@ -3084,13 +3118,14 @@ def work_entries(root, approval):
     leaves.update(disabled_delegate_authorization(root))
     leaves.add(branch_crossing_authorization(root))
     leaves.add(public_api_authorization(root))
+    leaves.add(basin_authorization(root))
     def g3_permitted(name, leaf):
         return (permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
                 or backend_permitted(name, leaf) or allocator_permitted(name, leaf)
                 or cos_permitted(name, leaf) or cpc_permitted(name, leaf)
                 or aos_permitted(name, leaf) or cci_permitted(name, leaf) or aci_permitted(name, leaf) or apc_permitted(name, leaf) or ccipc_permitted(name, leaf) or acipc_permitted(name, leaf) or crg2b_permitted(name, leaf) or arg2b_permitted(name, leaf)
-                or enabled_lifecycle_permitted(name, leaf) or disabled_delegate_permitted(name, leaf) or branch_crossing_permitted(name, leaf) or public_api_permitted(name, leaf))
+                or enabled_lifecycle_permitted(name, leaf) or disabled_delegate_permitted(name, leaf) or branch_crossing_permitted(name, leaf) or public_api_permitted(name, leaf) or basin_permitted(name, leaf))
     leaves.update(g3['new_runtime_iterations_authorized'])
     leaves.add(row_entry)
     leaves.add(trigger_entry)
@@ -3120,7 +3155,7 @@ def work_entries(root, approval):
         name, leaf = row["path"], row["iteration_id"]
         require(leaf in leaves, "unregistered work iteration")
         require(
-            not leaf.startswith(("P9-8.", "P9-9.")) or g3_permitted(name, leaf),
+            not leaf.startswith(("P9-8.", "P9-9.", "P9-10.")) or g3_permitted(name, leaf),
             "specialization requires accepted P9-G3 and exact leaf/path entry",
         )
         if name in targets:

@@ -89,6 +89,66 @@ SOURCES.update({
     }
 })
 
+# Native basin successor: old runs stay bound to their exact v1 runtime.
+SOURCES.update({
+    "src/pygrc/models/grc_9_v4.py": {
+        "predecessors": {
+            "f440930d798dba03abeb6038334714c999badb79401d52e7b4c236f8fe064e05": "b30e630c"
+        },
+        "current_sha256": "b82f13df6bcc57fdcb4e97e402db968f040b54ac7d7e880ded4eda68f815b71d"
+    },
+    "src/pygrc/models/grc_9_v4_api_lifecycle.py": {
+        "predecessors": {
+            "9c3d45b763eced982b571f6488da4d22b2f7b65f078b2046e6a3f24e50065a88": "b30e630c"
+        },
+        "current_sha256": "f363dd248ca52e956b43a7f53dde8a0785abe2b2237b7f977d3d8f67b0b981ab"
+    },
+    "src/pygrc/models/grc_9_v4_contracts.py": {
+        "predecessors": {
+            "839ecaa3630d189bdcc5452c3abf29bffbdd21456c535d9d9b59a8a52bce4eb0": "b30e630c"
+        },
+        "current_sha256": "7c14b32c41b2210927dc68980ec1dcbae735256baee58b7af10d7504e875fb72"
+    },
+    "src/pygrc/models/grc_9_v4_lifecycle.py": {
+        "current_sha256": "40ba2683facd22286bb360da64664c80fe62d88763d2eab7feb7469132b1c328",
+        "predecessors": {
+            "c19670def351aaeb63f9331df1c817b7c82a4570dd6c8772645bbdb35460247c": "7b16696a",
+            "7ca7e1bcef9646d5f891e5cd1cc23925b93bbfde91778121c2f45604e4228f25": "b30e630c"
+        }
+    },
+    "src/pygrc/models/grc_9_v4_legacy.py": {
+        "predecessors": {
+            "03e51fde0dbdd3d1304c01f72ef1bc198350894b0ec2e9c8b19fce28faf46732": "b30e630c"
+        },
+        "current_sha256": "c42bcfca64903bca1cb48fadb782bd9081d8e764df09944bb4ddedd3e327d026"
+    },
+    "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py": {
+        "current_sha256": "4673acb4d6b1985d4d412b70d4d931504a7241c5b0e74a979f75f49d4932ed85",
+        "predecessors": {
+            "ee6f37a7b3caf25977209f4a886ccc93227c2d0af5db7584ab9d0e4ca6141feb": "a04095f8",
+            "de53604c10b6d8a350b77e8331efea486963757014f195eb274c04508ebbe052": "b30e630c"
+        }
+    },
+    "implementation/phase-9-grcv4/verification/p996_support_review.py": {
+        "predecessors": {
+            "674a9e24fae740bb95a0ad36fbc943a546c477089e19e4334111b4f26108497d": "b30e630c"
+        },
+        "current_sha256": "f33aafebc59960eed37a72b4e4f47536d7b49628c07b85f5ecd8ccfc2b766325"
+    },
+    "implementation/phase-9-grcv4/verification/p994b_public_api.py": {
+        "current_sha256": "900f6edb8785d8994c8e754b1026cd422ed5f94908ce6e690a3ad34603aed4f7",
+        "predecessors": {
+            "1bacecf692c27d4d077b5d7f64189bb0f971f44597a12608449705ce065a671b": "b30e630c"
+        }
+    },
+    "implementation/phase-9-grcv4/verification/p995_public_conflict.py": {
+        "current_sha256": "ec0c128f6d760cb180b6d477b8401922be6552feda04021efec5093c022d2d3e",
+        "predecessors": {
+            "cd51521d9ca54a4efe48a15fbceabb2ed1257b84e00c04c537992c9f534abba9": "b30e630c"
+        }
+    }
+})
+
 def historical_source(root, name, expected):
     row = SOURCES.get(name)
     if row is None or expected not in row["predecessors"]:

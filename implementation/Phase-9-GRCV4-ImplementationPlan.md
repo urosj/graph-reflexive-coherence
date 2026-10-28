@@ -4322,9 +4322,20 @@ and ten conditional checks are complete. Authority is admitted, and proposal/pap
 A.5.1 plus the [V4 spec/schema successor](../specs/grc-9-v4-basin-interface.md) are
 propagated with exact source bindings. Six focused authority/schema/surface tests
 pass. User accepted propagation and the BIP-F1/BIP-F2 specification clarifications
-on 2026-10-28. Native implementation is next: fresh reads and both-role lifecycle/replay
-conformance for C_OS/C_CI/A_CI/A_PC. The interpreted regions are diagnostic, not
-stable attractors; the old executable release and support holds are unchanged.
+on 2026-10-28. The native v2 successor is implemented for C_OS/C_CI/A_CI/A_PC;
+[implementation and retained checks](./phase-9-grcv4/tranche-10/P9-10.1a-NativeReview.md)
+cover fresh captures, both histories, expansion, replay modes and rollback.
+The [end-to-end pressure successor](./phase-9-grcv4/tranche-10/P9-10.1a-EndToEndReview.md)
+adds independent saved-state equations/rows and complete classification evidence,
+with distinct CI-root/W/Z checks and explicit native-category limitations.
+C_OS observes its fresh reference restart; it does not run another corrector.
+User accepted bounded P9-10.1a on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json) closes its native
+verification obligation using unchanged execution subjects and the independent
+retained-evidence review. Next is P9-10.1b, then P9-10.1c. All-ten public declarations remain
+recognized; six additional native families are not enabled. The interpreted
+regions are diagnostic, not stable attractors; the frozen executable release,
+scientific authority and P9-9.6 support holds retain their accepted subjects.
 
 1. **P9-10.1a — Baseline basin interface closure.** Trace the existing local
    classification and basin-identity semantics, then implement the required public

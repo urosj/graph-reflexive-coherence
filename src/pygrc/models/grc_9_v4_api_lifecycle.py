@@ -33,6 +33,8 @@ from .grc_9_v4_contracts import (
     describe_family,
 )
 from .grc_v4_state import GRCV4ResetBaseline
+from . import grc_9_v4_basin as basin
+from .grc_9_v4_identity import has_basin
 
 # Public execution selection is independent of available native implementations.
 # Contract recognition and conformance acceptance are separate again.
@@ -57,6 +59,40 @@ def _decode(raw):
 
 class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
     """Extend the accepted transaction receiver without changing old snapshots."""
+
+    def __init__(self, owner):
+        super().__init__(owner)
+        self._basin_pair(self._published)
+
+    def _basin_pair(self, publication):
+        if publication.branch != "enabled_v4" or not has_basin(
+            publication.specialization
+        ):
+            return None
+        with exact_backend(self._backend), numerical_policy(self._policy):
+            return basin.capture_pair(publication.owner.state)
+
+    def _publish(self, before, after, emitted, action, *, captured=None):
+        # Every operation, including return from disabled mode, validates both
+        # prospective roles before the inherited sole publication assignment.
+        if after.branch == "enabled_v4" and has_basin(after.specialization):
+            pair = self._basin_pair(after) if captured is None else captured
+            for role, capture in zip(("current", "reset"), pair, strict=True):
+                state = after.owner.state
+                expected = basin.digest(
+                    state.scientific_payload
+                    if role == "current"
+                    else state.reset_payload
+                )
+                binding = capture.observation["binding"]
+                if binding["role"] != role or binding["role_state_digest"] != expected:
+                    raise ValueError(
+                        "prospective basin observation belongs to another state/role"
+                    )
+                basin.validate_observation(
+                    capture.observation, after.reference.graph.port_graph
+                )
+        super()._publish(before, after, emitted, action)
 
     @staticmethod
     def execution_scope():
@@ -216,6 +252,9 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             state.scientific_digest,
             self.lifecycle_digest,
             p.receipts,
+            None
+            if not has_basin(p.specialization)
+            else self._basin_pair(p)[0].observation,
         )
 
     def legacy_capabilities(self):
@@ -254,6 +293,7 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             if not result.committed:
                 return result
             after = self._enabled_target(before, transition)
+            captured = self._basin_pair(after)
             action = dict(
                 kind={
                     "step": "enabled_step",
@@ -267,13 +307,19 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             if kind == "step":
                 payload = result.to_payload()
                 payload["observables"].update(
-                    self.observables(after, postbeat=request.dt > 0)
+                    self.observables(
+                        after,
+                        postbeat=request.dt > 0,
+                        captured=None if captured is None else captured[0],
+                    )
                 )
                 # Preserve selected current/solver provenance in the step result.
                 for key in ("authoritative_current", "stage", "solver_disposition"):
                     payload["observables"][key] = result.observables[key]
                 result = GRCV4StepResult.from_payload(payload)
-            self._publish(before, after, result.emitted_receipts, action)
+            self._publish(
+                before, after, result.emitted_receipts, action, captured=captured
+            )
             return result
 
     def step_enabled(self, request):
@@ -325,12 +371,47 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 "committed", True, emitted[0].commit_id, None, emitted
             )
 
-    def profile_migrate(self, request, target):
+    def migrate_basin_policy(self, operation_id):
+        """Versioned diagnostic declaration migration; no physical history loss."""
+        from .grc_v4_migration import migration_history_policy
+
+        with self._lock:
+            before = self._published
+            if before.branch != "enabled_v4" or has_basin(before.specialization):
+                raise ValueError("basin-policy migration requires enabled v1 source")
+            state = before.owner.state
+            request = GRCV4MigrationRequest.from_payload(
+                dict(
+                    schema_version="grcv4-migration-request-v1",
+                    operation_id=operation_id,
+                    source_state_digest=state.scientific_digest,
+                    target_profile_id=before.reference.profile.complete_profile_id,
+                    migration_policy=dict(
+                        schema_version="grcv4-migration-policy-v1",
+                        policy_id="typed_bidirectional_profile_migration_v1",
+                        resource_policy_id="identity_resource_transport_v1",
+                        target_readmission_policy_id="full_target_fail_closed_v1",
+                    ),
+                    history_policy=migration_history_policy(
+                        state.inputs, before.reference
+                    ).to_payload(),
+                    target_context_value=state.inputs.context.value.to_dict(),
+                )
+            )
+            return self.profile_migrate(request, before.reference, basin_successor=True)
+
+    def profile_migrate(self, request, target, *, basin_successor=False):
         self.require_execution(target.profile.identity_payload.profile_family_id)
         if type(request) is not GRCV4MigrationRequest:
             raise TypeError("typed profile migration required")
         with self._lock, exact_backend(self._backend), numerical_policy(self._policy):
             before = self._published
+            if basin_successor and (
+                has_basin(before.specialization) or target != before.reference
+            ):
+                raise ValueError(
+                    "basin policy migration requires the unchanged v1 generic profile"
+                )
             if before.branch != "enabled_v4":
                 return self._failure(
                     before,
@@ -362,7 +443,12 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 )
                 native = branch.enabled._OWNERS[
                     target.profile.identity_payload.profile_family_id
-                ].STATE(following, before.specialization)
+                ].STATE(
+                    following,
+                    before.specialization.with_basin_policy()
+                    if basin_successor
+                    else before.specialization,
+                )
                 owner = branch.enabled.GRC9V4EnabledBranch.admit(native)
             except ValueError as exc:
                 return self._failure(
@@ -372,7 +458,12 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                     "target_readmission_failure",
                     exc,
                 )
-            after = replace(before, owner=owner, reference=target)
+            after = replace(
+                before,
+                owner=owner,
+                reference=target,
+                specialization=native.specialization,
+            )
             bundle = request.history_policy.to_payload()
             histories = {}
             losses = []
@@ -459,7 +550,9 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 after,
                 emitted,
                 dict(
-                    kind="profile_migration",
+                    kind="basin_policy_migration"
+                    if basin_successor
+                    else "profile_migration",
                     request=request.to_payload(),
                     target_reference=target.to_payload(),
                 ),
@@ -468,7 +561,7 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 "committed", True, emitted[0].commit_id, None, emitted
             )
 
-    def observables(self, p=None, *, postbeat=False):
+    def observables(self, p=None, *, postbeat=False, captured=None):
         p = self._published if p is None else p
         if p.branch == "disabled_grc9v3":
             return p.owner.compute_observables()
@@ -476,9 +569,25 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             state = p.owner.state
             inputs = state.inputs
             ref = p.reference
-            current, charge = branch.generic._readmit_state(
-                inputs, branch.enabled._backend(state)
-            )
+            if has_basin(p.specialization):
+                captured = (
+                    basin.capture(state, "current") if captured is None else captured
+                )
+                binding = captured.observation["binding"]
+                if binding["role"] != "current" or binding[
+                    "role_state_digest"
+                ] != basin.digest(state.scientific_payload):
+                    raise ValueError(
+                        "observable capture differs from current publication"
+                    )
+                current, charge = captured.read, captured.charge
+                # PC read has .point.current; public numeric projection expects .current.
+                if p.reference.profile.identity_payload.realization == "PC":
+                    current = captured.point
+            else:
+                current, charge = branch.generic._readmit_state(
+                    inputs, branch.enabled._backend(state)
+                )
             values = tuple(current.current.values)
             result = branch.generic._public_observables(
                 inputs,
@@ -490,15 +599,19 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 solver=None,
                 consumed=False,
             )
-            rows = GRC9V4PostbeatRows(
-                ref.graph.port_graph,
-                ref.profile,
-                inputs.current,
-                values,
-                inputs.step_index,
-                p.specialization.identity_payload["hessian_sign"],
+            rows = (
+                captured.rows
+                if captured is not None
+                else GRC9V4PostbeatRows(
+                    ref.graph.port_graph,
+                    ref.profile,
+                    inputs.current,
+                    values,
+                    inputs.step_index,
+                    p.specialization.identity_payload["hessian_sign"],
+                )
             )
-            summaries = rows.evaluate()
+            summaries = captured.summaries if captured is not None else rows.evaluate()
             graph = ref.graph.port_graph
             occupied = {v: [] for v in graph.live_node_ids}
             for e in graph.edges:
@@ -545,11 +658,30 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 ),
                 support_status="bounded_local_GRC9V4_API_pending_P9_9_6_not_full_conformance",
             )
+            if captured is not None:
+                observation = captured.observation.to_dict()
+                result.update(
+                    basin_attributes=observation,
+                    basin_identity=basin.identity_projection(observation),
+                )
             return FrozenJSONMap(result).to_dict()
 
-    def snapshot(self):
+    def snapshot(self, *, replay_mode="exact_observation"):
+        with self._lock:
+            return self._snapshot(replay_mode=replay_mode)
+
+    def _snapshot(self, *, replay_mode):
+        if replay_mode not in ("state_only", "exact_observation"):
+            raise ValueError("explicit basin replay mode required")
+        if not has_basin(self.specialization) and replay_mode != "exact_observation":
+            raise ValueError("basin replay modes require the explicit v2 successor")
         value = json.loads(super().snapshot())
         value["descriptor_version"] = "grc9v4-public-owner-v1"
+        if has_basin(self.specialization):
+            value["descriptor_version"] = "grc9v4-public-owner-v2"
+            pair = self._basin_pair(self._published)
+            if pair is not None:
+                value["basin"] = basin.checkpoint_extension(pair, replay_mode)
         return branch._bytes(value)
 
     @classmethod
@@ -557,7 +689,10 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
         data = _decode(raw)
         self_family = data["initial"]["family"]
         cls.require_execution(self_family)
-        if data.get("descriptor_version") != "grc9v4-public-owner-v1":
+        if data.get("descriptor_version") not in (
+            "grc9v4-public-owner-v1",
+            "grc9v4-public-owner-v2",
+        ):
             raise ValueError("unsupported public owner checkpoint")
         owner = cls(
             branch.enabled.GRC9V4EnabledOperation.from_state(
@@ -589,7 +724,9 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 "operation_id",
             }:
                 result = owner.legacy_operation(action["operation_id"], kind[7:])
-            elif kind == "profile_migration" and set(action) == {
+            elif kind in ("profile_migration", "basin_policy_migration") and set(
+                action
+            ) == {
                 "kind",
                 "request",
                 "target_reference",
@@ -597,11 +734,18 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                 result = owner.profile_migrate(
                     GRCV4MigrationRequest.from_payload(action["request"]),
                     GRCV4ReferenceGeometry.from_payload(action["target_reference"]),
+                    basin_successor=kind == "basin_policy_migration",
                 )
             else:
                 raise ValueError("unknown public owner journal action")
             if hasattr(result, "committed") and not result.committed:
                 raise ValueError("public journal failed replay")
-        if owner.snapshot() != branch._bytes(data):
+        mode = "exact_observation"
+        if has_basin(owner.specialization) and owner.branch == "enabled_v4":
+            pair = owner._basin_pair(owner._published)
+            mode = basin.validate_checkpoint(
+                data.get("basin"), pair, owner.reference.graph.port_graph
+            )
+        if owner.snapshot(replay_mode=mode) != branch._bytes(data):
             raise ValueError("public owner replay mismatch")
         return owner

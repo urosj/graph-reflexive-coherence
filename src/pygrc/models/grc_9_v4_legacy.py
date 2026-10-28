@@ -16,7 +16,7 @@ from pygrc.core import load_snapshot, save_snapshot
 from .grc_9_v3 import GRC9V3
 from .grc_9_v3_state import GRC9V3State
 from .grc_9_v4_lifecycle import GRC9V4Specialization
-from .grc_v4_codec import canonical_json_bytes, payload_identity
+from .grc_v4_codec import canonical_json_bytes
 from .grc_v4_profile import GRCV4Profile
 from .grc_v4_state import FrozenJSONMap
 
@@ -108,14 +108,9 @@ class LegacyDelegateBinding:
 
     @property
     def model_identity(self):
-        return payload_identity(
-            "complete_model_identity_payload",
-            dict(
-                schema_version="grc9v4-complete-identity-v1",
-                grcv4_complete_profile_id=self.profile.complete_profile_id,
-                specialization_id=self.specialization.specialization_id,
-            ),
-        )
+        from .grc_9_v4_identity import model_identity
+
+        return model_identity(self.profile.complete_profile_id, self.specialization)
 
     def to_payload(self):
         return dict(

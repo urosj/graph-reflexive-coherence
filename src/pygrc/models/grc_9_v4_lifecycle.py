@@ -11,6 +11,15 @@ from dataclasses import dataclass, field, fields, replace
 from threading import Lock
 from typing import Any, ClassVar, Literal, Self, cast
 
+from .grc_9_v4_identity import (
+    POLICY,
+    POLICY_ID,
+    has_basin,
+    model_identity,
+    specialization_identity,
+    validate_specialization,
+)
+
 from .grc_9_v4_expansion import (
     GRC9ExpansionPolicy,
     GRC9V4ACIExpansion,
@@ -50,7 +59,6 @@ from .grc_v4_codec import (
     canonical_json_bytes,
     decode_canonical_json,
     payload_identity,
-    validate_payload,
 )
 from .grc_v4_exact import current_exact_backend, exact_backend, exact_number
 from .grc_v4_certification import current_numerical_policy, numerical_policy
@@ -252,11 +260,13 @@ class GRC9V4Specialization:
     identity_payload: FrozenJSONMap
 
     def __post_init__(self) -> None:
-        resolved = validate_payload("resolved_specialization", self.resolved)
-        identity = validate_payload(
+        resolved = validate_specialization("resolved_specialization", self.resolved)
+        identity = validate_specialization(
             "specialization_identity_payload", self.identity_payload
         )
-        payload_identity(
+        if resolved["schema_version"][-2:] != identity["schema_version"][-2:]:
+            raise ValueError("specialization schema versions differ")
+        specialization_identity(
             "resolved_specialization",
             resolved,
             expected=cast(str, identity["specialization_params_hash"]),
@@ -279,9 +289,28 @@ class GRC9V4Specialization:
 
     @property
     def specialization_id(self) -> str:
-        return payload_identity(
+        return specialization_identity(
             "specialization_identity_payload", self.identity_payload
         )
+
+    def with_basin_policy(self) -> GRC9V4Specialization:
+        """Explicit new declaration; installing it on a live model is migration."""
+        if has_basin(self):
+            return replace(self)
+        resolved = dict(
+            self.resolved.to_dict(),
+            schema_version="grc9v4-resolved-specialization-v2",
+            basin_policy=POLICY,
+        )
+        identity = dict(
+            self.identity_payload.to_dict(),
+            schema_version="grc9v4-specialization-identity-v2",
+            basin_policy_id=POLICY_ID,
+            specialization_params_hash=specialization_identity(
+                "resolved_specialization", resolved
+            ),
+        )
+        return GRC9V4Specialization(FrozenJSONMap(resolved), FrozenJSONMap(identity))
 
     def to_payload(self) -> dict[str, Any]:
         return {
@@ -359,13 +388,9 @@ class _GRC9V4EventState:
 
     @property
     def model_identity(self) -> str:
-        return payload_identity(
-            "complete_model_identity_payload",
-            {
-                "schema_version": "grc9v4-complete-identity-v1",
-                "grcv4_complete_profile_id": self.inputs.geometry.reference.profile.complete_profile_id,
-                "specialization_id": self.specialization.specialization_id,
-            },
+        return model_identity(
+            self.inputs.geometry.reference.profile.complete_profile_id,
+            self.specialization,
         )
 
     @property

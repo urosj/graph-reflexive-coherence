@@ -956,8 +956,9 @@ basin_authority(repo_root, side_tool_root)
 ```
 
 `P9-10.1a-CL-N-BASIN-001` is normative bounded diagnostic authority. The design debt
-is resolved; `P9-10.1a-VO-BASIN-NATIVE` remains pending and cannot be counted as
-backward support. `GRC_basin_identity` remains an unresolved historical premise
+is resolved; this historical design context retains `P9-10.1a-VO-BASIN-NATIVE`
+as pending at design acceptance. The native acceptance successor below resolves
+it for the four families; it is never backward scientific support. `GRC_basin_identity` remains an unresolved historical premise
 reference: the new producer is explicit successor authority, not its retroactive
 resolution. D10/D11 support dispositions are preserved.
 
@@ -971,3 +972,26 @@ The original review checker `--check` addresses the pre-propagation Git subject
 `1275bd1f`. Use the current `verify_p9101a_propagation.py --check` for source-chain
 integrity; graph-rule tests remain directly runnable through unittest. Do not
 relabel the original source audit as a current-source audit after propagation.
+
+### Native basin implementation evidence
+
+```python
+from grcv4_explorer.basin_native import basin_native_status, basin_native_source
+view = basin_native_status(repo_root)
+raw, ref = basin_native_source(repo_root, view["records"][0]["path"])
+```
+
+This is a separate native execution projection. `check_mode` explicitly means
+retained integrity and independent classification recomputation, not a native numerical
+rerun. `original_tests_run` and `pressure_tests_run` separate the earlier native
+checks from saved-state/equation/row/lifecycle pressure. Records above 1 MB use XZ;
+`basin_native_source` returns their checked compressed bytes for `lzma.decompress`.
+The records include fresh current/reset
+operands and exact source hashes. `/api/basin/native`, its `/source` route, the
+browser native-evidence button and notebook `basin-native` cell expose it.
+P9-10.1a is bounded accepted. `view["verification_obligation_resolution"]`
+exposes the checked `resolved_bounded_native` disposition and its exact source
+for `P9-10.1a-VO-BASIN-NATIVE`; `view["acceptance"]` binds the user decision.
+The original design context and execution records retain their historical flags.
+P9-10.1b/c remain open. Do not infer support promotion, all-ten execution,
+completed sparks or attracting basins from a passing native record.

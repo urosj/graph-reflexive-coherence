@@ -39,7 +39,7 @@ export function basinLoader(output,status,fetcher=fetch,create=tag=>document.cre
       const response=await fetcher('/api/basin');if(!response.ok)throw new Error('Authority unavailable');
       const value=await checkedBasin(await response.json());if(ticket!==sequence)return;
       const add=(tag,text)=>{const e=create(tag);e.textContent=text;output.append(e);return e;};
-      add('p','Design accepted; membership/identity design debt resolved. Native interface and lifecycle conformance remain open for C_OS, C_CI, A_CI and A_PC.');
+      add('p','Historical design acceptance: membership/identity design debt resolved; its forward native obligation is resolved by the separate four-family native acceptance below.');
       add('p','Present-flow diagnostic only: no stable attractor, physical basin birth, numeric abundance or spark completion claim.');
       for(const trace of [value.claim,value.debt,value.object,...value.contracts]) {
         add('h3',Object.values(trace.query).join(' / '));
@@ -50,11 +50,52 @@ export function basinLoader(output,status,fetcher=fetch,create=tag=>document.cre
         const a=add('a',ref.path.split('/').at(-1));a.href='/api/basin/source?path='+encodeURIComponent(ref.path);a.target='_blank';a.rel='noopener';
         add('span',' · ');
       }
-      status.textContent='Accepted authority verified; native conformance pending.';
+      status.textContent='Accepted design authority verified; inspect native acceptance for current execution disposition.';
     } catch(error) {if(ticket!==sequence)return;output.replaceChildren();status.textContent=String(error);}
   };
 }
 
 if(typeof document!=='undefined') {
   document.getElementById('basin-refresh')?.addEventListener('click',basinLoader(document.getElementById('basin-output'),document.getElementById('basin-status')));
+  document.getElementById('basin-native-refresh')?.addEventListener('click',nativeBasinLoader(document.getElementById('basin-native-output'),document.getElementById('basin-native-status')));
+}
+
+export async function checkedNativeBasin(value) {
+  const {record_digest,...body}=value;
+  const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(canonicalBasin(body)));
+  const actual=[...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');
+  if(record_digest!=='b805bcc2cc8d62a9321a0ef5e45f4e807bba1b63cbfbfd314443ff67990a6d13' || actual!==record_digest ||
+     value.schema!=='p9101a-native-basin-accepted-status-v1' || value.native_execution_passed!==true ||
+     value.user_accepted!==true || value.P9_10_1a_closed!==true || value.full_GRC9V4_conformance!==false ||
+     value.check_mode!=='retained_integrity_and_classification_not_native_rerun' || value.tests_run!==37 || value.original_tests_run!==20 || value.pressure_tests_run!==17 ||
+     JSON.stringify(value.families)!==JSON.stringify(['C_OS','C_CI','A_CI','A_PC']) || value.records?.length!==10 || value.source_refs?.length!==4 ||
+     value.verification_obligation_resolution?.obligation_id!=='P9-10.1a-VO-BASIN-NATIVE' ||
+     value.verification_obligation_resolution?.status!=='resolved_bounded_native')
+    throw new Error('Unbound native basin evidence or widened acceptance');
+  return value;
+}
+
+export function nativeBasinLoader(output,status,fetcher=fetch,create=tag=>document.createElement(tag)) {
+  let sequence=0;
+  return async()=>{
+    const ticket=++sequence; output.replaceChildren();status.textContent='Checking native execution evidence…';
+    try {
+      const response=await fetcher('/api/basin/native');if(!response.ok)throw new Error('Native evidence unavailable');
+      const v=await checkedNativeBasin(await response.json());if(ticket!==sequence)return;
+      const add=(tag,text)=>{const e=create(tag);e.textContent=text;output.append(e);return e;};
+      add('p','P9-10.1a bounded accepted for C_OS, C_CI, A_CI and A_PC. Native verification obligation resolved; P9-10.1b/c remain open.');
+      add('p','This page checks retained execution evidence; it does not rerun numerics. No full-conformance or completed-spark claim.');
+      add('p',v.scope);
+      for(const r of v.records) {
+        add('p',`${r.family}: ${r.tests_run} tests · ${r.record_digest}`);
+        const a=add('a',r.path.endsWith('.xz')?'Download compressed operands and execution record':'Open operands, bindings and execution record');
+        a.href='/api/basin/native/source?path='+encodeURIComponent(r.path);a.target='_blank';a.rel='noopener';
+      }
+      for(const r of v.source_refs) {
+        const a=add('a',r.path.split('/').at(-1));
+        a.href='/api/basin/native/source?path='+encodeURIComponent(r.path);a.target='_blank';a.rel='noopener';
+      }
+      status.textContent='Retained native evidence verified; P9-10.1a bounded accepted.';
+    } catch(error) {if(ticket!==sequence)return;output.replaceChildren();status.textContent=String(error);}
+  };
 }

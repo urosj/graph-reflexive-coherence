@@ -17,6 +17,7 @@ from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 from grcv4_explorer.abundance import abundance_authority  # noqa: E402
 from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
 from grcv4_explorer.basin import basin_authority, basin_source  # noqa: E402
+from grcv4_explorer.basin_native import basin_native_status, basin_native_source
 from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E402
 from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source
 
@@ -31,18 +32,18 @@ from grcv4_explorer.tranche9 import (tranche9_status, tranche9_source,
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if request.path in {"/api/basin", "/api/basin/source"}:
+        if request.path in {"/api/basin", "/api/basin/source", "/api/basin/native", "/api/basin/native/source"}:
             try:
                 query = parse_qs(request.query, strict_parsing=True)
                 root = repository_root()
-                if request.path == "/api/basin":
+                if request.path in {"/api/basin", "/api/basin/native"}:
                     if query:
                         raise KeyError("basin authority has fixed scope")
-                    content = json.dumps(basin_authority(root, TOOL.parent)).encode()
+                    content = json.dumps(basin_native_status(root) if request.path.endswith("native") else basin_authority(root, TOOL.parent)).encode()
                 else:
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed source path required")
-                    content, ref = basin_source(root, TOOL.parent, query["path"][0])
+                    content, ref = basin_native_source(root, query["path"][0]) if "/native/" in request.path else basin_source(root, TOOL.parent, query["path"][0])
                 self.send_response(200)
                 if request.path.endswith("/source"):
                     self.send_header("X-Evidence-SHA256", ref["sha256"])

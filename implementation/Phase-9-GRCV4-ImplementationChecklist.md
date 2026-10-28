@@ -3945,7 +3945,7 @@ migration or a full specialization conformance grant.
 
 - [ ] P9-10.1: Reconcile every vector hold and acceptance-gate runtime debt
   with exact execution evidence or an explicit remaining support hold.
-  - [ ] P9-10.1a — Baseline basin interface closure (`basin_surface`): trace
+  - [x] P9-10.1a — Baseline basin interface closure (`basin_surface`): trace
     classification and identity semantics; resolve missing authority through the
     existing investigation-to-paper-to-spec path before implementation. Expose
     the required public basin attributes and lifecycle identity for C_OS/C_CI/
@@ -3961,8 +3961,26 @@ migration or a full specialization conformance grant.
     User accepted propagation and BIP-F1/BIP-F2 specification clarifications
     on 2026-10-28; this acceptance does not close the native task.
     Ten conditional checks and six focused authority/schema/propagation/surface
-    tests pass. Native implementation and both-role lifecycle conformance remain
-    open; no support hold or executable release is upgraded.
+    tests pass. The native implementation is now available; see the
+    [native review](./phase-9-grcv4/tranche-10/P9-10.1a-NativeReview.md).
+    - [x] Implement explicit v2 policy/configuration/model declarations, fresh
+      selected-point captures, full SCC evidence and exact represented seeds.
+    - [x] Add both-role admission before publication, explicit policy migration,
+      exact-observation/state-only replay and disabled-delegate omission.
+    - [x] Expose separate native evidence through side-tool API, browser and notebook.
+    - [x] Pass 20 focused native/graph checks, seven compatibility regressions,
+      nine authority/surface checks and the current phase boundary.
+    - [x] Complete the end-to-end pressure successor (17 tests passed): independent complete
+      classification oracle, saved-state equation/row checks, realization-specific
+      freshness, supplied native categories, lifecycle and coherent-forgery pressure.
+      [Review](./phase-9-grcv4/tranche-10/P9-10.1a-EndToEndReview.md).
+    - [x] Accept bounded native execution and close the forward native obligation.
+      User accepted on 2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json)
+      resolves `P9-10.1a-VO-BASIN-NATIVE` for C_OS/C_CI/A_CI/A_PC.
+      [Independent retained-evidence review](./phase-9-grcv4/tranche-10/P9-10.1a-IndependentReview.md) passes;
+      its checks are not relabeled as an independent native transaction rerun.
+    Bounded P9-10.1a is closed. P9-10.1b/c, aggregate support reconciliation and
+    the frozen release boundary remain separate.
   - [ ] P9-10.1b — Expanded-target compatibility closure (`target_identity_scope`):
     reuse the four accepted expanded targets and bind their exact profile,
     specialization and combined model identities. Verify disabled transition,

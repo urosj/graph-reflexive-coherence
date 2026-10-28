@@ -284,8 +284,12 @@ class GRC9V4Configuration:
         return self.reference.profile
 
     def to_payload(self):
+        from .grc_9_v4_identity import has_basin
+
         return dict(
-            schema_version="grc9v4-configuration-v1",
+            schema_version="grc9v4-configuration-v2"
+            if has_basin(self.specialization)
+            else "grc9v4-configuration-v1",
             reference=self.reference.to_payload(),
             specialization=dict(
                 resolved=self.specialization.resolved.to_dict(),
@@ -317,7 +321,8 @@ class GRC9V4Configuration:
         if (
             type(value) is not dict
             or set(value) != keys
-            or value["schema_version"] != "grc9v4-configuration-v1"
+            or value["schema_version"]
+            not in ("grc9v4-configuration-v1", "grc9v4-configuration-v2")
         ):
             raise ValueError("closed public configuration required")
         spec = value["specialization"]
@@ -333,6 +338,12 @@ class GRC9V4Configuration:
         for role in ("current", "reset"):
             if type(value[role]) is not dict or set(value[role]) != {"C", "W_A", "Z_4"}:
                 raise ValueError("closed authority record required")
+        version = value["schema_version"][-2:]
+        if (
+            spec["resolved"].get("schema_version")
+            != "grc9v4-resolved-specialization-" + version
+        ):
+            raise ValueError("configuration cannot implicitly upgrade specialization")
         return cls(
             GRCV4ReferenceGeometry.from_payload(value["reference"]),
             GRC9V4Specialization(
@@ -362,7 +373,18 @@ class EnabledGRC9V4State:
     scientific_state_digest: str
     lifecycle_digest: str
     receipt_ledger: tuple[SuccessfulReceiptEnvelope, ...]
+    basin_attributes: FrozenJSONMap | None = None
     branch: Literal["enabled_v4"] = field(default="enabled_v4", init=False)
+
+    @property
+    def basin_identity(self):
+        from .grc_9_v4_basin import identity_projection
+
+        if self.basin_attributes is None:
+            return None
+        return tuple(
+            FrozenJSONMap(r) for r in identity_projection(self.basin_attributes)
+        )
 
     @property
     def family(self):

@@ -1,43 +1,56 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — P9-10.1a accepted basin design propagated (2026-10-28)
+## Accepted checkpoint — P9-10.1a native basin successor (2026-10-28)
 
-Branch `work/p9-10-basin-interface`; corrected design accepted and committed as
-`1275bd1f`. [Design acceptance](./phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json)
-binds the original review and ten conditional checks; their pre-acceptance flags
-remain historical. The independent review's external scripts were not supplied.
+Branch `work/p9-10-basin-interface`. Accepted design `1275bd1f` and propagation
+`b30e630c` precede the native implementation. User accepted bounded P9-10.1a
+on 2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json). The original 20
+native/graph checks remain unchanged. A further 17 end-to-end pressure tests
+and four acceptance/API/browser/notebook checks pass; seven compatibility and six
+authority/propagation checks retain their prior passing results. The current phase
+boundary passes with refreshed maintenance bindings. P9-10.1a is closed for
+C_OS/C_CI/A_CI/A_PC; P9-10.1b/c remain open.
 
-The [accepted successor authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
-admits normative claim `P9-10.1a-CL-N-BASIN-001`, one diagnostic object and six
-contracts. `P9-10.1a-DEBT-BASIN-IDENTITY` is resolved at design level;
-`P9-10.1a-VO-BASIN-NATIVE` remains pending. The original open audit and D10/D11
-claims retain their historical subjects and support dispositions.
+[Native review and reproduction](./phase-9-grcv4/tranche-10/P9-10.1a-NativeReview.md)
+link the implementation, exact source bindings, operands and small four-family
+execution records. All ten public declarations recognize the explicit v2 policy;
+native execution is restricted to C_OS, C_CI, A_CI, A_PC. Existing v1 configurations
+and checkpoints retain their old identities. Opt in through
+`configuration.specialization.with_basin_policy()` for a new configuration, or
+`model.migrate_basin_policy(operation_id)` for explicit live migration.
 
-Authority → proposal A.5.1 → paper A.5.1 →
-[spec/schema successor](../specs/grc-9-v4-basin-interface.md) is propagated.
-[Exact source bindings](../specs/grc-9-v4-basin-interface-source-manifest.json)
-check the identical proposal/paper section and allow only the bounded insertions
-into predecessor documents. The executable release and native source are unchanged.
-The side-tool exposes claim/debt/contract traces through `grcv4_explorer.basin`,
-`/api/basin`, the Phase 9 browser panel and the notebook's `basin-authority` cell.
+The [end-to-end pressure review](./phase-9-grcv4/tranche-10/P9-10.1a-EndToEndReview.md)
+retains 56 saved native observation cases, each with both roles, independent
+interval equations, exact row reconstruction and complete expected classifications.
+C_OS observes the fresh reference restart rather than another OS corrector.
+Positive seeds are excluded by the four declared threshold pairs; cycles remain
+synthetic classifier cases. CI fixed-geometry sign bounds are not promoted to
+full exact-root sign certificates. Four pressure JSON records exceed 1 MB and
+are stored as XZ; original native records are unchanged.
 
-User accepted this propagation, including BIP-F1 partial region coverage and
-BIP-F2 canonical member ordering clarifications, on 2026-10-28. Native P9-10.1a
-conformance remains open.
+The native surface captures one fresh read per observation, including the joint
+CI root, constructs all-route SCC membership and separate exact seeds, validates
+both prospective roles before publication, and checks explicit replay modes.
+The diagnostics never enter C/W/Z. Disabled projection remains the V3 result.
+The source event request must name the successor's actual scientific digest and
+target specialization; a retained v1 request is correctly rejected unchanged.
 
-Next: implement and verify the explicit successor for **C_OS, C_CI, A_CI, A_PC**:
-one captured fresh read, complete SCC evidence, typed wire identities and separate
-seeds; versioned specialization/model binding, exact-observation versus state-only
-restore, independently admitted histories, and whole-publication rollback.
-Use small fixtures; no Tranche 8 reruns are needed. The design is diagnostic,
-not a stable-attractor/completion/abundance law. P9-10.1a stays open until native
-conformance. P9-10.1b/c remain unstarted and all P9-9.6 support holds remain.
+Accepted scientific claim/debt/contract traces remain at `/api/basin`; native
+execution evidence is separately accessible at `/api/basin/native`, its source
+route, the browser native-evidence button and notebook `basin-native` cell.
+The historical design authority retains its original forward routing. The native
+acceptance explicitly resolves `P9-10.1a-VO-BASIN-NATIVE`; its checked disposition
+and source are exposed in the native API/browser/notebook view. The independent
+review reproduced retained evidence, not native transaction/failure execution.
 
-Focused reproduction:
+Next: P9-10.1b expanded-target compatibility, then P9-10.1c support reconciliation. P9-9.6's three holds remain
+historical and are not silently erased. No completed sparks, hierarchy, attracting
+basins, physical basin identity transport, six-family execution or full-conformance
+claim is made. No Tranche 8 trajectory rerun is needed.
 
 ```bash
-PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/verify_p9101a_propagation.py --check
-PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101a_basin_authority -v
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/p9101a_acceptance.py
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101a_native_surfaces test_p9101a_basin_authority -v
 ```
 
 ## Accepted checkpoint — P9-9.6 bounded support review (2026-10-28)

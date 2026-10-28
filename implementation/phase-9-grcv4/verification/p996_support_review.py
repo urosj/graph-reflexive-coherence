@@ -1,11 +1,12 @@
 """P9-9.6: reconcile exact accepted subjects; no trajectories or support promotion."""
 
 import argparse
-from dataclasses import fields
+import ast
 import json
 from pathlib import Path
 import re
 import sys
+import subprocess
 
 import p991b_acceptance as a1
 import p991b_lifecycle as c1
@@ -61,6 +62,19 @@ def reference(root, name, pointer=None):
         "nonportable review source",
     )
     result = dict(path=name, sha256=sha(p.read_bytes()))
+    # The accepted review describes its v1 subject. A pinned successor is not
+    # evidence that the historical run executed the new basin-enabled runtime.
+    historical = next(
+        (r for r in read(root, PATH)["source_refs"] if r["path"] == name), None
+    )
+    if historical and historical["sha256"] != result["sha256"]:
+        from p994b_runtime_successor import historical_source
+
+        require(
+            historical_source(root, name, historical["sha256"]) == historical["sha256"],
+            "unbound support-review successor: " + name,
+        )
+        result["sha256"] = historical["sha256"]
     if pointer is not None:
         result["json_pointer"] = pointer
     return result
@@ -203,9 +217,21 @@ def assemble(root, data):
         and "all 40 profile-by-surface delegate\nvectors pass" in section,
         "frozen capability contract changed",
     )
-    from pygrc.models.grc_9_v4_contracts import EnabledGRC9V4State
-
-    state_fields = sorted(f.name for f in fields(EnabledGRC9V4State))
+    # Inspect the exact accepted source, never the successor's public fields.
+    name = "src/pygrc/models/grc_9_v4_contracts.py"
+    source = subprocess.check_output(["git", "show", "b30e630c:" + name], cwd=root)
+    require(
+        sha(source) == reference(root, name)["sha256"],
+        "historical state contract drift",
+    )
+    declaration = next(
+        n
+        for n in ast.parse(source).body
+        if isinstance(n, ast.ClassDef) and n.name == "EnabledGRC9V4State"
+    )
+    state_fields = sorted(
+        n.target.id for n in declaration.body if isinstance(n, ast.AnnAssign)
+    )
     rows = []
     for family in FAMILIES:
         lifecycle = records["9.1b"][family]["evidence"]["mixed_snapshot"]

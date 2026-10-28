@@ -2674,3 +2674,14 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
   holds; reject drift and unsupported promotion while preserving accepted records.
 - [ ] Retain the separate all-forty umbrella restriction, numerical/authority
   limits and optional/other-six exclusions when reporting closure of either gap.
+
+#### P9-10.1a native evidence successor
+
+- [x] Separate accepted scientific traces from native execution evidence.
+- [x] Expose checked native records/operands through API, browser and notebook.
+- [x] Reject rehashed scope widening; clear stale output on failed loads.
+- [x] Verify the combined original/end-to-end native projection, compressed source
+  access, and API/browser/notebook fail-closed behavior.
+- [x] Record bounded native acceptance and resolve `P9-10.1a-VO-BASIN-NATIVE`
+  through the checked acceptance successor; retain the original design/execution
+  snapshots and P9-10.1b/c holds.

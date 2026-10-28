@@ -1,0 +1,135 @@
+{
+  "schema": "p9101a-native-acceptance-v1",
+  "status": "accepted_bounded_native_conformance",
+  "accepted_on": "2026-10-28",
+  "user_instruction": "awesome. let's accept, commit",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "P9_10_1a_closed": true,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "other_six_native_execution": false,
+  "execution_projection_digest": "e7de2ccb2b21e778b87cc90bdb8d1529580cc3cf4c43757f819a8d566f762f9f",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-C_OS.json",
+      "sha256": "23aa7baf873c3f696cad75861039ce1323083a5652f8fadeb365f862aa1f094e",
+      "family": "C_OS",
+      "record_digest": "644681697e752de6af85ee9b0dc3caa30c2027ac3a5b12c7e4e8fdf12380fb1c",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-C_CI.json",
+      "sha256": "38c20dccbd5688c7475aa2eb2a180fd7ddc323da659865fe66aeea04c419728f",
+      "family": "C_CI",
+      "record_digest": "005830f71683934cf420c7e35b832f34b5d7a821cb4f1bb7bc6eb0ce614f2908",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-A_CI.json",
+      "sha256": "0aaf69529d66ddb25ae1c87b5b4be5e6dc32faf96292e6176948e92218181cfd",
+      "family": "A_CI",
+      "record_digest": "4731049b5153de1e456e125992f948bfcedae6cacea0dd50ebf598d4c8eaa03e",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-A_PC.json",
+      "sha256": "59404cca18390e986cffc05e410434e2d365f544645f1ea4440db21c94232bac",
+      "family": "A_PC",
+      "record_digest": "369eea3a08882e3771fb75b308a6b5a1336dc3a0ca9457ebf702f620e288e138",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Native-graph.json",
+      "sha256": "30808b4d8c890e86248f38622255956aced8c978ac71660288f4c64a8ae27fe7",
+      "family": "graph",
+      "record_digest": "24ea275f8867655de6a864e23f57960c9fa45669158cfce10c069d5ef8cdc0e7",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Pressure-C_OS.json.xz",
+      "sha256": "66b4e18450f559a63355ad95a4eccbb16b3bf843aaf8079460cfb14904738be5",
+      "record_digest": "92ec31353b7b2fcd8db5dd19e924aa3432448c80c35e218140a598f844c2ff47",
+      "family": "C_OS",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Pressure-C_CI.json.xz",
+      "sha256": "bb10cb2b947ae1e60382b46aacdde272ee5ee25f39e1edf2e130e4f6d5c282a2",
+      "record_digest": "246511d531628247d8e04047ab82ab94ab2d3091027bae093f4890ab993f2dba",
+      "family": "C_CI",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Pressure-A_CI.json.xz",
+      "sha256": "e5129d98809cfdba0af8e33c55fb7a22a9f25778b8d7a5828fbaf4ff4035e2d3",
+      "record_digest": "a1530e8776393266d51e2aa08015caa4011c1a34f3e70b90ee294d0c542b0400",
+      "family": "A_CI",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Pressure-A_PC.json.xz",
+      "sha256": "735acf1bc0ebf6ef335f1c79d6836ce9d9e97911b0a120e47e4ea95a1e4e990d",
+      "record_digest": "efb1bf7b6d1cabf0d0677b60e21a7511156f28a1ab45ac47f1f4f6a54617afc3",
+      "family": "A_PC",
+      "tests_run": 4
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-Pressure-graph.json",
+      "sha256": "64197f3d90dcce5f3283846c1c10929de67aa301f27796d3b2b1870bd0789cde",
+      "record_digest": "02acaa6347fbb8ba60604ad7958df427909d6e57fc3c56d92cff4d65ca5e7209",
+      "family": "graph",
+      "tests_run": 1
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-NativeReview.md",
+      "sha256": "0197521cc2f8cb46b689cbdcebd46c391d1f499aa506515beeb3ad3769d03841"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-EndToEndReview.md",
+      "sha256": "78f4de66a448f148d1f53c76874d43bc455a2b42163589d2949ff63574a0aacb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-IndependentReview.md",
+      "sha256": "bfd5d53942b1a9c022e067c4720c858d7e144c2d45d49d57b2c9fb40366806ec"
+    }
+  ],
+  "independent_review_scope": "Retained captures, independently reconstructed identities/rows/classifications and fixed-H equations; no independent native lifecycle/fault-injection rerun.",
+  "verification_obligation_resolution": {
+    "obligation_id": "P9-10.1a-VO-BASIN-NATIVE",
+    "previous_status": "pending_forward",
+    "status": "resolved_bounded_native",
+    "families": [
+      "C_OS",
+      "C_CI",
+      "A_CI",
+      "A_PC"
+    ],
+    "source_ref": {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json",
+      "json_pointer": "/verification_obligations/0",
+      "record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28"
+    },
+    "resolution_source": {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json",
+      "json_pointer": "/verification_obligation_resolution"
+    },
+    "support_semantics": "not_applicable",
+    "scope": "Explicit v2 represented-flow diagnostic, fresh captures, both-role lifecycle and bounded native conformance; not backward scientific support."
+  },
+  "remaining_work": [
+    "P9-10.1b",
+    "P9-10.1c"
+  ],
+  "historical_records": "Original execution flags and accepted design authority retain their original subjects. This decision records bounded native acceptance and resolves its forward verification obligation.",
+  "scope": "C_OS/C_CI/A_CI/A_PC baseline diagnostic only. Preserve C_OS reference restart, represented-flow classification, fixed-H versus exact-CI-root distinction, declared seed exclusion, native/category provenance and disabled legacy semantics. No full conformance, stable attractor, physical basin identity transport, abundance, completed sparks, hierarchy, or six-family execution grant.",
+  "record_digest": "07ab5fae7e2cb15fe72ec8dd48842633666bf032c5cd70ca03b086a151e8dd01"
+}
