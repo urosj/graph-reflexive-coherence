@@ -22,8 +22,12 @@ Current implementation-originated successor: **P9-10.1a basin interface**,
   captured-read/replay binding, D4/D9 bridge, typed wire IDs and seed extremes.
 - [x] Obtain user acceptance of the corrected baseline contract on 2026-10-28;
   authority admission and scoped debt adjudication follow.
-- [ ] Admit the accepted successor claim/debt and update side-tool authority;
-  propagate proposal → reviewed paper → V4 spec/schema.
+- [x] Admit `P9-10.1a-CL-N-BASIN-001` and its six contracts; resolve the design
+  debt and retain `P9-10.1a-VO-BASIN-NATIVE` as pending forward. Expose the same
+  authority through the forensic API, browser and notebook.
+- [x] Propagate accepted authority → proposal/paper A.5.1 → explicit V4 spec/schema
+  successor, preserving historical/executable release identities; six focused
+  authority/schema/propagation/surface tests pass.
 - [ ] Return to P9-10.1a for four-family public/lifecycle implementation and
   native conformance; keep completed sparks and hierarchy separate.
 

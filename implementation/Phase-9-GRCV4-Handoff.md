@@ -1,33 +1,44 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current work — P9-10.1a basin authority gap (2026-10-28)
+## Current work — P9-10.1a accepted basin design propagated (2026-10-28)
 
-Branch `work/p9-10-basin-interface`, created from `main` merge `1735d671`.
-The [authority review](./phase-9-grcv4/tranche-10/P9-10.1a-AuthorityReview.md)
-finds that the required baseline basin surface lacks a selected enabled-V4
-membership/identity producer. The local seed inequality is already implemented;
-it cannot determine membership, competing destinations, cycles or ID lifetime.
-The forensic traces preserve their original authority limits.
+Branch `work/p9-10-basin-interface`; corrected design accepted and committed as
+`1275bd1f`. [Design acceptance](./phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json)
+binds the original review and ten conditional checks; their pre-acceptance flags
+remain historical. The independent review's external scripts were not supplied.
 
-A concrete [successor proposal](./investigations/grc9v4-constitutive-design/decisions/P9BasinInterfaceAuthorityProposal.md)
-defines represented all-route terminal-flow regions with separate geometric seed
-attributes, explicit ambiguity/no-flow/recirculation, graph-scoped partial IDs
-and lifecycle semantics. Its corrected design is **user-accepted** on 2026-10-28
-([decision](./phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json)); authority
-admission is next. The new debt is open and no
-production, paper, frozen spec or accepted graph has changed. The independent
-review passes the finite mathematics; BIF-1/2/3 are corrected: full SCC/cycle
-evidence, exact captured-read/observation binding and the D4/D9 diagnostic bridge.
-Ten conditional checks pass, including the exhaustive four-node comparison,
-typed IDs and numerical edge cases. These are not native replay or stability
-proofs. The review's external scripts were not supplied or locally rerun.
+The [accepted successor authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
+admits normative claim `P9-10.1a-CL-N-BASIN-001`, one diagnostic object and six
+contracts. `P9-10.1a-DEBT-BASIN-IDENTITY` is resolved at design level;
+`P9-10.1a-VO-BASIN-NATIVE` remains pending. The original open audit and D10/D11
+claims retain their historical subjects and support dispositions.
 
-Next: admit the accepted claim/debt authority,
-propagate proposal → reviewed paper → V4 spec/schema, and implement/test the
-four-family public basin surface. If genuine stable attraction basins are required
-instead of flow-region labels, resolve that stronger classifier explicitly.
-P9-10.1a remains open; P9-10.1b/c have not started. Do not silently import V3's
-classifier or treat these conditional checks as implementation conformance.
+Authority → proposal A.5.1 → paper A.5.1 →
+[spec/schema successor](../specs/grc-9-v4-basin-interface.md) is propagated.
+[Exact source bindings](../specs/grc-9-v4-basin-interface-source-manifest.json)
+check the identical proposal/paper section and allow only the bounded insertions
+into predecessor documents. The executable release and native source are unchanged.
+The side-tool exposes claim/debt/contract traces through `grcv4_explorer.basin`,
+`/api/basin`, the Phase 9 browser panel and the notebook's `basin-authority` cell.
+
+User accepted this propagation, including BIP-F1 partial region coverage and
+BIP-F2 canonical member ordering clarifications, on 2026-10-28. Native P9-10.1a
+conformance remains open.
+
+Next: implement and verify the explicit successor for **C_OS, C_CI, A_CI, A_PC**:
+one captured fresh read, complete SCC evidence, typed wire identities and separate
+seeds; versioned specialization/model binding, exact-observation versus state-only
+restore, independently admitted histories, and whole-publication rollback.
+Use small fixtures; no Tranche 8 reruns are needed. The design is diagnostic,
+not a stable-attractor/completion/abundance law. P9-10.1a stays open until native
+conformance. P9-10.1b/c remain unstarted and all P9-9.6 support holds remain.
+
+Focused reproduction:
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/verify_p9101a_propagation.py --check
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101a_basin_authority -v
+```
 
 ## Accepted checkpoint — P9-9.6 bounded support review (2026-10-28)
 

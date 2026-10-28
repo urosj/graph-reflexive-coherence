@@ -4317,13 +4317,14 @@ P9-10.1a source review on 2026-10-28 found a missing enabled-V4 membership/ident
 producer behind the required public field. The seed test is defined, but a whole
 basin assignment and its lifecycle are not selected by that predicate. The
 [authority review](./phase-9-grcv4/tranche-10/P9-10.1a-AuthorityReview.md) links
-the proposed successor and open debt. The independent mathematical review passes;
-full cycle evidence, captured-read/replay binding and the D4/D9 bridge are
-corrected. Ten conditional checks pass; no native work has started. Next is
-admission of the user-accepted corrected contract, then authority →
-proposal/paper/spec propagation → runtime implementation. The proposed flow-region
-interpretation is an accepted bounded diagnostic design, not a stable-attractor
-result or implemented classifier.
+the accepted successor and scoped design-debt resolution. BIF-1/2/3 corrections
+and ten conditional checks are complete. Authority is admitted, and proposal/paper
+A.5.1 plus the [V4 spec/schema successor](../specs/grc-9-v4-basin-interface.md) are
+propagated with exact source bindings. Six focused authority/schema/surface tests
+pass. User accepted propagation and the BIP-F1/BIP-F2 specification clarifications
+on 2026-10-28. Native implementation is next: fresh reads and both-role lifecycle/replay
+conformance for C_OS/C_CI/A_CI/A_PC. The interpreted regions are diagnostic, not
+stable attractors; the old executable release and support holds are unchanged.
 
 1. **P9-10.1a — Baseline basin interface closure.** Trace the existing local
    classification and basin-identity semantics, then implement the required public

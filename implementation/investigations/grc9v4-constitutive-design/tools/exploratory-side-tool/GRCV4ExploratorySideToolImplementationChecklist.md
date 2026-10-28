@@ -2662,8 +2662,11 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
   and an explicitly unadmitted proposal/open debt; no accepted graph change.
 - [x] Retain independent mathematical review and BIF-1/2/3 corrections with
   ten conditional checks; corrected design user-accepted, authority admission next.
-- [ ] After design review, admit the basin successor and expose its exact
-  claim/debt/contract traces before paper/spec/runtime propagation.
+- [x] Admit the accepted basin successor and expose exact claim/debt/contract
+  traces through `grcv4_explorer.basin`, `/api/basin`, browser and notebook;
+  preserve historical pins, source access and failure clearing.
+- [x] Validate proposal/paper/spec propagation and closed wire schema while
+  retaining the native obligation and unchanged executable release.
 - [ ] Consume reviewed P9-10.1a baseline basin interface/lifecycle evidence and
   P9-10.1b expanded-target disabled compatibility evidence for the four families.
 - [ ] P9-10.1c: update the checked support projection, API/browser/notebook and

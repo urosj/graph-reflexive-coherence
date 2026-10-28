@@ -3955,10 +3955,14 @@ migration or a full specialization conformance grant.
     detection and hierarchy remain outside this baseline task.
     Source tracing and a concrete successor proposal are complete on 2026-10-28;
     [authority review](./phase-9-grcv4/tranche-10/P9-10.1a-AuthorityReview.md).
-    Independent mathematical review passes; BIF-1/2/3 contract corrections and
-    ten conditional checks are complete. Membership/identity authority is
-    still open: corrected design accepted on 2026-10-28; admit the claim/debt, propagate
-    proposal/paper/spec, then implement. No runtime closure yet.
+    Corrected design accepted and committed as `1275bd1f`; normative claim and
+    six contracts admitted, design debt resolved with a pending native obligation.
+    Proposal/paper A.5.1 and explicit V4 spec/schema successor are propagated.
+    User accepted propagation and BIP-F1/BIP-F2 specification clarifications
+    on 2026-10-28; this acceptance does not close the native task.
+    Ten conditional checks and six focused authority/schema/propagation/surface
+    tests pass. Native implementation and both-role lifecycle conformance remain
+    open; no support hold or executable release is upgraded.
   - [ ] P9-10.1b — Expanded-target compatibility closure (`target_identity_scope`):
     reuse the four accepted expanded targets and bind their exact profile,
     specialization and combined model identities. Verify disabled transition,

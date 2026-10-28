@@ -11,13 +11,14 @@
 enabled-GRC9V4 basin membership/identity producer gap. The
 [baseline basin proposal](./decisions/P9BasinInterfaceAuthorityProposal.md)
 and [open debt/source audit](./evidence/p9-basin-interface/AuthorityAudit.json)
-are not admitted authority. The independent mathematical review passes; its
-full-cycle, captured-observation and D4/D9 corrections are incorporated. Ten
-investigation-local conditional checks pass; no production or accepted paper/spec
-is changed. The corrected flow-region/seed design is user-accepted on 2026-10-28.
-Next admit the claim/debt successor, then propagate through
-proposal, reviewed paper and V4 spec/schema before native implementation. This
-does not reopen ATC, select child completion or reinterpret GRC9V3.
+retain the original pre-acceptance finding. Corrected design accepted on
+2026-10-28 and committed as `1275bd1f`; the [successor authority](./decisions/p9-basin-interface/Authority.json)
+admits the bounded normative claim and six contracts, resolves the design debt
+and retains native conformance as a forward obligation. Proposal/paper A.5.1
+and the V4 spec/schema successor are propagated. Ten conditional checks and six
+authority/schema/propagation/surface tests pass. Next is native interface and
+lifecycle conformance; ATC, child completion, other families and legacy changes
+are outside this bounded result.
 
 **Current research continuation — 2026-09-21:** the opening and ATC-1's
 bounded causal research envelope are [user-accepted](./decisions/ATC1Acceptance.md).

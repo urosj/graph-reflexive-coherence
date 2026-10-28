@@ -1686,6 +1686,22 @@ PATHS |= RECONCILED_CONTEXT_PATHS | {
 }
 
 
+# Accepted P9-10.1a design propagation and read-only authority access.
+# No runtime implementation or capability grant is added here.
+PATHS |= {
+    INV + "decisions/p9-basin-interface/Authority.json",
+    INV + "evidence/p9-basin-interface/PropagationReview.md",
+    SIDE + "records/P9101aBasinAdmission.json",
+    SIDE + "tool/src/grcv4_explorer/basin.py",
+    SIDE + "tool/phase9-web/basin.js",
+    HERE + "verify_p9101a_propagation.py",
+    HERE + "test_p9101a_basin_authority.py",
+    "specs/grc-9-v4-basin-interface.md",
+    "specs/grc-9-v4-basin-interface-schema.json",
+    "specs/grc-9-v4-basin-interface-source-manifest.json",
+}
+
+
 # Bounded Tranche 9 implementation/evidence; no new support permission.
 PATHS |= {
     'implementation/phase-9-grcv4/tranche-10/P9-10.1a-AuthorityReview.md',
@@ -1788,7 +1804,10 @@ def check_binding_reconciliation(root):
             require(committed.get(name) == (row["mode"], "blob", row["git_blob"]),
                     "reconciliation subject differs: " + name)
             if field == "context_bindings":
-                data = safe_path(root, name).read_bytes()
+                # Exact basin planning insertions are bound separately; retain
+                # every pre-existing reconciliation byte at its Git subject.
+                from verify_p9101a_propagation import predecessor_document_bytes
+                data = predecessor_document_bytes(root, name)
                 require(planning.blob_id(data) == row["git_blob"],
                         "retained reconciliation context changed: " + name)
             else:

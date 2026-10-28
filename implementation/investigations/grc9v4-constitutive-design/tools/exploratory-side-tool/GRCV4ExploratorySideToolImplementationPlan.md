@@ -3277,14 +3277,15 @@ stale-output clearing. Do not upgrade production support discovery or old eviden
 
 The P9-10.1a source trace now exposes missing enabled-V4 membership/identity
 authority. Its [proposal](../../decisions/P9BasinInterfaceAuthorityProposal.md)
-and [audit](../../evidence/p9-basin-interface/AuthorityAudit.json) are unadmitted;
-the mathematical review and ten conditional checks do not admit a classifier
-or close the runtime gap. The corrected proposal retains all SCCs, binds captured
-observations/replay and states the D4/D9 diagnostic bridge; design accepted by
-the user on 2026-10-28, authority admission next.
-The current forensic API still resolves predecessor constraints with their exact
-support status. Admit a reviewed successor claim/debt before adding it to the
-current authority graph or projecting basin capability support.
+and [audit](../../evidence/p9-basin-interface/AuthorityAudit.json) retain the
+original finding. The corrected design was user-accepted on 2026-10-28.
+`grcv4_explorer.basin` now admits the pinned successor: normative claim, one
+object, six contracts, resolved design debt and pending native obligation.
+API `/api/basin`, browser panel and notebook cell expose identical typed traces,
+source links and failure clearing. Six focused authority/schema/propagation/surface
+tests pass. Proposal/paper A.5.1 and the V4 spec/schema successor are propagated.
+Historical loaders/claims and the executable release remain unchanged; native
+basin capability is not yet granted.
 
 P9-10.1a supplies the required baseline basin interface and lifecycle evidence;
 P9-10.1b supplies exact expanded-target disabled compatibility evidence for the

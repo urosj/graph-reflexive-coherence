@@ -192,7 +192,12 @@ def build():
     data = lambda x: (json.dumps(x, indent=2) + "\n").encode()
     outputs = {SCHEMA: data(schema()), VECTORS: data(vectors())}
     sources = set(b.FROZEN) | {b.SCHEMA, b.VECTORS, b.SPEC, b.REVIEW, SPEC, SCHEMA, VECTORS, BUILDER, TEST, REVIEW}
-    raw = lambda name: outputs[name] if name in outputs else (b.ROOT / name).read_bytes()
+    from verify_p9101a_propagation import predecessor_document_bytes, predecessor_checker_bytes
+    # The retained executable package binds its original builder/document
+    # subjects; the new basin design is a separate, explicitly checked supplement.
+    raw = lambda name: outputs[name] if name in outputs else (
+        predecessor_checker_bytes(b.ROOT, name) if name == BUILDER
+        else predecessor_document_bytes(b.ROOT, name))
     init = b.read("specs/grc-v4-a-initializer-release.json")
     policy = b.read("specs/" + b.INIT)["$defs"]["static_policy"]["const"]
     payload = dict(schema_version="grcv4-event-contract-release-identity-v1",

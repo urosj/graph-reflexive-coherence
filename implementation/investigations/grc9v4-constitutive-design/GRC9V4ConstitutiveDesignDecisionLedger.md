@@ -9,27 +9,30 @@ selection.
 
 ## Ledger Rules
 
-### Open implementation-originated successor: P9-10.1a (2026-10-28)
+### Accepted bounded successor: P9-10.1a (2026-10-28)
 
-This is an **open routing entry, not an accepted decision**. The
-[proposal](./decisions/P9BasinInterfaceAuthorityProposal.md) and
-[source audit/open debt](./evidence/p9-basin-interface/AuthorityAudit.json)
-record the missing enabled-V4 basin membership/identity producer.
+The [accepted authority](./decisions/p9-basin-interface/Authority.json) resolves
+the design gap exposed in the [historical source audit](./evidence/p9-basin-interface/AuthorityAudit.json).
+The original proposal/open-debt record remains intact; this additive decision
+records its scoped resolution, not retroactive D10/D11 authority.
 
-| Field | Pending successor disposition |
+| Field | Accepted successor disposition |
 | --- | --- |
-| gate_id / status | `P9-10.1a`; authority gap open, corrected design user-accepted; authority admission pending |
+| gate_id / status | `P9-10.1a`; design accepted and propagated; native closure open |
 | predecessor_decision_digest | P9-9.6 acceptance `8676df0db54680ca97417fb9bcf657e0cf84fc907bccd2b7c5db47264d8ab861` |
-| decision_record_digest | pending; no accepted successor decision |
-| supersedes | none; accepted historical records remain unchanged |
-| source_identities | Exact source hashes and forensic source/edge references in the linked audit |
-| assumptions | Local seed inequality does not determine whole-graph membership or persistent identity |
-| candidates_considered | Seed-only surface; legacy strongest-flow classifier; singleton assignment; all-route terminal-flow proposal |
-| decision / rejected_alternatives | Corrected all-route terminal-flow diagnostic design accepted; separate authority admission follows |
-| evidence_or_argument | Ten conditional checks; 4,096 four-node directed graphs; BIF-1/2/3 corrections and focused regressions; no native execution or stability theorem |
-| open_debt | `P9-10.1a-DEBT-BASIN-IDENTITY`, open; proposed claim `P9-10.1a-CL-P-BASIN-001` is not admitted |
-| blocked_relabels | Seed equals basin partition; flow labels equal stable attractors; disabled authority selects enabled classifier; diagnostic relabeling is physical basin birth |
-| authorization_effect | Research/proposal only; admit reviewed authority and propagate paper/spec before production implementation |
+| decision_record_digest | `409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28` |
+| supersedes | Missing design selection only; historical decisions/evidence remain unchanged |
+| source_identities | Accepted design at `1275bd1f`; exact acceptance/source/admission bindings in the authority record |
+| assumptions | Fresh represented current with separate fixed-row seed data; no stable-attractor or temporal-identity inference |
+| candidates_considered | Seed-only; legacy strongest-flow; singleton assignment; all-route terminal-flow |
+| decision / rejected_alternatives | Select `grc9v4-terminal-flow-regions-v1`; do not replace it with seed-only, strongest-route or arbitrary singleton assignment |
+| admitted_claim | `P9-10.1a-CL-N-BASIN-001`, normative bounded design; former proposed ID remains a historical reference |
+| object / contracts | `P9-O-GRC9-BASIN-DIAGNOSTIC`; `P9-EC-GRC9-BASIN-INPUTS`, `MEMBERSHIP`, `SEEDS`, `IDENTITY`, `LIFECYCLE`, `CEILING` (common prefix) |
+| evidence_or_argument | Mathematical review and ten conditional checks (4,096 four-node directed graphs); focused authority/schema/propagation/surface checks; no native execution |
+| debt_disposition | `P9-10.1a-DEBT-BASIN-IDENTITY` resolved bounded design; `P9-10.1a-VO-BASIN-NATIVE` pending forward |
+| blocked_relabels | Flow labels as stable attractors/physical lineage; diagnostic relabel as basin birth; design propagation as runtime support |
+| propagation | Proposal and paper A.5.1; explicit V4-only spec/schema successor; old executable release preserved |
+| remaining_work | Native interface/lifecycle conformance for C_OS/C_CI/A_CI/A_PC and P9-10.1c reconciliation; P9-10.1b separate |
 | human_acceptance | [2026-10-28 design acceptance](../../phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json) |
 
 ### Historical gate record requirements

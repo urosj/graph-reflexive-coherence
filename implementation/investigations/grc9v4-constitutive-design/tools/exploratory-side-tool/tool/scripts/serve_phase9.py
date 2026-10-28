@@ -16,6 +16,7 @@ from grcv4_explorer.phase9_verification import pressure_projection  # noqa: E402
 from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 from grcv4_explorer.abundance import abundance_authority  # noqa: E402
 from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
+from grcv4_explorer.basin import basin_authority, basin_source  # noqa: E402
 from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E402
 from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source
 
@@ -30,6 +31,33 @@ from grcv4_explorer.tranche9 import (tranche9_status, tranche9_source,
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
+        if request.path in {"/api/basin", "/api/basin/source"}:
+            try:
+                query = parse_qs(request.query, strict_parsing=True)
+                root = repository_root()
+                if request.path == "/api/basin":
+                    if query:
+                        raise KeyError("basin authority has fixed scope")
+                    content = json.dumps(basin_authority(root, TOOL.parent)).encode()
+                else:
+                    if set(query) != {"path"} or len(query["path"]) != 1:
+                        raise KeyError("one indexed source path required")
+                    content, ref = basin_source(root, TOOL.parent, query["path"][0])
+                self.send_response(200)
+                if request.path.endswith("/source"):
+                    self.send_header("X-Evidence-SHA256", ref["sha256"])
+            except KeyError as error:
+                self.send_response(404)
+                content = json.dumps({"error": str(error)}).encode()
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error)}).encode()
+            self.send_header("Content-Type", "application/octet-stream" if request.path.endswith("/source") else "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
         if request.path in {"/api/tranche9", "/api/tranche9/source", "/api/tranche9/compatibility", "/api/tranche9/compatibility/source", "/api/tranche9/crossings", "/api/tranche9/crossings/source", "/api/tranche9/public", "/api/tranche9/public/source", "/api/tranche9/conflict", "/api/tranche9/conflict/source", "/api/tranche9/support", "/api/tranche9/support/source"}:
             try:
                 query = parse_qs(request.query, strict_parsing=True)
@@ -150,7 +178,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -169,6 +197,7 @@ class Handler(BaseHTTPRequestHandler):
                     "tranche8-conformance.js": "text/javascript",
                     "tranche8-end.js": "text/javascript",
                     "tranche9.js": "text/javascript",
+                    "basin.js": "text/javascript",
                     "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],
