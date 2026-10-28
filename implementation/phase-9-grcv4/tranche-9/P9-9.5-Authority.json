@@ -1,0 +1,95 @@
+{
+  "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+  "output_class": "forensic_evidence_trace",
+  "operation": "contract_provenance",
+  "query": {
+    "contract_id": "D11-G9-EC-LEGACY-DEFINED-DOMAIN"
+  },
+  "source_bundle_digest": "49f80902911cf60324892db505a71271e85065a8d1c1a3cc54ce6239b414fe9d",
+  "graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+  "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+  "row_count": 1,
+  "rows": [
+    {
+      "row_id": "D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+      "classification": "source_exact_contract_provenance",
+      "payload": {
+        "contract": {
+          "node_id": "equation_contract:D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+          "kind": "equation_contract",
+          "identifier": "D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+          "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+          "source_json_pointer": "/equation_contracts/19",
+          "attributes": {
+            "equation_contract_id": "D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+            "parent_object_ids": [
+              "GRC9-LEGACY-EXPANSION-DEFICIENCY"
+            ],
+            "normative_equation_or_contract": "disabled_exactness_is_limited_to_the_domain_where_unchanged_legacy_authority_defines_a_unique_target_and_the_saturated_port_five_conflict_returns_legacy_expansion_target_undefined_without_mutation",
+            "support_semantics": "accepted_bounded_GRC9V4_compatibility_boundary_not_a_GRC9_or_GRC9V3_rewrite",
+            "accepted_claim_ids": [
+              "D11-G9-CL-N-001",
+              "D10-CL-N-007"
+            ]
+          }
+        },
+        "accepted_claim_support_semantics": [
+          "accepted_bounded_GRC9V4_compatibility_boundary_not_a_GRC9_or_GRC9V3_rewrite"
+        ],
+        "support_disposition": [
+          "accepted_bounded_GRC9V4_compatibility_boundary_not_a_GRC9_or_GRC9V3_rewrite"
+        ]
+      },
+      "source_ref": {
+        "record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+        "record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+        "source_json_pointer": "/equation_contracts/19",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json"
+      },
+      "edge_refs": [
+        {
+          "edge_id": "propagation:108515725d9aad822df65abc6a6db1abb96687bff05be85b0c24a4f3e05ed380",
+          "source": "equation_contract:D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+          "target": "source_record:78e56a4179cbfbaa877d545f7dff6b07a4bbd3c37634c5689f9ac554fd6dcc4a",
+          "relation": "source_identity",
+          "support_semantic": "not_applicable",
+          "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+          "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+          "source_json_pointer": "/equation_contracts/19"
+        },
+        {
+          "edge_id": "propagation:4076b14861e67dabceab528aeae45bbd19e6a7c354b1fdef1b08ca67a56092b3",
+          "source": "equation_contract:D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+          "target": "current_claim:D10-CL-N-007",
+          "relation": "accepted_claim",
+          "support_semantic": "accepted_bounded_GRC9V4_compatibility_boundary_not_a_GRC9_or_GRC9V3_rewrite",
+          "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+          "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+          "source_json_pointer": "/equation_contracts/19/accepted_claim_ids/1"
+        },
+        {
+          "edge_id": "propagation:d60f4da82e362896ccc08a2fdd4829a8b4d13ce3fe6ff82091d0155f5ce53220",
+          "source": "equation_contract:D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+          "target": "current_claim:D11-G9-CL-N-001",
+          "relation": "accepted_claim",
+          "support_semantic": "accepted_bounded_GRC9V4_compatibility_boundary_not_a_GRC9_or_GRC9V3_rewrite",
+          "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+          "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+          "source_json_pointer": "/equation_contracts/19/accepted_claim_ids/0"
+        },
+        {
+          "edge_id": "propagation:eb76ff81782a844cb53790b30c18a0334a2d454efc1dca9add221982722f4c47",
+          "source": "equation_contract:D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+          "target": "normative_object:GRC9-LEGACY-EXPANSION-DEFICIENCY",
+          "relation": "parent_object",
+          "support_semantic": "indeterminate_requires_review",
+          "source_record_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+          "source_record_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+          "source_json_pointer": "/equation_contracts/19/parent_object_ids/0"
+        }
+      ]
+    }
+  ],
+  "trace_digest": "67b4069441c18319de350aae1a38a3490faddf95f9d588a1af163797e66e118a",
+  "authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188"
+}

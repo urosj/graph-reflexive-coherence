@@ -3848,10 +3848,20 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
       after all ten are enabled; current branch ownership is already unified.
     - [x] User acceptance on 2026-10-28; [decision](./phase-9-grcv4/tranche-9/P9-9.4b-Acceptance.json).
       No P9-9.6 conformance grant, optional completion or six-family promotion.
-- [ ] P9-9.5: Verify V4's `legacy_expansion_target_undefined` rejection through
+- [x] P9-9.5: Verify V4's `legacy_expansion_target_undefined` rejection through
   the P9-9.4b public API for the saturated port-5 conflict, without changing
   the legacy implementation. Check full scientific/reset rollback and no
   append to successful receipt history; an internal delegate test is insufficient.
+  - [x] Four public family suites execute fresh native saturated-candidate refusal,
+    preserving the complete scientific/reset/publication state and successful prefix.
+  - [x] Public step/run repetition, save/load/duplicate, deterministic refusal,
+    independent reset and subsequent native-step parity; no enabled V4 substitution.
+  - [x] Strict gradient and signed-Hessian boundaries: below/equal/above controls
+    per family, with no legacy source changes or broader numerical campaign.
+  - [x] Source-bound evidence and forensic domain trace; side-tool API/browser/
+    notebook, mutation pressure and portable reproduction; [review](./phase-9-grcv4/tranche-9/P9-9.5-Review.md).
+  - [x] User acceptance of bounded P9-9.5 on 2026-10-28;
+    [decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json). P9-9.6 remains separate.
 - [ ] P9-9.6: Review specialization support only after enabled and applicable
   disabled contracts pass; no enabled-only full-conformance label.
   Require P9-9.4a crossings, P9-9.4b public API integration and P9-9.5

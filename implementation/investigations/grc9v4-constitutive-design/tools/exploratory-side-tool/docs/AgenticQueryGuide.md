@@ -905,3 +905,16 @@ accepted mixed/crossing checkpoint parity. Its
 The source index includes `P9-9.4b-Architecture.md`, which records the possible
 consolidation of standalone and branch checkpoint formats after all ten
 families are fully enabled.
+
+
+## P9-9.5 public legacy conflict evidence
+
+`grcv4_explorer.tranche9.tranche9_conflict_status(repo_root)` authenticates the
+four C_OS/C_CI/A_CI/A_PC public refusal records; `tranche9_conflict_source` reads
+only their indexed repository-relative sources. `/api/tranche9/conflict`, its
+`/source?path=...` route, the browser control and notebook expose the same view.
+These checks run no native trajectories. A passing test means the undefined
+legacy expansion was rejected with full rollback, not that an event committed.
+Bounded user acceptance is recorded on 2026-10-28; its pinned decision is
+separate from original execution flags. P9-9.6 support review remains separate. The trace for
+`D11-G9-EC-LEGACY-DEFINED-DOMAIN` retains its bounded compatibility authority.

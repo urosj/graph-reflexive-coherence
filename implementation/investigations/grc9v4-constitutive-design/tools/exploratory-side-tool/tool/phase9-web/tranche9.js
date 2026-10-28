@@ -178,7 +178,7 @@ export function publicLoader(container,status,fetcher=fetch) {
       for(const ref of v.source_refs){
         const a=add('a',ref.path.split('/').at(-1));a.href='/api/tranche9/public/source?path='+encodeURIComponent(ref.path);a.target='_blank';a.rel='noopener';add('span',' · ');
       }
-      status.textContent='Checked bounded evidence; P9-9.5 and P9-9.6 remain.';
+      status.textContent='Public API evidence verified; see the separate conflict and support review status.';
     } catch(error) {
       container.replaceChildren();status.textContent='Unavailable — not admitted.';
     }
@@ -187,4 +187,44 @@ export function publicLoader(container,status,fetcher=fetch) {
 if(typeof document!=='undefined') {
   const button=document.getElementById('tranche9-public-refresh');
   if(button)button.addEventListener('click',publicLoader(document.getElementById('tranche9-public-output'),document.getElementById('tranche9-public-status')));
+}
+
+export function checkedConflict(v) {
+  const families=['C_OS','C_CI','A_CI','A_PC'];
+  if(v.schema!=='p995-public-conflict-status-v1' || v.iteration!=='P9-9.5' ||
+     JSON.stringify(v.families)!==JSON.stringify(families) ||
+     v.public_api!==true || v.user_accepted!==true || v.aggregate_closed!==false ||
+     v.full_GRC9V4_conformance!==false || v.state!=='bounded_accepted' ||
+     v.acceptance_digest!=='792f1b9640edf2e4ae1e958f09662107ec7fd88ab46110e7820b146661a20bec' ||
+     v.check_level!=='retained_integrity_only_no_native_rerun' ||
+     !Array.isArray(v.records) || v.records.length!==4 ||
+     v.records.some((r,i)=>r.family!==families[i] || r.tests!==3 || r.outcome!=='passed' ||
+       r.failure_code!=='legacy_expansion_target_undefined' || r.rollback!==true ||
+       r.boundary_controls!==6 || !/^[a-f0-9]{64}$/.test(r.record_digest)))
+    throw new Error('Invalid public conflict evidence');
+  return v;
+}
+
+export function conflictLoader(container,status,fetcher=fetch,create=tag=>document.createElement(tag)) {
+  let sequence=0;
+  return async()=>{
+    const ticket=++sequence;container.replaceChildren();status.textContent='Checking retained conflict evidence…';
+    try {
+      const response=await fetcher('/api/tranche9/conflict');if(!response.ok)throw new Error('Unavailable');
+      const v=checkedConflict(await response.json());if(ticket!==sequence)return;
+      const add=(tag,text)=>{const e=create(tag);e.textContent=text;container.append(e);return e;};
+      add('p','P9-9.5: the requested legacy expansion is rejected. Tests pass because refusal is atomic; no expansion is committed. Bounded acceptance recorded on 2026-10-28.');
+      for(const r of v.records)add('p',`${r.family}: ${r.tests} tests and ${r.boundary_controls} trigger-boundary controls; ${r.failure_code}; full rollback, replay and reset verified.`);
+      add('p','Retained integrity only; no native rerun. GRC9V3 is unchanged. This does not grant full GRC9V4 conformance.');
+      for(const ref of v.source_refs){
+        if(!ref.path.startsWith('implementation/phase-9-grcv4/tranche-9/') || ref.path.includes('..'))throw new Error('Invalid source path');
+        const a=add('a',ref.path.split('/').at(-1));a.href='/api/tranche9/conflict/source?path='+encodeURIComponent(ref.path);a.target='_blank';a.rel='noopener';add('span',' · ');
+      }
+      status.textContent='Conflict evidence verified; bounded acceptance recorded. Next: P9-9.6.';
+    }catch(error){if(ticket!==sequence)return;container.replaceChildren();status.textContent=String(error);}
+  };
+}
+if(typeof document!=='undefined') {
+  const button=document.getElementById('tranche9-conflict-refresh');
+  if(button)button.addEventListener('click',conflictLoader(document.getElementById('tranche9-conflict-output'),document.getElementById('tranche9-conflict-status')));
 }

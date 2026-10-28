@@ -3241,3 +3241,16 @@ and branch checkpoint formats remains an option after all ten families are enabl
 P9-9.4b bounded acceptance is recorded on 2026-10-28. Project the separate
 pinned decision through API/browser/notebook; preserve original execution flags.
 Both P9-9.4 children are closed; P9-9.5 and P9-9.6 remain.
+
+
+### P9-9.5 public saturated legacy refusal
+
+Expose four checked conflict records and the exact D11-G9 legacy-defined-domain
+trace via `tranche9_conflict_status`, `/api/tranche9/conflict`, indexed sources,
+the browser control and notebook. Report that tests pass because an undefined
+legacy expansion is correctly refused; never label it a committed expansion.
+Show full rollback, deterministic replay/reset and strict-trigger boundary
+controls. Retained checking executes no model and grants no acceptance/support.
+P9-9.5 is bounded-accepted by the user on 2026-10-28. Project the pinned
+acceptance separately from original execution records. P9-9.6 is the next
+bounded support review. Existing production and historical evidence remain unchanged.

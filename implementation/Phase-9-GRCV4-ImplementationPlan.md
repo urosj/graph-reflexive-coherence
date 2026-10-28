@@ -4282,7 +4282,17 @@ After all ten families are fully enabled, consider unifying the standalone and
 branch checkpoint formats/action vocabulary against measured maintenance/replay
 costs, preserving historical import and scientific parity. This is a future option, not an extra
 closure gate for the selected four families.
-Next: P9-9.5 public conflict pressure, then P9-9.6 bounded review.
+P9-9.5 is now executed for C_OS, C_CI, A_CI and A_PC;
+[review](./phase-9-grcv4/tranche-9/P9-9.5-Review.md). Twelve tests plus twenty-four
+strict native trigger boundary controls verify public saturated-port refusal,
+complete rollback, no successful-history append, replay and exact native reset/
+continuation. The declared legacy trigger thresholds are 0.05; the actual
+native prestages produce the candidate. Full saturation by itself does not
+cause rejection. All four suites ran in parallel using the existing small
+fixtures. The retained-integrity API/browser/notebook does not rerun numerics.
+No production/legacy source or numerical policy changed. Bounded P9-9.5 user
+acceptance is recorded on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json). Next: P9-9.6 support review.
 
 ### Tranche 10. Conformance, evidence, and handoff
 

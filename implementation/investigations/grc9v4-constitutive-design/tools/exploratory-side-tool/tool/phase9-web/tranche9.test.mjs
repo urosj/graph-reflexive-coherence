@@ -2,6 +2,34 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {checkedTranche9,lifecycleLoader} from './tranche9.js';
 const families=['C_OS','C_CI','A_CI','A_PC'];
+import {checkedConflict,conflictLoader} from './tranche9.js';
+const conflict={schema:'p995-public-conflict-status-v1',iteration:'P9-9.5',families,
+  public_api:true,user_accepted:true,aggregate_closed:false,full_GRC9V4_conformance:false,
+  acceptance_digest:'792f1b9640edf2e4ae1e958f09662107ec7fd88ab46110e7820b146661a20bec',state:'bounded_accepted',check_level:'retained_integrity_only_no_native_rerun',
+  records:families.map(family=>({family,tests:3,outcome:'passed',record_digest:'a'.repeat(64),
+    failure_code:'legacy_expansion_target_undefined',rollback:true,boundary_controls:6})),
+  source_refs:[{path:'implementation/phase-9-grcv4/tranche-9/P9-9.5-Review.md'}]};
+test('public conflict view requires the named refusal and complete bounded evidence',()=>{
+  assert.equal(checkedConflict(conflict),conflict);
+  for(const key of ['aggregate_closed','full_GRC9V4_conformance'])assert.throws(()=>checkedConflict({...conflict,[key]:true}));
+  assert.throws(()=>checkedConflict({...conflict,user_accepted:false}));
+  assert.throws(()=>checkedConflict({...conflict,acceptance_digest:'0'.repeat(64)}));
+  assert.throws(()=>checkedConflict({...conflict,records:conflict.records.slice(1)}));
+  for(const [key,value] of [['failure_code','target_readmission_failure'],['rollback',false],['boundary_controls',5]]){
+    const bad=structuredClone(conflict);bad.records[0][key]=value;assert.throws(()=>checkedConflict(bad));
+  }
+});
+test('public conflict loader explains rejection and clears failed refreshes',async()=>{
+  const children=[],container={replaceChildren(){children.length=0;},append(x){children.push(x);}};
+  const status={textContent:''};let value=structuredClone(conflict),ok=true;
+  const load=conflictLoader(container,status,async()=>({ok,json:async()=>value}),()=>({}));
+  await load();assert.match(status.textContent,/bounded acceptance recorded/);
+  assert(children.some(x=>/no expansion is committed/.test(x.textContent)));
+  assert.equal(children.filter(x=>/3 tests and 6 trigger/.test(x.textContent)).length,4);
+  assert(children.some(x=>x.href?.startsWith('/api/tranche9/conflict/source?')));
+  value.records[0].rollback=false;await load();assert.equal(children.length,0);
+  ok=false;await load();assert.equal(children.length,0);
+});
 const payload={schema:'phase9_tranche9_first_group_v1',iteration:'P9-9.1b',families,
   user_accepted:true,aggregate_closed:false,full_GRC9V4_conformance:false,
   check_level:'retained_integrity_only_no_numerical_rerun',state:'bounded_accepted',
@@ -121,7 +149,7 @@ test('public loader renders indexed evidence and clears stale successful output'
   const children=[],container={ownerDocument:{createElement:()=>({})},replaceChildren(){children.length=0;},append(x){children.push(x);}};
   const status={textContent:''};let value=structuredClone(publicAPI);
   const load=publicLoader(container,status,async()=>({ok:true,json:async()=>value}));
-  await load();assert.match(status.textContent,/P9-9.5 and P9-9.6 remain/);
+  await load();assert.match(status.textContent,/Public API evidence verified/);
   assert.equal(children.filter(x=>/4 tests; passed/.test(x.textContent)).length,5);
   assert.equal(children.filter(x=>/contract only; native execution unavailable/.test(x.textContent)).length,6);
   assert.equal(children.filter(x=>/native execution in scope/.test(x.textContent)).length,4);

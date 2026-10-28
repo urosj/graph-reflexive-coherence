@@ -1,6 +1,35 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — accepted P9-9.4b public API (2026-10-28)
+## Current checkpoint — accepted P9-9.5 public conflict refusal (2026-10-28)
+
+Branch `work/p9-9-first-group`; P9-9.4b accepted at `1ea6807c`.
+P9-9.5 is bounded-accepted for **C_OS, C_CI, A_CI, A_PC** on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json); [scope, evidence and reproduction](./phase-9-grcv4/tranche-9/P9-9.5-Review.md).
+Four parallel suites pass twelve tests plus twenty-four strict trigger-boundary
+controls. Actual native candidate detection through public `GRC9V4.step()`/`run()`
+produces `legacy_expansion_target_undefined` at the saturated port-5 conflict.
+The full publication, scientific/reset state, diagnostics, clocks, archives,
+successful receipts and journal are unchanged. Replay reproduces the refusal;
+reset and subsequent evolution match unchanged GRC9V3 exactly. Equality and
+adjacent represented thresholds distinguish actual trigger eligibility from
+saturation alone. No enabled V4 expansion substitutes for the legacy failure.
+
+No `src/` file, legacy implementation, law, tolerance, numerical policy or
+historical execution record changed. New verification tests live alongside the
+Phase 9 runner. Compact source-bound records reuse accepted small input fixtures;
+no large graph campaign was repeated. Side-tool `/api/tranche9/conflict`, indexed
+sources, browser and notebook expose integrity separately from acceptance.
+The queried D11-G9 legacy-defined-domain contract preserves its bounded authority.
+Ten Python evidence/surface checks, ten browser tests and the phase boundary
+(703 protected / 346 runtime files) pass.
+
+Next: P9-9.6 bounded support review. All-ten public contracts
+remain distinct from four-family execution. Keep the optional completion/
+hierarchy and other-six-family exclusions, CI resolution limits and pointwise
+A_PC carrier margins. No full GRC9V4 conformance is inferred.
+
+
+## Previous checkpoint — accepted P9-9.4b public API (2026-10-28)
 
 Branch `work/p9-9-first-group`. Accepted 9.4a was committed as `7b16696a`
 before this work. Public `from pygrc.models import GRC9V4` now provides typed

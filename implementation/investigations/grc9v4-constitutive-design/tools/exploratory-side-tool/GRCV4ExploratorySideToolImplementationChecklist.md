@@ -2632,3 +2632,14 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
 - [x] Expose the architecture/replay group, sole branch ownership and accepted
   crossing replay, with future standalone/branch format consolidation separate.
 - [x] User acceptance of bounded P9-9.4b on 2026-10-28; P9-9.5/P9-9.6 remain.
+
+
+### P9-9.5 public saturated legacy refusal
+
+- [x] Checked four-family conflict API and indexed evidence/forensic sources.
+- [x] Actual browser control and notebook cell distinguish correct refusal from
+  committed expansion, and retained integrity from native execution/acceptance.
+- [x] Reject altered failure, rollback and boundary evidence, missing sources,
+  widened scope and acceptance/conformance promotion; clear stale browser output.
+- [x] Bounded user acceptance of P9-9.5 on 2026-10-28; pinned decision is
+  projected separately from original execution records. Support review remains P9-9.6.
