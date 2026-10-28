@@ -1,0 +1,37 @@
+{
+  "schema": "p996-bounded-support-acceptance-v1",
+  "accepted_date": "2026-10-28",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "bounded_leaf_closed": true,
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "compatibility_capability_advertised": false,
+  "G4_accepted": false,
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.6-SupportReview.json",
+    "sha256": "734952091607f62a5bad9e3dafeb4dd951aacd6c19818f42c00159423d028e17",
+    "record_digest": "1c30d49b1b7d011632eb307a358c7870e78ac3f81b3b4139c67c3ac1f64ccd00"
+  },
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.6-Review.md",
+    "sha256": "68feb163486a1b1450e3d6940af4b6748003bd8efc2b1122d3fc12e97dd889c4"
+  },
+  "remaining_holds": [
+    "basin_surface",
+    "umbrella_compatibility",
+    "target_identity_scope"
+  ],
+  "follow_through": [
+    "P9-10.1a",
+    "P9-10.1b",
+    "P9-10.1c"
+  ],
+  "scope": "Accept the four-family evidence reconciliation and its explicit remaining holds. Original evidence is unchanged. No full conformance, umbrella compatibility, optional completion/hierarchy, other-six execution or G4 grant.",
+  "record_digest": "8676df0db54680ca97417fb9bcf657e0cf84fc907bccd2b7c5db47264d8ab861"
+}

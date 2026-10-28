@@ -3254,3 +3254,32 @@ controls. Retained checking executes no model and grants no acceptance/support.
 P9-9.5 is bounded-accepted by the user on 2026-10-28. Project the pinned
 acceptance separately from original execution records. P9-9.6 is the next
 bounded support review. Existing production and historical evidence remain unchanged.
+
+### P9-9.6 bounded specialization support review
+
+Expose the reconciled C_OS/C_CI/A_CI/A_PC evidence through
+`tranche9_support_status`, `/api/tranche9/support`, indexed sources, the browser
+control and notebook. Authenticate accepted prerequisites and exact source/target
+identities without executing trajectories. Show sixteen accepted source-model
+disabled cells and twenty-four unselected cells; do not transfer source-cell
+acceptance to expanded target identities. Preserve numerical and authority limits.
+
+The bounded review is user-accepted on 2026-10-28; full conformance remains held.
+Project its pinned acceptance separately from the original review record.
+Present the actual mandatory basin-interface gap separately from optional
+completion/hierarchy, the frozen all-forty umbrella-capability condition and
+exact target-identity coverage. Route these items to P9-10.1. Five Python checks
+and twelve browser tests cover reconciliation, altered bindings, unaccepted
+prerequisites, attempted scope/promotion changes, actual HTTP source access and
+stale-output clearing. Do not upgrade production support discovery or old evidence.
+
+### P9-10.1 basin and expanded-target support closure — planned
+
+P9-10.1a supplies the required baseline basin interface and lifecycle evidence;
+P9-10.1b supplies exact expanded-target disabled compatibility evidence for the
+four selected families. After those results are reviewed, P9-10.1c updates the
+checked support projection, actual API/browser/notebook access and indexed sources
+with successor evidence. Show target-specific success/exclusion and any remaining
+hold, preserving accepted predecessors and fail-closed source checking. Retain
+the all-forty umbrella-capability condition, numerical limits and authority status;
+do not infer completed sparks, hierarchy, other-six execution or full conformance.

@@ -2,6 +2,43 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {checkedTranche9,lifecycleLoader} from './tranche9.js';
 const families=['C_OS','C_CI','A_CI','A_PC'];
+import {checkedSupport,supportLoader} from './tranche9.js';
+const support={schema:'p996-support-status-v1',iteration:'P9-9.6',families,
+  unselected_families:['A_OS','A_CI_PC','A_RG2b','C_PC','C_CI_PC','C_RG2b'],
+  verdict:'bounded_evidence_reconciled_full_conformance_held',state:'bounded_accepted',
+  acceptance_digest:'8676df0db54680ca97417fb9bcf657e0cf84fc907bccd2b7c5db47264d8ab861',user_accepted:true,aggregate_closed:false,full_GRC9V4_conformance:false,
+  compatibility_capability_advertised:false,G4_accepted:false,
+  check_level:'retained_reconciliation_only_no_native_rerun',record_digest:'b'.repeat(64),
+  optional_completion:{selected:false,executed:false,blocking_selected_scope:false},
+  matrix_counts:{total:40,bounded_accepted:16,unselected_not_executed:24,failed:0,unaccounted:0},
+  open_items:['basin_surface','umbrella_compatibility','target_identity_scope'].map(id=>({id,detail:id})),
+  rows:families.map(family=>({family,disposition:'bounded_partial_support_evidence_reconciled',
+    missing_mandatory_capabilities:['basin_attributes'],readable_state_missing_basin_identity:true,
+    expanded_target_disabled_surfaces:'not_executed_for_this_exact_target_identity',
+    complete_profile_is_not_family_wide_support:true,
+    source:{complete_profile_id:'grcv4-profile-sha256:'+'a'.repeat(64),model_identity:'grc9v4-model-sha256:'+'b'.repeat(64)}})),
+  source_refs:[{path:'implementation/phase-9-grcv4/tranche-9/P9-9.6-Review.md'}]};
+test('support view cannot turn a partial review into full support or erase a hold',()=>{
+  assert.equal(checkedSupport(support),support);
+  assert.throws(()=>checkedSupport({...support,user_accepted:false}));
+  assert.throws(()=>checkedSupport({...support,acceptance_digest:'0'.repeat(64)}));
+  for(const key of ['aggregate_closed','full_GRC9V4_conformance','G4_accepted','compatibility_capability_advertised'])
+    assert.throws(()=>checkedSupport({...support,[key]:true}));
+  assert.throws(()=>checkedSupport({...support,open_items:support.open_items.slice(1)}));
+  assert.throws(()=>checkedSupport({...support,unselected_families:[]}));
+  for(const [key,value] of [['missing_mandatory_capabilities',[]],['expanded_target_disabled_surfaces','accepted'],['complete_profile_is_not_family_wide_support',false]]) {
+    const bad=structuredClone(support);bad.rows[0][key]=value;assert.throws(()=>checkedSupport(bad));
+  }
+});
+test('support loader shows actual holds and clears stale evidence',async()=>{
+  const children=[],container={replaceChildren(){children.length=0;},append(x){children.push(x);}};
+  const status={textContent:''};let value=structuredClone(support);
+  const load=supportLoader(container,status,async()=>({ok:true,json:async()=>value}),()=>({}));
+  await load();assert.match(status.textContent,/Full conformance held/);
+  assert(children.some(x=>/basin_surface/.test(x.textContent)));
+  assert(children.some(x=>x.href?.startsWith('/api/tranche9/support/source?')));
+  value.full_GRC9V4_conformance=true;await load();assert.equal(children.length,0);
+});
 import {checkedConflict,conflictLoader} from './tranche9.js';
 const conflict={schema:'p995-public-conflict-status-v1',iteration:'P9-9.5',families,
   public_api:true,user_accepted:true,aggregate_closed:false,full_GRC9V4_conformance:false,

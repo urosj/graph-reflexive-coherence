@@ -918,3 +918,22 @@ legacy expansion was rejected with full rollback, not that an event committed.
 Bounded user acceptance is recorded on 2026-10-28; its pinned decision is
 separate from original execution flags. P9-9.6 support review remains separate. The trace for
 `D11-G9-EC-LEGACY-DEFINED-DOMAIN` retains its bounded compatibility authority.
+
+## P9-9.6 bounded support reconciliation
+
+`grcv4_explorer.tranche9.tranche9_support_status(repo_root)` authenticates the
+accepted Tranche 8/9 evidence and exact source/expanded-target identities for
+C_OS/C_CI/A_CI/A_PC. `tranche9_support_source` serves only indexed, hash-checked
+repository-relative sources. `/api/tranche9/support`, its `/source?path=...`
+route, the browser control and notebook expose the same review without native
+execution. The verdict is bounded evidence reconciled, full conformance held;
+bounded user acceptance is recorded on 2026-10-28 through a separate pinned
+decision, preserving the original review flags. Next: P9-10.1a/b/c.
+
+The sixteen accepted disabled cells apply to their exact source identities;
+expanded targets have enabled evidence and no corresponding disabled-cell grant.
+The required public `basin_attributes` / `basin_identity` surface is missing;
+this is separate from optional completed sparks/hierarchy. The frozen umbrella
+compatibility capability requires all forty vectors, while twenty-four remain
+unselected. These three items are routed to P9-10.1. A successful integrity check
+does not remove them, promote D10.2 indeterminate traces or grant full conformance.

@@ -4292,9 +4292,55 @@ cause rejection. All four suites ran in parallel using the existing small
 fixtures. The retained-integrity API/browser/notebook does not rerun numerics.
 No production/legacy source or numerical policy changed. Bounded P9-9.5 user
 acceptance is recorded on 2026-10-28;
-[decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json). Next: P9-9.6 support review.
+[decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json).
+
+P9-9.6's [bounded support review](./phase-9-grcv4/tranche-9/P9-9.6-Review.md)
+is bounded-accepted on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json). It authenticates the accepted prerequisites
+and reconciles exact source/expanded-target identities, sixteen source-model
+disabled cells, numerical domains and authority limits without new trajectories.
+The conclusion is bounded partial evidence reconciled, **full conformance held**.
+The public API lacks the mandatory `basin_attributes` and readable
+`basin_identity` surface; the existing seed predicate is insufficient. This
+baseline gap is separate from optional completion/hierarchy. The frozen umbrella
+compatibility capability additionally requires all forty delegate vectors;
+the other twenty-four remain unselected. Expanded targets have enabled evidence
+but different complete identities and no corresponding disabled-cell execution.
+The API/browser/notebook expose these three limits alongside the passing evidence.
 
 ### Tranche 10. Conformance, evidence, and handoff
+
+P9-10.1 closes the two P9-9.6 gaps through the following bounded children,
+before capability publication and final conformance acceptance:
+
+1. **P9-10.1a — Baseline basin interface closure.** Trace the existing local
+   classification and basin-identity semantics, then implement the required public
+   attributes and lifecycle identity for C_OS/C_CI/A_CI/A_PC. Test fresh evaluation,
+   strict threshold boundaries, expansion, reset, snapshot/replay and full rollback
+   with small fixtures. If identity assignment or lifecycle semantics lack accepted
+   authority, resolve the precise contract through investigation, paper and spec
+   before implementing it. The existing seed predicate alone does not close this
+   interface. Completed-spark detection and hierarchy remain unselected.
+2. **P9-10.1b — Expanded-target compatibility closure.** Reuse the four accepted
+   expansion targets and their exact profile/specialization/model identities.
+   Verify disabled transition, state, observable and lifecycle parity against
+   unchanged native GRC9V3; exercise entry/return, both histories, reset and replay
+   where admissible. Pressure explicit refusal and complete rollback outside the
+   defined legacy domain. Record actual target-specific success or exclusion;
+   source-only evidence and a passing rejection test do not establish successful
+   compatibility for that target. These checks extend P9-9.2/P9-9.4a evidence.
+3. **P9-10.1c — Support reconciliation.** Bind the a/b successor results, review
+   each hold's resulting scope, and update support projections through the side-tool
+   API, browser and notebook plus the handoff. Preserve original accepted records,
+   numerical limits and authority statuses. The separate frozen all-forty condition
+   for the umbrella compatibility capability remains: additional target checks do
+   not execute the other twenty-four source-matrix cells. Other-six execution or a
+   capability-contract change requires a separate scope decision; no full label
+   follows automatically from closing the two gaps.
+
+Reuse accepted fixtures/checkers and run focused new checks plus affected
+regressions. Independent family runs may execute in parallel. Do not repeat large
+Tranche 8 numerical campaigns unless a concrete failure makes that necessary.
 
 Close the declared support matrix using actual runtime results with exact
 release, code, complete-profile, fixture, pre/poststate, and receipt identities.

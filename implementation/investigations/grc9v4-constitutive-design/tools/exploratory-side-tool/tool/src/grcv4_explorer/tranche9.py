@@ -146,3 +146,20 @@ def tranche9_conflict_source(repo_root, path):
     if hashlib.sha256(raw).hexdigest() != refs[path]["sha256"]:
         raise ValueError("source changed during read")
     return raw, refs[path]
+
+
+def tranche9_support_status(repo_root):
+    root = Path(repo_root).resolve()
+    _checker(root)
+    return importlib.import_module("p996_acceptance").status(root)
+
+
+def tranche9_support_source(repo_root, path):
+    root = Path(repo_root).resolve()
+    refs = {r["path"]: r for r in tranche9_support_status(root)["source_refs"]}
+    if path not in refs:
+        raise KeyError("unindexed support review source")
+    raw = (root / path).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != refs[path]["sha256"]:
+        raise ValueError("source changed during read")
+    return raw, refs[path]

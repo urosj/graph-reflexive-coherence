@@ -228,3 +228,64 @@ if(typeof document!=='undefined') {
   const button=document.getElementById('tranche9-conflict-refresh');
   if(button)button.addEventListener('click',conflictLoader(document.getElementById('tranche9-conflict-output'),document.getElementById('tranche9-conflict-status')));
 }
+
+export function checkedSupport(v) {
+  const families=['C_OS','C_CI','A_CI','A_PC'];
+  const others=publicFamilies.filter(f=>!families.includes(f));
+  if(v.schema!=='p996-support-status-v1' || v.iteration!=='P9-9.6' ||
+     v.verdict!=='bounded_evidence_reconciled_full_conformance_held' ||
+     JSON.stringify(v.families)!==JSON.stringify(families) ||
+     JSON.stringify(v.unselected_families)!==JSON.stringify(others) ||
+     v.state!=='bounded_accepted' || v.user_accepted!==true ||
+     v.acceptance_digest!=='8676df0db54680ca97417fb9bcf657e0cf84fc907bccd2b7c5db47264d8ab861' ||
+     v.aggregate_closed!==false || v.full_GRC9V4_conformance!==false ||
+     v.compatibility_capability_advertised!==false || v.G4_accepted!==false ||
+     v.check_level!=='retained_reconciliation_only_no_native_rerun' ||
+     v.optional_completion?.selected!==false || v.optional_completion?.executed!==false ||
+     v.optional_completion?.blocking_selected_scope!==false ||
+     v.matrix_counts?.total!==40 || v.matrix_counts?.bounded_accepted!==16 ||
+     v.matrix_counts?.unselected_not_executed!==24 ||
+     v.matrix_counts?.failed!==0 || v.matrix_counts?.unaccounted!==0 ||
+     JSON.stringify(v.open_items?.map(r=>r.id))!==JSON.stringify(['basin_surface','umbrella_compatibility','target_identity_scope']) ||
+     JSON.stringify(v.rows?.map(r=>r.family))!==JSON.stringify(families) ||
+     !/^[a-f0-9]{64}$/.test(v.record_digest))throw new Error('Invalid bounded support review');
+  for(const r of v.rows) {
+    if(r.disposition!=='bounded_partial_support_evidence_reconciled' ||
+       JSON.stringify(r.missing_mandatory_capabilities)!==JSON.stringify(['basin_attributes']) ||
+       r.readable_state_missing_basin_identity!==true ||
+       r.expanded_target_disabled_surfaces!=='not_executed_for_this_exact_target_identity' ||
+       r.complete_profile_is_not_family_wide_support!==true ||
+       !/^grcv4-profile-sha256:[a-f0-9]{64}$/.test(r.source?.complete_profile_id) ||
+       !/^grc9v4-model-sha256:[a-f0-9]{64}$/.test(r.source?.model_identity))
+      throw new Error('Support identity or hold mismatch');
+  }
+  return v;
+}
+
+export function supportLoader(container,status,fetcher=fetch,create=tag=>document.createElement(tag)) {
+  let sequence=0;
+  return async()=>{
+    const ticket=++sequence;container.replaceChildren();status.textContent='Checking exact accepted subjects…';
+    try {
+      const response=await fetcher('/api/tranche9/support');if(!response.ok)throw new Error('Unavailable');
+      const v=checkedSupport(await response.json());if(ticket!==sequence)return;
+      const add=(tag,text)=>{const e=create(tag);e.textContent=text;container.append(e);return e;};
+      add('p','Four-family bounded evidence reconciled; full GRC9V4 conformance is held. Bounded review acceptance recorded on 2026-10-28.');
+      for(const r of v.rows){
+        add('p',`${r.family}: enabled lifecycle, four source-model delegate surfaces, both crossings, public API and conflict refusal verified from retained evidence.`);
+        add('code',r.source.model_identity);
+      }
+      for(const h of v.open_items)add('p',`${h.id}: ${h.detail}`);
+      add('p','16 compatibility cells accepted, 24 unselected. Optional completion/hierarchy is unselected and does not block this scope. No native rerun or support promotion.');
+      for(const ref of v.source_refs){
+        if(!ref.path.startsWith('implementation/phase-9-grcv4/tranche-9/') || ref.path.includes('..'))throw new Error('Invalid source path');
+        const a=add('a',ref.path.split('/').at(-1));a.href='/api/tranche9/support/source?path='+encodeURIComponent(ref.path);a.target='_blank';a.rel='noopener';add('span',' · ');
+      }
+      status.textContent='Bounded review accepted. Full conformance held. Next: P9-10.1a/b/c.';
+    }catch(error){if(ticket!==sequence)return;container.replaceChildren();status.textContent=String(error);}
+  };
+}
+if(typeof document!=='undefined') {
+  const button=document.getElementById('tranche9-support-refresh');
+  if(button)button.addEventListener('click',supportLoader(document.getElementById('tranche9-support-output'),document.getElementById('tranche9-support-status')));
+}

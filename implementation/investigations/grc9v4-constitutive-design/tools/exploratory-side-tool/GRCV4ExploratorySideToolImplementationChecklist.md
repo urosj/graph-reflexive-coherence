@@ -2643,3 +2643,25 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
   widened scope and acceptance/conformance promotion; clear stale browser output.
 - [x] Bounded user acceptance of P9-9.5 on 2026-10-28; pinned decision is
   projected separately from original execution records. Support review remains P9-9.6.
+
+### P9-9.6 bounded specialization support review
+
+- [x] Authenticate accepted stages and exact source/expanded-target identities;
+  expose checked review, indexed sources and sixteen/twenty-four cell scope.
+- [x] Actual API/browser/notebook access, with no numerical rerun or support grant.
+- [x] Render mandatory basin-interface gap, frozen umbrella-capability restriction
+  and target-identity coverage limit; distinguish optional completion/hierarchy.
+- [x] Reject missing acceptance, drifted identities and rehashed widening or
+  removed holds; clear stale browser results on failure.
+- [x] Bounded user acceptance on 2026-10-28, projected separately from the
+  original review record; full conformance and P9-G4 remain held.
+
+### P9-10.1 basin and expanded-target support closure — planned
+
+- [ ] Consume reviewed P9-10.1a baseline basin interface/lifecycle evidence and
+  P9-10.1b expanded-target disabled compatibility evidence for the four families.
+- [ ] P9-10.1c: update the checked support projection, API/browser/notebook and
+  indexed sources with exact target identities, successor outcomes and remaining
+  holds; reject drift and unsupported promotion while preserving accepted records.
+- [ ] Retain the separate all-forty umbrella restriction, numerical/authority
+  limits and optional/other-six exclusions when reporting closure of either gap.

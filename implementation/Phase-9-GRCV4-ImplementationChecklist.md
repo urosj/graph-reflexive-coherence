@@ -3862,13 +3862,27 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
     notebook, mutation pressure and portable reproduction; [review](./phase-9-grcv4/tranche-9/P9-9.5-Review.md).
   - [x] User acceptance of bounded P9-9.5 on 2026-10-28;
     [decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json). P9-9.6 remains separate.
-- [ ] P9-9.6: Review specialization support only after enabled and applicable
+- [x] P9-9.6: Bounded review of specialization support only after enabled and applicable
   disabled contracts pass; no enabled-only full-conformance label.
   Require P9-9.4a crossings, P9-9.4b public API integration and P9-9.5
   public-entry failure evidence for the selected four-family scope.
   Additionally require P9-9.1a evidence per exact profile/capability when
   completion/hierarchy is advertised or required for explicit project handoff.
   Completion-off waives no mandatory lifecycle/compatibility evidence.
+  - [x] Reconcile accepted P9-9.1b/9.2/9.3/9.4a/9.4b/9.5 and Tranche 8
+    evidence for C_OS/C_CI/A_CI/A_PC by exact source/target model identities;
+    [bounded review](./phase-9-grcv4/tranche-9/P9-9.6-Review.md).
+  - [x] Retain sixteen accepted source-model disabled cells, twenty-four
+    unselected cells, numerical exclusions and original authority statuses.
+    Expanded target identities do not inherit source-cell acceptance.
+  - [x] Identify the mandatory public `basin_attributes` / `basin_identity`
+    gap separately from optional completion/hierarchy; retain the frozen
+    all-forty condition for the umbrella compatibility capability.
+  - [x] Expose the bounded review and remaining holds through side-tool API,
+    browser and notebook; pressure identity/scope changes without new trajectories.
+  - [x] User acceptance of the bounded review on 2026-10-28;
+    [decision](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json). Full conformance
+    and P9-G4 remain held; P9-10.1a/b/c below own the follow-through.
 
 ### P9-9.2 compatibility execution register
 
@@ -3931,6 +3945,33 @@ migration or a full specialization conformance grant.
 
 - [ ] P9-10.1: Reconcile every vector hold and acceptance-gate runtime debt
   with exact execution evidence or an explicit remaining support hold.
+  - [ ] P9-10.1a — Baseline basin interface closure (`basin_surface`): trace
+    classification and identity semantics; resolve missing authority through the
+    existing investigation-to-paper-to-spec path before implementation. Expose
+    the required public basin attributes and lifecycle identity for C_OS/C_CI/
+    A_CI/A_PC. Verify fresh classification, strict threshold boundaries, expansion,
+    reset, snapshot/replay and complete rollback with small fixtures. A seed
+    predicate or capability string alone is insufficient. Completed-spark
+    detection and hierarchy remain outside this baseline task.
+  - [ ] P9-10.1b — Expanded-target compatibility closure (`target_identity_scope`):
+    reuse the four accepted expanded targets and bind their exact profile,
+    specialization and combined model identities. Verify disabled transition,
+    state, observable and lifecycle parity against unchanged native GRC9V3;
+    exercise entry/return, both histories, reset and replay where admissible.
+    Verify explicit refusal and rollback outside the defined legacy domain.
+    Retain target-specific outcomes; source-cell acceptance does not transfer
+    by family name, and a refusal is not successful target compatibility.
+  - [ ] P9-10.1c — Support reconciliation after a/b: attach successor evidence
+    and reviewed dispositions to the two holds, update side-tool API/browser/
+    notebook projections and handoff, and close only the demonstrated scope.
+    Preserve the separate `umbrella_compatibility` all-forty condition: target
+    checks do not execute the other twenty-four source-matrix cells or authorize
+    a full label. Other-six execution or a contract change needs a separate
+    scope decision. Preserve accepted records and numerical/authority limits.
+
+  Reuse accepted fixtures and checkers; run focused new checks and affected
+  regressions, with independent family runs parallel where practical. No broad
+  Tranche 8 campaign rerun is required unless a concrete failure justifies it.
 - [ ] P9-10.2: Verify deterministic replay, numerical comparison conventions,
   independent charge-edge results, and runtime-generated receipt evidence.
 - [ ] P9-10.3: Run relevant old-family regressions and verify accepted release

@@ -1688,6 +1688,12 @@ PATHS |= RECONCILED_CONTEXT_PATHS | {
 
 # Bounded Tranche 9 implementation/evidence; no new support permission.
 PATHS |= {
+    'implementation/phase-9-grcv4/verification/p996_acceptance.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json',
+    'implementation/phase-9-grcv4/verification/p996_support_review.py',
+    'implementation/phase-9-grcv4/verification/test_p996_support_review.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.6-SupportReview.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.6-Review.md',
     'implementation/phase-9-grcv4/verification/p995_acceptance.py',
     'implementation/phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json',
     'implementation/phase-9-grcv4/verification/p995_public_conflict.py',

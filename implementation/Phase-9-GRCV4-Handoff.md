@@ -1,6 +1,42 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — accepted P9-9.5 public conflict refusal (2026-10-28)
+## Current checkpoint — accepted P9-9.6 bounded support review (2026-10-28)
+
+Branch `work/p9-9-first-group`; accepted P9-9.5 committed at `5efecfd4`.
+P9-9.6 is **bounded-accepted** on 2026-10-28 for C_OS, C_CI, A_CI, A_PC;
+[decision](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json). [Review and reproduction](./phase-9-grcv4/tranche-9/P9-9.6-Review.md);
+[exact identities and evidence](./phase-9-grcv4/tranche-9/P9-9.6-SupportReview.json).
+Accepted prerequisites reconcile with sixteen source-model disabled cells and
+enabled expansion/public replay evidence. No new trajectories, source changes,
+scientific claims or full-conformance grant. Five focused Python checks and
+twelve browser tests pass; API, source access and notebook expose the same holds.
+
+The next implementation work is P9-10.1a, followed by P9-10.1b/c:
+
+- **P9-10.1a:** close the mandatory baseline `basin_attributes` / `basin_identity`
+  interface. Trace classification and identity semantics first, routing missing
+  authority before implementation. Test fresh classification, threshold boundaries,
+  expansion, reset, snapshot/replay and rollback for the four families with small
+  fixtures. Optional completed sparks/hierarchy remain separate.
+- **P9-10.1b:** reuse the four accepted expanded targets to verify their disabled
+  transition/state/observable/lifecycle surfaces, with exact model bindings.
+  Exercise entry/return, both histories, reset and replay where admissible; verify
+  explicit rejection outside the defined legacy domain. Record actual target
+  outcomes without substituting source acceptance or repeating enabled campaigns.
+- **P9-10.1c:** reconcile a/b successor evidence and reviewed holds in the support
+  view, side-tool API/browser/notebook and handoff. Preserve the frozen all-forty
+  condition for `grc9v3_disabled_compatibility` and full conformance. These target
+  checks do not fill the other twenty-four source cells/six unselected families.
+
+These children are planned, not executed. Reuse accepted fixtures/checkers,
+parallelize independent family checks, and preserve accepted historical records.
+
+Retain CI resolution limits, pointwise A_PC carrier margins, defined-domain
+legacy refusal and original D10.2 indeterminate authority. P9-10.2–10.6 still
+own final replay/regression, publication, debt reconciliation and P9-G4. This
+review does not silently promote the public runtime's pending support status.
+
+## Previous checkpoint — accepted P9-9.5 public conflict refusal (2026-10-28)
 
 Branch `work/p9-9-first-group`; P9-9.4b accepted at `1ea6807c`.
 P9-9.5 is bounded-accepted for **C_OS, C_CI, A_CI, A_PC** on 2026-10-28;
