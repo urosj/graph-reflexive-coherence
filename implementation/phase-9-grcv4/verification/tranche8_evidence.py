@@ -1008,7 +1008,13 @@ class Sources:
                     basis="pinned_execution_with_separate_scoped_user_acceptance")
                 return frozen
             frozen = git(self.root, "show", CHECKPOINT + ":" + name)
-            require(historical or self.current_bytes(name) == frozen, "Tranche 8 retained source drift: " + name)
+            if not historical and self.current_bytes(name) != frozen:
+                from p994b_runtime_successor import historical_source
+                expected = hashlib.sha256(frozen).hexdigest()
+                require(historical_source(self.root, name, expected) == expected,
+                        "Tranche 8 retained source drift: " + name)
+            # Preserve the original checkpoint reference in the retained index.
+            # An enumerated successor authenticates history, not current code.
             self.values[name] = frozen
             self.refs[name] = dict(path=name, sha256=hashlib.sha256(frozen).hexdigest(),
                                    revision=CHECKPOINT, basis="historical_git" if historical else "current_equals_accepted_checkpoint")
@@ -1046,7 +1052,14 @@ def historical_index_admission(root):
 
 @contextmanager
 def historical_index_session(names=BOUNDARY_MODULES, *, root=ROOT):
-    with validation_session(names,root=root,historical_bindings=boundary_bindings(root)):
+    bindings=boundary_bindings(root)
+    paper='implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md'
+    expected=hashlib.sha256(git(root,'show',BOUNDARY_REVISION+':'+paper)).hexdigest()
+    if hashlib.sha256((Path(root)/paper).read_bytes()).hexdigest()!=expected:
+        from p994b_runtime_successor import historical_source
+        require(historical_source(root,paper,expected)==expected,'historical index paper drift')
+    bindings[paper]=expected
+    with validation_session(names,root=root,historical_bindings=bindings):
         with historical_index_admission(root):
             yield
 
@@ -1786,7 +1799,7 @@ def _build(root):
 
 
 def check_boundary_storage_successor(boundary, retained, root):
-    """Only the accepted 1 MB storage-policy successor differs from 8.4c.
+    """Resolve exact storage-policy and paper epochs of the old 8.4c contract.
 
     Reconstruct every scientific/declaration field unchanged. Do not rewrite
     the historical contract or accept an arbitrary edited storage document.
@@ -1805,6 +1818,15 @@ def check_boundary_storage_successor(boundary, retained, root):
     row=next(r for r in reconstructed['source_bindings'] if r['path']==path)
     require(row['sha256']==new,'storage changed during reconstruction')
     row['sha256']=old
+    paper='implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md'
+    row=next(r for r in reconstructed['source_bindings'] if r['path']==paper)
+    expected=next(r['sha256'] for r in retained['source_bindings'] if r['path']==paper)
+    if row['sha256']!=expected:
+        from p994b_runtime_successor import historical_source
+        require(row['sha256']==hashlib.sha256((Path(root)/paper).read_bytes()).hexdigest()
+                and historical_source(root,paper,expected)==expected,
+                'unrecognized boundary paper successor')
+        row['sha256']=expected
     require(boundary.seal(reconstructed)==retained,'boundary contract differs beyond accepted storage policy')
 
 
@@ -1822,6 +1844,14 @@ def check_mechanics_storage_successor(checker, retained):
     require(row['sha256']=='3cbc5e3d638a0281df0d94a98e282a9c59d29de8bccef0bf1224ad955d8bb11e',
             'unrecognized mechanical storage predecessor')
     row['sha256']='89e4728977ee45c8ea158179c3a5e7329fa5f45484c5df3e289c2ea3361f4a63'
+    paper='implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md'
+    row=next(r for r in adapted['source_bindings'] if r['path']==paper)
+    current=hashlib.sha256((ROOT/paper).read_bytes()).hexdigest()
+    if row['sha256']!=current:
+        from p994b_runtime_successor import historical_source
+        require(historical_source(ROOT,paper,row['sha256'])==row['sha256'],
+                'unrecognized mechanical paper successor')
+        row['sha256']=current
     revision='5b9836358af2873e524e6ceae7256639e8a6bbce'
     git(ROOT,'merge-base','--is-ancestor',revision,'HEAD')
     historical_paths=git(ROOT,'ls-tree','-r','--name-only',revision,'src/pygrc/models').decode().splitlines()
@@ -1842,9 +1872,35 @@ def browser_source(value):
     return "// Generated from checked retained Tranche 8 evidence; not new authority.\nexport const TRANCHE8_EVIDENCE = " + json.dumps(value, separators=(',', ':'), ensure_ascii=False) + ";\n"
 
 
-def checked(root=ROOT):
-    value = build(root)
-    require((Path(root) / ASSET).read_text() == browser_source(value), "Tranche 8 browser evidence drift")
+def checked(root=ROOT, *, rebuild=False):
+    """Authenticate the committed historical projection and every source.
+
+    Re-serializing every large retained result is reserved for explicit rebuilds.
+    No live-file or successful-validation cache survives a status request.
+    """
+    root=Path(root).resolve()
+    if rebuild:
+        value=build(root)
+        require((root/ASSET).read_text()==browser_source(value),"Tranche 8 browser evidence drift")
+        return value
+    import phase9_implementation_policy as policy
+    policy.restore_packed_evidence(root)
+    revision='02528b5d'
+    git(root,'merge-base','--is-ancestor',revision,'HEAD')
+    text=(root/ASSET).read_text()
+    require(text.encode()==git(root,'show',revision+':'+ASSET),"Tranche 8 browser evidence drift")
+    value=json.loads(text.split(' = ',1)[1].rstrip().removesuffix(';'))
+    require(text==browser_source(value)
+            and value['view_digest']==digest({k:v for k,v in value.items() if k!='view_digest'}),
+            'Tranche 8 projection identity drift')
+    # The immutable projection cannot nominate new inputs or promote a result:
+    # its complete bytes must match the committed checkpoint above.
+    with validation_session((),root=root):
+        sources=Sources(root)
+        for ref in value['source_refs']:
+            sources.raw(ref['path'],historical=ref['basis']=='historical_git')
+            require(sources.refs[ref['path']]==ref,'Tranche 8 indexed source identity drift')
+    require((root/ASSET).read_text()==text,'Tranche 8 projection changed during read')
     return value
 
 
@@ -3167,7 +3223,7 @@ def main():
                 "family status requires the 8.4c checkpoint without numerical options")
             print(json.dumps(family_status(ROOT, args.family), indent=2))
             return
-        value = checked()
+        value = checked(rebuild=args.action == "check")
         require(not args.family and not args.recheck_numerics and not args.oracle and not args.preparation and args.checkpoint == "8.4b", "numerical/checker options require verify-retained")
         print(json.dumps(value if args.action == "status" else dict(status="passed", view_digest=value["view_digest"],
               level=value["verification"]["level"], accepted_cells=value["coverage"]["accepted_cells"], native_trajectories_rerun=False), indent=2))

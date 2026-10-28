@@ -227,6 +227,14 @@
       "storage_sha256": "cedf6f862e3bdec343801950f2f450b4f6c1b6f5c6e461aa0f332b9a9b8751b8"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-AOSOracleInputs.json",
+      "size": 1363357,
+      "sha256": "6490d91f08fd38f6434999c4fe91fa1dc50eb2a305dbc3e7ac0971649ff10c83",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-AOSOracleInputs.json.xz",
+      "storage_size": 29820,
+      "storage_sha256": "516fcb0985745b21887393fb3b5a537bcff19d232d09124d084fcb317c922f2c"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json",
       "size": 4019544,
       "sha256": "2044970cc9659caf3b2f52027e8f0e03fa61b7ed98c2fa248e1bca7a139bb6cc",

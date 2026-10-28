@@ -21,8 +21,10 @@ def main():
                         help="query current authority without requesting cached pressure evidence")
     parser.add_argument("--tranche8-only", action="store_true",
                         help="execute the real retained Tranche 8 query cell without historical or numerical reruns")
+    parser.add_argument("--aos-only", action="store_true",
+                        help="execute the current A_OS retained-evidence cell without numerical reruns")
     args = parser.parse_args()
-    if args.status_only and args.tranche8_only:
+    if sum((args.status_only, args.tranche8_only, args.aos_only)) > 1:
         parser.error("select one focused notebook mode")
     root = repository_root()
     if Path(sys.prefix).resolve() != (root / ".venv").resolve():
@@ -34,6 +36,8 @@ def main():
         cells = [c for c in cells if c["id"] in {"discover-and-import", "query-status"}]
     if args.tranche8_only:
         cells = [c for c in cells if c["id"] in {"discover-and-import", "query-tranche8"}]
+    if args.aos_only:
+        cells = [c for c in cells if c["id"] in {"discover-and-import", "query-aos"}]
     for index, cell in enumerate(cells):
         exec(
             compile(
@@ -43,6 +47,12 @@ def main():
             ),
             namespace,
         )
+    if args.aos_only:
+        from grcv4_explorer.aos import aos_status
+        if namespace["phase9_aos"] != aos_status(root):
+            raise RuntimeError("notebook/API A_OS mismatch")
+        print("PHASE9_AOS_NOTEBOOK_PASS native_rerun=false")
+        return
     if args.tranche8_only:
         from grcv4_explorer.tranche8 import tranche8_status
         observed = namespace["phase9_tranche8"]

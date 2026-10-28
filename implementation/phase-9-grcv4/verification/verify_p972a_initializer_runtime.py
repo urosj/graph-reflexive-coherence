@@ -51,9 +51,9 @@ def roster():
 
 
 def package():
-    from build_p972a_initializer_release import build
+    from p9_aos_g2_sources import initializer_package
     from pygrc.models.grc_v4_codec import INITIALIZER_RELEASE_ID, load_initializer_schema
-    for name, data in build().items():
+    for name, data in initializer_package(p.ROOT).items():
         p.require((p.ROOT / name).read_bytes() == data, "initializer package drift: " + name)
     load_initializer_schema()  # Executes the actual installed codec binding, not an alternate validator.
     return INITIALIZER_RELEASE_ID

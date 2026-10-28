@@ -1,0 +1,210 @@
+{
+  "schema": "p984h-aos-inputs-v1",
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-AOSInputs.json",
+      "sha256": "5f3e92fea6a2d1561f2c3d00cfa7f9fe1120a72a8bae277b99c8a7daef39896c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-AOSPlan.md",
+      "sha256": "17006dbdabc282f1ae96778cf3cbb152a2ce0f16341a8490488de2d660d2a271"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-AOSResults.json.xz",
+      "sha256": "682d76d579c0bb1e0cb8f0f498153240a8423f1534f8633e910ece56103641d0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-AOSPlan.md",
+      "sha256": "1cf7304bfbec68ff4616e1dac740a0529bad48e1c98adb40c2be4ef905704bf3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_OS.json",
+      "sha256": "cd8f260595a1d9fbd4b78e82d1beede49b6798ab563ae307dfe0ea635bfa6814"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_feasibility.py",
+      "sha256": "28bfe6a9543bb67e13b5aef534577dac178e976548f2d22b15c7db00ebf29549"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_investigation.py",
+      "sha256": "31b5c76b3d0b9199f25d8ce927ae455618a1baf12ccab0f70bbd8bff518a0993"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_native.py",
+      "sha256": "dcb67b4e3477e89f76ac9c0342150422ed47a547e6c8790e0bf94aa762065106"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aci_staged.py",
+      "sha256": "9deb9304333f49e13a04b363d0c24443044b4df8521f908f6abc579e7823a9b4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_aos.py",
+      "sha256": "7734164bc1253eca0efeadaaf8d0d08809c1e2b74a4939e06af32bb7a1a19877"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984g_apc_feasibility.py",
+      "sha256": "b39607a5680cdbbfdfdb8ab5442a3256d64b82b45a93acb54ea02368205df68e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984gh_aos_native.py",
+      "sha256": "6914b68af0a4e30ae5e14bc220ec1e025c13578be3b000f344da2ba67b5128b5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984h_validation_reuse.py",
+      "sha256": "bd4382424b67418057266223b760dc484f2166d32775e2f6a4833ac92311419e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/prepare_p983_all_realizations.py",
+      "sha256": "abe7444c3c62edaef3e0f9ed797f9e802ddcaf2a9826278df66e42dfc59f3f40"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984g_aos.py",
+      "sha256": "7013ce483fbd1952ae5750386b20f3e6ce8641e7830f46d0a6328ca6d8f1967d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p984gh_aos_native.py",
+      "sha256": "9f276749fa95dc2294841b0d11fc5f403ab3dc86781504c2d73d6f12a2afc12e"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_evidence.py",
+      "sha256": "dd164fc95543e9f803263929d73d58b1e8df0e8b1ba765a14fa532c7ffbe8ed9"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix.py",
+      "sha256": "b80df50ebc14392016ab2eccde933f5c32e4a643fe6dc5cf957fe3f46552071c"
+    },
+    {
+      "path": "src/pygrc/models/_grc_v4_matrix_flint.py",
+      "sha256": "7ff0e9ca6d7f42ad150b06c8d604f5b3b79de1943b1e8e6f5621386262af7121"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "40ba2683facd22286bb360da64664c80fe62d88763d2eab7feb7469132b1c328"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "609a390888cdc97932c568a2c68b21a29d5ce6beffc1c9a62bd887147e98e6ef"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "00b92688cb4bc82cf54ac462e6a8f5eb6f09e4386d4db1b2a6ac373758b98f19"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "9557a67ad2b9867e919c29dace461fb0f1b175d4d0be597171de4c112f3f07b3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_certification.py",
+      "sha256": "6e65825a6e55e01e860eed6f778cdec0deb91039d3ddec8506a9802078b5d08b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "289d1d8088560ca2b74b13be418373eed3339a10a0c25a90dc811f50dd87797c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_event_codec.py",
+      "sha256": "cd504ea7eb143c8a96b3b0a5f256cee19a020b1f759f7f16b1c50bbb8273e593"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_events.py",
+      "sha256": "66d4778ed273871066a020ee8d8c5e33122c31f56b26569711876c1c4c2b8a11"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_exact.py",
+      "sha256": "d336c356d31d3ed0f1b160ff5a9be683b9aa56229b94a96053b95f70df202204"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "fbacf20af4fe754634bf88d22898028e8f1223c7e3189e925abf790a26ec8ed3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_initializer.py",
+      "sha256": "28ed997c515cf249c188e53e728c860a79cdc816909f2b1769a2be97694000fc"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_interval.py",
+      "sha256": "62b1aa581f63c162c55f504f6f7196546a622b01620de5c9f3288eba58055781"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "0facbe0ea5534d38c543e4d8fda3fa0fe277cf0dd364cc568d7b57a10c9ebd88"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_linear.py",
+      "sha256": "0d8217ad41ec907718a975568734bbbf76615342163947d91c761215a0ce0346"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_migration.py",
+      "sha256": "714f37b346842370eb4d49ec279edc82a82e91d668b066942846e655f0d92dc0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_numerics.py",
+      "sha256": "55dc6e7e32361cbf507e6998c9b4e02c82f3507d3245a8a4517aa3aba30242f7"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_pc.py",
+      "sha256": "c72cb21a7293bdefac925938d7b22506fdf51551b7f1ca3661240dc2c2938b89"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "bdb8cca4e49a531d45b5f033609886c91024fcc469c52d7f7e8d9ae148a9c546"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "29238f6ec72e74a9b61fe235d8ca6c40253ae2e1fdbb56213bc901f1a22c67ff"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "f4538b8d23409aac96375bb1a952712c37f25b7c0a7df4c8fa5a61e90cdcc181"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b_graph.py",
+      "sha256": "a86a80068dc71eea43fd9fcc56cfdcb4e676fa316fe76bfe009a1c296441a058"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "299fc7924704b9f17591a1767c28d3d112ada0334a934092312fe0a9e6be66e0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "9c6c24b1b3ded248b2f9a8d93bcb1682139d719dfab8bb65159913eff28f1fa7"
+    }
+  ],
+  "prerequisite_digest": "651edaca5d929c1342d2a2dc08b102191dacdd4318458dadf1061edffb2126fb",
+  "exact_backend": "flint",
+  "numerical_policy": "certified_arb_256_weighted_v1",
+  "validation_memo": "exact_content_schema_memo_8x4MiB_v1",
+  "scope": {
+    "prepared_source_steps": 2,
+    "prepared_target_steps": 2,
+    "events": 1,
+    "actual_target_steps": 20,
+    "final_reads": 2,
+    "current_source_reused": true,
+    "larger_covariance_pending": true
+  },
+  "caps": {
+    "step": 600,
+    "event": 1200,
+    "final": 600
+  },
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "record_digest": "450dc82492aab200575a245ec5f3dc64e95ca761a98137004d399dd2df751a93"
+}

@@ -1,5 +1,29 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Active scope — A_OS fifth realization (2026-10-28)
+
+A_OS is implemented on `work/p9-aos-tranches-8-9`, based on `02528b5d`,
+from the first missing P9-8.4d obligation through P9-9.6. Its earlier `.b/.c`
+acceptance is retained. See the [bounded review](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.md),
+[checked evidence](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.json)
+and [validation record](./phase-9-grcv4/tranche-9/P9-AOS-Validation.json).
+
+The deep, ordering, chart, larger-graph, lifecycle and Tranche 9 campaigns
+passed. FLINT/Arb and bounded exact-content reuse support the larger runs.
+The original equal-share reset fixture remains excluded; the separately
+identified companion passed the actual event, ten steps per role, final reads
+and eight larger covariance events. All measured execution caps passed.
+
+The side-tool's `/api/aos`, first browser panel and focused notebook cell expose
+all sixteen checkpoints and exact source downloads. New execution remains
+pending user acceptance: the source compatibility matrix is sixteen accepted,
+four A_OS passing pending acceptance, and twenty unselected cells. The accepted
+four-family records remain unchanged. A_OS basin support and optional completion
+remain unselected; full GRC9V4 conformance is not claimed.
+
+Next: review the bounded A_OS results. P9-10.2 is deferred on this branch.
+The older P9-10.1 checkpoint below remains accepted for its four-family scope.
+
 ## Accepted checkpoint — P9-10.1 bounded support closure (2026-10-28)
 
 Accepted P9-10.1b is committed at `cc51d9f6` on `work/p9-10-basin-interface`.
@@ -13,7 +37,8 @@ It executes two disabled steps per family to reach return, with no expansion
 or enabled evolution campaign and no production changes.
 User accepted P9-10.1c, its direct-target supplement and bounded P9-10.1
 closure on 2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json).
-Next: P9-10.2, preserving the four-family scope. No P9-10.2 work has started.
+Historical next step: P9-10.2, preserving the four-family scope; deferred by
+the active A_OS work above. No P9-10.2 work has started.
 
 The current view resolves `basin_surface` for explicit v2 successors and
 `target_identity_scope` for the four exact expanded v1/v2 compatibility targets.

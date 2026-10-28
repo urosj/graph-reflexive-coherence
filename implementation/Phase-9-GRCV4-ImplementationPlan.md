@@ -1,5 +1,7 @@
 # Phase 9 GRCV4 Implementation Plan
 
+Current user-selected work (2026-10-28): [A_OS fifth realization through Tranche 9](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.md), implemented from the missing P9-8.4d scope after accepted A_OS `.b/.c`. Bounded execution and validation passed; user acceptance remains pending. P9-10.2 is deferred.
+
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
 2026-10-02 current direction: P9-8.0 is complete following explicit acceptance

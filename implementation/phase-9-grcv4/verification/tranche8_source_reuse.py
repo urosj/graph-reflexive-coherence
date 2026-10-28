@@ -23,16 +23,18 @@ def record():
 
 def retained_bindings(current):
     value = record()
-    result = dict(current)
+    from p9_aos_g2_sources import project
+    result = project(p.ROOT, current, value["changes"])
+    live = project(p.ROOT, {n: p.sha(p.safe_path(p.ROOT, n).read_bytes()) for n in result}, value["changes"])
     for name, expected in value["additions"].items():
         if name in result:
-            p.require(result[name] == expected == p.sha(p.safe_path(p.ROOT, name).read_bytes()),
+            p.require(result[name] == expected == live[name],
                       "unreviewed historical-roster addition: " + name)
             del result[name]
     for name, row in value["changes"].items():
         if name not in result:
             continue
-        p.require(p.sha(p.safe_path(p.ROOT, name).read_bytes()) == row["after_sha256"],
+        p.require(live[name] == row["after_sha256"],
                   "unreviewed change after Tranche 8 source bridge: " + name)
         p.require(p.sha(p.git(p.ROOT, "show", value["base_commit"] + ":" + name)) == row["before_sha256"],
                   "unrecoverable historical G2 input: " + name)

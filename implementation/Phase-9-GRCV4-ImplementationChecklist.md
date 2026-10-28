@@ -3141,6 +3141,13 @@ the full ten-profile plan.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
     completed compact evidence and the 1 MB raw-file compression rule.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+    - [x] A_OS fifth-realization implementation selected on 2026-10-28:
+      [bounded review through Tranche 9](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.md)
+      and [validation](./phase-9-grcv4/tranche-9/P9-AOS-Validation.json).
+      Accepted `.b/.c` retained; `.d–i`, 8.5/8.6 and applicable Tranche 9
+      execution passed with API/browser/notebook evidence. Original large reset
+      exclusion retained; separate companion passed. No all-ten closure.
+      - [ ] User acceptance of the new bounded A_OS results.
     - [x] C_OS: [20 cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md),
       D59/66/73/94, depths three/four; accepted 2026-10-12.
       - [x] Independent layouts, complete references, exact represented charge,

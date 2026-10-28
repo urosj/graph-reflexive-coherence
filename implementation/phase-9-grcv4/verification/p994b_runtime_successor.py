@@ -149,6 +149,27 @@ SOURCES.update({
     }
 })
 
+# A_OS fifth-realization integration; original four-family runs stay historical.
+SOURCES.update({'implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py': {'current_sha256': 'a56f02f75084cb9eb10dcdb772b3d82adae880c9a2803ba325615e11390cd0c2',
+                                                                                   'predecessors': {'4673acb4d6b1985d4d412b70d4d931504a7241c5b0e74a979f75f49d4932ed85': '02528b5d',
+                                                                                                    'de53604c10b6d8a350b77e8331efea486963757014f195eb274c04508ebbe052': 'b30e630c',
+                                                                                                    'ee6f37a7b3caf25977209f4a886ccc93227c2d0af5db7584ab9d0e4ca6141feb': 'a04095f8'}},
+ 'src/pygrc/models/grc_9_v4_api_lifecycle.py': {'current_sha256': '3f0055660239636dd9a34da92b65d427598f9be92b0438404dbd5644db7a7370',
+                                                'predecessors': {'9c3d45b763eced982b571f6488da4d22b2f7b65f078b2046e6a3f24e50065a88': 'b30e630c',
+                                                                 'f363dd248ca52e956b43a7f53dde8a0785abe2b2237b7f977d3d8f67b0b981ab': '02528b5d'}},
+ 'src/pygrc/models/grc_9_v4_legacy.py': {'current_sha256': '4f08d3e2b54324352167d41429fda0f10b84cc41bfae5c3a38a701d042078cdc',
+                                         'predecessors': {'03e51fde0dbdd3d1304c01f72ef1bc198350894b0ec2e9c8b19fce28faf46732': 'b30e630c',
+                                                          'c42bcfca64903bca1cb48fadb782bd9081d8e764df09944bb4ddedd3e327d026': '02528b5d'}},
+ 'src/pygrc/models/grc_9_v4_owner.py': {'current_sha256': '5a0fec1d1bb4ec3d9bc4b8e2b8e3b144ccfff5190de8a23a62496ced331c69e6',
+                                        'predecessors': {'64f2dadde0b2902444ea4b0dd10d139acda3f69053844d1d7e427231db254563': 'b894c95d',
+                                                         '82f36656f0923aff56b2e9d5590f6f420f9209ed42eea4dddda50fe01f11a5f7': '02528b5d',
+                                                         'a90bdcd3cc5d8ffd84e7f909f811b74b53f29b2b6ff94ef6a80356f62b3f0748': '7b16696a'}},
+ 'tests/models/test_grc_9_v4_contracts.py': {'current_sha256': '26080effe823ab953131003068f33f8dc0b5e0986b06b1efa3e08f9de29c1546',
+                                             'predecessors': {'9c2ffff7038ecc02077032f6c1da3923863bfaf017a738e24a488e860aaf07c1': '02528b5d'}}})
+
+SOURCES.update({'tests/models/test_grc_9_v4_architecture.py': {'current_sha256': '125ea80cca75bbd7382bbf3cf79a1f5925fc117845ff4aed9d6f1e355cf24ea0',
+                                                'predecessors': {'bfb9be1c4ce4e909d8a695da1f5a395e40e0416262d64cb3434b9c01306363fb': '02528b5d'}}})
+
 def historical_source(root, name, expected):
     row = SOURCES.get(name)
     if row is None or expected not in row["predecessors"]:

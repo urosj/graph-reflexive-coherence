@@ -1,6 +1,7 @@
 """Small native basin checks. --check authenticates retained evidence, not a rerun."""
 
 import argparse
+from p9_aos_historical import references_match
 import hashlib
 import json
 from pathlib import Path
@@ -124,7 +125,7 @@ def check(root=ROOT, family="C_OS"):
         or value["family"] != family
         or value["status"] != "passed_bounded_native_execution"
         or value["authority_record_digest"] != AUTHORITY_DIGEST
-        or value["source_refs"] != references(root)
+        or not references_match(root, value["source_refs"], references(root))
         or value["tests_run"] != 4
         or len(set(value["tests"])) != 4
         or any(

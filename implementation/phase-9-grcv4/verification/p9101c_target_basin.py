@@ -1,5 +1,7 @@
 """Focused exact-v2-target basin checks. --check rechecks saved equations, not native trajectories."""
 
+from p9_aos_historical import references_match
+
 import argparse
 from copy import deepcopy
 from fractions import Fraction as Q
@@ -443,7 +445,7 @@ def check(root=ROOT, family="C_OS", *, equations=False):
     value, ref = load(root, family)
     old, old_ref = predecessor.load(root, family)
     require(
-        value["source_refs"] == references(root) and value["predecessor"] == old_ref,
+        references_match(root, value["source_refs"], references(root)) and value["predecessor"] == old_ref,
         "target basin execution/source drift",
     )
     return validate(value, old["evidence"]["v2"], equations=equations), ref

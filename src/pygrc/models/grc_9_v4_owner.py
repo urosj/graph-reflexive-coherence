@@ -42,6 +42,7 @@ _OWNERS = {
     "C_CI": events.GRC9V4CCIOperation,
     "A_CI": events.GRC9V4ACIOperation,
     "A_PC": events.GRC9V4APCOperation,
+    "A_OS": events.GRC9V4AOSOperation,
 }
 _LAYOUT = "grc9v4-enabled-lifecycle-checkpoint-v1"
 
@@ -246,7 +247,7 @@ class GRC9V4EnabledSeed:
 def _admit_state(state):
     family = getattr(state, "FAMILY", None)
     if family not in _OWNERS or type(state) is not _OWNERS[family].STATE:
-        raise TypeError("expected a selected native C_OS/C_CI/A_CI/A_PC state")
+        raise TypeError("expected a selected native C_OS/C_CI/A_CI/A_PC/A_OS state")
     if state.specialization.resolved["spark"]["child_stabilization"] is not None:
         raise ValueError("completion/hierarchy is unselected in P9-9.1b")
     return _OWNERS[family](state).state

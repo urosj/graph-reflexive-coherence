@@ -32,7 +32,5 @@ def tranche10_support_source(root, name):
         refs[path] = checker.execution.ref(root, path)
     if name not in refs or Path(name).is_absolute() or ".." in Path(name).parts:
         raise KeyError("source is not indexed by the support reconciliation")
-    raw = (root / name).read_bytes()
-    if checker.execution.sha(raw) != refs[name]["sha256"]:
-        raise ValueError("support source changed during read")
-    return raw, refs[name]
+    from p9_aos_historical import read_source
+    return read_source(root, refs[name])

@@ -63,7 +63,12 @@ def build():
 
     def pin(name):
         content = p.safe_path(p.ROOT, name).read_bytes()
-        p.require(content == p.git(p.ROOT, 'show', BASE + ':' + name), 'P9-7.8 input drift: ' + name)
+        original = p.git(p.ROOT, 'show', BASE + ':' + name)
+        if content != original:
+            from p994b_runtime_successor import historical_source
+            p.require(historical_source(p.ROOT, name, p.sha(original)) == p.sha(original),
+                      'P9-7.8 input drift: ' + name)
+            content = original
         bindings[name] = p.sha(content)
         return content
 

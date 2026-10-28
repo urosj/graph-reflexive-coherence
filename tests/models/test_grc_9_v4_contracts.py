@@ -127,7 +127,7 @@ class PublicContractTests(unittest.TestCase):
         from pygrc.models.grc_9_v4_owner import GRC9V4EnabledOperation
 
         self.assertEqual(
-            set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC"}
+            set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS"}
         )
         unavailable = []
         with patch.object(
@@ -168,7 +168,7 @@ class PublicContractTests(unittest.TestCase):
             m.migrate_profile(request)
         self.assertEqual(m.snapshot(), snapshot)
         self.assertEqual(len(m.support_status()["declared_families"]), 10)
-        self.assertEqual(len(m.support_status()["execution_families"]), 4)
+        self.assertEqual(len(m.support_status()["execution_families"]), 5)
 
     def test_contract_wire_and_execution_options_are_closed(self):
         cfg = self.configs["C_OS"]

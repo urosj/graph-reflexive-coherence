@@ -535,7 +535,9 @@ DISABLED_DELEGATE_PATHS = (
 )
 DISABLED_DELEGATE_LEAVES = frozenset(
     f"P9-9.2-{family}-{surface}"
-    for family in ("C_OS", "C_CI", "A_CI", "A_PC")
+    # A_OS is explicitly selected by the user in P9-AOS-Tranches8-9-Plan.md.
+    # Work permission does not add a compatibility acceptance decision.
+    for family in ("C_OS", "C_CI", "A_CI", "A_PC", "A_OS")
     for surface in ("transition", "state", "observable", "lifecycle")
 )
 
@@ -578,6 +580,8 @@ PUBLIC_API_PATHS = (
     "src/pygrc/models/__init__.py",
     "tests/models/test_grc_9_v4.py",
     "tests/models/test_grc_9_v4_contracts.py",
+    # User-selected fifth realization, reusing the public integration owner.
+    "tests/models/test_grc_9_v4_aos_integration.py",
     "tests/models/test_grc_9_v4_architecture.py",
     "src/pygrc/models/grc_9_v4_lifecycle.py",
     "src/pygrc/models/grc_9_v4_owner.py",

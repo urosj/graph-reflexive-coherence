@@ -29,11 +29,9 @@ def target_compatibility_source(root, name):
     view = target_compatibility_status(root)
     refs = {
         r["path"]: r
-        for r in (*view["records"], *view["source_refs"], *checker.references(root))
+        for r in (*view["records"], *view["source_refs"], *checker.load(root, "C_OS")[0]["source_refs"])
     }
     if name not in refs or Path(name).is_absolute() or ".." in Path(name).parts:
         raise KeyError("source is not indexed by expanded-target evidence")
-    raw = (root / name).read_bytes()
-    if checker.sha(raw) != refs[name]["sha256"]:
-        raise ValueError("expanded-target source drift")
-    return raw, refs[name]
+    from p9_aos_historical import read_source
+    return read_source(root, refs[name])

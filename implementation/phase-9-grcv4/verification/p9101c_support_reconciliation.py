@@ -35,7 +35,8 @@ def ref(root, name, pointer=None):
         not Path(name).is_absolute() and ".." not in Path(name).parts,
         "nonportable evidence path",
     )
-    value = dict(path=name, sha256=sha((root / name).read_bytes()))
+    from p9_aos_historical import reference
+    value = reference(root, name)
     if pointer is not None:
         value["json_pointer"] = pointer
     return value
