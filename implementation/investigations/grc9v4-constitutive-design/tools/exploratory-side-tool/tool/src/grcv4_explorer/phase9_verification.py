@@ -29,6 +29,8 @@ def _policy(root):
 
 def _profile_next_gate(views):
     """Display only: consume checked materializer views, never grant authority."""
+    if 'tranche10_support' in views:
+        return views['tranche10_support']['next_work']
     if 'tranche9_support' in views:
         return 'P9-9.6 bounded support review accepted; full conformance held. Next: P9-10.1a basin interface, P9-10.1b expanded-target compatibility, then P9-10.1c reconciliation.'
     if 'tranche9_conflict' in views:
@@ -156,6 +158,8 @@ def verification_status(repo_root: Path) -> dict:
             profile_views['tranche9_public'] = tranche9_public_status(root)
             profile_views['tranche9_conflict'] = tranche9_conflict_status(root)
             profile_views['tranche9_support'] = tranche9_support_status(root)
+            from .tranche10_support import tranche10_support_status
+            profile_views['tranche10_support'] = tranche10_support_status(root)
             # current_boundary authenticated these rows; the end-of-read check
             # rejects concurrent changes. Do not repeat the whole policy chain.
             work = {r['path']: r for r in module.read(root / module.WORK)['entries']}

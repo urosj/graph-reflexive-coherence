@@ -1,0 +1,45 @@
+{
+  "schema": "p9101a-basin-design-acceptance-v1",
+  "status": "accepted_bounded_design",
+  "accepted_on": "2026-10-28",
+  "user_instruction": "accept and commit, then follow authority \u2192 paper \u2192 spec propagation.",
+  "policy_id": "grc9v4-terminal-flow-regions-v1",
+  "subjects": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9BasinInterfaceAuthorityProposal.md",
+      "sha256": "dfe65215d73af572ed57014579c0a7b10d0f675a018077a98fc92116e4f0bb46"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/p9-basin-interface/IndependentReview.md",
+      "sha256": "d40d887e4ec8be2f6ce83edd04452558b6d1d4f39f102bf5b30494cbf6cb6425"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/p9-basin-interface/AuthorityAudit.json",
+      "sha256": "f19f578008d297f57e5d9e05cbc94bcc720121cab3eaf50c32641feee202c947",
+      "record_digest": "fba617c3374f32197348f721fdcba629d148e363952e4a632da936f7bf0ca803"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/p9-basin-interface/ConditionalChecks.json",
+      "sha256": "11ea4de959feeb3fb9334a0e24b90c381e48623c6aa3cb14843eb45430a277b2",
+      "record_digest": "b51658e1a7add07b9decf181cded80751ccd8284f3ca3744cba1391ff1414d56"
+    }
+  ],
+  "scope": "Corrected baseline represented-flow diagnostic contract, including BIF-1/BIF-2/BIF-3; authorizes claim/debt authority and proposal/paper/spec propagation.",
+  "selected_native_scope": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "historical_evidence_flags": "The reviewed proposal/audit/check records retain their pre-acceptance flags; this separate decision records user acceptance without rewriting their subjects.",
+  "runtime_implemented": false,
+  "runtime_conformance": false,
+  "P9_10_1a_closed": false,
+  "full_GRC9V4_conformance": false,
+  "remaining_work": [
+    "admit bounded successor claim/debt authority",
+    "propagate proposal then paper then V4 spec/schema",
+    "native interface and lifecycle implementation/conformance for the four selected families"
+  ],
+  "record_digest": "5b7e0a3975bae355bb9672482232f13e0266ded9da101314bfe4dcaf98023866"
+}

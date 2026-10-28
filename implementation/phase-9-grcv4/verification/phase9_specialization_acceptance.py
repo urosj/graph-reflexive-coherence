@@ -599,3 +599,29 @@ def public_api_authorization(root):
 
 def public_api_permitted(path, leaf):
     return leaf == "P9-9.4b" and path in PUBLIC_API_PATHS
+
+
+BASIN_PATHS = (
+    "src/pygrc/models/grc_9_v4.py",
+    "src/pygrc/models/grc_9_v4_api_lifecycle.py",
+    "src/pygrc/models/grc_9_v4_contracts.py",
+    "src/pygrc/models/grc_9_v4_lifecycle.py",
+    "src/pygrc/models/grc_9_v4_legacy.py",
+    "src/pygrc/models/grc_9_v4_basin.py",
+    "src/pygrc/models/grc_9_v4_identity.py",
+    "src/pygrc/models/grc_v4_assets/grc-9-v4-basin-interface-schema.json",
+    "tests/models/test_grc_9_v4_basin.py",
+)
+BASIN_NEW_PATHS = BASIN_PATHS[5:]
+
+
+def basin_authorization(root):
+    """Accepted design/spec propagation plus explicit native continuation."""
+    from verify_p9101a_propagation import checked_manifest
+    p.git(root, "merge-base", "--is-ancestor", "b30e630c", "HEAD")
+    checked_manifest(root)
+    return "P9-10.1a"
+
+
+def basin_permitted(path, leaf):
+    return leaf == "P9-10.1a" and path in BASIN_PATHS

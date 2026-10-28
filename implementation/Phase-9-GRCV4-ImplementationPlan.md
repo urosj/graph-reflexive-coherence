@@ -4313,6 +4313,30 @@ The API/browser/notebook expose these three limits alongside the passing evidenc
 P9-10.1 closes the two P9-9.6 gaps through the following bounded children,
 before capability publication and final conformance acceptance:
 
+P9-10.1a source review on 2026-10-28 found a missing enabled-V4 membership/identity
+producer behind the required public field. The seed test is defined, but a whole
+basin assignment and its lifecycle are not selected by that predicate. The
+[authority review](./phase-9-grcv4/tranche-10/P9-10.1a-AuthorityReview.md) links
+the accepted successor and scoped design-debt resolution. BIF-1/2/3 corrections
+and ten conditional checks are complete. Authority is admitted, and proposal/paper
+A.5.1 plus the [V4 spec/schema successor](../specs/grc-9-v4-basin-interface.md) are
+propagated with exact source bindings. Six focused authority/schema/surface tests
+pass. User accepted propagation and the BIP-F1/BIP-F2 specification clarifications
+on 2026-10-28. The native v2 successor is implemented for C_OS/C_CI/A_CI/A_PC;
+[implementation and retained checks](./phase-9-grcv4/tranche-10/P9-10.1a-NativeReview.md)
+cover fresh captures, both histories, expansion, replay modes and rollback.
+The [end-to-end pressure successor](./phase-9-grcv4/tranche-10/P9-10.1a-EndToEndReview.md)
+adds independent saved-state equations/rows and complete classification evidence,
+with distinct CI-root/W/Z checks and explicit native-category limitations.
+C_OS observes its fresh reference restart; it does not run another corrector.
+User accepted bounded P9-10.1a on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json) closes its native
+verification obligation using unchanged execution subjects and the independent
+retained-evidence review. P9-10.1b/c are also bounded-accepted below; next is P9-10.2. All-ten public declarations remain
+recognized; six additional native families are not enabled. The interpreted
+regions are diagnostic, not stable attractors; the frozen executable release,
+scientific authority and P9-9.6 support holds retain their accepted subjects.
+
 1. **P9-10.1a — Baseline basin interface closure.** Trace the existing local
    classification and basin-identity semantics, then implement the required public
    attributes and lifecycle identity for C_OS/C_CI/A_CI/A_PC. Test fresh evaluation,
@@ -4329,6 +4353,14 @@ before capability publication and final conformance acceptance:
    defined legacy domain. Record actual target-specific success or exclusion;
    source-only evidence and a passing rejection test do not establish successful
    compatibility for that target. These checks extend P9-9.2/P9-9.4a evidence.
+   The bounded implementation reuses the saved 17-vertex/16-edge targets,
+   independently constructs native V3 counterparts, and separates original v1
+   subjects from explicitly migrated basin-enabled v2 subjects. It covers
+   step/reset/step parity, fresh A initialization, A_PC carrier reset, positive
+   enabled continuation, both replay states and six refusal/rollback controls.
+   [Execution and limits](./phase-9-grcv4/tranche-10/P9-10.1b-Review.md) were
+   bounded-accepted on 2026-10-28; bounded P9-10.1 closure is recorded below. Indexed compressed evidence is accessible through the
+   side-tool; aggregate support changes remain exclusively P9-10.1c work.
 3. **P9-10.1c — Support reconciliation.** Bind the a/b successor results, review
    each hold's resulting scope, and update support projections through the side-tool
    API, browser and notebook plus the handoff. Preserve original accepted records,
@@ -4337,6 +4369,24 @@ before capability publication and final conformance acceptance:
    not execute the other twenty-four source-matrix cells. Other-six execution or a
    capability-contract change requires a separate scope decision; no full label
    follows automatically from closing the two gaps.
+   [The reconciliation](./phase-9-grcv4/tranche-10/P9-10.1c-Review.md) now joins
+   accepted a/b evidence by exact identities and both-role observation bindings.
+   The two bounded holds are resolved in the accepted current view; the historical
+   v1 declarations and accepted records remain unchanged. P9-10.1a's independently
+   pressured expansion and P9-10.1b's compatibility target are distinct subjects;
+   numerical pressure is not transferred between them. The all-forty restriction
+   is unchanged by the focused direct-target supplement: apply the existing
+   independent checker to each exact 10.1b v2 target, both roles immediately
+   after policy migration and after disabled return, after checking oracle
+   assumptions. Retain full C/W/Z, graph/context and selected root; check OS
+   restart, CI joint J/H/certificate and PC carrier consumption. The supplement
+   executes no expansion campaign and does not claim exact-CI-root signs from
+   fixed-H current bounds. The all-forty restriction
+   remains a full-capability boundary, not a blocker for bounded four-family
+   closure. Current API/browser/notebook views and Phase 9 guidance consume the
+   reconciliation. User accepted P9-10.1c and bounded P9-10.1 closure on
+   2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json).
+   Next is P9-10.2; G4 and full conformance remain unaccepted.
 
 Reuse accepted fixtures/checkers and run focused new checks plus affected
 regressions. Independent family runs may execute in parallel. Do not repeat large

@@ -1,0 +1,146 @@
+{
+  "schema_version": "grcv4_p9101a_basin_authority_v1",
+  "record_id": "GRCV4-P9-10.1a-BASIN-v1",
+  "status": "accepted_bounded_design",
+  "accepted_on": "2026-10-28",
+  "acceptance": {
+    "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json",
+    "sha256": "605809932503de6782b72082bb9951e2fccbc1bb5e784784171050ef5eaa5cd0",
+    "record_digest": "5b7e0a3975bae355bb9672482232f13e0266ded9da101314bfe4dcaf98023866"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9BasinInterfaceAuthorityProposal.md",
+  "design_sha256": "dfe65215d73af572ed57014579c0a7b10d0f675a018077a98fc92116e4f0bb46",
+  "design_commit": "1275bd1f98c28eb90e3c8f81df358ff732e65ca8",
+  "policy_id": "grc9v4-terminal-flow-regions-v1",
+  "source_contract_ids": [
+    "D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+    "D10.2-EC-PARENT-GRC9-HYBRID-SPARK",
+    "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+    "D10.2-EC-PARENT-BASE-DISABLED-LIFECYCLE",
+    "D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+    "D10.2-EC-PARENT-L-ATOMICITY"
+  ],
+  "claim": {
+    "claim_id": "P9-10.1a-CL-N-BASIN-001",
+    "claim_class": "normative",
+    "status": "accepted_bounded_design",
+    "statement": "Select all-route terminal-flow regions with complete SCC evidence and separate geometric seed attributes as the baseline enabled GRC9V4 basin diagnostic under an explicitly bound successor schema.",
+    "scope": "Present represented-flow diagnostic; neither stable-attractor classification nor runtime conformance.",
+    "proposed_predecessor_reference": "P9-10.1a-CL-P-BASIN-001"
+  },
+  "debt": {
+    "debt_id": "P9-10.1a-DEBT-BASIN-IDENTITY",
+    "status": "resolved_bounded_design",
+    "origin": "P9-9.6 basin_surface; source-audit open debt preserved at its original revision",
+    "transformation": "The missing baseline membership/identity contract is closed by this accepted successor. Native implementation and lifecycle conformance remain open.",
+    "successor_claim_ids": [
+      "P9-10.1a-CL-N-BASIN-001"
+    ],
+    "verification_obligation": "P9-10.1a-VO-BASIN-NATIVE",
+    "remaining_work": [
+      "native_interface_and_lifecycle_conformance",
+      "P9-10.1c_support_reconciliation"
+    ]
+  },
+  "object": {
+    "object_id": "P9-O-GRC9-BASIN-DIAGNOSTIC",
+    "object_role": "GRC9V4 represented-flow basin diagnostic and derived lifecycle labels",
+    "accepted_claim_ids": [
+      "P9-10.1a-CL-N-BASIN-001"
+    ]
+  },
+  "contracts": [
+    {
+      "equation_contract_id": "P9-EC-GRC9-BASIN-INPUTS",
+      "parent_object_ids": [
+        "P9-O-GRC9-BASIN-DIAGNOSTIC"
+      ],
+      "accepted_claim_ids": [
+        "P9-10.1a-CL-N-BASIN-001"
+      ],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Capture one admitted enabled state, its port graph, complete model identity,\ncontext and numerical policy. Reconstruct the fresh current from that state's\ncurrent C/W/Z and its selected realization, using the existing poststate\nreadmission contract. Bind the actual read stage and input state digest.\nDo not substitute the preceding beat's consumed current, predictor, old W/Z,\nor cached rows. A successful operation uses the fully reconstructed prospective\ntarget before publication; a read-only query uses one captured publication.\nBoth current and reset roles are reconstructed independently when needed.\n\n**One capture per observation (BIF-2).** The observation binds the current/reset\nrole, exact profile/model and graph/orientation identities, context contract and\nvalue digest, numerical policy and exact backend, evaluator/release identity,\nactual read stage, and the applicable root/solver/certificate binding. Membership,\ncycle evidence, flux summaries and seed attributes consume that one captured\nfresh read and its associated C/W/Z/row operands. They may not independently\nre-solve the state to assemble different fields of one observation. An absent\noptional certificate reference is explicit null, not an invented proof.\n\nUse an existing read identity only if it binds these operands and their exact\nrepresented values. Otherwise derive `operand_digest` from a canonical, typed\ncapture: stable-edge-indexed current values, typed endpoints, associated row\ngradient/signed-Hessian/net-flux operands, and resolved sign/threshold values.\nEncode each binary64 operand losslessly (canonical `float.hex()` strings,\nincluding signed zero); edge identities and ordering follow the declared graph.\nThis is a read witness, not another authoritative current or retained history.\nIf arcs are not listed separately, this witness must remain retrievable with\nan exported observation; a digest without the operands is not the arc evidence.\n\nThe closed observation binding includes `role_state_digest`: for current, use\nthe existing `GRC9V4NativeEventState.scientific_payload` projection (generic\nscientific preimage plus active model and reset digest); for reset, use its\nexisting `reset_payload` projection, then bind the reset role's reconstructed\nread and context explicitly. These predecessor projections exclude the new\nbasin bundle, observation digest and derived labels. Hash the binding plus\n`operand_digest` and policy/schema IDs to obtain `observation_digest`.\nDo not make the bundle its own digest preimage. These are content bindings:\nidentical reset/replay content can produce the same observation digest, and no\nunique temporal occurrence or persistent basin identity is asserted.\n\nFor each represented edge current J, positive means tail-to-head under the V4\noutward-incidence convention; negative reverses the arc. Both signed zeros add\nno arc. No epsilon, clipping or flux aggregation is introduced. Opposing flows\non distinct parallel edges remain distinct arcs. Invalid/nonfinite inputs fail\nexplicitly. Exact-real current signs or uniform robustness to perturbations are\nnot inferred from represented signs, especially near zero.",
+      "design_section": "### 1. Inputs and stage"
+    },
+    {
+      "equation_contract_id": "P9-EC-GRC9-BASIN-MEMBERSHIP",
+      "parent_object_ids": [
+        "P9-O-GRC9-BASIN-DIAGNOSTIC"
+      ],
+      "accepted_claim_ids": [
+        "P9-10.1a-CL-N-BASIN-001"
+      ],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Use every nonzero directed arc. Contract strongly connected components (SCCs)\nto the finite condensation DAG. For each node v, let R(v) be the nonempty set\nof terminal SCCs reachable from its component, including that component itself\nwhen terminal. Retain this set as structural evidence, not as probabilities.\n\nClassify a terminal component as follows:\n\n- **sink:** one node, no self-loop, and at least one incoming arc from outside;\n- **recirculating:** multiple nodes, or a nonzero self-loop;\n- **quiescent:** one node with no nonzero incident arcs.\n\nA node with exactly one reachable terminal, which is a sink, belongs to that\nsink's flow region. A node reaching multiple terminals is **ambiguous** and\nhas no basin assignment. A node reaching only a recirculating or quiescent\nterminal reports that status and has no basin assignment. These are meaningful\ndiagnostic outcomes, not model admission failures or synthetic singleton basins.\nThe map `basin_identity` is explicitly partial; all nodes have status and\nreachable-terminal information, so missing assignment cannot be mistaken for\nan absent record. Do not silently select the strongest edge or break a symmetry\nusing labels. This proposal intentionally differs from the legacy classifier.\n\nThis is a finite graph definition. Every component reaches a terminal in a\nfinite DAG. The uniquely assigned regions are disjoint: a node cannot have\ntwo distinct singleton reachable-terminal sets. They need not cover the graph.\nEach assigned region is forward-closed in this frozen directed graph: if v is\nassigned to sink s and v points to w, the nonempty R(w) is a subset of R(v)={{s}}.\nEach assigned node has a directed path to s inside that region. A quiescent\nterminal cannot have a distinct upstream node, since an incoming arc would\ncontradict quiescence. These are frozen-input properties, not temporal invariants.\nFollowing a current path forever, future convergence, or stability under V4\nevolution is not established by these facts. A current-cycle upstream of a sink\ndoes not become a proved dynamical attractor or disappear from the evidence.\n\n**Full cycle evidence (BIF-1).** Retain every SCC, terminal and nonterminal, with\nits members, terminal flag and `cyclic` flag (multiple members or a nonzero\nself-loop). Each node names its own component independently of its reachable\nterminal set/status. A node upstream of a recirculating terminal need not itself\nbe cyclic. Retaining terminal components alone cannot distinguish a\u2192b\u2192s from\na\u2194b\u2192s, although both assign all three nodes to s. A condensation-edge list is\noptional because the bound, retrievable current-read witness supplies all arcs.\n\nZero flow gives only quiescent nodes and no assignments. On a closed graph,\nexactly divergence-free represented current also gives no assignments: a\nsingleton sink would have strictly negative outward divergence equal to minus\nits positive incoming magnitudes. This contradicts B J=0. Cycles and zero flow\ncan therefore yield an empty assignment while meaningful geometry remains.\nThat is a policy consequence, not failed admission or evidence that stable\ndynamical structures are absent. Geometric seeds never override membership.",
+      "design_section": "### 2. Membership without an external tie-break"
+    },
+    {
+      "equation_contract_id": "P9-EC-GRC9-BASIN-SEEDS",
+      "parent_object_ids": [
+        "P9-O-GRC9-BASIN-DIAGNOSTIC"
+      ],
+      "accepted_claim_ids": [
+        "P9-10.1a-CL-N-BASIN-001"
+      ],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Expose the declared row gradient, signed row Hessian and net-flux summary,\nwith the local geometric seed flag\n\n$$\n\\|g_i\\|^2 < \\varepsilon_\\nabla^2,\n\\qquad \\min\\operatorname{diag}(\\widetilde H_i)>\\varepsilon_H>0.\n$$\n\nSquare both the represented coordinates and represented threshold exactly for\nthe first inequality; do not first form rounded squares that can underflow or\noverflow. Equality fails both strict tests. Resolve thresholds and the sign\nthrough the declared binding and use the existing diagonal fixed-row contract.\nSeed classification does not require nine-port saturation. Report seed nodes\ninside each assigned region, including zero/one/multiple seeds; do not rename,\nmerge or certify that region merely because a seed exists. A geometric seed\noutside an assigned flow region remains visible. No new numeric abundance is\ndefined, and neither layer controls current, writers, admission or spark gating.",
+      "design_section": "### 3. Geometry remains a separate layer"
+    },
+    {
+      "equation_contract_id": "P9-EC-GRC9-BASIN-IDENTITY",
+      "parent_object_ids": [
+        "P9-O-GRC9-BASIN-DIAGNOSTIC"
+      ],
+      "accepted_claim_ids": [
+        "P9-10.1a-CL-N-BASIN-001"
+      ],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "The proposed interface has a closed typed `basin_attributes` bundle containing:\npolicy/schema IDs, the observation binding and read witness from section 1,\nall components with members/cyclicity/terminal flag (terminal kind is null for\nnonterminals), per-node own-component/terminal-set/status/optional-ID records,\nassigned regions with members, and geometric seed attributes. Public state\nexposes the same **derived**, partial `basin_identity` map reconstructed from\nthat state. Current/reset views are never interchangeable.\n\n**Typed wire identity.** Normalize IDs through the existing V4 node-ID contract,\nthen preserve integer versus string identity in typed per-node entries:\n`{\"kind\":\"int\",\"value\":0}` differs from `{\"kind\":\"str\",\"value\":\"0\"}`.\nThe empty string is an ordinary supported node ID. Do not use stringified node\nIDs as JSON object keys. Unassigned basin ID is explicit null; the node's entry\nmust still exist. Reject duplicate typed IDs, absent node entries, invalid\ncomponent references and inconsistent membership.\n\nCanonical order is representation-only: integers before strings, then unsigned\nlexicographic comparison of each typed ID's canonical JSON bytes. Sort component\nmembers by that key, components lexicographically by their member-key tuples,\nand use their zero-based canonical indices as local component references. Sort\nterminal references numerically and per-node/region entries by typed node key.\nNever use this ordering to choose between flow destinations. Node-bearing\nidentity preimages, including `sink_node_id` below, use the same typed encoding.\n\nFor an assigned sink s, define\n\n```text\nbasin_id = \"grc9v4-flow-basin-sha256:\" + SHA256(JCS({\n  policy_id, graph_digest, sink_node_id: s\n}))\n```\n\nThis identifies a flow region by its terminal on the declared graph. Membership\ncan change while this label stays the same; the observation state digest records\nthe state content and the observation digest binds the actual captured read.\nA label reused after disappearance does not prove\npersistent physical identity. Graph changes produce graph-scoped new IDs, with\nno implied parent/child lineage. Node relabeling transports members and terminal\nreferences and recomputes IDs; raw hash equality is not the covariance criterion.\nOrientation reversal together with current sign reversal leaves the physical\ndirected graph, partition and statuses unchanged. If that representation change\nchanges the declared graph digest, IDs are recomputed from the transported\nbinding. Permuting serialized edge/vertex order likewise preserves semantic\nclassification; neither transformation promises raw hash equality across\ndifferent graph encodings. Covariance here assumes transported represented\noperands. Re-solving after coordinate reordering at finite precision is a\nseparate numerical conformance obligation, not a consequence of this graph proof.\n\nThe new policy must be explicitly bound in a V4 specialization/schema successor;\nit must not be inferred for old complete-model identities. Historical models\nretain their recorded partial support. Migration to the successor re-admits both\nroles and binds the chosen policy. A changed classifier opens a different\nbinding.\n\n**D4/D9 bridge (BIF-3).** These flow-region labels are derived diagnostic\nreferences, not transported physical basin identities. Recomputing them supplies\nno interspace identification. Any use of regions or their changes to define\ncausal state, normalization, hierarchy, events, or cross-state comparisons\ninvoking D4/D9 must satisfy the separately applicable transport and accounting\ncontract, even if there is no direct feedback into current. Equality of a basin\nhash while membership changes cannot authorize comparison of basin-indexed\ncoordinates. An unrelated graph edit can change every graph-scoped hash without\nestablishing physical basin birth.\n\nThe schema successor marks this field as derived and cannot silently overwrite\nolder snapshot meaning. Reject unreviewed use of these labels as an authoritative\nadmission, spark or writer input. Do not emit physical events for harmless\ndiagnostic relabeling. Ambiguous, quiescent and recirculating observations remain\nsuccessful diagnostic results; a classifier/serialization error is different.",
+      "design_section": "### 4. Identity and public representation"
+    },
+    {
+      "equation_contract_id": "P9-EC-GRC9-BASIN-LIFECYCLE",
+      "parent_object_ids": [
+        "P9-O-GRC9-BASIN-DIAGNOSTIC"
+      ],
+      "accepted_claim_ids": [
+        "P9-10.1a-CL-N-BASIN-001"
+      ],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Reconstruct the bundle on construction, fresh observation, ordinary commit,\nassignment, expansion, migration, reset and load. Rebase changes which state is\nthe reset baseline; it must not copy a stale current bundle into another role.\nSnapshots bind the policy/schema and contain enough admitted state to reconstruct\nboth roles. If a captured observation is serialized for exact replay, retain its\nread witness/binding and require exact reconstructed binding and operand identity\nbefore claiming the same observation or exact derived-label replay. Incompatible\nread identity fails explicitly; it cannot silently accept different signs merely\nbecause a numerical tolerance passed. A state-only historical restore without\nsuch an observation can produce a **new observation**, with its own explicit read\nbinding; it does not claim equality to an unretained observation. This mode is\nexplicit, not a fallback after failed exact-observation replay.\n\nThe [numerical policy](../../../../specs/grc-v4-numerical-policy.md) certifies\nstaged rounded solves where applicable, and explicitly separates execution\npolicy from scientific state. That alone is not a proof of deterministic signs\nfor every whole-model read. Propagation must name the supported evaluator/backend/\npolicy/release scope and native conformance must demonstrate repeated fresh reads,\nreset/load and replay against captured operands for each selected family.\nIf an existing read contract supplies exact reconstruction, cite and verify it;\ndo not infer it from a residual/error tolerance. No cross-policy or cross-platform\nbitwise promise is added by this proposal, nor an epsilon or exact-real sign claim.\nNo second mutable owner, hidden basin history or new numerical current is added.\nPreparation computes and validates the advertised target surface before sole\npublication. A classifier/serialization failure aborts that operation with full\nrollback; it cannot publish stale data or downgrade a promised capability.\n\nHistorical snapshots lack this selected producer. They remain readable under\ntheir historical schema; no silent upgrade supplies new basin semantics. The\ndisabled branch keeps exact native GRC9V3 state/observable/lifecycle behavior.\nEnabled V4 flow labels are not transplanted into that delegate.",
+      "design_section": "### 5. Lifecycle and failure semantics"
+    },
+    {
+      "equation_contract_id": "P9-EC-GRC9-BASIN-CEILING",
+      "parent_object_ids": [
+        "P9-O-GRC9-BASIN-DIAGNOSTIC"
+      ],
+      "accepted_claim_ids": [
+        "P9-10.1a-CL-N-BASIN-001"
+      ],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Bounded represented-current diagnostics only. No attraction, stability, persistent physical identity, basin birth, numeric abundance, completed sparks, hierarchy, exact-real signs, cross-policy bitwise replay or new native runtime support. C_OS/C_CI/A_CI/A_PC implementation requires separate conformance. Preserve disabled GRC9V3 semantics and all previous accepted identities."
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "P9-10.1a-VO-BASIN-NATIVE",
+      "status": "pending_forward",
+      "obligation": "Implement the propagated successor for C_OS/C_CI/A_CI/A_PC; prove one captured fresh read, strict seed boundaries, exact observation replay vs new observation, both-role reset/load/migration/expansion and full rollback. Keep historical identifiers and disabled semantics unchanged.",
+      "support_semantics": "not_applicable"
+    }
+  ],
+  "selected_native_scope": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "runtime_implemented": false,
+  "runtime_conformance_inferred": false,
+  "P9_10_1a_closed": false,
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "full_GRC9V4_conformance": false,
+  "record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28"
+}

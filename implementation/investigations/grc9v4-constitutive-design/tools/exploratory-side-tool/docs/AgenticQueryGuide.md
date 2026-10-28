@@ -937,3 +937,61 @@ this is separate from optional completed sparks/hierarchy. The frozen umbrella
 compatibility capability requires all forty vectors, while twenty-four remain
 unselected. These three items are routed to P9-10.1. A successful integrity check
 does not remove them, promote D10.2 indeterminate traces or grant full conformance.
+
+## P9-10.1a accepted baseline basin diagnostic authority
+
+Use the explicit basin successor context. It preserves the pre-basin and ATC
+loaders and their historical pins; it does not silently enlarge those views.
+The accepted source is in the separately inventoried `decisions/p9-basin-interface/`
+collection. Unexpected JSON there, changed source/design/acceptance or a changed
+admission fails closed.
+
+```python
+from grcv4_explorer.basin import load_basin_forensic_context, basin_authority
+from grcv4_explorer.forensic import contract_provenance, debt_lifecycle
+context = load_basin_forensic_context(repo_root, side_tool_root)
+contract_provenance(context, "P9-EC-GRC9-BASIN-MEMBERSHIP")
+debt_lifecycle(context, "P9-10.1a-DEBT-BASIN-IDENTITY")
+basin_authority(repo_root, side_tool_root)
+```
+
+`P9-10.1a-CL-N-BASIN-001` is normative bounded diagnostic authority. The design debt
+is resolved; this historical design context retains `P9-10.1a-VO-BASIN-NATIVE`
+as pending at design acceptance. The native acceptance successor below resolves
+it for the four families; it is never backward scientific support. `GRC_basin_identity` remains an unresolved historical premise
+reference: the new producer is explicit successor authority, not its retroactive
+resolution. D10/D11 support dispositions are preserved.
+
+The actual `/api/basin` endpoint, Phase 9 browser's **baseline basin authority**
+panel and notebook `basin-authority` cell expose the same checked traces. Source
+links use `/api/basin/source?path=...` and only the indexed relative paths. Failed
+loads clear stale results. The [spec/schema successor](../../../../../../specs/grc-9-v4-basin-interface.md)
+and proposal/paper A.5.1 are propagated; no native capability is granted.
+
+The original review checker `--check` addresses the pre-propagation Git subject
+`1275bd1f`. Use the current `verify_p9101a_propagation.py --check` for source-chain
+integrity; graph-rule tests remain directly runnable through unittest. Do not
+relabel the original source audit as a current-source audit after propagation.
+
+### Native basin implementation evidence
+
+```python
+from grcv4_explorer.basin_native import basin_native_status, basin_native_source
+view = basin_native_status(repo_root)
+raw, ref = basin_native_source(repo_root, view["records"][0]["path"])
+```
+
+This is a separate native execution projection. `check_mode` explicitly means
+retained integrity and independent classification recomputation, not a native numerical
+rerun. `original_tests_run` and `pressure_tests_run` separate the earlier native
+checks from saved-state/equation/row/lifecycle pressure. Records above 1 MB use XZ;
+`basin_native_source` returns their checked compressed bytes for `lzma.decompress`.
+The records include fresh current/reset
+operands and exact source hashes. `/api/basin/native`, its `/source` route, the
+browser native-evidence button and notebook `basin-native` cell expose it.
+P9-10.1a is bounded accepted. `view["verification_obligation_resolution"]`
+exposes the checked `resolved_bounded_native` disposition and its exact source
+for `P9-10.1a-VO-BASIN-NATIVE`; `view["acceptance"]` binds the user decision.
+The original design context and execution records retain their historical flags.
+P9-10.1b/c remain open. Do not infer support promotion, all-ten execution,
+completed sparks or attracting basins from a passing native record.

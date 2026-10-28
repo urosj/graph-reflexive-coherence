@@ -1,5 +1,17 @@
 # GRC Library Specifications
 
+<!-- P9-10.1a basin successor: begin -->
+The accepted [GRC9V4 baseline basin diagnostic successor](grc-9-v4-basin-interface.md)
+and its [closed schema](grc-9-v4-basin-interface-schema.json) define an explicit
+v2 specialization/model binding for `grc9v4-terminal-flow-regions-v1`. They refine
+the missing enabled membership/identity producer as a represented-flow diagnostic,
+with separate seeds and exact observation/replay binding. The frozen v1
+[GRC9V4 specification](grc-9-v4-spec.md) and executable release retain their original
+subjects; their historical evidence is not relabeled as successor conformance.
+Native implementation/conformance remains pending for C_OS, C_CI, A_CI, A_PC.
+[Source propagation bindings](grc-9-v4-basin-interface-source-manifest.json).
+<!-- P9-10.1a basin successor: end -->
+
 This directory defines the specification for a Python library that implements
 the synchronous Graph Reflexive Coherence model families and the first planned
 Lorentzian/event-driven nine-port target.

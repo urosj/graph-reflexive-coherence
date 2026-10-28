@@ -1,6 +1,133 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — accepted P9-9.6 bounded support review (2026-10-28)
+## Accepted checkpoint — P9-10.1 bounded support closure (2026-10-28)
+
+Accepted P9-10.1b is committed at `cc51d9f6` on `work/p9-10-basin-interface`.
+[P9-10.1c review](./phase-9-grcv4/tranche-10/P9-10.1c-Review.md) and
+[record](./phase-9-grcv4/tranche-10/P9-10.1c-SupportReconciliation.json) join the
+accepted a/b evidence plus direct independent basin checks on all four exact
+10.1b v2 targets at migration and disabled return, both roles (16 captures).
+The focused supplement reuses the existing oracle after checking its assumptions,
+and certifies all 256 nonzero signs at captured H; no exact-CI-root sign claim.
+It executes two disabled steps per family to reach return, with no expansion
+or enabled evolution campaign and no production changes.
+User accepted P9-10.1c, its direct-target supplement and bounded P9-10.1
+closure on 2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json).
+Next: P9-10.2, preserving the four-family scope. No P9-10.2 work has started.
+
+The current view resolves `basin_surface` for explicit v2 successors and
+`target_identity_scope` for the four exact expanded v1/v2 compatibility targets.
+Historical v1 declarations are not upgraded. The independently pressured basin
+expansions in 10.1a are different exact subjects from 10.1b's compatibility
+targets; the latter's own accepted captures/replay do not inherit the former's
+independent equation pressure. Both evidence classes and identities are explicit;
+the supplement now supplies direct checks on the missing subjects. At return,
+resources differ in all four; A histories W differ, C has no W/Z, and A_PC's
+carrier is explicitly reset to zero. Existing numerical limits remain unchanged.
+
+The source matrix remains 16 accepted / 24 unselected. Additional target cells
+remain separate. The all-forty restriction blocks umbrella/full conformance,
+not bounded four-family closure; a wider execution or contract change needs a
+separate scope decision. Original numerical/authority limits, optional exclusions
+and all accepted records remain intact. P9-10.2–10.6 and G4 remain separate work.
+
+Current status is at `/api/tranche10/support`, its indexed source endpoint,
+the current-support browser panel and notebook `p9101c-support` cell. The main
+Phase 9 next-step guidance consumes that view. `/api/tranche9/support` remains
+the explicitly labeled historical checkpoint.
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/p9101c_acceptance.py
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101c_support_reconciliation -v
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101c_target_basin -v
+```
+
+## Accepted checkpoint — P9-10.1b exact expanded-target compatibility (2026-10-28)
+
+Branch `work/p9-10-basin-interface`, following accepted native basin commit
+`ee603f5d`. [Target review](./phase-9-grcv4/tranche-10/P9-10.1b-Review.md) records
+the four exact 17-vertex/16-edge expanded subjects, with separate explicit v2
+basin successors. Original v1 identities and accepted records remain unchanged.
+All 12 native checks and three retained/API/browser/notebook checks pass, along
+with the existing basin HTTP/notebook regression. User accepted bounded P9-10.1b;
+[decision](./phase-9-grcv4/tranche-10/P9-10.1b-Acceptance.json). Overall P9-10.1
+remains open for P9-10.1c reconciliation and any further corrections the user
+identifies before closure.
+
+The focused suite independently constructs native V3 counterparts and checks
+transition/state/observable/lifecycle parity, both histories, native reset,
+return initialization, positive V4 continuation, enabled reset and exact replay.
+Six rejection controls per family preserve the complete publication and journal;
+rejections are never counted as successful compatibility. Saved target resource
+roles start equal, with deliberately distinct incoming history declarations;
+native evolution makes the current/reset resources distinct before return.
+
+Records above 1 MB are XZ-compressed. API `/api/tranche10/targets`, indexed source
+downloads, the browser panel and notebook `expanded-targets` cell expose exact
+subjects and honest scope. The checker verifies retained evidence only.
+No `src/`, legacy, paper/spec or scientific authority change was needed. No
+large Tranche 8 trajectory was rerun. The other 24 source-matrix cells, all-forty
+umbrella capability, other-six execution and G4/full conformance remain open.
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/p9101b_acceptance.py
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101b_target_surfaces -v
+```
+
+## Accepted checkpoint — P9-10.1a native basin successor (2026-10-28)
+
+Branch `work/p9-10-basin-interface`. Accepted design `1275bd1f` and propagation
+`b30e630c` precede the native implementation. User accepted bounded P9-10.1a
+on 2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1a-NativeAcceptance.json). The original 20
+native/graph checks remain unchanged. A further 17 end-to-end pressure tests
+and four acceptance/API/browser/notebook checks pass; seven compatibility and six
+authority/propagation checks retain their prior passing results. The current phase
+boundary passes with refreshed maintenance bindings. P9-10.1a is closed for
+C_OS/C_CI/A_CI/A_PC; P9-10.1b/c remain open.
+
+[Native review and reproduction](./phase-9-grcv4/tranche-10/P9-10.1a-NativeReview.md)
+link the implementation, exact source bindings, operands and small four-family
+execution records. All ten public declarations recognize the explicit v2 policy;
+native execution is restricted to C_OS, C_CI, A_CI, A_PC. Existing v1 configurations
+and checkpoints retain their old identities. Opt in through
+`configuration.specialization.with_basin_policy()` for a new configuration, or
+`model.migrate_basin_policy(operation_id)` for explicit live migration.
+
+The [end-to-end pressure review](./phase-9-grcv4/tranche-10/P9-10.1a-EndToEndReview.md)
+retains 56 saved native observation cases, each with both roles, independent
+interval equations, exact row reconstruction and complete expected classifications.
+C_OS observes the fresh reference restart rather than another OS corrector.
+Positive seeds are excluded by the four declared threshold pairs; cycles remain
+synthetic classifier cases. CI fixed-geometry sign bounds are not promoted to
+full exact-root sign certificates. Four pressure JSON records exceed 1 MB and
+are stored as XZ; original native records are unchanged.
+
+The native surface captures one fresh read per observation, including the joint
+CI root, constructs all-route SCC membership and separate exact seeds, validates
+both prospective roles before publication, and checks explicit replay modes.
+The diagnostics never enter C/W/Z. Disabled projection remains the V3 result.
+The source event request must name the successor's actual scientific digest and
+target specialization; a retained v1 request is correctly rejected unchanged.
+
+Accepted scientific claim/debt/contract traces remain at `/api/basin`; native
+execution evidence is separately accessible at `/api/basin/native`, its source
+route, the browser native-evidence button and notebook `basin-native` cell.
+The historical design authority retains its original forward routing. The native
+acceptance explicitly resolves `P9-10.1a-VO-BASIN-NATIVE`; its checked disposition
+and source are exposed in the native API/browser/notebook view. The independent
+review reproduced retained evidence, not native transaction/failure execution.
+
+Next: P9-10.1b expanded-target compatibility, then P9-10.1c support reconciliation. P9-9.6's three holds remain
+historical and are not silently erased. No completed sparks, hierarchy, attracting
+basins, physical basin identity transport, six-family execution or full-conformance
+claim is made. No Tranche 8 trajectory rerun is needed.
+
+```bash
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python implementation/phase-9-grcv4/verification/p9101a_acceptance.py
+PYTHONPATH=src:.:implementation/phase-9-grcv4/verification .venv/bin/python -m unittest test_p9101a_native_surfaces test_p9101a_basin_authority -v
+```
+
+## Accepted checkpoint — P9-9.6 bounded support review (2026-10-28)
 
 Branch `work/p9-9-first-group`; accepted P9-9.5 committed at `5efecfd4`.
 P9-9.6 is **bounded-accepted** on 2026-10-28 for C_OS, C_CI, A_CI, A_PC;

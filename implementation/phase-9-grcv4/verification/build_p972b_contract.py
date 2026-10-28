@@ -199,8 +199,9 @@ def schema():
 
 
 def build():
+    from verify_p9101a_propagation import predecessor_document_bytes
     for name in FROZEN:
-        if (ROOT / name).read_bytes() != subprocess.check_output(["git", "show", "ed61c1d:" + name], cwd=ROOT):
+        if predecessor_document_bytes(ROOT, name) != subprocess.check_output(["git", "show", "ed61c1d:" + name], cwd=ROOT):
             raise ValueError("accepted source changed: " + name)
     inherited = read("specs/grc-v4-a-initializer-vectors.json")
     pair = inherited["pair_record"]
@@ -238,7 +239,7 @@ def build():
     data = lambda x: (json.dumps(x, indent=2) + "\n").encode()
     vectors = dict(schema_version="grcv4-topology-event-wire-vectors-v1",
                    scope="synthetic_shape_identity_and_declaration_only_not_event_execution",
-                   source_bindings={n: sha256((ROOT / n).read_bytes()).hexdigest()
+                   source_bindings={n: sha256(predecessor_document_bytes(ROOT, n)).hexdigest()
                                     for n in sorted((*FROZEN, SPEC, REVIEW))},
                    schema_sha256=sha256(data(doc)).hexdigest(),
                    pair_record=pair, policy_cases=cases, synthetic_receipts=receipts)

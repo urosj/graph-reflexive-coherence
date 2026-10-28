@@ -42,6 +42,10 @@ README_ADDITION = (
 
 
 def checked_specification_bytes(name, raw):
+    if name == "specs/README.md":
+        from verify_p9101a_propagation import predecessor_document_bytes
+        p.require(raw == (p.ROOT / name).read_bytes(), "supplied registry bytes differ")
+        raw = predecessor_document_bytes(p.ROOT, name)
     if name == "specs/README.md" and p.sha(raw) != SPECIFICATION_BINDINGS[name]:
         frozen = historical_blobs([name], commit=README_SUCCESSOR_COMMIT)[name]
         p.require(raw == frozen and raw.count(README_ADDITION) == 1,
@@ -72,13 +76,15 @@ def check_transferred_sections(proposal, paper):
 
 
 def proposal_status():
-    """Compatibility entry for the accepted proposal and current paper candidate."""
-    proposal = (p.ROOT / PROPOSAL).read_bytes()
+    """Accepted initializer subjects; the exact basin insertion is checked separately."""
+    from verify_p9101a_propagation import predecessor_document_bytes
+
+    proposal = predecessor_document_bytes(p.ROOT, PROPOSAL)
     p.require(p.sha(proposal) == PROPOSAL_SHA256,
               "unreviewed proposal candidate drift")
     p.require(proposal == historical_blobs([PROPOSAL], commit=PROPOSAL_COMMIT)[PROPOSAL],
               "accepted proposal subject changed")
-    paper = (p.ROOT / PAPER).read_bytes()
+    paper = predecessor_document_bytes(p.ROOT, PAPER)
     p.require(p.sha(paper) == PAPER_SHA256, "unreviewed paper candidate drift")
     p.require(paper == historical_blobs([PAPER], commit=PAPER_COMMIT)[PAPER],
               "accepted paper subject changed")
@@ -136,7 +142,9 @@ def verify_release():
               "released identity is not exact")
 
     def subject_bytes(name):
-        return frozen[name] if name in released_documents else p.safe_path(p.ROOT, name).read_bytes()
+        from verify_p9101a_propagation import predecessor_document_bytes
+
+        return frozen[name] if name in released_documents else predecessor_document_bytes(p.ROOT, name)
 
     for row in rows:
         p.require(p.sha(subject_bytes(row["path"])) == row["sha256"],

@@ -1,0 +1,532 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GRC9V4 represented-flow basin diagnostic successor",
+  "description": "Accepted design wire shapes; no runtime support. Cross-field graph completeness, typed-ID uniqueness across entries, canonical order, digest preimages, positive thresholds, finite canonical hex, root/read binding, role checks and recomputed semantics are mandatory additional validations in the accompanying spec.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/observation"
+    },
+    {
+      "$ref": "#/$defs/checkpoint_extension"
+    }
+  ],
+  "$defs": {
+    "node_id": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "value"
+          ],
+          "properties": {
+            "kind": {
+              "const": "int"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "value"
+          ],
+          "properties": {
+            "kind": {
+              "const": "str"
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "binary64": {
+      "type": "string",
+      "pattern": "^-?0x(?:0\\.0|[01]\\.[0-9a-f]{13})p[+-][0-9]+$",
+      "description": "Finite canonical float.hex; semantic validator requires identical decode/re-encode, including signed zero."
+    },
+    "vector3": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^-?0x(?:0\\.0|[01]\\.[0-9a-f]{13})p[+-][0-9]+$",
+        "description": "Finite canonical float.hex; semantic validator requires identical decode/re-encode, including signed zero."
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "policy": {
+      "const": {
+        "schema_version": "grc9v4-basin-policy-v1",
+        "policy_id": "grc9v4-terminal-flow-regions-v1"
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "role_state_digest",
+        "profile_id",
+        "model_identity",
+        "graph_digest",
+        "orientation_identity",
+        "context_contract_id",
+        "context_value_digest",
+        "numerical_policy_id",
+        "scalar_backend_id",
+        "evaluator_id",
+        "release_id",
+        "stage",
+        "root_certificate_binding",
+        "read_identity"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "current",
+            "reset"
+          ]
+        },
+        "role_state_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "graph_digest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "orientation_identity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_contract_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_value_digest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "numerical_policy_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scalar_backend_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "release_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "const": "fresh_poststate_readmission"
+        },
+        "root_certificate_binding": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "read_identity": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge_id",
+        "tail",
+        "head",
+        "current"
+      ],
+      "properties": {
+        "edge_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tail": {
+          "$ref": "#/$defs/node_id"
+        },
+        "head": {
+          "$ref": "#/$defs/node_id"
+        },
+        "current": {
+          "$ref": "#/$defs/binary64"
+        }
+      }
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node",
+        "gradient",
+        "signed_hessian_diagonal",
+        "row_net_flux"
+      ],
+      "properties": {
+        "node": {
+          "$ref": "#/$defs/node_id"
+        },
+        "gradient": {
+          "$ref": "#/$defs/vector3"
+        },
+        "signed_hessian_diagonal": {
+          "$ref": "#/$defs/vector3"
+        },
+        "row_net_flux": {
+          "$ref": "#/$defs/vector3"
+        }
+      }
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edges",
+        "rows",
+        "gradient_tolerance",
+        "hessian_tolerance",
+        "hessian_sign"
+      ],
+      "properties": {
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edge"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/row"
+          }
+        },
+        "gradient_tolerance": {
+          "$ref": "#/$defs/binary64"
+        },
+        "hessian_tolerance": {
+          "$ref": "#/$defs/binary64"
+        },
+        "hessian_sign": {
+          "enum": [
+            -1,
+            1
+          ]
+        }
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_ref",
+        "members",
+        "cyclic",
+        "is_terminal",
+        "terminal_kind"
+      ],
+      "properties": {
+        "component_ref": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node_id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "cyclic": {
+          "type": "boolean"
+        },
+        "is_terminal": {
+          "type": "boolean"
+        },
+        "terminal_kind": {
+          "enum": [
+            "sink",
+            "recirculating",
+            "quiescent",
+            null
+          ]
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node",
+        "component_ref",
+        "reachable_terminals",
+        "status",
+        "assigned_sink",
+        "basin_id",
+        "seed"
+      ],
+      "properties": {
+        "node": {
+          "$ref": "#/$defs/node_id"
+        },
+        "component_ref": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reachable_terminals": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "sink",
+            "ambiguous",
+            "recirculating",
+            "quiescent"
+          ]
+        },
+        "assigned_sink": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/node_id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "basin_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^grc9v4-flow-basin-sha256:[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sink_node_id",
+        "basin_id",
+        "members",
+        "seed_members"
+      ],
+      "properties": {
+        "sink_node_id": {
+          "$ref": "#/$defs/node_id"
+        },
+        "basin_id": {
+          "type": "string",
+          "pattern": "^grc9v4-flow-basin-sha256:[a-f0-9]{64}$"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node_id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "seed_members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node_id"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "policy_id",
+        "binding",
+        "operand_digest",
+        "observation_digest",
+        "witness",
+        "components",
+        "nodes",
+        "regions"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "grc9v4-basin-observation-v1"
+        },
+        "policy_id": {
+          "const": "grc9v4-terminal-flow-regions-v1"
+        },
+        "binding": {
+          "$ref": "#/$defs/binding"
+        },
+        "operand_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "observation_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "witness": {
+          "$ref": "#/$defs/witness"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/component"
+          }
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/region"
+          }
+        }
+      }
+    },
+    "checkpoint_extension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "policy_id",
+        "replay_mode",
+        "current_observation",
+        "reset_observation"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "grc9v4-basin-checkpoint-extension-v1"
+        },
+        "policy_id": {
+          "const": "grc9v4-terminal-flow-regions-v1"
+        },
+        "replay_mode": {
+          "enum": [
+            "state_only",
+            "exact_observation"
+          ]
+        },
+        "current_observation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/observation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reset_observation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/observation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "replay_mode": {
+                "const": "state_only"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "current_observation": {
+                "type": "null"
+              },
+              "reset_observation": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "current_observation": {
+                "$ref": "#/$defs/observation"
+              },
+              "reset_observation": {
+                "$ref": "#/$defs/observation"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

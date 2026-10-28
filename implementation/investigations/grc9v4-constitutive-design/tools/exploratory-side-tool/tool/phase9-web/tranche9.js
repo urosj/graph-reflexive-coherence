@@ -270,7 +270,7 @@ export function supportLoader(container,status,fetcher=fetch,create=tag=>documen
       const response=await fetcher('/api/tranche9/support');if(!response.ok)throw new Error('Unavailable');
       const v=checkedSupport(await response.json());if(ticket!==sequence)return;
       const add=(tag,text)=>{const e=create(tag);e.textContent=text;container.append(e);return e;};
-      add('p','Four-family bounded evidence reconciled; full GRC9V4 conformance is held. Bounded review acceptance recorded on 2026-10-28.');
+      add('p','Historical P9-9.6 checkpoint, before the accepted basin and target successors. Inspect P9-10.1c for current resolved holds and restrictions.');
       for(const r of v.rows){
         add('p',`${r.family}: enabled lifecycle, four source-model delegate surfaces, both crossings, public API and conflict refusal verified from retained evidence.`);
         add('code',r.source.model_identity);
@@ -281,7 +281,7 @@ export function supportLoader(container,status,fetcher=fetch,create=tag=>documen
         if(!ref.path.startsWith('implementation/phase-9-grcv4/tranche-9/') || ref.path.includes('..'))throw new Error('Invalid source path');
         const a=add('a',ref.path.split('/').at(-1));a.href='/api/tranche9/support/source?path='+encodeURIComponent(ref.path);a.target='_blank';a.rel='noopener';add('span',' · ');
       }
-      status.textContent='Bounded review accepted. Full conformance held. Next: P9-10.1a/b/c.';
+      status.textContent='Historical P9-9.6 accepted. Full conformance held. Current reconciliation: P9-10.1c.';
     }catch(error){if(ticket!==sequence)return;container.replaceChildren();status.textContent=String(error);}
   };
 }

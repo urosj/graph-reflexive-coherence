@@ -17,7 +17,7 @@ from .grc_v4 import (
 )
 from .grc_v4_state import FrozenJSONMap
 from .grc_v4_geometry import GRCV4ReferenceGeometry
-from .grc_v4_codec import payload_identity
+from .grc_9_v4_identity import has_basin, model_identity
 from .grc_9_v4_crossing import GRC9V4BranchRequest
 from .grc_9_v4_expansion import GRC9V4ExpansionRequestInput
 from .grc_9_v4_api_lifecycle import GRC9V4PublicOperation, _decode, native_bytes
@@ -89,9 +89,9 @@ class GRC9V4(GRCV4):
     def from_config(cls, config):
         if type(config) is GRC9V4Configuration:
             return cls(config)
-        if (
-            isinstance(config, Mapping)
-            and config.get("schema_version") == "grc9v4-configuration-v1"
+        if isinstance(config, Mapping) and config.get("schema_version") in (
+            "grc9v4-configuration-v1",
+            "grc9v4-configuration-v2",
         ):
             return cls(GRC9V4Configuration.from_payload(dict(config)))
         if (
@@ -186,11 +186,13 @@ class GRC9V4(GRCV4):
                 raise ValueError("state metadata/configuration mismatch")
             self._operation = restored._operation
 
-    def snapshot(self):
+    def snapshot(self, *, replay_mode="exact_observation"):
         with self._lock:
             return dict(
-                descriptor_version=_LAYOUT,
-                owner=_decode(self._operation.snapshot()),
+                descriptor_version="grc9v4-public-checkpoint-v2"
+                if has_basin(self._operation.specialization)
+                else _LAYOUT,
+                owner=_decode(self._operation.snapshot(replay_mode=replay_mode)),
                 targets=[t.to_payload() for t in self._targets],
                 params=self._params(),
             )
@@ -203,7 +205,8 @@ class GRC9V4(GRCV4):
         if (
             not isinstance(state, Mapping)
             or set(state) != {"descriptor_version", "owner", "targets", "params"}
-            or state["descriptor_version"] != _LAYOUT
+            or state["descriptor_version"]
+            not in (_LAYOUT, "grc9v4-public-checkpoint-v2")
         ):
             raise ValueError("closed public checkpoint required")
         result = cls.__new__(cls)
@@ -221,19 +224,24 @@ class GRC9V4(GRCV4):
             original.graph,
         )
         expected = result._params()
+        if (state["descriptor_version"] == "grc9v4-public-checkpoint-v2") != has_basin(
+            result._operation.specialization
+        ):
+            raise ValueError("checkpoint cannot implicitly upgrade specialization")
         provided = params.to_dict() if type(params) is FrozenJSONMap else params
         if native_bytes(expected) != native_bytes(state["params"]) or (
             provided is not None and native_bytes(expected) != native_bytes(provided)
         ):
             raise ValueError("snapshot parameters differ from admitted model")
-        if native_bytes(result.snapshot()) != native_bytes(state):
+        mode = state["owner"].get("basin", {}).get("replay_mode", "exact_observation")
+        if native_bytes(result.snapshot(replay_mode=mode)) != native_bytes(state):
             raise ValueError("public snapshot mismatch")
         if declared_state is not None and result.state != declared_state:
             raise ValueError("state metadata differs from replay")
         return result
 
-    def save(self, path):
-        Path(path).write_bytes(native_bytes(self.snapshot()))
+    def save(self, path, *, replay_mode="exact_observation"):
+        Path(path).write_bytes(native_bytes(self.snapshot(replay_mode=replay_mode)))
 
     @classmethod
     def load(cls, path):
@@ -288,6 +296,11 @@ class GRC9V4(GRCV4):
     def migrate_branch(self, request):
         with self._lock:
             return self._operation.migrate(request)
+
+    def migrate_basin_policy(self, operation_id):
+        """Explicit v1→v2 model migration; independently readmit both histories."""
+        with self._lock:
+            return self._operation.migrate_basin_policy(operation_id)
 
     def migrate_profile(self, request):
         if type(request) is not GRCV4MigrationRequest:
@@ -361,13 +374,8 @@ class GRC9V4(GRCV4):
     def list_supported_model_identities(self):
         with self._lock:
             return frozenset(
-                payload_identity(
-                    "complete_model_identity_payload",
-                    dict(
-                        schema_version="grc9v4-complete-identity-v1",
-                        grcv4_complete_profile_id=r.profile.complete_profile_id,
-                        specialization_id=self._operation.specialization.specialization_id,
-                    ),
+                model_identity(
+                    r.profile.complete_profile_id, self._operation.specialization
                 )
                 for r in self._references().values()
             )
@@ -376,7 +384,7 @@ class GRC9V4(GRCV4):
         if self.compatibility_branch == "disabled_grc9v3":
             return self._operation.legacy_capabilities()
         identity = self._operation.reference.profile.identity_payload
-        return {
+        capabilities = {
             "profile_explicit_v4",
             "single_resource_ledger",
             "authoritative_current",
@@ -393,6 +401,9 @@ class GRC9V4(GRCV4):
             else "v4_candidate_c_derived_sector",
             "v4_realization_" + identity.realization.lower().replace("+", "_"),
         }
+        if has_basin(self._operation.specialization):
+            capabilities.add("basin_attributes")
+        return capabilities
 
     def support_status(self):
         return dict(

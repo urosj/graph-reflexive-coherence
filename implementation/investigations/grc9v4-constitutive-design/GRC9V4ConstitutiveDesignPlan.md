@@ -7,6 +7,19 @@
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
 **Initialization:** [`GRC9V4ConstitutiveDesignInitialization.json`](./GRC9V4ConstitutiveDesignInitialization.json)
 
+**Implementation-originated successor — 2026-10-28:** P9-10.1a exposes an
+enabled-GRC9V4 basin membership/identity producer gap. The
+[baseline basin proposal](./decisions/P9BasinInterfaceAuthorityProposal.md)
+and [open debt/source audit](./evidence/p9-basin-interface/AuthorityAudit.json)
+retain the original pre-acceptance finding. Corrected design accepted on
+2026-10-28 and committed as `1275bd1f`; the [successor authority](./decisions/p9-basin-interface/Authority.json)
+admits the bounded normative claim and six contracts, resolves the design debt
+and retains native conformance as a forward obligation. Proposal/paper A.5.1
+and the V4 spec/schema successor are propagated. Ten conditional checks and six
+authority/schema/propagation/surface tests pass. Next is native interface and
+lifecycle conformance; ATC, child completion, other families and legacy changes
+are outside this bounded result.
+
 **Current research continuation — 2026-09-21:** the opening and ATC-1's
 bounded causal research envelope are [user-accepted](./decisions/ATC1Acceptance.md).
 [ATC-2](./decisions/ATC2CandidateClosureProposal.md) has a bounded independent

@@ -1,0 +1,26 @@
+{
+  "schema": "grcv4_p9101a_basin_admission_v1",
+  "status": "accepted_source_admission",
+  "source": {
+    "source_id": "GRCV4-P9-10.1a-BASIN-v1",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json",
+    "file_sha256": "431e43681dad9a6db3a233a9ed53256500a4064ccad1b2eb6c7c38329abdf480"
+  },
+  "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9BasinInterfaceAuthorityProposal.md",
+  "design_sha256": "dfe65215d73af572ed57014579c0a7b10d0f675a018077a98fc92116e4f0bb46",
+  "design_commit": "1275bd1f98c28eb90e3c8f81df358ff732e65ca8",
+  "acceptance": {
+    "path": "implementation/phase-9-grcv4/tranche-10/P9-10.1a-DesignAcceptance.json",
+    "sha256": "605809932503de6782b72082bb9951e2fccbc1bb5e784784171050ef5eaa5cd0",
+    "record_digest": "5b7e0a3975bae355bb9672482232f13e0266ded9da101314bfe4dcaf98023866"
+  },
+  "historical_authority_extension_digest": "d9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188",
+  "historical_graph_digest": "58adadb0a0d4bce04907eccbcc38c524be5288f6c57dab744fa57ad072285098",
+  "source_bundle_digest": "9aecc255aae05f01106a902291635a43c880aeedfde3bb615a1868fe38dcacd3",
+  "graph_digest": "158b238cf790d01805f1b210cc76d989567b7918d50e6358f4a9bf30843cba03",
+  "policy_id": "grc9v4-terminal-flow-regions-v1",
+  "runtime_conformance_inferred": false,
+  "P9_10_1a_closed": false,
+  "record_digest": "b166c00b8ff646c072cb6ddc1187bc975931488f9a0f84f81a7a4ad84ada975c"
+}

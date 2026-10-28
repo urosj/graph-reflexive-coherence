@@ -9,6 +9,30 @@
 
 ## Global Boundaries
 
+Current implementation-originated successor: **P9-10.1a basin interface**,
+2026-10-28; [proposal](./decisions/P9BasinInterfaceAuthorityProposal.md).
+
+- [x] Trace exact accepted row/seed/lifecycle/legacy constraints through the
+  forensic API; preserve support status and unresolved-reference boundaries.
+- [x] Record open debt `P9-10.1a-DEBT-BASIN-IDENTITY` and proposed,
+  unadmitted claim `P9-10.1a-CL-P-BASIN-001` in the successor source audit.
+- [x] Prepare a concrete baseline flow-region/seed proposal and ten conditional
+  checks, with no native execution, basin-stability or acceptance claim.
+- [x] Apply the independent mathematical review: full SCC/cycle evidence,
+  captured-read/replay binding, D4/D9 bridge, typed wire IDs and seed extremes.
+- [x] Obtain user acceptance of the corrected baseline contract on 2026-10-28;
+  authority admission and scoped debt adjudication follow.
+- [x] Admit `P9-10.1a-CL-N-BASIN-001` and its six contracts; resolve the design
+  debt and retain `P9-10.1a-VO-BASIN-NATIVE` as pending forward. Expose the same
+  authority through the forensic API, browser and notebook.
+- [x] Propagate accepted authority → proposal/paper A.5.1 → explicit V4 spec/schema
+  successor, preserving historical/executable release identities; six focused
+  authority/schema/propagation/surface tests pass.
+- [ ] Return to P9-10.1a for four-family public/lifecycle implementation and
+  native conformance; keep completed sparks and hierarchy separate.
+
+The historical global boundaries below retain their original gate scopes.
+
 - [x] Create a dedicated investigation branch and directory.
 - [x] Keep the work under `implementation/investigations/`.
 - [x] Record that no GRC9V4 architecture is selected at initialization.

@@ -268,11 +268,16 @@ def check(root, family):
     if not required <= {r["path"] for r in refs}:
         raise ValueError("missing critical source binding")
     for ref in refs:
+        from p994b_runtime_successor import historical_source
+
         p = (root / ref["path"]).resolve()
         if (
             Path(ref["path"]).is_absolute()
             or not p.is_relative_to(root)
-            or sha(p.read_bytes()) != ref["sha256"]
+            or (
+                sha(p.read_bytes()) != ref["sha256"]
+                and historical_source(root, ref["path"], ref["sha256"]) != ref["sha256"]
+            )
         ):
             raise ValueError("public conflict input drift: " + ref["path"])
     return v

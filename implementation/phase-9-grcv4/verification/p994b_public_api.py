@@ -392,11 +392,16 @@ def check(root, family):
             ):
                 raise ValueError("PC-to-CI admission exclusion lost")
     for ref in v["source_refs"] + v["input_refs"]:
+        from p994b_runtime_successor import historical_source
+
         p = (root / ref["path"]).resolve()
         if (
             Path(ref["path"]).is_absolute()
             or not p.is_relative_to(root)
-            or sha(p.read_bytes()) != ref["sha256"]
+            or (
+                sha(p.read_bytes()) != ref["sha256"]
+                and historical_source(root, ref["path"], ref["sha256"]) != ref["sha256"]
+            )
         ):
             raise ValueError("public API input drift: " + ref["path"])
     return v

@@ -3275,6 +3275,18 @@ stale-output clearing. Do not upgrade production support discovery or old eviden
 
 ### P9-10.1 basin and expanded-target support closure — planned
 
+The P9-10.1a source trace now exposes missing enabled-V4 membership/identity
+authority. Its [proposal](../../decisions/P9BasinInterfaceAuthorityProposal.md)
+and [audit](../../evidence/p9-basin-interface/AuthorityAudit.json) retain the
+original finding. The corrected design was user-accepted on 2026-10-28.
+`grcv4_explorer.basin` now admits the pinned successor: normative claim, one
+object, six contracts, resolved design debt and pending native obligation.
+API `/api/basin`, browser panel and notebook cell expose identical typed traces,
+source links and failure clearing. Six focused authority/schema/propagation/surface
+tests pass. Proposal/paper A.5.1 and the V4 spec/schema successor are propagated.
+Historical loaders/claims and the executable release remain unchanged. Native
+implementation evidence is exposed separately below; native acceptance remains pending.
+
 P9-10.1a supplies the required baseline basin interface and lifecycle evidence;
 P9-10.1b supplies exact expanded-target disabled compatibility evidence for the
 four selected families. After those results are reviewed, P9-10.1c updates the
@@ -3283,3 +3295,50 @@ with successor evidence. Show target-specific success/exclusion and any remainin
 hold, preserving accepted predecessors and fail-closed source checking. Retain
 the all-forty umbrella-capability condition, numerical limits and authority status;
 do not infer completed sparks, hierarchy, other-six execution or full conformance.
+
+#### P9-10.1a native evidence successor
+
+The separate `grcv4_explorer.basin_native` view authenticates the four native
+execution records plus graph/seed pressure and exact source bindings. Its end-to-end
+successor also exposes independent saved-state equations/rows, full classifications,
+fresh CI roots and W/Z checks, lifecycle pressure and explicit seed/cycle limitations.
+Compressed records retain checked download links; the view separates the original
+20 checks from 17 pressure tests.
+`/api/basin/native` and `/api/basin/native/source` serve this evidence; browser
+and notebook consumers distinguish retained integrity checking from a numerical
+rerun. User accepted bounded native conformance on 2026-10-28. The checked
+acceptance successor resolves `P9-10.1a-VO-BASIN-NATIVE`; API/browser/notebook expose
+the decision, review and source bindings. The original design/execution snapshots
+retain their historical flags. P9-10.1b/c and aggregate support remain open.
+
+#### P9-10.1b expanded-target evidence
+
+The separate `grcv4_explorer.target_compatibility` view binds the exact accepted
+expanded targets and explicitly migrated basin successors for C_OS/C_CI/A_CI/A_PC.
+API `/api/tranche10/targets` and `/api/tranche10/targets/source`, browser controls
+and the notebook `expanded-targets` cell expose retained results and sources.
+The projection separates successful four-surface parity from six rejection
+controls per family, v1 from v2 identity, and retained integrity from a native
+rerun. A checked acceptance successor records bounded user acceptance and rejects
+source/scope drift, leaving overall P9-10.1 open.
+P9-10.1c still owns aggregate support reconciliation; this view does not promote
+the frozen all-forty capability or fill the other-six source cells.
+
+#### P9-10.1c current support reconciliation
+
+`grcv4_explorer.tranche10_support` checks the accepted a/b successors and joins
+their exact versioned identities to the historical P9-9.6 subjects. Two holds
+are resolved in the proposed current view; the all-forty restriction remains a
+full-capability boundary. The independently pressured basin expansion and the
+compatibility target have different identities and remain distinct evidence.
+The direct-target supplement adds checked evidence on all four exact 10.1b v2
+targets at migration and disabled return (both roles), with assumptions, full
+root bindings, equation bounds and indexed raw records. It is new direct
+evidence included in P9-10.1c acceptance, not transferred pressure from 10.1a. Preserve
+the fixed-H/exact-CI-root distinction and explicit A_PC return carrier reset.
+Actual API/source access, browser and notebook expose this result, while main
+Phase 9 next-step guidance consumes the same view. The old support endpoint
+and original records remain historical. No native rerun or scientific/support
+promotion is performed. The separate acceptance view now records user-accepted
+P9-10.1c and bounded P9-10.1 closure, preserving raw snapshots and all-forty
+restrictions. API/browser/notebook and next-step guidance now point to P9-10.2.
