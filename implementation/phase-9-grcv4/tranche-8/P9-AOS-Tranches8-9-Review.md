@@ -6,7 +6,10 @@ any necessary improvements for larger graphs. P9-10.2 is deferred.
 
 The machine-readable [review](P9-AOS-Tranches8-9-Review.json) is the completion
 record. Its builder consumes each checkpoint's retained evidence before writing
-the review. All new results remain pending user acceptance. The accepted
+the review and retains its original pre-acceptance execution flags. The user
+accepted this bounded scope on 2026-10-28; the separate
+[acceptance decision](../tranche-9/P9-AOS-Acceptance.json) binds implementation
+commit `b4339d8f`, the exact review, and both validation records. The accepted
 C_OS/C_CI/A_CI/A_PC records and the earlier A_OS P9-8.4b/c decisions are unchanged.
 
 ## Scope and evidence
@@ -21,7 +24,7 @@ C_OS/C_CI/A_CI/A_PC records and the earlier A_OS P9-8.4b/c decisions are unchang
 | 8.5 | Six small lifecycle obligations plus actual large-event replay, three readmissions and both-role independent OS checks. `P9-8.5-AOS-small/large.json.xz`. |
 | 8.6/end | Bounded numerical and lifecycle review, explicit exclusions, performance measurements and cache policy. No all-ten or arbitrary-graph promotion. |
 | 9.1b | Six mandatory operation-owner tests, including source evolution, mixed replay, reset/rebase and atomic failures. `../tranche-9/P9-9.1b-AOS.json.xz`. |
-| 9.2/9.3 | Four independently compared native V3 delegate surfaces; matrix successor has sixteen accepted, four passing pending acceptance, and twenty unselected cells. `../tranche-9/P9-9.2-AOS.json.xz` and `P9-9.3-AOSMatrix.json`. |
+| 9.2/9.3 | Four independently compared native V3 delegate surfaces; accepted projection has twenty accepted and twenty unselected cells; the retained execution matrix preserves its pre-acceptance counts. `../tranche-9/P9-9.2-AOS.json.xz` and `P9-9.3-AOSMatrix.json`. |
 | 9.4a/b | Four crossing and five public-facade tests; complete identities, independent initialization, migration, rollback and replay. A_OS basin migration remains refused atomically. |
 | 9.5 | Three public legacy-conflict tests; rejected work does not enter successful history or substitute a V4 operation. |
 | 9.6 | Exact source/expanded-target identity reconciliation, inherited contract provenance and remaining support limits. Included in the machine-readable review. |
@@ -160,3 +163,18 @@ view check. Two exact metadata-reader successors preserve the earlier Tranche 8
 end-review references; their live hashes and original Git bytes are checked,
 including existing predecessor epochs. Tranche 9 support and the historical
 Tranche 10 support views also passed.
+
+## Scoped user acceptance — 2026-10-28
+
+The user instructed “accept, commit”. All sixteen reviewed A_OS checkpoints,
+the declared successful larger companion, and the original fixture exclusion
+are accepted. The API, browser and notebook project this separate decision;
+the original execution records and their source-bound validations are unchanged.
+The accepted compatibility matrix is 20/40; twenty cells remain unselected.
+Optional completion, A_OS basin support, expanded-target compatibility beyond
+the declared evidence, and full GRC9V4 conformance remain outside the acceptance.
+P9-10.2 remains deferred.
+
+The [acceptance validation](../tranche-9/P9-AOS-AcceptanceValidation.json) checks
+the decision and exact source epochs, retained original records, source mutation
+rejection, accepted API/browser/notebook output, and failed-refresh clearing.

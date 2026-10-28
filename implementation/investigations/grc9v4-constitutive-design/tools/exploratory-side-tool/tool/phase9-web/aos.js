@@ -1,11 +1,17 @@
 export function aosRows(value) {
   if (value.schema !== 'phase9_aos_work_v1' || value.family !== 'A_OS' ||
-      value.user_accepted !== false || value.aggregate_closed !== false) {
+      typeof value.user_accepted !== 'boolean' || value.aggregate_closed !== false) {
     throw new Error('Unexpected A_OS work scope');
   }
   if (value.checkpoints.length !== 16 || new Set(value.checkpoints.map(r => r.checkpoint)).size !== 16 ||
-      value.checkpoints.some(r => r.user_accepted !== false)) {
+      value.checkpoints.some(r => r.user_accepted !== value.user_accepted ||
+        (value.user_accepted && r.state !== 'bounded_accepted'))) {
     throw new Error('Incomplete A_OS checkpoint scope');
+  }
+  if (value.user_accepted && (!/^[0-9a-f]{64}$/.test(value.acceptance_digest ?? '') ||
+      value.acceptance?.record_digest !== value.acceptance_digest ||
+      value.acceptance?.path !== 'implementation/phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json')) {
+    throw new Error('Missing bounded A_OS acceptance');
   }
   const evidence = row => {
     const e = row.execution ?? {};

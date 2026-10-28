@@ -1860,6 +1860,12 @@ PATHS |= {
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/aos.py',
     'implementation/phase-9-grcv4/tranche-8/P9-8.4d-AOSCases.json',
     'implementation/phase-9-grcv4/verification/p9_aos_g2_sources.py',
+    'implementation/phase-9-grcv4/verification/p9_aos_acceptance.py',
+    'implementation/phase-9-grcv4/verification/test_p9_aos_acceptance.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-AOS-AcceptanceSources.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-AOS-AcceptanceValidation.json',
+
     'implementation/phase-9-grcv4/verification/test_p9_aos_g2_sources.py',
     'implementation/phase-9-grcv4/tranche-9/P9-AOS-G2SourceValidation.json',
     'implementation/phase-9-grcv4/tranche-8/P9-8.4d-AOSOracleInputs.json',

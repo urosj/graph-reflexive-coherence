@@ -3147,7 +3147,8 @@ the full ten-profile plan.
       Accepted `.b/.c` retained; `.d–i`, 8.5/8.6 and applicable Tranche 9
       execution passed with API/browser/notebook evidence. Original large reset
       exclusion retained; separate companion passed. No all-ten closure.
-      - [ ] User acceptance of the new bounded A_OS results.
+      - [x] User acceptance of the new bounded A_OS results on 2026-10-28;
+        [decision](./phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json).
     - [x] C_OS: [20 cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md),
       D59/66/73/94, depths three/four; accepted 2026-10-12.
       - [x] Independent layouts, complete references, exact represented charge,

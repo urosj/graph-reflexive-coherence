@@ -1,8 +1,8 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Active scope — A_OS fifth realization (2026-10-28)
+## Accepted checkpoint — A_OS fifth realization (2026-10-28)
 
-A_OS is implemented on `work/p9-aos-tranches-8-9`, based on `02528b5d`,
+A_OS is implemented at `b4339d8f` on `work/p9-aos-tranches-8-9`, based on `02528b5d`,
 from the first missing P9-8.4d obligation through P9-9.6. Its earlier `.b/.c`
 acceptance is retained. See the [bounded review](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.md),
 [checked evidence](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.json)
@@ -15,13 +15,16 @@ identified companion passed the actual event, ten steps per role, final reads
 and eight larger covariance events. All measured execution caps passed.
 
 The side-tool's `/api/aos`, first browser panel and focused notebook cell expose
-all sixteen checkpoints and exact source downloads. New execution remains
-pending user acceptance: the source compatibility matrix is sixteen accepted,
-four A_OS passing pending acceptance, and twenty unselected cells. The accepted
+all sixteen checkpoints and exact source downloads. The user accepted the bounded
+A_OS results on 2026-10-28; the [acceptance decision](./phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json)
+binds the exact implementation review and both validation records. All sixteen
+checkpoints are accepted. The source compatibility matrix is twenty accepted
+and twenty unselected cells. The accepted
 four-family records remain unchanged. A_OS basin support and optional completion
 remain unselected; full GRC9V4 conformance is not claimed.
 
-Next: review the bounded A_OS results. P9-10.2 is deferred on this branch.
+This bounded branch scope is complete. Further realization work needs its own
+selection; P9-10.2 remains deferred on this branch.
 The older P9-10.1 checkpoint below remains accepted for its four-family scope.
 
 ## Accepted checkpoint — P9-10.1 bounded support closure (2026-10-28)

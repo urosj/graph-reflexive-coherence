@@ -1,0 +1,25 @@
+{
+  "schema": "p9-aos-acceptance-sources-v1",
+  "base_commit": "b4339d8f",
+  "sources": {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/aos.js": {
+      "before_sha256": "59276b820c80a635224a88550fdc1331e693192298754d99be99edb60be339b6",
+      "after_sha256": "fafa53b4a960bc8aabdcee30f7b8e772697dbb5f5642f0e3fbaefbd3e112a3ce"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/aos.py": {
+      "before_sha256": "2025dd6920c099e032540778b7ff42307dea6e04b41e0a4231524a2689a115d2",
+      "after_sha256": "9794c91b365f81dd29a5ade37a2b605088fcbee15aa9cdd4199690fb423164df"
+    },
+    "implementation/phase-9-grcv4/verification/p9_aos_g2_sources.py": {
+      "before_sha256": "0dd92bc3d12d9421e6e8b42cb3ffbff025d112320909390e00e8371dbe082bf7",
+      "after_sha256": "f61dd066e708a2c230a1979f73b12b3b7c7bbb6da716fe19139f5dd9dd7fe61d"
+    },
+    "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py": {
+      "before_sha256": "79e0d6f4dcac2248195c473fe3501304a1e3d845dd1943af700640794cc16410",
+      "after_sha256": "77f9039acfe29af8c65b0a19fe8c279acc12de0c6645eff995d596ba01db17e5"
+    }
+  },
+  "native_runtime_changed": false,
+  "original_execution_relabelled": false,
+  "record_digest": "c7d220f0aecbeefc4ac7a52c996c674eeacc74e1343ab90f88c0aa88ce792fe8"
+}
