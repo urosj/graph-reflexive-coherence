@@ -1,0 +1,47 @@
+{
+  "schema": "p995-public-conflict-acceptance-v1",
+  "accepted_date": "2026-10-28",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "bounded_leaf_closed": true,
+  "aggregate_closed": false,
+  "public_api": true,
+  "full_GRC9V4_conformance": false,
+  "executions": {
+    "C_OS": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.5-C_OS.json",
+      "sha256": "7abd9ea654249a1773d97814f1c2c753868a63873019a1d90899cb27e3427373",
+      "record_digest": "c9b2034f29a766524474819cc3ca80e2d9cf3e755514924e18f8afcf380a0d1d"
+    },
+    "C_CI": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.5-C_CI.json",
+      "sha256": "54e36a55a5382193298e25d9662e128433baaa4126d3d054f4b340ecf5ffb69b",
+      "record_digest": "a40fe86c243052cb7a6d5b1a3690d8c946b8f38d15f0f31f735073696bc9662f"
+    },
+    "A_CI": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.5-A_CI.json",
+      "sha256": "fc9c440069bf111cf2812b9b22722c9397f711ccc2ccb18c7066057a963e3c54",
+      "record_digest": "448bcc0f8d621aa10db23721e02d2aeecf7d560b773d6bc5c2e772bd0733cb9b"
+    },
+    "A_PC": {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-9.5-A_PC.json",
+      "sha256": "1ff92faaf1d3757358a7df5b972e2a6c808e21bb1013adf7a052266ca5a92bbc",
+      "record_digest": "f2334d441a991c804a2428418d6cc836cccaed73cbf95e565c5e0a2d0c4fef36"
+    }
+  },
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.5-Review.md",
+    "sha256": "9ec7fb7f3fca77a40c6b4b3e5b415fe6a0798a6b3b0d7837cfab3543284c4c42"
+  },
+  "authority": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.5-Authority.json",
+    "sha256": "14877af6e6ac8cacc968c543341f1a319c273598a521cd01d6db2e725c856516"
+  },
+  "scope": "Four-family public saturated legacy refusal, whole-state rollback, successful-history preservation, replay/reset and trigger-boundary controls. No production or GRC9V3 change. P9-9.6 support review, other-six-family execution and optional completion/hierarchy remain separate.",
+  "record_digest": "792f1b9640edf2e4ae1e958f09662107ec7fd88ab46110e7820b146661a20bec"
+}

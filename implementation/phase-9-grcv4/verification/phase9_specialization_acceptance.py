@@ -503,3 +503,99 @@ def arg2b_authorization(root):
 
 def arg2b_permitted(path, leaf):
     return leaf == ARG2B_ENTRY and path in ARG2B_PATHS
+
+
+ENABLED_LIFECYCLE_ENTRY = "P9-9.1b"
+ENABLED_LIFECYCLE_PATHS = (
+    "src/pygrc/models/grc_9_v4_owner.py",
+    "tests/models/test_grc_9_v4_owner.py",
+)
+
+
+def enabled_lifecycle_authorization(root):
+    """User-requested first-group Tranche 9 entry; no disabled/full G3 grant."""
+    p.git(root, "merge-base", "--is-ancestor", "3684bd02", "HEAD")
+    path = "implementation/phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json"
+    value = p.read(p.safe_path(root, path))
+    p.require(value["record_digest"] == p.digest_record(value)
+              == "9b177f90bc5c38deea9769aca98fc16d9f6c0c10dc6ccc3b92583a3faa8f697c"
+              and value["user_accepted"] and value["first_group_closed"]
+              and set(value["families"]) == {"C_OS", "C_CI", "A_CI", "A_PC"},
+              "mandatory lifecycle requires accepted first-group Tranche 8")
+    return ENABLED_LIFECYCLE_ENTRY
+
+
+def enabled_lifecycle_permitted(path, leaf):
+    return leaf == ENABLED_LIFECYCLE_ENTRY and path in ENABLED_LIFECYCLE_PATHS
+
+
+DISABLED_DELEGATE_PATHS = (
+    "src/pygrc/models/grc_9_v4_legacy.py",
+    "tests/models/test_grc_9_v4_legacy.py",
+)
+DISABLED_DELEGATE_LEAVES = frozenset(
+    f"P9-9.2-{family}-{surface}"
+    for family in ("C_OS", "C_CI", "A_CI", "A_PC")
+    for surface in ("transition", "state", "observable", "lifecycle")
+)
+
+
+def disabled_delegate_authorization(root):
+    """Explicit 9.2 request after bounded 9.1b acceptance; no crossing grant."""
+    from p991b_acceptance import decision
+    p.git(root, "merge-base", "--is-ancestor", "416b3dd9", "HEAD")
+    decision(root)  # Exact pinned acceptance, not mutable status evidence.
+    return DISABLED_DELEGATE_LEAVES
+
+
+def disabled_delegate_permitted(path, leaf):
+    return leaf in DISABLED_DELEGATE_LEAVES and path in DISABLED_DELEGATE_PATHS
+
+
+BRANCH_CROSSING_PATHS = (
+    "src/pygrc/models/grc_9_v4_owner.py",
+    "src/pygrc/models/grc_9_v4_crossing.py",
+    "tests/models/test_grc_9_v4_crossing.py",
+)
+
+
+def branch_crossing_authorization(root):
+    """Explicit continuation after accepted 9.3; no public API/support grant."""
+    from p993_acceptance import decision
+    p.git(root, "merge-base", "--is-ancestor", "b894c95d", "HEAD")
+    decision(root)
+    return "P9-9.4a"
+
+
+def branch_crossing_permitted(path, leaf):
+    return leaf == "P9-9.4a" and path in BRANCH_CROSSING_PATHS
+
+
+PUBLIC_API_PATHS = (
+    "src/pygrc/models/grc_9_v4.py",
+    "src/pygrc/models/grc_9_v4_contracts.py",
+    "src/pygrc/models/grc_9_v4_api_lifecycle.py",
+    "src/pygrc/models/__init__.py",
+    "tests/models/test_grc_9_v4.py",
+    "tests/models/test_grc_9_v4_contracts.py",
+    "tests/models/test_grc_9_v4_architecture.py",
+    "src/pygrc/models/grc_9_v4_lifecycle.py",
+    "src/pygrc/models/grc_9_v4_owner.py",
+    "src/pygrc/models/grc_9_v4_crossing.py",
+)
+PUBLIC_API_NEW_PATHS = tuple(p for p in PUBLIC_API_PATHS if p not in {
+    "src/pygrc/models/__init__.py", "src/pygrc/models/grc_9_v4_lifecycle.py",
+    "src/pygrc/models/grc_9_v4_owner.py", "src/pygrc/models/grc_9_v4_crossing.py",
+})
+
+
+def public_api_authorization(root):
+    """Explicit continuation after 9.4a acceptance; no 9.6 support promotion."""
+    from p994a_acceptance import decision
+    p.git(root, "merge-base", "--is-ancestor", "7b16696a", "HEAD")
+    decision(root)
+    return "P9-9.4b"
+
+
+def public_api_permitted(path, leaf):
+    return leaf == "P9-9.4b" and path in PUBLIC_API_PATHS

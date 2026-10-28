@@ -71,6 +71,11 @@ def authenticate(root,ref):
         row=next((r for r in entries(Path(root)) if r['path']==ref['path']),None)
         require(row is not None and row['sha256']==ref['sha256'],'missing retained evidence: '+ref['path'])
         raw=unpack(packed_bytes(Path(root),row),row)
+    if sha(raw)!=ref['sha256']:
+        from p994b_runtime_successor import SOURCES, historical_source
+        expected=ref['sha256']
+        if historical_source(root,ref['path'],expected)==expected:
+            raw=git_bytes(root,ref['path'],SOURCES[ref['path']]['predecessors'][expected])
     require(sha(raw)==ref['sha256'],'retained source drift: '+ref['path'])
     return raw
 

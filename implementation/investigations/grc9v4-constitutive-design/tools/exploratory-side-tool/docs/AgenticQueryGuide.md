@@ -840,3 +840,100 @@ and performance records plus their sources without numerical execution.
 source. The final reviews are accepted, closing bounded first-group Tranche 8 on
 2026-10-27; the projection includes their pinned acceptance separately from 8.6. Smaller C_CI path discrimination does not remove the large-run
 resolution limit, and A_PC ratios do not grant a robust parameter neighborhood.
+
+
+### Tranche 9 first-group lifecycle evidence
+
+`from grcv4_explorer.tranche9 import tranche9_status, tranche9_source` exposes
+P9-9.1b for C_OS, C_CI, A_CI and A_PC. Use `tranche9_status(repo_root)` for
+retained integrity and `tranche9_source(repo_root, indexed_path)` for exact
+repository-relative sources. `/api/tranche9` and the Phase 9 browser/notebook
+provide the same view. These queries do not rerun kernels, grant acceptance,
+or settle the sixteen pending disabled-compatibility cells. For scientific
+authority continue using the typed forensic API and its support dispositions.
+
+### P9-9.2 disabled compatibility
+
+Use `grcv4_explorer.tranche9.tranche9_compatibility_status(repo_root)` or
+`GET /api/tranche9/compatibility` for all forty cells: sixteen native delegate
+results bounded acceptance recorded, twenty-four unselected. Sources are accessible
+through `tranche9_compatibility_source` / `/api/tranche9/compatibility/source`.
+These checks authenticate retained evidence without rerunning native execution.
+Explicit disabled seeds do not establish an enabled/disabled crossing; that
+work remains P9-9.4. The browser and verification notebook expose the same scope.
+
+### P9-9.3 matrix reconciliation
+
+The existing `tranche9_compatibility_status(repo_root)` and
+`/api/tranche9/compatibility` now also check `P9-9.3-Matrix.json` against the
+frozen catalog/spec and 9.2 acceptance. `matrix_reconciliation` reports the
+separate 9.3 disposition: passing reconciliation, user-accepted on 2026-10-27,
+no native execution. All forty cells remain visible. Its matrix/review are
+indexed sources. This does not grant branch crossings or public runtime support.
+
+
+### P9-9.4a branch crossings
+
+Use `grcv4_explorer.tranche9.tranche9_crossing_status(repo_root)` or
+`GET /api/tranche9/crossings` for four actual same-graph entry/return executions.
+`tranche9_crossing_source` and `/api/tranche9/crossings/source` serve indexed
+repository-relative evidence. Browser and notebook expose the same view.
+Integrity checks do not execute kernels, confer acceptance, or deliver the
+public runtime API planned for P9-9.4b. The negative native timestep excludes
+C_CI at return admission and the other three at their next enabled step.
+
+### P9-9.4b public runtime integration
+
+`grcv4_explorer.tranche9.tranche9_public_status(repo_root)` and
+`GET /api/tranche9/public` authenticate four native public family suites, shared
+boundary checks and the all-ten contract suite. Indexed `/source?path=...` downloads retain content hashes.
+The browser **Check ten-family contracts / four-family execution** and notebook use the same
+projection. This is retained-integrity verification, not a native rerun or a
+G3/full-conformance grant. Runtime usage/reproduction is in
+`implementation/phase-9-grcv4/tranche-9/P9-9.4b-Review.md`.
+
+For P9-9.4b, `contract_matrix` describes all ten existing candidate/realization
+schemas and their authority fields; `families` remains the four-family native
+execution scope. The extra `contracts` evidence group validates all ten data
+contracts without executing the six unselected native lifecycles. Do not infer
+native conformance from configuration round trips or contract discovery.
+
+The `architecture` projection authenticates nine tests for execution selection,
+transition/artifact transfer, dispatch, sole branch ownership, rollback, and
+accepted mixed/crossing checkpoint parity. Its
+`replay_assessment` is one small three-action case, not a scaling benchmark.
+The source index includes `P9-9.4b-Architecture.md`, which records the possible
+consolidation of standalone and branch checkpoint formats after all ten
+families are fully enabled.
+
+
+## P9-9.5 public legacy conflict evidence
+
+`grcv4_explorer.tranche9.tranche9_conflict_status(repo_root)` authenticates the
+four C_OS/C_CI/A_CI/A_PC public refusal records; `tranche9_conflict_source` reads
+only their indexed repository-relative sources. `/api/tranche9/conflict`, its
+`/source?path=...` route, the browser control and notebook expose the same view.
+These checks run no native trajectories. A passing test means the undefined
+legacy expansion was rejected with full rollback, not that an event committed.
+Bounded user acceptance is recorded on 2026-10-28; its pinned decision is
+separate from original execution flags. P9-9.6 support review remains separate. The trace for
+`D11-G9-EC-LEGACY-DEFINED-DOMAIN` retains its bounded compatibility authority.
+
+## P9-9.6 bounded support reconciliation
+
+`grcv4_explorer.tranche9.tranche9_support_status(repo_root)` authenticates the
+accepted Tranche 8/9 evidence and exact source/expanded-target identities for
+C_OS/C_CI/A_CI/A_PC. `tranche9_support_source` serves only indexed, hash-checked
+repository-relative sources. `/api/tranche9/support`, its `/source?path=...`
+route, the browser control and notebook expose the same review without native
+execution. The verdict is bounded evidence reconciled, full conformance held;
+bounded user acceptance is recorded on 2026-10-28 through a separate pinned
+decision, preserving the original review flags. Next: P9-10.1a/b/c.
+
+The sixteen accepted disabled cells apply to their exact source identities;
+expanded targets have enabled evidence and no corresponding disabled-cell grant.
+The required public `basin_attributes` / `basin_identity` surface is missing;
+this is separate from optional completed sparks/hierarchy. The frozen umbrella
+compatibility capability requires all forty vectors, while twenty-four remain
+unselected. These three items are routed to P9-10.1. A successful integrity check
+does not remove them, promote D10.2 indeterminate traces or grant full conformance.

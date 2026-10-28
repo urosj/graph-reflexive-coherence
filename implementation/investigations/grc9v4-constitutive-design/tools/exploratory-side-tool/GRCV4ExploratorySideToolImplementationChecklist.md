@@ -2582,3 +2582,86 @@ instead of stale fixed totals and opens any pending case details explicitly.
   Existing numerical evidence is reused; new execution is metadata-only.
   Final reviews accepted on 2026-10-27; bounded first-group Tranche 8 is closed.
   Other families remain open; no new machine gate or public support.
+
+
+### P9-9.1b — first-group mandatory lifecycle
+
+- [x] Read-only `tranche9_status(repo_root)` and `/api/tranche9` check the four
+  independent C_OS/C_CI/A_CI/A_PC execution records and their current source
+  bindings. `tranche9_source` exposes only indexed repository-relative files.
+- [x] Browser **Check P9-9.1b lifecycle** and notebook show results, source links
+  and the distinction between retained integrity, execution and acceptance.
+- [x] Current next-work projection points to the bounded Tranche 9 route.
+- [x] Bounded user acceptance recorded on 2026-10-27. Disabled compatibility,
+  crossings and full specialization conformance remain pending. Optional completion/hierarchy is unselected.
+
+The new owner composes the accepted kernels; status never executes them.
+Independent runs use four single-thread workers; the user permits up to twelve
+when useful. No all-ten, ATC, scientific-authority or public support promotion.
+
+### P9-9.2 — bounded disabled-delegate evidence
+
+- [x] Read-only checked API and indexed sources for 16 executed/24 unselected cells.
+- [x] Actual browser button/table and notebook access; integrity is distinct from native execution.
+- [x] Reject stale/widened records and clear unavailable browser evidence.
+- [x] Bounded user acceptance on 2026-10-27; crossing/full-conformance gates remain separate.
+
+### P9-9.3 — complete compatibility matrix reconciliation
+
+- [x] Bind the existing forty-row view to frozen catalog/spec and accepted evidence.
+- [x] Expose matrix/review through indexed sources, actual browser and notebook.
+- [x] Reject incomplete, stale or promoted matrices; retain separate 9.2/9.3 acceptance.
+- [x] User acceptance of 9.3 reconciliation on 2026-10-27; no new native support inferred.
+
+
+### P9-9.4a — actual same-graph branch crossings
+
+- [x] Checked API, indexed sources, browser button and notebook for all four families.
+- [x] Reject input drift, acceptance/public API promotion and missing family coverage.
+- [x] Preserve historical records and constrain the post-solver owner successor by exact hashes.
+- [x] User acceptance of bounded crossings on 2026-10-27; public API remains P9-9.4b.
+
+### P9-9.4b public API integration
+
+- [x] Four-family and shared boundary evidence through the read-only API and indexed sources.
+- [x] Browser control/renderer and executable notebook status cell.
+- [x] Distinguish public API implementation from acceptance/conformance; reject scope/promotion/input drift.
+- [x] Render all ten typed contract rows separately from the four native execution
+  families; expose the contract evidence group and reject schema/axis drift,
+  incomplete rows and widened execution.
+- [x] Expose the architecture/replay group, sole branch ownership and accepted
+  crossing replay, with future standalone/branch format consolidation separate.
+- [x] User acceptance of bounded P9-9.4b on 2026-10-28; P9-9.5/P9-9.6 remain.
+
+
+### P9-9.5 public saturated legacy refusal
+
+- [x] Checked four-family conflict API and indexed evidence/forensic sources.
+- [x] Actual browser control and notebook cell distinguish correct refusal from
+  committed expansion, and retained integrity from native execution/acceptance.
+- [x] Reject altered failure, rollback and boundary evidence, missing sources,
+  widened scope and acceptance/conformance promotion; clear stale browser output.
+- [x] Bounded user acceptance of P9-9.5 on 2026-10-28; pinned decision is
+  projected separately from original execution records. Support review remains P9-9.6.
+
+### P9-9.6 bounded specialization support review
+
+- [x] Authenticate accepted stages and exact source/expanded-target identities;
+  expose checked review, indexed sources and sixteen/twenty-four cell scope.
+- [x] Actual API/browser/notebook access, with no numerical rerun or support grant.
+- [x] Render mandatory basin-interface gap, frozen umbrella-capability restriction
+  and target-identity coverage limit; distinguish optional completion/hierarchy.
+- [x] Reject missing acceptance, drifted identities and rehashed widening or
+  removed holds; clear stale browser results on failure.
+- [x] Bounded user acceptance on 2026-10-28, projected separately from the
+  original review record; full conformance and P9-G4 remain held.
+
+### P9-10.1 basin and expanded-target support closure — planned
+
+- [ ] Consume reviewed P9-10.1a baseline basin interface/lifecycle evidence and
+  P9-10.1b expanded-target disabled compatibility evidence for the four families.
+- [ ] P9-10.1c: update the checked support projection, API/browser/notebook and
+  indexed sources with exact target identities, successor outcomes and remaining
+  holds; reject drift and unsupported promotion while preserving accepted records.
+- [ ] Retain the separate all-forty umbrella restriction, numerical/authority
+  limits and optional/other-six exclusions when reporting closure of either gap.

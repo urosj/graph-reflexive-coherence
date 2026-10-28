@@ -1,6 +1,237 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current checkpoint — bounded first-group Tranche 8 accepted and closed (2026-10-27)
+## Current checkpoint — accepted P9-9.6 bounded support review (2026-10-28)
+
+Branch `work/p9-9-first-group`; accepted P9-9.5 committed at `5efecfd4`.
+P9-9.6 is **bounded-accepted** on 2026-10-28 for C_OS, C_CI, A_CI, A_PC;
+[decision](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json). [Review and reproduction](./phase-9-grcv4/tranche-9/P9-9.6-Review.md);
+[exact identities and evidence](./phase-9-grcv4/tranche-9/P9-9.6-SupportReview.json).
+Accepted prerequisites reconcile with sixteen source-model disabled cells and
+enabled expansion/public replay evidence. No new trajectories, source changes,
+scientific claims or full-conformance grant. Five focused Python checks and
+twelve browser tests pass; API, source access and notebook expose the same holds.
+
+The next implementation work is P9-10.1a, followed by P9-10.1b/c:
+
+- **P9-10.1a:** close the mandatory baseline `basin_attributes` / `basin_identity`
+  interface. Trace classification and identity semantics first, routing missing
+  authority before implementation. Test fresh classification, threshold boundaries,
+  expansion, reset, snapshot/replay and rollback for the four families with small
+  fixtures. Optional completed sparks/hierarchy remain separate.
+- **P9-10.1b:** reuse the four accepted expanded targets to verify their disabled
+  transition/state/observable/lifecycle surfaces, with exact model bindings.
+  Exercise entry/return, both histories, reset and replay where admissible; verify
+  explicit rejection outside the defined legacy domain. Record actual target
+  outcomes without substituting source acceptance or repeating enabled campaigns.
+- **P9-10.1c:** reconcile a/b successor evidence and reviewed holds in the support
+  view, side-tool API/browser/notebook and handoff. Preserve the frozen all-forty
+  condition for `grc9v3_disabled_compatibility` and full conformance. These target
+  checks do not fill the other twenty-four source cells/six unselected families.
+
+These children are planned, not executed. Reuse accepted fixtures/checkers,
+parallelize independent family checks, and preserve accepted historical records.
+
+Retain CI resolution limits, pointwise A_PC carrier margins, defined-domain
+legacy refusal and original D10.2 indeterminate authority. P9-10.2–10.6 still
+own final replay/regression, publication, debt reconciliation and P9-G4. This
+review does not silently promote the public runtime's pending support status.
+
+## Previous checkpoint — accepted P9-9.5 public conflict refusal (2026-10-28)
+
+Branch `work/p9-9-first-group`; P9-9.4b accepted at `1ea6807c`.
+P9-9.5 is bounded-accepted for **C_OS, C_CI, A_CI, A_PC** on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json); [scope, evidence and reproduction](./phase-9-grcv4/tranche-9/P9-9.5-Review.md).
+Four parallel suites pass twelve tests plus twenty-four strict trigger-boundary
+controls. Actual native candidate detection through public `GRC9V4.step()`/`run()`
+produces `legacy_expansion_target_undefined` at the saturated port-5 conflict.
+The full publication, scientific/reset state, diagnostics, clocks, archives,
+successful receipts and journal are unchanged. Replay reproduces the refusal;
+reset and subsequent evolution match unchanged GRC9V3 exactly. Equality and
+adjacent represented thresholds distinguish actual trigger eligibility from
+saturation alone. No enabled V4 expansion substitutes for the legacy failure.
+
+No `src/` file, legacy implementation, law, tolerance, numerical policy or
+historical execution record changed. New verification tests live alongside the
+Phase 9 runner. Compact source-bound records reuse accepted small input fixtures;
+no large graph campaign was repeated. Side-tool `/api/tranche9/conflict`, indexed
+sources, browser and notebook expose integrity separately from acceptance.
+The queried D11-G9 legacy-defined-domain contract preserves its bounded authority.
+Ten Python evidence/surface checks, ten browser tests and the phase boundary
+(703 protected / 346 runtime files) pass.
+
+Next: P9-9.6 bounded support review. All-ten public contracts
+remain distinct from four-family execution. Keep the optional completion/
+hierarchy and other-six-family exclusions, CI resolution limits and pointwise
+A_PC carrier margins. No full GRC9V4 conformance is inferred.
+
+
+## Previous checkpoint — accepted P9-9.4b public API (2026-10-28)
+
+Branch `work/p9-9-first-group`. Accepted 9.4a was committed as `7b16696a`
+before this work. Public `from pygrc.models import GRC9V4` now provides typed
+contracts/configurations for **all ten families**, with native execution kept at
+**C_OS, C_CI, A_CI, A_PC** as explicitly requested. Existing candidate/realization
+parameter types remain distinct. W_A depends on candidate; Z_4 independently
+depends on persistence. Both current/reset authority are validated.
+The facade delegates transaction handling to `grc_9_v4_api_lifecycle.py`;
+`grc_9_v4_contracts.py` owns declarations and readable branch-specific state.
+Complete replay checkpoints remain separate from the scientific view.
+[API guide](../examples/grcv4/grc9v4_api.md) and
+[review/reproduction](./phase-9-grcv4/tranche-9/P9-9.4b-Review.md).
+Six contract tests, twenty public integration/boundary tests and nine
+architecture tests pass; the seven groups executed in parallel. The
+[architecture decision](./phase-9-grcv4/tranche-9/P9-9.4b-Architecture.md) records
+explicit public execution selection, immutable preparation for all enabled
+actions, and sole branch receipt/journal/artifact ownership. The branch contains
+immutable enabled state, with no nested enabled owner or private receipt writes.
+Whole artifact bundles replace the previous delta slicing. Scientific descriptor
+properties are explicit; accepted mixed and crossing checkpoints must replay
+unchanged. No numerical kernel changes.
+Load of the small three-action case performs exactly two ordinary steps and
+one expansion, with no nested event-checkpoint replay. Retain the checkpoint
+formats. After all ten are enabled, consider consolidating standalone and branch
+formats/action vocabularies; current branch ownership is already unified.
+P9-9.4b is bounded-accepted on 2026-10-28;
+[decision](./phase-9-grcv4/tranche-9/P9-9.4b-Acceptance.json). Both P9-9.4 children are closed. Side-tool `/api/tranche9/public`, browser and
+notebook expose ten contract rows, four execution families and retained integrity
+separately from numerical execution.
+
+The original A_PC fixture cannot readmit into the retained CI domain; this
+rejection is preserved. The CI→PC→CI companion passes without changing the CI
+parameters. Direct C→A profile migration rejects instead of using the generic
+WLS initializer; explicit native-stage initialization is exposed through the
+accepted branch entry/return route. Same-graph crossing restrictions, CI
+resolution limits, pointwise A_PC carrier margins and optional/six-family
+exclusions remain. Full conformance is not advertised.
+
+The catalog selection runner verifies inputs before public construction, with
+an all-ten typed decoder and identity-checked native construction for the four
+execution families. Known unavailable families fail explicitly before admission. New artifacts use
+relative paths and automatic compression above 1,000,000 bytes. Existing
+execution evidence remains immutable; the exact lazy package-export delta has
+a narrow historical-source adapter. The changed native event/lifecycle/crossing
+sources have explicit predecessor/successor pins; their accepted checkpoint
+outputs are compared exactly. No GRC9V3 source or numerical kernel changed.
+The 8.5 historical reader now authenticates its frozen input roster rather than
+adding later files discovered in today's tree; exact source/metadata epoch
+adapters preserve all four 8.5 views and bounded 8.6 acceptance. No historical
+execution record is rewritten. Seventeen Python evidence/surface checks, eight
+browser checks and the current phase boundary (703 protected / 346 runtime files)
+pass. No larger numerical campaign was repeated.
+Next: public saturated-target rejection in 9.5, then
+bounded support review in 9.6. Do not repeat large Tranche 8 campaigns.
+
+## Previous checkpoint — P9-9.4a branch crossings (2026-10-27)
+
+Branch `work/p9-9-first-group`. User-accepted 9.3 was committed as `b894c95d`
+before crossing implementation. [9.4a review](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md)
+records sixteen passing tests in four parallel family processes: C_OS, C_CI,
+A_CI and A_PC. Actual same-graph entry/return, exact native step/snapshot/observable
+parity, independent row/exponent initialization, both histories, reset semantics,
+whole-state rollback and mixed replay are covered. User acceptance is recorded on 2026-10-27;
+[decision](./phase-9-grcv4/tranche-9/P9-9.4a-Acceptance.json). P9-9.4b public API work has not started.
+
+Positive continuation declares `dt=2^-12` in both branches. The original native
+`1/32` case remains an exclusion: C_CI return readmission rejects; C_OS/A_CI/A_PC
+reject their next enabled step. The newly found post-solver reporting defect is
+corrected to emit `valid_root` with a noncommitting failure. Original accepted
+records remain unchanged; a narrow 9.1b old/new owner hash adapter authenticates
+history, and 9.4a records bind the corrected runtime. No GRC9V3 source changed.
+
+The side-tool offers `/api/tranche9/crossings`, indexed sources, a browser button
+and a notebook cell. These are retained-integrity checks, never numerical reruns.
+All new files are below 1 MB. Fourteen focused Python checks, six browser tests
+and the current phase boundary (703 protected / 340 runtime files) pass.
+Reproduction commands are in the review.
+Next is the public four-family API in 9.4b,
+public saturated-target pressure in 9.5 and bounded support review in 9.6.
+Keep the explicit same-graph crossing domain: legacy topology growth is not an
+inferred return map. Six other families, optional completion/hierarchy, prior
+CI resolution limits and A_PC pointwise carrier margins remain unchanged.
+
+
+## Previous checkpoint — P9-9.3 matrix acceptance (2026-10-27)
+
+Branch `work/p9-9-first-group`. Bounded 9.2 acceptance and the public API
+planning update were committed as `830b3170` before this work.
+[P9-9.3 review](./phase-9-grcv4/tranche-9/P9-9.3-Review.md) and its compact matrix
+account for all forty frozen contract cells: **16 bounded-accepted delegate
+components, 24 unselected/unexecuted, zero failed or unaccounted**. Each accepted
+row binds exact profile/model identity, execution file/digest/cell pointer and
+acceptance entry. The other six families acquire no implied support.
+
+The existing compatibility API, browser matrix and notebook now authenticate
+this reconciliation. 9.2 acceptance is true; separate 9.3 matrix acceptance
+is recorded in [the decision](./phase-9-grcv4/tranche-9/P9-9.3-Acceptance.json). Original numerical evidence and runtime sources are unchanged;
+there is no new native execution or full-boundary/numerical campaign.
+Eleven Python checks and four browser tests pass, with 22 matrix mutation
+subtests; maintenance bindings and formatting are checked.
+
+Next: P9-9.4a branch crossings and P9-9.4b the public
+`GRC9V4` API. P9-9.5 must test that public entry; P9-9.6 reviews its bounded
+support. Preserve optional completion/hierarchy and six-family exclusions,
+CI resolution limits and pointwise A_PC effect/error limits. This matrix is
+complete as a register; it does not claim that all forty cells were executed.
+
+## Previous checkpoint — P9-9.2 bounded delegate acceptance (2026-10-27)
+
+Branch `work/p9-9-first-group`. Bounded 9.1b acceptance was committed as
+`416b3dd9` before any 9.2 implementation. The sixteen selected C_OS/C_CI/A_CI/A_PC
+component cells now pass, plus two shared boundary/descriptor controls. Four
+family suites ran in parallel against the unchanged native GRC9V3 target.
+[Review and reproduction](./phase-9-grcv4/tranche-9/P9-9.2-Review.md) distinguishes
+exact delegate compatibility from a numerical proof and from actual crossings.
+
+Seven Python surface/integrity checks and four browser tests pass. The direct
+current-boundary check passes (703 protected baseline files, 338 runtime files,
+47.0 s); final text-only bindings are refreshed separately.
+
+Bounded-accepted by the user on 2026-10-27; [decision](./phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json). The API `/api/tranche9/compatibility`, browser
+**Check sixteen delegate cells**, indexed source endpoint and notebook show
+16 bounded-accepted/24 unselected slots. Checking retained records does not rerun
+native steps. The four family records exceed 1 MB raw and are retained as `.json.xz`
+(about 28 KB each); small records remain JSON. Exact signed-zero, native reset-clock and prune-noop semantics
+are retained. No old-version source, accepted evidence or scientific law changed.
+
+Next: P9-9.3 matrix reconciliation, then P9-9.4a
+actual enabled/disabled crossings (including source-history mapping, entry/loss
+receipts and both-role admission) and P9-9.4b public `GRC9V4(GRCV4)` API
+integration. P9-9.5 must exercise conflict rejection through that public API;
+P9-9.6 requires the integrated public surface before bounded support review.
+P9-10.4 publishes its discovery/example, rather than first implementing it.
+Optional completion/hierarchy and six other families stay
+unselected; full GRC9V4 conformance remains ungranted. Preserve the CI resolution
+and pointwise A_PC effect/error limits. No fresh large-graph campaign is needed.
+
+## Previous checkpoint — P9-9.1b bounded acceptance (2026-10-27)
+
+Branch `work/p9-9-first-group`, from accepted Tranche 8 closeout `3684bd02`.
+Selected families remain **C_OS, C_CI, A_CI, A_PC**. No additional family is
+needed for this step. Up to twelve independent single-thread workers are
+permitted; the four lifecycle suites run in parallel.
+
+[P9-9.1b review](./phase-9-grcv4/tranche-9/P9-9.1b-Review.md) describes the new
+internal enabled lifecycle owner: one combined nine-port identity and ledger
+across ordinary step, mechanical expansion, reset/rebase and mixed snapshot
+replay. The numerical kernels and accepted Tranche 8 records are unchanged.
+Native execution is separate from `--check`, which only authenticates retained
+results/current input hashes. Side-tool **Check P9-9.1b lifecycle**, API
+`/api/tranche9`, indexed sources and notebook expose the bounded result.
+
+All 24 native tests, three API/notebook checks and two browser tests pass.
+The direct current-boundary check passes (703 protected baseline files,
+336 runtime files, 47.1 s). Final text-only maintenance bindings are rechecked;
+native evidence remains unchanged and every new record is below 1 MB.
+
+Bounded user acceptance is recorded in [the decision](./phase-9-grcv4/tranche-9/P9-9.1b-Acceptance.json).
+Original execution records are unchanged. Next is P9-9.2's sixteen selected
+compatibility cells alongside P9-9.3's full forty-cell matrix, then crossings,
+legacy port-5 rejection and bounded P9-9.6 review. P9-9.1a completion/hierarchy
+is unselected. There is no public full GRC9V4 conformance grant yet. Preserve
+CI resolution and pointwise A_PC effect/error limitations from Tranche 8.
+No large-graph campaign, new ATC work or old-version repair is required here.
+
+## Previous checkpoint — bounded first-group Tranche 8 accepted and closed (2026-10-27)
 
 Branch `work/p9-8-6-first-group`, from accepted 8.5 merge `df63d441`.
 The user accepted **P9-8.6 for C_OS, C_CI, A_CI and A_PC**.

@@ -29,6 +29,18 @@ def _policy(root):
 
 def _profile_next_gate(views):
     """Display only: consume checked materializer views, never grant authority."""
+    if 'tranche9_support' in views:
+        return 'P9-9.6 bounded support review accepted; full conformance held. Next: P9-10.1a basin interface, P9-10.1b expanded-target compatibility, then P9-10.1c reconciliation.'
+    if 'tranche9_conflict' in views:
+        return 'P9-9.5 public saturated-conflict checks bounded-accepted; next P9-9.6 bounded support review.'
+    if 'tranche9_public' in views:
+        return 'P9-9.4b public API executed; review/acceptance, then P9-9.5 public saturated-target rejection.'
+    if 'tranche9_crossings' in views:
+        return 'P9-9.4a bounded crossings accepted; next P9-9.4b public GRC9V4 API.'
+    if 'tranche9_compatibility' in views:
+        return 'P9-9.4a crossings, then P9-9.4b public API.'
+    if 'tranche9_evidence' in views:
+        return views['tranche9_evidence']['next_work']
     if 'tranche8_evidence' in views:
         from .tranche8 import _index
         from .paths import repository_root
@@ -137,6 +149,13 @@ def verification_status(repo_root: Path) -> dict:
             profile_views['specialization_admission_review'] = _checker(root, 'verify_p978_specialization_review')()
             from .tranche8 import tranche8_status
             profile_views['tranche8_evidence'] = tranche8_status(root)
+            from .tranche9 import tranche9_status, tranche9_compatibility_status, tranche9_crossing_status, tranche9_public_status, tranche9_conflict_status, tranche9_support_status
+            profile_views['tranche9_evidence'] = tranche9_status(root)
+            profile_views['tranche9_compatibility'] = tranche9_compatibility_status(root)
+            profile_views['tranche9_crossings'] = tranche9_crossing_status(root)
+            profile_views['tranche9_public'] = tranche9_public_status(root)
+            profile_views['tranche9_conflict'] = tranche9_conflict_status(root)
+            profile_views['tranche9_support'] = tranche9_support_status(root)
             # current_boundary authenticated these rows; the end-of-read check
             # rejects concurrent changes. Do not repeat the whole policy chain.
             work = {r['path']: r for r in module.read(root / module.WORK)['entries']}

@@ -3165,3 +3165,121 @@ Final Tranche 8 first-group follow-through, after 8.6 acceptance and before
   Existing numerical evidence is reused; new execution is metadata-only.
   Final reviews accepted on 2026-10-27; bounded first-group Tranche 8 is closed.
   Other families remain open; no new machine gate or public support.
+
+
+### P9-9.1b — first-group mandatory lifecycle
+
+- [x] Read-only `tranche9_status(repo_root)` and `/api/tranche9` check the four
+  independent C_OS/C_CI/A_CI/A_PC execution records and their current source
+  bindings. `tranche9_source` exposes only indexed repository-relative files.
+- [x] Browser **Check P9-9.1b lifecycle** and notebook show results, source links
+  and the distinction between retained integrity, execution and acceptance.
+- [x] Current next-work projection points to the bounded Tranche 9 route.
+- [x] Bounded user acceptance recorded on 2026-10-27. Disabled compatibility,
+  crossings and full specialization conformance remain pending. Optional completion/hierarchy is unselected.
+
+The new owner composes the accepted kernels; status never executes them.
+Independent runs use four single-thread workers; the user permits up to twelve
+when useful. No all-ten, ATC, scientific-authority or public support promotion.
+
+### P9-9.2 — bounded disabled-delegate evidence
+
+Expose the four selected families' sixteen independent surface results and
+all twenty-four unselected cells. `tranche9_compatibility_status` and the
+`/api/tranche9/compatibility` route authenticate retained source-bound results;
+the source endpoint is restricted to indexed repository-relative records.
+Browser **Check compatibility matrix (9.2/9.3)** and notebook expose the matrix,
+bounded acceptance recorded and absence of actual crossings/full conformance. Current
+next-work projection is P9-9.3 reconciliation, then P9-9.4.
+This is exact unchanged native delegate execution, not new scientific authority
+or a rerun of Tranche 8 numerical campaigns.
+
+### P9-9.3 — complete compatibility matrix reconciliation
+
+The existing compatibility API, browser table and notebook consume the checked
+P9-9.3 matrix, matching every catalog/spec contract with its 9.2 disposition.
+Sources include the matrix/review and original accepted evidence. Distinguish
+9.2 bounded acceptance from separate 9.3 matrix acceptance. No new native
+execution or support promotion occurs. Next is P9-9.4a
+crossings and P9-9.4b public API integration.
+
+
+### P9-9.4a — actual same-graph branch crossings
+
+Expose all four new crossing records through `tranche9_crossing_status`,
+`/api/tranche9/crossings`, indexed sources, the browser button and notebook.
+Show separate bounded 9.4a acceptance alongside accepted 9.1b/9.2/9.3 history.
+Retained integrity never reruns native kernels or grants a public API. Preserve
+indeterminate forensic authority, explicit same-graph scope and distinct
+C_CI readmission versus other-family post-solver exclusions. Next is review,
+then P9-9.4b public integration. The 9.1b owner successor has one exact old/new
+hash pair; original accepted executions remain immutable.
+
+### P9-9.4b public API evidence
+
+Expose all ten public contract rows, four-family native integration and shared boundary/selection checks
+through `/api/tranche9/public`, indexed sources, browser and notebook. Check
+retained inputs/results only; no runtime execution from a status request. User
+acceptance and full support remain separate. Preserve the actual PC→CI exclusion,
+the native C→A initialization boundary, and the exact historical export adapter.
+Next is P9-9.5 public conflict pressure and P9-9.6 bounded support review.
+
+The public view separates `contract_families`/`contract_matrix` (ten) from native
+`families` (four). Its seven evidence groups include contract round-trip/authority
+pressure; schema/authority drift, missing rows or execution widening reject.
+Readable enabled/legacy state and typed configuration are documented in the
+public API guide; no native execution is inferred from contract availability.
+
+P9-9.4b also exposes the architecture group: independent public execution
+selection, complete expansion-artifact transfer, predecessor checkpoint parity,
+rollback and bounded replay counts. Link the architecture decision as an indexed
+source. The architecture group now checks immutable enabled preparation, sole
+branch receipt/journal/artifact ownership, no nested enabled owner, stale
+transition rejection and accepted crossing replay. Consolidation of standalone
+and branch checkpoint formats remains an option after all ten families are enabled.
+
+P9-9.4b bounded acceptance is recorded on 2026-10-28. Project the separate
+pinned decision through API/browser/notebook; preserve original execution flags.
+Both P9-9.4 children are closed; P9-9.5 and P9-9.6 remain.
+
+
+### P9-9.5 public saturated legacy refusal
+
+Expose four checked conflict records and the exact D11-G9 legacy-defined-domain
+trace via `tranche9_conflict_status`, `/api/tranche9/conflict`, indexed sources,
+the browser control and notebook. Report that tests pass because an undefined
+legacy expansion is correctly refused; never label it a committed expansion.
+Show full rollback, deterministic replay/reset and strict-trigger boundary
+controls. Retained checking executes no model and grants no acceptance/support.
+P9-9.5 is bounded-accepted by the user on 2026-10-28. Project the pinned
+acceptance separately from original execution records. P9-9.6 is the next
+bounded support review. Existing production and historical evidence remain unchanged.
+
+### P9-9.6 bounded specialization support review
+
+Expose the reconciled C_OS/C_CI/A_CI/A_PC evidence through
+`tranche9_support_status`, `/api/tranche9/support`, indexed sources, the browser
+control and notebook. Authenticate accepted prerequisites and exact source/target
+identities without executing trajectories. Show sixteen accepted source-model
+disabled cells and twenty-four unselected cells; do not transfer source-cell
+acceptance to expanded target identities. Preserve numerical and authority limits.
+
+The bounded review is user-accepted on 2026-10-28; full conformance remains held.
+Project its pinned acceptance separately from the original review record.
+Present the actual mandatory basin-interface gap separately from optional
+completion/hierarchy, the frozen all-forty umbrella-capability condition and
+exact target-identity coverage. Route these items to P9-10.1. Five Python checks
+and twelve browser tests cover reconciliation, altered bindings, unaccepted
+prerequisites, attempted scope/promotion changes, actual HTTP source access and
+stale-output clearing. Do not upgrade production support discovery or old evidence.
+
+### P9-10.1 basin and expanded-target support closure — planned
+
+P9-10.1a supplies the required baseline basin interface and lifecycle evidence;
+P9-10.1b supplies exact expanded-target disabled compatibility evidence for the
+four selected families. After those results are reviewed, P9-10.1c updates the
+checked support projection, actual API/browser/notebook access and indexed sources
+with successor evidence. Show target-specific success/exclusion and any remaining
+hold, preserving accepted predecessors and fail-closed source checking. Retain
+the all-forty umbrella-capability condition, numerical limits and authority status;
+do not infer completed sparks, hierarchy, other-six execution or full conformance.

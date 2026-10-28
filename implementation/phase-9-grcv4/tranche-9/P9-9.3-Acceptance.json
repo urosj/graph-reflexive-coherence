@@ -1,0 +1,27 @@
+{
+  "schema": "p993-matrix-acceptance-v1",
+  "accepted_date": "2026-10-27",
+  "user_accepted": true,
+  "bounded_leaf_closed": true,
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "new_runtime_support": [],
+  "matrix": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.3-Matrix.json",
+    "sha256": "4e8234eeafba5cdcf9a42b804bbe28f32b02fdec94d6ae932eec4b8fa2f86d4e",
+    "record_digest": "28d31d6cef3e4d867a65272ca0b1e5a7637858a048f1d321192d1bb882209423"
+  },
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-9.3-Review.md",
+    "sha256": "cfc89ba7f8f05c50867783be5212bd9fced63807e80f4f6f3c35ea18979c726e"
+  },
+  "counts": {
+    "total": 40,
+    "bounded_accepted": 16,
+    "unselected_not_executed": 24,
+    "failed": 0,
+    "unaccounted": 0
+  },
+  "scope": "Complete register, with sixteen accepted components and twenty-four unselected cells; no crossing or public runtime support.",
+  "record_digest": "8d0b7387bf381b946a9ea40a84cbe1a9194747fc377cabc276c25f937fcc6806"
+}

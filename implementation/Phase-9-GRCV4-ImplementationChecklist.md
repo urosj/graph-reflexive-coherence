@@ -3745,31 +3745,144 @@ the full ten-profile plan.
 
 ## Tranche 9. Hybrid completion and disabled compatibility
 
+Current group: **C_OS, C_CI, A_CI, A_PC**; accepted Tranche 8 closeout
+`3684bd02`. The other six families remain unselected. No additional family is
+needed for P9-9.1b. Run independent family/cell work in parallel, up to twelve
+single-thread workers when useful. P9-9.1a is unselected, not a blocker.
+
 - [ ] P9-9.1: Reconcile the two child dispositions below as an aggregate,
   not a universal execution/crossing prerequisite. Unselected optional scope
   remains planned/deferred, not marked executed.
 - [ ] P9-9.1a: Execute optional child stabilization, completed-spark and
   hierarchy evidence when advertised or explicitly required by a stronger
   project handoff, after P9-8.6. Neither is selected by this planning review.
-- [ ] P9-9.1b: Execute mandatory specialization lifecycle after P9-8.6,
+- [x] P9-9.1b: Execute mandatory specialization lifecycle after P9-8.6,
   regardless of completion flags; preserve trigger/topology/charge/reset,
   receipt/readmission and legacy compatibility obligations.
+  Current four-family implementation and focused pressure are recorded in
+  [P9-9.1b](./phase-9-grcv4/tranche-9/P9-9.1b-Review.md); bounded user acceptance
+  recorded in [the decision](./phase-9-grcv4/tranche-9/P9-9.1b-Acceptance.json). This is enabled lifecycle integration, not disabled
+  compatibility or public full GRC9V4 conformance.
+  - [x] One immutable enabled publication and mixed successful receipt journal.
+  - [x] Combined model/reset identity, fresh event binding after ordinary source
+    evolution, target evolution, both-role reset and rebase semantics.
+  - [x] Exact mixed replay, save/load/duplicate, tampered-state rejection,
+    failed-operation rollback and explicit inconclusive numerical failures.
+  - [x] Four-family execution, source-bound retained evidence and side-tool
+    API/browser/notebook access; no large-graph campaign repeated.
+  - [x] Explicit bounded user acceptance on 2026-10-27; original execution
+    records remain unchanged. No separate independent-audit execution is inferred.
 - [ ] P9-9.2: Reconcile the forty-cell parent register below. Each child
   executes and reviews its exact unchanged GRC9V3 delegate/oracle separately;
   this parent is not a single execution iteration.
-- [ ] P9-9.3: Track the complete ten-by-four matrix; mark each unsupported or
+  - [x] Execute the sixteen selected component cells in four parallel native
+    suites and two shared boundary controls; see [review](./phase-9-grcv4/tranche-9/P9-9.2-Review.md).
+  - [x] Expose 16 executed/24 unselected cells through API/browser/notebook.
+  - [x] Bounded component results accepted by the user on 2026-10-27;
+    [decision](./phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json). Actual entry/history
+    mapping and enabled/disabled crossings still belong to P9-9.4.
+- [x] P9-9.3: Track the complete ten-by-four matrix; mark each unsupported or
   unexecuted slot explicitly and claim only the supported tested subset.
-- [ ] P9-9.4: Execute both enabled/disabled migration directions with exact
-  authority, reset, history-loss, receipt, and readmission semantics.
+  - [x] Reconcile all forty frozen contracts against the spec table and pinned
+    9.2 acceptance: sixteen accepted components, twenty-four unselected,
+    zero failed/unaccounted cells. Bind exact profile/model IDs and each
+    execution/acceptance entry; [review](./phase-9-grcv4/tranche-9/P9-9.3-Review.md).
+  - [x] Reject missing/duplicate/relabelled cells, altered identity/evidence,
+    unsupported promotion and projection drift; API/browser/notebook consume
+    the checked reconciliation without native reruns.
+  - [x] User acceptance of the matrix reconciliation on 2026-10-27;
+    [decision](./phase-9-grcv4/tranche-9/P9-9.3-Acceptance.json). Later runtime support
+    and public API obligations remain under P9-9.4–9.6.
+- [x] P9-9.4: Complete both crossing and public API integration children.
   Depend on P9-9.1b and the applicable disabled lifecycle delegate, not the
   optional P9-9.1a child or aggregate P9-9.1.
-- [ ] P9-9.5: Verify V4's `legacy_expansion_target_undefined` rejection for
-  the saturated port-5 conflict, without changing the legacy implementation.
-- [ ] P9-9.6: Review specialization support only after enabled and applicable
+  - [x] P9-9.4a: Execute both enabled/disabled migration directions with exact
+    authority, source-history projection/archive/loss, distinct current/reset
+    transfer, entry receipts, target readmission, replay and atomic rollback.
+    - [x] C_OS and C_CI: actual same-graph entry/return, exact native parity,
+      fresh target readmission and positive enabled continuation.
+    - [x] A_CI and A_PC: independently checked current/reset native initializer;
+      explicit W/carrier loss, canonical target carrier initialization.
+    - [x] All four: mixed parent chain, branch-specific reset, replay/duplicate,
+      malformed/reset-only/late-failure rollback and actual timestep exclusions.
+    - [x] Correct post-solver failure disposition; retain accepted source history
+      through an exact hash-pair adapter. API/browser/notebook expose this child.
+    - [x] User acceptance on 2026-10-27; [scope and evidence](./phase-9-grcv4/tranche-9/P9-9.4a-Review.md).
+  - [x] P9-9.4b: Implement/export the public `GRC9V4(GRCV4)` facade using the
+    existing owners. Define public contracts for **all ten families**, with native
+    execution scoped to **C_OS, C_CI, A_CI, A_PC**. Wire validated configuration,
+    ordinary step/run and typed requests, canonical expansion, migration,
+    state/observables, reset/rebase, duplicate and save/load/replay. Integrate
+    the existing saved-selection runner entry where applicable.
+    Verify actual public construction and lifecycle, both branch crossings,
+    mixed replay and typed rejection for each selected family. Preserve the
+    serialized default-step-request rule and exact profile/combined model
+    identities. Discovery must reflect supported declarations and applicable
+    evidence. All-ten contract/declaration discovery must be separate from native
+    executable support; no implicit six-family execution or completion/hierarchy
+    advertisement.
+    Reuse bounded fixtures and accepted numerical evidence.
+    - [x] All-ten typed configurations round-trip existing candidate/realization
+      schemas. Validate independent W_A/Z_4 axes and both-role dimensions.
+    - [x] Readable enabled/disabled state, separate complete replay checkpoint,
+      separate transaction owner; no opaque-only state or solver parameter bag.
+    - [x] All-ten contract/target discovery with typed known-unavailable rejection
+      before execution of the other six. Six contract tests cover this boundary.
+    - [x] Lazy package export, explicit validated construction/policy, native
+      public state/observables, identity/default requests and local discovery.
+    - [x] Four-family public steps, canonical expansion, profile/branch
+      crossings, reset/rebase, save/load/duplicate and mixed replay.
+    - [x] Whole-publication rollback, target/backend/metadata rejection and
+      saved-selection execution; preserve actual PC→CI domain exclusion.
+    - [x] Public API/browser/notebook evidence and exact historical export
+      compatibility; [scope/reproduction](./phase-9-grcv4/tranche-9/P9-9.4b-Review.md).
+    - [x] Independent public execution selection; typed expansion transition and
+      whole-artifact transfer; exact family dispatch with shared family-ID alias.
+    - [x] Immutable preparation for step/expand/reset/rebase; one branch receipt
+      history, journal and artifact bundle. Remove enabled-owner cloning,
+      private receipt synchronization and artifact-delta slicing. Validate stale
+      transitions, preserved artifact prefixes and accepted crossing replay.
+    - [x] Verify predecessor checkpoint parity, rollback, and bounded replay
+      call counts/cost; retain current checkpoint formats unless evidence warrants change.
+    - [x] Record future consolidation of standalone/branch checkpoint formats
+      after all ten are enabled; current branch ownership is already unified.
+    - [x] User acceptance on 2026-10-28; [decision](./phase-9-grcv4/tranche-9/P9-9.4b-Acceptance.json).
+      No P9-9.6 conformance grant, optional completion or six-family promotion.
+- [x] P9-9.5: Verify V4's `legacy_expansion_target_undefined` rejection through
+  the P9-9.4b public API for the saturated port-5 conflict, without changing
+  the legacy implementation. Check full scientific/reset rollback and no
+  append to successful receipt history; an internal delegate test is insufficient.
+  - [x] Four public family suites execute fresh native saturated-candidate refusal,
+    preserving the complete scientific/reset/publication state and successful prefix.
+  - [x] Public step/run repetition, save/load/duplicate, deterministic refusal,
+    independent reset and subsequent native-step parity; no enabled V4 substitution.
+  - [x] Strict gradient and signed-Hessian boundaries: below/equal/above controls
+    per family, with no legacy source changes or broader numerical campaign.
+  - [x] Source-bound evidence and forensic domain trace; side-tool API/browser/
+    notebook, mutation pressure and portable reproduction; [review](./phase-9-grcv4/tranche-9/P9-9.5-Review.md).
+  - [x] User acceptance of bounded P9-9.5 on 2026-10-28;
+    [decision](./phase-9-grcv4/tranche-9/P9-9.5-Acceptance.json). P9-9.6 remains separate.
+- [x] P9-9.6: Bounded review of specialization support only after enabled and applicable
   disabled contracts pass; no enabled-only full-conformance label.
+  Require P9-9.4a crossings, P9-9.4b public API integration and P9-9.5
+  public-entry failure evidence for the selected four-family scope.
   Additionally require P9-9.1a evidence per exact profile/capability when
   completion/hierarchy is advertised or required for explicit project handoff.
   Completion-off waives no mandatory lifecycle/compatibility evidence.
+  - [x] Reconcile accepted P9-9.1b/9.2/9.3/9.4a/9.4b/9.5 and Tranche 8
+    evidence for C_OS/C_CI/A_CI/A_PC by exact source/target model identities;
+    [bounded review](./phase-9-grcv4/tranche-9/P9-9.6-Review.md).
+  - [x] Retain sixteen accepted source-model disabled cells, twenty-four
+    unselected cells, numerical exclusions and original authority statuses.
+    Expanded target identities do not inherit source-cell acceptance.
+  - [x] Identify the mandatory public `basin_attributes` / `basin_identity`
+    gap separately from optional completion/hierarchy; retain the frozen
+    all-forty condition for the umbrella compatibility capability.
+  - [x] Expose the bounded review and remaining holds through side-tool API,
+    browser and notebook; pressure identity/scope changes without new trajectories.
+  - [x] User acceptance of the bounded review on 2026-10-28;
+    [decision](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json). Full conformance
+    and P9-G4 remain held; P9-10.1a/b/c below own the follow-through.
 
 ### P9-9.2 compatibility execution register
 
@@ -3780,61 +3893,93 @@ and review. Each cell binds the corresponding
 [frozen forty-contract matrix](../specs/grc-9-v4-spec.md#exact-disabled-grc9v3-compatibility).
 Controlled batches retain independent child outcomes. Pending cells for an
 unselected profile do not hold a different fully tested profile. All cells
-are initially pending and unexecuted.
+are independently tracked. The sixteen C_OS/C_CI/A_CI/A_PC cells passed native
+component execution and are bounded-accepted; the other twenty-four are
+unselected. Explicit legacy seeds do not imply executed enabled/disabled
+migration or a full specialization conformance grant.
 
 | Execution child | State |
 | --- | --- |
-| `P9-9.2-A_CI-transition` | Pending |
-| `P9-9.2-A_CI-state` | Pending |
-| `P9-9.2-A_CI-observable` | Pending |
-| `P9-9.2-A_CI-lifecycle` | Pending |
-| `P9-9.2-C_CI-transition` | Pending |
-| `P9-9.2-C_CI-state` | Pending |
-| `P9-9.2-C_CI-observable` | Pending |
-| `P9-9.2-C_CI-lifecycle` | Pending |
-| `P9-9.2-A_OS-transition` | Pending |
-| `P9-9.2-A_OS-state` | Pending |
-| `P9-9.2-A_OS-observable` | Pending |
-| `P9-9.2-A_OS-lifecycle` | Pending |
-| `P9-9.2-C_OS-transition` | Pending |
-| `P9-9.2-C_OS-state` | Pending |
-| `P9-9.2-C_OS-observable` | Pending |
-| `P9-9.2-C_OS-lifecycle` | Pending |
-| `P9-9.2-A_RG2b-transition` | Pending |
-| `P9-9.2-A_RG2b-state` | Pending |
-| `P9-9.2-A_RG2b-observable` | Pending |
-| `P9-9.2-A_RG2b-lifecycle` | Pending |
-| `P9-9.2-C_RG2b-transition` | Pending |
-| `P9-9.2-C_RG2b-state` | Pending |
-| `P9-9.2-C_RG2b-observable` | Pending |
-| `P9-9.2-C_RG2b-lifecycle` | Pending |
-| `P9-9.2-A_PC-transition` | Pending |
-| `P9-9.2-A_PC-state` | Pending |
-| `P9-9.2-A_PC-observable` | Pending |
-| `P9-9.2-A_PC-lifecycle` | Pending |
-| `P9-9.2-C_PC-transition` | Pending |
-| `P9-9.2-C_PC-state` | Pending |
-| `P9-9.2-C_PC-observable` | Pending |
-| `P9-9.2-C_PC-lifecycle` | Pending |
-| `P9-9.2-A_CI_PC-transition` | Pending |
-| `P9-9.2-A_CI_PC-state` | Pending |
-| `P9-9.2-A_CI_PC-observable` | Pending |
-| `P9-9.2-A_CI_PC-lifecycle` | Pending |
-| `P9-9.2-C_CI_PC-transition` | Pending |
-| `P9-9.2-C_CI_PC-state` | Pending |
-| `P9-9.2-C_CI_PC-observable` | Pending |
-| `P9-9.2-C_CI_PC-lifecycle` | Pending |
+| `P9-9.2-A_CI-transition` | Bounded-accepted |
+| `P9-9.2-A_CI-state` | Bounded-accepted |
+| `P9-9.2-A_CI-observable` | Bounded-accepted |
+| `P9-9.2-A_CI-lifecycle` | Bounded-accepted |
+| `P9-9.2-C_CI-transition` | Bounded-accepted |
+| `P9-9.2-C_CI-state` | Bounded-accepted |
+| `P9-9.2-C_CI-observable` | Bounded-accepted |
+| `P9-9.2-C_CI-lifecycle` | Bounded-accepted |
+| `P9-9.2-A_OS-transition` | Unselected |
+| `P9-9.2-A_OS-state` | Unselected |
+| `P9-9.2-A_OS-observable` | Unselected |
+| `P9-9.2-A_OS-lifecycle` | Unselected |
+| `P9-9.2-C_OS-transition` | Bounded-accepted |
+| `P9-9.2-C_OS-state` | Bounded-accepted |
+| `P9-9.2-C_OS-observable` | Bounded-accepted |
+| `P9-9.2-C_OS-lifecycle` | Bounded-accepted |
+| `P9-9.2-A_RG2b-transition` | Unselected |
+| `P9-9.2-A_RG2b-state` | Unselected |
+| `P9-9.2-A_RG2b-observable` | Unselected |
+| `P9-9.2-A_RG2b-lifecycle` | Unselected |
+| `P9-9.2-C_RG2b-transition` | Unselected |
+| `P9-9.2-C_RG2b-state` | Unselected |
+| `P9-9.2-C_RG2b-observable` | Unselected |
+| `P9-9.2-C_RG2b-lifecycle` | Unselected |
+| `P9-9.2-A_PC-transition` | Bounded-accepted |
+| `P9-9.2-A_PC-state` | Bounded-accepted |
+| `P9-9.2-A_PC-observable` | Bounded-accepted |
+| `P9-9.2-A_PC-lifecycle` | Bounded-accepted |
+| `P9-9.2-C_PC-transition` | Unselected |
+| `P9-9.2-C_PC-state` | Unselected |
+| `P9-9.2-C_PC-observable` | Unselected |
+| `P9-9.2-C_PC-lifecycle` | Unselected |
+| `P9-9.2-A_CI_PC-transition` | Unselected |
+| `P9-9.2-A_CI_PC-state` | Unselected |
+| `P9-9.2-A_CI_PC-observable` | Unselected |
+| `P9-9.2-A_CI_PC-lifecycle` | Unselected |
+| `P9-9.2-C_CI_PC-transition` | Unselected |
+| `P9-9.2-C_CI_PC-state` | Unselected |
+| `P9-9.2-C_CI_PC-observable` | Unselected |
+| `P9-9.2-C_CI_PC-lifecycle` | Unselected |
 
 ## Tranche 10. Conformance and handoff
 
 - [ ] P9-10.1: Reconcile every vector hold and acceptance-gate runtime debt
   with exact execution evidence or an explicit remaining support hold.
+  - [ ] P9-10.1a — Baseline basin interface closure (`basin_surface`): trace
+    classification and identity semantics; resolve missing authority through the
+    existing investigation-to-paper-to-spec path before implementation. Expose
+    the required public basin attributes and lifecycle identity for C_OS/C_CI/
+    A_CI/A_PC. Verify fresh classification, strict threshold boundaries, expansion,
+    reset, snapshot/replay and complete rollback with small fixtures. A seed
+    predicate or capability string alone is insufficient. Completed-spark
+    detection and hierarchy remain outside this baseline task.
+  - [ ] P9-10.1b — Expanded-target compatibility closure (`target_identity_scope`):
+    reuse the four accepted expanded targets and bind their exact profile,
+    specialization and combined model identities. Verify disabled transition,
+    state, observable and lifecycle parity against unchanged native GRC9V3;
+    exercise entry/return, both histories, reset and replay where admissible.
+    Verify explicit refusal and rollback outside the defined legacy domain.
+    Retain target-specific outcomes; source-cell acceptance does not transfer
+    by family name, and a refusal is not successful target compatibility.
+  - [ ] P9-10.1c — Support reconciliation after a/b: attach successor evidence
+    and reviewed dispositions to the two holds, update side-tool API/browser/
+    notebook projections and handoff, and close only the demonstrated scope.
+    Preserve the separate `umbrella_compatibility` all-forty condition: target
+    checks do not execute the other twenty-four source-matrix cells or authorize
+    a full label. Other-six execution or a contract change needs a separate
+    scope decision. Preserve accepted records and numerical/authority limits.
+
+  Reuse accepted fixtures and checkers; run focused new checks and affected
+  regressions, with independent family runs parallel where practical. No broad
+  Tranche 8 campaign rerun is required unless a concrete failure justifies it.
 - [ ] P9-10.2: Verify deterministic replay, numerical comparison conventions,
   independent charge-edge results, and runtime-generated receipt evidence.
 - [ ] P9-10.3: Run relevant old-family regressions and verify accepted release
   and source identity preservation.
 - [ ] P9-10.4: Publish capability discovery, a minimal API/replay example,
   and new runtime evidence linked to the frozen fixture catalog.
+  Use the public class implemented in P9-9.4b and reviewed in P9-9.6;
+  public API implementation must not be deferred to this publication task.
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone.
 - [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,

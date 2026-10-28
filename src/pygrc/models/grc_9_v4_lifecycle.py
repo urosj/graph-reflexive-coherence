@@ -6,8 +6,8 @@ GRC9V4 facade, compatibility crossing, completion rule or capability claim.
 
 from __future__ import annotations
 
-from collections.abc import Mapping
-from dataclasses import dataclass, replace
+from collections.abc import Callable, Mapping
+from dataclasses import dataclass, field, fields, replace
 from threading import Lock
 from typing import Any, ClassVar, Literal, Self, cast
 
@@ -79,6 +79,20 @@ from .grc_v4_step import (
     make_commit_receipts,
 )
 from .grc_v4_transport import ChargeEvaluation
+
+
+GRC9V4FamilyId = Literal[
+    "C_OS",
+    "C_PC",
+    "A_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC",
+    "C_CI_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b",
+]
 
 
 @dataclass(frozen=True, slots=True, eq=False)
@@ -287,20 +301,7 @@ class _GRC9V4EventState:
 
     inputs: GeometryStageInputs
     specialization: GRC9V4Specialization
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ]
+    FAMILY: ClassVar[GRC9V4FamilyId]
 
     def __post_init__(self) -> None:
         if (
@@ -415,60 +416,21 @@ class _GRC9V4EventState:
 class GRC9V4COSState(_GRC9V4EventState):
     """Native OS state with no independent carrier authority."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "C_OS"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "C_OS"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4CPCState(_GRC9V4EventState):
     """Native PC state; geometry must derive from current's own committed Z."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "C_PC"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "C_PC"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4AOSState(_GRC9V4EventState):
     """A_OS port owner with distinct current/reset retained W and no carrier."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "A_OS"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "A_OS"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -481,20 +443,7 @@ class GRC9V4AOSState(_GRC9V4EventState):
 class GRC9V4ARG2bState(_GRC9V4EventState):
     """A_RG2b C/W authority; no persistent section or geometry history."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "A_RG2b"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "A_RG2b"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -507,20 +456,7 @@ class GRC9V4ARG2bState(_GRC9V4EventState):
 class GRC9V4ACIState(_GRC9V4EventState):
     """A_CI authority with distinct W roles and fresh reference-root restart."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "A_CI"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "A_CI"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -533,20 +469,7 @@ class GRC9V4ACIState(_GRC9V4EventState):
 class GRC9V4APCState(_GRC9V4EventState):
     """A_PC authority: independent current/reset W and old committed Z."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "A_PC"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "A_PC"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -559,20 +482,7 @@ class GRC9V4APCState(_GRC9V4EventState):
 class GRC9V4ACIPCState(_GRC9V4EventState):
     """Fixed old Z enters a fresh root; both W/Z roles remain authoritative."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "A_CI_PC"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "A_CI_PC"
 
     @property
     def differential_reference(self) -> GRC9V4CandidateADifferentialReference:
@@ -627,60 +537,21 @@ def _aci_readmit(
 class GRC9V4CCIState(_GRC9V4EventState):
     """C_CI authority; geometry restarts from reference, never a previous root."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "C_CI"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "C_CI"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4CCIPCState(_GRC9V4EventState):
     """Old Z is fixed root input; restart from reference, never cached root H."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "C_CI_PC"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "C_CI_PC"
 
 
 @dataclass(frozen=True, slots=True)
 class GRC9V4CRG2bState(_GRC9V4EventState):
     """C_RG2b resource authority; each read reconstructs its own section."""
 
-    FAMILY: ClassVar[
-        Literal[
-            "C_OS",
-            "C_PC",
-            "A_OS",
-            "C_CI",
-            "A_CI",
-            "A_PC",
-            "C_CI_PC",
-            "A_CI_PC",
-            "C_RG2b",
-            "A_RG2b",
-        ]
-    ] = "C_RG2b"
+    FAMILY: ClassVar[GRC9V4FamilyId] = "C_RG2b"
 
 
 def _arg2b_readmit(state: GRC9V4ARG2bState) -> tuple[PhysicalFlux, PhysicalFlux]:
@@ -785,22 +656,7 @@ def _aos_readmit(state: GRC9V4AOSState) -> tuple[PhysicalFlux, PhysicalFlux]:
 def _event_readmit(
     state: _GRC9V4EventState,
 ) -> tuple[PhysicalFlux, PhysicalFlux] | None:
-    if type(state) is GRC9V4ARG2bState:
-        return _arg2b_readmit(state)
-    if type(state) is GRC9V4CRG2bState:
-        return _crg2b_readmit(state)
-    if type(state) is GRC9V4AOSState:
-        return _aos_readmit(state)
-    if type(state) in {GRC9V4CCIState, GRC9V4CCIPCState}:
-        assert isinstance(state, (GRC9V4CCIState, GRC9V4CCIPCState))
-        return _cci_readmit(state)
-    if type(state) in {GRC9V4ACIState, GRC9V4ACIPCState}:
-        assert isinstance(state, (GRC9V4ACIState, GRC9V4ACIPCState))
-        return _aci_readmit(state)
-    if type(state) is GRC9V4APCState:
-        return _apc_readmit(state)
-    _c_readmit(state)
-    return None
+    return family_implementation(state).readmit(state)
 
 
 def _cos_readmit(state: GRC9V4COSState) -> None:
@@ -1026,12 +882,83 @@ def _event_receipts(
 
 
 @dataclass(frozen=True, slots=True)
+class GRC9V4EventArtifacts:
+    """Complete retained event evidence; passed intact across owner boundaries."""
+
+    archives: tuple[FrozenJSONMap, ...] = ()
+    reference_currents: tuple[FrozenJSONMap, ...] = ()
+
+    def __post_init__(self):
+        for item in fields(self):
+            values = getattr(self, item.name)
+            if type(values) is not tuple or any(
+                type(v) is not FrozenJSONMap for v in values
+            ):
+                raise TypeError("immutable typed event artifacts required")
+
+    def require_extension_of(self, prefix):
+        if type(prefix) is not type(self):
+            raise TypeError("matching retained artifact bundle required")
+        for item in fields(self):
+            previous = getattr(prefix, item.name)
+            if getattr(self, item.name)[: len(previous)] != previous:
+                raise ValueError("transition discarded retained event artifacts")
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ExpansionContext:
+    state: _GRC9V4EventState
+    receipts: tuple[SuccessfulReceiptEnvelope, ...] = ()
+    artifacts: GRC9V4EventArtifacts = field(default_factory=GRC9V4EventArtifacts)
+
+    def __post_init__(self):
+        family_implementation(self.state)  # Reject unknown/subclass state types.
+        if (
+            type(self.artifacts) is not GRC9V4EventArtifacts
+            or type(self.receipts) is not tuple
+        ):
+            raise TypeError("closed expansion context required")
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ExpansionTransition:
+    """Prepared result only; this value never publishes or owns a journal."""
+
+    source: GRC9V4ExpansionContext
+    state: _GRC9V4EventState
+    result: GRCV4LifecycleResult
+    artifacts: GRC9V4EventArtifacts
+
+    def __post_init__(self):
+        if (
+            type(self.source) is not GRC9V4ExpansionContext
+            or type(self.state) is not type(self.source.state)
+            or type(self.result) is not GRCV4LifecycleResult
+            or type(self.artifacts) is not GRC9V4EventArtifacts
+        ):
+            raise TypeError("closed expansion transition required")
+        self.artifacts.require_extension_of(self.source.artifacts)
+        if not self.result.committed and (
+            self.state is not self.source.state
+            or self.artifacts is not self.source.artifacts
+        ):
+            raise ValueError("rejected transition must retain the exact source")
+
+
+@dataclass(frozen=True, slots=True)
 class _EventPublication:
     state: _GRC9V4EventState
     receipts: tuple[SuccessfulReceiptEnvelope, ...] = ()
     requests: tuple[GRC9V4ExpansionRequestInput, ...] = ()
-    archives: tuple[FrozenJSONMap, ...] = ()
-    reference_currents: tuple[FrozenJSONMap, ...] = ()
+    artifacts: GRC9V4EventArtifacts = field(default_factory=GRC9V4EventArtifacts)
+
+    @property
+    def archives(self):
+        return self.artifacts.archives
+
+    @property
+    def reference_currents(self):
+        return self.artifacts.reference_currents
 
 
 class _GRC9V4EventOperation:
@@ -1052,7 +979,10 @@ class _GRC9V4EventOperation:
             raise TypeError("expected native " + self.STATE.FAMILY + " state")
         self._backend = current_exact_backend()
         self._numerical_policy_choice = current_numerical_policy()
-        with exact_backend(self._backend), numerical_policy(self._numerical_policy_choice):
+        with (
+            exact_backend(self._backend),
+            numerical_policy(self._numerical_policy_choice),
+        ):
             state = self.STATE(
                 GeometryStageInputs.from_payload(state.inputs.to_payload()),
                 replace(state.specialization),
@@ -1176,300 +1106,188 @@ class _GRC9V4EventOperation:
         return result
 
     def expand(self, request: GRC9V4ExpansionRequestInput) -> GRCV4LifecycleResult:
-        if type(request) is not GRC9V4ExpansionRequestInput:
-            raise TypeError("expected a closed expansion request")
-        with self._lock, exact_backend(self._backend), numerical_policy(self._numerical_policy_choice):
-            published = self._published
-            before = published.state
-            stage: OperationStage = "admission"
-            try:
-                request = replace(request)
-                if (
-                    request.target_specialization_id
-                    != before.specialization.specialization_id
-                ):
-                    raise ValueError(
-                        "target specialization differs from the admitted declaration"
-                    )
-                if before.inputs.step_index == 0:
-                    raise ValueError("expansion requires a postbeat seed")
-                graph = before.inputs.geometry.reference.graph.port_graph
-                assert graph is not None
-                if type(before) in {
-                    GRC9V4CPCState,
-                    GRC9V4CCIPCState,
-                } and canonical_json_bytes(
-                    request.history_policy
-                ) != canonical_json_bytes(
-                    cpc_history_policy(before.inputs.current, before.inputs.reset)
-                ):
-                    raise ValueError(
-                        "persistent C requires the actual whole carrier pair and explicit reset/loss policy"
-                    )
-                if type(before) in {
-                    GRC9V4APCState,
-                    GRC9V4ACIPCState,
-                } and canonical_json_bytes(
-                    request.history_policy
-                ) != canonical_json_bytes(
-                    apc_history_policy(before.inputs.current, before.inputs.reset)
-                ):
-                    raise ValueError(
-                        "persistent A requires the actual W/Z role pairs and exact lineage/whole reset policy"
-                    )
-                if type(before) in {
-                    GRC9V4AOSState,
-                    GRC9V4ARG2bState,
-                    GRC9V4ACIState,
-                } and canonical_json_bytes(
-                    request.history_policy
-                ) != canonical_json_bytes(
-                    aos_history_policy(before.inputs.current, before.inputs.reset)
-                ):
-                    raise ValueError(
-                        "A requires the actual candidate-history pair and exact lineage policy"
-                    )
-                plan = GRC9V4ExpansionPlan(
-                    graph,
-                    before.scientific_digest,
-                    request,
-                    GRC9ExpansionPolicy.from_payload(
-                        before.specialization.resolved["expansion"]
-                    ),
+        with (
+            self._lock,
+            exact_backend(self._backend),
+            numerical_policy(self._numerical_policy_choice),
+        ):
+            before = self._published
+            context = GRC9V4ExpansionContext(
+                before.state, before.receipts, before.artifacts
+            )
+            transition = prepare_expansion(context, request)
+            if (
+                type(transition) is not GRC9V4ExpansionTransition
+                or transition.source != context
+            ):
+                raise ValueError("prepared expansion differs from publication source")
+            if transition.result.committed:
+                self._published = _EventPublication(
+                    transition.state,
+                    before.receipts + transition.result.emitted_receipts,
+                    before.requests + (request,),
+                    transition.artifacts,
                 )
-                role_reads = _event_readmit(before)
-                current = (
-                    role_reads[0].values
-                    if role_reads is not None
-                    else CandidatePCRead(before.inputs).point.current.values
-                    if type(before) is GRC9V4CPCState
-                    else CandidateCCurrent(before.inputs).current.values
-                )
-                detection = GRC9V4CandidateDetection(
-                    GRC9V4PostbeatRows(
-                        graph,
-                        before.inputs.geometry.reference.profile,
-                        before.inputs.current,
-                        current,
-                        before.inputs.step_index,
-                        cast(
-                            int, before.specialization.identity_payload["hessian_sign"]
-                        ),
-                    ),
-                    GRC9SparkPolicy.from_payload(
-                        before.specialization.resolved["spark"]
-                    ),
-                )
-                if request.source_node_id not in detection.candidate_node_ids():
-                    raise ValueError("source is not a fresh hybrid spark candidate")
-                stage = "target_construction"
-                target: (
-                    _GRC9V4CExpansion
-                    | GRC9V4AOSExpansion
-                    | GRC9V4ARG2bExpansion
-                    | GRC9V4ACIExpansion
-                    | GRC9V4APCExpansion
-                    | GRC9V4ACIPCExpansion
-                )
-                if type(before) is GRC9V4AOSState:
-                    target = GRC9V4AOSExpansion(
-                        plan,
-                        before.inputs.geometry.reference,
-                        before.inputs.current,
-                        before.inputs.reset,
-                    )
-                elif type(before) is GRC9V4ARG2bState:
-                    target = GRC9V4ARG2bExpansion(
-                        plan,
-                        before.inputs.geometry.reference,
-                        before.inputs.current,
-                        before.inputs.reset,
-                    )
-                elif type(before) is GRC9V4ACIState:
-                    target = GRC9V4ACIExpansion(
-                        plan,
-                        before.inputs.geometry.reference,
-                        before.inputs.current,
-                        before.inputs.reset,
-                    )
-                elif type(before) is GRC9V4ACIPCState:
-                    target = GRC9V4ACIPCExpansion(
-                        plan,
-                        before.inputs.geometry.reference,
-                        before.inputs.current,
-                        before.inputs.reset,
-                    )
-                elif type(before) is GRC9V4APCState:
-                    target = GRC9V4APCExpansion(
-                        plan,
-                        before.inputs.geometry.reference,
-                        before.inputs.current,
-                        before.inputs.reset,
-                    )
-                elif type(before) is GRC9V4CPCState:
-                    target = GRC9V4CPCExpansion(
-                        plan,
-                        before.inputs.geometry.reference,
-                        before.inputs.current,
-                        before.inputs.reset,
-                    )
-                elif type(before) is GRC9V4CCIPCState:
-                    target = GRC9V4CCIPCExpansion(
-                        plan,
-                        before.inputs.geometry.reference,
-                        before.inputs.current,
-                        before.inputs.reset,
-                    )
-                elif type(before) is GRC9V4CRG2bState:
-                    target = GRC9V4CRG2bExpansion(
-                        plan, before.inputs.geometry.reference
-                    )
-                elif type(before) is GRC9V4CCIState:
-                    target = GRC9V4CCIExpansion(plan, before.inputs.geometry.reference)
-                else:
-                    target = GRC9V4COSExpansion(plan, before.inputs.geometry.reference)
-                inputs = replace(
-                    before.inputs,
-                    geometry=target.target.geometry(),
-                    current=target.transfer(before.inputs.current),
-                    reset=target.transfer(before.inputs.reset),
-                    dt=0,
-                    operation_id=request.operation_id,
-                )
-                after = self.STATE(inputs, before.specialization)
-                stage = "target_readmission"
-                _event_readmit(after)
-                stage = "commit"
-                commit, receipts = make_commit_receipts(
-                    _event_receipts(before, after, target, published.receipts),
-                    operation_id=request.operation_id,
-                    source_state_digest=before.scientific_digest,
-                    target_state_digest=after.scientific_digest,
-                    target_step_index=inputs.step_index,
-                    target_time=inputs.time,
-                )
-                archives = published.archives
-                if type(target) in {
-                    GRC9V4CPCExpansion,
-                    GRC9V4APCExpansion,
-                    GRC9V4ACIPCExpansion,
-                    GRC9V4CCIPCExpansion,
-                }:
-                    assert isinstance(
-                        target,
-                        (GRC9V4CPCExpansion, GRC9V4APCExpansion, GRC9V4CCIPCExpansion),
-                    )
-                    archives += (FrozenJSONMap(target.carrier_archive_payload()),)
-                reference_currents = published.reference_currents
-                if type(target) in {
-                    GRC9V4AOSExpansion,
-                    GRC9V4ARG2bExpansion,
-                    GRC9V4CCIExpansion,
-                    GRC9V4CRG2bExpansion,
-                    GRC9V4CCIPCExpansion,
-                    GRC9V4ACIExpansion,
-                    GRC9V4APCExpansion,
-                    GRC9V4ACIPCExpansion,
-                }:
-                    assert isinstance(
-                        target,
-                        (
-                            GRC9V4AOSExpansion,
-                            GRC9V4ARG2bExpansion,
-                            GRC9V4CCIExpansion,
-                            GRC9V4CRG2bExpansion,
-                            GRC9V4CCIPCExpansion,
-                            GRC9V4ACIExpansion,
-                            GRC9V4APCExpansion,
-                        ),
-                    )
-                    assert role_reads is not None
-                    reference_currents += (
-                        FrozenJSONMap(
-                            {
-                                "event_id": plan.event_id,
-                                "source_graph_digest": target.source.graph.graph_digest,
-                                "target_graph_digest": target.target.graph.graph_digest,
-                                "roles": {
-                                    role: {
-                                        "source": list(read.values),
-                                        "target": list(
-                                            target.transfer_reference_current(
-                                                read
-                                            ).values
-                                        ),
-                                    }
-                                    for role, read in zip(
-                                        ("current", "reset"), role_reads, strict=True
-                                    )
-                                },
+            return transition.result
+
+
+def prepare_expansion(
+    context: GRC9V4ExpansionContext, request: GRC9V4ExpansionRequestInput
+) -> GRC9V4ExpansionTransition:
+    """Compute and readmit an event without mutating any owner.
+
+    The caller supplies the explicit exact backend/numerical-policy context.
+    The source is already admitted; its current/reset surfaces are freshly read
+    here. Publication, journal storage and locking remain the caller's concern.
+    """
+    if (
+        type(context) is not GRC9V4ExpansionContext
+        or type(request) is not GRC9V4ExpansionRequestInput
+    ):
+        raise TypeError("closed expansion context/request required")
+    before = context.state
+    implementation = family_implementation(before)
+    stage: OperationStage = "admission"
+    try:
+        request = replace(request)
+        if request.target_specialization_id != before.specialization.specialization_id:
+            raise ValueError(
+                "target specialization differs from the admitted declaration"
+            )
+        if before.inputs.step_index == 0:
+            raise ValueError("expansion requires a postbeat seed")
+        graph = before.inputs.geometry.reference.graph.port_graph
+        assert graph is not None
+        if implementation.history_policy is not None and canonical_json_bytes(
+            request.history_policy
+        ) != canonical_json_bytes(
+            implementation.history_policy(before.inputs.current, before.inputs.reset)
+        ):
+            raise ValueError(implementation.history_error)
+        plan = GRC9V4ExpansionPlan(
+            graph,
+            before.scientific_digest,
+            request,
+            GRC9ExpansionPolicy.from_payload(
+                before.specialization.resolved["expansion"]
+            ),
+        )
+        role_reads = _event_readmit(before)
+        current = implementation.detection_current(before, role_reads)
+        detection = GRC9V4CandidateDetection(
+            GRC9V4PostbeatRows(
+                graph,
+                before.inputs.geometry.reference.profile,
+                before.inputs.current,
+                current,
+                before.inputs.step_index,
+                cast(int, before.specialization.identity_payload["hessian_sign"]),
+            ),
+            GRC9SparkPolicy.from_payload(before.specialization.resolved["spark"]),
+        )
+        if request.source_node_id not in detection.candidate_node_ids():
+            raise ValueError("source is not a fresh hybrid spark candidate")
+        stage = "target_construction"
+        target = implementation.build_target(plan, before)
+        inputs = replace(
+            before.inputs,
+            geometry=target.target.geometry(),
+            current=target.transfer(before.inputs.current),
+            reset=target.transfer(before.inputs.reset),
+            dt=0,
+            operation_id=request.operation_id,
+        )
+        after = implementation.state_type(inputs, before.specialization)
+        stage = "target_readmission"
+        _event_readmit(after)
+        stage = "commit"
+        commit, receipts = make_commit_receipts(
+            _event_receipts(before, after, target, context.receipts),
+            operation_id=request.operation_id,
+            source_state_digest=before.scientific_digest,
+            target_state_digest=after.scientific_digest,
+            target_step_index=inputs.step_index,
+            target_time=inputs.time,
+        )
+        archives = context.artifacts.archives
+        if implementation.persistent:
+            archives += (FrozenJSONMap(target.carrier_archive_payload()),)
+        reference_currents = context.artifacts.reference_currents
+        if implementation.retains_reference_currents:
+            assert role_reads is not None
+            reference_currents += (
+                FrozenJSONMap(
+                    {
+                        "event_id": plan.event_id,
+                        "source_graph_digest": target.source.graph.graph_digest,
+                        "target_graph_digest": target.target.graph.graph_digest,
+                        "roles": {
+                            role: {
+                                "source": list(read.values),
+                                "target": list(
+                                    target.transfer_reference_current(read).values
+                                ),
                             }
-                        ),
-                    )
-                following = _EventPublication(
-                    after,
-                    published.receipts + receipts,
-                    published.requests + (request,),
-                    archives,
-                    reference_currents,
-                )
-                result = GRCV4LifecycleResult(
-                    "committed",
-                    True,
-                    payload_identity("commit_payload", commit.to_payload()),
-                    None,
-                    receipts,
-                )
-                # One publication: no target resource/profile/reset/receipt can
-                # become visible while any construction or result check can fail.
-                self._published = following
-                return result
-            except (ValueError, TypeError, ArithmeticError) as exc:
-                code: FailureCode = (
-                    "target_readmission_failure"
-                    if stage == "target_readmission"
-                    else "invalid_topology_event"
-                )
-                if isinstance(exc, GRC9V4ExpansionError):
-                    codes: dict[str, FailureCode] = {
-                        "source_not_saturated": "source_node_not_saturated",
-                        "source_self_loop_unsupported": "source_self_loop_unsupported",
-                        "module_chirality_required": "module_chirality_required",
-                        "module_growth_phase_required": "module_growth_phase_required",
-                        "reject_noncanonical_inactive_growth_phase": "reject_noncanonical_inactive_growth_phase",
+                            for role, read in zip(
+                                ("current", "reset"), role_reads, strict=True
+                            )
+                        },
                     }
-                    code = codes.get(exc.code, code)
-                digest = before.scientific_digest
-                lifecycle = before.lifecycle_digest(published.receipts)
-                payload = FailureReceiptIdentityPayload(
-                    "grcv4-failure-receipt-v1",
-                    request.operation_id,
-                    stage,
-                    code,
-                    digest,
-                    digest,
-                )
-                receipt = FailureReceipt(
-                    "grcv4-failure-receipt-envelope-v1",
-                    payload_identity(
-                        "failure_receipt_identity_payload", payload.to_payload()
-                    ),
-                    payload,
-                )
-                failure = GRCV4Failure(
-                    stage,
-                    None,
-                    code,
-                    str(exc) or type(exc).__name__,
-                    digest,
-                    digest,
-                    lifecycle,
-                    lifecycle,
-                    receipt,
-                )
-                return GRCV4LifecycleResult(
-                    "rejected", False, None, failure, (receipt,)
-                )
+                ),
+            )
+        result = GRCV4LifecycleResult(
+            "committed",
+            True,
+            payload_identity("commit_payload", commit.to_payload()),
+            None,
+            receipts,
+        )
+        return GRC9V4ExpansionTransition(
+            context, after, result, GRC9V4EventArtifacts(archives, reference_currents)
+        )
+    except (ValueError, TypeError, ArithmeticError) as exc:
+        code: FailureCode = (
+            "target_readmission_failure"
+            if stage == "target_readmission"
+            else "invalid_topology_event"
+        )
+        if isinstance(exc, GRC9V4ExpansionError):
+            codes: dict[str, FailureCode] = {
+                "source_not_saturated": "source_node_not_saturated",
+                "source_self_loop_unsupported": "source_self_loop_unsupported",
+                "module_chirality_required": "module_chirality_required",
+                "module_growth_phase_required": "module_growth_phase_required",
+                "reject_noncanonical_inactive_growth_phase": "reject_noncanonical_inactive_growth_phase",
+            }
+            code = codes.get(exc.code, code)
+        digest = before.scientific_digest
+        lifecycle = before.lifecycle_digest(context.receipts)
+        payload = FailureReceiptIdentityPayload(
+            "grcv4-failure-receipt-v1",
+            request.operation_id,
+            stage,
+            code,
+            digest,
+            digest,
+        )
+        receipt = FailureReceipt(
+            "grcv4-failure-receipt-envelope-v1",
+            payload_identity("failure_receipt_identity_payload", payload.to_payload()),
+            payload,
+        )
+        failure = GRCV4Failure(
+            stage,
+            None,
+            code,
+            str(exc) or type(exc).__name__,
+            digest,
+            digest,
+            lifecycle,
+            lifecycle,
+            receipt,
+        )
+        result = GRCV4LifecycleResult("rejected", False, None, failure, (receipt,))
+        return GRC9V4ExpansionTransition(context, before, result, context.artifacts)
 
 
 class GRC9V4COSOperation(_GRC9V4EventOperation):
@@ -1612,3 +1430,137 @@ class GRC9V4ARG2bOperation(_GRC9V4EventOperation):
     @property
     def state(self) -> GRC9V4ARG2bState:
         return cast(GRC9V4ARG2bState, self._published.state)
+
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4FamilyImplementation:
+    """Scientific family dispatch, independent of public execution selection."""
+
+    state_type: type[_GRC9V4EventState]
+    readmit: Callable
+    expansion_type: type
+    history_policy: Callable | None = None
+    history_error: str = ""
+
+    candidate: Literal["A", "C"] = "C"
+    persistent: bool = False
+    retains_reference_currents: bool = True
+    source_current: Callable | None = None
+
+    def detection_current(self, state, role_reads):
+        if type(state) is not self.state_type:
+            raise TypeError("family detection requires its exact state type")
+        if role_reads is not None:
+            return role_reads[0].values
+        if self.source_current is None:
+            raise ValueError("family requires admitted source role reads")
+        return self.source_current(state.inputs)
+
+    def differential_backend(self, state):
+        return (
+            GRC9V4CandidateADifferentialReference(
+                state.inputs.geometry.reference.graph.port_graph
+            )
+            if self.candidate == "A"
+            else None
+        )
+
+    def build_target(self, plan, state):
+        if type(state) is not self.state_type:
+            raise TypeError("family target requires its exact state type")
+        args = (plan, state.inputs.geometry.reference)
+        if self.history_policy is not None:
+            args += (state.inputs.current, state.inputs.reset)
+        return self.expansion_type(*args)
+
+
+_A_HISTORY_ERROR = (
+    "A requires the actual candidate-history pair and exact lineage policy"
+)
+_APC_HISTORY_ERROR = "persistent A requires the actual W/Z role pairs and exact lineage/whole reset policy"
+_CPC_HISTORY_ERROR = (
+    "persistent C requires the actual whole carrier pair and explicit reset/loss policy"
+)
+_FAMILY_IMPLEMENTATIONS = {
+    row.state_type.FAMILY: row
+    for row in (
+        GRC9V4FamilyImplementation(
+            GRC9V4COSState,
+            _cos_readmit,
+            GRC9V4COSExpansion,
+            retains_reference_currents=False,
+            source_current=lambda inputs: CandidateCCurrent(inputs).current.values,
+        ),
+        GRC9V4FamilyImplementation(
+            GRC9V4CPCState,
+            _cpc_readmit,
+            GRC9V4CPCExpansion,
+            cpc_history_policy,
+            _CPC_HISTORY_ERROR,
+            persistent=True,
+            retains_reference_currents=False,
+            source_current=lambda inputs: CandidatePCRead(inputs).point.current.values,
+        ),
+        GRC9V4FamilyImplementation(GRC9V4CCIState, _cci_readmit, GRC9V4CCIExpansion),
+        GRC9V4FamilyImplementation(
+            GRC9V4CCIPCState,
+            _cci_readmit,
+            GRC9V4CCIPCExpansion,
+            cpc_history_policy,
+            _CPC_HISTORY_ERROR,
+            persistent=True,
+        ),
+        GRC9V4FamilyImplementation(
+            GRC9V4CRG2bState, _crg2b_readmit, GRC9V4CRG2bExpansion
+        ),
+        GRC9V4FamilyImplementation(
+            GRC9V4AOSState,
+            _aos_readmit,
+            GRC9V4AOSExpansion,
+            aos_history_policy,
+            _A_HISTORY_ERROR,
+            candidate="A",
+        ),
+        GRC9V4FamilyImplementation(
+            GRC9V4ACIState,
+            _aci_readmit,
+            GRC9V4ACIExpansion,
+            aos_history_policy,
+            _A_HISTORY_ERROR,
+            candidate="A",
+        ),
+        GRC9V4FamilyImplementation(
+            GRC9V4APCState,
+            _apc_readmit,
+            GRC9V4APCExpansion,
+            apc_history_policy,
+            _APC_HISTORY_ERROR,
+            candidate="A",
+            persistent=True,
+        ),
+        GRC9V4FamilyImplementation(
+            GRC9V4ACIPCState,
+            _aci_readmit,
+            GRC9V4ACIPCExpansion,
+            apc_history_policy,
+            _APC_HISTORY_ERROR,
+            candidate="A",
+            persistent=True,
+        ),
+        GRC9V4FamilyImplementation(
+            GRC9V4ARG2bState,
+            _arg2b_readmit,
+            GRC9V4ARG2bExpansion,
+            aos_history_policy,
+            _A_HISTORY_ERROR,
+            candidate="A",
+        ),
+    )
+}
+
+
+def family_implementation(state):
+    implementation = _FAMILY_IMPLEMENTATIONS.get(getattr(state, "FAMILY", None))
+    if implementation is None or type(state) is not implementation.state_type:
+        raise TypeError("expected an exact native family state")
+    return implementation
