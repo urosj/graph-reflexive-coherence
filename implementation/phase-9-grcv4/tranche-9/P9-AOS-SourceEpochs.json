@@ -1,0 +1,61 @@
+{
+  "schema": "p9-aos-source-epochs-v1",
+  "predecessor": "02528b5d",
+  "checker_sha256": "d03a4ad9f9929931fecbda94bced99ec0826980dc6f76968e80ac3e8aba218b1",
+  "new_paths": [
+    "tests/models/test_grc_9_v4_aos_integration.py"
+  ],
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p9101a_basin_pressure.py": {
+      "current_sha256": "f9cc222093b5fdc659c18a2f40811fc46eb8bc2f945e61d1aabf78a8feaabade",
+      "predecessor_sha256": "cfe5bdc1db0b10716e745e28c2db3f11bc7ecdf1b6d16f4bdb3961554bc91b33"
+    },
+    "implementation/phase-9-grcv4/verification/p9101a_native.py": {
+      "current_sha256": "607ce89aa6e05b9901c94bdff768d31c55404ad6decd387ae7592e2b1d131963",
+      "predecessor_sha256": "a0f8f4dd1a31c40862e6d584ca463c344a242ac64a091e68a8a1172049059f8f"
+    },
+    "implementation/phase-9-grcv4/verification/p9101b_target_compatibility.py": {
+      "current_sha256": "183850133a765c464d01b33dbedc79b2cd32aba566e9d7dd284746db8cb59754",
+      "predecessor_sha256": "5bfbc06a2d6f2fb6ffa903f7ea09b88117f980e0b61be15583af4cf7af83ae90"
+    },
+    "implementation/phase-9-grcv4/verification/p9101c_support_reconciliation.py": {
+      "current_sha256": "24215ffd844e07f957284bdd8838a737991d9e6985899f054386d63c85725dbc",
+      "predecessor_sha256": "32f4ebd9943b9357081fc2e2e949d1541a783be61fb010d19566106170691c72"
+    },
+    "implementation/phase-9-grcv4/verification/p9101c_target_basin.py": {
+      "current_sha256": "f2581de0797510ce3db4f2b011c6a7347b1c2105819ac86c6482b0c667aed7a2",
+      "predecessor_sha256": "c1a52e65f757d18b551741ec721174dedd2de25abb69286fbc3a7c95123bd5db"
+    },
+    "implementation/phase-9-grcv4/verification/p994b_runtime_successor.py": {
+      "current_sha256": "76781ef3a36b803cb654b9b2328af259a7afa0634f1ffbf50f04e9e208ea4e0a",
+      "predecessor_sha256": "b6bba89dfc5a017fcf676d4980540db0c21f5b680fd82039b5ac8784c6e14072"
+    },
+    "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py": {
+      "current_sha256": "a56f02f75084cb9eb10dcdb772b3d82adae880c9a2803ba325615e11390cd0c2",
+      "predecessor_sha256": "4673acb4d6b1985d4d412b70d4d931504a7241c5b0e74a979f75f49d4932ed85"
+    },
+    "src/pygrc/models/grc_9_v4_api_lifecycle.py": {
+      "current_sha256": "3f0055660239636dd9a34da92b65d427598f9be92b0438404dbd5644db7a7370",
+      "predecessor_sha256": "f363dd248ca52e956b43a7f53dde8a0785abe2b2237b7f977d3d8f67b0b981ab"
+    },
+    "src/pygrc/models/grc_9_v4_legacy.py": {
+      "current_sha256": "4f08d3e2b54324352167d41429fda0f10b84cc41bfae5c3a38a701d042078cdc",
+      "predecessor_sha256": "c42bcfca64903bca1cb48fadb782bd9081d8e764df09944bb4ddedd3e327d026"
+    },
+    "src/pygrc/models/grc_9_v4_owner.py": {
+      "current_sha256": "5a0fec1d1bb4ec3d9bc4b8e2b8e3b144ccfff5190de8a23a62496ced331c69e6",
+      "predecessor_sha256": "82f36656f0923aff56b2e9d5590f6f420f9209ed42eea4dddda50fe01f11a5f7"
+    },
+    "tests/models/test_grc_9_v4_architecture.py": {
+      "current_sha256": "125ea80cca75bbd7382bbf3cf79a1f5925fc117845ff4aed9d6f1e355cf24ea0",
+      "predecessor_sha256": "bfb9be1c4ce4e909d8a695da1f5a395e40e0416262d64cb3434b9c01306363fb"
+    },
+    "tests/models/test_grc_9_v4_contracts.py": {
+      "current_sha256": "26080effe823ab953131003068f33f8dc0b5e0986b06b1efa3e08f9de29c1546",
+      "predecessor_sha256": "9c2ffff7038ecc02077032f6c1da3923863bfaf017a738e24a488e860aaf07c1"
+    }
+  },
+  "old_execution_relabelled": false,
+  "user_acceptance_inferred": false,
+  "record_digest": "86c463477430a63a275ae61baa68a4172b4b9701467209eec303bfa048da1a4f"
+}

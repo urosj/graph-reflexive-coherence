@@ -227,6 +227,14 @@
       "storage_sha256": "cedf6f862e3bdec343801950f2f450b4f6c1b6f5c6e461aa0f332b9a9b8751b8"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-AOSOracleInputs.json",
+      "size": 1363357,
+      "sha256": "6490d91f08fd38f6434999c4fe91fa1dc50eb2a305dbc3e7ac0971649ff10c83",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-AOSOracleInputs.json.xz",
+      "storage_size": 29820,
+      "storage_sha256": "516fcb0985745b21887393fb3b5a537bcff19d232d09124d084fcb317c922f2c"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-APCFullInputs.json",
       "size": 4019544,
       "sha256": "2044970cc9659caf3b2f52027e8f0e03fa61b7ed98c2fa248e1bca7a139bb6cc",
@@ -265,6 +273,14 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIHardeningResults.json.xz",
       "storage_size": 272860,
       "storage_sha256": "bfead87a36a98f6e3569e0385d9a22699421868d5f03228e4fdddd33bf1331b8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIPCPreflight.json",
+      "size": 1656973,
+      "sha256": "4880ca2a732992180e7e9aa5391b677145d6a3554fc81032bb13db9209eb12b9",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIPCPreflight.json.xz",
+      "storage_size": 151076,
+      "storage_sha256": "848e30b1e434ad3215aaf591c36c0fc36d2f2430a81ce220963b430ec9cc8d89"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIResults.json",
@@ -345,6 +361,22 @@
       "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4f-COSResults.json.xz",
       "storage_size": 91168,
       "storage_sha256": "e03cce8e1cb82a9d56f9173c13502d8e3fba1e8bbd526d7d412e4037a43b2836"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CPCCompanionResults.json",
+      "size": 2535333,
+      "sha256": "c3eb16a2127ac3c778b9575c722ada26e453a04c39a0800ece9f51ec830ce535",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CPCCompanionResults.json.xz",
+      "storage_size": 251576,
+      "storage_sha256": "92599524a87588c26d4e24831ea847f03955a561ff7e96e9411f9b2ed94adeca"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CPCResults.json",
+      "size": 1653806,
+      "sha256": "7f26168fa160c28186c90c5becc7e8cce62ba49deb2e78c2115b48c69c5a566e",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4g-CPCResults.json.xz",
+      "storage_size": 174820,
+      "storage_sha256": "987272be6967b54cc39a62cfaa80d62df57b3e56214458b5d9aaca4b9367bb6d"
     }
   ]
 }

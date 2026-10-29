@@ -1,0 +1,68 @@
+{
+  "schema": "p9-aos-acceptance-v1",
+  "family": "A_OS",
+  "realization_number": 5,
+  "reviewed_commit": "b4339d8f",
+  "accepted_date": "2026-10-28",
+  "acceptance_basis": "Explicit user instruction: accept, commit",
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.json",
+    "sha256": "9504b710cc0920beac14f95a3309fec6f9127503bef436a7efa3f686f4326188",
+    "record_digest": "34c4ba97509f1ca205f69ced9cff67dd49b1e5badde4833031ac73c99782d402"
+  },
+  "validation": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-AOS-Validation.json",
+      "sha256": "876592a572a32ee35edb1d1611cae7b8511e259e4b76f13e0182c364cd463305",
+      "record_digest": "665f337be56a31cfdd11bfca5c5e9198192277998d6e8c6c2d046083ac5bb712"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-AOS-G2SourceValidation.json",
+      "sha256": "5c25c1e6b6c5aa850558766eaaf89ab0f8e11203bf205a1ab74003ae2fd7a25f",
+      "record_digest": "f71ca765b9d8805c34a16517d1dfd05b8069f93410042c8e175d61a1be9da927"
+    }
+  ],
+  "source_epochs": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-AOS-AcceptanceSources.json",
+    "sha256": "2eeea45d4807a701dc90fa8ea03067987408900902bbda6a26b967ec3b523169"
+  },
+  "checkpoints": [
+    "8.4d",
+    "8.4e",
+    "8.4f",
+    "8.4g",
+    "8.4h",
+    "8.4i",
+    "8.5",
+    "8.6",
+    "tranche8_end",
+    "9.1b",
+    "9.2",
+    "9.3",
+    "9.4a",
+    "9.4b",
+    "9.5",
+    "9.6"
+  ],
+  "user_accepted": true,
+  "bounded_scope_closed": true,
+  "compatibility_counts": {
+    "bounded_accepted": 20,
+    "passed_pending_acceptance": 0,
+    "unselected_not_executed": 20
+  },
+  "original_large_reset_excluded": true,
+  "successful_companion_accepted": true,
+  "optional_completion": "unselected",
+  "tranche10": "deferred",
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "retained_limits": [
+    "pointwise_OS_certificates_not_uniform_trajectory",
+    "expanded_target_compatibility_not_inherited",
+    "four_contracts_indeterminate_requires_review",
+    "A_OS_basin_unselected",
+    "five_remaining_realizations_unselected"
+  ],
+  "record_digest": "df3860ed9c90095da5cb03c988a7a65db7efdfdfc442b195ba069d79efb9e5cf"
+}

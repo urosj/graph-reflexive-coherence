@@ -38,7 +38,7 @@ from .grc_9_v4_identity import has_basin
 
 # Public execution selection is independent of available native implementations.
 # Contract recognition and conformance acceptance are separate again.
-PUBLIC_ENABLED_FAMILIES = ("C_OS", "C_CI", "A_CI", "A_PC")
+PUBLIC_ENABLED_FAMILIES = ("C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC")
 
 native_bytes = branch._bytes
 
@@ -133,7 +133,7 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
             raise TypeError("typed public configuration required")
         family = configuration.family.profile_family_id
         # Contract validation is available for all ten. Check runtime scope
-        # before any admission/kernel invocation for the other six.
+        # before any admission/kernel invocation for the other five.
         cls.require_execution(family)
         from .grc_v4_geometry import GeometryStageInputs
 

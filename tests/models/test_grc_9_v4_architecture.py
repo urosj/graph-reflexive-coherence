@@ -54,10 +54,10 @@ def predecessor():
 class ArchitectureTests(unittest.TestCase):
     def test_execution_selection_is_independent(self):
         expected = GRC9V4.execution_scope()
-        with patch.dict(enabled._OWNERS, A_OS=events.GRC9V4AOSOperation):
+        with patch.dict(enabled._OWNERS, A_CI_PC=events.GRC9V4ACIPCOperation):
             self.assertEqual(GRC9V4.execution_scope(), expected)
             with self.assertRaises(public.GRC9V4ExecutionUnavailable):
-                public.GRC9V4PublicOperation.require_execution("A_OS")
+                public.GRC9V4PublicOperation.require_execution("A_CI_PC")
         with patch.dict(enabled._OWNERS, {}, clear=True):
             with self.assertRaises(RuntimeError):
                 GRC9V4.execution_scope()
@@ -76,7 +76,7 @@ class ArchitectureTests(unittest.TestCase):
         rows = []
         for family, implementation in events._FAMILY_IMPLEMENTATIONS.items():
             # This is routing pressure only. No admission/numerical claim is
-            # made for the six unselected public execution families.
+            # made for the five unselected public execution families.
             candidate = object.__new__(implementation.state_type)
             inputs = SimpleNamespace(
                 geometry=SimpleNamespace(reference=object()),

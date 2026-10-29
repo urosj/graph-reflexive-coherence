@@ -276,7 +276,7 @@ def _return_role(reference, native, role):
             gradient=gradients,
             W_A_init=W,
         )
-    if profile.identity_payload.realization == "PC":
+    if profile.identity_payload.realization in ("PC", "CI+PC"):
         # Structural carrier is the flattened complete K4 coordinate matrix.
         Z = (0.0,) * (len(reference.K4_base) ** 2)
     return GRCV4AuthoritativeState(C, W, Z), initialization

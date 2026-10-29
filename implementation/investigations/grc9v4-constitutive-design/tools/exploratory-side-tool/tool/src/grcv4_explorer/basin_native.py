@@ -38,7 +38,5 @@ def basin_native_source(root, name):
         )
     if name not in refs or Path(name).is_absolute() or ".." in Path(name).parts:
         raise KeyError("source is not part of the native basin evidence")
-    raw = (root / name).read_bytes()
-    if checker.execution.predecessor.sha(raw) != refs[name]["sha256"]:
-        raise ValueError("native basin source drift")
-    return raw, refs[name]
+    from p9_aos_historical import read_source
+    return read_source(root, refs[name])

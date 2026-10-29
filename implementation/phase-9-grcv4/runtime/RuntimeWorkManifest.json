@@ -1270,8 +1270,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_api_lifecycle.py",
-      "sha256": "f363dd248ca52e956b43a7f53dde8a0785abe2b2237b7f977d3d8f67b0b981ab",
-      "iteration_id": "P9-10.1a"
+      "sha256": "2625018701c291ff28125a09b1b2ba8d498fbfa64b817e3d00377fda0476d587",
+      "iteration_id": "P9-9.4b"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_arg2b.py",
@@ -1291,7 +1291,7 @@
     {
       "path": "src/pygrc/models/grc_9_v4_crossing.py",
       "iteration_id": "P9-9.4b",
-      "sha256": "b75e3a5a18dce61dbc783212d30478c324973276d7a748934df4155d23008bb9"
+      "sha256": "f6f0ee5a91b3f916c5e7e0a23abdca031d46db53d393fcf1f0a3eabc3c725cd7"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_expansion.py",
@@ -1305,8 +1305,8 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_legacy.py",
-      "sha256": "c42bcfca64903bca1cb48fadb782bd9081d8e764df09944bb4ddedd3e327d026",
-      "iteration_id": "P9-10.1a"
+      "sha256": "0b1cd917b50921a5c499c22569379050896d839b913aaf804fd50f4c337352f3",
+      "iteration_id": "P9-9.2-C_CI_PC-transition"
     },
     {
       "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
@@ -1315,7 +1315,7 @@
     },
     {
       "path": "src/pygrc/models/grc_9_v4_owner.py",
-      "sha256": "82f36656f0923aff56b2e9d5590f6f420f9209ed42eea4dddda50fe01f11a5f7",
+      "sha256": "e87a742d8e7e72f5b8d321afb7e9befb90da018f7b8ac69d38da87adb79e4e3b",
       "iteration_id": "P9-9.4b"
     },
     {
@@ -1514,13 +1514,18 @@
       "iteration_id": "P9-8.3A.2"
     },
     {
+      "path": "tests/models/test_grc_9_v4_aos_integration.py",
+      "sha256": "2339a3a7a3bc8079d48273d98eacb66f69ceedf1741176628449ba660961ee84",
+      "iteration_id": "P9-9.4b"
+    },
+    {
       "path": "tests/models/test_grc_9_v4_apc.py",
       "sha256": "3e77c82937b43544c0a6742fff017d6f4acab01d2a60c235452cf23f1bb83cb4",
       "iteration_id": "P9-8.3A.2"
     },
     {
       "path": "tests/models/test_grc_9_v4_architecture.py",
-      "sha256": "bfb9be1c4ce4e909d8a695da1f5a395e40e0416262d64cb3434b9c01306363fb",
+      "sha256": "210fabcf83e88d437061fceb8e132a6c6b14466492d3181ec850a3c43590642d",
       "iteration_id": "P9-9.4b"
     },
     {
@@ -1544,8 +1549,18 @@
       "iteration_id": "P9-8.3C-CI-PC"
     },
     {
+      "path": "tests/models/test_grc_9_v4_ccipc_integration.py",
+      "sha256": "5c5c9f2204978fa41775c5852e66749a8cdf5fd0a666c20618ba4c22c294abb0",
+      "iteration_id": "P9-9.4b"
+    },
+    {
       "path": "tests/models/test_grc_9_v4_contracts.py",
-      "sha256": "9c2ffff7038ecc02077032f6c1da3923863bfaf017a738e24a488e860aaf07c1",
+      "sha256": "35aa010670810e99c93b3714f2bf3dc0a6b65444e03161cbc24050b08efd6e9d",
+      "iteration_id": "P9-9.4b"
+    },
+    {
+      "path": "tests/models/test_grc_9_v4_cpc_integration.py",
+      "sha256": "8af4c7d8558e8a09553f5ca1908716ad8e63e629beef8b6d6fb50b0e218ccc1b",
       "iteration_id": "P9-9.4b"
     },
     {
@@ -1556,7 +1571,7 @@
     {
       "path": "tests/models/test_grc_9_v4_crossing.py",
       "iteration_id": "P9-9.4a",
-      "sha256": "97eeb6b09529d044c081107f49e2fd2e886946d4128573380bbe7795a683071c"
+      "sha256": "e64f879c31d9a3c9c1f0a91724d3667b79742dfc9a1176029f401def44dfdc0f"
     },
     {
       "path": "tests/models/test_grc_9_v4_expansion.py",
@@ -1781,5 +1796,5 @@
     ]
   ],
   "claim_ceiling": "Work entries grant no conformance. The pinned exact-profile G2 registry validates ten separate user-accepted generic declarations. The pinned P9-7.8 G3 decision admits only that exact consumed set and historical P9-8.1a entry. The 2026-10-02 user-requested successors open P9-8.1b row differential/weight bridge on the two topology paths, P9-8.1c baseline candidate detection on the two reviewed lifecycle paths, and P9-8.1d column coarse/Split on the topology paths after accepted .c at e9dfad7. No later native leaf, broader profile or specialization runtime conformance follows. The user-requested P9-8.1e successor after accepted .d at a2d3d36 corrects shared exact-backend use and extends its source/parity guard on exactly the recorded five existing paths; it opens no other runtime implementation or conformance. The 2026-10-03 user-requested P9-8.2 successor after merged parent acceptance at 184919b opens only the reviewed allocator source/test pair. Its pure mechanical plan does not confer native target admission, lifecycle publication, P9-8.3 acceptance or broader specialization conformance. The 2026-10-03 user-requested P9-8.3C-OS successor after accepted allocator merge 79e0e8f opens exactly six reviewed geometry/expansion/lifecycle source/test paths for bounded port-owned C_OS event integration. Its separately identified native numerical fixture, current/reset admission, atomic publication and event replay do not advertise a new G2/native profile or open other P9-8.3 profiles, P9-8.4\u20138.6, or the Tranche 9 public model lifecycle. The 2026-10-03 user-requested P9-8.3C-PC successor after accepted C_OS commit eeb82e9 opens exactly the four existing expansion/lifecycle source/test paths. Its whole-current/reset carrier archive, explicit zero-reset/loss policy, full PC readmission, atomic publication and bounded numerical continuation remain internal native integration; no new G2 advertisement, other native profile, public facade or user acceptance follows. The 2026-10-03 user-requested P9-8.3C-CI successor after accepted A_OS commit ba5cf5c opens exactly the existing expansion/lifecycle owners and new native C_CI test file. It consumes the accepted exact C_CI G2 in G3 and preserves the accepted CI research expectations. Both-role joint-root/domain admission, reference-current replay and atomic publication remain bounded internal integration; no new profile registration, other-profile acceptance or public model lifecycle is claimed. The 2026-10-03 user-requested A_PC P9-8.3A.2 successor after explicit oracle/fixture acceptance at 3493fcd opens exactly the four recorded existing runtime owners and the native A_PC test. It consumes exact A_PC G2 from G3 and preserves all four committed oracle subjects. Fixed-row whole-chart proof, exact W lineage, whole Z archive/reset, both-role readmission and atomic replay remain bounded internal integration; no fixed-row CI+PC, public support, global positivity or runtime user acceptance follows. The 2026-10-03 user-requested P9-8.3C-CI-PC successor after accepted A_PC commit 5966746 opens exactly the two existing expansion/lifecycle owners and native C_CI+PC test. It consumes exact C_CI_PC G2 from G3 and preserves four committed research subjects. Composite-domain both-role roots, whole carrier archive/reset, same-root writing and atomic replay remain bounded internal integration; no new profile, public facade, tighter whole-chart accuracy, global positivity or user acceptance follows. The 2026-10-03 user-requested A_CI+PC P9-8.3A.2 continuation accepts the reviewed A.1 scope committed at 1711923 and pins all four unchanged oracle subjects. It opens exactly five existing runtime owners, the native A_PC regression test and the new native A_CI+PC test. It consumes exact A_CI_PC G2 from G3. Fixed-row composite envelope/root proof, same-root two-writer timing, exact W lineage, whole Z archive/reset and atomic replay remain bounded internal integration; no public support, arbitrary-graph coverage, global positivity or separate runtime user acceptance follows. The user separately accepted the bounded A_CI+PC P9-8.3A.2 runtime and closure review on 2026-10-03 (\"accept and commit\"). Its declared composite chart, both-role W/Z event channels, numerical/edge-case evidence and finite continuation are accepted; no other native profile, arbitrary-graph coverage or public support is added.",
-  "record_digest": "e64b3740ae7a4d8863c464aaea3ae521c0633c71e8769b7035c9c16c2b13d8fe"
+  "record_digest": "cb5bce94252d3249f2c94968aca949a1cd3d65f5df708f887c8a7dc9982017e0"
 }

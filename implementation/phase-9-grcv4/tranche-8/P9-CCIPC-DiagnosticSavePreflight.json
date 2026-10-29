@@ -1,0 +1,51 @@
+{
+  "schema": "p9-ccipc-diagnostic-save-preflight-v1",
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4h-CCIPCCharge-step-reset-2-incomplete-1793284331529531984.json.xz",
+      "sha256": "a683c7099c1bd41ad902df99bfba09e4dbca356ad1975640ab81b10d6ae833d9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984b_runtime.py",
+      "sha256": "3fc2db0c327b6221df68deb3eb151959548be0605cc0eef370d4337b2466c037"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p984d_ccipc.py",
+      "sha256": "6d457b0d9cd60d35555b6948811fd6f442a5093a1fb0d0f8a3048a9423367ba1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9_ccipc_campaign.py",
+      "sha256": "b7ef7b16e6737d2ee70b7e6a784cf6b447cb517c66e13395c698b71f3d7f4f82"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9_ccipc_capture.py",
+      "sha256": "ff7ee3dc6557d3fbe6f1e3224e001efaf4194964178a536fa1848fcafbf3d8ba"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9_ccipc_raw_store.py",
+      "sha256": "c17fba7285790ca0ea8be8a5b7c92acf6453d039893ccda71ce9b3d165fd07d4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p9_ccipc_raw_store.py",
+      "sha256": "318ff348c19f0fdea1a89a925a1260d1472859a3bf29246f8210be252acf676d"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "46785802cfd7482b10204b228df6aab62da4be8f8e4f5705eda7284ba132c4a4"
+    }
+  ],
+  "outcome": "passed",
+  "tests": 4,
+  "concurrent_writers": 2,
+  "identical_write_idempotent": true,
+  "negative_controls": [
+    "changed_capture",
+    "corrupt_capture",
+    "outside_private_scope"
+  ],
+  "native_roots_reused": false,
+  "numerical_behavior_changed": false,
+  "failed_attempt_credit": false,
+  "failure_record_digest": "cb433d3a85cc0bd0432d1df3d44538934517bafa0bcf3b8c081019e50453195d",
+  "record_digest": "294c8f95fbd970f5bb1dfb459ea927a57a8a54f8260939f6f9bb05441396df1a"
+}

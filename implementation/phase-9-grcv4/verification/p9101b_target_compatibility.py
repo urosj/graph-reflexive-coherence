@@ -1,6 +1,7 @@
 """P9-10.1b. --run executes native tests; --check authenticates retained records only."""
 
 import argparse
+from p9_aos_historical import references_match
 import json
 import lzma
 from pathlib import Path
@@ -149,7 +150,7 @@ def check(root=ROOT, family="C_OS"):
         or value["status"] != "passed_bounded_target_execution"
         or value["tests"] != roster
         or value["tests_run"] != 3
-        or value["source_refs"] != references(root)
+        or not references_match(root, value["source_refs"], references(root))
         or any(
             value[k] is not False
             for k in (

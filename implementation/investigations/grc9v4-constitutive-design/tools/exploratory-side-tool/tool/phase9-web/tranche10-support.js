@@ -57,7 +57,7 @@ export function reconciledSupportLoader(output,status,fetcher=fetch,create=tag=>
       for(const r of v.source_refs) {
         const a=add('a',r.path.split('/').at(-1));a.href='/api/tranche10/support/source?path='+encodeURIComponent(r.path);a.target='_blank';a.rel='noopener';add('span',' · ');
       }
-      status.textContent='Two holds resolved within accepted scope; all-forty restriction retained. bounded P9-10.1 closed. Next: P9-10.2.';
+      status.textContent='Two holds resolved within accepted four-family scope; all-forty restriction retained; bounded P9-10.1 closed. Current work: A_OS through Tranches 8–9; P9-10.2 deferred.';
     } catch(error) {if(ticket!==sequence)return;output.replaceChildren();status.textContent=String(error);}
   };
 }

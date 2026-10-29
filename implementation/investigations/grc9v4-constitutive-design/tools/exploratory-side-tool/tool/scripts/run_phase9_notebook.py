@@ -21,8 +21,12 @@ def main():
                         help="query current authority without requesting cached pressure evidence")
     parser.add_argument("--tranche8-only", action="store_true",
                         help="execute the real retained Tranche 8 query cell without historical or numerical reruns")
+    parser.add_argument("--aos-only", action="store_true",
+                        help="execute the current A_OS retained-evidence cell without numerical reruns")
+    parser.add_argument("--cpc-only", action="store_true", help="execute the C_PC retained-evidence cell")
+    parser.add_argument("--ccipc-only", action="store_true", help="execute the C_CI+PC retained-evidence cell")
     args = parser.parse_args()
-    if args.status_only and args.tranche8_only:
+    if sum((args.status_only, args.tranche8_only, args.aos_only, args.cpc_only, args.ccipc_only)) > 1:
         parser.error("select one focused notebook mode")
     root = repository_root()
     if Path(sys.prefix).resolve() != (root / ".venv").resolve():
@@ -34,6 +38,12 @@ def main():
         cells = [c for c in cells if c["id"] in {"discover-and-import", "query-status"}]
     if args.tranche8_only:
         cells = [c for c in cells if c["id"] in {"discover-and-import", "query-tranche8"}]
+    if args.aos_only:
+        cells = [c for c in cells if c["id"] in {"discover-and-import", "query-aos"}]
+    if args.cpc_only:
+        cells = [c for c in cells if c["id"] in {"discover-and-import", "query-cpc"}]
+    if args.ccipc_only:
+        cells = [c for c in cells if c["id"] in {"discover-and-import", "query-ccipc"}]
     for index, cell in enumerate(cells):
         exec(
             compile(
@@ -43,6 +53,24 @@ def main():
             ),
             namespace,
         )
+    if args.ccipc_only:
+        from grcv4_explorer.ccipc import ccipc_status
+        if namespace["phase9_ccipc"] != ccipc_status(root):
+            raise RuntimeError("notebook/API C_CI+PC mismatch")
+        print("PHASE9_CCIPC_NOTEBOOK_PASS native_rerun=false")
+        return
+    if args.cpc_only:
+        from grcv4_explorer.cpc import cpc_status
+        if namespace["phase9_cpc"] != cpc_status(root):
+            raise RuntimeError("notebook/API C_PC mismatch")
+        print("PHASE9_CPC_NOTEBOOK_PASS native_rerun=false")
+        return
+    if args.aos_only:
+        from grcv4_explorer.aos import aos_status
+        if namespace["phase9_aos"] != aos_status(root):
+            raise RuntimeError("notebook/API A_OS mismatch")
+        print("PHASE9_AOS_NOTEBOOK_PASS native_rerun=false")
+        return
     if args.tranche8_only:
         from grcv4_explorer.tranche8 import tranche8_status
         observed = namespace["phase9_tranche8"]

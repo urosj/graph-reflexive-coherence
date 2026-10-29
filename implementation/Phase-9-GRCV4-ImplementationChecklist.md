@@ -3141,6 +3141,61 @@ the full ten-profile plan.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
     completed compact evidence and the 1 MB raw-file compression rule.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+    - [x] C_CI+PC seventh-realization implementation selected on 2026-10-29,
+      on the existing branch: [scope and compute plan](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md)
+      and [checked review](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Review.json).
+      User acceptance is recorded separately below.
+      - [x] Small native-root cache parity and active FLINT/Arb policy preflight.
+      - [x] Independent composite-ball certificate and original first-step check:
+        both source histories pass; both original target histories excluded.
+      - [x] Select the `(5/16, 5/16, 3/8)` companion preserving both evolved charges;
+        retain original exclusion and the first companion's `-2^-53` charge failure.
+      - [x] Reuse identical source steps by exact digest; pass both revised target
+        prerequisites and actual-target independent preflight with unchanged tolerances.
+      - [x] Complete 20 deep cases / 40 histories and 22 Tranche 9 integration tests.
+      - [x] Profile native roots and enable 3,600-second large segment caps,
+        verified caching, vertex-reduced independent equations and resumable evidence.
+      - [x] Complete all 44 small covariance history cells; the actual large
+        event, both ten-step continuations and final reads; six small lifecycle
+        checks and fresh large replay; thirty independent update bounds.
+      - [x] Complete prioritized `combined`, `reflect`, then `rotate` large
+        events and one continuation per history. Five separate/repeated large
+        cases remain unexecuted diagnostic follow-ups, without coverage credit.
+      - [x] Complete missing P9-8.4d through applicable P9-9.6 and side-tool API,
+        browser, indexed sources and notebook. The new compatibility execution
+        matrix is 24 accepted / 4 pending acceptance / 12 unselected; disabled
+        authority remains held. Final validation is retained separately.
+      - [x] User accepted the bounded C_CI+PC results on 2026-10-29;
+        [decision](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) binds
+        implementation `f90c5344`, preserves all execution records and the five
+        deferred large cases, and exposes 28 accepted / 12 unselected compatibility cells.
+    - [x] C_PC sixth-realization implementation selected on 2026-10-28, on
+      the existing A_OS branch: [campaign plan](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Plan.md)
+      and [scientific review](./phase-9-grcv4/tranche-8/P9-CPC-ScientificReview.md).
+      - [x] 20 deep cases / 40 history cells, 20 ordering cells, 24 chart cells.
+      - [x] Original large target exclusion retained for both histories;
+        independent companion and four native prerequisite steps passed.
+      - [x] 22 Tranche 9 integration tests; matrix 20 accepted / 4 pending / 16 unselected.
+      - [x] Actual large event and exact replay; six small lifecycle obligations
+        and a fresh large lifecycle replay; 17 scientific and 93 integration regressions.
+      - [x] Both large ten-step continuations and final reads; eight larger
+        covariance events and sixteen transformed steps; forty independent update bounds.
+      - [x] Final 136-test regression suite (four expected abstract-class skips),
+        API/browser/source downloads, real notebook cell, and predecessor checks.
+        [Checked evidence](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Review.json)
+        and [validation](./phase-9-grcv4/tranche-9/P9-CPC-Validation.json), 2026-10-29.
+      - [x] Final implementation-boundary audit on the completed subject (2026-10-29).
+      - [x] Explicit user acceptance of bounded C_PC results on 2026-10-29;
+        [decision](./phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json) binds `1e720983`.
+        Current compatibility view: 24 accepted / sixteen unselected; no all-ten closure.
+    - [x] A_OS fifth-realization implementation selected on 2026-10-28:
+      [bounded review through Tranche 9](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.md)
+      and [validation](./phase-9-grcv4/tranche-9/P9-AOS-Validation.json).
+      Accepted `.b/.c` retained; `.d–i`, 8.5/8.6 and applicable Tranche 9
+      execution passed with API/browser/notebook evidence. Original large reset
+      exclusion retained; separate companion passed. No all-ten closure.
+      - [x] User acceptance of the new bounded A_OS results on 2026-10-28;
+        [decision](./phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json).
     - [x] C_OS: [20 cases / 40 history cells](./phase-9-grcv4/tranche-8/P9-8.4d-COSReview.md),
       D59/66/73/94, depths three/four; accepted 2026-10-12.
       - [x] Independent layouts, complete references, exact represented charge,
@@ -3893,10 +3948,11 @@ and review. Each cell binds the corresponding
 [frozen forty-contract matrix](../specs/grc-9-v4-spec.md#exact-disabled-grc9v3-compatibility).
 Controlled batches retain independent child outcomes. Pending cells for an
 unselected profile do not hold a different fully tested profile. All cells
-are independently tracked. The sixteen C_OS/C_CI/A_CI/A_PC cells passed native
-component execution and are bounded-accepted; the other twenty-four are
-unselected. Explicit legacy seeds do not imply executed enabled/disabled
-migration or a full specialization conformance grant.
+are independently tracked. The twenty-four C_OS/C_CI/A_CI/A_PC/A_OS/C_PC
+cells are bounded-accepted; the remaining sixteen cells are unselected. The
+[C_PC decision](./phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json) records acceptance
+on 2026-10-29 separately from the unchanged [execution matrix](./phase-9-grcv4/tranche-9/P9-9.3-CPCMatrix.json). Explicit legacy seeds do not imply
+executed enabled/disabled migration or a full specialization conformance grant.
 
 | Execution child | State |
 | --- | --- |
@@ -3908,10 +3964,10 @@ migration or a full specialization conformance grant.
 | `P9-9.2-C_CI-state` | Bounded-accepted |
 | `P9-9.2-C_CI-observable` | Bounded-accepted |
 | `P9-9.2-C_CI-lifecycle` | Bounded-accepted |
-| `P9-9.2-A_OS-transition` | Unselected |
-| `P9-9.2-A_OS-state` | Unselected |
-| `P9-9.2-A_OS-observable` | Unselected |
-| `P9-9.2-A_OS-lifecycle` | Unselected |
+| `P9-9.2-A_OS-transition` | Bounded-accepted |
+| `P9-9.2-A_OS-state` | Bounded-accepted |
+| `P9-9.2-A_OS-observable` | Bounded-accepted |
+| `P9-9.2-A_OS-lifecycle` | Bounded-accepted |
 | `P9-9.2-C_OS-transition` | Bounded-accepted |
 | `P9-9.2-C_OS-state` | Bounded-accepted |
 | `P9-9.2-C_OS-observable` | Bounded-accepted |
@@ -3928,10 +3984,10 @@ migration or a full specialization conformance grant.
 | `P9-9.2-A_PC-state` | Bounded-accepted |
 | `P9-9.2-A_PC-observable` | Bounded-accepted |
 | `P9-9.2-A_PC-lifecycle` | Bounded-accepted |
-| `P9-9.2-C_PC-transition` | Unselected |
-| `P9-9.2-C_PC-state` | Unselected |
-| `P9-9.2-C_PC-observable` | Unselected |
-| `P9-9.2-C_PC-lifecycle` | Unselected |
+| `P9-9.2-C_PC-transition` | Bounded-accepted |
+| `P9-9.2-C_PC-state` | Bounded-accepted |
+| `P9-9.2-C_PC-observable` | Bounded-accepted |
+| `P9-9.2-C_PC-lifecycle` | Bounded-accepted |
 | `P9-9.2-A_CI_PC-transition` | Unselected |
 | `P9-9.2-A_CI_PC-state` | Unselected |
 | `P9-9.2-A_CI_PC-observable` | Unselected |

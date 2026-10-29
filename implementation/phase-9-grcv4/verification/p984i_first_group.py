@@ -76,6 +76,10 @@ def authenticate(root,ref):
         expected=ref['sha256']
         if historical_source(root,ref['path'],expected)==expected:
             raw=git_bytes(root,ref['path'],SOURCES[ref['path']]['predecessors'][expected])
+    if sha(raw)!=ref['sha256']:
+        from p9_aos_g2_sources import metadata_source
+        retained=metadata_source(root,ref['path'],ref['sha256'])
+        if retained is not None:raw=retained
     require(sha(raw)==ref['sha256'],'retained source drift: '+ref['path'])
     return raw
 

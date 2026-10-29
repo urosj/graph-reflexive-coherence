@@ -1,6 +1,7 @@
 """Retained independent basin pressure. --check does not rerun native reads."""
 
 import argparse
+from p9_aos_historical import references_match
 import json
 import lzma
 from pathlib import Path
@@ -115,7 +116,7 @@ def check(root=ROOT, group="C_OS"):
         or value["group"] != group
         or value["tests_run"] != count
         or len(set(value["tests"])) != count
-        or value["source_refs"] != references(root)
+        or not references_match(root, value["source_refs"], references(root))
         or value["authority_record_digest"] != predecessor.AUTHORITY_DIGEST
         or value["status"] != "passed_bounded_end_to_end_pressure"
         or value["user_accepted"] is not False

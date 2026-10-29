@@ -1,5 +1,7 @@
 # Phase 9 GRCV4 Implementation Plan
 
+Current user-selected work (2026-10-29): [C_CI+PC seventh realization through Tranche 9](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md), continuing on `work/p9-aos-tranches-8-9` after accepted C_PC `b41f1f26`. Verify feasibility and measure optimization benefits before long runs; use one-hour large native segment caps. C_CI_PC `.b/.c` and six predecessor realizations remain accepted. Bounded numerical execution and side-tool integration are complete; the checked review and final validation retain the evidence, accepted by the user on 2026-10-29 in a separate [decision](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) binding implementation `f90c5344`. At the user's reaffirmed priority, large covariance selects combined transport, reflection and rotation; five other large cases remain deferred diagnostic work. P9-10.2 is deferred.
+
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
 2026-10-02 current direction: P9-8.0 is complete following explicit acceptance
