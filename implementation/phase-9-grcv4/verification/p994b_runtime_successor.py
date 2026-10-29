@@ -176,7 +176,8 @@ def historical_source(root, name, expected):
         return None
     root = Path(root).resolve()
     current = (root / name).read_bytes()
-    if hashlib.sha256(current).hexdigest() != row["current_sha256"]:
+    from p9_cpc_historical import project_sha
+    if project_sha(root,name,hashlib.sha256(current).hexdigest()) != row["current_sha256"]:
         return None
     original = subprocess.check_output(
         ["git", "show", row["predecessors"][expected] + ":" + name], cwd=root

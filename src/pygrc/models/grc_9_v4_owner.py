@@ -43,6 +43,7 @@ _OWNERS = {
     "A_CI": events.GRC9V4ACIOperation,
     "A_PC": events.GRC9V4APCOperation,
     "A_OS": events.GRC9V4AOSOperation,
+    "C_PC": events.GRC9V4CPCOperation,
 }
 _LAYOUT = "grc9v4-enabled-lifecycle-checkpoint-v1"
 

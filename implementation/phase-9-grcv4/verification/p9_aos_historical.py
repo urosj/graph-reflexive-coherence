@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+from p9_cpc_historical import project_sha, project as cpc_project, original as cpc_original, REVISION as CPC_REVISION
 
 REVISION='02528b5d'
 BASE='implementation/phase-9-grcv4/'
@@ -43,13 +44,15 @@ def epoch(root):
     root=Path(root).resolve();value=json.loads((root/PATH).read_bytes())
     if (value!=seal(value) or value['schema']!='p9-aos-source-epochs-v1'
         or value['predecessor']!=REVISION or set(value['sources'])!=CHANGED
-        or value['new_paths']!=sorted(ADDITIONS) or value['checker_sha256']!=sha((root/SELF).read_bytes())
+        or value['new_paths']!=sorted(ADDITIONS) or value['checker_sha256']!=project_sha(root,SELF,sha((root/SELF).read_bytes()))
         or value['old_execution_relabelled'] is not False or value['user_acceptance_inferred'] is not False):
         raise ValueError('A_OS source epoch scope drift')
     return value
 
 
 def original_checked(root,name,current_sha,epochs):
+    if name in __import__("p9_cpc_historical").CHANGED and current_sha==sha((Path(root)/name).read_bytes()):
+        current_sha=project_sha(root,name,current_sha)
     row=epochs['sources'].get(name)
     if row is None or row['current_sha256']!=current_sha:
         raise ValueError('unregistered historical source successor: '+name)
@@ -62,8 +65,10 @@ def original_checked(root,name,current_sha,epochs):
 def references_match(root,expected,current):
     """Authenticate the original roster; exclude only the named new test."""
     root=Path(root).resolve();epochs=epoch(root)
-    old={r['path']:r for r in expected};new={r['path']:r for r in current}
-    if len(old)!=len(expected) or len(new)!=len(current) or not set(old)<=set(new) or set(new)-set(old)-ADDITIONS:
+    old={r['path']:r for r in expected}
+    projected=cpc_project(root,{r['path']:r['sha256'] for r in current})
+    new={name:dict(path=name,sha256=sha_) for name,sha_ in projected.items()}
+    if len(old)!=len(expected) or len({r['path'] for r in current})!=len(current) or not set(old)<=set(new) or set(new)-set(old)-ADDITIONS:
         return False
     for name,row in old.items():
         if row==new[name]:continue
@@ -73,7 +78,7 @@ def references_match(root,expected,current):
 
 
 def reference(root,name):
-    root=Path(root).resolve();current=sha((root/name).read_bytes())
+    root=Path(root).resolve();current=project_sha(root,name,sha((root/name).read_bytes()))
     if name in CHANGED:current=sha(original_checked(root,name,current,epoch(root)))
     return dict(path=name,sha256=current)
 
@@ -83,6 +88,12 @@ def read_source(root,ref):
     if path.is_absolute() or '..' in path.parts:raise KeyError('nonportable source')
     raw=(root/path).read_bytes()
     if sha(raw)!=ref['sha256']:
+        current=sha(raw);previous=project_sha(root,name,current)
+        if previous!=current:
+            raw=cpc_original(root,name)
+            if sha(raw)!=previous:raise ValueError('C_PC historical Git source drift: '+name)
+            if previous==ref['sha256']:
+                return raw,dict(ref,revision=CPC_REVISION,basis='historical_git')
         raw=original_checked(root,name,sha(raw),epoch(root))
         if sha(raw)!=ref['sha256']:raise ValueError('source does not match historical reference')
         ref=dict(ref,revision=REVISION,basis='historical_git')

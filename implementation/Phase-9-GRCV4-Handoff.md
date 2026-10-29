@@ -1,5 +1,48 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Review-ready checkpoint — C_PC sixth realization (2026-10-29)
+
+C_PC is implemented across Tranches 8 and 9 on the existing
+`work/p9-aos-tranches-8-9` branch, from the first missing P9-8.4d obligation
+through P9-9.6. Earlier C_PC `.b/.c` and the five accepted realizations remain
+intact. The bounded result is ready for explicit user acceptance; no C_PC
+acceptance or all-ten closure is recorded.
+
+See the [campaign plan](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Plan.md),
+[scientific review](./phase-9-grcv4/tranche-8/P9-CPC-ScientificReview.md),
+[checked evidence](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Review.json),
+and [validation record](./phase-9-grcv4/tranche-9/P9-CPC-Validation.json).
+
+The 20-case deep campaign passed 400 target steps and 40 final reads. Small
+ordering and chart campaigns passed all 44 transformed history cells. The
+large companion passed four prerequisite steps, the actual event and exact
+replay, ten continuation steps and a final read for each history, and eight
+covariance events with sixteen continuation steps. Six small lifecycle tests
+and a fresh large replay also passed. Independent checks bound all forty
+large staged updates at their saved inputs; they do not assert a uniform
+exact-trajectory enclosure.
+
+The final regression suite ran 136 tests: 132 passed and four abstract-class
+tests skipped as expected, alongside 22 passing C_PC Tranche 9 integration
+tests. API, source downloads, browser behavior, the real notebook cell, and
+accepted predecessor checks
+passed. A historical source adapter now resolves the crossing-test predecessor
+to its exact accepted Git bytes; drift rejection is covered by regression.
+The implementation-boundary audit and byte-exact compressed storage checks
+also passed. All sixteen C_PC checkpoint rows remain pending user acceptance.
+The compatibility matrix retains 20 accepted, four pending, and sixteen
+unselected cells.
+
+FLINT/Arb, exact-operand matrix reuse, bounded schema memoization and canonical
+byte reuse support the larger work; independent equations use a vertex-system
+Woodbury reduction. Successful native segments stayed within 30-minute caps.
+Earlier incomplete or capped attempts retain no native credit. Node-order's
+bounded parallel attempt failed; remaining counterparts resumed serially with
+the same native caps and cache policy. Both original large target
+histories remain excluded; only the independently declared charge-preserving
+companion earns native credit, with unchanged step size and tolerances.
+Optional completion and C_PC basin support remain unselected. P9-10.2 is deferred.
+
 ## Accepted checkpoint — A_OS fifth realization (2026-10-28)
 
 A_OS is implemented at `b4339d8f` on `work/p9-aos-tranches-8-9`, based on `02528b5d`,
@@ -41,7 +84,7 @@ or enabled evolution campaign and no production changes.
 User accepted P9-10.1c, its direct-target supplement and bounded P9-10.1
 closure on 2026-10-28; [decision](./phase-9-grcv4/tranche-10/P9-10.1c-Acceptance.json).
 Historical next step: P9-10.2, preserving the four-family scope; deferred by
-the active A_OS work above. No P9-10.2 work has started.
+the A_OS/C_PC realization work above. No P9-10.2 work has started.
 
 The current view resolves `basin_surface` for explicit v2 successors and
 `target_identity_scope` for the four exact expanded v1/v2 compatibility targets.

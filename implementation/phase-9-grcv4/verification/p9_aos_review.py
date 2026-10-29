@@ -219,7 +219,8 @@ def checked(root=b.ROOT,value=None):
     b.require(len({r['path'] for r in refs})==len(refs) and required_paths()<={r['path'] for r in refs},'review source roster')
     for ref in refs:
         p=(root/ref['path']).resolve()
-        b.require(p.is_relative_to(root) and b.sha(p.read_bytes())==ref['sha256'],'review source drift: '+ref['path'])
+        from p9_cpc_historical import matches
+        b.require(p.is_relative_to(root) and matches(root,ref['path'],ref['sha256']),'review source drift: '+ref['path'])
     rows={r['checkpoint']:r['execution'] for r in value['checkpoints']}
     b.require(rows['8.4d']['successful_history_cells']==40 and rows['8.4e']['successful_history_cells']==20
         and rows['8.4f']['successful_history_cells']==24 and rows['8.4h']['actual_target_steps']==20

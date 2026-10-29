@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 Implementation Plan
 
-Current user-selected work (2026-10-28): [A_OS fifth realization through Tranche 9](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.md), implemented from the missing P9-8.4d scope after accepted A_OS `.b/.c`. Bounded execution and validation passed; user acceptance recorded on 2026-10-28. P9-10.2 is deferred.
+Current user-selected work (2026-10-29): [C_PC sixth realization through Tranche 9](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Plan.md), on the existing `work/p9-aos-tranches-8-9` branch. The completed scope covers P9-8.4d through P9-9.6 after accepted C_PC `.b/.c`, including side-tool integration, verified FLINT/caching, and 30-minute large-segment caps. A_OS remains accepted. C_PC execution and review have passed; [checked evidence](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Review.json) and [validation](./phase-9-grcv4/tranche-9/P9-CPC-Validation.json) are ready for user acceptance. P9-10.2 is deferred.
 
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 

@@ -1,0 +1,764 @@
+{
+  "schema": "p993-cpc-matrix-successor-v1",
+  "family": "C_PC",
+  "cells": [
+    {
+      "family": "A_CI",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-A_CI-transition",
+      "contract_id": "D10.2-EC-DISABLED-A_CI-TRANSITION",
+      "vector_id": "DISABLED-A_CI-TRANSITION",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:6cca38d833f2776ad91d81dbdbc632ff71b5672fc7a3288871054d497f484665",
+      "model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_CI.json.xz",
+        "sha256": "fe970d6e75c2a4802f6efdc9ba53b98a2fe324671033d681bcd3570c03c882f0",
+        "record_digest": "fdcc348d2cc0098d57e7a53cb2677c663c7796690a9897490f532279841b9aa8",
+        "json_pointer": "/cells/transition"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_CI-transition"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_CI",
+      "surface": "state",
+      "iteration_id": "P9-9.2-A_CI-state",
+      "contract_id": "D10.2-EC-DISABLED-A_CI-STATE",
+      "vector_id": "DISABLED-A_CI-STATE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:6cca38d833f2776ad91d81dbdbc632ff71b5672fc7a3288871054d497f484665",
+      "model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_CI.json.xz",
+        "sha256": "fe970d6e75c2a4802f6efdc9ba53b98a2fe324671033d681bcd3570c03c882f0",
+        "record_digest": "fdcc348d2cc0098d57e7a53cb2677c663c7796690a9897490f532279841b9aa8",
+        "json_pointer": "/cells/state"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_CI-state"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_CI",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-A_CI-observable",
+      "contract_id": "D10.2-EC-DISABLED-A_CI-OBSERVABLE",
+      "vector_id": "DISABLED-A_CI-OBSERVABLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:6cca38d833f2776ad91d81dbdbc632ff71b5672fc7a3288871054d497f484665",
+      "model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_CI.json.xz",
+        "sha256": "fe970d6e75c2a4802f6efdc9ba53b98a2fe324671033d681bcd3570c03c882f0",
+        "record_digest": "fdcc348d2cc0098d57e7a53cb2677c663c7796690a9897490f532279841b9aa8",
+        "json_pointer": "/cells/observable"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_CI-observable"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_CI",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-A_CI-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-A_CI-LIFECYCLE",
+      "vector_id": "DISABLED-A_CI-LIFECYCLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:6cca38d833f2776ad91d81dbdbc632ff71b5672fc7a3288871054d497f484665",
+      "model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_CI.json.xz",
+        "sha256": "fe970d6e75c2a4802f6efdc9ba53b98a2fe324671033d681bcd3570c03c882f0",
+        "record_digest": "fdcc348d2cc0098d57e7a53cb2677c663c7796690a9897490f532279841b9aa8",
+        "json_pointer": "/cells/lifecycle"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_CI-lifecycle"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_CI",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-C_CI-transition",
+      "contract_id": "D10.2-EC-DISABLED-C_CI-TRANSITION",
+      "vector_id": "DISABLED-C_CI-TRANSITION",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:44cfb350f94f6bc88231dfa1921ec3081bebc2f5c7a69139727a165f8f287f9a",
+      "model_identity": "grc9v4-model-sha256:a962a7e7a0ceb51d7a25b187b030444cfccef72e7fdbd57f4a79b874daabf637",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_CI.json.xz",
+        "sha256": "d80d73fec7428ad96317166f70237f58a291c13fa367058070c78dd7b49dbc29",
+        "record_digest": "d141e6e1137e2d2889cd185542821db5c3ac36c217f58245d947b2adb9af7e09",
+        "json_pointer": "/cells/transition"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_CI-transition"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_CI",
+      "surface": "state",
+      "iteration_id": "P9-9.2-C_CI-state",
+      "contract_id": "D10.2-EC-DISABLED-C_CI-STATE",
+      "vector_id": "DISABLED-C_CI-STATE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:44cfb350f94f6bc88231dfa1921ec3081bebc2f5c7a69139727a165f8f287f9a",
+      "model_identity": "grc9v4-model-sha256:a962a7e7a0ceb51d7a25b187b030444cfccef72e7fdbd57f4a79b874daabf637",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_CI.json.xz",
+        "sha256": "d80d73fec7428ad96317166f70237f58a291c13fa367058070c78dd7b49dbc29",
+        "record_digest": "d141e6e1137e2d2889cd185542821db5c3ac36c217f58245d947b2adb9af7e09",
+        "json_pointer": "/cells/state"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_CI-state"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_CI",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-C_CI-observable",
+      "contract_id": "D10.2-EC-DISABLED-C_CI-OBSERVABLE",
+      "vector_id": "DISABLED-C_CI-OBSERVABLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:44cfb350f94f6bc88231dfa1921ec3081bebc2f5c7a69139727a165f8f287f9a",
+      "model_identity": "grc9v4-model-sha256:a962a7e7a0ceb51d7a25b187b030444cfccef72e7fdbd57f4a79b874daabf637",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_CI.json.xz",
+        "sha256": "d80d73fec7428ad96317166f70237f58a291c13fa367058070c78dd7b49dbc29",
+        "record_digest": "d141e6e1137e2d2889cd185542821db5c3ac36c217f58245d947b2adb9af7e09",
+        "json_pointer": "/cells/observable"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_CI-observable"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_CI",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-C_CI-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-C_CI-LIFECYCLE",
+      "vector_id": "DISABLED-C_CI-LIFECYCLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:44cfb350f94f6bc88231dfa1921ec3081bebc2f5c7a69139727a165f8f287f9a",
+      "model_identity": "grc9v4-model-sha256:a962a7e7a0ceb51d7a25b187b030444cfccef72e7fdbd57f4a79b874daabf637",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_CI.json.xz",
+        "sha256": "d80d73fec7428ad96317166f70237f58a291c13fa367058070c78dd7b49dbc29",
+        "record_digest": "d141e6e1137e2d2889cd185542821db5c3ac36c217f58245d947b2adb9af7e09",
+        "json_pointer": "/cells/lifecycle"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_CI-lifecycle"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_OS",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-A_OS-transition",
+      "contract_id": "D10.2-EC-DISABLED-A_OS-TRANSITION",
+      "vector_id": "DISABLED-A_OS-TRANSITION",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:a7134a40d8773f8ed9044fe114e5339ac36b7051e432ec113dda743e6cacad53",
+      "model_identity": "grc9v4-model-sha256:0aa199e24cc08dc2d627c18a264dcd25a0db46c7f6704a1296f4c7e9983f5463",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-AOS.json.xz",
+        "record_digest": "9d6c128e5dc162ae98ddcb0f9a564927ddb37b48a3a4e2ddba62c85d38e4bb52",
+        "json_pointer": "/evidence/transition"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json",
+        "record_digest": "df3860ed9c90095da5cb03c988a7a65db7efdfdfc442b195ba069d79efb9e5cf"
+      },
+      "reason": "explicit_A_OS_acceptance"
+    },
+    {
+      "family": "A_OS",
+      "surface": "state",
+      "iteration_id": "P9-9.2-A_OS-state",
+      "contract_id": "D10.2-EC-DISABLED-A_OS-STATE",
+      "vector_id": "DISABLED-A_OS-STATE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:a7134a40d8773f8ed9044fe114e5339ac36b7051e432ec113dda743e6cacad53",
+      "model_identity": "grc9v4-model-sha256:0aa199e24cc08dc2d627c18a264dcd25a0db46c7f6704a1296f4c7e9983f5463",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-AOS.json.xz",
+        "record_digest": "9d6c128e5dc162ae98ddcb0f9a564927ddb37b48a3a4e2ddba62c85d38e4bb52",
+        "json_pointer": "/evidence/state"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json",
+        "record_digest": "df3860ed9c90095da5cb03c988a7a65db7efdfdfc442b195ba069d79efb9e5cf"
+      },
+      "reason": "explicit_A_OS_acceptance"
+    },
+    {
+      "family": "A_OS",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-A_OS-observable",
+      "contract_id": "D10.2-EC-DISABLED-A_OS-OBSERVABLE",
+      "vector_id": "DISABLED-A_OS-OBSERVABLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:a7134a40d8773f8ed9044fe114e5339ac36b7051e432ec113dda743e6cacad53",
+      "model_identity": "grc9v4-model-sha256:0aa199e24cc08dc2d627c18a264dcd25a0db46c7f6704a1296f4c7e9983f5463",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-AOS.json.xz",
+        "record_digest": "9d6c128e5dc162ae98ddcb0f9a564927ddb37b48a3a4e2ddba62c85d38e4bb52",
+        "json_pointer": "/evidence/observable"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json",
+        "record_digest": "df3860ed9c90095da5cb03c988a7a65db7efdfdfc442b195ba069d79efb9e5cf"
+      },
+      "reason": "explicit_A_OS_acceptance"
+    },
+    {
+      "family": "A_OS",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-A_OS-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-A_OS-LIFECYCLE",
+      "vector_id": "DISABLED-A_OS-LIFECYCLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:a7134a40d8773f8ed9044fe114e5339ac36b7051e432ec113dda743e6cacad53",
+      "model_identity": "grc9v4-model-sha256:0aa199e24cc08dc2d627c18a264dcd25a0db46c7f6704a1296f4c7e9983f5463",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-AOS.json.xz",
+        "record_digest": "9d6c128e5dc162ae98ddcb0f9a564927ddb37b48a3a4e2ddba62c85d38e4bb52",
+        "json_pointer": "/evidence/lifecycle"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json",
+        "record_digest": "df3860ed9c90095da5cb03c988a7a65db7efdfdfc442b195ba069d79efb9e5cf"
+      },
+      "reason": "explicit_A_OS_acceptance"
+    },
+    {
+      "family": "C_OS",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-C_OS-transition",
+      "contract_id": "D10.2-EC-DISABLED-C_OS-TRANSITION",
+      "vector_id": "DISABLED-C_OS-TRANSITION",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048",
+      "model_identity": "grc9v4-model-sha256:910f6d4a714d1e8b576fc0537f0641ea5d023a08aeae86122905771c1abe6408",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_OS.json.xz",
+        "sha256": "5b61663520762f52bf33c091933d4e0331a4a5fb43512018ac4e9eae9db7495c",
+        "record_digest": "147aa4b13c4e747bff07ae0fe492b910591cf6462ee76b4373747b59dae96e7c",
+        "json_pointer": "/cells/transition"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_OS-transition"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_OS",
+      "surface": "state",
+      "iteration_id": "P9-9.2-C_OS-state",
+      "contract_id": "D10.2-EC-DISABLED-C_OS-STATE",
+      "vector_id": "DISABLED-C_OS-STATE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048",
+      "model_identity": "grc9v4-model-sha256:910f6d4a714d1e8b576fc0537f0641ea5d023a08aeae86122905771c1abe6408",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_OS.json.xz",
+        "sha256": "5b61663520762f52bf33c091933d4e0331a4a5fb43512018ac4e9eae9db7495c",
+        "record_digest": "147aa4b13c4e747bff07ae0fe492b910591cf6462ee76b4373747b59dae96e7c",
+        "json_pointer": "/cells/state"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_OS-state"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_OS",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-C_OS-observable",
+      "contract_id": "D10.2-EC-DISABLED-C_OS-OBSERVABLE",
+      "vector_id": "DISABLED-C_OS-OBSERVABLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048",
+      "model_identity": "grc9v4-model-sha256:910f6d4a714d1e8b576fc0537f0641ea5d023a08aeae86122905771c1abe6408",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_OS.json.xz",
+        "sha256": "5b61663520762f52bf33c091933d4e0331a4a5fb43512018ac4e9eae9db7495c",
+        "record_digest": "147aa4b13c4e747bff07ae0fe492b910591cf6462ee76b4373747b59dae96e7c",
+        "json_pointer": "/cells/observable"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_OS-observable"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_OS",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-C_OS-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-C_OS-LIFECYCLE",
+      "vector_id": "DISABLED-C_OS-LIFECYCLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048",
+      "model_identity": "grc9v4-model-sha256:910f6d4a714d1e8b576fc0537f0641ea5d023a08aeae86122905771c1abe6408",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-C_OS.json.xz",
+        "sha256": "5b61663520762f52bf33c091933d4e0331a4a5fb43512018ac4e9eae9db7495c",
+        "record_digest": "147aa4b13c4e747bff07ae0fe492b910591cf6462ee76b4373747b59dae96e7c",
+        "json_pointer": "/cells/lifecycle"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-C_OS-lifecycle"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_RG2b",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-A_RG2b-transition",
+      "contract_id": "D10.2-EC-DISABLED-A_RG2b-TRANSITION",
+      "vector_id": "DISABLED-A_RG2b-TRANSITION",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "A_RG2b",
+      "surface": "state",
+      "iteration_id": "P9-9.2-A_RG2b-state",
+      "contract_id": "D10.2-EC-DISABLED-A_RG2b-STATE",
+      "vector_id": "DISABLED-A_RG2b-STATE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "A_RG2b",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-A_RG2b-observable",
+      "contract_id": "D10.2-EC-DISABLED-A_RG2b-OBSERVABLE",
+      "vector_id": "DISABLED-A_RG2b-OBSERVABLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "A_RG2b",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-A_RG2b-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-A_RG2b-LIFECYCLE",
+      "vector_id": "DISABLED-A_RG2b-LIFECYCLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_RG2b",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-C_RG2b-transition",
+      "contract_id": "D10.2-EC-DISABLED-C_RG2b-TRANSITION",
+      "vector_id": "DISABLED-C_RG2b-TRANSITION",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_RG2b",
+      "surface": "state",
+      "iteration_id": "P9-9.2-C_RG2b-state",
+      "contract_id": "D10.2-EC-DISABLED-C_RG2b-STATE",
+      "vector_id": "DISABLED-C_RG2b-STATE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_RG2b",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-C_RG2b-observable",
+      "contract_id": "D10.2-EC-DISABLED-C_RG2b-OBSERVABLE",
+      "vector_id": "DISABLED-C_RG2b-OBSERVABLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_RG2b",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-C_RG2b-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-C_RG2b-LIFECYCLE",
+      "vector_id": "DISABLED-C_RG2b-LIFECYCLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "A_PC",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-A_PC-transition",
+      "contract_id": "D10.2-EC-DISABLED-A_PC-TRANSITION",
+      "vector_id": "DISABLED-A_PC-TRANSITION",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:54baa61ec3e78fd023aeeb99b647b61191c6473ff1b8f556a890ae19164785d7",
+      "model_identity": "grc9v4-model-sha256:8c471ba71f07f507eabc10431716f82f57ae51209e3c479b85a7d0901ddf76d5",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_PC.json.xz",
+        "sha256": "85af2b3b25dba0fe74772bbac3cf9860b707d2bc0db108eabd3431e64a156b2d",
+        "record_digest": "1a3ff7c901ed1cf8007653ef82a0a178767dd5187c8845571a75c8a3441e349b",
+        "json_pointer": "/cells/transition"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_PC-transition"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_PC",
+      "surface": "state",
+      "iteration_id": "P9-9.2-A_PC-state",
+      "contract_id": "D10.2-EC-DISABLED-A_PC-STATE",
+      "vector_id": "DISABLED-A_PC-STATE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:54baa61ec3e78fd023aeeb99b647b61191c6473ff1b8f556a890ae19164785d7",
+      "model_identity": "grc9v4-model-sha256:8c471ba71f07f507eabc10431716f82f57ae51209e3c479b85a7d0901ddf76d5",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_PC.json.xz",
+        "sha256": "85af2b3b25dba0fe74772bbac3cf9860b707d2bc0db108eabd3431e64a156b2d",
+        "record_digest": "1a3ff7c901ed1cf8007653ef82a0a178767dd5187c8845571a75c8a3441e349b",
+        "json_pointer": "/cells/state"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_PC-state"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_PC",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-A_PC-observable",
+      "contract_id": "D10.2-EC-DISABLED-A_PC-OBSERVABLE",
+      "vector_id": "DISABLED-A_PC-OBSERVABLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:54baa61ec3e78fd023aeeb99b647b61191c6473ff1b8f556a890ae19164785d7",
+      "model_identity": "grc9v4-model-sha256:8c471ba71f07f507eabc10431716f82f57ae51209e3c479b85a7d0901ddf76d5",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_PC.json.xz",
+        "sha256": "85af2b3b25dba0fe74772bbac3cf9860b707d2bc0db108eabd3431e64a156b2d",
+        "record_digest": "1a3ff7c901ed1cf8007653ef82a0a178767dd5187c8845571a75c8a3441e349b",
+        "json_pointer": "/cells/observable"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_PC-observable"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "A_PC",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-A_PC-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-A_PC-LIFECYCLE",
+      "vector_id": "DISABLED-A_PC-LIFECYCLE",
+      "disposition": "bounded_accepted",
+      "complete_profile_id": "grcv4-profile-sha256:54baa61ec3e78fd023aeeb99b647b61191c6473ff1b8f556a890ae19164785d7",
+      "model_identity": "grc9v4-model-sha256:8c471ba71f07f507eabc10431716f82f57ae51209e3c479b85a7d0901ddf76d5",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-A_PC.json.xz",
+        "sha256": "85af2b3b25dba0fe74772bbac3cf9860b707d2bc0db108eabd3431e64a156b2d",
+        "record_digest": "1a3ff7c901ed1cf8007653ef82a0a178767dd5187c8845571a75c8a3441e349b",
+        "json_pointer": "/cells/lifecycle"
+      },
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-Acceptance.json",
+        "record_digest": "7ab8d58fcc8dfa2b527c47fc5b58e05f21aac991d4506546bb1e2b094c3b0e92",
+        "cell_id": "P9-9.2-A_PC-lifecycle"
+      },
+      "reason": "accepted_defined_domain_delegate_component"
+    },
+    {
+      "family": "C_PC",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-C_PC-transition",
+      "contract_id": "D10.2-EC-DISABLED-C_PC-TRANSITION",
+      "vector_id": "DISABLED-C_PC-TRANSITION",
+      "disposition": "passed_pending_acceptance",
+      "complete_profile_id": "grcv4-profile-sha256:027fcc14b47d8cb4c0f1465109c1ca2c47cb5fefb3b002f499c9273c3b8c12f8",
+      "model_identity": "grc9v4-model-sha256:562a08909dadc90d769682dae18a24640d5eb106f5a93c5f155d574508acc79f",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-CPC.json.xz",
+        "record_digest": "195a660cb73cca1904bf160a1d7866636564e6418a9ac71b6bf0de2d74cfd23e",
+        "json_pointer": "/evidence/transition"
+      },
+      "acceptance": null,
+      "reason": "new_C_PC_native_delegate_execution"
+    },
+    {
+      "family": "C_PC",
+      "surface": "state",
+      "iteration_id": "P9-9.2-C_PC-state",
+      "contract_id": "D10.2-EC-DISABLED-C_PC-STATE",
+      "vector_id": "DISABLED-C_PC-STATE",
+      "disposition": "passed_pending_acceptance",
+      "complete_profile_id": "grcv4-profile-sha256:027fcc14b47d8cb4c0f1465109c1ca2c47cb5fefb3b002f499c9273c3b8c12f8",
+      "model_identity": "grc9v4-model-sha256:562a08909dadc90d769682dae18a24640d5eb106f5a93c5f155d574508acc79f",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-CPC.json.xz",
+        "record_digest": "195a660cb73cca1904bf160a1d7866636564e6418a9ac71b6bf0de2d74cfd23e",
+        "json_pointer": "/evidence/state"
+      },
+      "acceptance": null,
+      "reason": "new_C_PC_native_delegate_execution"
+    },
+    {
+      "family": "C_PC",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-C_PC-observable",
+      "contract_id": "D10.2-EC-DISABLED-C_PC-OBSERVABLE",
+      "vector_id": "DISABLED-C_PC-OBSERVABLE",
+      "disposition": "passed_pending_acceptance",
+      "complete_profile_id": "grcv4-profile-sha256:027fcc14b47d8cb4c0f1465109c1ca2c47cb5fefb3b002f499c9273c3b8c12f8",
+      "model_identity": "grc9v4-model-sha256:562a08909dadc90d769682dae18a24640d5eb106f5a93c5f155d574508acc79f",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-CPC.json.xz",
+        "record_digest": "195a660cb73cca1904bf160a1d7866636564e6418a9ac71b6bf0de2d74cfd23e",
+        "json_pointer": "/evidence/observable"
+      },
+      "acceptance": null,
+      "reason": "new_C_PC_native_delegate_execution"
+    },
+    {
+      "family": "C_PC",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-C_PC-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-C_PC-LIFECYCLE",
+      "vector_id": "DISABLED-C_PC-LIFECYCLE",
+      "disposition": "passed_pending_acceptance",
+      "complete_profile_id": "grcv4-profile-sha256:027fcc14b47d8cb4c0f1465109c1ca2c47cb5fefb3b002f499c9273c3b8c12f8",
+      "model_identity": "grc9v4-model-sha256:562a08909dadc90d769682dae18a24640d5eb106f5a93c5f155d574508acc79f",
+      "target_spec_version": "grc9v3-spec-2026-09-v1",
+      "execution": {
+        "path": "implementation/phase-9-grcv4/tranche-9/P9-9.2-CPC.json.xz",
+        "record_digest": "195a660cb73cca1904bf160a1d7866636564e6418a9ac71b6bf0de2d74cfd23e",
+        "json_pointer": "/evidence/lifecycle"
+      },
+      "acceptance": null,
+      "reason": "new_C_PC_native_delegate_execution"
+    },
+    {
+      "family": "A_CI_PC",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-A_CI_PC-transition",
+      "contract_id": "D10.2-EC-DISABLED-A_CI_PC-TRANSITION",
+      "vector_id": "DISABLED-A_CI_PC-TRANSITION",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "A_CI_PC",
+      "surface": "state",
+      "iteration_id": "P9-9.2-A_CI_PC-state",
+      "contract_id": "D10.2-EC-DISABLED-A_CI_PC-STATE",
+      "vector_id": "DISABLED-A_CI_PC-STATE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "A_CI_PC",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-A_CI_PC-observable",
+      "contract_id": "D10.2-EC-DISABLED-A_CI_PC-OBSERVABLE",
+      "vector_id": "DISABLED-A_CI_PC-OBSERVABLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "A_CI_PC",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-A_CI_PC-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-A_CI_PC-LIFECYCLE",
+      "vector_id": "DISABLED-A_CI_PC-LIFECYCLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_CI_PC",
+      "surface": "transition",
+      "iteration_id": "P9-9.2-C_CI_PC-transition",
+      "contract_id": "D10.2-EC-DISABLED-C_CI_PC-TRANSITION",
+      "vector_id": "DISABLED-C_CI_PC-TRANSITION",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_CI_PC",
+      "surface": "state",
+      "iteration_id": "P9-9.2-C_CI_PC-state",
+      "contract_id": "D10.2-EC-DISABLED-C_CI_PC-STATE",
+      "vector_id": "DISABLED-C_CI_PC-STATE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_CI_PC",
+      "surface": "observable",
+      "iteration_id": "P9-9.2-C_CI_PC-observable",
+      "contract_id": "D10.2-EC-DISABLED-C_CI_PC-OBSERVABLE",
+      "vector_id": "DISABLED-C_CI_PC-OBSERVABLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    },
+    {
+      "family": "C_CI_PC",
+      "surface": "lifecycle",
+      "iteration_id": "P9-9.2-C_CI_PC-lifecycle",
+      "contract_id": "D10.2-EC-DISABLED-C_CI_PC-LIFECYCLE",
+      "vector_id": "DISABLED-C_CI_PC-LIFECYCLE",
+      "disposition": "unselected_not_executed",
+      "complete_profile_id": null,
+      "model_identity": null,
+      "target_spec_version": null,
+      "execution": null,
+      "acceptance": null,
+      "reason": "outside_selected_four_family_scope"
+    }
+  ],
+  "predecessor_digest": "548188a523926c8942809ef2290d24eee781d6a1b84703c1f8c32594024d9c68",
+  "counts": {
+    "bounded_accepted": 20,
+    "passed_pending_acceptance": 4,
+    "unselected_not_executed": 16
+  },
+  "user_accepted": false,
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "record_digest": "d5f7508c67ea3fc521dcf12267baa0c8650028d836eb2d01eaa71c7c2afb5f12"
+}

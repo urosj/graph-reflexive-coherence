@@ -3141,6 +3141,23 @@ the full ten-profile plan.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
     completed compact evidence and the 1 MB raw-file compression rule.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+    - [ ] C_PC sixth-realization implementation selected on 2026-10-28, on
+      the existing A_OS branch: [campaign plan](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Plan.md)
+      and [scientific review](./phase-9-grcv4/tranche-8/P9-CPC-ScientificReview.md).
+      - [x] 20 deep cases / 40 history cells, 20 ordering cells, 24 chart cells.
+      - [x] Original large target exclusion retained for both histories;
+        independent companion and four native prerequisite steps passed.
+      - [x] 22 Tranche 9 integration tests; matrix 20 accepted / 4 pending / 16 unselected.
+      - [x] Actual large event and exact replay; six small lifecycle obligations
+        and a fresh large lifecycle replay; 17 scientific and 93 integration regressions.
+      - [x] Both large ten-step continuations and final reads; eight larger
+        covariance events and sixteen transformed steps; forty independent update bounds.
+      - [x] Final 136-test regression suite (four expected abstract-class skips),
+        API/browser/source downloads, real notebook cell, and predecessor checks.
+        [Checked evidence](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Review.json)
+        and [validation](./phase-9-grcv4/tranche-9/P9-CPC-Validation.json), 2026-10-29.
+      - [x] Final implementation-boundary audit on the completed subject (2026-10-29).
+      - [ ] Explicit user acceptance of bounded C_PC results; no all-ten closure.
     - [x] A_OS fifth-realization implementation selected on 2026-10-28:
       [bounded review through Tranche 9](./phase-9-grcv4/tranche-8/P9-AOS-Tranches8-9-Review.md)
       and [validation](./phase-9-grcv4/tranche-9/P9-AOS-Validation.json).
@@ -3901,10 +3918,11 @@ and review. Each cell binds the corresponding
 [frozen forty-contract matrix](../specs/grc-9-v4-spec.md#exact-disabled-grc9v3-compatibility).
 Controlled batches retain independent child outcomes. Pending cells for an
 unselected profile do not hold a different fully tested profile. All cells
-are independently tracked. The sixteen C_OS/C_CI/A_CI/A_PC cells passed native
-component execution and are bounded-accepted; the other twenty-four are
-unselected. Explicit legacy seeds do not imply executed enabled/disabled
-migration or a full specialization conformance grant.
+are independently tracked. The twenty C_OS/C_CI/A_CI/A_PC/A_OS cells are
+bounded-accepted. The four C_PC cells passed and await explicit user acceptance;
+the remaining sixteen cells are unselected. The [C_PC successor matrix](./phase-9-grcv4/tranche-9/P9-9.3-CPCMatrix.json)
+retains these separate dispositions. Explicit legacy seeds do not imply
+executed enabled/disabled migration or a full specialization conformance grant.
 
 | Execution child | State |
 | --- | --- |
@@ -3916,10 +3934,10 @@ migration or a full specialization conformance grant.
 | `P9-9.2-C_CI-state` | Bounded-accepted |
 | `P9-9.2-C_CI-observable` | Bounded-accepted |
 | `P9-9.2-C_CI-lifecycle` | Bounded-accepted |
-| `P9-9.2-A_OS-transition` | Unselected |
-| `P9-9.2-A_OS-state` | Unselected |
-| `P9-9.2-A_OS-observable` | Unselected |
-| `P9-9.2-A_OS-lifecycle` | Unselected |
+| `P9-9.2-A_OS-transition` | Bounded-accepted |
+| `P9-9.2-A_OS-state` | Bounded-accepted |
+| `P9-9.2-A_OS-observable` | Bounded-accepted |
+| `P9-9.2-A_OS-lifecycle` | Bounded-accepted |
 | `P9-9.2-C_OS-transition` | Bounded-accepted |
 | `P9-9.2-C_OS-state` | Bounded-accepted |
 | `P9-9.2-C_OS-observable` | Bounded-accepted |
@@ -3936,10 +3954,10 @@ migration or a full specialization conformance grant.
 | `P9-9.2-A_PC-state` | Bounded-accepted |
 | `P9-9.2-A_PC-observable` | Bounded-accepted |
 | `P9-9.2-A_PC-lifecycle` | Bounded-accepted |
-| `P9-9.2-C_PC-transition` | Unselected |
-| `P9-9.2-C_PC-state` | Unselected |
-| `P9-9.2-C_PC-observable` | Unselected |
-| `P9-9.2-C_PC-lifecycle` | Unselected |
+| `P9-9.2-C_PC-transition` | Passed; user acceptance pending |
+| `P9-9.2-C_PC-state` | Passed; user acceptance pending |
+| `P9-9.2-C_PC-observable` | Passed; user acceptance pending |
+| `P9-9.2-C_PC-lifecycle` | Passed; user acceptance pending |
 | `P9-9.2-A_CI_PC-transition` | Unselected |
 | `P9-9.2-A_CI_PC-state` | Unselected |
 | `P9-9.2-A_CI_PC-observable` | Unselected |

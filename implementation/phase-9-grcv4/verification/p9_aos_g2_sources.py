@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+from p9_cpc_historical import project as cpc_project, project_sha
 
 CURRENT = '02528b5d'
 PRE_PERFORMANCE = '5b9836358af2873e524e6ceae7256639e8a6bbce'
@@ -102,11 +103,11 @@ def original(root, revision, name):
 
 def project(root, current, changes):
     root = Path(root).resolve()
-    result = dict(current)
+    result = cpc_project(root,current)
     validated = validated_sources(root) if VALIDATED_ADDITIONS & result.keys() else {}
     for name in (ADDITIONS | VALIDATED_ADDITIONS) & result.keys():
         latest = validated[name] if name in validated else original(root, CURRENT, name)
-        present=sha((root/name).read_bytes())
+        present=project_sha(root,name,sha((root/name).read_bytes()))
         if name==SIDE+'aos.py' and present!=latest:
             from p9_aos_acceptance import previous_sha
             prior=previous_sha(root,name,present)
@@ -124,7 +125,7 @@ def project(root, current, changes):
     for name, revision in EPOCHS.items():
         if name not in result:
             continue
-        present = sha((root/name).read_bytes())
+        present = project_sha(root,name,sha((root/name).read_bytes()))
         latest = READER_SHA if name == INITIALIZER_READER else original(root, CURRENT, name)
         earlier = original(root, revision, name)
         allowed = {latest, earlier}

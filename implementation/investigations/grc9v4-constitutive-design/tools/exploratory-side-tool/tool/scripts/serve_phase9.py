@@ -21,6 +21,7 @@ from grcv4_explorer.basin_native import basin_native_status, basin_native_source
 from grcv4_explorer.target_compatibility import target_compatibility_status, target_compatibility_source
 from grcv4_explorer.tranche10_support import tranche10_support_status, tranche10_support_source
 from grcv4_explorer.aos import aos_status, aos_source
+from grcv4_explorer.cpc import cpc_status, cpc_source
 from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E402
 from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source
 
@@ -35,18 +36,19 @@ from grcv4_explorer.tranche9 import (tranche9_status, tranche9_source,
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if request.path in {"/api/aos", "/api/aos/source"}:
+        if request.path in {"/api/aos", "/api/aos/source", "/api/cpc", "/api/cpc/source"}:
+            view, source = (cpc_status, cpc_source) if request.path.startswith("/api/cpc") else (aos_status, aos_source)
             try:
-                query = parse_qs(request.query, strict_parsing=True)
+                query = parse_qs(request.query, strict_parsing=True, keep_blank_values=True)
                 root = repository_root()
                 if request.path.endswith("/source"):
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed source path required")
-                    content, ref = aos_source(root, query["path"][0])
+                    content, ref = source(root, query["path"][0])
                 else:
                     if query:
-                        raise KeyError("A_OS evidence has fixed scope")
-                    content = json.dumps(aos_status(root)).encode()
+                        raise KeyError("Realization evidence has fixed scope")
+                    content = json.dumps(view(root)).encode()
                 self.send_response(200)
                 if request.path.endswith("/source"):
                     self.send_header("X-Evidence-SHA256", ref["sha256"])
@@ -238,7 +240,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/aos.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/aos.js", "/cpc.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -261,6 +263,7 @@ class Handler(BaseHTTPRequestHandler):
                     "target-compatibility.js": "text/javascript",
                     "tranche10-support.js": "text/javascript",
                     "aos.js": "text/javascript",
+                    "cpc.js": "text/javascript",
                     "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],

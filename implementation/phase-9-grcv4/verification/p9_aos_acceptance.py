@@ -4,6 +4,7 @@ import json
 import subprocess
 
 import p9_aos_review as review
+from p9_cpc_historical import project_sha
 
 BASE = 'b4339d8f'
 PREFIX = 'implementation/phase-9-grcv4/'
@@ -47,7 +48,7 @@ def epochs(root):
     review.b.require(value['base_commit']==BASE and set(value['sources'])==CHANGED,
                      'A_OS acceptance source roster drift')
     for name,row in value['sources'].items():
-        review.b.require(review.b.sha((root/name).read_bytes())==row['after_sha256']
+        review.b.require(project_sha(root,name,review.b.sha((root/name).read_bytes()))==row['after_sha256']
             and review.b.sha(original(root,name))==row['before_sha256'],
             'A_OS acceptance source drift: '+name)
     return value['sources']
@@ -56,6 +57,7 @@ def epochs(root):
 def previous_sha(root, name, present):
     if name not in CHANGED:return None
     row=epochs(root)[name]
+    present=project_sha(root,name,present)
     return row['before_sha256'] if present==row['after_sha256'] else None
 
 
@@ -72,7 +74,7 @@ def decision(root):
         retained=json.loads(raw);review.b.check_digest(retained)
         review.b.require(retained['record_digest']==ref['record_digest'],'accepted A_OS digest drift')
         for source in retained['source_bindings']:
-            name=source['path'];present=review.b.sha((root/name).read_bytes())
+            name=source['path'];present=project_sha(root,name,review.b.sha((root/name).read_bytes()))
             if present==source['sha256']:continue
             row=changes.get(name)
             review.b.require(row is not None and row['before_sha256']==source['sha256']

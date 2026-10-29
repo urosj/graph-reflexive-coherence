@@ -1964,6 +1964,48 @@ PATHS |= {
 }
 
 
+# User-selected C_PC sixth realization on the existing A_OS branch.
+# This finite roster grants maintenance, never acceptance or scientific authority.
+PATHS |= {
+    SIDE + "docs/CPCSixthRealization.md",
+    SIDE + "tool/phase9-web/cpc.js",
+    SIDE + "tool/src/grcv4_explorer/cpc.py",
+    *(HERE + name + ".py" for name in (
+        "p984d_cpc", "p984ef_cpc", "p984g_cpc", "p984g_cpc_companion",
+        "p984h_cpc", "p984h_cpc_covariance", "p985_cpc", "p99_cpc", "p99_cpc_authority",
+        "p9_cpc_compute", "p9_cpc_targets", "p9_cpc_historical", "p9_cpc_verifier_epochs",
+        "p9_cpc_review", "test_p9_cpc_science", "test_p9_cpc_review", "validate_cpc",
+        "p9_cpc_wire_reuse", "test_p9_cpc_wire_reuse", "p9_cpc_large_runner", "p9_cpc_covariance_compute")),
+    *(PHASE + "tranche-8/" + name for name in (
+        "P9-CPC-Tranches8-9-Plan.md", "P9-CPC-ScientificReview.md",
+        "P9-CPC-Tranches8-9-Review.json", "P9-CPC-ComputePreflight.json", "P9-CPC-VerifierSourceEpochs.json",
+        "P9-CPC-WirePreflight.json",
+        "P9-CPC-CovarianceComputePreflight.json", "P9-8.4h-CPCCovarianceCapInputs.json", "P9-CPC-CovarianceCapAttempt.json",
+        "P9-CPC-EventCapAttempt.json",
+        "P9-8.4d-CPCCases.json", "P9-8.4d-CPCPreflight.json", "P9-8.4d-CPCResults.json.xz",
+        "P9-8.4e-CPCInputs.json", "P9-8.4e-CPCResults.json.xz",
+        "P9-8.4f-CPCInputs.json", "P9-8.4f-CPCResults.json.xz",
+        "P9-8.4g-CPCInputs.json", "P9-8.4g-CPCResults.json",
+        "P9-8.4g-CPCCompanionInputs.json", "P9-8.4g-CPCCompanionResults.json",
+        "P9-8.4g-CPCResults.json.xz", "P9-8.4g-CPCCompanionResults.json.xz",
+        "P9-8.4h-CPCInputs.json", "P9-8.4h-CPCCovarianceInputs.json", "P9-8.4h-CPC-event.json.xz",
+        "P9-8.5-CPCInputs.json", "P9-8.5-CPC-small.json.xz", "P9-8.5-CPC-large.json.xz")),
+    *(PHASE + "tranche-8/P9-8.4h-CPC-" + segment + "-" + role + ".json.xz"
+      for segment in ("source", "prepared_target", "final") for role in ("current", "reset")),
+    *(PHASE + "tranche-8/P9-8.4h-CPC-step-" + role + "-" + str(index) + ".json.xz"
+      for role in ("current", "reset") for index in range(1, 11)),
+    *(PHASE + "tranche-8/P9-8.4h-CPCCovariance-" + kind + "-" + segment + ".json.xz"
+      for kind in ("edge_order", "node_order", "relabel", "signed", "combined", "rotate", "rotate_twice", "reflect")
+      for segment in ("event", "current", "reset")),
+    *(PHASE + "tranche-9/P9-" + checkpoint + "-CPC.json.xz"
+      for checkpoint in ("9.1b", "9.2", "9.4a", "9.4b", "9.5")),
+    PHASE + "tranche-9/P9-9.3-CPCMatrix.json",
+    PHASE + "tranche-9/P9-9.2-CPCAuthority.json",
+    PHASE + "tranche-9/P9-CPC-SourceEpochs.json",
+    PHASE + "tranche-9/P9-CPC-Validation.json",
+}
+
+
 def check_binding_reconciliation(root):
     """Retain exact committed context; never waive a directory or future file."""
     value = binding_reconciliation(root)
