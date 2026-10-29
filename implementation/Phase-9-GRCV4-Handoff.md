@@ -1,10 +1,12 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Active checkpoint — C_CI+PC seventh realization (2026-10-29)
+## Accepted checkpoint — C_CI+PC seventh realization (2026-10-29)
 
 C_CI_PC is implemented across the missing P9-8.4d obligations through
 applicable P9-9.6 on `work/p9-aos-tranches-8-9`, following accepted C_PC commit
-`b41f1f26`. New user acceptance remains pending. The six accepted realizations
+`b41f1f26`. The user accepted this bounded scope on 2026-10-29; the
+[decision](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) binds implementation
+commit `f90c5344`. The six previously accepted realizations
 and C_CI_PC's earlier G2, P9-8.3 and P9-8.4b/c evidence remain separate.
 See the [bounded scope](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md),
 [scientific review](./phase-9-grcv4/tranche-8/P9-CCIPC-ScientificReview.md),
@@ -36,9 +38,9 @@ complete event-byte parity and fresh admissions/replay retained. Measured
 event timings are in the scientific review.
 
 The side-tool API, browser, indexed source downloads and notebook expose all
-sixteen checkpoint rows as passing execution pending acceptance. The execution
-compatibility matrix has twenty-four accepted predecessor cells, four new
-passing cells pending acceptance, and twelve unselected cells. The four new
+sixteen checkpoint rows as bounded accepted. The accepted compatibility view
+has twenty-eight accepted cells and twelve unselected cells; the original
+execution matrix remains unchanged at 24 accepted / 4 pending / 12 unselected. The four new
 disabled authorities remain `indeterminate_requires_review`.
 
 Large covariance follows the user's priority: `combined`, `reflect`, then

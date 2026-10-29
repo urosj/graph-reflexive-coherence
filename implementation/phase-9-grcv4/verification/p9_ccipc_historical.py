@@ -30,6 +30,11 @@ ADDITIONS={"tests/models/test_grc_9_v4_ccipc_integration.py",SIDE+"src/grcv4_exp
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 
+def implementation_sha(root,name,present):
+    from p9_ccipc_acceptance import previous_sha
+    return previous_sha(root,name,present) or present
+
+
 def seal(value):
     body={k:v for k,v in value.items() if k!="record_digest"}
     return dict(body,record_digest=sha(json.dumps(body,sort_keys=True,separators=(",",":")).encode()))
@@ -53,7 +58,7 @@ def epochs(root):
     root=Path(root).resolve()
     value=json.loads((root/PATH).read_bytes())
     if (value!=seal(value) or value["schema"]!="p9-ccipc-source-epochs-v1" or value["predecessor"]!=REVISION
-        or value["checker_sha256"]!=sha((root/SELF).read_bytes()) or set(value["sources"])!=CHANGED
+        or value["checker_sha256"]!=implementation_sha(root,SELF,sha((root/SELF).read_bytes())) or set(value["sources"])!=CHANGED
         or set(value["additions"])!=ADDITIONS or value["old_execution_relabelled"] is not False
         or value["user_acceptance_inferred"] is not False):
         raise ValueError("C_CI_PC source epoch scope drift")
@@ -64,8 +69,9 @@ def previous_sha(root,name,present):
     name=Path(name).as_posix()
     if name not in CHANGED:return None
     root=Path(root).resolve()
+    present=implementation_sha(root,name,present)
     row=epochs(root)["sources"][name]
-    if (present not in (row["before_sha256"],row["after_sha256"]) or sha((root/name).read_bytes())!=row["after_sha256"]
+    if (present not in (row["before_sha256"],row["after_sha256"]) or implementation_sha(root,name,sha((root/name).read_bytes()))!=row["after_sha256"]
             or sha(original(root,name))!=row["before_sha256"]):
         raise ValueError("unregistered C_CI_PC source successor: "+name)
     return row["before_sha256"]
@@ -73,7 +79,7 @@ def previous_sha(root,name,present):
 
 def project_sha(root,name,present):
     name=Path(name).as_posix()
-    return previous_sha(root,name,present) if name in CHANGED else present
+    return previous_sha(root,name,present) if name in CHANGED else implementation_sha(root,name,present)
 
 
 def matches(root,name,expected):
@@ -86,7 +92,7 @@ def project(root,current):
     result={name:project_sha(root,name,present) for name,present in current.items()}
     for name in ADDITIONS & result.keys():
         expected=epochs(root)["additions"][name]
-        if result[name]!=expected or sha((root/name).read_bytes())!=expected:
+        if result[name]!=expected or implementation_sha(root,name,sha((root/name).read_bytes()))!=expected:
             raise ValueError("unregistered C_CI_PC roster addition: "+name)
         del result[name]
     return result

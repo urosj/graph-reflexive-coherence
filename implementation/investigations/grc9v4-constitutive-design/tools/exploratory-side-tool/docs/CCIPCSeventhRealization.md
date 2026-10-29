@@ -8,8 +8,10 @@ six completed predecessors remain separate.
 The read-only `/api/ccipc` endpoint, browser panel and `query-ccipc` notebook
 cell consume retained evidence. Before the complete checked review exists,
 rows remain pending; file presence alone grants no execution credit. A complete
-review shows `passed_pending_acceptance`. User acceptance is never inferred
-from passing tests or from another realization's acceptance decision.
+review retains `passed_pending_acceptance`. The explicit user decision on
+2026-10-29 accepts implementation `f90c5344`; the API, browser and notebook
+project all sixteen rows as `bounded_accepted` while preserving the original
+execution and validation bytes. Acceptance is never inferred from passing tests.
 
 Source links use `/api/ccipc/source?path=...` and the checked source index.
 Unknown paths, directory escapes, duplicate parameters and source drift fail
@@ -35,7 +37,8 @@ segments support the campaign. Thirty saved-input physical-update enclosures
 are pointwise bounds, not a uniform exact-trajectory claim.
 
 The compatibility execution matrix has 24 accepted predecessor cells, four
-new passing cells pending acceptance, and twelve unselected cells. The four
+new passing cells pending acceptance, and twelve unselected cells. The accepted
+view separately reports 28 accepted / 0 pending / 12 unselected cells. The four
 new disabled compatibility authorities remain `indeterminate_requires_review`.
 Expanded-target compatibility, optional completion, basin support, all-ten
 closure and Tranche 10 are not inferred from this bounded implementation.

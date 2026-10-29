@@ -268,7 +268,8 @@ def checked(root=b.ROOT,value=None):
     b.require(len({r['path'] for r in refs})==len(refs) and required_paths()<={r['path'] for r in refs},'review source roster')
     for ref in refs:
         p=(root/ref['path']).resolve()
-        b.require(p.is_relative_to(root) and b.sha(p.read_bytes())==ref['sha256'],'review source drift: '+ref['path'])
+        from p9_ccipc_acceptance import matches
+        b.require(p.is_relative_to(root) and matches(root,ref['path'],ref['sha256']),'review source drift: '+ref['path'])
     rows={r['checkpoint']:r['execution'] for r in value['checkpoints']}
     diagnostic_store=json.loads((root/raw_store.PREFLIGHT).read_bytes());b.check_digest(diagnostic_store)
     b.require(value['performance']['diagnostic_save_preflight_digest']==diagnostic_store['record_digest']

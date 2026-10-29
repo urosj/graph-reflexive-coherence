@@ -3144,7 +3144,7 @@ the full ten-profile plan.
     - [x] C_CI+PC seventh-realization implementation selected on 2026-10-29,
       on the existing branch: [scope and compute plan](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md)
       and [checked review](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Review.json).
-      User acceptance remains separate below.
+      User acceptance is recorded separately below.
       - [x] Small native-root cache parity and active FLINT/Arb policy preflight.
       - [x] Independent composite-ball certificate and original first-step check:
         both source histories pass; both original target histories excluded.
@@ -3165,7 +3165,10 @@ the full ten-profile plan.
         browser, indexed sources and notebook. The new compatibility execution
         matrix is 24 accepted / 4 pending acceptance / 12 unselected; disabled
         authority remains held. Final validation is retained separately.
-      - [ ] Explicit user acceptance of the new bounded C_CI+PC results.
+      - [x] User accepted the bounded C_CI+PC results on 2026-10-29;
+        [decision](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) binds
+        implementation `f90c5344`, preserves all execution records and the five
+        deferred large cases, and exposes 28 accepted / 12 unselected compatibility cells.
     - [x] C_PC sixth-realization implementation selected on 2026-10-28, on
       the existing A_OS branch: [campaign plan](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Plan.md)
       and [scientific review](./phase-9-grcv4/tranche-8/P9-CPC-ScientificReview.md).

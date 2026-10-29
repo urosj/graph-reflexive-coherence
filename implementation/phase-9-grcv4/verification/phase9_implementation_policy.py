@@ -2025,7 +2025,7 @@ PATHS |= {
         'p9_ccipc_integration_compute','p9_ccipc_large_charge','p9_ccipc_large_profile',
         'p9_ccipc_pointwise','p9_ccipc_targets','p9_ccipc_review','validate_ccipc',
         'p9_ccipc_event_reuse','test_p9_ccipc_event_reuse',
-        'p9_ccipc_raw_store','test_p9_ccipc_raw_store',
+        'p9_ccipc_raw_store','test_p9_ccipc_raw_store','p9_ccipc_acceptance','test_p9_ccipc_acceptance',
         'test_p984g_ccipc','test_p984h_ccipc','test_p984h_ccipc_math','test_p9_ccipc_capture',
         'test_p9_ccipc_review','test_p9_ccipc_science')),
     *(PHASE + 'tranche-8/' + name for name in (
@@ -2057,7 +2057,8 @@ PATHS |= {
     *(PHASE + 'tranche-9/P9-' + checkpoint + '-CCIPC.json.xz'
       for checkpoint in ('9.1b','9.2','9.4a','9.4b','9.5')),
     *(PHASE + 'tranche-9/' + name for name in ('P9-9.3-CCIPCMatrix.json',
-        'P9-9.2-CCIPCAuthority.json','P9-CCIPC-SourceEpochs.json','P9-CCIPC-Validation.json')),
+        'P9-9.2-CCIPCAuthority.json','P9-CCIPC-SourceEpochs.json','P9-CCIPC-Validation.json',
+        'P9-CCIPC-Acceptance.json','P9-CCIPC-AcceptanceSources.json','P9-CCIPC-AcceptanceValidation.json')),
 }
 
 

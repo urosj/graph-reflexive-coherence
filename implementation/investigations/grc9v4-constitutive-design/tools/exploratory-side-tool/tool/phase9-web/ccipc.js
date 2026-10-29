@@ -5,8 +5,12 @@ export function ccipcRows(value) {
       typeof value.user_accepted !== 'boolean' || value.aggregate_closed !== false) {
     throw new Error('Unexpected C_CI_PC work scope');
   }
-  if (value.user_accepted !== false) throw new Error('C_CI+PC acceptance is pending');
-  const accepted = false;
+  const accepted = value.user_accepted;
+  if (accepted && (!/^[0-9a-f]{64}$/.test(value.acceptance_digest ?? '') ||
+      value.acceptance?.record_digest !== value.acceptance_digest ||
+      value.acceptance?.path !== 'implementation/phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json')) {
+    throw new Error('Missing C_CI_PC acceptance binding');
+  }
   if (value.checkpoints.length !== 16 ||
       value.checkpoints.some((r, i) => r.checkpoint !== checkpoints[i] || r.user_accepted !== accepted ||
         !(accepted ? ['bounded_accepted'] : ['pending', 'passed_pending_acceptance']).includes(r.state))) {
