@@ -3141,6 +3141,31 @@ the full ten-profile plan.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
     completed compact evidence and the 1 MB raw-file compression rule.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+    - [x] C_CI+PC seventh-realization implementation selected on 2026-10-29,
+      on the existing branch: [scope and compute plan](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md)
+      and [checked review](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Review.json).
+      User acceptance remains separate below.
+      - [x] Small native-root cache parity and active FLINT/Arb policy preflight.
+      - [x] Independent composite-ball certificate and original first-step check:
+        both source histories pass; both original target histories excluded.
+      - [x] Select the `(5/16, 5/16, 3/8)` companion preserving both evolved charges;
+        retain original exclusion and the first companion's `-2^-53` charge failure.
+      - [x] Reuse identical source steps by exact digest; pass both revised target
+        prerequisites and actual-target independent preflight with unchanged tolerances.
+      - [x] Complete 20 deep cases / 40 histories and 22 Tranche 9 integration tests.
+      - [x] Profile native roots and enable 3,600-second large segment caps,
+        verified caching, vertex-reduced independent equations and resumable evidence.
+      - [x] Complete all 44 small covariance history cells; the actual large
+        event, both ten-step continuations and final reads; six small lifecycle
+        checks and fresh large replay; thirty independent update bounds.
+      - [x] Complete prioritized `combined`, `reflect`, then `rotate` large
+        events and one continuation per history. Five separate/repeated large
+        cases remain unexecuted diagnostic follow-ups, without coverage credit.
+      - [x] Complete missing P9-8.4d through applicable P9-9.6 and side-tool API,
+        browser, indexed sources and notebook. The new compatibility execution
+        matrix is 24 accepted / 4 pending acceptance / 12 unselected; disabled
+        authority remains held. Final validation is retained separately.
+      - [ ] Explicit user acceptance of the new bounded C_CI+PC results.
     - [x] C_PC sixth-realization implementation selected on 2026-10-28, on
       the existing A_OS branch: [campaign plan](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Plan.md)
       and [scientific review](./phase-9-grcv4/tranche-8/P9-CPC-ScientificReview.md).

@@ -143,7 +143,7 @@ class CPCPublic(public.PublicTests):
             negative_duration_rejected=True)
 
     def test_cpc_scope_does_not_enable_remaining_families_or_basin_policy(self):
-        self.assertEqual(set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC"})
+        self.assertEqual(set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC"})
         model = self.model()
         self.assertFalse(model.support_status()["full_GRC9V4_conformance"])
         before = model.snapshot()

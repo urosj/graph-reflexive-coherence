@@ -1,0 +1,13 @@
+{
+  "schema": "p9-ccipc-execution-source-epoch-v1",
+  "base_commit": "b41f1f26",
+  "source": "src/pygrc/models/grc_9_v4_crossing.py",
+  "before_sha256": "b75e3a5a18dce61dbc783212d30478c324973276d7a748934df4155d23008bb9",
+  "after_sha256": "f6f0ee5a91b3f916c5e7e0a23abdca031d46db53d393fcf1f0a3eabc3c725cd7",
+  "checker_sha256": "13a874d686a4701f935cbfee8a223c0046c12784d6e9f12260eba5f4e531e8a3",
+  "excluded_function": "grc_9_v4_crossing._return_role",
+  "excluded_function_trap": true,
+  "numerical_producer_changed": false,
+  "old_execution_relabelled": false,
+  "record_digest": "e4359a958ad327a714db6c0e49291d6efbfd6eafb7076fc52dc52ba44db72020"
+}

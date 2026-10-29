@@ -163,3 +163,6 @@ dist/
 /implementation/phase-9-grcv4/tranche-8/P9-8.4g-CPCResults.json
 
 /implementation/phase-9-grcv4/tranche-8/P9-8.4g-CPCCompanionResults.json
+
+# Expanded evidence; see artifact-storage.json
+/implementation/phase-9-grcv4/tranche-8/P9-8.4d-CCIPCPreflight.json

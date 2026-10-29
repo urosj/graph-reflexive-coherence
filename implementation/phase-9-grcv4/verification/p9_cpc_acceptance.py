@@ -25,6 +25,11 @@ def original(root, name):
     return subprocess.check_output(['git', 'show', BASE+':'+name], cwd=root)
 
 
+def present_sha(root,name,present):
+    from p9_ccipc_historical import project_sha
+    return project_sha(root,name,present)
+
+
 def record(root):
     value=json.loads((Path(root)/PATH).read_bytes())
     review.b.check_digest(value)
@@ -55,7 +60,7 @@ def epochs(root):
         and value['native_runtime_changed'] is False
         and value['original_execution_relabelled'] is False,'C_PC acceptance source roster drift')
     for name,row in value['sources'].items():
-        review.b.require(review.b.sha((root/name).read_bytes())==row['after_sha256']
+        review.b.require(present_sha(root,name,review.b.sha((root/name).read_bytes()))==row['after_sha256']
             and review.b.sha(original(root,name))==row['before_sha256'],
             'C_PC acceptance source drift: '+name)
     return value['sources']
@@ -63,13 +68,14 @@ def epochs(root):
 
 def previous_sha(root,name,present):
     if name not in CHANGED or not (Path(root)/PATH).exists():return None
+    present=present_sha(root,name,present)
     row=epochs(root)[name]
     return row['before_sha256'] if present==row['after_sha256'] else None
 
 
 def matches(root,name,expected):
     present=review.b.sha((Path(root)/name).read_bytes())
-    return present==expected or previous_sha(root,name,present)==expected
+    return present==expected or present_sha(root,name,present)==expected or previous_sha(root,name,present)==expected
 
 
 def decision(root):

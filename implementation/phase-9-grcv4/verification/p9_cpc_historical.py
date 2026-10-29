@@ -29,6 +29,8 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 
 def implementation_sha(root,name,present):
+    from p9_ccipc_historical import project_sha as seventh
+    present=seventh(root,name,present)
     from p9_cpc_acceptance import previous_sha
     return previous_sha(root,name,present) or present
 
@@ -77,8 +79,9 @@ def previous_sha(root,name,present):
 
 def project_sha(root,name,present):
     name=Path(name).as_posix()
-    present=implementation_sha(root,name,present)
-    return previous_sha(root,name,present) if name in CHANGED else present
+    # previous_sha already applies the successor and acceptance projections.
+    # Applying them here too would feed an older epoch back into the successor.
+    return previous_sha(root,name,present) if name in CHANGED else implementation_sha(root,name,present)
 
 
 def matches(root,name,expected):
@@ -87,6 +90,8 @@ def matches(root,name,expected):
 
 
 def project(root,current):
+    from p9_ccipc_historical import project as seventh
+    current=seventh(root,current)
     root=Path(root).resolve()
     result={name:project_sha(root,name,present) for name,present in current.items()}
     for name in ADDITIONS & result.keys():

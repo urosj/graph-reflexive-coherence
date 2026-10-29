@@ -1,5 +1,52 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Active checkpoint — C_CI+PC seventh realization (2026-10-29)
+
+C_CI_PC is implemented across the missing P9-8.4d obligations through
+applicable P9-9.6 on `work/p9-aos-tranches-8-9`, following accepted C_PC commit
+`b41f1f26`. New user acceptance remains pending. The six accepted realizations
+and C_CI_PC's earlier G2, P9-8.3 and P9-8.4b/c evidence remain separate.
+See the [bounded scope](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md),
+[scientific review](./phase-9-grcv4/tranche-8/P9-CCIPC-ScientificReview.md),
+[checked execution](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Review.json),
+and [final validation](./phase-9-grcv4/tranche-9/P9-CCIPC-Validation.json).
+
+The twenty deep cases passed 400 target steps and forty final reads. Full
+small covariance passed twenty ordering and twenty-four chart history cells.
+The selected large companion passed four prerequisite steps, the baseline
+event and replay, ten target steps and a final read for each history, and the
+three prioritized covariance events with six transformed continuation steps.
+Six small lifecycle checks and a fresh large replay passed. Thirty independent
+saved-input update bounds passed without claiming a uniform exact trajectory.
+All twenty-two Tranche 9 integration tests passed, including the CI+PC
+legacy-return zero-carrier initialization correction.
+
+Both original large target histories remain independently excluded for
+negative resources. The first companion passes initial feasibility but its
+evolved split loses `2^-53` of represented current charge. The selected separate
+companion uses `(5/16, 5/16, 3/8)` and preserves both evolved charges. Only its
+identical source steps are reused by exact digest; its changed target evidence
+has separate paths. Step size and tolerances remain unchanged.
+
+FLINT/Arb, exact-operand matrix reuse, bounded schema/canonical-byte caching,
+vertex-reduced independent equations and resumable records support the work.
+Every selected large native segment passed its 3,600-second cap. The optimized
+counterpart harness executes twelve native roots instead of fourteen, with
+complete event-byte parity and fresh admissions/replay retained. Measured
+event timings are in the scientific review.
+
+The side-tool API, browser, indexed source downloads and notebook expose all
+sixteen checkpoint rows as passing execution pending acceptance. The execution
+compatibility matrix has twenty-four accepted predecessor cells, four new
+passing cells pending acceptance, and twelve unselected cells. The four new
+disabled authorities remain `indeterminate_requires_review`.
+
+Large covariance follows the user's priority: `combined`, `reflect`, then
+`rotate`, each with both histories. `edge_order`, `node_order`, `relabel`,
+`signed` and `rotate_twice` remain deferred diagnostic work with no execution
+credit. Optional completion, basin support, all-ten conformance and P9-10.2
+remain outside this bounded result.
+
 ## Accepted checkpoint — C_PC sixth realization (2026-10-29)
 
 C_PC is implemented across Tranches 8 and 9 on the existing

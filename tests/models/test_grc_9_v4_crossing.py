@@ -162,7 +162,7 @@ class CrossingTests(unittest.TestCase):
         self.assertEqual(
             "candidate_history_loss" in losses, self.FAMILY.startswith("A_")
         )
-        self.assertEqual("carrier_history_loss" in losses, self.FAMILY in ("A_PC", "C_PC"))
+        self.assertEqual("carrier_history_loss" in losses, self.FAMILY in ("A_PC", "C_PC", "C_CI_PC"))
         disabled_snapshot = owner.snapshot()
         self.assertEqual(
             c.GRC9V4BranchOperation.from_state(disabled_snapshot).snapshot(),
@@ -218,7 +218,7 @@ class CrossingTests(unittest.TestCase):
                 self.assertNotEqual(state.W_A, getattr(original, role).W_A)
             else:
                 self.assertIsNone(state.W_A)
-            if self.FAMILY in ("A_PC", "C_PC"):
+            if self.FAMILY in ("A_PC", "C_PC", "C_CI_PC"):
                 self.assertTrue(any(getattr(original, role).Z_4))
                 self.assertEqual(set(state.Z_4), {0.0})
         self.assertEqual(

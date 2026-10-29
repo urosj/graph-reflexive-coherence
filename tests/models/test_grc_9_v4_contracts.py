@@ -1,4 +1,4 @@
-"""All-ten public contract fit, without enabling six unselected native owners."""
+"""All-ten public contract fit, with three unselected native owners."""
 
 from copy import deepcopy
 from dataclasses import replace
@@ -127,7 +127,7 @@ class PublicContractTests(unittest.TestCase):
         from pygrc.models.grc_9_v4_owner import GRC9V4EnabledOperation
 
         self.assertEqual(
-            set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC"}
+            set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC"}
         )
         unavailable = []
         with patch.object(
@@ -156,7 +156,7 @@ class PublicContractTests(unittest.TestCase):
 
     def test_known_target_declaration_is_not_runtime_support(self):
         source = self.configs["C_OS"]
-        target = self.configs["C_CI_PC"].reference
+        target = self.configs["C_RG2b"].reference
         m = GRC9V4.from_config(replace(source, targets=(target,)))
         tid = target.profile.complete_profile_id
         self.assertIn(tid, {p.complete_profile_id for p in m.list_declared_profiles()})
@@ -168,7 +168,7 @@ class PublicContractTests(unittest.TestCase):
             m.migrate_profile(request)
         self.assertEqual(m.snapshot(), snapshot)
         self.assertEqual(len(m.support_status()["declared_families"]), 10)
-        self.assertEqual(len(m.support_status()["execution_families"]), 6)
+        self.assertEqual(len(m.support_status()["execution_families"]), 7)
 
     def test_contract_wire_and_execution_options_are_closed(self):
         cfg = self.configs["C_OS"]

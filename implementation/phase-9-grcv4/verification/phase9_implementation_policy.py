@@ -2012,6 +2012,55 @@ PATHS |= {
 }
 
 
+# User-selected C_CI+PC seventh realization; bounded work permission only.
+PATHS |= {
+    SIDE + 'docs/CCIPCSeventhRealization.md',
+    SIDE + 'tool/phase9-web/ccipc.js',
+    SIDE + 'tool/src/grcv4_explorer/ccipc.py',
+    *(HERE + name + '.py' for name in (
+        'p984d_ccipc','p984ef_ccipc','p984g_ccipc','p984g_ccipc_companion',
+        'p984h_ccipc','p984h_ccipc_actual','p984h_ccipc_covariance','p984h_ccipc_math',
+        'p985_ccipc','p99_ccipc','p99_ccipc_authority','p9_ccipc_campaign','p9_ccipc_capture',
+        'p9_ccipc_compute','p9_ccipc_evidence','p9_ccipc_execution_epoch','p9_ccipc_historical',
+        'p9_ccipc_integration_compute','p9_ccipc_large_charge','p9_ccipc_large_profile',
+        'p9_ccipc_pointwise','p9_ccipc_targets','p9_ccipc_review','validate_ccipc',
+        'p9_ccipc_event_reuse','test_p9_ccipc_event_reuse',
+        'p9_ccipc_raw_store','test_p9_ccipc_raw_store',
+        'test_p984g_ccipc','test_p984h_ccipc','test_p984h_ccipc_math','test_p9_ccipc_capture',
+        'test_p9_ccipc_review','test_p9_ccipc_science')),
+    *(PHASE + 'tranche-8/' + name for name in (
+        'P9-CCIPC-Tranches8-9-Plan.md','P9-CCIPC-ScientificReview.md','P9-CCIPC-Tranches8-9-Review.json',
+        'P9-CCIPC-ComputePreflight.json','P9-CCIPC-IntegrationComputePreflight.json',
+        'P9-CCIPC-EventHarnessPreflight.json',
+        'P9-CCIPC-DiagnosticSavePreflight.json',
+        'P9-8.4h-CCIPCCharge-step-reset-2-incomplete-1793284331529531984.json.xz',
+        'P9-CCIPC-ExecutionSourceEpoch.json','P9-CCIPC-LargeRootProfile-Incomplete.json.xz',
+        'P9-CCIPC-PointwiseSourcePilot.json','P9-CCIPC-LargePointwiseErrors.json.xz',
+        'P9-8.4d-CCIPCCases.json','P9-8.4d-CCIPCPreflight.json','P9-8.4d-CCIPCPreflight.json.xz',
+        'P9-8.4d-CCIPCResults.json.xz','P9-8.4e-CCIPCInputs.json','P9-8.4e-CCIPCResults.json.xz',
+        'P9-8.4f-CCIPCInputs.json','P9-8.4f-CCIPCResults.json.xz',
+        'P9-8.4g-CCIPCOriginalFeasibility.json.xz','P9-8.4g-CCIPCCompanionInputs.json',
+        'P9-8.4g-CCIPCCompanionResults.json.xz','P9-8.4g-CCIPCChargeCompanionInputs.json',
+        'P9-8.4g-CCIPCChargeCompanionResults.json.xz','P9-8.4h-CCIPCChargeInputs.json',
+        'P9-8.4h-CCIPCCharge-ActualPreflight.json.xz','P9-8.4h-CCIPCInputs.json',
+        'P9-8.4h-CCIPCCovarianceInputs.json','P9-8.4h-CCIPCCharge-event.json.xz',
+        'P9-8.5-CCIPCInputs.json','P9-8.5-CCIPC-small.json.xz','P9-8.5-CCIPC-large.json.xz')),
+    *(PHASE + 'tranche-8/P9-8.4h-CCIPC-' + segment + '-' + role + '.json.xz'
+      for segment in ('source','prepared_target') for role in ('current','reset')),
+    *(PHASE + 'tranche-8/P9-8.4h-CCIPCCharge-' + segment + '-' + role + '.json.xz'
+      for segment in ('prepared_target','final') for role in ('current','reset')),
+    *(PHASE + 'tranche-8/P9-8.4h-CCIPCCharge-step-' + role + '-' + str(index) + '.json.xz'
+      for role in ('current','reset') for index in range(1,11)),
+    *(PHASE + 'tranche-8/P9-8.4h-CCIPCCovariance-' + kind + '-' + segment + '.json.xz'
+      for kind in ('combined','reflect','rotate')
+      for segment in ('event','current','reset')),
+    *(PHASE + 'tranche-9/P9-' + checkpoint + '-CCIPC.json.xz'
+      for checkpoint in ('9.1b','9.2','9.4a','9.4b','9.5')),
+    *(PHASE + 'tranche-9/' + name for name in ('P9-9.3-CCIPCMatrix.json',
+        'P9-9.2-CCIPCAuthority.json','P9-CCIPC-SourceEpochs.json','P9-CCIPC-Validation.json')),
+}
+
+
 def check_binding_reconciliation(root):
     """Retain exact committed context; never waive a directory or future file."""
     value = binding_reconciliation(root)
