@@ -1,0 +1,66 @@
+{
+  "schema": "p9-cpc-acceptance-v1",
+  "family": "C_PC",
+  "realization_number": 6,
+  "reviewed_commit": "1e720983",
+  "accepted_date": "2026-10-29",
+  "acceptance_basis": "Explicit user instruction: awesome. accept, commit",
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Review.json",
+    "sha256": "30551d466faea69e0177c9d8879368f6bfccd1286ff59f2dd805d4de5bf7f625",
+    "record_digest": "5efcd5989824037698cdfe4ef6069f7265af7c4028085d6fb7c88334c8859a53"
+  },
+  "validation": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-CPC-Validation.json",
+      "sha256": "096a6fff2fcffa367230b7a6bd1dfc80ecd6ff422df2a11fe05208fa31f418e3",
+      "record_digest": "036eefc104f7e06b98a2a8ef07c98f513a1612799926d2fbd2c9b79f98bc5771"
+    }
+  ],
+  "source_epochs": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-CPC-AcceptanceSources.json",
+    "sha256": "a102daaa327d1f6e3559370df89c31f6b362776242fb4233b05ac4c3c6b889a8"
+  },
+  "checkpoints": [
+    "8.4d",
+    "8.4e",
+    "8.4f",
+    "8.4g",
+    "8.4h",
+    "8.4i",
+    "8.5",
+    "8.6",
+    "tranche8_end",
+    "9.1b",
+    "9.2",
+    "9.3",
+    "9.4a",
+    "9.4b",
+    "9.5",
+    "9.6"
+  ],
+  "user_accepted": true,
+  "bounded_scope_closed": true,
+  "compatibility_counts": {
+    "bounded_accepted": 24,
+    "passed_pending_acceptance": 0,
+    "unselected_not_executed": 16
+  },
+  "original_large_target_roles_excluded": [
+    "current",
+    "reset"
+  ],
+  "successful_companion_accepted": true,
+  "optional_completion": "unselected",
+  "tranche10": "deferred",
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "retained_limits": [
+    "pointwise_PC_certificates_and_staged_update_bounds_not_uniform_trajectory",
+    "expanded_target_compatibility_not_inherited",
+    "four_contracts_indeterminate_requires_review",
+    "C_PC_basin_unselected",
+    "four_remaining_realizations_unselected"
+  ],
+  "record_digest": "d12f3587c98c3692dcbde8b71643d07bb377f8bfbf132258f2922665f7a855d5"
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "p9-cpc-acceptance-sources-v1",
+  "base_commit": "1e720983",
+  "sources": {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/CPCSixthRealization.md": {
+      "before_sha256": "57d93f451f67cf3727d6c727b5e297b6d6e80da9efad4fcdb36f7965c55e4dbf",
+      "after_sha256": "ddff2c403776ccfa694eabad4ec17d0133aee24109a9db2dc1982b9802236d88"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/cpc.js": {
+      "before_sha256": "fdc95ab0162102db69520e8f932c6c2051ff1e02c023c3039d939bacedbe57ff",
+      "after_sha256": "a4e5dcd74d648fe945933f604e2a586d094029e35a4b268abe8d171954365f08"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/cpc.py": {
+      "before_sha256": "3670dc03fa6271af769b116a62f9617d7f286b06b114e3d1824d3214c09e9e2a",
+      "after_sha256": "04b3f89ba8bfbbfe52dfc977e21fdd16cdd550b2108b2ef5f05efeed16277def"
+    },
+    "implementation/phase-9-grcv4/verification/p9_cpc_historical.py": {
+      "before_sha256": "4687c5311e44509268cbf0be11ec97edf9a038fea7d558600540c7511461d0aa",
+      "after_sha256": "92dac2928a7b326a368fbd2aa7e862d1d63ed634a4c129b5177c63da3512bc2a"
+    },
+    "implementation/phase-9-grcv4/verification/p9_cpc_review.py": {
+      "before_sha256": "2904297ca1e403022cf1e47e2d4c836472416f4072f7d4737178bfd8960eaa75",
+      "after_sha256": "b38a2f44bd7622fb1aeeb56fb90f662e16415a577ad337950cc75964689c8996"
+    },
+    "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py": {
+      "before_sha256": "7542b5ec8e52b0e8e634a84c3c22a6b261b2de281cd61c187f2c10416af7ddd1",
+      "after_sha256": "2e2d2b7c8d4db1756cc19747ea4f13eb583cc74e8d00720f54b6747ed0da706f"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9_cpc_review.py": {
+      "before_sha256": "b42b3c195ef67ccc8ce52dcb5556be864f23d625345937e5a63495e96054063e",
+      "after_sha256": "0bf4a40e62e5368a2432802ba2171aba2883374d63efdcb4031708c1491ae86e"
+    }
+  },
+  "native_runtime_changed": false,
+  "original_execution_relabelled": false,
+  "record_digest": "a33c7accb834d3d54f7f5e0750bbfd54e8e4b843e10962836cc92b9078923c3b"
+}

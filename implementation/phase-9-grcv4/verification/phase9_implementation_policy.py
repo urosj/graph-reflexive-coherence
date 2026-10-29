@@ -1964,7 +1964,13 @@ PATHS |= {
 }
 
 
-# User-selected C_PC sixth realization on the existing A_OS branch.
+# User-accepted C_PC sixth realization on the existing A_OS branch.
+PATHS.update({
+    HERE + 'p9_cpc_acceptance.py', HERE + 'test_p9_cpc_acceptance.py',
+    PHASE + 'tranche-9/P9-CPC-Acceptance.json',
+    PHASE + 'tranche-9/P9-CPC-AcceptanceSources.json',
+    PHASE + 'tranche-9/P9-CPC-AcceptanceValidation.json',
+})
 # This finite roster grants maintenance, never acceptance or scientific authority.
 PATHS |= {
     SIDE + "docs/CPCSixthRealization.md",

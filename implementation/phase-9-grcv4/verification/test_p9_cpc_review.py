@@ -20,9 +20,14 @@ from grcv4_explorer.tooling import managed_node,tool_environment
 
 
 class CPCReviewTests(unittest.TestCase):
+    def setUp(self):
+        pending=patch('p9_cpc_acceptance.decision',return_value=None)
+        pending.start();self.addCleanup(pending.stop)
+
     @classmethod
     def setUpClass(cls):
-        with patch.object(p.large,'observe_step',side_effect=AssertionError('native rerun')):
+        with patch.object(p.large,'observe_step',side_effect=AssertionError('native rerun')), \
+                patch('p9_cpc_acceptance.decision',return_value=None):
             cls.record=p.checked();cls.status=cpc.cpc_status(ROOT)
 
     def test_scope_counts_and_resealed_mutations(self):

@@ -1,12 +1,14 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Review-ready checkpoint — C_PC sixth realization (2026-10-29)
+## Accepted checkpoint — C_PC sixth realization (2026-10-29)
 
 C_PC is implemented across Tranches 8 and 9 on the existing
 `work/p9-aos-tranches-8-9` branch, from the first missing P9-8.4d obligation
 through P9-9.6. Earlier C_PC `.b/.c` and the five accepted realizations remain
-intact. The bounded result is ready for explicit user acceptance; no C_PC
-acceptance or all-ten closure is recorded.
+intact. The user accepted this bounded result on 2026-10-29. The
+[acceptance decision](./phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json) binds
+implementation commit `1e720983` and preserves the original evidence. No
+all-ten closure is recorded.
 
 See the [campaign plan](./phase-9-grcv4/tranche-8/P9-CPC-Tranches8-9-Plan.md),
 [scientific review](./phase-9-grcv4/tranche-8/P9-CPC-ScientificReview.md),
@@ -29,9 +31,12 @@ accepted predecessor checks
 passed. A historical source adapter now resolves the crossing-test predecessor
 to its exact accepted Git bytes; drift rejection is covered by regression.
 The implementation-boundary audit and byte-exact compressed storage checks
-also passed. All sixteen C_PC checkpoint rows remain pending user acceptance.
-The compatibility matrix retains 20 accepted, four pending, and sixteen
-unselected cells.
+also passed. All sixteen C_PC checkpoint rows are accepted. The current
+compatibility view has 24 accepted and sixteen unselected cells; the original
+execution matrix retains its 20 accepted / four pending / sixteen unselected
+dispositions. The side-tool API, browser and notebook consume the separate
+acceptance decision. [Acceptance validation](./phase-9-grcv4/tranche-9/P9-CPC-AcceptanceValidation.json)
+checks its bindings and predecessor preservation without repeating native runs.
 
 FLINT/Arb, exact-operand matrix reuse, bounded schema memoization and canonical
 byte reuse support the larger work; independent equations use a vertex-system

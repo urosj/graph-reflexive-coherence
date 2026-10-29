@@ -17,9 +17,11 @@ The notebook's `query-cpc` cell uses the same API model. Run the real cell with
 the repository environment. The runner checks the cell against the API model
 and emits `PHASE9_CPC_NOTEBOOK_PASS`.
 
-C_PC results remain pending explicit user acceptance. The compatibility matrix
-keeps 20 previously accepted cells, adds four C_PC cells pending acceptance,
-and leaves sixteen unselected cells. Original large C_PC target histories are
+C_PC's bounded results were explicitly accepted on 2026-10-29. The separate
+acceptance decision binds implementation commit `1e720983`, preserving the
+original review and validation records. All sixteen checkpoint rows are
+accepted. The current compatibility view has 24 accepted cells and sixteen
+unselected cells; the original execution matrix remains intact. Original large C_PC target histories are
 excluded; the separately declared companion is identified in the scientific
 review. Optional completion, C_PC basin migration, Tranche 10, and full GRC9V4
 conformance are not granted by this view.

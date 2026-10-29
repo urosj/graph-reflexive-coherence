@@ -2,12 +2,18 @@ export function cpcRows(value) {
   const checkpoints = ['8.4d', '8.4e', '8.4f', '8.4g', '8.4h', '8.4i', '8.5', '8.6',
     'tranche8_end', '9.1b', '9.2', '9.3', '9.4a', '9.4b', '9.5', '9.6'];
   if (value.schema !== 'phase9_cpc_work_v1' || value.family !== 'C_PC' ||
-      value.user_accepted !== false || value.aggregate_closed !== false) {
+      typeof value.user_accepted !== 'boolean' || value.aggregate_closed !== false) {
     throw new Error('Unexpected C_PC work scope');
   }
+  const accepted = value.user_accepted;
+  if (accepted && (!/^[0-9a-f]{64}$/.test(value.acceptance_digest ?? '') ||
+      value.acceptance?.record_digest !== value.acceptance_digest ||
+      value.acceptance?.path !== 'implementation/phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json')) {
+    throw new Error('Missing C_PC acceptance binding');
+  }
   if (value.checkpoints.length !== 16 ||
-      value.checkpoints.some((r, i) => r.checkpoint !== checkpoints[i] || r.user_accepted !== false ||
-        !['pending', 'passed_pending_acceptance'].includes(r.state))) {
+      value.checkpoints.some((r, i) => r.checkpoint !== checkpoints[i] || r.user_accepted !== accepted ||
+        !(accepted ? ['bounded_accepted'] : ['pending', 'passed_pending_acceptance']).includes(r.state))) {
     throw new Error('Incomplete C_PC checkpoint scope');
   }
   const evidence = row => {
