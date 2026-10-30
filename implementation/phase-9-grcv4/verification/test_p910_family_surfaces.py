@@ -45,7 +45,7 @@ class FamilySurfaceTests(unittest.TestCase):
             for ref in self.view['evidence']:
                 status, raw = get('/api/tranche10/families/source?family=A_OS&path='+ref['path'])
                 self.assertEqual(status, 200); self.assertEqual(raw, (ROOT/ref['path']).read_bytes())
-            for path in ('/api/tranche10/families?family=C_PC', '/api/tranche10/families',
+            for path in ('/api/tranche10/families?family=C_CI_PC', '/api/tranche10/families',
                          '/api/tranche10/families?family=A_OS&family=C_OS',
                          '/api/tranche10/families/source?family=A_OS&path=../secret'):
                 self.assertEqual(get(path)[0], 404)

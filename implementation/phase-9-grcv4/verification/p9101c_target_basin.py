@@ -48,6 +48,7 @@ def restore_state(payload, family):
             A_CI="GRC9V4ACIState",
             A_PC="GRC9V4APCState",
             A_OS="GRC9V4AOSState",
+            C_PC="GRC9V4CPCState",
         )[family],
     )
     return cls(
@@ -247,7 +248,7 @@ def run(root, family):
             returned.current.W_A != returned.reset.W_A,
             "return lost distinct A histories",
         )
-    if family == "A_PC":
+    if family in ("A_PC", "C_PC"):
         require(
             all(
                 any(getattr(cfg, r).Z_4) and not any(getattr(returned, r).Z_4)
@@ -271,7 +272,7 @@ def run(root, family):
         new_enabled_steps=0,
         distinct_return_resources=True,
         distinct_return_W_A=family.startswith("A_"),
-        return_carrier="explicit_loss_and_zero" if family == "A_PC" else "absent",
+        return_carrier="explicit_loss_and_zero" if family in ("A_PC", "C_PC") else "absent",
         exact_root_signs_claimed=False,
         new_support=[],
         user_accepted=False,
@@ -375,7 +376,7 @@ def validate(value, old, *, equations=False):
                 and recipe_inputs["context"] == state["inputs"]["context"]
                 and recipe_inputs["dt"] == 0
                 and recipe_inputs["stage"]
-                == ("pc_old_history" if family == "A_PC" else "pre_read"),
+                == ("pc_old_history" if family in ("A_PC", "C_PC") else "pre_read"),
                 "selected recipe input drift",
             )
             h = [[float.fromhex(x) for x in r] for r in selected["H1_form"]]
@@ -391,7 +392,7 @@ def validate(value, old, *, equations=False):
                 require(recipe_inputs["H1_form"] == h, "selected geometry drift")
                 expected = (
                     "grc9v4-basin-pc-read-sha256:" + oracle.digest(selected)
-                    if family == "A_PC"
+                    if family in ("A_PC", "C_PC")
                     else None
                 )
                 require(

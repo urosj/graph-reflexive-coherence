@@ -4180,3 +4180,16 @@ PATHS |= {
     "implementation/phase-9-grcv4/verification/p910_family_acceptance.py",
     "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json",
 }
+
+
+# C_PC Tranche 10 basin extension; original acceptance epochs stay intact.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_cpc_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p910_cpc_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_cpc_surfaces.py',
+}

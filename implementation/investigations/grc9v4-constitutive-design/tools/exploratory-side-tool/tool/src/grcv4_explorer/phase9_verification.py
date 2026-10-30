@@ -179,7 +179,7 @@ def verification_status(repo_root: Path) -> dict:
             from .tranche10_verification import tranche10_verification_status
             profile_views['tranche10_verification'] = tranche10_verification_status(root)
             from .tranche10_families import family_basin_status
-            profile_views['tranche10_family'] = family_basin_status(root, 'A_OS')
+            profile_views['tranche10_family'] = family_basin_status(root, 'C_PC')
             from .aos import aos_status
             profile_views['aos_work'] = aos_status(root)
             from .cpc import cpc_status

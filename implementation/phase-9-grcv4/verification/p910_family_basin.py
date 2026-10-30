@@ -6,6 +6,9 @@ trajectory, replay or constitutive solve.
 """
 
 import argparse
+import importlib
+
+import p910_cpc_source_epoch as successor
 from concurrent.futures import ProcessPoolExecutor
 from copy import deepcopy
 import json
@@ -24,7 +27,8 @@ BASE = v.BASE + "tranche-10/"
 VERIFY = v.BASE + "verification/"
 SELF = VERIFY + "p910_family_basin.py"
 TEST = VERIFY + "test_p910_aos_basin.py"
-FAMILIES = ("A_OS",)
+FAMILIES = ("A_OS", "C_PC")
+ALL_REMAINING = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
 PARTS = ("Native", "Target")
 BASELINE = "f2333b32"
 PRIOR = v.BASE + "tranche-9/P9-AOS-Acceptance.json"
@@ -33,31 +37,40 @@ AUTHORITY = "implementation/investigations/grc9v4-constitutive-design/decisions/
 require, seal = v.require, v.seal
 
 
-def references(root=ROOT):
+def references(root=ROOT, family="A_OS", *, historical=False):
     names = {SELF, TEST, PRIOR, TARGET, AUTHORITY,
              BASE + "P9-10-AOS-SourceEpochs.json", VERIFY + "p910_basin_source_epoch.py",
              "specs/grc-9-v4-basin-interface.md", "specs/grc-9-v4-spec.md",
              VERIFY + "p9101a_basin_oracle.py", VERIFY + "p9101c_target_basin.py",
              VERIFY + "test_p9101a_basin_pressure.py", VERIFY + "test_p9101b_target_compatibility.py",
              VERIFY + "p9102_verification.py", VERIFY + "p9101b_target_compatibility.py"}
+    if family == "C_PC":
+        names.difference_update({TEST, PRIOR, TARGET})
+        names.update({VERIFY + "test_p910_cpc_basin.py", TEST,
+                      PRIOR.replace("AOS", "CPC"), TARGET.replace("AOS", "CPC"), successor.PATH, successor.SELF})
     for pattern in ("src/pygrc/**/*.py", "src/pygrc/**/*.json", "tests/models/test_grc*.py"):
         names.update(p.relative_to(root).as_posix() for p in root.glob(pattern))
     for pattern in ("test_p980*.py", "verify_p983a_aos_oracle.py"):
         names.update(p.relative_to(root).as_posix() for p in (root / VERIFY).glob(pattern))
+    if historical:
+        require(family == "A_OS", "only A_OS selects the accepted predecessor epoch")
+        return [dict(path=n, sha256=successor.sha(successor.previous_bytes(root, n))) for n in sorted(names)]
     return [v.reference(root, n) for n in sorted(names)]
 
 
-def prerequisites(root=ROOT):
+def prerequisites(root=ROOT, family="A_OS"):
+    prior = PRIOR if family == "A_OS" else PRIOR.replace("AOS", "CPC")
+    target = TARGET if family == "A_OS" else TARGET.replace("AOS", "CPC")
     from p9102_acceptance import PATH as accepted
     refs = []
-    for name in (PRIOR, TARGET, AUTHORITY, accepted, v.PATH):
+    for name in (prior, target, AUTHORITY, accepted, v.PATH):
         raw = (root / name).read_bytes()
         require(raw == subprocess.check_output(["git", "show", BASELINE + ":" + name], cwd=root),
                 "changed accepted predecessor: " + name)
         refs.append(v.reference(root, name))
-    decision = json.loads((root / PRIOR).read_bytes())
-    require(decision["family"] == "A_OS" and decision["user_accepted"] is True
-            and decision["bounded_scope_closed"] is True, "missing A_OS Tranches 8-9 acceptance")
+    decision = json.loads((root / prior).read_bytes())
+    require(decision["family"] == family and decision["user_accepted"] is True
+            and decision["bounded_scope_closed"] is True, "missing family Tranches 8-9 acceptance")
     return refs
 
 
@@ -89,18 +102,19 @@ def write(value, family, part=None, root=ROOT):
 
 def run_part(family, part):
     import flint
-    import test_p910_aos_basin as tests
+    tests = importlib.import_module("test_p910_" + family.replace("_", "").lower() + "_basin")
     from pygrc.models.grc_v4_exact import ExactBackend, exact_backend
 
-    prerequisites()
+    prerequisites(family=family)
     paths = (ROOT / stem(family, part), ROOT / (stem(family, part) + ".xz"))
     if any(p.exists() for p in paths):
         value, _ = load(family, part)
-        require(value["source_refs"] == references(), "completed part source drift")
+        require(value["source_refs"] == references(family=family, historical=family == "A_OS"), "completed part source drift")
         return part
-    before = references()
+    require(family != "A_OS", "new A_OS execution needs a separately declared source epoch")
+    before = references(family=family)
     tests.EVIDENCE.clear(); tests.native.EVIDENCE.clear(); tests.targets.EVIDENCE.clear()
-    cls = tests.AOSNativeBasin if part == "Native" else tests.AOSTargetCompatibility
+    cls = getattr(tests, family.replace("_", "") + ("NativeBasin" if part == "Native" else "TargetCompatibility"))
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(cls)
     roster = [t.id() for t in suite]
     start = time.monotonic()
@@ -108,7 +122,7 @@ def run_part(family, part):
         result = unittest.TextTestRunner(verbosity=2).run(suite)
     require(result.wasSuccessful() and not result.skipped and result.testsRun == (5 if part == "Native" else 3),
             "native family checks failed; no success record written")
-    require(before == references(), "execution sources changed during run")
+    require(before == references(family=family), "execution sources changed during run")
     evidence = dict(native=deepcopy(tests.native.EVIDENCE), **deepcopy(tests.EVIDENCE)) if part == "Native" else dict(
         target_compatibility=deepcopy(tests.targets.EVIDENCE), **deepcopy(tests.EVIDENCE))
     value = seal(dict(schema="p910-family-basin-native-part-v1", family=family, part=part,
@@ -159,13 +173,13 @@ def consolidate(family):
     value = seal(dict(schema="p910-family-basin-verification-v1", family=family,
         status="passed_bounded_pending_acceptance", user_accepted=False,
         P9_10_1_closed=False, P9_10_2_closed=False, full_GRC9V4_conformance=False,
-        G4_accepted=False, new_support=[], remaining_families=["C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"],
-        prerequisites=prerequisites(), parts=[nr, tr], source_refs=references(),
+        G4_accepted=False, new_support=[], remaining_families=list(ALL_REMAINING[ALL_REMAINING.index(family)+1:]),
+        prerequisites=prerequisites(family=family), parts=[nr, tr], source_refs=references(family=family),
         native_tests=native["tests_run"]+target["tests_run"],
         target_compatibility=target["evidence"]["target_compatibility"],
         direct_target=exact_target(target), verification=verification_checks(target),
         historical_evidence_relabelled=False,
-        next_work="Bounded A_OS P9-10.1a-c and P9-10.2 review; then C_PC in the agreed six-family order."))
+        next_work=f"Bounded {family} P9-10.1a-c and P9-10.2 review; then {ALL_REMAINING[ALL_REMAINING.index(family)+1]} in the agreed six-family order."))
     validate(value)
     # The final view references the native parts; the repeated target payload is
     # removed from disk and reconstructed exactly by check() using its bound part.
@@ -187,7 +201,7 @@ def validate(value, *, equations=False, sources=True):
             and value["new_support"] == [] and value["native_tests"] == 8,
             "family verification scope or identity")
     if sources:
-        require(value["source_refs"] == references() and value["prerequisites"] == prerequisites(),
+        require(value["source_refs"] == references(family=value["family"], historical=value["family"] == "A_OS") and value["prerequisites"] == prerequisites(family=value["family"]),
                 "family source or prerequisite drift")
     native, nr = load(value["family"], "Native")
     target, tr = load(value["family"], "Target")

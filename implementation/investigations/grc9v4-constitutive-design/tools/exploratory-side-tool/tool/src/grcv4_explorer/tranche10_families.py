@@ -2,7 +2,8 @@
 from pathlib import Path
 import sys
 
-REVIEWS = {"A_OS": "485e499f5500670944de798c873b8cab322932984d4e0c52df5f195acf4e6db9"}
+REVIEWS = {"A_OS": "485e499f5500670944de798c873b8cab322932984d4e0c52df5f195acf4e6db9",
+           "C_PC": "f9937fa25a07eac6e61e06b5c0153232e6b5d6ce2603d58d801780b03e4950b7"}
 
 
 def checker(root):
@@ -68,5 +69,5 @@ def family_basin_source(root, name, family="A_OS"):
         raise KeyError("not an indexed family basin source")
     raw = (root / name).read_bytes()
     if c.v.sha(raw) != refs[name]["sha256"]:
-        raise ValueError("family basin source changed")
+        return c.successor.read_source(root, refs[name])
     return raw, refs[name]

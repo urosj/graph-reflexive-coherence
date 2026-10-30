@@ -5,6 +5,7 @@ operands use Fraction, and native currents use the existing independent interval
 equations on their explicitly checked parameter/graph domain.
 """
 
+from dataclasses import replace
 from fractions import Fraction as Q
 from hashlib import sha256
 
@@ -352,7 +353,7 @@ def equation_check(saved, role, point):
         require(
             cp.kappa_M_C == 2**-24
             and cp.chi_C == 16
-            and cp.zeta_C == 2**-37
+            and cp.zeta_C == (2**-30 if profile.identity_payload.profile_family_id == "C_PC" else 2**-37)
             and cp.tau_C == cp.eta_C == cp.kappa_Phi_C == cp.C_ref == 1
             and cp.Lambda_C == 1 / 512
             and all(v > 0 for v in cp.W_C_tr.values()),
@@ -367,7 +368,8 @@ def equation_check(saved, role, point):
             "pinned A equation parameters",
         )
     model = StagedRows(
-        graph.live_node_ids, [e.to_payload() for e in graph.edges], PARAMS
+        graph.live_node_ids, [e.to_payload() for e in graph.edges],
+        replace(PARAMS, zeta_c=Q(cp.zeta_C)) if profile.identity_payload.candidate == "C" else PARAMS
     )
     high = IntervalRows(model)
     c = vector(authority.C)

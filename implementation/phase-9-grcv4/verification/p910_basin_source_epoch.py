@@ -1,4 +1,6 @@
 """Finite A_OS basin successor; preserve accepted source epochs without reruns."""
+from p910_cpc_source_epoch import previous_bytes, peel_sha as cpc_peel_sha
+
 import ast
 import hashlib
 import json
@@ -33,7 +35,7 @@ def seal(value):
 
 def first_group_unchanged(root):
     name = "src/pygrc/models/grc_9_v4_basin.py"
-    tree = ast.parse((root / name).read_bytes())
+    tree = ast.parse(previous_bytes(root, name))
     before = ast.parse(original(root, name))
     old = next(n for n in before.body if isinstance(n, ast.FunctionDef) and n.name == "_read_once")
     current = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "_read_once")
@@ -72,25 +74,26 @@ def first_group_unchanged(root):
 def manifest(root):
     root = Path(root).resolve()
     return seal(dict(schema="p910-aos-basin-source-epoch-v1", predecessor=BASELINE,
-        checker_sha256=sha((root / SELF).read_bytes()),
+        checker_sha256=sha(previous_bytes(root, SELF)),
         sources={n: dict(before_sha256=sha(original(root, n)),
-                         after_sha256=sha((root / n).read_bytes())) for n in sorted(CHANGED)},
+                         after_sha256=sha(previous_bytes(root, n))) for n in sorted(CHANGED)},
         first_group_native_path_unchanged=first_group_unchanged(root),
         accepted_execution_rewritten=False, user_acceptance_inferred=False))
 
 
 def peel_sha(root, name, present):
+    present = cpc_peel_sha(root, name, present)
     if name not in CHANGED:
         return present
     root = Path(root).resolve()
     value = json.loads((root / PATH).read_bytes())
     if value != seal(value) or value["schema"] != "p910-aos-basin-source-epoch-v1" \
        or value["predecessor"] != BASELINE or set(value["sources"]) != CHANGED \
-       or value["checker_sha256"] != sha((root / SELF).read_bytes()) \
+       or value["checker_sha256"] != sha(previous_bytes(root, SELF)) \
        or value["accepted_execution_rewritten"] is not False or value["user_acceptance_inferred"] is not False:
         raise ValueError("A_OS basin source-epoch identity changed")
     row = value["sources"][name]
-    if sha((root / name).read_bytes()) != row["after_sha256"] or sha(original(root, name)) != row["before_sha256"]:
+    if sha(previous_bytes(root, name)) != row["after_sha256"] or sha(original(root, name)) != row["before_sha256"]:
         raise ValueError("unregistered A_OS basin source successor: " + name)
     return row["before_sha256"] if present == row["after_sha256"] else present
 
@@ -105,6 +108,9 @@ def read_source(root, ref):
     raw = (Path(root) / name).read_bytes()
     if sha(raw) == ref["sha256"]:
         return raw, ref
-    if name not in CHANGED or peel_sha(root, name, sha(raw)) != ref["sha256"]:
+    from p910_cpc_source_epoch import read_source as cpc_read_source
+    if name not in CHANGED:
+        return cpc_read_source(root, ref)
+    if peel_sha(root, name, sha(raw)) != ref["sha256"]:
         raise ValueError("unbound historical basin source: " + name)
     return original(root, name), dict(ref, revision=BASELINE, basis="historical_git")

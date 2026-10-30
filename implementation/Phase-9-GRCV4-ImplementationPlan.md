@@ -39,7 +39,12 @@ P9-10.2 are bounded-accepted on 2026-10-30; implementation `f87bcd27`,
 [acceptance decision](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json).
 The two native jobs run in parallel. Exact-target migration/disabled-return
 captures are collected during compatibility execution and reused for 10.1c/10.2;
-no duplicate native campaign. Next: C_PC, then C_CI_PC,
+no duplicate native campaign. C_PC now follows the same workflow, with
+[bounded results](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md) pending acceptance.
+Its committed carrier and PC certificate are observed without running a writer;
+the independent checker uses this target's actual zeta_C=2^-30 (the earlier
+C_OS/CI witness used 2^-37). Exact-target crossings distinguish carrier loss and
+zero initialization from history preservation. After C_PC acceptance: C_CI_PC,
 A_CI_PC, C_RG2b and A_RG2b.
 
 
@@ -111,8 +116,9 @@ publication and replay machinery provide the common integration path.
 The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) adds an explicit
 A_OS branch to the accepted first four. Its fresh Candidate-A reference read
 uses the role's W and fixed-row backend; this additional bounded native scope
-is accepted separately. Composite CI+PC and RG2b capture remain unimplemented; C_PC needs
-its own declared capture scope and conformance evidence. The generic readers already
+is accepted separately. C_PC now has declared capture scope and bounded
+conformance evidence pending acceptance. Composite CI+PC and RG2b capture
+remain unimplemented. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
 and [specification](../specs/grc-9-v4-basin-interface.md) provide the starting

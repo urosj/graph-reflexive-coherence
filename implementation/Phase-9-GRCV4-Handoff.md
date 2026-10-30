@@ -1,5 +1,33 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## C_PC Tranche 10 — implemented, pending acceptance (2026-10-30)
+
+Same branch: `work/p9-tranche10-remaining-families`. [Review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md)
+and [verification](./phase-9-grcv4/tranche-10/P9-10-CPC-Verification.json).
+C_PC P9-10.1a–c → 10.2 now has its own source/lifecycle and exact-target native
+checks, run in two parallel jobs using FLINT. Both-role boundary captures come
+from that same compatibility run. 10.2 adds no native steps or replay campaign.
+
+The observation consumes committed Z, carries no W_A, and binds the complete
+PC read/certificate. Independent equations use the exact C_PC coefficient
+zeta_C=2^-30; the older C coefficient is rejected by a discrimination test.
+The target is the retained 17-node/16-edge v1 model and its explicit basin-policy
+v2 successor. Disabled return independently preserves role resources and
+initializes each target carrier to zero under the explicit loss policy.
+
+Accepted A_OS and first-four execution bytes remain unchanged. A finite source
+epoch authenticates the changed helpers and serves original Git source bytes;
+the sole production change adds C_PC to the basin admission roster. Large evidence
+is compressed, with the consolidated record reconstructing from bound parts.
+
+Side-tool: `/api/tranche10/families?family=C_PC`, the existing browser family
+selector, and notebook cell `p910-cpc-basin`. Retained checks do not run native
+trajectories. See the review for reproduction and the short fixture-correction
+note. User acceptance remains pending. After acceptance/commit, C_CI_PC is next,
+then A_CI_PC, C_RG2b, A_RG2b and consolidated 10.3–10.6. No new claim/debt
+closure, full conformance, or G4 is inferred.
+
+
 ## A_OS Tranche 10 — bounded accepted (2026-10-30)
 
 Branch: `work/p9-tranche10-remaining-families`, from accepted first-four
