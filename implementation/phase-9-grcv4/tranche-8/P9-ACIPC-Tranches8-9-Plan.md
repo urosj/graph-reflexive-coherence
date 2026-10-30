@@ -63,9 +63,9 @@ ordering/chart coverage is retained.
 - [x] Final exact-subject Tranche 9 support reconciliation after large evidence.
 - [x] Side-tool access, main plan/checklist/handoff, accepted-source preservation,
   storage above 1 MB compressed, focused regressions and implementation boundary.
-- [ ] Separate user acceptance; original execution flags remain unchanged.
+- [x] User accepted on 2026-10-30; original execution flags remain unchanged.
 
 Completed retained review and 58 focused checks pass (22 integration, 20
 science/public-contract, 16 surface/history). The implementation-boundary
 audit passes without native reruns. See [review](./P9-ACIPC-Tranches8-9-Review.json)
-and [validation](../tranche-9/P9-ACIPC-Validation.json). User acceptance is pending.
+and [validation](../tranche-9/P9-ACIPC-Validation.json). User acceptance is recorded in [the separate decision](../tranche-9/P9-ACIPC-Acceptance.json), binding implementation `e3e7f91a`.

@@ -36,14 +36,24 @@ def acipc_status(repo_root):
     else:
         # File presence is only progress, never successful execution credit.
         names|={p.relative_to(root).as_posix() for p in (root/BASE).glob("*ACIPC*") if p.is_file()}
-    accepted=None
+    acceptance=importlib.import_module('p9_acipc_acceptance')
+    accepted=acceptance.decision(root)
+    if accepted:
+        rows=deepcopy(rows)
+        for row in rows:
+            row.update(state='bounded_accepted',user_accepted=True)
+            if row['checkpoint']=='9.3':
+                row['execution']['execution_counts']=row['execution']['counts']
+                row['execution']['counts']=accepted['compatibility_counts']
+        names|={acceptance.PATH,acceptance.EPOCHS,acceptance.SELF,acceptance.TEST,
+                *(r['path'] for r in accepted['validation'])}
     pending=next((r["checkpoint"] for r in rows if r["state"] not in ("passed_pending_acceptance","bounded_accepted")),None)
     return dict(schema="phase9_acipc_work_v1",family="A_CI_PC",realization_number=8,
         branch="work/p9-acipc-tranches-8-9",scope="P9-8.4d through P9-9.6",
         prerequisites="A_CI_PC G2, P9-8.3 and P9-8.4b/c already accepted",
         checkpoints=rows,user_accepted=bool(accepted),aggregate_closed=False,review_digest=review_digest,
         acceptance_digest=accepted['record_digest'] if accepted else None,
-        acceptance=None,
+        acceptance=(dict(path=acceptance.PATH,record_digest=accepted['record_digest']) if accepted else None),
         accepted_predecessor_families=["C_OS","C_CI","A_CI","A_PC","A_OS","C_PC","C_CI_PC"],
         remaining_families=["C_RG2b","A_RG2b"],
         optional_completion="unselected",tranche10="deferred",

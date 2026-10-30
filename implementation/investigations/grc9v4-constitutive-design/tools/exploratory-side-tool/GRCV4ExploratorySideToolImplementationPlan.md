@@ -3349,3 +3349,8 @@ restrictions. API/browser/notebook and next-step guidance now point to P9-10.2.
 - [x] Validate retained source bindings, pending acceptance and historical seven-family preservation; sixteen surface/history tests and the phase boundary pass.
 
 See [scope and access](./docs/ACIPCEighthRealization.md). Numerical reruns are separate from these retained-integrity queries.
+
+A_CI+PC was bounded-accepted on 2026-10-30. Python/API/browser/notebook show
+the separate accepted decision over the unchanged execution records: 32
+compatibility cells accepted, eight RG2b cells unselected; aggregate and
+A_CI_PC basin/Tranche 10 support remain unclaimed.

@@ -1,0 +1,61 @@
+{
+  "schema": "p9-acipc-acceptance-sources-v1",
+  "base_commit": "e3e7f91a",
+  "sources": {
+    "implementation/Phase-9-GRCV4-Handoff.md": {
+      "before_sha256": "7514578f0762781e028f2f9aa6b7a48c3ff18f8cf044c7edde0fef93024ef4ac",
+      "after_sha256": "bd318c7eee29f3e0fab4aaffbd15e772e538709cc6d2338fd1c26a58e2f733b3"
+    },
+    "implementation/Phase-9-GRCV4-ImplementationChecklist.md": {
+      "before_sha256": "70ae0aae096132857723b0b2a48c32919e041b2be9816ae5d1898fa5e2113975",
+      "after_sha256": "3aa875f23aa95364e9408afd31b0280eda11cce449d4835914c91081f1521ebf"
+    },
+    "implementation/Phase-9-GRCV4-ImplementationPlan.md": {
+      "before_sha256": "4f9b35f8ac21e90985a53a908f1cc21a2e0efa67c8164a2e8b5ec92f3d94bc5c",
+      "after_sha256": "2ce888bc2f02d0f1c5202c598f8bb78cfaf88dfcaaa7f03b0ceafe729ed22057"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md": {
+      "before_sha256": "6a03b432024f40f4461bd166a6d6ba72c5d590d802b4bb61f56f7a62cb3df366",
+      "after_sha256": "dc0a5fa68be5c2fa4c9e175fea905477c5ce23911cbed1281f00d99c4893767c"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md": {
+      "before_sha256": "fae53357371e106c784550d65579a7de701a58c9243f03a52bac6620bc0582f8",
+      "after_sha256": "e4d030f4f712edcbbeab5c3fef4a388ebefa1fbeb35b8d7af6c3768f0d1b5195"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/ACIPCEighthRealization.md": {
+      "before_sha256": "c88ceb375bbe5d8ea4441f72e27b02ca5e37f39e34b9c88a7a9cd2e16e03e7f5",
+      "after_sha256": "7f63f22dfe11f9decb1533851ea67ddf2408058a8735487f76df8be01af75cb4"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/acipc.py": {
+      "before_sha256": "c57ba83a73e0c196adc2c7bec9a93b9d15f94a24793cbbbcb82eca7d3866a507",
+      "after_sha256": "2ca9b8b3ad2e42195c9dae31b455bd541775eeb6a6a5d9aea2b939b776d59b72"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-ACIPC-ScientificReview.md": {
+      "before_sha256": "b170fb62b40dc3bde8901453c7415cb1a8b9b47b09fcf33652b4e981a39635df",
+      "after_sha256": "c063f73de69ca85d5cd36923660717507b1048f0785ad76eafd7f4b85d5e51b4"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Plan.md": {
+      "before_sha256": "df130dd25ba5e2ed2244510fda2c6f23fbd6244e6b11b58635afa1f74c91bc26",
+      "after_sha256": "2d308054e27c302f2d9aa762ea830c38f36b4611430807841aab748d17f3fea4"
+    },
+    "implementation/phase-9-grcv4/verification/p9_acipc_historical.py": {
+      "before_sha256": "e9c807874a56de6ef1765c01600ede7df99ac62cc376460c62fad400091c5eda",
+      "after_sha256": "2f17a774f77084be90430be5e7657c900dc04241761ef760346c4f823965551e"
+    },
+    "implementation/phase-9-grcv4/verification/p9_acipc_review.py": {
+      "before_sha256": "8b860f97c3c44c6e496627959061e7f32cab8b8c068bf30e183efdfa6b605bfd",
+      "after_sha256": "92fbc949c7e3f6dd8c26222f45b6cd5bb6bca226c5bac1474c989df4f5ea6b7a"
+    },
+    "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py": {
+      "before_sha256": "72059029dbc9e4cf21a67615a5af30336320b48550bbf5c36c633140b3592574",
+      "after_sha256": "29c3f7c147b0dec0e88c5a4c53d636eaba526bd545a6d52a156770044296a6f3"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9_acipc_review.py": {
+      "before_sha256": "2bbf8cc8abad69069cc5e022543a0efdaf93c1eb8b984716795ac1316d2c5843",
+      "after_sha256": "bfcf54d768b7d4dc1215658e9c7ef048e4e189ffbc8a9cdb9c7ec4a499ebe4f8"
+    }
+  },
+  "native_runtime_changed": false,
+  "original_execution_relabelled": false,
+  "record_digest": "ee9637c3ea3ed3ab59c38c9cb4380d5e7f7fda3f73433a595cf3b4071b25d97e"
+}

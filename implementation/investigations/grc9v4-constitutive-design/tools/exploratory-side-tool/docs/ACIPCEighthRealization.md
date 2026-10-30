@@ -12,3 +12,8 @@ predecessors, two unselected RG2b families, optional completion and deferred
 Tranche 10 remain distinct. Large covariance names its three selected cases
 and five unexecuted diagnostics. Original exclusions and derived companions
 are reported without replacing their source identities.
+
+The user accepted the bounded result on 2026-10-30, binding implementation
+`e3e7f91a`. The accepted projection exposes the separate decision and 32
+accepted compatibility cells; raw execution flags and earlier seven-family
+acceptance records remain unchanged. Eight RG2b cells remain unselected.

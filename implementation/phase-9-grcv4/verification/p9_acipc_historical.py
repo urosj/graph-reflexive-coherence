@@ -33,7 +33,8 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 
 def implementation_sha(root,name,present):
-    return present
+    from p9_acipc_acceptance import previous_sha
+    return previous_sha(root,name,present) or present
 
 
 def seal(value):
@@ -91,6 +92,7 @@ def peel_sha(root,name,present):
     for their owning validator. This function alone does not validate them.
     """
     name=Path(name).as_posix()
+    present=implementation_sha(root,name,present)
     if name not in CHANGED:return present
     live=sha((Path(root)/name).read_bytes())
     before=previous_sha(root,name,live)

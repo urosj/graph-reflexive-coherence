@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 Implementation Checklist
 
-## A_CI+PC eighth-realization extension — ready for acceptance (2026-10-30)
+## Accepted A_CI+PC eighth-realization extension (2026-10-30)
 
 Work is on `work/p9-acipc-tranches-8-9`, based on accepted merge `b61b60be`.
 The selected scope is P9-8.4d through applicable P9-9.6; see the
@@ -20,9 +20,11 @@ fresh large replay, all three mapped events and their six target steps also
 pass. The consolidated retained review, 58 focused integration/science/surface
 checks and implementation-boundary audit pass. See the [checked review](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Review.json)
 and [validation](./phase-9-grcv4/tranche-9/P9-ACIPC-Validation.json).
-The bounded implementation is ready for user acceptance; nothing is committed
-as part of this checkpoint. Original execution and seven-family acceptance
-records remain unchanged. RG2b, optional completion, general conformance and
+The user accepted the bounded implementation on 2026-10-30. The separate
+[decision](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) binds reviewed
+implementation `e3e7f91a`. Original execution and earlier seven-family acceptance
+records remain unchanged. Compatibility now has 32 bounded accepted cells
+and eight unselected RG2b cells. RG2b, optional completion, general conformance and
 A_CI_PC Tranche 10/basin support remain unselected.
 
 
@@ -3191,7 +3193,8 @@ the full ten-profile plan.
         native admission and retained comparisons; all six mapped target steps pass.
       - [x] Both main large ten-step histories and final reads pass.
       - [x] Complete final reconciliation, side-tool surfaces and implementation boundary.
-      - [ ] Separate user acceptance of the bounded A_CI+PC result.
+      - [x] User accepted the bounded A_CI+PC result on 2026-10-30;
+        [decision](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) binds `e3e7f91a`.
     - [x] C_CI+PC seventh-realization implementation selected on 2026-10-29,
       on the existing branch: [scope and compute plan](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md)
       and [checked review](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Review.json).
@@ -4039,10 +4042,10 @@ executed enabled/disabled migration or a full specialization conformance grant.
 | `P9-9.2-C_PC-state` | Bounded-accepted |
 | `P9-9.2-C_PC-observable` | Bounded-accepted |
 | `P9-9.2-C_PC-lifecycle` | Bounded-accepted |
-| `P9-9.2-A_CI_PC-transition` | Passed; pending acceptance |
-| `P9-9.2-A_CI_PC-state` | Passed; pending acceptance |
-| `P9-9.2-A_CI_PC-observable` | Passed; pending acceptance |
-| `P9-9.2-A_CI_PC-lifecycle` | Passed; pending acceptance |
+| `P9-9.2-A_CI_PC-transition` | Bounded-accepted |
+| `P9-9.2-A_CI_PC-state` | Bounded-accepted |
+| `P9-9.2-A_CI_PC-observable` | Bounded-accepted |
+| `P9-9.2-A_CI_PC-lifecycle` | Bounded-accepted |
 | `P9-9.2-C_CI_PC-transition` | Bounded-accepted |
 | `P9-9.2-C_CI_PC-state` | Bounded-accepted |
 | `P9-9.2-C_CI_PC-observable` | Bounded-accepted |

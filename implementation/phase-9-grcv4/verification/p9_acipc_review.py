@@ -220,7 +220,11 @@ def checked(root=b.ROOT,value=None):
     stored={row['path'] for row in entries(root)}
     for ref in refs:
         if ref['path'] in stored and not (root/ref['path']).exists():restore(root,prefix=ref['path'])
-    b.check_bindings(refs)
+    from p9_acipc_acceptance import matches
+    for ref in refs:
+        path=(root/ref['path']).resolve()
+        b.require(path.is_relative_to(root) and matches(root,ref['path'],ref['sha256']),
+                  'review source drift: '+ref['path'])
     rows={r['checkpoint']:r['execution'] for r in value['checkpoints']}
     b.require(rows['8.4g']['original_target_roles_excluded']==['reset']
         and rows['8.4g']['selection']['shares']==['7/32','13/32','3/8']

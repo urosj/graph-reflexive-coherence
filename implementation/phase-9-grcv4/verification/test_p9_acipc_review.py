@@ -29,9 +29,14 @@ def spawned_selection(pipe):
 
 
 class ACIPCReviewTests(unittest.TestCase):
+    def setUp(self):
+        pending=patch('p9_acipc_acceptance.decision',return_value=None)
+        pending.start();self.addCleanup(pending.stop)
+
     @classmethod
     def setUpClass(cls):
-        with patch.object(p.n,'observe_step',side_effect=AssertionError('native rerun')):
+        with patch.object(p.n,'observe_step',side_effect=AssertionError('native rerun')), \
+                patch('p9_acipc_acceptance.decision',return_value=None):
             cls.record=p.checked();cls.status=acipc.acipc_status(ROOT)
 
     def test_scope_counts_and_resealed_mutations(self):

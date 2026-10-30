@@ -2092,6 +2092,8 @@ PATHS |= {
         'test_p9_acipc_review',
         'test_p9_acipc_history',
         'validate_acipc',
+        'p9_acipc_acceptance',
+        'test_p9_acipc_acceptance',
     )),
     *(PHASE + "tranche-8/" + name for name in (
         'P9-8.4d-ACIPCCases.json',
@@ -2136,7 +2138,8 @@ PATHS |= {
     *(PHASE + 'tranche-9/P9-' + checkpoint + '-ACIPC.json.xz'
       for checkpoint in ('9.1b','9.2','9.4a','9.4b','9.5')),
     *(PHASE + 'tranche-9/' + name for name in ('P9-9.3-ACIPCMatrix.json','P9-9.2-ACIPCAuthority.json',
-      'P9-ACIPC-SourceEpochs.json','P9-ACIPC-Validation.json')),
+      'P9-ACIPC-SourceEpochs.json','P9-ACIPC-Validation.json',
+      'P9-ACIPC-Acceptance.json','P9-ACIPC-AcceptanceSources.json','P9-ACIPC-AcceptanceValidation.json')),
 }
 
 

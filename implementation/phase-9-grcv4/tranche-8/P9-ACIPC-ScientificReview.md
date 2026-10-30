@@ -1,6 +1,8 @@
 # A_CI+PC bounded Tranches 8–9 scientific review
 
-Numerical execution and final reconciliation pass; user acceptance is pending.
+Numerical execution and final reconciliation pass. The user accepted this bounded
+result on 2026-10-30; the [separate decision](../tranche-9/P9-ACIPC-Acceptance.json)
+binds reviewed implementation `e3e7f91a`.
 Earlier seven-family acceptance and A_CI_PC G2 / 8.3 / 8.4b/c remain separate.
 
 Completed: twenty deep events and 400 continuation steps, all 44 small
