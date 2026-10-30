@@ -4174,3 +4174,9 @@ PATHS |= {
     'implementation/phase-9-grcv4/verification/test_p910_aos_basin.py',
     'implementation/phase-9-grcv4/verification/test_p910_family_surfaces.py',
 }
+
+# Per-family Tranche 10 user acceptance over unchanged execution evidence.
+PATHS |= {
+    "implementation/phase-9-grcv4/verification/p910_family_acceptance.py",
+    "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json",
+}

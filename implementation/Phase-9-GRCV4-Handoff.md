@@ -1,10 +1,12 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## A_OS Tranche 10 — implemented, acceptance pending (2026-10-30)
+## A_OS Tranche 10 — bounded accepted (2026-10-30)
 
 Branch: `work/p9-tranche10-remaining-families`, from accepted first-four
 P9-10.2 `f2333b32`. [Review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md)
 and [verification](./phase-9-grcv4/tranche-10/P9-10-AOS-Verification.json).
+Implementation `f87bcd27`; [user acceptance](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json)
+closes bounded A_OS 10.1a–c and 10.2 without rewriting the execution records.
 
 A_OS now has fresh reference-geometry Candidate-A basin capture using its own
 W/backend. Five native source/lifecycle tests and three exact-target tests pass
@@ -23,7 +25,7 @@ notebook `p910-family-basin`; read-only access performs no native run. The origi
 four-family accepted view remains separate. Reproduce with the command in the
 review; do not repeat the numerical jobs solely for an acceptance status change.
 
-Next: review/accept A_OS, then C_PC P9-10.1a–c → P9-10.2. After that:
+Next: C_PC P9-10.1a–c → P9-10.2 on the same branch. After that:
 C_CI_PC, A_CI_PC, C_RG2b, A_RG2b, then consolidated 10.3–10.6. No new scientific
 claim/debt closure, family-wide conformance or G4 is inferred.
 

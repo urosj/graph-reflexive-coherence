@@ -2804,5 +2804,6 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   changed scope or evidence, and clear stale browser/notebook output.
 - [x] Preserve the accepted first-four view and original source bytes through
   the finite A_OS source epoch; no numerical rerun or scientific authority lift.
-- [ ] Bounded A_OS acceptance. C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b
+- [x] Bounded A_OS acceptance recorded on 2026-10-30; original execution
+  records are unchanged. C_PC is next; C_CI_PC, A_CI_PC, C_RG2b and A_RG2b
   remain separate extensions; full conformance and G4 are not granted.

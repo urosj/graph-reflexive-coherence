@@ -24,8 +24,10 @@ def checked(root, family):
 
 def family_basin_status(root, family="A_OS"):
     root, c, value = checked(root, family)
+    import p910_family_acceptance as acceptance
+    accepted = acceptance.decision(root, value)
     _, stored = c.load(family, root=root)
-    return c.seal(dict(schema="p910-family-basin-view-v1", family=family,
+    view = dict(schema="p910-family-basin-view-v1", family=family,
         status=value["status"], user_accepted=False, P9_10_1_closed=False, P9_10_2_closed=False,
         G4_accepted=False, full_GRC9V4_conformance=False, new_support=[],
         first_group_accepted=["C_OS", "C_CI", "A_CI", "A_PC"],
@@ -40,13 +42,27 @@ def family_basin_status(root, family="A_OS"):
         source_refs=value["source_refs"],
         limits=["represented_flow_not_attractor", "exact_subjects_not_family_wide_conformance",
                 "fixed_geometry_bounds_not_uniform_trajectory_or_exact_CI_root", "no_G4_or_new_support"],
-        next_work=value["next_work"]))
+        next_work=value["next_work"])
+    if accepted is not None:
+        ref = dict(**c.v.reference(root, acceptance.path(family)), record_digest=accepted["record_digest"])
+        view.update(status=accepted["status"], user_accepted=True,
+                    P9_10_1_closed=True, P9_10_2_closed=True,
+                    all_ten_P9_10_1_closed=False, all_ten_P9_10_2_closed=False,
+                    acceptance=ref, next_work=accepted["next_work"],
+                    evidence=[*view["evidence"], ref])
+    return c.seal(view)
 
 
 def family_basin_source(root, name, family="A_OS"):
     root, c, value = checked(root, family)
     _, stored = c.load(family, root=root)
     refs = {r["path"]: r for r in [*value["source_refs"], *value["prerequisites"], *value["parts"], stored]}
+    import p910_family_acceptance as acceptance
+    accepted = acceptance.decision(root, value)
+    if accepted is not None:
+        ref = c.v.reference(root, acceptance.path(family))
+        refs[ref["path"]] = ref
+        refs.update((ref["path"], ref) for ref in accepted["review_sources"])
     path = Path(name)
     if name not in refs or path.is_absolute() or ".." in path.parts or not (root/path).resolve().is_relative_to(root):
         raise KeyError("not an indexed family basin source")

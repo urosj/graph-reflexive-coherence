@@ -44,7 +44,7 @@ below remain four-family acceptances, not acceptance of those six extensions.
 Branch: `work/p9-tranche10-remaining-families`. The initial four-family
 acceptances remain unchanged; each row below needs its own bounded evidence.
 
-- [ ] A_OS bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
+- [x] A_OS bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
   - [x] 10.1a: fresh A reference/current/history/backend capture, full read
     identity, independent equations, positive lifecycle and failure pressure.
   - [x] 10.1b: exact retained v1 target and explicit v2 successor; independent
@@ -55,7 +55,9 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
     reuse this family's executed replay and unchanged common charge controls.
   - [x] Source-epoch preservation, compressed/reference-based retention,
     API/browser/notebook access and portable handoff.
-  - [ ] User acceptance; no full-conformance/G4 or remaining-family grant.
+  - [x] User acceptance on 2026-10-30; implementation `f87bcd27`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json).
+    No full-conformance/G4 or remaining-family grant.
 - [ ] C_PC: 10.1a–c → 10.2 and bounded acceptance.
 - [ ] C_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
 - [ ] A_CI_PC: 10.1a–c → 10.2 and bounded acceptance.

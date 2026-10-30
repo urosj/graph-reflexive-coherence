@@ -35,11 +35,11 @@ and do not transfer automatically to the other six families.
 ## Tranche 10 rollout and six-family basin-capture map (2026-10-30)
 
 Current branch: `work/p9-tranche10-remaining-families`. A_OS P9-10.1a–c and
-P9-10.2 are implemented and pass within the bounded declared scope;
-[user acceptance is pending](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
+P9-10.2 are bounded-accepted on 2026-10-30; implementation `f87bcd27`,
+[acceptance decision](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json).
 The two native jobs run in parallel. Exact-target migration/disabled-return
 captures are collected during compatibility execution and reused for 10.1c/10.2;
-no duplicate native campaign. Next after acceptance: C_PC, then C_CI_PC,
+no duplicate native campaign. Next: C_PC, then C_CI_PC,
 A_CI_PC, C_RG2b and A_RG2b.
 
 
@@ -50,7 +50,7 @@ see the [bounded review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md) and
 retained-evidence checks reused accepted replay and runtime receipts, recomputed
 sixteen independent equations and sixteen charge checks, and shared 24
 Python/FLINT charge-kernel evaluations. No native steps or replay runs were
-repeated. Continue with A_OS P9-10.1a–c → P9-10.2, following
+repeated. A_OS P9-10.1a–c → P9-10.2 is now also accepted; continue C_PC, following
 the remaining-family order below; consolidated P9-10.3–10.6 stay separate.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
@@ -110,8 +110,8 @@ publication and replay machinery provide the common integration path.
 
 The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) adds an explicit
 A_OS branch to the accepted first four. Its fresh Candidate-A reference read
-uses the role's W and fixed-row backend; this additional native scope awaits
-acceptance. Composite CI+PC and RG2b capture remain unimplemented; C_PC needs
+uses the role's W and fixed-row backend; this additional bounded native scope
+is accepted separately. Composite CI+PC and RG2b capture remain unimplemented; C_PC needs
 its own declared capture scope and conformance evidence. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)

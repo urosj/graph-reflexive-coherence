@@ -1,0 +1,57 @@
+{
+  "schema": "p910-family-basin-acceptance-v1",
+  "family": "A_OS",
+  "status": "accepted_bounded_family_basin",
+  "accepted_on": "2026-10-30",
+  "user_instruction": "great, accept and commit",
+  "reviewed_commit": "f87bcd27df76c3b7efb1d0f28d93ce47a643266c",
+  "checkpoints": [
+    "10.1a",
+    "10.1b",
+    "10.1c",
+    "10.2"
+  ],
+  "user_accepted": true,
+  "P9_10_1_closed": true,
+  "P9_10_2_closed": true,
+  "all_ten_P9_10_1_closed": false,
+  "all_ten_P9_10_2_closed": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "verification_record_digest": "485e499f5500670944de798c873b8cab322932984d4e0c52df5f195acf4e6db9",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Verification.json",
+      "sha256": "5e8a16799d409b8735fa8dc1c93a488e334a84a5a5a19a616696d91bd795e69c",
+      "record_digest": "42c455b6fc0af0e4a0f47f657580327bd73103d05328a4a8697844dc5fbc0198"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Native.json",
+      "sha256": "2e641f6a4e64eb870f83d175c5398bd582d56be554a98955fd0f05ed977ee2d5",
+      "record_digest": "bbdf27ac64e895c7e023f3297d49c6e0e8ee3c090260f18fdcab6f4e392d15e0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Target.json.xz",
+      "sha256": "17164662044fb49f7865a2b650ba21ae6f1bf6e981dd552ca16d652f788833ac",
+      "record_digest": "f8438528c2e403f3251dc16d5bdc64bbfe4f6841abb87b0602ff375e2f2449b5"
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Review.md",
+      "sha256": "893fa17bb6cef2f7cdc6f3e49c2ac5d677ddc31507bec5b147aada795d8319ab"
+    }
+  ],
+  "remaining_families": [
+    "C_PC",
+    "C_CI_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "scope": "Bounded A_OS source/lifecycle and exact 17-node expanded v1/v2 target conformance; both-role migration/disabled-return basin checks and retained 10.2 verification. Original four-family acceptances remain separate.",
+  "historical_records": "Native and verification records retain their execution-time pending-acceptance flags; this separate decision records user acceptance without a native rerun.",
+  "next_work": "C_PC P9-10.1a-c then P9-10.2; continue C_CI_PC, A_CI_PC, C_RG2b, A_RG2b before consolidated P9-10.3-10.6.",
+  "record_digest": "6ea2d269b653c50dc4a5b046ec6088ca1cd88637fc91818b715e3bb62047c9a4"
+}

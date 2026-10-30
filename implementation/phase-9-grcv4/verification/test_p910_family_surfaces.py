@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 import p910_family_basin as campaign
 import p910_basin_source_epoch as epoch
+import p910_family_acceptance as acceptance
 
 ROOT = campaign.ROOT
 TOOL = ROOT / 'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool'
@@ -87,7 +88,8 @@ import {createHash} from 'node:crypto';
 import {canonical} from './verification.js';
 import {checkedFamilyBasin,familyBasinLoader} from './tranche10-families.js';
 const v=JSON.parse(readFileSync(0,'utf8'));await checkedFamilyBasin(v);
-for(const change of [x=>x.family='C_PC',x=>x.user_accepted=true,x=>x.G4_accepted=true,
+for(const change of [x=>x.family='C_PC',x=>x.user_accepted=false,x=>x.G4_accepted=true,
+ x=>x.all_ten_P9_10_2_closed=true,
  x=>x.boundaries[0].role_equations.current.geometry_residual_upper='1']){
  const bad=structuredClone(v);change(bad);const {record_digest,...body}=bad;
  bad.record_digest=createHash('sha256').update(canonical(body)).digest('hex');
@@ -97,7 +99,7 @@ const output={children:[],replaceChildren(){this.children=[]},append(e){this.chi
 const status={textContent:''};let ok=true;
 const load=familyBasinLoader(output,status,async()=>({ok,json:async()=>v}),tag=>({tag,textContent:''}));
 await load('A_OS');assert.equal(output.children.filter(x=>x.tag==='h4').length,2);
-assert.match(status.textContent,/acceptance pending/);
+assert.match(status.textContent,/Accepted within bounded A_OS scope/);
 ok=false;await load('A_OS');assert.equal(output.children.length,0);assert.match(status.textContent,/unavailable/);
 assert.match(readFileSync('index.html','utf8'),/id="tranche10-family-select"/);
 """
@@ -105,6 +107,22 @@ assert.match(readFileSync('index.html','utf8'),/id="tranche10-family-select"/);
             input=json.dumps(self.view), text=True, capture_output=True,
             cwd=TOOL/'phase9-web', timeout=30, env=tool_environment())
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_acceptance_is_bounded_and_keeps_original_execution_flags(self):
+        path = ROOT / acceptance.path('A_OS')
+        original = json.loads(path.read_bytes())
+        read = Path.read_bytes
+        for key, value in (('family', 'C_PC'), ('user_accepted', False),
+                           ('all_ten_P9_10_2_closed', True), ('G4_accepted', True)):
+            changed = campaign.seal(dict(original, **{key: value}))
+            with self.subTest(key=key), patch.object(Path, 'read_bytes', lambda p:
+                    json.dumps(changed).encode() if p == path else read(p)):
+                with self.assertRaises(ValueError):
+                    acceptance.decision(ROOT, self.evidence)
+        self.assertFalse(self.evidence['user_accepted'])
+        self.assertFalse(self.evidence['P9_10_1_closed'])
+        self.assertFalse(self.evidence['P9_10_2_closed'])
+        self.assertTrue(self.view['user_accepted'])
 
 
 if __name__ == '__main__':
