@@ -40,8 +40,8 @@ retroactively migrated, and Git history is not rewritten.
 The packer accepts any file type and produces byte-exact `.xz` storage.
 The staged-file gate also recognizes valid XZ, gzip, bzip2 and ZIP containers;
 renaming an uncompressed file to an archive extension does not exempt it.
-Manifest v2 records `compression_threshold_bytes`; the reader remains
-compatible with historical v1 manifests.
+Manifest v2 records `compression_threshold_bytes`; v3 adds shared object stores.
+The reader remains compatible with historical v1/v2 manifests.
 
 Keep a short claim/review, frozen inputs, reproducible commands, meaningful
 tests, worst bounds and completed coverage as the primary review
@@ -105,6 +105,56 @@ they must not be added back to Git.
 
 ## Before committing or publishing
 
+### Shared objects for new C_RG2b evidence
+
+The connected C_RG2b continuation stores 67 large records in one compressed,
+content-addressed object store. Their original **358,312,645 JSON bytes** and
+**28,298,336 XZ bytes** are reconstructible from the
+[store and manifest](../../implementation/phase-9-grcv4/tranche-8/crg2b-native/shared/).
+The shared archive plus manifest is **10,891,472 bytes**, 61.5% smaller than
+the separate archives. Identical JSON subobjects are stored once; recipes preserve literal bytes,
+including number spellings, signed zero, key order and the trailing newline.
+The writer refuses any input it cannot round-trip exactly. No scientific
+record, claim, native producer or original JSON/XZ SHA256 is changed.
+
+Git contains `shared/records.json` and `shared/objects.zip.xz`, not a second
+copy of those 67 original archives. Their `.json` and `.json.xz` paths are
+ignored local caches. Smaller unregistered evidence keeps its existing storage.
+The shared ZIP uses uncompressed content-addressed members inside a single XZ
+stream so compression can also exploit repetition across objects.
+
+From a fresh checkout, restore just this campaign before using its frozen
+standalone readers:
+
+```sh
+.venv/bin/python scripts/evidence_storage.py restore --archives-only --prefix implementation/phase-9-grcv4/tranche-8/crg2b-native/
+.venv/bin/python scripts/evidence_storage.py verify --prefix implementation/phase-9-grcv4/tranche-8/crg2b-native/
+```
+
+Omit `--archives-only` to restore expanded JSON too. The C_RG2b side-tool and
+current phase-boundary check perform the necessary restoration automatically.
+The shared archive, object hashes, reconstructed record sizes/hashes and original
+transport hashes are checked. Edited local copies are rejected, never overwritten.
+Restoration and verification execute no numerical solver. Legacy consumers still
+parse the reconstructed originals; reduced parsing time is not claimed.
+
+**Transport compatibility:** JSON reconstruction assembles stored byte fragments
+and is independent of the XZ encoder. Reconstructing the original transport SHA
+uses stdlib liblzma, XZ/CRC64, preset 6. If another encoder version emits different
+bytes, restoration fails explicitly rather than silently changing the transport
+identity. The exact JSON remains reconstructible through `Store.raw`; the frozen
+legacy checker then needs an encoder reproducing the pinned XZ bytes. The store
+does not require any original machine-local paths or external data service.
+
+For future explicit, uncommitted selections, use `deduplicate <logical paths...>
+--store-directory <repo-relative directory>` after `pack`. The tool checks every
+original JSON and XZ round trip before registering the shared store, retains all
+original manifest rows, and ignores the reconstructed transport paths. It refuses
+already tracked evidence or repeat migration. This is storage maintenance, not
+a new execution or acceptance campaign.
+
+### Ordinary packing
+
 ```bash
 python scripts/evidence_storage.py pack path/to/new-large-result.json
 git rm --cached -- path/to/previously-tracked-large-result.json
@@ -134,7 +184,7 @@ Refresh the applicable phase bindings after changing storage or documentation.
 After staging the intended changes, run these checks from the repository root:
 
 ```bash
-python -m unittest tests.test_evidence_storage -q
+python -m unittest tests.test_evidence_storage tests.test_evidence_dedup -q
 python scripts/evidence_storage.py check
 git diff --cached --check
 ```

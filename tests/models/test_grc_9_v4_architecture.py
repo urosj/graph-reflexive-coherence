@@ -54,10 +54,10 @@ def predecessor():
 class ArchitectureTests(unittest.TestCase):
     def test_execution_selection_is_independent(self):
         expected = GRC9V4.execution_scope()
-        with patch.dict(enabled._OWNERS, A_CI_PC=events.GRC9V4ACIPCOperation):
+        with patch.dict(enabled._OWNERS, A_RG2b=events.GRC9V4ARG2bOperation):
             self.assertEqual(GRC9V4.execution_scope(), expected)
             with self.assertRaises(public.GRC9V4ExecutionUnavailable):
-                public.GRC9V4PublicOperation.require_execution("A_CI_PC")
+                public.GRC9V4PublicOperation.require_execution("A_RG2b")
         with patch.dict(enabled._OWNERS, {}, clear=True):
             with self.assertRaises(RuntimeError):
                 GRC9V4.execution_scope()

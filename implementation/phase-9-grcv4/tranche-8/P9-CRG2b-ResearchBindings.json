@@ -1,0 +1,27 @@
+{
+  "schema": "p9-crg2b-research-bindings-v1",
+  "artifacts": {
+    "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-CompletionFeasibility.json": "2ad2009b6bdc222ab3d7fdc0df808af80940821811db852b6e67df7b42b83b87",
+    "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-SectionFeasibility.json.xz": "47eb3380d5178ae868fa04e0b70f3612e502799241e712b798d6731c6778f4e8",
+    "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-Authority.json": "844ad2940445f0aef9151a7852352da00520c49160a601c35179024e5e6019e7"
+  },
+  "authority_sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DebtClaimTransformationLedger.json",
+      "sha256": "68190c133d8bda7067dfb4cb9b55980e578ce02051bc5d24066b0349f6f8a23a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+      "sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+      "sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f"
+    }
+  ],
+  "record_digest": "38f11c7eab3f35e2ba8f979fa9465db1b3b16b238a539cc62699dbb281cb8502"
+}

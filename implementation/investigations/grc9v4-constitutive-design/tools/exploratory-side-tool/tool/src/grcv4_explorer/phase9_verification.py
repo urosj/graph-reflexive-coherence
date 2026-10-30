@@ -29,6 +29,12 @@ def _policy(root):
 
 def _profile_next_gate(views):
     """Display only: consume checked materializer views, never grant authority."""
+    if 'arg2b_work' in views:
+        return views['arg2b_work']['next_work']
+    if 'crg2b_work' in views:
+        return views['crg2b_work']['next_work']
+    if 'acipc_work' in views:
+        return views['acipc_work']['next_work']
     if 'ccipc_work' in views:
         return views['ccipc_work']['next_work']
     if 'cpc_work' in views:
@@ -172,6 +178,12 @@ def verification_status(repo_root: Path) -> dict:
             profile_views['cpc_work'] = cpc_status(root)
             from .ccipc import ccipc_status
             profile_views['ccipc_work'] = ccipc_status(root)
+            from .acipc import acipc_status
+            profile_views['acipc_work'] = acipc_status(root)
+            from .arg2b import arg2b_status
+            profile_views['arg2b_work'] = arg2b_status(root)
+            from .crg2b import crg2b_status
+            profile_views['crg2b_work'] = crg2b_status(root)
             # current_boundary authenticated these rows; the end-of-read check
             # rejects concurrent changes. Do not repeat the whole policy chain.
             work = {r['path']: r for r in module.read(root / module.WORK)['entries']}

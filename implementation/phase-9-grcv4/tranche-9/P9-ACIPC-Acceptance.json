@@ -1,0 +1,81 @@
+{
+  "schema": "p9-acipc-acceptance-v1",
+  "family": "A_CI_PC",
+  "realization_number": 8,
+  "reviewed_commit": "e3e7f91a",
+  "accepted_date": "2026-10-30",
+  "acceptance_basis": "Explicit user instruction: accept and commit",
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Review.json",
+    "sha256": "7fe9d1492e358890b084d7d43397dd989a19bc1255e47b671d5b43e84e86a245",
+    "record_digest": "e0d383e67f105375437365c207f58ecdc7cb843bf82138514d58ec1a8c8eb1a8"
+  },
+  "validation": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-9/P9-ACIPC-Validation.json",
+      "sha256": "9c155e78066667490dfa7e6fe62360b323f288e93cec1919135a2f0e37286e6b",
+      "record_digest": "d5a847d606cfa32a5edc03c611bcbf53308cca35d305661fded10396e5380c21"
+    }
+  ],
+  "source_epochs": {
+    "path": "implementation/phase-9-grcv4/tranche-9/P9-ACIPC-AcceptanceSources.json",
+    "sha256": "3380102650a718ededa712b47537b30a577e267f24c7c6f682021c4a6df005b6"
+  },
+  "checkpoints": [
+    "8.4d",
+    "8.4e",
+    "8.4f",
+    "8.4g",
+    "8.4h",
+    "8.4i",
+    "8.5",
+    "8.6",
+    "tranche8_end",
+    "9.1b",
+    "9.2",
+    "9.3",
+    "9.4a",
+    "9.4b",
+    "9.5",
+    "9.6"
+  ],
+  "user_accepted": true,
+  "bounded_scope_closed": true,
+  "compatibility_counts": {
+    "bounded_accepted": 32,
+    "passed_pending_acceptance": 0,
+    "unselected_not_executed": 8
+  },
+  "original_large_target_roles_excluded": [
+    "reset"
+  ],
+  "successful_companion_accepted": true,
+  "first_companion_event_credit": false,
+  "large_covariance_selected": [
+    "combined",
+    "reflect",
+    "rotate"
+  ],
+  "large_covariance_deferred_unexecuted": [
+    "edge_order",
+    "node_order",
+    "relabel",
+    "signed",
+    "rotate_twice"
+  ],
+  "optional_completion": "unselected",
+  "tranche10": "deferred",
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "retained_limits": [
+    "pointwise_joint_CI_PC_certificates_and_update_bounds_not_uniform_trajectory",
+    "expanded_target_compatibility_not_inherited",
+    "four_contracts_indeterminate_requires_review",
+    "A_CI_PC_basin_unselected",
+    "two_remaining_RG2b_realizations_unselected",
+    "five_large_covariance_cases_deferred_unexecuted",
+    "first_companion_charge_failure_no_event_credit",
+    "two_distinct_deep_source_witnesses_original_exclusions_preserved"
+  ],
+  "record_digest": "6d793202d07e1057cbc43297a9ae539e5475898fe6b5b060dae50c7770022c6f"
+}

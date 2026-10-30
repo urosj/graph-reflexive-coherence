@@ -170,15 +170,29 @@ SOURCES.update({'implementation/phase-9-grcv4/verification/phase9_specialization
 SOURCES.update({'tests/models/test_grc_9_v4_architecture.py': {'current_sha256': '125ea80cca75bbd7382bbf3cf79a1f5925fc117845ff4aed9d6f1e355cf24ea0',
                                                 'predecessors': {'bfb9be1c4ce4e909d8a695da1f5a395e40e0416262d64cb3434b9c01306363fb': '02528b5d'}}})
 
+SOURCES.update({'tests/models/test_grc_9_v4_owner.py': {
+    'current_sha256': 'fc4b201c7e7a6d2d7886969ea6275ade39611f48701936e54b1b48563cd8e134',
+    'predecessors': {'fc4b201c7e7a6d2d7886969ea6275ade39611f48701936e54b1b48563cd8e134': 'b61b60be'}}})
+SOURCES.update({'tests/models/test_grc_9_v4_crossing.py': {
+    'current_sha256': '97eeb6b09529d044c081107f49e2fd2e886946d4128573380bbe7795a683071c',
+    'predecessors': {'97eeb6b09529d044c081107f49e2fd2e886946d4128573380bbe7795a683071c': '7b16696a'}}})
+
+
 def historical_source(root, name, expected):
     row = SOURCES.get(name)
-    if row is None or expected not in row["predecessors"]:
+    if row is None or expected not in {row["current_sha256"], *row["predecessors"]}:
         return None
     root = Path(root).resolve()
     current = (root / name).read_bytes()
     from p9_cpc_historical import project_sha
-    if project_sha(root,name,hashlib.sha256(current).hexdigest()) != row["current_sha256"]:
+    from p9_acipc_historical import peel_sha
+    present = peel_sha(root,name,hashlib.sha256(current).hexdigest())
+    if project_sha(root,name,present) != row["current_sha256"]:
         return None
+    # A later, exact source epoch can move even this adapter's current subject.
+    # The checked projection above authenticates that original subject too.
+    if expected == row["current_sha256"]:
+        return expected
     original = subprocess.check_output(
         ["git", "show", row["predecessors"][expected] + ":" + name], cwd=root
     )

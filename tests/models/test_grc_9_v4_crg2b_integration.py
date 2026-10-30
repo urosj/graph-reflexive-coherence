@@ -1,0 +1,165 @@
+"""Ninth-realization integration using the same native obligations as the first eight.
+
+Only fixture providers are adapted. Native kernels, delegates, operation owners,
+receipts, and independent parity comparisons execute unchanged.
+"""
+
+from copy import deepcopy
+from dataclasses import replace
+import json
+import unittest
+from unittest.mock import patch
+
+from pygrc.models import GRC9V4
+from pygrc.models.grc_9_v4_legacy import LegacyDelegateBinding
+from pygrc.models.grc_v4_numerics import ExactBackend, NumericalPolicy, exact_backend, numerical_policy
+import p9_crg2b_campaign as source
+from tests.models import test_grc_9_v4_owner as lifecycle
+from tests.models import test_grc_9_v4_legacy as legacy
+from tests.models import test_grc_9_v4_crossing as crossing
+from tests.models import test_grc_9_v4 as public
+import test_p995_public_conflict as conflict
+
+
+def seed():
+    m=source.read(source.INPUTS)
+    return source.r.state(m['source']), source.b.GRC9V4ExpansionRequestInput.from_payload(next(c for c in m['small_cases'] if c['request']['target_effective_degree']==52 and c['request']['growth_phase']==1 and c['request']['module_chirality']==1)['request'])
+
+
+def legacy_config(family, *, prune=False):
+    # The same independently specified legacy workload, bound to C_RG2b's own
+    # exact profile/specialization; legacy dynamics have no V4 family selector.
+    return legacy.config("C_OS" if family == "C_RG2b" else family, prune=prune)
+
+
+class CRG2bLifecycle(lifecycle.EnabledLifecycleTests):
+    FAMILY = "C_RG2b"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.seed, cls.expansion = seed()
+
+    def test_ordinary_source_evolution_invalidates_old_event_binding(self):
+        owner = self.owner()
+        result = owner.step_v4(lifecycle.request("crg2b-source-beat"))
+        self.assertTrue(result.committed, result.failure)
+        before = owner.snapshot()
+        pointer = owner._published
+        self.assertFalse(owner.expand(self.expansion).committed)
+        self.assertIs(owner._published, pointer)
+        self.assertEqual(owner.snapshot(), before)
+        fresh = replace(self.expansion, source_state_digest=owner.state.scientific_digest)
+        self.assertTrue(owner.expand(fresh).committed)
+        self.assertEqual(len(self.assertChain(owner)), 2)
+        lifecycle.OBSERVATIONS.setdefault(self.FAMILY, {})["source_beat_then_bound_event"] = True
+
+
+class CRG2bCompatibility(legacy.CompatibilityTests):
+    FAMILY = "C_RG2b"
+
+    @classmethod
+    def setUpClass(cls):
+        state, _ = seed()
+        cls.bound = LegacyDelegateBinding(state.inputs.geometry.reference.profile, state.specialization)
+        # Keep the provider independent of the patched name, with no native
+        # producer replacement.
+        original = legacy.config
+        cls._patcher = patch.object(legacy, "config", lambda family, **kw: original("C_OS" if family == "C_RG2b" else family, **kw))
+        cls._patcher.start()
+        cls.addClassCleanup(cls._patcher.stop)
+
+
+class CRG2bCrossing(crossing.CrossingTests):
+    FAMILY = "C_RG2b"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.seed, _ = seed()
+        cls.ref = cls.seed.inputs.geometry.reference
+        cls._patcher = patch.object(crossing, "config", legacy_config)
+        cls._patcher.start()
+        cls.addClassCleanup(cls._patcher.stop)
+
+
+class CRG2bPublic(public.PublicTests):
+    FAMILY = "C_RG2b"
+
+    @classmethod
+    def setUpClass(cls):
+        state, request = seed()
+        cls.cfg = dict(initial=state.to_payload(), exact_backend="flint", numerical_policy="legacy_exact_v1")
+        original = public.seed
+        def fixture(family):
+            if family != "C_RG2b":
+                return original(family)
+            return dict(initial=state.to_payload(), journal=[dict(kind="expand", request=request.to_payload())])
+        for patcher in (patch.object(public, "seed", fixture), patch.object(public, "native_config", legacy_config)):
+            patcher.start()
+            cls.addClassCleanup(patcher.stop)
+
+    def test_profile_migration_and_atomic_negative_paths(self):
+        target = public.GRCV4ReferenceGeometry.from_payload(
+            public.configuration("C_OS")["initial"]["inputs"]["reference"]
+        )
+        model = GRC9V4.from_config(dict(self.cfg, targets=[target.to_payload()]))
+        self.assertNotEqual(model.active_profile_id, target.profile.complete_profile_id)
+        incoming = model._operation._published.owner.state.inputs
+        request = public.migration_request(model, target)
+        before = model.snapshot()
+        pointer = model._operation._published
+        with patch.object(model._operation, "_publish", side_effect=RuntimeError("late publication")):
+            with self.assertRaises(RuntimeError):
+                model.migrate_profile(request)
+        self.assertIs(model._operation._published, pointer)
+        self.assertEqual(model.snapshot(), before)
+        result = model.migrate_profile(request)
+        self.assertTrue(result.committed, result.failure)
+        self.assertEqual(model.active_profile_id, target.profile.complete_profile_id)
+        following = model._operation._published.owner.state.inputs
+        self.assertEqual(following.current, incoming.current)
+        self.assertEqual(following.reset, incoming.reset)
+        migrated = model.snapshot()
+        self.assertEqual(model.duplicate().snapshot(), migrated)
+        self.assertFalse(model.migrate_profile(request).committed)
+        self.assertEqual(model.snapshot(), migrated)
+        self.assertFalse(model.step_v4_input(public.step_request("negative-duration", -1)).committed)
+        self.assertEqual(model.snapshot(), migrated)
+        tamper = deepcopy(migrated)
+        tamper["owner"]["receipts"][0]["receipt_id"] = "grc-receipt-sha256:" + "0" * 64
+        with self.assertRaises(ValueError):
+            model.set_state(replace(model.state, checkpoint=json.dumps(tamper).encode()))
+        self.assertEqual(model.snapshot(), migrated)
+        with self.assertRaises(TypeError):
+            model.apply_topology_event({})
+        public.EVIDENCE["profile_migration"] = dict(target_family="C_OS", committed=True,
+            complete_profile_changed=True, both_histories_preserved=True, exact_replay=True,
+            late_failure_atomic=True, stale_source_rejected=True, tampered_state_rejected=True,
+            negative_duration_rejected=True)
+
+    def test_crg2b_scope_does_not_enable_remaining_families_or_basin_policy(self):
+        self.assertEqual(set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"})
+        model = self.model()
+        self.assertFalse(model.support_status()["full_GRC9V4_conformance"])
+        before = model.snapshot()
+        try:
+            result = model.migrate_basin_policy("crg2b-unselected-basin")
+        except ValueError:
+            pass
+        else:
+            self.assertFalse(result.committed)
+        self.assertEqual(model.snapshot(), before)
+        public.EVIDENCE["scope"] = dict(execution_families=list(GRC9V4.execution_scope()),
+            C_RG2b_basin_migration_rejected=True, whole_publication_unchanged=True,
+            full_GRC9V4_conformance=False)
+
+
+class CRG2bConflict(conflict.ConflictTests):
+    FAMILY = "C_RG2b"
+
+    @classmethod
+    def setUpClass(cls):
+        CRG2bPublic.setUpClass.__func__(cls)
+
+
+if __name__ == "__main__":
+    unittest.main()

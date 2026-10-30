@@ -1,0 +1,182 @@
+"""Eighth-realization integration using the same native obligations as the first seven.
+
+Only fixture providers are adapted. Native kernels, delegates, operation owners,
+receipts, and independent parity comparisons execute unchanged.
+"""
+
+from copy import deepcopy
+from dataclasses import replace
+import json
+import unittest
+from unittest.mock import patch
+
+from pygrc.models import GRC9V4
+from pygrc.models.grc_9_v4_legacy import LegacyDelegateBinding
+from pygrc.models.grc_v4_numerics import ExactBackend, NumericalPolicy, exact_backend, numerical_policy
+from tests.models import test_grc_9_v4_acipc as source
+from pygrc.models.grc_9_v4_expansion import apc_history_policy
+from tests.models import test_grc_9_v4_owner as lifecycle
+from tests.models import test_grc_9_v4_legacy as legacy
+from tests.models import test_grc_9_v4_crossing as crossing
+from tests.models import test_grc_9_v4 as public
+import test_p995_public_conflict as conflict
+
+
+def seed():
+    with exact_backend(ExactBackend.FLINT), numerical_policy(NumericalPolicy.LEGACY_EXACT):
+        return source.fixture(json.loads(source.RECORD.read_text()))
+
+
+def legacy_config(family, *, prune=False):
+    # The same independently specified legacy workload, bound to A_CI_PC's own
+    # exact profile/specialization; legacy dynamics have no V4 family selector.
+    return legacy.config("A_PC" if family == "A_CI_PC" else family, prune=prune)
+
+
+class ACIPCLifecycle(lifecycle.EnabledLifecycleTests):
+    FAMILY = "A_CI_PC"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.seed, cls.expansion = seed()
+
+    def test_ordinary_source_evolution_invalidates_old_event_binding(self):
+        owner = self.owner()
+        result = owner.step_v4(lifecycle.request("acipc-source-beat"))
+        self.assertTrue(result.committed, result.failure)
+        before = owner.snapshot()
+        pointer = owner._published
+        self.assertFalse(owner.expand(self.expansion).committed)
+        self.assertIs(owner._published, pointer)
+        self.assertEqual(owner.snapshot(), before)
+        fresh = replace(self.expansion, source_state_digest=owner.state.scientific_digest,
+                        history_policy=apc_history_policy(owner.state.inputs.current, owner.state.inputs.reset))
+        self.assertTrue(owner.expand(fresh).committed)
+        self.assertEqual(len(self.assertChain(owner)), 2)
+        lifecycle.OBSERVATIONS.setdefault(self.FAMILY, {})["source_beat_then_bound_event"] = True
+
+
+class ACIPCCompatibility(legacy.CompatibilityTests):
+    FAMILY = "A_CI_PC"
+
+    @classmethod
+    def setUpClass(cls):
+        state, _ = seed()
+        cls.bound = LegacyDelegateBinding(state.inputs.geometry.reference.profile, state.specialization)
+        # Keep the provider independent of the patched name, with no native
+        # producer replacement.
+        original = legacy.config
+        cls._patcher = patch.object(legacy, "config", lambda family, **kw: original("A_PC" if family == "A_CI_PC" else family, **kw))
+        cls._patcher.start()
+        cls.addClassCleanup(cls._patcher.stop)
+
+
+class ACIPCCrossing(crossing.CrossingTests):
+    FAMILY = "A_CI_PC"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.seed, _ = seed()
+        cls.ref = cls.seed.inputs.geometry.reference
+        cls._patcher = patch.object(crossing, "config", legacy_config)
+        cls._patcher.start()
+        cls.addClassCleanup(cls._patcher.stop)
+
+
+class ACIPCPublic(public.PublicTests):
+    FAMILY = "A_CI_PC"
+
+    @classmethod
+    def setUpClass(cls):
+        state, request = seed()
+        cls.cfg = dict(initial=state.to_payload(), exact_backend="flint", numerical_policy="legacy_exact_v1")
+        original = public.seed
+        def fixture(family):
+            if family != "A_CI_PC":
+                return original(family)
+            return dict(initial=state.to_payload(), journal=[dict(kind="expand", request=request.to_payload())])
+        for patcher in (patch.object(public, "seed", fixture), patch.object(public, "native_config", legacy_config)):
+            patcher.start()
+            cls.addClassCleanup(patcher.stop)
+
+    def test_profile_migration_and_atomic_negative_paths(self):
+        payload = deepcopy(public.configuration("C_OS")["initial"]["inputs"]["reference"])
+        payload["graph"] = deepcopy(self.cfg["initial"]["inputs"]["reference"]["graph"])
+        weights = {edge["edge_id"]: 1 for edge in payload["graph"]["edges"]}
+        payload["reference_hodge"]["edge_weights"] = weights
+        params = payload["profile"]["params_resolved"]
+        params["candidate"]["W_C_tr"] = weights.copy()
+        params["candidate"]["W_C_tr_content_digest"] = source.payload_identity(
+            "wctr_identity_payload", dict(schema_version="grcv4-wctr-identity-v1", W_C_tr=weights))
+        params["geometry"]["reference_hodge_digest"] = source.payload_identity(
+            "reference_hodge_identity_payload", payload["reference_hodge"])
+        identity = payload["profile"]["identity_payload"]
+        identity["params_hash"] = source.payload_identity("resolved_params", params)
+        payload["profile"] = source.resolve_profile(params, identity).to_payload()
+        target = public.GRCV4ReferenceGeometry.from_payload(payload)
+        model = GRC9V4.from_config(dict(self.cfg, targets=[target.to_payload()]))
+        self.assertNotEqual(model.active_profile_id, target.profile.complete_profile_id)
+        incoming = model._operation._published.owner.state.inputs
+        request = public.migration_request(model, target)
+        before = model.snapshot()
+        pointer = model._operation._published
+        with patch.object(model._operation, "_publish", side_effect=RuntimeError("late publication")):
+            with self.assertRaises(RuntimeError):
+                model.migrate_profile(request)
+        self.assertIs(model._operation._published, pointer)
+        self.assertEqual(model.snapshot(), before)
+        result = model.migrate_profile(request)
+        self.assertTrue(result.committed, result.failure)
+        self.assertEqual(model.active_profile_id, target.profile.complete_profile_id)
+        following = model._operation._published.owner.state.inputs
+        self.assertEqual(following.current.C, incoming.current.C)
+        self.assertEqual(following.reset.C, incoming.reset.C)
+        for role in ("current", "reset"):
+            self.assertIsNone(getattr(following, role).Z_4)
+            self.assertIsNone(getattr(following, role).W_A)
+        self.assertEqual(set(result.emitted_receipts[0].identity_payload["core"]["information_losses"]), {"candidate_history_loss","carrier_history_loss"})
+        migrated = model.snapshot()
+        self.assertEqual(model.duplicate().snapshot(), migrated)
+        self.assertFalse(model.migrate_profile(request).committed)
+        self.assertEqual(model.snapshot(), migrated)
+        self.assertFalse(model.step_v4_input(public.step_request("negative-duration", -1)).committed)
+        self.assertEqual(model.snapshot(), migrated)
+        tamper = deepcopy(migrated)
+        tamper["owner"]["receipts"][0]["receipt_id"] = "grc-receipt-sha256:" + "0" * 64
+        with self.assertRaises(ValueError):
+            model.set_state(replace(model.state, checkpoint=json.dumps(tamper).encode()))
+        self.assertEqual(model.snapshot(), migrated)
+        with self.assertRaises(TypeError):
+            model.apply_topology_event({})
+        public.EVIDENCE["profile_migration"] = dict(target_family="C_OS", committed=True,
+            complete_profile_changed=True, both_resource_histories_preserved=True, carrier_loss_receipted=True, candidate_loss_receipted=True, exact_replay=True,
+            late_failure_atomic=True, stale_source_rejected=True, tampered_state_rejected=True,
+            negative_duration_rejected=True)
+
+    def test_acipc_scope_does_not_enable_remaining_families_or_basin_policy(self):
+        self.assertEqual(set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"})
+        model = self.model()
+        self.assertFalse(model.support_status()["full_GRC9V4_conformance"])
+        before = model.snapshot()
+        try:
+            result = model.migrate_basin_policy("acipc-unselected-basin")
+        except ValueError:
+            pass
+        else:
+            self.assertFalse(result.committed)
+        self.assertEqual(model.snapshot(), before)
+        public.EVIDENCE["scope"] = dict(execution_families=list(GRC9V4.execution_scope()),
+            A_CI_PC_basin_migration_rejected=True, whole_publication_unchanged=True,
+            full_GRC9V4_conformance=False)
+
+
+class ACIPCConflict(conflict.ConflictTests):
+    FAMILY = "A_CI_PC"
+
+    @classmethod
+    def setUpClass(cls):
+        ACIPCPublic.setUpClass.__func__(cls)
+
+
+if __name__ == "__main__":
+    unittest.main()

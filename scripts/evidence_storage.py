@@ -6,6 +6,7 @@ import argparse
 import bz2
 import gzip
 import hashlib
+import importlib.util
 import io
 import json
 import lzma
@@ -15,6 +16,7 @@ import subprocess
 import tempfile
 import zipfile
 from pathlib import Path, PurePosixPath
+from functools import lru_cache
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = "artifact-storage.json"
@@ -51,11 +53,17 @@ def entries(root: Path) -> list[dict]:
         and type(value["max_git_file_bytes"]) is int
         and value["max_git_file_bytes"] == 10_000_000
     )
-    require(legacy or (
+    modern = (
         set(value) == {"schema", "compression_threshold_bytes", "files"}
         and value["schema"] == "exact-evidence-storage-v2"
         and type(value["compression_threshold_bytes"]) is int
-        and value["compression_threshold_bytes"] == LIMIT),
+        and value["compression_threshold_bytes"] == LIMIT)
+    shared = (
+        set(value) == {"schema", "compression_threshold_bytes", "files", "object_stores"}
+        and value["schema"] == "exact-evidence-storage-v3"
+        and type(value["compression_threshold_bytes"]) is int
+        and value["compression_threshold_bytes"] == LIMIT)
+    require(legacy or modern or shared,
         "unsupported evidence storage manifest",
     )
     rows = value["files"]
@@ -81,11 +89,74 @@ def entries(root: Path) -> list[dict]:
         )
         for key in ("sha256", "storage_sha256"):
             require(type(row[key]) is str and re.fullmatch(r"[0-9a-f]{64}", row[key]), "invalid hash")
+    if shared:
+        require(type(value["object_stores"]) is list and bool(value["object_stores"]), "invalid shared-store roster")
+        seen, known = set(), {r["path"] for r in rows}
+        for entry in value["object_stores"]:
+            require(type(entry) is dict and set(entry) == {"path", "sha256", "records"}
+                    and type(entry["sha256"]) is str and re.fullmatch(r"[0-9a-f]{64}", entry["sha256"])
+                    and type(entry["records"]) is list and bool(entry["records"])
+                    and all(type(n) is str for n in entry["records"]), "invalid shared-store entry")
+            safe_path(root, entry["path"])
+            selected = set(entry["records"])
+            require(len(selected) == len(entry["records"]) and selected <= known and not selected & seen,
+                    "duplicate or unknown shared records")
+            seen |= selected
     return rows
 
 
-def packed_bytes(root: Path, row: dict) -> bytes:
-    data = safe_path(root, row["storage_path"]).read_bytes()
+@lru_cache(maxsize=1)
+def shared_module():
+    spec = importlib.util.spec_from_file_location("repository_evidence_dedup", Path(__file__).with_name("evidence_dedup.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def shared_stores(root, rows, *, prefix=""):
+    value = json.loads(safe_path(root, MANIFEST).read_bytes())
+    selected = {r["path"] for r in rows if r["path"].startswith(prefix)}
+    result = {}
+    for entry in value.get("object_stores", []):
+        if not selected.intersection(entry["records"]):
+            continue
+        store = shared_module().Store(root, {k: entry[k] for k in ("path", "sha256")}, rows)
+        require(set(store.records) == set(entry["records"]), "shared-store coverage drift")
+        result.update({name: store for name in entry["records"]})
+    return result
+
+
+def publish_bytes(target, raw):
+    """Atomic creation only; an existing edited cache is never overwritten."""
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(dir=target.parent, delete=False) as stream:
+        temporary = Path(stream.name)
+        stream.write(raw); stream.flush(); os.fsync(stream.fileno())
+    try:
+        try:
+            os.link(temporary, target)
+            return True
+        except FileExistsError:
+            require(not target.is_symlink() and target.read_bytes() == raw,
+                    "existing reconstructed archive drift; refusing overwrite")
+            return False
+    finally:
+        temporary.unlink()
+
+
+def packed_bytes(root: Path, row: dict, *, stores=None, materialize=False) -> bytes:
+    if stores is None:
+        stores = shared_stores(root, entries(root), prefix=row["path"])
+    store = stores.get(row["path"])
+    raw = store.raw(row) if store else None  # Authenticate shared storage even with a good local cache.
+    target = safe_path(root, row["storage_path"])
+    if target.exists():
+        data = target.read_bytes()
+    else:
+        require(store is not None, "missing compressed evidence: " + row["storage_path"])
+        data = store.xz(row, raw)
+        if materialize:
+            publish_bytes(target, data)
     require(len(data) == row["storage_size"] and sha(data) == row["storage_sha256"],
             "compressed evidence drift: " + row["storage_path"])
     return data
@@ -117,20 +188,24 @@ def write_metadata(path: Path, text: str) -> None:
         temporary.unlink(missing_ok=True)
 
 
-def restore(root: Path = ROOT, *, prefix: str = "") -> dict:
+def restore(root: Path = ROOT, *, prefix: str = "", expanded: bool = True) -> dict:
     """Restore missing files atomically; never overwrite an edited local result.
 
     Existing files and compressed sources are authenticated on every call.
     The separate verify command always decompresses every archive as well.
     """
     root = Path(root)
-    rows = [row for row in entries(root) if row["path"].startswith(prefix)]
+    all_rows = entries(root)
+    stores = shared_stores(root, all_rows, prefix=prefix)
+    rows = [row for row in all_rows if row["path"].startswith(prefix)]
     restored = 0
     for row in rows:
-        packed = packed_bytes(root, row)
+        packed = packed_bytes(root, row, stores=stores, materialize=True)
         path = safe_path(root, row["path"])
         if path.exists():
             check_expanded(path, row)
+            continue
+        if not expanded:
             continue
         raw = unpack(packed, row)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -152,16 +227,21 @@ def restore(root: Path = ROOT, *, prefix: str = "") -> dict:
     return {"files": len(rows), "restored": restored}
 
 
-def verify(root: Path = ROOT) -> dict:
+def verify(root: Path = ROOT, *, prefix: str = "") -> dict:
     root = Path(root)
-    rows = entries(root)
+    all_rows = entries(root)
+    stores = shared_stores(root, all_rows, prefix=prefix)
+    rows = [row for row in all_rows if row["path"].startswith(prefix)]
     for row in rows:
-        unpack(packed_bytes(root, row), row)
+        unpack(packed_bytes(root, row, stores=stores), row)
         path = safe_path(root, row["path"])
         if path.exists():
             check_expanded(path, row)
+    unique = {id(store): store for store in stores.values()}
+    stored = sum(r["storage_size"] for r in rows if r["path"] not in stores)
+    stored += sum(s.manifest["archive"]["size"] + s.manifest_size for s in unique.values())
     return {"files": len(rows), "original_bytes": sum(r["size"] for r in rows),
-            "stored_bytes": sum(r["storage_size"] for r in rows), "byte_exact": True}
+            "stored_bytes": stored, "byte_exact": True}
 
 
 def git_size_check(root: Path = ROOT) -> dict:
@@ -271,8 +351,11 @@ def pack(root: Path, names: list[str]) -> dict:
                 stream.write(packed)
         rows.append(row)
         registered[name] = row
+    previous = json.loads(manifest.read_bytes()) if manifest.exists() else {}
     value = {"schema": "exact-evidence-storage-v2", "compression_threshold_bytes": LIMIT,
              "files": sorted(rows, key=lambda r: r["path"])}
+    if previous.get("object_stores"):
+        value.update(schema="exact-evidence-storage-v3", object_stores=previous["object_stores"])
     write_metadata(manifest, json.dumps(value, indent=2) + "\n")
     ignore = safe_path(root, ".gitignore")
     content = ignore.read_text() if ignore.exists() else ""
@@ -291,11 +374,65 @@ def pack(root: Path, names: list[str]) -> dict:
             "next_step": "For previously tracked raw files, git rm --cached -- <path>; keep the local file."}
 
 
+def deduplicate(root: Path, names: list[str], directory: str) -> dict:
+    """Deduplicate explicit uncommitted subjects, preserving all original hashes."""
+    root = Path(root).resolve(); rows = entries(root); chosen = {n for n in names}
+    require(len(chosen) == len(names) and bool(names), "duplicate/empty deduplication selection")
+    selected = [r for r in rows if r["path"] in chosen]
+    require(len(selected) == len(chosen), "unregistered deduplication subject")
+    if (root / ".git").exists():
+        tracked = subprocess.check_output(["git", "ls-files", "--", *names,
+            *[r["storage_path"] for r in selected]], cwd=root)
+        require(not tracked, "this migration only accepts uncommitted evidence")
+    value = json.loads(safe_path(root, MANIFEST).read_bytes())
+    require(not any(chosen.intersection(x["records"]) for x in value.get("object_stores", [])),
+            "subject already belongs to a shared store")
+    manifest_name = directory + "/records.json"
+    if safe_path(root, manifest_name).exists():
+        descriptor = dict(path=manifest_name, sha256=sha(safe_path(root, manifest_name).read_bytes()))
+        store = shared_module().Store(root, descriptor, selected)
+        require(set(store.records) == chosen, "existing store has different subjects")
+        for row in selected:
+            require(store.xz(row) == packed_bytes(root, row), "prebuilt store does not reconstruct original")
+    else:
+        descriptor = shared_module().build(root, selected, directory)
+        store = shared_module().Store(root, descriptor, selected)
+    descriptor["records"] = sorted(chosen)
+    value.update(schema="exact-evidence-storage-v3", compression_threshold_bytes=LIMIT,
+                 object_stores=[*value.get("object_stores", []), descriptor])
+    value.pop("max_git_file_bytes", None)
+    write_metadata(safe_path(root, MANIFEST), json.dumps(value, indent=2) + "\n")
+    ignore = safe_path(root, ".gitignore")
+    text = ignore.read_text() if ignore.exists() else ""
+    rules = []
+    for row in selected:
+        name = row["storage_path"]
+        for token in ("[", "]", "*", "?"):
+            name = name.replace(token, "\\" + token)
+        if "/" + name not in text.splitlines():
+            rules.append("/" + name)
+    if rules:
+        write_metadata(ignore, text.rstrip() + "\n\n# Reconstructed transport archives; shared objects are tracked.\n"
+                       + "\n".join(rules) + "\n")
+    return dict(records=len(selected), original_bytes=sum(r["size"] for r in selected),
+                previous_archive_bytes=sum(r["storage_size"] for r in selected),
+                shared_bytes=store.manifest["archive"]["size"] + safe_path(root, manifest_name).stat().st_size,
+                manifest=manifest_name, numerical_reruns=0)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("restore", "verify", "check", "pack"))
+    parser.add_argument("action", choices=("restore", "verify", "check", "pack", "deduplicate"))
     parser.add_argument("paths", nargs="*")
+    parser.add_argument("--prefix", default="")
+    parser.add_argument("--store-directory")
+    parser.add_argument("--archives-only", action="store_true")
     args = parser.parse_args()
+    if args.action == "deduplicate":
+        if not args.paths or not args.store_directory:
+            parser.error("deduplicate requires explicit paths and --store-directory")
+        print(json.dumps(deduplicate(ROOT, args.paths, args.store_directory), indent=2))
+        return
     if args.action == "pack":
         if not args.paths:
             parser.error("pack requires explicit artifact paths")
@@ -303,7 +440,7 @@ def main() -> None:
         return
     if args.paths:
         parser.error("paths apply only to pack")
-    result = restore() if args.action == "restore" else verify()
+    result = restore(prefix=args.prefix, expanded=not args.archives_only) if args.action == "restore" else verify(prefix=args.prefix)
     if args.action == "check":
         result.update(git_size_check())
     print(json.dumps(result, indent=2))

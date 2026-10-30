@@ -1,0 +1,132 @@
+{
+  "schema": "p9-arg2b-acceptance-v1",
+  "family": "A_RG2b",
+  "realization_number": 10,
+  "accepted_date": "2026-10-30",
+  "acceptance_basis": "Explicit user instruction: great, then accept and commit",
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-8/arg2b-native/Review.json",
+    "sha256": "aab4e60cd6ec2496a4a607f68c6c857d4980919b7ae4a73a4b99b6883ec6958a",
+    "record_digest": "bea45c828bfce440ad70cf1b80d83301e4f35a9fdce48666748994d2227fbbff"
+  },
+  "support": {
+    "path": "implementation/phase-9-grcv4/tranche-8/arg2b-native/9.6-Support.json",
+    "sha256": "9f7fad1f52c43e8cb17a8ee6fe1848d9920ebcdd5411ee218b0024e9e1adff84",
+    "record_digest": "5f4e389474c221eacd90a3b1b93cd956d5255d1bb3951b811eec2acd6d66acd2"
+  },
+  "matrix": {
+    "path": "implementation/phase-9-grcv4/tranche-8/arg2b-native/9.3-Matrix.json",
+    "sha256": "9faed52db2c20838bf0e9464d54cd68cd9d24dc2a8c08ce492a23fa1f2da9165",
+    "record_digest": "267415f69c8302110646cbf8ef13e73910e402b8719e4915ea0966417fd2c797"
+  },
+  "completion_release": {
+    "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-ConnectedCompletionRelease.json",
+    "sha256": "8bbbbae7c047970e3a0ef4eb815b315d6cca2f5cf9d747de00427395a2c7530e",
+    "record_digest": "0a64c5a99590f3e08f5911835d770641f9d2921fa55c874531bf9bda7d2b119c"
+  },
+  "storage": {
+    "path": "implementation/phase-9-grcv4/tranche-8/arg2b-native/shared/records.json",
+    "sha256": "f9a5c356592fb0e4b9f2668c461e58cca830d490b9c1fbbca8f8fc98721502fe"
+  },
+  "checkpoints": [
+    "8.4d",
+    "8.4e",
+    "8.4f",
+    "8.4g",
+    "8.4h",
+    "8.4i",
+    "8.5",
+    "8.6",
+    "tranche8_end",
+    "9.1b",
+    "9.2",
+    "9.3",
+    "9.4a",
+    "9.4b",
+    "9.5",
+    "9.6"
+  ],
+  "user_accepted": true,
+  "bounded_scope_closed": true,
+  "compatibility_counts": {
+    "bounded_accepted": 40,
+    "passed_pending_acceptance": 0,
+    "unselected_not_executed": 0
+  },
+  "completion_policy": "grc9v4_a_rg2b_connected_signed_argument_completion_v1",
+  "large_covariance_selected": [
+    "combined",
+    "reflect",
+    "rotate"
+  ],
+  "large_covariance_deferred_unexecuted": [
+    "edge_order",
+    "node_order",
+    "relabel",
+    "signed",
+    "rotate_twice"
+  ],
+  "first_large_beat_event_credit": false,
+  "second_large_beat_event_and_replay_accepted": true,
+  "C1_regularity_debt": "narrowed_unresolved",
+  "uniform_trajectory_enclosure": false,
+  "expanded_target_four_surface_compatibility": "not_transferred_from_source",
+  "basin_policy": "unselected",
+  "remaining_family": null,
+  "tranche10": "deferred",
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "original_execution_relabelled": false,
+  "deduplicated_storage_accepted": true,
+  "reviewed_commit": "fd23970b",
+  "native_runtime_changed_by_acceptance": false,
+  "original_reset_exclusion_preserved": true,
+  "D94_componentwise_frontier_certificate": true,
+  "acceptance_sources": {
+    "implementation/Phase-9-GRCV4-Handoff.md": {
+      "before_sha256": "944be180edb94544fdeb2efc69aa0bb9f564170145a820f46d0412d46132e578",
+      "after_sha256": "011a4f1531785fd21b03d0456c134e77c4d0d8c106308a9265292a9580f09bce"
+    },
+    "implementation/Phase-9-GRCV4-ImplementationChecklist.md": {
+      "before_sha256": "0392fa18d1f0aa9032869075c475dad8e7489236d246cf6aff6cabd889940e83",
+      "after_sha256": "de1311c66dcd5e95b190a73048cfcf2fedbf34c951565cbf124a5e46cd1695eb"
+    },
+    "implementation/Phase-9-GRCV4-ImplementationPlan.md": {
+      "before_sha256": "6ced479d32fc350928f3cd29300e0754060b05d6b6f325355c5b1b6be9f00a8f",
+      "after_sha256": "9bfec26db48798de2a4f251bf53411804128352c2375be2d212c579f1ac0de81"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md": {
+      "before_sha256": "26932b29cdd0ac94049b7e5704c39b2da99ff201177e8941f2643fd94e3d91ee",
+      "after_sha256": "4dc353ccb4866ab8edb92df2525f6e4bc78cf330b43b5b17e1f244092f949161"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md": {
+      "before_sha256": "3f892b8d1b07fe21d0378727e576bc885a95540ba66b4f2040694a89d023ac1a",
+      "after_sha256": "d69536737bcb28f8d0d88271a4d87cee4a6f2ede1b4cca00ddb0cc535db9ac1f"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/ARG2bTenthRealization.md": {
+      "before_sha256": "b775cff35a5d319522791eb79699db80ed6e4c35226f15537c103b8968dd3a04",
+      "after_sha256": "ccaee2a4ebeece186215dd1c9a9fc35309f12cb28233d909df6bd6c05b781d8c"
+    },
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/arg2b.py": {
+      "before_sha256": "a6a75f0a99ab914ed37ce003cd56729b1ff6b4772b5c3b34c234f985a1f532c9",
+      "after_sha256": "84f286fcd452174f386c02bce24afdf436eb7d2892c6ffae6c7c96768d6c499f"
+    },
+    "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-NativeContinuation.md": {
+      "before_sha256": "2ae59dd8a29af6f4c26dc9c20566aeebe075c8fea2def6ef27ff7c96a1b3b99f",
+      "after_sha256": "f47d9212ff07012b1d36178099cf7867ff01e4197b302fece23ddb2ae6bb100d"
+    },
+    "implementation/phase-9-grcv4/verification/p9_arg2b_historical.py": {
+      "before_sha256": "1996d409b4863b2dd0c3d99abbc3a22527c694d5031991b5a6dcd8cf6cf1bdc9",
+      "after_sha256": "34b13c328896e7df7243f890c0f9a2761b6c3a6d63ed63c345cf6265a6ad193f"
+    },
+    "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py": {
+      "before_sha256": "7a03b43f8b5114c21e6fcb228e294fb4e78a164dcdf49aa061b64ba537d98439",
+      "after_sha256": "bcdf073149e6b13641d7f28a81a3216986cdc2ff50d26cde8a08a2dc37d3300b"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9_arg2b_review.py": {
+      "before_sha256": "91feb60ab0d92b8491c504f3c14c381a06b52f08456fbecd1311ab4dce94d23a",
+      "after_sha256": "670b3eef74059b991cf9d4901f8b20eafad40fac1dd9f5df7b4aa0edcd7b657a"
+    }
+  },
+  "record_digest": "254cdc1d64fba737b2c3e4cc659c3ea44271eed7f21e48167899738434dd4c14"
+}

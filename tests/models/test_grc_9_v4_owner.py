@@ -117,7 +117,7 @@ class EnabledLifecycleTests(unittest.TestCase):
             self.assertNotEqual(
                 owner.state.inputs.current.W_A, target.inputs.current.W_A
             )
-        if self.FAMILY == "A_PC":
+        if self.FAMILY in ("A_PC", "C_PC", "A_CI_PC", "C_CI_PC"):
             self.assertNotEqual(
                 owner.state.inputs.current.Z_4, target.inputs.current.Z_4
             )

@@ -3342,3 +3342,73 @@ and original records remain historical. No native rerun or scientific/support
 promotion is performed. The separate acceptance view now records user-accepted
 P9-10.1c and bounded P9-10.1 closure, preserving raw snapshots and all-forty
 restrictions. API/browser/notebook and next-step guidance now point to P9-10.2.
+
+## Phase 9 A_CI+PC eighth-realization extension (2026-10-30)
+
+- [x] Provide Python/API, browser and notebook access to the bounded work.
+- [x] Validate retained source bindings, pending acceptance and historical seven-family preservation; sixteen surface/history tests and the phase boundary pass.
+
+See [scope and access](./docs/ACIPCEighthRealization.md). Numerical reruns are separate from these retained-integrity queries.
+
+A_CI+PC was bounded-accepted on 2026-10-30. Python/API/browser/notebook show
+the separate accepted decision over the unchanged execution records: 32
+compatibility cells accepted, eight RG2b cells unselected; aggregate and
+A_CI_PC basin/Tranche 10 support remain unclaimed.
+
+## Phase 9 C_RG2b ninth-realization research (2026-10-30)
+
+- [x] Shared evidence is authenticated and original XZ caches restored before
+  API/browser/notebook reads; scientific identities and acceptance stay unchanged.
+
+- [x] Expose `/api/crg2b` and indexed `/api/crg2b/source`, a browser research
+  panel, and the real `query-crg2b` notebook cell (`--crg2b-only`).
+- [x] Keep 54 graph certificates and four prepared numerical sections visibly
+  separate from native execution, user acceptance and support discovery.
+- [x] Retain eight contract traces and the unresolved C1 debt; no new authority
+  is inferred from a proposed completion or a passing research checker.
+- [x] Authenticate exact research sources, compressed section work and finite
+  documentation/tool successors; preserve all accepted predecessor records.
+- [x] Propagate the selected connected completion contract, paper addendum
+  and spec; expose its native successor separately. Accepted support remains
+  nine bounded families after the explicit C_RG2b acceptance; full conformance stays open.
+
+See [C_RG2b research usage](./docs/CRG2bNinthRealization.md).
+
+### C_RG2b native successor (2026-10-30)
+
+- [x] Expose retained native checkpoint coverage separately from the original research evidence.
+- [x] Bind the selected connected contract, paper addendum and spec; preserve tree17 and C1 boundaries.
+- [x] API, browser and actual notebook use the same checked index and repository-relative sources.
+- [x] Expose all sixteen completed native checkpoints, exact retained sources,
+  three selected/five deferred large transforms, and the unresolved C1 debt.
+- [x] Preserve prior accepted records through exact source-epoch adapters;
+  retained queries remain separate from numerical reruns.
+- [x] Separate bounded C_RG2b user acceptance; eight accepted predecessors remain unchanged.
+- [x] API/browser/notebook project the pinned acceptance and 36 accepted compatibility
+  cells, while preserving original pending execution records and C1/A_RG2b limits.
+
+## A_RG2b tenth realization — connected completion and bounded native work
+
+- [x] Add the API `/api/arg2b`, browser panel and `query-arg2b` notebook cell;
+  all consume the same retained view without numerical reruns.
+- [x] Separate exact connected A research, the original reset exclusion,
+  selected companions, full C/Y/H native evidence and separate bounded acceptance.
+- [x] Preserve the nine accepted family records; ten-family runtime discovery
+  is distinct from the immutable 36 accepted / four pending execution record.
+- [x] Apply the pinned A_RG2b acceptance overlay: all sixteen checkpoints and
+  forty source compatibility cells bounded-accepted, without widening scope.
+- [x] Six retained-surface/acceptance tests pass: scope mutation/source rejection, HTTP,
+  browser, actual notebook parity and preserved predecessor acceptance.
+
+C1 regularity remains narrowed/unresolved. Three large covariance transforms
+are selected; five remain deferred. Tranche 10/basin and uniform trajectory
+claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization.md).
+
+## Tranches 8–9 all-ten closeout (2026-10-30)
+
+- [x] Reconcile all ten accepted family scopes and forty source compatibility
+  cells; expose explicit aggregate closure through the existing A_RG2b API,
+  browser panel and notebook without relabelling historical family records.
+- [x] Keep optional P9-9.1a deferred and unselected, scientific limits visible,
+  full conformance/P9-G4 separate, and existing Tranche 10 decisions unchanged.
+- [x] Retained checks only; no repeated numerical campaign.
