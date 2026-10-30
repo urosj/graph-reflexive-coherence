@@ -299,11 +299,17 @@ class _Capture:
 
 
 def _read_once(inputs, backend):
-    realization = inputs.geometry.reference.profile.identity_payload.realization
+    identity = inputs.geometry.reference.profile.identity_payload
+    realization = identity.realization
     if realization == "OS":
-        from .grc_v4_candidate_c import CandidateCCurrent
+        if identity.candidate == "A":
+            from .grc_v4_candidate_a import CandidateACurrent
 
-        read = point = CandidateCCurrent(inputs)
+            read = point = CandidateACurrent(inputs, backend)
+        else:
+            from .grc_v4_candidate_c import CandidateCCurrent
+
+            read = point = CandidateCCurrent(inputs)
     elif realization == "CI":
         from .grc_v4_ci import CandidateCIRoot
 
@@ -332,6 +338,7 @@ def capture(state, role):
         "C_CI",
         "A_CI",
         "A_PC",
+        "A_OS",
     ):
         raise ValueError("explicit supported basin successor required")
     if role not in ("current", "reset"):

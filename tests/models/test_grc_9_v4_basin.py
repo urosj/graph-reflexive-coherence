@@ -228,7 +228,7 @@ class BasinGraphTests(unittest.TestCase):
             for version in ("grc9v4-configuration-v1", "grc9v4-configuration-v3"):
                 with self.assertRaises(ValueError):
                     GRC9V4Configuration.from_payload(dict(wire, schema_version=version))
-            if name not in ("C_OS", "C_CI", "A_CI", "A_PC"):
+            if name not in ("C_OS", "C_CI", "A_CI", "A_PC", "A_OS"):
                 with self.assertRaises(GRC9V4ExecutionUnavailable):
                     GRC9V4(cfg)
 

@@ -2794,3 +2794,15 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   limits; source drift or invalid coverage clears the view.
 - [x] User acceptance of bounded P9-10.2 (2026-10-30); the six basin extensions and G4 remain
   separate. See the Phase 9 plan for the selected continuation order.
+
+## Remaining-family Tranche 10 — A_OS
+
+- [x] Expose explicit A_OS 10.1a–c/10.2 evidence through
+  `/api/tranche10/families?family=A_OS`, indexed sources, a family selector,
+  and notebook cell `p910-family-basin`; retained validation only.
+- [x] Bind the exact review identity; reject unknown families, altered sources,
+  changed scope or evidence, and clear stale browser/notebook output.
+- [x] Preserve the accepted first-four view and original source bytes through
+  the finite A_OS source epoch; no numerical rerun or scientific authority lift.
+- [ ] Bounded A_OS acceptance. C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b
+  remain separate extensions; full conformance and G4 are not granted.

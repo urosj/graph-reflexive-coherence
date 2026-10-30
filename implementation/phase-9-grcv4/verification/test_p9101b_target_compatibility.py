@@ -5,6 +5,7 @@ from dataclasses import asdict
 from fractions import Fraction
 import hashlib
 import json
+import lzma
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -31,10 +32,18 @@ def digest(value):
     return hashlib.sha256(encoded(value)).hexdigest()
 
 
+def target_seed(family):
+    name = "AOS" if family == "A_OS" else family
+    path = BASE / f"P9-9.1b-{name}.json"
+    if path.exists():
+        raw = path.read_bytes()
+    else:
+        raw = lzma.decompress(path.with_suffix(".json.xz").read_bytes())
+    return json.loads(raw)["evidence"]["mixed_snapshot"]
+
+
 def target(family):
-    return json.loads((BASE / f"P9-9.1b-{family}.json").read_bytes())["evidence"][
-        "mixed_snapshot"
-    ]["state"]
+    return target_seed(family)["state"]
 
 
 def subject(model):
@@ -390,9 +399,7 @@ class TargetCompatibility(unittest.TestCase):
         )
         checkpoint = m.snapshot()
         bad = request(m, "enable", cfg.reference).to_payload()
-        bad["declaration"]["target_reference"] = json.loads(
-            (BASE / f"P9-9.1b-{self.FAMILY}.json").read_bytes()
-        )["evidence"]["mixed_snapshot"]["initial"]["inputs"]["reference"]
+        bad["declaration"]["target_reference"] = target_seed(self.FAMILY)["initial"]["inputs"]["reference"]
         failures["source_graph_substituted_for_target"] = self.rejected(
             m, lambda: m.migrate_branch(GRC9V4BranchRequest.from_payload(bad))
         )

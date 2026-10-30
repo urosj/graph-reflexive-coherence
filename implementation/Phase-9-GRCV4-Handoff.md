@@ -1,5 +1,33 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## A_OS Tranche 10 — implemented, acceptance pending (2026-10-30)
+
+Branch: `work/p9-tranche10-remaining-families`, from accepted first-four
+P9-10.2 `f2333b32`. [Review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md)
+and [verification](./phase-9-grcv4/tranche-10/P9-10-AOS-Verification.json).
+
+A_OS now has fresh reference-geometry Candidate-A basin capture using its own
+W/backend. Five native source/lifecycle tests and three exact-target tests pass
+in two parallel jobs. The latter capture policy-migration and disabled-return
+boundaries for both roles during that same run. 10.2 reuses these executions,
+checks four saved charges and two ledgers (53 receipts/15 commits), and adds no
+native step or replay. Shared classifier/charge controls are reused unchanged.
+
+The source epoch preserves original accepted evidence and Git source bytes;
+the first-four native capture paths are checked unchanged. The 4.4 MB target
+record is compressed to about 77 KB, and the consolidated record references it
+instead of retaining another copy. All paths are repository-relative.
+
+Side-tool: `/api/tranche10/families?family=A_OS`, browser family selector and
+notebook `p910-family-basin`; read-only access performs no native run. The original
+four-family accepted view remains separate. Reproduce with the command in the
+review; do not repeat the numerical jobs solely for an acceptance status change.
+
+Next: review/accept A_OS, then C_PC P9-10.1a–c → P9-10.2. After that:
+C_CI_PC, A_CI_PC, C_RG2b, A_RG2b, then consolidated 10.3–10.6. No new scientific
+claim/debt closure, family-wide conformance or G4 is inferred.
+
+
 ## P9-10.2 first group — bounded accepted (2026-10-30)
 
 Work branch: `work/p9-10.2-first-group`; integration target: `main` (fast-forward).

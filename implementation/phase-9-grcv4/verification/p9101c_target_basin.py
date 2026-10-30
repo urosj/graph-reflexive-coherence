@@ -47,6 +47,7 @@ def restore_state(payload, family):
             C_CI="GRC9V4CCIState",
             A_CI="GRC9V4ACIState",
             A_PC="GRC9V4APCState",
+            A_OS="GRC9V4AOSState",
         )[family],
     )
     return cls(

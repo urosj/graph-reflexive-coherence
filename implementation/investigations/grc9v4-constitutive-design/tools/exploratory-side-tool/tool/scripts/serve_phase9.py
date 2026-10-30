@@ -21,6 +21,7 @@ from grcv4_explorer.basin_native import basin_native_status, basin_native_source
 from grcv4_explorer.target_compatibility import target_compatibility_status, target_compatibility_source
 from grcv4_explorer.tranche10_support import tranche10_support_status, tranche10_support_source
 from grcv4_explorer.tranche10_verification import tranche10_verification_status, tranche10_verification_source
+from grcv4_explorer.tranche10_families import family_basin_status, family_basin_source
 from grcv4_explorer.aos import aos_status, aos_source
 from grcv4_explorer.cpc import cpc_status, cpc_source
 from grcv4_explorer.ccipc import ccipc_status, ccipc_source
@@ -41,6 +42,28 @@ from grcv4_explorer.tranche9 import (tranche9_status, tranche9_source,
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
+        if request.path in {"/api/tranche10/families", "/api/tranche10/families/source"}:
+            try:
+                query = parse_qs(request.query, strict_parsing=True, keep_blank_values=True)
+                source = request.path.endswith("/source")
+                if set(query) != ({"family", "path"} if source else {"family"}) or any(len(v) != 1 for v in query.values()):
+                    raise KeyError("one explicit family and indexed source path required")
+                if source:
+                    content, ref = family_basin_source(repository_root(), query["path"][0], query["family"][0])
+                else:
+                    content = json.dumps(family_basin_status(repository_root(), query["family"][0])).encode()
+                self.send_response(200)
+                if source:
+                    self.send_header("X-Evidence-SHA256", ref["sha256"])
+            except KeyError as error:
+                self.send_response(404); content = json.dumps({"error": str(error)}).encode()
+            except Exception as error:
+                self.send_response(503); content = json.dumps({"error": str(error)}).encode()
+            self.send_header("Content-Type", "application/octet-stream" if request.path.endswith("/source") else "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers(); self.wfile.write(content)
+            return
         if request.path in {"/api/aos", "/api/aos/source", "/api/cpc", "/api/cpc/source", "/api/ccipc", "/api/ccipc/source", "/api/acipc", "/api/acipc/source", "/api/crg2b", "/api/crg2b/source", "/api/arg2b", "/api/arg2b/source"}:
             views = {"aos": (aos_status, aos_source), "cpc": (cpc_status, cpc_source), "ccipc": (ccipc_status, ccipc_source), "acipc": (acipc_status, acipc_source), "crg2b": (crg2b_status, crg2b_source), "arg2b": (arg2b_status, arg2b_source)}
             view, source = views[request.path.split("/")[2]]
@@ -248,7 +271,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-verification.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -271,6 +294,7 @@ class Handler(BaseHTTPRequestHandler):
                     "target-compatibility.js": "text/javascript",
                     "tranche10-support.js": "text/javascript",
                     "tranche10-verification.js": "text/javascript",
+                    "tranche10-families.js": "text/javascript",
                     "aos.js": "text/javascript",
                     "cpc.js": "text/javascript",
                     "ccipc.js": "text/javascript",

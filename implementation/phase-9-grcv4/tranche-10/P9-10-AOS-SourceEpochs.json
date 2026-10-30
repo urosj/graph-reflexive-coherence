@@ -1,0 +1,39 @@
+{
+  "schema": "p910-aos-basin-source-epoch-v1",
+  "predecessor": "f2333b32",
+  "checker_sha256": "bb1a49f99dc8ddc5109d5dcd761b6e7e4593388448f2ea0fe3a26fccd88c1aeb",
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p9101c_target_basin.py": {
+      "before_sha256": "f2581de0797510ce3db4f2b011c6a7347b1c2105819ac86c6482b0c667aed7a2",
+      "after_sha256": "2bbc2f11685884b0022f981a1424b2248dc7fa8d56ee90ee8e9e871ead1bdda6"
+    },
+    "implementation/phase-9-grcv4/verification/p9102_verification.py": {
+      "before_sha256": "b136996e729574a91a06d149e5e566f76421fb86af52fb7e9aedf8817b2a9142",
+      "after_sha256": "d480d7606896d3551effa3a1001de42251af865cd6aec67ee2b189512309c2d9"
+    },
+    "implementation/phase-9-grcv4/verification/p9_tranches89_closeout.py": {
+      "before_sha256": "656c561d1410839dee96b024cc40943376e66c99cf5827b1cde6368208cbaa9c",
+      "after_sha256": "d134ac5910919d067059db08bd9316b5066f7f74d5098241399690c68e0ba56e"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9101b_target_compatibility.py": {
+      "before_sha256": "2c75100428bf4cd0b343397280a033c467ee6ad367095bbf26f0f6627838f41b",
+      "after_sha256": "e5cfafafee450de828b8bec90a5e096095468b91b1c15d9a95c2c2b810485879"
+    },
+    "src/pygrc/models/grc_9_v4_basin.py": {
+      "before_sha256": "0e0a0890c06ca3331f7cfc7abbbb8197973c78054a04e89b18db239d03f76f51",
+      "after_sha256": "a9709d86b5fcdff25345729322295a217bb662d42046cdaffc2251d5b7d997b5"
+    },
+    "tests/models/test_grc_9_v4_aos_integration.py": {
+      "before_sha256": "e7a5e9bd839795d27d5dbf14d27d3cbb30cf3a13138f4d7ca9fda66c8f14701d",
+      "after_sha256": "a66e708b5788962ca548da0ec5c49db54c7353e195ad5fd66eca98d708614c02"
+    },
+    "tests/models/test_grc_9_v4_basin.py": {
+      "before_sha256": "4516c7da03bdb74f1ab29542b12019a28d953c7dc528f38d44627e848e47dfa5",
+      "after_sha256": "d276011811e821e13b42c400e04ce77c3d71ee17b3d4d572230ac1812cfee4a2"
+    }
+  },
+  "first_group_native_path_unchanged": true,
+  "accepted_execution_rewritten": false,
+  "user_acceptance_inferred": false,
+  "record_digest": "044df3a026cdd4ccb1c4e30dc41367625f98e96d1b00bb272380cb1c9911453a"
+}

@@ -34,6 +34,15 @@ and do not transfer automatically to the other six families.
 
 ## Tranche 10 rollout and six-family basin-capture map (2026-10-30)
 
+Current branch: `work/p9-tranche10-remaining-families`. A_OS P9-10.1a–c and
+P9-10.2 are implemented and pass within the bounded declared scope;
+[user acceptance is pending](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
+The two native jobs run in parallel. Exact-target migration/disabled-return
+captures are collected during compatibility execution and reused for 10.1c/10.2;
+no duplicate native campaign. Next after acceptance: C_PC, then C_CI_PC,
+A_CI_PC, C_RG2b and A_RG2b.
+
+
 P9-10.2 is accepted for the bounded C_OS/C_CI/A_CI/A_PC scope;
 [acceptance decision](./phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json);
 see the [bounded review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md) and
@@ -99,9 +108,11 @@ publication and replay machinery provide the common integration path.
 | C_RG2b | Fresh `CandidateRG2bSection`, followed by Candidate-C current at its section geometry. | Reuse [C section certificate](./phase-9-grcv4/verification/p9_crg2b_section.py) and [runtime independent checks](./phase-9-grcv4/verification/p9_crg2b_runtime.py); bind query/domain, evaluator, completion, geometry, error enclosure and selected current. |
 | A_RG2b | Fresh joint C/Y/H section, with `Y = 512 log W`, followed by Candidate-A current and its backend. | Reuse [A section certificate](./phase-9-grcv4/verification/p9_arg2b_section.py) and [runtime independent checks](./phase-9-grcv4/verification/p9_arg2b_runtime.py); include logarithmic-coordinate error, inverse residuals, completion tail and W/backend bindings. |
 
-The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) is explicitly
-four-family: its OS branch assumes Candidate C, and its certificate handling
-does not yet cover composite CI+PC or RG2b sections. The generic readers already
+The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) adds an explicit
+A_OS branch to the accepted first four. Its fresh Candidate-A reference read
+uses the role's W and fixed-row backend; this additional native scope awaits
+acceptance. Composite CI+PC and RG2b capture remain unimplemented; C_PC needs
+its own declared capture scope and conformance evidence. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
 and [specification](../specs/grc-9-v4-basin-interface.md) provide the starting

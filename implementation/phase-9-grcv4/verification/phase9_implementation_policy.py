@@ -4159,3 +4159,18 @@ PATHS |= {
     "implementation/phase-9-grcv4/verification/p9102_acceptance.py",
     "implementation/phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json",
 }
+
+# A_OS Tranche 10 basin extension: bounded native and retained verification.
+PATHS |= {
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-families.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche10_families.py',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Review.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Verification.json',
+    'implementation/phase-9-grcv4/verification/p910_basin_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/p910_family_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_aos_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_family_surfaces.py',
+}

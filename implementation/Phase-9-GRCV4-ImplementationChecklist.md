@@ -39,6 +39,29 @@ P9-10.1a–c → P9-10.2 per remaining
 family before consolidated P9-10.3–10.6. The historical checked P9-10.1 entries
 below remain four-family acceptances, not acceptance of those six extensions.
 
+## Remaining-family P9-10.1a–c → P9-10.2 (2026-10-30)
+
+Branch: `work/p9-tranche10-remaining-families`. The initial four-family
+acceptances remain unchanged; each row below needs its own bounded evidence.
+
+- [ ] A_OS bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
+  - [x] 10.1a: fresh A reference/current/history/backend capture, full read
+    identity, independent equations, positive lifecycle and failure pressure.
+  - [x] 10.1b: exact retained v1 target and explicit v2 successor; independent
+    native V3 four-surface comparisons, both roles, replay and rollback.
+  - [x] 10.1c: both-role saved-state/row/classification/equation checks at policy
+    migration and disabled return, captured in the same native round trip.
+  - [x] 10.2: four independent saved charges and 53 receipts/15 commit groups;
+    reuse this family's executed replay and unchanged common charge controls.
+  - [x] Source-epoch preservation, compressed/reference-based retention,
+    API/browser/notebook access and portable handoff.
+  - [ ] User acceptance; no full-conformance/G4 or remaining-family grant.
+- [ ] C_PC: 10.1a–c → 10.2 and bounded acceptance.
+- [ ] C_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
+- [ ] A_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
+- [ ] C_RG2b: 10.1a–c → 10.2 and bounded acceptance.
+- [ ] A_RG2b: 10.1a–c → 10.2 and bounded acceptance.
+
 ## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
 Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.
