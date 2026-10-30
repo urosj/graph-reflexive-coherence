@@ -33,7 +33,7 @@ def digest(value):
 
 
 def target_seed(family):
-    name = {"A_OS": "AOS", "C_PC": "CPC"}.get(family, family)
+    name = {"A_OS": "AOS", "C_PC": "CPC", "C_CI_PC": "CCIPC"}.get(family, family)
     path = BASE / f"P9-9.1b-{name}.json"
     if path.exists():
         raw = path.read_bytes()
@@ -275,7 +275,7 @@ class TargetCompatibility(unittest.TestCase):
             self.assertEqual(
                 state.W_A, expected_history[i] if expected_history else None
             )
-            if cfg.reference.profile.identity_payload.realization == "PC":
+            if cfg.reference.profile.identity_payload.realization in ("PC", "CI+PC"):
                 self.assertTrue(any(getattr(cfg, role).Z_4))
                 self.assertEqual(set(state.Z_4), {0.0})
         before_reset = m.step_v4_input(step_request("target-enabled-after-return"))
@@ -322,7 +322,7 @@ class TargetCompatibility(unittest.TestCase):
             },
             enabled_continuation=asdict(before_reset),
             final_checkpoint=final,
-            history_policy=("explicit_C_PC_carrier_loss_and_zero_initialization" if self.FAMILY == "C_PC"
+            history_policy=(f"explicit_{self.FAMILY}_carrier_loss_and_zero_initialization" if self.FAMILY in ("C_PC", "C_CI_PC")
                             else "explicit_A_archive_loss_and_A_PC_carrier_zero_initialization"),
             disabled_replay=True,
             enabled_replay=True,

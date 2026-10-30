@@ -1,0 +1,42 @@
+{
+  "schema": "p910-ccipc-source-epoch-v1",
+  "predecessor": "9fb469c8",
+  "checker_sha256": "312748cf4a9b998c2367c1e2b0e4a149d05ecc4ab3add478f9ed52b2eea1f869",
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p9101a_basin_oracle.py": {
+      "before_sha256": "62d462f2098c4ad893a82dd94d65935b20b8e52f94194960133398b0e9ebf35b",
+      "after_sha256": "ac6be27f9daf366e0ee5ffa9467a2380fabaf81d8ac4bc9bc896520c96e874cb"
+    },
+    "implementation/phase-9-grcv4/verification/p9101c_target_basin.py": {
+      "before_sha256": "05760782c1da01bbb16db61a514197cc993e84b4828217032ce16512b75c6dab",
+      "after_sha256": "6a00153544f4ce40d6645df11ce30ee44386641a7be8a9d9819f8d7b4d248263"
+    },
+    "implementation/phase-9-grcv4/verification/p910_cpc_source_epoch.py": {
+      "before_sha256": "fd5484d567b464b3b08f7d74f77721eb2aef9f422716362183e86ceec84a6e5b",
+      "after_sha256": "81a6e35d6a927fe074b6203f57837bc11eb01ae3e019b8c65a2b50112891d6d8"
+    },
+    "implementation/phase-9-grcv4/verification/p910_family_basin.py": {
+      "before_sha256": "77ef107c275061d0b5a5e66f7420c08ddae24217efc0da047e8d2cee18af8b08",
+      "after_sha256": "dc4bca8b31a0de4c50b9bbcdc08b5e420f061a546e44f84759cd993213dbc73f"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9101b_target_compatibility.py": {
+      "before_sha256": "da6c3a41356a1488cb8b60854eeb8c9651b32c1966cf71d5efb0c05949487028",
+      "after_sha256": "d1475ad13e204af88bc1f32092fbcaa66c2a0b9eebd69117338559172dc57e0b"
+    },
+    "src/pygrc/models/grc_9_v4_basin.py": {
+      "before_sha256": "3b05635d03932158f10e6688377e6b398c95fa082f2d19ae208f62b8d10e10ec",
+      "after_sha256": "5d9d00e10ed009c86416af7912777b1988df1d35a2f399c78fb12503a54e8f8c"
+    },
+    "tests/models/test_grc_9_v4_basin.py": {
+      "before_sha256": "326812543c4e207fdcaaf1e72b05da1ab3a470a302dfed669ecded67749c94d5",
+      "after_sha256": "4683feaf7f3d823b7d8d86c5a372ff48ab5d25f6d88477b6965f5b11997648cc"
+    },
+    "tests/models/test_grc_9_v4_ccipc_integration.py": {
+      "before_sha256": "916cdc9400594ed1e39a34a90ae6354ef365d62a475bebf73d585c0a8872052a",
+      "after_sha256": "6dfacb5e8d8e0b18cef2987997aee0dbb21c91843aae0442c6bab46ecfebad2e"
+    }
+  },
+  "prior_native_paths_unchanged": true,
+  "accepted_execution_rewritten": false,
+  "record_digest": "cbea5bc17d7670952d0ee138e4c91960594fd9fd33011aeb5bb23fd2a47ab1e6"
+}

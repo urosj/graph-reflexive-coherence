@@ -188,7 +188,7 @@ def root_payload(read, point):
     )
     certificate = None
     real = point.inputs.geometry.reference.profile.identity_payload.realization
-    if real == "CI":
+    if real in ("CI", "CI+PC"):
         selected = read.selected
         require(
             selected.point is point and selected.inputs == point.inputs,
@@ -222,7 +222,7 @@ def root_payload(read, point):
             certificate=read.certificate.bounds.to_dict(),
         )
         certificate = "grc9v4-basin-joint-root-sha256:" + digest(root)
-    elif real == "PC":
+    elif real in ("PC", "CI+PC"):
         root["certificate"] = read.certificate.bounds.to_dict()
         certificate = "grc9v4-basin-pc-read-sha256:" + digest(root)
     return root, certificate
@@ -353,7 +353,7 @@ def equation_check(saved, role, point):
         require(
             cp.kappa_M_C == 2**-24
             and cp.chi_C == 16
-            and cp.zeta_C == (2**-30 if profile.identity_payload.profile_family_id == "C_PC" else 2**-37)
+            and cp.zeta_C == (2**-30 if profile.identity_payload.profile_family_id in ("C_PC", "C_CI_PC") else 2**-37)
             and cp.tau_C == cp.eta_C == cp.kappa_Phi_C == cp.C_ref == 1
             and cp.Lambda_C == 1 / 512
             and all(v > 0 for v in cp.W_C_tr.values()),
@@ -417,15 +417,19 @@ def equation_check(saved, role, point):
     require(error < Q(1, 2**40), "independent current equation")
     real = profile.identity_payload.realization
     base = href
-    if real == "PC":
+    if real in ("PC", "CI+PC"):
         base = base + number(gp.kappa_H) * IV.matrix(
             np.array(authority.Z_4).reshape(len(graph.edges), -1).tolist()
         )
-    image = base + number(gp.kappa_H) * truth["source"] if real == "CI" else base
+    instantaneous = number(gp.kappa_H) * truth["source"]
+    if real == "CI+PC":
+        require(profile.params_resolved.realization.rho_inst == 1
+                and profile.identity_payload.composition_gain == 2, "pinned composite gain")
+    image = base + instantaneous if real in ("CI", "CI+PC") else base
     residual = infinity(h - image)
     limit = (
         Q(profile.params_resolved.realization.tolerance)
-        if real == "CI"
+        if real in ("CI", "CI+PC")
         else Q(1, 2**48)
     )
     require(residual < limit, "independent geometry equation")
@@ -437,6 +441,14 @@ def equation_check(saved, role, point):
         certified_fixed_geometry_signs=signs,
         exact_root_signs_claimed=False,
     )
+    if real == "CI+PC":
+        def lower_max(matrix):
+            return max(max(Q(0), endpoint(matrix[i, j], 0), -endpoint(matrix[i, j], 1))
+                       for i in range(matrix.rows) for j in range(matrix.cols))
+        result.update(
+            carrier_omission_residual_lower=str(lower_max(h - href - instantaneous)),
+            instantaneous_omission_residual_lower=str(lower_max(h - base)),
+            composite_geometry="H_ref_plus_kappa_H_times_old_Z_plus_instantaneous_source")
     if profile.identity_payload.candidate == "A":
         drive = high.conductance(c, w, truth["baseline"])
         q = [(x - g) / (x + g) for x, g in zip(w, drive, strict=True)]

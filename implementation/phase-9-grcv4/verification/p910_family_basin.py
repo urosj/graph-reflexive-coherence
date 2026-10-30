@@ -9,6 +9,7 @@ import argparse
 import importlib
 
 import p910_cpc_source_epoch as successor
+import p910_ccipc_source_epoch as latest
 from concurrent.futures import ProcessPoolExecutor
 from copy import deepcopy
 import json
@@ -27,7 +28,8 @@ BASE = v.BASE + "tranche-10/"
 VERIFY = v.BASE + "verification/"
 SELF = VERIFY + "p910_family_basin.py"
 TEST = VERIFY + "test_p910_aos_basin.py"
-FAMILIES = ("A_OS", "C_PC")
+FAMILIES = ("A_OS", "C_PC", "C_CI_PC")
+HISTORICAL = ("A_OS", "C_PC")
 ALL_REMAINING = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
 PARTS = ("Native", "Target")
 BASELINE = "f2333b32"
@@ -44,23 +46,27 @@ def references(root=ROOT, family="A_OS", *, historical=False):
              VERIFY + "p9101a_basin_oracle.py", VERIFY + "p9101c_target_basin.py",
              VERIFY + "test_p9101a_basin_pressure.py", VERIFY + "test_p9101b_target_compatibility.py",
              VERIFY + "p9102_verification.py", VERIFY + "p9101b_target_compatibility.py"}
-    if family == "C_PC":
-        names.difference_update({TEST, PRIOR, TARGET})
-        names.update({VERIFY + "test_p910_cpc_basin.py", TEST,
-                      PRIOR.replace("AOS", "CPC"), TARGET.replace("AOS", "CPC"), successor.PATH, successor.SELF})
+    if family in ("C_PC", "C_CI_PC"):
+        short = family.replace("_", "")
+        names.difference_update({PRIOR, TARGET})
+        names.update({VERIFY + "test_p910_" + short.lower() + "_basin.py",
+                      PRIOR.replace("AOS", short), TARGET.replace("AOS", short), successor.PATH, successor.SELF})
+    if family == "C_CI_PC":
+        names.update({latest.PATH, latest.SELF})
     for pattern in ("src/pygrc/**/*.py", "src/pygrc/**/*.json", "tests/models/test_grc*.py"):
         names.update(p.relative_to(root).as_posix() for p in root.glob(pattern))
     for pattern in ("test_p980*.py", "verify_p983a_aos_oracle.py"):
         names.update(p.relative_to(root).as_posix() for p in (root / VERIFY).glob(pattern))
     if historical:
-        require(family == "A_OS", "only A_OS selects the accepted predecessor epoch")
-        return [dict(path=n, sha256=successor.sha(successor.previous_bytes(root, n))) for n in sorted(names)]
+        require(family in HISTORICAL, "only accepted families select predecessor epochs")
+        epoch = successor if family == "A_OS" else latest
+        return [dict(path=n, sha256=epoch.sha(epoch.previous_bytes(root, n))) for n in sorted(names)]
     return [v.reference(root, n) for n in sorted(names)]
 
 
 def prerequisites(root=ROOT, family="A_OS"):
-    prior = PRIOR if family == "A_OS" else PRIOR.replace("AOS", "CPC")
-    target = TARGET if family == "A_OS" else TARGET.replace("AOS", "CPC")
+    short = family.replace("_", "")
+    prior, target = PRIOR.replace("AOS", short), TARGET.replace("AOS", short)
     from p9102_acceptance import PATH as accepted
     refs = []
     for name in (prior, target, AUTHORITY, accepted, v.PATH):
@@ -109,9 +115,9 @@ def run_part(family, part):
     paths = (ROOT / stem(family, part), ROOT / (stem(family, part) + ".xz"))
     if any(p.exists() for p in paths):
         value, _ = load(family, part)
-        require(value["source_refs"] == references(family=family, historical=family == "A_OS"), "completed part source drift")
+        require(value["source_refs"] == references(family=family, historical=family in HISTORICAL), "completed part source drift")
         return part
-    require(family != "A_OS", "new A_OS execution needs a separately declared source epoch")
+    require(family not in HISTORICAL, "new accepted-family execution needs a separately declared source epoch")
     before = references(family=family)
     tests.EVIDENCE.clear(); tests.native.EVIDENCE.clear(); tests.targets.EVIDENCE.clear()
     cls = getattr(tests, family.replace("_", "") + ("NativeBasin" if part == "Native" else "TargetCompatibility"))
@@ -201,7 +207,7 @@ def validate(value, *, equations=False, sources=True):
             and value["new_support"] == [] and value["native_tests"] == 8,
             "family verification scope or identity")
     if sources:
-        require(value["source_refs"] == references(family=value["family"], historical=value["family"] == "A_OS") and value["prerequisites"] == prerequisites(family=value["family"]),
+        require(value["source_refs"] == references(family=value["family"], historical=value["family"] in HISTORICAL) and value["prerequisites"] == prerequisites(family=value["family"]),
                 "family source or prerequisite drift")
     native, nr = load(value["family"], "Native")
     target, tr = load(value["family"], "Target")

@@ -1,238 +1,6 @@
 # Phase 9 GRCV4 Implementation Checklist
 
-## Tranches 8 and 9 — all ten declared family scopes accepted and closed (2026-10-30)
-
-The [all-ten closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
-reconciles the accepted first group and all six subsequent family decisions.
-There are no remaining mandatory Tranche 8–9 family checkpoints: P9-8.4d–i,
-8.5/8.6, final mechanism/performance reviews and applicable 9.1b–9.6 are closed
-for all ten declared scopes. All forty source-model disabled-compatibility
-cells are accepted. The user explicitly confirmed aggregate closure after
-A_RG2b acceptance `7083b989`; no numerical campaign is repeated.
-
-| Accepted population | Retained decision |
-| --- | --- |
-| C_OS, C_CI, A_CI, A_PC | [Tranche 8](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json), [Tranche 9](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json) |
-| A_OS | [Acceptance](./phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json) |
-| C_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json) |
-| C_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) |
-| A_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) |
-| C_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) |
-| A_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json) |
-
-Optional P9-9.1a completion/hierarchy is explicitly deferred and unselected;
-it was never a mandatory closure prerequisite. Earlier execution and family
-acceptance records retain their historical `aggregate_closed=false`; this
-successor records the aggregate decision without rewriting them.
-
-Retain exact subject/horizon limits, original exclusions, unresolved C1
-regularity, pointwise CI/carrier margins and the previously agreed deferred
-large diagnostics. Tranche closure grants neither arbitrary-graph numerical
-conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
-remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
-and do not transfer automatically to the other six families.
-
-The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
-records the completed read-only six-family assessment and agreed order. Bounded
-P9-10.2 for C_OS/C_CI/A_CI/A_PC is bounded-accepted; next is
-P9-10.1a–c → P9-10.2 per remaining
-family before consolidated P9-10.3–10.6. The historical checked P9-10.1 entries
-below remain four-family acceptances, not acceptance of those six extensions.
-
-## Remaining-family P9-10.1a–c → P9-10.2 (2026-10-30)
-
-Branch: `work/p9-tranche10-remaining-families`. The initial four-family
-acceptances remain unchanged; each row below needs its own bounded evidence.
-
-- [x] A_OS bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
-  - [x] 10.1a: fresh A reference/current/history/backend capture, full read
-    identity, independent equations, positive lifecycle and failure pressure.
-  - [x] 10.1b: exact retained v1 target and explicit v2 successor; independent
-    native V3 four-surface comparisons, both roles, replay and rollback.
-  - [x] 10.1c: both-role saved-state/row/classification/equation checks at policy
-    migration and disabled return, captured in the same native round trip.
-  - [x] 10.2: four independent saved charges and 53 receipts/15 commit groups;
-    reuse this family's executed replay and unchanged common charge controls.
-  - [x] Source-epoch preservation, compressed/reference-based retention,
-    API/browser/notebook access and portable handoff.
-  - [x] User acceptance on 2026-10-30; implementation `f87bcd27`,
-    [decision](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json).
-    No full-conformance/G4 or remaining-family grant.
-- [x] C_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md).
-  - [x] 10.1a: fresh committed-Z read, both roles, Candidate-C transport,
-    independent current/geometry equations, lifecycle/replay and rollback.
-  - [x] 10.1b: exact v1 target and explicit v2 basin successor; native V3
-    four-surface comparison, carrier loss/zero initialization, negative paths.
-  - [x] 10.1c: both-role captures at policy migration and disabled return;
-    saved C/Z, complete PC read/certificate, rows and classification checked.
-  - [x] 10.2: independent saved charges and receipt ledgers; reuse this
-    family's executed replay and unchanged shared charge controls.
-  - [x] Finite source-epoch preservation, compressed/reference-based records,
-    API/browser/notebook access and portable handoff.
-  - [x] User acceptance on 2026-10-30; implementation `bff4f3fc`,
-    [decision](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json).
-    No remaining-family/full-conformance/G4 grant.
-- [ ] C_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
-- [ ] A_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
-- [ ] C_RG2b: 10.1a–c → 10.2 and bounded acceptance.
-- [ ] A_RG2b: 10.1a–c → 10.2 and bounded acceptance.
-
-## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
-
-Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.
-The [bounded plan](./phase-9-grcv4/tranche-8/P9-ARG2b-Tranches8-9-Plan.md)
-and [connected A completion](./phase-9-grcv4/tranche-8/P9-ARG2b-ConnectedCompletionContract.json)
-select the final family's 8.4d–9.6 work, implemented in `fd23970b`.
-[User acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json)
-is recorded separately and preserves the original execution evidence.
-The dated predecessor sections below retain their original scope/next-step
-statements; this section and the current compatibility register take precedence.
-
-- [x] Exact 9/18/9 connected-graph completion and full C/Y/H research checks;
-  54 graph subjects, old tree17 regression, unchanged C1 debt ceiling.
-- [x] Authority → paper addendum → spec; explicit four-level/18-sweep,
-  binary64 proposal / Arb192 certificate with FLINT exact bounds, no fallback.
-- [x] Seven focused native tests, including complete W writer/staging,
-  full-point mutations, old-policy separation and explicit failure.
-- [x] Four large prepared first steps. Original negative-reset fixture retained;
-  independently derived old-edge W=1025/1024 companion, new bonds still one.
-- [x] Twenty deep layouts: 400 target steps and 40 final reads. D94 uses a
-  derived history/allocation companion and a componentwise infinite-section
-  frontier certificate; original exclusions remain recorded.
-- [x] Small signed/order and full-chart covariance: 44 required history cells,
-  28 events and 112 steps. Both histories and complete selected points checked.
-- [x] Actual second-beat large event and replay; three mapped events and six
-  mapped target steps, maximum covariance discrepancy 1.66e-24.
-- [x] Both ten-step large target histories and final reads pass at unchanged
-  parameters/tolerances. Certificates apply at each saved represented state.
-- [x] Six small 8.5 lifecycle tests, eighteen small 8.6 mechanism subjects and
-  22 applicable Tranche 9 integration tests. Matrix: all 40 source
-  compatibility cells bounded-accepted; zero pending or unexecuted. The original
-  execution matrix retains its 36 accepted / four pending counts.
-- [x] Four large first/final mechanism subjects pass; geometry, Read-Back,
-  history and current-dependent terms are distinct from zero controls.
-- [x] Deduplicated 67 records: 349,744,828 original bytes reconstruct exactly
-  from a 10,702,028-byte shared store (formerly 25,524,280 archive bytes).
-- [x] Six API/browser/notebook, source-drift, scope and explicit/historical
-  acceptance tests pass.
-- [x] Final phase-boundary check passes with preserved release and verified
-  handoff; no native numerical rerun. [Consolidated review](./phase-9-grcv4/tranche-8/arg2b-native/Review.json).
-- [x] Explicit bounded user acceptance (2026-10-30), following implementation
-  commit `fd23970b`; all sixteen checkpoints accepted without relabelling runs.
-
-Independent jobs use up to twelve single-thread workers, explicit FLINT/Arb,
-3600-second large-segment caps. No Tranche 10/basin, optional hierarchy,
-classical spectrum, uniform trajectory tube or unrestricted all-ten conformance
-is inferred. All ten family scopes and their Tranche 8–9 aggregate are now accepted.
-Remaining Tranche 10 work is separate.
-
-
-## C_RG2b ninth realization — bounded Tranches 8–9 accepted (2026-10-30)
-
-Work continues on `work/p9-acipc-tranches-8-9` after accepted A_CI_PC
-commit `dbc013fb`. The connected completion has been selected for bounded
-implementation through authority → paper addendum → spec, with new explicit
-policy identities. The original tree17 policy and accepted evidence are intact.
-
-- [x] Exact graph certificates and full inverse-section research for the named
-  small, deep and cyclic graphs; C1 regularity remains narrowed/unresolved.
-- [x] Native 8.4d: twenty deeper events, 400 target steps and forty final reads.
-- [x] Native 8.4e/f: 44 required covariance history cells, 28 events and 112
-  target steps; full selected geometry/current/Read-Back/source comparisons.
-- [x] Native 8.4g: both source and prepared-target histories pass positive first
-  steps on the 100/400 and 107/407 graphs, with independent error enclosures.
-- [x] Six small 8.5 lifecycle obligations and eighteen 8.6 mechanism subjects.
-- [x] The 22 applicable native Tranche 9 integration tests pass, including
-  legacy compatibility, branch crossings, public lifecycle and conflict rollback.
-- [x] Actual second-beat large event and exact native replay; unchanged trigger,
-  timestep, resource shares and tolerances.
-- [x] Three large combined/reflection/rotation events and their six mapped
-  target steps; both roles pass complete selected-point covariance.
-- [x] Both large ten-step histories and two fresh final sections; all twenty
-  updates have positive independent section-aware resource bounds.
-- [x] Four large first/final mechanism subjects; geometry, feedback and
-  modulation remain distinguished after section-uncertainty allowances.
-- [x] Consolidated retained review: all sixteen applicable 8.4d–9.6 checkpoints,
-  with live Python/API/browser/notebook access and exact compressed evidence.
-- [x] Lossless storage deduplicates 67 large records into shared objects;
-  original JSON/XZ identities survive exact reconstruction. Standalone readers
-  use the scoped restore command in the linked reproduction note; no native rerun.
-- [x] Explicit bounded user acceptance (2026-10-30); aggregate ten-family closure stays open.
-
-See [native evidence](./phase-9-grcv4/tranche-8/crg2b-native/),
-[completion contract](./phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionContract.json)
-and [release binding](./phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionRelease.json).
-The public implementation executes C_RG2b and its bounded Tranches 8–9 scope
-is accepted. The eight earlier family acceptances remain unchanged; 36 of 40
-compatibility cells are now accepted. This does not grant full GRC9V4 conformance.
-Do not infer A_RG2b, basin support, optional hierarchy/completion, an arbitrary
-graph domain, a uniform trajectory tube, or all-ten conformance.
-
-Independent jobs use up to twelve single-thread workers; each large segment
-has a 3600-second cap. Successful segments are resumable and compressed.
-The large target steps took 547–636 seconds each. Certified lower bounds
-start above 1.05e-13 and finish above 1.15e-4; resource error stays below
-2.43e-16. These are pointwise bounds at saved inputs, not a uniform trajectory
-enclosure. The three selected large covariance transforms pass with maximum
-discrepancy 6.62e-24; five additional individual transforms remain deferred.
-See the [checked review](./phase-9-grcv4/tranche-8/crg2b-native/Review.json) and
-[scope/reproduction](./phase-9-grcv4/tranche-8/P9-CRG2b-NativeContinuation.md).
-The [acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) binds the
-original execution and deduplicated storage without relabelling them. Next is
-A_RG2b if selected; Tranche 10 remains separate.
-
-## Accepted A_CI+PC eighth-realization extension (2026-10-30)
-
-Work is on `work/p9-acipc-tranches-8-9`, based on accepted merge `b61b60be`.
-The selected scope is P9-8.4d through applicable P9-9.6; see the
-[bounded plan](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Plan.md) and
-[scientific record](./phase-9-grcv4/tranche-8/P9-ACIPC-ScientificReview.md).
-The seven predecessors and A_CI_PC are accepted at their bounded scopes.
-Tranche 10, basin policy, optional completion, new RG2b execution and
-all-ten closure are not inferred from that acceptance.
-Independent jobs run in parallel, up to twelve one-thread workers. Native
-large segments use explicit FLINT / certified Arb and a 3600-second cap.
-
-Completed: twenty deep events / 400 continuation steps, 44 small covariance
-history cells, four large prerequisite steps, the actual large event and exact
-replay, and twenty-two Tranche 9 integration tests. Current and reset ten-step
-histories and their final reads now pass. Six small lifecycle obligations,
-fresh large replay, all three mapped events and their six target steps also
-pass. The consolidated retained review, 58 focused integration/science/surface
-checks and implementation-boundary audit pass. See the [checked review](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Review.json)
-and [validation](./phase-9-grcv4/tranche-9/P9-ACIPC-Validation.json).
-The user accepted the bounded implementation on 2026-10-30. The separate
-[decision](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) binds reviewed
-implementation `e3e7f91a`. Original execution and earlier seven-family acceptance
-records remain unchanged. Compatibility now has 32 bounded accepted cells
-and eight unselected RG2b cells. New RG2b native execution, optional completion, general conformance and
-A_CI_PC Tranche 10/basin support remain unselected; C_RG2b research is now open.
-
-
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
-
-2026-10-02: P9-8.0 is complete after explicit acceptance of R1–R10 and the
-aggregate bounded feasibility scope. All ten rows are provisionally closed;
-the all-ten production hold is released. P9-8.1a's four checkpoints are complete
-and committed at `75a6629`. P9-8.1b's four recorded checkpoints are delivered
-together under the user's request: row equations, stage-specific weight bridge
-and integrated own review, accepted and committed at `7f33a42`. P9-8.1c's four
-recorded checkpoints are implemented, own-reviewed and user-accepted together: baseline
-candidate detection, admitted post-commit fixture and boundary pressure,
-committed at `e9dfad7`. P9-8.1d's three content-specific checkpoints are
-implemented and own-reviewed together: nonnegative inverse algebra, canonical
-signed channels and graph-bound field dispatch. The user accepts `.d` with the
-identified exact-backend integration correction assigned to new P9-8.1e;
-that checkpoint is committed at `a2d3d36`. P9-8.1e is implemented, own-reviewed
-and user-accepted with real Python/FLINT parity and P9-8.0 arithmetic classification,
-committed at `c27583c`. The user explicitly accepts the complete P9-8.1 parent
-on 2026-10-02 and requests merging its branch into `main`.
-P9-8.2 is implemented and own-reviewed on 2026-10-03 in three substeps delivered
-together on `work/p9-8-2-expansion-allocator`, from merge `184919b`.
-The user explicitly accepts P9-8.2 on 2026-10-03 after specification/paper
-review and requests commit and merge, then P9-8.3C-OS on a new branch.
-The end-of-Tranche-8 cache review remains open.
-General 7T and later native acceptance gates remain separate.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
@@ -1839,6 +1607,33 @@ and final reviews are accepted within their recorded domains. P9-8.1 and
 P9-8.3 retain their independently reviewed child records.
 General 7T is not a prerequisite for the defined mechanical scope. Accepted
 Tranche 7 and current execution permissions remain unchanged.
+
+### Historical opening milestones (2026-10-02–03)
+
+2026-10-02: P9-8.0 is complete after explicit acceptance of R1–R10 and the
+aggregate bounded feasibility scope. All ten rows are provisionally closed;
+the all-ten production hold is released. P9-8.1a's four checkpoints are complete
+and committed at `75a6629`. P9-8.1b's four recorded checkpoints are delivered
+together under the user's request: row equations, stage-specific weight bridge
+and integrated own review, accepted and committed at `7f33a42`. P9-8.1c's four
+recorded checkpoints are implemented, own-reviewed and user-accepted together: baseline
+candidate detection, admitted post-commit fixture and boundary pressure,
+committed at `e9dfad7`. P9-8.1d's three content-specific checkpoints are
+implemented and own-reviewed together: nonnegative inverse algebra, canonical
+signed channels and graph-bound field dispatch. The user accepts `.d` with the
+identified exact-backend integration correction assigned to new P9-8.1e;
+that checkpoint is committed at `a2d3d36`. P9-8.1e is implemented, own-reviewed
+and user-accepted with real Python/FLINT parity and P9-8.0 arithmetic classification,
+committed at `c27583c`. The user explicitly accepts the complete P9-8.1 parent
+on 2026-10-02 and requests merging its branch into `main`.
+P9-8.2 is implemented and own-reviewed on 2026-10-03 in three substeps delivered
+together on `work/p9-8-2-expansion-allocator`, from merge `184919b`.
+The user explicitly accepts P9-8.2 on 2026-10-03 after specification/paper
+review and requests commit and merge, then P9-8.3C-OS on a new branch.
+The end-of-Tranche-8 cache review remains open.
+General 7T and later native acceptance gates remain separate.
+
+### Implementation checkpoints
 
 - [x] P9-8.0: Close and review all-ten mathematical/construction feasibility
   before any new specialization production work, including P9-8.1a.
@@ -4066,9 +3861,41 @@ the full ten-profile plan.
 - [x] Bounded first-group Tranche 8 accepted and closed by the user on 2026-10-27:
   C_OS, C_CI, A_CI and A_PC. [Closeout acceptance](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json).
   This historical first-group decision is now followed by the all-ten
-  Tranche 8–9 closeout above; all six subsequent family decisions are accepted.
+  Tranche 8–9 closeout in Tranche 9; all six subsequent family decisions are accepted.
 
 ## Tranche 9. Hybrid completion and disabled compatibility — mandatory scope closed for all ten
+
+### Tranches 8 and 9 — all ten declared family scopes accepted and closed (2026-10-30)
+
+The [all-ten closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
+reconciles the accepted first group and all six subsequent family decisions.
+There are no remaining mandatory Tranche 8–9 family checkpoints: P9-8.4d–i,
+8.5/8.6, final mechanism/performance reviews and applicable 9.1b–9.6 are closed
+for all ten declared scopes. All forty source-model disabled-compatibility
+cells are accepted. The user explicitly confirmed aggregate closure after
+A_RG2b acceptance `7083b989`; no numerical campaign is repeated.
+
+| Accepted population | Retained decision |
+| --- | --- |
+| C_OS, C_CI, A_CI, A_PC | [Tranche 8](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json), [Tranche 9](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json) |
+| A_OS | [Acceptance](./phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json) |
+| C_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json) |
+| C_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) |
+| A_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) |
+| C_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) |
+| A_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json) |
+
+Optional P9-9.1a completion/hierarchy is explicitly deferred and unselected;
+it was never a mandatory closure prerequisite. Earlier execution and family
+acceptance records retain their historical `aggregate_closed=false`; this
+successor records the aggregate decision without rewriting them.
+
+Retain exact subject/horizon limits, original exclusions, unresolved C1
+regularity, pointwise CI/carrier margins and the previously agreed deferred
+large diagnostics. Tranche closure grants neither arbitrary-graph numerical
+conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
+remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
+and do not transfer automatically to the other six families.
 
 Current scope: **all ten families**. The [aggregate closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
 binds every required lifecycle, compatibility, public-API and support child.
@@ -4268,7 +4095,144 @@ target or grant full specialization conformance.
 | `P9-9.2-C_CI_PC-observable` | Bounded-accepted |
 | `P9-9.2-C_CI_PC-lifecycle` | Bounded-accepted |
 
+### Accepted A_CI+PC eighth-realization extension (2026-10-30)
+
+Work is on `work/p9-acipc-tranches-8-9`, based on accepted merge `b61b60be`.
+The selected scope is P9-8.4d through applicable P9-9.6; see the
+[bounded plan](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Plan.md) and
+[scientific record](./phase-9-grcv4/tranche-8/P9-ACIPC-ScientificReview.md).
+The seven predecessors and A_CI_PC are accepted at their bounded scopes.
+Tranche 10, basin policy, optional completion, new RG2b execution and
+all-ten closure are not inferred from that acceptance.
+Independent jobs run in parallel, up to twelve one-thread workers. Native
+large segments use explicit FLINT / certified Arb and a 3600-second cap.
+
+Completed: twenty deep events / 400 continuation steps, 44 small covariance
+history cells, four large prerequisite steps, the actual large event and exact
+replay, and twenty-two Tranche 9 integration tests. Current and reset ten-step
+histories and their final reads now pass. Six small lifecycle obligations,
+fresh large replay, all three mapped events and their six target steps also
+pass. The consolidated retained review, 58 focused integration/science/surface
+checks and implementation-boundary audit pass. See the [checked review](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Review.json)
+and [validation](./phase-9-grcv4/tranche-9/P9-ACIPC-Validation.json).
+The user accepted the bounded implementation on 2026-10-30. The separate
+[decision](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) binds reviewed
+implementation `e3e7f91a`. Original execution and earlier seven-family acceptance
+records remain unchanged. Compatibility now has 32 bounded accepted cells
+and eight unselected RG2b cells. New RG2b native execution, optional completion, general conformance and
+A_CI_PC Tranche 10/basin support remain unselected; C_RG2b research is now open.
+
+### C_RG2b ninth realization — bounded Tranches 8–9 accepted (2026-10-30)
+
+Work continues on `work/p9-acipc-tranches-8-9` after accepted A_CI_PC
+commit `dbc013fb`. The connected completion has been selected for bounded
+implementation through authority → paper addendum → spec, with new explicit
+policy identities. The original tree17 policy and accepted evidence are intact.
+
+- [x] Exact graph certificates and full inverse-section research for the named
+  small, deep and cyclic graphs; C1 regularity remains narrowed/unresolved.
+- [x] Native 8.4d: twenty deeper events, 400 target steps and forty final reads.
+- [x] Native 8.4e/f: 44 required covariance history cells, 28 events and 112
+  target steps; full selected geometry/current/Read-Back/source comparisons.
+- [x] Native 8.4g: both source and prepared-target histories pass positive first
+  steps on the 100/400 and 107/407 graphs, with independent error enclosures.
+- [x] Six small 8.5 lifecycle obligations and eighteen 8.6 mechanism subjects.
+- [x] The 22 applicable native Tranche 9 integration tests pass, including
+  legacy compatibility, branch crossings, public lifecycle and conflict rollback.
+- [x] Actual second-beat large event and exact native replay; unchanged trigger,
+  timestep, resource shares and tolerances.
+- [x] Three large combined/reflection/rotation events and their six mapped
+  target steps; both roles pass complete selected-point covariance.
+- [x] Both large ten-step histories and two fresh final sections; all twenty
+  updates have positive independent section-aware resource bounds.
+- [x] Four large first/final mechanism subjects; geometry, feedback and
+  modulation remain distinguished after section-uncertainty allowances.
+- [x] Consolidated retained review: all sixteen applicable 8.4d–9.6 checkpoints,
+  with live Python/API/browser/notebook access and exact compressed evidence.
+- [x] Lossless storage deduplicates 67 large records into shared objects;
+  original JSON/XZ identities survive exact reconstruction. Standalone readers
+  use the scoped restore command in the linked reproduction note; no native rerun.
+- [x] Explicit bounded user acceptance (2026-10-30); aggregate ten-family closure stays open.
+
+See [native evidence](./phase-9-grcv4/tranche-8/crg2b-native/),
+[completion contract](./phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionContract.json)
+and [release binding](./phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionRelease.json).
+The public implementation executes C_RG2b and its bounded Tranches 8–9 scope
+is accepted. The eight earlier family acceptances remain unchanged; 36 of 40
+compatibility cells are now accepted. This does not grant full GRC9V4 conformance.
+Do not infer A_RG2b, basin support, optional hierarchy/completion, an arbitrary
+graph domain, a uniform trajectory tube, or all-ten conformance.
+
+Independent jobs use up to twelve single-thread workers; each large segment
+has a 3600-second cap. Successful segments are resumable and compressed.
+The large target steps took 547–636 seconds each. Certified lower bounds
+start above 1.05e-13 and finish above 1.15e-4; resource error stays below
+2.43e-16. These are pointwise bounds at saved inputs, not a uniform trajectory
+enclosure. The three selected large covariance transforms pass with maximum
+discrepancy 6.62e-24; five additional individual transforms remain deferred.
+See the [checked review](./phase-9-grcv4/tranche-8/crg2b-native/Review.json) and
+[scope/reproduction](./phase-9-grcv4/tranche-8/P9-CRG2b-NativeContinuation.md).
+The [acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) binds the
+original execution and deduplicated storage without relabelling them. Next is
+A_RG2b if selected; Tranche 10 remains separate.
+
+### A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
+
+Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.
+The [bounded plan](./phase-9-grcv4/tranche-8/P9-ARG2b-Tranches8-9-Plan.md)
+and [connected A completion](./phase-9-grcv4/tranche-8/P9-ARG2b-ConnectedCompletionContract.json)
+select the final family's 8.4d–9.6 work, implemented in `fd23970b`.
+[User acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json)
+is recorded separately and preserves the original execution evidence.
+Dated predecessor sections retain their original scope/next-step statements;
+the aggregate closeout and compatibility register above give the current scope.
+
+- [x] Exact 9/18/9 connected-graph completion and full C/Y/H research checks;
+  54 graph subjects, old tree17 regression, unchanged C1 debt ceiling.
+- [x] Authority → paper addendum → spec; explicit four-level/18-sweep,
+  binary64 proposal / Arb192 certificate with FLINT exact bounds, no fallback.
+- [x] Seven focused native tests, including complete W writer/staging,
+  full-point mutations, old-policy separation and explicit failure.
+- [x] Four large prepared first steps. Original negative-reset fixture retained;
+  independently derived old-edge W=1025/1024 companion, new bonds still one.
+- [x] Twenty deep layouts: 400 target steps and 40 final reads. D94 uses a
+  derived history/allocation companion and a componentwise infinite-section
+  frontier certificate; original exclusions remain recorded.
+- [x] Small signed/order and full-chart covariance: 44 required history cells,
+  28 events and 112 steps. Both histories and complete selected points checked.
+- [x] Actual second-beat large event and replay; three mapped events and six
+  mapped target steps, maximum covariance discrepancy 1.66e-24.
+- [x] Both ten-step large target histories and final reads pass at unchanged
+  parameters/tolerances. Certificates apply at each saved represented state.
+- [x] Six small 8.5 lifecycle tests, eighteen small 8.6 mechanism subjects and
+  22 applicable Tranche 9 integration tests. Matrix: all 40 source
+  compatibility cells bounded-accepted; zero pending or unexecuted. The original
+  execution matrix retains its 36 accepted / four pending counts.
+- [x] Four large first/final mechanism subjects pass; geometry, Read-Back,
+  history and current-dependent terms are distinct from zero controls.
+- [x] Deduplicated 67 records: 349,744,828 original bytes reconstruct exactly
+  from a 10,702,028-byte shared store (formerly 25,524,280 archive bytes).
+- [x] Six API/browser/notebook, source-drift, scope and explicit/historical
+  acceptance tests pass.
+- [x] Final phase-boundary check passes with preserved release and verified
+  handoff; no native numerical rerun. [Consolidated review](./phase-9-grcv4/tranche-8/arg2b-native/Review.json).
+- [x] Explicit bounded user acceptance (2026-10-30), following implementation
+  commit `fd23970b`; all sixteen checkpoints accepted without relabelling runs.
+
+Independent jobs use up to twelve single-thread workers, explicit FLINT/Arb,
+3600-second large-segment caps. No Tranche 10/basin, optional hierarchy,
+classical spectrum, uniform trajectory tube or unrestricted all-ten conformance
+is inferred. All ten family scopes and their Tranche 8–9 aggregate are now accepted.
+Remaining Tranche 10 work is separate.
+
 ## Tranche 10. Conformance and handoff
+
+The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
+records the completed read-only six-family assessment and agreed order. Bounded
+P9-10.2 for C_OS/C_CI/A_CI/A_PC is bounded-accepted; next is
+P9-10.1a–c → P9-10.2 per remaining
+family before consolidated P9-10.3–10.6. The historical checked P9-10.1 entries
+below remain four-family acceptances, not acceptance of those six extensions.
 
 - [x] Record the six-family capture/oracle/target map and rollout sequence
   (2026-10-30; read-only assessment, no native validation or support widening).
@@ -4382,6 +4346,57 @@ target or grant full specialization conformance.
   native case needed for a concrete gap or affected behavior; no automatic
   four-family replay/receipt campaign. Preserve historical execution identity
   and distinguish retained checks from fresh runs; parallelize independent work.
+### Remaining-family P9-10.1a–c → P9-10.2 (2026-10-30)
+
+Branch: `work/p9-tranche10-remaining-families`. The initial four-family
+acceptances remain unchanged; each row below needs its own bounded evidence.
+
+- [x] A_OS bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
+  - [x] 10.1a: fresh A reference/current/history/backend capture, full read
+    identity, independent equations, positive lifecycle and failure pressure.
+  - [x] 10.1b: exact retained v1 target and explicit v2 successor; independent
+    native V3 four-surface comparisons, both roles, replay and rollback.
+  - [x] 10.1c: both-role saved-state/row/classification/equation checks at policy
+    migration and disabled return, captured in the same native round trip.
+  - [x] 10.2: four independent saved charges and 53 receipts/15 commit groups;
+    reuse this family's executed replay and unchanged common charge controls.
+  - [x] Source-epoch preservation, compressed/reference-based retention,
+    API/browser/notebook access and portable handoff.
+  - [x] User acceptance on 2026-10-30; implementation `f87bcd27`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json).
+    No full-conformance/G4 or remaining-family grant.
+- [x] C_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md).
+  - [x] 10.1a: fresh committed-Z read, both roles, Candidate-C transport,
+    independent current/geometry equations, lifecycle/replay and rollback.
+  - [x] 10.1b: exact v1 target and explicit v2 basin successor; native V3
+    four-surface comparison, carrier loss/zero initialization, negative paths.
+  - [x] 10.1c: both-role captures at policy migration and disabled return;
+    saved C/Z, complete PC read/certificate, rows and classification checked.
+  - [x] 10.2: independent saved charges and receipt ledgers; reuse this
+    family's executed replay and unchanged shared charge controls.
+  - [x] Finite source-epoch preservation, compressed/reference-based records,
+    API/browser/notebook access and portable handoff.
+  - [x] User acceptance on 2026-10-30; implementation `bff4f3fc`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json).
+    No remaining-family/full-conformance/G4 grant.
+- [ ] C_CI_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md).
+  - [x] 10.1a: full joint J/H root, committed carrier, instantaneous source,
+    fresh full-root equality, independent equations and lifecycle/rollback pressure.
+  - [x] 10.1b: exact v1/v2 target four-surface legacy comparison; carrier loss
+    and zero initialization, both-role return, replay and failure cases.
+  - [x] 10.1c: both roles at policy migration and disabled return, captured
+    during the same compatibility execution; full root/certificate and rows.
+  - [x] 10.2: saved charges, parent/endpoint/delta receipt checks and executed
+    replay reused; no extra native campaign or widened exact-root claims.
+  - [x] Source-epoch preservation, compressed/referenced evidence, side-tool
+    API/browser/notebook access, plan and handoff.
+  - [ ] Bounded user acceptance; no remaining-family/full-conformance/G4 grant.
+- [ ] A_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
+- [ ] C_RG2b: 10.1a–c → 10.2 and bounded acceptance.
+- [ ] A_RG2b: 10.1a–c → 10.2 and bounded acceptance.
+
+### Consolidated conformance and handoff
+
 - [ ] P9-10.3: Run relevant old-family regressions and verify accepted release
   and source identity preservation.
 - [ ] P9-10.4: Publish capability discovery, a minimal API/replay example,

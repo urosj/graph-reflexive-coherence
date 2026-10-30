@@ -310,7 +310,7 @@ def _read_once(inputs, backend):
             from .grc_v4_candidate_c import CandidateCCurrent
 
             read = point = CandidateCCurrent(inputs)
-    elif realization == "CI":
+    elif realization in ("CI", "CI+PC"):
         from .grc_v4_ci import CandidateCIRoot
 
         read = CandidateCIRoot(inputs, backend)
@@ -340,6 +340,7 @@ def capture(state, role):
         "A_PC",
         "A_OS",
         "C_PC",
+        "C_CI_PC",
     ):
         raise ValueError("explicit supported basin successor required")
     if role not in ("current", "reset"):
@@ -374,7 +375,7 @@ def capture(state, role):
         ],
     )
     certificate = None
-    if ref.profile.identity_payload.realization == "CI":
+    if ref.profile.identity_payload.realization in ("CI", "CI+PC"):
         selected = read.selected
         if (
             selected.point is not point

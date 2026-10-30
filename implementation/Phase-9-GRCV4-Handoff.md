@@ -1,5 +1,37 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## C_CI_PC Tranche 10 — validated, acceptance pending (2026-10-30)
+
+Branch: `work/p9-tranche10-remaining-families`, following accepted C_PC
+`9fb469c8`. C_CI_PC adds its own P9-10.1a–c → 10.2 evidence on the retained
+17-node/16-edge target and its explicit basin-policy successor.
+
+Capture reconstructs the full selected joint root with old committed Z and
+instantaneous source together, at unchanged parameters and tolerances. The
+independent equations check H_ref + kappa_H (Z + S), with rho_inst=1 and the
+existing composition gain. Source pressure checks fresh full-root equality,
+carrier-only discrimination, omission controls, same-J/corrupt-H rejection,
+wrong coefficient/old-carrier rejection and no writer during observation.
+Fixed-geometry current bounds and selected-point geometry residuals do not
+imply an exact implicit-root sign or effect margin.
+
+All eight tests passed in two parallel FLINT jobs (about 12.2 and 7 minutes).
+The compatibility job captured both roles at policy migration and disabled return for reuse in
+10.1c/10.2. Accepted first-four, A_OS and C_PC evidence remains unchanged;
+a finite source epoch authenticates the capture extension and helper changes.
+Large evidence is compressed and consolidated records reference their parts.
+10.2 verifies 53 receipts in 15 commit groups and four saved charges without
+new native steps/replays. See the [review](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md)
+and [record](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Verification.json).
+The transferred target carrier contribution is below solver tolerance; the
+instantaneous contribution is resolved. No full implicit-root effect is claimed.
+
+The family API/browser selector and notebook `p910-ccipc-basin` expose the new
+bounded view separately from prior acceptances. User acceptance is separate.
+After C_CI_PC acceptance, A_CI_PC is next, then C_RG2b, A_RG2b and consolidated
+10.3–10.6. No scientific debt closure, full conformance or G4 is inferred.
+
+
 ## C_PC Tranche 10 — bounded accepted (2026-10-30)
 
 Same branch: `work/p9-tranche10-remaining-families`. [Review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md)

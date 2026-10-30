@@ -2822,3 +2822,17 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Bounded C_PC acceptance recorded on 2026-10-30 over implementation
   `bff4f3fc`; original execution remains unchanged. C_CI_PC, A_CI_PC, C_RG2b and A_RG2b remain
   separate; no aggregate Tranche 10 or G4 acceptance is inferred.
+
+
+## Remaining-family Tranche 10 — C_CI_PC
+
+- [x] Extend the family selector/API with C_CI_PC's own bounded review and
+  notebook cell `p910-ccipc-basin`; bind full joint root, old Z and certificate.
+- [x] Show fixed-geometry current errors and the composite geometry residual
+  separately; do not infer exact implicit-root signs or carrier-effect margins.
+- [x] Retain both-role migration/disabled-return captures, charge checks and
+  receipts from the same native jobs; no native execution in status views.
+- [x] Preserve accepted first-four/A_OS/C_PC evidence and original Git sources;
+  test changed roots/carriers/domains, scope widening and stale-view clearing.
+- [ ] Bounded C_CI_PC acceptance; A_CI_PC, C_RG2b, A_RG2b and consolidated
+  10.3–10.6 remain separate.

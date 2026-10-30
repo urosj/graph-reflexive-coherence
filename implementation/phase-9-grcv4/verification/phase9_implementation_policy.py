@@ -4196,3 +4196,15 @@ PATHS |= {
 
 # Bounded C_PC acceptance, separate from the original native evidence.
 PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json")
+
+# C_CI_PC joint-root/carrier basin capture and bounded Tranche 10 evidence.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_ccipc_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p910_ccipc_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_ccipc_surfaces.py',
+}

@@ -49,6 +49,7 @@ def restore_state(payload, family):
             A_PC="GRC9V4APCState",
             A_OS="GRC9V4AOSState",
             C_PC="GRC9V4CPCState",
+            C_CI_PC="GRC9V4CCIPCState",
         )[family],
     )
     return cls(
@@ -167,12 +168,17 @@ def capture(model, label):
                 "OS fresh reference-geometry restart",
             )
             mechanisms[role] = "fresh_reference_geometry_restart"
-        elif real == "CI":
+        elif real in ("CI", "CI+PC"):
             require(
                 read.selected.point is point and read.selected.inputs == point.inputs,
                 "complete joint selected root",
             )
-            mechanisms[role] = "full_J_H_root_domain_certificate_bound"
+            if real == "CI+PC":
+                require(read.inputs.current.Z_4 == getattr(saved.inputs, role).Z_4,
+                        "composite committed carrier binding")
+                mechanisms[role] = "full_J_H_root_old_Z_domain_certificate_bound"
+            else:
+                mechanisms[role] = "full_J_H_root_domain_certificate_bound"
         else:
             require(
                 read.inputs.current.Z_4 == getattr(saved.inputs, role).Z_4,
@@ -380,7 +386,7 @@ def validate(value, old, *, equations=False):
                 "selected recipe input drift",
             )
             h = [[float.fromhex(x) for x in r] for r in selected["H1_form"]]
-            if family.endswith("CI"):
+            if saved.inputs.geometry.reference.profile.identity_payload.realization in ("CI", "CI+PC"):
                 require(
                     selected["selected_inputs"]["H1_form"] == h
                     and selected["selected_inputs"]["current"] == state["inputs"][role]
