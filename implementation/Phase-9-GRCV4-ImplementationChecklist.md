@@ -58,7 +58,7 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
   - [x] User acceptance on 2026-10-30; implementation `f87bcd27`,
     [decision](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json).
     No full-conformance/G4 or remaining-family grant.
-- [ ] C_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md).
+- [x] C_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md).
   - [x] 10.1a: fresh committed-Z read, both roles, Candidate-C transport,
     independent current/geometry equations, lifecycle/replay and rollback.
   - [x] 10.1b: exact v1 target and explicit v2 basin successor; native V3
@@ -69,7 +69,9 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
     family's executed replay and unchanged shared charge controls.
   - [x] Finite source-epoch preservation, compressed/reference-based records,
     API/browser/notebook access and portable handoff.
-  - [ ] Bounded user acceptance; no remaining-family/full-conformance/G4 grant.
+  - [x] User acceptance on 2026-10-30; implementation `bff4f3fc`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json).
+    No remaining-family/full-conformance/G4 grant.
 - [ ] C_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
 - [ ] A_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
 - [ ] C_RG2b: 10.1a–c → 10.2 and bounded acceptance.

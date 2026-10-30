@@ -1,0 +1,56 @@
+{
+  "schema": "p910-family-basin-acceptance-v1",
+  "family": "C_PC",
+  "status": "accepted_bounded_family_basin",
+  "accepted_on": "2026-10-30",
+  "user_instruction": "accept and commit",
+  "reviewed_commit": "bff4f3fca4197583c4ff3294820dc53eb1bc10b7",
+  "checkpoints": [
+    "10.1a",
+    "10.1b",
+    "10.1c",
+    "10.2"
+  ],
+  "user_accepted": true,
+  "P9_10_1_closed": true,
+  "P9_10_2_closed": true,
+  "all_ten_P9_10_1_closed": false,
+  "all_ten_P9_10_2_closed": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "verification_record_digest": "f9937fa25a07eac6e61e06b5c0153232e6b5d6ce2603d58d801780b03e4950b7",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Verification.json",
+      "sha256": "c323676e07dd7a18f076469aae40154da384c774109a470371eeefe43e113120",
+      "record_digest": "f20ededdb519e79c18269ae587047975e3745191aa0e625ee3d751fe2259747b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Native.json",
+      "sha256": "bfd16fc3c77132631ebfd9393113419c76c7884a4d71eb109476a1724468b3b7",
+      "record_digest": "a468819b897cfc5e4940fa50ca016a3fda36231b34c90a92c24ae018c36e9e18"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Target.json.xz",
+      "sha256": "7a58e17833a4b78a8d2ae2e72beb231a5a28f2911a2806725c4a9e4036c927c1",
+      "record_digest": "c27348e12e4427a4fd6ae46eb02bd46584ba1521d1d912b087b19623fe51d55e"
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Review.md",
+      "sha256": "2ad216400363d29b426ab13c3b480a18fefbad7b7582cd37702940716c3e4d98"
+    }
+  ],
+  "remaining_families": [
+    "C_CI_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "scope": "Bounded C_PC source/lifecycle and exact 17-node expanded v1/v2 target conformance; committed carrier read, both-role migration/disabled-return basin checks and retained 10.2 verification. Earlier first-four and A_OS acceptances remain separate.",
+  "historical_records": "Native and verification records retain their execution-time pending-acceptance flags; this separate decision records user acceptance without a native rerun.",
+  "next_work": "C_CI_PC P9-10.1a-c then P9-10.2; continue A_CI_PC, C_RG2b, A_RG2b before consolidated P9-10.3-10.6.",
+  "record_digest": "28517601d0e71be406ac8d3a54c3de5888210e9ab9e2322106d196d51f20ff6d"
+}

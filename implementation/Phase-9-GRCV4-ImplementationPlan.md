@@ -40,11 +40,13 @@ P9-10.2 are bounded-accepted on 2026-10-30; implementation `f87bcd27`,
 The two native jobs run in parallel. Exact-target migration/disabled-return
 captures are collected during compatibility execution and reused for 10.1c/10.2;
 no duplicate native campaign. C_PC now follows the same workflow, with
-[bounded results](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md) pending acceptance.
+[bounded results](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md) accepted on
+2026-10-30; implementation `bff4f3fc`,
+[acceptance decision](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json).
 Its committed carrier and PC certificate are observed without running a writer;
 the independent checker uses this target's actual zeta_C=2^-30 (the earlier
 C_OS/CI witness used 2^-37). Exact-target crossings distinguish carrier loss and
-zero initialization from history preservation. After C_PC acceptance: C_CI_PC,
+zero initialization from history preservation. Next: C_CI_PC,
 A_CI_PC, C_RG2b and A_RG2b.
 
 
@@ -55,7 +57,7 @@ see the [bounded review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md) and
 retained-evidence checks reused accepted replay and runtime receipts, recomputed
 sixteen independent equations and sixteen charge checks, and shared 24
 Python/FLINT charge-kernel evaluations. No native steps or replay runs were
-repeated. A_OS P9-10.1a–c → P9-10.2 is now also accepted; continue C_PC, following
+repeated. A_OS and C_PC P9-10.1a–c → P9-10.2 are now also accepted; continue C_CI_PC, following
 the remaining-family order below; consolidated P9-10.3–10.6 stay separate.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
@@ -117,7 +119,7 @@ The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) adds an expli
 A_OS branch to the accepted first four. Its fresh Candidate-A reference read
 uses the role's W and fixed-row backend; this additional bounded native scope
 is accepted separately. C_PC now has declared capture scope and bounded
-conformance evidence pending acceptance. Composite CI+PC and RG2b capture
+conformance evidence accepted separately. Composite CI+PC and RG2b capture
 remain unimplemented. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)

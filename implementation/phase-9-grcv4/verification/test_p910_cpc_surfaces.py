@@ -39,7 +39,10 @@ class CPCSurfaces(unittest.TestCase):
             self.assertEqual(set(returned[role]["Z_4"]), {0.0})
             self.assertIsNone(returned[role]["W_A"])
         self.assertEqual(self.view["remaining_families"], ["C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"])
-        self.assertFalse(self.view["user_accepted"])
+        self.assertTrue(self.view["user_accepted"])
+        self.assertFalse(self.evidence["user_accepted"])
+        self.assertTrue(self.view["P9_10_1_closed"])
+        self.assertTrue(self.view["P9_10_2_closed"])
         for version in ("v1", "v2"):
             self.assertEqual(self.evidence["target_compatibility"][version]["history_policy"],
                              "explicit_C_PC_carrier_loss_and_zero_initialization")
@@ -72,7 +75,7 @@ class CPCSurfaces(unittest.TestCase):
         self.assertEqual(ref["revision"], campaign.successor.BASELINE)
         with self.assertRaises(KeyError): api.family_basin_source(ROOT, "../private", "C_PC")
 
-    def test_browser_pending_scope_binding_and_failure_clearing(self):
+    def test_browser_accepted_scope_binding_and_failure_clearing(self):
         js = """
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -80,7 +83,7 @@ import {createHash} from 'node:crypto';
 import {canonical} from './verification.js';
 import {checkedFamilyBasin,familyBasinLoader} from './tranche10-families.js';
 const v=JSON.parse(readFileSync(0,'utf8'));await checkedFamilyBasin(v);
-for(const change of [x=>x.family='C_CI_PC',x=>x.user_accepted=true,x=>x.G4_accepted=true,
+for(const change of [x=>x.family='C_CI_PC',x=>x.user_accepted=false,x=>x.G4_accepted=true,
  x=>x.boundaries[0].role_equations.current.geometry_residual_upper='1']){
  const bad=structuredClone(v);change(bad);const {record_digest,...body}=bad;
  bad.record_digest=createHash('sha256').update(canonical(body)).digest('hex');
@@ -90,7 +93,7 @@ const output={children:[],replaceChildren(){this.children=[]},append(e){this.chi
 const status={textContent:''};let ok=true;
 const load=familyBasinLoader(output,status,async()=>({ok,json:async()=>v}),tag=>({tag,textContent:''}));
 await load('C_PC');assert.equal(output.children.filter(x=>x.tag==='h4').length,2);
-assert.match(status.textContent,/acceptance pending/);
+assert.match(status.textContent,/Accepted within bounded C_PC scope/);
 ok=false;await load('C_PC');assert.equal(output.children.length,0);assert.match(status.textContent,/unavailable/);
 """
         result = subprocess.run([str(managed_node()), "--input-type=module", "-e", js],

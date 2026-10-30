@@ -2813,11 +2813,12 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 
 - [x] Extend the existing family API/browser selector with C_PC's exact review,
   compressed indexed sources and notebook cell `p910-cpc-basin`.
-- [x] Show pending acceptance independently of accepted A_OS; bind full PC
+- [x] Show bounded C_PC acceptance independently of accepted A_OS; bind full PC
   current/geometry/certificate, actual coefficient, saved charges and receipts.
 - [x] Preserve accepted source epochs and original evidence; fail closed on
   changed sources, selected role/carrier/certificate, or widened claims.
 - [x] Refresh the active Phase 9 next-work projection and handoff. All checks
   are retained-evidence checks; the status surface runs no native trajectory.
-- [ ] Bounded C_PC acceptance. C_CI_PC, A_CI_PC, C_RG2b and A_RG2b remain
+- [x] Bounded C_PC acceptance recorded on 2026-10-30 over implementation
+  `bff4f3fc`; original execution remains unchanged. C_CI_PC, A_CI_PC, C_RG2b and A_RG2b remain
   separate; no aggregate Tranche 10 or G4 acceptance is inferred.

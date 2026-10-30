@@ -1,9 +1,11 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## C_PC Tranche 10 — implemented, pending acceptance (2026-10-30)
+## C_PC Tranche 10 — bounded accepted (2026-10-30)
 
 Same branch: `work/p9-tranche10-remaining-families`. [Review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md)
 and [verification](./phase-9-grcv4/tranche-10/P9-10-CPC-Verification.json).
+Implementation `bff4f3fc`; [user acceptance](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json)
+closes bounded C_PC 10.1a–c and 10.2. Original execution records remain unchanged.
 C_PC P9-10.1a–c → 10.2 now has its own source/lifecycle and exact-target native
 checks, run in two parallel jobs using FLINT. Both-role boundary captures come
 from that same compatibility run. 10.2 adds no native steps or replay campaign.
@@ -23,7 +25,7 @@ is compressed, with the consolidated record reconstructing from bound parts.
 Side-tool: `/api/tranche10/families?family=C_PC`, the existing browser family
 selector, and notebook cell `p910-cpc-basin`. Retained checks do not run native
 trajectories. See the review for reproduction and the short fixture-correction
-note. User acceptance remains pending. After acceptance/commit, C_CI_PC is next,
+note. Acceptance is recorded separately with no native rerun. C_CI_PC is next,
 then A_CI_PC, C_RG2b, A_RG2b and consolidated 10.3–10.6. No new claim/debt
 closure, full conformance, or G4 is inferred.
 
