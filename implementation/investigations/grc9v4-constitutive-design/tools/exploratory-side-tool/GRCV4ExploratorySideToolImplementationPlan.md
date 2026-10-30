@@ -3386,3 +3386,18 @@ See [C_RG2b research usage](./docs/CRG2bNinthRealization.md).
 - [x] Separate bounded C_RG2b user acceptance; eight accepted predecessors remain unchanged.
 - [x] API/browser/notebook project the pinned acceptance and 36 accepted compatibility
   cells, while preserving original pending execution records and C1/A_RG2b limits.
+
+## A_RG2b tenth realization — connected completion and bounded native work
+
+- [x] Add the API `/api/arg2b`, browser panel and `query-arg2b` notebook cell;
+  all consume the same retained view without numerical reruns.
+- [x] Separate exact connected A research, the original reset exclusion,
+  selected companions, full C/Y/H native evidence and pending acceptance.
+- [x] Preserve the nine accepted family records; ten-family runtime discovery
+  is distinct from the 36 accepted / four pending compatibility cells.
+- [x] Five retained-surface tests pass: scope mutation/source rejection, HTTP,
+  browser, actual notebook parity and preserved predecessor acceptance.
+
+C1 regularity remains narrowed/unresolved. Three large covariance transforms
+are selected; five remain deferred. Tranche 10/basin and uniform trajectory
+claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization.md).

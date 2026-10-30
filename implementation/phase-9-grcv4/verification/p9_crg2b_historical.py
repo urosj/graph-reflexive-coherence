@@ -51,9 +51,10 @@ def manifest(root):
 
 
 def epochs(root):
+    from p9_arg2b_historical import peel_sha
     root=Path(root).resolve();value=json.loads((root/PATH).read_bytes())
     if value!=seal(value) or value['schema']!='p9-crg2b-connected-epochs-v1' or value['predecessor']!=BASE \
-        or set(value['sources'])!=CHANGED or value['checker_sha256']!=sha((root/SELF).read_bytes()) \
+        or set(value['sources'])!=CHANGED or value['checker_sha256']!=peel_sha(root,SELF,sha((root/SELF).read_bytes())) \
         or value['native_sources_changed'] is not True or set(value['additions'])!=ADDITIONS \
         or any(value[k] is not False for k in ('accepted_evidence_rewritten','user_acceptance_inferred')):
         raise ValueError('C_RG2b research source epoch drift')
@@ -61,15 +62,19 @@ def epochs(root):
 
 
 def peel_sha(root,name,present):
+    from p9_arg2b_historical import peel_sha as successor_sha
+    present=successor_sha(root,name,present)
     name=Path(name).as_posix()
     if name not in CHANGED:return present
     root=Path(root).resolve();row=epochs(root)['sources'][name]
-    if sha((root/name).read_bytes())!=row['after_sha256'] or sha(original(root,name))!=row['before_sha256']:
+    if successor_sha(root,name,sha((root/name).read_bytes()))!=row['after_sha256'] or sha(original(root,name))!=row['before_sha256']:
         raise ValueError('unregistered C_RG2b research successor: '+name)
     return row['before_sha256'] if present==row['after_sha256'] else present
 
 
 def project(root,current):
+    from p9_arg2b_historical import project as successor_project
+    current=successor_project(root,current)
     root=Path(root).resolve();value=epochs(root)
     result={name:peel_sha(root,name,present) for name,present in current.items()}
     for name in ADDITIONS & result.keys():

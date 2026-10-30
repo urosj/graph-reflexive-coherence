@@ -69,6 +69,7 @@ def _native_mode(inputs: GeometryStageInputs) -> bool:
         "grc9v4_c_rg2b_signed_argument_completion_v1",
         "grc9v4_c_rg2b_connected_signed_argument_completion_v1",
         "grc9v4_a_rg2b_signed_argument_completion_v1",
+        "grc9v4_a_rg2b_connected_signed_argument_completion_v1",
     }
 
 
@@ -249,10 +250,13 @@ class _Jet:
 
 
 def _native_implementation(inputs: GeometryStageInputs) -> Any:
+    """Closed completion dispatch; no caller-provided evaluator protocol."""
+    if inputs.geometry.reference.profile.params_resolved.realization.extension_evaluator_id == "grc9v4_a_rg2b_connected_signed_argument_completion_v1":
+        from . import grc_9_v4_arg2b_connected
+        return grc_9_v4_arg2b_connected
     if inputs.geometry.reference.profile.params_resolved.realization.extension_evaluator_id == "grc9v4_c_rg2b_connected_signed_argument_completion_v1":
         from . import grc_9_v4_crg2b_connected
         return grc_9_v4_crg2b_connected
-    """Closed completion dispatch; no caller-provided evaluator protocol."""
     if _native_a_mode(inputs):
         from . import grc_9_v4_arg2b
 
@@ -269,7 +273,8 @@ def _native_a_mode(inputs: GeometryStageInputs) -> bool:
             "extension_evaluator_id",
             "",
         )
-        == "grc9v4_a_rg2b_signed_argument_completion_v1"
+        in {"grc9v4_a_rg2b_signed_argument_completion_v1",
+            "grc9v4_a_rg2b_connected_signed_argument_completion_v1"}
     )
 
 

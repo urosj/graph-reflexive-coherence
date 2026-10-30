@@ -1,0 +1,1568 @@
+{
+  "schema": "p9-arg2b-completion-feasibility-v1",
+  "scope": {
+    "family": "A_RG2b",
+    "stage": "research_completion_feasibility",
+    "accepted_small_graphs": 32,
+    "deep_graphs": 20,
+    "large_graphs": 2,
+    "arithmetic": "FLINT_exact_rational",
+    "physical_law_changed": false,
+    "signed_history_coordinates": "Y=512 log W_A",
+    "native_steps": 0,
+    "native_events": 0,
+    "physical_positivity_certified": false,
+    "numerical_chain_certified": false,
+    "C1_debt": "GTRS-RG-DEBT-C1-SECTION-REGULARITY_unresolved",
+    "user_accepted": false,
+    "aggregate_closed": false
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4c-ARG2bCases.json",
+      "sha256": "054fc9a297d4c573dfa84bb0a452c08952a73a9710bebdb245995ce519355aeb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-COSCases.json",
+      "sha256": "f2f62f2c5c741a0997f49e0286f1f23b05a796b1f28e9f2cf93ace08649eac50"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/larger-graph-examples/A_RG2b.json",
+      "sha256": "d6c3ee7f10b025bbd429b829895fd36b168dbf58cf6bc5d9b9e4bb4228ec0340"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9_arg2b_completion.py",
+      "sha256": "44b781ce3e1c08a42d3e6da5ee37961e556f8c848c32a94e019b18528e81ac5c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p9_arg2b_completion.py",
+      "sha256": "144540a885c68acac8d752e2879a245aac34fb9ce9c7007bcf204c1583cd8595"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-ConnectedCompletion.md",
+      "sha256": "885eb9802500c5c8ba23b3ca0d8f965f3ccc5b0dc04c20051a2f423d1620a71d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-Tranches8-9-Plan.md",
+      "sha256": "3a179d62796dc6a23429b34285f4392396899cfe4b6572fcc2a3ef0720fdbc81"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9_crg2b_completion.py",
+      "sha256": "2b4297b469bfd8fa2773bd4ed5f39bfc394522c1e6f45fcf7419a67caa350c65"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md",
+      "sha256": "bc029c5e927e3ae4793af91eb95c07e565cfb733324ec8c0ff3c8104b491776b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py",
+      "sha256": "5725f799116395e74601c04578a1caaa8811f76657589b334514122553fa0c79"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_arg2b.py",
+      "sha256": "68d48b020c2d9efefca82cdef24bd1cca159ddd1cf80fe29bc815c61aab5a616"
+    }
+  ],
+  "graphs": [
+    {
+      "subject": "accepted-small/P984C-D36-E-1-P1",
+      "graph_digest": "7b7204da0d4d137fdc1b6faab2facd6ebe75a4c96bc382d8a97b82d2c8bababb",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D36-E-1-P2",
+      "graph_digest": "d5ec561d286e0a12dffeeb086a93b8e9c303794b1e07291e6f3565e8903cab7f",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D36-E-1-P3",
+      "graph_digest": "314c7ad0b1bbf27954d8d55ef652e93bc9ee8f1bddd2bc610026728ed9fcff28",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D36-E1-P1",
+      "graph_digest": "cc061de1823fbb3e7ba970f7256f45d4045031b2e03b73d986dd1576feb23b37",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D36-E1-P2",
+      "graph_digest": "e7668108fb20f71131b67acf942f000c9e1f58513c98c7316aaeca09640b43a7",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D36-E1-P3",
+      "graph_digest": "f5635ea81f146df2b7ef95f2568146a8af3feb7df34c942ae2a7e6d3c0f0b171",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D37-E-1-P1",
+      "graph_digest": "71e4bf7d45350ecfa554a34a15af3c3f4b5e580f1505c47bcce2d23b9613fe03",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D37-E-1-P2",
+      "graph_digest": "ac8d65896c15ae581b10828d9ffd5bbe8bec4a014ab4b5a7b0a43bde09514116",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D37-E-1-P3",
+      "graph_digest": "01f333510d1d31c84aeb52a7ca85eb5252c86598121dda8d1fb24581b49ebcd7",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D37-E1-P1",
+      "graph_digest": "ca5413bb89d7f98595e176473212cf80ae4c80ddd9f36a7a8a11fe11ef3ac981",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D37-E1-P2",
+      "graph_digest": "0dd80e4c5e8db215da28c8e2c06848900116cf81de67b7311790f97eb44531c8",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D37-E1-P3",
+      "graph_digest": "f4afebfab2cc300447675dc9ecbd5049717f423964aaa1a1bd7455a7838befa3",
+      "vertices": 14,
+      "edges": 13,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D38-E-1-P1",
+      "graph_digest": "780e3b82ef0413c7f20982ae1da0b1f82504bb2455b79c606f13360f32917ca0",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D38-E-1-P2",
+      "graph_digest": "ea1ca69f2d12c6a9c7df6338b7acae532ac9331e28b65a8f67d29c4f9dc6f77f",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D38-E-1-P3",
+      "graph_digest": "1a44e73e31f92688037a6eba38bec085d34947157eb90c9dcf00b0635a8ea4ea",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D38-E1-P1",
+      "graph_digest": "a99fe7dbb3e77f791f94771ee96e6f648cf0ad3160fcd533557a6447a5d555fc",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D38-E1-P2",
+      "graph_digest": "031648e5193d3140a10c7bbe53a72667d4caec8a2c82be42a58d8d13fa4e9bed",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D38-E1-P3",
+      "graph_digest": "fcaa2cf117b485b64745114f51a4ecc380d995c713d3df76d611fd8559ed6020",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D43-E-1-P1",
+      "graph_digest": "9e47a8055f8cc16924650ca68decc640741fb7a0cd66ecc96568989cb52b78eb",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D43-E-1-P2",
+      "graph_digest": "3b33e64d5b054d2427263fdec30e3e5f55e7144c2c924bfc1254e179f67e55b3",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D43-E-1-P3",
+      "graph_digest": "20ad7b87f3376911667bb83dee2b4a0fc84b161bbe84282fe11d92b9dd3b0ba6",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D43-E1-P1",
+      "graph_digest": "050bf2661d282b8ddbf2080974ec9ad5260352c47100e4ac7be723b07e16c1d6",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D43-E1-P2",
+      "graph_digest": "1e75afa47b0fdf6e01faa5f9bdfd0afcf2835b93fae56921a17e21d673f35591",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D43-E1-P3",
+      "graph_digest": "57911d2a6e9635528a09bed2b97577758d7ea5a1c5731b9f3ee7a59c9a8b8fc0",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D44-E-1-P1",
+      "graph_digest": "307386bfa09778bb6c7c2c657866f0fca522023db17d18259cc61d921ca61fe9",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D44-E-1-P2",
+      "graph_digest": "01fd0f5f148732016bb9bb222cc25a1ba9047db7210382fc4269465bfb1d25b3",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D44-E-1-P3",
+      "graph_digest": "bc3275d3f9361c5ac22b82c3a3fa31f995debc4d9c1c41ebef1f3dc62cef2ff9",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D44-E1-P1",
+      "graph_digest": "bc71cdcab52580f21a7fef4be943565b25d0f870d7c113d042b0b41323802f13",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D44-E1-P2",
+      "graph_digest": "8482b65144c80ca219e7837883d4b999759ea21621df0ca1e628a652c09934ac",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D44-E1-P3",
+      "graph_digest": "a714da12a70d563097ebd679cba8866dbac0b81fc0e0d468e6cd8cb897e0f217",
+      "vertices": 15,
+      "edges": 14,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D45-E-1-P0",
+      "graph_digest": "9b903f1b523c69d159edf32664c2c280ed5d57bd3e06df7818d40dd900fc2e4a",
+      "vertices": 16,
+      "edges": 15,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "accepted-small/P984C-D45-E1-P0",
+      "graph_digest": "b80570e43eb20048593ba2483b8b295ae2f6d369f51d7a12c80aef711c270a56",
+      "vertices": 16,
+      "edges": 15,
+      "cycle_rank": 0,
+      "diameter": 4,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D59-E-1-P1",
+      "graph_digest": "9b49bd372942312377d4c9800a34b8cf3350393ef69095680b565f2c06a0ff23",
+      "vertices": 18,
+      "edges": 17,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D59-E-1-P2",
+      "graph_digest": "12bc3eb9a9774fd2b0cb2f3b1c94b4eeaac74bd87bc554e95885be7eb4129ee2",
+      "vertices": 18,
+      "edges": 17,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D59-E-1-P3",
+      "graph_digest": "355926dcdbc6ff442e6a8a25ea415eb362b672f42e392a1397987c4a69457d5e",
+      "vertices": 18,
+      "edges": 17,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D59-E1-P1",
+      "graph_digest": "92430633fb9d99ca102d24658b3c5beed2b51b2e9f30da95a5423529a738557b",
+      "vertices": 18,
+      "edges": 17,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D59-E1-P2",
+      "graph_digest": "c8d17e67a745623cef08e3a6824674b3851110b2f7c0566ee75a178d21028ff0",
+      "vertices": 18,
+      "edges": 17,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D59-E1-P3",
+      "graph_digest": "011fbf8e3c7c39da10c133583372fce6a6e42177c11851f3984e8db52dfc8a1b",
+      "vertices": 18,
+      "edges": 17,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D66-E-1-PNone",
+      "graph_digest": "038c79dc5593b9e051e8bb1299e47b718b771a2fbb48d29ca6a0ab57b4c69b80",
+      "vertices": 19,
+      "edges": 18,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D66-E1-PNone",
+      "graph_digest": "9362a0888237808694f47448a062f5cb261c4ca9a1334c37bc196db236707d92",
+      "vertices": 19,
+      "edges": 18,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D73-E-1-P1",
+      "graph_digest": "fe8b0a1c15849754481f0f8ecb558f6b8fb57204b83c837024febf89ca7988a6",
+      "vertices": 20,
+      "edges": 19,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D73-E-1-P2",
+      "graph_digest": "593535ababfcd464ded9778d772eaa215f84c435cbd2fec31bcd7ff4ab86b519",
+      "vertices": 20,
+      "edges": 19,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D73-E-1-P3",
+      "graph_digest": "25318ccf73ebf4dae6c2bb6af162fbdde8ecbf3cefc9bbbc620daef698442408",
+      "vertices": 20,
+      "edges": 19,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D73-E1-P1",
+      "graph_digest": "32975876cd3943e98b8b136e8325825946ffe8ae03888c7f5310fdb47efa0f63",
+      "vertices": 20,
+      "edges": 19,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D73-E1-P2",
+      "graph_digest": "3de5977eb948de783c971299954514ef9ea2acd449ac2759aa9f96d213d5b3eb",
+      "vertices": 20,
+      "edges": 19,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D73-E1-P3",
+      "graph_digest": "90383843ce2ed4148e5bdda73c7dd15fdb8254c611209229f8a3e488cf691ab9",
+      "vertices": 20,
+      "edges": 19,
+      "cycle_rank": 0,
+      "diameter": 6,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D94-E-1-P1",
+      "graph_digest": "21e2c09c5aa0d2fd756d8be04fb63e97892873e37b70409427790bd52e519e24",
+      "vertices": 23,
+      "edges": 22,
+      "cycle_rank": 0,
+      "diameter": 7,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D94-E-1-P2",
+      "graph_digest": "c67936d84190dc60218d2bc5bedcee9990f9eaabf8b046ee93a04475362deb60",
+      "vertices": 23,
+      "edges": 22,
+      "cycle_rank": 0,
+      "diameter": 7,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D94-E-1-P3",
+      "graph_digest": "2858c33ebdaeca70188c3e68f7f1642c6c665bd53e6dbaa41dc4589a028eadf0",
+      "vertices": 23,
+      "edges": 22,
+      "cycle_rank": 0,
+      "diameter": 7,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D94-E1-P1",
+      "graph_digest": "e17c1ec55248e8ded0299804d8e6aa911ed6a5069c910554861dbe03b8d48393",
+      "vertices": 23,
+      "edges": 22,
+      "cycle_rank": 0,
+      "diameter": 7,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D94-E1-P2",
+      "graph_digest": "ed6e6e0c0393c2b2e53380fcb1b452e8bfcb5dbb0c1c54c9cdfe75bcc03b9956",
+      "vertices": 23,
+      "edges": 22,
+      "cycle_rank": 0,
+      "diameter": 7,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "deep/P984D-D94-E1-P3",
+      "graph_digest": "b6c4e4b8b0ce0013c48ee7a1a77614084b8ed024c25352169998535af8a02be6",
+      "vertices": 23,
+      "edges": 22,
+      "cycle_rank": 0,
+      "diameter": 7,
+      "actual_norms": [
+        "5",
+        "8",
+        "4"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "large/source",
+      "graph_digest": "f99e64584ed51e01f35ca64058d4b8f51a9f317279f5be2d9ef3331a28ce3546",
+      "vertices": 100,
+      "edges": 400,
+      "cycle_rank": 301,
+      "diameter": 13,
+      "actual_norms": [
+        "9",
+        "17",
+        "17/2"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    },
+    {
+      "subject": "large/target",
+      "graph_digest": "654ac56f91e025b89c43c0947d61a6e6e3c454234ab88d166b21da82d44c0949",
+      "vertices": 107,
+      "edges": 407,
+      "cycle_rank": 301,
+      "diameter": 13,
+      "actual_norms": [
+        "8",
+        "16",
+        "8"
+      ],
+      "class_norms": [
+        "9",
+        "18",
+        "9"
+      ],
+      "class_certificate_digest": "1391f5ab1668de5c5f924b8506d68fb2417aa0ff0026e70111b2d3e8c823938f",
+      "checks": {
+        "resource_chart_containment": true,
+        "history_chart_containment": true,
+        "section_image": true,
+        "lipschitz_class": true,
+        "graph_transform": true,
+        "same_four_level_tail_budget": true
+      }
+    }
+  ],
+  "class_certificate": {
+    "norms": [
+      "9",
+      "18",
+      "9"
+    ],
+    "bounds": {
+      "A_X": "158132028199115827182365046783257854295868765259790752666514186207825187/1967724491136408541603566889395574603524057531786775344824265746577096704",
+      "A_H": "1528119771469665645543283254553943716272586218486301755037058571/12853207595618839405030857304322063782600883142829106898009063424",
+      "M_f": "74687583688790821066104654555/313455091307990042368648990208",
+      "M_C": "74687583688790821066104654555/313455091307990042368648990208",
+      "M_Y": "477816491228788622013099399309955867350512546449819527833952587/1648430162400149235319182513299512274083231854497941975866774913024",
+      "M_S": "862757596317778190947162279117575168622885501642211328/3103798502442176827043601950352526987827159925267882841161",
+      "B_X": "518653728728417042787134595778439819509289034739526669650711471862836962201477580979872059/725842850553102084622659090366819078059758665309815408196882464166546229277662323592711137280",
+      "B_H": "4453556411847559631096046570950109030696049194500489582048610139050934835987458919424/4855006224268929825440517246139361341902281312271346640871698845292073986499774745777445",
+      "J": "66388963278925174280981915160/612216975210918051501267559",
+      "J_X": "17570225355457314131373894087028650477318751695532305851834909578647243/480401487093849741602433322606341455938490608346380699419986754535424",
+      "J_H": "169791085718851738393698139394882635141398468720700195004117619/3137990135649130714118861646563003853174043736042262426271744",
+      "current_margin": "2344571961699434559079/2344656907932334076128",
+      "read_exponent_upper": "13310027229805177/36606101097222766592",
+      "writer_exponent_upper": "75367721111564687609002106023942128560661019472782912632103243/206053770300018654414897814162439034260403981812242746983346864128",
+      "read_drive_upper": "16777216/16777215",
+      "weight_lower": "511/512",
+      "weight_upper": "512/511",
+      "ell": "22622926888204232582148049971849526728175197427114189817728463801774853/281103498733772648800509555627939229074865361683825049260609392368156672",
+      "inverse_lip": "281103498733772648800509555627939229074865361683825049260609392368156672/258480571845568416218361505656089702346690164256710859442880928566381819",
+      "value_radius": "431378798158889095473581139558787584311442750821105664/3103798502442176827043601950352526987827159925267882841161",
+      "image_lip": "2549021112218759103372010297986878561530254109672075188066275529383328806816866501868345469972774912/6552183656197036865397648770585856199072609502981947539163479997619022239529648620670025000669707138505",
+      "q_section": "1290159625457028536261835796038391575282201075519808908625316441434954517614816399276264372753278430945565717229666115379263438848/2555235083597882691895464691724665348058627562941613957314255334589894028101528578420099863483336012270930489457349217094741977170915",
+      "four_level_tail_upper": "1195177981397163353817779555743478891230008868413336996874484927280917153851539455243486493264002721830722237492802087864681554021303858365056183577476885132470725298976347282831208419860857934081021718207066924547814579079575734322680332516944600744548950473707902600135144158524487949506376411210178873934581991759744803402624806340873215589931588581534244931574851582626852458289638887613375352620155684434105237952086409228153719512377030444098591185095997641570764007905537680663119543747670601117526144517660699152399748472062785765428528231267876118158193484365824/132317402335708701744367205501197028274470073467660915215468696536688650103316876169804431021417072393680049738585515573649443554376182741855589624683249430761745615225779141924750453120533637548925828040350815954222637709828425008814689893671684170920607372250633870365089973051207611723784322978097611378153177570348679323285078609011929518910273745030434109121171728812460913040590429289406147245011633257380346815680251472211210301805569113235144324662691003298548693032732779643748805686758762122808596803924909012145007650969396126838467627710616721127598384723750356115586828425625"
+    },
+    "checks": {
+      "resource_chart_containment": true,
+      "history_chart_containment": true,
+      "section_image": true,
+      "lipschitz_class": true,
+      "graph_transform": true,
+      "same_four_level_tail_budget": true
+    }
+  },
+  "completion_theorem_passes": true,
+  "record_digest": "4654d8bba912d3f13ae9065dc65076025c4144418fbbf54b9d175a6539d081a9"
+}

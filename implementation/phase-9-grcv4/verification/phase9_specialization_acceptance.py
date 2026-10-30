@@ -484,8 +484,8 @@ def crg2b_permitted(path, leaf):
 
 
 ARG2B_ENTRY = "P9-8.3A.2"
-ARG2B_PATHS = ('src/pygrc/models/grc_9_v4_arg2b.py', 'src/pygrc/models/grc_v4_rg2b.py', 'src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_lifecycle.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_arg2b.py')
-ARG2B_NEW_PATHS = ('src/pygrc/models/grc_9_v4_arg2b.py', 'tests/models/test_grc_9_v4_arg2b.py')
+ARG2B_PATHS = ('src/pygrc/models/grc_9_v4_arg2b_connected.py', 'src/pygrc/models/grc_9_v4_arg2b.py', 'src/pygrc/models/grc_v4_rg2b.py', 'src/pygrc/models/grc_v4_candidate_a.py', 'src/pygrc/models/grc_v4_lifecycle.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_arg2b.py')
+ARG2B_NEW_PATHS = ('src/pygrc/models/grc_9_v4_arg2b_connected.py', 'src/pygrc/models/grc_9_v4_arg2b.py', 'tests/models/test_grc_9_v4_arg2b.py')
 ARG2B_G2 = 'grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b'
 ARG2B_PREDECESSOR = '90744875c2f66d2e98083d16b93192b1379735fd'
 ARG2B_ACCEPTANCE = 'implementation/phase-9-grcv4/tranche-8/P9-8.3A.1-ARG2b-Acceptance.json'
@@ -594,6 +594,7 @@ PUBLIC_API_PATHS = (
     "tests/models/test_grc_9_v4_ccipc_integration.py",
     "tests/models/test_grc_9_v4_acipc_integration.py",
     "tests/models/test_grc_9_v4_crg2b_integration.py",
+    "tests/models/test_grc_9_v4_arg2b_integration.py",
     "tests/models/test_grc_9_v4_architecture.py",
     "src/pygrc/models/grc_9_v4_lifecycle.py",
     "src/pygrc/models/grc_9_v4_owner.py",

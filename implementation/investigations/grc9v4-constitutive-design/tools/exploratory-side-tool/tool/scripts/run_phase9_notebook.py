@@ -27,8 +27,9 @@ def main():
     parser.add_argument("--ccipc-only", action="store_true", help="execute the C_CI+PC retained-evidence cell")
     parser.add_argument("--acipc-only", action="store_true", help="execute the A_CI+PC retained-evidence cell")
     parser.add_argument("--crg2b-only", action="store_true", help="execute the C_RG2b execution/research cell without numerical reruns")
+    parser.add_argument("--arg2b-only", action="store_true", help="execute A_RG2b retained evidence without numerical reruns")
     args = parser.parse_args()
-    if sum((args.status_only, args.tranche8_only, args.aos_only, args.cpc_only, args.ccipc_only, args.acipc_only, args.crg2b_only)) > 1:
+    if sum((args.status_only, args.tranche8_only, args.aos_only, args.cpc_only, args.ccipc_only, args.acipc_only, args.crg2b_only, args.arg2b_only)) > 1:
         parser.error("select one focused notebook mode")
     root = repository_root()
     if Path(sys.prefix).resolve() != (root / ".venv").resolve():
@@ -50,6 +51,8 @@ def main():
         cells = [c for c in cells if c["id"] in {"discover-and-import", "query-acipc"}]
     if args.crg2b_only:
         cells = [c for c in cells if c["id"] in {"discover-and-import", "query-crg2b"}]
+    if args.arg2b_only:
+        cells = [c for c in cells if c["id"] in {"discover-and-import", "query-arg2b"}]
     for index, cell in enumerate(cells):
         exec(
             compile(
@@ -59,6 +62,12 @@ def main():
             ),
             namespace,
         )
+    if args.arg2b_only:
+        from grcv4_explorer.arg2b import arg2b_status
+        if namespace["phase9_arg2b"] != arg2b_status(root):
+            raise RuntimeError("notebook/API A_RG2b mismatch")
+        print("PHASE9_ARG2B_NOTEBOOK_PASS native_rerun=false")
+        return
     if args.crg2b_only:
         from grcv4_explorer.crg2b import crg2b_status
         if namespace["phase9_crg2b"] != crg2b_status(root):

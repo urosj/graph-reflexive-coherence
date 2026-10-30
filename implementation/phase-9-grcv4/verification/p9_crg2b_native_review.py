@@ -8,6 +8,7 @@ PATH=c.BASE+'Review.json'
 STEPS=('8.4d','8.4e','8.4f','8.4g','8.4h','8.4i','8.5','8.6','tranche8_end','9.1b','9.2','9.3','9.4a','9.4b','9.5','9.6')
 
 def checked(root=b.ROOT):
+ from p9_arg2b_historical import matches
  root=Path(root).resolve();value=json.loads((root/PATH).read_bytes());b.check_digest(value)
  b.require(value['schema']=='p9-crg2b-native-review-v1' and value['family']=='C_RG2b'
   and value['user_accepted'] is False and value['aggregate_closed'] is False and value['C1_regularity_debt']=='narrowed_unresolved',
@@ -17,7 +18,7 @@ def checked(root=b.ROOT):
   and value['large_covariance_deferred']==['edge_order','node_order','relabel','signed','rotate_twice']
   and value['check_level']=='retained_integrity_only_no_numerical_rerun','C_RG2b execution ceiling drift')
  for row in value['source_bindings']:
-  b.require(hashlib.sha256((root/row['path']).read_bytes()).hexdigest()==row['sha256'],'C_RG2b source drift: '+row['path'])
+  b.require(matches(root,row['path'],row['sha256']),'C_RG2b source drift: '+row['path'])
  b.require(set(value['checkpoints'])<=set(STEPS),'unknown checkpoint')
  complete=value['stage']=='bounded_native_pass_pending_acceptance'
  b.require(complete==(set(value['checkpoints'])==set(STEPS)),'premature native closure')

@@ -1,0 +1,65 @@
+{
+  "schema": "p9-arg2b-connected-completion-contract-v1",
+  "contract_id": "P9-EC-A-RG2B-CONNECTED-COMPLETION",
+  "claim_id": "P9-CL-A-RG2B-CONNECTED-COMPLETION",
+  "claim_class": "conditional",
+  "status": "selected_for_bounded_implementation",
+  "selection": "User requested the remaining A_RG2b bounded Tranches 8\u20139 work on 2026-10-30; acceptance remains separate.",
+  "family": "A_RG2b",
+  "policy": {
+    "extension_evaluator_id": "grc9v4_a_rg2b_connected_signed_argument_completion_v1",
+    "containment_certificate_id": "grc9v4_a_rg2b_connected_degree_global_certificate_v1",
+    "approximation_policy_id": "grc9v4_a_rg2b_chain4_sweeps18_factored_binary64_arb192_v1",
+    "error_norm_id": "grc9v4_rg2b_hodge_induced_infinity_v1",
+    "error_tolerance": 3.552713678800501e-15,
+    "iteration_limit": 148,
+    "failure_policy_id": "fail_closed_on_uncertified_section_v1"
+  },
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-ConnectedCompletion.md",
+      "sha256": "885eb9802500c5c8ba23b3ca0d8f965f3ccc5b0dc04c20051a2f423d1620a71d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-CompletionFeasibility.json",
+      "sha256": "27d08fc4d2dae45173786eccc3af35790554d2446289d88e57eb16c1f4cc6658"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-SectionFeasibility.json.xz",
+      "sha256": "d89cecf09706f5ae53719b6fa4a707f5047f4e882dde765ac2a5a88d84b45675"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-HistoryCompanion.json",
+      "sha256": "f68b53f70d9012d22a9aaa3262f3fb03ac3a39a6d51f6a1079c9a544c5b220a2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-CompanionSections.json.xz",
+      "sha256": "a8bdc04f2612977ca20ef332605e8ceb28ca7fb11b8533857614b00d8a08e709"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-Authority.json",
+      "sha256": "62d4786b5c29229ffa31b708b1d1aba48ccc8f0fc5e22782308bccc6f8b23bb7"
+    }
+  ],
+  "debt_dispositions": [
+    {
+      "debt_id": "LG-RG-COMPLETION",
+      "disposition": "A_RG2b_bounded_mathematical_prerequisite_resolved_native_conformance_forward"
+    },
+    {
+      "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "disposition": "narrowed_unresolved_unchanged"
+    }
+  ],
+  "obligations": [
+    "native arithmetic and both-role admission",
+    "ten-step actual-target continuation",
+    "covariance",
+    "rollback replay reset",
+    "disabled compatibility and public API"
+  ],
+  "native_conformance_accepted": false,
+  "all_graphs_accepted": false,
+  "aggregate_closed": false,
+  "record_digest": "4fdba9bbde5f50f58a2775c63793c6e1a38d88e81da951ceeae241db3dd13a11"
+}

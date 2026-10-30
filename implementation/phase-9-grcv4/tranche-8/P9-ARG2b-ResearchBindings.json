@@ -1,0 +1,17 @@
+{
+  "schema": "p9-arg2b-research-bindings-v1",
+  "artifacts": {
+    "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-CompletionFeasibility.json": "27d08fc4d2dae45173786eccc3af35790554d2446289d88e57eb16c1f4cc6658",
+    "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-SectionFeasibility.json.xz": "d89cecf09706f5ae53719b6fa4a707f5047f4e882dde765ac2a5a88d84b45675",
+    "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-CompanionSections.json.xz": "a8bdc04f2612977ca20ef332605e8ceb28ca7fb11b8533857614b00d8a08e709",
+    "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-Authority.json": "62d4786b5c29229ffa31b708b1d1aba48ccc8f0fc5e22782308bccc6f8b23bb7",
+    "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-ConnectedCompletionRelease.json": "8bbbbae7c047970e3a0ef4eb815b315d6cca2f5cf9d747de00427395a2c7530e",
+    "implementation/phase-9-grcv4/tranche-8/P9-ARG2b-HistoryCompanion.json": "f68b53f70d9012d22a9aaa3262f3fb03ac3a39a6d51f6a1079c9a544c5b220a2"
+  },
+  "authority_sources": {
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D10DebtClaimTransformationLedger.json": "68190c133d8bda7067dfb4cb9b55980e578ce02051bc5d24066b0349f6f8a23a",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f"
+  },
+  "record_digest": "8a88ac649a98029fa014177ed55da5d43a71311ce05f1aba9b8efc3ef069ff25"
+}
