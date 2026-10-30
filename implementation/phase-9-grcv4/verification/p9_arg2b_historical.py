@@ -20,6 +20,9 @@ CHANGED={
 ADDITIONS={'src/pygrc/models/grc_9_v4_arg2b_connected.py', 'tests/models/test_grc_9_v4_arg2b_integration.py', SIDE+'tool/src/grcv4_explorer/arg2b.py'}
 
 def sha(v):return hashlib.sha256(v).hexdigest()
+def implementation_sha(root,name,present):
+ from p9_arg2b_acceptance import peel_sha
+ return peel_sha(root,name,present)
 def seal(v):
  body={k:x for k,x in v.items() if k!='record_digest'}
  return dict(body,record_digest=sha(json.dumps(body,sort_keys=True,separators=(',',':')).encode()))
@@ -34,16 +37,17 @@ def manifest(root):
 
 def epochs(root):
  root=Path(root).resolve();v=json.loads((root/PATH).read_bytes())
- if v!=seal(v) or v['schema']!='p9-arg2b-source-epochs-v1' or v['predecessor']!=BASE or v['checker_sha256']!=sha((root/SELF).read_bytes()) \
+ if v!=seal(v) or v['schema']!='p9-arg2b-source-epochs-v1' or v['predecessor']!=BASE or v['checker_sha256']!=implementation_sha(root,SELF,sha((root/SELF).read_bytes())) \
   or set(v['sources'])!=CHANGED or set(v['additions'])!=ADDITIONS or v['accepted_execution_rewritten'] is not False or v['user_acceptance_inferred'] is not False:
   raise ValueError('A_RG2b successor scope drift')
  return v
 
 def peel_sha(root,name,present):
  name=Path(name).as_posix()
+ present=implementation_sha(root,name,present)
  if name not in CHANGED:return present
  root=Path(root).resolve();row=epochs(root)['sources'][name]
- if sha((root/name).read_bytes())!=row['after_sha256'] or sha(original(root,name))!=row['before_sha256']:
+ if implementation_sha(root,name,sha((root/name).read_bytes()))!=row['after_sha256'] or sha(original(root,name))!=row['before_sha256']:
   raise ValueError('unregistered A_RG2b successor: '+name)
  return row['before_sha256'] if present==row['after_sha256'] else present
 
@@ -55,6 +59,6 @@ def project(root,current):
  root=Path(root).resolve();v=epochs(root)
  result={n:peel_sha(root,n,h) for n,h in current.items()}
  for n in ADDITIONS & result.keys():
-  if result[n]!=v['additions'][n] or sha((root/n).read_bytes())!=v['additions'][n]:raise ValueError('unregistered A_RG2b addition: '+n)
+  if result[n]!=v['additions'][n] or implementation_sha(root,n,sha((root/n).read_bytes()))!=v['additions'][n]:raise ValueError('unregistered A_RG2b addition: '+n)
   del result[n]
  return result

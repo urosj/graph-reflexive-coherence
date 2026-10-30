@@ -15,7 +15,18 @@ def arg2b_status(repo_root):
     directory=root/'implementation/phase-9-grcv4/verification'
     if str(directory) not in sys.path:sys.path.insert(0,str(directory))
     from p9_arg2b_review import checked
+    import p9_arg2b_acceptance as acceptance
     value=checked(root)
+    accepted=acceptance.decision(root)
+    if accepted is not None:
+        value.update(user_accepted=True,bounded_scope_closed=True,stage='bounded_accepted',
+            acceptance=dict(path=acceptance.PATH,record_digest=accepted['record_digest']),
+            next_work='Bounded A_RG2b Tranches 8–9 accepted. All forty source compatibility cells are accepted; aggregate conformance and Tranche 10 remain separate.')
+        matrix=value['native_execution']['9.3']
+        matrix['execution_counts']=matrix['counts']
+        matrix['counts']=accepted['compatibility_counts']
+        value['source_refs'].extend(dict(path=p,sha256=hashlib.sha256((root/p).read_bytes()).hexdigest())
+            for p in (acceptance.PATH,acceptance.SELF))
     return value
 
 

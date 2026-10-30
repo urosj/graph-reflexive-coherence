@@ -8,8 +8,11 @@ Sources are available through indexed `/api/arg2b/source?path=...` links.
 The view separates 54 connected-graph research certificates, the original
 negative-reset exclusion, the positive history/allocation companions, native
 checkpoint coverage and user acceptance. The exact 40-cell compatibility
-matrix has 36 accepted cells and four A_RG2b cells pending acceptance.
-Execution enablement for ten families does not imply all-ten acceptance.
+matrix now has all forty cells bounded-accepted. The separate pinned
+[A_RG2b acceptance](../../../../../phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json)
+binds implementation commit `fd23970b`; original execution counts remain
+36 accepted / four pending. Individual family acceptance does not grant
+unrestricted all-ten conformance.
 
 A_RG2b's joint C/Y/H completion is distinct from CI and from a persistent
 carrier. Full selected points, the W writer and both history roles are checked.

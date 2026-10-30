@@ -2763,10 +2763,12 @@ See [C_RG2b research usage](./docs/CRG2bNinthRealization.md).
 - [x] Add the API `/api/arg2b`, browser panel and `query-arg2b` notebook cell;
   all consume the same retained view without numerical reruns.
 - [x] Separate exact connected A research, the original reset exclusion,
-  selected companions, full C/Y/H native evidence and pending acceptance.
+  selected companions, full C/Y/H native evidence and separate bounded acceptance.
 - [x] Preserve the nine accepted family records; ten-family runtime discovery
-  is distinct from the 36 accepted / four pending compatibility cells.
-- [x] Five retained-surface tests pass: scope mutation/source rejection, HTTP,
+  is distinct from the immutable 36 accepted / four pending execution record.
+- [x] Apply the pinned A_RG2b acceptance overlay: all sixteen checkpoints and
+  forty source compatibility cells bounded-accepted, without widening scope.
+- [x] Six retained-surface/acceptance tests pass: scope mutation/source rejection, HTTP,
   browser, actual notebook parity and preserved predecessor acceptance.
 
 C1 regularity remains narrowed/unresolved. Three large covariance transforms

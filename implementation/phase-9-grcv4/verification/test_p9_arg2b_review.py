@@ -7,6 +7,7 @@ from unittest.mock import patch
 import p9_arg2b_review as review
 import p9_arg2b_native_review as native
 import p9_arg2b_historical as history
+import p9_arg2b_acceptance as acceptance
 ROOT=native.b.ROOT;TOOL=ROOT/history.SIDE/'tool'
 sys.path.insert(0,str(TOOL/'src'))
 from grcv4_explorer import arg2b
@@ -18,9 +19,10 @@ class RetainedSurfaces(unittest.TestCase):
   with patch.object(native.r.oracle,'certify',side_effect=AssertionError('numerical rerun')):
    cls.status=arg2b.arg2b_status(ROOT)
  def test_scope_and_resealed_mutations(self):
-  v=self.status;self.assertFalse(v['user_accepted']);self.assertEqual(v['graph_certificates'],54)
+  v=self.status;self.assertTrue(v['user_accepted']);self.assertEqual(v['graph_certificates'],54)
   self.assertEqual(len(v['native_execution']),16);self.assertTrue(v['original_reset_exclusion_preserved'])
-  self.assertEqual(v['native_execution']['9.3']['counts'],native.COUNTS)
+  self.assertEqual(v['native_execution']['9.3']['execution_counts'],native.COUNTS)
+  self.assertEqual(v['native_execution']['9.3']['counts'],dict(bounded_accepted=40,passed_pending_acceptance=0,unselected_not_executed=0))
   read=Path.read_bytes;original=json.loads((ROOT/native.PATH).read_bytes())
   for key,value in [('user_accepted',True),('C1_regularity_debt','resolved'),('large_covariance_deferred',[]),
    ('uniform_trajectory_enclosure',True),('check_level','native_rerun'),('stage','accepted'),('source_bindings',[])]:
@@ -55,15 +57,28 @@ class RetainedSurfaces(unittest.TestCase):
   module=(TOOL/'phase9-web/arg2b.js').as_uri();value=json.dumps(self.status)
   script=f'''import {{arg2bRows}} from {json.dumps(module)};
 const original={value}; if(arg2bRows(original).length!==4)throw Error('missing rows');
-for(const mutate of [v=>v.user_accepted=true,v=>v.aggregate_closed=true,v=>v.remaining_family='A_RG2b',
+for(const mutate of [v=>v.user_accepted=false,v=>v.aggregate_closed=true,v=>v.remaining_family='A_RG2b',
 v=>v.graph_certificates=53,v=>v.large_covariance_deferred=[],v=>v.uniform_trajectory_enclosure=true,
-v=>v.native_execution['9.3'].counts.bounded_accepted=40,v=>delete v.native_execution['8.4h'],
+v=>v.native_execution['9.3'].counts.bounded_accepted=36,v=>delete v.native_execution['8.4h'],
+v=>v.acceptance.record_digest='forged',v=>v.native_execution['9.3'].execution_counts.bounded_accepted=40,
 v=>v.prepared_sections.reverse(),v=>v.original_reset_exclusion_preserved=false]){{
  const v=structuredClone(original);mutate(v);let rejected=false;try{{arg2bRows(v)}}catch{{rejected=true}}
  if(!rejected)throw Error('scope mutation accepted');
 }} console.log('ARG2B_BROWSER_PASS');'''
   result=subprocess.run([str(managed_node()),'--input-type=module','-e',script],env=tool_environment(),text=True,capture_output=True,check=True)
   self.assertIn('ARG2B_BROWSER_PASS',result.stdout)
+ def test_acceptance_is_explicit_and_scoped(self):
+  self.assertTrue(acceptance.decision(ROOT)['user_accepted'])
+  raw=review.checked(ROOT);self.assertFalse(raw['user_accepted'])
+  self.assertEqual(raw['native_execution']['9.3']['counts'],native.COUNTS)
+  with patch.object(acceptance,'decision',return_value=None):
+   self.assertFalse(arg2b.arg2b_status(ROOT)['user_accepted'])
+  read=Path.read_bytes;original=json.loads((ROOT/acceptance.PATH).read_bytes())
+  for key,value in [('aggregate_closed',True),('C1_regularity_debt','resolved'),
+   ('large_covariance_deferred_unexecuted',[]),('reviewed_commit','unrelated')]:
+   changed=native.b.seal(dict(original,**{key:value}))
+   with self.subTest(key=key),patch.object(Path,'read_bytes',lambda p:json.dumps(changed).encode() if p==ROOT/acceptance.PATH else read(p)):
+    with self.assertRaises(ValueError):acceptance.decision(ROOT)
  def test_historical_acceptance_and_exact_projection(self):
   import p9_crg2b_acceptance as prior
   self.assertTrue(prior.decision(ROOT)['user_accepted']);self.assertFalse(native.checked(ROOT)['user_accepted'])

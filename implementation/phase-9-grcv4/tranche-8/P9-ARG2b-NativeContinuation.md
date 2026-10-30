@@ -3,7 +3,9 @@
 Work follows accepted C_RG2b commit `af397360` on the same branch. The new
 connected A completion has its own authority, paper addendum and specification;
 old tree17 policy identities and all nine earlier family acceptances remain.
-The selected scope is 8.4d–i, 8.5/8.6 and applicable 9.1b–9.6, pending acceptance.
+The selected scope is 8.4d–i, 8.5/8.6 and applicable 9.1b–9.6, accepted by
+the user on 2026-10-30. The [separate decision](../tranche-9/P9-ARG2b-Acceptance.json)
+binds implementation commit `fd23970b` and leaves all execution records intact.
 
 Use the repository virtual environment with `PYTHONPATH=src:.:implementation/phase-9-grcv4/verification`,
 `OPENBLAS_NUM_THREADS=1` and `OMP_NUM_THREADS=1`. Independent jobs use at most

@@ -1,7 +1,12 @@
 export function arg2bRows(value) {
-  const accepted = false;
-  if (value.user_accepted !== false || value.bounded_scope_closed !== false || value.acceptance !== null ||
-      value.stage !== 'bounded_native_pass_pending_acceptance') throw new Error('Unexpected A_RG2b acceptance');
+  const accepted = value.user_accepted === true;
+  const decision = '254cdc1d64fba737b2c3e4cc659c3ea44271eed7f21e48167899738434dd4c14';
+  if (typeof value.user_accepted !== 'boolean' || value.bounded_scope_closed !== accepted ||
+      (accepted ? value.stage !== 'bounded_accepted' || value.acceptance?.record_digest !== decision ||
+        value.acceptance?.path !== 'implementation/phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json' :
+        value.acceptance !== null || value.stage !== 'bounded_native_pass_pending_acceptance')) {
+    throw new Error('Unexpected A_RG2b acceptance');
+  }
   if (value.schema !== 'phase9_arg2b_work_v1' || value.family !== 'A_RG2b' ||
       value.aggregate_closed !== false || value.research_native_steps !== 0 || value.research_native_events !== 0 ||
       !Array.isArray(value.G3_support_added) || value.G3_support_added.length !== 0 ||
@@ -19,8 +24,12 @@ export function arg2bRows(value) {
     throw new Error('Incomplete native coverage or widened scope');
   }
   const counts = value.native_execution['9.3'].counts;
-  if (counts.bounded_accepted !== 36 || counts.passed_pending_acceptance !== 4 || counts.unselected_not_executed !== 0 ||
+  if (counts.bounded_accepted !== (accepted ? 40 : 36) || counts.passed_pending_acceptance !== (accepted ? 0 : 4) || counts.unselected_not_executed !== 0 ||
       value.original_reset_exclusion_preserved !== true || value.D94_componentwise_frontier_certificate !== true) throw new Error('A_RG2b scope drift');
+  if (accepted && JSON.stringify(value.native_execution['9.3'].execution_counts) !==
+      JSON.stringify({bounded_accepted:36,passed_pending_acceptance:4,unselected_not_executed:0})) {
+    throw new Error('A_RG2b original execution counts changed');
+  }
   const expected = ['source/current', 'source/reset', 'target/current', 'target/reset'];
   return value.prepared_sections.map((row, i) => {
     if (`${row.graph}/${row.role}` !== expected[i] ||
@@ -68,7 +77,7 @@ if (typeof document !== 'undefined') {
       const scope = document.createElement('p');
       scope.textContent = `Large covariance: ${value.large_covariance_selected.join(', ')}. ` +
         `Deferred: ${value.large_covariance_deferred.join(', ')}. ` +
-        'Certificates apply at saved inputs; no uniform trajectory enclosure. Tranche 10 remains outside this result; acceptance is pending.';
+        'Certificates apply at saved inputs; no uniform trajectory enclosure. Tranche 10 remains outside this result.';
       output.append(scope);
       const sources = document.createElement('ul');
       for (const ref of value.source_refs) {

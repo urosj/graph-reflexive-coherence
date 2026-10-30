@@ -1,11 +1,13 @@
 # Phase 9 GRCV4 Implementation Checklist
 
-## A_RG2b tenth realization — implemented, acceptance pending (2026-10-30)
+## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
 Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.
 The [bounded plan](./phase-9-grcv4/tranche-8/P9-ARG2b-Tranches8-9-Plan.md)
 and [connected A completion](./phase-9-grcv4/tranche-8/P9-ARG2b-ConnectedCompletionContract.json)
-select the final family's 8.4d–9.6 work. Acceptance remains separate.
+select the final family's 8.4d–9.6 work, implemented in `fd23970b`.
+[User acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json)
+is recorded separately and preserves the original execution evidence.
 The dated predecessor sections below retain their original scope/next-step
 statements; this section and the current compatibility register take precedence.
 
@@ -27,21 +29,25 @@ statements; this section and the current compatibility register take precedence.
 - [x] Both ten-step large target histories and final reads pass at unchanged
   parameters/tolerances. Certificates apply at each saved represented state.
 - [x] Six small 8.5 lifecycle tests, eighteen small 8.6 mechanism subjects and
-  22 applicable Tranche 9 integration tests. Matrix: 36 accepted cells, four
-  A_RG2b cells passed/pending acceptance, zero unexecuted.
+  22 applicable Tranche 9 integration tests. Matrix: all 40 source
+  compatibility cells bounded-accepted; zero pending or unexecuted. The original
+  execution matrix retains its 36 accepted / four pending counts.
 - [x] Four large first/final mechanism subjects pass; geometry, Read-Back,
   history and current-dependent terms are distinct from zero controls.
 - [x] Deduplicated 67 records: 349,744,828 original bytes reconstruct exactly
   from a 10,702,028-byte shared store (formerly 25,524,280 archive bytes).
-- [x] Five API/browser/notebook, source-drift, scope and historical-acceptance
-  tests pass.
+- [x] Six API/browser/notebook, source-drift, scope and explicit/historical
+  acceptance tests pass.
 - [x] Final phase-boundary check passes with preserved release and verified
   handoff; no native numerical rerun. [Consolidated review](./phase-9-grcv4/tranche-8/arg2b-native/Review.json).
-- [ ] User acceptance. Commit implementation first and acceptance separately.
+- [x] Explicit bounded user acceptance (2026-10-30), following implementation
+  commit `fd23970b`; all sixteen checkpoints accepted without relabelling runs.
 
 Independent jobs use up to twelve single-thread workers, explicit FLINT/Arb,
 3600-second large-segment caps. No Tranche 10/basin, optional hierarchy,
-classical spectrum, uniform trajectory tube or all-ten acceptance is inferred.
+classical spectrum, uniform trajectory tube or unrestricted all-ten conformance
+is inferred. All ten family scopes are now individually accepted; aggregate
+conformance reconciliation and Tranche 10 remain separate work.
 
 
 ## C_RG2b ninth realization — bounded Tranches 8–9 accepted (2026-10-30)
@@ -3277,7 +3283,7 @@ the full ten-profile plan.
         mechanism subjects. Original exclusions remain separate from companions.
       - [x] Lossless shared storage; API/browser/notebook parity and source/scope
         mutation rejection. No numerical reruns during retention checks.
-      - [ ] Bounded user acceptance; aggregate all-ten acceptance remains separate.
+      - [x] [Bounded user acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json); aggregate conformance remains separate.
     - [x] C_RG2b ninth-realization implementation selected on 2026-10-30:
       [native scope and reproduction](./phase-9-grcv4/tranche-8/P9-CRG2b-NativeContinuation.md).
       The connected completion has separate authority, paper/spec and native
@@ -4131,9 +4137,9 @@ and review. Each cell binds the corresponding
 [frozen forty-contract matrix](../specs/grc-9-v4-spec.md#exact-disabled-grc9v3-compatibility).
 Controlled batches retain independent child outcomes. Pending cells for an
 unselected profile do not hold a different fully tested profile. All cells
-are independently tracked. Thirty-six cells from the nine preceding families
-are bounded-accepted. The four A_RG2b cells pass execution and await user
-acceptance; no cells remain unselected. The [current execution matrix](./phase-9-grcv4/tranche-8/arg2b-native/9.3-Matrix.json)
+are independently tracked. All forty cells are bounded-accepted, including the four A_RG2b cells under
+the [separate acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json).
+No cells remain pending or unselected. The [current execution matrix](./phase-9-grcv4/tranche-8/arg2b-native/9.3-Matrix.json)
 retains each exact subject and the [C_RG2b predecessor decision](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json).
 Explicit legacy seeds do not transfer source compatibility to an expanded
 target or grant full specialization conformance.
@@ -4156,10 +4162,10 @@ target or grant full specialization conformance.
 | `P9-9.2-C_OS-state` | Bounded-accepted |
 | `P9-9.2-C_OS-observable` | Bounded-accepted |
 | `P9-9.2-C_OS-lifecycle` | Bounded-accepted |
-| `P9-9.2-A_RG2b-transition` | Passed; acceptance pending |
-| `P9-9.2-A_RG2b-state` | Passed; acceptance pending |
-| `P9-9.2-A_RG2b-observable` | Passed; acceptance pending |
-| `P9-9.2-A_RG2b-lifecycle` | Passed; acceptance pending |
+| `P9-9.2-A_RG2b-transition` | Bounded accepted |
+| `P9-9.2-A_RG2b-state` | Bounded accepted |
+| `P9-9.2-A_RG2b-observable` | Bounded accepted |
+| `P9-9.2-A_RG2b-lifecycle` | Bounded accepted |
 | `P9-9.2-C_RG2b-transition` | Bounded-accepted |
 | `P9-9.2-C_RG2b-state` | Bounded-accepted |
 | `P9-9.2-C_RG2b-observable` | Bounded-accepted |
