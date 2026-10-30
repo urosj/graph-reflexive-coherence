@@ -32,6 +32,16 @@ conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
 remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
 and do not transfer automatically to the other six families.
 
+The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
+preserves the completed read-only assessment: six fresh-read paths, independent
+oracle adaptations, exact retained targets and claim limits. Next is P9-10.2 for
+C_OS/C_CI/A_CI/A_PC, then P9-10.1a–c → P9-10.2 per A_OS, C_PC, C_CI_PC,
+A_CI_PC, C_RG2b and A_RG2b, followed by consolidated P9-10.3–10.6. Independent
+jobs may run in parallel. The six final target snapshots have equal roles and
+require explicit v2 migration plus disabled-return checks for role-separation
+evidence; oracle parameters and full selected-root/section bindings must be
+checked. No six-family basin conformance or acceptance is inferred by this map.
+
 ## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
 Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.

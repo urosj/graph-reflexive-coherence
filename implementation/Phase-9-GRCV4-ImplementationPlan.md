@@ -32,6 +32,103 @@ conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
 remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
 and do not transfer automatically to the other six families.
 
+## Tranche 10 rollout and six-family basin-capture map (2026-10-30)
+
+The user selected the sequence below. Step 1 is a completed read-only assessment
+of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
+It identifies no new mathematical obstruction, but is not a native conformance
+result or acceptance of the remaining six basin implementations. No numerical
+campaign was run for this assessment.
+
+1. **Complete:** map the six missing capture paths, reusable targets and oracle
+   requirements, recorded here.
+2. **Next:** complete P9-10.2 for C_OS, C_CI, A_CI and A_PC, establishing the
+   reusable replay, numerical-comparison, independent charge-edge and receipt
+   checks on the already accepted P9-10.1 subjects.
+3. Complete P9-10.1a–c followed by P9-10.2 for each remaining family, in the
+   order A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b, A_RG2b. Run independent jobs in
+   parallel where possible, up to twelve single-thread workers; preserve the
+   dependency between each family's capture, compatibility and reconciliation.
+4. Reconcile all ten, run consolidated P9-10.3 regressions/release-preservation
+   checks, then complete P9-10.4 capability publication and API/replay examples.
+5. Complete P9-10.5 scientific-debt reconciliation and P9-10.6 reviewed
+   support/G4/handoff. Earlier family acceptance does not grant these closures.
+
+The baseline classifier and lifecycle contracts are reusable: the diagnostic
+classifies represented current flow, not stable attractors or physical basin
+lineage. Each role needs a fresh selected-realization read of its own C/W/Z and
+context, without an ordinary writer, cached root or previously consumed current.
+The same capture supplies the selected current, fixed-row operands, rows,
+classification and seeds. Existing explicit v1-to-v2 policy migration, atomic
+publication and replay machinery provide the common integration path.
+
+| Family | Fresh observation to connect to basin capture | Independent verification to reuse/adapt |
+| --- | --- | --- |
+| A_OS | `CandidateACurrent` at reference geometry, with the role's current `W_A` and fixed-row A backend; no OS predictor/corrector pass. | Reuse Candidate-A fixed-geometry equations after checking assumptions; verify reference restart, W/backend binding and the complete point. |
+| C_PC | `CandidatePCRead` after rebuilding geometry from committed `Z_4`; observation does not advance the carrier. | Reuse [PC certificate/check-read](./phase-9-grcv4/verification/p984h_cpc.py), including generated H/current/source, carrier certificate and complete Candidate-C reference map. |
+| C_CI_PC | Fresh `CandidateCIRoot` with committed `Z_4` fixed in the joint J/H solve; a PC-only read is insufficient. | Reuse [C composite-root checks](./phase-9-grcv4/verification/p984h_ccipc_math.py): both J and H, instantaneous/carrier geometry, domain, residual and root certificate. |
+| A_CI_PC | The composite-root route with both `W_A` and fixed `Z_4`, using the A backend. | Reuse [A composite-root checks](./phase-9-grcv4/verification/p984h_acipc_math.py), including A conductance/Read-Back and full selected-root identity; current equality alone is insufficient. |
+| C_RG2b | Fresh `CandidateRG2bSection`, followed by Candidate-C current at its section geometry. | Reuse [C section certificate](./phase-9-grcv4/verification/p9_crg2b_section.py) and [runtime independent checks](./phase-9-grcv4/verification/p9_crg2b_runtime.py); bind query/domain, evaluator, completion, geometry, error enclosure and selected current. |
+| A_RG2b | Fresh joint C/Y/H section, with `Y = 512 log W`, followed by Candidate-A current and its backend. | Reuse [A section certificate](./phase-9-grcv4/verification/p9_arg2b_section.py) and [runtime independent checks](./phase-9-grcv4/verification/p9_arg2b_runtime.py); include logarithmic-coordinate error, inverse residuals, completion tail and W/backend bindings. |
+
+The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) is explicitly
+four-family: its OS branch assumes Candidate C, and its certificate handling
+does not yet cover composite CI+PC or RG2b sections. The generic readers already
+exist; this is capture integration and verification work, not a reason to create
+six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
+and [specification](../specs/grc-9-v4-basin-interface.md) provide the starting
+contracts. Record explicit successor scope/conformance dispositions for the six
+extensions; preserve the historical four-family claims and acceptance records.
+Resolve any genuinely missing contract through authority → paper → spec before
+implementing it. The typed forensic inspection found the input, lifecycle and
+claim-ceiling contracts required; it did not grant six-family native support.
+
+All six have retained **17-node/16-edge v1 expanded targets**, at JSON pointer
+`/evidence/mixed_snapshot/state` in these compressed integration records:
+
+- A_OS: [P9-9.1b-AOS](./phase-9-grcv4/tranche-9/P9-9.1b-AOS.json.xz).
+- C_PC: [P9-9.1b-CPC](./phase-9-grcv4/tranche-9/P9-9.1b-CPC.json.xz).
+- C_CI_PC: [P9-9.1b-CCIPC](./phase-9-grcv4/tranche-9/P9-9.1b-CCIPC.json.xz).
+- A_CI_PC: [P9-9.1b-ACIPC](./phase-9-grcv4/tranche-9/P9-9.1b-ACIPC.json.xz).
+- C_RG2b: [9.1b integration](./phase-9-grcv4/tranche-8/crg2b-native/9.1b-integration.json.xz).
+- A_RG2b: [9.1b integration](./phase-9-grcv4/tranche-8/arg2b-native/9.1b-integration.json.xz).
+
+Those final snapshots have equal current/reset state after reset/rebase. Their
+exact target identities are reusable, but the snapshots alone do not demonstrate
+role separation. Follow the [existing exact-target checker](./phase-9-grcv4/verification/p9101c_target_basin.py):
+
+1. Pin the accepted v1 model, explicit basin-policy v2 successor, generic profile,
+   graph/context, C/W/Z and numerical policy. Use those same exact subjects across
+   P9-10.1a/b/c to avoid transferring evidence between different targets.
+2. Independently check both roles immediately after policy migration: actual saved
+   state, selected read, equations, rows and classification. Persistent targets
+   supply nonzero committed carrier observations here.
+3. Exercise disabled `step/reset/step`, return to that same exact target and
+   repeat both-role checks with distinct resource/history roles where the policy
+   provides them. The declared persistent-carrier reset to zero on return must
+   remain explicit; do not invent a nonzero/distinct Z requirement after loss/reset.
+
+Reuse requires checking actual oracle assumptions. In particular, the
+[original basin equation oracle](./phase-9-grcv4/verification/p9101a_basin_oracle.py)
+pins `zeta_C = 2^-37`, while the accepted C_PC and C_CI_PC targets use `2^-30`.
+Extending a family allowlist alone would be incorrect. RG2b readable states are
+admitted on `K`; ordinary-step entry uses `K_minus`. A zero-duration ordinary
+step is not a substitute for a fresh section observation. Preserve the selected
+connected completion identities (C: six levels/18 sweeps/222 evaluations;
+A: four levels/18 sweeps/148 evaluations, both with tolerance `2^-48`).
+
+Fixed-H current bounds do not establish signs at an unknown exact CI root or
+infinite RG2b section. Keep represented-flow zero/sign rules, fixed-H error,
+joint-root/section uncertainty and replay guarantees distinct. Solver tolerance
+does not grant whole-observation bitwise or cross-platform replay. C1 remains
+narrowed/unresolved. The forty accepted **source** compatibility cells do not
+establish these expanded **target** checks or basin-enabled v2 conformance.
+
+No broad expansion or large-graph rerun is needed for this map's proposed work
+unless a concrete failure justifies one. Reuse common checks with family-specific
+read/oracle adapters, retain exact evidence and the existing compression policy,
+and preserve historical acceptance and scientific claim ceilings.
+
 ## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
 Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.

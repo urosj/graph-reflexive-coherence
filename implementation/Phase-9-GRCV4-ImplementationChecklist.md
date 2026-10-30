@@ -32,6 +32,12 @@ conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
 remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
 and do not transfer automatically to the other six families.
 
+The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
+records the completed read-only six-family assessment and agreed order. Next is
+P9-10.2 for C_OS/C_CI/A_CI/A_PC; then P9-10.1a–c → P9-10.2 per remaining
+family before consolidated P9-10.3–10.6. The historical checked P9-10.1 entries
+below remain four-family acceptances, not acceptance of those six extensions.
+
 ## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
 Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.
@@ -4225,6 +4231,9 @@ target or grant full specialization conformance.
 
 ## Tranche 10. Conformance and handoff
 
+- [x] Record the six-family capture/oracle/target map and rollout sequence
+  (2026-10-30; read-only assessment, no native validation or support widening).
+  [Map and remaining sequence](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30).
 - [x] P9-10.1: Reconcile every vector hold and acceptance-gate runtime debt
   with exact execution evidence or an explicit remaining support hold.
   - [x] P9-10.1a — Baseline basin interface closure (`basin_surface`): trace
