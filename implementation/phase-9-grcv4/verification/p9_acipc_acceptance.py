@@ -29,7 +29,8 @@ def original(root, name):
 
 
 def present_sha(root,name,present):
-    return present
+    from p9_crg2b_historical import peel_sha
+    return peel_sha(root,name,present)
 
 
 def record(root):

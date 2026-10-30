@@ -1,14 +1,68 @@
 # Phase 9 GRCV4 Implementation Plan
 
+## C_RG2b ninth realization — bounded Tranches 8–9 accepted (2026-10-30)
+
+Work continues on `work/p9-acipc-tranches-8-9` after accepted A_CI_PC
+commit `dbc013fb`. The connected completion has been selected for bounded
+implementation through authority → paper addendum → spec, with new explicit
+policy identities. The original tree17 policy and accepted evidence are intact.
+
+- [x] Exact graph certificates and full inverse-section research for the named
+  small, deep and cyclic graphs; C1 regularity remains narrowed/unresolved.
+- [x] Native 8.4d: twenty deeper events, 400 target steps and forty final reads.
+- [x] Native 8.4e/f: 44 required covariance history cells, 28 events and 112
+  target steps; full selected geometry/current/Read-Back/source comparisons.
+- [x] Native 8.4g: both source and prepared-target histories pass positive first
+  steps on the 100/400 and 107/407 graphs, with independent error enclosures.
+- [x] Six small 8.5 lifecycle obligations and eighteen 8.6 mechanism subjects.
+- [x] The 22 applicable native Tranche 9 integration tests pass, including
+  legacy compatibility, branch crossings, public lifecycle and conflict rollback.
+- [x] Actual second-beat large event and exact native replay; unchanged trigger,
+  timestep, resource shares and tolerances.
+- [x] Three large combined/reflection/rotation events and their six mapped
+  target steps; both roles pass complete selected-point covariance.
+- [x] Both large ten-step histories and two fresh final sections; all twenty
+  updates have positive independent section-aware resource bounds.
+- [x] Four large first/final mechanism subjects; geometry, feedback and
+  modulation remain distinguished after section-uncertainty allowances.
+- [x] Consolidated retained review: all sixteen applicable 8.4d–9.6 checkpoints,
+  with live Python/API/browser/notebook access and exact compressed evidence.
+- [x] Lossless storage deduplicates 67 large records into shared objects;
+  original JSON/XZ identities survive exact reconstruction. Standalone readers
+  use the scoped restore command in the linked reproduction note; no native rerun.
+- [x] Explicit bounded user acceptance (2026-10-30); aggregate ten-family closure stays open.
+
+See [native evidence](./phase-9-grcv4/tranche-8/crg2b-native/),
+[completion contract](./phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionContract.json)
+and [release binding](./phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionRelease.json).
+The public implementation executes C_RG2b and its bounded Tranches 8–9 scope
+is accepted. The eight earlier family acceptances remain unchanged; 36 of 40
+compatibility cells are now accepted. This does not grant full GRC9V4 conformance.
+Do not infer A_RG2b, basin support, optional hierarchy/completion, an arbitrary
+graph domain, a uniform trajectory tube, or all-ten conformance.
+
+Independent jobs use up to twelve single-thread workers; each large segment
+has a 3600-second cap. Successful segments are resumable and compressed.
+The large target steps took 547–636 seconds each. Certified lower bounds
+start above 1.05e-13 and finish above 1.15e-4; resource error stays below
+2.43e-16. These are pointwise bounds at saved inputs, not a uniform trajectory
+enclosure. The three selected large covariance transforms pass with maximum
+discrepancy 6.62e-24; five additional individual transforms remain deferred.
+See the [checked review](./phase-9-grcv4/tranche-8/crg2b-native/Review.json) and
+[scope/reproduction](./phase-9-grcv4/tranche-8/P9-CRG2b-NativeContinuation.md).
+The [acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) binds the
+original execution and deduplicated storage without relabelling them. Next is
+A_RG2b if selected; Tranche 10 remains separate.
+
 ## Accepted A_CI+PC eighth-realization extension (2026-10-30)
 
 Work is on `work/p9-acipc-tranches-8-9`, based on accepted merge `b61b60be`.
 The selected scope is P9-8.4d through applicable P9-9.6; see the
 [bounded plan](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Plan.md) and
 [scientific record](./phase-9-grcv4/tranche-8/P9-ACIPC-ScientificReview.md).
-Seven predecessor realizations remain accepted. A_CI_PC execution is being
-validated separately; no new user acceptance, Tranche 10, basin policy,
-optional completion, RG2b execution or all-ten closure is inferred.
+The seven predecessors and A_CI_PC are accepted at their bounded scopes.
+Tranche 10, basin policy, optional completion, new RG2b execution and
+all-ten closure are not inferred from that acceptance.
 Independent jobs run in parallel, up to twelve one-thread workers. Native
 large segments use explicit FLINT / certified Arb and a 3600-second cap.
 
@@ -24,8 +78,8 @@ The user accepted the bounded implementation on 2026-10-30. The separate
 [decision](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) binds reviewed
 implementation `e3e7f91a`. Original execution and earlier seven-family acceptance
 records remain unchanged. Compatibility now has 32 bounded accepted cells
-and eight unselected RG2b cells. RG2b, optional completion, general conformance and
-A_CI_PC Tranche 10/basin support remain unselected.
+and eight unselected RG2b cells. New RG2b native execution, optional completion, general conformance and
+A_CI_PC Tranche 10/basin support remain unselected; C_RG2b research is now open.
 
 
 Accepted predecessor work (2026-10-29): [C_CI+PC seventh realization through Tranche 9](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md), continuing on `work/p9-aos-tranches-8-9` after accepted C_PC `b41f1f26`. Verify feasibility and measure optimization benefits before long runs; use one-hour large native segment caps. C_CI_PC `.b/.c` and six predecessor realizations remain accepted. Bounded numerical execution and side-tool integration are complete; the checked review and final validation retain the evidence, accepted by the user on 2026-10-29 in a separate [decision](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) binding implementation `f90c5344`. At the user's reaffirmed priority, large covariance selects combined transport, reflection and rotation; five other large cases remain deferred diagnostic work. P9-10.2 is deferred.

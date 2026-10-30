@@ -1,0 +1,54 @@
+{
+  "schema": "p9-crg2b-connected-completion-contract-v1",
+  "contract_id": "P9-EC-C-RG2B-CONNECTED-COMPLETION",
+  "claim_id": "P9-CL-C-RG2B-CONNECTED-COMPLETION",
+  "claim_class": "conditional",
+  "status": "selected_for_bounded_implementation",
+  "selection": "User authorized completion/policy adoption and P9-8.4d through full bounded Tranche 9 on 2026-10-30.",
+  "family": "C_RG2b",
+  "policy": {
+    "extension_evaluator_id": "grc9v4_c_rg2b_connected_signed_argument_completion_v1",
+    "containment_certificate_id": "grc9v4_c_rg2b_connected_resolvent_global_certificate_v1",
+    "approximation_policy_id": "grc9v4_c_rg2b_chain6_sweeps18_vertex_binary64_arb192_v1",
+    "error_norm_id": "grc9v4_rg2b_hodge_induced_infinity_v1",
+    "error_tolerance": 3.552713678800501e-15,
+    "iteration_limit": 222,
+    "failure_policy_id": "fail_closed_on_uncertified_section_v1"
+  },
+  "scientific_scope": "unique completion-relative bounded Lipschitz section subject to exact graph/parameter/containment/contraction inequalities",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletion.md",
+      "sha256": "6ba0715ee45474167159111823180429618610efbb20de1c63fa3a4460091b2b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-CompletionFeasibility.json",
+      "sha256": "2ad2009b6bdc222ab3d7fdc0df808af80940821811db852b6e67df7b42b83b87"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-SectionFeasibility.json.xz",
+      "sha256": "47eb3380d5178ae868fa04e0b70f3612e502799241e712b798d6731c6778f4e8"
+    }
+  ],
+  "debt_dispositions": [
+    {
+      "debt_id": "LG-RG-COMPLETION",
+      "disposition": "C_RG2b_bounded_mathematical_prerequisite_resolved_native_conformance_forward"
+    },
+    {
+      "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "disposition": "narrowed_unresolved_unchanged"
+    }
+  ],
+  "obligations": [
+    "native arithmetic and both-role admission",
+    "ten-step actual-target continuation",
+    "covariance",
+    "rollback replay reset",
+    "disabled compatibility and public API"
+  ],
+  "native_conformance_accepted": false,
+  "all_graphs_accepted": false,
+  "aggregate_closed": false,
+  "record_digest": "ce4ef5e591d66f8e23f0617ad431ec2ad987f5cf375fb00c5f0e9ff2c602f740"
+}

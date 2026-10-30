@@ -24,6 +24,7 @@ from grcv4_explorer.aos import aos_status, aos_source
 from grcv4_explorer.cpc import cpc_status, cpc_source
 from grcv4_explorer.ccipc import ccipc_status, ccipc_source
 from grcv4_explorer.acipc import acipc_status, acipc_source
+from grcv4_explorer.crg2b import crg2b_status, crg2b_source
 from grcv4_explorer.tranche8 import tranche8_status, tranche8_source  # noqa: E402
 from grcv4_explorer.tranche8_end import tranche8_end_reviews, tranche8_end_source
 
@@ -38,8 +39,8 @@ from grcv4_explorer.tranche9 import (tranche9_status, tranche9_source,
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if request.path in {"/api/aos", "/api/aos/source", "/api/cpc", "/api/cpc/source", "/api/ccipc", "/api/ccipc/source", "/api/acipc", "/api/acipc/source"}:
-            views = {"aos": (aos_status, aos_source), "cpc": (cpc_status, cpc_source), "ccipc": (ccipc_status, ccipc_source), "acipc": (acipc_status, acipc_source)}
+        if request.path in {"/api/aos", "/api/aos/source", "/api/cpc", "/api/cpc/source", "/api/ccipc", "/api/ccipc/source", "/api/acipc", "/api/acipc/source", "/api/crg2b", "/api/crg2b/source"}:
+            views = {"aos": (aos_status, aos_source), "cpc": (cpc_status, cpc_source), "ccipc": (ccipc_status, ccipc_source), "acipc": (acipc_status, acipc_source), "crg2b": (crg2b_status, crg2b_source)}
             view, source = views[request.path.split("/")[2]]
             try:
                 query = parse_qs(request.query, strict_parsing=True, keep_blank_values=True)
@@ -243,7 +244,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -269,6 +270,7 @@ class Handler(BaseHTTPRequestHandler):
                     "cpc.js": "text/javascript",
                     "ccipc.js": "text/javascript",
                     "acipc.js": "text/javascript",
+                    "crg2b.js": "text/javascript",
                     "tranche8.js": "text/javascript",
                     "verification.css": "text/css",
                 }[name],

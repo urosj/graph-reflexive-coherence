@@ -1,0 +1,25 @@
+{
+  "schema": "p9-crg2b-connected-release-v1",
+  "contract_digest": "ce4ef5e591d66f8e23f0617ad431ec2ad987f5cf375fb00c5f0e9ff2c602f740",
+  "source_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionContract.json",
+      "sha256": "0e71c81f7c179a548153961d0802fd8bd6cbd5100ca8644dc8fdc2acee51b49a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4-Connected-RG2b-Addendum.md",
+      "sha256": "8a56c578034d27a29264309ea28c558ce69bf41a1ccfe4493ebac3c212839ef3"
+    },
+    {
+      "path": "specs/grc-9-v4-connected-rg2b-spec.md",
+      "sha256": "5149a12dc9f7607a936b7be039a238c1e4b27f7dde414a9baf6574c4e678c0eb"
+    }
+  ],
+  "ordering": [
+    "authority",
+    "paper",
+    "spec"
+  ],
+  "native_acceptance": false,
+  "record_digest": "3cf4d75526b1c7a852c459d60e2d15bda016c491e98852edf6c874a163083a1f"
+}

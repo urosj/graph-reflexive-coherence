@@ -451,7 +451,8 @@ def acipc_permitted(path, leaf):
 
 CRG2B_ENTRY = "P9-8.3C-RG2b"
 CRG2B_PATHS = ('src/pygrc/models/grc_9_v4_rg2b.py', 'src/pygrc/models/grc_v4_rg2b.py', 'src/pygrc/models/grc_v4_lifecycle.py', 'src/pygrc/models/grc_9_v4_expansion.py', 'src/pygrc/models/grc_9_v4_lifecycle.py', 'tests/models/test_grc_9_v4_crg2b.py')
-CRG2B_NEW_PATHS = ('src/pygrc/models/grc_9_v4_rg2b.py', 'tests/models/test_grc_9_v4_crg2b.py')
+CRG2B_PATHS += ('src/pygrc/models/grc_9_v4_crg2b_connected.py',)
+CRG2B_NEW_PATHS = ('src/pygrc/models/grc_9_v4_rg2b.py', 'tests/models/test_grc_9_v4_crg2b.py', 'src/pygrc/models/grc_9_v4_crg2b_connected.py')
 CRG2B_G2 = "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0"
 CRG2B_PREDECESSOR = "d5eee1a6c2d50e635569353e85c5e4f4791eae09"
 CRG2B_RESEARCH_HASHES = {'implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bCompletion.md': 'bc029c5e927e3ae4793af91eb95c07e565cfb733324ec8c0ff3c8104b491776b', 'implementation/phase-9-grcv4/tranche-8/P9-8.0-RG2bNumericalFeasibility.md': '357c225f8acbed978c5f50852112117c9f6dcef313bae2fef614f030496c453b', 'implementation/phase-9-grcv4/tranche-8/P9-8.0-RG-ConstructionInputs.json': 'c4890e5a98e00e06c0a226012700f02e0cb8e740bbd977b551761e821e4a4294', 'implementation/phase-9-grcv4/verification/test_p980_rg2b_completion.py': '5725f799116395e74601c04578a1caaa8811f76657589b334514122553fa0c79', 'implementation/phase-9-grcv4/verification/test_p980_rg2b_numerical.py': 'b4c41363d07beee6c4b0e18f88c52f19574abc55cfd5b73a264514df62cb297e', 'implementation/phase-9-grcv4/verification/test_p980_rg_event_companion.py': '3ea4c72d64b1204ce19ed433b0f164851e8f622e8aade6aaf44a40f905d4bfb7'}
@@ -468,6 +469,13 @@ def crg2b_authorization(root):
                   'C_RG2b requires its accepted research subjects')
         p.require(p.sha(p.safe_path(root, path).read_bytes()) == expected,
                   'C_RG2b cannot replace accepted research expectations')
+    # Connected successor is separately selected; old tree17 authority is intact.
+    release_path='implementation/phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionRelease.json'
+    if (root/release_path).exists():
+        release=p.read(root/release_path)
+        p.require(release['record_digest']==p.digest_record(release),'connected release digest')
+        for row in release['source_bindings']:
+            p.require(p.sha((root/row['path']).read_bytes())==row['sha256'],'connected release source')
     return CRG2B_ENTRY
 
 
@@ -585,6 +593,7 @@ PUBLIC_API_PATHS = (
     "tests/models/test_grc_9_v4_cpc_integration.py",
     "tests/models/test_grc_9_v4_ccipc_integration.py",
     "tests/models/test_grc_9_v4_acipc_integration.py",
+    "tests/models/test_grc_9_v4_crg2b_integration.py",
     "tests/models/test_grc_9_v4_architecture.py",
     "src/pygrc/models/grc_9_v4_lifecycle.py",
     "src/pygrc/models/grc_9_v4_owner.py",

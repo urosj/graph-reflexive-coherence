@@ -38,7 +38,7 @@ from .grc_9_v4_identity import has_basin
 
 # Public execution selection is independent of available native implementations.
 # Contract recognition and conformance acceptance are separate again.
-PUBLIC_ENABLED_FAMILIES = ("C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC")
+PUBLIC_ENABLED_FAMILIES = ("C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b")
 
 native_bytes = branch._bytes
 

@@ -2725,3 +2725,35 @@ A_CI+PC was bounded-accepted on 2026-10-30. Python/API/browser/notebook show
 the separate accepted decision over the unchanged execution records: 32
 compatibility cells accepted, eight RG2b cells unselected; aggregate and
 A_CI_PC basin/Tranche 10 support remain unclaimed.
+
+## Phase 9 C_RG2b ninth-realization research (2026-10-30)
+
+- [x] Shared evidence is authenticated and original XZ caches restored before
+  API/browser/notebook reads; scientific identities and acceptance stay unchanged.
+
+- [x] Expose `/api/crg2b` and indexed `/api/crg2b/source`, a browser research
+  panel, and the real `query-crg2b` notebook cell (`--crg2b-only`).
+- [x] Keep 54 graph certificates and four prepared numerical sections visibly
+  separate from native execution, user acceptance and support discovery.
+- [x] Retain eight contract traces and the unresolved C1 debt; no new authority
+  is inferred from a proposed completion or a passing research checker.
+- [x] Authenticate exact research sources, compressed section work and finite
+  documentation/tool successors; preserve all accepted predecessor records.
+- [x] Propagate the selected connected completion contract, paper addendum
+  and spec; expose its native successor separately. Accepted support remains
+  nine bounded families after the explicit C_RG2b acceptance; full conformance stays open.
+
+See [C_RG2b research usage](./docs/CRG2bNinthRealization.md).
+
+### C_RG2b native successor (2026-10-30)
+
+- [x] Expose retained native checkpoint coverage separately from the original research evidence.
+- [x] Bind the selected connected contract, paper addendum and spec; preserve tree17 and C1 boundaries.
+- [x] API, browser and actual notebook use the same checked index and repository-relative sources.
+- [x] Expose all sixteen completed native checkpoints, exact retained sources,
+  three selected/five deferred large transforms, and the unresolved C1 debt.
+- [x] Preserve prior accepted records through exact source-epoch adapters;
+  retained queries remain separate from numerical reruns.
+- [x] Separate bounded C_RG2b user acceptance; eight accepted predecessors remain unchanged.
+- [x] API/browser/notebook project the pinned acceptance and 36 accepted compatibility
+  cells, while preserving original pending execution records and C1/A_RG2b limits.

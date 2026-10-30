@@ -1,0 +1,82 @@
+{
+  "schema": "p9-crg2b-acceptance-v1",
+  "family": "C_RG2b",
+  "realization_number": 9,
+  "accepted_date": "2026-10-30",
+  "acceptance_basis": "Explicit user instruction: great stuff! accept and commit",
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-8/crg2b-native/Review.json",
+    "sha256": "ec7375a9aef5fae04a726090304b561e1cbedf7114f56ca7af1e42e4417e0a68",
+    "record_digest": "439878c5b18aae91bbae193657184e5a75289ce411dc15e0f1051c69ff9d498e"
+  },
+  "support": {
+    "path": "implementation/phase-9-grcv4/tranche-8/crg2b-native/9.6-Support.json",
+    "sha256": "ec74ac2370f3498bbc79c6bf0a5dd855e143f72a1966bba4029a372cba1e146b",
+    "record_digest": "34cd7419bd8aee6ba712a10431c6aaeffcb9d1c23abe842f5358bb5f6561c6e5"
+  },
+  "matrix": {
+    "path": "implementation/phase-9-grcv4/tranche-8/crg2b-native/9.3-Matrix.json",
+    "sha256": "d20324a35ba3ae00659dc962a7cfbd955ab569d82e32c8d21db24cece009f528",
+    "record_digest": "18b43715f7b9a8cd936221f9d079077dcc3b1cae74c52916033dba6966cc0e37"
+  },
+  "completion_release": {
+    "path": "implementation/phase-9-grcv4/tranche-8/P9-CRG2b-ConnectedCompletionRelease.json",
+    "sha256": "452fb465452aa49b2b6a033412a217a82ee7c532d6a85b55ffdee09da757506c",
+    "record_digest": "3cf4d75526b1c7a852c459d60e2d15bda016c491e98852edf6c874a163083a1f"
+  },
+  "storage": {
+    "path": "implementation/phase-9-grcv4/tranche-8/crg2b-native/shared/records.json",
+    "sha256": "60272c8b8614c30b05ddbf3e7c39d0fc2fef24dc3b5ecb8a19dfb7dc640f4e9a"
+  },
+  "checkpoints": [
+    "8.4d",
+    "8.4e",
+    "8.4f",
+    "8.4g",
+    "8.4h",
+    "8.4i",
+    "8.5",
+    "8.6",
+    "tranche8_end",
+    "9.1b",
+    "9.2",
+    "9.3",
+    "9.4a",
+    "9.4b",
+    "9.5",
+    "9.6"
+  ],
+  "user_accepted": true,
+  "bounded_scope_closed": true,
+  "compatibility_counts": {
+    "bounded_accepted": 36,
+    "passed_pending_acceptance": 0,
+    "unselected_not_executed": 4
+  },
+  "completion_policy": "grc9v4_c_rg2b_connected_signed_argument_completion_v1",
+  "large_covariance_selected": [
+    "combined",
+    "reflect",
+    "rotate"
+  ],
+  "large_covariance_deferred_unexecuted": [
+    "edge_order",
+    "node_order",
+    "relabel",
+    "signed",
+    "rotate_twice"
+  ],
+  "first_large_beat_event_credit": false,
+  "second_large_beat_event_and_replay_accepted": true,
+  "C1_regularity_debt": "narrowed_unresolved",
+  "uniform_trajectory_enclosure": false,
+  "expanded_target_four_surface_compatibility": "not_transferred_from_source",
+  "basin_policy": "unselected",
+  "remaining_family": "A_RG2b",
+  "tranche10": "deferred",
+  "aggregate_closed": false,
+  "full_GRC9V4_conformance": false,
+  "original_execution_relabelled": false,
+  "deduplicated_storage_accepted": true,
+  "record_digest": "b4c76c8c0cfd206e1951c833276df50aaae93dfb639772d86697079ff4a81a98"
+}
