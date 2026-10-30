@@ -74,12 +74,13 @@ def peel_sha(root,name,present):
 
 def project(root,current):
     from p9_arg2b_historical import project as successor_project
+    from p9_arg2b_historical import peel_sha as successor_sha
     current=successor_project(root,current)
     root=Path(root).resolve();value=epochs(root)
     result={name:peel_sha(root,name,present) for name,present in current.items()}
     for name in ADDITIONS & result.keys():
         expected=value['additions'][name]
-        if result[name]!=expected or sha((root/name).read_bytes())!=expected:
+        if result[name]!=expected or successor_sha(root,name,sha((root/name).read_bytes()))!=expected:
             raise ValueError('unregistered connected C_RG2b addition: '+name)
         del result[name]
     return result

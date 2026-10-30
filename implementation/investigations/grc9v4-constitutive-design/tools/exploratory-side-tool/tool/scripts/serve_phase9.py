@@ -20,6 +20,7 @@ from grcv4_explorer.basin import basin_authority, basin_source  # noqa: E402
 from grcv4_explorer.basin_native import basin_native_status, basin_native_source
 from grcv4_explorer.target_compatibility import target_compatibility_status, target_compatibility_source
 from grcv4_explorer.tranche10_support import tranche10_support_status, tranche10_support_source
+from grcv4_explorer.tranche10_verification import tranche10_verification_status, tranche10_verification_source
 from grcv4_explorer.aos import aos_status, aos_source
 from grcv4_explorer.cpc import cpc_status, cpc_source
 from grcv4_explorer.ccipc import ccipc_status, ccipc_source
@@ -69,19 +70,21 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(content)
             return
-        if request.path in {"/api/tranche10/targets", "/api/tranche10/targets/source", "/api/tranche10/support", "/api/tranche10/support/source"}:
+        if request.path in {"/api/tranche10/targets", "/api/tranche10/targets/source", "/api/tranche10/support", "/api/tranche10/support/source", "/api/tranche10/verification", "/api/tranche10/verification/source"}:
             try:
                 query = parse_qs(request.query, strict_parsing=True)
                 root = repository_root()
                 if request.path.endswith("/source"):
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed source path required")
-                    source = tranche10_support_source if "/support/" in request.path else target_compatibility_source
+                    source = {"targets": target_compatibility_source, "support": tranche10_support_source,
+                              "verification": tranche10_verification_source}[request.path.split("/")[3]]
                     content, ref = source(root, query["path"][0])
                 else:
                     if query:
                         raise KeyError("expanded-target evidence has fixed scope")
-                    view = tranche10_support_status if request.path.endswith("support") else target_compatibility_status
+                    view = {"targets": target_compatibility_status, "support": tranche10_support_status,
+                            "verification": tranche10_verification_status}[request.path.split("/")[3]]
                     content = json.dumps(view(root)).encode()
                 self.send_response(200)
                 if request.path.endswith("/source"):
@@ -245,7 +248,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-verification.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -267,6 +270,7 @@ class Handler(BaseHTTPRequestHandler):
                     "basin.js": "text/javascript",
                     "target-compatibility.js": "text/javascript",
                     "tranche10-support.js": "text/javascript",
+                    "tranche10-verification.js": "text/javascript",
                     "aos.js": "text/javascript",
                     "cpc.js": "text/javascript",
                     "ccipc.js": "text/javascript",

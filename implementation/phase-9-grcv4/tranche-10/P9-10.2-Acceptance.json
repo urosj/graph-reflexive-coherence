@@ -1,0 +1,41 @@
+{
+  "schema": "p9102-retained-verification-acceptance-v1",
+  "status": "accepted_bounded_retained_verification",
+  "accepted_on": "2026-10-30",
+  "user_instruction": "accept and commit, then merge, since it's just one, we can skip no-ff this time",
+  "families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC"
+  ],
+  "user_accepted": true,
+  "P9_10_2_closed": true,
+  "all_ten_P9_10_2_closed": false,
+  "G4_accepted": false,
+  "full_GRC9V4_conformance": false,
+  "new_support": [],
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-10/P9-10.2-Verification.json",
+    "sha256": "5143f424070eccf2187ab719b4e9ac57fc407b73efd3acf083e6b9774156611f",
+    "record_digest": "e8551be42f0c01736382c02922ad9c0a3ebc9dc207a7e09ad9abe7960566fe93"
+  },
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.2-Review.md",
+      "sha256": "b02a246e041b7933560f91c2f39c50d3ede204ffea4c977375b9023626b4a167"
+    }
+  ],
+  "scope": "Bounded verification on the accepted C_OS/C_CI/A_CI/A_PC P9-10.1 subjects only. Retained native replay and receipt evidence plus new independent saved-operand and charge-kernel checks; no new native trajectory or replay.",
+  "historical_records": "Original execution and review-time acceptance flags remain unchanged; this decision supplies bounded user acceptance.",
+  "remaining_work": [
+    "A_OS",
+    "C_PC",
+    "C_CI_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "next_work": "A_OS P9-10.1a-c then P9-10.2, followed by the other five families in the recorded order; consolidated P9-10.3-10.6 remain separate.",
+  "record_digest": "5b0b22bb7effe9428dd238c98c8b10083683b524e0350f6e9141ea3edad596d3"
+}

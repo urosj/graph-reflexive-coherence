@@ -34,6 +34,16 @@ and do not transfer automatically to the other six families.
 
 ## Tranche 10 rollout and six-family basin-capture map (2026-10-30)
 
+P9-10.2 is accepted for the bounded C_OS/C_CI/A_CI/A_PC scope;
+[acceptance decision](./phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json);
+see the [bounded review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md) and
+[record](./phase-9-grcv4/tranche-10/P9-10.2-Verification.json). Four parallel
+retained-evidence checks reused accepted replay and runtime receipts, recomputed
+sixteen independent equations and sixteen charge checks, and shared 24
+Python/FLINT charge-kernel evaluations. No native steps or replay runs were
+repeated. Continue with A_OS P9-10.1a–c → P9-10.2, following
+the remaining-family order below; consolidated P9-10.3–10.6 stay separate.
+
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
 It identifies no new mathematical obstruction, but is not a native conformance
@@ -42,7 +52,7 @@ campaign was run for this assessment.
 
 1. **Complete:** map the six missing capture paths, reusable targets and oracle
    requirements, recorded here.
-2. **Next:** complete P9-10.2 for C_OS, C_CI, A_CI and A_PC, establishing the
+2. **Bounded accepted:** P9-10.2 for C_OS, C_CI, A_CI and A_PC, establishing the
    reusable replay, numerical-comparison, independent charge-edge and receipt
    checks on the already accepted P9-10.1 subjects.
 3. Complete P9-10.1a–c followed by P9-10.2 for each remaining family, in the
@@ -53,6 +63,24 @@ campaign was run for this assessment.
    checks, then complete P9-10.4 capability publication and API/replay examples.
 5. Complete P9-10.5 scientific-debt reconciliation and P9-10.6 reviewed
    support/G4/handoff. Earlier family acceptance does not grant these closures.
+
+P9-10.2 execution refinement: start from accepted evidence, with **no default
+native rerun**. The [P9-10.1b target campaign](./phase-9-grcv4/tranche-10/P9-10.1b-Review.md)
+already executed replay and generated receipts for all four families; P9-10.1a/c
+retain independent numerical checks on their explicitly identified subjects.
+Map each P9-10.2 obligation to exact retained inputs, results, checker/source
+identities and acceptance. Check whether subsequent changes affect the exercised
+path; a shared file hash change alone does not require rerunning every family,
+and authentic historical evidence alone does not validate changed behavior.
+Recompute missing independent charge/edge or comparison checks from saved
+operands where sufficient. Execute a native case only for a concrete missing
+observation, relevant behavior/dependency/policy change, suspect evidence, or
+coverage that cannot otherwise be established. State the missing fact first and
+run the smallest affected case. No new receipt or replay campaign is required
+merely because the checkpoint number changed. Independent retained checks or
+necessary new cases may run in parallel; preserve original execution identities
+and distinguish retained validation from a fresh native run. The bounded
+four-family reconciliation is accepted; the other six extensions remain open.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin

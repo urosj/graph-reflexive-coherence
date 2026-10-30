@@ -4142,3 +4142,20 @@ PATHS |= {
     'implementation/phase-9-grcv4/tranche-8/arg2b-native/large-source-current.json',
     'implementation/phase-9-grcv4/tranche-8/arg2b-native/large-source-reset.json',
 }
+
+# P9-10.2 bounded retained verification; acceptance remains separate.
+PATHS |= {
+    'implementation/phase-9-grcv4/verification/p9102_verification.py',
+    'implementation/phase-9-grcv4/verification/test_p9102_verification.py',
+    'implementation/phase-9-grcv4/verification/test_p9102_surfaces.py',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.2-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.2-Review.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche10_verification.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-verification.js',
+}
+
+# Bounded P9-10.2 acceptance, separate from original verification evidence.
+PATHS |= {
+    "implementation/phase-9-grcv4/verification/p9102_acceptance.py",
+    "implementation/phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json",
+}

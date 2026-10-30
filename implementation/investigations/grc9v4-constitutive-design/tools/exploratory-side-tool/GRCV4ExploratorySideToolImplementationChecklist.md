@@ -2783,3 +2783,14 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Keep optional P9-9.1a deferred and unselected, scientific limits visible,
   full conformance/P9-G4 separate, and existing Tranche 10 decisions unchanged.
 - [x] Retained checks only; no repeated numerical campaign.
+
+## P9-10.2 — bounded first-group verification
+
+- [x] Expose `/api/tranche10/verification`, indexed evidence, the browser panel
+  and `p9102-verification` notebook cell through the same checked record.
+- [x] Distinguish accepted native replay reuse from new independent saved-state
+  equations and Python/FLINT charge-kernel controls; no native trajectory rerun.
+- [x] Preserve four-family scope, explicit user acceptance and all scientific
+  limits; source drift or invalid coverage clears the view.
+- [x] User acceptance of bounded P9-10.2 (2026-10-30); the six basin extensions and G4 remain
+  separate. See the Phase 9 plan for the selected continuation order.

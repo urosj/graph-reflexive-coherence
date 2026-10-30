@@ -1,5 +1,22 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## P9-10.2 first group — bounded accepted (2026-10-30)
+
+Work branch: `work/p9-10.2-first-group`; integration target: `main` (fast-forward).
+[User acceptance](./phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json) preserves
+the unchanged verification record. The [review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md)
+and [record](./phase-9-grcv4/tranche-10/P9-10.2-Verification.json) cover C_OS,
+C_CI, A_CI and A_PC. Four parallel checks reused accepted replay/receipts and
+added independent saved-operand validation; native steps and replay reruns are
+both zero. Sixteen equation checks, sixteen saved charge checks, eight receipt
+ledgers and 24 shared Python/FLINT charge-edge evaluations pass. No production
+code, scientific authority or accepted numerical record changed.
+
+The side-tool has `/api/tranche10/verification`, browser access and notebook cell
+`p9102-verification`; it reports bounded acceptance. Next extend A_OS through P9-10.1a–c and P9-10.2 in the recorded
+six-family order. Do not repeat the four-family campaign to change a status flag.
+G4, full conformance and consolidated P9-10.3–10.6 remain separate.
+
 ## Tranches 8 and 9 — all ten declared family scopes accepted and closed (2026-10-30)
 
 The [all-ten closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
@@ -34,13 +51,19 @@ and do not transfer automatically to the other six families.
 
 The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
 preserves the completed read-only assessment: six fresh-read paths, independent
-oracle adaptations, exact retained targets and claim limits. Next is P9-10.2 for
-C_OS/C_CI/A_CI/A_PC, then P9-10.1a–c → P9-10.2 per A_OS, C_PC, C_CI_PC,
+oracle adaptations, exact retained targets and claim limits. After accepted
+four-family P9-10.2, next is P9-10.1a–c → P9-10.2 per A_OS, C_PC, C_CI_PC,
 A_CI_PC, C_RG2b and A_RG2b, followed by consolidated P9-10.3–10.6. Independent
 jobs may run in parallel. The six final target snapshots have equal roles and
 require explicit v2 migration plus disabled-return checks for role-separation
 evidence; oracle parameters and full selected-root/section bindings must be
 checked. No six-family basin conformance or acceptance is inferred by this map.
+
+For P9-10.2, reuse accepted execution first: map obligations to retained evidence
+and inspect relevant source changes. There is no default four-family native
+rerun. Recompute missing checks from saved operands where sufficient, and run
+only a concrete uncovered or affected native case. The plan records this rule;
+the four-family result is now accepted as described above.
 
 ## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 

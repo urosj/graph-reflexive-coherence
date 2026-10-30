@@ -29,6 +29,38 @@ CHANGED = {
     PREFIX + 'verification/p9_arg2b_acceptance.py',
     PREFIX + 'verification/phase9_implementation_policy.py',
 }
+# These living documents and the maintenance roster may advance after closeout.
+# Accepted scientific/runtime evidence and historical checker bytes stay frozen.
+MAINTAINED_PRESENTATIONS = {
+    *('implementation/Phase-9-GRCV4-' + n + '.md' for n in
+      ('Handoff', 'ImplementationPlan', 'ImplementationChecklist')),
+    *(SIDE + 'GRCV4ExploratorySideToolImplementation' + n + '.md'
+      for n in ('Plan', 'Checklist')),
+    PREFIX + 'verification/phase9_implementation_policy.py',
+}
+CLOSEOUT_COMMIT = '7ae0b128'
+# Verification/presentation successors only; no scientific producer belongs here.
+POST_CLOSEOUT_READERS = {
+    PREFIX + 'verification/p9_crg2b_historical.py',
+    *(SIDE + 'tool/' + n for n in ('scripts/serve_phase9.py',
+      'src/grcv4_explorer/phase9_verification.py', 'phase9-web/index.html',
+      'notebooks/phase9_verification.ipynb')),
+}
+
+
+def maintained_preimage(root, name, present):
+    if name not in MAINTAINED_PRESENTATIONS | POST_CLOSEOUT_READERS:
+        return present
+    old = subprocess.check_output(['git', 'show', CLOSEOUT_COMMIT + ':' + name], cwd=root)
+    live = b.sha((root / name).read_bytes())
+    if live == b.sha(old):
+        return present
+    from phase9_implementation_policy import digest_record
+    boundary = json.loads((root / PREFIX / 'verification/Phase9ImplementationBoundary.json').read_bytes())
+    rows = {r['path']: r['sha256'] for r in boundary['artifact_bindings']}
+    b.require(boundary['record_digest'] == digest_record(boundary) and rows.get(name) == live,
+              'unbound post-closeout maintenance: ' + name)
+    return b.sha(old) if present == live else present
 
 
 @lru_cache(maxsize=64)
@@ -47,10 +79,23 @@ def record(root):
 
 def peel_sha(root, name, present):
     root = Path(root).resolve()
+    present = maintained_preimage(root, name, present)
     if name not in CHANGED or not (root / PATH).exists():
         return present
     row = record(root)['presentation_sources'][name]
-    b.require(b.sha((root / name).read_bytes()) == row['after_sha256']
+    live = b.sha((root / name).read_bytes())
+    if live != row['after_sha256'] and name in MAINTAINED_PRESENTATIONS:
+        # Authenticate historical bytes at the committed closeout, and current
+        # bytes through the existing maintenance boundary. Never rewrite the
+        # acceptance or call the current document an old execution input.
+        historical = subprocess.check_output(['git', 'show', CLOSEOUT_COMMIT + ':' + name], cwd=root)
+        b.require(maintained_preimage(root, name, live) == row['after_sha256']
+                  and b.sha(historical) == row['after_sha256'],
+                  'maintained presentation or historical closeout drift: ' + name)
+        if present == live:
+            present = row['after_sha256']
+        live = row['after_sha256']
+    b.require(live == row['after_sha256']
               and b.sha(original(root, name)) == row['before_sha256'],
               'Tranches 8–9 closure source drift: ' + name)
     return row['before_sha256'] if present == row['after_sha256'] else present

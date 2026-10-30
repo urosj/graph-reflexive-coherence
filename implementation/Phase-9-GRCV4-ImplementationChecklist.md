@@ -33,8 +33,9 @@ remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
 and do not transfer automatically to the other six families.
 
 The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
-records the completed read-only six-family assessment and agreed order. Next is
-P9-10.2 for C_OS/C_CI/A_CI/A_PC; then P9-10.1a–c → P9-10.2 per remaining
+records the completed read-only six-family assessment and agreed order. Bounded
+P9-10.2 for C_OS/C_CI/A_CI/A_PC is bounded-accepted; next is
+P9-10.1a–c → P9-10.2 per remaining
 family before consolidated P9-10.3–10.6. The historical checked P9-10.1 entries
 below remain four-family acceptances, not acceptance of those six extensions.
 
@@ -4324,8 +4325,25 @@ target or grant full specialization conformance.
   Reuse accepted fixtures and checkers; run focused new checks and affected
   regressions, with independent family runs parallel where practical. No broad
   Tranche 8 campaign rerun is required unless a concrete failure justifies it.
-- [ ] P9-10.2: Verify deterministic replay, numerical comparison conventions,
+- [x] P9-10.2 (bounded C_OS/C_CI/A_CI/A_PC): Verify deterministic replay, numerical comparison conventions,
   independent charge-edge results, and runtime-generated receipt evidence.
+  - [x] Reconcile the exact accepted four-family subjects and current source
+    applicability; retain original native replay/execution identities.
+  - [x] Four parallel retained checks: sixteen independent equations and charge
+    checks each; eight v1/v2 ledgers with 212 receipts and sixty commit groups.
+  - [x] Shared independent charge edge controls: twelve cases under Python and
+    FLINT; no native trajectory or replay rerun.
+  - [x] Expose checked results through side-tool API/browser/notebook and record
+    [bounded scope and reproduction](./phase-9-grcv4/tranche-10/P9-10.2-Review.md).
+  - [x] User acceptance of bounded C_OS/C_CI/A_CI/A_PC P9-10.2 on 2026-10-30:
+    [decision](./phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json). Other six
+    basin extensions and consolidated P9-10.3–10.6 remain separate.
+  Reuse accepted execution by exact subject and source/checker identity first;
+  reconcile obligations and relevant subsequent code changes before selecting
+  reruns. Prefer independent checks of saved operands. Run only the smallest
+  native case needed for a concrete gap or affected behavior; no automatic
+  four-family replay/receipt campaign. Preserve historical execution identity
+  and distinguish retained checks from fresh runs; parallelize independent work.
 - [ ] P9-10.3: Run relevant old-family regressions and verify accepted release
   and source identity preservation.
 - [ ] P9-10.4: Publish capability discovery, a minimal API/replay example,

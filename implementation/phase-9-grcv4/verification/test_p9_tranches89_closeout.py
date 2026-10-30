@@ -40,6 +40,26 @@ class ClosureTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     closure.checked()
 
+    def test_bound_maintenance_preserves_the_original_closeout_subject(self):
+        name = 'implementation/Phase-9-GRCV4-ImplementationPlan.md'
+        row = closure.record(closure.b.ROOT)['presentation_sources'][name]
+        live = closure.b.sha((closure.b.ROOT / name).read_bytes())
+        self.assertNotEqual(live, row['after_sha256'])
+        self.assertEqual(closure.peel_sha(closure.b.ROOT, name, live), row['before_sha256'])
+        self.assertNotIn('src/pygrc/models/grc_v4_step.py',
+                         closure.MAINTAINED_PRESENTATIONS | closure.POST_CLOSEOUT_READERS)
+
+    def test_registered_test_addition_is_checked_at_its_source_epoch(self):
+        import p9_crg2b_historical as old
+        import p9_arg2b_historical as successor
+        name = 'tests/models/test_grc_9_v4_crg2b_integration.py'
+        live = old.sha((closure.b.ROOT / name).read_bytes())
+        projected = successor.peel_sha(closure.b.ROOT, name, live)
+        expected = old.epochs(closure.b.ROOT)['additions'][name]
+        self.assertNotEqual(live, expected)
+        self.assertEqual(projected, expected)
+        self.assertEqual(old.project(closure.b.ROOT, {name: live}), {})
+
 
 if __name__ == '__main__':
     unittest.main()
