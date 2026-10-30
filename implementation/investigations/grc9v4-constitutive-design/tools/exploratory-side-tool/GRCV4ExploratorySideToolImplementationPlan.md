@@ -3342,3 +3342,10 @@ and original records remain historical. No native rerun or scientific/support
 promotion is performed. The separate acceptance view now records user-accepted
 P9-10.1c and bounded P9-10.1 closure, preserving raw snapshots and all-forty
 restrictions. API/browser/notebook and next-step guidance now point to P9-10.2.
+
+## Phase 9 A_CI+PC eighth-realization extension (2026-10-30)
+
+- [x] Provide Python/API, browser and notebook access to the bounded work.
+- [x] Validate retained source bindings, pending acceptance and historical seven-family preservation; sixteen surface/history tests and the phase boundary pass.
+
+See [scope and access](./docs/ACIPCEighthRealization.md). Numerical reruns are separate from these retained-integrity queries.

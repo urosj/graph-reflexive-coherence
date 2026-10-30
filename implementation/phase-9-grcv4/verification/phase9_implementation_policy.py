@@ -2062,6 +2062,84 @@ PATHS |= {
 }
 
 
+# User-selected eighth realization: finite work roster, no acceptance promotion.
+PATHS |= {
+    SIDE + 'docs/ACIPCEighthRealization.md',
+    SIDE + 'tool/phase9-web/acipc.js',
+    SIDE + 'tool/src/grcv4_explorer/acipc.py',
+    *(HERE + name + ".py" for name in (
+        'p984d_acipc',
+        'p984d_acipc_feasibility',
+        'p984ef_acipc',
+        'p984g_acipc',
+        'p984g_acipc_companion',
+        'p984h_acipc',
+        'p984h_acipc_actual',
+        'p984h_acipc_covariance',
+        'p984h_acipc_math',
+        'p985_acipc',
+        'p99_acipc',
+        'p99_acipc_authority',
+        'p9_acipc_campaign',
+        'p9_acipc_execution_scope',
+        'p9_acipc_compute',
+        'p9_acipc_historical',
+        'p9_acipc_integration_compute',
+        'p9_acipc_large_charge',
+        'p9_acipc_targets',
+        'p9_acipc_review',
+        'test_p9_acipc_science',
+        'test_p9_acipc_review',
+        'test_p9_acipc_history',
+        'validate_acipc',
+    )),
+    *(PHASE + "tranche-8/" + name for name in (
+        'P9-8.4d-ACIPCCases.json',
+        'P9-8.4d-ACIPCPilotPreflight.json',
+        'P9-8.4d-ACIPCPreflight.json',
+        'P9-8.4d-ACIPCPreflight.json.xz',
+        'P9-8.4d-ACIPCResults.json.xz',
+        'P9-8.4d-ACIPCSourceCompanion.json.xz',
+        'P9-8.4e-ACIPCInputs.json',
+        'P9-8.4e-ACIPCResults.json.xz',
+        'P9-8.4f-ACIPCInputs.json',
+        'P9-8.4f-ACIPCResults.json.xz',
+        'P9-8.4g-ACIPCChargeInputs.json',
+        'P9-8.4g-ACIPCChargeResults.json.xz',
+        'P9-8.4g-ACIPCCompanionInputs.json',
+        'P9-8.4g-ACIPCCompanionResults.json.xz',
+        'P9-8.4g-ACIPCInvestigation.json',
+        'P9-8.4h-ACIPC-prepared_target-current.json.xz',
+        'P9-8.4h-ACIPC-prepared_target-reset.json.xz',
+        'P9-8.4h-ACIPC-source-current.json.xz',
+        'P9-8.4h-ACIPC-source-reset.json.xz',
+        'P9-8.4h-ACIPCCharge-ActualPreflight.json.xz',
+        'P9-8.4h-ACIPCCharge-event.json.xz',
+        'P9-8.4h-ACIPCChargeInputs.json',
+        'P9-8.4h-ACIPCCovarianceInputs.json',
+        'P9-8.4h-ACIPCInputs.json',
+        'P9-8.5-ACIPC-large.json.xz',
+        'P9-8.5-ACIPC-small.json.xz',
+        'P9-8.5-ACIPCInputs.json',
+        'P9-ACIPC-ComputePreflight.json',
+        'P9-ACIPC-IntegrationComputePreflight.json',
+        'P9-ACIPC-ScientificReview.md',
+        'P9-ACIPC-Tranches8-9-Plan.md',
+        'P9-ACIPC-Tranches8-9-Review.json',
+    )),
+    *(PHASE + 'tranche-8/P9-8.4h-ACIPCCharge-' + segment + '-' + role + '.json.xz'
+      for segment in ('prepared_target','final') for role in ('current','reset')),
+    *(PHASE + 'tranche-8/P9-8.4h-ACIPCCharge-step-' + role + '-' + str(index) + '.json.xz'
+      for role in ('current','reset') for index in range(1,11)),
+    *(PHASE + 'tranche-8/P9-8.4h-ACIPCCovariance-' + kind + '-' + segment + '.json.xz'
+      for kind in ('combined','reflect','rotate') for segment in ('event','current','reset')),
+    *(PHASE + 'tranche-9/P9-' + checkpoint + '-ACIPC.json.xz'
+      for checkpoint in ('9.1b','9.2','9.4a','9.4b','9.5')),
+    *(PHASE + 'tranche-9/' + name for name in ('P9-9.3-ACIPCMatrix.json','P9-9.2-ACIPCAuthority.json',
+      'P9-ACIPC-SourceEpochs.json','P9-ACIPC-Validation.json')),
+}
+
+
 def check_binding_reconciliation(root):
     """Retain exact committed context; never waive a directory or future file."""
     value = binding_reconciliation(root)

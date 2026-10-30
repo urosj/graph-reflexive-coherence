@@ -219,6 +219,14 @@
       "storage_sha256": "fe7ff4f382ca473fba7178a38fcf7b7c7351675853b04641ebd96bbf093be2eb"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIPCPreflight.json",
+      "size": 1971408,
+      "sha256": "a0bec958920d39a917bbb1b49f8f692745fce8f1d58b068e3fa4b45166fddf8a",
+      "storage_path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIPCPreflight.json.xz",
+      "storage_size": 161220,
+      "storage_sha256": "66a86fa993272775c2184629ec8e45e0e42b4c2f46a213e507d1f4d195a74675"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-8/P9-8.4d-ACIResults.json",
       "size": 45100088,
       "sha256": "691fcf4eb5d30405353594d97a0c7e9c81f35540c105f59e862f66f90d67a0a7",

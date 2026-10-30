@@ -1,5 +1,31 @@
 # Phase 9 GRCV4 Implementation Checklist
 
+## A_CI+PC eighth-realization extension — ready for acceptance (2026-10-30)
+
+Work is on `work/p9-acipc-tranches-8-9`, based on accepted merge `b61b60be`.
+The selected scope is P9-8.4d through applicable P9-9.6; see the
+[bounded plan](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Plan.md) and
+[scientific record](./phase-9-grcv4/tranche-8/P9-ACIPC-ScientificReview.md).
+Seven predecessor realizations remain accepted. A_CI_PC execution is being
+validated separately; no new user acceptance, Tranche 10, basin policy,
+optional completion, RG2b execution or all-ten closure is inferred.
+Independent jobs run in parallel, up to twelve one-thread workers. Native
+large segments use explicit FLINT / certified Arb and a 3600-second cap.
+
+Completed: twenty deep events / 400 continuation steps, 44 small covariance
+history cells, four large prerequisite steps, the actual large event and exact
+replay, and twenty-two Tranche 9 integration tests. Current and reset ten-step
+histories and their final reads now pass. Six small lifecycle obligations,
+fresh large replay, all three mapped events and their six target steps also
+pass. The consolidated retained review, 58 focused integration/science/surface
+checks and implementation-boundary audit pass. See the [checked review](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Review.json)
+and [validation](./phase-9-grcv4/tranche-9/P9-ACIPC-Validation.json).
+The bounded implementation is ready for user acceptance; nothing is committed
+as part of this checkpoint. Original execution and seven-family acceptance
+records remain unchanged. RG2b, optional completion, general conformance and
+A_CI_PC Tranche 10/basin support remain unselected.
+
+
 Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
 2026-10-02: P9-8.0 is complete after explicit acceptance of R1–R10 and the
@@ -3141,6 +3167,31 @@ the full ten-profile plan.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
     completed compact evidence and the 1 MB raw-file compression rule.
   - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+    - [x] A_CI+PC eighth-realization implementation selected on 2026-10-30:
+      [scope and compute plan](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Plan.md)
+      and [scientific review](./phase-9-grcv4/tranche-8/P9-ACIPC-ScientificReview.md).
+      - [x] Verified FLINT/certified-Arb execution, exact-operand cache parity,
+        one thread per worker and 3,600-second large-segment limits.
+      - [x] Twenty deep cases / forty histories, 400 continuation steps and
+        forty final reads; D94 uses the separately identified 31/32 W companion.
+      - [x] All 44 small covariance history cells; preserve the distinct
+        31/32 source used by this campaign.
+      - [x] Independent large joint-root/first-step bounds and exact-charge
+        successor shares `(7/32, 13/32, 3/8)`; retain the original reset
+        exclusion and the earlier evolved allocation's `+2^-54` charge failure.
+      - [x] Twenty-two Tranche 9 integration tests; eight native families,
+        ten public contracts, four new compatibility cells pending acceptance.
+      - [x] Actual large event and exact replay, fourteen fresh joint roots;
+        both source and selected prepared-target prerequisite steps pass.
+      - [x] Six small lifecycle obligations pass, including archive replay,
+        whole-publication rollback and independent reset after a native step.
+      - [x] Fresh large replay passes all three readmissions, exact checkpoint
+        comparison and no temporal history writes (917.9-second native segment).
+      - [x] Combined, reflection and rotation large events pass with fresh
+        native admission and retained comparisons; all six mapped target steps pass.
+      - [x] Both main large ten-step histories and final reads pass.
+      - [x] Complete final reconciliation, side-tool surfaces and implementation boundary.
+      - [ ] Separate user acceptance of the bounded A_CI+PC result.
     - [x] C_CI+PC seventh-realization implementation selected on 2026-10-29,
       on the existing branch: [scope and compute plan](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Plan.md)
       and [checked review](./phase-9-grcv4/tranche-8/P9-CCIPC-Tranches8-9-Review.json).
@@ -3988,14 +4039,14 @@ executed enabled/disabled migration or a full specialization conformance grant.
 | `P9-9.2-C_PC-state` | Bounded-accepted |
 | `P9-9.2-C_PC-observable` | Bounded-accepted |
 | `P9-9.2-C_PC-lifecycle` | Bounded-accepted |
-| `P9-9.2-A_CI_PC-transition` | Unselected |
-| `P9-9.2-A_CI_PC-state` | Unselected |
-| `P9-9.2-A_CI_PC-observable` | Unselected |
-| `P9-9.2-A_CI_PC-lifecycle` | Unselected |
-| `P9-9.2-C_CI_PC-transition` | Unselected |
-| `P9-9.2-C_CI_PC-state` | Unselected |
-| `P9-9.2-C_CI_PC-observable` | Unselected |
-| `P9-9.2-C_CI_PC-lifecycle` | Unselected |
+| `P9-9.2-A_CI_PC-transition` | Passed; pending acceptance |
+| `P9-9.2-A_CI_PC-state` | Passed; pending acceptance |
+| `P9-9.2-A_CI_PC-observable` | Passed; pending acceptance |
+| `P9-9.2-A_CI_PC-lifecycle` | Passed; pending acceptance |
+| `P9-9.2-C_CI_PC-transition` | Bounded-accepted |
+| `P9-9.2-C_CI_PC-state` | Bounded-accepted |
+| `P9-9.2-C_CI_PC-observable` | Bounded-accepted |
+| `P9-9.2-C_CI_PC-lifecycle` | Bounded-accepted |
 
 ## Tranche 10. Conformance and handoff
 

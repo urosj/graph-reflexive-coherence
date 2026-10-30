@@ -22,7 +22,7 @@ from .grc_v4_state import FrozenJSONMap
 
 
 TARGET_VERSION = "grc9v3-spec-2026-09-v1"
-FAMILIES = frozenset(("C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC"))
+FAMILIES = frozenset(("C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC"))
 _COMPATIBILITY = dict(
     schema_version="grc9v4-legacy-compatibility-policy-v1",
     target_spec_version=TARGET_VERSION,

@@ -1,5 +1,31 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## A_CI+PC eighth-realization extension — ready for acceptance (2026-10-30)
+
+Work is on `work/p9-acipc-tranches-8-9`, based on accepted merge `b61b60be`.
+The selected scope is P9-8.4d through applicable P9-9.6; see the
+[bounded plan](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Plan.md) and
+[scientific record](./phase-9-grcv4/tranche-8/P9-ACIPC-ScientificReview.md).
+Seven predecessor realizations remain accepted. A_CI_PC execution is being
+validated separately; no new user acceptance, Tranche 10, basin policy,
+optional completion, RG2b execution or all-ten closure is inferred.
+Independent jobs run in parallel, up to twelve one-thread workers. Native
+large segments use explicit FLINT / certified Arb and a 3600-second cap.
+
+Completed: twenty deep events / 400 continuation steps, 44 small covariance
+history cells, four large prerequisite steps, the actual large event and exact
+replay, and twenty-two Tranche 9 integration tests. Current and reset ten-step
+histories and their final reads now pass. Six small lifecycle obligations,
+fresh large replay, all three mapped events and their six target steps also
+pass. The consolidated retained review, 58 focused integration/science/surface
+checks and implementation-boundary audit pass. See the [checked review](./phase-9-grcv4/tranche-8/P9-ACIPC-Tranches8-9-Review.json)
+and [validation](./phase-9-grcv4/tranche-9/P9-ACIPC-Validation.json).
+The bounded implementation is ready for user acceptance; nothing is committed
+as part of this checkpoint. Original execution and seven-family acceptance
+records remain unchanged. RG2b, optional completion, general conformance and
+A_CI_PC Tranche 10/basin support remain unselected.
+
+
 ## Accepted checkpoint — C_CI+PC seventh realization (2026-10-29)
 
 C_CI_PC is implemented across the missing P9-8.4d obligations through

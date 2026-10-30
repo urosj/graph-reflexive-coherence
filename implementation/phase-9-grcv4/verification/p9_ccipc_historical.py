@@ -31,6 +31,8 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 
 def implementation_sha(root,name,present):
+    from p9_acipc_historical import peel_sha
+    present = peel_sha(root,name,present)
     from p9_ccipc_acceptance import previous_sha
     return previous_sha(root,name,present) or present
 
@@ -88,6 +90,8 @@ def matches(root,name,expected):
 
 
 def project(root,current):
+    from p9_acipc_historical import project as eighth
+    current=eighth(root,current)
     root=Path(root).resolve()
     result={name:project_sha(root,name,present) for name,present in current.items()}
     for name in ADDITIONS & result.keys():

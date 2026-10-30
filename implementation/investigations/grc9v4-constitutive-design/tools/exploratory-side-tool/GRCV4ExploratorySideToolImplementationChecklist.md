@@ -2713,3 +2713,10 @@ when useful. No all-ten, ATC, scientific-authority or public support promotion.
 - [x] Complete focused mutation/access regression checks.
 - [x] Record P9-10.1c and bounded P9-10.1 acceptance on 2026-10-28; expose the
   decision and exact-target evidence without rewriting raw records. Next: P9-10.2.
+
+## Phase 9 A_CI+PC eighth-realization extension (2026-10-30)
+
+- [x] Provide Python/API, browser and notebook access to the bounded work.
+- [x] Validate retained source bindings, pending acceptance and historical seven-family preservation; sixteen surface/history tests and the phase boundary pass.
+
+See [scope and access](./docs/ACIPCEighthRealization.md). Numerical reruns are separate from these retained-integrity queries.
