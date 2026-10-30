@@ -43,10 +43,12 @@ def record(root):
 def peel_sha(root, name, present):
     """Authenticate only the finite acceptance-only presentation successor."""
     root = Path(root).resolve()
+    from p9_tranches89_closeout import peel_sha as successor_sha
+    present = successor_sha(root, name, present)
     if name not in CHANGED or not (root / PATH).exists():
         return present
     row = record(root)['acceptance_sources'][name]
-    b.require(b.sha((root / name).read_bytes()) == row['after_sha256']
+    b.require(successor_sha(root, name, b.sha((root / name).read_bytes())) == row['after_sha256']
               and b.sha(original(root, name)) == row['before_sha256'],
               'A_RG2b acceptance source drift: ' + name)
     return row['before_sha256'] if present == row['after_sha256'] else present

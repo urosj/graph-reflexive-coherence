@@ -3932,6 +3932,9 @@ def current_boundary(root):
 
 # Finite tenth-family connected A completion and retained projections.
 PATHS |= {
+    'implementation/phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json',
+    'implementation/phase-9-grcv4/verification/p9_tranches89_closeout.py',
+    'implementation/phase-9-grcv4/verification/test_p9_tranches89_closeout.py',
     'implementation/phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json',
     'implementation/phase-9-grcv4/verification/p9_arg2b_acceptance.py',
     'implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4-Connected-A-RG2b-Addendum.md',

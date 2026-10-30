@@ -16,6 +16,7 @@ def arg2b_status(repo_root):
     if str(directory) not in sys.path:sys.path.insert(0,str(directory))
     from p9_arg2b_review import checked
     import p9_arg2b_acceptance as acceptance
+    import p9_tranches89_closeout as closeout
     value=checked(root)
     accepted=acceptance.decision(root)
     if accepted is not None:
@@ -27,6 +28,11 @@ def arg2b_status(repo_root):
         matrix['counts']=accepted['compatibility_counts']
         value['source_refs'].extend(dict(path=p,sha256=hashlib.sha256((root/p).read_bytes()).hexdigest())
             for p in (acceptance.PATH,acceptance.SELF))
+        if (root/closeout.PATH).exists():
+            value['tranches89_closeout']=closeout.checked(root)
+            value['next_work']='Tranches 8 and 9 are closed for all ten declared family scopes. Continue with Tranche 10; retain each family’s numerical limits and exact target identities.'
+            value['source_refs'].extend(dict(path=p,sha256=hashlib.sha256((root/p).read_bytes()).hexdigest())
+                for p in (closeout.PATH,closeout.SELF))
     return value
 
 

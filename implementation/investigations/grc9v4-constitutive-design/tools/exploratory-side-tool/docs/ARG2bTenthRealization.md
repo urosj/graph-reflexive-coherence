@@ -23,3 +23,10 @@ this result. Certificates apply at saved inputs, not a uniform trajectory tube.
 The shared evidence store reconstructs original transport bytes exactly.
 Modified sources, widened scope, missing checkpoints or unindexed paths fail
 closed. Historical accepted records remain unchanged.
+
+The same view now includes `tranches89_closeout`: all ten declared family
+scopes and all forty source compatibility cells are accepted, closing
+Tranches 8 and 9. It binds each original decision separately. Optional
+completion/hierarchy remains unselected; remaining Tranche 10 work and full
+GRC9V4 conformance are separate. The historical A_RG2b acceptance flags
+describe its family decision; the aggregate successor has its own identity.

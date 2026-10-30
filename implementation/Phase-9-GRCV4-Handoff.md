@@ -1,5 +1,37 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Tranches 8 and 9 — all ten declared family scopes accepted and closed (2026-10-30)
+
+The [all-ten closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
+reconciles the accepted first group and all six subsequent family decisions.
+There are no remaining mandatory Tranche 8–9 family checkpoints: P9-8.4d–i,
+8.5/8.6, final mechanism/performance reviews and applicable 9.1b–9.6 are closed
+for all ten declared scopes. All forty source-model disabled-compatibility
+cells are accepted. The user explicitly confirmed aggregate closure after
+A_RG2b acceptance `7083b989`; no numerical campaign is repeated.
+
+| Accepted population | Retained decision |
+| --- | --- |
+| C_OS, C_CI, A_CI, A_PC | [Tranche 8](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json), [Tranche 9](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json) |
+| A_OS | [Acceptance](./phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json) |
+| C_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json) |
+| C_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) |
+| A_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) |
+| C_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) |
+| A_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json) |
+
+Optional P9-9.1a completion/hierarchy is explicitly deferred and unselected;
+it was never a mandatory closure prerequisite. Earlier execution and family
+acceptance records retain their historical `aggregate_closed=false`; this
+successor records the aggregate decision without rewriting them.
+
+Retain exact subject/horizon limits, original exclusions, unresolved C1
+regularity, pointwise CI/carrier margins and the previously agreed deferred
+large diagnostics. Tranche closure grants neither arbitrary-graph numerical
+conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
+remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
+and do not transfer automatically to the other six families.
+
 ## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
 Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.
@@ -46,8 +78,8 @@ statements; this section and the current compatibility register take precedence.
 Independent jobs use up to twelve single-thread workers, explicit FLINT/Arb,
 3600-second large-segment caps. No Tranche 10/basin, optional hierarchy,
 classical spectrum, uniform trajectory tube or unrestricted all-ten conformance
-is inferred. All ten family scopes are now individually accepted; aggregate
-conformance reconciliation and Tranche 10 remain separate work.
+is inferred. All ten family scopes and their Tranche 8–9 aggregate are now accepted.
+Remaining Tranche 10 work is separate.
 
 
 ## C_RG2b ninth realization — bounded Tranches 8–9 accepted (2026-10-30)

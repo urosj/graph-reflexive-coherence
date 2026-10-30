@@ -1,5 +1,37 @@
 # Phase 9 GRCV4 Implementation Checklist
 
+## Tranches 8 and 9 — all ten declared family scopes accepted and closed (2026-10-30)
+
+The [all-ten closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
+reconciles the accepted first group and all six subsequent family decisions.
+There are no remaining mandatory Tranche 8–9 family checkpoints: P9-8.4d–i,
+8.5/8.6, final mechanism/performance reviews and applicable 9.1b–9.6 are closed
+for all ten declared scopes. All forty source-model disabled-compatibility
+cells are accepted. The user explicitly confirmed aggregate closure after
+A_RG2b acceptance `7083b989`; no numerical campaign is repeated.
+
+| Accepted population | Retained decision |
+| --- | --- |
+| C_OS, C_CI, A_CI, A_PC | [Tranche 8](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json), [Tranche 9](./phase-9-grcv4/tranche-9/P9-9.6-Acceptance.json) |
+| A_OS | [Acceptance](./phase-9-grcv4/tranche-9/P9-AOS-Acceptance.json) |
+| C_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CPC-Acceptance.json) |
+| C_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-CCIPC-Acceptance.json) |
+| A_CI_PC | [Acceptance](./phase-9-grcv4/tranche-9/P9-ACIPC-Acceptance.json) |
+| C_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-CRG2b-Acceptance.json) |
+| A_RG2b | [Acceptance](./phase-9-grcv4/tranche-9/P9-ARG2b-Acceptance.json) |
+
+Optional P9-9.1a completion/hierarchy is explicitly deferred and unselected;
+it was never a mandatory closure prerequisite. Earlier execution and family
+acceptance records retain their historical `aggregate_closed=false`; this
+successor records the aggregate decision without rewriting them.
+
+Retain exact subject/horizon limits, original exclusions, unresolved C1
+regularity, pointwise CI/carrier margins and the previously agreed deferred
+large diagnostics. Tranche closure grants neither arbitrary-graph numerical
+conformance, a uniform trajectory enclosure, general ATC nor P9-G4. Next is
+remaining Tranche 10 work; its accepted four-family 10.1 results remain intact
+and do not transfer automatically to the other six families.
+
 ## A_RG2b tenth realization — bounded Tranches 8–9 accepted (2026-10-30)
 
 Continues on `work/p9-acipc-tranches-8-9` after accepted C_RG2b `af397360`.
@@ -46,8 +78,8 @@ statements; this section and the current compatibility register take precedence.
 Independent jobs use up to twelve single-thread workers, explicit FLINT/Arb,
 3600-second large-segment caps. No Tranche 10/basin, optional hierarchy,
 classical spectrum, uniform trajectory tube or unrestricted all-ten conformance
-is inferred. All ten family scopes are now individually accepted; aggregate
-conformance reconciliation and Tranche 10 remain separate work.
+is inferred. All ten family scopes and their Tranche 8–9 aggregate are now accepted.
+Remaining Tranche 10 work is separate.
 
 
 ## C_RG2b ninth realization — bounded Tranches 8–9 accepted (2026-10-30)
@@ -1752,13 +1784,14 @@ specialization contracts and scoped execution permission. A missing new
 autonomous contract holds only its consumers. No optional spark/hierarchy,
 automatic complete request generation or specialization conformance is inferred.
 
-## Tranche 8. D11-G9 mechanical specialization
+## Tranche 8. D11-G9 mechanical specialization — closed for all ten declared scopes
 
-Entry is the accepted G3 set of ten exact generic declarations, not ten
-conformant nine-port models. All-ten bounded feasibility is now reviewed and
-user-accepted. P9-8.1 shared mechanics is complete and user-accepted; P9-8.2
-is implemented and own-reviewed, then C_OS first while retaining the population. P9-8.1 and P9-8.3
-are parent registers with independently reviewed children.
+Current closure: [all-ten acceptance](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json).
+Dated first-group milestones below preserve their historical counts.
+
+All-ten feasibility, shared mechanics, family numerical execution, lifecycle
+and final reviews are accepted within their recorded domains. P9-8.1 and
+P9-8.3 retain their independently reviewed child records.
 General 7T is not a prerequisite for the defined mechanical scope. Accepted
 Tranche 7 and current execution permissions remain unchanged.
 
@@ -2777,7 +2810,7 @@ the full ten-profile plan.
   Direct execution of saved selections remains with the future public
   configuration/lifecycle owner; displayed reproduction recipes disclose setup
   changes and do not claim exact historical replay.
-- [ ] P9-8.4: Reconcile the runtime expansion/covariance children below.
+- [x] P9-8.4: Reconcile the runtime expansion/covariance children below.
   Split by actual scope on 2026-10-05 at the user's request; all children are
   initially pending. Preserve frozen vectors and R1–R10 evidence restrictions;
   separately identify boundary/deep/larger probes. Existing allocator and
@@ -3272,7 +3305,7 @@ the full ten-profile plan.
     changes require integrity/surface checks, not repeated numerical campaigns.
     Preserve independent paper/spec/side-tool checks, meaningful outlier pressure,
     completed compact evidence and the 1 MB raw-file compression rule.
-  - [ ] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
+  - [x] P9-8.4d: Execute declared deeper recursive expansions beyond D52.
     - [x] A_RG2b tenth-realization bounded implementation: all sixteen
       8.4d–9.6 checkpoints pass; [checked evidence](./phase-9-grcv4/tranche-8/arg2b-native/Review.json).
       - [x] Connected A authority/paper/spec, complete C/Y/H certificates,
@@ -3475,10 +3508,10 @@ the full ten-profile plan.
     - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
       A_CI and A_PC total 160 accepted cells. Continue first-group `.e`;
       aggregate all-ten `.d` remains open for the six remaining families.
-    - [ ] Second-group completion: after first-group work through `.h`, fill
-      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
-      required coverage before closing this parent. No sibling credit.
-  - [ ] P9-8.4e: Execute ordering, relabeling and signed-edge covariance.
+    - [x] Second-group completion: A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b
+      and A_RG2b have separate accepted evidence for this child. Required
+      all-ten coverage reconciled in the [closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json).
+  - [x] P9-8.4e: Execute ordering, relabeling and signed-edge covariance.
     Include the frozen edge-order vector and explicit node/edge permutations;
     transport resources, unsigned A W, signed currents/references and carrier/
     geometry coordinates correctly. Reject inconsistent partial transforms and
@@ -3507,10 +3540,10 @@ the full ten-profile plan.
     - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
       A_CI and A_PC each contribute twenty cells, 80/80 total. Next `.f`;
       all-ten parent remains open for the six second-group families.
-    - [ ] Second-group completion: after first-group work through `.h`, fill
-      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
-      required coverage before closing this parent. No sibling credit.
-  - [ ] P9-8.4f: Execute frozen cyclic chart rotation and reflection/chirality
+    - [x] Second-group completion: A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b
+      and A_RG2b have separate accepted evidence for this child. Required
+      all-ten coverage reconciled in the [closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json).
+  - [x] P9-8.4f: Execute frozen cyclic chart rotation and reflection/chirality
     base/target pairs using the named namespace/role normalization policy.
     Transport rows, columns, branches, ports, labels, chirality, active phase
     and numerical operands/history. Reject column-only or stale phase/chirality
@@ -3544,10 +3577,10 @@ the full ten-profile plan.
     - [x] First-group checkpoint accepted on 2026-10-13: C_OS, C_CI,
       A_CI and A_PC each contribute 24 cells, 96/96 total. Next `.g`;
       all-ten parent remains open for the six second-group families.
-    - [ ] Second-group completion: after first-group work through `.h`, fill
-      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
-      required coverage before closing this parent. No sibling credit.
-  - [ ] P9-8.4g: Resolve larger-graph admission and independent-oracle
+    - [x] Second-group completion: A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b
+      and A_RG2b have separate accepted evidence for this child. Required
+      all-ten coverage reconciled in the [closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json).
+  - [x] P9-8.4g: Resolve larger-graph admission and independent-oracle
     prerequisites per family for all ten retained 100/400 → 107/407 examples.
     Track LG-C-SELECTOR, LG-OS-SPLIT, LG-CI-ROOT, LG-PC-CHART,
     LG-RG-COMPLETION and LG-A-ORACLE with their existing owners. Distinguish
@@ -3690,10 +3723,10 @@ the full ten-profile plan.
       [scoped decision](./phase-9-grcv4/tranche-8/P9-8.4g-APCNative.md#scoped-user-acceptance).
       Eligible for separately declared `.h`; no event or aggregate closure.
       Original research/execution flags and exclusions remain unchanged.
-    - [ ] Second-group completion: after first-group work through `.h`, fill
-      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
-      required coverage before closing this parent. No sibling credit.
-  - [ ] P9-8.4h: Execute the larger-graph runtime/covariance campaign per
+    - [x] Second-group completion: A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b
+      and A_RG2b have separate accepted evidence for this child. Required
+      all-ten coverage reconciled in the [closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json).
+  - [x] P9-8.4h: Execute the larger-graph runtime/covariance campaign per
     ready family. Perform actual source admission, fresh trigger/request,
     committed event, both-role target readmission and declared continuation;
     apply relevant `.e`/`.f` covariance probes and independent scientific checks.
@@ -3871,9 +3904,9 @@ the full ten-profile plan.
       advance ready rows without waiting for the remaining six families.
       Accepted 2026-10-26: 4/4 families, 36 events, 144 target steps and eight
       final baseline reads; five source steps counted separately. All-ten open.
-    - [ ] Second-group completion: after first-group work through `.h`, fill
-      A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b and A_RG2b; reconcile all-ten
-      required coverage before closing this parent. No sibling credit.
+    - [x] Second-group completion: A_OS, C_PC, C_CI_PC, A_CI_PC, C_RG2b
+      and A_RG2b have separate accepted evidence for this child. Required
+      all-ten coverage reconciled in the [closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json).
   - [x] Tranche 8 side-tool catch-up: expose 8.1/8.2, all ten bounded 8.3
     integrations and current 8.4 evidence through CLI/API/notebook/browser;
     keep original failures, scoped acceptance and pending family cells distinct.
@@ -3886,7 +3919,7 @@ the full ten-profile plan.
   compression for new/changed raw files over 1 MB, allowing larger compressed files, and
   [retention/storage rules](../docs/reference/EvidenceStorage.md).
 
-  - [ ] P9-8.4i: Reconcile coverage and hand off. All-ten parent remains open.
+  - [x] P9-8.4i: Reconcile coverage and hand off. All-ten declared scope closed.
     - [x] First-group reconciliation: exact `.a–h` subjects, original exclusions,
       commands/reviews, paper/specification and typed claim/debt checks; portable
       positive checkpoints and five failure classes handed to scoped 8.5/8.6.
@@ -3895,7 +3928,8 @@ the full ten-profile plan.
       configuration/public-support promotion. Preserve historical execution flags.
     - [x] Scoped acceptance of P9-8.4i[first-group] on 2026-10-26.
       P9-8.4 is closed for C_OS, C_CI, A_CI and A_PC; next scoped 8.5/8.6.
-    - [ ] Second-group and all-ten reconciliation after their required work.
+    - [x] Second-group and all-ten reconciliation: all required children accepted;
+      original exclusions and family-specific limits retained.
     Bind commands/results,
     independent paper/spec/side-tool checks, exact subjects, review outcomes and
     outstanding debt. Update configuration discovery only for newly reviewed
@@ -3912,8 +3946,8 @@ the full ten-profile plan.
   completion; finish all-ten closure separately with `.i`. The retained larger proposals have four certificate-pass,
   four incomplete and two RG-rejected dispositions; none alone is runtime
   acceptance. Planning this order executes no new numerical cell.
-- [ ] P9-8.5: Verify unique target occupancy, whole-lifecycle target
-  reconstruction/readmission, and atomic failures. All-ten parent remains open.
+- [x] P9-8.5: Verify unique target occupancy, whole-lifecycle target
+  reconstruction/readmission, and atomic failures. All-ten declared scope closed.
   - [x] First group accepted 2026-10-26: C_OS, C_CI, A_CI, A_PC. Consumed the 8.4i handoff;
     test occupancy, both-role reconstruction/reset/replay, five frozen failure
     classes and family-specific late/reset-only failures with full rollback.
@@ -3927,10 +3961,10 @@ the full ten-profile plan.
       Exact candidate history, joint roots and fixed-row lifecycle reconstruction.
     - [x] A_PC accepted 2026-10-26: [family lifecycle review](./phase-9-grcv4/tranche-8/P9-8.5-APC-review.md).
       Complete carrier archive, reset/loss, W lineage and both temporal writers.
-  - [ ] Remaining six families and aggregate reconciliation.
+  - [x] Remaining six families and aggregate reconciliation accepted.
   Include the prepared larger proposal's event rollback/replay obligations
   when its numerical prerequisites pass; preparation alone does not close them.
-- [ ] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
+- [x] P9-8.6: Keep arbitrary-size conformance held until actual deep/runtime
   covariance evidence passes.
   - [x] First-group conformance review completed in parallel for C_OS, C_CI,
     A_CI and A_PC on 2026-10-27: [bounded decision](./phase-9-grcv4/tranche-8/P9-8.6-FirstGroupReview.md).
@@ -3939,7 +3973,8 @@ the full ten-profile plan.
   - [x] First-group P9-8.6 accepted by the user on 2026-10-27;
     [acceptance](./phase-9-grcv4/tranche-8/P9-8.6-FirstGroupAcceptance.json). General mechanical authority is
     separate from bounded numerical support; public/disabled lifecycle remains open.
-  - [ ] Remaining six families and all-ten decision.
+  - [x] Remaining six families and all-ten bounded decision accepted;
+    arbitrary-graph numerical conformance remains outside this decision.
 - [x] End-of-Tranche-8 first-group mechanism-evidence review (after scoped
   8.6 acceptance, before Tranche 9; added 2026-10-27).
   [Scope and finish line](./Phase-9-GRCV4-ImplementationPlan.md#end-of-tranche-8-mechanism-evidence-review).
@@ -3985,21 +4020,22 @@ the full ten-profile plan.
   The old interrupted full wrapper remains uncompleted.
 - [x] Bounded first-group Tranche 8 accepted and closed by the user on 2026-10-27:
   C_OS, C_CI, A_CI and A_PC. [Closeout acceptance](./phase-9-grcv4/tranche-8/P9-Tranche8-FirstGroupAcceptance.json).
-  The remaining six families and all-ten parent stay open; Tranche 9 is next.
+  This historical first-group decision is now followed by the all-ten
+  Tranche 8–9 closeout above; all six subsequent family decisions are accepted.
 
-## Tranche 9. Hybrid completion and disabled compatibility
+## Tranche 9. Hybrid completion and disabled compatibility — mandatory scope closed for all ten
 
-Current group: **C_OS, C_CI, A_CI, A_PC**; accepted Tranche 8 closeout
-`3684bd02`. The other six families remain unselected. No additional family is
-needed for P9-9.1b. Run independent family/cell work in parallel, up to twelve
-single-thread workers when useful. P9-9.1a is unselected, not a blocker.
+Current scope: **all ten families**. The [aggregate closeout](./phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json)
+binds every required lifecycle, compatibility, public-API and support child.
+Dated four-family entries below are original milestones; six subsequent family
+decisions complete their population. P9-9.1a remains optional/unselected.
 
-- [ ] P9-9.1: Reconcile the two child dispositions below as an aggregate,
+- [x] P9-9.1: Reconcile the two child dispositions below as an aggregate,
   not a universal execution/crossing prerequisite. Unselected optional scope
   remains planned/deferred, not marked executed.
-- [ ] P9-9.1a: Execute optional child stabilization, completed-spark and
-  hierarchy evidence when advertised or explicitly required by a stronger
-  project handoff, after P9-8.6. Neither is selected by this planning review.
+- **P9-9.1a — deferred, optional/unselected:** child stabilization,
+  completed-spark and hierarchy evidence is required only when that capability
+  is selected or advertised. No execution credit or closure blocker here.
 - [x] P9-9.1b: Execute mandatory specialization lifecycle after P9-8.6,
   regardless of completion flags; preserve trigger/topology/charge/reset,
   receipt/readmission and legacy compatibility obligations.
@@ -4016,7 +4052,7 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
     API/browser/notebook access; no large-graph campaign repeated.
   - [x] Explicit bounded user acceptance on 2026-10-27; original execution
     records remain unchanged. No separate independent-audit execution is inferred.
-- [ ] P9-9.2: Reconcile the forty-cell parent register below. Each child
+- [x] P9-9.2: Reconcile the forty-cell parent register below. Each child
   executes and reviews its exact unchanged GRC9V3 delegate/oracle separately;
   this parent is not a single execution iteration.
   - [x] Execute the sixteen selected component cells in four parallel native
@@ -4109,7 +4145,7 @@ single-thread workers when useful. P9-9.1a is unselected, not a blocker.
 - [x] P9-9.6: Bounded review of specialization support only after enabled and applicable
   disabled contracts pass; no enabled-only full-conformance label.
   Require P9-9.4a crossings, P9-9.4b public API integration and P9-9.5
-  public-entry failure evidence for the selected four-family scope.
+  public-entry failure evidence for all ten declared family scopes.
   Additionally require P9-9.1a evidence per exact profile/capability when
   completion/hierarchy is advertised or required for explicit project handoff.
   Completion-off waives no mandatory lifecycle/compatibility evidence.

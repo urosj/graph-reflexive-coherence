@@ -3403,3 +3403,12 @@ See [C_RG2b research usage](./docs/CRG2bNinthRealization.md).
 C1 regularity remains narrowed/unresolved. Three large covariance transforms
 are selected; five remain deferred. Tranche 10/basin and uniform trajectory
 claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization.md).
+
+## Tranches 8–9 all-ten closeout (2026-10-30)
+
+- [x] Reconcile all ten accepted family scopes and forty source compatibility
+  cells; expose explicit aggregate closure through the existing A_RG2b API,
+  browser panel and notebook without relabelling historical family records.
+- [x] Keep optional P9-9.1a deferred and unselected, scientific limits visible,
+  full conformance/P9-G4 separate, and existing Tranche 10 decisions unchanged.
+- [x] Retained checks only; no repeated numerical campaign.

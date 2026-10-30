@@ -30,6 +30,22 @@ export function arg2bRows(value) {
       JSON.stringify({bounded_accepted:36,passed_pending_acceptance:4,unselected_not_executed:0})) {
     throw new Error('A_RG2b original execution counts changed');
   }
+  if (value.tranches89_closeout) {
+    const closure = value.tranches89_closeout;
+    if (!accepted || closure.record_digest !== '3c198c83641fac16dc7de41086582c0b7824070e4144d3af11301ae5f0d8f8bc' ||
+        closure.schema !== 'phase9_tranches89_closeout_view_v1' ||
+        closure.path !== 'implementation/phase-9-grcv4/tranche-9/P9-Tranches8-9-AllTenAcceptance.json' ||
+        closure.tranche8_closed !== true || closure.tranche9_closed !== true ||
+        closure.user_accepted !== true || closure.aggregate_closed !== true ||
+        closure.full_GRC9V4_conformance !== false || closure.G4_accepted !== false ||
+        JSON.stringify(closure.families) !== JSON.stringify(['A_CI','A_CI_PC','A_OS','A_PC','A_RG2b','C_CI','C_CI_PC','C_OS','C_PC','C_RG2b']) ||
+        closure.compatibility_counts.bounded_accepted !== 40 ||
+        closure.compatibility_counts.passed_pending_acceptance !== 0 ||
+        closure.compatibility_counts.unselected_not_executed !== 0 ||
+        closure.optional_completion !== 'unselected_deferred_not_a_closure_blocker') {
+      throw new Error('Tranches 8–9 closure scope drift');
+    }
+  }
   const expected = ['source/current', 'source/reset', 'target/current', 'target/reset'];
   return value.prepared_sections.map((row, i) => {
     if (`${row.graph}/${row.role}` !== expected[i] ||
