@@ -4379,7 +4379,7 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
   - [x] User acceptance on 2026-10-30; implementation `bff4f3fc`,
     [decision](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json).
     No remaining-family/full-conformance/G4 grant.
-- [ ] C_CI_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md).
+- [x] C_CI_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md).
   - [x] 10.1a: full joint J/H root, committed carrier, instantaneous source,
     fresh full-root equality, independent equations and lifecycle/rollback pressure.
   - [x] 10.1b: exact v1/v2 target four-surface legacy comparison; carrier loss
@@ -4390,7 +4390,9 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
     replay reused; no extra native campaign or widened exact-root claims.
   - [x] Source-epoch preservation, compressed/referenced evidence, side-tool
     API/browser/notebook access, plan and handoff.
-  - [ ] Bounded user acceptance; no remaining-family/full-conformance/G4 grant.
+  - [x] User acceptance on 2026-10-30; implementation `ac8d0249`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json).
+    No remaining-family/full-conformance/G4 grant.
 - [ ] A_CI_PC: 10.1a–c → 10.2 and bounded acceptance.
 - [ ] C_RG2b: 10.1a–c → 10.2 and bounded acceptance.
 - [ ] A_RG2b: 10.1a–c → 10.2 and bounded acceptance.

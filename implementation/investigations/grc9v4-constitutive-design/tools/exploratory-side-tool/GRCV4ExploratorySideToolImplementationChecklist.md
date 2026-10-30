@@ -2834,5 +2834,6 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   receipts from the same native jobs; no native execution in status views.
 - [x] Preserve accepted first-four/A_OS/C_PC evidence and original Git sources;
   test changed roots/carriers/domains, scope widening and stale-view clearing.
-- [ ] Bounded C_CI_PC acceptance; A_CI_PC, C_RG2b, A_RG2b and consolidated
-  10.3–10.6 remain separate.
+- [x] Bounded C_CI_PC acceptance on 2026-10-30 over implementation
+  `ac8d0249`; original execution records remain unchanged. A_CI_PC, C_RG2b,
+  A_RG2b and consolidated 10.3–10.6 remain separate.

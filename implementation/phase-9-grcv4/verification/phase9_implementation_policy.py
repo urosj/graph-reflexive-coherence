@@ -4208,3 +4208,6 @@ PATHS |= {
     'implementation/phase-9-grcv4/verification/test_p910_ccipc_basin.py',
     'implementation/phase-9-grcv4/verification/test_p910_ccipc_surfaces.py',
 }
+
+# Bounded C_CI_PC acceptance over its unchanged native execution.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json")

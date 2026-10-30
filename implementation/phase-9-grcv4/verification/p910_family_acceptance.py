@@ -5,7 +5,8 @@ from pathlib import Path
 import p910_family_basin as execution
 
 ACCEPTANCES = {"A_OS": "6ea2d269b653c50dc4a5b046ec6088ca1cd88637fc91818b715e3bb62047c9a4",
-               "C_PC": "28517601d0e71be406ac8d3a54c3de5888210e9ab9e2322106d196d51f20ff6d"}
+               "C_PC": "28517601d0e71be406ac8d3a54c3de5888210e9ab9e2322106d196d51f20ff6d",
+               "C_CI_PC": "2023cfb84100a383851cc76cd19f1738042d536ea4008a4c5916daf8a89615f4"}
 
 
 def path(family):

@@ -1,10 +1,10 @@
 import {canonical} from './verification.js';
 const REVIEWS={A_OS:'485e499f5500670944de798c873b8cab322932984d4e0c52df5f195acf4e6db9',C_PC:'f9937fa25a07eac6e61e06b5c0153232e6b5d6ce2603d58d801780b03e4950b7',C_CI_PC:'de9b3b958432c063db1af9159e60a7f11efe779ead4a3d5a7f7aa8cdbaa34ebb'};
-const VIEWS={A_OS:'6334c0f67f915efdc91035aa8bdea0c5d8c11c1f11a1b410440848a5922e45df',C_PC:'00b047918e0198c0238b978b358c1d90835e9e38ccd8dfed41cc831068400298',C_CI_PC:'be4005a29a9fdab4d882b774b189dea787e982fe61dffadbc33ae80df7f40c08'};
+const VIEWS={A_OS:'6334c0f67f915efdc91035aa8bdea0c5d8c11c1f11a1b410440848a5922e45df',C_PC:'00b047918e0198c0238b978b358c1d90835e9e38ccd8dfed41cc831068400298',C_CI_PC:'2c691830f6c5227a4ceff4d2640384766f82c05013b416234d06e336101325c3'};
 
 export async function checkedFamilyBasin(value) {
   const {record_digest,...body}=value;
-  const accepted=['A_OS','C_PC'].includes(value.family);
+  const accepted=['A_OS','C_PC','C_CI_PC'].includes(value.family);
   const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(canonical(body)));
   const actual=[...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');
   if(actual!==record_digest || record_digest!==VIEWS[value.family] || value.schema!=='p910-family-basin-view-v1' ||

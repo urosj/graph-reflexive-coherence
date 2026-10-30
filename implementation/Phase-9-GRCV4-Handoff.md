@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## C_CI_PC Tranche 10 — validated, acceptance pending (2026-10-30)
+## C_CI_PC Tranche 10 — bounded accepted (2026-10-30)
 
 Branch: `work/p9-tranche10-remaining-families`, following accepted C_PC
 `9fb469c8`. C_CI_PC adds its own P9-10.1a–c → 10.2 evidence on the retained
@@ -27,8 +27,11 @@ The transferred target carrier contribution is below solver tolerance; the
 instantaneous contribution is resolved. No full implicit-root effect is claimed.
 
 The family API/browser selector and notebook `p910-ccipc-basin` expose the new
-bounded view separately from prior acceptances. User acceptance is separate.
-After C_CI_PC acceptance, A_CI_PC is next, then C_RG2b, A_RG2b and consolidated
+bounded view separately from prior acceptances. Implementation `ac8d0249`
+is accepted by the user on 2026-10-30 in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json); original
+execution flags and evidence remain unchanged.
+A_CI_PC is next, then C_RG2b, A_RG2b and consolidated
 10.3–10.6. No scientific debt closure, full conformance or G4 is inferred.
 
 
