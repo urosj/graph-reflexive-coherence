@@ -94,8 +94,9 @@ Eight native source/target tests passed in two parallel FLINT jobs, collecting
 both-role migration/return observations once and reusing receipts/charges for
 10.2. Explicit return history initialization is not preservation of incoming W.
 Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
-All ten individual scoped decisions are now present; all-ten reconciliation
-is next, followed by consolidated P9-10.3–10.6.
+All ten individual scoped decisions and their bounded P9-10.3 input
+reconciliation/regressions are now accepted. P9-10.4 publication is next,
+followed by P9-10.5 debt reconciliation and P9-10.6/G4.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
@@ -134,7 +135,8 @@ merely because the checkpoint number changed. Independent retained checks or
 necessary new cases may run in parallel; preserve original execution identities
 and distinguish retained validation from a fresh native run. The bounded
 four-family reconciliation and A_OS/C_PC/C_CI_PC/A_CI_PC extensions are accepted.
-C_RG2b and A_RG2b are also bounded-accepted; all-ten reconciliation remains separate.
+C_RG2b and A_RG2b are also bounded-accepted; their all-ten bounded input
+reconciliation is accepted under P9-10.3. P9-10.4–10.6 remain separate.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin
@@ -4668,7 +4670,10 @@ The API/browser/notebook expose these three limits alongside the passing evidenc
 
 ### Tranche 10. Conformance, evidence, and handoff
 
-**P9-10.3 implemented and validated; acceptance pending (2026-10-31).**
+**P9-10.3 bounded-accepted (2026-10-31).** User acceptance of implementation
+`93920eab` is recorded in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Original execution
+and review stay unchanged. P9-10.4 is next.
 The [bounded review](./phase-9-grcv4/tranche-10/P9-10.3-Review.md) records
 99 passing regressions and all-ten input reconciliation. Three stale unavailable-
 RG2b test expectations are corrected; production/specifications remain unchanged.
@@ -4685,7 +4690,7 @@ arithmetic and up to four workers. Preserve all pre-V4 modules (the accepted
 additive model exports are checked separately), current executable release and
 packaged copies, and the accepted Tranches 8–9 records. Fail on source, exact
 subject, test-roster or scope drift. Retained `--check` and side-tool access do
-not rerun these suites. Review/acceptance follows the bounded result;
+not rerun these suites. The bounded result is accepted;
 P9-10.4 publication, P9-10.5 scientific debts and P9-10.6/G4 remain separate.
 
 

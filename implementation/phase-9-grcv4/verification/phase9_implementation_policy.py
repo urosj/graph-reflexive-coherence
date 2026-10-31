@@ -4271,3 +4271,9 @@ PATHS.update({
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche10_regressions.py',
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-regressions.js',
 })
+
+# Separate bounded user acceptance; historical regression evidence is unchanged.
+PATHS.update({
+    PHASE + 'tranche-10/P9-10.3-Acceptance.json',
+    PHASE + 'verification/p9103_acceptance.py',
+})

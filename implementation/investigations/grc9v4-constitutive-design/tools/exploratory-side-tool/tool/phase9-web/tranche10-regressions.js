@@ -1,11 +1,11 @@
 import {canonical} from './verification.js';
-const EXPECTED='d413ca9b12c307626f91f3c841ef4257f21c5af3c06c2adb46b690b3210bb4b7';
+const EXPECTED='3c1b95f045a5f7a36a182dbf71b72cb971d2b721575c00af847f952ea9d11bab';
 export async function checkedRegressions(value) {
   const {record_digest,...body}=value;
   const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(canonical(body)));
   const actual=[...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');
   if(actual!==record_digest || record_digest!==EXPECTED || value.schema!=='p9103-regression-view-v1' ||
-     value.status!=='passed_pending_acceptance' || value.user_accepted!==false || value.P9_10_3_closed!==false ||
+     value.status!=='accepted_bounded_regressions' || value.user_accepted!==true || value.P9_10_3_closed!==true ||
      value.G4_accepted!==false || value.full_GRC9V4_conformance!==false || value.new_support?.length!==0 ||
      value.families?.length!==10 || value.reconciliation?.length!==10 ||
      value.regressions?.length!==4 || value.large_campaigns_rerun!==0)
@@ -30,7 +30,7 @@ export function regressionsLoader(output,status,fetcher=fetch,create=tag=>docume
       for(const row of value.reconciliation){add('h4',row.family);add('p',row.limits);}
       for(const ref of value.evidence){const a=add('a',ref.path.split('/').at(-1));
         a.href='/api/tranche10/regressions/source?path='+encodeURIComponent(ref.path);}
-      add('p',value.next_work);status.textContent='P9-10.3 validated; acceptance pending. No G4 grant.';
+      add('p',value.next_work);status.textContent='P9-10.3 bounded-accepted. No G4 grant.';
     }catch(error){if(ticket!==sequence)return;output.replaceChildren();status.textContent=String(error);}
   };
 }

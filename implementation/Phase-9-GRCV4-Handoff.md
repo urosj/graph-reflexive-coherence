@@ -1,8 +1,10 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## P9-10.3 — validated, acceptance pending (2026-10-31)
+## P9-10.3 — bounded accepted (2026-10-31)
 
-Branch: `work/p9-10.3-regressions`, from `98033204`. Production and specification
+Branch: `work/p9-10.3-regressions`, from `98033204`. Implementation `93920eab`
+is accepted in the separate [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json).
+Original execution, review and source-epoch records remain unchanged. Production and specification
 bytes are unchanged. The ten bounded P9-10.1a–c/P9-10.2 decisions are reconciled
 by exact v1/v2 target identities, with original numerical evidence retained.
 The [review](./phase-9-grcv4/tranche-10/P9-10.3-Review.md) and
@@ -21,8 +23,8 @@ confirming their files exactly match the accepted entry merge. Ten focused
 evidence-access/drift and historical-closeout checks pass.
 
 Side-tool API `/api/tranche10/regressions`, its browser panel and notebook cell
-`p9103-regressions` inspect retained evidence only. Next: bounded P9-10.3 review
-and acceptance; then P9-10.4 capability/example publication, P9-10.5 scientific
+`p9103-regressions` inspect retained evidence only. Next: P9-10.4
+capability/example publication, P9-10.5 scientific
 debt reconciliation and P9-10.6/G4/handoff. CI-root, RG2b C1 and other bounded
 numerical limits stay intact. This checkpoint grants no full conformance or G4.
 

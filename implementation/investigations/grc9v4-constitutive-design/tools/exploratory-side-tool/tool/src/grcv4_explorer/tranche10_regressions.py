@@ -15,7 +15,7 @@ def checker(root):
 def tranche10_regressions_status(root):
     root, c = checker(root)
     value = c.check()
-    return c.seal(dict(schema='p9103-regression-view-v1',
+    view = dict(schema='p9103-regression-view-v1',
         **{k: value[k] for k in ('status', 'families', 'tests_run', 'user_accepted',
              'P9_10_3_closed', 'all_ten_bounded_inputs_reconciled', 'G4_accepted',
              'full_GRC9V4_conformance', 'new_support', 'large_campaigns_rerun',
@@ -23,13 +23,22 @@ def tranche10_regressions_status(root):
         release_id=value['preservation']['release_id'],
         unchanged_legacy_modules=value['preservation']['unchanged_legacy_modules'],
         execution_record_digest=value['record_digest'],
-        evidence=[c.reference(root, c.PATH), c.reference(root, c.REVIEW)]))
+        evidence=[c.reference(root, c.PATH), c.reference(root, c.REVIEW)])
+    import p9103_acceptance as acceptance
+    accepted = acceptance.decision(root, value)
+    ref = dict(**c.reference(root, acceptance.PATH), record_digest=accepted['record_digest'])
+    view.update(status=accepted['status'], user_accepted=True, P9_10_3_closed=True,
+                acceptance=ref, evidence=[*view['evidence'], ref], next_work=accepted['next_work'])
+    return c.seal(view)
 
 
 def tranche10_regressions_source(root, name):
     root, c = checker(root)
     value = c.check()
+    import p9103_acceptance as acceptance
+    acceptance.decision(root, value)
     refs = {r['path']: r for r in value['source_refs']}
+    refs[acceptance.PATH] = c.reference(root, acceptance.PATH)
     for row in value['reconciliation']:
         refs.update((r['path'], r) for r in [*row['acceptances'], row['verification']])
     refs.update((p, c.reference(root, p)) for p in (c.PATH, c.REVIEW, c.SELF))

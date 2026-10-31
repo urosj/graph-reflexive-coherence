@@ -3526,4 +3526,5 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Reject source/subject/scope drift and clear stale UI/notebook output.
 - [x] Keep bounded user acceptance, capability publication, scientific debts
   and G4 distinct; historical family decisions remain unchanged.
-- [ ] Bounded user acceptance of P9-10.3; P9-10.4–10.6 remain separate.
+- [x] Bounded P9-10.3 acceptance on 2026-10-31 over implementation `93920eab`;
+  original execution/review stay unchanged. P9-10.4–10.6 remain separate.

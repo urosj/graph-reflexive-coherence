@@ -73,6 +73,22 @@ class RegressionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'unrelated assertions'):
                 epoch.previous_bytes(c.ROOT, name)
 
+    def test_acceptance_cannot_widen_scope_or_relabel_execution(self):
+        import p9103_acceptance as acceptance
+        path = c.ROOT / acceptance.PATH
+        original = json.loads(path.read_bytes())
+        read = Path.read_bytes
+        self.assertTrue(acceptance.decision(c.ROOT, self.value)['P9_10_3_closed'])
+        for key, value in (('families', ['C_OS']), ('G4_accepted', True),
+                           ('full_GRC9V4_conformance', True), ('user_accepted', False)):
+            changed = c.seal(dict(original, **{key: value}))
+            with self.subTest(key=key), patch.object(Path, 'read_bytes', lambda p:
+                    json.dumps(changed).encode() if p == path else read(p)):
+                with self.assertRaises(ValueError):
+                    acceptance.decision(c.ROOT, self.value)
+        self.assertFalse(self.value['user_accepted'])
+        self.assertFalse(self.value['P9_10_3_closed'])
+
     def test_api_browser_notebook_and_no_rerun_on_access(self):
         import sys
         sys.path.insert(0, str(TOOL/'src'))
@@ -90,6 +106,11 @@ class RegressionTests(unittest.TestCase):
             code,raw=get('/api/tranche10/regressions');self.assertEqual(code,200);self.assertEqual(json.loads(raw),view)
             code,raw=get('/api/tranche10/regressions/source?path='+c.PATH)
             self.assertEqual(code,200);self.assertEqual(raw,(c.ROOT/c.PATH).read_bytes())
+            import p9103_acceptance as acceptance
+            code, raw = get('/api/tranche10/regressions/source?path='+acceptance.PATH)
+            self.assertEqual(code, 200)
+            self.assertEqual(raw, (c.ROOT/acceptance.PATH).read_bytes())
+            self.assertTrue(view['user_accepted']); self.assertTrue(view['P9_10_3_closed'])
             self.assertEqual(get('/api/tranche10/regressions/source?path=../secret')[0],404)
             self.assertEqual(get('/api/tranche10/regressions?family=A_OS')[0],404)
             self.assertEqual(get('/tranche10-regressions.js')[0],200)
@@ -110,7 +131,7 @@ import {createHash} from 'node:crypto';
 import {canonical} from './verification.js';
 import {checkedRegressions,regressionsLoader} from './tranche10-regressions.js';
 const v=JSON.parse(readFileSync(0,'utf8'));await checkedRegressions(v);
-for(const change of [x=>x.user_accepted=true,x=>x.G4_accepted=true,x=>x.families.pop(),x=>x.regressions[0].tests_run++,x=>x.reconciliation[0].subjects.v2=x.reconciliation[0].subjects.v1]){
+for(const change of [x=>x.user_accepted=false,x=>x.G4_accepted=true,x=>x.families.pop(),x=>x.regressions[0].tests_run++,x=>x.reconciliation[0].subjects.v2=x.reconciliation[0].subjects.v1]){
  const b=structuredClone(v);change(b);const {record_digest,...body}=b;
  b.record_digest=createHash('sha256').update(canonical(body)).digest('hex');
  await assert.rejects(()=>checkedRegressions(b));
@@ -119,7 +140,7 @@ const output={children:[],replaceChildren(){this.children=[]},append(e){this.chi
 const status={textContent:''};let ok=true;
 const load=regressionsLoader(output,status,async()=>({ok,json:async()=>v}),tag=>({tag,textContent:''}));
 await load();assert.equal(output.children.filter(e=>e.tag==='h4').length,10);
-assert.match(status.textContent,/acceptance pending/);
+assert.match(status.textContent,/bounded-accepted/);
 ok=false;await load();assert.equal(output.children.length,0);
 assert.match(status.textContent,/unavailable/);
 assert.match(readFileSync('index.html','utf8'),/id="tranche10-regressions-refresh"/);

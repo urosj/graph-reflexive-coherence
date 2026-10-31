@@ -4230,8 +4230,8 @@ Remaining Tranche 10 work is separate.
 The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
 records the completed read-only six-family assessment and agreed order. Bounded
 P9-10.2 for C_OS/C_CI/A_CI/A_PC and all six separate P9-10.1a–c → P9-10.2
-family extensions are bounded-accepted. P9-10.3 now reconciles those exact
-scopes and runs focused regressions before consolidated P9-10.4–10.6. The historical checked P9-10.1 entries
+family extensions are bounded-accepted. P9-10.3 reconciliation of those exact
+scopes and focused regressions is also accepted; P9-10.4–10.6 remain. The historical checked P9-10.1 entries
 below remain four-family acceptances, not acceptance of those six extensions.
 
 - [x] Record the six-family capture/oracle/target map and rollout sequence
@@ -4441,7 +4441,7 @@ acceptances remain unchanged; each row below records its own bounded evidence.
 
 ### Consolidated conformance and handoff
 
-- [ ] P9-10.3: Run relevant old-family regressions and verify accepted release
+- [x] P9-10.3: Run relevant old-family regressions and verify accepted release
   and source identity preservation.
   - [x] Select the bounded regression scope on `work/p9-10.3-regressions`: old
     GRCV2/GRCV3/GRC9V3 plus shared all-ten public/graph/lifecycle boundaries.
@@ -4455,8 +4455,9 @@ acceptances remain unchanged; each row below records its own bounded evidence.
     and unchanged accepted Tranches 8–9 identities.
   - [x] Expose retained checks through side-tool API/browser/notebook and
     pressure source/subject/scope drift, missing tests and stale output.
-  - [ ] Bounded review/user acceptance; capability publication, debt
-    reconciliation and G4 remain P9-10.4–10.6.
+  - [x] Bounded user acceptance on 2026-10-31 over implementation `93920eab`;
+    [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Capability
+    publication, debt reconciliation and G4 remain P9-10.4–10.6.
 - [ ] P9-10.4: Publish capability discovery, a minimal API/replay example,
   and new runtime evidence linked to the frozen fixture catalog.
   Use the public class implemented in P9-9.4b and reviewed in P9-9.6;
