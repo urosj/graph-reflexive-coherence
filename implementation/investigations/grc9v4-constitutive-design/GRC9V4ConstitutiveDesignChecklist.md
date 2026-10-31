@@ -4062,3 +4062,12 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
   interval states checked; compressed evidence and side-tool inspection added.
 - [ ] Review/adjudicate earlier endpoints; accepted baseline remains 1041/1024.
 - [ ] A_CI remains the next family after this user-requested investigation.
+
+### A_CI spark-completion applicability — 2026-10-31
+
+- [x] Uniform selected joint root, both H consumers and implicit full-map derivative.
+- [x] Self-consistent stationary writer and all thirty C/W directions in a strict anisotropic trap.
+- [x] Fresh actual source/event/W-lineage chain; current 375→377 and reset 372→374.
+- [x] Optimization preflight, compressed interval evidence and side-tool inspection.
+- [ ] Scientific A_CI adjudication and subsequent authority → proposal/paper → specification propagation.
+- [ ] A_PC next after A_CI review; native P9-9.1a, hierarchy and G4 remain forward.

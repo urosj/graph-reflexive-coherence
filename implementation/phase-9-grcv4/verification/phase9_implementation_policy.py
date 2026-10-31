@@ -4602,3 +4602,26 @@ PATHS.update({
     INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_earlier_metadata.py',
     INV+'tools/exploratory-side-tool/tool/phase9-web/spark-aos-earlier.js',
 })
+
+# A_CI selected joint root and full C/W completion research; review pending.
+PATHS.update({
+    INV+'decisions/SparkCompletionACIApplicability.md',
+    INV+'research/spark_completion_a_ci.py',
+    INV+'research/spark_completion_a_ci_campaign.py',
+    INV+'scripts/check_spark_completion_applicability_a_ci.py',
+    INV+'scripts/test_spark_completion_a_ci.py',
+    INV+'scripts/check_spark_completion_a_ci_research.py',
+    INV+'scripts/test_spark_completion_a_ci_surfaces.py',
+    INV+'evidence/spark-completion/applicability/ACIDeclaration.json',
+    INV+'evidence/spark-completion/applicability/ACIPreflight.json',
+    INV+'evidence/spark-completion/applicability/ACI-current.json.xz',
+    INV+'evidence/spark-completion/applicability/ACI-reset.json.xz',
+    INV+'evidence/spark-completion/applicability/ACIChecks.json',
+    INV+'evidence/spark-completion/applicability/ACIResearchProgress.json',
+    INV+'evidence/spark-completion/applicability/ACIMetadataSources.json',
+    INV+'evidence/spark-completion/applicability/ACIValidation.json',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionACIResearch.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aci_research.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-aci-research.js',
+})

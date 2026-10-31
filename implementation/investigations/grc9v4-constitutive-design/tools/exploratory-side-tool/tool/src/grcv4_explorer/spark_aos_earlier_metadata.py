@@ -35,7 +35,8 @@ def checked_epoch(root):
     for path,row in rows.items():
         before=subprocess.check_output(['git','show',BASELINE+':'+path],cwd=root)
         need(hashlib.sha256(before).hexdigest()==row['before_sha256'],'earlier metadata preimage differs')
-        _bound_file(root,path,row['after_sha256'])
+    from .spark_aci_metadata import bound_metadata_files as successor_files
+    successor_files(root,{path:row['after_sha256'] for path,row in rows.items()})
     return v
 
 
@@ -47,4 +48,5 @@ def bound_metadata_files(root,expected):
         else:
             row=rows.get(path)
             need(row is not None and row['before_sha256']==sha,'unbound earlier-domain metadata succession')
-            _bound_file(root,path,row['after_sha256'])
+            # The whole postimage batch, including its finite A_CI successor,
+            # was authenticated by checked_epoch above.

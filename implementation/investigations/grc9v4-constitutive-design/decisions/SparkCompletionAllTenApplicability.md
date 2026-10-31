@@ -8,11 +8,12 @@ and accepted constructive result remain closed. Native implementation is separat
 [A_OS SC-3 is now accepted](./SparkCompletionAOSSC3Authority.md), following
 C_OS, C_CI, C_PC and C_CI_PC. Its self-consistent stationary W, full C/W return
 and separately declared allocation/lineage/completion chain are propagated.
-The failed inherited allocation remains disclosed. The user now prioritizes
-[earlier A_OS closure](./SparkCompletionAOSEarlierClosure.md): the anisotropic
-research certificate gives current 375→377 and reset 372→374, pending review,
-with no additional gain. Review it next; A_CI remains the next family afterward.
-Native completion/hierarchy and aggregate G4 remain separate.
+The failed inherited allocation remains disclosed. The earlier A_OS domain
+is committed at `8d1a0e12`; the below-100 investigation is paused. The user
+requested [A_CI next](./SparkCompletionACIApplicability.md): its fresh joint-root
+and full C/W construction now gives current 375→377 and reset 372→374,
+pending review. Five families remain accepted. Native completion/hierarchy
+and aggregate G4 remain separate.
 
 ## Deliverable and finite order
 
@@ -89,11 +90,11 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current next family: A_CI
+## Current action: A_CI scientific review
 
-After accepted A_OS, establish a selected joint A current/geometry root with
-incoming-W fixed rows, self-consistent stationary W, full C/W return and actual
-source/event/W-lineage/approach/window chain. OS staging, an OS derivative or
-an inherited A_OS entry time cannot certify the A_CI ordinary map. Reuse prior
-fixed-point or topology arguments only under their actual hypotheses. Continue
-the existing branch; no A_CI campaign has started.
+The selected joint A current/geometry root, full implicit C/W return and actual
+source/event/W-lineage/approach/window chain are demonstrated on the declared
+bounded subject. Review/adjudicate A_CI next; its research debt remains open
+until acceptance and propagation. A_PC is the next family afterward. The
+A_OS geometry is a candidate only; no OS derivative or entry was substituted.
+The below-100 A_OS investigation remains paused.

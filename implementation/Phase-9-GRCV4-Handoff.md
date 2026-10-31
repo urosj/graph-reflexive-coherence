@@ -1,5 +1,47 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_CI completion demonstrated; review next — 2026-10-31
+
+The user requested the next family on the existing branch. The below-100
+A_OS investigation remains paused; its verified 64% reduction is committed
+at `8d1a0e12`. The earlier-domain result retains its separate review status.
+
+The [A_CI investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionACIApplicability.md)
+now proves the selected joint current/geometry root, self-consistent stationary
+conductance writer and full **30-dimensional C/W return**. The A_OS rational
+anisotropic shape is reused only as a candidate; the implicit derivative,
+source beat, fresh event root and both interval trajectories are new A_CI work.
+Current **375 → 377** earns one local child. Independent reset **372 → 374**
+earns zero live gain. SC-1, equations, tolerances and the two-beat window are
+unchanged; no below-100 certificate variant is introduced.
+
+The declared allocation is 1/128,63/64,1/128, with preserved old-edge W and
+three new internal edges seeded at one. Graph/root-domain caches, fixed-row
+reuse, multi-right-hand-side derivatives, staged root proposals and exact-state
+root reuse passed preflight before the roughly 101-second campaigns. Full
+8192-bit intervals drive evolution; only root proposals use midpoints.
+All 751 retained states and root checkpoints are compressed from 5.9 MB to
+0.76 MB. One-hour caps and a 1024-beat horizon remain explicit.
+
+Use `/api/spark-completion/applicability/a-ci/research`, the A_CI browser panel
+or notebook cell `spark-completion-a-ci-research`. The source-bound view does
+not rerun numerics. Earlier accepted, historical research and anisotropic
+A_OS projections remain fixed through a finite metadata successor.
+
+**Next: scientific review/adjudication of A_CI**, then authority → proposal/paper
+→ specification if accepted. Five families remain accepted, and
+`SC-APP-DEBT-A_CI` remains open pending adjudication. A_PC is the next family
+afterward. Native P9-9.1a, hierarchy and aggregate G4 remain forward. The
+pre-existing broader audit failure at `specs/README.md` remains unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_ci_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_ci_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
 ## Current continuation: earlier A_OS closure demonstrated; review next — 2026-10-31
 
 The user prioritizes investigating an anisotropic domain for substantially
