@@ -4437,3 +4437,27 @@ PATHS.update({
     'specs/grc-9-v4-spark-completion-applicability-source-manifest.json',
     'specs/grc-9-v4-spark-completion-ci.md',
 })
+
+# C_PC bounded completion research and pending-review inspection; no native grant.
+PATHS.update({
+    INV+'decisions/SparkCompletionCPCApplicability.md',
+    INV+'research/spark_completion_pc.py',
+    INV+'research/spark_completion_pc_campaign.py',
+    INV+'scripts/check_spark_completion_applicability_pc.py',
+    INV+'scripts/check_spark_completion_pc_reconciliation.py',
+    INV+'scripts/check_spark_completion_pc_research.py',
+    INV+'scripts/test_spark_completion_pc.py',
+    INV+'scripts/test_spark_completion_pc_pressure.py',
+    INV+'scripts/test_spark_completion_pc_surfaces.py',
+    INV+'evidence/spark-completion/applicability/CPCDeclaration.json',
+    INV+'evidence/spark-completion/applicability/CPCPreflight.json',
+    INV+'evidence/spark-completion/applicability/CPC-current.json.xz',
+    INV+'evidence/spark-completion/applicability/CPC-reset.json.xz',
+    INV+'evidence/spark-completion/applicability/CPCChecks.json',
+    INV+'evidence/spark-completion/applicability/CPCResearchProgress.json',
+    INV+'evidence/spark-completion/applicability/CPCValidation.json',
+    INV+'evidence/spark-completion/applicability/review/CPCScientificReview.md',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionCPCResearch.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_research.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-research.js',
+})

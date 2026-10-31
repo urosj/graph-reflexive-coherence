@@ -4003,6 +4003,20 @@ Native implementation and accepted scientific promotion remain separate.
   - [x] Expose the three conditional claims, research debt and both forward native
     obligations through the successor forensic API, browser and notebook; preserve C_OS.
 - [ ] C_PC — all C/Z directions, actual carrier read/write and event disposition.
+  - [x] [Derive and certify the full sixty-dimensional C/Z map](./decisions/SparkCompletionCPCApplicability.md),
+    including all forty-six signed carrier directions and a stationary carrier.
+  - [x] Execute actual source read/write, fresh event capture, both-role carrier
+    archive/loss and whole-target zero initialization under literal D11.
+  - [x] Verify optimization preflight; execute fixed-8192-bit current 849 → 851
+    and reset 817 → 819, with only current earning one live gain.
+  - [x] Check all 1,670 saved C/Z states, eight scientific methods and sixteen
+    false-completion/subject controls; retain compressed evidence and explicit
+    overlap-consistency limits in the repository scientific review.
+  - [x] Expose [pending research progress](./evidence/spark-completion/applicability/CPCResearchProgress.json)
+    through read-only API, indexed sources, browser and notebook, preserving
+    accepted C_OS/C_CI authority and source bytes.
+  - [ ] Scientific review and explicit claim/debt adjudication, followed by
+    authority → proposal/paper → specification and forward native obligations.
 - [ ] C_CI_PC — coupled root, C/Z return and same-source immediate/carrier writer.
 - [ ] A_OS — stationary W writer and full C/W return plus event lineage.
 - [ ] A_CI — selected joint root and all C/W directions.

@@ -4548,6 +4548,11 @@ acceptances remain unchanged; each row below records its own bounded evidence.
     - [x] [C_CI scientific SC-3 and research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md):
       three conditional claims, resolved bounded applicability debt, additive
       propagation and both native obligations routed forward. C_PC is next.
+    - [x] [C_PC bounded completion research](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCApplicability.md):
+      full sixty-dimensional resource/carrier trap, actual source/event/history
+      chain and current 849 → 851/reset 817 → 819; compressed evidence and
+      pending-research side-tool surfaces. Scientific adjudication and
+      propagation remain open; no native completion support is added.
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
   - [x] Reconcile the spark-completion scientific/design portions and five

@@ -1,5 +1,60 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: C_PC completion demonstrated; review next — 2026-10-31
+
+Branch `investigation/grc9v4-spark-completion` starts from merged `97470d96`.
+The [C_PC investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCApplicability.md)
+now supplies a bounded positive source-to-completion construction. Current
+enters the full C/Z trap at 849 and completes at 851; independently executed
+reset enters at 817 and ends at 819 with no live gain. Both new runs finished
+in about 71/68 seconds at fixed 8192-bit Arb, after a verified optimization
+preflight. They do not reuse C_OS/C_CI trajectories.
+
+The new trap includes fourteen resource and forty-six independent carrier
+directions, signed nonzero carrier perturbations, actual old-carrier reads
+and exponential writes. Its contraction is below 0.997358. Source current
+and reset carry explicitly declared nonzero histories; the actual event
+archives both and zeroes the entire target carrier under the lawful P→P rule.
+The two execution archives are compressed from 20.8 MB to 2.4 MB.
+
+Eight scientific test methods and sixteen false-completion/subject controls
+pass. The checker verifies all 1,670 saved C/Z states, 3,340 chiral
+classifications and resource/carrier recurrence links. Saved/fresh overlap
+is consistency only; the full trap uses fresh interval calculations. The
+[repository scientific review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CPCScientificReview.md)
+does not claim an independent second reviewer or independent long replay.
+
+**Next: scientific review and explicit C_PC claim/debt adjudication**, then
+authority → proposal/paper → specification. The applicability debt remains
+open pending that step. C_CI_PC follows in the research order. Accepted
+C_OS/C_CI authorities and their original ledger are unchanged; native
+P9-9.1a completion, hierarchy and aggregate P9-10.5/10.6/G4 remain separate.
+
+Inspect the [current research progress](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCResearchProgress.json)
+through `/api/spark-completion/applicability/research`, its browser panel,
+indexed sources, or notebook cell `spark-completion-research`. The older
+applicability endpoint continues to display the accepted C_CI checkpoint.
+This lean restart check verifies retained bindings and scope without
+repeating a trajectory:
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_pc_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc_surfaces.py
+```
+
+For fresh mathematical and all-state consistency checks, use the commands
+in the investigation. Do not repeat the long campaign merely to inspect
+status. Earlier continuation entries below describe their historical scopes.
+
+Validation: 23 focused scientific/surface/predecessor tests pass, and changed
+files satisfy the 1 MB compression rule. The broader Phase 9 boundary audit
+is blocked by pre-existing basin propagation source drift in `specs/README.md`
+and the investigation plan/checklist/decision ledger. The mismatch also exists
+at base commit `97470d96`; this work does not rewrite those accepted historical
+bindings. See [CPCValidation.json](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCValidation.json)
+for the exact baseline comparison. The maintenance roster is refreshed, but
+no full repository-boundary PASS is claimed.
+
 ## Current continuation: C_CI SC-3 complete; C_PC next — 2026-10-31
 
 The [C_CI adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md)
