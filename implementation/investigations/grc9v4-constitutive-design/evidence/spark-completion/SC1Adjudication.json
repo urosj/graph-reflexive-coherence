@@ -1,0 +1,193 @@
+{
+  "schema": "grc9v4-spark-sc1-adjudication-v1",
+  "date": "2026-10-31",
+  "status": "accepted_bounded_scientific_definition",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "authority_basis": "User instruction to perform SC-1 after the explicit recommendation to adopt this bounded branch; conditional mathematics independently reviewed.",
+  "decision": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Adjudication.md",
+  "policy_definition": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Contract.md",
+    "sections": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "numerical_example_is_not_a_selected_runtime_binding": true
+  },
+  "supersedes": "Pending scientific-selection fields only for the listed claims and organization-definition scope in the SC1/SC2 predecessor ledgers; all other boundaries remain.",
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Adjudication.md",
+      "sha256": "687fff6c7a4fbd7eb7565b3d59fcb4376c1f3bd69ecbe39a775ad03325811ee8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc1_adjudication.py",
+      "sha256": "8495b56eac9a7c5f683d2d18aec7ba9da5684c7c1d0735f1fe261a7d439efc8f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Checks.json",
+      "sha256": "99bab39be18cb019a28e343cee260cb8d7478b95fdeaf85903c63f29c34a1506"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1ClaimDebtLedger.json",
+      "sha256": "37ed88662d4962b1eb849b3b69e8b921cf48c5b96798b3358d31882279f418e4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2MechanismChecks.json",
+      "sha256": "3a8ea646ac52b2490a8bcfb0b3331a97f785dca75b7098a96ef30953d6f41ec8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2ClaimDebtLedger.json",
+      "sha256": "75d6ad6814463128f275046358188ec903b273c6351eadaf0bfdc31d0999459a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Contract.md",
+      "sha256": "5cdfc545a5b48e7832828cac816d80fdd7950919cdb3986932207902af47f04e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/SC1ScientificPressureReview.md",
+      "sha256": "96000141d2dc3fe35bf75f2093f0cbaf35745e552d47e63501c84502b5240b53"
+    }
+  ],
+  "claim_dispositions": [
+    {
+      "claim_id": "SC1-CL-N-GEOMETRIC-IDENTITY",
+      "predecessor_claim_id": "SC1-CL-P-GEOMETRIC-IDENTITY",
+      "claim_class": "normative_scientific_choice",
+      "status": "accepted_bounded_research",
+      "statement": "Select the named signed-resource all-route geometric child-basin policy as a sufficient bounded interpretation of stable child organization, including at zero physical current.",
+      "contract_sections": [
+        "2",
+        "3",
+        "5"
+      ],
+      "remaining_limits": [
+        "not inferred from existing physical-flow diagnostics",
+        "not all organizations",
+        "not a runtime policy or accepted forensic node"
+      ]
+    },
+    {
+      "claim_id": "SC1-CL-C-SPATIAL-BASINS",
+      "predecessor_claim_id": "SC1-CL-C-SPATIAL-BASINS",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_research",
+      "statement": "Qualified anchors have disjoint forward-closed guaranteed domains; every strict-descent route terminates at its anchor, with the stated landscape separation.",
+      "contract_sections": [
+        "2"
+      ],
+      "remaining_limits": [
+        "diagnostic routing, not physical transport",
+        "no physical energy barrier or independent causal autonomy"
+      ]
+    },
+    {
+      "claim_id": "SC1-CL-C-RETURN",
+      "predecessor_claim_id": "SC1-CL-C-RETURN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_research",
+      "statement": "The complete exact ordinary map on a full-dimensional relative trapping/contraction domain preserves the uniformly certified spatial basins and converges to its full-field fixed point.",
+      "contract_sections": [
+        "4",
+        "5"
+      ],
+      "remaining_limits": [
+        "no concrete applicable V4 domain adjudicated here",
+        "no inner-root contraction substitution",
+        "numerical constraint and row agreement remain required"
+      ]
+    },
+    {
+      "claim_id": "SC1-CL-C-COMPLETION",
+      "predecessor_claim_id": "SC1-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_research",
+      "statement": "Under the selected interpretation of A.7, actual admitted expansion and positive post-event evolution into the certified domain with same-classifier local descendant gain imply geometric child-basin completion; represented observations additionally require numerical and lifecycle certificates.",
+      "contract_sections": [
+        "3",
+        "4",
+        "5"
+      ],
+      "remaining_limits": [
+        "no witnessed completed spark",
+        "no global basin-count growth or event counterfactual causation",
+        "no hierarchy implementation",
+        "no constitutive binding admission"
+      ]
+    }
+  ],
+  "debt_dispositions": [
+    {
+      "debt_id": "SC-DEBT-ORGANIZATION",
+      "status": "partially_resolved_scientific_definition",
+      "resolved": [
+        "child object and exact scientific meaning",
+        "same-classifier parent/descendant comparison",
+        "temporal correspondence and conditional A.7 interpretation"
+      ],
+      "remaining": [
+        "actual admitted source/event realizes the parent and child relationships",
+        "scientific authority propagation and implementation conformance"
+      ]
+    },
+    {
+      "debt_id": "SC-DEBT-STABILITY",
+      "status": "open",
+      "selected_semantics": "Full-state trapping and attraction; finite observation alone is insufficient.",
+      "remaining": [
+        "quantitative domain on actual applicable target",
+        "represented full-step/constraint/diagnostic certificates"
+      ]
+    },
+    {
+      "debt_id": "SC-DEBT-NONEMPTY-DOMAIN",
+      "status": "open",
+      "remaining": [
+        "actual source/parent/D11 topology and charge compatibility",
+        "admitted approach and entry into organized branch",
+        "continued admitted evolution and controls"
+      ]
+    },
+    {
+      "debt_id": "SC-DEBT-TEMPORAL-LIFECYCLE",
+      "status": "open",
+      "selected_semantics": "Positive committed window, independent roles, rollback/invalidation and at-most-one gain per event lineage.",
+      "remaining": [
+        "demonstration on admitted captures",
+        "successor schema and native reset/replay/window/receipt conformance"
+      ]
+    }
+  ],
+  "carried_forward": {
+    "SC2-DEBT-NONLINEAR-SITE-BINDING": "open"
+  },
+  "unchanged": [
+    "accepted physical-flow basin policy",
+    "existing spark trigger and mechanical expansion",
+    "legacy GRC9V3",
+    "abundance and ATC debts",
+    "SC1 and SC2 predecessor evidence"
+  ],
+  "scope": {
+    "SC1_closed": true,
+    "scientific_definition_selected": true,
+    "conditional_A7_bridge_selected": true,
+    "SC2_closed": false,
+    "SC3_closed": false,
+    "accepted_forensic_graph_changed": false,
+    "paper_spec_propagated": false,
+    "nonlinear_site_binding_admitted": false,
+    "native_completion_policy_registered": false,
+    "completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "native_steps": 0,
+    "native_events": 0,
+    "aggregate_debts_closed": [],
+    "accepted_generic_runtime_support_added": [],
+    "admitted_specialization_support_added": []
+  },
+  "next": "SC-2: source/parent/D11 target topology and charge compatibility, organized-branch entry and quantitative certificates; constitutive-binding selection remains separate. SC-3 consolidates and admits the authority/schema successor before paper/spec and native P9-9.1a work.",
+  "record_digest": "5c6ad3011e641e4e754de4f72ccf504b50c6c7b60dbb108dd24ba8b470c4f5af"
+}

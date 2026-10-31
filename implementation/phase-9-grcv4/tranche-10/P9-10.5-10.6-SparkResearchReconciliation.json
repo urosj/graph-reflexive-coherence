@@ -1,0 +1,43 @@
+{
+  "schema": "grc9v4-sc3-research-reconciliation-v1",
+  "date": "2026-10-31",
+  "authority_record_digest": "dd2583ca6b0192c9f72f15ed1c01d82b5c2a9de95da9583cbaeafe2530684383",
+  "scope": {
+    "SC1_closed": true,
+    "SC2_closed": true,
+    "SC3_closed": true,
+    "research_reconciliation_complete": true,
+    "P9_10_5_aggregate_closed": false,
+    "P9_10_6_closed": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false
+  },
+  "debt_ids": [
+    "SC-DEBT-ORGANIZATION",
+    "SC-DEBT-STABILITY",
+    "SC-DEBT-NONEMPTY-DOMAIN",
+    "SC-DEBT-TEMPORAL-LIFECYCLE",
+    "SC2-DEBT-NONLINEAR-SITE-BINDING"
+  ],
+  "forward_obligation_ids": [
+    "SC-VO-NATIVE-NUMERICS",
+    "SC-VO-NATIVE-LIFECYCLE"
+  ],
+  "next_implementation_task": "P9-9.1a",
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+      "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-source-manifest.json",
+      "sha256": "d9475b052dc85a15060491ae75961ef76eca2300310f19c50d8d0b295035071a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md",
+      "sha256": "8273e2971d8ff2dbba661cbb3e1361d76ce3aeb1d6d3b59db2315b9202b683fb"
+    }
+  ],
+  "record_digest": "30f3986158b09efe827db2eded685f2fb0a42c32753e18ca841e1b8bbe8cd818"
+}

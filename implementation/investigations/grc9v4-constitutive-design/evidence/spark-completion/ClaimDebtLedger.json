@@ -1,0 +1,81 @@
+{
+  "schema": "grc9v4-spark-completion-provisional-ledger-v1",
+  "status": "research_open_not_admitted_authority",
+  "date": "2026-10-31",
+  "baseline_commit": "34152b5d",
+  "authority_admitted": false,
+  "accepted_graph_changed": false,
+  "proposal": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionDefinitionAndFeasibility.md",
+  "evidence": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/InitialFeasibility.json",
+  "source_contracts": [
+    "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+    "D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+    "P9-EC-GRC9-BASIN-CEILING",
+    "P9-EC-GRC9-BASIN-IDENTITY"
+  ],
+  "claims": [
+    {
+      "id": "SC-CL-C-001",
+      "status": "proposed_conditional_pending_review",
+      "statement": "For the baseline signed diagonal row Hessian, a seed requires epsilon_g^2 > 3 epsilon_H^2. This is sufficient only for unrestricted real row vectors, not native graph reachability or represented-number existence.",
+      "evidence_pointer": "/exact_predicate_controls",
+      "proof_section": "2"
+    },
+    {
+      "id": "SC-CL-NEG-002",
+      "status": "proposed_scoped_negative_pending_review",
+      "statement": "All ten unchanged frozen P9-10.4 expansion policies exclude geometric seeds. Their D52 targets also exclude thirteen of seventeen nodes by empty fixed rows. Neither result excludes a separately justified completion criterion.",
+      "evidence_pointer": "/example_exclusions",
+      "proof_sections": ["2", "3"]
+    },
+    {
+      "id": "SC-CL-C-003",
+      "status": "retained_diagnostic_control_no_new_authority",
+      "statement": "The accepted separately identified C_OS seed example provides one positive local diagnostic, with no event, child gain or temporal stability claim.",
+      "evidence_pointer": "/positive_seed_control"
+    }
+  ],
+  "debts": [
+    {
+      "id": "SC-DEBT-ORGANIZATION",
+      "status": "open",
+      "missing": "A selected child object, parent-to-child comparison and temporal correspondence that distinguish new organization from relabelling and mechanical subdivision.",
+      "resolution_gate": "SC-1 reviewed definition and conditional argument",
+      "forbidden_assumption": "Graph-dependent basin hashes, new nodes or a zero parent count establish child gain."
+    },
+    {
+      "id": "SC-DEBT-STABILITY",
+      "status": "open",
+      "missing": "An explicit choice between finite observed persistence and a stronger stability statement, with its mathematical domain, residual, units and numerical margins.",
+      "resolution_gate": "SC-1 reviewed stability semantics and conditional argument",
+      "forbidden_assumption": "Repeated diagnostics or a current-only residual prove dynamical attraction or indefinite persistence."
+    },
+    {
+      "id": "SC-DEBT-NONEMPTY-DOMAIN",
+      "status": "open",
+      "missing": "An admissible source-to-expansion-to-child completion construction under actual V4 evolution, with explicit realization/history scope.",
+      "resolution_gate": "SC-2 positive bounded construction plus transient/parent/identity controls",
+      "forbidden_assumption": "Mechanical conformance, an isolated seed or bounded ATC fission supplies completed-spark feasibility."
+    },
+    {
+      "id": "SC-DEBT-TEMPORAL-LIFECYCLE",
+      "status": "open",
+      "missing": "The scientific observation window, parent/event lineage and reset/migration/failed-step semantics needed to interpret a completion observation.",
+      "resolution_gate": "SC-1/SC-2 definition and reference checks before SC-3 admission",
+      "forbidden_assumption": "Reset, replay, failed or zero-duration operations advance one persistent live child timeline."
+    }
+  ],
+  "prior_debt_disposition": {
+    "P9-10.1a-DEBT-BASIN-IDENTITY": "preserve resolved_bounded_design; later native acceptance is separate; do not reopen for stronger completion semantics",
+    "P9-4.9.1a-DEBT-ABUNDANCE": "unchanged; completion counts do not define abundance",
+    "ATC_origin_debts": "unchanged; this is fixed-nine-port completion, not general autonomous topology change"
+  },
+  "downstream_obligations": {
+    "P9-9.1a": "implementation and native conformance only after reviewed authority, paper and spec propagation",
+    "P9-10.5": "reconcile these scoped debts without inferring closure from coverage",
+    "P9-10.6": "record reviewed completion support or explicit deferral; no automatic G4 grant"
+  },
+  "completed_spark_support": false,
+  "hierarchy_support": false,
+  "G4_accepted": false
+}

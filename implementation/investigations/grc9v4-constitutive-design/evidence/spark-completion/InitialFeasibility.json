@@ -1,0 +1,1037 @@
+{
+  "schema": "grc9v4-spark-completion-initial-feasibility-v1",
+  "status": "research_findings_pending_review",
+  "accepted_authority": false,
+  "native_steps_executed": 0,
+  "topology_events_executed": 0,
+  "completion_policy_selected": false,
+  "completed_spark_demonstrated": false,
+  "inputs": [
+    {
+      "path": "examples/grc9v4/fixtures.json",
+      "sha256": "e2c219b1b65831ef3142598a98145de0edbba2600cab714693f5303848fcc31c"
+    },
+    {
+      "path": "examples/grc9v4/results/A_CI.json.xz",
+      "sha256": "9bc00fd3b8fc2281edf7c75f8cfee42e08014e0112fd93d611feeb8594d00146"
+    },
+    {
+      "path": "examples/grc9v4/results/A_CI_PC.json.xz",
+      "sha256": "ff86a46f411174bcac1c0864ad64d26b1490f0d580f50b131c75ee0f50d1ed3f"
+    },
+    {
+      "path": "examples/grc9v4/results/A_OS.json.xz",
+      "sha256": "3db69bdf40473e04da9ef49fa391bb62d51a2b430beb39c3f74f574545d7a4e7"
+    },
+    {
+      "path": "examples/grc9v4/results/A_PC.json.xz",
+      "sha256": "3f7d0ad710415f252f302a7004706b6b4293f58d9d2e45d5151376ae2fffeb11"
+    },
+    {
+      "path": "examples/grc9v4/results/A_RG2b.json.xz",
+      "sha256": "1982dbee3f629ed629d9024eb93500a01ec5eed5421662aaaa849312871e9ed7"
+    },
+    {
+      "path": "examples/grc9v4/results/C_CI.json.xz",
+      "sha256": "3307f482944e7141bbcd143b03c21f81fa7a7831648bbc68d7771562acc4d5cf"
+    },
+    {
+      "path": "examples/grc9v4/results/C_CI_PC.json.xz",
+      "sha256": "222c540f0a2dff5ec276cb26ee7ca236018d37032fcfc224aea27e14594d465f"
+    },
+    {
+      "path": "examples/grc9v4/results/C_OS.json.xz",
+      "sha256": "ed34feec50dc7e1d20a37f073ef3208955498aca084ef2f4da8ab2fddf5344d8"
+    },
+    {
+      "path": "examples/grc9v4/results/C_PC.json.xz",
+      "sha256": "5f263e554f1dafa94420d93056a88e06df55d739a47f2f65b7b3d97ba45c9e6e"
+    },
+    {
+      "path": "examples/grc9v4/results/C_RG2b.json.xz",
+      "sha256": "45e57fa2f81ae84b11b90c5b0d83e7131f93c9572e406d9b8ac183c746fce0fb"
+    },
+    {
+      "path": "examples/grc9v4/results/seeds.json",
+      "sha256": "4a123dbb72a31dcc4957ea8e3b3127a060223c9f820c5398d43ffb9d8a9dd567"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "dd538ba5f731808d9cb8d95337a36fe2cb8ddfacece90c0f3001399381f63768"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_feasibility.py",
+      "sha256": "39d644c411a3605cf8481fc123ea347d4c375945043baf82125f922c884785d1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json",
+      "sha256": "b400e0c3fbf604ec27c354e28fef909bc728bbfcd97d4cf84d5ddb56f42260bc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.4-Examples.json",
+      "sha256": "8a14ae3335f4c3b0d1a349631755054ecbe4db5c697302f53781cbefd040e099"
+    },
+    {
+      "path": "specs/grc-9-v4-basin-interface.md",
+      "sha256": "53e893370c62b659146d8e631b9fecc623e088876bb883d847fd10e25e3d7073"
+    },
+    {
+      "path": "specs/grc-9-v4-spec.md",
+      "sha256": "588878aabbe35a8b0c6ae5019f1d1116ab2a3bf15168793e37468abcf369e082"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "sha256": "40ba2683facd22286bb360da64664c80fe62d88763d2eab7feb7469132b1c328"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    }
+  ],
+  "forensic_traces": {
+    "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION": {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION"
+      },
+      "source_bundle_digest": "9aecc255aae05f01106a902291635a43c880aeedfde3bb615a1868fe38dcacd3",
+      "graph_digest": "158b238cf790d01805f1b210cc76d989567b7918d50e6358f4a9bf30843cba03",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "fails_without_nine_port_substrate",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-N-001"
+                ],
+                "blocked_overread": "candidate_or_expansion_alone_is_not_completed_spark",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+                "independent_derivation_ids": [],
+                "normative_equation_or_contract": "spark_completion_requires_postexpansion_child_basin_or_attractor_gain",
+                "parent_object_ids": [
+                  "GRC9-CHILD-BASIN-STABILIZATION"
+                ],
+                "premises_used": [
+                  "GRC9_mechanical_expansion",
+                  "GRC_basin_identity",
+                  "postevent_stabilization"
+                ],
+                "profile_ids": [],
+                "promotion_status": "specialization_only",
+                "source_lineage": [
+                  "GRC9V3-NORMATIVE-SPEC",
+                  "PHASE7-GRC9V3-EQUATION-MAP"
+                ],
+                "specification_destination": "GRC9V4_specialization",
+                "substrate_disposition": "GRC9_intrinsic"
+              },
+              "identifier": "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "source_json_pointer": "/normative_equation_contract_registry/58",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/58",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0d45370d876f08c6ed96f20588b79ecf4ba0280fa44b1b98e45a0c04d42cd031",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "current_claim:D10-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/58/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:164e835bd679e0c1c2a6c51bd6f1f007e0fce9c93c09675049818a0675cfd7bf",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "source_record:4c110e96f6c5026d5fb99486648dfbbb8f5d42161fd37b71505208fc622147c2",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/58/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:16a4b9fb2c1298da631609795915e7744a06af6188d189786d943eacd99b44c2",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "source_record:530dbbad6467e522dfc694c24672702267fec24da84d9efdd2343bacead7b2d5",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/58/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:19da3cc31972eeddeb3698dffb4033e4890a5f6e42559cbee6922b7ad4f107e2",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "debt_transformation:P9-4.9.1a-DEBT-ABUNDANCE",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-4.9.1a-ABUNDANCE-v1",
+              "source_record_digest": "d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053",
+              "source_json_pointer": "/source_contract_ids/2"
+            },
+            {
+              "edge_id": "propagation:3565cff57cafe49de105b7a32977c0e0b6e5f7b07f460fd913c6f3a824da9be2",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/58"
+            },
+            {
+              "edge_id": "propagation:3598ac954e0ccd598b056e4061a2a54c19e6b89b2870405cdab814ad311f09ba",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "normative_object:GRC9-CHILD-BASIN-STABILIZATION",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/58/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:ae4f1a99973f171a2926781c47f1a121fa34284beccbc0d1f8e501aec2622d5d",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/2"
+            },
+            {
+              "edge_id": "propagation:d56364153655e36b871ca93eed4658b1cf625a92551f1972ec060e16ae33044b",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/58/accepted_claim_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "18ee925ca175da09bba3137ec2c751d7c668ec59902aee9bfb1d9c4156bfd385",
+      "authority_extension_digest": "b166c00b8ff646c072cb6ddc1187bc975931488f9a0f84f81a7a4ad84ada975c"
+    },
+    "D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL": {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL"
+      },
+      "source_bundle_digest": "9aecc255aae05f01106a902291635a43c880aeedfde3bb615a1868fe38dcacd3",
+      "graph_digest": "158b238cf790d01805f1b210cc76d989567b7918d50e6358f4a9bf30843cba03",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "fails_without_nine_port_substrate",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-N-001"
+                ],
+                "blocked_overread": "row_basis_backend_is_not_the_GRCV4_general_contract",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+                "independent_derivation_ids": [],
+                "normative_equation_or_contract": "fixed_three_row_GRC9_gradient_Hessian_and_flux_summary",
+                "parent_object_ids": [
+                  "BASE-GRC9-ROW-BASIS-DIFFERENTIAL"
+                ],
+                "premises_used": [
+                  "nine_ordered_ports",
+                  "fixed_3_by_3_chart",
+                  "row_partition"
+                ],
+                "profile_ids": [],
+                "promotion_status": "specialization_only",
+                "source_lineage": [
+                  "GRC9V3-TRANSPORT-RUNTIME",
+                  "PHASE7-GRC9V3-EQUATION-MAP"
+                ],
+                "specification_destination": "GRC9V4_specialization",
+                "substrate_disposition": "GRC9_intrinsic"
+              },
+              "identifier": "D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "source_json_pointer": "/normative_equation_contract_registry/11",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/11",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:24da7fbc4e7f47f4de4fd0eabde513e8f2cb18d0ba49caba8f022c9e42b73048",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/11/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:2e1352f31e6c9d4b962f205bccde290a21f716c68885d48ee90dee555ee0e1c2",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "current_claim:D10-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/11/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:a97c9490d87873abbbfd090f20ba35bed047cda80c8367961083dc8c9f67d5dc",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/11"
+            },
+            {
+              "edge_id": "propagation:d70355e95fc938dae26d77e34308d5b710f6c89957e8b80398b98d38b77f0e78",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/0"
+            },
+            {
+              "edge_id": "propagation:d8bd5e85b21e7ccdef0ca3abc1a47461f2538287ca730437e2033a61accfc9ae",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "source_record:530dbbad6467e522dfc694c24672702267fec24da84d9efdd2343bacead7b2d5",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/11/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:e5a76b6a525f4ba7ed76f8854690cea93075d712ccb839c6d7a33e3c5213509d",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "normative_object:BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/11/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:fb6299bfdb77974f04b3ba2ed40999d6168e070710355bdfbce39498b6a1a9fe",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "source_record:36d96095d98108330775614b9c094e6f794594dce8b585b74248dd3293888160",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/11/source_lineage/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "3c54772a31f401962c10b1ff1f9d46cd1bee7d15a6e59298977fbf12a6aace60",
+      "authority_extension_digest": "b166c00b8ff646c072cb6ddc1187bc975931488f9a0f84f81a7a4ad84ada975c"
+    },
+    "P9-EC-GRC9-BASIN-CEILING": {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "P9-EC-GRC9-BASIN-CEILING"
+      },
+      "source_bundle_digest": "9aecc255aae05f01106a902291635a43c880aeedfde3bb615a1868fe38dcacd3",
+      "graph_digest": "158b238cf790d01805f1b210cc76d989567b7918d50e6358f4a9bf30843cba03",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "P9-EC-GRC9-BASIN-CEILING",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:P9-EC-GRC9-BASIN-CEILING",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-GRC9-BASIN-CEILING",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_json_pointer": "/contracts/5",
+              "attributes": {
+                "equation_contract_id": "P9-EC-GRC9-BASIN-CEILING",
+                "parent_object_ids": [
+                  "P9-O-GRC9-BASIN-DIAGNOSTIC"
+                ],
+                "accepted_claim_ids": [
+                  "P9-10.1a-CL-N-BASIN-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "Bounded represented-current diagnostics only. No attraction, stability, persistent physical identity, basin birth, numeric abundance, completed sparks, hierarchy, exact-real signs, cross-policy bitwise replay or new native runtime support. C_OS/C_CI/A_CI/A_PC implementation requires separate conformance. Preserve disabled GRC9V3 semantics and all previous accepted identities."
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "required"
+            ],
+            "support_disposition": [
+              "required"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRCV4-P9-10.1a-BASIN-v1",
+            "record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+            "source_json_pointer": "/contracts/5",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0ccb754e5b254b66d7daa3f9f63b305c50bfdb788d42f8de61a2ba125c6351c3",
+              "source": "equation_contract:P9-EC-GRC9-BASIN-CEILING",
+              "target": "source_record:10529ccdfaf31e55a319913ea859838bffd85c560dbe60007463786224ff58e0",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/contracts/5"
+            },
+            {
+              "edge_id": "propagation:9d1a05973123af697aa7ecdd711e07375de25461b020e1c2f8d5554074487b5b",
+              "source": "equation_contract:P9-EC-GRC9-BASIN-CEILING",
+              "target": "normative_object:P9-O-GRC9-BASIN-DIAGNOSTIC",
+              "relation": "parent_object",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/contracts/5/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:dbef7616dcdd23d8f2f8dedfb84223ec641d22eec5de3452dd48a2fa9d2c9f23",
+              "source": "equation_contract:P9-EC-GRC9-BASIN-CEILING",
+              "target": "current_claim:P9-10.1a-CL-N-BASIN-001",
+              "relation": "accepted_claim",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/contracts/5/accepted_claim_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "ccfea4193c5757ce012cdd77072c658241e5cdb82dcf3ee82b539c162e4df7f8",
+      "authority_extension_digest": "b166c00b8ff646c072cb6ddc1187bc975931488f9a0f84f81a7a4ad84ada975c"
+    },
+    "P9-EC-GRC9-BASIN-IDENTITY": {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "P9-EC-GRC9-BASIN-IDENTITY"
+      },
+      "source_bundle_digest": "9aecc255aae05f01106a902291635a43c880aeedfde3bb615a1868fe38dcacd3",
+      "graph_digest": "158b238cf790d01805f1b210cc76d989567b7918d50e6358f4a9bf30843cba03",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "P9-EC-GRC9-BASIN-IDENTITY",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:P9-EC-GRC9-BASIN-IDENTITY",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-GRC9-BASIN-IDENTITY",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_json_pointer": "/contracts/3",
+              "attributes": {
+                "equation_contract_id": "P9-EC-GRC9-BASIN-IDENTITY",
+                "parent_object_ids": [
+                  "P9-O-GRC9-BASIN-DIAGNOSTIC"
+                ],
+                "accepted_claim_ids": [
+                  "P9-10.1a-CL-N-BASIN-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "The proposed interface has a closed typed `basin_attributes` bundle containing:\npolicy/schema IDs, the observation binding and read witness from section 1,\nall components with members/cyclicity/terminal flag (terminal kind is null for\nnonterminals), per-node own-component/terminal-set/status/optional-ID records,\nassigned regions with members, and geometric seed attributes. Public state\nexposes the same **derived**, partial `basin_identity` map reconstructed from\nthat state. Current/reset views are never interchangeable.\n\n**Typed wire identity.** Normalize IDs through the existing V4 node-ID contract,\nthen preserve integer versus string identity in typed per-node entries:\n`{\"kind\":\"int\",\"value\":0}` differs from `{\"kind\":\"str\",\"value\":\"0\"}`.\nThe empty string is an ordinary supported node ID. Do not use stringified node\nIDs as JSON object keys. Unassigned basin ID is explicit null; the node's entry\nmust still exist. Reject duplicate typed IDs, absent node entries, invalid\ncomponent references and inconsistent membership.\n\nCanonical order is representation-only: integers before strings, then unsigned\nlexicographic comparison of each typed ID's canonical JSON bytes. Sort component\nmembers by that key, components lexicographically by their member-key tuples,\nand use their zero-based canonical indices as local component references. Sort\nterminal references numerically and per-node/region entries by typed node key.\nNever use this ordering to choose between flow destinations. Node-bearing\nidentity preimages, including `sink_node_id` below, use the same typed encoding.\n\nFor an assigned sink s, define\n\n```text\nbasin_id = \"grc9v4-flow-basin-sha256:\" + SHA256(JCS({\n  policy_id, graph_digest, sink_node_id: s\n}))\n```\n\nThis identifies a flow region by its terminal on the declared graph. Membership\ncan change while this label stays the same; the observation state digest records\nthe state content and the observation digest binds the actual captured read.\nA label reused after disappearance does not prove\npersistent physical identity. Graph changes produce graph-scoped new IDs, with\nno implied parent/child lineage. Node relabeling transports members and terminal\nreferences and recomputes IDs; raw hash equality is not the covariance criterion.\nOrientation reversal together with current sign reversal leaves the physical\ndirected graph, partition and statuses unchanged. If that representation change\nchanges the declared graph digest, IDs are recomputed from the transported\nbinding. Permuting serialized edge/vertex order likewise preserves semantic\nclassification; neither transformation promises raw hash equality across\ndifferent graph encodings. Covariance here assumes transported represented\noperands. Re-solving after coordinate reordering at finite precision is a\nseparate numerical conformance obligation, not a consequence of this graph proof.\n\nThe new policy must be explicitly bound in a V4 specialization/schema successor;\nit must not be inferred for old complete-model identities. Historical models\nretain their recorded partial support. Migration to the successor re-admits both\nroles and binds the chosen policy. A changed classifier opens a different\nbinding.\n\n**D4/D9 bridge (BIF-3).** These flow-region labels are derived diagnostic\nreferences, not transported physical basin identities. Recomputing them supplies\nno interspace identification. Any use of regions or their changes to define\ncausal state, normalization, hierarchy, events, or cross-state comparisons\ninvoking D4/D9 must satisfy the separately applicable transport and accounting\ncontract, even if there is no direct feedback into current. Equality of a basin\nhash while membership changes cannot authorize comparison of basin-indexed\ncoordinates. An unrelated graph edit can change every graph-scoped hash without\nestablishing physical basin birth.\n\nThe schema successor marks this field as derived and cannot silently overwrite\nolder snapshot meaning. Reject unreviewed use of these labels as an authoritative\nadmission, spark or writer input. Do not emit physical events for harmless\ndiagnostic relabeling. Ambiguous, quiescent and recirculating observations remain\nsuccessful diagnostic results; a classifier/serialization error is different.",
+                "design_section": "### 4. Identity and public representation"
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "required"
+            ],
+            "support_disposition": [
+              "required"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRCV4-P9-10.1a-BASIN-v1",
+            "record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+            "source_json_pointer": "/contracts/3",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:44bec525fe204d534ffeaa1519198c87fb0b1dfa6154bba7fc84d06d929359a1",
+              "source": "equation_contract:P9-EC-GRC9-BASIN-IDENTITY",
+              "target": "normative_object:P9-O-GRC9-BASIN-DIAGNOSTIC",
+              "relation": "parent_object",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/contracts/3/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:af7329338205863e866d0d3b91ae0f44cad0cdc5d5ef31c748ed0e08c4773921",
+              "source": "equation_contract:P9-EC-GRC9-BASIN-IDENTITY",
+              "target": "current_claim:P9-10.1a-CL-N-BASIN-001",
+              "relation": "accepted_claim",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/contracts/3/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:bf468d6d7e1fa5ee0851d5938734021ff86a6de887db2cfb1eb7c126b217acc2",
+              "source": "equation_contract:P9-EC-GRC9-BASIN-IDENTITY",
+              "target": "source_record:10529ccdfaf31e55a319913ea859838bffd85c560dbe60007463786224ff58e0",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/contracts/3"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "c487e1a54096f32334199db24ac5e54389cf7ae7ae2f607d15c399e7621e43c8",
+      "authority_extension_digest": "b166c00b8ff646c072cb6ddc1187bc975931488f9a0f84f81a7a4ad84ada975c"
+    },
+    "P9-10.1a-DEBT-BASIN-IDENTITY": {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "debt_lifecycle",
+      "query": {
+        "debt_id": "P9-10.1a-DEBT-BASIN-IDENTITY"
+      },
+      "source_bundle_digest": "9aecc255aae05f01106a902291635a43c880aeedfde3bb615a1868fe38dcacd3",
+      "graph_digest": "158b238cf790d01805f1b210cc76d989567b7918d50e6358f4a9bf30843cba03",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 2,
+      "rows": [
+        {
+          "row_id": "P9-10.1a-DEBT-BASIN-IDENTITY",
+          "classification": "The missing baseline membership/identity contract is closed by this accepted successor. Native implementation and lifecycle conformance remain open.",
+          "payload": {
+            "debt_id": "P9-10.1a-DEBT-BASIN-IDENTITY",
+            "status": "resolved_bounded_design",
+            "origin": "P9-9.6 basin_surface; source-audit open debt preserved at its original revision",
+            "transformation": "The missing baseline membership/identity contract is closed by this accepted successor. Native implementation and lifecycle conformance remain open.",
+            "successor_claim_ids": [
+              "P9-10.1a-CL-N-BASIN-001"
+            ],
+            "verification_obligation": "P9-10.1a-VO-BASIN-NATIVE",
+            "remaining_work": [
+              "native_interface_and_lifecycle_conformance",
+              "P9-10.1c_support_reconciliation"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRCV4-P9-10.1a-BASIN-v1",
+            "record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+            "source_json_pointer": "/debt",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:43d594a06655a1f2f1bfd6625378ce8df8b6ff73f55c36de6e5b199869761130",
+              "source": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "target": "source_record:10529ccdfaf31e55a319913ea859838bffd85c560dbe60007463786224ff58e0",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/debt"
+            },
+            {
+              "edge_id": "propagation:5e1f5cfe7834b8ffcca97247fe01228487aef21299736eea4368e7c68cb33f30",
+              "source": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "target": "verification_obligation:P9-10.1a-VO-BASIN-NATIVE",
+              "relation": "verification_obligation",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/debt/verification_obligation"
+            },
+            {
+              "edge_id": "propagation:77b0b2504a317526464f852daa74c032cde7c31ffbcd96e390213e5c06383fac",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-HYBRID-SPARK",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/1"
+            },
+            {
+              "edge_id": "propagation:9f9f0322065f18f8c6b288af47279fff18353ca032d969ae4ac410cc5d15008d",
+              "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/4"
+            },
+            {
+              "edge_id": "propagation:ae4f1a99973f171a2926781c47f1a121fa34284beccbc0d1f8e501aec2622d5d",
+              "source": "equation_contract:D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/2"
+            },
+            {
+              "edge_id": "propagation:b359dd110ffb27a53e02516c949b84beee7a645e5daf881d42ef5bfa0dab4f82",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/5"
+            },
+            {
+              "edge_id": "propagation:b579cb0428f22c2fc6928bb5258efe5b7a16e9459e0c4e48173642a56ec18ccd",
+              "source": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "target": "current_claim:P9-10.1a-CL-N-BASIN-001",
+              "relation": "resolved_bounded_by",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/debt/successor_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:c9cf03304fc78efc48c96b0ff8b390b3062fd104f8f762075e1e9ad57a35efdd",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-DISABLED-LIFECYCLE",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/3"
+            },
+            {
+              "edge_id": "propagation:d70355e95fc938dae26d77e34308d5b710f6c89957e8b80398b98d38b77f0e78",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL",
+              "target": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "relation": "exposed_authority_gap",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/source_contract_ids/0"
+            }
+          ]
+        },
+        {
+          "row_id": "P9-10.1a-VO-BASIN-NATIVE",
+          "classification": "forward_verification_routing",
+          "payload": {
+            "obligation_id": "P9-10.1a-VO-BASIN-NATIVE",
+            "status": "pending_forward",
+            "obligation": "Implement the propagated successor for C_OS/C_CI/A_CI/A_PC; prove one captured fresh read, strict seed boundaries, exact observation replay vs new observation, both-role reset/load/migration/expansion and full rollback. Keep historical identifiers and disabled semantics unchanged.",
+            "support_semantics": "not_applicable"
+          },
+          "source_ref": {
+            "record_id": "GRCV4-P9-10.1a-BASIN-v1",
+            "record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+            "source_json_pointer": "/verification_obligations/0",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:1243c1db6ffe2aa3bee850bab76f783efe1971de154d3ba1d80a5abf89b42102",
+              "source": "verification_obligation:P9-10.1a-VO-BASIN-NATIVE",
+              "target": "source_record:10529ccdfaf31e55a319913ea859838bffd85c560dbe60007463786224ff58e0",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/verification_obligations/0"
+            },
+            {
+              "edge_id": "propagation:5e1f5cfe7834b8ffcca97247fe01228487aef21299736eea4368e7c68cb33f30",
+              "source": "debt_transformation:P9-10.1a-DEBT-BASIN-IDENTITY",
+              "target": "verification_obligation:P9-10.1a-VO-BASIN-NATIVE",
+              "relation": "verification_obligation",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-10.1a-BASIN-v1",
+              "source_record_digest": "409e503e1ba880e2ab17a61f93f950e1a3e3116619561f19e70df9f0fc5eef28",
+              "source_json_pointer": "/debt/verification_obligation"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "d2b278560f64fe0d084903ddd1ee665b72192e4c40cea9e53ca09f9cec2ff800",
+      "authority_extension_digest": "b166c00b8ff646c072cb6ddc1187bc975931488f9a0f84f81a7a4ad84ada975c"
+    }
+  },
+  "exact_predicate_controls": [
+    {
+      "case": "valid",
+      "expected_seed": true,
+      "represented_gradient": [
+        "-0x1.0000000000000p-3",
+        "-0x1.0000000000000p-3",
+        "-0x1.0000000000000p-3"
+      ],
+      "gradient_tolerance": "0x1.0000000000000p-1",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": -1
+    },
+    {
+      "case": "hessian_equality",
+      "expected_seed": false,
+      "represented_gradient": [
+        "-0x1.0000000000000p-4",
+        "-0x1.0000000000000p-4",
+        "-0x1.0000000000000p-4"
+      ],
+      "gradient_tolerance": "0x1.0000000000000p-1",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": -1
+    },
+    {
+      "case": "norm_equality",
+      "expected_seed": false,
+      "represented_gradient": [
+        "-0x1.0000000000000p-3",
+        "-0x1.0000000000000p-2",
+        "-0x1.0000000000000p-2"
+      ],
+      "gradient_tolerance": "0x1.8000000000000p-2",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": -1
+    },
+    {
+      "case": "norm_just_inside",
+      "expected_seed": true,
+      "represented_gradient": [
+        "-0x1.0000000000000p-3",
+        "-0x1.0000000000000p-2",
+        "-0x1.0000000000000p-2"
+      ],
+      "gradient_tolerance": "0x1.8000000000001p-2",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": -1
+    },
+    {
+      "case": "norm_just_outside",
+      "expected_seed": false,
+      "represented_gradient": [
+        "-0x1.0000000000000p-3",
+        "-0x1.0000000000000p-2",
+        "-0x1.0000000000000p-2"
+      ],
+      "gradient_tolerance": "0x1.7ffffffffffffp-2",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": -1
+    },
+    {
+      "case": "missing_row",
+      "expected_seed": false,
+      "represented_gradient": [
+        "-0x1.0000000000000p-3",
+        "-0x1.0000000000000p-3",
+        "0x0.0p+0"
+      ],
+      "gradient_tolerance": "0x1.0000000000000p-1",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": -1
+    },
+    {
+      "case": "wrong_polarity",
+      "expected_seed": false,
+      "represented_gradient": [
+        "0x1.0000000000000p-3",
+        "0x1.0000000000000p-3",
+        "0x1.0000000000000p-3"
+      ],
+      "gradient_tolerance": "0x1.0000000000000p-1",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": -1
+    },
+    {
+      "case": "opposite_declared_sign",
+      "expected_seed": true,
+      "represented_gradient": [
+        "0x1.0000000000000p-3",
+        "0x1.0000000000000p-3",
+        "0x1.0000000000000p-3"
+      ],
+      "gradient_tolerance": "0x1.0000000000000p-1",
+      "hessian_tolerance": "0x1.0000000000000p-4",
+      "hessian_sign": 1
+    },
+    {
+      "case": "incompatible_thresholds",
+      "expected_seed": false,
+      "represented_gradient": [
+        "-0x1.8000000000000p-1",
+        "-0x1.8000000000000p-1",
+        "-0x1.8000000000000p-1"
+      ],
+      "gradient_tolerance": "0x1.0000000000000p-1",
+      "hessian_tolerance": "0x1.0000000000000p-1",
+      "hessian_sign": -1
+    }
+  ],
+  "example_exclusions": [
+    {
+      "family": "A_CI",
+      "model_identity": "grc9v4-model-sha256:690f97fb7458e5e2f7ec22ab1c817a15c980c08fff17b62acd10687ce1ae4156",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:561259cf315c4ef8b4fa9867cf1d7a53fd69c8f43523a0fe71b8767c9e67f0a3",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/core",
+        "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/1",
+        "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/2",
+        "grc-event-sha256:f4a2ac2a88065046de3f674ddbb078adb970f8e1689c5e7af5be08794ceacc55/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "A_CI_PC",
+      "model_identity": "grc9v4-model-sha256:8955ec832367579159c74148a25d3dd8029007e0e40a381576e2f28d1e7b6243",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:f08b8f96bc7a90d2c745ccc4a34ad8c49c400b304166da41b180f2e72e2c712a",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:0b795c43efe656cea7e9c455e4f8a0520d427531a11c0a52238fb5cd459aa6c5/core",
+        "grc-event-sha256:0b795c43efe656cea7e9c455e4f8a0520d427531a11c0a52238fb5cd459aa6c5/satellite/1",
+        "grc-event-sha256:0b795c43efe656cea7e9c455e4f8a0520d427531a11c0a52238fb5cd459aa6c5/satellite/2",
+        "grc-event-sha256:0b795c43efe656cea7e9c455e4f8a0520d427531a11c0a52238fb5cd459aa6c5/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "A_OS",
+      "model_identity": "grc9v4-model-sha256:0aa199e24cc08dc2d627c18a264dcd25a0db46c7f6704a1296f4c7e9983f5463",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:3838e72b1f9898804d4b5b106cc3d5d2fa87fbf63b8aa8d7ece2944b66d82262",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:52f3de8b4272f1cb70ff4180a38994a9c97e16488a635c59cbf818785d416cc0/core",
+        "grc-event-sha256:52f3de8b4272f1cb70ff4180a38994a9c97e16488a635c59cbf818785d416cc0/satellite/1",
+        "grc-event-sha256:52f3de8b4272f1cb70ff4180a38994a9c97e16488a635c59cbf818785d416cc0/satellite/2",
+        "grc-event-sha256:52f3de8b4272f1cb70ff4180a38994a9c97e16488a635c59cbf818785d416cc0/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "A_PC",
+      "model_identity": "grc9v4-model-sha256:8c471ba71f07f507eabc10431716f82f57ae51209e3c479b85a7d0901ddf76d5",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:a89c3c6b384f5791542799de1190f647bbb1b8a439a6cd951ea5354a73e9a91f",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:65669bb10e8c04f007f0c3ace130c2f41a5a2f3f2dc599014fbd4de57844fea9/core",
+        "grc-event-sha256:65669bb10e8c04f007f0c3ace130c2f41a5a2f3f2dc599014fbd4de57844fea9/satellite/1",
+        "grc-event-sha256:65669bb10e8c04f007f0c3ace130c2f41a5a2f3f2dc599014fbd4de57844fea9/satellite/2",
+        "grc-event-sha256:65669bb10e8c04f007f0c3ace130c2f41a5a2f3f2dc599014fbd4de57844fea9/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "A_RG2b",
+      "model_identity": "grc9v4-model-sha256:dd28f291b4a66ce816456868f572198d7872e665478d9473d360ddfe30169fbd",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:ca997ddff533c377062d39fd45804e02442b9e98c4a4185d56e2973f332d64bc",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:78d114eea980069f348d2780b11a274ae565a0e9bd319fa32f3c79f839813157/core",
+        "grc-event-sha256:78d114eea980069f348d2780b11a274ae565a0e9bd319fa32f3c79f839813157/satellite/1",
+        "grc-event-sha256:78d114eea980069f348d2780b11a274ae565a0e9bd319fa32f3c79f839813157/satellite/2",
+        "grc-event-sha256:78d114eea980069f348d2780b11a274ae565a0e9bd319fa32f3c79f839813157/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "C_CI",
+      "model_identity": "grc9v4-model-sha256:a962a7e7a0ceb51d7a25b187b030444cfccef72e7fdbd57f4a79b874daabf637",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:738b4893a2716bb60be5268b37cb0408c886c8efca0d3b0049032e2db3f4ce88",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:7a2af2b31f7df7d699b945966f9507cef2432b82d307eb81296dc1492540e75f/core",
+        "grc-event-sha256:7a2af2b31f7df7d699b945966f9507cef2432b82d307eb81296dc1492540e75f/satellite/1",
+        "grc-event-sha256:7a2af2b31f7df7d699b945966f9507cef2432b82d307eb81296dc1492540e75f/satellite/2",
+        "grc-event-sha256:7a2af2b31f7df7d699b945966f9507cef2432b82d307eb81296dc1492540e75f/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "C_CI_PC",
+      "model_identity": "grc9v4-model-sha256:b73291164e08b6d8044f88c3dc543b16c764a3052be501bcfc28282d6cd164cb",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:480ef18ade46a7dd66f3e5490f96ce2d5b149611dd6ebe4b53d0c167db01a79b",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:becf7f535056dc9189373cbcfad18d8f4da761d801dccb1682626faa2121f108/core",
+        "grc-event-sha256:becf7f535056dc9189373cbcfad18d8f4da761d801dccb1682626faa2121f108/satellite/1",
+        "grc-event-sha256:becf7f535056dc9189373cbcfad18d8f4da761d801dccb1682626faa2121f108/satellite/2",
+        "grc-event-sha256:becf7f535056dc9189373cbcfad18d8f4da761d801dccb1682626faa2121f108/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "C_OS",
+      "model_identity": "grc9v4-model-sha256:910f6d4a714d1e8b576fc0537f0641ea5d023a08aeae86122905771c1abe6408",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:b7a3eaa92ed3ec15e7bf953852739318165b98606f45753f7715eeb1b6bdfe42",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/core",
+        "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/1",
+        "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/2",
+        "grc-event-sha256:6db74a08973ba98381ed9689caf526a3fb5d337a0f48daa9c73d153ba674ffd5/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "C_PC",
+      "model_identity": "grc9v4-model-sha256:562a08909dadc90d769682dae18a24640d5eb106f5a93c5f155d574508acc79f",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:1daf6eeb8e6acc5fe4766dc85f3031c12c6085e331da49d520021e66cc505206",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/core",
+        "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/1",
+        "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/2",
+        "grc-event-sha256:982ddd3219ff9d52fbfeddc8d72b7beda369234723311226fab53ff3eda2609f/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    },
+    {
+      "family": "C_RG2b",
+      "model_identity": "grc9v4-model-sha256:78a8e7e4593f599f07892eb41c365c9dbc971019529e356e26dc12cc465f793f",
+      "gradient_tolerance": "1/2",
+      "hessian_tolerance": "1/2",
+      "threshold_slack": "-1/2",
+      "seed_possible_under_frozen_thresholds": false,
+      "target_model_identity": "grc9v4-model-sha256:041a71b1c432277bf70b9bdc7a1dde4e69c4310c42f70f42e7df12c23b34e230",
+      "target_node_count": 17,
+      "target_nodes_with_all_three_rows": [
+        "grc-event-sha256:98ea8f82cc27632f2c7fe85754241119345cbfe62c94a1b6c6302351e9f0ac79/core",
+        "grc-event-sha256:98ea8f82cc27632f2c7fe85754241119345cbfe62c94a1b6c6302351e9f0ac79/satellite/1",
+        "grc-event-sha256:98ea8f82cc27632f2c7fe85754241119345cbfe62c94a1b6c6302351e9f0ac79/satellite/2",
+        "grc-event-sha256:98ea8f82cc27632f2c7fe85754241119345cbfe62c94a1b6c6302351e9f0ac79/satellite/3"
+      ],
+      "target_nodes_excluded_by_empty_row": 13,
+      "retained_target_seed_count": 0,
+      "observation_scope": "one retained post-expansion current-role sample"
+    }
+  ],
+  "positive_seed_control": {
+    "seed_nodes": [
+      "s"
+    ],
+    "topology_events": 0,
+    "changed_specialization_identity": true,
+    "observation_scope": "retained isolated C_OS seed; no child gain or temporal claim"
+  },
+  "limits": [
+    "Free real row-vector feasibility is not graph/state reachability.",
+    "Strict threshold feasibility does not guarantee a binary64 witness.",
+    "Retained-example extraction is not a native rerun or independent root certificate.",
+    "No exclusion of flow-only or other separately justified completion policies.",
+    "No dynamic child formation, persistence or attraction result."
+  ]
+}

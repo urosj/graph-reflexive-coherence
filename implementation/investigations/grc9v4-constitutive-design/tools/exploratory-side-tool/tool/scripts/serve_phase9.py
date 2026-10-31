@@ -17,6 +17,8 @@ from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 from grcv4_explorer.abundance import abundance_authority  # noqa: E402
 from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
 from grcv4_explorer.basin import basin_authority, basin_source  # noqa: E402
+from grcv4_explorer.spark_completion import spark_completion_authority, spark_completion_source
+from grcv4_explorer.spark_applicability import spark_applicability_authority, spark_applicability_source
 from grcv4_explorer.basin_native import basin_native_status, basin_native_source
 from grcv4_explorer.target_compatibility import target_compatibility_status, target_compatibility_source
 from grcv4_explorer.tranche10_support import tranche10_support_status, tranche10_support_source
@@ -111,6 +113,37 @@ class Handler(BaseHTTPRequestHandler):
                     view = {"targets": target_compatibility_status, "support": tranche10_support_status,
                             "verification": tranche10_verification_status, "regressions": tranche10_regressions_status, "examples": tranche10_examples_status}[request.path.split("/")[3]]
                     content = json.dumps(view(root)).encode()
+                self.send_response(200)
+                if request.path.endswith("/source"):
+                    self.send_header("X-Evidence-SHA256", ref["sha256"])
+            except KeyError as error:
+                self.send_response(404)
+                content = json.dumps({"error": str(error)}).encode()
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error)}).encode()
+            self.send_header("Content-Type", "application/octet-stream" if request.path.endswith("/source") else "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if request.path in {"/api/spark-completion", "/api/spark-completion/source",
+                            "/api/spark-completion/applicability", "/api/spark-completion/applicability/source"}:
+            try:
+                query = parse_qs(request.query, strict_parsing=True)
+                root = repository_root()
+                applicability = request.path.startswith("/api/spark-completion/applicability")
+                authority_reader = spark_applicability_authority if applicability else spark_completion_authority
+                source_reader = spark_applicability_source if applicability else spark_completion_source
+                if not request.path.endswith("/source"):
+                    if query:
+                        raise KeyError("spark-completion authority has fixed scope")
+                    content = json.dumps(authority_reader(root, TOOL.parent)).encode()
+                else:
+                    if set(query) != {"path"} or len(query["path"]) != 1:
+                        raise KeyError("one indexed source path required")
+                    content, ref = source_reader(root, TOOL.parent, query["path"][0])
                 self.send_response(200)
                 if request.path.endswith("/source"):
                     self.send_header("X-Evidence-SHA256", ref["sha256"])
@@ -273,7 +306,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -293,6 +326,8 @@ class Handler(BaseHTTPRequestHandler):
                     "tranche8-end.js": "text/javascript",
                     "tranche9.js": "text/javascript",
                     "basin.js": "text/javascript",
+                    "spark-completion.js": "text/javascript",
+                    "spark-applicability.js": "text/javascript",
                     "target-compatibility.js": "text/javascript",
                     "tranche10-support.js": "text/javascript",
                     "tranche10-regressions.js": "text/javascript",

@@ -1,0 +1,50 @@
+{
+  "schema": "grc9v4-spark-completion-source-manifest-v1",
+  "authority_record_digest": "dd2583ca6b0192c9f72f15ed1c01d82b5c2a9de95da9583cbaeafe2530684383",
+  "accepted_research_commit": "4076a440",
+  "contract_ids": [
+    "SC-EC-GEOMETRIC-IDENTITY",
+    "SC-EC-PARENT-GAIN",
+    "SC-EC-FULL-STATE-RETURN",
+    "SC-EC-QUARTIC-SITE",
+    "SC-EC-REPRESENTED-COMPLETION",
+    "SC-EC-WINDOW-LIFECYCLE",
+    "SC-EC-COMPLETION-SCHEMA",
+    "SC-EC-SCIENTIFIC-CEILING"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+      "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC3Authority.md",
+      "sha256": "33eda9d7319b0bb6a14750c5f48eb6c012beeadead65d524efff2a7c02132f62"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-proposal.md",
+      "sha256": "22c55f7045ca83cceb2aeae1213f46129dee14296bd8d909f6449049129e6e96"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion.md",
+      "sha256": "c9961c9ecb1ad522b04b57550cff1b394069690ed693a0bcb68fcf4228b9b117"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion.md",
+      "sha256": "77753f457659730a8f8897c01ca33e594394836d8d37cf9e710cf9573609d849"
+    },
+    {
+      "stage": "schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "1e3fd782f52c8d798f31827208b1a4815510be1d891fe857cb3ad4387b1bf1c0"
+}

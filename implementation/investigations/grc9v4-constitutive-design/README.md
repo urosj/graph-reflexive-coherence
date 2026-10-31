@@ -3,6 +3,44 @@
 **Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
 **Exploration surface:** ET-C9 accepted as a bounded read-only exploratory tool
 
+**Current continuation — 2026-10-31:** [C_CI SC-3 is complete](./decisions/SparkCompletionCCISC3Authority.md)
+for bounded scientific applicability. Three conditional claims and the research
+debt are adjudicated; authority → proposal → paper → specification and the
+side-tool successor are bound. The original C_OS authority remains intact.
+The [current ledger](./evidence/spark-completion/applicability/ClaimDebtLedger.json)
+now has accepted bounded C_OS/C_CI constructions and eight open family debts.
+The independent review's limits and saved-root overlap-consistency caveat remain
+explicit. Native numerical/lifecycle obligations are routed to P9-9.1a.
+**Next is C_PC**, including the complete C/Z state, carrier writes and actual
+transfer. Then C_CI_PC → A_OS → A_CI → A_PC → A_CI_PC → C_RG2b → A_RG2b.
+No all-ten completion or native/G4 grant follows from these two constructions.
+
+## Accepted predecessor — C_OS spark completion, 2026-10-31
+
+SC-1–SC-3 are closed at bounded scientific/design scope. The user accepted the
+[complete C_OS research witness](./evidence/spark-completion/SC2Acceptance.json)
+at `4076a440`: actual source beat, fresh parent/event capture, D11 transfer,
+positive target entry into a full-map trap and one new stable child at step 902.
+The [SC-3 authority](./decisions/SparkCompletionSC3Authority.md) and
+[current claim/debt ledger](./decisions/spark-completion/Authority.json) admit the
+optional geometric criterion and homogeneous quartic binding, preserve conditional
+claim classes, and route native numerical/lifecycle obligations forward.
+
+Authority → [proposal](./drafts/GRC9V4-spark-completion-proposal.md) →
+[paper](./drafts/2026-10-GRC9V4-Spark-Completion.md) →
+[specification/schema](../../../specs/grc-9-v4-spark-completion.md) is complete.
+The [research reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
+records the contribution to P9-10.5/10.6. Native P9-9.1a follows separately;
+native completion, hierarchy and G4 remain pending. No all-ten completion,
+general topology-selection or arbitrary-parameter claim is added.
+
+Historical ledgers, original paper/spec bytes, zero-site exclusions and negative
+controls are preserved. Existing accepted ten-family native support is unchanged.
+The explicit side-tool SC-3 loader/API/browser/notebook exposes seven classified
+claims, eight contracts and five bounded debt transformations. Querying it checks
+retained authority and propagation, without rerunning the numerical witness.
+
+
 ## Current ATC scope and next scientific direction — 2026-09-24
 
 The ATC investigation has established bounded source-conditioned binary-fission

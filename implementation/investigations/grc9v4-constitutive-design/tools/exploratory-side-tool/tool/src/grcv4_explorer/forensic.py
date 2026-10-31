@@ -419,7 +419,16 @@ def debt_lifecycle(context: ForensicContext, debt_id: str) -> dict[str, Any]:
         )
     ]
     obligation_id = payload.get("verification_obligation")
-    if isinstance(obligation_id, str):
+    obligation_ids = [obligation_id] if isinstance(obligation_id, str) else []
+    # Successor debts can carry several independent forward obligations.
+    # Keep the original singular representation and its trace unchanged.
+    additional = payload.get("verification_obligation_ids", [])
+    if not isinstance(additional, list) or any(not isinstance(item, str) for item in additional):
+        raise SourceAdmissionError(f"malformed forward obligations: {debt_id}")
+    obligation_ids.extend(additional)
+    if len(set(obligation_ids)) != len(obligation_ids):
+        raise SourceAdmissionError(f"duplicate forward obligations: {debt_id}")
+    for obligation_id in obligation_ids:
         obligation_node = f"verification_obligation:{obligation_id}"
         for source in context.documents:
             for obligation_pointer, obligation in _matching_rows(

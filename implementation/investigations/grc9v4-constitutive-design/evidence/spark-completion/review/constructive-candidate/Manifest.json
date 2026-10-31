@@ -1,0 +1,35 @@
+{
+  "status": "supplied_exploratory_candidate_not_certificate",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "534fb5a7c67364399049fde1363bf8391c7ded255fe3c9c5cece688139119a63"
+    },
+    {
+      "path": "high_precision_check.py",
+      "sha256": "1afd20bae672b523cc282918a95134b1e71164530185359fe77c73f90b5816f7"
+    },
+    {
+      "path": "high_precision_results.json",
+      "sha256": "71ff3411b84413370e62c07980de35e7413a90c3f7debef81dddf19d7fa657af"
+    },
+    {
+      "path": "positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "positive_candidate_results.json.xz",
+      "sha256": "21699bf6b2d38ea10bd19107c5a536de997aadfb3b29ae556f2535f4c6cc6286"
+    },
+    {
+      "path": "private_neighbor_matched_control.json",
+      "sha256": "483238790b8ba5ba0cb13329c6ccba5c74afcea32042f9dc597bf943df3f88e3"
+    },
+    {
+      "path": "retained_failure_crosscheck.json",
+      "sha256": "6671093b346dae3cbaa84fc439077df90fd57b6cc4717deb168012aac3c973e5"
+    }
+  ],
+  "omitted": "Exploratory trial arrays; construction rationale and discovery counts retained in README.",
+  "portable_adaptations": "Selected result is xz-compressed; supplied binary64 producer writes the same compressed JSON; README identifies omitted exploration arrays."
+}

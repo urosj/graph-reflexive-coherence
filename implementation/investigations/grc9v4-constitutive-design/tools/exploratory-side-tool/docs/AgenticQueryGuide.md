@@ -940,6 +940,152 @@ does not remove them, promote D10.2 indeterminate traces or grant full conforman
 
 ## P9-10.1a accepted baseline basin diagnostic authority
 
+### Current family applicability after SC-3
+
+C_OS and C_CI now have separately accepted bounded scientific completion
+constructions. The [research ledger](../../../evidence/spark-completion/applicability/ClaimDebtLedger.json)
+tracks eight remaining family debts; C_PC is next. The
+[admitted applicability source](../../../decisions/spark-completion-applicability/Authority.json)
+adds three conditional C_CI claims and preserves both forward native obligations.
+Use the explicit successor context:
+
+```python
+from grcv4_explorer.spark_applicability import load_spark_applicability_forensic_context
+from grcv4_explorer.forensic import contract_provenance, debt_lifecycle
+context = load_spark_applicability_forensic_context(repo_root, side_tool_root)
+contract_provenance(context, "SC-CCI-EC-JOINT-ROOT")
+debt_lifecycle(context, "SC-APP-DEBT-C_CI")
+```
+
+HTTP: `/api/spark-completion/applicability`; the Phase 9 browser has a family
+applicability panel and the notebook has `spark-completion-applicability`.
+Both forward numerical/lifecycle obligations remain pending; no native or G4
+grant is made. Saved/fresh root overlap is consistency only. The review did not
+independently regenerate the full interval Jacobian or long recurrence.
+Historical loaders and `/api/spark-completion` retain the accepted C_OS scope.
+Typed predecessor traces retain their original indeterminate classifications;
+new C_CI authority does not rewrite them.
+
+### Current SC-3 scientific authority
+
+SC-1–SC-3 are scientifically closed for the declared C_OS construction. The
+quartic binding and geometric criterion are now selected and propagated; native
+completion/hierarchy and G4 remain pending. Use this explicit successor loader:
+
+```python
+from grcv4_explorer.spark_completion import load_spark_completion_forensic_context
+from grcv4_explorer.forensic import contract_provenance, debt_lifecycle, reconstruction_path
+context = load_spark_completion_forensic_context(repo_root, side_tool_root)
+contract_provenance(context, "SC-EC-FULL-STATE-RETURN")
+debt_lifecycle(context, "SC-DEBT-STABILITY")
+reconstruction_path(context, "SC2-CL-C-EXACT-SPARK-COMPLETION")
+```
+
+The API `/api/spark-completion`, browser panel and notebook cell expose the same
+classified traces and exact bound sources, including the new paper/specification.
+The loader preserves previous graph loaders and does not promote historical
+indeterminate D10.2 references. `scripts/check_spark_completion_sc3.py --check`
+checks authority/propagation/research reconciliation, without numerical execution.
+The five successor debt dispositions resolve bounded science/design and retain
+native verification. Use `decisions/spark-completion/Authority.json` as the current
+ledger. Historical research stages below retain their own pre-admission flags;
+they are provenance, not the current support disposition.
+
+### Historical scientific research stages
+
+The [spark-completion research opening](../../../decisions/SparkCompletionDefinitionAndFeasibility.md)
+(2026-10-31) consumes this accepted context without extending it. Its new
+provisional claims/debts live in the linked research ledger, not in the accepted
+query graph. Reproduce its five typed provenance/debt queries and small exact
+screen with `scripts/check_spark_completion_feasibility.py --check` from the
+investigation, using the full repository-relative script path from the repository
+root. Do not interpret the baseline basin ceiling as completion authority or
+reopen the resolved diagnostic-design debt. New completion authority and its
+API/browser/notebook exposure require consolidated scientific adjudication and
+explicit successor admission, propagation and applicable conformance.
+
+The [SC-1 candidate](../../../decisions/SparkCompletionSC1Contract.md) adds
+sixteen continuity/staging, completion/row, basin/seed and A/C constitutive
+authority queries, with
+exact pressure through `scripts/check_spark_completion_sc1.py --check`.
+The proposed geometric-basin identity rule, spatial-attraction lemma and
+conditional full-state completion theorem remain outside the accepted graph.
+The successor ledger records the supplied SC-1 definition without closing debts
+or treating a CI solver contraction as contraction of the ordinary state update.
+The [SC-1 adjudication](../../../decisions/SparkCompletionSC1Adjudication.md)
+subsequently selects this bounded scientific definition and conditional A.7 bridge.
+Its [successor ledger](../../../evidence/spark-completion/SC1Adjudication.json)
+resolves only the organization-definition portion; the prior ledger/evidence
+remain unchanged. Reproduce its bindings and scope with
+`scripts/check_spark_completion_sc1_adjudication.py --check` (use the full
+repository-relative path from the root). These IDs are local research decisions,
+not accepted query-graph nodes. SC-3 must perform the authority/schema successor
+admission; do not publish new completion support through API/browser/notebook
+from this selection alone.
+The [SC-1 pressure resolution](../../../decisions/SparkCompletionSC1EquilibriumExclusion.md)
+records the conditional mathematical pass and the scoped equilibrium exclusion.
+Its 112 retained-declaration checks are not native reruns; proposed exclusion
+claims are not accepted graph nodes. Mathematical review does not grant
+completion support or invalidate prior finite-horizon mechanical evidence.
+
+The [SC-2 mechanism proposal](../../../decisions/SparkCompletionSC2MechanismAnalysis.md)
+and `scripts/check_spark_completion_sc2.py --check` trace the existing potential,
+geometry, Read-Back and staging contracts. The homogeneous nonlinear site
+binding, equilibrium and local-return claims remain proposed research, not
+queryable accepted nodes or enabled native evaluators. Do not promote the
+existing equation's site-potential parameter into arbitrary evaluator authority.
+The [SC-2 review](../../../evidence/spark-completion/review/SC2ScientificPressureReview.md)
+passes the conditional mathematics; it does not admit the binding. Local checks
+reproduce 120 stable branch boxes and a no-basin control, while the review's
+physical-box escape remains an attributed result without a local execution
+package. Source/event reachability and completion debts remain open.
+The [SC-2 event preflight](../../../decisions/SparkCompletionSC2EventCompatibility.md)
+adds nine typed source queries plus exact parent/port/charge checks on both
+chiral D11 targets. Use `scripts/check_spark_completion_event_preflight.py --check`.
+Its local claims remain proposed and outside the accepted graph. Allocation-kernel
+execution and conditional target equilibrium bounds are not a committed event,
+constitutive admission or organized-branch entry. The D10.2 provenance remains
+indeterminate; the D11 mechanics retain their accepted bounded support.
+The [SC-2 continuation successor](../../../decisions/SparkCompletionSC2Continuation.md)
+and [record](../../../evidence/spark-completion/SC2Continuation.json) retain the
+original strict-split exclusion and one declared mobility/duration companion.
+Its 128 enclosed exact-equation steps per role have no organizing gain in either
+chiral chart. `scripts/check_spark_completion_continuation.py --check` recomputes
+that bounded evidence and source bindings. Its local claim handles are research
+only, not newly queryable accepted nodes. SC-1 stays closed; no completion debt,
+site binding, native support or G4 gate is closed by this result.
+The [constructive successor](../../../decisions/SparkCompletionSC2PositiveCandidate.md)
+adds positive exact-equation target entry and a quantitative full-map trap for
+a declared charge-21 preparation. Local handles `SC2-CL-C-POSITIVE-D11-ENTRY`
+and `SC2-CL-C-FULL-OS-TRAP` remain conditional research outside the accepted
+graph. Its compressed record distinguishes the checked target result from the
+open ordinary-beat/fresh-source link and downstream native numerical/lifecycle
+work. `scripts/check_spark_completion_positive.py --check` recomputes allocation
+and trapping math; `--rerun` additionally replays the enclosed trajectories.
+The [ordinary-source successor](../../../decisions/SparkCompletionSC2SourceBeat.md)
+now establishes that formerly open source link: one exact ordinary beat, fresh
+capture, unchanged reset, actual current transfer and organized trap entry.
+Use `scripts/check_spark_completion_source_beat.py --check` for exact source
+recomputation/bindings, or `--rerun` for the changed current-target path as well.
+Its four forensic traces retain their existing authority dispositions. Local
+handles `SC2-CL-C-ORDINARY-SOURCE-LINK` and `SC2-CL-C-SOURCE-EVENT-TRAP-CHAIN`
+are conditional research ready for adjudication, not accepted graph additions
+or native completion support. No debt is silently closed by the execution record.
+The [independent target review](../../../evidence/spark-completion/review/SC2PositiveScientificPressureReview.md)
+passes the predecessor's target mathematics, not the later source-chain adjudication.
+Both fast checkers now recompute entry distance from saved coordinates and fresh
+metric, check complete checkpoint basins, and require both chart keys at every
+observation. These retained-consistency checks do not replay the long recurrence;
+use `--rerun` for that. Local research claims retain their existing status.
+The [complete witness](../../../decisions/SparkCompletionSC2CompleteWitness.md)
+adds a two-beat enclosed current window and an event-bound research completion
+decision: one new stable child, local gain one, no additional replay gain.
+`scripts/check_spark_completion_complete.py --check` executes that short window
+and its composition controls while reusing the bound long approach/reset.
+`SC2-CL-C-EXACT-SPARK-COMPLETION` and its scientific debt progress are recorded in
+`evidence/spark-completion/SC2CompleteWitness.json`; they are local conditional
+research, not accepted forensic nodes or native completed-spark support.
+
 Use the explicit basin successor context. It preserves the pre-basin and ATC
 loaders and their historical pins; it does not silently enlarge those views.
 The accepted source is in the separately inventoried `decisions/p9-basin-interface/`

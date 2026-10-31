@@ -1,0 +1,76 @@
+{
+  "schema": "grc9v4-spark-sc2-acceptance-v1",
+  "date": "2026-10-31",
+  "status": "accepted_bounded_scientific_completion",
+  "user_acceptance": "User accepted the completed research witness and instructed commit, then SC3 and research reconciliation; native implementation follows separately.",
+  "subjects": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Contract.md",
+      "sha256": "5cdfc545a5b48e7832828cac816d80fdd7950919cdb3986932207902af47f04e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Adjudication.json",
+      "sha256": "18b5be5726e19f532334c20740e653d3cca79acbfd2056b91b56396b4747f0e8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2CompleteWitness.md",
+      "sha256": "814200852b09b2bfe4aa97741334628eaed5b9e8366fc4697a134d2ecaf3f5b3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2CompleteWitness.json",
+      "sha256": "0073503ebe1a62393c54ffe66c1832f107b53f6a45ae50a32aa336f41bd52e2b"
+    }
+  ],
+  "witness_record_digest": "6b4a4167ace7af0b31da15dc795272af12bccae7d17ea84096b8b7756bcc5a32",
+  "accepted_claim_id": "SC2-CL-C-EXACT-SPARK-COMPLETION",
+  "scientific_binding": {
+    "family": "C_OS",
+    "site": "V(C)=((C-2)^2-1)^2/4",
+    "equation_binding": {
+      "family": "C_OS",
+      "site": {
+        "c0": "2",
+        "a": "1",
+        "mu": "1"
+      },
+      "eta_C": "1/1024",
+      "duration": "32",
+      "kappa_Phi_C": "1/64",
+      "tau_C": "1",
+      "chi_C": "1/2",
+      "zeta_C": "1/2",
+      "kappa_H": "1/2",
+      "kappa_M_C": "0",
+      "reference_hodges": "identity",
+      "transport_weights": "unit",
+      "context": "constant_zero",
+      "selector_cutoff": "1/64",
+      "split_tolerance": "1/100000000000",
+      "scientific_identity": "SC1 selected geometric child policy; exact charge-21 research state, not native profile/event identity"
+    },
+    "completion_criterion": "grc9v4-certified-geometric-child-basins-v1",
+    "parameter_scope": "the declared exact witness and proved trapping domain; not arbitrary parameters"
+  },
+  "scientific_result": {
+    "target_completion_step": 902,
+    "local_gain": 1,
+    "new_stable_children": 1,
+    "complete_physical_state": "C on exact charge-21 slice; no independent W/Z",
+    "full_map_stability": true,
+    "independent_target_review_does_not_cover_source_successor": true
+  },
+  "scope": {
+    "SC1_closed": true,
+    "SC2_closed": true,
+    "SC3_closed": false,
+    "scientific_binding_selected": true,
+    "accepted_forensic_graph_changed": false,
+    "paper_spec_propagated": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": []
+  },
+  "next": "SC3 authority/schema admission, proposal/paper/spec propagation and research reconciliation; native P9-9.1a separately.",
+  "record_digest": "fa8471ee586f87a33091f756d6f2313ce604f687bd173c277411c38db1c6c5c5"
+}

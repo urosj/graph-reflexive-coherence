@@ -1,0 +1,406 @@
+{
+  "schema": "spark-completion-all-ten-applicability-ledger-v1",
+  "date": "2026-10-31",
+  "predecessor_commit": "765dc6ae",
+  "predecessor_authority": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+  "programme": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md",
+  "criterion": "grc9v4-certified-geometric-child-basins-v1",
+  "accepted_SC1_definition_reopened": false,
+  "accepted_C_OS_result_reopened": false,
+  "disposition_vocabulary": [
+    "accepted_bounded_scientific",
+    "demonstrated_bounded_pending_review",
+    "bounded_obstruction_pending_review",
+    "unresolved_precise_premise",
+    "in_progress",
+    "not_yet_investigated",
+    "reviewed_bounded_pending_adjudication"
+  ],
+  "families": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "carrier read/write and full-state perturbations",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint root plus instantaneous/carrier same-source coupling",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "stationary writer and coupled C/W trap",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint root plus A history",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "both history channels and event dispositions",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint current/geometry/history/carrier map",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "RG section with writer/history perturbations",
+      "native_completion_support": false
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "SC-CCI-CL-C-JOINT-ROOT",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "On the actual source/target graphs, C in [0,4]^V and flat infinity radius1/32 give one joint root in the declared domain.",
+      "limits": [
+        "fixed quartic/parameters/graphs",
+        "not global root uniqueness",
+        "not physical-step stability"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md"
+    },
+    {
+      "claim_id": "SC-CCI-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full CI physical map strictly contracts the reused fourteen-dimensional exact-charge metric ball with certified complete spatial basins.",
+      "limits": [
+        "new implicit derivative proof, not OS trajectory transfer",
+        "does not prove event reachability alone",
+        "no native numerical lift"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md"
+    },
+    {
+      "claim_id": "SC-CCI-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "Actual CI source beat and literal D11 transfer reach the full CI trap at current target step 849 and complete one new stable child at 851; independent reset entry/window at 817/819 earns no live gain.",
+      "limits": [
+        "fixed quartic/parameters/source/target/shares",
+        "exact equations enclosed with fixed 8192-bit Arb",
+        "not earliest mathematical entry or completion",
+        "research accounting, no native implementation",
+        "no applicability assertion for the other eight families"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md"
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-C_CI",
+      "status": "resolved_bounded_scientific",
+      "scope": "completion applicability for C_CI",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "Bounded C_CI scientific applicability adjudicated and propagated",
+      "resolved_research_portions": [
+        "uniform_joint_root_domain",
+        "full_CI_trap",
+        "actual_CI_source_and_fresh_event_root",
+        "literal_D11_transfer",
+        "independent_current_reset_approach_and_entry",
+        "positive_completion_window",
+        "whole_root_and_false_completion_pressure",
+        "independent_bounded_review_with_explicit_limits",
+        "scoped_claim_debt_adjudication",
+        "authority_proposal_paper_spec_propagation"
+      ],
+      "remaining": [],
+      "forward_native_obligation_ids": [
+        "SC-CCI-VO-NATIVE-NUMERICS",
+        "SC-CCI-VO-NATIVE-LIFECYCLE"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-C_PC",
+      "status": "open",
+      "scope": "completion applicability for C_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "carrier read/write and full-state perturbations",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-C_CI_PC",
+      "status": "open",
+      "scope": "completion applicability for C_CI_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "joint root plus instantaneous/carrier same-source coupling",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_OS",
+      "status": "open",
+      "scope": "completion applicability for A_OS",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "stationary writer and coupled C/W trap",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_CI",
+      "status": "open",
+      "scope": "completion applicability for A_CI",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "joint root plus A history",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_PC",
+      "status": "open",
+      "scope": "completion applicability for A_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "both history channels and event dispositions",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_CI_PC",
+      "status": "open",
+      "scope": "completion applicability for A_CI_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "joint current/geometry/history/carrier map",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-C_RG2b",
+      "status": "open",
+      "scope": "completion applicability for C_RG2b",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_RG2b",
+      "status": "open",
+      "scope": "completion applicability for A_RG2b",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "RG section with writer/history perturbations",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    }
+  ],
+  "native_work": "P9-9.1a separate; existing ten-family native support unchanged",
+  "accepted_graph_changed": true,
+  "native_support_added": [],
+  "G4_accepted": false,
+  "next": "C_PC completion applicability, including all C/Z directions; native work separate",
+  "evidence_sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md",
+      "sha256": "0d6adbe989dfbf9021aec299354231ebe6484b2df9b370777912bbf7b8f15b0b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIDeclaration.json",
+      "sha256": "2d06cb3d671655412c31ca335411739f72a6903c81475cba54482fb036ae94f7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AuthorityTraces.json",
+      "sha256": "6011c0a1d8c34a698d55d9261cde84f7227630e52faeba9368830126b9fb39f1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCI-current.json.xz",
+      "sha256": "41039ddec9b0b21a56829df452a213c8e69175f667be9afe1652cf8674983b67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCI-reset.json.xz",
+      "sha256": "17b90d19eb57d8129ec4bcc0f9297edb0f7a4cb9aa79c8923d6feaded4186402"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIChecks.json",
+      "sha256": "cdb117766c54bf9e3b099568283473696b2b4ca7e17e03dcae744c4117897dda"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIIndependentReview.md",
+      "sha256": "909e79b9960d62f9facef84cd392769110ccc6e1446afc865747294d14c17e86"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIScientificAcceptance.json",
+      "sha256": "bbe3b65d93a9a7761582b598b8a52b78264f80659443fde8eecd9054b70ff049"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md",
+      "sha256": "30fc4959a58754d1995801ad27759c143f3ebd23de23c4d3689ee6f2917a65a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+      "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    }
+  ],
+  "independent_review": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIIndependentReview.md",
+    "verdict": "bounded_pass",
+    "retained_positive_states": 1670,
+    "chiral_classifications": 3340,
+    "distinct_joint_root_subjects": 8,
+    "root_coordinate_comparisons": 2118,
+    "whole_interval_jacobian_independently_regenerated": false,
+    "long_interval_campaign_independently_replayed": false,
+    "original_scientific_tests_and_controls_independently_executed": false,
+    "scope_note": "Reviewer independently checked retained subjects and scalar trap recomposition; repository executions remain distinct.",
+    "applied_caveat": "Saved/fresh root overlap establishes consistency only, not independent certification of saved enclosure; downstream proofs use fresh certified roots."
+  },
+  "authority_successor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+    "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+  },
+  "record_digest": "ccd3b5bf238268e6dcd12e7557c67f014075a7c7aa4479b44bf4ff2b4229d4c6"
+}

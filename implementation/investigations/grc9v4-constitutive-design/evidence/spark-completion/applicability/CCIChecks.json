@@ -1,0 +1,135 @@
+{
+  "schema": "spark-completion-cci-reconciliation-checks-v1",
+  "scientific_status": "bounded_positive_research",
+  "current": {
+    "role": "current",
+    "scientific_completion": true,
+    "reset_probe_earns_live_gain": false,
+    "local_gain": 1,
+    "stable_descendants": {
+      "-1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      },
+      "1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      }
+    },
+    "target_completion_step": 851,
+    "window_beats": 2,
+    "window_elapsed": "64",
+    "first_certified_entry": 849,
+    "first_spatial_gain": 100,
+    "full_state": [
+      "C"
+    ],
+    "native_completion": false,
+    "accepted_authority": false
+  },
+  "reset": {
+    "role": "reset",
+    "scientific_completion": false,
+    "reset_probe_earns_live_gain": false,
+    "local_gain": 0,
+    "stable_descendants": {
+      "-1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      },
+      "1": {
+        "p": [
+          "p",
+          "private"
+        ],
+        "sc2-positive-module/satellite/2": [
+          "n2",
+          "n8",
+          "sc2-positive-module/satellite/2"
+        ]
+      }
+    },
+    "target_completion_step": 819,
+    "window_beats": 2,
+    "window_elapsed": "64",
+    "first_certified_entry": 817,
+    "first_spatial_gain": 117,
+    "full_state": [
+      "C"
+    ],
+    "native_completion": false,
+    "accepted_authority": false
+  },
+  "first_completion": {
+    "research_event_id": "417488dc023c317eb3e250b72eb87766fc187c6004c02c8407c28cbfe94e55e7",
+    "new_gain": 1,
+    "target_step": 851,
+    "new_child": "sc2-positive-module/satellite/2",
+    "native_receipt": false
+  },
+  "replay": {
+    "research_event_id": "417488dc023c317eb3e250b72eb87766fc187c6004c02c8407c28cbfe94e55e7",
+    "new_gain": 0,
+    "target_step": 851,
+    "new_child": "sc2-positive-module/satellite/2",
+    "native_receipt": false
+  },
+  "rejected_controls": [
+    "missing_parent",
+    "reset_role",
+    "short_window",
+    "native_claim",
+    "wrong_domains",
+    "zero_duration",
+    "omitted_physical_state",
+    "wrong_geometry_with_unchanged_J"
+  ],
+  "fresh_subject_checks": "actual source/parent/transfer and whole CI roots at event/entry/completion",
+  "retained_root_comparison": "overlap_consistency_only",
+  "retained_root_enclosure_independently_recertified": false,
+  "proof_root_source": "fresh certified CCIReference.root enclosure, never saved-root overlap",
+  "check_mode": "retained consistency and fresh short mathematics, not long recurrence replay",
+  "accepted_authority": false,
+  "native_support_added": [],
+  "G4_accepted": false,
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCI-current.json.xz",
+      "sha256": "41039ddec9b0b21a56829df452a213c8e69175f667be9afe1652cf8674983b67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCI-reset.json.xz",
+      "sha256": "17b90d19eb57d8129ec4bcc0f9297edb0f7a4cb9aa79c8923d6feaded4186402"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability.py",
+      "sha256": "61ce77003d9e89d9fc8d68a4ca7b9b4264b4f735646d242a4189016132946b9c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_ci.py",
+      "sha256": "3599aa1b90a27d2f181143fb14e66e46c7b1d13304b5399c7c42edf6a9d64a79"
+    }
+  ],
+  "record_digest": "344fbf9b2e0f5d0eb6d2eced46b0cd75e9a018ae43967a43e13c810914e13f81"
+}

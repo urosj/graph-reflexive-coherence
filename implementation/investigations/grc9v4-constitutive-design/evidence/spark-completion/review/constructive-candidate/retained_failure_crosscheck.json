@@ -1,0 +1,12 @@
+{
+  "current": {
+    "final_qualified_basins": {},
+    "maximum_difference_from_retained_endpoint_midpoints": 4.440892098500626e-16,
+    "kind": "binary64 reconstruction compared to reported exact-equation enclosures; not an interval replay"
+  },
+  "reset": {
+    "final_qualified_basins": {},
+    "maximum_difference_from_retained_endpoint_midpoints": 4.440892098500626e-16,
+    "kind": "binary64 reconstruction compared to reported exact-equation enclosures; not an interval replay"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "grc9v4-spark-sc2-mechanism-ledger-v1",
+  "status": "scientifically_reviewed_conditional_mechanism_not_admitted",
+  "predecessor_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1ClaimDebtLedger.json",
+  "proposal": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2MechanismAnalysis.md",
+  "evidence": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2MechanismChecks.json",
+  "authority_admitted": false,
+  "accepted_graph_changed": false,
+  "claims": [
+    {
+      "id": "SC2-CL-C-REFERENCE-BASE",
+      "status": "scientifically_reviewed_conditional_not_admitted",
+      "statement": "For the admitted affine reference-relative geometry, zero structural increment yields the reference Hodge regardless of K4_base. Merely changing the baseline cannot supply the permanent deformation needed to defeat the zero-source A equilibrium obstruction.",
+      "not_claimed": [
+        "all other geometry contracts share this restriction",
+        "initial PC history is permanent"
+      ]
+    },
+    {
+      "id": "SC2-CL-C-SITE-EQUILIBRIUM",
+      "status": "scientifically_reviewed_conditional_not_admitted",
+      "statement": "A homogeneous quartic site law in the existing potential channel has a unique exact nonconstant equilibrium in the declared charge-16 ten-node box: the polynomial equilibrium map has image bound 99/1024 below radius 1/8 and Lipschitz bound 489/640 below one.",
+      "not_claimed": [
+        "C0 is itself the coupled equilibrium",
+        "the nonlinear evaluator is admitted or implemented",
+        "a native expansion reaches this box",
+        "unique equilibrium on the entire charge slice",
+        "the site law selects the organized branch"
+      ]
+    },
+    {
+      "id": "SC2-CL-C-COS-LOCAL-RETURN",
+      "status": "scientifically_reviewed_conditional_not_admitted",
+      "statement": "At that equilibrium, the full exact C_OS map with nonzero read/geometry gains and kappa_M_C=0 has fixed-charge derivative norm at most 36787/36864 in the reference mobility-inverse norm. Smoothness yields a nonempty local contracting neighborhood preserving the declared three spatial basins.",
+      "not_claimed": [
+        "whole equilibrium box is dynamically invariant",
+        "quantified full-OS radius supplied",
+        "represented charge/row agreement proved",
+        "A or other realizations covered",
+        "parent gain or completed spark proved",
+        "reflexive feedback is necessary for organization",
+        "geometric basins are physical-flow regions"
+      ]
+    },
+    {
+      "id": "SC2-CL-C-RETAINED-GAIN-CONTINUATION",
+      "status": "scientifically_reviewed_conditional_not_admitted",
+      "statement": "Invertibility of the projected potential derivative and smooth fixed-selector-stratum dependence continue the site-supported equilibrium and its strict local stability/basin margins to sufficiently small nonzero kappa_M_C.",
+      "not_claimed": [
+        "a quantitative gain interval",
+        "a certified nonzero numerical point",
+        "the zero-gain numerical bounds apply unchanged at positive gain"
+      ]
+    },
+    {
+      "id": "SC2-CL-C-MULTIPLE-BRANCHES",
+      "status": "review_corollary_locally_checked_not_admitted",
+      "statement": "At the same global site parameters and charge 16, all 120 choices of three upper-well nodes have disjoint equilibrium boxes and full exact C_OS local stability. The upper-leaf branch {a,b,d} has no qualified geometric basins throughout its box.",
+      "not_claimed": [
+        "exactly 120 equilibria",
+        "a runtime branch selector",
+        "event reachability of any branch"
+      ]
+    }
+  ],
+  "debt_dispositions": [
+    {
+      "debt_id": "SC-DEBT-ORGANIZATION",
+      "status": "open",
+      "progress": "The proposed exact site branch supports the three SC-1 spatial domains by uniform margins; no real parent/event comparison is supplied.",
+      "remaining": "Scientific policy admission and compatible source/parent/D11 lineage."
+    },
+    {
+      "debt_id": "SC-DEBT-STABILITY",
+      "status": "open",
+      "progress": "The proposed exact C_OS law has conditional full-step local attraction; equilibrium-solver and physical-step contractions are separately derived.",
+      "remaining": "Quantify a full-OS trapping neighborhood on a compatible actual target; supply diagnostic agreement and exact-charge numerical lift before native claims. Conditional mathematical review passes."
+    },
+    {
+      "debt_id": "SC-DEBT-NONEMPTY-DOMAIN",
+      "status": "open",
+      "progress": "Positive conditional exact stationary/local-return domain under a new explicit site binding, rather than the affine toy. Existing zero-site bindings remain excluded. Independent review confirms at least 120 stable branches, including a no-basin control; formation must select an organized branch.",
+      "remaining": "First check source/parent/D11 topology, globally fixed well parameters and charge compatibility; establish admitted approach and entry into an organized target branch. The supplied ten-node graph is not an event target."
+    },
+    {
+      "debt_id": "SC-DEBT-TEMPORAL-LIFECYCLE",
+      "status": "open",
+      "progress": "The equilibrium result uses the actual OS consumed-current staging and no history coordinate is omitted for C_OS.",
+      "remaining": "Both-role transfer, observation, reset/replay and once-per-event semantics remain subject to the completion contract."
+    }
+  ],
+  "new_debts": [
+    {
+      "debt_id": "SC2-DEBT-NONLINEAR-SITE-BINDING",
+      "status": "open",
+      "issue": "Existing formal site-potential channel does not admit the proposed quartic evaluator automatically; native A/C implementations currently accept only zero derivative.",
+      "resolution": "Review the homogeneous potential, its parameter/domain/derivative/units/identity and numerical contract; adjudicate and propagate authority through paper/spec before native registration.",
+      "forbidden_shortcut": "Use a proposed evaluator as accepted runtime authority or fit node-specific wells to an event outcome."
+    }
+  ],
+  "scope": {
+    "proposed_binding": "SC2-homogeneous-quartic-site-proposal",
+    "reference_slice": "C_OS; unit measure/W_C_tr; kappa_M_C=0; nonzero chi_C,zeta_C,kappa_H",
+    "native_steps": 0,
+    "native_events": 0,
+    "SC2_closed": false,
+    "completed_spark": false,
+    "debts_closed": [],
+    "G4_accepted": false,
+    "nonzero_retained_gain": "qualitative existence only; no certified endpoint or point"
+  },
+  "next": "Check source/parent/D11 target topology, charge and branch compatibility before a large enclosure; establish organized-branch entry, then quantify full-OS trapping and numerical/diagnostic/charge lift. Adjudicate the proposed binding and propagate authority before native registration.",
+  "review": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/SC2ScientificPressureReview.md",
+  "review_disposition": {
+    "mathematics": "pass_conditional",
+    "policy_admission": false,
+    "multiple_branches": "locally_checked_exact_bounds",
+    "physical_box_escape": "review_reported_not_locally_reexecuted",
+    "reviewer_original_checker_execution": false,
+    "local_original_checker_and_corrected_SC1_predecessor": "rechecked_with_source_bindings"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "6a3ce4ff9190a528779b419645c52d6e4f0d14aaca9dd64f555370d27e726bb7",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-source-manifest.json",
+    "sha256": "d9475b052dc85a15060491ae75961ef76eca2300310f19c50d8d0b295035071a"
+  },
+  "contract_ids": [
+    "SC-CCI-EC-JOINT-ROOT",
+    "SC-CCI-EC-FULL-STATE-RETURN",
+    "SC-CCI-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+      "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md",
+      "sha256": "30fc4959a58754d1995801ad27759c143f3ebd23de23c4d3689ee6f2917a65a9"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-CCI-proposal.md",
+      "sha256": "3f24701e2e30f766a74bd68bb2e68694cde89c353b11ae7a3e96adb8929c48bf"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion-CCI.md",
+      "sha256": "c84866f51e0d50b72f5f1d990500b4a95f7baa127f0e92045eef000f32966228"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-ci.md",
+      "sha256": "9a9b249c9ecfc25eebd10f3edfe67a9f449334f4a6913ebe65372d9a5a2bcd56"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "4904ec03d9366a860f1628b438234f844b08f5bae79eeca4ada06c64057ab0ae"
+}

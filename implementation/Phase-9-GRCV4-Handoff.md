@@ -1,10 +1,426 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: C_CI SC-3 complete; C_PC next — 2026-10-31
+
+The [C_CI adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md)
+accepts three bounded conditional claims: selected joint root, full physical-map
+trap and actual source-to-completion chain. Current enters at 849 and completes
+at 851; independent reset 817 → 819 earns no live gain. `SC-APP-DEBT-C_CI` is
+resolved for research. Both forward native numerical/lifecycle obligations
+remain pending in P9-9.1a. Authority → proposal → paper → specification is bound;
+the existing v2 schema is reused and accepted C_OS sources are unchanged.
+
+The [review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIIndependentReview.md)
+checked all saved states/classifications and eight root subjects, but did not
+regenerate the whole interval Jacobian or long campaign. Saved/fresh root
+overlap establishes consistency only; proof calculations use fresh certified
+enclosures. Original execution flags remain historical; current adjudication is
+in the explicit successor. No numerical trajectory is rerun by status checks.
+
+Use `/api/spark-completion/applicability`, its browser panel, notebook cell
+`spark-completion-applicability`, or `load_spark_applicability_forensic_context`.
+The older `/api/spark-completion` preserves the C_OS predecessor. The
+[family reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md)
+records this research contribution without closing aggregate P9-10.5/10.6 or G4.
+
+**Next is C_PC completion applicability**, with every independent C/Z direction,
+actual carrier reads/writes, transfer and its own source-to-window chain. Reuse
+accepted definition and mathematics only where hypotheses hold. The other eight
+families remain open; native completion/hierarchy remains separate.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_applicability_sc3.py
+```
+
+### Resume on another checkout
+
+Continue branch `investigation/grc9v4-spark-completion`. Transfer/push the branch
+before fetching it on another machine; a local commit alone is not available
+from the remote. All commands below run from the repository root. C_CI inputs,
+compressed executions, review, authority and propagation are repository files;
+no external review directory or ignored run output is needed for this handoff.
+
+Reuse `.venv`. On a fresh checkout, follow the
+[side-tool bootstrap](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/README.md)
+and install the project research extras:
+
+```bash
+python3 implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/bootstrap.py
+.venv/bin/python -m pip install -e '.[v4,v4-flint]'
+```
+
+The SC-3 `--check` command above is the lean restart check. The focused test
+command also exercises managed Node/browser logic. Ten focused methods (new
+applicability plus predecessor SC-3 suites) passed at this checkpoint; do not
+repeat the long C_OS/C_CI trajectories just to resume.
+
+For C_PC, read the [all-ten programme](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md)
+and [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ClaimDebtLedger.json).
+First derive the actual coupled C/Z ordinary map and a candidate stationary
+carrier, then test full-state return including nonzero carrier perturbations.
+Bind a lawful carrier disposition to the actual source/event transfer before
+claiming source-to-completion entry. A Z=0 slice alone is insufficient. Reuse
+SC-1 and applicable proof components; do not restart definition or silently
+carry over a C-only trap. Work remains in the investigation, with no production
+`src/` changes. Use explicit arithmetic/caps, parallel independent jobs where
+useful, and compress evidence above 1 MB; the next machine sets its own worker cap.
+
+## Accepted predecessor: SC-3 research reconciliation — 2026-10-31
+
+The preceding SC-1/SC-2 work was accepted and committed as `4076a440` on
+`investigation/grc9v4-spark-completion`. SC-3 now has an explicit
+[authority/claim-debt successor](./investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json),
+linked proposal and paper, and the
+[specification/schema successor](../specs/grc-9-v4-spark-completion.md).
+The [research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
+finishes the investigation's last task. Older entries below are historical.
+
+The scientific witness completes one stable new child at target step 902 under
+the declared exact C_OS quartic law. Conditional mathematics remains conditional;
+four capability debts retain native portions, and site-binding design is resolved
+with a forward native obligation. There is no native completion/hierarchy grant,
+all-ten stability claim or G4 acceptance.
+
+**Downstream is separately authorized P9-9.1a native implementation.** Use the propagated
+contract; first address the full represented-map error, exact charge-slice and
+predicate certificates, then actual window/receipt/hierarchy atomicity and replay.
+Do not repeat the long SC-2 discovery trajectory merely to check documentation.
+
+Read-only access: side-tool `/api/spark-completion`, its browser panel and notebook
+cell `spark-completion-authority`; Python uses the explicit
+`load_spark_completion_forensic_context`, followed by normal forensic queries.
+Historical loaders keep their original pins and graph meanings.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_sc3.py
+```
+
+
+## SC-2 bounded research spark accepted — 2026-10-31
+
+Start with [the complete witness](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2CompleteWitness.md)
+and its [execution/claim-debt record](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2CompleteWitness.json).
+The actual source/event/ordinary-evolution chain now produces a research
+completion decision at target step **902**, with **one stable new child and
+local gain one** under the selected SC-1 exact-equation criterion.
+
+Two predeclared positive current beats after step-900 trap entry pass with fixed
+512-bit Arb, advancing the saved interval box rather than a midpoint. Both charts
+preserve the full parent/satellite domains; final/restart reads, positivity,
+split and conditioning pass. The established trap proves subsequent exact
+persistence. The 900-step approach and unchanged reset's 867-step evidence are
+reused, not rerun. Exact source similarity, transfer and relabel controls pass;
+ten false-completion controls reject. Replay earns zero additional gain.
+
+The user accepted this result on 2026-10-31;
+[acceptance](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2Acceptance.json).
+SC-1 and SC-2 are closed at bounded scientific scope. The result is bounded C_OS research
+under the proposed quartic law, not a native completion API or accepted profile.
+Next is SC-3 authority → proposal/paper → spec
+propagation, then P9-9.1a native numerical/lifecycle work. Do not reopen the
+completed scientific path merely because native engineering remains.
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_complete.py --check
+
+This repeats the short completion window and controls, with source/trap and
+retained-prefix checks. It does not replay the long approach. Older entries below
+describe their historical stages; this is the current result.
+
+## SC-2 ordinary source-to-trap chain established — 2026-10-31
+
+**Target review applied:** the [independent review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/review/SC2PositiveScientificPressureReview.md)
+passes the target trap, complete basins and entry states. Its remaining-source
+question concerns the predecessor, not the source-beat successor below. The
+review does not independently adjudicate that successor. The fast-check gap is
+closed in both checkers: exact two-chart coverage, coordinate-derived entry
+distance using fresh $P$, and complete checkpoint/final basin dictionaries.
+Rehashed mutation controls cover the reported substitutions. Numerical evidence
+is preserved; only uncommitted checker/source bindings are refreshed. No long
+trajectory rerun is required by this consistency correction.
+
+Start with [the ordinary source beat and fresh capture](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2SourceBeat.md)
+and its [compressed record](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz).
+The bounded source-stage gap is now addressed under the proposed exact C_OS law.
+An explicitly retained positive rational current prestate evolves for one beat
+into a fresh eligible source with a qualified parent containing saturated v.
+Reset stays exactly unchanged. Source predictor/corrector, final/reference reads,
+fresh rows and actual transferred resources are bound to that forward execution.
+
+The current poststate differs from the earlier supplied state by about 2.97e-24;
+it is not silently substituted. Its changed current target was rerun: spatial
+gain at 42, certified full-map trap entry at 900. The unchanged reset target
+reuses its exact-subject step-867 evidence. There is one research event chain,
+not two births or an ordinary reset advance. The hybrid flag was already true
+before the source beat; the qualified parent correspondence forms afterward.
+
+**Next: scientific review and scoped constitutive/claim/debt adjudication**, then
+authority → proposal/paper → specification propagation. No further numerical
+campaign is required merely to fill the former source/target link. SC-1 stays
+selected; SC-2 is ready for review, not automatically accepted/closed. Native
+represented arithmetic, lifecycle publication and replay remain downstream.
+No production files, native completed-spark support or G4 acceptance changed.
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_source_beat.py --check
+
+This recomputes the exact source beat/capture/transfer, trap and checkpoint entry
+metric/basins, and verifies retained bounds and predecessor identities. It does
+not reconstruct the long target recurrence. `--rerun` reexecutes the changed current
+target. Older sections below retain their stage-specific next-step statements.
+
+## SC-2 constructive successor reaches an organized trap — 2026-10-31
+
+Start with [the positive candidate and full-map proof](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2PositiveCandidate.md)
+and its [compressed certificate](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2PositiveCandidate.json.xz).
+Reuse the supplied constructive preparation: add a private parent neighbor,
+charge 21, shares (1/64,31/32,1/64). Equations, wells, gains, split tolerance and
+SC-1 definition are unchanged from the declared companion. The original
+charge-20 negative result remains unchanged. Discovery was exploratory.
+
+Both literal D11 chiral allocations match. Rigorous exact-equation trajectories
+certify first gain at current/reset steps 42/40 and entry into a quantitative
+full-OS trapping ball at 900/867. The trap has relative dimension 14, radius
+2^-20 in the declared inverse-mobility metric, contraction below 0.997296,
+and complete basins {p,private} and {s2,n2,n8} throughout both chiral charts.
+Runs stop at certified entry; contraction proves subsequent exact persistence.
+Fixed 8192-bit Arb encloses the approach; no silent precision/fallback or projection.
+
+This is positive target-side conditional research, not native completion or
+admission of the quartic binding. **Next establish the source-stage link:** an
+admissible ordinary source beat and fresh poststate capture that leads to this
+organized domain. A supplied source state is not silently called a postbeat
+source. Native represented charge/rows and lifecycle publication remain later
+authority → proposal/paper → spec → implementation work. SC-1 stays closed;
+SC-2 and aggregate debts remain open pending the source link and adjudication.
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_positive.py --check
+
+This recomputes allocation/trapping math and checks retained trajectory bounds
+and source bindings. Use `--rerun` for the full enclosed recurrence. Historical
+sections below retain their original next-step statements and evidence scope.
+
+## SC-2 continuation checked; organized selection remains open — 2026-10-31
+
+Start with [SC-2 split admission and branch pressure](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2Continuation.md)
+and its [compact record](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2Continuation.json).
+The original source/target reads fail a newly specified exact split tolerance
+of 1e-11; the earlier preflight had no selected tolerance. The successor proposes
+one explicit companion, mobility 1/1024 and duration 32, keeping their product
+1/32 and the same wells, source states, shares and diagnostic thresholds.
+This changes nonlinear feedback; it is not an equivalent native optimization.
+
+Fixed 512-bit Arb encloses 128 exact-equation steps per transferred role, with
+positive resources, split admission, final-C/restart reads and both chiral
+classifiers. Exact rational controls cover physical similarity and star assembly.
+Wrong-stage/mechanism alternatives separate. No fallback, clipping or projection.
+No native trajectory, event, site-binding admission or completion is claimed.
+
+The result is scientifically negative for formation: neither history gains two
+eligible descendants; at step 128 neither chart has any qualified basin. Both
+endpoints enter a radius-1/8 well box with high nodes p,n1,n5, whose whole box has
+no qualified anchors. No physical invariance or infinite-time exclusion follows.
+SC-1 stays closed; SC-2 and remaining completion debts stay open. Earlier records
+below retain their own scope and hashes.
+
+Next derive joint source/transfer conditions capable of selecting an organized
+branch before choosing another witness. Do not extend this unorganized run or
+weaken the classifier. Actual postbeat source formation/native admission and
+quantitative trapping/represented charge/diagnostic certificates remain separate.
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_continuation.py --check
+
+## SC-1 checker corrected; SC-2 event compatibility — 2026-10-31
+
+SC-1 remains scientifically closed. Its follow-up review's four rehashed
+selector substitutions now reject: missing definition, abstract-example section,
+reversed example exclusion and SC-2 path substitution. The full local recursive
+source check passes; no new scientific prerequisite was added.
+
+[SC-2 event compatibility](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2EventCompatibility.md)
+now supplies an exact eleven-node saturated source with a qualified geometric
+parent containing the expanded vertex. A charge-derived uniform offset gives
+Q=20 under the unchanged global wells. Independent current/reset resources and
+both chiral D11 four-node allocations give fourteen-node targets. Target-specific
+bounds prove a conditional stable stationary branch with at least two eligible
+new child basins. The compact [record](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2EventPreflight.json)
+retains the construction, exact checks, nine forensic traces and scoped debt progress.
+
+This is mechanical/diagnostic/charge preflight, not numerical event admission.
+The research namespace is not a native event ID. The zero core starts outside
+the positive branch box, and immediate allocation has only the old parent basin.
+Full basin membership and a uniform descent DAG are also unproved. No native
+steps/events were run and the quartic binding remains proposed.
+
+Next check full constitutive source/target admission, then actual post-event
+evolution and organized-branch entry. If entry passes, quantify the physical
+trap and complete basin/descent/constraint/diagnostic certificates. SC-2, SC-3
+and G4 remain open; historical records below keep their stage-specific scope.
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc1_adjudication.py --check
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_event_preflight.py --check
+
+
+## SC-1 scientific definition selected — 2026-10-31
+
+Start with the [SC-1 adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Adjudication.md)
+and [successor ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Adjudication.json).
+The user selected the bounded geometric child-identity policy and its conditional
+A.7 bridge. This closes SC-1's definition/adjudication task. Stable geometric
+routing basins may count at zero physical current when the full-state return,
+parent/gain, actual event/entry and numerical/lifecycle premises are all met.
+
+The organization debt is resolved only for its definition portion; applicability
+and propagation remain open. Stability, nonempty-domain and temporal-lifecycle
+debts remain open, and the quartic site binding is still unadmitted. No actual
+completed spark, new native capability, hierarchy implementation or G4 closure
+is claimed. This is local scientific adjudication; SC-3 must consolidate the
+results and admit the authority/schema successor before paper/spec/native work.
+
+SC-1/SC-2 reviewed files and their exact evidence hashes are unchanged. Their
+pending-selection fields are historical, superseded only by the scoped successor
+decision. Earlier sections below describe those stages. No new trajectory or
+mathematical campaign was needed for this selection.
+
+Next: SC-2 source/parent/D11 target topology and charge compatibility, then
+organized-branch entry and quantitative trapping/numerical certificates under
+the selected criterion. Constitutive-binding adjudication is a separate task.
+
+Bounded decision/binding check from the repository root:
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc1_adjudication.py --check
+
+
+## SC-2 scientific review applied — 2026-10-31
+
+The [mechanism analysis](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2MechanismAnalysis.md)
+derives a positive conditional stationary route using a homogeneous quartic site
+potential in the existing constitutive channel. The same law applies at every
+node; no per-node well is fitted to a target. Native A/C evaluators still support
+only the declared zero-derivative recipe. The proposed binding is not admitted.
+
+On the declared ten-node abstract graph, exact bounds prove a nonconstant
+charge-16 equilibrium and the three SC-1 spatial basins. The equilibrium solver
+map has image margin 29/1024 and contraction bound 489/640. Separately, the full
+exact C_OS map has derivative norm at most 36787/36864 in the stated fixed-charge
+norm; smoothness gives a local physical trapping neighborhood. Nonzero Read-Back
+and geometry gains are retained. Numerical values use kappa_M_C=0; continuation
+to sufficiently small nonzero gain is qualitative, without a certified endpoint.
+
+The equilibrium box is not asserted physically invariant. No quantitative
+full-OS trapping radius, represented charge/diagnostic certificate, actual
+source/parent/D11 event entry or completed spark is supplied. The small exact
+checks are research equations, not a native trajectory. K4_base is also confirmed
+to be a reference anchor, not permanent additive forcing under this geometry.
+
+The [independent review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/review/SC2ScientificPressureReview.md)
+passes the conditional mathematics. Exact local checks confirm at least 120 stable
+branches at the same charge, including one with no geometric basins. The site
+curvature supplies restoration; compatibility with enabled feedback does not
+prove feedback is necessary. The review's exact algebraic box-escape result is
+retained as reported, not locally replayed without its separate execution package.
+The local SC-1/SC-2 checks resolve the reviewer's missing-dependency/predecessor
+access issue locally, without claiming an independent rerun by that reviewer.
+
+Next: first check actual source/parent/D11 target topology and charge compatibility
+under fixed global well parameters. The necessary condition is
+abs(Q-[n(c0-a)+2ak]) <= nr; the present equilibrium proof further assumes exact
+center charge. Recheck graph-specific bounds/row occupancy; new zero-resource
+coordinates need an admitted approach. Establish entry into an organized branch,
+then quantify trapping/diagnostic/charge certificates on that target. Do not
+repeat stationary examples or excluded zero-site campaigns. The ledger records
+five conditional claims and keeps the four completion debts plus nonlinear-site
+binding debt open. Authority → paper → spec precedes native registration.
+SC-1 evidence is unchanged; aggregate SC-2 and G4 remain open.
+
+From the repository root:
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc2.py --check
+
+## SC-1 scientific pressure applied; bounded exclusion — 2026-10-31
+
+Initial feasibility is committed as 0d27440b on
+investigation/grc9v4-spark-completion. The
+[SC-1 contract](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Contract.md)
+now supplies the missing semantic bridge: a qualified geometric seed has a
+genuine nontrivial all-route spatial attraction domain, and a full-state
+trapping/contraction certificate preserves the basin and its separation barrier.
+The same classifier before and after the event establishes descendant gain.
+
+This is the explicit proposed branch
+grc9v4-certified-geometric-child-basins-v1, distinct from the accepted
+physical-flow diagnostic and from the constitutive transport law. Multiple
+spatial basins can coexist within one attracting full-field pattern; no multiple
+full-state attractors are inferred. Independent review passes the conditional
+mathematics; policy admission remains open. The four debts retain scoped progress
+and the new equilibrium exclusion; positive V4 feasibility is not established.
+
+Fifteen exact geometric result groups, 25 earlier finite-window groups, affine
+error/nonnormal pressure and sixteen forensic queries pass. Independent audit
+pressure reproduces 5,422 graph/landscape cases, 252 abstract box vertices and
+12 correction controls. The abstract example
+conserves charge and gains two stable spatial basins only after evolution, but is
+not a D11 event or V4 constitutive trajectory. The finite physical-flow screen
+is a control, not a prerequisite for geometric completion. At a fixed point,
+zero divergence is established for consumed current; applying it to a fresh
+read requires a separate stage-equality/bound.
+
+The [audit resolution](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1EquilibriumExclusion.md)
+confirms that the retained C_OS/C_CI/A_CI/A_PC closed zero-site tree bindings
+have only constant-resource exact equilibria and cannot supply SC-1 qualified
+children at a contracting fixed point. All 112 saved role declarations match
+the audit subjects. For A the exclusion extends to the stated connected
+positive-denominator domain. This is not a failed search or a production defect;
+earlier finite-horizon mechanical continuation remains valid.
+
+Scientific anchors now explicitly use exact rows with certified represented
+agreement. The fixed-charge numerical theorem needs proved exact slice
+preservation; a tolerated charge residual does not suffice. Local gain is not
+global basin-count growth or counterfactual event causation. The capacity bound
+requires a uniform asymptotic error-rate gap, not pointwise strict inequality.
+
+From the repository root, run:
+
+    .venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc1.py --check
+
+The initial feasibility record remains unchanged. Next: identify an admitted
+constitutive mechanism sustaining a nonconstant admissible equilibrium before
+SC-2 witness selection. Do not retry excluded bindings by lengthening runs or
+retuning thresholds; merely adding cycles does not repair A's obstruction.
+No richer profile or different nonstationary completion contract is selected.
+No review of the review is required: its scoped derivation and corrections are
+recorded. Native P9-9.1a follows authority → proposal/paper → spec.
+Completion/hierarchy and G4 remain open.
+
+## Spark-completion science opened — 2026-10-31
+
+Examples implementation `7a2ac72c` and separate acceptance `cb639422` were merged
+into `main` with `--no-ff` at `34152b5d`. Current branch:
+`investigation/grc9v4-spark-completion`. Start with the
+[definition/feasibility note](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionDefinitionAndFeasibility.md)
+and its provisional claim/debt ledger. The accepted diagnostic API explicitly
+does not establish stable children or persistent physical identity.
+
+The initial screen proves a necessary seed inequality and finds all ten frozen
+expansion-example thresholds incompatible with it. In their D52 targets,
+thirteen of seventeen nodes also lack a fixed row. The separate positive-seed
+example confirms local diagnostic feasibility only. Nine focused predicate
+controls, ten retained fixture extractions and five forensic queries pass;
+there is no new native trajectory or completion result.
+
+Next is **SC-1**, a definition and conditional argument for child organization,
+parent correspondence and the precise stability level; then **SC-2**, a justified
+nonempty V4 construction. Avoid blind reruns or changing frozen thresholds.
+SC-3 review/adjudication precedes authority → proposal/paper → spec → P9-9.1a
+implementation. No production, accepted claims, paper or specs change in this
+opening. Completion/hierarchy remain unselected; 10.5 reconciles the new debts
+and 10.6/G4 records the resulting support boundary after an explicit decision.
+
 ## P9-10.4 — progressive examples bounded-accepted (2026-10-31)
 
 Implementation `7a2ac72c` is accepted in the separate
 [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json). Original
-execution/review stay unchanged. Branch: `work/p9-10.3-regressions`. Start with the
+execution/review stay unchanged. Merged branch: `work/p9-10.3-regressions`. Start with the
 [native guide](../examples/grc9v4/README.md), then its quickstart and public tour.
 All ten families pass seven bounded lessons: evolution; checkpoint/reset/rebase;
 seed/spark diagnostics; explicit expansion and target continuation; basin policy
@@ -28,9 +444,8 @@ results total about 269 kB (5.59 MB logical); no broad numerical reruns are need
 for publication acceptance.
 
 No production/spec changes, new support, completed-spark/hierarchy/general ATC
-claim or G4 grant. Merge this branch into main, then open a new branch for the
-scoped spark-completion scientific definition/feasibility pass before the final
-Tranche 10 scope decision. P9-10.5 and P9-10.6 remain separate closeout tasks.
+claim or G4 grant. The merge and successor opening are recorded above.
+P9-10.5 and P9-10.6 remain separate closeout tasks.
 
 ## P9-10.3 — bounded accepted (2026-10-31)
 

@@ -1,0 +1,57 @@
+{
+  "schema": "spark-completion-cci-declaration-v1",
+  "date": "2026-10-31",
+  "family": "C_CI",
+  "purpose": "research feasibility; not native implementation",
+  "predecessor_commit": "765dc6ae",
+  "source_preparation": "exact SC2SourceBeat current_prestate; reset unchanged; recompute actual CI postbeat",
+  "site": {
+    "c0": "2",
+    "a": "1",
+    "mu": "1"
+  },
+  "parameters": {
+    "eta_C": "1/1024",
+    "duration": "32",
+    "kappa_Phi_C": "1/64",
+    "tau_C": "1",
+    "chi_C": "1/2",
+    "zeta_C": "1/2",
+    "kappa_H": "1/2",
+    "kappa_M_C": "0"
+  },
+  "allocation": [
+    "1/64",
+    "31/32",
+    "1/64"
+  ],
+  "reference_hodges": "identity",
+  "transport_weights": "unit",
+  "context": "zero",
+  "joint_root_domain": {
+    "C": [
+      "0",
+      "4"
+    ],
+    "flat_infinity_radius": "1/32",
+    "selection": "unique root in this declared ball"
+  },
+  "trap": "same exact charge-21 metric ball, center and radius as C_OS; independently prove full CI map",
+  "approach_precision_bits": 8192,
+  "trapping_precision_bits": 512,
+  "root_proposal": "Newton midpoint proposals, maximum16; Banach bound on full input enclosure",
+  "root_proposal_limit": 16,
+  "maximum_target_steps": 1024,
+  "time_limit_seconds_per_role": 1800,
+  "window_beats": 2,
+  "window_elapsed": "64",
+  "roles": [
+    "current",
+    "reset"
+  ],
+  "parallel_jobs": 2,
+  "automatic_fallback": false,
+  "OS_trajectory_reuse": false,
+  "native_support_added": [],
+  "record_digest": "8a2480f6a51c98e67f837d96a31c51eae011f5ac0a3260fc641704faf8979fd0"
+}
