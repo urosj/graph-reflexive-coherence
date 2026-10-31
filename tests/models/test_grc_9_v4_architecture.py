@@ -54,8 +54,14 @@ def predecessor():
 class ArchitectureTests(unittest.TestCase):
     def test_execution_selection_is_independent(self):
         expected = GRC9V4.execution_scope()
-        with patch.dict(enabled._OWNERS, A_RG2b=events.GRC9V4ARG2bOperation):
-            self.assertEqual(GRC9V4.execution_scope(), expected)
+        self.assertIn("A_RG2b", expected)
+        restricted = tuple(f for f in expected if f != "A_RG2b")
+        # Synthetic selection tests the registration/authorization distinction;
+        # it does not claim the now-accepted A_RG2b owner is unavailable.
+        with patch.object(public, "PUBLIC_ENABLED_FAMILIES", restricted), patch.dict(
+            enabled._OWNERS, A_RG2b=events.GRC9V4ARG2bOperation
+        ):
+            self.assertEqual(GRC9V4.execution_scope(), restricted)
             with self.assertRaises(public.GRC9V4ExecutionUnavailable):
                 public.GRC9V4PublicOperation.require_execution("A_RG2b")
         with patch.dict(enabled._OWNERS, {}, clear=True):

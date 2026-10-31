@@ -94,8 +94,9 @@ Eight native source/target tests passed in two parallel FLINT jobs, collecting
 both-role migration/return observations once and reusing receipts/charges for
 10.2. Explicit return history initialization is not preservation of incoming W.
 Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
-All ten individual scoped decisions are now present; all-ten reconciliation
-is next, followed by consolidated P9-10.3–10.6.
+All ten individual scoped decisions and their bounded P9-10.3 input
+reconciliation/regressions are now accepted. P9-10.4 publication is next,
+followed by P9-10.5 debt reconciliation and P9-10.6/G4.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
@@ -134,7 +135,8 @@ merely because the checkpoint number changed. Independent retained checks or
 necessary new cases may run in parallel; preserve original execution identities
 and distinguish retained validation from a fresh native run. The bounded
 four-family reconciliation and A_OS/C_PC/C_CI_PC/A_CI_PC extensions are accepted.
-C_RG2b and A_RG2b are also bounded-accepted; all-ten reconciliation remains separate.
+C_RG2b and A_RG2b are also bounded-accepted; their all-ten bounded input
+reconciliation is accepted under P9-10.3. P9-10.4–10.6 remain separate.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin
@@ -4668,6 +4670,30 @@ The API/browser/notebook expose these three limits alongside the passing evidenc
 
 ### Tranche 10. Conformance, evidence, and handoff
 
+**P9-10.3 bounded-accepted (2026-10-31).** User acceptance of implementation
+`93920eab` is recorded in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Original execution
+and review stay unchanged. P9-10.4 is next.
+The [bounded review](./phase-9-grcv4/tranche-10/P9-10.3-Review.md) records
+99 passing regressions and all-ten input reconciliation. Three stale unavailable-
+RG2b test expectations are corrected; production/specifications remain unchanged.
+
+**P9-10.3 execution scope (2026-10-31).** On branch
+`work/p9-10.3-regressions`, reconcile the accepted first-four and six separate
+family decisions by exact source and v1/v2 target identities. Reuse their
+numerical/charge/receipt/replay evidence; this is no new expansion or large
+trajectory campaign. Execute four independent focused jobs: pre-V4 generic
+construction/state/step/serialization/imports; native GRC9V3 differential,
+transport, steps and sparks; all-ten public contracts and basin graph pressure;
+and shared transaction/replay/refusal boundaries. Use explicit FLINT for V4
+arithmetic and up to four workers. Preserve all pre-V4 modules (the accepted
+additive model exports are checked separately), current executable release and
+packaged copies, and the accepted Tranches 8–9 records. Fail on source, exact
+subject, test-roster or scope drift. Retained `--check` and side-tool access do
+not rerun these suites. The bounded result is accepted;
+P9-10.4 publication, P9-10.5 scientific debts and P9-10.6/G4 remain separate.
+
+
 P9-10.1 closes the two P9-9.6 gaps through the following bounded children,
 before capability publication and final conformance acceptance:
 
@@ -4756,13 +4782,35 @@ Run the relevant existing-family regressions and deterministic replay checks.
 Store new runtime vectors and evidence outside the frozen specification
 release; link them to its fixture IDs and state any independent oracle method.
 
-Publish capability discovery and a minimal API/replay example for supported
-profiles, plus a closeout and handoff. P9-10.4 documents and publishes the API
+Publish capability discovery and a progressive API/lifecycle guide for all ten
+profiles, plus a closeout and handoff. Start with a minimal positive step, then
+explain candidate/realization-specific state, parameters and solver/read/write
+semantics; seeds, hybrid sparks, basin observations; mechanical expansion and
+history loss; profile/branch migration; reset/rebase, checkpoint replay and
+failure atomicity. Demonstrate public operations with exact small accepted
+inputs, keep arbitrary-graph and optional-completion limits explicit, and link
+fresh example outputs to frozen fixtures without rerunning large campaigns.
+P9-10.4 documents and publishes the API
 already implemented under P9-9.4b and reviewed under P9-9.6; it is not the first
 public-class implementation step. Review every inherited debt and coverage
 hold against the claim actually demonstrated. Record outstanding profiles,
 analysis, phenomenology, and integration work explicitly. P9-G4 acceptance
 requires review of the evidence and support boundary.
+
+**P9-10.4 bounded-accepted (2026-10-31).** User accepted implementation
+`7a2ac72c`; [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json).
+Original execution flags remain unchanged. Remain on
+`work/p9-10.3-regressions` as requested. The
+[progressive guide](../examples/grc9v4/README.md) and executable lessons cover
+all ten families, with independent jobs run in parallel. A separate positive
+geometric-seed example makes its changed resource/policy declaration explicit.
+It does not modify the frozen expansion examples or claim an attracting basin.
+The publication records code/input/output identities and exposes read-only
+API/browser/notebook access. Two old example guides have finite documented
+successors; accepted 10.3 execution and review remain unchanged. No production,
+specification, claim authority, or numerical tolerance is changed. Before final closure, open a separate scientific definition/feasibility
+investigation of spark completion; 10.5 reconciles its obligation and 10.6/G4
+records the reviewed support boundary.
 
 ## Verification at the planning boundary
 

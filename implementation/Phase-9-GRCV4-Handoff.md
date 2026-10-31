@@ -1,5 +1,66 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## P9-10.4 — progressive examples bounded-accepted (2026-10-31)
+
+Implementation `7a2ac72c` is accepted in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json). Original
+execution/review stay unchanged. Branch: `work/p9-10.3-regressions`. Start with the
+[native guide](../examples/grc9v4/README.md), then its quickstart and public tour.
+All ten families pass seven bounded lessons: evolution; checkpoint/reset/rebase;
+seed/spark diagnostics; explicit expansion and target continuation; basin policy
+migration/replay; V3 branch return; and atomic input rejection. Independent jobs
+ran in parallel. Cross-family migration includes both accepted routes and a
+target-domain rejection. A separately declared positive geometric-seed example
+retains exact charge and explicitly changes the specialization identity.
+
+Full C/W/Z, both roles, consumed/fresh observations and receipts are retained in
+compressed small reports. [Publication](./phase-9-grcv4/tranche-10/P9-10.4-Examples.json)
+links source artifacts and the frozen catalog. `p9104_examples.py --check` checks
+retained bindings only; `--run --output NEW_DIRECTORY` makes new native evidence.
+The side-tool `/api/tranche10/examples`, browser panel and notebook expose the
+guide/code/results without running trajectories. Earlier four-family usage
+documentation is updated through a finite documentation successor; P9-10.3
+acceptance and original numerical evidence are preserved.
+
+Seven focused publication tests and API/browser/notebook access pass. The
+phase boundary passes with 703 protected files unchanged. Compressed example
+results total about 269 kB (5.59 MB logical); no broad numerical reruns are needed
+for publication acceptance.
+
+No production/spec changes, new support, completed-spark/hierarchy/general ATC
+claim or G4 grant. Merge this branch into main, then open a new branch for the
+scoped spark-completion scientific definition/feasibility pass before the final
+Tranche 10 scope decision. P9-10.5 and P9-10.6 remain separate closeout tasks.
+
+## P9-10.3 — bounded accepted (2026-10-31)
+
+Branch: `work/p9-10.3-regressions`, from `98033204`. Implementation `93920eab`
+is accepted in the separate [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json).
+Original execution, review and source-epoch records remain unchanged. Production and specification
+bytes are unchanged. The ten bounded P9-10.1a–c/P9-10.2 decisions are reconciled
+by exact v1/v2 target identities, with original numerical evidence retained.
+The [review](./phase-9-grcv4/tranche-10/P9-10.3-Review.md) and
+[record](./phase-9-grcv4/tranche-10/P9-10.3-Regressions.json) separate fresh
+old-family/shared-interface regressions from those reused campaigns. All 99
+regressions pass in four parallel jobs (longest 140.9 seconds); 182 pre-V4
+modules and all specification/package release pairs are unchanged.
+
+Three stale public/dispatcher tests still treated RG2b as unavailable. Their
+successors assert the ten-family scope and test refusal through explicit
+synthetic dispatcher restrictions. Original test/checker bytes remain in Git,
+with a finite source-epoch adapter; accepted execution is not relabelled.
+No numerical law, tolerance, source authority or older production changed.
+Nine pre-existing stale runtime-manifest hashes were refreshed only after
+confirming their files exactly match the accepted entry merge. Ten focused
+evidence-access/drift and historical-closeout checks pass.
+
+Side-tool API `/api/tranche10/regressions`, its browser panel and notebook cell
+`p9103-regressions` inspect retained evidence only. Next: P9-10.4
+capability/example publication, P9-10.5 scientific
+debt reconciliation and P9-10.6/G4/handoff. CI-root, RG2b C1 and other bounded
+numerical limits stay intact. This checkpoint grants no full conformance or G4.
+
+
 ## A_RG2b Tranche 10 — bounded accepted (2026-10-31)
 
 Implementation `a4706caf` on `work/p9-tranche10-remaining-families` is accepted

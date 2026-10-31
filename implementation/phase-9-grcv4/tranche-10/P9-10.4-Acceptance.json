@@ -1,0 +1,53 @@
+{
+  "schema": "p9104-example-acceptance-v1",
+  "status": "accepted_bounded_examples",
+  "accepted_on": "2026-10-31",
+  "implementation_commit": "7a2ac72c8ccf9908ab3c0d3ec85d0291baea5ebe",
+  "evidence": {
+    "path": "implementation/phase-9-grcv4/tranche-10/P9-10.4-Examples.json",
+    "sha256": "8a14ae3335f4c3b0d1a349631755054ecbe4db5c697302f53781cbefd040e099",
+    "record_digest": "5571b97d3e92e14cc1b0ff4b5428591971773f100452f993406fd04b3ade64b4"
+  },
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.4-Review.md",
+      "sha256": "f7bd6be71caf6a9c5920a6f6ea02a09f6021719e380d437aee2c4183cacf1e98"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/p9104_examples.py",
+      "sha256": "3ee922f5e30d794fac3342c040322836b8297f7c497337d10bdf1badc4084940"
+    }
+  ],
+  "families": [
+    "A_CI",
+    "A_CI_PC",
+    "A_OS",
+    "A_PC",
+    "A_RG2b",
+    "C_CI",
+    "C_CI_PC",
+    "C_OS",
+    "C_PC",
+    "C_RG2b"
+  ],
+  "lessons": [
+    "evolution",
+    "checkpoint",
+    "sparks",
+    "expansion",
+    "basin",
+    "compatibility",
+    "rejection"
+  ],
+  "user_accepted": true,
+  "P9_10_4_closed": true,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "completed_spark": false,
+  "hierarchy_tracking": false,
+  "general_ATC": false,
+  "new_support": [],
+  "scope": "Bounded progressive examples and their public publication surfaces; original execution records remain unchanged.",
+  "next_work": "Open the scoped spark-completion definition/feasibility investigation before deciding final Tranche 10 scope; 10.5 debt reconciliation and 10.6/G4 remain separate.",
+  "record_digest": "8508480598a8f672d3f1142634107137ff77118fa039def2ffcac9bff46b972b"
+}

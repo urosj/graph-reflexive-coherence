@@ -1,0 +1,25 @@
+{
+  "schema": "p9104-documentation-successor-v1",
+  "predecessor": "32ba54dd",
+  "checker_sha256": "7627e3389e9f5b596e9dc7606661609a83761e02d3d6452c336ffb818353bddc",
+  "production_changed": false,
+  "original_results_unchanged": true,
+  "sources": {
+    "examples/grcv4/README.md": {
+      "before_sha256": "31f517cbb3e744419562727fac02001041e00f2991c420b4c02adc62133cb9e1",
+      "after_sha256": "092034037c85ca8d5aba15bb30dd5052386461488b829ba36424688a1643bf12"
+    },
+    "examples/grcv4/grc9v4_api.md": {
+      "before_sha256": "482da6af9e9d660045aa80ab8ddf828bde6206f702e5703a7d9db1fbee1e3119",
+      "after_sha256": "06e60e02e2ca3d9bbfaa58f03bc37768ff45a9b72d5c467d771ff4512007805a"
+    },
+    "implementation/phase-9-grcv4/verification/p9103_acceptance.py": {
+      "before_sha256": "b621b70693493851f9d7c36c47397289e90c053a9b44061cdb659a8f174e7811",
+      "after_sha256": "513d01769ed47f475a91f892800adcacbacda700ef8a366abcf529d185826f77"
+    },
+    "implementation/phase-9-grcv4/verification/p9103_regressions.py": {
+      "before_sha256": "f80110d3081e33542c96c2a0364581a26b12452bc6d82791826d42d92127c705",
+      "after_sha256": "e75cf91509eafde5ec52d7867446522071434f5f6fa7d054d73b3c92ee038143"
+    }
+  }
+}

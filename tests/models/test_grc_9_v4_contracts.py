@@ -1,4 +1,4 @@
-"""All-ten public contract fit, with three unselected native owners."""
+"""All-ten public contracts and explicit unavailable-scope pressure controls."""
 
 from copy import deepcopy
 from dataclasses import replace
@@ -127,10 +127,14 @@ class PublicContractTests(unittest.TestCase):
         from pygrc.models.grc_9_v4_owner import GRC9V4EnabledOperation
 
         self.assertEqual(
-            set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC"}
+            set(GRC9V4.execution_scope()), set(self.configs)
         )
+        # All ten are enabled. Exercise the refusal contract under an explicit
+        # synthetic narrowed dispatcher, not a false claim about current scope.
+        from pygrc.models import grc_9_v4_api_lifecycle as lifecycle
+        restricted = tuple(f for f in GRC9V4.execution_scope() if f not in ("C_RG2b", "A_RG2b"))
         unavailable = []
-        with patch.object(
+        with patch.object(lifecycle, "PUBLIC_ENABLED_FAMILIES", restricted), patch.object(
             GRC9V4EnabledOperation,
             "__init__",
             side_effect=AssertionError("unselected numerical admission"),
@@ -145,30 +149,38 @@ class PublicContractTests(unittest.TestCase):
                     GRC9V4.from_config(cfg)
                 self.assertEqual(caught.exception.family.profile_family_id, name)
                 unavailable.append(name)
+        self.assertEqual(set(unavailable), {"C_RG2b", "A_RG2b"})
         with self.assertRaises(ValueError) as caught:
             describe_family("A_UNKNOWN")
         self.assertNotIsInstance(caught.exception, GRC9V4ExecutionUnavailable)
         EVIDENCE["execution_scope"] = dict(
             available=list(GRC9V4.execution_scope()),
-            known_unavailable=unavailable,
+            known_unavailable=[],
+            synthetic_unavailable=unavailable,
             no_unselected_execution=True,
         )
 
     def test_known_target_declaration_is_not_runtime_support(self):
         source = self.configs["C_OS"]
         target = self.configs["C_RG2b"].reference
-        m = GRC9V4.from_config(replace(source, targets=(target,)))
-        tid = target.profile.complete_profile_id
-        self.assertIn(tid, {p.complete_profile_id for p in m.list_declared_profiles()})
-        self.assertNotIn(tid, m.list_supported_profiles())
-        snapshot = m.snapshot()
-        self.assertEqual(GRC9V4.from_state(snapshot).snapshot(), snapshot)
-        request = migration_request(m, target)
-        with self.assertRaises(GRC9V4ExecutionUnavailable):
-            m.migrate_profile(request)
-        self.assertEqual(m.snapshot(), snapshot)
-        self.assertEqual(len(m.support_status()["declared_families"]), 10)
-        self.assertEqual(len(m.support_status()["execution_families"]), 8)
+        from pygrc.models import grc_9_v4_api_lifecycle as lifecycle
+        self.assertIn("C_RG2b", GRC9V4.execution_scope())
+        restricted = tuple(f for f in GRC9V4.execution_scope() if f != "C_RG2b")
+        # Keep a nonvacuous declaration-versus-execution test now that every
+        # family is enabled, by explicitly selecting a synthetic unavailable one.
+        with patch.object(lifecycle, "PUBLIC_ENABLED_FAMILIES", restricted):
+            m = GRC9V4.from_config(replace(source, targets=(target,)))
+            tid = target.profile.complete_profile_id
+            self.assertIn(tid, {p.complete_profile_id for p in m.list_declared_profiles()})
+            self.assertNotIn(tid, m.list_supported_profiles())
+            snapshot = m.snapshot()
+            self.assertEqual(GRC9V4.from_state(snapshot).snapshot(), snapshot)
+            request = migration_request(m, target)
+            with self.assertRaises(GRC9V4ExecutionUnavailable):
+                m.migrate_profile(request)
+            self.assertEqual(m.snapshot(), snapshot)
+            self.assertEqual(len(m.support_status()["declared_families"]), 10)
+            self.assertEqual(len(m.support_status()["execution_families"]), 9)
 
     def test_contract_wire_and_execution_options_are_closed(self):
         cfg = self.configs["C_OS"]

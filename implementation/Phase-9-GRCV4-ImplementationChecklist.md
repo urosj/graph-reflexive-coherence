@@ -4229,9 +4229,9 @@ Remaining Tranche 10 work is separate.
 
 The [Tranche 10 rollout and capture map](./Phase-9-GRCV4-ImplementationPlan.md#tranche-10-rollout-and-six-family-basin-capture-map-2026-10-30)
 records the completed read-only six-family assessment and agreed order. Bounded
-P9-10.2 for C_OS/C_CI/A_CI/A_PC is bounded-accepted; next is
-P9-10.1a–c → P9-10.2 per remaining
-family before consolidated P9-10.3–10.6. The historical checked P9-10.1 entries
+P9-10.2 for C_OS/C_CI/A_CI/A_PC and all six separate P9-10.1a–c → P9-10.2
+family extensions are bounded-accepted. P9-10.3 reconciliation of those exact
+scopes and focused regressions is also accepted; P9-10.4–10.6 remain. The historical checked P9-10.1 entries
 below remain four-family acceptances, not acceptance of those six extensions.
 
 - [x] Record the six-family capture/oracle/target map and rollout sequence
@@ -4349,7 +4349,7 @@ below remain four-family acceptances, not acceptance of those six extensions.
 ### Remaining-family P9-10.1a–c → P9-10.2 (2026-10-30)
 
 Branch: `work/p9-tranche10-remaining-families`. The initial four-family
-acceptances remain unchanged; each row below needs its own bounded evidence.
+acceptances remain unchanged; each row below records its own bounded evidence.
 
 - [x] A_OS bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md).
   - [x] 10.1a: fresh A reference/current/history/backend capture, full read
@@ -4441,12 +4441,44 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
 
 ### Consolidated conformance and handoff
 
-- [ ] P9-10.3: Run relevant old-family regressions and verify accepted release
+- [x] P9-10.3: Run relevant old-family regressions and verify accepted release
   and source identity preservation.
-- [ ] P9-10.4: Publish capability discovery, a minimal API/replay example,
-  and new runtime evidence linked to the frozen fixture catalog.
+  - [x] Select the bounded regression scope on `work/p9-10.3-regressions`: old
+    GRCV2/GRCV3/GRC9V3 plus shared all-ten public/graph/lifecycle boundaries.
+  - [x] Reconcile all ten separate P9-10.1a–c/P9-10.2 acceptances by exact
+    v1/v2 subjects; preserve original evidence and numerical limitations.
+  - [x] Run four independent focused regression jobs with FLINT; retain test
+    identities/outcomes without repeating large numerical campaigns. All 99 tests pass;
+    three stale RG2b-unavailable expectations were corrected with finite
+    historical source preservation. [Review](./phase-9-grcv4/tranche-10/P9-10.3-Review.md).
+  - [x] Verify pre-V4 source preservation, current release/package equality
+    and unchanged accepted Tranches 8–9 identities.
+  - [x] Expose retained checks through side-tool API/browser/notebook and
+    pressure source/subject/scope drift, missing tests and stale output.
+  - [x] Bounded user acceptance on 2026-10-31 over implementation `93920eab`;
+    [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Capability
+    publication, debt reconciliation and G4 remain P9-10.4–10.6.
+- [x] P9-10.4: Publish progressive capability/API/lifecycle examples for all ten
+  families, with new runtime evidence linked to the frozen fixture catalog.
   Use the public class implemented in P9-9.4b and reviewed in P9-9.6;
   public API implementation must not be deferred to this publication task.
+  - [x] Minimal positive step followed by full candidate/realization contracts,
+    parameters, C/W/Z evolution, consumed versus fresh reads and identities.
+  - [x] Runnable seed/spark diagnostics, a separately declared positive seed,
+    versioned basin observations, explicit mechanical expansion and target
+    continuation; keep completed spark/hierarchy/general ATC out of the claim.
+  - [x] All ten run evolution, checkpoint/reset/rebase/replay, sparks, expansion,
+    basin policy migration, V3 branch return and atomic rejection examples.
+    Cross-family routes and an expected target-domain exclusion are separate.
+  - [x] Exact source extraction/provenance, portable inputs, compressed outputs,
+    code bindings and retained-integrity checks; no broad campaign rerun.
+  - [x] Guide/code/results are accessible through side-tool API, browser and
+    notebook; update earlier four-family documentation without rewriting
+    accepted P9-10.3 evidence.
+  - [x] User accepted the bounded publication on 2026-10-31;
+    [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json). G4 remains separate.
+  [Guide](../examples/grc9v4/README.md),
+  [publication](./phase-9-grcv4/tranche-10/P9-10.4-Examples.json).
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone.
 - [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,

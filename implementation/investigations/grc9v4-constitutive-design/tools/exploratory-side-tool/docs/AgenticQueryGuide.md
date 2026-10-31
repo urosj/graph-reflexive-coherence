@@ -995,3 +995,18 @@ for `P9-10.1a-VO-BASIN-NATIVE`; `view["acceptance"]` binds the user decision.
 The original design context and execution records retain their historical flags.
 P9-10.1b/c remain open. Do not infer support promotion, all-ten execution,
 completed sparks or attracting basins from a passing native record.
+
+
+## P9-10.4 public example publication
+
+Use `grcv4_explorer.tranche10_examples.tranche10_examples_status(repo_root)` or
+`GET /api/tranche10/examples` to inspect the exact all-ten tutorial run roster,
+guide and output references. The browser's **P9-10.4 — learn GRC9V4** panel and
+notebook cell `p9104-examples` expose the guide and code without executing
+trajectories. The source endpoint accepts only the publication's indexed paths.
+
+Start at `examples/grc9v4/README.md` for positive evolution, family-specific
+histories, seeds/sparks, basin observations, native expansion and lifecycle.
+This is example evidence, not additional normative claim authority, an automatic
+ATC scheduler, completed-spark support or a G4 decision. Use the existing forensic
+claim surfaces for scientific authority; do not infer it from tutorial success.

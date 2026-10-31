@@ -1,0 +1,1370 @@
+{
+  "schema": "grc9v4-positive-seed-example-v1",
+  "configuration": {
+    "schema_version": "grc9v4-configuration-v1",
+    "reference": {
+      "descriptor_version": "grcv4-reference-geometry-v1",
+      "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+      "graph": {
+        "schema_version": "grc9v4-port-graph-v1",
+        "live_node_ids": [
+          "s",
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "edges": [
+          {
+            "edge_id": "e1",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 1
+            },
+            "head": {
+              "node_id": 1,
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "e2",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 2
+            },
+            "head": {
+              "node_id": 2,
+              "port": 2
+            }
+          },
+          {
+            "edge_id": "e3",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 3
+            },
+            "head": {
+              "node_id": 3,
+              "port": 3
+            }
+          },
+          {
+            "edge_id": "e4",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 4
+            },
+            "head": {
+              "node_id": 4,
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "e5",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 5
+            },
+            "head": {
+              "node_id": 5,
+              "port": 5
+            }
+          },
+          {
+            "edge_id": "e6",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 6
+            },
+            "head": {
+              "node_id": 6,
+              "port": 6
+            }
+          },
+          {
+            "edge_id": "e7",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 7
+            },
+            "head": {
+              "node_id": 7,
+              "port": 7
+            }
+          },
+          {
+            "edge_id": "e8",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 8
+            },
+            "head": {
+              "node_id": 8,
+              "port": 8
+            }
+          },
+          {
+            "edge_id": "e9",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "s",
+              "port": 9
+            },
+            "head": {
+              "node_id": 9,
+              "port": 9
+            }
+          }
+        ]
+      },
+      "profile": {
+        "identity_payload": {
+          "schema_version": "grcv4-profile-identity-v1",
+          "profile_family_id": "C_OS",
+          "candidate": "C",
+          "realization": "OS",
+          "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+          "charge_profile_id": "unit_vertex_measure_v1",
+          "geometry_profile_id": "affine_reference_relative_v1",
+          "context_contract_id": "constant_zero_context_v1",
+          "units_id": "grcv4_nondimensional_reference_v1",
+          "gauge_id": "component_zero_mean_potential_v1",
+          "normalization_id": "unnormalized_vertex_stiffness_v1",
+          "domain_id": "fixed_graph_strict_gap_spd_v1",
+          "solver_id": "direct_unique_root_v1",
+          "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+          "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+          "composition_gain": null,
+          "params_hash": "grcv4-params-sha256:072a46be12e82f83b16e7c46c61c5f4fe8bfec9b100cc865ca0fb6159733c17a"
+        },
+        "params_resolved": {
+          "schema_version": "grcv4-resolved-params-v1",
+          "common": {
+            "schema_version": "grcv4-common-params-v1",
+            "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+            "boundary_policy_id": "closed_no_flux_v1",
+            "measure_profile_id": "unit_vertex_measure_v1",
+            "context_contract_id": "constant_zero_context_v1",
+            "units_id": "grcv4_nondimensional_reference_v1",
+            "gauge_id": "component_zero_mean_potential_v1",
+            "normalization_id": "unnormalized_vertex_stiffness_v1",
+            "domain_id": "fixed_graph_strict_gap_spd_v1",
+            "default_step_request": null
+          },
+          "candidate": {
+            "schema_version": "grcv4-candidate-c-params-v1",
+            "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+            "Lambda_C": 0.001953125,
+            "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+            "C_ref": 1,
+            "kappa_M_C": 5.960464477539063e-08,
+            "kappa_Phi_C": 1,
+            "eta_C": 1,
+            "W_C_tr": {
+              "e1": 1,
+              "e2": 1,
+              "e3": 1,
+              "e4": 1,
+              "e5": 1,
+              "e6": 1,
+              "e7": 1,
+              "e8": 1,
+              "e9": 1
+            },
+            "W_C_tr_content_digest": "grcv4-wctr-sha256:7b6c62a05a726b67b07cfde726f27d13bedc5df11a03e04a23797aa27d6a4303",
+            "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+            "tau_C": 1,
+            "chi_C": 16,
+            "zeta_C": 7.275957614183426e-12,
+            "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+            "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+            "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+          },
+          "realization": {
+            "schema_version": "grcv4-os-params-v1",
+            "predictor_policy_id": "reference_geometry_predictor_v1",
+            "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+            "split_residual_norm_id": "edge_l2_v1",
+            "tolerance": 1e-08
+          },
+          "geometry": {
+            "schema_version": "grcv4-geometry-profile-params-v1",
+            "K4_base_digest": "grcv4-k4-sha256:8fef0317e52488f0938026de96b49d8a5275fb51f2a923c8ec3302bb13f24be0",
+            "reference_hodge_digest": "grcv4-hodge-sha256:e40298a56e02aaa0bc5b5efc76c1c6318972a2a1a0217ee4e4127f619070ce7b",
+            "star_cover_id": "vertex_star_exact_overlap_v1",
+            "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+            "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+            "flat_sharp_solver_id": "spd_direct_v1",
+            "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+            "kappa_H": 0.5
+          },
+          "solver": {
+            "schema_version": "grcv4-solver-policy-v1",
+            "solver_kind": "direct",
+            "root_selector_id": "unique_admitted_root_v1",
+            "iteration_limit": 1,
+            "conditioning_limit": 100000000,
+            "residual_norm_id": "edge_l2_v1",
+            "absolute_tolerance": 1e-11,
+            "relative_tolerance": 1e-11,
+            "failure_policy_id": "fail_closed_no_fallback_v1"
+          },
+          "charge": {
+            "schema_version": "grcv4-charge-policy-v1",
+            "policy_id": "stable_pairwise_binary64_charge_v1",
+            "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+            "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+            "absolute_tolerance": 1e-11,
+            "relative_tolerance": 0,
+            "repair_policy": "never_mutate_resource",
+            "remainder_policy": "compatibility_projection_is_none"
+          },
+          "lifecycle": {
+            "schema_version": "grcv4-lifecycle-policy-v1",
+            "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+            "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+            "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+            "rebase_policy_id": "replace_baseline_append_receipt_v1",
+            "history_policy_id": "candidate_c_no_independent_history_v1",
+            "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+            "target_readmission_policy_id": "full_target_fail_closed_v1"
+          }
+        },
+        "complete_profile_id": "grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048"
+      },
+      "context": {
+        "contract_id": "constant_zero_context_v1",
+        "value": {}
+      },
+      "K4_base": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "reference_hodge": {
+        "schema_version": "grcv4-reference-hodge-identity-v1",
+        "edge_weights": {
+          "e1": 1,
+          "e2": 1,
+          "e3": 1,
+          "e4": 1,
+          "e5": 1,
+          "e6": 1,
+          "e7": 1,
+          "e8": 1,
+          "e9": 1
+        }
+      }
+    },
+    "specialization": {
+      "resolved": {
+        "coarse_graining": {
+          "nonnegative_field_mode": "simplex_profile",
+          "schema_version": "grc9v4-coarse-policy-v1",
+          "signed_flux_mode": "positive_negative_split"
+        },
+        "compatibility": {
+          "lifecycle_policy_id": "typed_atomic_delegate_crossing_v1",
+          "observable_policy_id": "exact_legacy_observable_set_v1",
+          "schema_version": "grc9v4-legacy-compatibility-policy-v1",
+          "state_policy_id": "exact_candidate_specific_projection_v1",
+          "target_spec_version": "grc9v3-spec-2026-09-v1",
+          "transition_policy_id": "exact_profile_scoped_delegate_v1",
+          "undefined_expansion_disposition": "legacy_expansion_target_undefined"
+        },
+        "expansion": {
+          "bond_seed": 1,
+          "boundary_policy": "reserve_exact_old_port_map_first",
+          "policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+          "primary_spine_policy": "chiral_latin_same_port_transversal",
+          "recursive_tree_policy": "creation_order_bfs_same_port_rotor",
+          "resource_distribution_schema": "event_supplied_simplex3",
+          "schema_version": "grc9v4-expansion-policy-v1",
+          "source_self_loop_policy": "reject_before_target_construction",
+          "stable_id_policy": "grc_event_sha256_role_grammar_v1"
+        },
+        "row_weight": {
+          "candidate_a_source": "committed_postbeat_W_A",
+          "candidate_c_source": "stable_edge_W_C_tr",
+          "disabled_source": "exact_delegate_native_base_conductance",
+          "evaluation_stage": "fresh_postbeat_candidate_detection",
+          "schema_version": "grc9v4-row-weight-policy-v1"
+        },
+        "schema_version": "grc9v4-resolved-specialization-v1",
+        "spark": {
+          "basin_hessian_tolerance": 0.01,
+          "child_stabilization": null,
+          "gradient_tolerance": 0.5,
+          "lane": "current_hybrid_signed_hessian",
+          "schema_version": "grc9v4-spark-policy-v1",
+          "spark_hessian_tolerance": 0
+        }
+      },
+      "identity_payload": {
+        "coarse_policy_id": "grc9v4-coarse-policy-v1",
+        "expansion_policy_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+        "frame_mode": "fixed_port_chart",
+        "grc9v3_target_spec_version": "grc9v3-spec-2026-09-v1",
+        "hessian_backend": "row_basis_diagonal",
+        "hessian_sign": -1,
+        "port_chart_id": "fixed_3x3_row_column",
+        "port_count": 9,
+        "row_weight_policy_id": "grc9v4-row-weight-policy-v1",
+        "schema_version": "grc9v4-specialization-identity-v1",
+        "spark_lane": "current_hybrid_signed_hessian",
+        "specialization_params_hash": "grc9v4-params-sha256:6628914f299c7c5db4bebdcb604ffe3132b131de3c9ea9e958314be8816db557"
+      }
+    },
+    "current": {
+      "C": [
+        3.0348129272257247,
+        3.0117568969749193,
+        3.0117568969749193,
+        3.0117568969749193,
+        3.0117568969749193,
+        3.0117568969749193,
+        3.0117568969749193,
+        3.0117568969749193,
+        3.0117568969749193,
+        3.0117568969749193
+      ],
+      "W_A": null,
+      "Z_4": null
+    },
+    "reset": {
+      "C": [
+        2.0,
+        3.140625,
+        3.140625,
+        3.140625,
+        3.140625,
+        3.140625,
+        3.140625,
+        3.140625,
+        3.140625,
+        3.015625
+      ],
+      "W_A": null,
+      "Z_4": null
+    },
+    "budget_target": 30.140625,
+    "step_index": 1,
+    "time": 0.000244140625,
+    "execution": {
+      "exact_backend": "flint",
+      "numerical_policy": "legacy_exact_v1"
+    },
+    "targets": []
+  },
+  "original_specialization_id": "grc9v4-specialization-sha256:2257e35e18ca0f911f3a13fbf68174a8e8df2c7c18e2b552425e615edbae2503",
+  "selected_specialization_id": "grc9v4-specialization-sha256:47a01412adce75ee69081837fd493bb99d1cc989699c13f10f7b3b28e6d11979",
+  "exact_charge_preserved": true,
+  "diagnostic": {
+    "policy": {
+      "schema_version": "grc9v4-spark-policy-v1",
+      "lane": "current_hybrid_signed_hessian",
+      "gradient_tolerance": 0.5,
+      "basin_hessian_tolerance": 0.01,
+      "spark_hessian_tolerance": 0.0,
+      "child_stabilization": null
+    },
+    "assessments": [
+      {
+        "node_id": "s",
+        "occupied_ports": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "gradient": [
+          -0.02305603025080538,
+          -0.02305603025080538,
+          -0.02305603025080538
+        ],
+        "minimum_signed_hessian": 0.02305603025080538,
+        "saturated": true,
+        "small_gradient": true,
+        "hessian_degenerate": false,
+        "basin_seed": true,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 1,
+        "occupied_ports": [
+          1
+        ],
+        "gradient": [
+          0.02305603025080538,
+          0.0,
+          0.0
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 2,
+        "occupied_ports": [
+          2
+        ],
+        "gradient": [
+          0.02305603025080538,
+          0.0,
+          0.0
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 3,
+        "occupied_ports": [
+          3
+        ],
+        "gradient": [
+          0.02305603025080538,
+          0.0,
+          0.0
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 4,
+        "occupied_ports": [
+          4
+        ],
+        "gradient": [
+          0.0,
+          0.02305603025080538,
+          0.0
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 5,
+        "occupied_ports": [
+          5
+        ],
+        "gradient": [
+          0.0,
+          0.02305603025080538,
+          0.0
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 6,
+        "occupied_ports": [
+          6
+        ],
+        "gradient": [
+          0.0,
+          0.02305603025080538,
+          0.0
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 7,
+        "occupied_ports": [
+          7
+        ],
+        "gradient": [
+          0.0,
+          0.0,
+          0.02305603025080538
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 8,
+        "occupied_ports": [
+          8
+        ],
+        "gradient": [
+          0.0,
+          0.0,
+          0.02305603025080538
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      },
+      {
+        "node_id": 9,
+        "occupied_ports": [
+          9
+        ],
+        "gradient": [
+          0.0,
+          0.0,
+          0.02305603025080538
+        ],
+        "minimum_signed_hessian": -0.02305603025080538,
+        "saturated": false,
+        "small_gradient": true,
+        "hessian_degenerate": true,
+        "basin_seed": false,
+        "hybrid_spark_candidate": false
+      }
+    ],
+    "candidate_node_ids": [],
+    "causal_boundary": "fresh detached diagnostic; native expansion rechecks source and chronology",
+    "completed_spark": false,
+    "hierarchy_update": false
+  },
+  "basin_observation": {
+    "schema_version": "grc9v4-basin-observation-v1",
+    "policy_id": "grc9v4-terminal-flow-regions-v1",
+    "binding": {
+      "role": "current",
+      "role_state_digest": "80967c638887d0d66d5188c383fd159109ec1343fecc3a263d7b44a391c0b68e",
+      "profile_id": "grcv4-profile-sha256:65f2b69cf01246ff5c3f5aa7b968a5f3730911528bcccf05d6a67a802df09048",
+      "model_identity": "grc9v4-model-sha256:89d87ab180b2ac458177cc8b9415f1006322ed31c3caa4c522b78826a5c73eef",
+      "graph_digest": "grc-graph-sha256:cddd6d4753e36177f472d6a81f0b0a3d2224044ba29bcfe71c68a79f642355a2",
+      "orientation_identity": "grcv4-orientation-sha256:a1b9a2d7ea87772c26a7bbcf9bc8cf17ec6f00a36f59b9e17db8ac67298aebbc",
+      "context_contract_id": "constant_zero_context_v1",
+      "context_value_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "numerical_policy_id": "legacy_exact_v1",
+      "scalar_backend_id": "flint",
+      "evaluator_id": "grc9v4-native-fresh-basin-capture-v1",
+      "release_id": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+      "stage": "fresh_poststate_readmission",
+      "root_certificate_binding": null,
+      "read_identity": "grc9v4-basin-read-sha256:5efecb1d802d1efcf9536a160b7140f3ce3d16804e45cb74c0b8a5cc38e0020c"
+    },
+    "operand_digest": "9126db6af86f83b0305e237885d9355b64ad1c0f2f23cfd3e5d7ee0849f6bb77",
+    "observation_digest": "e9d7aac535533d3671fab6699fe004c14ca89217d4a80cbea371132282e7ec35",
+    "witness": {
+      "edges": [
+        {
+          "edge_id": "e1",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 1
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e2",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 2
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e3",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 3
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e4",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 4
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e5",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 5
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e6",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 6
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e7",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 7
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e8",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 8
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        },
+        {
+          "edge_id": "e9",
+          "tail": {
+            "kind": "str",
+            "value": "s"
+          },
+          "head": {
+            "kind": "int",
+            "value": 9
+          },
+          "current": "-0x1.d83001ce397b4p-3"
+        }
+      ],
+      "rows": [
+        {
+          "node": {
+            "kind": "int",
+            "value": 1
+          },
+          "gradient": [
+            "0x1.79bffff9c7680p-6",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "signed_hessian_diagonal": [
+            "-0x1.79bffff9c7680p-6",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "row_net_flux": [
+            "0x1.d83001ce397b4p-3",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 2
+          },
+          "gradient": [
+            "0x1.79bffff9c7680p-6",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "signed_hessian_diagonal": [
+            "-0x1.79bffff9c7680p-6",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "row_net_flux": [
+            "0x1.d83001ce397b4p-3",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 3
+          },
+          "gradient": [
+            "0x1.79bffff9c7680p-6",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "signed_hessian_diagonal": [
+            "-0x1.79bffff9c7680p-6",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          "row_net_flux": [
+            "0x1.d83001ce397b4p-3",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 4
+          },
+          "gradient": [
+            "0x0.0p+0",
+            "0x1.79bffff9c7680p-6",
+            "0x0.0p+0"
+          ],
+          "signed_hessian_diagonal": [
+            "0x0.0p+0",
+            "-0x1.79bffff9c7680p-6",
+            "0x0.0p+0"
+          ],
+          "row_net_flux": [
+            "0x0.0p+0",
+            "0x1.d83001ce397b4p-3",
+            "0x0.0p+0"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 5
+          },
+          "gradient": [
+            "0x0.0p+0",
+            "0x1.79bffff9c7680p-6",
+            "0x0.0p+0"
+          ],
+          "signed_hessian_diagonal": [
+            "0x0.0p+0",
+            "-0x1.79bffff9c7680p-6",
+            "0x0.0p+0"
+          ],
+          "row_net_flux": [
+            "0x0.0p+0",
+            "0x1.d83001ce397b4p-3",
+            "0x0.0p+0"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 6
+          },
+          "gradient": [
+            "0x0.0p+0",
+            "0x1.79bffff9c7680p-6",
+            "0x0.0p+0"
+          ],
+          "signed_hessian_diagonal": [
+            "0x0.0p+0",
+            "-0x1.79bffff9c7680p-6",
+            "0x0.0p+0"
+          ],
+          "row_net_flux": [
+            "0x0.0p+0",
+            "0x1.d83001ce397b4p-3",
+            "0x0.0p+0"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 7
+          },
+          "gradient": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "0x1.79bffff9c7680p-6"
+          ],
+          "signed_hessian_diagonal": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "-0x1.79bffff9c7680p-6"
+          ],
+          "row_net_flux": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "0x1.d83001ce397b4p-3"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 8
+          },
+          "gradient": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "0x1.79bffff9c7680p-6"
+          ],
+          "signed_hessian_diagonal": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "-0x1.79bffff9c7680p-6"
+          ],
+          "row_net_flux": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "0x1.d83001ce397b4p-3"
+          ]
+        },
+        {
+          "node": {
+            "kind": "int",
+            "value": 9
+          },
+          "gradient": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "0x1.79bffff9c7680p-6"
+          ],
+          "signed_hessian_diagonal": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "-0x1.79bffff9c7680p-6"
+          ],
+          "row_net_flux": [
+            "0x0.0p+0",
+            "0x0.0p+0",
+            "0x1.d83001ce397b4p-3"
+          ]
+        },
+        {
+          "node": {
+            "kind": "str",
+            "value": "s"
+          },
+          "gradient": [
+            "-0x1.79bffff9c7680p-6",
+            "-0x1.79bffff9c7680p-6",
+            "-0x1.79bffff9c7680p-6"
+          ],
+          "signed_hessian_diagonal": [
+            "0x1.79bffff9c7680p-6",
+            "0x1.79bffff9c7680p-6",
+            "0x1.79bffff9c7680p-6"
+          ],
+          "row_net_flux": [
+            "-0x1.6224015aab1c7p-1",
+            "-0x1.6224015aab1c7p-1",
+            "-0x1.6224015aab1c7p-1"
+          ]
+        }
+      ],
+      "gradient_tolerance": "0x1.0000000000000p-1",
+      "hessian_tolerance": "0x1.47ae147ae147bp-7",
+      "hessian_sign": -1
+    },
+    "components": [
+      {
+        "component_ref": 0,
+        "members": [
+          {
+            "kind": "int",
+            "value": 1
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 1,
+        "members": [
+          {
+            "kind": "int",
+            "value": 2
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 2,
+        "members": [
+          {
+            "kind": "int",
+            "value": 3
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 3,
+        "members": [
+          {
+            "kind": "int",
+            "value": 4
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 4,
+        "members": [
+          {
+            "kind": "int",
+            "value": 5
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 5,
+        "members": [
+          {
+            "kind": "int",
+            "value": 6
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 6,
+        "members": [
+          {
+            "kind": "int",
+            "value": 7
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 7,
+        "members": [
+          {
+            "kind": "int",
+            "value": 8
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 8,
+        "members": [
+          {
+            "kind": "int",
+            "value": 9
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": false,
+        "terminal_kind": null
+      },
+      {
+        "component_ref": 9,
+        "members": [
+          {
+            "kind": "str",
+            "value": "s"
+          }
+        ],
+        "cyclic": false,
+        "is_terminal": true,
+        "terminal_kind": "sink"
+      }
+    ],
+    "nodes": [
+      {
+        "node": {
+          "kind": "int",
+          "value": 1
+        },
+        "component_ref": 0,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 2
+        },
+        "component_ref": 1,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 3
+        },
+        "component_ref": 2,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 4
+        },
+        "component_ref": 3,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 5
+        },
+        "component_ref": 4,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 6
+        },
+        "component_ref": 5,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 7
+        },
+        "component_ref": 6,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 8
+        },
+        "component_ref": 7,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "int",
+          "value": 9
+        },
+        "component_ref": 8,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": false
+      },
+      {
+        "node": {
+          "kind": "str",
+          "value": "s"
+        },
+        "component_ref": 9,
+        "reachable_terminals": [
+          9
+        ],
+        "status": "sink",
+        "assigned_sink": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "seed": true
+      }
+    ],
+    "regions": [
+      {
+        "sink_node_id": {
+          "kind": "str",
+          "value": "s"
+        },
+        "basin_id": "grc9v4-flow-basin-sha256:0c69b5c209a8d34293e26a3def63ab84dd2bbe3170ba22f4a5afd714e2591a00",
+        "members": [
+          {
+            "kind": "int",
+            "value": 1
+          },
+          {
+            "kind": "int",
+            "value": 2
+          },
+          {
+            "kind": "int",
+            "value": 3
+          },
+          {
+            "kind": "int",
+            "value": 4
+          },
+          {
+            "kind": "int",
+            "value": 5
+          },
+          {
+            "kind": "int",
+            "value": 6
+          },
+          {
+            "kind": "int",
+            "value": 7
+          },
+          {
+            "kind": "int",
+            "value": 8
+          },
+          {
+            "kind": "int",
+            "value": 9
+          },
+          {
+            "kind": "str",
+            "value": "s"
+          }
+        ],
+        "seed_members": [
+          {
+            "kind": "str",
+            "value": "s"
+          }
+        ]
+      }
+    ]
+  },
+  "topology_events": 0,
+  "completed_spark": false,
+  "attracting_basin_claimed": false,
+  "scope": "New explicit bounded seed observation; unchanged frozen expansion fixtures."
+}
