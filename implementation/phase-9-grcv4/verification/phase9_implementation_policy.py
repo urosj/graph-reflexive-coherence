@@ -4461,3 +4461,25 @@ PATHS.update({
     INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_research.py',
     INV+'tools/exploratory-side-tool/tool/phase9-web/spark-research.js',
 })
+
+# User-accepted C_PC SC-3 authority and additive propagation; native work remains forward.
+PATHS.update({
+    INV+'decisions/SparkCompletionCPCSC3Authority.md',
+    INV+'decisions/spark-completion-pc/Authority.json',
+    INV+'drafts/GRC9V4-spark-completion-CPC-proposal.md',
+    INV+'drafts/2026-10-GRC9V4-Spark-Completion-CPC.md',
+    INV+'evidence/spark-completion/applicability/CPCScientificAcceptance.json',
+    INV+'evidence/spark-completion/applicability/CPCClaimDebtLedger.json',
+    INV+'evidence/spark-completion/applicability/CPCSC3Sources.json',
+    INV+'evidence/spark-completion/applicability/CPCSC3Validation.json',
+    INV+'scripts/check_spark_completion_pc_sc3.py',
+    INV+'scripts/test_spark_completion_pc_sc3.py',
+    INV+'tools/exploratory-side-tool/records/SC3SparkPCAdmission.json',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_pc.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-pc.js',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionCPCAcceptance.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCPCReconciliation.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCPCReconciliation.json',
+    'specs/grc-9-v4-spark-completion-pc.md',
+    'specs/grc-9-v4-spark-completion-pc-source-manifest.json',
+})

@@ -3978,7 +3978,7 @@ now admits the scientific/design successor; native completion/hierarchy stays pe
 ## All-ten spark-completion applicability — 2026-10-31
 
 [Programme](./decisions/SparkCompletionAllTenApplicability.md) ·
-[Current research ledger](./evidence/spark-completion/applicability/ClaimDebtLedger.json).
+[Current research ledger](./evidence/spark-completion/applicability/CPCClaimDebtLedger.json).
 Native implementation and accepted scientific promotion remain separate.
 
 - [x] Preserve accepted SC-1 definition and bounded C_OS completion; identify
@@ -4002,7 +4002,7 @@ Native implementation and accepted scientific promotion remain separate.
     then propagate authority/proposal/paper/spec with pinned sources and inherited v2 schema.
   - [x] Expose the three conditional claims, research debt and both forward native
     obligations through the successor forensic API, browser and notebook; preserve C_OS.
-- [ ] C_PC — all C/Z directions, actual carrier read/write and event disposition.
+- [x] C_PC — all C/Z directions, actual carrier read/write and event disposition.
   - [x] [Derive and certify the full sixty-dimensional C/Z map](./decisions/SparkCompletionCPCApplicability.md),
     including all forty-six signed carrier directions and a stationary carrier.
   - [x] Execute actual source read/write, fresh event capture, both-role carrier
@@ -4015,8 +4015,11 @@ Native implementation and accepted scientific promotion remain separate.
   - [x] Expose [pending research progress](./evidence/spark-completion/applicability/CPCResearchProgress.json)
     through read-only API, indexed sources, browser and notebook, preserving
     accepted C_OS/C_CI authority and source bytes.
-  - [ ] Scientific review and explicit claim/debt adjudication, followed by
-    authority → proposal/paper → specification and forward native obligations.
+  - [x] User accepts the repository scientific review and its explicit limits;
+    [SC-3 adjudication](./decisions/SparkCompletionCPCSC3Authority.md) resolves
+    bounded applicability and propagates authority → proposal/paper → specification.
+    Both native obligations remain pending; accepted API/browser/notebook and
+    forensic traces preserve original execution and C_OS/C_CI authority.
 - [ ] C_CI_PC — coupled root, C/Z return and same-source immediate/carrier writer.
 - [ ] A_OS — stationary W writer and full C/W return plus event lineage.
 - [ ] A_CI — selected joint root and all C/W directions.

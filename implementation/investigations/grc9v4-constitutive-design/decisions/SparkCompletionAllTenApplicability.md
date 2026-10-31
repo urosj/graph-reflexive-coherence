@@ -3,11 +3,12 @@
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/ClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/CPCClaimDebtLedger.json).
 
-[C_CI SC-3 is now complete](./SparkCompletionCCISC3Authority.md): bounded
-scientific applicability is adjudicated and propagated. C_PC is the next family;
-the native implementation boundary is unchanged.
+[C_PC SC-3 is now accepted](./SparkCompletionCPCSC3Authority.md), following
+[C_CI](./SparkCompletionCCISC3Authority.md): bounded scientific applicability
+is adjudicated and propagated for C_OS, C_CI and C_PC. C_CI_PC is the next
+family; the native implementation boundary is unchanged.
 
 ## Deliverable and finite order
 
@@ -62,7 +63,7 @@ Old zero-site inverse/section bounds do not automatically apply to a quartic law
 Suppressing these defining mechanisms would change the system being certified.
 Their necessity for organization is a different question and is not required.
 
-## C_CI first: bounded completion-feasibility chain
+## Retained C_CI work sequence: bounded completion-feasibility chain
 
 1. Derive the actual joint root and prove a uniform root-selection domain on
    the concrete source/target graphs. Establish a full-CI physical-map trap;
@@ -83,3 +84,12 @@ Their necessity for organization is a different question and is not required.
 
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
+
+## Current next family: C_CI_PC
+
+After the accepted C_PC construction, derive the composite selected root and
+full C/Z physical map. One selected source must feed both immediate geometry
+and the persistent writer, preserving the gain-two composition identity.
+Certify all independent carrier directions and the actual source/event/transfer/
+approach/window chain. Reuse C_PC or C_CI operands only where their hypotheses
+hold; neither prior trajectory entry nor a C-only trap transfers automatically.

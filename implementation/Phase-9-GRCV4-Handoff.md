@@ -1,5 +1,49 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: C_PC SC-3 accepted; C_CI_PC next — 2026-10-31
+
+The user accepted the bounded C_PC work with “acceopt and commit”. Research
+checkpoint `5d5d9960` retains the original runs and review. The
+[C_PC adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCSC3Authority.md)
+accepts three conditional claims, resolves `SC-APP-DEBT-C_PC` for research,
+and propagates authority → proposal/paper → specification. The existing v2
+completion schema is reused. Native numerical and lifecycle obligations
+remain pending in P9-9.1a; no native completion/hierarchy or G4 grant is added.
+
+The actual full C/Z construction covers 14 resource and 46 carrier directions,
+including nonzero signed perturbations. Current enters at 849 and completes
+at 851; independent reset 817 → 819 earns no live gain. Both source carrier
+archives and lawful whole-target zeroing are bound to the actual event.
+The retained 20.8 MB of evidence remains compressed to 2.4 MB; no campaign
+is rerun for acceptance. Repository-review and overlap-consistency limits
+remain explicit; no independent second reviewer or independent long replay
+is claimed. The broader repository audit's pre-existing source drift remains
+recorded separately in the original validation, without being waived.
+
+Use `/api/spark-completion/applicability/pc`, the accepted C_PC browser panel,
+notebook cell `spark-completion-pc-accepted`, or
+`load_spark_pc_forensic_context`. Older loaders preserve their historical
+accepted or pre-acceptance graphs. The
+[current family ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCClaimDebtLedger.json)
+has C_OS, C_CI and C_PC accepted scientifically and seven families open.
+The [research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCPCReconciliation.md)
+does not close aggregate P9-10.5/10.6.
+
+**Next is C_CI_PC completion applicability**: prove its selected joint root,
+full C/Z return and actual source-to-window chain. The same selected source
+must supply immediate geometry and the persistent writer; the composite
+gain-two identity must not be silently reduced to CI or PC. Reuse exact
+mathematics only under its hypotheses. Continue branch
+`investigation/grc9v4-spark-completion`; no new-family campaign has started.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_pc_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_pc_sc3.py
+```
+
+These are retained authority/propagation/surface checks. Earlier continuation
+entries below retain their historical scopes and flags.
+
 ## Current continuation: C_PC completion demonstrated; review next — 2026-10-31
 
 Branch `investigation/grc9v4-spark-completion` starts from merged `97470d96`.
