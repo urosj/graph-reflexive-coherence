@@ -54,7 +54,17 @@ remain distinct from exact implicit-root claims. All eight tests passed in two p
 policy-migration/disabled-return captures once for 10.1c/10.2. Bounded user acceptance is
 recorded on 2026-10-30 over implementation `ac8d0249`;
 [decision](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json).
-Next: A_CI_PC, C_RG2b and A_RG2b, each with its own evidence.
+Validated work, pending acceptance: [A_CI_PC P9-10.1a–c → 10.2](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md)
+on the same branch, followed by C_RG2b and A_RG2b. The existing composite root
+captures fixed-row A history and committed Z together. Verify both authority
+channels independently, full J/H/backend/domain/certificate, and the existing
+H_ref + kappa_H (Z + S) equation. Preserve the original parameters, tolerance
+and numerical policy. The source/lifecycle and exact-target compatibility jobs
+passed all eight tests in parallel with FLINT. Both-role migration/return
+observations were collected in that same compatibility execution and reused
+for 10.1c/10.2 (four charges and 53 receipts; no added native steps/replays). Disabled
+return initializes A history by its accepted reference pass and Z to zero under
+the explicit loss policy. Acceptance remains separate.
 
 
 P9-10.2 is accepted for the bounded C_OS/C_CI/A_CI/A_PC scope;
@@ -104,7 +114,7 @@ merely because the checkpoint number changed. Independent retained checks or
 necessary new cases may run in parallel; preserve original execution identities
 and distinguish retained validation from a fresh native run. The bounded
 four-family reconciliation and A_OS/C_PC/C_CI_PC extensions are accepted.
-A_CI_PC/C_RG2b/A_RG2b remain to be implemented.
+A_CI_PC is validated pending acceptance; C_RG2b/A_RG2b remain to be implemented.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin
@@ -128,8 +138,8 @@ A_OS branch to the accepted first four. Its fresh Candidate-A reference read
 uses the role's W and fixed-row backend; this additional bounded native scope
 is accepted separately. C_PC now has declared capture scope and bounded
 conformance evidence accepted separately. C_CI_PC extends the joint-root
-capture with its separately accepted bounded conformance; A_CI_PC and RG2b capture
-remain unimplemented. The generic readers already
+capture with its separately accepted bounded conformance; A_CI_PC now integrates
+the same root with its A backend/history. RG2b capture remains unimplemented. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
 and [specification](../specs/grc-9-v4-basin-interface.md) provide the starting

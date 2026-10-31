@@ -1,5 +1,30 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## A_CI_PC Tranche 10 — validated, acceptance pending (2026-10-31)
+
+Branch: `work/p9-tranche10-remaining-families`, following accepted C_CI_PC
+`b994fabe`. [Review](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md).
+The bounded source and exact 17-node/16-edge v1/v2 target reuse the accepted
+Tranches 8–9 subjects. The production change admits A_CI_PC into the existing
+fresh joint-root capture, with no constitutive, solver or tolerance change.
+
+Source pressure checks W and Z independently, full selected J/H/backend,
+fresh-root equality, same-J/corrupt-H rejection and no observation writer.
+All eight native tests pass in two parallel FLINT jobs (277.9 and 142.8 seconds).
+The compatibility job captured policy migration and disabled return for both
+roles once, for 10.1c/10.2. Four saved charge checks and 53 receipts in 15 commit
+groups pass; 10.2 adds no native steps/replays.
+Return A history is independently initialized; Z is zeroed under explicit loss.
+All sixteen represented signs per role are certified at both target boundaries.
+At policy migration both composite terms exceed the solver tolerance; after
+disabled return Z is zero and the instantaneous contribution is also below
+tolerance. Fixed-geometry bounds do not establish exact implicit-root claims.
+
+Accepted first-four/A_OS/C_PC/C_CI_PC evidence is preserved through the finite
+source-epoch adapter. The family API/browser selector and notebook
+`p910-acipc-basin` expose this separate bounded work. User acceptance is pending;
+C_RG2b and A_RG2b follow, then consolidated 10.3–10.6. No G4 grant is inferred.
+
 ## C_CI_PC Tranche 10 — bounded accepted (2026-10-30)
 
 Branch: `work/p9-tranche10-remaining-families`, following accepted C_PC

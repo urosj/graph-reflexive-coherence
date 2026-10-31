@@ -153,20 +153,19 @@ class ACIPCPublic(public.PublicTests):
             late_failure_atomic=True, stale_source_rejected=True, tampered_state_rejected=True,
             negative_duration_rejected=True)
 
-    def test_acipc_scope_does_not_enable_remaining_families_or_basin_policy(self):
+    def test_acipc_basin_successor_is_explicit_and_does_not_grant_full_conformance(self):
         self.assertEqual(set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"})
         model = self.model()
         self.assertFalse(model.support_status()["full_GRC9V4_conformance"])
         before = model.snapshot()
-        try:
-            result = model.migrate_basin_policy("acipc-unselected-basin")
-        except ValueError:
-            pass
-        else:
-            self.assertFalse(result.committed)
-        self.assertEqual(model.snapshot(), before)
+        self.assertNotIn("basin_attributes", model.compute_observables())
+        result = model.migrate_basin_policy("acipc-explicit-basin")
+        self.assertTrue(result.committed, result.failure)
+        self.assertNotEqual(model.snapshot(), before)
+        self.assertIn("basin_attributes", model.compute_observables())
+        self.assertFalse(model.support_status()["full_GRC9V4_conformance"])
         public.EVIDENCE["scope"] = dict(execution_families=list(GRC9V4.execution_scope()),
-            A_CI_PC_basin_migration_rejected=True, whole_publication_unchanged=True,
+            A_CI_PC_basin_explicit_successor=True, full_conformance_not_granted=True,
             full_GRC9V4_conformance=False)
 
 

@@ -10,6 +10,7 @@ import importlib
 
 import p910_cpc_source_epoch as successor
 import p910_ccipc_source_epoch as latest
+import p910_acipc_source_epoch as current
 from concurrent.futures import ProcessPoolExecutor
 from copy import deepcopy
 import json
@@ -28,8 +29,8 @@ BASE = v.BASE + "tranche-10/"
 VERIFY = v.BASE + "verification/"
 SELF = VERIFY + "p910_family_basin.py"
 TEST = VERIFY + "test_p910_aos_basin.py"
-FAMILIES = ("A_OS", "C_PC", "C_CI_PC")
-HISTORICAL = ("A_OS", "C_PC")
+FAMILIES = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC")
+HISTORICAL = ("A_OS", "C_PC", "C_CI_PC")
 ALL_REMAINING = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
 PARTS = ("Native", "Target")
 BASELINE = "f2333b32"
@@ -46,20 +47,22 @@ def references(root=ROOT, family="A_OS", *, historical=False):
              VERIFY + "p9101a_basin_oracle.py", VERIFY + "p9101c_target_basin.py",
              VERIFY + "test_p9101a_basin_pressure.py", VERIFY + "test_p9101b_target_compatibility.py",
              VERIFY + "p9102_verification.py", VERIFY + "p9101b_target_compatibility.py"}
-    if family in ("C_PC", "C_CI_PC"):
+    if family in ("C_PC", "C_CI_PC", "A_CI_PC"):
         short = family.replace("_", "")
         names.difference_update({PRIOR, TARGET})
         names.update({VERIFY + "test_p910_" + short.lower() + "_basin.py",
                       PRIOR.replace("AOS", short), TARGET.replace("AOS", short), successor.PATH, successor.SELF})
-    if family == "C_CI_PC":
+    if family in ("C_CI_PC", "A_CI_PC"):
         names.update({latest.PATH, latest.SELF})
+    if family == "A_CI_PC":
+        names.update({current.PATH, current.SELF})
     for pattern in ("src/pygrc/**/*.py", "src/pygrc/**/*.json", "tests/models/test_grc*.py"):
         names.update(p.relative_to(root).as_posix() for p in root.glob(pattern))
     for pattern in ("test_p980*.py", "verify_p983a_aos_oracle.py"):
         names.update(p.relative_to(root).as_posix() for p in (root / VERIFY).glob(pattern))
     if historical:
         require(family in HISTORICAL, "only accepted families select predecessor epochs")
-        epoch = successor if family == "A_OS" else latest
+        epoch = {"A_OS": successor, "C_PC": latest, "C_CI_PC": current}[family]
         return [dict(path=n, sha256=epoch.sha(epoch.previous_bytes(root, n))) for n in sorted(names)]
     return [v.reference(root, n) for n in sorted(names)]
 

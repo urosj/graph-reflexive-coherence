@@ -1,4 +1,6 @@
 """Authenticate the finite CI+PC extension without rewriting accepted evidence."""
+import p910_acipc_source_epoch as latest
+
 import ast
 import hashlib
 import json
@@ -33,7 +35,7 @@ def seal(value):
 
 def prior_native_paths_unchanged(root):
     name = "src/pygrc/models/grc_9_v4_basin.py"
-    before, after = ast.parse(original(root, name)), ast.parse((root / name).read_bytes())
+    before, after = ast.parse(original(root, name)), ast.parse(latest.previous_bytes(root, name))
     capture = next(n for n in after.body if isinstance(n, ast.FunctionDef) and n.name == "capture")
     rosters = [n for n in ast.walk(capture) if isinstance(n, ast.Tuple)
                and all(isinstance(e, ast.Constant) for e in n.elts)
@@ -55,21 +57,21 @@ def prior_native_paths_unchanged(root):
 
 def manifest(root):
     return seal(dict(schema="p910-ccipc-source-epoch-v1", predecessor=BASELINE,
-        checker_sha256=sha((root / SELF).read_bytes()),
-        sources={n: dict(before_sha256=sha(original(root, n)), after_sha256=sha((root / n).read_bytes()))
+        checker_sha256=sha(latest.previous_bytes(root, SELF)),
+        sources={n: dict(before_sha256=sha(original(root, n)), after_sha256=sha(latest.previous_bytes(root, n)))
                  for n in sorted(CHANGED)},
         prior_native_paths_unchanged=prior_native_paths_unchanged(root), accepted_execution_rewritten=False))
 
 
 def previous_bytes(root, name):
     root = Path(root).resolve()
-    raw = (root / name).read_bytes()
+    raw = latest.previous_bytes(root, name)
     if name not in CHANGED:
         return raw
     value = json.loads((root / PATH).read_bytes())
     if (value != seal(value) or value["schema"] != "p910-ccipc-source-epoch-v1"
             or value["predecessor"] != BASELINE or set(value["sources"]) != CHANGED
-            or value["checker_sha256"] != sha((root / SELF).read_bytes())
+            or value["checker_sha256"] != sha(latest.previous_bytes(root, SELF))
             or value["prior_native_paths_unchanged"] is not True
             or value["accepted_execution_rewritten"] is not False):
         raise ValueError("CI+PC source epoch identity changed")
@@ -80,8 +82,9 @@ def previous_bytes(root, name):
 
 
 def peel_sha(root, name, present):
+    present = latest.peel_sha(root, name, present)
     previous = previous_bytes(root, name)
-    return sha(previous) if present == sha((root / name).read_bytes()) else present
+    return sha(previous) if present == sha(latest.previous_bytes(root, name)) else present
 
 
 def read_source(root, ref):
@@ -90,5 +93,5 @@ def read_source(root, ref):
         return raw, ref
     old = previous_bytes(root, ref["path"])
     if sha(old) != ref["sha256"]:
-        raise ValueError("unbound historical family source: " + ref["path"])
+        return latest.read_source(root, ref)
     return old, dict(ref, revision=BASELINE, basis="historical_git")

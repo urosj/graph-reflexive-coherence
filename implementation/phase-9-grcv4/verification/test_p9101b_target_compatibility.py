@@ -33,7 +33,7 @@ def digest(value):
 
 
 def target_seed(family):
-    name = {"A_OS": "AOS", "C_PC": "CPC", "C_CI_PC": "CCIPC"}.get(family, family)
+    name = {"A_OS": "AOS", "C_PC": "CPC", "C_CI_PC": "CCIPC", "A_CI_PC": "ACIPC"}.get(family, family)
     path = BASE / f"P9-9.1b-{name}.json"
     if path.exists():
         raw = path.read_bytes()
@@ -323,6 +323,7 @@ class TargetCompatibility(unittest.TestCase):
             enabled_continuation=asdict(before_reset),
             final_checkpoint=final,
             history_policy=(f"explicit_{self.FAMILY}_carrier_loss_and_zero_initialization" if self.FAMILY in ("C_PC", "C_CI_PC")
+                            else "explicit_A_archive_loss_and_A_CI_PC_carrier_zero_initialization" if self.FAMILY == "A_CI_PC"
                             else "explicit_A_archive_loss_and_A_PC_carrier_zero_initialization"),
             disabled_replay=True,
             enabled_replay=True,

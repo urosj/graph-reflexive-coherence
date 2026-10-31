@@ -3466,3 +3466,18 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Bounded C_CI_PC acceptance on 2026-10-30 over implementation
   `ac8d0249`; original execution records remain unchanged. A_CI_PC, C_RG2b,
   A_RG2b and consolidated 10.3–10.6 remain separate.
+
+
+## Remaining-family Tranche 10 — A_CI_PC
+
+- [x] Expose the exact A_CI_PC bounded review in the shared family API/browser
+  selector and notebook `p910-acipc-basin`; bind full joint J/H, W, old Z,
+  fixed-row A backend, domain and certificate.
+- [x] Present fixed-geometry current bounds, positive A denominator and the
+  composite geometry residual without claiming exact implicit-root signs.
+- [x] Reuse native both-role policy-migration/disabled-return captures and
+  receipt/charge checks; distinguish W initialization from zero carrier return.
+- [x] Preserve earlier accepted evidence/source epochs; pressure W/Z/backend,
+  root/domain tampering, widened scope and stale-view clearing.
+- [ ] Bounded user acceptance; C_RG2b, A_RG2b and consolidated 10.3–10.6 remain
+  separate, with no full-conformance/G4 grant.

@@ -1,0 +1,38 @@
+{
+  "schema": "p910-acipc-source-epoch-v1",
+  "predecessor": "b994fabe",
+  "checker_sha256": "a835f7a131b9921689c682998485c98b14d1810e210013ae4b2708abf43b3ef3",
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p9101c_target_basin.py": {
+      "before_sha256": "6a00153544f4ce40d6645df11ce30ee44386641a7be8a9d9819f8d7b4d248263",
+      "after_sha256": "b5f6272620301ad73f62be50f612987fb802cac6e16204d34799fd65a55f1f1d"
+    },
+    "implementation/phase-9-grcv4/verification/p910_ccipc_source_epoch.py": {
+      "before_sha256": "312748cf4a9b998c2367c1e2b0e4a149d05ecc4ab3add478f9ed52b2eea1f869",
+      "after_sha256": "1cb673c2be2d3ebacc40eb0c0930c875c355a60dfb9f2d4cf59a6ba6dca1902e"
+    },
+    "implementation/phase-9-grcv4/verification/p910_family_basin.py": {
+      "before_sha256": "dc4bca8b31a0de4c50b9bbcdc08b5e420f061a546e44f84759cd993213dbc73f",
+      "after_sha256": "ee65a825a6d5f0ac302b3e7c4d23fe06951940df711f5735c49fa5b313812616"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9101b_target_compatibility.py": {
+      "before_sha256": "d1475ad13e204af88bc1f32092fbcaa66c2a0b9eebd69117338559172dc57e0b",
+      "after_sha256": "9aa401c705929e888ae30fc0c127f6d44fc79e6957a7a288142250511310ea60"
+    },
+    "src/pygrc/models/grc_9_v4_basin.py": {
+      "before_sha256": "5d9d00e10ed009c86416af7912777b1988df1d35a2f399c78fb12503a54e8f8c",
+      "after_sha256": "ce9beec5c2d2e1696d5dc36b28b7afc6cf8e5a09639b4542babb89b6d2d7049e"
+    },
+    "tests/models/test_grc_9_v4_acipc_integration.py": {
+      "before_sha256": "3b7e8b3b4efa3d9ae2c39e9140d8b54172dfb088a8bade96f5a0652454b72526",
+      "after_sha256": "5b776752086947c5d903c8c8ab2a6e610c1ff6528c5189756be1b3f0e21a3747"
+    },
+    "tests/models/test_grc_9_v4_basin.py": {
+      "before_sha256": "4683feaf7f3d823b7d8d86c5a372ff48ab5d25f6d88477b6965f5b11997648cc",
+      "after_sha256": "8aea4b6ad64f6c2eca34737b50442fda7d0f1788aab1bfc8e694c4a88fc17c28"
+    }
+  },
+  "prior_native_paths_unchanged": true,
+  "accepted_execution_rewritten": false,
+  "record_digest": "fdcd59d7b3ca532e656475dbd5fd8d525fe9c1ebb79c21117734d4b0eb4fdb0b"
+}

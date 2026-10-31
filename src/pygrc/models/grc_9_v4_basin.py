@@ -341,6 +341,7 @@ def capture(state, role):
         "A_OS",
         "C_PC",
         "C_CI_PC",
+        "A_CI_PC",
     ):
         raise ValueError("explicit supported basin successor required")
     if role not in ("current", "reset"):

@@ -4211,3 +4211,15 @@ PATHS |= {
 
 # Bounded C_CI_PC acceptance over its unchanged native execution.
 PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json")
+
+# A_CI_PC observation binds both history channels and the full A joint root.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_acipc_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p910_acipc_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_acipc_surfaces.py',
+}

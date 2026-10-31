@@ -4,7 +4,8 @@ import sys
 
 REVIEWS = {"A_OS": "485e499f5500670944de798c873b8cab322932984d4e0c52df5f195acf4e6db9",
            "C_PC": "f9937fa25a07eac6e61e06b5c0153232e6b5d6ce2603d58d801780b03e4950b7",
-           "C_CI_PC": "de9b3b958432c063db1af9159e60a7f11efe779ead4a3d5a7f7aa8cdbaa34ebb"}
+           "C_CI_PC": "de9b3b958432c063db1af9159e60a7f11efe779ead4a3d5a7f7aa8cdbaa34ebb",
+           "A_CI_PC": "5273b53bcff71482518ba71cc0fc58809e39667a6e1b19a23860289cf799e34c"}
 
 
 def checker(root):

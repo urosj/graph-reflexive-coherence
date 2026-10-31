@@ -43,15 +43,23 @@ class CPCSurfaces(unittest.TestCase):
         for role in ("current", "reset"):
             self.assertTrue(any(initial[role]["Z_4"]))
             self.assertEqual(set(returned[role]["Z_4"]), {0.0})
-            self.assertIsNone(returned[role]["W_A"])
+            if self.FAMILY.startswith("A_"):
+                index = ("current", "reset").index(role)
+                self.assertEqual(returned[role]["W_A"], self.evidence["target_compatibility"]["v2"]["return_initializers"][index])
+            else:
+                self.assertIsNone(returned[role]["W_A"])
         self.assertEqual(self.view["remaining_families"], self.REMAINING)
         self.assertEqual(self.view["user_accepted"], self.ACCEPTED)
         self.assertFalse(self.evidence["user_accepted"])
         self.assertEqual(self.view["P9_10_1_closed"], self.ACCEPTED)
         self.assertEqual(self.view["P9_10_2_closed"], self.ACCEPTED)
+        if self.FAMILY.startswith("A_"):
+            self.assertNotEqual(returned["current"]["W_A"], returned["reset"]["W_A"])
+            policy = f"explicit_A_archive_loss_and_{self.FAMILY}_carrier_zero_initialization"
+        else:
+            policy = f"explicit_{self.FAMILY}_carrier_loss_and_zero_initialization"
         for version in ("v1", "v2"):
-            self.assertEqual(self.evidence["target_compatibility"][version]["history_policy"],
-                             f"explicit_{self.FAMILY}_carrier_loss_and_zero_initialization")
+            self.assertEqual(self.evidence["target_compatibility"][version]["history_policy"], policy)
 
     def test_real_http_notebook_and_historical_source(self):
         spec = importlib.util.spec_from_file_location("cpc_basin_server", TOOL / "scripts/serve_phase9.py")
@@ -89,7 +97,7 @@ import {createHash} from 'node:crypto';
 import {canonical} from './verification.js';
 import {checkedFamilyBasin,familyBasinLoader} from './tranche10-families.js';
 const v=JSON.parse(readFileSync(0,'utf8'));await checkedFamilyBasin(v);
-for(const change of [x=>x.family='A_CI_PC',x=>x.user_accepted=!v.user_accepted,x=>x.G4_accepted=true,
+for(const change of [x=>x.family='C_RG2b',x=>x.user_accepted=!v.user_accepted,x=>x.G4_accepted=true,
  x=>x.boundaries[0].role_equations.current.geometry_residual_upper='1']){
  const bad=structuredClone(v);change(bad);const {record_digest,...body}=bad;
  bad.record_digest=createHash('sha256').update(canonical(body)).digest('hex');
