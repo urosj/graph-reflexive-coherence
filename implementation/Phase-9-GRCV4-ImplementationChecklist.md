@@ -4458,10 +4458,26 @@ acceptances remain unchanged; each row below records its own bounded evidence.
   - [x] Bounded user acceptance on 2026-10-31 over implementation `93920eab`;
     [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Capability
     publication, debt reconciliation and G4 remain P9-10.4–10.6.
-- [ ] P9-10.4: Publish capability discovery, a minimal API/replay example,
-  and new runtime evidence linked to the frozen fixture catalog.
+- [ ] P9-10.4: Publish progressive capability/API/lifecycle examples for all ten
+  families, with new runtime evidence linked to the frozen fixture catalog.
   Use the public class implemented in P9-9.4b and reviewed in P9-9.6;
   public API implementation must not be deferred to this publication task.
+  - [x] Minimal positive step followed by full candidate/realization contracts,
+    parameters, C/W/Z evolution, consumed versus fresh reads and identities.
+  - [x] Runnable seed/spark diagnostics, a separately declared positive seed,
+    versioned basin observations, explicit mechanical expansion and target
+    continuation; keep completed spark/hierarchy/general ATC out of the claim.
+  - [x] All ten run evolution, checkpoint/reset/rebase/replay, sparks, expansion,
+    basin policy migration, V3 branch return and atomic rejection examples.
+    Cross-family routes and an expected target-domain exclusion are separate.
+  - [x] Exact source extraction/provenance, portable inputs, compressed outputs,
+    code bindings and retained-integrity checks; no broad campaign rerun.
+  - [x] Guide/code/results are accessible through side-tool API, browser and
+    notebook; update earlier four-family documentation without rewriting
+    accepted P9-10.3 evidence.
+  - [ ] User review/acceptance of the bounded publication. G4 remains separate.
+  [Guide](../examples/grc9v4/README.md),
+  [publication](./phase-9-grcv4/tranche-10/P9-10.4-Examples.json).
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone.
 - [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,

@@ -4782,13 +4782,32 @@ Run the relevant existing-family regressions and deterministic replay checks.
 Store new runtime vectors and evidence outside the frozen specification
 release; link them to its fixture IDs and state any independent oracle method.
 
-Publish capability discovery and a minimal API/replay example for supported
-profiles, plus a closeout and handoff. P9-10.4 documents and publishes the API
+Publish capability discovery and a progressive API/lifecycle guide for all ten
+profiles, plus a closeout and handoff. Start with a minimal positive step, then
+explain candidate/realization-specific state, parameters and solver/read/write
+semantics; seeds, hybrid sparks, basin observations; mechanical expansion and
+history loss; profile/branch migration; reset/rebase, checkpoint replay and
+failure atomicity. Demonstrate public operations with exact small accepted
+inputs, keep arbitrary-graph and optional-completion limits explicit, and link
+fresh example outputs to frozen fixtures without rerunning large campaigns.
+P9-10.4 documents and publishes the API
 already implemented under P9-9.4b and reviewed under P9-9.6; it is not the first
 public-class implementation step. Review every inherited debt and coverage
 hold against the claim actually demonstrated. Record outstanding profiles,
 analysis, phenomenology, and integration work explicitly. P9-G4 acceptance
 requires review of the evidence and support boundary.
+
+**P9-10.4 implementation (2026-10-31), pending acceptance.** Remain on
+`work/p9-10.3-regressions` as requested. The
+[progressive guide](../examples/grc9v4/README.md) and executable lessons cover
+all ten families, with independent jobs run in parallel. A separate positive
+geometric-seed example makes its changed resource/policy declaration explicit.
+It does not modify the frozen expansion examples or claim an attracting basin.
+The publication records code/input/output identities and exposes read-only
+API/browser/notebook access. Two old example guides have finite documented
+successors; accepted 10.3 execution and review remain unchanged. No production,
+specification, claim authority, or numerical tolerance is changed. Next after
+review/acceptance: 10.5 debt reconciliation, then 10.6/G4/handoff.
 
 ## Verification at the planning boundary
 

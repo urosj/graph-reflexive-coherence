@@ -20,6 +20,7 @@ from grcv4_explorer.basin import basin_authority, basin_source  # noqa: E402
 from grcv4_explorer.basin_native import basin_native_status, basin_native_source
 from grcv4_explorer.target_compatibility import target_compatibility_status, target_compatibility_source
 from grcv4_explorer.tranche10_support import tranche10_support_status, tranche10_support_source
+from grcv4_explorer.tranche10_examples import tranche10_examples_status, tranche10_examples_source
 from grcv4_explorer.tranche10_regressions import tranche10_regressions_status, tranche10_regressions_source
 from grcv4_explorer.tranche10_verification import tranche10_verification_status, tranche10_verification_source
 from grcv4_explorer.tranche10_families import family_basin_status, family_basin_source
@@ -94,7 +95,7 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(content)
             return
-        if request.path in {"/api/tranche10/targets", "/api/tranche10/targets/source", "/api/tranche10/support", "/api/tranche10/support/source", "/api/tranche10/verification", "/api/tranche10/verification/source", "/api/tranche10/regressions", "/api/tranche10/regressions/source"}:
+        if request.path in {"/api/tranche10/targets", "/api/tranche10/targets/source", "/api/tranche10/support", "/api/tranche10/support/source", "/api/tranche10/verification", "/api/tranche10/verification/source", "/api/tranche10/regressions", "/api/tranche10/regressions/source", "/api/tranche10/examples", "/api/tranche10/examples/source"}:
             try:
                 query = parse_qs(request.query, strict_parsing=True)
                 root = repository_root()
@@ -102,13 +103,13 @@ class Handler(BaseHTTPRequestHandler):
                     if set(query) != {"path"} or len(query["path"]) != 1:
                         raise KeyError("one indexed source path required")
                     source = {"targets": target_compatibility_source, "support": tranche10_support_source,
-                              "verification": tranche10_verification_source, "regressions": tranche10_regressions_source}[request.path.split("/")[3]]
+                              "verification": tranche10_verification_source, "regressions": tranche10_regressions_source, "examples": tranche10_examples_source}[request.path.split("/")[3]]
                     content, ref = source(root, query["path"][0])
                 else:
                     if query:
                         raise KeyError("expanded-target evidence has fixed scope")
                     view = {"targets": target_compatibility_status, "support": tranche10_support_status,
-                            "verification": tranche10_verification_status, "regressions": tranche10_regressions_status}[request.path.split("/")[3]]
+                            "verification": tranche10_verification_status, "regressions": tranche10_regressions_status, "examples": tranche10_examples_status}[request.path.split("/")[3]]
                     content = json.dumps(view(root)).encode()
                 self.send_response(200)
                 if request.path.endswith("/source"):
@@ -272,7 +273,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -295,6 +296,7 @@ class Handler(BaseHTTPRequestHandler):
                     "target-compatibility.js": "text/javascript",
                     "tranche10-support.js": "text/javascript",
                     "tranche10-regressions.js": "text/javascript",
+                    "tranche10-examples.js": "text/javascript",
                     "tranche10-verification.js": "text/javascript",
                     "tranche10-families.js": "text/javascript",
                     "aos.js": "text/javascript",

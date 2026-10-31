@@ -22,7 +22,9 @@ The guide distinguishes pure numerical experiments from public transactions,
 compares matched step/time horizons, and records fixture-specific results without
 assuming OS/CI equivalence. JSON export and saved-report inspection avoid reruns.
 The [public GRC9V4 API](grc9v4_api.md) defines typed contracts/configurations for
-all ten families, with native execution scoped to C_OS, C_CI, A_CI and A_PC.
+all ten families, with bounded native execution now enabled for all ten.
+Start with the [progressive native guide](../grc9v4/README.md) for seeds, sparks,
+basins, expansion, state/history, migration, reset and replay.
 Its integration is documented in the [P9-9.4b review](../../implementation/phase-9-grcv4/tranche-9/P9-9.4b-Review.md).
 Full conformance review remains separate.
 
@@ -76,8 +78,9 @@ Selection is an explicit saved choice for investigation or downstream tooling;
 it does not activate a global configuration or run a solver. The new native
 [selection runner](run_selection.py) consumes complete native states or pinned
 native-oracle selections into public configurations for all ten families.
-Its execution entry uses public `GRC9V4` for the four selected families;
-known unselected families receive an explicit execution-scope exception.
+Its execution entry uses public `GRC9V4` for all ten families. Runtime
+availability does not admit every historical catalog configuration; connected
+RG2b completion successors are supplied in the new native guide.
 It requires explicit step requests, exact backend and numerical policy; see the
 [P9-9.4b usage](../../implementation/phase-9-grcv4/tranche-9/P9-9.4b-Review.md#saved-selections).
 Other runners below retain their existing inputs. Use the displayed reproduction

@@ -3528,3 +3528,16 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   and G4 distinct; historical family decisions remain unchanged.
 - [x] Bounded P9-10.3 acceptance on 2026-10-31 over implementation `93920eab`;
   original execution/review stay unchanged. P9-10.4–10.6 remain separate.
+
+## P9-10.4 — progressive native examples
+
+- [x] Read-only `/api/tranche10/examples` view binds the all-ten run outputs,
+  public tutorial code and guide, with no numerical execution on access.
+- [x] Browser panel displays the full guide and links runnable examples/results;
+  notebook cell `p9104-examples` provides the same entry point.
+- [x] Explain candidate/realization differences, seeds/sparks, basins, expansion,
+  history channels, migrations, reset/rebase, replay and failure boundaries.
+- [x] Preserve accepted 10.3 bytes through the finite documentation successor;
+  a historical source request returns the matching old bytes.
+- [ ] Bounded publication acceptance; no completed-spark, hierarchy, general ATC,
+  full conformance or G4 promotion. Next: P9-10.5 and P9-10.6 after acceptance.

@@ -41,10 +41,10 @@ def tranche10_regressions_source(root, name):
     refs[acceptance.PATH] = c.reference(root, acceptance.PATH)
     for row in value['reconciliation']:
         refs.update((r['path'], r) for r in [*row['acceptances'], row['verification']])
-    refs.update((p, c.reference(root, p)) for p in (c.PATH, c.REVIEW, c.SELF))
+    refs.update((p, c.historical_reference(root, p)) for p in (c.PATH, c.REVIEW, c.SELF))
     if name not in refs or Path(name).is_absolute() or '..' in Path(name).parts:
         raise KeyError('source is not indexed by P9-10.3')
-    content = (root / name).read_bytes()
+    content = c.historical_bytes(root, name)
     if c.v.sha(content) != refs[name]['sha256']:
         raise ValueError('regression source drift')
     return content, refs[name]

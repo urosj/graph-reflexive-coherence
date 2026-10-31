@@ -4277,3 +4277,37 @@ PATHS.update({
     PHASE + 'tranche-10/P9-10.3-Acceptance.json',
     PHASE + 'verification/p9103_acceptance.py',
 })
+
+
+# P9-10.4 progressive public examples; publication grants no new support.
+PATHS.update({
+    'examples/grc9v4/README.md',
+    'examples/grc9v4/fixtures.json',
+    'examples/grc9v4/fixtures.py',
+    'examples/grc9v4/fixtures.sha256',
+    'examples/grc9v4/quickstart.py',
+    'examples/grc9v4/results/A_CI.json.xz',
+    'examples/grc9v4/results/A_CI_PC.json.xz',
+    'examples/grc9v4/results/A_OS.json.xz',
+    'examples/grc9v4/results/A_PC.json.xz',
+    'examples/grc9v4/results/A_RG2b.json.xz',
+    'examples/grc9v4/results/C_CI.json.xz',
+    'examples/grc9v4/results/C_CI_PC.json.xz',
+    'examples/grc9v4/results/C_OS.json.xz',
+    'examples/grc9v4/results/C_PC.json.xz',
+    'examples/grc9v4/results/C_RG2b.json.xz',
+    'examples/grc9v4/results/discovery.json',
+    'examples/grc9v4/results/migration.json',
+    'examples/grc9v4/results/seeds.json',
+    'examples/grc9v4/seeds.py',
+    'examples/grc9v4/tour.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-examples.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-examples.test.mjs',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche10_examples.py',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.4-DocumentationSourceEpoch.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.4-Examples.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.4-Review.md',
+    'implementation/phase-9-grcv4/verification/p9104_examples.py',
+    'implementation/phase-9-grcv4/verification/p9104_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p9104_examples.py',
+})

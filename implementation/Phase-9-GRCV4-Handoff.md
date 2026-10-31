@@ -1,5 +1,33 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## P9-10.4 — progressive examples implemented, pending acceptance
+
+Same branch: `work/p9-10.3-regressions`. Start with the
+[native guide](../examples/grc9v4/README.md), then its quickstart and public tour.
+All ten families pass seven bounded lessons: evolution; checkpoint/reset/rebase;
+seed/spark diagnostics; explicit expansion and target continuation; basin policy
+migration/replay; V3 branch return; and atomic input rejection. Independent jobs
+ran in parallel. Cross-family migration includes both accepted routes and a
+target-domain rejection. A separately declared positive geometric-seed example
+retains exact charge and explicitly changes the specialization identity.
+
+Full C/W/Z, both roles, consumed/fresh observations and receipts are retained in
+compressed small reports. [Publication](./phase-9-grcv4/tranche-10/P9-10.4-Examples.json)
+links source artifacts and the frozen catalog. `p9104_examples.py --check` checks
+retained bindings only; `--run --output NEW_DIRECTORY` makes new native evidence.
+The side-tool `/api/tranche10/examples`, browser panel and notebook expose the
+guide/code/results without running trajectories. Earlier four-family usage
+documentation is updated through a finite documentation successor; P9-10.3
+acceptance and original numerical evidence are preserved.
+
+Seven focused publication tests and API/browser/notebook access pass. The
+phase boundary passes with 703 protected files unchanged. Compressed example
+results total about 269 kB (5.59 MB logical); no broad numerical reruns are needed
+for publication acceptance.
+
+No production/spec changes, new support, completed-spark/hierarchy/general ATC
+claim or G4 grant. Review/accept P9-10.4, then continue to P9-10.5 and P9-10.6.
+
 ## P9-10.3 — bounded accepted (2026-10-31)
 
 Branch: `work/p9-10.3-regressions`, from `98033204`. Implementation `93920eab`

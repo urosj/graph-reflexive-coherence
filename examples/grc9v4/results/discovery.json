@@ -1,0 +1,409 @@
+{
+  "execution_families": [
+    "C_OS",
+    "C_CI",
+    "A_CI",
+    "A_PC",
+    "A_OS",
+    "C_PC",
+    "C_CI_PC",
+    "A_CI_PC",
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "families": [
+    {
+      "family": "A_OS",
+      "candidate": "A",
+      "realization": "OS",
+      "authoritative_fields": [
+        "C",
+        "W_A"
+      ],
+      "solve_kind": "predictor_corrector",
+      "geometry_read": "reference_predictor_then_generated_corrector",
+      "history_write": "candidate_history_only",
+      "candidate_parameters": [
+        "schema_version",
+        "eta",
+        "kappa_c",
+        "site_potential_id",
+        "W_floor",
+        "alpha",
+        "beta",
+        "gamma",
+        "kappa_Ah",
+        "chi_A",
+        "zeta_A",
+        "tau_A",
+        "descriptor_backend_id",
+        "conductance_evaluator_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "predictor_policy_id",
+        "corrector_policy_id",
+        "split_residual_norm_id",
+        "tolerance"
+      ]
+    },
+    {
+      "family": "A_CI",
+      "candidate": "A",
+      "realization": "CI",
+      "authoritative_fields": [
+        "C",
+        "W_A"
+      ],
+      "solve_kind": "joint_current_geometry_root",
+      "geometry_read": "selected_joint_root",
+      "history_write": "candidate_history_only",
+      "candidate_parameters": [
+        "schema_version",
+        "eta",
+        "kappa_c",
+        "site_potential_id",
+        "W_floor",
+        "alpha",
+        "beta",
+        "gamma",
+        "kappa_Ah",
+        "chi_A",
+        "zeta_A",
+        "tau_A",
+        "descriptor_backend_id",
+        "conductance_evaluator_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "contraction_domain_id",
+        "root_selector_id",
+        "iteration_limit",
+        "residual_norm_id",
+        "tolerance"
+      ]
+    },
+    {
+      "family": "A_PC",
+      "candidate": "A",
+      "realization": "PC",
+      "authoritative_fields": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "solve_kind": "old_carrier_read",
+      "geometry_read": "committed_Z_before_writer",
+      "history_write": "one_carrier_write_after_continuity",
+      "candidate_parameters": [
+        "schema_version",
+        "eta",
+        "kappa_c",
+        "site_potential_id",
+        "W_floor",
+        "alpha",
+        "beta",
+        "gamma",
+        "kappa_Ah",
+        "chi_A",
+        "zeta_A",
+        "tau_A",
+        "descriptor_backend_id",
+        "conductance_evaluator_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "tau_PC",
+        "radius",
+        "carrier_norm_id",
+        "source_envelope_id",
+        "writer_id"
+      ]
+    },
+    {
+      "family": "A_CI_PC",
+      "candidate": "A",
+      "realization": "CI+PC",
+      "authoritative_fields": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "solve_kind": "joint_root_with_fixed_old_carrier",
+      "geometry_read": "joint_root_with_old_Z_and_instantaneous_geometry",
+      "history_write": "same_selected_root_candidate_and_carrier_writers",
+      "candidate_parameters": [
+        "schema_version",
+        "eta",
+        "kappa_c",
+        "site_potential_id",
+        "W_floor",
+        "alpha",
+        "beta",
+        "gamma",
+        "kappa_Ah",
+        "chi_A",
+        "zeta_A",
+        "tau_A",
+        "descriptor_backend_id",
+        "conductance_evaluator_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "contraction_domain_id",
+        "root_selector_id",
+        "iteration_limit",
+        "residual_norm_id",
+        "tolerance",
+        "tau_PC",
+        "radius",
+        "carrier_norm_id",
+        "source_envelope_id",
+        "writer_id",
+        "rho_inst"
+      ]
+    },
+    {
+      "family": "A_RG2b",
+      "candidate": "A",
+      "realization": "RG2b",
+      "authoritative_fields": [
+        "C",
+        "W_A"
+      ],
+      "solve_kind": "certified_section",
+      "geometry_read": "realization_section_at_declared_duration",
+      "history_write": "candidate_history_only_no_retained_section",
+      "candidate_parameters": [
+        "schema_version",
+        "eta",
+        "kappa_c",
+        "site_potential_id",
+        "W_floor",
+        "alpha",
+        "beta",
+        "gamma",
+        "kappa_Ah",
+        "chi_A",
+        "zeta_A",
+        "tau_A",
+        "descriptor_backend_id",
+        "conductance_evaluator_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "extension_evaluator_id",
+        "approximation_policy_id",
+        "error_norm_id",
+        "error_tolerance",
+        "containment_certificate_id",
+        "iteration_limit",
+        "failure_policy_id"
+      ]
+    },
+    {
+      "family": "C_OS",
+      "candidate": "C",
+      "realization": "OS",
+      "authoritative_fields": [
+        "C"
+      ],
+      "solve_kind": "predictor_corrector",
+      "geometry_read": "reference_predictor_then_generated_corrector",
+      "history_write": "no_independent_history",
+      "candidate_parameters": [
+        "schema_version",
+        "transport_id",
+        "Lambda_C",
+        "selector_boundary_policy_id",
+        "C_ref",
+        "kappa_M_C",
+        "kappa_Phi_C",
+        "eta_C",
+        "W_C_tr",
+        "W_C_tr_content_digest",
+        "potential_evaluator_id",
+        "tau_C",
+        "chi_C",
+        "zeta_C",
+        "current_conditioning_policy_id",
+        "E_H_policy_id",
+        "E_M_policy_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "predictor_policy_id",
+        "corrector_policy_id",
+        "split_residual_norm_id",
+        "tolerance"
+      ]
+    },
+    {
+      "family": "C_CI",
+      "candidate": "C",
+      "realization": "CI",
+      "authoritative_fields": [
+        "C"
+      ],
+      "solve_kind": "joint_current_geometry_root",
+      "geometry_read": "selected_joint_root",
+      "history_write": "no_independent_history",
+      "candidate_parameters": [
+        "schema_version",
+        "transport_id",
+        "Lambda_C",
+        "selector_boundary_policy_id",
+        "C_ref",
+        "kappa_M_C",
+        "kappa_Phi_C",
+        "eta_C",
+        "W_C_tr",
+        "W_C_tr_content_digest",
+        "potential_evaluator_id",
+        "tau_C",
+        "chi_C",
+        "zeta_C",
+        "current_conditioning_policy_id",
+        "E_H_policy_id",
+        "E_M_policy_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "contraction_domain_id",
+        "root_selector_id",
+        "iteration_limit",
+        "residual_norm_id",
+        "tolerance"
+      ]
+    },
+    {
+      "family": "C_PC",
+      "candidate": "C",
+      "realization": "PC",
+      "authoritative_fields": [
+        "C",
+        "Z_4"
+      ],
+      "solve_kind": "old_carrier_read",
+      "geometry_read": "committed_Z_before_writer",
+      "history_write": "one_carrier_write_after_continuity",
+      "candidate_parameters": [
+        "schema_version",
+        "transport_id",
+        "Lambda_C",
+        "selector_boundary_policy_id",
+        "C_ref",
+        "kappa_M_C",
+        "kappa_Phi_C",
+        "eta_C",
+        "W_C_tr",
+        "W_C_tr_content_digest",
+        "potential_evaluator_id",
+        "tau_C",
+        "chi_C",
+        "zeta_C",
+        "current_conditioning_policy_id",
+        "E_H_policy_id",
+        "E_M_policy_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "tau_PC",
+        "radius",
+        "carrier_norm_id",
+        "source_envelope_id",
+        "writer_id"
+      ]
+    },
+    {
+      "family": "C_CI_PC",
+      "candidate": "C",
+      "realization": "CI+PC",
+      "authoritative_fields": [
+        "C",
+        "Z_4"
+      ],
+      "solve_kind": "joint_root_with_fixed_old_carrier",
+      "geometry_read": "joint_root_with_old_Z_and_instantaneous_geometry",
+      "history_write": "same_selected_root_carrier_writer",
+      "candidate_parameters": [
+        "schema_version",
+        "transport_id",
+        "Lambda_C",
+        "selector_boundary_policy_id",
+        "C_ref",
+        "kappa_M_C",
+        "kappa_Phi_C",
+        "eta_C",
+        "W_C_tr",
+        "W_C_tr_content_digest",
+        "potential_evaluator_id",
+        "tau_C",
+        "chi_C",
+        "zeta_C",
+        "current_conditioning_policy_id",
+        "E_H_policy_id",
+        "E_M_policy_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "contraction_domain_id",
+        "root_selector_id",
+        "iteration_limit",
+        "residual_norm_id",
+        "tolerance",
+        "tau_PC",
+        "radius",
+        "carrier_norm_id",
+        "source_envelope_id",
+        "writer_id",
+        "rho_inst"
+      ]
+    },
+    {
+      "family": "C_RG2b",
+      "candidate": "C",
+      "realization": "RG2b",
+      "authoritative_fields": [
+        "C"
+      ],
+      "solve_kind": "certified_section",
+      "geometry_read": "realization_section_at_declared_duration",
+      "history_write": "no_independent_history",
+      "candidate_parameters": [
+        "schema_version",
+        "transport_id",
+        "Lambda_C",
+        "selector_boundary_policy_id",
+        "C_ref",
+        "kappa_M_C",
+        "kappa_Phi_C",
+        "eta_C",
+        "W_C_tr",
+        "W_C_tr_content_digest",
+        "potential_evaluator_id",
+        "tau_C",
+        "chi_C",
+        "zeta_C",
+        "current_conditioning_policy_id",
+        "E_H_policy_id",
+        "E_M_policy_id"
+      ],
+      "realization_parameters": [
+        "schema_version",
+        "extension_evaluator_id",
+        "approximation_policy_id",
+        "error_norm_id",
+        "error_tolerance",
+        "containment_certificate_id",
+        "iteration_limit",
+        "failure_policy_id"
+      ]
+    }
+  ],
+  "limits": [
+    "Declaration and execution dispatch do not guarantee input admission.",
+    "Bounded all-ten Tranches 8\u201310 evidence is not full conformance or G4.",
+    "General autonomous topology selection, completed spark and hierarchy are not enabled."
+  ]
+}

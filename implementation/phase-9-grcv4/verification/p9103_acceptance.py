@@ -25,5 +25,5 @@ def decision(root, evidence):
         and value['evidence'] == dict(**execution.reference(root, execution.PATH), record_digest=EVIDENCE),
         'P9-10.3 acceptance identity or scope changed')
     for ref in value['review_sources']:
-        execution.require(ref == execution.reference(root, ref['path']), 'accepted P9-10.3 review/source changed')
+        execution.require(ref == execution.historical_reference(root, ref['path']), 'accepted P9-10.3 review/source changed')
     return value

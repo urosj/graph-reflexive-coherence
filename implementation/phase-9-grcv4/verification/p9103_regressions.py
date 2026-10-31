@@ -47,6 +47,7 @@ GROUPS = {
         'tests.models.test_grc_9_v4_legacy.DelegateBoundaryTests'),
 }
 require, seal, reference = v.require, v.seal, v.reference
+from p9104_source_epoch import previous_bytes as historical_bytes, reference as historical_reference
 
 
 def git(*args):
@@ -59,14 +60,15 @@ def source_bindings():
                 'tests', 'examples/grcv4').decode().splitlines()
     names = [n for n in names if Path(n).suffix in ('.py', '.json', '.sha256', '.md', '.xz')]
     import p9103_source_epoch as correction
+    import p9104_source_epoch as publication
     changed = set(git('diff', '--name-only', BASELINE, '--', 'src', 'specs', 'tests', 'examples/grcv4').decode().splitlines())
-    require(changed <= correction.TESTS, 'P9-10.3 production/spec/test input drift; review affected reruns')
+    require(changed <= correction.TESTS | publication.DOCS, 'P9-10.3 production/spec/test input drift; review affected reruns')
     for name in correction.TESTS:
         correction.previous_bytes(ROOT, name)
     require(not git('ls-files', '--others', '--exclude-standard', '--',
                     'src', 'specs', 'tests', 'examples/grcv4').strip(),
             'untracked regression input')
-    return [reference(ROOT, n) for n in sorted(names)]
+    return [historical_reference(ROOT, n) if n in publication.DOCS else reference(ROOT, n) for n in sorted(names)]
 
 
 def preservation():
@@ -188,7 +190,7 @@ def validate(value):
             and value['large_campaigns_rerun'] == 0, 'regression scope changed')
     require(value['source_epoch'] == git('rev-parse', BASELINE).decode().strip()
             and value['source_refs'] == source_bindings()
-            and value['checker'] == reference(ROOT, SELF), 'regression source/checker drift')
+            and value['checker'] == historical_reference(ROOT, SELF), 'regression source/checker drift')
     require(value['reconciliation'] == reconciliation() and value['preservation'] == preservation(),
             'accepted inputs or release preservation changed')
     require([r['group'] for r in value['regressions']] == list(GROUPS), 'regression groups changed')
