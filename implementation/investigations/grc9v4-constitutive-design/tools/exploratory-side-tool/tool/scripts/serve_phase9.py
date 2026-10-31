@@ -23,6 +23,7 @@ from grcv4_explorer.spark_research import spark_research_status, spark_research_
 from grcv4_explorer.spark_cipc_research import spark_cipc_research_status, spark_cipc_research_source
 from grcv4_explorer.spark_cipc import spark_cipc_authority, spark_cipc_source
 from grcv4_explorer.spark_aos import spark_aos_authority, spark_aos_source
+from grcv4_explorer.spark_aos_earlier import spark_aos_earlier_status, spark_aos_earlier_source
 from grcv4_explorer.spark_aos_research import spark_aos_research_status, spark_aos_research_source
 from grcv4_explorer.spark_pc import spark_pc_authority, spark_pc_source
 from grcv4_explorer.basin_native import basin_native_status, basin_native_source
@@ -140,6 +141,7 @@ class Handler(BaseHTTPRequestHandler):
                             "/api/spark-completion/applicability/ci-pc", "/api/spark-completion/applicability/ci-pc/source",
                             "/api/spark-completion/applicability/ci-pc/research", "/api/spark-completion/applicability/ci-pc/research/source",
                             "/api/spark-completion/applicability/a-os", "/api/spark-completion/applicability/a-os/source",
+                            "/api/spark-completion/applicability/a-os/earlier", "/api/spark-completion/applicability/a-os/earlier/source",
                             "/api/spark-completion/applicability/a-os/research", "/api/spark-completion/applicability/a-os/research/source",
                             "/api/spark-completion/applicability/pc", "/api/spark-completion/applicability/pc/source"}:
             try:
@@ -160,6 +162,8 @@ class Handler(BaseHTTPRequestHandler):
                     authority_reader, source_reader = spark_aos_authority, spark_aos_source
                 if request.path.startswith("/api/spark-completion/applicability/a-os/research"):
                     authority_reader, source_reader = spark_aos_research_status, spark_aos_research_source
+                if request.path.startswith("/api/spark-completion/applicability/a-os/earlier"):
+                    authority_reader, source_reader = spark_aos_earlier_status, spark_aos_earlier_source
                 if not request.path.endswith("/source"):
                     if query:
                         raise KeyError("spark-completion authority has fixed scope")

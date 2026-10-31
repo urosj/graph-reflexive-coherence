@@ -4582,3 +4582,23 @@ PATHS.update({
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAOSReconciliation.md',
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAOSReconciliation.json',
 })
+
+# Earlier A_OS full-state certificate research; original authority is preserved.
+PATHS.update({
+    INV+'decisions/SparkCompletionAOSEarlierClosure.md',
+    INV+'research/spark_completion_a_os_earlier.py',
+    INV+'scripts/check_spark_completion_a_os_earlier.py',
+    INV+'scripts/test_spark_completion_a_os_earlier.py',
+    INV+'scripts/test_spark_completion_a_os_earlier_surfaces.py',
+    INV+'evidence/spark-completion/applicability/earlier-closure/AOSAnisotropicDomain.json',
+    INV+'evidence/spark-completion/applicability/earlier-closure/AOSDomainDiscovery.json',
+    INV+'evidence/spark-completion/applicability/earlier-closure/UserEarlierClosureProposal.txt',
+    INV+'evidence/spark-completion/applicability/earlier-closure/AOSEarlierChecks.json.xz',
+    INV+'evidence/spark-completion/applicability/earlier-closure/AOSEarlierResearch.json',
+    INV+'evidence/spark-completion/applicability/earlier-closure/AOSEarlierMetadataSources.json',
+    INV+'evidence/spark-completion/applicability/earlier-closure/AOSEarlierValidation.json',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionAOSEarlierClosure.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_earlier.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_earlier_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-aos-earlier.js',
+})

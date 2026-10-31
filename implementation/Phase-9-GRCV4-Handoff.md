@@ -1,5 +1,39 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: earlier A_OS closure demonstrated; review next — 2026-10-31
+
+The user prioritizes investigating an anisotropic domain for substantially
+earlier closure. On the existing branch, a full 30-dimensional rational
+parallelotope certifies **current 375 → 377** and **reset 372 → 374**, versus
+accepted 1039 → 1041 and 1022 → 1024. This is about 64% fewer beats with the
+same event, retained interval trajectories, timestep, equations, allocation,
+tolerances and two-beat window. No additional event gain is created.
+
+The [earlier-closure investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSEarlierClosure.md)
+records the FLINT/Arb full-map proof, exact rational domain and comparisons.
+Current's last edge reversal is 364 → 365; entry 375 is ten beats later.
+Pre-reversal fixed-order trapping is obstructed, but optimality is not proved.
+The enlarged-ball comparison reproduces entries 627/613. All 2065 retained
+states are rechecked; no physical trajectory was rerun. Large checks are XZ
+compressed. The original analytic Jacobian is reused, with all-axis secant
+pressure tests; no independent derivation or trajectory replay is claimed.
+
+Use `/api/spark-completion/applicability/a-os/earlier`, its browser panel or
+notebook cell `spark-completion-a-os-earlier`. Accepted and historical views
+retain their identities through a finite metadata successor. Earlier endpoints
+are **pending review**, not an accepted authority replacement. Review this
+certificate next; A_CI remains the next family afterward and has not started.
+Native completion, hierarchy and G4 remain forward. The pre-existing broad
+audit failure at `specs/README.md` remains documented and unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_earlier.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_earlier.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_earlier_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
 ## Current continuation: A_OS SC-3 accepted; A_CI next — 2026-10-31
 
 The user accepts the bounded A_OS result and requests commit. Research

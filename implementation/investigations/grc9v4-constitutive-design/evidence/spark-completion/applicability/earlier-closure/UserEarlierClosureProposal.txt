@@ -1,0 +1,220 @@
+**Yes—and the A_OS files support a concrete improvement: a new, larger trapping certificate gives current-role entry at step 627, followed by the same two-beat window ending at step 629, instead of 1041.** That is about **40% fewer steps before a sufficient completion decision**, without changing the equations, trajectory, allocation or basin thresholds.
+
+This is a **new certificate calculation for review**, not an already-admitted replacement for the original result. I reused the supplied analytic derivative with a separate interval backend and checked entry against the retained trajectory enclosures. The calculation should be reproduced in the original Arb checker before adoption.
+
+More importantly, **the thousand-step delay is not an established physical requirement. Much of it comes from waiting to enter a particularly small proof domain.**
+
+## 1. What the thousand steps actually measure
+
+The supplied A_OS result uses a full-state ball of radius
+\[
+r_{\mathrm{old}}=2^{-20}\approx9.54\times10^{-7},
+\]
+in the norm
+\[
+\max\!\left(
+\|C-c\|_P,\;
+64\|\log W-\ell_0\|_2
+\right).
+\]
+The current trajectory enters that ball at step 1039 and finishes its observation window at 1041. This is a sufficient certificate, not a proof that organization cannot be certified earlier. SparkCompletionAOSApplicability SparkCompletionAOSApplicability
+
+In fact, the record reports spatial gain at **step 92**. My inspection confirms that the final complete basin roster remains present in all subsequent retained current states. The long delay is therefore not “nothing organized happens until step 1000.” It is largely the interval between **observed organization** and **entry into the selected tiny contracting neighborhood**. AOSResearchProgress
+
+SC‑1 requires a genuine full-state invariant contracting domain with uniform predicates, but it does **not** prescribe radius \(2^{-20}\). A larger domain meeting those same requirements is legitimate; merely increasing the radius without proving them is not. SparkCompletionSC1Contract
+
+## 2. A concrete earlier certificate
+
+I kept the exact same rational center, resource metric \(P\), physical map and all scientific thresholds. The new domain is
+
+\[
+\boxed{
+K_{\mathrm{new}}
+=
+\left\{
+(C,W):
+\mathbf1^\top C=21,\quad
+\max\!\left(
+\|C-c\|_P,\;
+256\|\log W-\ell_0\|_2
+\right)
+\le \frac1{5000}
+\right\}.
+}
+\]
+
+Its resource radius is approximately **210 times larger** than the original. Despite the increased history weight, its permitted log-history radius is also approximately **52 times larger**. All **14 independent resource and 16 conductance directions** remain included.
+
+### The full-map bounds close
+
+The new outward calculation gives
+
+\[
+q_{\mathrm{new}}<0.999768462<1,
+\]
+
+\[
+\|T(c,\ell_0)-(c,\ell_0)\|_{\mathrm{new}}<8\times10^{-40},
+\]
+
+and
+
+\[
+(1-q_{\mathrm{new}})\frac1{5000}
+-\|T(c,\ell_0)-(c,\ell_0)\|_{\mathrm{new}}
+>
+4.6307\times10^{-8}>0.
+\]
+
+Thus the enlarged domain is still a **strict self-map and contraction domain for the full C/W ordinary map**. The contraction bound is looser than the original small-domain bound, but it remains sufficient. A larger valid domain can certify the actual trajectory earlier even with a less impressive \(q\).
+
+Throughout this domain, the calculation also retains positive resources, positive conductances, the inactive conductance floor, admitted current denominators, and an OS split bound below \(4.82\times10^{-24}\), comfortably inside the unchanged \(10^{-11}\) limit.
+
+The complete qualified domains remain exactly
+
+\[
+B_p=\{p,\mathrm{private}\},
+\qquad
+B_{s_2}=\{s_2,n_2,n_8\},
+\]
+
+on both chiral charts. Unqualified terminals remain part of the routing calculation.
+
+### Earlier entry follows from the actual retained states
+
+I recomputed distances from the saved C/logW interval coordinates rather than accepting their scalar summaries.
+
+| Role | Original entry → window end | New entry → window end |
+|---|---:|---:|
+| **Current** | 1039 → 1041 | **627 → 629** |
+| **Reset comparison** | 1022 → 1024 | **613 → 615** |
+
+For current, the recomputed resource-distance upper bounds are approximately
+
+\[
+\begin{array}{c|c}
+\text{Step}&\|C-c\|_P\\ \hline
+626&2.01615\times10^{-4}\\
+627&1.98988\times10^{-4}\\
+628&1.96396\times10^{-4}\\
+629&1.93837\times10^{-4}
+\end{array}
+\]
+
+against the new radius \(2\times10^{-4}\). The weighted log-history distances are much smaller, so they do not delay entry. The complete basin rosters agree at entry and both subsequent beats.
+
+**Only current earns the gain.** Reset remains an independently checked comparison. The original 1041-step record should remain unchanged; the earlier conclusion belongs to an explicitly identified certificate successor, not another birth.
+
+## 3. Why the larger proof works
+
+There are two useful improvements—not a relaxed scientific criterion.
+
+### Sharpen the reference contraction bound
+
+The original argument uses an inverse-trace estimate to bound the weakest restoring direction. I replaced that estimate with direct **exact rational matrix inequalities on the charge-tangent space**.
+
+For the retained comparison curvature \(D_0\), exact symmetric elimination verifies
+
+\[
+\frac25 P\prec D_0\prec14P
+\quad\text{on }\{\mathbf1^\top\delta C=0\}.
+\]
+
+Consequently, the reference resource operator has a \(P\)-norm bound of
+
+\[
+\left\|I-\frac1{32}A_0D_0\right\|_P
+\le\frac{79}{80}=0.9875.
+\]
+
+That is appreciably sharper than the original reference estimate. The **actual full derivative**, including geometry feedback and the delayed writer, is then bounded around this comparison operator over the enlarged domain. The reference estimate is not substituted for the complete map.
+
+### Check edge ordering on the actual metric ball
+
+An independent coordinate box enclosing an ellipsoid contains combinations of coordinates that the ellipsoid itself excludes. Requiring every such combination to preserve edge order can make the certificate unnecessarily small.
+
+For an edge difference \(a=e_u-e_v\), the actual resource ball gives
+
+\[
+|a^\top(C-c)|
+\le
+r\sqrt{a^\top A_0a}.
+\]
+
+Using this bound, every edge retains its strict ordering throughout \(K_{\mathrm{new}}\). The smallest resulting ordering margin exceeds
+
+\[
+2.0061\times10^{-4}.
+\]
+
+The weighted row and seed conditions are checked separately over their enclosing box.
+
+**This is the important methodological lesson: certify the domain you actually mean, rather than requiring an unnecessarily large rectangular enclosure to satisfy every geometric condition.**
+
+## 4. But step 92 is not currently a valid stopping point
+
+There is a real limitation here, not just conservatism.
+
+Although the final basin membership appears at step 92, an edge between two low-resource vertices changes direction much later. In the retained current history, the edge between `satellite/3` and `n3` has
+
+\[
+C_{s_3}-C_{n_3}
+\approx-6.14235\times10^{-6}
+\quad\text{at step }364,
+\]
+
+and
+
+\[
+C_{s_3}-C_{n_3}
+\approx+4.01189\times10^{-6}
+\quad\text{at step }365.
+\]
+
+The saved interval endpoints strictly resolve both signs. Reset has the corresponding reversal between steps 352 and 353.
+
+SC‑1 currently requires **every descent edge to have a fixed direction throughout the trapping domain**, not merely unchanged qualified-basin membership. SparkCompletionSC1Contract
+
+Therefore, for this unchanged current trajectory:
+
+> **An earlier invariant domain containing a state before that reversal cannot satisfy SC‑1’s fixed-edge-order requirement throughout its future.**
+
+So there are three distinct times:
+
+**Step 92:** the final qualified-basin roster is observed.
+
+**Step 365:** the last edge-order reversal in the retained current history has occurred.
+
+**Step 627:** the trajectory enters the new, explicitly verified full-state contracting domain.
+
+This does not prove that 627 is optimal. It does explain why “the basins look right at 92” cannot simply be promoted to the presently selected completion certificate.
+
+## 5. How to get substantially below 600 steps
+
+**The next improvement should be the shape of the proof domain, not another change to the physical law.**
+
+For a ball centered at the same \(c\) in the same resource metric, preserving every edge ordering imposes a geometric radius limit of approximately
+
+\[
+r_{\mathrm{order}}\approx2.7583\times10^{-4}.
+\]
+
+Beyond that, the ball reaches an edge-equality hyperplane. The new radius \(2\times10^{-4}\) is already reasonably close to this limit. Simply increasing that radius will therefore give diminishing returns.
+
+A better next construction is an **anisotropic full-state domain**: narrow in directions that could reverse a weak edge contrast, but longer in directions along which the actual trajectory is still relaxing. It must still contain a positive-radius neighborhood in every independent C/W direction and satisfy the same strict self-map, contraction and uniform-predicate conditions.
+
+That offers a plausible route toward certifying states closer to the post-365 part of the trajectory. **I have not proved such a domain or a completion time near 365.** It is the next concrete optimization target, not a promised result.
+
+A finite chain of validated neighborhoods leading into the existing trap could also reduce the computational work needed to prove **eventual** completion. But that must not be relabeled **already completed** organization before the trajectory reaches a domain satisfying SC‑1. Prediction and occurrence remain different claims.
+
+Increasing the physical timestep is not my first recommendation. It changes the ordinary map—including the writer’s decay and the resource/history coupling—and needs new admission and stability checks. The proof improvement above leaves all of that untouched. The submitted A_OS staging explicitly binds those operations to the declared duration and incoming history. SparkCompletionAOSApplicability
+
+## Verification boundary
+
+The substantive A_OS evaluator was available inside `AOSDiscovery.json.xz`; its recovered bytes match the hash named by the current evidence. I reused its analytic derivative, with exact rational spectral tests and a separate outward-interval evaluation. **This is not an independently rederived Jacobian, a fresh execution of the original Arb checker, or a rerun of the long campaigns.**
+
+The retained trajectories supply the approach evidence. I checked their record digests, the actual entry/window coordinate enclosures, the ordering reversal, and the complete new-domain predicates. The original campaign’s enclosure provenance remains inherited.
+
+**My recommendation is to reproduce and review this enlarged-domain certificate first: it already supports 629 rather than 1041. Then investigate an anisotropic domain for a more substantial reduction. The thousand-step wait should not become a baked-in completion rule—it is a property of the first sufficient certificate, not a demonstrated minimum formation time.**
+
+README.md[Earlier-closure construction and verification notes](sandbox:/mnt/data/aos_faster_closure/README.md) · AOS-Earlier-Closure-Certificate.zip[Reproducible calculations, exact bounds and retained-state checks](sandbox:/mnt/data/AOS-Earlier-Closure-Certificate.zip)

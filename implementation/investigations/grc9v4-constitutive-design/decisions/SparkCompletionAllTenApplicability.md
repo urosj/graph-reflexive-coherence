@@ -8,8 +8,11 @@ and accepted constructive result remain closed. Native implementation is separat
 [A_OS SC-3 is now accepted](./SparkCompletionAOSSC3Authority.md), following
 C_OS, C_CI, C_PC and C_CI_PC. Its self-consistent stationary W, full C/W return
 and separately declared allocation/lineage/completion chain are propagated.
-The failed inherited allocation remains disclosed. A_CI is next; native
-completion/hierarchy and aggregate G4 remain separate.
+The failed inherited allocation remains disclosed. The user now prioritizes
+[earlier A_OS closure](./SparkCompletionAOSEarlierClosure.md): the anisotropic
+research certificate gives current 375→377 and reset 372→374, pending review,
+with no additional gain. Review it next; A_CI remains the next family afterward.
+Native completion/hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
 

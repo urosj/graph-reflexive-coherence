@@ -4053,3 +4053,12 @@ Native implementation and accepted scientific promotion remain separate.
 - [ ] A_CI is next after accepted A_OS; native P9-9.1a and aggregate G4 remain forward.
 
 See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSValidation.json`. The broader audit's existing basin-manifest drift remains unwaived.
+
+### Earlier A_OS closure investigation — 2026-10-31
+
+- [x] Full 30-dimensional anisotropic FLINT/Arb trap: current 375→377,
+  reset 372→374; unchanged physical trajectory, parameters and positive window.
+- [x] Enlarged-ball comparison, exact ordering obstruction and all retained
+  interval states checked; compressed evidence and side-tool inspection added.
+- [ ] Review/adjudicate earlier endpoints; accepted baseline remains 1041/1024.
+- [ ] A_CI remains the next family after this user-requested investigation.
