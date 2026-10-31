@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## A_CI_PC Tranche 10 — validated, acceptance pending (2026-10-31)
+## A_CI_PC Tranche 10 — bounded accepted (2026-10-31)
 
 Branch: `work/p9-tranche10-remaining-families`, following accepted C_CI_PC
 `b994fabe`. [Review](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md).
@@ -22,8 +22,11 @@ tolerance. Fixed-geometry bounds do not establish exact implicit-root claims.
 
 Accepted first-four/A_OS/C_PC/C_CI_PC evidence is preserved through the finite
 source-epoch adapter. The family API/browser selector and notebook
-`p910-acipc-basin` expose this separate bounded work. User acceptance is pending;
-C_RG2b and A_RG2b follow, then consolidated 10.3–10.6. No G4 grant is inferred.
+`p910-acipc-basin` expose this separate bounded work. Implementation `1eb7807a`
+is accepted by the user on 2026-10-31 in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json); original
+execution flags and evidence remain unchanged. C_RG2b is next, then A_RG2b
+and consolidated 10.3–10.6. No G4 grant is inferred.
 
 ## C_CI_PC Tranche 10 — bounded accepted (2026-10-30)
 

@@ -4393,7 +4393,7 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
   - [x] User acceptance on 2026-10-30; implementation `ac8d0249`,
     [decision](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json).
     No remaining-family/full-conformance/G4 grant.
-- [ ] A_CI_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md).
+- [x] A_CI_PC bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md).
   - [x] 10.1a: fresh joint J/H root with fixed-row A backend, W and old Z;
     full-root equality, independent equations, separate W/Z discrimination,
     complete lifecycle/replay and atomic failure pressure.
@@ -4405,7 +4405,9 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
     replay reused; no duplicate native campaign or exact-root overclaim.
   - [x] Historical source preservation, compressed/referenced evidence,
     side-tool API/browser/notebook, plan and handoff.
-  - [ ] Bounded user acceptance; no remaining-family/full-conformance/G4 grant.
+  - [x] User acceptance on 2026-10-31; implementation `1eb7807a`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json).
+    No remaining-family/full-conformance/G4 grant.
 - [ ] C_RG2b: 10.1a–c → 10.2 and bounded acceptance.
 - [ ] A_RG2b: 10.1a–c → 10.2 and bounded acceptance.
 

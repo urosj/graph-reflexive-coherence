@@ -7,7 +7,7 @@ import test_p910_ccipc_surfaces as shared
 
 class ACIPCSurfaces(shared.CCIPCSurfaces):
     FAMILY = "A_CI_PC"
-    ACCEPTED = False
+    ACCEPTED = True
     REMAINING = ["C_RG2b", "A_RG2b"]
     HISTORICAL_FAMILY = "C_CI_PC"
     CELL = "p910-acipc-basin"

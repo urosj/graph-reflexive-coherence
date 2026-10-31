@@ -54,7 +54,7 @@ remain distinct from exact implicit-root claims. All eight tests passed in two p
 policy-migration/disabled-return captures once for 10.1c/10.2. Bounded user acceptance is
 recorded on 2026-10-30 over implementation `ac8d0249`;
 [decision](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json).
-Validated work, pending acceptance: [A_CI_PC P9-10.1a–c → 10.2](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md)
+Bounded-accepted on 2026-10-31: [A_CI_PC P9-10.1a–c → 10.2](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md)
 on the same branch, followed by C_RG2b and A_RG2b. The existing composite root
 captures fixed-row A history and committed Z together. Verify both authority
 channels independently, full J/H/backend/domain/certificate, and the existing
@@ -64,7 +64,8 @@ passed all eight tests in parallel with FLINT. Both-role migration/return
 observations were collected in that same compatibility execution and reused
 for 10.1c/10.2 (four charges and 53 receipts; no added native steps/replays). Disabled
 return initializes A history by its accepted reference pass and Z to zero under
-the explicit loss policy. Acceptance remains separate.
+the explicit loss policy. The separate [acceptance decision](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json)
+binds implementation `1eb7807a` and preserves original execution evidence.
 
 
 P9-10.2 is accepted for the bounded C_OS/C_CI/A_CI/A_PC scope;
@@ -74,8 +75,9 @@ see the [bounded review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md) and
 retained-evidence checks reused accepted replay and runtime receipts, recomputed
 sixteen independent equations and sixteen charge checks, and shared 24
 Python/FLINT charge-kernel evaluations. No native steps or replay runs were
-repeated. A_OS and C_PC P9-10.1a–c → P9-10.2 are now also accepted; C_CI_PC is also bounded-accepted; next is A_CI_PC, following
-the remaining-family order below; consolidated P9-10.3–10.6 stay separate.
+repeated. A_OS, C_PC, C_CI_PC and A_CI_PC P9-10.1a–c → P9-10.2 are now also
+bounded-accepted. C_RG2b is next in the remaining-family order below;
+consolidated P9-10.3–10.6 stay separate.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
@@ -113,8 +115,8 @@ run the smallest affected case. No new receipt or replay campaign is required
 merely because the checkpoint number changed. Independent retained checks or
 necessary new cases may run in parallel; preserve original execution identities
 and distinguish retained validation from a fresh native run. The bounded
-four-family reconciliation and A_OS/C_PC/C_CI_PC extensions are accepted.
-A_CI_PC is validated pending acceptance; C_RG2b/A_RG2b remain to be implemented.
+four-family reconciliation and A_OS/C_PC/C_CI_PC/A_CI_PC extensions are accepted.
+C_RG2b/A_RG2b remain to be implemented.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin

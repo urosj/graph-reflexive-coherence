@@ -2850,5 +2850,6 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   receipt/charge checks; distinguish W initialization from zero carrier return.
 - [x] Preserve earlier accepted evidence/source epochs; pressure W/Z/backend,
   root/domain tampering, widened scope and stale-view clearing.
-- [ ] Bounded user acceptance; C_RG2b, A_RG2b and consolidated 10.3–10.6 remain
-  separate, with no full-conformance/G4 grant.
+- [x] Bounded A_CI_PC acceptance on 2026-10-31 over implementation `1eb7807a`;
+  original execution records remain unchanged. C_RG2b, A_RG2b and consolidated
+  10.3–10.6 remain separate, with no full-conformance/G4 grant.

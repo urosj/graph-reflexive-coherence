@@ -1,0 +1,54 @@
+{
+  "schema": "p910-family-basin-acceptance-v1",
+  "family": "A_CI_PC",
+  "status": "accepted_bounded_family_basin",
+  "accepted_on": "2026-10-31",
+  "user_instruction": "awesome, accept and commit",
+  "reviewed_commit": "1eb7807a40525f7c35e9e91ffb4de814ec4759ea",
+  "checkpoints": [
+    "10.1a",
+    "10.1b",
+    "10.1c",
+    "10.2"
+  ],
+  "user_accepted": true,
+  "P9_10_1_closed": true,
+  "P9_10_2_closed": true,
+  "all_ten_P9_10_1_closed": false,
+  "all_ten_P9_10_2_closed": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "verification_record_digest": "5273b53bcff71482518ba71cc0fc58809e39667a6e1b19a23860289cf799e34c",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Verification.json",
+      "sha256": "af25ea1571ac42cd88dbf3bce6ff20d72b84a93f311079dffcd183a5b978702d",
+      "record_digest": "6a878423d4003f3b2f8b6091997686ad55426d3877b9bc48d5faee3080e25172"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Native.json",
+      "sha256": "53b20781f987399aeac76c016f875530dc4243a05b7fc063eedb050d2fa03b5b",
+      "record_digest": "ff98d884eb241ba5d8ba38dbdd503d58029a6c2ad1d53043e71a10b078bdab7e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Target.json.xz",
+      "sha256": "64170738bce326431b8bc8cb26109f915c8721dcc107dafbeb4977674788ade6",
+      "record_digest": "b64c49c2c9d75397f465a0f93c14f9e84ae8656e2f9bf48dabd26bccb862cf50"
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md",
+      "sha256": "91d66c52d0709c8e890fdeed89a8f301f793163fe1f390e97a2a4a8c147a426c"
+    }
+  ],
+  "remaining_families": [
+    "C_RG2b",
+    "A_RG2b"
+  ],
+  "scope": "Bounded A_CI_PC source/lifecycle and exact 17-node expanded v1/v2 target conformance; full joint J/H root with fixed-row A backend, W history, committed carrier and instantaneous source, both-role migration/disabled-return basin checks and retained 10.2 verification. Fixed-geometry current bounds and geometry residuals do not claim exact implicit-root signs or effect margins. Return W is independently initialized and Z is zeroed under explicit loss. Earlier first-four, A_OS, C_PC and C_CI_PC acceptances remain separate.",
+  "historical_records": "Native and verification records retain their execution-time pending-acceptance flags; this separate decision records user acceptance without a native rerun.",
+  "next_work": "C_RG2b P9-10.1a-c then P9-10.2; continue A_RG2b before consolidated P9-10.3-10.6.",
+  "record_digest": "0f590b46e43f84fdac4995483418d50e0c5537ef56221d845a51a5a75c18aaf7"
+}
