@@ -7,7 +7,10 @@ and accepted constructive result remain closed. Native implementation is separat
 
 [C_CI_PC SC-3 is now accepted](./SparkCompletionCCIPCSC3Authority.md), following
 C_OS, C_CI and C_PC. The selected composite root, full C/Z return and actual
-same-source completion chain are adjudicated and propagated. A_OS is next;
+same-source completion chain are adjudicated and propagated.
+[A_OS now has a bounded C/W construction pending review](./SparkCompletionAOSApplicability.md),
+including a separately declared allocation after the inherited allocation failed.
+A_OS adjudication is next; A_CI has not started;
 native completion/hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
@@ -85,12 +88,12 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current next family: A_OS
+## Current action: A_OS scientific review
 
-After accepted C_CI_PC, establish a self-consistent stationary W writer and
-full C/W physical-map return, including every independent W direction. Bind
-the actual source/event/transfer and W lineage to positive approach and window
-checks. A frozen-W or C-only stability slice cannot supply this result. Prior
-source/metric/topology arguments may be reused only under their hypotheses;
-C-family entry times or traps do not transfer automatically. No A_OS campaign
-has started at this checkpoint.
+The [A_OS construction](./SparkCompletionAOSApplicability.md) now supplies the
+self-consistent stationary writer, all thirty C/W directions and actual
+source/event/old-edge-W lineage/approach/window chain. The inherited allocation
+failed; the separately declared allocation 1/128,63/64,1/128 passed with
+unchanged equations and tolerances. Scientific adjudication remains pending.
+A_CI follows after that adjudication; no A_CI campaign has started. The four
+accepted scientific families and all native/aggregate boundaries are unchanged.

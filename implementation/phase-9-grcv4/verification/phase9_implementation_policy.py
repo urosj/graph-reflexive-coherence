@@ -4534,3 +4534,28 @@ PATHS.update({
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIPCReconciliation.md',
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIPCReconciliation.json',
 })
+
+# A_OS bounded coupled writer/return research; scientific review pending.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSApplicability.md',
+    'implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os.py',
+    'implementation/investigations/grc9v4-constitutive-design/research/spark_completion_a_os_campaign.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_a_os.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_research.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_surfaces.py',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDeclaration.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDiscovery.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSPreflight.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-current.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOS-reset.json.xz',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSChecks.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSResearchProgress.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSMetadataSources.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSValidation.json',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/AOSScientificReview.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/SparkCompletionAOSResearch.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_metadata.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_research.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-aos-research.js',
+})

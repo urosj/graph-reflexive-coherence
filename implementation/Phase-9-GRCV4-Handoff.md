@@ -1,5 +1,43 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_OS completion demonstrated; scientific review next — 2026-10-31
+
+On the existing `investigation/grc9v4-spark-completion` branch, the
+[A_OS investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSApplicability.md)
+now certifies a self-consistent stationary conductance writer and a full
+30-dimensional C/W return (14 resource and all 16 conductance directions).
+Current 1039 → 1041 completes one child; independent reset
+1022 → 1024 earns zero live gain. The positive window is two beats.
+
+The inherited C-family allocation failed to enter this child trap. The
+[disclosed discovery](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSDiscovery.json.xz)
+led to the separately declared lawful shares 1/128,63/64,1/128. Fresh interval
+campaigns then proved the full chain; equations, SC-1 thresholds and tolerances
+are unchanged. Every old-edge W is preserved and three new edges start at one.
+This is a bounded construction, not an all-allocation result.
+
+Optimized FLINT runs took 59.1/58.5 seconds under
+one-hour caps. Graph and fixed-row caches, identical-subject read reuse and
+predictor identity-solve removal are checked before the runs. Full evidence is
+compressed; the side-tool API `/api/spark-completion/applicability/a-os/research`,
+browser panel and notebook cell `spark-completion-a-os-research` inspect the
+same source-bound result without rerunning trajectories. The finite metadata
+successor preserves accepted C_OS/C_CI/C_PC/C_CI_PC projections.
+
+**Next: scientific review/adjudication of A_OS**, then authority → proposal/paper
+→ specification if accepted. `SC-APP-DEBT-A_OS` stays open pending that step.
+A_CI has not started. Native P9-9.1a, hierarchy, aggregate P9-10.5/10.6 and G4
+remain separate. The broad repository audit's pre-existing basin source drift
+at `specs/README.md` remains documented and unwaived.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
 ## Current continuation: C_CI_PC SC-3 accepted; A_OS next — 2026-10-31
 
 The user reports a positive review and requests acceptance and commit.

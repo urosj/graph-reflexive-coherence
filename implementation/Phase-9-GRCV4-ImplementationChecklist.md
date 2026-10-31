@@ -4626,3 +4626,14 @@ Next permitted step:
 
 The initial checklist records planning only. All runtime iterations and
 profile gates remain pending.
+
+## A_OS spark completion research — 2026-10-31
+
+- [x] Certify the full C/W writer/return and actual source/event/lineage chain.
+- [x] Record failed inherited allocation and separate declared 1/128,63/64,1/128 construction.
+- [x] Retain current 1039 → 1041 and reset 1022 → 1024 with positive two-beat windows and distinct gain accounting.
+- [x] Check active FLINT optimizations before runs; compress evidence and expose read-only API/browser/notebook.
+- [ ] Scientific adjudication and subsequent authority → proposal/paper → specification propagation.
+- [ ] A_CI next after A_OS adjudication; native P9-9.1a and aggregate G4 remain forward.
+
+See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSValidation.json`. The broader audit's existing basin-manifest drift remains unwaived.

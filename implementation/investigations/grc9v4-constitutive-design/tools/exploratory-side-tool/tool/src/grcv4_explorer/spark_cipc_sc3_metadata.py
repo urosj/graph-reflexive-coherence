@@ -41,14 +41,15 @@ def checked_acceptance_epoch(root):
     for path,row in rows.items():
         before=subprocess.check_output(['git','show',REVIEWED_COMMIT+':'+path],cwd=root)
         need(hashlib.sha256(before).hexdigest()==row['before_sha256'],'reviewed metadata preimage differs')
-        _bound_file(root,path,row['after_sha256'])
+    from .spark_aos_metadata import bound_metadata_files as bind_next
+    bind_next(root,{path:row['after_sha256'] for path,row in rows.items()})
     validation=load_json_object(root/(INV+'evidence/spark-completion/applicability/CCIPCValidation.json'))
     need(validation['record_digest']==record_digest(validation,'record_digest'),'original research validation digest')
     for ref in validation['sources']:
         current=file_sha256(root/ref['path'])
         if current!=ref['sha256']:
             row=rows.get(ref['path'])
-            need(row is not None and row['before_sha256']==ref['sha256'] and row['after_sha256']==current,
+            need(row is not None and row['before_sha256']==ref['sha256'],
                  'unbound original validation successor')
     return value
 
@@ -62,7 +63,8 @@ def bound_metadata_files(root,expected):
         else:
             row=rows.get(path)
             need(row is not None and row['before_sha256']==sha,'unbound acceptance metadata succession')
-            _bound_file(root,path,row['after_sha256'])
+            from .spark_aos_metadata import bound_metadata_files as bind_next
+            bind_next(root,{path:row['after_sha256']})
 
 
 def reviewed_source_bytes(root,path,expected):
