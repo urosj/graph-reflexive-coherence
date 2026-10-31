@@ -4422,7 +4422,7 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
   - [x] User acceptance on 2026-10-31; implementation `abaa1cbc`,
     [decision](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json).
     No A_RG2b, aggregate-conformance or G4 grant.
-- [ ] A_RG2b bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md).
+- [x] A_RG2b bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md).
   - [x] 10.1a: fresh joint C/Y section with Y=512 log W, full selected H/current,
     fixed-row A backend, completion/certificate/enclosure and log-coordinate error;
     W discrimination, independent equations and full lifecycle/rollback pressure.
@@ -4434,7 +4434,10 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
     fixed-H current from joint-section error. C1 remains unresolved.
   - [x] Historical source preservation, compressed/referenced evidence,
     side-tool API/browser/notebook, plan and handoff.
-  - [ ] Bounded user acceptance; all-ten reconciliation and 10.3–10.6 remain separate.
+  - [x] User acceptance on 2026-10-31; implementation `a4706caf`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json).
+    All ten individual scoped decisions are present; all-ten reconciliation
+    and consolidated 10.3–10.6 remain separate.
 
 ### Consolidated conformance and handoff
 

@@ -1,0 +1,51 @@
+{
+  "schema": "p910-family-basin-acceptance-v1",
+  "family": "A_RG2b",
+  "status": "accepted_bounded_family_basin",
+  "accepted_on": "2026-10-31",
+  "user_instruction": "accept and commit, then merge the branch with no-ff",
+  "reviewed_commit": "a4706cafbcfabdc9075f2067b60e810ec42e39f1",
+  "checkpoints": [
+    "10.1a",
+    "10.1b",
+    "10.1c",
+    "10.2"
+  ],
+  "user_accepted": true,
+  "P9_10_1_closed": true,
+  "P9_10_2_closed": true,
+  "all_ten_P9_10_1_closed": false,
+  "all_ten_P9_10_2_closed": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "verification_record_digest": "99de75ccbb9baf13f245370d5dc60b0cfb77b7a26239735d6e93c02ef5396579",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Verification.json",
+      "sha256": "a28752832bd11d36a5ffe4ee2d08676cadd6e23ccc8f492a0ab83cdb80823ada",
+      "record_digest": "1bbd579bebcf1d4918da948e117a308e045102cac5f657df11223e3f73331f1f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Native.json",
+      "sha256": "501c625fa57bac607dbf1fa125855b0852484a9e201969d9171dc68cda9e6220",
+      "record_digest": "69f62fc20de8356cc5c47d40032358bd9d31c578f427b7749f61b41603f0796a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Target.json.xz",
+      "sha256": "9cf0e169b45ef67ccb1891bed619ea133eb37a16d3d494019d5126a4219da75d",
+      "record_digest": "68fbe8171f588ea584f7a468c40b01b1f088dd5e4a1736a744316151541e4bd0"
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md",
+      "sha256": "da25d7b504536ade6655ce9736033efeb66dd68e31308412b934863f34d9673c"
+    }
+  ],
+  "remaining_families": [],
+  "scope": "Bounded A_RG2b source/lifecycle and exact 17-node expanded v1/v2 target conformance; fresh joint C/Y section with Y=512 log W, full selected H/current, fixed-row A backend, completion, certificate and enclosure, both-role migration/disabled-return basin checks and retained 10.2 verification. Fixed-H and section-aware current error bounds and log-coordinate uncertainty remain distinct; C1 remains unresolved. Disabled return initializes W independently under explicit archive/loss; no carrier is introduced. Earlier accepted family scopes remain separate. The empty remaining-family list does not grant all-ten reconciliation, consolidated conformance or G4.",
+  "historical_records": "Native and verification records retain their execution-time pending-acceptance flags; this separate decision records user acceptance without a native rerun.",
+  "next_work": "Reconcile the accepted first-four and all six remaining-family P9-10.1a-c/P9-10.2 results; then consolidated P9-10.3-10.6.",
+  "record_digest": "33ec5d2090ea958dce57e2581c1f0e6267f90ece5244c22dd82edc816ef6f5ac"
+}

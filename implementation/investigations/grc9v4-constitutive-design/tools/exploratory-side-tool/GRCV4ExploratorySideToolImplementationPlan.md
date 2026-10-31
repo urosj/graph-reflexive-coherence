@@ -3512,4 +3512,6 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   histories/backends/chains/enclosures/log-error scope and clear stale views.
 - [x] Keep C1 unresolved and native execution out of retained status queries;
   an empty remaining-family list does not grant aggregate closure or G4.
-- [ ] Bounded user acceptance, then all-ten reconciliation and 10.3–10.6 separately.
+- [x] Bounded A_RG2b acceptance on 2026-10-31 over implementation `a4706caf`;
+  original execution and review remain unchanged. All ten individual scoped
+  decisions are present; all-ten reconciliation and 10.3–10.6 remain separate.

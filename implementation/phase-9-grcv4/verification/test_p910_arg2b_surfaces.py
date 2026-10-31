@@ -8,7 +8,7 @@ import test_p910_cpc_surfaces as shared
 
 class ARG2bSurfaces(shared.CPCSurfaces):
     FAMILY = 'A_RG2b'
-    ACCEPTED = False
+    ACCEPTED = True
     REMAINING = []
     HISTORICAL_FAMILY = 'C_RG2b'
     CELL = 'p910-arg2b-basin'
@@ -17,6 +17,8 @@ class ARG2bSurfaces(shared.CPCSurfaces):
     def test_native_evidence_roles_and_carrier_loss(self):
         self.assertEqual(self.view['remaining_families'],self.REMAINING)
         self.assertEqual(self.view['user_accepted'],self.ACCEPTED)
+        self.assertTrue(self.view['P9_10_1_closed'])
+        self.assertTrue(self.view['P9_10_2_closed'])
         self.assertFalse(self.evidence['user_accepted'])
         self.assertFalse(self.view.get('all_ten_P9_10_1_closed',False))
         self.assertFalse(self.view.get('all_ten_P9_10_2_closed',False))

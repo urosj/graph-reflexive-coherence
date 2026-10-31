@@ -1,9 +1,11 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## A_RG2b Tranche 10 — validated, acceptance pending (2026-10-31)
+## A_RG2b Tranche 10 — bounded accepted (2026-10-31)
 
-Branch `work/p9-tranche10-remaining-families`, after C_RG2b acceptance
-`35dc5a48`. [Review](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md).
+Implementation `a4706caf` on `work/p9-tranche10-remaining-families` is accepted
+in the separate [decision](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json).
+The user requested merging this branch into `main` with `--no-ff`; subsequent
+work should branch from `main`. [Review](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md).
 Fresh capture binds the joint C/Y query (Y=512 log W), selected H/current,
 fixed-row A backend, completion, certificate and error enclosure. Independent
 edge equations reuse the accepted connected A proof, including log-coordinate
@@ -18,9 +20,11 @@ section-aware current error is below 7.75e-15, with log-coordinate error retaine
 Both-role policy-migration/disabled-return captures feed 10.1c and 10.2 without
 an extra native campaign: four charges and 53 receipts in fifteen commit groups
 pass. Return W is independently initialized under explicit
-archive/loss. Original evidence stays unchanged through the finite source
-successor. After bounded acceptance, reconcile all ten before 10.3–10.6;
-this checkpoint does not automatically close those obligations or grant G4.
+archive/loss. Original evidence, execution flags and review stay unchanged
+through the finite source successor. All ten individual scoped decisions are
+now present. Next: reconcile the accepted first-four and six remaining-family
+P9-10.1a–c/P9-10.2 results, then consolidated 10.3–10.6. This checkpoint does
+not automatically close those obligations or grant G4.
 
 ## C_RG2b Tranche 10 — bounded accepted (2026-10-31)
 

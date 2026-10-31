@@ -8,7 +8,8 @@ ACCEPTANCES = {"A_OS": "6ea2d269b653c50dc4a5b046ec6088ca1cd88637fc91818b715e3bb6
                "C_PC": "28517601d0e71be406ac8d3a54c3de5888210e9ab9e2322106d196d51f20ff6d",
                "C_CI_PC": "2023cfb84100a383851cc76cd19f1738042d536ea4008a4c5916daf8a89615f4",
                "A_CI_PC": "0f590b46e43f84fdac4995483418d50e0c5537ef56221d845a51a5a75c18aaf7",
-               "C_RG2b": "ceaa967a90c13ef566ec719f693593619fa474cae726b57e2746561e1057b37f"}
+               "C_RG2b": "ceaa967a90c13ef566ec719f693593619fa474cae726b57e2746561e1057b37f",
+               "A_RG2b": "33ec5d2090ea958dce57e2581c1f0e6267f90ece5244c22dd82edc816ef6f5ac"}
 
 
 def path(family):

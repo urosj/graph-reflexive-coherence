@@ -4255,3 +4255,6 @@ PATHS |= {
     'implementation/phase-9-grcv4/verification/test_p910_arg2b_basin.py',
     'implementation/phase-9-grcv4/verification/test_p910_arg2b_surfaces.py',
 }
+
+# Bounded A_RG2b acceptance; all-ten reconciliation remains separate.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json")

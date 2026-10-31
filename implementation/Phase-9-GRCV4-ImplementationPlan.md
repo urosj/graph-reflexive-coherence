@@ -85,15 +85,17 @@ enclosure bound. Fixed-H current error remains separate from the Lipschitz
 section bound; C1 remains unresolved. Eight tests passed in two parallel FLINT
 jobs; both-role migration/return observations, saved charges and receipts serve
 10.1c/10.2 without duplicate native work. Original execution evidence is unchanged.
-A_RG2b is implemented and validated on the same branch, pending bounded acceptance: capture its joint C/Y section,
-with Y=512 log W, full selected geometry/current, fixed-row backend, completion
-and certificate. Reuse the independent connected A chain proof, retaining
-log-coordinate uncertainty, inverse residuals and completion tail. Run the two
-native source/target jobs in parallel, collect both-role migration/return
-observations once, and reuse receipts/charges for 10.2. Explicit return history
-initialization is not preservation of the incoming W. Fixed-H and joint-section
-error bounds remain separate, with no C1 upgrade. Bounded acceptance, all-ten
-reconciliation and consolidated P9-10.3–10.6 remain separate.
+A_RG2b is bounded-accepted on 2026-10-31 over implementation `a4706caf`;
+[decision](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json). Its joint C/Y
+section, with Y=512 log W, binds full selected geometry/current, fixed-row
+backend, completion and certificate. The independent connected A chain proof
+retains log-coordinate uncertainty, inverse residuals and completion tail.
+Eight native source/target tests passed in two parallel FLINT jobs, collecting
+both-role migration/return observations once and reusing receipts/charges for
+10.2. Explicit return history initialization is not preservation of incoming W.
+Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
+All ten individual scoped decisions are now present; all-ten reconciliation
+is next, followed by consolidated P9-10.3–10.6.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
@@ -132,7 +134,7 @@ merely because the checkpoint number changed. Independent retained checks or
 necessary new cases may run in parallel; preserve original execution identities
 and distinguish retained validation from a fresh native run. The bounded
 four-family reconciliation and A_OS/C_PC/C_CI_PC/A_CI_PC extensions are accepted.
-C_RG2b is bounded-accepted; A_RG2b is validated pending bounded acceptance.
+C_RG2b and A_RG2b are also bounded-accepted; all-ten reconciliation remains separate.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin
@@ -157,7 +159,9 @@ uses the role's W and fixed-row backend; this additional bounded native scope
 is accepted separately. C_PC now has declared capture scope and bounded
 conformance evidence accepted separately. C_CI_PC extends the joint-root
 capture with its separately accepted bounded conformance; A_CI_PC now integrates
-the same root with its A backend/history. C_RG2b now has a dedicated full-section capture with separate bounded acceptance; A_RG2b now adds the A current/backend to full section capture, validated pending bounded acceptance. The generic readers already
+the same root with its A backend/history. C_RG2b has a dedicated full-section
+capture; A_RG2b adds the A current/backend to full section capture. Both have
+separate bounded acceptance. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
 and [specification](../specs/grc-9-v4-basin-interface.md) provide the starting
