@@ -5057,3 +5057,20 @@ binds the unchanged witness and SC-1 criterion. SC-2 closes scientifically;
 accepted-graph admission and proposal/paper/spec propagation follow in SC-3.
 The final research reconciliation is authorized; native P9-9.1a implementation
 is explicitly separate. No runtime support or G4 acceptance is inferred.
+
+## 2026-10-31 — SC-3 scientific authority and research reconciliation closed
+
+[Authority](./decisions/SparkCompletionSC3Authority.md) admits the selected
+geometric criterion, homogeneous quartic and bounded C_OS completion theorem.
+The [authoritative ledger](./decisions/spark-completion/Authority.json) preserves
+seven claim classes, eight contracts and five scoped debt dispositions. Four
+capability debts are partially resolved; nonlinear-site design is resolved for
+this binding. Native numerical and lifecycle obligations remain attached.
+
+The additive proposal/paper/specification/schema chain is bound by the
+[source manifest](../../../specs/grc-9-v4-spark-completion-source-manifest.json).
+[Research reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
+finishes the investigation's last task without accepting aggregate P9-10.5/10.6
+or G4. Native P9-9.1a is separate by user direction. Historical evidence and
+accepted graph loaders are unchanged; the explicit SC-3 loader supplies the new
+queryable authority. No production evaluator or native support is added.

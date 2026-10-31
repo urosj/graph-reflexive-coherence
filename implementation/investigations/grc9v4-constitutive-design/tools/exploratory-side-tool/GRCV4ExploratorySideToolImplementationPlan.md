@@ -3542,3 +3542,17 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Bounded publication acceptance on 2026-10-31; no completed-spark,
   hierarchy, general ATC, full conformance or G4 promotion. A separate scoped
   spark-completion investigation precedes the final Tranche 10 scope decision.
+
+## SC-3 — scientific spark-completion authority
+
+- [x] Admit the explicit [SC-3 successor](../../decisions/spark-completion/Authority.json)
+  over the accepted basin graph, preserving historical loaders and pinned records.
+- [x] Expose seven classified claims, eight source-exact contracts and five
+  bounded debt dispositions with forward native numerical/lifecycle obligations.
+- [x] Validate bound authority → proposal → paper → specification/schema sources;
+  no numerical rerun or native grant occurs on a status query.
+- [x] Provide `/api/spark-completion`, indexed source downloads, an actual browser
+  panel and notebook cell `spark-completion-authority`; failed refresh clears stale data.
+- [x] Pressure changed claim class/definition, deleted obligations, widened native
+  scope, altered propagation and closed-schema edge cases. Retain scientific
+  C_OS completion separately from pending P9-9.1a implementation and G4.

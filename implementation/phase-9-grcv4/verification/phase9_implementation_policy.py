@@ -4381,3 +4381,22 @@ PATHS.update({
     INV+'evidence/spark-completion/SC2CompleteWitness.json',
     INV+'evidence/spark-completion/SC2Acceptance.json',
 })
+
+# SC-3 bounded scientific authority/propagation; native completion remains separate.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC3Authority.md',
+    'implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-proposal.md',
+    'implementation/investigations/grc9v4-constitutive-design/research/spark_completion_schema.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/SC3SparkCompletionAdmission.json',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-completion.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_completion.py',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md',
+    'specs/grc-9-v4-spark-completion-schema.json',
+    'specs/grc-9-v4-spark-completion-source-manifest.json',
+    'specs/grc-9-v4-spark-completion.md',
+})

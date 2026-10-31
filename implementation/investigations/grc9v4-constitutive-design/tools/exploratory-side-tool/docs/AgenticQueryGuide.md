@@ -940,6 +940,33 @@ does not remove them, promote D10.2 indeterminate traces or grant full conforman
 
 ## P9-10.1a accepted baseline basin diagnostic authority
 
+### Current SC-3 scientific authority
+
+SC-1–SC-3 are scientifically closed for the declared C_OS construction. The
+quartic binding and geometric criterion are now selected and propagated; native
+completion/hierarchy and G4 remain pending. Use this explicit successor loader:
+
+```python
+from grcv4_explorer.spark_completion import load_spark_completion_forensic_context
+from grcv4_explorer.forensic import contract_provenance, debt_lifecycle, reconstruction_path
+context = load_spark_completion_forensic_context(repo_root, side_tool_root)
+contract_provenance(context, "SC-EC-FULL-STATE-RETURN")
+debt_lifecycle(context, "SC-DEBT-STABILITY")
+reconstruction_path(context, "SC2-CL-C-EXACT-SPARK-COMPLETION")
+```
+
+The API `/api/spark-completion`, browser panel and notebook cell expose the same
+classified traces and exact bound sources, including the new paper/specification.
+The loader preserves previous graph loaders and does not promote historical
+indeterminate D10.2 references. `scripts/check_spark_completion_sc3.py --check`
+checks authority/propagation/research reconciliation, without numerical execution.
+The five successor debt dispositions resolve bounded science/design and retain
+native verification. Use `decisions/spark-completion/Authority.json` as the current
+ledger. Historical research stages below retain their own pre-admission flags;
+they are provenance, not the current support disposition.
+
+### Historical scientific research stages
+
 The [spark-completion research opening](../../../decisions/SparkCompletionDefinitionAndFeasibility.md)
 (2026-10-31) consumes this accepted context without extending it. Its new
 provisional claims/debts live in the linked research ledger, not in the accepted

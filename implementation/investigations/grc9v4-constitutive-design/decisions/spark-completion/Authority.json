@@ -1,0 +1,359 @@
+{
+  "schema_version": "grc9v4_sc3_spark_authority_v1",
+  "record_id": "GRC9V4-SC3-SPARK-COMPLETION-v1",
+  "status": "accepted_bounded_scientific_design",
+  "accepted_on": "2026-10-31",
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2Acceptance.json",
+    "sha256": "cde5751870c8102b48de110720077e9558085a50178dc10c8df6009c43b36423",
+    "record_digest": "fa8471ee586f87a33091f756d6f2313ce604f687bd173c277411c38db1c6c5c5"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC3Authority.md",
+  "design_sha256": "33eda9d7319b0bb6a14750c5f48eb6c012beeadead65d524efff2a7c02132f62",
+  "design_commit": "4076a440",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "claims": [
+    {
+      "claim_id": "SC1-CL-N-GEOMETRIC-IDENTITY",
+      "claim_class": "normative_scientific_choice",
+      "status": "accepted_bounded_scientific",
+      "statement": "Select the named signed-resource all-route geometric child-basin policy as a sufficient bounded interpretation of stable child organization, including at zero physical current.",
+      "origin": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Adjudication.json",
+        "claim_id": "SC1-CL-N-GEOMETRIC-IDENTITY"
+      },
+      "limits": [
+        "optional geometric criterion, not constitutive routing or autonomous subsystems",
+        "conditional premises and actual binding required",
+        "no native completion support"
+      ]
+    },
+    {
+      "claim_id": "SC1-CL-C-SPATIAL-BASINS",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "Qualified anchors have disjoint forward-closed guaranteed domains; every strict-descent route terminates at its anchor, with the stated landscape separation.",
+      "origin": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Adjudication.json",
+        "claim_id": "SC1-CL-C-SPATIAL-BASINS"
+      },
+      "limits": [
+        "optional geometric criterion, not constitutive routing or autonomous subsystems",
+        "conditional premises and actual binding required",
+        "no native completion support"
+      ]
+    },
+    {
+      "claim_id": "SC1-CL-C-RETURN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The complete exact ordinary map on a full-dimensional relative trapping/contraction domain preserves the uniformly certified spatial basins and converges to its full-field fixed point.",
+      "origin": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Adjudication.json",
+        "claim_id": "SC1-CL-C-RETURN"
+      },
+      "limits": [
+        "optional geometric criterion, not constitutive routing or autonomous subsystems",
+        "conditional premises and actual binding required",
+        "no native completion support"
+      ]
+    },
+    {
+      "claim_id": "SC1-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "Under the selected interpretation of A.7, actual admitted expansion and positive post-event evolution into the certified domain with same-classifier local descendant gain imply geometric child-basin completion; represented observations additionally require numerical and lifecycle certificates.",
+      "origin": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Adjudication.json",
+        "claim_id": "SC1-CL-C-COMPLETION"
+      },
+      "limits": [
+        "optional geometric criterion, not constitutive routing or autonomous subsystems",
+        "conditional premises and actual binding required",
+        "no native completion support"
+      ]
+    },
+    {
+      "claim_id": "SC3-CL-N-QUARTIC-SITE-BINDING",
+      "claim_class": "normative_scientific_binding",
+      "status": "accepted_bounded_scientific_design",
+      "statement": "Select the homogeneous quartic and explicit optional typed binding; the declared C_OS point has constructive completion evidence.",
+      "limits": [
+        "no node-specific fitting",
+        "no arbitrary parameter or all-family stability theorem",
+        "native evaluator and numerical conformance pending"
+      ]
+    },
+    {
+      "claim_id": "SC2-CL-C-EXACT-SPARK-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The declared charge-21 C_OS source/actual D11 transfer/positive target evolution enters the full-map trap and completes one new stable child with local gain one at target step 902.",
+      "origin": {
+        "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2CompleteWitness.json",
+        "pointer": "/checks/decision"
+      },
+      "limits": [
+        "one declared exact-equation construction and its proved trapping domain",
+        "no general source selector",
+        "no native representation or receipt conformance"
+      ]
+    },
+    {
+      "claim_id": "SC3-CL-N-COMPLETION-SCHEMA",
+      "claim_class": "normative_design",
+      "status": "accepted_bounded_scientific_design",
+      "statement": "Separate static site/policy identity from bound event, parent, full-state proof and positive-window evidence through explicit successor schemas.",
+      "limits": [
+        "shape is not mathematical proof",
+        "native codecs, atomic owner, windows and replay pending"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-DEBT-ORGANIZATION",
+      "status": "partially_resolved_bounded_scientific",
+      "transformation": "Resolved actual parent, complete descendant domains and local geometric gain. Native implementation is a forward obligation; no blanket capability closure.",
+      "resolved_scope": "actual parent, complete descendant domains and local geometric gain",
+      "successor_claim_ids": [
+        "SC1-CL-N-GEOMETRIC-IDENTITY",
+        "SC1-CL-C-SPATIAL-BASINS",
+        "SC1-CL-C-COMPLETION",
+        "SC2-CL-C-EXACT-SPARK-COMPLETION"
+      ],
+      "verification_obligation": "SC-VO-NATIVE-LIFECYCLE",
+      "remaining_work": [
+        "Implement explicit successor identities/codecs, positive live window, reset/rebase/disabled invalidation, atomic publication/hierarchy, retrievable proof and at-most-one gain per actual event across replay/import."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/ClaimDebtLedger.json"
+    },
+    {
+      "debt_id": "SC-DEBT-STABILITY",
+      "status": "partially_resolved_bounded_scientific",
+      "transformation": "Resolved full physical-map trap, actual entry and persistent basin margins. Native implementation is a forward obligation; no blanket capability closure.",
+      "resolved_scope": "full physical-map trap, actual entry and persistent basin margins",
+      "successor_claim_ids": [
+        "SC1-CL-C-RETURN",
+        "SC2-CL-C-EXACT-SPARK-COMPLETION"
+      ],
+      "verification_obligation": "SC-VO-NATIVE-NUMERICS",
+      "remaining_work": [
+        "Implement the explicit quartic binding and both-role target admission; certify full represented-map error, exact charge-slice preservation and all diagnostic predicates for the bounded C_OS subject before native completion."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/ClaimDebtLedger.json"
+    },
+    {
+      "debt_id": "SC-DEBT-NONEMPTY-DOMAIN",
+      "status": "partially_resolved_bounded_scientific",
+      "transformation": "Resolved constructive ordinary-source-to-completion witness. Native implementation is a forward obligation; no blanket capability closure.",
+      "resolved_scope": "constructive ordinary-source-to-completion witness",
+      "successor_claim_ids": [
+        "SC3-CL-N-QUARTIC-SITE-BINDING",
+        "SC2-CL-C-EXACT-SPARK-COMPLETION"
+      ],
+      "verification_obligation": "SC-VO-NATIVE-NUMERICS",
+      "remaining_work": [
+        "Implement the explicit quartic binding and both-role target admission; certify full represented-map error, exact charge-slice preservation and all diagnostic predicates for the bounded C_OS subject before native completion."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/ClaimDebtLedger.json"
+    },
+    {
+      "debt_id": "SC-DEBT-TEMPORAL-LIFECYCLE",
+      "status": "partially_resolved_bounded_scientific",
+      "transformation": "Resolved positive research window, separate reset and no duplicate gain; explicit successor design. Native implementation is a forward obligation; no blanket capability closure.",
+      "resolved_scope": "positive research window, separate reset and no duplicate gain; explicit successor design",
+      "successor_claim_ids": [
+        "SC1-CL-C-COMPLETION",
+        "SC2-CL-C-EXACT-SPARK-COMPLETION",
+        "SC3-CL-N-COMPLETION-SCHEMA"
+      ],
+      "verification_obligation": "SC-VO-NATIVE-LIFECYCLE",
+      "remaining_work": [
+        "Implement explicit successor identities/codecs, positive live window, reset/rebase/disabled invalidation, atomic publication/hierarchy, retrievable proof and at-most-one gain per actual event across replay/import."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/ClaimDebtLedger.json"
+    },
+    {
+      "debt_id": "SC2-DEBT-NONLINEAR-SITE-BINDING",
+      "status": "resolved_bounded_scientific_design",
+      "transformation": "Resolved parameter/domain/derivative/units/identity scientific selection. Native implementation is a forward obligation; no blanket capability closure.",
+      "resolved_scope": "parameter/domain/derivative/units/identity scientific selection",
+      "successor_claim_ids": [
+        "SC3-CL-N-QUARTIC-SITE-BINDING"
+      ],
+      "verification_obligation": "SC-VO-NATIVE-NUMERICS",
+      "remaining_work": [
+        "Implement the explicit quartic binding and both-role target admission; certify full represented-map error, exact charge-slice preservation and all diagnostic predicates for the bounded C_OS subject before native completion."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2ClaimDebtLedger.json"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SC-O-SITE-POTENTIAL",
+      "object_role": "Homogeneous optional quartic site binding",
+      "accepted_claim_ids": [
+        "SC3-CL-N-QUARTIC-SITE-BINDING"
+      ]
+    },
+    {
+      "object_id": "SC-O-CHILD-COMPLETION",
+      "object_role": "Certified geometric child completion",
+      "accepted_claim_ids": [
+        "SC1-CL-N-GEOMETRIC-IDENTITY",
+        "SC1-CL-C-SPATIAL-BASINS",
+        "SC1-CL-C-RETURN",
+        "SC1-CL-C-COMPLETION",
+        "SC2-CL-C-EXACT-SPARK-COMPLETION",
+        "SC3-CL-N-COMPLETION-SCHEMA"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-EC-GEOMETRIC-IDENTITY",
+      "parent_object_ids": [
+        "SC-O-CHILD-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC1-CL-N-GEOMETRIC-IDENTITY",
+        "SC1-CL-C-SPATIAL-BASINS"
+      ],
+      "normative_equation_or_contract": "Select `grc9v4-certified-geometric-child-basins-v1` as an optional scientific\ncompletion criterion. For one globally fixed sign s, use the landscape s*C.\nUse all strict neighbor descents; ties add no arc. A node belongs to an anchor's\ndomain exactly when every descent route terminates at that anchor. Unqualified\nterminals remain in routing, ambiguous nodes are unassigned, and no label-based\ntie-break selects a child. Domains have at least two vertices. Anchors satisfy\nthe exact fixed-row seed inequalities, positive resource threshold and every-\nneighbor contrast threshold. Scientific rows require separately certified\nagreement with represented predicates for a native completion claim.\n\nThe scientific choice is normative within this optional contract. Routing\ndomains are not constitutive flux regions, independent subsystems or multiple\nfull-field attractors. Existing represented-flow diagnostics keep their original\nmeaning and are not upgraded into this completion criterion.",
+      "design_section": "## SC-EC-GEOMETRIC-IDENTITY"
+    },
+    {
+      "equation_contract_id": "SC-EC-PARENT-GAIN",
+      "parent_object_ids": [
+        "SC-O-CHILD-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC1-CL-N-GEOMETRIC-IDENTITY",
+        "SC1-CL-C-COMPLETION"
+      ],
+      "normative_equation_or_contract": "The fresh pre-event source must have a unique qualified parent containing the\nexpanded vertex. Missing parent is inapplicable, not a parent count of zero.\nUse actual event lineage: module nodes collapse to the replaced source vertex;\nunchanged exterior nodes retain their source identities. Eligible complete\ndescendant domains lie wholly in the lifted parent footprint and are anchored\nin the module or at the surviving parent anchor. Require at least two such\ndomains and at least one new-module anchor. Local gain is descendant count minus\none. A surviving parent is not its own new child; global basin growth and\ncounterfactual causation are not claimed. Relabeling/extra vertices alone earn no gain.",
+      "design_section": "## SC-EC-PARENT-GAIN"
+    },
+    {
+      "equation_contract_id": "SC-EC-FULL-STATE-RETURN",
+      "parent_object_ids": [
+        "SC-O-CHILD-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC1-CL-C-RETURN"
+      ],
+      "normative_equation_or_contract": "At fixed positive duration, graph, complete profile, context and references,\ncertify the actual ordinary map on all independent physical coordinates:\nC plus W_A and/or Z only where the realization has those channels. On a closed,\ncomplete, full-dimensional relative domain K, prove strict self-mapping and a\nuniform Lipschitz constant q<1. Genuine constraints such as exact charge define\nthe relative space; a point, successful orbit or arbitrary symmetry slice is\ninsufficient. All complete basin domains, edge directions/ties and diagnostic\nmargins must be uniform on K. An actual positive post-event trajectory must\nenter K. Then contraction proves subsequent exact persistence and attraction.\nAn inner CI solver, frozen-current solve or RG2b section certificate is not\nthe full physical-map proof.",
+      "design_section": "## SC-EC-FULL-STATE-RETURN"
+    },
+    {
+      "equation_contract_id": "SC-EC-QUARTIC-SITE",
+      "parent_object_ids": [
+        "SC-O-SITE-POTENTIAL"
+      ],
+      "accepted_claim_ids": [
+        "SC3-CL-N-QUARTIC-SITE-BINDING"
+      ],
+      "normative_equation_or_contract": "Select the homogeneous site function\n\n$$\nV(C)=\\frac{\\mu}{4}\\big((C-c_0)^2-a^2\\big)^2,\\quad\nV'(C)=\\mu\\big((C-c_0)^3-a^2(C-c_0)\\big),\\quad\nV''(C)=\\mu\\big(3(C-c_0)^2-a^2\\big).\n$$\n\nIts parameters are finite global constants with c0>a>0 and mu>0; no node,\nevent, branch, requested partition or time selects different wells. The function\nis smooth on real C; admitted resource states additionally require C>=0.\nUnits are [c0]=[a]=[C], [mu]=[Phi]/[C]^3, [V]=[Phi]*[C], [V']=[Phi].\nThe existing potential channel consumes **minus** V', not plus. It introduces\nno resource source; incidence continuity still conserves exact charge.\n\nThe admitted positive feasibility result is only the declared C_OS point:\nc0=2, a=mu=1, eta_C=1/1024, duration=32, kappa_Phi_C=1/64, tau_C=1,\nchi_C=zeta_C=kappa_H=1/2, kappa_M_C=0, unit measures/transport weights/reference\nHodges, autonomous zero context and split tolerance 1e-11. The form is defined\nmore broadly; its stability and completion are not proved for arbitrary parameters,\ngraphs, A histories, CI roots, carriers or RG2b sections. The site-curvature\nmechanism is compatible with enabled Read-Back/geometry; their necessity for\norganization is not claimed. K4_base is not additive external forcing.\n\nThe new typed site binding is optional and changes complete-profile identity.\nExisting zero-site IDs never acquire this meaning. Schema/design admission here\ndoes not register an executable evaluator or a new native supported profile.",
+      "design_section": "## SC-EC-QUARTIC-SITE"
+    },
+    {
+      "equation_contract_id": "SC-EC-REPRESENTED-COMPLETION",
+      "parent_object_ids": [
+        "SC-O-CHILD-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC1-CL-C-COMPLETION",
+        "SC3-CL-N-COMPLETION-SCHEMA"
+      ],
+      "normative_equation_or_contract": "Native certification must bound the entire represented ordinary map error in\nthe declared norm, including every selected root/section, geometry and writer,\nand compare it to the strict image margin. On the fixed-charge theorem's slice,\nprove exact represented constraint preservation independently of the runtime\ncharge tolerance. Alternatively a separately admitted charge-drift theorem is\nrequired; a thickened slab or small residual does not supply the same contraction.\nCertify agreement of row/seed, resource/barrier and descent predicates, including\nexcluded anchors, at actual represented states. Unresolved signs or bounds mean\nunresolved completion, not a softened threshold. No clipping, hidden projection,\nprecision escalation or fallback is authorized. Numerical/backend policy is explicit.",
+      "design_section": "## SC-EC-REPRESENTED-COMPLETION"
+    },
+    {
+      "equation_contract_id": "SC-EC-WINDOW-LIFECYCLE",
+      "parent_object_ids": [
+        "SC-O-CHILD-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC1-CL-C-COMPLETION",
+        "SC3-CL-N-COMPLETION-SCHEMA"
+      ],
+      "normative_equation_or_contract": "Declare the positive beat count, elapsed duration, fixed step request and\nsampling stage before the witness. Every observation binds one fresh committed\ncurrent-role poststate, full C/W/Z, context, reads, references, complete domains\nand certificate. Reads, replay, duplicates, rejected and zero-duration operations\nearn no beat. Failed operations preserve the complete prior publication/window;\nresume only after verified restoration. Reset, rebase, graph/profile/context/\nreference change or disabled crossing invalidates the active window. Reset is\nadmitted independently and cannot substitute for live current evolution.\n\nRecord at most one completion gain per actual event lineage, even after another\npolicy, proof, window, import or review. The occurrence key is the existing event\nreceipt/ancestry binding, not a diagnostic hash or an inspection counter. A\nscientific-state content digest alone is not a universal occurrence identifier.\nCompletion, window update and hierarchy insertion must publish atomically through\nthe existing owner. Hierarchy entries name only new child anchors, in canonical\ntyped-node order. The scientific result does not define numeric abundance.",
+      "design_section": "## SC-EC-WINDOW-LIFECYCLE"
+    },
+    {
+      "equation_contract_id": "SC-EC-COMPLETION-SCHEMA",
+      "parent_object_ids": [
+        "SC-O-CHILD-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC3-CL-N-COMPLETION-SCHEMA"
+      ],
+      "normative_equation_or_contract": "Introduce explicit `grc9v4-child-completion-policy-v2` and\n`grc9v4-child-completion-evidence-v2` envelopes. Static policy includes the exact\nscientific rule, thresholds, window and numerical contract. Dynamic parent,\nevent, lineage, trap and observation evidence belongs to the evidence envelope,\nnot the static complete-profile hash. A proof must bind its actual equation,\nfull-state domain, constraints, norm, self-map/contraction margins and numerical/\ndiagnostic certificates. A hash without retrievable operands is insufficient.\n\nThe typed site binding `grcv4-homogeneous-quartic-site-v1` carries c0, a, mu and\nunits, separate from the completion policy. Reject unknown keys, duplicate typed\nnode IDs, incomplete role/state/graph coverage, mismatched identity and stale\nproofs. Canonical exact rational strings are reduced with positive denominator;\nnative represented operands retain their explicitly selected lossless encoding.\nDigest preimages exclude their own digest fields and contain no observation/profile\ncycle. Old v1 envelopes remain unchanged and require explicit migration to opt in.\n\nThe companion specification and closed schema define these fields; schema shape\nalone cannot establish mathematical premises. Native admission requires semantic\nproof/domain checks and the separate P9-9.1a conformance work.",
+      "design_section": "## SC-EC-COMPLETION-SCHEMA"
+    },
+    {
+      "equation_contract_id": "SC-EC-SCIENTIFIC-CEILING",
+      "parent_object_ids": [
+        "SC-O-CHILD-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC2-CL-C-EXACT-SPARK-COMPLETION"
+      ],
+      "normative_equation_or_contract": "Accept the exact-equation C_OS completion witness conditionally on its declared\nbinding and inputs: actual positive source beat, fresh eligible parent/capture,\nliteral D11 transfer, positive approach, full-map trap and two-beat window ending\nat target step 902. It has one stable new satellite child and local gain one.\nThe unchanged reset proof and both chart classifications do not count as births.\nEntry times 900/867 are first certified by the retained procedure, not earliest\nmathematical entry times. The independent target review did not review the later\nsource successor; the user separately accepts the completed chain.\n\nThis closes bounded scientific feasibility and design, not native completion,\nuniversal formation, all-ten stability, arbitrary topology/request selection,\nhierarchy implementation or G4. Zero-site exclusions, no-basin controls and\nmultiple-branch limits remain valid for their original subjects.",
+      "design_section": "## SC-EC-SCIENTIFIC-CEILING"
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-VO-NATIVE-NUMERICS",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Implement the explicit quartic binding and both-role target admission; certify full represented-map error, exact charge-slice preservation and all diagnostic predicates for the bounded C_OS subject before native completion."
+    },
+    {
+      "obligation_id": "SC-VO-NATIVE-LIFECYCLE",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Implement explicit successor identities/codecs, positive live window, reset/rebase/disabled invalidation, atomic publication/hierarchy, retrievable proof and at-most-one gain per actual event across replay/import."
+    }
+  ],
+  "source_contract_ids": [
+    "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+    "P9-EC-GRC9-BASIN-CEILING"
+  ],
+  "historical_sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/ClaimDebtLedger.json",
+      "sha256": "bcd11732f4561a95a83b715011f0444aa862fa177a2d98beb833014f8c4e2f29"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1ClaimDebtLedger.json",
+      "sha256": "37ed88662d4962b1eb849b3b69e8b921cf48c5b96798b3358d31882279f418e4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Adjudication.json",
+      "sha256": "18b5be5726e19f532334c20740e653d3cca79acbfd2056b91b56396b4747f0e8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2ClaimDebtLedger.json",
+      "sha256": "75d6ad6814463128f275046358188ec903b273c6351eadaf0bfdc31d0999459a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2CompleteWitness.json",
+      "sha256": "0073503ebe1a62393c54ffe66c1832f107b53f6a45ae50a32aa336f41bd52e2b"
+    }
+  ],
+  "scope": {
+    "SC1_closed": true,
+    "SC2_closed": true,
+    "SC3_closed": true,
+    "scientific_family": "C_OS",
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "dd2583ca6b0192c9f72f15ed1c01d82b5c2a9de95da9583cbaeafe2530684383"
+}

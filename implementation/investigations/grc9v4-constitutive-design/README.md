@@ -5,53 +5,29 @@
 
 ## Current successor — spark completion, 2026-10-31
 
-After accepted Tranches 8–9 and P9-10.1–10.4, the user opened a separate
-[definition/feasibility investigation](./decisions/SparkCompletionDefinitionAndFeasibility.md)
-before the final Tranche 10 scope decision. The first screen finds that all ten
-unchanged expansion-example thresholds exclude geometric seeds; a separately
-identified positive seed is not child completion. The
-[provisional claim/debt ledger](./evidence/spark-completion/ClaimDebtLedger.json)
-records the missing organization, stability, nonempty-domain and temporal
-contracts outside accepted authority. The reviewed [SC-1 definition](./decisions/SparkCompletionSC1Contract.md)
-now supplies genuine geometric attraction domains and a conditional full-state
-stability/completion theorem with same-classifier parent/gain. The selected
-geometric identity branch remains distinct from the accepted physical-flow diagnostic.
-Fifteen exact geometric checks and 25 earlier observational controls pass without
-claiming native feasibility. Independent pressure passes the conditional
-mathematics; [the applied audit resolution](./decisions/SparkCompletionSC1EquilibriumExclusion.md)
-also proves the retained zero-site tree bindings cannot meet its stationary
-completion conditions. The subsequent
-[SC-2 mechanism analysis](./decisions/SparkCompletionSC2MechanismAnalysis.md)
-derives conditional exact equilibria and local C_OS attraction from a proposed
-homogeneous nonlinear site law. The equation channel exists; that evaluator is
-not admitted or implemented. [Independent review](./evidence/spark-completion/review/SC2ScientificPressureReview.md)
-passes the conditional mathematics but identifies 120 stable branches, including
-a no-basin alternative. The [event compatibility preflight](./decisions/SparkCompletionSC2EventCompatibility.md)
-now checks an eleven-node qualified source, both chiral fourteen-node D11 targets
-and charge-20 compatibility. The [continuation pressure](./decisions/SparkCompletionSC2Continuation.md)
-adds strict-split exclusion for the original parameters and 128 positive enclosed
-steps per role under one explicit companion, without organizing gain.
-The later [constructive candidate](./decisions/SparkCompletionSC2PositiveCandidate.md)
-now passes exact allocation, enclosed target approach and a quantitative full-OS
-trap with a surviving parent plus one new basin. The [source-beat successor](./decisions/SparkCompletionSC2SourceBeat.md)
-now supplies its ordinary-beat/fresh-capture link with unchanged reset and an
-actual changed current-target rerun. The bounded chain is ready for scientific
-review/adjudication; the older negative run is unchanged. The independent target
-review passes the trap/entry result; its retained-check correction binds saved
-coordinates, both charts and complete basin dictionaries without replaying the
-long trajectory. That review does not independently adjudicate the source chain. The [SC-1 adjudication](./decisions/SparkCompletionSC1Adjudication.md)
-now selects the bounded geometric identity definition and conditional A.7 bridge;
-the organization-definition portion is resolved. The [successor ledger](./evidence/spark-completion/SC1Adjudication.json)
-records that decision without changing reviewed predecessors. Actual completion,
-constitutive-binding admission, accepted-graph propagation and native hierarchy
-support remain open.
-The later [complete witness](./decisions/SparkCompletionSC2CompleteWitness.md)
-now demonstrates one exact-equation research spark completion at target step
-902: one stable new satellite child alongside the surviving parent, local gain
-one, and zero extra replay gain. The proposed-law C_OS scope is explicit; native
-completion and authority propagation remain separate from this positive result.
-Historical design restrictions below retain their original scope; current
-implementation status is in the [Phase 9 handoff](../../Phase-9-GRCV4-Handoff.md).
+SC-1–SC-3 are closed at bounded scientific/design scope. The user accepted the
+[complete C_OS research witness](./evidence/spark-completion/SC2Acceptance.json)
+at `4076a440`: actual source beat, fresh parent/event capture, D11 transfer,
+positive target entry into a full-map trap and one new stable child at step 902.
+The [SC-3 authority](./decisions/SparkCompletionSC3Authority.md) and
+[current claim/debt ledger](./decisions/spark-completion/Authority.json) admit the
+optional geometric criterion and homogeneous quartic binding, preserve conditional
+claim classes, and route native numerical/lifecycle obligations forward.
+
+Authority → [proposal](./drafts/GRC9V4-spark-completion-proposal.md) →
+[paper](./drafts/2026-10-GRC9V4-Spark-Completion.md) →
+[specification/schema](../../../specs/grc-9-v4-spark-completion.md) is complete.
+The [research reconciliation](../../phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
+records the contribution to P9-10.5/10.6. Native P9-9.1a follows separately;
+native completion, hierarchy and G4 remain pending. No all-ten completion,
+general topology-selection or arbitrary-parameter claim is added.
+
+Historical ledgers, original paper/spec bytes, zero-site exclusions and negative
+controls are preserved. Existing accepted ten-family native support is unchanged.
+The explicit side-tool SC-3 loader/API/browser/notebook exposes seven classified
+claims, eight contracts and five bounded debt transformations. Querying it checks
+retained authority and propagation, without rerunning the numerical witness.
+
 
 ## Current ATC scope and next scientific direction — 2026-09-24
 

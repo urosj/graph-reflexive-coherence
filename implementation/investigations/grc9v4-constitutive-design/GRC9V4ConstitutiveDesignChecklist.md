@@ -3894,8 +3894,8 @@ Current scope: [scientific definition and feasibility](./decisions/SparkCompleti
 after accepted P9-10.4. Historical gate flags above remain historical.
 The [provisional ledger](./evidence/spark-completion/ClaimDebtLedger.json)
 retains the historical research opening. The [SC-1 adjudication](./decisions/SparkCompletionSC1Adjudication.md)
-selects the bounded scientific definition; accepted-graph admission and native
-completion/hierarchy support remain open.
+selects the bounded scientific definition. [SC-3](./decisions/SparkCompletionSC3Authority.md)
+now admits the scientific/design successor; native completion/hierarchy stays pending.
 
 - [x] Accept/commit examples, merge with `--no-ff`, and open a research branch.
 - [x] Trace completion/row/basin authority through the forensic API; preserve
@@ -3962,11 +3962,15 @@ completion/hierarchy support remain open.
     parent/child domains, one event-bound completion at target step 902, local
     gain one and zero extra replay gain; ten false-completion controls reject.
     Preserve the long approach/reset evidence and proposed-law scope.
-- [ ] SC-3: Consolidate the selected SC-1 definition with reviewed SC-2
+- [x] SC-3: Consolidate the selected SC-1 definition with reviewed SC-2
   feasibility and scoped claim/debt decisions; admit the authority/schema
   successor and propagate through proposal/paper/spec before P9-9.1a native work.
-  - [ ] Carry represented charge/row/error and native lifecycle obligations
+  - [x] Carry represented charge/row/error and native lifecycle obligations
     through that propagation; these do not undo the bounded exact-equation
     completion demonstrated by SC-2.
-- [ ] Reconcile the outcome in P9-10.5 and explicitly record completion support
-  or deferral in P9-10.6/G4; no automatic closure from this investigation.
+- [x] [Reconcile the research outcome for P9-10.5/10.6](../../phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md):
+  bounded scientific completion and propagation complete; native completion,
+  hierarchy and G4 pending. Aggregate Phase 9 closeout remains separate.
+- [x] Expose classified claims, partial debt dispositions and contracts through
+  the explicit SC-3 side-tool loader, HTTP/browser and notebook; pressure drift
+  and scope changes without a repeated numerical campaign.

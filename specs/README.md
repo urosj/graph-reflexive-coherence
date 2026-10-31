@@ -1,5 +1,14 @@
 # GRC Library Specifications
 
+The [SC-3 spark-completion successor](grc-9-v4-spark-completion.md),
+[closed schema](grc-9-v4-spark-completion-schema.json) and
+[authority → proposal → paper → spec manifest](grc-9-v4-spark-completion-source-manifest.json)
+select bounded scientific/design contracts for geometric child completion and
+the homogeneous quartic site binding. Native P9-9.1a conformance remains pending;
+this does not enable completion for any existing runtime profile. Historical
+specifications and accepted identities below retain their original meaning.
+
+
 <!-- P9-10.1a basin successor: begin -->
 The accepted [GRC9V4 baseline basin diagnostic successor](grc-9-v4-basin-interface.md)
 and its [closed schema](grc-9-v4-basin-interface-schema.json) define an explicit

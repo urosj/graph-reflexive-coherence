@@ -4536,15 +4536,21 @@ acceptances remain unchanged; each row below records its own bounded evidence.
       current steps 901/902 preserve the complete certified basins; one new stable
       child, local gain one, replay gain zero; ten false-completion controls reject.
       Reuse the long approach and unchanged reset. No native support is inferred.
-  - [ ] SC-3: Consolidate SC-1 selection and reviewed SC-2 feasibility; admit
+  - [x] SC-3: Consolidate SC-1 selection and reviewed SC-2 feasibility; admit
     the authority/schema successor, then authority → proposal/paper → spec.
     Only then return to P9-9.1a implementation, or record scoped deferral.
-    - [ ] Propagate represented charge/row/error and lifecycle requirements through
+    - [x] Propagate represented charge/row/error and lifecycle requirements through
       authority → paper → spec before native completion. Preserve the zero-site exclusion.
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
+  - [x] Reconcile the spark-completion scientific/design portions and five
+    debt dispositions in the [research successor](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md);
+    native P9-9.1a obligations remain attached. Other inherited debt review is separate.
 - [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,
   closeout, handoff, explicit completion support/defer scope and P9-G4 acceptance.
+  - [x] Record scientific completion demonstrated for bounded C_OS; native
+    completion, hierarchy and G4 pending. SC-1–SC-3 research reconciliation is
+    complete; native implementation follows separately.
 
 ## Planning review disposition
 

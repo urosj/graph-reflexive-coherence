@@ -1,5 +1,37 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current: SC-3 and final research reconciliation closed — 2026-10-31
+
+The preceding SC-1/SC-2 work was accepted and committed as `4076a440` on
+`investigation/grc9v4-spark-completion`. SC-3 now has an explicit
+[authority/claim-debt successor](./investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json),
+linked proposal and paper, and the
+[specification/schema successor](../specs/grc-9-v4-spark-completion.md).
+The [research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
+finishes the investigation's last task. Older entries below are historical.
+
+The scientific witness completes one stable new child at target step 902 under
+the declared exact C_OS quartic law. Conditional mathematics remains conditional;
+four capability debts retain native portions, and site-binding design is resolved
+with a forward native obligation. There is no native completion/hierarchy grant,
+all-ten stability claim or G4 acceptance.
+
+**Next is separately authorized P9-9.1a native implementation.** Use the propagated
+contract; first address the full represented-map error, exact charge-slice and
+predicate certificates, then actual window/receipt/hierarchy atomicity and replay.
+Do not repeat the long SC-2 discovery trajectory merely to check documentation.
+
+Read-only access: side-tool `/api/spark-completion`, its browser panel and notebook
+cell `spark-completion-authority`; Python uses the explicit
+`load_spark_completion_forensic_context`, followed by normal forensic queries.
+Historical loaders keep their original pins and graph meanings.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_sc3.py
+```
+
+
 ## SC-2 bounded research spark accepted — 2026-10-31
 
 Start with [the complete witness](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC2CompleteWitness.md)
