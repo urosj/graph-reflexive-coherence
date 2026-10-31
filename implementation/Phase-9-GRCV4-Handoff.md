@@ -1,5 +1,48 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: C_CI_PC SC-3 accepted; A_OS next — 2026-10-31
+
+The user reports a positive review and requests acceptance and commit.
+Research checkpoint `d3c71d64` preserves the original runs, source bindings,
+reporting correction and review. The
+[C_CI_PC adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCSC3Authority.md)
+accepts three bounded conditional claims and resolves `SC-APP-DEBT-C_CI_PC`
+for scientific research. Authority → proposal/paper → specification is bound;
+SC-1 and the v2 completion schema are reused. Native numerical and lifecycle
+obligations remain pending at P9-9.1a; completion/hierarchy and G4 are separate.
+
+The selected root supplies both immediate geometry and the persistent writer,
+retaining stationary gain two. The full trap includes all 14 resource and
+46 carrier directions. Current 849 → 851 completes one child; independent
+reset 817 → 819 earns no live gain. The 21.1 MB evidence remains compressed
+to 2.44 MB. Acceptance reruns no trajectory and preserves the corrected
+outward-residual diagnostic and original producer bytes. User-reported positive
+review is recorded without inventing a separate review artifact or long replay.
+The broader repository audit's pre-existing source drift remains documented.
+
+Use `/api/spark-completion/applicability/ci-pc`, the accepted C_CI_PC panel,
+notebook cell `spark-completion-ci-pc-accepted`, or
+`load_spark_cipc_forensic_context`. Older views retain their projections;
+the historical research-helper source is served from the exact reviewed Git
+bytes through an explicit metadata successor. The
+[current family ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCClaimDebtLedger.json)
+has C_OS, C_CI, C_PC and C_CI_PC accepted scientifically and six families open.
+[Research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIPCReconciliation.md)
+does not close aggregate P9-10.5/10.6.
+
+**Next is A_OS completion applicability**: establish the self-consistent
+stationary W writer and full C/W return, with the actual source/event/lineage/
+approach/window chain. A frozen-W or C-only trap is insufficient. Reuse prior
+mathematics only under its hypotheses. Continue the existing branch; no A_OS
+campaign has started here.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_ci_pc_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_ci_pc_sc3.py
+```
+
+Earlier continuation entries below retain their historical scopes and flags.
+
 ## Current continuation: C_CI_PC completion demonstrated; review next — 2026-10-31
 
 On `investigation/grc9v4-spark-completion`, the

@@ -6,6 +6,7 @@ never imports numerical campaign code or reruns a trajectory on refresh.
 from pathlib import Path
 from .spark_pc import spark_pc_authority
 from .basin import _bound_file
+from .spark_cipc_sc3_metadata import HISTORICAL_HELPER, reviewed_source_bytes
 from .canonical import digest, load_json_object, record_digest, file_sha256
 from .errors import SourceAdmissionError
 
@@ -37,7 +38,9 @@ def spark_cipc_research_status(root, side):
          'composite same-source obligation omitted')
     refs = report['sources']
     need(len({r['path'] for r in refs})==len(refs), 'duplicate research source')
-    for ref in refs: _bound_file(root,ref['path'],ref['sha256'])
+    for ref in refs:
+        if ref['path']==HISTORICAL_HELPER: reviewed_source_bytes(root,ref['path'],ref['sha256'])
+        else: _bound_file(root,ref['path'],ref['sha256'])
     view = dict(schema='grc9v4_spark_cipc_research_surface_v1',report_record_digest=REPORT_DIGEST,
                 accepted_scientific_families=prior['scope']['scientific_families'],
                 report=report,check_mode='retained_source_integrity_no_numerical_rerun',
@@ -50,4 +53,4 @@ def spark_cipc_research_source(root, side, path):
     view=spark_cipc_research_status(root,side)
     ref=next((r for r in view['source_refs'] if r['path']==path),None)
     if ref is None: raise KeyError('not an indexed spark-completion research source')
-    return _bound_file(Path(root),path,ref['sha256']).read_bytes(),ref
+    return reviewed_source_bytes(Path(root),path,ref['sha256']),ref

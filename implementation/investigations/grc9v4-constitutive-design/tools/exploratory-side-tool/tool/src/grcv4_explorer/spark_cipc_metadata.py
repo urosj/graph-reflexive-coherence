@@ -41,10 +41,11 @@ def checked_successor(root):
          'metadata successor widened scientific scope')
     rows={r['path']:r for r in value['sources']}
     need(len(rows)==len(value['sources']) and set(rows)==PATHS,'metadata successor path scope')
+    from .spark_cipc_sc3_metadata import bound_metadata_files as bound_acceptance_files
+    bound_acceptance_files(root,{p:r['after_sha256'] for p,r in rows.items()})
     for path,row in rows.items():
         before=subprocess.check_output(['git','show',PREDECESSOR+':'+path],cwd=root)
         need(hashlib.sha256(before).hexdigest()==row['before_sha256'],'metadata predecessor bytes changed')
-        _bound_file(root,path,row['after_sha256'])
     return value
 
 
@@ -52,10 +53,14 @@ def bound_metadata_files(root,expected):
     root=Path(root)
     changed={path:sha for path,sha in expected.items() if file_sha256(root/path)!=sha}
     rows={r['path']:r for r in checked_successor(root)['sources']} if changed else {}
+    current_epoch={}
     for path,sha in expected.items():
-        if path not in changed:
-            _bound_file(root,path,sha)
+        if path not in changed: current_epoch[path]=sha
         else:
             row=rows.get(path)
-            need(row is not None and row['before_sha256']==sha,'unbound historical metadata successor')
-            _bound_file(root,path,row['after_sha256'])
+            if row is not None:
+                need(row['before_sha256']==sha,'unbound historical metadata successor')
+                current_epoch[path]=row['after_sha256']
+            else: current_epoch[path]=sha
+    from .spark_cipc_sc3_metadata import bound_metadata_files as bound_acceptance_files
+    bound_acceptance_files(root,current_epoch)

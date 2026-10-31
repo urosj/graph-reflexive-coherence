@@ -3,12 +3,12 @@
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/CPCClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/CCIPCClaimDebtLedger.json).
 
-[C_PC SC-3 is now accepted](./SparkCompletionCPCSC3Authority.md), following
-[C_CI](./SparkCompletionCCISC3Authority.md): bounded scientific applicability
-is adjudicated and propagated for C_OS, C_CI and C_PC. C_CI_PC is the next
-family; the native implementation boundary is unchanged.
+[C_CI_PC SC-3 is now accepted](./SparkCompletionCCIPCSC3Authority.md), following
+C_OS, C_CI and C_PC. The selected composite root, full C/Z return and actual
+same-source completion chain are adjudicated and propagated. A_OS is next;
+native completion/hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
 
@@ -85,11 +85,12 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current next family: C_CI_PC
+## Current next family: A_OS
 
-After the accepted C_PC construction, derive the composite selected root and
-full C/Z physical map. One selected source must feed both immediate geometry
-and the persistent writer, preserving the gain-two composition identity.
-Certify all independent carrier directions and the actual source/event/transfer/
-approach/window chain. Reuse C_PC or C_CI operands only where their hypotheses
-hold; neither prior trajectory entry nor a C-only trap transfers automatically.
+After accepted C_CI_PC, establish a self-consistent stationary W writer and
+full C/W physical-map return, including every independent W direction. Bind
+the actual source/event/transfer and W lineage to positive approach and window
+checks. A frozen-W or C-only stability slice cannot supply this result. Prior
+source/metric/topology arguments may be reused only under their hypotheses;
+C-family entry times or traps do not transfer automatically. No A_OS campaign
+has started at this checkpoint.

@@ -1,0 +1,279 @@
+{
+  "schema_version": "grc9v4_spark_applicability_authority_v1",
+  "record_id": "GRC9V4-SC3-SPARK-CI-PC-v1",
+  "status": "accepted_bounded_scientific_design",
+  "accepted_on": "2026-10-31",
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-pc/Authority.json",
+    "sha256": "f97da5215998fc1c0f43c5f85f0216cf880ae3dce48b7edb09b8678dda2c3a13",
+    "record_digest": "72e5e0d7d745e5100581e38ee1f35698ab813a3d69d76073b7d5d0c9511d9339"
+  },
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCScientificAcceptance.json",
+    "sha256": "4785047cb1223c73cdbfdbdcecfae11726ec37a95106fcf01641238fbbb50316",
+    "record_digest": "8624660bf32f4618e88f08fef750742b7d1dccd00e6f7b3b95b91256a6872f8f"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCSC3Authority.md",
+  "design_sha256": "dfd895639c14a7795542f881b47a196169bdbd71ab308169211cf106633b8192",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "claims": [
+    {
+      "claim_id": "SC-CCIPC-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "On the declared graphs, C in [0,4]^V and signed symmetric star carrier norm <=1/128 admit one selected joint root in the flat ball of radius1/32, with the same source driving immediate geometry and the bounded exponential writer.",
+      "limits": [
+        "fixed quartic/parameters/graphs and selected root domain",
+        "stationary composite gain two",
+        "carrier invariance conditional on resource-chart membership",
+        "not global resource-chart invariance or root uniqueness outside the selected ball"
+      ]
+    },
+    {
+      "claim_id": "SC-CCIPC-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full sixty-dimensional charge-relative composite C/Z map contracts the declared weighted ball, including all forty-six signed carrier directions and both implicit-root derivatives; a separate reference-submap argument establishes stationary Z*=0.",
+      "limits": [
+        "exact charge-21 local trap",
+        "not a C-only slice",
+        "no represented native map certificate"
+      ]
+    },
+    {
+      "claim_id": "SC-CCIPC-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "An actual composite source beat and fresh event root, whole-carrier archive/reset and D11 transfer reach current entry849/completion851; independent reset817/819 earns no live gain.",
+      "limits": [
+        "fixed quartic/parameters/source/target/event policy",
+        "8192-bit physical evolution and root certification; midpoint proposal ladder only",
+        "sufficient witness times, not earliest completion",
+        "user reports positive review; no separate independent-review artifact or long replay",
+        "no native implementation or other-family applicability grant"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-C_CI_PC",
+      "status": "resolved_bounded_scientific",
+      "scope": "One declared C_CI_PC exact-equation construction and its full physical state domain",
+      "transformation": "Research applicability, repository review, user acceptance and scoped propagation resolved; native capability remains a separate forward obligation.",
+      "resolved_scope": "selected composite root and signed carrier domain, same-source immediate/persistent coupling, stationary/full C/Z trap, actual source/event/history transfer, positive window, user review and scoped propagation",
+      "successor_claim_ids": [
+        "SC-CCIPC-CL-C-DOMAIN",
+        "SC-CCIPC-CL-C-FULL-TRAP",
+        "SC-CCIPC-CL-C-COMPLETION"
+      ],
+      "verification_obligation_ids": [
+        "SC-CCIPC-VO-NATIVE-NUMERICS",
+        "SC-CCIPC-VO-NATIVE-LIFECYCLE"
+      ],
+      "contributes_to_debt_ids": [
+        "SC-DEBT-ORGANIZATION",
+        "SC-DEBT-STABILITY",
+        "SC-DEBT-NONEMPTY-DOMAIN",
+        "SC-DEBT-TEMPORAL-LIFECYCLE"
+      ],
+      "remaining_work": [
+        "Explicit quartic/profile identity and both-role selected-root admission; same-source immediate/persistent coupling; complete represented C/Z-map and implicit-root error within the strict image margin; exact represented charge, lawful carrier support/domain and certified row/seed/barrier/descent predicates. Solver tolerances and overlap consistency alone are insufficient.",
+        "Actual source carrier archives and whole-target initialization, committed positive current windows and elapsed time, invalidation, actual event occurrence identity, at-most-once gain, atomic owner/window/hierarchy publication with rollback and replay/import/reset conformance."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCClaimDebtLedger.json"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SC-CCIPC-O-COMPLETION",
+      "object_role": "Bounded C_CI_PC scientific completion applicability",
+      "accepted_claim_ids": [
+        "SC-CCIPC-CL-C-DOMAIN",
+        "SC-CCIPC-CL-C-FULL-TRAP",
+        "SC-CCIPC-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-CCIPC-EC-DOMAIN",
+      "parent_object_ids": [
+        "SC-CCIPC-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CCIPC-CL-C-DOMAIN"
+      ],
+      "design_section": "## SC-CCIPC-EC-DOMAIN",
+      "normative_equation_or_contract": "`SC-CCIPC-CL-C-DOMAIN` is accepted as conditional mathematics on the declared\nsource and target graphs. The physical state is (C,Z_4), where Z is signed,\nsymmetric and vertex-star-supported. With outward incidence B, L=B^TB and\nendpoint-overlap O, select the joint root\n\n$$\nS_{ij}(f)=O_{ij}f_if_j/4,\\quad H=I+(Z+S(f))/2,\n\\quad j_0=-\\tfrac1{1024}B^T(\\tfrac1{64}BHB^TC-V'(C)),\n$$\n$$\ny=(\\tfrac34I+HL)^{-1}j_0,\\quad f=H^{-1}y/2,\\quad J=j_0+y/4,\n\\quad C^+=C-32BJ,\\quad Z^+=e^{-1}Z+(1-e^{-1})S(f).\n$$\n\nUse V(C)=((C-2)^2-1)^2/4, eta_C=1/1024, duration=32,\nkappa_Phi_C=1/64, tau_C=1, tau_PC=32, chi_C=zeta_C=kappa_H=1/2,\nkappa_M_C=0, unit measures/weights/reference Hodges and autonomous zero context.\nThe same selected source supplies immediate geometry and the held persistent\nwriter. At stationary history Z=S, H=I+S: the composite gain is two.\nA post-continuity replacement source or CI-only/PC-only map is not this law.\n\nFor C in [0,4]^V, ||Z||_F<=1/128 and ||f||_infinity<=1/32, the uniform\nBanach bounds establish one root within the selected flat ball. Source/target\nroot contractions are below 0.063351/0.019589. H has lower eigenvalue at\nleast 255/256, the current block is regular and the selector cutoff 1/64\nremains separated. The source norm is below 1/128, giving carrier-ball\ninvariance while C remains in its chart. No global resource-box invariance,\nuniqueness of roots outside the selected ball or larger carrier domain is\nadmitted. Existing zero-site profiles do not inherit this quartic binding."
+    },
+    {
+      "equation_contract_id": "SC-CCIPC-EC-FULL-STATE-RETURN",
+      "parent_object_ids": [
+        "SC-CCIPC-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CCIPC-CL-C-FULL-TRAP"
+      ],
+      "design_section": "## SC-CCIPC-EC-FULL-STATE-RETURN",
+      "normative_equation_or_contract": "`SC-CCIPC-CL-C-FULL-TRAP` is accepted as conditional mathematics for the full\ncomposite map. Use the retained exact charge-21 center c, target incidence,\nA0=B[I+(3I/4+B^TB)^-1/4]B^T and P=(A0+11^T/15)^-1. The trap is\n\n$$\n\\mathbf1^TC=21,\\qquad\n\\max(\\|C-c\\|_P,1024\\|Z\\|_F)\\le2^{-20}.\n$$\n\nAll fourteen charge-tangent resource directions and forty-six independent\nsigned symmetric star carrier directions are included; carrier radius is\n2^-30. Differentiate both H consumers and the selected root through\nD_Cf=(I-F_f)^-1 F_C and D_Zf=(I-F_f)^-1 F_Z, then differentiate continuity\nand the same-source writer. The fresh full block bound gives q<0.997358\nand strict image margin >2.51e-9. Inner-root contraction is not physical\nstability; a C-only or Z=0-slice proof is insufficient.\n\nA separate reference-submap certificate establishes C*. Its zero reference\ncurrent implies f*=S*=Z*=0, which is a fixed point of the full composite map;\nfull contraction proves local uniqueness and return under nonzero carrier\nperturbations. The composite Z=0 map itself is CI, not that reference submap.\nComplete qualified domains {p,private} and {satellite2,n2,n8}, including\nrouting terminals, persist throughout both chiral charts. This is local\nexact-equation stability, not arbitrary-graph formation or native-map error control."
+    },
+    {
+      "equation_contract_id": "SC-CCIPC-EC-COMPLETION",
+      "parent_object_ids": [
+        "SC-CCIPC-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CCIPC-CL-C-COMPLETION"
+      ],
+      "design_section": "## SC-CCIPC-EC-COMPLETION",
+      "normative_equation_or_contract": "`SC-CCIPC-CL-C-COMPLETION` is accepted as conditional mathematics for the bound\nsource/event/target construction. Start from exact retained source resource\nprestates and source carriers +2^-16 I for current and -2^-17 I for reset.\nExecute one actual composite current beat and carrier write, then reconstruct\nits fresh whole event root and qualified parent. Reset is not advanced.\n\nLiteral D11 transfers actual resources using shares (1/64,31/32,1/64), zero\ncore and copied exterior. Exact incidence and transfer identities preserve\ncharge 21. Under `event_loss_and_zero_target_carrier_v1`, archive both source\nhistories, record explicit carrier-history loss and zero the entire target\ncarrier. This event disposition is not native exponential release. Subsequent\nordinary beats use the evolving carrier and the same selected immediate source.\n\nCurrent enters the full trap at 849 and completes two positive duration-32\nbeats at 851 with one stable new child and local gain one. Independent reset\n817 \u2192 819 earns zero live gain. These are sufficient witness times, not\nnative counters, earliest completion or equality with earlier-family dynamics.\nBoth chiral charts describe one birth. The full trap proves subsequent exact\npersistence after the elapsed-64 observation window.\n\nPhysical states and final root residual certificates use fixed 8192-bit Arb;\nfresh trapping mathematics uses 512 bits. Only midpoint root proposals use\nthe declared 128,...,8192-bit ladder. Stored outward 112-bit coordinates are\ninspection enclosures, never evolution states or exact restart checkpoints.\nSaved/fresh root/read/recurrence overlap establishes consistency only; fresh\ncertified enclosures drive proof calculations. The retained checker corrects\nan outward-residual reporting error without changing original producer or\nexecution bytes. Acceptance retains all repository review limits: no separately\nsupplied independent-review artifact or independent long replay is claimed."
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-CCIPC-VO-NATIVE-NUMERICS",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Explicit quartic/profile identity and both-role selected-root admission; same-source immediate/persistent coupling; complete represented C/Z-map and implicit-root error within the strict image margin; exact represented charge, lawful carrier support/domain and certified row/seed/barrier/descent predicates. Solver tolerances and overlap consistency alone are insufficient."
+    },
+    {
+      "obligation_id": "SC-CCIPC-VO-NATIVE-LIFECYCLE",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Actual source carrier archives and whole-target initialization, committed positive current windows and elapsed time, invalidation, actual event occurrence identity, at-most-once gain, atomic owner/window/hierarchy publication with rollback and replay/import/reset conformance."
+    }
+  ],
+  "source_contract_ids": [
+    "SC-EC-GEOMETRIC-IDENTITY",
+    "SC-EC-FULL-STATE-RETURN",
+    "SC-EC-QUARTIC-SITE",
+    "SC-EC-WINDOW-LIFECYCLE",
+    "D10.2-EC-PARENT-REAL-PC",
+    "D10.2-EC-PC-ZOH-WRITER",
+    "D10.2-EC-PC-RELEASE",
+    "D10.2-EC-PARENT-REAL-CI-PC",
+    "D10.2-EC-CI-PC-C-COMPOSITION",
+    "D10.2-EC-CI-PC-C-ROOT-SELECTION",
+    "SC-CCI-EC-JOINT-ROOT",
+    "SC-CPC-EC-FULL-STATE-RETURN"
+  ],
+  "family_dispositions": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded full C/Z domain, trap and actual source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full C/Z return and same-source completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "stationary writer and coupled C/W trap",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint root plus A history",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "both history channels and event dispositions",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint current/geometry/history/carrier map",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "RG section with writer/history perturbations",
+      "native_completion_support": false
+    }
+  ],
+  "scope": {
+    "SC3_closed_for": [
+      "C_CI_PC"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "65ab36c9cdf482708f440f10498da93de1d31c1f061b229c6fa087c1f3b40561"
+}

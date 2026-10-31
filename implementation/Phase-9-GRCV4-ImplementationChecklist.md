@@ -4561,7 +4561,10 @@ acceptances remain unchanged; each row below records its own bounded evidence.
       current 849 → 851
       and independent reset 817 → 819;
       optimized preflight, compressed evidence and read-only side-tool inspection.
-      Scientific adjudication and propagation remain pending; no native grant.
+      User reports positive review and accepts scoped SC-3:
+      [adjudication/reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIPCReconciliation.md)
+      binds three conditional claims, resolves bounded applicability and exposes
+      forward native obligations in the side-tool. A_OS is next; no native grant.
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
   - [x] Reconcile the spark-completion scientific/design portions and five

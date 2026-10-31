@@ -4511,3 +4511,26 @@ PATHS.update({
     INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_cipc_metadata.py',
     INV+'tools/exploratory-side-tool/tool/phase9-web/spark-cipc-research.js',
 })
+
+# User-accepted C_CI_PC completion SC-3; no new native or aggregate grant.
+PATHS.update({
+    INV+'decisions/SparkCompletionCCIPCSC3Authority.md',
+    INV+'decisions/spark-completion-ci-pc/Authority.json',
+    INV+'drafts/GRC9V4-spark-completion-CCIPC-proposal.md',
+    INV+'drafts/2026-10-GRC9V4-Spark-Completion-CCIPC.md',
+    INV+'evidence/spark-completion/applicability/CCIPCScientificAcceptance.json',
+    INV+'evidence/spark-completion/applicability/CCIPCClaimDebtLedger.json',
+    INV+'evidence/spark-completion/applicability/CCIPCSC3Sources.json',
+    INV+'evidence/spark-completion/applicability/CCIPCSC3Validation.json',
+    INV+'scripts/check_spark_completion_ci_pc_sc3.py',
+    INV+'scripts/test_spark_completion_ci_pc_sc3.py',
+    INV+'tools/exploratory-side-tool/records/SC3SparkCIPCAdmission.json',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionCCIPCAcceptance.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_cipc.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_cipc_sc3_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-cipc.js',
+    'specs/grc-9-v4-spark-completion-ci-pc.md',
+    'specs/grc-9-v4-spark-completion-ci-pc-source-manifest.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIPCReconciliation.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIPCReconciliation.json',
+})

@@ -1,0 +1,685 @@
+{
+  "schema": "spark-completion-all-ten-applicability-ledger-v1",
+  "date": "2026-10-31",
+  "predecessor_commit": "d3c71d6475535e57be019eb8c0212deaa92515aa",
+  "predecessor_authority": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+  "programme": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md",
+  "criterion": "grc9v4-certified-geometric-child-basins-v1",
+  "accepted_SC1_definition_reopened": false,
+  "accepted_C_OS_result_reopened": false,
+  "disposition_vocabulary": [
+    "accepted_bounded_scientific",
+    "demonstrated_bounded_pending_review",
+    "bounded_obstruction_pending_review",
+    "unresolved_precise_premise",
+    "in_progress",
+    "not_yet_investigated",
+    "reviewed_bounded_pending_adjudication"
+  ],
+  "families": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded full C/Z domain, trap and actual source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full C/Z return and same-source completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "stationary writer and coupled C/W trap",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint root plus A history",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "both history channels and event dispositions",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint current/geometry/history/carrier map",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "RG section with writer/history perturbations",
+      "native_completion_support": false
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "SC-CCI-CL-C-JOINT-ROOT",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "On the actual source/target graphs, C in [0,4]^V and flat infinity radius1/32 give one joint root in the declared domain.",
+      "limits": [
+        "fixed quartic/parameters/graphs",
+        "not global root uniqueness",
+        "not physical-step stability"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md"
+    },
+    {
+      "claim_id": "SC-CCI-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full CI physical map strictly contracts the reused fourteen-dimensional exact-charge metric ball with certified complete spatial basins.",
+      "limits": [
+        "new implicit derivative proof, not OS trajectory transfer",
+        "does not prove event reachability alone",
+        "no native numerical lift"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md"
+    },
+    {
+      "claim_id": "SC-CCI-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "Actual CI source beat and literal D11 transfer reach the full CI trap at current target step 849 and complete one new stable child at 851; independent reset entry/window at 817/819 earns no live gain.",
+      "limits": [
+        "fixed quartic/parameters/source/target/shares",
+        "exact equations enclosed with fixed 8192-bit Arb",
+        "not earliest mathematical entry or completion",
+        "research accounting, no native implementation",
+        "no applicability assertion for the other eight families"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md"
+    },
+    {
+      "claim_id": "SC-CPC-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "On the declared source/target graphs, C in [0,4]^V and signed symmetric star carrier norm <=1/64 have lawful old-carrier reads and a bounded same-source exponential writer.",
+      "limits": [
+        "fixed quartic/parameters/graphs",
+        "carrier invariance conditional on resource-chart membership",
+        "not global resource-chart invariance"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCSC3Authority.md"
+    },
+    {
+      "claim_id": "SC-CPC-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full sixty-dimensional charge-relative C/Z map strictly contracts the declared weighted metric ball, including all forty-six signed carrier directions, with stationary Z*=0 and complete spatial domains.",
+      "limits": [
+        "exact charge-21 local trap",
+        "not a C-only slice",
+        "no represented native map certificate"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCSC3Authority.md"
+    },
+    {
+      "claim_id": "SC-CPC-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "Actual PC source beat, fresh event read, whole-carrier archive/reset and D11 transfer reach full-state entry at current step849 and one-child completion at851; independent reset817/819 earns no live gain.",
+      "limits": [
+        "fixed quartic/parameters/source/target/event policy",
+        "fixed 8192-bit outward campaigns",
+        "sufficient witness times, not earliest completion",
+        "no independent second reviewer or long replay",
+        "no native implementation or other-family applicability grant"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCPCSC3Authority.md"
+    },
+    {
+      "claim_id": "SC-CCIPC-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "On the declared graphs, C in [0,4]^V and signed symmetric star carrier norm <=1/128 admit one selected joint root in the flat ball of radius1/32, with the same source driving immediate geometry and the bounded exponential writer.",
+      "limits": [
+        "fixed quartic/parameters/graphs and selected root domain",
+        "stationary composite gain two",
+        "carrier invariance conditional on resource-chart membership",
+        "not global resource-chart invariance or root uniqueness outside the selected ball"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCSC3Authority.md"
+    },
+    {
+      "claim_id": "SC-CCIPC-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full sixty-dimensional charge-relative composite C/Z map contracts the declared weighted ball, including all forty-six signed carrier directions and both implicit-root derivatives; a separate reference-submap argument establishes stationary Z*=0.",
+      "limits": [
+        "exact charge-21 local trap",
+        "not a C-only slice",
+        "no represented native map certificate"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCSC3Authority.md"
+    },
+    {
+      "claim_id": "SC-CCIPC-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "An actual composite source beat and fresh event root, whole-carrier archive/reset and D11 transfer reach current entry849/completion851; independent reset817/819 earns no live gain.",
+      "limits": [
+        "fixed quartic/parameters/source/target/event policy",
+        "8192-bit physical evolution and root certification; midpoint proposal ladder only",
+        "sufficient witness times, not earliest completion",
+        "user reports positive review; no separate independent-review artifact or long replay",
+        "no native implementation or other-family applicability grant"
+      ],
+      "source_ref": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCSC3Authority.md"
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-C_CI",
+      "status": "resolved_bounded_scientific",
+      "scope": "completion applicability for C_CI",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "Bounded C_CI scientific applicability adjudicated and propagated",
+      "resolved_research_portions": [
+        "uniform_joint_root_domain",
+        "full_CI_trap",
+        "actual_CI_source_and_fresh_event_root",
+        "literal_D11_transfer",
+        "independent_current_reset_approach_and_entry",
+        "positive_completion_window",
+        "whole_root_and_false_completion_pressure",
+        "independent_bounded_review_with_explicit_limits",
+        "scoped_claim_debt_adjudication",
+        "authority_proposal_paper_spec_propagation"
+      ],
+      "remaining": [],
+      "forward_native_obligation_ids": [
+        "SC-CCI-VO-NATIVE-NUMERICS",
+        "SC-CCI-VO-NATIVE-LIFECYCLE"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-C_PC",
+      "status": "resolved_bounded_scientific",
+      "scope": "completion applicability for C_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "Bounded full-state PC scientific applicability accepted and propagated",
+      "resolved_research_portions": [
+        "uniform_signed_carrier_domain",
+        "full_C_Z_trap",
+        "actual_source_and_fresh_event_read",
+        "whole_carrier_archive_and_target_reset",
+        "independent_current_reset_approach",
+        "positive_completion_window",
+        "repository_scientific_pressure",
+        "user_acceptance_and_scoped_adjudication",
+        "authority_proposal_paper_spec_propagation"
+      ],
+      "remaining": [],
+      "forward_native_obligation_ids": [
+        "SC-CPC-VO-NATIVE-NUMERICS",
+        "SC-CPC-VO-NATIVE-LIFECYCLE"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-C_CI_PC",
+      "status": "resolved_bounded_scientific",
+      "scope": "completion applicability for C_CI_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "Bounded composite root/full-state completion accepted and propagated",
+      "resolved_research_portions": [
+        "uniform_selected_composite_root_and_signed_carrier_domain",
+        "same_source_immediate_and_held_writer_gain_two",
+        "full_C_Z_trap",
+        "actual_source_and_fresh_event_root",
+        "whole_carrier_archive_and_target_reset",
+        "independent_current_reset_approach",
+        "positive_completion_window",
+        "repository_scientific_pressure",
+        "positive_user_review_and_scoped_adjudication",
+        "authority_proposal_paper_spec_propagation"
+      ],
+      "remaining": [],
+      "forward_native_obligation_ids": [
+        "SC-CCIPC-VO-NATIVE-NUMERICS",
+        "SC-CCIPC-VO-NATIVE-LIFECYCLE"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_OS",
+      "status": "open",
+      "scope": "completion applicability for A_OS",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "stationary writer and coupled C/W trap",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_CI",
+      "status": "open",
+      "scope": "completion applicability for A_CI",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "joint root plus A history",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_PC",
+      "status": "open",
+      "scope": "completion applicability for A_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "both history channels and event dispositions",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_CI_PC",
+      "status": "open",
+      "scope": "completion applicability for A_CI_PC",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "joint current/geometry/history/carrier map",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-C_RG2b",
+      "status": "open",
+      "scope": "completion applicability for C_RG2b",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    },
+    {
+      "debt_id": "SC-APP-DEBT-A_RG2b",
+      "status": "open",
+      "scope": "completion applicability for A_RG2b",
+      "required_chain": [
+        "actual_source_step",
+        "fresh_whole_read_or_root",
+        "lawful_event_transfer",
+        "positive_target_entry",
+        "full_physical_state_trap",
+        "positive_window"
+      ],
+      "specific_obligation": "RG section with writer/history perturbations",
+      "resolved_research_portions": [],
+      "remaining": [
+        "family_specific_mathematical_feasibility_and_chain"
+      ]
+    }
+  ],
+  "native_work": "P9-9.1a separate; existing ten-family native support unchanged",
+  "accepted_graph_changed": true,
+  "native_support_added": [],
+  "G4_accepted": false,
+  "next": "A_OS completion applicability; stationary W writer and full C/W return with actual source/event lineage",
+  "evidence_sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIApplicability.md",
+      "sha256": "0d6adbe989dfbf9021aec299354231ebe6484b2df9b370777912bbf7b8f15b0b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCApplicability.md",
+      "sha256": "6edfd8ca7941c7263fe1831a40352a68a4684e52d56131adc9897d1669f81ed8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md",
+      "sha256": "30fc4959a58754d1995801ad27759c143f3ebd23de23c4d3689ee6f2917a65a9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+      "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-pc/Authority.json",
+      "sha256": "f97da5215998fc1c0f43c5f85f0216cf880ae3dce48b7edb09b8678dda2c3a13"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+      "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2PositiveCandidate.json.xz",
+      "sha256": "10a8c6d4cb6b5b633be4947e4fb90745fc257fbe1eb30713e924802deb7a2fb1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2SourceBeat.json.xz",
+      "sha256": "faf266f447c0a1893b2ee7730dfdea481914fd15f53460e848d07ebd2c5b0675"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AuthorityTraces.json",
+      "sha256": "6011c0a1d8c34a698d55d9261cde84f7227630e52faeba9368830126b9fb39f1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCI-current.json.xz",
+      "sha256": "41039ddec9b0b21a56829df452a213c8e69175f667be9afe1652cf8674983b67"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCI-reset.json.xz",
+      "sha256": "17b90d19eb57d8129ec4bcc0f9297edb0f7a4cb9aa79c8923d6feaded4186402"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIChecks.json",
+      "sha256": "cdb117766c54bf9e3b099568283473696b2b4ca7e17e03dcae744c4117897dda"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIDeclaration.json",
+      "sha256": "2d06cb3d671655412c31ca335411739f72a6903c81475cba54482fb036ae94f7"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPC-current.json.xz",
+      "sha256": "88782d86ecd68f82968122d3d6427321b87cc9a5e2170be7fa259fe20a385a22"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPC-reset.json.xz",
+      "sha256": "563e6bb47c24ff38534d62839103b02f9a8cc7e6658a939e4803eab914ceeb5a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCChecks.json",
+      "sha256": "d4f5592adbd95e3323d193bb8b5f60afe4ed1d6b8ba618d8f62fda55b2720f69"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCDeclaration.json",
+      "sha256": "f449e9da5d14c3251ef9382356b2c8863132fd1e366503d2119e038a3bdc3a4b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCMetadataSources.json",
+      "sha256": "16823165645ebff171bc993533a2c0e588992b29d49db701c181d38223bd4546"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCPreflight.json",
+      "sha256": "c5a56f0c9e46f7e9af7da502dc656644463ac70f0808c3edf98ddd4fe51982a0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCResearchProgress.json",
+      "sha256": "a7b93f36f61fda6ad903855c083ffe45c32b364dc705e43c902814a4c169b4be"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCScientificAcceptance.json",
+      "sha256": "4785047cb1223c73cdbfdbdcecfae11726ec37a95106fcf01641238fbbb50316"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCValidation.json",
+      "sha256": "0b2dc560b14f1a8c67ef5105184728fa5c6836a5423e4f7cce7a212b766fb2f1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIScientificAcceptance.json",
+      "sha256": "bbe3b65d93a9a7761582b598b8a52b78264f80659443fde8eecd9054b70ff049"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCChecks.json",
+      "sha256": "4ede218fb8a1f27983832271025097b3b6d1ab07dd2db02d33407848bdd118f8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCResearchProgress.json",
+      "sha256": "e4df0f4db612445e2caa6b288b2a0008d237264945b887e6968107d8631b1193"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCScientificAcceptance.json",
+      "sha256": "ddf3ddf6e6f4e4cd212a343709829814e8158e1ce7717db953d3f1d4b964f6a0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIIndependentReview.md",
+      "sha256": "909e79b9960d62f9facef84cd392769110ccc6e1446afc865747294d14c17e86"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIPCScientificReview.md",
+      "sha256": "4648bdf59b6cee3e509cd63112bd8eaba2cdbebab23a29ec541f0ed1c83f013e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_pc.py",
+      "sha256": "72805d619e2a0c3dfd83128d316ab7fc4cac02c0bd27a91f7a7989339685639c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_pc_campaign.py",
+      "sha256": "c2eb501f3ffdc653b339624ece0783aa6d2e4bb3eace4caad443dfbc8a89199c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_pc.py",
+      "sha256": "af04da3c975ff835f8e01482f166f772f4f98f718346d2f9fd569f8a3b2197d3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_ci_pc.py",
+      "sha256": "eba761f7cad99f220f27895cb89106a73b130c1eab7669c0b9417b16b2056c44"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_ci_pc_reconciliation.py",
+      "sha256": "8a0b1cddc64fdd1a0725255a236ea88e4549fa332c9e8193e11e9d2b6b9ced26"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_ci_pc_retained.py",
+      "sha256": "dbcc5890452060869f275dfb2eb355b740f39e301c50b3de3a296dd27f6a4894"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_ci_pc.py",
+      "sha256": "4db7c043c5fb5235d59b7df2a9c35a3f68fbbfc0d807d31e79ece33915a33958"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_ci_pc_pressure.py",
+      "sha256": "5e15851d5d1d5cf98c0b96ef5e123876ce078ea11ebcf2403a266b6c6544a7ab"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_ci_pc_retained.py",
+      "sha256": "7a6ac3e324a2fbb1e3f8f5d7daaf5700fb26b34fda65ffc999ece21193e54311"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_cipc_metadata.py",
+      "sha256": "4091ac5191cd492005a999421ab7295e2fb8cf00704bededf868f22cbf81205d"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-pc-source-manifest.json",
+      "sha256": "550587a6d77250f5a26e9531cf0f15d43864424099302cb9337455bd57ab5c40"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    }
+  ],
+  "independent_review": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIIndependentReview.md",
+    "verdict": "bounded_pass",
+    "retained_positive_states": 1670,
+    "chiral_classifications": 3340,
+    "distinct_joint_root_subjects": 8,
+    "root_coordinate_comparisons": 2118,
+    "whole_interval_jacobian_independently_regenerated": false,
+    "long_interval_campaign_independently_replayed": false,
+    "original_scientific_tests_and_controls_independently_executed": false,
+    "scope_note": "Reviewer independently checked retained subjects and scalar trap recomposition; repository executions remain distinct.",
+    "applied_caveat": "Saved/fresh root overlap establishes consistency only, not independent certification of saved enclosure; downstream proofs use fresh certified roots."
+  },
+  "authority_successor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-ci-pc/Authority.json",
+    "sha256": "6abd05d2787d0896b594bb99ed8f39639bf00add36bfd1b6b329176f1acaa8be"
+  },
+  "predecessor_ledger": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCClaimDebtLedger.json",
+    "sha256": "e33875358f959ee63c0ad014bc6845467c203d7e51e0609cd363ed8e62fe842b"
+  },
+  "C_PC_review_limits": [
+    "Conditional exact-equation research on the declared quartic, parameters, source, target and event policy.",
+    "Saved/fresh read and recurrence overlap checks consistency only; proof calculations use fresh certified enclosures.",
+    "No independent second-reviewer adjudication or independent long-campaign replay is claimed.",
+    "Native completion, hierarchy, aggregate P9-10.5/10.6 and G4 remain open."
+  ],
+  "C_PC_acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CPCScientificAcceptance.json",
+    "sha256": "ddf3ddf6e6f4e4cd212a343709829814e8158e1ce7717db953d3f1d4b964f6a0"
+  },
+  "C_CI_PC_review_limits": [
+    "Conditional exact-equation research on the declared quartic, parameters, source, target and event policy.",
+    "Saved/fresh read and recurrence overlap checks consistency only; proof calculations use fresh certified enclosures.",
+    "No independent second-reviewer adjudication or independent long-campaign replay is claimed.",
+    "Native completion, hierarchy, aggregate P9-10.5/10.6 and G4 remain open."
+  ],
+  "C_CI_PC_acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCScientificAcceptance.json",
+    "sha256": "4785047cb1223c73cdbfdbdcecfae11726ec37a95106fcf01641238fbbb50316",
+    "record_digest": "8624660bf32f4618e88f08fef750742b7d1dccd00e6f7b3b95b91256a6872f8f"
+  },
+  "record_digest": "0684f9ee93763d1b6c1c71162e1cb3ca56b6fb42b8a4fc68d8476b4f1710b6b2"
+}
