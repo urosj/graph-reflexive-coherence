@@ -581,8 +581,8 @@ class GRC9V4PublicOperation(branch.GRC9V4BranchOperation):
                         "observable capture differs from current publication"
                     )
                 current, charge = captured.read, captured.charge
-                # PC read has .point.current; public numeric projection expects .current.
-                if p.reference.profile.identity_payload.realization == "PC":
+                # PC and RG sections project their selected point into numeric observables.
+                if p.reference.profile.identity_payload.realization in ("PC", "RG2b"):
                     current = captured.point
             else:
                 current, charge = branch.generic._readmit_state(

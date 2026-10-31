@@ -33,6 +33,9 @@ def digest(value):
 
 
 def target_seed(family):
+    if family == "C_RG2b":
+        from p9_crg2b_campaign import read, BASE as connected
+        return read(connected + "9.1b-integration.json.xz")["evidence"]["mixed_snapshot"]
     name = {"A_OS": "AOS", "C_PC": "CPC", "C_CI_PC": "CCIPC", "A_CI_PC": "ACIPC"}.get(family, family)
     path = BASE / f"P9-9.1b-{name}.json"
     if path.exists():
@@ -322,7 +325,7 @@ class TargetCompatibility(unittest.TestCase):
             },
             enabled_continuation=asdict(before_reset),
             final_checkpoint=final,
-            history_policy=(f"explicit_{self.FAMILY}_carrier_loss_and_zero_initialization" if self.FAMILY in ("C_PC", "C_CI_PC")
+            history_policy=("no_independent_candidate_or_carrier_history" if self.FAMILY == "C_RG2b" else f"explicit_{self.FAMILY}_carrier_loss_and_zero_initialization" if self.FAMILY in ("C_PC", "C_CI_PC")
                             else "explicit_A_archive_loss_and_A_CI_PC_carrier_zero_initialization" if self.FAMILY == "A_CI_PC"
                             else "explicit_A_archive_loss_and_A_PC_carrier_zero_initialization"),
             disabled_replay=True,

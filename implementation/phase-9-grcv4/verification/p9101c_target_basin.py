@@ -3,6 +3,7 @@
 from p9_aos_historical import references_match
 
 import argparse
+from contextlib import ExitStack
 from copy import deepcopy
 from fractions import Fraction as Q
 import json
@@ -51,6 +52,7 @@ def restore_state(payload, family):
             C_PC="GRC9V4CPCState",
             C_CI_PC="GRC9V4CCIPCState",
             A_CI_PC="GRC9V4ACIPCState",
+            C_RG2b="GRC9V4CRG2bState",
         )[family],
     )
     return cls(
@@ -151,8 +153,14 @@ def capture(model, label):
         reads.append((r, p))
         return r, p
 
-    with patch.object(basin, "_read_once", side_effect=spy):
+    with ExitStack() as stack:
+        stack.enter_context(patch.object(basin, "_read_once", side_effect=spy))
+        if saved.FAMILY == "C_RG2b":
+            import p910_crg2b_basin_oracle as section_oracle
+            chains = stack.enter_context(section_oracle.capture_chains())
         snapshot = model.snapshot()
+    if saved.FAMILY == "C_RG2b":
+        require(len(chains) == 2, "one section chain per captured role")
     require(len(reads) == 2, "exactly two independently read roles")
     require(snapshot["owner"]["state"] == before, "saved snapshot authority")
     extension = snapshot["owner"]["basin"]
@@ -180,13 +188,17 @@ def capture(model, label):
                 mechanisms[role] = "full_J_H_root_old_Z_domain_certificate_bound"
             else:
                 mechanisms[role] = "full_J_H_root_domain_certificate_bound"
+        elif real == "RG2b":
+            require(point.inputs.geometry == read.geometry, "complete section geometry")
+            mechanisms[role] = "fresh_connected_section_query_completion_enclosure_bound_no_C1"
         else:
             require(
                 read.inputs.current.Z_4 == getattr(saved.inputs, role).Z_4,
                 "PC committed carrier consumption",
             )
             mechanisms[role] = "committed_W_Z_and_carrier_geometry_equation"
-        equations[role] = oracle.equation_check(saved, role, point)
+        equations[role] = (section_oracle.capture(read, point, chains[("current", "reset").index(role)])
+                           if real == "RG2b" else oracle.equation_check(saved, role, point))
     require(
         model._operation._published.owner.state.to_payload() == before
         and model.lifecycle_digest == lifecycle,
@@ -395,6 +407,12 @@ def validate(value, old, *, equations=False):
                     == "grc9v4-basin-joint-root-sha256:" + oracle.digest(selected),
                     "joint geometry/certificate drift",
                 )
+            elif family == "C_RG2b":
+                require(observed["binding"]["root_certificate_binding"]
+                        == "grc9v4-basin-rg2b-section-sha256:" + oracle.digest(selected),
+                        "section certificate binding drift")
+                import p910_crg2b_basin_oracle as section_oracle
+                section_oracle.validate(selected, case["role_equations"][role], numerics=equations)
             else:
                 require(recipe_inputs["H1_form"] == h, "selected geometry drift")
                 expected = (
@@ -428,7 +446,7 @@ def validate(value, old, *, equations=False):
                 and Q(eq["current_error_upper"]) < Q(1, 2**40),
                 "current bound scope",
             )
-            if equations:
+            if equations and family != "C_RG2b":
                 point = NS(
                     current=NS(values=values),
                     inputs=NS(

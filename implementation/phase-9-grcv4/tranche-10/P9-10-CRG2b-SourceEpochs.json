@@ -1,0 +1,46 @@
+{
+  "schema": "p910-crg2b-source-epoch-v1",
+  "predecessor": "a8be36c7",
+  "checker_sha256": "ab3b2d3ef35c20a273ba95fbf5a55d4288fd03dbbb86bc921fe9c7d2c5726ace",
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p9101a_basin_oracle.py": {
+      "before_sha256": "ac6be27f9daf366e0ee5ffa9467a2380fabaf81d8ac4bc9bc896520c96e874cb",
+      "after_sha256": "5282cca061985b0a0114828ce46cb60d6a530d6641879b6df7032b2d2a9bc02d"
+    },
+    "implementation/phase-9-grcv4/verification/p9101c_target_basin.py": {
+      "before_sha256": "b5f6272620301ad73f62be50f612987fb802cac6e16204d34799fd65a55f1f1d",
+      "after_sha256": "ebc6206910efd35e728184d735baca411a9b3cd10fcbb11792d58b6e8c93fc14"
+    },
+    "implementation/phase-9-grcv4/verification/p910_acipc_source_epoch.py": {
+      "before_sha256": "a835f7a131b9921689c682998485c98b14d1810e210013ae4b2708abf43b3ef3",
+      "after_sha256": "c904c4841323088317092345b619a93fa3e173c5506156b1bb61b0abf80b804d"
+    },
+    "implementation/phase-9-grcv4/verification/p910_family_basin.py": {
+      "before_sha256": "ee65a825a6d5f0ac302b3e7c4d23fe06951940df711f5735c49fa5b313812616",
+      "after_sha256": "9ffab8319153aa52ec6690f21b78d38fda4ad36a48fb56c190054b8e0a54030c"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9101b_target_compatibility.py": {
+      "before_sha256": "9aa401c705929e888ae30fc0c127f6d44fc79e6957a7a288142250511310ea60",
+      "after_sha256": "04d0ce0aeba835e19d437b31f91fd3047588b49d8cad87482c7c6a8ed95fa121"
+    },
+    "src/pygrc/models/grc_9_v4_api_lifecycle.py": {
+      "before_sha256": "d6b37edfed293b81f583ba084e4d767a89bdaea64cc2b49c51e930bc091e5bec",
+      "after_sha256": "63b86ddd600e6d49986a0e17acc53278aafe3fb6836dd868e1a6586aa67c3de1"
+    },
+    "src/pygrc/models/grc_9_v4_basin.py": {
+      "before_sha256": "ce9beec5c2d2e1696d5dc36b28b7afc6cf8e5a09639b4542babb89b6d2d7049e",
+      "after_sha256": "d585c742617ec5d3cbeaf1a15458457c51e6e76d2b1329bd9dca9243e7b073c2"
+    },
+    "tests/models/test_grc_9_v4_basin.py": {
+      "before_sha256": "8aea4b6ad64f6c2eca34737b50442fda7d0f1788aab1bfc8e694c4a88fc17c28",
+      "after_sha256": "3f4610919c61d5fc3e2420fbb542d28fe385d63c69f65a5e076a35b3f2b945d6"
+    },
+    "tests/models/test_grc_9_v4_crg2b_integration.py": {
+      "before_sha256": "8dc978367c7f4b83957cf80346b338f2abe42e8ee085f98761b5c1035a5440f6",
+      "after_sha256": "bf6cf36e291be756d922b022e0f63778420550a690fdc1fbddc872dc509fd464"
+    }
+  },
+  "prior_native_paths_unchanged": true,
+  "accepted_execution_rewritten": false,
+  "record_digest": "04b1394dab687f1fc89eecb5c5427855dbaadfefaeedad3e30260e2db18fa6fc"
+}

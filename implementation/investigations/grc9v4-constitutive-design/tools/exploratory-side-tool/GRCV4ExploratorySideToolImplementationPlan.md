@@ -3482,3 +3482,17 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Bounded A_CI_PC acceptance on 2026-10-31 over implementation `1eb7807a`;
   original execution records remain unchanged. C_RG2b, A_RG2b and consolidated
   10.3–10.6 remain separate, with no full-conformance/G4 grant.
+
+
+## Remaining-family Tranche 10 — C_RG2b
+
+- [x] Expose the bounded C_RG2b review in the family API/browser selector and
+  notebook `p910-crg2b-basin`; bind exact subjects and the connected section.
+- [x] Show query/completion/full H/current/certificate/enclosure; report
+  fixed-H and section-aware current errors separately. C1 remains unresolved.
+- [x] Reuse captured chains and both-role migration/disabled-return evidence,
+  saved charges and executed replay/receipts; status never runs native sections.
+- [x] Preserve accepted source epochs and evidence; pressure wrong-query,
+  geometry/enclosure/certificate/scope mutations and stale-view clearing.
+- [x] Keep full chains in compressed indexed evidence; expose compact summaries.
+- [ ] Bounded user acceptance. A_RG2b, consolidated 10.3–10.6 and G4 remain separate.

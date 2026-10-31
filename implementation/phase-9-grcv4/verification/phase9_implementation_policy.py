@@ -4226,3 +4226,16 @@ PATHS |= {
 
 # Bounded A_CI_PC acceptance over its unchanged native execution.
 PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json")
+
+# C_RG2b full connected section basin capture; bounded acceptance remains separate.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_crg2b_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/p910_crg2b_basin_oracle.py',
+    'implementation/phase-9-grcv4/verification/test_p910_crg2b_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_crg2b_surfaces.py',
+}

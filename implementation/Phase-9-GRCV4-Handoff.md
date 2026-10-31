@@ -1,5 +1,27 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## C_RG2b Tranche 10 — validated, acceptance pending (2026-10-31)
+
+Branch `work/p9-tranche10-remaining-families`, after A_CI_PC acceptance
+`a8be36c7`. [Review](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md).
+The fresh basin read binds the connected section query, selected H/current,
+completion recipe, domain certificate and enclosure. The independent checker
+reuses the existing section-chain proof and unreduced edge equations. C_RG2b
+has no independent W/Z history. C1 remains unresolved; basin classification
+concerns represented flow, not an attractor or universal exact-section signs.
+
+All eight source/lifecycle and exact-target compatibility tests pass in two
+parallel FLINT jobs (133.0 and 87.6 seconds). The new numeric projection uses
+the section's selected point, closing the gap caught by lifecycle pressure.
+Both-role policy-migration/disabled-return captures are collected in the same
+compatibility execution and reused with saved charges and receipts for 10.2.
+All four charges and 53 receipts in fifteen commit groups pass, with no added
+native steps/replays. Target section error is at most 1.11e-16; total section-aware
+current error stays below 6.87e-15. All sixteen nonzero currents per captured role
+exceed that bound. Twenty-six retained/API/browser/notebook checks pass.
+The finite source successor preserves earlier accepted evidence.
+No acceptance, A_RG2b scope or G4 grant is inferred. A_RG2b is next after review.
+
 ## A_CI_PC Tranche 10 — bounded accepted (2026-10-31)
 
 Branch: `work/p9-tranche10-remaining-families`, following accepted C_CI_PC

@@ -225,6 +225,14 @@ def root_payload(read, point):
     elif real in ("PC", "CI+PC"):
         root["certificate"] = read.certificate.bounds.to_dict()
         certificate = "grc9v4-basin-pc-read-sha256:" + digest(root)
+    elif real == "RG2b":
+        require(point.inputs == replace(read.inputs, geometry=read.geometry, stage="rg2b_section")
+                and read.certificate.inputs == read.inputs, "native full RG2b section ownership")
+        root.update(recipe=read.to_payload(), selected_inputs=point.inputs.to_payload(),
+                    section_identity=read.identity, certificate=read.certificate.bounds.to_dict(),
+                    levels=read.levels, evaluations=read.evaluations,
+                    error_upper=read.error_upper, enclosure=list(read.enclosure))
+        certificate = "grc9v4-basin-rg2b-section-sha256:" + digest(root)
     return root, certificate
 
 

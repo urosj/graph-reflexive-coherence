@@ -320,6 +320,12 @@ def _read_once(inputs, backend):
 
         read = CandidatePCRead(inputs, backend)
         point = read.point
+    elif realization == "RG2b":
+        from .grc_v4_rg2b import CandidateRG2bSection
+        from .grc_v4_candidate_c import CandidateCCurrent
+
+        read = CandidateRG2bSection(inputs, backend)
+        point = CandidateCCurrent(replace(inputs, geometry=read.geometry, stage="rg2b_section"))
     else:
         raise ValueError("basin native capture is outside selected execution scope")
     return read, point
@@ -342,6 +348,7 @@ def capture(state, role):
         "C_PC",
         "C_CI_PC",
         "A_CI_PC",
+        "C_RG2b",
     ):
         raise ValueError("explicit supported basin successor required")
     if role not in ("current", "reset"):
@@ -398,6 +405,15 @@ def capture(state, role):
     elif ref.profile.identity_payload.realization == "PC":
         root["certificate"] = read.certificate.bounds.to_dict()
         certificate = "grc9v4-basin-pc-read-sha256:" + digest(root)
+    elif ref.profile.identity_payload.realization == "RG2b":
+        if (point.inputs != replace(inputs, geometry=read.geometry, stage="rg2b_section")
+                or read.certificate.inputs != inputs):
+            raise ValueError("inconsistent full RG2b section capture")
+        root.update(recipe=read.to_payload(), selected_inputs=point.inputs.to_payload(),
+                    section_identity=read.identity, certificate=read.certificate.bounds.to_dict(),
+                    levels=read.levels, evaluations=read.evaluations,
+                    error_upper=read.error_upper, enclosure=list(read.enclosure))
+        certificate = "grc9v4-basin-rg2b-section-sha256:" + digest(root)
     rows = GRC9V4PostbeatRows(
         ref.graph.port_graph,
         ref.profile,

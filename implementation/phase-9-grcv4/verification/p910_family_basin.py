@@ -11,6 +11,7 @@ import importlib
 import p910_cpc_source_epoch as successor
 import p910_ccipc_source_epoch as latest
 import p910_acipc_source_epoch as current
+import p910_crg2b_source_epoch as connected
 from concurrent.futures import ProcessPoolExecutor
 from copy import deepcopy
 import json
@@ -29,8 +30,8 @@ BASE = v.BASE + "tranche-10/"
 VERIFY = v.BASE + "verification/"
 SELF = VERIFY + "p910_family_basin.py"
 TEST = VERIFY + "test_p910_aos_basin.py"
-FAMILIES = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC")
-HISTORICAL = ("A_OS", "C_PC", "C_CI_PC")
+FAMILIES = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b")
+HISTORICAL = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC")
 ALL_REMAINING = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
 PARTS = ("Native", "Target")
 BASELINE = "f2333b32"
@@ -47,29 +48,43 @@ def references(root=ROOT, family="A_OS", *, historical=False):
              VERIFY + "p9101a_basin_oracle.py", VERIFY + "p9101c_target_basin.py",
              VERIFY + "test_p9101a_basin_pressure.py", VERIFY + "test_p9101b_target_compatibility.py",
              VERIFY + "p9102_verification.py", VERIFY + "p9101b_target_compatibility.py"}
-    if family in ("C_PC", "C_CI_PC", "A_CI_PC"):
+    if family in ("C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b"):
         short = family.replace("_", "")
         names.difference_update({PRIOR, TARGET})
         names.update({VERIFY + "test_p910_" + short.lower() + "_basin.py",
-                      PRIOR.replace("AOS", short), TARGET.replace("AOS", short), successor.PATH, successor.SELF})
-    if family in ("C_CI_PC", "A_CI_PC"):
+                      *predecessor_paths(family), successor.PATH, successor.SELF})
+    if family in ("C_CI_PC", "A_CI_PC", "C_RG2b"):
         names.update({latest.PATH, latest.SELF})
-    if family == "A_CI_PC":
+    if family in ("A_CI_PC", "C_RG2b"):
         names.update({current.PATH, current.SELF})
+    if family == "C_RG2b":
+        import p9_crg2b_campaign as connected_source
+        names.update(connected_source.paths())
+        names.add(connected_source.INPUTS)
+        names.update({connected.PATH, connected.SELF, VERIFY + "p910_crg2b_basin_oracle.py"})
+        names.update(p.relative_to(root).as_posix() for pattern in ("p9_crg2b*.py", "p984b_crg2b*.py")
+                     for p in (root / VERIFY).glob(pattern))
     for pattern in ("src/pygrc/**/*.py", "src/pygrc/**/*.json", "tests/models/test_grc*.py"):
         names.update(p.relative_to(root).as_posix() for p in root.glob(pattern))
     for pattern in ("test_p980*.py", "verify_p983a_aos_oracle.py"):
         names.update(p.relative_to(root).as_posix() for p in (root / VERIFY).glob(pattern))
     if historical:
         require(family in HISTORICAL, "only accepted families select predecessor epochs")
-        epoch = {"A_OS": successor, "C_PC": latest, "C_CI_PC": current}[family]
+        epoch = {"A_OS": successor, "C_PC": latest, "C_CI_PC": current, "A_CI_PC": connected}[family]
         return [dict(path=n, sha256=epoch.sha(epoch.previous_bytes(root, n))) for n in sorted(names)]
     return [v.reference(root, n) for n in sorted(names)]
 
 
+def predecessor_paths(family):
+    short = family.replace("_", "")
+    return (PRIOR.replace("AOS", short),
+            v.BASE + "tranche-8/crg2b-native/9.1b-integration.json.xz" if family == "C_RG2b"
+            else TARGET.replace("AOS", short))
+
+
 def prerequisites(root=ROOT, family="A_OS"):
     short = family.replace("_", "")
-    prior, target = PRIOR.replace("AOS", short), TARGET.replace("AOS", short)
+    prior, target = predecessor_paths(family)
     from p9102_acceptance import PATH as accepted
     refs = []
     for name in (prior, target, AUTHORITY, accepted, v.PATH):
@@ -219,7 +234,7 @@ def validate(value, *, equations=False, sources=True):
     n = native["evidence"]["native"]
     require(n["lifecycle"]["exact_replay"] and n["lifecycle"]["state_only"]
             and n["pressure"]["complete_publication_rollback"]
-            and native["evidence"]["scientific"]["history_discrimination"], "missing native conformance")
+            and native["evidence"]["scientific"]["source_query_discrimination" if value["family"] == "C_RG2b" else "history_discrimination"], "missing native conformance")
     require(value["target_compatibility"] == target["evidence"]["target_compatibility"], "target execution substitution")
     for version in ("v1", "v2"):
         old = value["target_compatibility"][version]
