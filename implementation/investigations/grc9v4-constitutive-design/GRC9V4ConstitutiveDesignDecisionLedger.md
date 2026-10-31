@@ -4748,3 +4748,312 @@ Completion/hierarchy, broader ATC and G4 are not granted by this opening.
 The user's subsequent “commit, then continue” accepts this initial research
 checkpoint and authorizes SC-1. Original proposed-claim flags remain historical;
 no completion policy or scientific authority admission is implied by the commit.
+
+## 2026-10-31 — SC-1 proposed geometric child-basin completion contract
+
+Initial work is committed as 0d27440b. The
+[SC-1 successor](./decisions/SparkCompletionSC1Contract.md) now supplies the
+definition and conditional argument rather than deferring the core-to-basin
+bridge to SC-2. The named proposed geometric identity branch uses every strict
+descent route of the declared signed-resource landscape. Qualified seeds have
+nontrivial guaranteed attraction domains and strict neighbor barriers.
+Ambiguous vertices and unqualified plateau terminals are not assigned by fiat.
+
+The same classifier defines the pre-event parent and target descendants under
+an explicit collapse map. A genuine gain, admitted event lineage, entry into a
+full-state trapping domain and uniform basin preservation imply stable child
+basins under this proposed policy. Several spatial basins can coexist in one
+attracting field pattern; they are not multiple alternative field attractors.
+This is an explicit scientific choice beyond the accepted physical-flow
+diagnostic, pending review/admission, not an editorial reading of existing
+authority.
+
+Fifteen exact geometric result groups include an abstract charge-preserving
+return with gain two, plus definition, lineage, strict-boundary, routing,
+covariance and omitted-history controls. The earlier 25 finite-window groups
+remain separately labelled observational controls, not geometric-completion
+prerequisites. Neither the toy replacement nor its affine map is a native D11
+event or V4 trajectory. Eight forensic traces preserve their support boundaries.
+
+The consumed-inflow capacity bound remains stage-qualified. An exact fixed
+point implies zero divergence for the consumed current only; the earlier draft's
+inference about the fresh diagnostic needs additional stage equality/bounds and
+is corrected. Full-state contraction cannot be inferred from CI inner iteration
+or a fixed-H solve. Numerical image/error bounds do not replace charge/domain
+admission.
+
+The [successor ledger](./evidence/spark-completion/SC1ClaimDebtLedger.json)
+keeps all four debts open, recording that the organization definition and
+conditional completion argument are supplied for review. SC-2 remains actual
+V4 nonempty-domain work after that review; SC-3 adjudication and paper/spec
+propagation precede native implementation. No accepted authority, production,
+paper/spec, tolerance or committed initial evidence is changed.
+
+### SC-1 independent scientific pressure and precision corrections
+
+The supplied review and additional explanatory comment pass the conditional
+spatial-basin and exact-real contraction arguments. The
+[resolution](./decisions/SparkCompletionSC1EquilibriumExclusion.md) records their
+bounded equilibrium obstruction against the current equations and 112 matching
+retained four-family role declarations: the closed positive-stiffness zero-site
+tree bindings have constant-resource exact equilibria and cannot retain SC-1's
+qualified anchors in a contracting domain. The A_CI/A_PC argument extends to
+connected positive-denominator bindings under its stated source/base/writer
+premises; a smooth uniform branch also has expanding fixed-charge resource modes.
+
+This is a scoped mathematical exclusion, not a correction to the substrate or
+a withdrawal of accepted finite continuation. Longer runs, threshold changes
+or merely adding cycles for A do not discharge it. The ledger records two
+conditional exclusion claims, without adding accepted authority or closing the
+positive-domain debt.
+
+Scientific anchor meaning now requires exact-row qualification plus certified
+represented agreement for native observations. Exact charge-slice membership
+needs proof separate from a tolerated charge gate; a charge slab does not imply
+one contraction. Local gain, instantaneous parent qualification, absence of
+counterfactual causation, loop-free anchor feasibility and the nine-leaf
+parent exclusion are explicit. The capacity sentence now requires a uniform
+asymptotic error-rate gap. These corrections have focused exact regressions.
+
+The original independent pressure is reused with repository path adapters:
+5,422 graph/landscape pairs, 252 abstract box vertices and its countermodels
+reproduce; 12 correction controls, the 15 local geometric groups, 25 window
+groups and 16 forensic queries pass. No native trajectory is run. Review and
+compact submitted results are retained without duplicate paper/native inputs.
+The next scientific task is identifying an admitted mechanism for nonconstant
+equilibria before SC-2 witness selection. Policy admission remains distinct.
+
+## 2026-10-31 — SC-2 mechanism analysis, proposed nonlinear site branch
+
+The [SC-2 analysis](./decisions/SparkCompletionSC2MechanismAnalysis.md) finds that
+the existing site-potential channel is productive, while changing K4_base alone
+is not a permanent deformation under affine reference-relative geometry.
+Finite PC release and A's positive-denominator restrictions remain intact.
+The proposed homogeneous quartic law is explicitly distinct from the currently
+implemented zero-derivative evaluator; no new native support is inferred.
+
+On a fixed ten-node abstract graph, a rational whole-box equilibrium argument
+gives image bound 99/1024 below radius 1/8 and solver Lipschitz bound 489/640.
+Its charge-16 nonconstant equilibrium has the three SC-1 spatial basins with
+strict uniform margins. The potential's same-node law is independent of graph
+labels and the chosen branch; the branch labels are not a runtime chooser.
+
+Full exact C_OS staging is then analyzed separately. At equilibrium the
+predictor/read/star source vanish, and the corrector has reference geometry.
+The quadratic source has zero first derivative; with nonzero Read-Back and
+geometry gains the full fixed-charge derivative norm is bounded by
+36787/36864. Smoothness proves a local trapping neighborhood. No whole-box
+physical invariance or quantified trapping radius is inferred. Positive retained
+deformation has a conditional implicit-function continuation, without a numeric
+gain interval or resolved positive-gain point.
+
+Exact algebra, positive-definiteness, covariance and negative controls pass;
+ten forensic traces retain their own support boundaries. No native event or
+trajectory is executed. The [SC-2 ledger](./evidence/spark-completion/SC2ClaimDebtLedger.json)
+records four proposed claims, keeps the four completion debts open and adds an
+explicit nonlinear-site binding obligation. Review, quantitative full-OS/
+diagnostic/charge certification and actual source/parent/D11 target entry are
+still required. Existing zero-site evidence and SC-1 records are unchanged.
+
+
+## 2026-10-31 — SC-2 conditional mathematical review applied
+
+The [independent review disposition](./evidence/spark-completion/review/SC2ScientificPressureReview.md)
+passes the stated equilibrium and full exact C_OS local-stability result. This
+is a reviewed conditional mechanism, not admission of the nonlinear site binding,
+aggregate SC-2 closure or completed-spark support.
+
+The successor ledger records a fifth conditional claim: the same law at charge
+16 supports at least 120 distinct stable branches. Local exact checks reproduce
+all branch-box bounds and the upper-leaf no-basin alternative (image 83/1024).
+The selected three-basin branch is not globally unique or selected by the event.
+The review reports an exact algebraic OS escape from the larger solver box;
+that calculation is attributed, not locally replayed without its package.
+The smaller local trapping theorem is unchanged. Site curvature is restorative;
+Read-Back changes mobility and generated geometry begins at higher order.
+No necessity of feedback or physical-flow interpretation of geometric basins follows.
+
+Local predecessor/source checks resolve the reviewer's dependency-access gaps
+without claiming that the reviewer executed the original checker. No native
+steps, events or new evaluator were run. Four completion debts and nonlinear-site
+admission remain open. Next is actual source/parent/D11 topology and charge
+compatibility, then organized-branch reachability and a quantified trapping/
+numerical certificate on that target. This screens feasibility before expensive
+enclosures and avoids repeating another favorable supplied-state example.
+
+
+## 2026-10-31 — SC-1 bounded definition and conditional A.7 bridge selected
+
+The user authorizes the [SC-1 scientific adjudication](./decisions/SparkCompletionSC1Adjudication.md)
+before further SC-2 construction. The [successor ledger](./evidence/spark-completion/SC1Adjudication.json)
+selects grc9v4-certified-geometric-child-basins-v1, accepts the conditional spatial
+and full-state return results and selects their conditional A.7 completion bridge.
+Stable geometric routing domains can count at zero physical current; no physical
+flux, energy, independent-subsystem or universal-organization claim is added.
+
+SC1-CL-P-GEOMETRIC-IDENTITY receives the normative scientific successor
+SC1-CL-N-GEOMETRIC-IDENTITY. SC1-CL-C-SPATIAL-BASINS, SC1-CL-C-RETURN and
+SC1-CL-C-COMPLETION retain conditional mathematical status in their bounded
+research acceptance. These are local research decisions, not accepted forensic
+nodes or production policy registration. SC-1 closes at this scientific scope.
+
+SC-DEBT-ORGANIZATION is partially resolved for the child definition, parent
+comparison and temporal/A.7 meaning. Actual applicability and propagation remain;
+stability, nonempty-domain and temporal-lifecycle debts stay open. The nonlinear
+site binding is not admitted. Historical SC-1/SC-2 ledgers, reviews and exact
+execution records remain unchanged and hash-bound by the successor decision.
+No numerical campaign is repeated and no completed spark or native support is
+claimed. SC-2 continues with actual event compatibility/reachability. SC-3 must
+consolidate results and admit the authority/schema successor before paper/spec
+propagation and P9-9.1a native work. G4 remains open.
+
+
+## 2026-10-31 — Definition selector correction and SC-2 event preflight
+
+SC-1's follow-up review confirms bounded scientific closure. Its checker now
+pins the exact policy-definition path, sections 2–5 and example exclusion;
+four rehashed substitutions reject. The source-check version/binding is refreshed
+without changing the scientific disposition or older SC-1/SC-2 research evidence.
+
+The [SC-2 event compatibility analysis](./decisions/SparkCompletionSC2EventCompatibility.md)
+and [record](./evidence/spark-completion/SC2EventPreflight.json) establish an exact
+qualified eleven-node source, two role-resource states, both chiral D11 targets
+and charge compatibility with the same global quartic wells. New local claims
+SC2-CL-C-EVENT-PREFLIGHT and SC2-CL-C-TARGET-STATIONARY are proposed conditional
+research: the allocated fourteen-node layout supports a locally attracting
+charge-20 equilibrium branch with two eligible new geometric basins. No complete
+native profile, source/target numerical admission or event execution is inferred.
+
+The uniform source offset is derived from charge before trajectories and does
+not assert translation invariance of the constitutive law. Immediate allocation
+has no gain and a zero core outside the branch box. Full descent/basin membership,
+actual branch entry and the quantitative physical/numerical certificate remain
+open. Existing partial organization-debt resolution and all remaining debt
+obligations are preserved. Nine forensic traces retain their source authority
+boundaries; no accepted graph, paper/spec, production or support-set change occurs.
+
+## 2026-10-31 — SC-2 finite continuation and absent organized selection
+
+The [continuation analysis](./decisions/SparkCompletionSC2Continuation.md) and
+[record](./evidence/spark-completion/SC2Continuation.json) retain three new local
+research claims: SC2-CL-N-STRICT-SPLIT, SC2-CL-C-FINITE-CONTINUATION and
+SC2-CL-N-ALTERNATE-BRANCH. These are not accepted forensic graph nodes.
+
+The original parameter reads fail the newly declared 1e-11 split control, without
+invalidating the earlier conditional equilibrium proof. One mobility/duration
+companion preserves the reference product and passes 128 rigorously enclosed
+exact-equation steps per role. Both chiral fixed-row classifiers are checked at
+every step. The full generated-H potential, physical similarity and source gains
+are retained and independently pressured. This is research, not native rounding
+conformance or an admitted nonlinear binding.
+
+No organizing gain occurs. Both final enclosures lie in an alternative well box
+with no qualified anchors throughout the box. No physical trap or infinite-time
+failure is asserted. The selected SC-1 definition and prior evidence are unchanged;
+no completion debt closes. Next derive joint source/transfer organized-entry
+conditions, rather than lengthening this run or weakening the identity criterion.
+
+## 2026-10-31 — Supplied constructive candidate; positive target-side certificate
+
+The [constructive successor](./decisions/SparkCompletionSC2PositiveCandidate.md)
+reuses the supplied source/preparation/shares and independent evaluators. The
+actual allocation kernel agrees with both literal D11 charts. Under unchanged
+companion equations, fixed-precision Arb proves target first spatial gain at
+steps 42/40 and entry into a quantitative full-OS trapping ball at 900/867.
+The complete basins throughout that domain are the surviving parent/private
+neighbor and satellite 2 with n2/n8. This is local gain one in a single
+attracting full-state field, not multiple autonomous attractors.
+
+The [compressed record](./evidence/spark-completion/SC2PositiveCandidate.json.xz)
+adds local conditional research claims SC2-CL-C-POSITIVE-D11-ENTRY and
+SC2-CL-C-FULL-OS-TRAP. It supplies the missing bounded target stability and entry
+evidence; no accepted graph node or aggregate debt is closed. SC-1 is unchanged.
+The source is still supplied: an admissible ordinary beat and fresh poststate
+event capture remain to be connected to the organized domain. Constitutive
+adjudication and downstream represented numerical/lifecycle work remain open.
+The negative predecessor is retained unchanged. Exploratory trial arrays are
+not copied; selected code, construction rationale and controls are retained with
+relative paths, and large numerical records are compressed.
+
+## 2026-10-31 — Actual ordinary source beat closes the bounded formation link
+
+The [source-beat result](./decisions/SparkCompletionSC2SourceBeat.md) and
+[compressed record](./evidence/spark-completion/SC2SourceBeat.json.xz) supply the
+remaining source-stage link. A retained exact rational current prestate evolves
+under the proposed C_OS equations to an actual fresh eligible event source.
+The qualified parent correspondence forms after the beat; hybrid eligibility
+was already true before it. Reset remains unchanged and is read independently.
+
+The actual current poststate differs from the old supplied source, so its
+transferred target was rerun: first spatial gain 42, full-map trap entry 900.
+The unchanged reset subject reuses its pinned step-867 certificate. Exactly one
+research event chain is established. No native receipt, completed-spark capability,
+new binding admission or G4 grant follows.
+
+Local conditional claims SC2-CL-C-ORDINARY-SOURCE-LINK and
+SC2-CL-C-SOURCE-EVENT-TRAP-CHAIN are now ready for scientific review and scoped
+constitutive/claim/debt adjudication alongside the target stability result.
+The bounded scientific chain is supplied; formal SC-2 acceptance and aggregate
+debt dispositions remain pending. Native representation, lifecycle publication
+and replay are downstream work, not a new scientific prerequisite imposed here.
+
+## 2026-10-31 — Positive-target review and retained-check binding correction
+
+The [independent review](./evidence/spark-completion/review/SC2PositiveScientificPressureReview.md)
+passes the bounded full-map target trap, complete spatial domains and saved
+entry states. It separately reports numerical reproduction of 900/867 steps
+and 3,534 chart classifications, not an independent rerun of the 8192-bit Arb
+engine. Its tighter interval bounds do not replace the retained certificate.
+The reported entry steps are first certified by the conservative procedure,
+not proved earliest mathematical entry times.
+
+The fast-check weakness is corrected for both the target-only and source-beat
+records. Both charts are mandatory at every observation. Complete checkpoint
+basins are recomputed; final domains must match the trap. Entry distance is
+recomputed from saved coordinate intervals and fresh exact P, and must satisfy
+both the retained bound and trap radius. Rehashed mutations cover changed
+coordinates, chart coverage and basin membership, rather than relying on a
+stale digest to reject them. This verifies retained consistency; only --rerun
+reconstructs the long recurrence. Numerical checks payloads are unchanged while
+uncommitted checker/source bindings are refreshed in predecessor order.
+
+The review's source-stage question concerns the earlier target-only subject.
+The later source-beat construction supplies that link, but is not independently
+adjudicated by this review. SC-1 stays selected; SC-2, nonlinear-binding admission
+and scoped claim/debt adjudication remain open. No accepted forensic claim,
+aggregate debt, native completed-spark support or G4 status changes.
+
+## 2026-10-31 — Constructive research spark completion
+
+The [complete witness](./decisions/SparkCompletionSC2CompleteWitness.md) now
+composes the actual source beat, fresh capture, literal D11 transfer and enclosed
+ordinary evolution into a completed spark under the selected SC-1 exact-equation
+criterion. Two positive current beats after certified entry retain both complete
+basins and produce a decision at target step 902: one new stable satellite child,
+a surviving parent and local gain one. The full-map trap proves subsequent exact
+persistence; the window is not substituted for stability.
+
+The [execution record](./evidence/spark-completion/SC2CompleteWitness.json)
+retains the new observations, final/restart reads, exact source-similarity and
+relabel/transfer controls, ten rejected false completions and zero additional
+replay gain. The long current approach and unchanged reset certificate are reused
+by identity. No midpoint trajectory, clipping, charge projection, automatic
+precision switch or new allocation is used.
+
+`SC2-CL-C-EXACT-SPARK-COMPLETION` is a conditional mathematical research result
+for this C_OS construction under the proposed homogeneous quartic law. Its
+successor debt rows resolve the corresponding bounded scientific portions while
+preserving native numerical/lifecycle and authority-propagation obligations.
+This is an actual constructive scientific completion result, not an accepted
+native evaluator/profile, a universal formation law or G4 acceptance. Earlier
+ledgers/evidence remain unchanged. Bounded acceptance and SC-3 propagation are
+the next stages; native engineering does not reopen the completed SC-2 math.
+
+## 2026-10-31 — SC-2 accepted at bounded scientific scope
+
+The user accepts the completed C_OS research witness and its declared scientific
+binding, and requests commit before SC-3. The [acceptance record](./evidence/spark-completion/SC2Acceptance.json)
+binds the unchanged witness and SC-1 criterion. SC-2 closes scientifically;
+accepted-graph admission and proposal/paper/spec propagation follow in SC-3.
+The final research reconciliation is authorized; native P9-9.1a implementation
+is explicitly separate. No runtime support or G4 acceptance is inferred.

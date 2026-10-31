@@ -10,11 +10,63 @@
 **Current successor — 2026-10-31:** the user opens
 [spark completion definition/feasibility](./decisions/SparkCompletionDefinitionAndFeasibility.md)
 after bounded P9-10.4 acceptance. The initial source/seed feasibility screen is
-complete, with provisional findings and four open debts. SC-1 fixes organization,
+complete, with provisional findings and four initially open debts. SC-1 fixes organization,
 parent correspondence and stability semantics; SC-2 establishes a justified
 nonempty V4 domain; SC-3 reviews/adjudicates before authority → paper → spec →
-P9-9.1a implementation. No completed-spark policy or capability is selected.
+P9-9.1a implementation. The [SC-1 adjudication](./decisions/SparkCompletionSC1Adjudication.md)
+now selects the bounded geometric scientific definition and conditional A.7
+bridge. It resolves the organization-definition portion, not actual completion
+feasibility or native capability. Pre-adjudication records remain unchanged.
 P9-10.5/10.6 reconcile the result rather than doing this research implicitly.
+The reviewed [SC-1 definition](./decisions/SparkCompletionSC1Contract.md) supplies
+a geometric attraction-domain definition, same-classifier parent/gain and a
+conditional full-state stability/completion theorem. Its explicit geometric
+branch is selected by the successor adjudication; the existing physical-flow
+diagnostic retains its separate meaning. Exact abstract checks supply definition pressure, not
+native feasibility. The independent audit passes the conditional mathematics;
+its precision corrections and [equilibrium exclusion](./decisions/SparkCompletionSC1EquilibriumExclusion.md)
+are recorded. The retained zero-site tree bindings cannot supply the stationary
+child certificate. The [SC-2 analysis](./decisions/SparkCompletionSC2MechanismAnalysis.md)
+now supplies a positive conditional C_OS mechanism through a proposed homogeneous
+quartic site law in the existing potential channel. Its exact equilibrium and
+local full-OS stability do not supply a native evaluator or source/event entry.
+Independent scientific review passes this conditional mathematics. The same
+law has at least 120 stable branches, including one with no geometric basins;
+feedback compatibility is not feedback necessity. The [event compatibility
+preflight](./decisions/SparkCompletionSC2EventCompatibility.md) now supplies an
+exact qualified eleven-node source, two role states and both chiral fourteen-node
+D11 targets at charge 20. Target-specific equilibrium/local-stability bounds pass,
+but the zero core is outside the branch box and allocation earns no gain.
+The [continuation successor](./decisions/SparkCompletionSC2Continuation.md) finds
+that the original reads fail a newly declared strict split control. One explicit
+mobility/duration companion passes 128 rigorously enclosed steps per role, yet
+reaches an alternative no-basin box rather than organized children. Those finite
+checks did not prove organized entry, native admission or physical trapping.
+The [constructive successor](./decisions/SparkCompletionSC2PositiveCandidate.md)
+now changes the supplied source/preparation and shares explicitly, retaining
+the companion equations and SC-1 thresholds. Exact allocation and enclosed
+both-role target evolution reach a quantitative full-OS trap with a surviving
+parent and one new module basin. The [source-beat successor](./decisions/SparkCompletionSC2SourceBeat.md)
+now connects one actual ordinary beat and fresh capture to that domain, with
+unchanged reset and a rerun of the changed current target. Next review and
+adjudicate the completed bounded research chain. The earlier negative case remains valid; native
+representation and lifecycle obligations stay downstream.
+The [positive-target review](./evidence/spark-completion/review/SC2PositiveScientificPressureReview.md)
+passes the trapping/entry result and identifies a fast-check consistency gap,
+now corrected in both target and source checkers. Saved entry coordinates,
+complete checkpoint basins and both chart keys are checked explicitly. Source-chain
+review/adjudication is still separate; no new target search or SC-1 reopening follows.
+The [complete research witness](./decisions/SparkCompletionSC2CompleteWitness.md)
+then executes two positive beats inside the proved trap and produces an actual
+SC-1 exact-equation completion decision at target step 902, with one stable new
+child and local gain one. It reuses the long approach/reset proofs, and rejects
+false-window/identity/domain controls and repeated gain. The constructive SC-2
+question is answered at this bounded proposed-law scope; acceptance and SC-3
+propagation follow, with native numerical/lifecycle implementation downstream.
+The organization debt is partially resolved for the selected SC-1 definition;
+its applicability/propagation obligations and the other three completion debts
+remain open, as does nonlinear-site admission. SC-3 consolidates the results and
+admits the authority/schema successor before downstream propagation.
 The older successor descriptions below are historical, not a reset of accepted
 Phase 9 progress or of the resolved baseline basin-design debt.
 

@@ -1,0 +1,155 @@
+{
+  "schema": "grc9v4-spark-completion-sc1-ledger-v1",
+  "status": "conditional_mathematics_reviewed_precision_fixed_bounded_exclusion_recorded",
+  "predecessor_commit": "0d27440b",
+  "predecessor_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/ClaimDebtLedger.json",
+  "proposal": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1Contract.md",
+  "evidence": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/SC1Checks.json",
+  "authority_admitted": false,
+  "accepted_graph_changed": false,
+  "claims": [
+    {
+      "id": "SC1-CL-C-CAPACITY",
+      "status": "conditional_review_pass_precision_corrected_not_admitted",
+      "statement": "Closed finite-charge continuity bounds cumulative strictly positive consumed inflow. Indefinite duration is excluded if elapsed time diverges and limsup accumulated error/time is strictly below the inflow margin; pointwise strict inequality alone is insufficient.",
+      "premises": [
+        "nonnegative resources",
+        "bounded total charge",
+        "fixed vertex",
+        "actual consumed continuity current",
+        "no unaccounted external exchange"
+      ],
+      "not_claimed": [
+        "fresh diagnostic implies the consumed inflow bound",
+        "all persistent organizations are impossible",
+        "all currents remain uniformly separated from zero"
+      ]
+    },
+    {
+      "id": "SC1-CL-C-WINDOW",
+      "status": "proposed_conditional_pending_review",
+      "statement": "Correct admitted captures satisfying the stated finite window imply positive disjoint persistent flow cores with separated projected parent footprints and bounded observed C/W/Z diameter.",
+      "not_claimed": [
+        "between-sample or future persistence",
+        "attraction",
+        "constitutive admissibility of the toy trace",
+        "native completed-spark implementation"
+      ]
+    },
+    {
+      "id": "SC1-CL-P-GEOMETRIC-IDENTITY",
+      "status": "proposed_scientific_choice_pending_review",
+      "statement": "Select signed-resource all-route descent as a distinct geometric identity branch; qualify strict seeds with nontrivial guaranteed attraction domains and neighbor barriers.",
+      "not_claimed": [
+        "selected by existing physical-flow basin authority",
+        "constitutive physical current routing",
+        "all possible child organizations"
+      ]
+    },
+    {
+      "id": "SC1-CL-C-SPATIAL-BASINS",
+      "status": "conditional_mathematics_review_pass_not_admitted",
+      "statement": "On a finite graph, the guaranteed domain of a qualified terminal seed is forward closed; every maximal strict-descent route reaches it in at most |V|-1 moves. Domains are disjoint and distinct anchors have a landscape barrier.",
+      "not_claimed": [
+        "routing moves are physical timesteps",
+        "multiple alternative full-field attractors",
+        "unqualified plateau terminals may be redirected"
+      ]
+    },
+    {
+      "id": "SC1-CL-C-RETURN",
+      "status": "conditional_mathematics_review_pass_not_admitted",
+      "statement": "A complete full-dimensional relative domain, strict invariance and contraction of the full exact ordinary map yield an attracting field fixed point. Uniformly fixed qualified anchors and descent relations preserve genuine spatial basins throughout return.",
+      "not_claimed": [
+        "such a domain exists for GRC9V4",
+        "CI inner-root contraction is full-step contraction",
+        "fixed-H bounds enclose a joint root",
+        "state constraints may be dropped from numerical admission"
+      ]
+    },
+    {
+      "id": "SC1-CL-C-COMPLETION",
+      "status": "proposed_conditional_pending_review",
+      "statement": "Under the proposed exact-row geometric branch with certified represented agreement, admitted event lineage, same-classifier local parent comparison, descendant gain and full-state trapping/return imply stable spatial child-basin completion. The numerical exact-slice version also requires proved exact constraint preservation.",
+      "not_claimed": [
+        "abstract affine example is actual V4 feasibility",
+        "geometric gain proves physical-flow sink gain",
+        "completion or hierarchy admitted now",
+        "global graph basin-count gain",
+        "pre-event full-field stability",
+        "counterfactual event causation",
+        "tolerant charge gate proves exact slice membership"
+      ]
+    },
+    {
+      "id": "SC1-CL-C-EQUILIBRIUM-EXCLUSION",
+      "status": "reviewed_bounded_derivation_recorded_not_admitted",
+      "statement": "For admitted exact full fixed points in the inspected closed positive-stiffness zero-site tree bindings, C_OS/C_CI/A_CI/A_PC have constant resources, so no SC-1 contracting domain can preserve a nonempty qualified-anchor roster.",
+      "premises": [
+        "positive finite ordinary duration",
+        "connected tree and unit measure",
+        "closed zero context and zero site derivative",
+        "positive transport and admitted Hodge/root",
+        "for A: zero structural base and zero-preserving quadratic source",
+        "for A_PC: full carrier stationarity with finite positive tau_PC"
+      ],
+      "not_claimed": [
+        "all V4 completion impossible",
+        "finite continuation invalid",
+        "new native trajectory executed",
+        "other site potentials or nonstationary policies excluded"
+      ]
+    },
+    {
+      "id": "SC1-CL-C-A-CONNECTED-EXCLUSION",
+      "status": "reviewed_bounded_derivation_recorded_not_admitted",
+      "statement": "The A_CI/A_PC equilibrium exclusion extends to connected graphs with positive effective current multipliers under the stated zero-site/zero-base/source/writer premises. On a smooth uniform branch the fixed-charge resource mode multiplier 1+h*eta*kappa_c*w^2*lambda^2 is greater than one.",
+      "not_claimed": [
+        "same extension established for Candidate C",
+        "derivative at a nonsmooth W-floor boundary",
+        "substrate sign requires correction"
+      ]
+    }
+  ],
+  "debt_dispositions": [
+    {
+      "debt_id": "SC-DEBT-ORGANIZATION",
+      "status": "open",
+      "progress": "Spatial-basin argument passes independent pressure. Exact-row scientific meaning with certified represented agreement, local gain, instantaneous parent and absence of counterfactual causation are explicit.",
+      "remaining": "Scientific admission of the geometric identity branch; no promotion into A.7 from conditional mathematics alone."
+    },
+    {
+      "debt_id": "SC-DEBT-STABILITY",
+      "status": "open",
+      "progress": "Conditional full-state contraction theorem passes. Exact charge-slice preservation and separate diagnostic row enclosures are explicit numerical requirements; targeted countermodels are regressions.",
+      "remaining": "Establish an applicable exact V4 stable domain and its numerical lift. Existing zero-site tree bindings cannot meet the persistent-anchor certificate."
+    },
+    {
+      "debt_id": "SC-DEBT-NONEMPTY-DOMAIN",
+      "status": "open",
+      "progress": "A bounded equilibrium exclusion replaces “no witness yet” for the exact inspected four-family tree bindings; A extends to its positive-denominator connected domain. All 112 retained role declarations match the reviewed subjects.",
+      "remaining": "Identify an admitted constitutive mechanism supporting a nonconstant admissible equilibrium before selecting another witness, or explicitly justify a different completion contract. Longer runs and threshold retuning do not repair the exclusion."
+    },
+    {
+      "debt_id": "SC-DEBT-TEMPORAL-LIFECYCLE",
+      "status": "open",
+      "progress": "SC-1 defines positive observation time, independent roles, full rollback, window invalidation, at-most-one gain per event lineage and separation of static policy identity from event evidence.",
+      "remaining": "Review and demonstrate these obligations on admitted captures; native integration follows authority, paper and specification. A successor schema is needed rather than reinterpreting v1."
+    }
+  ],
+  "scope": {
+    "native_steps": 0,
+    "native_events": 0,
+    "new_completion_policy": false,
+    "debts_closed": [],
+    "G4_accepted": false,
+    "new_completion_policy_meaning": "A policy is proposed; none is admitted or implemented."
+  },
+  "proposed_policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "SC1_definition_supplied": true,
+  "SC1_accepted": false,
+  "review": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/SC1ScientificPressureReview.md",
+  "review_resolution": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC1EquilibriumExclusion.md",
+  "scientific_disposition": "Conditional spatial and full-state mathematics pass; policy remains unadmitted; no achievable completion certified for the excluded bindings.",
+  "next": "Mechanism/equilibrium/admissibility analysis before SC-2 witness selection; no new profile or weaker criterion selected."
+}

@@ -3892,8 +3892,10 @@ implementation_authorized = false
 
 Current scope: [scientific definition and feasibility](./decisions/SparkCompletionDefinitionAndFeasibility.md)
 after accepted P9-10.4. Historical gate flags above remain historical.
-The [provisional ledger](./evidence/spark-completion/ClaimDebtLedger.json) is
-outside admitted authority; completion/hierarchy remain unselected.
+The [provisional ledger](./evidence/spark-completion/ClaimDebtLedger.json)
+retains the historical research opening. The [SC-1 adjudication](./decisions/SparkCompletionSC1Adjudication.md)
+selects the bounded scientific definition; accepted-graph admission and native
+completion/hierarchy support remain open.
 
 - [x] Accept/commit examples, merge with `--no-ff`, and open a research branch.
 - [x] Trace completion/row/basin authority through the forensic API; preserve
@@ -3902,11 +3904,69 @@ outside admitted authority; completion/hierarchy remain unselected.
   debts before proposing or implementing a completion evaluator.
 - [x] Complete the initial exact threshold/empty-row feasibility screen, all-ten
   retained-example extraction and separate positive-seed control.
-- [ ] SC-1: Select a proposed child object, parent correspondence and precise
-  stability level; supply its conditional argument and lifecycle semantics.
-- [ ] SC-2: Justify and demonstrate a nonempty V4 source/event/continuation
+- [x] SC-1: Select the bounded child object, parent correspondence and precise
+  stability level; accept its conditional argument and lifecycle semantics as
+  scientific research. No actual completion or native capability is inferred.
+  - [x] Supply [SC-1](./decisions/SparkCompletionSC1Contract.md): genuine
+    all-route geometric attraction domains, same-classifier parent/gain,
+    conditional full-state stability/completion and lifecycle/numerical rules.
+  - [x] Pass 15 exact geometric result groups, with 25 earlier finite-window
+    groups kept as controls; no actual V4 operator or native event claim.
+  - [x] Incorporate independent pressure and additional comment: conditional
+    mathematics passes; exact/represented rows, charge-slice lift, local gain,
+    source feasibility and capacity wording are corrected and checked.
+  - [x] [Adjudicate the geometric identity branch and conditional A.7 bridge](./decisions/SparkCompletionSC1Adjudication.md)
+    under the user's scientific selection. Resolve only the organization-definition
+    portion; preserve reviewed evidence and all applicability/native obligations.
+- [x] SC-2: Justify and demonstrate a nonempty V4 source/event/continuation
   domain, with transient/unchanged-parent/relabel controls and explicit W/Z scope.
-- [ ] SC-3: Review and adjudicate the scoped claims/debts; propagate authority
-  through proposal/paper/spec before P9-9.1a native work.
+  - [x] Record the [bounded equilibrium exclusion](./decisions/SparkCompletionSC1EquilibriumExclusion.md)
+    for the 112 retained four-family tree declarations and A's stated connected
+    positive-denominator extension; preserve accepted finite continuation.
+  - [x] Derive [the proposed site mechanism](./decisions/SparkCompletionSC2MechanismAnalysis.md):
+    exact nonconstant equilibrium bounds and full-C_OS local attraction under a
+    homogeneous quartic site law; distinguish the existing equation channel
+    from the unadmitted/unimplemented nonlinear binding.
+  - [x] Rule out K4_base as additive forcing under the current geometry; retain
+    the finite-writer and existing zero-site restrictions.
+  - [x] Apply [SC-2 scientific review](./evidence/spark-completion/review/SC2ScientificPressureReview.md):
+    conditional mathematics passes; check 120 stable branch boxes and the
+    no-basin control, retain reported box escape and feedback-attribution limits.
+    Recheck the local full checker and corrected SC-1 predecessor; distinguish
+    local execution from the reviewer's access boundary.
+  - [x] Complete [exact source/parent/D11/charge preflight](./decisions/SparkCompletionSC2EventCompatibility.md):
+    qualified eleven-node source, both-role charge 20, both chiral fourteen-node
+    targets and target-specific conditional equilibrium/local-stability bounds.
+    Allocation alone has no gain; zero core is outside the branch box.
+  - [x] Check [split admission and bounded continuation](./decisions/SparkCompletionSC2Continuation.md):
+    original reads fail the newly declared strict split control; the explicit
+    mobility/duration companion passes 128 enclosed steps per role and both
+    chiral classifiers, but forms no additional qualified children. No native claim.
+  - [x] Validate the [supplied constructive successor](./decisions/SparkCompletionSC2PositiveCandidate.md):
+    exact source/parent and actual D11 allocation, enclosed both-role entry at
+    steps 900/867 into a full-dimensional full-OS trap, complete chiral descent
+    and basin rosters, positive split/resource bounds. Preserve the negative case.
+  - [x] Establish [the actual ordinary source beat/fresh capture](./decisions/SparkCompletionSC2SourceBeat.md)
+    under the proposed equations: unchanged reset, literal D11 transfer of the
+    actual current poststate, new current-target entry at 900 and exact reset
+    evidence reuse at 867. Preserve prebeat-versus-postbeat parent distinction.
+  - [x] [Accept the bounded completed research chain](./evidence/spark-completion/SC2Acceptance.json)
+    and its declared scientific binding on 2026-10-31. SC-3 performs authority
+    admission/propagation; native support is not inferred.
+    - [x] Apply [positive-target scientific review](./evidence/spark-completion/review/SC2PositiveScientificPressureReview.md):
+      bounded target PASS; require both charts, recompute complete checkpoint
+      basins and coordinate-derived entry metric, reject rehashed alterations.
+      This review does not independently cover the later source-beat successor.
+  - [x] Execute [the complete research witness](./decisions/SparkCompletionSC2CompleteWitness.md):
+    two declared positive beats after actual current entry, complete stable
+    parent/child domains, one event-bound completion at target step 902, local
+    gain one and zero extra replay gain; ten false-completion controls reject.
+    Preserve the long approach/reset evidence and proposed-law scope.
+- [ ] SC-3: Consolidate the selected SC-1 definition with reviewed SC-2
+  feasibility and scoped claim/debt decisions; admit the authority/schema
+  successor and propagate through proposal/paper/spec before P9-9.1a native work.
+  - [ ] Carry represented charge/row/error and native lifecycle obligations
+    through that propagation; these do not undo the bounded exact-equation
+    completion demonstrated by SC-2.
 - [ ] Reconcile the outcome in P9-10.5 and explicitly record completion support
   or deferral in P9-10.6/G4; no automatic closure from this investigation.
