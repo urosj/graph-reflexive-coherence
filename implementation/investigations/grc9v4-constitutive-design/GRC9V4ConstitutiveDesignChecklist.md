@@ -3887,3 +3887,26 @@ implementation_review_ready = true
 implementation_review_activated = false
 implementation_authorized = false
 ```
+
+## Spark-completion successor — 2026-10-31
+
+Current scope: [scientific definition and feasibility](./decisions/SparkCompletionDefinitionAndFeasibility.md)
+after accepted P9-10.4. Historical gate flags above remain historical.
+The [provisional ledger](./evidence/spark-completion/ClaimDebtLedger.json) is
+outside admitted authority; completion/hierarchy remain unselected.
+
+- [x] Accept/commit examples, merge with `--no-ff`, and open a research branch.
+- [x] Trace completion/row/basin authority through the forensic API; preserve
+  indeterminate source support and the resolved bounded basin-design debt.
+- [x] Record organization, stability, nonempty-domain and temporal-lifecycle
+  debts before proposing or implementing a completion evaluator.
+- [x] Complete the initial exact threshold/empty-row feasibility screen, all-ten
+  retained-example extraction and separate positive-seed control.
+- [ ] SC-1: Select a proposed child object, parent correspondence and precise
+  stability level; supply its conditional argument and lifecycle semantics.
+- [ ] SC-2: Justify and demonstrate a nonempty V4 source/event/continuation
+  domain, with transient/unchanged-parent/relabel controls and explicit W/Z scope.
+- [ ] SC-3: Review and adjudicate the scoped claims/debts; propagate authority
+  through proposal/paper/spec before P9-9.1a native work.
+- [ ] Reconcile the outcome in P9-10.5 and explicitly record completion support
+  or deferral in P9-10.6/G4; no automatic closure from this investigation.

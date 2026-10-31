@@ -940,6 +940,16 @@ does not remove them, promote D10.2 indeterminate traces or grant full conforman
 
 ## P9-10.1a accepted baseline basin diagnostic authority
 
+The [spark-completion research opening](../../../decisions/SparkCompletionDefinitionAndFeasibility.md)
+(2026-10-31) consumes this accepted context without extending it. Its new
+provisional claims/debts live in the linked research ledger, not in the accepted
+query graph. Reproduce its five typed provenance/debt queries and small exact
+screen with `scripts/check_spark_completion_feasibility.py --check` from the
+investigation, using the full repository-relative script path from the repository
+root. Do not interpret the baseline basin ceiling as completion authority or
+reopen the resolved diagnostic-design debt. New completion authority and its
+API/browser/notebook exposure follow only after scoped scientific adjudication.
+
 Use the explicit basin successor context. It preserves the pre-basin and ATC
 loaders and their historical pins; it does not silently enlarge those views.
 The accepted source is in the separately inventoried `decisions/p9-basin-interface/`

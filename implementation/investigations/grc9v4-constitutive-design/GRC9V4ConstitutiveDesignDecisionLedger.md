@@ -4715,3 +4715,36 @@ The initial summary check caught the historical A_OS negative exclusion
 being counted as conditional; the summary was corrected, not the old ledger.
 No numerical campaign or scientific input was changed. Native engineering,
 Candidate C, broader capabilities and aggregate ATC-2/ATC-3 remain separate.
+
+## 2026-10-31 — Spark-completion research opening and feasibility screen
+
+After accepting P9-10.4 examples, the user authorizes a focused completion
+definition/feasibility pass before the final Tranche 10 scope decision.
+Implementation `7a2ac72c` and separate acceptance `cb639422` are merged at
+`34152b5d`; research proceeds on `investigation/grc9v4-spark-completion`.
+
+The [opening](./decisions/SparkCompletionDefinitionAndFeasibility.md) distinguishes
+instantaneous flow regions, geometric seeds, finite persistence and dynamical
+stability. Five forensic traces preserve the historical completion contract's
+indeterminate support and the accepted baseline diagnostic ceiling. The resolved
+baseline basin-design debt stays resolved; its stronger completion successor is
+explicitly separate.
+
+The [provisional ledger](./evidence/spark-completion/ClaimDebtLedger.json) records
+three findings and four open debts: organization, stability, nonempty domain and
+temporal lifecycle. No new claim is admitted to the forensic authority graph.
+The exact screen proves the necessary seed-threshold inequality; all ten frozen
+expansion examples violate it. Thirteen of seventeen nodes in each retained D52
+target also lack a row. The separately identified positive C_OS seed is a local
+control, not child formation or persistence. Nine focused predicate controls
+pass, including strict boundaries and sign/empty-row cases. No new trajectory
+is executed, and no accepted runtime or mechanical evidence is invalidated.
+
+SC-1 defines the precise completion claim and conditional argument; SC-2 must
+establish a nonempty V4 source/event/continuation domain. SC-3 review and scoped
+adjudication precede authority → paper → spec → P9-9.1a implementation.
+Completion/hierarchy, broader ATC and G4 are not granted by this opening.
+
+The user's subsequent “commit, then continue” accepts this initial research
+checkpoint and authorizes SC-1. Original proposed-claim flags remain historical;
+no completion policy or scientific authority admission is implied by the commit.

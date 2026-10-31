@@ -3,6 +3,20 @@
 **Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
 **Exploration surface:** ET-C9 accepted as a bounded read-only exploratory tool
 
+## Current successor — spark completion, 2026-10-31
+
+After accepted Tranches 8–9 and P9-10.1–10.4, the user opened a separate
+[definition/feasibility investigation](./decisions/SparkCompletionDefinitionAndFeasibility.md)
+before the final Tranche 10 scope decision. The first screen finds that all ten
+unchanged expansion-example thresholds exclude geometric seeds; a separately
+identified positive seed is not child completion. The
+[provisional claim/debt ledger](./evidence/spark-completion/ClaimDebtLedger.json)
+records the missing organization, stability, nonempty-domain and temporal
+contracts outside accepted authority. Next is SC-1's scientific definition,
+then SC-2's bounded construction. Completion/hierarchy remain unselected.
+Historical design restrictions below retain their original scope; current
+implementation status is in the [Phase 9 handoff](../../Phase-9-GRCV4-Handoff.md).
+
 ## Current ATC scope and next scientific direction — 2026-09-24
 
 The ATC investigation has established bounded source-conditioned binary-fission

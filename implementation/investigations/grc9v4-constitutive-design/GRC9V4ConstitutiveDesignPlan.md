@@ -7,6 +7,17 @@
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
 **Initialization:** [`GRC9V4ConstitutiveDesignInitialization.json`](./GRC9V4ConstitutiveDesignInitialization.json)
 
+**Current successor — 2026-10-31:** the user opens
+[spark completion definition/feasibility](./decisions/SparkCompletionDefinitionAndFeasibility.md)
+after bounded P9-10.4 acceptance. The initial source/seed feasibility screen is
+complete, with provisional findings and four open debts. SC-1 fixes organization,
+parent correspondence and stability semantics; SC-2 establishes a justified
+nonempty V4 domain; SC-3 reviews/adjudicates before authority → paper → spec →
+P9-9.1a implementation. No completed-spark policy or capability is selected.
+P9-10.5/10.6 reconcile the result rather than doing this research implicitly.
+The older successor descriptions below are historical, not a reset of accepted
+Phase 9 progress or of the resolved baseline basin-design debt.
+
 **Implementation-originated successor — 2026-10-28:** P9-10.1a exposes an
 enabled-GRC9V4 basin membership/identity producer gap. The
 [baseline basin proposal](./decisions/P9BasinInterfaceAuthorityProposal.md)

@@ -4479,10 +4479,22 @@ acceptances remain unchanged; each row below records its own bounded evidence.
     [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json). G4 remains separate.
   [Guide](../examples/grc9v4/README.md),
   [publication](./phase-9-grcv4/tranche-10/P9-10.4-Examples.json).
+- Spark-completion scientific successor before the final Tranche 10 scope decision:
+  [opening and ledger](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionDefinitionAndFeasibility.md).
+  - [x] Open a separate research branch after accepting/merging the examples;
+    retain exact forensic support boundaries and record provisional claims/debts.
+  - [x] Complete the initial exact seed-threshold/row-occupancy screen and reuse
+    the accepted positive-seed control; no trajectory rerun or completion claim.
+  - [ ] SC-1: Define the child object, parent comparison, temporal correspondence
+    and precise stability statement with a conditional mathematical argument.
+  - [ ] SC-2: Establish a nonempty source/event/continuation domain and controls;
+    identify per-family W/Z/root/section obligations before wider support.
+  - [ ] SC-3: Review/adjudicate, then authority → proposal/paper → spec; only then
+    return to P9-9.1a implementation, or explicitly record the scoped deferral.
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
-  claims from test coverage alone.
+  claims from test coverage alone, including the four named completion debts.
 - [ ] P9-10.6: Record reviewed support, pending profiles, residual debt,
-  closeout, handoff, and P9-G4 acceptance.
+  closeout, handoff, explicit completion support/defer scope and P9-G4 acceptance.
 
 ## Planning review disposition
 

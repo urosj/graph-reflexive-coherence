@@ -94,9 +94,12 @@ Eight native source/target tests passed in two parallel FLINT jobs, collecting
 both-role migration/return observations once and reusing receipts/charges for
 10.2. Explicit return history initialization is not preservation of incoming W.
 Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
-All ten individual scoped decisions and their bounded P9-10.3 input
-reconciliation/regressions are now accepted. P9-10.4 publication is next,
-followed by P9-10.5 debt reconciliation and P9-10.6/G4.
+All ten individual scoped decisions, their bounded P9-10.3 input
+reconciliation/regressions and P9-10.4 publication are now accepted.
+Before P9-10.5 debt reconciliation and P9-10.6/G4, the user has opened the
+[spark-completion scientific pass](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionDefinitionAndFeasibility.md).
+Its initial seed-feasibility screen is complete; organization/stability
+definition and a nonempty dynamic domain remain open. Completion is not selected.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
@@ -4799,8 +4802,9 @@ requires review of the evidence and support boundary.
 
 **P9-10.4 bounded-accepted (2026-10-31).** User accepted implementation
 `7a2ac72c`; [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json).
-Original execution flags remain unchanged. Remain on
-`work/p9-10.3-regressions` as requested. The
+Original execution flags remain unchanged. Implementation and acceptance were
+merged into `main` with `--no-ff` at `34152b5d`; the successor research branch is
+`investigation/grc9v4-spark-completion`. The
 [progressive guide](../examples/grc9v4/README.md) and executable lessons cover
 all ten families, with independent jobs run in parallel. A separate positive
 geometric-seed example makes its changed resource/policy declaration explicit.
@@ -4811,6 +4815,18 @@ successors; accepted 10.3 execution and review remain unchanged. No production,
 specification, claim authority, or numerical tolerance is changed. Before final closure, open a separate scientific definition/feasibility
 investigation of spark completion; 10.5 reconciles its obligation and 10.6/G4
 records the reviewed support boundary.
+
+**Spark-completion successor, opened 2026-10-31.** Follow
+[SC-1–SC-3](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionDefinitionAndFeasibility.md#5-proposed-definition-work-with-a-finite-finish-line)
+and its provisional claim/debt ledger. Define child organization, parent
+correspondence and the exact stability claim, then establish a nonempty bounded
+V4 construction before selecting an evaluator. The initial exact screen shows
+that all ten frozen expansion-example policies exclude geometric seeds; it
+does not exclude other separately justified completion definitions. Do not run
+longer trajectories on those unchanged inputs to seek seed-based success.
+Reviewed authority must propagate through proposal/paper/spec before P9-9.1a
+native implementation. Accepted bounded Tranches 8–9 and 10.1–10.4 remain closed;
+10.5/10.6 await the explicit resulting completion support/defer decision.
 
 ## Verification at the planning boundary
 

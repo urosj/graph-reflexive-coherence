@@ -4317,3 +4317,11 @@ PATHS.update({
     PHASE+'tranche-10/P9-10.4-Acceptance.json',
     PHASE+'verification/p9104_acceptance.py',
 })
+
+# Research opening only: no production, specification or accepted-graph grant.
+PATHS.update({
+    INV+'decisions/SparkCompletionDefinitionAndFeasibility.md',
+    INV+'evidence/spark-completion/ClaimDebtLedger.json',
+    INV+'evidence/spark-completion/InitialFeasibility.json',
+    INV+'scripts/check_spark_completion_feasibility.py',
+})
