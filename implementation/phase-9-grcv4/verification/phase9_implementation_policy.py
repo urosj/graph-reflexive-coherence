@@ -4311,3 +4311,9 @@ PATHS.update({
     'implementation/phase-9-grcv4/verification/p9104_source_epoch.py',
     'implementation/phase-9-grcv4/verification/test_p9104_examples.py',
 })
+
+# Separate user acceptance of the unchanged P9-10.4 example publication.
+PATHS.update({
+    PHASE+'tranche-10/P9-10.4-Acceptance.json',
+    PHASE+'verification/p9104_acceptance.py',
+})

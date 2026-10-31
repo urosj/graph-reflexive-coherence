@@ -4797,7 +4797,9 @@ hold against the claim actually demonstrated. Record outstanding profiles,
 analysis, phenomenology, and integration work explicitly. P9-G4 acceptance
 requires review of the evidence and support boundary.
 
-**P9-10.4 implementation (2026-10-31), pending acceptance.** Remain on
+**P9-10.4 bounded-accepted (2026-10-31).** User accepted implementation
+`7a2ac72c`; [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json).
+Original execution flags remain unchanged. Remain on
 `work/p9-10.3-regressions` as requested. The
 [progressive guide](../examples/grc9v4/README.md) and executable lessons cover
 all ten families, with independent jobs run in parallel. A separate positive
@@ -4806,8 +4808,9 @@ It does not modify the frozen expansion examples or claim an attracting basin.
 The publication records code/input/output identities and exposes read-only
 API/browser/notebook access. Two old example guides have finite documented
 successors; accepted 10.3 execution and review remain unchanged. No production,
-specification, claim authority, or numerical tolerance is changed. Next after
-review/acceptance: 10.5 debt reconciliation, then 10.6/G4/handoff.
+specification, claim authority, or numerical tolerance is changed. Before final closure, open a separate scientific definition/feasibility
+investigation of spark completion; 10.5 reconciles its obligation and 10.6/G4
+records the reviewed support boundary.
 
 ## Verification at the planning boundary
 

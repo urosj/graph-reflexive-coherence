@@ -4458,7 +4458,7 @@ acceptances remain unchanged; each row below records its own bounded evidence.
   - [x] Bounded user acceptance on 2026-10-31 over implementation `93920eab`;
     [decision](./phase-9-grcv4/tranche-10/P9-10.3-Acceptance.json). Capability
     publication, debt reconciliation and G4 remain P9-10.4–10.6.
-- [ ] P9-10.4: Publish progressive capability/API/lifecycle examples for all ten
+- [x] P9-10.4: Publish progressive capability/API/lifecycle examples for all ten
   families, with new runtime evidence linked to the frozen fixture catalog.
   Use the public class implemented in P9-9.4b and reviewed in P9-9.6;
   public API implementation must not be deferred to this publication task.
@@ -4475,7 +4475,8 @@ acceptances remain unchanged; each row below records its own bounded evidence.
   - [x] Guide/code/results are accessible through side-tool API, browser and
     notebook; update earlier four-family documentation without rewriting
     accepted P9-10.3 evidence.
-  - [ ] User review/acceptance of the bounded publication. G4 remains separate.
+  - [x] User accepted the bounded publication on 2026-10-31;
+    [decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json). G4 remains separate.
   [Guide](../examples/grc9v4/README.md),
   [publication](./phase-9-grcv4/tranche-10/P9-10.4-Examples.json).
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source

@@ -1,8 +1,10 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## P9-10.4 — progressive examples implemented, pending acceptance
+## P9-10.4 — progressive examples bounded-accepted (2026-10-31)
 
-Same branch: `work/p9-10.3-regressions`. Start with the
+Implementation `7a2ac72c` is accepted in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10.4-Acceptance.json). Original
+execution/review stay unchanged. Branch: `work/p9-10.3-regressions`. Start with the
 [native guide](../examples/grc9v4/README.md), then its quickstart and public tour.
 All ten families pass seven bounded lessons: evolution; checkpoint/reset/rebase;
 seed/spark diagnostics; explicit expansion and target continuation; basin policy
@@ -26,7 +28,9 @@ results total about 269 kB (5.59 MB logical); no broad numerical reruns are need
 for publication acceptance.
 
 No production/spec changes, new support, completed-spark/hierarchy/general ATC
-claim or G4 grant. Review/accept P9-10.4, then continue to P9-10.5 and P9-10.6.
+claim or G4 grant. Merge this branch into main, then open a new branch for the
+scoped spark-completion scientific definition/feasibility pass before the final
+Tranche 10 scope decision. P9-10.5 and P9-10.6 remain separate closeout tasks.
 
 ## P9-10.3 — bounded accepted (2026-10-31)
 

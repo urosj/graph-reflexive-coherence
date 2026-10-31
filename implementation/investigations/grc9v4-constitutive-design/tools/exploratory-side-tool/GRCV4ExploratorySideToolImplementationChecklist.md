@@ -2910,5 +2910,6 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   history channels, migrations, reset/rebase, replay and failure boundaries.
 - [x] Preserve accepted 10.3 bytes through the finite documentation successor;
   a historical source request returns the matching old bytes.
-- [ ] Bounded publication acceptance; no completed-spark, hierarchy, general ATC,
-  full conformance or G4 promotion. Next: P9-10.5 and P9-10.6 after acceptance.
+- [x] Bounded publication acceptance on 2026-10-31; no completed-spark,
+  hierarchy, general ATC, full conformance or G4 promotion. A separate scoped
+  spark-completion investigation precedes the final Tranche 10 scope decision.
