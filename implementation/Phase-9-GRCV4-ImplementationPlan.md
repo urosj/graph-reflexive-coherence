@@ -34,6 +34,40 @@ and do not transfer automatically to the other six families.
 
 ## Tranche 10 rollout and six-family basin-capture map (2026-10-30)
 
+Current branch: `work/p9-tranche10-remaining-families`. A_OS P9-10.1a–c and
+P9-10.2 are bounded-accepted on 2026-10-30; implementation `f87bcd27`,
+[acceptance decision](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json).
+The two native jobs run in parallel. Exact-target migration/disabled-return
+captures are collected during compatibility execution and reused for 10.1c/10.2;
+no duplicate native campaign. C_PC now follows the same workflow, with
+[bounded results](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md) accepted on
+2026-10-30; implementation `bff4f3fc`,
+[acceptance decision](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json).
+Its committed carrier and PC certificate are observed without running a writer;
+the independent checker uses this target's actual zeta_C=2^-30 (the earlier
+C_OS/CI witness used 2^-37). Exact-target crossings distinguish carrier loss and
+zero initialization from history preservation. C_CI_PC now has its own
+[validated bounded work](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md): capture binds the full
+joint J/H root with committed Z and the instantaneous source together. Independent
+interval equations check H_ref + kappa_H (Z + S); pointwise current/error bounds
+remain distinct from exact implicit-root claims. All eight tests passed in two parallel native jobs, collecting both-role
+policy-migration/disabled-return captures once for 10.1c/10.2. Bounded user acceptance is
+recorded on 2026-10-30 over implementation `ac8d0249`;
+[decision](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json).
+Bounded-accepted on 2026-10-31: [A_CI_PC P9-10.1a–c → 10.2](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md)
+on the same branch, followed by C_RG2b and A_RG2b. The existing composite root
+captures fixed-row A history and committed Z together. Verify both authority
+channels independently, full J/H/backend/domain/certificate, and the existing
+H_ref + kappa_H (Z + S) equation. Preserve the original parameters, tolerance
+and numerical policy. The source/lifecycle and exact-target compatibility jobs
+passed all eight tests in parallel with FLINT. Both-role migration/return
+observations were collected in that same compatibility execution and reused
+for 10.1c/10.2 (four charges and 53 receipts; no added native steps/replays). Disabled
+return initializes A history by its accepted reference pass and Z to zero under
+the explicit loss policy. The separate [acceptance decision](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json)
+binds implementation `1eb7807a` and preserves original execution evidence.
+
+
 P9-10.2 is accepted for the bounded C_OS/C_CI/A_CI/A_PC scope;
 [acceptance decision](./phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json);
 see the [bounded review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md) and
@@ -41,8 +75,27 @@ see the [bounded review](./phase-9-grcv4/tranche-10/P9-10.2-Review.md) and
 retained-evidence checks reused accepted replay and runtime receipts, recomputed
 sixteen independent equations and sixteen charge checks, and shared 24
 Python/FLINT charge-kernel evaluations. No native steps or replay runs were
-repeated. Continue with A_OS P9-10.1a–c → P9-10.2, following
-the remaining-family order below; consolidated P9-10.3–10.6 stay separate.
+repeated. A_OS, C_PC, C_CI_PC and A_CI_PC P9-10.1a–c → P9-10.2 are now also
+bounded-accepted. C_RG2b is bounded-accepted on 2026-10-31 over implementation
+`abaa1cbc`; [decision](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json).
+It reuses the accepted connected completion and exact source/target, capturing
+the full section at dt=0 without a writer. Independent unreduced edge equations
+validate the observed chain, with completion, query, selected H/current and
+enclosure bound. Fixed-H current error remains separate from the Lipschitz
+section bound; C1 remains unresolved. Eight tests passed in two parallel FLINT
+jobs; both-role migration/return observations, saved charges and receipts serve
+10.1c/10.2 without duplicate native work. Original execution evidence is unchanged.
+A_RG2b is bounded-accepted on 2026-10-31 over implementation `a4706caf`;
+[decision](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json). Its joint C/Y
+section, with Y=512 log W, binds full selected geometry/current, fixed-row
+backend, completion and certificate. The independent connected A chain proof
+retains log-coordinate uncertainty, inverse residuals and completion tail.
+Eight native source/target tests passed in two parallel FLINT jobs, collecting
+both-role migration/return observations once and reusing receipts/charges for
+10.2. Explicit return history initialization is not preservation of incoming W.
+Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
+All ten individual scoped decisions are now present; all-ten reconciliation
+is next, followed by consolidated P9-10.3–10.6.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
@@ -80,7 +133,8 @@ run the smallest affected case. No new receipt or replay campaign is required
 merely because the checkpoint number changed. Independent retained checks or
 necessary new cases may run in parallel; preserve original execution identities
 and distinguish retained validation from a fresh native run. The bounded
-four-family reconciliation is accepted; the other six extensions remain open.
+four-family reconciliation and A_OS/C_PC/C_CI_PC/A_CI_PC extensions are accepted.
+C_RG2b and A_RG2b are also bounded-accepted; all-ten reconciliation remains separate.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin
@@ -99,9 +153,15 @@ publication and replay machinery provide the common integration path.
 | C_RG2b | Fresh `CandidateRG2bSection`, followed by Candidate-C current at its section geometry. | Reuse [C section certificate](./phase-9-grcv4/verification/p9_crg2b_section.py) and [runtime independent checks](./phase-9-grcv4/verification/p9_crg2b_runtime.py); bind query/domain, evaluator, completion, geometry, error enclosure and selected current. |
 | A_RG2b | Fresh joint C/Y/H section, with `Y = 512 log W`, followed by Candidate-A current and its backend. | Reuse [A section certificate](./phase-9-grcv4/verification/p9_arg2b_section.py) and [runtime independent checks](./phase-9-grcv4/verification/p9_arg2b_runtime.py); include logarithmic-coordinate error, inverse residuals, completion tail and W/backend bindings. |
 
-The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) is explicitly
-four-family: its OS branch assumes Candidate C, and its certificate handling
-does not yet cover composite CI+PC or RG2b sections. The generic readers already
+The current [basin capture](../src/pygrc/models/grc_9_v4_basin.py) adds an explicit
+A_OS branch to the accepted first four. Its fresh Candidate-A reference read
+uses the role's W and fixed-row backend; this additional bounded native scope
+is accepted separately. C_PC now has declared capture scope and bounded
+conformance evidence accepted separately. C_CI_PC extends the joint-root
+capture with its separately accepted bounded conformance; A_CI_PC now integrates
+the same root with its A backend/history. C_RG2b has a dedicated full-section
+capture; A_RG2b adds the A current/backend to full section capture. Both have
+separate bounded acceptance. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
 and [specification](../specs/grc-9-v4-basin-interface.md) provide the starting

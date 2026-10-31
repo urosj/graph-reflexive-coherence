@@ -2794,3 +2794,95 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
   limits; source drift or invalid coverage clears the view.
 - [x] User acceptance of bounded P9-10.2 (2026-10-30); the six basin extensions and G4 remain
   separate. See the Phase 9 plan for the selected continuation order.
+
+## Remaining-family Tranche 10 — A_OS
+
+- [x] Expose explicit A_OS 10.1a–c/10.2 evidence through
+  `/api/tranche10/families?family=A_OS`, indexed sources, a family selector,
+  and notebook cell `p910-family-basin`; retained validation only.
+- [x] Bind the exact review identity; reject unknown families, altered sources,
+  changed scope or evidence, and clear stale browser/notebook output.
+- [x] Preserve the accepted first-four view and original source bytes through
+  the finite A_OS source epoch; no numerical rerun or scientific authority lift.
+- [x] Bounded A_OS acceptance recorded on 2026-10-30; original execution
+  records are unchanged. C_PC is next; C_CI_PC, A_CI_PC, C_RG2b and A_RG2b
+  remain separate extensions; full conformance and G4 are not granted.
+
+
+## Remaining-family Tranche 10 — C_PC
+
+- [x] Extend the existing family API/browser selector with C_PC's exact review,
+  compressed indexed sources and notebook cell `p910-cpc-basin`.
+- [x] Show bounded C_PC acceptance independently of accepted A_OS; bind full PC
+  current/geometry/certificate, actual coefficient, saved charges and receipts.
+- [x] Preserve accepted source epochs and original evidence; fail closed on
+  changed sources, selected role/carrier/certificate, or widened claims.
+- [x] Refresh the active Phase 9 next-work projection and handoff. All checks
+  are retained-evidence checks; the status surface runs no native trajectory.
+- [x] Bounded C_PC acceptance recorded on 2026-10-30 over implementation
+  `bff4f3fc`; original execution remains unchanged. C_CI_PC, A_CI_PC, C_RG2b and A_RG2b remain
+  separate; no aggregate Tranche 10 or G4 acceptance is inferred.
+
+
+## Remaining-family Tranche 10 — C_CI_PC
+
+- [x] Extend the family selector/API with C_CI_PC's own bounded review and
+  notebook cell `p910-ccipc-basin`; bind full joint root, old Z and certificate.
+- [x] Show fixed-geometry current errors and the composite geometry residual
+  separately; do not infer exact implicit-root signs or carrier-effect margins.
+- [x] Retain both-role migration/disabled-return captures, charge checks and
+  receipts from the same native jobs; no native execution in status views.
+- [x] Preserve accepted first-four/A_OS/C_PC evidence and original Git sources;
+  test changed roots/carriers/domains, scope widening and stale-view clearing.
+- [x] Bounded C_CI_PC acceptance on 2026-10-30 over implementation
+  `ac8d0249`; original execution records remain unchanged. A_CI_PC, C_RG2b,
+  A_RG2b and consolidated 10.3–10.6 remain separate.
+
+
+## Remaining-family Tranche 10 — A_CI_PC
+
+- [x] Expose the exact A_CI_PC bounded review in the shared family API/browser
+  selector and notebook `p910-acipc-basin`; bind full joint J/H, W, old Z,
+  fixed-row A backend, domain and certificate.
+- [x] Present fixed-geometry current bounds, positive A denominator and the
+  composite geometry residual without claiming exact implicit-root signs.
+- [x] Reuse native both-role policy-migration/disabled-return captures and
+  receipt/charge checks; distinguish W initialization from zero carrier return.
+- [x] Preserve earlier accepted evidence/source epochs; pressure W/Z/backend,
+  root/domain tampering, widened scope and stale-view clearing.
+- [x] Bounded A_CI_PC acceptance on 2026-10-31 over implementation `1eb7807a`;
+  original execution records remain unchanged. C_RG2b, A_RG2b and consolidated
+  10.3–10.6 remain separate, with no full-conformance/G4 grant.
+
+
+## Remaining-family Tranche 10 — C_RG2b
+
+- [x] Expose the bounded C_RG2b review in the family API/browser selector and
+  notebook `p910-crg2b-basin`; bind exact subjects and the connected section.
+- [x] Show query/completion/full H/current/certificate/enclosure; report
+  fixed-H and section-aware current errors separately. C1 remains unresolved.
+- [x] Reuse captured chains and both-role migration/disabled-return evidence,
+  saved charges and executed replay/receipts; status never runs native sections.
+- [x] Preserve accepted source epochs and evidence; pressure wrong-query,
+  geometry/enclosure/certificate/scope mutations and stale-view clearing.
+- [x] Keep full chains in compressed indexed evidence; expose compact summaries.
+- [x] Bounded C_RG2b acceptance on 2026-10-31 over implementation `abaa1cbc`;
+  original execution and review remain unchanged. A_RG2b, consolidated
+  10.3–10.6 and G4 remain separate.
+
+
+## Remaining-family Tranche 10 — A_RG2b
+
+- [x] Expose the bounded A_RG2b review through the family API/browser selector,
+  indexed compressed evidence and notebook `p910-arg2b-basin`.
+- [x] Bind C/Y query, W, full H/current, fixed-row A backend, completion and
+  certificate; expose log-coordinate error, separate fixed-H/section bounds.
+- [x] Reuse both-role migration/disabled-return captures, saved charge/receipt
+  checks and executed replay; distinguish return initialization from W preservation.
+- [x] Preserve accepted source epochs and original evidence; reject altered
+  histories/backends/chains/enclosures/log-error scope and clear stale views.
+- [x] Keep C1 unresolved and native execution out of retained status queries;
+  an empty remaining-family list does not grant aggregate closure or G4.
+- [x] Bounded A_RG2b acceptance on 2026-10-31 over implementation `a4706caf`;
+  original execution and review remain unchanged. All ten individual scoped
+  decisions are present; all-ten reconciliation and 10.3–10.6 remain separate.

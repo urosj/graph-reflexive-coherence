@@ -1,0 +1,42 @@
+{
+  "schema": "p910-cpc-source-epoch-v1",
+  "predecessor": "59e9f9b9",
+  "checker_sha256": "fd5484d567b464b3b08f7d74f77721eb2aef9f422716362183e86ceec84a6e5b",
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p9101a_basin_oracle.py": {
+      "before_sha256": "42329dba8dfdffbb36be8008a3e2fdc5ba9f05ec83d76482ca58bb68d4193422",
+      "after_sha256": "62d462f2098c4ad893a82dd94d65935b20b8e52f94194960133398b0e9ebf35b"
+    },
+    "implementation/phase-9-grcv4/verification/p9101c_target_basin.py": {
+      "before_sha256": "2bbc2f11685884b0022f981a1424b2248dc7fa8d56ee90ee8e9e871ead1bdda6",
+      "after_sha256": "05760782c1da01bbb16db61a514197cc993e84b4828217032ce16512b75c6dab"
+    },
+    "implementation/phase-9-grcv4/verification/p910_basin_source_epoch.py": {
+      "before_sha256": "bb1a49f99dc8ddc5109d5dcd761b6e7e4593388448f2ea0fe3a26fccd88c1aeb",
+      "after_sha256": "9dde0938b711cdd955257182d43cc29c5919696e796b13313b07c729b8bdfdc3"
+    },
+    "implementation/phase-9-grcv4/verification/p910_family_basin.py": {
+      "before_sha256": "cc02a20d2eeed439047bd9ddd80c2e39ca7224d59a972c62cae7bae83ef25026",
+      "after_sha256": "77ef107c275061d0b5a5e66f7420c08ddae24217efc0da047e8d2cee18af8b08"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9101b_target_compatibility.py": {
+      "before_sha256": "e5cfafafee450de828b8bec90a5e096095468b91b1c15d9a95c2c2b810485879",
+      "after_sha256": "da6c3a41356a1488cb8b60854eeb8c9651b32c1966cf71d5efb0c05949487028"
+    },
+    "src/pygrc/models/grc_9_v4_basin.py": {
+      "before_sha256": "a9709d86b5fcdff25345729322295a217bb662d42046cdaffc2251d5b7d997b5",
+      "after_sha256": "3b05635d03932158f10e6688377e6b398c95fa082f2d19ae208f62b8d10e10ec"
+    },
+    "tests/models/test_grc_9_v4_basin.py": {
+      "before_sha256": "d276011811e821e13b42c400e04ce77c3d71ee17b3d4d572230ac1812cfee4a2",
+      "after_sha256": "326812543c4e207fdcaaf1e72b05da1ab3a470a302dfed669ecded67749c94d5"
+    },
+    "tests/models/test_grc_9_v4_cpc_integration.py": {
+      "before_sha256": "6135e536e26bb00a2818700d3eb7c41d5d83c5ac0511b30a8236083bf65e5f28",
+      "after_sha256": "db010616e135ad6f53ece2bbdfa544aada9954c91874febd969c82eeea3628ff"
+    }
+  },
+  "prior_native_paths_unchanged": true,
+  "accepted_execution_rewritten": false,
+  "record_digest": "8c5c4c0b66446584ce5c80e1dc2af813449055f192e147a01b7015f5d37e2b4c"
+}

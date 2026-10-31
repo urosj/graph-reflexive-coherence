@@ -3,6 +3,7 @@
 from p9_aos_historical import references_match
 
 import argparse
+from contextlib import ExitStack
 from copy import deepcopy
 from fractions import Fraction as Q
 import json
@@ -47,6 +48,12 @@ def restore_state(payload, family):
             C_CI="GRC9V4CCIState",
             A_CI="GRC9V4ACIState",
             A_PC="GRC9V4APCState",
+            A_OS="GRC9V4AOSState",
+            C_PC="GRC9V4CPCState",
+            C_CI_PC="GRC9V4CCIPCState",
+            A_CI_PC="GRC9V4ACIPCState",
+            C_RG2b="GRC9V4CRG2bState",
+            A_RG2b="GRC9V4ARG2bState",
         )[family],
     )
     return cls(
@@ -147,8 +154,17 @@ def capture(model, label):
         reads.append((r, p))
         return r, p
 
-    with patch.object(basin, "_read_once", side_effect=spy):
+    with ExitStack() as stack:
+        stack.enter_context(patch.object(basin, "_read_once", side_effect=spy))
+        if saved.FAMILY in ("C_RG2b", "A_RG2b"):
+            if saved.FAMILY == "A_RG2b":
+                import p910_arg2b_basin_oracle as section_oracle
+            else:
+                import p910_crg2b_basin_oracle as section_oracle
+            chains = stack.enter_context(section_oracle.capture_chains())
         snapshot = model.snapshot()
+    if saved.FAMILY in ("C_RG2b", "A_RG2b"):
+        require(len(chains) == 2, "one section chain per captured role")
     require(len(reads) == 2, "exactly two independently read roles")
     require(snapshot["owner"]["state"] == before, "saved snapshot authority")
     extension = snapshot["owner"]["basin"]
@@ -165,19 +181,29 @@ def capture(model, label):
                 "OS fresh reference-geometry restart",
             )
             mechanisms[role] = "fresh_reference_geometry_restart"
-        elif real == "CI":
+        elif real in ("CI", "CI+PC"):
             require(
                 read.selected.point is point and read.selected.inputs == point.inputs,
                 "complete joint selected root",
             )
-            mechanisms[role] = "full_J_H_root_domain_certificate_bound"
+            if real == "CI+PC":
+                require(read.inputs.current.Z_4 == getattr(saved.inputs, role).Z_4,
+                        "composite committed carrier binding")
+                mechanisms[role] = "full_J_H_root_old_Z_domain_certificate_bound"
+            else:
+                mechanisms[role] = "full_J_H_root_domain_certificate_bound"
+        elif real == "RG2b":
+            require(point.inputs.geometry == read.geometry, "complete section geometry")
+            mechanisms[role] = ("fresh_connected_C_Y_section_W_backend_log_error_bound_no_C1"
+                                if saved.FAMILY == "A_RG2b" else "fresh_connected_section_query_completion_enclosure_bound_no_C1")
         else:
             require(
                 read.inputs.current.Z_4 == getattr(saved.inputs, role).Z_4,
                 "PC committed carrier consumption",
             )
             mechanisms[role] = "committed_W_Z_and_carrier_geometry_equation"
-        equations[role] = oracle.equation_check(saved, role, point)
+        equations[role] = (section_oracle.capture(read, point, chains[("current", "reset").index(role)])
+                           if real == "RG2b" else oracle.equation_check(saved, role, point))
     require(
         model._operation._published.owner.state.to_payload() == before
         and model.lifecycle_digest == lifecycle,
@@ -246,7 +272,7 @@ def run(root, family):
             returned.current.W_A != returned.reset.W_A,
             "return lost distinct A histories",
         )
-    if family == "A_PC":
+    if family in ("A_PC", "C_PC"):
         require(
             all(
                 any(getattr(cfg, r).Z_4) and not any(getattr(returned, r).Z_4)
@@ -270,7 +296,7 @@ def run(root, family):
         new_enabled_steps=0,
         distinct_return_resources=True,
         distinct_return_W_A=family.startswith("A_"),
-        return_carrier="explicit_loss_and_zero" if family == "A_PC" else "absent",
+        return_carrier="explicit_loss_and_zero" if family in ("A_PC", "C_PC") else "absent",
         exact_root_signs_claimed=False,
         new_support=[],
         user_accepted=False,
@@ -374,11 +400,11 @@ def validate(value, old, *, equations=False):
                 and recipe_inputs["context"] == state["inputs"]["context"]
                 and recipe_inputs["dt"] == 0
                 and recipe_inputs["stage"]
-                == ("pc_old_history" if family == "A_PC" else "pre_read"),
+                == ("pc_old_history" if family in ("A_PC", "C_PC") else "pre_read"),
                 "selected recipe input drift",
             )
             h = [[float.fromhex(x) for x in r] for r in selected["H1_form"]]
-            if family.endswith("CI"):
+            if saved.inputs.geometry.reference.profile.identity_payload.realization in ("CI", "CI+PC"):
                 require(
                     selected["selected_inputs"]["H1_form"] == h
                     and selected["selected_inputs"]["current"] == state["inputs"][role]
@@ -386,11 +412,20 @@ def validate(value, old, *, equations=False):
                     == "grc9v4-basin-joint-root-sha256:" + oracle.digest(selected),
                     "joint geometry/certificate drift",
                 )
+            elif family in ("C_RG2b", "A_RG2b"):
+                require(observed["binding"]["root_certificate_binding"]
+                        == "grc9v4-basin-rg2b-section-sha256:" + oracle.digest(selected),
+                        "section certificate binding drift")
+                if family == "A_RG2b":
+                    import p910_arg2b_basin_oracle as section_oracle
+                else:
+                    import p910_crg2b_basin_oracle as section_oracle
+                section_oracle.validate(selected, case["role_equations"][role], numerics=equations)
             else:
                 require(recipe_inputs["H1_form"] == h, "selected geometry drift")
                 expected = (
                     "grc9v4-basin-pc-read-sha256:" + oracle.digest(selected)
-                    if family == "A_PC"
+                    if family in ("A_PC", "C_PC")
                     else None
                 )
                 require(
@@ -419,7 +454,7 @@ def validate(value, old, *, equations=False):
                 and Q(eq["current_error_upper"]) < Q(1, 2**40),
                 "current bound scope",
             )
-            if equations:
+            if equations and family not in ("C_RG2b", "A_RG2b"):
                 point = NS(
                     current=NS(values=values),
                     inputs=NS(

@@ -1,5 +1,179 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## A_RG2b Tranche 10 — bounded accepted (2026-10-31)
+
+Implementation `a4706caf` on `work/p9-tranche10-remaining-families` is accepted
+in the separate [decision](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json).
+The user requested merging this branch into `main` with `--no-ff`; subsequent
+work should branch from `main`. [Review](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md).
+Fresh capture binds the joint C/Y query (Y=512 log W), selected H/current,
+fixed-row A backend, completion, certificate and error enclosure. Independent
+edge equations reuse the accepted connected A proof, including log-coordinate
+uncertainty and finite tail. C1 remains unresolved. No carrier is introduced.
+
+All eight native tests pass in two parallel FLINT jobs: 77.6 seconds for
+source/lifecycle and 52.4 seconds for exact-target compatibility. W-only source
+pressure resolves a 2.98e-6 current change against 1.06e-14 combined section-aware
+error. Wrong-history/backend/geometry substitutions are rejected. Both target
+boundaries resolve all sixteen represented nonzero currents per role; maximum
+section-aware current error is below 7.75e-15, with log-coordinate error retained.
+Both-role policy-migration/disabled-return captures feed 10.1c and 10.2 without
+an extra native campaign: four charges and 53 receipts in fifteen commit groups
+pass. Return W is independently initialized under explicit
+archive/loss. Original evidence, execution flags and review stay unchanged
+through the finite source successor. All ten individual scoped decisions are
+now present. Next: reconcile the accepted first-four and six remaining-family
+P9-10.1a–c/P9-10.2 results, then consolidated 10.3–10.6. This checkpoint does
+not automatically close those obligations or grant G4.
+
+## C_RG2b Tranche 10 — bounded accepted (2026-10-31)
+
+Branch `work/p9-tranche10-remaining-families`, after A_CI_PC acceptance
+`a8be36c7`. [Review](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md).
+The fresh basin read binds the connected section query, selected H/current,
+completion recipe, domain certificate and enclosure. The independent checker
+reuses the existing section-chain proof and unreduced edge equations. C_RG2b
+has no independent W/Z history. C1 remains unresolved; basin classification
+concerns represented flow, not an attractor or universal exact-section signs.
+
+All eight source/lifecycle and exact-target compatibility tests pass in two
+parallel FLINT jobs (133.0 and 87.6 seconds). The new numeric projection uses
+the section's selected point, closing the gap caught by lifecycle pressure.
+Both-role policy-migration/disabled-return captures are collected in the same
+compatibility execution and reused with saved charges and receipts for 10.2.
+All four charges and 53 receipts in fifteen commit groups pass, with no added
+native steps/replays. Target section error is at most 1.11e-16; total section-aware
+current error stays below 6.87e-15. All sixteen nonzero currents per captured role
+exceed that bound. Twenty-six retained/API/browser/notebook checks pass.
+The finite source successor preserves earlier accepted evidence.
+The user accepted implementation `abaa1cbc` on 2026-10-31 in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json). Original
+execution flags and review remain unchanged. A_RG2b P9-10.1a–c → 10.2 is next;
+all-ten Tranche 10 closure and G4 are not inferred.
+
+## A_CI_PC Tranche 10 — bounded accepted (2026-10-31)
+
+Branch: `work/p9-tranche10-remaining-families`, following accepted C_CI_PC
+`b994fabe`. [Review](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md).
+The bounded source and exact 17-node/16-edge v1/v2 target reuse the accepted
+Tranches 8–9 subjects. The production change admits A_CI_PC into the existing
+fresh joint-root capture, with no constitutive, solver or tolerance change.
+
+Source pressure checks W and Z independently, full selected J/H/backend,
+fresh-root equality, same-J/corrupt-H rejection and no observation writer.
+All eight native tests pass in two parallel FLINT jobs (277.9 and 142.8 seconds).
+The compatibility job captured policy migration and disabled return for both
+roles once, for 10.1c/10.2. Four saved charge checks and 53 receipts in 15 commit
+groups pass; 10.2 adds no native steps/replays.
+Return A history is independently initialized; Z is zeroed under explicit loss.
+All sixteen represented signs per role are certified at both target boundaries.
+At policy migration both composite terms exceed the solver tolerance; after
+disabled return Z is zero and the instantaneous contribution is also below
+tolerance. Fixed-geometry bounds do not establish exact implicit-root claims.
+
+Accepted first-four/A_OS/C_PC/C_CI_PC evidence is preserved through the finite
+source-epoch adapter. The family API/browser selector and notebook
+`p910-acipc-basin` expose this separate bounded work. Implementation `1eb7807a`
+is accepted by the user on 2026-10-31 in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json); original
+execution flags and evidence remain unchanged. C_RG2b is next, then A_RG2b
+and consolidated 10.3–10.6. No G4 grant is inferred.
+
+## C_CI_PC Tranche 10 — bounded accepted (2026-10-30)
+
+Branch: `work/p9-tranche10-remaining-families`, following accepted C_PC
+`9fb469c8`. C_CI_PC adds its own P9-10.1a–c → 10.2 evidence on the retained
+17-node/16-edge target and its explicit basin-policy successor.
+
+Capture reconstructs the full selected joint root with old committed Z and
+instantaneous source together, at unchanged parameters and tolerances. The
+independent equations check H_ref + kappa_H (Z + S), with rho_inst=1 and the
+existing composition gain. Source pressure checks fresh full-root equality,
+carrier-only discrimination, omission controls, same-J/corrupt-H rejection,
+wrong coefficient/old-carrier rejection and no writer during observation.
+Fixed-geometry current bounds and selected-point geometry residuals do not
+imply an exact implicit-root sign or effect margin.
+
+All eight tests passed in two parallel FLINT jobs (about 12.2 and 7 minutes).
+The compatibility job captured both roles at policy migration and disabled return for reuse in
+10.1c/10.2. Accepted first-four, A_OS and C_PC evidence remains unchanged;
+a finite source epoch authenticates the capture extension and helper changes.
+Large evidence is compressed and consolidated records reference their parts.
+10.2 verifies 53 receipts in 15 commit groups and four saved charges without
+new native steps/replays. See the [review](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md)
+and [record](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Verification.json).
+The transferred target carrier contribution is below solver tolerance; the
+instantaneous contribution is resolved. No full implicit-root effect is claimed.
+
+The family API/browser selector and notebook `p910-ccipc-basin` expose the new
+bounded view separately from prior acceptances. Implementation `ac8d0249`
+is accepted by the user on 2026-10-30 in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json); original
+execution flags and evidence remain unchanged.
+A_CI_PC is next, then C_RG2b, A_RG2b and consolidated
+10.3–10.6. No scientific debt closure, full conformance or G4 is inferred.
+
+
+## C_PC Tranche 10 — bounded accepted (2026-10-30)
+
+Same branch: `work/p9-tranche10-remaining-families`. [Review](./phase-9-grcv4/tranche-10/P9-10-CPC-Review.md)
+and [verification](./phase-9-grcv4/tranche-10/P9-10-CPC-Verification.json).
+Implementation `bff4f3fc`; [user acceptance](./phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json)
+closes bounded C_PC 10.1a–c and 10.2. Original execution records remain unchanged.
+C_PC P9-10.1a–c → 10.2 now has its own source/lifecycle and exact-target native
+checks, run in two parallel jobs using FLINT. Both-role boundary captures come
+from that same compatibility run. 10.2 adds no native steps or replay campaign.
+
+The observation consumes committed Z, carries no W_A, and binds the complete
+PC read/certificate. Independent equations use the exact C_PC coefficient
+zeta_C=2^-30; the older C coefficient is rejected by a discrimination test.
+The target is the retained 17-node/16-edge v1 model and its explicit basin-policy
+v2 successor. Disabled return independently preserves role resources and
+initializes each target carrier to zero under the explicit loss policy.
+
+Accepted A_OS and first-four execution bytes remain unchanged. A finite source
+epoch authenticates the changed helpers and serves original Git source bytes;
+the sole production change adds C_PC to the basin admission roster. Large evidence
+is compressed, with the consolidated record reconstructing from bound parts.
+
+Side-tool: `/api/tranche10/families?family=C_PC`, the existing browser family
+selector, and notebook cell `p910-cpc-basin`. Retained checks do not run native
+trajectories. See the review for reproduction and the short fixture-correction
+note. Acceptance is recorded separately with no native rerun. C_CI_PC is next,
+then A_CI_PC, C_RG2b, A_RG2b and consolidated 10.3–10.6. No new claim/debt
+closure, full conformance, or G4 is inferred.
+
+
+## A_OS Tranche 10 — bounded accepted (2026-10-30)
+
+Branch: `work/p9-tranche10-remaining-families`, from accepted first-four
+P9-10.2 `f2333b32`. [Review](./phase-9-grcv4/tranche-10/P9-10-AOS-Review.md)
+and [verification](./phase-9-grcv4/tranche-10/P9-10-AOS-Verification.json).
+Implementation `f87bcd27`; [user acceptance](./phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json)
+closes bounded A_OS 10.1a–c and 10.2 without rewriting the execution records.
+
+A_OS now has fresh reference-geometry Candidate-A basin capture using its own
+W/backend. Five native source/lifecycle tests and three exact-target tests pass
+in two parallel jobs. The latter capture policy-migration and disabled-return
+boundaries for both roles during that same run. 10.2 reuses these executions,
+checks four saved charges and two ledgers (53 receipts/15 commits), and adds no
+native step or replay. Shared classifier/charge controls are reused unchanged.
+
+The source epoch preserves original accepted evidence and Git source bytes;
+the first-four native capture paths are checked unchanged. The 4.4 MB target
+record is compressed to about 77 KB, and the consolidated record references it
+instead of retaining another copy. All paths are repository-relative.
+
+Side-tool: `/api/tranche10/families?family=A_OS`, browser family selector and
+notebook `p910-family-basin`; read-only access performs no native run. The original
+four-family accepted view remains separate. Reproduce with the command in the
+review; do not repeat the numerical jobs solely for an acceptance status change.
+
+Next: C_PC P9-10.1a–c → P9-10.2 on the same branch. After that:
+C_CI_PC, A_CI_PC, C_RG2b, A_RG2b, then consolidated 10.3–10.6. No new scientific
+claim/debt closure, family-wide conformance or G4 is inferred.
+
+
 ## P9-10.2 first group — bounded accepted (2026-10-30)
 
 Work branch: `work/p9-10.2-first-group`; integration target: `main` (fast-forward).

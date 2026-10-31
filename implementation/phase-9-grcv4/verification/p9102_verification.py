@@ -447,7 +447,8 @@ def check(root=ROOT):
             and value["new_support"] == []
             and value["native_steps"] == value["native_replays"] == 0,
             "P9-10.2 scope or acceptance changed")
-    require(value["source_refs"] == bindings(root), "P9-10.2 source drift")
+    from p910_basin_source_epoch import references_match
+    require(references_match(root, value["source_refs"], bindings(root)), "P9-10.2 source drift")
     for ref in [value["predecessor"], *[r[k] for r in value["families_checked"]
                                        for k in ("execution_ref", "exact_target_ref")]]:
         require(reference(root, ref["path"])["sha256"] == ref["sha256"], "P9-10.2 input drift")

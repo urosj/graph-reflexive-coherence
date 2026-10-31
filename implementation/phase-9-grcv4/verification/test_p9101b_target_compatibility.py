@@ -5,6 +5,7 @@ from dataclasses import asdict
 from fractions import Fraction
 import hashlib
 import json
+import lzma
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -31,10 +32,24 @@ def digest(value):
     return hashlib.sha256(encoded(value)).hexdigest()
 
 
+def target_seed(family):
+    if family in ("C_RG2b", "A_RG2b"):
+        if family == "A_RG2b":
+            from p9_arg2b_campaign import read, BASE as connected
+        else:
+            from p9_crg2b_campaign import read, BASE as connected
+        return read(connected + "9.1b-integration.json.xz")["evidence"]["mixed_snapshot"]
+    name = {"A_OS": "AOS", "C_PC": "CPC", "C_CI_PC": "CCIPC", "A_CI_PC": "ACIPC"}.get(family, family)
+    path = BASE / f"P9-9.1b-{name}.json"
+    if path.exists():
+        raw = path.read_bytes()
+    else:
+        raw = lzma.decompress(path.with_suffix(".json.xz").read_bytes())
+    return json.loads(raw)["evidence"]["mixed_snapshot"]
+
+
 def target(family):
-    return json.loads((BASE / f"P9-9.1b-{family}.json").read_bytes())["evidence"][
-        "mixed_snapshot"
-    ]["state"]
+    return target_seed(family)["state"]
 
 
 def subject(model):
@@ -266,7 +281,7 @@ class TargetCompatibility(unittest.TestCase):
             self.assertEqual(
                 state.W_A, expected_history[i] if expected_history else None
             )
-            if self.FAMILY == "A_PC":
+            if cfg.reference.profile.identity_payload.realization in ("PC", "CI+PC"):
                 self.assertTrue(any(getattr(cfg, role).Z_4))
                 self.assertEqual(set(state.Z_4), {0.0})
         before_reset = m.step_v4_input(step_request("target-enabled-after-return"))
@@ -313,7 +328,10 @@ class TargetCompatibility(unittest.TestCase):
             },
             enabled_continuation=asdict(before_reset),
             final_checkpoint=final,
-            history_policy="explicit_A_archive_loss_and_A_PC_carrier_zero_initialization",
+            history_policy=("explicit_A_archive_loss_and_reference_initialization_no_carrier" if self.FAMILY == "A_RG2b"
+                            else "no_independent_candidate_or_carrier_history" if self.FAMILY == "C_RG2b" else f"explicit_{self.FAMILY}_carrier_loss_and_zero_initialization" if self.FAMILY in ("C_PC", "C_CI_PC")
+                            else "explicit_A_archive_loss_and_A_CI_PC_carrier_zero_initialization" if self.FAMILY == "A_CI_PC"
+                            else "explicit_A_archive_loss_and_A_PC_carrier_zero_initialization"),
             disabled_replay=True,
             enabled_replay=True,
             full_parent_DAG=True,
@@ -390,9 +408,7 @@ class TargetCompatibility(unittest.TestCase):
         )
         checkpoint = m.snapshot()
         bad = request(m, "enable", cfg.reference).to_payload()
-        bad["declaration"]["target_reference"] = json.loads(
-            (BASE / f"P9-9.1b-{self.FAMILY}.json").read_bytes()
-        )["evidence"]["mixed_snapshot"]["initial"]["inputs"]["reference"]
+        bad["declaration"]["target_reference"] = target_seed(self.FAMILY)["initial"]["inputs"]["reference"]
         failures["source_graph_substituted_for_target"] = self.rejected(
             m, lambda: m.migrate_branch(GRC9V4BranchRequest.from_payload(bad))
         )

@@ -4159,3 +4159,102 @@ PATHS |= {
     "implementation/phase-9-grcv4/verification/p9102_acceptance.py",
     "implementation/phase-9-grcv4/tranche-10/P9-10.2-Acceptance.json",
 }
+
+# A_OS Tranche 10 basin extension: bounded native and retained verification.
+PATHS |= {
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-families.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche10_families.py',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Review.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Verification.json',
+    'implementation/phase-9-grcv4/verification/p910_basin_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/p910_family_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_aos_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_family_surfaces.py',
+}
+
+# Per-family Tranche 10 user acceptance over unchanged execution evidence.
+PATHS |= {
+    "implementation/phase-9-grcv4/verification/p910_family_acceptance.py",
+    "implementation/phase-9-grcv4/tranche-10/P9-10-AOS-Acceptance.json",
+}
+
+
+# C_PC Tranche 10 basin extension; original acceptance epochs stay intact.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_cpc_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p910_cpc_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_cpc_surfaces.py',
+}
+
+# Bounded C_PC acceptance, separate from the original native evidence.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Acceptance.json")
+
+# C_CI_PC joint-root/carrier basin capture and bounded Tranche 10 evidence.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_ccipc_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p910_ccipc_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_ccipc_surfaces.py',
+}
+
+# Bounded C_CI_PC acceptance over its unchanged native execution.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CCIPC-Acceptance.json")
+
+# A_CI_PC observation binds both history channels and the full A joint root.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_acipc_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/test_p910_acipc_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_acipc_surfaces.py',
+}
+
+# Bounded A_CI_PC acceptance over its unchanged native execution.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json")
+
+# C_RG2b full connected section basin capture; bounded acceptance remains separate.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_crg2b_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/p910_crg2b_basin_oracle.py',
+    'implementation/phase-9-grcv4/verification/test_p910_crg2b_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_crg2b_surfaces.py',
+}
+
+# Bounded C_RG2b acceptance over unchanged native execution.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json")
+
+# A_RG2b joint section/history basin capture; acceptance and all-ten closure are separate.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_arg2b_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/p910_arg2b_basin_oracle.py',
+    'implementation/phase-9-grcv4/verification/test_p910_arg2b_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_arg2b_surfaces.py',
+}
+
+# Bounded A_RG2b acceptance; all-ten reconciliation remains separate.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json")

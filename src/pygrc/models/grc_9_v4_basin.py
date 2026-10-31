@@ -299,12 +299,18 @@ class _Capture:
 
 
 def _read_once(inputs, backend):
-    realization = inputs.geometry.reference.profile.identity_payload.realization
+    identity = inputs.geometry.reference.profile.identity_payload
+    realization = identity.realization
     if realization == "OS":
-        from .grc_v4_candidate_c import CandidateCCurrent
+        if identity.candidate == "A":
+            from .grc_v4_candidate_a import CandidateACurrent
 
-        read = point = CandidateCCurrent(inputs)
-    elif realization == "CI":
+            read = point = CandidateACurrent(inputs, backend)
+        else:
+            from .grc_v4_candidate_c import CandidateCCurrent
+
+            read = point = CandidateCCurrent(inputs)
+    elif realization in ("CI", "CI+PC"):
         from .grc_v4_ci import CandidateCIRoot
 
         read = CandidateCIRoot(inputs, backend)
@@ -314,6 +320,17 @@ def _read_once(inputs, backend):
 
         read = CandidatePCRead(inputs, backend)
         point = read.point
+    elif realization == "RG2b":
+        from .grc_v4_rg2b import CandidateRG2bSection
+        from .grc_v4_candidate_c import CandidateCCurrent
+
+        read = CandidateRG2bSection(inputs, backend)
+        if identity.candidate == "A":
+            from .grc_v4_candidate_a import CandidateACurrent
+
+            point = CandidateACurrent(replace(inputs, geometry=read.geometry, stage="rg2b_section"), backend)
+        else:
+            point = CandidateCCurrent(replace(inputs, geometry=read.geometry, stage="rg2b_section"))
     else:
         raise ValueError("basin native capture is outside selected execution scope")
     return read, point
@@ -332,6 +349,12 @@ def capture(state, role):
         "C_CI",
         "A_CI",
         "A_PC",
+        "A_OS",
+        "C_PC",
+        "C_CI_PC",
+        "A_CI_PC",
+        "C_RG2b",
+        "A_RG2b",
     ):
         raise ValueError("explicit supported basin successor required")
     if role not in ("current", "reset"):
@@ -366,7 +389,7 @@ def capture(state, role):
         ],
     )
     certificate = None
-    if ref.profile.identity_payload.realization == "CI":
+    if ref.profile.identity_payload.realization in ("CI", "CI+PC"):
         selected = read.selected
         if (
             selected.point is not point
@@ -388,6 +411,18 @@ def capture(state, role):
     elif ref.profile.identity_payload.realization == "PC":
         root["certificate"] = read.certificate.bounds.to_dict()
         certificate = "grc9v4-basin-pc-read-sha256:" + digest(root)
+    elif ref.profile.identity_payload.realization == "RG2b":
+        if (point.inputs != replace(inputs, geometry=read.geometry, stage="rg2b_section")
+                or read.certificate.inputs != inputs):
+            raise ValueError("inconsistent full RG2b section capture")
+        if ref.profile.identity_payload.candidate == "A":
+            if point.differential_reference != read.differential_reference:
+                raise ValueError("inconsistent RG2b A backend capture")
+        root.update(recipe=read.to_payload(), selected_inputs=point.inputs.to_payload(),
+                    section_identity=read.identity, certificate=read.certificate.bounds.to_dict(),
+                    levels=read.levels, evaluations=read.evaluations,
+                    error_upper=read.error_upper, enclosure=list(read.enclosure))
+        certificate = "grc9v4-basin-rg2b-section-sha256:" + digest(root)
     rows = GRC9V4PostbeatRows(
         ref.graph.port_graph,
         ref.profile,

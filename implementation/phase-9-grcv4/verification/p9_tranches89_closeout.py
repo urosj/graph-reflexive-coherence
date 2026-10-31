@@ -79,6 +79,8 @@ def record(root):
 
 def peel_sha(root, name, present):
     root = Path(root).resolve()
+    from p910_basin_source_epoch import peel_sha as basin_preimage
+    present = basin_preimage(root, name, present)
     present = maintained_preimage(root, name, present)
     if name not in CHANGED or not (root / PATH).exists():
         return present

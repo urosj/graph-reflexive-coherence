@@ -43,6 +43,7 @@
   <footer>Separate Phase 9 surface · Existing D11 explorer and its accepted records are unchanged.</footer>
 <section><h2>P9-10.1a — baseline basin diagnostics</h2><p>Accepted design and bounded native acceptance for C_OS/C_CI/A_CI/A_PC. P9-10.1a is closed; see P9-10.1c for current support reconciliation.</p><button id="basin-refresh">Inspect accepted claim, debt and contracts</button><p id="basin-status" role="status">Not loaded.</p><div id="basin-output"></div><button id="basin-native-refresh">Inspect native execution evidence</button><p id="basin-native-status" role="status">Not loaded.</p><div id="basin-native-output"></div></section>
 <section><h2>P9-10.1b — expanded-target compatibility</h2><p>Bounded P9-10.1b accepted for four families, with separate exact v1 and basin-successor subjects. See P9-10.1c for bounded P9-10.1 acceptance.</p><button id="targets-refresh">Inspect target identities and compatibility evidence</button><p id="targets-status" role="status">Not loaded.</p><div id="targets-output"></div></section>
+<section><h2>Tranche 10 — remaining-family basin work</h2><p>Explicit family scopes; retained checks do not execute trajectories. Earlier accepted four-family results remain separate.</p><label for="tranche10-family-select">Family</label><select id="tranche10-family-select"></select><button id="tranche10-family-refresh">Inspect family basin evidence</button><p id="tranche10-family-status" role="status">Not loaded.</p><div id="tranche10-family-output"></div></section>
 <section><h2>P9-10.2 — four-family verification</h2><p>Reuse accepted execution and independently check saved operands. No new native steps or replay runs. Accepted for C_OS/C_CI/A_CI/A_PC; the other six basin extensions and G4 remain separate.</p><button id="tranche10-verification-refresh">Inspect verification</button><p id="tranche10-verification-status" role="status">Not loaded.</p><div id="tranche10-verification-output"></div></section>
 <section><h2>P9-10.1c — accepted four-family support</h2><p>Accepted basin and exact-target evidence resolves two bounded holds for C_OS/C_CI/A_CI/A_PC. P9-10.1 is closed for that scope; this panel preserves its historical support checkpoint.</p><button id="tranche10-support-refresh">Inspect accepted four-family support</button><p id="tranche10-support-status" role="status">Not loaded.</p><div id="tranche10-support-output"></div></section>
 </main><script type="module" src="/verification.js"></script>
@@ -51,6 +52,7 @@
 <script type="module" src="/target-compatibility.js"></script>
 <script type="module" src="/tranche10-support.js"></script>
 <script type="module" src="/tranche10-verification.js"></script>
+<script type="module" src="/tranche10-families.js"></script>
 <script type="module" src="/aos.js"></script>
 <script type="module" src="/cpc.js"></script>
 <script type="module" src="/ccipc.js"></script>

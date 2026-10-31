@@ -1,0 +1,42 @@
+{
+  "schema": "p910-arg2b-source-epoch-v1",
+  "predecessor": "35dc5a48",
+  "checker_sha256": "31895b7e84c8a55fdb43375ad363c3ae8ebeddf8e78abd237da779992f6d8f43",
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p9101a_basin_oracle.py": {
+      "before_sha256": "5282cca061985b0a0114828ce46cb60d6a530d6641879b6df7032b2d2a9bc02d",
+      "after_sha256": "e15a9f8df4ec785c1a3726ca8633d96e5a80561f7d118b58a76b47cb815769b2"
+    },
+    "implementation/phase-9-grcv4/verification/p9101c_target_basin.py": {
+      "before_sha256": "ebc6206910efd35e728184d735baca411a9b3cd10fcbb11792d58b6e8c93fc14",
+      "after_sha256": "276cf63b739919ad233fb177ee1e926683cf410bc2cc0bc50fd5433ef983a701"
+    },
+    "implementation/phase-9-grcv4/verification/p910_crg2b_source_epoch.py": {
+      "before_sha256": "ab3b2d3ef35c20a273ba95fbf5a55d4288fd03dbbb86bc921fe9c7d2c5726ace",
+      "after_sha256": "701dbf243b0eaf91e67a7a0fb0d5f7b17c22bd38beebdbdd00cc37cca69af72a"
+    },
+    "implementation/phase-9-grcv4/verification/p910_family_basin.py": {
+      "before_sha256": "9ffab8319153aa52ec6690f21b78d38fda4ad36a48fb56c190054b8e0a54030c",
+      "after_sha256": "8bdb6c7d6932decfc91c736421ee1e2085b537f4f009b7762d3be67763372d0a"
+    },
+    "implementation/phase-9-grcv4/verification/test_p9101b_target_compatibility.py": {
+      "before_sha256": "04d0ce0aeba835e19d437b31f91fd3047588b49d8cad87482c7c6a8ed95fa121",
+      "after_sha256": "0a9c38b861848cf2b4259ac9f7335f9a9ca69311dcc4ba692d195e4251446ae5"
+    },
+    "src/pygrc/models/grc_9_v4_basin.py": {
+      "before_sha256": "d585c742617ec5d3cbeaf1a15458457c51e6e76d2b1329bd9dca9243e7b073c2",
+      "after_sha256": "4956765d188b5190c47e2dd71c1ab372a66740258f0efd494f6bef594d704ebe"
+    },
+    "tests/models/test_grc_9_v4_arg2b_integration.py": {
+      "before_sha256": "d4b10bd779c5d2c56078038db69b4bab1c1cfa179fd09cfb03e9574fada7ab1c",
+      "after_sha256": "7d2672a085a8ac2803fe408886d29b389aa10337b46f6fb8b7d9c40ae2cef3d7"
+    },
+    "tests/models/test_grc_9_v4_basin.py": {
+      "before_sha256": "3f4610919c61d5fc3e2420fbb542d28fe385d63c69f65a5e076a35b3f2b945d6",
+      "after_sha256": "d5da790660368a3754e3501e2f0837ca624e7835d26103c1255bff7f800eebd0"
+    }
+  },
+  "prior_native_paths_unchanged": true,
+  "accepted_execution_rewritten": false,
+  "record_digest": "f5edb7b8b9e6cebd5db79a563f1677818961a7a8fda0a288d0fe0b0acf2d6a5f"
+}

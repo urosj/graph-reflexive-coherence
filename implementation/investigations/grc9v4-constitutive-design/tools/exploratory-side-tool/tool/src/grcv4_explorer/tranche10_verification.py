@@ -29,7 +29,5 @@ def tranche10_verification_source(root, name):
     refs[checker.PATH] = checker.reference(root, checker.PATH)
     if name not in refs or Path(name).is_absolute() or ".." in Path(name).parts:
         raise KeyError("source is not indexed by P9-10.2")
-    raw = (root / name).read_bytes()
-    if checker.sha(raw) != refs[name]["sha256"]:
-        raise ValueError("P9-10.2 source drift")
-    return raw, refs[name]
+    from p910_basin_source_epoch import read_source
+    return read_source(root, refs[name])
