@@ -1,5 +1,32 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## P9-10.3 — validated, acceptance pending (2026-10-31)
+
+Branch: `work/p9-10.3-regressions`, from `98033204`. Production and specification
+bytes are unchanged. The ten bounded P9-10.1a–c/P9-10.2 decisions are reconciled
+by exact v1/v2 target identities, with original numerical evidence retained.
+The [review](./phase-9-grcv4/tranche-10/P9-10.3-Review.md) and
+[record](./phase-9-grcv4/tranche-10/P9-10.3-Regressions.json) separate fresh
+old-family/shared-interface regressions from those reused campaigns. All 99
+regressions pass in four parallel jobs (longest 140.9 seconds); 182 pre-V4
+modules and all specification/package release pairs are unchanged.
+
+Three stale public/dispatcher tests still treated RG2b as unavailable. Their
+successors assert the ten-family scope and test refusal through explicit
+synthetic dispatcher restrictions. Original test/checker bytes remain in Git,
+with a finite source-epoch adapter; accepted execution is not relabelled.
+No numerical law, tolerance, source authority or older production changed.
+Nine pre-existing stale runtime-manifest hashes were refreshed only after
+confirming their files exactly match the accepted entry merge. Ten focused
+evidence-access/drift and historical-closeout checks pass.
+
+Side-tool API `/api/tranche10/regressions`, its browser panel and notebook cell
+`p9103-regressions` inspect retained evidence only. Next: bounded P9-10.3 review
+and acceptance; then P9-10.4 capability/example publication, P9-10.5 scientific
+debt reconciliation and P9-10.6/G4/handoff. CI-root, RG2b C1 and other bounded
+numerical limits stay intact. This checkpoint grants no full conformance or G4.
+
+
 ## A_RG2b Tranche 10 — bounded accepted (2026-10-31)
 
 Implementation `a4706caf` on `work/p9-tranche10-remaining-families` is accepted

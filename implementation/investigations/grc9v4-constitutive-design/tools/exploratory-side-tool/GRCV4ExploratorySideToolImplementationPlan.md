@@ -3515,3 +3515,15 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Bounded A_RG2b acceptance on 2026-10-31 over implementation `a4706caf`;
   original execution and review remain unchanged. All ten individual scoped
   decisions are present; all-ten reconciliation and 10.3–10.6 remain separate.
+
+
+## P9-10.3 — consolidated bounded regressions and preservation
+
+- [x] Show the ten exact bounded acceptance subjects and four fresh regression
+  jobs separately from the reused numerical/charge/replay evidence.
+- [x] Expose retained result and indexed sources in API, browser and notebook;
+  status queries never execute regression suites or native trajectories.
+- [x] Reject source/subject/scope drift and clear stale UI/notebook output.
+- [x] Keep bounded user acceptance, capability publication, scientific debts
+  and G4 distinct; historical family decisions remain unchanged.
+- [ ] Bounded user acceptance of P9-10.3; P9-10.4–10.6 remain separate.

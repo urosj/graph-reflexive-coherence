@@ -29,6 +29,8 @@ def _policy(root):
 
 def _profile_next_gate(views):
     """Display only: consume checked materializer views, never grant authority."""
+    if 'tranche10_regressions' in views:
+        return views['tranche10_regressions']['next_work']
     if 'tranche10_family' in views:
         return views['tranche10_family']['next_work']
     if 'tranche10_verification' in views:
@@ -180,6 +182,8 @@ def verification_status(repo_root: Path) -> dict:
             profile_views['tranche10_verification'] = tranche10_verification_status(root)
             from .tranche10_families import family_basin_status
             profile_views['tranche10_family'] = family_basin_status(root, 'A_RG2b')
+            from .tranche10_regressions import tranche10_regressions_status
+            profile_views['tranche10_regressions'] = tranche10_regressions_status(root)
             from .aos import aos_status
             profile_views['aos_work'] = aos_status(root)
             from .cpc import cpc_status

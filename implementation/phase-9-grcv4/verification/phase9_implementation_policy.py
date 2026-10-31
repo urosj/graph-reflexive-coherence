@@ -4258,3 +4258,16 @@ PATHS |= {
 
 # Bounded A_RG2b acceptance; all-ten reconciliation remains separate.
 PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Acceptance.json")
+
+
+# P9-10.3 retained reconciliation/regressions; no scientific or G4 promotion.
+PATHS.update({
+    PHASE + 'tranche-10/P9-10.3-Regressions.json',
+    PHASE + 'tranche-10/P9-10.3-Review.md',
+    PHASE + 'tranche-10/P9-10.3-TestSourceEpoch.json',
+    PHASE + 'verification/p9103_regressions.py',
+    PHASE + 'verification/p9103_source_epoch.py',
+    PHASE + 'verification/test_p9103_regressions.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/tranche10_regressions.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-regressions.js',
+})

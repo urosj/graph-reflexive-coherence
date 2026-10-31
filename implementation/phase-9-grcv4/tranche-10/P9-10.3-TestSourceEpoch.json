@@ -1,0 +1,26 @@
+{
+  "schema": "p9103-test-source-epoch-v1",
+  "predecessor": "98033204",
+  "checker_sha256": "a60a6d9908422d5fccf6a989161af6f61fffd3cf02b8de13321cbcc6b0312cd2",
+  "sources": {
+    "implementation/phase-9-grcv4/verification/p910_arg2b_source_epoch.py": {
+      "before_sha256": "31895b7e84c8a55fdb43375ad363c3ae8ebeddf8e78abd237da779992f6d8f43",
+      "after_sha256": "e03d55d1bc326247057ea30908a3e0a72d6a91f3161fa008320a466015119e63"
+    },
+    "implementation/phase-9-grcv4/verification/p910_family_basin.py": {
+      "before_sha256": "8bdb6c7d6932decfc91c736421ee1e2085b537f4f009b7762d3be67763372d0a",
+      "after_sha256": "3945312035202bdf0c7021ff2e976228e840d8c914aed112aa061b8e3834c4b9"
+    },
+    "tests/models/test_grc_9_v4_architecture.py": {
+      "before_sha256": "4aabe87b6461e7f3bc376348f02544af07841b433a6672e179595e28a491dc1a",
+      "after_sha256": "0c86dac0d63a6d39f802b2603652496f75e11d49fb44f9b483950c238c138984"
+    },
+    "tests/models/test_grc_9_v4_contracts.py": {
+      "before_sha256": "221ae0baf77b024df8d8e0e2b6c52863c09b9712d477e84c479203f251636a68",
+      "after_sha256": "20e2c89da9c9ac609e799aa82907c61783ebd8a7cae563e0a7d98f2095e5d251"
+    }
+  },
+  "production_changed": false,
+  "accepted_execution_rewritten": false,
+  "record_digest": "6d5fd242d54bdb8b28c8e3f70041a3c2a67a33ea04e3ee216e27e21fbab226b9"
+}

@@ -4668,6 +4668,27 @@ The API/browser/notebook expose these three limits alongside the passing evidenc
 
 ### Tranche 10. Conformance, evidence, and handoff
 
+**P9-10.3 implemented and validated; acceptance pending (2026-10-31).**
+The [bounded review](./phase-9-grcv4/tranche-10/P9-10.3-Review.md) records
+99 passing regressions and all-ten input reconciliation. Three stale unavailable-
+RG2b test expectations are corrected; production/specifications remain unchanged.
+
+**P9-10.3 execution scope (2026-10-31).** On branch
+`work/p9-10.3-regressions`, reconcile the accepted first-four and six separate
+family decisions by exact source and v1/v2 target identities. Reuse their
+numerical/charge/receipt/replay evidence; this is no new expansion or large
+trajectory campaign. Execute four independent focused jobs: pre-V4 generic
+construction/state/step/serialization/imports; native GRC9V3 differential,
+transport, steps and sparks; all-ten public contracts and basin graph pressure;
+and shared transaction/replay/refusal boundaries. Use explicit FLINT for V4
+arithmetic and up to four workers. Preserve all pre-V4 modules (the accepted
+additive model exports are checked separately), current executable release and
+packaged copies, and the accepted Tranches 8–9 records. Fail on source, exact
+subject, test-roster or scope drift. Retained `--check` and side-tool access do
+not rerun these suites. Review/acceptance follows the bounded result;
+P9-10.4 publication, P9-10.5 scientific debts and P9-10.6/G4 remain separate.
+
+
 P9-10.1 closes the two P9-9.6 gaps through the following bounded children,
 before capability publication and final conformance acceptance:
 

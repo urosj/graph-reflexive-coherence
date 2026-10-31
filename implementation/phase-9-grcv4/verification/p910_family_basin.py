@@ -13,6 +13,7 @@ import p910_ccipc_source_epoch as latest
 import p910_acipc_source_epoch as current
 import p910_crg2b_source_epoch as connected
 import p910_arg2b_source_epoch as final_epoch
+import p9103_source_epoch as regression_epoch
 from concurrent.futures import ProcessPoolExecutor
 from copy import deepcopy
 import json
@@ -32,7 +33,7 @@ VERIFY = v.BASE + "verification/"
 SELF = VERIFY + "p910_family_basin.py"
 TEST = VERIFY + "test_p910_aos_basin.py"
 FAMILIES = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
-HISTORICAL = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b")
+HISTORICAL = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
 ALL_REMAINING = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
 PARTS = ("Native", "Target")
 BASELINE = "f2333b32"
@@ -79,7 +80,7 @@ def references(root=ROOT, family="A_OS", *, historical=False):
         names.update(p.relative_to(root).as_posix() for p in (root / VERIFY).glob(pattern))
     if historical:
         require(family in HISTORICAL, "only accepted families select predecessor epochs")
-        epoch = {"A_OS": successor, "C_PC": latest, "C_CI_PC": current, "A_CI_PC": connected, "C_RG2b": final_epoch}[family]
+        epoch = {"A_OS": successor, "C_PC": latest, "C_CI_PC": current, "A_CI_PC": connected, "C_RG2b": final_epoch, "A_RG2b": regression_epoch}[family]
         return [dict(path=n, sha256=epoch.sha(epoch.previous_bytes(root, n))) for n in sorted(names)]
     return [v.reference(root, n) for n in sorted(names)]
 
