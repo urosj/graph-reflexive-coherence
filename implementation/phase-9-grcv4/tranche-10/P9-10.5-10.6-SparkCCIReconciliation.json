@@ -1,0 +1,48 @@
+{
+  "schema": "spark-completion-family-research-reconciliation-v1",
+  "date": "2026-10-31",
+  "authority_record_digest": "6a3ce4ff9190a528779b419645c52d6e4f0d14aaca9dd64f555370d27e726bb7",
+  "debt_ids": [
+    "SC-APP-DEBT-C_CI"
+  ],
+  "forward_obligation_ids": [
+    "SC-CCI-VO-NATIVE-NUMERICS",
+    "SC-CCI-VO-NATIVE-LIFECYCLE"
+  ],
+  "scope": {
+    "SC3_closed_for": [
+      "C_CI"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI"
+    ],
+    "research_reconciliation_complete": true,
+    "P9_10_5_aggregate_closed": false,
+    "P9_10_6_closed": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false
+  },
+  "next_research_family": "C_PC",
+  "native_destination": "P9-9.1a",
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json",
+      "sha256": "34a27ca0fa45454a2edf697d49807cd4c0ab9fc5fbf4627a24cafdae2e07b346"
+    },
+    {
+      "path": "specs/grc-9-v4-spark-completion-applicability-source-manifest.json",
+      "sha256": "984ebac4903725484ba7894ed216f49380b78368ba0f65f813245d28044cb825"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ClaimDebtLedger.json",
+      "sha256": "721bb74aff0ecea3d5ca1c6f80a93a6117360a4324124d9e6c74f2ba9d19f9c5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md",
+      "sha256": "e4af59ef89bb92764c6b133fc30755a5f1a98e7a0e7d80a46df55b10c96ea3ba"
+    }
+  ],
+  "record_digest": "424afd03897d873cbcbef3814fa8b138b8fc6e0a2a13bd93d9465891b2379bdf"
+}

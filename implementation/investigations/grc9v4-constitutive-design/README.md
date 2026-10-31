@@ -3,7 +3,19 @@
 **Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
 **Exploration surface:** ET-C9 accepted as a bounded read-only exploratory tool
 
-## Current successor — spark completion, 2026-10-31
+**Current continuation — 2026-10-31:** [C_CI SC-3 is complete](./decisions/SparkCompletionCCISC3Authority.md)
+for bounded scientific applicability. Three conditional claims and the research
+debt are adjudicated; authority → proposal → paper → specification and the
+side-tool successor are bound. The original C_OS authority remains intact.
+The [current ledger](./evidence/spark-completion/applicability/ClaimDebtLedger.json)
+now has accepted bounded C_OS/C_CI constructions and eight open family debts.
+The independent review's limits and saved-root overlap-consistency caveat remain
+explicit. Native numerical/lifecycle obligations are routed to P9-9.1a.
+**Next is C_PC**, including the complete C/Z state, carrier writes and actual
+transfer. Then C_CI_PC → A_OS → A_CI → A_PC → A_CI_PC → C_RG2b → A_RG2b.
+No all-ten completion or native/G4 grant follows from these two constructions.
+
+## Accepted predecessor — C_OS spark completion, 2026-10-31
 
 SC-1–SC-3 are closed at bounded scientific/design scope. The user accepted the
 [complete C_OS research witness](./evidence/spark-completion/SC2Acceptance.json)

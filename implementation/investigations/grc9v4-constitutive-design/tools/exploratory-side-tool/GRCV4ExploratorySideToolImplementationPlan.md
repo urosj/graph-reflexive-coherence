@@ -3556,3 +3556,19 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Pressure changed claim class/definition, deleted obligations, widened native
   scope, altered propagation and closed-schema edge cases. Retain scientific
   C_OS completion separately from pending P9-9.1a implementation and G4.
+
+## SC-3 — family completion applicability successor
+
+- [x] Admit the [C_CI applicability layer](../../decisions/spark-completion-applicability/Authority.json)
+  above immutable C_OS authority: three conditional claims, three contracts and
+  one resolved bounded scientific debt, with eight family debts still open.
+- [x] Preserve both forward native numerical/lifecycle obligations through normal
+  `debt_lifecycle` queries; plural obligation support preserves singular traces.
+- [x] Bind authority → proposal → paper → specification and reuse the existing
+  completion v2 schema. Retain the bounded review and overlap-consistency limits.
+- [x] Expose `/api/spark-completion/applicability`, indexed source downloads,
+  a browser panel and notebook cell `spark-completion-applicability`; render
+  family dispositions from admitted data and clear stale output on failure.
+- [x] Pressure rehashed scope/claim/debt changes, source and propagation drift,
+  multiple-obligation errors and API/notebook/browser behavior. Native completion
+  and G4 remain pending; C_PC is the next research family.

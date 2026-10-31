@@ -4400,3 +4400,40 @@ PATHS.update({
     'specs/grc-9-v4-spark-completion-source-manifest.json',
     'specs/grc-9-v4-spark-completion.md',
 })
+
+# C_CI scientific completion applicability; no native or accepted-graph grant.
+PATHS.update({
+    INV+'decisions/SparkCompletionAllTenApplicability.md',
+    INV+'decisions/SparkCompletionCCIApplicability.md',
+    INV+'evidence/spark-completion/applicability/AuthorityTraces.json',
+    INV+'evidence/spark-completion/applicability/CCI-current.json.xz',
+    INV+'evidence/spark-completion/applicability/CCI-reset.json.xz',
+    INV+'evidence/spark-completion/applicability/CCIChecks.json',
+    INV+'evidence/spark-completion/applicability/CCIDeclaration.json',
+    INV+'evidence/spark-completion/applicability/ClaimDebtLedger.json',
+    INV+'evidence/spark-completion/applicability/review/CCIIndependentReview.md',
+    INV+'research/spark_completion_ci.py',
+    INV+'research/spark_completion_ci_campaign.py',
+    INV+'scripts/check_spark_completion_applicability.py',
+    INV+'scripts/check_spark_completion_applicability_ci.py',
+    INV+'scripts/test_spark_completion_ci.py',
+})
+
+# C_CI SC-3 scientific authority/propagation and successor query surfaces.
+PATHS.update({
+    'implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md',
+    'implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-applicability/Authority.json',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion-CCI.md',
+    'implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-CCI-proposal.md',
+    'implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIScientificAcceptance.json',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_applicability_sc3.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/SC3SparkApplicabilityAdmission.json',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-applicability.js',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/forensic.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_applicability.py',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md',
+    'specs/grc-9-v4-spark-completion-applicability-source-manifest.json',
+    'specs/grc-9-v4-spark-completion-ci.md',
+})

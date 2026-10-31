@@ -3974,3 +3974,41 @@ now admits the scientific/design successor; native completion/hierarchy stays pe
 - [x] Expose classified claims, partial debt dispositions and contracts through
   the explicit SC-3 side-tool loader, HTTP/browser and notebook; pressure drift
   and scope changes without a repeated numerical campaign.
+
+## All-ten spark-completion applicability — 2026-10-31
+
+[Programme](./decisions/SparkCompletionAllTenApplicability.md) ·
+[Current research ledger](./evidence/spark-completion/applicability/ClaimDebtLedger.json).
+Native implementation and accepted scientific promotion remain separate.
+
+- [x] Preserve accepted SC-1 definition and bounded C_OS completion; identify
+  exact shared premises and family-specific C/W/Z, joint-root and RG obligations.
+- [x] Map all ten applicability dispositions and register the nine family debts.
+- [x] C_CI — [joint-root and full-map derivation](./decisions/SparkCompletionCCIApplicability.md).
+  - [x] Exact uniform selected-root domain on the actual source/target graphs.
+  - [x] Fresh implicit full physical-map contraction and strict self-map on the
+    shared metric ball; complete diagnostic domains on both chiral charts.
+  - [x] Actual CI source beat, fresh whole event root and literal D11 transfer.
+  - [x] Independent current/reset CI approach, certified entry and positive window:
+    current 849 → 851, reset 817 → 819; only current earns one live gain.
+  - [x] Independent Picard/literal-current and finite-segment derivative pressure;
+    reject OS substitution and separate inner-root from physical contraction.
+  - [x] Fresh complete f/H/J checkpoint checks, source/transfer verification and
+    eight false-completion/root controls; replay earns no duplicate gain.
+  - [x] [Independent bounded review PASS](./evidence/spark-completion/applicability/review/CCIIndependentReview.md):
+    preserve its verification limits and identify saved-root overlap as consistency,
+    not independent certification of the saved enclosure.
+  - [x] [Adjudicate scoped CI claims/debt](./decisions/SparkCompletionCCISC3Authority.md),
+    then propagate authority/proposal/paper/spec with pinned sources and inherited v2 schema.
+  - [x] Expose the three conditional claims, research debt and both forward native
+    obligations through the successor forensic API, browser and notebook; preserve C_OS.
+- [ ] C_PC — all C/Z directions, actual carrier read/write and event disposition.
+- [ ] C_CI_PC — coupled root, C/Z return and same-source immediate/carrier writer.
+- [ ] A_OS — stationary W writer and full C/W return plus event lineage.
+- [ ] A_CI — selected joint root and all C/W directions.
+- [ ] A_PC — both independent histories and their own transfer policies.
+- [ ] A_CI_PC — complete joint root/current/W/Z map.
+- [ ] C_RG2b — nonlinear completion-relative section and full-map difference bounds.
+- [ ] A_RG2b — section, stationary writer and C/W stability.
+- [ ] Reconcile ten explicit applicability dispositions; advertise completion
+  only for positively proved and accepted subjects. No automatic native/G4 grant.

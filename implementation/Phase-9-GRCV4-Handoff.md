@@ -1,6 +1,72 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current: SC-3 and final research reconciliation closed — 2026-10-31
+## Current continuation: C_CI SC-3 complete; C_PC next — 2026-10-31
+
+The [C_CI adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md)
+accepts three bounded conditional claims: selected joint root, full physical-map
+trap and actual source-to-completion chain. Current enters at 849 and completes
+at 851; independent reset 817 → 819 earns no live gain. `SC-APP-DEBT-C_CI` is
+resolved for research. Both forward native numerical/lifecycle obligations
+remain pending in P9-9.1a. Authority → proposal → paper → specification is bound;
+the existing v2 schema is reused and accepted C_OS sources are unchanged.
+
+The [review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIIndependentReview.md)
+checked all saved states/classifications and eight root subjects, but did not
+regenerate the whole interval Jacobian or long campaign. Saved/fresh root
+overlap establishes consistency only; proof calculations use fresh certified
+enclosures. Original execution flags remain historical; current adjudication is
+in the explicit successor. No numerical trajectory is rerun by status checks.
+
+Use `/api/spark-completion/applicability`, its browser panel, notebook cell
+`spark-completion-applicability`, or `load_spark_applicability_forensic_context`.
+The older `/api/spark-completion` preserves the C_OS predecessor. The
+[family reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md)
+records this research contribution without closing aggregate P9-10.5/10.6 or G4.
+
+**Next is C_PC completion applicability**, with every independent C/Z direction,
+actual carrier reads/writes, transfer and its own source-to-window chain. Reuse
+accepted definition and mathematics only where hypotheses hold. The other eight
+families remain open; native completion/hierarchy remains separate.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_applicability_sc3.py
+```
+
+### Resume on another checkout
+
+Continue branch `investigation/grc9v4-spark-completion`. Transfer/push the branch
+before fetching it on another machine; a local commit alone is not available
+from the remote. All commands below run from the repository root. C_CI inputs,
+compressed executions, review, authority and propagation are repository files;
+no external review directory or ignored run output is needed for this handoff.
+
+Reuse `.venv`. On a fresh checkout, follow the
+[side-tool bootstrap](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/README.md)
+and install the project research extras:
+
+```bash
+python3 implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/bootstrap.py
+.venv/bin/python -m pip install -e '.[v4,v4-flint]'
+```
+
+The SC-3 `--check` command above is the lean restart check. The focused test
+command also exercises managed Node/browser logic. Ten focused methods (new
+applicability plus predecessor SC-3 suites) passed at this checkpoint; do not
+repeat the long C_OS/C_CI trajectories just to resume.
+
+For C_PC, read the [all-ten programme](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md)
+and [current ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ClaimDebtLedger.json).
+First derive the actual coupled C/Z ordinary map and a candidate stationary
+carrier, then test full-state return including nonzero carrier perturbations.
+Bind a lawful carrier disposition to the actual source/event transfer before
+claiming source-to-completion entry. A Z=0 slice alone is insufficient. Reuse
+SC-1 and applicable proof components; do not restart definition or silently
+carry over a C-only trap. Work remains in the investigation, with no production
+`src/` changes. Use explicit arithmetic/caps, parallel independent jobs where
+useful, and compress evidence above 1 MB; the next machine sets its own worker cap.
+
+## Accepted predecessor: SC-3 research reconciliation — 2026-10-31
 
 The preceding SC-1/SC-2 work was accepted and committed as `4076a440` on
 `investigation/grc9v4-spark-completion`. SC-3 now has an explicit
@@ -16,7 +82,7 @@ four capability debts retain native portions, and site-binding design is resolve
 with a forward native obligation. There is no native completion/hierarchy grant,
 all-ten stability claim or G4 acceptance.
 
-**Next is separately authorized P9-9.1a native implementation.** Use the propagated
+**Downstream is separately authorized P9-9.1a native implementation.** Use the propagated
 contract; first address the full represented-map error, exact charge-slice and
 predicate certificates, then actual window/receipt/hierarchy atomicity and replay.
 Do not repeat the long SC-2 discovery trajectory merely to check documentation.

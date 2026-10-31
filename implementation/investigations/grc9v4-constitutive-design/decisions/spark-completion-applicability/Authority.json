@@ -1,0 +1,269 @@
+{
+  "schema_version": "grc9v4_spark_applicability_authority_v1",
+  "record_id": "GRC9V4-SC3-SPARK-APPLICABILITY-v1",
+  "status": "accepted_bounded_scientific_design",
+  "accepted_on": "2026-10-31",
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion/Authority.json",
+    "sha256": "92e619df2e3c0d49b967f88dd6bbb8580b2f40909e334997c4ae1cdacfb94ea7",
+    "record_digest": "dd2583ca6b0192c9f72f15ed1c01d82b5c2a9de95da9583cbaeafe2530684383"
+  },
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIScientificAcceptance.json",
+    "sha256": "bbe3b65d93a9a7761582b598b8a52b78264f80659443fde8eecd9054b70ff049",
+    "record_digest": "e98d0a784ffc95ad9a76adf0abfd0f494f25f173d88953ad0d49bf8c3626d5d7"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md",
+  "design_sha256": "30fc4959a58754d1995801ad27759c143f3ebd23de23c4d3689ee6f2917a65a9",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "claims": [
+    {
+      "claim_id": "SC-CCI-CL-C-JOINT-ROOT",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "On the actual source/target graphs, C in [0,4]^V and flat infinity radius1/32 give one joint root in the declared domain.",
+      "limits": [
+        "fixed quartic/parameters/graphs",
+        "not global root uniqueness",
+        "not physical-step stability"
+      ]
+    },
+    {
+      "claim_id": "SC-CCI-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The full CI physical map strictly contracts the reused fourteen-dimensional exact-charge metric ball with certified complete spatial basins.",
+      "limits": [
+        "new implicit derivative proof, not OS trajectory transfer",
+        "does not prove event reachability alone",
+        "no native numerical lift"
+      ]
+    },
+    {
+      "claim_id": "SC-CCI-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "Actual CI source beat and literal D11 transfer reach the full CI trap at current target step 849 and complete one new stable child at 851; independent reset entry/window at 817/819 earns no live gain.",
+      "limits": [
+        "fixed quartic/parameters/source/target/shares",
+        "exact equations enclosed with fixed 8192-bit Arb",
+        "not earliest mathematical entry or completion",
+        "research accounting, no native implementation",
+        "no applicability assertion for the other eight families"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-C_CI",
+      "status": "resolved_bounded_scientific",
+      "scope": "One declared C_CI exact-equation construction and its proved domain",
+      "transformation": "Research applicability, review and scoped adjudication are resolved; native capability remains a separate forward obligation.",
+      "resolved_scope": "selected joint root, full fourteen-dimensional relative trap, actual source/event/positive entry/window, local gain one and scoped propagation",
+      "successor_claim_ids": [
+        "SC-CCI-CL-C-JOINT-ROOT",
+        "SC-CCI-CL-C-FULL-TRAP",
+        "SC-CCI-CL-C-COMPLETION"
+      ],
+      "verification_obligation_ids": [
+        "SC-CCI-VO-NATIVE-NUMERICS",
+        "SC-CCI-VO-NATIVE-LIFECYCLE"
+      ],
+      "contributes_to_debt_ids": [
+        "SC-DEBT-ORGANIZATION",
+        "SC-DEBT-STABILITY",
+        "SC-DEBT-NONEMPTY-DOMAIN",
+        "SC-DEBT-TEMPORAL-LIFECYCLE"
+      ],
+      "remaining_work": [
+        "Explicit quartic/profile identity, both-role whole-joint-root admission, entire represented CI-map error, exact represented charge and certified row/seed/barrier/descent predicates; no solver-residual or overlap substitute.",
+        "Fresh committed positive current windows, reset/rebase/disabled/identity-change invalidation, actual event occurrence identity, at-most-once gain, atomic owner/window/hierarchy publication, rollback and replay/import conformance."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ClaimDebtLedger.json"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SC-CCI-O-COMPLETION",
+      "object_role": "Bounded C_CI scientific completion applicability",
+      "accepted_claim_ids": [
+        "SC-CCI-CL-C-JOINT-ROOT",
+        "SC-CCI-CL-C-FULL-TRAP",
+        "SC-CCI-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-CCI-EC-JOINT-ROOT",
+      "parent_object_ids": [
+        "SC-CCI-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CCI-CL-C-JOINT-ROOT"
+      ],
+      "design_section": "## SC-CCI-EC-JOINT-ROOT",
+      "normative_equation_or_contract": "`SC-CCI-CL-C-JOINT-ROOT` is accepted as conditional mathematics. Under the\ndeclared homogeneous quartic binding, only C is independent physical state;\nf, J and H are jointly reconstructed quantities. On each actual source/target\ngraph, for C in [0,4]^V and ||f||_infinity <= 1/32, the map\n\n$$\nH_{ij}(f)=\\delta_{ij}+\\frac{O_{ij}}8 f_i f_j,\\quad\nj_0=-\\frac1{1024}B^T\\left(\\frac1{64}BHB^TC-[(C-2)^3-(C-2)]\\right),\n$$\n\n$$\ny=(\\tfrac34I+HB^TB)^{-1}j_0,\\quad J=j_0+\\tfrac14y,\\quad\nf=F(C,f)=\\tfrac12H^{-1}y\n$$\n\nis a strict self-map and contraction in f. Its exact rational image and\ncontraction bounds are bound by the retained source/target root-domain records.\nThus there is one selected joint root inside the declared ball, not global\nuniqueness of every possible root. B is outward incidence and O_ij counts shared\nedge endpoints. The root supplies both generated geometry and consumed current.\nAn OS predictor/corrector or a current-only capture cannot substitute for it.\n\nThe selected parameters are c0=2, a=mu=1, eta_C=1/1024, duration=32,\nkappa_Phi_C=1/64, tau_C=1, chi_C=zeta_C=kappa_H=1/2, kappa_M_C=0,\nunit measures/weights/reference Hodges and autonomous zero context. This\nextends the existing quartic scientific binding to one proved C_CI subject;\nit neither changes existing zero-site identities nor registers a native evaluator."
+    },
+    {
+      "equation_contract_id": "SC-CCI-EC-FULL-STATE-RETURN",
+      "parent_object_ids": [
+        "SC-CCI-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CCI-CL-C-FULL-TRAP"
+      ],
+      "design_section": "## SC-CCI-EC-FULL-STATE-RETURN",
+      "normative_equation_or_contract": "`SC-CCI-CL-C-FULL-TRAP` is accepted as conditional mathematics for the full map\nT_CI(C)=C-32BJ(C,H(f(C))). Its derivative includes the implicit response\n\n$$\nD_Cf=(I-F_f)^{-1}F_C,\\qquad\nDT_{\\rm CI}=I-32B\\left(J_C+J_f(I-F_f)^{-1}F_C\\right).\n$$\n\nUse the retained exact charge-21 center and metric ball K of radius 2^-20,\nwith P=(A0+11^T/15)^-1 and\nA0=B[I+(3I/4+B^TB)^-1/4]B^T. K has fourteen independent relative dimensions.\nThe fresh whole-box CI derivative and center evaluation certify q_CI<0.997296\nand strict image margin >2.5789e-9. Complete domains {p,private} and\n{satellite2,n2,n8} hold uniformly in both chiral charts, including all\nunqualified routing terminals. Inner-root convergence is not physical stability.\n\nThis reuses the exact metric/domain while proving the actual CI map. It does\nnot reuse OS trajectory entry, assert faster CI convergence or establish\narbitrary-graph/parameter stability. Proof calculations consume fresh certified\nroot enclosures. Overlap with saved f/H/J intervals establishes consistency\nonly; it does not independently certify those saved enclosures."
+    },
+    {
+      "equation_contract_id": "SC-CCI-EC-COMPLETION",
+      "parent_object_ids": [
+        "SC-CCI-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-CCI-CL-C-COMPLETION"
+      ],
+      "design_section": "## SC-CCI-EC-COMPLETION",
+      "normative_equation_or_contract": "`SC-CCI-CL-C-COMPLETION` is accepted as conditional mathematics for the bound\nsource/event/target construction. Apply an actual CI ordinary beat to the exact\nsource prestate, reconstruct its fresh whole joint root and qualified parent,\nthen apply literal D11 expansion with shares (1/64,31/32,1/64), zero core and\nunchanged exterior. The target has fifteen vertices, sixteen edges and exact\ncharge 21. Allocation alone earns no gain. Current reaches K at the first\ncertified step 849, then two positive duration-32 beats complete one new stable\nsatellite child at step 851 with local gain one. The independently executed\nreset comparison enters at 817 and ends at 819, earning no live gain.\n\nThe approach and window enclose exact equations at fixed 8192-bit Arb; the\ntrapping proof uses fixed 512-bit Arb. Compact retained coordinates are outward\n112-bit enclosures for inspection, not a rounded trajectory or exact replay\ncheckpoint. Entry counts are sufficient certified times, not earliest\nmathematical entry. The `first_spatial_gain` field records first observation of\nthe final complete roster, not completion. Two charts do not count two births.\n\nThe independent bounded review checked all 1,670 retained states, 3,340 chart\nclassifications and eight distinct joint-root subjects. It did not independently\nregenerate the full interval implicit Jacobian or replay the long campaign;\nthe repository's executions remain separate evidence. Acceptance preserves\nthese limits and the conditional claim class."
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-CCI-VO-NATIVE-NUMERICS",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Explicit quartic/profile identity, both-role whole-joint-root admission, entire represented CI-map error, exact represented charge and certified row/seed/barrier/descent predicates; no solver-residual or overlap substitute."
+    },
+    {
+      "obligation_id": "SC-CCI-VO-NATIVE-LIFECYCLE",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Fresh committed positive current windows, reset/rebase/disabled/identity-change invalidation, actual event occurrence identity, at-most-once gain, atomic owner/window/hierarchy publication, rollback and replay/import conformance."
+    }
+  ],
+  "source_contract_ids": [
+    "SC-EC-GEOMETRIC-IDENTITY",
+    "SC-EC-FULL-STATE-RETURN",
+    "SC-EC-QUARTIC-SITE",
+    "SC-EC-WINDOW-LIFECYCLE",
+    "D10.2-EC-CI-C-ROOT"
+  ],
+  "family_dispositions": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "carrier read/write and full-state perturbations",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint root plus instantaneous/carrier same-source coupling",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "stationary writer and coupled C/W trap",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint root plus A history",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "both history channels and event dispositions",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "joint current/geometry/history/carrier map",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "nonlinear completion-relative section and full-map Lipschitz bounds",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "not_yet_investigated",
+      "scientific_obligation": "RG section with writer/history perturbations",
+      "native_completion_support": false
+    }
+  ],
+  "scope": {
+    "SC3_closed_for": [
+      "C_CI"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "6a3ce4ff9190a528779b419645c52d6e4f0d14aaca9dd64f555370d27e726bb7"
+}

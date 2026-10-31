@@ -1,5 +1,9 @@
 # GRC Library Specifications
 
+The [C_CI completion applicability extension](grc-9-v4-spark-completion-ci.md)
+and [successor source manifest](grc-9-v4-spark-completion-applicability-source-manifest.json)
+add a bounded joint-root completion construction; native completion remains pending.
+
 The [SC-3 spark-completion successor](grc-9-v4-spark-completion.md),
 [closed schema](grc-9-v4-spark-completion-schema.json) and
 [authority → proposal → paper → spec manifest](grc-9-v4-spark-completion-source-manifest.json)

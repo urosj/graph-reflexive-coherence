@@ -96,7 +96,18 @@ both-role migration/return observations once and reusing receipts/charges for
 Fixed-H and joint-section error bounds remain separate, with no C1 upgrade.
 All ten individual scoped decisions, their bounded P9-10.3 input
 reconciliation/regressions and P9-10.4 publication are now accepted.
-**SC-1–SC-3 scientific research closed (2026-10-31).** The accepted
+## Current continuation: C_CI scientific applicability closed — 2026-10-31
+
+The [C_CI SC-3 adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCISC3Authority.md)
+accepts the bounded joint-root/full-map/source-to-completion construction and
+resolves its scientific research debt. Authority/proposal/paper/spec and typed
+side-tool access are complete. The [family reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md)
+records the contribution to aggregate debts and both forward native obligations.
+The accepted C_OS predecessor remains intact. C_PC is next in the all-ten
+research programme; its complete C/Z directions require their own proof.
+No native completion, hierarchy or G4 acceptance is implied.
+
+**Accepted predecessor: SC-1–SC-3 research (2026-10-31).** The accepted
 [complete witness](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2Acceptance.json)
 supplies a bounded C_OS source → expansion → stable child → completion result
 at target step 902. [SC-3 authority](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC3Authority.md)
@@ -107,7 +118,7 @@ Historical evidence and existing ten-family native support remain unchanged.
 The [research reconciliation for P9-10.5/10.6](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
 closes the investigation's final item. Four completion debts are partially
 resolved for science; site-binding design is resolved with native obligations.
-**Next: P9-9.1a native implementation, separately authorized.** Full represented-
+**Downstream: P9-9.1a native implementation, separately authorized.** Full represented-
 map/constraint/diagnostic certification and atomic lifecycle/hierarchy/replay
 conformance remain necessary. Native completion and G4 are pending; this is not
 aggregate P9-10.5/10.6 closure or an all-ten completion theorem.
@@ -4827,7 +4838,7 @@ specification, claim authority, or numerical tolerance is changed. Before final 
 investigation of spark completion; 10.5 reconciles its obligation and 10.6/G4
 records the reviewed support boundary.
 
-**SC-1–SC-3 scientific research closed (2026-10-31).** The accepted
+**Accepted predecessor: SC-1–SC-3 research (2026-10-31).** The accepted
 [complete witness](./investigations/grc9v4-constitutive-design/evidence/spark-completion/SC2Acceptance.json)
 supplies a bounded C_OS source → expansion → stable child → completion result
 at target step 902. [SC-3 authority](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionSC3Authority.md)
@@ -4838,7 +4849,7 @@ Historical evidence and existing ten-family native support remain unchanged.
 The [research reconciliation for P9-10.5/10.6](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkResearchReconciliation.md)
 closes the investigation's final item. Four completion debts are partially
 resolved for science; site-binding design is resolved with native obligations.
-**Next: P9-9.1a native implementation, separately authorized.** Full represented-
+**Downstream: P9-9.1a native implementation, separately authorized.** Full represented-
 map/constraint/diagnostic certification and atomic lifecycle/hierarchy/replay
 conformance remain necessary. Native completion and G4 are pending; this is not
 aggregate P9-10.5/10.6 closure or an all-ten completion theorem.

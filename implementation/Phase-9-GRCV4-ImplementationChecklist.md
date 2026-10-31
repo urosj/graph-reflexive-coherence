@@ -4541,6 +4541,13 @@ acceptances remain unchanged; each row below records its own bounded evidence.
     Only then return to P9-9.1a implementation, or record scoped deferral.
     - [x] Propagate represented charge/row/error and lifecycle requirements through
       authority → paper → spec before native completion. Preserve the zero-site exclusion.
+  - [x] User selects all-ten completion-applicability research after SC-3,
+    before native completion: [programme and family obligations](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAllTenApplicability.md).
+    Preserve accepted C_OS; C_CI starts the remaining nine. Individual research
+    tasks and dispositions live in the investigation checklist/ledger.
+    - [x] [C_CI scientific SC-3 and research reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCCIReconciliation.md):
+      three conditional claims, resolved bounded applicability debt, additive
+      propagation and both native obligations routed forward. C_PC is next.
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
   - [x] Reconcile the spark-completion scientific/design portions and five

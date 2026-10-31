@@ -940,6 +940,32 @@ does not remove them, promote D10.2 indeterminate traces or grant full conforman
 
 ## P9-10.1a accepted baseline basin diagnostic authority
 
+### Current family applicability after SC-3
+
+C_OS and C_CI now have separately accepted bounded scientific completion
+constructions. The [research ledger](../../../evidence/spark-completion/applicability/ClaimDebtLedger.json)
+tracks eight remaining family debts; C_PC is next. The
+[admitted applicability source](../../../decisions/spark-completion-applicability/Authority.json)
+adds three conditional C_CI claims and preserves both forward native obligations.
+Use the explicit successor context:
+
+```python
+from grcv4_explorer.spark_applicability import load_spark_applicability_forensic_context
+from grcv4_explorer.forensic import contract_provenance, debt_lifecycle
+context = load_spark_applicability_forensic_context(repo_root, side_tool_root)
+contract_provenance(context, "SC-CCI-EC-JOINT-ROOT")
+debt_lifecycle(context, "SC-APP-DEBT-C_CI")
+```
+
+HTTP: `/api/spark-completion/applicability`; the Phase 9 browser has a family
+applicability panel and the notebook has `spark-completion-applicability`.
+Both forward numerical/lifecycle obligations remain pending; no native or G4
+grant is made. Saved/fresh root overlap is consistency only. The review did not
+independently regenerate the full interval Jacobian or long recurrence.
+Historical loaders and `/api/spark-completion` retain the accepted C_OS scope.
+Typed predecessor traces retain their original indeterminate classifications;
+new C_CI authority does not rewrite them.
+
 ### Current SC-3 scientific authority
 
 SC-1–SC-3 are scientifically closed for the declared C_OS construction. The
