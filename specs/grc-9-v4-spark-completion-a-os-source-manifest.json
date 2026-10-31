@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "b19afc7b764a59dc2ef2bec9aee565f96b94e850b2733e44fc31cb9d034d795d",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-ci-pc-source-manifest.json",
+    "sha256": "919d612fb63e1943d766f1c27c305f631a872b3aad3b3f88505b4336ed622453"
+  },
+  "contract_ids": [
+    "SC-AOS-EC-DOMAIN",
+    "SC-AOS-EC-FULL-STATE-RETURN",
+    "SC-AOS-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-os/Authority.json",
+      "sha256": "59247cf5394dfe1733881b60791bcd6ed2e6df1a12070cc430cb1a6966671743"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSSC3Authority.md",
+      "sha256": "4433f6349f8a8d66d00071b1ec871ea31244aa0f08e49e636a48b797509e15a1"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-AOS-proposal.md",
+      "sha256": "0fb5113cbf6bdf0875061a2e63d95652ace6ba63a09ca55479950ed22a411883"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-10-GRC9V4-Spark-Completion-AOS.md",
+      "sha256": "0cedc58edd1dcb2b8ef92b9d10cd4c354c42acb8836c26e03061c189b64305c8"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-a-os.md",
+      "sha256": "21460f69afcccb11fab55c96eb127c755526bb99e01971ffc42c55613ce8ba34"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "83a31f2e1acfcbdb5bfa05a179e88e3e64beb1fbb9e141a492b130b8b089ed4d"
+}

@@ -22,6 +22,7 @@ from grcv4_explorer.spark_applicability import spark_applicability_authority, sp
 from grcv4_explorer.spark_research import spark_research_status, spark_research_source
 from grcv4_explorer.spark_cipc_research import spark_cipc_research_status, spark_cipc_research_source
 from grcv4_explorer.spark_cipc import spark_cipc_authority, spark_cipc_source
+from grcv4_explorer.spark_aos import spark_aos_authority, spark_aos_source
 from grcv4_explorer.spark_aos_research import spark_aos_research_status, spark_aos_research_source
 from grcv4_explorer.spark_pc import spark_pc_authority, spark_pc_source
 from grcv4_explorer.basin_native import basin_native_status, basin_native_source
@@ -138,6 +139,7 @@ class Handler(BaseHTTPRequestHandler):
                             "/api/spark-completion/applicability/research", "/api/spark-completion/applicability/research/source",
                             "/api/spark-completion/applicability/ci-pc", "/api/spark-completion/applicability/ci-pc/source",
                             "/api/spark-completion/applicability/ci-pc/research", "/api/spark-completion/applicability/ci-pc/research/source",
+                            "/api/spark-completion/applicability/a-os", "/api/spark-completion/applicability/a-os/source",
                             "/api/spark-completion/applicability/a-os/research", "/api/spark-completion/applicability/a-os/research/source",
                             "/api/spark-completion/applicability/pc", "/api/spark-completion/applicability/pc/source"}:
             try:
@@ -154,6 +156,8 @@ class Handler(BaseHTTPRequestHandler):
                     authority_reader, source_reader = spark_cipc_authority, spark_cipc_source
                 if request.path.startswith("/api/spark-completion/applicability/ci-pc/research"):
                     authority_reader, source_reader = spark_cipc_research_status, spark_cipc_research_source
+                if request.path in {"/api/spark-completion/applicability/a-os", "/api/spark-completion/applicability/a-os/source"}:
+                    authority_reader, source_reader = spark_aos_authority, spark_aos_source
                 if request.path.startswith("/api/spark-completion/applicability/a-os/research"):
                     authority_reader, source_reader = spark_aos_research_status, spark_aos_research_source
                 if not request.path.endswith("/source"):
@@ -326,7 +330,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -353,6 +357,7 @@ class Handler(BaseHTTPRequestHandler):
                     "spark-cipc.js": "text/javascript",
                     "spark-cipc-research.js": "text/javascript",
                     "spark-aos-research.js": "text/javascript",
+                    "spark-aos.js": "text/javascript",
                     "target-compatibility.js": "text/javascript",
                     "tranche10-support.js": "text/javascript",
                     "tranche10-regressions.js": "text/javascript",

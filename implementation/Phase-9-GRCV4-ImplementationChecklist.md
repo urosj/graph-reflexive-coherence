@@ -4633,7 +4633,8 @@ profile gates remain pending.
 - [x] Record failed inherited allocation and separate declared 1/128,63/64,1/128 construction.
 - [x] Retain current 1039 → 1041 and reset 1022 → 1024 with positive two-beat windows and distinct gain accounting.
 - [x] Check active FLINT optimizations before runs; compress evidence and expose read-only API/browser/notebook.
-- [ ] Scientific adjudication and subsequent authority → proposal/paper → specification propagation.
-- [ ] A_CI next after A_OS adjudication; native P9-9.1a and aggregate G4 remain forward.
+- [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
+  three conditional claims resolve SC-APP-DEBT-A_OS, with native numerical/lifecycle obligations forward.
+- [ ] A_CI is next after accepted A_OS; native P9-9.1a and aggregate G4 remain forward.
 
 See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSValidation.json`. The broader audit's existing basin-manifest drift remains unwaived.

@@ -1,5 +1,48 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: A_OS SC-3 accepted; A_CI next — 2026-10-31
+
+The user accepts the bounded A_OS result and requests commit. Research
+checkpoint `27fa4cb2` preserves the original proof, compressed runs,
+discovery and review. The [A_OS adjudication](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionAOSSC3Authority.md)
+accepts three conditional claims and resolves `SC-APP-DEBT-A_OS` for scientific
+research. Authority → proposal/paper → specification is bound; SC-1 and the
+v2 completion schema are reused. Native numerical and lifecycle obligations
+remain forward at P9-9.1a; hierarchy, aggregate P9-10.5/10.6 and G4 stay open.
+
+The full trap has 14 resource and all 16 conductance directions, with a
+self-consistent stationary writer. Current 1039 → 1041 completes one child;
+reset 1022 → 1024 earns no live gain. The inherited allocation did not enter
+the child trap. Acceptance covers the separately declared 1/128,63/64,1/128
+allocation with unchanged equations and tolerances, preserved old-edge W and
+three new edges seeded at one. The failed attempt and exploratory discovery
+remain disclosed. No trajectory is rerun for acceptance; the 15.3 MB original
+execution evidence remains compressed to 2.0 MB.
+
+Use `/api/spark-completion/applicability/a-os`, the accepted A_OS panel,
+notebook cell `spark-completion-a-os-accepted`, or
+`load_spark_aos_forensic_context`. The historical research endpoint retains
+its original pending flags and exact projection; its metadata-helper download
+serves the reviewed Git bytes through a finite successor. Earlier accepted
+projections remain fixed. The [current family ledger](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSClaimDebtLedger.json)
+has five accepted scientific families and five open families. No separate
+independent-review artifact or long replay is claimed. The broader repository
+audit's pre-existing basin source drift remains documented and unwaived.
+
+**Next is A_CI completion applicability**: establish the selected joint root
+with incoming-W fixed rows, self-consistent stationary W, the full coupled
+C/W return and actual source/event/W-lineage/approach/window chain. The A_OS
+fixed-point geometry may suggest a candidate, but neither its OS derivative
+nor its entry times establish the A_CI ordinary-map result. Continue this
+branch; no A_CI campaign has started.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_a_os_sc3.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_a_os_sc3.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
 ## Current continuation: A_OS completion demonstrated; scientific review next — 2026-10-31
 
 On the existing `investigation/grc9v4-spark-completion` branch, the

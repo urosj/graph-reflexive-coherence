@@ -4559,3 +4559,26 @@ PATHS.update({
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_research.py',
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-aos-research.js',
 })
+
+# User-accepted A_OS completion SC-3; native and aggregate obligations stay forward.
+PATHS.update({
+    INV+'decisions/SparkCompletionAOSSC3Authority.md',
+    INV+'decisions/spark-completion-a-os/Authority.json',
+    INV+'drafts/GRC9V4-spark-completion-AOS-proposal.md',
+    INV+'drafts/2026-10-GRC9V4-Spark-Completion-AOS.md',
+    INV+'evidence/spark-completion/applicability/AOSScientificAcceptance.json',
+    INV+'evidence/spark-completion/applicability/AOSClaimDebtLedger.json',
+    INV+'evidence/spark-completion/applicability/AOSSC3Sources.json',
+    INV+'evidence/spark-completion/applicability/AOSSC3Validation.json',
+    INV+'scripts/check_spark_completion_a_os_sc3.py',
+    INV+'scripts/test_spark_completion_a_os_sc3.py',
+    INV+'tools/exploratory-side-tool/records/SC3SparkAOSAdmission.json',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionAOSAcceptance.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_aos_sc3_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-aos.js',
+    'specs/grc-9-v4-spark-completion-a-os.md',
+    'specs/grc-9-v4-spark-completion-a-os-source-manifest.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAOSReconciliation.md',
+    'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAOSReconciliation.json',
+})

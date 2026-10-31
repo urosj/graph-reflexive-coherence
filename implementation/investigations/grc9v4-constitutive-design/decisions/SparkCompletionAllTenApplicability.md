@@ -3,15 +3,13 @@
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/CCIPCClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/AOSClaimDebtLedger.json).
 
-[C_CI_PC SC-3 is now accepted](./SparkCompletionCCIPCSC3Authority.md), following
-C_OS, C_CI and C_PC. The selected composite root, full C/Z return and actual
-same-source completion chain are adjudicated and propagated.
-[A_OS now has a bounded C/W construction pending review](./SparkCompletionAOSApplicability.md),
-including a separately declared allocation after the inherited allocation failed.
-A_OS adjudication is next; A_CI has not started;
-native completion/hierarchy and aggregate G4 remain separate.
+[A_OS SC-3 is now accepted](./SparkCompletionAOSSC3Authority.md), following
+C_OS, C_CI, C_PC and C_CI_PC. Its self-consistent stationary W, full C/W return
+and separately declared allocation/lineage/completion chain are propagated.
+The failed inherited allocation remains disclosed. A_CI is next; native
+completion/hierarchy and aggregate G4 remain separate.
 
 ## Deliverable and finite order
 
@@ -88,12 +86,11 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current action: A_OS scientific review
+## Current next family: A_CI
 
-The [A_OS construction](./SparkCompletionAOSApplicability.md) now supplies the
-self-consistent stationary writer, all thirty C/W directions and actual
-source/event/old-edge-W lineage/approach/window chain. The inherited allocation
-failed; the separately declared allocation 1/128,63/64,1/128 passed with
-unchanged equations and tolerances. Scientific adjudication remains pending.
-A_CI follows after that adjudication; no A_CI campaign has started. The four
-accepted scientific families and all native/aggregate boundaries are unchanged.
+After accepted A_OS, establish a selected joint A current/geometry root with
+incoming-W fixed rows, self-consistent stationary W, full C/W return and actual
+source/event/W-lineage/approach/window chain. OS staging, an OS derivative or
+an inherited A_OS entry time cannot certify the A_CI ordinary map. Reuse prior
+fixed-point or topology arguments only under their actual hypotheses. Continue
+the existing branch; no A_CI campaign has started.

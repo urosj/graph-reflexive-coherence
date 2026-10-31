@@ -4033,7 +4033,7 @@ Native implementation and accepted scientific promotion remain separate.
     authority → proposal/paper → specification, three conditional claims and
     bounded applicability debt resolved; accepted side-tool forensic traces.
     Native numerical/lifecycle obligations remain forward at P9-9.1a.
-- [ ] A_OS — stationary W writer and full C/W return plus event lineage.
+- [x] A_OS — self-consistent stationary W, all thirty C/W directions and actual completion lineage accepted in `SparkCompletionAOSSC3Authority.md`.
 - [ ] A_CI — selected joint root and all C/W directions.
 - [ ] A_PC — both independent histories and their own transfer policies.
 - [ ] A_CI_PC — complete joint root/current/W/Z map.
@@ -4048,7 +4048,8 @@ Native implementation and accepted scientific promotion remain separate.
 - [x] Record failed inherited allocation and separate declared 1/128,63/64,1/128 construction.
 - [x] Retain current 1039 → 1041 and reset 1022 → 1024 with positive two-beat windows and distinct gain accounting.
 - [x] Check active FLINT optimizations before runs; compress evidence and expose read-only API/browser/notebook.
-- [ ] Scientific adjudication and subsequent authority → proposal/paper → specification propagation.
-- [ ] A_CI next after A_OS adjudication; native P9-9.1a and aggregate G4 remain forward.
+- [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
+  three conditional claims resolve SC-APP-DEBT-A_OS, with native numerical/lifecycle obligations forward.
+- [ ] A_CI is next after accepted A_OS; native P9-9.1a and aggregate G4 remain forward.
 
 See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSValidation.json`. The broader audit's existing basin-manifest drift remains unwaived.

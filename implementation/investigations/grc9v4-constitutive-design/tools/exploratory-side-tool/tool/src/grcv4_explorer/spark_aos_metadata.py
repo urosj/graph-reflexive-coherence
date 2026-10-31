@@ -22,7 +22,8 @@ def checked_successor(root):
     for path,row in rows.items():
         before=subprocess.check_output(['git','show',PREDECESSOR+':'+path],cwd=root)
         need(hashlib.sha256(before).hexdigest()==row['before_sha256'],'A_OS metadata preimage')
-        _bound_file(root,path,row['after_sha256'])
+    from .spark_aos_sc3_metadata import bound_metadata_files as bound_acceptance
+    bound_acceptance(root,{p:r['after_sha256'] for p,r in rows.items()})
     return v
 
 def bound_metadata_files(root,expected):
@@ -33,4 +34,5 @@ def bound_metadata_files(root,expected):
         else:
             row=rows.get(path)
             need(row is not None and row['before_sha256']==sha,'unbound A_OS metadata succession')
-            _bound_file(root,path,row['after_sha256'])
+            from .spark_aos_sc3_metadata import bound_metadata_files as bound_acceptance
+            bound_acceptance(root,{path:row['after_sha256']})
