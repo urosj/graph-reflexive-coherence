@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## C_RG2b Tranche 10 — validated, acceptance pending (2026-10-31)
+## C_RG2b Tranche 10 — bounded accepted (2026-10-31)
 
 Branch `work/p9-tranche10-remaining-families`, after A_CI_PC acceptance
 `a8be36c7`. [Review](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md).
@@ -20,7 +20,10 @@ native steps/replays. Target section error is at most 1.11e-16; total section-aw
 current error stays below 6.87e-15. All sixteen nonzero currents per captured role
 exceed that bound. Twenty-six retained/API/browser/notebook checks pass.
 The finite source successor preserves earlier accepted evidence.
-No acceptance, A_RG2b scope or G4 grant is inferred. A_RG2b is next after review.
+The user accepted implementation `abaa1cbc` on 2026-10-31 in the separate
+[decision](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json). Original
+execution flags and review remain unchanged. A_RG2b P9-10.1a–c → 10.2 is next;
+all-ten Tranche 10 closure and G4 are not inferred.
 
 ## A_CI_PC Tranche 10 — bounded accepted (2026-10-31)
 

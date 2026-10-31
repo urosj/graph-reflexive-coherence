@@ -4239,3 +4239,6 @@ PATHS |= {
     'implementation/phase-9-grcv4/verification/test_p910_crg2b_basin.py',
     'implementation/phase-9-grcv4/verification/test_p910_crg2b_surfaces.py',
 }
+
+# Bounded C_RG2b acceptance over unchanged native execution.
+PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json")

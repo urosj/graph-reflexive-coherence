@@ -4408,7 +4408,7 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
   - [x] User acceptance on 2026-10-31; implementation `1eb7807a`,
     [decision](./phase-9-grcv4/tranche-10/P9-10-ACIPC-Acceptance.json).
     No remaining-family/full-conformance/G4 grant.
-- [ ] C_RG2b bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md).
+- [x] C_RG2b bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md).
   - [x] 10.1a: fresh connected RG section, full selected geometry/query,
     completion and enclosure; independent chain/current checks and lifecycle pressure.
   - [x] 10.1b: exact v1/v2 target four-surface V3 comparison; no invented W/Z,
@@ -4419,7 +4419,9 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
     distinguish fixed-H current error from Lipschitz section error; no C1 claim.
   - [x] Historical source preservation, compressed/referenced evidence,
     side-tool API/browser/notebook, plan and handoff.
-  - [ ] Bounded user acceptance; no A_RG2b, aggregate-conformance or G4 grant.
+  - [x] User acceptance on 2026-10-31; implementation `abaa1cbc`,
+    [decision](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json).
+    No A_RG2b, aggregate-conformance or G4 grant.
 - [ ] A_RG2b: 10.1a–c → 10.2 and bounded acceptance.
 
 ### Consolidated conformance and handoff

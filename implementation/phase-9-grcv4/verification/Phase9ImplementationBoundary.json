@@ -79,15 +79,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "47a57b87e348ff293b000aaf36d5ecb25d90f33ff64c539d03c07b871b535713"
+      "sha256": "9fa570ae54e9140059c7ea73133b374ecfe9f246c040f9d3824d56ffcc05d829"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "b8c23d0be0da00368978a15ba071531ad9ec57df7b12405a36f05d52cf400636"
+      "sha256": "3915eb1cd247c9dcc0b089c0dfe267df254f3804597f60953a0216bafe728ef3"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "defe23ec5558394dc45c359f688b75200c31105994485b7fb0e01f28aff87054"
+      "sha256": "646636d285147913ca95aa616f7aacf0123b800aa69b84b1e5486189da4b4563"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -1291,11 +1291,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
-      "sha256": "ce5b54474057307bb02a1beddfc97b56d9d7a8e132e65b4d03a81dd85f0710cf"
+      "sha256": "6fd8257d01b6b34837735e4aebbaf3afb37b959115a19d2d1055f6b71cb28f91"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
-      "sha256": "d9e0f450af8b03171cf6c2440bfb51312aedc4009a3916d5b6b4adfb283d06d6"
+      "sha256": "9fd5c28651c9ebf63da0b7036a5cc94ddda1fc4dab52a6371c93dc122f6d174e"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/README.md",
@@ -1443,7 +1443,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-families.js",
-      "sha256": "5b9769abbef0ed1611be5e1adb54d439eb56e2aa108278364233c7b19c083a03"
+      "sha256": "8b397a9d10f7f909c257c7061317586d5dcd2b69bb76cdfd9cbd12f3fa5329e1"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/tranche10-support.js",
@@ -1864,6 +1864,10 @@
     {
       "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CPC-Verification.json",
       "sha256": "c323676e07dd7a18f076469aae40154da384c774109a470371eeefe43e113120"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json",
+      "sha256": "b54085818c5b31730287121fffb612f209974bf029325abba8d9ba9a317d0709"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Native.json",
@@ -8679,7 +8683,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/p910_family_acceptance.py",
-      "sha256": "dda61809d8b52f536ee46a85d2502f6b09a1648ae571a9420840d50efad0fdff"
+      "sha256": "d1b56683e6bb970a25848b52f20adff9ddca387050e3cc2f2b8427f956d4888f"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/p910_family_basin.py",
@@ -9727,7 +9731,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "d427efa7936f29bbeff65d7c925bbb07e16c84777ef9246593aac34e3edd8b8e"
+      "sha256": "39538cbab25c5670acbddb5a9caa347676eff6723d16931506c09460ed0084a2"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_specialization_acceptance.py",
@@ -9835,7 +9839,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p910_crg2b_surfaces.py",
-      "sha256": "2e77ad121aab016d3ffdba906cece60d666a9c91b214ab4e960bb7f534c78d97"
+      "sha256": "f3b6d78692832fb6b556e47b4e4a7a6ecc2b59a473637b1489ddb3c8d29a9914"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p910_family_surfaces.py",
@@ -11570,5 +11574,5 @@
       "sha256": "d5ae02c94a9ff0a3ff68976a36549e963688a793c3862dfdc5016c6df9d6cedf"
     }
   ],
-  "record_digest": "820ebd8e4abd094bb547ca5b6dc9fb521819fcd91caf651097b4f1b8e7e38029"
+  "record_digest": "c28138329e0ca22cc898308854497805e6cbaf947af1c2d73312c5d95c433173"
 }

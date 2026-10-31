@@ -1,10 +1,10 @@
 import {canonical} from './verification.js';
 const REVIEWS={A_OS:'485e499f5500670944de798c873b8cab322932984d4e0c52df5f195acf4e6db9',C_PC:'f9937fa25a07eac6e61e06b5c0153232e6b5d6ce2603d58d801780b03e4950b7',C_CI_PC:'de9b3b958432c063db1af9159e60a7f11efe779ead4a3d5a7f7aa8cdbaa34ebb',A_CI_PC:'5273b53bcff71482518ba71cc0fc58809e39667a6e1b19a23860289cf799e34c',C_RG2b:'2a933e93a9edbeddf9e1808154e97f7513a936018d2effc7c361652d788f68d7'};
-const VIEWS={A_OS:'6334c0f67f915efdc91035aa8bdea0c5d8c11c1f11a1b410440848a5922e45df',C_PC:'00b047918e0198c0238b978b358c1d90835e9e38ccd8dfed41cc831068400298',C_CI_PC:'2c691830f6c5227a4ceff4d2640384766f82c05013b416234d06e336101325c3',A_CI_PC:'21f01ac885c69f230abcf88e61db2f48d2842505d037d6f039181536cc9c3e4d',C_RG2b:'43ec60c5558f078d307d10e43b4df0440b4bb866755daf361e5a33803a6a0884'};
+const VIEWS={A_OS:'6334c0f67f915efdc91035aa8bdea0c5d8c11c1f11a1b410440848a5922e45df',C_PC:'00b047918e0198c0238b978b358c1d90835e9e38ccd8dfed41cc831068400298',C_CI_PC:'2c691830f6c5227a4ceff4d2640384766f82c05013b416234d06e336101325c3',A_CI_PC:'21f01ac885c69f230abcf88e61db2f48d2842505d037d6f039181536cc9c3e4d',C_RG2b:'5329d797d77af28b34b4bd339ed3ee0f5ff641f217add57b467145e3664d76ee'};
 
 export async function checkedFamilyBasin(value) {
   const {record_digest,...body}=value;
-  const accepted=['A_OS','C_PC','C_CI_PC','A_CI_PC'].includes(value.family);
+  const accepted=['A_OS','C_PC','C_CI_PC','A_CI_PC','C_RG2b'].includes(value.family);
   const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(canonical(body)));
   const actual=[...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');
   if(actual!==record_digest || record_digest!==VIEWS[value.family] || value.schema!=='p910-family-basin-view-v1' ||

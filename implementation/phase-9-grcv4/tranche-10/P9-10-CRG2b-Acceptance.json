@@ -1,0 +1,53 @@
+{
+  "schema": "p910-family-basin-acceptance-v1",
+  "family": "C_RG2b",
+  "status": "accepted_bounded_family_basin",
+  "accepted_on": "2026-10-31",
+  "user_instruction": "accept and commit",
+  "reviewed_commit": "abaa1cbcd263f4473ffb6fdb43a02c664b9349ff",
+  "checkpoints": [
+    "10.1a",
+    "10.1b",
+    "10.1c",
+    "10.2"
+  ],
+  "user_accepted": true,
+  "P9_10_1_closed": true,
+  "P9_10_2_closed": true,
+  "all_ten_P9_10_1_closed": false,
+  "all_ten_P9_10_2_closed": false,
+  "full_GRC9V4_conformance": false,
+  "G4_accepted": false,
+  "new_support": [],
+  "verification_record_digest": "2a933e93a9edbeddf9e1808154e97f7513a936018d2effc7c361652d788f68d7",
+  "evidence": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Verification.json",
+      "sha256": "0a1ba05e0e4273c56f5ea15ef0b17713c8935a50c92cc60f78b21d47cea4d96c",
+      "record_digest": "f06e7b82d587e53d91407b4e549ca403df7b7c5ee03e0a746176078101e88310"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Native.json",
+      "sha256": "c2b9593e156613d62e3536d8ea707920e8de70539b0b8a0609659d5ee496e791",
+      "record_digest": "2d4e67d24a8b382d42c22c979833a88e58f66004033caba9b701b3050c614747"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Target.json.xz",
+      "sha256": "9b8091d131417ed07a1df9d7f101b1dca6e58001d1f71e7cd9e2bfff72db3463",
+      "record_digest": "5f9b14182fbdb1bd471b70eecdb929939bd29a415456b7ed8acc0e53f3d802f1"
+    }
+  ],
+  "review_sources": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Review.md",
+      "sha256": "cfbf1cddf966a51307e95cfaed25f4a7311e4fede3b1b93b9a070646f6e7c8a0"
+    }
+  ],
+  "remaining_families": [
+    "A_RG2b"
+  ],
+  "scope": "Bounded C_RG2b source/lifecycle and exact 17-node expanded v1/v2 target conformance; fresh connected section with full query, selected H/current, completion, certificate and enclosure, both-role migration/disabled-return basin checks and retained 10.2 verification. Fixed-H and section-aware current error bounds remain distinct; C1 remains unresolved. No independent W or carrier history is introduced. Earlier accepted family scopes remain separate.",
+  "historical_records": "Native and verification records retain their execution-time pending-acceptance flags; this separate decision records user acceptance without a native rerun.",
+  "next_work": "A_RG2b P9-10.1a-c then P9-10.2; reconcile all ten before consolidated P9-10.3-10.6.",
+  "record_digest": "ceaa967a90c13ef566ec719f693593619fa474cae726b57e2746561e1057b37f"
+}

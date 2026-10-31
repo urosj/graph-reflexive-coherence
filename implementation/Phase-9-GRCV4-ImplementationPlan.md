@@ -76,15 +76,16 @@ retained-evidence checks reused accepted replay and runtime receipts, recomputed
 sixteen independent equations and sixteen charge checks, and shared 24
 Python/FLINT charge-kernel evaluations. No native steps or replay runs were
 repeated. A_OS, C_PC, C_CI_PC and A_CI_PC P9-10.1a–c → P9-10.2 are now also
-bounded-accepted. C_RG2b is implemented and validated on the same branch; bounded acceptance is pending:
-reuse its accepted connected completion and exact source/target, capture the
-full section at dt=0 without running a writer, and validate the observed chain
-with the existing independent unreduced edge equations. Bind completion, query,
-selected H/current and enclosure. Keep fixed-H current error separate from the
-Lipschitz section bound; C1 remains unresolved. Run source/lifecycle and target
-compatibility in parallel, capturing both roles at migration/return once and
-reusing those observations/receipts for 10.2. A_RG2b follows bounded acceptance;
-consolidated P9-10.3–10.6 stay separate.
+bounded-accepted. C_RG2b is bounded-accepted on 2026-10-31 over implementation
+`abaa1cbc`; [decision](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json).
+It reuses the accepted connected completion and exact source/target, capturing
+the full section at dt=0 without a writer. Independent unreduced edge equations
+validate the observed chain, with completion, query, selected H/current and
+enclosure bound. Fixed-H current error remains separate from the Lipschitz
+section bound; C1 remains unresolved. Eight tests passed in two parallel FLINT
+jobs; both-role migration/return observations, saved charges and receipts serve
+10.1c/10.2 without duplicate native work. Original execution evidence is unchanged.
+A_RG2b is next; consolidated P9-10.3–10.6 stay separate.
 
 The user selected the sequence below. Step 1 is a completed read-only assessment
 of existing authority, native reconstruction and accepted Tranche 8–9 evidence.
@@ -123,7 +124,7 @@ merely because the checkpoint number changed. Independent retained checks or
 necessary new cases may run in parallel; preserve original execution identities
 and distinguish retained validation from a fresh native run. The bounded
 four-family reconciliation and A_OS/C_PC/C_CI_PC/A_CI_PC extensions are accepted.
-C_RG2b is validated pending bounded acceptance; A_RG2b remains to be implemented.
+C_RG2b is bounded-accepted; A_RG2b remains to be implemented.
 
 The baseline classifier and lifecycle contracts are reusable: the diagnostic
 classifies represented current flow, not stable attractors or physical basin
@@ -148,7 +149,7 @@ uses the role's W and fixed-row backend; this additional bounded native scope
 is accepted separately. C_PC now has declared capture scope and bounded
 conformance evidence accepted separately. C_CI_PC extends the joint-root
 capture with its separately accepted bounded conformance; A_CI_PC now integrates
-the same root with its A backend/history. C_RG2b now has a dedicated validated full-section capture, pending bounded acceptance; A_RG2b capture remains unimplemented. The generic readers already
+the same root with its A backend/history. C_RG2b now has a dedicated full-section capture with separate bounded acceptance; A_RG2b capture remains unimplemented. The generic readers already
 exist; this is capture integration and verification work, not a reason to create
 six different basin laws. The [accepted basin authority](./investigations/grc9v4-constitutive-design/decisions/p9-basin-interface/Authority.json)
 and [specification](../specs/grc-9-v4-basin-interface.md) provide the starting

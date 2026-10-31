@@ -3495,4 +3495,6 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Preserve accepted source epochs and evidence; pressure wrong-query,
   geometry/enclosure/certificate/scope mutations and stale-view clearing.
 - [x] Keep full chains in compressed indexed evidence; expose compact summaries.
-- [ ] Bounded user acceptance. A_RG2b, consolidated 10.3–10.6 and G4 remain separate.
+- [x] Bounded C_RG2b acceptance on 2026-10-31 over implementation `abaa1cbc`;
+  original execution and review remain unchanged. A_RG2b, consolidated
+  10.3–10.6 and G4 remain separate.
