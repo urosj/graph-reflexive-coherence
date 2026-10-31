@@ -1,0 +1,85 @@
+{
+  "schema": "spark-completion-ccipc-declaration-v1",
+  "date": "2026-10-31",
+  "family": "C_CI_PC",
+  "purpose": "bounded completion applicability research; no native implementation or acceptance",
+  "predecessor_commit": "87d2f474",
+  "parameters": {
+    "c0": "2",
+    "a": "1",
+    "mu": "1",
+    "eta_C": "1/1024",
+    "duration": "32",
+    "kappa_Phi_C": "1/64",
+    "tau_C": "1",
+    "chi_C": "1/2",
+    "zeta_C": "1/2",
+    "kappa_H": "1/2",
+    "kappa_M_C": "0",
+    "tau_PC": "32"
+  },
+  "source_resource_preparation": "Exact SC2SourceBeat current/reset prestates; actual new C_CI_PC ordinary beat on current only",
+  "source_carrier_preparation": {
+    "current": "diagonal +2^-16",
+    "reset": "diagonal -2^-17",
+    "offdiagonal": "zero"
+  },
+  "reference_hodges": "identity",
+  "transport_weights": "unit",
+  "context": "zero",
+  "allocation": [
+    "1/64",
+    "31/32",
+    "1/64"
+  ],
+  "carrier_transfer": {
+    "policy_id": "event_loss_and_zero_target_carrier_v1",
+    "disposition": "whole_carrier_reset",
+    "target_initializer_id": "canonical_zero_carrier_v1",
+    "information_loss": "carrier_history_loss",
+    "archive_both_actual_source_histories": true
+  },
+  "domain": {
+    "C": [
+      "0",
+      "4"
+    ],
+    "Z_frobenius_radius": "1/128",
+    "symmetry": true,
+    "star_support": true,
+    "signed_carriers": true
+  },
+  "trap": {
+    "resource_metric": "P=(A0+11^T/n)^-1 on charge-21 slice",
+    "resource_radius": "1/1048576",
+    "carrier_radius": "1/1073741824",
+    "carrier_weight": 1024,
+    "norm": "max(||delta_C||_P, 1024*||delta_Z||_F)",
+    "resource_directions": 14,
+    "carrier_directions": 46
+  },
+  "approach_precision_bits": 8192,
+  "trapping_precision_bits": 512,
+  "maximum_target_steps": 1024,
+  "time_limit_seconds_per_role": 3600,
+  "window_beats": 2,
+  "window_elapsed": "64",
+  "roles": [
+    "current",
+    "reset"
+  ],
+  "parallel_jobs": 2,
+  "automatic_fallback": false,
+  "earlier_family_trajectory_reuse": false,
+  "native_support_added": [],
+  "root_selection": {
+    "causal_flat_radius": "1/32",
+    "proposal_policy": "precision_ladder",
+    "proposal_minimum_bits": 128,
+    "newton_limit_per_stage": 16,
+    "same_source_for_geometry_and_writer": true,
+    "stationary_gain": 2
+  },
+  "priority": "One source/target full-state witness with independent current/reset histories; no duplicate generic large-fixture campaign.",
+  "record_digest": "8c6d158acd6127b4839f39fecf954d25193f54e701c65eece0494ccf1c0c2932"
+}

@@ -4483,3 +4483,31 @@ PATHS.update({
     'specs/grc-9-v4-spark-completion-pc.md',
     'specs/grc-9-v4-spark-completion-pc-source-manifest.json',
 })
+
+# C_CI_PC bounded composite completion research; no new scientific/native acceptance.
+PATHS.update({
+    INV+'decisions/SparkCompletionCCIPCApplicability.md',
+    INV+'research/spark_completion_ci_pc.py',
+    INV+'research/spark_completion_ci_pc_campaign.py',
+    INV+'scripts/check_spark_completion_applicability_ci_pc.py',
+    INV+'scripts/check_spark_completion_ci_pc_reconciliation.py',
+    INV+'scripts/check_spark_completion_ci_pc_retained.py',
+    INV+'scripts/test_spark_completion_ci_pc_retained.py',
+    INV+'scripts/check_spark_completion_ci_pc_research.py',
+    INV+'scripts/test_spark_completion_ci_pc.py',
+    INV+'scripts/test_spark_completion_ci_pc_pressure.py',
+    INV+'scripts/test_spark_completion_ci_pc_surfaces.py',
+    INV+'evidence/spark-completion/applicability/CCIPCDeclaration.json',
+    INV+'evidence/spark-completion/applicability/CCIPCPreflight.json',
+    INV+'evidence/spark-completion/applicability/CCIPC-current.json.xz',
+    INV+'evidence/spark-completion/applicability/CCIPC-reset.json.xz',
+    INV+'evidence/spark-completion/applicability/CCIPCChecks.json',
+    INV+'evidence/spark-completion/applicability/CCIPCResearchProgress.json',
+    INV+'evidence/spark-completion/applicability/CCIPCMetadataSources.json',
+    INV+'evidence/spark-completion/applicability/CCIPCValidation.json',
+    INV+'evidence/spark-completion/applicability/review/CCIPCScientificReview.md',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionCCIPCResearch.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_cipc_research.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_cipc_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-cipc-research.js',
+})

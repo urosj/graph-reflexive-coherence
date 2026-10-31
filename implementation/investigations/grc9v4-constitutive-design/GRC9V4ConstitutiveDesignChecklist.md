@@ -4021,6 +4021,16 @@ Native implementation and accepted scientific promotion remain separate.
     Both native obligations remain pending; accepted API/browser/notebook and
     forensic traces preserve original execution and C_OS/C_CI authority.
 - [ ] C_CI_PC — coupled root, C/Z return and same-source immediate/carrier writer.
+  - [x] [Declare and certify the composite root and sixty-dimensional trap](./decisions/SparkCompletionCCIPCApplicability.md),
+    retaining same-source immediate/carrier coupling and stationary gain two.
+  - [x] Verify the optimization preflight, actual source/event/carrier archive,
+    independent current/reset approach and two positive completion-window beats.
+  - [x] Nine scientific methods and nineteen rehashed subject/completion controls;
+    retain compressed all-state evidence with explicit overlap-consistency limits.
+  - [x] Expose pending research through API, indexed sources, browser and notebook;
+    preserve all accepted predecessor projections through a finite metadata successor.
+  - [ ] Scientific adjudication, then authority → proposal/paper → specification;
+    keep native numerical/lifecycle work forward at P9-9.1a.
 - [ ] A_OS — stationary W writer and full C/W return plus event lineage.
 - [ ] A_CI — selected joint root and all C/W directions.
 - [ ] A_PC — both independent histories and their own transfer policies.

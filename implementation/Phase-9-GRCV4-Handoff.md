@@ -1,5 +1,51 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: C_CI_PC completion demonstrated; review next — 2026-10-31
+
+On `investigation/grc9v4-spark-completion`, the
+[C_CI_PC investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCApplicability.md)
+now supplies a bounded full C/Z construction. Current enters at
+849 and completes at 851;
+independent reset 817 → 819
+earns zero live gain. Both histories use new selected roots, one common source
+for immediate geometry and the persistent writer, and all sixty physical
+state directions. The stationary composite gain-two identity is preserved.
+
+The declared signed-carrier domain is 1/128. The full physical contraction is
+below 0.997358 with positive image margin. Exact source prestates receive a new
+composite ordinary beat and fresh event read; both source histories are archived
+before lawful whole-target zeroing. The two prioritized runs took about
+446/424 seconds,
+within one-hour role caps. Preflight verified active FLINT caches, batched
+solves, identical-subject read reuse and faster root proposals. Final residual
+certificates and physical states remain fixed at 8192 bits.
+
+[Compressed evidence](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCResearchProgress.json)
+retains all 1,670 C/Z states, both chart classifications,
+full read checkpoints and nineteen rejecting subject/completion controls.
+The [repository scientific review](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/review/CCIPCScientificReview.md)
+states the overlap-consistency limits; no independent second reviewer or long
+replay is claimed. The prior repository audit drift remains separate and
+unwaived in the [validation](./investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CCIPCValidation.json).
+
+**Next: explicit C_CI_PC scientific review/adjudication**, then authority →
+proposal/paper → specification. `SC-APP-DEBT-C_CI_PC` remains open pending
+that step. Accepted C_OS/C_CI/C_PC authorities, original executions and validation
+records are unchanged. The finite metadata successor binds current handoff/UI
+updates to exact accepted commit `87d2f474`; accepted predecessor projections
+are preserved. Native P9-9.1a, hierarchy and aggregate P9-10.5/10.6/G4 remain
+separate. A_OS follows after adjudication; it has not started here.
+
+Use `/api/spark-completion/applicability/ci-pc/research`, its browser panel,
+indexed sources or notebook cell `spark-completion-ci-pc-research`. This lean
+restart check verifies retained status without running any trajectory:
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_ci_pc_research.py --check
+```
+
+Earlier continuation entries below retain their historical scopes and flags.
+
 ## Current continuation: C_PC SC-3 accepted; C_CI_PC next — 2026-10-31
 
 The user accepted the bounded C_PC work with “acceopt and commit”. Research

@@ -4556,6 +4556,12 @@ acceptances remain unchanged; each row below records its own bounded evidence.
       [C_PC SC-3 reconciliation](./phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkCPCReconciliation.md);
       three conditional claims and two forward native obligations are exposed
       through the accepted side-tool view. No native completion support is added.
+    - [x] [C_CI_PC bounded composite research](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCCIPCApplicability.md):
+      selected same-source root/geometry/writer, all sixty C/Z directions,
+      current 849 → 851
+      and independent reset 817 → 819;
+      optimized preflight, compressed evidence and read-only side-tool inspection.
+      Scientific adjudication and propagation remain pending; no native grant.
 - [ ] P9-10.5: Reconcile inherited scientific debts without upgrading source
   claims from test coverage alone, including the four named completion debts.
   - [x] Reconcile the spark-completion scientific/design portions and five

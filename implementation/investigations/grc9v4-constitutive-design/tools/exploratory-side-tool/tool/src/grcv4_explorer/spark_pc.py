@@ -39,18 +39,19 @@ def checked_metadata_successor(root):
          and not value['execution_relabelled'], 'C_PC acceptance changed execution scope')
     rows = {r['path']: r for r in value['sources']}
     need(len(rows) == len(value['sources']), 'duplicate acceptance metadata path')
+    from .spark_cipc_metadata import bound_metadata_files
+    bound_metadata_files(root, {path:row['after_sha256'] for path,row in rows.items()})
     for path, row in rows.items():
         before = subprocess.check_output(['git', 'show', REVIEWED_COMMIT+':'+path], cwd=root)
         need(hashlib.sha256(before).hexdigest() == row['before_sha256'], 'reviewed metadata differs')
-        _bound_file(root, path, row['after_sha256'])
     validation = load_json_object(root / (INV+'evidence/spark-completion/applicability/CPCValidation.json'))
     need(validation['record_digest'] == record_digest(validation, 'record_digest'), 'original validation digest')
     for ref in validation['sources']:
         actual = file_sha256(root / ref['path'])
         if actual != ref['sha256']:
             row = rows.get(ref['path'])
-            need(row is not None and row['before_sha256'] == ref['sha256']
-                 and row['after_sha256'] == actual, 'unbound validation metadata successor')
+            need(row is not None and row['before_sha256'] == ref['sha256'],
+                 'unbound validation metadata successor')
     return value
 
 
