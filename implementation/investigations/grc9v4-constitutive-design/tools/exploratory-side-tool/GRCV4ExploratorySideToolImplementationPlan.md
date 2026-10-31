@@ -3498,3 +3498,18 @@ claims stay outside the bounded result. See [usage](./docs/ARG2bTenthRealization
 - [x] Bounded C_RG2b acceptance on 2026-10-31 over implementation `abaa1cbc`;
   original execution and review remain unchanged. A_RG2b, consolidated
   10.3–10.6 and G4 remain separate.
+
+
+## Remaining-family Tranche 10 — A_RG2b
+
+- [x] Expose the bounded A_RG2b review through the family API/browser selector,
+  indexed compressed evidence and notebook `p910-arg2b-basin`.
+- [x] Bind C/Y query, W, full H/current, fixed-row A backend, completion and
+  certificate; expose log-coordinate error, separate fixed-H/section bounds.
+- [x] Reuse both-role migration/disabled-return captures, saved charge/receipt
+  checks and executed replay; distinguish return initialization from W preservation.
+- [x] Preserve accepted source epochs and original evidence; reject altered
+  histories/backends/chains/enclosures/log-error scope and clear stale views.
+- [x] Keep C1 unresolved and native execution out of retained status queries;
+  an empty remaining-family list does not grant aggregate closure or G4.
+- [ ] Bounded user acceptance, then all-ten reconciliation and 10.3–10.6 separately.

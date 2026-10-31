@@ -228,6 +228,8 @@ def root_payload(read, point):
     elif real == "RG2b":
         require(point.inputs == replace(read.inputs, geometry=read.geometry, stage="rg2b_section")
                 and read.certificate.inputs == read.inputs, "native full RG2b section ownership")
+        if point.inputs.geometry.reference.profile.identity_payload.candidate == "A":
+            require(point.differential_reference == read.differential_reference, "native RG2b A backend")
         root.update(recipe=read.to_payload(), selected_inputs=point.inputs.to_payload(),
                     section_identity=read.identity, certificate=read.certificate.bounds.to_dict(),
                     levels=read.levels, evaluations=read.evaluations,

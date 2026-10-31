@@ -12,6 +12,7 @@ import p910_cpc_source_epoch as successor
 import p910_ccipc_source_epoch as latest
 import p910_acipc_source_epoch as current
 import p910_crg2b_source_epoch as connected
+import p910_arg2b_source_epoch as final_epoch
 from concurrent.futures import ProcessPoolExecutor
 from copy import deepcopy
 import json
@@ -30,8 +31,8 @@ BASE = v.BASE + "tranche-10/"
 VERIFY = v.BASE + "verification/"
 SELF = VERIFY + "p910_family_basin.py"
 TEST = VERIFY + "test_p910_aos_basin.py"
-FAMILIES = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b")
-HISTORICAL = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC")
+FAMILIES = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
+HISTORICAL = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b")
 ALL_REMAINING = ("A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b")
 PARTS = ("Native", "Target")
 BASELINE = "f2333b32"
@@ -48,14 +49,14 @@ def references(root=ROOT, family="A_OS", *, historical=False):
              VERIFY + "p9101a_basin_oracle.py", VERIFY + "p9101c_target_basin.py",
              VERIFY + "test_p9101a_basin_pressure.py", VERIFY + "test_p9101b_target_compatibility.py",
              VERIFY + "p9102_verification.py", VERIFY + "p9101b_target_compatibility.py"}
-    if family in ("C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b"):
+    if family in ("C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"):
         short = family.replace("_", "")
         names.difference_update({PRIOR, TARGET})
         names.update({VERIFY + "test_p910_" + short.lower() + "_basin.py",
                       *predecessor_paths(family), successor.PATH, successor.SELF})
-    if family in ("C_CI_PC", "A_CI_PC", "C_RG2b"):
+    if family in ("C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"):
         names.update({latest.PATH, latest.SELF})
-    if family in ("A_CI_PC", "C_RG2b"):
+    if family in ("A_CI_PC", "C_RG2b", "A_RG2b"):
         names.update({current.PATH, current.SELF})
     if family == "C_RG2b":
         import p9_crg2b_campaign as connected_source
@@ -64,13 +65,21 @@ def references(root=ROOT, family="A_OS", *, historical=False):
         names.update({connected.PATH, connected.SELF, VERIFY + "p910_crg2b_basin_oracle.py"})
         names.update(p.relative_to(root).as_posix() for pattern in ("p9_crg2b*.py", "p984b_crg2b*.py")
                      for p in (root / VERIFY).glob(pattern))
+    if family == "A_RG2b":
+        import p9_arg2b_campaign as connected_a_source
+        names.update(connected_a_source.paths())
+        names.update({connected_a_source.INPUTS, connected_a_source.BASE + "D94Allocation.json",
+                      connected.PATH, connected.SELF, final_epoch.PATH, final_epoch.SELF,
+                      VERIFY + "p910_arg2b_basin_oracle.py"})
+        names.update(p.relative_to(root).as_posix() for pattern in ("p9_arg2b*.py", "p984b_arg2b*.py")
+                     for p in (root / VERIFY).glob(pattern))
     for pattern in ("src/pygrc/**/*.py", "src/pygrc/**/*.json", "tests/models/test_grc*.py"):
         names.update(p.relative_to(root).as_posix() for p in root.glob(pattern))
     for pattern in ("test_p980*.py", "verify_p983a_aos_oracle.py"):
         names.update(p.relative_to(root).as_posix() for p in (root / VERIFY).glob(pattern))
     if historical:
         require(family in HISTORICAL, "only accepted families select predecessor epochs")
-        epoch = {"A_OS": successor, "C_PC": latest, "C_CI_PC": current, "A_CI_PC": connected}[family]
+        epoch = {"A_OS": successor, "C_PC": latest, "C_CI_PC": current, "A_CI_PC": connected, "C_RG2b": final_epoch}[family]
         return [dict(path=n, sha256=epoch.sha(epoch.previous_bytes(root, n))) for n in sorted(names)]
     return [v.reference(root, n) for n in sorted(names)]
 
@@ -78,7 +87,7 @@ def references(root=ROOT, family="A_OS", *, historical=False):
 def predecessor_paths(family):
     short = family.replace("_", "")
     return (PRIOR.replace("AOS", short),
-            v.BASE + "tranche-8/crg2b-native/9.1b-integration.json.xz" if family == "C_RG2b"
+            v.BASE + "tranche-8/" + short.lower() + "-native/9.1b-integration.json.xz" if family in ("C_RG2b", "A_RG2b")
             else TARGET.replace("AOS", short))
 
 
@@ -203,7 +212,8 @@ def consolidate(family):
         target_compatibility=target["evidence"]["target_compatibility"],
         direct_target=exact_target(target), verification=verification_checks(target),
         historical_evidence_relabelled=False,
-        next_work=f"Bounded {family} P9-10.1a-c and P9-10.2 review; then {ALL_REMAINING[ALL_REMAINING.index(family)+1]} in the agreed six-family order."))
+        next_work=("Bounded A_RG2b P9-10.1a-c and P9-10.2 review; then reconcile all ten before consolidated P9-10.3-10.6."
+                   if family == "A_RG2b" else f"Bounded {family} P9-10.1a-c and P9-10.2 review; then {ALL_REMAINING[ALL_REMAINING.index(family)+1]} in the agreed six-family order.")))
     validate(value)
     # The final view references the native parts; the repeated target payload is
     # removed from disk and reconstructed exactly by check() using its bound part.

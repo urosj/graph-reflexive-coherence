@@ -53,6 +53,7 @@ def restore_state(payload, family):
             C_CI_PC="GRC9V4CCIPCState",
             A_CI_PC="GRC9V4ACIPCState",
             C_RG2b="GRC9V4CRG2bState",
+            A_RG2b="GRC9V4ARG2bState",
         )[family],
     )
     return cls(
@@ -155,11 +156,14 @@ def capture(model, label):
 
     with ExitStack() as stack:
         stack.enter_context(patch.object(basin, "_read_once", side_effect=spy))
-        if saved.FAMILY == "C_RG2b":
-            import p910_crg2b_basin_oracle as section_oracle
+        if saved.FAMILY in ("C_RG2b", "A_RG2b"):
+            if saved.FAMILY == "A_RG2b":
+                import p910_arg2b_basin_oracle as section_oracle
+            else:
+                import p910_crg2b_basin_oracle as section_oracle
             chains = stack.enter_context(section_oracle.capture_chains())
         snapshot = model.snapshot()
-    if saved.FAMILY == "C_RG2b":
+    if saved.FAMILY in ("C_RG2b", "A_RG2b"):
         require(len(chains) == 2, "one section chain per captured role")
     require(len(reads) == 2, "exactly two independently read roles")
     require(snapshot["owner"]["state"] == before, "saved snapshot authority")
@@ -190,7 +194,8 @@ def capture(model, label):
                 mechanisms[role] = "full_J_H_root_domain_certificate_bound"
         elif real == "RG2b":
             require(point.inputs.geometry == read.geometry, "complete section geometry")
-            mechanisms[role] = "fresh_connected_section_query_completion_enclosure_bound_no_C1"
+            mechanisms[role] = ("fresh_connected_C_Y_section_W_backend_log_error_bound_no_C1"
+                                if saved.FAMILY == "A_RG2b" else "fresh_connected_section_query_completion_enclosure_bound_no_C1")
         else:
             require(
                 read.inputs.current.Z_4 == getattr(saved.inputs, role).Z_4,
@@ -407,11 +412,14 @@ def validate(value, old, *, equations=False):
                     == "grc9v4-basin-joint-root-sha256:" + oracle.digest(selected),
                     "joint geometry/certificate drift",
                 )
-            elif family == "C_RG2b":
+            elif family in ("C_RG2b", "A_RG2b"):
                 require(observed["binding"]["root_certificate_binding"]
                         == "grc9v4-basin-rg2b-section-sha256:" + oracle.digest(selected),
                         "section certificate binding drift")
-                import p910_crg2b_basin_oracle as section_oracle
+                if family == "A_RG2b":
+                    import p910_arg2b_basin_oracle as section_oracle
+                else:
+                    import p910_crg2b_basin_oracle as section_oracle
                 section_oracle.validate(selected, case["role_equations"][role], numerics=equations)
             else:
                 require(recipe_inputs["H1_form"] == h, "selected geometry drift")
@@ -446,7 +454,7 @@ def validate(value, old, *, equations=False):
                 and Q(eq["current_error_upper"]) < Q(1, 2**40),
                 "current bound scope",
             )
-            if equations and family != "C_RG2b":
+            if equations and family not in ("C_RG2b", "A_RG2b"):
                 point = NS(
                     current=NS(values=values),
                     inputs=NS(

@@ -4422,7 +4422,19 @@ acceptances remain unchanged; each row below needs its own bounded evidence.
   - [x] User acceptance on 2026-10-31; implementation `abaa1cbc`,
     [decision](./phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json).
     No A_RG2b, aggregate-conformance or G4 grant.
-- [ ] A_RG2b: 10.1a–c → 10.2 and bounded acceptance.
+- [ ] A_RG2b bounded closure — [review](./phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md).
+  - [x] 10.1a: fresh joint C/Y section with Y=512 log W, full selected H/current,
+    fixed-row A backend, completion/certificate/enclosure and log-coordinate error;
+    W discrimination, independent equations and full lifecycle/rollback pressure.
+  - [x] 10.1b: exact v1/v2 target four-surface V3 comparison; explicit A-history
+    archive/loss and independent return initializer, with no carrier channel.
+  - [x] 10.1c: both roles at policy migration and disabled return, captured once
+    during compatibility execution; complete section/row/classification binding.
+  - [x] 10.2: reuse saved charges, receipts and executed replay; distinguish
+    fixed-H current from joint-section error. C1 remains unresolved.
+  - [x] Historical source preservation, compressed/referenced evidence,
+    side-tool API/browser/notebook, plan and handoff.
+  - [ ] Bounded user acceptance; all-ten reconciliation and 10.3–10.6 remain separate.
 
 ### Consolidated conformance and handoff
 

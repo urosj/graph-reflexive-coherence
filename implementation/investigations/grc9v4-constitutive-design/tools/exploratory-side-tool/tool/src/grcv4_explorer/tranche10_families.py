@@ -6,7 +6,8 @@ REVIEWS = {"A_OS": "485e499f5500670944de798c873b8cab322932984d4e0c52df5f195acf4e
            "C_PC": "f9937fa25a07eac6e61e06b5c0153232e6b5d6ce2603d58d801780b03e4950b7",
            "C_CI_PC": "de9b3b958432c063db1af9159e60a7f11efe779ead4a3d5a7f7aa8cdbaa34ebb",
            "A_CI_PC": "5273b53bcff71482518ba71cc0fc58809e39667a6e1b19a23860289cf799e34c",
-           "C_RG2b": "2a933e93a9edbeddf9e1808154e97f7513a936018d2effc7c361652d788f68d7"}
+           "C_RG2b": "2a933e93a9edbeddf9e1808154e97f7513a936018d2effc7c361652d788f68d7",
+           "A_RG2b": "99de75ccbb9baf13f245370d5dc60b0cfb77b7a26239735d6e93c02ef5396579"}
 
 
 def checker(root):
@@ -39,7 +40,7 @@ def family_basin_status(root, family="A_OS"):
         native_tests=value["native_tests"], exact_targets={k: value["target_compatibility"][k]["subject"] for k in ("v1", "v2")},
         boundaries=[dict(label=case["label"], role_equations=({role: {k: v for k, v in eq.items() if k != "section_record"}
                                         for role, eq in case["role_equations"].items()}
-                                       if family == "C_RG2b" else case["role_equations"]),
+                                       if family in ("C_RG2b", "A_RG2b") else case["role_equations"]),
                          realization_checks=case["realization_checks"],
                          observation_digests={role: case["observations"][role+"_observation"]["observation_digest"]
                                               for role in ("current", "reset")})
@@ -49,7 +50,7 @@ def family_basin_status(root, family="A_OS"):
         limits=["represented_flow_not_attractor", "exact_subjects_not_family_wide_conformance",
                 "fixed_geometry_bounds_not_uniform_trajectory_or_exact_CI_root", "no_G4_or_new_support"],
         next_work=value["next_work"])
-    if family == "C_RG2b":
+    if family in ("C_RG2b", "A_RG2b"):
         view["limits"] = ["represented_flow_not_attractor", "exact_subjects_not_family_wide_conformance",
                           "fixed_H_current_error_separate_from_Lipschitz_section_error",
                           "C1_unresolved_no_universal_exact_section_signs", "no_G4_or_new_support"]

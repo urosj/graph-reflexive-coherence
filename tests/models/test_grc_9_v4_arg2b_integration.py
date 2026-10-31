@@ -154,20 +154,20 @@ class ARG2bPublic(public.PublicTests):
             late_failure_atomic=True, stale_source_rejected=True, tampered_state_rejected=True,
             negative_duration_rejected=True)
 
-    def test_arg2b_scope_does_not_enable_remaining_families_or_basin_policy(self):
-        self.assertEqual(set(GRC9V4.execution_scope()), {"C_OS", "C_CI", "A_CI", "A_PC", "A_OS", "C_PC", "C_CI_PC", "A_CI_PC", "C_RG2b", "A_RG2b"})
+    def test_arg2b_basin_requires_explicit_policy_successor(self):
         model = self.model()
+        before = model.configuration
+        self.assertNotIn("basin_attributes", model.compute_observables())
+        result = model.migrate_basin_policy("arg2b-explicit-basin")
+        self.assertTrue(result.committed, result.failure)
+        self.assertEqual(model.configuration.current, before.current)
+        self.assertEqual(model.configuration.reset, before.reset)
+        self.assertNotEqual(model.configuration.specialization.specialization_id,
+                            before.specialization.specialization_id)
+        self.assertIn("basin_attributes", model.compute_observables())
         self.assertFalse(model.support_status()["full_GRC9V4_conformance"])
-        before = model.snapshot()
-        try:
-            result = model.migrate_basin_policy("arg2b-unselected-basin")
-        except ValueError:
-            pass
-        else:
-            self.assertFalse(result.committed)
-        self.assertEqual(model.snapshot(), before)
         public.EVIDENCE["scope"] = dict(execution_families=list(GRC9V4.execution_scope()),
-            A_RG2b_basin_migration_rejected=True, whole_publication_unchanged=True,
+            A_RG2b_explicit_basin_successor=True, both_roles_preserved=True,
             full_GRC9V4_conformance=False)
 
 

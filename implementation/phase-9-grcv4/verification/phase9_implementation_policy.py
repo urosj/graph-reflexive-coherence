@@ -4242,3 +4242,16 @@ PATHS |= {
 
 # Bounded C_RG2b acceptance over unchanged native execution.
 PATHS.add("implementation/phase-9-grcv4/tranche-10/P9-10-CRG2b-Acceptance.json")
+
+# A_RG2b joint section/history basin capture; acceptance and all-ten closure are separate.
+PATHS |= {
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Native.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Target.json.xz',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Verification.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-SourceEpochs.json',
+    'implementation/phase-9-grcv4/tranche-10/P9-10-ARG2b-Review.md',
+    'implementation/phase-9-grcv4/verification/p910_arg2b_source_epoch.py',
+    'implementation/phase-9-grcv4/verification/p910_arg2b_basin_oracle.py',
+    'implementation/phase-9-grcv4/verification/test_p910_arg2b_basin.py',
+    'implementation/phase-9-grcv4/verification/test_p910_arg2b_surfaces.py',
+}

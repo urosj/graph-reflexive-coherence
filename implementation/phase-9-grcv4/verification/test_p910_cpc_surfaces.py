@@ -97,7 +97,7 @@ import {createHash} from 'node:crypto';
 import {canonical} from './verification.js';
 import {checkedFamilyBasin,familyBasinLoader} from './tranche10-families.js';
 const v=JSON.parse(readFileSync(0,'utf8'));await checkedFamilyBasin(v);
-for(const change of [x=>x.family='A_RG2b',x=>x.user_accepted=!v.user_accepted,x=>x.G4_accepted=true,
+for(const change of [x=>x.family='not_a_family',x=>x.user_accepted=!v.user_accepted,x=>x.G4_accepted=true,
  x=>x.boundaries[0].role_equations.current.geometry_residual_upper='1']){
  const bad=structuredClone(v);change(bad);const {record_digest,...body}=bad;
  bad.record_digest=createHash('sha256').update(canonical(body)).digest('hex');

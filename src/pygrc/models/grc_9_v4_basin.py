@@ -325,7 +325,12 @@ def _read_once(inputs, backend):
         from .grc_v4_candidate_c import CandidateCCurrent
 
         read = CandidateRG2bSection(inputs, backend)
-        point = CandidateCCurrent(replace(inputs, geometry=read.geometry, stage="rg2b_section"))
+        if identity.candidate == "A":
+            from .grc_v4_candidate_a import CandidateACurrent
+
+            point = CandidateACurrent(replace(inputs, geometry=read.geometry, stage="rg2b_section"), backend)
+        else:
+            point = CandidateCCurrent(replace(inputs, geometry=read.geometry, stage="rg2b_section"))
     else:
         raise ValueError("basin native capture is outside selected execution scope")
     return read, point
@@ -349,6 +354,7 @@ def capture(state, role):
         "C_CI_PC",
         "A_CI_PC",
         "C_RG2b",
+        "A_RG2b",
     ):
         raise ValueError("explicit supported basin successor required")
     if role not in ("current", "reset"):
@@ -409,6 +415,9 @@ def capture(state, role):
         if (point.inputs != replace(inputs, geometry=read.geometry, stage="rg2b_section")
                 or read.certificate.inputs != inputs):
             raise ValueError("inconsistent full RG2b section capture")
+        if ref.profile.identity_payload.candidate == "A":
+            if point.differential_reference != read.differential_reference:
+                raise ValueError("inconsistent RG2b A backend capture")
         root.update(recipe=read.to_payload(), selected_inputs=point.inputs.to_payload(),
                     section_identity=read.identity, certificate=read.certificate.bounds.to_dict(),
                     levels=read.levels, evaluations=read.evaluations,
