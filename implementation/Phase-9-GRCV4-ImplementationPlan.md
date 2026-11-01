@@ -7,10 +7,12 @@ Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
 spark research. Planning was committed as `77a777ce`; P9-9.1a.1 now has a
 [concrete implementation map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json),
-pending review. All ten family chains and thirty native obligations are mapped.
-No production code or native trajectory has changed. Next is P9-9.1a.2:
-resolve the explicit conservative resource/continuity representation and then
-implement the C_OS quartic/numerical bridge. Minimal atomic new-child registration
+committed as `f2d776d7`. All ten family chains and thirty native obligations are mapped.
+P9-9.1a.2 now implements the explicit exact-resource/FLINT C_OS numerical bridge;
+its [review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
+[bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) are pending review.
+Next is P9-9.1a.3, certificate and atomic lifecycle integration. No full native
+trajectory or completion is claimed. Minimal atomic new-child registration
 belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
 scope; the selected native programme does not reopen their accepted results.
 
@@ -4612,6 +4614,8 @@ rules. This is an engineering handoff, not another scientific-definition gate.
    Exact certificate-coordinate algebra gives a sufficient charge-tangent
    componentwise error threshold about 1.52791e-9, not an actual native error
    bound. The .2 representation decision and full-step certification remain open.
+   This is the historical .1 finding; the explicit .2 successor below resolves
+   the representation and numerical bound, retaining actual entry as a runtime check.
 2. **P9-9.1a.2 — C_OS dynamics and numerical bridge.** Implement the selected
    quartic through the actual source/event/ordinary native maps. Prefer the
    existing FLINT/Arb machinery with an explicit policy. Establish a uniform
@@ -4623,6 +4627,15 @@ rules. This is an engineering handoff, not another scientific-definition gate.
    silently repair charge, widen tolerances or assume either binary64 adequacy
    or an 8192-bit production requirement. Native source-to-entry error control
    is separate from the invariant-domain argument after entry.
+   **Implemented, review pending:** exact-rational resource/charge successors,
+   explicit FLINT policy with final edge-flux rounding only, source and event
+   transfer, full OS stages and fresh final reads. Uniform certificate-norm error
+   <=4.39102e-31 is below margin 0.00457383; exact diagnostics add zero error.
+   Five bounded native kernel steps and independent exact/Arb comparisons pass.
+   Source/event errors are checked separately; actual native membership is the
+   entry contract, not an assumed accumulated shadow bound or imported state.
+   The side-tool has a separate native numerical evidence surface. Public
+   completion/lifecycle and full source-to-entry execution remain .3/.5.
 3. **P9-9.1a.3 — certificates, geometric children and atomic lifecycle.** Consume
    immutable prevalidated certificates bound to the exact graph, profile,
    parameters, context/reference, charge, duration, full C/W/Z domain and role.

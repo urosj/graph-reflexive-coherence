@@ -29,6 +29,7 @@ from grcv4_explorer.spark_crg2b import spark_crg2b_authority, spark_crg2b_source
 from grcv4_explorer.spark_arg2b import spark_arg2b_authority, spark_arg2b_source
 from grcv4_explorer.spark_earlier_accepted import spark_earlier_authority, spark_earlier_source
 from grcv4_explorer.spark_publication import spark_publication_source
+from grcv4_explorer.spark_native_cos import native_cos_numerics, native_cos_numerics_source
 from grcv4_explorer.spark_earlier_c import spark_earlier_c_status, spark_earlier_c_source
 from grcv4_explorer.spark_arg2b_research import spark_arg2b_research_status, spark_arg2b_research_source
 from grcv4_explorer.spark_crg2b_research import spark_crg2b_research_status, spark_crg2b_research_source
@@ -143,6 +144,23 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_response(503)
                 content = json.dumps({"error": str(error)}).encode()
             self.send_header("Content-Type", "application/octet-stream" if request.path.endswith("/source") else "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+        if request.path in {"/api/native-spark/c-os/numerical-bridge", "/api/native-spark/c-os/numerical-bridge/source"}:
+            try:
+                if request.query:
+                    raise ValueError("native numerical evidence has fixed scope")
+                root = repository_root()
+                content = (native_cos_numerics_source(root) if request.path.endswith("/source")
+                           else json.dumps(native_cos_numerics(root)).encode())
+                self.send_response(200)
+            except Exception as error:
+                self.send_response(503)
+                content = json.dumps({"error": str(error), "evidence_state": "unavailable_not_admitted"}).encode()
+            self.send_header("Content-Type", "application/json")
             self.send_header("Cache-Control", "no-store")
             self.send_header("Content-Length", str(len(content)))
             self.end_headers()
@@ -386,7 +404,7 @@ class Handler(BaseHTTPRequestHandler):
                 content = b'{"current_boundary":"failed_closed","error":"Status unavailable; use the CLI for diagnostics."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
-        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
+        elif self.path in {"/", "/verification.js", "/g2-registry.js", "/aggregate-review.js", "/specialization-review.js", "/tranche8-evidence.js", "/tranche8-apc-evidence.js", "/tranche8-handoff.js", "/tranche8-lifecycle.js", "/tranche8-conformance.js", "/tranche8-end.js", "/tranche8.js", "/tranche9.js", "/basin.js", "/spark-completion.js", "/spark-applicability.js", "/spark-research.js", "/spark-pc.js", "/spark-cipc.js", "/spark-cipc-research.js", "/spark-aos-research.js", "/spark-aos.js", "/spark-aos-earlier.js", "/spark-aci-research.js", "/spark-apc-research.js", "/spark-acipc-research.js", "/spark-crg2b-research.js", "/spark-native-cos.js", "/spark-earlier-accepted.js", "/spark-earlier-c.js", "/spark-arg2b-research.js", "/spark-arg2b.js", "/spark-crg2b.js", "/spark-acipc.js", "/spark-apc.js", "/spark-aci.js", "/target-compatibility.js", "/tranche10-support.js", "/tranche10-regressions.js", "/tranche10-examples.js", "/tranche10-verification.js", "/tranche10-families.js", "/aos.js", "/cpc.js", "/ccipc.js", "/acipc.js", "/crg2b.js", "/arg2b.js", "/verification.css"}:
             name = "index.html" if self.path == "/" else self.path[1:]
             content = (TOOL / "phase9-web" / name).read_bytes()
             self.send_response(200)
@@ -419,6 +437,7 @@ class Handler(BaseHTTPRequestHandler):
                     "spark-apc-research.js": "text/javascript",
                     "spark-acipc-research.js": "text/javascript",
                     "spark-crg2b-research.js": "text/javascript",
+                    "spark-native-cos.js": "text/javascript",
                     "spark-earlier-accepted.js": "text/javascript",
                     "spark-earlier-c.js": "text/javascript",
                     "spark-arg2b-research.js": "text/javascript",

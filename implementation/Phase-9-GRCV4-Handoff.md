@@ -1,20 +1,22 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: native spark contract mapped — 2026-11-01
+## Current continuation: C_OS native numerical bridge — 2026-11-01
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
 branch is `impl/grc9v4-native-spark-completion`. Planning is committed as
-`77a777ce`. The user requested commit then start; P9-9.1a.1 is now complete
-as a contract mapping and bounded verification, pending review. No production
-code, native benchmark or completion campaign has been started.
+`77a777ce`; the contract mapping was accepted for commit as `f2d776d7`.
+P9-9.1a.2 is implemented and verified, pending review. Its explicit exact-resource
+and FLINT C_OS numerical kernel passed bounded source/allocation/ordinary-step
+checks. No public completion campaign has been started.
 
 The [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)
 bind all eleven specification chains and thirty pending native obligations.
-Next is **P9-9.1a.2**, beginning with the explicit conservative resource/continuity
-representation, then the C_OS quartic/numerical bridge, certificate and lifecycle integration,
-runtime preflight and first public source-to-completion review. See the
+The [numerical bridge review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
+[retained checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) describe
+the implementation. Next is **P9-9.1a.3**: certificate and lifecycle integration,
+followed by runtime preflight and first public source-to-completion review. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
 The subsequent family order is C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC,
@@ -33,17 +35,22 @@ scientific regression targets; native membership, numerical charge/error
 requirements and the positive window must actually pass. No supporting tail
 is required; larger graphs are not part of the initial programme.
 
-The bounded check confirms that binary64 input conversion of the accepted current
-prestate changes exact charge 21 by 2^-50. A separate two-vertex continuity
-probe reports zero charge residual while its stored sum drifts by -2^-53;
-this is not a failed C_OS trajectory. Exact reconstruction of the accepted
-C_OS domain gives a sufficient charge-tangent componentwise image-error
-threshold about 1.52791e-9. It is a budget, not proof of native error or predicate
-agreement. Production encoding, full-step certification and actual entry remain
-open under .2. Existing native charge-tolerance semantics remain unchanged.
+The [new policy](../specs/grc-v4-spark-native-numerical-policy.md) keeps exact
+rational C and rounds only the final edge flux to a 2^-128 lattice. Exact
+incidence updates preserve charge 21 without repair. The uniform full-step
+error in the accepted certificate norm is at most **4.39102e-31**, below margin
+**0.00457383**; exact fixed-row diagnostics have zero evaluation error. Source
+and event prefix errors are checked separately. Actual native entry must still
+be tested; a local error bound does not establish an accumulated orbit comparison
+or guarantee the old entry beats. Existing binary64 profiles are unchanged.
 
-Reproduce the first leaf without trajectories:
-`PYTHONPATH=src timeout 30s .venv/bin/python implementation/phase-9-grcv4/verification/p991a1_native_spark_contract.py --check`.
+Five bounded native kernel steps took a few seconds; changing-state target
+steps were about 0.1–1 second each. These exclude public lifecycle/certificate
+costs and do not replace .4 preflight. The side-tool API/browser/notebook have a
+separate native numerical-evidence panel with completion and endpoint flags false.
+
+Reproduce without a trajectory:
+`PYTHONPATH=src timeout 60s .venv/bin/python implementation/phase-9-grcv4/verification/p991a2_native_spark_numerics.py --check`.
 
 ## Historical accepted checkpoint: full spark proposal and integrated manuscript — 2026-11-01
 

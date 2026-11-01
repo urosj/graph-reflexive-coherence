@@ -4069,16 +4069,25 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
   [verification](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json) bind eleven
   specification chains and thirty pending native obligations. The small native
   continuity counterexample and exact certificate-coordinate budget are retained;
-  no owner step, event or trajectory ran. Mapping is complete, review pending;
+  no owner step, event or trajectory ran. Mapping is committed as `f2d776d7`;
   this does not select a completed numerical policy or grant native support.
-- [ ] P9-9.1a.2: Implement the actual C_OS quartic dynamics and numerical bridge.
-  - [ ] Select explicit FLINT/Arb policy and justify the native representation;
+- [x] P9-9.1a.2: Implement the actual C_OS quartic dynamics and numerical bridge.
+  [Review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
+  [retained checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json): implemented,
+  verified, pending review. Five bounded kernel steps, both-role exact allocation,
+  independent equations and side-tool API/browser/notebook; no public completion.
+  - [x] Select explicit FLINT/Arb policy and justify the native representation;
     resolve exact-charge compatibility without silent repair or widened tolerances.
-  - [ ] Bound the full represented step uniformly on the domain in the certificate
+    Exact rational C, exact FLINT reads and one declared 2^-128 edge-flux rounding.
+  - [x] Bound the full represented step uniformly on the domain in the certificate
     norm below the strict image margin, including geometry/current/continuity and
-    conversions; certify spatial predicate agreement.
-  - [ ] Account separately for native source-to-entry errors. Neither a solve
+    conversions; certify spatial predicate agreement. Error <=4.39102e-31 versus
+    margin 0.00457383; spatial arithmetic error zero, numerical stage guards checked.
+  - [x] Account separately for native source-to-entry errors. Neither a solve
     residual nor tolerated charge drift establishes the required theorem.
+    Source/event errors are checked; actual exact native membership is required
+    for entry. No accumulated orbit-shadow bound or matching entry beat is
+    inferred. Full native source-to-entry execution remains .5 after preflight.
 - [ ] P9-9.1a.3: Integrate immutable, exactly bound certificates, actual membership,
   geometric children and the public atomic lifecycle; keep `basin_identity` distinct.
   - [ ] Bind graph/profile/parameters/context/reference/charge/duration/role and
