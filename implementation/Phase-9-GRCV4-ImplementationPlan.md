@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: native spark contract mapped — 2026-11-01
+## Current continuation: native spark certificates and lifecycle — 2026-11-01
 
 Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
 `5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
@@ -8,10 +8,12 @@ spark research. Planning was committed as `77a777ce`; P9-9.1a.1 now has a
 [concrete implementation map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
 and [retained bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json),
 committed as `f2d776d7`. All ten family chains and thirty native obligations are mapped.
-P9-9.1a.2 now implements the explicit exact-resource/FLINT C_OS numerical bridge;
+P9-9.1a.2 implements the explicit exact-resource/FLINT C_OS numerical bridge,
+accepted for commit as `32376cd4`;
 its [review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
-[bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) are pending review.
-Next is P9-9.1a.3, certificate and atomic lifecycle integration. No full native
+[bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) retain that scope.
+P9-9.1a.3 has [certificate/lifecycle implementation and controls](./phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md),
+pending review. Next is P9-9.1a.4, measured runtime preflight. No full native
 trajectory or completion is claimed. Minimal atomic new-child registration
 belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
 scope; the selected native programme does not reopen their accepted results.

@@ -2,14 +2,14 @@
 from pathlib import Path
 import hashlib
 import subprocess
-from .basin import _bound_file
+from .basin import _bound_file, native_predecessor
 from .canonical import load_json_object, record_digest, file_sha256
 from .errors import SourceAdmissionError
 
 INV = 'implementation/investigations/grc9v4-constitutive-design/'
 SIDE = INV + 'tools/exploratory-side-tool/'
 SOURCE = INV + 'evidence/spark-completion/applicability/earlier-closure/EarlierSC3Sources.json'
-DIGEST = '909a7bd913ac258adc7b127a9626bbfefb132662373d82b68b33bd62678f4f11'
+DIGEST = '9d8324330b3d3b6d0424dec2d1cb16921bdc496662b309dd771228b53a13b114'
 BASELINE = '4d247e7bbcfd0c8251b5b40b6971ef904e0c2e76'
 HISTORICAL_HELPER = SIDE + 'tool/src/grcv4_explorer/spark_earlier_c_metadata.py'
 PATHS = frozenset({
@@ -66,6 +66,8 @@ def checked_epoch(root):
 
 
 def bound_metadata_files(root, expected):
+    expected = {p: h for p, h in expected.items()
+                if native_predecessor(root, p, h) is None}
     root = Path(root)
     changed = {p: h for p, h in expected.items() if file_sha256(root / p) != h}
     rows = {r['path']: r for r in checked_epoch(root)['sources']} if changed else {}
@@ -78,6 +80,10 @@ def bound_metadata_files(root, expected):
 
 
 def reviewed_source_bytes(root, path, expected):
+    from .basin import native_predecessor
+    original = native_predecessor(root, path, expected)
+    if original is not None:
+        return original
     root = Path(root)
     if file_sha256(root / path) == expected:
         return _bound_file(root, path, expected).read_bytes()

@@ -19,7 +19,22 @@ def checked_record(root):
             value.get("native_owner_steps") != 0 or value.get("native_events_published") != 0):
         raise SourceAdmissionError("unbound native numerical evidence or changed scope")
     for row in value["source_bindings"]:
-        _bound_file(root, row["path"], row["sha256"])
+        try:
+            _bound_file(root, row["path"], row["sha256"])
+        except SourceAdmissionError:
+            import sys
+            from hashlib import sha256
+            from .basin import file_sha256
+            sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
+            from p991a3_native_spark_epoch import CHANGED, previous_bytes
+            if row["path"] not in CHANGED or file_sha256(root / row["path"]) != sha256((root / row["path"]).read_bytes()).hexdigest():
+                raise
+            try:
+                old = previous_bytes(root, row["path"])
+            except ValueError as error:
+                raise SourceAdmissionError(str(error)) from error
+            if sha256(old).hexdigest() != row["sha256"]:
+                raise SourceAdmissionError("unbound numerical producer predecessor")
     return value
 
 

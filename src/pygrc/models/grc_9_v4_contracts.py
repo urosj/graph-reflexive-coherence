@@ -306,6 +306,9 @@ class GRC9V4Configuration:
 
     @classmethod
     def from_payload(cls, value):
+        if type(value) is dict and value.get("schema_version") == "grc9v4-configuration-v3":
+            from .grc_9_v4_spark_contracts import GRC9V4SparkConfiguration
+            return GRC9V4SparkConfiguration.from_payload(value)
         keys = {
             "schema_version",
             "reference",
@@ -418,7 +421,9 @@ class DisabledGRC9V3State:
         return json.loads(self.delegate_checkpoint)
 
 
-GRC9V4ScientificState = EnabledGRC9V4State | DisabledGRC9V3State
+from .grc_9_v4_spark_contracts import SparkStateView
+
+GRC9V4ScientificState = EnabledGRC9V4State | DisabledGRC9V3State | SparkStateView
 
 
 @dataclass(frozen=True, slots=True)

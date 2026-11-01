@@ -1,7 +1,7 @@
 """Finite A_OS research metadata successor; scientific predecessors stay frozen."""
 from pathlib import Path
 import hashlib,subprocess
-from .basin import _bound_file
+from .basin import _bound_file, native_predecessor
 from .canonical import load_json_object,record_digest,file_sha256
 from .errors import SourceAdmissionError
 SOURCE='implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/AOSMetadataSources.json'
@@ -27,6 +27,8 @@ def checked_successor(root):
     return v
 
 def bound_metadata_files(root,expected):
+    expected = {p: h for p, h in expected.items()
+                if native_predecessor(root, p, h) is None}
     root=Path(root);changed={p:h for p,h in expected.items() if file_sha256(root/p)!=h}
     rows={r['path']:r for r in checked_successor(root)['sources']} if changed else {}
     for path,sha in expected.items():

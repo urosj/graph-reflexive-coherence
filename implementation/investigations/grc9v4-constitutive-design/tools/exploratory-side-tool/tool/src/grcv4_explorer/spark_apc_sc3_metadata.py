@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib
 import subprocess
-from .basin import _bound_file
+from .basin import _bound_file, native_predecessor
 from .canonical import load_json_object, record_digest, file_sha256
 from .errors import SourceAdmissionError
 
@@ -61,7 +61,7 @@ def checked_acceptance_epoch(root):
     need(validation['record_digest']==record_digest(validation,'record_digest'),'original research validation digest')
     for ref in validation['sources']:
         current=file_sha256(root/ref['path'])
-        if current!=ref['sha256']:
+        if current!=ref['sha256'] and native_predecessor(root, ref['path'], ref['sha256']) is None:
             row=rows.get(ref['path'])
             need(row is not None and row['before_sha256']==ref['sha256'],
                  'unbound original validation successor')
@@ -71,6 +71,8 @@ def checked_acceptance_epoch(root):
 
 
 def bound_metadata_files(root,expected):
+    expected = {p: h for p, h in expected.items()
+                if native_predecessor(root, p, h) is None}
     root=Path(root)
     changed={p:sha for p,sha in expected.items() if file_sha256(root/p)!=sha}
     rows={r['path']:r for r in checked_acceptance_epoch(root)['sources']} if changed else {}
@@ -84,6 +86,10 @@ def bound_metadata_files(root,expected):
 
 
 def reviewed_source_bytes(root,path,expected):
+    from .basin import native_predecessor
+    original = native_predecessor(root, path, expected)
+    if original is not None:
+        return original
     root=Path(root)
     if file_sha256(root/path)==expected:return _bound_file(root,path,expected).read_bytes()
     if path!=HISTORICAL_HELPER:

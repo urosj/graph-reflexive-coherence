@@ -4,7 +4,7 @@ The explicit nested successor collection preserves the pre-basin/ATC loaders
 and their historical pins. It is inventoried here, never auto-admitted.
 """
 
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 from .a_initializer import load_current_forensic_context as load_predecessor
@@ -45,6 +45,36 @@ def _require(condition, message):
         raise SourceAdmissionError(message)
 
 
+@dataclass(frozen=True)
+class _HistoricalSource:
+    """Read-only source bytes; never return live code under an old digest."""
+    raw: bytes
+
+    def read_bytes(self):
+        return self.raw
+
+    def read_text(self, encoding="utf-8"):
+        return self.raw.decode(encoding)
+
+
+def native_predecessor(root, path, expected):
+    """Authenticate only a named native .3 successor and its exact Git preimage."""
+    import hashlib
+    import sys
+    root = Path(root).resolve()
+    sys.path.insert(0, str(root / "implementation/phase-9-grcv4/verification"))
+    from p991a3_native_spark_epoch import CHANGED, previous_bytes
+    if path not in CHANGED:
+        return None
+    _require(file_sha256(root/path) == hashlib.sha256((root/path).read_bytes()).hexdigest(),
+             "inconsistent native source digest")
+    try:
+        raw = previous_bytes(root, path)
+    except ValueError as error:
+        raise SourceAdmissionError(str(error)) from error
+    return raw if hashlib.sha256(raw).hexdigest() == expected else None
+
+
 def _bound_file(root, path, sha256):
     target = root / path
     _require(
@@ -53,7 +83,10 @@ def _bound_file(root, path, sha256):
         and target.resolve().is_relative_to(root.resolve()),
         "basin source path escapes repository",
     )
-    _require(file_sha256(target) == sha256, "basin bound source changed: " + path)
+    if file_sha256(target) != sha256:
+        raw = native_predecessor(root, path, sha256)
+        _require(raw is not None, "basin bound source changed: " + path)
+        return _HistoricalSource(raw)
     return target
 
 

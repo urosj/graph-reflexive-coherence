@@ -14,7 +14,7 @@ from .grc_v4_exact import exact_number, _flint_module
 from . import grc_v4_numerics as numerics
 from .grc_v4_certification import CertificationInconclusive
 from .grc_v4_spark_state import (
-    ExactResources, QuarticCOSProfile, QuarticSite, FLUX_BITS, NUMERICAL_POLICY,
+    ExactResources, QuarticCOSProfile, FLUX_BITS, NUMERICAL_POLICY,
     rational, round_flux, flint_operation,
 )
 
@@ -122,7 +122,7 @@ class SparkCOSKernel:
             raise TypeError("typed graph and quartic C_OS profile required")
         if not 2 <= len(graph.live_node_ids) <= 32 or not 1 <= len(graph.oriented_edges) <= 64:
             raise ValueError("bounded spark graph size exceeded")
-        if profile.site != QuarticSite():
+        if (profile.site.c0, profile.site.a, profile.site.mu) != ("2", "1", "1"):
             raise ValueError("kernel supports the declared c0=2, a=mu=1 slice")
         p = profile.baseline.params_resolved
         expected = dict(Lambda_C=1/64, kappa_M_C=0, kappa_Phi_C=1/64, eta_C=1/1024,
@@ -210,15 +210,10 @@ class SparkCOSKernel:
         m = flat.nrows()
         return I+fmpq_mat([[flat[i, 0]*O[i, j]*flat[j, 0]/8 for j in range(m)] for i in range(m)])
 
-    @flint_operation
-    @numerics.matrix_operation()
-    def step(self, state: ExactResources, duration: str = "32"):
-        fmpq, fmpq_mat = exact_number, _flint_module().fmpq_mat
-
+    def _selected_stage(self, state):
+        fmpq_mat = _flint_module().fmpq_mat
         if type(state) is not ExactResources or state.graph != self.graph:
             raise ValueError("actual graph-bound exact resources required")
-        if rational(duration) != 32:
-            raise ValueError("this numerical binding selects duration 32")
         C = fmpq_mat([[rational(x)] for x in state.C])
         I = _matrix(self._I)
         reference_operators = self._operators(I, reference=True)
@@ -231,6 +226,22 @@ class SparkCOSKernel:
         # Frobenius is a sufficient upper bound on the selected operator norm.
         if split > _binary64(self.profile.baseline.params_resolved.realization.tolerance)**2:
             raise CertificationInconclusive("OS split not certified at unchanged tolerance")
+        return C, I, reference_operators, predictor, H, selected_operators, current, split
+
+    @flint_operation
+    @numerics.matrix_operation()
+    def readmission(self, state: ExactResources):
+        """Fresh predictor/corrector/domain/split admission without continuity."""
+        _, _, _, _, _, _, current, split = self._selected_stage(state)
+        return tuple(map(str, current.entries())), str(split)
+
+    @flint_operation
+    @numerics.matrix_operation()
+    def step(self, state: ExactResources, duration: str = "32"):
+        fmpq, fmpq_mat = exact_number, _flint_module().fmpq_mat
+        if rational(duration) != 32:
+            raise ValueError("this numerical binding selects duration 32")
+        C, I, reference_operators, predictor, H, selected_operators, current, split = self._selected_stage(state)
         flux = tuple(str(round_flux(x)) for x in current.entries())
         after = state.advance(flux, duration)
         B = _matrix(self._B)

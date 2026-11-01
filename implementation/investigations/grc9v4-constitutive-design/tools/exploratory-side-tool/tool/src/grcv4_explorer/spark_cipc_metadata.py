@@ -7,7 +7,7 @@ Scientific authority, execution and original validation records are untouched.
 from pathlib import Path
 import hashlib
 import subprocess
-from .basin import _bound_file
+from .basin import _bound_file, native_predecessor
 from .canonical import load_json_object, record_digest, file_sha256
 from .errors import SourceAdmissionError
 
@@ -50,6 +50,8 @@ def checked_successor(root):
 
 
 def bound_metadata_files(root,expected):
+    expected = {p: h for p, h in expected.items()
+                if native_predecessor(root, p, h) is None}
     root=Path(root)
     changed={path:sha for path,sha in expected.items() if file_sha256(root/path)!=sha}
     rows={r['path']:r for r in checked_successor(root)['sources']} if changed else {}

@@ -68,6 +68,17 @@ SPARK_NATIVE_PATHS = frozenset({
     "src/pygrc/models/grc_v4_spark_cos.py",
     "tests/models/test_grc_v4_spark_numerics.py",
 })
+SPARK_LIFECYCLE_LEAF = "P9-9.1a.3"
+SPARK_LIFECYCLE_ENTRY = "32376cd4"
+SPARK_LIFECYCLE_PATHS = frozenset({
+    *("src/pygrc/models/" + name + ".py" for name in (
+        "grc_9_v4", "grc_9_v4_api_lifecycle", "grc_9_v4_contracts", "grc_9_v4_crossing",
+        "grc_9_v4_identity", "grc_9_v4_lifecycle", "grc_v4_spark_state", "grc_v4_spark_cos",
+        "grc_9_v4_completion", "grc_9_v4_completion_codec", "grc_9_v4_completion_certificate",
+        "grc_9_v4_spark_contracts", "grc_9_v4_spark_owner")),
+    "src/pygrc/models/grc_v4_assets/grc-9-v4-spark-completion-schema.json",
+    "tests/models/test_grc_9_v4_spark_completion.py",
+})
 EVENT_RUNTIME_PATHS = {"src/pygrc/models/" + n + ".py" for n in
                        ("grc_v4", "grc_v4_codec", "grc_v4_step", "grc_v4_lifecycle", "grc_v4_events")}
 EVENT_NEW_PATHS = {"src/pygrc/models/grc_v4_events.py", "tests/models/test_grc_v4_events.py",
@@ -3386,6 +3397,10 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {SPARK_NATIVE_LEAF})
     for name in SPARK_NATIVE_PATHS:
         owners[name] = owners.get(name, set()) | {SPARK_NATIVE_LEAF}
+    git(root, "merge-base", "--is-ancestor", SPARK_LIFECYCLE_ENTRY, "HEAD")
+    ready = sorted(set(ready) | {SPARK_LIFECYCLE_LEAF})
+    for name in SPARK_LIFECYCLE_PATHS:
+        owners[name] = owners.get(name, set()) | {SPARK_LIFECYCLE_LEAF}
     return ready, owners
 
 
@@ -3395,6 +3410,10 @@ def runtime_targets(approval):
     from phase9_specialization_acceptance import ENABLED_LIFECYCLE_PATHS, DISABLED_DELEGATE_PATHS, BRANCH_CROSSING_PATHS
     from phase9_specialization_acceptance import PUBLIC_API_NEW_PATHS, BASIN_NEW_PATHS
     return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_9_v4"}
+        for name in sorted(SPARK_LIFECYCLE_PATHS)
+    ), *(
         {"path": name, "requires_gate": "P9-G3", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_spark_cos"}
         for name in sorted(SPARK_NATIVE_PATHS)
@@ -3625,6 +3644,7 @@ def work_entries(root, approval):
     leaves.update(LIFECYCLE_LEAVES)
     leaves.update(MIGRATION_LEAVES)
     leaves.add(SPARK_NATIVE_LEAF)
+    leaves.add(SPARK_LIFECYCLE_LEAF)
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -3670,6 +3690,7 @@ def work_entries(root, approval):
     leaves.add(basin_authorization(root))
     def g3_permitted(name, leaf):
         return ((leaf == SPARK_NATIVE_LEAF and name in SPARK_NATIVE_PATHS)
+                or (leaf == SPARK_LIFECYCLE_LEAF and name in SPARK_LIFECYCLE_PATHS)
                 or permitted(name, leaf) or row_bridge_permitted(name, leaf)
                 or trigger_permitted(name, leaf) or coarse_permitted(name, leaf)
                 or backend_permitted(name, leaf) or allocator_permitted(name, leaf)
@@ -4966,4 +4987,21 @@ PATHS = PATHS | frozenset({
     'implementation/phase-9-grcv4/verification/test_p991a2_native_spark_surface.py',
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_cos.py',
     'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-cos.js',
+})
+
+# P9-9.1a.3: bounded native certificates/public lifecycle after committed .2.
+# Runtime permission is separate from reviewed endpoint/release acceptance.
+PATHS = PATHS | frozenset({
+    'specs/grc-9-v4-native-spark-lifecycle.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.3-Verification.json',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.3-SourceEpoch.json',
+    'implementation/phase-9-grcv4/verification/p991a3_native_spark_epoch.py',
+    'implementation/phase-9-grcv4/verification/p991a3_native_spark_lifecycle.py',
+    'implementation/phase-9-grcv4/verification/test_p991a3_native_spark_surface.py',
+    'implementation/phase-9-grcv4/verification/cos_native_spark_oracle.py',
+    'implementation/phase-9-grcv4/verification/test_cos_native_spark_pressure.py',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.3-PressureReview.md',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_native_lifecycle.py',
+    'implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/spark-native-lifecycle.js',
 })

@@ -1,0 +1,443 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grc9v4:scientific-spark-completion:2",
+  "title": "SC-3 static site/policy and dynamic completion evidence; shape is not proof admission",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/site"
+    },
+    {
+      "$ref": "#/$defs/policy"
+    },
+    {
+      "$ref": "#/$defs/completed"
+    },
+    {
+      "$ref": "#/$defs/noncompleted"
+    }
+  ],
+  "$defs": {
+    "rational": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$"
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(implementation|specs)/[^\\\\\\s]+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "node": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "int"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "str"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "site": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-homogeneous-quartic-site-v1"
+        },
+        "evaluator_id": {
+          "const": "homogeneous_quartic_site_v1"
+        },
+        "c0": {
+          "$ref": "#/$defs/rational"
+        },
+        "a": {
+          "$ref": "#/$defs/rational"
+        },
+        "mu": {
+          "$ref": "#/$defs/rational"
+        },
+        "units_id": {
+          "const": "resource_potential_site_units_v1"
+        }
+      },
+      "required": [
+        "schema_version",
+        "evaluator_id",
+        "c0",
+        "a",
+        "mu",
+        "units_id"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "grc9v4-child-completion-policy-v2"
+        },
+        "policy_id": {
+          "const": "grc9v4-certified-geometric-child-basins-v1"
+        },
+        "landscape_sign": {
+          "enum": [
+            -1,
+            1
+          ]
+        },
+        "epsilon_gradient": {
+          "$ref": "#/$defs/rational"
+        },
+        "epsilon_Hessian": {
+          "$ref": "#/$defs/rational"
+        },
+        "minimum_resource": {
+          "$ref": "#/$defs/rational"
+        },
+        "contrast": {
+          "$ref": "#/$defs/rational"
+        },
+        "minimum_beats": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minimum_elapsed": {
+          "$ref": "#/$defs/rational"
+        },
+        "step_duration": {
+          "$ref": "#/$defs/rational"
+        },
+        "trap_policy_id": {
+          "const": "full_physical_map_strict_contraction_v1"
+        },
+        "numerical_policy_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_.:-]+$"
+        }
+      },
+      "required": [
+        "schema_version",
+        "policy_id",
+        "landscape_sign",
+        "epsilon_gradient",
+        "epsilon_Hessian",
+        "minimum_resource",
+        "contrast",
+        "minimum_beats",
+        "minimum_elapsed",
+        "step_duration",
+        "trap_policy_id",
+        "numerical_policy_id"
+      ],
+      "additionalProperties": false
+    },
+    "basin": {
+      "type": "object",
+      "properties": {
+        "anchor": {
+          "$ref": "#/$defs/node"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "anchor",
+        "members"
+      ],
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "const": "current"
+        },
+        "receipt": {
+          "$ref": "#/$defs/reference"
+        },
+        "step_index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "time": {
+          "$ref": "#/$defs/rational"
+        },
+        "duration": {
+          "$ref": "#/$defs/rational"
+        },
+        "state": {
+          "$ref": "#/$defs/reference"
+        },
+        "read": {
+          "$ref": "#/$defs/reference"
+        },
+        "operands": {
+          "$ref": "#/$defs/reference"
+        },
+        "diagnostic_certificate": {
+          "$ref": "#/$defs/reference"
+        },
+        "descendants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/basin"
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "role",
+        "receipt",
+        "step_index",
+        "time",
+        "duration",
+        "state",
+        "read",
+        "operands",
+        "diagnostic_certificate",
+        "descendants"
+      ],
+      "additionalProperties": false
+    },
+    "proof": {
+      "type": "object",
+      "properties": {
+        "certificate": {
+          "$ref": "#/$defs/reference"
+        },
+        "equation_binding": {
+          "$ref": "#/$defs/reference"
+        },
+        "state_channels": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "C",
+              "W_A",
+              "Z_4"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "constraints": {
+          "$ref": "#/$defs/reference"
+        },
+        "domain": {
+          "$ref": "#/$defs/reference"
+        },
+        "center": {
+          "$ref": "#/$defs/reference"
+        },
+        "norm_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "q": {
+          "$ref": "#/$defs/rational"
+        },
+        "image_margin": {
+          "$ref": "#/$defs/rational"
+        },
+        "numerical_policy_id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_.:-]+$"
+        },
+        "full_step_error": {
+          "$ref": "#/$defs/rational"
+        },
+        "full_step_certificate": {
+          "$ref": "#/$defs/reference"
+        },
+        "constraint_certificate": {
+          "$ref": "#/$defs/reference"
+        },
+        "diagnostic_certificate": {
+          "$ref": "#/$defs/reference"
+        }
+      },
+      "required": [
+        "certificate",
+        "equation_binding",
+        "state_channels",
+        "constraints",
+        "domain",
+        "center",
+        "norm_id",
+        "q",
+        "image_margin",
+        "numerical_policy_id",
+        "full_step_error",
+        "full_step_certificate",
+        "constraint_certificate",
+        "diagnostic_certificate"
+      ],
+      "additionalProperties": false
+    },
+    "completed": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "grc9v4-child-completion-evidence-v2"
+        },
+        "policy_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "event_lineage_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "const": "completed"
+        },
+        "source_capture": {
+          "$ref": "#/$defs/reference"
+        },
+        "event_receipt": {
+          "$ref": "#/$defs/reference"
+        },
+        "parent": {
+          "$ref": "#/$defs/basin"
+        },
+        "expanded_vertex": {
+          "$ref": "#/$defs/node"
+        },
+        "target_profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_graph_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lineage": {
+          "$ref": "#/$defs/reference"
+        },
+        "proof": {
+          "$ref": "#/$defs/proof"
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/observation"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "local_gain": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "new_child_anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "policy_digest",
+        "event_lineage_id",
+        "decision",
+        "source_capture",
+        "event_receipt",
+        "parent",
+        "expanded_vertex",
+        "target_profile_id",
+        "target_graph_id",
+        "lineage",
+        "proof",
+        "observations",
+        "local_gain",
+        "new_child_anchors"
+      ],
+      "additionalProperties": false
+    },
+    "noncompleted": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "grc9v4-child-completion-evidence-v2"
+        },
+        "policy_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "event_lineage_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "enum": [
+            "not_applicable",
+            "pending",
+            "unresolved",
+            "invalidated"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "policy_digest",
+        "event_lineage_id",
+        "decision",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

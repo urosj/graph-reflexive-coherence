@@ -306,7 +306,13 @@ def main():
         (ROOT / RECORD).write_text(json.dumps(result, indent=2)+"\n")
     elif args.check:
         retained = read(RECORD); need(seal(retained) == retained, "verification digest changed")
-        stable = lambda v: {k: x for k,x in v.items() if k not in ("record_digest", "timings_seconds")}
+        from p991a3_native_spark_epoch import previous_bytes
+        need([r["path"] for r in retained["source_bindings"]] == [r["path"] for r in result["source_bindings"]], "numerical source scope changed")
+        for row in retained["source_bindings"]:
+            need(sha256(previous_bytes(ROOT, row["path"])).hexdigest() == row["sha256"], "unbound historical numerical producer")
+        # Fresh successor execution is compared with the original result; its
+        # changed source bytes do not rewrite or relabel the retained old run.
+        stable = lambda v: {k: x for k,x in v.items() if k not in ("record_digest", "timings_seconds", "source_bindings")}
         need(stable(retained) == stable(result), "bounded numerical evidence differs")
     print(json.dumps(dict(status="PASS", native_kernel_steps=result["native_kernel_steps"],
           numerical_budget=result["numerical_budget"]["error_display"],

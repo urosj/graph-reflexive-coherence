@@ -1,12 +1,13 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: C_OS native numerical bridge — 2026-11-01
+## Current continuation: C_OS native certificate/lifecycle integration — 2026-11-01
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
 branch is `impl/grc9v4-native-spark-completion`. Planning is committed as
 `77a777ce`; the contract mapping was accepted for commit as `f2d776d7`.
-P9-9.1a.2 is implemented and verified, pending review. Its explicit exact-resource
+P9-9.1a.2 was accepted for commit as `32376cd4`. P9-9.1a.3 now implements
+the exactly bound certificates and atomic public lifecycle, pending review. Its explicit exact-resource
 and FLINT C_OS numerical kernel passed bounded source/allocation/ordinary-step
 checks. No public completion campaign has been started.
 
@@ -15,8 +16,16 @@ and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)
 bind all eleven specification chains and thirty pending native obligations.
 The [numerical bridge review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
 [retained checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json) describe
-the implementation. Next is **P9-9.1a.3**: certificate and lifecycle integration,
-followed by runtime preflight and first public source-to-completion review. See the
+the numerical predecessor. The [native lifecycle review](./phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md)
+and [retained controls](./phase-9-grcv4/tranche-9/P9-9.1a.3-Verification.json) cover
+actual source/event execution and explicitly synthetic positive-window tests.
+The [bounded pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.3-PressureReview.md)
+adds independent equations, both literal chiral events, charge-normal membership,
+and atomic failure controls. It also closes duplicate typed-step delivery: a
+successful operation ID in branch ancestry cannot advance the window twice.
+Next is **P9-9.1a.4**, measured runtime preflight before the first public
+source-to-completion campaign. Shared occurrence accounting is process-local;
+disconnected-process uniqueness and exact-to-legacy conversion are not claimed. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
 The subsequent family order is C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC,

@@ -266,6 +266,10 @@ class GRC9V4Specialization:
         )
         if resolved["schema_version"][-2:] != identity["schema_version"][-2:]:
             raise ValueError("specialization schema versions differ")
+        if resolved["schema_version"].endswith("-v3"):
+            policy = resolved["completion_policy"]
+            if identity["completion_policy_id"] != (None if policy is None else policy["policy_id"]):
+                raise ValueError("completion policy identity differs from resolved declaration")
         specialization_identity(
             "resolved_specialization",
             resolved,
@@ -310,6 +314,21 @@ class GRC9V4Specialization:
                 "resolved_specialization", resolved
             ),
         )
+        return GRC9V4Specialization(FrozenJSONMap(resolved), FrozenJSONMap(identity))
+
+    def with_completion_policy(self, policy) -> GRC9V4Specialization:
+        """Explicit v3 declaration; live installation requires both-role admission."""
+        from .grc_9_v4_completion_codec import CompletionPolicy
+        if policy is not None and type(policy) is not CompletionPolicy:
+            raise TypeError("typed completion policy or explicit null required")
+        resolved, identity = self.resolved.to_dict(), self.identity_payload.to_dict()
+        resolved.pop("basin_policy", None)
+        identity.pop("basin_policy_id", None)
+        resolved.update(schema_version="grc9v4-resolved-specialization-v3",
+                        completion_policy=None if policy is None else policy.to_payload())
+        identity.update(schema_version="grc9v4-specialization-identity-v3",
+                        completion_policy_id=None if policy is None else policy.to_payload()["policy_id"],
+                        specialization_params_hash=specialization_identity("resolved_specialization", resolved))
         return GRC9V4Specialization(FrozenJSONMap(resolved), FrozenJSONMap(identity))
 
     def to_payload(self) -> dict[str, Any]:

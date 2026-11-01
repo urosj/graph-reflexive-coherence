@@ -63,7 +63,7 @@ class QuarticSite:
     def __post_init__(self):
         c0, a, mu = map(rational, (self.c0, self.a, self.mu))
         if (not c0 > a > 0 or mu <= 0 or type(self.units_id) is not str or
-                self.units_id != "grcv4_nondimensional_reference_v1"):
+                self.units_id not in ("grcv4_nondimensional_reference_v1", "resource_potential_site_units_v1")):
             raise ValueError("unsupported quartic coefficients or units")
 
     def evaluate(self, resource: str):
@@ -103,7 +103,10 @@ for the new law/charge policy. This type is deliberately not a GRCV4Profile.
             raise ValueError("only C_OS is implemented by this successor")
         if self.baseline.params_resolved.candidate.potential_evaluator_id != "quadratic_site_potential_zero_derivative_v1":
             raise ValueError("explicit zero-site predecessor required")
-        if self.site.units_id != self.baseline.params_resolved.common.units_id:
+        # The optional SC-3 site names its resource/potential unit binding;
+        # the reference model names the enclosing nondimensional unit system.
+        # Preserve the .2 declaration bytes while admitting the normative name.
+        if self.baseline.params_resolved.common.units_id != "grcv4_nondimensional_reference_v1":
             raise ValueError("site/common units mismatch")
 
     @property

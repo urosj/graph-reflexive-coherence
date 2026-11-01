@@ -4074,7 +4074,7 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
 - [x] P9-9.1a.2: Implement the actual C_OS quartic dynamics and numerical bridge.
   [Review](./phase-9-grcv4/tranche-9/P9-9.1a.2-Review.md) and
   [retained checks](./phase-9-grcv4/tranche-9/P9-9.1a.2-Verification.json): implemented,
-  verified, pending review. Five bounded kernel steps, both-role exact allocation,
+  verified, accepted for commit as `32376cd4`. Five bounded kernel steps, both-role exact allocation,
   independent equations and side-tool API/browser/notebook; no public completion.
   - [x] Select explicit FLINT/Arb policy and justify the native representation;
     resolve exact-charge compatibility without silent repair or widened tolerances.
@@ -4088,16 +4088,24 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     Source/event errors are checked; actual exact native membership is required
     for entry. No accumulated orbit-shadow bound or matching entry beat is
     inferred. Full native source-to-entry execution remains .5 after preflight.
-- [ ] P9-9.1a.3: Integrate immutable, exactly bound certificates, actual membership,
+- [x] P9-9.1a.3: Integrate immutable, exactly bound certificates, actual membership,
   geometric children and the public atomic lifecycle; keep `basin_identity` distinct.
-  - [ ] Bind graph/profile/parameters/context/reference/charge/duration/role and
+  - [x] Bind graph/profile/parameters/context/reference/charge/duration/role and
     every applicable C/W/Z coordinate; report outside-scope as not certified.
-  - [ ] Advance only on committed positive ordinary steps; invalidate on reset,
+  - [x] Advance only on committed positive ordinary steps; invalidate on reset,
     rebase and relevant identity/branch changes unless explicitly re-admitted.
-  - [ ] Pressure wrong/stale certificates, omitted history, interrupted windows,
+  - [x] Pressure wrong/stale certificates, omitted history, interrupted windows,
     zero-duration/inspection, late failure and rollback, reset, duplicate,
     save/load/replay and certificate succession. Publish gain and canonical new-child
     registration atomically once per occurrence; broader hierarchy stays deferred.
+  [Review](./phase-9-grcv4/tranche-9/P9-9.1a.3-Review.md) and
+  [retained checks](./phase-9-grcv4/tranche-9/P9-9.1a.3-Verification.json): implemented,
+  verified, pending review. Actual source/event; synthetic positive-window controls.
+  [Bounded pressure review](./phase-9-grcv4/tranche-9/P9-9.1a.3-PressureReview.md):
+  independent stage/current/flat/charge checks, literal chiral events, certificate
+  and atomicity controls; repeated typed delivery is rejected before preparation.
+  Accounting is shared within one process; disconnected-process uniqueness and
+  exact-to-legacy conversion remain unclaimed. No full native trajectory run.
 - [ ] P9-9.1a.4: Complete and report the C_OS runtime estimate before any long run.
   - [ ] Time bounded initialization, source/event and one changing-state step;
     extend toward 20–40 steps only if measured cost fits the short declared cap.

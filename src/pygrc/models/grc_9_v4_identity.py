@@ -25,6 +25,19 @@ def validate_specialization(name, value):
     base = _VERSIONS[name]
     if version == base + "-v1":
         return validate_payload(name, data)
+    if version == base + "-v3":
+        old = dict(data, schema_version=base + "-v1")
+        if name == "resolved_specialization":
+            from .grc_9_v4_completion_codec import CompletionPolicy
+            policy = old.pop("completion_policy")
+            if policy is not None:
+                CompletionPolicy.from_payload(policy)
+        elif name == "specialization_identity_payload":
+            policy_id = old.pop("completion_policy_id")
+            if policy_id not in (None, "grc9v4-certified-geometric-child-basins-v1"):
+                raise ValueError("unsupported completion policy identity")
+        validate_payload(name, old)
+        return data
     if version != base + "-v2":
         raise ValueError("unsupported specialization schema")
     old = dict(data, schema_version=base + "-v1")
@@ -59,7 +72,9 @@ def model_identity(profile_id, specialization):
     return specialization_identity(
         "complete_model_identity_payload",
         dict(
-            schema_version="grc9v4-complete-identity-v2"
+            schema_version="grc9v4-complete-identity-v3"
+            if specialization.resolved["schema_version"] == "grc9v4-resolved-specialization-v3"
+            else "grc9v4-complete-identity-v2"
             if has_basin(specialization)
             else "grc9v4-complete-identity-v1",
             grcv4_complete_profile_id=profile_id,

@@ -21,6 +21,8 @@ from .grc_9_v4_identity import has_basin, model_identity
 from .grc_9_v4_crossing import GRC9V4BranchRequest
 from .grc_9_v4_expansion import GRC9V4ExpansionRequestInput
 from .grc_9_v4_api_lifecycle import GRC9V4PublicOperation, _decode, native_bytes
+from .grc_9_v4_spark_contracts import GRC9V4SparkConfiguration
+from . import grc_9_v4_spark_owner as spark
 from .grc_9_v4_contracts import (
     GRC9V4Configuration,
     GRC9V4ExecutionOptions,
@@ -37,6 +39,7 @@ from .grc_9_v4_contracts import (
 __all__ = [
     "GRC9V4",
     "GRC9V4Configuration",
+    "GRC9V4SparkConfiguration",
     "GRC9V4ExecutionOptions",
     "GRC9V4ExecutionUnavailable",
     "GRC9V4Family",
@@ -68,7 +71,7 @@ class GRC9V4(GRCV4):
         numerical_policy_choice=None,
         targets=(),
     ):
-        if type(initial) is GRC9V4Configuration:
+        if type(initial) in (GRC9V4Configuration, GRC9V4SparkConfiguration):
             if (
                 exact_backend_choice is not None
                 or numerical_policy_choice is not None
@@ -87,11 +90,12 @@ class GRC9V4(GRCV4):
 
     @classmethod
     def from_config(cls, config):
-        if type(config) is GRC9V4Configuration:
+        if type(config) in (GRC9V4Configuration, GRC9V4SparkConfiguration):
             return cls(config)
         if isinstance(config, Mapping) and config.get("schema_version") in (
             "grc9v4-configuration-v1",
             "grc9v4-configuration-v2",
+            "grc9v4-configuration-v3",
         ):
             return cls(GRC9V4Configuration.from_payload(dict(config)))
         if (
@@ -189,7 +193,9 @@ class GRC9V4(GRCV4):
     def snapshot(self, *, replay_mode="exact_observation"):
         with self._lock:
             return dict(
-                descriptor_version="grc9v4-public-checkpoint-v2"
+                descriptor_version="grc9v4-public-checkpoint-v3"
+                if spark.enabled(self._operation)
+                else "grc9v4-public-checkpoint-v2"
                 if has_basin(self._operation.specialization)
                 else _LAYOUT,
                 owner=_decode(self._operation.snapshot(replay_mode=replay_mode)),
@@ -206,7 +212,7 @@ class GRC9V4(GRCV4):
             not isinstance(state, Mapping)
             or set(state) != {"descriptor_version", "owner", "targets", "params"}
             or state["descriptor_version"]
-            not in (_LAYOUT, "grc9v4-public-checkpoint-v2")
+            not in (_LAYOUT, "grc9v4-public-checkpoint-v2", "grc9v4-public-checkpoint-v3")
         ):
             raise ValueError("closed public checkpoint required")
         result = cls.__new__(cls)
@@ -214,6 +220,22 @@ class GRC9V4(GRCV4):
         result._operation = GRC9V4PublicOperation.from_state(
             native_bytes(state["owner"])
         )
+        if spark.enabled(result._operation):
+            if state["descriptor_version"] != "grc9v4-public-checkpoint-v3" or state["targets"] != []:
+                raise ValueError("explicit exact checkpoint successor required")
+            result._targets = ()
+            provided = params.to_dict() if type(params) is FrozenJSONMap else params
+            if native_bytes(result._params()) != native_bytes(state["params"]) or (provided is not None and native_bytes(provided) != native_bytes(state["params"])):
+                raise ValueError("native checkpoint parameters differ")
+            if declared_state is not None:
+                from dataclasses import replace
+                actual = result._operation.scientific_state()
+                observation = actual.completion.to_dict()
+                observation.update(consumed_occurrences=state["owner"]["accounting"]["claims"],
+                                   children=state["owner"]["accounting"]["children"])
+                if replace(actual, completion=FrozenJSONMap(observation)) != declared_state.lifecycle:
+                    raise ValueError("native readable state differs from checkpoint")
+            return result
         if type(state["targets"]) is not list:
             raise ValueError("ordered target registry required")
         original = GRCV4ReferenceGeometry.from_payload(
@@ -254,7 +276,7 @@ class GRC9V4(GRCV4):
         if type(request) is not GRCV4StepRequestInput:
             raise TypeError("typed step input required")
         with self._lock:
-            if self.compatibility_branch != "enabled_v4":
+            if self.compatibility_branch not in ("enabled_v4", "enabled_spark_v4"):
                 raise ValueError(
                     "disabled branch uses native step(); V4 dt/context cannot be silently discarded"
                 )
@@ -262,6 +284,8 @@ class GRC9V4(GRCV4):
 
     def step(self):
         with self._lock:
+            if spark.enabled(self._operation):
+                return spark.transact(self._operation, dict(kind="step", duration="32"))
             if self.compatibility_branch == "disabled_grc9v3":
                 return self._operation.legacy_operation(
                     "legacy-step:" + self.lifecycle_digest
@@ -277,7 +301,7 @@ class GRC9V4(GRCV4):
         with self._lock:
             return (
                 self._operation.reset_enabled()
-                if self.compatibility_branch == "enabled_v4"
+                if self.compatibility_branch in ("enabled_v4", "enabled_spark_v4")
                 else self._operation.legacy_operation(
                     "legacy-reset:" + self.lifecycle_digest, "reset"
                 )
@@ -287,7 +311,7 @@ class GRC9V4(GRCV4):
         with self._lock:
             return (
                 self._operation.rebase_enabled()
-                if self.compatibility_branch == "enabled_v4"
+                if self.compatibility_branch in ("enabled_v4", "enabled_spark_v4")
                 else self._operation.rebase_legacy(
                     "legacy-rebase:" + self.lifecycle_digest
                 )
@@ -340,6 +364,25 @@ class GRC9V4(GRCV4):
         with self._lock:
             return self._operation.observables()
 
+    def install_completion_certificates(self, current, reset):
+        """Admit both immutable role proofs; installation earns no window time."""
+        with self._lock:
+            if not spark.enabled(self._operation):
+                raise ValueError("explicit v3 native spark configuration required")
+            return spark.transact(self._operation, dict(kind="certificates",
+                certificates=[current.to_payload(), reset.to_payload()]))
+
+    def migrate_spark_configuration(self, configuration):
+        with self._lock:
+            if not spark.enabled(self._operation):
+                raise ValueError("explicit v3 native spark configuration required")
+            return spark.transact(self._operation, dict(kind="migrate", configuration=configuration.to_payload()))
+
+    def completion_evidence_object(self, reference):
+        if not spark.enabled(self._operation):
+            raise ValueError("explicit v3 native spark configuration required")
+        return spark.evidence_object(self._operation, reference)
+
     def _references(self):
         reference = self._operation.reference
         return {
@@ -381,6 +424,10 @@ class GRC9V4(GRCV4):
             )
 
     def list_capabilities(self):
+        if spark.enabled(self._operation):
+            return {"profile_explicit_v4", "single_resource_ledger", "exact_rational_resources",
+                    "port_graph", "mechanical_refinement", "v4_realization_os",
+                    "native_spark_certificate_validation", "native_spark_atomic_lifecycle"}
         if self.compatibility_branch == "disabled_grc9v3":
             return self._operation.legacy_capabilities()
         identity = self._operation.reference.profile.identity_payload
@@ -406,6 +453,13 @@ class GRC9V4(GRCV4):
         return capabilities
 
     def support_status(self):
+        if spark.enabled(self._operation):
+            return dict(disposition="native_C_OS_spark_lifecycle_pending_P9_9_1a_5",
+                execution_families=["C_OS"], complete_profile_ids=[self.active_profile_id],
+                model_identities=[self.active_model_identity], compatibility_branch=self.compatibility_branch,
+                full_GRC9V4_conformance=False, optional_completion=False,
+                native_endpoint_verified=False, accounting_scope="process_shared_publication_v1",
+                cross_process_global_uniqueness=False, branch_crossing_available=False)
         return dict(
             disposition="bounded_local_api_pending_P9_9_6",
             declared_families=[f.profile_family_id for f in describe_families()],
