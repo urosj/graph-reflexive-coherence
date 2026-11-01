@@ -4928,3 +4928,11 @@ PATHS.update({
     'specs/grc-9-v4-spark-completion-earlier-source-manifest.json',
     'specs/grc-9-v4-spark-completion-earlier.md',
 })
+
+# P9-9.1a.1: user-directed native contract mapping after planning commit 77a777ce.
+# Bounded source/constraint checks only; no production path or capability grant.
+PATHS = PATHS | frozenset({
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md',
+    'implementation/phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json',
+    'implementation/phase-9-grcv4/verification/p991a1_native_spark_contract.py',
+})

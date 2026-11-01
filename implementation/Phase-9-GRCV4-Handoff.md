@@ -1,21 +1,26 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
-## Current continuation: native spark-completion planning — 2026-11-01
+## Current continuation: native spark contract mapped — 2026-11-01
 
 The accepted research branch was merged into `main` with `--no-ff` at
 `5227704449a062586df804ca5da0cc2853906425` (research tip `77c71ea4`). The new
-branch is `impl/grc9v4-native-spark-completion`. This checkpoint updates the
-plan/checklist before actual implementation; no native code, benchmark or
-completion campaign has been started.
+branch is `impl/grc9v4-native-spark-completion`. Planning is committed as
+`77a777ce`. The user requested commit then start; P9-9.1a.1 is now complete
+as a contract mapping and bounded verification, pending review. No production
+code, native benchmark or completion campaign has been started.
 
-Next is **P9-9.1a.1**, the exact contract-to-implementation map, followed by
-the C_OS quartic/numerical bridge, certificate and lifecycle integration,
+The [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
+and [retained check](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json)
+bind all eleven specification chains and thirty pending native obligations.
+Next is **P9-9.1a.2**, beginning with the explicit conservative resource/continuity
+representation, then the C_OS quartic/numerical bridge, certificate and lifecycle integration,
 runtime preflight and first public source-to-completion review. See the
 [work programme](./Phase-9-GRCV4-ImplementationPlan.md#p9-91a-native-spark-completion-work-programme)
 and [unchecked execution leaves](./Phase-9-GRCV4-ImplementationChecklist.md#p9-91a-native-spark-completion).
 The subsequent family order is C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC,
 A_CI_PC, C_RG2b, A_RG2b. Each includes side-tool API/browser/notebook work.
-Hierarchy remains deferred; accepted mandatory Tranches 8–9 are unchanged.
+Minimal atomic new-child registration is required by completion; broader
+hierarchy remains deferred. Accepted mandatory Tranches 8–9 are unchanged.
 Targeted regressions/publication and debt/support closeout remain in Tranche 10.
 
 **No long run without a same-subject native runtime estimate.** Start with
@@ -27,6 +32,18 @@ general runtime guarantee. C_OS current 374→376/reset 375→377 at duration 32
 scientific regression targets; native membership, numerical charge/error
 requirements and the positive window must actually pass. No supporting tail
 is required; larger graphs are not part of the initial programme.
+
+The bounded check confirms that binary64 input conversion of the accepted current
+prestate changes exact charge 21 by 2^-50. A separate two-vertex continuity
+probe reports zero charge residual while its stored sum drifts by -2^-53;
+this is not a failed C_OS trajectory. Exact reconstruction of the accepted
+C_OS domain gives a sufficient charge-tangent componentwise image-error
+threshold about 1.52791e-9. It is a budget, not proof of native error or predicate
+agreement. Production encoding, full-step certification and actual entry remain
+open under .2. Existing native charge-tolerance semantics remain unchanged.
+
+Reproduce the first leaf without trajectories:
+`PYTHONPATH=src timeout 30s .venv/bin/python implementation/phase-9-grcv4/verification/p991a1_native_spark_contract.py --check`.
 
 ## Historical accepted checkpoint: full spark proposal and integrated manuscript — 2026-11-01
 

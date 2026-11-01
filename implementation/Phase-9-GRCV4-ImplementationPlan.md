@@ -1,13 +1,17 @@
 # Phase 9 GRCV4 Implementation Plan
 
-## Current continuation: native spark-completion planning — 2026-11-01
+## Current continuation: native spark contract mapped — 2026-11-01
 
 Branch: `impl/grc9v4-native-spark-completion`, opened from `main` at
 `5227704449a062586df804ca5da0cc2853906425`, the no-ff merge of the accepted
-spark research. This checkpoint updates planning only; native implementation,
-benchmarks and completion runs have not started. The next work is
-[P9-9.1a.1](#p9-91a-native-spark-completion-work-programme), beginning with C_OS.
-Hierarchy remains deferred. Historical milestones below retain their original
+spark research. Planning was committed as `77a777ce`; P9-9.1a.1 now has a
+[concrete implementation map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md)
+and [retained bounded checks](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json),
+pending review. All ten family chains and thirty native obligations are mapped.
+No production code or native trajectory has changed. Next is P9-9.1a.2:
+resolve the explicit conservative resource/continuity representation and then
+implement the C_OS quartic/numerical bridge. Minimal atomic new-child registration
+belongs to completion; broader hierarchy remains deferred. Historical milestones below retain their original
 scope; the selected native programme does not reopen their accepted results.
 
 The accepted [proposal](./investigations/grc9v4-constitutive-design/drafts/spark-completion/Proposal.md),
@@ -4575,7 +4579,7 @@ binds the original first-group milestones below and all six later decisions.
 
 #### P9-9.1a native spark-completion work programme
 
-**Selected for planning, not implemented or accepted.** Completion and hierarchy
+**Contract mapping complete; native completion unimplemented and unaccepted.** Completion and hierarchy
 have distinct dispositions: this programme implements bounded native geometric
 child stabilization and `completed_spark`; hierarchy remains deferred. Reuse the
 accepted ten-family dynamics, P9-9.1b transaction owner and P9-9.4 public API.
@@ -4601,6 +4605,13 @@ rules. This is an engineering handoff, not another scientific-definition gate.
    Declare the exact source/target, current/reset and supported-domain scope.
    Reuse existing contracts and identify only the necessary explicit successors;
    do not rebind frozen zero-site configurations or historical evidence.
+   Mapping and bounded checks are complete, pending review; see the
+   [contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md).
+   The native continuity probe admits zero diagnostic residual with exact drift
+   -2^-53; binary64 conversion of the actual current prestate has drift 2^-50.
+   Exact certificate-coordinate algebra gives a sufficient charge-tangent
+   componentwise error threshold about 1.52791e-9, not an actual native error
+   bound. The .2 representation decision and full-step certification remain open.
 2. **P9-9.1a.2 — C_OS dynamics and numerical bridge.** Implement the selected
    quartic through the actual source/event/ordinary native maps. Prefer the
    existing FLINT/Arb machinery with an explicit policy. Establish a uniform
@@ -4624,7 +4635,9 @@ rules. This is an engineering handoff, not another scientific-definition gate.
    or gain. Invalidate on reset/rebase and relevant graph/profile/context/reference
    or branch changes unless an explicit successor re-admits the candidate.
    Publish completion and at-most-once occurrence gain atomically through the
-   public owner. Pressure wrong/stale bindings, omitted coordinates, interrupted
+   public owner, including the required canonical new-child registration. This
+   minimal occurrence record is included; broader hierarchy evolution stays
+   deferred. Pressure wrong/stale bindings, omitted coordinates, interrupted
    windows, late failure, reset, save/load/duplicate, replay and certificate succession.
 4. **P9-9.1a.4 — C_OS measured runtime preflight.** Start with bounded setup,
    source/event and single changing-state step measurements. Extend to a short

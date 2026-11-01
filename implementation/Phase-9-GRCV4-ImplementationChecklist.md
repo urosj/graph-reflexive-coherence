@@ -6,12 +6,14 @@ Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
 [phase registry](./ImplementationPhases.md#phase-9-grcv4-substrate-and-grc9v4-specialization).
 
-**Current continuation — 2026-11-01:** planning on
+**Current continuation — 2026-11-01:** planning committed as `77a777ce` on
 `impl/grc9v4-native-spark-completion`, from merged research `52277044`.
-The [P9-9.1a programme](#p9-91a-native-spark-completion) below selects C_OS first;
-all native leaves are unexecuted. No long run without a same-subject runtime
-estimate. Hierarchy stays deferred; accepted mandatory Tranches 8–9 and earlier
-Tranche 10 results retain their scope. This checkpoint changes planning only.
+P9-9.1a.1 has its concrete contract map and bounded verification, pending review;
+the remaining [native leaves](#p9-91a-native-spark-completion) are unexecuted.
+Next is the .2 conservative representation and C_OS quartic/numerical bridge.
+No long run without a same-subject runtime estimate. Broader hierarchy stays
+deferred; minimal atomic child registration belongs to completion. Existing
+mandatory Tranches 8–9 and earlier Tranche 10 acceptances retain their scope.
 
 ## Recording rules
 
@@ -4059,10 +4061,16 @@ are the accepted scientific basis. No renewed witness discovery, hierarchy or
 large-graph campaign is selected. Dependencies: .1 → .2 → .3 → .4 → .5 → .6 → .7.
 Short numerical/lifecycle controls belong within implementation, not at its end.
 
-- [ ] P9-9.1a.1: Map exact specs/claims/native obligations to the quartic evaluator,
+- [x] P9-9.1a.1: Map exact specs/claims/native obligations to the quartic evaluator,
   realization staging, identity/schema, numerical policy, certificate format,
   geometric-child classifier and lifecycle/API owner. Declare graph, profile,
   current/reset and domain scope; preserve frozen zero-site identities/evidence.
+  [Contract map](./phase-9-grcv4/tranche-9/P9-9.1a.1-NativeSparkContract.md) and
+  [verification](./phase-9-grcv4/tranche-9/P9-9.1a.1-Verification.json) bind eleven
+  specification chains and thirty pending native obligations. The small native
+  continuity counterexample and exact certificate-coordinate budget are retained;
+  no owner step, event or trajectory ran. Mapping is complete, review pending;
+  this does not select a completed numerical policy or grant native support.
 - [ ] P9-9.1a.2: Implement the actual C_OS quartic dynamics and numerical bridge.
   - [ ] Select explicit FLINT/Arb policy and justify the native representation;
     resolve exact-charge compatibility without silent repair or widened tolerances.
@@ -4079,7 +4087,8 @@ Short numerical/lifecycle controls belong within implementation, not at its end.
     rebase and relevant identity/branch changes unless explicitly re-admitted.
   - [ ] Pressure wrong/stale certificates, omitted history, interrupted windows,
     zero-duration/inspection, late failure and rollback, reset, duplicate,
-    save/load/replay and certificate succession. Publish gain once per occurrence.
+    save/load/replay and certificate succession. Publish gain and canonical new-child
+    registration atomically once per occurrence; broader hierarchy stays deferred.
 - [ ] P9-9.1a.4: Complete and report the C_OS runtime estimate before any long run.
   - [ ] Time bounded initialization, source/event and one changing-state step;
     extend toward 20–40 steps only if measured cost fits the short declared cap.
