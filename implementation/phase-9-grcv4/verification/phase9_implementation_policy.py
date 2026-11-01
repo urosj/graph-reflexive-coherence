@@ -4694,3 +4694,26 @@ PATHS.update({
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAPCReconciliation.md',
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkAPCReconciliation.json',
 })
+
+# A_CI_PC selected composite root and full implicit C/W/Z completion research; review pending.
+PATHS.update({
+    INV+'decisions/SparkCompletionACIPCApplicability.md',
+    INV+'research/spark_completion_a_ci_pc.py',
+    INV+'research/spark_completion_a_ci_pc_campaign.py',
+    INV+'scripts/check_spark_completion_applicability_a_ci_pc.py',
+    INV+'scripts/test_spark_completion_a_ci_pc.py',
+    INV+'scripts/check_spark_completion_a_ci_pc_research.py',
+    INV+'scripts/test_spark_completion_a_ci_pc_surfaces.py',
+    INV+'evidence/spark-completion/applicability/ACIPCDeclaration.json',
+    INV+'evidence/spark-completion/applicability/ACIPCPreflight.json',
+    INV+'evidence/spark-completion/applicability/ACIPC-current.json.xz',
+    INV+'evidence/spark-completion/applicability/ACIPC-reset.json.xz',
+    INV+'evidence/spark-completion/applicability/ACIPCChecks.json',
+    INV+'evidence/spark-completion/applicability/ACIPCResearchProgress.json',
+    INV+'evidence/spark-completion/applicability/ACIPCMetadataSources.json',
+    INV+'evidence/spark-completion/applicability/ACIPCValidation.json',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionACIPCResearch.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_acipc_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_acipc_research.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-acipc-research.js',
+})

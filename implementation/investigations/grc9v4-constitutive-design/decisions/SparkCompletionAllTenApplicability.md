@@ -9,7 +9,9 @@ and accepted constructive result remain closed. Native implementation is separat
 C_OS, C_CI, C_PC, C_CI_PC, A_OS and A_CI. Its full 76-dimensional C/W/Z return,
 independent writers and actual two-history completion chain are propagated.
 Current 375→377 earns one local child; reset 372→374 earns zero live gain.
-Seven families are accepted; A_CI_PC is next. The earlier A_OS domain retains
+Seven families are accepted. [A_CI_PC research](./SparkCompletionACIPCApplicability.md)
+now demonstrates the full implicit C/W/Z completion chain, pending review.
+The earlier A_OS domain retains
 its separate review status and the below-100 investigation remains paused.
 Native completion/hierarchy and aggregate G4 remain separate.
 
@@ -88,13 +90,18 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current next family: A_CI_PC
+## Current action: A_CI_PC scientific review
 
-Combine the selected joint current/geometry root with incoming carrier history,
-both writers and a full C/W/Z return. Establish an actual source/event/two-
-history transfer/approach/window chain for the composite realization. A prior
-center or domain is only a candidate; its derivative and trajectory are not
-inherited. Check caching before long runs, prioritize informative large cases,
-retain FLINT/Arb, one-hour large-graph caps and compressed evidence. Continue
-this branch; no A_CI_PC campaign has started. The below-100 A_OS investigation
-remains paused.
+A fresh selected composite root and full 76-dimensional implicit C/W/Z trap
+include both history channels. The same source feeds immediate geometry and
+the held carrier writer. Actual source/event, W lineage and carrier loss/reset
+are retained. Current 375→377 earns one local child; reset
+372→374 earns zero live gain. Adjudication and propagation remain
+pending; seven earlier scientific families stay accepted.
+
+C_RG2b is next after review. Its completion-relative section needs valid full-
+map bounds; existing Lipschitz sections are not automatically differentiable,
+and the old zero-site section does not justify the quartic-law construction.
+Retain informative-case priority, preflight optimizations, FLINT/Arb, explicit
+one-hour large-graph caps and compressed evidence. No RG2b campaign has started.
+The below-100 A_OS investigation remains paused.
