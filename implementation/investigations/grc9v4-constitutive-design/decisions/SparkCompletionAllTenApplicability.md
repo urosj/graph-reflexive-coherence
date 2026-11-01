@@ -9,7 +9,8 @@ and accepted constructive result remain closed. Native implementation is separat
 C_OS, C_CI, C_PC, C_CI_PC, A_OS, A_CI and A_PC. Its selected composite root,
 full 76-dimensional implicit C/W/Z return and same-source two-history completion
 chain are propagated. Current 375→377 earns one local child; reset 372→374
-earns zero live gain. Eight families are accepted; C_RG2b is next. The earlier
+earns zero live gain. Eight families are accepted; C_RG2b research is now
+demonstrated pending review below. The earlier
 A_OS domain retains its separate review status and the below-100 goal stays
 paused. Native completion/hierarchy and aggregate G4 remain separate.
 
@@ -88,13 +89,43 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current next family: C_RG2b
+## C_RG2b faster result ready for review; A_RG2b follows
 
-Justify the completion-relative section and full ordinary-map bounds for the
-quartic law, followed by an actual source/event/transfer/approach/window chain.
-A Lipschitz section is not automatically differentiable; old zero-site inverse
-bounds do not establish the new construction. Candidate domains can guide the
-proof, but earlier derivatives and trajectories are not inherited. Retain
-informative-case priority, optimization preflights, FLINT/Arb, explicit one-hour
-large-graph caps and compressed evidence. Continue this branch; no RG2b
-completion campaign has started. The below-100 A_OS goal remains paused.
+The [selected faster construction](./SparkCompletionCRG2bFaster.md) certifies
+390→392 beats for current and reset at uniform duration eight, elapsed target
+time 3136. The exact preparation/allocation are new; coefficients, graph and
+RG2b completion are unchanged. The full-state finite union has component radius
+1/32768 and one common contraction for every pair. Both supporting trajectories
+continue to 2089 and are freshly replayed. The original SC-1 definition and
+baseline evidence are unchanged. Only current earns one local child.
+
+Uniform duration 32 was investigated first but remains uncertified. Its retained
+inverse obstruction concerns the original auxiliary completion, not every
+possible completion or the charge-21 family. Section reuse is justified by
+unique-section invariance, with full error propagation and fresh checks.
+Read-only inspection shows selected and baseline results with elapsed time.
+
+Acceptance remains withheld pending scientific review. Eight families are
+accepted; C_RG2b debt remains open. A_RG2b follows adjudication. Native
+completion, hierarchy and G4 remain forward; the below-100 A_OS task stays
+paused. Keep FLINT/Arb, preflight verification, informative-case priority and
+one-hour caps for further research.
+
+C_RG2b retention update (2026-11-01): only the selected faster proof retains full
+trajectory evidence. The superseded baseline has compact run records, hashes,
+parameters, check results and unchanged generating code in `CRG2bRunHistory.json`.
+Its 4,250 observations are no longer retained or rechecked by inspection. The
+selected 4,178 supporting observations and all other accepted-family evidence
+remain unchanged.
+
+C_RG2b direct-domain successor (2026-11-01): selected entry 390→completion 392
+now requires only 392 executed steps per role, with zero later support. Exact
+polynomial/Bernstein bounds and a sharper local Lipschitz-section estimate
+prove the full 14-dimensional domain invariant, without changing SC-1, duration 8,
+physical coefficients or the preceding event preparation/allocation. Six direct
+scientific tests and two full prefix replays are recorded separately. The API,
+browser and notebook select `report.direct`; earlier finite-union results remain
+historical. Only 784 selected states are retained in XZ; the superseded 2089-step
+payloads are removed with hashes, summaries and unchanged generators preserved
+in `CRG2bFasterRunHistory.json`. Scientific acceptance remains pending; eight
+families are accepted and A_RG2b remains afterward.

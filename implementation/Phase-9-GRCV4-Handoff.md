@@ -1,5 +1,108 @@
 # Phase 9 GRCV4 handoff — Runtime expansion and covariance
 
+## Current continuation: C_RG2b direct closure, no supporting tail — 2026-11-01
+
+The [direct C_RG2b certificate](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bDirect.md)
+proves **entry 390 → completion 392**, for both current and reset, with **no
+trajectory after 392**. Both fresh executions and both full replays stop at 392.
+Duration remains **8**, elapsed ordinary time **3136**, and all physical
+coefficients, source preparation, allocation and invariant-section completion
+match the preceding faster construction. Current earns one local child; reset
+and read-only replay earn zero live gain. Uniform duration 32 remains uncertified.
+
+A degree 40 exact polynomial curve plus a full **14-dimensional** charge-tangent
+ball of radius **1/4096** defines the domain. Exact FLINT polynomial algebra,
+Bernstein ranges, a sharper local section/inverse estimate and full physical
+difference bounds prove a common contraction **q < 0.997397** and strict
+self-map margin **>6.21038e-7**. All edge directions and complete basins hold
+uniformly. The original SC-1 contract is unchanged; no derivative of Γ is assumed.
+The domain checker accepts no trajectory input. Details, formulas and commands
+are in the linked decision note and `CRG2bDirectChecks.json`.
+
+Only the two compressed **392-step prefixes (784 states total)** are retained
+in full. The superseded 2089-step supporting payloads (**11,502,036 bytes**) are
+removed; their run summaries, original hashes, recorded checks and unchanged
+generators remain in `CRG2bFasterRunHistory.json`. The older baseline history
+remains in `CRG2bRunHistory.json`. Historical records do not claim fresh checks
+of absent payloads. The compressed discovery bundle remains for reproduction.
+
+The API/browser/notebook expose `report.direct` as selected, with explicit
+completion, last executed step and zero subsequent support. `report.faster`
+and the original baseline remain historical comparisons. Inspection never
+launches numerical runs. All selected run evidence is XZ compressed.
+
+**Next: scientific review/adjudication. No acceptance, commit, merge or push
+has been performed.** Eight spark-completion families remain accepted;
+C_RG2b debt is open and **A_RG2b remains afterward**. Existing accepted proofs
+remain valid; this construction does not force their reimplementation. Native
+P9-9.1a, hierarchy and G4 remain separate. The existing `specs/README.md`
+basin-source repository audit failure is unwaived. A_OS below 100 remains paused.
+
+```sh
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_direct.py --replay
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_direct.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes; their superseded full
+payloads are not part of the selected direct proof.
+
+## Historical continuation: C_RG2b baseline demonstrated; faster construction selected — 2026-11-01
+
+Continue on `investigation/grc9v4-spark-completion` after accepted A_CI_PC
+(`abb9e1ce`). The [C_RG2b investigation](./investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bApplicability.md)
+justifies a fresh quartic completion-relative section on the source and target
+graphs. The full physical return covers all **14 independent resource directions**
+using Lipschitz differences, with no assumed derivative of the RG section.
+The auxiliary argument retraction, nested agreement charts, global inverses,
+finite-chain error and local return contraction are explicit. Native zero-site
+bounds and earlier-family trajectories are not inherited.
+
+The new declaration uses ordinary duration **8** and a trapping radius **1/8192**.
+Current **2174 → 2176** earns one local child;
+reset **2072 → 2074** earns zero live gain. Target elapsed
+time from expansion is **17408** for current and **16592** for reset. Each
+positive two-beat window lasts **16**. The actual source beat and fresh event
+trigger, lawful allocation and independently reconstructed target section are
+retained; geometry history is not transported. Exact-charge metric tubes
+propagate every rounding, allocation and finite-section error. Checkpoint reads
+enclose the whole physical tube, not just its proposed center.
+
+Six focused tests and an eight-step optimization preflight passed before both
+campaigns. FLINT/Arb runs use 512-bit certification, 256-bit proposals,
+8192-beat horizons and one-hour caps. Immutable exact graph caches, precision-
+keyed identity operators, per-inverse reuse and certified early stops are active.
+All **4250 states** remain XZ compressed from **33.65 MB to 4.78 MB**.
+Two further tests check both signs of all fourteen directions at 90% of the
+trap radius and establish a duration-32 uniform-inverse obstruction for this
+auxiliary completion, without a universal or charge-21 impossibility claim. Retained checks cover every transition and 25 altered-evidence controls.
+They establish consistency with the source-bound outward producer; no independent
+external review or duplicate long trajectory proof is claimed.
+
+Use `/api/spark-completion/applicability/c-rg2b/research`, the C_RG2b panel,
+notebook cell `spark-completion-c-rg2b-research`, or
+`grcv4_explorer.spark_crg2b_research.spark_crg2b_research_status`.
+Inspection authenticates retained sources without numerical work. Accepted
+A_CI_PC and historical projections stay fixed through a finite metadata successor.
+
+**Next: investigate uniform duration 32 and closure below 400 beats.** The
+user explicitly withholds acceptance of this first positive result. Keep all
+physical coefficients fixed while testing better completions, lawful
+preparations/allocations and anisotropic trapping domains. Review/adjudication
+and authority → proposal/paper → specification follow a selected result. Eight families remain accepted and
+`SC-APP-DEBT-C_RG2b` remains open. **A_RG2b is the remaining realization**.
+Native completion at P9-9.1a, hierarchy and G4 stay forward. The broader audit's
+pre-existing `specs/README.md` basin-source drift remains unwaived. The below-100
+A_OS goal stays paused; its earlier-domain result retains separate review status.
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_research.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b.py
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_surfaces.py
+```
+
+Earlier entries below preserve their historical scopes and flags.
+
 ## Current continuation: A_CI_PC SC-3 accepted; C_RG2b next — 2026-11-01
 
 The user accepts the bounded A_CI_PC result and requests commit. Research

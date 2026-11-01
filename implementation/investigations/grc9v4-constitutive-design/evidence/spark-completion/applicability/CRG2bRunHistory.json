@@ -1,0 +1,280 @@
+{
+  "schema": "spark-completion-crg2b-run-history-v1",
+  "family": "C_RG2b",
+  "status": "superseded_baseline_summary",
+  "accepted_authority": false,
+  "retention_policy": "Keep the selected faster proof evidence. Retain baseline run records, parameters, check results and exact generating sources; remove superseded full trajectories.",
+  "numerical_payloads_retained": false,
+  "historical_payloads_rechecked_by_inspection": false,
+  "runs": {
+    "current": {
+      "evidence_status": "historical_summary_only",
+      "former_path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2b-current.json.xz",
+      "former_sha256": "5a2ba038d0c1b8a83c1b75334133df17d287f1c7b64f45de035714918d1bc84c",
+      "execution_record_digest": "a71672fb34532f2c9d3b92eadacc1e36d4447442d7222a300f26dd782ef1152e",
+      "former_compressed_bytes": 2468744,
+      "former_uncompressed_bytes": 17297745,
+      "observed_states": 2176,
+      "elapsed_seconds": 1194.1796041990165,
+      "decision": {
+        "role": "current",
+        "scientific_completion": true,
+        "local_gain": 1,
+        "reset_probe_earns_live_gain": false,
+        "first_spatial_gain": 392,
+        "first_certified_entry": 2174,
+        "target_completion_step": 2176,
+        "window_beats": 2,
+        "window_elapsed": "16",
+        "full_state": [
+          "C"
+        ],
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "native_completion": false,
+        "accepted_authority": false
+      },
+      "proof_digest": "d340186868a1f09f93d0ce89c6b8cf47b4ca7165026a6292c431c07fe56f75ee",
+      "arithmetic": {
+        "precision_bits": 512,
+        "proposal_bits": 256,
+        "center_bits": 240,
+        "section_depth": 16,
+        "proposal_sweeps_limit": 8,
+        "maximum_target_steps": 8192,
+        "time_limit_seconds": 3600,
+        "automatic_fallback": false,
+        "physical_enclosure": "charge-tangent metric tubes with full propagated rounding and finite-section error",
+        "midpoint_only_evolution": false,
+        "storage_bits": 112,
+        "radius_storage": "exact dyadic"
+      },
+      "optimization": {
+        "target_ordinary_steps": 2176,
+        "target_section_calls": 2176,
+        "target_lag_operator_builds": 111333,
+        "target_newton_iterations": 452710,
+        "target_proposal_sweeps": 7277,
+        "graph_cache_hits": 4,
+        "domain_cache_hits": 2,
+        "immutable_exact_graph_cache": true,
+        "precision_keyed_identity_cache": true,
+        "per_inverse_operator_reuse": true,
+        "certified_proposal_early_stop": true,
+        "validated_metric_tubes": true,
+        "identical_subject_read_reuse": true,
+        "chiral_incidence_identity": true,
+        "trajectory_results_cached": false
+      }
+    },
+    "reset": {
+      "evidence_status": "historical_summary_only",
+      "former_path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2b-reset.json.xz",
+      "former_sha256": "98c4489d9f568c81f38d226fedadaaea5641b98b1eebff76cd6c2ec01b03e547",
+      "execution_record_digest": "c5f41de0f093346c923d0efb634ce88d1d91a9cfa50d0aaa2a6391b886bf4022",
+      "former_compressed_bytes": 2313404,
+      "former_uncompressed_bytes": 16353522,
+      "observed_states": 2074,
+      "elapsed_seconds": 1149.1885952299926,
+      "decision": {
+        "role": "reset",
+        "scientific_completion": false,
+        "local_gain": 0,
+        "reset_probe_earns_live_gain": false,
+        "first_spatial_gain": 462,
+        "first_certified_entry": 2072,
+        "target_completion_step": 2074,
+        "window_beats": 2,
+        "window_elapsed": "16",
+        "full_state": [
+          "C"
+        ],
+        "stable_descendants": {
+          "-1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          },
+          "1": {
+            "p": [
+              "p",
+              "private"
+            ],
+            "sc2-positive-module/satellite/2": [
+              "n2",
+              "n8",
+              "sc2-positive-module/satellite/2"
+            ]
+          }
+        },
+        "native_completion": false,
+        "accepted_authority": false
+      },
+      "proof_digest": "d340186868a1f09f93d0ce89c6b8cf47b4ca7165026a6292c431c07fe56f75ee",
+      "arithmetic": {
+        "precision_bits": 512,
+        "proposal_bits": 256,
+        "center_bits": 240,
+        "section_depth": 16,
+        "proposal_sweeps_limit": 8,
+        "maximum_target_steps": 8192,
+        "time_limit_seconds": 3600,
+        "automatic_fallback": false,
+        "physical_enclosure": "charge-tangent metric tubes with full propagated rounding and finite-section error",
+        "midpoint_only_evolution": false,
+        "storage_bits": 112,
+        "radius_storage": "exact dyadic"
+      },
+      "optimization": {
+        "target_ordinary_steps": 2074,
+        "target_section_calls": 2074,
+        "target_lag_operator_builds": 106281,
+        "target_newton_iterations": 434344,
+        "target_proposal_sweeps": 6947,
+        "graph_cache_hits": 4,
+        "domain_cache_hits": 2,
+        "immutable_exact_graph_cache": true,
+        "precision_keyed_identity_cache": true,
+        "per_inverse_operator_reuse": true,
+        "certified_proposal_early_stop": true,
+        "validated_metric_tubes": true,
+        "identical_subject_read_reuse": true,
+        "chiral_incidence_identity": true,
+        "trajectory_results_cached": false
+      }
+    }
+  },
+  "generator_sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b.py",
+      "sha256": "0d99b77e0b3b23b711270195aebffedc4212fe639236e719bf8bc9fa08d5b283"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b_campaign.py",
+      "sha256": "06481302ae68ffc75ad42588a917c50e3f8b2d6fa0223a62a3960deadd8c4d96"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci.py",
+      "sha256": "3c403d943bb924fa4d392ea2dafc8b77a190f587c031903c0b9d78d3808bdc71"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_ci_campaign.py",
+      "sha256": "732c5968a4a0f9a7e4350a9144b9c16740785cf197b34e84fc8eeb38e78987b4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_positive.py",
+      "sha256": "15069ffca9b22a666ff67cd0b28ea740f9ed69f40de72154498d3e84eca4c64b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_continuation.py",
+      "sha256": "b26c6bd0f050ab710b663e025cc3f039ed81c68ac8f834d8c60a2b2bdaad3709"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_basins.py",
+      "sha256": "6da2628f6f04bd112dbdd6eedfb9dc38661d7cc8f0a7532d211ba30e21769fd5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_os_reference.py",
+      "sha256": "0fab09c6bfcc098c537e39c223380a1d70af2de2eef5156a2d1307fef81069ac"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_c_rg2b.py",
+      "sha256": "8c3d151fbf772275882a17c08697bb7cced1a6e72241714b709b877a019aedf8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b.py",
+      "sha256": "e1b4642957896564806759e353294e47c9d9ab236c72d021bde24d4d0816b5f6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bApplicability.md",
+      "sha256": "19fc115168a8711bc5e9ad35352c677df1e6b9ee1a01c46a2fac68193cd790fd"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDeclaration.json",
+      "sha256": "bd5fd4994e750ece3308352b3758d8f225c93c99a60047eea1f70baeaa3f4fc3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/review/constructive-candidate/positive_candidate.py",
+      "sha256": "efa6eba9f08ad8cfec73d2e3fcd8b071374631c6ebdfc5e3610c3c0585a5502d"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "sha256": "05d754313f1d529a8829f255d1101acfbb7267f465e55974d061fa6713fb5767"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "sha256": "6dd6a8637c8d03f164b993fa801e5b65ee5c8f05425a33498b14fd92c0dd3a4c"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877"
+    },
+    {
+      "path": "specs/grc-v4-topology-event-spec.md",
+      "sha256": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd"
+    }
+  ],
+  "declaration": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDeclaration.json",
+    "sha256": "bd5fd4994e750ece3308352b3758d8f225c93c99a60047eea1f70baeaa3f4fc3",
+    "record_digest": "7a5b1ec13c2a653ac5fd4e9fc22b8bdacc2e321ab13978b1c86edc18b8b31ab2"
+  },
+  "prior_checks": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bChecks.json",
+    "sha256": "0c737c39006c2f35b838161bb46226e1ad90b453955277529a6c72ac4cd47837",
+    "record_digest": "5818f1c73c4b3cc7d970f3f0ebed3cb6ed2f17f7ac274e8a65b2ac28d6491181",
+    "historical_checked_states": 4250,
+    "rejected_controls": 25
+  },
+  "prior_validation": {
+    "record_digest": "70869996599a40ec5f17fbbe0cc39e04f7cb9fd3b73fee6897414cdc19c3470f",
+    "status": "passed_focused_checks_with_preexisting_repository_audit_failure",
+    "tests": 19,
+    "baseline_transition_checks": 4250
+  },
+  "selected_result": {
+    "declaration_digest": "c506311de72e15c5759805ea77fb53150f2fe9b0369ae5862ba10da89e4453a0",
+    "certificate_digest": "a63a7212a039dde31e385cd1fdf0913415d6f008a81819c61aca2632d704231c",
+    "entry": 390,
+    "completion": 392,
+    "supporting_steps_per_role": 2089
+  },
+  "reproduction": {
+    "commands": [
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_c_rg2b.py --role current",
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_applicability_c_rg2b.py --role reset"
+    ],
+    "note": "These explicitly regenerate the retired baseline payloads if needed. Timing and record hashes may differ; existing declarations, preflight and generating code are preserved. Normal inspection does not regenerate them."
+  },
+  "removed_bytes": 4782148,
+  "unchanged_scope": "Other realization evidence and every selected faster scientific artifact remain unchanged.",
+  "record_digest": "1982821de2205bc8037077d07d9004f69c8d3072f488ca0846de42c251c08caa"
+}

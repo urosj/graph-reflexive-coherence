@@ -4092,3 +4092,60 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
 - [x] Explicit user acceptance and bound authority → proposal/paper → specification propagation;
   three conditional claims resolve SC-APP-DEBT-A_CI_PC, with two native obligations forward.
 - [ ] C_RG2b next after accepted A_CI_PC; native P9-9.1a, hierarchy and G4 remain forward.
+
+## C_RG2b completion applicability — bounded research, review pending (2026-11-01)
+
+- [x] Derive fresh quartic completed inverse/section bounds and a full 14-direction
+  Lipschitz return proof, with no classical section derivative assumption.
+- [x] Freeze the new duration-eight source prestate and 1/8192 trap; certify
+  actual source/event/transfer and independently derived target geometry.
+- [x] Pass six equation/inverse/section/tube tests and the optimization preflight;
+  retain current 2174→2176, reset 2072→2074,
+  all 4250 metric-tube states, two positive beats (elapsed 16), and 25 controls.
+- [x] Update read-only API/browser/notebook inspection and preserve prior authority
+  and historical projections through exact finite metadata succession.
+- [ ] First investigate uniform duration 32 and closure below 400 beats; the
+  user withholds acceptance of this positive baseline. Then review/adjudicate
+  C_RG2b and propagate authority → proposal/paper →
+  specification if accepted. Eight scientific families remain accepted.
+- [ ] Continue A_RG2b afterward. Native P9-9.1a, hierarchy and G4 remain forward;
+  the below-100 A_OS goal stays paused.
+
+Evidence: [C_RG2b research](./decisions/SparkCompletionCRG2bApplicability.md).
+
+## C_RG2b faster closure — research ready for review (2026-11-01)
+
+- [x] Investigate uniform duration 32 first; retain the scoped inverse obstruction
+  and unsuccessful numerical proposals without claiming family impossibility.
+- [x] Select a new lawful source preparation/allocation with unchanged physical
+  coefficients and completion, then prove **390→392** at duration **8** for both roles.
+- [x] Use full-dimensional components of radius **1/32768**, strict successor
+  containment, a common pairwise contraction and unchanged SC-1 basin conditions.
+- [x] Retain supporting trajectories through **2089**, validated section reuse,
+  fresh checkpoint reconstructions, complete fresh replays and XZ evidence.
+- [x] Update API/browser/notebook and retain the earlier baseline and historical
+  accepted projections without promotion.
+- [ ] Scientific review and explicit acceptance; no commit/merge/push is implied.
+  Eight families remain accepted; A_RG2b follows. Native completion, hierarchy,
+  G4 and the paused below-100 A_OS investigation retain their prior scopes.
+
+Evidence: [faster C_RG2b proof](./decisions/SparkCompletionCRG2bFaster.md).
+
+C_RG2b retention update (2026-11-01): only the selected faster proof retains full
+trajectory evidence. The superseded baseline has compact run records, hashes,
+parameters, check results and unchanged generating code in `CRG2bRunHistory.json`.
+Its 4,250 observations are no longer retained or rechecked by inspection. The
+selected 4,178 supporting observations and all other accepted-family evidence
+remain unchanged.
+
+C_RG2b direct-domain successor (2026-11-01): selected entry 390→completion 392
+now requires only 392 executed steps per role, with zero later support. Exact
+polynomial/Bernstein bounds and a sharper local Lipschitz-section estimate
+prove the full 14-dimensional domain invariant, without changing SC-1, duration 8,
+physical coefficients or the preceding event preparation/allocation. Six direct
+scientific tests and two full prefix replays are recorded separately. The API,
+browser and notebook select `report.direct`; earlier finite-union results remain
+historical. Only 784 selected states are retained in XZ; the superseded 2089-step
+payloads are removed with hashes, summaries and unchanged generators preserved
+in `CRG2bFasterRunHistory.json`. Scientific acceptance remains pending; eight
+families are accepted and A_RG2b remains afterward.

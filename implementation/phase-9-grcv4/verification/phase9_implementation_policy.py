@@ -4740,3 +4740,55 @@ PATHS.update({
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkACIPCReconciliation.md',
     'implementation/phase-9-grcv4/tranche-10/P9-10.5-10.6-SparkACIPCReconciliation.json',
 })
+
+# C_RG2b quartic completion-relative Lipschitz section and metric-tube research; review pending.
+PATHS.update({
+    INV+'decisions/SparkCompletionCRG2bApplicability.md',
+    INV+'research/spark_completion_c_rg2b.py',
+    INV+'research/spark_completion_c_rg2b_campaign.py',
+    INV+'scripts/check_spark_completion_applicability_c_rg2b.py',
+    INV+'scripts/test_spark_completion_c_rg2b.py',
+    INV+'scripts/check_spark_completion_c_rg2b_research.py',
+    INV+'scripts/test_spark_completion_c_rg2b_surfaces.py',
+    INV+'scripts/test_spark_completion_c_rg2b_differences.py',
+    INV+'evidence/spark-completion/applicability/CRG2bDeclaration.json',
+    INV+'evidence/spark-completion/applicability/CRG2bPreflight.json',
+    INV+'evidence/spark-completion/applicability/CRG2bChecks.json',
+    INV+'evidence/spark-completion/applicability/CRG2bRunHistory.json',
+    INV+'evidence/spark-completion/applicability/CRG2bResearchProgress.json',
+    INV+'evidence/spark-completion/applicability/CRG2bMetadataSources.json',
+    INV+'evidence/spark-completion/applicability/CRG2bValidation.json',
+    INV+'tools/exploratory-side-tool/docs/SparkCompletionCRG2bResearch.md',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_crg2b_metadata.py',
+    INV+'tools/exploratory-side-tool/tool/src/grcv4_explorer/spark_crg2b_research.py',
+    INV+'tools/exploratory-side-tool/tool/phase9-web/spark-crg2b-research.js',
+})
+
+# C_RG2b faster finite-union research and derived-section reuse; review pending.
+PATHS.update({
+    INV+'decisions/SparkCompletionCRG2bFaster.md',
+    INV+'research/spark_completion_c_rg2b_faster.py',
+    INV+'scripts/check_spark_completion_c_rg2b_faster.py',
+    INV+'scripts/test_spark_completion_c_rg2b_faster.py',
+    INV+'evidence/spark-completion/applicability/CRG2bFasterDeclaration.json',
+    INV+'evidence/spark-completion/applicability/CRG2bFasterPreflight.json.xz',
+    INV+'evidence/spark-completion/applicability/CRG2bFasterCertificate.json',
+    INV+'evidence/spark-completion/applicability/CRG2bFasterSearch.json.xz',
+    INV+'evidence/spark-completion/applicability/CRG2bFasterChecks.json',
+})
+
+# C_RG2b direct continuous trapping domain and prefixes through completion only.
+PATHS.update({
+    INV+'research/spark_completion_c_rg2b_direct.py',
+    INV+'decisions/SparkCompletionCRG2bDirect.md',
+    INV+'scripts/check_spark_completion_c_rg2b_direct.py',
+    INV+'scripts/test_spark_completion_c_rg2b_direct.py',
+    INV+'scripts/propose_spark_completion_c_rg2b_curve.py',
+    INV+'evidence/spark-completion/applicability/CRG2bDirectDomain.json',
+    INV+'evidence/spark-completion/applicability/CRG2bDirectDeclaration.json',
+    INV+'evidence/spark-completion/applicability/CRG2bDirectCertificate.json',
+    INV+'evidence/spark-completion/applicability/CRG2bDirect-current.json.xz',
+    INV+'evidence/spark-completion/applicability/CRG2bDirect-reset.json.xz',
+    INV+'evidence/spark-completion/applicability/CRG2bDirectChecks.json',
+    INV+'evidence/spark-completion/applicability/CRG2bFasterRunHistory.json',
+})

@@ -1,0 +1,120 @@
+{
+  "schema": "spark-completion-crg2b-direct-checks-v1",
+  "status": "passed",
+  "declaration_digest": "4ad1ef81357fa55cfa389157f24f6fbed316c55121f183bed2a74ba636772b60",
+  "certificate_digest": "fd50cc256b354d1d73bcf16965101ff4693e3ee3e2d0be510b18507cb1341433",
+  "replay": {
+    "status": "passed",
+    "entry": 390,
+    "completion": 392,
+    "ordinary_duration": "8",
+    "retained_states": 784,
+    "last_executed_step": 392,
+    "supporting_trajectory_steps_after_completion": 0,
+    "trajectory_inputs_to_domain_checker": 0,
+    "complete_fresh_trajectory_replays": 2,
+    "certificate_digest": "fd50cc256b354d1d73bcf16965101ff4693e3ee3e2d0be510b18507cb1341433",
+    "contraction": [
+      "5178780896762430901553347946306947/5192296858534827628530496329220096",
+      "1294695224190607725388336986576737/1298074214633706907132624082305024"
+    ],
+    "strict_image_margin": [
+      "403076768623940550510450045/649037107316853453566312041152512",
+      "3224614148991524404083600361/5192296858534827628530496329220096"
+    ],
+    "same_implementation_replay": true,
+    "independent_external_review_claimed": false,
+    "accepted_authority": false,
+    "elapsed_seconds": 25.912548755004536
+  },
+  "check_with_superseded_payloads_absent": {
+    "status": "passed",
+    "entry": 390,
+    "completion": 392,
+    "ordinary_duration": "8",
+    "retained_states": 784,
+    "last_executed_step": 392,
+    "supporting_trajectory_steps_after_completion": 0,
+    "trajectory_inputs_to_domain_checker": 0,
+    "complete_fresh_trajectory_replays": 0,
+    "certificate_digest": "fd50cc256b354d1d73bcf16965101ff4693e3ee3e2d0be510b18507cb1341433",
+    "contraction": [
+      "5178780896762430901553347946306947/5192296858534827628530496329220096",
+      "1294695224190607725388336986576737/1298074214633706907132624082305024"
+    ],
+    "strict_image_margin": [
+      "403076768623940550510450045/649037107316853453566312041152512",
+      "3224614148991524404083600361/5192296858534827628530496329220096"
+    ],
+    "same_implementation_replay": true,
+    "independent_external_review_claimed": false,
+    "accepted_authority": false,
+    "elapsed_seconds": 2.8220362029969692
+  },
+  "tests": 6,
+  "test_output": "test_actual_section_in_all_fourteen_directions (__main__.DirectTests.test_actual_section_in_all_fourteen_directions) ... ok\ntest_bad_domain_rejected_after_rehash (__main__.DirectTests.test_bad_domain_rejected_after_rehash) ... ok\ntest_exact_polynomial_against_direct_physical_identity_map (__main__.DirectTests.test_exact_polynomial_against_direct_physical_identity_map) ... ok\ntest_full_domain_not_a_sampled_or_flat_geometry_claim (__main__.DirectTests.test_full_domain_not_a_sampled_or_flat_geometry_claim) ... ok\ntest_local_inverse_and_whole_order_controls (__main__.DirectTests.test_local_inverse_and_whole_order_controls) ... ok\ntest_no_old_tail_reads_and_window_membership_controls (__main__.DirectTests.test_no_old_tail_reads_and_window_membership_controls) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 22.099s\n\nOK\n",
+  "controls": [
+    "exact rational residual checked against directly evaluated physical identity map at five rational parameters",
+    "both signs of all fourteen independent resource directions with independently reconstructed sections",
+    "positive geometry-value and section-difference corrections retained for both H consumers",
+    "rehashed zero-radius, omitted-direction, wrong-charge, changed-curve and changed-duration declarations rejected",
+    "too-small inverse cube rejected",
+    "domain crossing an edge-order plane rejected",
+    "every retired full-payload path blocked during selected checking",
+    "zero-radius, oversized and post-window membership requests rejected"
+  ],
+  "execution_digests": {
+    "current": "eff6011efe118ac692f2495135180fcdcd81d229a6dba2cb5e57a55cd76087cf",
+    "reset": "2576a28e6d190d8c0ff5d12a0cb080ebd2602f146983fca88fb6b6143861fc0f"
+  },
+  "complete_fresh_replays_are_same_implementation": true,
+  "independent_external_review_claimed": false,
+  "accepted_authority": false,
+  "sources": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/research/spark_completion_c_rg2b_direct.py",
+      "sha256": "48cdc26efec39f83e6cc6257cef8a967b404d6535976b39ab31f691b9acfd5e5"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionCRG2bDirect.md",
+      "sha256": "3c7e62d1e89e1ad48a797475251c18c28d9f14c8e8d62ead4c44cf1d42da87b0"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/check_spark_completion_c_rg2b_direct.py",
+      "sha256": "3180cbade4378f209e42a37a9d8a2e33c97f3b5b272af22ec09174866bfec4c8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/test_spark_completion_c_rg2b_direct.py",
+      "sha256": "dc19cdfe943ceafc3ab8c3d705b8e3c1b77b61d6965178c8c21a6b0ccac6b60d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/propose_spark_completion_c_rg2b_curve.py",
+      "sha256": "b9aca85236137155ce9229e354087c37a4405331358122dc06e7b6390391c986"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirectDomain.json",
+      "sha256": "4ae8eca4cdd5a2bde814f4cdcea2b5b775cdf84762d5bafb1d5422c54b2c73f9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirectDeclaration.json",
+      "sha256": "8b150f4d0fd1d1112146cdfc5a7ef7ba25ba9a86c91d02af465037180cba4330"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirectCertificate.json",
+      "sha256": "e471b3205f5bae304fd137b016a087760cce861d3dfa403d94ea4eb5c482d905"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirect-current.json.xz",
+      "sha256": "c3c29365599ca75dc54179f9c666a7ca40944bfd840f90a127545e33ee813a13"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bDirect-reset.json.xz",
+      "sha256": "6fb124c8b7d43ee9a27dcb19de26a7e9f5bb547438b70e205825f1c5add39a62"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/CRG2bFasterRunHistory.json",
+      "sha256": "2f6d1c74b8e388e1c8681df9984cb131b99623cda4ef10a25a71fff308922aa5"
+    }
+  ],
+  "record_digest": "92023d5ef77ccf1e8a55dc062df110f7d0fdb5e28445b7b7e3d08672c0200152"
+}
