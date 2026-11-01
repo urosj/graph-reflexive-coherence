@@ -3,18 +3,18 @@
 2026-10-31. User-directed continuation after accepted SC-3 (`765dc6ae`).
 The [C_OS authority](./SparkCompletionSC3Authority.md), selected SC-1 criterion
 and accepted constructive result remain closed. Native implementation is separate.
-[Current research ledger](../evidence/spark-completion/applicability/CRG2bClaimDebtLedger.json).
+[Current research ledger](../evidence/spark-completion/applicability/ARG2bSC3ClaimDebtLedger.json).
 
-[A_RG2b is now demonstrated at bounded research scope](./SparkCompletionARG2bApplicability.md).
-Both roles have entry 300→completion 302, uniform duration 16, elapsed time
-4832, a full 30-dimensional direct C/W domain and zero subsequent supporting
-trajectory. The invariant section includes the conductance writer; no D Gamma
-is assumed. Current earns one local child and reset earns zero live gain.
-Scientific review/adjudication is next. Nine families remain accepted:
-C_OS, C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC, A_CI_PC and C_RG2b.
-The [current research disposition](../evidence/spark-completion/applicability/ARG2bClaimDebtLedger.json)
-keeps A_RG2b pending. No all-ten acceptance follows yet. A_OS below 100 remains
-paused; native completion, hierarchy and aggregate G4 remain separate.
+[A_RG2b SC-3 is now accepted](./SparkCompletionARG2bSC3Authority.md), following
+C_OS, C_CI, C_PC, C_CI_PC, A_OS, A_CI, A_PC, A_CI_PC and C_RG2b. Its joint
+Lipschitz section and full 30-dimensional direct C/W domain certify entry
+300→completion 302 without later supporting steps. Uniform duration 16 and
+elapsed time 4832 remain explicit. Current earns one local child; reset earns
+zero live gain. **All ten bounded scientific constructions are accepted.**
+No family remains uninvestigated in this sequence. Native implementation,
+hierarchy, aggregate P9-10.5/10.6 and G4 remain separate. A_OS below 100 stays
+paused. The original [research disposition](../evidence/spark-completion/applicability/ARG2bClaimDebtLedger.json)
+is retained unchanged as a historical checkpoint.
 
 ## Deliverable and finite order
 
@@ -91,17 +91,19 @@ Their necessity for organization is a different question and is not required.
 [Derivation and execution disposition](./SparkCompletionCCIApplicability.md).
 No native production code or generic all-ten completion grant is part of this work.
 
-## Current next family: A_RG2b
+## Family sequence complete; native and aggregate work forward
 
-Prove the completion-relative section together with the conductance writer and
-full C/W difference bounds. The direct curved-domain construction can guide a
-candidate, but requires fresh section/writer and physical error estimates.
-Then certify the actual source/event/history-transfer/approach/window chain.
+All ten families have their own bounded scientific acceptance. A_RG2b includes
+the joint Lipschitz section and conductance writer, full C/W difference bounds,
+actual source/event/history transfer and a positive completion window. Its
+604 retained states stop at 302 for both roles, without later supporting steps.
+The accepted ledger and side-tool bind the authority/proposal/paper/specification
+chain while preserving every earlier accepted and historical research view.
+
+Next work is native P9-9.1a numerics/lifecycle and aggregate P9-10.5/10.6
+reconciliation under the individual contracts. No generic arbitrary-graph or
+all-parameter theorem, native promotion, hierarchy or G4 acceptance is implied.
 Retain informative-case priority, optimization preflights, FLINT/Arb, one-hour
-large-graph caps and compressed evidence. Continue this branch; no A_RG2b
-spark-completion campaign has started. Existing accepted scopes are unchanged.
-
-C_RG2b acceptance selects the direct continuous domain with 392-step prefixes
-only. Earlier baseline and finite-union records remain historical with hashes,
-recorded checks and generators; their long numerical payloads remain absent.
-See the accepted C_RG2b authority, current ledger and read-only side-tool view.
+large-graph caps and compressed evidence for future numerical work. Compact
+discovery records and generators remain; retired full payloads remain absent.
+The pre-existing specs/README.md source drift stays documented and unwaived.

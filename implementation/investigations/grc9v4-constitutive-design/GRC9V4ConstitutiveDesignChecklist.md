@@ -4038,7 +4038,7 @@ Native implementation and accepted scientific promotion remain separate.
 - [x] A_PC — full 76-dimensional C/W/Z return, separate writers and two-history completion lineage accepted in `SparkCompletionAPCSC3Authority.md`.
 - [x] A_CI_PC — selected composite root, full implicit C/W/Z return and same-source two-history completion chain accepted in `SparkCompletionACIPCSC3Authority.md`.
 - [x] C_RG2b — quartic Lipschitz section, full direct invariant domain and source-to-392 completion accepted in `SparkCompletionCRG2bSC3Authority.md`.
-- [ ] A_RG2b — section, stationary writer and C/W stability.
+- [x] A_RG2b — joint Lipschitz section/writer, full direct C/W domain and source-to-302 completion accepted in `SparkCompletionARG2bSC3Authority.md`.
 - [ ] Reconcile ten explicit applicability dispositions; advertise completion
   only for positively proved and accepted subjects. No automatic native/G4 grant.
 
@@ -4108,7 +4108,7 @@ See `SparkCompletionAOSApplicability.md`, `AOSResearchProgress.json` and `AOSVal
   user withholds acceptance of this positive baseline. Then review/adjudicate
   C_RG2b and propagate authority → proposal/paper →
   specification if accepted. Eight scientific families remain accepted.
-- [ ] Continue A_RG2b afterward. Native P9-9.1a, hierarchy and G4 remain forward;
+- [x] A_RG2b scientific acceptance is recorded below. Native P9-9.1a, hierarchy and G4 remain forward;
   the below-100 A_OS goal stays paused.
 
 Evidence: [C_RG2b research](./decisions/SparkCompletionCRG2bApplicability.md).
@@ -4159,7 +4159,7 @@ families are accepted and A_RG2b remains afterward.
   resolve SC-APP-DEBT-C_RG2b; original SC-1 and execution flags remain unchanged.
 - [x] Accepted API/browser/notebook view and exact historical source succession.
 - [x] Compressed prefixes, previous run summaries and unchanged generators preserved.
-- [ ] A_RG2b is next; native P9-9.1a, hierarchy, aggregate P9-10.5/10.6 and G4 remain forward.
+- [x] A_RG2b bounded scientific acceptance completed below; native P9-9.1a, hierarchy, aggregate P9-10.5/10.6 and G4 remain forward.
 
 Nine spark-completion families are accepted. See `SparkCompletionCRG2bSC3Authority.md`
 and `CRG2bClaimDebtLedger.json`. Earlier research entries are historical; acceptance
@@ -4182,3 +4182,21 @@ The broader specs/README.md audit drift remains unwaived. A_OS below 100 stays p
   Existing basin-source audit debt is unwaived; A_OS below 100 remains paused.
 
 Evidence: [A_RG2b direct completion](./decisions/SparkCompletionARG2bApplicability.md).
+
+
+## A_RG2b direct SC-3 acceptance (2026-11-01)
+
+- [x] Explicit user acceptance of entry 300→completion 302 with zero subsequent
+  supporting steps, uniform duration 16 and full 30-dimensional C/W scope.
+- [x] Joint completion/section, full writer, actual resource/history transfer
+  and positive window admitted as three bounded conditional claims.
+- [x] Bound authority → proposal/paper → specification resolves SC-APP-DEBT-A_RG2b;
+  original SC-1, research projection and execution flags remain unchanged.
+- [x] Accepted API/browser/notebook view and exact historical metadata succession.
+- [x] Compressed prefixes, compact discovery history and exact generators preserved.
+- [x] All ten bounded scientific family constructions accepted; none remains uninvestigated.
+- [ ] Native P9-9.1a numerics/lifecycle, aggregate P9-10.5/10.6, hierarchy and G4 remain forward.
+
+See `SparkCompletionARG2bSC3Authority.md` and `ARG2bSC3ClaimDebtLedger.json`.
+Earlier research entries are historical. Duration 32 remains uncertified.
+The broader specs/README.md audit drift remains unwaived. A_OS below 100 stays paused.

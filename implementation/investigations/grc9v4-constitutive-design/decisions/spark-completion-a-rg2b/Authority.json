@@ -1,0 +1,288 @@
+{
+  "schema_version": "grc9v4_spark_applicability_authority_v1",
+  "record_id": "GRC9V4-SC3-SPARK-A-RG2B-v1",
+  "status": "accepted_bounded_scientific_design",
+  "accepted_on": "2026-11-01",
+  "predecessor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-c-rg2b/Authority.json",
+    "sha256": "b3a1fa52d138da5341d88893bc4c788965f5d75ac0a611bfaf9d994f680d2743",
+    "record_digest": "768b51a1ea5cd1c89dbdba0f22a2b18e165709a854d1165d99891f02e2d08c5e"
+  },
+  "acceptance": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bScientificAcceptance.json",
+    "sha256": "9794a87a17762062dcbc96d96395ad8091f2acba084421e67e45cb2460d2e612",
+    "record_digest": "27f24d17bab459d8454aa47a0b3894ed8df283efb5d97f623188b4c2ffbb0337"
+  },
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionARG2bSC3Authority.md",
+  "design_sha256": "1783e956f7d3ec2701d7c18de85c8bbc71dc39f93b1fda59414e7617d9a4e002",
+  "policy_id": "grc9v4-certified-geometric-child-basins-v1",
+  "claims": [
+    {
+      "claim_id": "SC-ARG2B-CL-C-DOMAIN",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The declared quartic A_RG2b source and target admit the frozen joint argument completion, unique bounded Lipschitz invariant section Gamma(C,W), and certified physical evaluation including the conductance writer, without a derivative of Gamma.",
+      "limits": [
+        "One declared bounded A_RG2b quartic/profile/source/allocation and frozen joint completion; no generic all-A_RG2b or arbitrary-graph theorem.",
+        "The full 30-dimensional continuous domain covers fourteen charge-tangent resource and sixteen conductance directions. No future trajectory after 302 is required; floating proposals only supply exact rational coefficients.",
+        "The unique section is Lipschitz in the joint C/W state. No derivative or C1 regularity of Gamma is assumed; both physical H consumers, the full conductance writer and section difference correction are included. Physical states are never clipped.",
+        "Uniform duration is 16 and elapsed target time to completion is 4832. Duration 32 remains uncertified; a failed available bound is not a universal impossibility result."
+      ]
+    },
+    {
+      "claim_id": "SC-ARG2B-CL-C-FULL-TRAP",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "A degree-40 exact polynomial curve plus a positive-radius full 30-dimensional C/W ball is a strict self-map with one common contraction, uniform edge directions and complete basins; no subsequent trajectory is required.",
+      "limits": [
+        "exact charge 21 and radius 1/4096",
+        "all continuous parameters and fourteen resource plus sixteen conductance directions",
+        "both H consumers, writer feedback and section differences; no C1 Gamma premise",
+        "no represented native-map promotion"
+      ]
+    },
+    {
+      "claim_id": "SC-ARG2B-CL-C-COMPLETION",
+      "claim_class": "conditional_mathematical",
+      "status": "accepted_bounded_scientific",
+      "statement": "The actual committed source/event/resource-and-history transfer reaches entry 300 and completion 302 for both roles at uniform duration 16, with last execution 302 and zero tail; current earns one local child and reset earns zero live gain.",
+      "limits": [
+        "One declared bounded A_RG2b quartic/profile/source/allocation and frozen joint completion; no generic all-A_RG2b or arbitrary-graph theorem.",
+        "The full 30-dimensional continuous domain covers fourteen charge-tangent resource and sixteen conductance directions. No future trajectory after 302 is required; floating proposals only supply exact rational coefficients.",
+        "The unique section is Lipschitz in the joint C/W state. No derivative or C1 regularity of Gamma is assumed; both physical H consumers, the full conductance writer and section difference correction are included. Physical states are never clipped.",
+        "Uniform duration is 16 and elapsed target time to completion is 4832. Duration 32 remains uncertified; a failed available bound is not a universal impossibility result.",
+        "Thirteen fresh scientific/surface tests and two complete same-implementation prefix replays passed. No independent external reviewer is claimed.",
+        "Earlier proposals retain compact history, original hashes and exact generators. Superseded full trajectories are absent and are not claimed to have been freshly rechecked.",
+        "Current earns one local child; reset and read-only replay earn zero live gain. Native completion, hierarchy, aggregate P9-10.5/10.6 and G4 remain separate.",
+        "SC-1 and all nine earlier accepted families are unchanged. The A_OS below-100 investigation remains paused.",
+        "The broader repository audit retains pre-existing source drift at specs/README.md.",
+        "sufficient witness times, not earliest-completion or duration-32 feasibility claims"
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "debt_id": "SC-APP-DEBT-A_RG2b",
+      "status": "resolved_bounded_scientific",
+      "scope": "One declared A_RG2b exact-equation construction and its full physical state domain",
+      "transformation": "Research applicability, repository review, user acceptance and scoped propagation resolved; native capability remains a separate forward obligation.",
+      "resolved_scope": "bounded quartic joint Lipschitz-section completion, direct full 30-dimensional invariant domain without a supporting tail, actual source/event/resource-and-history transfer and positive window, user acceptance and scoped propagation",
+      "successor_claim_ids": [
+        "SC-ARG2B-CL-C-DOMAIN",
+        "SC-ARG2B-CL-C-FULL-TRAP",
+        "SC-ARG2B-CL-C-COMPLETION"
+      ],
+      "verification_obligation_ids": [
+        "SC-ARG2B-VO-NATIVE-NUMERICS",
+        "SC-ARG2B-VO-NATIVE-LIFECYCLE"
+      ],
+      "contributes_to_debt_ids": [
+        "SC-DEBT-ORGANIZATION",
+        "SC-DEBT-STABILITY",
+        "SC-DEBT-NONEMPTY-DOMAIN",
+        "SC-DEBT-TEMPORAL-LIFECYCLE"
+      ],
+      "remaining_work": [
+        "Explicit quartic/profile, uniform duration 16 and joint completion identity; certified unique Lipschitz section in full C/log-W state with both physical geometry consumers and the complete conductance writer; global inverse and finite-chain/reuse errors; represented full 30-dimensional physical-map error inside the direct polynomial-domain image margin, exact charge and certified spatial predicates. No C1 Gamma assumption, frozen-W/H substitution, omitted writer, sampled-parameter test or later-trajectory dependency may replace the proved contract. Physical state clipping is forbidden.",
+        "Actual committed source beat/read and separately declared reset; lawful exact resource shares, old-edge W preservation, new-edge W initialization, full source archive and rebuilt target section with no geometry-history transport; entry 300 and positive two-beat window ending 302 at duration 16, elapsed time and invalidation, actual occurrence identity, at-most-once gain, atomic publication with rollback, and replay/import/reset conformance. Reset/replay earn zero live gain."
+      ],
+      "origin_ledger": "implementation/investigations/grc9v4-constitutive-design/evidence/spark-completion/applicability/ARG2bClaimDebtLedger.json"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SC-ARG2B-O-COMPLETION",
+      "object_role": "Bounded A_RG2b scientific completion applicability",
+      "accepted_claim_ids": [
+        "SC-ARG2B-CL-C-DOMAIN",
+        "SC-ARG2B-CL-C-FULL-TRAP",
+        "SC-ARG2B-CL-C-COMPLETION"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "equation_contract_id": "SC-ARG2B-EC-DOMAIN",
+      "parent_object_ids": [
+        "SC-ARG2B-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-ARG2B-CL-C-DOMAIN"
+      ],
+      "design_section": "## SC-ARG2B-EC-DOMAIN",
+      "normative_equation_or_contract": "`SC-ARG2B-CL-C-DOMAIN` is accepted as conditional mathematics for the declared quartic source/target joint completion, unique Lipschitz section and certified physical evaluation. No section derivative, whole-chart invariance or arbitrary-graph theorem is admitted.\n\nThe quartic A-family coefficients remain eta=1/1024, kappa_c=kappa_Ah=1/64,\nchi=zeta=kappa_H=1/2, alpha=beta=gamma=1/32768, W_floor=1/2 and tau_A=32.\nThe site derivative is (C\u22122)^3\u2212(C\u22122). Only the ordinary duration changes from\nthe earlier A-family constructions. C and W_A are the entire physical state;\nH is derived from a unique completion-relative invariant section.\n\nThe fixed-H read is the existing A law. Its potential includes both the\nweighted graph Laplacian and B(H\u2212I)B^T C/64. Its selected current consumes\nthe conductance drive and the physical closure denominator. Its causal flat\nuses H inverse; G is the symmetric star-supported outer-product geometry.\nThe conductance writer consumes updated C, incoming W, and that selected\ncurrent. Both H consumers and the entire writer enter every proof below.\n\nFor each graph, X=(C,64 log W) is the auxiliary coordinate system. The\ndeclaration fixes separate rational resource intervals for every vertex\nand |64 log W|\u22641/16. Let P_arg clip **arguments** to this box. The completion is\n\n    Fhat(X,H) = X + f(P_arg X,H),   Ghat(X,H) = G(P_arg X,H).\n\nThis is a bounded-increment extension to all auxiliary X. Physical resources\nand conductances are never clipped. Every source query, propagated tube and\nentire trapping domain is separately checked strictly inside the agreement\nchart. No forward-invariance claim is made for the whole rectangular chart.\nThe older native zero-site bounds and native K_minus admission are not reused.\n\nExact rational global bounds use the full norm max(||C||inf,64||log W||inf),\nthe induced infinity norm on symmetric star-supported H, geometry radius\n1/1024 and section Lipschitz class 1/256. Vertex-specific cubic derivatives\nretain exact graph cancellation before bounding the W and H perturbations.\nThe resource and writer partials jointly give A_X+A_H L<1 on both graphs.\nConsequently every section-dependent completed base map has a global inverse.\nThe graph transform maps its closed bounded Lipschitz class strictly into\nitself and contracts. Its fixed point is Gamma(C,W), not Gamma at frozen W.\nThe image Lipschitz bound also sharpens the Lipschitz constant of that fixed\npoint. The records contain all rational operands and inequalities.\n\nUniform duration 32 is **uncertified** for this construction. Preliminary\nduration-8/16/24/32 probes guide the choice; they are not proofs. Duration 16\npasses the fresh joint inverse bounds. Failure of the available duration-32\nbound is not a universal impossibility result. Changing duration changes the\ndiscrete map, its writer and its invariant section; beat counts and elapsed\ntime are both reported."
+    },
+    {
+      "equation_contract_id": "SC-ARG2B-EC-FULL-STATE-RETURN",
+      "parent_object_ids": [
+        "SC-ARG2B-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-ARG2B-CL-C-FULL-TRAP"
+      ],
+      "design_section": "## SC-ARG2B-EC-FULL-STATE-RETURN",
+      "normative_equation_or_contract": "`SC-ARG2B-CL-C-FULL-TRAP` is accepted for the direct continuous domain on the exact charge-21 state space, covering all fourteen resource and sixteen conductance directions, with a common pairwise contraction and strict self-map.\n\nWrite A=BB^T and P=(A+11^T/n)^\u22121. On the exact charge-21 tangent, use\n\n    ||(delta C,delta Y)|| = max(sqrt(delta C^T P delta C), ||delta Y||2),\n    Y = 64 log W.\n\nOne rational degree-40 polynomial p(s), 0\u2264s\u22641, defines the common domain\n\n    K = {p(s)+v : 0\u2264s\u22641, sum(v_C)=0, ||v||\u22641/4096}.\n\nEvery point has a full thirty-dimensional neighborhood relative to charge:\nfourteen resource and sixteen conductance directions. The floating proposal\nuses a stationary reference and the reset prefix endpoint at 300. It requires\nno later state. The final certificate treats every coefficient as exact\nrational data and takes **no executed trajectory as input**.\n\nExact Bernstein ranges cover the entire parameter interval. A scalar FLINT\nseries implementation independently evaluates the complete fixed-I current\nand writer. A fourth-order Taylor enclosure bounds the functional residual\nF_I(p(s))\u2212p((999/1000)s) on an exact gap-free partition of 67 cells. This\nreplaces a much slower first-order residual bound; no sampled parameter values\nstand in for a continuous proof.\n\nExact charge-tangent LDL inequalities bound the self-adjoint resource\nreference. The full C/W block difference bound includes the normalized rows,\nboth H consumers, writer feedback and the Lipschitz section difference.\nThe result is q<0.998534, functional defect <8.858e\u22128 and strict image\nmargin >2.6939e\u22127. Uniform weighted row, anchor, edge and complete-basin\nchecks hold on all of K; the minimum edge margin exceeds 8.3817e\u22125.\nBoth chiral rosters are\n\n    p: [p, private]\n    sc2-positive-module/satellite/2:\n      [n2, n8, sc2-positive-module/satellite/2].\n\nThe physical current tube enters at parameter 9997/10000 and reset at 1.\nTheir next two membership checks use that parameter times (999/1000)^k.\nDifferent parameter choices reflect their distinct conductance histories.\nThe strict domain image bound supplies closure; there is no finite union\nwhose last component depends on a subsequent supporting trajectory."
+    },
+    {
+      "equation_contract_id": "SC-ARG2B-EC-COMPLETION",
+      "parent_object_ids": [
+        "SC-ARG2B-O-COMPLETION"
+      ],
+      "accepted_claim_ids": [
+        "SC-ARG2B-CL-C-COMPLETION"
+      ],
+      "design_section": "## SC-ARG2B-EC-COMPLETION",
+      "normative_equation_or_contract": "`SC-ARG2B-CL-C-COMPLETION` is accepted for the declared actual source/event/resource-and-history transfer, physical approach and positive window. Current earns one local child; reset and read-only replay earn zero live gain.\n\nFinite section queries use sixteen coupled inverse levels, including the\nwriter, with terminal H=I. Newton and geometry sweeps propose dyadic operands\nat 384 bits. FLINT/Arb verifies all state and geometry residuals at 768 bits;\nthe graph-transform tail and residual amplification enclose the true section.\nNo derivative of Gamma or unproved C1 regularity is assumed.\n\nThe source has twelve vertices and thirteen edges. A fresh exact charge-21\nprestate is frozen before the campaign; its ordinary beat, full parent basin,\nsaturation and event trigger are checked. Current source conductances start\nat 4097/4096; reset starts at 8191/8192 and is not advanced. The expansion\ncopies exterior resources, sets the new core to zero and allocates the old\ncore with shares 5/2048, 1021/1024, 1/2048. Old-edge W is preserved and the\nthree new internal edges start at one. Both complete source histories are\narchived. The target section is rebuilt from its own graph and full C/W state;\nno H history is transported.\n\nEach exact-charge dyadic center has a propagated full-state error tube.\nEvery source, allocation, finite-section and rounding error enters its radius.\nThe invariant identity\n\n    Gamma(F(X,Gamma(X))) = G(X,Gamma(X))\n\nallows the next section enclosure to be reused, with the **full C/log-W**\ncenter displacement included. It does not introduce H as physical state.\nFresh inverse-chain rebuilds at beats 1, 300 and 302 check consistency with\nreuse; overlap is not substituted for the invariance proof. Checkpoint\nphysical reads enclose the whole tube. Both chiral graphs have identical\nincidence, edge order and fixed-row equations, which is checked explicitly.\n\nBoth fresh physical prefixes enter at beat 300 and finish the positive two-beat\nwindow at 302. Ordinary duration is uniformly 16, including the source beat;\nwindow elapsed time is 32 and elapsed target time is 4832. Last execution is\n302 and zero later supporting steps are required. These are sufficient witness\ntimes, not earliest-completion or duration-32 feasibility claims. Membership is\nchecked at parameters (9997/10000)(999/1000)^k for current and (999/1000)^k for\nreset, k=0,1,2. Both chiral charts have uniform complete basins throughout K.\n\nEvery physical center and propagated tube is checked against the agreement\nchart and direct domain at the selected endpoints. The exact domain checker\naccepts no executed trajectory input. Joint C/log-W centers use 320-bit dyadic\ncoordinates and 256-bit tube radii; FLINT/Arb certification uses 768 bits.\nAll source, event, allocation, section, history and roundoff errors are included.\n\nSix scientific tests and seven surface/provenance tests passed. Both complete\n302-step physical prefixes were freshly replayed with the same implementation;\nno independent external review is asserted. Two eight-step preflights checked\nimmutable graph/domain caches, multi-RHS partials, proposal early stops and\ncertified section reuse. Fourth-order interval Taylor residual bounds certified\n67 exact Bernstein cells with 70 evaluations. One-hour campaign and certificate\ncaps remain in force; each selected physical prefix took about one minute.\n\nAll 604 selected states remain XZ compressed, from 40,812,993 to 5,289,508 bytes.\nCompact earlier discovery/history and exact generator snapshots remain; redundant\nfull trajectories are absent. Acceptance reruns no numerical campaign and\npreserves original execution flags and research projection."
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "SC-ARG2B-VO-NATIVE-NUMERICS",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Explicit quartic/profile, uniform duration 16 and joint completion identity; certified unique Lipschitz section in full C/log-W state with both physical geometry consumers and the complete conductance writer; global inverse and finite-chain/reuse errors; represented full 30-dimensional physical-map error inside the direct polynomial-domain image margin, exact charge and certified spatial predicates. No C1 Gamma assumption, frozen-W/H substitution, omitted writer, sampled-parameter test or later-trajectory dependency may replace the proved contract. Physical state clipping is forbidden."
+    },
+    {
+      "obligation_id": "SC-ARG2B-VO-NATIVE-LIFECYCLE",
+      "status": "pending_forward",
+      "destination": "P9-9.1a",
+      "obligation": "Actual committed source beat/read and separately declared reset; lawful exact resource shares, old-edge W preservation, new-edge W initialization, full source archive and rebuilt target section with no geometry-history transport; entry 300 and positive two-beat window ending 302 at duration 16, elapsed time and invalidation, actual occurrence identity, at-most-once gain, atomic publication with rollback, and replay/import/reset conformance. Reset/replay earn zero live gain."
+    }
+  ],
+  "source_contract_ids": [
+    "SC-EC-GEOMETRIC-IDENTITY",
+    "SC-EC-FULL-STATE-RETURN",
+    "SC-EC-QUARTIC-SITE",
+    "SC-EC-WINDOW-LIFECYCLE",
+    "D10.2-EC-PARENT-REAL-RG2B",
+    "D10.2-EC-RG-INVARIANCE",
+    "D10.2-EC-RG-LIPSCHITZ-CONTRACTION",
+    "D10.2-EC-RG-DETERMINISM",
+    "D10.2-EC-RG-CLAIM-CEILING"
+  ],
+  "family_dispositions": [
+    {
+      "family": "C_OS",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "SC-1\u2013SC-3 exact source-to-completion witness",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint-root/full-map/source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded full C/Z domain, trap and actual source-to-completion applicability accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_CI_PC",
+      "physical_state": [
+        "C",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full C/Z return and same-source completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_OS",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded staged A_OS domain, self-consistent writer/full C/W return and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected A_CI root, implicit full C/W return, self-consistent writer and actual completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded incoming-carrier domain, full C/W/Z return, independent writers and actual two-history completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_CI_PC",
+      "physical_state": [
+        "C",
+        "W_A",
+        "Z_4"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded selected composite root, full implicit C/W/Z return, same-source geometry/carrier coupling and independent writers and actual two-history completion chain accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "C_RG2b",
+      "physical_state": [
+        "C"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded quartic Lipschitz section, full 14-dimensional direct invariant domain and actual source-to-392 completion without a supporting tail accepted; native implementation pending",
+      "native_completion_support": false
+    },
+    {
+      "family": "A_RG2b",
+      "physical_state": [
+        "C",
+        "W_A"
+      ],
+      "status": "accepted_bounded_scientific",
+      "scientific_obligation": "Bounded joint Lipschitz section with writer, full 30-dimensional direct C/W domain and actual source-to-302 completion without a supporting tail accepted; native implementation pending",
+      "native_completion_support": false
+    }
+  ],
+  "scope": {
+    "SC3_closed_for": [
+      "A_RG2b"
+    ],
+    "scientific_families": [
+      "C_OS",
+      "C_CI",
+      "C_PC",
+      "C_CI_PC",
+      "A_OS",
+      "A_CI",
+      "A_PC",
+      "A_CI_PC",
+      "C_RG2b",
+      "A_RG2b"
+    ],
+    "SC1_reopened": false,
+    "native_completed_spark_support": false,
+    "hierarchy_support": false,
+    "G4_accepted": false,
+    "aggregate_debts_closed": [],
+    "native_support_added": []
+  },
+  "record_digest": "5448d324412e13bdb6f2c9e0b841206b152254baa0e6fceff168954ac1b0a50a"
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "grc9v4-spark-applicability-source-manifest-v1",
+  "authority_record_digest": "5448d324412e13bdb6f2c9e0b841206b152254baa0e6fceff168954ac1b0a50a",
+  "predecessor_manifest": {
+    "path": "specs/grc-9-v4-spark-completion-c-rg2b-source-manifest.json",
+    "sha256": "5537b817c31218bd525a50cf0faccf07119e246dfefd4a8e7b0fea37f0c3ac19"
+  },
+  "contract_ids": [
+    "SC-ARG2B-EC-DOMAIN",
+    "SC-ARG2B-EC-FULL-STATE-RETURN",
+    "SC-ARG2B-EC-COMPLETION"
+  ],
+  "chain": [
+    {
+      "stage": "authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/spark-completion-a-rg2b/Authority.json",
+      "sha256": "5d08255987c001cd7d5152ac78954b69b513c10a041c95ca614f24383defcfbd"
+    },
+    {
+      "stage": "decision",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/SparkCompletionARG2bSC3Authority.md",
+      "sha256": "1783e956f7d3ec2701d7c18de85c8bbc71dc39f93b1fda59414e7617d9a4e002"
+    },
+    {
+      "stage": "proposal",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRC9V4-spark-completion-ARG2b-proposal.md",
+      "sha256": "2d62c02227ace9f887fb62bc9ef5b482503f259bb9bc6c9439f6befa33676db1"
+    },
+    {
+      "stage": "paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-11-GRC9V4-Spark-Completion-ARG2b.md",
+      "sha256": "e4e6be48a32a985978b202956d985a554e8adafaadc18022d28afcc6bc17a422"
+    },
+    {
+      "stage": "specification",
+      "path": "specs/grc-9-v4-spark-completion-a-rg2b.md",
+      "sha256": "c6ed5f302e1a4f36169a14aad08087682758a2e697a41b5d8f22cb74e0ea5578"
+    },
+    {
+      "stage": "inherited_schema",
+      "path": "specs/grc-9-v4-spark-completion-schema.json",
+      "sha256": "7caad31be98abf29911a9438b166effcb487e4adbf7c78c8c3e0f8ca2069ed52"
+    }
+  ],
+  "native_support_added": [],
+  "native_implementation_destination": "P9-9.1a",
+  "record_digest": "6b769f3b41be19a50bcc76fe13f154ff7c8c39db89c46c2f061f9e1a1d438ed9"
+}
